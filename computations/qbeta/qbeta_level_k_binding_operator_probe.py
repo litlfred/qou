@@ -139,7 +139,7 @@ And the corpus's word is a nearest-neighbour CHAIN, not all pairs.
 at gen 3k+2 for k < A-1 — so A-1 couplings where all pairs would be A(A-1)/2, a
 deficit of (A-1)(A-2)/2. It is ZERO at A = 2, so everything above is exact for
 the deuteron. From A = 3 it bites: permuting the arbitrary ordering (ppn / pnp /
-npp) moves the binding character by 22.54 %, and an all-pairs coupling would show
+npp) moves the binding character by 22.69 %, and an all-pairs coupling would show
 no such dependence by symmetry. So the truncation is a first-order modelling
 choice at A >= 3, not a small correction, and every heavy-nucleus number in the
 corpus inherits it.
@@ -175,7 +175,7 @@ import qou_substrate.constants as CONST  # noqa: E402
 from hecke_characters import build_seminormal_matrices_mp, partitions_of  # noqa: E402
 from mass_at_3A_proper import (atom_braid_word_3A,  # noqa: E402
                                chi_lambda_of_word, _cached_seminormal)
-from pyhecke.atom import nucleon_gen_chains  # noqa: E402
+from pyhecke.atom import nucleon_word_letters  # noqa: E402
 from ocneanu_weights import omega_lambda_via_inversion  # noqa: E402
 
 mp.mp.dps = 30
@@ -240,24 +240,48 @@ def chain_word(order, qq, include_inter=True):
     """`atom_braid_word_3A`'s own chain, with the nucleon ORDER as a parameter.
 
     Every template used here is one the corpus already builds — the proton and
-    neutron intra chains from `nucleon_gen_chains`, and the pp / nn / pn
+    neutron intra words from `nucleon_word_letters`, and the pp / nn / pn
     interfaces. Only their PLACEMENT is varied, so this proposes no convention:
     it measures how much the corpus's fixed `['p']*Z + ['n']*N` ordering is
     worth. The interface is the strict average `sigma - h/2` rather than the
     color-weighted default, because a color weight is a p-n-specific quantity
     and would confound an ordering comparison with a flavour one.
+
+    THE INTRA ORDERING WAS GROUPED UNTIL 2026-09-14, while this docstring
+    claimed the chain was `atom_braid_word_3A`'s own (bean `qou-t29k`). It was
+    not: it laid down all of `g0` then all of `g1`, which is
+    `nucleon_word_letters`' `intra_order="grouped"`, whereas
+    `atom_braid_word_3A` has defaulted to the canonical borromean interleaving
+    since the 2026-09-05 ruling (`qou-hu1f`). `binding_block` above calls that
+    production builder directly, so one file was measuring A = 2 canonically
+    and A = 3 in the superseded frame.
+
+    Switching it is safe, and unusually for this cluster that was MEASURED
+    rather than argued. Over the three A = 3 orderings at the five visible
+    H_9 blocks:
+
+        grouped    ord_spread = 22.54043935 %   ppn row = 0.2488, -6.581, -28.75
+        borromean  ord_spread = 22.69262522 %   ppn row = 0.2488, -3.624, -2.978
+
+    The per-block characters move by up to an order of magnitude; the SPREAD
+    across nucleon orderings — the thing this function exists to measure — does
+    not. So the finding is robust to the intra frame while every number feeding
+    it is not, and the two must not be quoted interchangeably. The assertion
+    downstream is a threshold (`ord_spread > 0.1`), which both satisfy.
+
+    Now takes the word from `nucleon_word_letters`' DEFAULT rather than naming
+    the frame, so a future ordering ruling reaches this function by changing one
+    default instead of silently not reaching it — the same wiring
+    `closed_form_tau_M` uses. Still deliberately colour-blind at the interface,
+    for the reason in the paragraph above.
     """
-    p_g0, p_g1 = nucleon_gen_chains(["u", "u", "d"], q=qq)
-    n_g0, n_g1 = nucleon_gen_chains(["u", "d", "d"], q=qq)
     hq = qq - 1 / qq
     nA = len(order)
     word = []
     for k, nuc in enumerate(order):
-        g0, g1 = (p_g0, p_g1) if nuc == "p" else (n_g0, n_g1)
-        for c, d in g0:
-            word.append((c, d, 3 * k))
-        for c, d in g1:
-            word.append((c, d, 3 * k + 1))
+        quarks = ["u", "u", "d"] if nuc == "p" else ["u", "d", "d"]
+        for c, d, off in nucleon_word_letters(quarks, q=qq):
+            word.append((c, d, 3 * k + off))
         if include_inter and k < nA - 1:
             pair = {nuc, order[k + 1]}
             d = (mp.mpf(0) if pair == {"p"}

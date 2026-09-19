@@ -17,9 +17,16 @@
 >
 > | kernel dps | `uic(1,1)`, k_max=5 |
 > |---|---|
-> | 50 | −0.7335499391634978 |
-> | 100 | −0.7335499391634978 |
-> | 150 | −0.7335499391634978 |
+> | 50 | −1.2268740026260945 |
+> | 100 | −1.2268740026260945 |
+> | 150 | −1.2268740026260945 |
+>
+> *(Values updated 2026-09-12, bean `qou-21oc`. They read −0.7335499391634978
+> until the Pass-2 sign gate was **dropped** from the producer — owner ruling,
+> its complementary-slackness justification refuted sorry-free in PR #7251 —
+> after which the function returns the **ungated** sum. **This audit's
+> conclusion is untouched**: the gate has nothing to do with precision, and the
+> new value is bit-identical across 50/100/150 dps exactly as the old one was.)*
 >
 > **The sign is not explained by a divergence, and the sign question is still
 > open.** What survives is below, and one part of it inverts a proposed fix.

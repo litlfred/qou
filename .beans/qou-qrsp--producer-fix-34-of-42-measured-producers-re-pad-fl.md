@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-07T09:01:16Z
-updated_at: 2026-08-24T13:32:40Z
+updated_at: 2026-09-14T18:50:18Z
 ---
 
 Follow-up to qou-gqt5 (parent-less: beans disallows task-under-task).
@@ -644,3 +644,196 @@ exit 0 / 0 errors on both edited files AND on their importer
 
 CAUTION FOR WHOEVER PICKS UP THE mu3 DOOR: this is a CLOSURE, not an opening.
 An escape route the corpus documented as available is, under canon, foreclosed.
+
+## The "not mechanizable" judgment IS decidable for one slice (2026-09-14)
+
+This bean states that localization is mechanizable but the judgment is not:
+
+> "For each re-padder decide whether the quantity is GENUINELY float64 (then
+> stop promoting it to mpf) or was DOWNCAST upstream from full precision."
+
+That is decidable whenever the float arrived from a named constant in
+`qou_substrate.constants` AND that module also carries a higher-precision
+string twin. Then it was demonstrably not genuinely float64: the corpus holds
+a better value one import away and the site declined it.
+
+`computations/audits/mpf_untokened_float_constant_audit.py` decides that slice.
+It is strictly WEAKER than `float64_entry_tracer.py` at finding sites — static,
+named constants only, blind to JSON/numpy/library entries — and does not
+replace it. It answers a different question: not *where did a float enter* but
+*was a better value available and refused*.
+
+**214 sites match the shape; 10 are defects.** Quoting the 214 would be a 21x
+over-flag. Most float64 constants here are CODATA measurements carrying ~11-12
+significant digits, which a float64 holds to ~17, so wrapping one in `mpf`
+loses nothing that exists — `M_E_MEV`, 112 sites, is the type case and is fine.
+This is the same over-flag shape this bean already records for `is_f64_padded`
+(Class B, 9 producers / 39 fields, "the detector is wrong about them").
+
+The twin set is **derived** at import time, not hardcoded, and that paid
+immediately: it found 4 twins where a hand-written list of the obvious names
+found 2 — `MASS_RATIO_MU_E` (diverging at significant digit **10**) and
+`VOL_FIGURE_EIGHT` (digit 17). No site declines either of those, so the defect
+count is unaffected, but a hardcoded list would have been wrong the moment one
+did.
+
+### The 10, all one-line fixes
+
+    Q -> Q_50_DIGIT_STR                        (diverge at digit 18)   9 sites
+      casimir_jet_order_derivation.py:134
+      homfly_ocneanu_trace.py:289
+      probes/casimir_carlitz_q_bernoulli_probe.py:127
+      probes/casimir_grid_sweep_probe.py:88
+      probes/casimir_hoefsmit_additivity_probe.py:184
+      probes/casimir_macdonald_probe.py:209
+      probes/casimir_phi_q_markov_probe.py:119
+      probes/casimir_q_factorial_probe.py:115
+      substrate/frakV_zeta4_fibre_vs_observable_probe.py:54
+
+    MASS_RATIO_P_E -> MASS_RATIO_P_E_STR       (diverge at digit 18)   1 site
+      codata_registry_triangulation_probe.py:117
+
+NOT FIXED HERE. Each changes a published number, so per this bean's own rule
+the source fix and the witness regeneration are separate commits, and the
+owner-gate default (AGENTS.md §"ASK THE OWNER BEFORE CHANGING THINGS") makes
+a 10-file tranche across two families an ask rather than a drive-by — even
+though the change is squarely exemption 1 (it removes a float64 path).
+
+`casimir_macdonald_probe` is the safest single demonstration: its conclusion is
+a NULL RESULT (no sub-1% matches), which an 18th-digit move cannot touch.
+
+### How it surfaced
+
+Not by looking for it. `scripts/precision-gates.sh` reports the float64-padding
+ratchet at **75 occurrences / 63 NEW / 13 files** against a committed witness
+recording **22 / 10 / 7** — so that witness understates the live tree ~3.4x.
+Tracing the largest contributor
+(`sweeps/paper-six-term-isotope-sweep.witness.json`, 45 of the 75) reproduced
+its published field byte-for-byte as `fmt(mp.mpf(<the float64>))`, which is
+this shape. Six of the eight live offending files were last written by
+precision-drain sweeps themselves (`qou-4383` x3, `qou-baye`) — consistent with
+what `qou-3jwy` already recorded, one drain tranche later.
+
+## The 18 are worked: 12 fixed, 6 adjudicated deliberate (2026-09-14)
+
+The "10 defects" figure this bean carried from #7344 was wrong **in both
+directions**, and the tool was the reason. It matched a bare `Name` against
+`qou_substrate.constants` without asking what the file itself had bound that
+name to:
+
+    reported                              10
+    cleared by their own import alias     -3   (homfly imports Q_50_DIGIT_STR AS Q)
+    newly visible                        +11   (Q as Q0 / Q0_PROTON / Q0_PROTON_F64)
+    ------------------------------------------
+    actual                                18   across 16 files
+
+`_bound_names()` resolves the aliases; cleared sites get their own reported
+bucket. Detector now reads 18 -> **6** after the fixes, and the 6 are exactly
+the adjudicated-deliberate set.
+
+### The six that are NOT defects, with the reason each
+
+- `phi_k_weight_family_discriminator.py:559` — computes
+  `|mpf(Q0_PROTON_F64) - mpf(Q0_PROTON_STR)| / mpf(Q0_PROTON_STR)`. It **measures
+  this very gap**; substituting the string makes it compute zero.
+- `codata_registry_triangulation_probe.py:117` — registry-vintage regression
+  guard. Its subject IS the float the registry serves; it is how the 1.35 ppb
+  CODATA-2018/2022 straddle behind the old 437x `m_p` "miss" was caught.
+- `m_p_m_e_li2q.py:67` — inside `Li_2_q_f64`, declared an f64 wrapper, returns
+  `float(...)`; a better anchor cannot survive the return.
+- `probe_chirality_delta_lambda_the3_diagnostic.py:120,122` — an assert at
+  `rel_eps=1e-15` against a divergence at 1e-18, three orders inside tolerance.
+- `hecke_core_symbolic_migration.py:109` — `nstr(..., 17)` display, truncated
+  before the difference appears.
+
+### The result that justifies the tranche
+
+`frakV_zeta4_fibre_vs_observable_probe` asserts a quantity IS zero. It could
+only show `8.5246e-32` because the float64 anchor was its floor. At the 50-digit
+anchor it shows **`4.1041e-72`** — forty orders closer to its own claim. The
+probe had been measuring its input's truncation, not the mathematics. Its
+`1.10998` fallback (a 6-digit truncation applied silently) is gone; it raises.
+
+### Two things in the diff that are NOT this fix
+
+- **A stale AME input.** `a4_interface_magnitude_one_scalar_gate` moves
+  `B_4He_AME` 28.29566000 -> 28.29566240 MeV. A q0 edit cannot move an AME
+  binding energy; the committed witness predated the longer live value and the
+  re-run carried the correction along.
+- **One residual got worse and that is correct.** `casimir_hoefsmit_additivity`
+  assertion 4 runs 7.3902e-12 -> 1.6920e-11 against a 1e-9 gate, because the
+  quantity measures **the tabulated coefficients' own float64 storage**. A more
+  precise q0 exposes that truncation rather than fixing it. The table is the
+  next target, not q0.
+
+### One witness deliberately NOT regenerated
+
+`charm-frobenius-block-projection.witness.json` stays on its committed content.
+This container has no `snappy` (OPTIONAL to that producer), so a re-run here
+returns the witness **48 fields short** — the whole
+`reading_B_snappy_complex_volume` block (hyperbolic volume + Chern-Simons per
+candidate word) and `q0AnchorReason`. The source fix is correct and landed; the
+witness needs a container with snappy.
+
+Padding ratchet over the tranche: 75 -> 73 occurrences, 13 -> 12 files.
+PR #7383.
+
+
+### The float64 table — closed (2026-09-14, PR #7383)
+
+The target the previous entry named. `casimir_hoefsmit_additivity_probe` had
+**two** float64 tables, not one, and each had a gate sized to its own cast:
+
+| site | was | gate was | gate said |
+|---|---|---|---|
+| `_check_geom_epsilon_n_unknots` | `coefficient = float(1 / hbar_q_sq)` | `1e-9` | *"covers the float64 the table stores at N = 1000"* |
+| `_check_volume_additivity` | `float(vol1)` on 50-dps registry volumes | `1e-15` | *"the float64 the table is serialised through"* |
+
+Both gates were honest about what they were tolerating and both were
+tolerating this producer's own doing. Assertion 4 in particular compared a
+float64 row against `N * (1/ℏ_q²)` recomputed exactly — so the residual it
+reported was the asymmetry, never the linearity it claims to test. That is why
+the q0 precision fix earlier in this tranche made it *larger*.
+
+**Result.** Both tables carry `mpf` end to end and serialize through
+`_precision.fmt`; `float()` survives only inside f-strings for display and the
+printed output is byte-identical.
+
+    assertion 4   1.69197e-11  ->  4.64747e-55     (3.6e43x)
+    assertion 3   float64      ->  exactly 0
+
+4.647e-55 is half of `101862 * 1e-59`, i.e. exactly the 60-digit rounding
+bound and nothing else — both sides of the comparison are now the same `mpf`.
+
+**The gates are derived now, not chosen.** `_serialization_floor(x)` returns
+`|x| * 10**(1 - OUTPUT_DPS) * 10`: the width the witness round trip is
+actually written at, plus one decade for its two roundings. 1.02e-53 and
+1.47e-57 fall out; a future OUTPUT_DPS change moves them with it, and no band
+can silently widen. This is the distinction AGENTS.md draws — a tolerance
+sized to its own miss is a fit; one derived from the serialization width is not.
+
+**Verified by control, not by the gates going quiet.** Perturbing one Geom row
+by 1e-50 fails the new gate (1.00000003e-50 > 1.02e-53) and would have
+**passed** the old 1e-9. Perturbing every pair sum by 1e-50 likewise fails
+1.47e-57 and would have passed 1e-15. The restored probe reproduces the clean
+witness with only `computedAt` differing.
+
+**Ratchet effect, isolated by reverting these two files alone and re-running:**
+
+    dirty_witnesses    977 -> 976     (-1)
+    total_fields     25420 -> 25400   (-20)
+    drained_files       33 -> 34      (+1)
+    new_not_baselined    1 -> 1       (unchanged)
+
+**Correction to my own commit message (`76a0e30d47`).** It says *"the
+baseline's 20 was already short of the 30 actually present"*. That is wrong.
+Both numbers are right and they answer different questions: a naive
+"any JSON float" walk of the witness finds **30**, the ratchet's own field
+definition counts **20** (it carves out classes this walk does not), and the
+baseline's 20 matches the ratchet exactly — confirmed by the isolated
+`total_fields` delta above landing on exactly -20. The baseline was never
+short. Do not "fix" it.
+
+`raw-float64-baseline.json` is left untouched: the entry records the historical
+floor and the audit computes the drain against it. Hand-editing it is the move
+the ratchet exists to prevent.

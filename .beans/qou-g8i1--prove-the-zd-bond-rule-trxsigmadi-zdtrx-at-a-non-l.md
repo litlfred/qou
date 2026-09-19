@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-23T13:42:04Z
-updated_at: 2026-08-23T18:13:53Z
+updated_at: 2026-09-12T20:51:08Z
 ---
 
 The one thing left from qou-kgsx, and much smaller than what that bean started with.
@@ -156,3 +156,55 @@ SCOPE, HONESTLY: this is still not a construction of H_n(q) with its
 Wedderburn decomposition. It is the trace-level layer, which is all the bond
 product ever needed. The remaining open thing in the chain is one citation,
 not one derivation.
+
+
+--------
+**2026-09-12: this may already be DONE — check before working it.**
+
+QOU/SchurWeyl/MarkovTraceInstance.lean (CODE-sorry 0) proves wtrace_markov:
+the Markov stabilisation tr_{n+1}(incl x * sigma_last) = z * tr_n x, at
+CONVENTION D z = q^3/(q^2+1), for general n, under genericity (q != 0,
+q^2 != 1, q^2+1 != 0, q^2 not a root of unity). ocneanuMarkovTrace bundles it
+with T1/T2 and tr_incl into HeckeCoset.MarkovTraceFamily, and
+MarkovTraceUnique.markovTrace_unique (CODE-sorry 0) proves any two such traces
+agree -- so eq_wtrace_of_markov identifies EVERY convention-D Markov trace with
+the Ocneanu-weighted seminormal one.
+
+If this bean's z_d bond rule IS that statement, it is proved and the bean is
+mechanical bookkeeping. If it is a DIFFERENT statement (a different channel, a
+non-generic q, a root of unity, or the rule at the level of the single-algebra
+OcneanuTrace.MarkovTrace rather than the level-indexed MarkovTraceFamily), say
+which -- the difference is the whole content.
+
+NOT closed here: per rule 13a I am not completing a bean I did not verify line
+by line, and the two abstractions are genuinely different objects (see qou-0fmb).
+Whoever picks this up should first read MarkovTraceInstance.lean and decide
+whether this bean's subject is that theorem or its bridge.
+
+
+## 2026-09-13 — the general-`A` shape this bean is cited for now exists (status unchanged: still `completed`)
+
+Recording an artifact, not reopening. `MarkovBondFactor`'s header cites `qou-g8i1`
+for the general-`A` gap, and the route-C plan
+(`docs/audits/2026-09-07-route-c-step3-and-kz-level-plans.md` §A step 4) costs
+closing it at **4–8 h, high risk**. It is closed, and not by new mathematics:
+`interiorMarkov_of_braided` (#7265) discharges `InteriorMarkov` on every
+`BraidedTower`, and `QOU/Hecke/PureBondChainProduct.tr_pureBondChain_of_braided`
+(PR #7337) states the resulting product in this bean's own shape —
+`tr ((σ_{g₀}+d₀)·⋯) = ∏_k (z + d_k)`, strictly increasing bonds, sorry-free.
+
+The closing paragraph above asks whoever picks this up to *"decide whether this
+bean's subject is that theorem or its bridge"*. The answer is now sharper: the
+**theorem** is done in the tower vocabulary; the **bridge** is two distinct
+bridges, and neither is this bean's.
+
+1. `MarkovBondFactor`'s `QOU.Hecke.MarkovTrace n q A` is fixed-level,
+   single-algebra, **no filtration**, so it cannot state "`a` below the bond,
+   `b` above it". "The class does not yet carry it" stays true of that class.
+2. The production Ocneanu trace is a `HeckeCoset.MarkovTraceFamily`, not an
+   `OcneanuTrace.MarkovTrace` with a `BraidedTower` instance — `qou-gr3t`'s
+   remaining item, `qou-0fmb`.
+
+Caveat on quoting: the proved shape is `∏_k (z + d_k)`, coefficient `1`, not
+`∏_k (c_k·z + d_k)`. All three production bond types carry `c = 1`, so this does
+not bind the corpus.

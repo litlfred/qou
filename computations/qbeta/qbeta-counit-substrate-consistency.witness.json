@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T15:52:37.602417+00:00",
-  "commitSha": "6725c84dadb072d6b7aaa56109d517aeb235b3e0",
+  "computedAt": "2026-09-12T20:39:01.700024+00:00",
+  "commitSha": "3d227b00d959478ae3bbf3a7a4a38ad13c4718c1",
   "assertions": [
     {
       "name": "counit_eps_E0_eq_closed_form",
@@ -15,8 +15,8 @@
     },
     {
       "name": "counit_residual_pct",
-      "computed": "0.16775678474746631042380656367428952391748692290848350148692615609",
-      "expected": 0.17,
+      "computed": "0.16775678474746631042380656367428952391748692290848",
+      "expected": "0.17",
       "passed": true,
       "tolerance": "0.02",
       "unit": "percent",
@@ -24,28 +24,27 @@
     },
     {
       "name": "trace_substrate_residual_pct",
-      "computed": "-43.157175337586514539758411567142098785618426117777087048846522718",
-      "expected": -56.0,
-      "passed": false,
-      "tolerance": 1.0,
+      "computed": "-43.157175337586514539758411567142098785618426117777",
+      "expected": "-43.157175",
+      "passed": true,
+      "tolerance": "0.001",
       "unit": "percent",
-      "source": "PR #2363 audit (−56 %)"
+      "source": "qbeta-option-e-required-level.witness.json (delta_S_short_normal_form.pct_D); was PR #2363's C-frame −56 %"
     },
     {
       "name": "counit_residual_within_N0_bound",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1",
       "passed": true,
-      "tolerance": 0.0,
       "source": "ℏ_q²/(1−ℏ_q²) ≈ 1 % truncation bound"
     }
   ],
-  "allPassed": false,
-  "durationMs": 4,
+  "allPassed": true,
+  "durationMs": 3,
   "computation": "qbeta-counit-substrate-consistency",
   "scriptFile": "qbeta_counit_substrate_consistency.py",
-  "scriptHash": "4841dabad273",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "1485f64f13a1",
+  "scriptCommitSha": "9d06eaf98016f8adb65fbbd59c66658135beeefb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,7 +59,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -87,10 +86,10 @@
     "gap_eps_minus_trM": "-0.080971554681285529837694558130428894576274676507816",
     "counit_qbeta_MeV": "0.78364582737462121307493975134139689052573644103029",
     "trace_qbeta_MeV": "0.44470040852178040910096221302494277902490277736446",
-    "counit_residual_pct": 0.1677567847474663,
-    "trace_residual_pct": -43.157175337586516,
-    "N0_truncation_bound_pct": 0.9914519137249935,
-    "E0_derived_vs_cal_gap_pct": 0.1677567847474663
+    "counit_residual_pct": "0.16775678474746631042380656367428952391748692290848",
+    "trace_residual_pct": "-43.157175337586514539758411567142098785618426117777",
+    "N0_truncation_bound_pct": "0.99145191372499348624723462307320448301746221717361",
+    "E0_derived_vs_cal_gap_pct": "0.16775678474746631042380656367428952391748692290848"
   },
   "caveats": [
     "N=0 only. The counit value ε(Δ)·𝔈₀ is built from the N=0 neutron−proton normal-form difference; its +0.17 % deviation from CODATA is the N=0 truncation remainder, NOT a fit. The open convergence leg (prove the full per-braid mass-tower difference m(n)−m(p)−m_e → ε(Δ)·𝔈₀, remainder ≤ O(ℏ_q²/(1−ℏ_q²))) is unproved here and is the named structural target — this witness only pins its invariant.",

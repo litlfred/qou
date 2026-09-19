@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T12:29:38Z
-updated_at: 2026-09-07T20:30:00Z
+updated_at: 2026-09-13T08:21:42Z
 ---
 
 ## Context
@@ -265,3 +265,214 @@ Taken over 2026-09-07 by claude/stalled-agents-em-linking-jilmbv after the #7079
 **2026-09-07 (witness 2, bean qou-fq1i, PR #7131): the "trace is a homomorphism" objection to InvolutionTowerWitness is CLOSED.** `QOU/MathlibExt/SymmetricGroupTowerWitness.lean`: symmetric-group algebra tower `MonoidAlgebra R (Equiv.Perm ℕ)`, `g = ginv = t m = of (swap m (m+1))`, trace = coefficient of the identity, z = zinv = 0, all MarkovTrace axioms hold. The trace is NOT a hom (`tr(t t) = 1 ≠ 0`), the filtration grows (`t_not_mem_shiftedUpTo`), and `SandwichReduces` is PROVED at every level (`sandwichReduces_sym`) via the double-coset decomposition `S_{k+1} = S_k ∪ S_k s_k S_k`, itself from "adjacent transpositions generate interval-supported permutations" (double induction). Hence `TowerSpan` and `DisjointBlockMultiplicative` through the #7079 chain, cross-checked by a direct proof from `W_{<n} ∩ W_{≥n} = {1}`. Non-trivial pair: `a = 1 + t n`, `b = 1 + t(n+1)`: tr(ab) = 1 = tr a·tr b, while tr(a·a) = 2 ≠ 1 — the law is about disjointness, not multiplicativity. 0 sorry; lean-direct exit 0; #print axioms clean on 18 decls.
 
 What remains: q = 1 / z = 0 / h = 0 only. The double coset is proved in the permutation model, never by rewriting with the braid + quadratic relations, so SandwichReduces for a Hecke tower at q ≠ 1 is still unproved and the bond-product reading of the atom word remains MEASURED, NOT DERIVED. Bean stays open.
+--------
+
+**2026-09-08 (PR #7153, branch `claude/hecke-sandwich-reduces-2026-09-08`): `TowerSpan` is PROVED from the braid relations. The gap this bean names is discharged as a hypothesis on the tower; what remains is an instance, not a proof.**
+
+New module `QOU/MathlibExt/HeckeSandwichReduces.lean` (~250 lines, 10 decls, 0 sorry).
+
+`class BraidedTower (T : MarkovTrace R A)` carries exactly three equations, each a
+defining relation of `H_n(q)` and none of them mentioning the trace:
+
+    quad   ∀ m, ∃ h : R, g m * g m = h • g m + 1      (Hecke: h = q − q⁻¹)
+    far    ∀ m k, k + 1 < m → g m * g k = g k * g m
+    braid  ∀ m, g (m+1) * g m * g (m+1) = g m * g (m+1) * g m
+
+`sandwichReduces_all` proves `SandwichReduces T (shiftedUpTo T n M) (M+1)` for
+every `n, M`, by induction on `M`. With `g₁ = g (M+1)`, `g₂ = g (M+2)` and the
+previous level's decomposition `c = u + Σ vᵢ g₁ wᵢ` at level ≤ M:
+
+  * `shiftedUpTo_commute` — everything at level ≤ M commutes with `g₂` (`far`,
+    since `M+1 < M+2`); `ginv_far` carries this to `ginv` via `quad`.
+  * `base_conj` — `g₂ u g₂ = u g₂² = h • (u g₂) + u`, the quadratic relation.
+  * `sandwich_conj` — `g₂ (v g₁ w) g₂ = v (g₂ g₁ g₂) w = v (g₁ g₂ g₁) w
+    = (v g₁) g₂ (g₁ w)`, the braid relation, and both outer factors have risen
+    exactly one level.
+
+Base case: the bottom stage of the full shift window is affine in `g 0` (`quad`
+makes `ginv 0` affine), so one `quad` + one `braid` at `m = 0` suffice; below the
+window the stage is `⊥` and `quad` alone does it.
+
+`towerSpan_of_braided` / `disjointBlock_of_braided` compose it with #7079 and
+`disjointBlock_of_towerSpan`.
+
+**This is the thing qou-fq1i's own closing note said was still missing** — that
+bean records "the double coset is proved in the permutation model, never by
+rewriting with the braid + quadratic relations, so SandwichReduces for a Hecke
+tower at q ≠ 1 is still unproved". This proof IS the rewriting proof, generic in
+the tower, so it holds at q ≠ 1. The two results are complements, not duplicates.
+
+Refactor: `TowerSpanReduction.step_of_sandwichReduces` extracted from the body of
+`towerSpan_of_sandwichReduces` (now a one-line repackaging). The induction needs
+the per-level form to feed level M's conclusion into level M+1's hypothesis. No
+proof step changed.
+
+**🛑 WHAT IS STILL OPEN, and the bean stays open for it.** No `BraidedTower`
+instance on a Hecke tower is constructed. The class is bracketed by two witnesses
+that no single object combines:
+
+  * `braidedTower_unit` (this PR) — `unitMarkovTrace u` satisfies all three with
+    `h = u − u⁻¹`, non-zero as soon as `u² ≠ 1` (`unit_quad_scalar_ne_zero`). So
+    the relations do NOT force `h = 0`. Filtration constant.
+  * the symmetric-group tower (qou-fq1i / #7131) — filtration grows,
+    non-multiplicative trace, but `h = 0`.
+
+`braid_forces_eq_of_commuting_involutions` proves the third existing witness
+cannot be braided: for commuting involutions the braid relation collapses to
+`g m = g (m+1)`, so `InvolutionTowerWitness` satisfies `SandwichReduces` for
+reasons unrelated to this argument.
+
+A witness with a growing filtration AND `h ≠ 0` is an Iwahori-Hecke tower, which
+Mathlib does not supply. That is now the whole remaining distance, and the
+bond-product reading of the atom word remains MEASURED, NOT DERIVED.
+
+Verification: `lean -DautoImplicit=false -s 65536` against restored
+`lake-cache/qou-v4-24-0` with `DisjointBlockTraceLaw` (29 s) and
+`TowerSpanReduction` (6 s) rebuilt from main source into a hardlinked shadow —
+exit 0, no errors, no warnings. `InvolutionTowerWitness` re-checked against the
+refactored `TowerSpanReduction`: exit 0. `#print axioms` on all ten new
+declarations plus both refactored ones: `[propext, Classical.choice, Quot.sound]`
+(`unit_quad_scalar_ne_zero`: `[propext]` alone). Zero `sorryAx`.
+
+--------
+
+**2026-09-13 (PR #7153, second tranche): `BraidedTower` is INHABITED. The caveat #7153 shipped with is closed on a Hecke tower; what remains is a FAITHFUL TRACE, not a carrier.**
+
+New module `QOU/MathlibExt/BraidedTowerInstances.lean` (175 lines, 7 decls, 0 sorry).
+
+Two carriers landed on `main` while #7153 sat, and the sibling on #7228 explicitly
+left the instantiation to whoever landed second — *"BraidedTower would be a
+three-line instantiation once #7153 lands"*:
+
+* `braidedTower_heckeTower` — `HeckeTowerWitness.heckeTowerMarkovTrace h z hz`
+  (bean `qou-cins`, #7228). `HeckeTower R h` presents `H_∞` as `FreeAlgebra R ℕ`
+  quotiented by exactly `quad` / `far` / `braid` via `RingQuot`, so
+  `twGen_quad` / `twGen_far` / `twGen_braid` ARE the class fields, and `h` is a
+  **free parameter** — the Hecke case `h = q − q⁻¹ ≠ 0` is available.
+  `towerSpan_heckeTower` and `disjointBlock_heckeTower` follow: **the
+  disjoint-block trace law on a Hecke tower at `h ≠ 0`**, the configuration every
+  prior witness missed.
+* `braidedTower_sym` — `SymmetricGroupTowerWitness.symTrace R` (bean `qou-fq1i`,
+  #7131), `h = 0`. This gives `sandwichReduces_sym` a **second, independent
+  derivation**: that file proves it in the permutation model by support and
+  point-pushing through the double coset `S_{k+1} = S_k ∪ S_k s_k S_k`, while
+  `sandwichReduces_all` reproves it by rewriting with the relations, never
+  mentioning a permutation. The two group-level inputs are proved here from
+  `Equiv.swap_apply_apply` alone — `s_far` (distant swaps commute) and `s_braid`
+  (both sides are `swap m (m+2)`).
+
+**CORRECTION to #7153's own docstring, which was wrong twice.** It read *"a
+witness with both a growing filtration and `h ≠ 0` is an Iwahori-Hecke tower,
+which Mathlib does not supply. That, and only that, is what stands between this
+theorem and an unconditional disjoint-block law for the production trace."*
+"Mathlib does not supply" was true and beside the point — the CORPUS supplies
+one; and even against Mathlib it overstated, since
+`SchurWeyl.finrank_le_factorial` (bean `qou-uoal`) is the upper half of the
+coset-basis theorem strict growth needs. "That, and only that" was wrong about
+what remains.
+
+**🛑 WHAT REMAINS, and the instances repair neither. The bean stays open.**
+
+1. **The Hecke trace is NOT FAITHFUL.** `HeckeTowerWitness`'s trace collapses
+   every generator onto the rank-2 generator of `Hecke2` and composes with its
+   Ocneanu trace, so `disjointBlock_heckeTower` is a statement about a coarse
+   functional, **not** about the Ocneanu trace of `H_∞(q)`. Jones' existence
+   theorem is open (bean `qou-g8i1`). This does NOT weaken `sandwichReduces_all`,
+   which uses no trace field — it bounds what the COMPOSITION delivers.
+2. **Strict growth is proved only at the bottom** (`twH_zero_lt_one`:
+   `H 0 < H 1`). The symmetric-group carrier grows at every level
+   (`t_not_mem_shiftedUpTo`) but has `h = 0`. **No single carrier yet has both
+   `h ≠ 0` and growth at every level** — that needs the Iwahori-Hecke coset
+   basis, whose `n!` lower bound is the open half of `qou-uoal`.
+
+So the distance from here to an unconditional disjoint-block law for the
+production trace is a **faithful trace**, not a carrier. The bond-product reading
+of the atom word remains MEASURED, NOT DERIVED.
+
+Verification: `lean -DautoImplicit=false -s 65536` against restored
+`lake-cache/qou-v4-24-0`, with `DisjointBlockTraceLaw`, `TowerSpanReduction`,
+`HeckeRankTwoMarkov`, `HeckeTowerWitness` and `SymmetricGroupTowerWitness`
+rebuilt from `main` source into a hardlinked shadow (all exit 0).
+`BraidedTowerInstances` exit 0, no warnings. `#print axioms` on all seven new
+declarations: `[propext, Classical.choice, Quot.sound]`. Zero `sorryAx`.
+
+--------
+
+**2026-09-13 (correction, one hour after the merge of #7153): TWO citations I landed on `main` are wrong, and one of them is a false claim rather than a bad ID.**
+
+The entry above says the remaining distance is *"a faithful trace, not a carrier"*,
+and cites two beans for it. Both citations are wrong; the shape of the conclusion
+survives, its content does not.
+
+1. **"Jones' existence theorem is open (bean `qou-g8i1`)" — FALSE, both halves.**
+   Jones' theorem is **proved in this corpus, with uniqueness**, sorry-free on
+   `main` and predating my text:
+   * `QOU/SchurWeyl/MarkovTraceInstance.lean` — `wtrace` with `wtrace_cyclic`
+     (T1), `wtrace_one` (T2), `wtrace_markov` (T3) **and** `wtrace_incl` (tower
+     compatibility), bundled as
+     `ocneanuMarkovTrace : HeckeCoset.MarkovTraceFamily R q q⁻¹ (q³/(q²+1))`,
+     plus `eq_wtrace_of_markov` (every such trace IS this one).
+   * `QOU/SchurWeyl/MarkovTraceUnique.lean` — `markovTrace_unique`.
+
+   **The real gap is a BRIDGE, and it is a much smaller and more tractable
+   statement than the one I wrote:** all of that lives in
+   `HeckeCoset.MarkovTraceFamily`, a *different* Markov-trace abstraction, and
+   **nothing bridges it to `OcneanuTrace.MarkovTrace`** — the structure
+   `DisjointBlockTraceLaw` / `TowerSpanReduction` / `HeckeSandwichReduces`
+   actually consume. `qou-g8i1` is not that item at all: it is the `(z+d)` bond
+   rule, and its status is `completed`.
+
+   **I propagated this from `HeckeTowerWitness.lean` lines 59-60, which still
+   carries it on `main`** — and that file's own plan bean `qou-0fmb` re-scoped
+   it on **2026-09-12**, the day before I quoted it: *"MAJOR RE-SCOPE: S2 is NOT
+   open. Jones' existence theorem is PROVED in the corpus, with uniqueness — in
+   a DIFFERENT Markov-trace abstraction that nothing bridges."* A sibling's
+   merged docstring is not a primary source; the bean was, and one grep would
+   have caught it. Flagged to that arc rather than edited, since `qou-cins` /
+   `qou-p8yg` are live (commits 9 h old).
+
+2. **"the `n!` lower bound is the open half of `qou-uoal`" — wrong bean.**
+   `qou-uoal` is `completed` and is the `≤ n!` **upper** half. The live bean is
+   **`qou-p8yg`** (`todo`), and it says something better than "open":
+   **`H 1 < H 2` is a WIRING job, not a build** — the rank-6 separator already
+   exists sorry-free (`SchurWeyl.HeckeDim3Dim.finrank_hecke3`, `sixBasis`,
+   `HeckeDim3.braid3`), with the relation check worked out in the bean. General
+   `n` needs the `(n+1)!` lower bound. `qou-p8yg` also carries the negative that
+   closes the cheap route — `scalar_tail_forces_central` excludes the whole
+   tail-to-scalars family.
+
+**What survives unchanged.** Every Lean statement merged in #7153 — the two
+instances, `disjointBlock_heckeTower`, `sandwichReduces_all` and the rest — is
+untouched by this: the error is in prose citing other work, not in any proof.
+What changes is the *map of what remains*, and it changes in the direction of
+tractability: a bridge between two Markov-trace abstractions and a wiring job on
+an existing rank-6 separator, rather than Jones' theorem and an open `n!` bound.
+
+Corrected in place in `BraidedTowerInstances.lean` and `HeckeSandwichReduces.lean`
+rather than quietly dropped, per AGENTS.md §Terse ≠ compressed trigger 1.
+lean-direct exit 0 on both after the edit.
+
+### Same day, independently — the same two-citation error, plus one point the entry above does not carry
+
+I hit the `qou-g8i1` error from the other direction (PR #7267) and reached the same
+verdict: the bean is `completed` and about the (z+d) bond rule; Jones' existence
+theorem is proved on `main` with uniqueness; the real gap is the bridge between
+`HeckeCoset.MarkovTraceFamily` and `OcneanuTrace.MarkovTrace`, live at
+`qou-ejde` / PR #7274. **Two independent readings, same conclusion** — recorded
+because the convergence is evidence, not because the correction needed repeating.
+
+**The additive point: "faithful on `H_∞(q)`" is not merely open, it is REFUTED at
+convention D.** The Wenzl weight vanishes for `ℓ(λ) ≥ 3`
+(`QOU/QBeta/WenzlWeightVanishing.conventionD_weight_eq_zero_iff_rowLens`,
+sorry-free), so the radical is nonzero and no trace on `H_∞(q)` can be faithful at
+the canonical convention. The attainable target is faithfulness on `H_∞(q)/rad`.
+This is already adjudicated as bean `qou-phlk` (`completed`) — *"DEFECT:
+prop:algebraic-gns-embedding claims faithfulness on H_inf(q); its proof gives
+H_inf/rad"*. Anyone writing the bridge's target statement should write the quotient,
+or they re-introduce an over-claim the corpus removed once.
+
+**Contamination count from my side:** the stale pointer reached three sites in
+`BraidedTowerInstances.lean` — the header, the "not faithful" bullet, and the
+`-- Ref:` line — and **two of the three were not mine**, i.e. the same text the
+entry above corrects. My PR #7267's measured finding is unaffected by any of it:
+`ocneanuTrace_mul_of_markov` is about `Hecke2` and never mentions Jones' theorem.

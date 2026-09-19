@@ -1,0 +1,310 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-13T12:34:56.313455+00:00",
+  "commitSha": "60234841f28baad4485b0af968fd7580e2934169",
+  "assertions": [
+    {
+      "name": "general_n_reducer_reproduces_the_corpus_h3_tables",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "6 words reduced both ways -- by `hm_sym` (the corpus's hand-coded H_3 GB tables) and by this file's general-n T-basis rule -- agreeing in all 6 slots. Mismatches: none"
+    },
+    {
+      "name": "two_generic_h_samples_agree",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "h = 7/3 and h = 11/5: ranks [3, 21] vs [3, 21], distinct counts [9, 511] vs [9, 511]. A specialised rank is a LOWER bound on the symbolic one; two agreeing generic points is evidence, not a proof"
+    },
+    {
+      "name": "h3_growth_is_linear_the_known_control",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "n = 3: 1 vertex available; distinct elements after k vertices = [1, 2, 3, 4, 5, 6, 7, 8, 9] = k+1 exactly -- the cyclic monoid of gammaGamma_threeStrand, recovered by a reducer that knows nothing about that theorem"
+    },
+    {
+      "name": "h4_growth_is_free_the_collapse_does_not_generalise",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "n = 4: 2 vertices; distinct elements after k vertices = [1, 3, 7, 15, 31, 63, 127, 255, 511] = 2^(k+1) - 1, i.e. every one of the 2^k words of length 2k is a DISTINCT element of H_4. The Hecke relations impose no collapse on the gamma-gamma submonoid up to k = 8"
+    },
+    {
+      "name": "spans_are_proper_subspaces_at_both_n",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "n = 3: rank 3 of 6; n = 4: rank 21 of 24. Free growth and a proper span are consistent -- infinitely many distinct elements can live in a finite-dimensional subspace, and the constraint the route inherits is the SPAN, not the count"
+    },
+    {
+      "name": "four_strand_span_is_absolutely_larger",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "span 3/6 = 1/2 at n = 3 against 21/24 = 7/8 at n = 4. Absolutely larger; the FRACTION is reported rather than asserted, since which of the two is the meaningful comparison is not established here"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6207,
+  "computation": "qbeta-gamma-gamma-submonoid-h4",
+  "scriptFile": "qbeta_gamma_gamma_submonoid_h4_probe.py",
+  "scriptHash": "006676e72fb5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_gamma_gamma_submonoid_h4_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_gamma_gamma_submonoid_h4_probe.py"
+  },
+  "description": "Does the three-strand gamma-gamma collapse generalise? Measures two things about the gamma-gamma submonoid at n = 3 and n = 4: how many DISTINCT elements the free monoid on the available vertices produces after the Hecke relations, and the rank of their linear span inside H_n. n = 3 is the control -- growth there must be linear, recovering gammaGamma_threeStrand from a reducer that knows nothing about it. Scope-(a): SIZE and SPAN only; no four-strand Markov trace is computed, so nothing is said about whether an H_4 gamma-gamma element reproduces an observable. The general-n reducer is validated against the corpus's hand-coded H_3 tables (CHECK 1).",
+  "data": {
+    "n_3": {
+      "algebra_dim": 6,
+      "vertices_available": 1,
+      "growth": [
+        {
+          "vertices": 0,
+          "words": 1,
+          "distinct_elements_cumulative": 1
+        },
+        {
+          "vertices": 1,
+          "words": 1,
+          "distinct_elements_cumulative": 2
+        },
+        {
+          "vertices": 2,
+          "words": 1,
+          "distinct_elements_cumulative": 3
+        },
+        {
+          "vertices": 3,
+          "words": 1,
+          "distinct_elements_cumulative": 4
+        },
+        {
+          "vertices": 4,
+          "words": 1,
+          "distinct_elements_cumulative": 5
+        },
+        {
+          "vertices": 5,
+          "words": 1,
+          "distinct_elements_cumulative": 6
+        },
+        {
+          "vertices": 6,
+          "words": 1,
+          "distinct_elements_cumulative": 7
+        },
+        {
+          "vertices": 7,
+          "words": 1,
+          "distinct_elements_cumulative": 8
+        },
+        {
+          "vertices": 8,
+          "words": 1,
+          "distinct_elements_cumulative": 9
+        }
+      ],
+      "span_rank": 3,
+      "distinct_total": 9,
+      "h_sample": "7/3"
+    },
+    "n_3_second_sample": {
+      "algebra_dim": 6,
+      "vertices_available": 1,
+      "growth": [
+        {
+          "vertices": 0,
+          "words": 1,
+          "distinct_elements_cumulative": 1
+        },
+        {
+          "vertices": 1,
+          "words": 1,
+          "distinct_elements_cumulative": 2
+        },
+        {
+          "vertices": 2,
+          "words": 1,
+          "distinct_elements_cumulative": 3
+        },
+        {
+          "vertices": 3,
+          "words": 1,
+          "distinct_elements_cumulative": 4
+        },
+        {
+          "vertices": 4,
+          "words": 1,
+          "distinct_elements_cumulative": 5
+        },
+        {
+          "vertices": 5,
+          "words": 1,
+          "distinct_elements_cumulative": 6
+        },
+        {
+          "vertices": 6,
+          "words": 1,
+          "distinct_elements_cumulative": 7
+        },
+        {
+          "vertices": 7,
+          "words": 1,
+          "distinct_elements_cumulative": 8
+        },
+        {
+          "vertices": 8,
+          "words": 1,
+          "distinct_elements_cumulative": 9
+        }
+      ],
+      "span_rank": 3,
+      "distinct_total": 9,
+      "h_sample": "11/5"
+    },
+    "n_4": {
+      "algebra_dim": 24,
+      "vertices_available": 2,
+      "growth": [
+        {
+          "vertices": 0,
+          "words": 1,
+          "distinct_elements_cumulative": 1
+        },
+        {
+          "vertices": 1,
+          "words": 2,
+          "distinct_elements_cumulative": 3
+        },
+        {
+          "vertices": 2,
+          "words": 4,
+          "distinct_elements_cumulative": 7
+        },
+        {
+          "vertices": 3,
+          "words": 8,
+          "distinct_elements_cumulative": 15
+        },
+        {
+          "vertices": 4,
+          "words": 16,
+          "distinct_elements_cumulative": 31
+        },
+        {
+          "vertices": 5,
+          "words": 32,
+          "distinct_elements_cumulative": 63
+        },
+        {
+          "vertices": 6,
+          "words": 64,
+          "distinct_elements_cumulative": 127
+        },
+        {
+          "vertices": 7,
+          "words": 128,
+          "distinct_elements_cumulative": 255
+        },
+        {
+          "vertices": 8,
+          "words": 256,
+          "distinct_elements_cumulative": 511
+        }
+      ],
+      "span_rank": 21,
+      "distinct_total": 511,
+      "h_sample": "7/3"
+    },
+    "n_4_second_sample": {
+      "algebra_dim": 24,
+      "vertices_available": 2,
+      "growth": [
+        {
+          "vertices": 0,
+          "words": 1,
+          "distinct_elements_cumulative": 1
+        },
+        {
+          "vertices": 1,
+          "words": 2,
+          "distinct_elements_cumulative": 3
+        },
+        {
+          "vertices": 2,
+          "words": 4,
+          "distinct_elements_cumulative": 7
+        },
+        {
+          "vertices": 3,
+          "words": 8,
+          "distinct_elements_cumulative": 15
+        },
+        {
+          "vertices": 4,
+          "words": 16,
+          "distinct_elements_cumulative": 31
+        },
+        {
+          "vertices": 5,
+          "words": 32,
+          "distinct_elements_cumulative": 63
+        },
+        {
+          "vertices": 6,
+          "words": 64,
+          "distinct_elements_cumulative": 127
+        },
+        {
+          "vertices": 7,
+          "words": 128,
+          "distinct_elements_cumulative": 255
+        },
+        {
+          "vertices": 8,
+          "words": 256,
+          "distinct_elements_cumulative": 511
+        }
+      ],
+      "span_rank": 21,
+      "distinct_total": 511,
+      "h_sample": "11/5"
+    },
+    "method_caveat": "growth and rank are measured with h specialised to a generic rational, so both are LOWER BOUNDS on the symbolic answer; reaching a maximum at a sample point therefore establishes it exactly, while a rank is 'at least r'. Two generic values agree (CHECK 2a)",
+    "scope": "a",
+    "k_max_enumerated": 8,
+    "what_this_does_not_measure": [
+      "any four-strand Markov trace -- the Ocneanu recursion at n = 4 is not implemented here, so nothing is said about whether an H_4 gamma-gamma element reproduces an observable",
+      "growth beyond k = 8 vertices; 'free' is a measured statement about that range, not a proof",
+      "whether the H_4 span contains any element the corpus needs"
+    ],
+    "lean": [
+      "QOU.Mass.AltCharShiftMultiset.gammaGamma_iff_vertexWord -- the gamma-gamma words are exactly the free monoid on the vertices",
+      "QOU.Mass.AltCharShiftMultiset.gammaGamma_index_lt -- on n strands only indices i with i+1 < n-1 are available",
+      "QOU.Mass.AltCharShiftMultiset.gammaGamma_threeStrand -- the n = 3 collapse, which CHECK 2 recovers numerically"
+    ]
+  }
+}

@@ -183,7 +183,7 @@ theorem shape_ne_zero_ne_one (z : ℍ) : (z : ℂ) ≠ 0 ∧ (z : ℂ) ≠ 1 :=
       `volume = D(shape)`, whose geometric content is supplied by
       `conj:shared-denominator-cusp-holonomy` (the pole side of the
       matching is the unconditional theorem
-      `pole_cusp_bijection_proved` below).
+      `denomPolyLocal_roots_explicit` below).
 
     The §2 Bloch-Wigner asymptotic is then **derived**
     (`AlgebraicGeometricEquivalence.asymptotic_volume`), not assumed.
@@ -245,9 +245,20 @@ theorem denomPolyLocal_eq_zero_at_pole (q : ℝ) (hq : q ≠ 0)
 
 /-- **Theorem-backed pole side.** The strengthened §1 statement the class field
     omits: the explicit root function `k ↦ q^{-k}` together with the proof that
-    each value is a genuine zero of `(x; q)_n`. Unconditional for `q ≠ 0`. -/
+    each value is a genuine zero of `(x; q)_n`. Unconditional for `q ≠ 0`.
+
+    **Renamed 2026-09-14 from `pole_cusp_bijection_proved`** (bean `qou-mfdq`,
+    executing the recommendation of
+    `docs/audits/2026-09-04-how-the-hyperbolic-volume-could-arise-from-qou.md`
+    §"Two moves"). The old name asserted three things this statement does not
+    contain: there is **no cusp** in the type, **no bijection** (no `Equiv`, no
+    injectivity, no cardinality), and `_proved` claimed a compound the file's own
+    prose calls open. What it proves is that `n` explicit values are roots of a
+    polynomial. The old name was the sort of thing a downstream reader greps and
+    cites as evidence for the geometric side; the corpus-grep discipline is
+    exactly what it would have defeated. -/
 -- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence §1
-theorem pole_cusp_bijection_proved (q : ℝ) (hq : q ≠ 0) (n : ℕ) :
+theorem denomPolyLocal_roots_explicit (q : ℝ) (hq : q ≠ 0) (n : ℕ) :
     ∃ z : Fin n → ℝ, (∀ k : Fin n, z k = q ^ (-(k : ℤ)))
       ∧ (∀ k : Fin n, denomPolyLocal q (z k) n = 0) :=
   ⟨fun k => q ^ (-(k : ℤ)), fun _ => rfl,
@@ -267,7 +278,7 @@ mathematical hypotheses carry ALL the content and are cited — **not** laundere
   (`computations/qbeta/qbeta_c3_kashaev_invariant_grounding.py`).
 * `h_pole_cusp_matched` — the matched cusp volume equals `D(z)` at a shape `z`
   on the upper half plane; the algebraic pole side is proved above
-  (`pole_cusp_bijection_proved`); the geometric cusp match is
+  (`denomPolyLocal_roots_explicit`); the geometric cusp match is
   `conj:shared-denominator-cusp-holonomy`.
 
 The composition (below) is the trivial limit-point substitution — precisely
@@ -305,7 +316,7 @@ theorem AlgebraicGeometricEquivalence.asymptotic_volume (q x : ℝ)
   asymptotic_volume_of_vc q x h.volume h.shape h.vc_asymptotic h.pole_cusp_matched
 
 /-- **Stated equivalence (conjecture bundle, both halves).**  §1 is the
-    unconditional strengthened pole side (`pole_cusp_bijection_proved`,
+    unconditional strengthened pole side (`denomPolyLocal_roots_explicit`,
     needing only `q ≠ 0`); §2 is derived from the class hypotheses.  The
     only conjectural inputs are the class fields — the composition
     contains no `sorry` and assumes nothing provable-outright. -/
@@ -317,7 +328,7 @@ theorem algebraic_geometric_equivalence
     (∀ ε > (0 : ℝ), ∃ N : ℕ, ∀ m, N ≤ m →
       ‖(1 - q) * Real.log (partialProductLocal q x m)
         - BlochWignerD h.shape‖ < ε) :=
-  ⟨pole_cusp_bijection_proved q hq n,
+  ⟨denomPolyLocal_roots_explicit q hq n,
     AlgebraicGeometricEquivalence.asymptotic_volume q x⟩
 
 end QOU.QPochhammer

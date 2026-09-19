@@ -42,7 +42,7 @@ universe u v
 -- Ref: [connes1994] Noncommutative Geometry
 structure CategoricalDiracOperator (R : Type*) [CommRing R]
     (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear R C]
     (fh : FrobeniusHopfData C) where
   /-- The underlying connection `∇`. -/
@@ -68,7 +68,7 @@ structure CategoricalDiracOperator (R : Type*) [CommRing R]
 -- Ref: [connes1994] Noncommutative Geometry
 structure CategoricalLagrangian (R : Type*) [CommRing R]
     (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear R C]
     (fh : FrobeniusHopfData C) where
   /-- The Dirac operator `𝒟_∇`. -/
@@ -89,7 +89,7 @@ structure CategoricalLagrangian (R : Type*) [CommRing R]
     encode `q⁻¹` without needing an inverse in the Laurent ring `R_q`). -/
 -- Ref: [connes1994] Noncommutative Geometry
 structure CategoricalQConnection (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear Archimedean.R_q C] where
   /-- The Frobenius–Hopf object `A`. -/
   A : C

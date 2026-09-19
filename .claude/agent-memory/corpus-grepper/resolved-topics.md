@@ -266,7 +266,7 @@ Audit: `docs/audits/2026-09-04-how-the-hyperbolic-volume-could-arise-from-qou.md
   sorry-free). Honest instantiation forces `volume = 0`. Not a live contradiction
   (`opaque`; the theorem is `ℂ → ℝ` and unwired). Fix is a **re-typing** to
   `Im z > 0`, reusing `IdealTetrahedron.param`. Scope **(a)**.
-- **🛑 Claim-shape:** `pole_cusp_bijection_proved` (`:124`) contains **no cusp and
+- **🛑 Claim-shape:** `pole_cusp_bijection_proved` (renamed 2026-09-14 to `denomPolyLocal_roots_explicit`) (`:124`) contains **no cusp and
   no bijection** — it exhibits `n` roots of `(x;q)_n`. The file's prose is honest;
   the NAME is what gets cited.
 - **Bring's surface DOES have its hyperbolic structure used** —
@@ -472,3 +472,60 @@ hook measure ↔ GWW matrix model ↔ free-fermion droplets) and `library/arxiv-
 Plancherel Growth*). Neither appears in `references.ts`, so no block can cite them.
 **Registered-but-NOT-ingested** and load-bearing here: `stanley1999`, `macdonald1995`, `sagan2001`, `ooguri-vafa2007`,
 `jones1987`, `wenzl1988`, `macdonald1971` (verified by parsing the `library:` field, not by awk proximity).
+
+## 2026-09-14 — is there a recorded LINK between ideal triangulation (A) and q-Navier–Stokes (B)?
+
+- **Answer: TWO `prose` blocks, and nothing else on any of the six paths.**
+  `brings-surface/approach-to-exceptional-divisor.md:9` (two vortex cores merge ⇒
+  `π₁(ν₁) ∗ π₁(ν₂) → π₁(U∖K)`) and `brings-surface/thurston-relaxation.md:3`
+  ("Once the two vortex cores merge … the operative geometry is the complement
+  `U∖K`"). Both are `export default prose({ label: "sec:…" })` — **no `uses[]`,
+  no `lean`, no `computation`, no `interprets`.** Adjacent in the
+  *Bundle structures and smoothness* section of `brings-surface.ts:118-119`.
+- **Zero `uses[]` edge either way.** `fluid-dynamics/*.ts` carries **142**
+  distinct label refs; none is a triangulation/volume/dilog/Kashaev/Thurston
+  label. Reverse: 14 fluid-dynamics labels are consumed externally, none by
+  `mass-theory/`, `brings-surface/`, `predicted-spectra/`, `appendix-qvalues/`.
+- **Shared upstream nodes, both one-sided.** `prop:q-laplacian-spectral-tower`
+  is used by `fluid-dynamics/root-of-unity-truncation.ts` **and**
+  `mass-theory/gram-matrix-spectral-connection.ts` — Gram/Hecke, not the
+  triangulation side. `conj:gb-depth-period-correspondence` (GS-depth ↔ number
+  of ideal tetrahedra) reaches `appendix-surreals/millennium-bounds-via-surreals-intro.ts`
+  only through an `authorNotes.see` field, not a `uses[]` edge.
+- **Path 3 = 0.** No `computations/` file touches both halves. The 17
+  `qns_*` probes carry **no `q0Value`**; two declare `q0Anchor: independent`;
+  `qns_levi_lock_scaling_probe.py:72-77` sweeps `q = 1.0 + eps`, `eps = 1e-1…1e-8`,
+  float64 — **the substrate `q₀ ≈ 1.10998` is never evaluated on the q-NS side.**
+- **Path 5 = 0 for half (B) entirely.** `Navier` and `enstrophy` return **zero**
+  across `library/*/sections/` AND `library/*/ocr/` (705 dirs). Held fluid
+  sources exist (`candetgl` Biot–Savart, `helicity03mmj`, DeTurck–Gluck) and
+  none touches triangulation/gluing/volume. Nearest both-sided doc is
+  `0510388v1` *Electrodynamics and the Gauss linking integral … in hyperbolic
+  3-space* (dilogarithm ×2, "fluid dynamics" ×1) — no gluing equation.
+- **The SHARED NAMED OBJECT is the Levi form `L_Θ` of the contact/CR structure**,
+  from which the substrate parameter is *defined*:
+  `q(p) = 1 + |⟨L_Θ, F_A^+⟩| ≥ 1` (`models-of-qous/c-substrate-via-levi.md:3`,
+  `quantum-observable-universes/levi-generalisation.md:3`). (B) states its
+  millennium equivalence on it (`prop:core-levi-form`); (A)-adjacent blocks use
+  it for Bring's pseudoconvexity. **Nothing connects the Levi form to the
+  triangulation/volume machinery** — searched `content/`, Lean, `computations/`.
+
+### TRAPS added the same day (two homonyms, both inside this arc)
+
+1. **`hyperbolic` on the fluid side is a SADDLE, not geometry.**
+   `rem:hyperbolic-overlap-saturation`, `qns_levi_lock_scaling_probe.py:6-7`,
+   `qns_pair_riccati_probe.py:14-15` all mean *hyperbolic stagnation-point flow*.
+   A `hyperbolic` co-occurrence grep returns these and they are **not** a link.
+2. **`qns` is a substring of `eqns`.** A `grep -i qns computations/` returned 5
+   spurious "BOTH halves" files — `kashaev_link_statesum.py:424`,
+   `cgz_cyclic_qdilog_unit_probe.py:212`, two `gswz_*`, and
+   `qbeta_c3_mq0_nk_scan.py:246` — every one matching the word *"eqns"*.
+   Use `\bqns_|\bqns-|q-NS\b`.
+3. **Library index invariant CHECKS OUT 2026-09-14:** 705 dirs − 683 rows
+   = 22 = 21 duplicates + 1 container. Tier 1 is current; do not assume drift.
+
+### Repair to a MEMORY.md trap, same day
+The `BlochWignerD : ℝ → ℝ` weakest-link recorded 2026-09-04 is **FIXED**:
+`mass-theory/algebraic-geometric-dilog-equivalence.md:104-118` now records the
+un-composition — `shape` is a class field typed `UpperHalfPlane`, "so a
+degenerate shape is not expressible". Do not re-report it as live.

@@ -81,6 +81,8 @@ export default chapter({
         "quantum-gap-collapse",
         "classical-limit-obstruction",
         "classical-limit-obstruction-properties",
+        "classical-shadow-of-the-substrate",
+        "wigner-axiom",
         "qou-obstruction-reduction",
         "qou-obstruction-reduction-proof",
         "qou-obstruction-reduction-interpretation",

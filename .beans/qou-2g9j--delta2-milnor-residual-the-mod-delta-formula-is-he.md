@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T10:58:08Z
-updated_at: 2026-09-04T22:13:09Z
+updated_at: 2026-09-14T06:34:43Z
 ---
 
 Successor to `qou-768r` route 3, which closed the `Delta = 0` (min-span) family and
@@ -219,3 +219,37 @@ an artifact. Control B: Borromean gives nonzero.
 Scope (a): one insertion shape, all-`sigma^-1` base branch, sampled positions, 4
 isotopes. Probe `computations/probes/mixed_sign_cyclic_square_does_reopen_milnor_probe.py`,
 5/5, idempotent, integer arithmetic throughout.
+
+
+
+---
+
+## 2026-09-14 — the committed witness's COUNTS are stale (headline is not)
+
+Re-run on `main` + this branch, `PYTHONPATH=computations`: **5/5 assertions
+pass**, `triples_of_the_carrier_with_NONZERO_mubar = 0` — the headline holds.
+
+But **`delta_2_triples_examined` moved 256 → 173 (−32.4 %)**, and Δ=2 is the
+class this probe's own docstring calls *"THE RESIDUAL — one bit available, and
+it is 0"*. The residual population shrank by a third.
+
+**Cause is import-cone drift, not a producer edit.** The producer's only commit
+since the witness (`6b2692f7b9`) *creates* the file on this path — a rebase
+artifact, +328 lines, no content change — while `canonical_braid_crossings.py` /
+`mass_at_3A_proper.py` moved three times in the same window (`ee1ff95d6a`,
+`9cef96fbf0`, `99e2ddc1d9`). The canonical braid word changed underneath a
+source-stable producer: the class AGENTS.md flags as invisible to
+`git diff <producer>`.
+
+**Witness deliberately NOT committed.** The fresh run also degrades the
+environment block — this container lacks `clarabel`, `scipy`, `sympy`, and the
+producer's own guard says *"the numbers can be identical while the provenance
+silently degrades"*. Reverted rather than commit a weaker record; the count
+correction belongs in a run with the full environment.
+
+**Also noted:** `delta_2_triples_examined` asserts `computed == expected` where
+`expected` is itself computed, so it can never fail. It is a reported count
+wearing an assertion's clothes — fine as a record, but it is not a check, and a
+reader scanning "5/5 passed" should not count it as one.
+
+Consumed by `qou-o6ml`, which now cites this probe (it did not before).

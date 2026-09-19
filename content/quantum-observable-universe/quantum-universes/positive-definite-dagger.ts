@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:positive-definite-dagger",
+  examples: ["ex:positive-dagger-su2"],
   title: "Frobenius dagger is positive-definite",
   lean: { ref: "qou:QOU.frobenius_dagger_positive_definite",
     validation: "not_checked",

@@ -150,8 +150,16 @@ def main() -> None:
     # templates would have left the verdict prose intact and the witness green.
     # Now the ratio is measured: the proton chain sums to −4h and the neutron
     # chain to −5h, so the difference over h is 1 to the last digit carried.
+    # RESIDUAL against 0, not value against target: the verdict path
+    # (qou_substrate/witness.py) compares float(computed) to float(expected),
+    # so a value-vs-value form here could not resolve anything below the
+    # float64 floor and the tolerance below it was unreachable by ~10^19.
+    # A residual near zero IS representable as a float64 all the way down, so
+    # the same tolerance is a real bound on it.
+    # Gate: computations/audits/tolerance_below_arithmetic_floor_audit.py.
     wb.add_assertion("intra_pn_difference_is_bar_odd_exact_h",
-                     computed=mp.nstr(pn_over_h, 30), expected="1", tolerance="1e-35",
+                     computed=mp.nstr(abs(pn_over_h - 1), 20), expected="0",
+                     tolerance="1e-35",
                      source="(Σd(proton uud) − Σd(neutron udd)) / h from "
                             "atom_braid_word_3A(1,0) and (0,1), h = q−q⁻¹ at the "
                             "same 50-digit q the word is built from; a single "

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-08T08:55:40Z
+updated_at: 2026-09-14T20:32:51Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -8063,3 +8063,494 @@ m (route: bicoloured Motzkin, absent from Mathlib); and therefore
 `dim TL_n = catalan n` and the semisimplicity it feeds. NOT closed.
 
 ## 2026-09-08 — BASE SETTLED by owner ruling (qou-99qc): ε := tr_M at z_D. The D-frame ladder is to be re-derived on the z_D base (0.4447004 MeV, −43.157 %). Structural c₂ = −1 remains the self-consistency check; the blocker is still the N=1 phase (qou-pdix). No z-swap of the C ladder (decayLadder_zC_threeRow_ne_zero).
+
+
+
+## 🛑 CORRECTION 2026-09-12 (from PR #7212) — the three net figures quoted here are at q = 111/100
+
+This bean quotes, in its "no single 11-crossing element" item:
+
+  build_nucleon_nf     ( 9 crossings)      net = -0.1883216147
+  build_atom_nf_exact  (11, interleaved)   net = -0.2272041420
+  nucleon_gen_chains   (11, gen-grouped)   net = -0.2332458961
+
+All three match **q = 111/100** to every digit quoted; none matches the
+substrate proton pin:
+
+  model                                q=111/100        substrate proton
+  build_nucleon_nf     ( 9 crossings)  -0.18832161472   -0.18829060147
+  build_atom_nf_exact  (11, interl.)   -0.22720414203   -0.22715971177
+  nucleon_gen_chains   (11, gen-grp)   -0.23324589607   -0.23319771132
+
+q = 111/100 is `pyhecke.gram._H_FRAC`'s exactness device, **185 ppm** off the
+substrate -- ~16000x the 11.54 ppb mu-p tension. Diagnosed 2026-09-04 in
+`docs/audits/2026-09-04-delta-net-canon-and-crossing-count-analysis.md` §(ii)
+and asserted in `qbeta_delta_candidate_census_probe`; the correction had not
+reached this bean.
+
+The item's CLAIM is unaffected -- there really are three mutually inconsistent
+nucleon constructions, and the two 11-crossing ones really do differ only in
+ORDER. Only the decimals were at the wrong q.
+
+Cross-check that fixes them: the gen-grouped substrate value is the calibration
+constant `qbeta_option_e_order_dof_range_probe` (merged) asserts at 1e-30,
+-0.23319771131565870204...
+
+Same correction appended to `qou-bg3w` and `qou-1qsw`, and applied to
+`qbeta_d1_eleven_crossing_exclusion_probe`'s docstring (commit 4694165f19).
+
+NOT closing or re-statusing this bean -- it is in-progress and belongs to
+another agent's arc.
+
+---
+
+## 2026-09-13 — the N question's last branch closed, and the ω-grade written in
+
+Three landings, plus a correction to the first of them.
+
+**#7149 (`8f6771235f`)** reduced the route-5 `N` question to a trichotomy on
+the arithmetic nature of `q₀`. Two branches closed; one survived — `q₀`
+algebraic irrational, which by the pinning identity needs `Vol(4₁)` algebraic.
+
+**#7263 (`f6f17fa092`)** closed it. `QOU/Archimedean/VolumeTranscendence.lean`
+already carried `HyperbolicVolumeIndependence`, whose `no_relation` quantifies
+over arbitrary finitely-supported `f : ℕ × ℕ × ℕ → ℚ`; restricted to the
+`(i,0,0)` slice that is Mathlib's `transcendental_iff` verbatim. The file drew
+only the *irrationality* rung and `Transcendental` appeared nowhere in it — but
+`SingleVolumeIrrational` cannot touch the survivor, since an irrational may be
+algebraic and the survivor is precisely the algebraic-irrational case.
+`volTranscendental [HyperbolicVolumeIndependence] : Transcendental ℚ vol_4_1`,
+lean-direct exit 0, axioms `[propext, Classical.choice, Quot.sound]`, no
+`sorryAx`. **Not a proof of transcendence** — the class has no instance and
+this adds none; the `[Instance]` binder is the §3b-tax dependency edge.
+
+**#7289** writes the ω-grade into `conj:kashaev-surreal`, which was thorough
+about what `st` *is* and silent on what it discards. At `N = ω` the leading
+monomial of `δ_N := (2π/N)log⟨4₁⟩_N − Vol(4₁)` is `(log ω)/ω`, strictly between
+grade −1 and grade 0. Both halves matter: `ord_ω(δ) = −1` coarsely (so
+`st(δ) = 0` and the figure-eight discharge stands), **and** `δ` is not a
+grade-(−1) monomial because `ω·δ` diverges. Three consequences, all written
+down before measurement and all landing: `N·δ/log N → 3π` from below with the
+derived offset (gap `0.0183 → 0.000295`, halving on each doubling); `N·δ`
+divergent (`35.22 → 67.81`); `1/N` Richardson leaving `3π log 2 = 6.53275827`
+(measured `6.53058` at N=800).
+
+### 🛑 The correction, and it is mine
+
+The #7263 probe and its witness `description` attributed the sub-leading
+asymptotic to *"the cited Ohtsuki / Andersen–Hansen expansion"* and said it was
+not re-derived here. **Written without running the corpus-grep.**
+`prop:one-loop-prefactor-provenance` **derives** both `3^{-1/4}` and the power
+`3/2` from the one-variable saddle at `θ* = 5π/6` (Lean
+`c_pow_four_eq_third`), and says in its own words that the `4₁` calibration the
+whole `c_σ` arc rested on is thereby retired. Near-miss worth recording:
+`ohtsuki2016` in `references.ts` is about the **5₂** knot, not `4₁` — reaching
+for it would have been a second wrong attribution in the act of fixing the
+first.
+
+#7289 corrects all seven sites in the probe and re-runs it: **every numeric
+field is byte-identical**, only the attribution words move. What does *not*
+change is that the `O(1/N²)` tail is **measured** (check 1), not derived — the
+proposition states a leading asymptotic and records the step from its two
+machine-checked analytic inputs to the saddle hypotheses as still assumed.
+
+### What this does NOT do for `qou-cds1`
+
+Nothing here touches the D-frame re-derivation of the `c_k` ladder, which is
+this bean's subject and remains **open** (still blocked on the phase
+`qou-pdix`). The `N` question was one branch of the route-5 sub-arc; closing it
+conditionally on an instance-free conjecture class does not produce a `c_k`.
+
+
+
+## 2026-09-14 — D2 AUTHORISED by the owner, and the authorisation is smaller than it looks
+
+Owner, verbatim: *"work convention-D c_k re-derivation"*. Ledger ruling recorded
+at `docs/coordination/2026-09-05-owner-gated-bean-triage.md`.
+
+**Measured before starting it: four of the five rungs need no re-derivation.**
+Full working, with numbers:
+[`docs/audits/2026-09-13-d2-ck-tail-is-already-convention-d.md`](../docs/audits/2026-09-13-d2-ck-tail-is-already-convention-d.md).
+
+AGENTS.md says *"treat every `c_k` conclusion … as C-conditional"*. The
+companion half — *"the ladder must be RE-DERIVED under D, and that is not a
+z-swap"* — is exactly right and proved
+(`decayLadder_zC_threeRow_ne_zero`). **The first half is too strong for
+`c₂…c₅`.**
+
+Read at the definitions in `QBetaCategoricalPrecisionLadder.lean`, not the
+docstrings: `N2…N5` are built from `hoefsmitB` and `hbarQ'` alone — **`z` does
+not appear in any of them.** Only `N1_factor` reads `alpha q`. Two sorry-free
+theorems on `main` make that structural rather than incidental:
+
+* `Q_beta_categorical_ofPhase_tail_common` — the tail is **phase-independent**
+  (proof: `unfold; ring`).
+* `hoefsmitB_sq_eq_one_sub_stdWeightD` — **`b² = 1 − y_(2,1)^D`**, and the Lean's
+  own docstring records the identity as **D-specific**: under C the `H₃(q)`
+  weights carry `√q`, keep `y_(1³) ≠ 0`, and it fails.
+
+Verified numerically at the proton pin, `mp.dps = 50`:
+`b² = 1 − y_(2,1)^D` to **2.7e-51**; `ckTail = 0.999926215050140186`
+(`N2 = 0.99992745671562`, `N3 = 0.99999876426366`, `N4 = 0.99999999403692`,
+`N5 = 0.99999999994385`), against `z_C = 0.499320334184` and
+`z_D = 0.612688037146`, neither of which enters it.
+
+**So the D2 re-derivation is ONE PHASE, not five coefficients.** What is
+genuinely C-conditional is the N=1 eigenphase `α` — the blocker `qou-pdix`
+already isolates — and through it the ladder's overall value.
+
+**Scope, explicitly.** Not a claim that the ladder's *value* is
+convention-blind (it is not — `N1_factor` carries `alpha`, and a z-swap stays
+invalid). Not a claim that the original 2026-05 *derivation* of `c₂…c₅` was free
+of C-flavoured reasoning; what is established is about the objects the corpus
+now carries. Not a derivation of `α`. Nothing wired, no number moved.
+
+**Why this matters now:** as of `main` `8b367484ed`, `qou-pdix` has **all four
+named attacks on `α` closed or forbidden** (A withdrawn by its own author, B
+pruned then measured inert, C closed by PR #7340, D a fourth calibration). With
+every route shut, the useful thing to know is what the blocker costs — and it
+costs one rung, not five.
+
+## 2026-09-14 — where the convention enters, measured (PR #7343)
+
+Owner authorised D2 (*"work convention-D c_k re-derivation"*). Measuring the
+scope first:
+
+**The Markov convention reaches this ladder at exactly ONE place** — the N=1
+eigenphase `alpha = (z-1)*h/2`. The tail factors N2..N5 never mention z. Two
+independent surfaces agree:
+
+- Python: `qbeta_utils.py:225` says so outright and guards it (`_WITHHELD =
+  ("z","alpha")`, raises rather than hand out a convention unnamed).
+- Lean (new, this PR): `N2_factor..N5_factor` are built from `hoefsmitB` and
+  `hbarQ'` alone; `Q_beta_categorical_ofPhase_tail_common` proves the tail is
+  phase-independent; `hoefsmitB_sq_eq_one_sub_stdWeightD` gives
+  `b^2 = 1 - y_(2,1)^D`, so the tail's generator is structurally a D object.
+
+**But that does NOT make four rungs convention-blind, and my first draft said it
+did.** Every extracted c_k divides through Q_N1, so the single entry point
+propagates to all five. AGENTS.md's "treat every c_k conclusion as
+C-conditional" is correct as written; the draft's "too strong for c2..c5" is
+withdrawn.
+
+Already on main with a committed witness, and my corpus-grep missed it:
+`qbeta_c3_ladder_trace_convention_sensitivity_probe.py` (2026-09-05, witness
+2026-08-31, 10/10 PASS, proton, 60 dps):
+
+    implied c2   -1.017623798 (C)  ->  -9.298862871 (D)
+    c3 proton    -2.069342577 (C)  ->  -974.4318877 (D)
+    dist to -Vol(4_1) under D: 972.402004534
+    swing_D/swing_C = 1.00522   <- the ONE convention-immune pillar
+
+Its own assertion names: implied_c2_is_minus1_in_C_frame_only,
+h1_volume_proximity_does_not_survive_D_reextraction. Grep failure was on the
+CLAIM SHAPE, not the topic.
+
+**Net scope for this bean: one phase to derive, five values to re-extract.** The
+ansatz survives as it stands; the numbers do not. Still blocked on qou-pdix
+(alpha), where every named attack is now closed or forbidden.
+
+Audit: docs/audits/2026-09-13-d2-convention-enters-at-one-rung.md
+
+---
+
+## 2026-09-14 — on the RULED base the ladder is excluded for EVERY phase, so α is not the blocker
+
+Probe: [`qbeta_ladder_form_cannot_reach_ruled_base_probe.py`](computations/qbeta/qbeta_ladder_form_cannot_reach_ruled_base_probe.py)
+— 5/5, proton pin, 50 dps. Scope **(b)** for the exclusion (proved invariant
+cited); (a) for the numbers.
+
+**`qou-cds1`'s last entry (2026-09-08) holds two halves that do not fit
+together.** It adopts the ruled base and keeps the old blocker in one sentence:
+*"eps := tr_M at z_D … the D-frame ladder is to be re-derived on the z_D base
+(0.4447004 MeV, −43.157 %) … the blocker is still the N=1 phase (qou-pdix)."*
+
+The ladder's correction factor is `F(α) = cos(α − u/2)·(1 − u²)·Π(1 + c_k u^k)`,
+and what it must supply is `F_required = Q_codata/Q_base`:
+
+| base | Q_base (MeV) | `F_required` | |
+|---|---|---|---|
+| `z = 1` (Form A) — **RETIRED** | 0.783645827375 | **0.998325241673** | < 1 |
+| `z_D`, order-zero `E₀` — **RULED** | 0.444700408522 | **1.75923699418** | **> 1** |
+| `z = q` (augmentation) | 0.87989056126 | **0.889125812282** | < 1 |
+| dashboard scored cell — **RULED** | 0.65185631006 | **1.20016236389** | **> 1** |
+
+**`cos ≤ 1`, so `F_N2(α) = cos(α − u/2)(1 − u²) ≤ 1 − u² = 0.99992745…` for
+EVERY real α** — the supremum is attained at `α = u/2` and is still below 1.
+Both ruled cells need more than 1. **No phase closes it**, derived or fitted.
+
+**So deriving α cannot unblock this ladder on the base the bean adopted.** The
+blocker line was correct for the retired cell — there `F_required = 0.9983 < 1`,
+a small phase fits, and α is exactly the interesting unknown. It does not
+survive the base change.
+
+**Pushing the shortfall into the rungs instead is not a route either:** it needs
+`c_2 ≈ 1.047e4` (z_D) or `2.760e3` (dashboard cell) against the structural
+`c_2 = −1` — four orders, wrong sign. The `1/u² = 13784.87` magnifier is why,
+which is this bean's own finding about `c_k` being the wrong coordinate.
+
+### Calibration, run before anything was concluded
+
+The probe first reproduces **this bean's own F-table** on the retired base —
+**−0.0762164 / −35.9111 / −3.17063 %** against the recorded −0.076 / −35.9 /
+−3.17 — so the machinery is the bean's, not a re-invention.
+
+### A coordinate trap this exposes
+
+That table reports relative deviation of **`1 − F`**, not of `F`. On the retired
+base both are small and positive and the ratio is informative. On a ruled base
+`1 − F_required = −0.7592` is **negative** while the model's `1 − F_N2 = +0.0016`
+stays positive, so the same ratio returns −100.21 % — opposite-signed
+quantities, meaningless rather than merely large. **Report `F` directly on a
+ruled base;** the reldev table is retired-base-only.
+
+### What this does NOT say
+
+It does **not** retire α: `qou-pdix` stays open on its own terms, α is still the
+N=1 phase, and this says only that α is not what stands between the ladder and
+the ruled base. It does **not** refute the ladder or the forced bar-odd
+projection `a_odd = a − h²/4` — both C-frame, sorry-free, untouched. And it does
+**not** choose a base: `F_required < 1` on the retired cell is **not** a reason
+to prefer it (§NO FITTING — a base is never chosen by which obstruction it
+removes).
+
+### What it changes about the next step
+
+The open question is no longer "what is α" but **what object supplies a factor
+above 1 at all** — the ladder's multiplicative form cannot, whatever its phase.
+That is a question about the *base or the assembly*, not about the phase.
+
+**Addendum, same probe (now 7/7): "a higher rung saves it" does not work.**
+Check 3 bounds only the N=2 truncation, so the natural objection is that a later
+rung could lift `F` above 1. It cannot — **every `c_k` this corpus records or
+derives is negative**:
+
+| | value | `(1 + c_k u^k)` |
+|---|---|---|
+| `c_2` structural | −1 | 0.999927456715617626 |
+| `c_3` recorded (proton) | −2.0693425728 | 0.999998721419095324 |
+| `c_5` derived `−(b²+½)` | −1.25270211325 | 0.999999999943851153 |
+| product | | **0.999926178171320707 < 1** |
+
+So each factor is below 1, the product is below 1, and with `cos ≤ 1` the whole
+`F` is **strictly below 1 at every truncation order**. Reaching `F > 1` needs a
+**positive** coefficient and none of the derived ones is.
+
+**The target, stated so its size is on the record — and explicitly not a search
+specification.** At the order-zero `E₀` the ruled functional gives
+`|ε| = 0.106235639848`; reproducing CODATA needs `0.186893667722`, a factor
+**1.759236994**. Per §NO FITTING a target may be checked **against**, never
+searched **on** — do not hunt for an element whose Markov trace lands there. The
+dashboard's own scored element already fails the confinement-SDP selection rule
+(owner ruling 2026-09-13), so the assembly is under review independently.
+
+---
+
+## 2026-09-14 (2) — the route-5 obstruction that shaped this arc is base-conditional
+
+Companion to the entry above, and it changes what "blocked on `qou-pdix`" means.
+
+The entry above established that the ladder's factor cannot reach the ruled base
+for **any** phase (`cos ≤ 1`, so `F ≤ 1 − u² = 0.99992745` against `F_required`
+of 1.7594 / 1.2002). The natural next question — *what supplies a factor above 1*
+— turns out to be answered by route 5's own machinery, in the branch route 5
+currently treats as excluded.
+
+`correction_below_one_excludes_real_spectrum` (step 18, sorry-free) carries the
+hypothesis `(hκ : κ < 1)`. Measured at 50 dps on the proton pin
+(`qbeta_ruled_base_inverts_the_route5_obstruction_probe`, 6/6): `κ = 0.998398` on
+the **retired** `z = 1` cell — reproducing step 18's own quoted `0.998399` — and
+`κ = 1.759365` / `1.200249` on the two **ruled** cells. The exclusion does not
+fire on either.
+
+**Consequence for this bean.** Two sorry-free inequalities on a base needing
+`κ > 1` — `cosh ≥ 1` and `|cos| ≤ 1` — exclude the **elliptic** generator and
+leave the **hyperbolic** one, which the substrate's Kohno–Drinfeld generator
+already is at real `q₀` (`det A = −(ln q)² < 0`). The `det A > 0` / `|q| = 1` /
+Kashaev-locus / `N = 111` narrowing was derived from the retired requirement.
+
+The Lean stands; only its premise moved. Nothing here derives `c_k` or `α`, and
+nothing selects a base — per NO FITTING, an exclusion lapsing is not a reason to
+prefer the base it lapses on.
+
+**This bean stays blocked and open**, but the blocker is better described: not
+*"derive α"* (which the entry above shows cannot close it) and not *"find an
+elliptic construction"* (which this entry shows was never required on the ruled
+base), but the **quantitative** gap between the hyperbolic character available at
+`q₀` (`1.00544843`) and the one required (`1.75936462`) — 11.17× in the generator
+eigenvalue, 139.37× in the character excess. Rule 13a.
+## 2026-09-14 — the phase is NOT what blocks this bean, and AGENTS.md said it was
+
+Recorded here because `qou-cds1`'s previous entry is 2026-09-08 and predates the
+result. **Status stays `in-progress`; nothing is closed** (§13a — the subject is
+open).
+
+**The claim.** "Blocked on the phase `qou-pdix`" is correct only for the
+**retired `z = 1` cell**. It did not survive the 2026-09-08 ruling that made
+`z_D` the base, and nothing re-checked it then.
+
+**The evidence.** The ladder's N=2 factor is `F_N2(α) = cos(α − u/2)·(1 − u²)`,
+so `cos ≤ 1` caps it at `1 − u² = 0.99992745` for **every real α** (supremum at
+`α = u/2`, still below 1). What it must supply is `F_required = Q_codata /
+Q_base`, recomputed at 70 dps:
+
+| base | `Q_base` (MeV) | `F_required` | vs cap |
+|---|---|---|---|
+| `z = 1` (Form A) — RETIRED | 0.783645827375 | 0.998325241673 | reachable |
+| `z_D`, order-zero `E₀` — RULED | 0.444700408522 | **1.75923699418** | **excluded** |
+| `z = q` (augmentation) | 0.87989056126 | 0.889125812282 | reachable |
+| dashboard scored cell — RULED | 0.65185631006 | **1.20016236389** | **excluded** |
+
+**The two cells a cosine can reach are exactly the two the ruling does not
+select.** Inverting the cap gives `u = 0.008517628778` against AGENTS.md's
+`u ≈ 0.00852` — consistent.
+
+**The implication.** No value of α unblocks this bean on the ruled base. The
+live question is **what object supplies a factor above 1 at all** — about the
+base or the assembly, not the phase. An agent sent to derive α as *the* `Q_β` L2
+blocker is working off the critical path.
+
+**Provenance.** Established twice, independently and sorry-free, in PR #7355
+(`LadderFactorBound.lean`, 4 lemmas, 7/7 probe) and PR #7262
+(`EigenphaseQuantization.lean`, 19/19, base-independent table) — **both still
+open**. Verified rather than taken on trust, and **merged**, in
+`docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md` §5.1
+(PR #7276, merged as `f3cb908ee7`), which recomputed all four `F_required` at
+70 dps and inspected the Lean for `sorry`. **Cite the merged audit, not the two
+PRs**, when checking this.
+
+**AGENTS.md fixed in the same PR** — both "blocked on the phase `qou-pdix`"
+sites now point at a scoping note carrying the table above. That edit is
+exemption 2 under §ASK THE OWNER (derived from a corpus artifact — the merged
+audit), not agent judgement.
+
+── 2026-09-15 — the search over z is CLOSED, negatively ──────────────────
+
+Probe: `computations/qbeta/qbeta_ruled_base_affine_solve_probe.py`, 2/2.
+Status unchanged: this closes a line of enquiry, it does not unblock the bean.
+
+**What was already settled.** `qbeta_ladder_form_cannot_reach_ruled_base_probe`
+bounds the ladder factor `F(alpha) <= 1 - u^2 < 1` for every real alpha, and the
+merged 2026-09-13 audit §5.1 adds that the rungs cannot help either — every
+recorded `c_k` is negative, so each shrinks `F` monotonically. So the FORM is
+bounded by 1 and `Q_pred = Q_base * F <= Q_base`.
+
+**What was not computed: whether any z reaches CODATA at all.** Both prior
+results test the two admissible roots. The base is AFFINE in z —
+
+    tr_M(Delta_S)(z) = A + B z,  A = q^2/2 - 1 + 1/(2q^2),  B = 1/q - q < 0
+    Q_beta(z)        = |tr_M(Delta_S)(z)| * E_0,   E_0 = m_e/(q(q-1))
+
+— so the family inverts in closed form. A monotone affine map has exactly one
+preimage, so this reports THE z, not a best one: **no fit is involved and none
+is possible.**
+
+Rebuilt from `q_0` alone and calibrated against the audit's three published
+cells before inverting anything:
+
+    z_D (RULED)          Q = 0.444700408522 MeV   published 0.444700408522   rel 4.9e-13
+    z=q (augmentation)   Q = 0.87989056126        published 0.87989056126    rel 1.4e-13
+    z=1 (retired)        Q = 0.783645827375       published 0.783645827375   rel 4.8e-13
+
+    z REQUIRED for CODATA = 0.99850030441113
+       to z_D 0.385812     to q 0.111478     to the excluded z=1 0.0014997
+       an admissible convention-D root?  NO
+
+**The reading.** The ruled base's shortfall is not a missing factor, not a
+phase, and not a rung. Within this assembly it would have to be a different z,
+and the only z that works is inadmissible — it sits 0.15 % below the excluded
+coordinate sum, which is exactly why that retired cell so nearly worked
+(`F_required` 0.9983). So the live question the audit states — *what object
+supplies a factor above 1* — has a sharper answer on this assembly: **nothing
+can, because the shortfall is not multiplicative.** Any route to CODATA under D
+must change the ELEMENT or the FUNCTIONAL, not the parameter.
+
+**Not proposed.** `z = 0.9985` is reported as the inadmissible preimage, not as
+a candidate. Adopting it is the forbidden return to the coordinate sum
+(`ConventionDAdmissibleRoots.one_not_root`), the same trap
+`qbeta_d_frame_admissible_base_correction_search_probe` diagnoses for the
+augmentation base. Nothing here touches the C-frame ladder results.
+
+**Checked before writing:** no existing probe inverts the family —
+`qbeta_zd_gap_anatomy_probe` decomposes the gap and
+`qbeta_cds1_terminus_status_probe` recomputes the load-bearing numbers, neither
+solves for z.
+
+
+## 2026-09-14 (session gifted-feynman, 3) — the ladder exclusion no longer depends on the SIGNS, so a re-derivation here cannot void it
+
+**The fragility this closes.** `LadderFactorBound.ladder_lt_of_rungs` (#7355,
+sorry-free) is the corpus's whole-product exclusion, and its hypothesis is
+`∀ x ∈ l, 0 < x ∧ x ≤ 1` — i.e. **every `c_k` negative**. That file is honest
+about it ("`P` is a *hypothesis*, not a claim about the rungs, and the numeric
+fact that this corpus's rungs satisfy it is measured in the probe"). But **this
+bean is the open task of re-deriving those very coefficients**, and a
+re-derivation producing one positive `c_k` voids that theorem outright — the
+hypothesis fails and it says nothing at all. An agent reading only that file
+would then be entitled to conclude the exclusion had lifted.
+
+**The sign-blind replacement**, `QOU.QBeta.LadderUniformBound` (7 declarations,
+sorry-free, `lean`-direct exit 0 with `-DautoImplicit=false -s 65536`,
+`#print axioms` on all 7 = `[propext, Classical.choice, Quot.sound]`):
+
+    ∑ |c_k u^k| ≤ S < 1   ⟹   ∏ (1 + c_k u^k) · (1 − S) ≤ 1
+
+proved by induction, division-free, nothing past `nlinarith`; composed with the
+`cos ≤ 1` cap as `ladder_lt_of_sum_bound`, and `sum_abs_le_of_scaled` reduces
+the hypothesis to **one scalar `C`**.
+
+**The numbers** (`qbeta_ladder_uniform_coefficient_bound_probe.py`, 9/9):
+
+| quantity | value |
+|---|---|
+| `u` (proton pin) | 0.0085172345501561421893 |
+| `G = ∑_{k≥2} u^k = u²/(1−u)` | 7.31664602858e-5 |
+| `C_min`, LIVE SCORED cell | **2279.45973262** |
+| `C_min / largest live \|c_k\|` (= \|c₃\| = 2.0693425728) | **1101.54×** |
+| `C_min / largest EVER held` (superseded `c₅ = +12.8676`) | **177.15×** |
+| ladder cap at a gratuitous `C = 100` | 1.00737 vs required 1.20016 |
+
+So the exclusion survives not merely a sign flip but an order-of-magnitude
+coefficient blow-up. **A re-derivation under D overturns the base-not-rungs
+conclusion only by producing a coefficient above ~2279** — a single scalar,
+checkable the moment this bean's work lands.
+
+**THE CONCLUSION IS NOT NEW AND MUST NOT BE REPORTED AS SUCH.** That the `Q_β`
+L2 residual is a base/assembly problem is already the corpus's position in at
+least five places — the merged adjudication
+`docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md` ("the live
+open question is not *what is α* but *what object supplies a factor above 1 at
+all*"), this bean, `qou-pdix`,
+`qbeta_eigenphase_rationality_quantization_probe.py`, and that probe's witness.
+Every one of them rests on `cos ≤ 1` plus the **measured sign**. None argues
+from magnitude. Nothing here establishes the conclusion; it replaces a fragile
+premise so the conclusion stays standing through this bean's work.
+
+**Mathlib already had half of it, and the corpus-grep is what found that.**
+`Finset.norm_prod_one_add_sub_one_le` bounds `‖∏(1+fᵢ) − 1‖ ≤ exp(∑‖fᵢ‖) − 1`
+over any `NormedCommRing` with **no hypotheses at all**, so the induction is a
+re-derivation rather than a necessity. Both are kept, and the difference is
+stated rather than glossed: Mathlib's is the **tighter** product bound
+(`1/(1−S) ≥ exp S` on `[0,1)`), which is why the **Weierstrass** `C_min`
+(2279.46) is quoted over the exp route's (2493.73) — a weaker product bound is
+easier to beat, so it concedes more to the thing being excluded, the honest
+direction for a refutation. Mathlib's carries no `S < 1` hypothesis and so
+survives a blow-up that makes the induction vacuous.
+`ladder_lt_of_sum_bound_exp` is that second, independent route; assertion 9
+records that the two bracket the requirement.
+
+**Scope, deliberately narrow.** Proves the **implication** only. Does NOT prove
+a re-derived convention-D ladder's coefficients **are** bounded by any `C` —
+that is a hypothesis and this bean has not run. Exhibits no missing factor.
+Says nothing about the cosh route, which Part 4 of the sibling probe re-opened
+on the ruled base (the 2026-08-22 exclusion was computed on the retired `z = 1`
+cell and is void). Nothing selected, nothing re-scored.
+
+**Two process notes worth more than the result.** The cells are **read from the
+sibling witness, not hardcoded**: the first draft hardcoded four cells from
+AGENTS.md prose and the witness carries **five** — the bar-odd parity-forced
+survivor (`F = 2.2136`, `C_min = 7493`) was simply absent — and the prose's
+live-cell factor differs from the computed one at the 8th digit. For the same
+reason assertion 4 keys on the **property** (`F > 1`) rather than on a curated
+list of ruled cells, which had already drifted. A hand-kept list narrows a
+claim without saying so.

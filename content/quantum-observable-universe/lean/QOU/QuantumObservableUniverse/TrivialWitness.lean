@@ -62,10 +62,14 @@ noncomputable def unitEndEquivModuleCat : R ≃+* End (𝟙_ (ModuleCat R)) wher
 
 /-- **The Frobenius–Hopf object at the tensor unit.**
 
-    `μ = λ_`, `Δ = λ_⁻¹`, everything else the identity, `coev = λ_⁻¹`.  All
-    three equations are pure coherence and hold in *any* monoidal category. -/
-noncomputable def unitFrobHopf (C : Type*) [Category C] [MonoidalCategory C] :
-    FrobeniusHopfData C where
+    `μ = λ_`, `Δ = λ_⁻¹`, everything else the identity, `coev = λ_⁻¹`.  Every
+    equation is pure coherence and holds in *any* monoidal category — including
+    the eight algebra / coalgebra / antipode laws added 2026-09-14 under bean
+    `qou-c64q`, which is the point of keeping this witness: it is the only
+    record-literal construction of `FrobeniusHopfData` in the corpus, so it is
+    the only thing that can falsify a newly-added field. -/
+noncomputable def unitFrobHopf (C : Type*) [Category C] [MonoidalCategory C]
+    [BraidedCategory C] : FrobeniusHopfData C where
   obj := 𝟙_ C
   mul := (λ_ (𝟙_ C)).hom
   unit := 𝟙 _
@@ -77,6 +81,18 @@ noncomputable def unitFrobHopf (C : Type*) [Category C] [MonoidalCategory C] :
   pairing_snake_left := by coherence
   pairing_snake_right := by coherence
   frobenius_relation := by coherence
+  one_mul := by coherence
+  mul_one := by coherence
+  mul_assoc := by coherence
+  counit_comul := by coherence
+  comul_counit := by coherence
+  comul_assoc := by coherence
+  antipode_anti_mul := by simp [MonoidalCategory.unitors_inv_equal]
+  antipode_anti_comul := by simp [MonoidalCategory.unitors_inv_equal]
+  antipode_unit := by simp
+  antipode_counit := by simp
+  antipode_involutive := by simp
+  antipode_frobeniusForm := by simp
 
 /-- **The trivial quantum universe.**  `C = ModuleCat R`, `A = 𝟙`, one block.
 

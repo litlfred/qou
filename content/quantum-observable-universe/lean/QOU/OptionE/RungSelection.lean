@@ -24,7 +24,9 @@ edges).
 The substrate-derivation property requires:
 
 1. `kCan` depends ONLY on the crystal-graph topology, NOT on
-   AME measurements.
+   AME measurements.  **(Not checkable in Lean — see the
+   `RungRule` docstring: this is a claim about how `kCan` is
+   defined, and Lean sees only its extension.)**
 2. `kCan(v) ≥ 3` for vertices below the k=2 horizon in the
    crystal's longitudinal grading.
 3. The induced Δ_λ derived from `kCan`-weighted sums closes the
@@ -44,15 +46,33 @@ namespace QOU.OptionE.RungSelection
 open QOU.OptionE.CrystalGraph
 
 /-- **Canonical rung-selection function** signature: given a
-    crystal vertex, return its canonical rung index. -/
+    crystal vertex, return its canonical rung index.
+
+    **`substrate_derived : Prop` removed 2026-09-14, and NOT replaced by a
+    parameter.** It was typed with the *universe* `Prop`, so the constructor
+    chose the proposition — `depthBasedRule` supplied `True` — and it was
+    measured dead: written once, read by nothing inside this file or outside
+    it.
+
+    **The property it named is not expressible in this type at all, which is
+    why parameterising would not have helped.** It read: *"the rule does not
+    directly reference any real-valued AME constant."* That is a statement
+    about how `k` is **defined**, not about `k` as a function — two
+    extensionally equal functions can differ entirely in provenance, and Lean
+    sees only the extension. No field, and no caller-supplied predicate on
+    `k`, can carry it.
+
+    Its honest home is a **provenance audit over the source**, which this
+    corpus already does elsewhere: `scripts/precision-gates.sh` runs a
+    no-free-parameter certificate of exactly that shape. The Option-E
+    anti-fit discipline for this rule belongs there, not here.
+
+    Nothing else changes: the field's removal keeps `RungRule n`'s arity, so
+    `DeltaLambda`, `DeuteronVerification` and `CrystalDeltaLambdaScaffold` are
+    untouched. -/
 structure RungRule (n : ℕ) where
   /-- The rung assignment: vertex → rung index. -/
   k : CrystalVertex n → ℕ
-  /-- Substrate-derivation property: the rule depends only on
-      crystal-graph topology (not on AME data). Encoded
-      abstractly: the rule does not directly reference any real-
-      valued AME constant. -/
-  substrate_derived : Prop
 
 /-- **Candidate rule (depth-based)**: for each vertex `v`, the
     rung `k(v)` is the depth of `v` in the crystal graph,
@@ -62,7 +82,6 @@ structure RungRule (n : ℕ) where
 def depthBasedRule (n : ℕ) (Γ : CrystalGraph n) : RungRule n where
   k v := v.idx + 1  -- placeholder depth function; concrete:
                     -- depth = max distance from source along edges
-  substrate_derived := True  -- placeholder; concrete: derivable from Γ
 
 /-- **Verification**: the depth-based rule assigns rung 1 to the
     source vertex (idx 0), rung 2 to the next, etc. -/

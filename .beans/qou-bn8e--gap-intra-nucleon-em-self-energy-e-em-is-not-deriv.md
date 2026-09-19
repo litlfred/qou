@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:36:54Z
-updated_at: 2026-08-30T12:40:45Z
+updated_at: 2026-09-13T14:54:35Z
 ---
 
 **Where this stands (2026-08-25, PR #5744, branch `claude/standard-panel-qou-derivation-ixuolx`).**
@@ -962,3 +962,57 @@ That prunes the obvious first ansatz from `o6ml`'s route (1)
 **This bean is MERGED into `qou-o6ml`** for its shared content. What remains
 uniquely here is the intra-nucleon `A` question above, which no other bean owns
 and which A1 does not settle.
+
+
+## contact_is_markov: DIAGNOSED, and reduced — not closed (2026-09-13)
+
+The Hecke<->O'Hara translation the owner asked about EXISTS in the corpus:
+lem:jones-mobius-diagonal / QOU/Braiding/JonesMobiusDiagonal.lean proves
+
+  markov_eq_mobius_contact : markovTrace = twoPointReg - mobiusEnergy
+
+sorry-free. BUT what it derives is A = B - (B - A) over a bare AddCommGroup,
+by sub_sub_cancel -- true whatever the symbols mean. ALL the content is in one
+ASSUMED class field:
+
+  contact_is_markov : contact = markovTrace
+
+i.e. that the diagonal contact coefficient of the categorical Mobius kernel
+tr(D(rho(s)) (x) D(rho(t))) IS the fundamental Markov trace. Per AGENTS.md
+"Axiomatization is NOT a Proof", that is assumed, not proved -- and it is the
+entire translation.
+
+WHY IT IS NOT DERIVABLE TODAY. Three things are missing, and the corpus says
+so itself:
+  1. the kernel as an OBJECT -- `contact` is an opaque R-valued field;
+  2. the Hadamard finite-part residue on s=t as a CONSTRUCTION -- no derivative
+     or distributional data exists in LinkEmbedding or JonesMobiusDiagonal;
+  3. Markov-trace UNIQUENESS -- stated in docstrings (Jones 1985, Wenzl 1988)
+     at jones-markov-trace.lean:77,86 but NOT as a theorem, and the spanning
+     fact it needs is declared open: markov-trace-inductive-limit.lean calls
+     itself a "Lean scaffold" whose closure is "the open R&D".
+
+WHAT LANDED: QOU/Braiding/MarkovUniqueness.lean, 4 declarations, ALL "does not
+depend on any axioms" (not even propext/Classical.choice/Quot.sound), 0 sorryAx,
+lean -DautoImplicit=false -s 65536 exit 0.
+
+  agree_on_stabilised            the inductive step, PROVED. Two cyclic
+                                 functionals sharing a Markov relation and
+                                 agreeing at level n agree on every stabilised
+                                 a*sigma*b. Cyclicity moves b to the front so
+                                 b*a is again level n; Markov peels sigma off.
+  markov_unique_of_spanning      uniqueness, with the spanning fact as an
+                                 EXPLICIT hypothesis (never a conclusion, so
+                                 3b-cond item 5 holds).
+  contact_eq_markov_of_isMarkov  the payoff: if `contact` is ITSELF a Markov
+                                 functional agreeing at level n, it IS the
+                                 Markov trace on the spanned level. No separate
+                                 identification needed.
+
+SO THE BRIDGE IS REDUCED, not closed: from one bespoke arc-specific assumption
+(contact = markovTrace) to one CLASSICAL citable assumption (the spanning fact,
+Jones/Wenzl) plus two property checks on the residue. That is a real narrowing
+-- but item 2 above is still a genuine analytic construction and nobody should
+read MarkovUniqueness.lean as having done it.
+
+BEAN STAYS OPEN.

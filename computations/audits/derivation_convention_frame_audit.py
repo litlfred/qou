@@ -123,21 +123,47 @@ def _is_anchor(raw: str) -> bool:
 
 
 def canonical() -> dict[str, float]:
-    """The live convention-D registry, read from `derivation_chain.py`.
+    """Canon: the |tr_M| reference, pin- and ordering-validated.
 
-    Imported by AST rather than by `import`, so this audit never executes the
-    module and cannot be perturbed by its import cone.
+    REPOINTED 2026-09-13 (bean qou-4383). This used to AST-read
+    `derivation_chain.TR_M_AT_Q0`, and that registry was GROUPED-era — so this
+    audit's definition of "canon" was itself in a superseded frame, and it
+    reported every corpus value that disagreed with the WRONG reference.
+
+    It reported **0 findings across 84 documents** in that state, which is the
+    part worth understanding: grouped canon plus grouped documents agree, so a
+    mutually-consistent stale bubble reads as a clean bill of health. A
+    reference audit is only as good as its reference, and this one had no way
+    to notice its own was stale — nothing checked it.
+
+    ON THE PROPERTY THIS GIVES UP. The old docstring justified the AST read:
+    "this audit never executes the module and cannot be perturbed by its import
+    cone." That was a real property and it is partly surrendered here.
+    `canonical_trm_reference` is a leaf — mpmath, `_path_bridge`, and a witness
+    read — against `derivation_chain`, which pulls in the whole chain
+    machinery, so the cone is far smaller but no longer empty. Worth it: an
+    audit that cannot be perturbed by an import cone, but CAN be silently
+    pointed at the wrong frame, has the weaker of the two guarantees.
     """
-    import ast
-    src = (ROOT / "computations" / "derivation_chain.py").read_text()
-    for node in ast.walk(ast.parse(src)):
-        if isinstance(node, ast.AnnAssign) and getattr(node.target, "id", "") == "TR_M_AT_Q0":
-            return {k.value: float(v.value) for k, v in zip(node.value.keys, node.value.values)}
-        if isinstance(node, ast.Assign) and any(
-            getattr(t, "id", "") == "TR_M_AT_Q0" for t in node.targets
-        ):
-            return {k.value: float(v.value) for k, v in zip(node.value.keys, node.value.values)}
-    raise SystemExit("TR_M_AT_Q0 not found in derivation_chain.py — registry moved?")
+    import sys                                            # noqa: PLC0415
+    # This audit sets no sys.path (it had no imports to make — that was the
+    # point of the AST route). Add computations/ locally rather than at module
+    # scope, so the path change stays scoped to the one call that needs it.
+    _c = str(ROOT / "computations")
+    if _c not in sys.path:
+        sys.path.insert(0, _c)
+    from canonical_trm_reference import tr_m_nucleon      # noqa: PLC0415
+    return {"p": float(tr_m_nucleon("proton")),
+            "n": float(tr_m_nucleon("neutron")),
+            "D": float(tr_m_nucleon("deuteron"))}
+
+
+# The old AST route lived here: it parsed `TR_M_AT_Q0` out of
+# `derivation_chain.py` to avoid executing that module. REMOVED 2026-09-13
+# rather than kept as reference, because it would now RAISE — the registry is
+# no longer a literal dict; it is served lazily by a module `__getattr__`
+# reading `canonical_trm_reference` (bean qou-4383). A "kept for reference"
+# helper that crashes is worse than a comment saying what it did.
 
 
 def _findings(text: str, canon: dict[str, float]) -> list[tuple[str, str, float]]:
@@ -228,7 +254,7 @@ def main(argv: list[str]) -> int:
     print("=" * 72)
     print("  Derivation-chain CONVENTION FRAME audit")
     print("=" * 72)
-    print(f"  canon (derivation_chain.py::TR_M_AT_Q0): "
+    print(f"  canon (canonical_trm_reference, pin+ordering validated): "
           + ", ".join(f"{k}={v}" for k, v in canon.items()))
     flagged = scan(_docs())
     for name, hits in flagged.items():

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-16T12:50:48.345544+00:00",
-  "commitSha": "0504169edd19fe9e2be816b643b2377a3d895cce",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-13T17:19:46.414284+00:00",
+  "commitSha": "052b4177db43d8670f134b985c815d77f3e2e27c",
   "assertions": [
     {
       "name": "all_predictions_finite",
@@ -15,14 +15,20 @@
       "computed": true,
       "expected": true,
       "passed": true
+    },
+    {
+      "name": "all_chains_in_the_canonical_intra_ordering_frame",
+      "computed": 0,
+      "expected": 0,
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 71,
+  "durationMs": 12,
   "computation": "applied-uniqueness-mass-table",
   "scriptFile": "applied_uniqueness_mass_table.py",
-  "scriptHash": "bb28ca57fd15",
-  "scriptCommitSha": "3e1a26b6a140edc7bde088f89c8aaa534eca2699",
+  "scriptHash": "cd4332d0e08c",
+  "scriptCommitSha": "da247d4b3d1ec5e631ba2042a952731ad40f3311",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,9 +40,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
+  },
+  "invocation": {
+    "argv": [
+      "computations/applied_uniqueness_mass_table.py"
+    ],
+    "reproduce": "python3 -u computations/applied_uniqueness_mass_table.py"
   },
   "description": "Phase 1 of the 1 ppb workplan — wires AppliedDeuteron/Tritium/Helium3Uniqueness theorems into mass-table predictions by applying the categorical mass formula M(K) = ρ · m_e · |tr_M| from QOU.BraidKnot.MassFormulaCategorical to the canonical |tr_M(β_K, q_0)| values from derivation_chain.TR_M_AT_Q0.  Currently uses placeholder m_e_Hecke literal (DEPRECATED in derivation_chain.py); Phase 2 of the workplan replaces it with the Path A 50-dps derivation, expected to tighten predictions by ~5 orders of magnitude.  AUDIT-ONLY scaffolding.",
   "contentBlock": "prop:atom-knot-mass-derivation",
@@ -56,28 +69,37 @@
   "data": {
     "canonical_tr_M_q0_source": "derivation_chain.TR_M_AT_Q0",
     "canonical_tr_M_q0_values": {
-      "proton": "1.0653062285923893",
-      "neutron": "0.9232332299116371",
-      "deuteron": "0.3882864240747888"
+      "proton": "0.629328402202922",
+      "neutron": "0.4751335171556822",
+      "deuteron": "0.1519683392042316"
     },
     "sources": {
       "proton": {
         "path": "qou/computations/markov-trace-assembly-proton.derivation.json",
-        "target": "tr_M(p, q_0)  [canonical Wenzl-bridge]",
-        "target_value": 1.0653062285923893,
-        "canonical_source": "derivation_chain.TR_M_AT_Q0"
+        "target": "tr_M(p, q_0)  [canonical Wenzl-bridge, canonical 11-letter element]",
+        "target_value": 0.629328402202922,
+        "canonical_source": "canonical_trm_reference.tr_m_nucleon",
+        "reference_value": "0.629328402202921918165345746778485927600219400634359762811677",
+        "agrees_with_reference": true,
+        "rel_vs_reference": "0.0000000000000001300348974665131723231217994042302585975765447938766143202375447334065"
       },
       "neutron": {
         "path": "qou/computations/markov-trace-assembly-neutron.derivation.json",
         "target": "tr_M(n, q_0)  [canonical Wenzl-bridge]",
-        "target_value": 0.9232332299116371,
-        "canonical_source": "derivation_chain.TR_M_AT_Q0"
+        "target_value": 0.4751335171556822,
+        "canonical_source": "canonical_trm_reference.tr_m_nucleon",
+        "reference_value": "0.475133517155682212506090232675005799558407634708751231268857",
+        "agrees_with_reference": true,
+        "rel_vs_reference": "0.00000000000000002632121241949189034847467877440407823415298547143909656067731023419131"
       },
       "deuteron": {
         "path": "qou/computations/markov-trace-assembly-deuteron.derivation.json",
         "target": "tr_M(D, q_0)",
-        "target_value": 0.3882864240747888,
-        "canonical_source": "derivation_chain.TR_M_AT_Q0"
+        "target_value": 0.1519683392042316,
+        "canonical_source": "canonical_trm_reference.tr_m_nucleon",
+        "reference_value": "0.151968339204231607592665697751066141271240964655261151310301",
+        "agrees_with_reference": true,
+        "rel_vs_reference": "0.00000000000000004996215486402871676183112241953405995946758018532325201976586266543953"
       }
     },
     "rows": [
@@ -86,11 +108,11 @@
         "Z": 1,
         "N": 0,
         "rho": 1,
-        "tr_M_q0": "1.06530622859238930000000000000000000000000000000000000000000",
-        "m_K_predicted_MeV": "0.221520319486196567594181315910616759069031175676019136344473",
+        "tr_M_q0": "0.629328402202922000000000000000000000000000000000000000000000",
+        "m_K_predicted_MeV": "0.130862871265955488595723412461758189038860075091037924098297",
         "m_K_reference_MeV": "938.272089430000000000000000000000000000000000000000000000000",
         "reference_label": "CODATA m_p",
-        "err_ppb": -999763906.0971954,
+        "err_ppb": -999860527.8013273,
         "formula": "ρ_p · |tr_M(β_p)| / m_e_Hecke_placeholder · M_E_MEV",
         "status": "categorical_via_placeholder_m_e_Hecke"
       },
@@ -99,11 +121,11 @@
         "Z": 0,
         "N": 1,
         "rho": 1,
-        "tr_M_q0": "0.923233229911637100000000000000000000000000000000000000000000",
-        "m_K_predicted_MeV": "0.191977587815785820050871434425970073403305865274444548445983",
+        "tr_M_q0": "0.475133517155682200000000000000000000000000000000000000000000",
+        "m_K_predicted_MeV": "0.0987995076529790874859996693713815619225125621742310494005345",
         "m_K_reference_MeV": "939.565421940000000000000000000000000000000000000000000000000",
         "reference_label": "CODATA m_n",
-        "err_ppb": -999795674.0602274,
+        "err_ppb": -999894845.5260848,
         "formula": "ρ_n · |tr_M(β_n)| / m_e_Hecke_placeholder · M_E_MEV",
         "status": "categorical_via_placeholder_m_e_Hecke"
       },
@@ -112,11 +134,11 @@
         "Z": 1,
         "N": 1,
         "rho": 1,
-        "tr_M_q0": "0.388286424074788800000000000000000000000000000000000000000000",
-        "m_K_predicted_MeV": "0.0807404766860803774409875407966102606991744953076700889661923",
+        "tr_M_q0": "0.151968339204231600000000000000000000000000000000000000000000",
+        "m_K_predicted_MeV": "0.0316003745265131148957687597882042679819595991443493704668670",
         "m_K_reference_MeV": "1875.61294517000000000000000000000000000000000000000000000000",
         "reference_label": "AME m_D",
-        "err_ppb": -999956952.4848429,
+        "err_ppb": -999983151.9746076,
         "formula": "ρ_d · |tr_M(β_d)| / m_e_Hecke_placeholder · M_E_MEV",
         "status": "categorical_via_placeholder_m_e_Hecke"
       },
@@ -144,9 +166,9 @@
       },
       {
         "atom": "deuteron-binding",
-        "B_predicted_MeV": "0.332757430615902010204065209539976571773162545642793595824264",
+        "B_predicted_MeV": "0.198062004392421461185954322044935482979413038120919603031965",
         "B_AME_MeV": "2.22456620000000000000000000000000000000000000000000000000000",
-        "err_ppb": -850416934.9440345,
+        "err_ppb": -910966010.1855267,
         "formula": "m_p_pred + m_n_pred - m_D_pred",
         "status": "categorical_via_placeholder_m_e_Hecke"
       }
@@ -172,6 +194,7 @@
     "lean_theorem": "QOU.BraidKnot.MassFormulaCategorical.categoricalMassMeV",
     "formula_in_lean": "categoricalMass rho m_e T_w := rho * m_e * absMarkovTrace n T_w",
     "formula_used_here": "M(K)_MeV = (ρ_K · |tr_M(β_K, q_0)|) / m_e_Hecke_placeholder · M_E_MEV_CODATA — ratio form so cat-units m_e cancels; the numerator's (m_e * |tr_M|) is implicit in the |tr_M|·(M_E_MEV/m_e_Hecke) reshuffle.",
-    "phase_2_note": "Predictions consume placeholder m_e_Hecke literal (M_HECKE_PIPELINE_AT_Q0['e'] in derivation_chain.py, marked DEPRECATED upstream).  Phase 2 replaces this with Path A 50-dps derivation; expected to tighten by ~5 orders of magnitude.  This script is set_audit_only until that substitution lands."
+    "phase_2_note": "Predictions consume placeholder m_e_Hecke literal (M_HECKE_PIPELINE_AT_Q0['e'] in derivation_chain.py, marked DEPRECATED upstream).  Phase 2 replaces this with Path A 50-dps derivation; expected to tighten by ~5 orders of magnitude.  This script is set_audit_only until that substitution lands.",
+    "frame_mismatched_atoms": []
   }
 }

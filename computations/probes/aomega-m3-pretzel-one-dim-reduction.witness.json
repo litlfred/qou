@@ -1,0 +1,545 @@
+{
+  "name": "aomega-m3-pretzel-one-dim-reduction",
+  "description": "Exact one-dimensional reduction of the DG state integral (1202.6268 eq 5.2) at the rank-one quad for 4_1, 5_2 and the (-2,3,7) pretzel: Gaussian coefficient, shifts, mirror form; gates at 4_1 (exact) and 5_2 (mirror of the printed I_{2,3}).",
+  "computation": "aomega-m3-pretzel-one-dim-reduction",
+  "engine": "python+sympy+snappy+mpmath",
+  "scriptFile": "aomega_m3_pretzel_one_dim_reduction_probe.py",
+  "computedAt": "2026-09-13T07:14:34.797474+00:00",
+  "durationMs": 0,
+  "auditOnly": true,
+  "auditDoc": "docs/audits/2026-09-06-two-bridge-layering-from-farey-word.md",
+  "parameters": {
+    "snappy_version": "3.3.2",
+    "mp_dps_numerical_gates": 22,
+    "dictionary": "psi_hbar(Z) = Phi_b(c_b - Z/(2 pi b)), hbar = 2 pi i b^2, i pi + hbar/2 = 2 pi b c_b",
+    "fourier": "psi^(P) = C^-1 exp[(P^2 + (2 pi i + hbar) P)/(2 hbar)] psi(-P), from DG (C.25) by inversion",
+    "orientation": "SnapPy's, for all three; the printed 5_2 form is the mirror"
+  },
+  "data": {
+    "knots": {
+      "m004": {
+        "label": "4_1",
+        "quad": [
+          0,
+          0
+        ],
+        "c": "1",
+        "v": [
+          1,
+          1
+        ],
+        "w": [
+          "1",
+          "1"
+        ],
+        "collinear": true,
+        "kappa": "1",
+        "unit_factor_identity_c_sumv2_plus_kappa_eq_1_plus_c_sumv": true,
+        "A": "1",
+        "Lambda": "0",
+        "sigma": [
+          "0",
+          "0"
+        ],
+        "shifts_uncentred_(1-w_i)": [
+          "0",
+          "0"
+        ],
+        "A_mirror": "1",
+        "reduced_form": "int e^(-1 pi i x^2) Phi_b(1x) Phi_b(1x) dx",
+        "prefactor_exponent_coefficient_of_(i pi + hbar/2)^2/hbar_before_f_term": "-1",
+        "prefactor_note": "multiply by exp[(i pi + hbar/2)^2 f.B^-1 nu/(2 hbar)] (DG 5.2, f a flattening) and by sqrt(8 pi^3/(hbar^3 det B)) (2 pi hbar)^{-N/2} sqrt(c/(2 pi hbar)) (2 pi i hbar)^{N/2} C^{-N} (1/c) (1/(2 pi b)) e^{pi i c_b^2 Lambda^2/A}; all (5.4)-class up to the hbar power.",
+        "exponent_check": "A = sum v^2 - 1/c and Lambda = sum v_i (1 - w_i) verified by sympy Poly on the expanded exponent"
+      },
+      "m015": {
+        "label": "5_2",
+        "quad": [
+          2,
+          2,
+          2
+        ],
+        "c": "1/2",
+        "v": [
+          1,
+          1,
+          1
+        ],
+        "w": [
+          "1",
+          "1",
+          "1"
+        ],
+        "collinear": true,
+        "kappa": "1",
+        "unit_factor_identity_c_sumv2_plus_kappa_eq_1_plus_c_sumv": true,
+        "A": "1",
+        "Lambda": "0",
+        "sigma": [
+          "0",
+          "0",
+          "0"
+        ],
+        "shifts_uncentred_(1-w_i)": [
+          "0",
+          "0",
+          "0"
+        ],
+        "A_mirror": "2",
+        "reduced_form": "int e^(-1 pi i x^2) Phi_b(1x) Phi_b(1x) Phi_b(1x) dx",
+        "prefactor_exponent_coefficient_of_(i pi + hbar/2)^2/hbar_before_f_term": "-3/2",
+        "prefactor_note": "multiply by exp[(i pi + hbar/2)^2 f.B^-1 nu/(2 hbar)] (DG 5.2, f a flattening) and by sqrt(8 pi^3/(hbar^3 det B)) (2 pi hbar)^{-N/2} sqrt(c/(2 pi hbar)) (2 pi i hbar)^{N/2} C^{-N} (1/c) (1/(2 pi b)) e^{pi i c_b^2 Lambda^2/A}; all (5.4)-class up to the hbar power.",
+        "exponent_check": "A = sum v^2 - 1/c and Lambda = sum v_i (1 - w_i) verified by sympy Poly on the expanded exponent"
+      },
+      "m016": {
+        "label": "(-2,3,7) = K12n242",
+        "quad": [
+          0,
+          2,
+          1
+        ],
+        "c": "1/4",
+        "v": [
+          1,
+          1,
+          2
+        ],
+        "w": [
+          "1/2",
+          "1/2",
+          "1"
+        ],
+        "collinear": true,
+        "kappa": "1/2",
+        "unit_factor_identity_c_sumv2_plus_kappa_eq_1_plus_c_sumv": true,
+        "A": "2",
+        "Lambda": "1",
+        "sigma": [
+          "0",
+          "0",
+          "-1"
+        ],
+        "shifts_uncentred_(1-w_i)": [
+          "1/2",
+          "1/2",
+          "0"
+        ],
+        "A_mirror": "4",
+        "reduced_form": "int e^(-2 pi i x^2) Phi_b(1x) Phi_b(1x) Phi_b(2x-1c_b) dx",
+        "prefactor_exponent_coefficient_of_(i pi + hbar/2)^2/hbar_before_f_term": "-5/4",
+        "prefactor_note": "multiply by exp[(i pi + hbar/2)^2 f.B^-1 nu/(2 hbar)] (DG 5.2, f a flattening) and by sqrt(8 pi^3/(hbar^3 det B)) (2 pi hbar)^{-N/2} sqrt(c/(2 pi hbar)) (2 pi i hbar)^{N/2} C^{-N} (1/c) (1/(2 pi b)) e^{pi i c_b^2 Lambda^2/A}; all (5.4)-class up to the hbar power.",
+        "exponent_check": "A = sum v^2 - 1/c and Lambda = sum v_i (1 - w_i) verified by sympy Poly on the expanded exponent"
+      }
+    },
+    "census_scope": {
+      "manifolds": 63,
+      "rank_one_quads": 17,
+      "collinear": 10,
+      "identity": 9,
+      "non_collinear": [
+        [
+          "m009",
+          [
+            2,
+            0,
+            2
+          ],
+          [
+            1,
+            -1,
+            1
+          ],
+          "1/2",
+          [
+            "1/2",
+            "1/2",
+            "1/2"
+          ]
+        ],
+        [
+          "m026",
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            2,
+            -1
+          ],
+          "1",
+          [
+            "2",
+            "2",
+            "4",
+            "-1"
+          ]
+        ],
+        [
+          "m043",
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            2,
+            -1
+          ],
+          "1/5",
+          [
+            "2/5",
+            "2/5",
+            "4/5",
+            "3/5"
+          ]
+        ],
+        [
+          "m045",
+          [
+            2,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "1/2",
+          [
+            "1",
+            "1",
+            "1",
+            "0"
+          ]
+        ],
+        [
+          "m069",
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            -1
+          ],
+          "1/3",
+          [
+            "4/3",
+            "2/3",
+            "2/3",
+            "1/3"
+          ]
+        ],
+        [
+          "m070",
+          [
+            1,
+            2,
+            2,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            -1
+          ],
+          "1/3",
+          [
+            "4/3",
+            "2/3",
+            "2/3",
+            "1/3"
+          ]
+        ],
+        [
+          "m136",
+          [
+            0,
+            2,
+            2,
+            0
+          ],
+          [
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "1/2",
+          [
+            "1/2",
+            "1/2",
+            "1/2",
+            "1/2"
+          ]
+        ]
+      ],
+      "identity_fails": [
+        [
+          "m019",
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          "-1",
+          [
+            "-1",
+            "-1",
+            "-1"
+          ]
+        ]
+      ]
+    },
+    "numerical_gates": {
+      "G0_dictionary_max_rel_err": "6.0682e-23",
+      "G_FT_ratio_P_independence_spread": "7.2857e-9",
+      "G_FT_ratio_value": "(-0.866025403706 + 0.50000000004j)",
+      "G_FT_ratio_is_(5.4)-class": [
+        5,
+        5,
+        -5
+      ],
+      "G3": [
+        {
+          "b": "(0.8660254 + 0.5j)",
+          "abs_b": "1.0",
+          "I12": "(0.499623640621 + 0.133873751024j)",
+          "I13": "(0.389771944027 + 0.0178156074371j)",
+          "I23": "(0.288207921568 + 0.263012847908j)",
+          "I13_over_I23": "(0.7686641519 - 0.6396525788j)",
+          "abs_ratio": "1.0",
+          "I13_over_conj(Phi0^6 I23)": "(-4.630693367e-23 + 1.0j)",
+          "conj_unit_(5.4)_triples_(a,b,c)": [
+            [
+              -12,
+              6,
+              12
+            ],
+            [
+              -9,
+              7,
+              9
+            ],
+            [
+              -6,
+              0,
+              6
+            ],
+            [
+              -3,
+              1,
+              3
+            ],
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              3,
+              3,
+              -3
+            ],
+            [
+              6,
+              4,
+              -6
+            ],
+            [
+              9,
+              5,
+              -9
+            ],
+            [
+              12,
+              6,
+              -12
+            ]
+          ]
+        },
+        {
+          "b": "(0.80901699 + 0.58778525j)",
+          "abs_b": "1.0",
+          "I12": "(0.573150788214 + 0.0935541547064j)",
+          "I13": "(0.458429938016 - 0.0193007281151j)",
+          "I23": "(0.396470332704 + 0.23095844098j)",
+          "I13_over_I23": "(0.8421401266 - 0.5392587571j)",
+          "abs_ratio": "1.0",
+          "I13_over_conj(Phi0^6 I23)": "(0.5646348864 + 0.8253408054j)",
+          "conj_unit_(5.4)_triples_(a,b,c)": [
+            [
+              -6,
+              0,
+              6
+            ]
+          ]
+        },
+        {
+          "b": "(0.72077509 + 0.34710699j)",
+          "abs_b": "0.8",
+          "I12": "(0.46605642231 + 0.307092399573j)",
+          "I13": "(0.354398698868 + 0.168523859585j)",
+          "I23": "(0.152851607534 + 0.474440085391j)",
+          "I13_over_I23": "(0.5398313613 - 0.5730641568j)",
+          "abs_ratio": "0.7872867499",
+          "I13_over_conj(Phi0^6 I23)": "(-0.418158364 + 0.1574239861j)",
+          "conj_unit_(5.4)_triples_(a,b,c)": null
+        }
+      ]
+    }
+  },
+  "verdict": "DERIVED (DG 5.2 + C.18 + C.25 + 5.5, GK 1): at a rank-one quad the DG state integral reduces exactly to int e^{-pi i A x^2} prod_i Phi_b(v_i x + sigma_i c_b) dx with A = sum v_i^2 - 1/c and sigma from w = B^-1 nu. 4_1 -> I_{1,2} exactly. 5_2 -> I_{1,3}, NOT the printed I_{2,3}: numerically the two are different functions that are complex conjugates at |b|=1 up to a (5.4)-class unit, i.e. the two ORIENTATIONS of 5_2 (the DG integral on SnapPy's m015 datum is the mirror of the KLV/AK one; A_mirror = 1/c = 2 recovers the printed form). This also explains Part 9's finding that the (1,3) and (2,3) block bilinears coincide. The pretzel (SnapPy orientation): int Phi_b(x)^2 Phi_b(2x - c_b) e^{-2 pi i x^2} dx; mirror: same dilogarithms with e^{-4 pi i x^2 + 4 pi i c_b x}. The doubled factor carries the residual -c_b shift; its poles at c_b + (i b m + i b^-1 n)/2 halve the lattice spacing and the Gaussian cross term e^{pi i m n} couples the q- and q~-halves by parity — the level-2 mechanism, now explicit. Orientation of the derived pretzel integral is SnapPy's and is NOT matched to GGM/GZ's (open, recorded). Next (Part 12): residues at the half-lattice (orders 3 and 1) -> q^{1/2}-series blocks -> sigma_1 sigma_1 index vs the derived index.",
+  "assertions": [
+    {
+      "name": "G1-4_1: reduced integral is int Phi_b(x)^2 e^{-pi i x^2} dx = GK I_{1,2} = GGM (125) at u=m=mu=0 (A=1, no shifts)",
+      "passed": true,
+      "form": "int e^(-1 pi i x^2) Phi_b(1x) Phi_b(1x) dx"
+    },
+    {
+      "name": "G2-5_2: reduced integral is int Phi_b(x)^3 e^{-pi i x^2} dx = GK I_{1,3} — the (q<->q~) partner of the printed I_{2,3}; the printed A=2 is recovered as A_mirror = 1/c = 2 (orientation reversal, see G3)",
+      "passed": true,
+      "form": "int e^(-1 pi i x^2) Phi_b(1x) Phi_b(1x) Phi_b(1x) dx"
+    },
+    {
+      "name": "T1-m016: reduced integral is int Phi_b(x)^2 Phi_b(2x - c_b) e^{-2 pi i x^2} dx (A=2; the doubled factor carries the residual shift -c_b, the unit factors none)",
+      "passed": true,
+      "form": "int e^(-2 pi i x^2) Phi_b(1x) Phi_b(1x) Phi_b(2x-1c_b) dx"
+    },
+    {
+      "name": "C1-collinearity w = B^-1 nu ∥ v holds for all three knots (kappa = 1, 1, 1/2)",
+      "passed": true
+    },
+    {
+      "name": "C2-unit-factor identity c sum v^2 + kappa = 1 + c sum v holds for all three (=> every unit-coefficient factor is unshifted)",
+      "passed": true
+    },
+    {
+      "name": "S1-scope: collinearity and the unit-factor identity are NOT general (some rank-one census quads violate each) — the three-knot results are knot-specific measurements, not a theorem",
+      "passed": true,
+      "non_collinear": 7,
+      "identity_fails": 1,
+      "rank_one": 17
+    },
+    {
+      "name": "G0-dictionary psi_hbar(Z) = Phi_b(c_b - Z/(2 pi b)) (DG 5.5 vs GK 1), numerically at three points",
+      "passed": true,
+      "max_rel_err": "6.0682e-23"
+    },
+    {
+      "name": "G_FT-Fourier transform of psi (inverted C.25): psi^(P)/[C^-1 e^{(P^2+(2 pi i+hbar)P)/2hbar} psi(-P)] is P-independent",
+      "passed": true,
+      "spread": "7.2857e-9",
+      "ratio": "(-0.866025403706 + 0.50000000004j)",
+      "five_four_class": [
+        5,
+        5,
+        -5
+      ]
+    },
+    {
+      "name": "G3a-I_{1,3} and I_{2,3} are DIFFERENT functions of b (ratio not a (5.4)-class constant; modulus varies with b)",
+      "passed": true,
+      "moduli": [
+        "1.0",
+        "1.0",
+        "0.7872867499"
+      ]
+    },
+    {
+      "name": "G3b-at |b| = 1 (where conj Phi_b = 1/Phi_b(conj x)): I_{1,3} = u * conj(Phi_b(0)^6 I_{2,3}) with ONE (5.4)-class unit u = q~^{a/24} q^{c/24} e^{i pi b/4} common to every unit-modulus b tested — the orientation-reversal relation",
+      "passed": true,
+      "common_triples": [
+        [
+          -6,
+          0,
+          6
+        ]
+      ],
+      "per_b": [
+        [
+          [
+            -12,
+            6,
+            12
+          ],
+          [
+            -9,
+            7,
+            9
+          ],
+          [
+            -6,
+            0,
+            6
+          ],
+          [
+            -3,
+            1,
+            3
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            3,
+            3,
+            -3
+          ],
+          [
+            6,
+            4,
+            -6
+          ],
+          [
+            9,
+            5,
+            -9
+          ],
+          [
+            12,
+            6,
+            -12
+          ]
+        ],
+        [
+          [
+            -6,
+            0,
+            6
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "G3c-at |b| != 1 the conjugation relation is NOT expected (conj Phi_b = 1/Phi_{conj b}(conj x)) and is not found",
+      "passed": true
+    }
+  ],
+  "scriptHash": "c8bf9a2322a6",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6989ac93d4e7420ddf70218cdcff8212ae06760d",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}

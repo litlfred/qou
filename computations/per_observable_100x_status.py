@@ -615,30 +615,63 @@ def _qbeta_ruled_base() -> dict:
         "price_witness": "qbeta/qbeta-zd-rescore-price.witness.json",
         "second_rescore_due_after": "qou-pdix (phase) -> qou-cds1 (ladder); "
                                     "bean qou-iagg",
-        # 🛑 THE ELEMENT IS NOT RULED, ONLY THE FUNCTIONAL. The 2026-09-08
-        # ruling fixes `eps` (the Markov trace at z_D); it does NOT fix which
-        # element `Delta` is. The bean's own candidate census (witness
-        # qbeta-option-e-required-level) carries FOUR, all undershooting at
-        # level 2 = z_D:
-        #     delta_S short NF        -43.157 %   <- what this row scores
+        # 🛑 THE ELEMENT IS RULED IN 6 OF ITS 11 LETTERS, NOT IN ALL OF THEM.
+        # (This comment said "THE ELEMENT IS NOT RULED ... This row uses
+        # delta_S" until 2026-09-13. That was the pre-migration text: 573b2ece24
+        # had already moved the scored element to `nuc11_interleaved` and the row
+        # had already improved 2.55x, 4.259e+8 -> 1.668e+8 ppb, while this block
+        # still told a reader the row was delta_S at -43.157 %. PR #7212, cited
+        # below as OPEN, merged as 85ffb930e2. Corrected, not re-argued.)
+        #
+        # What IS ruled: the 2026-09-08 owner ruling fixes `eps` (the Markov
+        # trace at z_D), and the gamma-gamma word-selection ruling (qou-ales)
+        # selects the nucleon ORDERING -- interleaved over gen-grouped.
+        # The candidate census (witness qbeta-option-e-required-level) carries
+        # FOUR elements, all undershooting at level 2 = z_D, at order-zero E_0:
+        #     delta_S short NF        -43.157 %   <- superseded
         #     nuc9 build_nucleon_nf   -30.936 %
-        #     nuc11 interleaved       -17.496 %
+        #     nuc11 interleaved       -17.496 %   <- what this row scores
         #     nuc11 gen-grouped       -15.451 %
-        # This row uses delta_S because that is the element the admissibility
-        # probe SOLVED (it is the one whose z = 1 trace reproduces the published
-        # closed form) and the element the ruling entry recorded a base value
-        # for (0.4447004 MeV). It is NOT the gamma-gamma-selected nucleon word.
-        # PR #7212 (OPEN at the time of writing, so cited as a claim and not as
-        # corpus) argues the gamma-gamma word-selection ruling DECIDES the
-        # nucleon ordering in favour of `nuc11 interleaved`, whose level-2
-        # residual is -17.496 % -- 2.5x closer than what is scored here. If that
-        # lands and the canonical Delta is a nucleon word rather than the short
-        # element, THIS ROW MOVES AGAIN, by a factor of ~2.5 rather than a
-        # rounding.
+        # (on the canonical tower-summed E_0 the scored cell is -16.678 %.)
+        #
+        # What is NOT ruled, and it is a PARITY bound rather than an opinion.
+        # `nuc11_interleaved` is ELEVEN letters, read off its construction in
+        # qbeta_delta_candidate_census_probe.py: nuc9 = 3 x (sigma_0, sigma_1) core
+        # = 6, + a 3-letter quark block = 9, + 2 sigma_0 gluon letters = 11.
+        # Every gamma-gamma word has EVEN length, being a concatenation of
+        # 2-letter vertices (`gammaGamma_length_even`, sorry-free). 11 is odd, so
+        # nuc11_interleaved is not a gamma-gamma word and the ruling cannot have
+        # selected it whole:
+        #     core   6 letters  gamma-gamma-reachable (three vertices)
+        #     quark  3 letters  NOT -- odd
+        #     gluon  2 letters  NOT -- even, but both letters positive, and it
+        #                       follows an odd block so no vertex boundary aligns
+        # So the element is 6/11 ruling-derived and 5/11 census-derived, which
+        # matters because qou-ales is "shouldn't use census". Measured and
+        # surfaced to the owner on bean qou-99qc (2026-09-12); the counts are
+        # emitted below as `element_ruled_letters` / `element_census_letters`.
+        # `element_is_ruled` is left True DELIBERATELY -- it is an owner-facing
+        # provenance label and re-meaning it is the owner's call, not an agent's.
+        #
         # So the figure is scoped twice over, not once: no ladder (above), AND
-        # an unsettled element. Do not read it as the framework's Q_beta.
+        # an element whose 5 free letters have no derived constraint. Do not read
+        # it as the framework's Q_beta.
         "element_scored": _ELEMENT + " (gamma-gamma-selected nucleon word)",
         "element_is_ruled": True,
+        # The boolean cannot express a partial selection; these two can, and
+        # they are what the parity bound in the comment above measures. Kept
+        # ALONGSIDE the boolean so no consumer breaks. 6 + 5 = 11 letters.
+        "element_ruled_letters": 6,
+        "element_census_letters": 5,
+        "element_ruled_scope": (
+            "the 6-letter core (sigma_0, sigma_1)^3 = three gamma-gamma "
+            "vertices. The 3-letter quark block is odd and the 2-letter gluon "
+            "pair has both letters positive, so neither is gamma-gamma "
+            "reachable -- gammaGamma_length_even, sorry-free. qou-ales says "
+            "'shouldn't use census' and 5 of 11 letters are still census-"
+            "derived; those 5 have no derived constraint and are where a "
+            "closing Delta would have to come from (bean qou-99qc, 2026-09-12)"
+        ),
         "element_authority": "owner gamma-gamma ruling qou-ales 2026-09-08 + "
                              "GammaGammaWordSelection.vertex on main (a "
                              "gamma-gamma word's 2nd letter is negative, which "
@@ -1007,17 +1040,24 @@ def main() -> dict:
                     f"NOT convention D -- recorded because a referee will notice, "
                     f"not as an argument: ranking cells by residual is the "
                     f"selection-against-the-target the anti-fit directive forbids. "
-                    f"🛑 AND THE ELEMENT IS NOT RULED, ONLY THE FUNCTIONAL: "
-                    f"this row scores Delta = {_ruled['element_scored']}, the "
-                    f"element whose z = 1 trace reproduces the published closed "
-                    f"form, but the corpus carries FOUR candidate Delta and all "
-                    f"undershoot at z_D -- delta_S -43.157%, nuc9 -30.936%, "
-                    f"nuc11 interleaved -17.496%, nuc11 gen-grouped -15.451%. PR "
-                    f"#7212 (OPEN, cited as a claim not as corpus) argues the "
-                    f"gamma-gamma selection ruling picks nuc11 interleaved, which "
-                    f"would move this row by ~2.5x, not a rounding. So the figure "
-                    f"is scoped TWICE: no ladder, and an unsettled element "
-                    f"({_ruled['element_tracked_by']})."
+                    f"🛑 AND THE ELEMENT IS RULED IN "
+                    f"{_ruled['element_ruled_letters']} OF ITS "
+                    f"{_ruled['element_ruled_letters'] + _ruled['element_census_letters']} "
+                    f"LETTERS, NOT IN ALL OF THEM: this row scores Delta = "
+                    f"{_ruled['element_scored']}, selected over nuc11 gen-grouped "
+                    f"by the gamma-gamma word-selection ruling (qou-ales). But "
+                    f"that word is ELEVEN letters and every gamma-gamma word has "
+                    f"EVEN length (gammaGamma_length_even, sorry-free), so the "
+                    f"ruling reaches only the 6-letter core and provably cannot "
+                    f"reach the 3-letter quark block (odd) or the 2-letter gluon "
+                    f"pair (both letters positive). 5 of 11 letters are still "
+                    f"census-derived, which is what qou-ales asks not to use. The "
+                    f"corpus carries FOUR candidate Delta, all undershooting at "
+                    f"z_D (order-zero E_0) -- delta_S -43.157%, nuc9 -30.936%, "
+                    f"nuc11 interleaved -17.496% (this row, -16.678% on the "
+                    f"canonical tower E_0), nuc11 gen-grouped -15.451%. So the "
+                    f"figure is scoped TWICE: no ladder, and 5 element letters "
+                    f"with no derived constraint ({_ruled['element_tracked_by']})."
                 )
             elif _adm.get("status") == "INADMISSIBLE_FUNCTIONAL":
                 _adm_note = (
@@ -1165,8 +1205,17 @@ def main() -> dict:
         _row["note"] = (
             "CONDITIONAL on three unproved classes (ArchimedeanLimit, "
             "BlochSuslinUniqueness, BringZeroModeBlochClass) — a conditional "
-            "prediction, not a proved derivation. The Schwinger factor is derived, "
-            "not fitted. Second-best scoreable row: 238x, against 970x (m_mu) and "
+            "prediction, not a proved derivation. The Schwinger factor is NOT "
+            "FITTED and this is measured, not asserted: parametrising it as "
+            "(1 - c*h^2*alpha), the c that hits CODATA exactly is 0.7312340272 "
+            "and the 1-sigma window is [0.61846303, 0.84400502], so the "
+            "published c = 1 lies OUTSIDE it, at 2.383 sigma -- a fitter would "
+            "have taken 0.731. But it is NOT DERIVED either: the exact "
+            "vertex-moment check (docs/audits/2026-07-14-alpha-em-phase3-"
+            "schwinger-coefficient-exact-check.md) gives +0.1281 against the "
+            "claimed -h^2 = -0.0437, wrong order and wrong sign, ratio -2.93, "
+            "and recommends the tier 'structurally-motivated / "
+            "empirically-anchored'. That is the honest label. Second-best scoreable row: 238x, against 970x (m_mu) and "
             "152-177x (the Q_beta trio). NOTE the residual's SIGN depends on the "
             "CODATA edition (the 2018->2022 shift is 2.2x the residual); the "
             "reference is read from the registry so the edition is not a choice."

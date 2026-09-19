@@ -1,0 +1,488 @@
+{
+ "schema": "qou-witness/v1",
+ "computedAt": "2026-09-13T19:42:14.041355+00:00",
+ "computation": "rev_edge_separability_probe.py",
+ "bean": "qou-hok7",
+ "anchor": "physical_proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736",
+ "description": "Tests whether e_k is ADDITIVE over its two edges.  The cost is exactly separable once the forced run length l = S_top + S_bot is substituted into sum u^2; this measures whether the gain separates too, by comparing the exact excess of both edges together against the sum of each alone.  Every value is the exact O(L^2) excess in scaled integers, with the cost from the Lean identity staircase_two_mul_hookSum_sub.",
+ "k": 40,
+ "P_EXT_MAX": 5,
+ "profiles": {
+  "top": 543,
+  "bottom": 9841
+ },
+ "evaluator_vs_reconstructed": [
+  {
+   "n": 36,
+   "k": 8,
+   "recomputed": "0.1418310828873493723",
+   "recorded": "0.1418310828873493723049",
+   "difference": "4.80682e-23"
+  },
+  {
+   "n": 78,
+   "k": 12,
+   "recomputed": "0.69117475080428095935",
+   "recorded": "0.6911747508042809593457",
+   "difference": "-2.32448e-23"
+  },
+  {
+   "n": 136,
+   "k": 16,
+   "recomputed": "1.2164376444788834204",
+   "recorded": "1.216437644478883420399",
+   "difference": "2.97746e-22"
+  },
+  {
+   "n": 300,
+   "k": 24,
+   "recomputed": "1.9550306683303110575",
+   "recorded": "1.955030668330311057516",
+   "difference": "4.35951e-22"
+  },
+  {
+   "n": 630,
+   "k": 35,
+   "recomputed": "2.3763657218869699344",
+   "recorded": "2.376365721886969934389",
+   "difference": "2.33832e-22"
+  }
+ ],
+ "best_top": {
+  "profile": [
+   3,
+   2,
+   1,
+   1
+  ],
+  "E_top": "0.898526496420623120206805"
+ },
+ "best_bottom": {
+  "profile": [
+   1,
+   1,
+   1,
+   2,
+   1,
+   1
+  ],
+  "E_bot": "0.898526496420623120206805"
+ },
+ "additivity_residuals": [
+  {
+   "top": [
+    3,
+    2,
+    1,
+    1
+   ],
+   "bot": [
+    1,
+    1,
+    1,
+    2,
+    1,
+    1
+   ],
+   "both": "2.4140906441739044567",
+   "E_top": "0.89852649642062312021",
+   "E_bot": "0.89852649642062312021",
+   "residual": "0.61703765",
+   "run_position": 13,
+   "extra_rows": 2
+  },
+  {
+   "top": [
+    3,
+    2,
+    1,
+    1
+   ],
+   "bot": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1
+   ],
+   "both": "2.4092906319287519951",
+   "E_top": "0.89852649642062312021",
+   "E_bot": "0.89565283375976269573",
+   "residual": "0.6151113",
+   "run_position": 12,
+   "extra_rows": 2
+  },
+  {
+   "top": [
+    3,
+    2,
+    1,
+    1
+   ],
+   "bot": [
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    1,
+    1
+   ],
+   "both": "2.3683634955253862355",
+   "E_top": "0.89852649642062312021",
+   "E_bot": "0.87212053256038453177",
+   "residual": "0.59771647",
+   "run_position": 11,
+   "extra_rows": 3
+  },
+  {
+   "top": [
+    3,
+    2,
+    1,
+    1
+   ],
+   "bot": [
+    1,
+    1,
+    1,
+    2,
+    2,
+    1,
+    1
+   ],
+   "both": "2.3777303716976140048",
+   "E_top": "0.89852649642062312021",
+   "E_bot": "0.86770082177254106048",
+   "residual": "0.61150305",
+   "run_position": 12,
+   "extra_rows": 2
+  },
+  {
+   "top": [
+    3,
+    2,
+    1,
+    1,
+    1
+   ],
+   "bot": [
+    1,
+    1,
+    1,
+    2,
+    1,
+    1
+   ],
+   "both": "2.4092906319287519951",
+   "E_top": "0.89565283375976269573",
+   "E_bot": "0.89852649642062312021",
+   "residual": "0.6151113",
+   "run_position": 13,
+   "extra_rows": 2
+  },
+  {
+   "top": [
+    3,
+    2,
+    1,
+    1,
+    1
+   ],
+   "bot": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1
+   ],
+   "both": "2.4019043072184524109",
+   "E_top": "0.89565283375976269573",
+   "E_bot": "0.89565283375976269573",
+   "residual": "0.61059864",
+   "run_position": 12,
+   "extra_rows": 2
+  },
+  {
+   "top": [
+    3,
+    2,
+    1,
+    1,
+    1
+   ],
+   "bot": [
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    1,
+    1
+   ],
+   "both": "2.3501263380306649088",
+   "E_top": "0.89565283375976269573",
+   "E_bot": "0.87212053256038453177",
+   "residual": "0.58235297",
+   "run_position": 10,
+   "extra_rows": 3
+  },
+  {
+   "top": [
+    3,
+    2,
+    1,
+    1,
+    1
+   ],
+   "bot": [
+    1,
+    1,
+    1,
+    2,
+    2,
+    1,
+    1
+   ],
+   "both": "2.366941940197541279",
+   "E_top": "0.89565283375976269573",
+   "E_bot": "0.86770082177254106048",
+   "residual": "0.60358828",
+   "run_position": 11,
+   "extra_rows": 2
+  },
+  {
+   "top": [
+    4,
+    3,
+    2,
+    1,
+    1
+   ],
+   "bot": [
+    1,
+    1,
+    1,
+    2,
+    1,
+    1
+   ],
+   "both": "2.3683634955253862355",
+   "E_top": "0.87212053256038453177",
+   "E_bot": "0.89852649642062312021",
+   "residual": "0.59771647",
+   "run_position": 11,
+   "extra_rows": 2
+  },
+  {
+   "top": [
+    4,
+    3,
+    2,
+    1,
+    1
+   ],
+   "bot": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1
+   ],
+   "both": "2.3501263380306649088",
+   "E_top": "0.87212053256038453177",
+   "E_bot": "0.89565283375976269573",
+   "residual": "0.58235297",
+   "run_position": 11,
+   "extra_rows": 2
+  },
+  {
+   "top": [
+    4,
+    3,
+    2,
+    1,
+    1
+   ],
+   "bot": [
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    1,
+    1
+   ],
+   "both": "2.2605541112254934185",
+   "E_top": "0.87212053256038453177",
+   "E_bot": "0.87212053256038453177",
+   "residual": "0.51631305",
+   "run_position": 9,
+   "extra_rows": 3
+  },
+  {
+   "top": [
+    4,
+    3,
+    2,
+    1,
+    1
+   ],
+   "bot": [
+    1,
+    1,
+    1,
+    2,
+    2,
+    1,
+    1
+   ],
+   "both": "2.3061297992855216336",
+   "E_top": "0.87212053256038453177",
+   "E_bot": "0.86770082177254106048",
+   "residual": "0.56630844",
+   "run_position": 10,
+   "extra_rows": 2
+  },
+  {
+   "top": [
+    3,
+    2,
+    2,
+    1,
+    1
+   ],
+   "bot": [
+    1,
+    1,
+    1,
+    2,
+    1,
+    1
+   ],
+   "both": "2.3777303716976140048",
+   "E_top": "0.86770082177254106048",
+   "E_bot": "0.89852649642062312021",
+   "residual": "0.61150305",
+   "run_position": 12,
+   "extra_rows": 2
+  },
+  {
+   "top": [
+    3,
+    2,
+    2,
+    1,
+    1
+   ],
+   "bot": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1
+   ],
+   "both": "2.366941940197541279",
+   "E_top": "0.86770082177254106048",
+   "E_bot": "0.89565283375976269573",
+   "residual": "0.60358828",
+   "run_position": 12,
+   "extra_rows": 2
+  },
+  {
+   "top": [
+    3,
+    2,
+    2,
+    1,
+    1
+   ],
+   "bot": [
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    1,
+    1
+   ],
+   "both": "2.3061297992855216336",
+   "E_top": "0.86770082177254106048",
+   "E_bot": "0.87212053256038453177",
+   "residual": "0.56630844",
+   "run_position": 10,
+   "extra_rows": 3
+  },
+  {
+   "top": [
+    3,
+    2,
+    2,
+    1,
+    1
+   ],
+   "bot": [
+    1,
+    1,
+    1,
+    2,
+    2,
+    1,
+    1
+   ],
+   "both": "2.3306271520497659725",
+   "E_top": "0.86770082177254106048",
+   "E_bot": "0.86770082177254106048",
+   "residual": "0.59522551",
+   "run_position": 11,
+   "extra_rows": 2
+  }
+ ],
+ "far_field_scale": "3.15739049166e-15",
+ "separable_prediction": "1.79705299284124624041361",
+ "direct_joint_maximum": "2.41409064417390445671009",
+ "best_in_class": "2.41409064417390445671009",
+ "edge_energy": "0.898526496420623120206805",
+ "heuristic_k88": "2.4392948082722254204",
+ "checks": [
+  {
+   "name": "S1 the evaluator reproduces every reconstructed maximiser of PR #7323",
+   "ok": true,
+   "detail": "5 shapes, k = 8..35; max |diff| = 4.36e-22 against a DERIVED floor of 2.376e-21 \u2014 the recorded values are 22-digit renderings, so that is the comparison's resolution and not this arithmetic's.  Those values were themselves checked against the published heuristic excess, so this is a two-step agreement and the evaluator is not being calibrated against itself"
+  },
+  {
+   "name": "S2 the two edges are NOT additive \u2014 the residual is an interface count, not far field",
+   "ok": true,
+   "detail": "max |E_both - E_top - E_bot| = 0.617 over 16 pairs at k = 40, against the far-field scale eps(4k) = 3.157e-15 \u2014 fourteen orders apart, so additivity is REFUTED and not marginally.  The COST does separate exactly (sum u^2 = top part + bottom part once the run's forced length l = S_top + S_bot is substituted), so the residual is entirely gain-side, and its size identifies it: the combined shape has ONE run with TWO interfaces where the two single-edge shapes have two runs with FOUR.  Combining saves an interface pair, which is an O(1) gain, not a far-field one.  It is not constant either (0.516 to 0.617 across these pairs) because a run's two interfaces still interact at eps(2*length)"
+  },
+  {
+   "name": "S3 the separable prediction understates the joint maximum, but picks the same argmax",
+   "ok": true,
+   "detail": "max E_top + max E_bot = 1.797052992841246 against a jointly searched 2.414090644173904, short by 0.617038.  So e_inf is NOT max E_top + max E_bot.  What does survive is the argmax: the joint optimum is the same pair of profiles the two single-edge searches pick independently, so the two edges still choose their own shapes and only the VALUE fails to add"
+  },
+  {
+   "name": "S4 widening the profile bounds does not move either edge maximum",
+   "ok": true,
+   "detail": "top (3, 2, 1, 1) -> (3, 2, 1, 1), bottom (1, 1, 1, 2, 1, 1) -> (1, 1, 1, 2, 1, 1); values unchanged.  Without this the two maxima would be bound artefacts and the sum would not be e_inf"
+  },
+  {
+   "name": "S5 max E_top = max E_bot exactly \u2014 one edge energy, seen twice",
+   "ok": true,
+   "detail": "both 0.89852649642062312021, equal as scaled INTEGERS (difference exactly 0).  So there is one edge energy here, not two, and the exact equality of two independently-maximised searches is a check on the evaluator as much as an observation about the shapes.  CORRECTED 2026-09-13 (PR #7335): this detail used to add that the staircase is self-conjugate and the hook multiset a transpose invariant, 'so a top-edge deformation and its conjugate bottom-edge deformation carry the same excess; (3, 2, 1, 1) and (1, 1, 1, 2, 1, 1) are that pair'.  The last clause is FALSE and was never checked \u2014 (3, 2, 1, 1) transposes to [4, 2, 1], which is not [1, 1, 1, 2, 1, 1].  Transpose invariance remains the likely mechanism; the correspondence between these particular tuples is not identified.  The EQUALITY is measured and stands"
+  }
+ ],
+ "verdict": "REFUTED: e_k does not add over its two edges.  The COST does separate exactly, but the gain does not \u2014 E_both exceeds E_top + E_bot by ~0.6 at k = 40, fourteen orders above the far-field scale.  The size identifies the mechanism: one joint run has TWO interfaces where two single-edge runs have FOUR, so combining saves an interface pair.  The argmax does survive \u2014 the joint optimum is the pair each edge picks alone \u2014 so the two edges choose independently and only the value fails to add. Separately established: the number of extension rows is a SHAPE parameter and must be searched; fixing it at 3 gave 2.3684 at k = 40, which is below e_35 = 2.3764 and so impossible.  Best in class at k = 40: 2.414090644173904."
+}

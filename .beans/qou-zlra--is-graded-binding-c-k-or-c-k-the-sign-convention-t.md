@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T12:02:10Z
-updated_at: 2026-09-12T18:06:52Z
+updated_at: 2026-09-12T21:54:12Z
 ---
 
 
@@ -189,3 +189,103 @@ read (it is a log, per-block, gated, with a resolvent); the sign question is
 empty for the additive class (#7223) and, for this non-additive one, is not a
 convention at all but a computed quantity whose forced component has the
 anti-valley sign. Nothing is wired; nothing is fitted; AME enters nowhere.
+
+
+## 2026-09-12 — the Pass-2 sign gate's LP justification has no referent (qou-8urh, PR #7251)
+
+Relevant to this bean because the sign convention it tracks sits downstream of a
+gate whose *stated* derivation turns out not to hold.
+
+The owner ruled 2026-09-12 to drop the Pass-2 gate in
+`hecke_core_legacy.unified_iterative_correction` AND to hunt the primal LP its
+comment invokes. The hunt closed as **case (b)**: the LP exists
+(`prop:operator-selection-lp`, Lean `QOU.ParticleInteractions.operator_selection_lp`,
+sorry-free) and complementary slackness on it does **not** give the sign gate.
+
+Four independent mismatches, all in
+`QOU.MassTheory.UICGateNotFromComplementarySlackness` (8 decls, lean-direct
+exit 0, sorry-free):
+
+1. the LP's constraints are indexed by NF basis elements (`d = n!`), the gate by
+   partitions (`p(n)`); no partition-indexed LP exists in the corpus;
+2. CS constrains `(Gx*)_i`, a function of the operator being SELECTED, while the
+   gate reads `t_lambda = tr(M_lambda(W_atom))`, an input;
+3. `IsFeasible` demands `0 <= (Gx)_i`, so a "<= 0" gate on a constraint value IS
+   the tightness gate `= 0` (`frobeniusValue_nonpos_iff_eq_zero`);
+4. the optimum is a positive-dimensional face, so "the OPTIMAL primal-dual pair"
+   is not a well-defined object.
+
+**Sign-relevant detail for this bean.** The gate is a predicate on the SIGN of
+the per-block final trace, and that sign is exactly what CS cannot speak to:
+under a diagonal Wedderburn Gram (orthogonal projectors) CS decouples to
+`s_l * G_ll * x_l = 0`, in which the atom's traces do not appear at all
+(`complementarySlackness_diagonal_iff`). So whatever fixes the +c_k / -c_k
+convention, it is not LP duality on this program.
+
+Measured (`computations/probes/uic_gate_vs_lp_complementary_slackness_probe.py`,
+mp.dps = 70, proton pin, convention D): the gate keeps 4 of 10 blocks at 2H
+(the only non-zero one is `(2,1,1)`) and 2 of 10 at 4He (`(2,2)`, `(3,1)`),
+while the LP's active set is 9 of 10 at every reachable target for both atoms.
+
+Audit: `docs/audits/2026-09-12-uic-gate-primal-lp-hunt.md`. Stays OPEN — the
+sign convention is untouched by this.
+
+## Cross-reference: the UIC resolvent cone is now mpf (2026-09-12, bean `qou-oiz3`, PR #7245)
+
+Owner directive "excise float64" of the same day. Every quantity this bean's
+sign question runs through — `C_lambda_resolvent_MeV`, `mu_lambda`, `s_*`,
+`rho_lambda`, and the per-atom gated/ungated totals — has moved, at the
+~1e-16 relative level. If this bean quotes a `C_lambda` or a gated total to
+more than ~15 significant digits, re-read it from the refreshed witness rather
+than from the recorded figure.
+
+**What did NOT change:** no sign flips. The gated/ungated totals keep their
+signs and their tight-partition counts at every atom measured
+(k_exact = 4 and 6, A = 1..8), so nothing in this bean's argument is affected
+in direction — only in the last digits.
+
+**What is worth carrying over:** the residual. `C_lambda = m_e * H_q * y_lambda
+* rho_lambda` is still float64-limited through THREE of its four factors,
+because `q_hook_product` / `q_factorial` / `wedderburn_weight` accumulate
+`mp.mpf(1) * q_int(k)` over the float64 `q_int` — mpf-typed, float64-valued.
+Measured: 1.0212424e-15 at lambda = (2,2), against the 2.4946976e-16 that PR
+removed. So a sign-convention argument that turns on a difference smaller than
+~1e-15 in `C_lambda` is not yet decidable by this code.
+
+
+## 2026-09-12 — the block/producer mismatch this bean REPORTED is now RESOLVED (PR #7237, bean `qou-t6be`)
+
+PR #7230 measured three divergences between `prop:unified-iterative-correction`
+and `hecke_core_legacy.unified_iterative_correction` and deliberately did not
+resolve them, because picking one would be choosing a functional. The owner then
+ruled, verbatim: **"resolve functionals ... what lean provable"**.
+
+**The criterion settles it, and the discriminator is sharper than "pick one".**
+The block's displayed summand reads the trace only through `ln|tr|`, so it is
+EVEN in the trace; the producer's gate reads `sign(tr)`. Proved sorry-free
+(`QOU.MassTheory.UICFunctionalSelection.gate_not_a_function_of_displayed_data`)
+and measured: flipping every trace's sign leaves the ungated total BIT-IDENTICAL
+and moves the gated one `-0.0895596831 -> -0.3226525092` (2H). So the block's
+formula could not DENOTE the producer's functional at all — the mismatch was
+structural, not editorial, and something had to move whatever the physics.
+
+**All three divergences resolved against the content side; the producer is
+untouched and no number moves.** A FOURTH was found by `qa-sweep
+proof-statement-integrity` firing on the fix: the block's own `.lean` sibling
+`stepDelta` carries `m_e * H_q * w_lambda`, a third scale matching neither of
+the producer's two.
+
+**One correction to this bean's own report.** #7230's table ranks the omitted
+q-Laplacian resolvent as the lesser divergence (*"a per-partition factor spanning
+~100x"*) and the summation range as *"the serious one"*. Measured on the TOTALS
+rather than on the factor's range, that ordering is backwards: deleting `rho`
+moves the gated total **4.1208754x** (A=2) and **9.8660639x** (A=4), against the
+gate's own 4.6026535x / 3.4030381x. At A=4 the omission is ~2.9x the gate's
+effect.
+
+**What stays open:** whether the gate belongs in the physics. The criterion shows
+it is underived and its stated justification false; it does NOT show it is wrong.
+`qou-sv7h` / `qou-brng`.
+
+Audit: `docs/audits/2026-09-12-uic-functional-resolution.md`.
+Probe: `computations/probes/uic_functional_resolution_probe.py` (16/16).

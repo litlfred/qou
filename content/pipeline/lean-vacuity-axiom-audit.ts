@@ -754,6 +754,35 @@ const PROJECTION_BODY = /^([a-z][\w']*)\.([A-Za-z_][\w']*)\s*$/;
 const TUPLE_PROJECTION =
   /^⟨\s*([a-z][\w']*)\.[A-Za-z_][\w']*\s*(?:,\s*\1\.[A-Za-z_][\w']*\s*)*⟩\s*$/;
 const EXACT_PROJECTION = /^by\s+exact\s+([a-z][\w']*)\.([A-Za-z_][\w']*)\s*$/;
+// An *applied* SINGLE field, `ctx.classical_limit s t hst` — the one-field
+// analogue of `APPLIED_TUPLE_PROJECTION` below, and blind for the same reason
+// its comment gives: `PROJECTION_BODY` ends at the field name, so any argument
+// after it kills the match. `detectSelfAssuming` then leaves `pat` undefined
+// and RETURNS BEFORE reaching `projectionTypeMatchesConclusion`, the structural
+// fallback that exists precisely to catch a projection whose field name escapes
+// `CONCLUSION_FIELD`. The strongest check the detector has was unreachable for
+// this shape.
+//
+// This is the subclass that matters, not a corner case: a class field carrying
+// a conclusion is almost always `∀ … → …`, so the theorem MUST apply it to the
+// binders to produce the conclusion. A self-assuming projection whose
+// conclusion is universally quantified was therefore invisible BY
+// CONSTRUCTION — and a universally quantified conclusion is the normal case.
+//
+// Measured on the QOU Lean tree (2871 .lean) when this was added:
+// `proof-no-self-assuming-projection` 26 -> 42, i.e. 16 bodies the four earlier
+// patterns could not see, every one of them passing the `CONCLUSION_FIELD` name
+// gate. Found by fixing an instance the audit never reported —
+// `QOU/BraidsKnots/mobius_frobenius_kernel.lean`, body
+// `ctx.classical_limit s t hst`, whose class docstring read "All fields are
+// inputs; none is the conclusion" while the conclusion was field three of
+// three. Bean `qou-metc`; issue #7329.
+//
+// Deliberately conservative: each argument must be an identifier-ish token, so
+// `ctx.foo (h.bar) x` does not match. Under-matching is the safe direction for
+// a criterion at `critical` severity.
+const APPLIED_PROJECTION =
+  /^(?:by\s+exact\s+)?([a-z][\w']*)\.([A-Za-z_][\w']*)(?:\s+[A-Za-z_][\w'.]*)+\s*$/;
 // An *applied*-field tuple `⟨ctx.impl_x ctx.active, ctx.impl_y ctx.active⟩`:
 // each component is a field `word.field` optionally APPLIED to further
 // `word[.field]` arguments. The `TUPLE_PROJECTION` regex above rejects the
@@ -972,6 +1001,9 @@ function detectSelfAssuming(
   } else if ((m = body.match(EXACT_PROJECTION))) {
     field = m[2];
     pat = "exact-field-projection";
+  } else if ((m = body.match(APPLIED_PROJECTION))) {
+    field = m[2];
+    pat = "applied-field-projection";
   } else if (TUPLE_PROJECTION.test(body)) {
     pat = "tuple-projection";
     field = body.match(/\.([A-Za-z_][\w']*)/)?.[1];
@@ -1032,10 +1064,58 @@ function detectSelfAssuming(
   // the detector's own primary criterion, and the §3b deferral does not apply.
   // Recommendation 4 of `docs/audits/2026-08-09-honest-placeholder-criterion.md`.
   const nameGateMatched = !!field && CONCLUSION_FIELD.test(field);
-  if ((isDefProof && !nameGateMatched) || pat === "applied-tuple-projection") {
+  // NOTE the asymmetry between the two arms below: the first disjunct of the
+  // second arm respects `nameGateMatched`, and `applied-field-projection` does
+  // not. That is deliberate but narrow — the exemption is a LANDING
+  // concession, not a judgement, and ALL 21 hits it covers match
+  // `CONCLUSION_FIELD` (measured, not estimated — `claim_*` × 12, `*_holds`
+  // × 6, `exists_*`, `*_iff`, `*_eq`). Not 14, which is what this comment said
+  // before the names were run through the regex.
+  // Exempting them therefore swallows the detector's strongest signal, which is
+  // exactly what the 2026-08-09 narrowing above removed from the §3b carve-out.
+  // What makes it safe rather than a re-introduction is the ledger: they are
+  // seeded as `needs-agent`, and a `genuine` verdict promotes each one back to
+  // a counted defect. If that ledger route is ever removed, remove this
+  // exemption with it.
+  if (pat === "applied-field-projection") {
+    // EXEMPT on landing (#7332) so closing a coverage blindspot does not turn a
+    // `critical` gate red in the commit that discovers it — but the wording is
+    // load-bearing and #7332 got it wrong. `LEDGER_TRACKED_EXEMPT` keys on the
+    // literal "triage pending"; the shared reason string USED TO say
+    // "derivation pending", so every hit taking that arm was dropped at the
+    // ledger-seeding site and never reached an agent. #7332's own comment
+    // asserted the opposite — "the 16 it newly reaches still enter the review
+    // ledger" — and measured, 0 of them did, and the population is 21 rather
+    // than 16. Fixed for this arm in #7341 and for the arm below in the
+    // follow-up (bean `qou-vh1o`); both now emit "triage pending".
+    // "triage pending" here puts them in the ledger as `needs-agent`; an agent
+    // `genuine` verdict then promotes that ONE candidate to a counted defect
+    // (the `adjudicatedGenuine` path), which is the designed per-candidate
+    // route rather than a blanket promotion.
     const h = mk(d, "proof-no-self-assuming-projection", pat, true);
     h.exempt_reason =
-      "canonical §3b placeholder projection (tracked; derivation pending)";
+      "canonical §3b placeholder projection (tracked; triage pending)";
+    return h;
+  }
+  if ((isDefProof && !nameGateMatched) || pat === "applied-tuple-projection") {
+    // The last arm on the "derivation pending" wording, CLOSED here (bean
+    // `qou-vh1o`, follow-up to #7341). Both arms now emit "triage pending", so
+    // `LEDGER_TRACKED_EXEMPT` reaches every exempted self-assuming candidate
+    // and none is exempted into silence. The 13 this seeds — 6
+    // `applied-tuple-projection` and 7 `tuple-projection` arriving as `def`
+    // proofs — were adjudicated before the wording moved, so the seeding turns
+    // up no unadjudicated queue: 6 genuine, 6 advisory, 1 legit.
+    //
+    // They are NOT the applied-field tranche's defect class. Four shapes:
+    // an ANTECEDENT-ASSERTING context (a free `Prop` field, a field asserting
+    // it, and `impl_* : P -> conclusion`, with the theorem doing modus ponens
+    // — the class supplies both premises); a conjunction of the class's own
+    // fields; an accessor on an EXPLICIT structure argument, which is ordinary
+    // mathematics and not a projection defect; and one instance of the correct
+    // §3b-cond pattern.
+    const h = mk(d, "proof-no-self-assuming-projection", pat, true);
+    h.exempt_reason =
+      "canonical §3b placeholder projection (tracked; triage pending)";
     return h;
   }
   // Precision: exempt a two-field tuple-projection that derives a top-level
@@ -1953,9 +2033,32 @@ function isConjectureCarrier(doc: string): boolean {
  * `≠` non-triviality counts as the weakest possible Prop content and is
  * tracked separately by the caller. */
 function isPropBearingType(type: string): boolean {
-  return /[∀∃]|↔|(?<![-=])→|≤|≥|(?<![:<>=!])<|(?<![-:<>=!])>|≠|\b=\b|\bTrue\b|\bFalse\b/.test(
-    type,
-  );
+  // 🛑 The equality alternative was `\b=\b`, which CANNOT MATCH A LEAN
+  // EQUATION.  `=` is not a word character, so `\b` on either side of it
+  // requires an adjacent word character — i.e. it matches `a=b` and nothing
+  // else.  Every equation written the way Lean is actually written,
+  // `hh0 = 0`, read as NOT Prop-bearing.
+  //
+  // Measured 2026-09-13: all four live `docstring-claims-gap` hits were
+  // FALSE POSITIVES caused by this.  `QOUCohomology` was reported "only 0
+  // encoded" against `observability : hh0 = 0` and `frobeniusHopf_duality :
+  // hh2 = 1` — both of its enumerated properties, both properly encoded.
+  // `CategoricalReebDerivation` likewise, against `reeb_normalizes : reeb ≫
+  // contact = contact` and `reeb_periodic : reeb ^ period = 1`, which its
+  // docstring explicitly says are "encoded as fields below".
+  //
+  // An equation is the commonest way to encode a property in this corpus, so
+  // the criterion was blind to the majority of the evidence it exists to
+  // weigh — and it told agents to "encode" carriers that already had.
+  //
+  // The replacement matches `=` as a RELATION: not `:=` (a default value),
+  // not `==`, not `=>`, and not the tail of `≠` (which the caller filters
+  // separately).  Verified against the alternatives it does not touch: of a
+  // 23-case corpus sample only 7 verdicts change, all of them equations, and
+  // no non-proposition flips.  `ℕ → ℝ` and `Prop := True` match here for
+  // unrelated reasons (`→`, `True`) and did so before this change too.
+  return /[∀∃]|↔|(?<![-=])→|≤|≥|(?<![:<>=!])<|(?<![-:<>=!])>|≠|(?<![:!<>=≠])=(?![=>])|\bTrue\b|\bFalse\b/
+    .test(type);
 }
 
 const MARKER_OPT_OUT = /@marker\b|opaque\s+(tag|marker|predicate)/i;
@@ -2001,8 +2104,45 @@ function detectClaimsUnencoded(d: Decl, doc: string): Hit | undefined {
   const claimed = bullets.length;
   if (claimed < 2) return undefined;
   // Prop-bearing fields whose content is more than a bare `≠` non-triviality.
+  //
+  // A `class`/`structure` ascribed `: Prop` can only have Prop fields — Lean's
+  // elaborator enforces it — so on such a carrier EVERY field is a
+  // proposition and the syntactic sniff below is both unnecessary and wrong.
+  //
+  // 🛑 Measured 2026-09-13, this was the second of two blind spots that made
+  // every live `docstring-claims-gap` hit a false positive.  A field whose
+  // type is a NAMED PREDICATE applied to arguments carries no relational
+  // operator, so `isPropBearingType` cannot see it:
+  //
+  //   FaddeevPhiPhysical    instStripGrowth : FaddeevPhiStripGrowth (substrateB t) Φ
+  //                         hNF             : MeromorphicNFOn Φ Set.univ
+  //   HasCategoricalIrreducibility
+  //                         form_mono       : CategoryTheory.Mono (ι ≫ ∫_A)
+  //
+  // All three are genuine propositions, properly encoding exactly the
+  // properties their docstrings enumerate; the first carrier was reported
+  // "only 0 encoded" against two such fields.  Nothing distinguishes
+  // `Mono f` from `Option R` by shape alone without elaborating it, so the
+  // sort of the carrier is the sound discriminator rather than a heuristic.
+  //
+  // The count comparison still bites on a `: Prop` carrier: a docstring
+  // naming two properties over a one-field class still fires.  What no
+  // longer happens is a correctly-encoded carrier being told to encode.
+  //
+  // LIMITATION, stated rather than papered over: on a carrier that is NOT
+  // `: Prop` — a `Type`-valued class — a named-predicate field remains
+  // invisible to `isPropBearingType`, so this criterion can still
+  // under-count there.  Fixing that needs elaboration, not regex.
+  // `declSort` returns everything after the head's top-level `:`, which for a
+  // `… : Prop where` carrier is `"Prop where\n"` followed by the entire field
+  // block — so a bare `=== "Prop"` never matches one.  Cut at `where` (or the
+  // end of the line) to get the sort itself.
+  const allFieldsAreProps =
+    declSort(d).split(/\bwhere\b|\n/)[0].trim() === "Prop";
   const encoded = fields.filter(
-    (f) => isPropBearingType(f.type) && !/^[^=<>≤≥∀∃↔]*≠/.test(f.type),
+    (f) =>
+      (allFieldsAreProps || isPropBearingType(f.type)) &&
+      !/^[^=<>≤≥∀∃↔]*≠/.test(f.type),
   ).length;
   if (encoded >= claimed) return undefined;
   const h = mk(d, "proof-claims-unencoded", "docstring-claims-gap", false);
@@ -3562,7 +3702,34 @@ function main() {
       // added to this audit is covered automatically and one belonging to
       // another tool is left alone by default — the safe direction.
       const OWNED = new Set(Object.keys(SEVERITY));
+
+      // SECOND AXIS of the same defect, measured 2026-09-13 (bean `qou-metc`).
+      //
+      // The `foreign` guard below distinguishes "fixed" from "not produced by
+      // this scanner". It does NOT distinguish "fixed" from "NOT SCANNED", and
+      // this loop cannot tell those apart either: an entry whose file the run
+      // never visited looks exactly like one whose candidate stopped flagging.
+      //
+      // Measured cost, on this ledger: a `--review-ledger` run scoped to
+      // `content/quantum-observable-universe/lean` rewrote the file −863/+67,
+      // destroying **106 of 329 entries** — every one of them in a category
+      // this audit DOES produce, so `foreign` preserved none of them. The
+      // ledger spans 22 roots across two papers and only 223 entries live under
+      // that subtree.
+      //
+      // The `--json` path three hundred lines up already states this principle
+      // for itself — *"a partial scan would overwrite it with a smaller count
+      // that reads as a clean corpus"* — and refuses. The ledger path is the
+      // other write path of the same API and never got the rule; that is
+      // taxonomy row 33 (`qou-3ral`), a guard installed on one of several write
+      // paths.
+      //
+      // Scoping the deletion is better than refusing: a partial scan stays
+      // useful (it still resolves stale entries INSIDE what it looked at) and
+      // can no longer touch what it did not look at.
+      const scannedRel = new Set(files.map((f) => relative(REPO_ROOT, f)));
       let foreign = 0;
+      let unscanned = 0;
       for (const k of Object.keys(led.entries)) {
         if (seen.has(k)) continue;
         const cat = k.slice(k.lastIndexOf("::") + 2);
@@ -3570,11 +3737,19 @@ function main() {
           foreign++;
           continue; // another tool's entry — not ours to resolve or delete
         }
+        if (!scannedRel.has(k.slice(0, k.indexOf("::")))) {
+          unscanned++;
+          continue; // this run never opened that file — absence is not evidence
+        }
         delete led.entries[k];
       }
       if (foreign && !quiet)
         console.log(
           `  (preserved ${foreign} entr(ies) in categories this audit does not produce)`,
+        );
+      if (unscanned && !quiet)
+        console.log(
+          `  (preserved ${unscanned} entr(ies) in files this run did not scan)`,
         );
       led.updated_at = nowIso;
       writeFileSync(p, JSON.stringify(led, null, 2) + "\n");

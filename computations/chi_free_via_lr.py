@@ -116,8 +116,18 @@ def main() -> int:
         chi = chi_free_lr(Z, N, nuc_chi=nuc_chi)
         wall = time.time() - t0
         n = 3 * (Z + N)
+        # `elapsed_sec`, NOT `wall_sec` -- the name is load-bearing. A
+        # wall-clock duration is runtime metadata, and the vocabulary reserving
+        # it is `qou_substrate.witness._EPHEMERAL_META_FIELDS` (guarded by
+        # `test_ephemeral_mask_sync`). `wall_sec` is NOT in that mask, so the
+        # raw-float64 ratchet counted these four floats as a precision finding
+        # and this witness read 3 -> 4 REGRESSED. Renaming to a declared name
+        # is the producer-side fix; widening the mask is a different and wider
+        # change, deliberately left alone (beans `qou-ywee` / `qou-hhm3` --
+        # the audit's own comment at `witness_raw_float64_audit.py:216` names
+        # `wall_sec` as the case that fails SILENTLY if edited one-sidedly).
         row = {"atom": atom, "n_strands": n, "n_partitions": len(chi),
-               "wall_sec": round(wall, 4)}
+               "elapsed_sec": round(wall, 4)}
         # validate against the existing free witness, if present
         wf = FREE_WITNESS.get(atom)
         if wf and (HERE / wf).exists():

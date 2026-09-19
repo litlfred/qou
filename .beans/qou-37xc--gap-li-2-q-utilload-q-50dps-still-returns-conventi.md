@@ -1,11 +1,11 @@
 ---
 # qou-37xc
 title: 'GAP: _li_2_q_util.load_q_50dps still returns convention-C z — 21 callers, must be atomic'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-24T11:19:46Z
-updated_at: 2026-08-24T21:19:11Z
+updated_at: 2026-09-15T07:17:49Z
 ---
 
 The largest remaining convention-C site (`qou-cds1`, PR #5622). **Not attempted
@@ -373,3 +373,33 @@ The two crashes are ONE physics finding plus one latent bug:
 Lesson for the next harness: capture $? into a variable on the line after the
 command, before ANY substitution. And do not trust an exit code you did not
 cross-check against the log — grepping for 'Traceback' is what caught this.
+
+## 2026-09-15 — ALREADY DONE. Closing on evidence, not on reading the docstring.
+
+Owner directive "excise convention C". Picked this as the highest-leverage root
+— one library fix propagating to every caller — and checked the claim before
+touching anything. It is stale.
+
+Measured live:
+
+    load_q_50dps() -> z = 0.6126880371464652516
+    z_D              = 0.61268803714646525160   <- match
+    z_C              = 0.49932033418369445241
+
+The function's own docstring records the history: the convention-C advertisement
+"has not been what the function returns since the excision... Corrected
+2026-08-29 (qou-cds3)". This bean was created 2026-08-24 and last updated the
+same day, so it predates that fix by five days and was simply never closed.
+
+**The caller count in the title is also out of date: 35 importers today, not
+21.** That is the surface a future regression here would reach, so it is worth
+recording even as the bean closes.
+
+Verified by calling the function, not by reading the docstring — the docstring
+is exactly what was wrong last time, and a stale convention claim is what this
+bean was originally about.
+
+## Summary of Changes
+
+None required. The defect was fixed under `qou-cds3` on 2026-08-29; this bean is
+closed as already-done with the measurement above as evidence.

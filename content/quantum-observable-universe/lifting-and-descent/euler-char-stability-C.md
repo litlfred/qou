@@ -1,9 +1,11 @@
-In the archimedean realisation, the Leray–Serre spectral sequence independently verifies the stability condition $\chi(A_{n+1}) = \chi(A_n)$.
+*Proof of (2).* In the archimedean realisation the tower is a sequence of bundles over the fixed base $M_0$. By the explicit construction of the [recursive brane tower](#def:recursive-brane-tower), $\mathcal{S}_{n+1}$ is the bundle of orthonormal frames of the first jet bundle $J^1 \mathcal{S}_n$ ([jet prolongation](#prop:jet-prolongation)), projectivised; its typical fibre is $\mathrm{SU}(2)/\mathrm{U}(1) \cong \mathbb{P}^1(\mathbb{C}) \cong S^2$.
 
-By the explicit construction of the [recursive brane tower](#def:recursive-brane-tower), $\mathcal{S}_{n+1}$ mathematically acts as the bundle of orthonormal frames of the first jet bundle $J^1 \mathcal{S}_n$ ([jet prolongation](#prop:jet-prolongation)). The Euler characteristic of a fibre bundle $F \hookrightarrow \mathcal{S}_{n+1} \to \mathcal{S}_n$ unconditionally satisfies the multiplicativity formula:
-$$
-  \chi(\mathcal{S}_{n+1}) = \chi(\mathcal{S}_n) \cdot \chi(F),
-$$
-provided the fibre $F$ holds the homotopy type of a finite CW-complex and the base acts identically on $H^*(F; \mathbb{Q})$. In the explicit brane tower, the fibre acts as $\mathrm{SU}(2) \cong S^3$, yielding $\chi(S^3) = 0$. However, the relevant structure is not $\mathrm{SU}(2)$ itself but the *projectivised* frame bundle. Its typical fibre is $\mathrm{SU}(2)/\mathrm{U}(1) \cong \mathbb{P}^1(\mathbb{C}) \cong S^2$, which strictly gives $\chi(S^2) = 2$. Despite this, the Euler characteristic rigidly persists.
+The Euler characteristic of a fibre bundle $F \hookrightarrow E \to B$ whose fibre has the homotopy type of a finite CW complex and whose monodromy acts trivially on $H^*(F; \mathbb{Q})$ is multiplicative, $\chi_{\mathrm{eu}}(E) = \chi_{\mathrm{eu}}(F) \cdot \chi_{\mathrm{eu}}(B)$ (the Leray–Serre spectral sequence collapses at $E_2$). The observability axiom $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ is what makes the monodromy of $\pi_1(\mathcal{S}_n)$ on $H^*(S^2; \mathbb{Z})$ trivial: the adjoint bundle has no invariant sections to twist the fibre cohomology. Since $\chi_{\mathrm{eu}}(S^2) = 2$,
 
-The Leray–Serre spectral sequence of $S^2 \hookrightarrow \mathcal{S}_{n+1} \to \mathcal{S}_n$ yields $E_2^{p,q} = H^p(\mathcal{S}_n; H^q(S^2; \mathbb{Z}))$. The quantum characteristic classes $\kappa_n$ ([quantum characteristic classes](#def:quantum-characteristic-classes)) represent the exact obstructions to trivial monodromy of the fibre cohomology $H^*(S^2)$. The vanishing condition of the quantum observable universe axioms enforces $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$, ensuring the monodromy representation of $\pi_1(\mathcal{S}_n)$ on $H^*(S^2; \mathbb{Z})$ remains strictly trivial; the adjoint bundle possesses no invariant sections to twist the fibre cohomology. Consequently, the spectral sequence cleanly collapses at the $E_2$ page. Because each level of the brane tower alters only the bundle data while preserving the base geometry, the base manifold $M_0$ remains invariant under jet prolongation. Therefore, $\chi(M_0)$ persists unaltered at every level.
+$$
+  \chi_{\mathrm{eu}}(\mathcal{S}_{n+1}) = 2\,\chi_{\mathrm{eu}}(\mathcal{S}_n),
+$$
+
+so the Euler characteristic of the total space doubles at every level and is not the stable quantity.
+
+What is stable is the base. Each level of the tower replaces a bundle over $M_0$ by a bundle over $M_0$ and never alters $M_0$; therefore $\chi_{\mathrm{eu}}(M_0) = 2 - 2g(M_0)$ persists at every level. $\square$

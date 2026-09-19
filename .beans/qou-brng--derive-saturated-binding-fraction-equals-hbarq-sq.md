@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-12T19:12:09Z
+updated_at: 2026-09-14T17:55:06Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2845,3 +2845,542 @@ Note for whoever picks row D up: the UIC layout is the COMPLETE GRAPH
 `QOU.Mass.CoordinationSaturation.complete_graph_no_saturation` already refutes
 on saturation grounds. So even a valley found here would have sat on an excluded
 layout.
+
+---
+**2026-09-08 — TOOK OVER qou-qqm4's unanswered target and computed it. The answer is NO: the derived kind-dependent bond weight is real but FAR TOO WEAK.**
+
+**Takeover.** `qou-qqm4` was `in-progress`, last updated `2026-09-07T11:13Z`, **16 h stale** against the 3 h threshold, with no response to the target posted on #7000 at 17:09Z. Owner instruction: *"take over — No ρ_pp yet."*
+
+**Method — right-to-left, as the rule required.** `ρ_pp` computed **independently** from the corpus's own derived bond factors and then compared. Nothing inverted from `rMeasured`.
+
+Inputs, both from the corpus: `bond_pn_kind_order_four_discriminator_probe.py`'s exact rational series in `ε = q−1` (`pp = z` exactly; `pn` = the `averaged_weighted` kind; `nn = z′`), and `CarrierCrossingQuantisation.rMeasured = 950815/1483044`. Seeded from `Q_50_DIGIT_STR`, **not** the float64 `q_parameter.Q` — the exact defect a sibling fixed in this cone on 2026-09-07 (`87bf88379`).
+
+**Result — four identifications, and the PRINCIPLED one misses worst:**
+
+| identification | ρ_pp | miss |
+|---|---|---|
+| A multiplicative `pp/pn` | 1.2056 | 26.5 % |
+| **B additive `log pp / log pn`** | **0.7238** | **55.9 %** ← principled |
+| C shifted additive | 1.1869 | 27.7 % |
+| D inverse | 0.8295 | 49.5 % |
+
+against `target = 1 + rMeasured = 1.64112393`. **B is the principled one** — the binding law is `B = E₀·log(tr ratio)`, so interface factors multiply in the trace and their *logs* add; an additive per-pair weight must be a log, not a ratio. Reporting A because it is closest would be selection against the target, which §NO FITTING names.
+
+**And no carrier rescues it.** Scanning every `m_pp, m_pn ∈ 1..6` (³He = ppn → pairs pp, pn, pn): A's closest miss is **67.9 %** (*worse* than uniform's 55.98 %); B's is **30.2 %**, at `(m_pp, m_pn) = (2,1)`. That is reported as a **bound** — "even the best small carrier misses by 30 %" — not as a carrier determination; reading a carrier off the residual is the same fit one level down.
+
+**Verdict: real structurally, insufficient quantitatively.** `kind_ratio_not_determined_by_sum` stands — a kind-dependent weight *does* break the integrality that made the exhaustion exhaustive. But the kind-dependence the corpus derives needs `ρ_pp ≈ 1.64` and delivers 0.72–1.21. The **sign** is right (`bond_pp > bond_pn`); the magnitude is roughly half what is needed under the most favourable reading and wrong-way under the principled one.
+
+**What this does and does not change.** It does **not** restore `no_carrier_reproduces_b3` — that exclusion's premise is still derived-false, and #7097's re-scoping stands unaltered. What it removes is the hope that the *already-derived* kind-dependence closes the three-body gap. So `qou-brng`'s surviving route now needs a **further** source of per-pair variation beyond the bond kind, or the count channel is not where `b₃` lives.
+
+Probe: `computations/probes/rho_pp_kind_weight_does_not_close_b3_probe.py`, 7/7, witness alongside.
+
+
+
+2026-09-08 (owner): Avenue 2 sharpened — both derived edge sets on main are affine in A, and an affine count can never be a surface term, so the prior question is: what edge set has a BULK at all? Decide by a proved invariant, not a fit; a negative closes Avenue 2 outright. Claimed on branch claude/brng-avenue2-bulk-edge-set-2026-09-08.
+
+
+
+2026-09-08 (Avenue 2 CLOSED over the encoding — branch claude/brng-avenue2-bulk-edge-set-2026-09-08). Invariant: LINEAR LAYOUT. atom_braid_word_3A emits every inter-nucleon letter at generator 3k+2, so the coordination graph of any word it can build (any ordering, any multiplicities) is a subgraph of the path on the ordering. Lean QOU/Mass/LinearLayoutNoBulk.lean (sorry-free, lean-direct exit 0): degree ≤ 2; |E| ≤ n; connected ⇒ the path, |E| = n−1, surface = 2; linearLayout_family_not_hasBulk. Probe linear_layout_no_bulk_probe.py 4/4: all 246 words A=2..8 × all orderings are the path (position-based AND strand-tracked); max-contact 3A−6, complete graph C(A,2) and the sub-affine true packing all violate |E| ≤ A and are inexpressible. Scope-(b): no edge set the encoding can express has a bulk. STILL OPEN (do not close this bean): the extensive term itself — a bulk needs either a different encoding with a DERIVED non-linear strand layout, or an extensive term that is not a coordination count; neither is derived, and choosing a layout to match the surface term would be selection against the target. Audit docs/audits/2026-09-08-linear-layout-no-bulk.md.
+
+
+
+## 2026-09-13 (session #7155, main review after 425 commits) — Avenue 2 branch rebased; workplan adjusted
+
+**State.** PR #7155 (Avenue 2: every expressible edge set is a linear layout ⇒ no bulk) was NOT merged; it sat conflicted on this bean file only. Rebased onto main c9fd78b0ad (union of both bean tails); the only dependency that moved on main is a docstring-only change to `mass_at_3A_proper.py` (qou-m6gp hyperbolic-branch note), so the probe premise is unchanged — re-run 4/4, witness byte-identical. Three documents on main already cite #7155's result as the current state of this bean (`2026-09-08-l2-1ppq-research-program-gaps.md` §2 lines 256/268, `2026-09-12-dominant-summand-extensive-test.md` line 116, cheat-sheet 9b currency block), while the Lean and probe are NOT on main — landing #7155 is the workplan priority for this front, so the citations resolve.
+
+**What landed on main and how it bears here.** (i) The escape enumeration (PR #7181, classes A–D) and its decisions — class C multiplicity sub-extensive (b), class B escapes invariant (2) not (1) (#7204), pn-averaging narrows class B (#7234), class D order-zero leg measured (#7230), dominant-summand channel none/anti-binding at A ≤ 7 (#7200, #7211), Ursell b₃ < 0 for every bond triple (#7198). None is an edge-set question inside the encoding; none contradicts or supersedes Avenue 2. The live remainder (classes B and D) lies outside what a coordination-graph invariant can decide. (ii) **Owner ruling qou-ales (2026-09-08): braid words are to be SELECTED by γγ production + confinement SDP at q₀, no census** (steps 1–10 landed). This is the one landing that touches Avenue 2's SCOPE: the invariant was measured on the template encoding `atom_braid_word_3A`. Structural note, not yet proved: a γγ vertex `σᵢσᵢ₊₁⁻¹` acts on strand positions i, i+1, i+2, which on the 3A-strand block line lie in at most two CONSECUTIVE blocks, so the position-based linear-layout invariant holds for every γγ-produced word on that line as well — `card_edgeFinset_le` and `linearLayout_family_not_hasBulk` apply unchanged. What does NOT transfer automatically is the strand-tracked graph: the template's vertices never migrate a strand across two interfaces (measured, 42/42 words); a γγ-selected word with vertices straddling interfaces could. **New workplan item:** once qou-ales produces selected atom words (step 2 admissibility per nucleus), measure the strand-tracked coordination graph on them and, if linear, state the γγ extension in Lean (a vertex touches ≤ 2 consecutive blocks). Until then Avenue 2 is closed over the template encoding only, as stated.
+
+**Untouched fronts still mine:** qou-gr3t (InteriorMarkov from the Hecke tower; #7153 reports TowerSpan proved from the braid relations — the missing piece), qou-d0qq steps 3–5, qou-8uxw, qou-denm (Kohno 1987 ingestion). No sibling appended to any of them since 2026-09-07.
+
+
+
+2026-09-13: PR #7155 (Avenue 2 — every expressible edge set is a linear layout; a linear layout has no bulk) MERGED to main by rebase (owner: "go"), merge sha 47cbb3153750d1b40d7571a13dad93622a2f66a5. The three main citations of #7155 now resolve. Bean stays OPEN (classes B and D; the γγ-selected-word strand-tracked follow-up).
+
+
+## 2026-09-12 — one more selection principle excluded, structurally (qou-8urh, PR #7251)
+
+This bean's open target is the linking-vs-self-energy amplitude assignment — why
+the binding multiplier is the mutual (coordination) linking count. A candidate
+that keeps getting reached for is the operator-selection LP's dual: its active
+set `{lambda : y_lambda* > 0}` looks like exactly the "which blocks does the
+bound state saturate" object this bean wants. **It cannot be, and the reason is
+structural rather than numerical.**
+
+Wedderburn block projectors are orthogonal idempotents, so the Frobenius Gram on
+the block basis is diagonal by construction,
+`G_{lm} = tr_M(P_l P_m) = delta_{lm} tr_M(P_l)`. Complementary slackness then
+decouples to `s_l * G_ll * x_l = 0`
+(`QOU.MassTheory.UICGateLP.complementarySlackness_diagonal_iff`, sorry-free) —
+a condition on the multipliers, the block norms and the SELECTED operator's
+coefficients, in which the atom's own traces never appear. The LP's
+discriminating power lives entirely in the OFF-diagonal Gram (operator overlap),
+and an orthogonal basis has none.
+
+Measured confirmation, two independent routes:
+
+* `computations/probes/h6_block_selection_lp_probe.py` (pre-existing, H_6): the
+  active set is never fewer than 10 of 11 at any reachable target; a controlled
+  diagnostic changing only `G` gives 5-of-6 active for `G = diag(t)` against
+  3-of-6 for a dense PSD `G`.
+* `computations/probes/uic_gate_vs_lp_complementary_slackness_probe.py` (new,
+  the k <= 4 blocks at 2H and 4He, mp.dps = 70, proton pin, convention D):
+  active 9 of 10 at every target for both atoms.
+
+**Scope (b) structural exclusion**; invariant = orthogonality of the Wedderburn
+projectors. Holds for every n, q and trace convention.
+
+**What it does NOT exclude**, and this is the live direction: a **non-orthogonal**
+operator basis. Actual braid sub-words overlap, so their Gram is dense and the LP
+recovers discriminating power. That is the natural next thing to try for this
+bean, and nothing here touches it.
+
+**One measured contrast worth having.** The NF-basis degeneracy (optimal value
+identically 0, `y_0* = 0`, `y_0_eq_zero_of_radical`) does **NOT** transfer to the
+block instance — it needs the cost vector to be a row of the Gram, which holds
+for the identity-containing NF basis and fails for a diagonal one. Measured
+`y_0* = 0.0347` (2H) and `0.0130` (4He). Do not quote "the LP's y_0* is zero"
+without naming the basis.
+
+Audit: `docs/audits/2026-09-12-uic-gate-primal-lp-hunt.md`. Stays OPEN.
+
+
+
+## 2026-09-12 — note from the UIC functional resolution (PR #7237, bean `qou-t6be`)
+
+Not a step on this bean's open problem; recorded because it changes what a reader
+of `unified_iterative_correction`'s output is looking at.
+
+Under the owner's ruling *"resolve functionals ... what lean provable"*,
+`prop:unified-iterative-correction` was restated to match the producer: the
+q-Laplacian resolvent `rho_lambda(s_*)` the block omitted is now in the formula,
+`u_lambda` is stated as the closed form rather than as an "LP shadow price"
+(refuted on both available readings), and the summation range is stated as the
+gated set rather than "strictly over all lambda". **No producer changed and no
+number moved.**
+
+**What this bean should take from it.** The gate — Pass 2's restriction to
+`tr M_lambda <= 0` — is now marked in the corpus as **asserted, not derived**,
+with the disproof cited: genuine complementary slackness for `<Phi, pi> >= 0`
+makes "tight" mean `tr = 0`, under which the functional collapses to
+`(sum c_lambda) * f(0)` and reads NOTHING about the atom
+(`QOU.MassTheory.UICFunctionalSelection.uicGated_cs_eq`, sorry-free); measured,
+0 of 10 active blocks sit at `tr = 0`. Combined with `y_0_eq_zero_of_radical`
+(the LP prices nothing), the gate has no derivation at all.
+
+That matters here because `uic_sign_forced_by_gate_probe` already showed the
+gate FORCES `B < 0` for any nucleus and explains the measured A-independence. So
+the wrong-signed, A-independent binding that this bean's extensive-term frontier
+is trying to explain is, to that extent, a property of an **undefended selection
+rule** rather than of the nucleus. Whether to keep the gate is an owner call and
+was deliberately NOT taken in #7237 — dropping it moves every binding number by
+3.4-4.6x on an argument that only refutes a justification (scope-(a), not
+scope-(b)).
+
+**This bean stays OPEN.**
+
+Audit: `docs/audits/2026-09-12-uic-functional-resolution.md`.
+
+**Cross-reference.** The 2026-09-12 note above (PR #7237) reports that
+`y_0_eq_zero_of_radical` makes the LP "price nothing" and that the Pass-2 gate has
+no derivation. That is the same LP reached from the **dual** side; the entry below
+reaches it from the **active-set** side. Neither subsumes the other — `y_0*` is the
+net-constraint shadow price and the active set is `{i : y_i* > 0}` — but together
+they leave the operator-selection LP with no surviving route to a binding
+multiplier.
+
+## 2026-09-14 — the non-orthogonal escape does not exist; |active| is pinned by a DIMENSION COUNT
+
+The 2026-09-12 entry above named a live direction: *"a **non-orthogonal**
+operator basis. Actual braid sub-words overlap, so their Gram is dense and the LP
+recovers discriminating power. That is the natural next thing to try for this
+bean, and nothing here touches it."*
+
+**It is not there.** The active-set cardinality is `d - 1` whatever the Gram.
+
+**Lean** (sorry-free, `lean`-direct exit 0, `#print axioms` = propext /
+Classical.choice / Quot.sound only):
+`QOU/MassTheory/LPActiveSetDimension.lean` — `exists_slack`,
+`tightSetCard_lt`, `activeSetCard_lt`, `activeSetCard_le_pred`.
+
+Complementary slackness gives `(G x*)_i = ⟨e_i, Φ*⟩_F` with `Φ* = Σ_j x*_j e_j`,
+so an active index is a basis element Frobenius-orthogonal to the selected
+operator. Then
+
+| | |
+|---|---|
+| **upper** | `G` invertible, `n_target ≠ 0` ⇒ at most `d−1` tight. All `d` tight ⇒ `Gx = 0` ⇒ `x = 0` ⇒ `1ᵀx = 0 ≠ n_target`. |
+| **lower** | a basic optimum needs `d` independent active constraints; the equality gives 1, the box gives 0 at an interior optimum, so `d−1` come from `Gx ≥ 0`. |
+
+`activeSetCard_lt`'s **statement** is the finding: it mentions neither the cost
+vector `t`, nor `n_target` beyond its non-vanishing, nor any property of `G`
+beyond invertibility — **in particular not its sparsity**. The active set counts
+the **basis**, not the nucleus. A binding multiplier must depend on the nucleus.
+
+**Measured** (`computations/probes/lp_active_set_is_pinned_by_dimension_probe.py`,
+all assertions pass). Corpus-derived non-orthogonal basis, no new Markov traces:
+`e_S := Σ_{l∈S} P_l` over cyclic windows of the H₆ blocks, so
+`⟨e_S,e_T⟩ = Σ_{l∈S∩T} tr_M(P_l)`. Off-diagonal fraction **0.000 → 1.000**, rank
+11 of 11 throughout, every duality gap `< 1e-20`, and `|active| = 10 = d−1` at
+every window width and every target.
+
+**The two escapes are the two degenerate cases, and the corpus is in both** —
+singular `G` (kernel, but the operators are then not a basis: production
+interface templates, **rank 6 of 11**) and indefinite `G` (LP unbounded, box
+corner: the braid sub-word basis, eigenvalues `[-1.579, -1.140, 0.441, 8.43, …]`).
+So `h6_block_selection_lp_probe.py` **already tried the sub-word basis and
+RETRACTED it** (2026-08-16) as a box artifact — the "nothing here touches it"
+above is stale against the very file that entry cites as independent confirmation.
+
+### 🛑 A number in the entry above should not be quoted
+
+It reports *"a controlled diagnostic changing only `G` gives 5-of-6 active for
+`G = diag(t)` against 3-of-6 for a dense PSD `G`"* and reads the 3 as the dense
+Gram recovering discriminating power. Reproduced exactly (same seed 7, same
+matrices, `h6_block_selection_lp_probe.py:145-150`), **the 3-of-6 solve is
+invalid**:
+
+    max|x*|     = 3.7135e+06   against M_bound = 1e6
+    primal_obj  = -357264      for a MAXIMisation
+    duality_gap = 3.5726e+05   where well-posed solves give < 1e-20
+
+It is the same box artifact that file retracts one screen below; the retraction
+was applied to the sub-word half and not to the controlled-diagnostic half. A
+well-posed dense PSD instance gives **5 = d−1**, like everything else.
+
+**Scope (b)** structural exclusion; invariant = invertibility of the Gram plus a
+non-zero net constraint; over any field, so every `n`, `q` and trace convention.
+
+**NOT touched, and still this bean's real target:** the extensive term itself
+(a bulk, not a surface); the LP's optimal **value** and `y_0*` (this is about the
+active set only); the γγ-selected-word strand-tracked follow-up (blocked on
+`qou-ales` step 2); escape classes B and D of PR #7181. **Bean stays OPEN.**
+
+
+
+## 2026-09-14 — class B: the AVERAGING escape is closed at the corpus's own `δ`
+
+The 2026-09-12 entry narrowed class B's remaining escape to two hypotheses —
+break the **averaging** of the pn letter, or break **affineness** of the
+interface law — and noted *"neither mentions a numerical value"*.
+
+`pn_betweenness_blocks_signMixed` carries the averaging half under
+`-2 < δ < 2`, the range on which `corpusWeight δ = 1/2 + δ/4` is a strict convex
+weight. Read as a Lean hypothesis, that looks like something a third bond family
+might violate. **It is not an assumption — `δ` is derived, and lands three orders
+of magnitude inside.**
+
+| | |
+|---|---|
+| `δ(q₀)` | `0.00137571080703` |
+| `2 / δ(q₀)` | **1453.7939** — factor inside the range |
+| `δ(q) = 2` at | `q = 3.458099300`, i.e. **3.115×** the substrate modulus |
+| sign | `δ > 0` for every `q > 1`, so `w > 1/2` always — never near either end of `(0,1)` |
+
+**Identification checked, not assumed** (two `delta` across two layers is the
+`da-arity-conflation` trap). Derived symbolically, exact:
+
+- `z(1/q) − (z − h) = 0`, so `f_nn = z − h` (the constants' `fNN_eq_fPP_bar`);
+- `w·f_pp + (1−w)·f_nn − (z − h(1/2 − δ/4)) = 0` with `w = 1/2 + δ/4`;
+- `δ − ħ_q²·h_q·[2]_q/3 = 0`, the docstring's alternative spelling.
+
+So `pyhecke.constants`' `eps = δ/4` convention (canonical `bring_color_weighted`,
+owner ruling R3) **is** the Lean's `corpusWeight`. Cross-checked:
+`pn_interface_offset(q0)` matches `−h(1−δ/2)/2` to **0.0** at 70 dps.
+
+**Consequence: affineness of `μ = z + d` is the sole surviving class-B
+hypothesis.** Untouched here.
+
+Scope (b) for the averaging half — it discharges an existing sorry-free theorem's
+hypothesis from a derived quantity rather than assuming it. **NOT claimed:** that
+no third bond family exists, that class B is excluded, or anything about
+**magnitude** — *"what derived object puts `b_pn` more than 5× below both
+like-species bonds"* is untouched and is still this bean's real target.
+
+Probe: `computations/probes/pn_averaging_weight_is_derived_probe.py`, all
+assertions pass, 70 dps, proton pin, convention D, no float64.
+
+
+
+## 2026-09-14 — class B: multiplicity BREAKS affineness, and still cannot make pn extremal
+
+The affineness half of class B's remaining escape. **The escape is real. It does
+not deliver.**
+
+**The escape exists.** Affineness is an `m = 1` fact. `tr(σ_g + d·I) = z + d` is
+affine, but `(σ_g + d·I)^m` has trace of **degree `m`** in `d` — already
+`(d²+1) + (2d+h)z` at `m = 2`, verified symbolically. Measured, **betweenness
+itself fails from `m = 12`.** So `pn_betweenness_blocks_signMixed`'s hypothesis is
+genuinely breakable, which is what the 2026-09-12 entry said class B needs.
+
+**It breaks the wrong way.** Diagonalising, `σ_g` has Hecke eigenvalues `q` and
+`−q⁻¹`, so `F_m(d) = w₊(d+q)^m + w₋(d−q⁻¹)^m` with `w₊+w₋ = 1`, and
+`F_m′ = m·F_{m−1}` — monotonicity in `d`, hence betweenness, survives exactly
+while `F_{m−1} > 0`. That stops at `m = 7` (`F_7(d_nn) < 0`). But the `b₃ > 0`
+pattern needs `μ_pn` to be the strict **MAXIMUM**, and it is at **no `m` in
+1..200**; betweenness breaks by pn becoming the strict **minimum**.
+
+**Why — the invariant.** The pn letter sits at the spectral **balance point**. At
+`d = −h/2` exactly, `(d+q) + (d−q⁻¹) = 0`: the two eigenvalue magnitudes coincide
+at `[2]_q/2`. The corpus's `bring_color_weighted` letter is displaced from it by
+exactly `h·δ/4 = 7.190163e-05` — the number `pyhecke/constants.py` records in its
+own convention note. So
+
+| letter | `d` | spectral radius |
+|---|---|---|
+| pp | `0` | `q` |
+| nn | `−h` | `q` |
+| pn | `≈ −h/2` | `≈ [2]_q/2` |
+
+and **AM-GM** gives `q > [2]_q/2 > 1` for every `q > 1`. Measured growth rates at
+`m = 200`: **1.10840** (pp), **1.00549** (pn), **1.10225** (nn), against
+`q = 1.10998` and `[2]_q/2 = 1.00545`.
+
+The gap is closed-form: `q/([2]_q/2) = 2q²/(q²+1) = 1 + tanh(ln q)` — exactly
+**`1 + δ_CP`**, the crossing discriminant `qou-hjs8` proved θ-free and
+`QOU.Braiding.em_strong_ratio_tanh` already carries.
+
+**Lean** `QOU/MassTheory/PnBalancePointSpectralGap.lean`, 7 declarations,
+sorry-free, `lean`-direct exit 0, `#print axioms` = propext / Classical.choice /
+Quot.sound only.
+
+**Scope (b)** asymptotically; invariant = AM-GM on the two Hecke eigenvalues,
+which mentions no numerical value. Small-`m` is **measured** (1..200), not proved.
+
+**NOT excluded:** a derived pn letter **not** at the balance point. That is now
+the whole of class B's remaining room, and it is far narrower than "break
+affineness" — the displacement from balance is `7.19e-05`, and it would have to
+move `ρ_pn` above `q`. **Untouched: MAGNITUDE** (this bean's real target), class D,
+and the extensive term. **Bean stays OPEN.**
+## 2026-09-14 — the MAGNITUDE: the "4.0× short" headline is quoted at an inexpressible degree
+
+This bean's magnitude question is calibrated against `a_A^eff = 5.963 MeV` vs the
+SEMF's `23.7`, i.e. **4.0× short** — the figure AGENTS.md quotes. **It is
+evaluated at `k = 12`.**
+
+`qbeta_class_b_nonsigndefinite_bond_probe` computes
+`a_A^eff(k,m) = E₀·δ(m)·k/4`, and its own constant reads
+`K_DEGREES = (2, 12)  # chain and close-packed`.
+`QOU.Mass.LinearLayoutNoBulk` (sorry-free, merged **PR #7155**) proves the
+encoding **cannot express degree 12** — its docstring names the case: *"the
+max-contact packing (degree up to 12) and the complete graph (degree `n−1`) are
+not linear-layout graphs"*. `atom_braid_word_3A` emits every inter-nucleon letter
+at generator `3k+2`, so any word it builds has a **path** coordination graph,
+`k ≤ 2`.
+
+**Neither the probe nor R5/R8/R9 mentions `LinearLayout`** (grep: zero hits in
+the probe). Both results are on `main` and have never been composed.
+
+**Measured** — same bond factors, same formula, only `k` differs:
+
+| | `a_A^eff` | vs SEMF 23.7 |
+|---|---|---|
+| quoted, `k = 12` (close-packed, **not expressible**) | 5.962911209 MeV | **3.97457×** short |
+| expressible, `k = 2` (the chain the encoding emits) | 0.9938185348 MeV | **23.8474×** short |
+
+exactly the degree ratio `12/2 = 6` (asserted to 1e-30). The R5 cells reproduce
+the recorded 0.441 / 2.647 MeV, so the formula is untouched.
+
+**And the m-scan is not available as a selection** — R9 reports the whole
+`m = 1..12` table precisely because picking the maximising `m` is the
+discrete-parameter fit the NO FITTING directive names. At the canonical `m = 1`
+and expressible `k = 2` the derived law gives **−0.045993397 MeV**: negative, the
+wrong SEMF sign, before magnitude is reached at all. **So at the encoding's own
+layout and canonical multiplicity the gap is not a shortfall — it is a SIGN
+failure, and the magnitude question arises only on cells the layout result
+excludes.**
+
+### A correction I made and retracted inside the session
+
+I first read `E₀·δ·k/4` as substituting the degree `k` into
+`symmetryCoeff = energySlope·μ/4`'s **mixing** parameter `μ`, reconstructed
+`μ ≤ 2k/A` from `bondSum_wellMixed`'s own non-negativity, and concluded the cap
+was understated 2×. **Wrong.** `SymmetrySignAmGm.lean` states the well-mixed
+assignment as `E_pn ≈ 2E·ZN/A²`, i.e. `μ = k/A` — the **value**, where I used a
+**bound** 2× looser; with `μ = k/A` the SEMF's own `1/A` cancels it and the
+probe's formula is exactly right. The retracted claim flattered the framework;
+the surviving one does not.
+
+### Inherited scope limit — load-bearing
+
+`LinearLayoutNoBulk` is closed over the **template** encoding
+`atom_braid_word_3A` only. The γγ-selected words of owner ruling `qou-ales` have
+**not** been measured strand-tracked, and that is this bean's existing open
+workplan item. If such a word expresses a higher degree, the 4.0× could return.
+
+**Scope: a correction to a quoted figure.** No derivation, bond factor or formula
+changes. It makes the gap **wider**. NOT claimed: that `k = 2` is the right
+physical model (`bondSum_wellMixed` is a mean-field model by its own docstring
+and a chain is not well-mixed); that the magnitude is closed, narrowed or
+reopened; that any bond family is excluded. **Bean stays OPEN.**
+
+Probe: `computations/qbeta/qbeta_magnitude_at_the_expressible_degree_probe.py`.
+
+
+## The amplitude: what is proved, what is open, where it enters (2026-09-14)
+
+Answering the owner's question — *"what are properties/constraints of amplitude?
+where is it emerging in canonical derivation/cheat sheet for mass/binding?"* —
+as a consolidation of corpus facts. No new derivation; every line below cites an
+existing sorry-free file or an owner ruling.
+
+### There are TWO amplitudes, and the whole bean is about their assignment
+
+At fixed hyperbolic volume (`BindingMassRung.lean:8-9`):
+
+    mass    :  m(K) = m_e · Vol(K) · lw / hbar_q^2      lw = SELF-linking weight
+    binding :  B(K) = m_e · Vol(K) · M                  M  = MUTUAL coordination count
+
+`lw` is the density factor of step **9a**; `M` is the multiplicity of step **9b**.
+Vol(K) is common to both — the amplitude is the *density* half, not the geometry.
+
+### Properties, each with its carrier
+
+| property | mass amplitude `lw` | binding amplitude `M` | carrier |
+|---|---|---|---|
+| bar parity | **even** (cosh / signed channel) | **odd** (sinh / count channel) | `BrunnianBindingChannel` |
+| type | q-dimension, rational in q | bare integer count | ibid. (open item ii) |
+| sign | writhe, sign-changing | unsigned, non-negative | ibid. |
+| order in hbar_q | O(hbar^-2) — order-2 pole, residue `lw` | O(1) | `BindingMassRung` |
+| classical limit q->1 | `lw(1) = 5/2` finite nonzero => pole genuine | A-dependent integer | `MuWenzlClosure` |
+| closed form at the proton | `(3q^2+4+3q^-2)/4 = 5/2 + (3/4)h^2` | `M_n = n-1` (chain) | `MassVolDensity`, `LinearChainBondCount` |
+| degree bound | — | `deg <= 2` (no bulk); complete graph excluded | `LinearLayoutNoBulk`, `CoordinationSaturation` |
+
+### The assignment is FORCED, not postulated — three sorry-free results
+
+1. **Partition is a theorem.** Every crossing is intra- or inter-component, so
+   assembly = self + mutual exactly; with `B := sum(isolated) - assembled` the self
+   energies cancel and `binding_eq_neg_mutualEnergy` gives `B = -(mutual)`.
+   Falsifiable corollary `binding_indep_of_self`: binding depends on NO self-crossing.
+   (`SelfMutualPartition`)
+2. **Parity picks the channel.** `signed = (n+ - n-)(q+q^-1)/2` (writhe = 2 lk),
+   `unsigned = (n+ + n-)(q-q^-1)/2` (count). The 3He/4He carrier L6a4 is **Brunnian**:
+   every pairwise lk is 0, so `n+ = n-` and the signed channel is EMPTY. Binding must
+   therefore ride the unsigned count channel — which is why `M` is a count and not a
+   linking number. (`BrunnianBindingChannel`)
+3. **The bar-odd shape is unique.** The bar-odd part is free rank one over the
+   bar-even, generated by `h = q - q^-1`. The `h` prefactor of the count channel is
+   not a choice. (`BarParityRankOne.isBarOdd_iff`)
+
+### The rung dichotomy, exactly
+
+    massMultiplier_pole_residue :  hbar^2 * (lw/hbar^2) = lw
+    bindingOverMass_eq          :  B/m = (M/lw) * hbar_q^2
+    bindingOverMass_tendsto_zero:  B/m -> 0  as hbar_q -> 0
+
+So mass DIVERGES and binding VANISHES at the classical point: rest mass is generated
+by the deformation being small; nuclear binding is an O(hbar_q^2) quantum correction.
+
+Numerics at the proton pin, mp.dps = 50 (recomputed 2026-09-14):
+
+    q0        = 1.1099785827513808076
+    h         = 0.20906029879563931545
+    hbar_q    = 0.099081716044258507846
+    hbar_q^2  = 0.0098171864542750738119
+    lw_A(q0)  = 2.5327796563993914921
+    lw/hbar^2 = 257.99445372624517683
+
+    (M/lw)*hbar^2 :  M=1 -> 3.87605e-3   M=2 -> 7.75210e-3   M=3 -> 1.16282e-2
+    AME B/m       :  d 1.18605e-3        4He 7.59130e-3      56Fe 9.45010e-3
+
+**FLAG, not a finding.** M=2 lands 2.1 % from 4He's AME B/m. That is NOT evidence:
+no derived rule gives M=2 for 4He (the arc's own z = A-1 gives 3, and
+`CoordinationSaturation` excludes the complete graph that produces it). Choosing M
+because it lands is selection against the target — AGENTS.md NO FITTING. Coincidence
+until a rule derives it; recorded here so the next agent does not rediscover it and
+mistake it for a result.
+
+### What the corpus already REFUTED about `lw`
+
+`lw = lambda_A` is **excised for absolute mass** (owner ruling 2026-06-24). The form
+`m(K) = m_e Vol(K) lw/hbar_q^2` read at K = B_3 gives m_p ~ 966 MeV (+2.96 %), and the
+long-quoted "+2.89-3.86 % absolute-mass gap" is the **lambda_A fit artifact**, not a
+missing wire-up (`2026-06-24-lambda-a-refutation-artifact-audit.md`). Absolute mass is
+excised as a prediction entirely (2026-08-11). What survives:
+* the ALGEBRAIC identity `lw = (1/4) sum_{lam |- 4} dim_q V_lam` (proved) — `lw` is a
+  derived object;
+* `vol_density_per_block` for **binding ratios only**, where the scale cancels.
+
+So the mass amplitude is derived as algebra and refuted as an absolute-mass amplitude.
+Its live role is the ratio.
+
+### The three open residuals, in the sources' own words
+
+* `BindingMassRung`: *"It does NOT derive **why** binding lacks the cusp factor — that
+  residual kernel is the open item."*  (Why does 1/hbar_q^2 attach to the self channel
+  and not the mutual one? CAL-2 puts it in `m_mu/m_e = Vol(4_1)/hbar_q^2`; nothing
+  derives that the mutual channel escapes it.)
+* `BrunnianBindingChannel`: *"(i) the exact map from `n+ + n-` to the graph-degree
+  `z = A-1`; (ii) why the surviving count channel enters as a **bare integer** while
+  the self/mass channel keeps the full q-dimension self-trace `lw`."*
+* `SelfMutualPartition`: *"the identification of the substrate mass observable with this
+  crossing energy at the full Markov-trace granularity ... its lift to the exact mass
+  formula is the remaining modelling step, not a fit."*
+
+(ii) and the `BindingMassRung` item are the SAME question from two sides: integer vs
+q-dimension is exactly cusp-factor-absent vs cusp-factor-present. That is this bean.
+
+### Magnitude, the other half — where it currently stands
+
+The binding amplitude's magnitude is capped by `delta <= 2 ln q0 = 0.2086814406` with
+`a_A^eff = E0 * delta * k / 4`. At the only degree the layout can express (`k = 2`, the
+chain, `LinearLayoutNoBulk` degree <= 2) this gives **0.9938185348 MeV against the SEMF
+`a_A = 23.7 MeV` — 23.8474x short**, and at the canonical multiplicity m = 1 the sign is
+wrong (-0.045993397 MeV). PR #7373.
+
+So the amplitude's ASSIGNMENT is forced and proved; its MAGNITUDE is short by 23.8x at
+the expressible degree. Those are the two halves of this bean, and only the first is done.
+## 2026-09-14 — the ideal-Fermi-gas lead, evaluated and NEGATIVE
+
+A corpus-grep sweep of this front surfaced the one lead with **no corpus
+trace**, from `library/arxiv-nucl-th-0507064v2` (Horowitz–Schwenk, low-density
+neutron matter): *"for the ideal Fermi gas `b^(3)_n = 3^{-5/2} = 0.06`"* —
+positive, from exchange statistics alone, with **no pair interaction at all**.
+Since every corpus mechanism for `b₃` is a bond object and
+`b3corpus_chain_pos_iff` is a statement about bond factors, a degeneracy
+contribution is invisible to it. It looked like a live escape.
+
+**It is not, and the reason is worth more than the lead: the two `b₃` are in
+opposite sign conventions.** Derived in
+`computations/audits/b3_ideal_fermi_gas_lead_evaluation_probe.py` (8/8):
+
+- the classical cluster integral is `b₃^cluster ∝ +∫φᵀ₃`, so it carries the
+  sign of `+φᵀ₃`;
+- the corpus defines `b₃^corpus = −φᵀ₃` (the minus is what makes `b₃ > 0` mean
+  binding-increasing when binding is `−α·log μ`);
+- hence `sign(b₃^corpus) = −sign(b₃^cluster)`, identically.
+
+So the ideal gas's `+0.064` maps to **negative** in corpus convention — the
+same sign the corpus already has, and the same sign that blocks this front.
+
+**And the anomaly dissolves entirely.** A classical gas with purely
+**repulsive** pair interaction also has `b₃^cluster > 0`, because that *is* the
+Ursell alternation. The ideal Fermi gas does not carry an unusual sign in its
+own convention; it carries the ordinary one. There was never a sign anomaly to
+exploit — there was a convention difference.
+
+### What survives, narrowly
+
+In the corpus frame the free case (`μ_e = 1`) gives `b₃ = 0` **exactly** over
+ℚ, while a free Fermi gas does not. That is a concrete, physically-realised
+witness that the **non-Mayer escape class is non-empty** — the one route the
+2026-09-12 Ursell audit lists as explicitly scope-(a) un-excluded. It is a
+witness that the class is non-empty. It is **not** a mechanism, **not** a sign,
+and **not** a magnitude.
+
+And it cuts against itself: exchange statistics in this framework **are** the
+Hecke algebra (`H_n(q)` is the q-deformation of `S_n`, and the statistics
+content already sits inside `tr_M = Σ_λ y_λ χ^λ`), so this is **class C**,
+already attacked on two channels — multiplicity (sub-extensive, scope (b)) and
+dominant summand (wrong sign at `A ≥ 5`, scope (a)). Whether the ideal-gas
+analogue is a *third* class-C channel is open and is not settled.
+
+**Recommendation, marked as judgement:** do not spend a tranche here. Recorded
+as evaluated-and-negative so the next agent who greps `nucl-th-0507064` does
+not re-open it. The two routes the same sweep found genuinely live are
+unchanged — the γγ-selected word's **strand-tracked** coordination graph
+(blocked on `qou-ales` step 2) and `qou-2ss0`'s **superlinearity** question.
+
+Section 1 of the probe also re-derives the corpus identity exactly over ℚ:
+`Δ³W = +φᵀ₃`, collapsing on a chain to `g₀₁·g₁₂`, matching `b3corpus_chain`.
+
+PR #7375. `mpmath` dps 60 + `Fraction`; no float anywhere.

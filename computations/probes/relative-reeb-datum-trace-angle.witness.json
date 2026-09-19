@@ -1,0 +1,276 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-16T06:09:55.081668+00:00",
+  "commitSha": "b7f304f42ac6a9d506bcbc5b7d92ea5fa1fec7ab",
+  "assertions": [
+    {
+      "name": "every_production_letter_template_has_e_in_unit_interval",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "e = −d/h for pp, pn, nn, uu, ud, dd"
+    },
+    {
+      "name": "bond_factor_equals_mixture_of_crossing_traces_to_1e-50",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "(1−e) z_D + e (z_D − h) = z_D + d; Lean trace_interfaceLetter"
+    },
+    {
+      "name": "e_pn_is_half_minus_delta_over_four",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "pn_interface_offset, bring_color_weighted"
+    },
+    {
+      "name": "trace_of_light_cone_in_open_unit_interval_all_four",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "clause trM_lightCone_mem holds on the production chains; θ_trace defined"
+    },
+    {
+      "name": "trace_of_light_cone_equals_bond_product_to_1e-40",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "bond law, re-measured"
+    },
+    {
+      "name": "theta_trace_increases_with_bond_count_D_lt_3He_lt_T_lt_4He",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "one, two, two, three bonds; the nn bond factor is the smallest so T > 3He"
+    },
+    {
+      "name": "block_level_ratio_candidate_is_not_uniformly_definable",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "some two-row block has |χ_atom/χ_free| > 1 on at least one nucleus — arccos of the block ratio is not a datum"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "relative-reeb-datum-trace-angle",
+  "scriptFile": "relative_reeb_datum_trace_angle_probe.py",
+  "scriptHash": "12df6cb08860",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/relative_reeb_datum_trace_angle_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/relative_reeb_datum_trace_angle_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0_anchor_reason": "committed proton-pinned witnesses only; q0 enters through the committed string",
+  "description": "PROBE (beans qou-jfx8, qou-1x56): candidate relative-Reeb data on committed words. Every production letter is (1−e)σ + eσ⁻¹ with e ∈ [0,1] (pp 0, pn ½−δ/4, nn 1; uu 0, ud ½, dd 1); the trace-level candidate θ = arccos(tr(atom)/tr(free)) is defined for D/T/3He/4He because the bond product lies in (0,1); the block-level ratio candidate is not uniformly definable. Nothing selected; the class leaves lightCone as data.",
+  "weight_family": "markov_y_lambda_convention_D",
+  "q0_from_y_witness": "1.1099785827513808075916690956107688798744991218736",
+  "h": "0.20906029879563931543084621312967494385975749526306",
+  "z_D": "0.61268803714646525159582986394589924802630839154509",
+  "delta_flavor_split": "0.0013757108070270960085511092741065506222254760119378",
+  "letter_offsets_d": {
+    "pp": "0.0",
+    "pn": "-0.10445824776972628901783406629000564412800000062852",
+    "nn": "-0.20906029879563931543084621312967494385975749526306",
+    "uu": "0.0",
+    "ud": "-0.10453014939781965771542310656483747192987874763153",
+    "dd": "-0.20906029879563931543084621312967494385975749526306"
+  },
+  "inverse_crossing_weights_e": {
+    "pp": "0.0",
+    "pn": "0.49965607229824322599786222268147336234444363099702",
+    "nn": "1.0",
+    "uu": "0.0",
+    "ud": "0.5",
+    "dd": "1.0"
+  },
+  "bond_factors_z_plus_d": {
+    "pp": "0.61268803714646525159582986394589924802630839154509",
+    "pn": "0.50822978937673896257799579765589360389830839091657",
+    "nn": "0.40362773835082593616498365081622430416655089628202",
+    "uu": "0.61268803714646525159582986394589924802630839154509",
+    "ud": "0.50815788774864559388040675738106177609642964391356",
+    "dd": "0.40362773835082593616498365081622430416655089628202"
+  },
+  "pn_convention": "bring_color_weighted",
+  "per_nucleus": {
+    "d": {
+      "chi_witness": {
+        "computedAt": "2026-09-07T11:36:23.937707+00:00",
+        "commitSha": "6e9557d5cebd"
+      },
+      "bond_chain_kinds": [
+        "pn"
+      ],
+      "tr_light_cone_ratio": "0.50822978937673896257799579765589360389830839091657",
+      "bond_product": "0.50822978937673896257799579765589360389830839091657",
+      "abs_dev": "2.7965e-51",
+      "theta_trace_rad": "1.037668251064572343456012390003125876045",
+      "theta_trace_deg": "59.4540113207214862765466377497",
+      "two_row_blocks": [
+        "(6,)",
+        "(5, 1)",
+        "(4, 2)",
+        "(3, 3)"
+      ],
+      "block_ratio_chi_atom_over_chi_free": {
+        "(6,)": "1.005520334981654518573835",
+        "(5, 1)": "-0.9447010522976824929538015",
+        "(4, 2)": "0.398117184901941123175765",
+        "(3, 3)": "0.4312109428070773678171031"
+      },
+      "block_ratio_n_abs_le_1": 3,
+      "block_ratio_n_negative": 1,
+      "normalised_chi_atom_over_dim": {
+        "(6,)": "1.559870199564151592706167",
+        "(5, 1)": "-0.1364570025521140892824799",
+        "(4, 2)": "0.03656448305995702641744906",
+        "(3, 3)": "0.1427890303502771492845043"
+      },
+      "normalised_n_in_unit_interval": 3
+    },
+    "t": {
+      "chi_witness": {
+        "computedAt": "2026-09-07T11:38:54.012979+00:00",
+        "commitSha": "6e9557d5cebd"
+      },
+      "bond_chain_kinds": [
+        "pn",
+        "nn"
+      ],
+      "tr_light_cone_ratio": "0.20513564044864976892685000166038351176091031419586",
+      "bond_product": "0.20513564044864976892685000166038351176091031419587",
+      "abs_dev": "8.8347e-51",
+      "theta_trace_rad": "1.364194033829283787317479105770111961929",
+      "theta_trace_deg": "78.1625605753450086098355068865",
+      "two_row_blocks": [
+        "(9,)",
+        "(8, 1)",
+        "(7, 2)",
+        "(6, 3)",
+        "(5, 4)"
+      ],
+      "block_ratio_chi_atom_over_chi_free": {
+        "(9,)": "0.905891654674274530726148",
+        "(8, 1)": "-0.5330616588525078903037397",
+        "(7, 2)": "0.1006650924704322323182988",
+        "(6, 3)": "0.3816648010204576444815341",
+        "(5, 4)": "-1.729274839341664856678759"
+      },
+      "block_ratio_n_abs_le_1": 4,
+      "block_ratio_n_negative": 2,
+      "normalised_chi_atom_over_dim": {
+        "(9,)": "1.57691420262060596788996",
+        "(8, 1)": "-0.1315412862318237109933571",
+        "(7, 2)": "0.009816761222167997350963518",
+        "(6, 3)": "0.03785176529659607096113165",
+        "(5, 4)": "-0.03354138363526363859085025"
+      },
+      "normalised_n_in_unit_interval": 4
+    },
+    "3he": {
+      "chi_witness": {
+        "computedAt": "2026-09-07T11:38:55.460990+00:00",
+        "commitSha": "6e9557d5cebd"
+      },
+      "bond_chain_kinds": [
+        "pp",
+        "pn"
+      ],
+      "tr_light_cone_ratio": "0.31138631207259565241288839663309982228956162859607",
+      "bond_product": "0.31138631207259565241288839663309982228956162859607",
+      "abs_dev": "5.2255e-51",
+      "theta_trace_rad": "1.254144801703720657208937843065074301895",
+      "theta_trace_deg": "71.8572040358947278268948549172",
+      "two_row_blocks": [
+        "(9,)",
+        "(8, 1)",
+        "(7, 2)",
+        "(6, 3)",
+        "(5, 4)"
+      ],
+      "block_ratio_chi_atom_over_chi_free": {
+        "(9,)": "1.116106036350630559888839",
+        "(8, 1)": "-0.3381518531055718405839343",
+        "(7, 2)": "0.1837504019921798878008088",
+        "(6, 3)": "0.4070272632794830897039082",
+        "(5, 4)": "-1.145586914133616458366712"
+      },
+      "block_ratio_n_abs_le_1": 3,
+      "block_ratio_n_negative": 2,
+      "normalised_chi_atom_over_dim": {
+        "(9,)": "2.393682038552654474882268",
+        "(8, 1)": "-0.1144583109863611818037312",
+        "(7, 2)": "0.0248264710037260894224406",
+        "(6, 3)": "0.05206790150717723352972904",
+        "(5, 4)": "-0.03940602051913765392314008"
+      },
+      "normalised_n_in_unit_interval": 4
+    },
+    "4he": {
+      "chi_witness": {
+        "computedAt": "2026-09-07T13:10:05.078278+00:00",
+        "commitSha": "a4fcf64a10d5"
+      },
+      "bond_chain_kinds": [
+        "pp",
+        "pn",
+        "nn"
+      ],
+      "tr_light_cone_ratio": "0.12568415289526626941387850586668409901893672284695",
+      "bond_product": "0.12568415289526626941387850586668409901893672284696",
+      "abs_dev": "6.4837e-51",
+      "theta_trace_rad": "1.444778904313502425749141434904862475099",
+      "theta_trace_deg": "82.7797335466990950806960264395",
+      "two_row_blocks": [
+        "(12,)",
+        "(11, 1)",
+        "(10, 2)",
+        "(9, 3)",
+        "(8, 4)",
+        "(7, 5)",
+        "(6, 6)"
+      ],
+      "block_ratio_chi_atom_over_chi_free": {
+        "(12,)": "1.005520334981654518573835",
+        "(11, 1)": "-0.3189100600844381078083782",
+        "(10, 2)": "0.07025785044299448241871819",
+        "(9, 3)": "0.2950442103376871575910597",
+        "(8, 4)": "-0.2482428676699338102909673",
+        "(7, 5)": "0.04343961774691619298479592",
+        "(6, 6)": "0.6691094704209175211233245"
+      },
+      "block_ratio_n_abs_le_1": 6,
+      "block_ratio_n_negative": 2,
+      "normalised_chi_atom_over_dim": {
+        "(12,)": "2.419836730137038139031587",
+        "(11, 1)": "-0.1347345946077395075124505",
+        "(10, 2)": "0.01006187543681136773583483",
+        "(9, 3)": "0.0269456155718977908809916",
+        "(8, 4)": "-0.01083447957966881714753842",
+        "(7, 5)": "0.00143091746047462624587075",
+        "(6, 6)": "0.03220176205437338443145814"
+      },
+      "normalised_n_in_unit_interval": 6
+    }
+  },
+  "K_2H_negative_nf_coefficient_note": "k_versus_selected_operator_probe.py: K(2H) = σ₀ + D_PN·1 has exactly one negative NF coefficient, D_PN = −e_pn·h (cited, not recomputed here)"
+}

@@ -1,0 +1,130 @@
+{
+ "schema": "witness/v1",
+ "computedAt": "2026-09-13T14:13:19.224683+00:00",
+ "engine": "mpmath",
+ "scriptFile": "gamma_gamma_bond_is_pair_independent_probe.py",
+ "commitSha": "a100f6722bf6e03bee9de5da7c2d67968f9c8f04",
+ "q0Anchor": "physical_proton",
+ "q0AnchorReason": "seeded from Q_50_DIGIT_STR; convention D (z = q^3/(q^2+1))",
+ "description": "Measures whether the gamma-gamma-selected bond G^3 = (sigma_2 sigma_3^-1)^3 gives a PAIR-DEPENDENT bond factor, and evaluates the Lean-proved chain sign condition b3 = -((f01-1)(f12-1)) on both A=3 chains. Decides Option 1 of qou-brng at the qou-ales / qou-q8vl junction: a pair-INDEPENDENT bond word gives three equal bond factors and can never be sign-mixed. Nothing is tuned; the bond word is fixed by the owner's 2026-09-08 ruling.",
+ "dps": 60,
+ "q0": "1.1099785827513808075916690956107688798744991218736",
+ "z_D": "0.612688037146465251595829863946",
+ "mu": {
+  "pp|template_s2": "0.612688037146465251595829863946",
+  "pp|G3": "1.00105775254515984363438899056",
+  "pn|template_s2": "0.612688037146465251595829863946",
+  "pn|G3": "1.00061119140688077961351843904",
+  "np|template_s2": "0.612688037146465251595829863946",
+  "np|G3": "1.00105775254515984363438899056",
+  "nn|template_s2": "0.612688037146465251595829863946",
+  "nn|G3": "1.00061119140688077961351843904"
+ },
+ "tr_free_by_pair": {
+  "pp": "0.396054237819282657020720926067",
+  "pn": "0.299015017184640076702160426771",
+  "np": "0.299015017184640076702160426771",
+  "nn": "0.225751859124728963348957023631"
+ },
+ "pair_spread": {
+  "template_s2": "1.55575381946528542678601601345e-61",
+  "G3": "0.000446561138279064020870551523395"
+ },
+ "gamma_gamma_pair_dependent": true,
+ "order_dependence_by_block_dim": {
+  "one_dim_total_abs_y_dchi": "8.97080516841315100596097039356e-62",
+  "multi_dim_total_abs_y_dchi": "0.00172902373584473397730994076018",
+  "reading": "the pn/np gap is carried ENTIRELY by the >=2-dim blocks; the 1-dim blocks are order-blind, which reconciles this probe with qou-99qc/#7295's altChar order-blindness result"
+ },
+ "one_sidedness": {
+  "pair_symmetry_gap_mu_pn_minus_mu_np": "0.000446561138279064020870551523395",
+  "second_nucleon_rule_worst_gap": "1.55575381946528542678601601345e-61",
+  "reading": "MEASURED: mu depends only on the SECOND nucleon. The mechanism is NOT established -- sigma_3 lies inside block 1, but G^3 also carries sigma_2, adjacent to block 0's sigma_1, so far-commutation does not explain it."
+ },
+ "chain": {
+  "3He(ppn)|template_s2": {
+   "mu_a": "0.612688037146465251595829863946",
+   "mu_b": "0.612688037146465251595829863946",
+   "b3": "-0.150010556569457880807712575487",
+   "n_above_one": 0
+  },
+  "3He(ppn)|G3": {
+   "mu_a": "1.00105775254515984363438899056",
+   "mu_b": "1.00061119140688077961351843904",
+   "b3": "-0.000000646489266207970203566389402665",
+   "n_above_one": 2
+  },
+  "3H(pnn)|template_s2": {
+   "mu_a": "0.612688037146465251595829863946",
+   "mu_b": "0.612688037146465251595829863946",
+   "b3": "-0.150010556569457880807712575487",
+   "n_above_one": 0
+  },
+  "3H(pnn)|G3": {
+   "mu_a": "1.00061119140688077961351843904",
+   "mu_b": "1.00061119140688077961351843904",
+   "b3": "-0.000000373554935844906697500715452075",
+   "n_above_one": 2
+  }
+ },
+ "controls": {
+  "template_vs_z_D_worst": "5.44513836813e-61",
+  "mu_pp_G3_vs_step3_1p001058": "2.47454840156e-7"
+ },
+ "assertions": [
+  {
+   "name": "the template bond reproduces z_D on EVERY pair (connected-sum multiplicativity control)",
+   "passed": true
+  },
+  {
+   "name": "the template bond is pair-INDEPENDENT, so it can never sign-mix",
+   "passed": true
+  },
+  {
+   "name": "step-3's mu_pp(G^3) is reproduced to its quoted precision",
+   "passed": true
+  },
+  {
+   "name": "mu_pp(G^3) > 1: the gamma-gamma bond DOES unbind the diproton",
+   "passed": true
+  },
+  {
+   "name": "the gamma-gamma bond IS pair-dependent (it reaches into a nucleon block via sigma_3, so the bond-product theorem does not apply)",
+   "passed": true
+  },
+  {
+   "name": "REPORTED, not required: whether G^3 makes 3He's b3 positive -- it is negative",
+   "passed": true
+  },
+  {
+   "name": "REPORTED, not required: whether G^3 makes 3H's b3 positive -- it is negative",
+   "passed": true
+  },
+  {
+   "name": "the gamma-gamma bond is NOT symmetric under swapping the two nucleons: mu_pn != mu_np, so it is not a function of the pair",
+   "passed": true
+  },
+  {
+   "name": "MEASURED (mechanism not proved): mu is a function of the SECOND nucleon alone -- mu_np = mu_pp and mu_pn = mu_nn, to 1.6e-61",
+   "passed": true
+  },
+  {
+   "name": "EVERY pair type exceeds 1 under G^3, so no chain gets exactly one bond above 1 and b3 < 0 on both atoms",
+   "passed": true
+  },
+  {
+   "name": "CROSS-ARC CONSISTENCY (qou-99qc / #7295): the 1-dimensional blocks contribute NOTHING to the pn/np gap -- a 1-dim rep is a product of scalars and is order-blind, so their order-blindness and this probe's order-DEPENDENCE are not in conflict",
+   "passed": true
+  },
+  {
+   "name": "the whole pn/np gap is carried by the >=2-dimensional blocks",
+   "passed": true
+  },
+  {
+   "name": "the two chains AGREE in sign under G^3 (a single bond family cannot give one atom a positive b3 and the other a negative one without that being a finding in itself)",
+   "passed": true
+  }
+ ],
+ "allPassed": true,
+ "elapsed_seconds_note": "wall time is not recorded; it is not a result"
+}

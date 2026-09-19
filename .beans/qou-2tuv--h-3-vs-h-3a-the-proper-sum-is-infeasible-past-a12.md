@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-08-29T08:28:37Z
+updated_at: 2026-09-15T08:23:44Z
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -1611,3 +1611,49 @@ Two consequences for whoever works this:
 
 Measured: computations/probes/tower_vhat_markov_parameter_probe.py, 9 checks,
 witness computations/tower-vhat-markov-parameter.witness.json.
+
+
+
+## 2026-09-15 — still live, and the legacy path is FLOAT64
+
+Re-measured on `claude/lp-dual-radical-formalize-first-2026-09-14`. Nothing here
+contradicts the bean above; three facts are added, and two of them are new.
+
+**1. The deprecation does NOT refuse — it warns and returns.** Measured:
+
+    atom_per_generator_volumes(1, 1)   ->  5 generators, DeprecationWarning
+    r[0]['full'] = mpf('1.0802151925176549')
+
+That reproduces this bean's own `legacy (H_3)` figure `1.08022` exactly, 3.7
+months after `docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md`. Because it
+returns rather than raising, **every caller that does not read warnings silently
+receives H_3 weights** — the failure is quiet, not loud. Compare
+`mass_at_3A_proper.per_generator_V_hat_3A(1,1)[0]['full'] = 0.6713858243916997`:
+a **61 % relative gap on generator 0**, which is the same legacy-vs-proper split
+this bean tabulates.
+
+**2. NEW — the legacy value is bit-exactly a float64.** It is typed `mpf`, which
+is what makes this hard to see:
+
+    nstr(v, 40)        = 1.080215192517654854142961085017304867506
+    v == mpf(float(v)) = True
+    mp.dps             = 15   (mpmath default, not the repo's 70)
+
+The 40-dps expansion is the binary expansion of the float64, so the `mpf` is
+**padded, not computed** — the `float64-padding` class the NO-FLOAT64 ratchet
+exists to catch. So a caller migrating to `per_generator_V_hat_3A` gains
+correctness *and* precision; and a caller that cannot migrate (A > ~12, per this
+bean) is on float64 as well as on the wrong algebra. Worth stating explicitly in
+`mass_table_comprehensive.py`'s declared caveat, which currently names only the
+truncation.
+
+**3. Caller count is 32, not 31** — `grep -rl atom_per_generator_volumes
+--include=*.py`, excluding `_deprecated/` and the generated `qou-mass/` mirror.
+The audit said "15+"; this bean says 31. Small drift, noted so the next
+re-measure has a dated figure rather than a range.
+
+**Nothing is proposed here.** Path A stays unreachable for the heavy rows for
+the reason this bean establishes (p(3A) growth), and migrating the A-bounded
+callers is a change to derived numbers that several producers publish, so it is
+the owner's call under the 2026-09-07 ask-before-changing directive. Recording
+the measurement only.

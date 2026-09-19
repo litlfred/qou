@@ -84,6 +84,7 @@ export default chapter({
         "yekutieli-lifting",
         "yekutieli-lifting-su2",
         "yekutieli-lifting-proof",
+        "yekutieli-setting-explicit",
         "qu-to-qou",
         "qu-to-qou-su2",
       ],
@@ -104,6 +105,8 @@ export default chapter({
         "kummer-tower",
         "kummer-tower-motivic-galois",
         "hochschild-kummer-connection",
+        "hkr-theorem",
+        "s1-action-and-loop-space",
         // def:motivic-substrate — substrate of the classical-limit
         // functor; lives here alongside motivic-galois-character +
         // qou-motivic-galois-instance (its consumers). Detangler
@@ -184,6 +187,10 @@ export default chapter({
         "descent-physical-zero",
         "descent-reduction",
         "descent-physical",
+        "descent-reduction-two",
+        "descent-physical-two",
+        "descent-reduction-three",
+        "descent-physical-three",
         "descent-fixed-point",
       ],
     }),

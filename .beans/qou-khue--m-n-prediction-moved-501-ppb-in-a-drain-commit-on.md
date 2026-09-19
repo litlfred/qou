@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-28T18:18:52Z
-updated_at: 2026-09-08T07:43:12Z
+updated_at: 2026-09-14T19:42:26Z
 ---
 
 ## Found 2026-08-28, by restoring the p/n rows (qou-7e1t option 3)
@@ -158,3 +158,72 @@ categorical route — is real but is not this bean's, and is not new: it predate
 the drain by however long the two routes have coexisted.
 
 ## 2026-09-08 — C4 of the programme audit (docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §2, §7.3): two m_n values are live on main — the facade witness m-p-substrate-identity-50dps (2026-08-29) carries Q_beta = 0.78280469 (+602 ppm, the N2 form at z_D) and m_n at +501 ppb, while per-observable-100x-status (2026-09-07) carries the c_k-cache Q_N2 (1279 ppb, convention C, z = 1 inadmissible) and m_n at 0.903 ppb / 176.7x — a factor ~550 apart, both Path C m_n = m_p + Q_beta + m_e. Owner decision 2026-09-08 (qou-99qc): epsilon := augmentation, base 0.8798906 MeV (+12.470 %). Both witnesses are therefore to be re-scored on the augmentation base and stamped with functional + frame; until then neither m_n is canonical. Not done in this session (producer re-run under D; ask-before-change).
+
+## 2026-09-14 — the closing entry names the SUPERSEDED base, and the 555x has reversed
+
+Two corrections, both measured on `main` `17003000fe`. Nothing re-run, nothing
+regenerated.
+
+### 1. 🛑 The 2026-09-08 entry records the owner's FIRST selection, not the ruling
+
+It says: *'Owner decision 2026-09-08 (qou-99qc): epsilon := augmentation, base
+0.8798906 MeV (+12.470 %). Both witnesses are therefore to be re-scored on the
+augmentation base.'*
+
+**The augmentation was superseded the same hour.** AGENTS.md (line ~2310) records
+the sequence verbatim:
+
+> 🟧 OWNER RULING 2026-09-08 (**final**, same day) — ε is the MARKOV TRACE AT
+> `z_D = q³/(q²+1)`, i.e. option C … the owner first selected the augmentation on
+> an option that carried the agent's recommendation; the same hour `13bb8243d8`
+> showed the augmentation IS the Markov trace at `z = q`, so the choice is *which*
+> Markov parameter, and under D7 the consistent point is `z_D` … **the owner chose
+> `z_D`.**
+
+Base **0.4447004 MeV, −43.157 %**, not 0.8798906 / +12.470 %. `qou-99qc` carries
+both rows (lines 225-226).
+
+**This matters because the entry is an instruction.** An agent acting on it would
+re-score both witnesses onto a base the owner did not choose. Corrected here;
+corpus-derived, so no gate.
+
+### 2. The 555x is stale — and the comparison has REVERSED SIGN
+
+Measured today:
+
+| artifact | m_n | err | computedAt |
+|---|---|---|---|
+| `per-observable-100x-status.witness.json` | 939.434944688 | **1.389e+5 ppb** (2.718e+7x) | 2026-09-13 |
+| `m-p-substrate-identity-50dps.witness.json` | 939.5658930678 | **501.43 ppb** | 2026-08-29 |
+
+    bean's recorded pair:  501 ppb (subid)  vs 0.9029 ppb (dash)  -> 555x, dashboard BETTER
+    today:                 501 ppb (subid)  vs 1.389e5 ppb (dash) -> 277x, dashboard WORSE
+
+**The dashboard has been re-scored on the ruled `z_D` base; the substrate-identity
+witness has not** (its `computedAt` predates the ruling by ten days). That is the
+live asymmetry, and it is exactly the half-done state the 2026-09-08 entry
+predicted — one of the two re-scored, the other not.
+
+### What this does and does not change
+
+- **The bean's structural finding stands**: two committed production artifacts
+  report the same scored observable from different routes with no field saying
+  so, and the `prediction_route` labelling proposal is still the right narrow
+  fix. It is now *more* warranted, not less — the gap is 277x and the arithmetic
+  reads the opposite way round from the last entry.
+- **The old justification is gone.** The bean records the dashboard as
+  *'knowingly preferring the categorical route'* because its own source comment
+  cites a better residual. On today's tree that route is **277x worse**. Note
+  separately that ranking routes by residual is the selection-against-the-target
+  the anti-fit directive forbids, so that was never a licit reason — it is now
+  not even a true one.
+- **Do NOT read 501 ppb as the better answer.** Per the same directive, the
+  substrate-identity route being closer to CODATA is a diagnostic, not evidence
+  for it; and its witness is simply **un-re-scored**, which is why it sits where
+  it does.
+
+### Still open, unchanged
+
+Re-scoring `m-p-substrate-identity-50dps` onto the ruled `z_D` base is
+`qou-99qc`'s arc and a producer re-run — gated, not done here. The labelling fix
+is still the whole of what is narrow.

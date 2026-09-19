@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+rust",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-08T08:11:01.112765+00:00",
-  "commitSha": "9df38bc4548fb05ed626e51e2605446a04caf161",
+  "computedAt": "2026-09-12T21:28:49.216408+00:00",
+  "commitSha": "bf9586059847a1f0b1aad1f79ca3e366aa962788",
   "assertions": [
     {
       "name": "Rust kernel present (the words captured are the ones it receives)",
@@ -98,7 +98,7 @@
   "computation": "uic-word-level-locality",
   "scriptFile": "uic_word_level_locality_probe.py",
   "scriptHash": "2324d5850372",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bad597ca516561fd759f6bec5f6a5725fba37428",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -3372,8 +3372,8 @@
         "atom": "2H",
         "k": 6,
         "worst_rel": "4.83871681277981808285598006638633980513830007446408431544030e-50",
-        "t_path_sum": "0.117",
-        "t_kernel": "0.006",
+        "t_path_sum": "0.121",
+        "t_kernel": "0.011",
         "n_shapes": 11
       },
       {
@@ -3388,15 +3388,15 @@
         "atom": "3H",
         "k": 4,
         "worst_rel": "2.98689447139006444220942074922962471955470836600769235191084e-50",
-        "t_path_sum": "0.004",
-        "t_kernel": "0.001",
+        "t_path_sum": "0.005",
+        "t_kernel": "0.002",
         "n_shapes": 5
       },
       {
         "atom": "3H",
         "k": 5,
         "worst_rel": "2.75357789137614758143463294936315450412049399645416948030107e-50",
-        "t_path_sum": "0.023",
+        "t_path_sum": "0.024",
         "t_kernel": "0.003",
         "n_shapes": 7
       },
@@ -3405,7 +3405,7 @@
         "k": 6,
         "worst_rel": "3.23106153297932099523766972697807495532881118836200144892010e-50",
         "t_path_sum": "0.148",
-        "t_kernel": "0.010",
+        "t_kernel": "0.011",
         "n_shapes": 11
       },
       {
@@ -3420,15 +3420,15 @@
         "atom": "3He",
         "k": 4,
         "worst_rel": "6.40884246789554603539819097576695204689548568276922346965872e-50",
-        "t_path_sum": "0.007",
-        "t_kernel": "0.002",
+        "t_path_sum": "0.004",
+        "t_kernel": "0.001",
         "n_shapes": 5
       },
       {
         "atom": "3He",
         "k": 5,
         "worst_rel": "6.40884246789554603539819097576695204689548568276922346965872e-50",
-        "t_path_sum": "0.032",
+        "t_path_sum": "0.023",
         "t_kernel": "0.003",
         "n_shapes": 7
       },
@@ -3436,8 +3436,8 @@
         "atom": "3He",
         "k": 6,
         "worst_rel": "6.40884246789554603539819097576695204689548568276922346965872e-50",
-        "t_path_sum": "0.146",
-        "t_kernel": "0.009",
+        "t_path_sum": "0.150",
+        "t_kernel": "0.011",
         "n_shapes": 11
       },
       {
@@ -3460,16 +3460,16 @@
         "atom": "4He",
         "k": 5,
         "worst_rel": "8.61870334951323180735667996052535352583629815748035401666037e-50",
-        "t_path_sum": "0.028",
-        "t_kernel": "0.003",
+        "t_path_sum": "0.029",
+        "t_kernel": "0.004",
         "n_shapes": 7
       },
       {
         "atom": "4He",
         "k": 6,
         "worst_rel": "8.61870334951323180735667996052535352583629815748035401666037e-50",
-        "t_path_sum": "0.180",
-        "t_kernel": "0.013",
+        "t_path_sum": "0.183",
+        "t_kernel": "0.015",
         "n_shapes": 11
       }
     ],
@@ -3528,7 +3528,7 @@
         "closest_two_block_set": "W[1..3]·W[4..4]",
         "rotations_min_support_outside": 36,
         "level_local_rewriting_excluded": true,
-        "t_expand": "0.010",
+        "t_expand": "0.012",
         "trivial_and_sign_rep_ok": true
       },
       {
@@ -3547,7 +3547,7 @@
         "closest_two_block_set": "W[2..5]·W[1..1]",
         "rotations_min_support_outside": null,
         "level_local_rewriting_excluded": true,
-        "t_expand": "0.035",
+        "t_expand": "0.042",
         "trivial_and_sign_rep_ok": true
       },
       {
@@ -3566,7 +3566,7 @@
         "closest_two_block_set": "W[1..5]·W[6..6]",
         "rotations_min_support_outside": null,
         "level_local_rewriting_excluded": true,
-        "t_expand": "0.117",
+        "t_expand": "0.141",
         "trivial_and_sign_rep_ok": true
       },
       {
@@ -3604,7 +3604,7 @@
         "closest_two_block_set": "W[1..1]·W[2..3]",
         "rotations_min_support_outside": 12,
         "level_local_rewriting_excluded": true,
-        "t_expand": "0.005",
+        "t_expand": "0.006",
         "trivial_and_sign_rep_ok": true
       },
       {
@@ -3623,7 +3623,7 @@
         "closest_two_block_set": "W[1..1]·W[2..4]",
         "rotations_min_support_outside": 72,
         "level_local_rewriting_excluded": true,
-        "t_expand": "0.021",
+        "t_expand": "0.023",
         "trivial_and_sign_rep_ok": true
       },
       {
@@ -3642,7 +3642,7 @@
         "closest_two_block_set": "W[1..4]·W[5..5]",
         "rotations_min_support_outside": null,
         "level_local_rewriting_excluded": true,
-        "t_expand": "0.110",
+        "t_expand": "0.204",
         "trivial_and_sign_rep_ok": true
       },
       {
@@ -3661,7 +3661,7 @@
         "closest_two_block_set": "W[6..6]·W[1..5]",
         "rotations_min_support_outside": null,
         "level_local_rewriting_excluded": true,
-        "t_expand": "0.555",
+        "t_expand": "0.955",
         "trivial_and_sign_rep_ok": true
       },
       {
@@ -3680,7 +3680,7 @@
         "closest_two_block_set": "W[1..1]·W[2..2]",
         "rotations_min_support_outside": 2,
         "level_local_rewriting_excluded": true,
-        "t_expand": "0.002",
+        "t_expand": "0.004",
         "trivial_and_sign_rep_ok": true
       },
       {
@@ -3699,7 +3699,7 @@
         "closest_two_block_set": "W[1..1]·W[2..3]",
         "rotations_min_support_outside": 12,
         "level_local_rewriting_excluded": true,
-        "t_expand": "0.005",
+        "t_expand": "0.006",
         "trivial_and_sign_rep_ok": true
       },
       {
@@ -3718,7 +3718,7 @@
         "closest_two_block_set": "W[1..1]·W[2..4]",
         "rotations_min_support_outside": 71,
         "level_local_rewriting_excluded": true,
-        "t_expand": "0.021",
+        "t_expand": "0.023",
         "trivial_and_sign_rep_ok": true
       },
       {
@@ -3737,7 +3737,7 @@
         "closest_two_block_set": "W[1..4]·W[5..5]",
         "rotations_min_support_outside": null,
         "level_local_rewriting_excluded": true,
-        "t_expand": "0.099",
+        "t_expand": "0.117",
         "trivial_and_sign_rep_ok": true
       },
       {
@@ -3756,7 +3756,7 @@
         "closest_two_block_set": "W[6..6]·W[1..5]",
         "rotations_min_support_outside": null,
         "level_local_rewriting_excluded": true,
-        "t_expand": "0.770",
+        "t_expand": "0.902",
         "trivial_and_sign_rep_ok": true
       },
       {
@@ -3775,7 +3775,7 @@
         "closest_two_block_set": "W[1..1]·W[2..2]",
         "rotations_min_support_outside": 2,
         "level_local_rewriting_excluded": true,
-        "t_expand": "0.003",
+        "t_expand": "0.005",
         "trivial_and_sign_rep_ok": true
       },
       {
@@ -3794,7 +3794,7 @@
         "closest_two_block_set": "W[1..1]·W[2..3]",
         "rotations_min_support_outside": 12,
         "level_local_rewriting_excluded": true,
-        "t_expand": "0.007",
+        "t_expand": "0.008",
         "trivial_and_sign_rep_ok": true
       },
       {
@@ -3813,7 +3813,7 @@
         "closest_two_block_set": "W[1..1]·W[2..4]",
         "rotations_min_support_outside": 72,
         "level_local_rewriting_excluded": true,
-        "t_expand": "0.033",
+        "t_expand": "0.035",
         "trivial_and_sign_rep_ok": true
       },
       {
@@ -3832,7 +3832,7 @@
         "closest_two_block_set": "W[1..1]·W[2..5]",
         "rotations_min_support_outside": null,
         "level_local_rewriting_excluded": true,
-        "t_expand": "0.184",
+        "t_expand": "0.208",
         "trivial_and_sign_rep_ok": true
       },
       {
@@ -3851,7 +3851,7 @@
         "closest_two_block_set": "W[1..1]·W[2..6]",
         "rotations_min_support_outside": null,
         "level_local_rewriting_excluded": true,
-        "t_expand": "1.316",
+        "t_expand": "1.605",
         "trivial_and_sign_rep_ok": true
       },
       {
@@ -3870,7 +3870,7 @@
         "closest_two_block_set": "W[1..1]·W[2..2]",
         "rotations_min_support_outside": 2,
         "level_local_rewriting_excluded": true,
-        "t_expand": "0.004",
+        "t_expand": "0.005",
         "trivial_and_sign_rep_ok": true
       },
       {
@@ -3889,7 +3889,7 @@
         "closest_two_block_set": "W[1..1]·W[2..3]",
         "rotations_min_support_outside": 12,
         "level_local_rewriting_excluded": true,
-        "t_expand": "0.010",
+        "t_expand": "0.011",
         "trivial_and_sign_rep_ok": true
       },
       {
@@ -3908,7 +3908,7 @@
         "closest_two_block_set": "W[1..1]·W[2..4]",
         "rotations_min_support_outside": 72,
         "level_local_rewriting_excluded": true,
-        "t_expand": "0.043",
+        "t_expand": "0.054",
         "trivial_and_sign_rep_ok": true
       },
       {
@@ -3927,7 +3927,7 @@
         "closest_two_block_set": "W[1..1]·W[2..5]",
         "rotations_min_support_outside": null,
         "level_local_rewriting_excluded": true,
-        "t_expand": "0.246",
+        "t_expand": "0.287",
         "trivial_and_sign_rep_ok": true
       },
       {
@@ -3946,7 +3946,7 @@
         "closest_two_block_set": "W[1..1]·W[2..6]",
         "rotations_min_support_outside": null,
         "level_local_rewriting_excluded": true,
-        "t_expand": "1.937",
+        "t_expand": "2.387",
         "trivial_and_sign_rep_ok": true
       }
     ],
@@ -3960,7 +3960,7 @@
         ],
         "dim": 16,
         "L": 23,
-        "t_path_sum": "0.043",
+        "t_path_sum": "0.044",
         "t_kernel": "0.002"
       },
       {
@@ -3972,8 +3972,8 @@
         ],
         "dim": 35,
         "L": 23,
-        "t_path_sum": "0.238",
-        "t_kernel": "0.008"
+        "t_path_sum": "0.239",
+        "t_kernel": "0.011"
       },
       {
         "k": 8,
@@ -3985,8 +3985,8 @@
         ],
         "dim": 90,
         "L": 23,
-        "t_path_sum": "1.723",
-        "t_kernel": "0.043"
+        "t_path_sum": "1.817",
+        "t_kernel": "0.055"
       }
     ],
     "crossing_offsets_2H_k11": {

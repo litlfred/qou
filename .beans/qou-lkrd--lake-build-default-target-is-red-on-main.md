@@ -1,7 +1,7 @@
 ---
 # qou-lkrd
 title: '`lake build` (default target) scope gap — targeted builds are not library builds (the 22 errors are FIXED on main)'
-status: todo
+status: completed
 type: bug
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - infra
     - ci
 created_at: 2026-08-08T11:45:00Z
-updated_at: 2026-08-08T16:30:00Z
+updated_at: 2026-09-13T17:30:00Z
 ---
 
 ## UPDATE 2026-08-08 (later the same day): the two named modules are GREEN
@@ -132,3 +132,75 @@ container".
 
 Two method rules this cost, both now in the lane's discipline: **delete the
 `.olean` before claiming a module compiles**, and **exit 137 is OOM, not red**.
+
+
+## 🟩 THE DEFAULT TARGET IS GREEN END-TO-END — measured 2026-09-13 (bean qou-g5sp)
+
+This bean's closing condition is explicit:
+
+> Keep this bean open only until the default target is confirmed green
+> end-to-end and wired into a gate.
+
+**Half 1 is now measured.** On `main` `16ccc3f7e2`, with
+`scripts/lean-library-sweep.py --only-exact QOU`:
+
+```
+=== library sweep: 1451 ok, 0 RED ===
+  [1451/1451] ok   QOU
+```
+
+That selection is the library **root** and its whole untrusted dependency cone —
+i.e. exactly `QOU.lean`'s import closure, the default target this bean is about —
+compiled from source into a hardlinked shadow, never invoking `lake`, so the
+restored olean cache is not evicted. The `--only-exact` matters: `--only QOU` is
+a prefix and every module starts with it, so that selector silently becomes the
+whole corpus.
+
+**And the whole tree besides.** A `--all` run the same day, plus two follow-ups,
+union to **2836 of 2836 modules judged, 0 RED** —
+`docs/audits/2026-09-13-every-library-module-compiles-zero-defects.md`.
+
+**The two modules in the title are in that population and neither is RED**, which
+confirms the 2026-08-08 update from a second direction five weeks later:
+`QOU.MathlibExt` and `QOU.Archimedean.TorusKnot` are both green. They are also
+two of the eight failures `qou-orph` listed; all eight are green.
+
+## The scope lesson this bean exists for is now settled, not merely restated
+
+> "lake green" in this repo has only ever meant **targeted** module builds
+> (`lake build QOU.QBeta.Foo`), never the default target. … A reviewer reading
+> "lake green" reasonably hears "the library builds"; what was verified is
+> "these seven modules build".
+
+Correct, and it was the right thing to flag. It is now false as a statement about
+the present: the default target has been verified as a whole, and the claim
+"the library builds" is one a reviewer can now make with a citation.
+
+**The premise this bean inherited from `qou-orph` is separately false, and that
+is worth keeping straight.** This bean quotes it as *"True. But it carries the
+unstated implication that the closure DOES build."* The "But" clause was right;
+the "True" was not. `lake build QOU` compiles the **whole tree**, not just
+`QOU.lean`'s closure, because the paper lakefile declares
+`globs = ["QOU", "QOU.+"]` and `QOU.+` is `Glob.andSubmodules` — landed
+2026-08-08 (bean `qou-rc7b`), the same day as this bean. See
+`.github/workflows/lean-orphan-gate.yml`, which has carried that correction with
+a direct experiment since 2026-08-15 (bean `qou-kljb`).
+
+So both halves of the sentence are now answered: the closure builds, **and** so
+does everything outside it.
+
+## Half 2 — "wired into a gate", and what that can mean here
+
+`scripts/lean-library-sweep.py` **is** the gate, and it is wired into
+`/prepare-merge` §4 and `prepare-merge-auto` Phases 1 and 4. In a repo whose §"QA
+is agent-owned; CI is a backup" makes the agent's own verification the primary
+gate, that is the gate.
+
+**If "gate" is read as "a CI check that runs on push", half 2 is NOT met and
+cannot be met by this bean.** Every workflow here is `workflow_dispatch`-only
+under the 2026-06-30 owner directive (Actions billing), which was reaffirmed on
+2026-08-09 with the cost of a specific `main` breakage on the table. That is a
+standing, owner-decided repo condition — not a task, and not this bean's.
+
+Closing on the first reading, with the second stated so the owner can reopen if
+they meant the CI one. The measurement stands either way.

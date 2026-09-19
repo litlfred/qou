@@ -44,7 +44,7 @@ universe u v
 theorem CategoricalDirac.exists
     {R : Type*} [CommRing R]
     {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear R C]
     (fh : FrobeniusHopfData C)
     (connection : CategoricalConnection C fh)

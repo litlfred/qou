@@ -403,6 +403,52 @@ GATES=(
   # --strict exits 1 at 52 from repo root, and 0 is reachable — the count moved
   # 55 -> 52 under the drain, so the detector demonstrably tracks the tree.
   "witness provenance completeness (advisory)|computations/audits/witness_provenance_audit.py|--strict|no|no"
+
+  # NOT a precision gate — a SEMANTICS one, in the same idiom as "hardcoded
+  # braid word" and "witness shape guard" above. AGENTS.md forbids conflating
+  # the three partition-weight families y_λ / w_λ / w̃_λ, which are distinct at
+  # q ≠ 1, and until 2026-09-13 that rule lived only in prose. It was broken in
+  # four probes at once: the Magnus Ω₂ sign probes aggregated with the quantum
+  # Plancherel measure d_q(λ)²/[n]_q! while calling it y_λ in every docstring,
+  # every witness `pairing` field, and every `per_partition[].y_lambda` column.
+  #
+  # NOT COSMETIC, which is why it blocks. Re-weighting those probes' own
+  # committed traces with the real Wenzl bridge FLIPS the sign of P_total at
+  # A=3 and A=4 (Plancherel −,+,+ over A=2,3,4; Wenzl −,−,−), so the
+  # programme's target A-dependent sign change is present under one name and
+  # absent under the other. A mislabelled weight was a mislabelled result.
+  #
+  # Checks A/B/C block and stand at ZERO after the qou-za3q / qou-q2q7 fixes,
+  # so they can only fire on a regression. Check D (a witness y_lambda column
+  # with no `weight_family` beside it) is a RATCHET against
+  # computations/audits/y-lambda-undeclared-column-baseline.json, because 55
+  # such columns already exist and this file's own header says a gate that is
+  # red on arrival gets skipped. THE BASELINE DRAINS, NEVER GROWS.
+  "y_lambda conflation|computations/audits/y_lambda_conflation_audit.py||yes|yes"
+
+  # ALSO A SEMANTICS GATE, and the structural counterpart to the value
+  # fingerprint above. `_PROTON_G0`/`_PROTON_G1` are the canonical letters
+  # bucketed by generator and "cannot express the interleaving"
+  # (mass_at_3A_proper, where it imports them), so a caller that writes all of
+  # g0 then all of g1 has transcribed `nucleon_word_letters`'
+  # `intra_order="grouped"` branch — a defect in the SHAPE of the code that no
+  # value check can reach. The fingerprint gate matches committed numbers and
+  # is therefore blind to symbolic producers, ones too slow to re-run, and
+  # witnesses recording a ratio rather than a trace; this one reads the AST.
+  # It found 18 sites in 18 files, three of them qbeta probes previously
+  # mis-triaged (by me, under qou-4383) as hardcoded grouped VALUES.
+  #
+  # A/B are RATCHETS against
+  # computations/audits/intra-ordering-structural-assembly-baseline.json — 18
+  # on arrival, and this file's header says a gate that is red on arrival gets
+  # skipped. C and D block at zero: C is a file that stamps
+  # `intra_ordering_frame` while hand-building the grouped word, which defeats
+  # `canonical_trm_reference`'s ordering guard with a correct-LOOKING field; D
+  # requires the matcher to still fire on atom.py's own grouped branch, so a
+  # rewrite there cannot retire this gate silently. THE BASELINE DRAINS, NEVER
+  # GROWS: fix by calling `nucleon_word_letters`, or ask for the legacy word by
+  # name (`intra_order="grouped"` is deliberately not flagged).
+  "intra-order assembly|computations/audits/intra_ordering_structural_assembly_audit.py||yes|yes"
 )
 
 if [ "${1:-}" = "--list" ]; then

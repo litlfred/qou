@@ -16,6 +16,61 @@ choice, and what to do.
 
 ---
 
+> # 🛑 SETTLED — OWNER RULING 2026-09-13: **ADOPT WENZL**
+>
+> This document was written as a decision analysis. **The decision has been
+> made.** The Magnus Ω₂ pairing is
+> $P = \sum_\lambda y_\lambda^{\text{Wenzl}}\,\operatorname{tr}(\rho_\lambda \Omega_{2,\lambda})$.
+> The quantum Plancherel measure is **not** the pairing. Everything below is
+> retained as the reasoning that led there, not as an open question.
+>
+> **What the ruling rests on** is not the argument this document leads with
+> (consistency with production, cross-A comparability). It rests on a
+> derivation that post-dates this document: bean `qou-gba1`. A nucleus is a
+> *link*; a braid word only presents it; and the Markov trace is
+> *characterised* by $\operatorname{tr}(1)=1$, cyclicity, and
+> $\operatorname{tr}_{n+1}(x\sigma_{n-1}) = z\operatorname{tr}_n(x)$. Wenzl
+> realises all three at $z = q^3/(q^2+1)$; Plancherel satisfies neither the
+> first nor the third, **having no $z$ at all** — the ratio it would need moves
+> from $-10.867$ to $+0.179$ between two stabilisations of the same word. The
+> pairing inherits an exact parameter-free stabilisation law under Wenzl,
+> confirmed to a relative **4.4e-141** and falsified at $z=q$ and $z=1$.
+>
+> **The sign never enters that argument**, which is what makes it usable rather
+> than fitting.
+>
+> ## The consequence, which travels with the ruling
+>
+> | atom | $P$ (Wenzl, **adopted**) | $P$ (Plancherel, rejected) |
+> |---|---:|---:|
+> | deuteron | −6.921 | −15.095 |
+> | triton | **−13.931** | +2.470 |
+> | ⁴He | **−20.466** | +34.126 |
+>
+> ```
+> adopted    −, −, −    NO sign change anywhere in A = 2, 3, 4
+> rejected   −, +, +    one sign change, deuteron → triton
+> ```
+>
+> **Under the adopted measure the programme's target A-dependent sign change is
+> NOT exhibited in A = 2, 3, 4.** Cite that wherever the Magnus sign result is
+> cited. The measure was chosen on principle and the phenomenon did not survive
+> it; reporting the ruling without its consequence would be exactly the fitting
+> the ruling exists to avoid.
+>
+> **What survives untouched:** sign-indefiniteness at A=2 — the property that
+> cleared the non-negativity wall $\|F_q\|^2$ could not — holds under *both*
+> weight families and *both* intra-nucleon words, because it is a statement
+> about a commutator's trace pairing. `qou-dp32` is unaffected.
+>
+> Options: A `qou-q2q7` **adopted**; B `qou-94yt` and D `qou-ia4w` **refused**;
+> C `qou-smvw` **subsumed** (both arms are emitted, `headline_pairing` names the
+> adopted one); E `qou-gba1` is the ruling's basis, with its remaining item —
+> identify the functional whose stationarity gives the binding correction —
+> still open but no longer blocking.
+
+---
+
 ## 1. What each object is
 
 **Wenzl $y_\lambda$ — the Markov trace.** The unique trace on $H_n(q)$ with
@@ -74,7 +129,7 @@ Note the largest Wenzl weight, $(6,)$ at 0.45, contributes **nothing**: on a
 Wenzl the entire H₆ signal is carried by three 2-row shapes — (5,1), (4,2),
 (3,3).
 
-### 2.3 The sign is robust at A=2 and **not** at A=3
+### 2.3 The sign is robust at A=2 and **not** at A=3 or A=4
 
 > **🛑 SETTLED 2026-09-12 (PR #7197) — ⁴He is no longer "undetermined", and the
 > answer completes the pattern rather than breaking it.** This section's table

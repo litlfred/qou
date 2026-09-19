@@ -51,7 +51,17 @@ observable_real_part_zero = bool(sp.simplify(re_part_real_eta) == 0)
 # numeric: the two real observables are NOT ζ₄-related (rotate gives 0 real part)
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
-q0 = mp.mpf(C.Q) if hasattr(C, "Q") else mp.mpf("1.10998")
+# `C.Q` is a python float; `mpf` of it stores the exact 53-bit binary value, so
+# `fmt` would print its binary expansion as though it were precision. The 50-digit
+# string is the same anchor carried losslessly, and the old `1.10998` fallback was
+# a 6-digit truncation — far worse than the defect it was guarding against, and
+# silent. Refuse instead: a missing anchor is not something to substitute for.
+if not hasattr(C, "Q_50_DIGIT_STR"):
+    raise RuntimeError(
+        "qou_substrate.constants carries no Q_50_DIGIT_STR — refusing to fall "
+        "back to a truncated anchor, which would publish a wrong q0 silently."
+    )
+q0 = mp.mpf(C.Q_50_DIGIT_STR)
 eta0 = mp.log(q0)
 cosh_eta0 = mp.cosh(eta0)                       # bar-even (Re channel) magnitude scale
 zeta4_rotate_real_part = mp.re(mp.cosh(eta0 + mp.j * (mp.pi / 2)))  # ~0 (full mpmath precision)

@@ -541,6 +541,33 @@ def nucleon_gen_chains(quarks, *, q=None, allow_float64: bool = False):
     return g0, g1
 
 
+def grouped_word_from_chains(g0, g1):
+    """The GROUPED intra word from two per-generator chains: all g0, then all g1.
+
+    THE ONE DEFINITION of the legacy assembly, and the reason it is public.
+    `nucleon_word_letters(..., intra_order="grouped")` is the entry point when
+    the caller has quarks; this is the entry point when it already holds the
+    two chains — which is the case `legacy_marshalled_frame` and the older
+    `_nucleon_word(g0, g1)` helpers are in, and why the corpus grew a dozen
+    independent transcriptions of the line below instead of calling anything.
+
+    **It is not the canonical word.** σ₀ and σ₁ are adjacent and do not
+    commute, so this and the borromean interleaving are different elements of
+    H₃(q): `|tr_M|` 1.145759692457300870 grouped against 0.629328402202921918
+    alternating for one proton, ~82 % apart. Reach for this ONLY where the
+    legacy frame is the object under study; anywhere else, take the quarks and
+    call `nucleon_word_letters`.
+
+    Calling this is a DECLARATION, and that is its whole value over writing the
+    concatenation inline. `intra_ordering_structural_assembly_audit` flags the
+    inline form and merely counts the calls here, so converting a site to this
+    helper moves it from a silent defect to a visible, greppable choice — but
+    converting a site that wanted the canonical word only launders the defect,
+    and the audit says so where it reports the count. Bean `qou-t29k`.
+    """
+    return [(c, d, 0) for c, d in g0] + [(c, d, 1) for c, d in g1]
+
+
 def nucleon_word_letters(quarks, *, q=None, intra_order: str = "borromean",
                          allow_float64: bool = False):
     """One nucleon's intra word AS A WORD: `[(c, d, gen_offset)]` with
@@ -599,7 +626,7 @@ def nucleon_word_letters(quarks, *, q=None, intra_order: str = "borromean",
             f"(expected 'borromean' or 'grouped')")
     g0, g1 = nucleon_gen_chains(quarks, q=q, allow_float64=allow_float64)
     if intra_order == "grouped":
-        return [(c, d, 0) for c, d in g0] + [(c, d, 1) for c, d in g1]
+        return grouped_word_from_chains(g0, g1)
     # g0 = [B₃ ×3] + [pair(0,1), pair(0,2)] + [gluon ×2];  g1 = [B₃ ×3] + [pair(1,2)]
     out = []
     for k in range(3):                       # (σ₀ σ₁⁻¹)³ — the confinement core
@@ -1136,6 +1163,7 @@ __all__ = [
     "PROTON_NF", "NEUTRON_NF",
     "build_atom_nf_exact", "nf_channel_exact", "check_frobenius",
     "build_atom_nf", "vertex_volume", "nucleon_gen_chains",
+    "grouped_word_from_chains",
     "atom_gen_chains", "atom_V_full", "_chain_V_full",
     "atom_per_generator_volumes", "build_nucleon_nf",
 ]

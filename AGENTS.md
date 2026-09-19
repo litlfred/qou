@@ -586,6 +586,23 @@ user's last message, not the most recently mentioned file.
 > queues are **not** converted into beans. (Part of the qou side of
 > the Folio-Assistant Infrastructure Migration — the `miga` epic.)
 
+> **A bean is an APPEND-ONLY ledger, and concurrent appends collide on
+> essentially every landing (measured 2026-09-13).** `main` takes **169
+> commits / 24 h**; `.beans/qou-brng--…` is touched by **9** of them and
+> `.beans/qou-zlra--…` by **6**, so a branch that appends to `qou-brng`
+> goes un-mergeable roughly **every 2.7 h**. In the #7237 / #7245 /
+> #7251 / #7253 cluster, **four of the five collision surfaces were
+> these two files** — no content, no Lean, no compute — and `qou-brng`
+> conflicted three times in about forty minutes, twice while the
+> previous resolution was being committed. Clearing them ahead of merge
+> is not winnable by hand; resolve **at merge time** with
+> [`scripts/bean-append-merge.py`](scripts/bean-append-merge.py), which
+> keeps `main` byte-for-byte, appends the branch's note verbatim, takes
+> the later `updated_at`, and asserts `len(merged) == len(main) +
+> len(note)` so nothing is invented. It **refuses** (exit 2, markers left
+> intact) unless BOTH sides are pure appends — an edit to existing text
+> is a real conflict and stays a human's job.
+
 1. **Start a bean list at session start.** As soon as you have
    enough context (after reading the user's first request, the
    SessionStart hooks, and the current branch / PR state), create a
@@ -1210,19 +1227,106 @@ ephemeral.
    Skill authors updating skill docs should refer to this rule
    rather than restating the policy in their own words.
 
-8a. **Draft → ready: SPACED RETRY ONLY. Never close-and-reopen a
-   PR to get past it** (owner ruling, 2026-09-05). Flipping a draft
-   PR to ready goes through GitHub's GraphQL API, which needs a
-   node-ID lookup, and that lookup is the thing being rate-limited
-   on this repo's shared token. So `mcp__github__update_pull_request`
-   with `draft: false` fails — often for hours — with
+8a. **Draft → ready: ONE REST CALL, and READ THE STATUS CODE — a 403
+   never clears, a 503 does. Never close-and-reopen a PR to get past
+   it** (owner ruling, 2026-09-05; diagnosis corrected 2026-09-13,
+   remedy measured 2026-09-14). Use
+
+       POST /repos/{owner}/{repo}/pulls/{n}/ccr/ready_for_review
+
+   It returns `200 {"draft": false}`. **On a `503` from that route, retry
+   spaced — it is a transient CCR-family outage and it does clear; measured
+   windows of ≥ 15 min. On the `403` from GraphQL, never retry — that one
+   is a hard block. The status code is the discriminator; see the box.**
+   `mcp__github__update_pull_request` with `draft: false` fails — often for
+   hours — with
 
        Failed to find pull request: API rate limit already exceeded
        for user ID 662242
 
    while every REST path (title, body, state, create, merge, and all
-   reads) keeps working. **Retry the same `draft: false` call, spaced
-   out — typically off a `send_later` check-in — until it lands.**
+   reads) keeps working.
+
+   > **🛑 THIS RULE PREVIOUSLY SAID "SPACED RETRY ONLY", AND THAT
+   > ADVICE COULD NEVER SUCCEED (corrected 2026-09-13).** It attributed
+   > the failure to a rate-limited **node-ID lookup**. Measured twice,
+   > independently: GraphQL is **403-BLOCKED session-wide from Claude
+   > Code**, not rate-limited, so there is no limiter draining and no
+   > wait to sit out. #7241 got the 403 while *supplying* the node_id
+   > from a prior REST read — the lookup skipped entirely — and a
+   > read-only `query { viewer { login } }`, which does no lookup at
+   > all, returns the same 403. The body says so in words:
+   >
+   > > *"GitHub GraphQL is not available from Claude Code sessions; use
+   > > the REST API. For review threads, auto-merge, and
+   > > draft/ready-for-review use the CCR routes on api.github.com"*
+   >
+   > **🛑 THE CCR ROUTE GOES DOWN IN WINDOWS, AND A 503 IS NOT A 403 —
+   > measured end-to-end on #7350, 2026-09-14.** This passage has been
+   > corrected three times in two days and the final shape is the useful
+   > one, so read the table rather than any one sentence:
+   >
+   > | time | `ccr/ready_for_review` | plain REST | GraphQL |
+   > |---|---|---|---|
+   > | #7230, 09-12 | **200** first try | — | — |
+   > | #7350, 06:30–06:45 | **503** × 6 over ~15 min | **200** | **403** |
+   > | #7350, 07:40 | **200**, flip succeeded | **200** | **403** |
+   >
+   > The middle row was briefly written up here as *"not dependable"* and
+   > *"sustained unavailability"*. **Both overstated it**: the route came
+   > back within the hour and the flip went through on the seventh attempt.
+   > What is true is narrower and more useful — the **CCR family** has
+   > outage windows of at least fifteen minutes during which **ordinary
+   > REST answers normally**, so a 503 there says nothing about the rest of
+   > the API.
+   >
+   > **So the two failure modes take OPPOSITE responses, and the original
+   > rule paired them the wrong way round:**
+   >
+   > - **`403` from GraphQL — never retry.** A hard session-wide block. It
+   >   was measured at every point above, an hour apart, including on a
+   >   query doing no node-ID lookup at all. Nothing drains; §8a's old
+   >   *"retry until it lands"* could never succeed.
+   > - **`503` from a CCR route — retry, spaced.** A transient outage that
+   >   clears. This is where spaced retry actually belongs.
+   >
+   > **Still worth doing anyway: open the PR non-draft in the first place**
+   > where the work is already verified. `create_pull_request` takes `draft`
+   > as a plain REST field and never touches either transport, so it cannot
+   > be caught by a window at all. And if you are holding a draft while the
+   > window is open, wait it out and say so; do **not** close-and-reopen,
+   > which remains forbidden.
+   >
+   > **`PATCH` is independently confirmed as a silent no-op.** Measured here
+   > with correct headers: `PATCH /pulls/7350 {"draft": false}` → **`200`**,
+   > and the authoritative re-read still says `draft: true`. (A first
+   > attempt returned `415` for want of `Content-Type: application/json` —
+   > a 415 is *your* bug, not evidence about the field.)
+   >
+   > That single fact explains what four prior sessions could not: the
+   > measured "windows" were ~2 h, ~4 h, ~4 h and ~10 h and never
+   > agreed, because nothing was draining. **An agent following the old
+   > wording waits forever**, and at least one armed a `send_later`
+   > check-in to do exactly that.
+   >
+   > **The 403 body names four more routes, and had been discarded
+   > unread across at least five sessions:**
+   >
+   >     GET  /repos/{owner}/{repo}/pulls/{n}/ccr/review_threads
+   >     POST /repos/{owner}/{repo}/pulls/{n}/ccr/comments/{id}/resolve   (or /unresolve)
+   >     PUT  /repos/{owner}/{repo}/pulls/{n}/ccr/auto_merge              (or DELETE)
+   >     POST /repos/{owner}/{repo}/pulls/{n}/ccr/ready_for_review
+   >     POST /repos/{owner}/{repo}/pulls/{n}/ccr/convert_to_draft
+   >
+   > `ccr/review_threads` is worth as much as the draft flip: "review
+   > threads are GraphQL, therefore unreadable" has a direct REST answer
+   > too. **Read the body of a 403 before believing its status line.**
+   >
+   > Also measured: `PATCH /pulls/{n}` with `{"draft": false}` returns
+   > **200 and the re-read still says `draft: true`** — REST accepts the
+   > field and silently discards it. So a 200 there is not evidence
+   > either. Recorded in `.claude/agent-memory/merge-coordinator/`
+   > (PR #7241, merged 2026-09-13).
 
    **Do NOT close the draft and create a replacement PR for the same
    head.** It works, which is exactly why it keeps getting
@@ -1237,7 +1341,7 @@ ephemeral.
    independently forbid close-and-reopen; this ruling extends that to
    the undraft case, which those rules do not name.
 
-   **Two measured traps when retrying.**
+   **Two measured traps, which survive the correction above.**
 
    - **The error is not evidence the call did nothing.** A sibling
      session measured (2026-09-05) that `update_pull_request` calls
@@ -1246,9 +1350,9 @@ ephemeral.
      landed anyway** — only the draft flip was dropped. Always
      confirm with `pull_request_read` before re-sending a mutation,
      or you will write it twice.
-   - **Retry `draft: false` ALONE.** Bundling other fields makes the
-     partial-success case above harder to read, and none of them need
-     the limiter.
+   - **Send the flip ALONE, then re-READ.** Bundling other fields
+     makes the partial-success case above harder to read. This applies
+     to the `ccr/ready_for_review` route as much as to the old one.
 
    **The fix that avoids the problem entirely: open the PR non-draft
    in the first place** where the work is already verified.
@@ -2219,7 +2323,8 @@ All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-pla
   > C-frame cross-check; the augmentation cell (+12.470 %) is the other
   > admissible point and is proportional to `z_D`'s
   > (`α = (q⁴+1)/(q²+1)²`). The c_k ladder is to be re-derived on the `z_D`
-  > base (`qou-cds1`, blocked on the phase `qou-pdix`); the dashboard rows
+  > base (`qou-cds1`) — 🛑 **but NOT because of the phase; see the scoping note
+  > at the end of this section**; the dashboard rows
   > Q_β / m_n / Δ_pn are NOT yet re-scored on it. Same day, the owner also
   > ruled that every canonical **braid word** is to be selected via γγ
   > (pair-production) construction + the confinement SDP at q₀, never by
@@ -2233,6 +2338,48 @@ All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-pla
   > initiative — that picks the option. Full enumeration:
   > [`docs/audits/2026-09-05-qbeta-functional-decision-options.md`](docs/audits/2026-09-05-qbeta-functional-decision-options.md)
   > §6.
+  >
+  > **🛑 SCOPING NOTE (2026-09-14) — `qou-cds1` is NOT blocked on the phase
+  > `qou-pdix`, and this document said it was in two places.** Both sites now
+  > point here. The old reading is correct only for the **retired `z = 1`
+  > cell**; it did not survive the 2026-09-08 ruling that made `z_D` the base,
+  > and nothing re-checked it at the time.
+  >
+  > The ladder's N=2 factor is `F_N2(α) = cos(α − u/2)·(1 − u²)`, so
+  > `cos ≤ 1` caps it at `1 − u² = 0.99992745` **for every real α** — the
+  > supremum sits at `α = u/2` and is still below 1. What the ladder must
+  > supply is `F_required = Q_codata / Q_base`, and on the two bases the ruling
+  > actually selects that number is **above 1**:
+  >
+  > | base | `Q_base` (MeV) | `F_required` | vs the cap |
+  > |---|---|---|---|
+  > | `z = 1` (Form A) — **RETIRED** | 0.783645827375 | 0.998325241673 | reachable |
+  > | `z_D`, order-zero `E₀` — **RULED** | 0.444700408522 | **1.75923699418** | **excluded** |
+  > | `z = q` (augmentation) | 0.87989056126 | 0.889125812282 | reachable |
+  > | dashboard scored cell — **RULED** | 0.65185631006 | **1.20016236389** | **excluded** |
+  >
+  > **The two cells a cosine can reach are exactly the two the ruling does not
+  > select.** So no value of α unblocks `qou-cds1` on the ruled base, and an
+  > agent sent to derive α as *the* `Q_β` L2 blocker is working off the
+  > critical path. The live question is **what object supplies a factor above 1
+  > at all** — about the base or the assembly, not the phase.
+  >
+  > **`qou-pdix` is NOT retired and stays open** (§13a): α is still the
+  > ladder's N=1 phase and is still underived. Only its *priority* changes.
+  >
+  > Established twice, independently and sorry-free — PR #7355
+  > (`LadderFactorBound.lean`, 4 lemmas, 7/7 probe) and PR #7262
+  > (`EigenphaseQuantization.lean`, 19/19, base-independent table) — and
+  > verified rather than taken on trust in
+  > [`docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md` §5.1](docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md)
+  > (merged as #7276), which recomputed all four `F_required` at 70 dps and
+  > inspected the Lean for `sorry`. **That merged audit is the corpus artifact
+  > this note is derived from**; the two PRs are still open, so cite the audit,
+  > not them, when checking it.
+  >
+  > **The two beans do not carry this yet** — `qou-cds1`'s last entry is
+  > 2026-09-08 and `qou-pdix`'s 2026-09-12, both predating the result. Appended
+  > alongside this note.
 
 m_π (139.57 MeV) is genuinely independent of (m_e, q₀) (SDP-validated, Vol(Hopf)=0).
 
@@ -2400,15 +2547,94 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 - **L1 ≠ L2.** A formula that is compute-stable to 50 digits (L1 met)
   can still miss its 100× experimental target by 10⁴ (L2 missed).
 - **L2 is variable per observable.** Q_β target is 7.8 ppb; currently
-  measured at **4.316e+8 ppb (5.535e+7× miss)** per the dashboard
-  (`per-observable-100x-status.witness.json`, 2026-09-12) — the RULED base,
-  `ε` = the Markov trace at `z_D = q³/(q²+1)`, with **zero `c_k` rungs**. This
+  measured at **1.668e+8 ppb (2.139e+7× miss)** per the dashboard
+  (`per-observable-100x-status.witness.json`, current with its producer at
+  `scriptHash 98317bdcfb5c`) — the RULED base, `ε` = the Markov trace at
+  `z_D = q³/(q²+1)`, on the **γγ-selected element `nuc11_interleaved`** and the
+  canonical tower-summed `E₀`, with **zero `c_k` rungs**.
+
+  > 🛑 **This read `4.316e+8 ppb (5.535e+7× miss)` until 2026-09-13, and that
+  > figure was stale by TWO commits — the same prose-lag the element migration
+  > left in the producer itself (PR #7283).** `4.316e+8` is `delta_S` at
+  > **order-zero `E₀`** (−43.157 %), i.e. the cell the 2026-09-08 ruling entry
+  > recorded and `22ff8a86d2` re-scored onto. Since then `173da443b6` made the
+  > **tower-summed `E₀`** canonical (`delta_S` then reads 4.2594e+8 ppb,
+  > −42.594 %) and `573b2ece24` migrated the scored **element** to
+  > `nuc11_interleaved` (1.668e+8 ppb, −16.678 %). Net **2.588×**, and this
+  > paragraph's own instruction — *"Quote the witness, not this paragraph"* —
+  > is what catches it: the witness has carried 1.668e+8 since 2026-09-12.
+  >
+  > The three `delta_S` / `nuc11` cells differ only by which `E₀` and which
+  > element, so **say both when you quote one**. The corresponding rows are
+  > `m_n` **1.389e+5 ppb (2.718e+7×)** and `Δ_pn` **1.009e+8 ppb (2.327e+7×)**;
+  > `m_μ` (970.2×) and `m_K/m_π` (0.195× ✓) are untouched by all of this.
+  >
+  > **The element is ruled in 6 of its 11 letters, not in all of them.** γγ
+  > words have even length (`gammaGamma_length_even`, sorry-free) and
+  > `nuc11_interleaved` is eleven letters, so the ruling reaches the 6-letter
+  > core and provably not the 3-letter quark block (odd) or the 2-letter gluon
+  > pair (both letters positive). Five letters remain census-derived against a
+  > ruling that says not to use census (`qou-99qc`, still `todo`).
+  >
+  > **🟧 OWNER RULING 2026-09-13 — that is true of the γγ half ONLY, and the
+  > SDP half reaches all eleven. The scored element FAILS it.** `qou-ales` has
+  > two halves, and the paragraph above is about the *construction* half. The
+  > scope of the *confinement SDP* half was put to the owner as a fork — does
+  > it constrain only the 6 γγ core letters, or the whole word? — and the
+  > answer is **(B) whole element**.
+  >
+  > 🛑 **THE READING NAMED HERE WAS WRONG, AND IT WAS MINE (corrected
+  > 2026-09-14, bean `qou-99qc`).** This sentence read *"every Wedderburn
+  > projection of the full 11-letter word must be `Matrix.PosSemidef`"*. That
+  > is **reading 1**, and reading 1 is **parked**. The corpus enumerates three
+  > PSD readings — 1 literal `Matrix.PosSemidef`, 2 symmetric-part PSD, 3
+  > Frobenius positivity (`χ_λ(w) ≥ 0` on every block with `y_λ > 0`) — and
+  > the owner selected **3** on 2026-09-12: *"try PSD condfinement 3 for now,
+  > but keep 1 2 for later"* (bean `qou-ales`). The 2026-09-13 fork was
+  > explicitly about **reading 3's** scope — the probe states it as *"(A)
+  > reading 3 applies to the γγ-selected core only / (B) reading 3 applies to
+  > the whole 11-crossing word"* — so **(B) moved the letter scope and did not
+  > change the reading.** Live criterion: **reading 3, whole word.**
+  >
+  > **What that changes, and what it does not.** Under convention D
+  > `y_(1³) = 0` *by construction* — that vanishing **is** convention D
+  > (`markovWeights_eq_jones_of_threeRow_eq_zero`) — so reading 3 does **not**
+  > constrain the alternating block at all. Any exclusion resting on the
+  > `(1,1,1)` sign is a reading-**1** exclusion, not a live one.
+  >
+  > Measured, `nuc11_interleaved` fails on `(2,1)` and `(1,1,1)` for **both**
+  > nucleons (proton block dets `1.38249446339` / `-1.02197249381` /
+  > `-0.739223570776`; neutron `1.1221068216` / `-1.02197249381` /
+  > `-0.910762214553`). **Only the `(2,1)` failure binds** — `y_(2,1) =
+  > 0.2473 > 0` — and it binds for both nucleons, so **the element rejection
+  > STANDS on `(2,1)` alone** and nothing downstream of it moves. This
+  > paragraph previously called `(1,1,1)` an exclusion *"already on record"*
+  > with `(2,1)` *"additional"*, which inverts which of the two is doing the
+  > work. **So the
+  > three L2 rows above are scored on an element the selection rule that is
+  > supposed to produce it rejects** — do not quote them as though the element
+  > were ruled-in, and do not read the 6-of-11 paragraph as an all-clear for
+  > the other five.
+  >
+  > The same ruling rejects every alternative in the one-letter quark family,
+  > including the bar-odd survivors that a parity constraint forces
+  > (`Q_β = 0.353415698` MeV, −54.825 %). **What replaces the element is an
+  > owner decision and has not been taken**; the dashboard is deliberately
+  > un-re-scored. Probes
+  > `qbeta_qbeta_scores_a_difference_probe.py` and
+  > `qbeta_bar_parity_forces_a_unique_quark_letter_probe.py`; bean `qou-99qc`,
+  > which stays `todo` with the replacement as its first open item.
+
+  This
   read "1279 ppb (164.0× miss) per the dashboard (fresh run 2026-05-31)" until
   2026-09-12, when item (iii) of the 2026-09-08 ruling was re-scored on owner
   authorisation (`qou-99qc`); that figure was convention-C on the retired
   `z = 1` cell. **Do not quote the new figure as convention D's accuracy** —
-  no ladder exists on an admissible base (`qou-cds1`, blocked on the phase
-  `qou-pdix`), and a second re-score is authorised for when one does
+  no ladder exists on an admissible base (`qou-cds1`; 🛑 the phase `qou-pdix`
+  is **not** what blocks it — see the 🛑 SCOPING NOTE (2026-09-14) at the end
+  of the Q_β ruling block in §"Canonical derivation chain", and
+  [`docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md` §5.1](docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md)),
+  and a second re-score is authorised for when one does
   (`qou-iagg`). Quote the witness, not this paragraph — the Habiro-exact 5.7 ppb result was against the
   pre-re-pin (muon-anchored) q₀ and has not been refreshed since the
   2026-05-28 proton-anchor re-pin
@@ -2947,8 +3173,57 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **thirty-five** rows, and they split SEVEN ways — only the first
->   group is about conventions at all:
+>   catalogues **forty-six** rows (re-counted 2026-09-14; 46 landed the same
+>   day in `81a8ac98b9`, after this line last said forty-five), and the groups
+>   below split the FIRST THIRTY-FOUR seven ways — only the first group is
+>   about conventions at all. **Rows 35-46 are NOT in this list**: 35 (the
+>   identifier's alphabet), 36 (the direction of the cast), 37 (the numerator
+>   is an applied argument), 38 (the value audit's variable resolution),
+>   39 (the freshness is on the wrong object), 40, which is the first row
+>   in the table whose failure runs the OTHER way — an over-matching grep that
+>   fails to a false **COVERED** rather than a false all-clear, so it ends the
+>   search instead of prolonging it — 41 (the query's character encoding), and
+>   **42-44, which are one arc and the sharpest group in the table**: 42 is the
+>   body SHAPE of a self-assuming projection (an applied SINGLE field was
+>   unseen, so the case where the conclusion is universally quantified — the
+>   NORMAL case — was invisible by construction, 26 → 42 hits), and 43 is scan
+>   SCOPE on the `--review-ledger` write path, found while fixing 42 and
+>   **destroying 106 of 329 committed adjudications in the process**. Both are
+>   repeats of a repair the corpus had already made once: 42's fix exists one
+>   arity over as `APPLIED_TUPLE_PROJECTION`, and 43 is row 33 a second time on
+>   the same API, where the `--json` path refuses a partial scan and the ledger
+>   path never got the rule. **44 is the third**, and it is the one to
+>   internalise: the ledger seeds only candidates whose exemption text matches
+>   the literal `triage pending`, and a sibling emit site spells its reason
+>   `derivation pending` — so 34 candidates were exempted into silence rather
+>   than queued, while a code comment eight lines above the bug asserted they
+>   "still enter the review ledger". Rows 33, 43 and 44 are one lesson said
+>   three times: **a queue is only a queue on the paths that actually write to
+>   it, and an exemption is only a deferral if the thing it defers to can see
+>   it.** Do not read an empty ledger, or a clean `--check-ledger`, as evidence
+>   about the corpus.
+>
+>   **46** is the newest — **the PROOF TERM'S GRAMMAR**: `lean-self-assuming-audit.py`
+>   had a rule for a bare binder and one for a single qualified projection, and
+>   the character `⟨` occurred NOWHERE in the file, so every CONJUNCTIVE form of
+>   a self-assuming projection — Lean's anonymous constructor — was invisible.
+>   Landed by a sibling in `81a8ac98b9`; see
+>   [`2026-09-14-conjunctive-self-assuming-blind-spot.md`](docs/audits/2026-09-14-conjunctive-self-assuming-blind-spot.md).
+>
+>   **45** is about an ALGEBRAIC signature rather than a
+>   spelling: `q**2 - 2*q - 1`, the factor identifying the retired Q_β base,
+>   is also written with the **absolute value pre-resolved**
+>   (`2*q + 1 - q**2`, legitimate since `q₀²−2q₀−1 < 0`, so no `abs()`
+>   appears) and in **Horner form** (`q*(q - 2) - 1`) — a 45 % undercount,
+>   29 → 42 files, the corrected set including `qbeta_ck_cache.py`, the
+>   canonical `c_k` producer. Its reusable half is a rule about AUDITS and it
+>   is row 44's twin from the other side: 44 is an exemption the queue cannot
+>   see, 45 is a **calibration check that certifies itself**. The audit's was
+>   a hardcoded `check(..., True, ...)`; replacing it with one that resolves
+>   known consumers to their actual bucket and FAILS on a miss is what exposed
+>   the blindness. **An audit that self-certifies its calibration cannot
+>   discover its own blind spot** — 29 would otherwise have shipped with a
+>   clean 3/3 beside it:
 >
 >   - **1-16** — detector-blind *spellings* of convention C.
 >   - **17-21** — the `qou-t9r1` family. These blind an *exemption* or a guard
@@ -3011,12 +3286,17 @@ Do not regress either.
 >   row 26 in the output of the audit that introduced it. Quote the split, not
 >   the total, because folding the last ten into the C figure inflates exactly
 >   the number this note exists to keep honest.
->   (This line has been stale FIVE times — *thirteen* at 15 rows, *sixteen*
->   at 17, *eighteen* at 21, *twenty-two* at 26 — and on the fourth fix I first
+>   (This line has been stale SIX times — *thirteen* at 15 rows, *sixteen*
+>   at 17, *eighteen* at 21, *twenty-two* at 26, *thirty-five* at 39 — and on
+>   the fourth fix I first
 >   wrote "twenty are spellings", miscounting the very split I was adding. On
 >   the fifth, the agent adding rows 25-26 called them "the 17th and 18th"
->   in a commit, a bean and a PR comment before re-counting. **Re-count the
->   table; do not trust this sentence, including this parenthesis.**) So: **treat
+>   in a commit, a bean and a PR comment before re-counting. On the sixth the
+>   agent adding row 40 wrote "they split EIGHT ways" in the same edit that
+>   fixed the row count — inventing a group count while correcting a row count,
+>   when the group list had in fact stopped covering the table at row 34.
+>   **Re-count the table; do not trust this sentence, including this
+>   parenthesis.**) So: **treat
 >   the remaining C surface as UNMEASURED rather than clear — and do not launch
 >   a corpus-wide sweep off any of these numbers.** R1 settles which convention
 >   is canonical; it does not tell you how much code still disagrees.
@@ -3171,15 +3451,51 @@ The substrate modulus q₀ has **one** value but **two** documented pins
 | Layer | q₀ pin | m_μ status |
 |---|---|---|
 | **Ideal / canonical 3-CAL** | **CAL-2 = 𝔇_β**, pinned via its proxy `m_μ/m_e = Vol(4₁)/ℏ_q²` | proxy/anchor **input** — exact *by construction* when used to pin q₀ |
-| **Experimental / Physical-Observations** | **m_p/m_e** (0.017 ppb; re-pin 2026-05-28) | **9.5σ prediction**; misses L2 100× by **970.2×** (211.2 ppb) — the μ–p substrate tension |
+| **Experimental / Physical-Observations** | **m_p/m_e** (0.017 ppb; re-pin 2026-05-28) | **9.49σ on the RATIO / 9.70σ on the MASS** — say which (see the note below); misses L2 100× by **970.2×** (211.2 ppb) — the μ–p substrate tension |
+
+> **🛑 "9.5σ" and "9.70σ" are the SAME residual against DIFFERENT σ, and
+> neither is stale — do NOT sweep one into the other (measured 2026-09-14).**
+> The residual is one number, `err_ppb = 211.20`. It is divided by two
+> different published uncertainties, and this table cell used to carry one of
+> each with no label, which is what makes the sweep look obviously right:
+>
+> | denominator | σ | t | source |
+> |---|---:|---:|---|
+> | **σ on the RATIO** `m_μ/m_e` | 22.247 ppb | **9.4934σ** | `qou_substrate.constants.MASS_RATIO_MU_E_ERR = 4.6e-6` over `206.7682827` |
+> | **σ on the MASS** `m_μ` | 21.768 ppb | **9.7022σ** | `per-observable-100x-status.witness.json` row `m_mu`: `sigma_exp_MeV 2.30000e-6` over `codata_MeV 105.658375496`, published as `sigma_exp_ppb 21.77` |
+>
+> **The ratio σ is the right denominator for a residual on the ratio
+> relation** `m_μ/m_e = Vol(4₁)/ℏ_q²`, which is what CAL-2 actually asserts;
+> the mass σ is what the L2 dashboard scores against, and every *dashboard*
+> figure — `211.2`, `21.77`, `target_100x_ppb 0.2177`, `miss_factor 970.2` —
+> is mass-denominated. So a cell quoting `970.2×` alongside a bare `9.5σ` is
+> mixing frames, even though both halves are individually correct. Quote the
+> denominator, or quote both.
+>
+> **This was already adjudicated and the adjudication was already durable** —
+> `epistemic-status-of-calibrations.ts`, `authorNotes` (bean `qou-silm`):
+> *"Different denominators, not a stale figure — do not 'reconcile' them."*
+> It was invisible from here, which is why it is restated here.
+>
+> **It is also not a CODATA-edition artifact**, the other tempting reading:
+> at CODATA 2018 the ratio figure was **9.534σ** (recorded in
+> `mu-p-residual-two-readings.ts`), at CODATA 2022 it is **9.4934σ**. The
+> 2026-08-22 re-pin moved it by 0.04σ and it rounds to 9.5 on both sides, so
+> the edition change did not make `9.5σ` wrong.
+>
+> Every live content block that says `9.5σ` says it of the **ratio**, in a
+> sentence that names the ratio or the 22 ppb, and is correct as written:
+> `epistemic-status-of-calibrations.md`, `mu-p-residual-two-readings.md`
+> (which shows `σ_exp ≈ 2.2e-8` inline), `three-calibration-inputs-context.md`.
+> Leave them.
 
 The proton re-pin is a **precision substitution within the same
 overdetermined H¹ datum — NOT a 4th calibration and NOT a change to
 CAL-2.** (CAL-1 = m_e; CAL-2 = 𝔇_β, proxy m_μ/m_e; CAL-3 = 𝔇_π, proxy
 m_π; Q_β = ℏ/𝔇_β is the **CAL-2 proxy**, not CAL-3 — see the decay-width
 cheat-sheet ruling above.) Pin on the most precise ratio so the unavoidable ~11.6 ppb
-theory residual lands where least significant (proton-anchor → 9.5σ on
-muon; muon-anchor → ~1.4e4 σ on proton — that figure read "~4000σ" until
+theory residual lands where least significant (proton-anchor → 9.49σ on the
+muon ratio; muon-anchor → ~1.4e4 σ on the proton ratio — that figure read "~4000σ" until
 2026-09-04 and was the CODATA-2018 one, computed against σ(m_p/m_e) = 0.06 ppb;
 at the live 0.017 ppb the same 243.86 ppb miss is 1.4e4 σ, and the two-line rule
 above already carries the tighter σ).
@@ -4649,7 +4965,7 @@ rules of thumb:
 - `$\gamma$` = photon (never vortex; vortex is `$\varrho$`)
 - `$H_q$` alone = **forbidden** (collision); use `$\mathcal{H}_q$` (shuffle) / `$\hat{H}_q$` (Hamiltonian) / `$H_n(q)$` (Hecke) / `$H_q(\lambda)$` (hook-length)
 - `$E$` alone = **not used**; use `$\mathcal{S}_p$` (fibre), `$\mathfrak{E}$` (energy), `$\mathcal{E}_q$` (elliptic curve), or `$E_{\mathfrak{H}}$` (crossing energy with hadron subscript)
-- Three partition-weight families — Markov `$y_\lambda$`, q-deformed Wedderburn `$w_\lambda(q)$`, classical Plancherel `$w_\lambda(1)$` — are **distinct** at `$q \neq 1$` and coincide at `$q = 1$`; never conflate. (**`$\tilde w_\lambda$` is RETIRED** by owner ruling 2026-08-16: bare `$w_\lambda$` now means `$w_\lambda(q)$`, and the classical measure is its specialisation `$w_\lambda(1)$`, not a separate symbol. This line said `$\tilde w_\lambda$` until 2026-09-05.) **Never write a normalisation claim on bare `$w_\lambda$`**: `$\sum_\lambda w_\lambda(1) = 1$` is exact, and `$\sum_\lambda w_\lambda(q)$` is **not** — measured 0.987 / 0.982 / 0.982 / 0.991 / 1.111 / **1.517** at `$n = 3/4/5/6/9/12$` at the proton `$q_0$`. That defect is **structural, not a q-integer-convention artifact** (the deformation breaks Burnside `$\sum_\lambda (f^\lambda)^2 = n!$`; the asymmetric convention is *worse* at five of those six `$n$`), so it does not cancel across different `$n$` and distorts any **cross-atom** metric — `$n = 3A$`. Cross-atom consumers use the self-normalised `$d_q^2/D^2$` (Reshetikhin–Turaev/Verlinde). Whether `$\dim_q^2$` is even the right numerator — against the Molien `$f^\lambda \dim_q(\lambda)$`, which sums to `$[n]_q!$` exactly (Lean, sorry-free, all `$n$`, all `$q>1$`) — is **open**, bean `qou-oots`. Register: [`notation-collisions.md`](content/quantum-observable-universe/notation/notation-collisions.md); measurement: [`2026-09-04-plancherel-convention-gap.md`](docs/audits/2026-09-04-plancherel-convention-gap.md)
+- Three partition-weight families — Markov `$y_\lambda$`, q-deformed Wedderburn `$w_\lambda(q)$`, classical Plancherel `$w_\lambda(1)$` — are **distinct** at `$q \neq 1$` and coincide at `$q = 1$`; never conflate. (**`$\tilde w_\lambda$` is RETIRED** by owner ruling 2026-08-16: bare `$w_\lambda$` now means `$w_\lambda(q)$`, and the classical measure is its specialisation `$w_\lambda(1)$`, not a separate symbol. This line said `$\tilde w_\lambda$` until 2026-09-05.) **Never write a normalisation claim on bare `$w_\lambda$`**: `$\sum_\lambda w_\lambda(1) = 1$` is exact, and `$\sum_\lambda w_\lambda(q)$` is **not** — measured 0.987 / 0.982 / 0.982 / 0.991 / 1.111 / **1.517** at `$n = 3/4/5/6/9/12$` at the proton `$q_0$`. That defect is **structural, not a q-integer-convention artifact** (the deformation breaks Burnside `$\sum_\lambda (f^\lambda)^2 = n!$`; the asymmetric convention is *worse* at five of those six `$n$`), so it does not cancel across different `$n$` and distorts any **cross-atom** metric — `$n = 3A$`. Cross-atom consumers use the self-normalised `$d_q^2/D^2$` (Reshetikhin–Turaev/Verlinde). Whether `$\dim_q^2$` is even the right numerator — against the Molien `$f^\lambda \dim_q(\lambda)$`, which sums to `$[n]_q!$` exactly (Lean, sorry-free, all `$n$`, all `$q>1$`) — is **open**, bean `qou-oots`. Register: [`notation-collisions.md`](content/quantum-observable-universe/notation/notation-collisions.md); measurement: [`2026-09-04-plancherel-convention-gap.md`](docs/audits/2026-09-04-plancherel-convention-gap.md) **Mechanical check (2026-09-13):** [`computations/audits/y_lambda_conflation_audit.py`](computations/audits/y_lambda_conflation_audit.py), wired blocking into `scripts/precision-gates.sh`. It flags the name `y_lambda` attached to the quantum Plancherel measure `$d_q(\lambda)^2/[n]_q!$` — in prose, in an AST assignment, in a producer's own name, and (as a draining ratchet) in a witness column that declares no `weight_family`. It exists because this rule lived only in prose and was broken in four probes at once, and there it was **not cosmetic**: re-weighting the Magnus $\Omega_2$ probes' own committed traces with the real Wenzl bridge FLIPS the sign of $P_\text{total}$ at $A=3$ and $A=4$ (Plancherel $-,+,+$ over $A=2,3,4$; Wenzl $-,-,-$), so the programme's target $A$-dependent sign change is present under one name and absent under the other — bean `qou-za3q`, decision 1 still OPEN.
 - `$q = 1.1097$` (or any specific numerical value) **must not appear** outside the introduction and Chapter 7
 
 ### 7ab. Observed / derived values — approximation convention (STRICT)

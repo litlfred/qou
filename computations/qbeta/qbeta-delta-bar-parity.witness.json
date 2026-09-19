@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T14:00:23.318567+00:00",
-  "commitSha": "bce13f80469461c5a1bc42b8ac75e80530c4cbf6",
+  "computedAt": "2026-09-14T17:43:47.518128+00:00",
+  "commitSha": "de500afd7404550c7db431c7e42bfcfc85c62b30",
   "assertions": [
     {
       "name": "bar_sends_the_generator_to_its_inverse",
@@ -118,11 +118,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4470,
+  "durationMs": 5655,
   "computation": "qbeta-delta-bar-parity",
   "scriptFile": "qbeta_delta_bar_parity_probe.py",
-  "scriptHash": "3e7da5b79f0e",
-  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "scriptHash": "e4e68844b9ec",
+  "scriptCommitSha": "46ba3c0243f537f046dfd6ffa8e995ace65802f5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -135,9 +135,7 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "clarabel": "0.11.1"
   },
   "invocation": {
     "argv": [

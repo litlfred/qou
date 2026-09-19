@@ -71,6 +71,24 @@ stabiliser of six distinct points embeds in `S₆` — is stated in the audit an
 exactly in the companion probe, which finds `Stab(B) = {id, ι} ≅ ℤ/2`. This file proves
 only the monomial case.
 
+> **Currency note (2026-09-12) — the mathematics of both paragraphs above is now
+> formalised; only their packaging is not.** The audit for this file said the Möbius
+> half "would need Möbius machinery Mathlib does not carry in usable form". It does
+> not: cleared of its denominator the fixed-point condition is the quadratic
+> `c·w² + (d−a)·w − b = 0`, so three distinct fixed points force the identity.
+> `QOU.Mass.MoebiusThreePointRigidity` proves that (`moebius_id_of_three_fixed`) and
+> the sharper determinacy statement that *is* the embedding
+> (`moebius_proportional_of_three_agree`: two data agreeing at three distinct points
+> are proportional). Independently,
+> `QOU.Mass.BranchLocusFiniteOrder.exists_pow_eq_one_of_stabilizes` proves the orbit
+> bound for a scaling by pigeonhole, with `not_stabilizes_of_one_lt_complex` ruling
+> out every real `l > 1` — which is the substrate case, since `B ⊂ ℂ`.
+>
+> Still genuinely open: assembling `Stab(B)` as a subgroup of `PGL₂` and the
+> injection as a group homomorphism into `S₆` (bookkeeping over Mathlib's
+> `Matrix.GeneralLinearGroup`), and the **covering-space step** of the preceding
+> paragraph, which is the one irreducibly geometric link and stays prose.
+
 **Not excluded:** a q-difference structure not arising from a base automorphism at all
 (route 3, Ramis–Sauloy–Zhang / Sauloy — now supplied with a genus *and* an involution);
 anything built from the monodromy representation rather than an automorphism.

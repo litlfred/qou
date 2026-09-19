@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-12T12:28:23Z
-updated_at: 2026-09-12T19:12:09Z
+updated_at: 2026-09-13T10:39:43Z
 ---
 
 ## Resolved as far as it goes: ONE root, and the stated escape is insufficient
@@ -98,3 +98,33 @@ family exists. Magnitude untouched. Composes with the existing
 `the_pn_bond_is_an_average_and_cannot_be_extremal_probe`, which established the
 ordering `L_pp < L_pn < L_nn`; this adds what it means for the `b_3 > 0` requirement
 specifically, which that probe predates.
+
+
+## 2026-09-13 — the escape wording here is now WRONG, and a sibling PR is building on it
+
+This bean records the escape as *"It must break the AVERAGING of the pn letter,
+or break AFFINENESS of the interface law."* Both halves are superseded by
+`QOU/MassTheory/InterfaceMonotoneBlocksSignMixed.lean` (on `main`, merge
+`3cb26d4b9f8`):
+
+- **Affineness is the wrong invariant — MONOTONICITY is.**
+  `pn_not_strict_max_of_monotone` holds for **any monotone interface law, affine
+  or not**; `signMixed_impossible_of_monotone` is the corollary against this
+  bean's own `signMixedPattern`. So abandoning affineness buys **nothing**.
+- **Averaging is not separately breakable.** `between_iff_combo` — over an
+  ordered field, "`d_pn` strictly between `d_pp` and `d_nn`" and "`d_pn` is a
+  convex combination" are the **same** condition, weight `w = (b−c)/(b−a)`.
+
+So the disjunction is one-and-a-half hypotheses, not two, and the live statement
+is: **a third bond family must put `d_pn` OUTSIDE the interval spanned by
+`d_pp` and `d_nn`, or use a NON-MONOTONE interface law.** The narrowing is sharp
+— `nonmonotone_escape_exists` exhibits `f d = 1 − (d−1)²` — so this is a real
+door, not a disguised impossibility.
+
+**Urgency:** PR #7287 (`qou-ix0x` Option 1, γγ junction) quotes the old wording
+and rests its escape on *"a length-6 word is not `σ + d·1`, so it breaks
+affineness."* That step does not escape. Flagged on that PR
+(`#7287` comment, 2026-09-13).
+
+**Still OPEN and NOT closeable** (§13a): the third bond family is an open
+derivation. Only the *escape question* is closed, as a question.

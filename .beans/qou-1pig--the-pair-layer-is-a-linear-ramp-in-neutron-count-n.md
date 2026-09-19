@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T10:05:43Z
-updated_at: 2026-08-30T10:30:49Z
+updated_at: 2026-09-14T16:16:16Z
 ---
 
 ## The question that provoked it
@@ -165,3 +165,75 @@ itself** -- i.e. `p |-> sigma, n |-> sigma^-1` is the thing to revisit, not the
 p-n averaging rule. Any candidate replacement has to make the LIKE pairs
 near-degenerate while distinguishing the unlike one, which is the opposite of
 what a crossing-sign assignment naturally produces.
+
+
+## The alpha-free part of the same measurement is 19.0% — 2026-09-14
+
+Owner instruction: *"Merge then try derivation"* (after *"Why are we doing a
+census?! That's sounds like fitting. We should be in lean deriving"*). The
+derivation attempted was whether a `tr_M`-level quantity can carry a
+charge-antisymmetric part at all; it lands on this bean's ground, so the result
+is recorded here rather than in a new bean.
+
+Probe: `computations/probes/b3_asym_over_sym_is_alpha_free_probe.py`
+(3/3 structural assertions, zero raw float64 in the witness).
+
+**This bean already held the numerator.** `B(3H) - B(3He) = alpha*ln(f_pp/f_nn)
+= 1.74707324276 MeV` is exactly twice the `b3_asym` of the mirror split, and the
+linear-ramp / odd-in-T_z diagnosis above is the better explanation of it. None of
+that is re-derived.
+
+**What is new is that a residual survives `alpha`.** Decompose the chain assembly
+by the mirror split and `alpha` cancels in the internal ratio:
+
+    b3_sym  = alpha [ 2 ln f_pn - (ln f_pp + ln f_nn)/2 ]
+    b3_asym = alpha [ (ln f_pp - ln f_nn) / 2 ]
+
+Verified by recomputing at `7*alpha`: ratio drift `4.5e-72` while the parts
+themselves move 7x.
+
+The `2.287479x` this bean reports is **linear in alpha** — an alpha 2.287x
+smaller removes it entirely. So is the corresponding symmetric comparison,
+`1.922620x`. Their quotient is not:
+
+    (model asym / obs asym) / (model sym / obs sym)
+      = 2.287479 / 1.922620
+      = 1.189772
+
+so the alpha-free content of the A=3 mirror failure is: **the chain assembly
+overshoots the antisymmetric part by 19.0% more than it overshoots the symmetric
+part**, and no choice of `alpha` touches that 19.0%. That is the part of this
+bean's defect 1 which cannot be argued away as a scale problem.
+
+**The ratio's sign is NOT a second finding.** It comes out `-0.318567` against
+AME `+0.267755`, but the numerator is positive and right-signed (this bean
+establishes that), and the denominator is negative because `b3_sym` is — the
+corpus's own `QOU.MassTheory.B3SignOneRoot.b3corpus_chain_neg` (sorry-free, the
+Ursell alternation forcing `b3 < 0` for every bond triple). Grant that repair and
+the ratio's sign repairs with it. The probe's first draft claimed the sign
+"survives an overall sign flip"; that is true only for flipping both parts and is
+withdrawn.
+
+**Ranked against the corpus's ten candidates** on the same alpha-free
+discriminant, computed from `b3-charge-decomposition-a3.witness.json` (which
+reports sym and asym separately but never their internal ratio — every column it
+has carries the candidate's own scale):
+
+    product_beyond_pairwise  +0.054253    chiral_joint_triangle   -0.039168
+    product_two_bond_only    +0.068345    chiral_joint_longrange  -0.088559
+    product_three_bond_only  +0.140678    abs_joint_triangle      -0.029677
+    joint_trace_abs_c3       +0.140678    CHAIN ASSEMBLY          -0.318567
+    joint_trace_signed_c3    +0.140678    -- AME2020              +0.267755
+    joint_trace_chiral_c3    -0.161850
+
+The ten span `[-0.16185, +0.14068]`; the chain assembly is the first candidate
+whose magnitude **exceeds** the target. It is also not among those ten — they are
+product models, joint traces and chirality weightings, and the production
+assembly is log-additive.
+
+Scope **(a)**, not (b): this excludes the chain assembly's isospin structure as
+written, not any ingredient. And the asymmetry is **isospin-labelling**, not
+electromagnetic: `f_pp` and `f_nn` differ by the Hecke `h` (measured,
+`|f_pp - f_nn| = h` exactly), and the per-bond factors carry no EM term.
+
+Bean stays `todo` — the open question is unchanged.

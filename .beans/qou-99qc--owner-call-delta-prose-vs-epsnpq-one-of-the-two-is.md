@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-12T19:07:09Z
+updated_at: 2026-09-15T08:21:15Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1339,3 +1339,1959 @@ agent will reach for; do not spend a session on it.
 Probe: `qbeta_zd_gap_anatomy_probe.py` (9/9). Audit:
 `docs/audits/2026-09-12-zd-gap-anatomy-and-three-undone-migrations.md`.
 **Status stays `todo`** (§13a).
+## 2026-09-12 — BOTH routes to Delta are now priced, and both are negative
+
+PR #7212. The owner's word-selection ruling (2026-09-08, qou-ales) applied to
+the DECAY channel for the first time — #7192 applied it to mass/binding.
+
+PROVED (sorry-free, QOU/QBeta/GammaGammaSelectedDeltaVanishes.lean, lean-direct
+exit 0 first attempt): a functional multiplicative over concatenation and equal
+to 1 on a pair-production vertex is 1 on EVERY γγ-word, hence annihilates every
+γγ DIFFERENCE. Both one-dimensional blocks of H_3 are of that shape. Therefore:
+
+  * LEVEL 1 gives EXACTLY ZERO — the augmentation's support is the (3) block
+    alone, so a γγ-selected Delta predicts Q_beta = 0 identically, for every
+    pair of words, with no computation to do.
+  * LEVEL 2, the ruled functional, is carried ENTIRELY by the (2,1) block, which
+    is what makes the scan one-dimensional and finite.
+
+MEASURED (5/5), V^k with k <= 5 from the 11-crossing budget, 36 pairs:
+
+  level 1, max over all 36 pairs   1.34e-51        (the proof, confirmed)
+  reachable below target           7 values, all <= 0.0985019929
+  reachable above target           8 values, all >= 0.6841593612
+  the GAP                          0.5856573683 = 3.13364x the target
+  Q_beta target                    0.1868936677    -- INSIDE the gap
+  nearest reachable                47.295168 % away
+
+The γγ sector does not merely miss; it CANNOT COME CLOSE. Structural.
+
+THE TWO ROUTES, SIDE BY SIDE:
+
+  re-read the existing recipe (#7188)   0 of 37,459,422,000 configurations
+  the ruled γγ selection (#7212)        target in a 3.13x gap, nearest 47.3 %
+
+Neither reaches Q_beta. The live conclusion is that Delta needs the FLAVOUR
+LETTERS: γγ-words carry no flavour index at all (the corpus's Crossing is
+(gen, pos) and nothing else), so a flavour-blind principle cannot distinguish a
+proton word from a neutron word. That is the open point GammaGammaSelectorH3
+names for itself.
+
+SCOPE-(a) on both: #7188 prices the freedom the SOURCE BLOCKS declare; #7212
+prices the ruled principle APPLIED ALONE. Neither refutes the ruling, and an
+element combining γγ selection WITH flavour letters is outside both.
+
+Bean stays todo. The element question is SHARPER, not closed — two routes
+priced, both negative, and what is missing is now named.
+
+
+
+## 2026-09-12 CORRECTION — 'Delta differs in one letter' was WRONG; it retypes TWO
+
+PR #7212, commit c2b8c7e8c0. This retracts a claim I made the same day, which
+reached that PR's TITLE, its BODY, a Lean docstring and a comment on the PR.
+
+THE CLAIM: the nucleon words 'differ in exactly one letter: a single sigma
+becomes a single sigma^-1'. Wrong at the LETTER level. The corpus's own data,
+_GEN_CHAINS in qbeta_delta_candidate_census_probe.py:
+
+  p : gen0 [0,0,0,   0,-1/2,0,0]   gen1 [-1,-1,-1,-1/2]
+  n : gen0 [0,0,0,-1/2,-1/2,0,0]   gen1 [-1,-1,-1,  -1]
+
+TWO slots differ, gen0[3] and gen1[3], each by exactly -1/2.
+
+WHAT WAS AND WAS NOT WRONG. The COUNTS are correct and unchanged: proton
+(1,2,0), neutron (0,2,1), and the Lean theorem about them stands. The READING
+was wrong. Beta-decay flips ONE quark, and each quark sits in TWO of a
+nucleon's three pair-crossings, so one uu becomes ud and one ud becomes dd:
+
+  (u1,u2)  uu -> ud     retyped
+  (u2,d3)  ud -> dd     retyped
+  (u1,d3)  ud -> ud     untouched
+
+The preserved ud count is a CANCELLATION -- one gained against one lost -- not
+evidence the mixed crossings are untouched. (1,2,0) -> (0,2,1) is consistent
+with a single uu |-> dd substitution AND with the flip that actually happens,
+and only the second is a possible decay. I read the weaker hypothesis off the
+counts without checking it against the chains. The misleading theorem name
+nucleon_difference_is_one_letter is renamed
+nucleon_pairCounts_differ_by_one_uu_and_one_dd; the statement is unchanged.
+
+WHAT THE CORRECTION BOUGHT, which is worth more than the retraction cost. Both
+retyped letters pick up the SAME central scalar s = -h/2, so Delta expands
+EXACTLY:
+
+  Delta = s*(S_A + S_B) + s^2*S_AB
+
+with S_A, S_B the proton word with ONE flavour crossing SMOOTHED (10 crossings)
+and S_AB with BOTH (9). Measured, 60 dps, proton pin, convention D:
+
+  direct tr(Delta) vs expansion     agree to 7.8e-62
+  s = -h/2                          -0.1045301493978196577
+  tr(S_A) / tr(S_B) / tr(S_AB)      1.271097000 / 0.272140496 / 0.301910575
+  s^2 term / s term                 2.045 %
+  crossings                         11 -> 10 -> 9
+  residual                          -15.451387 %  -- UNCHANGED
+
+THE OLD READING IS REFUTED NUMERICALLY, not merely withdrawn: under it Delta
+would be -h times ONE smoothed word, and both candidates sit 68.2 % and 64.0 %
+from Delta. CHECK 4 of the probe.
+
+ALSO: the typing table is ONE scalar, not three conventions. sigma - h =
+sigma^-1 follows straight from the Hecke relation (skein_letter_inv), so the dd
+letter IS the inverse crossing and the ud letter is exactly (sigma+sigma^-1)/2
+(ud_letter_is_average). Both sorry-free.
+
+LEAN, all sorry-free, lean-direct -DautoImplicit=false -s 65536 exit 0:
+  flip_retypes_pairs                general form, any (m+1 ups, n downs)
+  nucleon_flip_retypes_two_of_three the proton case: 2 of 3
+  two_shift_expansion               the element identity, over a NONCOMMUTATIVE
+                                    ring with centrality of s explicit -- a
+                                    CommRing proof would be unsound for the
+                                    braid algebra
+  skein_letter_inv                  needs only the Hecke relation
+  ud_letter_is_average              needs (2:R) != 0, stated explicitly
+  succChooseTwo                     C(m+1,2) = C(m,2) + m
+#print axioms: no sorryAx anywhere; two_shift_expansion needs only [propext].
+
+WHAT DOES NOT MOVE. No number: this is an exact rewriting of the same element,
+so the residual and everything downstream are identical. The 3.13x gap result
+of #7212 Part 1 is untouched -- it prices the whole reachable set and never
+used the letter count.
+
+WHAT IT CHANGES FOR THIS BEAN. Delta's FORM inside this construction is now
+known exactly: a fixed rational combination of 10- and 9-crossing traces rather
+than an opaque 11-crossing difference, and |s| ~ 0.1045 is the quantitative
+reason the two nucleon traces sit so close together. Whether those lower-
+crossing words are more tractable, or coincide with words the mass channel
+already computes, is NOT claimed and is the live question.
+
+BEAN STAYS todo. The epsilon/Delta fork is an open conjecture; per AGENTS.md
+13a a bean whose subject is an open conjecture is not closed because the
+recording of its openness is done.
+
+SCOPE-(a): two_shift_expansion holds for ANY two slots carrying a common
+central shift; that the nucleon words are in that shape is read off _GEN_CHAINS
+and re-verified numerically, not proved.
+
+
+
+## 2026-09-12 DERIVATION — the gg ruling DECIDES the braid ordering, and picks the WORSE one
+
+PR #7212, commit 3a76d49fc9. This CLOSES the ordering question #7188 raised.
+
+WHAT #7188 LEFT OPEN, in its own words: "the corpus now owes a DERIVATION of
+the braid ordering of the nucleon word. Until it has one, tr_{z_D}(Delta) is
+not predicted by the framework -- it is selected by an unstated modelling
+choice." The owner's gamma-gamma ruling (2026-09-08, qou-ales) supplies it.
+
+THE ARGUMENT, STRUCTURAL NOT NUMERICAL. The census carries two orderings of the
+SAME eleven-letter multiset (verified: identical Counter for both nucleons).
+Their confinement cores are:
+
+  interleaved  nuc9:        for _ in range(3): sigma_0 ; (sigma_1 - h)
+  gen-grouped  _GEN_CHAINS: all sigma_0 letters first, then all sigma_1
+
+sigma_1 - h = sigma_1^-1 by the Hecke relation (skein_letter_inv, proved on
+this branch), so the interleaved core is (sigma_0 sigma_1^-1)^3 = `vertex 0`
+three times -- a GAMMA-GAMMA WORD. The gen-grouped core has a POSITIVE crossing
+in SECOND position, and a gg-word's second letter is always negative. So of the
+two models exactly one is gg-produced and the ruling selects it. Scope-(b): it
+cites a proved invariant, not a bad number.
+
+LEAN, all five depend on NO AXIOMS AT ALL (lean-direct exit 0):
+  gammaGamma_snd_neg             a gg-word's second letter is negative
+  not_gammaGamma_of_snd_pos      hence a positive 2nd letter excludes it
+  interleavedCore_isGammaGamma   three applications of the constructor
+  not_gammaGamma_genGroupedCore  the exclusion
+  cores_ne                       the two cores are different words
+
+The linter earned its keep: the exclusion lemma was first stated with BOTH of
+the first two letters positive as hypotheses and the first is never used, so it
+was restated STRONGER (the first letter's sign is irrelevant) and renamed.
+
+🛑 THE RULED ORDER IS THE LESS ACCURATE ONE, and that is the correct outcome.
+Proton pin, convention D, 60 dps:
+
+  interleaved (RULED)   -17.495929 %      <- reproduces #7188's documented -17.496
+  gen-grouped (unruled) -15.451387 %      <- the merged Option-E witness
+  cost of the ruling      2.04454 points
+
+Under AGENTS.md NO FITTING, "rank by derivational cleanliness first, treat
+accuracy as a diagnostic, never as a tie-breaker that promotes a fitted route."
+Preferring -15.45 % BECAUSE it is closer is selection against the target. Do
+not revert this.
+
+CONSEQUENCE FOR THIS BEAN. The -15.4514 % that #7188 and #7212 calibrate
+against is the GEN-GROUPED, i.e. UNRULED, order. Nothing there is retracted --
+both state their ordering -- but the CANONICAL residual under the ruling is
+-17.4959 %, and the witness qbeta-gamma-gamma-ruling-selects-ordering is the
+record of which figure is which.
+
+WHAT SURVIVES THE ORDER CHANGE, checked rather than assumed:
+  * the two-letter flip is ORDER-INDEPENDENT: two slots, each -h/2, in both
+    orderings (expected for a flavour statement, but measured);
+  * the three-term skein expansion is EXACT on the ruled order too, 3.9e-62 at
+    60 dps -- only the term sizes move, s^2/s going 2.045 % -> 4.874 %;
+  * the 3.13x gap of #7212 Part 1 is UNTOUCHED: it prices V^k differences, a
+    gg-only construction carrying no nucleon ordering at all.
+
+CROSS-CHECK WORTH NOTING, two independent routes to the same k. The sibling's
+Frobenius-positivity selection (owner ruling 2026-09-12, reading 3) picks
+k = 3 = beta_Bor on #7207. The census's confinement core is independently V^3.
+Same k, from two different principles -- recorded as a coincidence of two
+derivations, NOT offered as evidence for either.
+
+🛑 TRAP, recorded in the probe. "Interleaved" reconstructed by ZIPPING the two
+_GEN_CHAINS lists alternately gives -13.5712 %, which is NEITHER census model
+-- a third ordering, invented, and plausible-looking. I produced it before
+reading nuc9. The census's interleaved model emits the core as three
+(sigma_0, sigma_1^-1) PAIRS, then an ORDERED quark block, then two gluon
+letters. Reproducing the documented -17.496 % is the calibration that catches a
+lookalike reconstruction; CHECK 3 asserts it.
+
+BEAN STAYS todo. The epsilon/Delta fork is an open conjecture (§13a). What is
+closed is the ORDERING sub-question, which is a genuine narrowing: the order is
+no longer a free modelling choice. The residual did not improve and was not
+expected to.
+
+STILL OPEN: the ruling constrains the CORE. The flavour letters are determined
+(this branch) but their PLACEMENT, and the two gluon letters, are not gg-words
+and are not settled by the ruling. That is the remaining freedom.
+
+
+
+## 2026-09-12 PARITY BOUND — the ruling reaches 6 of 11 letters, provably
+
+PR #7212, commit 49bae3625e. Companion to the ordering derivation above: that
+one settles the CORE, this settles how much the gg principle can settle AT ALL.
+
+Every pair-production vertex contributes exactly TWO letters, so a gg-word has
+EVEN length. The nucleon crossing budget is 11 (qou-1qsw), which is ODD.
+Therefore NO 11-crossing word is gg-produced -- not this one, not any
+reordering of it, not any other candidate at that budget. At least one letter
+necessarily lies outside the principle's reach, and that is a fact about the
+budget, not a shortfall in the construction.
+
+Block decomposition of the census word:
+
+  core (sigma_0 sigma_1^-1)^3    6 letters   gg-produced (constructor x3)
+  quark                          3 letters   NOT -- odd length
+  gluon sigma_0 sigma_0          2 letters   NOT -- 2nd letter positive
+                                ----
+                                11 = the budget
+
+So the ruling reaches 6 of 11; the other 5 are the freedom that survives it.
+The gluon pair is excluded twice over -- directly by the vertex sign pattern,
+and by following an odd-length block.
+
+LEAN (lean-direct exit 0, no sorryAx):
+  gammaGamma_length_even        2 | w.length for any gg-word
+  not_gammaGamma_of_odd_length  the contrapositive
+  eleven_not_gammaGamma         no 11-crossing word is gg-produced
+  gluonPair_not_gammaGamma      NO AXIOMS AT ALL
+  three_not_gammaGamma          the quark block's length is odd
+
+Scope-(b) throughout: every exclusion cites a proved invariant (vertex length,
+or the vertex sign pattern), never a measured miss.
+
+🛑 THIS IS A LIMIT ON THE RULING, NOT A DEFECT IN IT, and not the construction
+failing to apply it. The principle does what it can; what it cannot do is fix
+an odd number of letters out of even-length building blocks.
+
+WHY IT MATTERS FOR THIS BEAN. It converts "the flavour placement and gluon
+letters are still open" from an observation into a THEOREM about where the
+remaining freedom lives: exactly 5 letters, and no amount of gg reasoning will
+reduce that number. Any closing Delta has to come from those 5 or from a
+different principle. That is a much sharper statement of the open problem than
+the bean carried before.
+
+Probe 12/12 (CHECK 6 added to qbeta_gamma_gamma_ruling_selects_ordering_probe).
+
+BEAN STAYS todo (§13a).
+
+
+
+## 2026-09-12 — the SDP half applied, and the scope question ANSWERED (A, core only)
+
+PR #7212, commit 426af792b8 + follow-up. The gamma-gamma half was applied above
+(ordering 3a76d49fc9, parity bound 49bae3625e). This is the SDP half.
+
+METHOD, needing no new machinery. chi_(3) is the 1-dim character sigma -> q, so
+a letter (sigma_g + dc*h) has value q + dc*h and chi_(3)(w) = prod(q + dc_i*h)
+-- multiplicative and GENERATOR-INDEPENDENT. From
+tr_{z_D} = y_(3) chi_(3) + y_(2,1) chi_(2,1) at level 2 (y_(1^3) = 0),
+chi_(2,1) = (tr - y_(3) chi_(3)) / y_(2,1). Calibrated three ways before use:
+chi_(2,1)(1) = 2 exactly (block dimension), chi_(3)(V^k) = 1 exactly for all k
+(reproducing the sorry-free unit_on_vertices_eq_one from the OPPOSITE
+direction), y_(3) + 2 y_(2,1) = 1.
+
+RESULT 1 -- the (3) block is STRUCTURALLY SILENT. chi_(3) depends only on the
+shift multiset, and flavour determines the shifts (pairCounts_determined), so
+it is one positive number per nucleon (1.3825 p / 1.1221 n) across all 32
+generator assignments, spread exactly 0. The whole content of reading 3 here is
+chi_(2,1) >= 0.
+
+RESULT 2 -- it NARROWS AND DOES NOT CLOSE. 20/32 proton and 16/32 neutron
+assignments survive: 320 admissible Delta pairs of 1024, a 3.2x narrowing. The
+target (0 %) is INSIDE the admissible range [-98.57 %, +35.17 %], and the
+nearest admissible pair misses the ~780 ppb window by 122573x. Falsifiable and
+currently failing -- the same shape as #7188's ordering result, NOT a rescue.
+
+RESULT 3 -- THE SCOPE FORK, now answered. Reading 3 applied to the gg-selected
+CORE admits V^3 (chi_(2,1) = +1.9942) and selects k = 3 = beta_Bor. Applied to
+the WHOLE 11-crossing word it EXCLUDES the census assignment (chi_(2,1) =
+-0.2806 proton, -0.3720 neutron) -- which would make every residual on this
+bean inadmissible. Both fit the ruling as relayed.
+
+ANSWER, recorded verbatim: **"test,A — core only (Recommended)"** -- option (A)
+plus a free-text token `test`. Recorded as SELECTED, not as a clean ruling: that
+token reads as much like exercising the question UI as like a directive, and an
+ambiguous answer should not be laundered into an owner ruling in a bean that
+later agents read as authority.
+
+Acting on it is safe either way because (A) IS THE STATUS QUO -- the sibling
+applied it on #7207 (frobeniusSelected_borromean), and adopting it moves no
+number and re-runs no producer. If the intent was otherwise, nothing has to be
+undone; only this paragraph is wrong.
+
+CONSEQUENCE UNDER (A). The census element stands, and so does every residual on
+this bean. Reading 3 constrains 6 of the word's 11 letters and prunes NOTHING
+among the 5 the parity bound leaves free -- so the SDP half does no work on the
+open part of the problem, and the 5 letters still have no derived constraint.
+That is the live gap.
+
+BEAN STAYS todo (§13a).
+
+## 2026-09-12 — the element migration LANDED on main, and `element_is_ruled: true` over-reaches by 5 letters
+
+**Not a numerical dispute. The migration is right, the number is right, and my own
+work is what supports it.** What is wrong is one provenance field, and it is the
+field an owner reads.
+
+**What landed.** `573b2ece24` moved the scored `Q_β` element from `delta_S` (short
+normal form) to `nuc11_interleaved`, and `b021216ab6` closed `qou-wfvl` as
+`completed`. The row improved 2.55× (4.259e+8 → 1.668e+8 ppb). The producer writes
+
+    "element_is_ruled": true,
+    "element_authority": "owner gamma-gamma ruling qou-ales 2026-09-08 +
+       GammaGammaWordSelection.vertex on main (a gamma-gamma word's 2nd letter is
+       negative, which excludes the gen-grouped core)"
+
+and it calibrates at `err_pct_at_order_zero_E0 = -17.4959286063` against my
+`-17.495929`. Their `delta_S` `tr_conv_D = -0.106235639848` reproduces mine to ten
+digits. The exclusion argument they cite **is** my Lean lemma
+`not_gammaGamma_of_snd_pos`. None of that is in question.
+
+**The over-claim, measured.** `nuc11_interleaved` is **11 letters** — read off
+`_GEN_CHAINS`, `gen0 = 7`, `gen1 = 4`, for both `p` and `n`. Every γγ word has
+**even** length: a γγ word is a concatenation of 2-letter vertices
+(`gammaGamma_length_even`, sorry-free). 11 is odd. **Therefore
+`nuc11_interleaved` is not a γγ word** — `eleven_not_gammaGamma`, sorry-free, on
+this branch.
+
+So the ruling does not select the element. It selects the **6-letter core**
+`(σ₀σ₁⁻¹)³` = three γγ vertices, and provably cannot reach the other five:
+
+| block | letters | γγ-reachable? |
+|---|---|---|
+| core | 6 | **yes** — three vertices |
+| quark | 3 | no — odd (`three_not_gammaGamma`) |
+| gluon | 2 | no — even, but both positive (`gluonPair_not_gammaGamma`) |
+
+The gluon pair is excluded **twice over**: its second letter is positive, and it
+follows an odd-length block so no vertex boundary can align with it.
+
+**Why this matters rather than being pedantry.** `qou-ales` says *"Shouldn't use
+census."* The element now scored is **6/11 γγ-derived and 5/11 census-derived**.
+`qou-wfvl` — whose title is *"the Q_β element is census-derived"* — is therefore
+closed on an element that is still census-derived in 5 of its 11 letters. The
+migration is 6/11 done, not done.
+
+**What the correct label would say.** The binary field cannot express this. Either
+`element_is_ruled` becomes scoped (`"core"`), or it keeps `true` alongside
+`element_ruled_letters: 6` / `element_census_letters: 5`. **My judgement, marked as
+judgement:** the second — keep the boolean for consumers, add the two counts, and
+open a successor bean for the 5 free letters, because that is where a closing `Δ`
+would have to come from and it is now the only place left.
+
+**I have not changed it.** It is a sibling's producer and an owner-facing
+provenance label; §"ASK THE OWNER BEFORE CHANGING THINGS" covers it and it is
+neither a precision increase nor corpus-derived (the corpus currently *asserts*
+`true`). Recorded here; surfaced to the owner.
+
+**Second item, smaller.** `173da443b6` made the tower-summed `E₀` canonical. This
+probe and `qbeta_option_e_order_dof_range_probe` still inherit the **order-zero**
+form, so every percentage on this bean is on the retired base, low by 0.9915 %. On
+the canonical base: interleaved `-16.677940 %`, gen-grouped `-14.613128 %`. CHECK 7
+reports both and does not switch, because the cells these are calibrated against
+were computed at order-zero and mixing bases is the silent-revert trap that
+commit's own audit records at §6. **The ranking is invariant** — residual is
+strictly increasing in `E₀`, and `E₀ > 0` is common to every candidate — so no
+conclusion on this bean depends on the base.
+
+
+
+## 2026-09-13 — the element question: ordering is provably not the lever (PR #7295)
+
+The alternating character `sigma_i |-> -1/q` is a 1-dim rep of `H_3(q)`, so a
+word's character is a product of SCALARS and depends only on the MULTISET of
+its letter shifts. Measured on 3840 (permutation, generator-assignment) pairs:
+exactly ONE distinct value. Lean `wordChar_of_perm` (sorry-free).
+
+Consequence for this bean's element half. R2 of the gamma-gamma ruling
+(`qou-ales`, #7212) picked the nucleon ORDERING. **An ordering choice cannot
+make a word gamma-gamma-produced** — the invariant that `altChar_eq_one` pins
+at +1 cannot see one. So the 5 census-derived letters of `nuc11_interleaved`
+are not repairable by re-ordering or by re-assigning generators; a
+gamma-gamma-derived replacement has to change WHICH letters are present.
+
+Closed form over the three-shift alphabet the census uses, with a/b/c counting
+the shifts 0 / -h / -h/2:
+
+    altChar(w) = (-1)^(a+b+c) q^(b-a-c) ((q^2+1)/2)^c  = 1  <=>  c = 0 and a = b
+
+Every corpus nucleon carries c = 2, and `-h/2` — the mixed ud crossing — is
+BOTH the unique bar-fixed shift (#7283) and the unique shift whose character
+pairs with nothing to give 1. One letter, two independent obstructions;
+`qou-e58e` measured that bar IS p<->n conjugation, so that is not a notational
+coincidence.
+
+Coverage, stated honestly: FIVE of the census's six Delta families —
+four at word level (`nuc9`, `nuc11_interleaved`, `nuc11_gen_grouped`, the 16
+`blocks CONSTRUCTED` readings = 19 readings = 38 words), one (`delta_S`, the
+short model) only at the Delta level because it is given as an NF vector and has
+no shift multiset. `blocks AS STATED` is NOT covered — nothing constructs it.
+
+NOT NEW: `qou-avt6` (2026-08-26) already has the monomial shape
+`q^m ([2]_q/2)^c`, for the COUNIT rep `sigma |-> q`. This is the ALTERNATING
+rep, which is the one the gamma-gamma lemma pins — a different functional, same
+shape.
+
+OPEN, spun out as `qou-efqx`: the fourth (`averaged_weighted`, colour-weighted)
+template, which R3 makes canonical. Its character carries an irreducible sextic,
+so the argument does not extend; only the pin-level pairing fact is measured.
+
+Bean stays `todo` (AGENTS.md §13a — the element is an open conjecture; this
+narrows it, it does not close it).
+
+
+
+### Same day, the positive half (PR #7295 part 2)
+
+On three strands the gamma-gamma ruling leaves **one integer**. `H_3(q)` has two
+Artin generators, so a vertex `sigma_i sigma_{i+1}^-1` needs `i+1 < 2`, i.e.
+`i = 0`: every gamma-gamma word is `(sigma_0 sigma_1^-1)^k`. Lean
+`gammaGamma_threeStrand`, sorry-free. `k = 3` is `borromean`.
+
+Two structural findings. Every member has a **vanishing `e^-` coordinate**
+(symbolic, k = 0..24) — so `qbeta-counit-closed-form.md`'s "which both nucleon
+models happen to satisfy" is FORCED under gamma-gamma, not accidental; and
+`tr_M|_{z=1} - net = h*nf[e^-]` identically, so net and the retired z=1 cell
+COINCIDE on every gamma-gamma word.
+
+**The derived member misses by 440 %.** `|tr_M^{z_D}(core^3)|*E_0 = 4.22140`
+MeV against `Q_beta = 0.78233`: **+439.592 %**. That is the honest number for
+the route as a single-word Q_beta carrier on three strands.
+
+**And the matching members are selected, measurably.** The k=1 (mod 3) band
+descends monotonically THROUGH the target (k=7 gives +0.610 %); the difference
+grid over k,l <= 24 is 300 pairs straddling it, local spacing 1.29 %, best
+(8,23) at +0.455 % — against **0.322 % expected by chance** from that spacing.
+The best match is not even better than chance. Choosing k or (k,l) by residual
+is selection against the target and is forbidden.
+
+So the live question is sharper: **either `k` is derived from something other
+than the residual, or the gamma-gamma carrier for Q_beta is not a single
+three-strand word.** Both open. Scope-(a) — no invariant here forbids the
+gamma-gamma route; what is excluded is the METHOD.
+
+
+
+### Part 3, same day — the H_3 collapse is an ACCIDENT OF THREE STRANDS (PR #7295)
+
+The three-strand collapse was never about the Hecke algebra. Lean, sorry-free:
+`gammaGamma_iff_vertexWord` — the gamma-gamma words are EXACTLY the free monoid
+on the vertices; `gammaGamma_index_lt` — on n strands only n-2 vertex indices
+exist. ONE at n=3 (hence the cyclic monoid), TWO at n=4.
+
+Measured (general-n T-basis reducer, validated against the corpus's hand-coded
+H_3 tables, and independently recovering growth k+1 at n=3):
+
+                      n = 3                 n = 4
+  vertices            1                     2
+  growth (k <= 8)     k+1 = 1..9            2^(k+1)-1 = 1,3,7,...,511
+  span rank           3 of 6                21 of 24
+
+At n=4 EVERY one of the 2^k words of length 2k is a distinct element of H_4 —
+the Hecke relations impose no collapse at all — and the span goes from half the
+algebra to seven eighths.
+
+**So the +439.592 % H_3 miss must NOT be quoted for H_4.** It is a fact about a
+one-integer family. At four strands the family is free and nearly fills the
+algebra.
+
+Caveat stated: growth and rank are measured at a generic rational h, so both
+are LOWER bounds on the symbolic answer — the safe direction, since reaching
+the maximum establishes it exactly. Two generic values agree.
+
+NOT claimed: no four-strand Markov trace is computed, so nothing is said about
+whether an H_4 gamma-gamma element reproduces an observable. And which 3 of the
+24 dimensions are missing from the span is not measured.
+
+
+
+### Part 4, same day — the general-n Ocneanu trace, and the H_4 trace set (PR #7295)
+
+The corpus had NO general-n Markov trace: `pyhecke.gram` carries the H_3 vector
+`[1, z, z, z^2, z^2, z(hz+1)]` as a hand-coded literal and nothing generalises
+it. Built one from the three defining properties via the S_{n-1}-coset
+decomposition, validated three ways — it reproduces the H_3 literal exactly
+(symbolic in h AND z), satisfies tr(xy)=tr(yx) on H_4 pairs, and satisfies the
+Markov property at n=4 against n=3. The latter two are NOT inputs to the
+recursion, so they are real tests; the first `coset_factor` failed them.
+
+Measured, gamma-gamma trace sets at z_D, proton pin, k <= 8 vertices:
+
+                  count    range                    median gap
+    n = 3            9     [0.18618696, 1.0]        0.032897756
+    n = 4          511     [0.11139758, 1.1374052]  0.0025322918
+
+**13.0x denser**, so the anti-fit conclusion sharpens — selection by residual
+was already forbidden at n=3 and at n=4 is not even tempting.
+
+**And barely wider.** 511 distinct elements spanning 21 of 24 dimensions have
+traces confined to a band only ~1.3x the n=3 one. The trace is a very LOSSY
+functional on the gamma-gamma set: free growth in the algebra does not buy a
+wide trace image. That is a constraint in its own right and was invisible
+before this.
+
+Scope-(a). NO four-strand Q_beta prediction — E_0 and the
+element-to-observable map are H_3 constructions and the corpus does not define
+their n=4 analogue. The n=4 set is compared to ITSELF at n=3, structurally.
+
+
+
+### Part 5, same day — the SDP half of qou-ales, and it is a REAL selector (PR #7295)
+
+The ruling says selection is via gamma-gamma production AND the confinement SDP.
+Parts 1-4 did the gamma-gamma half; this is the SDP half, and it is the first
+DERIVED selector on this arc (PSD feasibility is structural, not a residual).
+
+**Three strands: the conjunction is EMPTY.** In the (2,1) block, exactly:
+`a = -1/(q(q^2+1))`, `a' = q^3/(q^2+1)` — **a' IS z_D** — and the gamma-gamma
+vertex has `det V = 1`, `tr V = -1 - h^2`. So V is an ELLIPTIC SL_2(R) element,
+and `V^3 = 1` forces `q = 1`: **the Borromean baryon is SDP-feasible only in the
+classical limit.** New Lean `QOU.Mass.PsdDetOneTrace` (sorry-free) proves a real
+PSD 2x2 of det 1 has trace >= 2 with equality only at the identity, and measured
+`tr(V^k) < 2` for k = 1..200 — so the exclusion is a theorem about the PSD cone,
+not arithmetic. This also EXPLAINS the k mod 3 banding of Part 2: a near-order-3
+rotation, exactly order 3 only at q = 1, so the bands drift.
+
+**Four strands: NON-empty and very selective — and my first draft was wrong.**
+It asserted infeasibility at n=4 too, having tested only the powers of ONE
+vertex; over all 2^k words the assertion FAILED. Of **8190** words to 12
+vertices, exactly **5** are feasible: `(v0v1)^2`, `(v0v1)^4`, `(v0v1)^6`, and two
+sporadic 10-vertex words. `(v0v1)^m` is feasible **iff m is even**.
+
+**The mechanism, not an analogy.** In BOTH 3-dim blocks the spectrum of `v0v1` is
+exactly `{-q^2, -q^-2, 1}` — two NEGATIVE eigenvalues — so odd powers cannot be
+PSD and even powers have spectrum `{q^-4, 1, q^4}`. Same cause as the H_2 rule
+(`sigma_0` has eigenvalue `-1/q`). The 1-dim and (2,2) blocks send every power to
+the identity; all discrimination lives in the two 3-dim blocks. And `(v0v1)^2` is
+NOT the identity there (max |M-I| = 0.348, 0.518), so its feasibility is genuine
+positivity rather than triviality.
+
+So the ruling's two halves are NOT in conflict — they simply have no common
+solution on three strands. **Smallest derived candidate: `(v0 v1)^2`, four
+vertices, eight letters.**
+
+NOT claimed: the feasible set is not characterised (only enumerated to 12
+vertices; the two sporadic words are unexplained); no cost/minimality is
+computed, so this NARROWS the candidate set without selecting a word; no
+observable is computed.
+
+
+
+### Part 6, same day — SDPSelected has a UNIQUE solution (PR #7295)
+
+Part 5 did the feasibility half and said it did not compute minimality. This is
+minimality, and it closes the selection.
+
+The cost is the corpus's: `mba-step10-confinement-sdp.md` states
+`minimize Sum_i t_i x_i` with `t_i = tr_M(b_i)`, so the objective on a word is
+its Markov trace. Evaluated with the general-n Ocneanu recursion from Part 4
+(re-verified against pyhecke.gram's H_3 vector so this cannot inherit a silent
+breakage).
+
+Costs at z_D, proton pin, over the five PSD-feasible words:
+
+    (v0 v1)^2    (0,1,0,1)                   1.032897755524660383   <- MIN
+    sporadic A   (0,0,1,1,0,1,1,0,0,1)       1.073238807935729209
+    sporadic B   (0,1,1,0,0,1,0,0,1,1)       1.073238807935729209
+    (v0 v1)^4    (0,1,0,1,0,1,0,1)           1.137405209118677445
+    (v0 v1)^6    (0,1,0,1,0,1,0,1,0,1,0,1)   1.331992492573499969
+
+The minimum is STRICT and ATTAINED, not merely least-in-a-truncation: cost on
+the even alternating family is strictly increasing in m (1.0329 -> 4.0944 for
+m = 2..14), so extending the enumeration cannot beat m = 2.
+
+**SDPSelected -> `(v0 v1)^2`: four vertices, eight letters, four strands.**
+DERIVED — no continuous parameter tuned, no discrete choice made against a
+measured value, no observable entering at any point. This is the arc's first
+complete derived selection.
+
+Observation flagged as such: the two sporadic words have EXACTLY equal cost
+(< 1e-30) while their `net` differs (1.1426 vs 0.9495), so whatever relates
+them does not preserve net. Unexplained; two data points are not a pattern.
+
+TWO GAPS, and the result may not be quoted without them:
+1. the LP's `net(x) = n_target` constraint is NOT imposed (it belongs to the
+   mixture formulation; net is reported per word so it can be applied later);
+2. "unique" means among gamma-gamma words of at most 12 vertices on four
+   strands — a cheaper feasible word at 13+ vertices is not excluded, though a
+   cheaper ALTERNATING one is, by monotonicity.
+
+NOT DONE, deliberately: no Q_beta comparison. E_0 and the
+element-to-observable map are H_3 constructions with no corpus-defined n = 4
+analogue, and reporting a residual would re-introduce the
+selection-against-the-target the earlier parts measured and rejected. The word
+is derived; what it predicts is a separate question.
+
+
+
+### 🛑 Part 6 RETRACTED, same day (PR #7295)
+
+Part 6 above claimed SDPSelected has a unique solution, `(v0 v1)^2`. **It does
+not, and I withdraw that.**
+
+The EMPTY gamma-gamma word — zero vertices, `GammaGammaWord.nil`, the identity
+of `H_n` — is PSD-feasible in every block (the identity matrix is PSD) and its
+Markov trace is exactly **1.0**, against 1.032897755524660383 for `(v0 v1)^2`.
+So over the candidate set as the Lean states it, **SDPSelected selects the empty
+word**, vacuously. Part 6 silently restricted to words with >= 1 vertex.
+
+**The corpus already proved this one level up, and I cited the block without
+reading it.** `prop:operator-selection-lp` §"Degeneracy of this program":
+`b_1 = 1` so `G_1j = t_j`, hence the first Frobenius positivity constraint IS
+the objective bounded below by zero — optimal value identically 0 for every n,
+q and trace convention; and the minimiser set is a positive-dimensional
+mirror-closed face, so which vertex a solver returns is its pivoting rule. That
+block states outright that *"downstream blocks have read the program as a
+selection principle, which it is not"*. I became one of those readers before
+becoming an independent confirmation of it in the discrete setting.
+
+**WHAT SURVIVES, quote these separately:**
+1. **Feasibility does the real work and is untouched** — Part 5's 5-of-8190 at
+   n=4, none at n=3. A genuine structural zero-parameter filter.
+2. Among **NON-EMPTY** gamma-gamma words of <= 12 vertices on four strands,
+   `(v0 v1)^2` is the strict minimiser with the minimum ATTAINED. True about a
+   RESTRICTED set; **not** SDPSelected.
+
+So the arc does NOT have a complete derived selection. It has a derived
+*filter* (feasibility) and no derived *selector*. The open problem is what
+breaks the tie among the 5 — and the corpus's own degeneracy result says the LP
+objective cannot be it.
+
+
+## Part 7 (PR #7304) — crossing energy is the THIRD degenerate functional, and no γγ word binds
+
+`computations/qbeta/qbeta_gamma_gamma_crossing_energy_probe.py` (6/6).
+
+**Calibrated first, by data, not by reading.** `def:crossing-energy` gives the
+electron (left trefoil `T_(2,3)`, three POSITIVE crossings) `E_cross = 3q =
+3.329935748` against the `~3.330` in `pair-creation-energy.md`, and the positron
+(mirror) `-3/q = -2.702754852` against `~-2.703`. A reversed sign convention
+would have swapped these, so the orientation is pinned.
+
+**Closed form.** `E_cross(k-vertex γγ word) = k*h` EXACTLY (k = 0..14). A vertex
+`σ_i σ_{i+1}^{-1}` is one positive crossing and one negative: `q + (-1/q) = h`.
+
+**Order-blind, again.** 3840 (permutation, index-assignment) pairs of a 5-vertex
+word → 1 distinct value. Same blindness as #7295's alternating character, for
+the same structural reason (a sum over letters). Second order-blind functional
+on this family.
+
+**The substantive finding.** `h > 0` for every `q > 1`, so `E_cross > 0` for
+every non-empty γγ word, and `def:crossing-energy` reads positive as *repulsion
+dominates*. **NO γγ word is binding-dominated — any number of strands, any
+q > 1.** At q_0, `h = 0.20906029879563932`.
+
+**Degenerate again.** `E_cross(empty) = 0`, below all five PSD-feasible words
+(0.8362 / 1.6725 / 2.0906 / 2.0906 / 2.5087). So this is the THIRD functional
+here whose unconstrained optimum is the trivial answer, after the Markov trace
+and the LP objective — the latter proved degenerate by
+`prop:operator-selection-lp`'s own "Degeneracy of this program" section.
+
+**It does not separate.** Ordering among non-empty words is by vertex count
+alone; the two sporadic 10-vertex words TIE exactly.
+
+**NOT implemented, deliberately:** `knot-operator-selection-proof.md`'s demand
+constraint `⟨Φ, dem(K)⟩_F ≥ ‖dem(K)‖_F`, which is the stated reason an
+unconstrained minimum need not be the last word. Building `dem(K)` requires
+choosing which K the nucleon is, which is the question — implementing it here
+would be circular.
+
+Scope-(a): one functional, one family. It does not exclude a binding-dominated
+canonical word; it says the γγ construction alone cannot supply one under this
+energy.
+
+
+## Part 8 (PR #7304) — what the ruling PREDICTS for Q_β: +458 % to +620 %, and the 0.11 % near-hit is worse than chance
+
+`computations/qbeta/qbeta_gamma_gamma_qbeta_prediction_probe.py` (7/7).
+
+Nobody had scored the γγ + confinement-SDP admissible set against Q_β. This
+does, through the dashboard's own path (`|tr^{z_D}| · E_0`, canonical
+tower-summed `E_0`), calibrated first: the census element `nuc11_interleaved`
+scores -16.67794 % against the -16.678 % AGENTS.md records.
+
+**All five PSD-feasible words of #7295**, ordered by vertex count, NOT residual:
+
+    (v0 v1)^2     4 vertices   4.36655806955 MeV   +458.1454 %
+    (v0 v1)^4     8            4.80836159015       +514.618  %
+    sporadic A   10            4.53709919716       +479.9445 %
+    sporadic B   10            4.53709919716       +479.9445 %
+    (v0 v1)^6    12            5.63097609218       +619.7668 %
+
+**The structural point.** The five agree with EACH OTHER to a factor 1.28957
+while missing the measurement by 5.58x to 7.20x. Internal spread < smallest
+miss, so **no re-selection inside the admissible set can reach Q_β** — the
+choice of word is not the free parameter.
+
+**It is the SDP half that excludes the measured value, not γγ.** Target
+`|tr^{z_D}| = 0.185059` sits BELOW 1 = tr(empty word) and below the smallest
+feasible trace 1.032898. PSD feasibility pushes the trace up; the target is
+under the whole feasible set.
+
+**THE TRAP, disarmed.** Drop the SDP half and the unconstrained family straddles
+the target (8190 words, |tr| in [0.003435, 1.331992]) with a best match at
+**0.110577 %** — eleven `v_0` and one `v_1`. Worth nothing, and MEASURED to be:
+529 distinct trace values, 50 within ±10 % of the target, median spacing
+0.000346646 → expected best-by-chance **0.04683 %**, observed **0.110577 %** —
+**worse than chance**. Same control and verdict as the H_3 difference-grid check
+(0.455 % observed vs 0.322 % expected). The twelve tying words are one
+order-blind orbit, none PSD-feasible.
+
+Scope-(a): one functional, one family, n = 4. Says nothing about n > 4, a
+different E_0, or a tower correction. The demand constraint is still NOT imposed.
+
+
+## Part 9 (PR #7304) — the PSD trace FLOOR: scope-(b) exclusion for n ≤ 5, no enumeration
+
+`computations/qbeta/qbeta_gamma_gamma_psd_trace_floor_probe.py` (7/7).
+
+Part 8 left "enumerate the feasible set at n = 5, then n = 6" as next. **That
+search is unnecessary at n = 5.** Formalize-first: the invariant prunes the
+class before the scan runs.
+
+**Three ingredients, each machine-verified:**
+
+1. **Convention D IS the two-row truncation with strictly positive weights.**
+   `y_(n−k,k) = [n−2k+1]_q/[2]_q^n`, and `y = 0` on three rows or more. Checked
+   n = 3..8: all 42 partitions with ≥3 rows carry exactly 0; all 21 one- and
+   two-row partitions carry `y > 0`.
+2. **PSD feasibility ⟹ every character is non-negative.** A PosSemidef matrix
+   has non-negative trace, so `χ_λ(w) = Tr(ρ_λ(w)) ≥ 0`.
+3. **The trivial block is pinned at exactly 1.** Trivial rep: `σ ↦ q`, so
+   `σ⁻¹ = σ − h ↦ q − h = 1/q`, and a γγ vertex ↦ `q·(1/q) = 1`. Measured to
+   2.2e-40 on 80 words at n = 3..6. **Counit twin of
+   `GammaGammaWordSelection.altChar_eq_one`** (sorry-free, alternating char).
+
+**Hence** in `tr_M = Σ_λ y_λ χ_λ` every term is ≥ 0 and the trivial term is
+exactly `y_(n)`:
+
+    tr_M(w)  ≥  y_(n)  =  [n+1]_q / [2]_q^n
+
+for EVERY PSD-feasible γγ word on n strands — no enumeration, word-independent.
+
+**What it excludes.** Target `|tr_M| = 0.185059`. Floor: **0.7527 / 0.5054 /
+0.3193 / 0.1943** at n = 2/3/4/5 (all exclude), **0.1153** at n = 6 (does not).
+So **no γγ + confinement-SDP word on five strands or fewer can reproduce
+Q_β** — scope-(b), invariant named above.
+
+The floor decays like `(q/[2]_q)^n ≈ 0.552^n` against a fixed target, so the
+crossing is **one-sided**: the exclusion is a prefix of the strand counts,
+never scattered. And it is **loose** where checkable (measured min at n = 4 is
+1.0329, 3.2× the floor), which makes the exclusion conservative.
+
+**NOTHING claimed at n ≥ 6**, recorded as a machine assertion rather than a
+prose caveat: the floor dropping below the target means the ARGUMENT stops, not
+that a feasible word reaches it.
+
+Cross-checked: the Frobenius pairing agrees with the independent Ocneanu
+recursion to 5.0e-36 over 28 words at n = 3, 4, 5.
+
+**Lean status: NOT formalised.** Ingredient 3 has a sorry-free alternating
+twin; `WedderburnBlocks.PSDFeasible` already carries ingredient 2's hypothesis
+shape. The composite bound is the open formalisation.
+
+
+## Part 10 (PR #7304) — 🛑 tr_M ≥ 1 at EVERY n, which SUPERSEDES part 9's floor
+
+`computations/qbeta/qbeta_gamma_gamma_trace_ge_one_probe.py` (8/8) + Lean
+`PsdDetOneTrace.card_le_trace_of_det_one`, `GammaGammaTraceFloor.pairing_ge_one_of_psdFeasible`
+(both sorry-free).
+
+**Part 9's floor was mine and it was weak.** It kept the trivial block's term of
+the Frobenius pairing and discarded the rest as *merely* non-negative. They are
+not merely non-negative — each is bounded below by its own block dimension —
+and keeping them gives a bound that is stronger AND n-independent.
+
+**Four ingredients, all measured:**
+
+1. **Every γγ vertex has determinant 1 in every block.** `σᵢ` and `σᵢ₊₁` are
+   conjugate in the braid group ⟹ same block determinant ⟹
+   `det(σᵢσᵢ₊₁⁻¹) = 1`. Measured 7.2e-40 over 78 (block, vertex) cases at
+   n = 3..6; the conjugacy fact itself to 4.9e-40. Multiplicative, so every
+   WORD inherits it — 2.1e-39 over 590 (word, block) pairs.
+2. **PSD + det 1 ⟹ trace ≥ dim** (AM-GM). Now **general-dimension Lean**
+   (`card_le_trace_of_det_one`); #7295 had only the 2×2 case, and blocks reach
+   dim 16 at n = 6.
+3. **Convention-D weights are non-negative.**
+4. **`Σ y_λ dim_λ = 1`** — the Markov normalisation, 4.6e-41 at n = 3..8. This
+   is what makes the bound the value **1**.
+
+⟹ **`tr_M(w) ≥ 1` for every PSD-feasible γγ word, at every n.** **TIGHT** —
+the empty word is the identity in every block, measured exactly 1.0.
+
+**Consequence.** Target `|tr_M| = 0.185059` is below 1 by a factor **5.4037**,
+so the γγ + confinement-SDP route **cannot reach Q_β at ANY strand count**. The
+smallest Q_β the family can predict is exactly `E₀ = 4.2274834 MeV` =
+**+440.369 %**; the five measured n=4 words land +458 %..+620 %, above that
+minimum as they must.
+
+**Part 9 is superseded in strength, not retracted** — its numbers stand, its
+scope ("excluded n ≤ 5, open n ≥ 6") was short. Its floor is below 1 at every
+n ≥ 2. Kept in the corpus because stopping at the first block is an easy
+mistake, and its decay lemma is why the weaker exclusion was one-sided.
+
+**Scope (b), ALL n**, for this functional (`ε` = Markov trace at `z_D`) and this
+`E₀` only. Says nothing about another route, a different `E₀`, or a **tower
+correction** — and the tower correction is LIVE, since `E₀` is canonical by
+ruling with an OPEN series (`qou-y3bm`).
+
+
+## 🛑 Part 11 (PR #7304) — RETRACTION of parts 9 and 10's Q_β reading
+
+`computations/qbeta/qbeta_qbeta_scores_a_difference_probe.py` (6/6).
+
+**Both over-claims were mine, and the calibration step caught them.**
+
+**What I asserted** (parts 9 and 10): the floor `[n+1]_q/[2]_q^n` and then
+`tr_M ≥ 1` mean "no γγ + confinement-SDP word can reproduce Q_β" — for n ≤ 5,
+then at every n, with minimum prediction `E₀` = +440.369 %.
+
+**What is true.** `Q_β = |ε(Δ)|·E₀` where **Δ = NEUTRON element − PROTON
+element**. Source says so verbatim: `delta_of` — *"Delta = neutron - proton,
+coordinatewise in the NF basis"*. The Markov trace is **linear**, so
+`tr(Δ) = tr(n-word) − tr(p-word)`, and two quantities each ≥ 1 have a difference
+bounded by **nothing**. Neither exclusion follows. Both withdrawn.
+
+**How caught.** Reconstructing `nuc11_interleaved` letter by letter gave
+tr(p) = 0.6293284022029219, tr(n) = 0.4751335171556822 — **neither** matching
+the recorded `tr_conv_D = -0.1541948850472397056592555`. Their **difference**
+matches to 1.4e-26, every recorded digit.
+
+**What the difference functional gives**, all 15 pairs reported (picking the
+closest would be selection against the target): **−100 % to +79.4 %**. They
+**STRADDLE** the target rather than sitting above it — the opposite of the
+retracted claim. Best +5.15 % against expected-by-chance **7.73 %** on an
+11-value grid: same order, not evidence.
+
+**Survives untouched** (measured, not inferred): `tr_M ≥ 1` per **individual**
+PSD-feasible γγ word, tight; the det-1 fact; AM-GM; weight non-negativity; the
+Markov normalisation; the floor and its decay; **every Lean theorem** (they are
+about pairings and PSD matrices, none mentions Q_β); the crossing-energy results.
+
+**One NEW finding survives:** the scored element's proton and neutron words are
+**both PSD-infeasible** — `(2,1)` and `(1,1,1)` fail for each — with `det ≠ 1`
+in every block. So the **SDP half** of the ruling excludes the scored element
+directly at the element level, independently of the altChar exclusion.
+
+**Fixed in the same commit**, so nothing false is left standing: both probes'
+title lines, descriptions, scope paragraphs and assertion names (one was
+*named* `Q_beta_is_excluded_at_every_strand_count`); a scoping note on the
+prediction probe (it scores single words, also not the scoring path); and a
+docstring note on `GammaGammaTraceFloor.lean`.
+
+**Now OPEN:** whether any **pair** of PSD-feasible γγ words reproduces Q_β.
+
+
+## Part 12 (PR #7304) — under the ruling the p/n asymmetry has ONE home, and the corpus keeps it where the ruling forbids
+
+`computations/qbeta/qbeta_pn_asymmetry_has_one_home_under_the_ruling_probe.py` (6/6).
+
+Part 11 established Q_β is scored on `Δ = n-word − p-word`, so the ruling must
+select **two** words and something must separate them. This asks *what*.
+
+**The corpus's answer today.** `nuc11_interleaved` = `core(6 γγ letters) ·
+quark(3) · gluon(2)`, and **the core and gluon pair are IDENTICAL between
+proton and neutron**. Three letters of eleven carry the whole asymmetry:
+`(σ₀)(σ₀−h/2)(σ₁−h/2)` vs `(σ₀−h/2)(σ₀−h/2)(σ₁−h)`.
+
+**Why that is exactly what the ruling fixes.** altChar is multiplicative and
+pinned at **1** on every γγ word (`altChar_eq_one`, sorry-free). Measured: core
+= **1.0 exactly**; quark blocks = **−0.9108** (p) and **−1.1221** (n), both
+negative ⟹ neither is γγ-expressible — and they are precisely where the
+nucleons diverge, by **23.2 %** in that invariant. Under the ruling both words
+would be 1 and the invariant could not separate them at all.
+
+Not a defect in corpus or ruling — it is **the tension between them, localised
+to three letters**.
+
+**What is left.** A γγ word's only freedom is which vertices and how many, and
+the trace is blind to their **order**. So under the ruling the p/n asymmetry
+has exactly one home: **the vertex multiset**. (Argument, not measurement;
+asserted so it is machine-recorded; holds at every n.)
+
+**Upgrades part 11:** at n = 4 the PSD-feasible set is 6 words, so exactly
+**15** unordered (n, p) assignments — the 15-pair table is **EXHAUSTIVE** at
+that strand count, not a sample. Its −100 %..+79.4 % span is therefore a
+statement about the ruling, not about a selection.
+
+**Cross-checked by two routes** — per-letter altChar product vs the `(1,1,1)`
+Hoefsmit block trace, agreeing to **4.6e-39**. This is the check whose absence
+caused part 11's retraction: without it the letter encoding is an unchecked
+convention, which is what it was when I read `tr_conv_D` as one word's trace.
+
+Scope-(a) + one structural observation. No pair is selected; doing so by
+residual would be selection against the target.
+
+
+## Part 13 (PR #7304) — BAR PARITY forces a unique Q_β from the un-ruled letter, and the census assignment FAILS it
+
+`computations/qbeta/qbeta_bar_parity_forces_a_unique_quark_letter_probe.py` (6/6).
+
+Working this bean's own open problem: the parity bound proves 5 of 11 letters
+lie outside the ruling; of those, the two bar-fixed (`−h/2`) and the gluon pair
+are **shared** between the nucleons, so **one** quark letter carries the whole
+p/n asymmetry. What selects it?
+
+**The hypothesis is the corpus's, not mine.** AGENTS.md line 2182: Q_β is *"the
+bar-odd `sinh` partner of the bar-even `cosh` meson scale m_π"*. That is
+attached to the **published closed form** — the `z = 1` cell the 2026-09-08
+ruling retired as a base — so whether it survives to `z_D` is precisely the
+open question. Impose it and see.
+
+**The freedom.** Odd letter in any of 3 quark slots, either member of the
+bar-pair (`σ` shift 0, `σ⁻¹` shift `−h`). Slots 0 and 1 are both generator 0
+and give **exactly** the same trace ⟹ only **4 distinct elements**, and 26 of
+the 30 ordered (p,n) pairs have nonzero Δ.
+
+**The result.** Requiring `tr^{z_D}(Δ)(1/q) = −tr^{z_D}(Δ)(q)` leaves **8 of
+26**, and **the census assignment is NOT among them**. Every survivor gives both
+nucleons the **same** member of the bar-pair, differing only in generator; the
+census gives them **opposite** members — exactly what destroys the parity.
+
+**And the 8 need no choosing between.** Symbolically
+`Δ(σ,σ) = −Δ(σ⁻¹,σ⁻¹)` **exactly**, so all eight share one magnitude:
+
+    |tr(Δ)| = (q⁶−1)(q⁴+1)(q¹²−4q¹⁰+6q⁸−7q⁶+6q⁴−4q²+1) / (4q⁹(q²+1)²)
+
+forcing **Q_β = 0.353415698 MeV, −54.825 %**.
+
+🛑 **No selection was made** — the constraint is a parity in `q`, never
+proximity to the measured value; it narrows 26 → 8; the 8 collapse. Nothing
+left to pick. And the forced answer is **worse** than the census's −16.678 %,
+which is the ranking AGENTS.md mandates: report what the specification gives
+even when worse; rank by derivational cleanliness, never by residual.
+
+🛑 **It does not close Q_β.** All four distinct elements **FAIL PSD**, so the
+SDP half rejects this entire one-letter family — census and bar-odd alike.
+Narrows the problem; does not solve it.
+
+**Calibrated first** (the check whose absence caused part 11's retraction): the
+(slot, kind) coordinates reproduce `tr_conv_D = -0.1541948850472397056592555`
+to 1.4e-26.
+
+Scope-(a). **Unconditional:** the census assignment is not bar-odd; the bar-odd
+family collapses to one magnitude; no member is PSD-feasible. **Conditional:**
+that bar-oddness transfers from the retired `z = 1` cell to `z_D`.
+
+**BEAN STAYS todo (§13a)** — the subject is an open derivation.
+
+
+## LANDED 2026-09-13 — PR #7304 (`49e015595d4`), and the bean stays OPEN
+
+Seven probes (46 checks), two sorry-free Lean files. The bean's own open
+problem — what selects the un-ruled letters — was **worked, not deferred**.
+
+### The result: bar parity FORCES one number
+
+The parity bound proves no 11-crossing word is γγ-produced, so 5 of 11
+letters lie outside the ruling. The two bar-fixed (`-h/2`) letters and the
+gluon pair are shared between the nucleons, so **one** quark letter carries
+the whole p/n asymmetry. Imposing the corpus's own bar-odd property on
+`tr^{z_D}(Delta)`:
+
+* 26 nonzero-`Delta` ordered pairs -> **8 survivors**; the census assignment
+  is **not** among them.
+* The 8 collapse to ONE magnitude by the exact identity
+  `Delta(sigma,sigma) = -Delta(sigma^-1,sigma^-1)`, forcing
+  **Q_beta = 0.353415698 MeV, -54.825 %**.
+
+No selection was made — the constraint is a parity in `q`, never proximity
+to the measured value — and the forced answer is WORSE than the census's
+-16.678 %. That is the AGENTS.md ranking: derived beats selected.
+
+### The retraction, mine
+
+Parts 3 and 4 inferred from `tr_M >= 1` that the γγ route cannot reproduce
+Q_beta. **Wrong.** `Delta` is the neutron element MINUS the proton element,
+the trace is linear, and a lower bound on each word bounds no difference.
+Caught by calibration: `tr(p)` and `tr(n)` each failed to match the recorded
+cell while their difference matched to 1.4e-26. The Lean stands untouched;
+only prose was scoped, and a note in `GammaGammaTraceFloor.lean` stops a
+reader re-deriving it.
+
+### The SCOPE defect, also mine, fixed before merge (`04edd8b5d75`)
+
+I wrote "all four elements fail PSD, so the SDP half of the ruling rejects
+this family". That is **whole-element PSD = reading (B)**. This bean records
+the selected scope as **(A) core only**, under which reading 3 prunes
+nothing among the 5 free letters and the census element stands. So the PSD
+result is a MEASUREMENT under (B), not a rejection by the ruling — and under
+(A) it excludes nothing. Assertion renamed
+`no_configuration_is_whole_element_PSD_feasible_reading_B_only`.
+
+### STILL OPEN — do not close this bean
+
+1. **Which reading of the SDP scope the ruling means.** (A) and (B) give
+   opposite verdicts on this family. Owner call, not an agent one.
+2. **Whether the bar-odd hypothesis survives the move to `z_D`.** It is
+   attached to the retired `z = 1` closed form. Imposing it costs -54.825 %;
+   that is reported, not avoided.
+
+
+## 🟧 OWNER RULING 2026-09-13 — SDP scope is **(B) whole element**
+
+The fork this bean carried as *"(A) core only, SELECTED-with-ambiguity"* was put
+to the owner with both options framed. **The owner answered "B".**
+
+**What (B) means.** The confinement SDP of `qou-ales` constrains **every
+Wedderburn projection of the full 11-letter word**, not only the 6 gamma-gamma
+core letters. Reading (A) — the core-only reading, under which reading 3 prunes
+nothing among the 5 letters the parity bound leaves free and "the census element
+stands" — is NOT the ruling.
+
+### Consequence 1 — the one-letter quark family is rejected outright
+
+All **6** (slot, kind) configurations fail `Matrix.PosSemidef` on at least one
+Wedderburn block. Under (B) that is a rejection by the ruling, not a
+measurement. It takes out BOTH arms at once:
+
+* the **8 bar-odd survivors** and their forced `Q_beta = 0.353415698 MeV`
+  (-54.825 %), and
+* the **census assignment**.
+
+So the bar-parity derivation forces an element the SDP half then excludes. Both
+halves stand — the parity narrowing is real and forced, and the element it
+forces is inadmissible. That is a stronger negative than "does not close".
+
+### Consequence 2 — the DASHBOARD'S SCORED ELEMENT is excluded
+
+`nuc11_interleaved` — the element `per-observable-100x-status.witness.json`
+currently scores for the **Q_beta, m_n and Delta_pn** rows — fails
+`Matrix.PosSemidef` on `(2,1)` and `(1,1,1)` for **both** nucleons. Block
+determinants, proton: `(3,) 1.38249446339`, `(2,1) -1.02197249381`,
+`(1,1,1) -0.739223570776`; neutron: `1.1221068216`, `-1.02197249381`,
+`-0.910762214553`. The `(1,1,1)` entries are the alternating character and are
+the already-recorded sign exclusion; the `(2,1)` failure is additional.
+
+So under the ruled scope the L2 dashboard scores an element the selection rule
+that is supposed to produce it rejects.
+
+### What was NOT done, deliberately
+
+**The dashboard is not re-scored.** Choosing what replaces the element is a
+separate decision with its own blast radius (three L2 rows and every figure
+quoted from them), and it is not an agent's to take. See "still open" below.
+
+### Recorded in
+
+`qbeta_bar_parity_forces_a_unique_quark_letter_probe.py` and
+`qbeta_qbeta_scores_a_difference_probe.py` — docstrings, witness descriptions,
+`scope` blocks and the two assertion names inverted; both re-run 6/6, both
+witnesses verified to carry the ruling and to no longer carry the superseded
+"(A) core only / NOT a rejection" text.
+
+The scoping of these two probes has now moved **twice**, and both moves were
+mine: asserted unscoped, demoted to "measurement under unselected (B)", and now
+reinstated by ruling. The verdict matches the first draft; it is reinstated by
+the owner's answer, not by the argument that first produced it.
+
+## STILL OPEN after this ruling — the bean stays `todo`
+
+1. **What replaces `nuc11_interleaved`** on the three L2 dashboard rows. The
+   ruled scope excludes it and nothing derived replaces it yet. Re-scoring is
+   an owner decision (cf. `qou-iagg`, which records the authorisation pattern).
+2. **A principle for the 5 un-ruled letters that is BOTH bar-consistent AND
+   whole-element PSD-admissible.** The one-letter family supplies neither
+   jointly — that is now the sharp form of the open problem.
+3. **Whether the bar-odd hypothesis survives the move to `z_D`** at all. It is
+   attached to the retired `z = 1` closed form; imposing it costs -54.825 %.
+
+
+## 2026-09-13 — item 2 is REFRAMED, not answered: the obstruction is the LENGTH
+
+Working item 2 ("a principle for the 5 un-ruled letters that is both
+bar-consistent and whole-element PSD-admissible"), formalize-first found an
+invariant that prunes the search instead of narrowing it.
+
+**The theorem** (`QOU.Mass.AltCharShiftMultiset`, sorry-free, lean-direct exit 0,
+`#print axioms` clean on all six new declarations):
+
+* `letterChar_neg` — EVERY letter of the corpus alphabet has strictly negative
+  alternating character: `sigma -> -1/q = -0.9009`, bar-fixed
+  `-> -(q^2+1)/(2q) = -1.0054`, `sigma^-1 -> -q = -1.1100`.
+* `wordChar_sign` — therefore `sign(wordChar w) = (-1)^len(w)` for ANY letters,
+  ANY order, ANY generator labelling.
+* `no_eleven_letter_word_is_alt_psd` — the alternating block is
+  ONE-DIMENSIONAL, so under scope (B) PSD there is exactly `0 <= character`.
+  Eleven is odd. So **every** 11-letter word over this alphabet is excluded.
+
+**Why this reframes item 2.** The obstruction does not depend on which letters
+carry the p/n asymmetry, so no choice among the 5 un-ruled letters can repair
+it. Item 2 as posed has no answer AT LENGTH 11. The question to ask instead is
+about the crossing budget.
+
+**What the corpus already had, and why this is not a re-derivation.**
+`protonWord_char_neg` / `neutronWord_char_neg` were already proved — each for
+ONE word, by computing that word's closed form. The mechanism (per-letter
+negativity, hence parity) was not, and it is the part that generalises. Found
+by corpus-grep before writing; without it I would have re-derived the two-word
+case and called it new.
+
+**Two independent parity obstructions, same direction.** Gamma-gamma words have
+even length (`gammaGamma_length_even`), which is why the CONSTRUCTION half of
+the ruling reaches only 6 of the 11 letters. The SDP half under (B) ALSO
+demands even length, by a completely different argument. Neither uses the other.
+
+**Confirmation** (`qbeta_altchar_sign_is_length_parity_probe.py`, 6/6):
+exhaustive over all **1092** words at lengths 1..6 with ZERO exceptions, and the
+INDEPENDENT engine route (Hoefsmit `(1,1,1)` matrices, never the scalar model)
+agrees to **2.28e-39**. Per-letter products also reproduce every block value
+recorded in #7304 to 15 digits.
+
+**Honest limit, from the Lean docstring rather than discovered later:**
+per-letter negativity fails for a letter with shift `d >= 1/(q^2-1) ~ 4.3094`.
+Every corpus letter has `d` in {0, -1/2, -1}; the closest is `d = 0`, short by
+4.3094. So this excludes words over the CORPUS ALPHABET, not over every
+conceivable alphabet. A letter with a large positive shift is the only escape
+this argument leaves open, and nothing in the corpus supplies one.
+
+**What is NOT claimed:** that no nucleon word exists. Only that no ODD-length
+word over this alphabet is admissible in the alternating block under scope (B).
+
+### The open items, restated after this
+
+1. **What replaces `nuc11_interleaved`** on the three L2 rows. Owner decision,
+   unchanged, and now sharper: the replacement cannot be another 11-letter word
+   over this alphabet.
+2. ~~A principle for the 5 un-ruled letters~~ **superseded** — no such principle
+   exists at length 11. The live question is whether the **11-crossing budget**
+   is correct, given that scope (B) and the gamma-gamma construction BOTH
+   require even length. That is a question about the corpus's crossing
+   accounting, not about letter selection.
+3. **Whether the bar-odd hypothesis survives the move to `z_D`** — unchanged.
+
+
+## 2026-09-14 — 🛑 I ATTACHED THREE MERGED PRs TO THE WRONG PSD READING. The parity exclusion is reading 1; the live reading is 3, and under it the budget is unconstrained.
+
+**What was wrong, and it was mine.** #7319 / #7325 / #7336 built a length-parity
+exclusion on the alternating block `(1,1,1)`, and I recorded the 2026-09-13 owner
+answer in AGENTS.md as *"every Wedderburn projection of the full 11-letter word
+must be `Matrix.PosSemidef`"*. **That sentence is reading 1.** The corpus
+enumerates three PSD readings and the owner selected **3** on 2026-09-12 —
+*"try PSD condfinement 3 for now, but keep 1 2 for later"* (`qou-ales`):
+
+| | criterion | status |
+|---|---|---|
+| reading 1 | literal `Matrix.PosSemidef` on every block | **parked** |
+| reading 2 | symmetric-part PSD | **parked** |
+| reading 3 | `χ_λ(w) ≥ 0` on every block with `y_λ > 0` | **SELECTED** |
+
+The 2026-09-13 fork was explicitly about **reading 3's** scope —
+`qbeta_reading3_scope_fork_probe` states it as *"(A) reading 3 applies to the
+γγ-selected core only / (B) reading 3 applies to the whole 11-crossing word"*.
+So **(B) moved the letter scope and left the reading alone.** Live criterion:
+reading 3, whole word.
+
+**Why that is fatal to the parity result specifically.** Under convention D
+`y_(1³) = 0`, and that vanishing *is* convention D (the two-row truncation,
+`markovWeights_eq_jones_of_threeRow_eq_zero`) — verified here exactly, `y_(3) +
+2y_(2,1) = 1.0`. So reading 3 never looks at the alternating block, which is
+where the entire parity theorem lives.
+
+**Measured — reading 3 does not constrain the crossing budget** (all generator
+assignments × all dressings over the corpus alphabet):
+
+| k | length | parity | admissible (p) | admissible (n) |
+|---|---|---|---|---|
+| 0 | 9 | odd | 4/8 | 4/8 |
+| 1 | 10 | even | 18/48 | 18/48 |
+| 2 | 11 | odd | 149/288 | 145/288 |
+| 3 | 12 | even | 594/1728 | 594/1728 |
+
+Odd lengths 9 and 11 are admissible in quantity; there is no parity signal and
+no monotone in k. **#7336's "the gluon dressing must be ODD" has no force under
+the live reading.**
+
+**Second correction — the quark family is NOT empty.**
+`qbeta_bar_parity_forces_a_unique_quark_letter_probe` checks
+`all(is_psd(M) for every block)` (reading 1) and concludes the SDP half rejects
+the whole family. Under reading 3 **one of six survives**: `(slot 2, sigma)`,
+`χ_(2,1) = +0.0574586606`. So **item 1 below has a candidate the reading-1
+measurement hid.** Not adopted — selecting it because it survives would be
+selection against the target.
+
+**What is UNCHANGED: the element rejection.** Both census assignments stay
+excluded under reading 3 — p `(0,sigma)` `χ_(2,1) = −0.2805933509`, n
+`(2,inv)` `−0.3719563247` — and `y_(2,1) = 0.2473 > 0`, so `(2,1)` **binds**.
+AGENTS.md called `(1,1,1)` the exclusion "already on record" with `(2,1)`
+"additional"; it is the other way round, and `(2,1)` alone is enough. Nothing
+downstream moves; **the L2 rows stay un-re-scored.**
+
+**What the parity theorem DOES say, and it is decision-relevant.** Under reading
+1 no odd-length word over the corpus alphabet is admissible, and **all three
+nucleon constructions are odd** (`qou-1qsw`). So adopting reading 1 would not
+tighten the selection, it would **empty** it — every nucleon model dies on
+length whatever its dressing, and a survivor would need an even-length model or
+a letter with shift `d ≥ 1/(q²−1) = 4.3094` against the alphabet's `{0, −½, −1}`.
+That is an argument about reading 1's viability for this corpus.
+
+Probe: `computations/qbeta/qbeta_reading3_does_not_constrain_the_budget_probe.py`
+(8/8, proton pin, convention D, 60 dps). The Lean stays sorry-free and unedited —
+only its scope line changes.
+
+**Open items, restated.**
+1. **What replaces `nuc11_interleaved`** on Q_β / m_n / Δ_pn — owner decision.
+   Now has at least one reading-3-admissible candidate in the corpus's own
+   family, and is **no longer** constrained to odd dressings.
+2. Superseded twice over: first by the length reframing, now by the reading
+   correction. The letters are not where the live constraint sits — `χ_(2,1)` is.
+3. Whether the bar-odd hypothesis survives the move to `z_D` — untouched.
+
+
+## 2026-09-14 — what DOES fix the budget: the corpus's own cost function. It selects k = 0 (or 1), never the live 11.
+
+The correction above leaves the budget question OPEN rather than answered —
+reading 3 admits every dressing count. **The answer was already in the corpus.**
+
+**The selection principle, from the Lean.** `FrobeniusSelected B y cands cost w`
+= `w` is reading-3-feasible **and** `cost w ≤ cost w'` for every feasible
+candidate, with the corpus instantiating `cost = fun w => (w.length : R)` — the
+**crossing count**. That is exactly how `frobeniusSelected_borromean` picks the
+6-letter core. So the budget has a derived answer: the minimal-cost
+reading-3-feasible dressing.
+
+**Measured** (all generator assignments × all dressings, 4144 words):
+
+| k | length | parity | reading 3 (p) | reading 3 (n) | reading 1 (p/n) |
+|---|---|---|---|---|---|
+| 0 | 9 | odd | 4/8 | 4/8 | **0/0** |
+| 1 | 10 | even | 18/48 | 18/48 | **0/0** |
+| 2 | 11 | odd | 149/288 | 145/288 | **0/0** |
+| 3 | 12 | even | 594/1728 | 594/1728 | **0/0** |
+
+1. **Minimal cost selects `k = 0`** — the empty dressing is reading-3-feasible
+   (4/8, both nucleons), so the cost-minimal word is the **9-letter** core+quark
+   with **no gluon crossings**.
+2. **Excluding the empty dressing gives `k = 1`, still not 2.**
+   `frobeniusSelected_nil` records that the crossing-count cost makes the empty
+   word trivially selected — which is why the core selection restricts to
+   non-zero vertex powers. Whether the same exclusion applies to the dressing is
+   an **unstated modelling choice**. It does not rescue 11.
+3. **So the live `nuc11_interleaved` (k = 2) is cost-minimal under NEITHER
+   convention.** That is a second, independent reason the scored element is not
+   what the ruling produces — the first being its `(2,1)` failure.
+4. **The principle fixes the BUDGET, not the WORD.** At k = 0 four assignments
+   tie, carrying **two** distinct traces per nucleon (p `0.6121259628` /
+   `0.6263353681`; n `0.4830505246` / `0.4902320181`). `cost_eq` gives equal
+   cost, not a unique word. A 2-fold degeneracy survives and is **not** closed.
+
+**🛑 And this corrects my own correction, one level down.** The entry above says
+reading 1 would empty the selection *by parity* (all corpus nucleon models are
+odd). Measured, **reading 1 admits ZERO words at every k — including k = 1 and
+k = 3, which are EVEN total lengths that `alt_psd_iff_even` permits.** The
+`(2,1)` block excludes those independently of parity. So reading 1 is
+annihilating **outright**, and the parity theorem is not the binding constraint
+even where it applies. The parity result is still true and still the clean
+structural statement for odd lengths; it is simply not what does the work.
+
+Probe: `computations/qbeta/qbeta_cost_minimal_budget_under_reading3_probe.py`
+(7/7, proton pin, convention D, 60 dps).
+
+**Not claimed, deliberately.** That `k = 0` should be adopted — that is an owner
+call and it hangs on the unstated empty-dressing convention. That the
+crossing-count cost is the right cost for the *dressing* (extending the core's
+cost to it is an extrapolation of the principle, not a theorem about it). **No
+Q_β residual was computed for any of these**, precisely so the selection cannot
+be contaminated by proximity to the measured value. The dashboard stays
+un-re-scored.
+
+
+## 2026-09-14 — 🟧 OWNER OBJECTION: crossing COUNT is the wrong cost. Measured — and it changes the answer.
+
+Owner, verbatim: *"The selection rule shouldn't be minimum crossing... It may be
+higher energy than a non-minimal crossing. A sibling has worked on connecting
+hecke energy to O'Hara energy via brings embedding. Can we compare that as a
+selection principle... You're minimizing not just the hecke energy but how the
+knot is embedded into brings surface."*
+
+**The objection holds, measured.** Probe
+`computations/qbeta/qbeta_crossing_energy_separates_the_gluon_probe.py` (7/7).
+
+**Part 7's verdict is right and is about γγ words.** `E_cross(k-vertex γγ word)
+= k·h` exactly (reproduced), so there energy is *proportional to* count and
+swapping the cost changes nothing; `E_cross(empty) = 0` sits below every
+non-empty γγ word, which is the degeneracy that retired the functional.
+
+**The gluon is not a γγ word, and there the two costs DISAGREE:**
+
+| gluon | \|G\| | reading-3 | `E_cross` | Q_β MeV | vs CODATA |
+|---|---|---|---|---|---|
+| (empty) | 0 | no | 0 | 0.5457 | −30.25 % |
+| σ₁ | 1 | **yes** | **+1.10998** | 0.5111 | −34.68 % |
+| **σ₁⁻¹** | 1 | **yes** | **−0.90092** | 0.3970 | −49.26 % |
+| σ₀σ₀ (live) | 2 | no | +2.21996 | 0.6519 | −16.68 % |
+| σ₁σ₀ | 2 | yes | +2.21996 | 0.6822 | −12.80 % |
+| **σ₀σ₁** | 2 | yes | **+2.21996** | **0.3357** | **−57.09 %** |
+| σ₁σ₁ | 2 | yes | +2.21996 | 0.6525 | −16.60 % |
+
+1. **Count ties σ₁ and σ₁⁻¹ at 1; energy strictly prefers σ₁⁻¹.** A negative
+   crossing carries negative energy, which no count can see. The choice of cost
+   is a real decision, not a formality.
+2. **The degeneracy dissolves here.** `E_cross(empty) = 0` but `σ₁⁻¹ < 0`, so
+   the empty word is *not* the energy minimum. γγ words are sign-**balanced** by
+   construction and never offer a bare negative crossing; the gluon does. Part
+   7's verdict does not transfer, and the functional is **usable** on the gluon.
+3. **🛑 But it is a letter-sum, so it is order-blind — and that is the sharp
+   part.** `σ₁σ₀` and `σ₀σ₁` tie **exactly** at `2q`, while their Q_β differ by
+   a **factor of two** (0.6822 vs 0.3357 MeV). The observable depends on the
+   ordering and the functional cannot see it. All three feasible 2-crossing
+   gluons tie at one energy.
+
+**So the owner's proposed direction is the right class of fix**, and for the
+reason point 3 exposes: an embedding energy is *not* a letter-sum — it is
+order-sensitive and can rank a longer word below a shorter one.
+
+**What exists / what is missing (searched `computations/`, `tools/`):**
+
+- **Exists** — `mobius_cross_energy_hopf_calibration.py`, calibrated against the
+  **proved** `E(Hopf) = 2π²` (Agol–Marques–Neves, arXiv:1205.0825); a Borromean
+  companion; `QOU.MobiusEnergy` with a categorical `E_cat` from the
+  Frobenius–Hopf comultiplication and the encoded `E_cat = ¼·E_classical +
+  const`; Bring period-matrix / mapping-torus-residue machinery. Beans `qou-zfs6`
+  (Möbius invariance / FHW bound / minimiser as Lean gates) and `qou-dux3` are
+  `completed`.
+- **Missing** — **any map from a braid word to a curve in or on the Bring
+  surface.** The integrators consume hand-parametrised *named* embeddings (Hopf,
+  Borromean). An absence on the surfaces searched, not a proof of absence.
+- **Caveat** — `MobiusEnergy.lean` carries **2 sorries**, and its own header
+  records a prior vacuity incident in which `classicalLimit` made `E_cat` blind
+  (`E_cat = 1 + const` for every knot) *with no `sorry` to flag it*. That leg
+  cannot bear weight unexamined.
+- **The hard part** — Möbius energy is a property of an **embedding**, not a knot
+  invariant; the invariant is the **infimum** over the isotopy class. So a bridge
+  needs either the minimiser (FHW) or a **canonical** embedding — which is
+  exactly what the Bring surface would supply. That is the research content, not
+  a wiring job.
+
+**Nothing adopted.** σ₁⁻¹ is not selected — that would swap one proxy for
+another, and point 3 shows the energy does not separate what remains. The Q_β
+column is a reported consequence, never an input to an ordering.
+
+
+## ILP does NOT escape the S4 relative-interior exclusion (2026-09-14)
+
+Owner asked to "make sure you are doing ILP". Checked, and it is excluded —
+for a proved reason, not a failed search. Probe
+`computations/meson/operator_selection_ilp_does_not_escape_s4.py` (9/9, exact
+sympy over Q, emits no witness per qou-pb1w); Lean
+`QOU/QBeta/IntegralityDoesNotEscapeRelativeInterior.lean` (7 decls, sorry-free,
+lean-direct exit 0).
+
+**The escape was real and had to be closed.** S4 (`qou-v7qj`) excludes every
+linear objective from selecting B_3 by the FACE argument — extrema on a face,
+so a relative-interior minimiser is constant. That is a statement about a
+CONVEX POLYHEDRON. An ILP's feasible set is not convex; the governing object
+is the integer hull `conv(P ∩ L)`, whose faces need not be faces of `P`, so a
+relative-interior point of `P` genuinely can be a vertex of the integer hull.
+
+**Reading 1, over Z^6 — B_3 is not feasible at all.** Its NF coordinates are
+Z-Laurent polynomials in q at q_0 and are not integers; worst coordinate (L+)
+is 0.0456 from Z. Stronger and cheaper than S4's negative: not "no objective
+picks it out" but "it is not in the set".
+
+**Reading 2, over Z[q_0,q_0^-1]^6 — that is not a lattice, it is DENSE.** For
+real q > 1, Z[q] is discrete in R iff q is Pisot (classical); the smallest
+Pisot number is the plastic number 1.3247... (Siegel 1944); q_0 = 1.10998 is
+below it. A dense feasible subset has the same closed convex hull, so the
+integer hull adds no faces. Made constructive: [A6] exhibits a feasible
+lattice point beating B_3, 0.8642 against 0.9986.
+
+**The Lean strengthens rather than restates S4:** convexity was never what the
+face argument used. `linear_min_two_sided_kills_direction` gets `f d = 0` over
+an ARBITRARY set S from two-sided reachability and linearity alone. So an ILP
+cannot escape by non-convexity; it could only escape by the lattice being
+COARSE near the point, which density rules out.
+
+**Unconditional — does not need q_0 irrational** (which this corpus cannot
+prove; q_0 is pinned through Vol(4_1) = 2 Cl_2(pi/3)). All three cases give
+density; only q_0 in Z is discrete, and 1 < q_0 < 2. The Pisot test needs no
+decimal expansion of theta: x^3-x-1 is increasing on (1,oo), so q_0 < theta is
+exactly the sign of q_0^3 - q_0 - 1 — proved as an iff in §3 of the Lean.
+
+**Correction made in the writing, worth keeping:** the ring is Z[1/(p*r)], NOT
+Z[1/r] — q_0^-1 = r/p puts powers of p in denominators, and B_3's own
+coordinates carry 192- to 479-digit denominators for that reason. The first
+run tested membership against Z[1/r] and FAILED [A6] on a point plainly in the
+ring. The false negative was indistinguishable from a real one.
+
+**SCOPE (b)**, structural, invariant cited: the Pisot bound for reading 2,
+non-membership for reading 1. It excludes LINEAR objectives over these
+lattices. It says nothing about non-linear principles (S4 refuted two
+separately) and nothing about other elements.
+
+**Still open, unchanged:** what replaces `nuc11_interleaved` after the
+2026-09-13 reading-3 whole-word ruling rejected it on (2,1). That is an owner
+decision and this prune narrows the search without answering it.
+
+
+## TOWER (2026-09-15): the H_3 ILP answer was a truncation artifact
+
+Owner: *"Have O'Hara on the full tower.... I suspect the longer words (which are
+from gamma gamma production are higher in tower), only do order 0 when we need
+the observables."* Confirmed, and worse than stated: **the H_3 probe could not
+SEE the gamma-gamma operator.**
+
+`GammaGammaH6Interface.lean:37` records the gamma-gamma-produced bond as
+`(sigma_2 sigma_3^-1)^m` -- generators 2 and 3, i.e. **H_6**. My ILP alphabet was
+`{sigma_0, sigma_1}` = H_3, so that operator is outside the catalogue at EVERY
+length, and reading 3 was evaluated in the wrong algebra (3 blocks, not 11).
+
+`computations/qbeta/qbeta_knot_operator_ilp_h6_tower_probe.py` (6/6):
+
+* **Convention D IS the two-row truncation**, exactly: `y_lambda > 0` iff the
+  partition has <= 2 rows. At H_6 that is (6), (5,1), (4,2), (3,3) -- FOUR of
+  eleven bind. The H_3 rule `y_(1^3) = 0` is the n = 3 case of the same fact.
+* **The gamma-gamma bond is INFEASIBLE at m = 1, 2 and FEASIBLE at m = 3**
+  (E = 3.0990) -- the same `3 | k` pattern as the vertex-power family.
+* **The decisive table**, at FIXED length (a mixed-length argmin is vacuous by
+  `PairEnergyRewardsShort.pairEnergy_singleton_le`):
+
+      len   H_6 feas   H_6 min         H_3sub feas   H_3sub min      same?
+        1         10   0.0                       4   0.0             yes
+        2         68   0.1629153512              8   0.9156174644    NO
+        3        551   1.1261598926             62   1.2414481668    NO
+
+  At length 2 the H_3 answer is **5.6x worse** than the true optimum. The H_6
+  winners `s0is2i` and `s0s1s3` use generators an H_3 catalogue cannot express.
+  The previously reported `1.2414 / s0is0is1i` is **RETRACTED as an artifact**.
+
+Precision: `chi_lambda_braid_mpf` at 60 dps, NOT
+`mass_at_3A_proper.chi_lambda_of_word`, whose own docstring says "This is a
+float64 kernel, and the return annotation is the contract".
+
+Landed on `claude/lp-dual-radical-formalize-first-2026-09-14` (PR #7399) as
+commit `9078329dd68`.
+
+**Still open (unchanged):** what replaces `nuc11_interleaved`. The H_6 table
+says which operator the ILP selects at each fixed length; it does not settle the
+element, because the reading-3 + PSD-3 whole-word criterion is the owner's and
+five of `nuc11_interleaved`'s eleven letters remain census-derived.
+
+## 2026-09-14 — the owner's proposed cost is the one it replaces: crossing ENERGY = crossing COUNT + a writhe term
+
+The section above records the owner's objection to crossing count as the
+selection cost, and measures that crossing energy disagrees with it on the
+gluon. It left open **when** they disagree. Answered exactly, and from the
+corpus's own decomposition rather than a new principle.
+
+**The structure is already in the tree.** `QOU.Braiding.crossingEnergy p m q =
+p·q − m·q⁻¹` splits (`crossingEnergy_split`,
+`lean/QOU/Braiding/crossing_energy_channels.lean`) into
+
+    symChannel  = (p − m)·(q + q⁻¹)/2      multiplicity = the WRITHE
+    asymChannel = (p + m)·(q − q⁻¹)/2      multiplicity = the COUNT
+
+and the writhe is a braid invariant while the crossing count is not. Every
+result below is that one asymmetry.
+
+**THE LEAN** —
+`lean/QOU/Mass/CrossingEnergySelectionEqualsCount.lean`, 9 theorems,
+sorry-free, `lean -DautoImplicit=false -s 65536` exit 0, `#print axioms` clean
+on all nine (`propext, Classical.choice, Quot.sound` only):
+
+* `energy_le_iff_count_le_of_writhe_eq` — at fixed writhe the energy ordering
+  and the count ordering are **the same ordering**, as an `iff`. Swapping the
+  cost changes **no** selection inside a fixed-writhe family.
+* `crossingEnergy_sub_eq_writhe_term_of_count_eq` — at fixed count the two
+  energies differ by exactly `(W₁ − W₂)·symmetricWeight q`.
+* `crossingEnergy_lt_of_cancelling_pair` — a cancelling pair leaves the braid
+  element alone and strictly raises the energy by `q − q⁻¹ > 0`.
+
+**THE MEASUREMENT** — `qbeta_crossing_energy_is_count_plus_writhe_probe.py`,
+8/8, 60 dps, proton pin, convention D:
+
+| check | result |
+|---|---|
+| `E_cross = n₊·h + W/q` on 11 candidates | exact, `< 1e-50` |
+| `tr_M` over all 10 cyclic rotations of the 11-letter word | max deviation `1.55575e-61` |
+| `tr_M` with the gluon **prepended** instead of appended | delta **exactly 0** |
+| `tr_M` with `σ₁σ₁⁻¹` appended | delta **exactly 0** |
+| `E_cross` under that same insertion | `+h = 0.20906029879563931543` exactly |
+| equal-writhe ordered pairs, orderings agree | **9 / 9** |
+| differing-writhe pairs where the costs disagree | 20 of 46 |
+| the sibling's headline `σ₁` vs `σ₁⁻¹` gap | `2.0108968667071222998` = the writhe term exactly |
+
+**THREE CONSEQUENCES.**
+
+1. **The objection to the count is not answered by the energy.** Crossing energy
+   *is* crossing count plus a writhe correction. It re-ranks candidates **iff**
+   their writhes differ, never otherwise — so the measured disagreement the
+   sibling probe found (`σ₁` vs `σ₁⁻¹`, tied at count 1) is a writhe difference
+   and is the *only* kind of disagreement available. **A genuine upgrade must be
+   a functional that is not a function of `(n₊, n₋)` at all.** An embedding
+   energy is exactly that, which is the structural reason the owner's direction
+   is the right class rather than an analogy. It remains unbuilt.
+
+2. **The cost is a WORD functional; the observable is a BRAID-ELEMENT one.**
+   Inserting a cancelling pair leaves `tr_M` exactly unchanged and raises
+   `E_cross` by `h`. So `E_cross` ranks two presentations of one object
+   differently while the thing being predicted ranks them identically. That is
+   an admissibility problem for any letter-sum cost, independent of which one.
+
+3. **A free prune on the candidate set.** `tr_M` is cyclic, so a *contiguous*
+   gluon's **position** in the word is not a degree of freedom — prepended and
+   appended give the identical trace. Only genuinely non-contiguous
+   interleavings differ. Nothing in the corpus was relying on the placement, but
+   it narrows what an enumeration has to cover.
+
+**WHAT IS NOT CLAIMED, and one thing explicitly NOT measured.** Neither cost is
+adopted or retired; no candidate is selected; **no Q_β is computed in the
+probe at all**, deliberately — a target that is never evaluated cannot be
+selected on. The converse of consequence 1 is **not** claimed: a
+differing-writhe pair may still agree, and 26 of the 46 do. What is established
+is the one-way implication, which is what bounds the upgrade.
+
+**🛑 RETRACTED, same session — my "incidental finding" was a re-derivation, and
+bean `qou-hv27` had it first, better.** I wrote here that the sweep's
+`UNVERIFIED — missing olean` on `QOU.Braiding.crossing_energy_channels` was a
+new discovery contradicting AGENTS.md, having measured root 3480 vs paper 2337
+mathlib oleans. `qou-hv27` (**completed 2026-09-07**) records the same asymmetry
+with a **sharper mechanism** and a **better repair**:
+
+* **Mechanism.** It is not that the paper tree is short — it is that a *partial*
+  tree **shadows** a complete one, and the sweep's `LEAN_PATH` ordering decides
+  which. Lean commits to the first root containing the module's top-level
+  namespace directory and never falls through (`qou-tpdg`). My framing missed
+  this entirely.
+* **Repair.** `cp -rln` — **hardlinks, zero disk cost**. I used plain `cp` for 94
+  files on a container already at 93 % full. Strictly worse, for no benefit.
+
+**How I got here is the instructive part.** I ran the six-path corpus-grep for
+the bean's *subject* and not for my own *incidental* observation, which is
+exactly the gap path 6 exists to close — a prior agent's conclusion sitting in a
+bean before it reaches any other artifact. A finding noticed in passing needs
+the checklist just as much as the one you went looking for.
+
+**What survives, and it is small:** AGENTS.md's own text still describes this
+UNVERIFIED class as the cache branch being short, "absent from the **paper and
+root trees alike**", which is not what either measurement shows. That wording is
+worth correcting against `qou-hv27`, and it is a docs fix rather than a finding.
+
+**And the limitation it caused is now gone.** Applying `qou-hv27`'s documented
+per-session repair (it does not survive a fresh container), the sweep gate runs
+the new module properly: **2 ok, 0 RED, 0 UNVERIFIED** — dependency rebuilt from
+source, not linked from a snapshot. So the verification below is the sound gate,
+not lean-direct against an olean whose source I had to argue was unchanged.
+
+**Open items unchanged.** Item 1 (what replaces `nuc11_interleaved` on the three
+L2 rows) is still the owner's decision and is untouched here. Item 3 (whether
+the bar-odd hypothesis survives the move to `z_D`) is untouched. This narrows
+the cost question that superseded item 2; it does not close it, because the
+functional the argument points at is not built.
+
+### Same day, the closing move: the energy's only ADMISSIBLE form *is* the count
+
+The section above shows the energy is a **word** functional. A word functional
+has exactly one canonical descent to the object — its extremum over the fibre —
+and here that extremum is computable, because the writhe is constant on a braid
+class while the count is not. `crossingEnergy = symChannel(W) + (p+m)·(q−q⁻¹)/2`
+with `W` invariant and `q − q⁻¹ > 0`, so:
+
+**`isLeast_energy_iff_isLeast_count_of_writhe_eq`** (sorry-free; the file is now
+10 theorems, `lean`-direct exit 0, `#print axioms` clean on all of them) — over
+any finite family of presentations sharing a writhe, which is what a braid class
+is, **the energy-minimal presentation is exactly the count-minimal one.**
+
+So making the energy admissible turns it **into** the crossing-count cost it was
+proposed to replace, up to an additive invariant. That closes the "energy
+instead of count" proposal as posed, rather than merely bounding it.
+
+**And the proposed replacement inherits the same defect.** Checked directly:
+`QOU.MobiusEnergy.ClassicalMobiusEnergy` is a functional of an **embedding**,
+and its own docstring says so — *"this structure holds no isotopy-class data"*.
+So as encoded it is no more a braid-element invariant than `E_cross` is, and
+swapping it in would swap one presentation-dependent cost for another.
+
+**This is what makes the Bring embedding load-bearing rather than an
+implementation detail.** What repairs an embedding functional is either the FHW
+minimiser (the infimum over the isotopy class — bean `qou-zfs6`) or a
+**canonical** embedding, and the Bring surface is the candidate canonical
+embedding. The owner's instinct that the Bring half matters is therefore right
+for a sharper reason than "it is where the geometry lives": without it the
+proposal does not clear the admissibility bar its own objection implies.
+
+**Caveat carried forward, not re-derived:** `MobiusEnergy.lean` has 2 sorries
+and its header records a prior vacuity incident in which `unknot_iff` read
+`value = 4 ↔ True`, forcing `value = 4` for every instance and making `E_cat`
+blind to the knot, with no `sorry` to flag it. That leg cannot bear weight
+unexamined — the observation above is about the structure's *arity*, which is
+visible from the docstring and is unaffected by the sorries.
+
+### 2026-09-14, ~1 h later — 🛑 my "it remains unbuilt" went STALE while the PR was open, and a sibling reached the same exclusion by a different invariant
+
+The entry above ends by naming the open target: *"a genuine upgrade must be a
+functional that is not a function of `(n₊, n₋)` at all... An embedding energy is
+exactly that... It remains unbuilt."* **Three commits landed on `main` between
+18:34 and 19:10 that make that false**, and the convergence is worth recording
+rather than quietly deleting.
+
+**What landed** (branch `claude/lean-crossing-budget-invariants-2026-09-14`,
+PR #7391, now closed):
+
+* `380f5935c2` — **`QOU/QBeta/LetterSumBlindness.lean`**, sorry-free.
+  `letterSum_perm_invariant`, `no_letterSum_separates`,
+  `crossingCount_perm_blind`, **`crossingEnergy_perm_blind`**,
+  `factorsThrough_blind`, plus a scope lemma
+  (`objective_blindness_does_not_transfer_to_constrained_optimum`) delimiting
+  the exclusion so it does not kill the SDP route.
+* `aa224aba03` — **`QOU/QBeta/ECatBlockDecomposition.lean`** + probe
+  `qbeta_ecat_pair_kernel_probe.py` (4/4): a **pair kernel** dropped into the
+  `cost : W → R` socket of `GammaGammaWordSelection`, with
+  `pairSum_not_perm_invariant` — a pair sum whose kernel reads the **separation**
+  of the two letters escapes the letter-sum exclusion. Four distinct values over
+  the four 2-crossing gluons against one value for every letter-sum.
+* `27250649ff` — the per-block cost vector `t_λ`.
+
+**The two results are COMPLEMENTARY, and neither implies the other.** Stating
+this precisely because "both exclude letter-sums" invites collapsing them:
+
+| | invariant used | what it says |
+|---|---|---|
+| **theirs** | permutation of letters | `E_cross` cannot **separate** two reorderings — a statement about the letter *multiset* |
+| **mine** | the writhe/count channel split | `E_cross` and the count are **the same ordering** at fixed writhe; they differ by exactly the writhe term at fixed count; the energy's admissible descent **is** count-minimisation |
+
+Permutation-blindness says nothing about how the energy *compares to the count*
+across different multisets, which is my whole result. And
+`crossingEnergy_lt_of_cancelling_pair` is orthogonal to both: a cancelling pair
+**changes** the multiset, so permutation-invariance cannot reach it — that
+lemma is about the map word → braid *element*, not word → multiset.
+
+**Their control is my `crossingEnergy_eq_of_writhe_and_count_eq`, measured.**
+With the separation weight removed, the sharp pair — *"same multiset, same
+writhe, differing only in ORDER"* — reads `34.6134315674846072` for **both**, a
+difference of **exactly 0.0**, against `0.91996925` weighted. That is the forced
+tie my Lean states, arrived at from the other direction and used as a control
+rather than as a theorem.
+
+**What is corrected in my PR body:** "It remains unbuilt" → built, with the
+citation. **What is NOT corrected:** every theorem and every measured figure in
+the entry above stands; the re-verification after merging `main` (69 commits) is
+**2 ok, 0 RED, 0 UNVERIFIED**.
+
+**What their own commit message declines to claim, carried here so it is not
+lost downstream:** the discretisation is **not** `E_cat` (whether its continuum
+limit is `E_cat` is unproved), **nothing selects a word** — *"a cost that
+separates is a precondition for selection, not a selection"* — the per-block
+`t_λ` is proved a refinement but **not computed**, and the `MobiusEnergy`
+classical-limit leg stays assumed with its blindness incident unretired
+(`qou-pzsi`). So the open item is narrower than before and is **not** closed:
+a separating cost now exists; **which** cost, and whether minimising it is
+legitimate, is untouched.
+
+**Coordination note.** I posted intent on #7391 at 18:44 naming my distinct
+angle; it landed ~30 min later. That is the sanctioned research-overlap pattern
+working as intended (AGENTS.md §Parallel exploration) — two routes, one
+exclusion, neither re-deriving the other. Converging per that rule: I do not
+re-derive their pair kernel, and this bean cites it.
+
+### 2026-09-14 21:46–22:29Z — the classical-limit BRIDGE FIELD is vacuous, and an attribution correction
+
+Two cross-branch notes landed on #7390. Both verified here rather than taken.
+
+**1. `MobiusEnergy.classicalLimit` constrains nothing** (reported by #7262;
+checked at the structure, not at their theorem, because it is **not on `main`**):
+
+```lean
+classicalLimitConst : ℝ
+classicalLimit : energy = (1 / 4) * classicalEnergy.value + classicalLimitConst
+```
+
+`classicalLimitConst` is a **free field of the same structure**, so for any pair
+`(energy, classicalEnergy)` exactly one `k` satisfies it — the field relates the
+two energies **not at all**. #7262 proves it sorry-free as
+`classicalLimit_unconstraining` / `classicalLimitConst_eq`, on that branch only;
+the structure field is checkable on `main` today.
+
+**This compounds with the entry above rather than repeating it.** That entry
+established `ClassicalMobiusEnergy` is a functional of an **embedding** (its own
+docstring: *"this structure holds no isotopy-class data"*). Now the **bridge**
+field is vacuous too. So there are **two independent reasons** the
+classical-limit route cannot bear weight: the functional is of a presentation,
+and the field that would connect it to `E_cat` asserts nothing. It is also the
+same defect class as the header's recorded incident (`unknot_iff : value = 4 ↔
+True`) **one field over** — a structure whose constraint is discharged by a free
+companion field, with no `sorry` to flag it. Not repaired: §ASK THE OWNER,
+neither exemption applies.
+
+**2. An attribution correction, made because the commenter said they would cite
+it.** #7262 credited `blockCost_can_separate`, `pairSum_not_perm_invariant`,
+`bridgeClass_perm_blind` and `qbeta_ecat_pair_kernel_probe` to #7390. **All four
+are #7391's** (`aa224aba03` / `380f5935c2`, both on `main`). Measured: this
+branch's `git diff --name-only origin/main...HEAD` is exactly four files — the
+bean, the probe, its witness, and
+`QOU/Mass/CrossingEnergySelectionEqualsCount.lean` — and none contains those
+names. Cause is partly mine: `cf2cc9d011`'s body *describes* #7391's work next
+to my own, which is presumably how it got attached. **Lesson worth keeping: when
+a PR body summarises a sibling's landing, name the sibling in the same sentence
+as the declaration, not in a heading two paragraphs up.**
+
+**3. From #7399 — the ILP escape is closed, and it composes with this entry.**
+A linear objective cannot select `𝓑₃` by the face argument (S4, `qou-v7qj`), and
+the obvious reply — *"the face argument needs convexity, an integer program is
+not convex"* — is measured not to escape: over `ℤ⁶` `𝓑₃` is not feasible at all
+(worst coordinate `0.0456` from ℤ), and over `ℤ[q₀,q₀⁻¹]⁶` **that ring is
+dense**, because `ℤ[q]` is discrete iff `q` is Pisot and `q₀ = 1.10998` sits
+below the plastic number `1.3247…` (Siegel 1944); constructively a feasible
+lattice point beats `𝓑₃` at `0.8642` vs `0.9986`. Their
+`linear_min_two_sided_kills_direction` gets `f d = 0` over an arbitrary set from
+two-sided reachability and linearity alone — **convexity was never the
+load-bearing hypothesis**, so non-convexity buys nothing.
+
+Composed with this entry: **if crossing energy IS the count, then the count is
+both permutation-blind and unable to select by any linear program, integer or
+not.** That is a constraint on where the selection can come from — not a problem
+with the reduction.
+
+### 2026-09-15 10:25Z — twelve `qou-99qc` commits landed overnight; what they do to this entry, checked rather than assumed
+
+`main` moved 24 → 85 while #7390 sat open, and **twelve** of those are on this
+bean. The merge conflicted on exactly the file AGENTS.md predicts — this bean —
+and was resolved losslessly with the prescribed
+[`scripts/bean-append-merge.py`](scripts/bean-append-merge.py) (`+16309 ch
+appended`, `main` byte-for-byte preserved), not by hand.
+
+**THE ONE THAT CONTINUES THIS ENTRY DIRECTLY.** `b7b5e3e290` adds
+`QOU/Mass/PairEnergyRewardsShort.lean` (7 decls, sorry-free), stated for an
+**arbitrary** kernel `K`:
+
+* `pairEnergy_singleton_le` — under non-negativity a **1-letter word is a global
+  minimiser over every word**;
+* `exists_singleton_minimiser` — any catalogue containing a singleton has its
+  optimum there, whatever else it holds;
+* the contrapositive — **to select anything longer, the kernel must go negative
+  somewhere.**
+
+**Composed with this entry, the lesson is sharper than either half.** Mine:
+minimising `E_cross` *is* minimising the count
+(`isLeast_energy_iff_isLeast_count_of_writhe_eq`). Theirs: minimising a
+non-negative pair energy picks the shortest word. Both say the same thing about
+a different functional — **plain minimisation drives you to the degenerate short
+end, so the pathology is the MINIMISATION FRAME, not the particular cost.** A
+cost that *separates* (the pair kernel of `aa224aba03`) is therefore still not
+enough: separation is necessary, and the selection rule must additionally not be
+bare minimisation of a non-negative functional.
+
+**An observation, marked as suggestive and NOT a theorem.** Their contrapositive
+says a selecting kernel must go negative somewhere, and the table in the entry
+above already *exhibits* negativity: `E_cross(σ₁⁻¹) = −0.90091828395574` and
+`E_cross(σ₀⁻¹σ₁⁻¹) = −1.8018365679115` — a negative crossing carries negative
+energy. **Scope: mine is a letter-sum, negative per LETTER; theirs is a kernel
+on letter PAIRS.** So this is not an instance of their hypothesis, only evidence
+that the corpus's own energy convention supplies the sign structure their design
+constraint asks for. Do not cite it as satisfying the hypothesis.
+
+**WHAT DOES NOT TOUCH THIS ENTRY, checked three ways rather than assumed.**
+`6fb8dafe3c` reports two hazards that look like they should land on my probe —
+*"the H_3 legacy path is float64"* (`atom_per_generator_volumes` warns but
+RETURNS, and its `mpf` is bit-exactly a padded float64; 32 callers) and *"the
+H_3 answer is a truncation artifact at every length ≥ 2"*. Neither reaches it:
+
+1. **Import cone.** Walked all 19 modules reachable from
+   `qbeta_crossing_energy_is_count_plus_writhe_probe`: `atom_per_generator_volumes`
+   appears in **none**.
+2. **Re-ran the probe on the merged tree — 8/8, and the witness is byte-
+   UNCHANGED**, so no import-cone drift moved a number.
+3. **Structurally, and this is the durable half.** Checks 1, 3, 4, 5 and 6 use
+   **no `tr_M` at all** — they are algebra on `E_cross`. Checks 2 are
+   *invariance* claims (cyclic rotation, contiguous-block position, cancelling
+   pair), which hold for **any** trace, whatever algebra it is taken in; the
+   measured `1.55575e-61` and exact-`0` deltas are what establish that `tr_at`
+   *is* a trace. So **no claim in this arc depends on H_3 vs H_6** — only on
+   tr_M being a trace. That was luck rather than design, and is worth stating
+   explicitly so a future reader does not re-litigate it.
+
+**Verification after the merge:** library sweep on
+`QOU.Mass.CrossingEnergySelectionEqualsCount` — **2 ok, 0 RED, 0 TIMEOUT,
+0 UNVERIFIED, 0 skipped** (176 s), dependency rebuilt from source.
+
+**Also worth carrying: they caught a LAYER STRADDLE in their own measuring
+script** — it rebound `q` in the character kernel but not in `_order`, whose
+`word_nf` folds with `_order.H0`, so the NF was at the anchor while `χ` was at
+the perturbed `q`. That produced three false claims, including a "root of
+`χ_(2,1)` at `q₀` agreeing to 40 digits"; measured correctly, `χ_(2,1)(s0s1s1)`
+shrinks like `10^-dps` at **every** `q` and is identically zero, with no root.
+Exactly the straddle class AGENTS.md §"Never straddle the two layers" warns
+about, one layer over — and it was caught by the author, not by a gate.
+
+## 2026-09-14 (session gifted-feynman) — the Lean step `cost_eq` stops short of, and a wrong turn worth keeping
+
+**Claim.** `FrobeniusSelected.cost_eq` says two *selected* words have equal
+**cost**. The step this bean needs is the next one: that the selection predicate
+can hold of **two different words**, so the rule does not determine the word.
+Nothing in the corpus drew it. `QOU.Mass.CostOrderSensitivity` now does, for an
+**arbitrary quotient** the cost factors through — sorry-free, `lean`-direct
+exit 0 (`-DautoImplicit=false -s 65536`), `#print axioms` clean on all eight
+declarations (two depend on **no axioms at all**; the rest only `propext` /
+`Quot.sound`).
+
+| declaration | statement |
+|---|---|
+| `minimal_transfers_along_fibre` | minimality transfers along a fibre of `π` |
+| `selected_not_determined_of_cost_factors` | …so **both** words are selected |
+| `lengthCost_not_determined` | the corpus's own crossing-count cost |
+| `letterSumCost_not_determined` | any letter-sum cost |
+
+**Cited, not re-derived.** The *invariance* half is already held four times
+over and the file says so: `OptionELevelAcceptanceTest.monoidHom_order_blind`
+(the multiplicative twin), `AltCharShiftMultiset.wordChar_of_perm`,
+`YekutieliIntegration.holonomy_perm`, and **definitionally** in
+`crossing-energy.lean`, which models `BraidWord := List Bool` and reads only two
+counts. The letter-sum scope-(b) exclusion is already prose on `main`
+(`qbeta_embedding_energy_can_discriminate_probe.py:46–52`, bean `qou-pzsi`).
+
+**🛑 The wrong turn, recorded because it is the interesting part.** This was
+first drafted around the **abelianization** — *"a cost factoring through
+`B_n^ab ≅ ℤ` cannot separate two words of equal exponent sum"*. **That framing
+is wrong for its own targets.** `B_n^ab` records only `e = n₊ − n₋`, so of the
+corpus's own three crossing-energy components only `baseline` (the writhe)
+factors through it. **Crossing count `n₊ + n₋` does not** — and it is
+`FrobeniusSelected`'s *only* instantiation in the entire corpus — and neither
+does `E_cross = n₊q − n₋q⁻¹`. An abelianization-quantified theorem would have
+claimed a family it provably does not cover: the `da-arity-conflation` shape.
+The right invariant is the **multiset** (equivalently `List.Perm`), strictly
+coarser, and it is what the sibling probe already names. **Caught by the
+corpus-grep checklist before anything was committed** — paths 1–6 with the
+claim SHAPE rather than the topic, which is exactly the case §"Grep the claim
+SHAPE" exists for.
+
+**Scope, deliberately narrow.** It does **not** prove a selection cost must be
+order-sensitive — blindness *precludes separating these candidates*, it does not
+*force* a replacement to see order. That caution is this bean's own (~line 1100)
+and is restated inside the file so the theorems are not read as more than they
+are. It does **not** exhibit a rearrangement pair inside the live `cands` that
+is also feasible; that stays a measurement. It proposes **no** replacement cost
+and re-scores **nothing**.
+
+**What this leaves as the live open item** is unchanged and is `qou-pzsi`: there
+is still **no map from a braid word to a curve in or on the Bring surface**, so
+the order-sensitive functional the owner's objection points at has nothing to
+consume. This result says what any replacement must have (it must not be
+constant on the multiset); it does not supply one.
+
+## 2026-09-14 (session gifted-feynman, 2) — my retraction was HALF wrong: the abelianization is right for the EMBEDDING
+
+The entry above retracts an abelianization framing as *"wrong for its own
+targets"*. That retraction is **correct for costs and wrong one step over**, and
+a sibling's merged bridge is what shows it.
+
+**The claim.** `qbeta_bring_ohara_bridge_probe.py` (7/7, merged #7374) sends a
+braid word to a cusp-torus lattice class
+
+    (m, ℓ) = (exponent sum, strand count)
+
+— verified at source, `:36-37` and `:65`, and again at `:343-344`
+(`m = BASE_WRITHE + writhe(g)`, `ell = STRANDS`). **`m` is exactly the
+abelianization**: `e : B_d → ℤ`, `σ_i ↦ 1`, induces `B_d/[B_d,B_d] ≅ ℤ`
+(Black–Samson, `library/black-samson-phd2010sp/…/sec-008-12-summary-of-thesis.md:126`),
+and `ℓ` does not depend on the word at all.
+
+**So the same quotient under-prunes on one side of the pipeline and
+over-collapses on the other.** Against the *cost* functions it is too coarse to
+bite — crossing count `n₊ + n₋` and `E_cross = n₊q − n₋q⁻¹` both survive it,
+which is why the retraction stands. Against the *embedding map* it is precisely
+what the corpus does, and it is **strictly coarser than the multiset**, so it
+loses strictly more.
+
+**Consequence for the Lean.** `selected_not_determined_of_cost_factors` is
+quantified over an **arbitrary** quotient `π`, so it covers this instance with
+no change: put `π = (writhe, strands)` and the sibling's measured negative —
+all four two-crossing gluon dressings share one class, one geodesic and one
+energy — is an instance of the general theorem rather than a separate fact.
+The docstring now records this beside the retraction.
+
+**The reusable lesson is about attachment, not about the invariant.** "X is
+blind to Y" is a claim about a *particular map*; carrying it to a neighbouring
+map in the same pipeline is not a corollary. I made that error in one direction
+and would have missed the true instance in the other.
+
+**Nothing re-scored, nothing selected.** The sibling's own scoping stands: the
+bridge does not select, the dashboard rows stay un-re-scored, and the
+`u = ln q₀` vs `u = 2 ln q₀` meridian-normalisation binary stays open with
+neither branch adopted.
+
+
+## 2026-09-14 (session gifted-feynman, 6) — the replacement my theorem demanded HAS been built, by a sibling; I am not re-deriving it
+
+My entry above ends: *"This result says what any replacement must have (it must
+not be constant on the multiset); it does not supply one."* **A sibling
+supplied one, and it is on `main`.**
+
+`claude/99qc-crossing-budget-parity-2026-09-14` (PR #7390), commits
+`380f5935c2` / `aa224aba03` / `27250649ff`:
+
+* `QOU.QBeta.ECatBlockDecomposition.pairSum_not_perm_invariant` and
+  `blockCost_can_separate` — a **pair kernel** in the cost socket, with the
+  O'Hara `1/d_arc²` separation weight doing the work;
+* `qbeta_ecat_pair_kernel_probe` (4/4), run here against the merged tree: four
+  distinct proton values over the four gluon dressings
+  (`8.68872560885`, `7.76875635932`, `8.89780952920`, `9.06507666548`) against
+  **one** value for every letter-sum, and a control showing the sharp pair
+  separating by `0.91996925` weighted against **exactly 0.0** unweighted.
+
+**It escapes MY quotient, not only permutation — and that composition is
+already measured, so there is nothing for me to add.**
+`LetterSumBlindness.bridgeClass_perm_blind` is exactly the
+`(exponent sum, strands)` map my own entry identified as the corpus's
+embedding map; all four candidates sit at **writhe +2, length 2**, one fibre
+of it; the kernel separates them. That is assertions 1 and 2 of their probe.
+
+**Deliberately not re-derived.** Per the convergence rule the second route
+verifies and cites. I added no companion lemma; `CostOrderSensitivity.lean`
+gains a docstring section recording the finding and the credit, nothing more.
+Their commit's own account of the complementarity is correct: theirs turns on
+**permutation** of letters, mine on the **writhe/count split** at fixed
+writhe, and neither implies the other.
+
+**What stays open is narrower, not closed**, and their assertion 4 scopes it
+themselves: the kernel is a **discretisation**, its continuum limit is not
+proved to be `E_cat`, and the classical-limit leg it would need is *assumed*.
+
+**That leg is worse than assumed, and I proved it this session.**
+`CategoricalMobiusEnergy.classicalLimit` has `classicalLimitConst` as a **free
+field of the same structure**, so it is satisfiable for any pair of energies by
+exactly one `k` — `QOU.MobiusEnergy.classicalLimit_unconstraining` and
+`classicalLimitConst_eq` (sorry-free). So a future agent cannot close the
+continuum-limit question by appealing to that field. Reported on #7390;
+**not repaired** — §ASK THE OWNER applies and it stays an owner decision.
+
+**The replacement ELEMENT is still an owner call.** None of this selects a
+word. Their own declined claims stand (not `E_cat`; nothing selects a word;
+`t_lambda` not computed), and this bean's first open item — what replaces
+`nuc11_interleaved` after the confinement-SDP reading-3 rejection — is
+untouched by all of it.

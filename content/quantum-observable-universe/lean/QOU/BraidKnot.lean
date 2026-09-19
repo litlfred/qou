@@ -16,6 +16,76 @@ import QOU.BraidKnot.HookSumRegisterBridge
 -- (`H >= 3r^2-3r+1`, 1168 counterexamples at n <= 22) and is stronger than the
 -- `r^2-r+1` a repaired row-plus-column count gives.
 import QOU.BraidKnot.HookSumThicknessBound
+-- The same hook sum in beta-coordinates (bean qou-hok7): with `beta_i = lambda_i + (L-1-i)`
+-- the corpus's `SchurWeyl.betaR`, `2 Sum_i beta_i = 2n + L(L-1)` and
+-- `2 Sum_c h(c) = Sum_i beta_i(beta_i+1) - 2 Sum_{i<j}(beta_i - beta_j)`, for EVERY padding
+-- `L >= l(mu)`. The REV_n shape free energy is one-body plus two-body in exactly these
+-- coordinates, and its energy term enters through the second identity. Verified numerically
+-- over every partition of n <= 16 before being proved; the corpus had beta-number PRODUCTS
+-- (the hook-formula Vandermonde) but no identity about beta-number SUMS. Also (I'), the
+-- general one-body/two-body split `Sum_c g(h(c)) + Sum_{i<j} g(beta_i - beta_j)
+-- = Sum_i Sum_{m<=beta_i} g(m)` for ANY g into an AddCommMonoid -- which is SchurWeyl's
+-- multiplicative `hookSide_betaR` transported through Multiplicative N, so it costs nothing
+-- and gives (II) a SECOND proof, from the hook multiset rather than from the closed form.
+import QOU.BraidKnot.HookSumBetaCoordinates
+-- Completing the square in those beta-coordinates (bean qou-hok7): with `a_i = 2L-3-4i`,
+-- `8 Sum_c h(c) = Sum_i (2 beta_i - a_i)^2 - Sum_i a_i^2`, so the hook sum is a POSITIVE-DEFINITE
+-- quadratic whose whole diagram-dependence is one sum of squares. Two consequences: the row
+-- deviations `d_i = 2 beta_i - a_i` satisfy `d_i - d_{i+1} = 2(beta_i - beta_{i+1}) - 4`, so they
+-- are constant exactly on the staircase; and Cauchy-Schwarz gives the parameter-free floor
+-- `(Sum d_i)^2 - L Sum a_i^2 <= 8 L Sum_c h(c)`, where `Sum d_i` is fixed by (n, L) alone. That
+-- is the REV_n energy rigidity WITHOUT asymptotics -- PR #7286 had it only as the measured
+-- `E ~ ln q_0 (2n)^{3/2} (gbar-2)^2 / 24`. Measured tight: zero gap against H_min at L = k.
+import QOU.BraidKnot.HookSumCompletedSquare
+-- The staircase's hook lengths in closed form (bean qou-hok7). Presenting delta_k as the
+-- sublevel set `{(i,j) : i+j < k}` makes it visibly self-transpose, so `colLen` is free and
+-- `hook (i,j) = 2(k-i-j) - 1` falls out -- the hook is constant along antidiagonals, and
+-- antidiagonal s carries s+1 cells. `staircase_hookSum` telescopes that into
+-- `Sum_c g(h(c)) = Sum_{s<k} (s+1) g(2(k-s)-1)`, which at `g = eps` IS the staircase's
+-- beta-side by `betaSide_eq_hookSum`. PR #7294 had this fact only ENUMERATED (k = 1..40).
+import QOU.BraidKnot.StaircaseHookMultiset
+-- The hook sum is a separable QUADRATIC form in the beta-coordinates (bean qou-hok7):
+-- composing `two_mul_sum_hookZ_betaForm` with `sum_pair_betaR_sub` leaves no pair term at all,
+-- so comparing two shapes of one size gives `2(H(nu) - H(delta_k)) = Sum 2(i-k) u_i + Sum u_i^2`
+-- with both terms non-negative. Hence the staircase is the UNIQUE minimiser of the hook sum at
+-- triangular n, and REV_n's cost term is a local harmonic penalty on displacement away from the
+-- staircase lattice -- quantised, since `Sum u_i^2` is an even integer when `Sum u_i = 0`.
+import QOU.BraidKnot.HookSumElasticity
+-- Separated groups of rows do not interact (bean qou-hok7). The hook sum splits over any
+-- partition of the rows by inspection; the REV_n objective's PAIR term is the only thing that
+-- can tie two groups together, and `sum_pairs_split` makes that split exact while
+-- `cross_sum_le` bounds the cross part by `|A| * |B| * g R` at separation `R`. With the kernel
+-- `eps(m) = -log(1 - q0^(-2m))` geometric, `cross_sum_le_geom` sends it to zero geometrically.
+-- That is what turns the maximiser's FREE run position (#7323) into a decomposition: the top
+-- block, the run and the bottom block stop interacting, and e_inf becomes a sum of three
+-- k-free pieces rather than a single-n measurement.
+import QOU.BraidKnot.EdgeDecoupling
+--- The maximisation that decomposition leaves behind is over a FINITE set (bean qou-hok7).
+--- `e_inf = max over (a, b) of [f a + h (a + b) + g b]` ranges over all pairs of naturals, but
+--- the two edge energies are bounded above while the run falls linearly, so `le_of_le_join`
+--- confines any pair matching an incumbent to `a + b <= L`. The bound on the edges comes from
+--- `sub_le_mul_of_antitone_step` and its downward twin: a sequence with ANTITONE downward steps
+--- -- `eps` convex decreasing, in discrete form, proved by induction with no analysis -- has
+--- `e a - e (a + D) <= D * delta a` for both signs of `D`, which linearises every pair term and
+--- lets the block's pair sum telescope. Both signs matter: keeping only `D > 0` drops the
+--- negative pair terms and the bound diverges.
+import QOU.BraidKnot.SearchCoercivity
+--- Making that finite search DECIDED, and one non-step in the argument (bean qou-hok7).
+--- `sup_le_of_supergradient` takes what concavity supplies (a supergradient inequality at a
+--- point) together with what the coercivity bound supplies (confinement of any competitive `u`
+--- to a box) and returns an explicit upper bound on the objective EVERYWHERE, including outside
+--- the box, where it is already below the incumbent. Its load-bearing step is `box_mul_sub_le`,
+--- a case split on the sign of the gradient: the linear term is maximised at `hi` when `g >= 0`
+--- and at `lo` when `g < 0`. `boundary_charge_eq_zero` and `abs_charge_pos` say why that split
+--- is not a refinement -- a coordinate pinned to `lo` with `g < 0` (correct KKT behaviour)
+--- contributes EXACTLY ZERO, where charging it `|g| (hi - lo)` contributes strictly positively,
+--- and in the measured case the whole factor of 2.25e11 between a 6.4e-12 slack and a useless
+--- 1.447 one lives in that case alone.
+--- `capped_lt_not_sufficient` is separate and is about evidence rather than about optimisation:
+--- a maximum over a CAPPED class is a lower bound on the true maximum, so observing that it
+--- falls short of a bound implies nothing about the true one -- only EXCEEDING a bound refutes.
+--- The corpus's sole recorded support for G1 (`Xbot(s) <= Xblock(s)`) has exactly that shape.
+import QOU.BraidKnot.SupergradientCertificate
 -- The M_1 edge calculus (bean qou-t6hc): Fact A, giving the per-edge sign of
 -- P = Cov(Sum|c|, omega_3) >= 0 -- which is pure integer algebra, true of any two
 -- contents -- and the 1-Lipschitz diagonal lemma |D(c) - D(c+1)| <= 1, which is

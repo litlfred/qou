@@ -1,0 +1,179 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-13T10:41:05.197754+00:00",
+  "commitSha": "3220f1b5e47b89bc77b60d29aec8e2bc74f7f52c",
+  "assertions": [
+    {
+      "name": "asymptotic_shape_matches_derived_expansion",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "log<4_1>_N - N*V/(2pi) tracks (3/2)logN - (1/4)log3 with an O(1/N) residual: the residual ratio on each doubling is ['0.492795', '0.496559', '0.498316', '0.499167', '0.499586'], against 1/2 for a clean 1/N tail. The N^{3/2}/3^{1/4} prefactor of the expansion derived in prop:one-loop-prefactor-provenance is therefore reproduced by this corpus's own sum."
+    },
+    {
+      "name": "N_delta_over_logN_matches_derived_3pi_with_offset",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "the DERIVED two-term prediction 3pi - (pi log3)/(2 logN) tracks the measured N*delta/logN to within 0.0183105 across N = 50..1600; at N=1600 the gap is 0.000295239. The offset was derived from the derived expansion before being measured, so this is a test of the derivation, not a fit to the data."
+    },
+    {
+      "name": "remainder_is_NOT_a_pure_grade_minus_one_monomial",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "N*delta_N rises monotonically 35.215883 -> 67.810222 across N = 50..1600, i.e. omega*delta is INFINITE. A grade-(-1) infinitesimal c/omega would give the constant c. So ord_omega(delta) = -1 in the coarse grading, but delta is not a grade-(-1) monomial -- its leading term carries a log omega and sits strictly between grade -1 and grade 0 in the Berarducci-Mantova hierarchy."
+    },
+    {
+      "name": "richardson_in_one_over_N_leaves_the_derived_residual",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "a 1/N Richardson step leaves N*(R_N - V) converging to the DERIVED 3pi*log2 = 6.532758271; measured 6.53057645619 at N=800, gap 0.00218181. So anyone extrapolating the Kashaev limit on a 1/N grid is fitting a mis-specified ansatz -- the leading correction is log(N)/N, not 1/N."
+    },
+    {
+      "name": "vol41_computed_not_read_from_a_float64_literal",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "Vol(4_1) is computed as 2*mp.clsin(2, pi/3) at working precision. The module constant VOL_FIGURE_EIGHT is float64 and would floor every gap in this probe at ~1e-16, which is coarser than check 2's tolerance -- the same trap caught in the N-question probe (8f6771235f)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 106,
+  "computation": "kashaev-remainder-omega-grade",
+  "scriptFile": "kashaev_remainder_omega_grade_probe.py",
+  "scriptHash": "179e00673197",
+  "scriptCommitSha": "f6f17fa092e7dd00d24d940cb414bc2cbd919abf",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/kashaev_remainder_omega_grade_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/kashaev_remainder_omega_grade_probe.py"
+  },
+  "description": "The omega-grade of the Kashaev remainder for 4_1. kashaev-surreal.md recasts the volume conjecture as a standard-part identity and never says what st() discards. Derived from the leading asymptotic that prop:one-loop-prefactor-provenance DERIVES from the saddle at theta*=5pi/6 (Lean c_pow_four_eq_third) -- NOT cited to Ohtsuki/Andersen-Hansen, which is what this description said before the 2026-09-13 correction: expansion: delta_N = 3pi logN/N - (pi log3)/(2N) + O(1/N^2), so ord_omega(delta) = -1 in the coarse grading but delta is NOT a grade-(-1) monomial -- omega*delta is infinite and the convergence is logarithmically slow. Derive-then-check; every constant is read off the citation before measurement. Exact mpmath at 50 dps; no float64.",
+  "bean": "qou-cds1",
+  "fills_gap_in": "content/quantum-observable-universe/appendix-surreals/kashaev-surreal.md",
+  "derived_remainder": "delta_N = 3*pi*log(N)/N - (pi*log 3)/(2N) + O(1/N^2)",
+  "omega_grade": {
+    "coarse_ord_omega": -1,
+    "is_pure_grade_minus_one_monomial": false,
+    "leading_monomial": "(log omega)/omega",
+    "position": "strictly between grade -1 and grade 0 (Berarducci-Mantova)",
+    "omega_times_delta": "INFINITE"
+  },
+  "constants": {
+    "vol_4_1": "2.02988321281930725004240510855",
+    "three_pi": "9.42477796076938",
+    "derived_offset_pi_log3_over_2": "1.7256961476116",
+    "richardson_limit_3pi_log2": "6.53275827091081"
+  },
+  "tables": {
+    "asymptotic_shape": [
+      {
+        "N": 50,
+        "residual_minus_model": "0.01140041881"
+      },
+      {
+        "N": 100,
+        "residual_minus_model": "0.005618067593"
+      },
+      {
+        "N": 200,
+        "residual_minus_model": "0.002789699683"
+      },
+      {
+        "N": 400,
+        "residual_minus_model": "0.001390152439"
+      },
+      {
+        "N": 800,
+        "residual_minus_model": "0.0006939181227"
+      },
+      {
+        "N": 1600,
+        "residual_minus_model": "0.0003466715242"
+      }
+    ],
+    "omega_grade_ladder": [
+      {
+        "N": 50,
+        "N_delta_over_logN": "9.00196214365",
+        "derived_prediction": "8.98365168283",
+        "gap": "0.0183105"
+      },
+      {
+        "N": 100,
+        "N_delta_over_logN": "9.05771296217",
+        "derived_prediction": "9.05004780359",
+        "gap": "0.00766516"
+      },
+      {
+        "N": 200,
+        "N_delta_over_logN": "9.10237976727",
+        "derived_prediction": "9.09907150941",
+        "gap": "0.00330826"
+      },
+      {
+        "N": 400,
+        "N_delta_over_logN": "9.13821003589",
+        "derived_prediction": "9.13675219778",
+        "gap": "0.00145784"
+      },
+      {
+        "N": 800,
+        "N_delta_over_logN": "9.16727068861",
+        "derived_prediction": "9.16661844187",
+        "gap": "0.000652247"
+      },
+      {
+        "N": 1600,
+        "N_delta_over_logN": "9.19116800311",
+        "derived_prediction": "9.19087276421",
+        "gap": "0.000295239"
+      }
+    ],
+    "richardson": [
+      {
+        "N": 50,
+        "N_times_richardson_error": "6.49642668671"
+      },
+      {
+        "N": 100,
+        "N_times_richardson_error": "6.51498711121"
+      },
+      {
+        "N": 200,
+        "N_times_richardson_error": "6.52396465623"
+      },
+      {
+        "N": 400,
+        "N_times_richardson_error": "6.52838370168"
+      },
+      {
+        "N": 800,
+        "N_times_richardson_error": "6.53057645619"
+      }
+    ]
+  },
+  "scope": {
+    "kind": "(a) asymptotic statement about 4_1; its leading-asymptotic input is DERIVED in-corpus (prop:one-loop-prefactor-provenance), while the O(1/N^2) tail is MEASURED (check 1), not derived",
+    "not_claimed": "nothing about the volume conjecture, about st(), or about any knot but 4_1"
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Pure knot-theoretic asymptotics: the Kashaev sum at roots of unity and Vol(4_1) = 2*Cl_2(pi/3). No substrate q0 is read on any path, and no pin can move a single number here."
+}

@@ -425,3 +425,273 @@ Each of the 11 is a choice between regenerating a witness — which deletes
 recorded analysis, including a retraction — and restoring producing code from
 history. The `per_irrep_pole_*` pair is the one with a reader-facing consumer
 and an existing MAJOR sidecar finding, so it is where the value is.
+
+
+---
+
+## Class 1 DRAINED again 2026-09-13 — and the refill hypothesis I was about to publish is REFUTED
+
+### The eight sites, and what they now record
+
+`computations/audits/tolerance_below_arithmetic_floor_audit.py` was `exit=1`,
+**7 flagged assertions across 7 files**. All seven are fixed by the remedy the
+audit prints in its own output — *"Fix by asserting the RESIDUAL against 0, not
+the value against a target"* — plus **one eighth site the audit cannot see**
+(`dirac_yekutieli_combinations_50dps.py`'s `family_a_h0_...`, whose `expected`
+is an expression rather than a literal). Detector now `exit=0`, 0 flagged,
+selftest PASS.
+
+**Four of the eight now carry a MEASURED residual where they previously
+recorded a rounded value indistinguishable from its target:**
+
+| site | was | now |
+|---|---|---|
+| `mu_substrate_tension_audit_100dps` `vol_4_1_matches_known_value` | `2.02988…862` vs `…861506` | **5.996e-49** vs 0 |
+| `dirac_yekutieli` `family_a_h0_matches_classical_dimension_mean` | `2.5` vs `2.5` | **1.404e-50** vs 0 |
+| `dirac_yekutieli` `family_a_h2_matches_declared_three_quarters` | `0.75` vs `0.75` | **1.262e-48** vs 0 |
+| `he3_tritium_cosh_asymmetry` `intra_pn_difference_is_bar_odd_exact_h` | `1.0` vs `1` | **4.592e-41** vs 0 |
+
+The other four are exactly `0.0`. Note the `he3` one: `4.592e-41` against a
+`1e-35` tolerance clears by only ~6 orders, where the old form claimed 1e-35
+resolution on a quantity float64 could not resolve past ~2.2e-16. That is the
+point of the class — the bound is now real, and it is *nearly* tight.
+
+All seven producers re-run, all `exit=0`. No result moved. Three witnesses were
+byte-identical and `WitnessBuilder` correctly kept their on-disk provenance
+(`[unchanged — kept on-disk commitSha for staleness]`).
+
+### 🛑 The refill rate I was about to report was a burst, not a rate
+
+I had a framing ready to publish: *"the hook IS wired as a `PreToolUse` hook —
+so it fires, and the class still refilled 0 → 7 in eight days from ordinary
+probe authoring. That's the same shape AGENTS.md records for raw-float64:
+warn-only drains get refilled."* — and a proposal to put promoting the detector
+into `scripts/precision-gates.sh` to the owner.
+
+**Measured on pristine `origin/main` at `c9fd78b0ad`: still exactly 7 flagged,
+the same 7 files. Zero new sites.** That is **441 commits** and **8 days**
+past the burst, including **54 changed files under `computations/probes/`** —
+precisely the authoring activity the "~1 site/day" reading predicted would
+refill it.
+
+So the 2026-08-30 → 09-05 accretion was a **burst**, and a six-day window is
+not a rate. `scripts/precommit-tolerance-floor-warn.sh` is still wired at
+`.claude/settings.json:64`; the detector is still absent from
+`scripts/precision-gates.sh` (`grep -c` → 0). **On this evidence the warn-only
+hook is holding, and promoting it to a blocking gate is not worth the owner's
+attention.** Recommendation withdrawn.
+
+### Free finding, NOT fixed here — a live scan gone red on a word, not a thing
+
+`em_linking_upper_bound_precision_budget.py`'s
+`no_ropelength_or_ideal_knot_source_in_the_repo` is **red on re-run** (`computed
+3`, `expected 0`) and **green in the witness committed on `main`**. Its three
+hits are all the same passing phrase — *"a Möbius-energy or ropelength
+minimiser"* — in `probes/the_torsion_half_is_not_an_invariant_probe.py` (+ its
+witness) and `mass-theory/frenet-framing-is-not-an-invariant.md`, each saying
+what the framing is *not* an invariant of. **No ropelength material has been
+acquired**; `ACQUISITION_TERMS` matches the word.
+
+The producer's author anticipated the flip — *"Recorded as a LIVE scan so a
+future acquisition flips this assertion instead of this going stale"* — and also
+recorded that the probe's conclusion does not depend on it (*"the precision
+argument above is independent of it"*). Narrowing the regex is a judgement about
+what counts as an acquisition, which is neither a precision increase nor
+corpus-derived, so under the 2026-09-07 ASK-THE-OWNER directive it is reported
+rather than done.
+
+
+---
+
+## Class 2 re-measured 2026-09-13 — the class DRAINED, and two of this bean's own claims were stale
+
+Re-ran `computations/audits/witness_producer_resolution_audit.py` before starting
+Class 2 work, because the committed figure was two weeks and ~900 commits old.
+It had moved, and in the direction this bean did not predict.
+
+| | 2026-08-30 (committed) | 2026-09-13 |
+|---|---|---|
+| live witnesses | 2949 | **3409** (+460) |
+| `RESOLVED` | 2714 | **3080** |
+| `FOUND_BY_CONVENTION` | 190 | 264 |
+| `FOUND_BY_PRODUCER_CALL` | 25 | 49 |
+| `NAMED_BUT_MISSING` | — | **0** |
+| **`ORPHAN`** | **19** | **15** |
+
+**The class drained while the corpus grew by 460 witnesses.** Same shape as the
+Class 1 refill finding immediately above: the accretion reading was wrong in both
+cases, and in both cases only a re-measurement showed it. Selftest 7/7, `exit=0`.
+
+### 🛑 Two claims in this bean's own text do not survive the check
+
+**1. The `per_irrep_pole_*` producers are NOT gone.** This bean's closing section
+sends the next agent at that pair as "where the value is", on the reading that
+its producing code was lost. Measured: `computations/per_irrep_pole_proton_h3.py`
+and `computations/per_irrep_pole_deuteron_h6.py` are **both in the tree**, both
+witnesses **resolve**, and neither appears in the `ORPHAN` list.
+
+What the sidecar actually recorded is narrower and is still true: the **script
+names** were lost from the *block prose* by token substitution — `grep -c "the
+canonical formalism"` on
+`mass-theory/per-nucleon-shift-additive-linearity-proof.md` returns **4**, the
+"four sites in one block" the sidecar named. A lost *name in prose* is not a lost
+*file*, and this bean's text runs the two together.
+
+**2. The deuteron figure is stale.** This bean records the deuteron witness as
+`computed: 38, expected: 40`. The committed witness reads **`computed: 46,
+expected: 40`** (`deuteron_full_tr_M_u_pole_eq_shift_NF`, computedAt
+2026-08-19 — *before* this bean's 2026-08-30 entry). Do not quote 38.
+
+**The substantive half of the finding stands, re-verified.** Both witnesses are
+committed **failing** — proton `full_tr_M_u_pole_eq_shift_NF_proton` **18 vs 19**,
+deuteron **46 vs 40** — while the reader-facing block at
+`per-nucleon-shift-additive-linearity-proof.md:42` links the proton witness
+directly and reports its numbers as confirmations.
+
+### What is left here, and why it is not done in this tranche
+
+Two separable pieces, neither in the tolerance-floor scope of PR #7257:
+
+- **Restore the four substituted script names in the block prose.** Corpus-derived
+  — the witnesses name their own producers and the sidecar names the sites — but
+  it is a math-bearing `.md` edit needing the render-QA gate and a sidecar
+  refresh, and each of the four sites needs a per-site determination of which of
+  the two names belongs there.
+- **The block reports failing numbers as confirmations.** Restating that is a
+  content-correctness judgement about what the block should now claim, which is
+  the author's call under the 2026-09-07 ASK-THE-OWNER directive, not a
+  mechanical repair.
+
+The remaining 13 `ORPHAN` witnesses are unchanged in character: each is still a
+choice between regenerating (which deletes recorded analysis) and restoring
+producing code from history.
+
+### 🛑 Correction, same day — `ORPHAN 15` is name-resolution scope, and I quoted it without that
+
+The table above reports `ORPHAN 19 → 15` as "the class drained". That is correct
+**for what `witness_producer_resolution_audit.py` measures** and wrong as a
+statement about this bean's Class 2, which is broader. The audit's own docstring
+says so in a section headed *"What it does NOT do"*:
+
+> It does not check that the named script actually WRITES the witness … A
+> `RESOLVED` verdict here means *the name resolves to a file*, which is strictly
+> weaker.
+
+So `ORPHAN` means **"no script of that name exists anywhere"**, not **"no script
+writes to this path"** — and Class 2 is about the second.
+
+**The second class is measured, by a sibling, at 21.** Bean `qou-baye`
+(`b0472bbafd`, on `main`) reports **21 dirty witnesses at a path no producer
+writes** — pre-refactor copies left at the `computations/` root when the producer
+moved into `probes/`, `substrate/` or `alpha/` in the 2026-06-02 subdirectory
+refactor. Each carries a `scriptFile` naming a script that **does** exist, one
+directory over, so my audit correctly returns `RESOLVED` and they never reach its
+`ORPHAN` bucket.
+
+Verified on the live root copy: `pentagon-to-borromean-h4-probe.witness.json`
+carries `scriptFile: pentagon_to_borromean_h4_probe.py`, which exists at
+`computations/probes/` and writes there, never to the root path the witness sits
+at.
+
+**Measured disjointness — the two counts do not compete and no work was
+duplicated:**
+
+| | population | overlap |
+|---|---:|---|
+| `witness_producer_resolution_audit` `ORPHAN` (name) | 15 | — |
+| `qou-baye` (write path) | 21 | **NONE** |
+
+All 21 root copies are still present on this branch. So the honest figure for
+"a witness whose producing code does not write it" is **at least 36**, and the
+`19 → 15` drain describes one of its two halves.
+
+**This is the same error the section above it documents**, one turn later: a
+number quoted without the method that produced it. The tool prints its own scope
+and I did not carry it. `qou-baye` is the live carrier for the write-path half
+and owns its three options (its author recommends repointing the two
+paper-visible citations, then deleting the orphans) — **not duplicated here.**
+
+## 2026-09-15 — Class 3: the green is about a REFERENCE that has since moved
+
+A third member of the same family, found while trying to answer a different
+question (whether `phi_k_weight_family_discriminator`'s witness could be checked
+without the matching `pyhecke_native` binary). Same shape as classes 1 and 2:
+a witness records a green that no longer reproduces, no existing audit can see
+it, and the check that would catch it is one line.
+
+**The instance.** `computations/probes/phi-k-weight-family-discriminator.witness.json`
+records `8/8 ok`, `computedAt 2026-09-05T06:38:03`. A fresh run on this tree is
+**7/8**, and the failure is `reproduces_committed_producer_under_dq2_over_D2`:
+
+| row | reference (read today) | this probe (fresh) | rel |
+|---|---|---|---|
+| no_FR | 1.54887547774 | 1.76060685111 | 0.1367 |
+| 4_1 | 1.23085660637 | 2.10490813661 | 0.7101 |
+| 5_2 | 1.21688276949 | 2.47527495144 | 1.034 |
+| 6_1 | 1.60678321377 | 1.92396555287 | 0.1974 |
+
+That assertion is not about this probe's own numbers. Line 542 reads
+**another producer's committed witness** —
+`COMPUTATIONS / "fr-pullback-k3-test.witness.json"`, field `["data"]` — and the
+probe's own header (line 94) calls itself a *"READ-ONLY companion"* that
+deliberately does not touch `fr_pullback_k3_test.py` because that file is owned
+elsewhere. So the coupling is one-way by design and the probe has no say in when
+its reference is regenerated.
+
+**The reference was regenerated 2h16m after the green was recorded.**
+`fr-pullback-k3-test.witness.json` carries `computedAt 2026-09-05T08:54:32`
+against the phi-k witness's `06:38:03`. It now holds `1.5488 / 1.2308 / 1.2168 /
+1.6067` — which is the **molien** row of `qou-oots`'s own record — where that
+bean records the d_q²/D² row this assertion compares against as
+`1.0659881 / 1.2425297 / 1.2911323 / 1.0478474`. So the reference appears to
+have been regenerated under a different weight family. **Appears**, not
+established: see the limitation below.
+
+**Ruled out: the producer's own source drift.** The probe IS self-stale —
+witness `scriptHash 02567f2cea25`, live source `adb0a178178a`, drifted by
+`70ae502091` (*"drain(qou-psjm): route 372 AME/CODATA literals to the
+registry"*), which replaced three hardcoded AME binding energies with registry
+constants. That is a real substantive-looking drift and it is **not the cause**.
+Measured both ways:
+
+- the constants move by `5.84e-8` (D), `2.12e-7` (T), `1.92e-7` (³He),
+  `4.10e-7` (⁴He) relative;
+- checking the producer out at the pre-drain commit `53e53959d7` and re-running
+  gives `2.10490760997 / 2.47527433214 / 1.92396634162` against today's
+  `2.10490813661 / 2.47527495144 / 1.92396555287` — agreement to ~`2.5e-7`, the
+  scale of the inputs, with **no amplification** and **no ranking change**
+  (`6_1 < 4_1 < 5_2` both ways).
+
+I first read the 20-103 % discrepancy as a ~10⁶ amplification of the AME
+correction and that was wrong; the pre-drain run refutes it. Recording the
+refuted reading because it is the tempting one — a self-stale `scriptHash` sat
+right next to a large discrepancy and the two are unrelated.
+
+**NOT established, and not establishable in this container.** Whether the cause
+is the reference regeneration or the `pyhecke_native` rebuild. The witness
+records `pyhecke_native 0.9.0 / build e3fab84c4c1df76a`; this container has the
+same version at build `5df83fbc24b06f8a`, and the probe calls
+`pyhecke_native.chi_lambda_braid_mpfr` (line 307) for the characters the whole
+discriminator is built on. The clean separation — check the reference witness
+out as it stood at the phi-k witness's own `commitSha` and re-run — is
+**unavailable**: both `69f29ec5219abc5d838e85f74d33a8fa0896313b` (phi-k) and
+`46bfe7fa5fc7b134698795411684dd2e61500f5b` (reference) fail `git cat-file -e`
+on this shallow clone, the ~55 % `rewritten` class AGENTS.md documents. So this
+entry establishes that the green is stale and that the AME drain is not why; it
+does not establish which of the two remaining causes it is.
+
+**Why nothing catches it.** `witness_dependency_drift` keys self-staleness on
+the producer's own `scriptHash`, which here points at the wrong change.
+`ghost_value_sweep` catches a producer whose source changed. `qou-381n`'s
+screen catches a *Lean literal* citing a producer whose witness moved. None of
+them look at a witness's assertions to see that they READ ANOTHER WITNESS. The
+check is as cheap as the other two classes': for any producer that opens a
+sibling `*.witness.json`, compare that file's `computedAt` against the
+consuming witness's own `computedAt`, and flag every consumer whose reference is
+newer than the green it recorded.
+
+**Not fixed here, deliberately.** Regenerating either witness belongs to the
+`qou-oots` / FR-pullback arc, not to this bean, and is outside the two
+ask-first exemptions — it is neither a precision increase nor corpus-derived.
+The tree was restored after both runs (`git status` clean); nothing was
+committed but this note.

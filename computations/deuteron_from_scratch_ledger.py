@@ -92,8 +92,15 @@ def rel(pred: mp.mpf, ref: mp.mpf) -> mp.mpf:
     return (mp.mpf(pred) - mp.mpf(ref)) / mp.mpf(ref)
 
 
-def ppb(x: mp.mpf) -> float:
-    return float(x * mp.mpf(10) ** 9)
+def ppb(x: mp.mpf) -> str:
+    """Serialize a relative quantity in ppb.
+
+    NOT `float(...)`: the arithmetic upstream is `mp.mpf` at DPS+10 guard
+    digits, so a float64 cast at the write truncates ~45 determined digits
+    (AGENTS.md NO-FLOAT64; drained 2026-09-13). Rendered at `DPS` via
+    `q_str`, i.e. the guard digits are dropped rather than published.
+    """
+    return q_str(x * mp.mpf(10) ** 9)
 
 
 # ---------------------------------------------------------------- S0
@@ -118,8 +125,8 @@ def stage0_q_pin() -> dict:
         "q_proton_anchor": q_str(q_p),
         "q_muon_anchor": q_str(q_mu),
         "q_pinned_witness": Q_50_DIGIT_STR,
-        "pin_roundtrip_reldiff": float(abs(rel(q_p, pinned))),
-        "anchor_tension_rel": float(tension),
+        "pin_roundtrip_reldiff": q_str(abs(rel(q_p, pinned))),
+        "anchor_tension_rel": q_str(tension),
         "anchor_tension_ppb": ppb(abs(tension)),
         "pin_note": (
             "RAW proton pin (owner ruling 2026-07-03; fitted habiro "
@@ -276,7 +283,7 @@ def stage3_trace(q: mp.mpf) -> dict:
             "ratio_bring_color_weighted": q_str(ratio_cf["bring_color_weighted"]),
             "ratio_chi_lambda_braid": q_str(ratio_cf["chi_lambda_braid"]),
         },
-        "route_ratio_gap_rel": float(
+        "route_ratio_gap_rel": q_str(
             abs(ratio_cf["chi_lambda_braid"] - ratio_transfer)
             / abs(ratio_transfer)),
         "note": (
@@ -349,8 +356,8 @@ def stage5_binding(q: mp.mpf) -> dict:
         v = mp.mpf(value_mev)
         routes[key] = {
             "B_MeV": q_str(v, 20),
-            "err_rel_pct": float(rel(v, B_AME) * 100),
-            "ratio_AME_over_pred": float(B_AME / v),
+            "err_rel_pct": q_str(rel(v, B_AME) * 100),
+            "ratio_AME_over_pred": q_str(B_AME / v),
             "tier": tier,
             "error_source": source_of_error,
             "_raw": v,
@@ -409,7 +416,7 @@ def stage5_binding(q: mp.mpf) -> dict:
         "only in the linear (A=2) regime, −9% is the residual curvature")
 
     routes["_B_AME_MeV"] = q_str(B_AME, 20)
-    routes["_bor_tau"] = float(bor["tau"])
+    routes["_bor_tau"] = q_str(bor["tau"])
     return routes
 
 
@@ -432,9 +439,9 @@ def stage6_compose(s2: dict, s5: dict) -> dict:
             B_err_mev = -(B - mp.mpf(str(AME_B_DEUTERON_MEV_VALIDATION)))
             rows[key] = {
                 "m_D_MeV": q_str(m_D, 20),
-                "err_m_D_ppm": float(rel(m_D, m_D_ref) * mp.mpf(10) ** 6),
-                "error_from_nucleon_masses_MeV": float(nucleon_err_mev),
-                "error_from_binding_MeV": float(B_err_mev),
+                "err_m_D_ppm": q_str(rel(m_D, m_D_ref) * mp.mpf(10) ** 6),
+                "error_from_nucleon_masses_MeV": q_str(nucleon_err_mev),
+                "error_from_binding_MeV": q_str(B_err_mev),
             }
         out[anchor] = {
             "nucleon_sum_MeV": q_str(nucleon_sum, 20),
@@ -455,9 +462,10 @@ def main() -> int:
     print("\n[S0] q₀ pin (solved live)")
     print(f"  q₀(proton anchor) = {s0['q_proton_anchor'][:30]}…")
     print(f"  q₀(muon anchor)   = {s0['q_muon_anchor'][:30]}…")
-    print(f"  pin round-trip vs witness: {s0['pin_roundtrip_reldiff']:.2e}")
+    print("  pin round-trip vs witness: "
+          f"{float(s0['pin_roundtrip_reldiff']):.2e}")
     print(f"  ERROR SOURCE: μ–p anchor tension = "
-          f"{s0['anchor_tension_ppb']:.4f} ppb (in q-space; RAW pin)")
+          f"{float(s0['anchor_tension_ppb']):.4f} ppb (in q-space; RAW pin)")
     print(f"  PIN NOTE: {s0['pin_note']}")
 
     s1 = stage1_gamma_gamma(q_p)
@@ -473,10 +481,12 @@ def main() -> int:
         r = s2[anchor]
         print(f"  [{anchor}] m_p={r['m_p_MeV'][:12]}  m_n={r['m_n_MeV'][:12]}  "
               f"m_μ={r['m_mu_MeV'][:12]}")
-        print(f"    err(ppb): m_p(bare/RAW)={r['err_m_p_bare_ppb']:+.4f}  "
-              f"m_p(hab.46 FIT)={r['err_m_p_pin46_ppb']:+.2f}  "
-              f"m_p(hab.4143/90 FIT)={r['err_m_p_habiro_prod_ppb']:+.2f}  "
-              f"m_n={r['err_m_n_ppb']:+.2f}  m_μ={r['err_m_mu_ppb']:+.2f}")
+        print("    err(ppb): "
+              f"m_p(bare/RAW)={float(r['err_m_p_bare_ppb']):+.4f}  "
+              f"m_p(hab.46 FIT)={float(r['err_m_p_pin46_ppb']):+.2f}  "
+              f"m_p(hab.4143/90 FIT)={float(r['err_m_p_habiro_prod_ppb']):+.2f}  "
+              f"m_n={float(r['err_m_n_ppb']):+.2f}  "
+              f"m_μ={float(r['err_m_mu_ppb']):+.2f}")
     for f in s2["mismatch_flags"]:
         print(f"  MISMATCH FLAG: {f}")
 
@@ -490,7 +500,7 @@ def main() -> int:
     print(f"  transfer ratio(atom/free) = "
           f"{s3['transfer']['ratio_atom_over_free'][:12]}")
     print(f"  ERROR SOURCE: route-choice ratio gap = "
-          f"{s3['route_ratio_gap_rel']:.3e} (different normalizations; "
+          f"{float(s3['route_ratio_gap_rel']):.3e} (different normalizations; "
           f"convention-D Jones-vs-Wenzl spread = 1.955e-4)")
 
     s4 = stage4_sdp()
@@ -512,15 +522,16 @@ def main() -> int:
         if key.startswith("_"):
             continue
         print(f"  {key:28s} B={r['B_MeV'][:10]:10s} "
-              f"err={r['err_rel_pct']:+7.2f}%  [{r['tier'].split('(')[0].strip()}]")
+              f"err={float(r['err_rel_pct']):+7.2f}%  "
+              f"[{r['tier'].split('(')[0].strip()}]")
 
     s6 = stage6_compose(s2, s5)
     print(f"\n[S6] composed m_D vs AME ({s6['m_D_AME_MeV'][:14]} MeV) — proton anchor")
     for key, row in s6["proton_anchor"]["routes"].items():
         print(f"  {key:28s} m_D={row['m_D_MeV'][:12]:12s} "
-              f"err={row['err_m_D_ppm']:+9.1f} ppm  "
-              f"(nucleons {row['error_from_nucleon_masses_MeV']:+.5f} MeV, "
-              f"binding {row['error_from_binding_MeV']:+.5f} MeV)")
+              f"err={float(row['err_m_D_ppm']):+9.1f} ppm  "
+              f"(nucleons {float(row['error_from_nucleon_masses_MeV']):+.5f} MeV, "
+              f"binding {float(row['error_from_binding_MeV']):+.5f} MeV)")
 
     # strip mp objects for JSON
     def scrub(obj):
@@ -570,7 +581,7 @@ def main() -> int:
     # recorded as its own ledger line, not a failure.
     from q_parameter import MASS_RATIO_P_E_STR
     r_bare = s2["proton_anchor"]["_raw"]["m_p_bare"] / mp.mpf(str(M_E_MEV))
-    ratio_roundtrip = float(abs(rel(r_bare, mp.mpf(MASS_RATIO_P_E_STR))))
+    ratio_roundtrip = q_str(abs(rel(r_bare, mp.mpf(MASS_RATIO_P_E_STR))))
     wb.add_data("S2_codata_mev_conversion_inconsistency_ppb",
                 s2["proton_anchor"]["err_m_p_bare_ppb"])
     wb.add_assertion(
@@ -580,7 +591,7 @@ def main() -> int:
                "identity (not a prediction) — CODATA m_p/m_e")
     wb.add_assertion(
         "borromean_tau_below_one",
-        computed=float(s5["_bor_tau"] < 1),
+        computed=float(mp.mpf(s5["_bor_tau"]) < 1),
         expected=1.0,
         source="Li₂^q convergence gate |tr_M(β_Bor)| = 0.9986 < 1 "
                "(brane-tower plan Q3 resolution)")

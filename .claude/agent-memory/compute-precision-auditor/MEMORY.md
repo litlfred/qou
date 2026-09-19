@@ -158,6 +158,44 @@ CWD-relative write that strays the witness to the repo root, and one genuinely
 stale consumer. **Zero were environment drift.** Full worked cases:
 `measurement-hygiene-traps.md`.
 
+## TRAP — an `mpf` can be mpf-TYPED and float64-VALUED; check the SOURCE, not the type
+
+`pyhecke.wedderburn.q_hook_product` / `q_factorial` / `wedderburn_weight` accumulate
+`mp.mpf(1) * q_int(k)` over **`q_parameter.q_int`, which is float64** (`Q` is a
+Python float). They return `mpf`, print 40 digits, and carry ~16. So `isinstance(x,
+mpf)` is **not** evidence of precision and neither is the digit count of its repr —
+resolve the value to its arithmetic source. The exact route already exists:
+`qou_substrate.constants.q_int_at`, or `(Q_MP**n - Q_INV_MP**n)/HA_MP`.
+
+Measured 2026-09-12 on `C_λ = m_e·H_q·y_λ·ρ_λ`: excising the float64 from `μ_λ`/`s_*`
+removes **2.4946976e-16** and the `q_int` route still **leaves 1.0212424e-15** —
+4× more than was removed. Root fix is 124 py files / 243 witnesses (`qou-oiz3`), so it
+is an owner call, not a sweep. **`_Q_FRAC` from `pyhecke.gram` is NOT the exact q**:
+it is the engine's rational `1.11`, 1.93e-5 from the anchor. `_Q_MP` carries 50
+digits (9.91e-52 from `q_at(90)`) — **below `OUTPUT_DPS = 60`**.
+
+## TRAP — a CACHED mpf inherits the ambient dps of whoever touched it FIRST
+
+`hecke_core_legacy._partition_table` is built once and reused for the process.
+mpmath rounds to the **ambient** `mp.dps`, which is **15** in a bare import. So every
+mpf in it was 70 digits when `unified_iterative_correction` (which carries its own
+`workdps`) got there first and **15** when any of the eight probes / two audits that
+touch `_PARTITION_TABLE` directly did — with **no signal either way**. Measured:
+`q_factorial(4)` parts company with itself at the 17th digit across the two contexts.
+Generalise it: **a memo/`lru_cache`/module-level cache over mpf is a precision bug
+unless the builder sets its own `workdps`.** Fixed by wrapping the body; a probe that
+re-measures must call the *function*, not read the cache twice.
+
+## TRAP — a per-block float64 bound does NOT transfer to a cancelled total
+
+PR #7237 reported the `μ_λ` gap as "2.54432e-16, the floor of float64, so it bounds
+the damage". True **per block** and false for the accumulated per-atom total: at
+`k_exact = 4` the ⁸Be gated total moved **8.44e-16** (3.8× eps) and its ungated total
+**6.66e-15** (30×), because that total is 1.3e-3 MeV assembled from O(1)
+contributions. **Absolute** shifts were ~1e-17 MeV everywhere, including there — so
+report both, and say which one the "floor" claim is about. Neither direction rescues
+the old value: agreement at the floor never was evidence of correct rounding.
+
 ## TRAP — `chi_all_lambda_any` carries its OWN `dps=50`, not the ambient `mp.dps`
 
 `chi_general_word.chi_all_lambda_any(word, n, *, dps=50, …)` computes at its
@@ -169,6 +207,46 @@ failed a `1e-50` check at ~1e-48 while the same check passed at A = 4 in
 #7200, because four digits of cancellation ate the 50 that were actually
 there. Pass `dps=DPS` explicitly at every call site; a green at small A is
 not evidence the precision is what the header says.
+
+## TRAP — a FINITE-SIZE threshold is an artifact in its own right, and it manufactures positives
+
+Distinct from "thresholds that encode your prose": there the *assertion* was
+wrong, here the *threshold* was. Measured on the XXZ two-magnon bound state
+(`qou-6b9y`): a level was counted as "above the continuum" against a continuum
+edge rebuilt from the FINITE-N one-magnon spectrum. At k = 0 that edge is exact
+(the momentum pair `(a, -a)` contains `a = 0`), so the k = 0 numbers were fine —
+but in ODD momentum sectors the same construction is short by
+`8|cos(pi m/N)|(1 - cos(pi/N))`, which at N = 14 is **21-53x the quantity being
+detected**. Eight sectors were reported bound that in fact sit BELOW the true
+edge. **Whenever a detection reads "X exceeds T", measure T's own finite-size
+error against the size of X** — and report the count against BOTH the finite and
+the thermodynamic threshold, never only the one you built.
+
+Two companions from the same measurement:
+
+- **Before extrapolating in system size, compute the object's own length scale.**
+  The bound state's extent is `xi = 1/log(Delta)` = **184 sites** at q0 against
+  4.48 at a q = 2 control; N = 8..14 was 13x too small and NO accessible dense ED
+  would have converged. The fix was not a bigger N, it was a **reduction**: the
+  two-magnon block at fixed momentum is exactly real-symmetric TRIDIAGONAL in the
+  relative coordinate (dim ~N/2, not ~N^2/2), and Sturm-sequence bisection gives
+  its top eigenvalue in O(N). N = 4096 then costs **2.6 s** where N = 14 had been
+  the ceiling. Ask for the reduction before asking for the cluster.
+- **A finite-size ratio quoted as an order of magnitude is a FLOOR.** "1.5-2
+  orders of magnitude below the control", read off N <= 14, is **3.23 orders**
+  (1693.5) in the limit — the N = 14 reading was 24x short and still climbing.
+
+## TRAP — mpmath `eig` fails where `eighe`/`eigsy` succeed; for a tridiagonal use Sturm
+
+`mpmath.eig` runs a generic nonsymmetric QR and raises
+`RuntimeError: qr: failed to converge after N steps` on matrices the Hermitian
+routine handles without complaint — measured on a **12x12 real symmetric
+tridiagonal** and a **52x52 Hermitian** momentum block, both fine under
+`eighe(H, eigvals_only=True)`. A probe that builds a Hermitian matrix and calls
+`eig` is one size increase away from a crash that looks like a physics wall.
+For a symmetric tridiagonal go further: Sturm-sequence bisection counts
+eigenvalues below `lam` in O(n) per evaluation and reaches any single eigenvalue
+to full working precision, which is what makes n ~ 2000 cheap.
 
 ## STABLE — long-compute logging discipline
 
@@ -249,6 +327,7 @@ Everything here is a *method*, not an answer.
 | producers that genuinely fail | the seven-requirement runner above | 2 (`su4_1111_markov_trace_probe`, `qbeta_habiro_element_probe`) | 2026-08-24 |
 | missing-dual LP/SDP witnesses | `python3 computations/lp_dual_witness_validator.py` | run it — do not cite a dated baseline | — |
 | `path_bridge` bootstrap defects | `python3 computations/audits/path_bridge_bootstrap_audit.py` | 6 | 2026-08-29 |
+| `binding_energy(1,1)` wall cost | `hecke_core_legacy.binding_energy(1, 1)`, kernel live | **1233.9 s** (1278.5 s on `origin/main`) for the SMALLEST bound atom; A ≥ 3 strictly worse — `uic_binding_a_series_kernel_live_probe` exits 124 at 2400 s with no rows | 2026-09-12 |
 
 **Read the over-flag row's history before quoting anything near it.** Two
 earlier figures were wrong in opposite directions and both were an agent's
@@ -400,3 +479,35 @@ TRAPs.
   reads *"Measured after the fix, with the binary built"*. Plus the BASELINE for the
   +48.1039 % `tr_M` move (a y_λ weight-table regeneration) and the p–n colour-weight
   localisation. **Read that file before auditing any witness-to-witness dependency.**
+- 2026-09-12 (`qou-oiz3`, PR #7245): owner directive **"excise float64"**, acting on
+  the finding PR #7237 / `qou-t6be` left. Three TRAPs above are new and all three cost
+  me a wrong sentence first: mpf-typed-but-float64-valued, the cached-table dps, and
+  the per-block bound not transferring to a cancelled total. Four more, worth carrying:
+  * **The cited lines are where the previous report LOOKED, not the surface.** Two
+    became **nine** sites + the cache. Two of the nine (`atom_markov_trace`,
+    `atom_frobenius_norm_sq`) are on a *different leg* of `binding_energy`
+    (`binding_from_frobenius_pairing`) that the original framing never reached.
+  * **Run BOTH arms before attributing a stale witness.** `uic-binding-a-series` is
+    3.9e-15 off; the obvious read is "my change moved it". The baseline arm gives the
+    **same value as post-fix**, so it is upstream drift. Cost: a second 21-min run.
+    And the arms agreeing is **not** evidence the numbers agree — `binding_energy`
+    returns `float(B)`, so the comparison happened after a cast to 53 bits.
+  * **A timing in PROSE defeats every field-name mask** (already in
+    `measurement-hygiene-traps.md`; hit again). `binding-word-3A-reembedding` "moved"
+    in 4 fields, all four wall-clock, two inside an assertion's sentence.
+  * **`git checkout -- computations/` is what the gate PRINTS and it eats source
+    edits.** Revert the 11 contended audit witnesses BY NAME.
+- 2026-09-14 (`qou-6b9y`, PR #7372): extracted the XXZ n-string band the sibling
+  probe could not, `E_n(k) = -2(q^n + q^-n - 2 cos k)/[n]_q`. Gates: family run in
+  full via `precision-gates.sh --changed` — **EXIT 1, 10 blocking reds, ALL
+  pre-existing**; my files appear in **zero** of the 525 log lines, and the branch
+  touches nothing else under `computations/`. `probe-float64-guard --strict` clean
+  on all three `onedim/` files. Two new TRAPs above, both mine before they were
+  caught. Three operational notes: **the gate run reverts the ephemeral-only audit
+  witnesses itself** and names the substantive movers separately — revert THOSE by
+  name, never `git checkout -- computations/`; **a concurrent sibling on the same
+  checkout committed my uncommitted working-tree edit into its own commit**
+  (`9534fba59`) while I ran the gates, which is the `git commit -- <paths>` rule
+  from 2026-09-04 seen from the other side — commit before a 5-minute gate run, not
+  after; and **`q_at(mp.dps)` is the right anchor call for a probe** (proton pin,
+  production default) with explicit rational controls beside it.

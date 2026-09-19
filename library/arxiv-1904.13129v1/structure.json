@@ -1,0 +1,184 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1904.13129v1",
+ "source": {
+  "file": "1904.13129v1.pdf",
+  "sha256": "dfa7fd0ebf1ab8c446310a306cbed479e9da1fbec96dfdefdcedbfb6b801d8fa",
+  "bytes": 345333,
+  "pages": 24,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1904.13129",
+   "version": "1",
+   "primary_class": "math.AP",
+   "stamp_date": "30 Apr 2019"
+  },
+  "doi": null,
+  "title": "On the regularity of critical points for O\u2019Hara\u2019s knot energies: From smoothness to analyticity",
+  "authors_raw": "Nicole Vorderobermeier",
+  "title_lines": [
+   "On the regularity of critical points for O\u2019Hara\u2019s knot",
+   "energies: From smoothness to analyticity"
+  ],
+  "abstract": "W e prove the analyticity of smooth critical points for O\u2019Har a\u2019s knot energies E \u03b1,p , with p = 1 and 2 < \u03b1 < 3, subject to a \ufb01xed length constraint. This implies, together with the main result in [ BR13], that bounded energy critical points of E \u03b1, 1 subject to a \ufb01xed length constraint are not only C\u221e but also analytic. Our approach is based on Cauchy\u2019s method o f majorants and a decomposition of the gradient that was adapted from the M\u00f6bius energy case E 2, 1 in [ BV19].",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20211110104056-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Fractional Sobolev spaces",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Properties of analytic functions",
+   "page": 4,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Fa\u00e0 di Bruno's formula",
+   "page": 5,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Decomposition of the first variation of E",
+   "page": 6,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "An estimate for the Q term",
+   "page": 7,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "A fractional leibniz rule and the form of PT Q",
+   "page": 9,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "The form of the lower order remainder terms R1 and R2",
+   "page": 14,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Proof of the main theorem by Cauchy's method of majorants",
+   "page": 17,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 651,
+   "n_words": 117
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 7503,
+   "n_words": 1375
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2630,
+   "n_words": 518
+  },
+  {
+   "id": "sec-002-22-properties-of-analytic-functions",
+   "number": "2.2",
+   "title": "Properties of analytic functions",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 14,
+   "n_chars": 19945,
+   "n_words": 4074
+  },
+  {
+   "id": "sec-003-6-the-form-of-the-lower-order-remainder-terms-r1",
+   "number": "6",
+   "title": "The form of the lower order remainder terms R1 and R2",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 23,
+   "n_chars": 16064,
+   "n_words": 3395
+  },
+  {
+   "id": "sec-004-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 3680,
+   "n_words": 585
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "sections": 6,
+  "chars_total": 50473
+ }
+}

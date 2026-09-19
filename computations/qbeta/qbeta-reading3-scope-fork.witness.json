@@ -1,0 +1,156 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-12T19:41:54.183224+00:00",
+  "commitSha": "426af792b837f58034e60bc309bc15f5fc623b82",
+  "assertions": [
+    {
+      "name": "y_weights_normalise",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "y_(3) + 2·y_(2,1) = 1 exactly; y_(3) = 0.505404226503930803, y_(2,1) = 0.247297886748034598"
+    },
+    {
+      "name": "chi21_of_identity_is_the_block_dimension",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "χ_(2,1)(1) = 2.0 = dim V_(2,1)"
+    },
+    {
+      "name": "chi3_of_every_vertex_power_is_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "reproduces the sorry-free unit_on_vertices_eq_one numerically, from the opposite direction"
+    },
+    {
+      "name": "chi3_is_generator_independent_p",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "χ_(3) = ∏(q + dᵢ) depends only on the shift multiset, which flavour DETERMINES — so it is positive and never binding"
+    },
+    {
+      "name": "chi3_is_generator_independent_n",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "χ_(3) = ∏(q + dᵢ) depends only on the shift multiset, which flavour DETERMINES — so it is positive and never binding"
+    },
+    {
+      "name": "reading3_narrows_but_does_not_close",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "320 admissible Δ pairs of 1024 — a 3.2× narrowing, not a selection"
+    },
+    {
+      "name": "target_is_INSIDE_the_admissible_range",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "so reading 3 does not exclude agreement — the falsifiability problem, not a solution"
+    },
+    {
+      "name": "nearest_admissible_pair_misses_the_window",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "nearest |residual| = 9.5606974 %, missing the ~780 ppb window by 122573.04× — so it cannot manufacture agreement either"
+    },
+    {
+      "name": "reading_A_admits_the_core",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "k = 3 = β_Bor selected — the sibling's frobeniusSelected_borromean"
+    },
+    {
+      "name": "reading_B_EXCLUDES_the_census_assignment",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "both negative — the element every merged probe on this arc computes is inadmissible under reading (B)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "qbeta-reading3-scope-fork",
+  "scriptFile": "qbeta_reading3_scope_fork_probe.py",
+  "scriptHash": "74709fecfa6f",
+  "scriptCommitSha": "426af792b837f58034e60bc309bc15f5fc623b82",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_reading3_scope_fork_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_reading3_scope_fork_probe.py"
+  },
+  "description": "Applies the SDP half of the 2026-09-08 ruling (reading 3: Frobenius positivity per block) to the 5 letters the gamma-gamma half provably cannot reach. It narrows 1024 -> 320 admissible Delta pairs and does not close them; the target is inside the admissible range while the nearest pair misses the experimental window by 1.2e5x. The (3) block is structurally silent. AND the SCOPE of reading 3 is ambiguous: applied to the gg-selected core it admits V^3, applied to the whole 11-crossing word it EXCLUDES the census assignment. Reports both, selects neither.",
+  "data": {
+    "markov_convention": "D — z_D = q^3/(q^2+1), Wenzl level 2",
+    "q0_anchor": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736",
+    "block_weights": {
+      "y_3": "0.50540422650393080318755870324",
+      "y_2_1": "0.24729788674803459840622064838",
+      "y_1_1_1": "0 (level 2)"
+    },
+    "chi3_generator_independent": {
+      "p": "1.3824944633925928759",
+      "n": "1.1221068216024720738"
+    },
+    "reading3_on_free_letters": {
+      "assignments_per_nucleon": 32,
+      "surviving_proton": 20,
+      "surviving_neutron": 16,
+      "admissible_pairs": 320,
+      "of": 1024,
+      "narrowing_factor": "3.2",
+      "residual_min_pct": "-98.5664799442",
+      "residual_max_pct": "35.1703783059",
+      "nearest_abs_residual_pct": "9.5606974338",
+      "nearest_over_window": "122573.044"
+    },
+    "scope_fork": {
+      "reading_A_core_only_chi21_V3": "1.9941858129799640867",
+      "reading_A_verdict": "admissible; selects k = 3 = beta_Bor",
+      "reading_B_whole_word_chi21_proton": "-0.28059335090347205473",
+      "reading_B_whole_word_chi21_neutron": "-0.37195632474134153142",
+      "reading_B_verdict": "EXCLUDES the census assignment (both negative)"
+    }
+  },
+  "caveats": [
+    "🛑 THE SCOPE OF READING 3 IS AN OPEN OWNER QUESTION, not a measurement. (A) core-only admits V^3 and selects k = 3, which is what the sibling applied on #7207. (B) whole-word excludes the census assignment and would make every residual on this bean inadmissible. BOTH fit the ruling as relayed. This probe selects NEITHER: picking (A) because its numbers survive is selection against the target, and picking (B) because it invalidates the arc is equally unearned.",
+    "Reading 3 does NOT close the 5 free letters under either scope. 320 of 1024 pairs survive, the target is inside the admissible range, and the nearest admissible pair misses the ~780 ppb window by 1.2e5x. So the SDP half is falsifiable and currently failing -- the same shape as #7188's ordering result, and NOT a rescue.",
+    "chi_(2,1) is obtained by subtraction from tr_{z_D}, so it inherits that quantity's convention (D) and pin (proton) and nothing more. Calibrated three ways first: chi_(2,1)(1) = 2 exactly, chi_(3)(V^k) = 1 exactly (the sorry-free unit_on_vertices_eq_one, reproduced from the opposite direction), and y_(3) + 2 y_(2,1) = 1.",
+    "Scope-(a): 32 generator assignments per nucleon with the SHIFTS held at their flavour-determined values and the census ORDER (core, quark, gluon). It does not enumerate positions, and it does not claim reading (B) refutes anything."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

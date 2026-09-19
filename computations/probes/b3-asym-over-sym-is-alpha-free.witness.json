@@ -1,0 +1,96 @@
+{
+  "description": "b3_asym/b3_sym is an alpha-free prediction of the chain assembly. Derived from B = -alpha[(Z-1)ln f_pp + ln f_pn + (N-1)ln f_nn]; alpha cancels in the ratio. Accuracy is REPORTED, not asserted. A nonzero result is an ISOSPIN-LABELLING asymmetry (f_pp and f_nn differ by the Hecke h, not by an EM coupling), not an electromagnetic one.",
+  "bean": "qou-o6ml",
+  "q0Anchor": "physical_proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "bond_factors": {
+    "f_pp": "0.612688037146465251595829863946",
+    "f_pn": "0.508229789376738962577995797656",
+    "f_nn": "0.403627738350825936164983650816",
+    "h": "0.20906029879563931543084621313"
+  },
+  "derived": {
+    "ratio_asym_over_sym": "-0.318567289803891097906369526326",
+    "b3_sym_MeV_at_live_alpha": "-2.74207883024715403329823969311",
+    "b3_asym_MeV_at_live_alpha": "0.873536621380459821746434074985"
+  },
+  "ame": {
+    "b3_sym_MeV": "1.426220160000000181099721885402686893939971923828125",
+    "b3_asym_MeV": "0.3818774400000000124322241390473209321498870849609375",
+    "ratio_asym_over_sym": "0.267754902581099375247847953683"
+  },
+  "relative_miss_on_ratio_pct": "-218.97720143794615707",
+  "prior_candidates_same_discriminant": [
+    {
+      "candidate": "product_beyond_pairwise",
+      "ratio_asym_over_sym": "0.054252528888885506531"
+    },
+    {
+      "candidate": "product_two_bond_only",
+      "ratio_asym_over_sym": "0.068345279213110018664"
+    },
+    {
+      "candidate": "product_three_bond_only",
+      "ratio_asym_over_sym": "0.14067812717858751094"
+    },
+    {
+      "candidate": "joint_trace_abs_c3",
+      "ratio_asym_over_sym": "0.14067809986810146275"
+    },
+    {
+      "candidate": "joint_trace_signed_c3",
+      "ratio_asym_over_sym": "0.14067809986810146275"
+    },
+    {
+      "candidate": "joint_trace_chiral_c3",
+      "ratio_asym_over_sym": "-0.1618499122771065957"
+    },
+    {
+      "candidate": "chiral_c3_two_bond",
+      "ratio_asym_over_sym": "-0.1618499122771065957"
+    },
+    {
+      "candidate": "chiral_joint_triangle",
+      "ratio_asym_over_sym": "-0.039168046379746276155"
+    },
+    {
+      "candidate": "chiral_joint_longrange",
+      "ratio_asym_over_sym": "-0.08855913772721014375"
+    },
+    {
+      "candidate": "abs_joint_triangle",
+      "ratio_asym_over_sym": "-0.02967677747100007673"
+    }
+  ],
+  "alpha_free_identity": {
+    "model_asym_over_observed_asym": "2.2874789916378924958",
+    "model_sym_over_observed_sym": "-1.9226195976974225951",
+    "quotient": "-1.1897720143794615707",
+    "note": "qou-1pig reports the antisym overshoot as 2.287479x on the (3H - 3He) convention; it is linear in alpha. The quotient of the two overshoots is not, and is the content of this probe."
+  },
+  "sources": [
+    {
+      "witness": "b3-charge-decomposition-a3.witness.json",
+      "why": "defines the mirror split and the AME target; its ten candidates are re-ranked here on the internal asym/sym ratio, which it does not itself report"
+    }
+  ],
+  "scope": "(a) scope-limited. The chain assembly with the live per-bond factors, at the proton pin. Does NOT establish that the predicted asymmetry is electromagnetic.",
+  "assertions": [
+    {
+      "name": "ALPHA_CANCELS_in_the_ratio",
+      "passed": true,
+      "detail": "ratio(alpha) = -0.31856728980389109791; ratio(7*alpha) = -0.31856728980389109791; |drift| = 4.52784e-72 < 1e-40.  The individual parts DO move: b3_sym -2.74207883 -> -19.19455181."
+    },
+    {
+      "name": "CHANNEL_NONVACUOUS_f_pp_ne_f_nn",
+      "passed": true,
+      "detail": "|f_pp - f_nn| = 0.20906029879563931543 = h = 0.20906029879563931543.  If these were equal the derived b3_asym would be 0 identically and nothing below would mean anything."
+    },
+    {
+      "name": "SIGN_derived_b3_asym_is_POSITIVE_like_AME",
+      "passed": true,
+      "detail": "derived b3_asym = 0.87353662138 MeV; AME b3_asym = 0.38187744 MeV.  Both positive."
+    }
+  ],
+  "computedAt": "2026-09-14T16:14:50.923177+00:00"
+}

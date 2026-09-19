@@ -1,0 +1,156 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1308.2499v1",
+ "source": {
+  "file": "1308.2499v1.pdf",
+  "sha256": "3b20abdc0e1b0ba9efe4819ac385e38fa76fa0f0714465753cb931a49666c5bb",
+  "bytes": 372087,
+  "pages": 32,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1308.2499",
+   "version": "1",
+   "primary_class": "math.AP",
+   "stamp_date": "12 Aug 2013"
+  },
+  "doi": null,
+  "title": "Towards a regularity theory for integral Menger curvature",
+  "authors_raw": "Simon Blatt\u2217 Philipp Reiter\u2217\u2217",
+  "title_lines": [
+   "Towards a regularity theory",
+   "for integral Menger curvature"
+  ],
+  "abstract": "We generalize the notion of integral Menger curvature introduced by Gonzalez and Maddocks [14] by decoupling the powers in the integrand. This leads to a new two-parameter family of knot energies intM(p,q). We classify \ufb01nite-energy curves in terms of Sobolev-Slobodecki\u02d8\u0131 spaces. More- over, restricting to the range of parameters leading to a sub-critical Euler-Lagrange equation, we prove existence of minimizers within any knot class via a uniform bi- Lipschitz bound. Consequemtly, intM(p,q) is a knot energy in the sense of O\u2019Hara. Restricting to the non-degenerate sub-critical case, a suitable decomposition of the \ufb01rst variation allows to establish a bootstrapping argument that leads to C\u221e- smoothness of critical points.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20181028072734Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Classification of finite-energy curves",
+   "page": 6,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Existence of minimizers within knot classes",
+   "page": 11,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Differentiability",
+   "page": 15,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Regularity of stationary points",
+   "page": 19,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "A Product and chain rule",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "B Equivalence of fractional seminorms",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 853,
+   "n_words": 125
+  },
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 11,
+   "n_chars": 21667,
+   "n_words": 3970
+  },
+  {
+   "id": "sec-001-2-existence-of-minimizers-within-knot-classes",
+   "number": "2",
+   "title": "Existence of minimizers within knot classes",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 19,
+   "n_chars": 13641,
+   "n_words": 2478
+  },
+  {
+   "id": "sec-002-4-regularity-of-stationary-points",
+   "number": "4",
+   "title": "Regularity of stationary points",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 26,
+   "n_chars": 10959,
+   "n_words": 2119
+  },
+  {
+   "id": "sec-003-a-product-and-chain-rule",
+   "number": null,
+   "title": "A Product and chain rule",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 759,
+   "n_words": 152
+  },
+  {
+   "id": "sec-004-b-equivalence-of-fractional-seminorms",
+   "number": null,
+   "title": "B Equivalence of fractional seminorms",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 32,
+   "n_chars": 9301,
+   "n_words": 1719
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "sections": 6,
+  "chars_total": 57180
+ }
+}

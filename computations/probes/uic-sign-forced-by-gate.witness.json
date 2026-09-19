@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+rust",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T07:12:34.281765+00:00",
-  "commitSha": "785f6eb11a735caf866163b0a0d0d53d91505a10",
+  "computedAt": "2026-09-13T08:19:24.583582+00:00",
+  "commitSha": "5812e613183d7e5da1bd304aad531359f867affe",
   "assertions": [
     {
       "name": "C_lambda >= 0 on every partition",
@@ -14,6 +14,22 @@
     },
     {
       "name": "every atom's gated sum is negative",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_sign_forced_by_gate_probe"
+    },
+    {
+      "name": "every atom's UNGATED sum is ALSO negative -- so the gate does NOT force the sign (retraction, 2026-09-12)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_sign_forced_by_gate_probe"
+    },
+    {
+      "name": "the ungated sum is LARGER in magnitude than the gated one, every atom -- dropping the gate moves AWAY from AME, not toward it",
       "computed": "1",
       "expected": "1",
       "passed": true,
@@ -46,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "uic-sign-forced-by-gate",
   "scriptFile": "uic_sign_forced_by_gate_probe.py",
-  "scriptHash": "382d8af79d39",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "508870deae9b",
+  "scriptCommitSha": "216616ce876e1e61f62ac5452c998ea54776f040",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -65,7 +81,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -73,7 +89,7 @@
     ],
     "reproduce": "python3 -u computations/probes/uic_sign_forced_by_gate_probe.py"
   },
-  "description": "Gap qou-sv7h: the wrong sign of unified_iterative_correction is forced by the Pass-2 complementary-slackness gate. C_lambda >= 0 on every partition; the gate keeps exactly Tr<=0; and Tr<=0 almost never has |Tr| >= d (3.4% against 34.1%) because Tr(I) = +d. So every gated term is a non-negative scale times a negative log and B < 0 is forced for any nucleus. The near-constant gated-set size explains the measured A-independence too.",
+  "description": "Gap qou-sv7h: the wrong sign of unified_iterative_correction is BIASED by the Pass-2 complementary-slackness gate but NOT forced by it. C_lambda >= 0 on every partition; the gate kept exactly Tr<=0; and Tr<=0 almost never has |Tr| >= d (3.4% against 34.1%) because Tr(I) = +d, so the gated subset is more negative than the slack one. RETRACTED 2026-09-12 (bean qou-21oc): the earlier conclusion that B < 0 is FORCED by the gate is refuted. The gate was dropped (owner ruling; its CS justification refuted sorry-free in PR #7251) and every atom's UNGATED sum is negative too, and LARGER in magnitude, so dropping it moves away from AME. Steps 1 and 3 stand; the inference from bias to forcing does not.",
   "auditOnly": "docs/audits/2026-09-05-uic-sign-forced-by-gate.md",
   "data": {
     "per_atom": [
@@ -84,7 +100,8 @@
         "gated_negative": 15,
         "n_slack": 13,
         "slack_negative": 8,
-        "gated_sum": "-1.36568481708788027734298877477531935336285597854871963014210"
+        "gated_sum": "-1.36568481708787983488824552517391627048808482049417832304465",
+        "ungated_sum": "-2.25113197732131113650186438771942010476118720999213004061417"
       },
       {
         "atom": "3H",
@@ -93,7 +110,8 @@
         "gated_negative": 9,
         "n_slack": 19,
         "slack_negative": 13,
-        "gated_sum": "-0.970408945618667555955615249086707331905884622230539681193669"
+        "gated_sum": "-0.970408945618667063118543921161231375965812032343274721543680",
+        "ungated_sum": "-1.80361722573592841252242611145289128560621863697964710552266"
       },
       {
         "atom": "3He",
@@ -102,7 +120,8 @@
         "gated_negative": 9,
         "n_slack": 19,
         "slack_negative": 13,
-        "gated_sum": "-0.807940426483001106014580952136063161444283075436726780207677"
+        "gated_sum": "-0.807940426483000953381708240147814964099658291249277836017115",
+        "ungated_sum": "-1.74659293477633870216797287095096229833854607544902699852316"
       },
       {
         "atom": "4He",
@@ -111,7 +130,8 @@
         "gated_negative": 9,
         "n_slack": 18,
         "slack_negative": 12,
-        "gated_sum": "-0.802091711635766065547999516570786965083947724598770591685197"
+        "gated_sum": "-0.802091711635765904934343561405220905152528533696837174543659",
+        "ungated_sum": "-1.37011872340989898202054828203877465445462124255346094307766"
       },
       {
         "atom": "6Li",
@@ -120,9 +140,11 @@
         "gated_negative": 14,
         "n_slack": 13,
         "slack_negative": 8,
-        "gated_sum": "-1.07697056503999882623817655094833650856525652773982186586923"
+        "gated_sum": "-1.07697056503999892320670440926302376759543981853903302840460",
+        "ungated_sum": "-1.96967839280866058979833659900274408686531494317733516847376"
       }
     ],
+    "retraction_2026_09_12": "The Pass-2 gate was DROPPED from the producer on 2026-09-12 (owner ruling, bean qou-21oc) after its complementary-slackness justification was refuted sorry-free (PR #7251). This probe's title claim -- that the wrong sign is FORCED BY the gate -- is thereby refuted: every atom's UNGATED sum is negative too, and larger in magnitude. What survives is steps 1 and 3 (C_lambda >= 0 everywhere; |Tr| >= d is ~10x rarer when Tr <= 0), i.e. the gate BIASED the sign, it did not create it.",
     "pooled_big_trace_fraction": {
       "Tr_pos_total": 82,
       "Tr_pos_big": 28,

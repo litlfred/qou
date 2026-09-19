@@ -15,6 +15,19 @@ Frobenius–Poincaré duality `HH^n ≅ (HH^{d-n})∨` collapses this
 to a one-dimensional space `HH² ≅ k`, controlled by the single
 scalar `χ(A)`.
 
+> **🛑 The sentence above is RETIRED as a derivation (2026-09-15).** The
+> collapse to a line is NOT a consequence of the QOU axioms: the duality is
+> cohomology-to-homology with a Nakayama twist (Brown–Zhang), the
+> "unique deformation direction" is a class in `HH¹` not `HH²`, and at
+> `q = 1` Whitehead's lemma gives `HH²(U(𝔤), M) = 0`.  One-dimensionality is
+> now the hypothesis **(W1) of the Wigner axiom**
+> (`QOU.AlgebraicSubstrate.WignerAxiom`, `conj:wigner-axiom`), and the
+> scalar is `χ_eu(M₀) = 2 − 2g`, the Euler characteristic of the BASE
+> CURVE (formerly written `χ(A)`; the trace of the identity of `A` is a
+> quantum dimension, `dim_q`, a different object).  `ofQOU` below sets
+> `dim := 1` BY CONSTRUCTION and must be read as *assuming* (W1).  See
+> `docs/audits/2026-09-15-chi-as-a-component-of-the-chern-character.md`.
+
 ## References
 
 - [yekutieli2010] A. Yekutieli, Central extensions of gerbes,
@@ -37,8 +50,10 @@ universe u v
 structure ClassicalLimitObstruction (k : Type*) [CommRing k] where
   /-- The dimension of the obstruction space `HH²(Ad)`. -/
   dim : ℕ
-  /-- The Euler characteristic `χ(A) = tr(id_A)`, which generates
-      the obstruction in the QOU case. -/
+  /-- The Euler characteristic of the base curve, `χ_eu(M₀) = 2 − 2g`,
+      to which the generator of the obstruction line pairs under the
+      Wigner axiom.  (This field read "`χ(A) = tr(id_A)`" until 2026-09-15;
+      `tr(id_A)` is the quantum dimension of `A`, a different object.) -/
   eulerChar : ℤ
 
 /-- Construct the classical limit obstruction for a QOU.
@@ -56,7 +71,7 @@ def ClassicalLimitObstruction.ofQOU
     {k : Type*} [CommRing k]
     (_QOU : QuantumObservableUniverse.{u, v} k)
     (eulerChar : ℤ) : ClassicalLimitObstruction k where
-  dim := 1  -- forced by observability + Frobenius duality + Drinfeld
+  dim := 1  -- ASSUMED: clause (W1) of conj:wigner-axiom, not derived (2026-09-15)
   eulerChar := eulerChar
 
 /-- In a QOU, the obstruction space constructed via `ofQOU` is

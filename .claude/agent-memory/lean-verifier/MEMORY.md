@@ -88,6 +88,25 @@ Prebuilt oleans: orphan branches `lake-cache/<pkg>-<toolchain-slug>` (`v4.24.0`
 recipe" / §"PRESERVE THE BUILD" — derive the slug from the file. Verification
 is `lean`-direct with `LEAN_PATH` at the restored dirs; `exit 0` = checks.
 
+## STABLE — the 6-line control that PROVES `-DautoImplicit=false` is live (2026-09-13)
+
+A bare `lean` is a **weaker** check than `lake build`: it does not read the
+lakefile, so `autoImplicit` stays at Lean's default `true` while both lakefiles
+set it `false`, and an unbound identifier is silently auto-bound instead of
+erroring. Don't take that on trust in a new container — it is a 10-second
+two-sided control, and `scripts/lean-direct-env.sh` does **not** set the flag
+for you:
+
+```lean
+import Mathlib.Algebra.Ring.Defs
+theorem ctl (x : Unbound) : x = x := rfl   -- `Unbound` declared nowhere
+```
+
+Measured here: bare `lean` **exit 0**; `lean -DautoImplicit=false` **exit 1,
+`Unknown identifier `Unbound``**. Always pass `-DautoImplicit=false -s 65536`
+(the `-s` mirrors the paper lakefile's `moreLeanArgs`; one generated module
+overflows the default stack and aborts as a bare exit 134 with no source error).
+
 ## TRAP — `lake build` silently evicts a restored cache
 
 A restored tree has oleans but **no `.trace` files**; Lake treats every one as
@@ -106,6 +125,39 @@ worthless** (measured 2026-09-05). `lake build` run from
 burns 40 min and +1.4 G on an 88 %-full disk rebuilding a tree nothing verifies
 against, and would not have finished. Same file, `lean`-direct: **5.0 s**.
 Check `du -sh` on both before believing a `lake build` is doing what you want.
+
+## TRAP — `lean-build-bg.sh`'s anti-eviction guard CANNOT FIRE on a trace-paired restore (2026-09-13)
+
+The SessionStart script has a guard that skips `lake build` when it sees a
+restored cache. **It is keyed on `n_olean > 100 && n_trace == 0`** — so it
+protects only the *untraced* restores the old blanket rule described. The live
+seed `a792c46d01b` is **100 % trace-paired**, so `n_trace == 1` and the guard
+**falls through to `lake build` every session start / compaction.**
+
+Worse, it picks the tree wrongly for this purpose: `mathlib_lib` is the
+**per-paper** `packages/mathlib/.lake/build/lib/lean` when that dir exists, and
+after a `lake update` that dir holds **5** oleans (`Cache/*`, the `cache` exe) —
+under the 100 threshold, so the guard cannot fire on that branch either. The
+restored 3480 at the ROOT are never looked at.
+
+So on a restored container the guard is inert in both directions. First move in
+a session: read `/tmp/qou-lean-build-status.json` (it names the step without any
+`pgrep` self-match) and **kill the chain by PID** — the script, `lake update`,
+and the `cache get` child. `cache get` is guaranteed futile here anyway: the
+Azure blob 403s every shard (measured 1655 failed / 0 downloaded of 7335).
+
+## TRAP — a guard whose regex needs MORE path components than your listing has is VACUOUS (2026-09-13, mine)
+
+Before extracting the cache I listed the archive truncated to **4** path
+components and grepped it for `^content/[^/]+/lean/\.lake/packages` — which
+needs **5**. It could never match; the "GUARD OK" it printed was about nothing,
+and I nearly extracted 1.7 GiB over a live Mathlib source clone on the strength
+of it. **Prefer a mechanical guard to a check you can fool yourself with:**
+`tar xzvf - --exclude='content/*/lean/.lake/packages/*'` makes the property true
+by construction regardless of what the archive holds, costs nothing, and `v`
+into a file gives you the full manifest to audit afterwards (tar cannot list and
+extract in one stream any other way). Same family as the `sed`-matching-nothing
+false green in §19.
 
 ## STABLE — cache shortcuts and hazards → `restore-shortcuts.md`
 
@@ -376,7 +428,10 @@ block's sidecar (128 files for one block) — revert all but yours.
    files that *construct* an instance.
 2. **A partial `LEAN_PATH` overlay shadows the whole namespace** — the first
    root holding a `QOU/` dir wins. Use a complete `cp -al` mirror, `rm -f`-ing
-   each olean before rebuilding it (else you truncate the shared inode).
+   each olean before rebuilding it (else you truncate the shared inode). The
+   same rule has a **second failure direction**: an overlay placed *after* the
+   real tree is **inert**, not layered — `lean` never falls through to it for a
+   module the earlier root also has (measured 2026-09-14; harness §2).
 3. **Truncated oleans segfault**: exit 139, zero errors, 0–1 s. Olean SIZE is
    not a test (50–226 KB inside a normal range). Two causes: a disk-full local
    build, **and the restored cache itself** — so a clean `df` does NOT clear it
@@ -393,6 +448,19 @@ block's sidecar (128 files for one block) — revert all but yours.
    mutant modules go under a scratch root laid out `QOU/…/Mod.lean` — harness §10.
 
 ## TRAP — a theorem that IS a refutation needs more than the gate → `verification-harness.md` §19
+
+**A `False`-CONCLUDING theorem is a different animal — §19a.** The stock
+instruction *"prove `0 = 1` from the same hypotheses; if you can, they are
+contradictory and the theorem is vacuous"* **cannot discriminate**: `False.elim`
+gives you `0 = 1` for every *true* such theorem, and the hypothesis set is
+unsatisfiable *necessarily* (else the theorem is false). Both questions are
+answered before you open the file. The discriminating test is **DROP-ONE** — for
+each hypothesis, a witness satisfying the other `n−1` **and refuting that one**,
+stated as one conjunction so the second half is forced. Measured 2026-09-14: 6/6
+on `no_triangle_of_triples`. And put a **negative control on your own adversarial
+file** (4-5 deliberately false `example`s, require exit 1 at each seeded line) —
+the §19 guard-the-harness rule, which does not otherwise apply when nothing is
+`sed`-mutated.
 
 `exit 0` + clean `#print axioms` does **not** detect an unused or unsatisfiable
 hypothesis, and for a refutation that failure mode "proves" a route dead on
@@ -469,8 +537,21 @@ know `main` is green is to rebuild what the cache cannot vouch for. Recipe
    (regenerate it; `main` adds modules daily).
 2. **Dirty = source changed since the cache's SEED COMMIT, or olean missing,
    or an import dirty.** Seed commit = last `main` commit before the OLDEST
-   olean mtime in the restored tree (2026-08-16 `19e299946a` for
-   `lake-cache/qou-v4-24-0` as of 2026-09-04). Measured: **1,494 of 2,600**.
+   olean mtime in the restored tree. **Re-measure it per container** — it is
+   `bbb4127145` (2026-08-23 17:00Z) here on 2026-09-14, against the
+   2026-08-16 `19e299946a` this line carried since 2026-09-04. Measured then:
+   **1,494 of 2,600**.
+
+   **The oldest-olean heuristic is a LOWER BOUND on the seed, and on a
+   RESEEDED cache it can be far too old (2026-09-14).** `tar` preserves the
+   archive's mtimes, which are *build* times, and a reseed from an
+   incremental `lake build` rewrites only what was dirty — so one tarball
+   holds oleans built across weeks. Measured in one restored tree: oldest
+   **QOU** olean 2026-08-23, oldest **mathlib** olean 2026-09-06, a 14-day
+   spread in a cache the branch describes as one 2026-09-06 seed. Too-old a
+   seed **over**-reports staleness, which is the safe direction (you rebuild
+   more than needed) — unlike the mtime criterion below, which under-reports.
+   Do not read a closure count as the true dirty set in either direction.
 3. `tools/full_rebuild.sh` over that list (put `Archimedean/PauliWitness/*`
    LAST — 25 modules at 10+ min each, nothing imports them — so the rest
    reports in ~90 min); Monitor on `^FAIL|^progress|^DONE`.
@@ -516,10 +597,12 @@ merge is not a current claim.
 
 | what | command | last seen | when |
 |---|---|---|---|
-| root mathlib oleans, healthy tree | `find .lake/packages/mathlib -name '*.olean' \| wc -l` | **3480** on the `a792c46d01b` seed (3470 on 2026-09-04; 6990 on 2026-09-03) | 2026-09-11 |
-| per-paper mathlib oleans (the OTHER half — check, but it may not EXIST) | `find content/quantum-observable-universe/lean/.lake/packages -name '*.olean' \| wc -l` | **0 — `content/*/lean/.lake` had `build/` and NO `packages/`**, so ONE mathlib tree, no shadowing, no union mirror (2846 on 2026-09-04) | 2026-09-11 |
-| whole restore, fresh container | `find . -name '*.olean' \| wc -l` | **6492** = root 3758 + QOU 2703 + UGB 29 + Fred2005 2 | 2026-09-11 |
-| restore ALREADY present + bg build running | as above | **10408** = root packages 3758 + per-paper build 2806 + per-paper packages 3813. Root count 3758 matched the seed EXACTLY, so the restore was in place and **no fetch was needed** — check before spending 1.7 GiB | 2026-09-12 |
+| root mathlib oleans, healthy tree | `find .lake/packages/mathlib -name '*.olean' \| wc -l` | **3480** on the `a792c46d01b` seed — REPRODUCED exactly 2026-09-13 (3470 on 2026-09-04; 6990 on 2026-09-03) | 2026-09-13 |
+| per-paper mathlib oleans (the OTHER half — check, but it may not EXIST) | `find content/quantum-observable-universe/lean/.lake/packages -name '*.olean' \| wc -l` | **10**, and NONE is a `Mathlib/` olean — a `lake update` clones the deps and builds only the `cache` exe (5 `mathlib/Cache/*` + 3 batteries + 2 `lakefile.olean`). So still **ONE `Mathlib/` olean root, no shadowing, no union mirror** — but the SOURCE clone now lives here and a restore must not clobber it (0 on 2026-09-11; 2846 on 2026-09-04) | 2026-09-13 |
+| whole restore, fresh container | `find . -name '*.olean' \| wc -l` | **6492** = root 3758 (mathlib 3480) + QOU 2703 + UGB 29 + Fred2005 2; archive = 32461 entries / 6492 olean / 6493 trace. Tree read 6502 = those +10 pre-existing. Trace coverage **100.0 % (3758/3758)** | 2026-09-13 |
+| restore cost, streamed (no tarball on disk) | §STABLE streaming recipe | fetch **1m33s** (1.70 GiB, 20 parts), extract **58 s**; disk 16 G → 25 G used, 14 G free | 2026-09-13 |
+| lean-direct, 3-import Mathlib-only file (`Mathlib.Tactic` + `Ring.Defs` + `Fin.VecNotation`) | `time lean -DautoImplicit=false -s 65536 <f>` | **19.8 s cold / 2.9 s warm**; `user` 2.0 s BOTH — cold page cache, not a rebuild | 2026-09-13 |
+| restore ALREADY present + bg build running | as above | **6502** = root packages 3758 (mathlib 3480) + per-paper build 2703 + per-paper packages 10 + UGB 28 + Fred2005 2. Root 3758 AND per-paper-build 2703 both matched the seed EXACTLY ⇒ restore in place, **no fetch** (10408 on 2026-09-12, when per-paper packages held 3813). Root mathlib **100 % trace-paired** (3480/3480) | 2026-09-14 |
 | union mirror over both trees, one `MathlibExt` file | `cp -aln` per §17 | **6687 oleans, 5.1 G apparent, `df` free UNMOVED** (12 G before AND after `rm -rf`) — hardlinks; also immune to the concurrent `lake build`. Real trees unchanged after removal (3758 / 2816 / 3813), so the `rm -f`-before-write rule held | 2026-09-12 |
 | lean-direct, `MathlibExt/HeckeTowerWitness.lean` (warm) | `time lean -DautoImplicit=false -s 65536 <f>` | **2.9 s** wall / 4.0 s user; dep rebuilds 51 s cold (user 5.6 s — page cache) and 2.8 s warm | 2026-09-12 |
 | cold vs warm lean-direct, `QBeta/ConventionDAdmissibleRoots.lean` | `time lean -DautoImplicit=false -s 65536 <f>` | **1m05s cold / 4.5 s warm**; `user` 3.3 s both — cold PAGE CACHE, not a rebuild | 2026-09-11 |

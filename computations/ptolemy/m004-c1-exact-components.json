@@ -1,0 +1,68 @@
+{
+ "manifold": "m004",
+ "obstruction_class": 1,
+ "variables": [
+  "c_0012_1",
+  "c_0102_1",
+  "c_0201_1",
+  "c_1011_0",
+  "c_1011_1",
+  "c_1110_0",
+  "u"
+ ],
+ "n_equations": 9,
+ "eliminant_degree": 4,
+ "components": [
+  {
+   "stage2_route": "normal-form",
+   "equations_verified": true,
+   "min_poly_T": "T**2 + 7*T + 49",
+   "field_degree": 2,
+   "irreducible_over_Q": true,
+   "discriminant": "-147",
+   "zero_coordinates": [
+    "c_0012_1",
+    "c_0102_1",
+    "c_0201_1",
+    "c_1011_0",
+    "c_1011_1",
+    "c_1110_0"
+   ],
+   "n_zero": 6,
+   "degenerate": true,
+   "coords": {
+    "c_0012_1": "0",
+    "c_0102_1": "0",
+    "c_0201_1": "0",
+    "c_1011_0": "0",
+    "c_1011_1": "0",
+    "c_1110_0": "0",
+    "u": "T/7"
+   },
+   "u_is_cube_root": true
+  },
+  {
+   "stage2_route": "normal-form",
+   "equations_verified": true,
+   "min_poly_T": "T**2 + 11*T + 31",
+   "field_degree": 2,
+   "irreducible_over_Q": true,
+   "discriminant": "-3",
+   "zero_coordinates": [],
+   "n_zero": 0,
+   "degenerate": false,
+   "coords": {
+    "c_0012_1": "-T - 6",
+    "c_0102_1": "-T - 6",
+    "c_0201_1": "1",
+    "c_1011_0": "-1",
+    "c_1011_1": "T + 5",
+    "c_1110_0": "T + 6",
+    "u": "-T - 6"
+   },
+   "u_is_cube_root": true
+  }
+ ],
+ "normal_form_walled": [],
+ "nf_timeout_s": 900
+}

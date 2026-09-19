@@ -1,10 +1,11 @@
 ---
 # qou-ng7j
 title: Detector is blind to non-y_lambda convention-C quantities (tr_M, z); Schur-Weyl is the real per-weight test
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-10T18:42:38Z
-updated_at: 2026-08-10T18:42:38Z
+updated_at: 2026-09-15T06:20:35Z
 ---
 
 
@@ -181,3 +182,143 @@ longer pruning as hard once the convention-D weights put exact zeros into the
 matrices, so more candidates survive to the expensive `eigvalsh` stage. That is
 a hypothesis from reading, **not** a measurement; it needs the producer run with
 timing instrumentation to confirm or kill.
+
+## 2026-09-15 — CLOSED for tr_M. The blind spot is now covered, and it found one.
+
+Owner directive "excise convention C". This bean named the gap on 2026-08-10
+and nothing had actioned it: `_is_convention_c` keys on `y_λ` tables, so a
+convention-C `tr_M(β)` was invisible. It is not any more.
+
+### The mechanism, and why it needed no production change
+
+`tr_M_via_wenzl_bridge_mpfr` takes a `y_lambda_path`, not a `z` — the
+convention enters through the WEIGHTS. And `mass_at_3A_proper.jones_wenzl_weight`
+already takes `z` as a parameter. Since `χ^λ(W)` is convention-INDEPENDENT,
+
+    tr_M^C(W) = Σ_λ ω_λ(q, z_C) · χ^λ(W),   z_C = 1/(√q + 1/√q)
+
+is computable live. Validated by reproducing D through the same path:
+re-weighting at `z_D` gives `0.15196833920423160759266569775107` against the
+bridge's own `0.151968339204231607592665697751` — every digit. `z_C` then gives
+the convention-C canonical deuteron `0.064431075366695342301985361229836`.
+`z_C = 0.499320334184` matches the value `qou-98g5` states for convention C.
+
+**So no `Z_MARKOV` parameterisation was needed.** I had proposed that as the
+route and it was the wrong one — the weight function was already parameterised.
+
+### A SECOND structural reason for the blindness, not in the original list
+
+The bridge evaluates `χ` only where `y_λ` is nonzero, and under D the Wenzl row
+cap zeroes every partition with more than two rows — at the deuteron it
+evaluates **4 of 11**. Under C every channel is live: measured, **7 of 7**
+three-or-more-row partitions carry nonzero weight. So a C trace needs exactly
+the `χ` the D pipeline discards, and no amount of re-reading a D breakdown
+recovers it. The audit now computes the full table via
+`chi_general_word.chi_all_lambda_any` (0.1 s at n = 9).
+
+### Measured
+
+    fingerprints  32 -> 64   (+ 2 trace conventions C/D)
+    witness files 33 -> 41
+    ACTIONABLE    11 -> 12   (17 before the deliberate triage)
+    deliberate     3 ->  8
+
+Twelve convention-C hits. Eight are the five `*-c-vs-d-*` probes whose SUBJECT
+is the convention gap — registered in `DELIBERATE`, listed **explicitly rather
+than by a shared-stem regex**, because `qou-4bq3` records a DELIBERATE regex
+over-blocking 8 of 24 B3 verdicts.
+
+### The one net finding, verified
+
+`computations/qbeta/qbeta-habiro-phase5q-dn-refactorize.witness.json`
+(2026-08-10), classified `neither: hardcodes, or computes inline`:
+
+    tr_M_p_q0            1.0653061442544502   <- convention-C proton
+    tr_M_n_q0            0.9232332299116376   <- convention-C neutron
+    z_q0                 0.6126880371464652   <- z_D
+    tr_M_D_q0_witness    0.3882864240747888   <- convention-C DEUTERON
+    tr_M_D_q0_phase5q    0.6025946342765165
+    ratio_phase5q_over_witness  1.5519333072547734
+
+Corroborated against `qou-mass/CHANGELOG.md`'s convention-C column: proton
+`1.06530622859239`, neutron `0.92323329716958`, deuteron `0.38828647154771` —
+all matching to the q₀-pin digit. Detector says C+grouped; the changelog agrees
+independently.
+
+**The sharp part: a field named `tr_M_D_q0_witness` holds a convention-C
+value**, in a file that records `z_q0` as the D parameter. Its headline
+`ratio_phase5q_over_witness` is that field's denominator.
+
+NOT claimed: that the ratio is meaningless. `tr_M_D_q0_phase5q = 0.6025946` is
+none of the known D deuteron values (canonical 0.151968…, grouped colour-
+weighted 0.575172…, grouped colour-blind 0.575090…), so it is some other
+object and the numerator needs reading before anyone says what the ratio
+compares. Recorded as a finding for the excision campaign, not fixed here.
+
+### Still open on this bean
+
+`z` itself and derived quantities (ρ, Δρ, binding, mass) remain uncovered — the
+original table's other rows. `tr_M` is the one closed here.
+
+## 2026-09-15 (same session) — the `z` row is closed too
+
+`z` was the table's other tractable row: "detector sees it? **only if it happens
+to match a listed decimal**" — it never did. The existing
+`y_lambda_convention_c_fingerprint_audit` says outright in its own docstring
+that its test "needs no source, **no `z` grep**, and no anchor", so nothing
+covered it.
+
+z_C is one number per pin, so it costs two fingerprints:
+
+    proton     z_C = 0.49932033418369445241   (z_D = 0.61268803714646525160)
+    muon-live  z_C = 0.49932033403256001689   (z_D = 0.61268805063827241522)
+
+The proton value matches the figure `qou-98g5` states for convention C, whose
+subject is the corpus conflating it with `1/δ = 0.497290545`. Those differ in
+the third decimal, so at this audit's 15-digit threshold the conflation is not
+a detector hazard — worth saying, since the bean makes it sound like one.
+
+### Measured before building, at three thresholds
+
+    min sig digits   hits   C-labelled files   UNLABELLED files
+             8        100          44                 20
+            12         98          43                 19
+            15         82          41                 11
+
+The 8-digit row is below this corpus's coincidence floor (the audit's own
+docstring puts 9-11 figures at 2.7 %), and it shows: at 8 digits a
+`tr_M_p2_JW_sym` field looked like a stray hit. At 21 digits it is not a
+coincidence at all — for a 2-strand element `tr_M(σ) = z` by definition, so
+that field IS z, and it is the C one. Reading the near-miss correctly required
+the strict threshold, not looser matching.
+
+### The discriminator, and why it is a PATH and not a registry
+
+41 of the 52 carriers name the convention in the JSON path itself —
+`/conventions/C_sqrt_q_over_q_plus_1`, `/parameters/z_C_for_comparison`,
+`/data/conventions/C/z_at_q0`. That is the author declaring what the field
+holds, and it is a better discriminator here than the `DELIBERATE` registry:
+`qou-ztee` records that this family has "no way to mark a deliberate
+comparison" and a registry does not scale to 41 entries, while `qou-4bq3`
+records a DELIBERATE stem regex over-blocking 8 of 24 verdicts. A path label is
+narrower than either — it exempts the one FIELD the author labelled, not the
+whole file.
+
+### Result
+
+    fingerprints  64 -> 66      witness files 41 -> 51
+    ACTIONABLE    12 -> 20      z hits surfaced: 16
+
+The 41 self-declaring files auto-exclude; the residue lands in plain fields —
+`/z`, `/parameters/z`, `/parameters/w_bond_tr_M`, `/data/markov_parameters/z_M_v1`,
+`/verification/tr_M(σ_1)`. That last one is the sharpest: `tr_M(σ_1)` is z by
+definition, so a verification block is verifying against the C parameter.
+
+Not a registered gate and it exits 0 by design, so nothing turns red on this.
+
+### What remains on this bean
+
+Only the last row: derived quantities (ρ, Δρ, binding, mass). Those are the hard
+case and `qou-u5z0` already warns a C dependency "can survive as a derived
+IDENTITY — invisible to every detector". `tr_M` and `z` were tractable because
+each has a value you can compute and match; a derived identity has neither.

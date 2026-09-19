@@ -30,9 +30,25 @@ compose. Recorded in full because each one is independently instructive.
 
     model                                    net(Delta)      [z^2] tr_M(Delta)
     ---------------------------------------  --------------  ------------------
-    build_nucleon_nf            (9 crossings) -0.1883216147  -h(h^2-h+1)(h^2+h+1)/2
-    build_atom_nf_exact        (11, interleaved) -0.2272041420  -h(h^2+2)(2h^4+h^2+1)/4
-    nucleon_gen_chains         (11, gen-grouped) -0.2332458961  -h(h^2+2)/4
+    build_nucleon_nf            (9 crossings) -0.1882906015  -h(h^2-h+1)(h^2+h+1)/2
+    build_atom_nf_exact        (11, interleaved) -0.2271597118  -h(h^2+2)(2h^4+h^2+1)/4
+    nucleon_gen_chains         (11, gen-grouped) -0.2331977113  -h(h^2+2)/4
+
+🛑 THE THREE net(Delta) FIGURES WERE CORRECTED 2026-09-12: they were quoted at
+q = 111/100, NOT at the substrate pin -- the exact defect this file's own
+`hp`/`hv` comment warns about ("The first version of this probe quoted every
+decimal at 1.11"). The correction reached the REASONING in `main()`; the table
+kept the 1.11 values. Superseded, for the record: -0.1883216147, -0.2272041420,
+-0.2332458961 -- each matching q = 111/100 to every digit quoted, and 185 ppm
+(~16000x the mu-p tension) off the substrate.
+
+The VERDICT is untouched. The [z^2] column is symbolic in `h` and the exclusion
+is argued from it, so no conclusion in this file depends on the pin; only the
+three decimals were wrong. Cross-check that fixes them: the gen-grouped figure
+is the calibration constant asserted at 1e-30 by
+`qbeta_option_e_order_dof_range_probe` (merged), which carries the substrate
+value -0.23319771131565870204... Found from PR #7212 while reading these models
+for the gamma-gamma ordering derivation.
 
 The two 11-crossing models carry the SAME multiset of typed crossings and differ
 only in ORDER -- `build_atom_nf_exact` interleaves gen-0 and gen-1, while
@@ -71,10 +87,17 @@ rather than against one 9-crossing element mislabelled as eleven.
 That bean flags `pyhecke.atom.PROTON_NF/NEUTRON_NF`, whose stored float64
 coordinate sums differ by -0.188291, and says *"Check the basis convention
 FIRST; do not treat -0.188291 as a measurement."* Checked: those constants are
-`build_nucleon_nf` output, whose exact net is **-0.1883216147**. The basis
-convention IS the coordinate sum, and the residual is float64 `h` versus exact
-`_H_FRAC`. So the third model is real, it is the 9-crossing one, and -0.188291
-is its net.
+`build_nucleon_nf` output, whose exact net at the substrate pin is
+**-0.1882906015**. The basis convention IS the coordinate sum. So the third
+model is real, it is the 9-crossing one, and -0.188291 is its net -- agreeing
+to the six digits the stored constant carries.
+
+(This paragraph previously gave the exact net as -0.1883216147, the q = 111/100
+value, while simultaneously claiming the stored -0.188291 "matches to NINE
+significant figures" at the substrate. Those two statements are inconsistent
+with each other -- -0.1883216147 agrees with -0.188291 to four digits, not nine
+-- and the substrate figure is the one that makes the paragraph true. Corrected
+2026-09-12 with the table above.)
 
 METHOD. `build_nucleon` is imported from the hash-pinned transcription in
 `qbeta_counit_silver_ratio_adjudication_probe.py` (PR #5893). The two

@@ -240,15 +240,26 @@ theorem npWitness_poly_verifiable (T : ResolutionTree) (w : NPWitness T) :
     This structure captures both: given a graded algebra with
     degree-0 vanishing and degree ≥ 1 leakage, the horizon
     is non-empty. -/
-structure HorizonStructure where
-  /-- Degree-0 data is blocked. -/
-  degree_zero_blocked : Prop
-  /-- Degree ≥ 1 data leaks through. -/
-  degree_one_leaks : Prop
-  /-- Degree ≥ 2 data leaks through. -/
-  degree_two_leaks : Prop
-  /-- If degree-0 is blocked, the horizon is non-empty. -/
-  horizon_nonempty : degree_zero_blocked → True
+structure HorizonStructure
+    (degreeZeroBlocked degreeOneLeaks degreeTwoLeaks horizonNonempty : Prop) where
+  /-- If degree-0 is blocked, the horizon is non-empty.
+
+      **Parameterised 2026-09-14, and the defect here was WORSE than the
+      `Prop`-universe one.**  This field read
+
+          horizon_nonempty : degree_zero_blocked → True
+
+      which is a TAUTOLOGY: `fun _ => trivial` discharges `X → True` for
+      every `X`, so the field constrained nothing at all — and the
+      conclusion the docstring names, *"the horizon is non-empty"*, was
+      never written down anywhere in the type.  The three conditions
+      beside it were `Prop`-universe fields, so an instance chose those
+      too.
+
+      As parameters, all four propositions are fixed by whoever writes the
+      type and are visible in every consumer's signature, and the field now
+      carries the real implication rather than a vacuous one. -/
+  horizon_nonempty : degreeZeroBlocked → horizonNonempty
 
 /- The jet horizon as a HorizonStructure (when JetHorizon is in scope).
     This demonstrates that the computational horizon is structurally
@@ -260,11 +271,16 @@ structure HorizonStructure where
 -- We record this structural parallel without importing the file.
 
 /-- The computational horizon as a HorizonStructure. -/
+-- 🛑 The three `True`s below were previously FIELD VALUES, invisible outside
+-- this definition.  As type arguments they are on the face of the
+-- declaration: this instance asserts leakage and non-emptiness as `True`,
+-- i.e. asserts nothing about them, and now says so where a reader looks.
+-- Encoding them needs the jet-horizon algebra this file deliberately does
+-- not import (see the structural-parallel note above), so they are left as
+-- they are rather than guessed at.
 def computationalHorizonStructure (T : ResolutionTree) (pb : PolyBound)
-    (_h : hasComputationalHorizon T pb) : HorizonStructure where
-  degree_zero_blocked := hasComputationalHorizon T pb
-  degree_one_leaks := True  -- Witnesses always verifiable
-  degree_two_leaks := True  -- Structural correlations always accessible
+    (_h : hasComputationalHorizon T pb) :
+    HorizonStructure (hasComputationalHorizon T pb) True True True where
   horizon_nonempty := fun _ => trivial
 
 end

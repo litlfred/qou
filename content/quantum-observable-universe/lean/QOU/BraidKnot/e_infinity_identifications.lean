@@ -24,7 +24,7 @@ namespace QOU.BraidKnot
     manuscript-themed typed fields below; sub-claims encode the six
     `E_∞^{p,*}` page identifications corresponding to the six mass-
     formula terms of `thm:knot-mass-formula-unified`. -/
-class EInfinityIdentificationsContext where
+class EInfinityIdentificationsContext (wenzlBridgeCorrection : Prop) where
   /-- Total mass `m(ϱ)`. -/
   m_total : ℝ
   /-- Per-page contribution `<tr_M, E_∞^{p, *}(T_w)>`. -/
@@ -69,12 +69,15 @@ class EInfinityIdentificationsContext where
   chirality_sign : ℤ
   /-- Manuscript term 5 — chirality / sign factor: `chirality_sign ∈ {±1}`. -/
   claim_chirality_sign : chirality_sign = 1 ∨ chirality_sign = -1
-  /-- Manuscript term 6 — Wenzl-bridge `y_λ` correction (conjectural):
-      the proposition asserting the correction (instance-supplied). -/
-  claim_wenzl_bridge_correction : Prop
-  /-- Witness that the term-6 Wenzl-bridge claim holds (the conjecture
-      proper, §3b-cond; a concrete instance discharges this by `sorry`). -/
-  claim_wenzl_bridge_correction_holds : claim_wenzl_bridge_correction
+  /-- Witness for manuscript term 6 — the Wenzl-bridge `y_λ` correction.
+
+      **Parameterised 2026-09-13.**  This was `claim_wenzl_bridge_correction
+      : Prop` plus a witness of it: a field typed with the *universe* `Prop`,
+      so the instance chose the proposition and `⟨True, trivial⟩` discharged
+      the pair, leaving term 6 of `e_infinity_identifications` unconditional.
+      As a parameter the proposition is fixed by the binder and visible in
+      every consumer's type.  The conjecture is untouched and still open. -/
+  claim_wenzl_bridge_correction_holds : wenzlBridgeCorrection
 
 /-- **Content statement** (from manuscript):
 
@@ -91,7 +94,8 @@ derivation status per term.
     `EInfinityIdentificationsContext` fields (§3b-cond conditional); the
     conjectural content lives in those class fields, not in a `sorry`. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/e-infinity-page-identifications.ts
-def e_infinity_identifications [ctx : EInfinityIdentificationsContext] :
+def e_infinity_identifications {wenzlBridgeCorrection : Prop}
+    [ctx : EInfinityIdentificationsContext wenzlBridgeCorrection] :
     ctx.m_total =
       (Finset.range ctx.n_pages).sum (fun p => ctx.page_pairing p) +
       ctx.ribbon_closure + ctx.frobenius_co_casimir ∧
@@ -102,7 +106,7 @@ def e_infinity_identifications [ctx : EInfinityIdentificationsContext] :
       (Finset.range ctx.n_branes).sum (fun i =>
         (Finset.range ctx.n_branes).sum (fun j => ctx.brane_pairwise i j))) ∧
     (ctx.chirality_sign = 1 ∨ ctx.chirality_sign = -1) ∧
-    ctx.claim_wenzl_bridge_correction :=
+    wenzlBridgeCorrection :=
   ⟨ctx.claim_mass_formula_unified, ctx.claim_descended,
    ctx.claim_brane_tower_single, ctx.claim_brane_tower_pairwise,
    ctx.claim_chirality_sign, ctx.claim_wenzl_bridge_correction_holds⟩

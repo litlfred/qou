@@ -1,0 +1,135 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-13T09:19:59.831497+00:00",
+  "commitSha": "66abf128ccfa967b6ba0e4a8d3e8d5b7c778fda8",
+  "assertions": [
+    {
+      "name": "tr_one_equals_one_under_wenzl",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "raw_trace_obeys_markov_axiom_under_wenzl",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "raw_trace_fails_markov_axiom_under_plancherel",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "plancherel_has_no_fixed_z",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "pairing_obeys_derived_stabilisation_law_under_wenzl",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "law_fails_at_the_wrong_z_so_the_test_pins_z",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "magnus-omega2-markov-stabilisation",
+  "scriptFile": "magnus_omega2_markov_stabilisation_probe.py",
+  "scriptHash": "4a6b8a43f61b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/magnus_omega2_markov_stabilisation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/magnus_omega2_markov_stabilisation_probe.py"
+  },
+  "description": "Tests whether the Magnus Omega2 pairing obeys a stabilisation law under each candidate partition weight. Derived first: because Omega2(beta).rho lies in H_n, cyclicity plus the Markov axiom tr_{n+1}(x sigma_{n-1}) = z tr_n(x) forces P(beta sigma) = z P(beta) + (m/2) Sum_lambda w(lambda) tr(rho' [A_{n-2},A_{n-1}]) with z = q^3/(q^2+1) FIXED. Plancherel has no z, so no such identity exists to state for it. Bean qou-gba1, option E of qou-za3q decision 1.",
+  "data": {
+    "z_convention_D": "0.612688037146465251595829863945899248026308391545087014074774",
+    "base_word": {
+      "atom": "deuteron",
+      "crossings": 23,
+      "n": 6,
+      "source": "atom_braid_word_3A(1,1)"
+    },
+    "stabilisations": [
+      {
+        "n_from": 6,
+        "n_to": 7,
+        "appended_generator": 5,
+        "m_far_comm_survivors": 4,
+        "tr_one_wenzl": "1.00000000000000000000000000000000000000000000000000000000000",
+        "tr_one_plancherel": "26.3135102450764009208111742206796448712731818100937200471686",
+        "raw_trace_wenzl": "0.891276847195360662944917394473792031918244704566177683896836",
+        "raw_trace_plancherel": "-0.447232086331978973118629707123585249272188669463374753939695",
+        "raw_markov_residual_rel_wenzl": "7.36070493353452152854323677949632737375261772287445571210736e-141",
+        "raw_markov_residual_rel_plancherel": "1.05638191028328323356532056219179939708536287535750214440441",
+        "z_implied_wenzl": "0.612688037146465251595829863945899248026308391545087014074774",
+        "z_implied_plancherel": "-10.8667484671607898256290118347532828173776131068400771731528",
+        "P_wenzl": "-7.08906319630892309028946705424000893943756703576965629896985",
+        "P_wenzl_predicted": "-7.08906319630892309028946705424000893943756703576965629896985",
+        "P_wenzl_residual_rel": "4.44206002714388464215682080782665460157331832287636511322634e-141",
+        "P_plancherel": "1.19097534372926725119700823476060112410388317213912874759712",
+        "P_plancherel_predicted": "-9.48817062380495004814138041157597835306586367065773028522591",
+        "P_plancherel_residual_rel": "8.96672296682054809683837851054597109818117102939651994577488",
+        "correction_term_wenzl": "-2.84849571914036708965137064627769921071689171598907377980388",
+        "falsification_rel_resid_at_z_eq_q": "0.485518667018975967878536147022775580869353405733553607217189",
+        "falsification_rel_resid_at_z_eq_1": "0.378143500991772205322752426260873774799403753356863080276640"
+      },
+      {
+        "n_from": 7,
+        "n_to": 8,
+        "appended_generator": 6,
+        "m_far_comm_survivors": 1,
+        "tr_one_wenzl": "1.00000000000000000000000000000000000000000000000000000000000",
+        "tr_one_plancherel": "66.3315203655655904096753259136570212575853941176237262741363",
+        "raw_trace_wenzl": "0.546074662062215567752746585683597790921510583538103593255355",
+        "raw_trace_plancherel": "-0.0799565634545116213024024384522246232760692862426096286675538",
+        "raw_markov_residual_rel_wenzl": "2.40275784323006746364153670469554315098965812440062495919991e-141",
+        "raw_markov_residual_rel_plancherel": "2.42703259476063955513986765100431260430805253953686139821252",
+        "z_implied_wenzl": "0.612688037146465251595829863945899248026308391545087014074774",
+        "z_implied_plancherel": "0.178780919120280013540099821930557973998473113057001715318402",
+        "P_wenzl": "-5.09951859853097667654943449916074035368512142278644947258505",
+        "P_wenzl_predicted": "-5.09951859853097667654943449916074035368512142278644947258505",
+        "P_wenzl_residual_rel": "6.17510136413505707236874347282794107895056752694325153779847e-141",
+        "P_plancherel": "1.76675440482535806861430943415878811656936759966559060523761",
+        "P_plancherel_predicted": "0.889069208480343197106386957109377641306219579204738102315741",
+        "P_plancherel_residual_rel": "0.496778269774158671483104734811417087930767431250848252667517",
+        "correction_term_wenzl": "-0.756134383577215518149882914202686997798874705706020635739268",
+        "falsification_rel_resid_at_z_eq_q": "0.691305274528410295184454772927645218067976678702016134729899",
+        "falsification_rel_resid_at_z_eq_1": "0.538419250426130883915331256098160163684649253736222252699566"
+      }
+    ]
+  },
+  "caveats": [
+    "The identity is a NECESSARY condition for the pairing to be a function of the link rather than of the braid word, not a proof that the binding functional must be a link invariant. That premise is stated, not derived, and is the remaining work in qou-gba1.",
+    "The sign of P never enters this test. The two weight families disagree on the sign at A=3 and A=4 (bean qou-za3q), so a criterion that used the sign would be selection against the target (AGENTS.md). Stabilisation covariance is independent of it.",
+    "Positive stabilisation only. The other Markov move, conjugation beta -> alpha beta alpha^-1, needs negative crossings, which this germ machinery does not build; it is untested here."
+  ]
+}

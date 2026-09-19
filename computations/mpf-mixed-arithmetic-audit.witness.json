@@ -3,17 +3,40 @@
   "name": "mpf-mixed-arithmetic-audit",
   "description": "Static detection of arithmetic mixing an mpmath value with a float64-sourced one. Sits between the value-level padding ratchet (blind once a float64 is multiplied by anything exact) and the construction-level mpf(<float>) gate (blind because no mpf() call is involved). Advisory: high-recall candidates for agent verdict.",
   "data": {
-    "candidates": 6,
+    "candidates": 8,
     "marked": 10,
-    "files": 4,
+    "files": 5,
     "baseline": 3,
     "by_file": {
+      "computations/binding_rotation_phase_lead.py": 2,
       "computations/borromean-axial-coupling.py": 1,
-      "computations/probes/schur_weyl_share_is_a_third_measure_probe.py": 1,
-      "computations/qbeta/qbeta_habiro_taylor_investigation.py": 3,
-      "computations/qbeta/qbeta_symbolic_sdp_strict_complementarity.py": 1
+      "computations/markov/markov_trace_atomic_proton_full.py": 1,
+      "computations/probes/nucleon_h3_marshalling_divergence_probe.py": 1,
+      "computations/qbeta/qbeta_habiro_taylor_investigation.py": 3
     },
     "rows": [
+      {
+        "file": "computations/binding_rotation_phase_lead.py",
+        "line": 196,
+        "kind": "serialized",
+        "detail": "fmt(<float64-tainted>)",
+        "source": "\"spread_pct\": fmt(spread) if spread is not None else None,",
+        "taint_name": "spread",
+        "taint_origin_line": 187,
+        "taint_origin_source": "spread = (max(rs) / min(rs) - 1) * 100 if rs and min(rs) > 0 else None",
+        "class": "CANDIDATE"
+      },
+      {
+        "file": "computations/binding_rotation_phase_lead.py",
+        "line": 197,
+        "kind": "serialized",
+        "detail": "fmt(<float64-tainted>)",
+        "source": "\"A3_pair_spread_pct\": fmt(a3spread) if a3spread is not None",
+        "taint_name": "a3spread",
+        "taint_origin_line": 191,
+        "taint_origin_source": "a3spread = (max(a3) / min(a3) - 1) * 100 if len(a3) == 2 else None",
+        "class": "CANDIDATE"
+      },
       {
         "file": "computations/borromean-axial-coupling.py",
         "line": 384,
@@ -26,14 +49,25 @@
         "class": "CANDIDATE"
       },
       {
-        "file": "computations/probes/schur_weyl_share_is_a_third_measure_probe.py",
-        "line": 256,
+        "file": "computations/markov/markov_trace_atomic_proton_full.py",
+        "line": 234,
+        "kind": "serialized",
+        "detail": "fmt(<float64-tainted>)",
+        "source": "\"rho_p_codata\": fmt(rho_p),",
+        "taint_name": "rho_p",
+        "taint_origin_line": 178,
+        "taint_origin_source": "rho_p = mp.mpf(str(mp_me)) / val_at_q0",
+        "class": "CANDIDATE"
+      },
+      {
+        "file": "computations/probes/nucleon_h3_marshalling_divergence_probe.py",
+        "line": 242,
         "kind": "printed",
-        "detail": "nstr(<float64-tainted>, 22)",
-        "source": "print(f\"    n={n}  sum = {mp.nstr(tot, 22)}  (Burnside; q-INDEPENDENT)\")",
-        "taint_name": "tot",
-        "taint_origin_line": 253,
-        "taint_origin_source": "tot = mp.fsum(mp.mpf(f_lambda(l)) ** 2 for l in L) / mp.mpf(math.factorial(n))",
+        "detail": "nstr(<float64-tainted>, 18)",
+        "source": "print(f\"     marshalled EXPLICIT    {mp.nstr(marshalled_explicit, 18)}\"",
+        "taint_name": "marshalled_explicit",
+        "taint_origin_line": 232,
+        "taint_origin_source": "marshalled_explicit = mp.fsum(",
         "class": "CANDIDATE"
       },
       {
@@ -68,26 +102,15 @@
         "taint_origin_line": 169,
         "taint_origin_source": "delta_tr_num = tr_n_num - tr_p_num",
         "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/qbeta/qbeta_symbolic_sdp_strict_complementarity.py",
-        "line": 529,
-        "kind": "printed",
-        "detail": "nstr(<float64-tainted>, 50)",
-        "source": "wb.add_data(\"direction_max_diff_across_scales\", mp.nstr(dir_diff, 50))",
-        "taint_name": "dir_diff",
-        "taint_origin_line": 399,
-        "taint_origin_source": "dir_diff = float(\"nan\")",
-        "class": "CANDIDATE"
       }
     ]
   },
   "scriptFile": "mpf_mixed_arithmetic_audit.py",
   "scriptHash": "26ce5b951fe5",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
-  "commitSha": "2afaaf54fc0a8dd3b93ba75fa4fc88799cf45287",
+  "scriptCommitSha": "a663b4f838286530c5d04a1c63e3eab872f190a6",
+  "commitSha": "606a711778e4229098a387dc4024a0b10de8b7f1",
   "engine": "python",
-  "computedAt": "2026-09-05T18:56:45.544825+00:00",
+  "computedAt": "2026-09-14T06:25:41.666843+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

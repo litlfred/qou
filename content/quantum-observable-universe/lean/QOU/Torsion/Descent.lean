@@ -36,7 +36,7 @@ theorem descent_preserves_qou (tower : RecursiveBraneTower) (n : ℕ)
   (tower.jet_prolongation (n - 1)).dim_preserved
 
 theorem descent_ascent_id {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (jp : JetProlongation C) :
     jp.ascent ≫ jp.restriction = 𝟙 jp.base.obj :=
   jp.retraction
@@ -52,7 +52,7 @@ structure DescentInvolution (V : Type*) where
 /-- Build the descent involution from jet prolongation data. -/
 noncomputable def DescentInvolution.fromJetProlongation
     {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (jp : JetProlongation C) :
     DescentInvolution (jp.base.obj ⟶ jp.jet.obj) := by
   refine ⟨fun f => jp.ascent ≫ (jp.restriction ≫ f), fun f => ?_⟩
