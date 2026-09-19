@@ -303,7 +303,35 @@ Q_RAT_DEN = 10000000
 MASS_RATIO_P_E_STR   = _P_E.value_str    # CODATA 2022 (m_p/m_e) — pinning anchor
 MASS_RATIO_MU_E_STR  = _MU_E.value_str   # CODATA 2022 — now a prediction (cross-check)
 
-_DPS_DEFAULT = 50
+# ── _DPS_DEFAULT: 50 -> 70 (2026-09-19, bean `qou-5eg1`) ─────────
+# This was a SURVIVOR of the old serialization floor, not a considered
+# ceiling.  `qou_substrate/precision.py:80-82` records the move that
+# left it behind, in its own words:
+#
+#     # Bumped 2026-05-31 (PR #1595): 50->60 output, 65->70 compute.
+#
+# `_DPS_DEFAULT` was not bumped with it, so for nearly four months the
+# whole `_MP` constant family carried 50 digits while `COMPUTE_DPS` was
+# 70 and `OUTPUT_DPS` 60.  Measured at `mp.dps = 120` before this
+# change: `Q_MP` and `q_at(90)` agree to 50 significant digits and
+# diverge at the 51st, |diff| = 1.1000161e-51.  A producer that raised
+# compute precision and then `fmt`-serialised an `_MP`-derived value at
+# `OUTPUT_DPS = 60` published ten digits that carried no information —
+# and they are ARBITRARY digits, not trailing zeros, so the
+# float64-padding ratchet cannot see them (it looks for the zero
+# signature), `scriptHash` never drifts (the producer's own bytes are
+# stable), and the raw-float64 ratchet sees a genuine `mpf`.  Exact
+# arithmetic on a truncated input is invisible to all three.
+#
+# 70 = COMPUTE_DPS, so the constants now carry what the compute layer
+# is entitled to assume they carry.
+#
+# NOT AN ANCHOR CHANGE.  `computations/q_pinning_50_digit.py` calls
+# `q_at(mp.dps)` with the dps EXPLICIT (its line 108, after
+# `set_compute_dps()`), so the anchor-defining witness is a function of
+# `COMPUTE_DPS`, never of this constant.  Verified byte-identical
+# across the bump.
+_DPS_DEFAULT = 70
 
 # Note: previously this module reused a hardcoded 38-dps string for
 # Vol(4_1) from `alpha_em_pslq_uniqueness.py:57`.  That string is
@@ -404,7 +432,20 @@ try:
     # Canonical 50-digit string — DERIVED from the already-cached Q_MP
     # (no hardcoded literal, no sync drift, no second findroot at import).
     # This is what witness scripts import.
-    Q_50_DIGIT_STR = _mp.nstr(Q_MP, _DPS_DEFAULT, strip_zeros=False)
+    # PINNED AT 50 DELIBERATELY.  This used to read `_DPS_DEFAULT`, so the
+    # bump above would have silently turned a constant whose NAME says 50
+    # into a 70-digit string for its ~1500 consumers -- several of which
+    # compare it by prefix or by length.  The name is the specification:
+    # 50 digits is what this constant means.  Callers that want the full
+    # working precision should use `q_str(dps)` / `q_at(dps)`.
+    #
+    # It is therefore a SECOND 50-dps channel and it is NOT closed by this
+    # change: `mpf(Q_50_DIGIT_STR)` caps at 50 wherever it is used (e.g.
+    # `pyhecke.constants.alpha_em_inv_mp`).  Measured: 525 committed
+    # witnesses publish > 50 significant digits and have a producer that
+    # references `Q_50_DIGIT_STR` or an `_MP` constant, against 116 for the
+    # `_MP` constants alone.  Bean `qou-5eg1`, still open on that half.
+    Q_50_DIGIT_STR = _mp.nstr(Q_MP, 50, strip_zeros=False)
 
     # ── THE MUON PIN'S ONE NAMED HOME (bean qou-5op4) ──────────────
     #
