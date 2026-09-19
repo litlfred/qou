@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-09-19T06:00:38Z
-updated_at: 2026-09-19T06:26:58Z
+updated_at: 2026-09-19T07:12:20Z
 ---
 
 ## Measured on `origin/main` @ `665c91e403` (2026-09-19)
@@ -268,3 +268,60 @@ ledger) via `--body-append`; its status was NOT touched. Not fixed here: the
 re-run would commit a weaker provenance block (`python 3.13.12 -> 3.11.15`,
 numpy and scipy likewise — the Python version is not installable away), and it
 is a different domain from this PR.
+
+
+## A sibling claimed these 60 digits are ~16 real digits. Measured: they are ~50.
+
+PR #7440 (`qou-oiz3`) commented on #7438 that this chain's upstream returns an
+mpf that is **float64-VALUED**, so *"the 60-digit `mpf` carried ~16 real digits
+to begin with"*. That is a claim about **this PR's numbers**, so it was verified
+rather than accepted or dismissed.
+
+### What holds
+
+`qou_substrate.constants.q_int` **is** binary64 — read at the primary source,
+`constants.py:189-191`: `Q_INV = 1.0/Q`, `HA = Q - Q_INV`,
+`q_int(n) = (Q**n - Q_INV**n)/HA`, with `Q` a Python float.
+
+And the names are in the cone. Transitive import closure of
+`atomic_tr_m_mpfr_50dps.py` is **51 in-repo modules**, `qou_substrate` reached,
+containing `q_int` in 8, `wedderburn_weight` in 2, `q_factorial` in 1,
+`q_hook_product` in 2.
+
+### What is refuted
+
+`tr_m_nucleon` is a witness READ — `canonical_trm_reference:164` returns
+`abs(mp.mpf(rows[atom]["tr_M_at_q0_50dps"]))` — so the question is the accuracy
+of the recorded string. `markov_weights_symbolic.tr_M_canonical` builds the
+canonical 11-letter element symbolically over ℚ(q) and evaluates only at an
+exact-rational substitution, so `q_int` (which closes over a float module
+constant) is not on that path however many cone modules mention it:
+
+                eval@30 dps   eval@60 dps   eval@90 dps
+    proton  rel =     0       1.4249977e-50  1.4249977e-50
+    neutron rel =     0       5.7903247e-50  5.7903247e-50
+
+**Stable from 60 to 90 dps**, so it is not arithmetic noise — it is where the
+producer stopped. The field is named `tr_M_at_q0_50dps` and delivers exactly
+that: **~50 accurate digits, digits ~51-60 serialization padding.**
+
+Second, independent discriminator: `mpf(float(v)) != v` for all three nucleons
+(7.60e-17 / 3.77e-17 / 2.69e-17), so the value is not a promoted double either.
+
+### The reusable lesson, and it is the corpus's own, inverted
+
+**A text match in a cone module is not proof the value flowed through it.**
+13 of 51 modules carry those names; the path that computes this quantity is
+symbolic and reaches none of them. The detector-blindness taxonomy has ~46 rows
+of a detector MISSING a real instance; this is the same failure running the
+other way — cone membership read as a data-flow fact, over-selecting.
+
+Consequence for #7440, raised there: its 673-witness figure is derived from the
+import cone and needs re-deriving by data flow. At least these three are not in
+it. The cheap per-witness discriminators are the two above.
+
+### Effect on this PR: none, except that its claims are stronger
+
+The fix preserves ~50 accurate digits rather than ~16 — so "discarded 44
+digits" understates nothing and overstates nothing. `rel_vs_reference -> 0.0`
+remains a statement about two recordings of the same ~50-digit quantity.
