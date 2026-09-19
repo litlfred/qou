@@ -454,7 +454,7 @@ simulator: { type: "html", source: "file.html" }
 
 **Current format** (required):
 ```ts
-html: "folio-assistant/simulators/file.html",
+html: "simulators/file.html",
 defaultView: {
   name: "default",
   title: "Default view",

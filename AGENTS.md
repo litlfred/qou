@@ -5794,7 +5794,7 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `folio-assistant/schemas/` | Shared TypeScript types (proof-objects, glossary, etc.) |
 | `folio-assistant/viewer/` | Paper viewer SPA + Pyodide cache Service Worker |
 | `folio-assistant/ui/` | Assistant chat SPA |
-| `folio-assistant/simulators/` | Interactive HTML simulators |
+| `simulators/` | Interactive HTML simulators |
 | `folio-assistant/feedback/` | User feedback (TypeScript files, committed to main) |
 | `computations/` | Computation scripts and witness data (Layer 3 in-repo path; see `docs/ARCHITECTURE.md`) |
 | `qou-mass/` | `qou-mass` package — external-researcher facade (`predict()`, `compute_tr_M()`, `canonical_braid()`). **v1.0.0; NOT on PyPI** (`pypi.org/pypi/qou-mass/json` → 404). 5 in-repo importers. Its `_internal/` is **generated** — see the note below. |

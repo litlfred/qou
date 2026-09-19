@@ -463,7 +463,7 @@ The compute pipeline is layered into reusable packages so external researchers c
 | `content/quantum-observable-universe/lean/` | Lean 4 formalization (`lakefile.toml`, `QOU/`) |
 | `folio-assistant/` | Platform: MCP server, auth, viewer, chat UI, simulators |
 | `folio-assistant/viewer/` | Paper viewer SPA + Pyodide cache |
-| `folio-assistant/simulators/` | Interactive HTML/WebGL visualizations |
+| `simulators/` | Interactive HTML/WebGL visualizations |
 | `computations/` | Python compute scripts + `*.witness.json` (in-repo Layer 3) |
 | `qou-mass/` | `qou-mass` PyPI package — external-researcher facade (Layer 3 alt.) |
 | `tools/qou-substrate/` | `qou-substrate` PyPI package — q₀, precision, WitnessBuilder (Layer 2a) |
