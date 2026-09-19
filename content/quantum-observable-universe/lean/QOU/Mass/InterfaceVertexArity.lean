@@ -352,9 +352,9 @@ when its spectrum is non-negative. The blocks the ruling names are `(2,1)` at di
 `(1,1,1)` at dimension 1, both `≤ 2`, so the selection survives (B) after all — by a spectral
 argument at fixed determinant, **not** because feasibility is generally a character condition.
 
-Scope, stated rather than assumed: this is the `(tr, det)` half, which is the part that is a
-theorem. The step from "equal characteristic polynomial" to "equal `PosSemidef`" uses the
-standard Hermitian spectral criterion and is **not** separately formalised here. And nothing
+Scope, stated rather than assumed: this is the `(tr, det)` half, and that half is the part
+which is a theorem. Passing from "equal characteristic polynomial" to "equal `PosSemidef`"
+uses the standard Hermitian spectral criterion and is **not** separately formalised here. And nothing
 above extends to a block of dimension `≥ 3`, where `(tr, det)` no longer determine the
 characteristic polynomial — for those, no claim is made in either direction. -/
 theorem cayleyInverse_preserves_charpoly_data (M : Matrix (Fin 2) (Fin 2) R) (hdet : M.det = 1) :
