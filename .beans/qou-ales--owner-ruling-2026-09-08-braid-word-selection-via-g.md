@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-08T07:40:02Z
-updated_at: 2026-09-12T21:55:49Z
+updated_at: 2026-09-19T06:21:33Z
 ---
 
 ## Ruling (owner, 2026-09-08, chat, verbatim)
@@ -133,3 +133,30 @@ WHAT IS ACTUALLY NEW, narrowed to three: the two-body isospin corollary; that th
 THREE ERRORS OF MINE, audit doc section 9. (1) "The mechanism is unknown, so the premise is measured" -- it was stated in a corpus block and was derivable; found by following a citation, NOT by the grep, since the orientation-scoped corpus-grep could not surface a block that is not about orientation. A second reason a topic-scoped grep is not a clean bill. (2) "r_pn != r_np rules out right-dependence" -- rules out NOTHING; if f a b = g b then r_pn = g n and r_np = g p, which should differ. Only LIKE-pair comparisons discriminate, and the probe's first version omitted them off V2-V4, so it could not have decided the question it was built for. (3) "The orientation choice is unaddressed" -- right about derivation, wrong about silence, see above. Also removed before commit: a selection_blind_to_orientation whose proof was `right; trivial`, concluding `... or True` -- the section-1a audit-dodging shape, caught by re-reading my own diff.
 NOT RETRACTED: step 10's closed form, Lean, Theta(h^4) bracket and alpha/100 ceiling, all correct for the word they are about. Narrowed is the reading of r as a PAIR quantity.
 Record: docs/audits/2026-09-12-gamma-gamma-word-selection-step11.md. Bean stays in-progress (rule 13a).
+
+
+---
+
+### 2026-09-19 — step 11 re-measured against main after 1149 commits; one scope clause of mine FALSIFIED by the 2026-09-13 ruling
+
+Resuming after a container restart, `origin/main` had moved **1149 commits** past the branch point and PR #7249 had gained **8 sibling coordination comments** (0 at the previous check). Merged main in (`848eeb4b17`, no conflict) and re-verified. Heads: `507ec2ddce` then `39e5f56971`.
+
+**The one thing that was actually wrong.** The owner ruled on 2026-09-13 (relayed on #7249, recorded in #7319) that the confinement SDP is **reading (B) — whole element**: every Wedderburn projection of the full 11-letter word, i.e. `Matrix.PosSemidef` per block. That falsifies a scope clause in step 11's §4:
+
+> *"no character can see the swap, and reading-3 feasibility is a condition on the character"*
+
+PSD is a property of the **matrix**, not of its trace, so `trace_cayleyInverse` never reached that conclusion. **Retracted**, and recorded as §9 entry 4 rather than dropped.
+
+**The conclusion survives, by a reason I had not given.** Three new sorry-free declarations in `InterfaceVertexArity.lean`: `cayleyInverse_eq` (the construction IS the classical adjugate `!![d,−b;−c,a]`), `det_cayleyInverse` (determinant preserved, not only trace), `cayleyInverse_preserves_charpoly_data` (both, at `det M = 1`). For `Fin 2` the charpoly is `λ² − (tr)λ + det`, so `(tr, det)` pin it; equal charpoly ⇒ equal spectrum; Hermitian PSD ⟺ non-negative spectrum. **The blocks the ruling names are `(2,1)` at dim 2 and `(1,1,1)` at dim 1, both ≤ 2** — so the `3 ∣ k` selection does survive (B). Limits stated: the `(tr, det)` half is the theorem, the step to `PosSemidef` uses the standard Hermitian criterion and is NOT formalised; and **nothing extends to dim ≥ 3**.
+
+**The arity half is untouched under either reading** — step 11's Lean has **0** occurrences of `PosSemidef`/`PSD`/`SDP`/`feasib`.
+
+**Independently confirmed, and one novelty claim WITHDRAWN.** `qou-ix0x`/#7287 (merged `db8d3cefd9`) reproduces the `pp = np`, `nn = pn` collapse at 60 dps from a probe sharing no code with ours, and its `μ_pn = 1.00061119140688078` matches step 11's junction value `1.00061119140688077961…` digit for digit. Its record calls the one-sidedness *"measured, not proved"* and rejects far-commutation — **§2 supplies the mechanism it lacks** (connected-sum multiplicativity; which is why the EMPTY left word gives the identical response, a fact no species table can produce). Two things there are stronger than mine: `SecondArgBondNotPairFunction.lean` (on main, sorry-free) shows a one-endpoint bond is **not of the `bondOf` form at all** unless constant — outside the chain calculus rather than violating it, so the forward requirement is restated against it; and the γγ assembly being **exactly affine** makes `ProductionChainBondProduct`'s strand-window hypotheses sufficient-not-necessary, which **subsumes** my "survives an interleaved bond" claim. That claim is **withdrawn** — the observation stands, the priority does not. New §6b. Genuinely-new list: **two items, not three**.
+
+**A count error of my own, in the detector-blindness family.** The PR body said 21 declarations; by parse the file held **20** then and holds **23** now. A line-start `grep -cE '^(theorem|…)'` read **24**, because a docstring sentence I wrote began a line with the word "theorem." — prose inside `/-- -/` counted as a proof. Reworded so both methods agree at 23. The detector was a grep and the blind spot was English.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on the merged tree, both olean roots on `LEAN_PATH`: exit 0, zero errors, **zero warnings**; `#print axioms` on all three new declarations plus the two they extend → `propext` / `Classical.choice` / `Quot.sound` only, **no `sorryAx`**. No `lake build`. `lean-build-bg.sh` was **quiesced first** (it was running, and is the concurrent-writer hazard a sibling re-measured on #7287). `check-sidecars.sh`: 2 warnings, **both byte-identical pre-change** (§7c mix in this file, pre-existing by design; a canonical-mass hit in `docs/precision-goals.md`, untouched by this branch) — neither expanded, neither fixed. `precision-gates.sh --changed` **could not examine anything** (`qou_substrate` absent) and nothing precision-relevant was touched — reported as not-run, not green.
+
+**PR #7249: open, non-draft, `mergeable_state: clean`, base = current main, 0 review threads.** Awaiting explicit owner merge permission — none has been given for this PR.
+
+**Bean stays `in-progress`** (rule 13a — open conjectures). Still open on `qou-ales`: formalising connected-sum multiplicativity (the one route to scope-(b) for the arity obstruction, session-scale, **owner's word needed, not started**); the colour-weighted `−h(1/2−δ/4)` word, whose four-letter alphabet `qou-99qc` explicitly flags as open at word level; `m > 3` bonds; `k > 10`; `θ/π` rationality; and the unresolved `InterfaceScalar.charge_independence_iff` vs `WeakIsospinT3Grading` tension, on which step 11 still takes neither side.
