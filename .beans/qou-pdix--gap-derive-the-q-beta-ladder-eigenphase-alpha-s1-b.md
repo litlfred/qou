@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-13T00:48:55Z
+updated_at: 2026-09-19T05:50:18Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -2222,3 +2222,68 @@ step from the SHAPE of the object rather than from what is pinned about it. The 
 is the one this entry applied: before calling a computation well-posed, enumerate
 what the source artifact actually fixes and what it leaves free, and count the
 dials against the number of targets.
+
+
+### 2026-09-19 — RESUMING AFTER 6 DAYS / 1099 COMMITS: most of PR #7252 is superseded, and I am an instance of the staleness class this bean documents
+
+Branch `claude/pdix-attack-b-modular-double-2026-09-12` sat unmerged for six days.
+`origin/main` is **1099 commits** ahead; main's copy of this bean is **3363 lines
+against my branch's 2224**. Audited my own PR against it rather than assuming.
+No textual conflict (all my files are new). The substance is another matter.
+
+#### What is DEAD
+
+**1. The target itself is on the RETIRED base — this kills §3 and §4 of the PR.**
+The 2026-09-14 synthesis entry states it directly: *"the **ladder form itself** —
+`α_req` and its window are inverted from that same retired base."* `α_req` **is**
+my target `P = 1.997259194490263`, `|P'/P| = 2.176`. So my flat-basket table and
+the whole "bracket is a specification" conclusion measure corpus objects against a
+requirement that no longer holds. The cheap test that entry gives — *does the
+number trace to `Q_A = m_e|q²−2q−1|(q+1)/(2q³)`?* — is exactly the `z = 1` cell
+retired on 2026-09-08. **I reported that bracket to the author across many turns
+with increasing confidence. It is aimed at a retired cell.**
+
+**2. The dependency chain is superseded, by sorry-free Lean.** My PR asserts
+`qou-cds1 -> qou-pdix -> qou-d0qq` and "the Q_β L2 row cannot move until the
+framework-side connection lands". The 2026-09-13 entry *"DERIVING α CANNOT UNBLOCK
+qou-cds1"* excludes the second link scope-(b) via `Real.cos_le_one`: the ruled
+base needs `Q_codata/Q_D = 1.7592 > 1` while every cos-rung is `≤ 1`, so **no
+phase repairs a 43 %-low base**. α is **not** on the L2 critical path.
+
+#### What is DEFECTIVE but repairable
+
+**3. My `375× too steep` is convention-unlabelled, and the corpus has a canonical
+convention that predates my work by five days.**
+`computations/qbeta/qbeta_modular_double_reciprocity.py` (scope-**(b)**, landed
+**2026-09-07**) uses `q = exp(2πi b²)` (line 95) and proves
+`log q · log q̃ = 4π²` identically, forcing `|log q̃| = 378.36`, `q̃ ≈ 4.8e-165`.
+I used `q = exp(iπ b²)`. Measured: my `|d ln q̃/dq| = 816.73` is `3266.91` in the
+canonical convention — **1501× too steep, not 375×**. The conclusion strengthens;
+the quoted number was unlabelled.
+
+**And my corpus-grep missed that producer entirely** — a scope-(b) exclusion of
+the modular-double bridge, on `main`, five days before I began attack B. My PR
+instead cites the weaker `FaddeevPhi` docstring as "the corpus's own" separation.
+
+#### What SURVIVES
+
+**4. `ModularDoubleLocusSeparation.lean` (6 sorry-free theorems) is a genuine
+pin-INDEPENDENT complement**, and is not duplicated. The reciprocity producer
+gives a *quantitative* exclusion **at the substrate pin** (165 decades). Mine
+gives a *structural* one at **every** pin: inversion fixes the real axis and the
+imaginary axis setwise, so no pin admits the bridge. Different statements; the
+sibling's is sharper where it applies, mine is broader. Parallel derivation is
+permitted — but it must CITE the prior result, which the PR does not.
+
+#### The class, and that I am in it
+
+The 2026-09-14 entry names this as a **class**: the 2026-09-08 base ruling
+silently invalidated arguments computed against the old cell, and two sessions
+found instances independently. **This is a third instance, and it is mine.** It
+also cuts both ways there — a stale *negative* re-opens a route — so my §3/§4
+must be **re-aimed, not re-asserted**, if anyone wants them.
+
+#### Disposition
+
+PR #7252 is being cut back to the surviving claims. `qou-pdix` stays **OPEN** and
+its priority is lower than I reported: α is off the L2 critical path.
