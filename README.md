@@ -461,7 +461,7 @@ The compute pipeline is layered into reusable packages so external researchers c
 | `content/pipeline/` | Validation, rendering, build pipelines |
 | `content/quantum-observable-universe/` | Main paper — chapters, appendices, Lean |
 | `content/quantum-observable-universe/lean/` | Lean 4 formalization (`lakefile.toml`, `QOU/`) |
-| `folio-assistant/` | Platform: MCP server, auth, viewer, chat UI, simulators |
+| `folio-assistant/` | Platform: MCP server, auth, viewer, chat UI |
 | `folio-assistant/viewer/` | Paper viewer SPA + Pyodide cache |
 | `simulators/` | Interactive HTML/WebGL visualizations |
 | `computations/` | Python compute scripts + `*.witness.json` (in-repo Layer 3) |
