@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-09-19T06:00:38Z
-updated_at: 2026-09-19T06:21:58Z
+updated_at: 2026-09-19T06:26:58Z
 ---
 
 ## Measured on `origin/main` @ `665c91e403` (2026-09-19)
@@ -227,3 +227,44 @@ Two things fall out of that measurement worth recording:
 Every gate run rewrites tree-measuring audit witnesses. `precision-gates.sh`
 names them and says DO NOT COMMIT (bean `qou-v0t8`); all reverted, tree clean
 at 0 dirty before each commit.
+
+
+## The other two sites of `float(<canonical mpf accessor>)` — adjudicated, so nobody "fixes" them twice
+
+Grep for the defect class (`float(tr_m_nucleon(...))` and friends) across
+`computations/` returns four sites beyond the three fixed here. Two are
+adjudicated below; recorded because both look like the same defect and only one
+is.
+
+### `audits/derivation_convention_frame_audit.py:156-158` — NOT a defect, leave it
+
+    return {"p": float(tr_m_nucleon("proton")), ...}
+
+`canon` is consumed only by `_findings`, which scans **text** for numeric
+literals, parses each with `float(raw)`, and flags those disagreeing by more
+than `REL_TOL`. Both sides are floats by construction — the object under test
+*is* a source/doc literal, which is ≤17 digits anyway — and the comparison is a
+loose relative-tolerance check. The floats never reach a witness: there is no
+`add_data`/`add_assertion` carrying them, and the file has no baseline row.
+Carrying mpf would change nothing. Under the 2026-09-07 ASK-THE-OWNER directive
+this is "tidying an inconsistency", which is explicitly **not** exempt.
+
+### `probe_bring_residue_resolvent.py:85` — a REAL one, and invisible to every witness detector
+
+    vals = [float(canonical_resolvent(q, n)) for n in POLE_ORDERS]
+    distinct_count = len(set(round(v, 20) for v in vals))
+
+The stored field is an `int`, so no float enters the witness and the ratchet,
+the padding audit and the `.assertions[].computed` sweep are all structurally
+blind to it. `round(v, 20)` on a binary64 is a no-op past ~17 digits, so the
+code implies a 1e-20 distinctness bar it cannot certify.
+
+**Impact measured: none.** Minimum pairwise separation of the four values is
+**0.0645**, fourteen orders above the binary64 floor, so `distinct_count` is 4
+either way. A false precision claim, not a wrong number.
+
+Recorded on bean `qou-p77d` (in-progress, already holds this file's drain
+ledger) via `--body-append`; its status was NOT touched. Not fixed here: the
+re-run would commit a weaker provenance block (`python 3.13.12 -> 3.11.15`,
+numpy and scipy likewise — the Python version is not installable away), and it
+is a different domain from this PR.

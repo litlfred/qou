@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T02:28:37Z
-updated_at: 2026-08-30T08:40:35Z
+updated_at: 2026-09-19T06:26:26Z
 ---
 
 ## 2 of the 883 are already drained (PR #5952, bean `qou-t39x`) — 2026-08-29
@@ -537,3 +537,56 @@ is call-site-local and cannot see a float64 produced inside a helper.
 (`_witnesses_substantively_equal`), and a drain is substantive by construction,
 so the rewrite path takes a downgraded `environment` block under a warn-only
 check. Match python/mpmath/clarabel to what the target witnesses record first.
+
+
+---
+
+## A float64 in this same probe that your drain could not have seen (found 2026-09-19, bean `qou-ejfy`, status NOT changed)
+
+Your ledger records `probe_bring_residue_resolvent.py  8 fields  17 -> 60 digits`
+and `9 -> 0  bring-residue-resolvent-probe`, which is the
+`.assertions[].computed` class and is done. **One more float64 survives in that
+file, and no witness-facing detector can reach it**, because it is upstream of
+an **integer**:
+
+```python
+vals = [float(canonical_resolvent(q, n)) for n in POLE_ORDERS]   # line 85
+distinct_count = len(set(round(v, 20) for v in vals))
+w.add_assertion(name="resolvent_values_distinct", computed=distinct_count, ...)
+```
+
+`canonical_resolvent` returns an mpf; the cast keeps ~16 digits. The stored
+field is `distinct_count`, a declared count that correctly stays an `int`, so
+the raw-float64 ratchet, the padding audit and the `.assertions[].computed`
+sweep are all structurally blind to it — there is no float in the witness. The
+defect is in the *computation of the count*, not in a stored value.
+
+**`round(v, 20)` is decoration.** `v` is already a binary64, so rounding it to
+20 decimal places is a no-op past ~17 significant digits. The code's shape
+implies a 1e-20 distinctness bar; the arithmetic can only certify ~1e-16. That
+is the "never report a float64 agreement as to-N-digits" rule, reached through
+a `round()` rather than through a printed string.
+
+**Measured impact here: NONE — and say so rather than implying a wrong answer.**
+At the proton pin the four values are
+
+    n= 3  1.40036565495469647382847079723
+    n= 4  1.46486612346572584804175008795
+    n= 9  2.14910999622996260471937011268
+    n=10  2.45999841888754838419214787150
+
+minimum pairwise separation **0.0645**, fourteen orders above the binary64
+floor. `distinct_count` is 4 under either arithmetic. So this is a false
+precision *claim* with no effect on the verdict — worth fixing for the same
+reason the rest of the class was, not because a number is wrong.
+
+**Fix**: drop the cast and count at a declared precision, e.g.
+`len({mp.nstr(v, 40) for v in vals})`.
+
+**NOT fixed here, deliberately.** Re-running the producer on this container
+would commit a WEAKER provenance block than the one on disk — its guard reports
+`python 3.13.12 -> 3.11.15; numpy 2.5.0 -> 2.4.6; scipy 1.18.0 -> 1.17.1`, and
+the Python version is not installable away. Worth a provenance downgrade only
+if bundled with a run that needs one anyway; it is also a different domain from
+the PR that found it (#7438, Markov-trace assembly chains). Left to whoever is
+on this bean, on a container matching the recorded environment.
