@@ -234,16 +234,28 @@ if _anchor in ("ideal", "muon", "canonical"):
         # 70-digit q is read in full and only the compute working precision is
         # pinned at 50. Producers that need more raise it via set_compute_dps().
         _mp.mp.dps = max(_mp.mp.dps, 50)
-        Q_MP         = _mp.mpf(_d["q"])
-        Q_INV_MP     = _mp.mpf(1) / Q_MP
-        HBAR_Q_MP    = _mp.mpf(1) - Q_INV_MP
-        HBAR_Q_SQ_MP = HBAR_Q_MP ** 2
-        HA_MP        = Q_MP - Q_INV_MP
-        E_CROSS_MP   = HA_MP / 2
-        S_SKEIN_MP   = _mp.sqrt(Q_MP) - _mp.mpf(1) / _mp.sqrt(Q_MP)
-        TWO_Q_MP     = Q_MP + Q_INV_MP
-        TANH_LN_Q_MP = HA_MP / TWO_Q_MP
-        LN_Q_MP      = _mp.log(Q_MP)
+        # ── the _MP family is built at 70, not at the 50 above ──────
+        # (2026-09-19, bean `qou-5eg1`).  The global floor on the line
+        # above is the owner's 2026-07-06 ruling and is UNCHANGED; what
+        # was wrong is that these module-level constants were then
+        # ROUNDED to it.  `_d["q"]` carries 70 significant digits, and a
+        # producer that later calls `set_compute_dps()` (70) cannot
+        # recover what was thrown away at import.  Building them inside
+        # an explicit 70-dps context is the mirror of `_DPS_DEFAULT`
+        # 50 -> 70 in `qou_substrate/constants.py`; leaving one side at
+        # 50 would put the proton and muon layers at different
+        # precisions, which is the layer-straddle AGENTS.md forbids.
+        with _mp.workdps(max(_mp.mp.dps, 70)):
+            Q_MP         = _mp.mpf(_d["q"])
+            Q_INV_MP     = _mp.mpf(1) / Q_MP
+            HBAR_Q_MP    = _mp.mpf(1) - Q_INV_MP
+            HBAR_Q_SQ_MP = HBAR_Q_MP ** 2
+            HA_MP        = Q_MP - Q_INV_MP
+            E_CROSS_MP   = HA_MP / 2
+            S_SKEIN_MP   = _mp.sqrt(Q_MP) - _mp.mpf(1) / _mp.sqrt(Q_MP)
+            TWO_Q_MP     = Q_MP + Q_INV_MP
+            TANH_LN_Q_MP = HA_MP / TWO_Q_MP
+            LN_Q_MP      = _mp.log(Q_MP)
 
         # ── q_at / q_str re-bound to the canonical MUON source ──
         # The imported `q_at`/`q_str` (from `import *`) Newton-solve the PROTON
