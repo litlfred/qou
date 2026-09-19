@@ -182,31 +182,46 @@ vertex image, so **no character can see the swap**. Measured independently:
 `χ_(2,1)((σ₁σ₀⁻¹)^k) = χ_(2,1)((σ₀σ₁⁻¹)^k)` for `k = 1…7`. **Steps 4/5/7's `3 ∣ k` selection
 survives intact.**
 
-### 🛑 Correcting my own scope here — "feasibility is a condition on the character" was too strong
+### 🛑 I retracted this clause and the retraction was WRONG — the clause is restored, and stronger
 
-This section previously continued *"… and reading-3 feasibility is a condition on the
-character."* That clause is **retracted**. The owner ruled on 2026-09-13 (reading **(B)**,
-relayed on PR #7249 and recorded in #7319) that the confinement SDP constrains **every
-Wedderburn projection of the full 11-letter word** — i.e. `Matrix.PosSemidef` of each block.
-Positive-semidefiniteness is a condition on the **matrix**, not on its character: two matrices
-of equal trace differ in it in general. So `trace_cayleyInverse` alone does **not** establish
-that reading-3 feasibility survives the swap, and I asserted that it did.
+For a few hours on 2026-09-19 this section carried a retraction of its own claim that
+*"reading-3 feasibility is a condition on the character."* **That retraction is withdrawn. The
+clause is correct.** What follows is the whole episode, because the way it went wrong is worth
+more than the sentence.
 
-**The conclusion survives, by a different argument, and only because of the dimension.** For
-`Fin 2` the characteristic polynomial is `λ² − (tr M)λ + (det M)`, so it is fixed by the pair
-`(tr, det)` — and the Cayley inverse preserves **both** at `det M = 1`. That is now proved
-rather than asserted: `det_cayleyInverse` and `cayleyInverse_preserves_charpoly_data`
-(sorry-free), added to `InterfaceVertexArity.lean` for exactly this reason, alongside
-`cayleyInverse_eq`, which identifies `(tr M)·1 − M` with the classical adjugate `!![d,−b;−c,a]`.
-Equal characteristic polynomials force equal spectra, and a Hermitian matrix is PSD precisely
-when its spectrum is non-negative. **The blocks the ruling names are `(2,1)` at dimension 2 and
-`(1,1,1)` at dimension 1** — both `≤ 2` — so the `3 ∣ k` selection does survive reading (B).
+**What reading 3 actually is.** Bean `qou-ales` records three readings of "the confinement SDP
+on a word": **1** literal `Matrix.PosSemidef` of each Wedderburn projection; **2**
+symmetric-part PSD; **3** Frobenius positivity, `χ_λ(w) ≥ 0` on every block with `y_λ > 0`
+(constraint (1) of `prop:confinement-sdp` read on a word). The owner selected **3** on
+2026-09-12, verbatim *"try PSD condfinement 3 for now, but keep 1 2 for later"*, and step 5
+formalised it as `FrobeniusFeasible` / `FrobeniusSelected` in
+`GammaGammaFrobeniusSelection.lean`. **Reading 3 is a condition on characters. Literally.** So
+"feasibility is a condition on the character" is not an approximation of reading 3 — it is its
+definition.
 
-Two limits, stated rather than left to be assumed. The `(tr, det)` preservation is the part
-that is a theorem; the step from equal characteristic polynomial to equal `PosSemidef` uses the
-standard Hermitian spectral criterion and is **not separately formalised**. And **nothing here
-extends to a block of dimension `≥ 3`**, where `(tr, det)` no longer determine the
-characteristic polynomial — for those no claim is made in either direction.
+**And the argument is stronger than the clause claimed.** Reading 3 needs only character
+invariance, which `trace_cayleyInverse` supplies: the `(2,1)` Hoefsmit block is
+`2`-dimensional, step 4 proves `det V = 1`, so `χ_(2,1)(V⁻¹) = χ_(2,1)(V)`. That propagates to
+the whole `H₆` interface for free, because
+`GammaGammaH6Interface.InterfaceBranching` gives each `H₆` block character on `G^m` as
+`a_λ + b_λ·χ_(2,1)(V^m) + c_λ` with `(a,b,c)` the Young-lattice path counts — **affine in the one
+`(2,1)` character**. So all eleven `H₆` characters are swap-invariant, and under reading 3 the
+orientation swap cannot change feasibility at `H₃` **or** at `H₆`. Reading (B) ("whole element")
+moves the *letter scope*, not the reading, so it does not weaken this either.
+
+**What the new Lean is, correctly labelled.** `det_cayleyInverse` and
+`cayleyInverse_preserves_charpoly_data` — with `cayleyInverse_eq`, which identifies
+`(tr M)·1 − M` with the classical adjugate `!![d,−b;−c,a]` — are sorry-free and true, and they
+answer **reading 1**, which is parked. They are worth keeping for exactly that reason: the same
+ruling keeps 1 and 2 "for later", and PSD *is* a matrix condition rather than a character one,
+so when reading 1 is revisited this says the swap cannot change its verdict on a
+`2`-dimensional block. They are **not** needed for the live reading, and the file's docstring
+now says so.
+
+Two limits on that reading-1 half, unchanged: the `(tr, det)` preservation is the part that is
+a theorem — the step to equal `PosSemidef` uses the standard Hermitian spectral criterion and
+is **not separately formalised**; and **nothing extends to a block of dimension `≥ 3`**, where
+`(tr, det)` no longer determine the characteristic polynomial.
 
 `mixed_trace_not_inverse_invariant`: and a *mixed* trace is not protected — a theorem, not a
 measurement. `W = !![1,0;0,0]`, `M = !![2,1;1,1]`, `N = !![1,−1;−1,2]` have `M·N = 1` and
@@ -363,10 +378,11 @@ reasons it may not be promoted to (b):
    reservation without removing it.
 
 **The 2026-09-13 ruling does not change this scope, and it is worth saying why.** Reading (B)
-makes the confinement SDP a condition on every Wedderburn projection of the full word, which
-bears on the **selection** half of the arc (§4, where it forced a correction) and not on the
-**arity** half at all: step 11's Lean contains no PSD hypothesis and no `Matrix.PosSemidef`
-anywhere, so the arity obstruction is untouched under either reading. The ruling's other half
+moves the confinement SDP's *letter scope* to the whole word; it does **not** change the
+reading, which stays **3** (Frobenius positivity, `χ_λ(w) ≥ 0`) per the owner's 2026-09-12
+selection. It bears on the **selection** half of the arc (§4) and not on the **arity** half at
+all: step 11's Lean contains no PSD hypothesis and no `Matrix.PosSemidef` anywhere, so the
+arity obstruction is untouched under any of the three readings. The ruling's other half
 is a caution to carry forward rather than a change here — the γγ *construction* provably
 reaches only 6 of the 11 letters (γγ words have even length; 11 is odd), while the *SDP* now
 reaches all eleven, so the 6-of-11 fact must not be read as an all-clear for the other five.
@@ -409,15 +425,30 @@ committed witnesses is owner-gated.
    ledger since 2026-05-24, and the corpus-grep is what found it. Had I written the record
    first, it would have re-declared a four-month-old known gap as a new finding.
 
-4. **"Reading-3 feasibility is a condition on the character."** Too strong — §4 above. PSD is a
-   property of the matrix, not of its trace, so the Cayley argument did not reach the
-   conclusion I drew from it. What makes the conclusion true is that the blocks at issue have
-   dimension `≤ 2`, where `(tr, det)` pin the characteristic polynomial. **The error was
-   invisible until an owner ruling arrived from a sibling PR** — under the reading current when
-   §4 was written, feasibility plausibly *was* a character condition. Recorded because the
-   lesson is not "check harder": a scope claim can be correct when written and be falsified by
-   a ruling landing elsewhere, so an incoming ruling is a prompt to re-read one's own scope
-   clauses, not only one's numbers.
+4. **Retracting "reading-3 feasibility is a condition on the character" — the retraction was
+   the error, not the claim.** §4 above. I read a sibling's coordination comment relaying the
+   2026-09-13 ruling, which described the criterion as `Matrix.PosSemidef` on every Wedderburn
+   projection, and retracted a correct clause against it. That description is **reading 1**;
+   reading 1 is parked; the live criterion is **reading 3**, which is `χ_λ(w) ≥ 0` — a
+   character condition, so the clause was right all along.
+
+   **This is the corpus-grep discipline failing on a claim ABOUT A RULING rather than about a
+   number.** The answer was one grep away and decisive: bean `qou-ales` carries the owner
+   verbatim (*"try PSD condfinement 3 for now, but keep 1 2 for later"*) with reading 3 spelled
+   out, and it names reading 1 as provably selecting nothing non-trivial for `k ≤ 5` on the
+   interval. I ran no grep, because a ruling relayed by a sibling reads like primary source. It
+   is not — AGENTS.md's own note on the same ruling records the identical mistake being made
+   and corrected by that sibling (bean `qou-99qc`), i.e. the wrong reading had already
+   propagated once before reaching me.
+
+   **The generalisation, which is the reusable part:** *"the corpus is the source of truth"*
+   applies to a claim about what a ruling REQUIRES, not only to a status or a figure — and a
+   sibling's PR comment is exactly as secondary as a source file's `## Status` note. The three
+   readings differ in what kind of object they constrain (a matrix, its symmetric part, its
+   character), so getting the reading wrong does not shift a threshold, it changes which
+   theorem is even relevant. Cost here: a true claim retracted, three Lean declarations
+   written against a parked question, and the wrong framing pushed to five artifacts before a
+   re-read caught it.
 
 Also removed before commit: a `selection_blind_to_orientation` I had written whose proof was
 `right; trivial`, concluding `… ∨ True`. It asserted nothing — the §1a audit-dodging shape,
