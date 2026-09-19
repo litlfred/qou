@@ -315,6 +315,53 @@ theorem mixed_trace_not_inverse_invariant :
   · norm_num [Matrix.trace_fin_two]
   · norm_num [Matrix.mul_fin_two, Matrix.trace_fin_two]
 
+/-- **The `2×2` Cayley inverse in explicit form** — it is the classical adjugate: for
+`M = !![a,b;c,d]` the matrix `N = (tr M)·1 − M` is `!![d,−b;−c,a]`. Naming it explicitly is
+what makes the determinant below a one-line computation. -/
+theorem cayleyInverse_eq (M : Matrix (Fin 2) (Fin 2) R) :
+    (M.trace) • (1 : Matrix (Fin 2) (Fin 2) R) - M
+      = !![M 1 1, -(M 0 1); -(M 1 0), M 0 0] := by
+  ext i j
+  fin_cases i <;> fin_cases j <;> simp [Matrix.trace_fin_two]
+
+/-- **The Cayley inverse preserves the DETERMINANT as well as the trace**, and this is the
+half that `trace_cayleyInverse` alone does not give. -/
+theorem det_cayleyInverse (M : Matrix (Fin 2) (Fin 2) R) :
+    ((M.trace) • (1 : Matrix (Fin 2) (Fin 2) R) - M).det = M.det := by
+  rw [cayleyInverse_eq, Matrix.det_fin_two_of, Matrix.det_fin_two]
+  ring
+
+/-- **At `det = 1` the orientation swap preserves the whole characteristic polynomial of a
+`2×2` block, not merely its trace — so a PSD condition on such a block cannot see the swap
+either.**
+
+Why this is needed, and it is a correction to this file's own earlier scope. The owner's
+2026-09-13 ruling on `qou-ales` (reading **(B)**, recorded on PR #7249 and in #7319) makes the
+confinement SDP a condition on **every Wedderburn projection of the full word**, i.e. on
+`Matrix.PosSemidef` of each block. Positive-semidefiniteness is a condition on the *matrix*,
+not on its character: in general two matrices of equal trace differ in it, so
+`trace_cayleyInverse` by itself does **not** establish that reading-3 feasibility survives the
+swap, and step 11's prose claim that "reading-3 feasibility is a condition on the character"
+is too strong as stated under (B).
+
+What rescues the conclusion is a dimension accident, and it is exactly the dimension at issue.
+For `Fin 2` the characteristic polynomial is `λ² − (tr M)λ + (det M)`, so it is determined by
+the pair `(tr, det)` — both of which the swap preserves at `det M = 1`. Identical
+characteristic polynomials force identical spectra, and a Hermitian matrix is PSD precisely
+when its spectrum is non-negative. The blocks the ruling names are `(2,1)` at dimension 2 and
+`(1,1,1)` at dimension 1, both `≤ 2`, so the selection survives (B) after all — by a spectral
+argument at fixed determinant, **not** because feasibility is generally a character condition.
+
+Scope, stated rather than assumed: this is the `(tr, det)` half, which is the part that is a
+theorem. The step from "equal characteristic polynomial" to "equal `PosSemidef`" uses the
+standard Hermitian spectral criterion and is **not** separately formalised here. And nothing
+above extends to a block of dimension `≥ 3`, where `(tr, det)` no longer determine the
+characteristic polynomial — for those, no claim is made in either direction. -/
+theorem cayleyInverse_preserves_charpoly_data (M : Matrix (Fin 2) (Fin 2) R) (hdet : M.det = 1) :
+    ((M.trace) • (1 : Matrix (Fin 2) (Fin 2) R) - M).trace = M.trace
+      ∧ ((M.trace) • (1 : Matrix (Fin 2) (Fin 2) R) - M).det = 1 :=
+  ⟨trace_cayleyInverse M, by rw [det_cayleyInverse, hdet]⟩
+
 end Orientation
 
 end QOU.Mass.InterfaceVertexArity
