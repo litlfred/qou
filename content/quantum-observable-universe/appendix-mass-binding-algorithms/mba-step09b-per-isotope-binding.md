@@ -43,9 +43,19 @@ from qou_mass.api import predict          # the .ts manifest's declared entry po
 
 # NOTE (corrected 2026-08-25, PR #5765): this block previously pointed at
 # `computations.mass_binding_dashboard._row`. That module HAS `_row`, but it has
-# ZERO occurrences of `B_unified` — the `B_unified` model lives in
-# `computations/probes/strong_unified_binding_probe.py`, which emits no witness.
-# The entry point above now matches `computation.script` in the .ts manifest.
+# ZERO occurrences of `B_unified`. The entry point above now matches
+# `computation.script` in the .ts manifest.
+#
+# RE-CORRECTED 2026-09-19 (bean `qou-kjik`). The 2026-08-25 note went on to say
+# that "the `B_unified` model lives in
+# `computations/probes/strong_unified_binding_probe.py`". It does not, and that
+# sentence should not be followed: no producer in this repository emits a live
+# `B_unified`. That probe is an ANCHOR-INVERSION EXPERIMENT -- all three of its
+# weights are solved out of the AME table it is then scored against, so its error
+# column is identically zero on the D and 4He rows by construction, and the two
+# NA-Stokes quantities its verdict credits for the closure are never used. It
+# emits no witness and has no importers. Read its module docstring before
+# quoting any number from it.
 ```
 
 ### Witness contract
