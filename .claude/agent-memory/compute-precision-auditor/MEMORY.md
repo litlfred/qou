@@ -248,6 +248,58 @@ For a symmetric tridiagonal go further: Sturm-sequence bisection counts
 eigenvalues below `lam` in O(n) per evaluation and reaches any single eigenvalue
 to full working precision, which is what makes n ~ 2000 cheap.
 
+## TRAP — measuring an IMPORT CONE: two ways to get it wrong by 3x and by 1x
+
+Both hit while sizing `qou-oiz3` (2026-09-19), both silent, both inverted the answer.
+
+- **Resolving a dotted import by its LAST component.** `from qou_substrate.constants
+  import Q` and `from pyhecke.constants import ...` both end in `constants`, so a
+  basename match gives every consumer of the substrate constants a phantom edge from
+  a pyhecke root. Measured: the q_int value cone reads **3921 files — the entire
+  corpus — instead of 1290**. Match the full path suffix for anything dotted.
+- **The audit counts ITSELF.** A cone audit that imports the layer it measures is in
+  its own cone, so every count is one high (1291/917/3922 vs 1290/917/3921) and the
+  "direct mention" count is inflated further by its own docstring. Exclude
+  `os.path.relpath(__file__)` explicitly. Same family as "mask volatile keys or you
+  measure your own harness", one level up.
+
+And **say which cone you mean.** The *shim* cone (importers of `q_parameter` /
+`qou_substrate.constants`) is 3921 and is not a measure of any precision defect —
+importing `Q` as an f64 constant for f64 purposes puts nothing through `q_int`. The
+*value* cone (importers of the q_int-derived Hecke/Wedderburn layer) is 1290. A
+recorded "124 files" turned out to be a third question again — files that MENTION
+the three Wedderburn primitives, which re-measures at **105**. All three are right;
+quoting one against another reads as staleness when it is a category difference.
+
+## TRAP — the float64 `q_int` error GROWS with the strand count; it is not a floor
+
+`qou_substrate/constants.py:190` (**not** `pyhecke/wedderburn.py`, which is where
+PR #7245's report put it). `q_factorial(n)` multiplies **n** float64-valued `q_int`
+factors, so the f64-fed Wedderburn weights part company with the exact ones at
+`3.0495805e-16` (n=3) rising to **`2.4104405e-15`** (n=12) — **10.9x float64 eps and
+2.4x the framework's own L1 target of 1 ppQ**. n=12 is the A=4 atom. So "it is at the
+float64 floor, therefore bounded" is wrong here in the same way the per-block bound
+was wrong for a cancelled total: measure the growth, do not assume the floor.
+
+Two structural facts a sweep will miss. **There are TWO float64 definitions** — the
+second at `computations/substrate/q_parameter.py:169`, redefining `q_int` over the
+MUON globals as default arguments inside the `ideal`-anchor branch, invisible to a
+grep of `qou_substrate`. And **`q_int_at`'s default `q` is ALWAYS proton**, so
+swapping `q_int -> q_int_at` silently re-pins every `ideal_muon` producer; the
+anchor-correct handle is `q_parameter.q_at`, which the muon branch rebinds
+(`q_parameter.py:228`). Verified under both anchors.
+
+## TRAP — an IMPORT-CONE change flags NO witness stale, so the gates stay green
+
+Changing a library the producers *call* leaves the producers' own bytes untouched, so
+`witness.scriptHash` never drifts and **not one downstream witness is flagged by any
+gate in the tree**. Measured for `qou-oiz3`: 917 in-cone witnesses, 673 of them
+carrying >=30 significant digits, **zero** flagged. This is
+`cosmetic_import_cone_drift` — the only `witness_staleness_triage.py` bucket that has
+GROWN across five measurements (4 -> 9). Consequence for staging: landing such a fix
+without its refresh is strictly worse than not landing it, because it converts a
+known-wrong number into a wrong number nothing can find.
+
 ## STABLE — long-compute logging discipline
 
 Any background Python expected to run > 5 min (mass table beyond ⁴He,
@@ -511,3 +563,19 @@ TRAPs.
   from 2026-09-04 seen from the other side — commit before a 5-minute gate run, not
   after; and **`q_at(mp.dps)` is the right anchor call for a probe** (proton pin,
   production default) with explicit rational controls beside it.
+- 2026-09-19 (`qou-oiz3` stage 1, PR #7440): staged the float64 `q_int` root fix;
+  **landed staging only, no source change** — the code fix moves 673 high-precision
+  witnesses that no gate can see, so stages 2-5 are scoped and NOT started. Three
+  TRAPs above are new. Gates: `precision-gates.sh --changed` **EXIT 1, 11 blocking
+  reds, all pre-existing** — proven mechanically rather than asserted: the log names
+  **122 distinct file paths** and the intersection with this branch's changed files
+  is **EMPTY**, with 0 commits on `origin/main..HEAD` for any of them. Both
+  raw-float64 ratchets NEW 0 / REGRESSED 0; the `y_lambda` conflation gate (now
+  blocking) 0 on all three blocking rows. The 5 NEW q0-drift stales are the
+  `-0.0769 ppb` muon re-pin signature (`qou-3f7a`), not mine. Operational notes:
+  **`gh` is not installed here** — open a PR with `curl` + `$GITHUB_TOKEN` against
+  `POST /repos/{o}/{r}/pulls` with `draft: false` at creation (worked first try,
+  #7440); and **this checkout is shared with the parent session**, which was
+  mid-merge-conflict on its own branch when I started, so I branched from
+  `origin/main` rather than from HEAD and restored its branch afterwards. Producers
+  were deliberately NOT run for that reason.
