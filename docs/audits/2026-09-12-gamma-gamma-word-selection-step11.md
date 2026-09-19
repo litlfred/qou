@@ -420,11 +420,14 @@ abstraction up.
 **Why scope-(a) nevertheless stands, unchanged.** Three reasons, and the file states all three
 about itself:
 
-1. `TowerSpan`, the hypothesis it runs on, is **unproved, has no Hecke instance, and is not
-   provable from `MarkovTrace`** — the structure places no constraint on how `H (m+1)` is
-   generated. Its own docstring cites AGENTS.md §"Axiomatization is NOT a Proof" and says the
-   bond product is *"still not unconditionally derived"*. This is the
-   conditional-proved-≠-premise-established rule, and it binds here.
+1. ~~`TowerSpan`, the hypothesis it runs on, is **unproved, has no Hecke instance**~~ —
+   **🛑 WRONG, corrected 2026-09-19 the same day it was written; see §7c.** `TowerSpan` is
+   **proved on the genuine Iwahori–Hecke colimit on `main`**, sorry-free
+   (`SchurWeyl/HeckeColimitMarkovTrace.towerSpan_heckeColimit`), and so is the disjoint-block
+   trace law (`disjointBlock_heckeColimit`). What remains true is the *narrow* half: `TowerSpan`
+   is not provable from `MarkovTrace` **in the abstract**, since the structure constrains nothing
+   about how `H (m+1)` is generated. That is a statement about a general carrier, not about this
+   one, and I stated the general form as though it governed the specific case.
 2. **It is on an open PR, not in the product.** A result on a branch is not a corpus fact; that
    is the `qou-3v8h` lesson, and citing it as though it had landed is exactly the move this
    audit's §9 is a record of.
@@ -460,6 +463,89 @@ sufficient-not-necessary. Two arcs, two methods, same conclusion about the same 
 correct statements about the word they are about. What narrows is the interpretation of `r` as a
 *pair* quantity.
 
+## 7c. 🛑 The route to (b) is not open at all — it is BUILT, on `main`, and §7b got its own premise wrong
+
+§7b was written on 2026-09-19 and corrected the same day. It said step 11 stays scope-(a)
+partly because `TowerSpan` has *"no Hecke instance"*. **That is false, and the corpus had the
+answer before §7b was written.** Read at source on `main`, not from a bean or a PR body.
+
+### What is on `main`, sorry-free
+
+[`QOU/SchurWeyl/HeckeColimitMarkovTrace.lean`](../../content/quantum-observable-universe/lean/QOU/SchurWeyl/HeckeColimitMarkovTrace.lean)
+(0 `sorry`), whose own header calls itself *"**This is the bridge**"*:
+
+```lean
+noncomputable def heckeColimitMarkovTrace : MarkovTrace ℝ (HeckeLim ℝ q q⁻¹) where ...
+instance braidedTower_heckeColimit : BraidedTower (heckeColimitMarkovTrace …) where ...
+theorem towerSpan_heckeColimit      : TowerSpan (heckeColimitMarkovTrace …) := towerSpan_of_braided _
+theorem disjointBlock_heckeColimit  : DisjointBlockMultiplicative (heckeColimitMarkovTrace …) := disjointBlock_of_braided _
+```
+
+That **is** "prove `TowerSpan` and instantiate the abstract Markov tower at the Hecke tower",
+on the genuine Iwahori–Hecke colimit rather than a free carrier.
+
+### And it is NOT the vacuous kind — which is the whole point
+
+There *is* a vacuous Hecke instance, and
+[`MathlibExt/BraidedTowerInstances.lean`](../../content/quantum-observable-universe/lean/QOU/MathlibExt/BraidedTowerInstances.lean)
+carries a 🛑 correction (2026-09-13) saying so about itself: `heckeTowerMarkovTrace`
+requires `z * z = h * z + 1` to be a `MarkovTrace` **at all**, and that same equation makes the
+trace an algebra **homomorphism** (`ocneanuTrace_mul_of_markov`, `towerTrace_mul`), so its
+`disjointBlock_heckeTower` *"holds for reasons that have nothing to do with disjoint blocks."*
+Its verdict was: **"no witness has all three properties"** — growing filtration, `h ≠ 0`, and a
+non-multiplicative trace.
+
+The colimit carrier has all three, and says so in terms:
+
+> `trLim` … is `DirectLimit.Module.lift`, **not** `Ring.lift`: **`wtrace` is linear and is not a
+> ring map (it is not multiplicative)**
+
+with `h = q − q⁻¹` at generic `q` (`NotRootOfUnity q`), a growing range filtration, and
+`z = q³/(q²+1)` — **convention D**, and *"inherited from `wtrace_markov`, not chosen here"*,
+with `zinv` *"derived, not posited"*. So no fit enters.
+
+### What that does to §7b's third reason
+
+§7b treated #7418's `TowerSpan` caveat as blocking. It is not blocking **at the Hecke colimit**,
+and the reason is a detail of #7418's own signatures: its load-bearing theorems take the
+disjoint-block law as an **explicit hypothesis**, not as a `TowerSpan` instance —
+
+```lean
+theorem tr_chainWord                (hdb : DisjointBlockMultiplicative T) …
+theorem three_body_cumulant_vanishes (hdb : DisjointBlockMultiplicative T) …
+```
+
+— and `main`'s `disjointBlock_heckeColimit` **is** an inhabitant of exactly that. The
+`[TowerSpan T]`-conditional `chainFactorizes_of_towerSpan` is an *alternative* route, not the
+only one. So applied at the Hecke colimit those results are **unconditional**, and `TowerSpan`
+is proved there in any case.
+
+🛑 **Epistemic status of the last paragraph, stated rather than assumed: it is TYPE-LEVEL
+REASONING FROM SIGNATURES, not machine-checked here.** Both files state the same
+`QOU.MathlibExt` classes (#7418 imports `MathlibExt.DisjointBlockTraceLaw`; the colimit file
+opens `MathlibExt.DisjointBlockTrace`), so the application should elaborate — but "should
+elaborate" is not "does", and #7418's file is not on `main`, so the composite cannot be
+compiled in this tree without importing a branch. **Do not cite this as a proved discharge.**
+The verification is one `lean`-direct run away and belongs on whichever branch carries both.
+
+### What genuinely remains, from the file's own "What is NOT proved here"
+
+> No faithfulness. `H n` remains the *image* of level `n`, and whether `ofLim n` is injective is
+> bean `qou-ejde`, assumed nowhere. Nor is `trLim` claimed faithful.
+
+So the surviving keystone is **faithfulness**, not `TowerSpan`. Three beans are stale in the
+same direction and none of them says this: `qou-0fmb` is `todo` with its own steps 4–6 landed,
+`qou-ejde` is `todo` with its step-1 keystone `heckeProduct_injective` landed, and `qou-301d` is
+`in-progress` and looks dischargeable.
+
+### Why this is recorded as an error of mine rather than a tidy update
+
+§7b's reason 1 asserted a corpus-wide negative — *"has no Hecke instance"* — from a **sibling
+PR's self-description**, without grepping `main` for the instance. That is the same failure as
+§9 entry 4, twice in one day: a claim about what the corpus does or does not contain, taken from
+a secondary source. The cheap habit that would have caught both is one grep for the named object
+before repeating any negative about it.
+
 ## 8. By-product — a fourth confirmation of `qou-sikd`
 
 `tr_M,H₃(p) = (q⁴+1)P_P/(4q⁹(q²+1)²) = 0.6293284022029219181653` and
@@ -469,7 +555,7 @@ correct statements about the word they are about. What narrows is the interpreta
 against. Fourth independent path to the same conclusion. Not fixed here: the drain across ≥ 8
 committed witnesses is owner-gated.
 
-## 9. Four reasoning errors of mine, recorded because the shape recurs
+## 9. Five reasoning errors of mine, recorded because the shape recurs
 
 1. **"The mechanism is unknown, so the premise is measured."** Wrong twice: the mechanism is
    stated in a corpus block (§2) and it is *derivable*, and a species table could never have
@@ -509,6 +595,24 @@ committed witnesses is owner-gated.
    theorem is even relevant. Cost here: a true claim retracted, three Lean declarations
    written against a parked question, and the wrong framing pushed to five artifacts before a
    re-read caught it.
+
+5. **"`TowerSpan` has no Hecke instance."** — §7c. Asserted a **corpus-wide negative** from a
+   sibling PR's self-description, without grepping `main` for the named object. It is false:
+   `towerSpan_heckeColimit` and `disjointBlock_heckeColimit` are on `main`, sorry-free, on the
+   genuine Iwahori–Hecke colimit with a provably non-multiplicative trace.
+
+   **This is entry 4's failure repeated the same day, which is why it gets its own number
+   rather than a footnote.** Entry 4 took a *ruling* from a sibling relay; this took a *corpus
+   fact* from a sibling's caveat. Both times the primary source was one grep away, and both
+   times the secondary source was specific, recent and plausible — which is exactly what makes
+   it dangerous. #7418's caveat was even *true as stated*: `TowerSpan` genuinely is not provable
+   from `MarkovTrace` for a **general** carrier. I carried the general claim across to the
+   **specific** carrier, where it fails.
+
+   **The reusable rule, narrower and more mechanical than "run the corpus-grep":** before
+   repeating any negative existence claim — "there is no X", "no instance of X", "X is not
+   formalised" — grep for **X by name** in the tree. Not for the topic, for the identifier.
+   That single habit catches this class, and it is cheaper than everything it prevents.
 
 Also removed before commit: a `selection_blind_to_orientation` I had written whose proof was
 `right; trivial`, concluding `… ∨ True`. It asserted nothing — the §1a audit-dodging shape,
