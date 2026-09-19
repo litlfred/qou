@@ -520,13 +520,49 @@ theorem three_body_cumulant_vanishes (hdb : DisjointBlockMultiplicative T) …
 only one. So applied at the Hecke colimit those results are **unconditional**, and `TowerSpan`
 is proved there in any case.
 
-🛑 **Epistemic status of the last paragraph, stated rather than assumed: it is TYPE-LEVEL
-REASONING FROM SIGNATURES, not machine-checked here.** Both files state the same
-`QOU.MathlibExt` classes (#7418 imports `MathlibExt.DisjointBlockTraceLaw`; the colimit file
-opens `MathlibExt.DisjointBlockTrace`), so the application should elaborate — but "should
-elaborate" is not "does", and #7418's file is not on `main`, so the composite cannot be
-compiled in this tree without importing a branch. **Do not cite this as a proved discharge.**
-The verification is one `lean`-direct run away and belongs on whichever branch carries both.
+### ✅ MACHINE-CHECKED, 2026-09-19 — the discharge elaborates
+
+This paragraph first said the discharge was *"type-level reasoning from signatures, not
+machine-checked here"* and told the reader not to cite it as proved. **It has since been
+checked, and it elaborates.** Recording both the result and the method, because the method is
+the reusable part.
+
+`#7418`'s file is not on `main`, so it was compiled from its branch
+(`origin/claude/trusting-planck-wncjcc`) to an olean, that olean staged into the gitignored
+`.lake/build` tree, and a scratch `#check`-only probe elaborated against both it and `main`.
+**`RC=0`, four `#check`s, no `sorry`, no axiom added.** The probe and the staged olean were
+removed afterwards and the tree verified clean — nothing from a sibling's branch is committed
+here.
+
+```lean
+#check fun q hq0 hq2 hq21 hgen =>
+  three_body_cumulant_vanishes
+    (T := heckeColimitMarkovTrace q hq0 hq2 hq21 hgen)
+    (disjointBlock_heckeColimit q hq0 hq2 hq21 hgen)
+-- elaborates, at  HeckeLim ℝ q q⁻¹
+
+#check fun q hq0 hq2 hq21 hgen =>
+  tr_chainWord
+    (T := heckeColimitMarkovTrace q hq0 hq2 hq21 hgen)
+    (disjointBlock_heckeColimit q hq0 hq2 hq21 hgen)
+-- elaborates, same carrier
+```
+
+Both come back with fully-instantiated conclusions over
+`QOU.SchurWeyl.HeckeColimit.HeckeLim ℝ q q⁻¹`, carrying only the four genericity hypotheses
+(`hq0`, `hq2 : NotRootOfUnity q`, `hq21`, `hgen`) that `heckeColimitMarkovTrace` already
+carries. **No `TowerSpan` argument appears in either**, because the hypothesis form never asks
+for one.
+
+**So the claim is now: at the genuine Iwahori–Hecke colimit, #7418's chain factorisation and
+vanishing three-body cumulant are UNCONDITIONAL** — the `TowerSpan` caveat is a statement about
+a general carrier, and this carrier is not general.
+
+**Three limits, so this is not over-read.** It is a check that the *application type-checks*,
+which is exactly what "the hypothesis is discharged" means — it is not an independent
+re-verification of #7418's proofs, which are that branch's business. It says nothing about
+**faithfulness**, still open (`qou-ejde`). And it is about the **colimit** carrier only; the
+free `HeckeTower` carrier remains the vacuous one.
 
 ### What genuinely remains, from the file's own "What is NOT proved here"
 
