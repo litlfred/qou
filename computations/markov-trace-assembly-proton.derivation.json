@@ -1,6 +1,6 @@
 {
   "target": "tr_M(p, q_0)  [canonical Wenzl-bridge, canonical 11-letter element]",
-  "target_value": 0.629328402202922,
+  "target_value": "0.629328402202921918165345746778485927600219400634359762811677",
   "target_tolerance": 1e-09,
   "content_block": "prop:full-pole-structure-mass-trace",
   "description": "Markov-trace assembly chain for the proton on the CANONICAL 11-letter element: convention-D Wedderburn weights + seminormal characters + the finite-Jones axiom, giving tr_M(p, q_0) ≈ 0.6293284022. Written 2026-09-13 (bean qou-nhkv) to replace an ORPHAN artifact whose only builder was deprecated and which had been left in the grouped-era frame while its neutron and deuteron siblings moved to canonical. Unlike those siblings this chain has NO legacy-convention frontier: its character steps are computed on the canonical element rather than on a 5-letter stand-in. The leaf is read from canonical_trm_reference, not hardcoded.",
@@ -97,7 +97,7 @@
         "tr_M_proton_symbolic"
       ],
       "output_name": "tr_M_proton_q0",
-      "output_value": 0.629328402202922,
+      "output_value": "0.629328402202921918165345746778485927600219400634359762811677",
       "trust_basis": "computational",
       "jet_order": 0,
       "gb_filtration_level": 0,
