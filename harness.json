@@ -1,0 +1,13 @@
+{
+  "_comment": "This repository's CatHarness declaration. It exists for ONE reason, and the reason is the whole point of having a declaration: folio-assistant retired `content/` as the folio-root convention in favour of `folio/` (bean hs08, 2026-09-20). qou keeps `content/` — five folios, a bun workspace, CI paths and every cross-reference in the corpus point at it — so rather than move the tree, it SAYS where the tree is. The owner's ruling: 'qou can declare a new folio at content/'. Renaming would have been a large, mechanical, risky change to satisfy a convention; declaring is four lines and is what the mechanism is for.",
+  "name": "qou",
+  "description": "Quantum Observable Universe — a framework for quantum physics via rigid monoidal categories",
+  "directories": [
+    {
+      "id": "folio",
+      "path": "content/",
+      "graphs": ["folio"],
+      "description": "The authored folios: quantum-observable-universe and its siblings, each a directory holding a same-named manifest. NOT `folio/` — see `_comment`."
+    }
+  ]
+}
