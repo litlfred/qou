@@ -7,6 +7,8 @@
       "id": "folio",
       "path": "content/",
       "graphs": ["folio"],
+      "_dependents_comment": "REQUIRED since folio-assistant #512, and it has no default on purpose — `reproduce` would ship empty directories into every downstream folio, `skip` would silently deny one its ingestion queue. `reproduce` here because a folio directory is part of the SHAPE a folio has: an instance depending on qou wants its OWN content/, empty, not qou's five papers. Same argument as `uploads/` and `library/`, and `readDeclaration`'s own error text names `folio/` among the reproduce examples. Omitting it is not a warning — `readDeclaration` THROWS, so every call through folioDir() dies, which is every pipeline entry point.",
+      "dependents": "reproduce",
       "description": "The authored folios: quantum-observable-universe and its siblings, each a directory holding a same-named manifest. NOT `folio/` — see `_comment`."
     }
   ]
