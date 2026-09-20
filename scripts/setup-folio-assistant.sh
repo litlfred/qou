@@ -171,6 +171,38 @@ fi
 # absolute, normalized path to the clone
 CLONE_ABS="$(cd "$CLONE_DIR" && pwd)" || die "cannot resolve $CLONE_DIR"
 
+# --- which layout is this clone? -----------------------------------------
+# folio-assistant split its own tree on 2026-09-20: the platform (schemas/,
+# content/pipeline/, src/, scripts/, adapters/) moved from the clone ROOT down
+# into `cat-harness/`. The clone root keeps package.json and node_modules, so
+# `bun install` and the dep check below still belong there — only the code
+# moved.
+#
+# This is DETECTED rather than assumed, and it has to be, because the two
+# layouts coexist right now: `.folio-assistant-pin` still names a pre-split
+# SHA, so a fresh run of this script checks out a clone with no `cat-harness/`
+# at all. Hardcoding either answer breaks the other, and it breaks it the
+# quiet way — every `folio-assistant/...` import resolves to nothing and the
+# first error names bun's global cache rather than this link (the 2026-09-13
+# `qou-wdh9` shape).
+#
+# Probe for a FILE the platform must have, not for the directory: a stray
+# empty `cat-harness/` would otherwise answer "split" and point the link at
+# nothing.
+if [ -f "$CLONE_ABS/cat-harness/schemas/types.ts" ]; then
+  PLATFORM_ABS="$CLONE_ABS/cat-harness"
+  PLATFORM_LAYOUT="split (cat-harness/)"
+elif [ -f "$CLONE_ABS/schemas/types.ts" ]; then
+  PLATFORM_ABS="$CLONE_ABS"
+  PLATFORM_LAYOUT="pre-split (clone root)"
+else
+  # Neither answers. Do NOT guess: linking to a root that holds no schemas/
+  # produces a link that exists and resolves nothing, which is the state this
+  # script is for detecting. Say so and stop.
+  die "clone at $CLONE_ABS holds schemas/types.ts at neither the root nor cat-harness/ — not a folio-assistant checkout, or a failed clone"
+fi
+info "platform layout: $PLATFORM_LAYOUT -> $PLATFORM_ABS"
+
 # --- create the in-repo symlink: <root>/folio-assistant -> clone ----------
 LINK="$ROOT/folio-assistant"
 
@@ -182,8 +214,8 @@ fi
 
 # Prefer a relative symlink target (portable across machines); fall back
 # to the absolute path if realpath lacks --relative-to.
-if TARGET="$(realpath --relative-to="$ROOT" "$CLONE_ABS" 2>/dev/null)"; then :; else
-  TARGET="$CLONE_ABS"
+if TARGET="$(realpath --relative-to="$ROOT" "$PLATFORM_ABS" 2>/dev/null)"; then :; else
+  TARGET="$PLATFORM_ABS"
 fi
 
 # Move an untracked husk (leftover bun.lock + node_modules, or a stale
@@ -201,10 +233,10 @@ case "${OSTYPE:-}" in
     # (Crostini); this branch is unverified here — Windows devs should report
     # issues or use WSL.
     [ -e "$LINK" ] && rm -rf "$LINK"
-    win_link="$(cygpath -w "$LINK")"; win_target="$(cygpath -w "$CLONE_ABS")"
+    win_link="$(cygpath -w "$LINK")"; win_target="$(cygpath -w "$PLATFORM_ABS")"
     cmd //c mklink //j "$win_link" "$win_target" >/dev/null \
       || die "could not create directory junction (use WSL, or run 'mklink /j' manually)"
-    info "created Windows directory junction: folio-assistant -> $CLONE_ABS"
+    info "created Windows directory junction: folio-assistant -> $PLATFORM_ABS"
     ;;
   *)
     if [ -L "$LINK" ]; then
@@ -223,37 +255,73 @@ case "${OSTYPE:-}" in
 esac
 
 # --- bridge: expose the repo's bibliography to platform checkers ----------
-# qa-checkers-extended.ts resolves references.ts relative to the PLATFORM
-# clone (CONTENT_DIR = <clone>/content), but the bibliography source of
-# truth lives in THIS repo at content/schema/references.ts. Without this
-# bridge every \cite{} fails bib-cite-resolves with "does not resolve in
-# references.ts" (the 2026-06-21 233-block false-fail batch).
-if [ ! -e "$CLONE_ABS/content/schema/references.ts" ]; then
-  mkdir -p "$CLONE_ABS/content/schema"
-  ln -s "$ROOT/content/schema/references.ts" \
-    "$CLONE_ABS/content/schema/references.ts" \
-    && info "bridged content/schema/references.ts into platform clone" \
-    || info "could not bridge references.ts — bib-cite-resolves will false-fail"
-fi
+# ONLY for a pre-split clone. Both consumers were fixed upstream and the
+# bridges are not merely unnecessary against a split clone — they are WRONG
+# there, because `mkdir -p "$CLONE_ABS/content/schema"` would mint directories
+# at a clone root that no longer holds any of the platform's code, and the
+# consumer looking for them has stopped looking.
+#
+# What changed, checked in the platform tree on 2026-09-20 rather than assumed:
+#
+#   qa-checkers-extended.ts  reads `join(FOLIO_DIR, "schema", "references.ts")`,
+#                            and FOLIO_DIR is `folioDir(findContentRepoRoot())`.
+#                            For qou that resolves through `harness.json` to
+#                            `<qou>/content` — the source of truth itself. The
+#                            bridge existed because the path used to be
+#                            import-relative and landed in the platform clone.
+#
+#   export-bibtex.ts         no longer imports `../../schemas/references` at
+#                            all. It imports `./references-registry-di`, a DI
+#                            point the folio fills by calling
+#                            `configureReferenceRegistry` — which qou's
+#                            `scripts/run-validate.ts` does, under `--strict`
+#                            only and for reasons recorded there (bean
+#                            `qou-cite`). So the bridge is inert rather than
+#                            merely unnecessary: the file it creates is at a
+#                            path nothing imports. Note that qou has no caller
+#                            of export-bibtex today, so `references.bib` is not
+#                            regenerated from here by any route; that is a
+#                            pre-existing gap this script never closed, and
+#                            leaving the bridge in place would not close it.
+#
+# So this whole block is dead the moment `.folio-assistant-pin` moves past the
+# split. It is kept, guarded, because the pin has NOT moved yet: until it does,
+# a fresh clone is pre-split and needs these links exactly as before.
+if [ "$PLATFORM_ABS" = "$CLONE_ABS" ]; then
+  # qa-checkers-extended.ts (pre-split) resolved references.ts relative to the
+  # PLATFORM clone (CONTENT_DIR = <clone>/content), but the bibliography source
+  # of truth lives in THIS repo at content/schema/references.ts. Without this
+  # bridge every \cite{} fails bib-cite-resolves with "does not resolve in
+  # references.ts" (the 2026-06-21 233-block false-fail batch).
+  if [ ! -e "$CLONE_ABS/content/schema/references.ts" ]; then
+    mkdir -p "$CLONE_ABS/content/schema"
+    ln -s "$ROOT/content/schema/references.ts" \
+      "$CLONE_ABS/content/schema/references.ts" \
+      && info "bridged content/schema/references.ts into pre-split platform clone" \
+      || info "could not bridge references.ts — bib-cite-resolves will false-fail"
+  fi
 
-# The platform imports the bibliography by TWO different paths, and
-# bridging only the one above leaves the other broken:
-#
-#   qa-checkers-extended.ts  → <clone>/content/schema/references  (above)
-#   export-bibtex.ts         → <clone>/schemas/references         (here)
-#
-# Without this second link, regenerating references.bib dies with
-# "Cannot find module '../../schemas/references'", the .bib silently
-# stays stale, and every \cite{} added since the last successful export
-# renders as an undefined citation in the PDF. Measured 2026-08-16: 16
-# keys present in references.ts were missing from references.bib, for
-# 23 "Citation ... undefined" warnings in the full build.
-if [ ! -e "$CLONE_ABS/schemas/references.ts" ]; then
-  mkdir -p "$CLONE_ABS/schemas"
-  ln -s "$ROOT/content/schema/references.ts" \
-    "$CLONE_ABS/schemas/references.ts" \
-    && info "bridged schemas/references.ts into platform clone" \
-    || info "could not bridge schemas/references.ts — export-bibtex will fail"
+  # The pre-split platform imported the bibliography by TWO different paths,
+  # and bridging only the one above left the other broken:
+  #
+  #   qa-checkers-extended.ts  -> <clone>/content/schema/references  (above)
+  #   export-bibtex.ts         -> <clone>/schemas/references         (here)
+  #
+  # Without this second link, regenerating references.bib dies with
+  # "Cannot find module '../../schemas/references'", the .bib silently
+  # stays stale, and every \cite{} added since the last successful export
+  # renders as an undefined citation in the PDF. Measured 2026-08-16: 16
+  # keys present in references.ts were missing from references.bib, for
+  # 23 "Citation ... undefined" warnings in the full build.
+  if [ ! -e "$CLONE_ABS/schemas/references.ts" ]; then
+    mkdir -p "$CLONE_ABS/schemas"
+    ln -s "$ROOT/content/schema/references.ts" \
+      "$CLONE_ABS/schemas/references.ts" \
+      && info "bridged schemas/references.ts into pre-split platform clone" \
+      || info "could not bridge schemas/references.ts — export-bibtex will fail"
+  fi
+else
+  info "split platform: no bibliography bridge needed (FOLIO_DIR and the DI registry resolve it)"
 fi
 
 # --- install the platform's own deps, and VERIFY it ----------------------

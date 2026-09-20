@@ -1,0 +1,30 @@
+{
+  "_comment": "qou's folio configuration. This file is `folio.config.json` renamed: the platform stopped reading the old name on 2026-09-18 and it is NOT a fallback — `resolveHarnessConfigPath` in folio-assistant's schemas/harness-config.ts reads `harness.config.json` and nothing else, so a folio still carrying the old name is UNCONFIGURED rather than half-configured. Nothing warns about it; the symptom is `profile-check.ts` reporting `undetermined` and running every criterion, including the paper adapter's LaTeX-shaped axes. Distinct from `harness.json`, which is the directory DECLARATION (where the folio tree is — here `content/`); this file is what the folio IS.",
+
+  "contentType": "paper",
+  "adapter": "paper",
+
+  "_adapterModule_comment": "Kept from folio.config.json and verified to resolve: `<qou>/folio-assistant/adapters/paper/index.ts`. It is redundant with `contentType: \"paper\"` — `BUILTIN_ADAPTERS` in the platform's src/builtin-adapters.ts names the same module — and the builtin path is the better one, because it SAYS out loud when the science layer is absent and it falls back, where a dead `adapterModule` only logs a load failure. Left in place because this migration renames a file rather than redesigning it; dropping the line is a one-line follow-up.",
+  "adapterModule": "folio-assistant/adapters/paper/index.ts",
+
+  "_feedbackDir_comment": "CHANGED from `folio-assistant/feedback`, which is the one value that did not survive the rename. That path does not exist under either layout, and `feedbackDir` is resolved against the FOLIO root, so the old value pointed the feedback store inside the platform checkout — a directory `FeedbackStore` would have created on first write, in a submodule/symlink qou does not own. No data moves: qou has no feedback store on disk today. `.folio-feedback` is the platform default and what `folio_init` writes.",
+  "feedbackDir": ".folio-feedback",
+
+  "viewer": {
+    "_comment": "`port` is read (src/index.ts -> FolioServer.viewerPort). `dir` currently is not read by anything — kept because it is the documented shape in harness.config.example.json and it does resolve.",
+    "dir": "folio-assistant/viewer",
+    "port": 8080
+  },
+
+  "simulators": {
+    "_comment": "The FOLIO's own directory — simulators are subject matter, so this path is relative to the qou root, not the platform.",
+    "dir": "simulators",
+    "pyodideCache": true
+  },
+
+  "readme": {
+    "linkStyle": "blob",
+    "publishRef": "gh-pages",
+    "pagesBaseUrl": "https://litlfred.github.io/qou"
+  }
+}
