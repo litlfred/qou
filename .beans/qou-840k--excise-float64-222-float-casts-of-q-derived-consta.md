@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-09-26T11:22:26Z
+updated_at: 2026-09-26T11:25:22Z
 ---
 
 
@@ -891,3 +891,58 @@ documents its ctype domain as only `{'sigma', 'sigma_inv', 'averaged'}`, with
 the very ctype in question. Recorded because the inference was reasonable, the
 documentation genuinely points that way, and the measurement says otherwise —
 which is the only thing that settles it.
+
+
+### Residual 3 measured: `tr_atom = tr_free·(z + d)` holds to 1.34e-51
+
+Method that worked, after the symbolic route failed twice: substitute the
+exact-rational pin into `q_character_on_braid_word` **before** the matrix
+product, so every χ^λ is an exact rational number rather than a ballooning
+rational function. 201 s, against >13 min with no result symbolically.
+
+    tr_free @q0 = 0.29901501718464007670216042677098383227494947439701665190
+    tr_atom @q0 = 0.15196833920423160759266569775106614127124096465525819935
+    ratio       = 0.50822978937673896257799579765589360389830839091656702154
+
+    d_for_ctype("averaged_weighted", h) @q0 = -0.1044582477697262890178340662900
+    z_D + d                                 =  0.50822978937673896257799579765589
+    ratio − (z_D + d)                       =  1.3363824e-51     <- residual 3
+
+Against the recorded **1.2e-31**. 1.3e-51 is the 50-digit pin's own floor, so
+the identity is exact at the precision available.
+
+**The comparison discriminates, which is worth more than the residual.** Using
+the *unweighted* `averaged` d instead gives `ratio − (z+d) = 7.19e-5` — five
+orders worse. So this identity picks out the **colour-weighted** interface
+specifically, an independent confirmation that `bring_color_weighted`
+(convention D, ruling R3) is the constant the canonical word actually uses.
+
+### The complete table — all four re-measured, none of them 1e-31
+
+| residual | recorded 2026-08-08 | measured 2026-09-26 | route |
+|---|---|---|---|
+| `Σ y_λ f^λ = 1` | 7.7e-31 | **1.06911e-50** | numeric accessor |
+| `tr_free = tr_p·tr_n` | 7.9e-31 | **0** (60 digits) | symbolic ℚ(q) |
+| `tr_atom = tr_free·(z+d)` | 1.2e-31 | **1.3363824e-51** | exact-rational at the pin |
+| `tr(W·σ) = z·tr(W)` | 9.1e-32 | **0** (60 digits) | symbolic ℚ(q) |
+
+The 30-digit cap explained all four and has zero call sites. Every replacement
+is 20 orders tighter or exact.
+
+### Unplanned, and the most valuable thing this run produced
+
+`tr_M(atom)` for the deuteron was recomputed here **entirely from scratch** — a
+different route from anything in `qou-ejfy`, going through
+`q_character_on_braid_word` at an exact rational rather than reading any
+witness. Against the committed `markov-trace-assembly-deuteron.derivation.json`
+`target_value`:
+
+    stored     0.1519683392042316075926656977510661412712409646552611513103
+    recomputed 0.15196833920423160759266569775106614127124096465525819935
+    common prefix: 51 chars = ~49 significant digits
+
+So the stored deuteron value is confirmed to **~49 digits by a third
+independent route**. `qou-ejfy` had the nucleon values at 1.4e-50 / 5.8e-50 by
+exact symbolic recompute and the weights at 60 digits; this adds the full
+*atom* trace. The claim that these witnesses carry ~16 real digits is now
+refuted three ways over.
