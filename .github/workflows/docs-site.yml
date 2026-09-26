@@ -77,11 +77,24 @@ jobs:
           test -d ./_site || { echo "no _site"; exit 1; }
           n=$(find ./_site -name '*.html' | wc -l)
           echo "rendered HTML pages: $n"
-          [ "$n" -gt 2000 ] || { echo "expected >2000 pages from 3082 sources, got $n"; exit 1; }
+          # A catastrophe floor only. The REAL check is per-source coverage in the
+          # next step: run 36266675464 passed a `>2000` assertion with 3017 pages
+          # from 3082 sources, so a page count cannot see a 65-page gap.
+          [ "$n" -gt 2500 ] || { echo "catastrophic: only $n pages from 3082 sources"; exit 1; }
           grep -rqi 'just-the-docs\|just_the_docs' ./_site/assets 2>/dev/null \
             || grep -rqi 'just-the-docs' ./_site --include='*.html' -m1 \
             || { echo "just-the-docs theme not detected in output"; exit 1; }
-          echo "theme + page-count assertions passed"
+          echo "theme + catastrophe-floor assertions passed"
+
+      # Per-SOURCE coverage: which staged .md produced no page at all?
+      # Reporting only on this run — the floor is set from what this measures,
+      # rather than guessed, because a floor above the true value fails
+      # spuriously and one below it lets pages vanish silently. Bean qou-gkrt.
+      - name: Report per-source page coverage
+        run: |
+          set -euo pipefail
+          python3 scripts/docs-site-coverage.py \
+            --stage ./_docs-stage --site ./_site --list 60
 
       - uses: actions/upload-artifact@v4
         with:
