@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-09-19T06:00:38Z
-updated_at: 2026-09-26T10:00:55Z
+updated_at: 2026-09-26T10:21:48Z
 ---
 
 ## Measured on `origin/main` @ `665c91e403` (2026-09-19)
@@ -375,3 +375,39 @@ re-run.
 **Nothing is owed on this PR.** No conflict, no CI (Actions are
 `workflow_dispatch`-only), no open review threads. It is waiting on merge
 permission only.
+
+
+### 🛑 CORRECTION, same session: the drift is 38 commits, NOT 106
+
+The block immediately above says "106 main commits" twice, and the commit that
+carried it (`f2df85bd1c`) says so in its subject. **Both are wrong. Measured:
+`git rev-list --count 665c91e403..origin/main` = 38.** The companion figure
+**51 files is correct** and is unchanged.
+
+**Where 106 came from, because the mechanism is the reusable part.** It is the
+session-start hook's line, read at 09:53 and quoted instead of measured. At that
+moment the clone was still shallow from an earlier `--depth=80` fetch and
+`665c91e403` was **not a resolved ancestor** of `origin/main`, so the range
+`base..main` could not be computed and the count fell back to something much
+larger. After `git fetch --depth=200` the ancestry resolves
+(`git merge-base --is-ancestor 665c91e403 origin/main` -> yes) and the range
+answers 38.
+
+Note the direction is counter-intuitive and that is why it slipped through: a
+*shallower* history normally makes `rev-list` count *fewer* commits, so a
+too-large number does not read as a truncation artifact. It reads as a real
+number.
+
+**The verification conclusion is untouched, and the distinction matters.** Every
+check above ran against the actual `origin/main` **tree** at `bd0c2cb7ed` — the
+merge-tree, the `--strict` ratchet, the three byte-identical producer runs, the
+empty `git status`. A tree is the same tree however many commits are counted
+into it. What was wrong is the *size of the gap I described*, not *what I
+verified against*.
+
+**This repo's own rule, applied to me:** AGENTS.md says importer counts and
+similar figures are "measured, not maintained" and that a hand-kept number
+decays. I quoted a hook's number into a bean body and a commit subject without
+running the one-line check. The commit message is left as-is rather than
+force-pushed — the count there is wrong and this note is the correction of
+record.
