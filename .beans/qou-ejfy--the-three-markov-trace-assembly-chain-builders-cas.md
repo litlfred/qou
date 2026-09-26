@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-09-19T06:00:38Z
-updated_at: 2026-09-26T10:21:48Z
+updated_at: 2026-09-26T10:34:39Z
 ---
 
 ## Measured on `origin/main` @ `665c91e403` (2026-09-19)
@@ -411,3 +411,39 @@ decays. I quoted a hook's number into a bean body and a commit subject without
 running the one-line check. The commit message is left as-is rather than
 force-pushed — the count there is wrong and this note is the correction of
 record.
+
+
+## Cross-check: an in-progress bean carried an instruction that would have corrupted this result
+
+Looking for the next item, `qou-840k` (in-progress, "EXCISE FLOAT64: 222
+float()-casts…") turned out to contain a claim in direct conflict with the
+measurement above. It says `wedderburn_jones_markov.y_lambda_at` truncates the
+Markov weights to 30 digits, that this "is the binding precision constraint on
+every tr_M in the framework", and that **"corpus claims of '~1e-50 agreement' …
+should be … corrected"** to ~1e-30.
+
+Under a live cap, the 1.4e-50 / 5.8e-50 agreement measured here between the
+stored witness and an independent exact symbolic recompute would be impossible —
+two independent routes cannot agree past a truncation both are subject to. So
+one of the two had to be wrong.
+
+**Measured: the cap is dead code.** It sits at line 314 inside
+`_y_lambda_at_convention_C_HISTORICAL()` (lines 214-339, AST-resolved), whose
+name occurs at exactly two lines in the file — its own `def` and a docstring
+mention — i.e. **zero call sites**. Executed, `y_lambda_at(3, q0)` returns
+**60 significant digits**, and the Markov normalisation `Σ y_λ f^λ = 1` closes
+at **1.06911e-50** against the 7.7e-31 that bean records.
+
+The bean was dated 2026-08-08 and the convention-D cascade that killed those
+fast paths landed 2026-08-09 — correct when taken, superseded the next day.
+
+Two things worth keeping from this:
+
+- **It corroborates this PR from the opposite direction.** The tr_M chain being
+  50-digit clean is now established by an exact symbolic recompute *and* by the
+  weights it is built from carrying 60 digits from an uncapped path.
+- **A stale bean can be worse than a wrong number.** This one does not merely
+  record a superseded figure; it carries an *instruction to edit the corpus*
+  that, followed today, would replace correct 1e-50 statements with wrong 1e-30
+  ones. Recorded on `qou-840k` itself with the evidence; its status was not
+  touched and its main subject (the 222 casts) is unaffected.

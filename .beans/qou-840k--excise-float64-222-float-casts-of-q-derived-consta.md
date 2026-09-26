@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-09-07T04:44:03Z
+updated_at: 2026-09-26T10:33:47Z
 ---
 
 
@@ -667,3 +667,70 @@ A 29-file PR applying `q_at(mp.mp.dps)` would have compiled, **passed the
 F64_CAST gate by removing the matched shape, and changed no result**. A green
 gate over an unchanged defect is precisely what this gate family exists to
 prevent.
+
+
+---
+
+## 🛑 The 30-digit cap is DEAD CODE, and this bean's instruction would now INTRODUCE errors (measured 2026-09-26, from `qou-ejfy`; status NOT changed)
+
+This bean's §"BUT: a 30-digit cap in the production weights" says the
+`sp.Float(_mp_inner.nstr(y, 30), 30)` truncation "is the binding precision
+constraint on every tr_M in the framework", lists four residuals at ~1e-31, and
+concludes that **"corpus claims of '~1e-50 agreement' ... should be documented
+and the 'exact to 1e-50' phrasing corrected where it refers to tr_M."**
+
+**Acting on that today would replace correct 1e-50 statements with wrong 1e-30
+ones.** The cap is unreachable.
+
+### Structural: zero call sites
+
+Line 314 (the cap) is inside **`_y_lambda_at_convention_C_HISTORICAL()`**, lines
+214-339 (AST-resolved, not grepped). That name occurs at exactly **two** lines in
+the file — **150**, a mention inside `y_lambda_at`'s own docstring, and **214**,
+its `def`. **It is never called.** The live `y_lambda_at` (from line 117) is six
+statements and routes to `y_lambda_su_n` / `y_lambda_su_n_symbolic` with no
+truncation anywhere.
+
+### Executed: 60 digits, and the normalisation closes at 1e-50
+
+`y_lambda_at(3, sp.Rational(Q_50_DIGIT_STR))` at the proton pin:
+
+    y_(3,)       ~60 sig digits   0.505404226503930803187558703240472275660351197749810143
+    y_(2, 1)     ~60 sig digits   0.247297886748034598406220648379763862169824401125089916
+    y_(1, 1, 1)                   0            (row cap — this IS convention D)
+
+The cap would force **exactly 30** and no more. Against this bean's own first
+residual:
+
+    Sum y_lam * f^lam = 1      recorded here 7.7e-31   ->   MEASURED 1.06911e-50
+
+### Why it went stale, and it was one day
+
+This bean is dated **2026-08-08**. The convention-D cascade of **2026-08-09**
+made the three C fast paths dead — `y_lambda_at`'s docstring states it outright
+("THE THREE C FAST PATHS BELOW ARE NOW DEAD ... the D result returns before any
+of them is reached"), and the AST and the execution both confirm it. The
+measurement here was correct the day it was taken and was superseded the next.
+
+### Scope of this correction — deliberately narrow
+
+I re-measured **one** of the four residuals. I am **not** asserting specific new
+values for the other three (`tr_free = tr_p*tr_n`, `tr_atom = tr_free*(z+d)`,
+`tr(W.sigma) = z*tr(W)`); they need their own runs. What IS established is their
+**cause**: this bean attributes all four to the 30-digit cap on `y_lambda`, and
+`y_lambda` now carries 60 digits from a code path that never reaches the cap. So
+the stated explanation no longer holds for any of them, whatever they now measure.
+
+### Independent corroboration from the other direction
+
+`qou-ejfy` measured the canonical `tr_M` witness against an exact symbolic
+recompute over ℚ(q) at the exact-rational 50-digit pin: agreement to **1.4e-50**
+(proton) / **5.8e-50** (neutron), stable from 60 to 90 dps. Under a live 30-digit
+cap those two independent routes could not have agreed past ~1e-30. The two
+findings confirm each other and were reached from opposite ends.
+
+### What is NOT retracted
+
+The bean's main subject — **222 `float()`-casts of q-derived constants across 129
+files** — is untouched by this. Only §"a 30-digit cap in the production weights"
+is stale.
