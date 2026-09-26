@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-09-26T10:46:00Z
+updated_at: 2026-09-26T10:53:14Z
 ---
 
 
@@ -773,3 +773,44 @@ precision, not by the y_λ cap. Same family of check, different and stated cause
 practice (`qou-3nva`) is to leave those as historical rather than sweep them.
 The 08-09 doc is the one where that practice and the risk actually collide;
 raised for the owner rather than acted on.
+
+
+### Residual 2 re-measured: `tr_free = tr_p · tr_n` is EXACT, not 7.9e-31
+
+Computed on the exact symbolic route (`markov_weights_symbolic.tr_M_canonical`,
+rational functions over ℚ(q)), evaluated at the exact-rational 50-digit pin:
+
+    tr_free   @q0  = 0.29901501718464007670216042677098383227494947439701665190
+    tr_p*tr_n @q0  = 0.29901501718464007670216042677098383227494947439701665190
+    RELATIVE RESIDUAL = 0
+
+**Stated precisely:** the two sides agree to **all 60 digits evaluated**. That is
+not a proof of symbolic identity — I deliberately did not run `sp.simplify` on
+the H_6 difference (see below) — but at the precision measured there is no
+residual at all. The recorded **7.9e-31 was entirely the cap artifact**, and the
+cap is dead.
+
+This **strengthens** the benign citation in
+`docs/audits/2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md`
+(lines 277-280), which offers 7.9e-31 as verification that tr_M is
+multiplicative over independent subsystems. The verification is better than it
+claims.
+
+### Residual 3 NOT measured, and the reason is structural
+
+`tr_atom / tr_free` needs the **atom** word, which carries an
+`averaged_weighted` letter — `σ_i − h(1/2 − δ/4)·𝟙` (`markov_peel.py:187`). That
+makes tr_M(atom) a rational function over **ℚ(q, δ, h)**, not ℚ(q). Measured
+cost at the same n=6: **>13 min with no result**, against **193 s** for the free
+word. Killed rather than run to timeout. Residual 3 and residual 4
+(`tr(W·σ) = z·tr(W)`) are therefore still open; their stated CAUSE is withdrawn
+either way, per the correction above.
+
+### Method note, because it cost the first attempt
+
+The first probe put `sp.simplify(tr_free - tr_p*tr_n)` **before** the numeric
+evaluation it was guarding. On an H_6 rational function that is the expensive
+step, and it gated the cheap answer behind it. Evaluating at the pin with
+`sp.cancel` only — no `simplify` — returns in 199 s total. If you extend this to
+residual 3, substitute q, δ and h numerically *before* taking the trace rather
+than after.
