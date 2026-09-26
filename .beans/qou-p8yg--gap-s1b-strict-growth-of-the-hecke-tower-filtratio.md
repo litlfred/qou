@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-12T19:02:09Z
-updated_at: 2026-09-26T11:15:26Z
+updated_at: 2026-09-26T12:25:10Z
 ---
 
 Parent: qou-cins / plan qou-0fmb, epic qou-08a2. Opened 2026-09-12 after S1 merged (#7228, 3653e9ce).
@@ -260,3 +260,28 @@ Same principle, one level up: a theorem about the concrete tower is not the `twH
 The REFUTED `g m |-> q*1` sketch recorded above is untouched and stays refuted; nothing here
 revives it. The minor `exists_tower_with_nonzero_h` restated-hypothesis cleanup noted in this bean
 is also NOT done.
+
+
+--------
+
+**2026-09-26 (same PR #7456, second commit): strict growth now holds at the COLIMIT
+level too -- `H_lt_succ : H n < H (n+1)`. Bean STILL stays open; `twH` is untouched.**
+
+The earlier append recorded strict growth for the concrete tower
+(`heckeIncl_range_lt_top`). This adds it for the colimit's range filtration, which is
+the mathematically meaningful version: `H n` is now known to be an isomorphic copy of
+`Hecke n` rather than merely its image, so `finrank (H n) = (n+1)!` and the levels
+separate by dimension.
+
+Route: `ofLim_injective` (faithfulness, proved in the same file via
+`DirectLimit.mk_injective` from all-transitions-injective) -> `finrank_H` ->
+`H_lt_succ`. **Unlike the concrete-tower half, this one DOES need injectivity** -- so
+`qou-ejde`'s third "what this unlocks" claim was right about the colimit and wrong about
+the concrete tower. Both corrections are recorded on that bean.
+
+**Why this bean is still open.** Its subject is `twH` in MathlibExt/HeckeTowerWitness,
+whose separator is the rank-2 collapse that provably cannot separate H 1 from H 2. The
+colimit carrier is a different object. Transferring needs the abstraction bridge, which
+is still unbuilt. Also untouched: the minor `exists_tower_with_nonzero_h`
+restated-hypothesis cleanup this bean notes, and the REFUTED `g m |-> q*1` sketch stays
+refuted.
