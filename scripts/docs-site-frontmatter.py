@@ -26,7 +26,7 @@ For each `.md` under the staged tree, front matter with:
   layout: default        — the theme's page layout
   title:                 — the first `# ` heading, else a title-cased stem
   parent: / grand_parent: — from the directory, so the nav nests
-  nav_exclude: true      — for `audits/`, and see below
+  nav_exclude: true      — for `audits/` and `_archive/`, and see below
 
 NAV_EXCLUDE ON audits/ IS DELIBERATE, NOT A SHORTCUT
 ----------------------------------------------------
@@ -81,7 +81,9 @@ def front_matter(rel: str, text: str) -> str:
         lines.append(f"parent: {yaml_quote(parts[-2].replace('-', ' '))}")
     if len(parts) >= 3:
         lines.append(f"grand_parent: {yaml_quote(parts[-3].replace('-', ' '))}")
-    if parts[0] == "audits":
+    # audits/ (2584 files) and _archive/ (43 historical) are rendered and
+    # searchable but kept OUT of the sidebar — see the module docstring.
+    if parts[0] in ("audits", "_archive"):
         lines.append("nav_exclude: true")
     lines.append("---")
     return "\n".join(lines) + "\n\n"
@@ -89,7 +91,6 @@ def front_matter(rel: str, text: str) -> str:
 
 def walk_md():
     for root, dirs, files in os.walk(DOCS):
-        dirs[:] = [d for d in dirs if d != "_archive"]
         for f in files:
             if f.endswith(".md") and f not in SKIP_NAMES:
                 p = os.path.join(root, f)
@@ -119,7 +120,7 @@ def main() -> int:
     stage = os.path.abspath(a.stage)
     if os.path.exists(stage):
         shutil.rmtree(stage)
-    shutil.copytree(DOCS, stage, ignore=shutil.ignore_patterns("_archive"))
+    shutil.copytree(DOCS, stage)
 
     injected = kept = 0
     for root, _, files in os.walk(stage):

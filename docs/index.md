@@ -24,25 +24,30 @@ What is here is the working record around that paper.
 | [Handover](handover/) · [Ports](ports/) | 7 | Session handovers and port notes. |
 | *(top level)* | 53 | Cheat sheets and standing references, including the canonical-derivation cheat sheet and the precision goals. |
 
-Total **3,038** markdown files. `docs/_archive/` is excluded from the site.
+| [Archive](_archive/) | 43 | Historical documents, including 11 moved off the repo root on 2026-09-26. **Not in the sidebar**, for the same reason as audits. |
+
+Total **3,082** markdown files.
 
 ## Why the audits are not in the sidebar
 
-`docs/audits/` is **2,584 of the 3,038** markdown files here. A just-the-docs
+`docs/audits/` is **2,584 of the 3,082** markdown files here. A just-the-docs
 sidebar with 2,832 leaves is not navigation, it is a wall — and the navigation is
 the reason the theme was chosen. So audits carry `nav_exclude: true`.
 
 They are **not** excluded from the site. Every one is rendered, linkable, and
 **searchable** — just-the-docs indexes `nav_exclude`d pages, so the search box is
-the way in. Use it rather than the sidebar.
+the way in. Use it rather than the sidebar. `_archive/` gets the same treatment,
+and for a sharper reason: `_archive/orphan-top-level/AUDIT-DEEP-2026-05.md` is
+linked from **19 files**, so excluding the directory would 404 every one of those
+on the published site while the repo copy still resolved.
 
 ## How this site is built
 
 Front matter is **injected into a staging copy** by
 [`scripts/docs-site-frontmatter.py`](https://github.com/litlfred/qou/blob/main/scripts/docs-site-frontmatter.py),
 never into the repository. Jekyll renders a `.md` file only if it carries front
-matter — without it the file is copied verbatim as a static asset — and **0 of
-3,037** of these files had any. Rather than rewrite every dated audit record to
+matter — without it the file is copied verbatim as a static asset — and **3,080 of
+3,082** of these files had none. Rather than rewrite every dated audit record to
 satisfy a renderer, the generator adds what Jekyll needs at build time and leaves
 the records as records.
 
