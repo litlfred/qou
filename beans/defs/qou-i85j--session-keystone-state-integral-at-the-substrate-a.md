@@ -2,7 +2,7 @@
 # qou-i85j
 title: 'Session: keystone state integral at the substrate anchor'
 status: completed
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-08-10T19:51:59Z
 updated_at: 2026-08-10T23:29:33Z

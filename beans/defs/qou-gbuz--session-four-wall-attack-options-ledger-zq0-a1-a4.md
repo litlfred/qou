@@ -2,7 +2,7 @@
 # qou-gbuz
 title: 'Session: four-wall attack-options ledger (z(q0) A1-A4; A-binary B1-B4; swing C1-C3; Route C D1-D4)'
 status: todo
-type: milestone
+type: epic
 created_at: 2026-08-15T01:10:21Z
 updated_at: 2026-08-15T01:10:21Z
 ---

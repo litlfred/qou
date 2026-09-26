@@ -2,7 +2,7 @@
 # qou-uznc
 title: 'Session: q-NS classical (q→1) gap decomposition + attack'
 status: completed
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-07-18T18:17:02Z
 updated_at: 2026-07-24T15:49:33Z

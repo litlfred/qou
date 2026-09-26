@@ -2,7 +2,7 @@
 # 571x
 title: 'Session: qbeta f-map power-class pincer (bar-even/ζ₄) + kernel-constraint Lean'
 status: completed
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-07-06T11:48:04Z
 updated_at: 2026-07-25T19:45:00Z

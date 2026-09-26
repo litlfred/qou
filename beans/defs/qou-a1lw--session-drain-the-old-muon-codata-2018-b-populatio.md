@@ -2,7 +2,7 @@
 # qou-a1lw
 title: 'Session: drain the OLD-MUON (CODATA 2018) B-population witnesses'
 status: in-progress
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-08-28T15:06:28Z
 updated_at: 2026-09-08T07:45:41Z

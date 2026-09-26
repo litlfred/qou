@@ -2,7 +2,7 @@
 # qou-0ubf
 title: 'Session: P≠NP gap inventory refresh — re-measure the cluster against main, correct the stale 2026-07-25 semisimplicity row'
 status: in-progress
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-08-29T16:32:33Z
 updated_at: 2026-08-29T16:33:12Z

@@ -2,7 +2,7 @@
 # qou-2akx
 title: 'Session: binding-gap groupoid / derived-category research survey (full tower)'
 status: in-progress
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-09-05T17:47:03Z
 updated_at: 2026-09-05T19:16:44Z

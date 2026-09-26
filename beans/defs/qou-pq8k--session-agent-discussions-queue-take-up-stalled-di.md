@@ -2,7 +2,7 @@
 # qou-pq8k
 title: 'Session: agent-discussions-queue — take up stalled discussion fronts (1tls/rw91/n3iv)'
 status: completed
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-08-15T22:20:31Z
 updated_at: 2026-08-16T01:58:09Z

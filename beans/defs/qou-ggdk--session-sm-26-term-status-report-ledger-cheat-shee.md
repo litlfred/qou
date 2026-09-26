@@ -2,7 +2,7 @@
 # qou-ggdk
 title: 'Session: SM 26-term status — report, ledger + cheat-sheet refresh, in-paper 4-C contradiction, Lean hygiene, per-term beans (claude/standard-model-terms-status-ftoejr)'
 status: in-progress
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-09-03T04:42:59Z
 updated_at: 2026-09-03T16:32:23Z

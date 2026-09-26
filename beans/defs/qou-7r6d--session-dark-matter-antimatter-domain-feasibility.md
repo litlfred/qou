@@ -2,7 +2,7 @@
 # qou-7r6d
 title: 'Session: dark-matter / antimatter-domain feasibility (gamma-gamma C-symmetry, QOU cosmology)'
 status: todo
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-09-07T11:50:19Z
 updated_at: 2026-09-07T12:03:24Z

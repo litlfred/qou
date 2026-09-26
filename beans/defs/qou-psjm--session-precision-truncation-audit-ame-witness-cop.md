@@ -2,7 +2,7 @@
 # qou-psjm
 title: 'Session: precision-truncation audit — AME + witness-copy classes, HARD GATE wiring, drain queue'
 status: in-progress
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-09-05T12:02:04Z
 updated_at: 2026-09-06T06:37:25Z

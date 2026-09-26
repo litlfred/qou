@@ -2,7 +2,7 @@
 # qou-dgce
 title: 'Session: chi-as-term-of-ch + HH/HKR/trace exposition arc (claude/tender-pasteur-cpgkor)'
 status: in-progress
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-09-15T18:26:36Z
 updated_at: 2026-09-15T18:31:30Z

@@ -2,7 +2,7 @@
 # qou-a6rd
 title: 'Session: Borel/alien-calculus arc (A_ω / c3-odd) — review + work plan (branch n24484)'
 status: todo
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-08-19T21:00:32Z
 updated_at: 2026-08-19T21:36:16Z

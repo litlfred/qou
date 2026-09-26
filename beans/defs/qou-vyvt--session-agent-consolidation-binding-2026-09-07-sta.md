@@ -2,7 +2,7 @@
 # qou-vyvt
 title: 'Session: agent-consolidation-binding 2026-09-07 — stalled-agent takeover (round 2), merge sweep, chi scaling, Q_β elements, binding SHAPE toward L2'
 status: in-progress
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-09-07T18:25:01Z
 updated_at: 2026-09-12T07:52:49Z

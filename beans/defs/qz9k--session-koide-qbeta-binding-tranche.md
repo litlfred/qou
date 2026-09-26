@@ -2,7 +2,7 @@
 # qz9k
 title: 'Session: koide-tau / Q_β kernel Stage C / categorical binding wiring (no fitting)'
 status: completed
-type: milestone
+type: epic
 priority: high
 created_at: 2026-06-16T02:14:00Z
 updated_at: 2026-06-21T19:39:07Z

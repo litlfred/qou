@@ -2,7 +2,7 @@
 # j7j2
 title: 'Session: 1ppQ tranche — α_EM 1/(πb₁) measure scoping + GP kernel bug fix (qou-b2ie) + van der Veen citation check'
 status: completed
-type: milestone
+type: epic
 created_at: 2026-07-17T14:45:00Z
 updated_at: 2026-07-17T14:45:00Z
 ---

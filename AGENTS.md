@@ -606,11 +606,30 @@ user's last message, not the most recently mentioned file.
 1. **Start a bean list at session start.** As soon as you have
    enough context (after reading the user's first request, the
    SessionStart hooks, and the current branch / PR state), create a
-   session milestone bean plus child task beans decomposing the
+   session **epic** bean plus child task beans decomposing the
    requested work (`beans create "Session: <branch/goal>" --type
-   milestone`; one `--type task` per concrete step). If the request
+   epic`; one `--type task` per concrete step). If the request
    is one trivial task, you may skip — but any time there are ≥ 2
    distinct steps, create the beans.
+
+   **🛑 `--type epic`, NOT `--type milestone` (corrected 2026-09-26 on owner
+   instruction).** This line said `milestone` until then, and following it
+   ~291 times is why `milestone` stopped meaning anything here: cat-harness's
+   hierarchy is `milestone -> epic -> feature -> task/bug`, where a
+   **milestone is an owner-level goal** — the platform's own tracker has
+   **three**, from "the owner's goals" — while a session is a work-tranche,
+   which is what an `epic` is. qou had **374** milestones, 291 of them
+   `Session: …`, so the roadmap had ~291 roots and `check-bean-parents`
+   reported **1910 problems / 2305 open (83 %)**. The 291 were retyped to
+   `epic` in the same commit as this edit (`milestone` 374 -> 49).
+
+   **Do NOT "fix" this by using `--type task` instead.** That was the first
+   instinct and it is measurably worse: `ROOT_TYPES = {milestone, epic}`, so a
+   parentless task is an orphan, and `task` is not a legal parent — measured
+   on the 291, a `task` retype would have created **66 new orphans** and left
+   **148 open children illegally parented** (`task beans can only have
+   milestone, epic, or feature as parent, not task`). `epic` costs nothing:
+   children stay legally parented and the bean stays a legitimate root.
 
    **Check before you create (STRICT).** `beans create` is **not**
    idempotent — it mints a fresh ID on every call and dedupes on

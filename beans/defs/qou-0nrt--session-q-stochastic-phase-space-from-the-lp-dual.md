@@ -2,7 +2,7 @@
 # qou-0nrt
 title: 'Session: q-stochastic phase space from the LP-dual shadow prices — corpus analysis, gaps, downstream impact (owner 2026-09-16)'
 status: todo
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-09-16T00:47:52Z
 updated_at: 2026-09-16T01:25:54Z

@@ -2,7 +2,7 @@
 # qou-89f9
 title: 'Session: alien-calculus ↔ Habiro connection deep-dives + overclaim cleanup'
 status: scrapped
-type: milestone
+type: epic
 priority: normal
 tags:
     - alien-habiro

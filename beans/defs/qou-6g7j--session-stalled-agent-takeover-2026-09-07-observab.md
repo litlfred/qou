@@ -2,7 +2,7 @@
 # qou-6g7j
 title: 'Session: stalled-agent takeover 2026-09-07 — observable C, #7092 coboundary, Z-resolved b3, REV Σβ, SandwichReduces'
 status: in-progress
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-09-07T18:06:39Z
 updated_at: 2026-09-12T18:02:40Z

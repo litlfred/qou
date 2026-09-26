@@ -2,7 +2,7 @@
 # qou-r7kp
 title: 'Session: trLim/wtrace faithfulness -- the negative at the carrier'
 status: completed
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-09-26T14:15:29Z
 updated_at: 2026-09-26T14:16:20Z

@@ -2,7 +2,7 @@
 # cfee
 title: 'Session: Borromean AJ stage 1 + trefoil certificate telescope'
 status: completed
-type: milestone
+type: epic
 created_at: 2026-07-04T00:09:23Z
 updated_at: 2026-07-06T18:19:18Z
 ---

@@ -2,7 +2,7 @@
 # qou-jeb1
 title: 'Session: retarget PR #5500 muon anchor A->C onto the real witness set'
 status: completed
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-08-28T15:07:51Z
 updated_at: 2026-08-28T15:48:34Z
