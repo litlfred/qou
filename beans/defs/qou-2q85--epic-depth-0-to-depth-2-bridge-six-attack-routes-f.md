@@ -2,7 +2,7 @@
 # qou-2q85
 title: 'EPIC: depth-0 to depth-2 bridge - six attack routes for the convolution/volume gap'
 status: todo
-type: milestone
+type: epic
 priority: high
 created_at: 2026-09-04T20:42:08Z
 updated_at: 2026-09-04T22:16:50Z

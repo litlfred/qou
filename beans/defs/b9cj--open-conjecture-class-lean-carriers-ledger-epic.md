@@ -2,7 +2,7 @@
 # b9cj
 title: 'EPIC: open §3b conjecture-class Lean carriers — track all open conjectures'
 status: in-progress
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-07-05T13:20:00Z
 updated_at: 2026-08-01T19:55:46Z

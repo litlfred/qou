@@ -2,7 +2,7 @@
 # qou-h315
 title: 'EPIC: analytic machinery to discharge the M1>0 (CS)-margin input (hCS)'
 status: todo
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-08-29T01:33:54Z
 updated_at: 2026-08-29T02:28:35Z

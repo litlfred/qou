@@ -2,7 +2,7 @@
 # qou-8p1x
 title: 'EPIC: routes to a 3-dimensional fibre / colour SU(3) — assessed and roasted'
 status: in-progress
-type: milestone
+type: epic
 parent: qou-8lxd
 created_at: 2026-08-07T12:40:00Z
 updated_at: 2026-08-07T14:20:00Z

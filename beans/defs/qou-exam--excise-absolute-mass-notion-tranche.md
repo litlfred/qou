@@ -2,7 +2,7 @@
 # qou-exam
 title: 'EPIC: excise the notion of absolute mass (owner ruling 2026-08-11)'
 status: in-progress
-type: milestone
+type: epic
 priority: high
 created_at: 2026-08-11T01:00:00Z
 updated_at: 2026-08-11T01:00:00Z

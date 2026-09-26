@@ -2,7 +2,7 @@
 # dgap
 title: 'EPIC: drain the derivation-chain gap (tiered, 1299 actionable)'
 status: in-progress
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-08-18T21:00:00Z
 updated_at: 2026-08-18T21:00:00Z

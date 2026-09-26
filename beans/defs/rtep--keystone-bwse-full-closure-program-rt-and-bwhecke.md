@@ -2,7 +2,7 @@
 # rtep
 title: 'EPIC: bwse full closure — RT ribbon-functor+Kirby calculus AND BW=Hecke MTC identification'
 status: in-progress
-type: milestone
+type: epic
 priority: high
 created_at: 2026-08-02T09:20:00Z
 updated_at: 2026-08-02T09:20:00Z

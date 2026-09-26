@@ -2,7 +2,7 @@
 # sp00
 title: 'EPIC: Specht/S_n Lean formalization program (workplan, phase-ordered)'
 status: completed
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-07-05T16:30:00Z
 updated_at: 2026-09-26T11:03:17Z

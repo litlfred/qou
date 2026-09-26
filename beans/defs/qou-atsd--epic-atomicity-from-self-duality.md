@@ -2,7 +2,7 @@
 # qou-atsd
 title: 'EPIC: atomicity from self-duality — derive TensorGenerationFree (rank-one) from the volume-form axiom + dim V=2'
 status: in-progress
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-07-25T20:32:48Z
 updated_at: 2026-07-25T20:32:48Z
