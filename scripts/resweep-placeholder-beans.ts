@@ -19,7 +19,7 @@ import { readdirSync, readFileSync, existsSync, statSync } from "node:fs";
 import { resolve, join } from "node:path";
 
 const REPO = resolve(import.meta.dir, "..");
-const BEANS = join(REPO, ".beans");
+const BEANS = join(REPO, "beans/defs");
 const COUNTER = join(REPO, "scripts/count-actionable-placeholders.ts");
 const apply = process.argv.includes("--apply");
 const today = new Date().toISOString().slice(0, 10);

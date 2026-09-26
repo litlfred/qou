@@ -63,16 +63,16 @@ if [ -n "$RECENT_SIBLINGS" ]; then
   echo
 fi
 
-# 4b. Active beans — the bean work-plan (anti-stall). Read .beans/ directly
+# 4b. Active beans — the bean work-plan (anti-stall). Read beans/defs/ directly
 # so this works even when the `beans` CLI is absent (fresh containers) and
 # regardless of the status underscore/hyphen skew. Non-completed only.
-if [ -d .beans ]; then
+if [ -d beans/defs ]; then
   # Parsing frontmatter with grep|sed|tr trips errexit/pipefail whenever a
   # field (id/parent) is absent — the failing substitution would abort the
   # hook. Disable both for the loop, restore after.
   set +e +o pipefail
   ACTIVE_BEANS=""
-  for f in .beans/*.md; do
+  for f in beans/defs/*.md; do
     [ -e "$f" ] || continue
     status="$(grep -m1 '^status:' "$f" | sed 's/^status:[[:space:]]*//' | tr -d '\r')"
     case "$status" in completed|done) continue;; esac
@@ -90,9 +90,9 @@ if [ -d .beans ]; then
   done
   set -e -o pipefail
   if [ -n "$ACTIVE_BEANS" ]; then
-    echo "**Active beans (bean work-plan — \`.beans/\`, non-completed):**"
+    echo "**Active beans (bean work-plan — \`beans/defs/\`, non-completed):**"
     printf '%s\n' "$ACTIVE_BEANS"
-    echo "_Agent work-plans are **bean-based** (anti-stall, cross-session). Identify/claim the bean your PR works and narrate open/close. CLI: \`bash scripts/install-beans.sh\` then \`beans list\`; or read \`.beans/\` directly. See \`.claude/skills/local/bean-coordination.md\`._"
+    echo "_Agent work-plans are **bean-based** (anti-stall, cross-session). Identify/claim the bean your PR works and narrate open/close. CLI: \`bash scripts/install-beans.sh\` then \`beans list\`; or read \`beans/defs/\` directly. See \`.claude/skills/local/bean-coordination.md\`._"
     echo
   fi
 fi

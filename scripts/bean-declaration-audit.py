@@ -69,7 +69,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BEANS = ROOT / ".beans"
+BEANS = ROOT / "beans/defs"
 SRC = ROOT / "content/quantum-observable-universe/lean/QOU"
 BUILD = ROOT / "content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU"
 

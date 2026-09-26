@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# check-beans.sh — structural validator for the `.beans/` flat-file tracker.
+# check-beans.sh — structural validator for the `beans/defs/` flat-file tracker.
 #
 # The beans work-plan is the agent's source of truth for "what next"
 # (AGENTS.md §Agent work-plan policy). A bean file that a front-matter parser
@@ -38,14 +38,14 @@
 set -uo pipefail
 ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || { echo "not a git repo"; exit 0; }
 cd "$ROOT"
-[ -d .beans ] || { echo "check-beans: no .beans/ directory"; exit 0; }
+[ -d beans/defs ] || { echo "check-beans: no beans/defs/ directory"; exit 0; }
 
 quiet=0; [ "${1:-}" = "--quiet" ] && quiet=1
 
 bad=0 total=0 advisory=0
 declare -A idfile
 
-for f in .beans/*.md; do
+for f in beans/defs/*.md; do
   [ -f "$f" ] || continue
   total=$((total+1))
 
@@ -63,7 +63,7 @@ for f in .beans/*.md; do
       echo "⚠ $f"
       echo "    NO front-matter — no id, no status, no title. Invisible to the tracker."
       echo "    → shape 1: almost certainly a 'cat >>' to a guessed slug. Find the real"
-      echo "      bean (ls .beans/ | grep '^<id>'), append this body to it, remove this file."
+      echo "      bean (ls beans/defs/ | grep '^<id>'), append this body to it, remove this file."
     fi
     bad=$((bad+1)); continue
   fi
@@ -87,7 +87,7 @@ for f in .beans/*.md; do
   #
   # The four shapes above are all parser failures. This one parses perfectly and
   # still lands the file in the state this script's header describes — invisible
-  # in `beans list`, unfindable by the corpus-grep checklist's `.beans/` path,
+  # in `beans list`, unfindable by the corpus-grep checklist's `beans/defs/` path,
   # and a false match for the exact-title existence check AGENTS.md requires
   # before every `beans create` (an empty title matches every other empty one).
   #

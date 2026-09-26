@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Resolve `.beans/*.md` merge conflicts that are pure concurrent APPENDS.
+"""Resolve `beans/defs/*.md` merge conflicts that are pure concurrent APPENDS.
 
 WHY THIS EXISTS
 ---------------
@@ -11,8 +11,8 @@ resolution is never in doubt: keep both notes.
 Measured on `main`, 2026-09-13:
 
     main                                  169 commits / 24 h  (~1 per 9 min)
-    .beans/qou-brng--...derive-saturated    9 commits / 24 h
-    .beans/qou-zlra--...is-graded-binding   6 commits / 24 h
+    beans/defs/qou-brng--...derive-saturated    9 commits / 24 h
+    beans/defs/qou-zlra--...is-graded-binding   6 commits / 24 h
 
 so a branch that appends to `qou-brng` goes un-mergeable roughly every 2.7 h.
 In one session, PRs #7237 / #7245 / #7251 / #7253 collided on these two files
@@ -27,7 +27,7 @@ It is deliberately narrow, because a bean can also be *edited*, and an edit is
 a real conflict that a human must read. It exits 2 without writing anything
 unless EVERY unmerged path is:
 
-  * under `.beans/` and ending `.md`, and
+  * under `beans/defs/` and ending `.md`, and
   * a PURE APPEND on BOTH sides -- each side's text must literally start with
     the merge-base text, modulo the one `updated_at:` frontmatter line.
 
@@ -86,8 +86,8 @@ def main() -> int:
 
     refused = []
     for path in paths:
-        if not (path.startswith(".beans/") and path.endswith(".md")):
-            refused.append((path, "not a .beans/*.md ledger"))
+        if not (path.startswith("beans/defs/") and path.endswith(".md")):
+            refused.append((path, "not a beans/defs/*.md ledger"))
             continue
 
         base, ours, theirs = _show(1, path), _show(2, path), _show(3, path)
