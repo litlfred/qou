@@ -1,10 +1,10 @@
 ---
 # qou-gkrt
-title: docs site renders 3017 of 3082 sources — 64 pages unaccounted for
-status: todo
+title: docs site rendered 3017 of 3082 sources — RESOLVED, all 65 were audits/_deprecated/
+status: completed
 type: bug
 created_at: 2026-09-26T19:52:40Z
-updated_at: 2026-09-26T19:52:40Z
+updated_at: 2026-09-26T20:15:00Z
 ---
 
 The docs site builds and is correct as far as it goes — run
@@ -65,3 +65,74 @@ Bounded and low today: the site is not published. If published as-is, up to 64
 `nav_exclude`d audits reached by link, a missing page is invisible to navigation —
 including `AUDIT-DEEP-2026-05.md`, which 19 `computations/*.witness.json`
 `"audit_reference"` fields point at.
+
+--------
+
+## RESOLVED 2026-09-26 — the 65 are `docs/audits/_deprecated/`, and the per-source step found it on its first run
+
+**Read the body above as the PRE-DIAGNOSIS state.** It says "64 remain
+unexplained" and proposes replacing the `> 2000` floor with a coverage
+comparison. Both halves are now superseded: the count is **0**, and the gate
+that replaced the floor is a different shape from the one proposed.
+
+### The cause
+
+| | |
+|---|---|
+| `docs/audits/_deprecated/` | **65** `.md` |
+| the page-count gap | **65** (3082 sources − 3017 rendered) |
+
+Exactly the 65. **Jekyll skips any underscore-prefixed directory at ANY depth**,
+and `docs/_config.yml` listed only `_archive` under `include:`. The top-level
+`_archive` was known; a SECOND underscore directory one level down inside
+`audits/` was not.
+
+Run [36267907685](https://github.com/litlfred/qou/actions/runs/36267907685)
+named it in one line, and the by-directory grouping is why: the step was written
+on the reasoning that *"a systematic cause shows up as ONE directory and a
+scatter of one-offs does not"*, and every miss came back under one directory.
+The four local hypotheses in the body above — output-path collisions, case
+collisions, multi-dot basenames, README/index contention — were all ruled out
+and none of them was the cause. **A page count could not have produced this
+diagnosis; a per-source list grouped by directory produced it on its first run.**
+
+### Whether to render them was the corpus's call, not mine
+
+`docs/audits/_deprecated/README.md` states the intent in its own words: the
+directory *"keeps the documents discoverable for archaeology while removing them
+from the top-level `docs/audits/` list"*. That is `nav_exclude`, **not** "do not
+render" — identical to the argument for `_archive` — and **13** files reference
+paths under it. So `_deprecated` is now in `include:`, and it was already
+`nav_exclude: true`: `front_matter()` keys that on `parts[0] == "audits"`, which
+these paths are, verified by CALLING it rather than by reading it.
+
+### The gate is `--max-missing 0`, NOT the floor this bean proposed
+
+The body above asks for "a recorded floor". That is the weaker instrument and the
+measurement is what showed it: **a floor on `covered` RISES when documents are
+added**, so a newly-added source that renders to nothing slips straight past it.
+A cap on MISSES does not. `--floor` exists and is deliberately not passed.
+
+The `> 2500` catastrophe floor stays, so a collapsed build still fails at the
+cheap check before the expensive one.
+
+### Verified, not assumed
+
+Run [36268479821](https://github.com/litlfred/qou/actions/runs/36268479821), the
+coverage step's own output:
+
+    staged .md sources : 3082
+    covered by a page  : 3082
+    NOT covered        : 0
+    total .html in site: 3082
+
+All 7 live steps green; `Publish to gh-pages/docs` correctly skipped
+(`publish: false`). `docs/index.md`'s 2,584 audits figure needed no correction —
+2,519 + 65 = 2,584, so `_deprecated` was always inside it; only the line naming
+where those 65 live was missing.
+
+### Completing this bean is legitimate under §13a
+
+AGENTS.md §13a forbids closing a bean whose subject is an **open conjecture**.
+This one's subject is a build-coverage defect: cause identified, fix landed,
+invariant asserted in CI at 0. No mathematics is open behind it.
