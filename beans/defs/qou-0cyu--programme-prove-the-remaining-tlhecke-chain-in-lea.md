@@ -450,3 +450,50 @@ estimated, and the answer is negative.
 - **Unrelated red file found by the same cone check and fixed:**
   `QOU/Mass/QIntegerBarParity.lean`, red since `1646b5d6d3` behind one stale
   `open`. PR #6097.
+
+## 🛑 G3's PREMISE IS REFUTED, two ways — 2026-09-26 (PR #7470)
+
+G3 reads: *"TEMPERLEY-LIEB ALGEBRA. Not in Mathlib at all. Needed to state `H_n/rad = TL_n`
+as an isomorphism rather than as a dimension count. LARGE."*
+
+**(a) "Not in Mathlib at all" is true of Mathlib and false of here.** The corpus carries
+`QOU/MathlibExt/TemperleyLiebAlgebra.lean` — a `RingQuot` with a universal property
+(`lift` / `hom_ext` / `exists_unique_lift`) — plus `TemperleyLiebSpanning`,
+`TemperleyLiebNormalForm` and `TemperleyLiebWedderburn`. G3's wording invites the reading
+that the object does not exist anywhere.
+
+**(b) The TL algebra object is NOT needed to get past a dimension count.**
+`QOU/SchurWeyl/WtraceRadicalQuotient.traceQuotEquiv` (sorry-free, every `n`, convention D)
+states the quotient as an **isomorphism of algebras**:
+
+    TraceQuot (wtrace q hq0 hq2 n) (wtrace_cyclic …) ≃ₐ[ℝ] TwoRowBlocks n
+
+i.e. `H_n(q)/rad(wtrace) ≅ ∏_{ℓ(λ) ≤ 2} M_{f^λ}(ℝ)` — the **Wedderburn form**. That is
+strictly stronger than a dimension count and it uses no TL object at all. The TL algebra is
+needed only for the literal `≅ TL_n(δ)` **spelling**.
+
+**So the remaining gap is exactly one statement:** `∏_{ℓ(λ)≤2} M_{f^λ} ≅ TL_n(δ)` in
+general. Proved at `n = 2, 3` only (`TemperleyLiebWedderburn.tl2AlgEquiv`, `tl3AlgEquiv`).
+G3 should be re-scoped to that, and it is smaller than LARGE — the hard half (characterising
+the quotient) is done.
+
+**What was actually missing, for the record, and it was not the mathematics.** The pinned
+Mathlib has **no first-isomorphism lemma for a `RingCon` quotient**:
+`Mathlib/RingTheory/Congruence/` and `Mathlib/RingTheory/TwoSidedIdeal/` carry `ker`,
+`mem_ker`, `ker_eq_bot` and no `lift`, no `quotientKerEquivOfSurjective`; `Con.lift` exists
+for **monoid** congruences only. PR #7470 builds `liftAlgHom` for it, which is
+general-purpose and needs only `[propext, Quot.sound]`.
+
+**A separate defect found by hitting it, recorded not fixed:** there are **two** `Algebra ℝ`
+instances on this quotient type — Mathlib's `RingCon.instAlgebraQuotient` and the corpus's
+`QBeta.MarkovTraceQuotient.instAlgebraTraceQuot`. They do not unify, and spelling the type
+`.ringCon.Quotient` does not select Mathlib's, because `instAlgebraTraceQuot` matches
+whenever the ideal is a `traceRadicalIdeal`. Changing which one the corpus uses is a
+behavioural change across every `quotMk` consumer, so it was left alone.
+
+**Nothing else in G3's neighbourhood is false.** Both other artifacts recording an open
+isomorphism are **accurate**: the content block `mass-theory/hecke-radical-is-temperley-lieb.md`
+("no formalised statement of `H_n(q)/rad ≅ TL_n(q)` exists" — still true, the target is the
+block product) and `MathlibExt/HeckeToTemperleyLieb.lean` §"What this file does NOT claim"
+(its claim is about the **relator** ideal, untouched). They are *incomplete*, not wrong. Bean
+stays open: G4 and the `≅ TL_n` half are open conjectures (rule 13a).
