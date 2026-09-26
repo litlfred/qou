@@ -265,7 +265,7 @@ esac
 #
 #   qa-checkers-extended.ts  reads `join(FOLIO_DIR, "schema", "references.ts")`,
 #                            and FOLIO_DIR is `folioDir(findContentRepoRoot())`.
-#                            For qou that resolves through `harness.json` to
+#                            For qou that resolves through `qou.json` to
 #                            `<qou>/content` — the source of truth itself. The
 #                            bridge existed because the path used to be
 #                            import-relative and landed in the platform clone.

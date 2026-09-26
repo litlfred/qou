@@ -2,7 +2,8 @@
   "contentType": "paper",
   "adapter": "paper",
   "adapterModule": "folio-assistant/adapters/paper/index.ts",
-  "feedbackDir": "folio-assistant/feedback",
+  "qaAxes": ["archimedean-wall"],
+  "feedbackDir": ".folio-feedback",
   "viewer": {
     "dir": "folio-assistant/viewer",
     "port": 8080
