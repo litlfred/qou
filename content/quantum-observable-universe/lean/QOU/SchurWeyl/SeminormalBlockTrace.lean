@@ -56,9 +56,25 @@ what has changed is that its structural half is now Lean, not paper.  Bean `qou-
 
 ## Base ring (§7c)
 
-`ℝ`, inherited: `genMat` and `seminormalParam` are `ℝ`-valued because `seminormalRep` is
-(`OffDiagNonvanishing.sq_geom_lt` is an inequality in an ordered field).  Nothing here adds an
-archimedean dependency of its own.
+`ℝ`, inherited: this file pins `ℝ` while `genMat` and `seminormalParam` are in fact `K`-valued over
+a generic `[Field K]`.  Nothing here adds an archimedean dependency of its own.
+
+🛑 **The lemma this paragraph cited does not exist, and the reason it gave is
+wrong (measured 2026-09-26, bean `qou-9e7p`).** `OffDiagNonvanishing.sq_geom_lt` has
+**zero declarations** anywhere in the tree — `grep -rE '(theorem|lemma|def) +sq_geom_lt'`
+returns 0, and the string occurs only in this sentence and two siblings. The real lemma is
+`OffDiagNonvanishing.offDiag_axialDist_ne_zero`, and it is **order-free**: its file's whole
+variable block is `{K : Type*} [Field K] (q : K)`, its conclusion is an *inequation*
+`offDiag q (axialDist T k) ≠ 0`, and its hypotheses are `q ≠ 0` and `NotRootOfUnity q`.
+Nor is `seminormalRep` `ℝ`-only: `SeminormalRep.lean:73` declares
+`variable {μ : YoungDiagram} {K : Type*} [Field K] (q : K)`, `genMat` returns
+`Matrix _ _ K`, and `Real.sqrt` appears nowhere in that file or in `HoefsmitRep.lean`.
+
+**What is NOT established:** that the `ℝ` here can actually be removed. That needs an
+attempted generalisation and a compile, and has not been done. The claim being retracted is
+only the *stated justification* — "an inequality in an ordered field" — not the conclusion
+that `ℝ` is needed. It may well be, for some other reason; nothing in the corpus currently
+names one.
 
 LaTeX label: `thm:seminormal-block-trace`
 -/

@@ -38,10 +38,25 @@ theorem's lower bound, without the Gröbner–Shirshov route.
 
 `scripts/check-sidecars.sh` flags this file as *"ℝ in type but NO archimedean construct → likely
 gratuitous"*.  That is a false positive of a kind the checker cannot see: the archimedean construct
-is **one import away**, not absent.  `seminormalRep` is `ℝ`-only for a real reason — the
-non-vanishing of `offDiag` at admissible distances (`OffDiagNonvanishing.sq_geom_lt`) is an
-inequality in an *ordered* field, `0 < y` and all — so nothing built on top of `seminormalRep` can be
-generalised to a bare `[Field R]`.  Every `ℝ` below is forced by that.
+is **one import away**, not absent.  Every `ℝ` below is inherited from `seminormalRep` rather than
+introduced here.
+
+🛑 **The lemma this paragraph cited does not exist, and the reason it gave is
+wrong (measured 2026-09-26, bean `qou-9e7p`).** `OffDiagNonvanishing.sq_geom_lt` has
+**zero declarations** anywhere in the tree — `grep -rE '(theorem|lemma|def) +sq_geom_lt'`
+returns 0, and the string occurs only in this sentence and two siblings. The real lemma is
+`OffDiagNonvanishing.offDiag_axialDist_ne_zero`, and it is **order-free**: its file's whole
+variable block is `{K : Type*} [Field K] (q : K)`, its conclusion is an *inequation*
+`offDiag q (axialDist T k) ≠ 0`, and its hypotheses are `q ≠ 0` and `NotRootOfUnity q`.
+Nor is `seminormalRep` `ℝ`-only: `SeminormalRep.lean:73` declares
+`variable {μ : YoungDiagram} {K : Type*} [Field K] (q : K)`, `genMat` returns
+`Matrix _ _ K`, and `Real.sqrt` appears nowhere in that file or in `HoefsmitRep.lean`.
+
+**What is NOT established:** that the `ℝ` here can actually be removed. That needs an
+attempted generalisation and a compile, and has not been done. The claim being retracted is
+only the *stated justification* — "an inequality in an ordered field" — not the conclusion
+that `ℝ` is needed. It may well be, for some other reason; nothing in the corpus currently
+names one.
 
 Recorded rather than suppressed: the checker keys on archimedean constructs appearing *in the file*,
 and has no notion of one inherited through an import.

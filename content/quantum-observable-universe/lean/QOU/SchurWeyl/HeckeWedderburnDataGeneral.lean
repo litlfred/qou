@@ -29,10 +29,30 @@ without it being one — so the naming below keeps `weight` visibly a parameter.
 ## Base ring (§7c)
 
 Same inherited-`ℝ` case as `HeckeProductSurjective`: every `ℝ` here comes from `heckeWedderburn`,
-hence from `seminormalRep`, which is `ℝ`-only because `OffDiagNonvanishing.sq_geom_lt` is an
-inequality in an *ordered* field.  `check-sidecars.sh` flags it as "likely gratuitous" because the
-archimedean construct is one import away rather than in this file; the suggested generalisation to
-`[Field R]` is impossible, not merely unnecessary.  Checker gap tracked as `qou-9e7p`.
+hence from `seminormalRep`.  `check-sidecars.sh` flags it as "likely gratuitous" because the
+archimedean construct is one import away rather than in this file.  Checker gap tracked as
+`qou-9e7p`.
+
+🛑 **The lemma this paragraph cited does not exist, and the reason it gave is
+wrong (measured 2026-09-26, bean `qou-9e7p`).** `OffDiagNonvanishing.sq_geom_lt` has
+**zero declarations** anywhere in the tree — `grep -rE '(theorem|lemma|def) +sq_geom_lt'`
+returns 0, and the string occurs only in this sentence and two siblings. The real lemma is
+`OffDiagNonvanishing.offDiag_axialDist_ne_zero`, and it is **order-free**: its file's whole
+variable block is `{K : Type*} [Field K] (q : K)`, its conclusion is an *inequation*
+`offDiag q (axialDist T k) ≠ 0`, and its hypotheses are `q ≠ 0` and `NotRootOfUnity q`.
+Nor is `seminormalRep` `ℝ`-only: `SeminormalRep.lean:73` declares
+`variable {μ : YoungDiagram} {K : Type*} [Field K] (q : K)`, `genMat` returns
+`Matrix _ _ K`, and `Real.sqrt` appears nowhere in that file or in `HoefsmitRep.lean`.
+
+**What is NOT established:** that the `ℝ` here can actually be removed. That needs an
+attempted generalisation and a compile, and has not been done. The claim being retracted is
+only the *stated justification* — "an inequality in an ordered field" — not the conclusion
+that `ℝ` is needed. It may well be, for some other reason; nothing in the corpus currently
+names one.
+
+This site also carried *"the suggested generalisation to `[Field R]` is impossible, not merely
+unnecessary"*.  That is withdrawn: it was inferred from the non-existent lemma, and nothing
+measured supports **impossible**.
 
 LaTeX label: `def:hecke-wedderburn-data-general`
 -/
