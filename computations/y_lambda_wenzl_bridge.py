@@ -116,8 +116,22 @@ def schur_principal(partition, X, Q):
     return prod
 
 
-def y_lambda_wenzl_bridge_numeric(partition, q_val, dps: int = 50):
+def y_lambda_wenzl_bridge_numeric(partition, q_val, dps: int = 50) -> mp.mpf:
     """y_λ via Wenzl-bridge at numerical q, arbitrary dps.
+
+    The `-> mp.mpf` return annotation feeds a gate, not just a reader.
+    `mpf_mixed_arithmetic_audit.py` builds a registry of corpus functions from
+    their `-> mpf` / `-> float` annotations (its own rule: "a corpus function
+    annotated `-> mpf`"), so an unannotated function makes every consumer's
+    `y[λ]` read as unknown-typed. Verified at runtime before annotating:
+    `f((2,1), q_at(), 50)` returns `mpf`, 0.2472978867480345984062206483797638…
+
+    It does NOT clear the false positive at
+    `probes/nucleon_h3_marshalling_divergence_probe.py:242` — measured, the
+    registry grew 792 -> 793 and the candidate count stayed at 7 with the taint
+    still attributed to `mp.fsum(` on L232. That flag contradicts the audit's
+    OWN spec, which classifies `mp.*(...)` as MPF; the mechanism is not
+    established here. Do not re-try this annotation as the fix for it.
 
     The Wenzl normalization Σ_µ d_µ · s_{µ,r}(Q) is cached per
     (n, q_val_str, dps) so callers iterating over all partitions of
