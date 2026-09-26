@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-14T20:32:51Z
+updated_at: 2026-09-26T14:57:25Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -8554,3 +8554,37 @@ live-cell factor differs from the computed one at the 8th digit. For the same
 reason assertion 4 keys on the **property** (`F > 1`) rather than on a curated
 list of ruled cells, which had already drifted. A hand-kept list narrows a
 claim without saying so.
+
+
+## 🛑 Citation correction 2026-09-26 (bean `qou-6moa`) — the reading is unaffected
+
+This bean cites `markovWeights_eq_jones_of_threeRow_eq_zero` for the claim that
+under convention D the three-row weight vanishes. **That lemma proves the
+converse.** Read its signature (`BraidsAndKnots/MarkovTraceTLUniqueness.lean:119`):
+`hTL : y₁₃ = 0` is a **hypothesis** and `z * (q + qi) = q ^ 2` — convention D — is
+the **conclusion**. So it gives TL ⟹ D, which is the direction
+`docs/coordination/trace-convention-registry.json:173` correctly cites it for.
+
+It also carries `hfaith : y₂₁ ≠ 0`, and that is load-bearing rather than
+decorative: the sibling `markovWeights_degenerate_root` (`:154`) proves that
+dropping it makes the conclusion **false**, not merely unprovable — the trivial
+character `y = (1,0,0)` at `z = q` satisfies all three moment equations and gives
+`q·(q+qi) = q² + 1 ≠ q²`. A lemma that *assumes* a form of faithfulness on the
+two-row block cannot be evidence about the three-row block vanishing.
+
+**Cite instead**, matching the frame:
+
+| lemma | typeclass | scope |
+|---|---|---|
+| `QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows` (`:142`) | `[Field R]`, sole hypothesis `q²+1 ≠ 0` | general `n`, on the actual Ocneanu weight |
+| `QOU.BraidsAndKnots.FibreDimensionForcesTL.threeRow_eq_zero_of_jones_ocneanu` (`:179`) | `[CommRing R] [IsDomain R]`, division-free | `n = 3`, same variable frame |
+| `QOU.QBeta.TemperleyLiebTower.conventionD_kills_antisymmetriser` (`:368`) | `[Field R] [LinearOrder R] [IsStrictOrderedRing R]` — **an ordered field** | `n = 3`, archimedean only |
+
+The third is the wrong citation at any §7c generic-`R` site.
+
+**Nothing in this bean's conclusions changes** — only the authority cited for one
+step. Measured: the reversal is a class of 14 across 9 files against 49 correct
+citations, and 3 further files carry the same assertion with no lemma named at
+all, so a grep on the identifier cannot find them. Full per-site table and blast
+radius on `qou-6moa`; fixed so far in AGENTS.md and
+`QOU/Mass/AltCharShiftMultiset.lean` (PR #7459).
