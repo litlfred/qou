@@ -5,7 +5,7 @@ status: todo
 type: epic
 priority: normal
 created_at: 2026-09-20T14:33:42Z
-updated_at: 2026-09-26T10:30:52Z
+updated_at: 2026-09-26T11:27:38Z
 ---
 
 **Owner ruling, 2026-09-20: stop here.** The migration is deliberately
@@ -98,3 +98,28 @@ addressed by #7446. Worth its own bean if anyone wants the .bib current.
 - [ ] **owner:** whether Step 4 (`build.yml@main`) is worth doing on a
       workflow that is dispatch-only today
 - [ ] **owner:** the pin bump, with a same-corpus before/after
+
+
+
+## 2026-09-26 — SUPERSEDED AS THE FORWARD PLAN by epic `qou-n4r9`
+
+The owner reopened this migration (*"Part of reeval of bean/workplan is plan for
+qou platform migration to New folio-assistant cat-harness"*) and **relaxed the
+constraint this bean's step list was built around**: *"Can move content/ for to
+folio/ to match. Align to f-asst unless specific reason not to."*
+
+So `harness.json`'s whole rationale — keep `content/`, declare it rather than
+move it — no longer holds. `qou-n4r9` carries the forward plan as six ordered
+stories; **this bean stays as the record of where the previous attempt stopped and
+why**, which is what it was created for.
+
+**Both of its rulings still bind** and `qou-n4r9` respects them: the pin bump is
+the owner's call (`qou-8321`), and `folio.config.json` must not be deleted until
+it is replaced deliberately (`qou-yf1y`, step 5).
+
+One correction to this bean's step table: it lists `harness.json` as **done**.
+Measured against platform main `42ccfb38b63`, `harness.json` **fails the
+declaration test** — `findDeclarationFile` requires the filename stem to equal
+the `name` field, and `harness` ≠ `qou`. The platform's own phrase for that
+state is "the rename-half-done case `check:instance-config` already reports".
+It was done against the platform of 2026-09-20 and the platform has moved.
