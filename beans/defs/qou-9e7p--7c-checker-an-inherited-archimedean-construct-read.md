@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T16:45:03Z
-updated_at: 2026-09-26T17:55:25Z
+updated_at: 2026-09-26T18:05:07Z
 ---
 
 ## The false positive
@@ -206,3 +206,54 @@ All three re-verified `lean -DautoImplicit=false -s 65536` RC=0.
 1/2/3 above are still the options, and the ℝ→K generalisation of the six files is an
 ASK-THE-OWNER sweep (a multi-file refactor is not one of the two exemptions), deliberately
 not started.
+
+
+## Feasibility PROBE of the ℝ→K generalisation (2026-09-26) — one file confirmed, one inconclusive
+
+Measuring, not changing: both probes ran on **scratch copies under `/tmp`**; the tree was not
+touched. Method — `sed ℝ→K` plus one `{K : Type*} [Field K]` added to the first `variable`
+line, then `lean -DautoImplicit=false -s 65536`.
+
+### `SeminormalBlockEquality.lean` — generalises, blocker localised to ONE definition
+
+**Exactly 2 residual errors, both the same cause:** `BlockPreserving` is itself ℝ-pinned, so
+`compress_mul`'s and `compress_seminormalRep_heckeIncl`'s uses of it fail as
+*"expected `Matrix … ℝ`"*. **Every other declaration in the file type-checks over a generic
+`[Field K]`** — `compress`, `compress_one`, `compress_smul`, `compress_mul`'s own proof,
+`exists_insertMax_of_cellOf_top`, and the `Algebra.adjoin_induction` at the end.
+
+That is the useful half: the obstruction in this file is **one earlier definition**, not
+scattered mathematics.
+
+### `SeminormalBlockTrace.lean` — INCONCLUSIVE, and the number is about my harness
+
+50 errors, split deliberately rather than quoted whole:
+
+| class | count |
+|---|---|
+| `Unknown identifier K` | **34** |
+| everything else (`introN failed`, `Failed to rewrite … Matrix.trace`, `Invalid argument name μ`) | 16 |
+
+The file has **2** `section`/`variable` blocks and my probe inserted `K` into one, so the 34
+are my crude substitution and the 16 cascade from statements that never elaborated.
+
+🛑 **No mathematical obstruction was exhibited in this file, and none was ruled out.** Do not
+quote "50 errors" as evidence either way. Generalising it needs a **per-section** pass, and
+that is the actual work of the sweep — which is precisely what makes it an owner call rather
+than a mechanical one.
+
+### What the probe does and does not change
+
+It does **not** license the sweep. It sizes it: the dependency order is
+
+    SeminormalBlockTrace (defines BlockPreserving)
+      → SeminormalBlockEquality      [confirmed mechanical modulo BlockPreserving]
+      → HeckeInclInjective → HeckeColimitFaithful → HeckeTowerWitnessStrict
+
+so `BlockPreserving`'s base ring is the first domino, and `SeminormalBlockTrace` is the one
+file that needs judgement rather than substitution. The three files downstream were not
+probed.
+
+It also does **not** revive "the ℝ is gratuitous". The retraction above stands as written:
+the stated *reason* for the pin is a phantom lemma; whether ℝ is *needed* remains open, and
+this probe narrows where that question actually lives.
