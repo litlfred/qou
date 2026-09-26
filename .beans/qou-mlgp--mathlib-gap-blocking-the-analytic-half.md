@@ -1,7 +1,7 @@
 ---
 # qou-mlgp
-title: 'The Mathlib gap that blocks formalising the analytic half of the c_sigma derivation'
-status: done
+title: The Mathlib gap that blocks formalising the analytic half of the c_sigma derivation
+status: todo
 type: task
 priority: normal
 tags:
@@ -11,7 +11,7 @@ tags:
     - one-loop
     - formalization-gap
 created_at: 2026-08-08T22:20:00Z
-updated_at: 2026-08-09T00:00:00Z
+updated_at: 2026-09-26T11:03:28Z
 ---
 
 ## What is and is not formalised

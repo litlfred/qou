@@ -1,10 +1,11 @@
 ---
 # qou-h4fe
 title: 'qou-x631: g(t) is sublinear -- first-order genus expansion cannot give -0.164; use the integrated covariance'
-status: done
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-07T07:03:02Z
-updated_at: 2026-09-07T07:03:02Z
+updated_at: 2026-09-26T11:03:19Z
 ---
 
 

@@ -1,10 +1,11 @@
 ---
 # qou-cze8
 title: 'qou-x631 route 6 eliminated: p=3 is special, S_p<=0 for odd p is FALSE (p=5 flips sign)'
-status: done
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-06T13:01:44Z
-updated_at: 2026-09-06T13:01:44Z
+updated_at: 2026-09-26T11:03:19Z
 ---
 
 

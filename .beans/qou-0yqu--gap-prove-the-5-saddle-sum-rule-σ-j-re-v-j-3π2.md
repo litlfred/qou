@@ -2,9 +2,10 @@
 # qou-0yqu
 title: 'GAP: prove the 5₂ saddle sum rule Σ_j Re V_j = -3π²/2'
 status: in-progress
-type: task
+type: feature
+priority: normal
 created_at: 2026-08-03T14:28:26Z
-updated_at: 2026-08-08T13:55:00Z
+updated_at: 2026-09-26T11:07:04Z
 ---
 
 

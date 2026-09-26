@@ -1,12 +1,12 @@
 ---
 # sp07
 title: 'C [capstone]: sn_rational_specht_split (SnWedderburnPartitionBridge.lean:232,427)'
-status: done
+status: completed
 type: task
 priority: low
-parent: sp00
 created_at: 2026-07-05T16:30:00Z
-updated_at: 2026-07-05T16:30:00Z
+updated_at: 2026-09-26T11:03:23Z
+parent: sp00
 ---
 
 Rational OV-labelled Wedderburn: Q S_n = prod Matrix indexed by partitions. Needs A+B+C + Q-splitness. Capstone.

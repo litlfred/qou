@@ -1,14 +1,14 @@
 ---
 # qou-rt0a
 title: 'Route A EXECUTED — Newton polygon of A_4_1/C1 vs G3 DT spectrum {3,4} (partial; slope-reading refuted on 5_2, #connections survives)'
-status: done
+status: completed
 type: task
 priority: high
 tags:
     - alien-habiro
     - g3-aomega
 created_at: 2026-08-11T00:35:00Z
-updated_at: 2026-09-07T09:35:38Z
+updated_at: 2026-09-26T11:03:17Z
 parent: qou-vr3q
 ---
 

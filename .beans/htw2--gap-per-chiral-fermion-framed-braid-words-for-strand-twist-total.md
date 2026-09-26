@@ -1,11 +1,11 @@
 ---
 # htw2
 title: 'GAP: per-chiral-fermion framed braid words — derive strand-twist totals (not enumerate). Residual of qou-q377 after the total-twist reduction.'
-status: open
+status: todo
 type: task
 priority: normal
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-08-02T00:00:00Z
+updated_at: 2026-09-26T11:03:27Z
 ---
 
 Child of `qou-q377` (hypercharge Y second invariant). PR #4561 /

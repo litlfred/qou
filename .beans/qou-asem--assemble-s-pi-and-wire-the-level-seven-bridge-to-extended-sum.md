@@ -1,7 +1,7 @@
 ---
 # qou-asem
 title: 'CLOSED: S(π) = Σⱼ Re V(−1, yⱼ) = −π²/2 assembled in Lean'
-status: done
+status: completed
 type: task
 priority: medium
 tags:
@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - assembly
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-08T21:55:00Z
+updated_at: 2026-09-26T11:03:25Z
 ---
 
 ## ✅ CLOSED 2026-08-08

@@ -1,12 +1,12 @@
 ---
 # sp04
 title: 'B: specht_finrank_eq_numSYT (Specht.lean:313,328) — dim S^mu = #SYT'
-status: done
+status: completed
 type: task
 priority: low
-parent: sp00
 created_at: 2026-07-05T16:30:00Z
-updated_at: 2026-07-05T16:30:00Z
+updated_at: 2026-09-26T11:03:22Z
+parent: sp00
 ---
 
 The standard-basis theorem = triangular independence (sp03) + straightening spanning (sp02). Closes once both land.

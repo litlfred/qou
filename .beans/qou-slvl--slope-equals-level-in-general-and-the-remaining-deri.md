@@ -1,11 +1,11 @@
 ---
 # qou-slvl
-title: 'slope = q-Gevrey level in general; and the two recursions still defined-to-match'
-status: done
+title: slope = q-Gevrey level in general; and the two recursions still defined-to-match
+status: todo
 type: task
 priority: medium
 created_at: 2026-08-08T08:05:00Z
-updated_at: 2026-08-08T09:00:00Z
+updated_at: 2026-09-26T11:03:28Z
 ---
 
 Two residuals left by `qou-slpd`, both bounded.

@@ -1,10 +1,11 @@
 ---
 # qou-t181
 title: 'qou-x631 route 0ml9: the RSK bijection it needs is now available in Lean, axiom-clean'
-status: done
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-06T12:49:42Z
-updated_at: 2026-09-06T12:49:42Z
+updated_at: 2026-09-26T11:03:18Z
 ---
 
 

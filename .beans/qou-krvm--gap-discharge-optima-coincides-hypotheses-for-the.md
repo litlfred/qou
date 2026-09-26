@@ -2,10 +2,10 @@
 # qou-krvm
 title: 'GAP: discharge optima_coincide''s hypotheses for the actual m004/L6a4 polytopes'
 status: in-progress
-type: task
+type: feature
 priority: high
 created_at: 2026-08-07T17:10:13Z
-updated_at: 2026-08-07T17:10:13Z
+updated_at: 2026-09-26T11:07:04Z
 ---
 
 THE GAP BETWEEN THE GENERAL THEOREM AND THE SPECIFIC MEASUREMENT.

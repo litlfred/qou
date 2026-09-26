@@ -1,10 +1,11 @@
 ---
 # qou-ujil
 title: 'qou-x631 route 7 eliminated: the margin is at the CLT scale k^{3/2}, so concentration arguments cannot work'
-status: done
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-06T13:21:05Z
-updated_at: 2026-09-06T13:21:05Z
+updated_at: 2026-09-26T11:03:19Z
 ---
 
 

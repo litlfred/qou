@@ -1,11 +1,11 @@
 ---
 # qou-f4ye
 title: 'qou-x631: Q ~ P^{3/2} tempering; g''(0) -> -1/4; rho -> -0.170 retires the -1/(2pi) coincidence'
-status: done
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-07T08:17:41Z
-updated_at: 2026-09-07T09:06:17Z
+updated_at: 2026-09-26T11:03:20Z
 ---
 
 

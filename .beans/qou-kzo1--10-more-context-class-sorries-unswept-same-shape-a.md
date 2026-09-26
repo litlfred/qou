@@ -1,10 +1,11 @@
 ---
 # qou-kzo1
 title: 10 more context-class sorries unswept — same shape as the 8 already refuted
-status: done
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-09T10:50:57Z
-updated_at: 2026-08-09T10:50:57Z
+updated_at: 2026-09-26T11:03:18Z
 ---
 
 

@@ -1,14 +1,14 @@
 ---
 # vpth
-title: 'QA sidecar `paths` pointed into a chapter directory that no longer exists — 598 dead entries across 252 files'
-status: done
+title: QA sidecar `paths` pointed into a chapter directory that no longer exists — 598 dead entries across 252 files
+status: completed
 type: bug
 priority: high
 tags:
     - qa
     - data-integrity
 created_at: 2026-08-08T17:25:00Z
-updated_at: 2026-08-08T17:25:00Z
+updated_at: 2026-09-26T11:03:15Z
 ---
 
 Claimed and finished on `claude/sidecar-path-drift-2026-08-08`.

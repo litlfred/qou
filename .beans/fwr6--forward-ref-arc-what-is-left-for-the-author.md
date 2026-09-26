@@ -1,13 +1,14 @@
 ---
 # fwr6
 title: 'forward-ref arc: what is left, and why an agent should not decide it'
-status: open
+status: todo
 type: task
 priority: normal
 created_at: 2026-08-10T00:45:00Z
-updated_at: 2026-08-10T03:25:00Z
+updated_at: 2026-09-26T11:03:27Z
 parent: fwr1
 ---
+
 Closes out the `fwr1`-`fwr5` arc. **Forward `uses[]` references went 274 -> 193**
 across three PRs. Everything mechanically decidable, and everything an agent
 could decide by reading, is done. What is listed here is not leftover work of

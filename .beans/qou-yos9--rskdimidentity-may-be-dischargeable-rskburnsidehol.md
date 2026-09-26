@@ -1,10 +1,11 @@
 ---
 # qou-yos9
 title: 'RSKDimIdentity may be dischargeable: rskBurnsideHolds proves it for all n, unverified by print axioms'
-status: done
+status: todo
 type: task
+priority: normal
 created_at: 2026-09-05T18:46:54Z
-updated_at: 2026-09-05T18:46:54Z
+updated_at: 2026-09-26T11:03:27Z
 ---
 
 

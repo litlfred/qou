@@ -1,6 +1,6 @@
 ---
 # qou-rhyp
-title: 'Discharge the nine Rogers-L hypotheses in FiveTwoLevelSevenLadder (reflection / inversion / Landen / five-term)'
+title: Discharge the nine Rogers-L hypotheses in FiveTwoLevelSevenLadder (reflection / inversion / Landen / five-term)
 status: completed
 type: task
 priority: high
@@ -11,8 +11,8 @@ tags:
     - lean
     - mathlib-gap
 created_at: 2026-08-07T22:05:00Z
-updated_at: 2026-08-07T23:40:00Z
-parent: 0yqu
+updated_at: 2026-09-26T11:07:05Z
+parent: qou-0yqu
 ---
 
 

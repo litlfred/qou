@@ -1,6 +1,6 @@
 ---
 # qou-g2wr
-title: 'Read GGM 2012.00062 / GGMW 2111.04763 for the REAL part of the 5₂ sum rule'
+title: Read GGM 2012.00062 / GGMW 2111.04763 for the REAL part of the 5₂ sum rule
 status: completed
 type: task
 priority: normal
@@ -11,8 +11,8 @@ tags:
     - literature
     - refuted
 created_at: 2026-08-07T15:20:00Z
-updated_at: 2026-08-07T16:20:00Z
-parent: 0yqu
+updated_at: 2026-09-26T11:07:07Z
+parent: qou-0yqu
 ---
 
 

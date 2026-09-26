@@ -1,10 +1,11 @@
 ---
 # qou-kp2z
 title: 'Retire the opaque wedderburnEmbed: delete it, and repoint every surface that called it opaque'
-status: done
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-05T17:12:41Z
-updated_at: 2026-09-05T17:12:41Z
+updated_at: 2026-09-26T11:03:21Z
 ---
 
 

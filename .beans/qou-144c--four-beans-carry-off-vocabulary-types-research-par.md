@@ -1,13 +1,13 @@
 ---
 # qou-144c
 title: 'Four beans carry off-vocabulary types: research, parent, child'
-status: todo
+status: completed
 type: bug
 priority: low
 tags:
     - beans-hygiene
 created_at: 2026-09-26T10:52:11Z
-updated_at: 2026-09-26T10:53:23Z
+updated_at: 2026-09-26T11:08:08Z
 parent: qou-w3yy
 ---
 
@@ -39,3 +39,11 @@ Four `beans update --type` calls. Derived-from-corpus (the CLI's `--help` fixes
 the vocabulary). The only judgement is `qou-rsrg`'s replacement type, and since
 it is `todo` and tracks open research, **rule 13a** means its status must not
 change while the research is open — only its type.
+
+
+
+## FIXED 2026-09-26
+`miga` → `epic`; `mig1`/`mig2` → `task` with `--parent miga`; `qou-rsrg`
+`research` → `task`. Its **status is deliberately untouched** — it tracks open
+research and rule 13a forbids closing such a bean. Verified: off-vocabulary type
+count 4 → **0**.

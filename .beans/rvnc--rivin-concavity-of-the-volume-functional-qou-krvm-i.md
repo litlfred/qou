@@ -9,8 +9,8 @@ tags:
     - hyperbolic-volume
     - angle-structures
 created_at: 2026-08-09T19:15:46Z
-updated_at: 2026-09-03T04:38:06Z
-parent: krvm
+updated_at: 2026-09-26T11:07:08Z
+parent: qou-krvm
 ---
 
 `M004AngleStructure.lean` lists four hypotheses of `SymmetricOptimum.optima_coincide`

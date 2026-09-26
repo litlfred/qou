@@ -1,11 +1,11 @@
 ---
 # qou-vbjg
 title: 'One-voice remediation: 386 blocks fail voice-branch-jargon'
-status: done
+status: todo
 type: task
 priority: high
 created_at: 2026-08-08T12:00:00Z
-updated_at: 2026-08-08T13:00:00Z
+updated_at: 2026-09-26T11:03:26Z
 ---
 
 Owner: *"` the binding module C1` is audit/agent-author-dicussion language...
@@ -384,4 +384,3 @@ Follow-ups that outlived this bean, all recorded and none silently dropped:
   path passes silently — several dead links surfaced by hand during this work;
 * `substrate wall`, 108 uses and defined nowhere. Manuscript voice, not branch
   jargon, so out of scope here — but underdefined.
-
