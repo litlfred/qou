@@ -55,7 +55,7 @@ the whole statement is empty rather than false.
 
 namespace QOU.SchurWeyl.WtraceRadicalTwoRow
 
-open YoungDiagram QOU.Mathlib QOU.SchurWeyl QOU.SchurWeyl.SeminormalRep
+open YoungDiagram QOU.Mathlib QOU.SchurWeyl QOU.SchurWeyl.SeminormalRep QOU.SchurWeyl.HeckeInclusion
 
 /-- **A nonzero matrix is seen by the trace form.**
 
@@ -151,4 +151,58 @@ theorem mem_rad_iff_twoRow_blocks_vanish {q : ℝ} (hq0 : q ≠ 0)
   obtain ⟨b, hb⟩ := notMem_rad_of_twoRow_block_ne_zero hq0 hq2 hq21 hgen n x d hd hrow hne
   exact hb (h b)
 
+
+/-! ## The tower comparison, unconditionally, at the concrete carrier
+
+`QBeta.TLTowerRadicalDescent` compares the radicals at consecutive ranks and proves
+both directions — but every statement there is conditional, in the §3b-cond sense, on
+`HeckeConditionalExpectation`, an OPEN class with no instance.  Its docstring explains
+why: a bare inclusion says nothing, because membership in the upper radical quantifies
+over the *whole* upper algebra, not over the image.
+
+At the concrete `wtrace` carrier the **reflection** direction needs none of that,
+because `wtrace_incl` is already unconditional: restricting a test element to the
+image is enough, and `heckeIncl` being an `AlgHom` supplies the rest.  Two rewrites.
+
+This is the direction that carries the weight there — it is what makes the quotients a
+*tower* (`TL_n ↪ TL_{n+1}`) rather than a sequence of algebras with maps between them.
+The forward direction genuinely does need more than the inclusion, and is **not**
+claimed here; via `mem_rad_iff_twoRow_blocks_vanish` it reduces to the branching
+statement that erasing a corner from an at-most-two-row diagram leaves at most two
+rows, which is a separate piece of work.
+-/
+
+/-- **Reflection along the tower inclusion, unconditionally.**
+
+If `heckeIncl a` is invisible to `wtrace` at level `m+1`, then `a` is invisible at level
+`m`.  Test elements are restricted to the image: `wtrace (heckeIncl a * heckeIncl b) =
+wtrace (heckeIncl (a * b)) = wtrace (a * b)`.
+
+No conditional expectation, and no instance of any open class — only the genericity
+`wtrace` already carries. -/
+theorem mem_rad_of_incl_mem_rad {q : ℝ} (hq0 : q ≠ 0)
+    (hq2 : GenericParameter.NotRootOfUnity q) (hq21 : q ^ 2 + 1 ≠ 0)
+    (hgen : ∀ k : ℕ, 0 < k → (q ^ 2 : ℝ) ^ k ≠ 1) (m : ℕ) (a : Hecke ℝ q q⁻¹ m)
+    (ha : ∀ x : Hecke ℝ q q⁻¹ (m + 1),
+      wtrace q hq0 hq2 (m + 1) (heckeIncl ℝ q q⁻¹ m a * x) = 0) :
+    ∀ b : Hecke ℝ q q⁻¹ m, wtrace q hq0 hq2 m (a * b) = 0 := by
+  intro b
+  have h := ha (heckeIncl ℝ q q⁻¹ m b)
+  rwa [← map_mul, wtrace_incl q hq0 hq2 hq21 hgen m] at h
+
+/-- **The tower inclusion is injective on the quotients** — `TL_m ↪ TL_{m+1}`, in the
+form "distinct classes stay distinct", unconditionally.
+
+Contrapositive packaging of `mem_rad_of_incl_mem_rad`: an element outside the radical at
+level `m` stays outside it after inclusion. -/
+theorem notMem_rad_incl_of_notMem_rad {q : ℝ} (hq0 : q ≠ 0)
+    (hq2 : GenericParameter.NotRootOfUnity q) (hq21 : q ^ 2 + 1 ≠ 0)
+    (hgen : ∀ k : ℕ, 0 < k → (q ^ 2 : ℝ) ^ k ≠ 1) (m : ℕ) (a : Hecke ℝ q q⁻¹ m)
+    (ha : ∃ b : Hecke ℝ q q⁻¹ m, wtrace q hq0 hq2 m (a * b) ≠ 0) :
+    ∃ x : Hecke ℝ q q⁻¹ (m + 1),
+      wtrace q hq0 hq2 (m + 1) (heckeIncl ℝ q q⁻¹ m a * x) ≠ 0 := by
+  obtain ⟨b, hb⟩ := ha
+  by_contra hcon
+  push_neg at hcon
+  exact hb (mem_rad_of_incl_mem_rad hq0 hq2 hq21 hgen m a hcon b)
 end QOU.SchurWeyl.WtraceRadicalTwoRow
