@@ -1,0 +1,57 @@
+# Jekyll configuration for the qou documentation site.
+#
+# Published to GitHub Pages at https://litlfred.github.io/qou/docs/ and built by
+# .github/workflows/docs-site.yml.
+#
+# WHY THIS EXISTS RATHER THAN CALLING THE PLATFORM'S WORKFLOW
+# ----------------------------------------------------------
+# Owner, 2026-09-26: "i want the existing folio-asst just the docs rendering
+# pipeline and what qou had been using."
+#
+# The platform's `docs-site.yml` is NOT reusable — measured, its triggers are
+# `push: branches: [main]` and `workflow_dispatch:` with no `workflow_call:`, so
+# qou cannot `uses:` it the way `build.yml` calls `publish.yml`. (Only
+# `publish.yml` and `folio-staging.yml` are callable.) So "the existing
+# folio-asst pipeline" is adopted by MIRRORING it: the same theme, the same
+# pinned ref, the same serving model — implemented here because the workflow
+# cannot be invoked from here.
+#
+# THE PIN, AND IT IS NOT AN EDIT SOMEBODY MAKES IN PASSING
+# -------------------------------------------------------
+# Same ref as the platform. Its own `_config.yml` records that a bare
+# `remote_theme: just-the-docs/just-the-docs` downloads the theme's
+# default-branch HEAD on every build, so an upstream commit can turn a docs
+# build red with no commit of ours. It also records that the platform's LIVE
+# theme is upstream `main`, 61 commits past v0.12.0 — established by
+# fingerprinting deployed CSS, not by assuming — so v0.12.0 is the intended pin
+# rather than a description of what the platform currently serves. Moving this
+# literal is the platform's `upstream-version-adoption` process, and a person
+# decides.
+remote_theme: just-the-docs/just-the-docs@v0.12.0
+
+# The site is served from the `docs/` subtree of the qou Pages site.
+baseurl: "/qou/docs"
+url: "https://litlfred.github.io"
+
+search_enabled: true
+heading_anchors: true
+color_scheme: dark
+
+# Mermaid, for the workflow and dependency diagrams in the coordination docs.
+mermaid:
+  version: "10.9.0"
+
+# NO `aux_links`, mirroring the platform and for its stated reason: just-the-docs
+# renders them as text at the top right of the main panel, and the owner asked
+# for that removed there (their bean `udx8`). Do not add one here.
+
+footer_content: >-
+  Quantum Observable Universe — audits, coordination ledgers and workplans.
+  Generated from the repository's <code>docs/</code> tree; the content objects
+  under <code>content/</code> are the paper itself.
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - _archive
