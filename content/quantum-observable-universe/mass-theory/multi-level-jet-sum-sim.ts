@@ -1,4 +1,4 @@
-import { simulator } from "../../../folio-assistant/schemas/builders";
+import { simulator } from "../../../folio-assistant/cat-harness/schemas/builders";
 
 // Stub simulator block: multi-level jet-sum visualisation on the
 // atomic mass formula. Used by mass-tower-syt-cells.md to display

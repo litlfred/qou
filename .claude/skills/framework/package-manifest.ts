@@ -9,4 +9,4 @@ export type {
   PythonDependency,
   NodeDependency,
   PackageManifest,
-} from "../../../folio-assistant/schemas/assistant-package.js";
+} from "../../../folio-assistant/cat-harness/schemas/assistant-package.js";

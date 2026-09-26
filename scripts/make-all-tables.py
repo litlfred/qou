@@ -12,7 +12,7 @@ Prerequisite: the chapters + main.tex must already be rendered, i.e. run the
 content build first (see docs-generation skill / publish.yml):
 
     cd content && bun run --preload ../scripts/preload-registry.ts \\
-      ../folio-assistant/content/pipeline/build.ts \\
+      ../folio-assistant/cat-harness/content/pipeline/build.ts \\
       quantum-observable-universe/quantum-observable-universe.ts \\
       --out-dir ../chapters/ --generate-main --main-out ../main.tex \\
       --preamble ../latex/preamble.tex

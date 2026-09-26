@@ -5,7 +5,7 @@
  *
  * WHY THIS FILE EXISTS
  *
- * `folio-assistant/content/pipeline/validate-references.ts` is the only checker
+ * `folio-assistant/cat-harness/content/pipeline/validate-references.ts` is the only checker
  * that cross-checks Lean `-- Ref: [key]` comments and `\cite{}` against
  * `content/schema/references.ts`. Run directly it does not merely report
  * nothing — it THROWS, on its own first statement:
@@ -51,7 +51,7 @@
  * folio-assistant fix (bean `qou-cite`), not a corpus one.
  */
 
-import { configureReferenceRegistry } from "../folio-assistant/content/pipeline/references-registry-di";
+import { configureReferenceRegistry } from "../folio-assistant/cat-harness/content/pipeline/references-registry-di";
 
 const bib = await import("../content/schema/references");
 
@@ -69,4 +69,4 @@ configureReferenceRegistry({
 console.log(`Reference registry configured: ${bib.references.length} entries\n`);
 
 // Dynamic, and after configuration — see the note above.
-await import("../folio-assistant/content/pipeline/validate-references");
+await import("../folio-assistant/cat-harness/content/pipeline/validate-references");

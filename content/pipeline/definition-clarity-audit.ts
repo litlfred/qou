@@ -117,7 +117,7 @@ import { join, relative, resolve, dirname, basename } from "node:path";
 
 // ---------------------------------------------------------------------------
 // `block-qa/v1` sidecar types, inlined. The canonical schema lives at
-// `folio-assistant/schemas/block-qa.ts`, but `folio-assistant/` is gitignored
+// `folio-assistant/cat-harness/schemas/block-qa.ts`, but `folio-assistant/` is gitignored
 // on this branch (the QA pipeline migration), so this scanner carries its own
 // copy to stay self-contained and committable — same pattern as
 // `lean-vacuity-axiom-audit.ts`.

@@ -2,8 +2,8 @@
   "_comment": "This instance's CONFIGURATION -- what the qou folio IS (adapter, QA axes, viewer, simulators, feedback store). Renamed from `harness.config.json` on 2026-09-26 because platform main declares that name RETIRED: `export const LEGACY_HARNESS_CONFIG = \"harness.config.json\"` in cat-harness/schemas/harness-config.ts, docstring 'kept as a constant so check:instance-config can FIND it, never so a reader can fall back to it'. The live name is `<name>.config.json` at the instantiation root, per the owner's 2026-09-20 ruling quoted in that file. Paired with `qou.json`, the declaration.",
   "contentType": "paper",
   "adapter": "paper",
-  "_adapterModule_comment": "Kept from folio.config.json and verified to resolve: `<qou>/folio-assistant/adapters/paper/index.ts`. It is redundant with `contentType: \"paper\"` — `BUILTIN_ADAPTERS` in the platform's src/builtin-adapters.ts names the same module — and the builtin path is the better one, because it SAYS out loud when the science layer is absent and it falls back, where a dead `adapterModule` only logs a load failure. Left in place because this migration renames a file rather than redesigning it; dropping the line is a one-line follow-up.",
-  "adapterModule": "folio-assistant/adapters/paper/index.ts",
+  "_adapterModule_comment": "Kept from folio.config.json and verified to resolve: `<qou>/folio-assistant/cat-harness/adapters/paper/index.ts`. It is redundant with `contentType: \"paper\"` — `BUILTIN_ADAPTERS` in the platform's src/builtin-adapters.ts names the same module — and the builtin path is the better one, because it SAYS out loud when the science layer is absent and it falls back, where a dead `adapterModule` only logs a load failure. Left in place because this migration renames a file rather than redesigning it; dropping the line is a one-line follow-up.",
+  "adapterModule": "folio-assistant/cat-harness/adapters/paper/index.ts",
   "_qaAxes_comment": "The opt-in for THIS folio's mathematics. folio-assistant fenced the `framework`, `wall` and `detangler-archimedean-wall` criteria behind this axis in #523, because they encode one folio's mathematics rather than a platform concern — `folioOptionalAxes()` in content/pipeline/qa-criteria-registry.ts reads this key and registers none of them when it is absent. This key did NOT arrive with the folio.config.json rename, so all six criteria have been unregistered since: `framework-canonical`, `wall-side-correct`, `wall-side-statement`, `wall-side-proof`, `wall-base-ring-minimal` and `detangler-archimedean-wall`, together with the matching watcher buckets, which are gated on the same axis so a bucket cannot name a criterion the registry never registered. The COMPUTATION was not entirely lost — q-usage-audit.ts calls checkWallSide and checkBaseRingMinimal directly — but the registered criteria were, so there are no QA sidecar verdicts for any of the six and nothing reported their absence. ONE axis name opens all six deliberately: the platform comment is explicit that it is one wall, so a folio opens both halves with one key and cannot end up half-fenced. NOTE `q-usage` is a SEPARATE axis gating seven more criteria and is deliberately not listed here — that is its own decision.",
   "qaAxes": [
     "archimedean-wall"
@@ -12,7 +12,7 @@
   "feedbackDir": ".folio-feedback",
   "viewer": {
     "_comment": "`port` is read (src/index.ts -> FolioServer.viewerPort). `dir` currently is not read by anything — kept because it is the documented shape in harness.config.example.json and it does resolve.",
-    "dir": "folio-assistant/viewer",
+    "dir": "folio-assistant/cat-harness/viewer",
     "port": 8080
   },
   "simulators": {

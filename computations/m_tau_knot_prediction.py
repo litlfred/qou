@@ -297,7 +297,7 @@ def main() -> None:
 
     # Witness emission
     witness = {
-        "$schema": "../../folio-assistant/schemas/witness.schema.json",
+        "$schema": "../../folio-assistant/cat-harness/schemas/witness.schema.json",
         "computation": "m-tau-knot-prediction",
         "description": ("Falsifiable test of cohomological lepton-generation "
                         "hierarchy: search for K_tau, k_tau such that "

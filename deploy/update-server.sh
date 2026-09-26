@@ -76,7 +76,7 @@ hcloud server ssh "$SERVER_NAME" -- bash -c '
     < Caddyfile.folio.template > Caddyfile
 
   rm -rf viewer assistant
-  cp -r ../folio-assistant/viewer viewer 2>/dev/null || true
+  cp -r ../folio-assistant/cat-harness/viewer viewer 2>/dev/null || true
   cp -r ../folio-assistant/ui assistant 2>/dev/null || true
 
   docker compose -f docker-compose.folio.yml pull

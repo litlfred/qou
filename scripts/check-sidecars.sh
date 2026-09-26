@@ -104,7 +104,7 @@ for f in "${files[@]}"; do
         else
           echo "    ⚠ NO sidecar yet"; action=1
         fi
-        echo "    → refresh: bun run folio-assistant/content/pipeline/qa-sweep.ts $base"
+        echo "    → refresh: bun run folio-assistant/cat-harness/content/pipeline/qa-sweep.ts $base"
       else
         # STANDALONE library Lean — covered by the per-block checker ONLY if some content
         # block's `lean.ref` resolves here (candidate-2); a library file referenced by NO
@@ -311,7 +311,7 @@ for f in "${files[@]}"; do
       else
         echo "    (no sidecar yet)"
       fi
-      echo "    → bun run folio-assistant/content/pipeline/qa-sweep.ts $base   (refresh stale criteria)"
+      echo "    → bun run folio-assistant/cat-harness/content/pipeline/qa-sweep.ts $base   (refresh stale criteria)"
       ;;
     computations/*.py)
       echo "▸ $f  [compute producer]"

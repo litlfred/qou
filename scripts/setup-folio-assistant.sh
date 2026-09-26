@@ -6,8 +6,8 @@
 # SEPARATE repo, litlfred/folio-assistant. qou's content `.ts` files and
 # the `content/schema/*.ts` shims import the platform through the in-repo
 # path `folio-assistant/` (e.g. `content/schema/types.ts` does
-# `export * from "../../folio-assistant/schemas/types"`), and the
-# package.json scripts run `../folio-assistant/content/pipeline/*.ts`.
+# `export * from "../../folio-assistant/cat-harness/schemas/types"`), and the
+# package.json scripts run `../folio-assistant/cat-harness/content/pipeline/*.ts`.
 # Both resolve to `<repo-root>/folio-assistant/`.
 #
 # This script makes `<repo-root>/folio-assistant/` resolve by:
