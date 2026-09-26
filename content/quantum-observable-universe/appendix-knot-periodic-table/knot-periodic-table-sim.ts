@@ -3,7 +3,7 @@ import { simulator } from "../../../folio-assistant/schemas/builders";
 export default simulator({
   label: "sim:knot-periodic-table",
   title: "Knot-Centric Periodic Table with Beta Decay",
-  html: "simulators/knot_periodic_table.html",
+  html: "fsh-guts/deprecated/simulators/knot_periodic_table.html",
   uses: [
     "prop:shell-structure-eigenvalues",
     "prop:knot-particle-correspondence",

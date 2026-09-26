@@ -10,7 +10,7 @@ import { simulator } from "../../../folio-assistant/schemas/builders";
 export default simulator({
   label: "sim:quantum-brings-surface",
   title: "Quantum Bring's Surface Simulator",
-  html: "simulators/quantum_brings_surface.html",
+  html: "fsh-guts/deprecated/simulators/quantum_brings_surface.html",
   uses: [
     "def:quaternionic-spectral-resolvents",
     "prop:color-elliptic",

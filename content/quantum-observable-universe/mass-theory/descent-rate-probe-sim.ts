@@ -8,7 +8,7 @@ import { simulator } from "../../../folio-assistant/schemas/builders";
 export default simulator({
   label: "sim:descent-rate-probe",
   title: "Empirical descent-rate probe (SYT-cell pairs)",
-  html: "simulators/descent_rate_probe.html",
+  html: "fsh-guts/deprecated/simulators/descent_rate_probe.html",
   uses: ["rem:mass-tower-syt-cells"],
   tags: ["syt", "descent-rate", "empirical", "todo-html", "interactive"],
   defaultView: {

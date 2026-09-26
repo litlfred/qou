@@ -12,7 +12,7 @@ import { simulator } from "../../../folio-assistant/schemas/builders";
 export default simulator({
   label: "sim:beta-decay-halflife",
   title: "Beta-Decay Half-Life Simulator",
-  html: "simulators/beta_decay_halflife.html",
+  html: "fsh-guts/deprecated/simulators/beta_decay_halflife.html",
   uses: ["cor:spectral-decomposition-qvalue"],
   tags: [
     "beta-decay",

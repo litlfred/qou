@@ -16,7 +16,7 @@ export default simulator({
     "interactive",
   ],
   uses: ["def:categorical-neutron"],
-  html: "simulators/beta_decay_braid.html",
+  html: "fsh-guts/deprecated/simulators/beta_decay_braid.html",
   defaultView: {
     name: "default",
     title: "Neutron $\\beta^-$ decay braid insertion",
