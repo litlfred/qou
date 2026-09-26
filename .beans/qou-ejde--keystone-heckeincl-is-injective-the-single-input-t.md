@@ -1,11 +1,11 @@
 ---
 # qou-ejde
 title: 'KEYSTONE: heckeIncl is injective -- the single input to the colimit bridge (route mapped, all pieces sorry-free on main)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-12T20:55:31Z
-updated_at: 2026-09-13T08:30:00Z
+updated_at: 2026-09-26T10:44:11Z
 ---
 
 Parent: qou-0fmb (plan), epic qou-08a2. Opened 2026-09-12 after the plan re-scope
@@ -219,3 +219,68 @@ blocks, I will say which and leave the gap rather than axiomatise it.
 `heckeTowerMarkovTrace` faithful, prove strict growth (`qou-p8yg`), or derive
 the bond product for the production atom word. Nothing here closes either bean
 on its own.
+
+
+--------
+
+**2026-09-26 — STEP 3 IS COMPOSED. `heckeIncl_injective` is proved sorry-free.
+Branch `claude/ejde-heckeincl-injective-2026-09-26`. Bean stays IN-PROGRESS: it is
+on a branch, not in the product.**
+
+All three steps of the route now exist:
+
+    QOU/Mathlib/YoungDiagramEraseCornerSurjective.lean   (the stated gap)
+      isAddableCell_rowLen_zero  -- (0, rowLen 0) is addable to ANY diagram
+      exists_eraseCorner_eq      -- hence every diagram is some mu \ c
+    QOU/SchurWeyl/HeckeInclInjective.lean                 (step 3)
+      seminormalRep_eq_of_heckeIncl_eq
+      heckeIncl_injective
+
+**The gap this bean stated was smaller than it looked, and the corpus already held
+most of it.** The bean says the eraseCorner-surjectivity "must be STATED and
+proved, not assumed" and points at `SytInsertMaxTransport`. The pieces that close
+it are in `YoungDiagramAddCell` and `YoungDiagramAddable` instead:
+`eraseCorner_addCell` supplies the round-trip outright, and `addable_iff`
+characterises addability so that at row 0 the side condition is `0 = 0`. So the
+new mathematics is two lines, and the empty diagram needs no case split.
+
+Also worth recording for whoever reads the bean next: `SeminormalBlockEquality`'s
+own docstring points at `QOU.Mathlib.YoungDiagramCornerReindex`, which carries
+`cornerAddEquiv`, a full BIJECTION of pairs (diagram of n+1, removable corner) <->
+(diagram of n, addable cell). That is strictly sharper than the surjectivity. I
+used the bare surjectivity deliberately: a `forall nu` goal is discharged by
+`subst`, which wants an equation with the variable on one side, and the bijection's
+Sigma form is the one the corpus notes produces `HEq`.
+
+**What made the composition two lines.** Step 2 concludes at the diagram
+`eraseCorner mu c hc` while the goal wants `nu`, and `seminormalRep`'s OUTPUT TYPE
+depends on the diagram (a matrix indexed by its standard tableaux) -- so relating
+them is a dependent rewrite and transporting lands in HEq. Stating the bridge with
+`nu` as a VARIABLE avoids it entirely: `exists_eraseCorner_eq` returns an equation
+whose right side is that variable, `subst` rewrites it and carries `hnu` along, and
+step 2 then applies on the nose with `hnu` itself as its `hNs`.
+
+**Verification, stated rather than implied.** `lean -DautoImplicit=false -s 65536`,
+exit 0 captured directly (not through a pipe), zero diagnostics, first attempt on
+the composition. `#print axioms` on all four declarations: [propext,
+Classical.choice, Quot.sound] -- no sorryAx. No `sorry`, no `native_decide`, no new
+axiom. Mutant M1 (drop the hypothesis `h` from the rewrite) fails with `unsolved
+goals`, so the proof consumes its hypothesis. `heckeIncl_injective` re-grepped by
+IDENTIFIER corpus-wide: no prior declaration -- the bean's 2026-09-12 "measured
+absent" still holds.
+
+NOT run: the content sweep (needs a ~2.3 GB shadow; 1.2 GB free). These are library
+modules with no .qa.json sidecar, so lean-direct plus the axiom audit is the whole
+gate available in this container.
+
+**What this does NOT close, and the bean's own later note is why.** This is NOT the
+colimit bridge. The 2026-09-13 measurement in this bean records that @DirectLimit
+and @DirectLimit.Ring.of carry NO injectivity hypothesis, so the colimit and its
+canonical maps exist without it. What injectivity unlocks is STRICT growth --
+`qou-p8yg`. It says nothing about `ofLim` being injective for
+heckeColimitMarkovTrace and does not make trLim faithful, so the faithfulness
+question that #7442 names as the surviving keystone is NOT answered by this.
+
+Scope inherited: R, q != 0, NotRootOfUnity q -- generic q over a characteristic-zero
+field, because finrank_hecke_eq_factorial needs semisimplicity. At a root of unity
+the proof fails rather than weakens. Every downstream consequence inherits it.
