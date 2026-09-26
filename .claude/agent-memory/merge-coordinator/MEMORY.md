@@ -27,6 +27,10 @@ table in step — this file's disagreed until 2026-08-31 and `AGENTS.md`'s until
 
 2026-09-07: four PRs "measured CLEAN by `merge-tree`" were already rebase-merged (`merge-tree --write-tree` is vacuous for an applied patch). Before any checkout/rebase/push: `git fetch origin refs/pull/N/head:refs/remotes/pr/N`, then `git cherry origin/main pr/N` (`-` = upstream) and `scripts/verify-merge-replay.py --branch pr/N --merged origin/main`. A rebase that skips everything and leaves HEAD == `origin/main` is the same signal — stop. I force-pushed a merged branch to main's tip once and had to restore it.
 
+## TRAP — the same staleness reads as a phantom CONFLICT, not just a false clean
+
+2026-09-26, the inverse of the entry above. Rebase-merge rewrites every sha, so a merged branch's leftover ref is **not** an ancestor of `main`: `--is-ancestor` returns FALSE and `merge-tree --write-tree` reports **add/add CONFLICT** on every file it created. Measured on four leftovers — all read NOT-merged with real-looking conflicts, **all four PRs had merged**; one conflicting file's theorem bodies were byte-identical to main's and the whole 26-line "conflict" was docstring. Leftovers are the NORMAL state (deletion is forbidden) and `session-start-coord-sweep.sh` lists exactly them, so this reading is available on every sibling, every session. **Resolve branch → PR state before reading git ancestry as coordination signal:** `GET /pulls?state=all&head=litlfred:<branch>` — `state=open` alone returns `[]` and looks like "no PR ever". Detail + the four shas: [`stale-merged-branch-phantom-conflict.md`](stale-merged-branch-phantom-conflict.md).
+
 ## TRAP — worktree hook refuses variables · MCP "connected" but toolless · gates exit 2
 
 Recipes: [`worktree-hook-and-rest-recipes.md`](worktree-hook-and-rest-recipes.md).
