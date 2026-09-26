@@ -138,9 +138,9 @@ had drifted badly while this table was maintained by hand.
 
 | Paper | Block kind | Total | With Lean sibling | Fully formalized |
 |-------|------------|------:|------------------:|-----------------:|
-| On the Mechanics of Quantum Observable Universes | Provable claims | 745 | 738 | **736 sorry-free (98.8%)** |
-| | Conjectures (open) | 173 | 170 | **161 class-axiomatised (93.1%)** |
-| | Definitions | 257 | 257 | — |
+| On the Mechanics of Quantum Observable Universes | Provable claims | 750 | 740 | **739 sorry-free (98.5%)** |
+| | Conjectures (open) | 182 | 177 | **168 class-axiomatised (92.3%)** |
+| | Definitions | 265 | 265 | — |
 | Unital Gröbner--Shirshov Bases over Arbitrary Commutative Ground Rings | Provable claims | 10 | 10 | **10 sorry-free (100%)** |
 | | Conjectures (open) | 0 | 0 | **0 class-axiomatised (0%)** |
 | | Definitions | 12 | 12 | — |
@@ -174,6 +174,7 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.BraidKnot` | `BraidKnot.lean` |
 | `QOU.BraidTwistFlip` | `BraidTwistFlip.lean` |
 | `QOU.BringCone` | `BringCone.lean` |
+| `QOU.BringConeSplit` | `BringConeSplit.lean` |
 | `QOU.BringsSurface` | `BringsSurface.lean` |
 | `QOU.Calculations` | `Calculations.lean` |
 | `QOU.CategoricalDqSquared` | `CategoricalDqSquared.lean` |
@@ -190,12 +191,14 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.emergence_to_quantum_flat` | `emergence_to_quantum_flat.lean` |
 | `QOU.Encounter` | `Encounter.lean` |
 | `QOU.FeynmanPathIntegrals` | `FeynmanPathIntegrals.lean` |
+| `QOU.FHWExponentWindow` | `FHWExponentWindow.lean` |
 | `QOU.FlavorDressing` | `FlavorDressing.lean` |
 | `QOU.frobenius_dagger_positive_definite` | `frobenius_dagger_positive_definite.lean` |
 | `QOU.frobenius_relation` | `frobenius_relation.lean` |
 | `QOU.GaugeFieldFluidDynamics` | `GaugeFieldFluidDynamics.lean` |
 | `QOU.Glossary` | `Glossary.lean` |
 | `QOU.GradedFrobeniusHopf` | `GradedFrobeniusHopf.lean` |
+| `QOU.GrothendieckChern` | `GrothendieckChern.lean` |
 | `QOU.GroundRingAnnotations` | `GroundRingAnnotations.lean` |
 | `QOU.GroundRingCore` | `GroundRingCore.lean` |
 | `QOU.HadronicMass` | `HadronicMass.lean` |
@@ -219,6 +222,7 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.MathConstants` | `MathConstants.lean` |
 | `QOU.MathlibExt` | `MathlibExt.lean` |
 | `QOU.MobiusEnergy` | `MobiusEnergy.lean` |
+| `QOU.MobiusMutualChannel` | `MobiusMutualChannel.lean` |
 | `QOU.MotivesArchimedean` | `MotivesArchimedean.lean` |
 | `QOU.ObservableSubcategory` | `ObservableSubcategory.lean` |
 | `QOU.OneLoopEdgeLattice` | `OneLoopEdgeLattice.lean` |
@@ -242,8 +246,6 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.RepresentationTheory` | `RepresentationTheory.lean` |
 | `QOU.Resurgence` | `Resurgence.lean` |
 | `QOU.scratch_matrix` | `scratch_matrix.lean` |
-| `QOU.scratch_pmass` | `scratch_pmass.lean` |
-| `QOU.scratch_skein` | `scratch_skein.lean` |
 | `QOU.SelectionRules` | `SelectionRules.lean` |
 | `QOU.Shared` | `Shared.lean` |
 | `QOU.SkeinResolutionObstruction` | `SkeinResolutionObstruction.lean` |
@@ -256,72 +258,75 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.TypedCrossingsEncoding` | `TypedCrossingsEncoding.lean` |
 | `QOU.variational_equations` | `variational_equations.lean` |
 | `QOU.volume_from_rigidity` | `volume_from_rigidity.lean` |
-| `QOU.AlgebraicSubstrate.*` | `37 files` |
-| `QOU.AlphaEM.*` | `1 files` |
+| `QOU.AlgebraicSubstrate.*` | `41 files` |
+| `QOU.AlphaEM.*` | `2 files` |
 | `QOU.Appendix.*` | `1 files` |
 | `QOU.AppendixQValues.*` | `1 files` |
-| `QOU.AppendixSurreals.*` | `44 files` |
-| `QOU.Archimedean.*` | `196 files` |
+| `QOU.AppendixSurreals.*` | `50 files` |
+| `QOU.Archimedean.*` | `214 files` |
 | `QOU.ArchimedeanUniverse.*` | `5 files` |
 | `QOU.AtomicMass.*` | `1 files` |
 | `QOU.BaryonWeight.*` | `1 files` |
-| `QOU.Braiding.*` | `14 files` |
-| `QOU.BraidKnot.*` | `375 files` |
-| `QOU.BraidsAndKnots.*` | `74 files` |
+| `QOU.Braiding.*` | `22 files` |
+| `QOU.BraidKnot.*` | `436 files` |
+| `QOU.BraidsAndKnots.*` | `81 files` |
 | `QOU.BraidsKnots.*` | `7 files` |
-| `QOU.Brings.*` | `4 files` |
-| `QOU.BringsSurface.*` | `7 files` |
+| `QOU.Brings.*` | `10 files` |
+| `QOU.BringsSurface.*` | `13 files` |
 | `QOU.CategoricalReeb.*` | `3 files` |
 | `QOU.Common.*` | `10 files` |
 | `QOU.CommutativeQOU.*` | `1 files` |
 | `QOU.Conjectures.*` | `5 files` |
 | `QOU.Descent.*` | `1 files` |
-| `QOU.Eightfold.*` | `16 files` |
+| `QOU.Eightfold.*` | `45 files` |
 | `QOU.EightfoldWay.*` | `2 files` |
-| `QOU.Encounter.*` | `1 files` |
+| `QOU.Encounter.*` | `4 files` |
 | `QOU.Experimental.*` | `2 files` |
-| `QOU.FeynmanPathIntegrals.*` | `1 files` |
+| `QOU.FeynmanPathIntegrals.*` | `2 files` |
 | `QOU.FlavorDressing.*` | `4 files` |
-| `QOU.FluidDynamics.*` | `35 files` |
-| `QOU.FrobeniusHopfData.*` | `1 files` |
+| `QOU.FluidDynamics.*` | `37 files` |
+| `QOU.FrobeniusHopfData.*` | `3 files` |
 | `QOU.GaugeFieldFluidDynamics.*` | `1 files` |
 | `QOU.Geometry.*` | `1 files` |
 | `QOU.Habiro.*` | `3 files` |
 | `QOU.HadronicMass.*` | `3 files` |
-| `QOU.Hecke.*` | `30 files` |
-| `QOU.HeckeAlgebra.*` | `9 files` |
+| `QOU.Hecke.*` | `86 files` |
+| `QOU.HeckeAlgebra.*` | `14 files` |
 | `QOU.HyperellipticQuintic.*` | `4 files` |
-| `QOU.Information.*` | `39 files` |
+| `QOU.Information.*` | `42 files` |
 | `QOU.Infra.*` | `4 files` |
-| `QOU.Interactions.*` | `33 files` |
-| `QOU.IwahoriHecke.*` | `7 files` |
-| `QOU.Knot.*` | `82 files` |
+| `QOU.Interactions.*` | `35 files` |
+| `QOU.IwahoriHecke.*` | `26 files` |
+| `QOU.Knot.*` | `88 files` |
 | `QOU.Knots.*` | `1 files` |
 | `QOU.KnotTheory.*` | `4 files` |
-| `QOU.LiftingDescent.*` | `22 files` |
-| `QOU.Machinery.*` | `88 files` |
+| `QOU.LiftingDescent.*` | `24 files` |
+| `QOU.Machinery.*` | `95 files` |
 | `QOU.MagicShell.*` | `1 files` |
-| `QOU.Mass.*` | `75 files` |
+| `QOU.Mass.*` | `210 files` |
 | `QOU.MassEndomorphism.*` | `9 files` |
-| `QOU.MassTheory.*` | `108 files` |
-| `QOU.Mathlib.*` | `169 files` |
-| `QOU.MathlibExt.*` | `114 files` |
+| `QOU.MassTheory.*` | `177 files` |
+| `QOU.Mathlib.*` | `211 files` |
+| `QOU.MathlibExt.*` | `179 files` |
 | `QOU.Molecular.*` | `11 files` |
-| `QOU.Observations.*` | `11 files` |
+| `QOU.Observations.*` | `14 files` |
+| `QOU.OneDim.*` | `3 files` |
 | `QOU.Optimization.*` | `4 files` |
 | `QOU.OptionE.*` | `5 files` |
 | `QOU.ParticleInteractions.*` | `36 files` |
-| `QOU.QBeta.*` | `255 files` |
+| `QOU.ProofHygiene.*` | `1 files` |
+| `QOU.QBeta.*` | `306 files` |
 | `QOU.QGeometricLanglands.*` | `4 files` |
 | `QOU.QuantumBloch.*` | `2 files` |
 | `QOU.QuantumComputationalUniversality.*` | `1 files` |
-| `QOU.QuantumObservableUniverse.*` | `19 files` |
-| `QOU.QuantumObservableUniverses.*` | `10 files` |
+| `QOU.QuantumObservableUniverse.*` | `28 files` |
+| `QOU.QuantumObservableUniverses.*` | `12 files` |
+| `QOU.QuantumUniverse.*` | `1 files` |
 | `QOU.Resurgence.*` | `4 files` |
-| `QOU.SchurWeyl.*` | `66 files` |
-| `QOU.Shared.*` | `5 files` |
-| `QOU.StandardModel.*` | `20 files` |
-| `QOU.Substrate.*` | `5 files` |
+| `QOU.SchurWeyl.*` | `79 files` |
+| `QOU.Shared.*` | `7 files` |
+| `QOU.StandardModel.*` | `22 files` |
+| `QOU.Substrate.*` | `6 files` |
 | `QOU.TopologicalMass.*` | `3 files` |
 | `QOU.Torsion.*` | `21 files` |
 | `QOU.TransferMatrices.*` | `1 files` |
@@ -381,15 +386,17 @@ The **Folio Assistant** (`folio-assistant/`) is the platform layer providing:
 
 | Simulator | File |
 |-----------|------|
-| Beta Decay Braid | `simulators/beta_decay_braid.html` |
-| Beta Decay Halflife | `simulators/beta_decay_halflife.html` |
-| Brings Surface | `simulators/brings_surface.html` |
-| Double Slit Simulator | `simulators/double_slit_simulator.html` |
-| Knot Atom Diagrams | `simulators/knot_atom_diagrams.html` |
-| Knot Periodic Table | `simulators/knot_periodic_table.html` |
-| Q Double Slit | `simulators/q_double_slit.html` |
-| Quantum Brings Surface | `simulators/quantum_brings_surface.html` |
-| Valley Stability | `simulators/valley_stability.html` |
+| Beta Decay Braid | [`simulators/beta_decay_braid.html`](simulators/beta_decay_braid.html) |
+| Beta Decay Halflife | [`simulators/beta_decay_halflife.html`](simulators/beta_decay_halflife.html) |
+| Brings Surface | [`simulators/brings_surface.html`](simulators/brings_surface.html) |
+| Double Slit | [`simulators/double_slit.html`](simulators/double_slit.html) |
+| Double Slit Simulator | [`simulators/double_slit_simulator.html`](simulators/double_slit_simulator.html) |
+| Empty | [`simulators/empty.html`](simulators/empty.html) |
+| Knot Atom Diagrams | [`simulators/knot_atom_diagrams.html`](simulators/knot_atom_diagrams.html) |
+| Knot Periodic Table | [`simulators/knot_periodic_table.html`](simulators/knot_periodic_table.html) |
+| Q Double Slit | [`simulators/q_double_slit.html`](simulators/q_double_slit.html) |
+| Quantum Brings Surface | [`simulators/quantum_brings_surface.html`](simulators/quantum_brings_surface.html) |
+| Valley Stability | [`simulators/valley_stability.html`](simulators/valley_stability.html) |
 
 <!-- folio:simulators:end -->
 
@@ -500,6 +507,7 @@ The compute pipeline is layered into reusable packages so external researchers c
 | `probe-float64-gate.yml` | probe-float64-gate |
 | `pyhecke-native-wheel.yml` | pyhecke-native-wheel |
 | `witness-staleness.yml` | witness-staleness |
+| `word-provenance-gate.yml` | word-provenance-gate |
 
 <!-- folio:workflows:end -->
 
