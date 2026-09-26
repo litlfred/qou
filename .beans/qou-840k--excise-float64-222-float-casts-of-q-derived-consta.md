@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-09-26T10:33:47Z
+updated_at: 2026-09-26T10:46:00Z
 ---
 
 
@@ -734,3 +734,42 @@ findings confirm each other and were reached from opposite ends.
 The bean's main subject — **222 `float()`-casts of q-derived constants across 129
 files** — is untouched by this. Only §"a 30-digit cap in the production weights"
 is stale.
+
+
+### Where the withdrawn claim propagated — 2 carriers, not 8
+
+A figure-grep for the four residuals returns eight files. **Four are substring
+artifacts of scientific notation** and are unrelated — worth naming, because the
+over-match is the same detector-blindness class running the other way:
+
+| file | matched | actually |
+|---|---|---|
+| `all-nuclides-sdp-admissibility-mp.witness.json` | `7.9e-31` | inside `y0_star_str = 3.53127756391210122990490434350523013712148691057*49e-31*` — an LP dual |
+| `probes/awzero-asymptotics.witness.json` | `7.9e-31` | `tail_bound_at_b = 2.51709e-31*1*` — a different exponent entirely |
+| `qbeta/gram-convention-d-singularity-structural.witness.json` | `9.1e-32` | `min\|eig\| under D = 4.33951e-32` — a Gram eigenvalue |
+| `.beans/qou-cds2` | `9.1e-32` | the same Gram row |
+
+**The genuine carriers are two, and they are NOT equally bad:**
+
+1. **`docs/audits/2026-08-09-canonical-chain-walk-gaps-marked.md` (lines 161-165)
+   — this is the one that misleads.** It states the cap as fact in a durable
+   audit doc, gives it as the *cause* of all four residuals, and concludes:
+   *"Corpus claims of '1e-50 agreement' are about χ^λ, not tr_M."* That last
+   sentence is now measurably false — `qou-ejfy` measured the canonical tr_M
+   witness against an exact symbolic recompute at **1.4e-50**. An agent citing
+   this doc would "correct" a right number into a wrong one.
+
+2. `docs/audits/2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md`
+   (lines 277-280) and `.beans/qou-d5e8` cite 7.9e-31 / 1.2e-31 as
+   **verification that tr_M is multiplicative**. That use is benign: the
+   verification stands, only its precision was understated. No causal claim
+   about the cap, no instruction to edit anything.
+
+Also distinct, despite matching: `.beans/t7qv` records `G[3,2] = z·G[2,2]`
+residual `1.2e-31` **"at 40 dps"** — self-explained by its own compute
+precision, not by the y_λ cap. Same family of check, different and stated cause.
+
+**Not edited.** Both audit docs are dated records, and this repo's standing
+practice (`qou-3nva`) is to leave those as historical rather than sweep them.
+The 08-09 doc is the one where that practice and the risk actually collide;
+raised for the owner rather than acted on.
