@@ -1,11 +1,11 @@
 ---
 # qou-ejfy
 title: The three Markov-trace assembly chain builders cast a 60-digit mpf to float64
-status: in-progress
+status: completed
 type: bug
 priority: normal
 created_at: 2026-09-19T06:00:38Z
-updated_at: 2026-09-26T10:34:39Z
+updated_at: 2026-09-26T13:47:00Z
 ---
 
 ## Measured on `origin/main` @ `665c91e403` (2026-09-19)
@@ -447,3 +447,46 @@ Two things worth keeping from this:
   that, followed today, would replace correct 1e-50 statements with wrong 1e-30
   ones. Recorded on `qou-840k` itself with the evidence; its status was not
   touched and its main subject (the 222 casts) is unaffected.
+
+## MERGED 2026-09-26 — PR #7438, merge sha `34983a57e0`
+
+Owner gave explicit merge permission; `/prepare-merge-auto` run in full.
+
+Rebased onto `origin/main` @ `bb6db24f6b` — **48 commits** on from the base the
+PR was verified against — and **re-verified there rather than carrying the old
+numbers over**. On the rebased head `b2114eff31`:
+
+  - `witness_raw_float64_audit.py --strict` -> NEW 0, REGRESSED 0, exit 0
+  - `applied_uniqueness_mass_table.py` -> exit 0, witness BYTE-IDENTICAL
+  - `audits/braid_encoding_audit.py` -> exit 0, re-run diff PROVENANCE-ONLY
+    (computedAt / commitSha / scriptCommitSha / pyhecke_native_build); no numeric
+    field moved. Reverted, not committed (`qou-v0t8`).
+  - `assembly_chain_11_letter_recompute_probe.py` -> exit 1, 5/7, identical:
+    both proton checks rel **0** at tol 1e-59; both muon failures reproduce to
+    the digit (0.450733 / 0.518971), confirming they are the pre-existing
+    hardcoded-LIVE-entry failures and not anything this PR or the rebase caused.
+  - working tree clean after all four.
+
+`scripts/verify-merge-replay.py`: **16 branch commits, 16 replayed, 0 MISSING**.
+Patch-id comparison, not `git diff` (which after a rebase-merge compares a commit
+to itself and can never fail — `qou-vtau`).
+
+Gates, stated rather than assumed: no CI run exists or can (Actions
+`workflow_dispatch`-only), `get_reviews` empty at merge time and Copilot not
+re-requested because review is rationed (`qou-gwe9`), Gemini sunset, no `.lean`
+and no `content/` block in the 13 files so neither the Lean sweep nor
+`run-validate` applies. The agent's own verification was the whole gate.
+
+Branch NOT deleted (rule 9).
+
+### One finding from the verification, deliberately not acted on
+
+`braid_encoding_audit.py` prints a raw-float64 warning the ratchet does not
+count: 6 fields at `.data.braid_inventory.electron.word_cd[0..2][0..1]`. They
+ARE floats in the committed witness — and they are `1.0` and `0.0`: exactly
+representable, integral-valued, structural braid-word data rather than measured
+quantities. The producer's pre-write guard warns on any float; the ratchet counts
+only non-integral ones, so `NEW 0` and the warning are both correct and not in
+tension. Pre-existing, outside this PR's files, unchanged by the diff, loses no
+precision — neither ASK-THE-OWNER exemption covers it, so it stays. Recorded so
+the next reader does not mistake it for a regression.
