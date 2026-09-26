@@ -8,7 +8,7 @@ tags:
     - rendering
     - platform
 created_at: 2026-09-26T11:21:37Z
-updated_at: 2026-09-26T12:51:03Z
+updated_at: 2026-09-26T13:22:12Z
 parent: qou-n4r9
 ---
 
@@ -124,3 +124,26 @@ reason to drop it. Pin the `uses:` line first (`qou-pwp9`), because an unpinned 
 render is the thing that actually bites.
 
 ## Not started. No workflow touched, no `main.tex` change.
+
+
+---
+
+## The PDF measurement, sharpened — 79 days, with a date (from `qou-pwp9`, 2026-09-26)
+
+The decision above cites "38 of 40 chapters already render `—`" as evidence little is
+lost by dropping PDF output. A second, independent and sharper measurement of the same
+thing, found while pinning `build.yml`:
+
+**`origin/gh-pages` last deployed 2026-07-08 — 79 days ago.** Its tip is
+`45cf621dd0 deploy: update PDF with \pm error formatting`, and there is nothing after it.
+
+So the render pipeline is not merely producing incomplete output; it has produced
+**none** for 79 days. That is a stronger form of the same point and it carries a date,
+which the chapter count does not.
+
+**It cuts both ways and should not be read as settling the decision.** It strengthens
+"little is being lost in practice" — but it equally supports "the pipeline is broken
+and should be fixed" rather than "replaced". A dormant pipeline is evidence about
+*operation*, not about whether a PDF is *wanted*, and AGENTS.md's standing ruling that
+this work must stand up in a physics venue is a statement about the latter. Still the
+author's call.
