@@ -1,11 +1,11 @@
 ---
 # mig1
-title: 'Package References & Routing'
+title: Package References & Routing
 status: completed
-type: child
+type: task
 priority: normal
 created_at: 2026-06-14T00:00:00Z
-updated_at: 2026-06-21T19:39:07Z
+updated_at: 2026-09-26T10:55:15Z
 parent: miga
 ---
 
