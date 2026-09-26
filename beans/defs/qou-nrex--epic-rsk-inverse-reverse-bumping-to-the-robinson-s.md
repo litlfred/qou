@@ -2,7 +2,7 @@
 # qou-nrex
 title: 'EPIC: RSK inverse — reverse bumping to the Robinson-Schensted bijection (taken over from the Schensted programme)'
 status: in-progress
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-08-16T02:46:29Z
 updated_at: 2026-08-29T20:04:44Z

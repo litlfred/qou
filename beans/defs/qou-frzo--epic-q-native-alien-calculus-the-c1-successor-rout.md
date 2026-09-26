@@ -2,7 +2,7 @@
 # qou-frzo
 title: 'EPIC: q-native alien calculus — the C1 successor route the RSZ closure names'
 status: in-progress
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-09-07T06:24:35Z
 updated_at: 2026-09-07T06:42:42Z

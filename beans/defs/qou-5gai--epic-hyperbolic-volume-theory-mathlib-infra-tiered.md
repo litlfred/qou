@@ -2,7 +2,7 @@
 # qou-5gai
 title: 'EPIC: hyperbolic-volume theory Mathlib infra (tiered H1-H5) — the T2 blocker'
 status: in-progress
-type: milestone
+type: epic
 priority: medium
 created_at: 2026-08-08T17:05:00Z
 updated_at: 2026-08-08T17:05:00Z
