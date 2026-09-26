@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-09-26T10:53:14Z
+updated_at: 2026-09-26T10:55:28Z
 ---
 
 
@@ -814,3 +814,40 @@ step, and it gated the cheap answer behind it. Evaluating at the pin with
 `sp.cancel` only — no `simplify` — returns in 199 s total. If you extend this to
 residual 3, substitute q, δ and h numerically *before* taking the trace rather
 than after.
+
+
+### Residual 4 re-measured: `tr_M(W·σ) = z·tr_M(W)` is EXACT too — in 1.7 s
+
+W = the canonical proton word on 3 strands (generators {0,1}); `W·σ₃` appends
+`(2, 'sigma')` and is evaluated at H_4. `M.Z_MARK` verified `= q³/(q²+1)`,
+i.e. convention D.
+
+    tr_M(W·σ₃)  @q0 = 0.38558198346622944847005289495935556822269309959149640845
+    z·tr_M(W)   @q0 = 0.38558198346622944847005289495935556822269309959149640845
+    RELATIVE RESIDUAL = 0
+
+**1.7 seconds**, against the >13 min that residual 3 failed in. The difference is
+structural and worth keeping: H_4 has 5 partitions and the word carries **no
+extra free symbols**, whereas the atom word's `averaged_weighted` letter drags in
+δ and h.
+
+### The corrected table
+
+| residual | recorded 2026-08-08 | measured 2026-09-26 | route |
+|---|---|---|---|
+| `Σ y_λ f^λ = 1` | 7.7e-31 | **1.06911e-50** | numeric accessor `y_lambda_at` |
+| `tr_free = tr_p·tr_n` | 7.9e-31 | **0** (60 digits) | symbolic over ℚ(q) |
+| `tr_atom = tr_free·(z+d)` | 1.2e-31 | *not measured* | needs ℚ(q,δ,h) |
+| `tr(W·σ) = z·tr(W)` | 9.1e-32 | **0** (60 digits) | symbolic over ℚ(q) |
+
+**Why residual 1 is 1e-50 and not 0, while 2 and 4 are 0.** Not an
+inconsistency — they are measured on different routes. `y_lambda_at` computes
+*numerically* (`y_lambda_su_n(n, mpf(str(q)), 2)`), so its residual is the
+mpmath working-precision floor at the 70/60 dps default. Residuals 2 and 4 are
+rational-function identities evaluated on the *symbolic* route, so they close to
+every digit evaluated. Both readings are the honest one for their own route.
+
+**All four were recorded at ~1e-31 and attributed to the 30-digit cap. Three are
+now re-measured and none of them is 1e-31.** The fourth is untractable here, but
+its stated cause is withdrawn on the same evidence as the others: the cap has
+zero call sites.
