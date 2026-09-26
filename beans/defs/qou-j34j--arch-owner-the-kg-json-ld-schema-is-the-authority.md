@@ -5,7 +5,7 @@ status: todo
 type: epic
 priority: normal
 created_at: 2026-09-26T14:20:26Z
-updated_at: 2026-09-26T14:22:39Z
+updated_at: 2026-09-26T20:02:00Z
 ---
 
 ## The ruling (owner, 2026-09-26, verbatim)
@@ -159,3 +159,82 @@ orphaned by a deleted block, so the gap is purely un-generated, never stale.
 Next action is step 2 (the lightweight KG Tool). The 94 are generable by the
 existing `gen-block-jsonld` — that is not this bean's hard part; the hard part is
 still reversing the direction so `.jsonld` is the source rather than the sibling.
+
+--------
+
+## MEASURED 2026-09-26 — the gap is **94 blocks**, not 180, and this bean predicted why
+
+This bean's own instruction was followed rather than its number quoted:
+
+> Note the gap is NOT simply "180 un-generated blocks" until checked … Whether the
+> 180 are missing JSON-LD, or 180 `.ts` files that are not blocks (builders, index
+> files, `references.ts`), is **unmeasured**. Measure per-file, not by subtraction —
+> a difference of counts is not a list of files.
+
+Measured per file, walking `content/` with `.lake` and `node_modules` excluded, and
+defining a **block** as a `.ts` carrying a same-named `.md` sibling (the
+file-triple convention this repo documents):
+
+| | count |
+|---|---|
+| `content/**/*.ts` | 3761 |
+| `content/**/*.md` | 3692 |
+| `content/**/*.jsonld` | 3583 |
+| **blocks** (`.ts` **with** a same-named `.md`) | **3677** |
+| **blocks missing `.jsonld`** | **94** |
+| `.ts` with **no** `.md` sibling (not blocks) | 84 |
+| `.jsonld` with **no** `.ts` sibling | **0** |
+
+**So 180 decomposes almost exactly as this bean guessed it might: ~94 real gaps
+plus ~84 non-blocks.** The 84 are what the bean named — `references.ts`,
+`types.ts`, `introduction.ts`/`overview.ts` chapter manifests,
+`appendix-surreals.ts`, and audit/test scripts such as
+`witness-substitution-audit.ts` and `qa-evidence-audit.test.ts`. None of them is a
+content block, so none of them wants a `.jsonld`, and counting them as missing
+authority records overstated the real gap by **91 %**.
+
+**`.jsonld` orphans are 0**, which is worth stating because it is the reassuring
+half: every existing authority file has an authored `.ts` behind it. The
+migration's risk is one-directional — blocks with no authority record, not
+authority records with no block.
+
+### My own counts differ slightly from the ones above this line — say why
+
+`.ts` 3761 vs the bean's 3763, `.md` 3692 vs 3723. The difference is the walk, not
+the tree: this pass excludes `content/**/.lake/` (Lean build output) and
+`node_modules`. Quote a method with any of these figures.
+
+### The 94 are a SCATTER, not one excluded directory — and that is the diagnosis
+
+| blocks missing `.jsonld` | directory |
+|---|---|
+| 21 | `mass-theory/` |
+| 9 | `lifting-and-descent/` |
+| 7 | `brings-surface/` |
+| 7 | `predicted-spectra/` |
+| 5 | `quantum-universes/` |
+| 5 | `stochastic-mechanics/` |
+| 4 | `glossary/`, `knots-particles-confinement/`, `quantum-observable-universes/` each |
+| 3 | `braids-and-knots/` |
+
+Spread across **10+ chapters with no directory dominating**, which rules out the
+tempting systematic explanation (a directory excluded from the generator's glob).
+A scatter is the signature of **blocks authored after the last generation run** —
+several are `outro-*` and `intro-*` blocks, i.e. recently-added connective
+material. That points the fix at *"re-run the generator"*, not at *"debug the
+generator's scope"*.
+
+**Not established:** whether all 94 generate cleanly. A scatter is consistent with
+"never generated" AND with "generation fails on these"; distinguishing them means
+running the generator on one and reading the result, which has not been done here.
+
+### Why this matters for sequencing, unchanged
+
+Under the ruling these 94 blocks would have **no authority record at all** — not a
+stale one, none. That is the existence-filtered silence the platform's `dh4f` shape
+warns about: an absent declared thing is dropped before any consumer sees it, and
+every consumer then reports a clean run over nothing. **Close the 94 before
+anything reads `.jsonld` as authoritative**, and keep the count draining rather
+than re-measuring it by subtraction.
+
+Status stays `todo` — this is the measurement the bean asked for, not the migration.
