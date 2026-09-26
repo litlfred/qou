@@ -57,52 +57,53 @@ namespace QOU.SchurWeyl.HeckeColimit
 
 open QOU.SchurWeyl QOU.SchurWeyl.HeckeInclusion QOU.SchurWeyl.HeckeDirectedSystem
 
-variable {q : ℝ}
+variable {K : Type*} [Field K] [CharZero K] {q : K}
 
 /-- **Every transition map of the tower is injective**, not just the one-step inclusion. Induction
 on the upper index; the successor step is a composition of two injections. -/
 theorem heckeInclLE_injective (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
-    (i j : ℕ) (hij : i ≤ j) : Function.Injective (heckeInclLE ℝ q q⁻¹ i j hij) := by
+    (i j : ℕ) (hij : i ≤ j) : Function.Injective (heckeInclLE K q q⁻¹ i j hij) := by
   induction j, hij using Nat.le_induction with
   | base =>
       rw [heckeInclLE_self]
       exact fun _ _ h => h
   | succ n hn ih =>
-      rw [heckeInclLE_succ ℝ q q⁻¹ i n hn]
+      rw [heckeInclLE_succ K q q⁻¹ i n hn]
       exact (SeminormalRep.heckeIncl_injective hq0 hq2 n).comp ih
 
 /-- **Faithfulness.** The canonical map from level `n` into the colimit is injective, so `H n` is an
 isomorphic copy of `Hecke ℝ q q⁻¹ n` rather than merely its image. This is the question
 `HeckeColimit` and `HeckeColimitMarkovTrace` both flag as open. -/
 theorem ofLim_injective (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (n : ℕ) :
-    Function.Injective (ofLim ℝ q q⁻¹ n) :=
-  DirectLimit.mk_injective (heckeF ℝ q q⁻¹)
+    Function.Injective (ofLim K q q⁻¹ n) :=
+  DirectLimit.mk_injective (heckeF K q q⁻¹)
     (fun i j hij => heckeInclLE_injective hq0 hq2 i j hij) n
 
 /-- The algebra map into the colimit is injective. -/
 theorem ofLimₐ_injective (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (n : ℕ) :
-    Function.Injective (ofLimₐ ℝ q q⁻¹ n) :=
+    Function.Injective (ofLimₐ K q q⁻¹ n) :=
   ofLim_injective hq0 hq2 n
 
+omit [CharZero K] in
 /-- The filtration step, as a submodule, is the range of the linear map into the colimit. -/
 theorem toSubmodule_H (n : ℕ) :
-    (H ℝ q q⁻¹ n).toSubmodule = LinearMap.range (ofLimₗ ℝ q q⁻¹ n) := rfl
+    (H K q q⁻¹ n).toSubmodule = LinearMap.range (ofLimₗ K q q⁻¹ n) := rfl
 
 /-- **Each level sits in the colimit with its full dimension** `(n+1)!`. -/
 theorem finrank_H (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (n : ℕ) :
-    Module.finrank ℝ (H ℝ q q⁻¹ n).toSubmodule = (n + 1).factorial := by
-  haveI := finiteDimensional_hecke (K := ℝ) q q⁻¹ n
+    Module.finrank K (H K q q⁻¹ n).toSubmodule = (n + 1).factorial := by
+  haveI := finiteDimensional_hecke (K := K) q q⁻¹ n
   rw [toSubmodule_H, LinearMap.finrank_range_of_inj
-    (f := ofLimₗ ℝ q q⁻¹ n) (ofLim_injective hq0 hq2 n),
+    (f := ofLimₗ K q q⁻¹ n) (ofLim_injective hq0 hq2 n),
     finrank_hecke_eq_factorial q hq0 hq2 n]
 
 /-- **Strict growth of the colimit filtration.** `H n < H (n+1)` for every `n` — the level
 `HeckeTowerWitness`'s rank-2 collapse cannot reach, and what bean `qou-p8yg` asks for. -/
 theorem H_lt_succ (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (n : ℕ) :
-    H ℝ q q⁻¹ n < H ℝ q q⁻¹ (n + 1) := by
-  refine lt_of_le_of_ne (H_mono ℝ q q⁻¹ (Nat.le_succ n)) fun heq => ?_
-  have hf : Module.finrank ℝ (H ℝ q q⁻¹ n).toSubmodule
-      = Module.finrank ℝ (H ℝ q q⁻¹ (n + 1)).toSubmodule := by rw [heq]
+    H K q q⁻¹ n < H K q q⁻¹ (n + 1) := by
+  refine lt_of_le_of_ne (H_mono K q q⁻¹ (Nat.le_succ n)) fun heq => ?_
+  have hf : Module.finrank K (H K q q⁻¹ n).toSubmodule
+      = Module.finrank K (H K q q⁻¹ (n + 1)).toSubmodule := by rw [heq]
   rw [finrank_H hq0 hq2 n, finrank_H hq0 hq2 (n + 1)] at hf
   have hlt : (n + 1).factorial < (n + 1 + 1).factorial := by
     have hs := Nat.factorial_succ (n + 1)

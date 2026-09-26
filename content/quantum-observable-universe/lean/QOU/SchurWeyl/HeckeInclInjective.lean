@@ -64,14 +64,17 @@ namespace is unified and no lemma of that name exists — `qou-ejde` records thi
 namespace QOU.SchurWeyl
 namespace SeminormalRep
 
+variable {K : Type*} [Field K] [CharZero K]
+
 open QOU.Mathlib QOU.SchurWeyl.TableauCells QOU.SchurWeyl.HeckeInclusion
 
+omit [CharZero K] in
 /-- **Step 3, first half.** If the tower inclusion identifies `x` and `y`, then so does every
 downstairs seminormal block — at an *arbitrary* diagram of the right size. The diagram is a
 variable so that `exists_eraseCorner_eq` can be `subst`ed into it; see the module docstring. -/
-theorem seminormalRep_eq_of_heckeIncl_eq {q : ℝ} (hq0 : q ≠ 0)
-    (hq2 : GenericParameter.NotRootOfUnity q) (m : ℕ) {x y : Hecke ℝ q q⁻¹ m}
-    (h : heckeIncl ℝ q q⁻¹ m x = heckeIncl ℝ q q⁻¹ m y)
+theorem seminormalRep_eq_of_heckeIncl_eq {q : K} (hq0 : q ≠ 0)
+    (hq2 : GenericParameter.NotRootOfUnity q) (m : ℕ) {x y : Hecke K q q⁻¹ m}
+    (h : heckeIncl K q q⁻¹ m x = heckeIncl K q q⁻¹ m y)
     (ν : YoungDiagram) (hν : ν.cells.card = m + 1) :
     seminormalRep q hq0 hq2 m hν x = seminormalRep q hq0 hq2 m hν y := by
   obtain ⟨μ, c, hc, rfl⟩ := exists_eraseCorner_eq ν
@@ -82,9 +85,9 @@ theorem seminormalRep_eq_of_heckeIncl_eq {q : ℝ} (hq0 : q ≠ 0)
     ← compress_seminormalRep_heckeIncl hq0 hq2 m hN c hc hν y, h]
 
 /-- **The tower inclusion is injective.** `H_m(q) ↪ H_{m+1}(q)` at generic `q`. -/
-theorem heckeIncl_injective {q : ℝ} (hq0 : q ≠ 0)
+theorem heckeIncl_injective {q : K} (hq0 : q ≠ 0)
     (hq2 : GenericParameter.NotRootOfUnity q) (m : ℕ) :
-    Function.Injective (heckeIncl ℝ q q⁻¹ m) := fun _ _ h =>
+    Function.Injective (heckeIncl K q q⁻¹ m) := fun _ _ h =>
   eq_of_seminormalRep_eq q hq0 hq2 m fun lam =>
     seminormalRep_eq_of_heckeIncl_eq hq0 hq2 m h _ (partitionShape_card_succ lam)
 
