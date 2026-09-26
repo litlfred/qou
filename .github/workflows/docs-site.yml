@@ -87,14 +87,19 @@ jobs:
           echo "theme + catastrophe-floor assertions passed"
 
       # Per-SOURCE coverage: which staged .md produced no page at all?
-      # Reporting only on this run — the floor is set from what this measures,
-      # rather than guessed, because a floor above the true value fails
-      # spuriously and one below it lets pages vanish silently. Bean qou-gkrt.
-      - name: Report per-source page coverage
+      # `--max-missing 0` rather than a floor on `covered`: a floor RISES as
+      # documents are added, so a newly-added source that renders to nothing
+      # slips past it. A cap on misses does not. Bean qou-gkrt.
+      #
+      # This step's first run (36267907685) is why the gate is shaped this way:
+      # it reported all 65 misses under docs/audits/_deprecated/ — an underscore
+      # directory Jekyll skips at any depth, missing from `include:` — which the
+      # `>2000` page count had passed over in silence.
+      - name: Assert per-source page coverage
         run: |
           set -euo pipefail
           python3 scripts/docs-site-coverage.py \
-            --stage ./_docs-stage --site ./_site --list 60
+            --stage ./_docs-stage --site ./_site --list 60 --max-missing 0
 
       - uses: actions/upload-artifact@v4
         with:

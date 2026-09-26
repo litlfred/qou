@@ -16,7 +16,7 @@ What is here is the working record around that paper.
 
 | section | `.md` | what it holds |
 |---|---:|---|
-| **Audits** | 2,584 | Dated records of a single analysis each. **Not in the sidebar** — see below. |
+| **Audits** | 2,584 | Dated records of a single analysis each. **Not in the sidebar** — see below. **65 of them** sit under [`audits/_deprecated/`](audits/_deprecated/), superseded but kept for archaeology. |
 | [Coordination](coordination/) | 190 | Ledgers for multi-session arcs: who is on what, what closed, what is still open. |
 | [Workplans](workplans/) | 106 | Planned tranches, mostly historical. |
 | [Scope](scope/) | 58 | Scope determinations. |
