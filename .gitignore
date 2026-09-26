@@ -275,3 +275,7 @@ computations/borromean-reconstruct-ckpt.json
 computations/.bpp-higher-a-checkpoint.json
 computations/.bpp-higher-a-checkpoint.json.tmp
 computations/.sparse-cache/
+
+# Jekyll staging tree written by .github/workflows/docs-site.yml and by
+# scripts/docs-site-frontmatter.py --stage. Generated; never committed.
+_docs-stage/

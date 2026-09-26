@@ -33,17 +33,55 @@ jobs:
       # if it has front matter; 3037 of 3038 here do not, and `defaults:` does
       # not help because a file without front matter is not a page. The repo's
       # dated audit records are deliberately left unmodified.
+      # 🛑 THE STAGE DIR MUST BE INSIDE THE WORKSPACE. It was `$RUNNER_TEMP`
+      # and run 36265455690 FAILED because of it:
+      #
+      #     Source: /github/workspace//github/runner_temp/docs-stage
+      #     Error: No such file or directory @ dir_chdir0
+      #            - /github/workspace/github/runner_temp/docs-stage
+      #
+      # `actions/jekyll-build-pages` runs in a DOCKER CONTAINER with the workspace
+      # mounted at `/github/workspace`, and it resolves `source:` RELATIVE to that
+      # mount — so an absolute host path outside the workspace is concatenated
+      # onto it and cannot exist. Anything handed to that action must be a
+      # workspace-relative path.
+      #
+      # The failure was not confined to the path, which is why it is worth the
+      # comment: with the source wrong, Jekyll never read our `_config.yml` and
+      # fell back to its default theme ("Theme: jekyll-theme-primer" in the log),
+      # so `remote_theme: just-the-docs` silently did not apply either. One
+      # mistake, two symptoms, and the second would have been easy to misdiagnose
+      # as a `remote_theme` problem.
       - name: Stage docs with injected front matter
         run: |
           python3 scripts/docs-site-frontmatter.py --check
-          python3 scripts/docs-site-frontmatter.py --stage "$RUNNER_TEMP/docs-stage"
-          cp docs/_config.yml "$RUNNER_TEMP/docs-stage/_config.yml"
+          python3 scripts/docs-site-frontmatter.py --stage ./_docs-stage
+          # The generator copies docs/ wholesale, so `_config.yml` is already
+          # there; this is belt-and-braces in case the ignore list ever grows.
+          cp docs/_config.yml ./_docs-stage/_config.yml
+          test -f ./_docs-stage/_config.yml
+          test -f ./_docs-stage/index.md
 
       - name: Build Jekyll site
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ${{ runner.temp }}/docs-stage
+          source: ./_docs-stage
           destination: ./_site
+
+      # Fail loudly rather than publishing a site that silently used the wrong
+      # theme: run 36265455690 produced `jekyll-theme-primer` output from a
+      # mis-resolved source, and only the traceback said so.
+      - name: Assert the site built with our config
+        run: |
+          set -euo pipefail
+          test -d ./_site || { echo "no _site"; exit 1; }
+          n=$(find ./_site -name '*.html' | wc -l)
+          echo "rendered HTML pages: $n"
+          [ "$n" -gt 2000 ] || { echo "expected >2000 pages from 3082 sources, got $n"; exit 1; }
+          grep -rqi 'just-the-docs\|just_the_docs' ./_site/assets 2>/dev/null \
+            || grep -rqi 'just-the-docs' ./_site --include='*.html' -m1 \
+            || { echo "just-the-docs theme not detected in output"; exit 1; }
+          echo "theme + page-count assertions passed"
 
       - uses: actions/upload-artifact@v4
         with:
