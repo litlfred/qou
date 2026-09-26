@@ -2597,10 +2597,31 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   > change the reading.** Live criterion: **reading 3, whole word.**
   >
   > **What that changes, and what it does not.** Under convention D
-  > `y_(1³) = 0` *by construction* — that vanishing **is** convention D
-  > (`markovWeights_eq_jones_of_threeRow_eq_zero`) — so reading 3 does **not**
-  > constrain the alternating block at all. Any exclusion resting on the
-  > `(1,1,1)` sign is a reading-**1** exclusion, not a live one.
+  > `y_(1³) = 0` — the Ocneanu weight of every shape with a third row vanishes
+  > at `z = q³/(q²+1)`, unconditionally over any field with `q² + 1 ≠ 0`
+  > (`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`,
+  > sorry-free, general `n`; at `n = 3` specifically it is
+  > `QOU.QBeta.TemperleyLiebTower.conventionD_kills_antisymmetriser`, which
+  > derives `y₁₃ = 0` from the D pin plus the three moment equations) — so
+  > reading 3 does **not** constrain the alternating block at all. Any
+  > exclusion resting on the `(1,1,1)` sign is a reading-**1** exclusion, not
+  > a live one.
+  >
+  > 🛑 **This cited `markovWeights_eq_jones_of_threeRow_eq_zero` until
+  > 2026-09-26, and that lemma proves the CONVERSE (bean `qou-6moa`).** Read
+  > its signature (`BraidsAndKnots/MarkovTraceTLUniqueness.lean:119`):
+  > `hTL : y₁₃ = 0` is a **hypothesis** and `z * (q + qi) = q ^ 2` — convention
+  > D — is its **conclusion**. So it gives **TL ⟹ D**, which is the direction
+  > `docs/coordination/trace-convention-registry.json` correctly cites it for,
+  > and the exact opposite of what this paragraph needs. It also carries
+  > `hfaith : y₂₁ ≠ 0`, and that hypothesis is load-bearing rather than
+  > decorative: the same file's `markovWeights_degenerate_root` proves that
+  > dropping it makes the conclusion **false**, not merely unprovable (the
+  > `y = (1,0,0)` trivial character at `z = q`). A lemma that *assumes* a form
+  > of faithfulness on the two-row block cannot be evidence about the
+  > three-row block vanishing. **The reading in this paragraph is unaffected —
+  > only its citation was**, which is why this is a citation swap and not a
+  > retraction.
   >
   > Measured, `nuc11_interleaved` fails on `(2,1)` and `(1,1,1)` for **both**
   > nucleons (proton block dets `1.38249446339` / `-1.02197249381` /
