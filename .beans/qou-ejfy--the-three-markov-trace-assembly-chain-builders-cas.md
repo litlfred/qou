@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-09-19T06:00:38Z
-updated_at: 2026-09-19T07:12:20Z
+updated_at: 2026-09-26T10:00:55Z
 ---
 
 ## Measured on `origin/main` @ `665c91e403` (2026-09-19)
@@ -325,3 +325,53 @@ it. The cheap per-witness discriminators are the two above.
 The fix preserves ~50 accurate digits rather than ~16 — so "discarded 44
 digits" understates nothing and overstates nothing. `rel_vs_reference -> 0.0`
 remains a statement about two recordings of the same ~50-digit quantity.
+
+
+## Re-verified 2026-09-26, one week and 106 main commits later — still green
+
+PR #7438 has been open and unmerged since 2026-09-19 (head `9068b3aa5f`,
+untouched). `main` moved `665c91e403` -> `bd0c2cb7ed`, **106 commits / 51 files**.
+Because the ratchet is a WHOLE-TREE audit, its result depends on the base, so the
+PR body's `NEW 0 / REGRESSED 0` was scoped to a base that is now stale. Re-measured
+rather than assumed.
+
+Method: built the TRUE merge tree in a throwaway worktree (`git worktree add
+--detach` at `origin/main`, then `git merge 9068b3aa5f`) so the branch itself was
+never churned and no merge commit was pushed. Merge applied cleanly — 10 files,
+467/49, the PR's exact diff.
+
+| check, on the merged tree vs current `main` | result |
+|---|---|
+| `git merge-tree --write-tree origin/main HEAD` | exit 0 — **no conflict** (GitHub reported `mergeable_state: unknown` twice; this is the local answer) |
+| `witness_raw_float64_audit.py --strict` | **NEW 0, REGRESSED 0, exit 0**; drained 35, baseline 1003/30,985 — unchanged from 2026-09-19 |
+| the three builders re-run | all three `target_value` **byte-identical** |
+| `git status --porcelain` after those runs | **empty** — re-running the producers against current main regenerates exactly the committed files |
+
+That last row is the strongest of the four: none of main's 106 commits moved these
+numbers through the import cone, which is the drift class that usually bites
+(`qou-e9pp`).
+
+Main touched **none** of the 8 files, **none** of the 4 upstream deps
+(`canonical_trm_reference.py`, `atomic_tr_m_mpfr_50dps.py`,
+`markov_weights_symbolic.py`, `raw-float64-baseline.json`), and **neither bean**
+this branch writes to — so the documented `.beans/` append-collision surface
+(`qou-p77d`) did not fire either.
+
+### The flagged sibling hazard did not materialise
+
+I warned #7443 (`qou-oiz3`) that an edit **above line 164** of
+`computations/substrate/q_parameter.py` would make these three producers raise
+`FileNotFoundError` from `canonical_trm_reference._rows_for_pin()` (pin mismatch
+at `1e-40`), while its actual target — the `q_int` redefinition at 169-175 — is
+independent. Measured: `q_parameter.py` and `qou_substrate/constants.py` are
+**untouched on main**, and neither #7440 nor #7443 appears among the eight
+most-recently-updated PRs (oldest in that window is 2026-09-19T15:36), so that
+arc has not landed. The hazard is still latent, not resolved.
+
+Environment survived the week intact: mpmath 1.4.1, clarabel 0.11.1, the
+10-name ephemeral carve-out importable — so no provenance downgrade risk on a
+re-run.
+
+**Nothing is owed on this PR.** No conflict, no CI (Actions are
+`workflow_dispatch`-only), no open review threads. It is waiting on merge
+permission only.
