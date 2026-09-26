@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-26T11:57:46Z
-updated_at: 2026-09-26T11:58:28Z
+updated_at: 2026-09-26T12:22:48Z
 ---
 
 ## The class, and why it is uncovered
@@ -85,3 +85,22 @@ technically a false positive; but the *orderings themselves* are float64-decided
 and if the two bindings are close the ordering could flip. Not measured. That is
 the shape worth a real look, and it is the same shape as the confirmed instance:
 the float decides something discrete that gets recorded as a non-float.
+
+## RESOLVED 2026-09-26: the one undismissed candidate is BENIGN on float64
+
+`derive_binding_bond_type.py` was left open here as "float64-decided ORDERINGS,
+recorded as bools — same shape as the confirmed instance, not measured". Now
+measured, and the float64 concern does **not** hold: the bond counts make
+`B_T - B_3He == B_nn - B_pp`, whose live value is `-0.0785` MeV — fourteen
+orders above the binary64 floor, so the casts cannot flip the verdict.
+
+So this arc's candidate list is fully triaged and the deleted detector's
+precision bar was the right call: this was its last survivor and it was a false
+positive too.
+
+**But the file carries two real defects of other classes**, moved to bean
+`qou-7xa5`: the producer implements the REFUTED Delta_tr law (the live law is
+the log-ratio in `binding_log_free_energy.py`), and its committed witness is
+stale in a way that INVERTS its verdict (B_T 7.515 -> 1.795, bond ordering
+flipped) through import-cone drift in `mass_at_3A_proper.atom_braid_word_3A`
+that a `git diff <producer>` cannot see.
