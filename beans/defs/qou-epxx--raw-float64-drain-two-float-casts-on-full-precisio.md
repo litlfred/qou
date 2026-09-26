@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-26T14:28:50Z
-updated_at: 2026-09-26T15:08:18Z
+updated_at: 2026-09-26T17:34:05Z
 ---
 
 Picked up 2026-09-26 as exemption-covered drain work while PR #7457 waits on
@@ -207,3 +207,79 @@ accepting git's own rename detection into `beans/defs/`; `beans/beans.json`
 declares DIRECTORIES rather than individual beans, so no index row was needed.
 Verified afterwards: no file left under the old `.beans/` path, both source
 fixes intact, `merge-tree` exit 0.
+
+
+---
+
+## 9. `mixed mpf/f64 -> serializer` is RED on FOUR FALSE POSITIVES — verdicted 7/7
+
+Took the smallest gate tranche from §6 and verdicted every candidate. The gate
+reports **7 candidates / baseline 3 / 4 OVER**, and the audit itself says these
+are "CANDIDATES for an agent verdict, not proved defects". Result: **3 real, 4
+false**, and the 3 real ones ARE the baseline.
+
+### The 4 false positives
+
+| site | why it is not a defect |
+|---|---|
+| `binding_rotation_phase_lead.py:196` and `:197` | `rs = [rho[i] …]` are **mpf**, so `max(rs)/min(rs)` stays mpf and `fmt(spread)` is correct. The audit cannot see that max/min over mpf is mpf. |
+| `borromean-axial-coupling.py:384` | `_gap_rec = getattr(lp, "gap_recomputed_str", None)` — the `_str` suffix is real (`he3_pairknot_composite_lp_probe.py:258` groups it with `residual_primal_str` / `residual_dual_str`, the string serializations of LP duals), so `mpf(_gap_rec)` is `mpf(str)`, exact. An untyped `getattr()` is being read as float64. |
+| `probes/nucleon_h3_marshalling_divergence_probe.py:242` | the named taint source is `mp.fsum(...)`, which returns **mpf**, over terms that are `mp.mpf(str(...))`. |
+
+**The `binding_rotation_phase_lead` pair is the one to notice: the audit is
+re-flagging an ALREADY-DRAINED site.** Lines 181-185 of that file carry a
+comment recording its own prior fix — *"NO `float()` HERE. `rho[i]` is an mpf;
+`float(rho[i])` truncated every spread below to binary64…"*. A detector that
+re-flags the fix it prompted is worse than one that misses: it spends the next
+agent's budget re-deriving a settled verdict.
+
+### The 3 real ones are the baseline, and they are BLOCKED — do not "fix" them
+
+`qbeta/qbeta_habiro_taylor_investigation.py:235-237`. Real, and worse than a
+plain cast:
+
+    tr_p_num = float(sp.N(tr_p_sym.subs(q, sp.Float(str(q0_num), 50)), 30))
+    "tr_M_proton_at_q0": mp.nstr(tr_p_num, 18)
+    delta_tr_num = tr_n_num - tr_p_num
+
+sympy computes at 30 digits, `float()` keeps ~16, the witness then asks for
+**18** — and the extra digits are WRONG, not merely absent. Demonstrated on a
+stand-in: `nstr(float, 18)` gives `1.33178217929911247` against the true
+`1.33178217929911251`. Plus `delta_tr_num` is a float64 subtraction of two
+nearby values.
+
+**They are already known and deliberately parked.** The baseline's own
+`_comment`: *"Drained 28 -> 3 under bean `qou-65qv`. The residual 3 are all in
+`qbeta_habiro_taylor_investigation.py` and are BLOCKED, not unexamined: the
+float() fix there is correct and written, but re-running that producer
+regenerates its witness from convention C to convention D, which belongs to bean
+`qou-cds1`."* So my independent verdicts match the recorded ones exactly — which
+is the useful part of having done them blind.
+
+### Consequence
+
+**The gate's RED is entirely false positives.** The 3 genuine defects sit AT the
+baseline (so they do not trip `--strict`); the 4 that trip it are all
+misreadings. A blocking gate red on 4-for-4 false positives trains agents to
+discount it, which is how a real regression gets waved through.
+
+### One attempted fix, and it FAILED — recorded so it is not re-tried
+
+`y_lambda_wenzl_bridge_numeric` had no return annotation, and the audit's
+registry is built from `-> mpf` / `-> float` annotations, so `y[λ]` read as
+unknown-typed. Annotating it `-> mp.mpf` (runtime-verified, committed, correct
+on its own merits) **did not clear the `nucleon_h3_marshalling` flag**: measured
+before and after, registry 792 -> 793, candidates stayed 7, taint still
+attributed to `mp.fsum(` on L232.
+
+So the cause is NOT the missing annotation. What is established is narrower and
+sharper: **the flag contradicts the audit's own spec**, whose line 49 classifies
+`mp.*(...)` as MPF. The mechanism is NOT established — a list-comprehension
+argument and a multi-line call shape are both consistent with what was observed,
+and neither was tested. The docstring on the annotated function now warns the
+next agent off this route.
+
+**Not fixed here, and the reason is the ASK-THE-OWNER gate**: narrowing the
+detector changes what a blocking gate reports corpus-wide, which is the
+"changes numbers everyone quotes" class rather than either exemption. Framed
+for a decision instead.
