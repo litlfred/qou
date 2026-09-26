@@ -451,3 +451,31 @@ Two claims relayed from the siblings were re-derived independently before being
 written into D7: `Q^r = q⁴` under D is exact (`sympy`,
 `simplify(rhs − q⁴) == 0` is `True`), C gives the non-integer `r = 2.59952` at
 the proton pin, and the Catalan/`n!` table reproduces to every digit.
+
+## 2026-09-26 — the quotient is now an ISOMORPHISM, for every `n` (PR #7470)
+
+This bean's title says *"Radical = TL ideal, dim H_n/rad = Catalan(n)"*. Both of those were
+measurements plus a dimension count. The quotient is now an **isomorphism of algebras**,
+sorry-free, at every `n`, at convention D —
+`QOU/SchurWeyl/WtraceRadicalQuotient.traceQuotEquiv`:
+
+    TraceQuot (wtrace q hq0 hq2 n) (wtrace_cyclic …) ≃ₐ[ℝ] TwoRowBlocks n
+
+i.e. `H_n(q)/rad(wtrace) ≅ ∏_{ℓ(λ) ≤ 2} M_{f^λ}(ℝ)`. Chain, all sorry-free:
+`mem_rad_iff_twoRow_blocks_vanish` (#7461, pointwise) → `traceRadicalIdeal_eq_ker` (#7463,
+the ideal identity) → this.
+
+**🛑 It is the WEDDERBURN form, not `≅ TL_n(δ)`.** The remaining gap is exactly
+`∏_{ℓ(λ)≤2} M_{f^λ} ≅ TL_n(δ)` in general, proved at `n = 2, 3` only
+(`TemperleyLiebWedderburn.tl2AlgEquiv`, `tl3AlgEquiv`). Do not quote this as "the framework
+proves `H_n/rad = TL_n`".
+
+**Non-vacuity is proved, not inspected.** `AlgEquiv.ofBijective` accepts a bijection of
+trivial algebras, so `traceQuot_one_ne_zero` rules that out from `wtrace 1 = 1 ≠ 0`.
+
+**What had been missing was a Mathlib gap, not mathematics.** No first-isomorphism lemma
+exists for a `RingCon` quotient in the pinned Mathlib (`ker`, `mem_ker`, `ker_eq_bot` and no
+`lift`); `Con.lift` covers **monoid** congruences only. #7470 builds `liftAlgHom` for it.
+
+**This bean's own §"THE RISK — stated first" is untouched:** C5 is still not a prediction.
+Nothing here bears on that. Bean stays in-progress (rule 13a).
