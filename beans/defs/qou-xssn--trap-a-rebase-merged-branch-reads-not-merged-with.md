@@ -1,10 +1,11 @@
 ---
 # qou-xssn
 title: 'TRAP: a rebase-merged branch reads NOT-merged with phantom add/add conflicts — the complement of qou-6pd1''s false CLEAN'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-26T20:08:26Z
-updated_at: 2026-09-26T20:08:26Z
+updated_at: 2026-09-26T20:10:21Z
 parent: qou-weeq
 ---
 
