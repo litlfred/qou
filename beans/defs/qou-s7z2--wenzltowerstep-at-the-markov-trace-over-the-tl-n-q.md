@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T17:57:00Z
-updated_at: 2026-09-26T16:53:59Z
+updated_at: 2026-09-26T17:41:43Z
 ---
 
 Successor to qou-vndn, whose premise ("Hecke radical vanishing") is refuted at
@@ -366,3 +366,59 @@ Not content-swept — ~1.1 GB free against the shadow's ~2.3 GB.
 
 **This bean still does NOT close.** `WenzlTowerStep` and `HeckeGramFactorial`'s open
 `T_w`-basis determinant are untouched by any of this (rule 13a).
+
+
+## The tower comparison is now an IFF — forward direction closed, no conditional expectation (2026-09-26, PR #7463)
+
+#7461 (merged `19387e870751`) gave reflection from `wtrace_incl` alone. The forward
+direction is the hard half and is now done, so `heckeIncl` detects the radical **exactly**:
+
+    incl_mem_rad_iff : (∀ x, wtrace (m+1) (heckeIncl a * x) = 0)
+                         ↔ ∀ b, wtrace m (a * b) = 0
+
+i.e. `H_m / rad ↪ H_{m+1} / rad` is injective AND well defined — the TL quotients are a
+**tower**, not a sequence of algebras with maps between them.
+
+`SchurWeyl/WtraceRadicalTowerForward.lean`:
+
+    rowLen_two_eq_zero_eraseCorner   erasing a corner cannot create a third row
+    eq_zero_of_blockPreserving_of_compress_eq_zero
+                                     block-diagonal + every diagonal block zero ⇒ zero
+    twoRow_blocks_vanish_incl        forward, at the block level
+    incl_mem_rad_iff                 the identification
+
+### Why it works where the abstract version needs an open class
+
+`QBeta/TLTowerRadicalDescent`'s docstring states the obstruction correctly — *"membership
+in `rad τn1` quantifies over all of `Hn1`, not over `ι '' Hn`"* — and answers it with
+`HeckeConditionalExpectation`, which has no instance. That is right about an **arbitrary**
+trace. It is not right about `wtrace`, because **wtrace has a branching rule**: route the
+forward direction through the radical IDENTIFICATION from #7461 and it reduces to a fact
+about diagrams (erasing a corner keeps ≤2 rows). The reduction is the work; the diagram
+fact is three lines.
+
+**This does NOT remove that file's conditionality** and the new file says so. Its class is
+a genuine hypothesis about an arbitrary tower and stays open. What is shown is that the
+CANONICAL carrier does not need one.
+
+Everything consumed was already on `main`, none of it open:
+`seminormalRep_heckeIncl_mem_blockSubalgebra` (the image is block-preserving — the ONE
+place the image hypothesis is used, and why this holds for `heckeIncl a` and not an
+arbitrary element), `compress_seminormalRep_heckeIncl`, `exists_insertMax_of_cellOf_top`,
+`isCornerCell_cellOf_card`, `mem_eraseCorner`, `card_eraseCorner`.
+
+### One trap worth keeping
+
+`rowLen_two_eq_zero_eraseCorner` is the **universal** statement over corners. It is NOT
+`YoungDiagramThreeRowCorner.youngPred`, which is existential, runs the other way (it
+*finds* a corner preserving ≥3 rows) and carries a load-bearing `3 ≤ n` guard that does
+not apply here. Easy to reach for the wrong one by name.
+
+Verification: `lean -DautoImplicit=false -s 65536` RC=0, zero diagnostics; `#print axioms`
+on all four `[propext, Classical.choice, Quot.sound]`, no `sorryAx`; three mutants each
+required to fail and each does — `rowLen 3` for `rowLen 2` in the erase lemma, the
+off-block branch replaced by `rfl` (confirming block-diagonality does real work), and
+`h.symm → h` in the `S` factorisation. Not content-swept (~1.1 GB free vs ~2.3 GB).
+
+**Still NOT closed.** `WenzlTowerStep` and `HeckeGramFactorial`'s open `T_w`-basis
+determinant are untouched by any of the radical arc (rule 13a).
