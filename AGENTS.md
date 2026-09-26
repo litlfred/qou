@@ -2623,6 +2623,46 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   > only its citation was**, which is why this is a citation swap and not a
   > retraction.
   >
+  > **The corpus already had the sentence, one file over.**
+  > `QOU.BraidsAndKnots.FibreDimensionForcesTL.threeRow_eq_zero_of_jones_ocneanu`
+  > (`:179`) is the converse in the **same variable frame** — same `q, qi`, same
+  > three moment equations — and its own docstring states the distinction
+  > verbatim: *"The converse direction of
+  > `markovWeights_eq_jones_of_threeRow_eq_zero`: there, `y_(1³) = 0` implies
+  > `z·[2] = q²`; here, `z·[2] = q²` implies `y_(1³) = 0`."* Prefer it over
+  > `conventionD_kills_antisymmetriser` anywhere the site is on the **fibre /
+  > generic side**, because the two differ in typeclass and it is easy to swap
+  > the wrong one in:
+  >
+  > | forward-direction lemma | typeclass | scope |
+  > |---|---|---|
+  > | `ocneanuWeight_conventionD_eq_zero_of_three_rows` | `[Field R]`, one hypothesis `q²+1 ≠ 0` | general `n`, on the actual Ocneanu weight |
+  > | `threeRow_eq_zero_of_jones_ocneanu` | `[CommRing R] [IsDomain R]`, division-free | `n = 3`, generic domain |
+  > | `conventionD_kills_antisymmetriser` | **`[Field R] [LinearOrder R] [IsStrictOrderedRing R]`** — an ORDERED field (`section PinningOrdered`) | `n = 3`, archimedean side only |
+  >
+  > The third is correct *here* (the PSD / reading-3 context is archimedean) and
+  > is the wrong citation at a §7c generic-`R` site. Do not propagate it into a
+  > Lean docstring on the fibre side.
+  >
+  > **MEASURED, and the defect is a CLASS — 14 reversed citations across 9
+  > files, against 49 correct ones.** Population: **81 hits / 56 files**
+  > excluding `__pycache__` (82/57 if the stale `.pyc` is counted; say which).
+  > The reversal is concentrated in **one arc** — the `qbeta` reading-3 / e-cat /
+  > D-ladder probes, the two beans they feed (`qou-99qc`, `qou-cds1`), two audit
+  > docs, and the Lean twin of this very paragraph at
+  > `QOU/Mass/AltCharShiftMultiset.lean`. **Nothing reader-facing (`content/**/*.md`)
+  > is affected and no validator's verdict changes**; three witness `source` /
+  > `detail` fields carry it with no machine consumer. Per-site table and
+  > blast radius: bean `qou-6moa`.
+  >
+  > **And the claim survives the citation fix**: three further files assert
+  > *"that vanishing IS convention D"* with **no lemma named at all**
+  > (`qbeta_knot_operator_ilp_ohara_cost_probe.py:270`,
+  > `qbeta_ecat_lp_radical_pairing_probe.py:30,207`), so a sweep keyed on the
+  > identifier cannot see them. **Grep the phrase, not the identifier** — the
+  > same detector-blindness class as everything in
+  > `docs/audits/2026-08-15-detector-blindness-taxonomy.md`.
+  >
   > Measured, `nuc11_interleaved` fails on `(2,1)` and `(1,1,1)` for **both**
   > nucleons (proton block dets `1.38249446339` / `-1.02197249381` /
   > `-0.739223570776`; neutron `1.1221068216` / `-1.02197249381` /

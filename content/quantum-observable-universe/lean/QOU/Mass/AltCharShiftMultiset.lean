@@ -377,12 +377,24 @@ for now, but keep 1 2 for later"*, bean `qou-ales`):
   `y_λ > 0`. **Selected.**
 
 The 2026-09-13 `(B) whole element` answer moved reading 3's **letter** scope; it
-did not change the reading. And under convention D `y_(1³) = 0` — that vanishing
-*is* convention D, the two-row truncation
-(`markovWeights_eq_jones_of_threeRow_eq_zero`) — so **reading 3 does not
-constrain the alternating block at all**, and measured, it admits odd lengths in
+did not change the reading. And under convention D `y_(1³) = 0` — the Ocneanu
+weight of every shape with a third row vanishes at `z = q³/(q²+1)`
+(`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`, general `n`,
+unconditional over any field with `q² + 1 ≠ 0`; at `n = 3` in this variable frame,
+`QOU.BraidsAndKnots.FibreDimensionForcesTL.threeRow_eq_zero_of_jones_ocneanu`) —
+so **reading 3 does not constrain the alternating block at all**, and measured, it admits odd lengths in
 quantity (9 and 11 both, both nucleons;
 `qbeta_reading3_does_not_constrain_the_budget_probe`, 8/8).
+
+🛑 **This cited `markovWeights_eq_jones_of_threeRow_eq_zero` until 2026-09-26,
+and that lemma proves the CONVERSE** (bean `qou-6moa`). Its `hTL : y₁₃ = 0` is a
+*hypothesis* and `z * (q + qi) = q ^ 2` is its *conclusion*, so it gives TL ⟹ D —
+the direction `docs/coordination/trace-convention-registry.json` correctly cites
+it for, and the opposite of what this paragraph needs. It also carries
+`hfaith : y₂₁ ≠ 0`, which is load-bearing rather than decorative: the sibling
+`markovWeights_degenerate_root` proves that dropping it makes the conclusion
+**false** (the `y = (1,0,0)` trivial character at `z = q`). **The reading is
+unaffected — only its citation was.**
 
 So what these theorems give is: under **reading 1**, PSD in the one-dimensional
 alternating block is just `0 ≤ character`, hence an odd-length word is excluded
