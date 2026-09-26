@@ -1,11 +1,11 @@
 ---
 # miga
-title: 'Folio-Assistant Infrastructure Migration (Parent)'
+title: Folio-Assistant Infrastructure Migration (Parent)
 status: completed
-type: parent
+type: epic
 priority: normal
 created_at: 2026-06-14T00:00:00Z
-updated_at: 2026-06-21T19:39:07Z
+updated_at: 2026-09-26T10:55:15Z
 ---
 
 # Folio-Assistant Infrastructure Migration (Parent)

@@ -1,11 +1,11 @@
 ---
 # qou-ty42
-title: 'PLATFORM SPLIT: migration stopped at harness.config.json — the pin stays at df28d02 (owner ruling)'
+title: 'EPIC: platform-split migration — stopped at harness.config.json by owner ruling (pin stays df28d02)'
 status: todo
-type: task
+type: epic
 priority: normal
 created_at: 2026-09-20T14:33:42Z
-updated_at: 2026-09-20T14:34:07Z
+updated_at: 2026-09-26T10:30:52Z
 ---
 
 **Owner ruling, 2026-09-20: stop here.** The migration is deliberately
