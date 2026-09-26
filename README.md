@@ -306,7 +306,7 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.Mass.*` | `210 files` |
 | `QOU.MassEndomorphism.*` | `9 files` |
 | `QOU.MassTheory.*` | `177 files` |
-| `QOU.Mathlib.*` | `211 files` |
+| `QOU.Mathlib.*` | `212 files` |
 | `QOU.MathlibExt.*` | `179 files` |
 | `QOU.Molecular.*` | `11 files` |
 | `QOU.Observations.*` | `14 files` |
@@ -323,7 +323,7 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.QuantumObservableUniverses.*` | `12 files` |
 | `QOU.QuantumUniverse.*` | `1 files` |
 | `QOU.Resurgence.*` | `4 files` |
-| `QOU.SchurWeyl.*` | `79 files` |
+| `QOU.SchurWeyl.*` | `80 files` |
 | `QOU.Shared.*` | `7 files` |
 | `QOU.StandardModel.*` | `22 files` |
 | `QOU.Substrate.*` | `6 files` |
