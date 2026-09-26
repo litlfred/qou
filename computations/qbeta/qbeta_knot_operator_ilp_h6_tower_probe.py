@@ -201,7 +201,8 @@ def main() -> int:
             ok2 = False
     check("A2", ok2,
           "y_lambda > 0 EXACTLY on partitions of <= 2 rows -- that vanishing IS "
-          "convention D, and it is why reading 3 binds on 4 blocks here and 2 "
+          "convention D (general n: ocneanuWeight_conventionD_eq_zero_of_three_rows), "
+          "and it is why reading 3 binds on 4 blocks here and 2 "
           "at H_3 (not 11 and 3)")
 
     print()
