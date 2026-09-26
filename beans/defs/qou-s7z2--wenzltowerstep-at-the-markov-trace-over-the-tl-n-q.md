@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T17:57:00Z
-updated_at: 2026-09-26T15:15:50Z
+updated_at: 2026-09-26T16:53:59Z
 ---
 
 Successor to qou-vndn, whose premise ("Hecke radical vanishing") is refuted at
@@ -265,3 +265,104 @@ Ocneanu weight.** Writing the conditional half and calling the radical
 "identified" would be the `sorry-free ≠ derived` failure.
 
 This does not move this bean's `WenzlTowerStep` premise, which stays open.
+
+
+## 🛑 RETRACTION (2026-09-26, same day as the claim) — the ⊆ half is NOT blocked on Wenzl's theorem
+
+An earlier entry on this bean, `WtraceRadicalTwoRow.lean`'s docstring, and PR #7460's
+body all recorded the ⊆ direction of the `wtrace` radical identification as blocked:
+it needs the ≤2-row Ocneanu weights nonzero, the only corpus statement of that is
+`conventionD_ocneanuWeight_eq_zero_iff_of_wenzl`, and that is conditional on the class
+`QBeta.IsOcneanuWeightSystem`, which has **no instance** — so the ⊆ half would be a
+§3b-cond result on a premise nobody has established.
+
+**The premise half is right; the conclusion is wrong, because the reasoning went
+through the wrong object.** `IsOcneanuWeightSystem` relates an **opaque** weight family
+`y` to `schurPrincipal` — an instance of it really is Wenzl's theorem, and its docstring
+says exactly that. But the ⊆ direction never needed the class. It needs
+`ocneanuWeight q z_D mu ≠ 0` for `mu` with at most two rows, and `ocneanuWeight` is a
+**closed form** in `SchurWeyl/OcneanuWeight.lean`, so that is provable directly from the
+genericity `wtrace` already carries.
+
+**Proved, no sorry, no instance, no Wenzl theorem** — PR #7461,
+`SchurWeyl/OcneanuWeightTwoRowNonzero.lean`:
+
+    ocneanuWeight_conventionD_ne_zero_of_two_rows {R} [Field R] (q : R)
+      (hq0 : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
+      (hgen : ∀ k, 0 < k → (q ^ 2 : R) ^ k ≠ 1)
+      (mu : YoungDiagram) (h : mu.rowLen 2 = 0) :
+      ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) mu ≠ 0
+
+Five theorems. At `z_D = q³/(q²+1)` the substitution gives `q²−1−q·z_D = −1/(q²+1)`, so
+each numerator factor collapses to `(q^{2j+4} − q^{2i})/(q²+1) =
+q^{2i}((q²)^{j+2−i} − 1)/(q²+1)`, nonzero when `i ≤ j+1` — which `rowLen 2 = 0` supplies
+(every cell then has row ≤ 1). Denominator nonzero by the same `hgen` at the hook length,
+positive because a cell's own arm contains it. Exact mirror of
+`ocneanuWeight_conventionD_eq_zero_of_three_rows`: a third row gives a cell of content
+`−2`, so `q^{2(c+2)} = 1` and the factor dies. **Two rows is the boundary.**
+
+Verification: `lean -DautoImplicit=false -s 65536`, RC=0 first try, 0 diagnostics.
+`#print axioms` clean (no `sorryAx`). Two mutants each required to fail and each does:
+`rowLen 3` for `rowLen 2` → rewrite failed; dropping `hij : i ≤ j+1` → omega could not
+prove. Not content-swept — ~1.1 GB free against the shadow's ~2.3 GB.
+
+### The error class, worth more than the theorem
+
+I conflated *"the corpus's general statement about weight systems is unproved"* with
+*"this particular weight is not known to be nonzero."* Only the first is true. **Check
+whether the object in hand is opaque or closed-form before inheriting a blocker from an
+abstract statement about its family.** A class carrying an abstract family is not the
+only route to a fact about a concrete member of it.
+
+### What actually remains for ⊆ — neither blocked
+
+1. A matrix-pairing lemma: `M ≠ 0` over a field ⇒ `∃ N, (M * N).trace ≠ 0`, witnessed by
+   `Matrix.single j i 1` at a nonzero entry. Standard; never the obstacle.
+2. Block isolation via `heckeProduct_surjective` — hit one Wedderburn summand and zero the
+   rest, as `OcneanuTraceNotFaithful` already does for the column shape.
+
+Together with #7461 these give `rad(wtrace) =` the span of the `ℓ(λ) ≥ 3` blocks — an
+identification, not an inclusion. **Unwritten, which is a different thing from blocked.**
+
+`WenzlTowerStep` and `HeckeGramFactorial`'s open `T_w`-basis determinant are untouched by
+this and stay open — this bean is NOT closed.
+
+
+## ⊆ CLOSED — the radical is now IDENTIFIED, not merely bounded (2026-09-26, PR #7461)
+
+Following the retraction above, both remaining pieces are written and verified. The
+radical of `wtrace` is **exactly** the three-row part.
+
+`SchurWeyl/WtraceRadicalTwoRowSubset.lean`:
+
+    exists_trace_mul_ne_zero        M ≠ 0 over a CommRing ⇒ ∃ N, (M * N).trace ≠ 0
+                                   (single-entry matrix at (j,i); the product's
+                                   diagonal is supported at i and reads M i j)
+    notMem_rad_of_twoRow_block_ne_zero   ⊆ : a live ≤2-row block is VISIBLE to wtrace
+    mem_rad_iff_twoRow_blocks_vanish     the identification, as an iff
+
+The block isolation is `heckeProduct_surjective` realising `Function.update 0 lam₀ N`,
+so every block but `lam₀` contributes 0 to the Frobenius sum and the surviving term is
+`w_d · (M·N).trace` — a product of two nonzero reals, the weight by
+`ocneanuWeight_conventionD_ne_zero_of_two_rows`.
+
+Two plumbing notes worth keeping, both about avoiding transport:
+
+- The Frobenius sum is indexed by `{ν : YoungDiagram // ν.cells.card = n+1}` while
+  `heckeProduct` is indexed by `Partition (n+1)`. `Equiv.sum_comp (partitionShapeEquiv _)`
+  reindexes one to the other, which is what lets `Finset.sum_eq_single_of_mem` see a
+  single surviving block.
+- `subst hlam₀` (not `hlam₀ ▸ N`) after `exists_partitionShape_eq`: `d` is a variable, so
+  the diagram becomes `partitionShape lam₀` everywhere and no `HEq` is ever created. The
+  two residual cardinality-proof mismatches close by `rfl` — `Prop` proof irrelevance.
+  `hρ`, the identification of a block with a `heckeProduct` component, is `fun _ _ => rfl`.
+
+Verification: `lean -DautoImplicit=false -s 65536` RC=0, zero diagnostics.
+`#print axioms` on all three: `[propext, Classical.choice, Quot.sound]` — no `sorryAx`.
+Two mutants each required to fail and each does: single-entry matrix at `(i,j)` instead of
+`(j,i)` → 3 unsolved goals; `rowLen 3 = 0` for `rowLen 2 = 0` in the ⊆ statement → 2
+application type mismatches (the weight theorem cannot apply, and the iff breaks).
+Not content-swept — ~1.1 GB free against the shadow's ~2.3 GB.
+
+**This bean still does NOT close.** `WenzlTowerStep` and `HeckeGramFactorial`'s open
+`T_w`-basis determinant are untouched by any of this (rule 13a).

@@ -27,26 +27,52 @@ about the `wtrace` carrier.  `QBeta/MarkovGramDegenerate` has the abstract
 Wedderburn-diagonal picture (`wedderburnGram_det_ne_zero_iff_all_live`) and the
 exact coranks; this is the carrier-level inclusion, unconditional.
 
-## 🛑 The ⊆ half is NOT here, and it is not merely unwritten
+## 🛑 RETRACTED, same day: the ⊆ half is NOT blocked on Wenzl's theorem
 
-It needs two inputs, and one of them is open:
+This section said the ⊆ direction needed the ≤2-row Ocneanu weights to be
+nonzero, that the only corpus statement of that fact was
+`conventionD_ocneanuWeight_eq_zero_iff_of_wenzl`, and that it is **conditional on
+the class `IsOcneanuWeightSystem`, which has no instance** — hence a §3b-cond
+premise nobody has established. The same claim went into bean `qou-s7z2` and
+PR #7460's body.
+
+**The first half is right and the second is wrong, because the reasoning went
+through the wrong object.** `IsOcneanuWeightSystem` relates an **opaque** weight
+family `y` to `schurPrincipal`; an instance of it really is Wenzl's theorem, and
+its own docstring says so. But the ⊆ direction never needed the class. It needs
+`ocneanuWeight q z_D mu ≠ 0` for `mu` with at most two rows — and `ocneanuWeight`
+is a **closed form** (`SchurWeyl/OcneanuWeight.lean`), so that is provable
+directly from the genericity `wtrace` already carries.
+
+Proved, no `sorry` and no instance:
+`OcneanuWeightTwoRowNonzero.ocneanuWeight_conventionD_ne_zero_of_two_rows`.
+At `z_D` the substitution collapses each numerator factor to
+`(q^{2j+4} − q^{2i})/(q²+1) = q^{2i}((q²)^{j+2−i} − 1)/(q²+1)`, nonzero when
+`i ≤ j+1` — which `rowLen 2 = 0` supplies, since then every cell has row `≤ 1`.
+It is the exact mirror of `ocneanuWeight_conventionD_eq_zero_of_three_rows`: a
+third row gives a cell of content `−2`, so `q^{2(c+2)} = 1` and the factor dies.
+Two rows is the boundary.
+
+**The error class, for the next reader.** I conflated *"the corpus's general
+statement about weight systems is unproved"* with *"this particular weight is not
+known to be nonzero."* Only the first is true. A class carrying an abstract
+family is not the only route to a fact about a concrete member of it — check
+whether the object in hand is opaque or closed-form before inheriting a blocker
+from the abstract statement.
+
+What actually remains for ⊆, neither blocked:
 
 1. **A pairing fact** — a nonzero matrix over `ℝ` is seen by some matrix under
    the trace form (`∃ N, (M * N).trace ≠ 0`, witnessed by a single-entry
-   matrix). Standard, and cheap; it is not the obstacle.
-2. **The at-most-two-row weights must be NONZERO.** This is the obstacle. The
-   corpus has it at the level of the hook-content product
-   (`QBeta.WenzlWeightVanishing.conventionD_weight_ne_zero_of_two_rows`, on
-   `schurPrincipal`), but the statement at the level of `ocneanuWeight` — the
-   thing `wtrace` is actually defined from — is
-   `conventionD_ocneanuWeight_eq_zero_iff_of_wenzl`, which is **conditional on the
-   class `IsOcneanuWeightSystem`, and that class has no instance**. So the ⊆ half
-   would be conditional in the §3b-cond sense, on a premise nobody has
-   established.
+   matrix). Standard and cheap; it was never the obstacle.
+2. **Block isolation** — hit one Wedderburn summand and zero the rest via
+   `heckeProduct_surjective`, as `OcneanuTraceNotFaithful` already does for the
+   column shape.
 
-Writing half of it and calling the radical "identified" would be exactly the
-`sorry-free ≠ derived` failure. The reduction is what is delivered: **the only
-missing mathematical input is the non-vanishing of the ≤2-row Ocneanu weight.**
+**Both are now done**, in `WtraceRadicalTwoRowSubset`:
+`notMem_rad_of_twoRow_block_ne_zero` is the ⊆ half and
+`mem_rad_iff_twoRow_blocks_vanish` is the identification.  This file continues to
+carry only the ⊇ inclusion, which is what the theorem below states.
 
 ## Scope
 
