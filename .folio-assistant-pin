@@ -13,7 +13,26 @@
 # single session, and two agents spent a round disagreeing about which baseline
 # was real. Neither was wrong; the baseline was not well-defined. See bean `vbase`.
 #
-# Bumping the platform is now a deliberate, reviewable edit to this one line.
+# Bumping the platform is TWO lines, not one, and this file used to say one.
+#
+# `.github/workflows/build.yml` selects the platform for the PUBLISHED build via
+# its `uses:` line. That line read `@main` until 2026-09-26, so this pin governed
+# only what agents measured locally while the published artifact tracked platform
+# main — two platforms, one repo, no signal when they disagreed. It is now pinned
+# to the same sha as the last line of this file (bean `qou-pwp9`).
+#
+# So when you bump: edit the sha here AND in `build.yml`, in the same commit, and
+# keep them byte-identical. Checkable, so the rule is not only these comments:
+#
+#     bash scripts/folio-pin-coupling-check.sh      # exit 0 = the two agree
+#
+# It asserts only that the two LOCAL declarations agree — a drifted pair is a
+# defect, an OLD pair is a choice, and it deliberately does not judge currency.
+# It is NOT wired into any hook: adding one changes commit-path behaviour, which
+# is the owner's call (cf. the 2026-08-25 precision hook, offered blocking and
+# declined in favour of warn-only).
+#
+# Bumping the platform is a deliberate, reviewable edit to those two lines.
 # When you bump it, state the before/after issue counts in the commit message —
 # a change in count is a platform behaviour change and should be looked at, not
 # absorbed silently.
