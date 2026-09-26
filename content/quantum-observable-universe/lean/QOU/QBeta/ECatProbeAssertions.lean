@@ -176,7 +176,12 @@ theorem conventionD_weights_normalise {F : Type*} [Field F] (q : F)
 
 A block whose Markov weight vanishes contributes nothing to `t_λ = y_λ·(…)`
 whatever its characters are. Under convention D `y_(1³) = 0` — that vanishing
-IS convention D — so the alternating block's absence from the cost vector is
+IS convention D (the direction used here, D ⟹ vanish, is
+`FibreDimensionForcesTL.threeRow_eq_zero_of_jones_ocneanu`, or
+`ocneanuWeight_conventionD_eq_zero_of_three_rows` for general `n`; the converse
+that makes it an "IS" is `markovWeights_eq_jones_of_threeRow_eq_zero`, which also
+needs `hfaith : y_(2,1) ≠ 0`) — so the alternating block's absence from the cost
+vector is
 the convention, and a reader seeing a zero column should not look for a bug. -/
 theorem zero_weight_block_contributes_nothing {F : Type*} [Field F]
     (y acc : F) (hy : y = 0) : y * acc = 0 := by

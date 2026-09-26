@@ -267,7 +267,9 @@ def reading3_feasible(nf, y):
     """Reading 3 (owner ruling 2026-09-12; whole-word scope 2026-09-13):
     `chi_lambda >= 0` on EVERY block whose Markov weight is positive.
 
-    Under convention D `y_(1^3) = 0` -- that vanishing IS convention D -- so
+    Under convention D `y_(1^3) = 0` -- that vanishing IS convention D
+    (`threeRow_eq_zero_of_jones_ocneanu` for D ==> vanish;
+    `markovWeights_eq_jones_of_threeRow_eq_zero` + `hfaith` for the converse) -- so
     the alternating block is unconstrained and the binding blocks are `(3)` and
     `(2,1)`. Returns `(feasible, {shape: chi})`.
     """
