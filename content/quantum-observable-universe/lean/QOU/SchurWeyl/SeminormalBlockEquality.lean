@@ -49,10 +49,11 @@ namespace SeminormalRep
 open QOU.Mathlib QOU.SchurWeyl.TableauCells QOU.SchurWeyl.HeckeInclusion
 
 variable {μ : YoungDiagram}
+variable {K : Type*} [Field K]
 
 /-- **The block equality.**  A generator that avoids the top entry has, on the block of the corner
 `c`, exactly the matrix it has downstairs on `μ ∖ c`. -/
-theorem genMat_insertMax (q : ℝ) (c : ℕ × ℕ) (hc : IsCornerCell μ c) {k : ℕ} (hk : 1 ≤ k)
+theorem genMat_insertMax (q : K) (c : ℕ × ℕ) (hc : IsCornerCell μ c) {k : ℕ} (hk : 1 ≤ k)
     (hkn : k + 1 ≤ (eraseCorner μ c hc).cells.card) (hbig : k + 1 ≤ μ.cells.card)
     (S' S'' : StandardYoungTableau (eraseCorner μ c hc)) :
     genMat q k hk hbig (insertMax c hc S'') (insertMax c hc S') = genMat q k hk hkn S'' S' := by
@@ -116,28 +117,28 @@ adjoin-induction lifts the block equality to every element of `H_{m+1}(q)`.
 
 /-- Restriction of a matrix to the block of the corner `c`. -/
 def compress (c : ℕ × ℕ) (hc : IsCornerCell μ c)
-    (X : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ) :
+    (X : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) K) :
     Matrix (StandardYoungTableau (eraseCorner μ c hc))
-      (StandardYoungTableau (eraseCorner μ c hc)) ℝ :=
+      (StandardYoungTableau (eraseCorner μ c hc)) K :=
   Matrix.of fun S'' S' => X (insertMax c hc S'') (insertMax c hc S')
 
 theorem compress_one (c : ℕ × ℕ) (hc : IsCornerCell μ c) :
-    compress c hc (1 : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ) = 1 := by
+    compress c hc (1 : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) K) = 1 := by
   ext S'' S'
-  show (1 : Matrix _ _ ℝ) (insertMax c hc S'') (insertMax c hc S') = _
+  show (1 : Matrix _ _ K) (insertMax c hc S'') (insertMax c hc S') = _
   by_cases h : S'' = S'
   · subst h; simp
   · rw [Matrix.one_apply_ne (fun hh => h (insertMax_injective c hc hh)),
       Matrix.one_apply_ne h]
 
-theorem compress_smul (c : ℕ × ℕ) (hc : IsCornerCell μ c) (r : ℝ)
-    (X : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ) :
+theorem compress_smul (c : ℕ × ℕ) (hc : IsCornerCell μ c) (r : K)
+    (X : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) K) :
     compress c hc (r • X) = r • compress c hc X := rfl
 
 /-- **Compression is multiplicative on block-preserving matrices.**  The sum over `SYT μ` collapses
 to a sum over the block, and the block is exactly `insertMax`'s image. -/
 theorem compress_mul (c : ℕ × ℕ) (hc : IsCornerCell μ c)
-    {X Y : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ}
+    {X Y : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) K}
     (hX : BlockPreserving μ.cells.card X) :
     compress c hc (X * Y) = compress c hc X * compress c hc Y := by
   classical
@@ -162,12 +163,12 @@ theorem compress_mul (c : ℕ × ℕ) (hc : IsCornerCell μ c)
 
 /-- **Step 2, first half.**  The compression of the big seminormal representation, along the
 inclusion, IS the small seminormal representation — for every element, not just the generators. -/
-theorem compress_seminormalRep_heckeIncl {q : ℝ} (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
+theorem compress_seminormalRep_heckeIncl {q : K} (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
     (m : ℕ) (hN : μ.cells.card = m + 2) (c : ℕ × ℕ) (hc : IsCornerCell μ c)
-    (hNs : (eraseCorner μ c hc).cells.card = m + 1) (y : Hecke ℝ q q⁻¹ m) :
-    compress c hc (seminormalRep q hq0 hq2 (m + 1) hN (heckeIncl ℝ q q⁻¹ m y))
+    (hNs : (eraseCorner μ c hc).cells.card = m + 1) (y : Hecke K q q⁻¹ m) :
+    compress c hc (seminormalRep q hq0 hq2 (m + 1) hN (heckeIncl K q q⁻¹ m y))
       = seminormalRep q hq0 hq2 m hNs y := by
-  have hy : y ∈ Algebra.adjoin ℝ (Set.range (Hecke.σ ℝ q q⁻¹ m)) := by
+  have hy : y ∈ Algebra.adjoin K (Set.range (Hecke.σ K q q⁻¹ m)) := by
     rw [HeckeInclusion.adjoin_range_σ_eq_top]; trivial
   induction hy using Algebra.adjoin_induction with
   | mem x hx =>
@@ -187,7 +188,7 @@ theorem compress_seminormalRep_heckeIncl {q : ℝ} (hq0 : q ≠ 0) (hq2 : Generi
       ext S'' S'; rfl
   | mul x z hx hz ihx ihz =>
       have hbp : BlockPreserving μ.cells.card
-          (seminormalRep q hq0 hq2 (m + 1) hN (heckeIncl ℝ q q⁻¹ m x)) := by
+          (seminormalRep q hq0 hq2 (m + 1) hN (heckeIncl K q q⁻¹ m x)) := by
         rw [hN]
         exact seminormalRep_heckeIncl_mem_blockSubalgebra hq0 hq2 m hN x
       rw [map_mul, map_mul, map_mul, compress_mul c hc hbp, ihx, ihz]
