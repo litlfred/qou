@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T17:57:00Z
-updated_at: 2026-09-26T14:17:16Z
+updated_at: 2026-09-26T15:15:50Z
 ---
 
 Successor to qou-vndn, whose premise ("Hecke radical vanishing") is refuted at
@@ -229,3 +229,39 @@ Bean `qou-r7kp` (completed) has the full record. Note also `qou-6moa`: AGENTS.md
 cites `markovWeights_eq_jones_of_threeRow_eq_zero` for its own hypothesis, and
 that declaration is cited at ~35 corpus sites, so anything in this arc quoting it
 for `y_(1³) = 0` under D should be re-read.
+
+
+## 2026-09-26 (later) — the ⊇ half of "the radical is the TL ideal" at the wtrace carrier
+
+```lean
+QOU.SchurWeyl.WtraceRadicalTwoRow.mem_rad_of_twoRow_blocks_vanish
+```
+
+Anything annihilated by every at-most-two-row block is in the radical of the
+Ocneanu trace form — **at every level**, not just at `n = 2` as in PR #7458. Two
+facts already on `main` do it: `wtrace` is *defined* as the Frobenius sum
+(`wtrace_apply` is `rfl`), and `ocneanuWeight_conventionD_eq_zero_of_three_rows`
+kills every shape with a third row. Each summand dies for one of two reasons and
+the case split is on `d.rowLen 2`.
+
+### 🛑 The ⊆ half is NOT written, and the blocker is named
+
+It needs two inputs:
+
+1. **A pairing fact** — a nonzero real matrix is seen by some matrix under the
+   trace form (`∃ N, (M * N).trace ≠ 0`, single-entry witness). Standard; **not**
+   the obstacle. I started it and stopped: the Lean plumbing
+   (`Matrix.single`, `mul_single_apply_same` / `_of_ne`) costs more than the
+   content, and it is pointless while (2) is open.
+2. **The ≤2-row weights must be NONZERO.** This is the obstacle. The corpus has
+   it on `schurPrincipal` (`WenzlWeightVanishing.conventionD_weight_ne_zero_of_two_rows`)
+   but the statement at the level of `ocneanuWeight` — what `wtrace` is actually
+   defined from — is `conventionD_ocneanuWeight_eq_zero_iff_of_wenzl`,
+   **conditional on `IsOcneanuWeightSystem`, which has no instance.**
+
+So the reduction is the deliverable: **the only missing mathematical input to
+identifying the radical at this carrier is the non-vanishing of the ≤2-row
+Ocneanu weight.** Writing the conditional half and calling the radical
+"identified" would be the `sorry-free ≠ derived` failure.
+
+This does not move this bean's `WenzlTowerStep` premise, which stays open.
