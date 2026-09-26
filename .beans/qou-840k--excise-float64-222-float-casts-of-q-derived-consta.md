@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-09-26T10:55:28Z
+updated_at: 2026-09-26T11:22:26Z
 ---
 
 
@@ -851,3 +851,43 @@ every digit evaluated. Both readings are the honest one for their own route.
 now re-measured and none of them is 1e-31.** The fourth is untractable here, but
 its stated cause is withdrawn on the same evidence as the others: the cap has
 zero call sites.
+
+
+### 🛑 Correcting myself: residual 3 is NOT ℚ(q,δ,h). It is ℚ(q), same as the others
+
+Two entries above I recorded, as the structural reason residual 3 could not be
+measured:
+
+> the atom word carries an `averaged_weighted` letter — `σ_i − h(1/2 − δ/4)·𝟙`
+> — so `tr_M(atom)` is a rational function over **ℚ(q, δ, h)**, not ℚ(q)
+
+**Measured, and it is wrong.** Calling the live symbolic character on a
+one-letter word with that ctype:
+
+    ctype='sigma'             free symbols {q}   Float present? No   (q²−1)/q
+    ctype='averaged'          free symbols {}    Float present? No   0
+    ctype='averaged_weighted' free symbols {q}   Float present? No
+        (q⁸ − 2q⁷ + 2q⁵ − 2q⁴ + 2q³ − 2q + 1) / (6q⁵)
+
+One symbol, no Float. δ and h are resolved to closed forms in q before they ever
+reach the expression, so the atom trace lives in **ℚ(q)** exactly like the free
+one. The real cost is *size*: a single `averaged_weighted` letter contributes a
+degree-8 numerator over `6q⁵`, so the rational functions balloon through a
+23-letter product in a way the free word's letters do not. Slow, not
+structurally harder — an important difference, because slow has a workaround and
+"more symbols" does not.
+
+### And a second suspicion of mine that did NOT hold
+
+I expected to find a **layer straddle**. `d_for_ctype`'s own docstring warns that
+a q-symbolic caller taking the default `delta=None` gets `_avg_color_delta()`
+evaluated at the numeric `q_parameter.Q`, *"an ideal/experimental mix inside one
+quantity, which AGENTS.md rules out regardless of its size"* — and
+`hoefsmit_symbolic.chi_lambda_symbolic` takes **no** `delta` parameter and
+documents its ctype domain as only `{'sigma', 'sigma_inv', 'averaged'}`, with
+`averaged_weighted` absent. That reads exactly like an unguarded path.
+
+**It is not one.** The Float check above is the test, and it comes back clean on
+the very ctype in question. Recorded because the inference was reasonable, the
+documentation genuinely points that way, and the measurement says otherwise —
+which is the only thing that settles it.
