@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T16:45:03Z
-updated_at: 2026-08-23T23:52:52Z
+updated_at: 2026-09-26T17:55:25Z
 ---
 
 ## The false positive
@@ -131,3 +131,78 @@ branch — which, unlike the "ℝ justified" branch, **does** set `action=1`.
 So the checker can be tripped into a *blocking* warning by a docstring that correctly states the
 file has no ℝ. Recorded, checker still NOT changed — but if the regex is ever revisited, excluding
 comment lines is a cheaper and safer fix than touching the ℝ patterns.
+
+
+## 🛑 THIS BEAN'S OWN PREMISE IS FALSE — the cited lemma does not exist (measured 2026-09-26)
+
+The "Worked case" above rests on: *"`seminormalRep`, which is ℝ-only because
+`OffDiagNonvanishing.sq_geom_lt` is an inequality in an ORDERED field (`0 < y`, `nlinarith`)"*,
+and concludes *"the suggested fix (generalize to `{R}/[Field R]`) is **impossible**"*.
+
+**Measured, four ways, all against `main` `19387e870751`:**
+
+1. **`sq_geom_lt` has ZERO declarations anywhere in the tree.**
+   `grep -rE '(theorem|lemma|def) +sq_geom_lt' QOU/` → 0. `grep -rn sq_geom QOU/` finds no
+   declaration at all. The string occurs in exactly **three prose sites** —
+   `HeckeProductSurjective.lean:42`, `HeckeWedderburnDataGeneral.lean:32`,
+   `SeminormalBlockTrace.lean:60` — plus this bean. It is a **phantom citation**.
+2. **The real lemma is order-free.** `OffDiagNonvanishing.offDiag_axialDist_ne_zero`
+   (`OffDiagNonvanishing.lean:91`): conclusion `offDiag q (axialDist T k) ≠ 0` — an
+   **inequation**, not an inequality — hypotheses `q ≠ 0` and `NotRootOfUnity q`. The file's
+   entire variable block is `{K : Type*} [Field K] (q : K)`. No `LinearOrder`, no
+   `IsStrictOrderedRing`, no `nlinarith` on the field.
+3. **`seminormalRep` is NOT ℝ-only.** `SeminormalRep.lean:73` declares
+   `variable {μ : YoungDiagram} {K : Type*} [Field K] (q : K)`; `genMat` (`:103`) returns
+   `Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) K`; `offDiag` (`:93`) returns `K`.
+   **`Real.sqrt` appears nowhere** in `SeminormalRep.lean` or `HoefsmitRep.lean`.
+4. **The downstream count already agrees.** `finrank_hecke_eq_factorial`
+   (`HeckeWedderburnGeneral.lean:77`) and `heckeProduct_surjective` are both stated over
+   `{K : Type*} [Field K] [CharZero K]` — so the Wedderburn/dimension layer is *already* generic.
+
+### Where the ℝ actually enters
+
+Not at `seminormalRep`. It is **hardcoded per-declaration** at the block-equality layer and
+above — `SeminormalBlockEquality.lean` and `SeminormalBlockTrace.lean` have variable blocks of
+just `{μ : YoungDiagram}` (no ring variable at all), and `HeckeColimitFaithful.lean` pins
+`variable {q : ℝ}`. ℝ-line counts: `HeckeProductSurjective` 5, `HeckeWedderburnDataGeneral` 16,
+`SeminormalBlockTrace` 33, `SeminormalBlockEquality` 14, `HeckeInclInjective` 7,
+`HeckeColimitFaithful` 17.
+
+### 🛑 What is NOT established — do not over-read this
+
+**That the ℝ can be removed.** That needs an attempted generalisation and a compile, and has
+NOT been done. What is refuted is the **stated justification** ("an inequality in an ordered
+field") and the word **"impossible"**. ℝ may still be required for some other reason; nothing
+in the corpus currently names one. Treat the genericity question as **UNMEASURED**, not as
+answered in either direction.
+
+### Why it matters beyond hygiene
+
+This bean's conclusion is what tells an agent the §7c warning on those files is un-actionable
+*in principle*. It also propagates: the same false reason is the stated basis for the ℝ pin in
+the whole strict-growth chain
+
+    twH_lt_succ → gLim_notMem_H → H_lt_succ → finrank_H → finrank_hecke_eq_factorial
+
+whose bottom two links are already generic. So `qou-p8yg`'s "strict growth over a generic
+field" may be a **parameter sweep** rather than research. Distinguish the two generalisations,
+because I conflated them earlier in the session:
+
+- **generic field `K`, `h = q − q⁻¹`** — plausibly mechanical; blocked only by the hardcoded ℝ
+  above. Unmeasured.
+- **generic ring `R`, generic `h`** — genuinely open, and NOT reachable this way:
+  `HeckeTowerWitnessStrict.eq_of_braid_of_comm` proves no commutative target of any rank
+  separates two `twH` stages, and the Hecke route needs `q ≠ 0` + not-a-root-of-unity, so
+  `h = q − q⁻¹` is not an arbitrary `h`.
+
+### Done in this session
+
+The three prose sites are corrected in place (each now carries a 🛑 note naming the real
+lemma, stating the measurements, and flagging the genericity question as unmeasured);
+`HeckeWedderburnDataGeneral`'s *"impossible, not merely unnecessary"* is explicitly withdrawn.
+All three re-verified `lean -DautoImplicit=false -s 65536` RC=0.
+
+**The checker-gap question this bean was opened for is untouched and stays `todo`** — options
+1/2/3 above are still the options, and the ℝ→K generalisation of the six files is an
+ASK-THE-OWNER sweep (a multi-file refactor is not one of the two exemptions), deliberately
+not started.
