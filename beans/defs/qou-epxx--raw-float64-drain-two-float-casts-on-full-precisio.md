@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-26T14:28:50Z
-updated_at: 2026-09-26T17:34:05Z
+updated_at: 2026-09-26T17:42:26Z
 ---
 
 Picked up 2026-09-26 as exemption-covered drain work while PR #7457 waits on
@@ -283,3 +283,71 @@ next agent off this route.
 detector changes what a blocking gate reports corpus-wide, which is the
 "changes numbers everyone quotes" class rather than either exemption. Framed
 for a decision instead.
+
+
+---
+
+## 10. 🛑 THE g1 RUN COMPLETED AND MY PREDICTION WAS WRONG
+
+The run finished: **exit 0, 7/7 checks pass**, ~381 s, witness written. The
+probe's own mathematical verdict is unchanged — *"G1 is STILL OPEN"*.
+
+**§7 and commit `8f2ba091b2` both predicted the witness would move**, on the
+reasoning that "raising dps moves the probe from 15 to 70, which changes every
+number it computes". **That is false.** Measured field-by-field against `HEAD`
+with the ephemeral keys masked:
+
+    NON-ephemeral fields that moved: 0
+
+The entire diff is **five lines**: `computedAt` plus four wall-clock `seconds`
+(452→381, 9→8, 28→24, 82→68). Not one numeric result changed.
+
+**Why, and it is the interesting part.** This probe computes on **exact integers
+at scale 1e-40** — its comparison is over integer row-profiles like
+`[1,1,2,2,2,2,1,1]`, so mpmath's working precision never entered the results at
+all. `RECORDED_DIFF` feeds only an internal boolean (`recorded_s_equal`), and a
+boolean does not flip at 1e-17. Corroborating this from the committed artifact
+rather than from my reasoning: `diff_at_break` already carried the full 40 digits
+**before** the fix, as an unchanged context line in the diff.
+
+So the truncation at construction was real (3.64e-17, measured in §7) and its
+effect on published output is **nil, verified**. That is the best outcome a
+precision fix can have — it means nothing downstream was silently leaning on the
+truncation — but it is NOT what I said would happen, and the claim is withdrawn.
+
+**Contaminated by that wrong prediction, now corrected:** §7 of this bean, and
+commit `8f2ba091b2`'s message. The commit stands (the source fix is right); its
+forecast does not.
+
+**The gate row is CLOSED.** `module_const_precision_audit.py` now reports
+`LOSSY: 0` (was 1), across 20 files (was 21). `PADDING_RISK` is unchanged at 41.
+
+**The witness is NOT committed.** The diff is provenance and timing only, which
+is exactly the churn `qou-v0t8` says not to commit — the same disposition as
+`braid_encoding_audit` in §"merge-time verification". Reverted; tree clean.
+
+## 11. STANDING DOWN from the `never-raises-dps` tranche — it is someone's arc
+
+Scoped it as the natural sibling of §10 (same exemption-1 shape) and **did not
+take it.** The gate is red on **4 NEW producers**, with `REGRESSED 0` and
+**42 files / +175 constructions already drained** — i.e. it is being actively and
+successfully worked.
+
+- **`qou-fl9i` is `in-progress`**: *"Raise 838 sub-canonical `mp.dps` sites to
+  `set_compute_dps()`"*. That is this drain.
+- `qou-yh08` (`todo`): *"952 sites set precision below OUTPUT_DPS=60"*.
+- **3 of the 4 NEW files are already claimed** — `saddle_offset_zero_location_probe`
+  and `rho_binding_constancy_probe` by `qou-hgm6` (*"three q0-stale probes compute
+  in float64 end-to-end — the literal cannot be drained without fixing that
+  first"*), the latter also by `qou-840k`. Only
+  `flavor_split_pair_product_half_ceiling_probe` is unclaimed.
+
+AGENTS.md is explicit that mechanical work has ONE owner and must not be
+overlapped; the research-overlap relaxation covers open-outcome questions, which
+this is not. Left alone.
+
+**Checked that §2/§3/§10 did not already overlap it**, since those are the same
+class: none of `bn_minus_bp_brane_tower_parity`, `atom_vhyp_bar_trace_test`,
+`y_lambda_wenzl_bridge` or `rev_e_infinity_g1` is named in `qou-fl9i` or
+`qou-yh08`. The g1 site came from the **module-const** gate's LOSSY row, a
+different gate from the never-raises-dps one.
