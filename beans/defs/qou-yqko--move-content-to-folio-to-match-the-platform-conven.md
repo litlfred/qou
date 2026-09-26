@@ -1,6 +1,6 @@
 ---
 # qou-yqko
-title: 'DECISION (owner): move content/ to folio/, or keep declaring content/? — DO NOT ACTION'
+title: Move content/ to folio/ (owner-confirmed 2026-09-26) — BLOCKED on the pin bump qou-8321
 status: todo
 type: feature
 priority: normal
@@ -8,8 +8,10 @@ tags:
     - platform
     - migration
 created_at: 2026-09-26T11:19:21Z
-updated_at: 2026-09-26T13:36:07Z
+updated_at: 2026-09-26T14:26:47Z
 parent: qou-n4r9
+blocked_by:
+    - qou-8321
 ---
 
 **Owner direction, 2026-09-26:** *"Can move content/ for to folio/ to match.
@@ -194,3 +196,46 @@ renamed the field 2026-09-21, and `graphs` survives only through
 `acceptLegacyGraphsKey`, whose docstring says it exists for unmigrated *downstream*
 folios like this one. Alignment, not a break fix — and inert at the pin, where nothing
 reads this file.
+
+
+---
+
+## 🟧 OWNER RULING 2026-09-26 — the 2026-09-20 instruction was TEMPORARY. This bean is LIVE again.
+
+Verbatim: *"Owner, 2026-09-20: 'qou can declare a new folio at content/'. --> temporary"*.
+
+So **the move to `folio/` is intended**, and the four-option frame above is resolved
+to **option B/C**. The retitle to `DO NOT ACTION` is withdrawn.
+
+### What I got wrong, and it was a reasoning error not a measurement error
+
+The platform measurement in the block above is **correct and stands**:
+`cat-harness.ts:4557` `folioDir()` really does return
+`directoryForGraph(root,"folio") ?? join(root,"folio")`, the declaration really
+does win, and a folio really can keep `content/`. None of that is retracted.
+
+What was wrong was the **inference**: I read a *test comment quoting an instruction*
+as a *standing decision*. A test records what was asked for on the day it was
+written. It is evidence about the platform's capability, never about what the owner
+currently wants — and I used it to overrule a live instruction given to me directly.
+
+### What does NOT change — the sequencing blocker is independent of the ruling
+
+At the **pinned** platform `df28d02`, **62 call sites across 54 files** resolve
+`"content"` against a repo root (`CONTENT_DIR = resolve(REPO_ROOT, "content")`)
+with no configurable root. So the move **cannot land before `qou-8321`** (the pin
+bump), on purely technical grounds. Order is: `qou-8321` → this.
+
+Also unchanged, and it is the execution hazard: **31,241 of the 36,653 `content/`
+hits are JSON-LD `@context` namespace URLs in `library/`, not paths.** A bare
+`sed` breaks every block's JSON-LD context *and reports a clean rename*. Real
+referrers: **4,237**. And `qou.json`'s `path` must flip in the SAME commit as the
+tree move — an existence-filtered declared directory that is absent is dropped
+silently, so a split change leaves every consumer reporting a clean run over nothing.
+
+### Interaction with qou-j34j, which is new and larger
+
+The KG-authority inversion (`.jsonld` becomes the authority, `.ts` a rendered
+artifact) will rewrite what lives under this directory and how it is generated.
+Moving the tree and inverting the authority are **separable**, but doing the move
+first means doing it once rather than twice. Recommend: pin bump → move → inversion.
