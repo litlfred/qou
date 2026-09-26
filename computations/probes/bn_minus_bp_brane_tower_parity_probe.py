@@ -52,7 +52,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 
 t0 = time.time()
 
@@ -249,7 +249,17 @@ def main():
     assertions.append(("n6_single_x_test_undefined_parity_obstruction",
                        tower[1]["odd_orders_present"] is False, True))
 
-    _emit_witness(level_data, n3_bar, n9_parity, tower, assertions, float(qp))
+    # NO `float()` HERE. `qp` is `mpf(str(q_at()))` under `set_compute_dps()`,
+    # so it carries the full 60-digit proton pin; the cast this line used to
+    # make kept 16 and wrote the result into `substrate.q0_proton` as a raw
+    # JSON float, which the raw-float64 ratchet counts.
+    #
+    # Do NOT "fix" a site like this by padding the float — `fmt(float(qp))`
+    # gives 1.10997858275138083783417641825508326292037963867187500000000,
+    # which diverges from the true value at the 17th significant digit and
+    # manufactures 44 wrong ones. That trades the raw-float64 ratchet for the
+    # float64-padding ratchet (bean `qou-3jwy`). Carry the mpf, serialize once.
+    _emit_witness(level_data, n3_bar, n9_parity, tower, assertions, qp)
 
     ok = all(a[1] == a[2] for a in assertions)
     log(f"all assertions: {'PASS' if ok else 'FAIL'}")
@@ -293,7 +303,7 @@ def _emit_witness(level_data, n3_bar, n9_parity, tower, assertions, q0):
                        "must preserve odd order-parity. TIERED; nothing wired.",
         "auditOnly": True,
         "probe": True,
-        "substrate": {"q0_proton": q0, "q0_pin": "proton (canonical)"},
+        "substrate": {"q0_proton": fmt(q0), "q0_pin": "proton (canonical)"},
         "embedding": {
             "name": "canonical A-nucleon (free, same-type)",
             "beta_p": "atom_canonical_crossings(A, 0, include_inter=False)",
