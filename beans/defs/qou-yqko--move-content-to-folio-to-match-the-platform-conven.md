@@ -1,6 +1,6 @@
 ---
 # qou-yqko
-title: Move content/ to folio/ (owner-confirmed 2026-09-26) — BLOCKED on the pin bump qou-8321
+title: Move content/ to folio/ (owner-confirmed 2026-09-26) — pin bump DONE, still blocked; recorded blast radius is an undercount
 status: todo
 type: feature
 priority: normal
@@ -8,7 +8,7 @@ tags:
     - platform
     - migration
 created_at: 2026-09-26T11:19:21Z
-updated_at: 2026-09-26T14:26:47Z
+updated_at: 2026-09-26T19:50:00Z
 parent: qou-n4r9
 blocked_by:
     - qou-8321
@@ -239,3 +239,98 @@ The KG-authority inversion (`.jsonld` becomes the authority, `.ts` a rendered
 artifact) will rewrite what lives under this directory and how it is generated.
 Moving the tree and inverting the authority are **separable**, but doing the move
 first means doing it once rather than twice. Recommend: pin bump → move → inversion.
+
+
+--------
+
+## 🟧 OWNER RULING 2026-09-26 — `leitner2026` goes in `folio/` too
+
+Verbatim: *"leitner2026 should be in folio/. its the new paper/book thing"*.
+
+`leitner2026` is the folio's **self-citation**, held today as an ordinary
+bibliography entry at `content/schema/references.ts:2339` —
+`type: "manuscript"`, title *"Quantum Observable Universe"*, author Leitner,
+`note: "This manuscript"`. That title is **verbatim the title of the folio's own
+first paper** in `content/folio.ts:14`, so the work's identity is held twice: once
+as a folio node and once as a reference to itself.
+
+The ruling puts it in `folio/`, i.e. with the works rather than with the cited
+sources. So this bean's move now carries a second item: **the self-citation
+rehomes to the folio, it does not merely travel along inside
+`schema/references.ts`.**
+
+Current consumers of the key, measured (not the raw grep — `.olean` binaries
+excluded): **32 Lean `-- Ref:` sites**, **4 `.ts` `cites[]`**, **3 `.jsonld`**
+(the knowledge graph), plus `references.bib` (generated) and
+`scripts/cited-source-availability-audit.py:86`, which already groups it with
+`manuscript` as `SELF_KEYS = {"manuscript", "leitner2026"}`. **The corpus
+already treats the two as one thing**; the ruling says what that thing is.
+
+Cross-ref: `qou-cite`, where the `manuscript` key was parked as an owner
+decision between (a) an alias entry and (b) re-keying two blocks. **The ruling is
+neither** — see that bean.
+
+## 🛑 THE RECORDED BLAST RADIUS IS AN UNDERCOUNT — do NOT plan the move off it
+
+`qou.json`'s `_path_comment` states, as the binding sequencing fact:
+
+> at the PINNED platform df28d02, **62 call sites across 54 files** resolve
+> "content" against a repo root with no configurable root, so the move CANNOT
+> land before the pin bump (qou-8321).
+
+**The pin bump has landed** (`.folio-assistant-pin` = `37a36ce9296`, this
+session). Two things follow, and the second is the important one.
+
+**1. The bump did not unblock it.** Re-measured at the new pin with the same
+method: **59**, against 62 at the old one. Essentially unchanged.
+
+**2. Both figures are from a blind detector, and I reproduced the blindness
+before catching it.** `grep '"content"'` matches `content` only as a *complete
+quoted token*. The platform overwhelmingly writes the path as ONE string:
+
+    grep -c '"content/'   -> 402      # e.g. "content/pipeline/build.ts"
+    grep -c '`content`'   -> 126
+    grep -c "'content/"   ->  28
+    grep -c '"\.\./content' ->  49
+    grep -c 'contentDir'  ->  17
+
+A `"content"` grep cannot see any of the 402. So **59 and 62 are both
+undercounts of unknown size**, and the sequencing note's authority rests on a
+number that does not measure what it claims.
+
+Of the 59, the majority are not directory resolution at all: **21 are
+`holds: "content"`**, a graph-LAYER declaration, joined by `GraphLayer`,
+`Bucket`, `bucket: "content"`, `CONTENT_EXT`, `SCAN_ROOTS`, `SCANNED` and two
+`tags:` arrays. So the recorded figure is simultaneously **too high** for
+directory resolution and **too low** for the path surface. It is not a usable
+planning number in either direction.
+
+**I am deliberately NOT supplying a replacement count.** A classifier written
+here to do it returned visibly incoherent buckets (`content/content`,
+`content/...`), i.e. the regex was wrong, and reporting a figure from an
+unvalidated detector is row 45 of the detector-blindness taxonomy — an audit
+that certifies its own calibration. Producing a defensible count is scoped work
+for whoever runs this move.
+
+## What IS established, and it is not retracted
+
+- **The platform supports a folio keeping `content/`.**
+  `folioDir()` (`cat-harness/schemas/cat-harness.ts:4557`) is still
+  `directoryForGraph(root, "folio") ?? join(root, "folio")` — the declaration
+  wins, the `folio/` literal is only the fallback. Unchanged across the bump.
+- **`content/` is explicitly folio-owned**, alongside `folio/`:
+  `FOLIO_OWNED = new Set(["folio", "content", "uploads", "library", "lean", ".lake"])`
+  (`cat-harness/scripts/check-usage-paths.ts`), and the platform's own test
+  asserts `FOLIO_OWNED.has("content") === true` while
+  `FOLIO_OWNED.has("scripts") === false`.
+
+So the move remains a **choice the owner has made**, not a correctness fix — and
+the reason to sequence it carefully is unchanged. Only the *number* justifying
+the sequencing is wrong.
+
+## Unchanged and still binding
+
+When it lands, `qou.json`'s `path` changes to `folio/` in the **same commit** as
+the tree move, never before: an existence-filtered declared directory that is
+absent is dropped silently, and every consumer then reports a clean run over
+nothing.

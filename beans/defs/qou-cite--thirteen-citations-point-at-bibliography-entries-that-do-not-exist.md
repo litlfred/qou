@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: high
 created_at: 2026-08-30T09:55:00Z
-updated_at: 2026-08-31T05:07:16Z
+updated_at: 2026-09-26T19:52:00Z
 ---
 
 `cites-resolve` — the check that validates every content block's `cites[]`
@@ -382,3 +382,76 @@ citation's *identity* is not something to change casually.
 The other five (`feigin-hashizume2009`, `dimofte-gaiotto-gukov2014`,
 `terashima-yamazaki2011`, `macdonald1971`, `lusztig1989`) match their key years
 and carry distinct titles from their near-misses.
+
+
+--------
+
+## 🟧 OWNER RULING 2026-09-26 — the `manuscript` decision is closed, and the answer is NEITHER (a) NOR (b)
+
+This bean twice put the self-citation to the owner as a two-way choice:
+
+> **(a) Add an alias entry `manuscript` → the same work.** … **(b) Re-key the 2
+> content blocks to `leitner2026`, leave the Lean convention alone.**
+>
+> **My judgement, not a finding: (a).**
+
+**The owner chose a third option**, verbatim:
+
+> *"leitner2026 should be in folio/. its the new paper/book thing"*
+
+`leitner2026` is not to be a bibliography entry at all. It is **the work** — the
+paper/book — and works live in `folio/`. That rejects (a) on its own terms: (a)
+would have added a *second* bibliography entry for the self-citation, when the
+ruling says the *first* one is already in the wrong place. My recommendation was
+pointing the wrong way, not merely at the smaller of two options.
+
+### Why the corpus supports the ruling, checked rather than assumed
+
+- `content/schema/references.ts:2339` holds `leitner2026` with title
+  **"Quantum Observable Universe"**, `type: "manuscript"`,
+  `note: "This manuscript"`.
+- `content/folio.ts:14` lists the folio's first paper with title
+  **"Quantum Observable Universe"**, `dir: "quantum-observable-universe"`.
+
+**Same work, same title, held twice** — once as a folio node, once as a
+reference to itself. That duplication is the defect the ruling removes, and it is
+a stronger objection than the "duplicate CSL entry" risk I raised against (a):
+the duplication already exists.
+
+- `scripts/cited-source-availability-audit.py:86` already carries
+  `SELF_KEYS = {"manuscript", "leitner2026"}`. The corpus had already concluded
+  these are one thing; it just had no place to put it.
+
+### What this does and does not change
+
+- **The Lean layer stays fine.** The 2026-08-31 correction in this bean stands
+  and is not affected: `validate-references.ts:171-172` exempts `manuscript`
+  explicitly, with a comment saying so, and the checker reports **0**
+  `manuscript` errors of 19. There is **no** 4,436-site sweep, and re-measured
+  today the Lean `-- Ref: [manuscript]` population is **3,998**, not 4,436 —
+  quote a fresh measurement, not either figure.
+- **`cites-resolve` still lacks both carve-outs** (`manuscript`, and the
+  cross-paper `key.includes(":")`) that its sibling checker has. That is still a
+  one-condition fix **in folio-assistant, not here**, and it is still the real
+  residue for the 2 content blocks. The ruling does not remove it: whatever
+  `folio/` ends up holding, a `cites[]` entry naming the folio's own work needs
+  the checker to know that is legal.
+- **Class A is untouched.** The remaining genuinely-absent keys are
+  `faddeev1996` (2 blocks) and `bokut1978` (1 block), and this bean's standing
+  warning still binds on both: repointing a citation at a near-miss is worse
+  than a broken link.
+
+### Sequencing — this cannot land yet, and that is not a stall
+
+`folio/` **does not exist**. The rehoming is part of `qou-yqko`
+(`content/` → `folio/`), where this ruling is also recorded. Doing it before
+`folio/` exists would mean deleting the only held record of the work's
+metadata with nowhere to put it.
+
+Measured consumers that will need to resolve the key afterwards: **32 Lean
+`-- Ref:` sites, 4 `.ts` `cites[]`, 3 `.jsonld`** (the knowledge graph — so this
+touches the KG the owner has made authoritative), plus the generated
+`references.bib`.
+
+**Status stays `todo`.** Per AGENTS.md §13a the ruling settles *what* to do, not
+that it is done.
