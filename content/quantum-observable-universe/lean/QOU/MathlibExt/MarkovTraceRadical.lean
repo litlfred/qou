@@ -174,4 +174,49 @@ theorem mem_rad_of_exhausted [TowerSpan T] (a : A) (k : ℕ) (ha : a ∈ T.H k)
   obtain ⟨M, hM, hc⟩ := hexh c
   exact tr_mul_eq_zero_of_mem_shiftedUpTo T a k ha M₀ hk hbase M hM c hc
 
+/-! ## One filtration step, without a conditional expectation
+
+`QBeta.TLTowerRadicalDescent.map_mem_traceRadical` reaches the same conclusion as
+`tr_mul_eq_zero_of_step_span` below, but from a `HeckeConditionalExpectation` —
+an open §3b class with **no instance**, so everything there is conditional in the
+§3b-cond sense.  That file argues a bare inclusion cannot do better:
+
+> A bare inclusion `ι : Hn →ₐ Hn1` says nothing about the two radicals:
+> membership in `rad τn1` quantifies over all of `Hn1`, not over `ι '' Hn`, so no
+> amount of compatibility between `τn` and `τn1` *on the subalgebra* constrains
+> it.
+
+**That is right about a bare inclusion and too strong about a tower.**  A test
+element of `H (n+1)` is not arbitrary: if the step is spanned by the previous
+stage together with single sandwiches, the element reduces to test elements of
+`H n`, and then cyclicity and Markov finish it.  What the conditional expectation
+buys is the *converse* (`mem_traceRadical_of_map`, which spends `inst.retract`);
+the forward direction needs only a spanning property.
+-/
+
+/-- **Radical monotonicity along one filtration step, from spanning alone.**
+
+No conditional expectation, no retraction: cyclicity, Markov, and the hypothesis
+that `H (n+1)` is spanned by `H n` plus single sandwiches `v * g n * w`. -/
+theorem tr_mul_eq_zero_of_step_span (n : ℕ) (a : A) (ha : a ∈ T.H n)
+    (horth : ∀ b ∈ T.H n, T.tr (a * b) = 0)
+    (hspan : Subalgebra.toSubmodule (T.H (n + 1)) ≤
+      Subalgebra.toSubmodule (T.H n) ⊔ Submodule.span R (sandwich T (T.H n) n))
+    {b : A} (hb : b ∈ T.H (n + 1)) :
+    T.tr (a * b) = 0 :=
+  tr_mul_eq_zero_of_mem_sup T n (T.H n) le_rfl a ha horth b (hspan (by simpa using hb))
+
+/-- **And along every step above `n`**, by induction. -/
+theorem tr_mul_eq_zero_of_mem_H (n : ℕ) (a : A) (ha : a ∈ T.H n)
+    (horth : ∀ b ∈ T.H n, T.tr (a * b) = 0)
+    (hspan : ∀ m, Subalgebra.toSubmodule (T.H (m + 1)) ≤
+      Subalgebra.toSubmodule (T.H m) ⊔ Submodule.span R (sandwich T (T.H m) m)) :
+    ∀ m : ℕ, n ≤ m → ∀ b ∈ T.H m, T.tr (a * b) = 0 := by
+  intro m hm
+  induction m, hm using Nat.le_induction with
+  | base => exact horth
+  | succ m hm ih =>
+      exact fun b hb =>
+        tr_mul_eq_zero_of_step_span T m a (T.H_mono hm ha) ih (hspan m) hb
+
 end QOU.MathlibExt.MarkovTraceRadical
