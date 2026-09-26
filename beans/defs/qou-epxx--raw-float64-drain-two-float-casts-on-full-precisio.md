@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-26T14:28:50Z
-updated_at: 2026-09-26T17:42:26Z
+updated_at: 2026-09-26T17:59:21Z
 ---
 
 Picked up 2026-09-26 as exemption-covered drain work while PR #7457 waits on
@@ -351,3 +351,67 @@ class: none of `bn_minus_bp_brane_tower_parity`, `atom_vhyp_bar_trace_test`,
 `y_lambda_wenzl_bridge` or `rev_e_infinity_g1` is named in `qou-fl9i` or
 `qou-yh08`. The g1 site came from the **module-const** gate's LOSSY row, a
 different gate from the never-raises-dps one.
+
+
+---
+
+## 12. MERGED — PR #7457, merge sha `be07fbd97f`, 8/8 replayed
+
+Owner gave explicit merge permission; `/prepare-merge-auto` run in full. Rebased
+onto `origin/main` @ `19387e8707` (9 commits on) and re-verified there:
+`module_const_precision` **LOSSY 0**, raw-float64 ratchet NEW 0 / REGRESSED 0
+exit 0, `atom_vhyp` exit 0, all four source fixes intact, tree clean.
+`verify-merge-replay.py`: **8 branch commits, 8 replayed, 0 MISSING.**
+
+The two long producers were not re-run, and that was measured rather than
+waved at: **main's 9 commits touched zero `computations/*.py`**, so neither
+import cone moved and the pre-rebase runs (422 s and 381 s / 7-of-7) carry.
+
+## 13. 🛑 RETRACTED: the "2026-06-22 cone-wide event" — it is coincidence
+
+Four times today I noted that two of the drifted witnesses share a `computedAt`
+of 2026-06-22 and called it *"suggestive of a cone-wide event"*, each time
+flagged as not-diagnosed and not-asserted. **Now measured, and it is not
+supported. Withdrawn.**
+
+**2026-06-22 is a below-average day, not a spike.** Across 3405 witnesses
+carrying `computedAt` over 133 distinct dates:
+
+    mean per day        25.6
+    median per day       7
+    2026-06-22          20      -> rank 38 of 133
+    busiest day        393      (2026-08-23)
+
+**And the coincidence is unremarkable on its own terms:**
+
+    P(two random witnesses share a date)      = 0.0425   (1 in 23.5)
+    with 4 drifted witnesses -> 6 pairs,
+    EXPECTED same-date pairs                  = 0.255
+
+Observed: 1. That is a roughly one-in-four event — precisely the kind of
+pattern an eye manufactures from noise, which is why it read as a signal.
+
+**One caveat against myself, in the direction that does NOT rescue the
+hypothesis.** The null above draws uniformly from all witnesses, and my four
+were not random — they came from the drain queue and so skew toward OLD
+witnesses. Old dates carry *fewer* witnesses each, which makes a chance
+collision *less* likely, not more. So the correction is small and it pushes the
+wrong way for a rescue; the headline stands either way.
+
+**What is NOT retracted.** Every individual staleness finding holds and was
+verified per-file, by its own method:
+
+- `derive-binding-bond-type` 4x — `qou-7xa5`
+- `atom-vhyp-bar-trace-test` 9.2 % — verified by reverting my source and
+  re-running `main` unmodified (byte-identical)
+- `bn-minus-bp-brane-tower-parity` exact rationals — verified by `scriptHash`
+  mismatch against unmodified `main` (`66ce72dd10ba` vs `d7fd2ea82e62`)
+
+The per-file drift is real. The **cluster** is not. Do not go looking for a
+common upstream cause on the strength of the date; there is nothing there to
+find, and anyone who follows that thread is spending a session on a 1-in-4
+coincidence I put in a PR body.
+
+**Contaminated, and corrected here:** PR #7457 §4 (merged, so the body now
+carries a claim this supersedes), the `qou-epxx` §4 table, and two commit
+messages. This bean entry is the correction of record.
