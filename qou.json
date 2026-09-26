@@ -1,0 +1,19 @@
+{
+  "_comment": "This repository's CatHarness instance DECLARATION. Renamed from `harness.json` on 2026-09-26: platform main composes both filenames from the instance's own name (`instanceDeclarationFilename(name) = <name>.json`, `instanceConfigFilename(name) = <name>.config.json` in cat-harness/schemas/cat-harness.ts), and `findDeclarationFile` accepts a file ONLY when its filename stem equals its own `name` field. Stem `harness` against name `qou` failed that test -- the platform's own words for the state are 'the rename-half-done case check:instance-config already reports'. Stem `qou` now agrees. Paired with `qou.config.json` (what this instance IS); this file is WHERE its tree is.",
+  "name": "qou",
+  "description": "Quantum Observable Universe — a framework for quantum physics via rigid monoidal categories",
+  "directories": [
+    {
+      "id": "folio",
+      "path": "content/",
+      "graphs": [
+        "folio"
+      ],
+      "_dependents_comment": "`reproduce` because a folio directory is part of the SHAPE a folio has: an instance depending on qou wants its OWN empty tree, not qou's five papers. Same argument as `uploads/` and `library/`. REQUIRED on platform main since folio-assistant #512, where readDeclaration THROWS without it -- that is a statement about MAIN, not about the pin, where nothing reads this file at all.",
+      "dependents": "reproduce",
+      "description": "The authored folios: quantum-observable-universe and its siblings, each a directory holding a same-named manifest. NOT `folio/` — see `_comment`.",
+      "_path_comment": "OWNER RULING 2026-09-26 changed the standing of this path: 'Can move content/ for to folio/ to match. Align to f-asst unless specific reason not to.' So `content/` is no longer a divergence this file exists to paper over -- the move is planned as bean qou-yqko and this path changes to `folio/` in the same commit as the move, never before. Superseded rationale, kept because it explains the original shape: qou kept `content/` because five folios, a bun workspace, CI paths and every cross-reference point at it, so rather than move the tree it said where the tree is."
+    }
+  ],
+  "_platform_scope_comment": "SCOPE, because the previous wording asserted platform-main behaviour in the present tense and was false of what this repo runs. Measured 2026-09-26 at the PINNED platform df28d02 (.folio-assistant-pin): `readDeclaration` occurs 0 times, `harness.json` 0 times in *.ts, there is no schemas/harness-config.ts and no resolveHarnessConfigPath; src/index.ts:94 reads `folio.config.json`. At platform main (42ccfb38b63) 101 files reference readDeclaration. So THIS FILE IS INERT AT THE PIN and becomes load-bearing only when .folio-assistant-pin moves (bean qou-8321, owner's call). Do not read anything here as a statement about the running system without naming the platform commit."
+}

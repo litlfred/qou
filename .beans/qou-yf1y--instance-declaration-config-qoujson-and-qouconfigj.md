@@ -1,14 +1,14 @@
 ---
 # qou-yf1y
 title: 'Instance declaration + config: qou.json and qou.config.json replace three retired spellings'
-status: todo
+status: in-progress
 type: feature
 priority: high
 tags:
     - platform
     - config
 created_at: 2026-09-26T11:18:46Z
-updated_at: 2026-09-26T11:23:02Z
+updated_at: 2026-09-26T11:53:59Z
 parent: qou-n4r9
 ---
 
@@ -94,3 +94,43 @@ Four file operations plus one value fix. Risk is concentrated in step 5: delete
 **unconfigured** — `profile-check.ts` reports `undetermined` and runs every
 criterion including the paper adapter's LaTeX-shaped axes, per
 `harness.config.json`'s own comment. That failure is silent.
+
+
+
+## Claimed 2026-09-26 by `claude/folio-assistant-instantiation-and-bean-hierarchy-2026-09-26`
+
+Owner said "Go" on the recommended ordering (this story first).
+
+
+
+## 2026-09-26 — RENAME DONE; one step deliberately deferred
+
+Done on `claude/folio-assistant-instantiation-and-bean-hierarchy-2026-09-26`:
+
+1. `git mv harness.json qou.json` — stem now equals the file's own `name` field, so it
+   passes `findDeclarationFile` where `harness` ≠ `qou` failed it.
+2. `git mv harness.config.json qou.config.json`.
+3. **`feedbackDir` fixed in `folio.config.json`** — `folio-assistant/feedback` →
+   `.folio-feedback`. This is the live defect of `qou-sm2c`: the pin reads
+   `folio.config.json`, so the broken value was in force. Verified **no data moves**:
+   both `.folio-feedback` and `folio-assistant/feedback` are absent on disk, which also
+   confirms the original diagnosis that the old path never existed under either layout.
+4. `qaAxes: ["archimedean-wall"]` added to `folio.config.json` — a no-op at the pin,
+   correct after a bump. **Verified as a no-op rather than assumed:** `run-validate`
+   reports **2 issue(s)** before and after, identical.
+5. Comments in both renamed files SCOPED to the platform they describe (`qou-29i6`), and
+   `qou.config.json` now answers the naming question in-file: it is not
+   `folio-assistant.config.json` because the stem names this instance, not the harness.
+6. `scripts/setup-folio-assistant.sh` comment updated `harness.json` → `qou.json`.
+
+**Verification:** `run-validate` 2 issues (baseline, unchanged); `readme-sections --check`
+exit 0; all three JSON files parse; `bash -n` on the setup script; declaration scan finds
+**exactly one** declaration (`qou.json`) where it previously found zero. Checked for a
+collision first: `package.json` also carries `"name": "qou"` but its stem is
+`package`, so it fails the stem==name test and is not a declaration.
+
+**STATUS STAYS in-progress.** One step remains and it is NOT this bean's to take:
+deleting `folio.config.json`. `qou-ty42` says it must not be deleted, and at the pin it
+is the only config actually read — deleting it now leaves the folio UNCONFIGURED, silently.
+It is deleted in the same commit that bumps the pin, which is **`qou-8321`** (owner's
+call).

@@ -8,7 +8,7 @@ tags:
     - platform
     - migration
 created_at: 2026-09-26T11:20:29Z
-updated_at: 2026-09-26T11:26:33Z
+updated_at: 2026-09-26T11:53:59Z
 parent: qou-n4r9
 ---
 
@@ -73,3 +73,19 @@ pre-split (clone root)`. So the bump is not a cliff — but note the same script
 is precisely how a bump can appear to have happened and not have.
 
 ## Not started.
+
+
+
+## Added 2026-09-26 — this bump now OWNS one deletion
+
+`qou-yf1y` has landed `qou.json` + `qou.config.json` and deliberately left
+`folio.config.json` in place, because at the pin it is the only config the platform reads.
+
+**So the bump commit must also `git rm folio.config.json`.** Doing it earlier leaves the
+folio unconfigured with no error — `profile-check.ts` reports `undetermined` and runs
+every criterion including the paper adapter's LaTeX-shaped axes. Doing it later leaves two
+configs that can disagree.
+
+Also note `qaAxes` is now set in **both** files. At the pin it is a no-op (measured:
+`archimedean-wall` is not an axis there); after the bump the `qou.config.json` copy is the
+live one.
