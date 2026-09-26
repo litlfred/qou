@@ -2,7 +2,7 @@
 # qou-jluq
 title: 'Session: post-resume reassessment — gram-det structural proof is C-frame stale; realign to active fronts'
 status: completed
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-08-29T10:04:22Z
 updated_at: 2026-08-29T10:47:47Z

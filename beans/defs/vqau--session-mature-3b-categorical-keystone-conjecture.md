@@ -2,7 +2,7 @@
 # vqau
 title: 'Session: mature §3b categorical-keystone conjecture classes (14)'
 status: completed
-type: milestone
+type: epic
 priority: normal
 tags:
     - keystone-maturation

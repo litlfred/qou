@@ -2,7 +2,7 @@
 # zeu7
 title: 'Session: 4f2d lambda-A excision'
 status: completed
-type: milestone
+type: epic
 created_at: 2026-06-28T17:31:34Z
 updated_at: 2026-07-05T05:05:00Z
 ---

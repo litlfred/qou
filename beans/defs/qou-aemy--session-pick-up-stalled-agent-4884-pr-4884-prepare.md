@@ -2,7 +2,7 @@
 # qou-aemy
 title: 'Session: pick up stalled agent 4884 (PR #4884) — prepare-merge + merge'
 status: completed
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-08-10T07:07:51Z
 updated_at: 2026-08-10T08:20:04Z

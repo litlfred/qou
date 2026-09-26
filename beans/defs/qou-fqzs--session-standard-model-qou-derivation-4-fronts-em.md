@@ -2,7 +2,7 @@
 # qou-fqzs
 title: 'Session: standard-model QOU derivation — 4 fronts (EM-linking, N=3 gerbe, GMO deviation, SM reference surface)'
 status: completed
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-08-25T06:12:42Z
 updated_at: 2026-08-30T08:47:24Z

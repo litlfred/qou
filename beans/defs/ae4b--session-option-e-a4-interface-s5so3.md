@@ -2,7 +2,7 @@
 # ae4b
 title: 'Session: Option-E A=4 interface operator and S5-SO3 fiber action'
 status: completed
-type: milestone
+type: epic
 priority: high
 created_at: 2026-06-23T10:35:58Z
 updated_at: 2026-06-23T10:35:58Z

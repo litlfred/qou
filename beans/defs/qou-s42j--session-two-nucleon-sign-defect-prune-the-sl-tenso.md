@@ -2,7 +2,7 @@
 # qou-s42j
 title: 'Session: two-nucleon sign defect — prune the (S,L) tensor-coupling route (qou-vbyi route 1)'
 status: completed
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-09-03T08:39:48Z
 updated_at: 2026-09-03T14:55:26Z

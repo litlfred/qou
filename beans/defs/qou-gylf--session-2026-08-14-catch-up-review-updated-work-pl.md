@@ -2,7 +2,7 @@
 # qou-gylf
 title: 'Session: 2026-08-14 catch-up review + updated work plan (3467-commit sweep)'
 status: completed
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-08-14T21:59:16Z
 updated_at: 2026-08-15T00:53:32Z

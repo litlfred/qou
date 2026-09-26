@@ -2,7 +2,7 @@
 # ylgh
 title: 'Session: amazing-mendel — frontier triage + bean-backlog hygiene'
 status: scrapped
-type: milestone
+type: epic
 created_at: 2026-06-22T14:03:52Z
 updated_at: 2026-06-22T14:03:52Z
 ---

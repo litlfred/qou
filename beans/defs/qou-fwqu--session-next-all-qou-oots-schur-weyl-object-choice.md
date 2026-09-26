@@ -2,7 +2,7 @@
 # qou-fwqu
 title: 'Session: next-all — qou-oots Schur-Weyl object choice, qou-5pgl re-run discriminator, qou-hu1f atom_braid_word_3A blast radius'
 status: in-progress
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-09-05T07:49:12Z
 updated_at: 2026-09-05T07:49:37Z

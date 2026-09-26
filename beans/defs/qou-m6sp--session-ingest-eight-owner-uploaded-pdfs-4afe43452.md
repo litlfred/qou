@@ -2,7 +2,7 @@
 # qou-m6sp
 title: 'Session: ingest eight owner-uploaded PDFs (4afe434526) into library/'
 status: in-progress
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-09-06T10:29:29Z
 updated_at: 2026-09-07T05:43:20Z

@@ -2,7 +2,7 @@
 # qou-xz6t
 title: 'Session: §7c stalled-claim takeover (qou-mtcx) + cluster triage + FR split — PR #5113'
 status: completed
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-08-15T15:07:04Z
 updated_at: 2026-09-06T21:54:11Z

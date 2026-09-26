@@ -2,7 +2,7 @@
 # qou-qt8b
 title: 'Session: SDP analysis + substrate-phase recursion (light cone = γγ base case)'
 status: todo
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-09-16T01:38:58Z
 updated_at: 2026-09-16T02:01:58Z

@@ -2,7 +2,7 @@
 # 12zf
 title: 'Session: Fix QA flags in shell-closure-stability.md'
 status: scrapped
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-06-28T23:17:52Z
 updated_at: 2026-08-03T15:15:47Z

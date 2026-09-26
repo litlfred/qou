@@ -2,7 +2,7 @@
 # qou-utri
 title: 'Session: universal triangulation — EP/Ptolemy route to the binding gap'
 status: in-progress
-type: milestone
+type: epic
 priority: high
 created_at: 2026-09-06T10:55:26Z
 updated_at: 2026-09-06T10:55:26Z

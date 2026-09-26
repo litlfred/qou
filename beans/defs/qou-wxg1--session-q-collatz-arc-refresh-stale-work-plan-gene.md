@@ -2,7 +2,7 @@
 # qou-wxg1
 title: 'Session: q-Collatz arc — refresh stale work plan, general-word cycle forcing'
 status: completed
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-08-29T16:28:13Z
 updated_at: 2026-09-08T07:45:45Z

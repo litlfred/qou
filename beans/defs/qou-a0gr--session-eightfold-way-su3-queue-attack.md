@@ -2,7 +2,7 @@
 # qou-a0gr
 title: 'Session: eightfold-way / SU3 queue attack'
 status: in-progress
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-08-02T17:29:23Z
 updated_at: 2026-08-02T17:30:46Z

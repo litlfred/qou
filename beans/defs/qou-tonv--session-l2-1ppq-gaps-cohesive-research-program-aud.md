@@ -2,7 +2,7 @@
 # qou-tonv
 title: 'Session: l2-1ppq-gaps — cohesive research-program audit (mass, binding, Q_beta, open conjectures)'
 status: in-progress
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-09-08T04:14:07Z
 updated_at: 2026-09-08T08:55:40Z

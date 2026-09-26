@@ -2,7 +2,7 @@
 # qou-j5jq
 title: 'Session: subagent persistent memory for qou + folio-assistant'
 status: completed
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-08-29T10:24:23Z
 updated_at: 2026-08-29T10:25:12Z
