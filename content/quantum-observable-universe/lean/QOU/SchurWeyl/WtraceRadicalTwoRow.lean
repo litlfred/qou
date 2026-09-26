@@ -69,8 +69,10 @@ What actually remains for ⊆, neither blocked:
    `heckeProduct_surjective`, as `OcneanuTraceNotFaithful` already does for the
    column shape.
 
-The ⊆ half is still not in this file. It is unwritten, which is a different
-thing from blocked, and this file continues to deliver only the ⊇ inclusion.
+**Both are now done**, in `WtraceRadicalTwoRowSubset`:
+`notMem_rad_of_twoRow_block_ne_zero` is the ⊆ half and
+`mem_rad_iff_twoRow_blocks_vanish` is the identification.  This file continues to
+carry only the ⊇ inclusion, which is what the theorem below states.
 
 ## Scope
 

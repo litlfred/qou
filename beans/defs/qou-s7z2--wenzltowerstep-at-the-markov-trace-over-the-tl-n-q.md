@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T17:57:00Z
-updated_at: 2026-09-26T16:41:38Z
+updated_at: 2026-09-26T16:53:59Z
 ---
 
 Successor to qou-vndn, whose premise ("Hecke radical vanishing") is refuted at
@@ -326,3 +326,43 @@ identification, not an inclusion. **Unwritten, which is a different thing from b
 
 `WenzlTowerStep` and `HeckeGramFactorial`'s open `T_w`-basis determinant are untouched by
 this and stay open — this bean is NOT closed.
+
+
+## ⊆ CLOSED — the radical is now IDENTIFIED, not merely bounded (2026-09-26, PR #7461)
+
+Following the retraction above, both remaining pieces are written and verified. The
+radical of `wtrace` is **exactly** the three-row part.
+
+`SchurWeyl/WtraceRadicalTwoRowSubset.lean`:
+
+    exists_trace_mul_ne_zero        M ≠ 0 over a CommRing ⇒ ∃ N, (M * N).trace ≠ 0
+                                   (single-entry matrix at (j,i); the product's
+                                   diagonal is supported at i and reads M i j)
+    notMem_rad_of_twoRow_block_ne_zero   ⊆ : a live ≤2-row block is VISIBLE to wtrace
+    mem_rad_iff_twoRow_blocks_vanish     the identification, as an iff
+
+The block isolation is `heckeProduct_surjective` realising `Function.update 0 lam₀ N`,
+so every block but `lam₀` contributes 0 to the Frobenius sum and the surviving term is
+`w_d · (M·N).trace` — a product of two nonzero reals, the weight by
+`ocneanuWeight_conventionD_ne_zero_of_two_rows`.
+
+Two plumbing notes worth keeping, both about avoiding transport:
+
+- The Frobenius sum is indexed by `{ν : YoungDiagram // ν.cells.card = n+1}` while
+  `heckeProduct` is indexed by `Partition (n+1)`. `Equiv.sum_comp (partitionShapeEquiv _)`
+  reindexes one to the other, which is what lets `Finset.sum_eq_single_of_mem` see a
+  single surviving block.
+- `subst hlam₀` (not `hlam₀ ▸ N`) after `exists_partitionShape_eq`: `d` is a variable, so
+  the diagram becomes `partitionShape lam₀` everywhere and no `HEq` is ever created. The
+  two residual cardinality-proof mismatches close by `rfl` — `Prop` proof irrelevance.
+  `hρ`, the identification of a block with a `heckeProduct` component, is `fun _ _ => rfl`.
+
+Verification: `lean -DautoImplicit=false -s 65536` RC=0, zero diagnostics.
+`#print axioms` on all three: `[propext, Classical.choice, Quot.sound]` — no `sorryAx`.
+Two mutants each required to fail and each does: single-entry matrix at `(i,j)` instead of
+`(j,i)` → 3 unsolved goals; `rowLen 3 = 0` for `rowLen 2 = 0` in the ⊆ statement → 2
+application type mismatches (the weight theorem cannot apply, and the iff breaks).
+Not content-swept — ~1.1 GB free against the shadow's ~2.3 GB.
+
+**This bean still does NOT close.** `WenzlTowerStep` and `HeckeGramFactorial`'s open
+`T_w`-basis determinant are untouched by any of this (rule 13a).
