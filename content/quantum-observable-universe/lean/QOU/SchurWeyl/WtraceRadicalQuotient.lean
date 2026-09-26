@@ -142,6 +142,21 @@ noncomputable def traceQuotEquiv {q : ℝ} (hq0 : q ≠ 0)
         (x : TraceQuot (wtrace q hq0 hq2 n) (wtrace_cyclic q hq0 hq2 n))
       = twoRowProduct q hq0 hq2 n x := rfl
 
+/-- **The isomorphism is not between one-point algebras.**
+
+`AlgEquiv.ofBijective` would accept a bijection of trivial algebras just as happily, so this
+forecloses the vacuous reading structurally rather than by inspection: `wtrace 1 = 1 ≠ 0`,
+so `1` is not in the radical, so the class of `1` is not the class of `0`.  Its image
+`twoRowProduct 1 = 1` is therefore nonzero in `TwoRowBlocks n`, which also says the target
+is not the one-point ring. -/
+theorem traceQuot_one_ne_zero {q : ℝ} (hq0 : q ≠ 0)
+    (hq2 : GenericParameter.NotRootOfUnity q) (hq21 : q ^ 2 + 1 ≠ 0)
+    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : ℝ) ^ i ≠ 1) (n : ℕ) :
+    ((1 : Hecke ℝ q q⁻¹ n) :
+        TraceQuot (wtrace q hq0 hq2 n) (wtrace_cyclic q hq0 hq2 n)) ≠ 0 :=
+  quot_one_ne_zero (wtrace q hq0 hq2 n) (wtrace_cyclic q hq0 hq2 n)
+    (by rw [wtrace_one q hq0 hq2 hq21 hgen n]; exact one_ne_zero)
+
 end Application
 
 
