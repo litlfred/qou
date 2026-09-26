@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-09-07T04:44:03Z
+updated_at: 2026-09-26T11:25:22Z
 ---
 
 
@@ -667,3 +667,282 @@ A 29-file PR applying `q_at(mp.mp.dps)` would have compiled, **passed the
 F64_CAST gate by removing the matched shape, and changed no result**. A green
 gate over an unchanged defect is precisely what this gate family exists to
 prevent.
+
+
+---
+
+## 🛑 The 30-digit cap is DEAD CODE, and this bean's instruction would now INTRODUCE errors (measured 2026-09-26, from `qou-ejfy`; status NOT changed)
+
+This bean's §"BUT: a 30-digit cap in the production weights" says the
+`sp.Float(_mp_inner.nstr(y, 30), 30)` truncation "is the binding precision
+constraint on every tr_M in the framework", lists four residuals at ~1e-31, and
+concludes that **"corpus claims of '~1e-50 agreement' ... should be documented
+and the 'exact to 1e-50' phrasing corrected where it refers to tr_M."**
+
+**Acting on that today would replace correct 1e-50 statements with wrong 1e-30
+ones.** The cap is unreachable.
+
+### Structural: zero call sites
+
+Line 314 (the cap) is inside **`_y_lambda_at_convention_C_HISTORICAL()`**, lines
+214-339 (AST-resolved, not grepped). That name occurs at exactly **two** lines in
+the file — **150**, a mention inside `y_lambda_at`'s own docstring, and **214**,
+its `def`. **It is never called.** The live `y_lambda_at` (from line 117) is six
+statements and routes to `y_lambda_su_n` / `y_lambda_su_n_symbolic` with no
+truncation anywhere.
+
+### Executed: 60 digits, and the normalisation closes at 1e-50
+
+`y_lambda_at(3, sp.Rational(Q_50_DIGIT_STR))` at the proton pin:
+
+    y_(3,)       ~60 sig digits   0.505404226503930803187558703240472275660351197749810143
+    y_(2, 1)     ~60 sig digits   0.247297886748034598406220648379763862169824401125089916
+    y_(1, 1, 1)                   0            (row cap — this IS convention D)
+
+The cap would force **exactly 30** and no more. Against this bean's own first
+residual:
+
+    Sum y_lam * f^lam = 1      recorded here 7.7e-31   ->   MEASURED 1.06911e-50
+
+### Why it went stale, and it was one day
+
+This bean is dated **2026-08-08**. The convention-D cascade of **2026-08-09**
+made the three C fast paths dead — `y_lambda_at`'s docstring states it outright
+("THE THREE C FAST PATHS BELOW ARE NOW DEAD ... the D result returns before any
+of them is reached"), and the AST and the execution both confirm it. The
+measurement here was correct the day it was taken and was superseded the next.
+
+### Scope of this correction — deliberately narrow
+
+I re-measured **one** of the four residuals. I am **not** asserting specific new
+values for the other three (`tr_free = tr_p*tr_n`, `tr_atom = tr_free*(z+d)`,
+`tr(W.sigma) = z*tr(W)`); they need their own runs. What IS established is their
+**cause**: this bean attributes all four to the 30-digit cap on `y_lambda`, and
+`y_lambda` now carries 60 digits from a code path that never reaches the cap. So
+the stated explanation no longer holds for any of them, whatever they now measure.
+
+### Independent corroboration from the other direction
+
+`qou-ejfy` measured the canonical `tr_M` witness against an exact symbolic
+recompute over ℚ(q) at the exact-rational 50-digit pin: agreement to **1.4e-50**
+(proton) / **5.8e-50** (neutron), stable from 60 to 90 dps. Under a live 30-digit
+cap those two independent routes could not have agreed past ~1e-30. The two
+findings confirm each other and were reached from opposite ends.
+
+### What is NOT retracted
+
+The bean's main subject — **222 `float()`-casts of q-derived constants across 129
+files** — is untouched by this. Only §"a 30-digit cap in the production weights"
+is stale.
+
+
+### Where the withdrawn claim propagated — 2 carriers, not 8
+
+A figure-grep for the four residuals returns eight files. **Four are substring
+artifacts of scientific notation** and are unrelated — worth naming, because the
+over-match is the same detector-blindness class running the other way:
+
+| file | matched | actually |
+|---|---|---|
+| `all-nuclides-sdp-admissibility-mp.witness.json` | `7.9e-31` | inside `y0_star_str = 3.53127756391210122990490434350523013712148691057*49e-31*` — an LP dual |
+| `probes/awzero-asymptotics.witness.json` | `7.9e-31` | `tail_bound_at_b = 2.51709e-31*1*` — a different exponent entirely |
+| `qbeta/gram-convention-d-singularity-structural.witness.json` | `9.1e-32` | `min\|eig\| under D = 4.33951e-32` — a Gram eigenvalue |
+| `.beans/qou-cds2` | `9.1e-32` | the same Gram row |
+
+**The genuine carriers are two, and they are NOT equally bad:**
+
+1. **`docs/audits/2026-08-09-canonical-chain-walk-gaps-marked.md` (lines 161-165)
+   — this is the one that misleads.** It states the cap as fact in a durable
+   audit doc, gives it as the *cause* of all four residuals, and concludes:
+   *"Corpus claims of '1e-50 agreement' are about χ^λ, not tr_M."* That last
+   sentence is now measurably false — `qou-ejfy` measured the canonical tr_M
+   witness against an exact symbolic recompute at **1.4e-50**. An agent citing
+   this doc would "correct" a right number into a wrong one.
+
+2. `docs/audits/2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md`
+   (lines 277-280) and `.beans/qou-d5e8` cite 7.9e-31 / 1.2e-31 as
+   **verification that tr_M is multiplicative**. That use is benign: the
+   verification stands, only its precision was understated. No causal claim
+   about the cap, no instruction to edit anything.
+
+Also distinct, despite matching: `.beans/t7qv` records `G[3,2] = z·G[2,2]`
+residual `1.2e-31` **"at 40 dps"** — self-explained by its own compute
+precision, not by the y_λ cap. Same family of check, different and stated cause.
+
+**Not edited.** Both audit docs are dated records, and this repo's standing
+practice (`qou-3nva`) is to leave those as historical rather than sweep them.
+The 08-09 doc is the one where that practice and the risk actually collide;
+raised for the owner rather than acted on.
+
+
+### Residual 2 re-measured: `tr_free = tr_p · tr_n` is EXACT, not 7.9e-31
+
+Computed on the exact symbolic route (`markov_weights_symbolic.tr_M_canonical`,
+rational functions over ℚ(q)), evaluated at the exact-rational 50-digit pin:
+
+    tr_free   @q0  = 0.29901501718464007670216042677098383227494947439701665190
+    tr_p*tr_n @q0  = 0.29901501718464007670216042677098383227494947439701665190
+    RELATIVE RESIDUAL = 0
+
+**Stated precisely:** the two sides agree to **all 60 digits evaluated**. That is
+not a proof of symbolic identity — I deliberately did not run `sp.simplify` on
+the H_6 difference (see below) — but at the precision measured there is no
+residual at all. The recorded **7.9e-31 was entirely the cap artifact**, and the
+cap is dead.
+
+This **strengthens** the benign citation in
+`docs/audits/2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md`
+(lines 277-280), which offers 7.9e-31 as verification that tr_M is
+multiplicative over independent subsystems. The verification is better than it
+claims.
+
+### Residual 3 NOT measured, and the reason is structural
+
+`tr_atom / tr_free` needs the **atom** word, which carries an
+`averaged_weighted` letter — `σ_i − h(1/2 − δ/4)·𝟙` (`markov_peel.py:187`). That
+makes tr_M(atom) a rational function over **ℚ(q, δ, h)**, not ℚ(q). Measured
+cost at the same n=6: **>13 min with no result**, against **193 s** for the free
+word. Killed rather than run to timeout. Residual 3 and residual 4
+(`tr(W·σ) = z·tr(W)`) are therefore still open; their stated CAUSE is withdrawn
+either way, per the correction above.
+
+### Method note, because it cost the first attempt
+
+The first probe put `sp.simplify(tr_free - tr_p*tr_n)` **before** the numeric
+evaluation it was guarding. On an H_6 rational function that is the expensive
+step, and it gated the cheap answer behind it. Evaluating at the pin with
+`sp.cancel` only — no `simplify` — returns in 199 s total. If you extend this to
+residual 3, substitute q, δ and h numerically *before* taking the trace rather
+than after.
+
+
+### Residual 4 re-measured: `tr_M(W·σ) = z·tr_M(W)` is EXACT too — in 1.7 s
+
+W = the canonical proton word on 3 strands (generators {0,1}); `W·σ₃` appends
+`(2, 'sigma')` and is evaluated at H_4. `M.Z_MARK` verified `= q³/(q²+1)`,
+i.e. convention D.
+
+    tr_M(W·σ₃)  @q0 = 0.38558198346622944847005289495935556822269309959149640845
+    z·tr_M(W)   @q0 = 0.38558198346622944847005289495935556822269309959149640845
+    RELATIVE RESIDUAL = 0
+
+**1.7 seconds**, against the >13 min that residual 3 failed in. The difference is
+structural and worth keeping: H_4 has 5 partitions and the word carries **no
+extra free symbols**, whereas the atom word's `averaged_weighted` letter drags in
+δ and h.
+
+### The corrected table
+
+| residual | recorded 2026-08-08 | measured 2026-09-26 | route |
+|---|---|---|---|
+| `Σ y_λ f^λ = 1` | 7.7e-31 | **1.06911e-50** | numeric accessor `y_lambda_at` |
+| `tr_free = tr_p·tr_n` | 7.9e-31 | **0** (60 digits) | symbolic over ℚ(q) |
+| `tr_atom = tr_free·(z+d)` | 1.2e-31 | *not measured* | needs ℚ(q,δ,h) |
+| `tr(W·σ) = z·tr(W)` | 9.1e-32 | **0** (60 digits) | symbolic over ℚ(q) |
+
+**Why residual 1 is 1e-50 and not 0, while 2 and 4 are 0.** Not an
+inconsistency — they are measured on different routes. `y_lambda_at` computes
+*numerically* (`y_lambda_su_n(n, mpf(str(q)), 2)`), so its residual is the
+mpmath working-precision floor at the 70/60 dps default. Residuals 2 and 4 are
+rational-function identities evaluated on the *symbolic* route, so they close to
+every digit evaluated. Both readings are the honest one for their own route.
+
+**All four were recorded at ~1e-31 and attributed to the 30-digit cap. Three are
+now re-measured and none of them is 1e-31.** The fourth is untractable here, but
+its stated cause is withdrawn on the same evidence as the others: the cap has
+zero call sites.
+
+
+### 🛑 Correcting myself: residual 3 is NOT ℚ(q,δ,h). It is ℚ(q), same as the others
+
+Two entries above I recorded, as the structural reason residual 3 could not be
+measured:
+
+> the atom word carries an `averaged_weighted` letter — `σ_i − h(1/2 − δ/4)·𝟙`
+> — so `tr_M(atom)` is a rational function over **ℚ(q, δ, h)**, not ℚ(q)
+
+**Measured, and it is wrong.** Calling the live symbolic character on a
+one-letter word with that ctype:
+
+    ctype='sigma'             free symbols {q}   Float present? No   (q²−1)/q
+    ctype='averaged'          free symbols {}    Float present? No   0
+    ctype='averaged_weighted' free symbols {q}   Float present? No
+        (q⁸ − 2q⁷ + 2q⁵ − 2q⁴ + 2q³ − 2q + 1) / (6q⁵)
+
+One symbol, no Float. δ and h are resolved to closed forms in q before they ever
+reach the expression, so the atom trace lives in **ℚ(q)** exactly like the free
+one. The real cost is *size*: a single `averaged_weighted` letter contributes a
+degree-8 numerator over `6q⁵`, so the rational functions balloon through a
+23-letter product in a way the free word's letters do not. Slow, not
+structurally harder — an important difference, because slow has a workaround and
+"more symbols" does not.
+
+### And a second suspicion of mine that did NOT hold
+
+I expected to find a **layer straddle**. `d_for_ctype`'s own docstring warns that
+a q-symbolic caller taking the default `delta=None` gets `_avg_color_delta()`
+evaluated at the numeric `q_parameter.Q`, *"an ideal/experimental mix inside one
+quantity, which AGENTS.md rules out regardless of its size"* — and
+`hoefsmit_symbolic.chi_lambda_symbolic` takes **no** `delta` parameter and
+documents its ctype domain as only `{'sigma', 'sigma_inv', 'averaged'}`, with
+`averaged_weighted` absent. That reads exactly like an unguarded path.
+
+**It is not one.** The Float check above is the test, and it comes back clean on
+the very ctype in question. Recorded because the inference was reasonable, the
+documentation genuinely points that way, and the measurement says otherwise —
+which is the only thing that settles it.
+
+
+### Residual 3 measured: `tr_atom = tr_free·(z + d)` holds to 1.34e-51
+
+Method that worked, after the symbolic route failed twice: substitute the
+exact-rational pin into `q_character_on_braid_word` **before** the matrix
+product, so every χ^λ is an exact rational number rather than a ballooning
+rational function. 201 s, against >13 min with no result symbolically.
+
+    tr_free @q0 = 0.29901501718464007670216042677098383227494947439701665190
+    tr_atom @q0 = 0.15196833920423160759266569775106614127124096465525819935
+    ratio       = 0.50822978937673896257799579765589360389830839091656702154
+
+    d_for_ctype("averaged_weighted", h) @q0 = -0.1044582477697262890178340662900
+    z_D + d                                 =  0.50822978937673896257799579765589
+    ratio − (z_D + d)                       =  1.3363824e-51     <- residual 3
+
+Against the recorded **1.2e-31**. 1.3e-51 is the 50-digit pin's own floor, so
+the identity is exact at the precision available.
+
+**The comparison discriminates, which is worth more than the residual.** Using
+the *unweighted* `averaged` d instead gives `ratio − (z+d) = 7.19e-5` — five
+orders worse. So this identity picks out the **colour-weighted** interface
+specifically, an independent confirmation that `bring_color_weighted`
+(convention D, ruling R3) is the constant the canonical word actually uses.
+
+### The complete table — all four re-measured, none of them 1e-31
+
+| residual | recorded 2026-08-08 | measured 2026-09-26 | route |
+|---|---|---|---|
+| `Σ y_λ f^λ = 1` | 7.7e-31 | **1.06911e-50** | numeric accessor |
+| `tr_free = tr_p·tr_n` | 7.9e-31 | **0** (60 digits) | symbolic ℚ(q) |
+| `tr_atom = tr_free·(z+d)` | 1.2e-31 | **1.3363824e-51** | exact-rational at the pin |
+| `tr(W·σ) = z·tr(W)` | 9.1e-32 | **0** (60 digits) | symbolic ℚ(q) |
+
+The 30-digit cap explained all four and has zero call sites. Every replacement
+is 20 orders tighter or exact.
+
+### Unplanned, and the most valuable thing this run produced
+
+`tr_M(atom)` for the deuteron was recomputed here **entirely from scratch** — a
+different route from anything in `qou-ejfy`, going through
+`q_character_on_braid_word` at an exact rational rather than reading any
+witness. Against the committed `markov-trace-assembly-deuteron.derivation.json`
+`target_value`:
+
+    stored     0.1519683392042316075926656977510661412712409646552611513103
+    recomputed 0.15196833920423160759266569775106614127124096465525819935
+    common prefix: 51 chars = ~49 significant digits
+
+So the stored deuteron value is confirmed to **~49 digits by a third
+independent route**. `qou-ejfy` had the nucleon values at 1.4e-50 / 5.8e-50 by
+exact symbolic recompute and the weights at 60 digits; this adds the full
+*atom* trace. The claim that these witnesses carry ~16 real digits is now
+refuted three ways over.

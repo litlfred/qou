@@ -1,11 +1,11 @@
 ---
 # qou-ejde
 title: 'KEYSTONE: heckeIncl is injective -- the single input to the colimit bridge (route mapped, all pieces sorry-free on main)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-12T20:55:31Z
-updated_at: 2026-09-26T10:44:11Z
+updated_at: 2026-09-26T12:25:09Z
 ---
 
 Parent: qou-0fmb (plan), epic qou-08a2. Opened 2026-09-12 after the plan re-scope
@@ -284,3 +284,78 @@ question that #7442 names as the surviving keystone is NOT answered by this.
 Scope inherited: R, q != 0, NotRootOfUnity q -- generic q over a characteristic-zero
 field, because finrank_hecke_eq_factorial needs semisimplicity. At a root of unity
 the proof fails rather than weakens. Every downstream consequence inherits it.
+
+
+--------
+
+**2026-09-26 — MERGED to main as PR #7454 (rebase-merge, commits e82d718b9e / 1c79876082 /
+8d7a36ecb8). `heckeIncl_injective` is in the product, sorry-free. COMPLETING this bean.**
+
+Re-verified on main after the merge: both files `lean -DautoImplicit=false -s 65536` exit 0.
+
+**One claim of this bean is REFUTED by the follow-on work, and it is this bean's own
+"what it unlocks" list.** The Why-this-is-the-keystone section says injectivity gives, third,
+"the FILTRATION is strict, because dim Hecke n = (n+1)! is proved and the levels then embed
+properly". Measured in PR #7456: non-surjectivity of `heckeIncl` needs NO injectivity at all --
+`finrank(range) <= finrank H_m = (m+1)! < (m+2)! = finrank H_{m+1}`, first step
+`LinearMap.finrank_range_le`, which has no injectivity hypothesis. The independence is enforced
+structurally there: `HeckeTowerStrict` does not import `HeckeInclInjective` and compiles RC=0.
+
+So of the three things this bean said injectivity unlocks, the 2026-09-13 note already withdrew
+the first two (the colimit and the trace descent need no injectivity) and #7456 withdraws the
+third. What injectivity actually buys is the SHARP value `finrank(range) = (m+1)!`
+(`finrank_range_heckeIncl`), which is a real strengthening but not the strictness.
+
+That does not make the theorem less worth having -- it is the faithfulness of the tower at the
+level of the inclusion, and it is what pins the image dimension exactly. It does mean this bean's
+framing of WHY was wrong in all three of its stated consequences, which is worth recording where
+the next reader will see it.
+
+Completing rather than leaving open: the subject is a proved sorry-free theorem in the product,
+not an open conjecture, so rule 13a does not hold it. The faithfulness question that #7442 names
+as the surviving keystone -- whether `ofLim n` is injective for `heckeColimitMarkovTrace`, and
+whether `trLim` is faithful -- is NOT this bean and remains untouched.
+
+
+--------
+
+**2026-09-26, TWO HOURS AFTER COMPLETING THIS BEAN: `ofLim` faithfulness is PROVED
+(PR #7456, `QOU/SchurWeyl/HeckeColimitFaithful.lean`). And completing this bean when I
+did was premature IN SCOPE -- my own note above got the bean's boundary wrong.**
+
+When I completed this I wrote: "The faithfulness question that #7442 names as the
+surviving keystone -- whether `ofLim n` is injective for `heckeColimitMarkovTrace` --
+is NOT this bean and remains untouched."
+
+**The corpus disagrees, and I should have checked it.** `HeckeColimit.lean` says three
+times, and `HeckeColimitMarkovTrace.lean` repeats, that `H n` is "the image, not an
+isomorphic copy ... those coincide exactly when `ofLim n` is injective, **which is the
+open question of bean `qou-ejde`**". So this bean was the carrier for BOTH the one-step
+inclusion and `ofLim` faithfulness. The theorem it is titled for was genuinely done, so
+the completion was not dishonest -- but the scope claim in that note was wrong, and it
+is the same class of error as the #7442 correction earlier today: a claim about what a
+corpus object covers, asserted without grepping the corpus for it.
+
+**Now proved anyway**, so the bean is complete on both readings:
+
+    heckeInclLE_injective   every transition, by Nat.le_induction over heckeInclLE_succ
+    ofLim_injective         DirectLimit.mk_injective applied to it
+    finrank_H               finrank (H n) = (n+1)!
+    H_lt_succ               H n < H (n+1)
+
+**The dead citation in this bean's route is now confirmed dead and replaced.** This bean
+cites "Mathlib's Algebra/Colimit/Ring.lean has DirectLimit.of_injective". Grepping
+declaration names out of the pinned v4.24.0 oleans: no `of_injective` anywhere; only
+`DirectLimit.lift_injective` and `DirectLimit.mk_injective`. **`mk_injective` is the
+lemma**, and its hypothesis is exactly "every transition map is injective" -- which is
+what made this three lines once `heckeIncl_injective` existed. A later note on this bean
+already flagged that the citation needed re-targeting; this is the re-target.
+
+**So this bean's "what it unlocks" list ends 1 for 3, not 0 for 3.** The 2026-09-13 note
+withdrew the colimit-existence and trace-descent claims; #7456 withdrew strict growth of
+the CONCRETE tower. But strict growth of the COLIMIT filtration (`H_lt_succ`) genuinely
+does need faithfulness, which genuinely does need this bean's theorem. The third claim
+was right about the colimit and wrong about the concrete tower.
+
+Still NOT closed by any of this: `trLim` faithfulness (whether the TRACE separates
+points) and `twH` in MathlibExt/HeckeTowerWitness.

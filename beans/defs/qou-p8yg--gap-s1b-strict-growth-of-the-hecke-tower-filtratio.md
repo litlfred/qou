@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-12T19:02:09Z
-updated_at: 2026-09-12T20:45:34Z
+updated_at: 2026-09-26T12:25:10Z
 ---
 
 Parent: qou-cins / plan qou-0fmb, epic qou-08a2. Opened 2026-09-12 after S1 merged (#7228, 3653e9ce).
@@ -224,3 +224,64 @@ Note finrank_hecke_eq_factorial supplies every DIMENSION fact already; it is the
 identification of twH n with Hecke (n-1) that is missing, and per the entry above
 that identification inherits generic-q hypotheses (Field, CharZero, q != 0,
 NotRootOfUnity).
+
+
+--------
+
+**2026-09-26 — GENERAL n IS PROVED for the CONCRETE tower (PR #7456). Bean stays OPEN: `twH` is
+not closed, per this bean's own discipline line.**
+
+  QOU/SchurWeyl/HeckeTowerStrict.lean       heckeIncl_range_lt_top
+  QOU/SchurWeyl/HeckeTowerStrictSharp.lean  finrank_range_heckeIncl
+
+**This bean's stated blocker was STALE, exactly as its own LEAD suspected.** It says general n
+needs the LOWER bound dim H_n(q) >= (n+1)!, citing qou-uoal's note that only the upper half
+`finrank_le_factorial` was proved, and then adds: "LEAD, not a claim ... whoever picks this up
+should corpus-grep whether the (n+1)! lower bound was ever derived ... before assuming it is
+open." Corpus-grepped: `HeckeWedderburnGeneral.finrank_hecke_eq_factorial` is an EQUALITY, and its
+own docstring says the lower bound "is forced by the surjection onto a space of dimension
+(n+1)!". So the blocker was already discharged and general n was a wire, not a build.
+
+**And it needed LESS than expected: no injectivity.** `heckeIncl_range_lt_top` holds over any
+characteristic-zero field at generic q from the dimension count alone
+(`LinearMap.finrank_range_le`, no injectivity hypothesis). Enforced structurally --
+`HeckeTowerStrict` does not import `HeckeInclInjective`, compiles RC=0 alone. This refutes
+`qou-ejde`'s claim that its injectivity result is what makes the filtration strict; noted on that
+bean too. Injectivity buys the sharp value `= (m+1)!`, which is the second file and the only one
+confined to R.
+
+**Why this bean STAYS OPEN.** The statement proved is about the concrete Hecke tower, not about
+`twH` in MathlibExt/HeckeTowerWitness -- whose `twH_zero_lt_one` goes through the rank-2 collapse
+that provably cannot separate H 1 from H 2. Transferring needs the bridge, which qou-ejde measures
+as separate and unbuilt. This bean's own discipline line already anticipates exactly this: "Do NOT
+close it on the strength of the H 1 < H 2 wire alone -- that is one level, not the filtration."
+Same principle, one level up: a theorem about the concrete tower is not the `twH` statement.
+
+The REFUTED `g m |-> q*1` sketch recorded above is untouched and stays refuted; nothing here
+revives it. The minor `exists_tower_with_nonzero_h` restated-hypothesis cleanup noted in this bean
+is also NOT done.
+
+
+--------
+
+**2026-09-26 (same PR #7456, second commit): strict growth now holds at the COLIMIT
+level too -- `H_lt_succ : H n < H (n+1)`. Bean STILL stays open; `twH` is untouched.**
+
+The earlier append recorded strict growth for the concrete tower
+(`heckeIncl_range_lt_top`). This adds it for the colimit's range filtration, which is
+the mathematically meaningful version: `H n` is now known to be an isomorphic copy of
+`Hecke n` rather than merely its image, so `finrank (H n) = (n+1)!` and the levels
+separate by dimension.
+
+Route: `ofLim_injective` (faithfulness, proved in the same file via
+`DirectLimit.mk_injective` from all-transitions-injective) -> `finrank_H` ->
+`H_lt_succ`. **Unlike the concrete-tower half, this one DOES need injectivity** -- so
+`qou-ejde`'s third "what this unlocks" claim was right about the colimit and wrong about
+the concrete tower. Both corrections are recorded on that bean.
+
+**Why this bean is still open.** Its subject is `twH` in MathlibExt/HeckeTowerWitness,
+whose separator is the rank-2 collapse that provably cannot separate H 1 from H 2. The
+colimit carrier is a different object. Transferring needs the abstraction bridge, which
+is still unbuilt. Also untouched: the minor `exists_tower_with_nonzero_h`
+restated-hypothesis cleanup this bean notes, and the REFUTED `g m |-> q*1` sketch stays
+refuted.
