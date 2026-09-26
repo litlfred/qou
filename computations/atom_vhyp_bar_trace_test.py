@@ -48,10 +48,23 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 DPS = 50
 K_SPLIT = 3  # proton|neutron parabolic split (chi_at_q0_via_matrix_m_mpfr:124)
-M_E = float(_M_E)
+# NO `float()` ON THESE THREE. They arrive from `codata_constants` as mpf and
+# feed the arithmetic below (`B / (M_E * BP)`, lines ~87-88), so a cast is a
+# computation in binary64, not a display — AGENTS.md permits `float(x)` only
+# inside an f-string.
+#
+# The loss is small but it is NOT zero, and the tempting check says it is:
+# `str(v)` and `repr(float(v))` both render "2.2245662", so comparing the
+# DECIMAL RENDERINGS reports an exact round-trip. Comparing the VALUES
+# (`mpf(str(v)) == mpf(float(v))`) reports False for all three — measured
+# relative error 1.74e-17 (M_E), 2.78e-17 (deuteron), 2.53e-17 (tritium).
+# That sits below the L1 1 ppQ target and is not claimed to threaten it;
+# `M_E` is CAL-1, the constant fixing the MeV unit, which is reason enough
+# not to round it on the way in.
+M_E = _M_E
 
 # AME2020 binding (MeV), same source as ame-2020-binding-energies.witness.json
-AME_B = {"deuteron": (1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)), "tritium": (1, 2, float(AME_B_TRITIUM_MEV_VALIDATION))}
+AME_B = {"deuteron": (1, 1, AME_B_DEUTERON_MEV_VALIDATION), "tritium": (1, 2, AME_B_TRITIUM_MEV_VALIDATION)}
 TRM_Q0_WITNESS = {"deuteron": mp.mpf("1.3317821792991125061382939027504490778795270468692")}
 
 
@@ -88,7 +101,7 @@ def main() -> int:
         delta_signed = B / (M_E * tq0)         # #2082 signed-tr_M comparison
         rows.append({
             "label": label, "Z": Z, "N": N, "A": Z + N,
-            "B_AME_MeV": B,
+            "B_AME_MeV": mp.nstr(B, 18),
             "tr_M_q0": mp.nstr(tq0, 18),
             "tr_M_q0_inv": mp.nstr(tqi, 18),
             "bar_product": mp.nstr(BP, 12),
