@@ -288,11 +288,11 @@ def rewrite_refs(mapping: dict[str, str], apply: bool,
     a live reference at all -- it is PROSE describing the earlier migration,
     and rewriting it corrupts the record.  Measured that day, three files:
 
-      .beans/qou-4lbh          "uploads/roth_lemma.pdf ->
+      beans/defs/qou-4lbh          "uploads/roth_lemma.pdf ->
                                 library/roth-lemma/roth_lemma.pdf"
                                 became "library/... -> library/...",
                                 an arrow from a thing to itself;
-      .beans/qou-cvx9          "the first draft wrote `uploads/1808.02836v2.pdf`
+      beans/defs/qou-cvx9          "the first draft wrote `uploads/1808.02836v2.pdf`
                                 as a literal" became a claim about a path the
                                 draft never wrote -- a FALSIFIED record, which
                                 is worse than a dangling link because it is
