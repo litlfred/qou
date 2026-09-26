@@ -9,7 +9,7 @@ import { simulator } from "../../../folio-assistant/schemas/builders";
 export default simulator({
   label: "sim:brings-surface",
   title: "Bring's Surface Simulator",
-  html: "simulators/brings_surface.html",
+  html: "fsh-guts/deprecated/simulators/brings_surface.html",
   uses: ["def:quaternionic-spectral-resolvents"],
   tags: ["brings-surface", "spectral-resolvent", "3d", "simulation"],
   defaultView: {

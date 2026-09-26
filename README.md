@@ -386,17 +386,17 @@ The **Folio Assistant** (`folio-assistant/`) is the platform layer providing:
 
 | Simulator | File |
 |-----------|------|
-| Beta Decay Braid | [`simulators/beta_decay_braid.html`](simulators/beta_decay_braid.html) |
-| Beta Decay Halflife | [`simulators/beta_decay_halflife.html`](simulators/beta_decay_halflife.html) |
-| Brings Surface | [`simulators/brings_surface.html`](simulators/brings_surface.html) |
-| Double Slit | [`simulators/double_slit.html`](simulators/double_slit.html) |
-| Double Slit Simulator | [`simulators/double_slit_simulator.html`](simulators/double_slit_simulator.html) |
-| Empty | [`simulators/empty.html`](simulators/empty.html) |
-| Knot Atom Diagrams | [`simulators/knot_atom_diagrams.html`](simulators/knot_atom_diagrams.html) |
-| Knot Periodic Table | [`simulators/knot_periodic_table.html`](simulators/knot_periodic_table.html) |
-| Q Double Slit | [`simulators/q_double_slit.html`](simulators/q_double_slit.html) |
-| Quantum Brings Surface | [`simulators/quantum_brings_surface.html`](simulators/quantum_brings_surface.html) |
-| Valley Stability | [`simulators/valley_stability.html`](simulators/valley_stability.html) |
+| Beta Decay Braid | [`fsh-guts/deprecated/simulators/beta_decay_braid.html`](fsh-guts/deprecated/simulators/beta_decay_braid.html) |
+| Beta Decay Halflife | [`fsh-guts/deprecated/simulators/beta_decay_halflife.html`](fsh-guts/deprecated/simulators/beta_decay_halflife.html) |
+| Brings Surface | [`fsh-guts/deprecated/simulators/brings_surface.html`](fsh-guts/deprecated/simulators/brings_surface.html) |
+| Double Slit | [`fsh-guts/deprecated/simulators/double_slit.html`](fsh-guts/deprecated/simulators/double_slit.html) |
+| Double Slit Simulator | [`fsh-guts/deprecated/simulators/double_slit_simulator.html`](fsh-guts/deprecated/simulators/double_slit_simulator.html) |
+| Empty | [`fsh-guts/deprecated/simulators/empty.html`](fsh-guts/deprecated/simulators/empty.html) |
+| Knot Atom Diagrams | [`fsh-guts/deprecated/simulators/knot_atom_diagrams.html`](fsh-guts/deprecated/simulators/knot_atom_diagrams.html) |
+| Knot Periodic Table | [`fsh-guts/deprecated/simulators/knot_periodic_table.html`](fsh-guts/deprecated/simulators/knot_periodic_table.html) |
+| Q Double Slit | [`fsh-guts/deprecated/simulators/q_double_slit.html`](fsh-guts/deprecated/simulators/q_double_slit.html) |
+| Quantum Brings Surface | [`fsh-guts/deprecated/simulators/quantum_brings_surface.html`](fsh-guts/deprecated/simulators/quantum_brings_surface.html) |
+| Valley Stability | [`fsh-guts/deprecated/simulators/valley_stability.html`](fsh-guts/deprecated/simulators/valley_stability.html) |
 
 <!-- folio:simulators:end -->
 
@@ -470,7 +470,7 @@ The compute pipeline is layered into reusable packages so external researchers c
 | `content/quantum-observable-universe/lean/` | Lean 4 formalization (`lakefile.toml`, `QOU/`) |
 | `folio-assistant/` | Platform: MCP server, auth, viewer, chat UI |
 | `folio-assistant/viewer/` | Paper viewer SPA + Pyodide cache |
-| `simulators/` | Interactive HTML/WebGL visualizations |
+| `fsh-guts/deprecated/` | PARKED pre-Skills/Tools client-side rendering: the 11 interactive HTML/WebGL simulators and `ruby-3d-viewer.html`. Moved 2026-09-26 on owner ruling (static just-the-docs render instead); kept, not deleted — "we can pull out later if we need". |
 | `computations/` | Python compute scripts + `*.witness.json` (in-repo Layer 3) |
 | `qou-mass/` | `qou-mass` PyPI package — external-researcher facade (Layer 3 alt.) |
 | `tools/qou-substrate/` | `qou-substrate` PyPI package — q₀, precision, WitnessBuilder (Layer 2a) |

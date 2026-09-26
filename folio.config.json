@@ -2,19 +2,24 @@
   "contentType": "paper",
   "adapter": "paper",
   "adapterModule": "folio-assistant/adapters/paper/index.ts",
-  "qaAxes": ["archimedean-wall"],
+  "qaAxes": [
+    "archimedean-wall"
+  ],
   "feedbackDir": ".folio-feedback",
   "viewer": {
     "dir": "folio-assistant/viewer",
-    "port": 8080
+    "port": 8080,
+    "_comment": "The platform's client-side viewer SPA -- the 'heavy rendering' the owner does not want. NOT moved to fsh-guts because it is not qou's file: it lives in the platform checkout behind the folio-assistant/ symlink. Dropping this block is the qou-side half of that decision and belongs to qou-w5av."
   },
   "simulators": {
-    "dir": "simulators",
-    "pyodideCache": true
+    "dir": "fsh-guts/deprecated/simulators",
+    "pyodideCache": true,
+    "_comment": "PARKED. pyodideCache is the heavy client-side path (Pyodide in a Service Worker); it is meaningless under a static docs render and is kept only so this block still round-trips."
   },
   "readme": {
     "linkStyle": "blob",
     "publishRef": "gh-pages",
     "pagesBaseUrl": "https://litlfred.github.io/qou"
-  }
+  },
+  "_deprecated_client_side_comment": "OWNER RULING 2026-09-26: 'i dont want the qou heavy rendering, the one with lots of client side rendering etc. i want the existing folio-asst just the docs rendering pipeline and what qou had been using. put heavy client side stuff (pre Skills/Tools) it in fsh-guts/ under deprecated or so' + 'we can pull out later if we need.' So the 11 interactive HTML simulators and ruby-3d-viewer.html moved to fsh-guts/deprecated/ and the paths below point there. They are PARKED, not deleted -- AGENTS.md rule 9 and the owner's own 'pull out later'. Whether these two blocks should be dropped from this file ENTIRELY (rather than repointed) is part of the just-the-docs pipeline decision, bean qou-w5av: under a static docs render neither a viewer SPA nor a Pyodide cache is used. Repointed rather than dropped here so nothing dangles and the pinned validate baseline does not move."
 }
