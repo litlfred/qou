@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T17:57:00Z
-updated_at: 2026-09-06T09:25:33Z
+updated_at: 2026-09-26T14:17:16Z
 ---
 
 Successor to qou-vndn, whose premise ("Hecke radical vanishing") is refuted at
@@ -187,3 +187,45 @@ So the honest position is: **prerequisite (2) has its H-level half constructed
 and its descent still open**, and (1) is untouched. Left in-progress at
 unchanged status — this is real Lean work, not a triage item, and nothing here
 shortens it beyond removing one construction from its critical path.
+
+
+## 2026-09-26 — the `wtrace` / `trLim` half of this is now stated (PR #7458)
+
+This bean's premise is unchanged and it **stays open**: `WenzlTowerStep` over the
+`TL_n` quotient is not discharged. What *has* landed is the piece a corpus-grep
+identified as the one thing missing from the otherwise-settled picture — the
+negative **stated about the carriers the tower results actually use**, rather
+than abstractly:
+
+```lean
+OcneanuTraceNotFaithful.exists_nonzero_wtrace_orthogonal   -- H_3(q), wtrace
+HeckeColimitNotFaithful.exists_nonzero_trLim_orthogonal    -- HeckeLim, trLim
+HeckeColimitNotFaithful.not_isFaithful_trLim
+```
+
+Assembled from this bean's own bricks plus two facts already on `main` —
+`wtrace` is *defined* as the Frobenius sum (`wtrace_apply` is `rfl`) and
+`ocneanuWeight_conventionD_eq_zero_of_three_rows` is unconditional. Nothing here
+re-derives `MarkovGramDegenerate` or `MarkovTraceQuotient`; only one direction and
+one element were needed.
+
+**What this gives the WenzlTowerStep work.** The new
+`MathlibExt/MarkovTraceRadical.lean` carries the radical as a first-class object
+at the abstract `MarkovTrace` level — `rad`, `IsFaithful`, the two-sided-ideal
+lemmas, `one_notMem_rad`, and the lifting chain
+`tr_mul_sandwich_of_orthogonal` → `tr_mul_eq_zero_of_mem_sup` →
+`tr_mul_eq_zero_of_mem_shiftedUpTo` → `mem_rad_of_exhausted`. That last chain is
+`TowerSpan`-driven and is probably reusable for the quotient side: it is the
+statement that orthogonality relative to one filtration stage propagates to all
+higher stages, which is the tower-compatibility this bean's brick 3
+(`TLTowerRadicalDescent`) currently gets only *conditionally*, resting on the
+open `HeckeConditionalExpectation` class. The version here needs no such class —
+only cyclicity, Markov, and `TowerSpan` — but it gives the FORWARD direction only,
+not the reflection `ι a ∈ rad ↔ a ∈ rad` that brick 3 states. Worth checking
+whether brick 3's forward half can be discharged from it and the class narrowed
+to the converse.
+
+Bean `qou-r7kp` (completed) has the full record. Note also `qou-6moa`: AGENTS.md
+cites `markovWeights_eq_jones_of_threeRow_eq_zero` for its own hypothesis, and
+that declaration is cited at ~35 corpus sites, so anything in this arc quoting it
+for `y_(1³) = 0` under D should be re-read.
