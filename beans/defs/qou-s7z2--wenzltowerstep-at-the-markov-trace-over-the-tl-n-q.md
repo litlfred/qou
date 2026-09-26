@@ -422,3 +422,44 @@ off-block branch replaced by `rfl` (confirming block-diagonality does real work)
 
 **Still NOT closed.** `WenzlTowerStep` and `HeckeGramFactorial`'s open `T_w`-basis
 determinant are untouched by any of the radical arc (rule 13a).
+
+## 2026-09-26 — the radical is now an IDEAL identity, and the isomorphism is still open
+
+`QOU/SchurWeyl/WtraceRadicalIdeal.lean` (7 declarations, no `sorry`, `lean`-direct RC=0,
+axioms `[propext, Classical.choice, Quot.sound]`):
+
+    traceRadicalIdeal (wtrace q hq0 hq2 n) (wtrace_cyclic q hq0 hq2 n)
+      = TwoSidedIdeal.ker (twoRowProduct q hq0 hq2 n)
+
+for every `n`, plus `twoRowProduct_surjective` and `one_notMem_traceRadicalIdeal`.
+
+**Why it is not bookkeeping over `mem_rad_iff_twoRow_blocks_vanish`.** That theorem
+characterises membership in a `Set` and says nothing about the set being closed under
+anything. "`H_n/rad` is TL" needs `rad` to be an **ideal** and needs a **map** whose kernel
+it is. The closure properties were already in `QBeta.MarkovTraceQuotient`; the missing
+piece was the identification with a kernel. The work is the index bridge — the iff
+quantifies over **diagrams** with `n+1` cells, `twoRowProduct` over **partitions** of
+`n+1`; `exists_partitionShape_eq` + `subst` (not transport: `d` is a variable, so no `HEq`),
+then proof irrelevance on the residual cardinality proofs.
+
+**🛑 The isomorphism is NOT claimed and is NOT closed.** `H_n/rad ≅ ∏_{ℓ(λ)≤2} M_{f^λ}`
+needs a lift out of `TwoSidedIdeal.ringCon.Quotient`, and the **pinned Mathlib has no
+first-isomorphism lemma at that generality** — grepped `Mathlib/RingTheory/Congruence/` and
+`Mathlib/RingTheory/TwoSidedIdeal/`: `ker`, `mem_ker`, `ker_eq_bot`, and no `lift`, no
+`quotientKerEquivOfSurjective`. So the three artifacts recording the iso as open — the
+content block `mass-theory/hecke-radical-is-temperley-lieb.md`,
+`MathlibExt/HeckeToTemperleyLieb.lean` §"What this file does NOT claim", and bean
+`qou-0cyu` item G3 — **all stay correct**; nothing here makes them stale. The dimension
+count `dimHLF_two_row_sq_sum` is a fact about the *target* of `twoRowProduct`; connecting it
+to the `finrank` of a quotient type IS that missing isomorphism.
+
+**A mutant of mine that PASSED, recorded because it measures nothing.** M5 tried to ignore
+`hrow` in the index bridge by writing `⟨lam₀, by omega⟩`, and compiled — after `subst`,
+`hrow` sits in the local context and `omega` discharges the obligation *from it*. The
+mutation swapped a tactic for a term without removing the dependency. Likewise M2 (delete
+the `hgen` binder) fails on `Unknown identifier hgen`, i.e. syntactically, so it is not
+evidence that `hgen` is load-bearing. Four valid mutants (`rowLen 3`; `.symm` on the final
+`exact`; the surjectivity witness extended by `0`; `subst` dropped) each fail.
+
+**Still NOT closed**, unchanged: `WenzlTowerStep`, and `HeckeGramFactorial`'s open
+`T_w`-basis determinant. Rule 13a.
