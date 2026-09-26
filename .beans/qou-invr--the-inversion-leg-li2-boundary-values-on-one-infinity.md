@@ -1,7 +1,7 @@
 ---
 # qou-invr
 title: 'CLOSED: the inversion leg for w₁ = 2.24698 — extend ≡ Re L is proved in all three regimes'
-status: done
+status: completed
 type: task
 priority: high
 tags:
@@ -10,7 +10,7 @@ tags:
     - qou-rstq
     - 5two
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-08T20:10:00Z
+updated_at: 2026-09-26T11:03:16Z
 ---
 
 ## ✅ CLOSED 2026-08-08 — and so is `qou-rstq` item 4

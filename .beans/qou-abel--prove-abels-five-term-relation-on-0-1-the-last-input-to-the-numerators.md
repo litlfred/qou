@@ -1,6 +1,6 @@
 ---
 # qou-abel
-title: "Prove Abel's five-term relation on (0,1) — the LAST open input to the level-7 numerators"
+title: Prove Abel's five-term relation on (0,1) — the LAST open input to the level-7 numerators
 status: completed
 type: task
 priority: high
@@ -11,8 +11,8 @@ tags:
     - lean
     - mathlib-gap
 created_at: 2026-08-08T00:20:00Z
-updated_at: 2026-08-08T00:20:00Z
-parent: 0yqu
+updated_at: 2026-09-26T11:07:05Z
+parent: qou-0yqu
 ---
 
 

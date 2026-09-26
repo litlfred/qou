@@ -1,11 +1,11 @@
 ---
 # qou-rc7b
 title: 'BUILD COVERAGE: `lake build` reaches only 853 of 1618 QOU Lean modules — 47% never compiled'
-status: done
+status: todo
 type: task
 priority: high
 created_at: 2026-08-08T09:29:19Z
-updated_at: 2026-08-08T09:29:49Z
+updated_at: 2026-09-26T11:03:25Z
 ---
 
 

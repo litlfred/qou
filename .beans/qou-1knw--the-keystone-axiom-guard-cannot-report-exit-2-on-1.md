@@ -1,10 +1,11 @@
 ---
 # qou-1knw
 title: 'The keystone axiom guard cannot report: exit 2 on ~104 stale/missing oleans in its own cone'
-status: done
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-06T04:38:59Z
-updated_at: 2026-09-06T04:38:59Z
+updated_at: 2026-09-26T11:03:22Z
 ---
 
 

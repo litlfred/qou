@@ -1,7 +1,7 @@
 ---
 # qou-glbl
 title: 'GAP A CLOSED, UNCONDITIONALLY: envelopeS_total_concrete_final proves S(pi) = S(0) + pi^2 with NO hypotheses.'
-status: done
+status: completed
 type: task
 priority: high
 tags:
@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-10T01:30:00Z
+updated_at: 2026-09-26T11:03:16Z
 ---
 
 ## What is open

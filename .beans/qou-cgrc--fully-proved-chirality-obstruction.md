@@ -1,14 +1,14 @@
 ---
 # qou-cgrc
 title: 'DONE — fully proved, input-independent chirality obstruction (no transcription dependency): ChiralityGradedCount.lean'
-status: done
+status: completed
 type: task
 priority: high
 tags:
     - g3-aomega
     - route-c
 created_at: 2026-08-11T10:50:00Z
-updated_at: 2026-08-11T10:50:00Z
+updated_at: 2026-09-26T11:03:16Z
 parent: qou-rtec
 ---
 

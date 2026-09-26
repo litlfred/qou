@@ -1,14 +1,14 @@
 ---
 # vrfw
 title: 'GAP (fixed): ⟨…, rfl⟩ witnesses were invisible to proof-no-unused-hypothesis-rfl — the gate could not see what the standalone audit flags'
-status: done
+status: completed
 type: bug
 priority: high
 tags:
     - lean
     - vacuity
 created_at: 2026-08-08T16:20:00Z
-updated_at: 2026-08-08T16:20:00Z
+updated_at: 2026-09-26T11:03:15Z
 ---
 
 Claimed and finished on `claude/vacuity-anon-rfl-witness-2026-08-08`.

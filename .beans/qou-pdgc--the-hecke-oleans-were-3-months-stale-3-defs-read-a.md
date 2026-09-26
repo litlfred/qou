@@ -1,10 +1,11 @@
 ---
 # qou-pdgc
 title: 'The Hecke oleans were 3 months stale: 3 defs read as AXIOMS and wenzlBridge carried a retracted form'
-status: done
+status: todo
 type: task
+priority: normal
 created_at: 2026-09-05T17:29:43Z
-updated_at: 2026-09-05T17:29:43Z
+updated_at: 2026-09-26T11:03:28Z
 ---
 
 

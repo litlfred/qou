@@ -1,10 +1,11 @@
 ---
 # qou-xzd5
 title: 'confinement_categorical: MarkovTraceContext has NO instance anywhere — may be vacuously true, not unclosable'
-status: done
+status: todo
 type: task
+priority: normal
 created_at: 2026-08-09T11:07:51Z
-updated_at: 2026-08-09T11:07:51Z
+updated_at: 2026-09-26T11:03:27Z
 ---
 
 

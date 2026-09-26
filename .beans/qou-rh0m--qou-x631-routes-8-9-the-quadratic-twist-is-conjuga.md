@@ -1,10 +1,11 @@
 ---
 # qou-rh0m
 title: 'qou-x631 routes 8-9: the quadratic twist is conjugation -- it proves the odd-class vanishing but is sign-blind'
-status: done
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-07T04:29:23Z
-updated_at: 2026-09-07T04:29:23Z
+updated_at: 2026-09-26T11:03:19Z
 ---
 
 

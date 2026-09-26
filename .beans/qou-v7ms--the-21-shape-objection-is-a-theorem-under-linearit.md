@@ -1,10 +1,11 @@
 ---
 # qou-v7ms
 title: 'The (2,1) shape objection is a theorem under linearity: trace-factoring functionals at one partition are 1-dimensional'
-status: done
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-05T18:25:55Z
-updated_at: 2026-09-05T18:25:55Z
+updated_at: 2026-09-26T11:03:21Z
 ---
 
 

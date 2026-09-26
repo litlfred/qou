@@ -1,14 +1,14 @@
 ---
 # qou-m1fx
 title: 'M1 UNBLOCKED from source: eq (18) rotated index is the FUGACITY basis sum_e I(m,e) zeta^e — my probe used the wrong index object'
-status: done
+status: completed
 type: task
 priority: high
 tags:
     - g3-aomega
     - route-c
 created_at: 2026-08-11T10:50:00Z
-updated_at: 2026-08-11T10:50:00Z
+updated_at: 2026-09-26T11:03:17Z
 parent: qou-rtec
 ---
 

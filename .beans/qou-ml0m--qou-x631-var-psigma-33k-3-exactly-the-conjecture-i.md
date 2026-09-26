@@ -1,10 +1,11 @@
 ---
 # qou-ml0m
 title: 'qou-x631: Var_P(Sigma_3)=3(k)_3 exactly; the conjecture is a correlation coefficient near -0.164'
-status: done
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-07T06:16:44Z
-updated_at: 2026-09-07T06:16:44Z
+updated_at: 2026-09-26T11:03:20Z
 ---
 
 

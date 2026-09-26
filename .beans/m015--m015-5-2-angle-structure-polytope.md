@@ -10,8 +10,8 @@ tags:
     - angle-structures
     - "5_2"
 created_at: 2026-08-09T19:15:46Z
-updated_at: 2026-09-06T08:16:02Z
-parent: krvm
+updated_at: 2026-09-26T11:07:08Z
+parent: qou-krvm
 ---
 
 The corpus has angle-structure polytopes for **m004** (figure-eight,

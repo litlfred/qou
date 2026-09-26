@@ -1,6 +1,6 @@
 ---
 # qou-fivt
-title: 'Prove the three numerators 17, 5, −1 by five-term/Abel — the route that AVOIDS the Bloch group'
+title: Prove the three numerators 17, 5, −1 by five-term/Abel — the route that AVOIDS the Bloch group
 status: completed
 type: task
 priority: high
@@ -10,8 +10,8 @@ tags:
     - 5two
     - lean
 created_at: 2026-08-07T18:05:00Z
-updated_at: 2026-08-07T19:20:00Z
-parent: 0yqu
+updated_at: 2026-09-26T11:07:06Z
+parent: qou-0yqu
 ---
 
 

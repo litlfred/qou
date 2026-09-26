@@ -1,7 +1,7 @@
 ---
 # qou-f64j
-title: 'DONE — the diagnosis was WRONG. Complex literals were already covered; CALL ARGUMENTS were not, and the guard reported CLEAN on seven of them'
-status: done
+title: DONE — the diagnosis was WRONG. Complex literals were already covered; CALL ARGUMENTS were not, and the guard reported CLEAN on seven of them
+status: completed
 type: bug
 priority: medium
 tags:
@@ -10,7 +10,7 @@ tags:
     - qou-f64g
     - precision
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-10T03:10:00Z
+updated_at: 2026-09-26T11:03:24Z
 ---
 
 ## ✅ DONE 2026-08-10 — and this bean's own diagnosis was wrong

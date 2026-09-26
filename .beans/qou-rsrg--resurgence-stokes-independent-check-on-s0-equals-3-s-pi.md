@@ -2,7 +2,7 @@
 # qou-rsrg
 title: 'SEPARATE LANE (not a dependency): resurgence / Stokes as an INDEPENDENT check on S(0) = 3·S(π) = −3π²/2'
 status: todo
-type: research
+type: task
 priority: low
 tags:
     - 5two
@@ -10,7 +10,7 @@ tags:
     - independent-check
     - qou-0yqu
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-08T17:30:00Z
+updated_at: 2026-09-26T11:03:29Z
 ---
 
 ## What this is, and what it is NOT

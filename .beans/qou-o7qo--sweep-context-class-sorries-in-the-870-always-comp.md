@@ -1,10 +1,11 @@
 ---
 # qou-o7qo
 title: Sweep context-class sorries in the 870 always-compiled modules — never audited
-status: done
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-09T10:50:58Z
-updated_at: 2026-08-09T10:50:58Z
+updated_at: 2026-09-26T11:03:21Z
 ---
 
 

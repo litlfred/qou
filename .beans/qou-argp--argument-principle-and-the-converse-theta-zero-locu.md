@@ -1,11 +1,11 @@
 ---
 # qou-argp
-title: 'Argument principle on an annulus — the single missing lemma for the converse theta zero locus'
-status: done
+title: Argument principle on an annulus — the single missing lemma for the converse theta zero locus
+status: todo
 type: task
 priority: high
 created_at: 2026-08-08T08:00:00Z
-updated_at: 2026-08-08T18:00:00Z
+updated_at: 2026-09-26T11:03:25Z
 ---
 
 Split out of `qou-c1ln` row 2, which is otherwise closed. Everything the

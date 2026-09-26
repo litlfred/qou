@@ -1,11 +1,11 @@
 ---
 # qou-c1wr
-title: 'C1 connection work is invisible to the manifest graph and has no consumer'
-status: done
+title: C1 connection work is invisible to the manifest graph and has no consumer
+status: completed
 type: task
 priority: high
 created_at: 2026-08-07T22:20:00Z
-updated_at: 2026-08-08T09:00:00Z
+updated_at: 2026-09-26T11:03:15Z
 ---
 
 **Corpus-grep result (2026-08-07).** The entire C1 connection arc lives in

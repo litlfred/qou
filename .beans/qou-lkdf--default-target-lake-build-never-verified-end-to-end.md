@@ -1,7 +1,7 @@
 ---
 # qou-lkdf
 title: 'ANSWERED: the default target BUILDS (4390 jobs, 0 errors) — and its closure still contains 11 sorries'
-status: done
+status: completed
 type: task
 priority: medium
 tags:
@@ -10,7 +10,7 @@ tags:
     - ci
     - qou-lkrd
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T10:55:00Z
+updated_at: 2026-09-26T11:03:24Z
 ---
 
 ## ✅ ANSWERED 2026-08-09 — and the green is the less interesting half

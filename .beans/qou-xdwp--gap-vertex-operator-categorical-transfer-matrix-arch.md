@@ -1,3 +1,12 @@
+---
+# qou-xdwp
+title: ""
+status: todo
+type: task
+priority: normal
+created_at: 2026-09-26T09:57:34Z
+updated_at: 2026-09-26T11:03:26Z
+---
 
 
 ## 🟩 BOTH architectural blockers are resolved — verified at the files (2026-09-13, bean qou-g5sp)

@@ -1,10 +1,11 @@
 ---
 # qou-8hjy
 title: QOU/Machinery/MarkovTraceH4.lean takes >1h to compile — now the critical path of every full build
-status: done
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-08T23:12:53Z
-updated_at: 2026-08-08T23:12:53Z
+updated_at: 2026-09-26T11:03:20Z
 ---
 
 

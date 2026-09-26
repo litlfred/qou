@@ -1,13 +1,14 @@
 ---
 # fwr10
-title: 'completeness pass over blocks that declare no prerequisites'
-status: open
+title: completeness pass over blocks that declare no prerequisites
+status: todo
 type: task
 priority: normal
 created_at: 2026-08-10T03:35:00Z
-updated_at: 2026-08-15T13:00:00Z
+updated_at: 2026-09-26T11:03:26Z
 parent: fwr6
 ---
+
 Branch `claude/fwr10-completeness-pass-2026-08-10`. `fwr6` item 6.
 
 The forward-reference arc was about edges that exist and point the wrong way.

@@ -1,13 +1,15 @@
 ---
 # qou-mfst
 title: 'INFRA: lake-manifest.json still lists doc-gen4 after qou-dg4x commented the require out — FIXED ON MAIN'
-status: done
+status: completed
 type: task
 priority: low
 tags:
     - lean
     - infra
     - lakefile
+created_at: 2026-09-04T21:50:32Z
+updated_at: 2026-09-26T11:03:24Z
 ---
 
 ## RESOLVED 2026-08-08 — fixed on main, not by me

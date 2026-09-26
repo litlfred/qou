@@ -1,7 +1,7 @@
 ---
 # qou-rtm0
-title: 'Route C M0 (bounded, Lean) — formalize the bar-involution action on the certified Stokes matrices S+(0)/S-(0) and prove the {3,4} split IS its bar-eigenspace decomposition'
-status: done
+title: Route C M0 (bounded, Lean) — formalize the bar-involution action on the certified Stokes matrices S+(0)/S-(0) and prove the {3,4} split IS its bar-eigenspace decomposition
+status: completed
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - g3-aomega
     - route-c
 created_at: 2026-08-11T00:45:00Z
-updated_at: 2026-08-11T10:05:00Z
+updated_at: 2026-09-26T11:03:17Z
 parent: qou-rtec
 ---
 

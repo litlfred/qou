@@ -1,11 +1,11 @@
 ---
 # qou-7ylg
 title: 'BUG: main is RED on validate — alg:delta-lambda-closure cites only a remark'
-status: done
+status: todo
 type: bug
 priority: high
 created_at: 2026-08-07T10:49:35Z
-updated_at: 2026-08-21T22:06:16Z
+updated_at: 2026-09-26T11:03:25Z
 ---
 
 Reproduced on origin/main (not a branch artifact): 12 issues, 2 of them ERRORS.

@@ -1,12 +1,12 @@
 ---
 # sp05
 title: 'C: specht_pairwise_noniso (SpechtClassification.lean:414) — distinct shapes non-isomorphic'
-status: done
+status: completed
 type: task
 priority: low
-parent: sp00
 created_at: 2026-07-05T16:30:00Z
-updated_at: 2026-07-05T16:30:00Z
+updated_at: 2026-09-26T11:03:23Z
+parent: sp00
 ---
 
 Needs specht_isSimple (Phase A) + a distinguishing invariant. Classification leg.
