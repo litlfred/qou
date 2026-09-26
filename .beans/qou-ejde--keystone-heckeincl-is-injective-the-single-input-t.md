@@ -1,11 +1,11 @@
 ---
 # qou-ejde
 title: 'KEYSTONE: heckeIncl is injective -- the single input to the colimit bridge (route mapped, all pieces sorry-free on main)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-12T20:55:31Z
-updated_at: 2026-09-26T10:44:11Z
+updated_at: 2026-09-26T11:15:25Z
 ---
 
 Parent: qou-0fmb (plan), epic qou-08a2. Opened 2026-09-12 after the plan re-scope
@@ -284,3 +284,34 @@ question that #7442 names as the surviving keystone is NOT answered by this.
 Scope inherited: R, q != 0, NotRootOfUnity q -- generic q over a characteristic-zero
 field, because finrank_hecke_eq_factorial needs semisimplicity. At a root of unity
 the proof fails rather than weakens. Every downstream consequence inherits it.
+
+
+--------
+
+**2026-09-26 — MERGED to main as PR #7454 (rebase-merge, commits e82d718b9e / 1c79876082 /
+8d7a36ecb8). `heckeIncl_injective` is in the product, sorry-free. COMPLETING this bean.**
+
+Re-verified on main after the merge: both files `lean -DautoImplicit=false -s 65536` exit 0.
+
+**One claim of this bean is REFUTED by the follow-on work, and it is this bean's own
+"what it unlocks" list.** The Why-this-is-the-keystone section says injectivity gives, third,
+"the FILTRATION is strict, because dim Hecke n = (n+1)! is proved and the levels then embed
+properly". Measured in PR #7456: non-surjectivity of `heckeIncl` needs NO injectivity at all --
+`finrank(range) <= finrank H_m = (m+1)! < (m+2)! = finrank H_{m+1}`, first step
+`LinearMap.finrank_range_le`, which has no injectivity hypothesis. The independence is enforced
+structurally there: `HeckeTowerStrict` does not import `HeckeInclInjective` and compiles RC=0.
+
+So of the three things this bean said injectivity unlocks, the 2026-09-13 note already withdrew
+the first two (the colimit and the trace descent need no injectivity) and #7456 withdraws the
+third. What injectivity actually buys is the SHARP value `finrank(range) = (m+1)!`
+(`finrank_range_heckeIncl`), which is a real strengthening but not the strictness.
+
+That does not make the theorem less worth having -- it is the faithfulness of the tower at the
+level of the inclusion, and it is what pins the image dimension exactly. It does mean this bean's
+framing of WHY was wrong in all three of its stated consequences, which is worth recording where
+the next reader will see it.
+
+Completing rather than leaving open: the subject is a proved sorry-free theorem in the product,
+not an open conjecture, so rule 13a does not hold it. The faithfulness question that #7442 names
+as the surviving keystone -- whether `ofLim n` is injective for `heckeColimitMarkovTrace`, and
+whether `trLim` is faithful -- is NOT this bean and remains untouched.
