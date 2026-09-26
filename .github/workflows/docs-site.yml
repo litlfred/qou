@@ -1,0 +1,72 @@
+name: docs-site
+
+# Builds the qou documentation site (just-the-docs over `docs/`) and publishes it
+# to the `gh-pages` branch under `docs/`.
+#
+# MANUAL-ONLY, AND THAT IS NOT AN OVERSIGHT.
+#
+# CI auto-triggers are disabled repo-wide under the owner directive of
+# 2026-06-30 (GitHub Actions billing causes 2-3 s setup-phase failures on every
+# push). `build.yml` carries the same `workflow_dispatch:`-only shape and the
+# same note. Do NOT add a `push:` trigger here to "make it automatic" — the
+# platform's own docs-site.yml is push-triggered because that repo's billing is
+# not in this state, and copying that trigger across is the mistake this comment
+# exists to prevent.
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Publish to gh-pages (false = build and upload an artifact only)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Front matter is injected into a STAGING copy. Jekyll renders a .md only
+      # if it has front matter; 3037 of 3038 here do not, and `defaults:` does
+      # not help because a file without front matter is not a page. The repo's
+      # dated audit records are deliberately left unmodified.
+      - name: Stage docs with injected front matter
+        run: |
+          python3 scripts/docs-site-frontmatter.py --check
+          python3 scripts/docs-site-frontmatter.py --stage "$RUNNER_TEMP/docs-stage"
+          cp docs/_config.yml "$RUNNER_TEMP/docs-stage/_config.yml"
+
+      - name: Build Jekyll site
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ${{ runner.temp }}/docs-stage
+          destination: ./_site
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: docs-site
+          path: ./_site
+          retention-days: 7
+
+      # gh-pages currently serves the paper build's output at the root. This
+      # writes only under docs/ so the two can coexist; `publish.yml` owns the
+      # root and this must not clobber it.
+      - name: Publish to gh-pages/docs
+        if: ${{ inputs.publish }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin gh-pages --depth 1
+          git worktree add /tmp/ghp origin/gh-pages
+          rm -rf /tmp/ghp/docs
+          mkdir -p /tmp/ghp/docs
+          cp -r ./_site/. /tmp/ghp/docs/
+          touch /tmp/ghp/.nojekyll
+          cd /tmp/ghp
+          git add -A docs .nojekyll
+          git commit -m "docs-site: rebuild from ${GITHUB_SHA::12}" || { echo "no change"; exit 0; }
+          git push origin HEAD:gh-pages
