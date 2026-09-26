@@ -53,7 +53,7 @@ from decimal import Decimal, ROUND_HALF_UP, getcontext
 getcontext().prec = 200   # witness values run to ~60 digits; default 28 raises InvalidOperation
 import json, pathlib, re, subprocess, sys, tempfile
 
-DEFAULT_BEAN = '.beans/qou-za3q--magnus-omega2-probes-call-the-plancherel-weight-y.md'
+DEFAULT_BEAN = 'beans/defs/qou-za3q--magnus-omega2-probes-call-the-plancherel-weight-y.md'
 DEFAULT_WITNESSES = [
     'computations/deltalambda/magnus-omega2-weight-family-robustness.witness.json',
     'computations/deltalambda/deuteron-magnus-omega2-sign.witness.json',
