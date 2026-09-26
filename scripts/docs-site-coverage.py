@@ -31,8 +31,19 @@ A source is counted COVERED if any of its admissible outputs exists.
 Usage:
     docs-site-coverage.py --stage <dir> --site <dir> [--floor <int>]
 
-`--floor` is the minimum number of covered sources required. Omit it to report
-without failing (exit 0 unless the trees are missing).
+`--floor` is the minimum number of covered sources required. `--max-missing` caps
+how many sources may produce no page, and is the stronger of the two: a floor on
+`covered` RISES as documents are added, so a newly-added source that renders to
+nothing slips past it, whereas a cap on misses does not. Omit both to report
+without failing.
+
+WHAT THIS FOUND ON ITS FIRST RUN — the value of grouping by directory
+--------------------------------------------------------------------
+Run 36267907685 reported every miss under one directory: `docs/audits/_deprecated/`,
+which holds **exactly the 65** files the page count was short. Jekyll skips any
+underscore-prefixed directory at ANY depth, and `docs/_config.yml` listed only
+`_archive` under `include:`. A page count could never have said that; a per-source
+list grouped by directory said it on the first run.
 """
 from __future__ import annotations
 import argparse, os, sys
@@ -64,6 +75,8 @@ def main() -> int:
     ap.add_argument("--stage", required=True)
     ap.add_argument("--site", required=True)
     ap.add_argument("--floor", type=int, default=None)
+    ap.add_argument("--max-missing", type=int, default=None,
+                    help="fail if more than N sources produced no page")
     ap.add_argument("--list", type=int, default=40, help="how many misses to print")
     a = ap.parse_args()
 
@@ -97,10 +110,18 @@ def main() -> int:
         for m in missing[: a.list]:
             print(f"  {m}")
 
+    rc = 0
     if a.floor is not None and covered < a.floor:
         print(f"\nCOVERAGE REGRESSION: {covered} covered < floor {a.floor}", file=sys.stderr)
-        return 1
-    return 0
+        rc = 1
+    # `--max-missing` is the invariant that actually bites: a floor on `covered`
+    # rises when documents are ADDED, so a newly-added source that renders to
+    # nothing slips past it. A cap on MISSES does not.
+    if a.max_missing is not None and len(missing) > a.max_missing:
+        print(f"\nCOVERAGE FAILURE: {len(missing)} sources produced no page "
+              f"(max allowed {a.max_missing})", file=sys.stderr)
+        rc = 1
+    return rc
 
 
 if __name__ == "__main__":

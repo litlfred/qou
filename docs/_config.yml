@@ -69,3 +69,16 @@ exclude:
 # would have changed nothing.
 include:
   - _archive
+  # `docs/audits/_deprecated/` (65 files) is included for EXACTLY the reason
+  # `_archive` is, and its own README says so in its own words: it "keeps the
+  # documents discoverable for archaeology while removing them from the
+  # top-level docs/audits/ list". That is `nav_exclude`, not "do not render" —
+  # and 13 files reference paths under it. Leaving it out is what produced the
+  # 65-page gap in run 36266675464 (3017 rendered of 3082 sources); the misses
+  # were 65 files and this directory holds exactly 65.
+  #
+  # Jekyll skips any underscore-prefixed directory, at ANY depth, and dropping
+  # an `exclude:` entry does NOT undo that — `include:` is required. Both
+  # underscore directories under docs/ are now listed; `find docs -type d
+  # -name '_*'` is the check if a third appears.
+  - _deprecated
