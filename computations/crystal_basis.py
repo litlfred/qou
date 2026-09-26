@@ -660,7 +660,7 @@ if __name__ == "__main__":
 
     # Emit witness via WitnessBuilder (canonical ComputationWitness
     # schema; matches scripts/audit-wiring.ts expectations and
-    # folio-assistant/schemas/types.ts).
+    # folio-assistant/cat-harness/schemas/types.ts).
     from witness_base import WitnessBuilder
 
     w = (WitnessBuilder("crystal-basis-primitives", engine="python")

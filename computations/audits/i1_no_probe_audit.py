@@ -70,7 +70,7 @@ CONTENT_ROOT = REPO_ROOT / "content"
 WITNESS_DIR = HERE.parent
 
 # lean.ref package prefix → Lake library root (mirrors
-# folio-assistant/schemas/lean-packages.ts).
+# folio-assistant/cat-harness/schemas/lean-packages.ts).
 LEAN_PKG_ROOTS = {
     "qou": CONTENT_ROOT / "quantum-observable-universe" / "lean",
     "ugb": CONTENT_ROOT / "unital-groebner-bases" / "lean",

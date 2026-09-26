@@ -14,7 +14,7 @@
  *      package name to the paper directory and default library name.
  *   3. Update `defaultTargets` in the root `lakefile.toml`.
  *
- * @module folio-assistant/schemas/lean-packages
+ * @module folio-assistant/cat-harness/schemas/lean-packages
  */
 
 export interface LeanPackage {

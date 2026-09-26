@@ -139,7 +139,7 @@ def test_t6_extracts_per_A_correctly():
 
 
 def test_witness_uses_canonical_computedAt_field():
-    """Per repo convention (folio-assistant/schemas/types.ts +
+    """Per repo convention (folio-assistant/cat-harness/schemas/types.ts +
     migrate_witness_timestamp_to_computedAt.py), the canonical
     timestamp field is `computedAt`, not `timestamp`."""
     w = _ensure_witness()

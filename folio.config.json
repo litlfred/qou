@@ -1,13 +1,13 @@
 {
   "contentType": "paper",
   "adapter": "paper",
-  "adapterModule": "folio-assistant/adapters/paper/index.ts",
+  "adapterModule": "folio-assistant/cat-harness/adapters/paper/index.ts",
   "qaAxes": [
     "archimedean-wall"
   ],
   "feedbackDir": ".folio-feedback",
   "viewer": {
-    "dir": "folio-assistant/viewer",
+    "dir": "folio-assistant/cat-harness/viewer",
     "port": 8080,
     "_comment": "The platform's client-side viewer SPA -- the 'heavy rendering' the owner does not want. NOT moved to fsh-guts because it is not qou's file: it lives in the platform checkout behind the folio-assistant/ symlink. Dropping this block is the qou-side half of that decision and belongs to qou-w5av."
   },

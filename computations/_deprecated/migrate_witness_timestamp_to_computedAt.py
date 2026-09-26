@@ -3,7 +3,7 @@
 JSON files to the canonical `computedAt` from ComputationWitness schema.
 
 Per Copilot review on PR #433, the canonical schema field is
-`computedAt` (folio-assistant/schemas/types.ts) but historical witnesses
+`computedAt` (folio-assistant/cat-harness/schemas/types.ts) but historical witnesses
 use `timestamp` (244 files) or `timestamp_utc` (34 newer files from
 PR #427). This script standardizes all to `computedAt`.
 

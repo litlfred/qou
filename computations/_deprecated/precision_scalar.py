@@ -2,7 +2,7 @@
 
 Wire-format twin of the Rust struct in
 `tools/hecke-engine/src/precision_scalar.rs` and the TypeScript
-Zod schema in `folio-assistant/schemas/precision-scalar.ts`.
+Zod schema in `folio-assistant/cat-harness/schemas/precision-scalar.ts`.
 
 Shape:
     {"value": "1.10997859555418057528...", "dps": 50}
