@@ -127,4 +127,51 @@ theorem tr_mul_sandwich_of_orthogonal (n : ℕ) (B : Subalgebra R A) (hB : B ≤
     exact markov₂_of_markov T n _ hav w hw'
   rw [e1, mul_assoc, horth _ (B.mul_mem hv hw), mul_zero]
 
+/-- The sandwich step, extended from one sandwich to the whole span-plus-base. -/
+theorem tr_mul_eq_zero_of_mem_sup (n : ℕ) (B : Subalgebra R A) (hB : B ≤ T.H n)
+    (a : A) (ha : a ∈ T.H n) (horth : ∀ b ∈ B, T.tr (a * b) = 0)
+    (b : A)
+    (hb : b ∈ Subalgebra.toSubmodule B ⊔ Submodule.span R (sandwich T B n)) :
+    T.tr (a * b) = 0 := by
+  rw [Submodule.mem_sup] at hb
+  obtain ⟨u, hu, s, hs, rfl⟩ := hb
+  have hu' : u ∈ B := by simpa using hu
+  have key : T.tr (a * s) = 0 := by
+    induction hs using Submodule.span_induction with
+    | mem x hx =>
+        obtain ⟨v, hv, w, hw, rfl⟩ := hx
+        exact tr_mul_sandwich_of_orthogonal T n B hB a ha horth v hv w hw
+    | zero => simp
+    | add x y _ _ hx hy => rw [mul_add, map_add, hx, hy, add_zero]
+    | smul c x _ hx => rw [mul_smul_comm, map_smul, hx, smul_zero]
+  rw [mul_add, map_add, horth u hu', key, add_zero]
+
+/-- **Orthogonality propagates up the filtration.**
+
+If `a` is orthogonal to the stage `shiftedUpTo T 0 M₀`, it is orthogonal to every
+higher stage.  `TowerSpan` supplies each step, `tr_mul_eq_zero_of_mem_sup`
+consumes it.  This is the induction that makes one low-level computation settle
+every level above it. -/
+theorem tr_mul_eq_zero_of_mem_shiftedUpTo [hT : TowerSpan T] (a : A) (k : ℕ)
+    (ha : a ∈ T.H k) (M₀ : ℕ) (hk : k ≤ M₀ + 1)
+    (hbase : ∀ b ∈ shiftedUpTo T 0 M₀, T.tr (a * b) = 0) :
+    ∀ M : ℕ, M₀ ≤ M → ∀ b ∈ shiftedUpTo T 0 M, T.tr (a * b) = 0 := by
+  intro M hM
+  induction M, hM using Nat.le_induction with
+  | base => exact hbase
+  | succ M hM ih =>
+      intro b hb
+      exact tr_mul_eq_zero_of_mem_sup T (M + 1) (shiftedUpTo T 0 M) (shiftedUpTo_le T 0 M)
+        a (T.H_mono (by omega) ha) ih b (hT.step 0 M (by simpa using hb))
+
+/-- **From one stage to the radical**, given that the stages exhaust `A`. -/
+theorem mem_rad_of_exhausted [TowerSpan T] (a : A) (k : ℕ) (ha : a ∈ T.H k)
+    (M₀ : ℕ) (hk : k ≤ M₀ + 1)
+    (hbase : ∀ b ∈ shiftedUpTo T 0 M₀, T.tr (a * b) = 0)
+    (hexh : ∀ c : A, ∃ M : ℕ, M₀ ≤ M ∧ c ∈ shiftedUpTo T 0 M) :
+    a ∈ rad T := by
+  intro c
+  obtain ⟨M, hM, hc⟩ := hexh c
+  exact tr_mul_eq_zero_of_mem_shiftedUpTo T a k ha M₀ hk hbase M hM c hc
+
 end QOU.MathlibExt.MarkovTraceRadical
