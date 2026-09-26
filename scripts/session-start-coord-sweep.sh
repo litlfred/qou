@@ -147,7 +147,7 @@ fi
 # 5. Recommended action
 echo "**Recommended action:**"
 echo
-echo "If the current request touches a goal listed in \`STATUS.md\`:"
+echo "If the current request touches a goal listed in \`docs/_archive/orphan-top-level/STATUS.md\`:"
 echo "1. Read the goal's master ledger (\`docs/coordination/<goal>.md\`)"
 echo "2. Read the queue (\`todos/<goal>-queue.json\`)"
 echo "3. Run \`/session-intent\` to declare intent + claim a probe"
