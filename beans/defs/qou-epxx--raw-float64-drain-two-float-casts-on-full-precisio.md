@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-26T14:28:50Z
-updated_at: 2026-09-26T14:31:31Z
+updated_at: 2026-09-26T15:08:18Z
 ---
 
 Picked up 2026-09-26 as exemption-covered drain work while PR #7457 waits on
@@ -132,3 +132,78 @@ of their own.
 - The 9.2 % drift is *observed*, not diagnosed. I did not identify the cone
   module responsible, and this bean does not assert one.
 - `qou-xwjs` (the qns probes) is a different file set and is untouched.
+
+
+---
+
+## 6. Gate-family triage (measuring only — no sweep started)
+
+`scripts/precision-gates.sh` on `main`, full family, ~3 min: **10 RED**. None is
+mine. Sized so the sweep-vs-tranche question is answerable rather than guessed:
+
+| gate | scope | shape |
+|---|---|---|
+| module-const precision | **LOSSY 1** (+41 padding-risk, 21 files) | one line |
+| mixed mpf/f64 -> serializer | 7 candidates, baseline 3, **4 over** | small |
+| q0-value drift | 207 stale under a 329 baseline, **NEW 5** | small |
+| never-raises-dps | 9 producers / 31 constructions | small |
+| import-time dps | **8 proven lossy** (+26 not provably so), 21 files | small tranche |
+| q0-anchor flip | ~24 `*_NO_REASON` of 1495 OK | annotation |
+| float64-padding | 75 occurrences, 29 values, 8 live files | medium |
+| q0-anchor refill | **drained 204** / NEW 188 | mixed — the 204 only need the baseline re-banked |
+| reference-literal | 113 TRUNCATED + **90 DIVERGENT** ("agrees then DISAGREES — WRONG, not short") across 100+ files | sweep |
+| witness-value copy | 222 NARROW in 148 files | sweep |
+
+So roughly **5 small / 2 medium-mixed / 2 genuine sweeps**. The two sweeps are
+what ASK-THE-OWNER gates; the small ones are individually exemption-1 shaped.
+Nothing here is claimed to be a defect until its own file is read — this is a
+sizing pass.
+
+## 7. 🛑 `rev_e_infinity_g1_bottom_edge_cap_probe` — fix IDENTIFIED, NOT VERIFIED
+
+The module-const LOSSY row is `deltalambda/rev_e_infinity_g1_bottom_edge_cap_probe.py:168`:
+
+    RECORDED_DIFF = mp.mpf("0.0198162676389039602300948111946348416306")
+
+a 40-digit literal, and the file **never imports or calls `set_compute_dps` at
+all** — so it builds its constants, and runs its whole comparison, at mpmath's
+default `mp.dps = 15`. Measured:
+
+    literal          0.0198162676389039602300948111946348416306
+    built at dps=15  0.0198162676389039595081786870878204354085...
+                                      ^ diverges at the 18th significant digit
+    rel err 3.64e-17
+
+Real, and **below the L1 1 ppQ (1e-15) target** — not a claim that L1 was
+threatened.
+
+**Blast radius is zero external consumers**: the only two references to this
+probe in the repo are the file itself and its own witness. That makes it the
+cleanest exemption-1 target in the family ("raising `mp.dps` where it was
+silently truncating" is the directive's own wording).
+
+**But the fix is NOT in the branch, because I could not verify it.** Adding
+`set_compute_dps()` at module scope moves the probe from 15 dps to 70 — a real
+behavioural change to every number it computes, not a serialization tweak. The
+run to see that movement **did not complete**: killed silently after ~19 min
+with the log frozen at 7 lines (last line `G1a/G1b/G1c vary the bottom row
+cap`), no witness written (mtime unchanged at 2026-09-19). Per the long-compute
+discipline a silent stop is treated as a crash, not a success, so the edit was
+reverted rather than committed unverified.
+
+**Next agent:** the diagnosis and the measurement above stand; what is missing
+is one completed run. Launch with `-u` and a teed log, budget well over 20 min,
+and expect the witness's numbers to move — that movement is the intended effect
+and is explainable (15 -> 70 dps), unlike the three cone-drift cases in §4.
+Note the witness is hand-rolled (no `WitnessBuilder`, so no `scriptHash` /
+`engine` / `durationMs`), so staleness detection does not cover it.
+
+## 8. Branch relocated by the `.beans/` -> `beans/defs/` move
+
+`main` `58a1f3231c` (bean `qou-utbr`) moved the bean store, which turned this
+branch's bean ADD into a `CONFLICT (file location)` against the renamed
+directory — structural, not textual. Rebased onto `6957def215` and resolved by
+accepting git's own rename detection into `beans/defs/`; `beans/beans.json`
+declares DIRECTORIES rather than individual beans, so no index row was needed.
+Verified afterwards: no file left under the old `.beans/` path, both source
+fixes intact, `merge-tree` exit 0.
