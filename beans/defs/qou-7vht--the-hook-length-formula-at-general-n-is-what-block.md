@@ -340,3 +340,42 @@ pairs key jones1985 with jones1987's DOI (10.2307/1971403) -- two different pape
 TL-quotient + Markov-trace construction, has NO `library:` field, i.e. is not
 ingested. Subject matter wants jones1987, but which half is the typo is not mine
 to decide, and the ingestion is a separate uploads/ -> library/ step.
+
+
+## 2026-09-27 — item 2, first half: the citation is fixed. The mismatch is a POPULATION.
+
+Commit c42263ad9b (PR #7481).
+
+references.ts decides it, and the DOI was the correct half:
+
+  jones1985 = Bull. AMS 12(1) 103-111, "A polynomial invariant for knots via von
+              Neumann algebras", DOI 10.1090/S0273-0979-1985-15304-2 -- and it IS
+              ingested: library/s0273-0979-1985-15304-2/
+  jones1987 = Annals 126(2) 335-388, "Hecke algebra representations of braid groups
+              and link polynomials", DOI 10.2307/1971403 -- NO library: field
+
+TemperleyLiebWedderburn.lean is about the TL Wedderburn decomposition, so its subject
+is the Annals paper: the KEY was wrong. Fixed to jones1987 with the reasoning inline.
+
+### 🛑 It is 55 sites, not one -- and a blanket swap would be WRONG at >= 10
+
+Measured over content/ and docs/: 55 lines pair jones1985 with jones1987's DOI (57
+counting beans), plus 1 the other way. Classified by same-line subject keyword:
+
+  1987-subject (the KEY is the wrong half)   19
+  1985-subject (the DOI is the wrong half)   10
+  both                                        2
+  ambiguous on same-line evidence            24
+
+A key-swap corrupts the 10 and is undetermined at the 24. This is the qou-6moa shape
+verbatim -- "the handed-down reversal is TWO classes, not one". Only the one scoped
+site is touched. The other 55 need a scoping decision plus a per-site subject
+determination; the same-line keyword split above is a triage aid, NOT a verdict.
+
+### The ingestion half is BLOCKED ON INPUT, not on work
+
+jones1987 -- the Annals paper carrying the TL-quotient + Markov-trace construction --
+is in NEITHER library/ NOR uploads/. Checked: the two jones-named library dirs are
+colored-Jones papers, a different subject. So that half cannot be done from the
+container at all; it needs the PDF supplied. Recorded so a future agent does not
+spend a session looking for it.
