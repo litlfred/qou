@@ -1,0 +1,91 @@
+name: kg-vocabulary-gate
+
+# Fails when a committed `.jsonld` sibling has drifted from the `.ts` it is
+# generated from, or from the platform's vocabulary.
+#
+# WHY THIS EXISTS
+# On 2026-09-27 all 3583 committed `.jsonld` files named a `@type` prefix their
+# own `@context` no longer defined. The platform renamed it and regenerated its
+# own side on 2026-09-23 (`a17efd9933d`, "Regenerate JSON-LD with the
+# folio-assistant-core prefix"); qou's pin moved into that window in the same
+# session, and nothing noticed, because `gen-block-jsonld --check` appeared in
+# ZERO workflows here.
+#
+# The drift was not only the prefix, which is the part worth gating on. The
+# regeneration also corrected **15 stale titles** and added **18 missing edges**
+# (`examples`, `cites`, `foreshadows`) that the authoritative `.ts` declared and
+# the KG lacked. One worked case:
+#
+#   brings-euler-characteristic.ts   "Euler characteristic of Bring's surface"
+#   committed .jsonld (stale)        "Categorical Euler characteristic of
+#                                     $\mathcal{O}_q(\mathrm{SU}(2))$ on Bring's surface"
+#
+# So the KG can drift from its own source silently, and a reader consuming it as
+# authority — which is what the 2026-09-26 owner ruling makes it — would have
+# read a title the paper does not use.
+#
+# THE SELF-TEST IS NOT DECORATION
+# `lp-dual-gate.yml` in this directory records its own defect 3: "a gate passing
+# because it found nothing to check." A `--check` that silently examined zero
+# files would report success forever. So this job PERTURBS one file, asserts the
+# check FAILS, restores it, and asserts the check PASSES — before trusting the
+# real run. Measured locally: perturbed exit 1, restored exit 0.
+#
+# COST
+# 2 seconds for the whole corpus (3613 siblings), so this is also worth running
+# by hand before any commit that touches a content block's `.ts`:
+#
+#   bun run folio-assistant/cat-harness/content/pipeline/gen-block-jsonld.ts --check
+#
+# WHAT IT DOES NOT COVER, measured rather than assumed
+# 64 authored blocks are outside the KG entirely and this gate cannot see them:
+# 63 carry no `label:` at all (`prose({ title })` only), so they have no `@id`
+# and cannot be graph nodes; 1 sits in a nested chapter subdirectory
+# (`nuclear-interactions/audit/`) and 0 of the 3613 siblings live at that depth.
+# Tracked in the beans rather than silently excused — a gate that reported those
+# as drift would fail on every PR forever.
+
+on:
+  # CI auto-triggers disabled (owner directive 2026-06-30: Actions billing).
+  # Every workflow in this directory is dispatch-only; this matches.
+  workflow_dispatch:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - name: Install the pinned platform
+        run: bash scripts/setup-folio-assistant.sh
+      - name: Report which platform this run measures against
+        # Every count this repo quotes is a function of TWO inputs — the corpus
+        # and the platform. Naming the sha is what makes a result re-checkable.
+        run: |
+          echo "pin file : $(grep -v '^#' .folio-assistant-pin | tail -1)"
+          echo "checkout : $(git -C folio-assistant log --oneline -1)"
+
+      - name: Self-test — prove the check can FAIL
+        run: |
+          set -euo pipefail
+          GEN=folio-assistant/cat-harness/content/pipeline/gen-block-jsonld.ts
+          F=content/bach2013-double-slit/double-slit-experiment/bach-apparatus.jsonld
+          test -f "$F" || { echo "self-test fixture missing: $F"; exit 1; }
+          python3 - "$F" <<'PY'
+          import json, sys
+          p = sys.argv[1]; d = json.load(open(p))
+          d["@type"] = ["folio:Remark", "doco:Section"]   # the retired prefix
+          open(p, "w").write(json.dumps(d, indent=2) + "\n")
+          PY
+          if bun run "$GEN" --check >/dev/null 2>&1; then
+            echo "SELF-TEST FAILED: --check passed on a perturbed file, so it is not looking"
+            git checkout -- "$F"; exit 1
+          fi
+          echo "perturbed -> check fails, as it must"
+          git checkout -- "$F"
+          bun run "$GEN" --check >/dev/null 2>&1 \
+            || { echo "SELF-TEST FAILED: --check still red after restore"; exit 1; }
+          echo "restored  -> check passes. The gate is live."
+
+      - name: Gate — every .jsonld sibling matches its .ts and the pinned vocabulary
+        run: bun run folio-assistant/cat-harness/content/pipeline/gen-block-jsonld.ts --check
