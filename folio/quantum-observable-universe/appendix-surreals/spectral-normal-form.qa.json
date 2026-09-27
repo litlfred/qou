@@ -3,9 +3,9 @@
   "label": "conj:spectral-normal-form",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/appendix-surreals/spectral-normal-form.ts",
-    "md": "content/quantum-observable-universe/appendix-surreals/spectral-normal-form.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/SpectralNormalForm.lean"
+    "ts": "folio/quantum-observable-universe/appendix-surreals/spectral-normal-form.ts",
+    "md": "folio/quantum-observable-universe/appendix-surreals/spectral-normal-form.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/SpectralNormalForm.lean"
   },
   "source_hashes": {
     "md": "af26de74d2d1",
@@ -169,7 +169,7 @@
         "reviewed_at": "2026-08-31T04:08:34.290Z",
         "reviewed_sha": "7b0d1a7f49cbea2f717af0b14c6696f68471f0ed",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/SpectralNormalForm.lean:157: So the two fields are not inert decoration — they have a consequence that"
+        "evidence": "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/SpectralNormalForm.lean:157: So the two fields are not inert decoration — they have a consequence that"
       }
     ],
     "voice-title-scholarly": [
@@ -1130,7 +1130,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-false-claim.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/spectral-normal-form.ts:1"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/spectral-normal-form.ts:1"
       },
       {
         "result": "pass",
@@ -1195,7 +1195,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-circular.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/spectral-normal-form.ts:1"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/spectral-normal-form.ts:1"
       },
       {
         "result": "pass",
@@ -1260,7 +1260,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-hidden-dof.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/spectral-normal-form.ts:1"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/spectral-normal-form.ts:1"
       },
       {
         "result": "pass",
@@ -1293,7 +1293,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-non-sequitur.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/spectral-normal-form.ts:1"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/spectral-normal-form.ts:1"
       },
       {
         "result": "pass",
@@ -1359,7 +1359,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-citation-misuse.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/spectral-normal-form.ts:1"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/spectral-normal-form.ts:1"
       },
       {
         "result": "pass",
@@ -1392,7 +1392,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-definitional-ambiguity.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/spectral-normal-form.ts:1"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/spectral-normal-form.ts:1"
       },
       {
         "result": "pass",
@@ -1425,7 +1425,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-empirical-fragility.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/spectral-normal-form.ts:1"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/spectral-normal-form.ts:1"
       },
       {
         "result": "pass",
@@ -1458,7 +1458,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-physical-implausibility.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/spectral-normal-form.ts:1"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/spectral-normal-form.ts:1"
       },
       {
         "result": "pass",

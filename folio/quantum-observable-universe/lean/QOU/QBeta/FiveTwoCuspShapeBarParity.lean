@@ -83,7 +83,7 @@ that fresh olean ahead of the cache on `LEAN_PATH` is what closes it.
 
 Two things this cost, worth keeping so the next reader does not repeat them.
 The cache seeds the **root** workspace at `<repo>/.lake`, not
-`content/quantum-observable-universe/lean/.lake` — checking the per-paper path
+`folio/quantum-observable-universe/lean/.lake` — checking the per-paper path
 makes a restore that wrote 6172 oleans read as "delivered nothing". And
 [`scripts/lean-shadow-verify.sh`](../../../../../scripts/lean-shadow-verify.sh),
 the guard script for precisely this, cannot be used here: it hardcodes

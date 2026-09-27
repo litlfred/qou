@@ -3,9 +3,9 @@
   "label": "conj:cpt-orbit-closure-density",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/cpt-orbit-closure-density.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/cpt-orbit-closure-density.md",
-    "lean": "content/quantum-observable-universe/nuclear-interactions/cpt-orbit-closure-density.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/cpt-orbit-closure-density.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/cpt-orbit-closure-density.md",
+    "lean": "folio/quantum-observable-universe/nuclear-interactions/cpt-orbit-closure-density.lean"
   },
   "source_hashes": {
     "md": "bf5aa608a2d4",
@@ -657,7 +657,7 @@
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/nuclear-interactions/cpt-orbit-closure-density.ts:0: forward ref: uses conj:symmetric-crystal-pair-production (manifest pos 120) which appears after this block (pos 100) in the chapter"
+        "evidence": "folio/quantum-observable-universe/nuclear-interactions/cpt-orbit-closure-density.ts:0: forward ref: uses conj:symmetric-crystal-pair-production (manifest pos 120) which appears after this block (pos 100) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1044,9 +1044,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.126461Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The claim in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:43:51: error: unexpected identifier; expected 'lemma'.",
+        "notes": "The claim in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' is unverified due to Lean compilation failures: folio/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:43:51: error: unexpected identifier; expected 'lemma'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:1"
       }
     ],
     "da-vacuous": [
@@ -1089,7 +1089,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1109,9 +1109,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.126461Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The prose in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean is incomplete (has sorry).",
+        "notes": "The prose in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' presents the result as established, but the Lean formalization in folio/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean is incomplete (has sorry).",
         "severity": "minor",
-        "evidence": "The prose in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean is incomplete (has sorry)."
+        "evidence": "The prose in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' presents the result as established, but the Lean formalization in folio/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean is incomplete (has sorry)."
       }
     ],
     "da-hidden-dof": [
@@ -1133,7 +1133,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1153,9 +1153,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.126461Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1175,7 +1175,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.126461Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean uses a class-conjecture pattern, matching the conjectural nature of 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure'.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean uses a class-conjecture pattern, matching the conjectural nature of 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure'.",
         "severity": "minor"
       }
     ],
@@ -1198,7 +1198,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Citations to kashiwara1991, lecouvey2007, brundankleshchev2009, khovanovlauda2009, kassel1995 are correct and contextually appropriate.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1220,7 +1220,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1242,7 +1242,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1264,7 +1264,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1284,9 +1284,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.126461Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:43:51: error: unexpected identifier; expected 'lemma'"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:1 \u2014 folio/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:43:51: error: unexpected identifier; expected 'lemma'"
       },
       {
         "field_hash": {
@@ -1324,7 +1324,7 @@
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
         "severity": "minor",
         "verdict": "survivable-objection",
-        "referee_argument": "The conjectured relations in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' remain unproven and are represented only by sorry stubs in the formalization content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean.",
+        "referee_argument": "The conjectured relations in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' remain unproven and are represented only by sorry stubs in the formalization folio/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean.",
         "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders."
       }
     ],

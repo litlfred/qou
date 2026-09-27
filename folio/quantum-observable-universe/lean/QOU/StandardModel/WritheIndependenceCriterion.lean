@@ -3,7 +3,7 @@ Copyright (c) 2026 QOU contributors. All rights reserved.
 
 # The proton/neutron test does not establish writhe-independence
 
-`content/quantum-observable-universe/eightfold-way/flavor-charge-assignments.md`
+`folio/quantum-observable-universe/eightfold-way/flavor-charge-assignments.md`
 states the requirement that drives the whole hypercharge programme:
 
 > The writhe map is falsified as a hypercharge assignment: the proton and
@@ -102,7 +102,7 @@ theorem injective_writhe_map_is_falsified
   rw [← hfac p, ← hfac n, hY]
 
 -- NOTE: the general criterion is NOT restated here.  It is already proved in
--- `content/quantum-observable-universe/appendix-standard-model/sm-hypercharge-invariant.lean`
+-- `folio/quantum-observable-universe/appendix-standard-model/sm-hypercharge-invariant.lean`
 -- as `factors_through_iff` (`Y` factors through `w` iff `Y` is constant on the
 -- fibres of `w`) with the corollary `HyperchargeInvariant.exists_writhe_degenerate_pair`.
 -- This file supplies only what that file lacks: the demonstration that the

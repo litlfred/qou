@@ -3,9 +3,9 @@
   "label": "prop:nuclear-groebner-reduction",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/nuclear-groebner-reduction.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/nuclear-groebner-reduction.md",
-    "lean": "content/quantum-observable-universe/nuclear-interactions/nuclear-groebner-reduction.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/nuclear-groebner-reduction.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/nuclear-groebner-reduction.md",
+    "lean": "folio/quantum-observable-universe/nuclear-interactions/nuclear-groebner-reduction.lean"
   },
   "source_hashes": {
     "md": "01595ffad9dc",
@@ -1454,9 +1454,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The claim in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'.",
+        "notes": "The claim in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' is unverified due to Lean compilation failures: folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:1"
       }
     ],
     "da-vacuous": [
@@ -1476,9 +1476,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:1"
       }
     ],
     "da-circular": [
@@ -1500,7 +1500,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1520,9 +1520,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The prose in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean is incomplete (has sorry).",
+        "notes": "The prose in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' presents the result as established, but the Lean formalization in folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean is incomplete (has sorry).",
         "severity": "minor",
-        "evidence": "The prose in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean is incomplete (has sorry)."
+        "evidence": "The prose in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' presents the result as established, but the Lean formalization in folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean is incomplete (has sorry)."
       }
     ],
     "da-hidden-dof": [
@@ -1544,7 +1544,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1564,9 +1564,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1586,9 +1586,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -1625,7 +1625,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1647,7 +1647,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1669,7 +1669,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1691,7 +1691,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1711,9 +1711,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:1 \u2014 folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'"
       },
       {
         "field_hash": {
@@ -1748,11 +1748,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation: content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation: folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean for 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' fails compilation with error: content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'. This invalidates the claim of formal verification.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation: content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean for 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' fails compilation with error: folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation: folio/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'"
       },
       {
         "field_hash": {

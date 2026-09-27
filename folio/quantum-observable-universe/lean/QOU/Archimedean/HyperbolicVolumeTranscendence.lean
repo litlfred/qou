@@ -39,7 +39,7 @@ to algebraic independence of hyperbolic volumes:
   (was previously cited as `[yekutieli2010]` which is the wrong key —
   yekutieli2010 is "Central Extensions of Gerbes"; the "Nonabelian
   multiplicative integration" book is yekutieli2015 per
-  content/schema/references.ts. Fixed during validate-bib --cross-check
+  folio/schema/references.ts. Fixed during validate-bib --cross-check
   audit on 2026-05-19.)
 -/
 

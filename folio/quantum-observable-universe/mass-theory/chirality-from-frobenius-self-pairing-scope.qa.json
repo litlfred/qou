@@ -3,8 +3,8 @@
   "label": "rem:chirality-from-frobenius-self-pairing-scope",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/chirality-from-frobenius-self-pairing-scope.ts",
-    "md": "content/quantum-observable-universe/mass-theory/chirality-from-frobenius-self-pairing-scope.md"
+    "ts": "folio/quantum-observable-universe/mass-theory/chirality-from-frobenius-self-pairing-scope.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/chirality-from-frobenius-self-pairing-scope.md"
   },
   "source_hashes": {
     "md": "a00e463c0e1b",
@@ -1128,7 +1128,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/chirality-from-frobenius-self-pairing-scope.ts:0: forward ref: uses thm:frobenius-codim-universal (manifest pos 663) which appears after this block (pos 530) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/chirality-from-frobenius-self-pairing-scope.ts:0: forward ref: uses thm:frobenius-codim-universal (manifest pos 663) which appears after this block (pos 530) in the chapter"
       }
     ],
     "detangler-section-band": [

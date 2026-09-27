@@ -50,7 +50,7 @@ the same condition. What is **NOT** closed here, and is not laundered:
 3. the bar-odd resurgent monodromy datum (keystone G3 of the Φ_b gap audit) —
    genuinely open, and not touched by this algebraic equivalence.
 
--- Ref: [faddeev_kashaev1994] Quantum dilogarithm — see content/schema/references.ts
+-- Ref: [faddeev_kashaev1994] Quantum dilogarithm — see folio/schema/references.ts
 -- Ref: [manuscript] rem:q-dilogarithm-pentagon-associator
 -/
 

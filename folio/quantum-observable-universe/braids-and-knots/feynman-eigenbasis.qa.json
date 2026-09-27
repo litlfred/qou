@@ -3,8 +3,8 @@
   "label": "rem:feynman-eigenbasis",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.md"
+    "ts": "folio/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.ts",
+    "md": "folio/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.md"
   },
   "source_hashes": {
     "md": "65e4d9489f5b",
@@ -599,7 +599,7 @@
         "reviewed_at": "2026-09-05T18:15:49.105Z",
         "reviewed_sha": "265c6d4bc4acc2461267244df26ce82275ee37a1",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.ts:0: forward ref: uses rem:r-matrix-braiding (manifest pos 89) which appears after this block (pos 54) in the chapter"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.ts:0: forward ref: uses rem:r-matrix-braiding (manifest pos 89) which appears after this block (pos 54) in the chapter"
       }
     ],
     "detangler-section-band": [

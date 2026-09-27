@@ -11,14 +11,14 @@ Split out of `def:groebner-basis`. An **S-polynomial** `S(f, f')` is the
 cancellation combination `λ·u·f·v − λ'·u'·f'·v'` formed when the leading
 terms of admissible left/right multiples of `f` and `f'` coincide up to
 a unit scalar. The authoritative formalization lives in
-`content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean`
+`folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean`
 (`OverlapComposition` / `InclusionComposition`) and the concrete
 `UGB.UnitalGroebner.sPolynomial`.
 
 ## References
 
 - [leitnerpawloski2004] https://arxiv.org/abs/math/0409565, Definition 5
-- content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean §§4–5
+- folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean §§4–5
 -/
 
 namespace QOU.GrobnerShirshov.ContentBlock

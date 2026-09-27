@@ -3,8 +3,8 @@
   "label": "prf:q-exponential-taylor",
   "kind": "proof",
   "paths": {
-    "ts": "content/quantum-observable-universe/information-theory/q-exponential-taylor-proof.ts",
-    "md": "content/quantum-observable-universe/information-theory/q-exponential-taylor-proof.md"
+    "ts": "folio/quantum-observable-universe/information-theory/q-exponential-taylor-proof.ts",
+    "md": "folio/quantum-observable-universe/information-theory/q-exponential-taylor-proof.md"
   },
   "source_hashes": {
     "md": "860a17fb8235",
@@ -694,7 +694,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/q-exponential-taylor-proof.md:22 — formal-power-series context uses 'q < 1' or 'q > 1' rather than '|q| < 1' / '|q| > 1' — | $0 < q < 1$ | $(1 - q)^{-n}\\,n!\\,(1 + O(q^n))$ | slow-growth; radius $\\infty$ | | content/quantum-observable-universe/information-theory/q-exponential-taylor-proof.md:23 — formal-power-series context uses 'q < 1' or 'q > 1' rather than '|q| < 1' / '|q| > 1' — | $q > 1$ | $q^{\\binom{n}{2}}\\,n!_{q^{-1}}$ | faster-than-classical growth |"
+        "evidence": "folio/quantum-observable-universe/information-theory/q-exponential-taylor-proof.md:22 — formal-power-series context uses 'q < 1' or 'q > 1' rather than '|q| < 1' / '|q| > 1' — | $0 < q < 1$ | $(1 - q)^{-n}\\,n!\\,(1 + O(q^n))$ | slow-growth; radius $\\infty$ | | folio/quantum-observable-universe/information-theory/q-exponential-taylor-proof.md:23 — formal-power-series context uses 'q < 1' or 'q > 1' rather than '|q| < 1' / '|q| > 1' — | $q > 1$ | $q^{\\binom{n}{2}}\\,n!_{q^{-1}}$ | faster-than-classical growth |"
       }
     ],
     "q-usage-root-of-unity-undeclared": [

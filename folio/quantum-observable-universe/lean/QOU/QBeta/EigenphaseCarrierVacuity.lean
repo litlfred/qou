@@ -9,7 +9,7 @@ required phase is pinned to a window of half-width `≈1.1e-5` rad and `z_D` sit
 `z` inside it.
 
 Chasing where `α` is asserted leads to
-`content/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation.lean`,
+`folio/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation.lean`,
 whose class `QOU.Interactions.TransferMatrixEigenphase` is documented as
 axiomatising the spectral identification
 
@@ -44,7 +44,7 @@ docstring describes is not carried anywhere.  Scope-(a).
 
 **UPDATE 2026-09-03 (bean `qou-eixt`) — the live carrier has been repaired; this
 file is now the RECORD, not a live indictment.**
-`content/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation.lean`
+`folio/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation.lean`
 has adopted §2's `TransferMatrixSpectrum` shape: its `TransferMatrixEigenphase`
 now takes the `2×2` restriction `M` and pins `M.trace = 2 cos(eigenphase q)`,
 `M.det = 1`, with no instance declared there. Its `q_beta_cos_resummation` was

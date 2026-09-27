@@ -243,7 +243,7 @@ theorem bringZeroMode_fully_tiling_derived :
     Declared here as an `axiom` for §3b-cond strengthening of the
     `BringZeroModeBlochClass` field below.  Closing this axiom to a
     direct namespace import is the Lake-tree wire-up Phase 1
-    follow-up (`content/quantum-observable-universe/lean/QOU/...`);
+    follow-up (`folio/quantum-observable-universe/lean/QOU/...`);
     until that lands, the axiom mirrors the filler's signature
     exactly. -/
 -- axiom removed in favor of import QOU.Archimedean.BlochWignerUnitCircle
@@ -263,7 +263,7 @@ theorem bringZeroMode_fully_tiling_derived :
        signature is declared above as an `axiom` mirroring the
        filler's `noncomputable def BlochWigner_unit_circle (θ : ℝ)
        : ℝ := Cl_2 θ`.  Closing the axiom to a direct namespace
-       import under `content/quantum-observable-universe/lean/QOU/`
+       import under `folio/quantum-observable-universe/lean/QOU/`
        is the remaining Lake-tree wire-up follow-up.
     2. ✅ **Phase 2 (field strengthening):** the field is now
        `∃ θ : ℝ, BlochWigner_unit_circle θ = bringZeroModeValue`

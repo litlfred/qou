@@ -128,7 +128,7 @@ export default proposition({
         "consumes the pole divisor, χ, the closed form, or α = t₂/T. " +
         "This was worth finishing to close a named gap honestly and for the " +
         "upstreamable lemmas, not because a downstream number moved.",
-      see: "content/quantum-observable-universe/lean/QOU/QBeta/C1ThetaZeroLocus.lean",
+      see: "folio/quantum-observable-universe/lean/QOU/QBeta/C1ThetaZeroLocus.lean",
     },
     {
       kind: "note",
@@ -156,7 +156,7 @@ export default proposition({
         "axis. The zero lattice itself, $-P^{2\\mathbb{Z}}$, is indexed by " +
         "$\\mathbb{Z}$ but its points are real powers of $P$ embedded in " +
         "$\\mathbb{C}$.",
-      see: "content/quantum-observable-universe/lean/QOU/QBeta/C1ThetaZeroLocus.lean",
+      see: "folio/quantum-observable-universe/lean/QOU/QBeta/C1ThetaZeroLocus.lean",
     },
   ],
   tags: [

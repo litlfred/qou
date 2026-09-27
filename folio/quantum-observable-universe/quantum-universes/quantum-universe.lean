@@ -26,10 +26,10 @@ import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
 /-!
 # QOU.QuantumUniverse
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/QuantumUniverse.lean (monolithic).
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/QuantumUniverse.lean (monolithic).
 That file no longer exists — the library was split, and `QuantumUniverse` now lives at
-  content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/CategoricalFoundations.lean
+  folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/CategoricalFoundations.lean
 -/
 
 open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory

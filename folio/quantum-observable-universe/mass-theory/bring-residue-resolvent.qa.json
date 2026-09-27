@@ -3,9 +3,9 @@
   "label": "prop:bring-residue-resolvent",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/bring-residue-resolvent.ts",
-    "md": "content/quantum-observable-universe/mass-theory/bring-residue-resolvent.md",
-    "lean": "content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/bring-residue-resolvent.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/bring-residue-resolvent.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean"
   },
   "source_hashes": {
     "md": "1e41460f3bed",
@@ -1128,7 +1128,7 @@
         },
         "result": "fail",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean:198 [native_decide] theorem bring_residue_q_eq_2_pole_nonzero_at_3 : | content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean:204 [native_decide] theorem bring_residue_q_eq_2_pole_nonzero_at_4 : | content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean:210 [native_decide] theorem bring_residue_q_eq_2_pole_nonzero_at_9 : | content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean:217 [native_decide] theorem bring_residue_q_eq_2_pole_nonzero_at_10 :",
+        "evidence": "folio/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean:198 [native_decide] theorem bring_residue_q_eq_2_pole_nonzero_at_3 : | folio/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean:204 [native_decide] theorem bring_residue_q_eq_2_pole_nonzero_at_4 : | folio/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean:210 [native_decide] theorem bring_residue_q_eq_2_pole_nonzero_at_9 : | folio/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean:217 [native_decide] theorem bring_residue_q_eq_2_pole_nonzero_at_10 :",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1355,7 +1355,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1614,9 +1614,9 @@
         },
         "reviewed_at": "2026-06-28T10:58:40.920Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains sorry, causing divergence from the fully-verified narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains sorry, causing divergence from the fully-verified narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains sorry, causing divergence from the fully-verified narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains sorry, causing divergence from the fully-verified narrative."
       },
       {
         "result": "pass",
@@ -1680,9 +1680,9 @@
         },
         "reviewed_at": "2026-06-28T10:58:40.952Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains sorry, indicating incomplete verification.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains sorry, indicating incomplete verification.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains sorry, indicating incomplete verification."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains sorry, indicating incomplete verification."
       },
       {
         "result": "pass",
@@ -1796,11 +1796,11 @@
         },
         "reviewed_at": "2026-06-28T10:58:40.958Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains 'sorry' placeholders.",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains 'sorry' placeholders.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains 'sorry' placeholders."
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",
@@ -1831,7 +1831,7 @@
         },
         "reviewed_at": "2026-06-28T10:58:40.888Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
         "evidence": "bring-residue-resolvent.lean:1"
       },
@@ -1930,7 +1930,7 @@
         },
         "reviewed_at": "2026-06-28T10:58:40.913Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "Logical gaps exist due to incomplete proof (sorry stubs) in content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean.",
+        "notes": "Logical gaps exist due to incomplete proof (sorry stubs) in folio/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean.",
         "severity": "minor",
         "evidence": "bring-residue-resolvent.lean:1"
       },

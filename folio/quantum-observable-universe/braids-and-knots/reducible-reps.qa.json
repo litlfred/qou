@@ -3,8 +3,8 @@
   "label": "rem:reducible-reps",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/reducible-reps.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/reducible-reps.md"
+    "ts": "folio/quantum-observable-universe/braids-and-knots/reducible-reps.ts",
+    "md": "folio/quantum-observable-universe/braids-and-knots/reducible-reps.md"
   },
   "source_hashes": {
     "md": "d1c438cce6f6",
@@ -384,7 +384,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/reducible-reps.md:3 \u2014 root-of-unity construction used without explicit regime declaration \u2014 The PBW filtration on $\\mathcal{U}_q(\\mathfrak{su}(2))$ equips the associated graded algebra $\\mathrm{gr}\\mathcal{U}_q$ with a commutative product. A Groebner--Shirshov basis for the $q$-deformed relations exhibits $\\mathcal{U}_q$ as a flat deformation of $\\mathrm{gr}\\mathcal{U}_q$. The leading monomials of the $q$-Serre relations provide non-overlapping obstructions whose resolution yields a normal-form basis coinciding with the Lusztig divided-power basis. In positive characteristic, this construction produces the distribution algebra $\\mathrm{Dist}(G)$ of the lifted formal group $G$ as a deformation of the commutative $\\mathrm{Dist}(H)$. The strong multiplicativity condition guarantees that the Frobenius relation is preserved at every filtration degree."
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/reducible-reps.md:3 \u2014 root-of-unity construction used without explicit regime declaration \u2014 The PBW filtration on $\\mathcal{U}_q(\\mathfrak{su}(2))$ equips the associated graded algebra $\\mathrm{gr}\\mathcal{U}_q$ with a commutative product. A Groebner--Shirshov basis for the $q$-deformed relations exhibits $\\mathcal{U}_q$ as a flat deformation of $\\mathrm{gr}\\mathcal{U}_q$. The leading monomials of the $q$-Serre relations provide non-overlapping obstructions whose resolution yields a normal-form basis coinciding with the Lusztig divided-power basis. In positive characteristic, this construction produces the distribution algebra $\\mathrm{Dist}(G)$ of the lifted formal group $G$ as a deformation of the commutative $\\mathrm{Dist}(H)$. The strong multiplicativity condition guarantees that the Frobenius relation is preserved at every filtration degree."
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -402,7 +402,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/reducible-reps.md:1 \u2014 detected regime [root-of-unity] is disjoint from chapter 'braids-and-knots' expected [generic-R, mod-gt-1, mod-lt-1, na, real-positive, symbolic]"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/reducible-reps.md:1 \u2014 detected regime [root-of-unity] is disjoint from chapter 'braids-and-knots' expected [generic-R, mod-gt-1, mod-lt-1, na, real-positive, symbolic]"
       }
     ],
     "canonical-calibration-count": [

@@ -5,7 +5,7 @@ import Mathlib.Tactic
 
 The leading traced-volume prediction `Δm = α·|ΔΦ|` (namespace
 `QOU.NeutronProtonSplitting` in
-`content/quantum-observable-universe/observations/neutron-proton-mass-splitting.lean`;
+`folio/quantum-observable-universe/observations/neutron-proton-mass-splitting.lean`;
 `docs/audits/2026-07-11-quark-volume-provenance.md`)
 **over**-predicts the neutron–proton mass difference by `+0.63%`
 (`docs/audits/2026-07-11-np-splitting-residual-not-q0-knob.md`).  Before

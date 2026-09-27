@@ -3,7 +3,7 @@
 
   Moves the `BlochWigner_unit_circle : ℝ → ℝ` signature from the
   `axiom` declaration that lived inside
-  `content/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.lean`
+  `folio/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.lean`
   (merged #1460 Phase 1) into the canonical Lake-built module tree
   under `QOU.Archimedean`.
 
@@ -17,7 +17,7 @@
   QOU.Archimedean.BlochWignerUnitCircle`.
 
   **Note on content-block siblings.**  The current consumer at
-  `content/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.lean`
+  `folio/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.lean`
   is a content-block sibling (lives **outside** the `qou` Lake
   library `srcDir`), so it cannot `import` Lake modules directly
   and continues to use its inline `axiom BlochWigner_unit_circle`.
@@ -29,7 +29,7 @@
   declaration body with the actual Clausen-function definition (or
   the Mathlib `Real.polylog`-based equivalent) is the open math.
   The sibling filler at
-  `content/quantum-observable-universe/predicted-spectra/bloch-wigner-mathlib-filler.lean`
+  `folio/quantum-observable-universe/predicted-spectra/bloch-wigner-mathlib-filler.lean`
   carries the candidate concrete definition `BlochWigner_unit_circle
   (θ : ℝ) : ℝ := Cl_2 θ`; integrating that requires either a Mathlib
   `Real.Clausen` import that does not currently exist or a manual
@@ -62,7 +62,7 @@ namespace QOU.Archimedean
     the signature.
 
     See the sibling filler at
-    `content/quantum-observable-universe/predicted-spectra/bloch-wigner-mathlib-filler.lean`
+    `folio/quantum-observable-universe/predicted-spectra/bloch-wigner-mathlib-filler.lean`
     for the candidate body `Cl_2 θ`. -/
 noncomputable opaque BlochWigner_unit_circle (_θ : ℝ) : ℝ
 

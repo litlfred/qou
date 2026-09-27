@@ -3,9 +3,9 @@
   "label": "rem:w-boson-mass-discrepancy",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.ts",
-    "md": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.md",
-    "lean": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean"
+    "ts": "folio/quantum-observable-universe/observations/w-boson-mass-discrepancy.ts",
+    "md": "folio/quantum-observable-universe/observations/w-boson-mass-discrepancy.md",
+    "lean": "folio/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean"
   },
   "source_hashes": {
     "md": "38bdcb588f59",
@@ -657,7 +657,7 @@
         "reviewed_at": "2026-08-15T12:03:16.275Z",
         "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.ts:0: forward ref: uses rem:half-life-as-q-probe (manifest pos 112) which appears after this block (pos 86) in the chapter"
+        "evidence": "folio/quantum-observable-universe/observations/w-boson-mass-discrepancy.ts:0: forward ref: uses rem:half-life-as-q-probe (manifest pos 112) which appears after this block (pos 86) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1118,7 +1118,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Electroweak boson masses from vertex $\\\\delta q$ at the CODATA substrate' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/w-boson-mass-discrepancy.ts:1"
       },
       {
         "result": "pass",

@@ -7,7 +7,7 @@ Bean `qou-bn8e`. The corpus argues in several places that a mass splitting must
 be *sourced* by one particular sector, because the splitting breaks an involution
 that every other sector respects. The clearest instance is
 `rem:isospin-mass-split-em-localisation`
-(`content/quantum-observable-universe/mass-theory/`), which concludes that the
+(`folio/quantum-observable-universe/mass-theory/`), which concludes that the
 mirror-isobar split `m(³H) − m(³He) ≈ 0.529 MeV` *"must therefore be entirely
 sourced by the Coulomb term"*, on the grounds that *"the trace tower, co-Casimir,
 chirality, and shell-correction functionals all respect these structural

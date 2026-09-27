@@ -3,9 +3,9 @@
   "label": "prop:fermion-boson-knot-link",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/fermion-boson-knot-link.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/fermion-boson-knot-link.md",
-    "lean": "content/quantum-observable-universe/knots-particles-confinement/fermion-boson-knot-link.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/fermion-boson-knot-link.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/fermion-boson-knot-link.md",
+    "lean": "folio/quantum-observable-universe/knots-particles-confinement/fermion-boson-knot-link.lean"
   },
   "source_hashes": {
     "md": "6e1bf753963a",
@@ -1407,9 +1407,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.381469Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The claim in 'Fermions are knots, bosons are links' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:11:30: error: Application type mismatch: The argument.",
+        "notes": "The claim in 'Fermions are knots, bosons are links' is unverified due to Lean compilation failures: folio/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:11:30: error: Application type mismatch: The argument.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:1"
       },
       {
         "result": "pass",
@@ -1478,7 +1478,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Fermions are knots, bosons are links'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
       },
       {
         "result": "pass",
@@ -1548,7 +1548,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Fermions are knots, bosons are links'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
       },
       {
         "result": "pass",
@@ -1581,9 +1581,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.381469Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:1"
       },
       {
         "result": "pass",
@@ -1616,9 +1616,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.381469Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1653,7 +1653,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Fermions are knots, bosons are links', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
       },
       {
         "result": "pass",
@@ -1688,7 +1688,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Fermions are knots, bosons are links' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
       },
       {
         "result": "pass",
@@ -1723,7 +1723,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Fermions are knots, bosons are links' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
       },
       {
         "result": "pass",
@@ -1758,7 +1758,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Fermions are knots, bosons are links' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
       },
       {
         "result": "pass",
@@ -1791,9 +1791,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.381469Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:1 — content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:11:30: error: Application type mismatch: The argument"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:1 — folio/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:11:30: error: Application type mismatch: The argument"
       },
       {
         "result": "pass",
@@ -1826,11 +1826,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.381469Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean fails compilation: content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:11:30: error: Application type mismatch: The argument",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean fails compilation: folio/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:11:30: error: Application type mismatch: The argument",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean for 'Fermions are knots, bosons are links' fails compilation with error: content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:11:30: error: Application type mismatch: The argument. This invalidates the claim of formal verification.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean fails compilation: content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:11:30: error: Application type mismatch: The argument"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean for 'Fermions are knots, bosons are links' fails compilation with error: folio/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:11:30: error: Application type mismatch: The argument. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean fails compilation: folio/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:11:30: error: Application type mismatch: The argument"
       },
       {
         "result": "pass",

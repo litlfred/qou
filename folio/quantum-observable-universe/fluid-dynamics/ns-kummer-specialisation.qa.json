@@ -3,9 +3,9 @@
   "label": "prop:ns-kummer-specialisation",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts",
-    "md": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/FluidDynamics/ns_kummer_specialisation.lean"
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/FluidDynamics/ns_kummer_specialisation.lean"
   },
   "source_hashes": {
     "md": "b8ebdbc40557",
@@ -133,7 +133,7 @@
         "reviewed_at": "2026-08-15T21:38:31.000Z",
         "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.md:20: The [specialisation driving $q = 1$](#rem:substrate-gm-torsion) projects cleanly:"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.md:20: The [specialisation driving $q = 1$](#rem:substrate-gm-torsion) projects cleanly:"
       }
     ],
     "voice-scholarly-default": [
@@ -427,7 +427,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.md:1 — detected regime [root-of-unity] is disjoint from chapter 'fluid-dynamics' expected [fixed-q0, generic-R, na, real-gt-1, real-positive, symbolic]"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.md:1 — detected regime [root-of-unity] is disjoint from chapter 'fluid-dynamics' expected [fixed-q0, generic-R, na, real-gt-1, real-positive, symbolic]"
       }
     ],
     "canonical-calibration-count": [
@@ -709,7 +709,7 @@
         "reviewed_at": "2026-08-15T21:38:31.000Z",
         "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:0: forward ref: uses thm:ns-singularity-descartes (manifest pos 69) which appears after this block (pos 67) in the chapter"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:0: forward ref: uses thm:ns-singularity-descartes (manifest pos 69) which appears after this block (pos 67) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -875,7 +875,7 @@
         "reviewed_at": "2026-08-15T21:38:31.000Z",
         "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:0: uses[] dependency cycle: prop:ns-kummer-specialisation -> thm:ns-singularity-descartes -> prop:ns-kummer-specialisation"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:0: uses[] dependency cycle: prop:ns-kummer-specialisation -> thm:ns-singularity-descartes -> prop:ns-kummer-specialisation"
       }
     ],
     "bib-cite-resolves": [
@@ -1243,7 +1243,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/FluidDynamics/ns_kummer_specialisation.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/FluidDynamics/ns_kummer_specialisation.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1419,7 +1419,7 @@
         "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No false claims identified in 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$': mathematical reasoning is consistent.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
         "severity": "minor"
       },
       {
@@ -1484,7 +1484,7 @@
         "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$'.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
         "severity": "minor"
       },
       {
@@ -1549,7 +1549,7 @@
         "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$'.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
         "severity": "minor"
       },
       {
@@ -1582,7 +1582,7 @@
         "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The argument flow in 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$' is logically sound, mapping onto the cited dependencies.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
         "severity": "minor"
       },
       {
@@ -1614,9 +1614,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The referenced Lean file content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.lean is missing, leading to complete divergence.",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.lean is missing, leading to complete divergence.",
         "severity": "minor",
-        "evidence": "The referenced Lean file content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.lean is missing, leading to complete divergence."
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",
@@ -1648,7 +1648,7 @@
         "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No citations are present in 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$', hence no citation misuse is possible.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
         "severity": "minor"
       },
       {
@@ -1681,7 +1681,7 @@
         "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Key terms and symbols in 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$' are mathematically defined and unambiguous.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
         "severity": "minor"
       },
       {
@@ -1714,7 +1714,7 @@
         "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic and logical relations in 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$' are independent of empirical tuning parameters.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
         "severity": "minor"
       },
       {
@@ -1747,7 +1747,7 @@
         "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The physical concepts described in 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$' are consistent with quantum observable mechanics.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
         "severity": "minor"
       },
       {
@@ -1780,7 +1780,7 @@
         "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The derivation steps and formal definitions in 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$' are reproducible.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
         "severity": "minor"
       },
       {
@@ -1812,11 +1812,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.lean is missing.",
+        "notes": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.lean is missing.",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.lean is missing, preventing formal verification of the claims in 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$'.",
+        "referee_argument": "The referenced Lean sibling file folio/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.lean is missing, preventing formal verification of the claims in 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$'.",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.lean is missing."
+        "evidence": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.lean is missing."
       },
       {
         "result": "pass",

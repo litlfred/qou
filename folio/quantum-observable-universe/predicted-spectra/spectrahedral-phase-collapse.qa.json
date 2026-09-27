@@ -3,9 +3,9 @@
   "label": "prop:spectrahedral-phase-collapse",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.md",
-    "lean": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean"
+    "ts": "folio/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.ts",
+    "md": "folio/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.md",
+    "lean": "folio/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean"
   },
   "source_hashes": {
     "md": "dfd09cece666",
@@ -181,7 +181,7 @@
         "reviewed_at": "2026-08-24T06:59:45.728Z",
         "reviewed_sha": "7aa29fce3837ce6f2a214bc23115915549044413",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.md:32: So the theorem above is true, non-vacuous and permanent **as a convention-C result** — but the phase-transition *reading* of it is frame-dependent and must not be restated as a property of the canonic"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.md:32: So the theorem above is true, non-vacuous and permanent **as a convention-C result** — but the phase-transition *reading* of it is frame-dependent and must not be restated as a property of the canonic"
       }
     ],
     "voice-title-scholarly": [
@@ -259,7 +259,7 @@
         "reviewed_at": "2026-08-24T06:59:45.728Z",
         "reviewed_sha": "7aa29fce3837ce6f2a214bc23115915549044413",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.md:30: P4:date-ref: Convention D ($z = q^3/(q^2+1)$) is canonical as of the owner ruling of 2026-08-15. In that frame the determinant is **identically zero for every $q$** — convention D is a root of the determinant as a"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.md:30: P4:date-ref: Convention D ($z = q^3/(q^2+1)$) is canonical as of the owner ruling of 2026-08-15. In that frame the determinant is **identically zero for every $q$** — convention D is a root of the determinant as a"
       }
     ],
     "voice-status-section": [
@@ -1225,7 +1225,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean theorem statement in content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.md.",
+        "notes": "The Lean theorem statement in folio/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.md.",
         "severity": "minor",
         "evidence": "spectrahedral-phase-collapse.lean:1 — Lean file exists"
       }
@@ -1265,7 +1265,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1477,7 +1477,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
         "evidence": "spectrahedral-phase-collapse.lean:1"
       },
@@ -1617,7 +1617,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to incomplete proof (sorry stubs) in content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean.",
+        "notes": "Logical gaps exist due to incomplete proof (sorry stubs) in folio/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean.",
         "severity": "minor",
         "evidence": "spectrahedral-phase-collapse.lean:1"
       },
@@ -1652,9 +1652,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry, causing divergence from the fully-verified narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry, causing divergence from the fully-verified narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry, causing divergence from the fully-verified narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry, causing divergence from the fully-verified narrative."
       },
       {
         "result": "pass",
@@ -1827,9 +1827,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry, indicating incomplete verification.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry, indicating incomplete verification.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry, indicating incomplete verification."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry, indicating incomplete verification."
       },
       {
         "result": "pass",
@@ -1862,11 +1862,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains 'sorry' placeholders.",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains 'sorry' placeholders.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains 'sorry' placeholders."
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",

@@ -3,9 +3,9 @@
   "label": "prop:qou-canonical-action",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-observable-universes/qou-canonical-action.ts",
-    "md": "content/quantum-observable-universe/quantum-observable-universes/qou-canonical-action.md",
-    "lean": "content/quantum-observable-universe/quantum-observable-universes/qou-canonical-action.lean"
+    "ts": "folio/quantum-observable-universe/quantum-observable-universes/qou-canonical-action.ts",
+    "md": "folio/quantum-observable-universe/quantum-observable-universes/qou-canonical-action.md",
+    "lean": "folio/quantum-observable-universe/quantum-observable-universes/qou-canonical-action.lean"
   },
   "source_hashes": {
     "md": "86ab697df3df",
@@ -1337,7 +1337,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/quantum-observable-universes/qou-canonical-action.lean:79 [def-disguised-true] noncomputable def qou_canonical_action_unique_up_to_scalar",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/qou-canonical-action.lean:79 [def-disguised-true] noncomputable def qou_canonical_action_unique_up_to_scalar",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",

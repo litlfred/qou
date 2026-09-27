@@ -350,8 +350,8 @@ structure CameraState where
     requires precisely these fields.
 
     LaTeX label: `def:viz-brings-surface` (chapter-dir sibling
-    `content/visualizer/overview/viz-brings-surface.lean`). -/
--- Ref: [manuscript] content/visualizer/overview/viz-brings-surface.md
+    `folio/visualizer/overview/viz-brings-surface.lean`). -/
+-- Ref: [manuscript] folio/visualizer/overview/viz-brings-surface.md
 structure ViewportState where
   /-- Torsion / chirality parameter `q`.  `q = 0` is the classical
       limit; `q > 0` introduces chiral twist. -/

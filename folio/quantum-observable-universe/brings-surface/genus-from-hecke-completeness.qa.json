@@ -3,9 +3,9 @@
   "label": "lem:genus-from-hecke-completeness",
   "kind": "lemma",
   "paths": {
-    "ts": "content/quantum-observable-universe/brings-surface/genus-from-hecke-completeness.ts",
-    "md": "content/quantum-observable-universe/brings-surface/genus-from-hecke-completeness.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/Archimedean/genus_from_hecke_completeness.lean"
+    "ts": "folio/quantum-observable-universe/brings-surface/genus-from-hecke-completeness.ts",
+    "md": "folio/quantum-observable-universe/brings-surface/genus-from-hecke-completeness.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/Archimedean/genus_from_hecke_completeness.lean"
   },
   "source_hashes": {
     "md": "470d02e3764e",
@@ -716,7 +716,7 @@
         "reviewed_at": "2026-08-09T13:00:24.315Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/brings-surface/genus-from-hecke-completeness.ts:0: forward ref: uses prop:cohomological-embedding (manifest pos 153) which appears after this block (pos 105) in the chapter"
+        "evidence": "folio/quantum-observable-universe/brings-surface/genus-from-hecke-completeness.ts:0: forward ref: uses prop:cohomological-embedding (manifest pos 153) which appears after this block (pos 105) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1242,7 +1242,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/Archimedean/genus_from_hecke_completeness.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/Archimedean/genus_from_hecke_completeness.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",

@@ -69,7 +69,7 @@ And the ratio the data can be checked against is scale-free:
 
 Ground ring `ℝ` (§7c: archimedean — real powers `A^(2/3)` and an order claim).
 
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/Mass/CoordinationSaturation.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/Mass/CoordinationSaturation.lean
 -- Ref: [manuscript] docs/audits/2026-09-04-normalised-law-residual-shape.md
 -/
 

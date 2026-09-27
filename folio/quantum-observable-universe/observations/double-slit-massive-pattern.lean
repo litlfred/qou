@@ -86,7 +86,7 @@ theorem double_slit_massive_pattern_classical_envelope
     `double_slit_massive_pattern_axiom` asserted the claim for the wrong
     regime (`q ≠ 0, q ≠ 1`), where it is in fact false for `q ∈ (0,1)`
     with small `ratio`. The physical substrate has `q > 1`. -/
--- Ref: [bach2013] Controlled double-slit electron diffraction — see content/schema/references.ts
+-- Ref: [bach2013] Controlled double-slit electron diffraction — see folio/schema/references.ts
 -- Ref: [manuscript] Ch. 7, §double-slit-massive-pattern
 theorem double_slit_massive_pattern (q : ℝ) (hq : q ≠ 0) (hq1 : 1 < q)
     (lambda_ L a_slit : ℝ) (ha : a_slit ≠ 0)

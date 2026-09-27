@@ -3,8 +3,8 @@
   "label": "ex:finite-field-realisation",
   "kind": "example",
   "paths": {
-    "ts": "content/quantum-observable-universe/models-of-qous/finite-field-realisation.ts",
-    "md": "content/quantum-observable-universe/models-of-qous/finite-field-realisation.md"
+    "ts": "folio/quantum-observable-universe/models-of-qous/finite-field-realisation.ts",
+    "md": "folio/quantum-observable-universe/models-of-qous/finite-field-realisation.md"
   },
   "source_hashes": {
     "md": "8acd467b1966",
@@ -384,7 +384,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/models-of-qous/finite-field-realisation.md:3 — root-of-unity construction used without explicit regime declaration — Fix a prime $p$ and set $k = \\mathbb{F}_p$. Let $\\mathbf{C} = \\mathrm{Rep}_{\\mathbb{F}_p}(\\mathrm{SU}_q(2))$ be the category of finite-dimensional representations of the quantum group $\\mathrm{SU}_q(2)$ over $\\mathbb{F}_p$. Here $q \\in \\mathbb{F}_p^{\\times}$. More generally, let $q \\in \\overline{\\mathbb{F}}_p$ be a primitive $\\ell$-th root of unity, with $\\ell$ coprime to $p$. Then $\\mathbf{C}$ extends to a fusion category over $\\mathbb{F}_p(q)$ with finitely many simple objects. | content/quantum-observable-universe/models-of-qous/finite-field-realisation.md:5 — root-of-unity construction used without explicit regime declaration — The regular representation provides the Frobenius–Hopf object $A$. The forgetful functor to $\\mathrm{Vect}_{\\mathbb{F}_p}$ provides the fibre functor $\\tau$. Semisimplicity of the fusion category guarantees the non-degeneracy of the Frobenius form $\\int_A$. The observability condition $\\mathrm{Hom}(\\mathbf{1}, \\mathrm{Ad}(A)) = 0$ holds for $q \\neq 1$, as the trivial representation does not appear as a summand of the adjoint representation."
+        "evidence": "folio/quantum-observable-universe/models-of-qous/finite-field-realisation.md:3 — root-of-unity construction used without explicit regime declaration — Fix a prime $p$ and set $k = \\mathbb{F}_p$. Let $\\mathbf{C} = \\mathrm{Rep}_{\\mathbb{F}_p}(\\mathrm{SU}_q(2))$ be the category of finite-dimensional representations of the quantum group $\\mathrm{SU}_q(2)$ over $\\mathbb{F}_p$. Here $q \\in \\mathbb{F}_p^{\\times}$. More generally, let $q \\in \\overline{\\mathbb{F}}_p$ be a primitive $\\ell$-th root of unity, with $\\ell$ coprime to $p$. Then $\\mathbf{C}$ extends to a fusion category over $\\mathbb{F}_p(q)$ with finitely many simple objects. | folio/quantum-observable-universe/models-of-qous/finite-field-realisation.md:5 — root-of-unity construction used without explicit regime declaration — The regular representation provides the Frobenius–Hopf object $A$. The forgetful functor to $\\mathrm{Vect}_{\\mathbb{F}_p}$ provides the fibre functor $\\tau$. Semisimplicity of the fusion category guarantees the non-degeneracy of the Frobenius form $\\int_A$. The observability condition $\\mathrm{Hom}(\\mathbf{1}, \\mathrm{Ad}(A)) = 0$ holds for $q \\neq 1$, as the trivial representation does not appear as a summand of the adjoint representation."
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -402,7 +402,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/models-of-qous/finite-field-realisation.md:1 — detected regime [root-of-unity] is disjoint from chapter 'models-of-qous' expected [fixed-q0, generic-R, mod-gt-1, mod-lt-1, na, real-gt-1, real-positive, symbolic]"
+        "evidence": "folio/quantum-observable-universe/models-of-qous/finite-field-realisation.md:1 — detected regime [root-of-unity] is disjoint from chapter 'models-of-qous' expected [fixed-q0, generic-R, mod-gt-1, mod-lt-1, na, real-gt-1, real-positive, symbolic]"
       }
     ],
     "canonical-calibration-count": [

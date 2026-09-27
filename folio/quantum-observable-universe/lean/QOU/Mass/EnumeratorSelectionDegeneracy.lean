@@ -139,7 +139,7 @@ works with *"commutators of pure-braid **band generators**"*.
 
 **The mechanism, because it generalises.** My pattern was correct and *did* match
 those files. I piped it through `head -10`, and
-`content/quantum-observable-universe/lean/.lake/packages/…` sorts before
+`folio/quantum-observable-universe/lean/.lake/packages/…` sorts before
 `computations/` — six vendored Mathlib/batteries blobs consumed the budget, and I
 read the truncated output as *empty*. **`head` on a corpus grep is a correctness
 hazard, not a display convenience**, and a repo with a vendored `.lake/` will eat

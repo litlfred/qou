@@ -3,9 +3,9 @@
   "label": "prop:torus-knot-generators",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/brings-surface/torus-knot-generators.ts",
-    "md": "content/quantum-observable-universe/brings-surface/torus-knot-generators.md",
-    "lean": "content/quantum-observable-universe/brings-surface/torus-knot-generators.lean"
+    "ts": "folio/quantum-observable-universe/brings-surface/torus-knot-generators.ts",
+    "md": "folio/quantum-observable-universe/brings-surface/torus-knot-generators.md",
+    "lean": "folio/quantum-observable-universe/brings-surface/torus-knot-generators.lean"
   },
   "source_hashes": {
     "md": "5015d6f4706c",
@@ -1704,8 +1704,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.002985Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/torus-knot-generators.lean:36:30: error: unknown tactic",
-        "evidence": "content/quantum-observable-universe/brings-surface/torus-knot-generators.lean:1",
+        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/brings-surface/torus-knot-generators.lean:36:30: error: unknown tactic",
+        "evidence": "folio/quantum-observable-universe/brings-surface/torus-knot-generators.lean:1",
         "severity": "minor"
       },
       {
@@ -1871,8 +1871,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.002985Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/torus-knot-generators.lean:36:30: error: unknown tactic",
-        "evidence": "content/quantum-observable-universe/brings-surface/torus-knot-generators.lean:1",
+        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/brings-surface/torus-knot-generators.lean:36:30: error: unknown tactic",
+        "evidence": "folio/quantum-observable-universe/brings-surface/torus-knot-generators.lean:1",
         "severity": "major"
       },
       {
@@ -1905,11 +1905,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.002985Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/torus-knot-generators.lean:36:30: error: unknown tactic",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/torus-knot-generators.lean:36:30: error: unknown tactic",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/torus-knot-generators.lean:36:30: error: unknown tactic",
+        "referee_argument": "The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/torus-knot-generators.lean:36:30: error: unknown tactic",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/torus-knot-generators.lean:36:30: error: unknown tactic"
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/torus-knot-generators.lean:36:30: error: unknown tactic"
       },
       {
         "result": "pass",

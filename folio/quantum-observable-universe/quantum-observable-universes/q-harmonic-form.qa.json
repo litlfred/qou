@@ -3,9 +3,9 @@
   "label": "def:q-harmonic-form",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.ts",
-    "md": "content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.md",
-    "lean": "content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean"
+    "ts": "folio/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.ts",
+    "md": "folio/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.md",
+    "lean": "folio/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean"
   },
   "source_hashes": {
     "md": "3757e00e2e2c",
@@ -1010,7 +1010,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-harmonic-form.lean:1 \u2014 Lean file exists",
-        "notes": "The Lean theorem statement in content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.md."
+        "notes": "The Lean theorem statement in folio/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.md."
       },
       {
         "field_hash": {
@@ -1047,7 +1047,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-harmonic-form.lean:1",
-        "notes": "The mathematical claims in 'Particle ($q$-harmonic form)' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean:32:13: error: unexpected token 'section'; expected 'lemma'."
+        "notes": "The mathematical claims in 'Particle ($q$-harmonic form)' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean:32:13: error: unexpected token 'section'; expected 'lemma'."
       },
       {
         "result": "pass",
@@ -1222,7 +1222,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-harmonic-form.lean:1",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean."
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean."
       },
       {
         "result": "pass",
@@ -1256,8 +1256,8 @@
         "reviewed_at": "2026-07-07T14:26:55.995253Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean fails compilation, causing divergence from the narrative.",
-        "evidence": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean fails compilation, causing divergence from the narrative."
+        "notes": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean fails compilation, causing divergence from the narrative.",
+        "evidence": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1431,8 +1431,8 @@
         "reviewed_at": "2026-07-07T14:26:55.995253Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "q-harmonic-form.lean:1 \u2014 content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean fails compilation, indicating a reproducibility failure."
+        "evidence": "q-harmonic-form.lean:1 \u2014 folio/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
+        "notes": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean fails compilation, indicating a reproducibility failure."
       },
       {
         "result": "pass",
@@ -1466,10 +1466,10 @@
         "reviewed_at": "2026-07-07T14:26:55.995253Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "critical",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean fails compilation: folio/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean:32:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean:32:13: error: unexpected token 'section'; expected 'lemma'"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean contains compilation errors: folio/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean:32:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean fails compilation: folio/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean:32:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "result": "pass",

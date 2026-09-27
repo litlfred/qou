@@ -131,8 +131,8 @@ surface coefficient, which stays free.
 
 Ground ring `ℝ` (§7c: archimedean — `sinh`, `cosh`, `exp`, limits).
 
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/Mass/CoordinationBulkCriterion.lean
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/Mass/CoordinationSurfaceDeficit.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/Mass/CoordinationBulkCriterion.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/Mass/CoordinationSurfaceDeficit.lean
 -- Ref: [manuscript] docs/coordination/sm-26-parameter-chip-away.md (the hyperbolic-vs-Euclidean import objection)
 -/
 

@@ -3,9 +3,9 @@
   "label": "conj:poincare-lefschetz-borromean",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.ts",
-    "md": "content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.md",
-    "lean": "content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean"
   },
   "source_hashes": {
     "md": "572c1379affd",
@@ -305,7 +305,7 @@
         "reviewed_at": "2026-09-03T08:29:34.949Z",
         "reviewed_sha": "ec13f8ae5995ed7ebdb64ddd697075b82296501d",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a §7c-style note (in authorNotes, per §4d) or move the archimedean evaluation to a sibling block."
+        "evidence": "folio/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a §7c-style note (in authorNotes, per §4d) or move the archimedean evaluation to a sibling block."
       }
     ],
     "q-usage-regime-detected": [
@@ -648,7 +648,7 @@
         "reviewed_at": "2026-09-03T08:29:34.949Z",
         "reviewed_sha": "ec13f8ae5995ed7ebdb64ddd697075b82296501d",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.ts:0: forward ref: uses conj:borromean-bloch-group-element (manifest pos 421) which appears after this block (pos 368) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.ts:0: forward ref: uses conj:borromean-bloch-group-element (manifest pos 421) which appears after this block (pos 368) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1078,7 +1078,7 @@
         },
         "reviewed_at": "2026-06-28T10:58:38.729Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
         "evidence": "poincare-lefschetz-borromean.lean:1"
       },
@@ -1210,7 +1210,7 @@
         },
         "reviewed_at": "2026-06-28T10:58:38.755Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "Logical gaps exist due to incomplete proof (sorry stubs) in content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean.",
+        "notes": "Logical gaps exist due to incomplete proof (sorry stubs) in folio/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean.",
         "severity": "minor",
         "evidence": "poincare-lefschetz-borromean.lean:1"
       },
@@ -1243,9 +1243,9 @@
         },
         "reviewed_at": "2026-06-28T10:58:38.761Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains sorry, causing divergence from the fully-verified narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains sorry, causing divergence from the fully-verified narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains sorry, causing divergence from the fully-verified narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains sorry, causing divergence from the fully-verified narrative."
       },
       {
         "result": "pass",
@@ -1408,9 +1408,9 @@
         },
         "reviewed_at": "2026-06-28T10:58:38.793Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains sorry, indicating incomplete verification.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains sorry, indicating incomplete verification.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains sorry, indicating incomplete verification."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains sorry, indicating incomplete verification."
       },
       {
         "result": "pass",
@@ -1441,11 +1441,11 @@
         },
         "reviewed_at": "2026-06-28T10:58:38.800Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains 'sorry' placeholders.",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains 'sorry' placeholders.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains 'sorry' placeholders."
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",

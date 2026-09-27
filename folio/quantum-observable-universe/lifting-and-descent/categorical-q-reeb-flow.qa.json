@@ -3,9 +3,9 @@
   "label": "def:categorical-q-reeb-flow",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.ts",
-    "md": "content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.md",
-    "lean": "content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean"
+    "ts": "folio/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.ts",
+    "md": "folio/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.md",
+    "lean": "folio/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean"
   },
   "source_hashes": {
     "md": "4df0caaf17c1",
@@ -1008,7 +1008,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The statement matches the formal definition, but the Lean sibling fails compilation.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean:1"
       },
       {
         "field_hash": {
@@ -1044,7 +1044,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No false claims identified in 'Let \\xi be the Reeb derivation of A': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.ts:1"
       },
       {
         "result": "pass",
@@ -1076,9 +1076,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.700612Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean fails compilation, rendering the verification vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean fails compilation, rendering the verification vacuous.",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean:1"
       },
       {
         "result": "pass",
@@ -1112,7 +1112,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Let \\xi be the Reeb derivation of A'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.ts:1"
       },
       {
         "result": "pass",
@@ -1180,7 +1180,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Let \\xi be the Reeb derivation of A'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.ts:1"
       },
       {
         "result": "pass",
@@ -1214,7 +1214,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The argument flow in 'Let \\xi be the Reeb derivation of A' has logical gaps due to compilation failure in its Lean sibling.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean:1"
       },
       {
         "result": "pass",
@@ -1246,9 +1246,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.700612Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean:1"
       },
       {
         "result": "pass",
@@ -1282,7 +1282,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'Let \\xi be the Reeb derivation of A', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.ts:1"
       },
       {
         "result": "pass",
@@ -1316,7 +1316,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'Let \\xi be the Reeb derivation of A' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.ts:1"
       },
       {
         "result": "pass",
@@ -1350,7 +1350,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'Let \\xi be the Reeb derivation of A' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.ts:1"
       },
       {
         "result": "pass",
@@ -1384,7 +1384,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'Let \\xi be the Reeb derivation of A' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.ts:1"
       },
       {
         "result": "pass",
@@ -1416,9 +1416,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.700612Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean:1 \u2014 ../lifting-and-descent/categorical-q-reeb-flow.lean:26:12: error: expected token"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean:1 \u2014 ../lifting-and-descent/categorical-q-reeb-flow.lean:26:12: error: expected token"
       },
       {
         "result": "pass",
@@ -1453,7 +1453,7 @@
         "notes": "Referee verdict: open-objection. Sibling Lean file has issues: da-vacuous, da-lean-narrative-divergence, da-reproducibility.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean fails compilation with errors (../lifting-and-descent/categorical-q-reeb-flow.lean:26:12: error: expected token), preventing formal verification of the claims in 'Let \\xi be the Reeb derivation of A'.",
+        "referee_argument": "The referenced Lean sibling file folio/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean fails compilation with errors (../lifting-and-descent/categorical-q-reeb-flow.lean:26:12: error: expected token), preventing formal verification of the claims in 'Let \\xi be the Reeb derivation of A'.",
         "evidence": "Referee verdict: open-objection. Sibling Lean file has issues: da-vacuous, da-lean-narrative-divergence, da-reproducibility."
       },
       {

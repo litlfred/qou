@@ -3,9 +3,9 @@
   "label": "conj:algebraic-geometric-dilog-equivalence",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts",
-    "md": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.md",
-    "lean": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean"
   },
   "source_hashes": {
     "md": "66e16529ee0c",
@@ -113,7 +113,7 @@
         "reviewed_at": "2026-09-14T16:52:56.679Z",
         "reviewed_sha": "15697b37f38337a08be4099a68e74fb05e796c8a",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.md:160: carries a CAL-3 propagated uncertainty of $\\pm 1.26$ (130× / 32× the"
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.md:160: carries a CAL-3 propagated uncertainty of $\\pm 1.26$ (130× / 32× the"
       }
     ],
     "voice-editorializing": [
@@ -235,7 +235,7 @@
         "reviewed_at": "2026-09-14T16:52:56.679Z",
         "reviewed_sha": "15697b37f38337a08be4099a68e74fb05e796c8a",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.md:169: status-section-header: ## The fibre branch ($\\lvert q \\rvert = 1$, real $b$) and construction status"
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.md:169: status-section-header: ## The fibre branch ($\\lvert q \\rvert = 1$, real $b$) and construction status"
       }
     ],
     "framework-canonical": [
@@ -346,7 +346,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean:82 — positivity-dependent Real.* on q without explicit hypothesis — ‖(1 - q) * Real.log (partialProductLocal q x m) - volume‖ < ε | content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean:160 — positivity-dependent Real.* on q without explicit hypothesis — ‖(1 - q) * Real.log (partialProductLocal q x m) - V‖ < ε) | content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean:163 — positivity-dependent Real.* on q without explicit hypothesis — ‖(1 - q) * Real.log (partialProductLocal q x m) - BlochWignerD x‖ < ε := by | content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean:175 — positivity-dependent Real.* on q without explicit hypothesis — ‖(1 - q) * Real.log (partialProductLocal q x m) - BlochWignerD x‖ < ε :="
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean:82 — positivity-dependent Real.* on q without explicit hypothesis — ‖(1 - q) * Real.log (partialProductLocal q x m) - volume‖ < ε | folio/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean:160 — positivity-dependent Real.* on q without explicit hypothesis — ‖(1 - q) * Real.log (partialProductLocal q x m) - V‖ < ε) | folio/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean:163 — positivity-dependent Real.* on q without explicit hypothesis — ‖(1 - q) * Real.log (partialProductLocal q x m) - BlochWignerD x‖ < ε := by | folio/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean:175 — positivity-dependent Real.* on q without explicit hypothesis — ‖(1 - q) * Real.log (partialProductLocal q x m) - BlochWignerD x‖ < ε :="
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -977,7 +977,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts:1",
         "severity": "minor"
       },
       {
@@ -1040,7 +1040,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts:1",
         "severity": "minor"
       },
       {
@@ -1103,7 +1103,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts:1",
         "severity": "minor"
       },
       {
@@ -1135,7 +1135,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts:1",
         "severity": "minor"
       },
       {
@@ -1198,7 +1198,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts:1",
         "severity": "minor"
       },
       {
@@ -1230,7 +1230,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts:1",
         "severity": "minor"
       },
       {
@@ -1262,7 +1262,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts:1",
         "severity": "minor"
       },
       {
@@ -1294,7 +1294,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts:1",
         "severity": "minor"
       },
       {
@@ -1326,7 +1326,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts:1",
         "severity": "minor"
       },
       {

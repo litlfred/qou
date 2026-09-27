@@ -3,9 +3,9 @@
   "label": "conj:categorical-linking-operation",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/categorical-linking-operation.ts",
-    "md": "content/quantum-observable-universe/mass-theory/categorical-linking-operation.md",
-    "lean": "content/quantum-observable-universe/mass-theory/categorical-linking-operation.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/categorical-linking-operation.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/categorical-linking-operation.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/categorical-linking-operation.lean"
   },
   "source_hashes": {
     "md": "701e66ffe545",
@@ -646,7 +646,7 @@
         "reviewed_at": "2026-09-04T02:10:22.151Z",
         "reviewed_sha": "2fca9ac278ef6a9cf3a54e18aa0a763f1dc1d2c0",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/categorical-linking-operation.ts:0: forward ref: uses conj:categorical-higgs-mechanism (manifest pos 762) which appears after this block (pos 354) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/categorical-linking-operation.ts:0: forward ref: uses conj:categorical-higgs-mechanism (manifest pos 762) which appears after this block (pos 354) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1025,7 +1025,7 @@
         "reviewed_at": "2026-07-07T14:26:56.998331Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/categorical-linking-operation.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/categorical-linking-operation.ts:1",
         "severity": "minor"
       },
       {
@@ -1092,7 +1092,7 @@
         "reviewed_at": "2026-07-07T14:26:56.998331Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/categorical-linking-operation.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/categorical-linking-operation.ts:1",
         "severity": "minor"
       },
       {
@@ -1159,7 +1159,7 @@
         "reviewed_at": "2026-07-07T14:26:56.998331Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/categorical-linking-operation.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/categorical-linking-operation.ts:1",
         "severity": "minor"
       },
       {
@@ -1193,7 +1193,7 @@
         "reviewed_at": "2026-07-07T14:26:56.998331Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/categorical-linking-operation.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/categorical-linking-operation.ts:1",
         "severity": "minor"
       },
       {
@@ -1260,7 +1260,7 @@
         "reviewed_at": "2026-07-07T14:26:56.998331Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/categorical-linking-operation.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/categorical-linking-operation.ts:1",
         "severity": "minor"
       },
       {
@@ -1294,7 +1294,7 @@
         "reviewed_at": "2026-07-07T14:26:56.998331Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/categorical-linking-operation.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/categorical-linking-operation.ts:1",
         "severity": "minor"
       },
       {
@@ -1328,7 +1328,7 @@
         "reviewed_at": "2026-07-07T14:26:56.998331Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/categorical-linking-operation.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/categorical-linking-operation.ts:1",
         "severity": "minor"
       },
       {
@@ -1362,7 +1362,7 @@
         "reviewed_at": "2026-07-07T14:26:56.998331Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/categorical-linking-operation.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/categorical-linking-operation.ts:1",
         "severity": "minor"
       },
       {
@@ -1396,7 +1396,7 @@
         "reviewed_at": "2026-07-07T14:26:56.998331Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/categorical-linking-operation.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/categorical-linking-operation.ts:1",
         "severity": "minor"
       },
       {
@@ -1469,7 +1469,7 @@
         "reviewed_at": "2026-09-04T02:10:22.151Z",
         "reviewed_sha": "2fca9ac278ef6a9cf3a54e18aa0a763f1dc1d2c0",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-theory/categorical-linking-operation.md:1: \\cite{kassel1995quantum} or -- Ref: [kassel1995quantum] does not resolve in references.ts"
+        "evidence": "folio/quantum-observable-universe/mass-theory/categorical-linking-operation.md:1: \\cite{kassel1995quantum} or -- Ref: [kassel1995quantum] does not resolve in references.ts"
       }
     ],
     "proof-narrative-lean-equiv": [

@@ -35,7 +35,7 @@ export default conjecture({
         "something this block should do alone, so it is recorded here " +
         "instead. Per AGENTS.md §7ab the surreal layer is Language-tier " +
         "bookkeeping either way.",
-      see: "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
+      see: "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
     },
   ],
   label: "conj:jones-birthday",

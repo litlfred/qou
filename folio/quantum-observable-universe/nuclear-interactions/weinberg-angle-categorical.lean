@@ -3,7 +3,7 @@
   the EW Hoefsmit projectors.
 
   Companion: weinberg-angle-categorical.md
-  Path: content/quantum-observable-universe/nuclear-interactions/
+  Path: folio/quantum-observable-universe/nuclear-interactions/
 
   Content-bearing conjecture carrier (AGENTS.md §3b-tax): the class
   states the Hecke-eigenvalue-ratio identification of `cot θ_W` over a

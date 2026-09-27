@@ -3,8 +3,8 @@
   "label": "prf:b1-figure-8-row-theorem",
   "kind": "proof",
   "paths": {
-    "ts": "content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem-proof.ts",
-    "md": "content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem-proof.md"
+    "ts": "folio/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem-proof.ts",
+    "md": "folio/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem-proof.md"
   },
   "source_hashes": {
     "md": "d501611c0acd",
@@ -388,7 +388,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem-proof.md:1 — detected regime [root-of-unity] is disjoint from chapter 'appendix-surreals' expected [generic-R, na, symbolic]"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem-proof.md:1 — detected regime [root-of-unity] is disjoint from chapter 'appendix-surreals' expected [generic-R, na, symbolic]"
       }
     ],
     "proof-no-trivial-skeleton": [

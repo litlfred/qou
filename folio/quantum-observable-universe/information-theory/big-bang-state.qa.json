@@ -3,9 +3,9 @@
   "label": "def:big-bang-state",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/information-theory/big-bang-state.ts",
-    "md": "content/quantum-observable-universe/information-theory/big-bang-state.md",
-    "lean": "content/quantum-observable-universe/information-theory/big-bang-state.lean"
+    "ts": "folio/quantum-observable-universe/information-theory/big-bang-state.ts",
+    "md": "folio/quantum-observable-universe/information-theory/big-bang-state.md",
+    "lean": "folio/quantum-observable-universe/information-theory/big-bang-state.lean"
   },
   "source_hashes": {
     "md": "0a76a73e6553",
@@ -1030,7 +1030,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The claim in 'Big bang state (degree-$0$ trivial configuration)' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/big-bang-state.lean:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/big-bang-state.lean:1"
       },
       {
         "result": "pass",
@@ -1097,7 +1097,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Big bang state (degree-$0$ trivial configuration)'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/big-bang-state.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/big-bang-state.ts:1"
       },
       {
         "result": "pass",
@@ -1165,7 +1165,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Big bang state (degree-$0$ trivial configuration)'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/big-bang-state.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/big-bang-state.ts:1"
       },
       {
         "result": "pass",
@@ -1197,9 +1197,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.643302Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/information-theory/big-bang-state.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/information-theory/big-bang-state.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/big-bang-state.lean:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/big-bang-state.lean:1"
       },
       {
         "result": "pass",
@@ -1231,9 +1231,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.643302Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The Lean sibling content/quantum-observable-universe/information-theory/big-bang-state.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/information-theory/big-bang-state.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/information-theory/big-bang-state.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/information-theory/big-bang-state.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1267,7 +1267,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'Big bang state (degree-$0$ trivial configuration)', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/big-bang-state.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/big-bang-state.ts:1"
       },
       {
         "result": "pass",
@@ -1301,7 +1301,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'Big bang state (degree-$0$ trivial configuration)' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/big-bang-state.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/big-bang-state.ts:1"
       },
       {
         "result": "pass",
@@ -1335,7 +1335,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'Big bang state (degree-$0$ trivial configuration)' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/big-bang-state.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/big-bang-state.ts:1"
       },
       {
         "result": "pass",
@@ -1369,7 +1369,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'Big bang state (degree-$0$ trivial configuration)' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/big-bang-state.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/big-bang-state.ts:1"
       },
       {
         "result": "pass",
@@ -1401,9 +1401,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.643302Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The Lean sibling content/quantum-observable-universe/information-theory/big-bang-state.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/information-theory/big-bang-state.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/big-bang-state.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/big-bang-state.lean:29:31: error(lean.unknownIdentifier): Unknown identifier `JetHorizon`"
+        "evidence": "folio/quantum-observable-universe/information-theory/big-bang-state.lean:1 — /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/information-theory/big-bang-state.lean:29:31: error(lean.unknownIdentifier): Unknown identifier `JetHorizon`"
       },
       {
         "result": "pass",
@@ -1435,11 +1435,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.643302Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/information-theory/big-bang-state.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/big-bang-state.lean:29:31: error(lean.unknownIdentifier): Unknown identifier `JetHorizon`",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/information-theory/big-bang-state.lean fails compilation: /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/information-theory/big-bang-state.lean:29:31: error(lean.unknownIdentifier): Unknown identifier `JetHorizon`",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/big-bang-state.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/big-bang-state.lean:29:31: error(lean.unknownIdentifier): Unknown identifier `JetHorizon`, invalidating the claimed formalization.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/information-theory/big-bang-state.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/big-bang-state.lean:29:31: error(lean.unknownIdentifier): Unknown identifier `JetHorizon`"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/information-theory/big-bang-state.lean contains compilation errors: /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/information-theory/big-bang-state.lean:29:31: error(lean.unknownIdentifier): Unknown identifier `JetHorizon`, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/information-theory/big-bang-state.lean fails compilation: /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/information-theory/big-bang-state.lean:29:31: error(lean.unknownIdentifier): Unknown identifier `JetHorizon`"
       },
       {
         "result": "pass",

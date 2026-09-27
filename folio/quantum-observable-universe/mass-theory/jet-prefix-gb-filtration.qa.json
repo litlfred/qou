@@ -3,9 +3,9 @@
   "label": "prop:jet-prefix-gb-filtration",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/jet-prefix-gb-filtration.ts",
-    "md": "content/quantum-observable-universe/mass-theory/jet-prefix-gb-filtration.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/jet_prefix_gb_filtration.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/jet-prefix-gb-filtration.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/jet-prefix-gb-filtration.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/BraidKnot/jet_prefix_gb_filtration.lean"
   },
   "source_hashes": {
     "md": "c158698917a6",
@@ -1784,7 +1784,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/jet-prefix-gb-filtration.ts:0: forward ref: uses thm:knot-mass-formula-unified (manifest pos 667) which appears after this block (pos 526) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/jet-prefix-gb-filtration.ts:0: forward ref: uses thm:knot-mass-formula-unified (manifest pos 667) which appears after this block (pos 526) in the chapter"
       }
     ],
     "detangler-section-band": [

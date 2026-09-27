@@ -3,9 +3,9 @@
   "label": "prop:symbolic-character-table",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/symbolic-character-table.ts",
-    "md": "content/quantum-observable-universe/mass-theory/symbolic-character-table.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/symbolic_character_table.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/symbolic-character-table.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/symbolic-character-table.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/BraidKnot/symbolic_character_table.lean"
   },
   "source_hashes": {
     "md": "cedd2291e521",
@@ -1118,7 +1118,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-theory/symbolic-character-table.lean:29 [placeholder-true] theorem symbolic_character_table_valid : True := sorry",
+        "evidence": "folio/quantum-observable-universe/mass-theory/symbolic-character-table.lean:29 [placeholder-true] theorem symbolic_character_table_valid : True := sorry",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1223,8 +1223,8 @@
         },
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/symbolic-character-table.lean is missing entirely.",
-        "evidence": "content/quantum-observable-universe/mass-theory/symbolic-character-table.md:1",
+        "notes": "The sibling Lean file folio/quantum-observable-universe/mass-theory/symbolic-character-table.lean is missing entirely.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/symbolic-character-table.md:1",
         "severity": "minor"
       },
       {
@@ -1279,7 +1279,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/BraidKnot/symbolic_character_table.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/BraidKnot/symbolic_character_table.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1438,7 +1438,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/symbolic-character-table.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/symbolic-character-table.ts:1",
         "severity": "minor"
       },
       {
@@ -1499,7 +1499,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/symbolic-character-table.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/symbolic-character-table.ts:1",
         "severity": "minor"
       },
       {
@@ -1560,7 +1560,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/symbolic-character-table.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/symbolic-character-table.ts:1",
         "severity": "minor"
       },
       {
@@ -1591,7 +1591,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/symbolic-character-table.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/symbolic-character-table.ts:1",
         "severity": "minor"
       },
       {
@@ -1622,7 +1622,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/symbolic-character-table.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/symbolic-character-table.ts:1",
         "severity": "minor"
       },
       {
@@ -1653,7 +1653,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/symbolic-character-table.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/symbolic-character-table.ts:1",
         "severity": "minor"
       },
       {
@@ -1684,7 +1684,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/symbolic-character-table.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/symbolic-character-table.ts:1",
         "severity": "minor"
       },
       {
@@ -1715,7 +1715,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/symbolic-character-table.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/symbolic-character-table.ts:1",
         "severity": "minor"
       },
       {
@@ -1809,9 +1809,9 @@
         },
         "reviewed_at": "2026-06-28T10:58:53.117Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/symbolic-character-table.lean is missing, leading to complete divergence.",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/mass-theory/symbolic-character-table.lean is missing, leading to complete divergence.",
         "severity": "minor",
-        "evidence": "The referenced Lean file content/quantum-observable-universe/mass-theory/symbolic-character-table.lean is missing, leading to complete divergence."
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/mass-theory/symbolic-character-table.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",

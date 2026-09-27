@@ -3,9 +3,9 @@
   "label": "def:categorical-neutron",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/categorical-neutron.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/categorical-neutron.md",
-    "lean": "content/quantum-observable-universe/knots-particles-confinement/categorical-neutron.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/categorical-neutron.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/categorical-neutron.md",
+    "lean": "folio/quantum-observable-universe/knots-particles-confinement/categorical-neutron.lean"
   },
   "source_hashes": {
     "md": "5b87335dc54d",
@@ -1007,9 +1007,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.353118Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/particle-interactions/categorical-neutron.lean:45:36: error: unsolved goals",
+        "notes": "The Lean sibling fails compilation, preventing statement verification: folio/quantum-observable-universe/particle-interactions/categorical-neutron.lean:45:36: error: unsolved goals",
         "severity": "minor",
-        "evidence": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/particle-interactions/categorical-neutron.lean:45:36: error: unsolved goals"
+        "evidence": "The Lean sibling fails compilation, preventing statement verification: folio/quantum-observable-universe/particle-interactions/categorical-neutron.lean:45:36: error: unsolved goals"
       },
       {
         "field_hash": {
@@ -1044,7 +1044,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.353118Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The mathematical claims in 'Neutron (categorical)' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/categorical-neutron.lean:45:36: error: unsolved goals.",
+        "notes": "The mathematical claims in 'Neutron (categorical)' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/particle-interactions/categorical-neutron.lean:45:36: error: unsolved goals.",
         "severity": "minor",
         "evidence": "categorical-neutron.lean:1"
       },
@@ -1079,7 +1079,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.353118Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-neutron.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/categorical-neutron.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "categorical-neutron.lean:1"
       },
@@ -1218,7 +1218,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.353118Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/categorical-neutron.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/categorical-neutron.lean.",
         "severity": "minor",
         "evidence": "categorical-neutron.lean:1"
       },
@@ -1253,9 +1253,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.353118Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-neutron.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/categorical-neutron.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-neutron.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/categorical-neutron.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1428,9 +1428,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.353118Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-neutron.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/categorical-neutron.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "categorical-neutron.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/categorical-neutron.lean:45:36: error: unsolved goals"
+        "evidence": "categorical-neutron.lean:1 \u2014 folio/quantum-observable-universe/particle-interactions/categorical-neutron.lean:45:36: error: unsolved goals"
       },
       {
         "result": "pass",
@@ -1463,11 +1463,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.353118Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/categorical-neutron.lean fails compilation.",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/categorical-neutron.lean fails compilation.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-neutron.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/categorical-neutron.lean fails compilation."
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/categorical-neutron.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/categorical-neutron.lean fails compilation."
       },
       {
         "result": "pass",

@@ -14,10 +14,10 @@ import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
 /-!
 # QOU.CRManifoldData
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/CRManifoldData.lean (monolithic).
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/CRManifoldData.lean (monolithic).
 That file no longer exists — the library was split, and `CRManifoldData` now lives at
-  content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/CRRealisation.lean
+  folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/CRRealisation.lean
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical

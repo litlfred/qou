@@ -3,9 +3,9 @@
   "label": "prop:phi-q-aj-machinery-identification",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.ts",
-    "md": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.md",
-    "lean": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean"
+    "ts": "folio/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.ts",
+    "md": "folio/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.md",
+    "lean": "folio/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean"
   },
   "source_hashes": {
     "md": "e860f57eea97",
@@ -21,7 +21,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean:117 [field-projection] theorem phi_q_eq_aj_saddle_root_of_unity | content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean:127 [field-projection] theorem li2_q_eq_aj_saddle_real",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean:117 [field-projection] theorem phi_q_eq_aj_saddle_root_of_unity | folio/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean:127 [field-projection] theorem li2_q_eq_aj_saddle_real",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",

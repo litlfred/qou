@@ -3,8 +3,8 @@
   "label": "rem:knot-operator-basis-table",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/appendix-knot-operations/knot-operator-basis-table.ts",
-    "md": "content/quantum-observable-universe/appendix-knot-operations/knot-operator-basis-table.md"
+    "ts": "folio/quantum-observable-universe/appendix-knot-operations/knot-operator-basis-table.ts",
+    "md": "folio/quantum-observable-universe/appendix-knot-operations/knot-operator-basis-table.md"
   },
   "source_hashes": {
     "md": "95554310cbb3",
@@ -1227,7 +1227,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The markdown refers to a witness file named `knot-operator-table.witness.json`, whereas the TypeScript metadata references `photon-operator-table.witness.json`.",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/appendix-knot-operations/knot-operator-basis-table.md:10 — **Witness**: `knot-operator-table.witness.json`."
+        "evidence": "folio/quantum-observable-universe/appendix-knot-operations/knot-operator-basis-table.md:10 — **Witness**: `knot-operator-table.witness.json`."
       },
       {
         "result": "pass",

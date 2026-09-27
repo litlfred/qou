@@ -3,9 +3,9 @@
   "label": "prop:q-ns-nonlinear-uniqueness",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts",
-    "md": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/FluidDynamics/p1_nonlinear_uniqueness.lean"
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/FluidDynamics/p1_nonlinear_uniqueness.lean"
   },
   "source_hashes": {
     "md": "bf19f3f08b9b",
@@ -1229,7 +1229,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/FluidDynamics/p1_nonlinear_uniqueness.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/FluidDynamics/p1_nonlinear_uniqueness.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1405,7 +1405,7 @@
         "reviewed_at": "2026-07-07T14:26:56.294049Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Checked mathematical consistency of the claim 'Let $(\\mathbf{C}, A, \\tau)$ be a' and found no counterexamples under the stated conditions.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
         "severity": "minor"
       },
       {
@@ -1470,7 +1470,7 @@
         "reviewed_at": "2026-07-07T14:26:56.294049Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Traced dependencies ['prop:q-spectral-sobolev', 'thm:q-ns-wellposedness'] for 'prop:q-ns-nonlinear-uniqueness' and confirmed no circular definitions or justifications.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
         "severity": "minor"
       },
       {
@@ -1535,7 +1535,7 @@
         "reviewed_at": "2026-07-07T14:26:56.294049Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
         "severity": "minor"
       },
       {
@@ -1568,7 +1568,7 @@
         "reviewed_at": "2026-07-07T14:26:56.294049Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical transitions in the derivation of 'Let $(\\mathbf{C}, A, \\tau)$ be a' are sound; no non-sequiturs detected.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
         "severity": "minor"
       },
       {
@@ -1600,9 +1600,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.294049Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Divergence detected: Lean reference 'qou:QOU.FluidDynamics.p1_nonlinear_uniqueness' is specified but the file content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.lean is missing.",
+        "notes": "Divergence detected: Lean reference 'qou:QOU.FluidDynamics.p1_nonlinear_uniqueness' is specified but the file folio/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.lean is missing.",
         "severity": "minor",
-        "evidence": "Divergence detected: Lean reference 'qou:QOU.FluidDynamics.p1_nonlinear_uniqueness' is specified but the file content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.lean is missing."
+        "evidence": "Divergence detected: Lean reference 'qou:QOU.FluidDynamics.p1_nonlinear_uniqueness' is specified but the file folio/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.lean is missing."
       },
       {
         "result": "pass",
@@ -1634,7 +1634,7 @@
         "reviewed_at": "2026-07-07T14:26:56.294049Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references and uses ['prop:q-spectral-sobolev', 'thm:q-ns-wellposedness'] cited in 'prop:q-ns-nonlinear-uniqueness' are used in accordance with their established mathematical definitions.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
         "severity": "minor"
       },
       {
@@ -1667,7 +1667,7 @@
         "reviewed_at": "2026-07-07T14:26:56.294049Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All terms and algebraic structures in 'prop:q-ns-nonlinear-uniqueness' are uniquely defined or standard.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
         "severity": "minor"
       },
       {
@@ -1700,7 +1700,7 @@
         "reviewed_at": "2026-07-07T14:26:56.294049Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic statements in 'prop:q-ns-nonlinear-uniqueness' do not rely on fragile empirical fits or numerical thresholds.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
         "severity": "minor"
       },
       {
@@ -1733,7 +1733,7 @@
         "reviewed_at": "2026-07-07T14:26:56.294049Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Physical dimensions and units in 'prop:q-ns-nonlinear-uniqueness' are consistent with quantum observable universe models.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
         "severity": "minor"
       },
       {

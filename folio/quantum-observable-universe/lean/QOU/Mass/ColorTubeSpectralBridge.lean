@@ -45,7 +45,7 @@ Base ring (§7c): generic `[CommRing R]` — every identity here is a polynomial
 identity closed by `ring`, with no archimedean construct. The substrate
 specialisation (`z = √q − 1/√q` at `R := ℝ`) happens at the consumer.
 
--- Ref: [manuscript] content/quantum-observable-universe/brings-surface/color-tube-cubic.md
+-- Ref: [manuscript] folio/quantum-observable-universe/brings-surface/color-tube-cubic.md
 -/
 
 namespace QOU.Mass.ColorTubeSpectralBridge

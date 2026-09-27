@@ -3,8 +3,8 @@
   "label": "notation-collisions",
   "kind": "prose",
   "paths": {
-    "ts": "content/quantum-observable-universe/notation/notation-collisions.ts",
-    "md": "content/quantum-observable-universe/notation/notation-collisions.md"
+    "ts": "folio/quantum-observable-universe/notation/notation-collisions.ts",
+    "md": "folio/quantum-observable-universe/notation/notation-collisions.md"
   },
   "source_hashes": {
     "md": "1d128db33921",
@@ -347,7 +347,7 @@
         "reviewed_at": "2026-09-15T22:10:12.299Z",
         "reviewed_sha": "de0de8a0d424e5c757ec7b913c7bb35cf1469966",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/notation/notation-collisions.md:101: | Functor | Domain → Codomain | Role | | content/quantum-observable-universe/notation/notation-collisions.md:131: | $B_{\\mathrm{magic}}$ | $2\\,m_e A\\,\\mathrm{Vol}(L6a4)$ (⁴He) | flat magic-$A$ | ⁴He canonical | | content/quantum-observable-universe/notation/notation-collisions.md:179: | **mass functional** | Skein-module map $\\mathrm{Sk}_q\\to\\mathbb{R}_{\\geq0}$ (evaluates a knot class to its mass) | functional | **$\\mathfrak{m}$** (migrate ← $\\mathcal{M}$) | | content/quantum-observable-universe/notation/notation-collisions.md:234: (\"the photon $\\gamma$ is the empty knot $\\varnothing$ … distinct from the"
+        "evidence": "folio/quantum-observable-universe/notation/notation-collisions.md:101: | Functor | Domain → Codomain | Role | | folio/quantum-observable-universe/notation/notation-collisions.md:131: | $B_{\\mathrm{magic}}$ | $2\\,m_e A\\,\\mathrm{Vol}(L6a4)$ (⁴He) | flat magic-$A$ | ⁴He canonical | | folio/quantum-observable-universe/notation/notation-collisions.md:179: | **mass functional** | Skein-module map $\\mathrm{Sk}_q\\to\\mathbb{R}_{\\geq0}$ (evaluates a knot class to its mass) | functional | **$\\mathfrak{m}$** (migrate ← $\\mathcal{M}$) | | folio/quantum-observable-universe/notation/notation-collisions.md:234: (\"the photon $\\gamma$ is the empty knot $\\varnothing$ … distinct from the"
       }
     ],
     "voice-editorializing": [
@@ -439,7 +439,7 @@
         "reviewed_at": "2026-09-15T22:10:12.299Z",
         "reviewed_sha": "de0de8a0d424e5c757ec7b913c7bb35cf1469966",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/notation/notation-collisions.md:21: P4:date-ref: - **$\\mathrm{tr}(\\mathrm{id}_A)$ names three different objects, and two corpus claims about it are in direct conflict — resolve the symbol to its object before quoting a value.** [Euler-characteristic | content/quantum-observable-universe/notation/notation-collisions.md:54: P4:date-ref: **Convention (owner ruling, 2026-08-16).** $w_\\lambda(q)$ **is** the $q$-deformed Wedderburn-block weight, and the classical Plancherel measure is its specialisation $w_\\lambda(1)$ — not a separate sy | content/quantum-observable-universe/notation/notation-collisions.md:74: P4:date-ref: - **$\\mathcal{A}$ vs $\\mathcal{B}_K$ — two different braids, historically both called \"the atomic braid\" and both written $\\mathcal{A}$.** $\\mathcal{A} \\in H_{A+Z}(q)$ is the **neutral atom**: $Z$ pro"
+        "evidence": "folio/quantum-observable-universe/notation/notation-collisions.md:21: P4:date-ref: - **$\\mathrm{tr}(\\mathrm{id}_A)$ names three different objects, and two corpus claims about it are in direct conflict — resolve the symbol to its object before quoting a value.** [Euler-characteristic | folio/quantum-observable-universe/notation/notation-collisions.md:54: P4:date-ref: **Convention (owner ruling, 2026-08-16).** $w_\\lambda(q)$ **is** the $q$-deformed Wedderburn-block weight, and the classical Plancherel measure is its specialisation $w_\\lambda(1)$ — not a separate sy | folio/quantum-observable-universe/notation/notation-collisions.md:74: P4:date-ref: - **$\\mathcal{A}$ vs $\\mathcal{B}_K$ — two different braids, historically both called \"the atomic braid\" and both written $\\mathcal{A}$.** $\\mathcal{A} \\in H_{A+Z}(q)$ is the **neutral atom**: $Z$ pro"
       }
     ],
     "voice-status-section": [
@@ -477,7 +477,7 @@
         "reviewed_at": "2026-09-15T22:10:12.299Z",
         "reviewed_sha": "de0de8a0d424e5c757ec7b913c7bb35cf1469966",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/notation/notation-collisions.md:26: - **$H_q$** alone = not used. Three distinct concepts share the letter $H$: $\\mathcal{H}_q$ (shuffle Hopf algebra), $\\hat{H}_q$ (Hamiltonian operator), $H_n(q)$  [ambiguous $H_q$ — disambiguate as $\\mathcal{H}_q$, $\\hat{H}_q$, or $H_n(q)$] | content/quantum-observable-universe/notation/notation-collisions.md:81: **Categories vs CPT operators.** We typeset categories in bold, $\\mathbf{C}$, $\\mathbf{Rep}$, etc. We reserve the calligraphic $\\mathcal{C}$ for the charge-conj  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
+        "evidence": "folio/quantum-observable-universe/notation/notation-collisions.md:26: - **$H_q$** alone = not used. Three distinct concepts share the letter $H$: $\\mathcal{H}_q$ (shuffle Hopf algebra), $\\hat{H}_q$ (Hamiltonian operator), $H_n(q)$  [ambiguous $H_q$ — disambiguate as $\\mathcal{H}_q$, $\\hat{H}_q$, or $H_n(q)$] | folio/quantum-observable-universe/notation/notation-collisions.md:81: **Categories vs CPT operators.** We typeset categories in bold, $\\mathbf{C}$, $\\mathbf{Rep}$, etc. We reserve the calligraphic $\\mathcal{C}$ for the charge-conj  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
       }
     ],
     "render-math-mode-envelope": [

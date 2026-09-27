@@ -3,9 +3,9 @@
   "label": "conj:hecke-anyonic-substrate",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/hecke-anyonic-substrate.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/hecke-anyonic-substrate.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/HeckeAnyonicSubstrate.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/hecke-anyonic-substrate.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/hecke-anyonic-substrate.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/BraidKnot/HeckeAnyonicSubstrate.lean"
   },
   "source_hashes": {
     "md": "b71a08149436",
@@ -1019,9 +1019,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.158688Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The claim in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' is unverified because the formal proof in content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean is incomplete (contains sorry).",
+        "notes": "The claim in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' is unverified because the formal proof in folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean is incomplete (contains sorry).",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean:1"
       }
     ],
     "da-vacuous": [
@@ -1064,7 +1064,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1084,9 +1084,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.158688Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The prose in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean is incomplete (has sorry).",
+        "notes": "The prose in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' presents the result as established, but the Lean formalization in folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean is incomplete (has sorry).",
         "severity": "minor",
-        "evidence": "The prose in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean is incomplete (has sorry)."
+        "evidence": "The prose in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' presents the result as established, but the Lean formalization in folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean is incomplete (has sorry)."
       }
     ],
     "da-hidden-dof": [
@@ -1108,7 +1108,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1130,7 +1130,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1150,7 +1150,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.158688Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean uses a class-conjecture pattern, matching the conjectural nature of 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation'.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean uses a class-conjecture pattern, matching the conjectural nature of 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation'.",
         "severity": "minor"
       }
     ],
@@ -1173,7 +1173,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Citations to kassel1995, kitaev2006, nayak2008, khovanovlauda2009 are correct and contextually appropriate.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1195,7 +1195,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1217,7 +1217,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1239,7 +1239,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1261,7 +1261,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1284,7 +1284,7 @@
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
         "severity": "minor",
         "verdict": "survivable-objection",
-        "referee_argument": "The conjectured relations in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' remain unproven and are represented only by sorry stubs in the formalization content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean.",
+        "referee_argument": "The conjectured relations in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' remain unproven and are represented only by sorry stubs in the formalization folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean.",
         "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders."
       }
     ],

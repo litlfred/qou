@@ -6,7 +6,7 @@ import Mathlib.Tactic
 # Brane-tower (R-side) is isospin-blind — a structural (b)-exclusion
 
 The six-term mass formula
-(`content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.md`)
+(`folio/quantum-observable-universe/mass-theory/knot-mass-formula-unified.md`)
 requires every term to be a **Markov-invariant trace**.  Terms 2 and 3 (the
 brane tower) are trace-invariant in the **R-side algebraic form**
 `∑_S z^{|S|} Vol_q^{(S)}(β)`, where each `Vol_q^{(S)}` is a Markov trace over

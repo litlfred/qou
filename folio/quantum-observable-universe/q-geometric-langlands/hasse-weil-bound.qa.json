@@ -3,9 +3,9 @@
   "label": "thm:hasse-weil-bound",
   "kind": "theorem",
   "paths": {
-    "ts": "content/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound.ts",
-    "md": "content/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound.md",
-    "lean": "content/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound.lean"
+    "ts": "folio/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound.ts",
+    "md": "folio/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound.md",
+    "lean": "folio/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound.lean"
   },
   "source_hashes": {
     "md": "5faf6df39fed",
@@ -394,7 +394,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound.lean:112 — positivity-dependent Real.* on q without explicit hypothesis — Complex.abs (Z.eigenvalues i) = Real.rpow Z.q (1 / 2) := by"
+        "evidence": "folio/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound.lean:112 — positivity-dependent Real.* on q without explicit hypothesis — Complex.abs (Z.eigenvalues i) = Real.rpow Z.q (1 / 2) := by"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -447,7 +447,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound.md:1 — detected regime [real-positive] is disjoint from chapter 'q-geometric-langlands' expected [generic-R, mod-gt-1, mod-lt-1, na, root-of-unity, symbolic, unit-circle]"
+        "evidence": "folio/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound.md:1 — detected regime [real-positive] is disjoint from chapter 'q-geometric-langlands' expected [generic-R, mod-gt-1, mod-lt-1, na, root-of-unity, symbolic, unit-circle]"
       }
     ],
     "proof-no-bare-sorries": [

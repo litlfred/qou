@@ -89,7 +89,7 @@ structure PoleOrderData where
 -- Ref: [manuscript] docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md
 -- Ref: [mathas1999] Mathas, "Iwahori–Hecke Algebras and Schur Algebras of the Symmetric Group," AMS Univ. Lect. Series 15, 1999
 -- Ref: [hoefsmit1974] http://hdl.handle.net/2429/19407
--- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
+-- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see folio/bib-qa-verifications.json
 -- Ref: [brundankleshchev2009] Brundan & Kleshchev, "Blocks of cyclotomic Hecke algebras and Khovanov-Lauda algebras," Invent. Math. 178 (2009), arXiv:0808.2032
 class CrystalRMatrixSubLemma (R : Type u) [CommRing R] (q : R)
     [C : CrystalGraphRealization R q] (P : PoleOrderData) : Prop where

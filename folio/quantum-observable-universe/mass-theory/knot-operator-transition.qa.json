@@ -3,9 +3,9 @@
   "label": "prop:knot-operator-transition",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/knot-operator-transition.ts",
-    "md": "content/quantum-observable-universe/mass-theory/knot-operator-transition.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/knot_operator_transition.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/knot-operator-transition.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/knot-operator-transition.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/BraidKnot/knot_operator_transition.lean"
   },
   "source_hashes": {
     "md": "90bc95677986",
@@ -1201,8 +1201,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/knot-operator-transition.lean is missing entirely.",
-        "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-transition.md:1",
+        "notes": "The sibling Lean file folio/quantum-observable-universe/mass-theory/knot-operator-transition.lean is missing entirely.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-transition.md:1",
         "severity": "minor"
       },
       {
@@ -1221,7 +1221,7 @@
         "reviewed_at": "2026-09-03T20:29:46Z",
         "reviewed_sha": "4a4e5ce3d2cbbfd6b22fdfc08b74b38323a736e3",
         "notes": "Statement (md:1-9,24) is a purely algebraic H_3(q) normal-form/knot-type claim in σ_i and h with no archimedean construct; the only numeric tokens (md:17-18) sit in a flagged robustness paragraph outside the statement and are declared not to affect the conclusion, so the block matches mass-theory's mixed profile (generic-R/symbolic admitted) and its algebraic 'Staircase and character lemmas' section.",
-        "evidence": "REGIME. mass-theory is listed in ARCHIMEDEAN_CHAPTERS (folio-assistant/cat-harness/content/pipeline/_folio-chapter-profiles.qou.ts:175) but its narrative profile explicitly admits 'na','symbolic','generic-R' alongside 'real-positive','real-gt-1','fixed-q0' (same file :88-90), and the chapter docstring declares four faces — Algebraic / Geometric / Archimedean / Physical (content/quantum-observable-universe/mass-theory/mass-theory.ts:4-21). This block sits in section 'Staircase and character lemmas' (label sec:mass-application-staircase-hoefsmit, mass-theory.ts:1291-1294) under the 'ORPHAN RECONNECTS / Trace and staircase lemmas' group, beside qmn-recursive-memoized and sigma-shell-from-beta-chain-derivation — an algebraic-lemma section, not the Physical/comparison face. The q-usage-regime-detected script records regimes ['na'] for this block and q-usage-archimedean-in-categorical-chapter / q-usage-fixed-q0-leak are n/a (knot-operator-transition.qa.json), i.e. the pre-flagger found no archimedean token signature. Peers in the same chapter passed on exactly this ground (bring-residue-resolvent: 'generic over [Field R]'; cyclotomic-strand-doubling, sl2-prolongation-recurrence, zeta8-witness-level2-su2: 'respects the chapter's base-ring regime'). STATEMENT TOKENS. The italic statement is md:1 (operator adding the (A+1)-th nucleon has a definite knot type), the table md:3-9 (operators as words in σ_0, σ_1, σ_1^{-1} and the Laurent shift h/2 in H_3(q); Dominant NF column = basis-element labels σ_0, L_-, e^- ; Knot type column = single crossing / Hopf link / trefoil), and md:24 (unknot→crossing→Hopf→trefoil hierarchy). Every construct there is Hecke-algebra / normal-form / knot-type combinatorics over the q-Laurent data; there is no Real.*, no numeric q or q_0, no MeV, m_e or CODATA, no order hypothesis, no sqrt/log/exp/cos, no limit over R, no LP/SDP. 'e^-' at md:8-9 is a normal-form basis label, not an exponential. md:24's clause 'explaining why 4He has the strongest binding per nucleon' is physical interpretation (a one-voice/clarity-stmt-pure matter at most), not an archimedean construct. TOKENS OUTSIDE THE STATEMENT. md:17 'dominance margins of 4.7× to 9.6×' and md:18 'δ/2 ≈ 6.9 × 10^{-4}' are numerical evaluations at the substrate value of the flavour split δ (linked at md:13-14 to prop:flavor-split-substrate, which lives in the archimedean observations chapter, content/quantum-observable-universe/observations/flavor-split-substrate.md). They are inside a convention-robustness paragraph (md:11-22), explicitly attributed to a probe (computations/probes/knot_operator_transition_convention_robustness_probe.py, md:20) and explicitly declared not to bear on the statement: 'The Dominant NF and Knot type columns are unaffected' (md:14-15) and 'The convention is recorded because the operators are written in it, not because the conclusion depends on it' (md:21-22). The side is therefore flagged (substrate flavour split, numerical probe), so this is not the WARN 'mixes both regimes without flagging' branch. BRANCHES. FAIL-1 (generic-section statement hard-coding archimedean constructs unflagged) does not apply: no such construct in the statement. FAIL-2 (archimedean-chapter statement that is a purely algebraic identity belonging upstream) does not apply: the chapter profile admits generic-R/symbolic content, the hosting section is an algebraic-lemma section, and the upstream def:per-nucleon-channel-decomposition (nuclear-interactions) is itself annotated 'underlying combinatorial content stays generic to any commutative ring' (per-nucleon-channel-decomposition.ts:5) — the block is a nucleus-indexed application of that generic data, which is where mass-theory's Algebraic face says such things go. WARN does not apply as argued. Hence PASS: the statement's regime (generic-R/symbolic Hecke normal forms) matches its section and the chapter's admitted profile. PRIOR. The 2026-07-07 'fail' (gemini-3.1-pro) cites only 'sibling Lean file is missing' with evidence md:1 and never engages the narrative; the criterion has depends_on:['md'] and a missing .lean is outside its scope. Its md hash ff1591559275 is also stale — the convention-robustness paragraph (md:11-22) postdates it; current md hash is 90bc95677986. SIDE NOTES (not wall-side): lean.ref qou:QOU.BraidKnot.knot_operator_transition has no sibling .lean and validation 'not_checked' — a lean-status matter for the lean-* criteria; the symbol h is used at md:5-12 without being introduced in this block (clarity-stmt-tight / expository-pass matter)."
+        "evidence": "REGIME. mass-theory is listed in ARCHIMEDEAN_CHAPTERS (folio-assistant/cat-harness/content/pipeline/_folio-chapter-profiles.qou.ts:175) but its narrative profile explicitly admits 'na','symbolic','generic-R' alongside 'real-positive','real-gt-1','fixed-q0' (same file :88-90), and the chapter docstring declares four faces — Algebraic / Geometric / Archimedean / Physical (folio/quantum-observable-universe/mass-theory/mass-theory.ts:4-21). This block sits in section 'Staircase and character lemmas' (label sec:mass-application-staircase-hoefsmit, mass-theory.ts:1291-1294) under the 'ORPHAN RECONNECTS / Trace and staircase lemmas' group, beside qmn-recursive-memoized and sigma-shell-from-beta-chain-derivation — an algebraic-lemma section, not the Physical/comparison face. The q-usage-regime-detected script records regimes ['na'] for this block and q-usage-archimedean-in-categorical-chapter / q-usage-fixed-q0-leak are n/a (knot-operator-transition.qa.json), i.e. the pre-flagger found no archimedean token signature. Peers in the same chapter passed on exactly this ground (bring-residue-resolvent: 'generic over [Field R]'; cyclotomic-strand-doubling, sl2-prolongation-recurrence, zeta8-witness-level2-su2: 'respects the chapter's base-ring regime'). STATEMENT TOKENS. The italic statement is md:1 (operator adding the (A+1)-th nucleon has a definite knot type), the table md:3-9 (operators as words in σ_0, σ_1, σ_1^{-1} and the Laurent shift h/2 in H_3(q); Dominant NF column = basis-element labels σ_0, L_-, e^- ; Knot type column = single crossing / Hopf link / trefoil), and md:24 (unknot→crossing→Hopf→trefoil hierarchy). Every construct there is Hecke-algebra / normal-form / knot-type combinatorics over the q-Laurent data; there is no Real.*, no numeric q or q_0, no MeV, m_e or CODATA, no order hypothesis, no sqrt/log/exp/cos, no limit over R, no LP/SDP. 'e^-' at md:8-9 is a normal-form basis label, not an exponential. md:24's clause 'explaining why 4He has the strongest binding per nucleon' is physical interpretation (a one-voice/clarity-stmt-pure matter at most), not an archimedean construct. TOKENS OUTSIDE THE STATEMENT. md:17 'dominance margins of 4.7× to 9.6×' and md:18 'δ/2 ≈ 6.9 × 10^{-4}' are numerical evaluations at the substrate value of the flavour split δ (linked at md:13-14 to prop:flavor-split-substrate, which lives in the archimedean observations chapter, folio/quantum-observable-universe/observations/flavor-split-substrate.md). They are inside a convention-robustness paragraph (md:11-22), explicitly attributed to a probe (computations/probes/knot_operator_transition_convention_robustness_probe.py, md:20) and explicitly declared not to bear on the statement: 'The Dominant NF and Knot type columns are unaffected' (md:14-15) and 'The convention is recorded because the operators are written in it, not because the conclusion depends on it' (md:21-22). The side is therefore flagged (substrate flavour split, numerical probe), so this is not the WARN 'mixes both regimes without flagging' branch. BRANCHES. FAIL-1 (generic-section statement hard-coding archimedean constructs unflagged) does not apply: no such construct in the statement. FAIL-2 (archimedean-chapter statement that is a purely algebraic identity belonging upstream) does not apply: the chapter profile admits generic-R/symbolic content, the hosting section is an algebraic-lemma section, and the upstream def:per-nucleon-channel-decomposition (nuclear-interactions) is itself annotated 'underlying combinatorial content stays generic to any commutative ring' (per-nucleon-channel-decomposition.ts:5) — the block is a nucleus-indexed application of that generic data, which is where mass-theory's Algebraic face says such things go. WARN does not apply as argued. Hence PASS: the statement's regime (generic-R/symbolic Hecke normal forms) matches its section and the chapter's admitted profile. PRIOR. The 2026-07-07 'fail' (gemini-3.1-pro) cites only 'sibling Lean file is missing' with evidence md:1 and never engages the narrative; the criterion has depends_on:['md'] and a missing .lean is outside its scope. Its md hash ff1591559275 is also stale — the convention-robustness paragraph (md:11-22) postdates it; current md hash is 90bc95677986. SIDE NOTES (not wall-side): lean.ref qou:QOU.BraidKnot.knot_operator_transition has no sibling .lean and validation 'not_checked' — a lean-status matter for the lean-* criteria; the symbol h is used at md:5-12 without being introduced in this block (clarity-stmt-tight / expository-pass matter)."
       }
     ],
     "wall-side-proof": [
@@ -1256,7 +1256,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/BraidKnot/knot_operator_transition.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/BraidKnot/knot_operator_transition.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1432,7 +1432,7 @@
         "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
         "severity": "minor"
       },
       {
@@ -1497,7 +1497,7 @@
         "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
         "severity": "minor"
       },
       {
@@ -1562,7 +1562,7 @@
         "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
         "severity": "minor"
       },
       {
@@ -1595,7 +1595,7 @@
         "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
         "severity": "minor"
       },
       {
@@ -1628,7 +1628,7 @@
         "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
         "severity": "minor"
       },
       {
@@ -1661,7 +1661,7 @@
         "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
         "severity": "minor"
       },
       {
@@ -1694,7 +1694,7 @@
         "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
         "severity": "minor"
       },
       {
@@ -1727,7 +1727,7 @@
         "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
         "severity": "minor"
       },
       {
@@ -1827,9 +1827,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/knot-operator-transition.lean is missing, leading to complete divergence.",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/mass-theory/knot-operator-transition.lean is missing, leading to complete divergence.",
         "severity": "minor",
-        "evidence": "The referenced Lean file content/quantum-observable-universe/mass-theory/knot-operator-transition.lean is missing, leading to complete divergence."
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/mass-theory/knot-operator-transition.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",

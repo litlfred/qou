@@ -9,7 +9,7 @@ import Mathlib.Algebra.Ring.Basic
 Content block for `def:groebner-basis`.
 
 The authoritative formalization lives in
-`content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean`, which defines:
+`folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean`, which defines:
 - `QOU.GrobnerShirshov.ReductionRule` — an oriented rewrite rule
 - `QOU.GrobnerShirshov.RewritingSystem` — a collection of rules
 - `QOU.GrobnerShirshov.OverlapComposition` — overlap S-polynomial
@@ -24,8 +24,8 @@ S-polynomial construction into `def:s-polynomial`.
 ## References
 
 - [leitnerpawloski2004] https://arxiv.org/abs/math/0409565, Definition 5
-- content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean §§4–5
-- content/unital-groebner-bases/lean/UGB/GrobnerShirshov/CompositionLemma.lean
+- folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean §§4–5
+- folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/CompositionLemma.lean
 -/
 
 namespace QOU.GrobnerShirshov.ContentBlock

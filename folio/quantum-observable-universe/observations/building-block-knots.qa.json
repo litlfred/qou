@@ -3,9 +3,9 @@
   "label": "rem:building-block-knots",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/observations/building-block-knots.ts",
-    "md": "content/quantum-observable-universe/observations/building-block-knots.md",
-    "lean": "content/quantum-observable-universe/observations/building-block-knots.lean"
+    "ts": "folio/quantum-observable-universe/observations/building-block-knots.ts",
+    "md": "folio/quantum-observable-universe/observations/building-block-knots.md",
+    "lean": "folio/quantum-observable-universe/observations/building-block-knots.lean"
   },
   "source_hashes": {
     "md": "2b6e6016ff25",
@@ -813,7 +813,7 @@
         "reviewed_at": "2026-08-09T13:01:31.034Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/observations/building-block-knots.ts:0: uses[] dependency cycle: rem:building-block-knots -> def:antineutrino-knot -> prop:parity-violation-skein -> def:beta-decay-skein -> def:positron-knot -> rem:chirality-trefoil-electron-positron -> prop:antiparticle-crossing-reversal -> def:knot-particle-generation -> rem:knot-particle-dictionary -> rem:building-block-knots"
+        "evidence": "folio/quantum-observable-universe/observations/building-block-knots.ts:0: uses[] dependency cycle: rem:building-block-knots -> def:antineutrino-knot -> prop:parity-violation-skein -> def:beta-decay-skein -> def:positron-knot -> rem:chirality-trefoil-electron-positron -> prop:antiparticle-crossing-reversal -> def:knot-particle-generation -> rem:knot-particle-dictionary -> rem:building-block-knots"
       }
     ],
     "bib-cited-ref-has-url": [

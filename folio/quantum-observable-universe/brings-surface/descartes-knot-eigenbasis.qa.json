@@ -3,9 +3,9 @@
   "label": "cor:descartes-knot-eigenbasis",
   "kind": "corollary",
   "paths": {
-    "ts": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts",
-    "md": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.md",
-    "lean": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean"
+    "ts": "folio/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts",
+    "md": "folio/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.md",
+    "lean": "folio/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean"
   },
   "source_hashes": {
     "md": "1e00ac938417",
@@ -1226,7 +1226,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1420,7 +1420,7 @@
         "reviewed_at": "2026-07-07T14:26:55.137947Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
-        "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
         "severity": "minor"
       },
       {
@@ -1506,7 +1506,7 @@
         "reviewed_at": "2026-07-07T14:26:55.137947Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Traced dependencies ['cor:descartes-braid-structure', 'thm:jones-markov-trace', 'prop:knot-eigenbasis-complete'] for 'cor:descartes-knot-eigenbasis' and confirmed no circular definitions or justifications.",
-        "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
         "severity": "minor"
       },
       {
@@ -1610,7 +1610,7 @@
         "reviewed_at": "2026-07-07T14:26:55.137947Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
-        "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
         "severity": "minor"
       },
       {
@@ -1644,7 +1644,7 @@
         "reviewed_at": "2026-07-07T14:26:55.137947Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
-        "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
         "severity": "minor"
       },
       {
@@ -1712,7 +1712,7 @@
         "reviewed_at": "2026-07-07T14:26:55.137947Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references and uses ['cor:descartes-braid-structure', 'thm:jones-markov-trace', 'prop:knot-eigenbasis-complete'] cited in 'cor:descartes-knot-eigenbasis' are used in accordance with their established mathematical definitions.",
-        "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
         "severity": "minor"
       },
       {
@@ -1746,7 +1746,7 @@
         "reviewed_at": "2026-07-07T14:26:55.137947Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All terms and algebraic structures in 'cor:descartes-knot-eigenbasis' are uniquely defined or standard.",
-        "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
         "severity": "minor"
       },
       {
@@ -1780,7 +1780,7 @@
         "reviewed_at": "2026-07-07T14:26:55.137947Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic statements in 'cor:descartes-knot-eigenbasis' do not rely on fragile empirical fits or numerical thresholds.",
-        "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
         "severity": "minor"
       },
       {
@@ -1814,7 +1814,7 @@
         "reviewed_at": "2026-07-07T14:26:55.137947Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Physical dimensions and units in 'cor:descartes-knot-eigenbasis' are consistent with quantum observable universe models.",
-        "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
         "severity": "minor"
       },
       {
@@ -1847,8 +1847,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.137947Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:42:13: error: unexpected token 'section'; expected 'lemma'.",
-        "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:1 — content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:42:13: error: unexpected token 'section'; expected 'lemma'",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: folio/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:42:13: error: unexpected token 'section'; expected 'lemma'.",
+        "evidence": "folio/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:1 — folio/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:42:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "minor"
       },
       {
@@ -1881,11 +1881,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.137947Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:42:13: error: unexpected token 'section'; expected 'lemma'",
+        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:42:13: error: unexpected token 'section'; expected 'lemma'",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:42:13: error: unexpected token 'section'; expected 'lemma'",
+        "referee_argument": "The Lean sibling fails compilation with error: folio/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:42:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:42:13: error: unexpected token 'section'; expected 'lemma'"
+        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:42:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "result": "pass",

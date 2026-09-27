@@ -3,9 +3,9 @@
   "label": "prop:categorical-self-duality",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.ts",
-    "md": "content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.md",
-    "lean": "content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean"
+    "ts": "folio/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.ts",
+    "md": "folio/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.md",
+    "lean": "folio/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean"
   },
   "source_hashes": {
     "md": "648458eb164a",
@@ -1399,7 +1399,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "categorical-self-duality.lean:1",
-        "notes": "The mathematical claims in 'Categorical self-duality' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean:39:7: error: Function expected at."
+        "notes": "The mathematical claims in 'Categorical self-duality' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean:39:7: error: Function expected at."
       },
       {
         "result": "pass",
@@ -1574,7 +1574,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "categorical-self-duality.lean:1",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean."
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean."
       },
       {
         "result": "pass",
@@ -1608,8 +1608,8 @@
         "reviewed_at": "2026-07-07T14:26:55.837937Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean fails compilation, causing divergence from the narrative.",
-        "evidence": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean fails compilation, causing divergence from the narrative."
+        "notes": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean fails compilation, causing divergence from the narrative.",
+        "evidence": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1783,8 +1783,8 @@
         "reviewed_at": "2026-07-07T14:26:55.837937Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "categorical-self-duality.lean:1 — content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean:39:7: error: Function expected at",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean fails compilation, indicating a reproducibility failure."
+        "evidence": "categorical-self-duality.lean:1 — folio/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean:39:7: error: Function expected at",
+        "notes": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean fails compilation, indicating a reproducibility failure."
       },
       {
         "result": "pass",
@@ -1818,10 +1818,10 @@
         "reviewed_at": "2026-07-07T14:26:55.837937Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "critical",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean:39:7: error: Function expected at",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean fails compilation: folio/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean:39:7: error: Function expected at",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean:39:7: error: Function expected at, invalidating the claimed formalization.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean:39:7: error: Function expected at"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean contains compilation errors: folio/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean:39:7: error: Function expected at, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean fails compilation: folio/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean:39:7: error: Function expected at"
       },
       {
         "result": "pass",

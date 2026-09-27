@@ -40,8 +40,8 @@ What's CLOSED unconditionally given the class instance: the operator
 q-commutation (this file's main theorem) and the pentagon-ascension
 algebraic structure (corollary).
 
--- Ref: [woronowicz1989] Differential calculus on compact matrix pseudogroups (quantum groups) — see content/schema/references.ts
--- Ref: [faddeev_kashaev1994] Quantum dilogarithm — see content/schema/references.ts
+-- Ref: [woronowicz1989] Differential calculus on compact matrix pseudogroups (quantum groups) — see folio/schema/references.ts
+-- Ref: [faddeev_kashaev1994] Quantum dilogarithm — see folio/schema/references.ts
 -- Ref: [manuscript] conj:pentagon-uv-commutation
 -- Ref: [manuscript] def:recursive-brane-tower
 -- Ref: [manuscript] prop:jet-prolongation

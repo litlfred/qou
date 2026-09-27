@@ -10,7 +10,7 @@ meridian log-holonomy `u`, Neumann–Zagier prove the longitude log-holonomy
 (with `v = ∂Φ/∂u` up to normalisation) and the complex-volume expansion
 `CVol(u) = Vol(0) − (τ/4)u² + …` are EVEN in `u`.
 
--- Ref: [neumann-zagier1985] Volumes of hyperbolic three-manifolds — see content/schema/references.ts
+-- Ref: [neumann-zagier1985] Volumes of hyperbolic three-manifolds — see folio/schema/references.ts
 
 **Physical consequence (the prune this file certifies):** the geometric NZ
 series contains NO odd-order term — in particular no `u³` rung.  Any

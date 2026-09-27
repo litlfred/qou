@@ -3,9 +3,9 @@
   "label": "prop:categorical-laplace-unique",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-unique.ts",
-    "md": "content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-unique.md",
-    "lean": "content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-unique.lean"
+    "ts": "folio/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-unique.ts",
+    "md": "folio/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-unique.md",
+    "lean": "folio/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-unique.lean"
   },
   "source_hashes": {
     "md": "f21c5ba8780f",
@@ -1502,7 +1502,7 @@
         "reviewed_at": "2026-08-09T13:01:47.990Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-unique.ts:0: forward ref: uses prop:q-exponential-unique (manifest pos 245) which appears after this block (pos 221) in the chapter"
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-unique.ts:0: forward ref: uses prop:q-exponential-unique (manifest pos 245) which appears after this block (pos 221) in the chapter"
       }
     ],
     "detangler-section-band": [

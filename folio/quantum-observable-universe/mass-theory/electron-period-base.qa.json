@@ -3,9 +3,9 @@
   "label": "prop:electron-period-base",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/electron-period-base.ts",
-    "md": "content/quantum-observable-universe/mass-theory/electron-period-base.md",
-    "lean": "content/quantum-observable-universe/mass-theory/electron-period-base.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/electron-period-base.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/electron-period-base.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/electron-period-base.lean"
   },
   "source_hashes": {
     "md": "d589cb3f7be7",
@@ -1077,7 +1077,7 @@
         "reviewed_at": "2026-09-07T09:01:11.656Z",
         "reviewed_sha": "c6a2a79e20a19368a09a01ee8b95016e0f447d7e",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-theory/electron-period-base.ts:1: block 'prop:electron-period-base' is a provable kind whose uses[] cone touches a conj: label — demote to 'conjecture' or apply §3b-cond (class-axiomatise the conjecture + [Instance] hypothesis + narrative banner)"
+        "evidence": "folio/quantum-observable-universe/mass-theory/electron-period-base.ts:1: block 'prop:electron-period-base' is a provable kind whose uses[] cone touches a conj: label — demote to 'conjecture' or apply §3b-cond (class-axiomatise the conjecture + [Instance] hypothesis + narrative banner)"
       }
     ],
     "proof-conditional-class-banner": [
@@ -1208,7 +1208,7 @@
         "reviewed_at": "2026-07-07T14:26:56.702442Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/electron-period-base.lean:1 — Lean file exists",
+        "evidence": "folio/quantum-observable-universe/mass-theory/electron-period-base.lean:1 — Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1408,7 +1408,7 @@
         "reviewed_at": "2026-07-07T14:26:56.702442Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/electron-period-base.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/electron-period-base.ts:1",
         "severity": "minor"
       },
       {
@@ -1475,7 +1475,7 @@
         "reviewed_at": "2026-07-07T14:26:56.702442Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/electron-period-base.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/electron-period-base.ts:1",
         "severity": "minor"
       },
       {
@@ -1542,7 +1542,7 @@
         "reviewed_at": "2026-07-07T14:26:56.702442Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/electron-period-base.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/electron-period-base.ts:1",
         "severity": "minor"
       },
       {
@@ -1576,7 +1576,7 @@
         "reviewed_at": "2026-07-07T14:26:56.702442Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/electron-period-base.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/electron-period-base.ts:1",
         "severity": "minor"
       },
       {
@@ -1643,7 +1643,7 @@
         "reviewed_at": "2026-07-07T14:26:56.702442Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/electron-period-base.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/electron-period-base.ts:1",
         "severity": "minor"
       },
       {
@@ -1677,7 +1677,7 @@
         "reviewed_at": "2026-07-07T14:26:56.702442Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/electron-period-base.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/electron-period-base.ts:1",
         "severity": "minor"
       },
       {
@@ -1711,7 +1711,7 @@
         "reviewed_at": "2026-07-07T14:26:56.702442Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/electron-period-base.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/electron-period-base.ts:1",
         "severity": "minor"
       },
       {
@@ -1745,7 +1745,7 @@
         "reviewed_at": "2026-07-07T14:26:56.702442Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/electron-period-base.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/electron-period-base.ts:1",
         "severity": "minor"
       },
       {
@@ -1779,7 +1779,7 @@
         "reviewed_at": "2026-07-07T14:26:56.702442Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/electron-period-base.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/electron-period-base.ts:1",
         "severity": "minor"
       },
       {

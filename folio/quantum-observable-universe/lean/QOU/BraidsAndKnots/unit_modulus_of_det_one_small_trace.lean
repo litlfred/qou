@@ -2,7 +2,7 @@
   Unit-modulus eigenvalues from det = 1 and small real trace.
 
   RELOCATED (no mathematical change).  This lemma was declared in
-  `content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.lean`.  It
+  `folio/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.lean`.  It
   moves here because `figure_eight_classical_reeb` — a declaration the content-block resolver
   could not reach in that chapter-directory file — is proved from it, and a Lake-tree module
   cannot import a chapter `.lean`.  The source file imports this module back:

@@ -50,7 +50,7 @@ restated locally so this documentation-mirror sibling compiles standalone
 
 ## Cross-references
 
-  - [content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.md]
+  - [folio/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.md]
   - [docs/audits/2026-07-03-aj-conjecture-dialog-assessment.md] (read-first for AJ re-pitches)
   - [docs/audits/2026-05-25-character-variety-a-polynomial-framework-roles.md]
 -/

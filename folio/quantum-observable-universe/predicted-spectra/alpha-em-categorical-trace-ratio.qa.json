@@ -3,9 +3,9 @@
   "label": "prop:alpha-em-categorical-trace-ratio",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.md",
-    "lean": "content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean"
+    "ts": "folio/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.ts",
+    "md": "folio/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.md",
+    "lean": "folio/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean"
   },
   "source_hashes": {
     "md": "8108de412c23",
@@ -1497,7 +1497,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The mathematical claims in 'Algebraic identity: $\\\\alpha_{EM} = h^2 / [q \\\\cdot \\\\delta_q(T_{2,9}) \\\\cdot \\\\delta_q(T_{3,5})]$' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist.",
+        "notes": "The mathematical claims in 'Algebraic identity: $\\\\alpha_{EM} = h^2 / [q \\\\cdot \\\\delta_q(T_{2,9}) \\\\cdot \\\\delta_q(T_{3,5})]$' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist.",
         "severity": "minor",
         "evidence": "alpha-em-categorical-trace-ratio.lean:1"
       },
@@ -1672,7 +1672,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean.",
         "severity": "minor",
         "evidence": "alpha-em-categorical-trace-ratio.lean:1"
       },
@@ -1707,9 +1707,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1882,9 +1882,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "alpha-em-categorical-trace-ratio.lean:1 — content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist"
+        "evidence": "alpha-em-categorical-trace-ratio.lean:1 — folio/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist"
       },
       {
         "result": "pass",
@@ -1917,11 +1917,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation: content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation: folio/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean contains compilation errors: content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist, invalidating the claimed formalization.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation: content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean contains compilation errors: folio/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation: folio/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist"
       },
       {
         "result": "pass",

@@ -10,7 +10,7 @@ import Mathlib.Algebra.Ring.Defs
 Content block for `def:remainder-module`.
 
 The authoritative formalization lives in
-`content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean`, which defines:
+`folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean`, which defines:
 - `QOU.GrobnerShirshov.isNormalForm` — an element is in normal form
   iff no rule's leading monomial divides any monomial in its support
 
@@ -22,7 +22,7 @@ single monomials.
 ## References
 
 - [leitnerpawloski2004] https://arxiv.org/abs/math/0409565, Definition 4
-- content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean §3 (isNormalForm)
+- folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean §3 (isNormalForm)
 -/
 
 namespace QOU.GrobnerShirshov.ContentBlock

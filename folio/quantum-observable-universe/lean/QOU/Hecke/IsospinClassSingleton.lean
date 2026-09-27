@@ -1,7 +1,7 @@
 /-
 # The isospin-type class at level 4 is a singleton
 
-`content/quantum-observable-universe/mass-theory/mass-coefficient-shadow-price-proof.md`
+`folio/quantum-observable-universe/mass-theory/mass-coefficient-shadow-price-proof.md`
 classifies each partition's scaling function by its content sum
 `c(λ) = Σ_{(i,j)∈λ} (j - i)`:
 

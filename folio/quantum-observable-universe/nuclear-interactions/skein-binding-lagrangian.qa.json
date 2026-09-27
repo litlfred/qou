@@ -3,9 +3,9 @@
   "label": "def:skein-binding-lagrangian",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/skein-binding-lagrangian.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/skein-binding-lagrangian.md",
-    "lean": "content/quantum-observable-universe/nuclear-interactions/skein-binding-lagrangian.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/skein-binding-lagrangian.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/skein-binding-lagrangian.md",
+    "lean": "folio/quantum-observable-universe/nuclear-interactions/skein-binding-lagrangian.lean"
   },
   "source_hashes": {
     "md": "d6ff4c0f8579",
@@ -1036,7 +1036,7 @@
         "reviewed_at": "2026-09-03T05:16:37Z",
         "reviewed_sha": "e71ba7a90360c4c6aee91f9e189fb7580a99db79",
         "notes": "PASS: archimedean-chapter statement (nuclear-interactions, split of particle-interactions) whose MeV/A^{1/3}/q_0 tokens match its regime; prior templated fail not confirmed.",
-        "evidence": "Regime: archimedean. nuclear-interactions is absent from the criterion's two lists, but the chapter manifest (content/quantum-observable-universe/nuclear-interactions/nuclear-interactions.ts:11-12) records it as a split of particle-interactions, which .claude/skills/local/q-usage-watcher.md:79 places in the archimedean group (expected real-positive/real-gt-1/fixed-q0); the block's own sidecar agrees (q-usage-regime-detected = [fixed-q0, real-gt-1, real-positive, symbolic]; q-usage-archimedean-in-categorical-chapter = n/a), and same-directory peers carrying the same token class PASS under this criterion (neutron-qvalue-symbolic.md:32,44 MeV + numeric q_0; confinement-topological.md:1 'G in R^{6x6} at q = q_0'; per-nucleon-channel-decomposition.md:34,49 'Numeric at q_0'). Archimedean tokens in the Statement: skein-binding-lagrangian.md:16 alpha = m_e/(q_0(q_0-1)) (numeric CAL-1/CAL-2 evaluation), :22 '0.71 Z(Z-1)/A^{1/3} MeV', 'Delta E_C ~ 0.847 MeV vs 0.764 MeV, +10.9%', hbar c/m_pi, :24 exponents 0.43/0.53 and 3/5 -> 0.849, 1/2 -> 0.707, :26 explicit q_0 banner; the Lean sibling (skein-binding-lagrangian.lean:15-21 module doc, :40-42 q : R with 1 < q, :60/:64 Real.rpow) and the .ts authorNote (skein-binding-lagrangian.ts:19-25) both place the block on the archimedean side per AGENTS.md 7c. These tokens MATCH the chapter regime, so the FAIL branch (generic-chapter statement hard-coding archimedean constructs) does not apply; the inverse FAIL branch (archimedean-chapter statement that is a purely algebraic identity) does not apply either, since the statement is a MeV-valued binding functional. The WARN branch (mixed regimes without flagging the evaluation side) does not fire: the generic Hecke/Markov-trace content (md:11-16) is explicitly evaluated at q_0 via alpha, and the Lean docstring states the side. The prior 2026-07-07 gemini-3.1-pro fail is a templated batch entry (identical timestamp 2026-07-07T14:26:57 and identical evidence string on tritium-qvalue-symbolic, gram-weighted-qvalue, parity-regime-selection, frobenius-positivity-filter), adjudicated against md hash 4e4a3af31905 that matches neither the current nor the pre-edit text; it names no token and is not confirmed on the merits. The appended banner (md:26) was NOT needed: the pre-parent revision d1e8e0dee29 already carried q_0 (l.16) and A^{1/3}/MeV (l.22) and would pass on the same chapter-regime ground, exactly as the banner-less peers do; AGENTS.md 4d means the .ts authorNote does not render, so it was not relied on as a narrative banner either."
+        "evidence": "Regime: archimedean. nuclear-interactions is absent from the criterion's two lists, but the chapter manifest (folio/quantum-observable-universe/nuclear-interactions/nuclear-interactions.ts:11-12) records it as a split of particle-interactions, which .claude/skills/local/q-usage-watcher.md:79 places in the archimedean group (expected real-positive/real-gt-1/fixed-q0); the block's own sidecar agrees (q-usage-regime-detected = [fixed-q0, real-gt-1, real-positive, symbolic]; q-usage-archimedean-in-categorical-chapter = n/a), and same-directory peers carrying the same token class PASS under this criterion (neutron-qvalue-symbolic.md:32,44 MeV + numeric q_0; confinement-topological.md:1 'G in R^{6x6} at q = q_0'; per-nucleon-channel-decomposition.md:34,49 'Numeric at q_0'). Archimedean tokens in the Statement: skein-binding-lagrangian.md:16 alpha = m_e/(q_0(q_0-1)) (numeric CAL-1/CAL-2 evaluation), :22 '0.71 Z(Z-1)/A^{1/3} MeV', 'Delta E_C ~ 0.847 MeV vs 0.764 MeV, +10.9%', hbar c/m_pi, :24 exponents 0.43/0.53 and 3/5 -> 0.849, 1/2 -> 0.707, :26 explicit q_0 banner; the Lean sibling (skein-binding-lagrangian.lean:15-21 module doc, :40-42 q : R with 1 < q, :60/:64 Real.rpow) and the .ts authorNote (skein-binding-lagrangian.ts:19-25) both place the block on the archimedean side per AGENTS.md 7c. These tokens MATCH the chapter regime, so the FAIL branch (generic-chapter statement hard-coding archimedean constructs) does not apply; the inverse FAIL branch (archimedean-chapter statement that is a purely algebraic identity) does not apply either, since the statement is a MeV-valued binding functional. The WARN branch (mixed regimes without flagging the evaluation side) does not fire: the generic Hecke/Markov-trace content (md:11-16) is explicitly evaluated at q_0 via alpha, and the Lean docstring states the side. The prior 2026-07-07 gemini-3.1-pro fail is a templated batch entry (identical timestamp 2026-07-07T14:26:57 and identical evidence string on tritium-qvalue-symbolic, gram-weighted-qvalue, parity-regime-selection, frobenius-positivity-filter), adjudicated against md hash 4e4a3af31905 that matches neither the current nor the pre-edit text; it names no token and is not confirmed on the merits. The appended banner (md:26) was NOT needed: the pre-parent revision d1e8e0dee29 already carried q_0 (l.16) and A^{1/3}/MeV (l.22) and would pass on the same chapter-regime ground, exactly as the banner-less peers do; AGENTS.md 4d means the .ts authorNote does not render, so it was not relied on as a narrative banner either."
       }
     ],
     "da-false-claim": [
@@ -1056,7 +1056,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.430104Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The mathematical claims in 'Skein binding Lagrangian for multi-nucleon links' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean:26:13: error: unexpected token 'section'; expected 'lemma'.",
+        "notes": "The mathematical claims in 'Skein binding Lagrangian for multi-nucleon links' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean:26:13: error: unexpected token 'section'; expected 'lemma'.",
         "severity": "minor",
         "evidence": "skein-binding-lagrangian.lean:1"
       },
@@ -1091,7 +1091,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.430104Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "skein-binding-lagrangian.lean:1"
       },
@@ -1230,7 +1230,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.430104Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean.",
         "severity": "minor",
         "evidence": "skein-binding-lagrangian.lean:1"
       },
@@ -1265,9 +1265,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.430104Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1440,9 +1440,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.430104Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "skein-binding-lagrangian.lean:1 — content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean:26:13: error: unexpected token 'section'; expected 'lemma'"
+        "evidence": "skein-binding-lagrangian.lean:1 — folio/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean:26:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "result": "pass",
@@ -1475,11 +1475,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.430104Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean fails compilation.",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean fails compilation.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean fails compilation."
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean fails compilation."
       },
       {
         "result": "pass",

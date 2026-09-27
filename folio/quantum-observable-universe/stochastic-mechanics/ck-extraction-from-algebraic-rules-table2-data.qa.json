@@ -1,8 +1,8 @@
 {
   "$schema": "block-qa/v1",
   "paths": {
-    "ts": "content/quantum-observable-universe/stochastic-mechanics/ck-extraction-from-algebraic-rules-table2-data.ts",
-    "md": "content/quantum-observable-universe/stochastic-mechanics/ck-extraction-from-algebraic-rules-table2-data.md"
+    "ts": "folio/quantum-observable-universe/stochastic-mechanics/ck-extraction-from-algebraic-rules-table2-data.ts",
+    "md": "folio/quantum-observable-universe/stochastic-mechanics/ck-extraction-from-algebraic-rules-table2-data.md"
   },
   "source_hashes": {
     "md": "ae7c5b1e3fc7",
@@ -1047,7 +1047,7 @@
         "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
         "severity": "major",
         "evidence": "Table asserts a k=4/k=5 re-assignment its own Lean definition does not implement, and contradicts itself one row later.",
-        "notes": "STRUCTURAL FINDING (do not fix inline - this is a math/Lean disagreement). Three checkable defects. (1) k=4: table says c_4 = c_3 b^4 = -2 b^4 and annotates '(the old b^2 + 1/2 value belongs at k = 5 with a sign flip; superseded)'. The Lean it documents still has '| 4 => (hoefsmitB_local q)^2 + 1/2' (ck-extraction-from-algebraic-rules.lean:153) AND a proved theorem ckFromReduction_eq_c4 : ckFromReduction q 4 = (hoefsmitB_local q)^2 + 1/2 := rfl (line 185) whose docstring reads 'c_4 = b^2 + 1/2'. Position AND sign both differ from the table. (2) k=5: table says -(b^2 + 1/2); Lean's catch-all is '| _ => 0', so ckFromReduction q 5 = 0. (3) The table contradicts ITSELF: row 'k = 5' gives -(b^2+1/2) while the very next row 'k >= 5' gives 0. Verified-correct rows: k=0 -> 0, k=1 -> b, k=2 -> b^2, k=3 -> -2 (jonesHopfLocal := -2, line 54) all match the Lean exactly. Note the parent narrative content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.md:9 also prints c_4 = c_3 b^4 = -2 b^4, so the narrative and the Lean disagree corpus-wide, not just in this table. Proposed: either re-derive the Lean to the superseded assignment or re-scope the table+parent .md back to the Lean's values; and change 'k >= 5' to 'k >= 6'. Per AGENTS.md's c_k banner this must be reported TIERED, and note the whole ladder is convention-C-frame pending the bean qou-cds1 re-derivation."
+        "notes": "STRUCTURAL FINDING (do not fix inline - this is a math/Lean disagreement). Three checkable defects. (1) k=4: table says c_4 = c_3 b^4 = -2 b^4 and annotates '(the old b^2 + 1/2 value belongs at k = 5 with a sign flip; superseded)'. The Lean it documents still has '| 4 => (hoefsmitB_local q)^2 + 1/2' (ck-extraction-from-algebraic-rules.lean:153) AND a proved theorem ckFromReduction_eq_c4 : ckFromReduction q 4 = (hoefsmitB_local q)^2 + 1/2 := rfl (line 185) whose docstring reads 'c_4 = b^2 + 1/2'. Position AND sign both differ from the table. (2) k=5: table says -(b^2 + 1/2); Lean's catch-all is '| _ => 0', so ckFromReduction q 5 = 0. (3) The table contradicts ITSELF: row 'k = 5' gives -(b^2+1/2) while the very next row 'k >= 5' gives 0. Verified-correct rows: k=0 -> 0, k=1 -> b, k=2 -> b^2, k=3 -> -2 (jonesHopfLocal := -2, line 54) all match the Lean exactly. Note the parent narrative folio/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.md:9 also prints c_4 = c_3 b^4 = -2 b^4, so the narrative and the Lean disagree corpus-wide, not just in this table. Proposed: either re-derive the Lean to the superseded assignment or re-scope the table+parent .md back to the Lean's values; and change 'k >= 5' to 'k >= 6'. Per AGENTS.md's c_k banner this must be reported TIERED, and note the whole ladder is convention-C-frame pending the bean qou-cds1 re-derivation."
       }
     ],
     "trap-nonspeakable": [

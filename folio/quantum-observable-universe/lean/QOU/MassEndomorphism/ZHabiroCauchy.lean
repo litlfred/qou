@@ -13,7 +13,7 @@ import Mathlib.Tactic
 
 This file advances the **algebraic Cauchy-limit half** of
 `conj:brane-tower-z-habiro`
-(`content/quantum-observable-universe/mass-theory/brane-tower-z-habiro.md`
+(`folio/quantum-observable-universe/mass-theory/brane-tower-z-habiro.md`
 §"Statement", §"What survives the closure" item 1).
 
 The convergence *prerequisite* — that the analytic infinite product
@@ -234,9 +234,9 @@ truncation map itself is now concrete.
 ## References
 
 - [manuscript] `conj:brane-tower-z-habiro` §"Statement"
-  (`content/quantum-observable-universe/mass-theory/brane-tower-z-habiro.md`)
+  (`folio/quantum-observable-universe/mass-theory/brane-tower-z-habiro.md`)
 - [manuscript] `def:z-habiro-ring`
-  (`content/quantum-observable-universe/mass-theory/z-habiro-ring.md`):
+  (`folio/quantum-observable-universe/mass-theory/z-habiro-ring.md`):
   the cyclotomic completion `varprojlim_n ℤ[q^±1][z]/(P_n)`.
 - [habiro2004cyclotomic] Habiro, *Cyclotomic completions of polynomial
   rings* — the `q`-side completion this construction parallels.

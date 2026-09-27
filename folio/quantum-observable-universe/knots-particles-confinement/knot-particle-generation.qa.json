@@ -3,9 +3,9 @@
   "label": "def:knot-particle-generation",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/knot-particle-generation.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/knot-particle-generation.md",
-    "lean": "content/quantum-observable-universe/knots-particles-confinement/knot-particle-generation.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/knot-particle-generation.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/knot-particle-generation.md",
+    "lean": "folio/quantum-observable-universe/knots-particles-confinement/knot-particle-generation.lean"
   },
   "source_hashes": {
     "md": "c3b954e41c8b",
@@ -617,7 +617,7 @@
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/knots-particles-confinement/knot-particle-generation.ts:0: forward ref: uses rem:knot-particle-dictionary (manifest pos 39) which appears after this block (pos 30) in the chapter"
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/knot-particle-generation.ts:0: forward ref: uses rem:knot-particle-dictionary (manifest pos 39) which appears after this block (pos 30) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -777,7 +777,7 @@
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/knots-particles-confinement/knot-particle-generation.ts:0: uses[] dependency cycle: def:knot-particle-generation -> rem:knot-particle-dictionary -> rem:building-block-knots -> def:antineutrino-knot -> prop:parity-violation-skein -> def:beta-decay-skein -> def:positron-knot -> rem:chirality-trefoil-electron-positron -> prop:antiparticle-crossing-reversal -> def:knot-particle-generation"
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/knot-particle-generation.ts:0: uses[] dependency cycle: def:knot-particle-generation -> rem:knot-particle-dictionary -> rem:building-block-knots -> def:antineutrino-knot -> prop:parity-violation-skein -> def:beta-decay-skein -> def:positron-knot -> rem:chirality-trefoil-electron-positron -> prop:antiparticle-crossing-reversal -> def:knot-particle-generation"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1011,9 +1011,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.401233Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The claim in 'Knot-particle generation from $T_{m,n}$ torus knot generators' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:94:3: error(lean.unknownIdentifier): Unknown constant `Real.sqrt`.",
+        "notes": "The claim in 'Knot-particle generation from $T_{m,n}$ torus knot generators' is unverified due to Lean compilation failures: folio/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:94:3: error(lean.unknownIdentifier): Unknown constant `Real.sqrt`.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:1"
       },
       {
         "result": "pass",
@@ -1082,7 +1082,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Knot-particle generation from $T_{m,n}$ torus knot generators'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-generation.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/knot-particle-generation.ts:1"
       },
       {
         "result": "pass",
@@ -1152,7 +1152,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Knot-particle generation from $T_{m,n}$ torus knot generators'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-generation.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/knot-particle-generation.ts:1"
       },
       {
         "result": "pass",
@@ -1185,9 +1185,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.401233Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/knot-particle-generation.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:1"
       },
       {
         "result": "pass",
@@ -1220,9 +1220,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.401233Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/knot-particle-generation.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/knot-particle-generation.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1257,7 +1257,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Knot-particle generation from $T_{m,n}$ torus knot generators', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-generation.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/knot-particle-generation.ts:1"
       },
       {
         "result": "pass",
@@ -1292,7 +1292,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Knot-particle generation from $T_{m,n}$ torus knot generators' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-generation.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/knot-particle-generation.ts:1"
       },
       {
         "result": "pass",
@@ -1327,7 +1327,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Knot-particle generation from $T_{m,n}$ torus knot generators' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-generation.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/knot-particle-generation.ts:1"
       },
       {
         "result": "pass",
@@ -1362,7 +1362,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Knot-particle generation from $T_{m,n}$ torus knot generators' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-generation.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/knot-particle-generation.ts:1"
       },
       {
         "result": "pass",
@@ -1395,9 +1395,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.401233Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/knot-particle-generation.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:1 — content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:94:3: error(lean.unknownIdentifier): Unknown constant `Real.sqrt`"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:1 — folio/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:94:3: error(lean.unknownIdentifier): Unknown constant `Real.sqrt`"
       },
       {
         "result": "pass",
@@ -1430,11 +1430,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.401233Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean fails compilation: content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:94:3: error(lean.unknownIdentifier): Unknown constant `Real.sqrt`",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/knot-particle-generation.lean fails compilation: folio/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:94:3: error(lean.unknownIdentifier): Unknown constant `Real.sqrt`",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean for 'Knot-particle generation from $T_{m,n}$ torus knot generators' fails compilation with error: content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:94:3: error(lean.unknownIdentifier): Unknown constant `Real.sqrt`. This invalidates the claim of formal verification.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean fails compilation: content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:94:3: error(lean.unknownIdentifier): Unknown constant `Real.sqrt`"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/knot-particle-generation.lean for 'Knot-particle generation from $T_{m,n}$ torus knot generators' fails compilation with error: folio/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:94:3: error(lean.unknownIdentifier): Unknown constant `Real.sqrt`. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/knot-particle-generation.lean fails compilation: folio/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:94:3: error(lean.unknownIdentifier): Unknown constant `Real.sqrt`"
       },
       {
         "result": "pass",

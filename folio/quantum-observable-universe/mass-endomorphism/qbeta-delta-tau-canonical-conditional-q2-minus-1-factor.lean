@@ -3,7 +3,7 @@ import Mathlib.Tactic.Ring
 -- Imports the parent block's content (CanonicalMarkovWeightsH3 class,
 -- delta_tau_M_canonical, chi_block_*, chi_blocks_have_q2_minus_1_factor).
 -- Resolves via the Lake-tree mirror at
--- `content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean`
+-- `folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean`
 -- (added in this PR alongside the conditional theorem).
 import QOU.BraidKnot.QBetaPerBlockChiClosedForms
 

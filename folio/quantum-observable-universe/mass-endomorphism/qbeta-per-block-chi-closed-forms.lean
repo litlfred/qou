@@ -335,7 +335,7 @@ theorem delta_tau_M_surrogate_hasDerivAt_one :
 
 `deriv (deriv delta_tau_M_surrogate) 1 / 2 = 5 / 6` is **proved, sorry-free**,
 as `QOU.BraidKnot.delta_tau_M_surrogate_taylor_coeff_2` in
-`content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean`,
+`folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean`,
 by differentiating the quotient-rule result a second time and transporting it
 along `delta_tau_M_surrogate_deriv_eventuallyEq`. That file is `lean`-direct
 clean (exit 0, 0 errors, 0 `sorry`).

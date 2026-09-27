@@ -3,8 +3,8 @@
   "label": "rem:motivic-mass-rationale",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/motivic-mass-rationale.ts",
-    "md": "content/quantum-observable-universe/mass-theory/motivic-mass-rationale.md"
+    "ts": "folio/quantum-observable-universe/mass-theory/motivic-mass-rationale.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/motivic-mass-rationale.md"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -216,7 +216,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/motivic-mass-rationale.ts:5: title \"Why a motivic measure: singular intermediate states and the archimedean realization\" \u2014 interrogative / rhetorical opener \u2014 use a declarative noun phrase | content/quantum-observable-universe/mass-theory/motivic-mass-rationale.ts:5: title \"Why a motivic measure: singular intermediate states and the archimedean realization\" \u2014 starts with a question word"
+        "evidence": "folio/quantum-observable-universe/mass-theory/motivic-mass-rationale.ts:5: title \"Why a motivic measure: singular intermediate states and the archimedean realization\" \u2014 interrogative / rhetorical opener \u2014 use a declarative noun phrase | folio/quantum-observable-universe/mass-theory/motivic-mass-rationale.ts:5: title \"Why a motivic measure: singular intermediate states and the archimedean realization\" \u2014 starts with a question word"
       }
     ],
     "voice-ai-slop": [
@@ -527,7 +527,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/motivic-mass-rationale.ts:0: forward ref: uses prop:mass-endomorphism-tower (manifest pos 521) which appears after this block (pos 10) in the chapter | content/quantum-observable-universe/mass-theory/motivic-mass-rationale.ts:0: forward ref: uses def:archimedean-realization-functor (manifest pos 319) which appears after this block (pos 10) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/motivic-mass-rationale.ts:0: forward ref: uses prop:mass-endomorphism-tower (manifest pos 521) which appears after this block (pos 10) in the chapter | folio/quantum-observable-universe/mass-theory/motivic-mass-rationale.ts:0: forward ref: uses def:archimedean-realization-functor (manifest pos 319) which appears after this block (pos 10) in the chapter"
       }
     ],
     "detangler-section-band": [

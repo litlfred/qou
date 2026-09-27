@@ -5,8 +5,8 @@ import Mathlib.Tactic.NormNum
 /-!
 # QOU.HadronicMass.terminal_resolution_hadronic_mass
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/HadronicMass.lean (monolithic)
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/HadronicMass.lean (monolithic)
 
 This standalone extract inlines an HONEST mirror of the four CODATA
 constants and the four "topological" defs from the canonical

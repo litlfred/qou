@@ -80,7 +80,7 @@ suffices for the macdonald hook telescope identity. -/
     `schur_principal_symbolic` uses `Q ** n_lambda(p)` with
     `n_lambda(p) = Σ i·p[i]` — i.e. the Python was correct throughout and the
     Lean had drifted from it. -/
--- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
+-- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see folio/bib-qa-verifications.json
 -- Ref: [macdonald1995] §I.3 ex. 1
 noncomputable def schurElement (Q X : ℝ) (lam : Partition) : ℝ :=
   Q ^ (nLambda lam) *

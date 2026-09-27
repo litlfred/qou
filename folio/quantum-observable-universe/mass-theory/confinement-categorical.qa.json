@@ -3,9 +3,9 @@
   "label": "prop:confinement-categorical",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/confinement-categorical.ts",
-    "md": "content/quantum-observable-universe/mass-theory/confinement-categorical.md",
-    "lean": "content/quantum-observable-universe/mass-theory/confinement-categorical.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/confinement-categorical.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/confinement-categorical.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/confinement-categorical.lean"
   },
   "source_hashes": {
     "md": "7c51a8171dab",
@@ -644,7 +644,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/confinement-categorical.md:3: The Frobenius integral factors flawlessly through the center via the Wedderburn projection $\\pi_Z$ and Plancherel weight $\\mu$. Consequently, every physical observable cleanly partitions into a sum of"
+        "evidence": "folio/quantum-observable-universe/mass-theory/confinement-categorical.md:3: The Frobenius integral factors flawlessly through the center via the Wedderburn projection $\\pi_Z$ and Plancherel weight $\\mu$. Consequently, every physical observable cleanly partitions into a sum of"
       }
     ],
     "voice-scholarly-default": [
@@ -1381,7 +1381,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/confinement-categorical.ts:0: forward ref: uses prop:unified-curvature-rank-mass-formula (manifest pos 570) which appears after this block (pos 558) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/confinement-categorical.ts:0: forward ref: uses prop:unified-curvature-rank-mass-formula (manifest pos 570) which appears after this block (pos 558) in the chapter"
       }
     ],
     "detangler-section-band": [

@@ -3,8 +3,8 @@
   "label": "rem:substrate-gm-torsion",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/fluid-dynamics/substrate-gm-torsion.ts",
-    "md": "content/quantum-observable-universe/fluid-dynamics/substrate-gm-torsion.md"
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/substrate-gm-torsion.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/substrate-gm-torsion.md"
   },
   "source_hashes": {
     "md": "75c1fcdea10d",
@@ -138,7 +138,7 @@
         "reviewed_at": "2026-08-22T21:32:40.872Z",
         "reviewed_sha": "0044fa0513c00dd92f6ed0df4076a9ed80b48349",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/substrate-gm-torsion.md:41: Embedding $\\mathbb{G}_m \\hookrightarrow \\mathbb{P}^1$ defines two absolute boundaries. At $q = 0$, the operator $d_q$ hits an undefined $q^{-1}$ pole; the spatial differential diverges. At $q = \\infty"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/substrate-gm-torsion.md:41: Embedding $\\mathbb{G}_m \\hookrightarrow \\mathbb{P}^1$ defines two absolute boundaries. At $q = 0$, the operator $d_q$ hits an undefined $q^{-1}$ pole; the spatial differential diverges. At $q = \\infty"
       }
     ],
     "voice-scholarly-default": [
@@ -629,7 +629,7 @@
         "reviewed_at": "2026-08-22T21:32:40.872Z",
         "reviewed_sha": "0044fa0513c00dd92f6ed0df4076a9ed80b48349",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/substrate-gm-torsion.ts:0: forward ref: uses prop:ns-obstruction-tower (manifest pos 64) which appears after this block (pos 54) in the chapter"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/substrate-gm-torsion.ts:0: forward ref: uses prop:ns-obstruction-tower (manifest pos 64) which appears after this block (pos 54) in the chapter"
       }
     ],
     "detangler-section-band": [

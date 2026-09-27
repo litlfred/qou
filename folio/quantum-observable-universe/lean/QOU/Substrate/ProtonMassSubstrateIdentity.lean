@@ -12,7 +12,7 @@ This module encodes the identity:
 This file verifies the concrete empirical residual of the formula
 against CODATA 2022 values, showing the match is within 0.25 ppm.
 
-See: `content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.md`
+See: `folio/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.md`
 -/
 
 namespace QOU.Substrate.ProtonMassSubstrateIdentity

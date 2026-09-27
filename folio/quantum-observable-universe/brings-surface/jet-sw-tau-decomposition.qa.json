@@ -3,9 +3,9 @@
   "label": "prop:jet-sw-tau-decomposition",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts",
-    "md": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.md",
-    "lean": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.lean"
+    "ts": "folio/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts",
+    "md": "folio/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.md",
+    "lean": "folio/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.lean"
   },
   "source_hashes": {
     "md": "db6550773718",
@@ -164,7 +164,7 @@
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.lean:66: right-hand side sums `tauGraded`, not `period`."
+        "evidence": "folio/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.lean:66: right-hand side sums `tauGraded`, not `period`."
       },
       {
         "field_hash": {
@@ -1247,7 +1247,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1441,7 +1441,7 @@
         "reviewed_at": "2026-07-07T14:26:55.068465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Checked mathematical consistency of the claim '**Proposition (jet decomposition of the Archimedean realisation).**' and found no counterexamples under the stated conditions.",
-        "evidence": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
         "severity": "minor"
       },
       {
@@ -1509,7 +1509,7 @@
         "reviewed_at": "2026-07-07T14:26:55.068465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Traced dependencies ['prop:mi-sw-abelianisation', 'prop:sw-period-residue-sum'] for 'prop:jet-sw-tau-decomposition' and confirmed no circular definitions or justifications.",
-        "evidence": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
         "severity": "minor"
       },
       {
@@ -1576,7 +1576,7 @@
         "reviewed_at": "2026-07-07T14:26:55.068465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
-        "evidence": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
         "severity": "minor"
       },
       {
@@ -1610,7 +1610,7 @@
         "reviewed_at": "2026-07-07T14:26:55.068465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical transitions in the derivation of '**Proposition (jet decomposition of the Archimedean realisation).**' are sound; no non-sequiturs detected.",
-        "evidence": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
         "severity": "minor"
       },
       {
@@ -1678,7 +1678,7 @@
         "reviewed_at": "2026-07-07T14:26:55.068465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references and uses ['prop:mi-sw-abelianisation', 'prop:sw-period-residue-sum'] cited in 'prop:jet-sw-tau-decomposition' are used in accordance with their established mathematical definitions.",
-        "evidence": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
         "severity": "minor"
       },
       {
@@ -1712,7 +1712,7 @@
         "reviewed_at": "2026-07-07T14:26:55.068465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All terms and algebraic structures in 'prop:jet-sw-tau-decomposition' are uniquely defined or standard.",
-        "evidence": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
         "severity": "minor"
       },
       {
@@ -1746,7 +1746,7 @@
         "reviewed_at": "2026-07-07T14:26:55.068465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic statements in 'prop:jet-sw-tau-decomposition' do not rely on fragile empirical fits or numerical thresholds.",
-        "evidence": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
         "severity": "minor"
       },
       {
@@ -1780,7 +1780,7 @@
         "reviewed_at": "2026-07-07T14:26:55.068465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Physical dimensions and units in 'prop:jet-sw-tau-decomposition' are consistent with quantum observable universe models.",
-        "evidence": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
         "severity": "minor"
       },
       {
@@ -1814,7 +1814,7 @@
         "reviewed_at": "2026-07-07T14:26:55.068465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All backing computations and proofs are fully reproducible.",
-        "evidence": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
         "severity": "minor"
       },
       {

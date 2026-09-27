@@ -3,9 +3,9 @@
   "label": "def:stable-atom",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/stable-atom.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/stable-atom.md",
-    "lean": "content/quantum-observable-universe/knots-particles-confinement/stable-atom.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/stable-atom.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/stable-atom.md",
+    "lean": "folio/quantum-observable-universe/knots-particles-confinement/stable-atom.lean"
   },
   "source_hashes": {
     "md": "3788e2757179",
@@ -775,7 +775,7 @@
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/knots-particles-confinement/stable-atom.ts:0: uses[] dependency cycle: def:stable-atom -> def:atom-knot -> def:confinement-level -> def:knot-operator-energy -> def:stable-atom"
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/stable-atom.ts:0: uses[] dependency cycle: def:stable-atom -> def:atom-knot -> def:confinement-level -> def:knot-operator-energy -> def:stable-atom"
       }
     ],
     "bib-cite-resolves": [
@@ -1032,7 +1032,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Stable atom (ILP feasibility)': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/stable-atom.ts:1"
       },
       {
         "result": "pass",
@@ -1101,7 +1101,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Stable atom (ILP feasibility)'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/stable-atom.ts:1"
       },
       {
         "result": "pass",
@@ -1170,7 +1170,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Stable atom (ILP feasibility)'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/stable-atom.ts:1"
       },
       {
         "result": "pass",
@@ -1205,7 +1205,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Stable atom (ILP feasibility)' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/stable-atom.ts:1"
       },
       {
         "result": "pass",
@@ -1274,7 +1274,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Stable atom (ILP feasibility)', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/stable-atom.ts:1"
       },
       {
         "result": "pass",
@@ -1309,7 +1309,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Stable atom (ILP feasibility)' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/stable-atom.ts:1"
       },
       {
         "result": "pass",
@@ -1344,7 +1344,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Stable atom (ILP feasibility)' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/stable-atom.ts:1"
       },
       {
         "result": "pass",
@@ -1379,7 +1379,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Stable atom (ILP feasibility)' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/stable-atom.ts:1"
       },
       {
         "result": "pass",
@@ -1414,7 +1414,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Stable atom (ILP feasibility)' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/stable-atom.ts:1"
       },
       {
         "result": "pass",

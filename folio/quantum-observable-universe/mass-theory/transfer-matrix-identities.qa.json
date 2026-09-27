@@ -3,9 +3,9 @@
   "label": "prop:transfer-matrix-identities",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/transfer-matrix-identities.ts",
-    "md": "content/quantum-observable-universe/mass-theory/transfer-matrix-identities.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/transfer_matrix_identities.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/transfer-matrix-identities.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/transfer-matrix-identities.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/transfer_matrix_identities.lean"
   },
   "source_hashes": {
     "md": "0eebc654a728",
@@ -705,7 +705,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:0: forward ref: uses prop:beta-decay-transfer-matrix (manifest pos 69) which appears after this block (pos 64) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:0: forward ref: uses prop:beta-decay-transfer-matrix (manifest pos 69) which appears after this block (pos 64) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1238,8 +1238,8 @@
         },
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/transfer-matrix-identities.lean is missing entirely.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-identities.md:1",
+        "notes": "The sibling Lean file folio/quantum-observable-universe/mass-theory/transfer-matrix-identities.lean is missing entirely.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/transfer-matrix-identities.md:1",
         "severity": "minor"
       },
       {
@@ -1305,7 +1305,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/ParticleInteractions/transfer_matrix_identities.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/ParticleInteractions/transfer_matrix_identities.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1479,7 +1479,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:1",
         "severity": "minor"
       },
       {
@@ -1570,7 +1570,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:1",
         "severity": "minor"
       },
       {
@@ -1661,7 +1661,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:1",
         "severity": "minor"
       },
       {
@@ -1707,7 +1707,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:1",
         "severity": "minor"
       },
       {
@@ -1753,7 +1753,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:1",
         "severity": "minor"
       },
       {
@@ -1799,7 +1799,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:1",
         "severity": "minor"
       },
       {
@@ -1845,7 +1845,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:1",
         "severity": "minor"
       },
       {
@@ -1891,7 +1891,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:1",
         "severity": "minor"
       },
       {
@@ -2030,9 +2030,9 @@
         },
         "reviewed_at": "2026-06-28T10:58:48.693Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/transfer-matrix-identities.lean is missing, leading to complete divergence.",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/mass-theory/transfer-matrix-identities.lean is missing, leading to complete divergence.",
         "severity": "minor",
-        "evidence": "The referenced Lean file content/quantum-observable-universe/mass-theory/transfer-matrix-identities.lean is missing, leading to complete divergence."
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/mass-theory/transfer-matrix-identities.lean is missing, leading to complete divergence."
       },
       {
         "field_hash": {

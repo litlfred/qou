@@ -3,9 +3,9 @@
   "label": "prop:neutron-proton-splitting",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/neutron-proton-splitting.ts",
-    "md": "content/quantum-observable-universe/mass-theory/neutron-proton-splitting.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/Torsion/neutron_proton_splitting.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/neutron-proton-splitting.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/neutron-proton-splitting.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/Torsion/neutron_proton_splitting.lean"
   },
   "source_hashes": {
     "md": "1a3bd7174063",
@@ -624,7 +624,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/neutron-proton-splitting.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "folio/quantum-observable-universe/mass-theory/neutron-proton-splitting.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -646,7 +646,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/neutron-proton-splitting.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "folio/quantum-observable-universe/mass-theory/neutron-proton-splitting.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1216,7 +1216,7 @@
         "reviewed_at": "2026-09-03T05:16:06Z",
         "reviewed_sha": "e71ba7a90360c4c6aee91f9e189fb7580a99db79",
         "notes": "Archimedean comparison-boundary block (sec:mass-physical-face); MeV/CODATA tokens match its regime; prior templated fail overturned.",
-        "evidence": "Regime: archimedean by design. The block is listed at content/quantum-observable-universe/mass-theory/mass-theory.ts:1194 inside section sec:mass-physical-face (lines 1187-1191, 'Physical face: mass, binding, and decay'; chapter header lines 17-20 names an explicit 'Archimedean' and 'Physical: ... mass predictions' face), whose intro mass-physical-face-intro.md:1-3 says 'We now specialise the algebraic mass endomorphism to physical predictions ... The predictions match CODATA and AME data', and whose section peers borromean-baryon-mass-formula.md:12 (Vol ~ 7.327, q_0) and q-integer-mass-formula.md:5-9 (MeV values) are likewise archimedean-valued. Tokens in the statement: neutron-proton-splitting.md:7 '\\approx 1.302 MeV', :10 'alpha = m_e x 8G' (CAL-1 physical scale), :12 '1.302 MeV ... CODATA ... 0.63%'; no Real.*, no numeric q, no order hypothesis. Per AGENTS.md section 7c (lines 3929-3975: 'CODATA / experimental value -> R'; numerical evaluation is the archimedean specialisation) these are exactly the constructs that belong on the R side, and a mass-splitting-vs-CODATA statement is a comparison-boundary block, not a generic-ring identity presented in the wrong regime; it does not mix regimes unflagged (the '\\approx ... MeV' and CODATA comparison at :7 and :12 make the evaluation side explicit, and the algebraic content is delegated via uses: thm:wedderburn-mass-formula at .ts:28). The 2026-07-07 fail ('Substrate statement contains archimedean constructs.') names no token and is the templated string shared with terminal-resolution and the qou-zkia batch; it is overturned."
+        "evidence": "Regime: archimedean by design. The block is listed at folio/quantum-observable-universe/mass-theory/mass-theory.ts:1194 inside section sec:mass-physical-face (lines 1187-1191, 'Physical face: mass, binding, and decay'; chapter header lines 17-20 names an explicit 'Archimedean' and 'Physical: ... mass predictions' face), whose intro mass-physical-face-intro.md:1-3 says 'We now specialise the algebraic mass endomorphism to physical predictions ... The predictions match CODATA and AME data', and whose section peers borromean-baryon-mass-formula.md:12 (Vol ~ 7.327, q_0) and q-integer-mass-formula.md:5-9 (MeV values) are likewise archimedean-valued. Tokens in the statement: neutron-proton-splitting.md:7 '\\approx 1.302 MeV', :10 'alpha = m_e x 8G' (CAL-1 physical scale), :12 '1.302 MeV ... CODATA ... 0.63%'; no Real.*, no numeric q, no order hypothesis. Per AGENTS.md section 7c (lines 3929-3975: 'CODATA / experimental value -> R'; numerical evaluation is the archimedean specialisation) these are exactly the constructs that belong on the R side, and a mass-splitting-vs-CODATA statement is a comparison-boundary block, not a generic-ring identity presented in the wrong regime; it does not mix regimes unflagged (the '\\approx ... MeV' and CODATA comparison at :7 and :12 make the evaluation side explicit, and the algebraic content is delegated via uses: thm:wedderburn-mass-formula at .ts:28). The 2026-07-07 fail ('Substrate statement contains archimedean constructs.') names no token and is the templated string shared with terminal-resolution and the qou-zkia batch; it is overturned."
       }
     ],
     "wall-side-proof": [
@@ -1251,7 +1251,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/Torsion/neutron_proton_splitting.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/Torsion/neutron_proton_splitting.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",

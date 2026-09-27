@@ -83,7 +83,7 @@
   -- Ref: [neumann-zagier1985] https://doi.org/10.1016/0040-9383(85)90004-7
   --      Topology 24 (1985) 307-332.  DOI corrected 2026-08-08: this file first
   --      carried 10.1016/0040-9383(85)90050-3, typed from memory rather than read
-  --      off `content/schema/references.ts`, which had the correct one all along.
+  --      off `folio/schema/references.ts`, which had the correct one all along.
 -/
 
 import QOU.Knot.FigureEightComplexVolume

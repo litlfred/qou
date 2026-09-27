@@ -12,8 +12,8 @@ import Mathlib.Data.Int.Basic
 The `q`-deformed Lie bracket on derivations of `A`:
 `[X, Y]_q = q⁻¹ [X, Y] + (1 − q⁻¹)(θ(X)[ξ, Y] − θ(Y)[ξ, X])`.
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean (monolithic)
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean (monolithic)
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical

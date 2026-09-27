@@ -3,9 +3,9 @@
   "label": "prop:box-braid-irreducibility",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/box-braid-irreducibility.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/box-braid-irreducibility.md",
-    "lean": "content/quantum-observable-universe/nuclear-interactions/box-braid-irreducibility.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/box-braid-irreducibility.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/box-braid-irreducibility.md",
+    "lean": "folio/quantum-observable-universe/nuclear-interactions/box-braid-irreducibility.lean"
   },
   "source_hashes": {
     "md": "bc73f8413d1b",
@@ -1316,7 +1316,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean:93 [def-disguised-true] def photon_neutrino_requires_T35 :",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean:93 [def-disguised-true] def photon_neutrino_requires_T35 :",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1404,7 +1404,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The mathematical claims in 'The $\\\\gamma\\\\gamma \\\\to \\\\nu\\\\nu^{\\\\sigma}$ box braid is irreducible' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean:72:65: error: unsolved goals.",
+        "notes": "The mathematical claims in 'The $\\\\gamma\\\\gamma \\\\to \\\\nu\\\\nu^{\\\\sigma}$ box braid is irreducible' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean:72:65: error: unsolved goals.",
         "severity": "minor",
         "evidence": "box-braid-irreducibility.lean:1"
       },
@@ -1439,7 +1439,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "box-braid-irreducibility.lean:1"
       },
@@ -1578,7 +1578,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean.",
         "severity": "minor",
         "evidence": "box-braid-irreducibility.lean:1"
       },
@@ -1613,9 +1613,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1788,9 +1788,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "box-braid-irreducibility.lean:1 — content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean:72:65: error: unsolved goals"
+        "evidence": "box-braid-irreducibility.lean:1 — folio/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean:72:65: error: unsolved goals"
       },
       {
         "result": "pass",
@@ -1823,11 +1823,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean fails compilation.",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean fails compilation.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean fails compilation."
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean fails compilation."
       },
       {
         "result": "pass",

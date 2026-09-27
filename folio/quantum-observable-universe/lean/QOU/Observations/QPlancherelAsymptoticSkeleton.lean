@@ -61,8 +61,8 @@ rather than smuggled into a `True`/projection field.
 
 ## Cross-references
 
-  - [content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.md]
-  - [content/quantum-observable-universe/lean/QOU/MathlibExt/QPlancherel.lean] (`HasQPlancherelCLT`)
+  - [folio/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.md]
+  - [folio/quantum-observable-universe/lean/QOU/MathlibExt/QPlancherel.lean] (`HasQPlancherelCLT`)
 -/
 
 namespace QOU.Observations

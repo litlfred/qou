@@ -3,9 +3,9 @@
   "label": "prop:cyclotomic-strand-doubling",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/cyclotomic-strand-doubling.ts",
-    "md": "content/quantum-observable-universe/mass-theory/cyclotomic-strand-doubling.md",
-    "lean": "content/quantum-observable-universe/mass-theory/cyclotomic-strand-doubling.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/cyclotomic-strand-doubling.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/cyclotomic-strand-doubling.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/cyclotomic-strand-doubling.lean"
   },
   "source_hashes": {
     "md": "6bb897e83c76",
@@ -1096,7 +1096,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:123 [discharged-impossible-hyp] theorem isospin_signature_distinct_from_deuteron :",
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:123 [discharged-impossible-hyp] theorem isospin_signature_distinct_from_deuteron :",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1407,7 +1407,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Checked mathematical consistency of the claim 'Proof' and found no counterexamples under the stated conditions.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
       },
       {
         "result": "pass",
@@ -1475,7 +1475,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Traced dependencies ['prop:habiro-pochhammer-bridge'] for 'prop:cyclotomic-strand-doubling' and confirmed no circular definitions or justifications.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
       },
       {
         "result": "pass",
@@ -1542,7 +1542,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
       },
       {
         "result": "pass",
@@ -1576,7 +1576,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Logical transitions in the derivation of 'Proof' are sound; no non-sequiturs detected.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
       },
       {
         "result": "pass",
@@ -1644,7 +1644,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All references and uses ['prop:habiro-pochhammer-bridge'] cited in 'prop:cyclotomic-strand-doubling' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
       },
       {
         "result": "pass",
@@ -1678,7 +1678,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All terms and algebraic structures in 'prop:cyclotomic-strand-doubling' are uniquely defined or standard.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
       },
       {
         "result": "pass",
@@ -1712,7 +1712,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The algebraic statements in 'prop:cyclotomic-strand-doubling' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
       },
       {
         "result": "pass",
@@ -1744,7 +1744,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Physical dimensions and units in 'prop:cyclotomic-strand-doubling' are consistent with quantum observable universe models.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
       },
       {
         "field_hash": {
@@ -1796,9 +1796,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.964489Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:53:2: error: Tactic `decide` failed for proposition.",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: folio/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:53:2: error: Tactic `decide` failed for proposition.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:1 — content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:53:2: error: Tactic `decide` failed for proposition"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:1 — folio/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:53:2: error: Tactic `decide` failed for proposition"
       },
       {
         "result": "pass",
@@ -1830,11 +1830,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.964489Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:53:2: error: Tactic `decide` failed for proposition",
+        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:53:2: error: Tactic `decide` failed for proposition",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:53:2: error: Tactic `decide` failed for proposition",
-        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:53:2: error: Tactic `decide` failed for proposition"
+        "referee_argument": "The Lean sibling fails compilation with error: folio/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:53:2: error: Tactic `decide` failed for proposition",
+        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:53:2: error: Tactic `decide` failed for proposition"
       },
       {
         "result": "pass",

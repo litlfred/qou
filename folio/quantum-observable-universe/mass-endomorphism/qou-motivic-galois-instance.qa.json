@@ -3,8 +3,8 @@
   "label": "conj:qou-motivic-galois-instance",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.ts",
-    "md": "content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.md"
+    "ts": "folio/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.ts",
+    "md": "folio/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.md"
   },
   "source_hashes": {
     "md": "97262b22d372",
@@ -948,7 +948,7 @@
         "reviewed_at": "2026-08-29T15:52:33.383Z",
         "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.md:18: P4:date-ref: **Why this is stated as a conjecture (2026-08-23).** The formula above | content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.md:28: P4:date-ref: **Lean status (2026-08-23).** There is no Lean formalization of this | content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.md:31: P4:date-ref: class — was deleted on 2026-08-12 and has no replacement. The | content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.md:40: P4:date-ref: obstruction, and constructs no `MotivicGaloisCharacter`. The 2026-08-12"
+        "evidence": "folio/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.md:18: P4:date-ref: **Why this is stated as a conjecture (2026-08-23).** The formula above | folio/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.md:28: P4:date-ref: **Lean status (2026-08-23).** There is no Lean formalization of this | folio/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.md:31: P4:date-ref: class — was deleted on 2026-08-12 and has no replacement. The | folio/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.md:40: P4:date-ref: obstruction, and constructs no `MotivicGaloisCharacter`. The 2026-08-12"
       }
     ],
     "voice-status-section": [
@@ -1998,7 +1998,7 @@
         "reviewed_at": "2026-08-22T04:08:52.585Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "No maximum-strength claim; the Habiro truncation statement is exact and checked.",
-        "notes": "VERIFIED CORRECT: '(u;u)_m vanishes for m >= 2p' at u = zeta_(2p) is right -- (u;u)_m = prod_(k=1..m)(1-u^k) and the first vanishing factor is k = ord(zeta_(2p)) = 2p. SEPARATE STRUCTURAL FINDINGS, not fixed: (a) this is a 'definition' block, whose sibling .lean is REQUIRED at the type level per AGENTS.md sec 3, and the block itself records that the sibling was deleted -- content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.lean does not exist; (b) the .ts lean.ref 'qou:QOU.LiftingDescent.QOUInstance.qouMotivicGaloisChar' resolves to NOTHING -- grep for qouMotivicGaloisChar across content/**/*.lean returns zero hits (the named Route-A replacement file QOU/LiftingDescent/MotivicPerpetualObstructionFromTrace.lean does exist); (c) the .ts sets computation.status 'verified' against computations/probes/habiro-frobenius-probe.witness.json, which contains NO assertions array and NO allPassed field at all, and is marked auditOnly against a branch-local audit doc."
+        "notes": "VERIFIED CORRECT: '(u;u)_m vanishes for m >= 2p' at u = zeta_(2p) is right -- (u;u)_m = prod_(k=1..m)(1-u^k) and the first vanishing factor is k = ord(zeta_(2p)) = 2p. SEPARATE STRUCTURAL FINDINGS, not fixed: (a) this is a 'definition' block, whose sibling .lean is REQUIRED at the type level per AGENTS.md sec 3, and the block itself records that the sibling was deleted -- folio/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.lean does not exist; (b) the .ts lean.ref 'qou:QOU.LiftingDescent.QOUInstance.qouMotivicGaloisChar' resolves to NOTHING -- grep for qouMotivicGaloisChar across content/**/*.lean returns zero hits (the named Route-A replacement file QOU/LiftingDescent/MotivicPerpetualObstructionFromTrace.lean does exist); (c) the .ts sets computation.status 'verified' against computations/probes/habiro-frobenius-probe.witness.json, which contains NO assertions array and NO allPassed field at all, and is marked auditOnly against a branch-local audit doc."
       }
     ],
     "trap-nonspeakable": [

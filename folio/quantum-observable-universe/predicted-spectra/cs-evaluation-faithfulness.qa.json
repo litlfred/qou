@@ -3,9 +3,9 @@
   "label": "prop:cs-evaluation-faithfulness",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/cs-evaluation-faithfulness.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/cs-evaluation-faithfulness.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean"
+    "ts": "folio/quantum-observable-universe/predicted-spectra/cs-evaluation-faithfulness.ts",
+    "md": "folio/quantum-observable-universe/predicted-spectra/cs-evaluation-faithfulness.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean"
   },
   "source_hashes": {
     "md": "c910365ecac3",
@@ -439,7 +439,7 @@
         "reviewed_at": "2026-08-10T04:49:41.342Z",
         "reviewed_sha": "d410f902106fdf2891eefc2d1ae74814bbe4d806",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean:259: Now that `vol_B3 = 8 · catalan_G` symbolically, the `_ne_vol_B3`"
+        "evidence": "folio/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean:259: Now that `vol_B3 = 8 · catalan_G` symbolically, the `_ne_vol_B3`"
       }
     ],
     "voice-title-scholarly": [

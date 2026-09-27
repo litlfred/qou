@@ -1,6 +1,6 @@
 /**
  * Re-export from canonical location at schemas/builders.ts.
- * @module content/schema/builders
+ * @module folio/schema/builders
  */
 export {
   definition,

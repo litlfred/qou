@@ -4,7 +4,7 @@
   computation named by GAP-1 closure path 2 of
   docs/audits/2026-07-13-pion-radius-and-vol-to-radius-gaps.md ("one CAL-3
   quantum per bond": the multiplicity-one Frobenius reciprocity of
-  content/quantum-observable-universe/braids-and-knots/frobenius-lepton-meson-bridge.md).
+  folio/quantum-observable-universe/braids-and-knots/frobenius-lepton-meson-bridge.md).
   The content-block sibling frobenius-lepton-meson-bridge.lean records the
   same multiplicities as the Pieri TABLE `branchingH3H2`; here the V_(2,1)
   row is PROVED by explicit finite computation, not tabulated.

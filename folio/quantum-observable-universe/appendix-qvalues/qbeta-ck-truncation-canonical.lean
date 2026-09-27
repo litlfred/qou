@@ -79,7 +79,7 @@ class QbetaCkTruncationCanonicalExists : Prop where
     (the open Habiro-element identification), per the §3b convention for
     Lean formalisation of conjectures. -/
 -- Ref: [manuscript] conj:qbeta-ck-truncation-canonical
---   (content/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.md;
+--   (folio/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.md;
 --    docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
 -- Ref: [jones1985] doi:10.2307/1971403 (Hopf-link Jones polynomial)
 -- Ref: [habiro2004cyclotomic] (Habiro element / cyclotomic completion roadmap)

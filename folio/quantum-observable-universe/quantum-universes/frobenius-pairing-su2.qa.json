@@ -3,8 +3,8 @@
   "label": "ex:frobenius-pairing-su2",
   "kind": "example",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.ts",
-    "md": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md"
+    "ts": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.ts",
+    "md": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md"
   },
   "source_hashes": {
     "md": "c8afbaaea225",
@@ -544,7 +544,7 @@
         "reviewed_at": "2026-08-09T13:01:53.088Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.ts:0: forward ref: uses ex:quantum-universe-su2 (manifest pos 20) which appears after this block (pos 18) in the chapter"
+        "evidence": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.ts:0: forward ref: uses ex:quantum-universe-su2 (manifest pos 20) which appears after this block (pos 18) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1194,7 +1194,7 @@
         "reviewed_at": "2026-08-22T06:08:02.390Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md (34 lines, kind=example, title=\"The Frobenius pairing on O(SU(2))\"). searched for assert-by-denying constructions ('not X but Y', 'X, not Y', 'rather than'); none present beyond substantive mathematical contrast that is itself the block's claim",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md (34 lines, kind=example, title=\"The Frobenius pairing on O(SU(2))\"). searched for assert-by-denying constructions ('not X but Y', 'X, not Y', 'rather than'); none present beyond substantive mathematical contrast that is itself the block's claim",
         "notes": "no fix needed"
       }
     ],
@@ -1230,7 +1230,7 @@
         "reviewed_at": "2026-08-22T06:08:02.430Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md (34 lines, kind=example, title=\"The Frobenius pairing on O(SU(2))\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md (34 lines, kind=example, title=\"The Frobenius pairing on O(SU(2))\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
         "notes": "no fix needed"
       }
     ],
@@ -1266,7 +1266,7 @@
         "reviewed_at": "2026-08-22T06:08:02.467Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md (34 lines, kind=example, title=\"The Frobenius pairing on O(SU(2))\"). 0 spaced em-dash construction(s); LaTeX '--' occurrences are name-internal (Maurer--Cartan, Frobenius--Hopf, Tannaka--Krein), not sentence punctuation",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md (34 lines, kind=example, title=\"The Frobenius pairing on O(SU(2))\"). 0 spaced em-dash construction(s); LaTeX '--' occurrences are name-internal (Maurer--Cartan, Frobenius--Hopf, Tannaka--Krein), not sentence punctuation",
         "notes": "no fix needed"
       }
     ],
@@ -1302,7 +1302,7 @@
         "reviewed_at": "2026-08-22T06:08:02.506Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md (34 lines, kind=example, title=\"The Frobenius pairing on O(SU(2))\"). no reflex three-item list; enumerations present are content-determined",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md (34 lines, kind=example, title=\"The Frobenius pairing on O(SU(2))\"). no reflex three-item list; enumerations present are content-determined",
         "notes": "no fix needed"
       }
     ],
@@ -1338,7 +1338,7 @@
         "reviewed_at": "2026-08-22T06:08:02.544Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md (34 lines, kind=example, title=\"The Frobenius pairing on O(SU(2))\"). final sentence is \"This is $\\mathrm{id}_A$, confirming non-degeneracy.\" - a substantive statement, not a placed quotable closer",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md (34 lines, kind=example, title=\"The Frobenius pairing on O(SU(2))\"). final sentence is \"This is $\\mathrm{id}_A$, confirming non-degeneracy.\" - a substantive statement, not a placed quotable closer",
         "notes": "no fix needed"
       }
     ],
@@ -1374,7 +1374,7 @@
         "reviewed_at": "2026-08-22T06:08:02.581Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md (34 lines, kind=example, title=\"The Frobenius pairing on O(SU(2))\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md (34 lines, kind=example, title=\"The Frobenius pairing on O(SU(2))\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
         "notes": "no fix needed"
       }
     ],
@@ -1410,7 +1410,7 @@
         "reviewed_at": "2026-08-22T06:08:02.621Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md (34 lines, kind=example, title=\"The Frobenius pairing on O(SU(2))\"). final sentence is \"This is $\\mathrm{id}_A$, confirming non-degeneracy.\" - it advances or points forward rather than restating what the block already established",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md (34 lines, kind=example, title=\"The Frobenius pairing on O(SU(2))\"). final sentence is \"This is $\\mathrm{id}_A$, confirming non-degeneracy.\" - it advances or points forward rather than restating what the block already established",
         "notes": "no fix needed"
       }
     ],
@@ -1446,7 +1446,7 @@
         "reviewed_at": "2026-08-22T06:08:02.660Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md (34 lines, kind=example, title=\"The Frobenius pairing on O(SU(2))\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md (34 lines, kind=example, title=\"The Frobenius pairing on O(SU(2))\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
         "notes": "no fix needed"
       }
     ],
@@ -1482,7 +1482,7 @@
         "reviewed_at": "2026-08-22T06:08:02.708Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md (34 lines, kind=example, title=\"The Frobenius pairing on O(SU(2))\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md (34 lines, kind=example, title=\"The Frobenius pairing on O(SU(2))\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
         "notes": "no fix needed"
       }
     ],
@@ -1518,7 +1518,7 @@
         "reviewed_at": "2026-08-22T06:08:02.749Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md (34 lines, kind=example, title=\"The Frobenius pairing on O(SU(2))\"). prose reads aloud without stalling; no noun-chain built for the eye only",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md (34 lines, kind=example, title=\"The Frobenius pairing on O(SU(2))\"). prose reads aloud without stalling; no noun-chain built for the eye only",
         "notes": "no fix needed"
       }
     ],

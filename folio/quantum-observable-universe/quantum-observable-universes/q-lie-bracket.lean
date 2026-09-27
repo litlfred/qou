@@ -3,10 +3,10 @@ import QOU.QuantumObservableUniverse.SubstrateParameter
 /-!
 # QOU.qLieBracket
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/qLieBracket.lean (monolithic).
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/qLieBracket.lean (monolithic).
 That file no longer exists — the library was split, and `qLieBracket` now lives at
-  content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Particles.lean
+  folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Particles.lean
 
 The q-deformed Lie bracket is the **archimedean** realisation of the
 categorical q-Lie bracket. It is stated over `ℝ` because the substrate

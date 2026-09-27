@@ -3,9 +3,9 @@
   "label": "def:polynomial-observable-subcategory",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/information-theory/polynomial-observable-subcategory.ts",
-    "md": "content/quantum-observable-universe/information-theory/polynomial-observable-subcategory.md",
-    "lean": "content/quantum-observable-universe/information-theory/polynomial-observable-subcategory.lean"
+    "ts": "folio/quantum-observable-universe/information-theory/polynomial-observable-subcategory.ts",
+    "md": "folio/quantum-observable-universe/information-theory/polynomial-observable-subcategory.md",
+    "lean": "folio/quantum-observable-universe/information-theory/polynomial-observable-subcategory.lean"
   },
   "source_hashes": {
     "md": "2543fbfe155f",
@@ -718,7 +718,7 @@
         "reviewed_at": "2026-08-09T13:00:44.975Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/information-theory/polynomial-observable-subcategory.ts:0: forward ref: uses def:observable-subcategory (manifest pos 152) which appears after this block (pos 86) in the chapter"
+        "evidence": "folio/quantum-observable-universe/information-theory/polynomial-observable-subcategory.ts:0: forward ref: uses def:observable-subcategory (manifest pos 152) which appears after this block (pos 86) in the chapter"
       }
     ],
     "detangler-section-band": [

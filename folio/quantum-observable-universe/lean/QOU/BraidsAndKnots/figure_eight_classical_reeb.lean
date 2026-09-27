@@ -2,7 +2,7 @@
   Classical q-Reeb angle of the figure-eight knot operator.
 
   RELOCATED (no mathematical change).  `figure_eight_classical_reeb` was declared in
-  `content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.lean`, a
+  `folio/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.lean`, a
   chapter-directory `.lean` belonging to a different content block, so the content-block
   resolver found it via neither candidate 1 (the citing block's own sibling) nor candidate 2
   (`<lakeRoot>/<Decl/Path>.lean`).  Moving it to the path matching its namespace makes candidate

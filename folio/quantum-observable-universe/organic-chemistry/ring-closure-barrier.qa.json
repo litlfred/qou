@@ -3,9 +3,9 @@
   "label": "prop:ring-closure-barrier",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.ts",
-    "md": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.md",
-    "lean": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean"
+    "ts": "folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.ts",
+    "md": "folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.md",
+    "lean": "folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean"
   },
   "source_hashes": {
     "md": "abedca35fef1",
@@ -1136,7 +1136,7 @@
         },
         "result": "fail",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:28 [native_decide] theorem alexander_weight_diff_six : alexanderWeightDifference 6 = 2 := by",
+        "evidence": "folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:28 [native_decide] theorem alexander_weight_diff_six : alexanderWeightDifference 6 = 2 := by",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1421,7 +1421,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claim in 'Ring-closure energy barrier from braid rearrangement' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:1"
+        "evidence": "folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:1"
       }
     ],
     "da-vacuous": [
@@ -1464,7 +1464,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Ring-closure energy barrier from braid rearrangement'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.ts:1"
+        "evidence": "folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1523,7 +1523,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Ring-closure energy barrier from braid rearrangement'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.ts:1"
+        "evidence": "folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1543,9 +1543,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:1"
+        "evidence": "folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1565,9 +1565,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean sibling content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -1604,7 +1604,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Ring-closure energy barrier from braid rearrangement', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.ts:1"
+        "evidence": "folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1626,7 +1626,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Ring-closure energy barrier from braid rearrangement' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.ts:1"
+        "evidence": "folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1648,7 +1648,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Ring-closure energy barrier from braid rearrangement' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.ts:1"
+        "evidence": "folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1670,7 +1670,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Ring-closure energy barrier from braid rearrangement' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.ts:1"
+        "evidence": "folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1690,9 +1690,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean sibling content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:1 \u2014 content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:33:45: error: Function expected at"
+        "evidence": "folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:1 \u2014 folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:33:45: error: Function expected at"
       },
       {
         "field_hash": {
@@ -1727,11 +1727,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean fails compilation: content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:33:45: error: Function expected at",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean fails compilation: folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:33:45: error: Function expected at",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean contains compilation errors: content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:33:45: error: Function expected at, invalidating the claimed formalization.",
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean contains compilation errors: folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:33:45: error: Function expected at, invalidating the claimed formalization.",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean fails compilation: content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:33:45: error: Function expected at"
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean fails compilation: folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:33:45: error: Function expected at"
       },
       {
         "field_hash": {

@@ -5,7 +5,7 @@ import Mathlib.Data.Nat.Basic
 # QOU.KnotComplement — visualiser hooks for hyperbolic knot complements
 
 Lightweight data structures for the **knot-complement viewer** in
-`content/visualizer/overview/viz-knot-complement.{ts,md}`.  Geometric
+`folio/visualizer/overview/viz-knot-complement.{ts,md}`.  Geometric
 invariants (volume, homology, fundamental-group presentation) are
 delegated to the SnapPea kernel via WASM at runtime; this module
 fixes the *types* of the data the SnapPea bridge emits, so downstream

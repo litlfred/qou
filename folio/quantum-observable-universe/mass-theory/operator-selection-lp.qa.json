@@ -3,9 +3,9 @@
   "label": "prop:operator-selection-lp",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/operator-selection-lp.ts",
-    "md": "content/quantum-observable-universe/mass-theory/operator-selection-lp.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/operator-selection-lp.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/operator-selection-lp.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean"
   },
   "source_hashes": {
     "md": "1f9efaf781c3",
@@ -894,7 +894,7 @@
         "reviewed_at": "2026-08-24T23:45:23.646Z",
         "reviewed_sha": "ffbcd5584e7474b698793983c436f3810169ce83",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/operator-selection-lp.md:90: Strong duality — named result, no citation in block"
+        "evidence": "folio/quantum-observable-universe/mass-theory/operator-selection-lp.md:90: Strong duality — named result, no citation in block"
       }
     ],
     "voice-agent-speak": [
@@ -1052,7 +1052,7 @@
         "reviewed_at": "2026-08-24T23:45:23.646Z",
         "reviewed_sha": "ffbcd5584e7474b698793983c436f3810169ce83",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean:131: right radical direction, a cost vector orthogonal to it, and | content/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean:142: so the program has nothing to optimise and a knot-dependent `u` buys a | content/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean:147: So the degeneracy is not a property of `G`.  It is the conjunction of | content/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean:588: so the box at index `0` is **active** at the solver's optimum.  Bean"
+        "evidence": "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean:131: right radical direction, a cost vector orthogonal to it, and | folio/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean:142: so the program has nothing to optimise and a knot-dependent `u` buys a | folio/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean:147: So the degeneracy is not a property of `G`.  It is the conjunction of | folio/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean:588: so the box at index `0` is **active** at the solver's optimum.  Bean"
       }
     ],
     "voice-title-scholarly": [
@@ -1734,7 +1734,7 @@
         "reviewed_at": "2026-08-24T23:45:23.646Z",
         "reviewed_sha": "ffbcd5584e7474b698793983c436f3810169ce83",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-theory/operator-selection-lp.ts:1: LP/SDP witness 'computations/operator-selection-lp-symbolic-qq.witness.json' missing dual field(s): y0_star, y_star, primal_obj, dual_obj, duality_gap, active_set (or alias: active_set/active_constraints/active_channels)"
+        "evidence": "folio/quantum-observable-universe/mass-theory/operator-selection-lp.ts:1: LP/SDP witness 'computations/operator-selection-lp-symbolic-qq.witness.json' missing dual field(s): y0_star, y_star, primal_obj, dual_obj, duality_gap, active_set (or alias: active_set/active_constraints/active_channels)"
       }
     ],
     "detangler-no-forward-ref": [

@@ -6,10 +6,10 @@ import Mathlib.Algebra.Order.Field.Basic
 /-!
 # QOU.qExtDeriv
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/qExtDeriv.lean (monolithic).
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/qExtDeriv.lean (monolithic).
 That file no longer exists — the library was split, and `qExtDeriv` now lives at
-  content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Particles.lean
+  folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Particles.lean
 
 **Archimedean realisation.** This is the archimedean specialisation of the
 categorical `d_q` (cf. `def:categorical-q-ext-deriv`): the differential

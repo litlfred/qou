@@ -3,9 +3,9 @@
   "label": "def:localized-hadron",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/localized-hadron.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/localized-hadron.md",
-    "lean": "content/quantum-observable-universe/knots-particles-confinement/localized-hadron.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/localized-hadron.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/localized-hadron.md",
+    "lean": "folio/quantum-observable-universe/knots-particles-confinement/localized-hadron.lean"
   },
   "source_hashes": {
     "md": "14dd8f9cd2f7",
@@ -1013,9 +1013,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.277182Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The claim in 'Localized hadron' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/localized-hadron.lean:26:13: error: unexpected token 'section'; expected 'lemma'.",
+        "notes": "The claim in 'Localized hadron' is unverified due to Lean compilation failures: folio/quantum-observable-universe/particle-interactions/localized-hadron.lean:26:13: error: unexpected token 'section'; expected 'lemma'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/localized-hadron.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/localized-hadron.lean:1"
       },
       {
         "field_hash": {
@@ -1073,7 +1073,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Localized hadron'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/localized-hadron.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/localized-hadron.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1132,7 +1132,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Localized hadron'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/localized-hadron.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/localized-hadron.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1152,9 +1152,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.277182Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/localized-hadron.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/localized-hadron.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/localized-hadron.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/localized-hadron.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1174,9 +1174,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.277182Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/localized-hadron.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/localized-hadron.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/localized-hadron.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/localized-hadron.lean fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -1213,7 +1213,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Localized hadron', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/localized-hadron.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/localized-hadron.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1235,7 +1235,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Localized hadron' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/localized-hadron.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/localized-hadron.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1257,7 +1257,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Localized hadron' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/localized-hadron.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/localized-hadron.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1279,7 +1279,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Localized hadron' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/localized-hadron.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/localized-hadron.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1299,9 +1299,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.277182Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/localized-hadron.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/localized-hadron.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/localized-hadron.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/localized-hadron.lean:26:13: error: unexpected token 'section'; expected 'lemma'"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/localized-hadron.lean:1 \u2014 folio/quantum-observable-universe/particle-interactions/localized-hadron.lean:26:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "field_hash": {
@@ -1336,11 +1336,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.277182Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/localized-hadron.lean fails compilation: content/quantum-observable-universe/particle-interactions/localized-hadron.lean:26:13: error: unexpected token 'section'; expected 'lemma'",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/localized-hadron.lean fails compilation: folio/quantum-observable-universe/particle-interactions/localized-hadron.lean:26:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/localized-hadron.lean for 'Localized hadron' fails compilation with error: content/quantum-observable-universe/particle-interactions/localized-hadron.lean:26:13: error: unexpected token 'section'; expected 'lemma'. This invalidates the claim of formal verification.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/localized-hadron.lean fails compilation: content/quantum-observable-universe/particle-interactions/localized-hadron.lean:26:13: error: unexpected token 'section'; expected 'lemma'"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/localized-hadron.lean for 'Localized hadron' fails compilation with error: folio/quantum-observable-universe/particle-interactions/localized-hadron.lean:26:13: error: unexpected token 'section'; expected 'lemma'. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/localized-hadron.lean fails compilation: folio/quantum-observable-universe/particle-interactions/localized-hadron.lean:26:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "field_hash": {

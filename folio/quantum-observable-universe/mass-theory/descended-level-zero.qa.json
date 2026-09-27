@@ -3,9 +3,9 @@
   "label": "prop:descended-level-zero",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/descended-level-zero.ts",
-    "md": "content/quantum-observable-universe/mass-theory/descended-level-zero.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/Descent/descended_level_zero.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/descended-level-zero.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/descended-level-zero.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/Descent/descended_level_zero.lean"
   },
   "source_hashes": {
     "md": "b06e9140f1da",
@@ -816,7 +816,7 @@
         "reviewed_at": "2026-08-23T17:16:07.226Z",
         "reviewed_sha": "393b348434d4bca890af6521e3ec2334c89c54ea",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/Descent/descended_level_zero.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a §7c-style note (in authorNotes, per §4d) or move the archimedean evaluation to a sibling block."
+        "evidence": "folio/quantum-observable-universe/lean/QOU/Descent/descended_level_zero.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a §7c-style note (in authorNotes, per §4d) or move the archimedean evaluation to a sibling block."
       }
     ],
     "q-usage-regime-detected": [

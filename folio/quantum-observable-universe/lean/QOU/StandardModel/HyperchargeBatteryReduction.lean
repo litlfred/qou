@@ -3,7 +3,7 @@ Copyright (c) 2026 QOU contributors. All rights reserved.
 
 # Information content of the hypercharge battery
 
-`content/quantum-observable-universe/eightfold-way/eightfold-open-problems.md`
+`folio/quantum-observable-universe/eightfold-way/eightfold-open-problems.md`
 item 2 records hypercharge `Y` as **open**: the writhe map is falsified as a
 `Y` assignment (proton and neutron share `Y = +1` while their writhes
 differ), so a second crossing invariant independent of the writhe is

@@ -63,7 +63,7 @@ noncomputable def archimedeanMass (q : ℝ) (vol : ℝ) : ℝ :=
     2. Exceptional divisor contributions → Vol(K) · (1/ℏ_q² - 1)
     3. Total: m = Vol(K)/ℏ_q² -/
 -- Ref: [manuscript] §4/topological-mass-formula
--- Ref: [thurston1978] The Geometry and Topology of Three-Manifolds — see content/schema/references.ts
+-- Ref: [thurston1978] The Geometry and Topology of Three-Manifolds — see folio/schema/references.ts
 theorem ArchimedeanMassFormula
     (q : ℝ) (hq : 1 < q)
     (vol : ℝ)

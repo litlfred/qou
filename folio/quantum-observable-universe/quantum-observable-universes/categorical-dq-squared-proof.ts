@@ -41,7 +41,7 @@ export default proof({
         "same structure-level obstruction described above, and it was left " +
         "visible deliberately: writing the scalar implicitly would have " +
         "cleared the marker without removing the inverse.",
-      see: "content/quantum-observable-universe/lean/QOU/CategoricalDqSquared.lean",
+      see: "folio/quantum-observable-universe/lean/QOU/CategoricalDqSquared.lean",
     },
   ],
   label: "prf:categorical-dq-squared",

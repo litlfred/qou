@@ -3,9 +3,9 @@
   "label": "thm:hoefsmit-ew-cell-content",
   "kind": "theorem",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.ts",
-    "md": "content/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md",
-    "lean": "content/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.lean"
   },
   "source_hashes": {
     "md": "194d2b22bdee",
@@ -1381,7 +1381,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.ts:0: forward ref: uses prop:knot-operator-lp-selection (manifest pos 751) which appears after this block (pos 140) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.ts:0: forward ref: uses prop:knot-operator-lp-selection (manifest pos 751) which appears after this block (pos 140) in the chapter"
       }
     ],
     "detangler-section-band": [

@@ -3,8 +3,8 @@
   "label": "prf:mi-sw-abelianisation-cartan",
   "kind": "proof",
   "paths": {
-    "ts": "content/quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan-proof.ts",
-    "md": "content/quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan-proof.md"
+    "ts": "folio/quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan-proof.ts",
+    "md": "folio/quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan-proof.md"
   },
   "source_hashes": {
     "md": "8f2e0587fde0",
@@ -852,7 +852,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Checked mathematical consistency of the claim '**Proof.**' and found no counterexamples under the stated conditions.",
-        "evidence": "content/quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan-proof.ts:1",
         "severity": "minor"
       }
     ],
@@ -887,7 +887,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Traced dependencies ['lem:mi-sw-abelianisation-cartan'] for 'prf:mi-sw-abelianisation-cartan' and confirmed no circular definitions or justifications.",
-        "evidence": "content/quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan-proof.ts:1",
         "severity": "minor"
       }
     ],
@@ -922,7 +922,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
-        "evidence": "content/quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan-proof.ts:1",
         "severity": "minor"
       }
     ],
@@ -940,7 +940,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical transitions in the derivation of '**Proof.**' are sound; no non-sequiturs detected.",
-        "evidence": "content/quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan-proof.ts:1",
         "severity": "minor"
       }
     ],
@@ -975,7 +975,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references and uses ['lem:mi-sw-abelianisation-cartan'] cited in 'prf:mi-sw-abelianisation-cartan' are used in accordance with their established mathematical definitions.",
-        "evidence": "content/quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan-proof.ts:1",
         "severity": "minor"
       }
     ],
@@ -993,7 +993,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All terms and algebraic structures in 'prf:mi-sw-abelianisation-cartan' are uniquely defined or standard.",
-        "evidence": "content/quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan-proof.ts:1",
         "severity": "minor"
       }
     ],
@@ -1011,7 +1011,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic statements in 'prf:mi-sw-abelianisation-cartan' do not rely on fragile empirical fits or numerical thresholds.",
-        "evidence": "content/quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan-proof.ts:1",
         "severity": "minor"
       }
     ],
@@ -1029,7 +1029,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Physical dimensions and units in 'prf:mi-sw-abelianisation-cartan' are consistent with quantum observable universe models.",
-        "evidence": "content/quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan-proof.ts:1",
         "severity": "minor"
       }
     ],

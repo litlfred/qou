@@ -3,9 +3,9 @@
   "label": "prop:atomic-lp-stability",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/atomic-lp-stability.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/atomic-lp-stability.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_lp_stability.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/atomic-lp-stability.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/atomic-lp-stability.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_lp_stability.lean"
   },
   "source_hashes": {
     "md": "b1a282a63220",
@@ -181,7 +181,7 @@
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_lp_stability.lean:15: so the original annihilator `X*` cannot satisfy the dressed"
+        "evidence": "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_lp_stability.lean:15: so the original annihilator `X*` cannot satisfy the dressed"
       }
     ],
     "voice-title-scholarly": [
@@ -639,7 +639,7 @@
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/nuclear-interactions/atomic-lp-stability.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "folio/quantum-observable-universe/nuclear-interactions/atomic-lp-stability.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -661,7 +661,7 @@
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/nuclear-interactions/atomic-lp-stability.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "folio/quantum-observable-universe/nuclear-interactions/atomic-lp-stability.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1247,7 +1247,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_lp_stability.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_lp_stability.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1461,7 +1461,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'LP stability of the atomic braid': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
       },
       {
         "result": "pass",
@@ -1528,7 +1528,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'LP stability of the atomic braid'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
       },
       {
         "result": "pass",
@@ -1595,7 +1595,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'LP stability of the atomic braid'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
       },
       {
         "result": "pass",
@@ -1629,7 +1629,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'LP stability of the atomic braid' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
       },
       {
         "result": "pass",
@@ -1661,9 +1661,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.342816Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/atomic-lp-stability.lean is missing, leading to complete divergence.",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.lean is missing, leading to complete divergence.",
         "severity": "minor",
-        "evidence": "The referenced Lean file content/quantum-observable-universe/particle-interactions/atomic-lp-stability.lean is missing, leading to complete divergence."
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",
@@ -1697,7 +1697,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'LP stability of the atomic braid', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
       },
       {
         "result": "pass",
@@ -1731,7 +1731,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'LP stability of the atomic braid' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
       },
       {
         "result": "pass",
@@ -1765,7 +1765,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'LP stability of the atomic braid' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
       },
       {
         "result": "pass",
@@ -1799,7 +1799,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'LP stability of the atomic braid' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
       },
       {
         "result": "pass",
@@ -1833,7 +1833,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'LP stability of the atomic braid' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
       },
       {
         "result": "pass",
@@ -1865,11 +1865,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.342816Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/atomic-lp-stability.lean is missing.",
+        "notes": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.lean is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/atomic-lp-stability.lean is missing entirely, preventing formal verification of the claims in 'LP stability of the atomic braid'.",
-        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/atomic-lp-stability.lean is missing."
+        "referee_argument": "The referenced Lean sibling file folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.lean is missing entirely, preventing formal verification of the claims in 'LP stability of the atomic braid'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.lean is missing."
       },
       {
         "result": "pass",

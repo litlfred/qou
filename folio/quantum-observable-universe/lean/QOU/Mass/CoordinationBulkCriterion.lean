@@ -131,9 +131,9 @@ conjunction, nor `Tendsto (A_surf A / A) atTop (nhds 0)` in any Lean file.
 
 Ground ring `ℝ` (§7c: archimedean — real powers and limits).
 
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/Mass/SurfaceExponentIsDimension.lean
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/Mass/CoordinationSurfaceDeficit.lean
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/Mass/AffineCountIsNotASurfaceTerm.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/Mass/SurfaceExponentIsDimension.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/Mass/CoordinationSurfaceDeficit.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/Mass/AffineCountIsNotASurfaceTerm.lean
 -- Ref: [manuscript] computations/probes/geometric_saturation_and_labelling_probe.py (E = 3A − 6)
 -/
 

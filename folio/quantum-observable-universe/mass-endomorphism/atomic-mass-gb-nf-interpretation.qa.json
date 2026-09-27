@@ -3,8 +3,8 @@
   "label": "rem:atomic-mass-gb-nf-interpretation",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf-interpretation.ts",
-    "md": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf-interpretation.md"
+    "ts": "folio/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf-interpretation.ts",
+    "md": "folio/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf-interpretation.md"
   },
   "source_hashes": {
     "md": "e78ad802ca6e",
@@ -1142,7 +1142,7 @@
         "reviewed_at": "2026-08-29T15:52:33.383Z",
         "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf-interpretation.ts:0: forward ref: uses prop:rho-k-graded-expansion (manifest pos 57) which appears after this block (pos 56) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf-interpretation.ts:0: forward ref: uses prop:rho-k-graded-expansion (manifest pos 57) which appears after this block (pos 56) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1234,7 +1234,7 @@
           "worst_target": "emits fwd-ref to quantum-observable-universe/mass-theory: prop:alpha-shift-torus-knot"
         },
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf-interpretation.ts:0: emits fwd-ref to quantum-observable-universe/mass-theory: prop:alpha-shift-torus-knot | content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf-interpretation.ts:0: emits fwd-ref to quantum-observable-universe/predicted-spectra: prop:alpha-em-shift-multiplicative-chain | content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf-interpretation.ts:0: emits fwd-ref to quantum-observable-universe/mass-theory: prop:binding-scale-catalan | content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf-interpretation.ts:0: emits fwd-ref to quantum-observable-universe/mass-theory: prop:per-nucleon-shift-additive-linearity | content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf-interpretation.ts:0: emits fwd-ref to quantum-observable-universe/mass-theory: thm:wedderburn-mass-formula"
+        "evidence": "folio/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf-interpretation.ts:0: emits fwd-ref to quantum-observable-universe/mass-theory: prop:alpha-shift-torus-knot | folio/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf-interpretation.ts:0: emits fwd-ref to quantum-observable-universe/predicted-spectra: prop:alpha-em-shift-multiplicative-chain | folio/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf-interpretation.ts:0: emits fwd-ref to quantum-observable-universe/mass-theory: prop:binding-scale-catalan | folio/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf-interpretation.ts:0: emits fwd-ref to quantum-observable-universe/mass-theory: prop:per-nucleon-shift-additive-linearity | folio/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf-interpretation.ts:0: emits fwd-ref to quantum-observable-universe/mass-theory: thm:wedderburn-mass-formula"
       }
     ],
     "detangler-graph-energy": [

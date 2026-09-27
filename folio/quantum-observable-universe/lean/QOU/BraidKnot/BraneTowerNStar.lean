@@ -6,7 +6,7 @@ import Mathlib.Tactic
 # Gap 5 closure: non-tautological brane-tower recovery predicate
 
 Replaces (extends) the tautological instance in
-`content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.lean`
+`folio/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.lean`
 which had `recoversBinding := fun _ _ _ _ => True` and
 `recovery_holds := fun _ _ _ _ _ => trivial`.
 

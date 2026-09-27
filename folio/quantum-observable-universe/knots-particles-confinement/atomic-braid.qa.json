@@ -3,9 +3,9 @@
   "label": "def:atomic-braid",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/atomic-braid.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/atomic-braid.md",
-    "lean": "content/quantum-observable-universe/knots-particles-confinement/atomic-braid.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/atomic-braid.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/atomic-braid.md",
+    "lean": "folio/quantum-observable-universe/knots-particles-confinement/atomic-braid.lean"
   },
   "source_hashes": {
     "md": "5acf21d1db3a",
@@ -257,7 +257,7 @@
         "reviewed_at": "2026-09-12T11:45:16.069Z",
         "reviewed_sha": "9db79b4e48401a3a53ca5f27c07daa545c4880a1",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/knots-particles-confinement/atomic-braid.md:11: P4:date-ref: > **Tractability of clause 1 (2026-08-25).** As written, clause 1 quantifies"
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/atomic-braid.md:11: P4:date-ref: > **Tractability of clause 1 (2026-08-25).** As written, clause 1 quantifies"
       }
     ],
     "voice-status-section": [
@@ -1038,9 +1038,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The claim in 'Atomic braid $H_{A+Z}(q)$' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/atomic-braid.lean:34:2: error: `simp` made no progress.",
+        "notes": "The claim in 'Atomic braid $H_{A+Z}(q)$' is unverified due to Lean compilation failures: folio/quantum-observable-universe/particle-interactions/atomic-braid.lean:34:2: error: `simp` made no progress.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atomic-braid.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-braid.lean:1"
       },
       {
         "result": "pass",
@@ -1109,7 +1109,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Atomic braid $H_{A+Z}(q)$'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atomic-braid.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-braid.ts:1"
       },
       {
         "result": "pass",
@@ -1179,7 +1179,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Atomic braid $H_{A+Z}(q)$'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atomic-braid.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-braid.ts:1"
       },
       {
         "result": "pass",
@@ -1212,9 +1212,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/atomic-braid.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/atomic-braid.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atomic-braid.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-braid.lean:1"
       },
       {
         "result": "pass",
@@ -1247,9 +1247,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/atomic-braid.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/atomic-braid.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/atomic-braid.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/atomic-braid.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1284,7 +1284,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Atomic braid $H_{A+Z}(q)$', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atomic-braid.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-braid.ts:1"
       },
       {
         "result": "pass",
@@ -1319,7 +1319,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Atomic braid $H_{A+Z}(q)$' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atomic-braid.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-braid.ts:1"
       },
       {
         "result": "pass",
@@ -1354,7 +1354,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Atomic braid $H_{A+Z}(q)$' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atomic-braid.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-braid.ts:1"
       },
       {
         "result": "pass",
@@ -1389,7 +1389,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Atomic braid $H_{A+Z}(q)$' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atomic-braid.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-braid.ts:1"
       },
       {
         "result": "pass",
@@ -1422,9 +1422,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/atomic-braid.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/atomic-braid.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atomic-braid.lean:1 — content/quantum-observable-universe/particle-interactions/atomic-braid.lean:34:2: error: `simp` made no progress"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-braid.lean:1 — folio/quantum-observable-universe/particle-interactions/atomic-braid.lean:34:2: error: `simp` made no progress"
       },
       {
         "result": "pass",
@@ -1457,11 +1457,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/atomic-braid.lean fails compilation: content/quantum-observable-universe/particle-interactions/atomic-braid.lean:34:2: error: `simp` made no progress",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/atomic-braid.lean fails compilation: folio/quantum-observable-universe/particle-interactions/atomic-braid.lean:34:2: error: `simp` made no progress",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/atomic-braid.lean for 'Atomic braid $H_{A+Z}(q)$' fails compilation with error: content/quantum-observable-universe/particle-interactions/atomic-braid.lean:34:2: error: `simp` made no progress. This invalidates the claim of formal verification.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/atomic-braid.lean fails compilation: content/quantum-observable-universe/particle-interactions/atomic-braid.lean:34:2: error: `simp` made no progress"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/atomic-braid.lean for 'Atomic braid $H_{A+Z}(q)$' fails compilation with error: folio/quantum-observable-universe/particle-interactions/atomic-braid.lean:34:2: error: `simp` made no progress. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/atomic-braid.lean fails compilation: folio/quantum-observable-universe/particle-interactions/atomic-braid.lean:34:2: error: `simp` made no progress"
       },
       {
         "result": "pass",

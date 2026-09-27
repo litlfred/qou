@@ -7,7 +7,7 @@ import QOU.AtomicMass.MagicNumbersFromQ
 Sibling-trace artifact for the content block
 `conj:magic-numbers-from-q`. The authoritative Lean lives in the
 Lake tree at
-`content/quantum-observable-universe/lean/QOU/AtomicMass/MagicNumbersFromQ.lean`
+`folio/quantum-observable-universe/lean/QOU/AtomicMass/MagicNumbersFromQ.lean`
 (namespace `QOU.AtomicMass`).
 
 This file is intentionally minimal: it re-exports the canonical

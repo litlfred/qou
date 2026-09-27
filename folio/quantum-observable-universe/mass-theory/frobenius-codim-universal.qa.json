@@ -3,9 +3,9 @@
   "label": "thm:frobenius-codim-universal",
   "kind": "theorem",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts",
-    "md": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.md",
-    "lean": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean"
   },
   "source_hashes": {
     "md": "9873e73eb6d5",
@@ -1198,7 +1198,7 @@
         "reviewed_at": "2026-07-07T14:26:56.772312Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1 — Lean file exists",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1 — Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1219,7 +1219,7 @@
         "reviewed_at": "2026-07-07T14:26:56.772312Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean proof contains compilation errors.",
-        "evidence": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1 — content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RepresentationTheory/FDRep.olean' of module Mathlib.RepresentationTheory.FDRep does not exist",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1 — folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RepresentationTheory/FDRep.olean' of module Mathlib.RepresentationTheory.FDRep does not exist",
         "severity": "minor"
       }
     ],
@@ -1399,7 +1399,7 @@
         "reviewed_at": "2026-07-07T14:26:56.772312Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
         "severity": "minor"
       },
       {
@@ -1466,7 +1466,7 @@
         "reviewed_at": "2026-07-07T14:26:56.772312Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
         "severity": "minor"
       },
       {
@@ -1533,7 +1533,7 @@
         "reviewed_at": "2026-07-07T14:26:56.772312Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
         "severity": "minor"
       },
       {
@@ -1567,7 +1567,7 @@
         "reviewed_at": "2026-07-07T14:26:56.772312Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
         "severity": "minor"
       },
       {
@@ -1635,7 +1635,7 @@
         "reviewed_at": "2026-07-07T14:26:56.772312Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
         "severity": "minor"
       },
       {
@@ -1669,7 +1669,7 @@
         "reviewed_at": "2026-07-07T14:26:56.772312Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
         "severity": "minor"
       },
       {
@@ -1703,7 +1703,7 @@
         "reviewed_at": "2026-07-07T14:26:56.772312Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
         "severity": "minor"
       },
       {
@@ -1737,7 +1737,7 @@
         "reviewed_at": "2026-07-07T14:26:56.772312Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
         "severity": "minor"
       },
       {
@@ -1771,7 +1771,7 @@
         "reviewed_at": "2026-07-07T14:26:56.772312Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1 — content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RepresentationTheory/FDRep.olean' of module Mathlib.RepresentationTheory.FDRep does not exist",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1 — folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RepresentationTheory/FDRep.olean' of module Mathlib.RepresentationTheory.FDRep does not exist",
         "severity": "minor"
       },
       {
@@ -1802,11 +1802,11 @@
         },
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RepresentationTheory/FDRep.olean' of module Mathlib.RepresentationTheory.FDRep does not exist",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RepresentationTheory/FDRep.olean' of module Mathlib.RepresentationTheory.FDRep does not exist",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RepresentationTheory/FDRep.olean' of module Mathlib.RepresentationTheory.FDRep does not exist",
-        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RepresentationTheory/FDRep.olean' of module Mathlib.RepresentationTheory.FDRep does not exist"
+        "referee_argument": "The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RepresentationTheory/FDRep.olean' of module Mathlib.RepresentationTheory.FDRep does not exist",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RepresentationTheory/FDRep.olean' of module Mathlib.RepresentationTheory.FDRep does not exist"
       },
       {
         "field_hash": {

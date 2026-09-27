@@ -29,7 +29,7 @@ export default proposition({
         "$\\mathbb{Z}[q,q^{-1}]$; the file's own scope note is accurate that " +
         "it carries no geometric content, only the algebra of a power law and " +
         "its logarithm.",
-      see: "content/quantum-observable-universe/lean/QOU/OneLoopPrefactorInvariance.lean",
+      see: "folio/quantum-observable-universe/lean/QOU/OneLoopPrefactorInvariance.lean",
     },
   ],
   label: "prop:one-loop-prefactor-provenance",

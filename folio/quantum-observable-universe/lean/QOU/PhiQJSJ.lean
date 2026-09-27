@@ -14,7 +14,7 @@ form of the tower with the JSJ piecewise sum
 
 **Formal-chain version.**  This file lives under `lean/QOU/` and is
 compiled by `lake build`.  The co-located documentation stub at
-`content/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.lean`
+`folio/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.lean`
 mirrors this content (per `QOU.GroundRingAnnotations`).
 
 LaTeX label: `conj:phi-q-tower-jsj-bridge`

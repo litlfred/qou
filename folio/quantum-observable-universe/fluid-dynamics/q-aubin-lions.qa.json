@@ -3,9 +3,9 @@
   "label": "conj:q-aubin-lions",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts",
-    "md": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.md",
-    "lean": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.lean"
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/q-aubin-lions.md",
+    "lean": "folio/quantum-observable-universe/fluid-dynamics/q-aubin-lions.lean"
   },
   "source_hashes": {
     "md": "3566c562113c",
@@ -1043,7 +1043,7 @@
         "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No false claims identified in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$': mathematical reasoning is consistent.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
         "severity": "minor"
       },
       {
@@ -1110,7 +1110,7 @@
         "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No circular reasoning or self-assuming definitions detected in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$'.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
         "severity": "minor"
       },
       {
@@ -1178,7 +1178,7 @@
         "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$'.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
         "severity": "minor"
       },
       {
@@ -1212,7 +1212,7 @@
         "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The argument flow in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$' is logically sound, mapping onto the cited dependencies.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
         "severity": "minor"
       },
       {
@@ -1245,7 +1245,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.lean uses a class-conjecture pattern, matching the conjectural nature of 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$'.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/fluid-dynamics/q-aubin-lions.lean uses a class-conjecture pattern, matching the conjectural nature of 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$'.",
         "severity": "minor"
       },
       {
@@ -1279,7 +1279,7 @@
         "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No citations are present in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$', hence no citation misuse is possible.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
         "severity": "minor"
       },
       {
@@ -1313,7 +1313,7 @@
         "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Key terms and symbols in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$' are mathematically defined and unambiguous.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
         "severity": "minor"
       },
       {
@@ -1347,7 +1347,7 @@
         "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic and logical relations in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$' are independent of empirical tuning parameters.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
         "severity": "minor"
       },
       {
@@ -1381,7 +1381,7 @@
         "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The physical concepts described in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$' are consistent with quantum observable mechanics.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
         "severity": "minor"
       },
       {
@@ -1415,7 +1415,7 @@
         "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The derivation steps and formal definitions in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$' are reproducible.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
         "severity": "minor"
       },
       {

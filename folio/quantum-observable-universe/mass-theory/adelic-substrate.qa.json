@@ -3,9 +3,9 @@
   "label": "def:adelic-substrate",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/adelic-substrate.ts",
-    "md": "content/quantum-observable-universe/mass-theory/adelic-substrate.md",
-    "lean": "content/quantum-observable-universe/mass-theory/adelic-substrate.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/adelic-substrate.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/adelic-substrate.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/adelic-substrate.lean"
   },
   "source_hashes": {
     "md": "afb7869f74f4",
@@ -763,7 +763,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/adelic-substrate.ts:0: uses[] dependency cycle: def:adelic-substrate -> def:classical-limit-functor -> def:adelic-substrate"
+        "evidence": "folio/quantum-observable-universe/mass-theory/adelic-substrate.ts:0: uses[] dependency cycle: def:adelic-substrate -> def:classical-limit-functor -> def:adelic-substrate"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -979,7 +979,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The Lean theorem statement in content/quantum-observable-universe/mass-theory/adelic-substrate.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-theory/adelic-substrate.md.",
+        "notes": "The Lean theorem statement in folio/quantum-observable-universe/mass-theory/adelic-substrate.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/mass-theory/adelic-substrate.md.",
         "severity": "minor",
         "evidence": "adelic-substrate.lean:1 \u2014 Lean file exists"
       },
@@ -1016,7 +1016,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The mathematical claims in 'Adelic substrate $\\\\mathbb{A}$' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term.",
+        "notes": "The mathematical claims in 'Adelic substrate $\\\\mathbb{A}$' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term.",
         "severity": "minor",
         "evidence": "adelic-substrate.lean:1"
       },
@@ -1191,7 +1191,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-theory/adelic-substrate.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/mass-theory/adelic-substrate.lean.",
         "severity": "minor",
         "evidence": "adelic-substrate.lean:1"
       },
@@ -1226,9 +1226,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/adelic-substrate.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/mass-theory/adelic-substrate.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/mass-theory/adelic-substrate.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/mass-theory/adelic-substrate.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1401,9 +1401,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/adelic-substrate.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/mass-theory/adelic-substrate.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "adelic-substrate.lean:1 \u2014 content/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term"
+        "evidence": "adelic-substrate.lean:1 \u2014 folio/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term"
       },
       {
         "result": "pass",
@@ -1436,11 +1436,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/adelic-substrate.lean fails compilation: content/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/mass-theory/adelic-substrate.lean fails compilation: folio/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/adelic-substrate.lean contains compilation errors: content/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term, invalidating the claimed formalization.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/adelic-substrate.lean fails compilation: content/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/mass-theory/adelic-substrate.lean contains compilation errors: folio/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/mass-theory/adelic-substrate.lean fails compilation: folio/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term"
       },
       {
         "result": "pass",

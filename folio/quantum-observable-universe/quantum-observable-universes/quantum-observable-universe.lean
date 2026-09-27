@@ -27,8 +27,8 @@ import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
 /-!
 # QOU.QuantumObservableUniverse
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean (monolithic)
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean (monolithic)
 -/
 
 open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory

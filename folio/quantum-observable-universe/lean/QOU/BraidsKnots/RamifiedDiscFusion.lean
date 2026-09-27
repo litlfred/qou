@@ -19,7 +19,7 @@ Galois action on the three sectors.
 
 ## References
 
-- [manuscript] content/quantum-observable-universe/braids-and-knots/ramified-disc-fusion.md
+- [manuscript] folio/quantum-observable-universe/braids-and-knots/ramified-disc-fusion.md
 -/
 
 open Equiv

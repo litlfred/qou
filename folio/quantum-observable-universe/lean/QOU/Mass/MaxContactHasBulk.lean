@@ -118,9 +118,9 @@ dimensional reading in four distinct ways, and all four stand:
 
 Ground ring `ℝ` (§7c: archimedean — real powers and limits).
 
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/Mass/CoordinationBulkCriterion.lean
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/Mass/CoordinationSurfaceDeficit.lean
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/MassTheory/AggregatorFamilyExclusions.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/Mass/CoordinationBulkCriterion.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/Mass/CoordinationSurfaceDeficit.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/MassTheory/AggregatorFamilyExclusions.lean
 -- Ref: [manuscript] computations/gap1_max_contact_a5plus.py (max_contacts = 3A - 6, affine)
 -/
 

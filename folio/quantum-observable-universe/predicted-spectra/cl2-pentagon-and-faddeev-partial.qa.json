@@ -3,9 +3,9 @@
   "label": "prop:cl2-pentagon-and-faddeev-partial",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.md",
-    "lean": "content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.lean"
+    "ts": "folio/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.ts",
+    "md": "folio/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.md",
+    "lean": "folio/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.lean"
   },
   "source_hashes": {
     "md": "7afd312bcbd0",
@@ -407,7 +407,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.lean:79 — positivity-dependent Real.* on q without explicit hypothesis — (1 - q) * Real.log (partialProductLocal q 0 n) - LiTwo 0 = 0 := | content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.lean:98 — positivity-dependent Real.* on q without explicit hypothesis — (1 - q) * Real.log (partialProductLocal q 0 n) = LiTwo 0 := by | content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.lean:109 — positivity-dependent Real.* on q without explicit hypothesis — (1 - q) * Real.log (partialProductLocal q 0 n) ="
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.lean:79 — positivity-dependent Real.* on q without explicit hypothesis — (1 - q) * Real.log (partialProductLocal q 0 n) - LiTwo 0 = 0 := | folio/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.lean:98 — positivity-dependent Real.* on q without explicit hypothesis — (1 - q) * Real.log (partialProductLocal q 0 n) = LiTwo 0 := by | folio/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.lean:109 — positivity-dependent Real.* on q without explicit hypothesis — (1 - q) * Real.log (partialProductLocal q 0 n) ="
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [

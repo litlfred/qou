@@ -3,9 +3,9 @@
   "label": "conj:phi-q-wkb-greens-function",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/phi-q-wkb-greens-function.ts",
-    "md": "content/quantum-observable-universe/mass-theory/phi-q-wkb-greens-function.md",
-    "lean": "content/quantum-observable-universe/mass-theory/phi-q-wkb-greens-function.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/phi-q-wkb-greens-function.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/phi-q-wkb-greens-function.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/phi-q-wkb-greens-function.lean"
   },
   "source_hashes": {
     "md": "8e1c015b882f",
@@ -1217,7 +1217,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/phi-q-wkb-greens-function.ts:0: forward ref: uses conj:algebraic-geometric-dilog-equivalence (manifest pos 387) which appears after this block (pos 386) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/phi-q-wkb-greens-function.ts:0: forward ref: uses conj:algebraic-geometric-dilog-equivalence (manifest pos 387) which appears after this block (pos 386) in the chapter"
       }
     ],
     "detangler-section-band": [

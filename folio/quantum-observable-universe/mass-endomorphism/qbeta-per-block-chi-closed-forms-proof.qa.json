@@ -3,8 +3,8 @@
   "label": "prf:qbeta-per-block-chi-closed-forms",
   "kind": "proof",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms-proof.ts",
-    "md": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms-proof.md"
+    "ts": "folio/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms-proof.ts",
+    "md": "folio/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms-proof.md"
   },
   "source_hashes": {
     "md": "480ab2cef4f2",
@@ -759,7 +759,7 @@
         "reviewed_at": "2026-08-29T15:52:33.383Z",
         "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms-proof.md:32: status-section-header: ## Theorem status"
+        "evidence": "folio/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms-proof.md:32: status-section-header: ## Theorem status"
       }
     ],
     "framework-canonical": [
@@ -1665,7 +1665,7 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "severity": "major",
         "evidence": "'**All** theorems are sorry-free and locally verified. The three originally deferred sorries (derivative at q=1, Markov-parameter symmetric form, and z-recursion uniqueness) were discharged during local Lean verification.' -- an unqualified universal, refuted by the sibling Lean file it describes.",
-        "notes": "REPORT ONLY, not fixed (Lean status is a factual claim the coordinating session should re-verify). content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean contains a LIVE sorry at line 330, introduced by its own comment at line 317 ('state this as an axiom for now (sorry referenced to the SymPy ...)') and lines 326-329 ('a full second-derivative proof is bulky ... so it is queued as a cited sorry'). The sibling remark qbeta-delta-tau-surrogate-taylor-coefficients-formal-scope.md independently contradicts this block too: it says orders 2..7 'remain stated as Lean theorems with sorry and -- Ref: citations'. Proposed: 'All theorems are sorry-free' -> name which three were discharged and state that the second-derivative theorem remains a cited sorry. AGENTS.md Strict Lean Discipline treats a false sorry-free claim as a review failure. EVERYTHING ELSE IN THIS BLOCK VERIFIED CORRECT and should not be re-flagged: the antipode identity reduces to 1/q^5 = q^-4(1/q) as stated; the O(w) coefficients -2, -1, -2 are right; Extension 1's surrogate closed form is EXACT -- (q^2*chi_(3) + q*chi_(2,1) + 1*chi_(1,1,1))/((1+q)(1+q+q^2)) simplifies identically to the displayed degree-11/degree-7 quotient (and the reversed assignment (1,q,q^2) does NOT, so the block's ordering is the right one); Extension 2's quotient-rule arithmetic N'(1) = -10, D(1) = 12, N(1) = 0 => -5/6 is right; Extension 5's recursion 4(n+1)a_(n+1) + 6n a_n + (2n-1)a_(n-1) = 0 with a_0 = 1/2, a_1 = 0 was checked against the actual Taylor coefficients of z(q) = sqrt(q)/(1+q) at q=1, a = (1/2, 0, -1/16, 1/16, -13/256, 5/128, -61/2048, 47/2048), and holds exactly for n = 1..6."
+        "notes": "REPORT ONLY, not fixed (Lean status is a factual claim the coordinating session should re-verify). folio/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean contains a LIVE sorry at line 330, introduced by its own comment at line 317 ('state this as an axiom for now (sorry referenced to the SymPy ...)') and lines 326-329 ('a full second-derivative proof is bulky ... so it is queued as a cited sorry'). The sibling remark qbeta-delta-tau-surrogate-taylor-coefficients-formal-scope.md independently contradicts this block too: it says orders 2..7 'remain stated as Lean theorems with sorry and -- Ref: citations'. Proposed: 'All theorems are sorry-free' -> name which three were discharged and state that the second-derivative theorem remains a cited sorry. AGENTS.md Strict Lean Discipline treats a false sorry-free claim as a review failure. EVERYTHING ELSE IN THIS BLOCK VERIFIED CORRECT and should not be re-flagged: the antipode identity reduces to 1/q^5 = q^-4(1/q) as stated; the O(w) coefficients -2, -1, -2 are right; Extension 1's surrogate closed form is EXACT -- (q^2*chi_(3) + q*chi_(2,1) + 1*chi_(1,1,1))/((1+q)(1+q+q^2)) simplifies identically to the displayed degree-11/degree-7 quotient (and the reversed assignment (1,q,q^2) does NOT, so the block's ordering is the right one); Extension 2's quotient-rule arithmetic N'(1) = -10, D(1) = 12, N(1) = 0 => -5/6 is right; Extension 5's recursion 4(n+1)a_(n+1) + 6n a_n + (2n-1)a_(n-1) = 0 with a_0 = 1/2, a_1 = 0 was checked against the actual Taylor coefficients of z(q) = sqrt(q)/(1+q) at q=1, a = (1/2, 0, -1/16, 1/16, -13/256, 5/128, -61/2048, 47/2048), and holds exactly for n = 1..6."
       }
     ],
     "trap-nonspeakable": [

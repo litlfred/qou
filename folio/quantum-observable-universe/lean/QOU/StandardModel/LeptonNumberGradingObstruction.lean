@@ -3,7 +3,7 @@ Copyright (c) 2026 QOU contributors. All rights reserved.
 
 # Lepton number cannot be a ℤ-grading by smoothing count
 
-`content/quantum-observable-universe/predicted-spectra/lepton-number-categorical-properties.md`
+`folio/quantum-observable-universe/predicted-spectra/lepton-number-categorical-properties.md`
 states the mechanism by which lepton number is supposed to become a property
 of a *state*:
 

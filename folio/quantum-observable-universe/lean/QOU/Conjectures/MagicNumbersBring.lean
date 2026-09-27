@@ -4,7 +4,7 @@ import Mathlib.Tactic
 # QOU.Conjectures.MagicNumbersBring — magic numbers as S₅-stable lattice ranks
 
 Conjectural axiomatisation of `conj:magic-numbers-bring`
-(`content/quantum-observable-universe/observations/magic-numbers-bring.md`).
+(`folio/quantum-observable-universe/observations/magic-numbers-bring.md`).
 
 The seven observed nuclear magic numbers
 `𝔐 = {2, 8, 20, 28, 50, 82, 126}` are the ranks of seven distinguished

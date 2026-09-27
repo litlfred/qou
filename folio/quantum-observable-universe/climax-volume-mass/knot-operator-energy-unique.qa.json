@@ -3,9 +3,9 @@
   "label": "prop:knot-operator-energy-unique",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.ts",
-    "md": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.md",
-    "lean": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.lean"
+    "ts": "folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.ts",
+    "md": "folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.md",
+    "lean": "folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.lean"
   },
   "source_hashes": {
     "md": "fce9f63f8d1e",
@@ -1385,7 +1385,7 @@
         "reviewed_at": "2026-07-07T14:26:57.035967Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Checked mathematical consistency of the claim '**Proposition.**' and found no counterexamples under the stated conditions.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.ts:1",
         "severity": "minor"
       },
       {
@@ -1452,7 +1452,7 @@
         "reviewed_at": "2026-07-07T14:26:57.035967Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Traced dependencies ['prop:knot-operator-energy-exists'] for 'prop:knot-operator-energy-unique' and confirmed no circular definitions or justifications.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.ts:1",
         "severity": "minor"
       },
       {
@@ -1519,7 +1519,7 @@
         "reviewed_at": "2026-07-07T14:26:57.035967Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.ts:1",
         "severity": "minor"
       },
       {
@@ -1553,7 +1553,7 @@
         "reviewed_at": "2026-07-07T14:26:57.035967Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical transitions in the derivation of '**Proposition.**' are sound; no non-sequiturs detected.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.ts:1",
         "severity": "minor"
       },
       {
@@ -1621,7 +1621,7 @@
         "reviewed_at": "2026-07-07T14:26:57.035967Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references and uses ['prop:knot-operator-energy-exists'] cited in 'prop:knot-operator-energy-unique' are used in accordance with their established mathematical definitions.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.ts:1",
         "severity": "minor"
       },
       {
@@ -1655,7 +1655,7 @@
         "reviewed_at": "2026-07-07T14:26:57.035967Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All terms and algebraic structures in 'prop:knot-operator-energy-unique' are uniquely defined or standard.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.ts:1",
         "severity": "minor"
       },
       {
@@ -1689,7 +1689,7 @@
         "reviewed_at": "2026-07-07T14:26:57.035967Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic statements in 'prop:knot-operator-energy-unique' do not rely on fragile empirical fits or numerical thresholds.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.ts:1",
         "severity": "minor"
       },
       {
@@ -1723,7 +1723,7 @@
         "reviewed_at": "2026-07-07T14:26:57.035967Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Physical dimensions and units in 'prop:knot-operator-energy-unique' are consistent with quantum observable universe models.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.ts:1",
         "severity": "minor"
       },
       {
@@ -1756,8 +1756,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.035967Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.lean:30:15: error: Function expected at.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.lean:1 — content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.lean:30:15: error: Function expected at",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.lean:30:15: error: Function expected at.",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.lean:1 — folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.lean:30:15: error: Function expected at",
         "severity": "minor"
       },
       {
@@ -1790,11 +1790,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.035967Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.lean:30:15: error: Function expected at",
+        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.lean:30:15: error: Function expected at",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.lean:30:15: error: Function expected at",
+        "referee_argument": "The Lean sibling fails compilation with error: folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.lean:30:15: error: Function expected at",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.lean:30:15: error: Function expected at"
+        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.lean:30:15: error: Function expected at"
       },
       {
         "result": "pass",

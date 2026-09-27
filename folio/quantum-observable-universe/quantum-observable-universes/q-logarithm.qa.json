@@ -3,9 +3,9 @@
   "label": "def:q-logarithm",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-observable-universes/q-logarithm.ts",
-    "md": "content/quantum-observable-universe/quantum-observable-universes/q-logarithm.md",
-    "lean": "content/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean"
+    "ts": "folio/quantum-observable-universe/quantum-observable-universes/q-logarithm.ts",
+    "md": "folio/quantum-observable-universe/quantum-observable-universes/q-logarithm.md",
+    "lean": "folio/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean"
   },
   "source_hashes": {
     "md": "5faeb4de50c6",
@@ -1010,7 +1010,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-logarithm.lean:1 \u2014 Lean file exists",
-        "notes": "The Lean theorem statement in content/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/quantum-observable-universes/q-logarithm.md."
+        "notes": "The Lean theorem statement in folio/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/quantum-observable-universes/q-logarithm.md."
       },
       {
         "field_hash": {
@@ -1047,7 +1047,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-logarithm.lean:1",
-        "notes": "The mathematical claims in '$q$-Logarithm (categorical adjoint)' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean:53:8: error: Function expected at."
+        "notes": "The mathematical claims in '$q$-Logarithm (categorical adjoint)' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean:53:8: error: Function expected at."
       },
       {
         "result": "pass",
@@ -1222,7 +1222,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-logarithm.lean:1",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean."
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean."
       },
       {
         "result": "pass",
@@ -1256,8 +1256,8 @@
         "reviewed_at": "2026-07-07T14:26:55.943280Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean fails compilation, causing divergence from the narrative.",
-        "evidence": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean fails compilation, causing divergence from the narrative."
+        "notes": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean fails compilation, causing divergence from the narrative.",
+        "evidence": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1431,8 +1431,8 @@
         "reviewed_at": "2026-07-07T14:26:55.943280Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "q-logarithm.lean:1 \u2014 content/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean:53:8: error: Function expected at",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean fails compilation, indicating a reproducibility failure."
+        "evidence": "q-logarithm.lean:1 \u2014 folio/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean:53:8: error: Function expected at",
+        "notes": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean fails compilation, indicating a reproducibility failure."
       },
       {
         "result": "pass",
@@ -1466,10 +1466,10 @@
         "reviewed_at": "2026-07-07T14:26:55.943280Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "critical",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean:53:8: error: Function expected at",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean fails compilation: folio/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean:53:8: error: Function expected at",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean:53:8: error: Function expected at, invalidating the claimed formalization.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean:53:8: error: Function expected at"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean contains compilation errors: folio/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean:53:8: error: Function expected at, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean fails compilation: folio/quantum-observable-universe/quantum-observable-universes/q-logarithm.lean:53:8: error: Function expected at"
       },
       {
         "result": "pass",

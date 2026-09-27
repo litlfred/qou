@@ -15,12 +15,12 @@ automatic; if `B` is multiplicatively closed, condition (b) follows from
 condition (a).
 
 The authoritative formalization lives in
-`content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean`.
+`folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean`.
 
 ## References
 
 - [leitnerpawloski2004] https://arxiv.org/abs/math/0409565, Definition 5
-- content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean §§4–5
+- folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean §§4–5
 -/
 
 namespace QOU.GrobnerShirshov.ContentBlock

@@ -3,9 +3,9 @@
   "label": "prop:selection-rule-anchors-c1-c3",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.ts",
-    "md": "content/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.md",
-    "lean": "content/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.lean"
+    "ts": "folio/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.ts",
+    "md": "folio/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.md",
+    "lean": "folio/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.lean"
   },
   "source_hashes": {
     "md": "a919a5437cee",
@@ -134,7 +134,7 @@
         "reviewed_at": "2026-08-29T18:18:06.551Z",
         "reviewed_sha": "1465c51f0f0156102f0aab4169cb992fa6d6658c",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.md:21: The zero-parameter selection rule reads $\\mathrm{lw}(L) = \\frac{1}{c+1}\\sum_{\\lambda\\vdash(c+1)} \\dim_q V_\\lambda$, where $c$ is the number of link components. The c=1 case must equal 1 for all $q$ (m"
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.md:21: The zero-parameter selection rule reads $\\mathrm{lw}(L) = \\frac{1}{c+1}\\sum_{\\lambda\\vdash(c+1)} \\dim_q V_\\lambda$, where $c$ is the number of link components. The c=1 case must equal 1 for all $q$ (m"
       }
     ],
     "voice-editorializing": [
@@ -268,7 +268,7 @@
         "reviewed_at": "2026-08-29T18:18:06.551Z",
         "reviewed_sha": "1465c51f0f0156102f0aab4169cb992fa6d6658c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.md:23: P4:date-ref: > **What the earlier formalisation did and did not do.** Until 2026-08-29 the Lean here proved `((1 : R) + 1) / 2 = 1` for c=1 and the corresponding Laurent identity for c=3 — true statements, but ari"
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.md:23: P4:date-ref: > **What the earlier formalisation did and did not do.** Until 2026-08-29 the Lean here proved `((1 : R) + 1) / 2 = 1` for c=1 and the corresponding Laurent identity for c=3 — true statements, but ari"
       }
     ],
     "voice-status-section": [

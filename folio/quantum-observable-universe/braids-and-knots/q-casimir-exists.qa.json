@@ -3,9 +3,9 @@
   "label": "prop:q-casimir-exists",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean"
+    "ts": "folio/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts",
+    "md": "folio/quantum-observable-universe/braids-and-knots/q-casimir-exists.md",
+    "lean": "folio/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean"
   },
   "source_hashes": {
     "md": "4520815f2e62",
@@ -1475,7 +1475,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Checked mathematical consistency of the claim 'For any ground ring $R$ in which $(q - q^{-1})$ is invertible, the' and found no counterexamples under the stated conditions.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
       },
       {
         "result": "pass",
@@ -1542,7 +1542,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Traced dependencies ['def:q-casimir'] for 'prop:q-casimir-exists' and confirmed no circular definitions or justifications.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
       },
       {
         "result": "pass",
@@ -1609,7 +1609,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
       },
       {
         "result": "pass",
@@ -1643,7 +1643,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Logical transitions in the derivation of 'For any ground ring $R$ in which $(q - q^{-1})$ is invertible, the' are sound; no non-sequiturs detected.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
       },
       {
         "result": "pass",
@@ -1711,7 +1711,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All references and uses ['def:q-casimir'] cited in 'prop:q-casimir-exists' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
       },
       {
         "result": "pass",
@@ -1745,7 +1745,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All terms and algebraic structures in 'prop:q-casimir-exists' are uniquely defined or standard.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
       },
       {
         "result": "pass",
@@ -1779,7 +1779,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The algebraic statements in 'prop:q-casimir-exists' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
       },
       {
         "result": "pass",
@@ -1813,7 +1813,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Physical dimensions and units in 'prop:q-casimir-exists' are consistent with quantum observable universe models.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
       },
       {
         "result": "pass",
@@ -1845,9 +1845,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:30:61: error: Function expected at.",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: folio/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:30:61: error: Function expected at.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:1 — content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:30:61: error: Function expected at"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:1 — folio/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:30:61: error: Function expected at"
       },
       {
         "result": "pass",
@@ -1879,11 +1879,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:30:61: error: Function expected at",
+        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:30:61: error: Function expected at",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:30:61: error: Function expected at",
-        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:30:61: error: Function expected at"
+        "referee_argument": "The Lean sibling fails compilation with error: folio/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:30:61: error: Function expected at",
+        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:30:61: error: Function expected at"
       },
       {
         "result": "pass",

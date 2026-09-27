@@ -3,9 +3,9 @@
   "label": "def:nucleon-hecke-element",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/nucleon-hecke-element.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/nucleon-hecke-element.md",
-    "lean": "content/quantum-observable-universe/knots-particles-confinement/nucleon-hecke-element.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/nucleon-hecke-element.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/nucleon-hecke-element.md",
+    "lean": "folio/quantum-observable-universe/knots-particles-confinement/nucleon-hecke-element.lean"
   },
   "source_hashes": {
     "md": "1741f238c870",
@@ -1007,9 +1007,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.416623Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The claim in 'Nucleon Hecke element' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:33:10: error(lean.unknownIdentifier): Unknown identifier `congr_fun`.",
+        "notes": "The claim in 'Nucleon Hecke element' is unverified due to Lean compilation failures: folio/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:33:10: error(lean.unknownIdentifier): Unknown identifier `congr_fun`.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:1"
       },
       {
         "result": "pass",
@@ -1078,7 +1078,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Nucleon Hecke element'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
       },
       {
         "result": "pass",
@@ -1148,7 +1148,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Nucleon Hecke element'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
       },
       {
         "result": "pass",
@@ -1181,9 +1181,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.416623Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:1"
       },
       {
         "result": "pass",
@@ -1216,9 +1216,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.416623Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1253,7 +1253,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Nucleon Hecke element', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
       },
       {
         "result": "pass",
@@ -1288,7 +1288,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Nucleon Hecke element' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
       },
       {
         "result": "pass",
@@ -1323,7 +1323,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Nucleon Hecke element' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
       },
       {
         "result": "pass",
@@ -1358,7 +1358,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Nucleon Hecke element' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
       },
       {
         "result": "pass",
@@ -1391,9 +1391,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.416623Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:1 — content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:33:10: error(lean.unknownIdentifier): Unknown identifier `congr_fun`"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:1 — folio/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:33:10: error(lean.unknownIdentifier): Unknown identifier `congr_fun`"
       },
       {
         "result": "pass",
@@ -1426,11 +1426,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.416623Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean fails compilation: content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:33:10: error(lean.unknownIdentifier): Unknown identifier `congr_fun`",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean fails compilation: folio/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:33:10: error(lean.unknownIdentifier): Unknown identifier `congr_fun`",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean for 'Nucleon Hecke element' fails compilation with error: content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:33:10: error(lean.unknownIdentifier): Unknown identifier `congr_fun`. This invalidates the claim of formal verification.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean fails compilation: content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:33:10: error(lean.unknownIdentifier): Unknown identifier `congr_fun`"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean for 'Nucleon Hecke element' fails compilation with error: folio/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:33:10: error(lean.unknownIdentifier): Unknown identifier `congr_fun`. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean fails compilation: folio/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:33:10: error(lean.unknownIdentifier): Unknown identifier `congr_fun`"
       },
       {
         "result": "pass",

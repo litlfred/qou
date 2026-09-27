@@ -3,9 +3,9 @@
   "label": "conj:jet-filtered-knot-factor",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts",
-    "md": "content/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/jet_filtered_knot_factor.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/BraidKnot/jet_filtered_knot_factor.lean"
   },
   "source_hashes": {
     "md": "ffe61a7990e8",
@@ -644,7 +644,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:0: forward ref: uses prop:hook-weight-derivation (manifest pos 500) which appears after this block (pos 489) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:0: forward ref: uses prop:hook-weight-derivation (manifest pos 500) which appears after this block (pos 489) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1032,7 +1032,7 @@
         "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
         "severity": "minor"
       },
       {
@@ -1097,7 +1097,7 @@
         "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
         "severity": "minor"
       },
       {
@@ -1162,7 +1162,7 @@
         "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
         "severity": "minor"
       },
       {
@@ -1195,7 +1195,7 @@
         "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
         "severity": "minor"
       },
       {
@@ -1228,7 +1228,7 @@
         "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
         "severity": "minor"
       },
       {
@@ -1261,7 +1261,7 @@
         "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
         "severity": "minor"
       },
       {
@@ -1294,7 +1294,7 @@
         "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
         "severity": "minor"
       },
       {
@@ -1327,7 +1327,7 @@
         "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
         "severity": "minor"
       },
       {

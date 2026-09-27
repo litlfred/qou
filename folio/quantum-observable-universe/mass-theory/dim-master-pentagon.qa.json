@@ -3,9 +3,9 @@
   "label": "conj:dim-master-pentagon",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/dim-master-pentagon.ts",
-    "md": "content/quantum-observable-universe/mass-theory/dim-master-pentagon.md",
-    "lean": "content/quantum-observable-universe/mass-theory/dim-master-pentagon.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/dim-master-pentagon.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/dim-master-pentagon.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/dim-master-pentagon.lean"
   },
   "source_hashes": {
     "md": "4de7ee73f82c",
@@ -1233,7 +1233,7 @@
         "reviewed_at": "2026-09-05T06:21:24.038Z",
         "reviewed_sha": "f6eb4b550246c0f34d3b60c1d13e11d567acf1b2",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/dim-master-pentagon.ts:0: forward ref: uses prop:macdonald-hook-telescope (manifest pos 671) which appears after this block (pos 360) in the chapter | content/quantum-observable-universe/mass-theory/dim-master-pentagon.ts:0: forward ref: uses conj:borromean-bloch-group-element (manifest pos 421) which appears after this block (pos 360) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/dim-master-pentagon.ts:0: forward ref: uses prop:macdonald-hook-telescope (manifest pos 671) which appears after this block (pos 360) in the chapter | folio/quantum-observable-universe/mass-theory/dim-master-pentagon.ts:0: forward ref: uses conj:borromean-bloch-group-element (manifest pos 421) which appears after this block (pos 360) in the chapter"
       }
     ],
     "detangler-section-band": [

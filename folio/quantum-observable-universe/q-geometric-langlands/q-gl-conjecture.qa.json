@@ -3,9 +3,9 @@
   "label": "conj:q-geometric-langlands",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.ts",
-    "md": "content/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean"
+    "ts": "folio/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.ts",
+    "md": "folio/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean"
   },
   "source_hashes": {
     "md": "476c98df12de",
@@ -1070,7 +1070,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "major",
         "evidence": "q-gl-conjecture.lean:1",
-        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean contains 'sorry' placeholders, rendering the formal proof vacuous."
+        "notes": "The Lean sibling folio/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean contains 'sorry' placeholders, rendering the formal proof vacuous."
       },
       {
         "result": "pass",
@@ -1210,7 +1210,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-gl-conjecture.lean:1",
-        "notes": "Logical gaps exist due to incomplete proof (sorry stubs) in content/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean."
+        "notes": "Logical gaps exist due to incomplete proof (sorry stubs) in folio/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean."
       },
       {
         "result": "pass",
@@ -1244,8 +1244,8 @@
         "reviewed_at": "2026-07-07T14:26:56.195101Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean contains sorry, causing divergence from the fully-verified narrative.",
-        "evidence": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean contains sorry, causing divergence from the fully-verified narrative."
+        "notes": "The Lean sibling folio/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean contains sorry, causing divergence from the fully-verified narrative.",
+        "evidence": "The Lean sibling folio/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean contains sorry, causing divergence from the fully-verified narrative."
       },
       {
         "result": "pass",
@@ -1419,8 +1419,8 @@
         "reviewed_at": "2026-07-07T14:26:56.195101Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean contains sorry, indicating incomplete verification.",
-        "evidence": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean contains sorry, indicating incomplete verification."
+        "notes": "The Lean sibling folio/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean contains sorry, indicating incomplete verification.",
+        "evidence": "The Lean sibling folio/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean contains sorry, indicating incomplete verification."
       },
       {
         "result": "pass",
@@ -1454,10 +1454,10 @@
         "reviewed_at": "2026-07-07T14:26:56.195101Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "major",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean contains 'sorry' placeholders.",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean contains 'sorry' placeholders.",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean contains 'sorry' placeholders."
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",

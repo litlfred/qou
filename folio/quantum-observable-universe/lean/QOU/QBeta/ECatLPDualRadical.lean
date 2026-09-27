@@ -84,7 +84,7 @@
   a generic field with no ordering, so nothing here depends on the archimedean
   structure of the LP -- only on its linear algebra.
 
-  -- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/.../operator_selection_lp.lean
+  -- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/.../operator_selection_lp.lean
   --      (y_0_eq_zero_of_radical -- the recorded Hecke collapse)
   -- Ref: [manuscript] computations/confinement_lp_braid_gram_probe.py
   -- Ref: [manuscript] tools/pyhecke/python/pyhecke/lp_dual_solver.py

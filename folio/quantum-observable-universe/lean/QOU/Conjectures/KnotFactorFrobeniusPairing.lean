@@ -4,7 +4,7 @@ import Mathlib.Tactic
 # QOU.Conjectures.KnotFactorFrobeniusPairing — binding as Markov-trace defect
 
 Conjectural axiomatisation of `conj:knot-factor-frobenius-pairing`
-(`content/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.md`).
+(`folio/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.md`).
 
 The categorical mass of a braid `β` equals the absolute value of its
 Jones–Markov trace, and the **bulk binding energy** of an atom `(Z, N)`

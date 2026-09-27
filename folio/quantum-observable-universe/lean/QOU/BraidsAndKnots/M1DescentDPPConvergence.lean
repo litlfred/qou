@@ -25,7 +25,7 @@ and deliberately without an instance**: the class is the honest carrier of the o
 theorems below derive the eventual (CS) margin — hence eventual `M₁ > 0` — from it by a sorry-free
 `Filter.Tendsto` argument.
 
-The cited results (see `content/schema/references.ts`, all in `library/`):
+The cited results (see `folio/schema/references.ts`, all in `library/`):
 
 * **[ivanov-olshanski2003]** — Kerov's CLT for the Plancherel measure: the limiting (co)variances
   are `Σ_k f̂_k ĝ_k / k`. Gives the *limits* `ρ_P∞`, `√(V_D/V_A)`.

@@ -3,9 +3,9 @@
   "label": "prop:r-matrix-braiding-structure",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.lean"
+    "ts": "folio/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts",
+    "md": "folio/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.md",
+    "lean": "folio/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.lean"
   },
   "source_hashes": {
     "md": "88b6b0dfc47c",
@@ -1406,7 +1406,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Checked mathematical consistency of the claim 'The universal $R$-matrix' and found no counterexamples under the stated conditions.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts:1"
       },
       {
         "result": "pass",
@@ -1473,7 +1473,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Traced dependencies ['def:quantum-su2', 'def:braid-twist-flip'] for 'prop:r-matrix-braiding-structure' and confirmed no circular definitions or justifications.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts:1"
       },
       {
         "result": "pass",
@@ -1540,7 +1540,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts:1"
       },
       {
         "result": "pass",
@@ -1574,7 +1574,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Logical transitions in the derivation of 'The universal $R$-matrix' are sound; no non-sequiturs detected.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts:1"
       },
       {
         "result": "pass",
@@ -1641,7 +1641,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All references and uses ['def:quantum-su2', 'def:braid-twist-flip'] cited in 'prop:r-matrix-braiding-structure' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts:1"
       },
       {
         "result": "pass",
@@ -1675,7 +1675,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All terms and algebraic structures in 'prop:r-matrix-braiding-structure' are uniquely defined or standard.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts:1"
       },
       {
         "result": "pass",
@@ -1709,7 +1709,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The algebraic statements in 'prop:r-matrix-braiding-structure' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts:1"
       },
       {
         "result": "pass",
@@ -1743,7 +1743,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Physical dimensions and units in 'prop:r-matrix-braiding-structure' are consistent with quantum observable universe models.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts:1"
       },
       {
         "result": "pass",
@@ -1777,7 +1777,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All backing computations and proofs are fully reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts:1"
       },
       {
         "result": "pass",

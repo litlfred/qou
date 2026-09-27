@@ -3,9 +3,9 @@
   "label": "prop:lp-dual-stability",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/lp-dual-stability.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/lp-dual-stability.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/lp_dual_stability.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/lp-dual-stability.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/lp-dual-stability.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/lp_dual_stability.lean"
   },
   "source_hashes": {
     "md": "6b4eb7612458",
@@ -1260,7 +1260,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/ParticleInteractions/lp_dual_stability.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/ParticleInteractions/lp_dual_stability.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1438,7 +1438,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'LP dual stability: confined hadrons have bounded shadow prices': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
       },
       {
         "result": "pass",
@@ -1505,7 +1505,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'LP dual stability: confined hadrons have bounded shadow prices'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
       },
       {
         "result": "pass",
@@ -1572,7 +1572,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'LP dual stability: confined hadrons have bounded shadow prices'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
       },
       {
         "result": "pass",
@@ -1606,7 +1606,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'LP dual stability: confined hadrons have bounded shadow prices' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
       },
       {
         "result": "pass",
@@ -1638,9 +1638,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.408716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/lp-dual-stability.lean is missing, leading to complete divergence.",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/particle-interactions/lp-dual-stability.lean is missing, leading to complete divergence.",
         "severity": "minor",
-        "evidence": "The referenced Lean file content/quantum-observable-universe/particle-interactions/lp-dual-stability.lean is missing, leading to complete divergence."
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/particle-interactions/lp-dual-stability.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",
@@ -1674,7 +1674,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'LP dual stability: confined hadrons have bounded shadow prices', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
       },
       {
         "result": "pass",
@@ -1708,7 +1708,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'LP dual stability: confined hadrons have bounded shadow prices' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
       },
       {
         "result": "pass",
@@ -1742,7 +1742,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'LP dual stability: confined hadrons have bounded shadow prices' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
       },
       {
         "result": "pass",
@@ -1776,7 +1776,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'LP dual stability: confined hadrons have bounded shadow prices' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
       },
       {
         "result": "pass",
@@ -1810,7 +1810,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'LP dual stability: confined hadrons have bounded shadow prices' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1"
       },
       {
         "result": "pass",
@@ -1842,11 +1842,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.408716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/lp-dual-stability.lean is missing.",
+        "notes": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/particle-interactions/lp-dual-stability.lean is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/lp-dual-stability.lean is missing entirely, preventing formal verification of the claims in 'LP dual stability: confined hadrons have bounded shadow prices'.",
-        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/lp-dual-stability.lean is missing."
+        "referee_argument": "The referenced Lean sibling file folio/quantum-observable-universe/particle-interactions/lp-dual-stability.lean is missing entirely, preventing formal verification of the claims in 'LP dual stability: confined hadrons have bounded shadow prices'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/particle-interactions/lp-dual-stability.lean is missing."
       },
       {
         "result": "pass",
@@ -1907,7 +1907,7 @@
         "reviewed_at": "2026-08-09T11:33:35.560Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/nuclear-interactions/lp-dual-stability.md:6: Strong duality — named result, no citation in block"
+        "evidence": "folio/quantum-observable-universe/nuclear-interactions/lp-dual-stability.md:6: Strong duality — named result, no citation in block"
       }
     ],
     "voice-agent-speak": [

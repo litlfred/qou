@@ -3,9 +3,9 @@
   "label": "prop:isotope-knot-equivalence",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/isotope-knot-equivalence.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/isotope-knot-equivalence.md",
-    "lean": "content/quantum-observable-universe/knots-particles-confinement/isotope-knot-equivalence.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/isotope-knot-equivalence.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/isotope-knot-equivalence.md",
+    "lean": "folio/quantum-observable-universe/knots-particles-confinement/isotope-knot-equivalence.lean"
   },
   "source_hashes": {
     "md": "79602f3cc92b",
@@ -1407,7 +1407,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.227938Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The mathematical claims in 'Isotope relation is an equivalence' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean:13:49: error: Invalid field notation: Type is not of the form `C ...` where C is a constant.",
+        "notes": "The mathematical claims in 'Isotope relation is an equivalence' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean:13:49: error: Invalid field notation: Type is not of the form `C ...` where C is a constant.",
         "severity": "minor",
         "evidence": "isotope-knot-equivalence.lean:1"
       },
@@ -1442,7 +1442,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.227938Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "isotope-knot-equivalence.lean:1"
       },
@@ -1581,7 +1581,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.227938Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean.",
         "severity": "minor",
         "evidence": "isotope-knot-equivalence.lean:1"
       },
@@ -1616,9 +1616,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.227938Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1791,9 +1791,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.227938Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "isotope-knot-equivalence.lean:1 — content/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean:13:49: error: Invalid field notation: Type is not of the form `C ...` where C is a constant"
+        "evidence": "isotope-knot-equivalence.lean:1 — folio/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean:13:49: error: Invalid field notation: Type is not of the form `C ...` where C is a constant"
       },
       {
         "result": "pass",
@@ -1826,11 +1826,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.227938Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean fails compilation.",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean fails compilation.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean fails compilation."
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/isotope-knot-equivalence.lean fails compilation."
       },
       {
         "result": "pass",

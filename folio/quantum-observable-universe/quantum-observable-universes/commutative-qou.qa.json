@@ -3,9 +3,9 @@
   "label": "def:commutative-qou",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-observable-universes/commutative-qou.ts",
-    "md": "content/quantum-observable-universe/quantum-observable-universes/commutative-qou.md",
-    "lean": "content/quantum-observable-universe/quantum-observable-universes/commutative-qou.lean"
+    "ts": "folio/quantum-observable-universe/quantum-observable-universes/commutative-qou.ts",
+    "md": "folio/quantum-observable-universe/quantum-observable-universes/commutative-qou.md",
+    "lean": "folio/quantum-observable-universe/quantum-observable-universes/commutative-qou.lean"
   },
   "source_hashes": {
     "md": "4507a4b2dc28",
@@ -615,7 +615,7 @@
         "reviewed_at": "2026-08-09T13:01:47.990Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/quantum-observable-universes/commutative-qou.ts:0: forward ref: uses rem:hopf-non-cocommutativity (manifest pos 189) which appears after this block (pos 96) in the chapter"
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/commutative-qou.ts:0: forward ref: uses rem:hopf-non-cocommutativity (manifest pos 189) which appears after this block (pos 96) in the chapter"
       }
     ],
     "detangler-section-band": [

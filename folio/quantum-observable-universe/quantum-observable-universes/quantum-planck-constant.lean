@@ -6,10 +6,10 @@ import Mathlib.Tactic.Linarith
 /-!
 # QOU.quantumPlanckConstant
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/ArchimedeanSubstrateField.lean; that file no longer exists — the library was split, and `ArchimedeanSubstrateField` now lives at
-  content/quantum-observable-universe/lean/QOU/AppendixSurreals/collatz_substrate_link.lean
-  content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/SubstrateParameter.lean
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/ArchimedeanSubstrateField.lean; that file no longer exists — the library was split, and `ArchimedeanSubstrateField` now lives at
+  folio/quantum-observable-universe/lean/QOU/AppendixSurreals/collatz_substrate_link.lean
+  folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/SubstrateParameter.lean
 
 The quantum Planck constant `ℏ_q(p) = 1 − q(p)⁻¹` of a substrate parameter
 `q : M → ℝ` with `q(p) ≥ 1`.  At classicality (`q → 1`) we get `ℏ_q → 0`;

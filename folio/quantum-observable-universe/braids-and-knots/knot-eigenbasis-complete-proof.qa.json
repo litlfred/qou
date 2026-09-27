@@ -3,9 +3,9 @@
   "label": "prf:knot-eigenbasis-complete",
   "kind": "proof",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.lean"
+    "ts": "folio/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.ts",
+    "md": "folio/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.md",
+    "lean": "folio/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.lean"
   },
   "source_hashes": {
     "md": "91ffa3703cd4",
@@ -890,7 +890,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Checked mathematical consistency of the claim '*Part (1).*  When $q$ is not a root of unity, the Iwahori--Hecke algebra' and found no counterexamples under the stated conditions.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.ts:1"
       }
     ],
     "da-vacuous": [
@@ -927,7 +927,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Traced dependencies ['prop:knot-eigenbasis-complete'] for 'prf:knot-eigenbasis-complete' and confirmed no circular definitions or justifications.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.ts:1"
       }
     ],
     "da-overclaim": [
@@ -964,7 +964,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -983,7 +983,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Logical transitions in the derivation of '*Part (1).*  When $q$ is not a root of unity, the Iwahori--Hecke algebra' are sound; no non-sequiturs detected.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1036,7 +1036,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All references and uses ['prop:knot-eigenbasis-complete'] cited in 'prf:knot-eigenbasis-complete' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1055,7 +1055,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All terms and algebraic structures in 'prf:knot-eigenbasis-complete' are uniquely defined or standard.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1074,7 +1074,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The algebraic statements in 'prf:knot-eigenbasis-complete' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1093,7 +1093,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Physical dimensions and units in 'prf:knot-eigenbasis-complete' are consistent with quantum observable universe models.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1110,9 +1110,9 @@
         },
         "reviewed_at": "2026-06-28T07:05:44.350Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.lean:46:15: error: Invalid field notation: Type of.",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: folio/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.lean:46:15: error: Invalid field notation: Type of.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.lean:46:15: error: Invalid field notation: Type of"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.lean:1 \u2014 folio/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.lean:46:15: error: Invalid field notation: Type of"
       },
       {
         "field_hash": {
@@ -1144,11 +1144,11 @@
         },
         "reviewed_at": "2026-06-28T07:05:44.350Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.lean:46:15: error: Invalid field notation: Type of",
+        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.lean:46:15: error: Invalid field notation: Type of",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.lean:46:15: error: Invalid field notation: Type of",
-        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.lean:46:15: error: Invalid field notation: Type of"
+        "referee_argument": "The Lean sibling fails compilation with error: folio/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.lean:46:15: error: Invalid field notation: Type of",
+        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.lean:46:15: error: Invalid field notation: Type of"
       },
       {
         "field_hash": {
@@ -1226,7 +1226,7 @@
         "reviewed_at": "2026-08-09T11:32:14.438Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.md:4: Jimbo theorem \u2014 named result, no citation in block | content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.md:11: Alexander theorem \u2014 named result, no citation in block"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.md:4: Jimbo theorem \u2014 named result, no citation in block | folio/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.md:11: Alexander theorem \u2014 named result, no citation in block"
       }
     ],
     "voice-agent-speak": [

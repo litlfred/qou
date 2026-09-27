@@ -3,9 +3,9 @@
   "label": "prop:sl2-prolongation-recurrence",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence.ts",
-    "md": "content/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence.md",
-    "lean": "content/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence.lean"
   },
   "source_hashes": {
     "md": "903680f596df",
@@ -706,7 +706,7 @@
         "reviewed_at": "2026-08-30T12:05:14.301Z",
         "reviewed_sha": "be10971de760275549ab27731ba7c2a12fa344f4",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence.ts:0: forward ref: uses prop:sl2-period-conserved-quantity (manifest pos 212) which appears after this block (pos 210) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence.ts:0: forward ref: uses prop:sl2-period-conserved-quantity (manifest pos 212) which appears after this block (pos 210) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -873,7 +873,7 @@
         "reviewed_at": "2026-08-30T12:05:14.301Z",
         "reviewed_sha": "be10971de760275549ab27731ba7c2a12fa344f4",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence.ts:0: editorial dependency cycle (uses[] + interprets): prop:sl2-prolongation-recurrence -> prop:sl2-period-conserved-quantity -> prop:sl2-prolongation-recurrence"
+        "evidence": "folio/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence.ts:0: editorial dependency cycle (uses[] + interprets): prop:sl2-prolongation-recurrence -> prop:sl2-period-conserved-quantity -> prop:sl2-prolongation-recurrence"
       }
     ],
     "bib-cite-resolves": [

@@ -3,9 +3,9 @@
   "label": "prop:ns-obstruction-tower",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts",
-    "md": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/FluidDynamics/ns_obstruction_tower.lean"
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/FluidDynamics/ns_obstruction_tower.lean"
   },
   "source_hashes": {
     "md": "d7cf3cdf545e",
@@ -133,7 +133,7 @@
         "reviewed_at": "2026-08-22T21:32:32.401Z",
         "reviewed_sha": "0044fa0513c00dd92f6ed0df4076a9ed80b48349",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.md:77: For the anti-parallel pair, each vortex filament naturally hosts the fundamental representation $V_{1/2}$ of $\\mathrm{SU}_q(2)$. At the intersection point $p$, both filaments stack their contributions"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.md:77: For the anti-parallel pair, each vortex filament naturally hosts the fundamental representation $V_{1/2}$ of $\\mathrm{SU}_q(2)$. At the intersection point $p$, both filaments stack their contributions"
       }
     ],
     "voice-scholarly-default": [
@@ -1245,7 +1245,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/FluidDynamics/ns_obstruction_tower.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/FluidDynamics/ns_obstruction_tower.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1421,7 +1421,7 @@
         "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No false claims identified in 'The NS obstruction class in the Yekutieli tower': mathematical reasoning is consistent.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
         "severity": "minor"
       },
       {
@@ -1486,7 +1486,7 @@
         "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No circular reasoning or self-assuming definitions detected in 'The NS obstruction class in the Yekutieli tower'.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
         "severity": "minor"
       },
       {
@@ -1551,7 +1551,7 @@
         "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The NS obstruction class in the Yekutieli tower'.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
         "severity": "minor"
       },
       {
@@ -1584,7 +1584,7 @@
         "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The argument flow in 'The NS obstruction class in the Yekutieli tower' is logically sound, mapping onto the cited dependencies.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
         "severity": "minor"
       },
       {
@@ -1616,9 +1616,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The referenced Lean file content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.lean is missing, leading to complete divergence.",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.lean is missing, leading to complete divergence.",
         "severity": "minor",
-        "evidence": "The referenced Lean file content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.lean is missing, leading to complete divergence."
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",
@@ -1650,7 +1650,7 @@
         "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No citations are present in 'The NS obstruction class in the Yekutieli tower', hence no citation misuse is possible.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
         "severity": "minor"
       },
       {
@@ -1683,7 +1683,7 @@
         "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Key terms and symbols in 'The NS obstruction class in the Yekutieli tower' are mathematically defined and unambiguous.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
         "severity": "minor"
       },
       {
@@ -1716,7 +1716,7 @@
         "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic and logical relations in 'The NS obstruction class in the Yekutieli tower' are independent of empirical tuning parameters.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
         "severity": "minor"
       },
       {
@@ -1749,7 +1749,7 @@
         "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The physical concepts described in 'The NS obstruction class in the Yekutieli tower' are consistent with quantum observable mechanics.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
         "severity": "minor"
       },
       {
@@ -1782,7 +1782,7 @@
         "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The derivation steps and formal definitions in 'The NS obstruction class in the Yekutieli tower' are reproducible.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
         "severity": "minor"
       },
       {
@@ -1814,11 +1814,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.lean is missing.",
+        "notes": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.lean is missing.",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.lean is missing, preventing formal verification of the claims in 'The NS obstruction class in the Yekutieli tower'.",
+        "referee_argument": "The referenced Lean sibling file folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.lean is missing, preventing formal verification of the claims in 'The NS obstruction class in the Yekutieli tower'.",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.lean is missing."
+        "evidence": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.lean is missing."
       },
       {
         "result": "pass",

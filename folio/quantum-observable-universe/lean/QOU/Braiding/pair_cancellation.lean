@@ -2,7 +2,7 @@
   Pair cancellation: the symmetric channels cancel, the antisymmetric add.
 
   RELOCATED (no mathematical change).  `pair_cancellation` was declared in
-  `content/quantum-observable-universe/observations/crossing-energy-decomposition.lean`, a
+  `folio/quantum-observable-universe/observations/crossing-energy-decomposition.lean`, a
   chapter-directory `.lean` belonging to a different content block, so the content-block
   resolver found it via neither candidate 1 (the citing block's own sibling) nor candidate 2
   (`<lakeRoot>/<Decl/Path>.lean`).  Moving it to the path matching its namespace makes candidate

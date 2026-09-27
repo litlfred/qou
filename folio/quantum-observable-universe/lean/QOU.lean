@@ -30,7 +30,7 @@ import QOU.Eightfold.SubgroupExtensionObstruction
 --   - `proof-objects.json` in the repo root tracks formalization status
 --   - LeanBlueprint macros in the LaTeX source link to declarations here
 
--- NOTE: Fred2005 has moved to content/fred2005-formal-groups/lean/
+-- NOTE: Fred2005 has moved to folio/fred2005-formal-groups/lean/
 -- import Fred2005
 
 import QOU.Basic

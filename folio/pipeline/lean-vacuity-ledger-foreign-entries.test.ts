@@ -49,10 +49,10 @@ const CORPUS_RECORD = resolve(
 
 /** A category no detector in this repo emits, carrying an agent verdict. */
 const FOREIGN_KEY =
-  "content/quantum-observable-universe/lean/QOU/Nonexistent.lean::QOU.Fake.Decl::proof-borrowed-name";
+  "folio/quantum-observable-universe/lean/QOU/Nonexistent.lean::QOU.Fake.Decl::proof-borrowed-name";
 /** Same shape, but in a category this audit DOES own and cannot be flagging. */
 const OWNED_STALE_KEY =
-  "content/quantum-observable-universe/lean/QOU/Nonexistent.lean::QOU.Fake.Decl::proof-no-trivial-true";
+  "folio/quantum-observable-universe/lean/QOU/Nonexistent.lean::QOU.Fake.Decl::proof-no-trivial-true";
 
 // A full `--review-ledger` run scans the whole corpus (3269 `.lean` as of
 // 2026-08-30, ~60 s). Bun's 5 s default kills it mid-run, and the process then

@@ -11,7 +11,7 @@
  * commit its own work to its own branch.
  *
  *   bun run content/pipeline/qa-agent-drain-queue.ts \
- *     content/quantum-observable-universe [--batch-size 25] \
+ *     folio/quantum-observable-universe [--batch-size 25] \
  *     [--out beans/defs/qa-agent-drain-queue.json]
  *
  * Output (beans/defs/qa-agent-drain-queue.json — tracked bulk JSON; the QA
@@ -35,7 +35,7 @@ import { QA_CRITERIA_REGISTRY } from "./qa-criteria-registry";
 // 0-gap queue. chdir makes the script cwd-independent.
 process.chdir(resolve(import.meta.dir, "..", ".."));
 
-const root = process.argv[2] ?? "content/quantum-observable-universe";
+const root = process.argv[2] ?? "folio/quantum-observable-universe";
 const bsIdx = process.argv.indexOf("--batch-size");
 const bsVal =
   bsIdx >= 0 && bsIdx + 1 < process.argv.length

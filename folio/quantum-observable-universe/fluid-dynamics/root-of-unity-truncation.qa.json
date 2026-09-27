@@ -3,9 +3,9 @@
   "label": "prop:root-of-unity-truncation",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts",
-    "md": "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.md",
-    "lean": "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.lean"
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.md",
+    "lean": "folio/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.lean"
   },
   "source_hashes": {
     "md": "194cac5235e0",
@@ -645,7 +645,7 @@
         "reviewed_at": "2026-08-09T13:00:33.718Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.md:24: The governing [QOU axiom](#def:substrate-parameter) rigorously demands that $q$ remains **not** a root of unity. However, forcibly passing the limit $q \\to 1$ directly through the dense set of unity r | content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.md:26: The core truncation mechanism — driven exclusively by the vanishing of the $q$-integer $[\\kappa]_q$ executing exactly at $q = e^{i\\pi/\\kappa}$, which cleanly collapses the spanning $q$-Laplacian spect | content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.md:33: Contains strictly **finitely many** simple objects, spanning $j = 0, 1/2, \\ldots, (\\kappa-2)/2$. The active quantum dimension $[2j+1]_q$ forcibly zeroes out at precisely $j = (\\kappa-1)/2$, cleanly tr | content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.md:40: where $S$ acts as the modular $S$-matrix. The resulting representation category devolves directly into a **modular tensor category** — identically matching the required algebraic input driving Chern-- | content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.md:46: Evaluated cleanly at $q = e^{i\\pi/\\kappa}$, the operating q-NS system mechanically supports at most exactly $(\\kappa-1)/2$ active vortex modes (as the tightly truncated representation category contain"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.md:24: The governing [QOU axiom](#def:substrate-parameter) rigorously demands that $q$ remains **not** a root of unity. However, forcibly passing the limit $q \\to 1$ directly through the dense set of unity r | folio/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.md:26: The core truncation mechanism — driven exclusively by the vanishing of the $q$-integer $[\\kappa]_q$ executing exactly at $q = e^{i\\pi/\\kappa}$, which cleanly collapses the spanning $q$-Laplacian spect | folio/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.md:33: Contains strictly **finitely many** simple objects, spanning $j = 0, 1/2, \\ldots, (\\kappa-2)/2$. The active quantum dimension $[2j+1]_q$ forcibly zeroes out at precisely $j = (\\kappa-1)/2$, cleanly tr | folio/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.md:40: where $S$ acts as the modular $S$-matrix. The resulting representation category devolves directly into a **modular tensor category** — identically matching the required algebraic input driving Chern-- | folio/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.md:46: Evaluated cleanly at $q = e^{i\\pi/\\kappa}$, the operating q-NS system mechanically supports at most exactly $(\\kappa-1)/2$ active vortex modes (as the tightly truncated representation category contain"
       }
     ],
     "voice-scholarly-default": [
@@ -1384,7 +1384,7 @@
         "reviewed_at": "2026-08-09T13:00:33.718Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts:0: forward ref: uses prop:vorticity-lower-bound (manifest pos 91) which appears after this block (pos 74) in the chapter"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts:0: forward ref: uses prop:vorticity-lower-bound (manifest pos 91) which appears after this block (pos 74) in the chapter"
       }
     ],
     "detangler-section-band": [

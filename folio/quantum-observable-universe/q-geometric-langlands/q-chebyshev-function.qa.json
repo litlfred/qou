@@ -3,9 +3,9 @@
   "label": "def:q-chebyshev-function",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.ts",
-    "md": "content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.md",
-    "lean": "content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean"
+    "ts": "folio/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.ts",
+    "md": "folio/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.md",
+    "lean": "folio/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean"
   },
   "source_hashes": {
     "md": "3fa34e1be95d",
@@ -998,7 +998,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-chebyshev-function.lean:1 \u2014 Lean file exists",
-        "notes": "The Lean theorem statement in content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.md."
+        "notes": "The Lean theorem statement in folio/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.md."
       },
       {
         "field_hash": {
@@ -1035,7 +1035,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-chebyshev-function.lean:1",
-        "notes": "The mathematical claims in 'The $q$-Chebyshev function' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean:25:13: error: unexpected token 'section'; expected 'lemma'."
+        "notes": "The mathematical claims in 'The $q$-Chebyshev function' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean:25:13: error: unexpected token 'section'; expected 'lemma'."
       },
       {
         "result": "pass",
@@ -1210,7 +1210,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-chebyshev-function.lean:1",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean."
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean."
       },
       {
         "result": "pass",
@@ -1244,8 +1244,8 @@
         "reviewed_at": "2026-07-07T14:26:56.162027Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean fails compilation, causing divergence from the narrative.",
-        "evidence": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean fails compilation, causing divergence from the narrative."
+        "notes": "The Lean sibling folio/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean fails compilation, causing divergence from the narrative.",
+        "evidence": "The Lean sibling folio/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1419,8 +1419,8 @@
         "reviewed_at": "2026-07-07T14:26:56.162027Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "q-chebyshev-function.lean:1 \u2014 content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean:25:13: error: unexpected token 'section'; expected 'lemma'",
-        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean fails compilation, indicating a reproducibility failure."
+        "evidence": "q-chebyshev-function.lean:1 \u2014 folio/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean:25:13: error: unexpected token 'section'; expected 'lemma'",
+        "notes": "The Lean sibling folio/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean fails compilation, indicating a reproducibility failure."
       },
       {
         "result": "pass",
@@ -1454,10 +1454,10 @@
         "reviewed_at": "2026-07-07T14:26:56.162027Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "critical",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean fails compilation: content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean:25:13: error: unexpected token 'section'; expected 'lemma'",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean fails compilation: folio/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean:25:13: error: unexpected token 'section'; expected 'lemma'",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean contains compilation errors: content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean:25:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean fails compilation: content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean:25:13: error: unexpected token 'section'; expected 'lemma'"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean contains compilation errors: folio/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean:25:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean fails compilation: folio/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean:25:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "result": "pass",

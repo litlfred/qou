@@ -25,7 +25,7 @@ proof.
 
 **Formal-chain version.**  This file lives under `lean/QOU/` and is
 compiled by `lake build`.  The co-located documentation stub at
-`content/quantum-observable-universe/algebraic-substrate/motivic-substrate.lean`
+`folio/quantum-observable-universe/algebraic-substrate/motivic-substrate.lean`
 mirrors this content (per `QOU.GroundRingAnnotations`).
 
 Out of scope here: mixed motives, Bloch–Kato exact sequences,

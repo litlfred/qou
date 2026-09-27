@@ -3,9 +3,9 @@
   "label": "def:categorical-proton",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/categorical-proton.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/categorical-proton.md",
-    "lean": "content/quantum-observable-universe/knots-particles-confinement/categorical-proton.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/categorical-proton.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/categorical-proton.md",
+    "lean": "folio/quantum-observable-universe/knots-particles-confinement/categorical-proton.lean"
   },
   "source_hashes": {
     "md": "2ebdaef6dd94",
@@ -1038,9 +1038,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.391583Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean theorem statement in content/quantum-observable-universe/particle-interactions/categorical-proton.lean matches the mathematical statement in content/quantum-observable-universe/particle-interactions/categorical-proton.md.",
+        "notes": "The Lean theorem statement in folio/quantum-observable-universe/particle-interactions/categorical-proton.lean matches the mathematical statement in folio/quantum-observable-universe/particle-interactions/categorical-proton.md.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.lean:1 — Lean file exists"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/categorical-proton.lean:1 — Lean file exists"
       }
     ],
     "da-false-claim": [
@@ -1060,9 +1060,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.391583Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The claim in 'Proton (categorical)' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/categorical-proton.lean:46:36: error: unsolved goals.",
+        "notes": "The claim in 'Proton (categorical)' is unverified due to Lean compilation failures: folio/quantum-observable-universe/particle-interactions/categorical-proton.lean:46:36: error: unsolved goals.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/categorical-proton.lean:1"
       },
       {
         "result": "pass",
@@ -1095,9 +1095,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.391583Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-proton.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/categorical-proton.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/categorical-proton.lean:1"
       },
       {
         "result": "pass",
@@ -1132,7 +1132,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Proton (categorical)'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/categorical-proton.ts:1"
       },
       {
         "result": "pass",
@@ -1165,9 +1165,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.391583Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The prose in 'Proton (categorical)' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/categorical-proton.lean is incomplete (has sorry).",
+        "notes": "The prose in 'Proton (categorical)' presents the result as established, but the Lean formalization in folio/quantum-observable-universe/particle-interactions/categorical-proton.lean is incomplete (has sorry).",
         "severity": "minor",
-        "evidence": "The prose in 'Proton (categorical)' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/categorical-proton.lean is incomplete (has sorry)."
+        "evidence": "The prose in 'Proton (categorical)' presents the result as established, but the Lean formalization in folio/quantum-observable-universe/particle-interactions/categorical-proton.lean is incomplete (has sorry)."
       },
       {
         "result": "pass",
@@ -1202,7 +1202,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Proton (categorical)'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/categorical-proton.ts:1"
       },
       {
         "result": "pass",
@@ -1235,9 +1235,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.391583Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/categorical-proton.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/categorical-proton.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/categorical-proton.lean:1"
       },
       {
         "result": "pass",
@@ -1270,9 +1270,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.391583Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-proton.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/categorical-proton.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-proton.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/categorical-proton.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1307,7 +1307,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Citations to manuscript are correct and contextually appropriate.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/categorical-proton.ts:1"
       },
       {
         "result": "pass",
@@ -1342,7 +1342,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Proton (categorical)' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/categorical-proton.ts:1"
       },
       {
         "result": "pass",
@@ -1377,7 +1377,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Proton (categorical)' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/categorical-proton.ts:1"
       },
       {
         "result": "pass",
@@ -1412,7 +1412,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Proton (categorical)' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/categorical-proton.ts:1"
       },
       {
         "result": "pass",
@@ -1445,9 +1445,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.391583Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-proton.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/categorical-proton.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.lean:1 — content/quantum-observable-universe/particle-interactions/categorical-proton.lean:46:36: error: unsolved goals"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/categorical-proton.lean:1 — folio/quantum-observable-universe/particle-interactions/categorical-proton.lean:46:36: error: unsolved goals"
       },
       {
         "result": "pass",
@@ -1480,11 +1480,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.391583Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/categorical-proton.lean fails compilation: content/quantum-observable-universe/particle-interactions/categorical-proton.lean:46:36: error: unsolved goals",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/categorical-proton.lean fails compilation: folio/quantum-observable-universe/particle-interactions/categorical-proton.lean:46:36: error: unsolved goals",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-proton.lean for 'Proton (categorical)' fails compilation with error: content/quantum-observable-universe/particle-interactions/categorical-proton.lean:46:36: error: unsolved goals. This invalidates the claim of formal verification.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/categorical-proton.lean fails compilation: content/quantum-observable-universe/particle-interactions/categorical-proton.lean:46:36: error: unsolved goals"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/categorical-proton.lean for 'Proton (categorical)' fails compilation with error: folio/quantum-observable-universe/particle-interactions/categorical-proton.lean:46:36: error: unsolved goals. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/categorical-proton.lean fails compilation: folio/quantum-observable-universe/particle-interactions/categorical-proton.lean:46:36: error: unsolved goals"
       },
       {
         "result": "pass",

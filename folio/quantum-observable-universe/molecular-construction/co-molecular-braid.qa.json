@@ -3,9 +3,9 @@
   "label": "def:co-molecular-braid",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/molecular-construction/co-molecular-braid.ts",
-    "md": "content/quantum-observable-universe/molecular-construction/co-molecular-braid.md",
-    "lean": "content/quantum-observable-universe/molecular-construction/co-molecular-braid.lean"
+    "ts": "folio/quantum-observable-universe/molecular-construction/co-molecular-braid.ts",
+    "md": "folio/quantum-observable-universe/molecular-construction/co-molecular-braid.md",
+    "lean": "folio/quantum-observable-universe/molecular-construction/co-molecular-braid.lean"
   },
   "source_hashes": {
     "md": "5f6eb34383e0",
@@ -1010,9 +1010,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.508672Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean theorem statement in content/quantum-observable-universe/molecular-construction/co-molecular-braid.lean matches the mathematical statement in content/quantum-observable-universe/molecular-construction/co-molecular-braid.md.",
+        "notes": "The Lean theorem statement in folio/quantum-observable-universe/molecular-construction/co-molecular-braid.lean matches the mathematical statement in folio/quantum-observable-universe/molecular-construction/co-molecular-braid.md.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/co-molecular-braid.lean:1 — Lean file exists"
+        "evidence": "folio/quantum-observable-universe/molecular-construction/co-molecular-braid.lean:1 — Lean file exists"
       }
     ],
     "da-false-claim": [
@@ -1034,7 +1034,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claim in 'Carbon monoxide $CO$ as a molecular braid' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/co-molecular-braid.lean:1"
+        "evidence": "folio/quantum-observable-universe/molecular-construction/co-molecular-braid.lean:1"
       },
       {
         "result": "pass",
@@ -1103,7 +1103,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Carbon monoxide $CO$ as a molecular braid'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/co-molecular-braid.ts:1"
+        "evidence": "folio/quantum-observable-universe/molecular-construction/co-molecular-braid.ts:1"
       },
       {
         "result": "pass",
@@ -1173,7 +1173,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Carbon monoxide $CO$ as a molecular braid'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/co-molecular-braid.ts:1"
+        "evidence": "folio/quantum-observable-universe/molecular-construction/co-molecular-braid.ts:1"
       },
       {
         "result": "pass",
@@ -1206,9 +1206,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.508672Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/molecular-construction/co-molecular-braid.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/molecular-construction/co-molecular-braid.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/co-molecular-braid.lean:1"
+        "evidence": "folio/quantum-observable-universe/molecular-construction/co-molecular-braid.lean:1"
       },
       {
         "result": "pass",
@@ -1241,9 +1241,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.508672Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean sibling content/quantum-observable-universe/molecular-construction/co-molecular-braid.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/molecular-construction/co-molecular-braid.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/molecular-construction/co-molecular-braid.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/molecular-construction/co-molecular-braid.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1278,7 +1278,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Carbon monoxide $CO$ as a molecular braid', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/co-molecular-braid.ts:1"
+        "evidence": "folio/quantum-observable-universe/molecular-construction/co-molecular-braid.ts:1"
       },
       {
         "result": "pass",
@@ -1313,7 +1313,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Carbon monoxide $CO$ as a molecular braid' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/co-molecular-braid.ts:1"
+        "evidence": "folio/quantum-observable-universe/molecular-construction/co-molecular-braid.ts:1"
       },
       {
         "result": "pass",
@@ -1348,7 +1348,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Carbon monoxide $CO$ as a molecular braid' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/co-molecular-braid.ts:1"
+        "evidence": "folio/quantum-observable-universe/molecular-construction/co-molecular-braid.ts:1"
       },
       {
         "result": "pass",
@@ -1383,7 +1383,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Carbon monoxide $CO$ as a molecular braid' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/co-molecular-braid.ts:1"
+        "evidence": "folio/quantum-observable-universe/molecular-construction/co-molecular-braid.ts:1"
       },
       {
         "result": "pass",
@@ -1416,9 +1416,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.508672Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean sibling content/quantum-observable-universe/molecular-construction/co-molecular-braid.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/molecular-construction/co-molecular-braid.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/co-molecular-braid.lean:1 — content/quantum-observable-universe/molecular-construction/co-molecular-braid.lean:20:41: error: unknown tactic"
+        "evidence": "folio/quantum-observable-universe/molecular-construction/co-molecular-braid.lean:1 — folio/quantum-observable-universe/molecular-construction/co-molecular-braid.lean:20:41: error: unknown tactic"
       },
       {
         "result": "pass",
@@ -1451,11 +1451,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.508672Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/molecular-construction/co-molecular-braid.lean fails compilation: content/quantum-observable-universe/molecular-construction/co-molecular-braid.lean:20:41: error: unknown tactic",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/molecular-construction/co-molecular-braid.lean fails compilation: folio/quantum-observable-universe/molecular-construction/co-molecular-braid.lean:20:41: error: unknown tactic",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/molecular-construction/co-molecular-braid.lean contains compilation errors: content/quantum-observable-universe/molecular-construction/co-molecular-braid.lean:20:41: error: unknown tactic, invalidating the claimed formalization.",
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/molecular-construction/co-molecular-braid.lean contains compilation errors: folio/quantum-observable-universe/molecular-construction/co-molecular-braid.lean:20:41: error: unknown tactic, invalidating the claimed formalization.",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/molecular-construction/co-molecular-braid.lean fails compilation: content/quantum-observable-universe/molecular-construction/co-molecular-braid.lean:20:41: error: unknown tactic"
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/molecular-construction/co-molecular-braid.lean fails compilation: folio/quantum-observable-universe/molecular-construction/co-molecular-braid.lean:20:41: error: unknown tactic"
       },
       {
         "result": "pass",

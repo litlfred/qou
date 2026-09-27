@@ -3,9 +3,9 @@
   "label": "conj:lusztig-canonical-basis-q-eq-1",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts",
-    "md": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.md",
-    "lean": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.lean"
+    "ts": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts",
+    "md": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.md",
+    "lean": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.lean"
   },
   "source_hashes": {
     "md": "63df5335a4ab",
@@ -646,7 +646,7 @@
         "reviewed_at": "2026-09-03T08:50:26.659Z",
         "reviewed_sha": "4c636f78dca31c2a34a0d8458edbd84141078604",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:0: forward ref: uses conj:reverse-limit-q-to-infinity (manifest pos 74) which appears after this block (pos 71) in the chapter"
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:0: forward ref: uses conj:reverse-limit-q-to-infinity (manifest pos 74) which appears after this block (pos 71) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1046,7 +1046,7 @@
         "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
         "notes": "No false claims identified in 'Conjecture (D24 Lusztig canonical basis closure, conditional on': mathematical reasoning is consistent."
       },
       {
@@ -1081,8 +1081,8 @@
         "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.lean:1",
-        "notes": "The Lean sibling content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.lean contains 'sorry' placeholders, rendering the formal proof vacuous."
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.lean:1",
+        "notes": "The Lean sibling folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.lean contains 'sorry' placeholders, rendering the formal proof vacuous."
       },
       {
         "result": "pass",
@@ -1116,7 +1116,7 @@
         "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Conjecture (D24 Lusztig canonical basis closure, conditional on'."
       },
       {
@@ -1186,7 +1186,7 @@
         "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Conjecture (D24 Lusztig canonical basis closure, conditional on'."
       },
       {
@@ -1221,7 +1221,7 @@
         "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
         "notes": "The argument flow in 'Conjecture (D24 Lusztig canonical basis closure, conditional on' is logically sound, mapping onto the cited dependencies."
       },
       {
@@ -1256,7 +1256,7 @@
         "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.lean:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.lean:1",
         "notes": "No narrative divergence: the Lean sibling implements the structure claimed in 'Conjecture (D24 Lusztig canonical basis closure, conditional on' (though incomplete)."
       },
       {
@@ -1291,7 +1291,7 @@
         "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
         "notes": "Citations to kazhdan-lusztig1979, lusztig1990, kashiwara1991 are correct and contextually appropriate."
       },
       {
@@ -1326,7 +1326,7 @@
         "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
         "notes": "Key terms and symbols in 'Conjecture (D24 Lusztig canonical basis closure, conditional on' are mathematically defined and unambiguous."
       },
       {
@@ -1361,7 +1361,7 @@
         "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
         "notes": "The algebraic and logical relations in 'Conjecture (D24 Lusztig canonical basis closure, conditional on' are independent of empirical tuning parameters."
       },
       {
@@ -1396,7 +1396,7 @@
         "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
         "notes": "The physical concepts described in 'Conjecture (D24 Lusztig canonical basis closure, conditional on' are consistent with quantum observable mechanics."
       },
       {
@@ -1431,7 +1431,7 @@
         "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
         "notes": "The derivation steps and formal definitions in 'Conjecture (D24 Lusztig canonical basis closure, conditional on' are reproducible."
       },
       {
@@ -1466,7 +1466,7 @@
         "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.md:1 — Conjecture (D24 Lusztig canonical basis closure, conditional on",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.md:1 — Conjecture (D24 Lusztig canonical basis closure, conditional on",
         "notes": "Conjecture/Proof is open with sorry placeholders, hence the objection is survivable.",
         "verdict": "survivable-objection",
         "referee_argument": "The specialization of the Lusztig canonical basis at q=1 remains unproven due to sorry stubs in lusztig-canonical-basis-q-eq-1.lean."

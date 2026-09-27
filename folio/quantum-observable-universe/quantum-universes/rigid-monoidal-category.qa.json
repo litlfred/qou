@@ -3,9 +3,9 @@
   "label": "def:rigid-monoidal-category",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-universes/rigid-monoidal-category.ts",
-    "md": "content/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md",
-    "lean": "content/quantum-observable-universe/quantum-universes/rigid-monoidal-category.lean"
+    "ts": "folio/quantum-observable-universe/quantum-universes/rigid-monoidal-category.ts",
+    "md": "folio/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md",
+    "lean": "folio/quantum-observable-universe/quantum-universes/rigid-monoidal-category.lean"
   },
   "source_hashes": {
     "md": "ba917b44e76b",
@@ -1584,7 +1584,7 @@
         "reviewed_at": "2026-08-22T06:08:14.724Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md (33 lines, kind=definition, title=\"Rigid monoidal category\"). searched for assert-by-denying constructions ('not X but Y', 'X, not Y', 'rather than'); none present beyond substantive mathematical contrast that is itself the block's claim",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md (33 lines, kind=definition, title=\"Rigid monoidal category\"). searched for assert-by-denying constructions ('not X but Y', 'X, not Y', 'rather than'); none present beyond substantive mathematical contrast that is itself the block's claim",
         "notes": "no fix needed"
       }
     ],
@@ -1620,7 +1620,7 @@
         "reviewed_at": "2026-08-22T06:08:14.765Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md (33 lines, kind=definition, title=\"Rigid monoidal category\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md (33 lines, kind=definition, title=\"Rigid monoidal category\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
         "notes": "no fix needed"
       }
     ],
@@ -1656,7 +1656,7 @@
         "reviewed_at": "2026-08-22T06:08:14.804Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md (33 lines, kind=definition, title=\"Rigid monoidal category\"). 0 spaced em-dash construction(s); LaTeX '--' occurrences are name-internal (Maurer--Cartan, Frobenius--Hopf, Tannaka--Krein), not sentence punctuation",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md (33 lines, kind=definition, title=\"Rigid monoidal category\"). 0 spaced em-dash construction(s); LaTeX '--' occurrences are name-internal (Maurer--Cartan, Frobenius--Hopf, Tannaka--Krein), not sentence punctuation",
         "notes": "no fix needed"
       }
     ],
@@ -1692,7 +1692,7 @@
         "reviewed_at": "2026-08-22T06:08:14.844Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md (33 lines, kind=definition, title=\"Rigid monoidal category\"). no reflex three-item list; enumerations present are content-determined",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md (33 lines, kind=definition, title=\"Rigid monoidal category\"). no reflex three-item list; enumerations present are content-determined",
         "notes": "no fix needed"
       }
     ],
@@ -1728,7 +1728,7 @@
         "reviewed_at": "2026-08-22T06:08:14.884Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md (33 lines, kind=definition, title=\"Rigid monoidal category\"). final sentence is \"Given a braiding, the *exterior power* $\\Lambda^k V$ is the image of the antisymmetriser $\\mathrm{Alt}_k = \\sum_{\\pi \\in S_k} \\mathrm{sgn}(\\pi)\\pi$ acting on $V^{\\otimes k}$, where permutations act via $c$.\" - a substantive statement, not a placed quotable closer",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md (33 lines, kind=definition, title=\"Rigid monoidal category\"). final sentence is \"Given a braiding, the *exterior power* $\\Lambda^k V$ is the image of the antisymmetriser $\\mathrm{Alt}_k = \\sum_{\\pi \\in S_k} \\mathrm{sgn}(\\pi)\\pi$ acting on $V^{\\otimes k}$, where permutations act via $c$.\" - a substantive statement, not a placed quotable closer",
         "notes": "no fix needed"
       }
     ],
@@ -1764,7 +1764,7 @@
         "reviewed_at": "2026-08-22T06:08:14.923Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md (33 lines, kind=definition, title=\"Rigid monoidal category\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md (33 lines, kind=definition, title=\"Rigid monoidal category\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
         "notes": "no fix needed"
       }
     ],
@@ -1800,7 +1800,7 @@
         "reviewed_at": "2026-08-22T06:08:14.962Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md (33 lines, kind=definition, title=\"Rigid monoidal category\"). final sentence is \"Given a braiding, the *exterior power* $\\Lambda^k V$ is the image of the antisymmetriser $\\mathrm{Alt}_k = \\sum_{\\pi \\in S_k} \\mathrm{sgn}(\\pi)\\pi$ acting on $V^{\\otimes k}$, where permutations act via $c$.\" - it advances or points forward rather than restating what the block already established",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md (33 lines, kind=definition, title=\"Rigid monoidal category\"). final sentence is \"Given a braiding, the *exterior power* $\\Lambda^k V$ is the image of the antisymmetriser $\\mathrm{Alt}_k = \\sum_{\\pi \\in S_k} \\mathrm{sgn}(\\pi)\\pi$ acting on $V^{\\otimes k}$, where permutations act via $c$.\" - it advances or points forward rather than restating what the block already established",
         "notes": "no fix needed"
       }
     ],
@@ -1836,7 +1836,7 @@
         "reviewed_at": "2026-08-22T06:08:15.002Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md (33 lines, kind=definition, title=\"Rigid monoidal category\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md (33 lines, kind=definition, title=\"Rigid monoidal category\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
         "notes": "no fix needed"
       }
     ],
@@ -1872,7 +1872,7 @@
         "reviewed_at": "2026-08-22T06:08:15.042Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md (33 lines, kind=definition, title=\"Rigid monoidal category\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md (33 lines, kind=definition, title=\"Rigid monoidal category\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
         "notes": "no fix needed"
       }
     ],
@@ -1908,7 +1908,7 @@
         "reviewed_at": "2026-08-22T06:08:15.080Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md (33 lines, kind=definition, title=\"Rigid monoidal category\"). prose reads aloud without stalling; no noun-chain built for the eye only",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md (33 lines, kind=definition, title=\"Rigid monoidal category\"). prose reads aloud without stalling; no noun-chain built for the eye only",
         "notes": "no fix needed"
       }
     ],

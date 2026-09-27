@@ -18,10 +18,10 @@ import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
 /-!
 # QOU.InvolutiveStructure
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/InvolutiveStructure.lean (monolithic).
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/InvolutiveStructure.lean (monolithic).
 That file no longer exists — the library was split, and `InvolutiveStructure` now lives at
-  content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Structures.lean
+  folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Structures.lean
 -/
 
 open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory

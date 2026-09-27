@@ -14,10 +14,10 @@ import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
 /-!
 # QOU.qReebVectorField
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/qReebVectorField.lean (monolithic).
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/qReebVectorField.lean (monolithic).
 That file no longer exists — the library was split, and `qReebVectorField` now lives at
-  content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Particles.lean
+  folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Particles.lean
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical

@@ -3,8 +3,8 @@
   "label": "rem:bw-mass-decomposition-dictionary",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/observations/bw-mass-decomposition-dictionary.ts",
-    "md": "content/quantum-observable-universe/observations/bw-mass-decomposition-dictionary.md"
+    "ts": "folio/quantum-observable-universe/observations/bw-mass-decomposition-dictionary.ts",
+    "md": "folio/quantum-observable-universe/observations/bw-mass-decomposition-dictionary.md"
   },
   "source_hashes": {
     "md": "5e579cbfd32f",
@@ -94,7 +94,7 @@
         "reviewed_at": "2026-08-30T18:23:13.066Z",
         "reviewed_sha": "370010fa315d136433e7def13ab9f5312def9be0",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/observations/bw-mass-decomposition-dictionary.md:1: The classical Bethe–Weizsäcker (BW) empirical mass formula decomposes nuclear binding into volume, surface, Coulomb, asymmetry, and pairing terms. In the categorical framework, this phenomenological l"
+        "evidence": "folio/quantum-observable-universe/observations/bw-mass-decomposition-dictionary.md:1: The classical Bethe–Weizsäcker (BW) empirical mass formula decomposes nuclear binding into volume, surface, Coulomb, asymmetry, and pairing terms. In the categorical framework, this phenomenological l"
       }
     ],
     "voice-unicode-crash": [
@@ -1047,7 +1047,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Empirical Bethe–Weizsäcker terms as Schur–Weyl strata' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/bw-mass-decomposition-dictionary.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/bw-mass-decomposition-dictionary.ts:1"
       },
       {
         "result": "pass",

@@ -7,8 +7,8 @@ import Mathlib.Tactic.Ring
 /-!
 # QOU.qConnection
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Particles.lean
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Particles.lean
 
 **Archimedean realisation**: the substrate parameter `q : M → ℝ` is the
 `field` of a `ArchimedeanSubstrateField`. The categorical `q`-connection specialises

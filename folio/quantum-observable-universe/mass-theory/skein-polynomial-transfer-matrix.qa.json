@@ -3,9 +3,9 @@
   "label": "prop:skein-polynomial-transfer-matrix",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/skein-polynomial-transfer-matrix.ts",
-    "md": "content/quantum-observable-universe/mass-theory/skein-polynomial-transfer-matrix.md",
-    "lean": "content/quantum-observable-universe/mass-theory/skein-polynomial-transfer-matrix.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/skein-polynomial-transfer-matrix.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/skein-polynomial-transfer-matrix.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/skein-polynomial-transfer-matrix.lean"
   },
   "source_hashes": {
     "md": "b98a7dfb15c3",
@@ -891,7 +891,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/skein-polynomial-transfer-matrix.ts:0: forward ref: uses thm:markov-trace-factorization (manifest pos 395) which appears after this block (pos 67) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/skein-polynomial-transfer-matrix.ts:0: forward ref: uses thm:markov-trace-factorization (manifest pos 395) which appears after this block (pos 67) in the chapter"
       }
     ],
     "detangler-section-band": [

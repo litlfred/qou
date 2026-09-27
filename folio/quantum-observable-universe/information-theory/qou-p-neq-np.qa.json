@@ -3,9 +3,9 @@
   "label": "conj:qou-p-neq-np",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/information-theory/qou-p-neq-np.ts",
-    "md": "content/quantum-observable-universe/information-theory/qou-p-neq-np.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/Information/QouPNeqNp.lean"
+    "ts": "folio/quantum-observable-universe/information-theory/qou-p-neq-np.ts",
+    "md": "folio/quantum-observable-universe/information-theory/qou-p-neq-np.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/Information/QouPNeqNp.lean"
   },
   "source_hashes": {
     "md": "8b067c8e03f9",
@@ -145,7 +145,7 @@
         "reviewed_at": "2026-08-15T23:47:50.646Z",
         "reviewed_sha": "905024ecd86369c6d238deac2703a70b43378fe6",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/qou-p-neq-np.md:29: 2. that its non-vanishing at $q_0$ is *equivalent* to $\\mathrm{P} \\neq \\mathrm{NP}$ rather than merely *implied by* it. | content/quantum-observable-universe/information-theory/qou-p-neq-np.md:37: **The counting–decision gap (companion statement).** Every citable hardness result at $q_0$ concerns *counting*: Jaeger--Vertigan--Welsh give $\\#\\mathrm{P}$-hardness of exact evaluation, and $\\mathrm{"
+        "evidence": "folio/quantum-observable-universe/information-theory/qou-p-neq-np.md:29: 2. that its non-vanishing at $q_0$ is *equivalent* to $\\mathrm{P} \\neq \\mathrm{NP}$ rather than merely *implied by* it. | folio/quantum-observable-universe/information-theory/qou-p-neq-np.md:37: **The counting–decision gap (companion statement).** Every citable hardness result at $q_0$ concerns *counting*: Jaeger--Vertigan--Welsh give $\\#\\mathrm{P}$-hardness of exact evaluation, and $\\mathrm{"
       }
     ],
     "voice-scholarly-default": [
@@ -239,7 +239,7 @@
         "reviewed_at": "2026-08-15T23:47:50.646Z",
         "reviewed_sha": "905024ecd86369c6d238deac2703a70b43378fe6",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/information-theory/qou-p-neq-np.md:1: hedge-token concentration: 3 distinct AI-slop softener tokens present (essentially / comprehensive / leverage / streamline / robust / crucial / etc.)"
+        "evidence": "folio/quantum-observable-universe/information-theory/qou-p-neq-np.md:1: hedge-token concentration: 3 distinct AI-slop softener tokens present (essentially / comprehensive / leverage / streamline / robust / crucial / etc.)"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1048,7 +1048,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No false claims identified in '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ at non-torsion $q \\\\in \\\\mathbb{G}_m$': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/qou-p-neq-np.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/qou-p-neq-np.ts:1"
       },
       {
         "result": "pass",
@@ -1113,7 +1113,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ at non-torsion $q \\\\in \\\\mathbb{G}_m$'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/qou-p-neq-np.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/qou-p-neq-np.ts:1"
       },
       {
         "result": "pass",
@@ -1178,7 +1178,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ at non-torsion $q \\\\in \\\\mathbb{G}_m$'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/qou-p-neq-np.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/qou-p-neq-np.ts:1"
       },
       {
         "result": "pass",
@@ -1211,7 +1211,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The argument flow in '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ at non-torsion $q \\\\in \\\\mathbb{G}_m$' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/qou-p-neq-np.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/qou-p-neq-np.ts:1"
       },
       {
         "result": "pass",
@@ -1277,7 +1277,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ at non-torsion $q \\\\in \\\\mathbb{G}_m$', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/qou-p-neq-np.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/qou-p-neq-np.ts:1"
       },
       {
         "result": "pass",
@@ -1310,7 +1310,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ at non-torsion $q \\\\in \\\\mathbb{G}_m$' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/qou-p-neq-np.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/qou-p-neq-np.ts:1"
       },
       {
         "result": "pass",
@@ -1343,7 +1343,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ at non-torsion $q \\\\in \\\\mathbb{G}_m$' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/qou-p-neq-np.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/qou-p-neq-np.ts:1"
       },
       {
         "result": "pass",
@@ -1376,7 +1376,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ at non-torsion $q \\\\in \\\\mathbb{G}_m$' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/qou-p-neq-np.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/qou-p-neq-np.ts:1"
       },
       {
         "result": "pass",
@@ -1409,7 +1409,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The derivation steps and formal definitions in '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ at non-torsion $q \\\\in \\\\mathbb{G}_m$' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/qou-p-neq-np.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/qou-p-neq-np.ts:1"
       },
       {
         "result": "pass",

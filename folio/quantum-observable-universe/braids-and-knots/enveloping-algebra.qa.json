@@ -3,8 +3,8 @@
   "label": "rem:enveloping-algebra",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/enveloping-algebra.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/enveloping-algebra.md"
+    "ts": "folio/quantum-observable-universe/braids-and-knots/enveloping-algebra.ts",
+    "md": "folio/quantum-observable-universe/braids-and-knots/enveloping-algebra.md"
   },
   "source_hashes": {
     "md": "66320164829c",
@@ -384,7 +384,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/enveloping-algebra.md:3 \u2014 root-of-unity construction used without explicit regime declaration \u2014 By the PBW theorem, the monomials $\\{e_1^{a}e_2^{b}e_3^{c} : a,b,c \\geq 0\\}$ form a $\\mathbb{C}$-basis of $\\mathcal{U}(\\mathfrak{su}(2))$. In the $q$-deformed setting, the analogous basis consists of the ordered monomials $\\{E^{(a)}K^{s}F^{(b)}\\}$ in the Lusztig divided-power generators, with ordering enforced by the Groebner--Shirshov resolution of the $q$-Serre relations."
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/enveloping-algebra.md:3 \u2014 root-of-unity construction used without explicit regime declaration \u2014 By the PBW theorem, the monomials $\\{e_1^{a}e_2^{b}e_3^{c} : a,b,c \\geq 0\\}$ form a $\\mathbb{C}$-basis of $\\mathcal{U}(\\mathfrak{su}(2))$. In the $q$-deformed setting, the analogous basis consists of the ordered monomials $\\{E^{(a)}K^{s}F^{(b)}\\}$ in the Lusztig divided-power generators, with ordering enforced by the Groebner--Shirshov resolution of the $q$-Serre relations."
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -402,7 +402,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/enveloping-algebra.md:1 \u2014 detected regime [root-of-unity] is disjoint from chapter 'braids-and-knots' expected [generic-R, mod-gt-1, mod-lt-1, na, real-positive, symbolic]"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/enveloping-algebra.md:1 \u2014 detected regime [root-of-unity] is disjoint from chapter 'braids-and-knots' expected [generic-R, mod-gt-1, mod-lt-1, na, real-positive, symbolic]"
       }
     ],
     "canonical-calibration-count": [

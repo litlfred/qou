@@ -3,9 +3,9 @@
   "label": "prop:braiding-eigenvalue-extraction",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.ts",
-    "md": "content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.md",
-    "lean": "content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean"
+    "ts": "folio/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.ts",
+    "md": "folio/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.md",
+    "lean": "folio/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean"
   },
   "source_hashes": {
     "md": "afb14130fc3b",
@@ -715,7 +715,7 @@
         "reviewed_at": "2026-08-09T13:01:47.990Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.ts:0: forward ref: uses prop:tannaka-krein-reconstruction (manifest pos 82) which appears after this block (pos 79) in the chapter"
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.ts:0: forward ref: uses prop:tannaka-krein-reconstruction (manifest pos 82) which appears after this block (pos 79) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -875,7 +875,7 @@
         "reviewed_at": "2026-08-09T13:01:47.990Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.ts:0: uses[] dependency cycle: prop:braiding-eigenvalue-extraction -> prop:tannaka-krein-reconstruction -> prop:braiding-eigenvalue-extraction"
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.ts:0: uses[] dependency cycle: prop:braiding-eigenvalue-extraction -> prop:tannaka-krein-reconstruction -> prop:braiding-eigenvalue-extraction"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1227,7 +1227,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1406,7 +1406,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "braiding-eigenvalue-extraction.lean:1",
-        "notes": "The mathematical claims in 'Extraction of $q$ from the braiding eigenvalues' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/Monoidal/Braided/Basic.olean' of module Mathlib.CategoryTheory.Monoidal.Braided.Basic does not exist."
+        "notes": "The mathematical claims in 'Extraction of $q$ from the braiding eigenvalues' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/Monoidal/Braided/Basic.olean' of module Mathlib.CategoryTheory.Monoidal.Braided.Basic does not exist."
       },
       {
         "result": "pass",
@@ -1441,7 +1441,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "major",
         "evidence": "braiding-eigenvalue-extraction.lean:1",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean contains 'sorry' placeholders, rendering the formal proof vacuous."
+        "notes": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean contains 'sorry' placeholders, rendering the formal proof vacuous."
       },
       {
         "result": "pass",
@@ -1581,7 +1581,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "braiding-eigenvalue-extraction.lean:1",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean."
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean."
       },
       {
         "result": "pass",
@@ -1615,8 +1615,8 @@
         "reviewed_at": "2026-07-07T14:26:55.826701Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean fails compilation, causing divergence from the narrative.",
-        "evidence": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean fails compilation, causing divergence from the narrative."
+        "notes": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean fails compilation, causing divergence from the narrative.",
+        "evidence": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1790,8 +1790,8 @@
         "reviewed_at": "2026-07-07T14:26:55.826701Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "braiding-eigenvalue-extraction.lean:1 — content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/Monoidal/Braided/Basic.olean' of module Mathlib.CategoryTheory.Monoidal.Braided.Basic does not exist",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean fails compilation, indicating a reproducibility failure."
+        "evidence": "braiding-eigenvalue-extraction.lean:1 — folio/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/Monoidal/Braided/Basic.olean' of module Mathlib.CategoryTheory.Monoidal.Braided.Basic does not exist",
+        "notes": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean fails compilation, indicating a reproducibility failure."
       },
       {
         "result": "pass",
@@ -1825,10 +1825,10 @@
         "reviewed_at": "2026-07-07T14:26:55.826701Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "major",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean contains 'sorry' placeholders.",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean contains 'sorry' placeholders.",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean contains 'sorry' placeholders."
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",

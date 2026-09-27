@@ -3,9 +3,9 @@
   "label": "prop:shell-schur-weyl-self-duality",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/shell-schur-weyl-self-duality.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/shell-schur-weyl-self-duality.md",
-    "lean": "content/quantum-observable-universe/knots-particles-confinement/shell-schur-weyl-self-duality.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/shell-schur-weyl-self-duality.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/shell-schur-weyl-self-duality.md",
+    "lean": "folio/quantum-observable-universe/knots-particles-confinement/shell-schur-weyl-self-duality.lean"
   },
   "source_hashes": {
     "md": "6948a83d62d8",
@@ -1386,7 +1386,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.280050Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The mathematical claims in 'Schur-Weyl justification of shell-operator self-duality' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean:42:24: error: unexpected token 'λ'; expected '_' or identifier.",
+        "notes": "The mathematical claims in 'Schur-Weyl justification of shell-operator self-duality' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean:42:24: error: unexpected token 'λ'; expected '_' or identifier.",
         "severity": "minor",
         "evidence": "shell-schur-weyl-self-duality.lean:1"
       },
@@ -1421,7 +1421,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.280050Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "shell-schur-weyl-self-duality.lean:1"
       },
@@ -1560,7 +1560,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.280050Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean.",
         "severity": "minor",
         "evidence": "shell-schur-weyl-self-duality.lean:1"
       },
@@ -1595,9 +1595,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.280050Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1770,9 +1770,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.280050Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "shell-schur-weyl-self-duality.lean:1 — content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean:42:24: error: unexpected token 'λ'; expected '_' or identifier"
+        "evidence": "shell-schur-weyl-self-duality.lean:1 — folio/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean:42:24: error: unexpected token 'λ'; expected '_' or identifier"
       },
       {
         "result": "pass",
@@ -1805,11 +1805,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.280050Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean fails compilation.",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean fails compilation.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean fails compilation."
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean fails compilation."
       },
       {
         "result": "pass",
@@ -1891,7 +1891,7 @@
         "reviewed_at": "2026-08-09T11:32:54.315Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/knots-particles-confinement/shell-schur-weyl-self-duality.md:1: Schur–Weyl duality — named result, no citation in block"
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/shell-schur-weyl-self-duality.md:1: Schur–Weyl duality — named result, no citation in block"
       }
     ],
     "voice-agent-speak": [

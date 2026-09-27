@@ -3,9 +3,9 @@
   "label": "prop:confinement-frobenius-reciprocity",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/confinement-frobenius-reciprocity.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/confinement-frobenius-reciprocity.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/confinement-frobenius-reciprocity.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/confinement-frobenius-reciprocity.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean"
   },
   "source_hashes": {
     "md": "4f8025a7dde0",
@@ -1259,7 +1259,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1437,7 +1437,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
       },
       {
         "result": "pass",
@@ -1504,7 +1504,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
       },
       {
         "result": "pass",
@@ -1571,7 +1571,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
       },
       {
         "result": "pass",
@@ -1605,7 +1605,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
       },
       {
         "result": "pass",
@@ -1637,9 +1637,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.447358Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.lean is missing, leading to complete divergence.",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.lean is missing, leading to complete divergence.",
         "severity": "minor",
-        "evidence": "The referenced Lean file content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.lean is missing, leading to complete divergence."
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",
@@ -1673,7 +1673,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Citations to yekutieli2015, kassel1995 are correct and contextually appropriate.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
       },
       {
         "result": "pass",
@@ -1707,7 +1707,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
       },
       {
         "result": "pass",
@@ -1741,7 +1741,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
       },
       {
         "result": "pass",
@@ -1775,7 +1775,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
       },
       {
         "result": "pass",
@@ -1809,7 +1809,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts:1"
       },
       {
         "result": "pass",
@@ -1841,11 +1841,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.447358Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.lean is missing.",
+        "notes": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.lean is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.lean is missing entirely, preventing formal verification of the claims in 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings'.",
-        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.lean is missing."
+        "referee_argument": "The referenced Lean sibling file folio/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.lean is missing entirely, preventing formal verification of the claims in 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.lean is missing."
       },
       {
         "result": "pass",

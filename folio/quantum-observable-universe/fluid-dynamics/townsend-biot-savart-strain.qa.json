@@ -3,9 +3,9 @@
   "label": "rem:townsend-biot-savart-strain",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.ts",
-    "md": "content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.md",
-    "lean": "content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.lean"
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.md",
+    "lean": "folio/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.lean"
   },
   "source_hashes": {
     "md": "88d5cb37b825",
@@ -686,7 +686,7 @@
         "reviewed_at": "2026-08-09T13:00:33.718Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.ts:0: forward ref: uses rem:hyperbolic-overlap-saturation (manifest pos 94) which appears after this block (pos 93) in the chapter"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.ts:0: forward ref: uses rem:hyperbolic-overlap-saturation (manifest pos 94) which appears after this block (pos 93) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -846,7 +846,7 @@
         "reviewed_at": "2026-08-09T13:00:33.718Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.ts:0: uses[] dependency cycle: rem:townsend-biot-savart-strain -> rem:hyperbolic-overlap-saturation -> rem:townsend-biot-savart-strain"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.ts:0: uses[] dependency cycle: rem:townsend-biot-savart-strain -> rem:hyperbolic-overlap-saturation -> rem:townsend-biot-savart-strain"
       }
     ],
     "bib-cited-ref-has-url": [

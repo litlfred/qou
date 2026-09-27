@@ -19,10 +19,10 @@ import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
 /-!
 # QOU.irreducible_connection
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/irreducible_connection.lean (monolithic).
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/irreducible_connection.lean (monolithic).
 That file no longer exists — the library was split, and `irreducible_connection` now lives at
-  content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Propositions.lean
+  folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Propositions.lean
 -/
 
 open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory

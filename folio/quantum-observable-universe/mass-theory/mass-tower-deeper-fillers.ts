@@ -27,7 +27,7 @@ export default remark({
         "functions, and the \"modulo $2\\pi$\" qualifier is itself " +
         "archimedean. The same applies to " +
         "`Cl_2_zero_consistent_with_pentagon`, which evaluates `Cl_2` at $0$.",
-      see: "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.lean",
+      see: "folio/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.lean",
     },
   ],
   label: "rem:mass-tower-deeper-fillers",

@@ -3,9 +3,9 @@
   "label": "prop:zeta8-witness-level2-su2",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.ts",
-    "md": "content/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.md",
-    "lean": "content/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.lean"
   },
   "source_hashes": {
     "md": "1b969975359a",
@@ -394,7 +394,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Traced dependencies ['prop:cyclotomic-strand-doubling', 'prop:habiro-pochhammer-bridge'] for 'prop:zeta8-witness-level2-su2' and confirmed no circular definitions or justifications.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
       },
       {
         "result": "pass",
@@ -426,7 +426,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All references and uses ['prop:cyclotomic-strand-doubling', 'prop:habiro-pochhammer-bridge'] cited in 'prop:zeta8-witness-level2-su2' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
       },
       {
         "result": "pass",
@@ -458,7 +458,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All terms and algebraic structures in 'prop:zeta8-witness-level2-su2' are uniquely defined or standard.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
       },
       {
         "result": "pass",
@@ -490,7 +490,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The algebraic statements in 'prop:zeta8-witness-level2-su2' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
       },
       {
         "result": "pass",
@@ -522,7 +522,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Checked mathematical consistency of the claim 'Proof' and found no counterexamples under the stated conditions.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
       },
       {
         "result": "pass",
@@ -554,7 +554,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
       },
       {
         "result": "pass",
@@ -618,7 +618,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Logical transitions in the derivation of 'Proof' are sound; no non-sequiturs detected.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
       },
       {
         "result": "pass",
@@ -681,7 +681,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Physical dimensions and units in 'prop:zeta8-witness-level2-su2' are consistent with quantum observable universe models.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
       },
       {
         "field_hash": {
@@ -765,7 +765,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All backing computations and proofs are fully reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
       },
       {
         "result": "pass",
@@ -1353,7 +1353,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.lean:64 [discharged-impossible-hyp] theorem qPoch_seven_eq_eight (hζ : IsPrimitiveRoot ζ 8) : qPoch ζ 7 = (8 : R) := by | content/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.lean:118 [discharged-impossible-hyp] theorem qInt_four_eq_zero (hζ : IsPrimitiveRoot ζ 8) : qInt ζ 4 = 0 := by",
+        "evidence": "folio/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.lean:64 [discharged-impossible-hyp] theorem qPoch_seven_eq_eight (hζ : IsPrimitiveRoot ζ 8) : qPoch ζ 7 = (8 : R) := by | folio/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.lean:118 [discharged-impossible-hyp] theorem qInt_four_eq_zero (hζ : IsPrimitiveRoot ζ 8) : qInt ζ 4 = 0 := by",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",

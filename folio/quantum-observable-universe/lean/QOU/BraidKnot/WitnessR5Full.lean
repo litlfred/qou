@@ -7,7 +7,7 @@ import QOU.BraidKnot.LightNucleus
 The R5-full SDP-search numerical certificate (PR #608) for a
 light nucleus.  Mirrors the `R5FullWitness` class declared in
 the content-block file
-`content/quantum-observable-universe/braids-and-knots/conj-canonical-knot-id-sdp.lean`
+`folio/quantum-observable-universe/braids-and-knots/conj-canonical-knot-id-sdp.lean`
 into the Lake-tracked tree.
 
 ## What this module provides

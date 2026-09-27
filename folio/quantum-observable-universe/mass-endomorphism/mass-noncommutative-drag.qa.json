@@ -3,8 +3,8 @@
   "label": "rem:mass-noncommutative-drag",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-endomorphism/mass-noncommutative-drag.ts",
-    "md": "content/quantum-observable-universe/mass-endomorphism/mass-noncommutative-drag.md"
+    "ts": "folio/quantum-observable-universe/mass-endomorphism/mass-noncommutative-drag.ts",
+    "md": "folio/quantum-observable-universe/mass-endomorphism/mass-noncommutative-drag.md"
   },
   "source_hashes": {
     "md": "6cbd259dc355",
@@ -599,7 +599,7 @@
         "reviewed_at": "2026-08-29T15:52:33.383Z",
         "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-noncommutative-drag.ts:0: forward ref: uses rem:mass-geometric-drag (manifest pos 11) which appears after this block (pos 8) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-endomorphism/mass-noncommutative-drag.ts:0: forward ref: uses rem:mass-geometric-drag (manifest pos 11) which appears after this block (pos 8) in the chapter"
       }
     ],
     "detangler-section-band": [

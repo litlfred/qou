@@ -3,9 +3,9 @@
   "label": "prop:x5-z5-automorphism",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/brings-surface/x5-z5-automorphism.ts",
-    "md": "content/quantum-observable-universe/brings-surface/x5-z5-automorphism.md",
-    "lean": "content/quantum-observable-universe/brings-surface/x5-z5-automorphism.lean"
+    "ts": "folio/quantum-observable-universe/brings-surface/x5-z5-automorphism.ts",
+    "md": "folio/quantum-observable-universe/brings-surface/x5-z5-automorphism.md",
+    "lean": "folio/quantum-observable-universe/brings-surface/x5-z5-automorphism.lean"
   },
   "source_hashes": {
     "md": "de762b6c6484",
@@ -456,7 +456,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/brings-surface/x5-z5-automorphism.md:1 — detected regime [root-of-unity] is disjoint from chapter 'brings-surface' expected [fixed-q0, generic-R, na, real-gt-1, real-positive, symbolic]"
+        "evidence": "folio/quantum-observable-universe/brings-surface/x5-z5-automorphism.md:1 — detected regime [root-of-unity] is disjoint from chapter 'brings-surface' expected [fixed-q0, generic-R, na, real-gt-1, real-positive, symbolic]"
       }
     ],
     "proof-no-bare-sorries": [

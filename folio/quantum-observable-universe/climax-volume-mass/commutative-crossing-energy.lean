@@ -49,7 +49,7 @@ kernel-verified `theorem`s derived from the axioms via `rfl`/`omega`.
 This sibling file lives next to
 [`commutative-crossing-energy.md`](commutative-crossing-energy.md)
 for content-block resolution. A Lake-built mirror at
-`content/quantum-observable-universe/lean/QOU/BraidKnot/`
+`folio/quantum-observable-universe/lean/QOU/BraidKnot/`
 is a follow-up — adding it requires updating `QOU.lean`'s
 import list and re-running `lake build` from the root workspace.
 -/

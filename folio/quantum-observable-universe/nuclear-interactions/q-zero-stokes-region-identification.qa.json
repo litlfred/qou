@@ -3,9 +3,9 @@
   "label": "conj:q-zero-stokes-region-identification",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/q-zero-stokes-region-identification.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/q-zero-stokes-region-identification.md",
-    "lean": "content/quantum-observable-universe/nuclear-interactions/q-zero-stokes-region-identification.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/q-zero-stokes-region-identification.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/q-zero-stokes-region-identification.md",
+    "lean": "folio/quantum-observable-universe/nuclear-interactions/q-zero-stokes-region-identification.lean"
   },
   "source_hashes": {
     "md": "ac27d1368f0e",
@@ -1833,7 +1833,7 @@
         "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
         "severity": "minor",
         "evidence": "'Mostow-Prasad rigidity and Reid's trace field theorem **guarantee a unique** algebraic distinguished point $[\\rho_{\\mathrm{DF}}]$.' Also the tag '100-percent-proved-track'. Also '$\\mathbb{Z}[q, q^{\\pm 1}]$'.",
-        "notes": "THREE problems. (1) THREE DANGLING CITATION KEYS -- checked by exact id lookup in content/schema/references.ts: `prasad1973`, `reid1990` and `champanerkar-kofman-mullen2008` are in the .ts cites[] but have NO entry (count 0 each; 'prasad' appears nowhere in the file). Two of the three are exactly the results the 'guarantee' sentence leans on, so the block's strongest claim is backed by citations that do not resolve. The other five keys (mostow1968, garoufalidis2004, faddeev1995, kashaev1997, murakami-murakami2001) are present. (2) The tag '100-percent-proved-track' sits on a CONJECTURE whose own text says 'The specific algebraic identification of $q_0$ ... remains the conjectural gap'. (3) MALFORMED RING: '$\\mathbb{Z}[q, q^{\\pm 1}]$' (three times) lists $q$ alongside $q^{\\pm1}$; the same block writes the correct '$\\mathbb{Z}[q, q^{-1}]$' twice, so it is an internal inconsistency, not a house convention."
+        "notes": "THREE problems. (1) THREE DANGLING CITATION KEYS -- checked by exact id lookup in folio/schema/references.ts: `prasad1973`, `reid1990` and `champanerkar-kofman-mullen2008` are in the .ts cites[] but have NO entry (count 0 each; 'prasad' appears nowhere in the file). Two of the three are exactly the results the 'guarantee' sentence leans on, so the block's strongest claim is backed by citations that do not resolve. The other five keys (mostow1968, garoufalidis2004, faddeev1995, kashaev1997, murakami-murakami2001) are present. (2) The tag '100-percent-proved-track' sits on a CONJECTURE whose own text says 'The specific algebraic identification of $q_0$ ... remains the conjectural gap'. (3) MALFORMED RING: '$\\mathbb{Z}[q, q^{\\pm 1}]$' (three times) lists $q$ alongside $q^{\\pm1}$; the same block writes the correct '$\\mathbb{Z}[q, q^{-1}]$' twice, so it is an internal inconsistency, not a house convention."
       }
     ],
     "trap-nonspeakable": [

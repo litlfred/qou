@@ -3,9 +3,9 @@
   "label": "conj:hoefsmit-scattering-pipeline",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.ts",
-    "md": "content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.md",
-    "lean": "content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean"
   },
   "source_hashes": {
     "md": "f57299ed0683",
@@ -169,7 +169,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean:59: so the composite mass map `J_K ↦ m_e · Geom(K) · J_K` is"
+        "evidence": "folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean:59: so the composite mass map `J_K ↦ m_e · Geom(K) · J_K` is"
       }
     ],
     "voice-title-scholarly": [
@@ -647,7 +647,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.ts:0: forward ref: uses conj:geom-yekutieli-alignment (manifest pos 670) which appears after this block (pos 128) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.ts:0: forward ref: uses conj:geom-yekutieli-alignment (manifest pos 670) which appears after this block (pos 128) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1054,7 +1054,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.977360Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The mathematical claims in 'From Hoefsmit scattering weights to physical mass via the observation frame' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean:27:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/ConditionalClasses.olean' of module QOU.BraidKnot.ConditionalClasses does not exist.",
+        "notes": "The mathematical claims in 'From Hoefsmit scattering weights to physical mass via the observation frame' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean:27:0: error: object file '/Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/ConditionalClasses.olean' of module QOU.BraidKnot.ConditionalClasses does not exist.",
         "severity": "minor",
         "evidence": "hoefsmit-scattering-pipeline.lean:1"
       },
@@ -1089,7 +1089,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.977360Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
         "evidence": "hoefsmit-scattering-pipeline.lean:1"
       },
@@ -1229,7 +1229,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.977360Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean.",
         "severity": "minor",
         "evidence": "hoefsmit-scattering-pipeline.lean:1"
       },
@@ -1264,9 +1264,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.977360Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1439,9 +1439,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.977360Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "hoefsmit-scattering-pipeline.lean:1 — content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean:27:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/ConditionalClasses.olean' of module QOU.BraidKnot.ConditionalClasses does not exist"
+        "evidence": "hoefsmit-scattering-pipeline.lean:1 — folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean:27:0: error: object file '/Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/ConditionalClasses.olean' of module QOU.BraidKnot.ConditionalClasses does not exist"
       },
       {
         "result": "pass",
@@ -1474,11 +1474,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.977360Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean contains 'sorry' placeholders.",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean contains 'sorry' placeholders.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean contains 'sorry' placeholders."
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",

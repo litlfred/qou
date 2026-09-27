@@ -3,8 +3,8 @@
   "label": "rem:simple-objects-V",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-universes/simple-objects-V.ts",
-    "md": "content/quantum-observable-universe/quantum-universes/simple-objects-V.md"
+    "ts": "folio/quantum-observable-universe/quantum-universes/simple-objects-V.ts",
+    "md": "folio/quantum-observable-universe/quantum-universes/simple-objects-V.md"
   },
   "source_hashes": {
     "md": "03f69444bb75",
@@ -1246,7 +1246,7 @@
         "reviewed_at": "2026-08-22T06:08:16.302Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/simple-objects-V.md (6 lines, kind=remark, title=\"Simple objects and the role of V\"). searched for assert-by-denying constructions ('not X but Y', 'X, not Y', 'rather than'); none present beyond substantive mathematical contrast that is itself the block's claim",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/simple-objects-V.md (6 lines, kind=remark, title=\"Simple objects and the role of V\"). searched for assert-by-denying constructions ('not X but Y', 'X, not Y', 'rather than'); none present beyond substantive mathematical contrast that is itself the block's claim",
         "notes": "no fix needed"
       }
     ],
@@ -1282,7 +1282,7 @@
         "reviewed_at": "2026-08-22T06:08:16.343Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/simple-objects-V.md (6 lines, kind=remark, title=\"Simple objects and the role of V\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/simple-objects-V.md (6 lines, kind=remark, title=\"Simple objects and the role of V\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
         "notes": "no fix needed"
       }
     ],
@@ -1318,7 +1318,7 @@
         "reviewed_at": "2026-08-22T06:08:16.381Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/simple-objects-V.md (6 lines, kind=remark, title=\"Simple objects and the role of V\"). 0 spaced em-dash construction(s); LaTeX '--' occurrences are name-internal (Maurer--Cartan, Frobenius--Hopf, Tannaka--Krein), not sentence punctuation",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/simple-objects-V.md (6 lines, kind=remark, title=\"Simple objects and the role of V\"). 0 spaced em-dash construction(s); LaTeX '--' occurrences are name-internal (Maurer--Cartan, Frobenius--Hopf, Tannaka--Krein), not sentence punctuation",
         "notes": "no fix needed"
       }
     ],
@@ -1354,7 +1354,7 @@
         "reviewed_at": "2026-08-22T06:08:16.420Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/simple-objects-V.md (6 lines, kind=remark, title=\"Simple objects and the role of V\"). no reflex three-item list; enumerations present are content-determined",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/simple-objects-V.md (6 lines, kind=remark, title=\"Simple objects and the role of V\"). no reflex three-item list; enumerations present are content-determined",
         "notes": "no fix needed"
       }
     ],
@@ -1390,7 +1390,7 @@
         "reviewed_at": "2026-08-22T06:08:16.457Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/simple-objects-V.md (6 lines, kind=remark, title=\"Simple objects and the role of V\"). Block closed 'These properties make $V$ the natural carrier for vectors.' - a quotable-sounding final line whose content ('carrier for vectors') is not defined anywhere and adds nothing to the two numbered properties above it.",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/simple-objects-V.md (6 lines, kind=remark, title=\"Simple objects and the role of V\"). Block closed 'These properties make $V$ the natural carrier for vectors.' - a quotable-sounding final line whose content ('carrier for vectors') is not defined anywhere and adds nothing to the two numbered properties above it.",
         "notes": "FIX APPLIED: deleted the final paragraph 'These properties make $V$ the natural carrier for vectors.'; block now ends on the numbered property list."
       }
     ],
@@ -1426,7 +1426,7 @@
         "reviewed_at": "2026-08-22T06:08:16.496Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/simple-objects-V.md (6 lines, kind=remark, title=\"Simple objects and the role of V\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/simple-objects-V.md (6 lines, kind=remark, title=\"Simple objects and the role of V\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
         "notes": "no fix needed"
       }
     ],
@@ -1462,7 +1462,7 @@
         "reviewed_at": "2026-08-22T06:08:16.534Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/simple-objects-V.md (6 lines, kind=remark, title=\"Simple objects and the role of V\"). final sentence is \"**Tensor generation**: Every simple object appears as a direct summand of some tensor power $V^{\\otimes n}$.\" - it advances or points forward rather than restating what the block already established",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/simple-objects-V.md (6 lines, kind=remark, title=\"Simple objects and the role of V\"). final sentence is \"**Tensor generation**: Every simple object appears as a direct summand of some tensor power $V^{\\otimes n}$.\" - it advances or points forward rather than restating what the block already established",
         "notes": "no fix needed"
       }
     ],
@@ -1498,7 +1498,7 @@
         "reviewed_at": "2026-08-22T06:08:16.573Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/simple-objects-V.md (6 lines, kind=remark, title=\"Simple objects and the role of V\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/simple-objects-V.md (6 lines, kind=remark, title=\"Simple objects and the role of V\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
         "notes": "no fix needed"
       }
     ],
@@ -1534,7 +1534,7 @@
         "reviewed_at": "2026-08-22T06:08:16.612Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/simple-objects-V.md (6 lines, kind=remark, title=\"Simple objects and the role of V\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/simple-objects-V.md (6 lines, kind=remark, title=\"Simple objects and the role of V\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
         "notes": "no fix needed"
       }
     ],
@@ -1570,7 +1570,7 @@
         "reviewed_at": "2026-08-22T06:08:16.650Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/simple-objects-V.md (6 lines, kind=remark, title=\"Simple objects and the role of V\"). prose reads aloud without stalling; no noun-chain built for the eye only",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/simple-objects-V.md (6 lines, kind=remark, title=\"Simple objects and the role of V\"). prose reads aloud without stalling; no noun-chain built for the eye only",
         "notes": "no fix needed"
       }
     ],

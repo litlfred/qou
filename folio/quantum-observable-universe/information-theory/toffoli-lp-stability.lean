@@ -13,7 +13,7 @@
   strictly positive on q > 0 with NO positive zero — so the golden
   threshold is a property of the excised frame, not of the gate, and
   LP-stability is not equivalent to the positivity below.  See
-  content/quantum-observable-universe/information-theory/
+  folio/quantum-observable-universe/information-theory/
   toffoli-lp-stability.md items 1-2 and the derivation probe
   computations/probes/toffoli_trio_rederivation.py.
 

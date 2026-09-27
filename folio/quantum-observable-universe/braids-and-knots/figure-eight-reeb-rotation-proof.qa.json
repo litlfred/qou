@@ -3,8 +3,8 @@
   "label": "prf:figure-eight-reeb-rotation",
   "kind": "proof",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation-proof.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation-proof.md"
+    "ts": "folio/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation-proof.ts",
+    "md": "folio/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation-proof.md"
   },
   "source_hashes": {
     "md": "727b59d9885c",
@@ -843,7 +843,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation-proof.md:102 \u2014 This proves the unit-modulus claim, with the rotation angle determined by the closed-form trace of Step 3. At $q = 1$ the trace is $-1$, so $\\theta = 2\\pi/3$ exactly (the eigenvalues are the primitive cube roots of unity); at the substrate value of $q$ the angle evaluates to $\\theta \\approx 117.09^{\\circ}$. The eigenvalue degenerates to $\\lambda = 1$ ($\\theta = 0$) exactly at the golden endpoints $q \\in \\{\\varphi^{-1}, \\varphi\\}$, where $\\mathrm{tr}(M_{4_1}) = 2$, and the boundary value $\\theta = \\pi$ is never attained on the real axis since $\\mathrm{tr}(M_{4_1}) + 2$ is a nonzero square. $\\square$"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation-proof.md:102 \u2014 This proves the unit-modulus claim, with the rotation angle determined by the closed-form trace of Step 3. At $q = 1$ the trace is $-1$, so $\\theta = 2\\pi/3$ exactly (the eigenvalues are the primitive cube roots of unity); at the substrate value of $q$ the angle evaluates to $\\theta \\approx 117.09^{\\circ}$. The eigenvalue degenerates to $\\lambda = 1$ ($\\theta = 0$) exactly at the golden endpoints $q \\in \\{\\varphi^{-1}, \\varphi\\}$, where $\\mathrm{tr}(M_{4_1}) = 2$, and the boundary value $\\theta = \\pi$ is never attained on the real axis since $\\mathrm{tr}(M_{4_1}) + 2$ is a nonzero square. $\\square$"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [

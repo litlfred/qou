@@ -62,7 +62,7 @@ class HabiroFlowSolution where
   all_hold : expQ_solves_base_reeb ∧ fourier_diagonalises_qheat
               ∧ liTwoQ_volumetric
 
--- Ref: [manuscript] content/quantum-observable-universe/quantum-observable-universes/generating-functions-solve-reeb-flow.md
+-- Ref: [manuscript] folio/quantum-observable-universe/quantum-observable-universes/generating-functions-solve-reeb-flow.md
 
 
 /-! ### Removed 2026-08-30 — self-assuming projections

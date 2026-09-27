@@ -3,9 +3,9 @@
   "label": "prop:categorical-jet-prolongation",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.ts",
-    "md": "content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.md",
-    "lean": "content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean"
+    "ts": "folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.ts",
+    "md": "folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.md",
+    "lean": "folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean"
   },
   "source_hashes": {
     "md": "86a5e207757d",
@@ -145,7 +145,7 @@
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.md:19: 1. **Frobenius–Hopf transport.** The jet inclusion $j^1 \\colon A \\hookrightarrow J^1(A)$ forms an exact algebra map, and $\\nabla$ strictly splits $J^1(A) \\cong A \\oplus (\\Omega^1 \\otimes A)$. The mult"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.md:19: 1. **Frobenius–Hopf transport.** The jet inclusion $j^1 \\colon A \\hookrightarrow J^1(A)$ forms an exact algebra map, and $\\nabla$ strictly splits $J^1(A) \\cong A \\oplus (\\Omega^1 \\otimes A)$. The mult"
       }
     ],
     "voice-scholarly-default": [
@@ -1496,7 +1496,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No false claims identified in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe with': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.ts:1"
       },
       {
         "result": "pass",
@@ -1528,9 +1528,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean fails compilation, rendering the verification vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean fails compilation, rendering the verification vacuous.",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean:1"
       },
       {
         "result": "pass",
@@ -1564,7 +1564,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe with'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.ts:1"
       },
       {
         "result": "pass",
@@ -1632,7 +1632,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe with'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.ts:1"
       },
       {
         "result": "pass",
@@ -1666,7 +1666,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The argument flow in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe with' has logical gaps due to compilation failure in its Lean sibling.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean:1"
       },
       {
         "result": "pass",
@@ -1698,9 +1698,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean:1"
       },
       {
         "result": "pass",
@@ -1734,7 +1734,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe with', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.ts:1"
       },
       {
         "result": "pass",
@@ -1768,7 +1768,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe with' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.ts:1"
       },
       {
         "result": "pass",
@@ -1802,7 +1802,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe with' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.ts:1"
       },
       {
         "result": "pass",
@@ -1836,7 +1836,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe with' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.ts:1"
       },
       {
         "result": "pass",
@@ -1868,9 +1868,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean:1 — ../lifting-and-descent/categorical-jet-prolongation.lean:32:7: error: Function expected at"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean:1 — ../lifting-and-descent/categorical-jet-prolongation.lean:32:7: error: Function expected at"
       },
       {
         "result": "pass",
@@ -1905,7 +1905,7 @@
         "notes": "Referee verdict: open-objection. Sibling Lean file has issues: da-vacuous, da-lean-narrative-divergence, da-reproducibility.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean fails compilation with errors (../lifting-and-descent/categorical-jet-prolongation.lean:32:7: error: Function expected at), preventing formal verification of the claims in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe with'.",
+        "referee_argument": "The referenced Lean sibling file folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean fails compilation with errors (../lifting-and-descent/categorical-jet-prolongation.lean:32:7: error: Function expected at), preventing formal verification of the claims in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe with'.",
         "evidence": "Referee verdict: open-objection. Sibling Lean file has issues: da-vacuous, da-lean-narrative-divergence, da-reproducibility."
       },
       {

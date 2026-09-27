@@ -3,8 +3,8 @@
   "label": "prf:quantum-characteristic-classes-exists",
   "kind": "proof",
   "paths": {
-    "ts": "content/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts",
-    "md": "content/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.md"
+    "ts": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts",
+    "md": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.md"
   },
   "source_hashes": {
     "md": "405b1e330f40",
@@ -839,7 +839,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No false claims identified in 'The jet prolongation (jet prolongation)': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
       }
     ],
     "da-vacuous": [
@@ -874,7 +874,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'The jet prolongation (jet prolongation)'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
       }
     ],
     "da-overclaim": [
@@ -909,7 +909,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The jet prolongation (jet prolongation)'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -927,7 +927,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The argument flow in 'The jet prolongation (jet prolongation)' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -962,7 +962,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'The jet prolongation (jet prolongation)', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -980,7 +980,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'The jet prolongation (jet prolongation)' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -998,7 +998,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'The jet prolongation (jet prolongation)' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1016,7 +1016,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'The jet prolongation (jet prolongation)' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1034,7 +1034,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The derivation steps and formal definitions in 'The jet prolongation (jet prolongation)' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
       }
     ],
     "da-referee-verdict": [

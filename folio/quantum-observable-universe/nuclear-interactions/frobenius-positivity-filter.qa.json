@@ -3,9 +3,9 @@
   "label": "prop:frobenius-positivity-filter",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/frobenius-positivity-filter.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/frobenius-positivity-filter.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/frobenius_positivity_filter.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/frobenius-positivity-filter.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/frobenius-positivity-filter.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/frobenius_positivity_filter.lean"
   },
   "source_hashes": {
     "md": "e5d6422f7353",
@@ -1279,7 +1279,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/ParticleInteractions/frobenius_positivity_filter.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/ParticleInteractions/frobenius_positivity_filter.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1457,7 +1457,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Frobenius positivity filter for even-$A$ decays': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
       },
       {
         "result": "pass",
@@ -1524,7 +1524,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Frobenius positivity filter for even-$A$ decays'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
       },
       {
         "result": "pass",
@@ -1591,7 +1591,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Frobenius positivity filter for even-$A$ decays'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
       },
       {
         "result": "pass",
@@ -1625,7 +1625,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Frobenius positivity filter for even-$A$ decays' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
       },
       {
         "result": "pass",
@@ -1657,9 +1657,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.lean is missing, leading to complete divergence.",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.lean is missing, leading to complete divergence.",
         "severity": "minor",
-        "evidence": "The referenced Lean file content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.lean is missing, leading to complete divergence."
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",
@@ -1693,7 +1693,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Frobenius positivity filter for even-$A$ decays', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
       },
       {
         "result": "pass",
@@ -1727,7 +1727,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Frobenius positivity filter for even-$A$ decays' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
       },
       {
         "result": "pass",
@@ -1761,7 +1761,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Frobenius positivity filter for even-$A$ decays' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
       },
       {
         "result": "pass",
@@ -1795,7 +1795,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Frobenius positivity filter for even-$A$ decays' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
       },
       {
         "result": "pass",
@@ -1829,7 +1829,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Frobenius positivity filter for even-$A$ decays' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1"
       },
       {
         "result": "pass",
@@ -1861,11 +1861,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.lean is missing.",
+        "notes": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.lean is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.lean is missing entirely, preventing formal verification of the claims in 'Frobenius positivity filter for even-$A$ decays'.",
-        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.lean is missing."
+        "referee_argument": "The referenced Lean sibling file folio/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.lean is missing entirely, preventing formal verification of the claims in 'Frobenius positivity filter for even-$A$ decays'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.lean is missing."
       },
       {
         "result": "pass",

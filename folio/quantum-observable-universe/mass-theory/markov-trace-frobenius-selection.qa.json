@@ -3,9 +3,9 @@
   "label": "prop:markov-trace-frobenius-selection",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.ts",
-    "md": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md",
-    "lean": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.lean"
   },
   "source_hashes": {
     "md": "6da88e670732",
@@ -695,7 +695,7 @@
         "reviewed_at": "2026-08-30T19:53:08.882Z",
         "reviewed_sha": "0289d75f6c6b5c9a260b0dbe0a36fd47779e2c80",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.ts:0: forward ref: uses lem:feynman-eigenbasis-decomposition (manifest pos 301) which appears after this block (pos 166) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.ts:0: forward ref: uses lem:feynman-eigenbasis-decomposition (manifest pos 301) which appears after this block (pos 166) in the chapter"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1518,7 +1518,7 @@
         "reviewed_at": "2026-08-30T19:53:08.882Z",
         "reviewed_sha": "0289d75f6c6b5c9a260b0dbe0a36fd47779e2c80",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md:61: P4:date-ref: > **OPEN (2026-08-09) — owner's call, not settled here.** As written, $C_{\\dim_q}$ divides by $\\tau(p_\\lambda)$ and the sum runs over *every* Wedderburn block, so under convention D the element is **u | content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md:117: P4:date-ref: > **Provenance (regenerated 2026-08-30, bean `qou-1ucq`).** The values above are read from the committed proton-anchored witnesses [`computations/markov/markov-peel-atomic-tr-m.witness.json`](../../.."
+        "evidence": "folio/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md:61: P4:date-ref: > **OPEN (2026-08-09) — owner's call, not settled here.** As written, $C_{\\dim_q}$ divides by $\\tau(p_\\lambda)$ and the sum runs over *every* Wedderburn block, so under convention D the element is **u | folio/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md:117: P4:date-ref: > **Provenance (regenerated 2026-08-30, bean `qou-1ucq`).** The values above are read from the committed proton-anchored witnesses [`computations/markov/markov-peel-atomic-tr-m.witness.json`](../../.."
       }
     ],
     "voice-branch-jargon": [
@@ -1552,7 +1552,7 @@
         "reviewed_at": "2026-08-30T19:53:08.882Z",
         "reviewed_sha": "0289d75f6c6b5c9a260b0dbe0a36fd47779e2c80",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md:17: **(iii) What the pairing then is.** *Consequently $\\langle x, y \\rangle_\\tau := \\mathrm{tr}_M(xy)$ is **degenerate** on $H_n(R,q)$ for $n \\geq 3$, and the radical of the form (not the Jacobson radical | content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md:91: *Then $z$ is forced to satisfy $z \\, [2]_q = q^{2}$, and $\\tau = \\mathrm{tr}_M$, the convention-D Jones–Markov trace, at every level of the tower — **on all of** $H_n(R,q)$, not merely modulo the radi | content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md:95: *Both hypotheses are load-bearing and neither is redundant. Dropping 1 leaves $z$ free (the full Ocneanu family, convention C among it). Dropping 2 admits the trivial character $y = (1, 0, 0)$ at $z ="
+        "evidence": "folio/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md:17: **(iii) What the pairing then is.** *Consequently $\\langle x, y \\rangle_\\tau := \\mathrm{tr}_M(xy)$ is **degenerate** on $H_n(R,q)$ for $n \\geq 3$, and the radical of the form (not the Jacobson radical | folio/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md:91: *Then $z$ is forced to satisfy $z \\, [2]_q = q^{2}$, and $\\tau = \\mathrm{tr}_M$, the convention-D Jones–Markov trace, at every level of the tower — **on all of** $H_n(R,q)$, not merely modulo the radi | folio/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md:95: *Both hypotheses are load-bearing and neither is redundant. Dropping 1 leaves $z$ free (the full Ocneanu family, convention C among it). Dropping 2 admits the trivial character $y = (1, 0, 0)$ at $z ="
       }
     ],
     "voice-emoji-content": [

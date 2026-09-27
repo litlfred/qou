@@ -3,9 +3,9 @@
   "label": "prop:tritium-qvalue-symbolic",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/tritium-qvalue-symbolic.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/tritium-qvalue-symbolic.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/tritium_qvalue_symbolic.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/tritium-qvalue-symbolic.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/tritium-qvalue-symbolic.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/tritium_qvalue_symbolic.lean"
   },
   "source_hashes": {
     "md": "65f46c84666a",
@@ -1242,7 +1242,7 @@
         "reviewed_at": "2026-09-03T05:15:41Z",
         "reviewed_sha": "e71ba7a90360c4c6aee91f9e189fb7580a99db79",
         "notes": "Archimedean-chapter statement (Q-value scaled by m_e) matching its chapter regime; numeric q_0/MeV evaluation is confined to a separately headed section outside the Statement — prior templated fail was a false positive.",
-        "evidence": "Regime: nuclear-interactions was split from particle-interactions (content/quantum-observable-universe/nuclear-interactions/nuclear-interactions.ts:11-12; manifest describes 'beta decay transfer matrices … branching Q-values', :6-9), and particle-interactions is in ARCHIMEDEAN_CHAPTERS with fixed-q0 expected (folio-assistant/cat-harness/content/pipeline/_folio-chapter-profiles.qou.ts:95-97, :174-176; .claude/skills/local/q-usage-watcher.md:79-83); the block sits in section sec:branching-qvalue (nuclear-interactions.ts:257-268), so the chapter regime is archimedean. Tokens: the Statement (tritium-qvalue-symbolic.md:7-11) is a rational function of q times the physical mass scale m_e (md:10) — a Q-value, i.e. a comparison-boundary quantity — and is not a purely algebraic identity belonging upstream: the pure identity a^Z b^(N-1)(a-b) already lives upstream in branching-qvalue-factorization.md:8-14 (uses[] at tritium-qvalue-symbolic.ts:17-19), and this block is its (Z,N)=(1,2) specialisation with the m_e scale attached, exactly the same shape as the passing peer neutron-qvalue-symbolic.md:32-39 (m_e·|q²−2q−1|(q+1)/(2q³)). The archimedean evaluation (q_0 at md:29; ≈ 0.0179 MeV at md:33; Q_exp = 0.0186 MeV, −3.64 %, CODATA at md:36) is confined to the separately headed '## Numerical evaluation' section, opens with 'At the substrate parameter q_0' (md:29) which flags the side of evaluation, and uses ≈ per AGENTS.md §7ab — so the two sides are not mixed unflagged and no WARN applies. No §3b-cond banner is owed (uses[] carries no conj:), no wall: field or authorNotes exist in the .ts (AGENTS.md §4d at :3594 is moot), and AGENTS.md §7c (:3929, :3965) permits an archimedean statement in an archimedean chapter; the prior 2026-07-07 fail cited no token or line and its evidence string is the templated one shared by four other blocks in this directory."
+        "evidence": "Regime: nuclear-interactions was split from particle-interactions (folio/quantum-observable-universe/nuclear-interactions/nuclear-interactions.ts:11-12; manifest describes 'beta decay transfer matrices … branching Q-values', :6-9), and particle-interactions is in ARCHIMEDEAN_CHAPTERS with fixed-q0 expected (folio-assistant/cat-harness/content/pipeline/_folio-chapter-profiles.qou.ts:95-97, :174-176; .claude/skills/local/q-usage-watcher.md:79-83); the block sits in section sec:branching-qvalue (nuclear-interactions.ts:257-268), so the chapter regime is archimedean. Tokens: the Statement (tritium-qvalue-symbolic.md:7-11) is a rational function of q times the physical mass scale m_e (md:10) — a Q-value, i.e. a comparison-boundary quantity — and is not a purely algebraic identity belonging upstream: the pure identity a^Z b^(N-1)(a-b) already lives upstream in branching-qvalue-factorization.md:8-14 (uses[] at tritium-qvalue-symbolic.ts:17-19), and this block is its (Z,N)=(1,2) specialisation with the m_e scale attached, exactly the same shape as the passing peer neutron-qvalue-symbolic.md:32-39 (m_e·|q²−2q−1|(q+1)/(2q³)). The archimedean evaluation (q_0 at md:29; ≈ 0.0179 MeV at md:33; Q_exp = 0.0186 MeV, −3.64 %, CODATA at md:36) is confined to the separately headed '## Numerical evaluation' section, opens with 'At the substrate parameter q_0' (md:29) which flags the side of evaluation, and uses ≈ per AGENTS.md §7ab — so the two sides are not mixed unflagged and no WARN applies. No §3b-cond banner is owed (uses[] carries no conj:), no wall: field or authorNotes exist in the .ts (AGENTS.md §4d at :3594 is moot), and AGENTS.md §7c (:3929, :3965) permits an archimedean statement in an archimedean chapter; the prior 2026-07-07 fail cited no token or line and its evidence string is the templated one shared by four other blocks in this directory."
       }
     ],
     "wall-side-proof": [
@@ -1277,7 +1277,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/ParticleInteractions/tritium_qvalue_symbolic.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/ParticleInteractions/tritium_qvalue_symbolic.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",

@@ -3,9 +3,9 @@
   "label": "def:grobner-shirshov-basis",
   "kind": "definition",
   "paths": {
-    "ts": "content/fred2005-formal-groups/formal-groups-chapter/grobner-shirshov-basis.ts",
-    "md": "content/fred2005-formal-groups/formal-groups-chapter/grobner-shirshov-basis.md",
-    "lean": "content/fred2005-formal-groups/formal-groups-chapter/grobner-shirshov-basis.lean"
+    "ts": "folio/fred2005-formal-groups/formal-groups-chapter/grobner-shirshov-basis.ts",
+    "md": "folio/fred2005-formal-groups/formal-groups-chapter/grobner-shirshov-basis.md",
+    "lean": "folio/fred2005-formal-groups/formal-groups-chapter/grobner-shirshov-basis.lean"
   },
   "source_hashes": {
     "ts": "c82d968ea5af",
@@ -409,7 +409,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/fred2005-formal-groups/formal-groups-chapter/grobner-shirshov-basis.md:5 — root-of-unity construction used without explicit regime declaration — normal-form basis coinciding with the Lusztig divided-power basis."
+        "evidence": "folio/fred2005-formal-groups/formal-groups-chapter/grobner-shirshov-basis.md:5 — root-of-unity construction used without explicit regime declaration — normal-form basis coinciding with the Lusztig divided-power basis."
       }
     ],
     "q-usage-narrative-chapter-mismatch": [

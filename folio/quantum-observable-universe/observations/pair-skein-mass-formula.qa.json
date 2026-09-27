@@ -3,9 +3,9 @@
   "label": "lem:pair-skein-mass-formula",
   "kind": "lemma",
   "paths": {
-    "ts": "content/quantum-observable-universe/observations/pair-skein-mass-formula.ts",
-    "md": "content/quantum-observable-universe/observations/pair-skein-mass-formula.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/HadronicMass/pair_skein_mass_formula.lean"
+    "ts": "folio/quantum-observable-universe/observations/pair-skein-mass-formula.ts",
+    "md": "folio/quantum-observable-universe/observations/pair-skein-mass-formula.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/HadronicMass/pair_skein_mass_formula.lean"
   },
   "source_hashes": {
     "md": "82d6b9a334d4",
@@ -385,7 +385,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lean/QOU/HadronicMass/pair_skein_mass_formula.lean:47 — positivity-dependent Real.* on q without explicit hypothesis — pair_skein_mass_ident : ∀ a b : ℕ, S_ab a b = (q * μ a + q⁻¹ * μ b) / (Real.sqrt q + 1 / Real.sqrt q) | content/quantum-observable-universe/lean/QOU/HadronicMass/pair_skein_mass_formula.lean:59 — positivity-dependent Real.* on q without explicit hypothesis — (ctx.q * ctx.μ a + ctx.q⁻¹ * ctx.μ b) / (Real.sqrt ctx.q + 1 / Real.sqrt ctx.q) := by"
+        "evidence": "folio/quantum-observable-universe/lean/QOU/HadronicMass/pair_skein_mass_formula.lean:47 — positivity-dependent Real.* on q without explicit hypothesis — pair_skein_mass_ident : ∀ a b : ℕ, S_ab a b = (q * μ a + q⁻¹ * μ b) / (Real.sqrt q + 1 / Real.sqrt q) | folio/quantum-observable-universe/lean/QOU/HadronicMass/pair_skein_mass_formula.lean:59 — positivity-dependent Real.* on q without explicit hypothesis — (ctx.q * ctx.μ a + ctx.q⁻¹ * ctx.μ b) / (Real.sqrt ctx.q + 1 / Real.sqrt ctx.q) := by"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -1280,7 +1280,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/HadronicMass/pair_skein_mass_formula.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/HadronicMass/pair_skein_mass_formula.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1475,7 +1475,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Pair Skein mass and crossing-by-crossing recursion': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/pair-skein-mass-formula.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/pair-skein-mass-formula.ts:1"
       },
       {
         "result": "pass",
@@ -1542,7 +1542,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Pair Skein mass and crossing-by-crossing recursion'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/pair-skein-mass-formula.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/pair-skein-mass-formula.ts:1"
       },
       {
         "result": "pass",
@@ -1609,7 +1609,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Pair Skein mass and crossing-by-crossing recursion'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/pair-skein-mass-formula.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/pair-skein-mass-formula.ts:1"
       },
       {
         "result": "pass",
@@ -1643,7 +1643,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The argument flow in 'Pair Skein mass and crossing-by-crossing recursion' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/pair-skein-mass-formula.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/pair-skein-mass-formula.ts:1"
       },
       {
         "result": "pass",
@@ -1675,9 +1675,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.644275Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The referenced Lean file content/quantum-observable-universe/observations/pair-skein-mass-formula.lean is missing, leading to complete divergence.",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/observations/pair-skein-mass-formula.lean is missing, leading to complete divergence.",
         "severity": "minor",
-        "evidence": "The referenced Lean file content/quantum-observable-universe/observations/pair-skein-mass-formula.lean is missing, leading to complete divergence."
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/observations/pair-skein-mass-formula.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",
@@ -1711,7 +1711,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Pair Skein mass and crossing-by-crossing recursion', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/pair-skein-mass-formula.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/pair-skein-mass-formula.ts:1"
       },
       {
         "result": "pass",
@@ -1745,7 +1745,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Pair Skein mass and crossing-by-crossing recursion' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/pair-skein-mass-formula.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/pair-skein-mass-formula.ts:1"
       },
       {
         "result": "pass",
@@ -1779,7 +1779,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Pair Skein mass and crossing-by-crossing recursion' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/pair-skein-mass-formula.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/pair-skein-mass-formula.ts:1"
       },
       {
         "result": "pass",
@@ -1813,7 +1813,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Pair Skein mass and crossing-by-crossing recursion' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/pair-skein-mass-formula.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/pair-skein-mass-formula.ts:1"
       },
       {
         "result": "pass",
@@ -1847,7 +1847,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The derivation steps and formal definitions in 'Pair Skein mass and crossing-by-crossing recursion' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/pair-skein-mass-formula.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/pair-skein-mass-formula.ts:1"
       },
       {
         "result": "pass",
@@ -1879,11 +1879,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.644275Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/observations/pair-skein-mass-formula.lean is missing.",
+        "notes": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/observations/pair-skein-mass-formula.lean is missing.",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/observations/pair-skein-mass-formula.lean is missing, preventing formal verification of the claims in 'Pair Skein mass and crossing-by-crossing recursion'.",
+        "referee_argument": "The referenced Lean sibling file folio/quantum-observable-universe/observations/pair-skein-mass-formula.lean is missing, preventing formal verification of the claims in 'Pair Skein mass and crossing-by-crossing recursion'.",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/observations/pair-skein-mass-formula.lean is missing."
+        "evidence": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/observations/pair-skein-mass-formula.lean is missing."
       },
       {
         "result": "pass",

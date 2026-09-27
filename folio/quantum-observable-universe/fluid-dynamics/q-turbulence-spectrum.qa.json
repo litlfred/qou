@@ -3,9 +3,9 @@
   "label": "prop:q-turbulence-spectrum",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts",
-    "md": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean"
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean"
   },
   "source_hashes": {
     "md": "9e003c95eafd",
@@ -372,7 +372,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean:138 — positivity-dependent Real.* on q without explicit hypothesis — (ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q := by | content/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean:165 — positivity-dependent Real.* on q without explicit hypothesis — ((ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q) ∧"
+        "evidence": "folio/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean:138 — positivity-dependent Real.* on q without explicit hypothesis — (ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q := by | folio/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean:165 — positivity-dependent Real.* on q without explicit hypothesis — ((ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q) ∧"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -625,7 +625,7 @@
         "reviewed_at": "2026-08-09T13:00:33.718Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -647,7 +647,7 @@
         "reviewed_at": "2026-08-09T13:00:33.718Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1256,7 +1256,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1432,7 +1432,7 @@
         "reviewed_at": "2026-07-07T14:26:56.286844Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No false claims identified in '$q$-deformed energy cascade and modified Kolmogorov spectrum': mathematical reasoning is consistent.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
         "severity": "minor"
       },
       {
@@ -1497,7 +1497,7 @@
         "reviewed_at": "2026-07-07T14:26:56.286844Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No circular reasoning or self-assuming definitions detected in '$q$-deformed energy cascade and modified Kolmogorov spectrum'.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
         "severity": "minor"
       },
       {
@@ -1562,7 +1562,7 @@
         "reviewed_at": "2026-07-07T14:26:56.286844Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$q$-deformed energy cascade and modified Kolmogorov spectrum'.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
         "severity": "minor"
       },
       {
@@ -1595,7 +1595,7 @@
         "reviewed_at": "2026-07-07T14:26:56.286844Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The argument flow in '$q$-deformed energy cascade and modified Kolmogorov spectrum' is logically sound, mapping onto the cited dependencies.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
         "severity": "minor"
       },
       {
@@ -1627,9 +1627,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.286844Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The referenced Lean file content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.lean is missing, leading to complete divergence.",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.lean is missing, leading to complete divergence.",
         "severity": "minor",
-        "evidence": "The referenced Lean file content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.lean is missing, leading to complete divergence."
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",
@@ -1661,7 +1661,7 @@
         "reviewed_at": "2026-07-07T14:26:56.286844Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No citations are present in '$q$-deformed energy cascade and modified Kolmogorov spectrum', hence no citation misuse is possible.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
         "severity": "minor"
       },
       {
@@ -1694,7 +1694,7 @@
         "reviewed_at": "2026-07-07T14:26:56.286844Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Key terms and symbols in '$q$-deformed energy cascade and modified Kolmogorov spectrum' are mathematically defined and unambiguous.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
         "severity": "minor"
       },
       {
@@ -1727,7 +1727,7 @@
         "reviewed_at": "2026-07-07T14:26:56.286844Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic and logical relations in '$q$-deformed energy cascade and modified Kolmogorov spectrum' are independent of empirical tuning parameters.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
         "severity": "minor"
       },
       {
@@ -1760,7 +1760,7 @@
         "reviewed_at": "2026-07-07T14:26:56.286844Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The physical concepts described in '$q$-deformed energy cascade and modified Kolmogorov spectrum' are consistent with quantum observable mechanics.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
         "severity": "minor"
       },
       {
@@ -1793,7 +1793,7 @@
         "reviewed_at": "2026-07-07T14:26:56.286844Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The derivation steps and formal definitions in '$q$-deformed energy cascade and modified Kolmogorov spectrum' are reproducible.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
         "severity": "minor"
       },
       {
@@ -1825,11 +1825,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.286844Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.lean is missing.",
+        "notes": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.lean is missing.",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.lean is missing, preventing formal verification of the claims in '$q$-deformed energy cascade and modified Kolmogorov spectrum'.",
+        "referee_argument": "The referenced Lean sibling file folio/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.lean is missing, preventing formal verification of the claims in '$q$-deformed energy cascade and modified Kolmogorov spectrum'.",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.lean is missing."
+        "evidence": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.lean is missing."
       },
       {
         "result": "pass",

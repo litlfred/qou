@@ -3,9 +3,9 @@
   "label": "prop:confinement-universality",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/confinement-universality.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/confinement-universality.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/Interactions/confinementUniversality.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/confinement-universality.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/confinement-universality.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/Interactions/confinementUniversality.lean"
   },
   "source_hashes": {
     "md": "ea01e22f95e6",
@@ -1259,7 +1259,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/Interactions/confinementUniversality.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/Interactions/confinementUniversality.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",

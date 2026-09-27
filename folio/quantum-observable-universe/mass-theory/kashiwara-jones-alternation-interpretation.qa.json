@@ -3,8 +3,8 @@
   "label": "rem:kashiwara-jones-alternation-interpretation",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/kashiwara-jones-alternation-interpretation.ts",
-    "md": "content/quantum-observable-universe/mass-theory/kashiwara-jones-alternation-interpretation.md"
+    "ts": "folio/quantum-observable-universe/mass-theory/kashiwara-jones-alternation-interpretation.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/kashiwara-jones-alternation-interpretation.md"
   },
   "source_hashes": {
     "md": "e20ce055d3fe",
@@ -1128,7 +1128,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/kashiwara-jones-alternation-interpretation.ts:0: forward ref: uses rem:borromean-baryon-interpretation (manifest pos 713) which appears after this block (pos 300) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/kashiwara-jones-alternation-interpretation.ts:0: forward ref: uses rem:borromean-baryon-interpretation (manifest pos 713) which appears after this block (pos 300) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1275,7 +1275,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/kashiwara-jones-alternation-interpretation.ts:0: uses[] dependency cycle: rem:kashiwara-jones-alternation-interpretation -> prop:q-beta-categorical-precision-ladder -> prop:tau-M-asymptotic-rep-theory -> prop:q-beta-c-k-recursion-from-habiro-q-difference -> rem:markov-trace-inductive-limit -> rem:braid-group-n-strand -> rem:typed-b3-sub-braid-extraction -> rem:braid-link-types -> rem:markov-closure-map-axiomatic -> rem:F3-eps6-leading-eq-neg-2b-cubed -> prop:q-beta-c3-hopf-three-fold-markov -> rem:q-beta-gamma-gamma-canonical-derivation -> rem:kashiwara-jones-alternation-interpretation"
+        "evidence": "folio/quantum-observable-universe/mass-theory/kashiwara-jones-alternation-interpretation.ts:0: uses[] dependency cycle: rem:kashiwara-jones-alternation-interpretation -> prop:q-beta-categorical-precision-ladder -> prop:tau-M-asymptotic-rep-theory -> prop:q-beta-c-k-recursion-from-habiro-q-difference -> rem:markov-trace-inductive-limit -> rem:braid-group-n-strand -> rem:typed-b3-sub-braid-extraction -> rem:braid-link-types -> rem:markov-closure-map-axiomatic -> rem:F3-eps6-leading-eq-neg-2b-cubed -> prop:q-beta-c3-hopf-three-fold-markov -> rem:q-beta-gamma-gamma-canonical-derivation -> rem:kashiwara-jones-alternation-interpretation"
       }
     ],
     "bib-cited-ref-has-url": [

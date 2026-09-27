@@ -139,7 +139,7 @@ theorem denominator_pos_near_zero
     passed explicitly.  Repaired, the wrapper collapsed into this theorem, and
     the `_axiom` suffix dropped: nothing outside this file referenced it, and
     `#print axioms` gives `[propext, Classical.choice, Quot.sound]`. -/
--- Ref: [townsend1951]     title: — see content/schema/references.ts
+-- Ref: [townsend1951]     title: — see folio/schema/references.ts
 theorem kappa_squared_tends_to_zero (C₁ C₂ ν : ℝ) (_hC : 0 < C₁) :
     ∀ ε > 0, ∃ δ > 0, ∀ τ :
     ℝ, τ ≠ 0 → 0 < τ → τ < δ →

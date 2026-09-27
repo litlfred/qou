@@ -19,10 +19,10 @@ import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
 /-!
 # QOU.CategoricalConnection
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/CategoricalConnection.lean (monolithic).
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/CategoricalConnection.lean (monolithic).
 That file no longer exists — the library was split, and `CategoricalConnection` now lives at
-  content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/GaugeTheory.lean
+  folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/GaugeTheory.lean
 -/
 
 open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory

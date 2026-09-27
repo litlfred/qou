@@ -3,9 +3,9 @@
   "label": "prop:frobenius-s-classification",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/frobenius-s-classification.ts",
-    "md": "content/quantum-observable-universe/mass-theory/frobenius-s-classification.md",
-    "lean": "content/quantum-observable-universe/mass-theory/frobenius-s-classification.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/frobenius-s-classification.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/frobenius-s-classification.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/frobenius-s-classification.lean"
   },
   "source_hashes": {
     "md": "071b31e6925d",
@@ -1567,7 +1567,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/frobenius-s-classification.ts:0: forward ref: uses prop:confined-knot-binding (manifest pos 486) which appears after this block (pos 40) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-s-classification.ts:0: forward ref: uses prop:confined-knot-binding (manifest pos 486) which appears after this block (pos 40) in the chapter"
       }
     ],
     "detangler-section-band": [

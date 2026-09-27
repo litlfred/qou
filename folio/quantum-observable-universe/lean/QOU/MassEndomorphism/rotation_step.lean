@@ -3,7 +3,7 @@
 
   RELOCATED (no mathematical change).  `rotation_step`, together with the two step predicates
   `evenStep` / `oddStep` its statement is phrased in, was declared in
-  `content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.lean`, a
+  `folio/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.lean`, a
   chapter-directory `.lean` belonging to a different content block, so the content-block
   resolver found it via neither candidate 1 (the citing block's own sibling) nor candidate 2
   (`<lakeRoot>/<Decl/Path>.lean`).  Moving it to the path matching its namespace makes candidate

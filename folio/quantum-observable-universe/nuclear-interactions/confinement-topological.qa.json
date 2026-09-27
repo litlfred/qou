@@ -3,9 +3,9 @@
   "label": "prop:confinement-topological",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/confinement-topological.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/confinement-topological.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/Interactions/GramIndefinite.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/confinement-topological.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/confinement-topological.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/Interactions/GramIndefinite.lean"
   },
   "source_hashes": {
     "md": "9eac29854c0e",
@@ -1457,7 +1457,7 @@
         "rebuttal": "surviving — a matrix non-equality is strictly weaker than the three claims; grepped content/ + GramIndefinite.lean + ConfinementLP.lean: no decl states the LP optimum value, braid-image properness, or the enumeration.",
         "evidence": [
           {
-            "text": "content/quantum-observable-universe/lean/QOU/Interactions/GramIndefinite.lean:187"
+            "text": "folio/quantum-observable-universe/lean/QOU/Interactions/GramIndefinite.lean:187"
           },
           {
             "text": "confinement-topological.md:26"
@@ -1501,10 +1501,10 @@
         "rebuttal": "surviving — the Lean names assert the proposition's sub-claims but their proof terms are logically disconnected accessors; the repo's own AUDIT-REPORT.md:224 flags them orphaned/redundant.",
         "evidence": [
           {
-            "text": "content/quantum-observable-universe/lean/QOU/Interactions/ConfinementLP.lean:92"
+            "text": "folio/quantum-observable-universe/lean/QOU/Interactions/ConfinementLP.lean:92"
           },
           {
-            "text": "content/quantum-observable-universe/lean/AUDIT-REPORT.md:224"
+            "text": "folio/quantum-observable-universe/lean/AUDIT-REPORT.md:224"
           }
         ],
         "severity": "major",
@@ -1720,7 +1720,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Confinement is topological (LP proof)': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
       },
       {
         "result": "pass",
@@ -1754,7 +1754,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Confinement is topological (LP proof)'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
       },
       {
         "result": "pass",
@@ -1788,7 +1788,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confinement is topological (LP proof)'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
       },
       {
         "result": "pass",
@@ -1822,7 +1822,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Confinement is topological (LP proof)', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
       },
       {
         "result": "pass",
@@ -1856,7 +1856,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Confinement is topological (LP proof)' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
       },
       {
         "result": "pass",
@@ -1890,7 +1890,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Confinement is topological (LP proof)' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
       },
       {
         "result": "pass",

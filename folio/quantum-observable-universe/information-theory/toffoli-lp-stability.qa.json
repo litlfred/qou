@@ -3,9 +3,9 @@
   "label": "prop:toffoli-lp-stability",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/information-theory/toffoli-lp-stability.ts",
-    "md": "content/quantum-observable-universe/information-theory/toffoli-lp-stability.md",
-    "lean": "content/quantum-observable-universe/information-theory/toffoli-lp-stability.lean"
+    "ts": "folio/quantum-observable-universe/information-theory/toffoli-lp-stability.ts",
+    "md": "folio/quantum-observable-universe/information-theory/toffoli-lp-stability.md",
+    "lean": "folio/quantum-observable-universe/information-theory/toffoli-lp-stability.lean"
   },
   "source_hashes": {
     "md": "ace36ebdf4c4",
@@ -166,7 +166,7 @@
         "reviewed_at": "2026-09-03T09:14:31.569Z",
         "reviewed_sha": "a8307f07752b41ea4afbd0c471d5aad68b239cff",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/toffoli-lp-stability.md:49: **Two qualifications, both of which bound what that is worth.** First, the Gram is entrywise non-negative, and $\\vec t$ is too for the all-proton ordering, so *for that ordering* positivity is forced "
+        "evidence": "folio/quantum-observable-universe/information-theory/toffoli-lp-stability.md:49: **Two qualifications, both of which bound what that is worth.** First, the Gram is entrywise non-negative, and $\\vec t$ is too for the all-proton ordering, so *for that ordering* positivity is forced "
       }
     ],
     "voice-scholarly-default": [
@@ -280,7 +280,7 @@
         "reviewed_at": "2026-09-03T09:14:31.569Z",
         "reviewed_sha": "a8307f07752b41ea4afbd0c471d5aad68b239cff",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/information-theory/toffoli-lp-stability.md:30: P4:date-ref: where $\\kappa(\\mathrm{G}(q)) = \\lambda_{\\max}(G)/|\\lambda_{\\min}(G)|$. **Open (2026-08-09).** The figure previously quoted here, $\\kappa(G(q_0)) \\approx 3.03$, is withdrawn. It came from a Gram matrix"
+        "evidence": "folio/quantum-observable-universe/information-theory/toffoli-lp-stability.md:30: P4:date-ref: where $\\kappa(\\mathrm{G}(q)) = \\lambda_{\\max}(G)/|\\lambda_{\\min}(G)|$. **Open (2026-08-09).** The figure previously quoted here, $\\kappa(G(q_0)) \\approx 3.03$, is withdrawn. It came from a Gram matrix"
       }
     ],
     "voice-status-section": [
@@ -411,7 +411,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/toffoli-lp-stability.lean:17 — positivity-dependent Real.* on q without explicit hypothesis — 4. For q ≤ 0, Real.sqrt returns 0, so f(q) = q - 1 ≤ -1 < 0, | content/quantum-observable-universe/information-theory/toffoli-lp-stability.lean:103 — positivity-dependent Real.* on q without explicit hypothesis — q_star_threshold < q ↔ 0 < q + Real.sqrt q - 1 := by | content/quantum-observable-universe/information-theory/toffoli-lp-stability.lean:121 — positivity-dependent Real.* on q without explicit hypothesis — have hsqrt_zero : Real.sqrt q = 0 :="
+        "evidence": "folio/quantum-observable-universe/information-theory/toffoli-lp-stability.lean:17 — positivity-dependent Real.* on q without explicit hypothesis — 4. For q ≤ 0, Real.sqrt returns 0, so f(q) = q - 1 ≤ -1 < 0, | folio/quantum-observable-universe/information-theory/toffoli-lp-stability.lean:103 — positivity-dependent Real.* on q without explicit hypothesis — q_star_threshold < q ↔ 0 < q + Real.sqrt q - 1 := by | folio/quantum-observable-universe/information-theory/toffoli-lp-stability.lean:121 — positivity-dependent Real.* on q without explicit hypothesis — have hsqrt_zero : Real.sqrt q = 0 :="
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -889,7 +889,7 @@
         "reviewed_at": "2026-09-03T09:14:31.569Z",
         "reviewed_sha": "a8307f07752b41ea4afbd0c471d5aad68b239cff",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/information-theory/toffoli-lp-stability.ts:1: LP/SDP witness 'computations/toffoli-lp-stability.witness.json' missing dual field(s): y0_star, y_star, primal_obj, dual_obj, duality_gap, active_set (or alias: active_set/active_constraints/active_channels)"
+        "evidence": "folio/quantum-observable-universe/information-theory/toffoli-lp-stability.ts:1: LP/SDP witness 'computations/toffoli-lp-stability.witness.json' missing dual field(s): y0_star, y_star, primal_obj, dual_obj, duality_gap, active_set (or alias: active_set/active_constraints/active_channels)"
       }
     ],
     "detangler-no-forward-ref": [

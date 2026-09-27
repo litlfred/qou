@@ -3,8 +3,8 @@
   "label": "prf:toffoli-lp-stability",
   "kind": "proof",
   "paths": {
-    "ts": "content/quantum-observable-universe/information-theory/toffoli-lp-stability-proof.ts",
-    "md": "content/quantum-observable-universe/information-theory/toffoli-lp-stability-proof.md"
+    "ts": "folio/quantum-observable-universe/information-theory/toffoli-lp-stability-proof.ts",
+    "md": "folio/quantum-observable-universe/information-theory/toffoli-lp-stability-proof.md"
   },
   "source_hashes": {
     "md": "ca0b7b9e3738",
@@ -558,7 +558,7 @@
         "reviewed_at": "2026-08-30T06:26:40.097Z",
         "reviewed_sha": "a512a2105f4f7c2a3286f11df912b07ec8f60837",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/information-theory/toffoli-lp-stability-proof.md:6: P4:date-ref: **Open (2026-08-30) — the reduction's second half is underived.** The identification $P_{7,6}(q) = \\Phi(q)$ is withdrawn: $\\Phi$ is not in the image of the Toffoli construction under any indexing or c | content/quantum-observable-universe/information-theory/toffoli-lp-stability-proof.md:20: P4:date-ref: The boundedness of shadow prices follows from LP duality ([LP-dual stability](#prop:lp-dual-stability)). The dual norm $|y^*|$ is bounded by the primal norm times the Gram condition number $\\kappa(\\ma | content/quantum-observable-universe/information-theory/toffoli-lp-stability-proof.md:25: P4:date-ref: **Witness:** `toffoli-lp-stability.witness.json` evaluates $P_{7,7}(q)$, $\\Phi(q)$, and the Gram spectrum $\\{\\lambda_i(\\mathrm{G}(q))\\}$ on the grid $q \\in \\{0.30, 0.35, q_\\star, 0.45, 0.60, 0.80, 0.9"
+        "evidence": "folio/quantum-observable-universe/information-theory/toffoli-lp-stability-proof.md:6: P4:date-ref: **Open (2026-08-30) — the reduction's second half is underived.** The identification $P_{7,6}(q) = \\Phi(q)$ is withdrawn: $\\Phi$ is not in the image of the Toffoli construction under any indexing or c | folio/quantum-observable-universe/information-theory/toffoli-lp-stability-proof.md:20: P4:date-ref: The boundedness of shadow prices follows from LP duality ([LP-dual stability](#prop:lp-dual-stability)). The dual norm $|y^*|$ is bounded by the primal norm times the Gram condition number $\\kappa(\\ma | folio/quantum-observable-universe/information-theory/toffoli-lp-stability-proof.md:25: P4:date-ref: **Witness:** `toffoli-lp-stability.witness.json` evaluates $P_{7,7}(q)$, $\\Phi(q)$, and the Gram spectrum $\\{\\lambda_i(\\mathrm{G}(q))\\}$ on the grid $q \\in \\{0.30, 0.35, q_\\star, 0.45, 0.60, 0.80, 0.9"
       }
     ],
     "voice-status-section": [

@@ -3,9 +3,9 @@
   "label": "prop:torus-knot-genus-four-unique",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/torus-knot-genus-four-unique.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/torus-knot-genus-four-unique.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/Archimedean/TorusKnotGenusFourUnique.lean"
+    "ts": "folio/quantum-observable-universe/predicted-spectra/torus-knot-genus-four-unique.ts",
+    "md": "folio/quantum-observable-universe/predicted-spectra/torus-knot-genus-four-unique.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/Archimedean/TorusKnotGenusFourUnique.lean"
   },
   "source_hashes": {
     "md": "085654dfeea2",
@@ -803,7 +803,7 @@
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/lean/QOU/Archimedean/TorusKnotGenusFourUnique.lean:40: so the minimum is `(m-1)n`."
+        "evidence": "folio/quantum-observable-universe/lean/QOU/Archimedean/TorusKnotGenusFourUnique.lean:40: so the minimum is `(m-1)n`."
       }
     ],
     "voice-title-scholarly": [

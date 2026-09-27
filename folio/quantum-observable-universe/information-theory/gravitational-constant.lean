@@ -53,7 +53,7 @@ def cellEntropy (q u : Rˣ) : Rˣ := u ^ 2 / q ^ 3
     G(q) := c_q³ · ℏ_q / S_cell(q)
 
     where c_q = 1/(q-1), ℏ_q = (q-1)/q, and S_cell = (q-1)²/q³. -/
--- Ref: [jacobson1995] Thermodynamics of Spacetime: The Einstein Equation — see content/schema/references.ts
+-- Ref: [jacobson1995] Thermodynamics of Spacetime: The Einstein Equation — see folio/schema/references.ts
 -- Ref: [manuscript] §9/gravitational-constant
 def gravitationalConstant (q u : Rˣ) : Rˣ :=
   let c : Rˣ := 1 / u

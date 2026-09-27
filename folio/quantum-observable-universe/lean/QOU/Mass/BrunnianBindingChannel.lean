@@ -9,7 +9,7 @@ assignment). The mass/binding split assigns
   binding ← mutual (inter-component) crossings                                        (`M`)
 
 (the self+mutual partition of the crossing energy is stated in
-`content/quantum-observable-universe/climax-volume-mass/crossing-energy-trefoil.md`:
+`folio/quantum-observable-universe/climax-volume-mass/crossing-energy-trefoil.md`:
 `𝔈_cross(𝔥) = Σᵢ 𝔈_cross(Kᵢ) + 𝔈_cross(𝓛)`; the field-theoretic analogue is the
 Biot–Savart self-adjointness split `H(ΣVᵢ) = Σ H(Vᵢ) + 2 Σ_{i<j}⟨Vᵢ,BS(Vⱼ)⟩`,
 `docs/audits/2026-08-01-em-linking-reads-round1.md` Round 3).

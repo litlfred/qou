@@ -3,7 +3,7 @@
   End_R(V^⊗6).
 
   Companion: hoefsmit-ew-cell-content.md
-  Path: content/quantum-observable-universe/braids-and-knots/
+  Path: folio/quantum-observable-universe/braids-and-knots/
 
   States the structural proposal:
     W ↔ σ_1^4 (strands 1-2)

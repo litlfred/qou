@@ -42,7 +42,7 @@ The small-`n` quantum dimensions are the hook-length values, computed by hand:
 `[3]_q! = [3]_q[2]_q`.
 
 Ref: [macdonald1995] (symmetric functions; hook-length formula) —
-`content/schema/references.ts`.
+`folio/schema/references.ts`.
 -/
 
 namespace QOU.Mass.QPlancherelSubNormalization

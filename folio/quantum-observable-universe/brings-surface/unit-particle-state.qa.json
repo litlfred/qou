@@ -3,9 +3,9 @@
   "label": "def:unit-particle-state",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/brings-surface/unit-particle-state.ts",
-    "md": "content/quantum-observable-universe/brings-surface/unit-particle-state.md",
-    "lean": "content/quantum-observable-universe/brings-surface/unit-particle-state.lean"
+    "ts": "folio/quantum-observable-universe/brings-surface/unit-particle-state.ts",
+    "md": "folio/quantum-observable-universe/brings-surface/unit-particle-state.md",
+    "lean": "folio/quantum-observable-universe/brings-surface/unit-particle-state.lean"
   },
   "source_hashes": {
     "md": "4d42a1e74607",
@@ -1226,8 +1226,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.030494Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/unit-particle-state.lean:53:18: error: type expected, got",
-        "evidence": "content/quantum-observable-universe/brings-surface/unit-particle-state.lean:1",
+        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/brings-surface/unit-particle-state.lean:53:18: error: type expected, got",
+        "evidence": "folio/quantum-observable-universe/brings-surface/unit-particle-state.lean:1",
         "severity": "minor"
       },
       {
@@ -1392,8 +1392,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.030494Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/unit-particle-state.lean:53:18: error: type expected, got",
-        "evidence": "content/quantum-observable-universe/brings-surface/unit-particle-state.lean:1",
+        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/brings-surface/unit-particle-state.lean:53:18: error: type expected, got",
+        "evidence": "folio/quantum-observable-universe/brings-surface/unit-particle-state.lean:1",
         "severity": "major"
       },
       {
@@ -1426,11 +1426,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.030494Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/unit-particle-state.lean:53:18: error: type expected, got",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/unit-particle-state.lean:53:18: error: type expected, got",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/unit-particle-state.lean:53:18: error: type expected, got",
+        "referee_argument": "The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/unit-particle-state.lean:53:18: error: type expected, got",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/unit-particle-state.lean:53:18: error: type expected, got"
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/unit-particle-state.lean:53:18: error: type expected, got"
       },
       {
         "result": "pass",

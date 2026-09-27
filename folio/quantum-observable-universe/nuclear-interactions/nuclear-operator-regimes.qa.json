@@ -3,9 +3,9 @@
   "label": "prop:nuclear-operator-regimes",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/nuclear-operator-regimes.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/nuclear-operator-regimes.md",
-    "lean": "content/quantum-observable-universe/nuclear-interactions/nuclear-operator-regimes.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/nuclear-operator-regimes.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/nuclear-operator-regimes.md",
+    "lean": "folio/quantum-observable-universe/nuclear-interactions/nuclear-operator-regimes.lean"
   },
   "source_hashes": {
     "md": "0e3f6a2ebc48",
@@ -717,7 +717,7 @@
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/nuclear-interactions/nuclear-operator-regimes.ts:0: forward ref: uses prop:demand-stability (manifest pos 50) which appears after this block (pos 47) in the chapter"
+        "evidence": "folio/quantum-observable-universe/nuclear-interactions/nuclear-operator-regimes.ts:0: forward ref: uses prop:demand-stability (manifest pos 50) which appears after this block (pos 47) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1248,7 +1248,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1355,7 +1355,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.lean:18 [def-disguised-true] def nuclearOperatorRegimes : True := by",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.lean:18 [def-disguised-true] def nuclearOperatorRegimes : True := by",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1445,7 +1445,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Three operator regimes for nuclear binding': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
       },
       {
         "result": "pass",
@@ -1480,7 +1480,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Three operator regimes for nuclear binding'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
       },
       {
         "result": "pass",
@@ -1549,7 +1549,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Three operator regimes for nuclear binding'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
       },
       {
         "result": "pass",
@@ -1584,7 +1584,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Three operator regimes for nuclear binding' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
       },
       {
         "result": "pass",
@@ -1653,7 +1653,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Three operator regimes for nuclear binding', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
       },
       {
         "result": "pass",
@@ -1688,7 +1688,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Three operator regimes for nuclear binding' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
       },
       {
         "result": "pass",
@@ -1723,7 +1723,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Three operator regimes for nuclear binding' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
       },
       {
         "result": "pass",
@@ -1758,7 +1758,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Three operator regimes for nuclear binding' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
       },
       {
         "result": "pass",
@@ -1793,7 +1793,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Three operator regimes for nuclear binding' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
       },
       {
         "result": "pass",

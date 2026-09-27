@@ -4,7 +4,7 @@ import QOU.QuantumObservableUniverse.Instanton
 # QOU.categorical_self_duality
 
 The canonical Lean source for `prop:categorical-self-duality` lives at
-`content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean`,
+`folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean`,
 which is Lake-built under the `qou` package and declares
 `QOU.categorical_self_duality`
 (`inst.hodge.IsSelfDual inst.curvature`, proved by the structural

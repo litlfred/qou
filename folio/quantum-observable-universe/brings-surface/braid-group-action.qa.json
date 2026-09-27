@@ -3,8 +3,8 @@
   "label": "rem:braid-group-action",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/brings-surface/braid-group-action.ts",
-    "md": "content/quantum-observable-universe/brings-surface/braid-group-action.md"
+    "ts": "folio/quantum-observable-universe/brings-surface/braid-group-action.ts",
+    "md": "folio/quantum-observable-universe/brings-surface/braid-group-action.md"
   },
   "source_hashes": {
     "md": "77f5e0d5f0b9",
@@ -599,7 +599,7 @@
         "reviewed_at": "2026-09-03T04:21:16.955Z",
         "reviewed_sha": "8aea395fa9f8f3b316ecb5b37f53620902ed4f93",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/brings-surface/braid-group-action.ts:0: forward ref: uses rem:brings-curve (manifest pos 101) which appears after this block (pos 28) in the chapter"
+        "evidence": "folio/quantum-observable-universe/brings-surface/braid-group-action.ts:0: forward ref: uses rem:brings-curve (manifest pos 101) which appears after this block (pos 28) in the chapter"
       }
     ],
     "detangler-section-band": [

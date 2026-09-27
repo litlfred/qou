@@ -3,8 +3,8 @@
   "label": "rem:isotope-knot-properties",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/isotope-knot-properties.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/isotope-knot-properties.md"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/isotope-knot-properties.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/isotope-knot-properties.md"
   },
   "source_hashes": {
     "md": "667ff024e1a9",
@@ -518,7 +518,7 @@
         "reviewed_at": "2026-08-24T20:43:35.063Z",
         "reviewed_sha": "b52feb627d05fdc83ab9f20d89f11290b1717376",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/knots-particles-confinement/isotope-knot-properties.ts:0: forward ref: uses def:unstable-atom (manifest pos 138) which appears after this block (pos 130) in the chapter"
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/isotope-knot-properties.ts:0: forward ref: uses def:unstable-atom (manifest pos 138) which appears after this block (pos 130) in the chapter"
       }
     ],
     "detangler-section-band": [

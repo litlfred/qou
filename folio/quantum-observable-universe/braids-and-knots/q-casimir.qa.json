@@ -3,9 +3,9 @@
   "label": "def:q-casimir",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/q-casimir.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/q-casimir.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/q-casimir.lean"
+    "ts": "folio/quantum-observable-universe/braids-and-knots/q-casimir.ts",
+    "md": "folio/quantum-observable-universe/braids-and-knots/q-casimir.md",
+    "lean": "folio/quantum-observable-universe/braids-and-knots/q-casimir.lean"
   },
   "source_hashes": {
     "md": "fcbe99e300dd",
@@ -1008,7 +1008,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Checked mathematical consistency of the claim 'The **$q$-Casimir element** is the distinguished central element of the' and found no counterexamples under the stated conditions.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
       },
       {
         "result": "pass",
@@ -1076,7 +1076,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Traced dependencies ['def:quantum-su2'] for 'def:q-casimir' and confirmed no circular definitions or justifications.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
       },
       {
         "result": "pass",
@@ -1143,7 +1143,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
       },
       {
         "result": "pass",
@@ -1177,7 +1177,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Logical transitions in the derivation of 'The **$q$-Casimir element** is the distinguished central element of the' are sound; no non-sequiturs detected.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
       },
       {
         "result": "pass",
@@ -1245,7 +1245,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All references and uses ['def:quantum-su2'] cited in 'def:q-casimir' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
       },
       {
         "result": "pass",
@@ -1279,7 +1279,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All terms and algebraic structures in 'def:q-casimir' are uniquely defined or standard.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
       },
       {
         "result": "pass",
@@ -1313,7 +1313,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The algebraic statements in 'def:q-casimir' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
       },
       {
         "result": "pass",
@@ -1347,7 +1347,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Physical dimensions and units in 'def:q-casimir' are consistent with quantum observable universe models.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
       },
       {
         "result": "pass",
@@ -1379,9 +1379,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.379659Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/q-casimir.lean:91:22: error: Invalid field notation: Type is not of the form `C ...` where C is a constant.",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: folio/quantum-observable-universe/braids-and-knots/q-casimir.lean:91:22: error: Invalid field notation: Type is not of the form `C ...` where C is a constant.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir.lean:1 — content/quantum-observable-universe/braids-and-knots/q-casimir.lean:91:22: error: Invalid field notation: Type is not of the form `C ...` where C is a constant"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir.lean:1 — folio/quantum-observable-universe/braids-and-knots/q-casimir.lean:91:22: error: Invalid field notation: Type is not of the form `C ...` where C is a constant"
       },
       {
         "result": "pass",
@@ -1413,11 +1413,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.379659Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/q-casimir.lean:91:22: error: Invalid field notation: Type is not of the form `C ...` where C is a constant",
+        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/braids-and-knots/q-casimir.lean:91:22: error: Invalid field notation: Type is not of the form `C ...` where C is a constant",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/q-casimir.lean:91:22: error: Invalid field notation: Type is not of the form `C ...` where C is a constant",
-        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/q-casimir.lean:91:22: error: Invalid field notation: Type is not of the form `C ...` where C is a constant"
+        "referee_argument": "The Lean sibling fails compilation with error: folio/quantum-observable-universe/braids-and-knots/q-casimir.lean:91:22: error: Invalid field notation: Type is not of the form `C ...` where C is a constant",
+        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/braids-and-knots/q-casimir.lean:91:22: error: Invalid field notation: Type is not of the form `C ...` where C is a constant"
       },
       {
         "result": "pass",

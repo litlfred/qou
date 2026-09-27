@@ -12,7 +12,7 @@ light nuclei (²H, ³H, ³He).
 
 This is the "infra-backed" upgrade of the existence-only
 witness-conditioned theorems in
-`content/quantum-observable-universe/braids-and-knots/conj-canonical-knot-id-sdp.lean`.
+`folio/quantum-observable-universe/braids-and-knots/conj-canonical-knot-id-sdp.lean`.
 
 ## What this module proves
 

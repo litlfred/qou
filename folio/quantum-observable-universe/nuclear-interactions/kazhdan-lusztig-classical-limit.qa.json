@@ -3,9 +3,9 @@
   "label": "conj:kazhdan-lusztig-classical-limit",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/kazhdan-lusztig-classical-limit.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/kazhdan-lusztig-classical-limit.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/KazhdanLusztigClassicalLimit.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/kazhdan-lusztig-classical-limit.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/kazhdan-lusztig-classical-limit.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/BraidKnot/KazhdanLusztigClassicalLimit.lean"
   },
   "source_hashes": {
     "md": "4eeb5693b401",
@@ -1044,7 +1044,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       },
       {
         "result": "pass",
@@ -1111,7 +1111,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       },
       {
         "result": "pass",
@@ -1178,7 +1178,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       },
       {
         "result": "pass",
@@ -1212,7 +1212,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       },
       {
         "result": "pass",
@@ -1280,7 +1280,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Citations to kassel1995, khovanovlauda2009, kashiwara1991, lecouvey2007 are correct and contextually appropriate.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       },
       {
         "result": "pass",
@@ -1314,7 +1314,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       },
       {
         "result": "pass",
@@ -1348,7 +1348,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       },
       {
         "result": "pass",
@@ -1382,7 +1382,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       },
       {
         "result": "pass",
@@ -1416,7 +1416,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       },
       {
         "result": "pass",

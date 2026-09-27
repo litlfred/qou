@@ -85,7 +85,7 @@ the open half is left in the narrative where it can be read as open. -/
     This is the falsifiable content the `.md` names: an amphicheiral hadron
     exhibiting CP violation would contradict it. Both hypotheses are used. -/
 -- Ref: [manuscript] §6/cp-violation-spectral-form
--- Ref: [christenson1964] Evidence for the $2\pi$ Decay of the $K_2^0$ Meso — see content/schema/references.ts
+-- Ref: [christenson1964] Evidence for the $2\pi$ Decay of the $K_2^0$ Meso — see folio/schema/references.ts
 theorem deltaCP_eq_zero_of_real_characters
     (W : WedderburnComplexCharacters)
     (hAlt : W.chiAlt.im = 0) (hSym : W.chiSym.im = 0) :
@@ -114,7 +114,7 @@ theorem deltaCP_eq_zero_of_real_characters
     `R_ℂ`-enrichment uniqueness and a match of `θ_res` to the Wolfenstein
     parameterisation. -/
 -- Ref: [manuscript] §6/cp-violation-spectral-form
--- Ref: [christenson1964] Evidence for the $2\pi$ Decay of the $K_2^0$ Meso — see content/schema/references.ts
+-- Ref: [christenson1964] Evidence for the $2\pi$ Decay of the $K_2^0$ Meso — see folio/schema/references.ts
 class CPViolationSpectralForm
     (physicalDeltaCP : WedderburnComplexCharacters → ℝ) : Prop where
   /-- The identification the conjecture asserts. -/

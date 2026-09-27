@@ -4,7 +4,7 @@ import { conjecture } from "../../schema/builders";
  * §3b-cond conjecture class for the proton's Borromean mass assembly.
  *
  * The class axiomatisation lives in the `qou` Lake library at
- * content/quantum-observable-universe/lean/QOU/AppendixQValues/ProtonBorromeanAssembly.lean
+ * folio/quantum-observable-universe/lean/QOU/AppendixQValues/ProtonBorromeanAssembly.lean
  * (class `ProtonBorromeanAssembly`); no sibling `.lean` here, so it does not
  * shadow the library class. The downstream `prop:proton-mass-substrate-identity`
  * takes this class as an explicit `[Instance]` hypothesis and DERIVES the

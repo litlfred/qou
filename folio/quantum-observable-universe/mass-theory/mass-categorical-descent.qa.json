@@ -3,9 +3,9 @@
   "label": "prop:mass-categorical-descent",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.ts",
-    "md": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/mass_categorical_descent.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/mass-categorical-descent.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/mass-categorical-descent.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/mass_categorical_descent.lean"
   },
   "source_hashes": {
     "md": "ee282c20716b",
@@ -623,7 +623,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "folio/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -645,7 +645,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "folio/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1214,8 +1214,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.863814Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/mass-categorical-descent.lean is missing entirely.",
-        "evidence": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.md:1",
+        "notes": "The sibling Lean file folio/quantum-observable-universe/mass-theory/mass-categorical-descent.lean is missing entirely.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/mass-categorical-descent.md:1",
         "severity": "minor"
       },
       {
@@ -1234,7 +1234,7 @@
         "reviewed_at": "2026-09-03T20:29:12Z",
         "reviewed_sha": "4a4e5ce3d2cbbfd6b22fdfc08b74b38323a736e3",
         "notes": "Statement is a units-free descent decomposition of the physically-indexed binding B(Z,N) into Hecke-centre and exceptional-divisor components, matching mass-theory's archimedean/physical-face regime, with the §7c side flagged in the .ts authorNote; no numeric q_0, MeV, Real.* or order hypothesis appears, and the prior fail judged Lean-sibling presence, not the wall.",
-        "evidence": "REGIME. Chapter `mass-theory` is listed in ARCHIMEDEAN_CHAPTERS (folio-assistant/cat-harness/content/pipeline/_folio-chapter-profiles.qou.ts:174-175) with permitted q-regimes {na, symbolic, generic-R, real-positive, real-gt-1, fixed-q0} (:88-90); its manifest docstring calls it 'the detailed geometric, archimedean, and physical faces of the mass endomorphism' consuming the algebraic core stated upstream in 'The Mass Endomorphism' chapter (mass-theory.ts:5-9). The block sits in section 'Geometric face: mass-volume factorisation and crossing expansion' (`sec:mass-geometric-face`, mass-theory.ts:598-600; block listed at :623). So the expected regime is archimedean/physical with symbolic form permitted. STATEMENT TOKENS (the whole .md is the statement; the proof is the separate block mass-categorical-descent-proof). md:4 `B(Z,N) = B^desc + B^trans` — a binding energy indexed by proton/neutron numbers, i.e. a physically-named quantity, but with NO units, NO MeV, NO numeric q_0, NO CODATA, NO m_e, NO Real.*/sqrt/log/exp/cos, NO order hypothesis, NO Vol(K), NO limit. md:7 'center of the Hecke algebra' / 'exceptional divisors of the brane blow-up' (categorical). md:10 'Casimir operators', 'volume, pairing, and Wigner terms of the liquid-drop model' (physical phenomenology names), 'quantum factorials scaled by Plancherel weights' (algebraic). md:13 'surface boundary, Coulomb charge locus, exchange parity locus, magic-number shell closures' (physical loci), 'quantum dilogarithm correction' (formal q-series, no archimedean evaluation asserted), 'Schur-Weyl magnetic quantum number' (algebraic), 'electromagnetic coupling' (physical). Outside the statement: mass-categorical-descent.ts:52-62 authorNote (kind note, 2026-08-08) '§7c base-ring note (archimedean specialisation) … binding energies B, B_desc, B_trans, B_BW as physical quantities … the block sits on the archimedean side of the §7c wall by construction'. BRANCHES. FAIL-A (generic chapter hard-coding archimedean constructs) does not apply: the chapter is archimedean and the statement hard-codes no archimedean construct anyway. FAIL-B (archimedean-chapter statement that is a purely algebraic identity belonging upstream): the bare sum-split B = B_desc + B_trans is algebraic, but the narrative statement's content is the identification of the two components with physical loci (liquid-drop volume/pairing/Wigner terms; surface, Coulomb, exchange-parity, magic-number shells) of a physically-indexed B(Z,N) — that is the physical/archimedean face, which is exactly what this chapter is for; it does not belong upstream in the algebraic-core chapter. WARN (mixed regimes unflagged): the statement does mix categorical vocabulary (Hecke centre, Casimir, Plancherel, quantum dilogarithm) with physical vocabulary, but this is the declared purpose of a 'faces' chapter, the statement asserts no numerical evaluation on either side, and the .ts authorNote (ts:52-62) explicitly names the side (archimedean by construction). PASS: statement regime matches its chapter regime and the side is flagged in the manifest. PRIOR ENTRY. The 2026-07-07 fail (reviewed_sha 6b830a632a24, field_hash md f7f9a23623ca / ts 94fe9fa2e8c6) cites only 'sibling Lean file is MISSING' with evidence md:1 — a Lean-presence complaint, not a wall-side judgement; depends_on is ['md'] and the criterion text never mentions a sibling. It is also stale: current hashes are md ee282c20716b / ts 85f8412342dc. Side note only: no sibling .lean exists, but lean.ref points to the library file content/quantum-observable-universe/lean/QOU/ParticleInteractions/mass_categorical_descent.lean (present, 10965 bytes), which per AGENTS.md §0a is the intended resolution route; not a wall-side matter. Peers in the same section on this criterion: thurston-volume-additivity pass, nuclear-knot-classification pass, vhat-pair-commutation-trace pass, delta-max-uniform-bound pass, markov-pair-z2 pass; the two fails (crossed-module-euler-characteristic, volume-perturbation-formula) carry the identical 'sibling Lean file is missing' template and are the same false-positive class."
+        "evidence": "REGIME. Chapter `mass-theory` is listed in ARCHIMEDEAN_CHAPTERS (folio-assistant/cat-harness/content/pipeline/_folio-chapter-profiles.qou.ts:174-175) with permitted q-regimes {na, symbolic, generic-R, real-positive, real-gt-1, fixed-q0} (:88-90); its manifest docstring calls it 'the detailed geometric, archimedean, and physical faces of the mass endomorphism' consuming the algebraic core stated upstream in 'The Mass Endomorphism' chapter (mass-theory.ts:5-9). The block sits in section 'Geometric face: mass-volume factorisation and crossing expansion' (`sec:mass-geometric-face`, mass-theory.ts:598-600; block listed at :623). So the expected regime is archimedean/physical with symbolic form permitted. STATEMENT TOKENS (the whole .md is the statement; the proof is the separate block mass-categorical-descent-proof). md:4 `B(Z,N) = B^desc + B^trans` — a binding energy indexed by proton/neutron numbers, i.e. a physically-named quantity, but with NO units, NO MeV, NO numeric q_0, NO CODATA, NO m_e, NO Real.*/sqrt/log/exp/cos, NO order hypothesis, NO Vol(K), NO limit. md:7 'center of the Hecke algebra' / 'exceptional divisors of the brane blow-up' (categorical). md:10 'Casimir operators', 'volume, pairing, and Wigner terms of the liquid-drop model' (physical phenomenology names), 'quantum factorials scaled by Plancherel weights' (algebraic). md:13 'surface boundary, Coulomb charge locus, exchange parity locus, magic-number shell closures' (physical loci), 'quantum dilogarithm correction' (formal q-series, no archimedean evaluation asserted), 'Schur-Weyl magnetic quantum number' (algebraic), 'electromagnetic coupling' (physical). Outside the statement: mass-categorical-descent.ts:52-62 authorNote (kind note, 2026-08-08) '§7c base-ring note (archimedean specialisation) … binding energies B, B_desc, B_trans, B_BW as physical quantities … the block sits on the archimedean side of the §7c wall by construction'. BRANCHES. FAIL-A (generic chapter hard-coding archimedean constructs) does not apply: the chapter is archimedean and the statement hard-codes no archimedean construct anyway. FAIL-B (archimedean-chapter statement that is a purely algebraic identity belonging upstream): the bare sum-split B = B_desc + B_trans is algebraic, but the narrative statement's content is the identification of the two components with physical loci (liquid-drop volume/pairing/Wigner terms; surface, Coulomb, exchange-parity, magic-number shells) of a physically-indexed B(Z,N) — that is the physical/archimedean face, which is exactly what this chapter is for; it does not belong upstream in the algebraic-core chapter. WARN (mixed regimes unflagged): the statement does mix categorical vocabulary (Hecke centre, Casimir, Plancherel, quantum dilogarithm) with physical vocabulary, but this is the declared purpose of a 'faces' chapter, the statement asserts no numerical evaluation on either side, and the .ts authorNote (ts:52-62) explicitly names the side (archimedean by construction). PASS: statement regime matches its chapter regime and the side is flagged in the manifest. PRIOR ENTRY. The 2026-07-07 fail (reviewed_sha 6b830a632a24, field_hash md f7f9a23623ca / ts 94fe9fa2e8c6) cites only 'sibling Lean file is MISSING' with evidence md:1 — a Lean-presence complaint, not a wall-side judgement; depends_on is ['md'] and the criterion text never mentions a sibling. It is also stale: current hashes are md ee282c20716b / ts 85f8412342dc. Side note only: no sibling .lean exists, but lean.ref points to the library file folio/quantum-observable-universe/lean/QOU/ParticleInteractions/mass_categorical_descent.lean (present, 10965 bytes), which per AGENTS.md §0a is the intended resolution route; not a wall-side matter. Peers in the same section on this criterion: thurston-volume-additivity pass, nuclear-knot-classification pass, vhat-pair-commutation-trace pass, delta-max-uniform-bound pass, markov-pair-z2 pass; the two fails (crossed-module-euler-characteristic, volume-perturbation-formula) carry the identical 'sibling Lean file is missing' template and are the same false-positive class."
       }
     ],
     "wall-side-proof": [
@@ -1269,7 +1269,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/ParticleInteractions/mass_categorical_descent.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/ParticleInteractions/mass_categorical_descent.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1445,7 +1445,7 @@
         "reviewed_at": "2026-07-07T14:26:56.863814Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
         "severity": "minor"
       },
       {
@@ -1510,7 +1510,7 @@
         "reviewed_at": "2026-07-07T14:26:56.863814Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
         "severity": "minor"
       },
       {
@@ -1592,7 +1592,7 @@
         "reviewed_at": "2026-07-07T14:26:56.863814Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
         "severity": "minor"
       },
       {
@@ -1625,7 +1625,7 @@
         "reviewed_at": "2026-07-07T14:26:56.863814Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
         "severity": "minor"
       },
       {
@@ -1658,7 +1658,7 @@
         "reviewed_at": "2026-07-07T14:26:56.863814Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
         "severity": "minor"
       },
       {
@@ -1691,7 +1691,7 @@
         "reviewed_at": "2026-07-07T14:26:56.863814Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
         "severity": "minor"
       },
       {
@@ -1724,7 +1724,7 @@
         "reviewed_at": "2026-07-07T14:26:56.863814Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
         "severity": "minor"
       },
       {
@@ -1757,7 +1757,7 @@
         "reviewed_at": "2026-07-07T14:26:56.863814Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1",
         "severity": "minor"
       },
       {
@@ -1857,9 +1857,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.863814Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/mass-categorical-descent.lean is missing, leading to complete divergence.",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/mass-theory/mass-categorical-descent.lean is missing, leading to complete divergence.",
         "severity": "minor",
-        "evidence": "The referenced Lean file content/quantum-observable-universe/mass-theory/mass-categorical-descent.lean is missing, leading to complete divergence."
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/mass-theory/mass-categorical-descent.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",

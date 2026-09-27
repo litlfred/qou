@@ -3,9 +3,9 @@
   "label": "conj:macroscopic-stability-equivalence",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts",
-    "md": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.md",
-    "lean": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.lean"
+    "ts": "folio/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts",
+    "md": "folio/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.md",
+    "lean": "folio/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.lean"
   },
   "source_hashes": {
     "md": "0d6f44352454",
@@ -245,7 +245,7 @@
         "reviewed_at": "2026-08-22T20:14:14.325Z",
         "reviewed_sha": "d2e9150f99eeab5dc202ab3d6e21949028b1ce3a",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.md:19: P4:date-ref: Until 2026-08-22 the Lean sibling asserted the two equivalences as axioms, each quantified over its two arguments **independently**:"
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.md:19: P4:date-ref: Until 2026-08-22 the Lean sibling asserted the two equivalences as axioms, each quantified over its two arguments **independently**:"
       }
     ],
     "voice-status-section": [
@@ -307,7 +307,7 @@
         "reviewed_at": "2026-08-22T20:14:14.325Z",
         "reviewed_sha": "d2e9150f99eeab5dc202ab3d6e21949028b1ce3a",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a \u00a77c-style note (in authorNotes, per \u00a74d) or move the archimedean evaluation to a sibling block."
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a \u00a77c-style note (in authorNotes, per \u00a74d) or move the archimedean evaluation to a sibling block."
       }
     ],
     "q-usage-regime-detected": [
@@ -1382,7 +1382,7 @@
         "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
         "notes": "No false claims identified in 'The stability of the macroscopic spacetime continuum is equivalent to': mathematical reasoning is consistent."
       },
       {
@@ -1417,7 +1417,7 @@
         "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
         "notes": "The claims in 'The stability of the macroscopic spacetime continuum is equivalent to' are non-vacuous as they present substantial mathematical content."
       },
       {
@@ -1452,7 +1452,7 @@
         "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
         "notes": "No circular reasoning or self-assuming definitions detected in 'The stability of the macroscopic spacetime continuum is equivalent to'."
       },
       {
@@ -1487,7 +1487,7 @@
         "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
         "notes": "No overclaims: the scope of 'The stability of the macroscopic spacetime continuum is equivalent to' is appropriately qualified."
       },
       {
@@ -1522,7 +1522,7 @@
         "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The stability of the macroscopic spacetime continuum is equivalent to'."
       },
       {
@@ -1557,7 +1557,7 @@
         "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
         "notes": "The argument flow in 'The stability of the macroscopic spacetime continuum is equivalent to' is logically sound, mapping onto the cited dependencies."
       },
       {
@@ -1592,7 +1592,7 @@
         "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.lean:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.lean:1",
         "notes": "No narrative divergence: the Lean sibling implements the structure claimed in 'The stability of the macroscopic spacetime continuum is equivalent to'."
       },
       {
@@ -1627,7 +1627,7 @@
         "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
         "notes": "Citations to vonkoch1901, weil1948 are correct and contextually appropriate."
       },
       {
@@ -1662,7 +1662,7 @@
         "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
         "notes": "Key terms and symbols in 'The stability of the macroscopic spacetime continuum is equivalent to' are mathematically defined and unambiguous."
       },
       {
@@ -1697,7 +1697,7 @@
         "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
         "notes": "The algebraic and logical relations in 'The stability of the macroscopic spacetime continuum is equivalent to' are independent of empirical tuning parameters."
       },
       {
@@ -1732,7 +1732,7 @@
         "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
         "notes": "The physical concepts described in 'The stability of the macroscopic spacetime continuum is equivalent to' are consistent with quantum observable mechanics."
       },
       {
@@ -1767,7 +1767,7 @@
         "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
         "notes": "The derivation steps and formal definitions in 'The stability of the macroscopic spacetime continuum is equivalent to' are reproducible."
       },
       {
@@ -1802,7 +1802,7 @@
         "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.md:1 \u2014 The stability of the macroscopic spacetime continuum is equivalent to",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.md:1 \u2014 The stability of the macroscopic spacetime continuum is equivalent to",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'The stability of the macroscopic spacetime continuum is equivalent to' are consistent."

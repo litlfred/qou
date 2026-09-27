@@ -3,8 +3,8 @@
   "label": "ex:non-magic-Li6-diagram",
   "kind": "example",
   "paths": {
-    "ts": "content/quantum-observable-universe/observations/non-magic-Li6-diagram.ts",
-    "md": "content/quantum-observable-universe/observations/non-magic-Li6-diagram.md"
+    "ts": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram.ts",
+    "md": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram.md"
   },
   "source_hashes": {
     "md": "1796ab0e9968",
@@ -840,7 +840,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Non-magic illustration: $^{6}\\\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
       }
     ],
     "da-vacuous": [
@@ -877,7 +877,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Non-magic illustration: $^{6}\\\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
       }
     ],
     "da-overclaim": [
@@ -914,7 +914,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Non-magic illustration: $^{6}\\\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -933,7 +933,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The argument flow in 'Non-magic illustration: $^{6}\\\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -970,7 +970,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Non-magic illustration: $^{6}\\\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -989,7 +989,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Non-magic illustration: $^{6}\\\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1008,7 +1008,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Non-magic illustration: $^{6}\\\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1027,7 +1027,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Non-magic illustration: $^{6}\\\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1046,7 +1046,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The derivation steps and formal definitions in 'Non-magic illustration: $^{6}\\\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
       }
     ],
     "da-referee-verdict": [

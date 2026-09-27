@@ -18,10 +18,10 @@ import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
 /-!
 # QOU.ProjectiveLineObject
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/ProjectiveLineObject.lean (monolithic).
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/ProjectiveLineObject.lean (monolithic).
 That file no longer exists — the library was split, and `ProjectiveLineObject` now lives at
-  content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/GaugeTheory.lean
+  folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/GaugeTheory.lean
 -/
 
 open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory

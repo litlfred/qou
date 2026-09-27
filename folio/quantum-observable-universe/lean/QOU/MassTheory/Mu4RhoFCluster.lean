@@ -26,7 +26,7 @@ reference's own 4-body simplex coefficient `g₄ = +8.37` being subtracted, not 
 
 Canonical companions (re-derived self-contained here, import-light):
 `QOU.BraidKnot.Cluster.productModel_3body_nonpos` and `markovParam_le_half`
-(`content/quantum-observable-universe/mass-theory/interface-knot-markov-z.lean`).
+(`folio/quantum-observable-universe/mass-theory/interface-knot-markov-z.lean`).
 
 Probe: `computations/deltalambda/mu4_rhoF_cluster_derivation_probe.py`.
 Anti-fit: only the derived sign structure is used; the AME residual magnitude

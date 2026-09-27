@@ -3,9 +3,9 @@
   "label": "rem:markov-closure-map-axiomatic",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/stochastic-mechanics/markov-closure-map-axiomatic.ts",
-    "md": "content/quantum-observable-universe/stochastic-mechanics/markov-closure-map-axiomatic.md",
-    "lean": "content/quantum-observable-universe/stochastic-mechanics/markov-closure-map-axiomatic.lean"
+    "ts": "folio/quantum-observable-universe/stochastic-mechanics/markov-closure-map-axiomatic.ts",
+    "md": "folio/quantum-observable-universe/stochastic-mechanics/markov-closure-map-axiomatic.md",
+    "lean": "folio/quantum-observable-universe/stochastic-mechanics/markov-closure-map-axiomatic.lean"
   },
   "source_hashes": {
     "md": "59ad12ba07ec",
@@ -666,7 +666,7 @@
         "reviewed_at": "2026-08-09T13:01:55.985Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/markov-closure-map-axiomatic.ts:0: forward ref: uses rem:F3-eps6-leading-eq-neg-2b-cubed (manifest pos 20) which appears after this block (pos 19) in the chapter"
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/markov-closure-map-axiomatic.ts:0: forward ref: uses rem:F3-eps6-leading-eq-neg-2b-cubed (manifest pos 20) which appears after this block (pos 19) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -826,7 +826,7 @@
         "reviewed_at": "2026-08-09T13:01:55.985Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/markov-closure-map-axiomatic.ts:0: uses[] dependency cycle: rem:markov-closure-map-axiomatic -> rem:F3-eps6-leading-eq-neg-2b-cubed -> prop:q-beta-c3-hopf-three-fold-markov -> rem:q-beta-gamma-gamma-canonical-derivation -> rem:kashiwara-jones-alternation-interpretation -> prop:q-beta-categorical-precision-ladder -> prop:tau-M-asymptotic-rep-theory -> prop:q-beta-c-k-recursion-from-habiro-q-difference -> rem:markov-trace-inductive-limit -> rem:braid-group-n-strand -> rem:typed-b3-sub-braid-extraction -> rem:braid-link-types -> rem:markov-closure-map-axiomatic"
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/markov-closure-map-axiomatic.ts:0: uses[] dependency cycle: rem:markov-closure-map-axiomatic -> rem:F3-eps6-leading-eq-neg-2b-cubed -> prop:q-beta-c3-hopf-three-fold-markov -> rem:q-beta-gamma-gamma-canonical-derivation -> rem:kashiwara-jones-alternation-interpretation -> prop:q-beta-categorical-precision-ladder -> prop:tau-M-asymptotic-rep-theory -> prop:q-beta-c-k-recursion-from-habiro-q-difference -> rem:markov-trace-inductive-limit -> rem:braid-group-n-strand -> rem:typed-b3-sub-braid-extraction -> rem:braid-link-types -> rem:markov-closure-map-axiomatic"
       }
     ],
     "bib-cite-resolves": [

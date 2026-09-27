@@ -6,8 +6,8 @@ import Mathlib.Algebra.Group.Basic
 /-!
 # QOU.HadronicMass.SkeinMassRelation
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/HadronicMass.lean (monolithic)
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/HadronicMass.lean (monolithic)
 
 **Ground ring**: `ℝ` (archimedean realisation).
 Evaluates formal results at q₀ ≈ 1.1098 for comparison with

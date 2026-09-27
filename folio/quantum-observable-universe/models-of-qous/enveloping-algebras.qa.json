@@ -3,8 +3,8 @@
   "label": "sec:enveloping-algebras-models",
   "kind": "prose",
   "paths": {
-    "ts": "content/quantum-observable-universe/models-of-qous/enveloping-algebras.ts",
-    "md": "content/quantum-observable-universe/models-of-qous/enveloping-algebras.md"
+    "ts": "folio/quantum-observable-universe/models-of-qous/enveloping-algebras.ts",
+    "md": "folio/quantum-observable-universe/models-of-qous/enveloping-algebras.md"
   },
   "source_hashes": {
     "md": "82fadfd98a9f",
@@ -384,7 +384,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/models-of-qous/enveloping-algebras.md:3 — root-of-unity construction used without explicit regime declaration — We solve this lifting problem using the Lusztig integral form of $\\mathcal{U}_q(\\mathfrak{su}(2))$, its triangular decomposition, and the $q$-deformed Poincaré–Birkhoff–Witt (PBW) basis. The integral form and triangular decomposition factor the generators into component subalgebras. The $q$-deformed PBW basis provides an explicit ordered basis for the enveloping algebra. Together, these algebraic structures lift the infinitesimal $q$-commutation relations back to the substrate."
+        "evidence": "folio/quantum-observable-universe/models-of-qous/enveloping-algebras.md:3 — root-of-unity construction used without explicit regime declaration — We solve this lifting problem using the Lusztig integral form of $\\mathcal{U}_q(\\mathfrak{su}(2))$, its triangular decomposition, and the $q$-deformed Poincaré–Birkhoff–Witt (PBW) basis. The integral form and triangular decomposition factor the generators into component subalgebras. The $q$-deformed PBW basis provides an explicit ordered basis for the enveloping algebra. Together, these algebraic structures lift the infinitesimal $q$-commutation relations back to the substrate."
       }
     ],
     "q-usage-narrative-chapter-mismatch": [

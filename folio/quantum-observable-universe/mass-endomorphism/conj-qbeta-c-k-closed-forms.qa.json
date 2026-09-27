@@ -3,9 +3,9 @@
   "label": "prop:qbeta-c-k-closed-forms",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.ts",
-    "md": "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.md",
-    "lean": "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean"
+    "ts": "folio/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.ts",
+    "md": "folio/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.md",
+    "lean": "folio/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean"
   },
   "source_hashes": {
     "md": "22c80da203c3",
@@ -1026,7 +1026,7 @@
         "reviewed_at": "2026-09-14T18:16:10.389Z",
         "reviewed_sha": "12e406422e871cdc099b8cd958b70a31f3666e60",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.md:29: 1. **Khovanov–Rozansky polynomial at finite $q$**: Compute $\\mathrm{Kh}(L)(q, t)$ for the typed-$\\mathbf{B}_3$ Markov-closure link $L$ at the substrate $q_0$ (not merely $q = 1$). The Taylor coefficie"
+        "evidence": "folio/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.md:29: 1. **Khovanov–Rozansky polynomial at finite $q$**: Compute $\\mathrm{Kh}(L)(q, t)$ for the typed-$\\mathbf{B}_3$ Markov-closure link $L$ at the substrate $q_0$ (not merely $q = 1$). The Taylor coefficie"
       }
     ],
     "voice-scholarly-default": [
@@ -1271,7 +1271,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean:39 — positivity-dependent Real.* on q without explicit hypothesis — Real.sqrt (q^4 + q^2 + 1) / (q^2 + 1)"
+        "evidence": "folio/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean:39 — positivity-dependent Real.* on q without explicit hypothesis — Real.sqrt (q^4 + q^2 + 1) / (q^2 + 1)"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [

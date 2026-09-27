@@ -3,8 +3,8 @@
   "label": "rem:braid-base-field",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/braid-base-field.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/braid-base-field.md"
+    "ts": "folio/quantum-observable-universe/braids-and-knots/braid-base-field.ts",
+    "md": "folio/quantum-observable-universe/braids-and-knots/braid-base-field.md"
   },
   "source_hashes": {
     "md": "917f68262e83",
@@ -384,7 +384,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/braid-base-field.md:5 \u2014 root-of-unity construction used without explicit regime declaration \u2014 3. For the finite-field realisation ([finite field realisation](#ex:finite-field-realisation)), the braiding persists on the fusion category $\\mathrm{Rep}_{\\mathbb{F}_\\mathfrak{p}}(\\mathrm{SU}_q(2))$."
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/braid-base-field.md:5 \u2014 root-of-unity construction used without explicit regime declaration \u2014 3. For the finite-field realisation ([finite field realisation](#ex:finite-field-realisation)), the braiding persists on the fusion category $\\mathrm{Rep}_{\\mathbb{F}_\\mathfrak{p}}(\\mathrm{SU}_q(2))$."
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -402,7 +402,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/braid-base-field.md:1 \u2014 detected regime [root-of-unity] is disjoint from chapter 'braids-and-knots' expected [generic-R, mod-gt-1, mod-lt-1, na, real-positive, symbolic]"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/braid-base-field.md:1 \u2014 detected regime [root-of-unity] is disjoint from chapter 'braids-and-knots' expected [generic-R, mod-gt-1, mod-lt-1, na, real-positive, symbolic]"
       }
     ],
     "canonical-calibration-count": [

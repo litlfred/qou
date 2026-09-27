@@ -3,9 +3,9 @@
   "label": "def:parabolic-hecke-subalgebra",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.ts",
-    "md": "content/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.md",
-    "lean": "content/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.lean"
+    "ts": "folio/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.ts",
+    "md": "folio/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.md",
+    "lean": "folio/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.lean"
   },
   "source_hashes": {
     "md": "bc686c16a77d",
@@ -1007,7 +1007,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Parabolic Hecke subalgebra $H_\\\\lambda(q) \\\\hookrightarrow H_N(q)$': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.ts:1"
+        "evidence": "folio/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.ts:1"
       },
       {
         "result": "pass",
@@ -1076,7 +1076,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Parabolic Hecke subalgebra $H_\\\\lambda(q) \\\\hookrightarrow H_N(q)$'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.ts:1"
+        "evidence": "folio/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.ts:1"
       },
       {
         "result": "pass",
@@ -1145,7 +1145,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Parabolic Hecke subalgebra $H_\\\\lambda(q) \\\\hookrightarrow H_N(q)$'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.ts:1"
+        "evidence": "folio/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.ts:1"
       },
       {
         "result": "pass",
@@ -1180,7 +1180,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The argument flow in 'Parabolic Hecke subalgebra $H_\\\\lambda(q) \\\\hookrightarrow H_N(q)$' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.ts:1"
+        "evidence": "folio/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.ts:1"
       },
       {
         "result": "pass",
@@ -1249,7 +1249,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Parabolic Hecke subalgebra $H_\\\\lambda(q) \\\\hookrightarrow H_N(q)$', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.ts:1"
+        "evidence": "folio/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.ts:1"
       },
       {
         "result": "pass",
@@ -1284,7 +1284,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Parabolic Hecke subalgebra $H_\\\\lambda(q) \\\\hookrightarrow H_N(q)$' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.ts:1"
+        "evidence": "folio/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.ts:1"
       },
       {
         "result": "pass",
@@ -1319,7 +1319,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Parabolic Hecke subalgebra $H_\\\\lambda(q) \\\\hookrightarrow H_N(q)$' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.ts:1"
+        "evidence": "folio/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.ts:1"
       },
       {
         "result": "pass",
@@ -1354,7 +1354,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Parabolic Hecke subalgebra $H_\\\\lambda(q) \\\\hookrightarrow H_N(q)$' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.ts:1"
+        "evidence": "folio/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.ts:1"
       },
       {
         "result": "pass",
@@ -1389,7 +1389,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The derivation steps and formal definitions in 'Parabolic Hecke subalgebra $H_\\\\lambda(q) \\\\hookrightarrow H_N(q)$' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.ts:1"
+        "evidence": "folio/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.ts:1"
       },
       {
         "result": "pass",

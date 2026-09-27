@@ -2,8 +2,8 @@
   "$schema": "block-qa/v1",
   "kind": "table",
   "paths": {
-    "ts": "content/quantum-observable-universe/observations/fine-structure-observation-table1-data.ts",
-    "md": "content/quantum-observable-universe/observations/fine-structure-observation-table1-data.md"
+    "ts": "folio/quantum-observable-universe/observations/fine-structure-observation-table1-data.ts",
+    "md": "folio/quantum-observable-universe/observations/fine-structure-observation-table1-data.md"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -251,7 +251,7 @@
         "reviewed_at": "2026-08-29T08:23:51.653Z",
         "reviewed_sha": "7af52d17f8206141b583fd416fd5c18168a75d63",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/observations/fine-structure-observation-table1-data.md:13: P4:date-ref: *Refreshed 2026-08-29 to the proton pin and CODATA 2022.* Every cell is recomputed"
+        "evidence": "folio/quantum-observable-universe/observations/fine-structure-observation-table1-data.md:13: P4:date-ref: *Refreshed 2026-08-29 to the proton pin and CODATA 2022.* Every cell is recomputed"
       }
     ],
     "voice-status-section": [

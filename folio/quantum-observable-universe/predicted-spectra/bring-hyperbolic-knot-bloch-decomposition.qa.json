@@ -3,9 +3,9 @@
   "label": "conj:bring-hyperbolic-knot-bloch-decomposition",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.md",
-    "lean": "content/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.lean"
+    "ts": "folio/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.ts",
+    "md": "folio/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.md",
+    "lean": "folio/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.lean"
   },
   "source_hashes": {
     "md": "98cc24a39823",
@@ -1552,7 +1552,7 @@
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.ts:0: uses[] dependency cycle: conj:bring-hyperbolic-knot-bloch-decomposition -> prop:em-coupling-bring-zero-mode -> conj:bring-hyperbolic-knot-bloch-decomposition"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.ts:0: uses[] dependency cycle: conj:bring-hyperbolic-knot-bloch-decomposition -> prop:em-coupling-bring-zero-mode -> conj:bring-hyperbolic-knot-bloch-decomposition"
       }
     ],
     "bib-cited-ref-has-url": [

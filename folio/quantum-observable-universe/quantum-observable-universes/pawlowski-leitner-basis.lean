@@ -9,7 +9,7 @@ import Mathlib.Data.Real.Basic
 The Pawlowski–Leitner basis provides a canonical basis for
 Hom_{SU(2)}(V_j, V_{1/2}^⊗n), indexed by standard Young tableaux.
 
-Authoritative source: `content/quantum-observable-universe/lean/QOU/RepresentationTheory.lean`
+Authoritative source: `folio/quantum-observable-universe/lean/QOU/RepresentationTheory.lean`
 
 ## References
 

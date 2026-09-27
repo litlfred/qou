@@ -3,9 +3,9 @@
   "label": "thm:topological-charge-quantization",
   "kind": "theorem",
   "paths": {
-    "ts": "content/quantum-observable-universe/brings-surface/topological-charge-quantization.ts",
-    "md": "content/quantum-observable-universe/brings-surface/topological-charge-quantization.md",
-    "lean": "content/quantum-observable-universe/brings-surface/topological-charge-quantization.lean"
+    "ts": "folio/quantum-observable-universe/brings-surface/topological-charge-quantization.ts",
+    "md": "folio/quantum-observable-universe/brings-surface/topological-charge-quantization.md",
+    "lean": "folio/quantum-observable-universe/brings-surface/topological-charge-quantization.lean"
   },
   "source_hashes": {
     "md": "037a20316a59",
@@ -1585,8 +1585,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.005215Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/topological-charge-quantization.lean:35:65: error: unexpected token '/--'; expected 'lemma'",
-        "evidence": "content/quantum-observable-universe/brings-surface/topological-charge-quantization.lean:1",
+        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/brings-surface/topological-charge-quantization.lean:35:65: error: unexpected token '/--'; expected 'lemma'",
+        "evidence": "folio/quantum-observable-universe/brings-surface/topological-charge-quantization.lean:1",
         "severity": "minor"
       },
       {
@@ -1751,8 +1751,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.005215Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/topological-charge-quantization.lean:35:65: error: unexpected token '/--'; expected 'lemma'",
-        "evidence": "content/quantum-observable-universe/brings-surface/topological-charge-quantization.lean:1",
+        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/brings-surface/topological-charge-quantization.lean:35:65: error: unexpected token '/--'; expected 'lemma'",
+        "evidence": "folio/quantum-observable-universe/brings-surface/topological-charge-quantization.lean:1",
         "severity": "major"
       },
       {
@@ -1785,11 +1785,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.005215Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/topological-charge-quantization.lean:35:65: error: unexpected token '/--'; expected 'lemma'",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/topological-charge-quantization.lean:35:65: error: unexpected token '/--'; expected 'lemma'",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/topological-charge-quantization.lean:35:65: error: unexpected token '/--'; expected 'lemma'",
+        "referee_argument": "The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/topological-charge-quantization.lean:35:65: error: unexpected token '/--'; expected 'lemma'",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/topological-charge-quantization.lean:35:65: error: unexpected token '/--'; expected 'lemma'"
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/topological-charge-quantization.lean:35:65: error: unexpected token '/--'; expected 'lemma'"
       },
       {
         "result": "pass",
@@ -1914,7 +1914,7 @@
         "reviewed_at": "2026-08-09T11:32:20.413Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/brings-surface/topological-charge-quantization.md:5: Bonnet theorem \u2014 named result, no citation in block"
+        "evidence": "folio/quantum-observable-universe/brings-surface/topological-charge-quantization.md:5: Bonnet theorem \u2014 named result, no citation in block"
       }
     ],
     "voice-agent-speak": [

@@ -3,8 +3,8 @@
   "label": "intro-hoefsmit-convergence-atomic",
   "kind": "prose",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/intro-hoefsmit-convergence-atomic.ts",
-    "md": "content/quantum-observable-universe/mass-theory/intro-hoefsmit-convergence-atomic.md"
+    "ts": "folio/quantum-observable-universe/mass-theory/intro-hoefsmit-convergence-atomic.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/intro-hoefsmit-convergence-atomic.md"
   },
   "source_hashes": {
     "md": "564af2d1478d",
@@ -123,7 +123,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/intro-hoefsmit-convergence-atomic.md:1 — detected regime [symbolic] is disjoint from chapter 'mass-theory' expected [fixed-q0, na, real-gt-1, real-positive]"
+        "evidence": "folio/quantum-observable-universe/mass-theory/intro-hoefsmit-convergence-atomic.md:1 — detected regime [symbolic] is disjoint from chapter 'mass-theory' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ],
     "milnor-amalgamated-flow": [],

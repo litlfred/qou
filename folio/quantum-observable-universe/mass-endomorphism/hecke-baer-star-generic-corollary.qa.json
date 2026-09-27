@@ -3,8 +3,8 @@
   "label": "rem:hecke-baer-star-generic-corollary",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-endomorphism/hecke-baer-star-generic-corollary.ts",
-    "md": "content/quantum-observable-universe/mass-endomorphism/hecke-baer-star-generic-corollary.md"
+    "ts": "folio/quantum-observable-universe/mass-endomorphism/hecke-baer-star-generic-corollary.ts",
+    "md": "folio/quantum-observable-universe/mass-endomorphism/hecke-baer-star-generic-corollary.md"
   },
   "source_hashes": {
     "md": "a6a19404dc0d",
@@ -518,7 +518,7 @@
         "reviewed_at": "2026-08-29T15:52:33.383Z",
         "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/hecke-baer-star-generic-corollary.ts:0: forward ref: uses prop:explicit-central-idempotent (manifest pos 123) which appears after this block (pos 120) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-endomorphism/hecke-baer-star-generic-corollary.ts:0: forward ref: uses prop:explicit-central-idempotent (manifest pos 123) which appears after this block (pos 120) in the chapter"
       }
     ],
     "detangler-section-band": [

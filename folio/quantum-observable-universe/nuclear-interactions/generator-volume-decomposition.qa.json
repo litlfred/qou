@@ -3,9 +3,9 @@
   "label": "prop:generator-volume-decomposition",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/generator-volume-decomposition.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/generator-volume-decomposition.md",
-    "lean": "content/quantum-observable-universe/nuclear-interactions/generator-volume-decomposition.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/generator-volume-decomposition.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/generator-volume-decomposition.md",
+    "lean": "folio/quantum-observable-universe/nuclear-interactions/generator-volume-decomposition.lean"
   },
   "source_hashes": {
     "md": "75f68416a42d",
@@ -384,7 +384,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/nuclear-interactions/generator-volume-decomposition.lean:32 — positivity-dependent Real.* on q without explicit hypothesis — let z := 1 / (Real.sqrt q + 1 / Real.sqrt q)"
+        "evidence": "folio/quantum-observable-universe/nuclear-interactions/generator-volume-decomposition.lean:32 — positivity-dependent Real.* on q without explicit hypothesis — let z := 1 / (Real.sqrt q + 1 / Real.sqrt q)"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -1514,9 +1514,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.146940Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The claim in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:60:14: error(lean.unknownIdentifier): Unknown identifier `q_half`.",
+        "notes": "The claim in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' is unverified due to Lean compilation failures: folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:60:14: error(lean.unknownIdentifier): Unknown identifier `q_half`.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:1"
       },
       {
         "result": "pass",
@@ -1549,9 +1549,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.146940Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:1"
       },
       {
         "result": "pass",
@@ -1586,7 +1586,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
       },
       {
         "result": "pass",
@@ -1619,9 +1619,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.146940Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The prose in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean is incomplete (has sorry).",
+        "notes": "The prose in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' presents the result as established, but the Lean formalization in folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean is incomplete (has sorry).",
         "severity": "minor",
-        "evidence": "The prose in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean is incomplete (has sorry)."
+        "evidence": "The prose in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' presents the result as established, but the Lean formalization in folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean is incomplete (has sorry)."
       },
       {
         "result": "pass",
@@ -1656,7 +1656,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
       },
       {
         "result": "pass",
@@ -1689,9 +1689,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.146940Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:1"
       },
       {
         "result": "pass",
@@ -1724,9 +1724,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.146940Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1761,7 +1761,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
       },
       {
         "result": "pass",
@@ -1796,7 +1796,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
       },
       {
         "result": "pass",
@@ -1831,7 +1831,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
       },
       {
         "result": "pass",
@@ -1866,7 +1866,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
       },
       {
         "result": "pass",
@@ -1899,9 +1899,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.146940Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:1 — content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:60:14: error(lean.unknownIdentifier): Unknown identifier `q_half`"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:1 — folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:60:14: error(lean.unknownIdentifier): Unknown identifier `q_half`"
       },
       {
         "result": "pass",
@@ -1934,11 +1934,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.146940Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean fails compilation: content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:60:14: error(lean.unknownIdentifier): Unknown identifier `q_half`",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean fails compilation: folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:60:14: error(lean.unknownIdentifier): Unknown identifier `q_half`",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean for 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' fails compilation with error: content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:60:14: error(lean.unknownIdentifier): Unknown identifier `q_half`. This invalidates the claim of formal verification.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean fails compilation: content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:60:14: error(lean.unknownIdentifier): Unknown identifier `q_half`"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean for 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' fails compilation with error: folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:60:14: error(lean.unknownIdentifier): Unknown identifier `q_half`. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean fails compilation: folio/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:60:14: error(lean.unknownIdentifier): Unknown identifier `q_half`"
       },
       {
         "result": "pass",

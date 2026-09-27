@@ -3,9 +3,9 @@
   "label": "prop:confinement-lp",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/confinement-lp.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/confinement-lp.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/Interactions/ConfinementLP.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/confinement-lp.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/confinement-lp.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/Interactions/ConfinementLP.lean"
   },
   "source_hashes": {
     "md": "aef87cf722e0",
@@ -271,7 +271,7 @@
         "reviewed_at": "2026-08-09T11:33:35.560Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/nuclear-interactions/confinement-lp.md:56: Strong duality — named result, no citation in block"
+        "evidence": "folio/quantum-observable-universe/nuclear-interactions/confinement-lp.md:56: Strong duality — named result, no citation in block"
       }
     ],
     "voice-agent-speak": [
@@ -1129,7 +1129,7 @@
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/nuclear-interactions/confinement-lp.ts:0: forward ref: uses prop:confinement-operator-selection (manifest pos 20) which appears after this block (pos 18) in the chapter"
+        "evidence": "folio/quantum-observable-universe/nuclear-interactions/confinement-lp.ts:0: forward ref: uses prop:confinement-operator-selection (manifest pos 20) which appears after this block (pos 18) in the chapter"
       }
     ],
     "detangler-section-band": [

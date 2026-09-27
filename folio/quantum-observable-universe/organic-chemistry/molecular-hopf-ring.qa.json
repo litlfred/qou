@@ -3,9 +3,9 @@
   "label": "def:molecular-hopf-ring",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.ts",
-    "md": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.md",
-    "lean": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean"
+    "ts": "folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.ts",
+    "md": "folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.md",
+    "lean": "folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean"
   },
   "source_hashes": {
     "md": "3eb01f04db26",
@@ -1016,7 +1016,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claim in 'Molecular Hopf ring (closed)' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:1"
+        "evidence": "folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:1"
       }
     ],
     "da-vacuous": [
@@ -1059,7 +1059,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Molecular Hopf ring (closed)'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.ts:1"
+        "evidence": "folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1118,7 +1118,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Molecular Hopf ring (closed)'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.ts:1"
+        "evidence": "folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1138,9 +1138,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:54.959776Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:1"
+        "evidence": "folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1160,9 +1160,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:54.959776Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean sibling content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -1199,7 +1199,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Molecular Hopf ring (closed)', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.ts:1"
+        "evidence": "folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1221,7 +1221,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Molecular Hopf ring (closed)' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.ts:1"
+        "evidence": "folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1243,7 +1243,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Molecular Hopf ring (closed)' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.ts:1"
+        "evidence": "folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1265,7 +1265,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Molecular Hopf ring (closed)' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.ts:1"
+        "evidence": "folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1285,9 +1285,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:54.959776Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean sibling content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:1 \u2014 content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:27:2: error: Invalid field notation: Type of"
+        "evidence": "folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:1 \u2014 folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:27:2: error: Invalid field notation: Type of"
       },
       {
         "field_hash": {
@@ -1322,11 +1322,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:54.959776Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean fails compilation: content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:27:2: error: Invalid field notation: Type of",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean fails compilation: folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:27:2: error: Invalid field notation: Type of",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean contains compilation errors: content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:27:2: error: Invalid field notation: Type of, invalidating the claimed formalization.",
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean contains compilation errors: folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:27:2: error: Invalid field notation: Type of, invalidating the claimed formalization.",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean fails compilation: content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:27:2: error: Invalid field notation: Type of"
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean fails compilation: folio/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:27:2: error: Invalid field notation: Type of"
       },
       {
         "field_hash": {

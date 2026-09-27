@@ -3,9 +3,9 @@
   "label": "prop:confined-knot-binding",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/confined-knot-binding.ts",
-    "md": "content/quantum-observable-universe/mass-theory/confined-knot-binding.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/confined_knot_binding.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/confined-knot-binding.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/confined-knot-binding.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/BraidKnot/confined_knot_binding.lean"
   },
   "source_hashes": {
     "md": "abfe1e773c7b",
@@ -1049,7 +1049,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/lean/QOU/BraidKnot/confined_knot_binding.lean:14: so the binding volume is carried entirely by the standard"
+        "evidence": "folio/quantum-observable-universe/lean/QOU/BraidKnot/confined_knot_binding.lean:14: so the binding volume is carried entirely by the standard"
       }
     ],
     "voice-title-scholarly": [
@@ -1750,7 +1750,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/confined-knot-binding.ts:0: forward ref: uses prop:nuclear-knot-classification (manifest pos 668) which appears after this block (pos 486) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/confined-knot-binding.ts:0: forward ref: uses prop:nuclear-knot-classification (manifest pos 668) which appears after this block (pos 486) in the chapter"
       }
     ],
     "detangler-section-band": [

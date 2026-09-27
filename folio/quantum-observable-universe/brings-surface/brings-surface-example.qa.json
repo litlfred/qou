@@ -3,8 +3,8 @@
   "label": "ex:brings-surface-concrete",
   "kind": "example",
   "paths": {
-    "ts": "content/quantum-observable-universe/brings-surface/brings-surface-example.ts",
-    "md": "content/quantum-observable-universe/brings-surface/brings-surface-example.md"
+    "ts": "folio/quantum-observable-universe/brings-surface/brings-surface-example.ts",
+    "md": "folio/quantum-observable-universe/brings-surface/brings-surface-example.md"
   },
   "source_hashes": {
     "md": "a56d4e80e0a2",
@@ -891,7 +891,7 @@
         "reviewed_at": "2026-08-15T22:56:06.905Z",
         "reviewed_sha": "edb73f4712d20bb27bc4c2e66dfe0bd89c16aa8e",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/brings-surface/brings-surface-example.ts:0: forward ref: uses def:archimedean-condition (manifest pos 84) which appears after this block (pos 16) in the chapter"
+        "evidence": "folio/quantum-observable-universe/brings-surface/brings-surface-example.ts:0: forward ref: uses def:archimedean-condition (manifest pos 84) which appears after this block (pos 16) in the chapter"
       }
     ],
     "detangler-section-band": [

@@ -3,9 +3,9 @@
   "label": "thm:groebner-shirshov-energy",
   "kind": "theorem",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/groebner-shirshov-energy.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/groebner-shirshov-energy.md",
-    "lean": "content/quantum-observable-universe/nuclear-interactions/groebner-shirshov-energy.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/groebner-shirshov-energy.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/groebner-shirshov-energy.md",
+    "lean": "folio/quantum-observable-universe/nuclear-interactions/groebner-shirshov-energy.lean"
   },
   "source_hashes": {
     "md": "716a0ef36c2c",
@@ -1409,7 +1409,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The mathematical claims in 'Energy as a Gröbner--Shirshov invariant of the nuclear braid' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean:39:17: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern.",
+        "notes": "The mathematical claims in 'Energy as a Gröbner--Shirshov invariant of the nuclear braid' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean:39:17: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern.",
         "severity": "minor",
         "evidence": "groebner-shirshov-energy.lean:1"
       },
@@ -1444,7 +1444,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "groebner-shirshov-energy.lean:1"
       },
@@ -1583,7 +1583,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean.",
         "severity": "minor",
         "evidence": "groebner-shirshov-energy.lean:1"
       },
@@ -1618,9 +1618,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1793,9 +1793,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "groebner-shirshov-energy.lean:1 — content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean:39:17: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern"
+        "evidence": "groebner-shirshov-energy.lean:1 — folio/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean:39:17: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern"
       },
       {
         "result": "pass",
@@ -1828,11 +1828,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation.",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation."
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation."
       },
       {
         "result": "pass",

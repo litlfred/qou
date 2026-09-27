@@ -3,8 +3,8 @@
   "label": "ex:brane-tower-levels",
   "kind": "example",
   "paths": {
-    "ts": "content/quantum-observable-universe/lifting-and-descent/brane-tower-levels.ts",
-    "md": "content/quantum-observable-universe/lifting-and-descent/brane-tower-levels.md"
+    "ts": "folio/quantum-observable-universe/lifting-and-descent/brane-tower-levels.ts",
+    "md": "folio/quantum-observable-universe/lifting-and-descent/brane-tower-levels.md"
   },
   "source_hashes": {
     "md": "ba609700c9dc",
@@ -544,7 +544,7 @@
         "reviewed_at": "2026-08-09T13:00:56.226Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/brane-tower-levels.ts:0: forward ref: uses cor:jet-prolongation-C (manifest pos 109) which appears after this block (pos 10) in the chapter"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/brane-tower-levels.ts:0: forward ref: uses cor:jet-prolongation-C (manifest pos 109) which appears after this block (pos 10) in the chapter"
       }
     ],
     "detangler-section-band": [

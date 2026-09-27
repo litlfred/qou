@@ -3,9 +3,9 @@
   "label": "lem:tmli-constituent-composite-agreement",
   "kind": "lemma",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.ts",
-    "md": "content/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/BraidsKnots/tmli_constituent_composite_agreement.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/BraidsKnots/tmli_constituent_composite_agreement.lean"
   },
   "source_hashes": {
     "md": "223a7764a0e0",
@@ -703,7 +703,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.ts:0: forward ref: uses thm:markov-trace-product (manifest pos 275) which appears after this block (pos 4) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.ts:0: forward ref: uses thm:markov-trace-product (manifest pos 275) which appears after this block (pos 4) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1206,8 +1206,8 @@
         },
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.lean is missing entirely.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.md:1",
+        "notes": "The sibling Lean file folio/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.lean is missing entirely.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.md:1",
         "severity": "minor"
       },
       {
@@ -1226,7 +1226,7 @@
         "reviewed_at": "2026-09-03T20:40:08Z",
         "reviewed_sha": "4a4e5ce3d2cbbfd6b22fdfc08b74b38323a736e3",
         "notes": "The statement is a purely algebraic identity in H_N(q) (constituent product = Markov trace = link polynomial P_K(q)) placed in the chapter's explicitly ALGEBRAIC-face section, with zero archimedean tokens; regime matches its section, so pass.",
-        "evidence": "STATEMENT (tmli-constituent-composite-agreement.md:1-14): 'the constituent product prod V_i^const and the composite trace tr_M(rho(beta_H)) evaluate the same element of H_N(q)', displayed as prod_i V_i^const = tr_M(rho(beta_H)) = P_{K_H}(q). Every object is a formal Hecke-algebra element or a polynomial in the formal variable q: no MeV, no m_e/CODATA, no numeric q or q_0, no Real.*, no sqrt/log/exp/cos, no order hypothesis (0<q, q<1), no percentage or 'agreement to N%' claim, no limit. The title 'Constituent and composite Markov-trace evaluations agree exactly' (.ts:8) and tags ['exact-identity','iwahori-hecke','pawlei-basis'] (.ts:9) confirm 'agreement' means an exact algebraic identity, NOT a comparison-boundary MeV agreement -- the dispatcher's suspicion that it quotes MeV values or a percentage does not hold on reading. REGIME: mass-theory is in ARCHIMEDEAN_CHAPTERS (_folio-chapter-profiles.qou.ts:175) but its declared profile is MIXED -- {na, symbolic, generic-R, real-positive, real-gt-1, fixed-q0} (:88-90) -- and the chapter docstring (mass-theory.ts:4-21) enumerates an explicit 'Algebraic' face ('transfer matrices, mass-formula derivation, Hoefsmit construction, GS axiomatic backing'), distinct from the 'Archimedean' and 'Physical' faces. The block sits in section 'Transfer Matrix and Topological Mass' (mass-theory.ts:33-35, block at :41), headed by the comment '=== ALGEBRAIC FACE === Wedderburn, Frobenius pairing, transfer matrices, Hecke characters' (:29-32). So the statement's generic/symbolic regime exactly matches its section's declared regime; the second FAIL branch ('archimedean-chapter statement that is a purely algebraic identity belonging upstream') does not fire because the chapter explicitly hosts an algebraic face here and the block consumes rem:knot-factorization + thm:markov-trace-product (.ts:10) as the mass-side application of the product theorem. The WARN branch (mixed regimes, side undeclared) does not fire: there is exactly one regime present. Peers in the same section adjudicated pass on this criterion: categorical-transfer-matrix (2026-07-07) and transfer-matrix-level-independence (2026-06-28). Proof body (tmli-constituent-composite-agreement-proof.md) greps clean for MeV/CODATA/approx/q_0/Real/percent. PRIOR ENTRY: the 2026-06-28 fail (reviewed_sha 6b830a632a, md hash 4464738aca6b -- the .md has since changed to 223a7764a0e0) was 'sibling Lean file is MISSING', which is not a wall-side-statement finding at all; the criterion depends_on ['md'] only. SIDE NOTE (unscored): no sibling .lean exists, but the .ts lean.ref 'qou:QOU.BraidsKnots.tmli_constituent_composite_agreement' (.ts:5) resolves via candidate 2 to content/quantum-observable-universe/lean/QOU/BraidsKnots/tmli_constituent_composite_agreement.lean (theorem at :146, documented sorry-free at :45/:134; imports only Mathlib BigOperators + QOU.Hecke.MarkovTrace at :1-2, no Real.* / ℝ in the file), which is the sanctioned no-shadow-stub pattern (AGENTS.md §0a); the Lean side is generic-ring, consistent with the statement's regime."
+        "evidence": "STATEMENT (tmli-constituent-composite-agreement.md:1-14): 'the constituent product prod V_i^const and the composite trace tr_M(rho(beta_H)) evaluate the same element of H_N(q)', displayed as prod_i V_i^const = tr_M(rho(beta_H)) = P_{K_H}(q). Every object is a formal Hecke-algebra element or a polynomial in the formal variable q: no MeV, no m_e/CODATA, no numeric q or q_0, no Real.*, no sqrt/log/exp/cos, no order hypothesis (0<q, q<1), no percentage or 'agreement to N%' claim, no limit. The title 'Constituent and composite Markov-trace evaluations agree exactly' (.ts:8) and tags ['exact-identity','iwahori-hecke','pawlei-basis'] (.ts:9) confirm 'agreement' means an exact algebraic identity, NOT a comparison-boundary MeV agreement -- the dispatcher's suspicion that it quotes MeV values or a percentage does not hold on reading. REGIME: mass-theory is in ARCHIMEDEAN_CHAPTERS (_folio-chapter-profiles.qou.ts:175) but its declared profile is MIXED -- {na, symbolic, generic-R, real-positive, real-gt-1, fixed-q0} (:88-90) -- and the chapter docstring (mass-theory.ts:4-21) enumerates an explicit 'Algebraic' face ('transfer matrices, mass-formula derivation, Hoefsmit construction, GS axiomatic backing'), distinct from the 'Archimedean' and 'Physical' faces. The block sits in section 'Transfer Matrix and Topological Mass' (mass-theory.ts:33-35, block at :41), headed by the comment '=== ALGEBRAIC FACE === Wedderburn, Frobenius pairing, transfer matrices, Hecke characters' (:29-32). So the statement's generic/symbolic regime exactly matches its section's declared regime; the second FAIL branch ('archimedean-chapter statement that is a purely algebraic identity belonging upstream') does not fire because the chapter explicitly hosts an algebraic face here and the block consumes rem:knot-factorization + thm:markov-trace-product (.ts:10) as the mass-side application of the product theorem. The WARN branch (mixed regimes, side undeclared) does not fire: there is exactly one regime present. Peers in the same section adjudicated pass on this criterion: categorical-transfer-matrix (2026-07-07) and transfer-matrix-level-independence (2026-06-28). Proof body (tmli-constituent-composite-agreement-proof.md) greps clean for MeV/CODATA/approx/q_0/Real/percent. PRIOR ENTRY: the 2026-06-28 fail (reviewed_sha 6b830a632a, md hash 4464738aca6b -- the .md has since changed to 223a7764a0e0) was 'sibling Lean file is MISSING', which is not a wall-side-statement finding at all; the criterion depends_on ['md'] only. SIDE NOTE (unscored): no sibling .lean exists, but the .ts lean.ref 'qou:QOU.BraidsKnots.tmli_constituent_composite_agreement' (.ts:5) resolves via candidate 2 to folio/quantum-observable-universe/lean/QOU/BraidsKnots/tmli_constituent_composite_agreement.lean (theorem at :146, documented sorry-free at :45/:134; imports only Mathlib BigOperators + QOU.Hecke.MarkovTrace at :1-2, no Real.* / ℝ in the file), which is the sanctioned no-shadow-stub pattern (AGENTS.md §0a); the Lean side is generic-ring, consistent with the statement's regime."
       }
     ],
     "wall-side-proof": [
@@ -1261,7 +1261,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/BraidsKnots/tmli_constituent_composite_agreement.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/BraidsKnots/tmli_constituent_composite_agreement.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1435,7 +1435,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.ts:1",
         "severity": "minor"
       },
       {
@@ -1496,7 +1496,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.ts:1",
         "severity": "minor"
       },
       {
@@ -1557,7 +1557,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.ts:1",
         "severity": "minor"
       },
       {
@@ -1588,7 +1588,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.ts:1",
         "severity": "minor"
       },
       {
@@ -1619,7 +1619,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.ts:1",
         "severity": "minor"
       },
       {
@@ -1650,7 +1650,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.ts:1",
         "severity": "minor"
       },
       {
@@ -1681,7 +1681,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.ts:1",
         "severity": "minor"
       },
       {
@@ -1712,7 +1712,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.ts:1",
         "severity": "minor"
       },
       {
@@ -1806,9 +1806,9 @@
         },
         "reviewed_at": "2026-06-28T10:58:54.264Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.lean is missing, leading to complete divergence.",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.lean is missing, leading to complete divergence.",
         "severity": "minor",
-        "evidence": "The referenced Lean file content/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.lean is missing, leading to complete divergence."
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",

@@ -3,9 +3,9 @@
   "label": "lem:jet-prolongation-categorical-jet",
   "kind": "lemma",
   "paths": {
-    "ts": "content/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts",
-    "md": "content/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.md",
-    "lean": "content/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.lean"
+    "ts": "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts",
+    "md": "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.md",
+    "lean": "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.lean"
   },
   "source_hashes": {
     "md": "5365e42adbb3",
@@ -1388,7 +1388,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The mathematical claims in 'Lemma.' are verified by the compiling Lean proof.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.lean:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.lean:1"
       },
       {
         "result": "pass",
@@ -1422,7 +1422,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The claims in 'Lemma.' are non-vacuous and backed by a sorry-free formalization.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.lean:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.lean:1"
       },
       {
         "result": "pass",
@@ -1456,7 +1456,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Lemma.'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts:1"
       },
       {
         "result": "pass",
@@ -1523,7 +1523,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Lemma.'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts:1"
       },
       {
         "result": "pass",
@@ -1557,7 +1557,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The argument flow in 'Lemma.' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts:1"
       },
       {
         "result": "pass",
@@ -1624,7 +1624,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Citations to fred2005 are correct and contextually appropriate.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts:1"
       },
       {
         "result": "pass",
@@ -1658,7 +1658,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'Lemma.' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts:1"
       },
       {
         "result": "pass",
@@ -1692,7 +1692,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'Lemma.' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts:1"
       },
       {
         "result": "pass",
@@ -1726,7 +1726,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'Lemma.' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts:1"
       },
       {
         "result": "pass",
@@ -1760,7 +1760,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The derivation steps and formal definitions in 'Lemma.' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts:1"
       },
       {
         "result": "pass",

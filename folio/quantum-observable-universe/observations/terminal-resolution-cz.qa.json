@@ -3,9 +3,9 @@
   "label": "ex:terminal-resolution-cz",
   "kind": "example",
   "paths": {
-    "ts": "content/quantum-observable-universe/observations/terminal-resolution-cz.ts",
-    "md": "content/quantum-observable-universe/observations/terminal-resolution-cz.md",
-    "lean": "content/quantum-observable-universe/observations/terminal-resolution-cz.lean"
+    "ts": "folio/quantum-observable-universe/observations/terminal-resolution-cz.ts",
+    "md": "folio/quantum-observable-universe/observations/terminal-resolution-cz.md",
+    "lean": "folio/quantum-observable-universe/observations/terminal-resolution-cz.lean"
   },
   "source_hashes": {
     "md": "d10d1a27c214",
@@ -595,7 +595,7 @@
         "reviewed_at": "2026-08-09T13:01:31.034Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/observations/terminal-resolution-cz.ts:0: forward ref: uses prop:local-substrate-q (manifest pos 203) which appears after this block (pos 85) in the chapter"
+        "evidence": "folio/quantum-observable-universe/observations/terminal-resolution-cz.ts:0: forward ref: uses prop:local-substrate-q (manifest pos 203) which appears after this block (pos 85) in the chapter"
       }
     ],
     "detangler-section-band": [

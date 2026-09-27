@@ -3,9 +3,9 @@
   "label": "conj:bigbang-heatdeath",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/appendix-surreals/bigbang-heatdeath.ts",
-    "md": "content/quantum-observable-universe/appendix-surreals/bigbang-heatdeath.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean"
+    "ts": "folio/quantum-observable-universe/appendix-surreals/bigbang-heatdeath.ts",
+    "md": "folio/quantum-observable-universe/appendix-surreals/bigbang-heatdeath.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean"
   },
   "source_hashes": {
     "md": "e8beb38fa94f",
@@ -661,7 +661,7 @@
         "reviewed_at": "2026-08-09T13:00:11.416Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean:961: So the conjectured equality holds as `0 = 0` for any knot and"
+        "evidence": "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean:961: So the conjectured equality holds as `0 = 0` for any knot and"
       }
     ],
     "voice-title-scholarly": [

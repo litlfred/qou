@@ -7,7 +7,7 @@ import QOU.Infra.Clausen
 
 Compiled formalisation of
 `prop:cyclotomic-l-value-decomposition` from
-`content/quantum-observable-universe/braids-and-knots/cyclotomic-l-value-decomposition.md`.
+`folio/quantum-observable-universe/braids-and-knots/cyclotomic-l-value-decomposition.md`.
 
 The sibling docstub at
 `braids-and-knots/cyclotomic-l-value-decomposition.lean`

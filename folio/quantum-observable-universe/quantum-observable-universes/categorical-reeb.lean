@@ -8,8 +8,8 @@ import Mathlib.CategoryTheory.Category.Basic
 The categorical Reeb derivation: the infinitesimal generator of the
 torus action on the Frobenius–Hopf object `A`.
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean (monolithic)
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean (monolithic)
 -/
 
 open CategoryTheory MonoidalCategory

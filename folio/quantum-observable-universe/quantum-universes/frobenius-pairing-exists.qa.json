@@ -3,9 +3,9 @@
   "label": "prop:frobenius-pairing-exists",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts",
-    "md": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md",
-    "lean": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.lean"
+    "ts": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts",
+    "md": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md",
+    "lean": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.lean"
   },
   "source_hashes": {
     "md": "773963326239",
@@ -1224,7 +1224,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1402,7 +1402,7 @@
         "reviewed_at": "2026-07-07T14:26:57.100054Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
+        "evidence": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
         "notes": "No false claims identified in 'Let (\\mathbf{C}, A, \\tau) be a': mathematical reasoning is consistent."
       },
       {
@@ -1437,7 +1437,7 @@
         "reviewed_at": "2026-07-07T14:26:57.100054Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
+        "evidence": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
         "notes": "The claims in 'Let (\\mathbf{C}, A, \\tau) be a' are non-vacuous as they present substantial mathematical content."
       },
       {
@@ -1472,7 +1472,7 @@
         "reviewed_at": "2026-07-07T14:26:57.100054Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
+        "evidence": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Let (\\mathbf{C}, A, \\tau) be a'."
       },
       {
@@ -1507,7 +1507,7 @@
         "reviewed_at": "2026-07-07T14:26:57.100054Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
+        "evidence": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
         "notes": "No overclaims: the scope of 'Let (\\mathbf{C}, A, \\tau) be a' is appropriately qualified."
       },
       {
@@ -1542,7 +1542,7 @@
         "reviewed_at": "2026-07-07T14:26:57.100054Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
+        "evidence": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Let (\\mathbf{C}, A, \\tau) be a'."
       },
       {
@@ -1577,7 +1577,7 @@
         "reviewed_at": "2026-07-07T14:26:57.100054Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
+        "evidence": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
         "notes": "The argument flow in 'Let (\\mathbf{C}, A, \\tau) be a' is logically sound, mapping onto the cited dependencies."
       },
       {
@@ -1612,7 +1612,7 @@
         "reviewed_at": "2026-07-07T14:26:57.100054Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.lean:1",
+        "evidence": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.lean:1",
         "notes": "No narrative divergence: the Lean sibling implements the structure claimed in 'Let (\\mathbf{C}, A, \\tau) be a'."
       },
       {
@@ -1647,7 +1647,7 @@
         "reviewed_at": "2026-07-07T14:26:57.100054Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
+        "evidence": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
         "notes": "No citations are present in 'Let (\\mathbf{C}, A, \\tau) be a', hence no citation misuse is possible."
       },
       {
@@ -1682,7 +1682,7 @@
         "reviewed_at": "2026-07-07T14:26:57.100054Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
+        "evidence": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
         "notes": "Key terms and symbols in 'Let (\\mathbf{C}, A, \\tau) be a' are mathematically defined and unambiguous."
       },
       {
@@ -1717,7 +1717,7 @@
         "reviewed_at": "2026-07-07T14:26:57.100054Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
+        "evidence": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
         "notes": "The algebraic and logical relations in 'Let (\\mathbf{C}, A, \\tau) be a' are independent of empirical tuning parameters."
       },
       {
@@ -1752,7 +1752,7 @@
         "reviewed_at": "2026-07-07T14:26:57.100054Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
+        "evidence": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
         "notes": "The physical concepts described in 'Let (\\mathbf{C}, A, \\tau) be a' are consistent with quantum observable mechanics."
       },
       {
@@ -1787,7 +1787,7 @@
         "reviewed_at": "2026-07-07T14:26:57.100054Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
+        "evidence": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
         "notes": "The derivation steps and formal definitions in 'Let (\\mathbf{C}, A, \\tau) be a' are reproducible."
       },
       {
@@ -1822,7 +1822,7 @@
         "reviewed_at": "2026-07-07T14:26:57.100054Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md:1 — Let (\\mathbf{C}, A, \\tau) be a",
+        "evidence": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md:1 — Let (\\mathbf{C}, A, \\tau) be a",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Let (\\mathbf{C}, A, \\tau) be a' are consistent."
@@ -2144,7 +2144,7 @@
         "reviewed_at": "2026-08-22T06:08:01.986Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md (3 lines, kind=proposition, title=\"Existence of the Frobenius pairing\"). searched for assert-by-denying constructions ('not X but Y', 'X, not Y', 'rather than'); none present beyond substantive mathematical contrast that is itself the block's claim",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md (3 lines, kind=proposition, title=\"Existence of the Frobenius pairing\"). searched for assert-by-denying constructions ('not X but Y', 'X, not Y', 'rather than'); none present beyond substantive mathematical contrast that is itself the block's claim",
         "notes": "no fix needed"
       }
     ],
@@ -2180,7 +2180,7 @@
         "reviewed_at": "2026-08-22T06:08:02.028Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md (3 lines, kind=proposition, title=\"Existence of the Frobenius pairing\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md (3 lines, kind=proposition, title=\"Existence of the Frobenius pairing\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
         "notes": "no fix needed"
       }
     ],
@@ -2216,7 +2216,7 @@
         "reviewed_at": "2026-08-22T06:08:02.068Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md (3 lines, kind=proposition, title=\"Existence of the Frobenius pairing\"). 0 spaced em-dash construction(s); LaTeX '--' occurrences are name-internal (Maurer--Cartan, Frobenius--Hopf, Tannaka--Krein), not sentence punctuation",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md (3 lines, kind=proposition, title=\"Existence of the Frobenius pairing\"). 0 spaced em-dash construction(s); LaTeX '--' occurrences are name-internal (Maurer--Cartan, Frobenius--Hopf, Tannaka--Krein), not sentence punctuation",
         "notes": "no fix needed"
       }
     ],
@@ -2252,7 +2252,7 @@
         "reviewed_at": "2026-08-22T06:08:02.108Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md (3 lines, kind=proposition, title=\"Existence of the Frobenius pairing\"). no reflex three-item list; enumerations present are content-determined",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md (3 lines, kind=proposition, title=\"Existence of the Frobenius pairing\"). no reflex three-item list; enumerations present are content-determined",
         "notes": "no fix needed"
       }
     ],
@@ -2288,7 +2288,7 @@
         "reviewed_at": "2026-08-22T06:08:02.149Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md (3 lines, kind=proposition, title=\"Existence of the Frobenius pairing\"). final sentence is \"Uniqueness up to scalar is established in [uniqueness of Frobenius pairing](#prop:frobenius-pairing-unique).\" - a substantive statement, not a placed quotable closer",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md (3 lines, kind=proposition, title=\"Existence of the Frobenius pairing\"). final sentence is \"Uniqueness up to scalar is established in [uniqueness of Frobenius pairing](#prop:frobenius-pairing-unique).\" - a substantive statement, not a placed quotable closer",
         "notes": "no fix needed"
       }
     ],
@@ -2324,7 +2324,7 @@
         "reviewed_at": "2026-08-22T06:08:02.189Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md (3 lines, kind=proposition, title=\"Existence of the Frobenius pairing\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md (3 lines, kind=proposition, title=\"Existence of the Frobenius pairing\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
         "notes": "no fix needed"
       }
     ],
@@ -2360,7 +2360,7 @@
         "reviewed_at": "2026-08-22T06:08:02.230Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md (3 lines, kind=proposition, title=\"Existence of the Frobenius pairing\"). final sentence is \"Uniqueness up to scalar is established in [uniqueness of Frobenius pairing](#prop:frobenius-pairing-unique).\" - it advances or points forward rather than restating what the block already established",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md (3 lines, kind=proposition, title=\"Existence of the Frobenius pairing\"). final sentence is \"Uniqueness up to scalar is established in [uniqueness of Frobenius pairing](#prop:frobenius-pairing-unique).\" - it advances or points forward rather than restating what the block already established",
         "notes": "no fix needed"
       }
     ],
@@ -2396,7 +2396,7 @@
         "reviewed_at": "2026-08-22T06:08:02.270Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md (3 lines, kind=proposition, title=\"Existence of the Frobenius pairing\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md (3 lines, kind=proposition, title=\"Existence of the Frobenius pairing\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
         "notes": "no fix needed"
       }
     ],
@@ -2432,7 +2432,7 @@
         "reviewed_at": "2026-08-22T06:08:02.310Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md (3 lines, kind=proposition, title=\"Existence of the Frobenius pairing\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md (3 lines, kind=proposition, title=\"Existence of the Frobenius pairing\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
         "notes": "no fix needed"
       }
     ],
@@ -2468,7 +2468,7 @@
         "reviewed_at": "2026-08-22T06:08:02.349Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md (3 lines, kind=proposition, title=\"Existence of the Frobenius pairing\"). prose reads aloud without stalling; no noun-chain built for the eye only",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md (3 lines, kind=proposition, title=\"Existence of the Frobenius pairing\"). prose reads aloud without stalling; no noun-chain built for the eye only",
         "notes": "no fix needed"
       }
     ],

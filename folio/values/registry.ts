@@ -29,7 +29,7 @@
  *
  * All paths are repo-root relative.
  *
- * @module content/values/registry
+ * @module folio/values/registry
  */
 
 /** Default rendering format for a witnessed value occurrence. */

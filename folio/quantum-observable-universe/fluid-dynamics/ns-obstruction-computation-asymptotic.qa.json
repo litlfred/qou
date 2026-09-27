@@ -3,8 +3,8 @@
   "label": "rem:ns-obstruction-computation-asymptotic",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation-asymptotic.ts",
-    "md": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation-asymptotic.md"
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation-asymptotic.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation-asymptotic.md"
   },
   "source_hashes": {
     "md": "55ce7c5746a3",
@@ -184,7 +184,7 @@
         "reviewed_at": "2026-08-09T13:00:33.718Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation-asymptotic.md:1: The absolute jet divergence $|j^n v|_\\Sigma \\sim 1/(T^*-t)^{(n+1)/2}$ translates cleanly into $\\ordw(\\lvert j^n v \\rvert_\\Sigma) = -\\tfrac{n+1}{2}\\,\\ordw(T^*-t)$ as $t \\to T^*$. The complete recursive"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation-asymptotic.md:1: The absolute jet divergence $|j^n v|_\\Sigma \\sim 1/(T^*-t)^{(n+1)/2}$ translates cleanly into $\\ordw(\\lvert j^n v \\rvert_\\Sigma) = -\\tfrac{n+1}{2}\\,\\ordw(T^*-t)$ as $t \\to T^*$. The complete recursive"
       }
     ],
     "voice-scholarly-default": [
@@ -617,7 +617,7 @@
           "worst_target": "emits fwd-ref to quantum-observable-universe/appendix-surreals: def:surreal-blowup-calculus"
         },
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation-asymptotic.ts:0: emits fwd-ref to quantum-observable-universe/appendix-surreals: def:surreal-blowup-calculus | content/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation-asymptotic.ts:0: emits fwd-ref to quantum-observable-universe/appendix-surreals-archimedean: def:standard-part-functor | content/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation-asymptotic.ts:0: emits fwd-ref to quantum-observable-universe/appendix-surreals: rem:conway-normal-form | content/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation-asymptotic.ts:0: emits fwd-ref to quantum-observable-universe/appendix-surreals: rem:body-asymptotics-catalog"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation-asymptotic.ts:0: emits fwd-ref to quantum-observable-universe/appendix-surreals: def:surreal-blowup-calculus | folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation-asymptotic.ts:0: emits fwd-ref to quantum-observable-universe/appendix-surreals-archimedean: def:standard-part-functor | folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation-asymptotic.ts:0: emits fwd-ref to quantum-observable-universe/appendix-surreals: rem:conway-normal-form | folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation-asymptotic.ts:0: emits fwd-ref to quantum-observable-universe/appendix-surreals: rem:body-asymptotics-catalog"
       }
     ],
     "detangler-graph-energy": [

@@ -3,9 +3,9 @@
   "label": "lem:feynman-eigenbasis-decomposition",
   "kind": "lemma",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts",
-    "md": "content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean"
   },
   "source_hashes": {
     "md": "9f5b64d9bd5f",
@@ -1192,8 +1192,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.lean is missing entirely.",
-        "evidence": "content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.md:1",
+        "notes": "The sibling Lean file folio/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.lean is missing entirely.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.md:1",
         "severity": "minor"
       },
       {
@@ -1212,7 +1212,7 @@
         "reviewed_at": "2026-09-03T20:39:47Z",
         "reviewed_sha": "4a4e5ce3d2cbbfd6b22fdfc08b74b38323a736e3",
         "notes": "Statement is a pure q-Schur-Weyl decomposition over the generic Hecke base ring H_n(R,q) with zero archimedean tokens; it sits in the mixed-profile mass-theory chapter (generic-R/symbolic admitted) as the algebraic first step of the Feynman-identification bridge section, so it is a permitted generic-ring statement, not an orphaned upstream identity.",
-        "evidence": "REGIME: mass-theory is in ARCHIMEDEAN_CHAPTERS (folio-assistant/cat-harness/content/pipeline/_folio-chapter-profiles.qou.ts:175) but its expected-regime profile is MIXED and explicitly admits 'symbolic' and 'generic-R' alongside 'real-positive'/'real-gt-1'/'fixed-q0' (:88-90). The chapter docstring (content/quantum-observable-universe/mass-theory/mass-theory.ts:4-21) describes the chapter as consuming the algebraic core and lists 'vertex factorisation' under the Geometric face (:14). The block is the first lemma of section 'Vertex factorisation: Feynman identifications' (mass-theory.ts:495-509, label sec:vertex-factorisation-feynman), whose three lemma peers feynman-trace-collapse, feynman-markov-identification, feynman-categorical-trace were each adjudicated pass on 2026-09-03 as wall-crossing/generic-ring bridge statements (prior only). STATEMENT TOKENS (.md:1-10): line 1 'V the fundamental representation of SU_q(2) with q not a root of unity' (semisimplicity condition on the base field, generic, not an order hypothesis); line 1 'rho_n : B_n -> Aut(V^{tensor n})' (algebraic); lines 3-8 the direct-sum decomposition over 2-row partitions (algebraic); line 10 'S_lambda is the irreducible H_n(R, q)-module' (explicit generic base ring R); line 10 'number of summands is floor(n/2)+1' (combinatorial). ARCHIMEDEAN TOKENS IN STATEMENT: none - no Real.sqrt/rpow/log/exp/cos, no numeric q, no MeV, no ordering (0<q, q<1, |q|>1), no Hermitian/inner-product structure, no eigenvalue ordering. OUTSIDE STATEMENT: the .md has no proof body or remarks (the .md is the statement only); the .ts authorNotes (feynman-eigenbasis-decomposition.ts:4-20) assert that the library Lean data is real-valued (markovWeight/partialTrace/transitionAmplitude : ... -> R) and that 'what this lemma names is its archimedean evaluation' - that claim lives in .ts metadata, is outside the md-only scope of this criterion (depends_on md), and in any case the library theorem's own statement (lean/QOU/FeynmanPathIntegrals.lean:116-118, decomp.partitions.length <= decomp.n/2+1) carries no R either. BRANCHES: FAIL-generic (hard-coded archimedean construct in a generic chapter) does not apply - no archimedean construct and the chapter is archimedean/mixed. FAIL-archimedean ('purely algebraic identity that belongs upstream'): the statement IS purely algebraic, but it does not belong upstream - it consumes the upstream completeness result via uses: prop:knot-eigenbasis-complete (.ts:27) and specialises it to the SU_q(2) fundamental representation, the 2-row constraint and the explicit summand count that feynman-trace-collapse (same section) needs for its finite-sum collapse; the mixed profile at :88-90 admits generic-R statements in this chapter for exactly this bridge role, and the registry text (qa-criteria-registry.ts:395-396) lists 'generic-ring' as a PASS condition and warns not to invent fails (:399-400). WARN (mixes both regimes without flagging evaluation side) does not apply - the statement lives on one side only. Hence PASS. PRIOR ENTRY (2026-07-07, gemini-3.1-pro, fail, 'sibling Lean file is MISSING'): incorrect for this criterion - the criterion depends on md only and the reviewer did not read the statement; also the lean.ref resolves (see side note). SIDE NOTE (not scored): no sibling .lean exists, but lean.ref 'qou:QOU.FeynmanPathIntegrals.eigenbasis_decomposition' (.ts:22) resolves via candidate 2 to content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean:116 (theorem eigenbasis_decomposition, proved by decomp.partitions_length; its docstring still says 'Sorry retained with this diagnosis' although the body carries no sorry - stale docstring, worth a separate bean). The qa.json source_hashes already records a lean hash 34bc52817956 consistent with library resolution."
+        "evidence": "REGIME: mass-theory is in ARCHIMEDEAN_CHAPTERS (folio-assistant/cat-harness/content/pipeline/_folio-chapter-profiles.qou.ts:175) but its expected-regime profile is MIXED and explicitly admits 'symbolic' and 'generic-R' alongside 'real-positive'/'real-gt-1'/'fixed-q0' (:88-90). The chapter docstring (folio/quantum-observable-universe/mass-theory/mass-theory.ts:4-21) describes the chapter as consuming the algebraic core and lists 'vertex factorisation' under the Geometric face (:14). The block is the first lemma of section 'Vertex factorisation: Feynman identifications' (mass-theory.ts:495-509, label sec:vertex-factorisation-feynman), whose three lemma peers feynman-trace-collapse, feynman-markov-identification, feynman-categorical-trace were each adjudicated pass on 2026-09-03 as wall-crossing/generic-ring bridge statements (prior only). STATEMENT TOKENS (.md:1-10): line 1 'V the fundamental representation of SU_q(2) with q not a root of unity' (semisimplicity condition on the base field, generic, not an order hypothesis); line 1 'rho_n : B_n -> Aut(V^{tensor n})' (algebraic); lines 3-8 the direct-sum decomposition over 2-row partitions (algebraic); line 10 'S_lambda is the irreducible H_n(R, q)-module' (explicit generic base ring R); line 10 'number of summands is floor(n/2)+1' (combinatorial). ARCHIMEDEAN TOKENS IN STATEMENT: none - no Real.sqrt/rpow/log/exp/cos, no numeric q, no MeV, no ordering (0<q, q<1, |q|>1), no Hermitian/inner-product structure, no eigenvalue ordering. OUTSIDE STATEMENT: the .md has no proof body or remarks (the .md is the statement only); the .ts authorNotes (feynman-eigenbasis-decomposition.ts:4-20) assert that the library Lean data is real-valued (markovWeight/partialTrace/transitionAmplitude : ... -> R) and that 'what this lemma names is its archimedean evaluation' - that claim lives in .ts metadata, is outside the md-only scope of this criterion (depends_on md), and in any case the library theorem's own statement (lean/QOU/FeynmanPathIntegrals.lean:116-118, decomp.partitions.length <= decomp.n/2+1) carries no R either. BRANCHES: FAIL-generic (hard-coded archimedean construct in a generic chapter) does not apply - no archimedean construct and the chapter is archimedean/mixed. FAIL-archimedean ('purely algebraic identity that belongs upstream'): the statement IS purely algebraic, but it does not belong upstream - it consumes the upstream completeness result via uses: prop:knot-eigenbasis-complete (.ts:27) and specialises it to the SU_q(2) fundamental representation, the 2-row constraint and the explicit summand count that feynman-trace-collapse (same section) needs for its finite-sum collapse; the mixed profile at :88-90 admits generic-R statements in this chapter for exactly this bridge role, and the registry text (qa-criteria-registry.ts:395-396) lists 'generic-ring' as a PASS condition and warns not to invent fails (:399-400). WARN (mixes both regimes without flagging evaluation side) does not apply - the statement lives on one side only. Hence PASS. PRIOR ENTRY (2026-07-07, gemini-3.1-pro, fail, 'sibling Lean file is MISSING'): incorrect for this criterion - the criterion depends on md only and the reviewer did not read the statement; also the lean.ref resolves (see side note). SIDE NOTE (not scored): no sibling .lean exists, but lean.ref 'qou:QOU.FeynmanPathIntegrals.eigenbasis_decomposition' (.ts:22) resolves via candidate 2 to folio/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean:116 (theorem eigenbasis_decomposition, proved by decomp.partitions_length; its docstring still says 'Sorry retained with this diagnosis' although the body carries no sorry - stale docstring, worth a separate bean). The qa.json source_hashes already records a lean hash 34bc52817956 consistent with library resolution."
       }
     ],
     "wall-side-proof": [
@@ -1409,7 +1409,7 @@
         "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
         "severity": "minor"
       },
       {
@@ -1474,7 +1474,7 @@
         "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
         "severity": "minor"
       },
       {
@@ -1539,7 +1539,7 @@
         "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
         "severity": "minor"
       },
       {
@@ -1572,7 +1572,7 @@
         "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
         "severity": "minor"
       },
       {
@@ -1605,7 +1605,7 @@
         "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
         "severity": "minor"
       },
       {
@@ -1638,7 +1638,7 @@
         "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
         "severity": "minor"
       },
       {
@@ -1671,7 +1671,7 @@
         "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
         "severity": "minor"
       },
       {
@@ -1704,7 +1704,7 @@
         "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
         "severity": "minor"
       },
       {

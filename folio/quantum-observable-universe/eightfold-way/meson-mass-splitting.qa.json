@@ -3,9 +3,9 @@
   "label": "rem:meson-mass-splitting",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/eightfold-way/meson-mass-splitting.ts",
-    "md": "content/quantum-observable-universe/eightfold-way/meson-mass-splitting.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/Eightfold/GellMannOkuboIdentity.lean"
+    "ts": "folio/quantum-observable-universe/eightfold-way/meson-mass-splitting.ts",
+    "md": "folio/quantum-observable-universe/eightfold-way/meson-mass-splitting.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/Eightfold/GellMannOkuboIdentity.lean"
   },
   "source_hashes": {
     "md": "89506d884224",
@@ -707,7 +707,7 @@
         "reviewed_at": "2026-09-03T04:55:03.146Z",
         "reviewed_sha": "8bf3340a211d5449070e80735e9f92df06716f78",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/eightfold-way/meson-mass-splitting.ts:0: forward ref: uses rem:q-deformation-weight-lattice (manifest pos 13) which appears after this block (pos 4) in the chapter"
+        "evidence": "folio/quantum-observable-universe/eightfold-way/meson-mass-splitting.ts:0: forward ref: uses rem:q-deformation-weight-lattice (manifest pos 13) which appears after this block (pos 4) in the chapter"
       }
     ],
     "detangler-section-band": [

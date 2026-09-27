@@ -3,8 +3,8 @@
   "label": "sec:particle-interactions-orphan-reconnect-intro",
   "kind": "prose",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/particle-interactions-orphan-reconnect-intro.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/particle-interactions-orphan-reconnect-intro.md"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/particle-interactions-orphan-reconnect-intro.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/particle-interactions-orphan-reconnect-intro.md"
   },
   "source_hashes": {
     "md": "5463768c5c8a",
@@ -1499,7 +1499,7 @@
         "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
         "severity": "minor",
         "evidence": "'The sequence begins with the Geom universality **proposition**, which **establishes** the role of categorical geometry in the chapter's physical predictions.'",
-        "notes": "PROMOTES A CONJECTURE TO A PROPOSITION IN READER-FACING PROSE. I first suspected the referent did not exist and checked before writing it: the block IS present in this same directory, but as `conj:geom-universality` (content/quantum-observable-universe/nuclear-interactions/geom-universality.ts:4) -- a conjecture. A conjecture cannot 'establish' anything, and calling it a proposition in the section roadmap is exactly the conditional-proved-vs-premise-established confusion AGENTS.md flags. PROPOSED: 'begins with the Geom universality conjecture, which frames the role of...'. Separately: the label `sec:particle-interactions-orphan-reconnect-intro` carries internal editorial scaffolding ('orphan-reconnect') into a published section identifier."
+        "notes": "PROMOTES A CONJECTURE TO A PROPOSITION IN READER-FACING PROSE. I first suspected the referent did not exist and checked before writing it: the block IS present in this same directory, but as `conj:geom-universality` (folio/quantum-observable-universe/nuclear-interactions/geom-universality.ts:4) -- a conjecture. A conjecture cannot 'establish' anything, and calling it a proposition in the section roadmap is exactly the conditional-proved-vs-premise-established confusion AGENTS.md flags. PROPOSED: 'begins with the Geom universality conjecture, which frames the role of...'. Separately: the label `sec:particle-interactions-orphan-reconnect-intro` carries internal editorial scaffolding ('orphan-reconnect') into a published section identifier."
       }
     ],
     "trap-nonspeakable": [

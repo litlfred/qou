@@ -3,9 +3,9 @@
   "label": "def:breit-wheeler-pair-production",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.md",
-    "lean": "content/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.lean"
+    "ts": "folio/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.ts",
+    "md": "folio/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.md",
+    "lean": "folio/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.lean"
   },
   "source_hashes": {
     "md": "30c15e768181",
@@ -1010,7 +1010,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.333433Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean theorem statement in content/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.md.",
+        "notes": "The Lean theorem statement in folio/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.md.",
         "severity": "minor",
         "evidence": "breit-wheeler-pair-production.lean:1 — Lean file exists"
       }
@@ -1022,7 +1022,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.lean:25 [def-disguised-true] def breit_wheeler_pair_production (q : ℝ) (γ₁ γ₂ : ColoredPhoton q) :",
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.lean:25 [def-disguised-true] def breit_wheeler_pair_production (q : ℝ) (γ₁ γ₂ : ColoredPhoton q) :",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",

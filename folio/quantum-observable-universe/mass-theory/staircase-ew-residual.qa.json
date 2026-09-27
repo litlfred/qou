@@ -3,9 +3,9 @@
   "label": "conj:staircase-ew-residual",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/staircase-ew-residual.ts",
-    "md": "content/quantum-observable-universe/mass-theory/staircase-ew-residual.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/StaircaseCornerHook.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/staircase-ew-residual.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/staircase-ew-residual.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/StaircaseCornerHook.lean"
   },
   "source_hashes": {
     "md": "68254bbf2dab",
@@ -1091,7 +1091,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lean/QOU/StaircaseCornerHook.lean:172 \u2014 positivity-dependent Real.* on q without explicit hypothesis \u2014 `Real.rpow q (1 / (2k-1))` over `R = \u211d`. | content/quantum-observable-universe/lean/QOU/StaircaseCornerHook.lean:192 \u2014 positivity-dependent Real.* on q without explicit hypothesis \u2014 -- `R = \u211d` can specialise via `Real.rpow q (1 / (2 * k - 1))`."
+        "evidence": "folio/quantum-observable-universe/lean/QOU/StaircaseCornerHook.lean:172 \u2014 positivity-dependent Real.* on q without explicit hypothesis \u2014 `Real.rpow q (1 / (2k-1))` over `R = \u211d`. | folio/quantum-observable-universe/lean/QOU/StaircaseCornerHook.lean:192 \u2014 positivity-dependent Real.* on q without explicit hypothesis \u2014 -- `R = \u211d` can specialise via `Real.rpow q (1 / (2 * k - 1))`."
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -1426,7 +1426,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/staircase-ew-residual.ts:0: forward ref: uses lem:staircase-corner-hook (manifest pos 756) which appears after this block (pos 599) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/staircase-ew-residual.ts:0: forward ref: uses lem:staircase-corner-hook (manifest pos 756) which appears after this block (pos 599) in the chapter"
       }
     ],
     "detangler-section-band": [

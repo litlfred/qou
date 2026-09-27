@@ -3,9 +3,9 @@
   "label": "def:beta-decay-skein",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/beta-decay-skein.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/beta-decay-skein.md",
-    "lean": "content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean"
+    "ts": "folio/quantum-observable-universe/predicted-spectra/beta-decay-skein.ts",
+    "md": "folio/quantum-observable-universe/predicted-spectra/beta-decay-skein.md",
+    "lean": "folio/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean"
   },
   "source_hashes": {
     "md": "21ebedac3ebb",
@@ -773,7 +773,7 @@
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/beta-decay-skein.ts:0: uses[] dependency cycle: def:beta-decay-skein -> def:positron-knot -> rem:chirality-trefoil-electron-positron -> prop:antiparticle-crossing-reversal -> def:knot-particle-generation -> rem:knot-particle-dictionary -> rem:building-block-knots -> def:antineutrino-knot -> prop:parity-violation-skein -> def:beta-decay-skein"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/beta-decay-skein.ts:0: uses[] dependency cycle: def:beta-decay-skein -> def:positron-knot -> rem:chirality-trefoil-electron-positron -> prop:antiparticle-crossing-reversal -> def:knot-particle-generation -> rem:knot-particle-dictionary -> rem:building-block-knots -> def:antineutrino-knot -> prop:parity-violation-skein -> def:beta-decay-skein"
       }
     ],
     "bib-cite-resolves": [
@@ -1010,7 +1010,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean theorem statement in content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/predicted-spectra/beta-decay-skein.md.",
+        "notes": "The Lean theorem statement in folio/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/predicted-spectra/beta-decay-skein.md.",
         "severity": "minor",
         "evidence": "beta-decay-skein.lean:1 \u2014 Lean file exists"
       },
@@ -1047,7 +1047,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The mathematical claims in 'Beta decay as a Skein crossing change on the Gr\u00f6bner normal form' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean:153:31: error: failed to synthesize.",
+        "notes": "The mathematical claims in 'Beta decay as a Skein crossing change on the Gr\u00f6bner normal form' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean:153:31: error: failed to synthesize.",
         "severity": "minor",
         "evidence": "beta-decay-skein.lean:1"
       },
@@ -1222,7 +1222,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean.",
         "severity": "minor",
         "evidence": "beta-decay-skein.lean:1"
       },
@@ -1257,9 +1257,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1432,9 +1432,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "beta-decay-skein.lean:1 \u2014 content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean:153:31: error: failed to synthesize"
+        "evidence": "beta-decay-skein.lean:1 \u2014 folio/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean:153:31: error: failed to synthesize"
       },
       {
         "result": "pass",
@@ -1467,11 +1467,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean fails compilation: content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean:153:31: error: failed to synthesize",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean fails compilation: folio/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean:153:31: error: failed to synthesize",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean contains compilation errors: content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean:153:31: error: failed to synthesize, invalidating the claimed formalization.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean fails compilation: content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean:153:31: error: failed to synthesize"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean contains compilation errors: folio/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean:153:31: error: failed to synthesize, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean fails compilation: folio/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean:153:31: error: failed to synthesize"
       },
       {
         "result": "pass",

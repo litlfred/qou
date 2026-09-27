@@ -23,7 +23,7 @@
  * - `pipeline/export-json.ts` → `references.json` (for viewer/MCP)
  * - Content blocks may reference entries by `id` in `uses[]` or `meta.cites[]`
  *
- * @module content/schema/references
+ * @module folio/schema/references
  */
 
 import { z } from "zod";
@@ -8894,7 +8894,7 @@ export const references: Reference[] = [
       "agent's recall, NOT from the source: outbound fetch is blocked in this " +
       "sandbox and the paper is not in library/, so nothing here could check " +
       "them. Author to confirm volume/page/DOI before this is cited as " +
-      "verified. Not in content/bib-qa-verifications.json.",
+      "verified. Not in folio/bib-qa-verifications.json.",
   }),
 
   // ── Lusztig 1990 — canonical bases / Hecke algebras ───────────
@@ -14012,7 +14012,7 @@ export const references: Reference[] = [
     title: "ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT",
     author: [{ family: "MURAKAMI", given: "HITOSHI" }],
     URL: "https://arxiv.org/abs/math/0405126",
-    note: "PDF library/arxiv-math-0405126v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Published as Internat. J. Math. 15 (2004) 547-555. Theorem 1.1: for the torus knot $T(a,b)$ and $r$ near 1, $r \\notin \\mathbb{R}$, the limit of $J_N(T(a,b); e^{2\\pi i r/N})$ is $1/\\Delta(T(a,b); e^{2\\pi i r})$ (inverse Alexander polynomial) for $\\mathrm{Im}\\,r < 0$, and grows exponentially with exponent $(1 - 1/(2abr) - abr/2)\\pi i$ (pure Chern-Simons phase family) for $\\mathrm{Im}\\,r > 0$ — discontinuous across real $r$ (Remark 1.2), so torus-knot colored-Jones asymptotics admit NO volume/CS extraction (contrast the figure-eight); at $r = 1$ growth is polynomial $\\sim N^{3/2}$ (Kashaev-Tirkkonen), matching Gromov norm 0. This is the citable published invariant behind the corpus position that torus knots carry no volume-route mass (rem:torus-knot-zero-volume-via-reeb, TorusKnotMass.lean, the 2026-06-30 muon-ID ruling). Two-branch statement verified against the PDF in content/bib-qa-verifications.json (2026-08-08 assessment).",
+    note: "PDF library/arxiv-math-0405126v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Published as Internat. J. Math. 15 (2004) 547-555. Theorem 1.1: for the torus knot $T(a,b)$ and $r$ near 1, $r \\notin \\mathbb{R}$, the limit of $J_N(T(a,b); e^{2\\pi i r/N})$ is $1/\\Delta(T(a,b); e^{2\\pi i r})$ (inverse Alexander polynomial) for $\\mathrm{Im}\\,r < 0$, and grows exponentially with exponent $(1 - 1/(2abr) - abr/2)\\pi i$ (pure Chern-Simons phase family) for $\\mathrm{Im}\\,r > 0$ — discontinuous across real $r$ (Remark 1.2), so torus-knot colored-Jones asymptotics admit NO volume/CS extraction (contrast the figure-eight); at $r = 1$ growth is polynomial $\\sim N^{3/2}$ (Kashaev-Tirkkonen), matching Gromov norm 0. This is the citable published invariant behind the corpus position that torus knots carry no volume-route mass (rem:torus-knot-zero-volume-via-reeb, TorusKnotMass.lean, the 2026-06-30 muon-ID ruling). Two-branch statement verified against the PDF in folio/bib-qa-verifications.json (2026-08-08 assessment).",
   }),
   ref({
     id: "rivin2005",
@@ -17254,7 +17254,7 @@ export const referenceMap = new Map(references.map((r) => [r.id, r]));
 /** Get a reference by id. Throws if not found. */
 export function getRef(id: string): Reference {
   const entry = referenceMap.get(id);
-  if (!entry) throw new Error(`Unknown reference: "${id}". Check content/schema/references.ts`);
+  if (!entry) throw new Error(`Unknown reference: "${id}". Check folio/schema/references.ts`);
   return entry;
 }
 

@@ -3,9 +3,9 @@
   "label": "thm:averaging-resonance-rule",
   "kind": "theorem",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts",
-    "md": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.md",
-    "lean": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/averaging-resonance-rule.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/averaging-resonance-rule.lean"
   },
   "source_hashes": {
     "md": "cf8647e580a7",
@@ -861,7 +861,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:0: uses[] dependency cycle: thm:averaging-resonance-rule -> prop:pn-averaging-uniqueness -> thm:averaging-resonance-rule"
+        "evidence": "folio/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:0: uses[] dependency cycle: thm:averaging-resonance-rule -> prop:pn-averaging-uniqueness -> thm:averaging-resonance-rule"
       }
     ],
     "bib-cite-resolves": [
@@ -1200,7 +1200,7 @@
         "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.lean:1 — Lean file exists",
+        "evidence": "folio/quantum-observable-universe/mass-theory/averaging-resonance-rule.lean:1 — Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1330,7 +1330,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.lean:118 [def-disguised-true] def rung_rule [AveragingResonanceRule] : True := trivial",
+        "evidence": "folio/quantum-observable-universe/mass-theory/averaging-resonance-rule.lean:118 [def-disguised-true] def rung_rule [AveragingResonanceRule] : True := trivial",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1418,7 +1418,7 @@
         "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
         "severity": "minor"
       },
       {
@@ -1485,7 +1485,7 @@
         "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
         "severity": "minor"
       },
       {
@@ -1552,7 +1552,7 @@
         "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
         "severity": "minor"
       },
       {
@@ -1586,7 +1586,7 @@
         "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
         "severity": "minor"
       },
       {
@@ -1653,7 +1653,7 @@
         "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
         "severity": "minor"
       },
       {
@@ -1687,7 +1687,7 @@
         "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
         "severity": "minor"
       },
       {
@@ -1721,7 +1721,7 @@
         "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
         "severity": "minor"
       },
       {
@@ -1755,7 +1755,7 @@
         "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
         "severity": "minor"
       },
       {
@@ -1789,7 +1789,7 @@
         "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
         "severity": "minor"
       },
       {

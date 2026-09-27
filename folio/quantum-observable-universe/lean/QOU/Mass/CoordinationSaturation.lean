@@ -6,7 +6,7 @@ import Mathlib.Data.Real.Archimedean
 # QOU.Mass.CoordinationSaturation — nuclear saturation forces bounded coordination
 
 Formalizes the *qualitative* saturation argument already stated in the corpus
-(`content/quantum-observable-universe/mass-theory/bk-coordination-multiplicity.md`,
+(`folio/quantum-observable-universe/mass-theory/bk-coordination-multiplicity.md`,
 § "for `n_α ≥ 5` the complete graph over-counts … saturates to a geometric
 close-packing count"; `q-clt-jsj-mass-scaling.md`, `B/𝔪` "plateaus under nuclear
 saturation"). This file is the machine-checked structural half; it claims no new

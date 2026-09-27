@@ -3,8 +3,8 @@
   "label": "rem:q-ns-proof-details",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts",
-    "md": "content/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.md"
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.md"
   },
   "source_hashes": {
     "md": "db3a67a74fe9",
@@ -893,7 +893,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Checked mathematical consistency of the claim '**Proof of (a): q-Ladyzhenskaya inequality.**' and found no counterexamples under the stated conditions.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
         "severity": "minor"
       },
       {
@@ -954,7 +954,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Traced dependencies ['prop:q-ns-nonlinear-uniqueness', 'thm:quantum-peter-weyl'] for 'rem:q-ns-proof-details' and confirmed no circular definitions or justifications.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
         "severity": "minor"
       },
       {
@@ -1015,7 +1015,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
         "severity": "minor"
       },
       {
@@ -1046,7 +1046,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical transitions in the derivation of '**Proof of (a): q-Ladyzhenskaya inequality.**' are sound; no non-sequiturs detected.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
         "severity": "minor"
       },
       {
@@ -1107,7 +1107,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references and uses ['prop:q-ns-nonlinear-uniqueness', 'thm:quantum-peter-weyl'] cited in 'rem:q-ns-proof-details' are used in accordance with their established mathematical definitions.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
         "severity": "minor"
       },
       {
@@ -1138,7 +1138,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All terms and algebraic structures in 'rem:q-ns-proof-details' are uniquely defined or standard.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
         "severity": "minor"
       },
       {
@@ -1169,7 +1169,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic statements in 'rem:q-ns-proof-details' do not rely on fragile empirical fits or numerical thresholds.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
         "severity": "minor"
       },
       {
@@ -1200,7 +1200,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Physical dimensions and units in 'rem:q-ns-proof-details' are consistent with quantum observable universe models.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
         "severity": "minor"
       },
       {
@@ -1357,7 +1357,7 @@
         "reviewed_at": "2026-08-15T11:59:38.371Z",
         "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.md:1: Ladyzhenskaya inequality \u2014 named result, no citation in block | content/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.md:22: Ladyzhenskaya inequality \u2014 named result, no citation in block"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.md:1: Ladyzhenskaya inequality \u2014 named result, no citation in block | folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.md:22: Ladyzhenskaya inequality \u2014 named result, no citation in block"
       }
     ],
     "voice-agent-speak": [

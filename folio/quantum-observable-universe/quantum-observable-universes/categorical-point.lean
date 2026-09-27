@@ -8,8 +8,8 @@ import Mathlib.CategoryTheory.Category.Basic
 A categorical point of a Frobenius–Hopf object `A` is a morphism
 `p : 𝟙 → A` in the monoidal category `C`.
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean (monolithic)
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean (monolithic)
 -/
 
 open CategoryTheory MonoidalCategory

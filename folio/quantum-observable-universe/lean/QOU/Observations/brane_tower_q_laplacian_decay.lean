@@ -35,7 +35,7 @@ not a hypothesis.
 
 ## Cross-references
 
-  - [content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.md]
+  - [folio/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.md]
 -/
 
 namespace QOU.Observations

@@ -3,9 +3,9 @@
   "label": "def:color-tube-coordinates",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/brings-surface/color-tube-coordinates.ts",
-    "md": "content/quantum-observable-universe/brings-surface/color-tube-coordinates.md",
-    "lean": "content/quantum-observable-universe/brings-surface/color-tube-coordinates.lean"
+    "ts": "folio/quantum-observable-universe/brings-surface/color-tube-coordinates.ts",
+    "md": "folio/quantum-observable-universe/brings-surface/color-tube-coordinates.md",
+    "lean": "folio/quantum-observable-universe/brings-surface/color-tube-coordinates.lean"
   },
   "source_hashes": {
     "md": "0a0f4fb32cee",
@@ -1225,8 +1225,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.110819Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:72:2: error: ring_nf made no progress on goal",
-        "evidence": "content/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:1",
+        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:72:2: error: ring_nf made no progress on goal",
+        "evidence": "folio/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:1",
         "severity": "minor"
       },
       {
@@ -1391,8 +1391,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.110819Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:72:2: error: ring_nf made no progress on goal",
-        "evidence": "content/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:1",
+        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:72:2: error: ring_nf made no progress on goal",
+        "evidence": "folio/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:1",
         "severity": "major"
       },
       {
@@ -1425,11 +1425,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.110819Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:72:2: error: ring_nf made no progress on goal",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:72:2: error: ring_nf made no progress on goal",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:72:2: error: ring_nf made no progress on goal",
+        "referee_argument": "The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:72:2: error: ring_nf made no progress on goal",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:72:2: error: ring_nf made no progress on goal"
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:72:2: error: ring_nf made no progress on goal"
       },
       {
         "result": "pass",

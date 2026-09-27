@@ -37,7 +37,7 @@ export default proposition({
         "Corrected in the same pass: the file's `vol_4_1` docstring and its §1 " +
         "summary both read $3\\,\\mathrm{Cl}_2(\\pi/3)$, which is $3.0448\\ldots$ " +
         "rather than the $2.0298\\ldots$ literal the definition carries.",
-      see: "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean",
+      see: "folio/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean",
     },
   ],
   label: "prop:volume-tower-decomposition",

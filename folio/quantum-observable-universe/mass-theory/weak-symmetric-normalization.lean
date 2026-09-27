@@ -2,7 +2,7 @@
   Weak-sector symmetric-channel Plancherel normalization.
 
   Companion: weak-symmetric-normalization.md
-  Path: content/quantum-observable-universe/braids-and-knots/
+  Path: folio/quantum-observable-universe/braids-and-knots/
 
   States the closed-form expression
     N_sym(q) = q^4 · (1 + q² + q⁴) / 3

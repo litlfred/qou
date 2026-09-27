@@ -135,7 +135,7 @@ structure SpinDecomposition (C : Type u) [CategoryTheory.Category.{v} C]
   adjoint_is_one : adjointObj = simpleObj { twice_j := 2 }
 
 -- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
--- Ref: [deligne1990] Catégories tannakiennes — see content/schema/references.ts
+-- Ref: [deligne1990] Catégories tannakiennes — see folio/schema/references.ts
 /-- **The former `su2_emergence` axiom asserted nothing, and is now a
     one-line theorem.**
 

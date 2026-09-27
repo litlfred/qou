@@ -9,7 +9,7 @@ import Mathlib.Data.Real.Basic
 The adjoint trace induces an inner product on Hom_{SU(2)}(V_j, V_{1/2}^⊗n)
 with respect to which the Pawlowski–Leitner basis is orthogonal.
 
-Authoritative source: `content/quantum-observable-universe/lean/QOU/RepresentationTheory.lean`
+Authoritative source: `folio/quantum-observable-universe/lean/QOU/RepresentationTheory.lean`
 
 ## References
 

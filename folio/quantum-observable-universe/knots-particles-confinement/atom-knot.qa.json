@@ -3,9 +3,9 @@
   "label": "def:atom-knot",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/atom-knot.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/atom-knot.md",
-    "lean": "content/quantum-observable-universe/knots-particles-confinement/atom-knot.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/atom-knot.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/atom-knot.md",
+    "lean": "folio/quantum-observable-universe/knots-particles-confinement/atom-knot.lean"
   },
   "source_hashes": {
     "md": "de02bccec727",
@@ -745,7 +745,7 @@
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/knots-particles-confinement/atom-knot.ts:0: uses[] dependency cycle: def:atom-knot -> def:confinement-level -> def:knot-operator-energy -> def:stable-atom -> def:atom-knot"
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/atom-knot.ts:0: uses[] dependency cycle: def:atom-knot -> def:confinement-level -> def:knot-operator-energy -> def:stable-atom -> def:atom-knot"
       }
     ],
     "bib-cite-resolves": [
@@ -994,7 +994,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Atom as a knot via Gröbner normal form': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atom-knot.ts:1"
       },
       {
         "result": "pass",
@@ -1063,7 +1063,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Atom as a knot via Gröbner normal form'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atom-knot.ts:1"
       },
       {
         "result": "pass",
@@ -1132,7 +1132,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Atom as a knot via Gröbner normal form'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atom-knot.ts:1"
       },
       {
         "result": "pass",
@@ -1167,7 +1167,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Atom as a knot via Gröbner normal form' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atom-knot.ts:1"
       },
       {
         "result": "pass",
@@ -1236,7 +1236,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Atom as a knot via Gröbner normal form', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atom-knot.ts:1"
       },
       {
         "result": "pass",
@@ -1271,7 +1271,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Atom as a knot via Gröbner normal form' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atom-knot.ts:1"
       },
       {
         "result": "pass",
@@ -1306,7 +1306,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Atom as a knot via Gröbner normal form' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atom-knot.ts:1"
       },
       {
         "result": "pass",
@@ -1341,7 +1341,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Atom as a knot via Gröbner normal form' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atom-knot.ts:1"
       },
       {
         "result": "pass",
@@ -1376,7 +1376,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Atom as a knot via Gröbner normal form' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atom-knot.ts:1"
       },
       {
         "result": "pass",

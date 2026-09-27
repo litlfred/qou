@@ -38,7 +38,7 @@ no convention required.
 This is exactly what the *writhe* rule fails to do.  `w(T(m,p)) = (m−1)p` is
 **not** symmetric — `writheTorus_not_symm` exhibits `w(T(2,3)) = 3 ≠ 4 =
 w(T(3,2))` — which is why
-`content/quantum-observable-universe/mass-theory/torus-knot-delta-q-writhe.md`
+`folio/quantum-observable-universe/mass-theory/torus-knot-delta-q-writhe.md`
 had to be given the minimal-strand guard `m ≤ p` (Morton–Williams braid index)
 earlier in this same PR, and why
 `computations/rosso_jones_three_strand_delta_q.py` now raises on a swapped pair.

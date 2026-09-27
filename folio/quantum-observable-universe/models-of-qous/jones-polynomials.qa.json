@@ -3,8 +3,8 @@
   "label": "sec:jones-polynomials",
   "kind": "prose",
   "paths": {
-    "ts": "content/quantum-observable-universe/models-of-qous/jones-polynomials.ts",
-    "md": "content/quantum-observable-universe/models-of-qous/jones-polynomials.md"
+    "ts": "folio/quantum-observable-universe/models-of-qous/jones-polynomials.ts",
+    "md": "folio/quantum-observable-universe/models-of-qous/jones-polynomials.md"
   },
   "source_hashes": {
     "md": "4c21a9da9b35",
@@ -384,7 +384,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/models-of-qous/jones-polynomials.md:3 \u2014 root-of-unity construction used without explicit regime declaration \u2014 The fusion category $\\mathrm{Rep}_{\\mathbb{F}_p}(\\mathrm{SU}_q(2))$ carries a canonical $R$-matrix. This arises from the universal $R$-matrix of $U_q(\\mathfrak{sl}_2)$ specialised at a primitive $\\ell$-th root of unity in $\\overline{\\mathbb{F}}_p$. This $R$-matrix promotes the fundamental representation $V$ to a braided object. The braid group $B_n$ acts on $V^{\\otimes n}$. The Markov trace then produces a knot invariant. Following standard Reshetikhin\u2013Turaev normalisation, this yields the Jones polynomial $J_K(q) \\in \\mathbb{Z}[q^{\\pm 1/2}]$ modulo $p$."
+        "evidence": "folio/quantum-observable-universe/models-of-qous/jones-polynomials.md:3 \u2014 root-of-unity construction used without explicit regime declaration \u2014 The fusion category $\\mathrm{Rep}_{\\mathbb{F}_p}(\\mathrm{SU}_q(2))$ carries a canonical $R$-matrix. This arises from the universal $R$-matrix of $U_q(\\mathfrak{sl}_2)$ specialised at a primitive $\\ell$-th root of unity in $\\overline{\\mathbb{F}}_p$. This $R$-matrix promotes the fundamental representation $V$ to a braided object. The braid group $B_n$ acts on $V^{\\otimes n}$. The Markov trace then produces a knot invariant. Following standard Reshetikhin\u2013Turaev normalisation, this yields the Jones polynomial $J_K(q) \\in \\mathbb{Z}[q^{\\pm 1/2}]$ modulo $p$."
       }
     ],
     "q-usage-narrative-chapter-mismatch": [

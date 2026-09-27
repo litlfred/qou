@@ -31,9 +31,9 @@ const REPO_ROOT = resolve(import.meta.dir, "..", "..");
 const SCRIPT = resolve(REPO_ROOT, "content/pipeline/lean-vacuity-axiom-audit.ts");
 
 /** Scratch dir under the repo: the scanner resolves paths against REPO_ROOT. */
-const TMPDIR = resolve(REPO_ROOT, "content/quantum-observable-universe/.vacuity-promotion-selftest");
+const TMPDIR = resolve(REPO_ROOT, "folio/quantum-observable-universe/.vacuity-promotion-selftest");
 const LEAN_REL =
-  "content/quantum-observable-universe/.vacuity-promotion-selftest/Probe.lean";
+  "folio/quantum-observable-universe/.vacuity-promotion-selftest/Probe.lean";
 const LEAN_ABS = resolve(REPO_ROOT, LEAN_REL);
 const LEDGER = resolve(TMPDIR, "ledger.json");
 const REPORT = resolve(TMPDIR, "report.json");
@@ -108,7 +108,7 @@ test("a triage-pending exemption is LIFTED once the ledger adjudicates the key g
 
     // 3. The same scan must now COUNT it, and say so.
     const after = runAudit(
-      "content/quantum-observable-universe/.vacuity-promotion-selftest/ledger.json",
+      "folio/quantum-observable-universe/.vacuity-promotion-selftest/ledger.json",
     );
     const promoted = hitsOf(after.report).find((h) => h.decl === exemptHit.decl);
     expect(promoted.exempt).toBeFalsy();
@@ -147,7 +147,7 @@ test("a `legit` or `advisory` verdict does NOT lift the exemption", () => {
         }),
       );
       const { report } = runAudit(
-        "content/quantum-observable-universe/.vacuity-promotion-selftest/ledger.json",
+        "folio/quantum-observable-universe/.vacuity-promotion-selftest/ledger.json",
       );
       expect(report.total_defects).toBe(0);
       expect(report.total_promoted_from_exempt).toBe(0);

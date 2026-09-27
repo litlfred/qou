@@ -3,9 +3,9 @@
   "label": "conj:magic-numbers-from-q",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/observations/magic-numbers-from-q.ts",
-    "md": "content/quantum-observable-universe/observations/magic-numbers-from-q.md",
-    "lean": "content/quantum-observable-universe/observations/magic-numbers-from-q.lean"
+    "ts": "folio/quantum-observable-universe/observations/magic-numbers-from-q.ts",
+    "md": "folio/quantum-observable-universe/observations/magic-numbers-from-q.md",
+    "lean": "folio/quantum-observable-universe/observations/magic-numbers-from-q.lean"
   },
   "source_hashes": {
     "md": "b51f30874dde",
@@ -227,7 +227,7 @@
         "reviewed_at": "2026-09-03T08:30:51.979Z",
         "reviewed_sha": "ec13f8ae5995ed7ebdb64ddd697075b82296501d",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/observations/magic-numbers-from-q.md:21: First/Second/Third bullet cadence — characteristic LLM structural crutch"
+        "evidence": "folio/quantum-observable-universe/observations/magic-numbers-from-q.md:21: First/Second/Third bullet cadence — characteristic LLM structural crutch"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1371,7 +1371,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claim in 'Magic numbers emerge from per-partition nuclear character at $q_0$' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/magic-numbers-from-q.lean:1"
+        "evidence": "folio/quantum-observable-universe/observations/magic-numbers-from-q.lean:1"
       },
       {
         "result": "pass",
@@ -1440,7 +1440,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Magic numbers emerge from per-partition nuclear character at $q_0$'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/magic-numbers-from-q.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/magic-numbers-from-q.ts:1"
       },
       {
         "result": "pass",
@@ -1510,7 +1510,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Magic numbers emerge from per-partition nuclear character at $q_0$'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/magic-numbers-from-q.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/magic-numbers-from-q.ts:1"
       },
       {
         "result": "pass",
@@ -1543,9 +1543,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.691100Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/observations/magic-numbers-from-q.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/observations/magic-numbers-from-q.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/magic-numbers-from-q.lean:1"
+        "evidence": "folio/quantum-observable-universe/observations/magic-numbers-from-q.lean:1"
       },
       {
         "result": "pass",
@@ -1578,9 +1578,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.691100Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean sibling content/quantum-observable-universe/observations/magic-numbers-from-q.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/observations/magic-numbers-from-q.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/observations/magic-numbers-from-q.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/observations/magic-numbers-from-q.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1615,7 +1615,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Magic numbers emerge from per-partition nuclear character at $q_0$', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/magic-numbers-from-q.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/magic-numbers-from-q.ts:1"
       },
       {
         "result": "pass",
@@ -1650,7 +1650,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Magic numbers emerge from per-partition nuclear character at $q_0$' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/magic-numbers-from-q.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/magic-numbers-from-q.ts:1"
       },
       {
         "result": "pass",
@@ -1685,7 +1685,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Magic numbers emerge from per-partition nuclear character at $q_0$' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/magic-numbers-from-q.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/magic-numbers-from-q.ts:1"
       },
       {
         "result": "pass",
@@ -1720,7 +1720,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Magic numbers emerge from per-partition nuclear character at $q_0$' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/magic-numbers-from-q.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/magic-numbers-from-q.ts:1"
       },
       {
         "result": "pass",
@@ -1753,9 +1753,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.691100Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean sibling content/quantum-observable-universe/observations/magic-numbers-from-q.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/observations/magic-numbers-from-q.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/magic-numbers-from-q.lean:1 — content/quantum-observable-universe/observations/magic-numbers-from-q.lean:27:8: error: `QOU.AtomicMass.magic_numbers_from_q` has already been declared"
+        "evidence": "folio/quantum-observable-universe/observations/magic-numbers-from-q.lean:1 — folio/quantum-observable-universe/observations/magic-numbers-from-q.lean:27:8: error: `QOU.AtomicMass.magic_numbers_from_q` has already been declared"
       },
       {
         "result": "pass",
@@ -1788,11 +1788,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.691100Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/magic-numbers-from-q.lean fails compilation: content/quantum-observable-universe/observations/magic-numbers-from-q.lean:27:8: error: `QOU.AtomicMass.magic_numbers_from_q` has already been declared",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/observations/magic-numbers-from-q.lean fails compilation: folio/quantum-observable-universe/observations/magic-numbers-from-q.lean:27:8: error: `QOU.AtomicMass.magic_numbers_from_q` has already been declared",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/magic-numbers-from-q.lean contains compilation errors: content/quantum-observable-universe/observations/magic-numbers-from-q.lean:27:8: error: `QOU.AtomicMass.magic_numbers_from_q` has already been declared, invalidating the claimed formalization.",
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/observations/magic-numbers-from-q.lean contains compilation errors: folio/quantum-observable-universe/observations/magic-numbers-from-q.lean:27:8: error: `QOU.AtomicMass.magic_numbers_from_q` has already been declared, invalidating the claimed formalization.",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/magic-numbers-from-q.lean fails compilation: content/quantum-observable-universe/observations/magic-numbers-from-q.lean:27:8: error: `QOU.AtomicMass.magic_numbers_from_q` has already been declared"
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/observations/magic-numbers-from-q.lean fails compilation: folio/quantum-observable-universe/observations/magic-numbers-from-q.lean:27:8: error: `QOU.AtomicMass.magic_numbers_from_q` has already been declared"
       },
       {
         "result": "pass",

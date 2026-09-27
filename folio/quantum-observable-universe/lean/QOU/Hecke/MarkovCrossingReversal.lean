@@ -4,7 +4,7 @@
 ## What this file is about
 
 `conj:flavor-split-habiro-derivation`
-(`content/quantum-observable-universe/mass-theory/flavor-split-habiro-derivation.md`)
+(`folio/quantum-observable-universe/mass-theory/flavor-split-habiro-derivation.md`)
 carries the nucleon flavour split in two sections that do not connect, and this
 file measures the gap and then closes half of it.
 

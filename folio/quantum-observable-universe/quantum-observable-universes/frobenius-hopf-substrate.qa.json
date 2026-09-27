@@ -3,9 +3,9 @@
   "label": "def:frobenius-hopf-substrate",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.ts",
-    "md": "content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.md",
-    "lean": "content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean"
+    "ts": "folio/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.ts",
+    "md": "folio/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.md",
+    "lean": "folio/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean"
   },
   "source_hashes": {
     "md": "efa5c30e63d6",
@@ -999,7 +999,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "frobenius-hopf-substrate.lean:1 — Lean file exists",
-        "notes": "The Lean theorem statement in content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.md."
+        "notes": "The Lean theorem statement in folio/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.md."
       },
       {
         "field_hash": {
@@ -1036,7 +1036,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "frobenius-hopf-substrate.lean:1",
-        "notes": "The mathematical claims in 'The quantum vacuum as a Frobenius--Hopf algebra' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean:57:4: error: Type mismatch."
+        "notes": "The mathematical claims in 'The quantum vacuum as a Frobenius--Hopf algebra' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean:57:4: error: Type mismatch."
       },
       {
         "result": "pass",
@@ -1211,7 +1211,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "frobenius-hopf-substrate.lean:1",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean."
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean."
       },
       {
         "result": "pass",
@@ -1245,8 +1245,8 @@
         "reviewed_at": "2026-07-07T14:26:55.902433Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean fails compilation, causing divergence from the narrative.",
-        "evidence": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean fails compilation, causing divergence from the narrative."
+        "notes": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean fails compilation, causing divergence from the narrative.",
+        "evidence": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1420,8 +1420,8 @@
         "reviewed_at": "2026-07-07T14:26:55.902433Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "frobenius-hopf-substrate.lean:1 — content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean:57:4: error: Type mismatch",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean fails compilation, indicating a reproducibility failure."
+        "evidence": "frobenius-hopf-substrate.lean:1 — folio/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean:57:4: error: Type mismatch",
+        "notes": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean fails compilation, indicating a reproducibility failure."
       },
       {
         "result": "pass",
@@ -1455,10 +1455,10 @@
         "reviewed_at": "2026-07-07T14:26:55.902433Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "critical",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean:57:4: error: Type mismatch",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean fails compilation: folio/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean:57:4: error: Type mismatch",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean:57:4: error: Type mismatch, invalidating the claimed formalization.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean:57:4: error: Type mismatch"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean contains compilation errors: folio/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean:57:4: error: Type mismatch, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean fails compilation: folio/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean:57:4: error: Type mismatch"
       },
       {
         "result": "pass",

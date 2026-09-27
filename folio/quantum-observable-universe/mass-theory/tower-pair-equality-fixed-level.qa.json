@@ -3,9 +3,9 @@
   "label": "lem:tower-pair-equality-fixed-level",
   "kind": "lemma",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.ts",
-    "md": "content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.md",
-    "lean": "content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean"
   },
   "source_hashes": {
     "md": "f118559f0111",
@@ -1206,7 +1206,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:1 — Lean file exists",
+        "evidence": "folio/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:1 — Lean file exists",
         "severity": "minor"
       },
       {
@@ -1242,7 +1242,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean proof contains compilation errors.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:1 — content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:36:40: error: invalid binder annotation, type is not a class instance",
+        "evidence": "folio/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:1 — folio/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:36:40: error: invalid binder annotation, type is not a class instance",
         "severity": "minor"
       },
       {
@@ -1437,7 +1437,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.ts:1",
         "severity": "minor"
       },
       {
@@ -1534,7 +1534,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.ts:1",
         "severity": "minor"
       },
       {
@@ -1631,7 +1631,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.ts:1",
         "severity": "minor"
       },
       {
@@ -1680,7 +1680,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.ts:1",
         "severity": "minor"
       },
       {
@@ -1778,7 +1778,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.ts:1",
         "severity": "minor"
       },
       {
@@ -1827,7 +1827,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.ts:1",
         "severity": "minor"
       },
       {
@@ -1876,7 +1876,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.ts:1",
         "severity": "minor"
       },
       {
@@ -1925,7 +1925,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.ts:1",
         "severity": "minor"
       },
       {
@@ -1974,7 +1974,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:1 — content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:36:40: error: invalid binder annotation, type is not a class instance",
+        "evidence": "folio/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:1 — folio/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:36:40: error: invalid binder annotation, type is not a class instance",
         "severity": "minor"
       },
       {
@@ -2022,11 +2022,11 @@
         },
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:36:40: error: invalid binder annotation, type is not a class instance",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:36:40: error: invalid binder annotation, type is not a class instance",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:36:40: error: invalid binder annotation, type is not a class instance",
-        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:36:40: error: invalid binder annotation, type is not a class instance"
+        "referee_argument": "The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:36:40: error: invalid binder annotation, type is not a class instance",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:36:40: error: invalid binder annotation, type is not a class instance"
       },
       {
         "field_hash": {

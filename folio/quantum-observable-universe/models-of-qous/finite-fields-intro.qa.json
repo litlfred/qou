@@ -3,8 +3,8 @@
   "label": "sec:finite-fields-intro",
   "kind": "prose",
   "paths": {
-    "ts": "content/quantum-observable-universe/models-of-qous/finite-fields-intro.ts",
-    "md": "content/quantum-observable-universe/models-of-qous/finite-fields-intro.md"
+    "ts": "folio/quantum-observable-universe/models-of-qous/finite-fields-intro.ts",
+    "md": "folio/quantum-observable-universe/models-of-qous/finite-fields-intro.md"
   },
   "source_hashes": {
     "md": "9e4088e204d9",
@@ -384,7 +384,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/models-of-qous/finite-fields-intro.md:3 \u2014 root-of-unity construction used without explicit regime declaration \u2014 Let $q$ range over $\\mathbb{F}_p^{\\times}$, or a primitive $\\ell$-th root of unity in $\\overline{\\mathbb{F}}_p$ with $\\ell$ coprime to $p$. The categorical data forms a fusion category with finitely many simple objects. The $\\mathbb{F}_p$ realisation constructs $\\mathrm{Rep}_{\\mathbb{F}_p}(\\mathrm{SU}_q(2))$ as a QOU. The regular representation satisfies the Frobenius and observability axioms. This supplies the finite-field counterpart to the Calabi\u2013Yau and Bring's-surface witnesses."
+        "evidence": "folio/quantum-observable-universe/models-of-qous/finite-fields-intro.md:3 \u2014 root-of-unity construction used without explicit regime declaration \u2014 Let $q$ range over $\\mathbb{F}_p^{\\times}$, or a primitive $\\ell$-th root of unity in $\\overline{\\mathbb{F}}_p$ with $\\ell$ coprime to $p$. The categorical data forms a fusion category with finitely many simple objects. The $\\mathbb{F}_p$ realisation constructs $\\mathrm{Rep}_{\\mathbb{F}_p}(\\mathrm{SU}_q(2))$ as a QOU. The regular representation satisfies the Frobenius and observability axioms. This supplies the finite-field counterpart to the Calabi\u2013Yau and Bring's-surface witnesses."
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -402,7 +402,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/models-of-qous/finite-fields-intro.md:1 \u2014 detected regime [root-of-unity] is disjoint from chapter 'models-of-qous' expected [fixed-q0, generic-R, mod-gt-1, mod-lt-1, na, real-gt-1, real-positive, symbolic]"
+        "evidence": "folio/quantum-observable-universe/models-of-qous/finite-fields-intro.md:1 \u2014 detected regime [root-of-unity] is disjoint from chapter 'models-of-qous' expected [fixed-q0, generic-R, mod-gt-1, mod-lt-1, na, real-gt-1, real-positive, symbolic]"
       }
     ],
     "canonical-calibration-count": [

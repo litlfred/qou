@@ -75,7 +75,7 @@ lemma signCharacter_one : signCharacter (1 : Equiv.Perm (Fin 3)) = 1 := by
     statement made categorically in `baryon-product-from-alt.md`. -/
 -- Ref: [fulton-harris1991] §2 (Frobenius character formula, sign-isotype projection)
 -- Ref: [macdonald1995] §I.2 (Vandermonde discriminant identity)
--- Ref: [manuscript] https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/predicted-spectra/baryon-product-from-alt.md
+-- Ref: [manuscript] https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/predicted-spectra/baryon-product-from-alt.md
 theorem baryonProductFromAlt (a b c : ℝ) :
     (b * c ^ 2 - c * b ^ 2) - a * (c ^ 2 - b ^ 2) + a ^ 2 * (c - b)
       = (b - a) * (c - a) * (c - b) := by

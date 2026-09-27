@@ -26,7 +26,7 @@
  *
  * ## Why this existed (bean `qou-orph`, historical)
  *
- * `content/quantum-observable-universe/lean/lakefile.toml` then declared
+ * `folio/quantum-observable-universe/lean/lakefile.toml` then declared
  *
  *     defaultTargets = ["QOU"]
  *     [[lean_lib]]
@@ -99,7 +99,7 @@
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
 
-const DEFAULT_ROOT = "content/quantum-observable-universe/lean";
+const DEFAULT_ROOT = "folio/quantum-observable-universe/lean";
 
 function walk(dir: string, out: string[] = []): string[] {
   for (const e of readdirSync(dir)) {

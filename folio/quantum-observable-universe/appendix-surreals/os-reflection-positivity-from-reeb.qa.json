@@ -3,9 +3,9 @@
   "label": "conj:os-reflection-positivity-from-reeb",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.ts",
-    "md": "content/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.md",
-    "lean": "content/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.lean"
+    "ts": "folio/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.ts",
+    "md": "folio/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.md",
+    "lean": "folio/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.lean"
   },
   "source_hashes": {
     "md": "02670708e404",
@@ -900,7 +900,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.md:53 — root-of-unity construction used without explicit regime declaration — The status of OS reflection positivity in the QOU framework is equal to the status of this single $C^*$-Frobenius positivity axiom. The axiom is well-formulated inside unitary fusion categories and unitary $C^*$-Frobenius algebras. Verifying that the QOU substrate $A$ at $q_0 \\in \\mathbb{R}_{>1}$ satisfies it requires:"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.md:53 — root-of-unity construction used without explicit regime declaration — The status of OS reflection positivity in the QOU framework is equal to the status of this single $C^*$-Frobenius positivity axiom. The axiom is well-formulated inside unitary fusion categories and unitary $C^*$-Frobenius algebras. Verifying that the QOU substrate $A$ at $q_0 \\in \\mathbb{R}_{>1}$ satisfies it requires:"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -919,7 +919,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.md:1 — detected regime [real-positive, root-of-unity] is disjoint from chapter 'appendix-surreals' expected [generic-R, na, symbolic]"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.md:1 — detected regime [real-positive, root-of-unity] is disjoint from chapter 'appendix-surreals' expected [generic-R, na, symbolic]"
       }
     ],
     "proof-no-bare-sorries": [

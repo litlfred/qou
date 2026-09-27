@@ -3,9 +3,9 @@
   "label": "conj:color-superconductivity-borromean",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/observations/color-superconductivity-borromean.ts",
-    "md": "content/quantum-observable-universe/observations/color-superconductivity-borromean.md",
-    "lean": "content/quantum-observable-universe/observations/color-superconductivity-borromean.lean"
+    "ts": "folio/quantum-observable-universe/observations/color-superconductivity-borromean.ts",
+    "md": "folio/quantum-observable-universe/observations/color-superconductivity-borromean.md",
+    "lean": "folio/quantum-observable-universe/observations/color-superconductivity-borromean.lean"
   },
   "source_hashes": {
     "md": "5798ab4f19fe",
@@ -219,7 +219,7 @@
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/observations/color-superconductivity-borromean.md:50: The superconducting gap $\\Delta_{\\mathrm{CFL}}$ represents the energy required to break a Cooper pair. It equals the crossing energy of the binding Hopf link:"
+        "evidence": "folio/quantum-observable-universe/observations/color-superconductivity-borromean.md:50: The superconducting gap $\\Delta_{\\mathrm{CFL}}$ represents the energy required to break a Cooper pair. It equals the crossing energy of the binding Hopf link:"
       },
       {
         "field_hash": {
@@ -1032,7 +1032,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Color superconductivity as Borromean-to-Hopf topological reconfiguration': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/color-superconductivity-borromean.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/color-superconductivity-borromean.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1075,7 +1075,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Color superconductivity as Borromean-to-Hopf topological reconfiguration'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/color-superconductivity-borromean.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/color-superconductivity-borromean.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1119,7 +1119,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Color superconductivity as Borromean-to-Hopf topological reconfiguration'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/color-superconductivity-borromean.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/color-superconductivity-borromean.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1139,9 +1139,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.543280Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/observations/color-superconductivity-borromean.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/observations/color-superconductivity-borromean.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/color-superconductivity-borromean.lean:1"
+        "evidence": "folio/quantum-observable-universe/observations/color-superconductivity-borromean.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1161,7 +1161,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.543280Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean sibling content/quantum-observable-universe/observations/color-superconductivity-borromean.lean uses a class-conjecture pattern, matching the conjectural nature of 'Color superconductivity as Borromean-to-Hopf topological reconfiguration'.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/observations/color-superconductivity-borromean.lean uses a class-conjecture pattern, matching the conjectural nature of 'Color superconductivity as Borromean-to-Hopf topological reconfiguration'.",
         "severity": "minor"
       }
     ],
@@ -1184,7 +1184,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Citations to alford1999 are correct and contextually appropriate.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/color-superconductivity-borromean.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/color-superconductivity-borromean.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1206,7 +1206,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Color superconductivity as Borromean-to-Hopf topological reconfiguration' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/color-superconductivity-borromean.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/color-superconductivity-borromean.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1228,7 +1228,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Color superconductivity as Borromean-to-Hopf topological reconfiguration' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/color-superconductivity-borromean.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/color-superconductivity-borromean.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1250,7 +1250,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Color superconductivity as Borromean-to-Hopf topological reconfiguration' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/color-superconductivity-borromean.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/color-superconductivity-borromean.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1270,9 +1270,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.543280Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean sibling content/quantum-observable-universe/observations/color-superconductivity-borromean.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/observations/color-superconductivity-borromean.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/color-superconductivity-borromean.lean:1 — content/quantum-observable-universe/observations/color-superconductivity-borromean.lean:18:42: error: Function expected at"
+        "evidence": "folio/quantum-observable-universe/observations/color-superconductivity-borromean.lean:1 — folio/quantum-observable-universe/observations/color-superconductivity-borromean.lean:18:42: error: Function expected at"
       },
       {
         "field_hash": {

@@ -31,7 +31,7 @@
         "reviewed_at": "2026-08-25T19:09:08.379Z",
         "reviewed_sha": "2dffe6d662c7959bafb8b93fe16d12d815c0842b",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.md:79: *The $w_n$ values and the $\\sim 3$ keV $^4$He fit residual come from the discrete $q$-difference recurrence with calibrated seeds \u2014 a phenomenological reproduction, not a structural bound. A kernel-co"
+        "evidence": "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.md:79: *The $w_n$ values and the $\\sim 3$ keV $^4$He fit residual come from the discrete $q$-difference recurrence with calibrated seeds \u2014 a phenomenological reproduction, not a structural bound. A kernel-co"
       }
     ],
     "voice-probe-narrative": [
@@ -159,7 +159,7 @@
         "reviewed_at": "2026-08-25T19:09:08.379Z",
         "reviewed_sha": "2dffe6d662c7959bafb8b93fe16d12d815c0842b",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.md:57: > (`find` \u2192 0 hits) and disagreed with the `.ts` manifest. Two things a consumer should | content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.md:64: > - Its numbers are **not** the live pipeline's. It records D +23 %, T +6 %, \u00b3He +13 %, | content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.md:65: >   \u2074He +3.6 % \u2014 i.e. *over*-binding \u2014 computed at the 242-ppb nucleon level that the | content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.md:68: >   *under*-binds: \u00b2H \u221227.5 %, \u00b3H +38 %, \u00b3He +44 %, \u2074He +69 % (`err sym` 0.79 / 1.38 /"
+        "evidence": "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.md:57: > (`find` \u2192 0 hits) and disagreed with the `.ts` manifest. Two things a consumer should | folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.md:64: > - Its numbers are **not** the live pipeline's. It records D +23 %, T +6 %, \u00b3He +13 %, | folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.md:65: >   \u2074He +3.6 % \u2014 i.e. *over*-binding \u2014 computed at the 242-ppb nucleon level that the | folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.md:68: >   *under*-binds: \u00b2H \u221227.5 %, \u00b3H +38 %, \u00b3He +44 %, \u2074He +69 % (`err sym` 0.79 / 1.38 /"
       }
     ],
     "voice-editorializing": [
@@ -251,7 +251,7 @@
         "reviewed_at": "2026-08-25T19:09:08.379Z",
         "reviewed_sha": "2dffe6d662c7959bafb8b93fe16d12d815c0842b",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.md:55: P2:pr-commit-ref: > **Corrected 2026-08-25 (PR #5765).** This contract previously named | content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.md:55: P4:date-ref: > **Corrected 2026-08-25 (PR #5765).** This contract previously named | content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.md:66: P4:date-ref: >   [2026-07-04 audit](../../../docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)"
+        "evidence": "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.md:55: P2:pr-commit-ref: > **Corrected 2026-08-25 (PR #5765).** This contract previously named | folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.md:55: P4:date-ref: > **Corrected 2026-08-25 (PR #5765).** This contract previously named | folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.md:66: P4:date-ref: >   [2026-07-04 audit](../../../docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)"
       }
     ],
     "voice-status-section": [
@@ -1119,8 +1119,8 @@
   "label": "alg:per-isotope-binding",
   "kind": "algorithm",
   "paths": {
-    "ts": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.ts",
-    "md": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.md"
+    "ts": "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.ts",
+    "md": "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.md"
   },
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

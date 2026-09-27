@@ -3,9 +3,9 @@
   "label": "def:ccg-cosimplicial-identities",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.ts",
-    "md": "content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.md",
-    "lean": "content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.lean"
+    "ts": "folio/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.ts",
+    "md": "folio/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.md",
+    "lean": "folio/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.lean"
   },
   "source_hashes": {
     "md": "e76436255766",
@@ -1007,7 +1007,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The mathematical claims in 'Definition.' are verified by the compiling Lean proof.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.lean:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.lean:1"
       },
       {
         "result": "pass",
@@ -1041,7 +1041,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The claims in 'Definition.' are non-vacuous and backed by a sorry-free formalization.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.lean:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.lean:1"
       },
       {
         "result": "pass",
@@ -1075,7 +1075,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Definition.'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.ts:1"
       },
       {
         "result": "pass",
@@ -1142,7 +1142,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Definition.'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.ts:1"
       },
       {
         "result": "pass",
@@ -1176,7 +1176,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The argument flow in 'Definition.' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.ts:1"
       },
       {
         "result": "pass",
@@ -1243,7 +1243,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'Definition.', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.ts:1"
       },
       {
         "result": "pass",
@@ -1277,7 +1277,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'Definition.' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.ts:1"
       },
       {
         "result": "pass",
@@ -1311,7 +1311,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'Definition.' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.ts:1"
       },
       {
         "result": "pass",
@@ -1345,7 +1345,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'Definition.' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.ts:1"
       },
       {
         "result": "pass",
@@ -1379,7 +1379,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The derivation steps and formal definitions in 'Definition.' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.ts:1"
       },
       {
         "result": "pass",

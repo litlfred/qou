@@ -44,7 +44,7 @@ export default proposition({
         "about that ordered structure and so cannot be lifted off " +
         "$\\mathbb{R}$ without dropping the order fields that carry the " +
         "physics.",
-      see: "content/quantum-observable-universe/lean/QOU/Molecular/EmbeddableKnotOperator.lean",
+      see: "folio/quantum-observable-universe/lean/QOU/Molecular/EmbeddableKnotOperator.lean",
     },
   ],
   label: "prop:bond-order-le-three",

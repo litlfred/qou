@@ -3,9 +3,9 @@
   "label": "prop:pieri-photon-shift",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/pieri-photon-shift.ts",
-    "md": "content/quantum-observable-universe/mass-theory/pieri-photon-shift.md",
-    "lean": "content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/pieri-photon-shift.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/pieri-photon-shift.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/pieri-photon-shift.lean"
   },
   "source_hashes": {
     "md": "7f2c5c95c36c",
@@ -1207,7 +1207,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:1 — Lean file exists",
+        "evidence": "folio/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:1 — Lean file exists",
         "severity": "minor"
       },
       {
@@ -1244,7 +1244,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean proof contains compilation errors.",
-        "evidence": "content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:1",
         "severity": "minor"
       },
       {
@@ -1440,7 +1440,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/pieri-photon-shift.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/pieri-photon-shift.ts:1",
         "severity": "minor"
       },
       {
@@ -1539,7 +1539,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/pieri-photon-shift.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/pieri-photon-shift.ts:1",
         "severity": "minor"
       },
       {
@@ -1638,7 +1638,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/pieri-photon-shift.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/pieri-photon-shift.ts:1",
         "severity": "minor"
       },
       {
@@ -1688,7 +1688,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/pieri-photon-shift.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/pieri-photon-shift.ts:1",
         "severity": "minor"
       },
       {
@@ -1788,7 +1788,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/pieri-photon-shift.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/pieri-photon-shift.ts:1",
         "severity": "minor"
       },
       {
@@ -1838,7 +1838,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/pieri-photon-shift.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/pieri-photon-shift.ts:1",
         "severity": "minor"
       },
       {
@@ -1888,7 +1888,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/pieri-photon-shift.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/pieri-photon-shift.ts:1",
         "severity": "minor"
       },
       {
@@ -1938,7 +1938,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/pieri-photon-shift.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/pieri-photon-shift.ts:1",
         "severity": "minor"
       },
       {
@@ -1988,7 +1988,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:1 — content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:43:16: error: unexpected token 'λ'; expected '(', '[', '_', '{', '⦃' or identifier",
+        "evidence": "folio/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:1 — folio/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:43:16: error: unexpected token 'λ'; expected '(', '[', '_', '{', '⦃' or identifier",
         "severity": "minor"
       },
       {
@@ -2037,11 +2037,11 @@
         },
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:43:16: error: unexpected token 'λ'; expected '(', '[', '_', '{', '⦃' or identifier",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:43:16: error: unexpected token 'λ'; expected '(', '[', '_', '{', '⦃' or identifier",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:43:16: error: unexpected token 'λ'; expected '(', '[', '_', '{', '⦃' or identifier",
-        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:43:16: error: unexpected token 'λ'; expected '(', '[', '_', '{', '⦃' or identifier"
+        "referee_argument": "The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:43:16: error: unexpected token 'λ'; expected '(', '[', '_', '{', '⦃' or identifier",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:43:16: error: unexpected token 'λ'; expected '(', '[', '_', '{', '⦃' or identifier"
       },
       {
         "field_hash": {

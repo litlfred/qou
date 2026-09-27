@@ -59,7 +59,7 @@ export default remark({
         "again. The ppb figures remain literals because no purpose-named scalar field carries them " +
         "(`substrate_tension_ppb` is signed; the `0.017 ppb` and the miss factor exist only as prose or as an " +
         "array-indexed dashboard row). Producer-side fix filed as bean `qou-m4au`.",
-      see: "https://github.com/litlfred/qou/blob/claude/tender-keller-nvldp3/content/quantum-observable-universe/observations/mu-p-residual-two-readings.md",
+      see: "https://github.com/litlfred/qou/blob/claude/tender-keller-nvldp3/folio/quantum-observable-universe/observations/mu-p-residual-two-readings.md",
     },
     {
       kind: "status",

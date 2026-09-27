@@ -2,7 +2,7 @@
   Categorical Higgs mechanism — conjecture carrier.
 
   Companion: categorical-higgs-mechanism.md
-  Path: content/quantum-observable-universe/mass-theory/
+  Path: folio/quantum-observable-universe/mass-theory/
 
   The categorical formulation of the Higgs mechanism: Goldstone-eating
   ↔ topological linking of closed-braid representatives.  The open

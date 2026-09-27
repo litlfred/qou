@@ -3,8 +3,8 @@
   "label": "rem:substrate-parameter-limits-and-lusztig",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-limits-and-lusztig.ts",
-    "md": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-limits-and-lusztig.md"
+    "ts": "folio/quantum-observable-universe/quantum-observable-universes/substrate-parameter-limits-and-lusztig.ts",
+    "md": "folio/quantum-observable-universe/quantum-observable-universes/substrate-parameter-limits-and-lusztig.md"
   },
   "source_hashes": {
     "md": "55cbd3505f49",
@@ -459,7 +459,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-limits-and-lusztig.md:1 \u2014 root-of-unity construction used without explicit regime declaration \u2014 At $q = 1$, $d_q$ recovers $d$. As $q \\to \\infty$, $d_q$ projects fully onto the Reeb direction. When realized physically over a base space $M$, $q$ becomes a local substrate field $q \\colon M \\to k^{\\times}$. Algebraically, this corresponds to the Lusztig integral form $\\mathcal{U}^{\\mathbb{Z}}_q(\\mathfrak{su}(2))$, which undergoes a base change via $q \\mapsto q_0$."
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/substrate-parameter-limits-and-lusztig.md:1 \u2014 root-of-unity construction used without explicit regime declaration \u2014 At $q = 1$, $d_q$ recovers $d$. As $q \\to \\infty$, $d_q$ projects fully onto the Reeb direction. When realized physically over a base space $M$, $q$ becomes a local substrate field $q \\colon M \\to k^{\\times}$. Algebraically, this corresponds to the Lusztig integral form $\\mathcal{U}^{\\mathbb{Z}}_q(\\mathfrak{su}(2))$, which undergoes a base change via $q \\mapsto q_0$."
       }
     ],
     "q-usage-narrative-chapter-mismatch": [

@@ -3,8 +3,8 @@
   "label": "sec:atomic-braid-mass-crossing-locality-cpt-preamble",
   "kind": "prose",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/atomic-braid-mass-crossing-locality-cpt-intro.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/atomic-braid-mass-crossing-locality-cpt-intro.md"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/atomic-braid-mass-crossing-locality-cpt-intro.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/atomic-braid-mass-crossing-locality-cpt-intro.md"
   },
   "source_hashes": {
     "md": "90b657ac0e21",
@@ -1314,7 +1314,7 @@
         "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
         "severity": "minor",
         "evidence": "Full-context read of sec:atomic-braid-mass-crossing-locality-cpt-preamble (5-sentence section roadmap). Cross-checked every roadmap item against the section block list in nuclear-interactions.ts lines 237-250.",
-        "notes": "Three consecutive triples in a five-sentence paragraph ('crossing grading, locality, and CPT orbits'; 'mass-volume factorization, the crossing-graded mass expansion, and lifted-crossing locality'; 'q-holonomy locality, Frobenius-packing density, and CPT-orbit closure density'). Not faithful groupings: 4 of the 8 named items (mass-volume factorization, crossing-graded mass expansion, lifted-crossing locality, Frobenius-packing density) are NOT blocks of this section - three of them now live in content/quantum-observable-universe/mass-theory/. The section actually holds q-holonomy-locality-derivation, cpt-orbit-closure-density, bar-involution-invariance(+proof,+significance), soft-confinement-at-q0(+table). STRUCTURAL, not applied. Proposed: rewrite the roadmap to the six blocks the section actually contains, dropping the three mass-theory items and the non-existent 'crossing-graded mass expansion'."
+        "notes": "Three consecutive triples in a five-sentence paragraph ('crossing grading, locality, and CPT orbits'; 'mass-volume factorization, the crossing-graded mass expansion, and lifted-crossing locality'; 'q-holonomy locality, Frobenius-packing density, and CPT-orbit closure density'). Not faithful groupings: 4 of the 8 named items (mass-volume factorization, crossing-graded mass expansion, lifted-crossing locality, Frobenius-packing density) are NOT blocks of this section - three of them now live in folio/quantum-observable-universe/mass-theory/. The section actually holds q-holonomy-locality-derivation, cpt-orbit-closure-density, bar-involution-invariance(+proof,+significance), soft-confinement-at-q0(+table). STRUCTURAL, not applied. Proposed: rewrite the roadmap to the six blocks the section actually contains, dropping the three mass-theory items and the non-existent 'crossing-graded mass expansion'."
       }
     ],
     "trap-closing-aphorism": [

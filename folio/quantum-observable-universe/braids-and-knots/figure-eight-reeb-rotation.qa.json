@@ -3,9 +3,9 @@
   "label": "prop:figure-eight-reeb-rotation",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.lean"
+    "ts": "folio/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.ts",
+    "md": "folio/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.md",
+    "lean": "folio/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.lean"
   },
   "source_hashes": {
     "md": "a9f5d675179f",
@@ -894,7 +894,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.lean:194 — archimedean tactic in categorical chapter — linarith"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.lean:194 — archimedean tactic in categorical chapter — linarith"
       }
     ],
     "q-usage-positivity-implicit": [

@@ -5,7 +5,7 @@ import QOU.Archimedean.NuclearGroebnerReduction
 # nuclear-groebner-reduction — sibling stub
 
 The canonical Lean source for `prop:nuclear-groebner-reduction` lives at
-`content/quantum-observable-universe/lean/QOU/Archimedean/NuclearGroebnerReduction.lean`,
+`folio/quantum-observable-universe/lean/QOU/Archimedean/NuclearGroebnerReduction.lean`,
 which is Lake-built under the `qou` package and declares
 `QOU.Archimedean.nuclear_groebner_reduction` together with its
 supporting structures (`HeckeElement`, `isReduced`, the

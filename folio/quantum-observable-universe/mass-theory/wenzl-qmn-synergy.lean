@@ -123,7 +123,7 @@ class WenzlQMNCrossValidation
     `chi_qMN ≡ 0`), so it must be class-axiomatised; downstream
     callers supplying a genuine Hecke representation discharge
     the `[WenzlQMNCrossValidation]` instance with the real proof. -/
--- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
+-- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see folio/bib-qa-verifications.json
 theorem markov_axiom_canonical_braid
     {n : ℕ} (q : ℝ) (hq : q > 1)
     (w : CanonicalPermutationBraid n)

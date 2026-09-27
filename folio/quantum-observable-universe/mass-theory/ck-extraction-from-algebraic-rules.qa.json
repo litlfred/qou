@@ -3,9 +3,9 @@
   "label": "rem:ck-extraction-from-algebraic-rules",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.ts",
-    "md": "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.md",
-    "lean": "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean"
   },
   "source_hashes": {
     "md": "59ec1905a264",
@@ -374,7 +374,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean:50 — positivity-dependent Real.* on q without explicit hypothesis — Real.sqrt (q^4 + q^2 + 1) / (q^2 + 1)"
+        "evidence": "folio/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean:50 — positivity-dependent Real.* on q without explicit hypothesis — Real.sqrt (q^4 + q^2 + 1) / (q^2 + 1)"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -1012,7 +1012,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No false claims identified in '$c_k$ extraction from four algebraic reduction rules (Yang-Baxter, $q$-Young symmetrizers, Hecke quadratic, GB/jet) on the typed-$\\\\mathbf{B}_3$ word: the closed forms $c_k \\\\in \\\\{b, b^2, -2, b^2+1/2\\\\}$ are derivable outputs, not phenomenological identifications'; the algebraic relation involving $c_k$ is mathematically consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.ts:1"
       },
       {
         "result": "pass",
@@ -1103,7 +1103,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No circular reasoning or self-assuming definitions detected in '$c_k$ extraction from four algebraic reduction rules (Yang-Baxter, $q$-Young symmetrizers, Hecke quadratic, GB/jet) on the typed-$\\\\mathbf{B}_3$ word: the closed forms $c_k \\\\in \\\\{b, b^2, -2, b^2+1/2\\\\}$ are derivable outputs, not phenomenological identifications'. The construction is derived from rem:braid-group-n-strand.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.ts:1"
       },
       {
         "result": "pass",
@@ -1194,7 +1194,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$c_k$ extraction from four algebraic reduction rules (Yang-Baxter, $q$-Young symmetrizers, Hecke quadratic, GB/jet) on the typed-$\\\\mathbf{B}_3$ word: the closed forms $c_k \\\\in \\\\{b, b^2, -2, b^2+1/2\\\\}$ are derivable outputs, not phenomenological identifications'. All constants are canonically derived.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.ts:1"
       },
       {
         "result": "pass",
@@ -1240,7 +1240,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The argument flow in '$c_k$ extraction from four algebraic reduction rules (Yang-Baxter, $q$-Young symmetrizers, Hecke quadratic, GB/jet) on the typed-$\\\\mathbf{B}_3$ word: the closed forms $c_k \\\\in \\\\{b, b^2, -2, b^2+1/2\\\\}$ are derivable outputs, not phenomenological identifications' is logically sound, mapping onto the cited dependencies: rem:braid-group-n-strand.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.ts:1"
       },
       {
         "result": "pass",
@@ -1286,7 +1286,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Citations to kashiwara1990, jones1985, hoefsmit1974, wenzl1988, kassel1995 are correct and contextually appropriate.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.ts:1"
       },
       {
         "result": "pass",
@@ -1332,7 +1332,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols (including $c_k$) in '$c_k$ extraction from four algebraic reduction rules (Yang-Baxter, $q$-Young symmetrizers, Hecke quadratic, GB/jet) on the typed-$\\\\mathbf{B}_3$ word: the closed forms $c_k \\\\in \\\\{b, b^2, -2, b^2+1/2\\\\}$ are derivable outputs, not phenomenological identifications' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.ts:1"
       },
       {
         "result": "pass",
@@ -1378,7 +1378,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The algebraic and logical relations in '$c_k$ extraction from four algebraic reduction rules (Yang-Baxter, $q$-Young symmetrizers, Hecke quadratic, GB/jet) on the typed-$\\\\mathbf{B}_3$ word: the closed forms $c_k \\\\in \\\\{b, b^2, -2, b^2+1/2\\\\}$ are derivable outputs, not phenomenological identifications' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.ts:1"
       },
       {
         "result": "pass",
@@ -1424,7 +1424,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in '$c_k$ extraction from four algebraic reduction rules (Yang-Baxter, $q$-Young symmetrizers, Hecke quadratic, GB/jet) on the typed-$\\\\mathbf{B}_3$ word: the closed forms $c_k \\\\in \\\\{b, b^2, -2, b^2+1/2\\\\}$ are derivable outputs, not phenomenological identifications' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.ts:1"
       },
       {
         "result": "pass",
@@ -1470,7 +1470,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in '$c_k$ extraction from four algebraic reduction rules (Yang-Baxter, $q$-Young symmetrizers, Hecke quadratic, GB/jet) on the typed-$\\\\mathbf{B}_3$ word: the closed forms $c_k \\\\in \\\\{b, b^2, -2, b^2+1/2\\\\}$ are derivable outputs, not phenomenological identifications' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.ts:1"
       },
       {
         "result": "pass",

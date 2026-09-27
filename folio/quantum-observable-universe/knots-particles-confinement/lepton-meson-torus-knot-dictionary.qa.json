@@ -3,9 +3,9 @@
   "label": "prop:lepton-meson-torus-knot-dictionary",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/lepton-meson-torus-knot-dictionary.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/lepton-meson-torus-knot-dictionary.md",
-    "lean": "content/quantum-observable-universe/knots-particles-confinement/lepton-meson-torus-knot-dictionary.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/lepton-meson-torus-knot-dictionary.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/lepton-meson-torus-knot-dictionary.md",
+    "lean": "folio/quantum-observable-universe/knots-particles-confinement/lepton-meson-torus-knot-dictionary.lean"
   },
   "source_hashes": {
     "md": "c9eca8ff6dd3",
@@ -717,7 +717,7 @@
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/knots-particles-confinement/lepton-meson-torus-knot-dictionary.ts:0: forward ref: uses def:categorical-meson (manifest pos 153) which appears after this block (pos 80) in the chapter"
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/lepton-meson-torus-knot-dictionary.ts:0: forward ref: uses def:categorical-meson (manifest pos 153) which appears after this block (pos 80) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1193,9 +1193,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist",
+        "notes": "The Lean sibling fails compilation, preventing statement verification: folio/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist",
         "severity": "minor",
-        "evidence": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist"
+        "evidence": "The Lean sibling fails compilation, preventing statement verification: folio/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist"
       },
       {
         "field_hash": {
@@ -1411,7 +1411,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The mathematical claims in 'Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist.",
+        "notes": "The mathematical claims in 'Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist.",
         "severity": "minor",
         "evidence": "lepton-meson-torus-knot-dictionary.lean:1"
       },
@@ -1446,7 +1446,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "lepton-meson-torus-knot-dictionary.lean:1"
       },
@@ -1585,7 +1585,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean.",
         "severity": "minor",
         "evidence": "lepton-meson-torus-knot-dictionary.lean:1"
       },
@@ -1620,9 +1620,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1795,9 +1795,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "lepton-meson-torus-knot-dictionary.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist"
+        "evidence": "lepton-meson-torus-knot-dictionary.lean:1 \u2014 folio/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist"
       },
       {
         "result": "pass",
@@ -1830,11 +1830,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean fails compilation.",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean fails compilation.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean fails compilation."
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean fails compilation."
       },
       {
         "result": "pass",

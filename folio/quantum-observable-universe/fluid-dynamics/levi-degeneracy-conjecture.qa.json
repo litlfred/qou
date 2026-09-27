@@ -3,9 +3,9 @@
   "label": "conj:levi-degeneracy",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts",
-    "md": "content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.md",
-    "lean": "content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.lean"
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.md",
+    "lean": "folio/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.lean"
   },
   "source_hashes": {
     "md": "151534c76054",
@@ -1043,7 +1043,7 @@
         "reviewed_at": "2026-07-07T14:26:56.288465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Checked mathematical consistency of the claim 'Let $\\{q_\\kappa = e^{i\\pi/\\kappa}\\}_{\\kappa \\geq 2}$ be the' and found no counterexamples under the stated conditions.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts:1",
         "severity": "minor"
       },
       {
@@ -1110,7 +1110,7 @@
         "reviewed_at": "2026-07-07T14:26:56.288465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Traced dependencies ['prop:core-levi-form', 'prop:root-of-unity-truncation'] for 'conj:levi-degeneracy' and confirmed no circular definitions or justifications.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts:1",
         "severity": "minor"
       },
       {
@@ -1177,7 +1177,7 @@
         "reviewed_at": "2026-07-07T14:26:56.288465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts:1",
         "severity": "minor"
       },
       {
@@ -1211,7 +1211,7 @@
         "reviewed_at": "2026-07-07T14:26:56.288465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical transitions in the derivation of 'Let $\\{q_\\kappa = e^{i\\pi/\\kappa}\\}_{\\kappa \\geq 2}$ be the' are sound; no non-sequiturs detected.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts:1",
         "severity": "minor"
       },
       {
@@ -1244,7 +1244,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.288465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The conjecture is formalized with sorry in content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.lean, which matches the open nature of the narrative.",
+        "notes": "The conjecture is formalized with sorry in folio/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.lean, which matches the open nature of the narrative.",
         "severity": "minor"
       },
       {
@@ -1278,7 +1278,7 @@
         "reviewed_at": "2026-07-07T14:26:56.288465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references and uses ['prop:core-levi-form', 'prop:root-of-unity-truncation'] cited in 'conj:levi-degeneracy' are used in accordance with their established mathematical definitions.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts:1",
         "severity": "minor"
       },
       {
@@ -1312,7 +1312,7 @@
         "reviewed_at": "2026-07-07T14:26:56.288465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All terms and algebraic structures in 'conj:levi-degeneracy' are uniquely defined or standard.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts:1",
         "severity": "minor"
       },
       {
@@ -1346,7 +1346,7 @@
         "reviewed_at": "2026-07-07T14:26:56.288465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic statements in 'conj:levi-degeneracy' do not rely on fragile empirical fits or numerical thresholds.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts:1",
         "severity": "minor"
       },
       {
@@ -1380,7 +1380,7 @@
         "reviewed_at": "2026-07-07T14:26:56.288465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Physical dimensions and units in 'conj:levi-degeneracy' are consistent with quantum observable universe models.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts:1",
         "severity": "minor"
       },
       {
@@ -1414,7 +1414,7 @@
         "reviewed_at": "2026-07-07T14:26:56.288465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All backing computations and proofs are fully reproducible.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts:1",
         "severity": "minor"
       },
       {

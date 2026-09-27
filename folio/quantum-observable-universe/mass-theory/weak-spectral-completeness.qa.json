@@ -3,9 +3,9 @@
   "label": "conj:weak-spectral-completeness",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts",
-    "md": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.md",
-    "lean": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.lean"
   },
   "source_hashes": {
     "md": "75b6ebe08bf4",
@@ -1035,7 +1035,7 @@
         "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
         "severity": "minor"
       },
       {
@@ -1102,7 +1102,7 @@
         "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
         "severity": "minor"
       },
       {
@@ -1169,7 +1169,7 @@
         "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
         "severity": "minor"
       },
       {
@@ -1203,7 +1203,7 @@
         "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
         "severity": "minor"
       },
       {
@@ -1270,7 +1270,7 @@
         "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
         "severity": "minor"
       },
       {
@@ -1304,7 +1304,7 @@
         "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
         "severity": "minor"
       },
       {
@@ -1338,7 +1338,7 @@
         "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
         "severity": "minor"
       },
       {
@@ -1372,7 +1372,7 @@
         "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
         "severity": "minor"
       },
       {
@@ -1406,7 +1406,7 @@
         "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.lean:1 — content/quantum-observable-universe/mass-theory/weak-spectral-completeness.lean:64:10: error: failed to synthesize",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.lean:1 — folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.lean:64:10: error: failed to synthesize",
         "severity": "minor"
       },
       {

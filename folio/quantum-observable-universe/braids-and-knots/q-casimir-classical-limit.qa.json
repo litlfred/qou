@@ -3,9 +3,9 @@
   "label": "prop:q-casimir-classical-limit",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/q-casimir-classical-limit.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/q-casimir-classical-limit.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/q-casimir-classical-limit.lean"
+    "ts": "folio/quantum-observable-universe/braids-and-knots/q-casimir-classical-limit.ts",
+    "md": "folio/quantum-observable-universe/braids-and-knots/q-casimir-classical-limit.md",
+    "lean": "folio/quantum-observable-universe/braids-and-knots/q-casimir-classical-limit.lean"
   },
   "source_hashes": {
     "md": "1562d7266c5e",
@@ -1290,7 +1290,7 @@
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-classical-limit.ts:1: no probe witness for this prop \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B (audit: i1-no-probe-audit.witness.json)"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-classical-limit.ts:1: no probe witness for this prop \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B (audit: i1-no-probe-audit.witness.json)"
       }
     ],
     "compute-prop-has-consumer": [
@@ -1312,7 +1312,7 @@
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-classical-limit.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-classical-limit.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [

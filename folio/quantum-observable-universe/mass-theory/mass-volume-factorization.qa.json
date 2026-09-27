@@ -3,9 +3,9 @@
   "label": "conj:mass-volume-factorization",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/mass-volume-factorization.ts",
-    "md": "content/quantum-observable-universe/mass-theory/mass-volume-factorization.md",
-    "lean": "content/quantum-observable-universe/mass-theory/mass-volume-factorization.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/mass-volume-factorization.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/mass-volume-factorization.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/mass-volume-factorization.lean"
   },
   "source_hashes": {
     "md": "296d253ff000",
@@ -1427,7 +1427,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/mass-volume-factorization.ts:0: forward ref: uses rem:frobenius-packing-density (manifest pos 355) which appears after this block (pos 354) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/mass-volume-factorization.ts:0: forward ref: uses rem:frobenius-packing-density (manifest pos 355) which appears after this block (pos 354) in the chapter"
       }
     ],
     "detangler-section-band": [

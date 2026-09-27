@@ -117,9 +117,9 @@ const SCRIPT_REL = "content/pipeline/lean-vacuity-axiom-audit.ts";
 // Lake package prefix → lakeRoot (inlined to stay free of the migrated
 // `folio-assistant/cat-harness/schemas/lean-packages.ts`).
 const LAKE_ROOTS: Record<string, string> = {
-  qou: "content/quantum-observable-universe/lean",
-  ugb: "content/unital-groebner-bases/lean",
-  fred2005: "content/fred2005-formal-groups/lean",
+  qou: "folio/quantum-observable-universe/lean",
+  ugb: "folio/unital-groebner-bases/lean",
+  fred2005: "folio/fred2005-formal-groups/lean",
 };
 
 type Category =
@@ -476,7 +476,7 @@ function findRealDecl(
   }
   // (2) explicit lean/…/*.lean path in the docstring
   for (const m of rawSrc.matchAll(/\b(lean\/[A-Za-z0-9_/]+\.lean)\b/g)) {
-    candidates.push(resolve(REPO_ROOT, "content/quantum-observable-universe", m[1]));
+    candidates.push(resolve(REPO_ROOT, "folio/quantum-observable-universe", m[1]));
     candidates.push(resolve(REPO_ROOT, m[1]));
   }
   // (3) QOU.A.B namespace → lean/QOU/A/B.lean
@@ -486,7 +486,7 @@ function findRealDecl(
     const modParts = parts.filter((p, idx) => idx === 0 || /^[A-Z]/.test(p));
     const modPath = modParts.join("/");
     candidates.push(
-      resolve(REPO_ROOT, "content/quantum-observable-universe/lean", `${modPath}.lean`),
+      resolve(REPO_ROOT, "folio/quantum-observable-universe/lean", `${modPath}.lean`),
     );
   }
   const declRe = new RegExp(
@@ -3711,7 +3711,7 @@ function main() {
       // never visited looks exactly like one whose candidate stopped flagging.
       //
       // Measured cost, on this ledger: a `--review-ledger` run scoped to
-      // `content/quantum-observable-universe/lean` rewrote the file −863/+67,
+      // `folio/quantum-observable-universe/lean` rewrote the file −863/+67,
       // destroying **106 of 329 entries** — every one of them in a category
       // this audit DOES produce, so `foreign` preserved none of them. The
       // ledger spans 22 roots across two papers and only 223 entries live under

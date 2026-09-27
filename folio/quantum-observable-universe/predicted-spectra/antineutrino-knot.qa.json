@@ -3,9 +3,9 @@
   "label": "def:antineutrino-knot",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/antineutrino-knot.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/antineutrino-knot.md",
-    "lean": "content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean"
+    "ts": "folio/quantum-observable-universe/predicted-spectra/antineutrino-knot.ts",
+    "md": "folio/quantum-observable-universe/predicted-spectra/antineutrino-knot.md",
+    "lean": "folio/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean"
   },
   "source_hashes": {
     "md": "7377cfe55c34",
@@ -617,7 +617,7 @@
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/antineutrino-knot.ts:0: forward ref: uses prop:parity-violation-skein (manifest pos 157) which appears after this block (pos 5) in the chapter"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/antineutrino-knot.ts:0: forward ref: uses prop:parity-violation-skein (manifest pos 157) which appears after this block (pos 5) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -777,7 +777,7 @@
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/antineutrino-knot.ts:0: uses[] dependency cycle: def:antineutrino-knot -> prop:parity-violation-skein -> def:beta-decay-skein -> def:positron-knot -> rem:chirality-trefoil-electron-positron -> prop:antiparticle-crossing-reversal -> def:knot-particle-generation -> rem:knot-particle-dictionary -> rem:building-block-knots -> def:antineutrino-knot"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/antineutrino-knot.ts:0: uses[] dependency cycle: def:antineutrino-knot -> prop:parity-violation-skein -> def:beta-decay-skein -> def:positron-knot -> rem:chirality-trefoil-electron-positron -> prop:antiparticle-crossing-reversal -> def:knot-particle-generation -> rem:knot-particle-dictionary -> rem:building-block-knots -> def:antineutrino-knot"
       }
     ],
     "bib-cite-resolves": [
@@ -1033,7 +1033,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The mathematical claims in 'Antineutrino as mirror unknot $T_{1,0}^{\\\\sigma}$' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean:27:13: error: unexpected token 'section'; expected 'lemma'.",
+        "notes": "The mathematical claims in 'Antineutrino as mirror unknot $T_{1,0}^{\\\\sigma}$' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean:27:13: error: unexpected token 'section'; expected 'lemma'.",
         "severity": "minor",
         "evidence": "antineutrino-knot.lean:1"
       },
@@ -1208,7 +1208,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean.",
         "severity": "minor",
         "evidence": "antineutrino-knot.lean:1"
       },
@@ -1243,9 +1243,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1418,9 +1418,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "antineutrino-knot.lean:1 — content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean:27:13: error: unexpected token 'section'; expected 'lemma'"
+        "evidence": "antineutrino-knot.lean:1 — folio/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean:27:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "result": "pass",
@@ -1453,11 +1453,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean fails compilation: content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean fails compilation: folio/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean contains compilation errors: content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean:27:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean fails compilation: content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean:27:13: error: unexpected token 'section'; expected 'lemma'"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean contains compilation errors: folio/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean:27:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean fails compilation: folio/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean:27:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "result": "pass",

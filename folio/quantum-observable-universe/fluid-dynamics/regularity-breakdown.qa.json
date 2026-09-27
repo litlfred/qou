@@ -3,9 +3,9 @@
   "label": "conj:regularity-breakdown",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts",
-    "md": "content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.md",
-    "lean": "content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.lean"
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.md",
+    "lean": "folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.lean"
   },
   "source_hashes": {
     "md": "41a94bb6a68d",
@@ -1043,7 +1043,7 @@
         "reviewed_at": "2026-07-07T14:26:56.252119Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No false claims identified in 'Regularity breakdown at $q = 1$: the classical limit as a phase transition': mathematical reasoning is consistent.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1",
         "severity": "minor"
       },
       {
@@ -1110,7 +1110,7 @@
         "reviewed_at": "2026-07-07T14:26:56.252119Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Regularity breakdown at $q = 1$: the classical limit as a phase transition'.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1",
         "severity": "minor"
       },
       {
@@ -1178,7 +1178,7 @@
         "reviewed_at": "2026-07-07T14:26:56.252119Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Regularity breakdown at $q = 1$: the classical limit as a phase transition'.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1",
         "severity": "minor"
       },
       {
@@ -1212,7 +1212,7 @@
         "reviewed_at": "2026-07-07T14:26:56.252119Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The argument flow in 'Regularity breakdown at $q = 1$: the classical limit as a phase transition' is logically sound, mapping onto the cited dependencies.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1",
         "severity": "minor"
       },
       {
@@ -1245,7 +1245,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.252119Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.lean uses a class-conjecture pattern, matching the conjectural nature of 'Regularity breakdown at $q = 1$: the classical limit as a phase transition'.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.lean uses a class-conjecture pattern, matching the conjectural nature of 'Regularity breakdown at $q = 1$: the classical limit as a phase transition'.",
         "severity": "minor"
       },
       {
@@ -1279,7 +1279,7 @@
         "reviewed_at": "2026-07-07T14:26:56.252119Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No citations are present in 'Regularity breakdown at $q = 1$: the classical limit as a phase transition', hence no citation misuse is possible.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1",
         "severity": "minor"
       },
       {
@@ -1313,7 +1313,7 @@
         "reviewed_at": "2026-07-07T14:26:56.252119Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Key terms and symbols in 'Regularity breakdown at $q = 1$: the classical limit as a phase transition' are mathematically defined and unambiguous.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1",
         "severity": "minor"
       },
       {
@@ -1347,7 +1347,7 @@
         "reviewed_at": "2026-07-07T14:26:56.252119Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic and logical relations in 'Regularity breakdown at $q = 1$: the classical limit as a phase transition' are independent of empirical tuning parameters.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1",
         "severity": "minor"
       },
       {
@@ -1381,7 +1381,7 @@
         "reviewed_at": "2026-07-07T14:26:56.252119Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The physical concepts described in 'Regularity breakdown at $q = 1$: the classical limit as a phase transition' are consistent with quantum observable mechanics.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1",
         "severity": "minor"
       },
       {
@@ -1415,7 +1415,7 @@
         "reviewed_at": "2026-07-07T14:26:56.252119Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The derivation steps and formal definitions in 'Regularity breakdown at $q = 1$: the classical limit as a phase transition' are reproducible.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts:1",
         "severity": "minor"
       },
       {

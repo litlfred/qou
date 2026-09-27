@@ -3,9 +3,9 @@
   "label": "lem:brings-riemann-hurwitz",
   "kind": "lemma",
   "paths": {
-    "ts": "content/quantum-observable-universe/brings-surface/brings-riemann-hurwitz.ts",
-    "md": "content/quantum-observable-universe/brings-surface/brings-riemann-hurwitz.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/brings_riemann_hurwitz.lean"
+    "ts": "folio/quantum-observable-universe/brings-surface/brings-riemann-hurwitz.ts",
+    "md": "folio/quantum-observable-universe/brings-surface/brings-riemann-hurwitz.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/brings_riemann_hurwitz.lean"
   },
   "source_hashes": {
     "md": "24e066549f29",
@@ -1130,7 +1130,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/brings_riemann_hurwitz.lean:51 [field-projection] theorem brings_riemann_hurwitz [ctx : BringsRiemannHurwitzContext] :",
+        "evidence": "folio/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/brings_riemann_hurwitz.lean:51 [field-projection] theorem brings_riemann_hurwitz [ctx : BringsRiemannHurwitzContext] :",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1292,7 +1292,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/brings_riemann_hurwitz.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/brings_riemann_hurwitz.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",

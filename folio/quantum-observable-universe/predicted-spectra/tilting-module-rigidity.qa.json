@@ -3,9 +3,9 @@
   "label": "lem:tilting-module-rigidity",
   "kind": "lemma",
   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.md",
-    "lean": "content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean"
+    "ts": "folio/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.ts",
+    "md": "folio/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.md",
+    "lean": "folio/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean"
   },
   "source_hashes": {
     "md": "fc1f34be356d",
@@ -1410,7 +1410,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The mathematical claims in 'Tilting module rigidity' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/CemeteryGroupEmergence.olean' of module QOU.BraidKnot.CemeteryGroupEmergence does not exist.",
+        "notes": "The mathematical claims in 'Tilting module rigidity' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/CemeteryGroupEmergence.olean' of module QOU.BraidKnot.CemeteryGroupEmergence does not exist.",
         "severity": "minor",
         "evidence": "tilting-module-rigidity.lean:1"
       },
@@ -1445,7 +1445,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "tilting-module-rigidity.lean:1"
       },
@@ -1584,7 +1584,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean.",
         "severity": "minor",
         "evidence": "tilting-module-rigidity.lean:1"
       },
@@ -1619,9 +1619,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1794,9 +1794,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "tilting-module-rigidity.lean:1 — content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/CemeteryGroupEmergence.olean' of module QOU.BraidKnot.CemeteryGroupEmergence does not exist"
+        "evidence": "tilting-module-rigidity.lean:1 — folio/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/CemeteryGroupEmergence.olean' of module QOU.BraidKnot.CemeteryGroupEmergence does not exist"
       },
       {
         "result": "pass",
@@ -1829,11 +1829,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean fails compilation.",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean fails compilation.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean fails compilation."
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean fails compilation."
       },
       {
         "result": "pass",

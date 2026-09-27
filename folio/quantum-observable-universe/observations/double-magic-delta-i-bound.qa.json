@@ -3,9 +3,9 @@
   "label": "conj:double-magic-delta-i-bound",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/observations/double-magic-delta-i-bound.ts",
-    "md": "content/quantum-observable-universe/observations/double-magic-delta-i-bound.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/Interactions/DoubleMagicDeltaI.lean"
+    "ts": "folio/quantum-observable-universe/observations/double-magic-delta-i-bound.ts",
+    "md": "folio/quantum-observable-universe/observations/double-magic-delta-i-bound.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/Interactions/DoubleMagicDeltaI.lean"
   },
   "source_hashes": {
     "md": "bcdc704b4b9b",
@@ -1032,7 +1032,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Conjecture: Empirical double-magic isotopes satisfy $|\\\\Delta i| \\\\leq 1$ across Bring shell indices': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/double-magic-delta-i-bound.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/double-magic-delta-i-bound.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1073,7 +1073,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Conjecture: Empirical double-magic isotopes satisfy $|\\\\Delta i| \\\\leq 1$ across Bring shell indices'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/double-magic-delta-i-bound.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/double-magic-delta-i-bound.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1114,7 +1114,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Conjecture: Empirical double-magic isotopes satisfy $|\\\\Delta i| \\\\leq 1$ across Bring shell indices'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/double-magic-delta-i-bound.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/double-magic-delta-i-bound.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1135,7 +1135,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The argument flow in 'Conjecture: Empirical double-magic isotopes satisfy $|\\\\Delta i| \\\\leq 1$ across Bring shell indices' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/double-magic-delta-i-bound.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/double-magic-delta-i-bound.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1177,7 +1177,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Citations to mathas1999, kassel1995 are correct and contextually appropriate.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/double-magic-delta-i-bound.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/double-magic-delta-i-bound.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1198,7 +1198,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Conjecture: Empirical double-magic isotopes satisfy $|\\\\Delta i| \\\\leq 1$ across Bring shell indices' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/double-magic-delta-i-bound.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/double-magic-delta-i-bound.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1219,7 +1219,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Conjecture: Empirical double-magic isotopes satisfy $|\\\\Delta i| \\\\leq 1$ across Bring shell indices' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/double-magic-delta-i-bound.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/double-magic-delta-i-bound.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1240,7 +1240,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Conjecture: Empirical double-magic isotopes satisfy $|\\\\Delta i| \\\\leq 1$ across Bring shell indices' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/double-magic-delta-i-bound.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/double-magic-delta-i-bound.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1261,7 +1261,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The derivation steps and formal definitions in 'Conjecture: Empirical double-magic isotopes satisfy $|\\\\Delta i| \\\\leq 1$ across Bring shell indices' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/double-magic-delta-i-bound.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/double-magic-delta-i-bound.ts:1"
       }
     ],
     "da-referee-verdict": [

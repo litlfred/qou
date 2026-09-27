@@ -3,8 +3,8 @@
   "label": "prf:q-casimir-unique",
   "kind": "proof",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique-proof.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique-proof.md"
+    "ts": "folio/quantum-observable-universe/braids-and-knots/q-casimir-unique-proof.ts",
+    "md": "folio/quantum-observable-universe/braids-and-knots/q-casimir-unique-proof.md"
   },
   "source_hashes": {
     "md": "51266a11086f",
@@ -839,7 +839,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Checked mathematical consistency of the claim 'The centre $Z(\\mathcal{U}_q(\\mathfrak{su}(2)))$ is a polynomial ring' and found no counterexamples under the stated conditions.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-unique-proof.ts:1"
       }
     ],
     "da-vacuous": [
@@ -874,7 +874,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Traced dependencies ['prop:q-casimir-unique'] for 'prf:q-casimir-unique' and confirmed no circular definitions or justifications.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-unique-proof.ts:1"
       }
     ],
     "da-overclaim": [
@@ -909,7 +909,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-unique-proof.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -927,7 +927,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Logical transitions in the derivation of 'The centre $Z(\\mathcal{U}_q(\\mathfrak{su}(2)))$ is a polynomial ring' are sound; no non-sequiturs detected.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-unique-proof.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -962,7 +962,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All references and uses ['prop:q-casimir-unique'] cited in 'prf:q-casimir-unique' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-unique-proof.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -980,7 +980,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All terms and algebraic structures in 'prf:q-casimir-unique' are uniquely defined or standard.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-unique-proof.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -998,7 +998,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The algebraic statements in 'prf:q-casimir-unique' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-unique-proof.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1016,7 +1016,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Physical dimensions and units in 'prf:q-casimir-unique' are consistent with quantum observable universe models.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-unique-proof.ts:1"
       }
     ],
     "da-reproducibility": [

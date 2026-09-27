@@ -3,9 +3,9 @@
   "label": "prop:chirality-from-frobenius-self-pairing",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/chirality-from-frobenius-self-pairing.ts",
-    "md": "content/quantum-observable-universe/mass-theory/chirality-from-frobenius-self-pairing.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/chirality_frobenius_self_pairing.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/chirality-from-frobenius-self-pairing.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/chirality-from-frobenius-self-pairing.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/BraidKnot/chirality_frobenius_self_pairing.lean"
   },
   "source_hashes": {
     "md": "e06017f3159d",
@@ -643,7 +643,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/chirality-from-frobenius-self-pairing.md:21: The self-pairing evaluates trivially ($a_K=1$) for bare generator crossings and pure trefoils. The non-trivial chirality factor arises directly from higher Markov moments during the braid closure oper"
+        "evidence": "folio/quantum-observable-universe/mass-theory/chirality-from-frobenius-self-pairing.md:21: The self-pairing evaluates trivially ($a_K=1$) for bare generator crossings and pure trefoils. The non-trivial chirality factor arises directly from higher Markov moments during the braid closure oper"
       }
     ],
     "voice-scholarly-default": [
@@ -1380,7 +1380,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/chirality-from-frobenius-self-pairing.ts:0: forward ref: uses prop:mass-formula-regime-switching (manifest pos 680) which appears after this block (pos 529) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/chirality-from-frobenius-self-pairing.ts:0: forward ref: uses prop:mass-formula-regime-switching (manifest pos 680) which appears after this block (pos 529) in the chapter"
       }
     ],
     "detangler-section-band": [

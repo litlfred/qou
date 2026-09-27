@@ -3,9 +3,9 @@
   "label": "lem:su2-emergence-dagger-unitarity",
   "kind": "lemma",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.ts",
-    "md": "content/quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/su2_emergence_dagger_unitarity.lean"
+    "ts": "folio/quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.ts",
+    "md": "folio/quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/su2_emergence_dagger_unitarity.lean"
   },
   "source_hashes": {
     "md": "a63bc11b4f52",
@@ -716,7 +716,7 @@
         "reviewed_at": "2026-08-09T13:01:47.990Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.ts:0: forward ref: uses prop:fiber-adjoint-involution (manifest pos 71) which appears after this block (pos 29) in the chapter"
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.ts:0: forward ref: uses prop:fiber-adjoint-involution (manifest pos 71) which appears after this block (pos 29) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1242,7 +1242,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/su2_emergence_dagger_unitarity.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/su2_emergence_dagger_unitarity.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",

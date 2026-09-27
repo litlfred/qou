@@ -3,9 +3,9 @@
   "label": "prop:ramified-disc-fusion",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts",
-    "md": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/BraidsKnots/RamifiedDiscFusion.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/BraidsKnots/RamifiedDiscFusion.lean"
   },
   "source_hashes": {
     "md": "6db9a8b7558d",
@@ -1258,8 +1258,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is missing entirely.",
-        "evidence": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion.md:1",
+        "notes": "The sibling Lean file folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is missing entirely.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.md:1",
         "severity": "minor"
       },
       {
@@ -1278,7 +1278,7 @@
         "reviewed_at": "2026-09-03T20:28:24Z",
         "reviewed_sha": "4a4e5ce3d2cbbfd6b22fdfc08b74b38323a736e3",
         "notes": "Geometric-face section (sec:exceptional-divisor-reeb); the Statement is purely topological/finite-group/cyclotomic with no q, no numeric value, no Real.*, no units and no order hypothesis, so its regime matches its section; the 2026-07-07 fail was a templated missing-sibling refusal, not a wall-side reading.",
-        "evidence": "REGIME. The block sits in mass-theory.ts:447-470, section 'Exceptional divisor, Reeb bundle, and vertex operators' (sec:exceptional-divisor-reeb), under the '=== GEOMETRIC FACE ===' banner at mass-theory.ts:440-445; the chapter docstring (mass-theory.ts:4-21) names four faces and lists this material under 'Geometric' (line 13-16), distinct from the 'Archimedean' (lines 17-18) and 'Physical' (lines 19-20) faces. The chapter profile _folio-chapter-profiles.qou.ts:88-90 admits regimes {na, symbolic, generic-R, real-positive, real-gt-1, fixed-q0} for mass-theory and line 175 lists mass-theory among ARCHIMEDEAN_CHAPTERS, so the chapter tolerates both sides; the section-level regime is geometric/topological over the state bundle S and its Reeb bundle R_p (def:reeb-bundle, def:color-sector-coords are in uses[] and defined in this same section, mass-theory.ts:452,458). Peer verdicts in the same section on this criterion: reeb-bundle pass, vertex-operator pass, vertex-is-exceptional-divisor pass, six-canonical-knot-operators pass, reeb-bundle-complement-equals-volume pass; the only fail in the section (q-reeb-flow-on-color-coords) carries the identical 2026-07-07 'sibling Lean file missing' template. TOKENS IN THE STATEMENT (ramified-disc-fusion.md:1-11): line 1 'small open disc D subset S_p' (point-set topology of the fibre; not a Real.* construct, no numeric value); line 4 'pi_H^{-1}(D) subset R_p' (bundle preimage, topological); line 9 'connected topological disc', 'degree-3 ramification' (branched-cover topology, integer degree); line 10 'C_3 = <(rgb)>', 'symmetric group S_3', 'Galois group of the regular closure' (finite group theory / algebra); line 11 'Lagrange resolvents', 'w_k -> zeta w_k' (cyclotomic algebra over C, zeta^3 = 1), 'parity reflections' (combinatorial). The statement contains NO occurrence of q or q_0, no numeric q-value, no Real.sqrt/rpow/log/exp/cos, no MeV/m_e/CODATA, no order hypothesis (0<q, q>1), no Vol or Bloch-Wigner, no limit over R. Its q-regime is 'na', which is in the chapter's admitted set. TOKENS OUTSIDE THE STATEMENT (proof-sketch paragraph, md:13): 'phi -> 0 or pi', 'sin phi -> 0' (a real latitude-angle limit and the sine function - archimedean/analytic), 'cube-root DFT', 'zeta^{-k}' (algebraic). These belong to the wall-side-proof criterion, not this one; they are the collapse argument for claim 1 and do not enter the Statement. BRANCH. FAIL-1 (generic/substrate-section statement hard-coding archimedean constructs unflagged) does not apply: no archimedean construct appears in the statement at all. FAIL-2 (archimedean-section statement that is a purely algebraic identity belonging upstream) does not apply: claims 1-2 are topological facts about the Reeb bundle R_p over the state bundle, objects defined in this very section, and claim 3 is a comparison of that geometric monodromy with the algebraic S_3 resolvent action - i.e. exactly the geometric-face bridge this section exists to state, not a displaced braids-and-knots identity. WARN (mixing regimes without saying which side) does not apply: the statement is uniformly topological/algebraic, evaluates nothing numerically, and the one analytic device (sin phi -> 0) is confined to the proof sketch. PASS: the statement's regime (topology of a branched cover + finite-group/cyclotomic algebra, q-regime 'na') matches its geometric-face section, and no banner is needed because nothing archimedean is being specialised. PRIOR ENTRY. The 2026-07-07 'fail' (gemini-3.1-pro, notes 'sibling Lean file ... is missing entirely', evidence 'ramified-disc-fusion.md:1') is not a wall-side-statement verdict: the criterion is depends_on ['md'], automated:false, and adjudicates the narrative Statement's regime; the reviewer never engaged the .md text. It was also mis-stamped severity 'minor' against the criterion default 'major', and its field_hash (md 2b0b74c57f6f / ts b697f5dc18b8) predates the current tree (md 6db9a8b7558d / ts 744f580506bc). The underlying claim is itself misleading: the .ts lean.ref (ramified-disc-fusion.ts:15) targets the library declaration qou:QOU.BraidsKnots.RamifiedDiscFusion.resolvent_agreement, which exists at content/quantum-observable-universe/lean/QOU/BraidsKnots/RamifiedDiscFusion.lean (line 51, over C with hzeta : zeta^3 = 1) and resolves by AGENTS.md §0a candidate 2 - the .qa.json source_hashes already record lean 14a46a58d433 - so the absent sibling is the no-shadowing-stub convention, not a defect. The earlier 2026-06-27 pass (qa-proof-wall-fit-audit) reached the same regime reading independently. Prior verdict was NOT a valid wall-side verdict."
+        "evidence": "REGIME. The block sits in mass-theory.ts:447-470, section 'Exceptional divisor, Reeb bundle, and vertex operators' (sec:exceptional-divisor-reeb), under the '=== GEOMETRIC FACE ===' banner at mass-theory.ts:440-445; the chapter docstring (mass-theory.ts:4-21) names four faces and lists this material under 'Geometric' (line 13-16), distinct from the 'Archimedean' (lines 17-18) and 'Physical' (lines 19-20) faces. The chapter profile _folio-chapter-profiles.qou.ts:88-90 admits regimes {na, symbolic, generic-R, real-positive, real-gt-1, fixed-q0} for mass-theory and line 175 lists mass-theory among ARCHIMEDEAN_CHAPTERS, so the chapter tolerates both sides; the section-level regime is geometric/topological over the state bundle S and its Reeb bundle R_p (def:reeb-bundle, def:color-sector-coords are in uses[] and defined in this same section, mass-theory.ts:452,458). Peer verdicts in the same section on this criterion: reeb-bundle pass, vertex-operator pass, vertex-is-exceptional-divisor pass, six-canonical-knot-operators pass, reeb-bundle-complement-equals-volume pass; the only fail in the section (q-reeb-flow-on-color-coords) carries the identical 2026-07-07 'sibling Lean file missing' template. TOKENS IN THE STATEMENT (ramified-disc-fusion.md:1-11): line 1 'small open disc D subset S_p' (point-set topology of the fibre; not a Real.* construct, no numeric value); line 4 'pi_H^{-1}(D) subset R_p' (bundle preimage, topological); line 9 'connected topological disc', 'degree-3 ramification' (branched-cover topology, integer degree); line 10 'C_3 = <(rgb)>', 'symmetric group S_3', 'Galois group of the regular closure' (finite group theory / algebra); line 11 'Lagrange resolvents', 'w_k -> zeta w_k' (cyclotomic algebra over C, zeta^3 = 1), 'parity reflections' (combinatorial). The statement contains NO occurrence of q or q_0, no numeric q-value, no Real.sqrt/rpow/log/exp/cos, no MeV/m_e/CODATA, no order hypothesis (0<q, q>1), no Vol or Bloch-Wigner, no limit over R. Its q-regime is 'na', which is in the chapter's admitted set. TOKENS OUTSIDE THE STATEMENT (proof-sketch paragraph, md:13): 'phi -> 0 or pi', 'sin phi -> 0' (a real latitude-angle limit and the sine function - archimedean/analytic), 'cube-root DFT', 'zeta^{-k}' (algebraic). These belong to the wall-side-proof criterion, not this one; they are the collapse argument for claim 1 and do not enter the Statement. BRANCH. FAIL-1 (generic/substrate-section statement hard-coding archimedean constructs unflagged) does not apply: no archimedean construct appears in the statement at all. FAIL-2 (archimedean-section statement that is a purely algebraic identity belonging upstream) does not apply: claims 1-2 are topological facts about the Reeb bundle R_p over the state bundle, objects defined in this very section, and claim 3 is a comparison of that geometric monodromy with the algebraic S_3 resolvent action - i.e. exactly the geometric-face bridge this section exists to state, not a displaced braids-and-knots identity. WARN (mixing regimes without saying which side) does not apply: the statement is uniformly topological/algebraic, evaluates nothing numerically, and the one analytic device (sin phi -> 0) is confined to the proof sketch. PASS: the statement's regime (topology of a branched cover + finite-group/cyclotomic algebra, q-regime 'na') matches its geometric-face section, and no banner is needed because nothing archimedean is being specialised. PRIOR ENTRY. The 2026-07-07 'fail' (gemini-3.1-pro, notes 'sibling Lean file ... is missing entirely', evidence 'ramified-disc-fusion.md:1') is not a wall-side-statement verdict: the criterion is depends_on ['md'], automated:false, and adjudicates the narrative Statement's regime; the reviewer never engaged the .md text. It was also mis-stamped severity 'minor' against the criterion default 'major', and its field_hash (md 2b0b74c57f6f / ts b697f5dc18b8) predates the current tree (md 6db9a8b7558d / ts 744f580506bc). The underlying claim is itself misleading: the .ts lean.ref (ramified-disc-fusion.ts:15) targets the library declaration qou:QOU.BraidsKnots.RamifiedDiscFusion.resolvent_agreement, which exists at folio/quantum-observable-universe/lean/QOU/BraidsKnots/RamifiedDiscFusion.lean (line 51, over C with hzeta : zeta^3 = 1) and resolves by AGENTS.md §0a candidate 2 - the .qa.json source_hashes already record lean 14a46a58d433 - so the absent sibling is the no-shadowing-stub convention, not a defect. The earlier 2026-06-27 pass (qa-proof-wall-fit-audit) reached the same regime reading independently. Prior verdict was NOT a valid wall-side verdict."
       }
     ],
     "wall-side-proof": [
@@ -1312,9 +1312,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Lean proof is missing because the Lean file content/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is not found.",
+        "notes": "Lean proof is missing because the Lean file folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is not found.",
         "severity": "major",
-        "evidence": "Lean proof is missing because the Lean file content/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is not found."
+        "evidence": "Lean proof is missing because the Lean file folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is not found."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1423,7 +1423,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean:26 [def-disguised-true] def RamifiedDiscFusion_stub : True := trivial",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean:26 [def-disguised-true] def RamifiedDiscFusion_stub : True := trivial",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1510,7 +1510,7 @@
         "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
         "severity": "minor"
       },
       {
@@ -1575,7 +1575,7 @@
         "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
         "severity": "minor"
       },
       {
@@ -1640,7 +1640,7 @@
         "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
         "severity": "minor"
       },
       {
@@ -1673,7 +1673,7 @@
         "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
         "severity": "minor"
       },
       {
@@ -1706,7 +1706,7 @@
         "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
         "severity": "minor"
       },
       {
@@ -1739,7 +1739,7 @@
         "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
         "severity": "minor"
       },
       {
@@ -1772,7 +1772,7 @@
         "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
         "severity": "minor"
       },
       {
@@ -1805,7 +1805,7 @@
         "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
         "severity": "minor"
       },
       {
@@ -1905,9 +1905,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is missing, leading to complete divergence.",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is missing, leading to complete divergence.",
         "severity": "minor",
-        "evidence": "The referenced Lean file content/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is missing, leading to complete divergence."
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",

@@ -421,7 +421,7 @@ theorem nStar_all_probed_forms_refuted :
 -- ────────────────────────────────────────────────────────────────────────────
 -- Integration with BraneTowerNStar.RecoversWithRelativeError (PR #637/#639)
 --
--- The sibling file content/quantum-observable-universe/lean/QOU/BraidKnot/
+-- The sibling file folio/quantum-observable-universe/lean/QOU/BraidKnot/
 -- BraneTowerNStar.lean (added in merged PR #637 commit a267f86d, refactored
 -- in open PR #639) defines a substantive recovery predicate
 --

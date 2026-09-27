@@ -3,9 +3,9 @@
   "label": "prop:coxeter-parabolic-transversal",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/coxeter-parabolic-transversal.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/coxeter-parabolic-transversal.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/Machinery/CoxeterParabolicTransversal.lean"
+    "ts": "folio/quantum-observable-universe/braids-and-knots/coxeter-parabolic-transversal.ts",
+    "md": "folio/quantum-observable-universe/braids-and-knots/coxeter-parabolic-transversal.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/Machinery/CoxeterParabolicTransversal.lean"
   },
   "source_hashes": {
     "md": "53fef2426170",
@@ -225,7 +225,7 @@
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/coxeter-parabolic-transversal.md:14: right-multiplication actions of $s_i$ and $s_j$ satisfy the braid | content/quantum-observable-universe/lean/QOU/Machinery/CoxeterParabolicTransversal.lean:237: Right multiplication by `σᵢ` is the `descentH3σ₀` table. | content/quantum-observable-universe/lean/QOU/Machinery/CoxeterParabolicTransversal.lean:258: Right multiplication by `σⱼ` is the `descentH3σ₁` table (two"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/coxeter-parabolic-transversal.md:14: right-multiplication actions of $s_i$ and $s_j$ satisfy the braid | folio/quantum-observable-universe/lean/QOU/Machinery/CoxeterParabolicTransversal.lean:237: Right multiplication by `σᵢ` is the `descentH3σ₀` table. | folio/quantum-observable-universe/lean/QOU/Machinery/CoxeterParabolicTransversal.lean:258: Right multiplication by `σⱼ` is the `descentH3σ₁` table (two"
       }
     ],
     "voice-title-scholarly": [
@@ -911,7 +911,7 @@
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/coxeter-parabolic-transversal.ts:0: forward ref: uses def:hecke-normal-form (manifest pos 46) which appears after this block (pos 32) in the chapter"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/coxeter-parabolic-transversal.ts:0: forward ref: uses def:hecke-normal-form (manifest pos 46) which appears after this block (pos 32) in the chapter"
       }
     ],
     "detangler-section-band": [

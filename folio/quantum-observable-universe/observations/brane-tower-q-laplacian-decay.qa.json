@@ -3,9 +3,9 @@
   "label": "prop:brane-tower-q-laplacian-decay",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts",
-    "md": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/Observations/brane_tower_q_laplacian_decay.lean"
+    "ts": "folio/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts",
+    "md": "folio/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/Observations/brane_tower_q_laplacian_decay.lean"
   },
   "source_hashes": {
     "md": "df8be7094f5a",
@@ -1328,7 +1328,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/Observations/brane_tower_q_laplacian_decay.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/Observations/brane_tower_q_laplacian_decay.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1506,7 +1506,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1547,7 +1547,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1588,7 +1588,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1609,7 +1609,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The argument flow in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1628,9 +1628,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The referenced Lean file content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.lean is missing, leading to complete divergence.",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.lean is missing, leading to complete divergence.",
         "severity": "minor",
-        "evidence": "The referenced Lean file content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.lean is missing, leading to complete divergence."
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.lean is missing, leading to complete divergence."
       }
     ],
     "da-citation-misuse": [
@@ -1651,7 +1651,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Citations to wenzl1988 are correct and contextually appropriate.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1672,7 +1672,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1693,7 +1693,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1714,7 +1714,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1735,7 +1735,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The derivation steps and formal definitions in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1754,11 +1754,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.lean is missing.",
+        "notes": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.lean is missing.",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.lean is missing, preventing formal verification of the claims in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound'.",
+        "referee_argument": "The referenced Lean sibling file folio/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.lean is missing, preventing formal verification of the claims in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound'.",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.lean is missing."
+        "evidence": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.lean is missing."
       }
     ],
     "milnor-amalgamated-flow": [

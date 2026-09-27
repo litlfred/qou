@@ -37,7 +37,7 @@ universe u v
     LaTeX: `\label{prop:jet-prolongation}`
     Ref: [manuscript] §3 -/
 -- Ref: [manuscript] §3
--- Ref: [fred2005] Integration of Skewed-Poisson Structures on Non-co — see content/schema/references.ts
+-- Ref: [fred2005] Integration of Skewed-Poisson Structures on Non-co — see folio/schema/references.ts
 structure JetProlongation (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     (fh : FrobeniusHopfData C) where

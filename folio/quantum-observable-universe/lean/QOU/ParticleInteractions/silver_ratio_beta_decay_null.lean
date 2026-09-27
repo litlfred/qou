@@ -5,7 +5,7 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 # QOU.ParticleInteractions.SilverRatioBetaDecayNull
 
 **Lake-built mirror** of the sibling-stub
-`content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean`.
+`folio/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean`.
 
 **Silver-ratio β-decay null point**: at $q = 1 \pm \sqrt{2}$ the
 categorical β-decay vanishes, the Hecke generator $\sigma$ has

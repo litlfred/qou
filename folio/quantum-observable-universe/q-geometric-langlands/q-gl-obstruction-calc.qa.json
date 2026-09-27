@@ -3,9 +3,9 @@
   "label": "prop:q-gl-obstruction-calc",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/q-geometric-langlands/q-gl-obstruction-calc.ts",
-    "md": "content/quantum-observable-universe/q-geometric-langlands/q-gl-obstruction-calc.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/q_gl_obstruction_calc.lean"
+    "ts": "folio/quantum-observable-universe/q-geometric-langlands/q-gl-obstruction-calc.ts",
+    "md": "folio/quantum-observable-universe/q-geometric-langlands/q-gl-obstruction-calc.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/q_gl_obstruction_calc.lean"
   },
   "source_hashes": {
     "md": "28b3111cb931",
@@ -624,7 +624,7 @@
         "reviewed_at": "2026-08-09T13:01:43.449Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/q-geometric-langlands/q-gl-obstruction-calc.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "folio/quantum-observable-universe/q-geometric-langlands/q-gl-obstruction-calc.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -646,7 +646,7 @@
         "reviewed_at": "2026-08-09T13:01:43.449Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/q-geometric-langlands/q-gl-obstruction-calc.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "folio/quantum-observable-universe/q-geometric-langlands/q-gl-obstruction-calc.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1124,7 +1124,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/q_gl_obstruction_calc.lean:60 [tuple-projection] theorem q_gl_obstruction_calc [ctx : QGlObstructionCalcContext] :",
+        "evidence": "folio/quantum-observable-universe/lean/QOU/q_gl_obstruction_calc.lean:60 [tuple-projection] theorem q_gl_obstruction_calc [ctx : QGlObstructionCalcContext] :",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1286,7 +1286,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/q_gl_obstruction_calc.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/q_gl_obstruction_calc.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",

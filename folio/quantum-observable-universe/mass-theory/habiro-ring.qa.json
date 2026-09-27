@@ -3,9 +3,9 @@
   "label": "def:habiro-ring",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/habiro-ring.ts",
-    "md": "content/quantum-observable-universe/mass-theory/habiro-ring.md",
-    "lean": "content/quantum-observable-universe/mass-theory/habiro-ring.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/habiro-ring.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/habiro-ring.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/habiro-ring.lean"
   },
   "source_hashes": {
     "md": "5a8d3320e12f",
@@ -975,7 +975,7 @@
         "reviewed_at": "2026-07-07T14:26:56.821708Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/habiro-ring.lean:1 — Lean file exists",
+        "evidence": "folio/quantum-observable-universe/mass-theory/habiro-ring.lean:1 — Lean file exists",
         "severity": "minor"
       }
     ],
@@ -996,7 +996,7 @@
         "reviewed_at": "2026-07-07T14:26:56.821708Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/habiro-ring.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/habiro-ring.ts:1",
         "severity": "minor"
       },
       {
@@ -1063,7 +1063,7 @@
         "reviewed_at": "2026-07-07T14:26:56.821708Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/habiro-ring.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/habiro-ring.ts:1",
         "severity": "minor"
       },
       {
@@ -1130,7 +1130,7 @@
         "reviewed_at": "2026-07-07T14:26:56.821708Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/habiro-ring.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/habiro-ring.ts:1",
         "severity": "minor"
       },
       {
@@ -1164,7 +1164,7 @@
         "reviewed_at": "2026-07-07T14:26:56.821708Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/habiro-ring.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/habiro-ring.ts:1",
         "severity": "minor"
       },
       {
@@ -1232,7 +1232,7 @@
         "reviewed_at": "2026-07-07T14:26:56.821708Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/habiro-ring.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/habiro-ring.ts:1",
         "severity": "minor"
       },
       {
@@ -1266,7 +1266,7 @@
         "reviewed_at": "2026-07-07T14:26:56.821708Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/habiro-ring.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/habiro-ring.ts:1",
         "severity": "minor"
       },
       {
@@ -1300,7 +1300,7 @@
         "reviewed_at": "2026-07-07T14:26:56.821708Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/habiro-ring.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/habiro-ring.ts:1",
         "severity": "minor"
       },
       {
@@ -1334,7 +1334,7 @@
         "reviewed_at": "2026-07-07T14:26:56.821708Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/habiro-ring.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/habiro-ring.ts:1",
         "severity": "minor"
       },
       {
@@ -1368,7 +1368,7 @@
         "reviewed_at": "2026-07-07T14:26:56.821708Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/mass-theory/habiro-ring.lean:1 — content/quantum-observable-universe/mass-theory/habiro-ring.lean:43:62: error: unknown tactic",
+        "evidence": "folio/quantum-observable-universe/mass-theory/habiro-ring.lean:1 — folio/quantum-observable-universe/mass-theory/habiro-ring.lean:43:62: error: unknown tactic",
         "severity": "minor"
       },
       {
@@ -1401,11 +1401,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.821708Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/habiro-ring.lean:43:62: error: unknown tactic",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/habiro-ring.lean:43:62: error: unknown tactic",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/habiro-ring.lean:43:62: error: unknown tactic",
-        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/habiro-ring.lean:43:62: error: unknown tactic"
+        "referee_argument": "The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/habiro-ring.lean:43:62: error: unknown tactic",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/habiro-ring.lean:43:62: error: unknown tactic"
       },
       {
         "result": "pass",

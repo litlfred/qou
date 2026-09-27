@@ -3,9 +3,9 @@
   "label": "thm:hyperelliptic-z5-classification",
   "kind": "theorem",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/hyperelliptic-z5-classification.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/hyperelliptic-z5-classification.md",
-    "lean": "content/quantum-observable-universe/nuclear-interactions/hyperelliptic-z5-classification.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/hyperelliptic-z5-classification.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/hyperelliptic-z5-classification.md",
+    "lean": "folio/quantum-observable-universe/nuclear-interactions/hyperelliptic-z5-classification.lean"
   },
   "source_hashes": {
     "md": "e3b3c439c259",
@@ -1386,9 +1386,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.270497Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The claim in 'Minimal-genus hyperelliptic curves with faithful $\\\\mathbb{Z}_5$-symmetry' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Parity.olean' of module Mathlib.Data.Nat.Parity does not exist.",
+        "notes": "The claim in 'Minimal-genus hyperelliptic curves with faithful $\\\\mathbb{Z}_5$-symmetry' is unverified due to Lean compilation failures: folio/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Parity.olean' of module Mathlib.Data.Nat.Parity does not exist.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1"
       },
       {
         "result": "pass",
@@ -1457,7 +1457,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Minimal-genus hyperelliptic curves with faithful $\\\\mathbb{Z}_5$-symmetry'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.ts:1"
       },
       {
         "result": "pass",
@@ -1527,7 +1527,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Minimal-genus hyperelliptic curves with faithful $\\\\mathbb{Z}_5$-symmetry'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.ts:1"
       },
       {
         "result": "pass",
@@ -1560,9 +1560,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.270497Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1"
       },
       {
         "result": "pass",
@@ -1595,9 +1595,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.270497Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1632,7 +1632,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Citations to bolza1887 are correct and contextually appropriate.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.ts:1"
       },
       {
         "result": "pass",
@@ -1667,7 +1667,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Minimal-genus hyperelliptic curves with faithful $\\\\mathbb{Z}_5$-symmetry' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.ts:1"
       },
       {
         "result": "pass",
@@ -1702,7 +1702,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Minimal-genus hyperelliptic curves with faithful $\\\\mathbb{Z}_5$-symmetry' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.ts:1"
       },
       {
         "result": "pass",
@@ -1737,7 +1737,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Minimal-genus hyperelliptic curves with faithful $\\\\mathbb{Z}_5$-symmetry' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.ts:1"
       },
       {
         "result": "pass",
@@ -1770,9 +1770,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.270497Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1 — content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Parity.olean' of module Mathlib.Data.Nat.Parity does not exist"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1 — folio/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Parity.olean' of module Mathlib.Data.Nat.Parity does not exist"
       },
       {
         "result": "pass",
@@ -1805,11 +1805,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.270497Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean fails compilation: content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Parity.olean' of module Mathlib.Data.Nat.Parity does not exist",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean fails compilation: folio/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Parity.olean' of module Mathlib.Data.Nat.Parity does not exist",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean for 'Minimal-genus hyperelliptic curves with faithful $\\\\mathbb{Z}_5$-symmetry' fails compilation with error: content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Parity.olean' of module Mathlib.Data.Nat.Parity does not exist. This invalidates the claim of formal verification.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean fails compilation: content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Parity.olean' of module Mathlib.Data.Nat.Parity does not exist"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean for 'Minimal-genus hyperelliptic curves with faithful $\\\\mathbb{Z}_5$-symmetry' fails compilation with error: folio/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Parity.olean' of module Mathlib.Data.Nat.Parity does not exist. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean fails compilation: folio/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Parity.olean' of module Mathlib.Data.Nat.Parity does not exist"
       },
       {
         "result": "pass",

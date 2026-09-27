@@ -3,8 +3,8 @@
   "label": "rem:skein-filtration-trichotomy",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/information-theory/skein-filtration-trichotomy.ts",
-    "md": "content/quantum-observable-universe/information-theory/skein-filtration-trichotomy.md"
+    "ts": "folio/quantum-observable-universe/information-theory/skein-filtration-trichotomy.ts",
+    "md": "folio/quantum-observable-universe/information-theory/skein-filtration-trichotomy.md"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -180,7 +180,7 @@
         "reviewed_at": "2026-08-15T21:50:58.305Z",
         "reviewed_sha": "d3092eef5f6c61e663c3ba61ed17ef31ca4a0b6a",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/skein-filtration-trichotomy.md:15: **The legs are coupled, not merely parallel.** Two consequences of the shared filtration are machine-checked in [`SkeinCounterfactual`](../lean/QOU/Information/SkeinCounterfactual.lean) (sorry-free).  | content/quantum-observable-universe/information-theory/skein-filtration-trichotomy.md:19: The hypothesis the coupling needs is that the normal form be **periodic**, and the $q$-Collatz attractor satisfies it: the class $\\mathrm{QCollatz}$ carries $\\mathcal{C}(\\mathcal{C}(\\alpha)) = \\alpha$ | content/quantum-observable-universe/information-theory/skein-filtration-trichotomy.md:25: The three legs share the substrate and diverge only in the filtration question; none is settled here. Each remains an open conjecture in its own right: the $q$-Collatz descent measure, the faithfulnes"
+        "evidence": "folio/quantum-observable-universe/information-theory/skein-filtration-trichotomy.md:15: **The legs are coupled, not merely parallel.** Two consequences of the shared filtration are machine-checked in [`SkeinCounterfactual`](../lean/QOU/Information/SkeinCounterfactual.lean) (sorry-free).  | folio/quantum-observable-universe/information-theory/skein-filtration-trichotomy.md:19: The hypothesis the coupling needs is that the normal form be **periodic**, and the $q$-Collatz attractor satisfies it: the class $\\mathrm{QCollatz}$ carries $\\mathcal{C}(\\mathcal{C}(\\alpha)) = \\alpha$ | folio/quantum-observable-universe/information-theory/skein-filtration-trichotomy.md:25: The three legs share the substrate and diverge only in the filtration question; none is settled here. Each remains an open conjecture in its own right: the $q$-Collatz descent measure, the faithfulnes"
       }
     ],
     "voice-scholarly-default": [
@@ -290,7 +290,7 @@
         "reviewed_at": "2026-08-15T21:50:58.305Z",
         "reviewed_sha": "d3092eef5f6c61e663c3ba61ed17ef31ca4a0b6a",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/information-theory/skein-filtration-trichotomy.md:19: The hypothesis the coupling needs is that the normal form be **periodic**, and the $q$-Collatz attractor satisfies it: the class $\\mathrm{QCollatz}$ carries $\\m  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
+        "evidence": "folio/quantum-observable-universe/information-theory/skein-filtration-trichotomy.md:19: The hypothesis the coupling needs is that the normal form be **periodic**, and the $q$-Collatz attractor satisfies it: the class $\\mathrm{QCollatz}$ carries $\\m  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
       }
     ],
     "wall-side-correct": [
@@ -674,7 +674,7 @@
         "reviewed_at": "2026-08-15T21:38:50.736Z",
         "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/information-theory/skein-filtration-trichotomy.ts:0: uses[] dependency cycle: rem:skein-filtration-trichotomy -> conj:q-collatz -> rem:skein-filtration-trichotomy"
+        "evidence": "folio/quantum-observable-universe/information-theory/skein-filtration-trichotomy.ts:0: uses[] dependency cycle: rem:skein-filtration-trichotomy -> conj:q-collatz -> rem:skein-filtration-trichotomy"
       }
     ],
     "uses-editorial-hygiene": [

@@ -3,9 +3,9 @@
   "label": "prop:toroidal-harmonics-delta-lambda",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/toroidal-harmonics-delta-lambda.ts",
-    "md": "content/quantum-observable-universe/mass-theory/toroidal-harmonics-delta-lambda.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/QBeta/ToroidalHarmonicsBasis.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/toroidal-harmonics-delta-lambda.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/toroidal-harmonics-delta-lambda.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/QBeta/ToroidalHarmonicsBasis.lean"
   },
   "source_hashes": {
     "md": "47337a2ebbf2",
@@ -434,7 +434,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lean/QOU/QBeta/ToroidalHarmonicsBasis.lean:40 — positivity-dependent Real.* on q without explicit hypothesis — Real.log q"
+        "evidence": "folio/quantum-observable-universe/lean/QOU/QBeta/ToroidalHarmonicsBasis.lean:40 — positivity-dependent Real.* on q without explicit hypothesis — Real.log q"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -1760,7 +1760,7 @@
           "definitional_identities": 0
         },
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/QBeta/ToroidalHarmonicsBasis.lean:100: `ToroidalHarmonicODE` takes 3 argument groups and its body is the constant `True`. It is a name reserved for a claim, not the claim: it is equal to every other tautology, so anything stated in terms of it — an iff, a hypothesis, a downstream theorem — is discharged by `Iff.rfl` / `trivial` and constrains nothing. Seal the body (`opaque`) or state the real proposition with a `sorry` so `#print axioms` can see the gap. | content/quantum-observable-universe/lean/QOU/QBeta/ToroidalHarmonicsBasis.lean:111: `WeberODE` takes 3 argument groups and its body is the constant `True`. It is a name reserved for a claim, not the claim: it is equal to every other tautology, so anything stated in terms of it — an iff, a hypothesis, a downstream theorem — is discharged by `Iff.rfl` / `trivial` and constrains nothing. Seal the body (`opaque`) or state the real proposition with a `sorry` so `#print axioms` can see the gap."
+        "evidence": "folio/quantum-observable-universe/lean/QOU/QBeta/ToroidalHarmonicsBasis.lean:100: `ToroidalHarmonicODE` takes 3 argument groups and its body is the constant `True`. It is a name reserved for a claim, not the claim: it is equal to every other tautology, so anything stated in terms of it — an iff, a hypothesis, a downstream theorem — is discharged by `Iff.rfl` / `trivial` and constrains nothing. Seal the body (`opaque`) or state the real proposition with a `sorry` so `#print axioms` can see the gap. | folio/quantum-observable-universe/lean/QOU/QBeta/ToroidalHarmonicsBasis.lean:111: `WeberODE` takes 3 argument groups and its body is the constant `True`. It is a name reserved for a claim, not the claim: it is equal to every other tautology, so anything stated in terms of it — an iff, a hypothesis, a downstream theorem — is discharged by `Iff.rfl` / `trivial` and constrains nothing. Seal the body (`opaque`) or state the real proposition with a `sorry` so `#print axioms` can see the gap."
       }
     ],
     "lean-docstring-honesty": [

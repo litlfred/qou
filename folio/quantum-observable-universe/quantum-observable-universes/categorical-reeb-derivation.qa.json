@@ -3,9 +3,9 @@
   "label": "def:categorical-reeb-derivation",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.ts",
-    "md": "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.md",
-    "lean": "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean"
+    "ts": "folio/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.ts",
+    "md": "folio/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.md",
+    "lean": "folio/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean"
   },
   "source_hashes": {
     "md": "df871805a627",
@@ -1385,7 +1385,7 @@
         },
         "result": "fail",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean:62 [docstring-claims-gap] structure CategoricalReebDerivation (C : Type u) [Category.{v} C] — doc enumerates 2 properties (Normalization, Periodicity); only 0 encoded as Prop field(s)",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean:62 [docstring-claims-gap] structure CategoricalReebDerivation (C : Type u) [Category.{v} C] — doc enumerates 2 properties (Normalization, Periodicity); only 0 encoded as Prop field(s)",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",

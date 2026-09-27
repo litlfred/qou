@@ -3,8 +3,8 @@
   "label": "sec:qu-consequences-intro",
   "kind": "prose",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-universes/qu-consequences-intro.ts",
-    "md": "content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md"
+    "ts": "folio/quantum-observable-universe/quantum-universes/qu-consequences-intro.ts",
+    "md": "folio/quantum-observable-universe/quantum-universes/qu-consequences-intro.md"
   },
   "source_hashes": {
     "md": "86d0012d29bb",
@@ -199,7 +199,7 @@
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md:3: First/Second/Third bullet cadence \u2014 characteristic LLM structural crutch"
+        "evidence": "folio/quantum-observable-universe/quantum-universes/qu-consequences-intro.md:3: First/Second/Third bullet cadence \u2014 characteristic LLM structural crutch"
       },
       {
         "field_hash": {
@@ -1068,7 +1068,7 @@
         "reviewed_at": "2026-08-09T11:34:09.497Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md:5: Krein duality \u2014 named result, no citation in block"
+        "evidence": "folio/quantum-observable-universe/quantum-universes/qu-consequences-intro.md:5: Krein duality \u2014 named result, no citation in block"
       }
     ],
     "voice-agent-speak": [
@@ -1209,7 +1209,7 @@
         "reviewed_at": "2026-08-22T06:08:10.376Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). searched for assert-by-denying constructions ('not X but Y', 'X, not Y', 'rather than'); none present beyond substantive mathematical contrast that is itself the block's claim",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). searched for assert-by-denying constructions ('not X but Y', 'X, not Y', 'rather than'); none present beyond substantive mathematical contrast that is itself the block's claim",
         "notes": "no fix needed"
       }
     ],
@@ -1245,7 +1245,7 @@
         "reviewed_at": "2026-08-22T06:08:10.416Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
         "notes": "no fix needed"
       }
     ],
@@ -1281,7 +1281,7 @@
         "reviewed_at": "2026-08-22T06:08:10.455Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). Two em-dashes, forming one closed parenthetical at L3 ('Its positivity-where $f^{\\dagger} \\circ f$ is positive in $\\mathrm{End}(\\mathbf{1})$-is the categorical analogue of the $C^*$-axiom'). True parenthetical, so it passes; noted only that it is set unspaced while the rest of the chapter spaces its em-dashes.",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). Two em-dashes, forming one closed parenthetical at L3 ('Its positivity-where $f^{\\dagger} \\circ f$ is positive in $\\mathrm{End}(\\mathbf{1})$-is the categorical analogue of the $C^*$-axiom'). True parenthetical, so it passes; noted only that it is set unspaced while the rest of the chapter spaces its em-dashes.",
         "notes": "no fix needed"
       }
     ],
@@ -1317,7 +1317,7 @@
         "reviewed_at": "2026-08-22T06:08:10.494Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). 'Three observations place these results in context.' followed by three sentences - each names a real downstream block (rem:dagger-notation, rem:tannaka-krein-overview, rem:axiom-independence), so the count is determined by the content, not by reflex.",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). 'Three observations place these results in context.' followed by three sentences - each names a real downstream block (rem:dagger-notation, rem:tannaka-krein-overview, rem:axiom-independence), so the count is determined by the content, not by reflex.",
         "notes": "no fix needed"
       }
     ],
@@ -1353,7 +1353,7 @@
         "reviewed_at": "2026-08-22T06:08:10.535Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). final sentence is \"Finally, the QU axioms are independent over arbitrary rings.\" - a substantive statement, not a placed quotable closer",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). final sentence is \"Finally, the QU axioms are independent over arbitrary rings.\" - a substantive statement, not a placed quotable closer",
         "notes": "no fix needed"
       }
     ],
@@ -1389,7 +1389,7 @@
         "reviewed_at": "2026-08-22T06:08:10.575Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
         "notes": "no fix needed"
       }
     ],
@@ -1425,7 +1425,7 @@
         "reviewed_at": "2026-08-22T06:08:10.617Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). final sentence is \"Finally, the QU axioms are independent over arbitrary rings.\" - it advances or points forward rather than restating what the block already established",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). final sentence is \"Finally, the QU axioms are independent over arbitrary rings.\" - it advances or points forward rather than restating what the block already established",
         "notes": "no fix needed"
       }
     ],
@@ -1461,7 +1461,7 @@
         "reviewed_at": "2026-08-22T06:08:10.658Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
         "notes": "no fix needed"
       }
     ],
@@ -1497,7 +1497,7 @@
         "reviewed_at": "2026-08-22T06:08:10.700Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
         "notes": "no fix needed"
       }
     ],
@@ -1533,7 +1533,7 @@
         "reviewed_at": "2026-08-22T06:08:10.742Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). prose reads aloud without stalling; no noun-chain built for the eye only",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). prose reads aloud without stalling; no noun-chain built for the eye only",
         "notes": "no fix needed"
       }
     ],

@@ -3,9 +3,9 @@
   "label": "cor:descartes-braid-structure",
   "kind": "corollary",
   "paths": {
-    "ts": "content/quantum-observable-universe/brings-surface/descartes-braid-structure.ts",
-    "md": "content/quantum-observable-universe/brings-surface/descartes-braid-structure.md",
-    "lean": "content/quantum-observable-universe/brings-surface/descartes-braid-structure.lean"
+    "ts": "folio/quantum-observable-universe/brings-surface/descartes-braid-structure.ts",
+    "md": "folio/quantum-observable-universe/brings-surface/descartes-braid-structure.md",
+    "lean": "folio/quantum-observable-universe/brings-surface/descartes-braid-structure.lean"
   },
   "source_hashes": {
     "md": "cd1fe0ba7873",
@@ -1594,8 +1594,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.104056Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/descartes-braid-structure.lean:59:19: error(lean.unknownIdentifier): Unknown constant `Nat.factorial`",
-        "evidence": "content/quantum-observable-universe/brings-surface/descartes-braid-structure.lean:1",
+        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/brings-surface/descartes-braid-structure.lean:59:19: error(lean.unknownIdentifier): Unknown constant `Nat.factorial`",
+        "evidence": "folio/quantum-observable-universe/brings-surface/descartes-braid-structure.lean:1",
         "severity": "minor"
       },
       {
@@ -1760,8 +1760,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.104056Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/descartes-braid-structure.lean:59:19: error(lean.unknownIdentifier): Unknown constant `Nat.factorial`",
-        "evidence": "content/quantum-observable-universe/brings-surface/descartes-braid-structure.lean:1",
+        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/brings-surface/descartes-braid-structure.lean:59:19: error(lean.unknownIdentifier): Unknown constant `Nat.factorial`",
+        "evidence": "folio/quantum-observable-universe/brings-surface/descartes-braid-structure.lean:1",
         "severity": "major"
       },
       {
@@ -1794,11 +1794,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.104056Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/descartes-braid-structure.lean:59:19: error(lean.unknownIdentifier): Unknown constant `Nat.factorial`",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/descartes-braid-structure.lean:59:19: error(lean.unknownIdentifier): Unknown constant `Nat.factorial`",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/descartes-braid-structure.lean:59:19: error(lean.unknownIdentifier): Unknown constant `Nat.factorial`",
+        "referee_argument": "The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/descartes-braid-structure.lean:59:19: error(lean.unknownIdentifier): Unknown constant `Nat.factorial`",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/descartes-braid-structure.lean:59:19: error(lean.unknownIdentifier): Unknown constant `Nat.factorial`"
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/descartes-braid-structure.lean:59:19: error(lean.unknownIdentifier): Unknown constant `Nat.factorial`"
       },
       {
         "result": "pass",

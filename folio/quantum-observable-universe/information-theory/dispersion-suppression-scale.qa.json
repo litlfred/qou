@@ -3,9 +3,9 @@
   "label": "conj:dispersion-suppression-scale",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/information-theory/dispersion-suppression-scale.ts",
-    "md": "content/quantum-observable-universe/information-theory/dispersion-suppression-scale.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/Information/DispersionSuppressionScale.lean"
+    "ts": "folio/quantum-observable-universe/information-theory/dispersion-suppression-scale.ts",
+    "md": "folio/quantum-observable-universe/information-theory/dispersion-suppression-scale.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/Information/DispersionSuppressionScale.lean"
   },
   "source_hashes": {
     "md": "5e59d64bd557",
@@ -718,7 +718,7 @@
         "reviewed_at": "2026-08-09T13:00:44.975Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/information-theory/dispersion-suppression-scale.ts:0: forward ref: uses def:one-dim-qou-channel (manifest pos 58) which appears after this block (pos 39) in the chapter"
+        "evidence": "folio/quantum-observable-universe/information-theory/dispersion-suppression-scale.ts:0: forward ref: uses def:one-dim-qou-channel (manifest pos 58) which appears after this block (pos 39) in the chapter"
       }
     ],
     "detangler-section-band": [

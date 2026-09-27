@@ -3,9 +3,9 @@
   "label": "thm:ew-triplet-charge-spin-from-involution",
   "kind": "theorem",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.md",
-    "lean": "content/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.md",
+    "lean": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.lean"
   },
   "source_hashes": {
     "md": "4a577972f512",
@@ -40,7 +40,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/particle-interactions/electroweak-triplet-charge-spin-from-involution.lean:504 [discharged-impossible-hyp] theorem writheI3_does_not_select_neutral_slot :",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/electroweak-triplet-charge-spin-from-involution.lean:504 [discharged-impossible-hyp] theorem writheI3_does_not_select_neutral_slot :",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -268,7 +268,7 @@
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.lean:52: so the concrete `swap₂` instance and its projection facts are recomputed here; | content/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.lean:433: So the surviving map assigns them a uniformly positive, strictly monotone"
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.lean:52: so the concrete `swap₂` instance and its projection facts are recomputed here; | folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.lean:433: So the surviving map assigns them a uniformly positive, strictly monotone"
       }
     ],
     "voice-title-scholarly": [
@@ -1063,7 +1063,7 @@
           "worst_target": "emits fwd-ref to quantum-observable-universe/mass-theory: def:spin-involution"
         },
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.ts:0: emits fwd-ref to quantum-observable-universe/mass-theory: def:spin-involution | content/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.ts:0: emits fwd-ref to quantum-observable-universe/mass-theory: thm:hoefsmit-ew-cell-content | content/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.ts:0: emits fwd-ref to quantum-observable-universe/information-theory: prop:vdw-pskew-isolation | content/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.ts:0: emits fwd-ref to quantum-observable-universe/climax-volume-mass: def:coulomb-charge | content/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.ts:0: emits fwd-ref to quantum-observable-universe/predicted-spectra: rem:chirality-trefoil-electron-positron"
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.ts:0: emits fwd-ref to quantum-observable-universe/mass-theory: def:spin-involution | folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.ts:0: emits fwd-ref to quantum-observable-universe/mass-theory: thm:hoefsmit-ew-cell-content | folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.ts:0: emits fwd-ref to quantum-observable-universe/information-theory: prop:vdw-pskew-isolation | folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.ts:0: emits fwd-ref to quantum-observable-universe/climax-volume-mass: def:coulomb-charge | folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.ts:0: emits fwd-ref to quantum-observable-universe/predicted-spectra: rem:chirality-trefoil-electron-positron"
       }
     ],
     "detangler-graph-energy": [

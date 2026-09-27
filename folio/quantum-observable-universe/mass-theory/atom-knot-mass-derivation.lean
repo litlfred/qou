@@ -372,7 +372,7 @@ theorem mass_identity_calcium40 : MassIdentity calcium40_cert := by
     `GbSpectralSequenceCollapseAtE2`, `CategoricalMassInvariantFinite T_w`,
     `MassIdentity cert`) are now ALSO discharged via the
     upstream `QOU.Mathlib.*` infrastructure.  See
-    `content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean`
+    `folio/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean`
     for the cross-reference theorems:
 
     * `gb_spectral_collapse_at_E2_discharged R`

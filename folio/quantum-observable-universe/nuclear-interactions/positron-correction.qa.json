@@ -3,9 +3,9 @@
   "label": "prop:positron-correction",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/positron-correction.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/positron-correction.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/positron_correction.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/positron-correction.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/positron-correction.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/positron_correction.lean"
   },
   "source_hashes": {
     "md": "4f924f665329",
@@ -1266,7 +1266,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/ParticleInteractions/positron_correction.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/ParticleInteractions/positron_correction.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1444,7 +1444,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Positron correction to the Q-value': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
       },
       {
         "result": "pass",
@@ -1511,7 +1511,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Positron correction to the Q-value'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
       },
       {
         "result": "pass",
@@ -1578,7 +1578,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Positron correction to the Q-value'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
       },
       {
         "result": "pass",
@@ -1612,7 +1612,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Positron correction to the Q-value' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
       },
       {
         "result": "pass",
@@ -1644,9 +1644,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/positron-correction.lean is missing, leading to complete divergence.",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/particle-interactions/positron-correction.lean is missing, leading to complete divergence.",
         "severity": "minor",
-        "evidence": "The referenced Lean file content/quantum-observable-universe/particle-interactions/positron-correction.lean is missing, leading to complete divergence."
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/particle-interactions/positron-correction.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",
@@ -1680,7 +1680,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Positron correction to the Q-value', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
       },
       {
         "result": "pass",
@@ -1714,7 +1714,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Positron correction to the Q-value' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
       },
       {
         "result": "pass",
@@ -1748,7 +1748,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Positron correction to the Q-value' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
       },
       {
         "result": "pass",
@@ -1782,7 +1782,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Positron correction to the Q-value' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
       },
       {
         "result": "pass",
@@ -1816,7 +1816,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Positron correction to the Q-value' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/positron-correction.ts:1"
       },
       {
         "result": "pass",
@@ -1848,11 +1848,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/positron-correction.lean is missing.",
+        "notes": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/particle-interactions/positron-correction.lean is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/positron-correction.lean is missing entirely, preventing formal verification of the claims in 'Positron correction to the Q-value'.",
-        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/positron-correction.lean is missing."
+        "referee_argument": "The referenced Lean sibling file folio/quantum-observable-universe/particle-interactions/positron-correction.lean is missing entirely, preventing formal verification of the claims in 'Positron correction to the Q-value'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/particle-interactions/positron-correction.lean is missing."
       },
       {
         "result": "pass",

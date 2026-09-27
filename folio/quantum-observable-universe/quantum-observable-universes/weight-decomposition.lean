@@ -9,8 +9,8 @@ import Mathlib.CategoryTheory.Preadditive.Basic
 The `T`-weight decomposition of differential forms `Ω^k(A)` into
 horizontal (weight-0) and vertical (non-zero weight) components.
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean (monolithic)
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean (monolithic)
 -/
 
 open CategoryTheory MonoidalCategory

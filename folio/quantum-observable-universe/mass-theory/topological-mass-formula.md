@@ -58,7 +58,7 @@ $\sum_{i=1}^N \Phi_q(z_i) = (1/\hbar_q^{2} - 1)\,\mathrm{Vol}(K)$
 (Kashaev–Murakami volume conjecture restricted to the
 $q$-deformation; this is `Hypothesis 2 (Dilogarithm evaluation)`
 on the Lean structure
-[`qou:QOU.ArchimedeanMassFormula`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/ArchimedeanMassFormula.lean),
+[`qou:QOU.ArchimedeanMassFormula`](https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/lean/QOU/ArchimedeanMassFormula.lean),
 field `exceptional_sum_eq`):
 
 $$

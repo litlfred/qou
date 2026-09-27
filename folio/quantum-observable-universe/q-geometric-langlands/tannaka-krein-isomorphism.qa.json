@@ -3,9 +3,9 @@
   "label": "conj:tannaka-krein-isomorphism",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.ts",
-    "md": "content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.md",
-    "lean": "content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean"
+    "ts": "folio/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.ts",
+    "md": "folio/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.md",
+    "lean": "folio/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean"
   },
   "source_hashes": {
     "md": "ea630ee0f768",
@@ -1222,7 +1222,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1401,7 +1401,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "tannaka-krein-isomorphism.lean:1",
-        "notes": "The mathematical claims in 'Tannaka--Krein duality for the substrate' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean:37:68: error: unexpected token '/--'; expected 'lemma'."
+        "notes": "The mathematical claims in 'Tannaka--Krein duality for the substrate' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean:37:68: error: unexpected token '/--'; expected 'lemma'."
       },
       {
         "result": "pass",
@@ -1436,7 +1436,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "major",
         "evidence": "tannaka-krein-isomorphism.lean:1",
-        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean contains 'sorry' placeholders, rendering the formal proof vacuous."
+        "notes": "The Lean sibling folio/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean contains 'sorry' placeholders, rendering the formal proof vacuous."
       },
       {
         "result": "pass",
@@ -1594,7 +1594,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "tannaka-krein-isomorphism.lean:1",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean."
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean."
       },
       {
         "result": "pass",
@@ -1628,8 +1628,8 @@
         "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean fails compilation, causing divergence from the narrative.",
-        "evidence": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean fails compilation, causing divergence from the narrative."
+        "notes": "The Lean sibling folio/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean fails compilation, causing divergence from the narrative.",
+        "evidence": "The Lean sibling folio/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1821,8 +1821,8 @@
         "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "tannaka-krein-isomorphism.lean:1 — content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean:37:68: error: unexpected token '/--'; expected 'lemma'",
-        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean fails compilation, indicating a reproducibility failure."
+        "evidence": "tannaka-krein-isomorphism.lean:1 — folio/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean:37:68: error: unexpected token '/--'; expected 'lemma'",
+        "notes": "The Lean sibling folio/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean fails compilation, indicating a reproducibility failure."
       },
       {
         "result": "pass",
@@ -1856,10 +1856,10 @@
         "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "major",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean contains 'sorry' placeholders.",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean contains 'sorry' placeholders.",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean contains 'sorry' placeholders."
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",
@@ -1954,7 +1954,7 @@
         "reviewed_at": "2026-08-30T04:41:45.040Z",
         "reviewed_sha": "7a9f0ea6fce68ed0c0394d39035554b5f3078acf",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.md:1: Krein duality — named result, no citation in block"
+        "evidence": "folio/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.md:1: Krein duality — named result, no citation in block"
       }
     ],
     "voice-agent-speak": [

@@ -3,8 +3,8 @@
   "label": "rem:observability-independent-motivation",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/fluid-dynamics/observability-independent-motivation.ts",
-    "md": "content/quantum-observable-universe/fluid-dynamics/observability-independent-motivation.md"
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/observability-independent-motivation.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/observability-independent-motivation.md"
   },
   "source_hashes": {
     "md": "f0db776890bf",
@@ -445,7 +445,7 @@
         "reviewed_at": "2026-08-09T13:00:33.718Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/observability-independent-motivation.md:1: The [NS-singularity theorem](#thm:ns-singularity-descartes) strictly deduces classical Navier--Stokes blowup from the QOU observability axiom $\\mathrm{Hom}(\\mathbf{1}, \\mathrm{Ad}(A)) = 0$. This manda | content/quantum-observable-universe/fluid-dynamics/observability-independent-motivation.md:39: The converse fails. NS blowup could trigger without observability via entirely unrelated mechanics. Conversely, NS regularity fits perfectly within a QPU. The argument holds that if the physical unive"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/observability-independent-motivation.md:1: The [NS-singularity theorem](#thm:ns-singularity-descartes) strictly deduces classical Navier--Stokes blowup from the QOU observability axiom $\\mathrm{Hom}(\\mathbf{1}, \\mathrm{Ad}(A)) = 0$. This manda | folio/quantum-observable-universe/fluid-dynamics/observability-independent-motivation.md:39: The converse fails. NS blowup could trigger without observability via entirely unrelated mechanics. Conversely, NS regularity fits perfectly within a QPU. The argument holds that if the physical unive"
       }
     ],
     "voice-scholarly-default": [
@@ -935,7 +935,7 @@
         "reviewed_at": "2026-08-09T13:00:33.718Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/observability-independent-motivation.ts:0: forward ref: uses thm:ns-singularity-descartes (manifest pos 69) which appears after this block (pos 48) in the chapter"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/observability-independent-motivation.ts:0: forward ref: uses thm:ns-singularity-descartes (manifest pos 69) which appears after this block (pos 48) in the chapter"
       }
     ],
     "detangler-section-band": [

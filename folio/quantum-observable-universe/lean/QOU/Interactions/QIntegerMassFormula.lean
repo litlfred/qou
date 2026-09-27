@@ -120,7 +120,7 @@ noncomputable def binding_energy_bw (q m_e : ℝ) (Z N : ℕ)
 --   * THIS file, `lean/QOU/Interactions/QIntegerMassFormula.lean` — compiled by
 --     lake, and with **zero consumers in the compiled tree** (measured
 --     2026-08-29).
---   * `content/quantum-observable-universe/mass-theory/q-integer-mass-formula.lean`
+--   * `folio/quantum-observable-universe/mass-theory/q-integer-mass-formula.lean`
 --     — outside `lean/`, so NOT compiled. It states `fits_AME` directly instead
 --     of forwarding it to `IsAMEValue.fits_bound`, and supplies no instance, so
 --     its `fits_AME_conditional` is genuinely conditional.

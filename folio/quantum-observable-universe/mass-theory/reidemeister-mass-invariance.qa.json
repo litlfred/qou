@@ -3,9 +3,9 @@
   "label": "conj:reidemeister-mass-invariance",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts",
-    "md": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.md",
-    "lean": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean"
   },
   "source_hashes": {
     "md": "eece273237ca",
@@ -1065,7 +1065,7 @@
         "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
         "severity": "minor"
       },
       {
@@ -1132,7 +1132,7 @@
         "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
         "severity": "minor"
       },
       {
@@ -1199,7 +1199,7 @@
         "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
         "severity": "minor"
       },
       {
@@ -1233,7 +1233,7 @@
         "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
         "severity": "minor"
       },
       {
@@ -1300,7 +1300,7 @@
         "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
         "severity": "minor"
       },
       {
@@ -1334,7 +1334,7 @@
         "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
         "severity": "minor"
       },
       {
@@ -1368,7 +1368,7 @@
         "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
         "severity": "minor"
       },
       {
@@ -1402,7 +1402,7 @@
         "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
         "severity": "minor"
       },
       {
@@ -1436,7 +1436,7 @@
         "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean:1 — content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean:14:0: error: unexpected token '*'; expected command",
+        "evidence": "folio/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean:1 — folio/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean:14:0: error: unexpected token '*'; expected command",
         "severity": "minor"
       },
       {

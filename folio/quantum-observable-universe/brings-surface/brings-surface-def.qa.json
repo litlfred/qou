@@ -3,9 +3,9 @@
   "label": "def:brings-surface",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/brings-surface/brings-surface-def.ts",
-    "md": "content/quantum-observable-universe/brings-surface/brings-surface-def.md",
-    "lean": "content/quantum-observable-universe/brings-surface/brings-surface-def.lean"
+    "ts": "folio/quantum-observable-universe/brings-surface/brings-surface-def.ts",
+    "md": "folio/quantum-observable-universe/brings-surface/brings-surface-def.md",
+    "lean": "folio/quantum-observable-universe/brings-surface/brings-surface-def.lean"
   },
   "source_hashes": {
     "md": "3d8f9bd8da91",
@@ -1204,8 +1204,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.060529Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/brings-surface-def.lean:49:58: error: unsolved goals",
-        "evidence": "content/quantum-observable-universe/brings-surface/brings-surface-def.lean:1",
+        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/brings-surface/brings-surface-def.lean:49:58: error: unsolved goals",
+        "evidence": "folio/quantum-observable-universe/brings-surface/brings-surface-def.lean:1",
         "severity": "minor"
       },
       {
@@ -1370,8 +1370,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.060529Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/brings-surface-def.lean:49:58: error: unsolved goals",
-        "evidence": "content/quantum-observable-universe/brings-surface/brings-surface-def.lean:1",
+        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/brings-surface/brings-surface-def.lean:49:58: error: unsolved goals",
+        "evidence": "folio/quantum-observable-universe/brings-surface/brings-surface-def.lean:1",
         "severity": "major"
       },
       {
@@ -1404,11 +1404,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.060529Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/brings-surface-def.lean:49:58: error: unsolved goals",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/brings-surface-def.lean:49:58: error: unsolved goals",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/brings-surface-def.lean:49:58: error: unsolved goals",
+        "referee_argument": "The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/brings-surface-def.lean:49:58: error: unsolved goals",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/brings-surface-def.lean:49:58: error: unsolved goals"
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/brings-surface-def.lean:49:58: error: unsolved goals"
       },
       {
         "result": "pass",

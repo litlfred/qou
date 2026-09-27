@@ -3,9 +3,9 @@
   "label": "conj:borromean-bloch-group-element",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/borromean-bloch-group-element.ts",
-    "md": "content/quantum-observable-universe/mass-theory/borromean-bloch-group-element.md",
-    "lean": "content/quantum-observable-universe/mass-theory/borromean-bloch-group-element.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/borromean-bloch-group-element.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/borromean-bloch-group-element.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/borromean-bloch-group-element.lean"
   },
   "source_hashes": {
     "md": "2a744a66f65e",
@@ -918,7 +918,7 @@
         "reviewed_at": "2026-08-10T04:58:50.052Z",
         "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/borromean-bloch-group-element.md:1 — detected regime [root-of-unity] is disjoint from chapter 'mass-theory' expected [fixed-q0, generic-R, na, real-gt-1, real-positive, symbolic]"
+        "evidence": "folio/quantum-observable-universe/mass-theory/borromean-bloch-group-element.md:1 — detected regime [root-of-unity] is disjoint from chapter 'mass-theory' expected [fixed-q0, generic-R, na, real-gt-1, real-positive, symbolic]"
       }
     ],
     "proof-no-bare-sorries": [

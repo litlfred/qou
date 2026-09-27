@@ -3,8 +3,8 @@
   "label": "rem:vol-as-motivic-period",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/vol-as-motivic-period.ts",
-    "md": "content/quantum-observable-universe/mass-theory/vol-as-motivic-period.md"
+    "ts": "folio/quantum-observable-universe/mass-theory/vol-as-motivic-period.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/vol-as-motivic-period.md"
   },
   "source_hashes": {
     "md": "9ae643c3d098",
@@ -586,7 +586,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/vol-as-motivic-period.ts:0: forward ref: uses def:quantum-bloch-group (manifest pos 389) which appears after this block (pos 326) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/vol-as-motivic-period.ts:0: forward ref: uses def:quantum-bloch-group (manifest pos 389) which appears after this block (pos 326) in the chapter"
       }
     ],
     "detangler-section-band": [

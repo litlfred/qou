@@ -3,9 +3,9 @@
   "label": "def:algebraic-primality",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/algebraic-primality.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/algebraic-primality.md",
-    "lean": "content/quantum-observable-universe/nuclear-interactions/algebraic-primality.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/algebraic-primality.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/algebraic-primality.md",
+    "lean": "folio/quantum-observable-universe/nuclear-interactions/algebraic-primality.lean"
   },
   "source_hashes": {
     "md": "64d2b92b8a7c",
@@ -403,7 +403,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Algebraic primality of a strand count': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
       },
       {
         "result": "pass",
@@ -472,7 +472,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Algebraic primality of a strand count'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
       },
       {
         "result": "pass",
@@ -541,7 +541,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Algebraic primality of a strand count'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
       },
       {
         "result": "pass",
@@ -576,7 +576,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Algebraic primality of a strand count' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
       },
       {
         "result": "pass",
@@ -609,9 +609,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.170142Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/algebraic-primality.lean is missing, leading to complete divergence.",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/particle-interactions/algebraic-primality.lean is missing, leading to complete divergence.",
         "severity": "minor",
-        "evidence": "The referenced Lean file content/quantum-observable-universe/particle-interactions/algebraic-primality.lean is missing, leading to complete divergence."
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/particle-interactions/algebraic-primality.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",
@@ -646,7 +646,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Algebraic primality of a strand count', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
       },
       {
         "result": "pass",
@@ -681,7 +681,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Algebraic primality of a strand count' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
       },
       {
         "result": "pass",
@@ -716,7 +716,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Algebraic primality of a strand count' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
       },
       {
         "result": "pass",
@@ -751,7 +751,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Algebraic primality of a strand count' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
       },
       {
         "result": "pass",
@@ -786,7 +786,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Algebraic primality of a strand count' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
       },
       {
         "result": "pass",
@@ -819,11 +819,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.170142Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/algebraic-primality.lean is missing.",
+        "notes": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/particle-interactions/algebraic-primality.lean is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/algebraic-primality.lean is missing entirely, preventing formal verification of the claims in 'Algebraic primality of a strand count'.",
-        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/algebraic-primality.lean is missing."
+        "referee_argument": "The referenced Lean sibling file folio/quantum-observable-universe/particle-interactions/algebraic-primality.lean is missing entirely, preventing formal verification of the claims in 'Algebraic primality of a strand count'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/particle-interactions/algebraic-primality.lean is missing."
       },
       {
         "result": "pass",

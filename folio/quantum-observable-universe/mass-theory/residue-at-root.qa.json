@@ -3,9 +3,9 @@
   "label": "prop:residue-at-root",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/residue-at-root.ts",
-    "md": "content/quantum-observable-universe/mass-theory/residue-at-root.md",
-    "lean": "content/quantum-observable-universe/mass-theory/residue-at-root.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/residue-at-root.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/residue-at-root.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/residue-at-root.lean"
   },
   "source_hashes": {
     "md": "6bac5efe58e3",
@@ -1537,7 +1537,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/residue-at-root.ts:0: uses[] dependency cycle: prop:residue-at-root -> conj:gs-residue-at-root-existence -> conj:gs-graded-markov-trace-existence -> prop:gb-residue-spectral-sum -> prop:residue-at-root"
+        "evidence": "folio/quantum-observable-universe/mass-theory/residue-at-root.ts:0: uses[] dependency cycle: prop:residue-at-root -> conj:gs-residue-at-root-existence -> conj:gs-graded-markov-trace-existence -> prop:gb-residue-spectral-sum -> prop:residue-at-root"
       }
     ],
     "bib-cited-ref-has-url": [

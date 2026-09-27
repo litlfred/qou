@@ -3,9 +3,9 @@
   "label": "def:algebraic-quantum-volume",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/algebraic-quantum-volume.ts",
-    "md": "content/quantum-observable-universe/mass-theory/algebraic-quantum-volume.md",
-    "lean": "content/quantum-observable-universe/mass-theory/algebraic-quantum-volume.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/algebraic-quantum-volume.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/algebraic-quantum-volume.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/algebraic-quantum-volume.lean"
   },
   "source_hashes": {
     "md": "2a40a0476f63",
@@ -997,7 +997,7 @@
         "reviewed_at": "2026-07-07T14:26:56.967301Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-quantum-volume.lean:1 — Lean file exists",
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-quantum-volume.lean:1 — Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1018,7 +1018,7 @@
         "reviewed_at": "2026-07-07T14:26:56.967301Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-quantum-volume.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-quantum-volume.ts:1",
         "severity": "minor"
       },
       {
@@ -1085,7 +1085,7 @@
         "reviewed_at": "2026-07-07T14:26:56.967301Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-quantum-volume.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-quantum-volume.ts:1",
         "severity": "minor"
       },
       {
@@ -1152,7 +1152,7 @@
         "reviewed_at": "2026-07-07T14:26:56.967301Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-quantum-volume.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-quantum-volume.ts:1",
         "severity": "minor"
       },
       {
@@ -1186,7 +1186,7 @@
         "reviewed_at": "2026-07-07T14:26:56.967301Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-quantum-volume.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-quantum-volume.ts:1",
         "severity": "minor"
       },
       {
@@ -1254,7 +1254,7 @@
         "reviewed_at": "2026-07-07T14:26:56.967301Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-quantum-volume.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-quantum-volume.ts:1",
         "severity": "minor"
       },
       {
@@ -1288,7 +1288,7 @@
         "reviewed_at": "2026-07-07T14:26:56.967301Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-quantum-volume.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-quantum-volume.ts:1",
         "severity": "minor"
       },
       {
@@ -1322,7 +1322,7 @@
         "reviewed_at": "2026-07-07T14:26:56.967301Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-quantum-volume.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-quantum-volume.ts:1",
         "severity": "minor"
       },
       {
@@ -1356,7 +1356,7 @@
         "reviewed_at": "2026-07-07T14:26:56.967301Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-quantum-volume.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-quantum-volume.ts:1",
         "severity": "minor"
       },
       {
@@ -1390,7 +1390,7 @@
         "reviewed_at": "2026-07-07T14:26:56.967301Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-quantum-volume.lean:1 — content/quantum-observable-universe/mass-theory/algebraic-quantum-volume.lean:25:57: error: unexpected token 'end'; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'builtin_simproc', 'builtin_simproc_decl', 'class', 'declare_simp_like_tactic', 'declare_syntax_cat', 'def', 'dsimproc', 'dsimproc_decl', 'elab', 'elab_rules', 'example', 'grind_propagator', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'simproc', 'simproc_decl', 'structure', 'syntax', 'tactic_extension', 'theorem' or 'unif_hint'",
+        "evidence": "folio/quantum-observable-universe/mass-theory/algebraic-quantum-volume.lean:1 — folio/quantum-observable-universe/mass-theory/algebraic-quantum-volume.lean:25:57: error: unexpected token 'end'; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'builtin_simproc', 'builtin_simproc_decl', 'class', 'declare_simp_like_tactic', 'declare_syntax_cat', 'def', 'dsimproc', 'dsimproc_decl', 'elab', 'elab_rules', 'example', 'grind_propagator', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'simproc', 'simproc_decl', 'structure', 'syntax', 'tactic_extension', 'theorem' or 'unif_hint'",
         "severity": "minor"
       },
       {
@@ -1423,11 +1423,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.967301Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/algebraic-quantum-volume.lean:25:57: error: unexpected token 'end'; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'builtin_simproc', 'builtin_simproc_decl', 'class', 'declare_simp_like_tactic', 'declare_syntax_cat', 'def', 'dsimproc', 'dsimproc_decl', 'elab', 'elab_rules', 'example', 'grind_propagator', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'simproc', 'simproc_decl', 'structure', 'syntax', 'tactic_extension', 'theorem' or 'unif_hint'",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/algebraic-quantum-volume.lean:25:57: error: unexpected token 'end'; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'builtin_simproc', 'builtin_simproc_decl', 'class', 'declare_simp_like_tactic', 'declare_syntax_cat', 'def', 'dsimproc', 'dsimproc_decl', 'elab', 'elab_rules', 'example', 'grind_propagator', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'simproc', 'simproc_decl', 'structure', 'syntax', 'tactic_extension', 'theorem' or 'unif_hint'",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/algebraic-quantum-volume.lean:25:57: error: unexpected token 'end'; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'builtin_simproc', 'builtin_simproc_decl', 'class', 'declare_simp_like_tactic', 'declare_syntax_cat', 'def', 'dsimproc', 'dsimproc_decl', 'elab', 'elab_rules', 'example', 'grind_propagator', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'simproc', 'simproc_decl', 'structure', 'syntax', 'tactic_extension', 'theorem' or 'unif_hint'",
-        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/algebraic-quantum-volume.lean:25:57: error: unexpected token 'end'; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'builtin_simproc', 'builtin_simproc_decl', 'class', 'declare_simp_like_tactic', 'declare_syntax_cat', 'def', 'dsimproc', 'dsimproc_decl', 'elab', 'elab_rules', 'example', 'grind_propagator', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'simproc', 'simproc_decl', 'structure', 'syntax', 'tactic_extension', 'theorem' or 'unif_hint'"
+        "referee_argument": "The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/algebraic-quantum-volume.lean:25:57: error: unexpected token 'end'; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'builtin_simproc', 'builtin_simproc_decl', 'class', 'declare_simp_like_tactic', 'declare_syntax_cat', 'def', 'dsimproc', 'dsimproc_decl', 'elab', 'elab_rules', 'example', 'grind_propagator', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'simproc', 'simproc_decl', 'structure', 'syntax', 'tactic_extension', 'theorem' or 'unif_hint'",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/algebraic-quantum-volume.lean:25:57: error: unexpected token 'end'; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'builtin_simproc', 'builtin_simproc_decl', 'class', 'declare_simp_like_tactic', 'declare_syntax_cat', 'def', 'dsimproc', 'dsimproc_decl', 'elab', 'elab_rules', 'example', 'grind_propagator', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'simproc', 'simproc_decl', 'structure', 'syntax', 'tactic_extension', 'theorem' or 'unif_hint'"
       },
       {
         "result": "pass",

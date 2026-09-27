@@ -9,7 +9,7 @@ This file formalises the **structural / categorical** core of the
 "lattice QCD as the `q → 1` shadow of the `q`-deformed surface state-sum"
 correspondence recorded narratively in the content block
 `rem:lattice-qcd-from-qou`
-(`content/quantum-observable-universe/brings-surface/lattice-qcd-from-qou.md`,
+(`folio/quantum-observable-universe/brings-surface/lattice-qcd-from-qou.md`,
 PR #4622).
 
 ## Scope discipline (STRICT — read first)

@@ -3,9 +3,9 @@
   "label": "prop:exterior-square-borromean",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/exterior-square-borromean.ts",
-    "md": "content/quantum-observable-universe/mass-theory/exterior-square-borromean.md",
-    "lean": "content/quantum-observable-universe/mass-theory/exterior-square-borromean.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/exterior-square-borromean.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/exterior-square-borromean.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/exterior-square-borromean.lean"
   },
   "source_hashes": {
     "md": "11a7c3971d79",
@@ -1378,7 +1378,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/exterior-square-borromean.ts:0: forward ref: uses rem:borromean-baryon-interpretation (manifest pos 713) which appears after this block (pos 560) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/exterior-square-borromean.ts:0: forward ref: uses rem:borromean-baryon-interpretation (manifest pos 713) which appears after this block (pos 560) in the chapter"
       }
     ],
     "detangler-section-band": [

@@ -4,7 +4,7 @@ import Mathlib.Tactic
 # QOU.Conjectures.WeakSpectralCompleteness — EW cell-content trace
 
 Conjectural axiomatisation of `conj:weak-spectral-completeness`
-(`content/quantum-observable-universe/mass-theory/weak-spectral-completeness.md`).
+(`folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.md`).
 
 Over the categorical ring `R` with `q` generic, the EW/Higgs
 force-carrier sector `{T(2,4), T(2,6), T(2,8)} ↔ {σ₁⁴, σ₃⁶, σ₅⁸}` admits

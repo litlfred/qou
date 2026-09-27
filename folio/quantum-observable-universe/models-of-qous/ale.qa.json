@@ -3,8 +3,8 @@
   "label": "ex:ale",
   "kind": "example",
   "paths": {
-    "ts": "content/quantum-observable-universe/models-of-qous/ale.ts",
-    "md": "content/quantum-observable-universe/models-of-qous/ale.md"
+    "ts": "folio/quantum-observable-universe/models-of-qous/ale.ts",
+    "md": "folio/quantum-observable-universe/models-of-qous/ale.md"
   },
   "source_hashes": {
     "md": "a46cc20149c8",
@@ -544,7 +544,7 @@
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/models-of-qous/ale.ts:0: forward ref: uses ex:reeb-decomposition (manifest pos 29) which appears after this block (pos 25) in the chapter"
+        "evidence": "folio/quantum-observable-universe/models-of-qous/ale.ts:0: forward ref: uses ex:reeb-decomposition (manifest pos 29) which appears after this block (pos 25) in the chapter"
       }
     ],
     "detangler-section-band": [

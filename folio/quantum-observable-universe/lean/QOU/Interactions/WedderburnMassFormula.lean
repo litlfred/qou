@@ -76,7 +76,7 @@ noncomputable def m_e : ℝ := 0.51099895069
     (paired with the symbolic `QOU.Archimedean.catalan_G` /
     `vol_B3 := 8 · catalan_G` refactor — see
     `QOU.Archimedean.HyperbolicVolumeTranscendence` §0). -/
--- Ref: [oeis-A006752] Decimal expansion of Catalan's constant — see content/schema/references.ts
+-- Ref: [oeis-A006752] Decimal expansion of Catalan's constant — see folio/schema/references.ts
 noncomputable def catalan_G : ℝ := 0.91596559417721901505460351493238411077414937428167
 
 /-- Binding scale `α = m_e · 8 G`. -/

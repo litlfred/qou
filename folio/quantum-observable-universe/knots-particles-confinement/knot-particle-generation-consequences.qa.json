@@ -3,8 +3,8 @@
   "label": "rem:knot-particle-generation-consequences",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/knot-particle-generation-consequences.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/knot-particle-generation-consequences.md"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/knot-particle-generation-consequences.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/knot-particle-generation-consequences.md"
   },
   "source_hashes": {
     "md": "f412fc441cfb",
@@ -693,7 +693,7 @@
         "reviewed_at": "2026-08-31T04:25:46.547Z",
         "reviewed_sha": "fb009ef4325404e401cfb4927f253793cda34852",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/knots-particles-confinement/knot-particle-generation-consequences.ts:0: forward ref: uses prop:fermion-boson-knot-link (manifest pos 65) which appears after this block (pos 39) in the chapter | content/quantum-observable-universe/knots-particles-confinement/knot-particle-generation-consequences.ts:0: forward ref: uses rem:knot-particle-dictionary (manifest pos 45) which appears after this block (pos 39) in the chapter"
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/knot-particle-generation-consequences.ts:0: forward ref: uses prop:fermion-boson-knot-link (manifest pos 65) which appears after this block (pos 39) in the chapter | folio/quantum-observable-universe/knots-particles-confinement/knot-particle-generation-consequences.ts:0: forward ref: uses rem:knot-particle-dictionary (manifest pos 45) which appears after this block (pos 39) in the chapter"
       }
     ],
     "detangler-section-band": [

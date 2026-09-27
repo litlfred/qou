@@ -3,9 +3,9 @@
   "label": "def:snake-identity",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-universes/snake-identity.ts",
-    "md": "content/quantum-observable-universe/quantum-universes/snake-identity.md",
-    "lean": "content/quantum-observable-universe/quantum-universes/snake-identity.lean"
+    "ts": "folio/quantum-observable-universe/quantum-universes/snake-identity.ts",
+    "md": "folio/quantum-observable-universe/quantum-universes/snake-identity.md",
+    "lean": "folio/quantum-observable-universe/quantum-universes/snake-identity.lean"
   },
   "source_hashes": {
     "md": "6ed9b29f3c9a",
@@ -1579,7 +1579,7 @@
         "reviewed_at": "2026-08-22T06:08:16.691Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/snake-identity.md (35 lines, kind=definition, title=\"Snake identity\"). searched for assert-by-denying constructions ('not X but Y', 'X, not Y', 'rather than'); none present beyond substantive mathematical contrast that is itself the block's claim",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/snake-identity.md (35 lines, kind=definition, title=\"Snake identity\"). searched for assert-by-denying constructions ('not X but Y', 'X, not Y', 'rather than'); none present beyond substantive mathematical contrast that is itself the block's claim",
         "notes": "no fix needed"
       }
     ],
@@ -1615,7 +1615,7 @@
         "reviewed_at": "2026-08-22T06:08:16.730Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/snake-identity.md (35 lines, kind=definition, title=\"Snake identity\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/snake-identity.md (35 lines, kind=definition, title=\"Snake identity\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
         "notes": "no fix needed"
       }
     ],
@@ -1651,7 +1651,7 @@
         "reviewed_at": "2026-08-22T06:08:16.769Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/snake-identity.md (35 lines, kind=definition, title=\"Snake identity\"). 0 spaced em-dash construction(s); LaTeX '--' occurrences are name-internal (Maurer--Cartan, Frobenius--Hopf, Tannaka--Krein), not sentence punctuation",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/snake-identity.md (35 lines, kind=definition, title=\"Snake identity\"). 0 spaced em-dash construction(s); LaTeX '--' occurrences are name-internal (Maurer--Cartan, Frobenius--Hopf, Tannaka--Krein), not sentence punctuation",
         "notes": "no fix needed"
       }
     ],
@@ -1687,7 +1687,7 @@
         "reviewed_at": "2026-08-22T06:08:16.807Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/snake-identity.md (35 lines, kind=definition, title=\"Snake identity\"). no reflex three-item list; enumerations present are content-determined",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/snake-identity.md (35 lines, kind=definition, title=\"Snake identity\"). no reflex three-item list; enumerations present are content-determined",
         "notes": "no fix needed"
       }
     ],
@@ -1723,7 +1723,7 @@
         "reviewed_at": "2026-08-22T06:08:16.846Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/snake-identity.md (35 lines, kind=definition, title=\"Snake identity\"). Final line 'In graphical calculus, the composites trace an S-shaped curve that straightens to a vertical line.' explains the name 'snake' and is standard graphical-calculus exposition.",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/snake-identity.md (35 lines, kind=definition, title=\"Snake identity\"). Final line 'In graphical calculus, the composites trace an S-shaped curve that straightens to a vertical line.' explains the name 'snake' and is standard graphical-calculus exposition.",
         "notes": "no fix needed"
       }
     ],
@@ -1759,7 +1759,7 @@
         "reviewed_at": "2026-08-22T06:08:16.886Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/snake-identity.md (35 lines, kind=definition, title=\"Snake identity\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/snake-identity.md (35 lines, kind=definition, title=\"Snake identity\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
         "notes": "no fix needed"
       }
     ],
@@ -1795,7 +1795,7 @@
         "reviewed_at": "2026-08-22T06:08:16.925Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/snake-identity.md (35 lines, kind=definition, title=\"Snake identity\"). final sentence is \"In graphical calculus, the composites trace an S-shaped curve that straightens to a vertical line.\" - it advances or points forward rather than restating what the block already established",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/snake-identity.md (35 lines, kind=definition, title=\"Snake identity\"). final sentence is \"In graphical calculus, the composites trace an S-shaped curve that straightens to a vertical line.\" - it advances or points forward rather than restating what the block already established",
         "notes": "no fix needed"
       }
     ],
@@ -1831,7 +1831,7 @@
         "reviewed_at": "2026-08-22T06:08:16.964Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/snake-identity.md (35 lines, kind=definition, title=\"Snake identity\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/snake-identity.md (35 lines, kind=definition, title=\"Snake identity\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
         "notes": "no fix needed"
       }
     ],
@@ -1867,7 +1867,7 @@
         "reviewed_at": "2026-08-22T06:08:17.003Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/snake-identity.md (35 lines, kind=definition, title=\"Snake identity\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/snake-identity.md (35 lines, kind=definition, title=\"Snake identity\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
         "notes": "no fix needed"
       }
     ],
@@ -1903,7 +1903,7 @@
         "reviewed_at": "2026-08-22T06:08:17.041Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/snake-identity.md (35 lines, kind=definition, title=\"Snake identity\"). prose reads aloud without stalling; no noun-chain built for the eye only",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/snake-identity.md (35 lines, kind=definition, title=\"Snake identity\"). prose reads aloud without stalling; no noun-chain built for the eye only",
         "notes": "no fix needed"
       }
     ],

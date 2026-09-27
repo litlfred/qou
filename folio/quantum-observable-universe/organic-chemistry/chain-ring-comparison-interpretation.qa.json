@@ -3,8 +3,8 @@
   "label": "rem:chain-ring-comparison-interpretation",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/organic-chemistry/chain-ring-comparison-interpretation.ts",
-    "md": "content/quantum-observable-universe/organic-chemistry/chain-ring-comparison-interpretation.md"
+    "ts": "folio/quantum-observable-universe/organic-chemistry/chain-ring-comparison-interpretation.ts",
+    "md": "folio/quantum-observable-universe/organic-chemistry/chain-ring-comparison-interpretation.md"
   },
   "source_hashes": {
     "md": "bd6421271243",
@@ -638,7 +638,7 @@
         "reviewed_at": "2026-08-09T13:01:35.840Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/chain-ring-comparison-interpretation.ts:0: forward ref: uses tbl:chain-ring-comparison-table1-data (manifest pos 23) which appears after this block (pos 19) in the chapter | content/quantum-observable-universe/organic-chemistry/chain-ring-comparison-interpretation.ts:0: forward ref: uses tbl:chain-ring-comparison-table2-data (manifest pos 22) which appears after this block (pos 19) in the chapter"
+        "evidence": "folio/quantum-observable-universe/organic-chemistry/chain-ring-comparison-interpretation.ts:0: forward ref: uses tbl:chain-ring-comparison-table1-data (manifest pos 23) which appears after this block (pos 19) in the chapter | folio/quantum-observable-universe/organic-chemistry/chain-ring-comparison-interpretation.ts:0: forward ref: uses tbl:chain-ring-comparison-table2-data (manifest pos 22) which appears after this block (pos 19) in the chapter"
       }
     ],
     "detangler-section-band": [

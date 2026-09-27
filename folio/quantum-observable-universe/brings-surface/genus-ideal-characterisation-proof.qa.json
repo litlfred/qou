@@ -3,8 +3,8 @@
   "label": "prf:genus-ideal-characterisation",
   "kind": "proof",
   "paths": {
-    "ts": "content/quantum-observable-universe/brings-surface/genus-ideal-characterisation-proof.ts",
-    "md": "content/quantum-observable-universe/brings-surface/genus-ideal-characterisation-proof.md"
+    "ts": "folio/quantum-observable-universe/brings-surface/genus-ideal-characterisation-proof.ts",
+    "md": "folio/quantum-observable-universe/brings-surface/genus-ideal-characterisation-proof.md"
   },
   "source_hashes": {
     "md": "4b940d30c927",
@@ -838,7 +838,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Checked mathematical consistency of the claim '**Proof.**' and found no counterexamples under the stated conditions.",
-        "evidence": "content/quantum-observable-universe/brings-surface/genus-ideal-characterisation-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/genus-ideal-characterisation-proof.ts:1",
         "severity": "minor"
       }
     ],
@@ -873,7 +873,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Traced dependencies ['lem:genus-ideal-characterisation'] for 'prf:genus-ideal-characterisation' and confirmed no circular definitions or justifications.",
-        "evidence": "content/quantum-observable-universe/brings-surface/genus-ideal-characterisation-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/genus-ideal-characterisation-proof.ts:1",
         "severity": "minor"
       }
     ],
@@ -908,7 +908,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
-        "evidence": "content/quantum-observable-universe/brings-surface/genus-ideal-characterisation-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/genus-ideal-characterisation-proof.ts:1",
         "severity": "minor"
       }
     ],
@@ -926,7 +926,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical transitions in the derivation of '**Proof.**' are sound; no non-sequiturs detected.",
-        "evidence": "content/quantum-observable-universe/brings-surface/genus-ideal-characterisation-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/genus-ideal-characterisation-proof.ts:1",
         "severity": "minor"
       }
     ],
@@ -961,7 +961,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references and uses ['lem:genus-ideal-characterisation'] cited in 'prf:genus-ideal-characterisation' are used in accordance with their established mathematical definitions.",
-        "evidence": "content/quantum-observable-universe/brings-surface/genus-ideal-characterisation-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/genus-ideal-characterisation-proof.ts:1",
         "severity": "minor"
       }
     ],
@@ -979,7 +979,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All terms and algebraic structures in 'prf:genus-ideal-characterisation' are uniquely defined or standard.",
-        "evidence": "content/quantum-observable-universe/brings-surface/genus-ideal-characterisation-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/genus-ideal-characterisation-proof.ts:1",
         "severity": "minor"
       }
     ],
@@ -997,7 +997,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic statements in 'prf:genus-ideal-characterisation' do not rely on fragile empirical fits or numerical thresholds.",
-        "evidence": "content/quantum-observable-universe/brings-surface/genus-ideal-characterisation-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/genus-ideal-characterisation-proof.ts:1",
         "severity": "minor"
       }
     ],
@@ -1015,7 +1015,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Physical dimensions and units in 'prf:genus-ideal-characterisation' are consistent with quantum observable universe models.",
-        "evidence": "content/quantum-observable-universe/brings-surface/genus-ideal-characterisation-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/genus-ideal-characterisation-proof.ts:1",
         "severity": "minor"
       }
     ],

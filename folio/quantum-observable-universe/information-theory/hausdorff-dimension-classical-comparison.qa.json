@@ -3,8 +3,8 @@
   "label": "rem:hausdorff-dimension-classical-comparison",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/information-theory/hausdorff-dimension-classical-comparison.ts",
-    "md": "content/quantum-observable-universe/information-theory/hausdorff-dimension-classical-comparison.md"
+    "ts": "folio/quantum-observable-universe/information-theory/hausdorff-dimension-classical-comparison.ts",
+    "md": "folio/quantum-observable-universe/information-theory/hausdorff-dimension-classical-comparison.md"
   },
   "source_hashes": {
     "md": "20895d925121",
@@ -1090,7 +1090,7 @@
         "reviewed_at": "2026-08-09T13:00:44.975Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/information-theory/hausdorff-dimension-classical-comparison.ts:0: uses[] dependency cycle: rem:hausdorff-dimension-classical-comparison -> rem:hausdorff-dimension-recurrence -> rem:hausdorff-dimension-classical-comparison"
+        "evidence": "folio/quantum-observable-universe/information-theory/hausdorff-dimension-classical-comparison.ts:0: uses[] dependency cycle: rem:hausdorff-dimension-classical-comparison -> rem:hausdorff-dimension-recurrence -> rem:hausdorff-dimension-classical-comparison"
       }
     ],
     "bib-cited-ref-has-url": [

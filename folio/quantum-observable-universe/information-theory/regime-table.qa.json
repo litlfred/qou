@@ -3,8 +3,8 @@
   "label": "rem:regime-table",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/information-theory/regime-table.ts",
-    "md": "content/quantum-observable-universe/information-theory/regime-table.md"
+    "ts": "folio/quantum-observable-universe/information-theory/regime-table.ts",
+    "md": "folio/quantum-observable-universe/information-theory/regime-table.md"
   },
   "source_hashes": {
     "md": "0556b823ecbb",
@@ -130,7 +130,7 @@
         "reviewed_at": "2026-08-09T13:00:44.975Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/regime-table.md:17: A downstream citation of a regime value should reference this table (`[regime-table](#rem:regime-table)`) rather than reproducing data. Any newly derived quantity should appear as an additional column"
+        "evidence": "folio/quantum-observable-universe/information-theory/regime-table.md:17: A downstream citation of a regime value should reference this table (`[regime-table](#rem:regime-table)`) rather than reproducing data. Any newly derived quantity should appear as an additional column"
       }
     ],
     "voice-scholarly-default": [
@@ -600,7 +600,7 @@
         "reviewed_at": "2026-08-09T13:00:44.975Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/information-theory/regime-table.ts:0: forward ref: uses def:information-speed-of-light (manifest pos 35) which appears after this block (pos 1) in the chapter"
+        "evidence": "folio/quantum-observable-universe/information-theory/regime-table.ts:0: forward ref: uses def:information-speed-of-light (manifest pos 35) which appears after this block (pos 1) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -910,7 +910,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No false claims identified in 'Master regime table for the substrate parameter $q$': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/regime-table.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/regime-table.ts:1"
       },
       {
         "result": "pass",
@@ -971,7 +971,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Master regime table for the substrate parameter $q$'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/regime-table.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/regime-table.ts:1"
       },
       {
         "result": "pass",
@@ -1032,7 +1032,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Master regime table for the substrate parameter $q$'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/regime-table.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/regime-table.ts:1"
       },
       {
         "result": "pass",
@@ -1063,7 +1063,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The argument flow in 'Master regime table for the substrate parameter $q$' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/regime-table.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/regime-table.ts:1"
       },
       {
         "result": "pass",
@@ -1124,7 +1124,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'Master regime table for the substrate parameter $q$', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/regime-table.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/regime-table.ts:1"
       },
       {
         "result": "pass",
@@ -1155,7 +1155,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'Master regime table for the substrate parameter $q$' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/regime-table.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/regime-table.ts:1"
       },
       {
         "result": "pass",
@@ -1186,7 +1186,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'Master regime table for the substrate parameter $q$' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/regime-table.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/regime-table.ts:1"
       },
       {
         "result": "pass",
@@ -1217,7 +1217,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'Master regime table for the substrate parameter $q$' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/regime-table.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/regime-table.ts:1"
       },
       {
         "result": "pass",
@@ -1248,7 +1248,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The derivation steps and formal definitions in 'Master regime table for the substrate parameter $q$' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/regime-table.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/regime-table.ts:1"
       },
       {
         "result": "pass",

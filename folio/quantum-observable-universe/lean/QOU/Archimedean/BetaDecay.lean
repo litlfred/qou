@@ -224,7 +224,7 @@ noncomputable def knotOperator (τ : TorusKnotLabel) (N : ℕ) (g : ℕ) : R_t :
     (4) Pauli projection (Young symmetrizer),
     (5) tower termination (embeddability bound).
     Until those land, the equality is per-instance. -/
--- Ref: [rosso-jones1993] On the invariants of torus knots derived from quan — see content/schema/references.ts
+-- Ref: [rosso-jones1993] On the invariants of torus knots derived from quan — see folio/schema/references.ts
 -- Ref: [manuscript] §5/embeddability-closure
 class SpectralDecompositionQValue
     (g : ℕ) (_hg : g = 4)

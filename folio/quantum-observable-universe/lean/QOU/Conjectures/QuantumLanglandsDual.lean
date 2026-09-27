@@ -4,7 +4,7 @@ import Mathlib.Tactic
 # QOU.Conjectures.QuantumLanglandsDual — quantum Langlands duality (D19)
 
 Conjectural axiomatisation of `conj:quantum-langlands-dual`
-(`content/quantum-observable-universe/q-geometric-langlands/quantum-langlands-dual.md`).
+(`folio/quantum-observable-universe/q-geometric-langlands/quantum-langlands-dual.md`).
 
 The Iwahori–Hecke algebra `H_n(q)` has a quantum Langlands dual
 `H_n(q⁻¹)` obtained by inverting the deformation parameter.  For Type

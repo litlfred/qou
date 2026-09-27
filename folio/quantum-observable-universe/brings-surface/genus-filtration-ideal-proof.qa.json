@@ -3,8 +3,8 @@
   "label": "prf:genus-filtration-ideal",
   "kind": "proof",
   "paths": {
-    "ts": "content/quantum-observable-universe/brings-surface/genus-filtration-ideal-proof.ts",
-    "md": "content/quantum-observable-universe/brings-surface/genus-filtration-ideal-proof.md"
+    "ts": "folio/quantum-observable-universe/brings-surface/genus-filtration-ideal-proof.ts",
+    "md": "folio/quantum-observable-universe/brings-surface/genus-filtration-ideal-proof.md"
   },
   "source_hashes": {
     "md": "f0004183431f",
@@ -851,7 +851,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Checked mathematical consistency of the claim '**Proof.**' and found no counterexamples under the stated conditions.",
-        "evidence": "content/quantum-observable-universe/brings-surface/genus-filtration-ideal-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/genus-filtration-ideal-proof.ts:1",
         "severity": "minor"
       },
       {
@@ -912,7 +912,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Traced dependencies ['lem:yekutieli-leading-coefficient'] for 'prf:genus-filtration-ideal' and confirmed no circular definitions or justifications.",
-        "evidence": "content/quantum-observable-universe/brings-surface/genus-filtration-ideal-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/genus-filtration-ideal-proof.ts:1",
         "severity": "minor"
       },
       {
@@ -973,7 +973,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
-        "evidence": "content/quantum-observable-universe/brings-surface/genus-filtration-ideal-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/genus-filtration-ideal-proof.ts:1",
         "severity": "minor"
       },
       {
@@ -1004,7 +1004,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical transitions in the derivation of '**Proof.**' are sound; no non-sequiturs detected.",
-        "evidence": "content/quantum-observable-universe/brings-surface/genus-filtration-ideal-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/genus-filtration-ideal-proof.ts:1",
         "severity": "minor"
       },
       {
@@ -1065,7 +1065,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references and uses ['lem:yekutieli-leading-coefficient'] cited in 'prf:genus-filtration-ideal' are used in accordance with their established mathematical definitions.",
-        "evidence": "content/quantum-observable-universe/brings-surface/genus-filtration-ideal-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/genus-filtration-ideal-proof.ts:1",
         "severity": "minor"
       },
       {
@@ -1096,7 +1096,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All terms and algebraic structures in 'prf:genus-filtration-ideal' are uniquely defined or standard.",
-        "evidence": "content/quantum-observable-universe/brings-surface/genus-filtration-ideal-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/genus-filtration-ideal-proof.ts:1",
         "severity": "minor"
       },
       {
@@ -1127,7 +1127,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic statements in 'prf:genus-filtration-ideal' do not rely on fragile empirical fits or numerical thresholds.",
-        "evidence": "content/quantum-observable-universe/brings-surface/genus-filtration-ideal-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/genus-filtration-ideal-proof.ts:1",
         "severity": "minor"
       },
       {
@@ -1158,7 +1158,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Physical dimensions and units in 'prf:genus-filtration-ideal' are consistent with quantum observable universe models.",
-        "evidence": "content/quantum-observable-universe/brings-surface/genus-filtration-ideal-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/genus-filtration-ideal-proof.ts:1",
         "severity": "minor"
       },
       {

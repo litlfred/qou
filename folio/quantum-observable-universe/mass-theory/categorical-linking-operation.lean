@@ -3,7 +3,7 @@
   topological linking number.
 
   Companion: categorical-linking-operation.md
-  Path: content/quantum-observable-universe/mass-theory/
+  Path: folio/quantum-observable-universe/mass-theory/
 
   Content-bearing conjecture carrier (AGENTS.md §3b-tax): the open
   properties are stated over an explicit substrate `LinkingData`, and

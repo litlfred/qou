@@ -28,7 +28,7 @@ const ARTIFACT = resolve(
 const SCRIPT = resolve(REPO_ROOT, "content/pipeline/lean-vacuity-axiom-audit.ts");
 // Any one real corpus `.lean` file — the point is a partial (non-corpus) scope.
 const ONE_FILE =
-  "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean";
+  "folio/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean";
 
 test("file-scoped vacuity audit leaves the committed corpus artifact untouched", () => {
   expect(existsSync(ARTIFACT)).toBe(true);

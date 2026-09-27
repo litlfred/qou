@@ -3,8 +3,8 @@
   "label": "rem:body-asymptotics-catalog",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/appendix-surreals/body-asymptotics-catalog.ts",
-    "md": "content/quantum-observable-universe/appendix-surreals/body-asymptotics-catalog.md"
+    "ts": "folio/quantum-observable-universe/appendix-surreals/body-asymptotics-catalog.ts",
+    "md": "folio/quantum-observable-universe/appendix-surreals/body-asymptotics-catalog.md"
   },
   "source_hashes": {
     "md": "c2ab3cde7515",
@@ -586,7 +586,7 @@
         "reviewed_at": "2026-08-09T13:00:11.416Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/body-asymptotics-catalog.ts:0: forward ref: uses def:surreal-blowup-calculus (manifest pos 49) which appears after this block (pos 45) in the chapter"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/body-asymptotics-catalog.ts:0: forward ref: uses def:surreal-blowup-calculus (manifest pos 49) which appears after this block (pos 45) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -733,7 +733,7 @@
         "reviewed_at": "2026-08-09T13:00:11.416Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/body-asymptotics-catalog.ts:0: uses[] dependency cycle: rem:body-asymptotics-catalog -> prop:hecke-convergence-bound -> rem:body-asymptotics-catalog"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/body-asymptotics-catalog.ts:0: uses[] dependency cycle: rem:body-asymptotics-catalog -> prop:hecke-convergence-bound -> rem:body-asymptotics-catalog"
       }
     ],
     "bib-cite-resolves": [

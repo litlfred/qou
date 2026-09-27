@@ -18,7 +18,7 @@ Source declaration: `QOU.ObservableSubcategory` in jet-horizon.lean
 
 -- Prerequisite type mirrored from the `QOU.JetHorizon` library module so this
 -- co-location extract compiles standalone. The canonical definition lives in
--- `content/quantum-observable-universe/lean/QOU/JetHorizon.lean` (Lake-built
+-- `folio/quantum-observable-universe/lean/QOU/JetHorizon.lean` (Lake-built
 -- under the `qou` package); this copy keeps the file independently checkable by
 -- `lean`-direct without depending on the (uncached) library olean.
 

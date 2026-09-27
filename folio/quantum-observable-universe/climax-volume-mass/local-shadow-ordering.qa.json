@@ -3,9 +3,9 @@
   "label": "def:local-shadow-ordering",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts",
-    "md": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.md",
-    "lean": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.lean"
+    "ts": "folio/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts",
+    "md": "folio/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.md",
+    "lean": "folio/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.lean"
   },
   "source_hashes": {
     "md": "2de94e964a20",
@@ -1016,7 +1016,7 @@
         "reviewed_at": "2026-07-07T14:26:57.069242Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Checked mathematical consistency of the claim '**Definition.**' and found no counterexamples under the stated conditions.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
         "severity": "minor"
       },
       {
@@ -1083,7 +1083,7 @@
         "reviewed_at": "2026-07-07T14:26:57.069242Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Traced dependencies ['def:unstable-atom'] for 'def:local-shadow-ordering' and confirmed no circular definitions or justifications.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
         "severity": "minor"
       },
       {
@@ -1150,7 +1150,7 @@
         "reviewed_at": "2026-07-07T14:26:57.069242Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
         "severity": "minor"
       },
       {
@@ -1184,7 +1184,7 @@
         "reviewed_at": "2026-07-07T14:26:57.069242Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical transitions in the derivation of '**Definition.**' are sound; no non-sequiturs detected.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
         "severity": "minor"
       },
       {
@@ -1251,7 +1251,7 @@
         "reviewed_at": "2026-07-07T14:26:57.069242Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references and uses ['def:unstable-atom'] cited in 'def:local-shadow-ordering' are used in accordance with their established mathematical definitions.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
         "severity": "minor"
       },
       {
@@ -1285,7 +1285,7 @@
         "reviewed_at": "2026-07-07T14:26:57.069242Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All terms and algebraic structures in 'def:local-shadow-ordering' are uniquely defined or standard.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
         "severity": "minor"
       },
       {
@@ -1319,7 +1319,7 @@
         "reviewed_at": "2026-07-07T14:26:57.069242Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic statements in 'def:local-shadow-ordering' do not rely on fragile empirical fits or numerical thresholds.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
         "severity": "minor"
       },
       {
@@ -1353,7 +1353,7 @@
         "reviewed_at": "2026-07-07T14:26:57.069242Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Physical dimensions and units in 'def:local-shadow-ordering' are consistent with quantum observable universe models.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
         "severity": "minor"
       },
       {
@@ -1387,7 +1387,7 @@
         "reviewed_at": "2026-07-07T14:26:57.069242Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All backing computations and proofs are fully reproducible.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.ts:1",
         "severity": "minor"
       },
       {

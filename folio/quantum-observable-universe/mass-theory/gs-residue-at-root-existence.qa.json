@@ -3,9 +3,9 @@
   "label": "conj:gs-residue-at-root-existence",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/gs-residue-at-root-existence.ts",
-    "md": "content/quantum-observable-universe/mass-theory/gs-residue-at-root-existence.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/ResidueAtRoot.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/gs-residue-at-root-existence.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/gs-residue-at-root-existence.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/BraidKnot/ResidueAtRoot.lean"
   },
   "source_hashes": {
     "md": "4e0fa71903ff",
@@ -1582,7 +1582,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/gs-residue-at-root-existence.ts:0: uses[] dependency cycle: conj:gs-residue-at-root-existence -> conj:gs-graded-markov-trace-existence -> prop:gb-residue-spectral-sum -> prop:residue-at-root -> conj:gs-residue-at-root-existence"
+        "evidence": "folio/quantum-observable-universe/mass-theory/gs-residue-at-root-existence.ts:0: uses[] dependency cycle: conj:gs-residue-at-root-existence -> conj:gs-graded-markov-trace-existence -> prop:gb-residue-spectral-sum -> prop:residue-at-root -> conj:gs-residue-at-root-existence"
       }
     ],
     "bib-cited-ref-has-url": [

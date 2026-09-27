@@ -4,7 +4,7 @@ import Mathlib.Tactic
 # QOU.Conjectures.ShellTransitionKnot — magic numbers from shell transitions
 
 Conjectural axiomatisation of `conj:shell-transition-knot`
-(`content/quantum-observable-universe/particle-interactions/shell-transition-knot.md`).
+(`folio/quantum-observable-universe/particle-interactions/shell-transition-knot.md`).
 
 The seven stability pairs `{2, 8, 20, 28, 50, 82, 126}` arise from the
 3-D harmonic-oscillator shell structure of nucleons in the nuclear mean

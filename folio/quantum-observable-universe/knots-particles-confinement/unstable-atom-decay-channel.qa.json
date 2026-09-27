@@ -3,9 +3,9 @@
   "label": "prop:unstable-atom-decay-channel",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/unstable-atom-decay-channel.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/unstable-atom-decay-channel.md",
-    "lean": "content/quantum-observable-universe/knots-particles-confinement/unstable-atom-decay-channel.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/unstable-atom-decay-channel.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/unstable-atom-decay-channel.md",
+    "lean": "folio/quantum-observable-universe/knots-particles-confinement/unstable-atom-decay-channel.lean"
   },
   "source_hashes": {
     "md": "75f48595dd4d",
@@ -181,7 +181,7 @@
         "reviewed_at": "2026-08-31T11:53:56.465Z",
         "reviewed_sha": "52844595f8db28fbd291aba42e8c85ff9f0b3297",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/knots-particles-confinement/unstable-atom-decay-channel.lean:75: so the hypothesis constrains the caller's data rather than data an instance"
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/unstable-atom-decay-channel.lean:75: so the hypothesis constrains the caller's data rather than data an instance"
       }
     ],
     "voice-title-scholarly": [
@@ -318,7 +318,7 @@
         "reviewed_at": "2026-08-31T11:53:56.465Z",
         "reviewed_sha": "52844595f8db28fbd291aba42e8c85ff9f0b3297",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/knots-particles-confinement/unstable-atom-decay-channel.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a §7c-style note (in authorNotes, per §4d) or move the archimedean evaluation to a sibling block."
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/unstable-atom-decay-channel.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a §7c-style note (in authorNotes, per §4d) or move the archimedean evaluation to a sibling block."
       }
     ],
     "q-usage-regime-detected": [
@@ -1368,7 +1368,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean:23 [def-disguised-true] def UnstableAtom.decay_channel_unique",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean:23 [def-disguised-true] def UnstableAtom.decay_channel_unique",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1456,7 +1456,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.368629Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The mathematical claims in 'Unstable atom has a uniquely-determined decay channel' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean:25:13: error: Function expected at.",
+        "notes": "The mathematical claims in 'Unstable atom has a uniquely-determined decay channel' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean:25:13: error: Function expected at.",
         "severity": "minor",
         "evidence": "unstable-atom-decay-channel.lean:1"
       },
@@ -1491,7 +1491,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.368629Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "unstable-atom-decay-channel.lean:1"
       },
@@ -1630,7 +1630,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.368629Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean.",
         "severity": "minor",
         "evidence": "unstable-atom-decay-channel.lean:1"
       },
@@ -1665,9 +1665,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.368629Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1840,9 +1840,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.368629Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "unstable-atom-decay-channel.lean:1 — content/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean:25:13: error: Function expected at"
+        "evidence": "unstable-atom-decay-channel.lean:1 — folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean:25:13: error: Function expected at"
       },
       {
         "result": "pass",
@@ -1875,11 +1875,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.368629Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation.",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation."
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation."
       },
       {
         "result": "pass",

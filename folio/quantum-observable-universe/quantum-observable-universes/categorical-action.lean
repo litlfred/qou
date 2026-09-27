@@ -11,10 +11,10 @@ import Mathlib.Algebra.Ring.Basic
 /-!
 # QOU.CategoricalAction
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/CategoricalAction.lean (monolithic).
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/CategoricalAction.lean (monolithic).
 That file no longer exists — the library was split, and `CategoricalAction` now lives at
-  content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/GaugeTheory.lean
+  folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/GaugeTheory.lean
 -/
 
 -- Pre-Archimedean stub: this declaration lives in a rigid monoidal category

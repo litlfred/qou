@@ -3,9 +3,9 @@
   "label": "prop:cyclotomic-depth3-dimension-synthesis",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts",
-    "md": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicDepth3DimensionSynthesis.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicDepth3DimensionSynthesis.lean"
   },
   "source_hashes": {
     "md": "cfc4a1e0f4bc",
@@ -1222,8 +1222,8 @@
         },
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.lean is missing entirely.",
-        "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.md:1",
+        "notes": "The sibling Lean file folio/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.lean is missing entirely.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.md:1",
         "severity": "minor"
       },
       {
@@ -1454,7 +1454,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
         "severity": "minor"
       },
       {
@@ -1549,7 +1549,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
         "severity": "minor"
       },
       {
@@ -1644,7 +1644,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
         "severity": "minor"
       },
       {
@@ -1692,7 +1692,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
         "severity": "minor"
       },
       {
@@ -1740,7 +1740,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
         "severity": "minor"
       },
       {
@@ -1788,7 +1788,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
         "severity": "minor"
       },
       {
@@ -1836,7 +1836,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
         "severity": "minor"
       },
       {
@@ -1884,7 +1884,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
         "severity": "minor"
       },
       {
@@ -2044,9 +2044,9 @@
         },
         "reviewed_at": "2026-06-28T10:58:49.282Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.lean is missing, leading to complete divergence.",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.lean is missing, leading to complete divergence.",
         "severity": "minor",
-        "evidence": "The referenced Lean file content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.lean is missing, leading to complete divergence."
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.lean is missing, leading to complete divergence."
       },
       {
         "field_hash": {

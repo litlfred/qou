@@ -3,9 +3,9 @@
   "label": "prop:algebraic-filter-classification",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts",
-    "md": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.md",
-    "lean": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.lean"
+    "ts": "folio/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts",
+    "md": "folio/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.md",
+    "lean": "folio/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.lean"
   },
   "source_hashes": {
     "md": "a8f5ab9aa693",
@@ -1408,7 +1408,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The mathematical claims in 'Proposition.' are verified by the compiling Lean proof.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.lean:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.lean:1"
       },
       {
         "result": "pass",
@@ -1442,7 +1442,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The claims in 'Proposition.' are non-vacuous and backed by a sorry-free formalization.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.lean:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.lean:1"
       },
       {
         "result": "pass",
@@ -1476,7 +1476,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Proposition.'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
       },
       {
         "result": "pass",
@@ -1543,7 +1543,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Proposition.'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
       },
       {
         "result": "pass",
@@ -1577,7 +1577,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The argument flow in 'Proposition.' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
       },
       {
         "result": "pass",
@@ -1644,7 +1644,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'Proposition.', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
       },
       {
         "result": "pass",
@@ -1678,7 +1678,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'Proposition.' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
       },
       {
         "result": "pass",
@@ -1712,7 +1712,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'Proposition.' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
       },
       {
         "result": "pass",
@@ -1746,7 +1746,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'Proposition.' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
       },
       {
         "result": "pass",
@@ -1780,7 +1780,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The derivation steps and formal definitions in 'Proposition.' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts:1"
       },
       {
         "result": "pass",

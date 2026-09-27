@@ -3,8 +3,8 @@
   "label": "rem:em-coupling-fixed-point-derivation-status",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/em-coupling-fixed-point-derivation-status.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/em-coupling-fixed-point-derivation-status.md"
+    "ts": "folio/quantum-observable-universe/predicted-spectra/em-coupling-fixed-point-derivation-status.ts",
+    "md": "folio/quantum-observable-universe/predicted-spectra/em-coupling-fixed-point-derivation-status.md"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -270,7 +270,7 @@
         "reviewed_at": "2026-08-09T11:33:51.153Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/em-coupling-fixed-point-derivation-status.md:19: status-section-header: ## Status"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/em-coupling-fixed-point-derivation-status.md:19: status-section-header: ## Status"
       }
     ],
     "framework-canonical": [
@@ -527,7 +527,7 @@
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/em-coupling-fixed-point-derivation-status.ts:0: forward ref: uses prop:alpha-em-categorical-trace-ratio (manifest pos 121) which appears after this block (pos 72) in the chapter | content/quantum-observable-universe/predicted-spectra/em-coupling-fixed-point-derivation-status.ts:0: forward ref: uses prop:photon-ir-zero-mode-bring (manifest pos 73) which appears after this block (pos 72) in the chapter"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/em-coupling-fixed-point-derivation-status.ts:0: forward ref: uses prop:alpha-em-categorical-trace-ratio (manifest pos 121) which appears after this block (pos 72) in the chapter | folio/quantum-observable-universe/predicted-spectra/em-coupling-fixed-point-derivation-status.ts:0: forward ref: uses prop:photon-ir-zero-mode-bring (manifest pos 73) which appears after this block (pos 72) in the chapter"
       }
     ],
     "detangler-section-band": [

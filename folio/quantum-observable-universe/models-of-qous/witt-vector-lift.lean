@@ -82,7 +82,7 @@ def reduction_preserves_dim (W : WittVectorLift) :
     For a 1-dimensional formal group of height h, Dist(Ĝ) is
     a free ℤ_p-module of countable rank with a PBW-type basis
     indexed by multi-indices of length lieDim. -/
--- Ref: [zink2002] The Display of a Formal p-Divisible Group — see content/schema/references.ts
+-- Ref: [zink2002] The Display of a Formal p-Divisible Group — see folio/schema/references.ts
 theorem dist_algebra_generators (W : WittVectorLift) :
     0 < W.lieDim := W.lie_dim_pos
 

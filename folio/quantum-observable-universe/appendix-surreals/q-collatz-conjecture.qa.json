@@ -3,9 +3,9 @@
   "label": "conj:q-collatz",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts",
-    "md": "content/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/QCollatz.lean"
+    "ts": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts",
+    "md": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/QCollatz.lean"
   },
   "source_hashes": {
     "md": "2eb50ab86163",
@@ -133,7 +133,7 @@
         "reviewed_at": "2026-08-15T21:38:10.737Z",
         "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.md:69: 2. *The content does not live in the ideal.* By Reeb-flow Turing-completeness the halting set is undecidable, hence not cut out by any ideal ([one length filtration, three problems](#rem:skein-filtrat"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.md:69: 2. *The content does not live in the ideal.* By Reeb-flow Turing-completeness the halting set is undecidable, hence not cut out by any ideal ([one length filtration, three problems](#rem:skein-filtrat"
       }
     ],
     "voice-scholarly-default": [
@@ -171,7 +171,7 @@
         "reviewed_at": "2026-08-15T21:38:10.737Z",
         "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/lean/QOU/QCollatz.lean:172: so the equation `[3]^a = [2]^b` has no solution for `a, b > 0`."
+        "evidence": "folio/quantum-observable-universe/lean/QOU/QCollatz.lean:172: so the equation `[3]^a = [2]^b` has no solution for `a, b > 0`."
       }
     ],
     "voice-title-scholarly": [
@@ -249,7 +249,7 @@
         "reviewed_at": "2026-08-15T21:38:10.737Z",
         "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.md:69: P4:date-ref: 2. *The content does not live in the ideal.* By Reeb-flow Turing-completeness the halting set is undecidable, hence not cut out by any ideal ([one length filtration, three problems](#rem:skein-filtrat"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.md:69: P4:date-ref: 2. *The content does not live in the ideal.* By Reeb-flow Turing-completeness the halting set is undecidable, hence not cut out by any ideal ([one length filtration, three problems](#rem:skein-filtrat"
       }
     ],
     "voice-status-section": [
@@ -378,7 +378,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/lean/QOU/QCollatz.lean:129 — archimedean Real.* in categorical chapter — Real.sqrt (qInt q 3 / qInt q 2 ^ 2) < 1 := by | content/quantum-observable-universe/lean/QOU/QCollatz.lean:237 — archimedean Real.* in categorical chapter — Real.log (qInt q 3) / Real.log (qInt q 2) < 2 := by | content/quantum-observable-universe/lean/QOU/QCollatz.lean:242 — archimedean Real.* in categorical chapter — have hlog2pos : Real.log (qInt q 2) > 0 := Real.log_pos h2gt1 | content/quantum-observable-universe/lean/QOU/QCollatz.lean:244 — archimedean Real.* in categorical chapter — have h2cast : (2 : ℝ) * Real.log (qInt q 2) = Real.log ((qInt q 2) ^ 2) := by"
+        "evidence": "folio/quantum-observable-universe/lean/QOU/QCollatz.lean:129 — archimedean Real.* in categorical chapter — Real.sqrt (qInt q 3 / qInt q 2 ^ 2) < 1 := by | folio/quantum-observable-universe/lean/QOU/QCollatz.lean:237 — archimedean Real.* in categorical chapter — Real.log (qInt q 3) / Real.log (qInt q 2) < 2 := by | folio/quantum-observable-universe/lean/QOU/QCollatz.lean:242 — archimedean Real.* in categorical chapter — have hlog2pos : Real.log (qInt q 2) > 0 := Real.log_pos h2gt1 | folio/quantum-observable-universe/lean/QOU/QCollatz.lean:244 — archimedean Real.* in categorical chapter — have h2cast : (2 : ℝ) * Real.log (qInt q 2) = Real.log ((qInt q 2) ^ 2) := by"
       }
     ],
     "q-usage-positivity-implicit": [
@@ -826,7 +826,7 @@
         "reviewed_at": "2026-08-15T21:38:10.737Z",
         "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:0: uses[] dependency cycle: conj:q-collatz -> rem:skein-filtration-trichotomy -> conj:q-collatz"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:0: uses[] dependency cycle: conj:q-collatz -> rem:skein-filtration-trichotomy -> conj:q-collatz"
       }
     ],
     "bib-cite-resolves": [
@@ -1153,7 +1153,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-false-claim.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
       },
       {
         "result": "pass",
@@ -1218,7 +1218,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-circular.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
       },
       {
         "result": "pass",
@@ -1283,7 +1283,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-hidden-dof.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
       },
       {
         "result": "pass",
@@ -1316,7 +1316,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-non-sequitur.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
       },
       {
         "result": "pass",
@@ -1382,7 +1382,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-citation-misuse.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
       },
       {
         "result": "pass",
@@ -1415,7 +1415,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-definitional-ambiguity.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
       },
       {
         "result": "pass",
@@ -1448,7 +1448,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-empirical-fragility.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
       },
       {
         "result": "pass",
@@ -1481,7 +1481,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-physical-implausibility.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
       },
       {
         "result": "pass",

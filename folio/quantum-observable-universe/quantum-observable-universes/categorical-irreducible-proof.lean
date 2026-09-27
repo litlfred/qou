@@ -4,7 +4,7 @@ import QOU.QuantumObservableUniverse.Instanton
 # QOU.categorical_irreducible
 
 The canonical Lean source for `lem:categorical-irreducible` lives at
-`content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean`,
+`folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean`,
 which is Lake-built under the `qou` package and declares
 `QOU.categorical_irreducible` (the per-instance form backed by the
 `HasCategoricalIrreducibility` typeclass).

@@ -3,9 +3,9 @@
   "label": "ex:hadron-half-life-verification",
   "kind": "example",
   "paths": {
-    "ts": "content/quantum-observable-universe/observations/hadron-half-life-verification.ts",
-    "md": "content/quantum-observable-universe/observations/hadron-half-life-verification.md",
-    "lean": "content/quantum-observable-universe/observations/hadron-half-life-verification.lean"
+    "ts": "folio/quantum-observable-universe/observations/hadron-half-life-verification.ts",
+    "md": "folio/quantum-observable-universe/observations/hadron-half-life-verification.md",
+    "lean": "folio/quantum-observable-universe/observations/hadron-half-life-verification.lean"
   },
   "source_hashes": {
     "md": "bc8e3e6f8d8d",
@@ -640,7 +640,7 @@
         "reviewed_at": "2026-09-04T20:54:11.830Z",
         "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/observations/hadron-half-life-verification.ts:0: forward ref: uses rem:hadron-half-life-regimes (manifest pos 107) which appears after this block (pos 98) in the chapter"
+        "evidence": "folio/quantum-observable-universe/observations/hadron-half-life-verification.ts:0: forward ref: uses rem:hadron-half-life-regimes (manifest pos 107) which appears after this block (pos 98) in the chapter"
       }
     ],
     "detangler-section-band": [

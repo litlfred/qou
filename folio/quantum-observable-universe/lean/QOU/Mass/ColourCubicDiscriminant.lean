@@ -26,7 +26,7 @@ branch points, and `D` and `−D` share it.
 Base ring §7c: `CommRing R` for the sum of squares, `Field K` for the reciprocity (needs `z⁻¹`).
 
 -- Ref: [manuscript] computations/probes/colour_cubic_branch_monodromy_probe.py
--- Ref: [manuscript] content/quantum-observable-universe/mass-theory/hecke-monodromy-step-two.md
+-- Ref: [manuscript] folio/quantum-observable-universe/mass-theory/hecke-monodromy-step-two.md
 -/
 
 namespace QOU.Mass.ColourCubicDiscriminant

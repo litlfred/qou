@@ -222,7 +222,7 @@ instance hasCategoricalEOM_of_facts {C : Type u}
     Use this lemma — backed by `HasCategoricalEOM` — instead of the
     deprecated universal axiom. -/
 -- Ref: [manuscript] §1-quantum-observable-universe
--- Ref: [wald1984] General Relativity — see content/schema/references.ts
+-- Ref: [wald1984] General Relativity — see folio/schema/references.ts
 theorem variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
@@ -234,7 +234,7 @@ theorem variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
 
 /-- **Yang–Mills equation** (per-instance form). -/
 -- Ref: [manuscript] §1-quantum-observable-universe
--- Ref: [bleecker1981] Gauge Theory and Variational Principles — see content/schema/references.ts
+-- Ref: [bleecker1981] Gauge Theory and Variational Principles — see folio/schema/references.ts
 theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)

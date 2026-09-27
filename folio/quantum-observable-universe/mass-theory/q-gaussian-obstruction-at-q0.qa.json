@@ -3,9 +3,9 @@
   "label": "prop:q-gaussian-obstruction-at-q0",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts",
-    "md": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.md",
-    "lean": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.lean"
   },
   "source_hashes": {
     "md": "371418be5cb0",
@@ -1272,7 +1272,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.lean:1 — Lean file exists",
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.lean:1 — Lean file exists",
         "severity": "minor"
       },
       {
@@ -1324,7 +1324,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof contains a sorry placeholder, indicating it is incomplete.",
-        "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.lean:1 — sorry placeholder present",
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.lean:1 — sorry placeholder present",
         "severity": "major"
       },
       {
@@ -1533,7 +1533,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
         "severity": "minor"
       },
       {
@@ -1631,7 +1631,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
         "severity": "minor"
       },
       {
@@ -1731,7 +1731,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
         "severity": "minor"
       },
       {
@@ -1783,7 +1783,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
         "severity": "minor"
       },
       {
@@ -1881,7 +1881,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
         "severity": "minor"
       },
       {
@@ -1930,7 +1930,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
         "severity": "minor"
       },
       {
@@ -1979,7 +1979,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
         "severity": "minor"
       },
       {
@@ -2031,7 +2031,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
         "severity": "minor"
       },
       {
@@ -2083,7 +2083,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
         "severity": "minor"
       },
       {

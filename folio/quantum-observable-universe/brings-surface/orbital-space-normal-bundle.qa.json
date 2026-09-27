@@ -3,9 +3,9 @@
   "label": "conj:orbital-space-normal-bundle",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts",
-    "md": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.md",
-    "lean": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean"
+    "ts": "folio/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts",
+    "md": "folio/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.md",
+    "lean": "folio/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean"
   },
   "source_hashes": {
     "md": "417525869a3e",
@@ -1055,7 +1055,7 @@
         "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
-        "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
         "severity": "minor"
       },
       {
@@ -1122,7 +1122,7 @@
         "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Traced dependencies ['conj:reidemeister-mass-invariance'] for 'conj:orbital-space-normal-bundle' and confirmed no circular definitions or justifications.",
-        "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
         "severity": "minor"
       },
       {
@@ -1189,7 +1189,7 @@
         "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
-        "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
         "severity": "minor"
       },
       {
@@ -1223,7 +1223,7 @@
         "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
-        "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
         "severity": "minor"
       },
       {
@@ -1256,7 +1256,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The conjecture is formalized with sorry in content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean, which matches the open nature of the narrative.",
+        "notes": "The conjecture is formalized with sorry in folio/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean, which matches the open nature of the narrative.",
         "severity": "minor"
       },
       {
@@ -1290,7 +1290,7 @@
         "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references and uses ['conj:reidemeister-mass-invariance'] cited in 'conj:orbital-space-normal-bundle' are used in accordance with their established mathematical definitions.",
-        "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
         "severity": "minor"
       },
       {
@@ -1324,7 +1324,7 @@
         "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All terms and algebraic structures in 'conj:orbital-space-normal-bundle' are uniquely defined or standard.",
-        "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
         "severity": "minor"
       },
       {
@@ -1358,7 +1358,7 @@
         "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic statements in 'conj:orbital-space-normal-bundle' do not rely on fragile empirical fits or numerical thresholds.",
-        "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
         "severity": "minor"
       },
       {
@@ -1392,7 +1392,7 @@
         "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Physical dimensions and units in 'conj:orbital-space-normal-bundle' are consistent with quantum observable universe models.",
-        "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
         "severity": "minor"
       },
       {
@@ -1425,8 +1425,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/Dimension.olean' of module Mathlib.LinearAlgebra.Dimension does not exist.",
-        "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean:1 — content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/Dimension.olean' of module Mathlib.LinearAlgebra.Dimension does not exist",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: folio/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/Dimension.olean' of module Mathlib.LinearAlgebra.Dimension does not exist.",
+        "evidence": "folio/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean:1 — folio/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/Dimension.olean' of module Mathlib.LinearAlgebra.Dimension does not exist",
         "severity": "minor"
       },
       {

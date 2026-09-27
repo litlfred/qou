@@ -3,9 +3,9 @@
   "label": "prop:q-plancherel-asymptotic-skeleton",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts",
-    "md": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/Observations/QPlancherelAsymptoticSkeleton.lean"
+    "ts": "folio/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts",
+    "md": "folio/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/Observations/QPlancherelAsymptoticSkeleton.lean"
   },
   "source_hashes": {
     "md": "87f779d307e7",
@@ -257,7 +257,7 @@
         "reviewed_at": "2026-09-05T07:51:50.308Z",
         "reviewed_sha": "5eccf20cbba418bc2b29b063f9a1c6c9dbc100e8",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.md:30: P4:date-ref: **Restated over $\\mathbb{M}_{n,q}$ on 2026-09-05.** This proposition previously pushed forward the $q$-deformed Wedderburn weight $w_\\lambda^{(n)}(q) = \\dim_q^2(\\lambda)/[n]_q!$ and cited a variance b"
+        "evidence": "folio/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.md:30: P4:date-ref: **Restated over $\\mathbb{M}_{n,q}$ on 2026-09-05.** This proposition previously pushed forward the $q$-deformed Wedderburn weight $w_\\lambda^{(n)}(q) = \\dim_q^2(\\lambda)/[n]_q!$ and cited a variance b"
       }
     ],
     "voice-status-section": [
@@ -1271,7 +1271,7 @@
         },
         "reviewed_at": "2026-06-24T17:45:00.000Z",
         "reviewed_sha": "96cc4894872db1695470f26723174b5284e7b907",
-        "notes": "Post-rebase reconcile: upstream discharged the Lean sorry; resolved decl now source sorry-free (content/quantum-observable-universe/lean/QOU/Observations/QPlancherelAsymptoticSkeleton.lean)."
+        "notes": "Post-rebase reconcile: upstream discharged the Lean sorry; resolved decl now source sorry-free (folio/quantum-observable-universe/lean/QOU/Observations/QPlancherelAsymptoticSkeleton.lean)."
       },
       {
         "result": "pass",
@@ -1447,7 +1447,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
       },
       {
         "field_hash": {
@@ -1504,7 +1504,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1545,7 +1545,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1566,7 +1566,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The argument flow in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1585,9 +1585,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.530050Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The referenced Lean file content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.lean is missing, leading to complete divergence.",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.lean is missing, leading to complete divergence.",
         "severity": "minor",
-        "evidence": "The referenced Lean file content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.lean is missing, leading to complete divergence."
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.lean is missing, leading to complete divergence."
       }
     ],
     "da-citation-misuse": [
@@ -1608,7 +1608,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Citations to kerov1981, biane1998, feray2010 are correct and contextually appropriate.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1629,7 +1629,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1650,7 +1650,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1671,7 +1671,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1692,7 +1692,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The derivation steps and formal definitions in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1711,11 +1711,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.530050Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.lean is missing.",
+        "notes": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.lean is missing.",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.lean is missing, preventing formal verification of the claims in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space'.",
+        "referee_argument": "The referenced Lean sibling file folio/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.lean is missing, preventing formal verification of the claims in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space'.",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.lean is missing."
+        "evidence": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.lean is missing."
       }
     ],
     "milnor-amalgamated-flow": [

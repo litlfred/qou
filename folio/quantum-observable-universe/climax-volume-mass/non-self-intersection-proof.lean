@@ -11,8 +11,8 @@ The non-cocommutativity of the Hopf structure at `q ≠ 1` provides a
 categorical obstruction to knot self-intersection via an energy barrier
 at the quantum Planck scale `ℏ_q = 1 − q⁻¹`.
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/MobiusEnergy.lean (monolithic)
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/MobiusEnergy.lean (monolithic)
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical

@@ -3,9 +3,9 @@
   "label": "prop:color-elliptic",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/brings-surface/color-elliptic.ts",
-    "md": "content/quantum-observable-universe/brings-surface/color-elliptic.md",
-    "lean": "content/quantum-observable-universe/brings-surface/color-elliptic.lean"
+    "ts": "folio/quantum-observable-universe/brings-surface/color-elliptic.ts",
+    "md": "folio/quantum-observable-universe/brings-surface/color-elliptic.md",
+    "lean": "folio/quantum-observable-universe/brings-surface/color-elliptic.lean"
   },
   "source_hashes": {
     "md": "08db53ac84e0",
@@ -1491,7 +1491,7 @@
         "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Checked mathematical consistency of the claim 'Let $z=x_0/x_1\\in\\mathbb{P}^1(\\mathbb{C})$ be the projective spacetime ratio' and found no counterexamples under the stated conditions.",
-        "evidence": "content/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
         "severity": "minor"
       },
       {
@@ -1558,7 +1558,7 @@
         "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Traced dependencies ['rem:braid-group-action', 'rem:holonomy-trefoil'] for 'prop:color-elliptic' and confirmed no circular definitions or justifications.",
-        "evidence": "content/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
         "severity": "minor"
       },
       {
@@ -1625,7 +1625,7 @@
         "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
-        "evidence": "content/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
         "severity": "minor"
       },
       {
@@ -1659,7 +1659,7 @@
         "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical transitions in the derivation of 'Let $z=x_0/x_1\\in\\mathbb{P}^1(\\mathbb{C})$ be the projective spacetime ratio' are sound; no non-sequiturs detected.",
-        "evidence": "content/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
         "severity": "minor"
       },
       {
@@ -1727,7 +1727,7 @@
         "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references and uses ['rem:braid-group-action', 'rem:holonomy-trefoil'] cited in 'prop:color-elliptic' are used in accordance with their established mathematical definitions.",
-        "evidence": "content/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
         "severity": "minor"
       },
       {
@@ -1761,7 +1761,7 @@
         "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All terms and algebraic structures in 'prop:color-elliptic' are uniquely defined or standard.",
-        "evidence": "content/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
         "severity": "minor"
       },
       {
@@ -1795,7 +1795,7 @@
         "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic statements in 'prop:color-elliptic' do not rely on fragile empirical fits or numerical thresholds.",
-        "evidence": "content/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
         "severity": "minor"
       },
       {
@@ -1829,7 +1829,7 @@
         "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Physical dimensions and units in 'prop:color-elliptic' are consistent with quantum observable universe models.",
-        "evidence": "content/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
+        "evidence": "folio/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
         "severity": "minor"
       },
       {
@@ -1862,8 +1862,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/brings-surface/color-elliptic.lean:27:13: error: unexpected token 'section'; expected 'lemma'.",
-        "evidence": "content/quantum-observable-universe/brings-surface/color-elliptic.lean:1 — content/quantum-observable-universe/brings-surface/color-elliptic.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: folio/quantum-observable-universe/brings-surface/color-elliptic.lean:27:13: error: unexpected token 'section'; expected 'lemma'.",
+        "evidence": "folio/quantum-observable-universe/brings-surface/color-elliptic.lean:1 — folio/quantum-observable-universe/brings-surface/color-elliptic.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "minor"
       },
       {
@@ -1896,11 +1896,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/brings-surface/color-elliptic.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
+        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/brings-surface/color-elliptic.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/brings-surface/color-elliptic.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
+        "referee_argument": "The Lean sibling fails compilation with error: folio/quantum-observable-universe/brings-surface/color-elliptic.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/brings-surface/color-elliptic.lean:27:13: error: unexpected token 'section'; expected 'lemma'"
+        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/brings-surface/color-elliptic.lean:27:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "result": "pass",

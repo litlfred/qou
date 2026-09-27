@@ -2,7 +2,7 @@
   Crossing-energy channel weights and composite channels.
 
   RELOCATED (no mathematical change).  These five definitions were declared in
-  `content/quantum-observable-universe/observations/crossing-energy-decomposition.lean`.  They
+  `folio/quantum-observable-universe/observations/crossing-energy-decomposition.lean`.  They
   move here because `pair_cancellation` — a declaration the content-block resolver could not
   reach in that chapter-directory file — is stated and proved in terms of them, and a Lake-tree
   module cannot import a chapter `.lean`.  The source file imports this module back: the

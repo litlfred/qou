@@ -5,7 +5,7 @@ import Mathlib.Tactic
 # QOU.BraidKnot.CommutativeCrossingEnergy
 
 **Lake-built mirror** of the sibling-stub
-`content/quantum-observable-universe/braids-and-knots/commutative-crossing-energy.lean`.
+`folio/quantum-observable-universe/braids-and-knots/commutative-crossing-energy.lean`.
 
 **Lean witness-backed closure of GAP-B-1**: per-nucleon $A=2 \to A=3$
 binding-scaling derivation.

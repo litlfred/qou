@@ -3,9 +3,9 @@
   "label": "conj:gs-graded-markov-trace-existence",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/gs-graded-markov-trace-existence.ts",
-    "md": "content/quantum-observable-universe/mass-theory/gs-graded-markov-trace-existence.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/MarkovTrace.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/gs-graded-markov-trace-existence.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/gs-graded-markov-trace-existence.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/IwahoriHecke/MarkovTrace.lean"
   },
   "source_hashes": {
     "md": "8109c5d87fcd",
@@ -1217,7 +1217,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/gs-graded-markov-trace-existence.ts:0: forward ref: uses prop:gb-residue-spectral-sum (manifest pos 421) which appears after this block (pos 244) in the chapter | content/quantum-observable-universe/mass-theory/gs-graded-markov-trace-existence.ts:0: forward ref: uses prop:graded-markov-trace-from-gs-filtration (manifest pos 424) which appears after this block (pos 244) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/gs-graded-markov-trace-existence.ts:0: forward ref: uses prop:gb-residue-spectral-sum (manifest pos 421) which appears after this block (pos 244) in the chapter | folio/quantum-observable-universe/mass-theory/gs-graded-markov-trace-existence.ts:0: forward ref: uses prop:graded-markov-trace-from-gs-filtration (manifest pos 424) which appears after this block (pos 244) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1377,7 +1377,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/gs-graded-markov-trace-existence.ts:0: uses[] dependency cycle: conj:gs-graded-markov-trace-existence -> prop:gb-residue-spectral-sum -> prop:residue-at-root -> conj:gs-residue-at-root-existence -> conj:gs-graded-markov-trace-existence"
+        "evidence": "folio/quantum-observable-universe/mass-theory/gs-graded-markov-trace-existence.ts:0: uses[] dependency cycle: conj:gs-graded-markov-trace-existence -> prop:gb-residue-spectral-sum -> prop:residue-at-root -> conj:gs-residue-at-root-existence -> conj:gs-graded-markov-trace-existence"
       }
     ],
     "bib-cited-ref-has-url": [

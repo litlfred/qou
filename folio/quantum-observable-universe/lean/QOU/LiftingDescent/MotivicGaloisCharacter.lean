@@ -16,7 +16,7 @@ axiom (AGENTS.md §3b), not a missing proof.
 
 **Formal-chain version.**  This file lives under `lean/QOU/` and is
 compiled by `lake build`.  The co-located documentation stub at
-`content/quantum-observable-universe/lifting-and-descent/motivic-galois-character.lean`
+`folio/quantum-observable-universe/lifting-and-descent/motivic-galois-character.lean`
 mirrors this content (per `QOU.GroundRingAnnotations`).
 
 Ref: [yekutieli2010] — Yekutieli's obstruction theory

@@ -3,9 +3,9 @@
   "label": "prop:q-beta-spectral-bridge",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.md",
-    "lean": "content/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.md",
+    "lean": "folio/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.lean"
   },
   "source_hashes": {
     "md": "55ffcd31ae25",
@@ -385,7 +385,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.lean:36 — positivity-dependent Real.* on q without explicit hypothesis — noncomputable def markovZ (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)"
+        "evidence": "folio/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.lean:36 — positivity-dependent Real.* on q without explicit hypothesis — noncomputable def markovZ (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -1494,9 +1494,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.413832Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The claim in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:91:2: error: No goals to be solved.",
+        "notes": "The claim in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' is unverified due to Lean compilation failures: folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:91:2: error: No goals to be solved.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:1"
       },
       {
         "result": "pass",
@@ -1529,9 +1529,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.413832Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:1"
       },
       {
         "result": "pass",
@@ -1566,7 +1566,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
       },
       {
         "result": "pass",
@@ -1599,9 +1599,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.413832Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The prose in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean is incomplete (has sorry).",
+        "notes": "The prose in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' presents the result as established, but the Lean formalization in folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean is incomplete (has sorry).",
         "severity": "minor",
-        "evidence": "The prose in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean is incomplete (has sorry)."
+        "evidence": "The prose in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' presents the result as established, but the Lean formalization in folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean is incomplete (has sorry)."
       },
       {
         "result": "pass",
@@ -1636,7 +1636,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
       },
       {
         "result": "pass",
@@ -1669,9 +1669,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.413832Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:1"
       },
       {
         "result": "pass",
@@ -1704,9 +1704,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.413832Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1741,7 +1741,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Citations to wenzl1988, jones1985 are correct and contextually appropriate.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
       },
       {
         "result": "pass",
@@ -1776,7 +1776,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
       },
       {
         "result": "pass",
@@ -1811,7 +1811,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
       },
       {
         "result": "pass",
@@ -1846,7 +1846,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
       },
       {
         "result": "pass",
@@ -1879,9 +1879,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.413832Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:1 — content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:91:2: error: No goals to be solved"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:1 — folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:91:2: error: No goals to be solved"
       },
       {
         "result": "pass",
@@ -1914,11 +1914,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.413832Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean fails compilation: content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:91:2: error: No goals to be solved",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean fails compilation: folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:91:2: error: No goals to be solved",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean for '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' fails compilation with error: content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:91:2: error: No goals to be solved. This invalidates the claim of formal verification.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean fails compilation: content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:91:2: error: No goals to be solved"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean for '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' fails compilation with error: folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:91:2: error: No goals to be solved. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean fails compilation: folio/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:91:2: error: No goals to be solved"
       },
       {
         "result": "pass",

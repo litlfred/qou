@@ -3,9 +3,9 @@
   "label": "prop:meson-em-sinh-closed-form",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.lean"
+    "ts": "folio/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.ts",
+    "md": "folio/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.md",
+    "lean": "folio/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.lean"
   },
   "source_hashes": {
     "md": "cbd3961664ce",
@@ -768,7 +768,7 @@
         "reviewed_at": "2026-08-22T19:39:11.802Z",
         "reviewed_sha": "0463a10be46489d3f1e2ef5d0d1f6c16d2602000",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.md:26: P4:date-ref: **The electromagnetic factor is the full series, not the truncation above.** Through 2026-08-22 the second term of the ratio was written with $\\tfrac{3q^2-1}{2q^2}$ in place of $1 + \\log(1+\\hbar_q)$ —"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.md:26: P4:date-ref: **The electromagnetic factor is the full series, not the truncation above.** Through 2026-08-22 the second term of the ratio was written with $\\tfrac{3q^2-1}{2q^2}$ in place of $1 + \\log(1+\\hbar_q)$ —"
       }
     ],
     "voice-status-section": [
@@ -882,7 +882,7 @@
         "reviewed_at": "2026-08-10T03:43:05.281Z",
         "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.md:21 — MeV/CODATA reference in categorical chapter — The strong fusion $[3]_q \\cdot [4]_q$ is framework-derived and Lean-proved; it supplies $\\approx 99.98\\%$ of the ratio (the EM term is a $\\approx 203$ ppm correction). | content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.md:25 — MeV/CODATA reference in categorical chapter — An earlier version of this caveat stated that substituting \"the derived $\\alpha_{\\mathrm{em}}$\" degrades $m_K^2/m_\\pi^2$ from $\\approx 47$ ppb to $\\approx 363$ ppb and concluded the ratio's agreement is $\\alpha_{\\mathrm{em}}$-anchored rather than parameter-free. **That is incorrect and is withdrawn.** The value substituted there, $q\\,[9]_q\\,[10]_q \\approx 136.82$, is the *bare* coupling — the order-zero term — not the derived one. An order sweep reproduces the $363$ ppb figure exactly at order zero and gives $\\approx 47$ ppb at every order from one upward, including the exact resummation. The agreement is not $\\alpha_{\\mathrm{em}}$-anchored."
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.md:21 — MeV/CODATA reference in categorical chapter — The strong fusion $[3]_q \\cdot [4]_q$ is framework-derived and Lean-proved; it supplies $\\approx 99.98\\%$ of the ratio (the EM term is a $\\approx 203$ ppm correction). | folio/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.md:25 — MeV/CODATA reference in categorical chapter — An earlier version of this caveat stated that substituting \"the derived $\\alpha_{\\mathrm{em}}$\" degrades $m_K^2/m_\\pi^2$ from $\\approx 47$ ppb to $\\approx 363$ ppb and concluded the ratio's agreement is $\\alpha_{\\mathrm{em}}$-anchored rather than parameter-free. **That is incorrect and is withdrawn.** The value substituted there, $q\\,[9]_q\\,[10]_q \\approx 136.82$, is the *bare* coupling — the order-zero term — not the derived one. An order sweep reproduces the $363$ ppb figure exactly at order zero and gives $\\approx 47$ ppb at every order from one upward, including the exact resummation. The agreement is not $\\alpha_{\\mathrm{em}}$-anchored."
       }
     ],
     "q-usage-positivity-implicit": [

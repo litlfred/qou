@@ -3,8 +3,8 @@
   "label": "prf:yekutieli-lifting",
   "kind": "proof",
   "paths": {
-    "ts": "content/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.ts",
-    "md": "content/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.md"
+    "ts": "folio/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.ts",
+    "md": "folio/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.md"
   },
   "source_hashes": {
     "md": "1b9646f10d7a",
@@ -847,7 +847,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No false claims identified in 'By [Theorem 1.7, yekutieli2010], any central extension of gerbes': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.ts:1"
       }
     ],
     "da-vacuous": [
@@ -882,7 +882,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'By [Theorem 1.7, yekutieli2010], any central extension of gerbes'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.ts:1"
       }
     ],
     "da-overclaim": [
@@ -917,7 +917,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'By [Theorem 1.7, yekutieli2010], any central extension of gerbes'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -935,7 +935,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The argument flow in 'By [Theorem 1.7, yekutieli2010], any central extension of gerbes' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -970,7 +970,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'By [Theorem 1.7, yekutieli2010], any central extension of gerbes', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -988,7 +988,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'By [Theorem 1.7, yekutieli2010], any central extension of gerbes' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1006,7 +1006,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'By [Theorem 1.7, yekutieli2010], any central extension of gerbes' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1024,7 +1024,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'By [Theorem 1.7, yekutieli2010], any central extension of gerbes' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1042,7 +1042,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The derivation steps and formal definitions in 'By [Theorem 1.7, yekutieli2010], any central extension of gerbes' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.ts:1"
       }
     ],
     "da-referee-verdict": [

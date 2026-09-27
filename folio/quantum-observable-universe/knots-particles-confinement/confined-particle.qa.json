@@ -3,9 +3,9 @@
   "label": "def:confined-particle",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/confined-particle.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/confined-particle.md",
-    "lean": "content/quantum-observable-universe/knots-particles-confinement/confined-particle.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/confined-particle.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/confined-particle.md",
+    "lean": "folio/quantum-observable-universe/knots-particles-confinement/confined-particle.lean"
   },
   "source_hashes": {
     "md": "ea79b378a4d7",
@@ -617,7 +617,7 @@
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/knots-particles-confinement/confined-particle.ts:0: forward ref: uses prop:confinement-phase-stratification (manifest pos 113) which appears after this block (pos 99) in the chapter"
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/confined-particle.ts:0: forward ref: uses prop:confinement-phase-stratification (manifest pos 113) which appears after this block (pos 99) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1019,7 +1019,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Confined particle': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confined-particle.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confined-particle.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1078,7 +1078,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Confined particle'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confined-particle.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confined-particle.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1121,7 +1121,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confined particle'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confined-particle.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confined-particle.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1143,7 +1143,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Confined particle' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confined-particle.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confined-particle.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1186,7 +1186,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Confined particle', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confined-particle.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confined-particle.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1208,7 +1208,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Confined particle' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confined-particle.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confined-particle.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1230,7 +1230,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Confined particle' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confined-particle.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confined-particle.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1252,7 +1252,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Confined particle' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confined-particle.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confined-particle.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1274,7 +1274,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Confined particle' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confined-particle.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confined-particle.ts:1"
       }
     ],
     "da-referee-verdict": [

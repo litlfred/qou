@@ -3,9 +3,9 @@
   "label": "prop:joint-galois-braid-discharged",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-discharged.ts",
-    "md": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-discharged.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/JointGaloisBraidDischarged.lean"
+    "ts": "folio/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-discharged.ts",
+    "md": "folio/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-discharged.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/JointGaloisBraidDischarged.lean"
   },
   "source_hashes": {
     "md": "8d2aff564890",
@@ -152,7 +152,7 @@
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/JointGaloisBraidDischarged.lean:50: Right tensor factor — the braid action sees only this."
+        "evidence": "folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/JointGaloisBraidDischarged.lean:50: Right tensor factor — the braid action sees only this."
       },
       {
         "field_hash": {

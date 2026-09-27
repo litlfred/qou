@@ -3,9 +3,9 @@
   "label": "def:computational-horizon",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/information-theory/computational-horizon.ts",
-    "md": "content/quantum-observable-universe/information-theory/computational-horizon.md",
-    "lean": "content/quantum-observable-universe/information-theory/computational-horizon.lean"
+    "ts": "folio/quantum-observable-universe/information-theory/computational-horizon.ts",
+    "md": "folio/quantum-observable-universe/information-theory/computational-horizon.md",
+    "lean": "folio/quantum-observable-universe/information-theory/computational-horizon.lean"
   },
   "source_hashes": {
     "md": "996b1d8616bc",
@@ -616,7 +616,7 @@
         "reviewed_at": "2026-08-09T13:00:44.975Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.ts:0: forward ref: uses def:jet-horizon (manifest pos 146) which appears after this block (pos 82) in the chapter"
+        "evidence": "folio/quantum-observable-universe/information-theory/computational-horizon.ts:0: forward ref: uses def:jet-horizon (manifest pos 146) which appears after this block (pos 82) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1010,7 +1010,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The claim in 'Computational horizon' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.lean:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/computational-horizon.lean:1"
       },
       {
         "result": "pass",
@@ -1077,7 +1077,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Computational horizon'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/computational-horizon.ts:1"
       },
       {
         "result": "pass",
@@ -1145,7 +1145,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Computational horizon'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/computational-horizon.ts:1"
       },
       {
         "result": "pass",
@@ -1177,9 +1177,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/information-theory/computational-horizon.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/information-theory/computational-horizon.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.lean:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/computational-horizon.lean:1"
       },
       {
         "result": "pass",
@@ -1211,9 +1211,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The Lean sibling content/quantum-observable-universe/information-theory/computational-horizon.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/information-theory/computational-horizon.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/information-theory/computational-horizon.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/information-theory/computational-horizon.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1247,7 +1247,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'Computational horizon', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/computational-horizon.ts:1"
       },
       {
         "result": "pass",
@@ -1281,7 +1281,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'Computational horizon' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/computational-horizon.ts:1"
       },
       {
         "result": "pass",
@@ -1315,7 +1315,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'Computational horizon' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/computational-horizon.ts:1"
       },
       {
         "result": "pass",
@@ -1349,7 +1349,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'Computational horizon' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.ts:1"
+        "evidence": "folio/quantum-observable-universe/information-theory/computational-horizon.ts:1"
       },
       {
         "result": "pass",
@@ -1381,9 +1381,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The Lean sibling content/quantum-observable-universe/information-theory/computational-horizon.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/information-theory/computational-horizon.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/computational-horizon.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist"
+        "evidence": "folio/quantum-observable-universe/information-theory/computational-horizon.lean:1 — /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/information-theory/computational-horizon.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist"
       },
       {
         "result": "pass",
@@ -1415,11 +1415,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/information-theory/computational-horizon.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/computational-horizon.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/information-theory/computational-horizon.lean fails compilation: /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/information-theory/computational-horizon.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/computational-horizon.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/computational-horizon.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist, invalidating the claimed formalization.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/information-theory/computational-horizon.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/computational-horizon.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/information-theory/computational-horizon.lean contains compilation errors: /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/information-theory/computational-horizon.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/information-theory/computational-horizon.lean fails compilation: /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/information-theory/computational-horizon.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist"
       },
       {
         "result": "pass",

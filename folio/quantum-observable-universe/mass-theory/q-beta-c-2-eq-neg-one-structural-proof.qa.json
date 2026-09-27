@@ -3,8 +3,8 @@
   "label": "prf:q-beta-c-2-eq-neg-one-structural",
   "kind": "proof",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/q-beta-c-2-eq-neg-one-structural-proof.ts",
-    "md": "content/quantum-observable-universe/mass-theory/q-beta-c-2-eq-neg-one-structural-proof.md"
+    "ts": "folio/quantum-observable-universe/mass-theory/q-beta-c-2-eq-neg-one-structural-proof.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/q-beta-c-2-eq-neg-one-structural-proof.md"
   },
   "source_hashes": {
     "md": "fe4cff856df4",
@@ -1697,7 +1697,7 @@
         "reviewed_at": "2026-08-21T22:16:03.148Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "severity": "minor",
-        "evidence": "CORRECTION to my own earlier entry on this criterion (same batch, agent:v04): I wrote '26 further occurrences' of the token-substitution boilerplate across mass-theory/*.md. That figure was an estimate and it was low. Measured: 'the canonical formalism' or 'the formal derivation' occurs 86 times across 54 .md files in content/quantum-observable-universe/mass-theory alone (grep -c over *.md). The finding and the proposed fix are unchanged; only the scale was understated.",
+        "evidence": "CORRECTION to my own earlier entry on this criterion (same batch, agent:v04): I wrote '26 further occurrences' of the token-substitution boilerplate across mass-theory/*.md. That figure was an estimate and it was low. Measured: 'the canonical formalism' or 'the formal derivation' occurs 86 times across 54 .md files in folio/quantum-observable-universe/mass-theory alone (grep -c over *.md). The finding and the proposed fix are unchanged; only the scale was understated.",
         "notes": "Command used: grep -c 'the canonical formalism\\|the formal derivation' *.md | grep -v ':0' | awk -F: '{s+=$2; n++} END {print n, s}'."
       }
     ],

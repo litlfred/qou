@@ -3,9 +3,9 @@
   "label": "prop:discrete-vortex-spectrum",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts",
-    "md": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.md",
-    "lean": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.lean"
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.md",
+    "lean": "folio/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.lean"
   },
   "source_hashes": {
     "md": "faa8b71eff20",
@@ -869,7 +869,7 @@
         "reviewed_at": "2026-08-09T13:00:33.718Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:0: uses[] dependency cycle: prop:discrete-vortex-spectrum -> rem:vortex-intensity-modes -> sec:brane-fluid -> prop:discrete-vortex-spectrum"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:0: uses[] dependency cycle: prop:discrete-vortex-spectrum -> rem:vortex-intensity-modes -> sec:brane-fluid -> prop:discrete-vortex-spectrum"
       }
     ],
     "bib-cite-resolves": [
@@ -1406,7 +1406,7 @@
         "reviewed_at": "2026-07-07T14:26:56.259236Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No false claims identified in 'Discrete vortex mode spectrum': mathematical reasoning is consistent.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
         "severity": "minor"
       },
       {
@@ -1473,7 +1473,7 @@
         "reviewed_at": "2026-07-07T14:26:56.259236Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Discrete vortex mode spectrum'.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
         "severity": "minor"
       },
       {
@@ -1540,7 +1540,7 @@
         "reviewed_at": "2026-07-07T14:26:56.259236Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Discrete vortex mode spectrum'.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
         "severity": "minor"
       },
       {
@@ -1574,7 +1574,7 @@
         "reviewed_at": "2026-07-07T14:26:56.259236Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The argument flow in 'Discrete vortex mode spectrum' is logically sound, mapping onto the cited dependencies.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
         "severity": "minor"
       },
       {
@@ -1641,7 +1641,7 @@
         "reviewed_at": "2026-07-07T14:26:56.259236Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No citations are present in 'Discrete vortex mode spectrum', hence no citation misuse is possible.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
         "severity": "minor"
       },
       {
@@ -1675,7 +1675,7 @@
         "reviewed_at": "2026-07-07T14:26:56.259236Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Key terms and symbols in 'Discrete vortex mode spectrum' are mathematically defined and unambiguous.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
         "severity": "minor"
       },
       {
@@ -1709,7 +1709,7 @@
         "reviewed_at": "2026-07-07T14:26:56.259236Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic and logical relations in 'Discrete vortex mode spectrum' are independent of empirical tuning parameters.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
         "severity": "minor"
       },
       {
@@ -1743,7 +1743,7 @@
         "reviewed_at": "2026-07-07T14:26:56.259236Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The physical concepts described in 'Discrete vortex mode spectrum' are consistent with quantum observable mechanics.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
         "severity": "minor"
       },
       {
@@ -1777,7 +1777,7 @@
         "reviewed_at": "2026-07-07T14:26:56.259236Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The derivation steps and formal definitions in 'Discrete vortex mode spectrum' are reproducible.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
         "severity": "minor"
       },
       {

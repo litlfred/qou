@@ -202,9 +202,9 @@ class QSchurYLambdaClosedFormClaim where
         bibliography had zero q-Schur entries, and neither paper is in
         `library/`, so nothing in this repo can check the identity as
         stated. `lusztig1990` has no entry in
-        `content/bib-qa-verifications.json` either.
+        `folio/bib-qa-verifications.json` either.
       * The corpus asserts **two different DOIs** for `lusztig1990`:
-        `10.2307/1990961` in `content/schema/references.ts`, and
+        `10.2307/1990961` in `folio/schema/references.ts`, and
         `10.2307/2152736` in `QOU/OptionE/CrystalDeltaLambdaScaffold.lean`
         and `QOU/IwahoriHecke/TypeA.lean`. Not resolved here — guessing
         which is right is exactly what produced the discrepancy. -/

@@ -3,9 +3,9 @@
   "label": "def:f-bor-borromean-observable",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.lean"
+    "ts": "folio/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts",
+    "md": "folio/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.md",
+    "lean": "folio/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.lean"
   },
   "source_hashes": {
     "md": "9d936d7ea7a4",
@@ -1229,7 +1229,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Checked mathematical consistency of the claim 'Cleaner form' and found no counterexamples under the stated conditions.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
       },
       {
         "result": "pass",
@@ -1296,7 +1296,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Traced dependencies ['prop:borromean-markov-trace-closed-form', 'prop:y-lambda-closed-form-wenzl-bridge'] for 'def:f-bor-borromean-observable' and confirmed no circular definitions or justifications.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
       },
       {
         "result": "pass",
@@ -1363,7 +1363,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Logical transitions in the derivation of 'Cleaner form' are sound; no non-sequiturs detected.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
       },
       {
         "result": "pass",
@@ -1397,7 +1397,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The algebraic statements in 'def:f-bor-borromean-observable' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
       },
       {
         "result": "pass",
@@ -1431,7 +1431,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Physical dimensions and units in 'def:f-bor-borromean-observable' are consistent with quantum observable universe models.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
       },
       {
         "result": "pass",
@@ -1465,7 +1465,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All backing computations and proofs are fully reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
       },
       {
         "result": "pass",

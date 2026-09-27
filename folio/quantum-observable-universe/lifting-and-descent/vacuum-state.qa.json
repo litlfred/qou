@@ -3,9 +3,9 @@
   "label": "prop:vacuum-state",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/lifting-and-descent/vacuum-state.ts",
-    "md": "content/quantum-observable-universe/lifting-and-descent/vacuum-state.md",
-    "lean": "content/quantum-observable-universe/lifting-and-descent/vacuum-state.lean"
+    "ts": "folio/quantum-observable-universe/lifting-and-descent/vacuum-state.ts",
+    "md": "folio/quantum-observable-universe/lifting-and-descent/vacuum-state.md",
+    "lean": "folio/quantum-observable-universe/lifting-and-descent/vacuum-state.lean"
   },
   "source_hashes": {
     "md": "34fbd112475b",
@@ -1417,7 +1417,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No false claims identified in 'Let (\\mathbf{C}, A, \\tau) be a': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/vacuum-state.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/vacuum-state.ts:1"
       },
       {
         "result": "pass",
@@ -1449,9 +1449,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.725486Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/vacuum-state.lean fails compilation, rendering the verification vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/lifting-and-descent/vacuum-state.lean fails compilation, rendering the verification vacuous.",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/vacuum-state.lean:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/vacuum-state.lean:1"
       },
       {
         "result": "pass",
@@ -1485,7 +1485,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Let (\\mathbf{C}, A, \\tau) be a'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/vacuum-state.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/vacuum-state.ts:1"
       },
       {
         "result": "pass",
@@ -1553,7 +1553,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Let (\\mathbf{C}, A, \\tau) be a'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/vacuum-state.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/vacuum-state.ts:1"
       },
       {
         "result": "pass",
@@ -1587,7 +1587,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The argument flow in 'Let (\\mathbf{C}, A, \\tau) be a' has logical gaps due to compilation failure in its Lean sibling.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/vacuum-state.lean:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/vacuum-state.lean:1"
       },
       {
         "result": "pass",
@@ -1619,9 +1619,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.725486Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/vacuum-state.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/lifting-and-descent/vacuum-state.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/vacuum-state.lean:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/vacuum-state.lean:1"
       },
       {
         "result": "pass",
@@ -1655,7 +1655,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'Let (\\mathbf{C}, A, \\tau) be a', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/vacuum-state.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/vacuum-state.ts:1"
       },
       {
         "result": "pass",
@@ -1689,7 +1689,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'Let (\\mathbf{C}, A, \\tau) be a' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/vacuum-state.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/vacuum-state.ts:1"
       },
       {
         "result": "pass",
@@ -1723,7 +1723,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'Let (\\mathbf{C}, A, \\tau) be a' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/vacuum-state.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/vacuum-state.ts:1"
       },
       {
         "result": "pass",
@@ -1757,7 +1757,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'Let (\\mathbf{C}, A, \\tau) be a' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/vacuum-state.ts:1"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/vacuum-state.ts:1"
       },
       {
         "result": "pass",
@@ -1789,9 +1789,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.725486Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/vacuum-state.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/lifting-and-descent/vacuum-state.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/vacuum-state.lean:1 — ../lifting-and-descent/vacuum-state.lean:31:28: error: expected token"
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/vacuum-state.lean:1 — ../lifting-and-descent/vacuum-state.lean:31:28: error: expected token"
       },
       {
         "result": "pass",
@@ -1826,7 +1826,7 @@
         "notes": "Referee verdict: open-objection. Sibling Lean file has issues: da-vacuous, da-lean-narrative-divergence, da-reproducibility.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/lifting-and-descent/vacuum-state.lean fails compilation with errors (../lifting-and-descent/vacuum-state.lean:31:28: error: expected token), preventing formal verification of the claims in 'Let (\\mathbf{C}, A, \\tau) be a'.",
+        "referee_argument": "The referenced Lean sibling file folio/quantum-observable-universe/lifting-and-descent/vacuum-state.lean fails compilation with errors (../lifting-and-descent/vacuum-state.lean:31:28: error: expected token), preventing formal verification of the claims in 'Let (\\mathbf{C}, A, \\tau) be a'.",
         "evidence": "Referee verdict: open-objection. Sibling Lean file has issues: da-vacuous, da-lean-narrative-divergence, da-reproducibility."
       },
       {

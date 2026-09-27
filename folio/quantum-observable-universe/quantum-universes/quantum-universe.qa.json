@@ -3,9 +3,9 @@
   "label": "def:quantum-universe",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-universes/quantum-universe.ts",
-    "md": "content/quantum-observable-universe/quantum-universes/quantum-universe.md",
-    "lean": "content/quantum-observable-universe/quantum-universes/quantum-universe.lean"
+    "ts": "folio/quantum-observable-universe/quantum-universes/quantum-universe.ts",
+    "md": "folio/quantum-observable-universe/quantum-universes/quantum-universe.md",
+    "lean": "folio/quantum-observable-universe/quantum-universes/quantum-universe.lean"
   },
   "source_hashes": {
     "md": "9f9aa102c81e",
@@ -202,7 +202,7 @@
         "reviewed_at": "2026-08-26T15:03:53.644Z",
         "reviewed_sha": "7a66cf487c9346e3bb8e8faab36915f15eca8f40",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/quantum-universes/quantum-universe.lean:171: right-trace on `End(A)` only, but the Markov trace closes strands of"
+        "evidence": "folio/quantum-observable-universe/quantum-universes/quantum-universe.lean:171: right-trace on `End(A)` only, but the Markov trace closes strands of"
       }
     ],
     "voice-title-scholarly": [
@@ -1598,7 +1598,7 @@
         "reviewed_at": "2026-08-22T06:08:13.945Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). L26 '$R$ is a commutative ring, not a field' and L28 'is a genuine hypothesis and not a consequence of $R$-linearity' - both substantive: each names a real strengthening that the definition depends on.",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). L26 '$R$ is a commutative ring, not a field' and L28 'is a genuine hypothesis and not a consequence of $R$-linearity' - both substantive: each names a real strengthening that the definition depends on.",
         "notes": "no fix needed"
       }
     ],
@@ -1634,7 +1634,7 @@
         "reviewed_at": "2026-08-22T06:08:13.986Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
         "notes": "no fix needed"
       }
     ],
@@ -1670,7 +1670,7 @@
         "reviewed_at": "2026-08-22T06:08:14.025Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). 1 spaced em-dash construction(s); LaTeX '--' occurrences are name-internal (Maurer--Cartan, Frobenius--Hopf, Tannaka--Krein), not sentence punctuation",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). 1 spaced em-dash construction(s); LaTeX '--' occurrences are name-internal (Maurer--Cartan, Frobenius--Hopf, Tannaka--Krein), not sentence punctuation",
         "notes": "no fix needed"
       }
     ],
@@ -1706,7 +1706,7 @@
         "reviewed_at": "2026-08-22T06:08:14.065Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). no reflex three-item list; enumerations present are content-determined",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). no reflex three-item list; enumerations present are content-determined",
         "notes": "no fix needed"
       }
     ],
@@ -1742,7 +1742,7 @@
         "reviewed_at": "2026-08-22T06:08:14.103Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). final sentence is \"It is stated here because the rest of the paper uses it silently — for instance in taking the substrate parameter $q \\in \\mathrm{End}(\\mathbf{1})$.\" - a substantive statement, not a placed quotable closer",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). final sentence is \"It is stated here because the rest of the paper uses it silently — for instance in taking the substrate parameter $q \\in \\mathrm{End}(\\mathbf{1})$.\" - a substantive statement, not a placed quotable closer",
         "notes": "no fix needed"
       }
     ],
@@ -1778,7 +1778,7 @@
         "reviewed_at": "2026-08-22T06:08:14.142Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). L26 read 'The two clauses coincide only over a field, which is what allowed the weaker reading to pass unnoticed.' - the trailing clause narrates the manuscript's own drafting history inside scholarly prose (an authorNotes-class status remark per AGENTS.md 4d / one-voice Category H).",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). L26 read 'The two clauses coincide only over a field, which is what allowed the weaker reading to pass unnoticed.' - the trailing clause narrates the manuscript's own drafting history inside scholarly prose (an authorNotes-class status remark per AGENTS.md 4d / one-voice Category H).",
         "notes": "FIX APPLIED: 'The two clauses coincide only over a field, which is what allowed the weaker reading to pass unnoticed.' -> 'The two clauses coincide only over a field.' Follow-up (not applied, touches the .ts): the deleted clause could be migrated to authorNotes with kind 'note' if the drafting history is worth keeping."
       }
     ],
@@ -1814,7 +1814,7 @@
         "reviewed_at": "2026-08-22T06:08:14.181Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). final sentence is \"It is stated here because the rest of the paper uses it silently — for instance in taking the substrate parameter $q \\in \\mathrm{End}(\\mathbf{1})$.\" - it advances or points forward rather than restating what the block already established",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). final sentence is \"It is stated here because the rest of the paper uses it silently — for instance in taking the substrate parameter $q \\in \\mathrm{End}(\\mathbf{1})$.\" - it advances or points forward rather than restating what the block already established",
         "notes": "no fix needed"
       }
     ],
@@ -1850,7 +1850,7 @@
         "reviewed_at": "2026-08-22T06:08:14.218Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
         "notes": "no fix needed"
       }
     ],
@@ -1886,7 +1886,7 @@
         "reviewed_at": "2026-08-22T06:08:14.257Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
         "notes": "no fix needed"
       }
     ],
@@ -1922,7 +1922,7 @@
         "reviewed_at": "2026-08-22T06:08:14.293Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). prose reads aloud without stalling; no noun-chain built for the eye only",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). prose reads aloud without stalling; no noun-chain built for the eye only",
         "notes": "no fix needed"
       }
     ],

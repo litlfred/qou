@@ -3,8 +3,8 @@
   "label": "prf:q-zero-complex-extension",
   "kind": "proof",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension-proof.ts",
-    "md": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension-proof.md"
+    "ts": "folio/quantum-observable-universe/mass-theory/q-zero-complex-extension-proof.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/q-zero-complex-extension-proof.md"
   },
   "source_hashes": {
     "md": "71a84e906a76",
@@ -896,7 +896,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension-proof.md:1 \u2014 detected regime [mod-gt-1] is disjoint from chapter 'mass-theory' expected [fixed-q0, generic-R, na, real-gt-1, real-positive, symbolic]"
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-zero-complex-extension-proof.md:1 \u2014 detected regime [mod-gt-1] is disjoint from chapter 'mass-theory' expected [fixed-q0, generic-R, na, real-gt-1, real-positive, symbolic]"
       }
     ],
     "proof-no-trivial-skeleton": [

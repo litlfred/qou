@@ -3,9 +3,9 @@
   "label": "prop:trace-locality-meets-gs-non-locality",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/Observations/TraceLocalityMeetsGsNonLocality.lean"
+    "ts": "folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts",
+    "md": "folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/Observations/TraceLocalityMeetsGsNonLocality.lean"
   },
   "source_hashes": {
     "md": "814a69deea35",
@@ -717,7 +717,7 @@
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:0: forward ref: uses thm:jones-markov-trace (manifest pos 20) which appears after this block (pos 16) in the chapter"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:0: forward ref: uses thm:jones-markov-trace (manifest pos 20) which appears after this block (pos 16) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1421,7 +1421,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Checked mathematical consistency of the claim '**Proposition (locality–non-locality reconciliation).**' and found no counterexamples under the stated conditions.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
       },
       {
         "result": "pass",
@@ -1486,7 +1486,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Traced dependencies ['thm:jones-markov-trace', 'rem:non-commutative-probability-dictionary'] for 'prop:trace-locality-meets-gs-non-locality' and confirmed no circular definitions or justifications.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
       },
       {
         "result": "pass",
@@ -1551,7 +1551,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
       },
       {
         "result": "pass",
@@ -1584,7 +1584,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Logical transitions in the derivation of '**Proposition (locality–non-locality reconciliation).**' are sound; no non-sequiturs detected.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
       },
       {
         "result": "pass",
@@ -1649,7 +1649,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All references and uses ['thm:jones-markov-trace', 'rem:non-commutative-probability-dictionary'] cited in 'prop:trace-locality-meets-gs-non-locality' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
       },
       {
         "result": "pass",
@@ -1682,7 +1682,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All terms and algebraic structures in 'prop:trace-locality-meets-gs-non-locality' are uniquely defined or standard.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
       },
       {
         "result": "pass",
@@ -1715,7 +1715,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The algebraic statements in 'prop:trace-locality-meets-gs-non-locality' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
       },
       {
         "result": "pass",
@@ -1748,7 +1748,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Physical dimensions and units in 'prop:trace-locality-meets-gs-non-locality' are consistent with quantum observable universe models.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
       },
       {
         "result": "pass",
@@ -1781,7 +1781,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All backing computations and proofs are fully reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
       },
       {
         "result": "pass",

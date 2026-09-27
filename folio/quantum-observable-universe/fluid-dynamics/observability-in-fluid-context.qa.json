@@ -3,8 +3,8 @@
   "label": "rem:observability-fluid-context",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/fluid-dynamics/observability-in-fluid-context.ts",
-    "md": "content/quantum-observable-universe/fluid-dynamics/observability-in-fluid-context.md"
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/observability-in-fluid-context.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/observability-in-fluid-context.md"
   },
   "source_hashes": {
     "md": "4b24af4f814e",
@@ -118,7 +118,7 @@
         "reviewed_at": "2026-08-09T13:00:33.718Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/observability-in-fluid-context.md:29: This structural leak would provide a persistent **regularity mechanism**: vorticity would dissipate cleanly into the integrable direction rather than concentrating into a blowup."
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/observability-in-fluid-context.md:29: This structural leak would provide a persistent **regularity mechanism**: vorticity would dissipate cleanly into the integrable direction rather than concentrating into a blowup."
       }
     ],
     "voice-scholarly-default": [
@@ -588,7 +588,7 @@
         "reviewed_at": "2026-08-09T13:00:33.718Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/observability-in-fluid-context.ts:0: forward ref: uses prop:core-levi-form (manifest pos 55) which appears after this block (pos 47) in the chapter"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/observability-in-fluid-context.ts:0: forward ref: uses prop:core-levi-form (manifest pos 55) which appears after this block (pos 47) in the chapter"
       }
     ],
     "detangler-section-band": [

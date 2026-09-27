@@ -3,9 +3,9 @@
   "label": "rem:feynman-qou-dictionary",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/feynman-qou-dictionary.ts",
-    "md": "content/quantum-observable-universe/mass-theory/feynman-qou-dictionary.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/feynman-qou-dictionary.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/feynman-qou-dictionary.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean"
   },
   "source_hashes": {
     "md": "c94c21f9bebc",
@@ -644,7 +644,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/feynman-qou-dictionary.ts:0: forward ref: uses prop:feynman-classical-limit (manifest pos 297) which appears after this block (pos 295) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/feynman-qou-dictionary.ts:0: forward ref: uses prop:feynman-classical-limit (manifest pos 297) which appears after this block (pos 295) in the chapter"
       }
     ],
     "detangler-section-band": [

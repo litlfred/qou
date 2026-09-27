@@ -3,9 +3,9 @@
   "label": "conj:dilogarithm-archimedean-limit",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.ts",
-    "md": "content/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.md",
-    "lean": "content/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.lean"
   },
   "source_hashes": {
     "md": "d16c24df161e",
@@ -977,7 +977,7 @@
         "reviewed_at": "2026-07-07T14:26:56.801927Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.ts:1",
         "severity": "minor"
       },
       {
@@ -1044,7 +1044,7 @@
         "reviewed_at": "2026-07-07T14:26:56.801927Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.ts:1",
         "severity": "minor"
       },
       {
@@ -1111,7 +1111,7 @@
         "reviewed_at": "2026-07-07T14:26:56.801927Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.ts:1",
         "severity": "minor"
       },
       {
@@ -1145,7 +1145,7 @@
         "reviewed_at": "2026-07-07T14:26:56.801927Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.ts:1",
         "severity": "minor"
       },
       {
@@ -1212,7 +1212,7 @@
         "reviewed_at": "2026-07-07T14:26:56.801927Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.ts:1",
         "severity": "minor"
       },
       {
@@ -1246,7 +1246,7 @@
         "reviewed_at": "2026-07-07T14:26:56.801927Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.ts:1",
         "severity": "minor"
       },
       {
@@ -1280,7 +1280,7 @@
         "reviewed_at": "2026-07-07T14:26:56.801927Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.ts:1",
         "severity": "minor"
       },
       {
@@ -1314,7 +1314,7 @@
         "reviewed_at": "2026-07-07T14:26:56.801927Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.ts:1",
         "severity": "minor"
       },
       {
@@ -1348,7 +1348,7 @@
         "reviewed_at": "2026-07-07T14:26:56.801927Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.lean:1 — content/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/Archimedean/DilogarithmArchimedeanLimit.olean' of module QOU.Archimedean.DilogarithmArchimedeanLimit does not exist",
+        "evidence": "folio/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.lean:1 — folio/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/Archimedean/DilogarithmArchimedeanLimit.olean' of module QOU.Archimedean.DilogarithmArchimedeanLimit does not exist",
         "severity": "minor"
       },
       {

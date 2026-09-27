@@ -10,7 +10,7 @@ verified by Lean — the only unproved input is the class instance.
 
 **Formal-chain version.**  This file lives under `lean/QOU/` and is
 compiled by `lake build`.  The co-located documentation stub at
-`content/quantum-observable-universe/braids-and-knots/kashaev-volume-conjecture.lean`
+`folio/quantum-observable-universe/braids-and-knots/kashaev-volume-conjecture.lean`
 mirrors this content for `.md`-rendering / sibling-resolution purposes
 (per `QOU.GroundRingAnnotations`).
 

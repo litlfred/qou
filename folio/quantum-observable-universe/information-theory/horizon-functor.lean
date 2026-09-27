@@ -17,7 +17,7 @@ Source declaration: `QOU.HorizonFunctor` in jet-horizon.lean
 
 -- Prerequisite types mirrored from the `QOU.JetHorizon` library module so this
 -- co-location extract compiles standalone. The canonical definitions live in
--- `content/quantum-observable-universe/lean/QOU/JetHorizon.lean` (Lake-built
+-- `folio/quantum-observable-universe/lean/QOU/JetHorizon.lean` (Lake-built
 -- under the `qou` package); these copies keep the file independently checkable
 -- by `lean`-direct without depending on the (uncached) library olean.
 

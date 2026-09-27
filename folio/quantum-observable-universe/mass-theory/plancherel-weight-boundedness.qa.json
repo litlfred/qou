@@ -3,9 +3,9 @@
   "label": "prop:plancherel-weight-boundedness",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/plancherel-weight-boundedness.ts",
-    "md": "content/quantum-observable-universe/mass-theory/plancherel-weight-boundedness.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/PlancherelWeightBoundedness.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/plancherel-weight-boundedness.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/plancherel-weight-boundedness.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/BraidKnot/PlancherelWeightBoundedness.lean"
   },
   "source_hashes": {
     "md": "02b301ac6229",
@@ -704,7 +704,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/plancherel-weight-boundedness.ts:0: forward ref: uses prop:unified-curvature-rank-mass-formula (manifest pos 570) which appears after this block (pos 566) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/plancherel-weight-boundedness.ts:0: forward ref: uses prop:unified-curvature-rank-mass-formula (manifest pos 570) which appears after this block (pos 566) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1225,7 +1225,7 @@
         },
         "reviewed_at": "2026-06-28T10:58:38.356Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/plancherel-weight-boundedness.lean is missing entirely.",
+        "notes": "The sibling Lean file folio/quantum-observable-universe/mass-theory/plancherel-weight-boundedness.lean is missing entirely.",
         "severity": "minor",
         "evidence": "plancherel-weight-boundedness.md:1"
       },
@@ -1295,7 +1295,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/BraidKnot/PlancherelWeightBoundedness.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/BraidKnot/PlancherelWeightBoundedness.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -2053,11 +2053,11 @@
         },
         "reviewed_at": "2026-06-28T10:58:38.504Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/mass-theory/plancherel-weight-boundedness.lean is missing.",
+        "notes": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/mass-theory/plancherel-weight-boundedness.lean is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The required sibling Lean file content/quantum-observable-universe/mass-theory/plancherel-weight-boundedness.lean is missing entirely, leaving the mathematical claims unverified.",
-        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/mass-theory/plancherel-weight-boundedness.lean is missing."
+        "referee_argument": "The required sibling Lean file folio/quantum-observable-universe/mass-theory/plancherel-weight-boundedness.lean is missing entirely, leaving the mathematical claims unverified.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/mass-theory/plancherel-weight-boundedness.lean is missing."
       },
       {
         "field_hash": {

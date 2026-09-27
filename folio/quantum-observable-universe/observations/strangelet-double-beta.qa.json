@@ -3,9 +3,9 @@
   "label": "prop:strangelet-double-beta",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/observations/strangelet-double-beta.ts",
-    "md": "content/quantum-observable-universe/observations/strangelet-double-beta.md",
-    "lean": "content/quantum-observable-universe/observations/strangelet-double-beta.lean"
+    "ts": "folio/quantum-observable-universe/observations/strangelet-double-beta.ts",
+    "md": "folio/quantum-observable-universe/observations/strangelet-double-beta.md",
+    "lean": "folio/quantum-observable-universe/observations/strangelet-double-beta.lean"
   },
   "source_hashes": {
     "md": "8a83cdfe5305",
@@ -1399,7 +1399,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claim in 'Strangelet interactions descend from the degree-2 fiber via double beta decay' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/strangelet-double-beta.lean:1"
+        "evidence": "folio/quantum-observable-universe/observations/strangelet-double-beta.lean:1"
       }
     ],
     "da-vacuous": [
@@ -1442,7 +1442,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Strangelet interactions descend from the degree-2 fiber via double beta decay'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/strangelet-double-beta.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/strangelet-double-beta.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1504,7 +1504,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Strangelet interactions descend from the degree-2 fiber via double beta decay'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/strangelet-double-beta.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/strangelet-double-beta.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1524,9 +1524,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.568353Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/observations/strangelet-double-beta.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/observations/strangelet-double-beta.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/strangelet-double-beta.lean:1"
+        "evidence": "folio/quantum-observable-universe/observations/strangelet-double-beta.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1546,9 +1546,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.568353Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean sibling content/quantum-observable-universe/observations/strangelet-double-beta.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/observations/strangelet-double-beta.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/observations/strangelet-double-beta.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/observations/strangelet-double-beta.lean fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -1585,7 +1585,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Strangelet interactions descend from the degree-2 fiber via double beta decay', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/strangelet-double-beta.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/strangelet-double-beta.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1607,7 +1607,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Strangelet interactions descend from the degree-2 fiber via double beta decay' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/strangelet-double-beta.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/strangelet-double-beta.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1629,7 +1629,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Strangelet interactions descend from the degree-2 fiber via double beta decay' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/strangelet-double-beta.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/strangelet-double-beta.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1649,7 +1649,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Strangelet interactions descend from the degree-2 fiber via double beta decay' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/strangelet-double-beta.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/strangelet-double-beta.ts:1"
       },
       {
         "field_hash": {
@@ -1689,9 +1689,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.568353Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean sibling content/quantum-observable-universe/observations/strangelet-double-beta.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/observations/strangelet-double-beta.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/strangelet-double-beta.lean:1 \u2014 content/quantum-observable-universe/observations/strangelet-double-beta.lean:66:52: error: unsolved goals"
+        "evidence": "folio/quantum-observable-universe/observations/strangelet-double-beta.lean:1 \u2014 folio/quantum-observable-universe/observations/strangelet-double-beta.lean:66:52: error: unsolved goals"
       },
       {
         "field_hash": {
@@ -1726,11 +1726,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.568353Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/strangelet-double-beta.lean fails compilation: content/quantum-observable-universe/observations/strangelet-double-beta.lean:66:52: error: unsolved goals",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/observations/strangelet-double-beta.lean fails compilation: folio/quantum-observable-universe/observations/strangelet-double-beta.lean:66:52: error: unsolved goals",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/strangelet-double-beta.lean contains compilation errors: content/quantum-observable-universe/observations/strangelet-double-beta.lean:66:52: error: unsolved goals, invalidating the claimed formalization.",
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/observations/strangelet-double-beta.lean contains compilation errors: folio/quantum-observable-universe/observations/strangelet-double-beta.lean:66:52: error: unsolved goals, invalidating the claimed formalization.",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/strangelet-double-beta.lean fails compilation: content/quantum-observable-universe/observations/strangelet-double-beta.lean:66:52: error: unsolved goals"
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/observations/strangelet-double-beta.lean fails compilation: folio/quantum-observable-universe/observations/strangelet-double-beta.lean:66:52: error: unsolved goals"
       },
       {
         "field_hash": {

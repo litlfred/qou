@@ -3,9 +3,9 @@
   "label": "prop:parity-violation-skein",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/parity-violation-skein.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/parity-violation-skein.md",
-    "lean": "content/quantum-observable-universe/predicted-spectra/parity-violation-skein.lean"
+    "ts": "folio/quantum-observable-universe/predicted-spectra/parity-violation-skein.ts",
+    "md": "folio/quantum-observable-universe/predicted-spectra/parity-violation-skein.md",
+    "lean": "folio/quantum-observable-universe/predicted-spectra/parity-violation-skein.lean"
   },
   "source_hashes": {
     "md": "1e7c3854f058",
@@ -903,7 +903,7 @@
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/parity-violation-skein.ts:0: forward ref: uses prop:reidemeister-action-table (manifest pos 193) which appears after this block (pos 157) in the chapter"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/parity-violation-skein.ts:0: forward ref: uses prop:reidemeister-action-table (manifest pos 193) which appears after this block (pos 157) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1063,7 +1063,7 @@
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/parity-violation-skein.ts:0: uses[] dependency cycle: prop:parity-violation-skein -> def:beta-decay-skein -> def:positron-knot -> rem:chirality-trefoil-electron-positron -> prop:antiparticle-crossing-reversal -> def:knot-particle-generation -> rem:knot-particle-dictionary -> rem:building-block-knots -> def:antineutrino-knot -> prop:parity-violation-skein"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/parity-violation-skein.ts:0: uses[] dependency cycle: prop:parity-violation-skein -> def:beta-decay-skein -> def:positron-knot -> rem:chirality-trefoil-electron-positron -> prop:antiparticle-crossing-reversal -> def:knot-particle-generation -> rem:knot-particle-dictionary -> rem:building-block-knots -> def:antineutrino-knot -> prop:parity-violation-skein"
       }
     ],
     "bib-cited-ref-has-url": [

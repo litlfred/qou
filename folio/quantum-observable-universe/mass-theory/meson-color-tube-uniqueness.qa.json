@@ -3,9 +3,9 @@
   "label": "prop:meson-color-tube-uniqueness",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts",
-    "md": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.md",
-    "lean": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean"
   },
   "source_hashes": {
     "md": "1326ca3262bf",
@@ -1219,7 +1219,7 @@
         "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:1 \u2014 Lean file exists",
+        "evidence": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:1 \u2014 Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1240,7 +1240,7 @@
         "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean proof contains compilation errors.",
-        "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:1 \u2014 content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:143:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
+        "evidence": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:1 \u2014 folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:143:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
         "severity": "minor"
       }
     ],
@@ -1257,7 +1257,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1666,7 +1666,7 @@
         "rebuttal": "rebutted \u2014 given (3,4), [3]_q\u00b7[4]_q is parameter-free (= q-CG fusion [2]_q+[4]_q+[6]_q, sibling meson-qcg-fusion-identity.lean:37-43 real field_simp;ring), and the \u03b1_em correction is an explicitly ACKNOWLEDGED CLASS-A anchor, not a hidden continuous DOF. The discrete (3,4) choice is the un-derived part \u2014 re-scoped to da-overclaim, not a hidden tuning parameter.",
         "evidence": [
           {
-            "text": "content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.lean:37-43"
+            "text": "folio/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.lean:37-43"
           },
           {
             "text": "computations/per-observable-100x-status.witness.json"
@@ -1724,10 +1724,10 @@
         "rebuttal": "rebutted \u2014 both exist with the cited namespace QOU.BraidKnot: meson_qCG_3x4 at meson-qcg-fusion-identity.lean:37, meson_EM_closed_form at meson-em-sinh-closed-form.lean:38. jones1987 (references.ts:906), wenzl1988 (:3443) resolve. No misuse.",
         "evidence": [
           {
-            "text": "content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.lean:37"
+            "text": "folio/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.lean:37"
           },
           {
-            "text": "content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.lean:38"
+            "text": "folio/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.lean:38"
           }
         ],
         "severity": "minor",
@@ -1839,7 +1839,7 @@
         "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
         "severity": "minor"
       },
       {
@@ -1886,7 +1886,7 @@
         "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
         "severity": "minor"
       },
       {
@@ -1933,7 +1933,7 @@
         "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
         "severity": "minor"
       },
       {
@@ -1980,7 +1980,7 @@
         "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
         "severity": "minor"
       },
       {
@@ -2027,7 +2027,7 @@
         "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
         "severity": "minor"
       },
       {
@@ -2074,7 +2074,7 @@
         "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:1 \u2014 content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:143:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
+        "evidence": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:1 \u2014 folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:143:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
         "severity": "minor"
       },
       {

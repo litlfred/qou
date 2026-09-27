@@ -20,10 +20,10 @@ import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
 /-!
 # QOU.CategoricalInstanton
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/CategoricalInstanton.lean (monolithic).
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/CategoricalInstanton.lean (monolithic).
 That file no longer exists — the library was split, and `CategoricalInstanton` now lives at
-  content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean
+  folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean
 -/
 
 open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory

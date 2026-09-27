@@ -3,8 +3,8 @@
   "label": "outro-quantum-universes",
   "kind": "prose",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-universes/outro-quantum-universes.ts",
-    "md": "content/quantum-observable-universe/quantum-universes/outro-quantum-universes.md"
+    "ts": "folio/quantum-observable-universe/quantum-universes/outro-quantum-universes.ts",
+    "md": "folio/quantum-observable-universe/quantum-universes/outro-quantum-universes.md"
   },
   "source_hashes": {
     "md": "98d8f02ad687",
@@ -169,7 +169,7 @@
         "reviewed_at": "2026-08-22T06:08:08.008Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/outro-quantum-universes.md (3 lines, kind=prose, title=\"Chapter close - Quantum Universes\"). searched for assert-by-denying constructions ('not X but Y', 'X, not Y', 'rather than'); none present beyond substantive mathematical contrast that is itself the block's claim",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/outro-quantum-universes.md (3 lines, kind=prose, title=\"Chapter close - Quantum Universes\"). searched for assert-by-denying constructions ('not X but Y', 'X, not Y', 'rather than'); none present beyond substantive mathematical contrast that is itself the block's claim",
         "notes": "no fix needed"
       }
     ],
@@ -205,7 +205,7 @@
         "reviewed_at": "2026-08-22T06:08:08.046Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/outro-quantum-universes.md (3 lines, kind=prose, title=\"Chapter close - Quantum Universes\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/outro-quantum-universes.md (3 lines, kind=prose, title=\"Chapter close - Quantum Universes\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
         "notes": "no fix needed"
       }
     ],
@@ -241,7 +241,7 @@
         "reviewed_at": "2026-08-22T06:08:08.083Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/outro-quantum-universes.md (3 lines, kind=prose, title=\"Chapter close - Quantum Universes\"). 0 spaced em-dash construction(s); LaTeX '--' occurrences are name-internal (Maurer--Cartan, Frobenius--Hopf, Tannaka--Krein), not sentence punctuation",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/outro-quantum-universes.md (3 lines, kind=prose, title=\"Chapter close - Quantum Universes\"). 0 spaced em-dash construction(s); LaTeX '--' occurrences are name-internal (Maurer--Cartan, Frobenius--Hopf, Tannaka--Krein), not sentence punctuation",
         "notes": "no fix needed"
       }
     ],
@@ -277,7 +277,7 @@
         "reviewed_at": "2026-08-22T06:08:08.124Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/outro-quantum-universes.md (3 lines, kind=prose, title=\"Chapter close - Quantum Universes\"). no reflex three-item list; enumerations present are content-determined",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/outro-quantum-universes.md (3 lines, kind=prose, title=\"Chapter close - Quantum Universes\"). no reflex three-item list; enumerations present are content-determined",
         "notes": "no fix needed"
       }
     ],
@@ -313,7 +313,7 @@
         "reviewed_at": "2026-08-22T06:08:08.165Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/outro-quantum-universes.md (3 lines, kind=prose, title=\"Chapter close - Quantum Universes\"). final sentence is \"The following chapters trace the consequences of that deformation.\" - a substantive statement, not a placed quotable closer",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/outro-quantum-universes.md (3 lines, kind=prose, title=\"Chapter close - Quantum Universes\"). final sentence is \"The following chapters trace the consequences of that deformation.\" - a substantive statement, not a placed quotable closer",
         "notes": "no fix needed"
       }
     ],
@@ -349,7 +349,7 @@
         "reviewed_at": "2026-08-22T06:08:08.202Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/outro-quantum-universes.md (3 lines, kind=prose, title=\"Chapter close - Quantum Universes\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/outro-quantum-universes.md (3 lines, kind=prose, title=\"Chapter close - Quantum Universes\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
         "notes": "no fix needed"
       }
     ],
@@ -385,7 +385,7 @@
         "reviewed_at": "2026-08-22T06:08:08.241Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "major",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/outro-quantum-universes.md (3 lines, kind=prose, title=\"Chapter close - Quantum Universes\"). Chapter-close block; final line 'The following chapters trace the consequences of that deformation.' points forward rather than restating, and the cross-reference-closer false-positive class applies.",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/outro-quantum-universes.md (3 lines, kind=prose, title=\"Chapter close - Quantum Universes\"). Chapter-close block; final line 'The following chapters trace the consequences of that deformation.' points forward rather than restating, and the cross-reference-closer false-positive class applies.",
         "notes": "no fix needed"
       }
     ],
@@ -421,7 +421,7 @@
         "reviewed_at": "2026-08-22T06:08:08.279Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/outro-quantum-universes.md (3 lines, kind=prose, title=\"Chapter close - Quantum Universes\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/outro-quantum-universes.md (3 lines, kind=prose, title=\"Chapter close - Quantum Universes\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
         "notes": "no fix needed"
       }
     ],
@@ -457,7 +457,7 @@
         "reviewed_at": "2026-08-22T06:08:08.317Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/outro-quantum-universes.md (3 lines, kind=prose, title=\"Chapter close - Quantum Universes\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/outro-quantum-universes.md (3 lines, kind=prose, title=\"Chapter close - Quantum Universes\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
         "notes": "no fix needed"
       }
     ],
@@ -493,7 +493,7 @@
         "reviewed_at": "2026-08-22T06:08:08.355Z",
         "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
         "severity": "minor",
-        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/outro-quantum-universes.md (3 lines, kind=prose, title=\"Chapter close - Quantum Universes\"). prose reads aloud without stalling; no noun-chain built for the eye only",
+        "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/outro-quantum-universes.md (3 lines, kind=prose, title=\"Chapter close - Quantum Universes\"). prose reads aloud without stalling; no noun-chain built for the eye only",
         "notes": "no fix needed"
       }
     ]

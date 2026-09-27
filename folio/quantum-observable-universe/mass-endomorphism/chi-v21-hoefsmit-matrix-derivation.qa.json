@@ -3,9 +3,9 @@
   "label": "rem:chi-v21-hoefsmit-matrix-derivation",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.ts",
-    "md": "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.md",
-    "lean": "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean"
+    "ts": "folio/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.ts",
+    "md": "folio/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.md",
+    "lean": "folio/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean"
   },
   "source_hashes": {
     "md": "087f04d175d7",
@@ -407,7 +407,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean:167 — positivity-dependent Real.* on q without explicit hypothesis — off-diagonal as `Real.sqrt (hoefsmit_v21_b_sq q)` without an explicit | content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean:172 — positivity-dependent Real.* on q without explicit hypothesis — !![hoefsmit_v21_d1 q, Real.sqrt (hoefsmit_v21_b_sq q); | content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean:173 — positivity-dependent Real.* on q without explicit hypothesis — Real.sqrt (hoefsmit_v21_b_sq q), hoefsmit_v21_d2 q] | content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean:249 — positivity-dependent Real.* on q without explicit hypothesis — have h_sqrt : (Real.sqrt (hoefsmit_v21_b_sq q))^2 = hoefsmit_v21_b_sq q := Real.sq_sqrt h_b_sq"
+        "evidence": "folio/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean:167 — positivity-dependent Real.* on q without explicit hypothesis — off-diagonal as `Real.sqrt (hoefsmit_v21_b_sq q)` without an explicit | folio/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean:172 — positivity-dependent Real.* on q without explicit hypothesis — !![hoefsmit_v21_d1 q, Real.sqrt (hoefsmit_v21_b_sq q); | folio/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean:173 — positivity-dependent Real.* on q without explicit hypothesis — Real.sqrt (hoefsmit_v21_b_sq q), hoefsmit_v21_d2 q] | folio/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean:249 — positivity-dependent Real.* on q without explicit hypothesis — have h_sqrt : (Real.sqrt (hoefsmit_v21_b_sq q))^2 = hoefsmit_v21_b_sq q := Real.sq_sqrt h_b_sq"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [

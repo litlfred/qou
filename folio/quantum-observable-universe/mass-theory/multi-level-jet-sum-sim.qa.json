@@ -3,8 +3,8 @@
   "label": "sim:multi-level-jet-sum",
   "kind": "simulator",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.ts",
-    "md": "content/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.md"
+    "ts": "folio/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.md"
   },
   "source_hashes": {
     "md": "01ba4719c80b",
@@ -836,7 +836,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No false claims identified in 'Multi-level jet-sum visualiser'; the stated logical claims are mathematically consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.ts:1"
       }
     ],
     "da-vacuous": [
@@ -873,7 +873,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Multi-level jet-sum visualiser'. The construction is derived from rem:mass-tower-syt-cells.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.ts:1"
       }
     ],
     "da-overclaim": [
@@ -910,7 +910,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Multi-level jet-sum visualiser'. All constants are canonically derived.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -929,7 +929,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The argument flow in 'Multi-level jet-sum visualiser' is logically sound, mapping onto the cited dependencies: rem:mass-tower-syt-cells.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -966,7 +966,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No citations are present in 'Multi-level jet-sum visualiser', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -985,7 +985,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols in 'Multi-level jet-sum visualiser' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1004,7 +1004,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The algebraic and logical relations in 'Multi-level jet-sum visualiser' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1023,7 +1023,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in 'Multi-level jet-sum visualiser' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1042,7 +1042,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'Multi-level jet-sum visualiser' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim.ts:1"
       }
     ],
     "da-referee-verdict": [

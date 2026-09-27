@@ -3,8 +3,8 @@
   "label": "rem:color-tube-interpretation",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/brings-surface/color-tube-interpretation.ts",
-    "md": "content/quantum-observable-universe/brings-surface/color-tube-interpretation.md"
+    "ts": "folio/quantum-observable-universe/brings-surface/color-tube-interpretation.ts",
+    "md": "folio/quantum-observable-universe/brings-surface/color-tube-interpretation.md"
   },
   "source_hashes": {
     "md": "0aa0dad6dcc7",
@@ -598,7 +598,7 @@
         "reviewed_at": "2026-08-09T13:00:24.315Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/brings-surface/color-tube-interpretation.ts:0: forward ref: uses rem:spectral-dynamics (manifest pos 60) which appears after this block (pos 33) in the chapter"
+        "evidence": "folio/quantum-observable-universe/brings-surface/color-tube-interpretation.ts:0: forward ref: uses rem:spectral-dynamics (manifest pos 60) which appears after this block (pos 33) in the chapter"
       }
     ],
     "detangler-section-band": [

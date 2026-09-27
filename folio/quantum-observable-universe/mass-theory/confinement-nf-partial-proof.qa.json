@@ -3,9 +3,9 @@
   "label": "prop:confinement-nf-partial-proof",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.ts",
-    "md": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.md",
-    "lean": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean"
   },
   "source_hashes": {
     "md": "6d5256cf44b3",
@@ -1178,7 +1178,7 @@
         "reviewed_at": "2026-07-07T14:26:56.898375Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean:1 \u2014 Lean file exists",
+        "evidence": "folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean:1 \u2014 Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1199,7 +1199,7 @@
         "reviewed_at": "2026-07-07T14:26:56.898375Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean proof contains compilation errors.",
-        "evidence": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean:1",
         "severity": "minor"
       }
     ],
@@ -1216,7 +1216,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1393,7 +1393,7 @@
         "reviewed_at": "2026-07-07T14:26:56.898375Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.ts:1",
         "severity": "minor"
       },
       {
@@ -1461,7 +1461,7 @@
         "reviewed_at": "2026-07-07T14:26:56.898375Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.ts:1",
         "severity": "minor"
       },
       {
@@ -1528,7 +1528,7 @@
         "reviewed_at": "2026-07-07T14:26:56.898375Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.ts:1",
         "severity": "minor"
       },
       {
@@ -1562,7 +1562,7 @@
         "reviewed_at": "2026-07-07T14:26:56.898375Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.ts:1",
         "severity": "minor"
       },
       {
@@ -1630,7 +1630,7 @@
         "reviewed_at": "2026-07-07T14:26:56.898375Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.ts:1",
         "severity": "minor"
       },
       {
@@ -1664,7 +1664,7 @@
         "reviewed_at": "2026-07-07T14:26:56.898375Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.ts:1",
         "severity": "minor"
       },
       {
@@ -1698,7 +1698,7 @@
         "reviewed_at": "2026-07-07T14:26:56.898375Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.ts:1",
         "severity": "minor"
       },
       {
@@ -1732,7 +1732,7 @@
         "reviewed_at": "2026-07-07T14:26:56.898375Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.ts:1",
         "severity": "minor"
       },
       {
@@ -1766,7 +1766,7 @@
         "reviewed_at": "2026-07-07T14:26:56.898375Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean:1 \u2014 content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean:44:11: error: Function expected at",
+        "evidence": "folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean:1 \u2014 folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean:44:11: error: Function expected at",
         "severity": "minor"
       },
       {
@@ -1799,11 +1799,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.898375Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean:44:11: error: Function expected at",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean:44:11: error: Function expected at",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean:44:11: error: Function expected at",
-        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean:44:11: error: Function expected at"
+        "referee_argument": "The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean:44:11: error: Function expected at",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean:44:11: error: Function expected at"
       },
       {
         "result": "pass",

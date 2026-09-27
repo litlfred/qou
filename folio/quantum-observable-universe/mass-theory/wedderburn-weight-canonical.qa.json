@@ -3,9 +3,9 @@
   "label": "prop:wedderburn-weight-canonical",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.ts",
-    "md": "content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.md",
-    "lean": "content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.lean"
   },
   "source_hashes": {
     "md": "cffc8d74038e",
@@ -564,7 +564,7 @@
         "reviewed_at": "2026-09-04T10:33:13.780Z",
         "reviewed_sha": "d0d473550aab3e691555029ff097e3fb9cf31f61",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.md:13: > **⚠ The Wenzl-bridge premise is FALSE on its own stratum (measured 2026-09-02).** The identity $y_\\lambda = \\tilde w_\\lambda$ for $\\kappa_\\lambda = \\sum_x c(x) = 0$ fails at **every** such partition"
+        "evidence": "folio/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.md:13: > **⚠ The Wenzl-bridge premise is FALSE on its own stratum (measured 2026-09-02).** The identity $y_\\lambda = \\tilde w_\\lambda$ for $\\kappa_\\lambda = \\sum_x c(x) = 0$ fails at **every** such partition"
       }
     ],
     "voice-first-person-work": [
@@ -626,7 +626,7 @@
         "reviewed_at": "2026-09-04T10:33:13.780Z",
         "reviewed_sha": "d0d473550aab3e691555029ff097e3fb9cf31f61",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.md:13: > **⚠ The Wenzl-bridge premise is FALSE on its own stratum (measured 2026-09-02).** The identity $y_\\lambda = \\tilde w_\\lambda$ for $\\kappa_\\lambda = \\sum_x c(x) = 0$ fails at **every** such partition"
+        "evidence": "folio/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.md:13: > **⚠ The Wenzl-bridge premise is FALSE on its own stratum (measured 2026-09-02).** The identity $y_\\lambda = \\tilde w_\\lambda$ for $\\kappa_\\lambda = \\sum_x c(x) = 0$ fails at **every** such partition"
       }
     ],
     "voice-editorializing": [
@@ -760,7 +760,7 @@
         "reviewed_at": "2026-09-04T10:33:13.780Z",
         "reviewed_sha": "d0d473550aab3e691555029ff097e3fb9cf31f61",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.md:13: P4:date-ref: > **⚠ The Wenzl-bridge premise is FALSE on its own stratum (measured 2026-09-02).** The identity $y_\\lambda = \\tilde w_\\lambda$ for $\\kappa_\\lambda = \\sum_x c(x) = 0$ fails at **every** such partition | content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.md:27: P4:date-ref: > **What this does *not* invalidate, which is most of the block.** `y_eq_self_conjugate` *was* a Lean **class field** (until 2026-09-04) — assumed, not proved — so nothing in the corpus was ever *prov | content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.md:29: P4:date-ref: > **Disposition (owner ruling, 2026-09-04): dropped.** Of the three options — restrict the field to $\\lambda = (1)$, drop it, or demote the block to a conjecture — the author chose to drop. The field "
+        "evidence": "folio/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.md:13: P4:date-ref: > **⚠ The Wenzl-bridge premise is FALSE on its own stratum (measured 2026-09-02).** The identity $y_\\lambda = \\tilde w_\\lambda$ for $\\kappa_\\lambda = \\sum_x c(x) = 0$ fails at **every** such partition | folio/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.md:27: P4:date-ref: > **What this does *not* invalidate, which is most of the block.** `y_eq_self_conjugate` *was* a Lean **class field** (until 2026-09-04) — assumed, not proved — so nothing in the corpus was ever *prov | folio/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.md:29: P4:date-ref: > **Disposition (owner ruling, 2026-09-04): dropped.** Of the three options — restrict the field to $\\lambda = (1)$, drop it, or demote the block to a conjecture — the author chose to drop. The field "
       }
     ],
     "voice-status-section": [
@@ -1388,7 +1388,7 @@
         "reviewed_at": "2026-09-04T10:33:13.780Z",
         "reviewed_sha": "d0d473550aab3e691555029ff097e3fb9cf31f61",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.ts:0: forward ref: uses prop:plancherel-weight-boundedness (manifest pos 607) which appears after this block (pos 524) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.ts:0: forward ref: uses prop:plancherel-weight-boundedness (manifest pos 607) which appears after this block (pos 524) in the chapter"
       }
     ],
     "detangler-section-band": [

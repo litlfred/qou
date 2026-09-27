@@ -3,9 +3,9 @@
   "label": "def:so3-generators",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/so3-generators.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/so3-generators.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/so3-generators.lean"
+    "ts": "folio/quantum-observable-universe/braids-and-knots/so3-generators.ts",
+    "md": "folio/quantum-observable-universe/braids-and-knots/so3-generators.md",
+    "lean": "folio/quantum-observable-universe/braids-and-knots/so3-generators.lean"
   },
   "source_hashes": {
     "md": "3eddc3049375",
@@ -1028,7 +1028,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Checked mathematical consistency of the claim 'Under the adjoint map to $\\mathrm{SO}(3)$ the generators of' and found no counterexamples under the stated conditions.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
       },
       {
         "result": "pass",
@@ -1095,7 +1095,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Traced dependencies ['def:su2-generators'] for 'def:so3-generators' and confirmed no circular definitions or justifications.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
       },
       {
         "result": "pass",
@@ -1162,7 +1162,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
       },
       {
         "result": "pass",
@@ -1196,7 +1196,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Logical transitions in the derivation of 'Under the adjoint map to $\\mathrm{SO}(3)$ the generators of' are sound; no non-sequiturs detected.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
       },
       {
         "result": "pass",
@@ -1264,7 +1264,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All references and uses ['def:su2-generators'] cited in 'def:so3-generators' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
       },
       {
         "result": "pass",
@@ -1298,7 +1298,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All terms and algebraic structures in 'def:so3-generators' are uniquely defined or standard.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
       },
       {
         "result": "pass",
@@ -1332,7 +1332,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The algebraic statements in 'def:so3-generators' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
       },
       {
         "result": "pass",
@@ -1366,7 +1366,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Physical dimensions and units in 'def:so3-generators' are consistent with quantum observable universe models.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
       },
       {
         "result": "pass",
@@ -1398,9 +1398,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.347896Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/so3-generators.lean:30:13: error: unexpected token 'section'; expected 'lemma'.",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: folio/quantum-observable-universe/braids-and-knots/so3-generators.lean:30:13: error: unexpected token 'section'; expected 'lemma'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/so3-generators.lean:1 — content/quantum-observable-universe/braids-and-knots/so3-generators.lean:30:13: error: unexpected token 'section'; expected 'lemma'"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/so3-generators.lean:1 — folio/quantum-observable-universe/braids-and-knots/so3-generators.lean:30:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "result": "pass",
@@ -1432,11 +1432,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.347896Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/so3-generators.lean:30:13: error: unexpected token 'section'; expected 'lemma'",
+        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/braids-and-knots/so3-generators.lean:30:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/so3-generators.lean:30:13: error: unexpected token 'section'; expected 'lemma'",
-        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/so3-generators.lean:30:13: error: unexpected token 'section'; expected 'lemma'"
+        "referee_argument": "The Lean sibling fails compilation with error: folio/quantum-observable-universe/braids-and-knots/so3-generators.lean:30:13: error: unexpected token 'section'; expected 'lemma'",
+        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/braids-and-knots/so3-generators.lean:30:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "result": "pass",

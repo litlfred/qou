@@ -2,7 +2,7 @@
   Knot-operator LP/SDP selection via Gram-inverse dual basis.
 
   Companion: knot-operator-lp-selection.md
-  Path: content/quantum-observable-universe/braids-and-knots/
+  Path: folio/quantum-observable-universe/braids-and-knots/
 
   Encodes the LP/SDP-duality selection of knot operators per
   confinement, using the Frobenius Gram-inverse as the dual basis.

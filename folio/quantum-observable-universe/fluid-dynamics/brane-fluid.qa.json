@@ -3,8 +3,8 @@
   "label": "sec:brane-fluid",
   "kind": "prose",
   "paths": {
-    "ts": "content/quantum-observable-universe/fluid-dynamics/brane-fluid.ts",
-    "md": "content/quantum-observable-universe/fluid-dynamics/brane-fluid.md"
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/brane-fluid.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/brane-fluid.md"
   },
   "source_hashes": {
     "md": "43cbb90658e9",
@@ -550,7 +550,7 @@
         "reviewed_at": "2026-08-09T13:00:33.718Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/brane-fluid.ts:0: forward ref: uses prop:discrete-vortex-spectrum (manifest pos 19) which appears after this block (pos 1) in the chapter"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/brane-fluid.ts:0: forward ref: uses prop:discrete-vortex-spectrum (manifest pos 19) which appears after this block (pos 1) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -697,7 +697,7 @@
         "reviewed_at": "2026-08-09T13:00:33.718Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/brane-fluid.ts:0: uses[] dependency cycle: sec:brane-fluid -> prop:discrete-vortex-spectrum -> rem:vortex-intensity-modes -> sec:brane-fluid"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/brane-fluid.ts:0: uses[] dependency cycle: sec:brane-fluid -> prop:discrete-vortex-spectrum -> rem:vortex-intensity-modes -> sec:brane-fluid"
       }
     ],
     "bib-cite-resolves": [

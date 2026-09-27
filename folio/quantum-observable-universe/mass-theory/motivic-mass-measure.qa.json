@@ -3,9 +3,9 @@
   "label": "def:motivic-mass-measure",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/motivic-mass-measure.ts",
-    "md": "content/quantum-observable-universe/mass-theory/motivic-mass-measure.md",
-    "lean": "content/quantum-observable-universe/mass-theory/motivic-mass-measure.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/motivic-mass-measure.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/motivic-mass-measure.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/motivic-mass-measure.lean"
   },
   "source_hashes": {
     "md": "3a8514018a45",
@@ -1192,7 +1192,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/motivic-mass-measure.ts:0: forward ref: uses thm:wedderburn-mass-formula (manifest pos 38) which appears after this block (pos 9) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/motivic-mass-measure.ts:0: forward ref: uses thm:wedderburn-mass-formula (manifest pos 38) which appears after this block (pos 9) in the chapter"
       }
     ],
     "detangler-section-band": [

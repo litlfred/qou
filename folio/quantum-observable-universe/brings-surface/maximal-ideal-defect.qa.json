@@ -3,9 +3,9 @@
   "label": "def:maximal-ideal-defect",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/brings-surface/maximal-ideal-defect.ts",
-    "md": "content/quantum-observable-universe/brings-surface/maximal-ideal-defect.md",
-    "lean": "content/quantum-observable-universe/brings-surface/maximal-ideal-defect.lean"
+    "ts": "folio/quantum-observable-universe/brings-surface/maximal-ideal-defect.ts",
+    "md": "folio/quantum-observable-universe/brings-surface/maximal-ideal-defect.md",
+    "lean": "folio/quantum-observable-universe/brings-surface/maximal-ideal-defect.lean"
   },
   "source_hashes": {
     "md": "a9fb548daf0c",
@@ -1225,8 +1225,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.041925Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/maximal-ideal-defect.lean:39:17: error(lean.unknownIdentifier): Unknown identifier `Algebra`",
-        "evidence": "content/quantum-observable-universe/brings-surface/maximal-ideal-defect.lean:1",
+        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/brings-surface/maximal-ideal-defect.lean:39:17: error(lean.unknownIdentifier): Unknown identifier `Algebra`",
+        "evidence": "folio/quantum-observable-universe/brings-surface/maximal-ideal-defect.lean:1",
         "severity": "minor"
       },
       {
@@ -1391,8 +1391,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.041925Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/maximal-ideal-defect.lean:39:17: error(lean.unknownIdentifier): Unknown identifier `Algebra`",
-        "evidence": "content/quantum-observable-universe/brings-surface/maximal-ideal-defect.lean:1",
+        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/brings-surface/maximal-ideal-defect.lean:39:17: error(lean.unknownIdentifier): Unknown identifier `Algebra`",
+        "evidence": "folio/quantum-observable-universe/brings-surface/maximal-ideal-defect.lean:1",
         "severity": "major"
       },
       {
@@ -1425,11 +1425,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.041925Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/maximal-ideal-defect.lean:39:17: error(lean.unknownIdentifier): Unknown identifier `Algebra`",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/maximal-ideal-defect.lean:39:17: error(lean.unknownIdentifier): Unknown identifier `Algebra`",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/maximal-ideal-defect.lean:39:17: error(lean.unknownIdentifier): Unknown identifier `Algebra`",
+        "referee_argument": "The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/maximal-ideal-defect.lean:39:17: error(lean.unknownIdentifier): Unknown identifier `Algebra`",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/maximal-ideal-defect.lean:39:17: error(lean.unknownIdentifier): Unknown identifier `Algebra`"
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/maximal-ideal-defect.lean:39:17: error(lean.unknownIdentifier): Unknown identifier `Algebra`"
       },
       {
         "result": "pass",

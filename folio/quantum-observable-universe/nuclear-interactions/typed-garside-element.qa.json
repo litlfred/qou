@@ -3,9 +3,9 @@
   "label": "def:typed-garside-element",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/nuclear-interactions/typed-garside-element.ts",
-    "md": "content/quantum-observable-universe/nuclear-interactions/typed-garside-element.md",
-    "lean": "content/quantum-observable-universe/nuclear-interactions/typed-garside-element.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/typed-garside-element.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/typed-garside-element.md",
+    "lean": "folio/quantum-observable-universe/nuclear-interactions/typed-garside-element.lean"
   },
   "source_hashes": {
     "md": "653c98ee92ac",
@@ -1018,7 +1018,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/particle-interactions/typed-garside-element.lean:57 [def-disguised-true] def typed_garside_leading_term | content/quantum-observable-universe/particle-interactions/typed-garside-element.lean:68 [def-disguised-true] def pure_proton_garside_is_standard",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean:57 [def-disguised-true] def typed_garside_leading_term | folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean:68 [def-disguised-true] def pure_proton_garside_is_standard",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1061,9 +1061,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The claim in 'Typed Garside element of the nuclear braid' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/typed-garside-element.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/HeckeAlgebra.olean' of module Mathlib.RingTheory.HeckeAlgebra does not exist.",
+        "notes": "The claim in 'Typed Garside element of the nuclear braid' is unverified due to Lean compilation failures: folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/HeckeAlgebra.olean' of module Mathlib.RingTheory.HeckeAlgebra does not exist.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/typed-garside-element.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean:1"
       },
       {
         "result": "pass",
@@ -1132,7 +1132,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Typed Garside element of the nuclear braid'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/typed-garside-element.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/typed-garside-element.ts:1"
       },
       {
         "result": "pass",
@@ -1202,7 +1202,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Typed Garside element of the nuclear braid'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/typed-garside-element.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/typed-garside-element.ts:1"
       },
       {
         "result": "pass",
@@ -1235,9 +1235,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/typed-garside-element.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/typed-garside-element.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean:1"
       },
       {
         "result": "pass",
@@ -1270,9 +1270,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/typed-garside-element.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/typed-garside-element.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1307,7 +1307,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Typed Garside element of the nuclear braid', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/typed-garside-element.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/typed-garside-element.ts:1"
       },
       {
         "result": "pass",
@@ -1342,7 +1342,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Typed Garside element of the nuclear braid' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/typed-garside-element.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/typed-garside-element.ts:1"
       },
       {
         "result": "pass",
@@ -1377,7 +1377,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Typed Garside element of the nuclear braid' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/typed-garside-element.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/typed-garside-element.ts:1"
       },
       {
         "result": "pass",
@@ -1412,7 +1412,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Typed Garside element of the nuclear braid' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/typed-garside-element.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/typed-garside-element.ts:1"
       },
       {
         "result": "pass",
@@ -1445,9 +1445,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/typed-garside-element.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/typed-garside-element.lean:1 — content/quantum-observable-universe/particle-interactions/typed-garside-element.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/HeckeAlgebra.olean' of module Mathlib.RingTheory.HeckeAlgebra does not exist"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean:1 — folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/HeckeAlgebra.olean' of module Mathlib.RingTheory.HeckeAlgebra does not exist"
       },
       {
         "result": "pass",
@@ -1480,11 +1480,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/typed-garside-element.lean fails compilation: content/quantum-observable-universe/particle-interactions/typed-garside-element.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/HeckeAlgebra.olean' of module Mathlib.RingTheory.HeckeAlgebra does not exist",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean fails compilation: folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/HeckeAlgebra.olean' of module Mathlib.RingTheory.HeckeAlgebra does not exist",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/typed-garside-element.lean for 'Typed Garside element of the nuclear braid' fails compilation with error: content/quantum-observable-universe/particle-interactions/typed-garside-element.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/HeckeAlgebra.olean' of module Mathlib.RingTheory.HeckeAlgebra does not exist. This invalidates the claim of formal verification.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/typed-garside-element.lean fails compilation: content/quantum-observable-universe/particle-interactions/typed-garside-element.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/HeckeAlgebra.olean' of module Mathlib.RingTheory.HeckeAlgebra does not exist"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean for 'Typed Garside element of the nuclear braid' fails compilation with error: folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/HeckeAlgebra.olean' of module Mathlib.RingTheory.HeckeAlgebra does not exist. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean fails compilation: folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/HeckeAlgebra.olean' of module Mathlib.RingTheory.HeckeAlgebra does not exist"
       },
       {
         "result": "pass",

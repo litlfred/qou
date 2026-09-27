@@ -3,9 +3,9 @@
   "label": "lem:qou-exists-axiom-4",
   "kind": "lemma",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.ts",
-    "md": "content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.md",
-    "lean": "content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean"
+    "ts": "folio/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.ts",
+    "md": "folio/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.md",
+    "lean": "folio/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean"
   },
   "source_hashes": {
     "md": "57bfedd46e27",
@@ -1410,7 +1410,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "qou-exists-axiom-4.lean:1",
-        "notes": "The mathematical claims in 'Axiom 4 — categorical volume constraint via the quantum determinant' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean:41:24: error: expected token."
+        "notes": "The mathematical claims in 'Axiom 4 — categorical volume constraint via the quantum determinant' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean:41:24: error: expected token."
       },
       {
         "result": "pass",
@@ -1585,7 +1585,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "qou-exists-axiom-4.lean:1",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean."
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean."
       },
       {
         "result": "pass",
@@ -1619,8 +1619,8 @@
         "reviewed_at": "2026-07-07T14:26:55.848861Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean fails compilation, causing divergence from the narrative.",
-        "evidence": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean fails compilation, causing divergence from the narrative."
+        "notes": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean fails compilation, causing divergence from the narrative.",
+        "evidence": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1794,8 +1794,8 @@
         "reviewed_at": "2026-07-07T14:26:55.848861Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "qou-exists-axiom-4.lean:1 — content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean:41:24: error: expected token",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean fails compilation, indicating a reproducibility failure."
+        "evidence": "qou-exists-axiom-4.lean:1 — folio/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean:41:24: error: expected token",
+        "notes": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean fails compilation, indicating a reproducibility failure."
       },
       {
         "result": "pass",
@@ -1829,10 +1829,10 @@
         "reviewed_at": "2026-07-07T14:26:55.848861Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "critical",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean:41:24: error: expected token",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean fails compilation: folio/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean:41:24: error: expected token",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean:41:24: error: expected token, invalidating the claimed formalization.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean:41:24: error: expected token"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean contains compilation errors: folio/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean:41:24: error: expected token, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean fails compilation: folio/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean:41:24: error: expected token"
       },
       {
         "result": "pass",

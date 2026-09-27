@@ -3,9 +3,9 @@
   "label": "prop:ns-obstruction-computation",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.ts",
-    "md": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/FluidDynamics/ns_obstruction_computation.lean"
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/FluidDynamics/ns_obstruction_computation.lean"
   },
   "source_hashes": {
     "md": "12a523e742cd",
@@ -644,7 +644,7 @@
         "reviewed_at": "2026-08-09T13:00:33.718Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.md:56: Fusing (a) and (b), the exact NS obstruction resting on the collision locus cleanly segregates into two pieces: | content/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.md:59: 2. **Analytic**: $\\delta_n|_\\Sigma$. This term avoids zero universally whenever the $n$-th jet of the operative velocity field cleanly diverges (holding for all $n \\geq 1$ under the anti-parallel conf | content/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.md:64: - If the Reeb field fundamentally **lacks a zero** at $p$ ($\\deg_p(\\xi) = 0$): the topological component cleanly vanishes, but the analytic component $\\delta_n|_\\Sigma \\neq 0$ stubbornly persists. The"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.md:56: Fusing (a) and (b), the exact NS obstruction resting on the collision locus cleanly segregates into two pieces: | folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.md:59: 2. **Analytic**: $\\delta_n|_\\Sigma$. This term avoids zero universally whenever the $n$-th jet of the operative velocity field cleanly diverges (holding for all $n \\geq 1$ under the anti-parallel conf | folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.md:64: - If the Reeb field fundamentally **lacks a zero** at $p$ ($\\deg_p(\\xi) = 0$): the topological component cleanly vanishes, but the analytic component $\\delta_n|_\\Sigma \\neq 0$ stubbornly persists. The"
       }
     ],
     "voice-scholarly-default": [

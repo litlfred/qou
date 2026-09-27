@@ -35,7 +35,7 @@ of these can be developed conditionally.
 
 ## Cross-references
 
-  - content/quantum-observable-universe/braids-and-knots/q-zero-stokes-region-identification.md
+  - folio/quantum-observable-universe/braids-and-knots/q-zero-stokes-region-identification.md
   - phi-q-aj-machinery-identification.lean (the Φ_q ↔ AJ duality)
   - docs/audits/2026-05-25-q0-into-character-variety-minimal-archimedean.md
 -/

@@ -3,9 +3,9 @@
   "label": "def:transfer-matrix-operator",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts",
-    "md": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.md",
-    "lean": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/transfer-matrix-operator.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/transfer-matrix-operator.lean"
   },
   "source_hashes": {
     "md": "e9dd0ff199f2",
@@ -603,7 +603,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:0: forward ref: uses prop:beta-decay-transfer-matrix (manifest pos 69) which appears after this block (pos 62) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:0: forward ref: uses prop:beta-decay-transfer-matrix (manifest pos 69) which appears after this block (pos 62) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -998,7 +998,7 @@
         "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.lean:1 — Lean file exists",
+        "evidence": "folio/quantum-observable-universe/mass-theory/transfer-matrix-operator.lean:1 — Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1019,7 +1019,7 @@
         "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
         "severity": "minor"
       },
       {
@@ -1086,7 +1086,7 @@
         "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
         "severity": "minor"
       },
       {
@@ -1153,7 +1153,7 @@
         "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
         "severity": "minor"
       },
       {
@@ -1187,7 +1187,7 @@
         "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
         "severity": "minor"
       },
       {
@@ -1255,7 +1255,7 @@
         "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
         "severity": "minor"
       },
       {
@@ -1289,7 +1289,7 @@
         "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
         "severity": "minor"
       },
       {
@@ -1323,7 +1323,7 @@
         "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
         "severity": "minor"
       },
       {
@@ -1357,7 +1357,7 @@
         "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
         "severity": "minor"
       },
       {
@@ -1391,7 +1391,7 @@
         "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.lean:1 — content/quantum-observable-universe/mass-theory/transfer-matrix-operator.lean:51:14: error(lean.unknownIdentifier): Unknown identifier `q_half`",
+        "evidence": "folio/quantum-observable-universe/mass-theory/transfer-matrix-operator.lean:1 — folio/quantum-observable-universe/mass-theory/transfer-matrix-operator.lean:51:14: error(lean.unknownIdentifier): Unknown identifier `q_half`",
         "severity": "minor"
       },
       {
@@ -1424,11 +1424,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/transfer-matrix-operator.lean:51:14: error(lean.unknownIdentifier): Unknown identifier `q_half`",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/transfer-matrix-operator.lean:51:14: error(lean.unknownIdentifier): Unknown identifier `q_half`",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/transfer-matrix-operator.lean:51:14: error(lean.unknownIdentifier): Unknown identifier `q_half`",
-        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/transfer-matrix-operator.lean:51:14: error(lean.unknownIdentifier): Unknown identifier `q_half`"
+        "referee_argument": "The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/transfer-matrix-operator.lean:51:14: error(lean.unknownIdentifier): Unknown identifier `q_half`",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/transfer-matrix-operator.lean:51:14: error(lean.unknownIdentifier): Unknown identifier `q_half`"
       },
       {
         "result": "pass",

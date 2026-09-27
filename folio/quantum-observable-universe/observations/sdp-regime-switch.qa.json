@@ -3,9 +3,9 @@
   "label": "prop:sdp-regime-switch",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/observations/sdp-regime-switch.ts",
-    "md": "content/quantum-observable-universe/observations/sdp-regime-switch.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/Observations/SDPRegimeSwitch.lean"
+    "ts": "folio/quantum-observable-universe/observations/sdp-regime-switch.ts",
+    "md": "folio/quantum-observable-universe/observations/sdp-regime-switch.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/Observations/SDPRegimeSwitch.lean"
   },
   "source_hashes": {
     "md": "56a88c894942",
@@ -1260,7 +1260,7 @@
         },
         "reviewed_at": "2026-06-24T17:45:00.000Z",
         "reviewed_sha": "96cc4894872db1695470f26723174b5284e7b907",
-        "notes": "Post-rebase reconcile: upstream discharged the Lean sorry; resolved decl now source sorry-free (content/quantum-observable-universe/lean/QOU/Observations/SDPRegimeSwitch.lean)."
+        "notes": "Post-rebase reconcile: upstream discharged the Lean sorry; resolved decl now source sorry-free (folio/quantum-observable-universe/lean/QOU/Observations/SDPRegimeSwitch.lean)."
       },
       {
         "result": "pass",
@@ -1438,7 +1438,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Discrete regime switches in SDP cross-channel couplings across isotopes': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1479,7 +1479,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Discrete regime switches in SDP cross-channel couplings across isotopes'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1520,7 +1520,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Discrete regime switches in SDP cross-channel couplings across isotopes'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1541,7 +1541,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The argument flow in 'Discrete regime switches in SDP cross-channel couplings across isotopes' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1560,9 +1560,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.623948Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The referenced Lean file content/quantum-observable-universe/observations/sdp-regime-switch.lean is missing, leading to complete divergence.",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/observations/sdp-regime-switch.lean is missing, leading to complete divergence.",
         "severity": "minor",
-        "evidence": "The referenced Lean file content/quantum-observable-universe/observations/sdp-regime-switch.lean is missing, leading to complete divergence."
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/observations/sdp-regime-switch.lean is missing, leading to complete divergence."
       }
     ],
     "da-citation-misuse": [
@@ -1583,7 +1583,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Discrete regime switches in SDP cross-channel couplings across isotopes', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1604,7 +1604,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Discrete regime switches in SDP cross-channel couplings across isotopes' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1623,7 +1623,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Discrete regime switches in SDP cross-channel couplings across isotopes' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
       },
       {
         "field_hash": {
@@ -1663,7 +1663,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Discrete regime switches in SDP cross-channel couplings across isotopes' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1684,7 +1684,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The derivation steps and formal definitions in 'Discrete regime switches in SDP cross-channel couplings across isotopes' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1703,11 +1703,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.623948Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/observations/sdp-regime-switch.lean is missing.",
+        "notes": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/observations/sdp-regime-switch.lean is missing.",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/observations/sdp-regime-switch.lean is missing, preventing formal verification of the claims in 'Discrete regime switches in SDP cross-channel couplings across isotopes'.",
+        "referee_argument": "The referenced Lean sibling file folio/quantum-observable-universe/observations/sdp-regime-switch.lean is missing, preventing formal verification of the claims in 'Discrete regime switches in SDP cross-channel couplings across isotopes'.",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/observations/sdp-regime-switch.lean is missing."
+        "evidence": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/observations/sdp-regime-switch.lean is missing."
       }
     ],
     "milnor-amalgamated-flow": [

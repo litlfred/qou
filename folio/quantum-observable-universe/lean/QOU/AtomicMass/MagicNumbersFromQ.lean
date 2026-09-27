@@ -225,8 +225,8 @@ theorem mem_predictedMagicNumbers (Z : ℕ) :
     covered by this `K = 10` second-difference test (it appears at
     a lower truncation level). -/
 -- Ref: [manuscript] observations/magic-numbers-from-q
--- Ref: [mayer1949] On closed shells in nuclei. II — see content/schema/references.ts
--- Ref: [mayer1955] Elementary Theory of Nuclear Shell Structure — see content/schema/references.ts
+-- Ref: [mayer1949] On closed shells in nuclei. II — see folio/schema/references.ts
+-- Ref: [mayer1955] Elementary Theory of Nuclear Shell Structure — see folio/schema/references.ts
 theorem magic_numbers_from_q :
     ∀ Z, Z ∈ [8, 20, 28] → delta2_Phi 10 Z q_zero > 0 := by
   intro Z hZ

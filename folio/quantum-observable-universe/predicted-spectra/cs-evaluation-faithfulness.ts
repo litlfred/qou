@@ -31,7 +31,7 @@ export default proposition({
         "`infinitely_many_nonzero`, the one theorem proved from the " +
         "structure, is pure logic over that data and inherits the same " +
         "placement.",
-      see: "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean",
+      see: "folio/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean",
     },
   ],
   label: "prop:cs-evaluation-faithfulness",

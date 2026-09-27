@@ -3,8 +3,8 @@
   "label": "def:quaternionic-spectral-resolvents",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.ts",
-    "md": "content/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.md"
+    "ts": "folio/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.ts",
+    "md": "folio/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.md"
   },
   "source_hashes": {
     "md": "4ada4987d844",
@@ -1111,8 +1111,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.084077Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:30:13: error: unexpected token 'section'; expected 'lemma'",
-        "evidence": "content/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:1",
+        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:30:13: error: unexpected token 'section'; expected 'lemma'",
+        "evidence": "folio/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:1",
         "severity": "minor"
       },
       {
@@ -1227,8 +1227,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.084077Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:30:13: error: unexpected token 'section'; expected 'lemma'",
-        "evidence": "content/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:1",
+        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:30:13: error: unexpected token 'section'; expected 'lemma'",
+        "evidence": "folio/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:1",
         "severity": "major"
       },
       {
@@ -1262,11 +1262,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.084077Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:30:13: error: unexpected token 'section'; expected 'lemma'",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:30:13: error: unexpected token 'section'; expected 'lemma'",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:30:13: error: unexpected token 'section'; expected 'lemma'",
+        "referee_argument": "The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:30:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:30:13: error: unexpected token 'section'; expected 'lemma'"
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:30:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "field_hash": {

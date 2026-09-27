@@ -3,9 +3,9 @@
   "label": "def:derived-atom",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/derived-atom.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/derived-atom.md",
-    "lean": "content/quantum-observable-universe/knots-particles-confinement/derived-atom.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/derived-atom.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/derived-atom.md",
+    "lean": "folio/quantum-observable-universe/knots-particles-confinement/derived-atom.lean"
   },
   "source_hashes": {
     "md": "15b02d4cf8cb",
@@ -970,9 +970,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The claim in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/derived-atom.lean:24:4: error: `QOU.Interactions.DerivedAtom` has already been declared.",
+        "notes": "The claim in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' is unverified due to Lean compilation failures: folio/quantum-observable-universe/particle-interactions/derived-atom.lean:24:4: error: `QOU.Interactions.DerivedAtom` has already been declared.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/derived-atom.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/derived-atom.lean:1"
       },
       {
         "result": "pass",
@@ -1041,7 +1041,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/derived-atom.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/derived-atom.ts:1"
       },
       {
         "result": "pass",
@@ -1111,7 +1111,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/derived-atom.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/derived-atom.ts:1"
       },
       {
         "result": "pass",
@@ -1144,9 +1144,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/derived-atom.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/derived-atom.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/derived-atom.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/derived-atom.lean:1"
       },
       {
         "result": "pass",
@@ -1179,9 +1179,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/derived-atom.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/derived-atom.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/derived-atom.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/derived-atom.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1216,7 +1216,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/derived-atom.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/derived-atom.ts:1"
       },
       {
         "result": "pass",
@@ -1251,7 +1251,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/derived-atom.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/derived-atom.ts:1"
       },
       {
         "result": "pass",
@@ -1286,7 +1286,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/derived-atom.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/derived-atom.ts:1"
       },
       {
         "result": "pass",
@@ -1321,7 +1321,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/derived-atom.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/derived-atom.ts:1"
       },
       {
         "result": "pass",
@@ -1354,9 +1354,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/derived-atom.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/derived-atom.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/derived-atom.lean:1 — content/quantum-observable-universe/particle-interactions/derived-atom.lean:24:4: error: `QOU.Interactions.DerivedAtom` has already been declared"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/derived-atom.lean:1 — folio/quantum-observable-universe/particle-interactions/derived-atom.lean:24:4: error: `QOU.Interactions.DerivedAtom` has already been declared"
       },
       {
         "result": "pass",
@@ -1389,11 +1389,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/derived-atom.lean fails compilation: content/quantum-observable-universe/particle-interactions/derived-atom.lean:24:4: error: `QOU.Interactions.DerivedAtom` has already been declared",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/derived-atom.lean fails compilation: folio/quantum-observable-universe/particle-interactions/derived-atom.lean:24:4: error: `QOU.Interactions.DerivedAtom` has already been declared",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/derived-atom.lean for 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' fails compilation with error: content/quantum-observable-universe/particle-interactions/derived-atom.lean:24:4: error: `QOU.Interactions.DerivedAtom` has already been declared. This invalidates the claim of formal verification.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/derived-atom.lean fails compilation: content/quantum-observable-universe/particle-interactions/derived-atom.lean:24:4: error: `QOU.Interactions.DerivedAtom` has already been declared"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/derived-atom.lean for 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' fails compilation with error: folio/quantum-observable-universe/particle-interactions/derived-atom.lean:24:4: error: `QOU.Interactions.DerivedAtom` has already been declared. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/derived-atom.lean fails compilation: folio/quantum-observable-universe/particle-interactions/derived-atom.lean:24:4: error: `QOU.Interactions.DerivedAtom` has already been declared"
       },
       {
         "result": "pass",

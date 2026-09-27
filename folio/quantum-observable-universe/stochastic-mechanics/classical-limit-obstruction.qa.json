@@ -3,9 +3,9 @@
   "label": "def:classical-limit-obstruction",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts",
-    "md": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.md",
-    "lean": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.lean"
+    "ts": "folio/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts",
+    "md": "folio/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.md",
+    "lean": "folio/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.lean"
   },
   "source_hashes": {
     "md": "db429a908736",
@@ -406,7 +406,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.md:11 — root-of-unity construction used without explicit regime declaration — where $\\mathcal{U}_q(\\mathfrak{g})$ is the Lusztig integral form of the quantized enveloping algebra associated to $A$, and $\\mathrm{Ad}$ denotes the adjoint bimodule. Elements of $\\mathrm{Obs}$ are obstructions to extending second-order deformations of the Frobenius--Hopf algebra $A_q$ across $q = 1$."
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.md:11 — root-of-unity construction used without explicit regime declaration — where $\\mathcal{U}_q(\\mathfrak{g})$ is the Lusztig integral form of the quantized enveloping algebra associated to $A$, and $\\mathrm{Ad}$ denotes the adjoint bimodule. Elements of $\\mathrm{Obs}$ are obstructions to extending second-order deformations of the Frobenius--Hopf algebra $A_q$ across $q = 1$."
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -1008,7 +1008,7 @@
         "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
         "notes": "No false claims identified in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a': mathematical reasoning is consistent."
       },
       {
@@ -1043,7 +1043,7 @@
         "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
         "notes": "The claims in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a' are non-vacuous as they present substantial mathematical content."
       },
       {
@@ -1078,7 +1078,7 @@
         "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a'."
       },
       {
@@ -1113,7 +1113,7 @@
         "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
         "notes": "No overclaims: the scope of 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a' is appropriately qualified."
       },
       {
@@ -1148,7 +1148,7 @@
         "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a'."
       },
       {
@@ -1183,7 +1183,7 @@
         "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
         "notes": "The argument flow in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a' is logically sound, mapping onto the cited dependencies."
       },
       {
@@ -1218,7 +1218,7 @@
         "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.lean:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.lean:1",
         "notes": "No narrative divergence: the Lean sibling implements the structure claimed in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a'."
       },
       {
@@ -1253,7 +1253,7 @@
         "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
         "notes": "Citations to yekutieli2010 are correct and contextually appropriate."
       },
       {
@@ -1288,7 +1288,7 @@
         "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
         "notes": "Key terms and symbols in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a' are mathematically defined and unambiguous."
       },
       {
@@ -1323,7 +1323,7 @@
         "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
         "notes": "The algebraic and logical relations in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a' are independent of empirical tuning parameters."
       },
       {
@@ -1358,7 +1358,7 @@
         "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
         "notes": "The physical concepts described in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a' are consistent with quantum observable mechanics."
       },
       {
@@ -1393,7 +1393,7 @@
         "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
         "notes": "The derivation steps and formal definitions in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a' are reproducible."
       },
       {
@@ -1428,7 +1428,7 @@
         "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.md:1 — Let (\\mathbf{C}, A, \\tau) be a quantum universe over a",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.md:1 — Let (\\mathbf{C}, A, \\tau) be a quantum universe over a",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a' are consistent."
@@ -1895,7 +1895,7 @@
         },
         "reviewed_at": "2026-08-22T05:29:08.046Z",
         "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
-        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
+        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at folio/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1929,7 +1929,7 @@
         },
         "reviewed_at": "2026-08-22T05:29:08.088Z",
         "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
-        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
+        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at folio/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
       }
     ],
     "trap-em-dash": [
@@ -1963,7 +1963,7 @@
         },
         "reviewed_at": "2026-08-22T05:29:08.130Z",
         "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
-        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
+        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at folio/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
       }
     ],
     "trap-triples": [
@@ -1997,7 +1997,7 @@
         },
         "reviewed_at": "2026-08-22T05:29:08.172Z",
         "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
-        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
+        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at folio/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
       }
     ],
     "trap-closing-aphorism": [
@@ -2031,7 +2031,7 @@
         },
         "reviewed_at": "2026-08-22T05:29:08.216Z",
         "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
-        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
+        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at folio/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
       }
     ],
     "trap-meta-commentary": [
@@ -2065,7 +2065,7 @@
         },
         "reviewed_at": "2026-08-22T05:29:08.257Z",
         "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
-        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
+        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at folio/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
       }
     ],
     "trap-thesis-restatement": [
@@ -2099,7 +2099,7 @@
         },
         "reviewed_at": "2026-08-22T05:29:08.299Z",
         "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
-        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
+        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at folio/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
       }
     ],
     "trap-performed-warmth": [
@@ -2133,7 +2133,7 @@
         },
         "reviewed_at": "2026-08-22T05:29:08.340Z",
         "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
-        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
+        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at folio/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
       }
     ],
     "trap-superlative": [
@@ -2167,7 +2167,7 @@
         },
         "reviewed_at": "2026-08-22T05:29:08.382Z",
         "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
-        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
+        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at folio/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
       }
     ],
     "trap-nonspeakable": [
@@ -2201,7 +2201,7 @@
         },
         "reviewed_at": "2026-08-22T05:29:08.423Z",
         "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
-        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
+        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at folio/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
       }
     ],
     "wall-base-ring-minimal": [

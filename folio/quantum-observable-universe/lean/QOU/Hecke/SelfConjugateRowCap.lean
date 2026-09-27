@@ -25,7 +25,7 @@ self-conjugate partitions do not stop existing — there are 2 at `n = 8`, 3 at
 
 The corpus's Wigner energy `-Δ_W · T(T+1)/A` — the symmetry energy, in the mass
 channel rather than the binding one — is built from **self-conjugate shadow
-prices**: `content/quantum-observable-universe/mass-theory/unified-iterative-correction-proof.md`
+prices**: `folio/quantum-observable-universe/mass-theory/unified-iterative-correction-proof.md`
 names `λ = (2,2)` at `k = 4` and `λ = (3,1,1)` at `k = 5`, and
 `figure-eight-branching-rule-proof.md` states the general rule that
 self-conjugate partitions carry the isospin Casimir terms `T(T+1)/A`,
@@ -109,7 +109,7 @@ is actually used in: a self-conjugate partition of `n ≥ 5` necessarily has
 `ℓ(λ) > 2`, hence `y_λ = 0` under convention D.
 
 The rest of the chain lives in the content sibling
-`content/quantum-observable-universe/mass-theory/mass-coefficient-shadow-price.lean`,
+`folio/quantum-observable-universe/mass-theory/mass-coefficient-shadow-price.lean`,
 which the library tree cannot import (siblings sit outside the package globs):
 `shadow_price_eq_zero_of_weight_eq_zero` proves `w̃_λ = 0 → u*_λ = 0` from the
 class field `C_eq : C λ = w̃_λ · h·⅟2`. Joined, they say **the Wigner mechanism

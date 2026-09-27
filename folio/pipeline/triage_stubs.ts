@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync, unlinkSync, existsSync, readdirSync, statS
 import { resolve, relative, join } from "node:path";
 
 const REPO_ROOT = resolve(import.meta.dir, "../..");
-const LEAN_DIR = resolve(REPO_ROOT, "content/quantum-observable-universe/lean/QOU");
+const LEAN_DIR = resolve(REPO_ROOT, "folio/quantum-observable-universe/lean/QOU");
 
 function walkLean(dir: string, list: string[] = []): string[] {
   if (!existsSync(dir)) return list;
@@ -180,7 +180,7 @@ function runTriage() {
   // Find all files flagged with proof-no-placeholder-stub in lean/QOU
   const flaggedFiles: string[] = [];
   for (const [file, hits] of Object.entries(auditData.flagged)) {
-    if (file.startsWith("content/quantum-observable-universe/lean/QOU/") &&
+    if (file.startsWith("folio/quantum-observable-universe/lean/QOU/") &&
         (hits as any[]).some(h => h.category === "proof-no-placeholder-stub")) {
       flaggedFiles.push(file);
     }

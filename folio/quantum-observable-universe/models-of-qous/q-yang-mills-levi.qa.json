@@ -3,9 +3,9 @@
   "label": "def:q-yang-mills-levi",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.ts",
-    "md": "content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.md",
-    "lean": "content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean"
+    "ts": "folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.ts",
+    "md": "folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.md",
+    "lean": "folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean"
   },
   "source_hashes": {
     "md": "b1b2578aca7e",
@@ -616,7 +616,7 @@
         "reviewed_at": "2026-08-09T13:01:14.762Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.ts:0: forward ref: uses ex:instanton (manifest pos 26) which appears after this block (pos 7) in the chapter"
+        "evidence": "folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.ts:0: forward ref: uses ex:instanton (manifest pos 26) which appears after this block (pos 7) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1011,9 +1011,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.432778Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The Lean theorem statement in content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean matches the mathematical statement in content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.md.",
+        "notes": "The Lean theorem statement in folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean matches the mathematical statement in folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.md.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:1 — Lean file exists"
+        "evidence": "folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:1 — Lean file exists"
       }
     ],
     "da-false-claim": [
@@ -1035,7 +1035,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The claim in '$q$-Weighted Yang--Mills--Levi functional' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:1"
+        "evidence": "folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:1"
       },
       {
         "result": "pass",
@@ -1104,7 +1104,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No circular reasoning or self-assuming definitions detected in '$q$-Weighted Yang--Mills--Levi functional'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.ts:1"
+        "evidence": "folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.ts:1"
       },
       {
         "result": "pass",
@@ -1174,7 +1174,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$q$-Weighted Yang--Mills--Levi functional'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.ts:1"
+        "evidence": "folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.ts:1"
       },
       {
         "result": "pass",
@@ -1207,9 +1207,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.432778Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:1"
+        "evidence": "folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:1"
       },
       {
         "result": "pass",
@@ -1242,9 +1242,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.432778Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The Lean sibling content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1279,7 +1279,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No citations are present in '$q$-Weighted Yang--Mills--Levi functional', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.ts:1"
+        "evidence": "folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.ts:1"
       },
       {
         "result": "pass",
@@ -1314,7 +1314,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols in '$q$-Weighted Yang--Mills--Levi functional' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.ts:1"
+        "evidence": "folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.ts:1"
       },
       {
         "result": "pass",
@@ -1349,7 +1349,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The algebraic and logical relations in '$q$-Weighted Yang--Mills--Levi functional' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.ts:1"
+        "evidence": "folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.ts:1"
       },
       {
         "result": "pass",
@@ -1384,7 +1384,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in '$q$-Weighted Yang--Mills--Levi functional' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.ts:1"
+        "evidence": "folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.ts:1"
       },
       {
         "result": "pass",
@@ -1417,9 +1417,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.432778Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The Lean sibling content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:1 — content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist"
+        "evidence": "folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:1 — folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist"
       },
       {
         "result": "pass",
@@ -1452,11 +1452,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.432778Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean fails compilation: content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean fails compilation: folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean contains compilation errors: content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist, invalidating the claimed formalization.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean fails compilation: content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean contains compilation errors: folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean fails compilation: folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist"
       },
       {
         "result": "pass",

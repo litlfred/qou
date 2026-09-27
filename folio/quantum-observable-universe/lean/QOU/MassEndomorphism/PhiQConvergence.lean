@@ -11,7 +11,7 @@ import Mathlib.Tactic
 # Gap 4 closure: Φ_q convergence at single-tick
 
 Closes a piece of Gap 4 from
-`content/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean`:
+`folio/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean`:
 the analytic convergence of the q-Pochhammer / quantum dilogarithm
 
   Φ_q(z) = ∏_{k≥1} (1 - q^{-k} z)^{-1}

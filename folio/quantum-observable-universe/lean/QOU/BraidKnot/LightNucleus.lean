@@ -6,7 +6,7 @@ import Mathlib.Tactic
 The light-nucleus enumeration `{²H, ³H, ³He}` and associated
 mass-number / strand-count utility functions.  Mirrors the type
 defined in the content-block file
-`content/quantum-observable-universe/braids-and-knots/conj-canonical-knot-id-sdp.lean`
+`folio/quantum-observable-universe/braids-and-knots/conj-canonical-knot-id-sdp.lean`
 so it can be referenced from Lake-tracked modules.
 
 (The content-block file is read but not Lake-built; this module

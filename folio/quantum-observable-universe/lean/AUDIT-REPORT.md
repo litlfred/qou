@@ -1,7 +1,7 @@
 # Lean Formalization Audit Report
 
 **Date**: (updated)
-**Scope**: Full audit of `/content/quantum-observable-universe/lean/`
+**Scope**: Full audit of `/folio/quantum-observable-universe/lean/`
 **Files audited**: 100 `.lean` files across 4 submodules + top-level
 **Missing .lean files created**: 20 of 20 definitions now have sibling .lean
 

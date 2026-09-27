@@ -3,9 +3,9 @@
   "label": "prop:borromean-h4-categorical-derivation",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts",
-    "md": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.md",
-    "lean": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.lean"
   },
   "source_hashes": {
     "md": "89f116ce8e68",
@@ -1205,7 +1205,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.lean:1 — Lean file exists",
+        "evidence": "folio/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.lean:1 — Lean file exists",
         "severity": "minor"
       },
       {
@@ -1240,7 +1240,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean proof contains compilation errors.",
-        "evidence": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.lean:1 — content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.lean:45:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib.olean' of module Mathlib does not exist",
+        "evidence": "folio/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.lean:1 — folio/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.lean:45:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib.olean' of module Mathlib does not exist",
         "severity": "minor"
       },
       {
@@ -1273,7 +1273,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1754,7 +1754,7 @@
             "text": "computations/probes/gap-a4-T15-character-polynomial-probe.witness.json"
           },
           {
-            "text": "content/schema/references.ts:906"
+            "text": "folio/schema/references.ts:906"
           }
         ],
         "severity": "minor",
@@ -1870,7 +1870,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts:1",
         "severity": "minor"
       },
       {
@@ -1918,7 +1918,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts:1",
         "severity": "minor"
       },
       {
@@ -1966,7 +1966,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts:1",
         "severity": "minor"
       },
       {
@@ -2014,7 +2014,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts:1",
         "severity": "minor"
       },
       {
@@ -2062,7 +2062,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts:1",
         "severity": "minor"
       },
       {
@@ -2110,7 +2110,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts:1",
         "severity": "minor"
       },
       {

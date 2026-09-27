@@ -3,9 +3,9 @@
   "label": "conj:lifted-crossing-locality",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts",
-    "md": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.md",
-    "lean": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/lifted-crossing-locality.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/lifted-crossing-locality.lean"
   },
   "source_hashes": {
     "md": "2216b57d73d0",
@@ -425,7 +425,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.md:1 — detected regime [root-of-unity] is disjoint from chapter 'mass-theory' expected [fixed-q0, generic-R, na, real-gt-1, real-positive, symbolic]"
+        "evidence": "folio/quantum-observable-universe/mass-theory/lifted-crossing-locality.md:1 — detected regime [root-of-unity] is disjoint from chapter 'mass-theory' expected [fixed-q0, generic-R, na, real-gt-1, real-positive, symbolic]"
       }
     ],
     "canonical-calibration-count": [
@@ -1039,7 +1039,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
         "severity": "minor"
       },
       {
@@ -1136,7 +1136,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
         "severity": "minor"
       },
       {
@@ -1236,7 +1236,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
         "severity": "minor"
       },
       {
@@ -1288,7 +1288,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
         "severity": "minor"
       },
       {
@@ -1385,7 +1385,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
         "severity": "minor"
       },
       {
@@ -1434,7 +1434,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
         "severity": "minor"
       },
       {
@@ -1483,7 +1483,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
         "severity": "minor"
       },
       {
@@ -1535,7 +1535,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
+        "evidence": "folio/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
         "severity": "minor"
       },
       {
@@ -1587,7 +1587,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.lean:1 — content/quantum-observable-universe/mass-theory/lifted-crossing-locality.lean:42:36: error: Invalid field `prod`: The environment does not contain `List.prod`",
+        "evidence": "folio/quantum-observable-universe/mass-theory/lifted-crossing-locality.lean:1 — folio/quantum-observable-universe/mass-theory/lifted-crossing-locality.lean:42:36: error: Invalid field `prod`: The environment does not contain `List.prod`",
         "severity": "minor"
       },
       {
@@ -1638,7 +1638,7 @@
         "notes": "Lean sibling contains compilation errors.",
         "severity": "minor",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/lifted-crossing-locality.lean:42:36: error: Invalid field `prod`: The environment does not contain `List.prod`",
+        "referee_argument": "The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/lifted-crossing-locality.lean:42:36: error: Invalid field `prod`: The environment does not contain `List.prod`",
         "evidence": "Lean sibling contains compilation errors."
       },
       {

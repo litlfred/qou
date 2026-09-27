@@ -3,9 +3,9 @@
   "label": "def:confinement-level",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/confinement-level.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/confinement-level.md",
-    "lean": "content/quantum-observable-universe/knots-particles-confinement/confinement-level.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/confinement-level.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/confinement-level.md",
+    "lean": "folio/quantum-observable-universe/knots-particles-confinement/confinement-level.lean"
   },
   "source_hashes": {
     "md": "5a04367816bc",
@@ -1025,7 +1025,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Confinement level via shadow-price filtration': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-level.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-level.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1068,7 +1068,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Confinement level via shadow-price filtration'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-level.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-level.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1111,7 +1111,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confinement level via shadow-price filtration'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-level.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-level.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1133,7 +1133,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Confinement level via shadow-price filtration' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-level.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-level.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1176,7 +1176,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Confinement level via shadow-price filtration', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-level.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-level.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1198,7 +1198,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Confinement level via shadow-price filtration' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-level.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-level.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1220,7 +1220,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Confinement level via shadow-price filtration' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-level.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-level.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1242,7 +1242,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Confinement level via shadow-price filtration' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-level.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-level.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1264,7 +1264,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Confinement level via shadow-price filtration' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-level.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-level.ts:1"
       }
     ],
     "da-referee-verdict": [

@@ -91,7 +91,7 @@ suffice.  The module therefore verifies in a container with no olean tree at all
 * **Transitive action on the Weierstrass points, and the infinitude of examples**
   — S. Reyes-Carocca & P. Speziali, *Infinitely many Riemann surfaces with a
   transitive action on the Weierstrass points*, arXiv:2211.08164v2. **Held**:
-  `library/arxiv-2211.08164v2/`, registered in `content/schema/references.ts`,
+  `library/arxiv-2211.08164v2/`, registered in `folio/schema/references.ts`,
   `library/INDEX.md:364`.  Used for: the Accola–Maclachlan family at every
   `g ≥ 2` (§1, item 1); the main theorem (infinitely many non-hyperelliptic
   transitive examples); the two-hypothesis reading of Laing & Singerman (§4); and

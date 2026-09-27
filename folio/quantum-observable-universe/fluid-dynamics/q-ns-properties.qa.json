@@ -3,8 +3,8 @@
   "label": "rem:q-ns-properties",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/fluid-dynamics/q-ns-properties.ts",
-    "md": "content/quantum-observable-universe/fluid-dynamics/q-ns-properties.md"
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/q-ns-properties.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/q-ns-properties.md"
   },
   "source_hashes": {
     "md": "b22f420365db",
@@ -933,7 +933,7 @@
         "reviewed_at": "2026-08-09T13:00:33.718Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-ns-properties.ts:0: forward ref: uses thm:q-ns-wellposedness (manifest pos 36) which appears after this block (pos 8) in the chapter"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-ns-properties.ts:0: forward ref: uses thm:q-ns-wellposedness (manifest pos 36) which appears after this block (pos 8) in the chapter"
       }
     ],
     "detangler-section-band": [

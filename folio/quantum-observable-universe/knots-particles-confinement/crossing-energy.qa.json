@@ -3,9 +3,9 @@
   "label": "def:crossing-energy",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/crossing-energy.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/crossing-energy.md",
-    "lean": "content/quantum-observable-universe/knots-particles-confinement/crossing-energy.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/crossing-energy.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/crossing-energy.md",
+    "lean": "folio/quantum-observable-universe/knots-particles-confinement/crossing-energy.lean"
   },
   "source_hashes": {
     "md": "fc7d4d2458a8",
@@ -995,8 +995,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.047817Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The Lean theorem 'qou:QOU.Braiding.CrossingEnergy' statement in content/quantum-observable-universe/climax-volume-mass/crossing-energy.lean structurally matches the mathematical formulation of 'def:crossing-energy' in content/quantum-observable-universe/climax-volume-mass/crossing-energy.md.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy.lean:1 — Lean file exists",
+        "notes": "The Lean theorem 'qou:QOU.Braiding.CrossingEnergy' statement in folio/quantum-observable-universe/climax-volume-mass/crossing-energy.lean structurally matches the mathematical formulation of 'def:crossing-energy' in folio/quantum-observable-universe/climax-volume-mass/crossing-energy.md.",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/crossing-energy.lean:1 — Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1017,7 +1017,7 @@
         "reviewed_at": "2026-07-07T14:26:57.047817Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Checked mathematical consistency of the claim 'Categorical origin: $\\mathfrak{E}_{\\mathrm{cross}}$ is not an external postulate' and found no counterexamples under the stated conditions.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
         "severity": "minor"
       },
       {
@@ -1084,7 +1084,7 @@
         "reviewed_at": "2026-07-07T14:26:57.047817Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Traced dependencies ['prop:nuclear-groebner-reduction'] for 'def:crossing-energy' and confirmed no circular definitions or justifications.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
         "severity": "minor"
       },
       {
@@ -1151,7 +1151,7 @@
         "reviewed_at": "2026-07-07T14:26:57.047817Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
         "severity": "minor"
       },
       {
@@ -1185,7 +1185,7 @@
         "reviewed_at": "2026-07-07T14:26:57.047817Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical transitions in the derivation of 'Categorical origin: $\\mathfrak{E}_{\\mathrm{cross}}$ is not an external postulate' are sound; no non-sequiturs detected.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
         "severity": "minor"
       },
       {
@@ -1253,7 +1253,7 @@
         "reviewed_at": "2026-07-07T14:26:57.047817Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references and uses ['prop:nuclear-groebner-reduction'] cited in 'def:crossing-energy' are used in accordance with their established mathematical definitions.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
         "severity": "minor"
       },
       {
@@ -1287,7 +1287,7 @@
         "reviewed_at": "2026-07-07T14:26:57.047817Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All terms and algebraic structures in 'def:crossing-energy' are uniquely defined or standard.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
         "severity": "minor"
       },
       {
@@ -1321,7 +1321,7 @@
         "reviewed_at": "2026-07-07T14:26:57.047817Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic statements in 'def:crossing-energy' do not rely on fragile empirical fits or numerical thresholds.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
         "severity": "minor"
       },
       {
@@ -1355,7 +1355,7 @@
         "reviewed_at": "2026-07-07T14:26:57.047817Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Physical dimensions and units in 'def:crossing-energy' are consistent with quantum observable universe models.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/crossing-energy.ts:1",
         "severity": "minor"
       },
       {
@@ -1388,8 +1388,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.047817Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/climax-volume-mass/crossing-energy.lean:32:13: error: unexpected token 'section'; expected 'lemma'.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy.lean:1 — content/quantum-observable-universe/climax-volume-mass/crossing-energy.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: folio/quantum-observable-universe/climax-volume-mass/crossing-energy.lean:32:13: error: unexpected token 'section'; expected 'lemma'.",
+        "evidence": "folio/quantum-observable-universe/climax-volume-mass/crossing-energy.lean:1 — folio/quantum-observable-universe/climax-volume-mass/crossing-energy.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "minor"
       },
       {
@@ -1422,11 +1422,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.047817Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/climax-volume-mass/crossing-energy.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
+        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/climax-volume-mass/crossing-energy.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/climax-volume-mass/crossing-energy.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
+        "referee_argument": "The Lean sibling fails compilation with error: folio/quantum-observable-universe/climax-volume-mass/crossing-energy.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/climax-volume-mass/crossing-energy.lean:32:13: error: unexpected token 'section'; expected 'lemma'"
+        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/climax-volume-mass/crossing-energy.lean:32:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "result": "pass",

@@ -3,9 +3,9 @@
   "label": "conj:gs-archimedean-agreement-trace",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/gs-archimedean-agreement-trace.ts",
-    "md": "content/quantum-observable-universe/mass-theory/gs-archimedean-agreement-trace.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/HabiroResidueSumEquivalence/archimedean_agreement.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/gs-archimedean-agreement-trace.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/gs-archimedean-agreement-trace.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/BraidKnot/HabiroResidueSumEquivalence/archimedean_agreement.lean"
   },
   "source_hashes": {
     "md": "8b6634d128f7",
@@ -1217,7 +1217,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/gs-archimedean-agreement-trace.ts:0: forward ref: uses prop:habiro-residue-sum-equivalence (manifest pos 445) which appears after this block (pos 248) in the chapter | content/quantum-observable-universe/mass-theory/gs-archimedean-agreement-trace.ts:0: forward ref: uses def:archimedean-realization-functor (manifest pos 319) which appears after this block (pos 248) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/gs-archimedean-agreement-trace.ts:0: forward ref: uses prop:habiro-residue-sum-equivalence (manifest pos 445) which appears after this block (pos 248) in the chapter | folio/quantum-observable-universe/mass-theory/gs-archimedean-agreement-trace.ts:0: forward ref: uses def:archimedean-realization-functor (manifest pos 319) which appears after this block (pos 248) in the chapter"
       }
     ],
     "detangler-section-band": [

@@ -3,9 +3,9 @@
   "label": "prop:atom-knot-unique",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/atom-knot-unique.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/atom-knot-unique.md",
-    "lean": "content/quantum-observable-universe/knots-particles-confinement/atom-knot-unique.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/atom-knot-unique.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/atom-knot-unique.md",
+    "lean": "folio/quantum-observable-universe/knots-particles-confinement/atom-knot-unique.lean"
   },
   "source_hashes": {
     "md": "9197bcb180fc",
@@ -1407,9 +1407,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.372076Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The claim in 'Uniqueness of the atom-knot up to Markov equivalence' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:19:17: error: Invalid field notation: Type is not of the form `C ...` where C is a constant.",
+        "notes": "The claim in 'Uniqueness of the atom-knot up to Markov equivalence' is unverified due to Lean compilation failures: folio/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:19:17: error: Invalid field notation: Type is not of the form `C ...` where C is a constant.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:1"
       },
       {
         "result": "pass",
@@ -1478,7 +1478,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Uniqueness of the atom-knot up to Markov equivalence'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-unique.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atom-knot-unique.ts:1"
       },
       {
         "result": "pass",
@@ -1548,7 +1548,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Uniqueness of the atom-knot up to Markov equivalence'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-unique.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atom-knot-unique.ts:1"
       },
       {
         "result": "pass",
@@ -1581,9 +1581,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.372076Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/atom-knot-unique.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:1"
       },
       {
         "result": "pass",
@@ -1616,9 +1616,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.372076Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/atom-knot-unique.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/atom-knot-unique.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1653,7 +1653,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Uniqueness of the atom-knot up to Markov equivalence', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-unique.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atom-knot-unique.ts:1"
       },
       {
         "result": "pass",
@@ -1688,7 +1688,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Uniqueness of the atom-knot up to Markov equivalence' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-unique.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atom-knot-unique.ts:1"
       },
       {
         "result": "pass",
@@ -1723,7 +1723,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Uniqueness of the atom-knot up to Markov equivalence' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-unique.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atom-knot-unique.ts:1"
       },
       {
         "result": "pass",
@@ -1758,7 +1758,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Uniqueness of the atom-knot up to Markov equivalence' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-unique.ts:1"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atom-knot-unique.ts:1"
       },
       {
         "result": "pass",
@@ -1791,9 +1791,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.372076Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/atom-knot-unique.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:1 — content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:19:17: error: Invalid field notation: Type is not of the form `C ...` where C is a constant"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:1 — folio/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:19:17: error: Invalid field notation: Type is not of the form `C ...` where C is a constant"
       },
       {
         "result": "pass",
@@ -1826,11 +1826,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.372076Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean fails compilation: content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:19:17: error: Invalid field notation: Type is not of the form `C ...` where C is a constant",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/atom-knot-unique.lean fails compilation: folio/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:19:17: error: Invalid field notation: Type is not of the form `C ...` where C is a constant",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean for 'Uniqueness of the atom-knot up to Markov equivalence' fails compilation with error: content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:19:17: error: Invalid field notation: Type is not of the form `C ...` where C is a constant. This invalidates the claim of formal verification.",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean fails compilation: content/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:19:17: error: Invalid field notation: Type is not of the form `C ...` where C is a constant"
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/atom-knot-unique.lean for 'Uniqueness of the atom-knot up to Markov equivalence' fails compilation with error: folio/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:19:17: error: Invalid field notation: Type is not of the form `C ...` where C is a constant. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/atom-knot-unique.lean fails compilation: folio/quantum-observable-universe/particle-interactions/atom-knot-unique.lean:19:17: error: Invalid field notation: Type is not of the form `C ...` where C is a constant"
       },
       {
         "result": "pass",

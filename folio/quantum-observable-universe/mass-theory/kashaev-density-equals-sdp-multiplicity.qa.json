@@ -3,9 +3,9 @@
   "label": "conj:kashaev-density-equals-sdp-multiplicity",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.ts",
-    "md": "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.md",
-    "lean": "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.lean"
   },
   "source_hashes": {
     "md": "65514358cf07",
@@ -1202,7 +1202,7 @@
         "reviewed_at": "2026-09-05T07:30:06.895Z",
         "reviewed_sha": "5c6b356ee6ec359e668df2f9efececef049f52df",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.ts:0: forward ref: uses prop:atom-knot-mass-derivation (manifest pos 648) which appears after this block (pos 352) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.ts:0: forward ref: uses prop:atom-knot-mass-derivation (manifest pos 648) which appears after this block (pos 352) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1759,7 +1759,7 @@
         "reviewed_at": "2026-08-21T21:26:48.591Z",
         "reviewed_sha": "2ff519d5b3d102c8ed2a06d9d3cf38b602806a77",
         "evidence": "Closes on a cross-reference list, the bookkeeping false-positive class.",
-        "notes": "SEPARATE (non-trap) LEAN finding, and the most consequential in this block - the displayed axiomatisation does not exist and the real one asserts nothing. The .md displays 'class KashaevDensityEqualsSDPMultiplicity (M : Type*) [BrCategory M] [Hecke M] [KashaevVolumeConjecture M] where nu_sdp : forall (K : Knot), N ; identity : forall (K : Knot), kashaev_density_prefactor K = nu_sdp K' and then says 'The only sorry is the class instance'. Grepped the tree: no such class exists. The actual sibling content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.lean declares 'class KashaevDensityEqualsSdpMultiplicity where holds : Prop' - a bare unconstrained Prop field, i.e. the 'holds : Prop placeholder' pattern, discharged by instance := <True>. Under AGENTS.md section 3b-tax ('The carrier must assert something') that carrier is content-free, so any downstream theorem taking it as an [Instance] is conditional on nothing. Three supporting defects in the same stub: (a) its docstring points at ../lean/QOU/Kashaev/DensityEqualsSDPMultiplicity.lean and says '(file pending)' - that file does not exist; (b) it states the manifest's lean.ref is 'qou:QOU.Kashaev.DensityEqualsSDPMultiplicity' while the .ts actually says 'qou:QOU.Kashaev.KashaevDensityEqualsSdpMultiplicity'; (c) its '-- Ref:' line points at quantum-observable-universe/braids-and-knots/..., but the block lives in mass-theory/. Also, even the DISPLAYED class would be degenerate: nu_sdp is an unconstrained function and identity merely equates rho_F to it, so nothing ties nu_sdp to any SDP solution. FIX: either encode the SDP multiplicity as a constrained field, or state honestly that no Lean axiomatisation exists yet and remove the code block. Minor: the prose says rho_F in Z_{>0} while the displayed field is N, which admits 0."
+        "notes": "SEPARATE (non-trap) LEAN finding, and the most consequential in this block - the displayed axiomatisation does not exist and the real one asserts nothing. The .md displays 'class KashaevDensityEqualsSDPMultiplicity (M : Type*) [BrCategory M] [Hecke M] [KashaevVolumeConjecture M] where nu_sdp : forall (K : Knot), N ; identity : forall (K : Knot), kashaev_density_prefactor K = nu_sdp K' and then says 'The only sorry is the class instance'. Grepped the tree: no such class exists. The actual sibling folio/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.lean declares 'class KashaevDensityEqualsSdpMultiplicity where holds : Prop' - a bare unconstrained Prop field, i.e. the 'holds : Prop placeholder' pattern, discharged by instance := <True>. Under AGENTS.md section 3b-tax ('The carrier must assert something') that carrier is content-free, so any downstream theorem taking it as an [Instance] is conditional on nothing. Three supporting defects in the same stub: (a) its docstring points at ../lean/QOU/Kashaev/DensityEqualsSDPMultiplicity.lean and says '(file pending)' - that file does not exist; (b) it states the manifest's lean.ref is 'qou:QOU.Kashaev.DensityEqualsSDPMultiplicity' while the .ts actually says 'qou:QOU.Kashaev.KashaevDensityEqualsSdpMultiplicity'; (c) its '-- Ref:' line points at quantum-observable-universe/braids-and-knots/..., but the block lives in mass-theory/. Also, even the DISPLAYED class would be degenerate: nu_sdp is an unconstrained function and identity merely equates rho_F to it, so nothing ties nu_sdp to any SDP solution. FIX: either encode the SDP multiplicity as a constrained field, or state honestly that no Lean axiomatisation exists yet and remove the code block. Minor: the prose says rho_F in Z_{>0} while the displayed field is N, which admits 0."
       }
     ],
     "trap-performed-warmth": [

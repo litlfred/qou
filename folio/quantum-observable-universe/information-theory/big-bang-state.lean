@@ -19,7 +19,7 @@ Source declaration: `QOU.BigBangState` in jet-horizon.lean
 namespace QOU
 
 /-- Prerequisite type — the canonical declaration is `QOU.JetHorizon`
-    in `content/quantum-observable-universe/lean/QOU/JetHorizon.lean`
+    in `folio/quantum-observable-universe/lean/QOU/JetHorizon.lean`
     (Lake-built under the `qou` package).  Re-declared here as an
     opaque carrier so this co-located content-block sibling is
     independently checkable by `lean`-direct without importing the

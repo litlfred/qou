@@ -66,7 +66,7 @@ export default conjecture({
         "asymptotic and leaves the step from its two machine-checked " +
         "analytic inputs to the saddle hypotheses assumed; and the scope " +
         "stays (a), an asymptotic statement about $4_1$ alone.",
-      see: "content/quantum-observable-universe/mass-theory/one-loop-prefactor-provenance.md",
+      see: "folio/quantum-observable-universe/mass-theory/one-loop-prefactor-provenance.md",
     },
     {
       kind: "status",
@@ -108,7 +108,7 @@ export default conjecture({
         "AGENTS.md §7ab the surreal layer is Language-tier bookkeeping over " +
         "the archimedean statement, not a replacement for it — which is " +
         "exactly what the standard-part form records.",
-      see: "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
+      see: "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
     },
   ],
 });

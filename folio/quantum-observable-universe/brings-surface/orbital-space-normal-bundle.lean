@@ -173,7 +173,7 @@ end
 /-! ## §3b-cond conditional-class hypothesis
 
 This proposition is conditional on the conjecture [`conj:borromean-quark`]
-(see `content/quantum-observable-universe/observations/borromean-quark.lean`
+(see `folio/quantum-observable-universe/observations/borromean-quark.lean`
 for the canonical `class BorromeanQuark` declaration).  The class below
 axiomatises **this file's** conjectural input — the SO(3)-irreducible
 decomposition of the orbital space — and the conditional theorem

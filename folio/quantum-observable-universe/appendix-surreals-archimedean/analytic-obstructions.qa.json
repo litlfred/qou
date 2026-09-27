@@ -3,8 +3,8 @@
   "label": "rem:analytic-obstructions",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/appendix-surreals-archimedean/analytic-obstructions.ts",
-    "md": "content/quantum-observable-universe/appendix-surreals-archimedean/analytic-obstructions.md"
+    "ts": "folio/quantum-observable-universe/appendix-surreals-archimedean/analytic-obstructions.ts",
+    "md": "folio/quantum-observable-universe/appendix-surreals-archimedean/analytic-obstructions.md"
   },
   "source_hashes": {
     "md": "74ee605c2df3",
@@ -606,7 +606,7 @@
         "reviewed_at": "2026-08-31T04:03:48.519Z",
         "reviewed_sha": "7b0d1a7f49cbea2f717af0b14c6696f68471f0ed",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/appendix-surreals-archimedean/analytic-obstructions.ts:0: forward ref: uses def:ecalle-borel-resummation (manifest pos 4) which appears after this block (pos 1) in the chapter"
+        "evidence": "folio/quantum-observable-universe/appendix-surreals-archimedean/analytic-obstructions.ts:0: forward ref: uses def:ecalle-borel-resummation (manifest pos 4) which appears after this block (pos 1) in the chapter"
       }
     ],
     "detangler-section-band": [

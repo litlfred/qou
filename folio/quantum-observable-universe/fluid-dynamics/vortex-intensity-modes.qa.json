@@ -3,8 +3,8 @@
   "label": "rem:vortex-intensity-modes",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/fluid-dynamics/vortex-intensity-modes.ts",
-    "md": "content/quantum-observable-universe/fluid-dynamics/vortex-intensity-modes.md"
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/vortex-intensity-modes.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/vortex-intensity-modes.md"
   },
   "source_hashes": {
     "md": "aecf033de236",
@@ -731,7 +731,7 @@
         "reviewed_at": "2026-08-09T13:00:33.718Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/vortex-intensity-modes.ts:0: uses[] dependency cycle: rem:vortex-intensity-modes -> sec:brane-fluid -> prop:discrete-vortex-spectrum -> rem:vortex-intensity-modes"
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/vortex-intensity-modes.ts:0: uses[] dependency cycle: rem:vortex-intensity-modes -> sec:brane-fluid -> prop:discrete-vortex-spectrum -> rem:vortex-intensity-modes"
       }
     ],
     "bib-cite-resolves": [

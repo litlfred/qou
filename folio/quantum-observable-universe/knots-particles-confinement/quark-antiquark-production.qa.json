@@ -3,9 +3,9 @@
   "label": "def:quark-antiquark-production",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/knots-particles-confinement/quark-antiquark-production.ts",
-    "md": "content/quantum-observable-universe/knots-particles-confinement/quark-antiquark-production.md",
-    "lean": "content/quantum-observable-universe/knots-particles-confinement/quark-antiquark-production.lean"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/quark-antiquark-production.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/quark-antiquark-production.md",
+    "lean": "folio/quantum-observable-universe/knots-particles-confinement/quark-antiquark-production.lean"
   },
   "source_hashes": {
     "md": "b4863a2b407e",
@@ -1008,7 +1008,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.186869Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The Lean theorem statement in content/quantum-observable-universe/particle-interactions/quark-antiquark-production.lean matches the mathematical statement in content/quantum-observable-universe/particle-interactions/quark-antiquark-production.md.",
+        "notes": "The Lean theorem statement in folio/quantum-observable-universe/particle-interactions/quark-antiquark-production.lean matches the mathematical statement in folio/quantum-observable-universe/particle-interactions/quark-antiquark-production.md.",
         "severity": "minor",
         "evidence": "quark-antiquark-production.lean:1 — Lean file exists"
       }
@@ -1020,7 +1020,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/particle-interactions/quark-antiquark-production.lean:23 [def-disguised-true] def quarkAntiquarkProduction : True := trivial | content/quantum-observable-universe/particle-interactions/quark-antiquark-production.lean:29 [def-disguised-true] def quark_antiquark_production_witness : True := trivial",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/quark-antiquark-production.lean:23 [def-disguised-true] def quarkAntiquarkProduction : True := trivial | folio/quantum-observable-universe/particle-interactions/quark-antiquark-production.lean:29 [def-disguised-true] def quark_antiquark_production_witness : True := trivial",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",

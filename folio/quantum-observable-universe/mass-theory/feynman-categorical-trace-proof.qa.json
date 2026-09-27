@@ -3,9 +3,9 @@
   "label": "prf:feynman-categorical-trace",
   "kind": "proof",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.ts",
-    "md": "content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean"
   },
   "source_hashes": {
     "md": "26d07a687fca",
@@ -898,7 +898,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No false claims identified in 'Proof of Feynman transition amplitude as categorical trace'; the algebraic relation involving $H_n(R, q)$ is mathematically consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.ts:1"
       }
     ],
     "da-vacuous": [
@@ -935,7 +935,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Proof of Feynman transition amplitude as categorical trace'. The construction is derived from prop:feynman-categorical-trace, lem:feynman-trace-collapse, lem:feynman-markov-identification.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.ts:1"
       }
     ],
     "da-overclaim": [
@@ -972,7 +972,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Proof of Feynman transition amplitude as categorical trace'. All constants are canonically derived.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -991,7 +991,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The argument flow in 'Proof of Feynman transition amplitude as categorical trace' is logically sound, mapping onto the cited dependencies: prop:feynman-categorical-trace, lem:feynman-trace-collapse, lem:feynman-markov-identification.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1008,9 +1008,9 @@
         },
         "reviewed_at": "2026-06-28T10:58:52.268Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing, leading to complete divergence.",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing, leading to complete divergence.",
         "severity": "minor",
-        "evidence": "The referenced Lean file content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing, leading to complete divergence."
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing, leading to complete divergence."
       }
     ],
     "da-citation-misuse": [
@@ -1029,7 +1029,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No citations are present in 'Proof of Feynman transition amplitude as categorical trace', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1048,7 +1048,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols (including $H_n(R, q)$) in 'Proof of Feynman transition amplitude as categorical trace' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1067,7 +1067,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The algebraic and logical relations in 'Proof of Feynman transition amplitude as categorical trace' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1086,7 +1086,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in 'Proof of Feynman transition amplitude as categorical trace' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1105,7 +1105,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'Proof of Feynman transition amplitude as categorical trace' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.ts:1"
+        "evidence": "folio/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1122,11 +1122,11 @@
         },
         "reviewed_at": "2026-06-28T10:58:52.304Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing.",
+        "notes": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing, preventing formal verification of the claims in 'Proof of Feynman transition amplitude as categorical trace'.",
-        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing."
+        "referee_argument": "The referenced Lean sibling file folio/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing, preventing formal verification of the claims in 'Proof of Feynman transition amplitude as categorical trace'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing."
       }
     ],
     "voice-probe-narrative": [

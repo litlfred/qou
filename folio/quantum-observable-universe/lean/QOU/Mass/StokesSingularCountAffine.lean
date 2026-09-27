@@ -95,7 +95,7 @@ term at all**: each has a boundary that is a fixed fraction of its bulk, the bal
 
 Ground ring: `ℤ` for the counting, `ℝ` for the limit.
 
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/Mass/HyperbolicSurfaceLaw.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/Mass/HyperbolicSurfaceLaw.lean
 -- Ref: [manuscript] docs/audits/2026-08-30-nonabelian-stokes-and-the-surface-term.md
 -- Ref: [manuscript] computations/probes/every_seifert_invariant_is_affine_probe.py (χ = −9A+1, six nuclei)
 -- Ref: [yekutieli2015] A. Yekutieli, Nonabelian multiplicative integration on surfaces (Def 4.4.12, Lemma 4.4.13)

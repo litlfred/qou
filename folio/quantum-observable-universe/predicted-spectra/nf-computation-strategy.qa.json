@@ -3,8 +3,8 @@
   "label": "rem:nf-computation-strategy",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/nf-computation-strategy.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/nf-computation-strategy.md"
+    "ts": "folio/quantum-observable-universe/predicted-spectra/nf-computation-strategy.ts",
+    "md": "folio/quantum-observable-universe/predicted-spectra/nf-computation-strategy.md"
   },
   "source_hashes": {
     "md": "374e0e949af0",
@@ -598,7 +598,7 @@
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/nf-computation-strategy.ts:0: forward ref: uses rem:kummer-shell-closure (manifest pos 182) which appears after this block (pos 181) in the chapter"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/nf-computation-strategy.ts:0: forward ref: uses rem:kummer-shell-closure (manifest pos 182) which appears after this block (pos 181) in the chapter"
       }
     ],
     "detangler-section-band": [

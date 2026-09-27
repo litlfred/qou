@@ -3,9 +3,9 @@
   "label": "prop:rigid-monoidal-structural-gap-invariance",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/prop-rigid-monoidal-structural-gap-invariance.ts",
-    "md": "content/quantum-observable-universe/mass-theory/prop-rigid-monoidal-structural-gap-invariance.md",
-    "lean": "content/quantum-observable-universe/mass-theory/prop-rigid-monoidal-structural-gap-invariance.lean"
+    "ts": "folio/quantum-observable-universe/mass-theory/prop-rigid-monoidal-structural-gap-invariance.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/prop-rigid-monoidal-structural-gap-invariance.md",
+    "lean": "folio/quantum-observable-universe/mass-theory/prop-rigid-monoidal-structural-gap-invariance.lean"
   },
   "source_hashes": {
     "md": "23f50ee01841",
@@ -1383,7 +1383,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/prop-rigid-monoidal-structural-gap-invariance.ts:0: forward ref: uses prop:spin-involution-lp-dual-invariance (manifest pos 514) which appears after this block (pos 305) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/prop-rigid-monoidal-structural-gap-invariance.ts:0: forward ref: uses prop:spin-involution-lp-dual-invariance (manifest pos 514) which appears after this block (pos 305) in the chapter"
       }
     ],
     "detangler-section-band": [

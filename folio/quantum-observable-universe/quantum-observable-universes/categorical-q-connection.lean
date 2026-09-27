@@ -11,8 +11,8 @@ import Mathlib.Data.Int.Basic
 The `q`-deformed connection:
 `∇_q = q⁻¹ ∇ + (1 − q⁻¹)(ξ ⌟ ∇) θ_A`.
 
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean (monolithic)
+Extracted from folio/quantum-observable-universe/lean/ for content-block co-location.
+Source: folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean (monolithic)
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical

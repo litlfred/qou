@@ -3,9 +3,9 @@
   "label": "prop:double-slit-massive-pattern",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/observations/double-slit-massive-pattern.ts",
-    "md": "content/quantum-observable-universe/observations/double-slit-massive-pattern.md",
-    "lean": "content/quantum-observable-universe/observations/double-slit-massive-pattern.lean"
+    "ts": "folio/quantum-observable-universe/observations/double-slit-massive-pattern.ts",
+    "md": "folio/quantum-observable-universe/observations/double-slit-massive-pattern.md",
+    "lean": "folio/quantum-observable-universe/observations/double-slit-massive-pattern.lean"
   },
   "source_hashes": {
     "md": "c7499e7c93e0",
@@ -1211,7 +1211,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/observations/double-slit-massive-pattern.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/observations/double-slit-massive-pattern.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",
@@ -1407,7 +1407,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Massive-particle interference pattern': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/double-slit-massive-pattern.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/double-slit-massive-pattern.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1427,9 +1427,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean sibling content/quantum-observable-universe/observations/double-slit-massive-pattern.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/observations/double-slit-massive-pattern.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/observations/double-slit-massive-pattern.lean:1"
+        "evidence": "folio/quantum-observable-universe/observations/double-slit-massive-pattern.lean:1"
       }
     ],
     "da-circular": [
@@ -1451,7 +1451,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Massive-particle interference pattern'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/double-slit-massive-pattern.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/double-slit-massive-pattern.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1495,7 +1495,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Massive-particle interference pattern'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/double-slit-massive-pattern.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/double-slit-massive-pattern.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1515,9 +1515,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/observations/double-slit-massive-pattern.lean.",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/observations/double-slit-massive-pattern.lean.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/double-slit-massive-pattern.lean:1"
+        "evidence": "folio/quantum-observable-universe/observations/double-slit-massive-pattern.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1537,9 +1537,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean sibling content/quantum-observable-universe/observations/double-slit-massive-pattern.lean fails compilation, causing divergence from the narrative.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/observations/double-slit-massive-pattern.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
-        "evidence": "The Lean sibling content/quantum-observable-universe/observations/double-slit-massive-pattern.lean fails compilation, causing divergence from the narrative."
+        "evidence": "The Lean sibling folio/quantum-observable-universe/observations/double-slit-massive-pattern.lean fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -1576,7 +1576,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Citations to bach2013 are correct and contextually appropriate.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/double-slit-massive-pattern.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/double-slit-massive-pattern.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1598,7 +1598,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Massive-particle interference pattern' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/double-slit-massive-pattern.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/double-slit-massive-pattern.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1620,7 +1620,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Massive-particle interference pattern' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/double-slit-massive-pattern.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/double-slit-massive-pattern.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1642,7 +1642,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Massive-particle interference pattern' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/double-slit-massive-pattern.ts:1"
+        "evidence": "folio/quantum-observable-universe/observations/double-slit-massive-pattern.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1662,9 +1662,9 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean sibling content/quantum-observable-universe/observations/double-slit-massive-pattern.lean fails compilation, indicating a reproducibility failure.",
+        "notes": "The Lean sibling folio/quantum-observable-universe/observations/double-slit-massive-pattern.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/double-slit-massive-pattern.lean:1 \u2014 content/quantum-observable-universe/observations/double-slit-massive-pattern.lean:67:2: error: No goals to be solved"
+        "evidence": "folio/quantum-observable-universe/observations/double-slit-massive-pattern.lean:1 \u2014 folio/quantum-observable-universe/observations/double-slit-massive-pattern.lean:67:2: error: No goals to be solved"
       },
       {
         "field_hash": {
@@ -1699,11 +1699,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/double-slit-massive-pattern.lean fails compilation: content/quantum-observable-universe/observations/double-slit-massive-pattern.lean:67:2: error: No goals to be solved",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/observations/double-slit-massive-pattern.lean fails compilation: folio/quantum-observable-universe/observations/double-slit-massive-pattern.lean:67:2: error: No goals to be solved",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/double-slit-massive-pattern.lean contains compilation errors: content/quantum-observable-universe/observations/double-slit-massive-pattern.lean:67:2: error: No goals to be solved, invalidating the claimed formalization.",
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/observations/double-slit-massive-pattern.lean contains compilation errors: folio/quantum-observable-universe/observations/double-slit-massive-pattern.lean:67:2: error: No goals to be solved, invalidating the claimed formalization.",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/double-slit-massive-pattern.lean fails compilation: content/quantum-observable-universe/observations/double-slit-massive-pattern.lean:67:2: error: No goals to be solved"
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/observations/double-slit-massive-pattern.lean fails compilation: folio/quantum-observable-universe/observations/double-slit-massive-pattern.lean:67:2: error: No goals to be solved"
       },
       {
         "field_hash": {
