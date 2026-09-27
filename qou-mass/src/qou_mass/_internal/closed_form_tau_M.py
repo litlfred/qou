@@ -560,8 +560,18 @@ def compute_tau_M_nucleon_H3(
         )
         g0, g1 = ((_PROTON_G0, _PROTON_G1) if nucleon == "p"
                   else (_NEUTRON_G0, _NEUTRON_G1))
-        word = [(mp.mpf(str(c)), mp.mpf(str(d)), 0) for c, d in g0] + \
-               [(mp.mpf(str(c)), mp.mpf(str(d)), 1) for c, d in g1]
+        # Via the named helper rather than the concatenation written out. This
+        # branch was ALREADY correct — opt-in, defaulted off, documented above
+        # — but it was spelled exactly like the sixteen sites that are not, so
+        # `intra_ordering_structural_assembly_audit` could only list it beside
+        # them. Calling `grouped_word_from_chains` states in code what the
+        # docstring states in prose. Output identical: the helper IS this
+        # concatenation, and the mpf conversion is preserved per chain.
+        from pyhecke.atom import grouped_word_from_chains
+        word = grouped_word_from_chains(
+            [(mp.mpf(str(c)), mp.mpf(str(d))) for c, d in g0],
+            [(mp.mpf(str(c)), mp.mpf(str(d))) for c, d in g1],
+        )
 
     # `chi_all_lambda_any`, not `chi_monotone_transfer.chi_all_lambda`: the
     # canonical word is NON-MONOTONE and the monotone transfer cannot accept
