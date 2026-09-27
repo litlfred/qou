@@ -1785,11 +1785,14 @@ corpus — run the **corpus-grep checklist**:
    `docs/coordination/<theme>.md` — prior agents may have closed
    the item already.
 5. **The library — walk three tiers, cheapest first.** The ingested
-   sources are 24.7 M characters; do not grep straight into them when a
-   line will do.
+   sources are **69.0 M characters** in `sections/` plus 1.1 M in `ocr/`
+   (measured 2026-09-27; this line read *"24.7 M"* until then, low by
+   **2.8×**). The figure is the whole argument for this tier order, so
+   understating it understates the advice — do not grep straight into them
+   when a line will do.
 
    ```sh
-   grep -in <topic> library/INDEX.md              # ~513 briefs (527 lines); re-count, do not trust
+   grep -in <topic> library/INDEX.md              # 693 rows (710 lines) on 2026-09-27; re-count, do not trust
    cat library/<doc-id>/summary.json              # ~300 tokens: is it worth opening?
    grep -rln <topic> library/<doc-id>/sections/   # the text itself
    ```
@@ -1801,9 +1804,11 @@ corpus — run the **corpus-grep checklist**:
    without opening anything else (contextual retrieval: a chunk in
    isolation otherwise loses what makes it mean anything).
 
-   **One line per *work*, not per file.** The library holds 19 works more
-   than once — a preprint beside its published version, or the same PDF
-   ingested under two names — and Neumann–Zagier three times. The extra
+   **One line per *work*, not per file.** The library holds **21 duplicate
+   copies over 20 distinct works** (measured 2026-09-27; this read *"19
+   works"* / *"23 known duplicate copies"*, which are two different
+   quantities and were quoted as if interchangeable) — a preprint beside its
+   published version, or the same PDF ingested under two names. The extra
    copies keep their text on disk, so a full-text grep still lands in
    them; each carries `duplicate_of` in its section front-matter naming
    the copy to prefer. **Do not read two hits on one work as two
@@ -1812,6 +1817,32 @@ corpus — run the **corpus-grep checklist**:
    `scripts/library-find-duplicates.py` proposes, but its same-work and
    different-work score ranges overlap, so a proposal is not a verdict —
    a sequel sharing its setup sections outscores four true duplicates.
+
+   **🛑 "Neumann–Zagier three times" was a MISATTRIBUTION, and the live NZ
+   duplicate is UNADJUDICATED (measured 2026-09-27).** The work actually held
+   three times is **`arxiv-2304.12545v1`** — *"Hyperbolic 3-manifolds, the
+   Bloch group, and the work of Walter Neumann"*, a 2023 survey **about**
+   Neumann — whose two extra copies (`hyperbolicandneumann`,
+   `celebratio-mathematica-neumann-hyperbolic-3-manifolds`) both carry
+   `duplicate_of` correctly. It is the only work with more than one extra copy.
+
+   **Neumann–Zagier 1985 itself is held TWICE and is flagged nowhere.** Both
+   `neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds` and the same
+   stem `-co` are *Topology* **24(3), 307–332, 1985** — 3 sections each,
+   57,294 vs 57,324 bytes (0.05 % apart, an OCR-pass difference). Neither
+   `structure.json` carries `duplicate_of`, the ledger (5 entries) names
+   neither, and **both have their own `INDEX.md` row** (lines 666–667,
+   adjacent). So this is the exact hazard this paragraph warns about, live on
+   the corpus's own most-cited hyperbolic-volume source: a tier-1 scan or a
+   full-text grep returns two hits and they read as two independent sources.
+   **Adjudicating it is the library arc's call, not a passing agent's** —
+   setting `duplicate_of`, writing the ledger and regenerating `INDEX.md` are
+   that arc's artifacts, and this paragraph's own rule is that a proposal is
+   not a verdict. Recorded, not fixed.
+
+   A prefix trap while checking it: `grep -c '<stem>' library/INDEX.md`
+   returns **2** for the shorter stem, because it is a prefix of the `-co`
+   one. Match the full row or you will read one work's row as two.
 
    Briefs and summaries are **extractive** — assembled from each
    document's own abstract, section titles and extracted claims, nothing
@@ -1825,20 +1856,24 @@ corpus — run the **corpus-grep checklist**:
    An item can be open *in this corpus* and settled in a paper we
    already hold; that is a citation, not a derivation, but it changes
    what "open" means and it is the difference between deriving a result
-   and re-deriving one. **576** document directories, holding **11,528**
+   and re-deriving one. **715** document directories, holding **14,026**
    section files, are searchable this way (this read *"332 documents /
-   7,313 sections"* until 2026-08-30 — low by 62 % — and *"542 / 10,922"*
-   until 2026-09-03; the library grows, so **re-count, do not quote**).
+   7,313 sections"* until 2026-08-30 — low by 62 % — *"542 / 10,922"* until
+   2026-09-03, and *"576 / 11,528"* until 2026-09-27; the library grows, so
+   **re-count, do not quote**).
 
    **Say which count you mean, or the next reader will "correct" you.**
    Three numbers describe this library and they are all different:
-   `ls -d library/*/ | wc -l` gives **576** *directories* (what the grep
-   above actually walks); `grep -c '^| \[' library/INDEX.md` gives **552**
-   *index rows*, because the 23 known duplicate copies deliberately get no
-   row of their own; and `summarize-library.py` prints that 552 as
-   "documents". A grep-coverage claim wants the 576; a "how many distinct
-   works do we hold" claim wants the 552. Quoting one against the other
-   reads as staleness when it is a category difference.
+   `ls -d library/*/ | wc -l` gives **715** *directories* (what the grep
+   above actually walks); `grep -c '^| \[' library/INDEX.md` gives **693**
+   *index rows*, because the 21 duplicate copies and 1 container deliberately
+   get no row of their own; and `summarize-library.py` prints that 693 as
+   "documents". A grep-coverage claim wants the 715; a "how many distinct
+   works do we hold" claim wants the 693. Quoting one against the other
+   reads as staleness when it is a category difference. (Figures measured
+   2026-09-27; this row read 576 / 552 / 23 before, and named only the
+   duplicates as the exclusion, which cannot balance — see the invariant
+   below, which needs the container too.)
 
    **🛑 And the duplicates do NOT always explain the gap — INDEX.md goes
    STALE, silently (found 2026-09-03).** On that date the index carried
@@ -1869,6 +1904,14 @@ corpus — run the **corpus-grep checklist**:
    and when *that* fails the index is behind. Measured 2026-09-07 after a
    regeneration: **661 − 640 = 21 = 20 + 1**, exact.
 
+   **Re-measured 2026-09-27 and it still balances: `715 − 693 = 22 = 21 + 1`.**
+   So the index is **current** — a clean tier-1 scan today is evidence about
+   the index rather than about the library, which is what this whole block
+   exists to let you distinguish. Recomputing it is four one-line commands
+   (`ls -d library/*/ | wc -l`, `grep -c '^| \[' library/INDEX.md`, and
+   `grep -l` for `"duplicate_of"` and `"container"` over
+   `library/*/structure.json`), so measure rather than inherit either verdict.
+
    Both exclusions are silent, and one is silent in a worse way: `build()`
    returns `None` for a container or a duplicate with no diagnostic, so a
    directory that is neither — a genuinely un-indexed document — is
@@ -1890,7 +1933,10 @@ corpus — run the **corpus-grep checklist**:
    grep -rln <topic> library/*/ocr/     # the tier the three above miss
    ```
 
-   Measured, not estimated: **25 of 576** directories carry an `ocr/`; ten
+   Measured, not estimated: **26 of 715** directories carry an `ocr/`
+   (2026-09-27; read "25 of 576" before, so the tier has grown by one while
+   the library grew by 139 — it is not keeping pace and remains a small,
+   fixed set worth grepping in full); ten
    of the eleven single-`sections/`-file directories hold **under 15 %** of
    their OCR bytes in `sections/`, six of them under 3 %. The worked case is
    the one that exposed it — `library/procrsoclondona92/` is **Moffatt &
