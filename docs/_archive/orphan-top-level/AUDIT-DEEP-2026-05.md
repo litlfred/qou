@@ -126,7 +126,7 @@ the trust basis from `derivation_chain.py`, and the audit verdict.
 
 * **Block**: `def:categorical-braid-action`,
   `def:braid-monoidal-functor`
-  (`content/quantum-observable-universe/braids-and-knots/`)
+  (`folio/quantum-observable-universe/braids-and-knots/`)
 * **Lean**: `qou:QOU.BraidKnot.CategoricalAction` (axiom class +
   derived theorems)
 * **Trust**: AXIOM (entrypoint
@@ -322,7 +322,7 @@ These are the load‑bearing claims; flagged for migration first.
 
 | Kind | Label | File |
 |------|-------|------|
-| theorem | `thm:em-spectral-completeness` | `content/quantum-observable-universe/descartes-universe/em-spectral-completeness.ts` |
+| theorem | `thm:em-spectral-completeness` | `folio/quantum-observable-universe/descartes-universe/em-spectral-completeness.ts` |
 | theorem | `thm:embeddability-closure` | `…/descartes-universe/embeddability-closure.ts` |
 | theorem | `thm:frobenius-antipode-unifies-chirality-and-tower` | `…/braids-and-knots/frobenius-antipode-unifies-chirality-and-tower.ts` |
 | theorem | `thm:frobenius-codim-universal` | `…/braids-and-knots/frobenius-codim-universal.ts` |

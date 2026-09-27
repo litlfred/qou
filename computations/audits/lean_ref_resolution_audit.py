@@ -79,7 +79,7 @@ CONTENT_ROOT = REPO_ROOT / "content"
 
 # Mirror of folio-assistant/cat-harness/schemas/lean-packages.ts LEAN_PACKAGES.
 # Kept inline here because Python doesn't import .ts and the registry
-# is small + stable.  See folio/pipeline/migrate-lean-refs.ts for
+# is small + stable.  See content/pipeline/migrate-lean-refs.ts for
 # the JS resolver this audit shadows.
 LEAN_PACKAGES = {
     "qou":      {"paperDir": "quantum-observable-universe",

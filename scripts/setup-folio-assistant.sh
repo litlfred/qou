@@ -33,7 +33,7 @@
 #
 # NOTE on internal layout: the import paths this script makes resolvable
 # assume the platform repo exposes `schemas/` (top-level) and
-# `folio/pipeline/` — the same assumptions already encoded in qou's
+# `content/pipeline/` — the same assumptions already encoded in qou's
 # content shims and package.json. If the folio-assistant repo lays those
 # out differently, fix the subpaths in those consumers; this script only
 # wires the `folio-assistant/` -> platform-root link.
@@ -87,7 +87,7 @@ report_off_ref() {
   warn "platform clone is NOT at $_tgt ($_behind commit(s) behind); it is at $(git -C "$CLONE_DIR" rev-parse --short HEAD)"
   warn "  every pipeline run below uses that code, not the pinned code."
   warn "  usually the clone is dirty because qa-sweep rewrites its script-sidecars; to fix:"
-  warn "    git -C \"$CLONE_DIR\" checkout -- folio/pipeline/script-sidecars/ && $0"
+  warn "    git -C \"$CLONE_DIR\" checkout -- content/pipeline/script-sidecars/ && $0"
 }
 
 # --- locate the qou repo root --------------------------------------------
@@ -149,7 +149,7 @@ if git -C "$CLONE_DIR" rev-parse --verify --quiet "$REF^{commit}" >/dev/null 2>&
     report_off_ref
   else
     # A dirty clone is NOT the rare case. `qa-sweep` rewrites
-    # folio/pipeline/script-sidecars/*.script.json (last_run_at, deps_hash) on
+    # content/pipeline/script-sidecars/*.script.json (last_run_at, deps_hash) on
     # every run, so ANY pipeline use leaves the clone dirty and this branch is
     # taken from then on. Left as a bare info line, the clone silently freezes on
     # whatever commit it happened to be on while every later run keeps serving
@@ -173,7 +173,7 @@ CLONE_ABS="$(cd "$CLONE_DIR" && pwd)" || die "cannot resolve $CLONE_DIR"
 
 # --- which layout is this clone? -----------------------------------------
 # folio-assistant split its own tree on 2026-09-20: the platform (schemas/,
-# folio/pipeline/, src/, scripts/, adapters/) moved from the clone ROOT down
+# content/pipeline/, src/, scripts/, adapters/) moved from the clone ROOT down
 # into `cat-harness/`. The clone root keeps package.json and node_modules, so
 # `bun install` and the dep check below still belong there — only the code
 # moved.

@@ -2,9 +2,9 @@
 
 Date: 2026-07-19.  Sources on `main`:
 
-- [`QOU/MathlibExt/MatrixSemisimple.lean`](../../content/quantum-observable-universe/lean/QOU/MathlibExt/MatrixSemisimple.lean)
+- [`QOU/MathlibExt/MatrixSemisimple.lean`](../../folio/quantum-observable-universe/lean/QOU/MathlibExt/MatrixSemisimple.lean)
   — `IsSemisimpleRing (Matrix n n K)` for `K` a `DivisionRing`, **all** index types (empty case included), sorry-free.
-- [`QOU/MathlibExt/EndSemisimple.lean`](../../content/quantum-observable-universe/lean/QOU/MathlibExt/EndSemisimple.lean)
+- [`QOU/MathlibExt/EndSemisimple.lean`](../../folio/quantum-observable-universe/lean/QOU/MathlibExt/EndSemisimple.lean)
   — `IsSemisimpleRing (Module.End K V)` for `K` a `Field`, `V` finite-dimensional, sorry-free
   (transfer of the matrix result along `algEquivMatrix` on a chosen basis).
 

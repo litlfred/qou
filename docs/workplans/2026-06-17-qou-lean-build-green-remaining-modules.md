@@ -22,7 +22,7 @@ starts warm.
 - **Verify single files with lean-direct**, not `lake build <Module>`:
   ```bash
   LP=""; for d in .lake/packages/*/.lake/build/lib/lean .lake/build/lib/lean \
-      content/quantum-observable-universe/lean/.lake/build/lib/lean; do
+      folio/quantum-observable-universe/lean/.lake/build/lib/lean; do
     [ -d "$d" ] && LP="$LP:$d"; done; LP="${LP#:}"
   LEAN_PATH="$LP" lean <file.lean>
   ```

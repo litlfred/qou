@@ -57,7 +57,7 @@ RUN pip3 install --break-system-packages --no-cache-dir \
         'leanblueprint'
 
 # ── bun (content pipeline) ──
-# bun is the JS runtime that drives folio/pipeline/. Pin to a
+# bun is the JS runtime that drives content/pipeline/. Pin to a
 # specific version (per PR #1104 review, Gemini) to keep the image
 # reproducible. publish.yml currently uses `oven-sh/setup-bun@v2`
 # with `bun-version: latest` — a follow-up will align both to the

@@ -19,7 +19,7 @@
 #               surfaced only because an unrelated rebase happened to print a
 #               union count that looked wrong.
 #   earlier     a --review-ledger run deleted 116 of 268 entries. THAT one is
-#               guarded, by folio/pipeline/lean-vacuity-ledger-foreign-entries.test.ts.
+#               guarded, by content/pipeline/lean-vacuity-ledger-foreign-entries.test.ts.
 #
 # WHY THE EXISTING GUARD COULD NOT CATCH THE 83
 # ---------------------------------------------

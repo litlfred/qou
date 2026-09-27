@@ -51,7 +51,7 @@ handover (outward-facing, not merge-blocking).
    correct. Use template `.github/ISSUE_TEMPLATE/bib-physical-review.md`, assign
    `@litlfred`. QOU context: cited by `appendix-surreals/mobius-surreal-renormalization`
    + `climax-volume-mass/jones-mobius-diagonal` (both reference `prop:mobius-energy`).
-2. Set `ohara1991` → `issue-open` in `content/schema/references.review.json`
+2. Set `ohara1991` → `issue-open` in `folio/schema/references.review.json`
    (`source: "issue#NNN"`, record its `entryHash` — import `entryHash` from
    `content/pipeline/validate-references-human-review.ts`, now guarded by
    `import.meta.main` so importing it is side-effect-free).

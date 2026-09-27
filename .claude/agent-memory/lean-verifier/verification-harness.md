@@ -75,7 +75,7 @@ silent false GREEN. Only the second one can ship.
 ## 3. The harness that does work
 
 ```bash
-ROOT=/home/user/qou; LEANLIB="$ROOT/content/quantum-observable-universe/lean"
+ROOT=/home/user/qou; LEANLIB="$ROOT/folio/quantum-observable-universe/lean"
 BASE="$LEANLIB/.lake/build/lib/lean"
 for d in "$ROOT"/.lake/packages/*/.lake/build/lib/lean; do BASE="$BASE:$d"; done
 MIRROR=/tmp/qoumir
@@ -448,7 +448,7 @@ Measured 2026-09-03, sweeping all 908 content-block sibling `.lean` files.
 The standard env script builds `LEAN_PATH` from the **QOU** package plus the
 root `.lake/packages/*`. That is right for a QOU library file and **wrong for
 a content-block sibling**, because a sibling may import another paper's
-library. `content/quantum-observable-universe/climax-volume-mass/vertex-algebra-relations.lean`
+library. `folio/quantum-observable-universe/climax-volume-mass/vertex-algebra-relations.lean`
 opens with `import UGB.…`, and the two environments disagree on the *same file
 at the same commit*:
 

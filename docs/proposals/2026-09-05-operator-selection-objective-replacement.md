@@ -392,7 +392,7 @@ exit 0. `shell-closure-stability.md` carries the same *shape* of claim about the
 deciding it is a measurement, not a doc fix.
 
 **O3′ is begun, formalize-first.**
-[`QOU/MassTheory/BlockSDPNondegeneracy.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/BlockSDPNondegeneracy.lean)
+[`QOU/MassTheory/BlockSDPNondegeneracy.lean`](../../folio/quantum-observable-universe/lean/QOU/MassTheory/BlockSDPNondegeneracy.lean)
 — five declarations, `lean`-direct exit 0, `#print axioms` clean on all five
 (`propext, Classical.choice, Quot.sound`; no `sorryAx`):
 

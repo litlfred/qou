@@ -36,7 +36,7 @@
         "residual_proton": "exact",
         "anchor_stable": true,
         "wired": true,
-        "producer": "content/quantum-observable-universe/mass-theory/q-beta-c-2-eq-neg-one-structural.lean",
+        "producer": "folio/quantum-observable-universe/mass-theory/q-beta-c-2-eq-neg-one-structural.lean",
         "note": "Kashiwara f-tilde_1^2 / bar-even constraint, PROVED (PR #1602)."
       },
       {
@@ -88,7 +88,7 @@
         "anchor_stable": false,
         "cross_anchor_tested": "2026-06-04",
         "wired": false,
-        "producer": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.{ts,md,lean} (PR #1793) + Lake mirror lean/QOU/BraidKnot/QBetaCnAtSilver.lean; probe computations/qbeta/qbeta_c6_c10_crossanchor_falsification.py (PR #1842)",
+        "producer": "folio/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.{ts,md,lean} (PR #1793) + Lake mirror lean/QOU/BraidKnot/QBetaCnAtSilver.lean; probe computations/qbeta/qbeta_c6_c10_crossanchor_falsification.py (PR #1842)",
         "note": "PROVED rational identities at the silver ratio q = 1+sqrt(2) (Lean norm_num-trivial). Cross-anchor tested 2026-06-04 (PR #1842) vs PR #1824 BIAS-CORRECTED extraction (supersedes the raw values cited earlier): c_8 is the FIRST FREE rung (no form imposed) and the Pell-Lucas pattern BREAKS there (closed +2.27 vs corrected -0.215, wrong sign). Forms are anchor-STABLE (swing 2.4e-7% < 1%) and EXACT only at the silver structural anchor (b^2=7/8), but do NOT continue into the free rungs. Stays empirical, no production wire. §8 flip-flop guard applies."
       }
     ],

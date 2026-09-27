@@ -218,7 +218,7 @@ projecting it. That converts a *visible* gap (`sorry`) into an *invisible* one.
 ## Detection heuristic (candidate grep → agent confirmation)
 
 0. **Runnable scanner (preferred).** `bun run
-   content/pipeline/lean-vacuity-axiom-audit.ts` walks every `.lean` (library
+   folio/pipeline/lean-vacuity-axiom-audit.ts` walks every `.lean` (library
    trees + content-block siblings), strips comments/docstrings, and emits a
    witness JSON (`docs/audits/<date>-lean-vacuity-axiom-audit.json`) keyed by
    path, with one entry per category (#1–#6 above). It exempts sibling-stub
@@ -396,10 +396,10 @@ machine, and a one-off triage doc could silently mis-call a candidate "legit"
 
 ```bash
 # Seed/refresh: new + file-changed candidates become `needs-agent`.
-bun run content/pipeline/lean-vacuity-axiom-audit.ts content/quantum-observable-universe \
+bun run folio/pipeline/lean-vacuity-axiom-audit.ts folio/quantum-observable-universe \
   --review-ledger docs/audits/lean-vacuity-review-ledger.json
 # Enforce: exit 1 if ANY non-exempt candidate lacks a FRESH agent verdict.
-bun run content/pipeline/lean-vacuity-axiom-audit.ts content/quantum-observable-universe \
+bun run folio/pipeline/lean-vacuity-axiom-audit.ts folio/quantum-observable-universe \
   --check-ledger docs/audits/lean-vacuity-review-ledger.json
 ```
 

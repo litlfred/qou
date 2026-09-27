@@ -10,7 +10,7 @@ Both PRs from this line are on `main`:
 - **#4446** — R2-core tranche (SW/q-Laguerre identification, bar-reflection
   pushforward closed scope-(b), exact tropical transport).
 - **#4507** — the `A_w` zero localization
-  ([`AwZeroLocalization.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/AwZeroLocalization.lean)
+  ([`AwZeroLocalization.lean`](../../folio/quantum-observable-universe/lean/QOU/Archimedean/AwZeroLocalization.lean)
   verified present on `main`), plus the F-vs-K survey.
 
 The working branch was therefore stale *and* redundant; it has been restarted
@@ -113,4 +113,4 @@ whole document, title included, as an unverified lead.
 - [`2026-08-01-ksel2id-tropical-transport.md`](../audits/2026-08-01-ksel2id-tropical-transport.md)
 - [`2026-08-01-awzero-asymptotics.md`](../audits/2026-08-01-awzero-asymptotics.md)
 - [`2026-08-01-fvk-selection-framing.md`](../audits/2026-08-01-fvk-selection-framing.md)
-- Conjecture block: [`schwinger-measure-computational-time.md`](../../content/quantum-observable-universe/predicted-spectra/schwinger-measure-computational-time.md)
+- Conjecture block: [`schwinger-measure-computational-time.md`](../../folio/quantum-observable-universe/predicted-spectra/schwinger-measure-computational-time.md)

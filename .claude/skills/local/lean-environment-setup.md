@@ -301,8 +301,8 @@ elan / cache hosts are network-restricted.
 > does **not** carry `Mathlib.RepresentationTheory.*` or
 > `RingTheory.SimpleModule.{WedderburnArtin,Isotypic,IsAlgClosed}` (they are
 > outside the QOU dependency closure). The 11 oleans those modules need — for
-> [`QOU/BraidKnot/MaschkeSnSemisimple.lean`](../../../content/quantum-observable-universe/lean/QOU/BraidKnot/MaschkeSnSemisimple.lean)
-> + [`WedderburnSn.lean`](../../../content/quantum-observable-universe/lean/QOU/BraidKnot/WedderburnSn.lean)
+> [`QOU/BraidKnot/MaschkeSnSemisimple.lean`](../../../folio/quantum-observable-universe/lean/QOU/BraidKnot/MaschkeSnSemisimple.lean)
+> + [`WedderburnSn.lean`](../../../folio/quantum-observable-universe/lean/QOU/BraidKnot/WedderburnSn.lean)
 > (and any rep-theory / OV-tower follow-up) — are preserved on the **addon**
 > orphan branch `lake-cache/qou-v4-24-0-repthy-wedderburn` (2.9 MB). Restore it
 > **after** the base restore above:
@@ -651,7 +651,7 @@ both occur with **no** `insteadOf` redirect set (so they are additive to
    ```bash
    LP=$(find "$ROOT/.lake/packages" -maxdepth 5 -type d -path '*/.lake/build/lib/lean' | tr '\n' ':')
    # for a file that imports other QOU.* modules, also add the workspace + paper oleans:
-   LP="$LP$ROOT/.lake/build/lib/lean:$ROOT/content/quantum-observable-universe/lean/.lake/build/lib/lean"
+   LP="$LP$ROOT/.lake/build/lib/lean:$ROOT/folio/quantum-observable-universe/lean/.lake/build/lib/lean"
    env LEAN_PATH="$LP" ELAN_NO_OVERRIDE_NOTICE=1 lean path/to/File.lean   # EXIT 0 = checks
    ```
    lake never runs ⇒ nothing re-resolves. (Whole-lib builds still need
@@ -773,7 +773,7 @@ Flipping `preferReleaseBuild` in *proofwidgets'* lakefile does **not** help
 never touches the repo:
 
 ```bash
-LP=content/quantum-observable-universe/lean/.lake/packages
+LP=folio/quantum-observable-universe/lean/.lake/packages
 # 1. Build the 19 widget JS bundles from source (deps from allowlisted npmjs).
 #    Rollup emits straight into .lake/packages/proofwidgets/.lake/build/js/ .
 ( cd "$LP/proofwidgets/widget" && export PATH="/opt/node22/bin:$PATH" \
@@ -782,7 +782,7 @@ LP=content/quantum-observable-universe/lean/.lake/packages
 #    (delete the `with NameMap.empty.insert `errorOnBuild "…"` clause on the
 #     proofwidgets require in $LP/mathlib/lakefile.lean — 4 lines).
 # 3. Reconfigure + build the target; -R is REQUIRED (lakefile changed).
-( cd content/quantum-observable-universe/lean \
+( cd folio/quantum-observable-universe/lean \
   && export PATH="$HOME/.elan/bin:/opt/node22/bin:$PATH" \
   && lake build -R QOU.MathlibExt.<YourModule> )
 ```
@@ -900,7 +900,7 @@ mkdir -p ../mathlib-src && (cd ../mathlib-src && git init -q \
 # 2. Fill the gap, then verify the blocked file normally.
 export LEAN_PATH=<restored build/lib/lean dirs, colon-separated>
 python3 -u scripts/build-missing-oleans.py Mathlib.Algebra.Module.LinearMap.Polynomial
-lean content/quantum-observable-universe/lean/QOU/MathlibExt/EndBaseChange.lean
+lean folio/quantum-observable-universe/lean/QOU/MathlibExt/EndBaseChange.lean
 ```
 
 **Worked case (bean `qou-py7e`).** `QOU/MathlibExt/EndBaseChange.lean` — merged

@@ -73,7 +73,7 @@ rev = "f897ebcf72cd16f89ab4577d0c826cd14afaafc7"
 #      command line above (there is no `defaultTargets` — see the note there).
 #   4. Adding the package → paper-dir mapping to
 #      schemas/lean-packages.ts (repo root; this pointer read
-#      content/schema/lean-packages.ts, which never existed) (consumed by the schema + MCP
+#      folio/schema/lean-packages.ts, which never existed) (consumed by the schema + MCP
 #      server for resolving `lean.ref` URIs).
 ################################################################################
 

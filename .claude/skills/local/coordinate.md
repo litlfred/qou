@@ -143,7 +143,7 @@ per-isotope binding (Step 9b), confinement SDP (Step 10), Q_β
 truncation (Step 11), or any sidecar algorithm (Δ_λ closure, c_k
 ladder, LP/SDP dual emission, witness-JSON pipeline) — you MUST
 update the matching `alg:`-block under
-[`content/quantum-observable-universe/appendix-mass-binding-algorithms/`](../../../content/quantum-observable-universe/appendix-mass-binding-algorithms/)
+[`folio/quantum-observable-universe/appendix-mass-binding-algorithms/`](../../../folio/quantum-observable-universe/appendix-mass-binding-algorithms/)
 in the same PR.**
 
 The appendix is a *maintenance contract*, not a static document:

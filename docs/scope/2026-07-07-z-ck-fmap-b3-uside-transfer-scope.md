@@ -87,7 +87,7 @@ data-determined).
 
 ## 5. Cross-references
 
-- Fibre parity certificates: [`ZBarParity.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/ZBarParity.lean) §2/§6/§7
-- Transfer map (open): [`prop:q-beta-c-k-recursion-from-habiro-q-difference`](../../content/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md)
+- Fibre parity certificates: [`ZBarParity.lean`](../../folio/quantum-observable-universe/lean/QOU/QBeta/ZBarParity.lean) §2/§6/§7
+- Transfer map (open): [`prop:q-beta-c-k-recursion-from-habiro-q-difference`](../../folio/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md)
 - Registry: [`ck-dk-canonical-registry.md` §9](../coordination/ck-dk-canonical-registry.md) (KC13–KC16)
 - Quantum-modular S-shadow framing: [2026-06-13 heat f-map audit](../audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md) §2-quater

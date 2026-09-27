@@ -430,7 +430,7 @@ TRAP: the 2026-09-05 survey §7g (pre-correction) cited the Gevrey result to Alg
 
 **The object is CLOSED and is a named corpus proposition.** Do not re-open, and do not call it new.
 `prop:binding-period-involution-statistic`
-(`content/quantum-observable-universe/mass-theory/binding-period-involution-statistic.md:8-11`) states
+(`folio/quantum-observable-universe/mass-theory/binding-period-involution-statistic.md:8-11`) states
 `S^bal(n;q) = Σ_{λ⊢n} ∏_k[k] / ∏_{c∈λ}[h(c)]`, balanced `[k]=(q^k−q^{-k})/(q−q^{-1})`.
 Since `q^h − q^{-h} = 2 sinh(h ln q) = (q−q^{-1})[h]`, **any** `Σ_λ ∏_c 1/(2 sinh(h ln q))` is
 `S^bal(n;q) / ((q−q^{-1})^n [n]_q!)` exactly — a rescaling, not a new object.

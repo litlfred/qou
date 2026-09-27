@@ -33,38 +33,38 @@
 
 **Phase-transition machinery already exists** (information-theory Ch 8,
 `sec:phase-transitions`) and is partly Lean-proven:
-- [`prop:phase-transition-boundary`](../../content/quantum-observable-universe/information-theory/phase-transition-boundary.md)
+- [`prop:phase-transition-boundary`](../../folio/quantum-observable-universe/information-theory/phase-transition-boundary.md)
   (+ `.lean`): gas↔liquid `T_q^{g→l}=S_q^∂/[2]_q`, liquid↔solid
   `T_q^{l→s}=S_q^∂/([2]_q·[n_K]_q)`, sublimation = non-split Hecke
   extension `Ext¹≅ℤ` (Hopf invariant of π₃(S²)).
-- [`rem:phase-transition-interpretation`](../../content/quantum-observable-universe/information-theory/phase-transition-interpretation.md):
+- [`rem:phase-transition-interpretation`](../../folio/quantum-observable-universe/information-theory/phase-transition-interpretation.md):
   three phases = symmetric / mixed / antisymmetric Hecke channels.
 - **Temperature IS calibrated**:
-  [`def:quantum-temperature`](../../content/quantum-observable-universe/information-theory/quantum-temperature.md)
+  [`def:quantum-temperature`](../../folio/quantum-observable-universe/information-theory/quantum-temperature.md)
   `T_q = ℏ_q = (q−1)/q`; Boltzmann + gas-constant blocks give the Kelvin
   bridge. **But no numerical evaluation at q₀ yet.**
 
 **Molecular-construction chapter exists** (Ch 12) with the full template:
-[`def:molecular-braid`](../../content/quantum-observable-universe/molecular-construction/molecular-braid.md),
+[`def:molecular-braid`](../../folio/quantum-observable-universe/molecular-construction/molecular-braid.md),
 benzene / CH₄ / CO₂ / CO / H₂ built; oxygen valence = 2 + 2 lone pairs
-already specified ([`valence-from-braid`](../../content/quantum-observable-universe/molecular-construction/valence-from-braid.md)).
+already specified ([`valence-from-braid`](../../folio/quantum-observable-universe/molecular-construction/valence-from-braid.md)).
 **No H₂O block yet** — clean new target. ⚠ Owner flags this chapter as
 **VERY OLD** → currency + compute-wiring audit launched
 ([`2026-06-08-molecular-chapter-currency-wiring-audit.md`](../audits/2026-06-08-molecular-chapter-currency-wiring-audit.md),
 in flight).
 
 **Knot-symmetry hierarchy backbone exists**:
-[`cor:knot-factor-borromean-composite`](../../content/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.md)
+[`cor:knot-factor-borromean-composite`](../../folio/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.md)
 — composite knot factor = product of constituent factors (Brunnian
 decoupling). This is the proven core of the owner's "hierarchies ←
 constituent knot symmetries" hypothesis.
 
 **Confinement filtration ladder exists**:
-[`def:confinement-level`](../../content/quantum-observable-universe/particle-interactions/confinement-level.md)
+[`def:confinement-level`](../../folio/quantum-observable-universe/particle-interactions/confinement-level.md)
 `J^ℓ(q)`, with phase transitions at LP boundary `E(λ,q*)=0`.
 
 **Electron shells** = Hopf-linked trefoils
-([`def:electron-shell`](../../content/quantum-observable-universe/predicted-spectra/electron-shells-hopf.md),
+([`def:electron-shell`](../../folio/quantum-observable-universe/predicted-spectra/electron-shells-hopf.md),
 `def:electron-shell-braid-capacity`); shell capacity `2n²`.
 
 **GAP — lattice / crystal symmetry**: the framework is *topologically*

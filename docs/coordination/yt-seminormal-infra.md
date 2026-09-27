@@ -180,7 +180,7 @@ by 1 on a descent; **every descent is admissible** (same-row/col ⇒ ascent unde
 
 **All hard lemmas for closing `syt_all_connect_to_some` are now proven.** The
 realization `adjacentSwapStep_swapCells` is merged; the WF measure kernel
-[`QOU/Mathlib/PermInversion.lean`](../../content/quantum-observable-universe/lean/QOU/Mathlib/PermInversion.lean)
+[`QOU/Mathlib/PermInversion.lean`](../../folio/quantum-observable-universe/lean/QOU/Mathlib/PermInversion.lean)
 (PR #3922, sorry-free) supplies:
 
 - `invCount` + `invCount_mul_swap_lt` (adjacent-descent swap strictly lowers the

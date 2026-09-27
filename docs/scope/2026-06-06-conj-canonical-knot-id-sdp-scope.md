@@ -2,7 +2,7 @@
 
 **Date:** 2026-06-06
 **Status:** scoping only (no execution) — research-grade, multi-session
-**Block:** [`conj:canonical-knot-id-sdp`](../../content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md)
+**Block:** [`conj:canonical-knot-id-sdp`](../../folio/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md)
 **Lean:** `qou:QOU.BraidKnot.helium3_uniqueness_closed`
 (= `nucleus_uniqueness_closed 9`)
 

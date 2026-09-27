@@ -219,7 +219,7 @@ If the author says "apply all" or "go ahead":
   **per-isotope binding**, **confinement-SDP**, or **Q_β** branch
   of the canonical chain (Steps 9a, 9b, 10, 11), include in the
   action plan a check that the matching `alg:`-block under
-  [`content/quantum-observable-universe/appendix-mass-binding-algorithms/`](../../../content/quantum-observable-universe/appendix-mass-binding-algorithms/)
+  [`folio/quantum-observable-universe/appendix-mass-binding-algorithms/`](../../../folio/quantum-observable-universe/appendix-mass-binding-algorithms/)
   still cites the (possibly-modified) proposition correctly. If
   the proof edit changes the proposition statement or its name,
   the algorithm block's `uses[]` and *Correctness conditions*

@@ -8,7 +8,7 @@ Status section: the from-the-Lagrangian derivation. go on rewrite."*
 ## Context (corpus-grounded)
 
 `prop:em-coupling-bring-zero-mode`
-([`predicted-spectra/em-coupling-bring-zero-mode.md`](../../content/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.md))
+([`predicted-spectra/em-coupling-bring-zero-mode.md`](../../folio/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.md))
 already establishes, as a **§3b-cond conditional theorem**:
 
 $$\frac{1}{\alpha_{EM}} = q[9]_q[10]_q + \frac{2g}{4\pi(g-1)} + \mathcal O(\alpha),\quad g=4,$$

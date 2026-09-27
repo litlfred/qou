@@ -3,7 +3,7 @@
 *Status marker for the Φ_q tower in the wake of the JSJ pivot.
 Originally written as a deprecation notice (2026-04-24); re-scoped
 on 2026-04-29 once the
-[Φ_q–JSJ archimedean bridge conjecture](../content/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.md)
+[Φ_q–JSJ archimedean bridge conjecture](../folio/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.md)
 made it clear that Φ_q and JSJ are dual presentations of the same
 archimedean number, not competing engines.*
 
@@ -25,7 +25,7 @@ production*, not as deprecated mathematics.
 ## Why we're keeping Φ_q (not deprecating it)
 
 The new
-[Φ_q–JSJ archimedean bridge conjecture](../content/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.md)
+[Φ_q–JSJ archimedean bridge conjecture](../folio/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.md)
 asserts that, on the archimedean side,
 
 $$\Phi_q\bigl(\lvert V_S \rvert\bigr) \cdot z^{|S|}
@@ -33,7 +33,7 @@ $$\Phi_q\bigl(\lvert V_S \rvert\bigr) \cdot z^{|S|}
    \rho_q \cdot \mathrm{Vol}_{\mathrm{hyp}}(S^3 \setminus K_S),$$
 
 where $K_S$ is the
-[Φ_q-piece](../content/quantum-observable-universe/braids-and-knots/phi-q-piece.md)
+[Φ_q-piece](../folio/quantum-observable-universe/braids-and-knots/phi-q-piece.md)
 of the braid. Summed over $S$ this reproduces the JSJ piecewise sum.
 So Φ_q and JSJ are the **same archimedean number** computed through
 two different convergence schemes. JSJ wins on numerical precision for
@@ -48,9 +48,9 @@ binding energies; Φ_q wins on three other axes:
    computation: the pentagon identity is the Φ_q five-term relation.
    JSJ has no analogue.
 3. **Categorical lineage.** Φ_q descends from
-   [`def:quantum-bloch-group`](../content/quantum-observable-universe/braids-and-knots/quantum-bloch-group.md)
+   [`def:quantum-bloch-group`](../folio/quantum-observable-universe/braids-and-knots/quantum-bloch-group.md)
    and
-   [`cor:quantum-dilogarithm`](../content/quantum-observable-universe/braids-and-knots/cor-quantum-dilogarithm.md);
+   [`cor:quantum-dilogarithm`](../folio/quantum-observable-universe/braids-and-knots/cor-quantum-dilogarithm.md);
    it is the natural form for talking to Wedderburn blocks, Bratteli
    diagrams, and the Hecke trace.
 
@@ -59,7 +59,7 @@ floor**, not a model floor. Both pipelines compute the same atomic
 mass; SnapPy converges faster numerically while Φ_q stays open
 algebraically. The bridge conjecture lifts this from observation to
 mathematical claim (open, but Lean-axiomatised under
-[`conj:kashaev-volume-conjecture`](../content/quantum-observable-universe/braids-and-knots/kashaev-volume-conjecture.md)).
+[`conj:kashaev-volume-conjecture`](../folio/quantum-observable-universe/braids-and-knots/kashaev-volume-conjecture.md)).
 
 ## Why the binding-energy pipeline pivoted
 
@@ -107,23 +107,23 @@ engine choice; they prove statements about the categorical
 action / Hecke-trace structure that hold regardless of whether
 the mass engine uses Φ_q, JSJ volumes, or something else:
 
-1. **[`prop:markov-pair-z2`](../content/quantum-observable-universe/braids-and-knots/markov-pair-z2.md)** —
+1. **[`prop:markov-pair-z2`](../folio/quantum-observable-universe/braids-and-knots/markov-pair-z2.md)** —
    all-pairs Markov-trace identity $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$.
    *General Hecke result.  No Φ_q dependence.*
 
-2. **[`prop:pentagon-uv-commutation`](../content/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation.md)** —
+2. **[`prop:pentagon-uv-commutation`](../folio/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation.md)** —
    quantum-torus relation $uv = q\,vu$ on the transient Wedderburn
    block.  *Directly supports Phase 2 of the handover* ("pentagon
    defect computation for adjacent crossings").  Framing involves
    the pentagon identity of Φ_q, but the underlying Hecke
    commutation result is engine-independent.
 
-3. **[`prop:descended-level-zero`](../content/quantum-observable-universe/braids-and-knots/descended-level-zero.md)** —
+3. **[`prop:descended-level-zero`](../folio/quantum-observable-universe/braids-and-knots/descended-level-zero.md)** —
    iterated descent idempotence ⇒ descended contribution lives at
    level 0 only.  *General categorical-action result.  No Φ_q
    dependence.*
 
-4. **[`prop:delta-max-uniform-bound`](../content/quantum-observable-universe/braids-and-knots/delta-max-uniform-bound.md)** —
+4. **[`prop:delta-max-uniform-bound`](../folio/quantum-observable-universe/braids-and-knots/delta-max-uniform-bound.md)** —
    explicit uniform bound $\Delta_{\max}$ for jet-tower
    convergence.  **Tightly coupled to the Φ_q tower** — DEPRECATED
    along with the tower.  Retained for reference in case the
@@ -154,7 +154,7 @@ return as the *production* binding-energy engine:
 
 Note that the **mathematical content** of the Φ_q tower is no longer
 deprecated as of 2026-04-29: see the
-[Φ_q–JSJ archimedean bridge](../content/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.md)
+[Φ_q–JSJ archimedean bridge](../folio/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.md)
 for the re-scoped status. The above instructions apply only to the
 binding-energy production pipeline.
 

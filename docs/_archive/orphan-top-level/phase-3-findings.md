@@ -14,7 +14,7 @@ asking SnapPy for its hyperbolic volume.
 ## The correct invariant
 
 The paper's definition `def:algebraic-quantum-volume`
-([`content/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume.md`](../content/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume.md))
+([`folio/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume.md`](../folio/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume.md))
 gives the algebraic quantum volume of a braid $\beta \in H_n(q)$ as
 
 $$

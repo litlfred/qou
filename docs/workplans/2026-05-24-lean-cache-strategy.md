@@ -38,7 +38,7 @@ Branch naming pattern: `lake-cache/<package>-<toolchain-slug>`
 | `lake-cache/fred2005-v4-16-0` | fred2005 paper oleans |
 
 **Granularity wins**:
-- A change to `content/quantum-observable-universe/lean/lakefile.toml` invalidates only `lake-cache/qou-*` — not the other three. Saves ~2-3× cold time on per-paper changes.
+- A change to `folio/quantum-observable-universe/lean/lakefile.toml` invalidates only `lake-cache/qou-*` — not the other three. Saves ~2-3× cold time on per-paper changes.
 - Tier 1 still works at the global level (warm reuse); Tier 2 kicks in only when Tier 1 misses, and selects only the relevant paper.
 
 **Branch cap = ≤ 8** (per owner directive of < 20):
@@ -56,9 +56,9 @@ Existing workflows (`lean_ci.yml`, `blueprint.yml`) replace their direct `action
   id: cache
   with:
     package: qou
-    lake-root: content/quantum-observable-universe/lean
+    lake-root: folio/quantum-observable-universe/lean
     manifest-files: |
-      content/quantum-observable-universe/lean/lakefile.toml
+      folio/quantum-observable-universe/lean/lakefile.toml
       lean-toolchain
 - if: steps.cache.outputs.cache-hit == 'true'
   run: echo "Cache restored from ${{ steps.cache.outputs.source }}"

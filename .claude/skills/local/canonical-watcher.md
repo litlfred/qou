@@ -32,8 +32,8 @@ nine domain-specific slots A-I.
 
 **Authoritative reference:** the three-calibration discipline is
 fixed by:
-- [`prop:three-calibration-inputs`](../../../content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md)
-- [`prop:three-calibration-discipline`](../../../content/quantum-observable-universe/observations/three-calibration-discipline.md)
+- [`prop:three-calibration-inputs`](../../../folio/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md)
+- [`prop:three-calibration-discipline`](../../../folio/quantum-observable-universe/observations/three-calibration-discipline.md)
 
 Read both before opening any author ask — the proposition's
 "What is forbidden" section is the closed list of violations.
@@ -315,7 +315,7 @@ straight is to label them at authoring time.
   — coordinate-side duality classifier and probe-status tracking
 - [`docs/audits/2026-05-23-lambda-scale-canonical-unification.md`](../../../docs/audits/2026-05-23-lambda-scale-canonical-unification.md)
   §"13-driver menu" — the canonical mechanism catalogue
-- [`bar-involution.md`](../../../content/quantum-observable-universe/braids-and-knots/bar-involution.md)
+- [`bar-involution.md`](../../../folio/quantum-observable-universe/braids-and-knots/bar-involution.md)
   + Tables 1-4 — bar-symmetry classification reference
 
 ## Domain-specific anti-patterns (extends parent)

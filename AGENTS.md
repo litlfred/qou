@@ -2418,7 +2418,7 @@ Read the cheat sheet for: per-step math + paper references + canonical compute s
 
 When working on math-affecting code or content, **trace the change to a step in the chain** and verify the canonical compute script is in the consumer set.
 
-> **🟧 Mass-and-Binding-Algorithms appendix sync (STRICT).** Any PR that touches mass / binding derivations or compute infra (Steps 9a, 9b, 10, 11 of the canonical chain, or any sidecar algorithm — Δ_λ closure, c_k truncation ladder, LP/SDP dual emission, witness-JSON pipeline) **must** update the matching `alg:`-block under [`content/quantum-observable-universe/appendix-mass-binding-algorithms/`](content/quantum-observable-universe/appendix-mass-binding-algorithms/) in the same PR. The appendix is a maintenance contract bridging propositions ↔ Python API; its `uses[]`, `computation.script`, `computation.witness`, and `.md` *Algorithm / Correctness / Python API* sections must stay in sync with the actual compute. Enforced by `local/coordinate.md §2-bis`, `local/compute-author.md §8 pre-work checklist`, `local/compute-audit.md §verification checklist`, and `local/proof-editor.md §coordination rules`. Reviewers diff the appendix against the compute / proof change.
+> **🟧 Mass-and-Binding-Algorithms appendix sync (STRICT).** Any PR that touches mass / binding derivations or compute infra (Steps 9a, 9b, 10, 11 of the canonical chain, or any sidecar algorithm — Δ_λ closure, c_k truncation ladder, LP/SDP dual emission, witness-JSON pipeline) **must** update the matching `alg:`-block under [`folio/quantum-observable-universe/appendix-mass-binding-algorithms/`](folio/quantum-observable-universe/appendix-mass-binding-algorithms/) in the same PR. The appendix is a maintenance contract bridging propositions ↔ Python API; its `uses[]`, `computation.script`, `computation.witness`, and `.md` *Algorithm / Correctness / Python API* sections must stay in sync with the actual compute. Enforced by `local/coordinate.md §2-bis`, `local/compute-author.md §8 pre-work checklist`, `local/compute-audit.md §verification checklist`, and `local/proof-editor.md §coordination rules`. Reviewers diff the appendix against the compute / proof change.
 
 > **🛑 ABSOLUTE MASS EXCISED (owner ruling 2026-08-11, bean `qou-exam`).** The framework no longer claims, targets, or scores an **absolute** nucleon or atomic mass in MeV (m_p, m_n, m_⁴He) as a prediction. Absolute mass is `m_e · (dimensionless ratio)`, and m_e (CAL-1) sets the MeV scale *by fiat* — so the MeV number double-counts the calibration and carries no content beyond the ratio. **The mass-formula shape and the `canonical_mass` facade in the two banners below remain valid — but as `m_e`-scaled *realizations* of the dimensionless ratio / binding, NOT as absolute-mass predictions.** Report ratios (`m_p/m_e`, `m_μ/m_e`, `m_K/m_π`), binding `B(K)`, decay Q-values (`Q_β`), and splittings (`Δ_pn`); do **not** present `m_p ≈ 938.27 MeV` as a framework *prediction* (it remains derivable as `m_e × ratio`, but that is a rendering, not a claim). Broader than the 2026-08-02 q₀-derivation forever-gate — that closed one route; this closes the absolute-mass *target*. Full ruling: [`docs/audits/2026-08-11-excise-absolute-mass-notion.md`](docs/audits/2026-08-11-excise-absolute-mass-notion.md).
 
@@ -2509,7 +2509,7 @@ When working on math-affecting code or content, **trace the change to a step in 
 > for C** and are kept as recorded — they need *scoping*, not correction; do
 > **not** "fix" them. **The ladder must be RE-DERIVED under D, and that is not
 > a z-swap** — `QOU.QBeta.decayLadder_zC_threeRow_ne_zero`
-> ([`MarkovZFullBarCondition.lean`](content/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean),
+> ([`MarkovZFullBarCondition.lean`](folio/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean),
 > sorry-free) makes the C-frame ladder and the mass channel's three-row forcing
 > mutually exclusive, so substituting `z_D` into the existing ladder is not a
 > valid move. Until the re-derivation lands, treat every `c_k` conclusion —
@@ -3507,9 +3507,9 @@ Do not regress either.
 
 The substrate modulus q₀ has **one** value but **two** documented pins
 (authoritative corpus:
-[`observations/three-calibration-discipline.md` §3](content/quantum-observable-universe/observations/three-calibration-discipline.md),
-[`observations/epistemic-status-of-calibrations.md`](content/quantum-observable-universe/observations/epistemic-status-of-calibrations.md),
-[`mass-theory/rem-qstar-decay-sector-q0.md`](content/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.md) — the decay-sector point `q*`, which is **conditional on (H1)** and is **NOT** an independent third determination; see registry §9f):
+[`observations/three-calibration-discipline.md` §3](folio/quantum-observable-universe/observations/three-calibration-discipline.md),
+[`observations/epistemic-status-of-calibrations.md`](folio/quantum-observable-universe/observations/epistemic-status-of-calibrations.md),
+[`mass-theory/rem-qstar-decay-sector-q0.md`](folio/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.md) — the decay-sector point `q*`, which is **conditional on (H1)** and is **NOT** an independent third determination; see registry §9f):
 
 > **Dead citation corrected 2026-08-11.** This list previously named
 > `observations/substrate-anchor-alternatives.md`, which **does not exist**
@@ -4113,9 +4113,9 @@ The repo uses a **single root Lake workspace** (`/lakefile.toml`,
 
 | Package | Paper directory | Library module |
 |---------|-----------------|----------------|
-| `qou` | `content/quantum-observable-universe/lean/` | `QOU` |
-| `ugb` | `content/unital-groebner-bases/lean/` | `UGB` |
-| `fred2005` | `content/fred2005-formal-groups/lean/` | `Fred2005` |
+| `qou` | `folio/quantum-observable-universe/lean/` | `QOU` |
+| `ugb` | `folio/unital-groebner-bases/lean/` | `UGB` |
+| `fred2005` | `folio/fred2005-formal-groups/lean/` | `Fred2005` |
 
 **Preferred build commands** (always run from repo root):
 
@@ -4261,7 +4261,7 @@ consult `LEAN_PACKAGES` for the list of valid prefixes.
 sorry
 ```
 
-- The `[key]` must match an entry in `content/schema/references.ts` exactly (case-sensitive).
+- The `[key]` must match an entry in `folio/schema/references.ts` exactly (case-sensitive).
   (`references.bib` is auto-generated from `references.ts` — the `export-bibtex`
   shortcut was dropped in the miga migration, pending re-wiring).
 - If no published reference exists, use `[manuscript]` and cite chapter/section.
@@ -4279,7 +4279,7 @@ include:
   (`theorem`/`lemma`/`proposition`/`corollary`/`example`); re-declaring
   the same vacuous body as a `def` (or `abbrev`/`instance`) hid it from
   the entire audit. Now caught as `def-disguised-true`
-  ([`content/pipeline/lean-vacuity-axiom-audit.ts`](content/pipeline/lean-vacuity-axiom-audit.ts)).
+  ([`folio/pipeline/lean-vacuity-axiom-audit.ts`](folio/pipeline/lean-vacuity-axiom-audit.ts)).
 - **Concluding `: True`** (or `: X = X := rfl`, or any tautology) in
   place of the real proposition.
 - **`native_decide`** to mask a goal behind the kernel evaluator.
@@ -4381,7 +4381,7 @@ cone transitively touches a `conj:C` may keep its provable kind
    class carries the genuine sub-hypotheses / proof-chain steps and the
    theorem composes them (e.g. carry the two directions of an iff as
    hypotheses, derive it by `Iff.intro`). Verified exemplar:
-   [`QOU/FluidDynamics/q_bkm_criterion.lean`](content/quantum-observable-universe/lean/QOU/FluidDynamics/q_bkm_criterion.lean).
+   [`QOU/FluidDynamics/q_bkm_criterion.lean`](folio/quantum-observable-universe/lean/QOU/FluidDynamics/q_bkm_criterion.lean).
 
 When all five hold, the block represents a *rigorous conditional
 result* — fully verified by Lean modulo a single, named,
@@ -4522,12 +4522,12 @@ archimedean smallness, …) while encoding only a weak `≠`
 non-triviality under-delivers on its own prose. Class fields must carry
 the conjecture's **content** — a parameter-quantified inequality in the
 *shape* of the claim (the Round-11 pattern in
-[`ConditionalClasses.lean`](content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean)),
+[`ConditionalClasses.lean`](folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean)),
 never a bare `True` or an empty body. An unproved primary is honestly
 represented by a **content-bearing class with no instance** (the open
 state); do not fabricate a trivial instance to "close" it.
 
-**Enforcement.** `content/pipeline/lean-vacuity-axiom-audit.ts` adds
+**Enforcement.** `folio/pipeline/lean-vacuity-axiom-audit.ts` adds
 four conjecture-discipline criteria (high-recall candidates,
 agent-confirmed like the other vacuity classes). These close the gap
 that the proof-anti-pattern detectors structurally miss — an empty or
@@ -4565,7 +4565,7 @@ edges). There is nothing to "drain": classification is recomputed from
 the Lean each run.
 
 Worked exemplar (the bug that motivated these checks):
-[`ReebEpsilon.lean`](content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ReebEpsilon.lean)
+[`ReebEpsilon.lean`](folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ReebEpsilon.lean)
 — `ArchimedeanInfinitesimal` was an empty marker `: Prop` that passed
 every existing check; it is now a content-bearing primary-conjecture
 class alongside `ReebPositive`, each classified `@conjecture: primary`.
@@ -5009,9 +5009,9 @@ paper is the front-matter **Notation** chapter, rendered into the
 PDF immediately after the table of contents:
 
 - **Per-chapter symbol tables**:
-  [`content/quantum-observable-universe/notation/notation-register.md`](content/quantum-observable-universe/notation/notation-register.md)
+  [`folio/quantum-observable-universe/notation/notation-register.md`](folio/quantum-observable-universe/notation/notation-register.md)
 - **Collision avoidances + conventions**:
-  [`content/quantum-observable-universe/notation/notation-collisions.md`](content/quantum-observable-universe/notation/notation-collisions.md)
+  [`folio/quantum-observable-universe/notation/notation-collisions.md`](folio/quantum-observable-universe/notation/notation-collisions.md)
 
 Agents **must** treat those `.md` files as authoritative when picking
 a font/symbol for a concept. When adding a new symbol convention,
@@ -5045,7 +5045,7 @@ rules of thumb:
 - `$\gamma$` = photon (never vortex; vortex is `$\varrho$`)
 - `$H_q$` alone = **forbidden** (collision); use `$\mathcal{H}_q$` (shuffle) / `$\hat{H}_q$` (Hamiltonian) / `$H_n(q)$` (Hecke) / `$H_q(\lambda)$` (hook-length)
 - `$E$` alone = **not used**; use `$\mathcal{S}_p$` (fibre), `$\mathfrak{E}$` (energy), `$\mathcal{E}_q$` (elliptic curve), or `$E_{\mathfrak{H}}$` (crossing energy with hadron subscript)
-- Three partition-weight families — Markov `$y_\lambda$`, q-deformed Wedderburn `$w_\lambda(q)$`, classical Plancherel `$w_\lambda(1)$` — are **distinct** at `$q \neq 1$` and coincide at `$q = 1$`; never conflate. (**`$\tilde w_\lambda$` is RETIRED** by owner ruling 2026-08-16: bare `$w_\lambda$` now means `$w_\lambda(q)$`, and the classical measure is its specialisation `$w_\lambda(1)$`, not a separate symbol. This line said `$\tilde w_\lambda$` until 2026-09-05.) **Never write a normalisation claim on bare `$w_\lambda$`**: `$\sum_\lambda w_\lambda(1) = 1$` is exact, and `$\sum_\lambda w_\lambda(q)$` is **not** — measured 0.987 / 0.982 / 0.982 / 0.991 / 1.111 / **1.517** at `$n = 3/4/5/6/9/12$` at the proton `$q_0$`. That defect is **structural, not a q-integer-convention artifact** (the deformation breaks Burnside `$\sum_\lambda (f^\lambda)^2 = n!$`; the asymmetric convention is *worse* at five of those six `$n$`), so it does not cancel across different `$n$` and distorts any **cross-atom** metric — `$n = 3A$`. Cross-atom consumers use the self-normalised `$d_q^2/D^2$` (Reshetikhin–Turaev/Verlinde). Whether `$\dim_q^2$` is even the right numerator — against the Molien `$f^\lambda \dim_q(\lambda)$`, which sums to `$[n]_q!$` exactly (Lean, sorry-free, all `$n$`, all `$q>1$`) — is **open**, bean `qou-oots`. Register: [`notation-collisions.md`](content/quantum-observable-universe/notation/notation-collisions.md); measurement: [`2026-09-04-plancherel-convention-gap.md`](docs/audits/2026-09-04-plancherel-convention-gap.md) **Mechanical check (2026-09-13):** [`computations/audits/y_lambda_conflation_audit.py`](computations/audits/y_lambda_conflation_audit.py), wired blocking into `scripts/precision-gates.sh`. It flags the name `y_lambda` attached to the quantum Plancherel measure `$d_q(\lambda)^2/[n]_q!$` — in prose, in an AST assignment, in a producer's own name, and (as a draining ratchet) in a witness column that declares no `weight_family`. It exists because this rule lived only in prose and was broken in four probes at once, and there it was **not cosmetic**: re-weighting the Magnus $\Omega_2$ probes' own committed traces with the real Wenzl bridge FLIPS the sign of $P_\text{total}$ at $A=3$ and $A=4$ (Plancherel $-,+,+$ over $A=2,3,4$; Wenzl $-,-,-$), so the programme's target $A$-dependent sign change is present under one name and absent under the other — bean `qou-za3q`, decision 1 still OPEN.
+- Three partition-weight families — Markov `$y_\lambda$`, q-deformed Wedderburn `$w_\lambda(q)$`, classical Plancherel `$w_\lambda(1)$` — are **distinct** at `$q \neq 1$` and coincide at `$q = 1$`; never conflate. (**`$\tilde w_\lambda$` is RETIRED** by owner ruling 2026-08-16: bare `$w_\lambda$` now means `$w_\lambda(q)$`, and the classical measure is its specialisation `$w_\lambda(1)$`, not a separate symbol. This line said `$\tilde w_\lambda$` until 2026-09-05.) **Never write a normalisation claim on bare `$w_\lambda$`**: `$\sum_\lambda w_\lambda(1) = 1$` is exact, and `$\sum_\lambda w_\lambda(q)$` is **not** — measured 0.987 / 0.982 / 0.982 / 0.991 / 1.111 / **1.517** at `$n = 3/4/5/6/9/12$` at the proton `$q_0$`. That defect is **structural, not a q-integer-convention artifact** (the deformation breaks Burnside `$\sum_\lambda (f^\lambda)^2 = n!$`; the asymmetric convention is *worse* at five of those six `$n$`), so it does not cancel across different `$n$` and distorts any **cross-atom** metric — `$n = 3A$`. Cross-atom consumers use the self-normalised `$d_q^2/D^2$` (Reshetikhin–Turaev/Verlinde). Whether `$\dim_q^2$` is even the right numerator — against the Molien `$f^\lambda \dim_q(\lambda)$`, which sums to `$[n]_q!$` exactly (Lean, sorry-free, all `$n$`, all `$q>1$`) — is **open**, bean `qou-oots`. Register: [`notation-collisions.md`](folio/quantum-observable-universe/notation/notation-collisions.md); measurement: [`2026-09-04-plancherel-convention-gap.md`](docs/audits/2026-09-04-plancherel-convention-gap.md) **Mechanical check (2026-09-13):** [`computations/audits/y_lambda_conflation_audit.py`](computations/audits/y_lambda_conflation_audit.py), wired blocking into `scripts/precision-gates.sh`. It flags the name `y_lambda` attached to the quantum Plancherel measure `$d_q(\lambda)^2/[n]_q!$` — in prose, in an AST assignment, in a producer's own name, and (as a draining ratchet) in a witness column that declares no `weight_family`. It exists because this rule lived only in prose and was broken in four probes at once, and there it was **not cosmetic**: re-weighting the Magnus $\Omega_2$ probes' own committed traces with the real Wenzl bridge FLIPS the sign of $P_\text{total}$ at $A=3$ and $A=4$ (Plancherel $-,+,+$ over $A=2,3,4$; Wenzl $-,-,-$), so the programme's target $A$-dependent sign change is present under one name and absent under the other — bean `qou-za3q`, decision 1 still OPEN.
 - `$q = 1.1097$` (or any specific numerical value) **must not appear** outside the introduction and Chapter 7
 
 ### 7ab. Observed / derived values — approximation convention (STRICT)
@@ -5316,11 +5316,11 @@ Sibling files share the same root name: `rigid-monoidal-category.ts`,
 |------|---------|
 | `folio-assistant/cat-harness/schemas/types.ts` | TypeScript types (discriminated unions) |
 | `folio-assistant/cat-harness/schemas/constraints.ts` | Zod schemas + constraint rules |
-| `content/schema/builders.ts` | `definition()`, `theorem()`, `prose()`, etc. |
+| `folio/schema/builders.ts` | `definition()`, `theorem()`, `prose()`, etc. |
 | `folio-assistant/content/pipeline/validate.ts` | Three-level validation |
 | `folio-assistant/content/pipeline/render-latex.ts` | Block → LaTeX + AST validation |
 | `folio-assistant/content/pipeline/build.ts` | Full document build |
-| `content/schema/references.ts` | **Bibliography source of truth** (CSL-JSON) |
+| `folio/schema/references.ts` | **Bibliography source of truth** (CSL-JSON) |
 | `folio-assistant/content/pipeline/export-bibtex.ts` | Generates `references.bib` from CSL-JSON |
 | `folio-assistant/content/pipeline/validate-references.ts` | Bibliography + citation cross-checks |
 | `folio-assistant/content/pipeline/citations.ts` | `\cite{}` extraction from .md content |
@@ -5329,7 +5329,7 @@ Sibling files share the same root name: `rigid-monoidal-category.ts`,
 ### Bibliography architecture
 
 The bibliography is managed as **typed CSL-JSON** in
-`content/schema/references.ts`. BibTeX (`references.bib`) is a downstream
+`folio/schema/references.ts`. BibTeX (`references.bib`) is a downstream
 render target, auto-generated from `references.ts` (the `bun run export-bibtex`
 shortcut was dropped in the miga migration — pending re-wiring).
 
@@ -5375,8 +5375,8 @@ Cross-paper refs are validated at folio level, not per-paper. The
 `uses-resolve` constraint skips qualified refs (those matching
 `paper-dir:label` or starting with `https://`).
 
-Each paper in `content/folio.ts` has an optional `url` field for
-viewer routing. CSL-JSON entries in `content/schema/references.ts`
+Each paper in `folio/folio.ts` has an optional `url` field for
+viewer routing. CSL-JSON entries in `folio/schema/references.ts`
 for folio-hosted papers include a URL field matching the viewer hash route
 (e.g. `/viewer/#/view/unital-groebner-bases`).
 
@@ -5864,7 +5864,7 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | Path | Purpose |
 |------|---------|
 | `content/` | **Authoritative content objects** (`.ts` + `.md` + `.lean` triples) |
-| `content/schema/` | Type system, Zod schemas, builder functions (re-exports from `folio-assistant/schemas/`) |
+| `folio/schema/` | Type system, Zod schemas, builder functions (re-exports from `folio-assistant/schemas/`) |
 | `content/pipeline/` | qou-side audit scripts only (vacuity/axiom, clarity, orphan, trace-convention, …). Validation / rendering / build moved to `folio-assistant/content/pipeline/` in the miga migration — check which side a script is on before invoking it |
 | `content/<paper>/` | Paper manifest + chapter directories |
 | `content/<paper>/fluid-dynamics/` | Ch 7: Fluid dynamics of the brane (q-NS, NS obstruction) |
@@ -5925,11 +5925,11 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `folio.config.json` | Adapter config (content type, adapter module, feedback dir) |
 | `main.tex` | LaTeX preamble and document structure (rendering target) |
 | `chapters/*.tex` | Generated LaTeX chapters (from content pipeline) |
-| `references.bib` | BibTeX database (auto-generated from `content/schema/references.ts`) |
+| `references.bib` | BibTeX database (auto-generated from `folio/schema/references.ts`) |
 | `lakefile.toml`, `lean-toolchain` | **Root Lake workspace** — aggregates every paper package; `lake build` here builds all |
-| `content/quantum-observable-universe/lean/` | `qou` Lake package (lib: `QOU`) |
-| `content/unital-groebner-bases/lean/` | `ugb` Lake package (lib: `UGB`) |
-| `content/fred2005-formal-groups/lean/` | `fred2005` Lake package (lib: `Fred2005`) |
+| `folio/quantum-observable-universe/lean/` | `qou` Lake package (lib: `QOU`) |
+| `folio/unital-groebner-bases/lean/` | `ugb` Lake package (lib: `UGB`) |
+| `folio/fred2005-formal-groups/lean/` | `fred2005` Lake package (lib: `Fred2005`) |
 | `folio-assistant/schemas/lean-packages.ts` | Registry mapping `lean.ref` URI prefixes → Lake packages |
 | `blueprint/src/` | LeanBlueprint source (content.tex, preamble.tex, web.tex, print.tex) |
 | `home_page/` | Jekyll landing page for GitHub Pages |
@@ -5937,7 +5937,7 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `.github/scripts/` | Python orchestration (ontologist, extraction, stub generation) |
 | `.claude/skills/local/` | Repo-specific review skills |
 | `.claude/skills/<pkg>/` | Synced external skill packages |
-| `library/` | **Ingested sources**, one directory per document: `library/<doc-id>/` holds the PDF, `structure.json` (metadata + TOC + section index), `sections/*.md` (**greppable** section text — corpus-grep path 5), and `candidates.json` (extracted claims, *proposals only*). `<doc-id>` is derived from the page-1 arXiv stamp (`arxiv-0706.2213v3`) or the slugified filename, and is the join key to `content/bib-qa-verifications.json`. Produced by folio-assistant's `scripts/pdf-structure.py` + `extract-candidates.py`. |
+| `library/` | **Ingested sources**, one directory per document: `library/<doc-id>/` holds the PDF, `structure.json` (metadata + TOC + section index), `sections/*.md` (**greppable** section text — corpus-grep path 5), and `candidates.json` (extracted claims, *proposals only*). `<doc-id>` is derived from the page-1 arXiv stamp (`arxiv-0706.2213v3`) or the slugified filename, and is the join key to `folio/bib-qa-verifications.json`. Produced by folio-assistant's `scripts/pdf-structure.py` + `extract-candidates.py`. |
 | `uploads/` | **Incoming queue** — raw PDFs as dropped, not yet ingested. `uploads/` and `library/` are **two stages of one pipeline, not the same directory renamed**: a file sits in `uploads/` until it is processed into `library/<doc-id>/`, and `uploads/` stays live for the next drop. **Corpus-grep path 5 searches `library/` only**, so anything still in `uploads/` is invisible to it — an un-ingested paper will not be found by any "has the corpus got this?" check, which is exactly how a held source gets re-derived. `scripts/migrate-uploads-to-library.py` moves one across. (Corrected 2026-08-25 on owner instruction: this row previously read *"renamed from `uploads/` 2026-08-15"*, which described the one-time migration of the then-existing backlog as though it had retired the incoming path. It had not, and reading it that way makes an agent treat a live queue as a dead alias.) |
 | `beans/` | **Session work-plans as beans** — the [`beans`](https://github.com/hmans/beans) CLI flat-file issue tracker (install via `scripts/install-beans.sh`). Agent work-plan source of truth; see `.claude/skills/local/todo-manager.md` |
 | | 🛑 **The path is `beans/defs/`, NOT `.beans/` — and the old spelling made this document's own corpus-grep gate UNRUNNABLE (corrected 2026-09-27).** Commit `58a1f3231c` (*"qou-utbr: .beans/ -> beans/defs/ + beans/beans.json, matching the platform layout"*) moved the store; `.beans/` **does not exist** and `beans/defs/` holds **5364** beans. Eleven operative sites in this file said `.beans/`, and the sharpest was §"Before declaring open" **path 6**, whose literal command `grep -rl <topic> .beans/` therefore returned **empty every single time** — a false all-clear over the whole tracker, on the one path that section adds because *"it is where a prior agent's conclusion most often sits"*. Its own history note says it was added after a PR re-derived two results the corpus already held; as written it could not have found them. **This is the migration plan's own governing principle** (`cat-harness/docs/architecture/migration-plan.md:20`): *"Move wiring and script together"* — the store moved, the wiring did not, and `qou-utbr` is still `in-progress`. **Two `.beans/` mentions survive here on purpose** (lines ~2184, ~2266): both are records of what a *past* measurement scoped or sampled, and rewriting a path inside a dated finding falsifies the record — same call as the `4.66e6` drain, which deliberately left audit docs alone. **NOT swept:** 168 further `.md` files (mostly `.claude/skills/local/`) plus 66 code **comments** and 100 bean bodies. Measured, and no live code is broken — **4** runtime `.beans/` paths exist and all four are in `fsh-guts/deprecated/root-scratch/`, one carrying a hardcoded `/Users/litlfred/…` path that never resolved in this container. The skills sweep is a ~168-file change and waits on the owner per §🟥 ASK THE OWNER. |

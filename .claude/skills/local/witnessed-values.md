@@ -17,7 +17,7 @@ propagates to every place the value is mentioned.
 ## How it works
 
 A typed registry in
-[`content/values/registry.ts`](../../../content/values/registry.ts)
+[`folio/values/registry.ts`](../../../folio/values/registry.ts)
 maps short names (`q_0`, `B_4He_AME_MeV`, …) to the canonical
 witness file and dotted JSON path.  In `.md` content authors write a
 directive instead of the literal:
@@ -177,10 +177,10 @@ contexts to their `:val[…]` equivalent.
 
 ```bash
 # Dry run — print per-file diff summary
-bun content/pipeline/codemod-val.ts content/quantum-observable-universe
+bun content/pipeline/codemod-val.ts folio/quantum-observable-universe
 
 # Apply
-bun content/pipeline/codemod-val.ts content/quantum-observable-universe --write
+bun content/pipeline/codemod-val.ts folio/quantum-observable-universe --write
 ```
 
 Properties:

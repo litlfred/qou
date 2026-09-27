@@ -14,7 +14,7 @@ roles: [collaborator]
 # bib-photo-ingestion-watcher
 
 The automation half of the [`bib-human-review`](bib-human-review.md) workflow.
-Companion to the status sidecar `content/schema/references.review.json` and the
+Companion to the status sidecar `folio/schema/references.review.json` and the
 design `docs/workplans/2026-06-08-bib-human-review-workflow-design.md`.
 
 ## Trigger

@@ -1,7 +1,7 @@
 # Chapter 3 — Lifting and Descent — QA Report
 
 **Review Date:** 2026-04-25
-**Chapter Directory:** `content/quantum-observable-universe/lifting-and-descent/`
+**Chapter Directory:** `folio/quantum-observable-universe/lifting-and-descent/`
 **Coverage:** 99 .md, 33 .lean, ~99 .ts (sample-based audit)
 
 ## Inventory

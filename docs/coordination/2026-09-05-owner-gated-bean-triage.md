@@ -279,7 +279,7 @@ belong in that epic's bare bucket, not here.
 **could not see `volume_perturbation`**, the cleanest projection of the four,
 because the class field spells `QOU.QInteger.qIntBalZ` while the theorem spells
 `qIntSym`, a file-local reducible `abbrev` for that head. Closed by
-`fileHeadAliases` in `content/pipeline/lean-vacuity-axiom-audit.ts`; whole-corpus
+`fileHeadAliases` in `folio/pipeline/lean-vacuity-axiom-audit.ts`; whole-corpus
 before/after is exactly one new hit and no other line changed.
 
 **`qou-t7mt` — its Option 1 was already applied, in full.**

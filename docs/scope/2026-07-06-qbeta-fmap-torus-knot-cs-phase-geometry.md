@@ -2,9 +2,9 @@
 
 **Date:** 2026-07-06
 **Status:** FORMALIZE-FIRST SCOPE (structural argument + search narrowing).
-Conditional on [`conj:binding-qbeta-complex-volume`](../../content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.md) (#3437)
+Conditional on [`conj:binding-qbeta-complex-volume`](../../folio/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.md) (#3437)
 and the Askey two-saddle structure of
-[`self-dual-higgs-real-volume`](../../content/quantum-observable-universe/braids-and-knots/self-dual-higgs-real-volume.md).
+[`self-dual-higgs-real-volume`](../../folio/quantum-observable-universe/braids-and-knots/self-dual-higgs-real-volume.md).
 No c_k value, no wiring — flip-flop guard (registry §8) respected.
 Complements [`2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md`](../audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md)
 (this is the *forward-pruning* geometric reason for its Invariant 1).

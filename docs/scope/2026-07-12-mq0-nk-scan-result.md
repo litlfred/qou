@@ -59,7 +59,7 @@ the odd-S origin from the *quantization* side rather than the meridian side:
 
 - The Ohtsuki tower `𝔙_b = 𝔙_0 + Σ κ_n (2πb²)ⁿ` (real `κ_n`) at the substrate
   **small imaginary** parameter `2πb² = i·t` (`|·| = t ≈ 0.10`) —
-  [`rem:ohtsuki-tower-bar-parity`](../../content/quantum-observable-universe/mass-theory/rem-ohtsuki-tower-bar-parity.md).
+  [`rem:ohtsuki-tower-bar-parity`](../../folio/quantum-observable-universe/mass-theory/rem-ohtsuki-tower-bar-parity.md).
 - A **Lean-proved bar-parity selection rule** (even rungs → real → Vol;
   odd rungs → imaginary → CS = S): `OhtsukiTowerBarParity.even_rung_real`,
   `.odd_rung_imaginary`.

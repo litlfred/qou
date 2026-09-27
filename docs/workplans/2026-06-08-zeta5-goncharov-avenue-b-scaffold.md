@@ -2,7 +2,7 @@
 
 **Date:** 2026-06-08
 **Branch:** `claude/vigilant-fermat-SROph`
-**Parent:** [`conj:qou-infra-discharges-goncharov-zeta5`](../../content/quantum-observable-universe/appendix-surreals/qou-infra-discharges-goncharov-zeta5.md)
+**Parent:** [`conj:qou-infra-discharges-goncharov-zeta5`](../../folio/quantum-observable-universe/appendix-surreals/qou-infra-discharges-goncharov-zeta5.md)
 **Status:** formalize-first **preflight**. States the constraints that prune the
 search for the Hecke element *before* any enumeration. No computation run yet.
 
@@ -29,7 +29,7 @@ each one prunes the search space, and any one failing kills the avenue early.
 ### P1 — Depth/weight (bar-class ⇒ chiral)
 
 `G_22` is **weight-3 / depth-3**. Per the verified bridge map
-([`prop:two-filtration-bridge-small-cases`](../../content/quantum-observable-universe/stochastic-mechanics/two-filtration-bridge-small-cases.md)):
+([`prop:two-filtration-bridge-small-cases`](../../folio/quantum-observable-universe/stochastic-mechanics/two-filtration-bridge-small-cases.md)):
 depth-3 ⟺ a **chiral pair** `λ ≠ λ'` cell (`CS ≠ 0`). So `β` must be supported on
 a **bar-asymmetric** (chiral) Wedderburn cell, *not* a self-conjugate one
 (self-conjugate ⇒ `CS = 0` ⇒ depth-2, wrong weight). **Prune:** restrict to
@@ -71,7 +71,7 @@ recursive atom-knot atlas already stores NF tails, so filter the atlas for
 - **Bar-parity:** `tr_M(β)` must respect `q ↦ q^{-1}` per the chiral-cell
   parity — depth-3 is bar-**odd** (`CS`-type, imaginary part).
 - **Borel rank:** `dim_ℚ(K_5^ind(ℚ(ζ₅)) ⊗ ℚ) = 2`
-  ([`prop:borel-partial-resolution`](../../content/quantum-observable-universe/appendix-surreals/borel-partial-resolution.md));
+  ([`prop:borel-partial-resolution`](../../folio/quantum-observable-universe/appendix-surreals/borel-partial-resolution.md));
   the realized relations must land in a rank-2 image — a hit producing rank ≠ 2
   is wrong.
 - **Independent numeric witness:** evaluate `tr_M(β)(ζ₅)` numerically (mpmath,

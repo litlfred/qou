@@ -325,7 +325,7 @@ surface the duplicates in step 6) saves a full review cycle.
   was 50 minutes into not reaching:
 
   ```bash
-  LP="$PWD/content/quantum-observable-universe/lean/.lake/build/lib/lean"
+  LP="$PWD/folio/quantum-observable-universe/lean/.lake/build/lib/lean"
   for p in mathlib batteries aesop Qq proofwidgets importGraph plausible \
            LeanSearchClient; do
     LP="$LP:$PWD/.lake/packages/$p/.lake/build/lib/lean"
@@ -405,9 +405,9 @@ surface the duplicates in step 6) saves a full review cycle.
   the oleans differs. Run all three, and say in the PR that this is what you did:
 
   ```bash
-  (cd content/quantum-observable-universe/lean && lake build)
-  (cd content/unital-groebner-bases/lean      && lake build)
-  (cd content/fred2005-formal-groups/lean     && lake build)
+  (cd folio/quantum-observable-universe/lean && lake build)
+  (cd folio/unital-groebner-bases/lean      && lake build)
+  (cd folio/fred2005-formal-groups/lean     && lake build)
   ```
 
   What is *not* acceptable is the bare root `lake build`, which compiles nothing

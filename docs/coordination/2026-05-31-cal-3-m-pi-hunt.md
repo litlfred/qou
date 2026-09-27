@@ -12,7 +12,7 @@
 
 ## Context
 
-The framework's compute layer ([`codata_constants.py` line 22](../../computations/substrate/codata_constants.py)) and content layer ([`three-calibration-inputs.md`](../../content/quantum-observable-universe/mass-theory/three-calibration-inputs.md)) both already declare `CAL-3 = m_π` (pion decay width → pion mass scale; replaces the older `CAL-3 = Q_β` framing). This session noticed the older framing via stale context, hunted for the "missing CAL-3", and produced two empirical probes that corroborate the canonical assignment from independent directions.
+The framework's compute layer ([`codata_constants.py` line 22](../../computations/substrate/codata_constants.py)) and content layer ([`three-calibration-inputs.md`](../../folio/quantum-observable-universe/mass-theory/three-calibration-inputs.md)) both already declare `CAL-3 = m_π` (pion decay width → pion mass scale; replaces the older `CAL-3 = Q_β` framing). This session noticed the older framing via stale context, hunted for the "missing CAL-3", and produced two empirical probes that corroborate the canonical assignment from independent directions.
 
 ## Work items in this PR
 

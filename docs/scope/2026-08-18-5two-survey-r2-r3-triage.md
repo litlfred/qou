@@ -72,7 +72,7 @@ Kashaev asymptotics is not a registered entry.
 
 | | |
 |---|---|
-| `ohtsuki-takata-2015` | **registered** in [`references.ts`](../../content/schema/references.ts) (Kashaev asymptotics ↔ twisted Reidemeister torsion, two-bridge knots — a class that contains 5₂) |
+| `ohtsuki-takata-2015` | **registered** in [`references.ts`](../../folio/schema/references.ts) (Kashaev asymptotics ↔ twisted Reidemeister torsion, two-bridge knots — a class that contains 5₂) |
 | `OhtsukiKappaDependence.lean` | 143 lines of Lean |
 | audits explicitly named for him | **four** — [higher rungs exact](../audits/2026-07-12-ohtsuki-higher-rungs-exact.md), [symbolic derivation Borel Φ_b](../audits/2026-07-12-ohtsuki-symbolic-derivation-borel-phib.md), [Φ_b a₁ mis-identified](../audits/2026-07-18-phib-a1-mis-identified-not-ohtsuki-kappa1.md), [s-channel saddle Ohtsuki vs c_k](../audits/2026-08-01-schannel-saddle-point-ohtsuki-vs-ck.md) |
 | `references.ts` prose | already cites *"Ohtsuki's saddle-point/Borel-resummation analysis"* |

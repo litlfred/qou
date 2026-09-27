@@ -1016,7 +1016,7 @@ reaction). Only an explicit author reply or commit closes it.
 ### 5f. Witness-drift CI failure pattern (RECOVERY RECIPE)
 
 The `witness-pipeline.yml > validate` job triggers on `.lean`
-edits under `content/quantum-observable-universe/**/*.lean` AND
+edits under `folio/quantum-observable-universe/**/*.lean` AND
 on any `*.witness.json` / `*.derivation.json` change. It re-runs
 every Python computation, regenerates witnesses, and fires a
 drift check.

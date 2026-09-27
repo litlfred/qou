@@ -376,7 +376,7 @@ If the block doesn't exist yet, create it or remove the reference.
 ## F14: Missing bibliography entry
 
 **Pattern**: `\cite{key}` in `.md` or `-- Ref: [key]` in `.lean` refers
-to a key not in `content/schema/references.ts`.
+to a key not in `folio/schema/references.ts`.
 
 **Fix**: Add a `ref()` entry in `references.ts`:
 ```ts

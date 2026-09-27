@@ -42,5 +42,5 @@ closure needs κ fixed by the PROBE-2 A=4 interface `ρ_F` (Rust-gated) or the s
 level selection (WRT `W_λ`-gated) to 0–1 params. Nothing wired; anti-fit upheld.
 
 - Audit: [`docs/audits/2026-07-26-deltalambda-additive-signchanging-term.md`](../audits/2026-07-26-deltalambda-additive-signchanging-term.md)
-- Lean: [`QOU/MassTheory/AdditiveSignChangingTerm.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/AdditiveSignChangingTerm.lean) (sorry-free)
+- Lean: [`QOU/MassTheory/AdditiveSignChangingTerm.lean`](../../folio/quantum-observable-universe/lean/QOU/MassTheory/AdditiveSignChangingTerm.lean) (sorry-free)
 - Probe: [`computations/deltalambda/deltalambda_additive_signchanging_term_probe.py`](../../computations/deltalambda/deltalambda_additive_signchanging_term_probe.py)

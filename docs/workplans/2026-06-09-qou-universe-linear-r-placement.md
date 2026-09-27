@@ -51,7 +51,7 @@ Every consumer of `QuantumUniverse` / `QuantumObservableUniverse` must thread
 the new `R` + instances. Start from:
 
 ```
-grep -rln "QuantumUniverse\|QuantumObservableUniverse" content/quantum-observable-universe/lean/
+grep -rln "QuantumUniverse\|QuantumObservableUniverse" folio/quantum-observable-universe/lean/
 ```
 
 Structures already carrying the instances locally (from #2022 — can drop the

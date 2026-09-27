@@ -166,7 +166,7 @@ I will rename in:
 
 * `computations/probe_beta_decay_residue_sum_h3.py:96`
 * `computations/probe_q_beta_residue_per_nucleon.py` (analogous comment)
-* `content/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean`
+* `folio/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean`
   (gap #6 stub — already includes a coordination note)
 
 Estimated effort: <30 minutes once #636 lands. Tracked as
