@@ -570,7 +570,7 @@ skill wins and the memory entry is wrong — fix it.
 
 Every session must run from a **prioritized work-plan** maintained
 as **beans** — the [`beans`](https://github.com/hmans/beans) CLI
-flat-file issue tracker (data under `.beans/`; install via
+flat-file issue tracker (data under `beans/defs/`; install via
 [`scripts/install-beans.sh`](scripts/install-beans.sh)). See
 [`.claude/skills/local/todo-manager.md`](.claude/skills/local/todo-manager.md)
 and [`.claude/skills/local/bean-coordination.md`](.claude/skills/local/bean-coordination.md).
@@ -588,8 +588,8 @@ user's last message, not the most recently mentioned file.
 
 > **A bean is an APPEND-ONLY ledger, and concurrent appends collide on
 > essentially every landing (measured 2026-09-13).** `main` takes **169
-> commits / 24 h**; `.beans/qou-brng--…` is touched by **9** of them and
-> `.beans/qou-zlra--…` by **6**, so a branch that appends to `qou-brng`
+> commits / 24 h**; `beans/defs/qou-brng--…` is touched by **9** of them and
+> `beans/defs/qou-zlra--…` by **6**, so a branch that appends to `qou-brng`
 > goes un-mergeable roughly **every 2.7 h**. In the #7237 / #7245 /
 > #7251 / #7253 cluster, **four of the five collision surfaces were
 > these two files** — no content, no Lean, no compute — and `qou-brng`
@@ -767,10 +767,10 @@ user's last message, not the most recently mentioned file.
       authoritative source; `mcp__github__pull_request_read get`
       gives the body's test-plan items.
    3. **Integration-watcher requirements** — the active watchers'
-      queue items (`.beans/proof-integration-watcher-queue.json`,
-      `.beans/canonical-watcher-queue.json`,
-      `.beans/compute-integration-watcher-queue.json`,
-      `.beans/detangler-integration-watcher-queue.json`). Prefer
+      queue items (`beans/defs/proof-integration-watcher-queue.json`,
+      `beans/defs/canonical-watcher-queue.json`,
+      `beans/defs/compute-integration-watcher-queue.json`,
+      `beans/defs/detangler-integration-watcher-queue.json`). Prefer
       items whose `block_or_script` overlaps the current PR's
       scope (e.g. the same chapter or the same Python/Lean file).
    4. **Refresh stale sidecars + witnesses** (added 2026-06-03).
@@ -1915,10 +1915,10 @@ corpus — run the **corpus-grep checklist**:
    lists that document's extracted theorems and definitions if you want
    the claims rather than the prose.
 
-6. **The beans** — `grep -rl <topic> .beans/`. The work-plan tracker is a
+6. **The beans** — `grep -rl <topic> beans/defs/`. The work-plan tracker is a
    corpus in its own right (tens of thousands of files) and it is where a
    prior agent's *conclusion* most often sits before it reaches an audit
-   doc or a content block. It is **not** covered by paths 1–5: `.beans/`
+   doc or a content block. It is **not** covered by paths 1–5: `beans/`
    is not under `docs/`, `content/`, `computations/` or `library/`, and a
    coordination ledger is a different file.
 
@@ -5939,8 +5939,9 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `.claude/skills/<pkg>/` | Synced external skill packages |
 | `library/` | **Ingested sources**, one directory per document: `library/<doc-id>/` holds the PDF, `structure.json` (metadata + TOC + section index), `sections/*.md` (**greppable** section text — corpus-grep path 5), and `candidates.json` (extracted claims, *proposals only*). `<doc-id>` is derived from the page-1 arXiv stamp (`arxiv-0706.2213v3`) or the slugified filename, and is the join key to `content/bib-qa-verifications.json`. Produced by folio-assistant's `scripts/pdf-structure.py` + `extract-candidates.py`. |
 | `uploads/` | **Incoming queue** — raw PDFs as dropped, not yet ingested. `uploads/` and `library/` are **two stages of one pipeline, not the same directory renamed**: a file sits in `uploads/` until it is processed into `library/<doc-id>/`, and `uploads/` stays live for the next drop. **Corpus-grep path 5 searches `library/` only**, so anything still in `uploads/` is invisible to it — an un-ingested paper will not be found by any "has the corpus got this?" check, which is exactly how a held source gets re-derived. `scripts/migrate-uploads-to-library.py` moves one across. (Corrected 2026-08-25 on owner instruction: this row previously read *"renamed from `uploads/` 2026-08-15"*, which described the one-time migration of the then-existing backlog as though it had retired the incoming path. It had not, and reading it that way makes an agent treat a live queue as a dead alias.) |
-| `.beans/` | **Session work-plans as beans** — the [`beans`](https://github.com/hmans/beans) CLI flat-file issue tracker (install via `scripts/install-beans.sh`). Agent work-plan source of truth; see `.claude/skills/local/todo-manager.md` |
-| `todos/` | Legacy work-tracking queues (`*-queue.json`), gitignored; being migrated into `.beans/` per the Folio-Assistant Infrastructure Migration (`miga` epic) |
+| `beans/` | **Session work-plans as beans** — the [`beans`](https://github.com/hmans/beans) CLI flat-file issue tracker (install via `scripts/install-beans.sh`). Agent work-plan source of truth; see `.claude/skills/local/todo-manager.md` |
+| | 🛑 **The path is `beans/defs/`, NOT `.beans/` — and the old spelling made this document's own corpus-grep gate UNRUNNABLE (corrected 2026-09-27).** Commit `58a1f3231c` (*"qou-utbr: .beans/ -> beans/defs/ + beans/beans.json, matching the platform layout"*) moved the store; `.beans/` **does not exist** and `beans/defs/` holds **5364** beans. Eleven operative sites in this file said `.beans/`, and the sharpest was §"Before declaring open" **path 6**, whose literal command `grep -rl <topic> .beans/` therefore returned **empty every single time** — a false all-clear over the whole tracker, on the one path that section adds because *"it is where a prior agent's conclusion most often sits"*. Its own history note says it was added after a PR re-derived two results the corpus already held; as written it could not have found them. **This is the migration plan's own governing principle** (`cat-harness/docs/architecture/migration-plan.md:20`): *"Move wiring and script together"* — the store moved, the wiring did not, and `qou-utbr` is still `in-progress`. **Two `.beans/` mentions survive here on purpose** (lines ~2184, ~2266): both are records of what a *past* measurement scoped or sampled, and rewriting a path inside a dated finding falsifies the record — same call as the `4.66e6` drain, which deliberately left audit docs alone. **NOT swept:** 168 further `.md` files (mostly `.claude/skills/local/`) plus 66 code **comments** and 100 bean bodies. Measured, and no live code is broken — **4** runtime `.beans/` paths exist and all four are in `fsh-guts/deprecated/root-scratch/`, one carrying a hardcoded `/Users/litlfred/…` path that never resolved in this container. The skills sweep is a ~168-file change and waits on the owner per §🟥 ASK THE OWNER. |
+| `todos/` | Legacy work-tracking queues (`*-queue.json`), gitignored; being migrated into `beans/defs/` per the Folio-Assistant Infrastructure Migration (`miga` epic) |
 | `docs/` | Planning documents, migration plans, dependency graphs |
 | `scripts/` | Setup and health-check scripts (Lean MCP, etc.) |
 | `lean-mcp.config.json` | MCP server config (domain, image, auth, ports) |

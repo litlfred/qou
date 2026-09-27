@@ -8,7 +8,7 @@ tags:
     - beans-hygiene
     - migration
 created_at: 2026-09-26T11:19:55Z
-updated_at: 2026-09-26T12:07:31Z
+updated_at: 2026-09-27T10:03:38Z
 parent: qou-n4r9
 ---
 
@@ -129,3 +129,73 @@ commits/24 h and `.beans/qou-brng` alone is touched by 9 of them. A wholesale di
 conflicts with **every** in-flight branch that appends to any bean. Right now that risk is
 unusually low: `main` is 0 ahead of this branch and the newest sibling branch is two weeks
 old. If this does not land in that window it should wait for another one.
+
+
+---
+
+## 2026-09-27 — the store moved; the WIRING did not, and it killed a documented gate
+
+Found while doing repo-separation prep (`qou-n4r9` context). This bean is
+`in-progress`, and the reason is visible: `58a1f3231c` moved `.beans/` →
+`beans/defs/`, and **241 non-bean files still name the old path**.
+
+### Measured
+
+| surface | count | live? |
+|---|---|---|
+| `.md` prose (mostly `.claude/skills/local/`) | **168 files** | misleading, not broken |
+| code files mentioning `.beans/` | 70 | — |
+| └ of those, **runtime** paths | **4** | **all in `fsh-guts/deprecated/root-scratch/`** |
+| └ of those, comment/docstring only | 66 | harmless |
+| bean bodies (historical records) | 100 | leave |
+| `.beans/` itself | **does not exist** | — |
+| `beans/defs/` | **5364** beans | — |
+
+**No live code is broken.** The four runtime paths are all in the deprecated
+trashcan, and one of them opens
+`/Users/litlfred/space_cats/qou/.beans/qa-agent-drain-queue.json` — a hardcoded
+macOS path that never resolved in a container. So the defect is documentary.
+
+### The one that was NOT merely documentary
+
+AGENTS.md §"Before declaring open" **path 6** read, literally:
+
+```
+grep -rl <topic> .beans/
+```
+
+That returns **empty every single time**. It is the path that section adds
+because *"it is where a prior agent's conclusion most often sits before it
+reaches an audit doc or a content block"*, over 5364 beans, and its own history
+note says it was added *"after one PR re-derived two results the corpus already
+held"* — the trail to which ran through two beans. **As written it could not
+have found them.**
+
+Corrected. Proof the gate was dead and is now live: `grep -rl "convention D"`
+returns **0** against `.beans/` and **265** against `beans/defs/`.
+
+### What was fixed, and what deliberately was not
+
+**Fixed — 11 operative sites in `AGENTS.md`**: the store location, the two
+append-collision file identities, the four integration-watcher queue paths (all
+four verified present at `beans/defs/`), path 6's command and its prose, and the
+two project-structure table rows.
+
+**Left on purpose — 2 sites** (~2184, ~2266): both state what a *past*
+measurement scoped or sampled (*"excluding `.beans/`"*, *"the first three
+instances were all `.beans/…--….md` paths"*). Rewriting a path inside a dated
+finding falsifies the record. Same call as the `4.66e6` drain, which left audit
+docs alone by decision.
+
+**NOT swept — the 168 `.md` files, the 66 comments, the 100 bean bodies.** That
+is a ~168-file change across files I was not sent to, which §🟥 ASK THE OWNER
+names as *not* exempt. Measured and reported; it waits.
+
+### Why this is the migration plan's own principle
+
+`cat-harness/docs/architecture/migration-plan.md:20` states it: ***"Move wiring
+and script together."*** Its evidence is qou commit `39fc90f6` and bean `dh4f` —
+30 scripts triaged, 23 broken, three silently passing over a corpus they could no
+longer read, and *"a green check is the symptom, not the reassurance."* This is
+the same shape at documentation scale: the store moved cleanly, and the
+instructions telling agents where to look did not move with it.
