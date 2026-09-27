@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-27T05:30:10Z
-updated_at: 2026-09-27T07:21:47Z
+updated_at: 2026-09-27T08:49:31Z
 parent: qou-weeq
 ---
 
@@ -281,3 +281,62 @@ both owner decisions, and closing the bean would bury them:
 2. `TemperleyLiebWedderburn.lean:69` pairs key jones1985 with jones1987's DOI, and
    jones1987 -- the Annals paper holding the TL-quotient + Markov-trace
    construction -- carries no `library:` field, i.e. is not ingested.
+
+
+## 2026-09-27 — ITEM 1's residual over-claim is now REPAIRED, not scoped. Bean still open on item 2.
+
+Commit bca720d676 on claude/two-row-count-eq-dimhlf-2026-09-27 (PR #7481).
+
+This bean's item 1 recorded that `QOU/Mathlib/TwoRowDimCatalan.lean`'s docstring
+calls `dimHLF_two_row_sq_sum` "a statement about actual standard-Young-tableau
+counts", and noted the over-claim had become REPAIRABLE rather than merely
+flaggable once `numSYT_twoRow_eq_ballot` landed. That repair is done.
+
+The missing tie, now proved:
+
+    numSYT_twoRow_eq_dimHLF (m k) (h : k <= m) :
+      (numStandardYoungTableaux (twoRow m k h) : Z) = (dimHLF [m, k] : N)
+
+sorry-free, general m and k, [propext, Classical.choice, Quot.sound], no sorryAx.
+Four lines: compose `dimHLF_two_row_eq_ballot` (August, formula <-> ballot) with
+`numSYT_twoRow_eq_ballot` (#7470, count <-> ballot), taking n = m + k so that
+n - k = m and 2k <= n reduces to k <= m. NO Frame-Robinson-Thrall, which stays
+absent from Mathlib and proved here only for n <= 4 (decide) plus n = 5.
+
+Placed in TwoRowSYTBallot.lean, which already owns the count<->ballot half; that
+file gains `import QOU.Mathlib.TwoRowDimCatalan`. No cycle -- TwoRowDimCatalan
+imports only BallotNumbers + SYTBranching2Row, neither of which reaches back.
+
+### A total-function wrapper was deliberately NOT added
+
+The tempting stronger form is a sum-of-squares over actual counts, which needs a
+total `(m,k) -> count`. `twoRowDim` already is one, and reusing it would have been
+WRONG here: it lives in QOU.SchurWeyl.TwoRowIdxReindex, which imports
+WtraceRadicalSemisimple and so pulls R into a purely combinatorial statement.
+Duplicating it in the Mathlib layer would put two spellings of one notion in the
+corpus. The single bridging theorem needs neither, and check-sidecars confirms
+both touched files remain "no R, generic OK".
+
+### The docstring says MORE than it used to, not less
+
+It now states the formula-vs-count distinction explicitly, cites the theorem, and
+records that the counts reading is a COMPOSITION rather than something that file
+proves. The old sentence's actual failure mode was inviting a reader to take the
+counts reading as TwoRowDimCatalan's own result; scoping the sentence down would
+have removed the claim but not that misreading.
+
+### Scope
+
+Exemption 2 of the 2026-09-07 ask-first override: the corpus fixes the answer (a
+sorry-free theorem on main), so a reviewer checks the edit against that artifact
+rather than against my reasoning. Two files, one theorem, one docstring -- not a
+sweep.
+
+### THIS BEAN STAYS OPEN (rule 13a)
+
+Item 2 is untouched and is an owner judgement: TemperleyLiebWedderburn.lean:69
+pairs key jones1985 with jones1987's DOI (10.2307/1971403) -- two different papers
+(references.ts :3059 vs :2187) -- and jones1987, the Annals paper carrying the
+TL-quotient + Markov-trace construction, has NO `library:` field, i.e. is not
+ingested. Subject matter wants jones1987, but which half is the typo is not mine
+to decide, and the ingestion is a separate uploads/ -> library/ step.
