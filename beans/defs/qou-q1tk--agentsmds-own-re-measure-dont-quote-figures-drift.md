@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-27T10:52:15Z
-updated_at: 2026-09-27T10:53:04Z
+updated_at: 2026-09-27T10:55:47Z
 ---
 
 ## The pattern, measured 2026-09-27
@@ -129,3 +129,51 @@ re-runs one command.
 
 Left **`todo`**: the three instances are corrected but the decision above is
 open, and the pattern will recur until it is taken either way.
+
+
+## Two more families CHECKED and CURRENT — the rate is family-level 3 of 5, not 12 of 13
+
+The "12 of 13" above is a count of *numbers inside the three families that were
+stale*. Quoted alone it overstates the problem, because two further families were
+checked in the same session and **both were correct**. Recording them, since an
+absence-of-drift result is evidence about the same question.
+
+**L1 precision row — CORRECT.** Its instruction is *"Measure, do not quote:
+`python3 -c "import qou_substrate.precision as P; print(P.COMPUTE_DPS,
+P.OUTPUT_DPS, P.PRECISION_GUARD)"`"*. Run: `70 60 10`, exactly as written. Left
+untouched.
+
+**L2 per-observable dashboard — CORRECT, all nine figures.** Its instruction is
+*"Quote the witness, not this paragraph"*. Read
+`computations/per-observable-100x-status.witness.json`:
+
+| field / row | witness | AGENTS.md |
+|---|---|---|
+| `beats_100x_scoreable` | 1 | 1 ✓ |
+| `scoreable_total` | 6 | 6 ✓ |
+| `beats_100x_count` | 2 | 2 ✓ |
+| `m_mu` | 211.2 ppb, target 0.2177, miss **970.2** | 970.2 ✓ |
+| `Q_beta` | **1.668e+8** ppb, miss **2.139e+7** | 1.668e+8 / 2.139e+7 ✓ |
+| `m_n` | 1.389e+5 ppb, miss 2.718e+7 | ✓ |
+| `Delta_pn` | 1.009e+8 ppb, miss 2.327e+7 | ✓ |
+| `alpha_em_inv` | miss 238.3 | 238.3 ✓ |
+| `m_K/m_pi` | miss 0.1952 | 0.195 ✓ |
+
+**This is the interesting half of the result.** The L2 block is the most
+*consequential* set of figures in the document — they are the physics-facing
+accuracy claims, several of them re-scored twice this month under owner rulings —
+and it is the one family with **zero** drift. The three that had drifted are all
+*infrastructure* counts: a table's row count, a library's file counts, a package's
+importer counts.
+
+So the pattern is narrower and more actionable than "AGENTS.md figures go stale".
+**A figure whose producer is a witness stays current, because re-running the
+producer rewrites it and the doc is told to quote the witness rather than a
+value.** A figure whose "producer" is a shell command nobody is obliged to run
+goes stale silently. That distinction is what the decision above should turn on,
+and it argues for the middle option recorded there rather than for a blanket
+rewrite: the L2 block already solves this problem correctly, by pointing at the
+artifact instead of restating it.
+
+Family-level rate: **3 stale of 5 checked.** Quote that alongside 12-of-13, or
+the document reads as less reliable than it measures.
