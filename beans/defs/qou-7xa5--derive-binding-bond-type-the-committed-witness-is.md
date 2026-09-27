@@ -1,11 +1,11 @@
 ---
 # qou-7xa5
 title: 'derive-binding-bond-type: the committed witness is a green PASS for a REFUTED law, and its numbers no longer reproduce (7.515 -> 1.795, ordering flipped)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-26T12:21:32Z
-updated_at: 2026-09-26T12:22:28Z
+updated_at: 2026-09-27T05:23:39Z
 ---
 
 Found 2026-09-26 while closing out `qou-udeg` (float64 upstream of a discrete
@@ -169,3 +169,66 @@ witnesses for a passing bond-type result. Related: `qou-7i9u` (float64 in
 `_bond_type_L`, the log-law sibling), `qou-e9pp` (import-cone drift class),
 `qou-5c64` / `qou-gjkv` (the C->D p-p bond move that caused this),
 `qou-udeg` (the float64-upstream-of-discrete arc this came out of).
+
+
+## 2026-09-27 — ROUTE (c) TAKEN: marked SUPERSEDED. Stays in-progress (rule 13a).
+
+Owner instruction "resolve issues". Of the three routes framed — (a) re-run and
+commit the red, (b) migrate to the log-ratio law, (c) mark superseded — **(c)**,
+mirroring the banner `binding_canonical.py` already carries for the same law class.
+
+**TWO INDEPENDENT GROUNDS**, either sufficient, both checkable against a corpus
+artifact without re-running anything:
+
+1. **The FUNCTIONAL.** `B_xy = E_0·(tr_M_free − tr_M_atom)` is a constant times
+   Δtr — the class `binding_canonical.B_MeV` is already marked REFUTED for:
+   `tr_M` is multiplicative along the chain, binding is extensive, and
+   `Δtr/tr_free = 1 − exp(−S)` is within 7.7e-4 of 1 by A = 11, above which Δtr
+   does not mis-scale the binding, it does not *contain* it.
+
+2. **The BOND COMPOSITION.** `C(Z,2) + Z·N + C(N,2) = C(A,2)` — the complete
+   graph. `QOU.Mass.CoordinationSaturation.complete_graph_no_saturation`
+   (verified present: 4 theorems, **0 sorries**) proves `ε·C(A,2)/A` exceeds
+   every bound, so no `B/A` plateau exists and observed saturation refutes it
+   structurally, not merely at ⁴He.
+
+   **SCOPED:** that Lean is stated for a UNIFORM `ε` and this module has three
+   bond energies. The extension is a one-line monotonicity argument and it is
+   MINE, not the theorem's — with all three positive (measured 0.6421 / 0.6155 /
+   0.5636), `B(A) ≥ min·C(A,2)`, so the theorem applies at `ε = min`. Do not
+   restate this as though the Lean covered three types directly. The
+   replacement's composition is a CHAIN (`(Z−1), 1, (N−1)`; `A−1` bonds, bounded
+   degree), which matters as much as the `log` does.
+
+**DRIFT RE-MEASURED, and the headline assertion has FLIPPED.** Committed witness
+`computedAt` 2026-06-22, `allPassed: true`; fresh run reports FAILURES, and the
+module's whole purpose — the T-vs-³He discriminator — goes MATCHES → **MISMATCH**:
+
+    B_pp 2.3785 -> 0.6421    D   +12.0% -> -72.3%
+    B_pn 2.4914 -> 0.6155    T   -11.4% -> -78.8%
+    B_nn 2.5323 -> 0.5636    3He  -4.6% -> -75.7%
+                             4He -47.4% -> -87.0%
+
+Bigger than the "4×" I reported earlier from a partial read.
+
+**NO REGENERATED WITNESS COMMITTED.** Ran it twice to measure, reverted both
+times. Publishing a red for a law already known wrong is noise, not a finding.
+
+**Also fixed (exemption 2, not tidying):** the `ordering:` line hardcoded `<`
+between all three bonds — true when written (2.379 < 2.491 < 2.532), false now
+(0.642 > 0.616 > 0.564). The producer printed a false statement one line below
+the numbers refuting it. Operators now derived, comparing mpf not display floats.
+Print-only, so no witness field moves.
+
+**NOT fixed:** the witness's 17 raw float64 fields (the run's own ratchet warns).
+Serializing them correctly only takes effect by regenerating the witness, which
+the paragraph above forbids. Recorded in the banner instead.
+
+**Scope (a), not (b):** bond-TYPE decomposition is NOT excluded as an ingredient —
+the three derived sub-braid traces are the same objects the log-ratio law
+consumes. What is excluded is `constant × Δtr` summed over the complete graph.
+
+**STILL OPEN — route (b)** (port the bond-type decomposition onto the log-ratio
+law) is a separate arc and has not been taken. Bean stays in-progress.
+
+Commit `7df1e2f5f5`.

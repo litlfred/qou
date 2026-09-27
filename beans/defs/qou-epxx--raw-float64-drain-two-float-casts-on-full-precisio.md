@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-26T14:28:50Z
-updated_at: 2026-09-26T17:59:21Z
+updated_at: 2026-09-27T05:22:43Z
 ---
 
 Picked up 2026-09-26 as exemption-covered drain work while PR #7457 waits on
@@ -415,3 +415,76 @@ coincidence I put in a PR body.
 **Contaminated, and corrected here:** PR #7457 §4 (merged, so the body now
 carries a claim this supersedes), the `qou-epxx` §4 table, and two commit
 messages. This bean entry is the correction of record.
+
+
+## 2026-09-27 — item (d): I REVERSED MY OWN RECOMMENDATION. Do not narrow the detector.
+
+Owner instruction "resolve issues". I had reported the mixed-arithmetic gate's RED
+as **4-for-4 false positives** and recommended narrowing it. **That recommendation
+is withdrawn.** Re-verdicting the same four, I reversed twice in one sitting:
+
+1. false positives (original claim, verdicted blind);
+2. → TRUE positives, on finding explicit `float()` casts at
+   `binding_rotation_phase_lead.py:133-136`;
+3. → false positives *for the reason I first gave*, on measuring that
+   `mpf(str(float(v)))` round-trips EXACTLY (rel_err **0.0** on all four AME
+   constants — they carry ≤ 9 significant digits, far under 17).
+
+**But the gate was right anyway, for a reason none of the three verdicts saw.**
+That file has TWO consumers of `AME[iso]` and they behave oppositely:
+
+    line 196  rho = mpf(str(AME[iso])) / vals[iso]     <- str() heals the cast
+    line 247  strong_channel_rho(..., AME[iso], ...)   <- passed RAW
+
+The second passes a binary64 straight into the arithmetic. The cast was safe only
+where a `str()` happened to sit below it. **Fixed** — casts dropped, exemption 1.
+
+Counter-intuitive and I nearly wrote it backwards: on the `mpf(str(...))` path the
+`float()` detour was *cleaner* than passing the mpf, since `str(<9-digit float>)`
+is exact while `str(<70-dps mpf>)` re-rounds. That is why `spread_pct` moves.
+
+**Witness movement, honestly:** 16 fields. `d0_strong_channel/*` is the real fix
+(the line-247 path). `aggregations/*/spread_pct` and `A3_pair_spread_pct` move at
+~the 50th significant digit of a 60-digit serialization — **AT THE FLOOR**, not
+claimed as an accuracy gain. Plus `/commitSha` (provenance). Assertion still
+passes; producer exit 0.
+
+**RESULT: candidates 7 → 5, OVER baseline 4 → 2.** Both
+`binding_rotation_phase_lead` rows cleared **at the root**, not by widening a
+carve-out. Baseline NOT raised (baselines drain, never grow).
+
+### The remaining 2 over-baseline rows — both verdicted FALSE POSITIVE
+
+* `borromean-axial-coupling.py:384` — `mp.mpf(getattr(lp, "gap_recomputed_str"))`.
+  `lp_dual_solver.py:86` declares `gap_recomputed_str: Optional[str] = None`, so
+  it is a **string** and `mp.mpf(<str>)` parses exactly. Taint inherited from the
+  `lp` object. Blind spot: `getattr(obj, "<…_str>")` yields a string.
+* `nucleon_h3_marshalling_divergence_probe.py:242` — `mp.fsum([...])` whose cone
+  includes `marshal_to_chi_lambda_braid(chain, float(h))`. **Settled:**
+  that marshaller returns `List[Tuple[int, int]]` — integer `(sign, gen)` pairs —
+  and `h_val` only feeds a discrete four-way `classify_crossing`. No float64
+  reaches the arithmetic. Blind spot: the detector propagates taint from a call's
+  ARGUMENTS without consulting the callee's RETURN type, though it already keeps a
+  registry of 793 `-> float` / `-> mpf` annotations that could answer it.
+
+  Separate risk class, noted and NOT this gate's business: a binary64 `h` could in
+  principle flip a borderline `classify_crossing` verdict. That is a discrete
+  misclassification changing a sign by ±1, not a lost digit. Unmeasured.
+
+### Also correcting a specific claim of mine
+
+I wrote that the `mp.fsum` flag "contradicts the audit's own spec (line 49
+classifies `mp.*(...)` as MPF)". **It does not.** Line 249 makes `mp.*(...)`
+taint-**propagating** rather than taint-clearing, which is more correct than the
+prose spec; the fsum's taint arrives through its arguments.
+
+### Why the detector question goes back to the owner
+
+The three narrowings the evidence actually supports are (i) `str(<Subscript>)`
+round-trip, (ii) `getattr(…, "*_str")` is a string, (iii) consult the callee's
+return annotation. (iii) is the cleanest and reuses machinery already present.
+But a recommendation to narrow a **BLOCKING** precision gate, resting on a verdict
+I got wrong twice in one sitting, is not one I stand behind — narrowing it would
+have hidden the line-247 path this arc just fixed. **Owner's call.**
+
+Commit `49df609730`.
