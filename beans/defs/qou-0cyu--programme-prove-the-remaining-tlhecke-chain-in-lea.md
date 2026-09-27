@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-09T18:18:27Z
-updated_at: 2026-08-30T03:53:17Z
+updated_at: 2026-09-27T05:31:07Z
 ---
 
 
@@ -497,3 +497,59 @@ isomorphism are **accurate**: the content block `mass-theory/hecke-radical-is-te
 block product) and `MathlibExt/HeckeToTemperleyLieb.lean` §"What this file does NOT claim"
 (its claim is about the **relator** ideal, untouched). They are *incomplete*, not wrong. Bean
 stays open: G4 and the `≅ TL_n` half are open conjectures (rule 13a).
+
+
+
+## 🛑 STALE PARAGRAPH, measured 2026-09-27 — this bean tells a reader the prerequisite does not exist, and it does
+
+Found while extending PR #7470. **This bean stays open** (G3 is untouched, rule
+13a); only the paragraph below is wrong.
+
+The bean currently says, of Wedderburn/Artin-Wedderburn:
+
+> the SEMISIMPLICITY HYPOTHESIS is the hard part, and for H_n(q) it is the Tits
+> deformation / Gyoja-Uno argument. It is not in Mathlib and **it is not in this
+> tree** (grep for IsSemisimpleRing in QOU/ returns only the two MathlibExt files
+> above and a comment). So there is no assembly; there is a research-grade
+> prerequisite.
+
+Measured on the working tree (branch claude/tl-quotient-ringcon-lift-2026-09-26,
+whose only Lean additions are in SchurWeyl/ and MathlibExt/RingConLiftAlgHom):
+
+  grep -rl "IsSemisimpleRing\|IsSemisimpleModule" --include=*.lean QOU/ | wc -l
+  => 39
+
+not "the two MathlibExt files above and a comment". And the named prerequisite is
+DISCHARGED at general n, sorry-free, with no cited class:
+
+  QOU.SchurWeyl.isSemisimpleRing_hecke_generic
+    (QOU/SchurWeyl/HeckeSemisimpleGeneral.lean:88)
+    {K} [Field K] [CharZero K] (q : K) (hq0 : q != 0)
+    (hq2 : GenericParameter.NotRootOfUnity q) (n : ℕ)
+      : IsSemisimpleRing (Hecke K q q⁻¹ n)
+
+transported along `heckeWedderburn` (HeckeWedderburnGeneral.lean:112), the
+general-n Wedderburn split of H_{n+1}(q) over ALL partitions. Landed via bean
+qou-kwoa; file last touched 896f82118f (2026-09-03), i.e. AFTER this bean's last
+update, which is how the paragraph went stale rather than having been wrong.
+
+Also worth recording, because it changes what is cheap: Mathlib has
+`RingHom.isSemisimpleRing_of_surjective` ("any quotient of a semisimple ring is
+semisimple", RingTheory/SimpleModule/Basic.lean:433). So semisimplicity of
+H_n(q)/rad(tr) for ANY cyclic trace follows from the above in two lines and needs
+no Wedderburn decomposition of the quotient. Proved as
+`WtraceRadicalSemisimple.isSemisimpleRing_traceQuot_of_hecke` on that branch,
+under hq0 and hq2 only.
+
+**What is NOT thereby done, so this bean's own items stand:** G3 (Temperley-Lieb
+as an algebra object) is untouched; TL_n(delta) semisimple at general n is still
+open on all six corpus-grep paths; and the ideal equality
+<U_i U_j U_i - v^2 U_i> = rad(tr_M) is still the open item HeckeToTemperleyLieb
+records. Semisimplicity of the HECKE algebra and of its quotient is not
+semisimplicity of TL_n -- the two carriers are only known to agree once that
+ideal equality lands.
+
+G5 note for the reader: G5 closed in 2026-08-21 via bean qou-7wf6
+(ballot_sq_sum_catalan, general n). The remaining gap in that direction is the
+HOOK LENGTH FORMULA at general n, not the Catalan combinatorics -- see bean
+qou-7vht, which measures it.
