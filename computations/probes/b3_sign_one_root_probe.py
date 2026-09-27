@@ -38,7 +38,7 @@ PRECISION. mpmath `mpf` end to end at 60 dps; sympy exact rational functions for
 every algebraic identity. `float()` appears nowhere outside an f-string. No
 witness is written and nothing is wired.
 
--- Ref: [manuscript] .beans/qou-q8vl; docs/audits/2026-09-12-ursell-partition-function-for-b3.md
+-- Ref: [manuscript] bean qou-q8vl (beans/defs/); docs/audits/2026-09-12-ursell-partition-function-for-b3.md
 """
 
 from __future__ import annotations

@@ -193,7 +193,7 @@ def main() -> int:
     for k, v in other.items():
         if v:
             print(f"  {k:<5} (unclassified) {len(v):>4}")
-    print(f"  .beans (records, excluded)  {len(beans):>4}")
+    print(f"  beans/defs (records, excluded)  {len(beans):>4}")
     print()
     print("  SINGLE-BASE .py files:")
     for f in sorted(py_hits["SINGLE-BASE"]):
@@ -233,7 +233,7 @@ def main() -> int:
         f"{n_mention} mention it in no assignment RHS. A further {n_other} "
         f".lean/.md/.ts/.json files carry the signature and are counted but NOT "
         f"classified -- there is no AST for them here and guessing would "
-        f"manufacture a number. {len(beans)} .beans hits excluded as records.",
+        f"manufacture a number. {len(beans)} beans/defs hits excluded as records.",
     )
 
     # NOTE: the scope caveat and the blind-spot list are STATEMENTS, not

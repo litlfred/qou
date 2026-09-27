@@ -74,7 +74,17 @@ REPO = Path(__file__).resolve().parent.parent
 SCAN_EXTS = {".py", ".ts", ".md", ".lean", ".json"}
 SKIP_DIRS = {
     ".git", "node_modules", ".lake", "__pycache__", "library",
-    ".beans", "build", "dist", ".pytest_cache", "_deprecated",
+    # `beans` as well as `.beans`: the bean store MOVED from `.beans/` to
+    # `beans/defs/` in 58a1f3231c, and this list is matched by path COMPONENT
+    # NAME (line ~441: `any(part in SKIP_DIRS for part in path.parts)`), so the
+    # old entry stopped matching and 5382 bean `.md`/`.json` files silently
+    # entered scope. Measured 2026-09-27: 180 of the cited paths in the witness
+    # came from `beans/`. The GATE verdict did not move (it gates on CODE sites
+    # only, and beans are RECORD sites), but the candidate-review population
+    # this scan exists to produce was inflated by bean bodies — which quote
+    # CODATA literals constantly, as records of prior measurements. Both names
+    # are kept: a stale agent worktree can still carry the old one.
+    ".beans", "beans", "build", "dist", ".pytest_cache", "_deprecated",
     # `.claude/worktrees/` holds gitignored agent worktrees — whole extra
     # copies of the repo. Scanning them reports the SAME literal once per
     # worktree and turns this gate RED on findings that are not in the branch,
