@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-09-26T11:25:22Z
+updated_at: 2026-09-27T05:21:40Z
 ---
 
 
@@ -946,3 +946,44 @@ independent route**. `qou-ejfy` had the nucleon values at 1.4e-50 / 5.8e-50 by
 exact symbolic recompute and the weights at 60 digits; this adds the full
 *atom* trace. The claim that these witnesses carry ~16 real digits is now
 refuted three ways over.
+
+
+## 2026-09-27 — RESOLVED as a currency note; the cap was already lifted
+
+Owner instruction "resolve issues". The audit doc
+`docs/audits/2026-08-09-canonical-chain-walk-gaps-marked.md` §Step 6 concluded
+*"Corpus claims of '1e-50 agreement' are about χ^λ, not tr_M."* That is now
+FALSE, and the paragraph's own diagnosis is what fixed it.
+
+The live `y_lambda_at` returns **50 digits, not 30** — `wedderburn_jones_markov.py`,
+the `q_val is not None and not _symbolic` early-return, whose in-source comment
+records the change and the reason: `y_lambda_su_n` runs at `COMPUTE_DPS` (70), so
+the cap threw digits 31–50 away for a "consumer compatibility" no canonical
+consumer needed (`tr_m_atom_via_transfer.py` re-lifts through `mp.mpf(str(v))`).
+
+RE-MEASURED live, proton q₀, `|Σ_λ y_λ f^λ − 1|`:
+
+    n=3  1.06911e-50      n=5  1.06911e-50
+    n=4  2.67276e-51      n=6  1.33638e-51
+
+19–20 orders below the ~1e-31 the doc records.
+
+**Stated as a FLOOR, not an agreement.** The returned values are themselves
+truncated at 50 decimals, so 1e-50/1e-51 is the serialization floor of the
+arithmetic — it marks where the cap stops binding, not how exact the mathematics
+is. The in-source comment's own figures (0.0 / 1.336e-51 / 0.0 for n=3/4/5)
+differ from mine by less than that floor, so the two do not disagree; both say
+"at the floor".
+
+**A second 30-digit cap survives and is HARMLESS — do not "fix" it.** The literal
+`sp.Float(nstr(y, 30), 30)` is inside `_y_lambda_at_convention_C_HISTORICAL`
+(convention C, excised 2026-08-09, dead), unreachable on the D path because the
+live early-return fires for every numeric `q_val`. It is the exact string the
+audit doc quotes, which is why it still looks live.
+
+The dated analysis is KEPT per the `qou-3nva` precedent (a dated audit doc is a
+record of its own session); added as a currency note, not a rewrite. Step 7's
+four ~1e-31 rows get a pointer; its `4.1e-15` transfer-kernel row is a different
+route, unaffected by the cap, and remains the only genuinely independent one.
+
+Commit `b2909d503f`.
