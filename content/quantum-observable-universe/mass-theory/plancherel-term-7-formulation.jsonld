@@ -2,12 +2,12 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prop-plancherel-term-7-formulation",
   "@type": [
-    "folio:Proposition",
+    "folio-assistant-core:Proposition",
     "doco:Section"
   ],
   "label": "prop:plancherel-term-7-formulation",
   "kind": "proposition",
-  "title": "Universal residue at curvature-rank $k \\geq 4$ (q-deformed Wedderburn-weighted log functional)",
+  "title": "Universal residue at curvature-rank $k \\geq 4$ (Molien-weighted log functional)",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-spectral-sequence-collapse"
   ],

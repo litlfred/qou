@@ -1,0 +1,37 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-three-euler-characteristics",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:three-euler-characteristics",
+  "kind": "remark",
+  "title": "The three Euler characteristics, and the trace that is not one",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-brings-euler-characteristic",
+    "papers/quantum-observable-universe/blocks/rem-hkr-theorem",
+    "papers/quantum-observable-universe/blocks/conj-wigner-axiom",
+    "papers/quantum-observable-universe/blocks/def-hochschild-homology",
+    "papers/quantum-observable-universe/blocks/def-chern-character"
+  ],
+  "foreshadows": [
+    "papers/quantum-observable-universe/blocks/def-archimedean-condition",
+    "papers/quantum-observable-universe/blocks/rem-chern-character-and-riemann-roch",
+    "papers/quantum-observable-universe/blocks/rem-euler-characteristic-of-the-regular-representation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/lem-brings-euler-characteristic",
+  "cites": [
+    "references/hartshorne-1977",
+    "references/loday-1998"
+  ],
+  "tags": [
+    "euler-characteristic",
+    "hochschild-homology",
+    "quantum-dimension",
+    "notation",
+    "brings-surface"
+  ],
+  "text": "three-euler-characteristics.md",
+  "provenance": "authored"
+}

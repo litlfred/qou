@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/sim-double-slit-analytical",
   "@type": [
-    "folio:Simulator"
+    "folio-assistant-core:Simulator"
   ],
   "label": "sim:double-slit-analytical",
   "kind": "simulator",

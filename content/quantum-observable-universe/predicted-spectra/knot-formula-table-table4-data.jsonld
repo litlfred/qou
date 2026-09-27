@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/tbl-knot-formula-table-table4-data",
   "@type": [
-    "folio:Table",
+    "folio-assistant-core:Table",
     "doco:Table"
   ],
   "label": "tbl:knot-formula-table-table4-data",

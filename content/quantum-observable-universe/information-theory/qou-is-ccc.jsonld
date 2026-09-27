@@ -2,12 +2,12 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prop-qou-is-ccc",
   "@type": [
-    "folio:Proposition",
+    "folio-assistant-core:Proposition",
     "doco:Section"
   ],
   "label": "prop:qou-is-ccc",
   "kind": "proposition",
-  "title": "A QOU with aeons is a conformal cyclic cosmology",
+  "title": "Aeon boundaries satisfy the horizon-local conditions of a conformal cyclic cosmology",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-horizon-conformal-invariance"
   ],

@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/sim-knot-atom-diagrams",
   "@type": [
-    "folio:Simulator"
+    "folio-assistant-core:Simulator"
   ],
   "label": "sim:knot-atom-diagrams",
   "kind": "simulator",

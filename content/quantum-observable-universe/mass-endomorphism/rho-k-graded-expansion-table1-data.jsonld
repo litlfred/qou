@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/tbl-rho-k-graded-expansion-table1-data",
   "@type": [
-    "folio:Table",
+    "folio-assistant-core:Table",
     "doco:Table"
   ],
   "label": "tbl:rho-k-graded-expansion-table1-data",

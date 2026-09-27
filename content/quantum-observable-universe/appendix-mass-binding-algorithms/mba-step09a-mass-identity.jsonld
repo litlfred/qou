@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/alg-mass-identity",
   "@type": [
-    "folio:Algorithm",
+    "folio-assistant-core:Algorithm",
     "doco:Section"
   ],
   "label": "alg:mass-identity",
@@ -12,6 +12,9 @@
     "papers/quantum-observable-universe/blocks/prop-mass-identity-exists",
     "papers/quantum-observable-universe/blocks/prop-mass-identity-unique",
     "papers/quantum-observable-universe/blocks/thm-knot-mass-formula-unified"
+  ],
+  "cites": [
+    "references/martelli2016"
   ],
   "tags": [
     "mba",

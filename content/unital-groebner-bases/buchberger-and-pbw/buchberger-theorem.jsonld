@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/unital-groebner-bases/blocks/thm-ugb-buchberger",
   "@type": [
-    "folio:Theorem",
+    "folio-assistant-core:Theorem",
     "doco:Section"
   ],
   "label": "thm:ugb-buchberger",

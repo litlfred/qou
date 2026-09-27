@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-chern-character-and-riemann-roch",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:chern-character-and-riemann-roch",
+  "kind": "remark",
+  "title": "The Chern character and Riemann–Roch on a curve",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-brings-euler-characteristic"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/lem-brings-euler-characteristic",
+  "cites": [
+    "references/hartshorne-1977",
+    "references/fulton-harris1991"
+  ],
+  "tags": [
+    "chern-character",
+    "riemann-roch",
+    "euler-characteristic",
+    "brings-surface"
+  ],
+  "text": "chern-character-and-riemann-roch.md",
+  "provenance": "authored"
+}

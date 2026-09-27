@@ -2,13 +2,14 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/rem-hochschild-kummer-connection",
   "@type": [
-    "folio:Remark",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
   "label": "rem:hochschild-kummer-connection",
   "kind": "remark",
   "title": "The Hochschild--Kummer connection",
   "uses": [
+    "papers/quantum-observable-universe/blocks/def-hochschild-homology",
     "papers/quantum-observable-universe/blocks/def-quantum-characteristic-classes",
     "papers/quantum-observable-universe/blocks/def-motivic-substrate"
   ],

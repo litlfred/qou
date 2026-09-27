@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-dg-category",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-dg-category",
+  "kind": "remark",
+  "title": "Differential graded category",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-glossary-derived-category"
+  ],
+  "tags": [
+    "glossary",
+    "homological-algebra",
+    "dg"
+  ],
+  "defines": [
+    "dg-category"
+  ],
+  "text": "glossary-dg-category.md",
+  "provenance": "authored"
+}

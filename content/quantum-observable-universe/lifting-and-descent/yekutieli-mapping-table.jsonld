@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/sec-yekutieli-mapping-table",
   "@type": [
-    "folio:Prose",
+    "folio-assistant-core:Prose",
     "doco:Section"
   ],
   "label": "sec:yekutieli-mapping-table",
@@ -11,7 +11,8 @@
     "references/yekutieli2008",
     "references/yekutieli2009",
     "references/yekutieli2010",
-    "references/yekutieli2015"
+    "references/yekutieli2015",
+    "references/yekutieli2015-twisted-dq"
   ],
   "text": "yekutieli-mapping-table.md",
   "meta": {

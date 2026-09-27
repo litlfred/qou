@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-torus-evaluation-block-rank",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:torus-evaluation-block-rank",
+  "kind": "remark",
+  "title": "The torus-knot evaluation matrix is block-diagonal, so its rank is bounded below five",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-genus-from-hecke-completeness"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/lem-genus-from-hecke-completeness",
+  "tags": [
+    "torus-knot",
+    "hecke-algebra",
+    "rank",
+    "genus",
+    "scope-b"
+  ],
+  "text": "torus-evaluation-block-rank.md",
+  "provenance": "authored"
+}
