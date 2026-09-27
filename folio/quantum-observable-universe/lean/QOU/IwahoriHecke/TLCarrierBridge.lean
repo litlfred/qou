@@ -80,6 +80,41 @@ So both halves remain open. The `⊆` half is the concrete one — the corpus ha
 `rad(wtrace)`. The `⊇` half needs `TL_n(δ)`'s own structure, independently of this arc; the
 `TemperleyLiebSpanning` docstring puts it as needing `TL_n(δ)` semisimple.
 
+### The `⊆` half is SHARPER than "the concrete one" — it is exactly ONE statement
+
+`rad(wtrace)` is not an opaque ideal: it is **characterised**, at general `n`, sorry-free, by
+`QOU.SchurWeyl.WtraceRadicalTwoRow.mem_rad_iff_twoRow_blocks_vanish` —
+
+    (∀ b, wtrace q hq0 hq2 n (x * b) = 0)
+      ↔ ∀ (d : YoungDiagram) (hd : d.cells.card = n + 1), d.rowLen 2 = 0 →
+          seminormalRep q hq0 hq2 n hd x = 0
+
+i.e. **`rad(wtrace)` is exactly the three-row part**: membership is equivalent to being killed
+by every at-most-two-row seminormal block. (Convention D is what makes this true — the Ocneanu
+weight of a three-row shape vanishes at `z = q³/(q²+1)`, so those blocks are invisible to the
+form and impose no condition.)
+
+Substituting that characterisation, the `⊆` half of the ideal equality stops being "show the
+relators lie in some radical" and becomes a single concrete representation-theoretic claim:
+
+> **for every shape `d` with `d.rowLen 2 = 0`, the seminormal representation kills the
+> Temperley–Lieb relator.**
+
+That is the classical statement that the at-most-two-row irreducibles of `H_n(q)` factor through
+the TL quotient — equivalently that the three-strand antisymmetriser acts as zero on a shape iff
+that shape has at most two rows.
+
+**It is not in the corpus, and the near-miss is worth naming so it is not mistaken for it.**
+`QOU.QBeta.TemperleyLiebTower.conventionD_kills_antisymmetriser` is about the Markov **weights**
+— it derives `y₁₃ = 0` from the convention-D pin — and says nothing about how the
+antisymmetriser acts in a representation. Weight-level vanishing and representation-level
+vanishing are different claims; only the first is proved.
+
+This paragraph **sharpens** the one above it rather than replacing it: "no theorem places the
+relators in `rad(wtrace)`" is still literally true. What changed is that the target is now a
+named, self-contained statement about `seminormalRep` on two-row shapes, with no reference to
+ideals or radicals at all.
+
 Recorded here rather than in a bean because this is the file a reader reaches *after* the
 carrier stops being the obstacle, and the counting argument is what they will reach for next.
 
