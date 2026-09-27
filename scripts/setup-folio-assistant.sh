@@ -5,8 +5,8 @@
 # pipeline, schemas, LaTeX rendering, viewer, computations) lives in a
 # SEPARATE repo, litlfred/folio-assistant. qou's content `.ts` files and
 # the `content/schema/*.ts` shims import the platform through the in-repo
-# path `folio-assistant/` (e.g. `content/schema/types.ts` does
-# `export * from "../../folio-assistant/cat-harness/schemas/types"`), and the
+# path `folio-assistant/` (e.g. `content/schema/builders.ts` re-exports the
+# builders from `../../folio-assistant/cat-harness/schemas/builders`), and the
 # package.json scripts run `../folio-assistant/cat-harness/content/pipeline/*.ts`.
 # Both resolve to `<repo-root>/folio-assistant/`.
 #
