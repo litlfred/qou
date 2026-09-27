@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-27T07:42:40Z
-updated_at: 2026-09-27T10:37:51Z
+updated_at: 2026-09-27T17:00:17Z
 parent: qou-weeq
 ---
 
@@ -165,3 +165,48 @@ Verified: RC=0, 0 errors, **0 warnings**; all three new decls plus skeinCoxeterE
 
 So: no owner decision is pending on this bean any more. There is nothing to retire and
 nothing to bridge — item 1 is a mathematics problem and is the live frontier.
+
+
+## 2026-09-27 (later) — the SUBSET half is now ONE statement, not a vague target
+
+Commit c42263ad9b (PR #7481). Documentation in TLCarrierBridge.lean; no new theorem.
+
+Earlier today I wrote in that file that the subset half is "the concrete one -- the
+corpus has tlRelator_mem_ker but no theorem placing the relators in rad(wtrace)".
+True, and much weaker than what is actually available.
+
+`rad(wtrace)` is CHARACTERISED, at general n, sorry-free:
+`WtraceRadicalTwoRow.mem_rad_iff_twoRow_blocks_vanish` --
+
+    (forall b, wtrace q hq0 hq2 n (x * b) = 0)
+      <-> forall (d : YoungDiagram) (hd : d.cells.card = n + 1), d.rowLen 2 = 0 ->
+            seminormalRep q hq0 hq2 n hd x = 0
+
+rad(wtrace) is EXACTLY the three-row part. Convention D is what makes it true: the
+Ocneanu weight of a three-row shape vanishes at z = q^3/(q^2+1), so those blocks are
+invisible to the form and impose no condition.
+
+Substituting it, the subset half becomes a single representation-theoretic claim with
+no ideals or radicals in it at all:
+
+  for every shape d with d.rowLen 2 = 0, the seminormal representation kills the
+  Temperley-Lieb relator
+
+i.e. the classical fact that the at-most-two-row irreducibles of H_n(q) factor through
+the TL quotient -- equivalently that the three-strand antisymmetriser acts as zero on
+a shape iff that shape has at most two rows.
+
+### 🛑 The near-miss, named so it is not mistaken for the result
+
+`QBeta.TemperleyLiebTower.conventionD_kills_antisymmetriser` is about the Markov
+WEIGHTS: it derives y_13 = 0 from the convention-D pin. It says NOTHING about how the
+antisymmetriser acts in a representation. Weight-level vanishing and
+representation-level vanishing are different claims and only the first is proved. An
+agent grepping "antisymmetriser" lands on it and can easily read it as the target.
+
+NOT attempted here. It needs the Hoefsmit/seminormal matrices on two-row shapes and
+is a real piece of work, not a composition of things already present -- unlike every
+other step this arc has closed today.
+
+Bean stays open (rule 13a). Its three open items are unchanged; item 1 is now this
+one sharp statement rather than a vague direction.
