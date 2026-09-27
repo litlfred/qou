@@ -8,7 +8,7 @@ tags:
     - platform
     - migration
 created_at: 2026-09-26T11:19:21Z
-updated_at: 2026-09-26T19:50:00Z
+updated_at: 2026-09-27T05:30:00Z
 parent: qou-n4r9
 blocked_by:
     - qou-8321
@@ -334,3 +334,105 @@ When it lands, `qou.json`'s `path` changes to `folio/` in the **same commit** as
 the tree move, never before: an existence-filtered declared directory that is
 absent is dropped silently, and every consumer then reports a clean run over
 nothing.
+
+--------
+
+## MEASURED 2026-09-27 — ZERO sites block the move, and TWO are REPAIRED by it
+
+The note above says the recorded 62 is an undercount from a blind detector and
+**declines to supply a replacement**, because a classifier written that day
+returned incoherent buckets. Here is the replacement, with a calibration that
+can fail.
+
+### Method, and it is calibrated rather than self-certified
+
+Match every string literal that is `content` or begins `content/` (all quote
+styles, `../` prefixes allowed) in non-test `cat-harness/**/*.ts`, then keep only
+those on a line that actually **joins or resolves** it — `join(`, `resolve(`, or
+`listDirBranch`. A literal that is a graph-LAYER name (`holds: "content"`), a
+`Bucket`, a `tags:` entry or a type union is not a directory and is excluded by
+construction rather than by a hand list.
+
+**The calibration asserts ten hand-found sites are detected and FAILS loudly if
+any is missing** — the row-45 lesson from the detector-blindness taxonomy, that
+an audit which hardcodes its own calibration pass cannot discover its own blind
+spot. Result: **10/10 detected.**
+
+    string literals `content` / `content/...` (non-test)   495
+      of those, JOINED or RESOLVED against a root            21
+
+So 495 is the grep surface and **21** is the resolution surface. Neither 62 nor
+my own 59 measured either quantity.
+
+### What the 21 are
+
+| group | n | what it is |
+|---|---:|---|
+| platform's own tree / a namespace path | 11 | `REPO_ROOT/content/docs`, `INSTANCE_ROOT/content/docs`, `content/assets/css`, `ns/content/v1.jsonld`, `__dirname/../../content` |
+| `content/pipeline/<script>` | 8 | `build.ts`, `generate-block-tex.ts`, `glossary-candidates.ts` — instance-side pipeline scripts that **miga moved upstream**, so a separate question from the rename |
+| **resolve a folio's content DIRECTORY** | **2** | `adapters/mcp-server/server.ts:513`, `adapters/document/resolver.ts:72` |
+
+qou has no `content/docs`, so the 11 cannot touch it. The 8 are about where a
+pipeline script lives, not where the folio lives.
+
+### The 2 are ALREADY BROKEN for qou, and the move FIXES them
+
+Both are the same fallback, and both are internally inconsistent:
+
+```ts
+const folioRel = "folio/folio.ts";
+if (fileExistsBranch(br, folioRel)) { ... }          // primary
+else {
+  const dirs = listDirBranch(br, "content").filter(d =>   // lists content/
+    fileExistsBranch(br, `folio/${d}/${d}.ts`));          // checks folio/
+}
+```
+
+It **lists `content/`** and **tests for the manifest under `folio/`**. Traced
+against qou's actual tree:
+
+1. `folioRel` is `folio/folio.ts`. qou has `content/folio.ts` and no `folio/`,
+   so `fileExistsBranch` is **false** — qou takes the `else` branch.
+2. The listing finds qou's five paper directories under `content/`.
+3. The filter tests `folio/<d>/<d>.ts` for each — **false for every one**.
+4. **Zero papers discovered.**
+
+So auto-discovery yields nothing for qou *today*. After the move, `folio/folio.ts`
+exists, the **primary** path is taken, and this fallback never runs at all.
+
+**The platform already knows.** Both sites carry the identical comment: *"declared-path-literal:
+the folio content root. Resolving it through `directoryForGraph` is bean `hs08`;
+the harness-side callers hit `ot9a`'s layering boundary, so the literal is COUNTED
+here rather than hidden."* So the literal is deliberately visible and tracked
+upstream as `hs08`.
+
+### What this does and does not settle
+
+**Settles:** the sequencing objection. The `qou.json` `_path_comment` says the
+move "CANNOT land before the pin bump" on the strength of the 62. The bump has
+landed, and the resolution surface is 21 of which **0 block** and **2 improve**.
+There is no longer a measured code-resolution reason to hold the move.
+
+**Does NOT settle, and I am not claiming it:**
+
+- **Runtime consequence is untraced.** Both sites are in the MCP-server /
+  document-adapter layer, which the owner de-prioritised (*"dont want to have
+  strong depndency/assume MCP server running"*). Whether anything user-visible
+  depends on paper auto-discovery is **not measured** — qou may not run that
+  server at all, in which case the 2 are dead code in both layouts and the
+  "repair" is theoretical.
+- **The 8 `content/pipeline/` sites** need their own pass. They look for
+  `build.ts` and friends in the INSTANCE's `content/pipeline/`, which miga moved
+  to `cat-harness/content/pipeline/`. That looks broken independent of any
+  rename, but I have not traced whether a live path reaches them.
+- **Non-code consumers are out of scope here.** This measures `.ts` resolution
+  only. Documentation, workflow `paths:` filters, `.gitignore`, skill files and
+  the 3613 `.jsonld` `@id` values (`papers/<paper>/blocks/<label>` — note these
+  are keyed on the PAPER, not on `content/`, so they are unaffected) were not
+  part of this count.
+
+**So the move is unblocked on the ground the note above holds it, and the
+remaining work is the mechanical tree move plus the `qou.json` `path` change in
+the same commit** — the constraint the note states and which is unchanged.
+
+`leitner2026` rides this, per the owner ruling recorded above.
