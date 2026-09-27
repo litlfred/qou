@@ -32,7 +32,7 @@ Numerical evaluator for B/A from the spectral decomposition of the
 
 Implements the boxed formula of
 [prop:b-over-a-spectral-decomposition](
-  content/quantum-observable-universe/braids-and-knots/b-over-a-spectral-decomposition.md
+  folio/quantum-observable-universe/braids-and-knots/b-over-a-spectral-decomposition.md
 ):
 
     B/A = (E_0 / A) · Σ_λ w_λ · log| Λ_λ^free / Λ_λ^nuc(q_0; Z, N) |

@@ -30,7 +30,7 @@ the fourth is the expensive one; the fifth is not a defect at all.
   CROSSPAPER the file exists under ANOTHER paper's lean tree, i.e. the mention
              is a cross-paper reference written as if it were local. Currently
              EMPTY, and how it emptied is worth keeping: it held two
-             `content/visualizer/` findings that were an artifact of the
+             `folio/visualizer/` findings that were an artifact of the
              unanchored regex above, which truncated a correct
              `../../quantum-observable-universe/lean/QOU/...` to its tail. The
              class is kept because the shape is real and cheap to detect; do not
@@ -48,7 +48,7 @@ the fourth is the expensive one; the fifth is not a defect at all.
 
 The first pass of this audit had only MISREF/ROT/RECORD, and it put all ten UGB
 mentions in ROT. They are WRONGPKG:
-`content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean` exists.
+`folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean` exists.
 A coarse class is not a neutral simplification -- it prices a one-token fix as
 unrecoverable rot.
 
@@ -267,7 +267,7 @@ def self_test() -> int:
     ok = True
 
     m = "lean/QOU/Foo.lean"
-    src = Path("content/quantum-observable-universe/mass-theory/x.lean")
+    src = Path("folio/quantum-observable-universe/mass-theory/x.lean")
     cands = resolve_candidates(src, m)
     if len(cands) != 3:
         print("FAIL: expected 3 resolution candidates, got", len(cands))

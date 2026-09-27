@@ -315,7 +315,7 @@ KNOWN_FALSE_TEXT = [
     (_h_constraint_D : ∀ i : ι, Matrix.trace (sdp.constraint i * D) = 0) :
     D = 0"""),
 ]
-BASE = "content/quantum-observable-universe/lean/QOU/MathlibExt/"
+BASE = "folio/quantum-observable-universe/lean/QOU/MathlibExt/"
 THRESHOLD = 5
 
 

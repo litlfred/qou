@@ -6,7 +6,7 @@ admissible at all.
 
 # Ref: computations/qbeta/qbeta_gamma_gamma_ruling_selects_ordering_probe.py (the gg half + parity bound)
 # Ref: computations/qbeta/qbeta_delta_candidate_census_probe.py             (nuc9 / the models)
-# Ref: content/quantum-observable-universe/lean/QOU/QBeta/GammaGammaSelectedDeltaVanishes.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/QBeta/GammaGammaSelectedDeltaVanishes.lean
 # Ref: .beans/qou-ales--...md   (OWNER RULING 2026-09-08: gg production + the SDP)
 # Ref: .beans/qou-99qc--...md
 

@@ -4,7 +4,7 @@
  * AGENTS.md §3b / §3b-tax require a conjecture to be carried by a content-
  * bearing `class` (or `structure`) so that downstream results can take it as
  * an explicit hypothesis.  Two other shapes occur in practice and neither is
- * seen by `content/pipeline/lean-vacuity-axiom-audit.ts`:
+ * seen by `folio/pipeline/lean-vacuity-axiom-audit.ts`:
  *
  *   * `def X : Prop := True` (or a `match` whose every branch is `True`) —
  *     a content-free carrier that any `⟨⟩` discharges.  MEASURED 2026-09-03
@@ -29,11 +29,11 @@ import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
 
 const REPO = "/home/user/qou";
-const PAPER = join(REPO, "content/quantum-observable-universe");
+const PAPER = join(REPO, "folio/quantum-observable-universe");
 const LAKE_ROOTS: Record<string, string> = {
-  qou: "content/quantum-observable-universe/lean",
-  ugb: "content/unital-groebner-bases/lean",
-  fred2005: "content/fred2005-formal-groups/lean",
+  qou: "folio/quantum-observable-universe/lean",
+  ugb: "folio/unital-groebner-bases/lean",
+  fred2005: "folio/fred2005-formal-groups/lean",
 };
 const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 

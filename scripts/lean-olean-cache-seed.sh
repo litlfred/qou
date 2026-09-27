@@ -55,7 +55,7 @@ SLUG="$(cut -d: -f2 lean-toolchain | tr -d '\r' | tr . -)"      # v4.24.0 -> v4-
 # WORKSPACE ROOT (`cd $ROOT`; `.lake/packages/...`). Per the authoritative
 # roster .github/lake-packages.json, the workspace root is the **mathlib**
 # package (`"package": "mathlib", "lake-root": "."`); `qou`'s lake-root is
-# content/quantum-observable-universe/lean. QOU.* oleans are built into THAT
+# folio/quantum-observable-universe/lean. QOU.* oleans are built into THAT
 # tree — root `.lake/build/lib` holds zero of them (verified: 0 at root vs 942
 # under the paper lean root).
 #

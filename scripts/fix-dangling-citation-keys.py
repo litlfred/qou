@@ -8,7 +8,7 @@ checked. A `\\cite{}` in a `.md` is validated by the content pipeline, while
 a `cites: [...]` in a `.ts` manifest and a Lean `-- Ref: [key]` are not — so
 68 keys across those two paths resolve to no entry (bean qou-ghy5). AGENTS.md
 §1 is explicit that a `-- Ref:` key "must match an entry in
-content/schema/references.ts exactly", and a `sorry` carrying one that does
+folio/schema/references.ts exactly", and a `sorry` carrying one that does
 not reads as cited when it is not.
 
 ## This only ever applies a mapping a reader wrote down

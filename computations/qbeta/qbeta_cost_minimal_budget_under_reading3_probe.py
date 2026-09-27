@@ -3,7 +3,7 @@
 criterion — the corpus's own cost function, and it does not select 11.
 
 # Ref: computations/qbeta/qbeta_reading3_does_not_constrain_the_budget_probe.py  (reading 3 admits every k)
-# Ref: content/quantum-observable-universe/lean/QOU/Mass/GammaGammaFrobeniusSelection.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/Mass/GammaGammaFrobeniusSelection.lean
 # Ref: computations/qbeta/qbeta_gamma_gamma_sdp_feasibility_probe.py   (is_psd / blocks)
 # Ref: .beans/qou-ales--...md   (OWNER RULING 2026-09-12: reading 3 selected)
 # Ref: .beans/qou-99qc--...md

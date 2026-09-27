@@ -3,10 +3,10 @@
 separation-weighted pair kernel over the word, and measure whether it separates
 the four gluon candidates that every letter-sum provably ties.
 
-# Ref: content/quantum-observable-universe/lean/QOU/MobiusEnergy.lean  (prop:mobius-energy)
-# Ref: content/quantum-observable-universe/lean/QOU/QBeta/ECatBlockDecomposition.lean
-# Ref: content/quantum-observable-universe/lean/QOU/QBeta/LetterSumBlindness.lean
-# Ref: content/quantum-observable-universe/lean/QOU/Mass/GammaGammaWordSelection.lean  (the cost socket)
+# Ref: folio/quantum-observable-universe/lean/QOU/MobiusEnergy.lean  (prop:mobius-energy)
+# Ref: folio/quantum-observable-universe/lean/QOU/QBeta/ECatBlockDecomposition.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/QBeta/LetterSumBlindness.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/Mass/GammaGammaWordSelection.lean  (the cost socket)
 # Ref: computations/confinement_lp_braid_gram_probe.py  ("change the objective, not the Gram")
 # Ref: computations/qbeta/qbeta_embedding_energy_can_discriminate_probe.py
 

@@ -42,7 +42,7 @@ Four facts, all exact and none of them previously recorded in the corpus:
 
 # Why fact 4 matters
 
-`content/quantum-observable-universe/mass-theory/pn-averaging-uniqueness.md`
+`folio/quantum-observable-universe/mass-theory/pn-averaging-uniqueness.md`
 (`prop:pn-averaging-uniqueness`) states:
 
     "The two production candidates are the uniform bar-invariant form and the

@@ -82,7 +82,7 @@ def measure(lean_dir, lib):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--lean-dir", default="content/quantum-observable-universe/lean")
+    ap.add_argument("--lean-dir", default="folio/quantum-observable-universe/lean")
     ap.add_argument("--package", default="QOU")
     ap.add_argument("--list", metavar="NS",
                     help="print every missing module in this namespace")

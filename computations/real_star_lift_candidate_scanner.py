@@ -144,7 +144,7 @@ def main() -> int:
     )
 
     w.add_parameter("scanner_version", "1.0")
-    w.add_parameter("scanned_root", "content/quantum-observable-universe")
+    w.add_parameter("scanned_root", "folio/quantum-observable-universe")
     w.add_parameter(
         "archimedean_patterns",
         [name for _, name in ARCHIMEDEAN_PATTERNS],

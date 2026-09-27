@@ -89,7 +89,7 @@ _UPSTREAM_RECORDS: list = []
 
 # Paper-canonical "low-isotope" set per content block
 #   `rem:recomputed-low-isotope-mass-table`
-#   (content/quantum-observable-universe/braids-and-knots/
+#   (folio/quantum-observable-universe/braids-and-knots/
 #    recomputed-low-isotope-mass-table.md):
 # the 5 atoms across which the three independent production paths
 # for tr_M(B_K) at q = q_0 agree to machine epsilon. A ≤ 3 cleanly

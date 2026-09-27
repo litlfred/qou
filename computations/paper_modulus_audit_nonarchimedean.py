@@ -10,7 +10,7 @@ distinction (PR #1616): the |...| modulus is an ARCHIMEDEAN operation
 (takes a signed real to a positive real, breaking bar-asymmetry). It
 should NOT appear in categorical / pre-τ definitions.
 
-AUDIT SCOPE: all .md files under content/quantum-observable-universe/
+AUDIT SCOPE: all .md files under folio/quantum-observable-universe/
 that contain absolute-value notation (\\|...\\|, \\lvert...\\rvert, or
 literal |...|) AROUND tr_M, tr, χ, or other categorical objects.
 

@@ -88,7 +88,7 @@ SCAN_ROOTS = ["docs", "computations", "content", "library"]
 SELF_ARTIFACTS = frozenset({
     (HERE / "em_linking_upper_bound_precision_budget.py").resolve(),
     (HERE / "em-linking-upper-bound-precision-budget.witness.json").resolve(),
-    (REPO / "content/quantum-observable-universe/lean/QOU/Mass"
+    (REPO / "folio/quantum-observable-universe/lean/QOU/Mass"
           / "MirrorSplitIsASmallFractionOfTheEnergy.lean").resolve(),
 })
 

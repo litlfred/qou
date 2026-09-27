@@ -6,7 +6,7 @@ are exactly where its own block dies.
 
 # Ref: .beans/qou-xzrj--gap-the-767-trace-invisible-remainder-of-epsnpq-st.md
 # Ref: computations/qbeta/qbeta_trace_invisible_is_pairing_representable_probe.py
-# Ref: content/quantum-observable-universe/nuclear-interactions/gram-matrix-h3-symbolic.md
+# Ref: folio/quantum-observable-universe/nuclear-interactions/gram-matrix-h3-symbolic.md
 
 WHERE THIS PICKS UP. The companion probe (12/12) shows the trace-invisible part
 of `epsNPq` is Riesz-representable by a UNIQUE y0 in sl_2, giving

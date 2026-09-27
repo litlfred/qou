@@ -44,7 +44,7 @@ import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join, resolve } from "node:path";
 
 const REPO = resolve(import.meta.dir, "..");
-const ROOT = join(REPO, "content/quantum-observable-universe");
+const ROOT = join(REPO, "folio/quantum-observable-universe");
 const LIB = join(ROOT, "lean");
 const PROVABLE = new Set(["theorem", "proposition", "lemma", "corollary"]);
 const KINDS = ["axiom", "theorem", "lemma", "def", "abbrev", "class",

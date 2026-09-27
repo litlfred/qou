@@ -85,7 +85,7 @@ from q_parameter import Q as Q_0  # noqa: E402
 # hold and has NOT been re-established for the convention-D values now here
 # (2026-08-30, bean qou-46ab) — do not cite it as current cross-validation. The Lean theorem
 # `qou_markov_trace_is_jones_markov`
-# (`content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.lean`,
+# (`folio/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.lean`,
 # sorry-free, axiomatising Wenzl / Jones Markov-trace uniqueness via a
 # `MarkovTraceUniqueness` class) proves τ_M is *the* unique
 # non-degenerate Frobenius form on H_n(q).  `from_scratch/` (different
@@ -703,7 +703,7 @@ class DerivationStep:
         in `pkg:Decl.Path` form.  Required when trust_basis is
         LEAN_PROVEN, MATHLIB_CITED, or AXIOM.
     citation : Optional[str]
-        Reference key from `content/schema/references.ts` or
+        Reference key from `folio/schema/references.ts` or
         manuscript label (e.g. "habiro2004", "manuscript:§6.3").
     notes : Optional[str]
         Additional commentary; especially useful to flag SCRIPT_CITED

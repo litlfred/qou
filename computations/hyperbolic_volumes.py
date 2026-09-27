@@ -32,7 +32,7 @@ to small future precision shifts in either Vol(5_2) or Vol(4_1)).
 This module follows the standard QOU witness conventions
 (`witness_base.WitnessBuilder`); the single source of truth for the
 Lean literals is the per-quantity `*_decimal_15` data fields, which
-the `:leanval` codemod (`content/pipeline/codemod-leanval.ts`)
+the `:leanval` codemod (`folio/pipeline/codemod-leanval.ts`)
 substitutes on demand.
 """
 from __future__ import annotations

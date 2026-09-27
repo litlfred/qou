@@ -721,7 +721,7 @@ def part6_mechanism(results: dict, assertions: dict) -> None:
 
     results["part6_mechanism"] = {
         "transfer_commutator_gap": mp.nstr(comm_gap, 8),
-        "lean": ("content/quantum-observable-universe/lean/QOU/MassTheory/"
+        "lean": ("folio/quantum-observable-universe/lean/QOU/MassTheory/"
                  "TransferFactorCommute.lean"),
         "he3_phi_nuc_ppn": mp.nstr(phi_ppn, 20),
         "he3_phi_nuc_pnp": mp.nstr(phi_pnp, 20),
@@ -992,7 +992,7 @@ def main() -> int:
         "in favour of `ppn`), which is itself part of the finding.")
     w.add_data("references", {
         "prop:ground-state-ordering":
-            "content/quantum-observable-universe/mass-theory/"
+            "folio/quantum-observable-universe/mass-theory/"
             "ground-state-ordering.md",
         "predecessor_audit":
             "docs/audits/2026-08-09-canonical-ordering-dof-production-impact.md",

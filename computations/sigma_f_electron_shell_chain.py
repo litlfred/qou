@@ -340,7 +340,7 @@ def _emit_witness(records, qclt, obs, findings):
         )
         if hasattr(wb, "set_audit_only"):
             wb.set_audit_only(
-                "content/quantum-observable-universe/predicted-spectra/"
+                "folio/quantum-observable-universe/predicted-spectra/"
                 "noble-gas-characterization.md"
             )
         if hasattr(wb, "add_parameter"):

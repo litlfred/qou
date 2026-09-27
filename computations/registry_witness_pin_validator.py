@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Validate every witnessed-value pin in `content/values/registry.ts`.
+"""Validate every witnessed-value pin in `folio/values/registry.ts`.
 
 Bean `qou-xwet`.
 
 ## Why this exists
 
-`content/values/registry.ts` pins 69 named values to `(witnessFile,
+`folio/values/registry.ts` pins 69 named values to `(witnessFile,
 witnessPath)` pairs. Until this script, **nothing checked any of them** —
 `witnessPath` appeared nowhere in the repo outside the registry file itself.
 A pin could name a file that no longer exists, address a path that no longer

@@ -77,7 +77,7 @@ equal `-ln q0/2` exactly where the approach is asymptotic at a rate `T` predicts
 defects in the derivation, not the mathematics, and both are fixed at the derivation.
 No float64.
 
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/BraidKnot/EdgeDecoupling.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/BraidKnot/EdgeDecoupling.lean
 """
 
 from __future__ import annotations

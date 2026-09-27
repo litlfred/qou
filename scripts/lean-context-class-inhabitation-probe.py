@@ -58,7 +58,7 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-LEAN_LIB = ROOT / "content/quantum-observable-universe/lean/.lake/build/lib/lean"
+LEAN_LIB = ROOT / "folio/quantum-observable-universe/lean/.lake/build/lib/lean"
 PKG_LIBS = sorted((ROOT / ".lake/packages").glob("*/.lake/build/lib/lean"))
 
 # Unicode-aware: `Δ_K`, `μ`, `β`, `χ_λ` are field names in this corpus, and an

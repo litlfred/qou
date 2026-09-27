@@ -99,9 +99,9 @@ filtration, which suffices to establish non-uniqueness.  It does NOT compute
 the full rank of the filtration basis for k <= 3, does not reproduce N_l = 84,
 and adjudicates no net value.
 
--- Ref: [manuscript] content/quantum-observable-universe/knots-particles-confinement/stable-atom.md
--- Ref: [manuscript] content/quantum-observable-universe/knots-particles-confinement/ilp-solution-count-unwrap.md
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/ParticleInteractions/FrobeniusPositivityPredicate.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/stable-atom.md
+-- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/ilp-solution-count-unwrap.md
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/ParticleInteractions/FrobeniusPositivityPredicate.lean
 """
 from __future__ import annotations
 

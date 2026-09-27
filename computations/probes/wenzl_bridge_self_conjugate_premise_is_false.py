@@ -2,7 +2,7 @@
 conventions, under every reading of the formula I could construct.
 
 WHAT IS CLAIMED, AND WHERE.  `prop:wedderburn-weight-canonical`
-(content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical)
+(folio/quantum-observable-universe/mass-theory/wedderburn-weight-canonical)
 defines the canonical q-deformed Wedderburn-block weight
 
     w̃_λ(q)  :=  dim_q(λ)² / [n]_q!

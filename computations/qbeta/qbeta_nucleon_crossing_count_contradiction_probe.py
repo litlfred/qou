@@ -45,9 +45,9 @@ asserted: it is a plausible reading, not a corpus statement, and the
 contradiction this probe reports needs no such mapping -- it is a mismatch of
 TOTALS.
 
--- Ref: [manuscript] content/quantum-observable-universe/knots-particles-confinement/categorical-neutron-properties.md
--- Ref: [manuscript] content/quantum-observable-universe/knots-particles-confinement/categorical-proton-properties.md
--- Ref: [manuscript] content/quantum-observable-universe/stochastic-mechanics/q-beta-gamma-gamma-canonical-derivation.md
+-- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/categorical-neutron-properties.md
+-- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/categorical-proton-properties.md
+-- Ref: [manuscript] folio/quantum-observable-universe/stochastic-mechanics/q-beta-gamma-gamma-canonical-derivation.md
 -- Ref: [manuscript] computations/qbeta/qbeta_delta_element_fork_pricing_probe.py (the fork this feeds)
 """
 from __future__ import annotations

@@ -9,7 +9,7 @@ r_nn = r_pn at a right-borrowing vertex, mirrored at a left-borrowing one). Four
 combinations cannot distinguish a mechanism from a coincidence. This probe does.
 
 THE MECHANISM, which is the corpus's own and is cited rather than discovered here.
-`content/quantum-observable-universe/mass-theory/canonical-trace-factorises-over-chain.md`:
+`folio/quantum-observable-universe/mass-theory/canonical-trace-factorises-over-chain.md`:
 
     "a closed braid whose word is a product of sub-words on strand sets overlapping in one
      strand is a connected sum, and the Markov trace -- like every multiplicative link

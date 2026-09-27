@@ -6,7 +6,7 @@
 Typed dataclass schema for Habiro completion witnesses.
 
 Mirrors the Lean class `QOU.BraidKnot.HabiroCompletion` in
-`content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.lean`:
+`folio/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.lean`:
 
     class HabiroCompletion where
       trace : Polynomial ℤ

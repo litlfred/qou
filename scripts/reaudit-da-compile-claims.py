@@ -145,7 +145,7 @@ def main() -> int:
     ap.add_argument("--apply", action="store_true",
                     help="write the corrections (default: dry run)")
     ap.add_argument("--glob",
-                    default="content/quantum-observable-universe/*/*.qa.json")
+                    default="folio/quantum-observable-universe/*/*.qa.json")
     args = ap.parse_args()
 
     results = load_results(args.results)

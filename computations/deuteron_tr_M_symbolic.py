@@ -222,7 +222,7 @@ def main() -> int:
         "lean_uniqueness_ref": {
             "deuteron": "qou:QOU.BraidKnot.deuteron_uniqueness_closed",
             "framework_doc": (
-                "content/quantum-observable-universe/lean/QOU/BraidKnot/"
+                "folio/quantum-observable-universe/lean/QOU/BraidKnot/"
                 "NucleusEmptySDPUniqueness.lean"
             ),
             "note": (

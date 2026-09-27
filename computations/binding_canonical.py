@@ -247,14 +247,14 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     already states. `precision-goals.md` scores Q_β as a *prediction*
     carrying 1248–1279 ppb, not as a calibration input, and
     `three-calibration-inputs-context` forbids "a second hadronic scale".
-    Per [`prop:three-calibration-inputs`](../../content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md)).
+    Per [`prop:three-calibration-inputs`](../../folio/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md)).
 
     **Naming note (2026-05-17, this branch).** This binding-scale
     parameter is the **β-decay Q-value $Q_\\beta(n)$**, **NOT** the
     canonical energy scale $E_0 = m_e/(q_0(q_0-1)) \\approx 4.186$
     MeV (a different quantity, ~5× larger). Earlier revisions
     misnamed this parameter `E_0`; the value used here is correct
-    (the formula in [`prop:categorical-mass-markov`](../../content/quantum-observable-universe/braids-and-knots/categorical-mass-markov.md)
+    (the formula in [`prop:categorical-mass-markov`](../../folio/quantum-observable-universe/braids-and-knots/categorical-mass-markov.md)
     requires $Q_\\beta$-scaled dimensionless trace differences),
     only the name was wrong. The function now exposes the parameter
     with its correct identifier. **Dimensional note.** `Q_beta_n_mev`

@@ -220,7 +220,7 @@ def main() -> int:
         for r in rows:
             print(f"  {r['class']}  [{r['namespace']}]  lib={r['library_copies']} sib={r['sibling_copies']}")
             for f in r["files"]:
-                print(f"      {f.replace('content/quantum-observable-universe/', '')}")
+                print(f"      {f.replace('folio/quantum-observable-universe/', '')}")
 
     if args.json:
         Path(args.json).write_text(json.dumps(out, indent=2) + "\n")

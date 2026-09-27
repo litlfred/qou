@@ -3,7 +3,7 @@
 
 # Why this exists
 
-`content/quantum-observable-universe/mass-theory/knot-operator-transition.md`
+`folio/quantum-observable-universe/mass-theory/knot-operator-transition.md`
 writes its five transition operators with the p-n factor `sigma - h/2`. That is
 `strict_averaged` (delta = 0); the owner ruling of 2026-08-15 (R3) makes the
 colour-tube-weighted `sigma - h(1/2 - delta/4)` canonical. Bean `qou-cblw`

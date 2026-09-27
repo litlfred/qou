@@ -6,7 +6,7 @@
 conj:e-hartree-categorical-derivation — ROUND 19 (owner-directed).
 
 Resolves the two outstanding computational steps left open by rounds 17-18 of
-the conjecture block (content/quantum-observable-universe/predicted-spectra/
+the conjecture block (folio/quantum-observable-universe/predicted-spectra/
 e-hartree-categorical-derivation.md):
 
   (R18 outstanding) "the exact algebraic relation between chi_{(3,1)},

@@ -23,7 +23,7 @@ Numerical pipeline:
     compare to D(e^{i pi/3}) = v_3  (Lobachevsky constant)
 
 Refs:
-    prop:descartes-elliptic-curve in content/quantum-observable-universe/
+    prop:descartes-elliptic-curve in folio/quantum-observable-universe/
     prop:thurston-volume-additivity (this branch)
 """
 from __future__ import annotations

@@ -9,7 +9,7 @@ of at the hand-picked one I used first.
 #      -- eq (52) (odd series), (65)-(66) (the 4_1 gluing), (68) (the coefficient shown here)
 # Ref: computations/qbeta/qbeta_bring_ohara_bridge_probe.py        (the bridge this re-measures)
 # Ref: computations/qbeta/qbeta_cusp_shape_drift_robustness_probe.py (states the u != 0 problem)
-# Ref: content/quantum-observable-universe/.../cusp-shape-bar-parity.md (the hexagonal lattice)
+# Ref: folio/quantum-observable-universe/.../cusp-shape-bar-parity.md (the hexagonal lattice)
 # Ref: .beans/qou-yh67--...md  (the NZ-1/2 binary, STRUCTURALLY OPEN -- carried, not settled)
 
 WHY. `qbeta_bring_ohara_bridge_probe` computes the O'Hara energy of a closed

@@ -113,7 +113,7 @@ from codata_constants import AME_B_HE4_MEV_VALIDATION
 
 set_compute_dps(50)
 
-LEAN = ("content/quantum-observable-universe/lean/QOU/MassTheory/"
+LEAN = ("folio/quantum-observable-universe/lean/QOU/MassTheory/"
         "A4InterfaceMagnitude.lean")
 
 # The three targets the witness documents. Read ONLY to demonstrate

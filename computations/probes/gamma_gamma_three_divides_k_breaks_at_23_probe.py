@@ -101,7 +101,7 @@ nowhere. Emits no witness: the output is an argument (bean qou-pb1w).
 Beans qou-ales (the selection programme), qou-99qc (the element question this
 narrows).
 
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/Mass/GammaGammaSelectionTen.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/Mass/GammaGammaSelectionTen.lean
 -- Ref: [manuscript] computations/probes/gamma_gamma_selection_ten_probe.py
 """
 

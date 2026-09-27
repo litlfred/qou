@@ -4,8 +4,8 @@ and part 7's degeneracy verdict does NOT transfer off gamma-gamma words.
 
 # Ref: computations/qbeta/qbeta_gamma_gamma_crossing_energy_probe.py  (part 7: E_cross = k*h on gg words, degenerate)
 # Ref: computations/qbeta/qbeta_cost_minimal_budget_under_reading3_probe.py  (the cost-minimal budget)
-# Ref: content/quantum-observable-universe/lean/QOU/Mass/GammaGammaFrobeniusSelection.lean
-# Ref: content/quantum-observable-universe/lean/QOU/MobiusEnergy.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/Mass/GammaGammaFrobeniusSelection.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/MobiusEnergy.lean
 # Ref: .beans/qou-99qc--...md   (part 7 is on main at 645dece2790)
 
 WHY THIS EXISTS. The sibling probe selects the gluon dressing by MINIMAL

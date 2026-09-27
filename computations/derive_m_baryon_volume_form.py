@@ -5,8 +5,8 @@
 formula at 50 dps — Option B implementation per PR #640 follow-up
 2026-05-11.
 
-Per [`borromean-baryon-interpretation.md`](../../content/quantum-observable-universe/braids-and-knots/borromean-baryon-interpretation.md)
-(introduced by PR #487) and [`topological-mass-trefoil.md`](../../content/quantum-observable-universe/braids-and-knots/topological-mass-trefoil.md):
+Per [`borromean-baryon-interpretation.md`](../../folio/quantum-observable-universe/braids-and-knots/borromean-baryon-interpretation.md)
+(introduced by PR #487) and [`topological-mass-trefoil.md`](../../folio/quantum-observable-universe/braids-and-knots/topological-mass-trefoil.md):
 
   Leptons (single knot K with hyperbolic volume):
       m(K) = m_e · Vol(K) / ℏ_q²

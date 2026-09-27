@@ -3,8 +3,8 @@
 qbeta_epsnpq_functional_mismatch_probe.py — qou-99qc: the fork's premise does
 not hold. Two different functionals are both called `ε`.
 
-# Ref: content/quantum-observable-universe/lean/QOU/QBeta/CounitSigmaOneForcesHZero.lean
-# Ref: content/quantum-observable-universe/lean/QOU/Interactions/qbeta_counit_vs_trace.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/QBeta/CounitSigmaOneForcesHZero.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/Interactions/qbeta_counit_vs_trace.lean
 # Ref: computations/qbeta/qbeta_epsnpq_colour_weighted_exclusion_probe.py
 # Ref: computations/qbeta/qbeta_delta_vs_deltaTbeta_settled_probe.py
 

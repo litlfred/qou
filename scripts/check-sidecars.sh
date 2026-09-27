@@ -290,7 +290,7 @@ for f in "${files[@]}"; do
     # Pipeline / schema code under content/ is not a content block — it has no
     # .md sibling and no sidecar, so the arm below would print a bogus
     # "(no sidecar yet)" and a qa-sweep line that cannot do anything.
-    content/pipeline/*|content/schema/*|content/values/*)
+    folio/pipeline/*|folio/schema/*|folio/values/*)
       echo "▸ $f  [content-tree code — not a block, no sidecar applies]"
       ;;
     content/*.md|content/*.ts)
@@ -481,7 +481,7 @@ fi
 if printf '%s\n' "${files[@]}" | grep -qE '^content/.*\.(md|ts)$'; then
   mapfile -t blockfiles < <(printf '%s\n' "${files[@]}" | grep -E '^content/.*\.(md|ts)$')
   if ! bma_out=$(bun run --preload "$ROOT/scripts/preload-registry.ts" \
-        "$ROOT/content/pipeline/block-manifest-audit.ts" --diff "${blockfiles[@]}" 2>&1); then
+        "$ROOT/folio/pipeline/block-manifest-audit.ts" --diff "${blockfiles[@]}" 2>&1); then
     action=1
     echo "⚠ block-manifest-audit: a changed block's manifest does not load."
     printf '%s\n' "$bma_out" | sed 's/^/    /'
@@ -536,7 +536,7 @@ fi
 
 # ── Dangling citation keys in the files this commit touches ──────────────
 # AGENTS.md §1: "A `sorry` without `-- Ref:` is always a review failure" and
-# the key "must match an entry in content/schema/references.ts exactly".
+# the key "must match an entry in folio/schema/references.ts exactly".
 # NOTHING enforced that. `run-validate` prints
 #   "no reference registry configured — cites-resolve did not run"
 # and exits 0 over a corpus that carried 54 dangling sites; the platform's
@@ -554,7 +554,7 @@ if printf '%s\n' "${files[@]}" | grep -qE '\.(ts|lean)$'; then
         --files "${citefiles[@]}" --strict 2>&1); then
     action=1
     echo "⚠ dangling citation key(s) in files you changed — add the entry to"
-    echo "  content/schema/references.ts, or use a documented convention."
+    echo "  folio/schema/references.ts, or use a documented convention."
     printf '%s\n' "$cite_out" | grep -A1 -E '^\s+[0-9]+\s+(ts-cites|lean-ref|md-cite)' | sed 's/^/    /'
   fi
 fi

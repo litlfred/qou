@@ -60,9 +60,9 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 PKGS = [
-    ("content/quantum-observable-universe/lean", "QOU"),
-    ("content/unital-groebner-bases/lean", "UGB"),
-    ("content/fred2005-formal-groups/lean", "Fred2005"),
+    ("folio/quantum-observable-universe/lean", "QOU"),
+    ("folio/unital-groebner-bases/lean", "UGB"),
+    ("folio/fred2005-formal-groups/lean", "Fred2005"),
 ]
 
 

@@ -3,7 +3,7 @@
 sync-references-library — record each source's library location + ingestion
 stage on its `references.ts` entry.
 
-`content/schema/references.ts` is the authoritative bibliography (CSL-JSON).
+`folio/schema/references.ts` is the authoritative bibliography (CSL-JSON).
 It says what a source *is*; until now nothing there said whether we hold a
 copy, where, or how far it has been processed. Answering that meant joining
 three files by hand.

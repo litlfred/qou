@@ -247,7 +247,7 @@ def main():
             "until 2026-08-10 (qou-okxx)."
         )
         .set_audit_only(
-            "content/quantum-observable-universe/braids-and-knots/"
+            "folio/quantum-observable-universe/braids-and-knots/"
             "derivation-audit-report.md (GAP-A-2 chiral residual)"
         )
     )

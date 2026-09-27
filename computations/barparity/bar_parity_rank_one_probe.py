@@ -2,7 +2,7 @@
 """The bar-odd channel is FREE OF RANK ONE: there is no bar-odd object to choose.
 
 Bean `qou-fi93`.  Lean:
-`content/quantum-observable-universe/lean/QOU/Observations/BarParityRankOne.lean`.
+`folio/quantum-observable-universe/lean/QOU/Observations/BarParityRankOne.lean`.
 
 WHY THIS EXISTS.  `qou-fi93` recorded a scope-(b) exclusion -- every counting
 object the framework defines is exactly bar-even, so the colour-curve asymmetry

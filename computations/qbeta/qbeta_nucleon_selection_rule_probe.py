@@ -45,10 +45,10 @@ reported separately and labelled as such.  Nothing here adjudicates the
 four-net-values inconsistency (qou-bg3w); it removes one reconstruction
 degree of freedom from this branch's own construction.
 
--- Ref: [manuscript] content/quantum-observable-universe/knots-particles-confinement/ilp-solution-count-unwrap.md
--- Ref: [manuscript] content/quantum-observable-universe/knots-particles-confinement/categorical-proton-properties.md
--- Ref: [manuscript] content/quantum-observable-universe/knots-particles-confinement/categorical-neutron-properties.md
--- Ref: [manuscript] content/quantum-observable-universe/knots-particles-confinement/binding-knots-visual-inventory-table1-data.md
+-- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/ilp-solution-count-unwrap.md
+-- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/categorical-proton-properties.md
+-- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/categorical-neutron-properties.md
+-- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/binding-knots-visual-inventory-table1-data.md
 -- Ref: [manuscript] computations/qbeta/qbeta_delta_net_four_values_probe.py (which this extends)
 """
 from __future__ import annotations

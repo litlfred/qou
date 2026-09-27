@@ -461,7 +461,7 @@ def main() -> int:
         "parameters": {"fibre_dimension_N": N_FIBRE,
                        "row_cap": "dim V_lambda = 0 when l(lambda) > N",
                        "row_cap_source":
-                           "content/quantum-observable-universe/mass-theory/"
+                           "folio/quantum-observable-universe/mass-theory/"
                            "markov-trace-frobenius-selection.md (states it by name)"},
         "data": {
             "witnesses_scanned": n_scanned,

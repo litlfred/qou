@@ -356,7 +356,7 @@ def main() -> int:
     print()
     for r in rows:
         print(f"  {r['namespace']}.{r['name']}")
-        print(f"      {r['file'].replace('content/quantum-observable-universe/','')}:{r['line']}"
+        print(f"      {r['file'].replace('folio/quantum-observable-universe/','')}:{r['line']}"
               f"  ({len(r['fields'])} field(s))")
 
     if args.emit:

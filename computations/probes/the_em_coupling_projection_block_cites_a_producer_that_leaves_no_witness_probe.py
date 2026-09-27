@@ -82,7 +82,7 @@ import mpmath as mp  # noqa: E402
 
 mp.mp.dps = 50
 
-BLOCK = ROOT / ("content/quantum-observable-universe/predicted-spectra/"
+BLOCK = ROOT / ("folio/quantum-observable-universe/predicted-spectra/"
                 "em-coupling-projection-table1-data.md")
 CLAIMANT = COMP / "probes/em_coupling_projection_probe.py"
 CLAIM_WIT = COMP / "probes/em-coupling-projection-probe.witness.json"
@@ -195,7 +195,7 @@ def main() -> int:
     check("the producer's constant is neither CODATA adjustment",
           rb != c22 and rb != c18)
     check("it is the Rb-87 value, cited under that name in sec:fine-structure-data",
-          "137.035999206" in (ROOT / "content/quantum-observable-universe/"
+          "137.035999206" in (ROOT / "folio/quantum-observable-universe/"
                               "observations/fine-structure-data.md").read_text(
                                   encoding="utf-8", errors="replace"))
     # Same regression-guard shape as §3: the producer said "CODATA

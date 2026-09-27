@@ -13,7 +13,7 @@
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-python.ts",
+          "id": "folio/pipeline/qa-checkers-python.ts",
           "version": "v1",
           "script_hash": "13ca48443f4b",
           "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
@@ -30,7 +30,7 @@
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-python.ts",
+          "id": "folio/pipeline/qa-checkers-python.ts",
           "version": "v1",
           "script_hash": "d63813af716d",
           "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
@@ -47,7 +47,7 @@
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-python.ts",
+          "id": "folio/pipeline/qa-checkers-python.ts",
           "version": "v1",
           "script_hash": "69537a0de0e5",
           "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
@@ -66,7 +66,7 @@
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-python.ts",
+          "id": "folio/pipeline/qa-checkers-python.ts",
           "version": "v1",
           "script_hash": "d63813af716d",
           "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
@@ -81,7 +81,7 @@
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-python.ts",
+          "id": "folio/pipeline/qa-checkers-python.ts",
           "version": "v1",
           "script_hash": "69537a0de0e5",
           "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
@@ -98,7 +98,7 @@
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-python.ts",
+          "id": "folio/pipeline/qa-checkers-python.ts",
           "version": "v1",
           "script_hash": "d63813af716d",
           "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
@@ -115,7 +115,7 @@
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-python.ts",
+          "id": "folio/pipeline/qa-checkers-python.ts",
           "version": "v1",
           "script_hash": "69537a0de0e5",
           "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
@@ -132,7 +132,7 @@
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-python.ts",
+          "id": "folio/pipeline/qa-checkers-python.ts",
           "version": "v1",
           "script_hash": "d63813af716d",
           "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
@@ -147,7 +147,7 @@
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-python.ts",
+          "id": "folio/pipeline/qa-checkers-python.ts",
           "version": "v1",
           "script_hash": "69537a0de0e5",
           "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
@@ -164,7 +164,7 @@
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-python.ts",
+          "id": "folio/pipeline/qa-checkers-python.ts",
           "version": "v1",
           "script_hash": "d63813af716d",
           "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
@@ -172,7 +172,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "computations/from_scratch/derive_he3.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/from_scratch/derive_he3.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `folio/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       },
       {
         "field_hash": {
@@ -181,7 +181,7 @@
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-python.ts",
+          "id": "folio/pipeline/qa-checkers-python.ts",
           "version": "v1",
           "script_hash": "69537a0de0e5",
           "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
@@ -200,7 +200,7 @@
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-python.ts",
+          "id": "folio/pipeline/qa-checkers-python.ts",
           "version": "v1",
           "script_hash": "d63813af716d",
           "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
@@ -217,7 +217,7 @@
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-python.ts",
+          "id": "folio/pipeline/qa-checkers-python.ts",
           "version": "v1",
           "script_hash": "69537a0de0e5",
           "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
@@ -236,7 +236,7 @@
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-python.ts",
+          "id": "folio/pipeline/qa-checkers-python.ts",
           "version": "v1",
           "script_hash": "d63813af716d",
           "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
@@ -251,7 +251,7 @@
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-python.ts",
+          "id": "folio/pipeline/qa-checkers-python.ts",
           "version": "v1",
           "script_hash": "69537a0de0e5",
           "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
@@ -268,7 +268,7 @@
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-python.ts",
+          "id": "folio/pipeline/qa-checkers-python.ts",
           "version": "v1",
           "script_hash": "d63813af716d",
           "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
@@ -283,7 +283,7 @@
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-python.ts",
+          "id": "folio/pipeline/qa-checkers-python.ts",
           "version": "v1",
           "script_hash": "69537a0de0e5",
           "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
@@ -300,7 +300,7 @@
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-python.ts",
+          "id": "folio/pipeline/qa-checkers-python.ts",
           "version": "v1",
           "script_hash": "0bbdf534427b",
           "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
@@ -317,7 +317,7 @@
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-python.ts",
+          "id": "folio/pipeline/qa-checkers-python.ts",
           "version": "v1",
           "script_hash": "a08e6e1469fd",
           "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"

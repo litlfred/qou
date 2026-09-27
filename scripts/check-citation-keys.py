@@ -11,7 +11,7 @@ the other two paths a block can cite by, and both are load-bearing:
     .lean  -- Ref: [key]        <- unchecked
 
 AGENTS.md §1 is explicit about the Lean one — "The `[key]` must match an
-entry in `content/schema/references.ts` exactly (case-sensitive)" and "A
+entry in `folio/schema/references.ts` exactly (case-sensitive)" and "A
 `sorry` without `-- Ref:` is always a review failure". A `sorry` carrying a
 key that resolves to nothing satisfies the second rule while breaking the
 first: it reads as cited and is not.

@@ -33,7 +33,7 @@ import pathlib
 import re
 import sys
 
-DEFAULT_ROOT = pathlib.Path("content/quantum-observable-universe/lean/QOU")
+DEFAULT_ROOT = pathlib.Path("folio/quantum-observable-universe/lean/QOU")
 # The whole Lean corpus, for the scope line. `DEFAULT_ROOT` is the QOU LIBRARY only;
 # content blocks carry sibling `.lean` files outside it, and they hold the large
 # majority of the corpus's axioms. Reporting the library figure without saying so

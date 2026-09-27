@@ -127,7 +127,7 @@ def main() -> int:
                    "def:atomic-braid assembles Z of them"))
 
     # ---- 3. the definition's own table is 3/6 electronic ------------------
-    tbl = (REPO / "content/quantum-observable-universe/knots-particles-confinement"
+    tbl = (REPO / "folio/quantum-observable-universe/knots-particles-confinement"
            / "atomic-braid-table1-data.md").read_text()
     e_rows = [r for r in ("mathfrak{p}e", "mathfrak{n}e", "$ee$") if r in tbl]
     print(f"[3] def:atomic-braid Table 1 electronic pair rows present: {e_rows}")
@@ -141,7 +141,7 @@ def main() -> int:
     #        This check reports both; the earlier draft reported 24/7 as
     #        "blocks", which are the FILE figures.
     cite_files = sorted(
-        p for p in (REPO / "content/quantum-observable-universe").rglob("*")
+        p for p in (REPO / "folio/quantum-observable-universe").rglob("*")
         if p.suffix in (".md", ".ts") and "def:atomic-braid" in p.read_text(errors="ignore")
     )
     cite_blocks = sorted({p.with_suffix("") for p in cite_files})

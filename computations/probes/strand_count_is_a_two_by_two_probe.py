@@ -17,7 +17,7 @@ That evidence is correct and check 8 re-verifies it. The CONCLUSION drawn from
 it is not, because it is a claim about one FILE promoted to a claim about the
 CORPUS. A content block --
 
-    content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.md:3
+    folio/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.md:3
     "atomic braid $\\mathcal{B}_K \\in B_{n}$, where $n = 3A + Z$"
 
 -- asserts a braid-group element on `3A + Z` strands. `B_n` is the braid group;
@@ -95,16 +95,16 @@ def read(rel: str) -> str:
 # ---------------------------------------------------------------- the sites
 SITES = {
     "A+Z": [
-        ("content/quantum-observable-universe/knots-particles-confinement/atomic-braid.md", "H_{A+Z}(q)"),
-        ("content/quantum-observable-universe/mass-theory/wedderburn-mass-formula.md", "H_{A+Z}(q)"),
+        ("folio/quantum-observable-universe/knots-particles-confinement/atomic-braid.md", "H_{A+Z}(q)"),
+        ("folio/quantum-observable-universe/mass-theory/wedderburn-mass-formula.md", "H_{A+Z}(q)"),
     ],
     "3A": [
-        ("content/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.md", "H_{3A}(q)"),
-        ("content/quantum-observable-universe/notation/notation-register-table3-data.md", "H_{3A}(q)"),
+        ("folio/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.md", "H_{3A}(q)"),
+        ("folio/quantum-observable-universe/notation/notation-register-table3-data.md", "H_{3A}(q)"),
         ("computations/hecke/hecke_3a_weights.py", "H_{3A}"),
     ],
     "3A+Z": [
-        ("content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.md", "3A + Z"),
+        ("folio/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.md", "3A + Z"),
         ("computations/electron_sigma_f_chain.py", "3A + Z"),
     ],
 }
@@ -132,9 +132,9 @@ def main() -> int:
 
     # --- 2. one symbol, two counts, register is a disputant ----------------
     print("CHECK 2 -- the collision is on the symbol \\mathcal{B}_K")
-    reg = read("content/quantum-observable-universe/notation/notation-register-table3-data.md")
-    gbnf = read("content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.md")
-    coll = read("content/quantum-observable-universe/notation/notation-collisions.md")
+    reg = read("folio/quantum-observable-universe/notation/notation-register-table3-data.md")
+    gbnf = read("folio/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.md")
+    coll = read("folio/quantum-observable-universe/notation/notation-collisions.md")
     reg_bk = r"\mathcal{B}_K \in H_{3A}(q)" in reg
     gbnf_bk = (r"\mathcal{B}_K \in B_{n}" in gbnf) and ("3A + Z" in gbnf)
     print(f"    notation register : B_K in H_{{3A}}(q)        -> {reg_bk}")
@@ -148,7 +148,7 @@ def main() -> int:
 
     # --- 3. the 3A+Z block cites the A+Z definition ------------------------
     print("CHECK 3 -- the 3A+Z block CITES the definition it contradicts")
-    ab = read("content/quantum-observable-universe/knots-particles-confinement/atomic-braid.md")
+    ab = read("folio/quantum-observable-universe/knots-particles-confinement/atomic-braid.md")
     cites_def = "#def:atomic-braid" in gbnf
     def_is_apz = "H_{A+Z}(q)" in ab and "A + Z$ strands" in ab
     print(f"    atomic-mass-gb-nf links #def:atomic-braid -> {cites_def}")
@@ -209,7 +209,7 @@ def main() -> int:
 
     # --- 7. H_A is a coarsening, not a fourth disputant ---------------------
     print("CHECK 7 -- the fourth cell H_A is an approximation, not a claim")
-    lvl = read("content/quantum-observable-universe/knots-particles-confinement/level-sufficiency-interprets.md")
+    lvl = read("folio/quantum-observable-universe/knots-particles-confinement/level-sufficiency-interprets.md")
     has_ha = "H_A(R, q)" in lvl
     is_coarse = "Default-coarse" in lvl or "default-coarse" in lvl
     print(f"    level-sufficiency-interprets mentions H_A(R,q) -> {has_ha}")

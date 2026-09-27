@@ -95,10 +95,10 @@ the pairing formulation evaluates, it reproduces the corpus's bare-element
 infeasibility, and under it the minimum restoring adjunction is three gluon
 crossings rather than two.
 
--- Ref: [manuscript] content/quantum-observable-universe/knots-particles-confinement/stable-atom.md
--- Ref: [manuscript] content/quantum-observable-universe/knots-particles-confinement/stable-atom-properties.md
--- Ref: [manuscript] content/quantum-observable-universe/knots-particles-confinement/categorical-proton-properties.md
--- Ref: [manuscript] content/quantum-observable-universe/knots-particles-confinement/ilp-solution-count-unwrap.md
+-- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/stable-atom.md
+-- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/stable-atom-properties.md
+-- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/categorical-proton-properties.md
+-- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/ilp-solution-count-unwrap.md
 -- Ref: [manuscript] computations/qbeta/qbeta_primitive_basis_overcomplete_probe.py
 """
 from __future__ import annotations

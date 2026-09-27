@@ -63,7 +63,7 @@ def _sweep_module():
         spec.loader.exec_module(m)
     except SystemExit:
         pass
-    m.PKG = ROOT / "content/quantum-observable-universe/lean"
+    m.PKG = ROOT / "folio/quantum-observable-universe/lean"
     m.LIB = "QOU"
     return m
 

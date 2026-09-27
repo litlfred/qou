@@ -5,7 +5,7 @@ from the VENDORED AME2020 table, replacing a hand-typed one.
 Why this producer exists
 ------------------------
 The witness it writes is the corpus's canonical experimental binding-energy
-reference: `content/values/registry.ts` renders one of its values into the
+reference: `folio/values/registry.ts` renders one of its values into the
 paper, and at least five compute scripts read it to form `err = pred - B_AME`.
 
 It used to carry `engine: "manual-entry"` and name `binding_canonical.py` as its

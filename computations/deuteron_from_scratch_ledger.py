@@ -151,10 +151,10 @@ PRODUCTION_WITNESSES = (
 )
 
 PRODUCTION_BLOCKS = (
-    "content/quantum-observable-universe/particle-interactions/nucleon-from-photons-summary.md",
-    "content/quantum-observable-universe/predicted-spectra/gamma-gamma-generates-particles.md",
-    "content/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.md",
-    "content/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.md",
+    "folio/quantum-observable-universe/particle-interactions/nucleon-from-photons-summary.md",
+    "folio/quantum-observable-universe/predicted-spectra/gamma-gamma-generates-particles.md",
+    "folio/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.md",
+    "folio/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.md",
 )
 
 

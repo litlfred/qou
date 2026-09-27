@@ -268,7 +268,7 @@ def self_test() -> int:
     ck("host stops at list item", "next item" in host, False)
     # Class 9 — branch-attributed.
     ck("branch",
-       classify("content/quantum-observable-universe/zzz-nope.lean",
+       classify("folio/quantum-observable-universe/zzz-nope.lean",
                 "(branch `claude/theta-qcd-framing-phase-2026-08-02`, path)")[0],
        "branch-attributed")
     # ok must still be ok.

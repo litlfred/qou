@@ -82,9 +82,9 @@ SCOPE-(a).  MEASURED at k = 3 and across the k <= 2 filtration; NOT
 established for general k <= k_max.  No gluon count is selected and no net
 value is adjudicated.
 
--- Ref: [manuscript] content/quantum-observable-universe/knots-particles-confinement/stable-atom.md
--- Ref: [manuscript] content/quantum-observable-universe/knots-particles-confinement/ilp-solution-count-unwrap.md
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/ParticleInteractions/FrobeniusPositivityPredicate.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/stable-atom.md
+-- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/ilp-solution-count-unwrap.md
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/ParticleInteractions/FrobeniusPositivityPredicate.lean
 -- Ref: [manuscript] computations/qbeta/qbeta_nucleon_selection_rule_probe.py (which this corrects)
 """
 from __future__ import annotations

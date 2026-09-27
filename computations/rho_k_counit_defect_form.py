@@ -178,7 +178,7 @@ def main():
         "context": {
             "axis": "Δ_λ per-isotope binding closure (GAP-A) — counit defect form",
             "chi_source": "atom-chi-rust-{d,t,3he,4he}.witness.json (data.atom + data.free)",
-            "interface_factorization": "content/quantum-observable-universe/mass-theory/interface-knot-markov-z.md",
+            "interface_factorization": "folio/quantum-observable-universe/mass-theory/interface-knot-markov-z.md",
             "audit": "docs/audits/2026-07-04-delta-lambda-counit-canonical-integral-candidate.md",
         },
     }

@@ -205,7 +205,7 @@ different levels interact non-trivially.
 
 The framework has **categorically exactly three** external
 calibration inputs (per
-[`def:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md)):
+[`def:three-calibration-discipline`](../../folio/quantum-observable-universe/observations/three-calibration-discipline.md)):
 
 | ID | Calibration | (Co)homology | Role |
 |----|-------------|--------------|------|
@@ -232,7 +232,7 @@ as the $H^2$ calibration — not an additional fit.
    Needs k≥7 exact corrections.
 3. **Magic numbers**: {2,8,20,28,50,82,126} from Bring's surface
    — algebraic claim now stated as
-   [`conj:magic-numbers-bring`](../../content/quantum-observable-universe/algebraic-substrate/magic-numbers-bring.md)
+   [`conj:magic-numbers-bring`](../../folio/quantum-observable-universe/algebraic-substrate/magic-numbers-bring.md)
    (P1.4 path-(b)): the seven values are conjectured to be the
    ranks of distinguished $S_5 \times \langle\hat\tau\rangle$-stable
    period sub-lattices on Bring's surface. Path-(a) proof
@@ -252,14 +252,14 @@ as the $H^2$ calibration — not an additional fit.
    > $\delta_{CS} = \hbar_q^4[5]_q$. **That form is structurally ruled out
    > by the corpus itself**, and the entry mis-attributed it besides:
    >
-   > - [`archimedean-functor-uniqueness-context`](../content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness-context.md)
+   > - [`archimedean-functor-uniqueness-context`](../folio/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness-context.md)
    >   calls it *"a legacy PSLQ-empirical conjecture, since superseded by
    >   `prop:em-coupling-bring-zero-mode`"*, requiring *"arbitrary integer
    >   ratios … that would have to come from a non-pentagon source"*, and
    >   *"ruled out **structurally** in addition to the existing PSLQ
    >   ruling."*
    > - The live table in
-   >   [`electroweak-higgs-torus-link-triplet-table1-data`](../content/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet-table1-data.md)
+   >   [`electroweak-higgs-torus-link-triplet-table1-data`](../folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet-table1-data.md)
    >   carries the same form marked **`open: N_v = ?`**.
    > - `prop:alpha-em-categorical-trace`, the label cited as its source,
    >   contains **no such formula**. That proposition is an *identity* —

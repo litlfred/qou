@@ -264,18 +264,18 @@ def main() -> int:
     print()
     print("7. STEP 1/4 -- WHERE V COMES FROM, AND THE CYCLE AT THE ROOT")
     quotes = [
-        ("content/quantum-observable-universe/braids-and-knots/why-b3.md",
+        ("folio/quantum-observable-universe/braids-and-knots/why-b3.md",
          "The Descartes condition $\\chi(A) = -6$ forces the gauge group to be a "
          "quantum form of $\\mathrm{SU}(2)$",
          "chi = -6  =>  SU(2)  =>  dim V = 2"),
-        ("content/quantum-observable-universe/brings-surface/chi-minus-six-chain.md",
+        ("folio/quantum-observable-universe/brings-surface/chi-minus-six-chain.md",
          "**Step 1: Start with the QOU triple.** We have $(\\mathbf{C}, A, \\tau)$ "
          "with gauge group $G = \\mathrm{SU}(2)$",
          "the chi = -6 chain STARTS FROM SU(2)"),
-        ("content/quantum-observable-universe/brings-surface/chi-minus-six-chain.md",
+        ("folio/quantum-observable-universe/brings-surface/chi-minus-six-chain.md",
          "so the chain locates the value rather than deriving it from the axioms alone",
          "the chain DECLARES its step-5 circularity, in its own words"),
-        ("content/quantum-observable-universe/brings-surface/cohomological-embedding.md",
+        ("folio/quantum-observable-universe/brings-surface/cohomological-embedding.md",
          "This uniquely forces $g = 4$ and $\\chi = -6$",
          "a SECOND route: the embeddability pattern T_{2,3}, T_{2,9} in / T_{2,11} out"),
     ]
@@ -315,20 +315,20 @@ def main() -> int:
     print()
 
     step9 = [
-        ("content/quantum-observable-universe/mass-theory/"
+        ("folio/quantum-observable-universe/mass-theory/"
          "archimedean-realization-functor.md",
          "The word \"functor\" in the name and label is **legacy**",
          "the block WITHDRAWS 'functor': R_top is a realization/evaluation,\n"
          "            a ring hom out of K_0(Var), not a functor.  Candid, not a defect."),
-        ("content/quantum-observable-universe/mass-theory/"
+        ("folio/quantum-observable-universe/mass-theory/"
          "archimedean-realization-functor-interpretation.md",
          "\\quad\\text{on } \\widehat{\\mathcal{M}}_{\\mathrm{QOU}}",
          "the identification R_top = tau_arch is SCOPED to a subset M_QOU"),
-        ("content/quantum-observable-universe/mass-theory/vol-through-tau.md",
+        ("folio/quantum-observable-universe/mass-theory/vol-through-tau.md",
          "On the algebraic quantum volume, $\\tau_{\\mathrm{arch}}$ coincides with",
          "a SIBLING states the same agreement scoped to the algebraic quantum\n"
          "            volume -- and `def:algebraic-quantum-volume` EXISTS"),
-        ("content/quantum-observable-universe/mass-theory/vol-as-motivic-period.md",
+        ("folio/quantum-observable-universe/mass-theory/vol-as-motivic-period.md",
          "These pictures agree on the algebraic quantum volume domain",
          "and a third states it for all three pictures, same scope"),
     ]

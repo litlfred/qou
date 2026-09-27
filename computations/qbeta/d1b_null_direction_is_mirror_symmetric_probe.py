@@ -263,7 +263,7 @@ def main() -> int:
     bar_on_nz = [f for f in bar_files if subprocess.run(
         ["grep", "-lE", "gluing|Neumann|tetrahed", f],
         capture_output=True, text=True).stdout.strip()]
-    cusp_lean = (REPO / "content/quantum-observable-universe/lean/QOU/QBeta/"
+    cusp_lean = (REPO / "folio/quantum-observable-universe/lean/QOU/QBeta/"
                  "CuspShapeBarParity.lean")
     c6 = (len(bar_on_nz) > 20 and cusp_lean.is_file())
     print("\n  ── C6: 🛑 a BROKEN detector of mine returned 0; the truth is many ──")

@@ -446,8 +446,8 @@ def main() -> int:
             "related": [
                 "probes/su4-connected-1111-magnitude.witness.json",
                 "probes/b4-framework-connected-cumulant-deficit.witness.json",
-                "content/quantum-observable-universe/mass-theory/binding-closure-conditional.md",
-                "content/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth.md",
+                "folio/quantum-observable-universe/mass-theory/binding-closure-conditional.md",
+                "folio/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth.md",
             ],
             "owner_ruling": "R1 2026-08-15 — convention D canonical, C excised",
         },

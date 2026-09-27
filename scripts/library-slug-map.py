@@ -45,7 +45,7 @@ Usage:  python3 scripts/library-slug-map.py [--json OUT]
 import argparse, json, os, re, sys, glob, collections
 
 LIB = "library"
-REFS = "content/schema/references.ts"
+REFS = "folio/schema/references.ts"
 
 # Lines that are demonstrably not an author list. Every one of these was
 # observed in the tree; they are not hypothetical.

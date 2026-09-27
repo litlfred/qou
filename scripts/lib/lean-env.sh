@@ -32,7 +32,7 @@ fi
 export REPO_ROOT
 
 # ── LEAN_DIR: the QOU Lake package root ───────────────────────────────
-LEAN_DIR="$REPO_ROOT/content/quantum-observable-universe/lean"
+LEAN_DIR="$REPO_ROOT/folio/quantum-observable-universe/lean"
 export LEAN_DIR
 
 # ── PATH: elan binaries + the /usr/local/bin symlink dir ──────────────

@@ -4,8 +4,8 @@
 # Context: qou is CONTENT ONLY. The platform it consumes (content
 # pipeline, schemas, LaTeX rendering, viewer, computations) lives in a
 # SEPARATE repo, litlfred/folio-assistant. qou's content `.ts` files and
-# the `content/schema/*.ts` shims import the platform through the in-repo
-# path `folio-assistant/` (e.g. `content/schema/builders.ts` re-exports the
+# the `folio/schema/*.ts` shims import the platform through the in-repo
+# path `folio-assistant/` (e.g. `folio/schema/builders.ts` re-exports the
 # builders from `../../folio-assistant/cat-harness/schemas/builders`), and the
 # package.json scripts run `../folio-assistant/cat-harness/content/pipeline/*.ts`.
 # Both resolve to `<repo-root>/folio-assistant/`.
@@ -33,7 +33,7 @@
 #
 # NOTE on internal layout: the import paths this script makes resolvable
 # assume the platform repo exposes `schemas/` (top-level) and
-# `content/pipeline/` — the same assumptions already encoded in qou's
+# `folio/pipeline/` — the same assumptions already encoded in qou's
 # content shims and package.json. If the folio-assistant repo lays those
 # out differently, fix the subpaths in those consumers; this script only
 # wires the `folio-assistant/` -> platform-root link.
@@ -87,7 +87,7 @@ report_off_ref() {
   warn "platform clone is NOT at $_tgt ($_behind commit(s) behind); it is at $(git -C "$CLONE_DIR" rev-parse --short HEAD)"
   warn "  every pipeline run below uses that code, not the pinned code."
   warn "  usually the clone is dirty because qa-sweep rewrites its script-sidecars; to fix:"
-  warn "    git -C \"$CLONE_DIR\" checkout -- content/pipeline/script-sidecars/ && $0"
+  warn "    git -C \"$CLONE_DIR\" checkout -- folio/pipeline/script-sidecars/ && $0"
 }
 
 # --- locate the qou repo root --------------------------------------------
@@ -149,7 +149,7 @@ if git -C "$CLONE_DIR" rev-parse --verify --quiet "$REF^{commit}" >/dev/null 2>&
     report_off_ref
   else
     # A dirty clone is NOT the rare case. `qa-sweep` rewrites
-    # content/pipeline/script-sidecars/*.script.json (last_run_at, deps_hash) on
+    # folio/pipeline/script-sidecars/*.script.json (last_run_at, deps_hash) on
     # every run, so ANY pipeline use leaves the clone dirty and this branch is
     # taken from then on. Left as a bare info line, the clone silently freezes on
     # whatever commit it happened to be on while every later run keeps serving
@@ -173,7 +173,7 @@ CLONE_ABS="$(cd "$CLONE_DIR" && pwd)" || die "cannot resolve $CLONE_DIR"
 
 # --- which layout is this clone? -----------------------------------------
 # folio-assistant split its own tree on 2026-09-20: the platform (schemas/,
-# content/pipeline/, src/, scripts/, adapters/) moved from the clone ROOT down
+# folio/pipeline/, src/, scripts/, adapters/) moved from the clone ROOT down
 # into `cat-harness/`. The clone root keeps package.json and node_modules, so
 # `bun install` and the dep check below still belong there — only the code
 # moved.
@@ -257,7 +257,7 @@ esac
 # --- bridge: expose the repo's bibliography to platform checkers ----------
 # ONLY for a pre-split clone. Both consumers were fixed upstream and the
 # bridges are not merely unnecessary against a split clone — they are WRONG
-# there, because `mkdir -p "$CLONE_ABS/content/schema"` would mint directories
+# there, because `mkdir -p "$CLONE_ABS/folio/schema"` would mint directories
 # at a clone root that no longer holds any of the platform's code, and the
 # consumer looking for them has stopped looking.
 #
@@ -290,21 +290,21 @@ esac
 if [ "$PLATFORM_ABS" = "$CLONE_ABS" ]; then
   # qa-checkers-extended.ts (pre-split) resolved references.ts relative to the
   # PLATFORM clone (CONTENT_DIR = <clone>/content), but the bibliography source
-  # of truth lives in THIS repo at content/schema/references.ts. Without this
+  # of truth lives in THIS repo at folio/schema/references.ts. Without this
   # bridge every \cite{} fails bib-cite-resolves with "does not resolve in
   # references.ts" (the 2026-06-21 233-block false-fail batch).
-  if [ ! -e "$CLONE_ABS/content/schema/references.ts" ]; then
-    mkdir -p "$CLONE_ABS/content/schema"
-    ln -s "$ROOT/content/schema/references.ts" \
-      "$CLONE_ABS/content/schema/references.ts" \
-      && info "bridged content/schema/references.ts into pre-split platform clone" \
+  if [ ! -e "$CLONE_ABS/folio/schema/references.ts" ]; then
+    mkdir -p "$CLONE_ABS/folio/schema"
+    ln -s "$ROOT/folio/schema/references.ts" \
+      "$CLONE_ABS/folio/schema/references.ts" \
+      && info "bridged folio/schema/references.ts into pre-split platform clone" \
       || info "could not bridge references.ts — bib-cite-resolves will false-fail"
   fi
 
   # The pre-split platform imported the bibliography by TWO different paths,
   # and bridging only the one above left the other broken:
   #
-  #   qa-checkers-extended.ts  -> <clone>/content/schema/references  (above)
+  #   qa-checkers-extended.ts  -> <clone>/folio/schema/references  (above)
   #   export-bibtex.ts         -> <clone>/schemas/references         (here)
   #
   # Without this second link, regenerating references.bib dies with
@@ -315,7 +315,7 @@ if [ "$PLATFORM_ABS" = "$CLONE_ABS" ]; then
   # 23 "Citation ... undefined" warnings in the full build.
   if [ ! -e "$CLONE_ABS/schemas/references.ts" ]; then
     mkdir -p "$CLONE_ABS/schemas"
-    ln -s "$ROOT/content/schema/references.ts" \
+    ln -s "$ROOT/folio/schema/references.ts" \
       "$CLONE_ABS/schemas/references.ts" \
       && info "bridged schemas/references.ts into pre-split platform clone" \
       || info "could not bridge schemas/references.ts — export-bibtex will fail"
@@ -381,7 +381,7 @@ setup-folio-assistant: done.
   in-repo link   : $LINK -> $TARGET
 
 Next, from the REPO ROOT:
-  bun run scripts/run-validate.ts content/quantum-observable-universe
+  bun run scripts/run-validate.ts folio/quantum-observable-universe
 
 (\`bun run validate\` no longer exists — the package.json alias was dropped in
 the folio-assistant migration; run-validate.ts is its standalone replacement.)

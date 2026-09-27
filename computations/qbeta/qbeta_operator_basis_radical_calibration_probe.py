@@ -4,7 +4,7 @@ result before anything new is built on it -- and establish that orthogonality
 to the radical is codimension-1 there, not structural as it was on the block
 basis.
 
-# Ref: content/quantum-observable-universe/lean/QOU/QBeta/ECatLPDualRadical.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/QBeta/ECatLPDualRadical.lean
 # Ref: computations/qbeta/qbeta_ecat_lp_radical_pairing_probe.py  (the block-basis NEGATIVE)
 # Ref: computations/nucleus_operator_selection_sdp.py
 # Ref: tools/pyhecke/python/pyhecke/lp_dual_solver.py  (gram_pseudo_inverse_solve)

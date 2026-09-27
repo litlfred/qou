@@ -3,7 +3,7 @@
 and it is a NEGATIVE. The geometric cost does NOT escape the LP degeneracy on
 the block basis, and it fails for a structural reason.
 
-# Ref: content/quantum-observable-universe/lean/QOU/QBeta/ECatLPDualRadical.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/QBeta/ECatLPDualRadical.lean
 #      (dual_price_determined_by_radical; dual_price_zero_of_cost_orthogonal_to_radical)
 # Ref: computations/nucleus_sdp_assembly.py   (`gram` = diag(y_lambda * dim_lambda))
 # Ref: computations/qbeta/qbeta_ecat_block_cost_vector_probe.py  (the cost t_lambda)

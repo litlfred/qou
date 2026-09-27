@@ -570,29 +570,29 @@ VARIANTS = (
 # is shape-identical to the defect.  A rule 3 that widens until it catches that
 # is worse than no rule 3, so the selftest pins BOTH ends.
 _SELFTEST = (
-    ("content/quantum-observable-universe/lean/QOU/JetHorizon.lean",
+    ("folio/quantum-observable-universe/lean/QOU/JetHorizon.lean",
      "qou_is_ccc", "conjunction-is-conclusion"),
-    ("content/quantum-observable-universe/lean/QOU/JetHorizon.lean",
+    ("folio/quantum-observable-universe/lean/QOU/JetHorizon.lean",
      "ccc_boundary_data_exists", "conjunction-is-conclusion"),
-    ("content/quantum-observable-universe/lean/QOU/FluidDynamics/"
+    ("folio/quantum-observable-universe/lean/QOU/FluidDynamics/"
      "q_bkm_criterion.lean", "q_bkm_criterion", None),
-    ("content/quantum-observable-universe/lean/QOU/Information/"
+    ("folio/quantum-observable-universe/lean/QOU/Information/"
      "PNeqNpEquivalence.lean", "equivalence_of_faithfulness", None),
     # A structure-instance constructor that PERMUTES its components: content,
     # not re-bundling, and structurally excluded because `Positive a b c` has
     # no top-level `∧`.
-    ("content/quantum-observable-universe/lean/QOU/Knot/"
+    ("folio/quantum-observable-universe/lean/QOU/Knot/"
      "M004AngleStructure.lean", "Positive.sigma", None),
     # Pins STRIP_LAMBDA_ASCRIPTIONS: this 4-way re-bundle is the ONLY corpus
     # hit that needs the lambda arm, so without it here that flag can be
     # flipped off and the selftest still passes (measured — it did).
-    ("content/quantum-observable-universe/lean/QOU/ParticleInteractions/"
+    ("folio/quantum-observable-universe/lean/QOU/ParticleInteractions/"
      "lp_dual_stability.lean", "lp_dual_stability",
      "conjunction-is-conclusion"),
     # The rules the conjunctive arm must not disturb.
-    ("content/quantum-observable-universe/lean/QOU/Torsion/"
+    ("folio/quantum-observable-universe/lean/QOU/Torsion/"
      "JetProlongation.lean", "jet_prolongation_C", "class-field-is-conclusion"),
-    ("content/quantum-observable-universe/lean/QOU/MathlibExt/SDP.lean",
+    ("folio/quantum-observable-universe/lean/QOU/MathlibExt/SDP.lean",
      "strong_duality", "class-field-is-conclusion"),
 )
 

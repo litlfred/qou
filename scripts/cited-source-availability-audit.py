@@ -11,7 +11,7 @@ Three populations, joined:
 
   cited     `cites[]` on authored blocks (read from the generated `.jsonld`
             graph) plus `-- Ref: [key]` lines in `.lean` files.
-  declared  `content/bib-qa-verifications.json`, the source ledger: each entry
+  declared  `folio/bib-qa-verifications.json`, the source ledger: each entry
             says `source.kind` is an `upload` (with a `file` path) or
             `external` (with a URL).
   held      what `library/` actually contains.

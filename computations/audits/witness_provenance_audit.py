@@ -118,7 +118,7 @@ def _is_prose(value: str) -> bool:
 
     A field whose value says "we do not know" is missing provenance, not
     provenance. Two of the seven now back paper-facing claims
-    (`4he-binding-full-pipeline` -> `content/values/registry.ts`;
+    (`4he-binding-full-pipeline` -> `folio/values/registry.ts`;
     `hecke-core-symbolic-migration` -> two appendix blocks at
     `status: "verified"`), which is what this check exists to surface.
 

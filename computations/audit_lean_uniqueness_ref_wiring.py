@@ -163,7 +163,7 @@ def main() -> int:
         print("  Fix pattern (in the producer script):")
         print('    w.add_data("lean_uniqueness_ref", {')
         print('        "<nucleus>": "qou:QOU.BraidKnot.<wrapper>_uniqueness_closed",')
-        print('        "framework_doc": "content/quantum-observable-universe/lean/'
+        print('        "framework_doc": "folio/quantum-observable-universe/lean/'
               'QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",')
         print('        "note": "...",')
         print('    })')

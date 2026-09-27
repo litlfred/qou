@@ -12,7 +12,7 @@
  */
 
 import { configureValueRegistry } from "../folio-assistant/cat-harness/content/pipeline/value-registry-di";
-import { WITNESSED_VALUES, lookupValue, verifiedNames } from "../content/values/registry";
+import { WITNESSED_VALUES, lookupValue, verifiedNames } from "../folio/values/registry";
 import { configureLeanPackages } from "../folio-assistant/cat-harness/schemas/lean-packages";
 import { LEAN_PACKAGES } from "../schemas/lean-packages";
 

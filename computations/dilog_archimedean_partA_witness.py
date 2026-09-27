@@ -132,7 +132,7 @@ def main():
                    "rows": results},
         "refs": [
             "docs/audits/2026-06-07-dilog-archimedean-limit-part-A-elementary.md",
-            "content/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.md",
+            "folio/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.md",
         ],
     }
     import sys as _sys  # noqa: E402

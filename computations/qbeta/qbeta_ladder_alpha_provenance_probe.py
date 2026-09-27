@@ -79,7 +79,7 @@ from q_parameter import q_at                                  # noqa: E402
 
 DPS = 50
 REPO = _COMP.parent
-BRIDGE = REPO / "content/quantum-observable-universe/nuclear-interactions"
+BRIDGE = REPO / "folio/quantum-observable-universe/nuclear-interactions"
 BRIDGE_FILES = [
     BRIDGE / "q-beta-spectral-bridge.md",
     BRIDGE / "q-beta-spectral-bridge.lean",

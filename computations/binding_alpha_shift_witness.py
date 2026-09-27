@@ -2,7 +2,7 @@
 """Binding α_shift candidate cross-check — light nuclei A ∈ {2, 3, 4}.
 
 Numerical cross-check of the Lean instance
-[`lightNucleiForceCarrierKnot`](../../content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.lean#L251)
+[`lightNucleiForceCarrierKnot`](../../folio/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.lean#L251)
 against experimental binding energies. The §3b-cond instance is
 sorry-free at the structural level; this script reports whether the
 candidate `(p_A, k_A)` identifications, combined with the deuteron-
@@ -22,7 +22,7 @@ where:
 Reference:
   - [audit] docs/audits/2026-05-31-binding-alpha-shift-a4-status.md
   - [audit] docs/audits/2026-05-28-binding-endomorphism-analogy.md
-  - Lean: content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.lean
+  - Lean: folio/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.lean
 
 Honest framing: the current candidate identifications were noted in
 the file as "agent-survey hypothesis (2026-05-30) suggests p ∈ {2, 3}
@@ -120,7 +120,7 @@ class Candidate:
 
 
 # Mirrors `lightNucleusP` / `lightNucleusK` in
-# content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.lean
+# folio/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.lean
 LIGHT_NUCLEI: list[Candidate] = [
     Candidate(A=2, nucleus="D",   p=2, k=3),
     Candidate(A=3, nucleus="T",   p=2, k=5),
@@ -206,7 +206,7 @@ def build_witness() -> dict:
             },
         },
         "lean_reference": (
-            "content/quantum-observable-universe/mass-theory/"
+            "folio/quantum-observable-universe/mass-theory/"
             "binding-alpha-shift-extension.lean::lightNucleiForceCarrierKnot"
         ),
         "predictions": rows,

@@ -7,7 +7,7 @@ holds, and connects two things the corpus has kept apart.
 
 WHAT THE CORPUS ALREADY PROVES
 
-`content/quantum-observable-universe/mass-theory/operator-selection-lp.md`
+`folio/quantum-observable-universe/mass-theory/operator-selection-lp.md`
 (commit 6b7d2ec4a8, 2026-08-25) proves the operator-selection LP is DEGENERATE:
 
   * the NF basis begins with the empty word, so b_1 = 1 and G[1][j] = t_j -- the

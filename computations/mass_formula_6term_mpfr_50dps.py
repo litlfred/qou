@@ -209,7 +209,7 @@ def term_23_brane_tower_mp(
       - ``"li2q"`` (default, since #675/this PR): the **bounded
         symmetric q-dilogarithm** form
         ``Σ_i (−Li_2^q(−|V̂_i|)) + z² · Σ_{i<j} (−Li_2^q(−|V̂_i V̂_j|))``
-        per [`prop:mass-endomorphism-tower`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md)
+        per [`prop:mass-endomorphism-tower`](../../folio/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md)
         lines 162–183. Bounded for |V| < 1; matches the Kashaev
         integration identity `∫_0^V (ln_q(1+t)/t) dt = -Li_2^q(-V)`.
         Empirically validated in PR #675's probe: T2+T3 at tritium
