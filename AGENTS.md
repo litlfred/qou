@@ -5948,21 +5948,39 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `folio-assistant/feedback/` | User feedback (TypeScript files, committed to main) |
 | `simulators/` | Interactive HTML simulators |
 | `computations/` | Computation scripts and witness data (Layer 3 in-repo path; see `docs/ARCHITECTURE.md`) |
-| `qou-mass/` | `qou-mass` package — external-researcher facade (`predict()`, `compute_tr_M()`, `canonical_braid()`). **v1.0.0; NOT on PyPI** (`pypi.org/pypi/qou-mass/json` → 404). 5 in-repo importers. Its `_internal/` is **generated** — see the note below. |
-| `tools/qou-substrate/` | `qou-substrate` package — Layer 2a (q₀, mpmath precision, `WitnessBuilder`). **Not on PyPI** (404). 309 in-repo importers. |
-| `tools/pyhecke/` | `pyhecke` — Layer 2b (Hecke / Gram / Markov trace). **Not on PyPI** (404). 70 in-repo importers. |
-| `tools/pyhecke-native/` | `pyhecke-native` — PyO3 bindings into `hecke-engine`. **Not on PyPI** (404); [`pyhecke-native-wheel.yml`](.github/workflows/pyhecke-native-wheel.yml) builds a wheel but is `workflow_dispatch`-only and has no publish step. Build locally with `maturin build --release`. 89 in-repo importers. |
-| `schemas/witness-schema/` | `witness-schema` PyPI + `@litlfred/witness-schema` npm — cross-language `*.witness.json` interchange schemas. **Under `schemas/`, not `tools/`** — moved back from folio-assistant by `e2ded2c607`. Install the package root (`pip install -e schemas/witness-schema`); `python/` under it holds the module but no `pyproject.toml`. |
+| `qou-mass/` | `qou-mass` package — external-researcher facade (`predict()`, `compute_tr_M()`, `canonical_braid()`). **v1.0.0; NOT on PyPI** (`pypi.org/pypi/qou-mass/json` → 404). **7** in-repo importers (2026-09-27). Its `_internal/` is **generated** — see the note below. |
+| `tools/qou-substrate/` | `qou-substrate` package — Layer 2a (q₀, mpmath precision, `WitnessBuilder`). **Not on PyPI** (404). **1349** in-repo importers (2026-09-27) — 1322 of them in `computations/`, i.e. roughly a quarter of the repo's 5492 tracked `.py` files depend on it. |
+| `tools/pyhecke/` | `pyhecke` — Layer 2b (Hecke / Gram / Markov trace). **Not on PyPI** (404). **203** in-repo importers (2026-09-27). |
+| `tools/pyhecke-native/` | `pyhecke-native` — PyO3 bindings into `hecke-engine`. **Not on PyPI** (404); [`pyhecke-native-wheel.yml`](.github/workflows/pyhecke-native-wheel.yml) builds a wheel but is `workflow_dispatch`-only and has no publish step. Build locally with `maturin build --release`. **113** in-repo importers (2026-09-27). |
+| `schemas/witness-schema/` | `witness-schema` PyPI + `@litlfred/witness-schema` npm — cross-language `*.witness.json` interchange schemas. **Under `schemas/`, not `tools/`** — moved back from folio-assistant by `e2ded2c607`. Install the package root (`pip install -e schemas/witness-schema`); `python/` under it holds the module but no `pyproject.toml`. **1** in-repo importer (2026-09-27) — the note below counts five packages, and this row had carried no figure at all. |
 
-> **Importer counts are measured, not maintained.** The five above were
-> `1 / 7 / 19 / 15 / 1` and were wrong by up to two orders of magnitude
-> (`qou-substrate` was 7, is 309) — a hand-kept number decays exactly like a
-> hand-kept copy. Re-measure rather than trust the table:
+> **Importer counts are measured, not maintained, and this is the THIRD
+> generation of drift on the same five numbers.** They read `1 / 7 / 19 / 15 / 1`
+> (wrong by up to two orders of magnitude), were corrected to
+> `5 / 309 / 70 / 89 / —`, and measured **`7 / 1349 / 203 / 113 / 1`** on
+> 2026-09-27. So the correction's own worked example — *"`qou-substrate` was 7,
+> is 309"* — was itself stale by **4.4×** when it was being quoted as the
+> cautionary tale. A hand-kept number decays exactly like a hand-kept copy, and
+> a hand-kept number *inside a warning about hand-kept numbers* decays no
+> slower. Re-measure rather than trust the table:
 >
 > ```bash
 > grep -rlnE "^\s*(from|import)\s+<pkg>(\.|\s|$)" --include=*.py . \
 >   | grep -v "^./tools/<pkg-dir>/" | grep -v _deprecated | wc -l
 > ```
+>
+> Two notes on running it. The `^./tools/<pkg-dir>/` exclusion is what stops a
+> package counting its own files, and **two of the five do not live under
+> `tools/`** — use `^./qou-mass/` and `^./schemas/witness-schema/` for those, or
+> you will count each package's internals as importers of itself.
+>
+> And **this count is method-independent, unlike most in this document.** It
+> walks the working tree rather than the index, so it can in principle pick up a
+> venv or a build dir; measured 2026-09-27 it does not — the tracked-only form
+> (`git ls-files '*.py' | … | xargs grep -lE …`) returns **exactly the same five
+> numbers**, against 5506 `.py` on disk and 5492 tracked. Quote either. That is
+> worth stating because the neighbouring library and muon-pin counts are the
+> opposite case, where the method silently selects which question you answered.
 >
 > **None of `qou-mass`, `qou-substrate`, `pyhecke` or `pyhecke-native` are
 > published.** All four 404 on PyPI, with no `dist/` and no publish step. Do not
