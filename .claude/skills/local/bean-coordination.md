@@ -3,7 +3,7 @@ name: bean-coordination
 roles: [reader, collaborator, owner]
 description: >
   Pointer to the bean-based session work-plan system (the `beans` CLI
-  flat-file issue tracker, data under `.beans/`). Operational usage lives in
+  flat-file issue tracker, data under `beans/defs/`). Operational usage lives in
   todo-manager.md / session-intent.md; the generic coordinator/orchestrator
   logic is owned upstream by the folio-assistant repository.
 ---
@@ -11,7 +11,7 @@ description: >
 # Bean Coordination
 
 The **bean-based work-plan system** — the [`beans`](https://github.com/hmans/beans)
-CLI, a flat-file issue tracker storing issues as markdown under `.beans/` — is
+CLI, a flat-file issue tracker storing issues as markdown under `beans/defs/` — is
 how every session tracks its work-plan and how agents hand off across sessions.
 
 **Operational spec (read these):**
@@ -35,7 +35,7 @@ how every session tracks its work-plan and how agents hand off across sessions.
 
 ## Disambiguation (do not conflate)
 
-- **beans** = the agent's *session work-plan* (`.beans/`, this skill).
+- **beans** = the agent's *session work-plan* (`beans/defs/`, this skill).
 - **sidecars** (`*.qa.json`, `*.witness.json`) = *content state tracking*.
   Beans ≠ sidecars. Do **not** convert QA / witness queue items into individual
   beans (see todo-manager.md disambiguation block).

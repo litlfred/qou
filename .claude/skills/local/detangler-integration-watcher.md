@@ -29,8 +29,8 @@ domain-specific slots A–I.
 
 **Setup:** use `NAME=detangler-integration-watcher` everywhere the
 parent's §1 references `${NAME}`. Files land at
-`.beans/detangler-integration-watcher-queue.json` and
-`.beans/detangler-integration-watcher-ledger.md`.
+`beans/defs/detangler-integration-watcher-queue.json` and
+`beans/defs/detangler-integration-watcher-ledger.md`.
 
 **Additional baseline cache.** Beyond the parent's §1 setup, this
 watcher caches a graph baseline so per-event deltas are comparable:

@@ -12,7 +12,7 @@ allowed-tools: Read Grep Glob TodoWrite AskUserQuestion
 
 > **Disambiguation:**
 > - `beans` (`todo-manager`, this file) = the agent's **session work-plan**.
->   Managed entirely via the `beans` CLI issue tracker (data stored in `.beans/`).
+>   Managed entirely via the `beans` CLI issue tracker (data stored in `beans/defs/`).
 > - `sidecars` (`.qa.json` and `.witness.json` files) = **content state tracking**.
 >   Beans and sidecars are NOT synonymous! Do NOT convert QA queue items from `qa-sweep.ts` into beans. They are completely separate workflow systems.
 > - `todo-review` = triage of **content feedback** stored in
@@ -24,7 +24,7 @@ Instead of an in-memory list or markdown checklists, we manage session work and 
 ## Installing beans (fresh sandbox / cloud container)
 
 `beans` is the [`hmans/beans`](https://github.com/hmans/beans) Go binary — a
-flat-file issue tracker storing issues as markdown under `.beans/`. Cloud
+flat-file issue tracker storing issues as markdown under `beans/defs/`. Cloud
 sandboxes do **not** ship it, so reinstall on demand (Go ships in the sandbox):
 
 ```bash

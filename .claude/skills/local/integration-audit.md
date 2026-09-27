@@ -129,7 +129,7 @@ that touched `content/`.
 ## Persistence
 
 Logs every invalidation run to
-`.beans/integration-audit-ledger.md`:
+`beans/defs/integration-audit-ledger.md`:
 
 ```markdown
 ### 2026-05-20T14:50Z — voice-emoji-content

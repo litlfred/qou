@@ -40,7 +40,7 @@ ledger is a review failure, not a convenience.
 | document ↔ reference join | ledger `source` + `id` |
 | was the source examined | ledger `status` |
 | is it relevant, what to do about it | ledger `relevance` |
-| the resulting work items | `.beans/` |
+| the resulting work items | `beans/defs/` |
 
 Consequence worth internalising: **when a triage judges an orphan worth citing,
 creating the `ref()` entry is the first action, not the last.** Metadata is born
