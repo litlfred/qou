@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-09T14:54:13Z
-updated_at: 2026-09-27T05:31:07Z
+updated_at: 2026-09-27T07:21:47Z
 ---
 
 
@@ -538,3 +538,35 @@ TL_n(delta) semisimple at general n: open on all six paths. The ideal equality
 <U_i U_j U_i - v^2 U_i> = rad(tr_M): open. The two Algebra R instances on the
 quotient type still do not unify and that is still an owner call, since changing
 which one the corpus uses moves every quotMk consumer.
+
+
+
+## 2026-09-27, later — the dimension chain CLOSES: dim (H_n/rad(wtrace)) = catalan (n+1)
+
+PR #7470, commits 588c04293b + fa3b78040c. Sorry-free, every n, convention D.
+Sweeps 57 ok and 67 ok, 0 RED; axiom-clean, no sorryAx.
+
+    numSYT_twoRow_eq_ballot   : (#SYT (twoRow m k) : Z) = ballot (m + k) k
+    finrank_traceQuot_eq_catalan : (finrank R (H_n(q)/rad(wtrace)) : Z) = catalan (n+1)
+
+The first is the TWO-ROW hook length formula at general m, k -- the gap this arc has
+been blocked on, and it needed no Frame-Robinson-Thrall in general (still absent
+from Mathlib, still n <= 4 plus n = 5 here). See bean qou-7vht for the route, the
+k = m boundary, and the truncated-subtraction traps.
+
+The second composes the whole chain. So as of today the arc has, at general n:
+
+  - traceQuotEquiv        H_n/rad ~= prod_{l(lam)<=2} M_{f^lam}(R)   (Wedderburn form)
+  - finrank ... = catalan (n+1)                                       (dimension)
+  - semisimplicity (two independent routes, one older than this arc)
+
+i.e. the quotient has the right block structure AND the right dimension to be
+TL_n(delta).
+
+🛑 **Still NOT an isomorphism with TL_n(delta)**, and this bean should not be read
+as saying so. That needs <U_i U_j U_i - v^2 U_i> = rad(tr_M) -- HeckeToTemperleyLieb's
+open item -- which nothing here touches. The content block's "a count of blocks and
+a count of dimensions are not an isomorphism of algebras" remains TRUE; the
+dimension OBSTRUCTION is what is gone.
+
+Bean stays open (rule 13a): the ideal equality and TL_n semisimplicity are open.

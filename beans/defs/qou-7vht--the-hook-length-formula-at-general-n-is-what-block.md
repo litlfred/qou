@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-27T05:30:10Z
-updated_at: 2026-09-27T06:14:48Z
+updated_at: 2026-09-27T07:21:47Z
 parent: qou-weeq
 ---
 
@@ -192,3 +192,92 @@ evict its olean.
 
 Second cross-branch shadow false green this session; the first was switching
 branches mid-sweep, which silently swapped which files the sweep compiled.
+
+
+
+## ITEM 1 CLOSED 2026-09-27 — and the whole chain with it. Bean STAYS OPEN; see the bottom.
+
+Commits 588c04293b (`TwoRowSYTBallot.lean`) and fa3b78040c
+(`TraceQuotCatalan.lean`) on claude/tl-quotient-ringcon-lift-2026-09-26 (PR #7470).
+Sorry-free; sweeps 57 ok and 67 ok, 0 RED / 0 TIMEOUT / 0 UNVERIFIED, SWEEP_RC=0;
+every declaration [propext, Classical.choice, Quot.sound], no sorryAx.
+
+### The blocker this bean named is gone
+
+    numSYT_twoRow_eq_ballot (m k) (h : k <= m) :
+      (numStandardYoungTableaux (twoRow m k h) : Z) = ballot (m + k) k
+
+the TWO-ROW hook length formula at general m, k. Exactly the narrowed target this
+bean recorded on landing item 2, and it needed NO Frame-Robinson-Thrall in general.
+
+### And the chain closes
+
+    finrank_traceQuot_eq_catalan :
+      (finrank R (H_n(q)/rad(wtrace)) : Z) = catalan (n + 1)
+
+for every n, composing:
+
+  finrank_traceQuot -> ..._eq_range_sum -> numSYT_twoRow_eq_ballot
+    -> dimHLF_two_row_eq_ballot -> dimHLF_two_row_sq_sum
+
+### Route, for whoever reads this cold: a recursion, not the textbook bijection
+
+The corpus already had BOTH halves of a recursion and nobody had put them together:
+
+  branching_finset (YoungLatticeUpOperator)  #SYT mu = sum over cornerCells
+  ballot_succ_succ (BallotNumbers)           ballot (n+1) (j+1) = ballot n (j+1) + ballot n j
+
+plus isCornerCell_twoRow_iff (TwoRowCorners:123), which already gave the corners of
+twoRow. New: cornerTwoRow + sum_cornerTwoRow_expand (the corner analogue of the
+existing addableTwoRow pattern), the two eraseCornerOrSelf identities, the three
+recursion cases, the induction.
+
+**k = m is where it could have gone wrong and did not.** There (0, m-1) is NOT a
+corner -- the cell below it is present -- so one term survives, and on the ballot
+side the term that must vanish is ballot (2j+1) (j+1) = ballot_boundary_zero,
+already proved for a different purpose. qou-7wf6 noted one lemma resolves both
+cases of ITS argument; this is a third use, in a third argument.
+
+**Induction shape:** OUTER on k, INNER on m from k upward (Nat.le_induction). An
+induction on k alone cannot work -- the k < m step needs the result at the SAME k
+with a smaller m.
+
+**Truncated subtraction was the entire difficulty.** Three failures, one cause: rw
+needs a syntactic match, Lean normalises n+1-1 to n in the goal but not inside a
+lemma instance, and the `k <= m` proof carried by twoRow makes the motive ill-typed
+when the index is rewritten. Restating every recursion lemma in SUCCESSOR form
+(k = j+1, m = M+1, no subtraction) removes all three at once.
+
+### NOT a duplication, and the distinction is this bean's whole subject
+
+QOU/Mathlib/SYTBranching2Row.lean already had `dimHLF_branching_pair` -- the
+branching recursion for the hook-length FORMULA. What was missing is the matching
+recursion for `numStandardYoungTableaux`, the genuine COUNT. The corpus has had one
+side of this bridge since August. Conflating formula with count is exactly the error
+retracted earlier in this PR.
+
+### 🛑 A DIMENSION, NOT AN ISOMORPHISM -- do not over-read this
+
+catalan (n+1) = dim TL_n(delta), so the quotient has the right dimension AND (with
+traceQuotEquiv) the right Wedderburn block structure. It is NOT an isomorphism with
+TL_n(delta). That needs <U_i U_j U_i - v^2 U_i> = rad(tr_M), the open item
+HeckeToTemperleyLieb records, and nothing here touches it.
+
+The content block hecke-radical-is-temperley-lieb's sentence -- "a count of blocks
+and a count of dimensions are not an isomorphism of algebras" -- REMAINS TRUE. What
+is gone is the dimension OBSTRUCTION: the two sides were a count and a formula with
+no bridge, and now they agree for every n.
+
+### WHY THIS BEAN STAYS OPEN
+
+Its titled subject is closed, but it carries two recorded findings that are NOT,
+both owner decisions, and closing the bean would bury them:
+
+1. `QOU/Mathlib/TwoRowDimCatalan.lean`'s docstring calls dimHLF_two_row_sq_sum "a
+   statement about actual standard-Young-tableau counts". **That over-claim is now
+   REPAIRABLE rather than merely flaggable** -- numSYT_twoRow_eq_ballot supplies
+   exactly the missing identification, so the sentence could be made true by citing
+   it instead of scoped down. Still outside PR #7470's tranche; still ask-first.
+2. `TemperleyLiebWedderburn.lean:69` pairs key jones1985 with jones1987's DOI, and
+   jones1987 -- the Annals paper holding the TL-quotient + Markov-trace
+   construction -- carries no `library:` field, i.e. is not ingested.
