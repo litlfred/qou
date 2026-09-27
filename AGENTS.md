@@ -5922,7 +5922,7 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | ~~`tools/block-qa-schema/`~~ | **No longer in this repo.** The QA-sidecar interchange schemas (`<block>.qa.json` block-qa/v1 + `<criterion-id>.script.json` qa-script/v1) left with the platform code in `39fc90f6d6` (miga) and live in `litlfred/folio-assistant`; producing types are `folio-assistant/schemas/block-qa.ts`, reachable here via [`scripts/setup-folio-assistant.sh`](scripts/setup-folio-assistant.sh). Do not look for it under `tools/` — this row described an in-repo path for weeks after the directory was deleted. |
 | `tools/hecke-engine/` | `hecke-engine` Rust crate — Layer 1 canonical compute core (Gröbner-Shirshov reducer, Hoefsmit, Markov trace, Clarabel SDP backend). |
 | `tools/hecke-engine-{wasm,node,r,jvm,c}/` | Multi-language bindings of `hecke-engine` (WASM, Node napi-rs, R/JVM/C — last three Tier-3). |
-| `folio.config.json` | Adapter config (content type, adapter module, feedback dir) |
+| `qou.config.json` + `qou.json` | This instance's CONFIGURATION (adapter, QA axes, viewer, simulators, feedback store) and its DECLARATION (name, folio directories). `folio.config.json` was **deleted 2026-09-27** — the pinned platform's `resolveHarnessConfigPath` composes `<name>.config.json` from the declaration's `name` and its docstring states the old name is **not a fallback** (*"a folio still carrying the old name is not configured"*). Nothing read it. |
 | `main.tex` | LaTeX preamble and document structure (rendering target) |
 | `chapters/*.tex` | Generated LaTeX chapters (from content pipeline) |
 | `references.bib` | BibTeX database (auto-generated from `content/schema/references.ts`) |
