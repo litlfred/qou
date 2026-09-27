@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-27T05:30:10Z
-updated_at: 2026-09-27T05:30:10Z
+updated_at: 2026-09-27T06:14:48Z
 parent: qou-weeq
 ---
 
@@ -103,3 +103,92 @@ fixed here. Two consistent repairs exist and choosing between them is a one-line
 owner call. Note also that jones1987 carries no `library:` field, i.e. the Annals
 paper containing the construction is NOT INGESTED -- a real gap on this arc's
 critical path, since it is the primary source for the TL quotient + Markov trace.
+
+
+
+## Item 2 LANDED 2026-09-27 — the reindexing is done; item 1 (the HLF) is the single remaining gap
+
+`QOU/SchurWeyl/TwoRowIdxReindex.lean` on branch
+claude/tl-quotient-ringcon-lift-2026-09-26 (PR #7470), commit 2190a13745.
+12 declarations, sorry-free, every n. Sweep 5 ok / 0 RED / 0 TIMEOUT /
+0 UNVERIFIED, SWEEP_RC=0; all 12 print [propext, Classical.choice, Quot.sound],
+no sorryAx; check-sidecars clean.
+
+**This bean STAYS OPEN** (rule 13a): item 1 is an open mathematical gap.
+
+### What landed
+
+    twoRowIdxEquiv (n) : TwoRowIdx n ≃ Fin ((n+1)/2 + 1)
+
+    finrank_traceQuot_eq_range_sum :
+      finrank R (H_n(q)/rad(wtrace))
+        = SUM over k in Finset.range ((n+1)/2 + 1) of twoRowDim (n+1-k) k ^ 2
+
+plus `range_sum_pos` (the sum is strictly positive, so the identity is not 0 = 0,
+inherited from finrank_traceQuot_pos and thence from traceQuot_one_ne_zero).
+
+`twoRowDim m k := if h : k <= m then numStandardYoungTableaux (twoRow m k h) else 0`
+-- total in (m, k) so it can be summed over a bare Finset.range, with
+`twoRowDim_eq` stripping the dite under the hypothesis.
+
+Forward map reads off the second row; backward is `ofSecondRow`, built from
+`exists_partitionShape_eq` on `twoRow (n+1-k) k`. `ofSecondRow_secondRow` is where
+`partitionShape_injective` is spent, which is what makes the `choose` in
+`ofSecondRow` harmless.
+
+### Almost nothing new was needed
+
+`eq_twoRow_of_rowLen_two_eq_zero` (MarkovConventionD:60) already says any diagram
+with `rowLen 2 = 0` IS a `twoRow (rowLen 0) (rowLen 1)`; `card_twoRow`,
+`rowLen_twoRow_zero`/`_one`, `partitionShape_card_succ`,
+`partitionShape_injective` and `exists_partitionShape_eq` were all present. Only
+two small lemmas were missing:
+
+- `rowLen_twoRow_two` -- three lines off `mem_twoRow`; OcneanuWeightBranching stops
+  at `rowLen_twoRow_one`.
+- `twoRow_congr` -- `twoRow` depends only on its two row lengths. Needed because
+  `rw` CANNOT rewrite inside `twoRow`'s `k <= m` argument: the motive stops being
+  type correct ("motive is not type correct: fun _a => twoRow (n + 1 - _a.rowLen 1)
+  (_a.rowLen 1) ... = _a"). Goes through `subst` plus proof irrelevance instead.
+  Worth remembering for anything that rewrites a diagram carrying a proof argument.
+
+### Item 1 is unchanged and is now the ONLY gap
+
+The hook length formula at general n. `finrank_traceQuot_eq_range_sum`'s summand is
+`numStandardYoungTableaux (twoRow (n+1-k) k)`, a genuine tableau COUNT;
+`dimHLF_two_row_sq_sum`'s is `dimHLF [n-k, k]`, a FORMULA VALUE
+(`(sz l).factorial / prodHooks l`). Frame-Robinson-Thrall bridges them and is
+absent from Mathlib, proved here only for n <= 4 (`l in shapesLE4`, by decide)
+plus n = 5.
+
+**Narrowing worth recording for whoever takes item 1: the GENERAL HLF is not
+needed, only the TWO-ROW case.** And `dimHLF_two_row_eq_ballot (n k) (hk : 2*k <= n)`
+already identifies `dimHLF [n-k, k]` with a ballot number, so the target is
+
+    numStandardYoungTableaux (twoRow (n-k) k) = ballot n k
+
+i.e. two-row SYT counted by the reflection principle -- a bounded bijection
+(a SYT of a two-row shape is a ballot sequence: entry i goes in row 1 or row 2),
+not the general FRT theorem. That is a materially smaller target than "prove the
+hook length formula", and it is the one this arc actually needs. NOT attempted here.
+
+### 🛑 TRAP found the same pass: a cross-branch shadow olean produces a green that means nothing
+
+I wrote this file while still on the claude/seminormal-layer-generic-field branch,
+where `WtraceRadicalSemisimple.lean` DOES NOT EXIST -- and it imports that module.
+**lean-direct returned RC=0 AND the sweep reported "1 ok".** Both resolved the
+import to a shadow olean built from the other branch; neither checks that an
+imported module has a source file on the current branch.
+
+So `scripts/lean-library-sweep.py` guards against a STALE olean, not against an
+ABSENT source. A module whose import cone exists only in another branch's shadow
+verifies clean on any branch.
+
+And the fix has a second edge: after moving the file to the right branch, the
+re-run SKIPPED it, because its olean from the wrong-branch run read as
+snapshot-current. The honest figure required deleting that olean from the shadow
+first. Any "N ok" on a module you just moved between branches is suspect until you
+evict its olean.
+
+Second cross-branch shadow false green this session; the first was switching
+branches mid-sweep, which silently swapped which files the sweep compiled.
