@@ -147,3 +147,30 @@ and should be fixed" rather than "replaced". A dormant pipeline is evidence abou
 *operation*, not about whether a PDF is *wanted*, and AGENTS.md's standing ruling that
 this work must stand up in a physics venue is a statement about the latter. Still the
 author's call.
+
+## 2026-09-27 — your self-correction was over-broad too, and I repeated the original error
+
+Recorded from the other side, in `qou-9olr`, after pushing the same wrong claim
+to `main` in #7480.
+
+**Your first pass said all three workflows are ABSENT. You corrected that to
+*"they MOVED — all three exist in the platform"*. Measured a third time, both
+are wrong:**
+
+| workflow | qou | platform `.github/workflows/` | reality |
+|---|---|---|---|
+| `publish.yml` | absent | **PRESENT** | live on dispatch, `build.yml:27`, pinned |
+| `blueprint.yml` | absent | **absent** | `cat-harness/templates/paper/github/workflows/` — a TEMPLATE |
+| `lean_ci.yml` | absent | **absent** | same |
+
+One is live; two are paper-scaffolding templates, runnable nowhere. Your
+correction's table marks all three PRESENT in folio-assistant, which is right
+for one of them.
+
+**I then made your original mistake a day later** — reported all three absent,
+in chat and in a durable AGENTS.md rewrite — **because I did not read this
+bean, although my corpus-grep returned it.** Retraction, contamination list and
+the reading-failure post-mortem are in `qou-9olr`.
+
+**Your PDF/`uses:`-line analysis is unaffected and remains the live framing**;
+`build.yml:27` is confirmed pinned to `37a36ce9296`, so `qou-pwp9` landed.

@@ -187,7 +187,7 @@ The CI [`lean_ci.yml`](../.github/workflows/lean_ci.yml) uses the [`lake-cache-r
 |---|---|---|---:|
 | [`witness-pipeline.yml`](../.github/workflows/witness-pipeline.yml) | push / PR | 9 substrate-precision smoke scripts | ~2 min |
 | [`lean_ci.yml`](../.github/workflows/lean_ci.yml) | push / PR | `lake build` workspace (with 3-tier cache) | ~30 s warm, ~10 min cold |
-| ~~`publish.yml`~~ | — | **ABSENT from the tree** (measured 2026-09-27). The rendered GitHub Pages site is deprecated; see AGENTS.md §"Build output (gh-pages)" for what actually runs and what is on the branch. | — |
+| `publish.yml` **(platform)** | `workflow_dispatch` via qou's `build.yml` | Content → LaTeX → PDF → gh-pages. **Not in this repo** — it lives in `folio-assistant/.github/workflows/` and is reached from `.github/workflows/build.yml:27`, pinned to `.folio-assistant-pin`. Live but undispatched since 2026-06-30. | ~22-28 min |
 | [`blueprint.yml`](../.github/workflows/blueprint.yml) | push to main | LeanBlueprint dependency graph + axiom report | ~5-10 min |
 | [`paper-builder-image.yml`](../.github/workflows/paper-builder-image.yml) | Dockerfile change | Builds `ghcr.io/litlfred/qou-paper-builder` (TeX Live + bun + py-sci) | ~15-20 min |
 | [`lake-cache-refresh.yml`](../.github/workflows/lake-cache-refresh.yml) | lakefile / lean-toolchain change on main | Refreshes `lake-cache/*` orphan branches | ~5-15 min/pkg |

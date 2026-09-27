@@ -411,13 +411,16 @@ SVGs and JSON inline.
 > **The rendered GitHub Pages site is DEPRECATED (owner, 2026-09-27), and the
 > `litlfred.github.io/qou/` column has been dropped from this table.** It was
 > not a working surface: measured on 2026-09-27, the `gh-pages` head is
-> **2026-07-08** (*"deploy: update PDF with \pm error formatting"*), and
-> **every workflow that produced any of it is gone or dead** — `publish.yml`,
-> `blueprint.yml` and `lean_ci.yml` are **absent from the tree**, and
-> `doc-gen4.yml` last succeeded before 2026-06-30 (461 runs, last conclusion
-> `failure`, 2026-06-30 — the Actions-billing directive date).  Nothing could
-> refresh that site, so the rendered column advertised a frozen snapshot as
-> though it were current.
+> **2026-07-08** (*"deploy: update PDF with \pm error formatting"*), so the
+> rendered column advertised an 81-day-old snapshot as though it were current.
+>
+> **It is dormant rather than unrefreshable, and an earlier draft of this note
+> got that wrong.** The paper build still has a live producer: the platform's
+> `publish.yml`, reached from `.github/workflows/build.yml` and pinned to
+> `.folio-assistant-pin`. It is `workflow_dispatch`-only and nobody has
+> dispatched it since 2026-06-30. What genuinely has no producer left is the
+> `lean/` subtree — `doc-gen4.yml` (461 runs, last conclusion `failure`,
+> 2026-06-30) is deprecated to `fsh-guts/deprecated/workflows/`.
 >
 > **The branch itself is NOT removed and the links below still work.** It stays
 > as a file store: ~9,500 files under `lean/`, ~7,300 under `drafts/`, plus the

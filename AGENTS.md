@@ -5956,12 +5956,33 @@ GitHub Pages site at `litlfred.github.io/qou/` is deprecated. The `gh-pages`
 deprecation stops at the rendering.
 
 **This section previously opened *"Three workflows deploy to the `gh-pages`
-branch"* and tabulated `blueprint.yml`, `lean_ci.yml` and `publish.yml`.
-Measured 2026-09-27: all three are ABSENT from `.github/workflows/`.** So the
-one passage telling an agent where published output comes from named three
-files that do not exist, and an agent sent to fix a broken artifact had nowhere
-to look. (AGENTS.md already said *"There is **no** `lean_ci.yml` in the tree"*
-in the Phase-4 gate table — the two passages contradicted each other.)
+branch"* and tabulated `blueprint.yml`, `lean_ci.yml` and `publish.yml`. The
+location attribution was stale — it reads as a list of files in THIS repo, and
+none of the three is here. But 🛑 "absent" is the WRONG correction, and it has
+now been made twice by two different sessions:**
+
+| workflow | qou `.github/workflows/` | platform `.github/workflows/` | what it actually is |
+|---|---|---|---|
+| `publish.yml` | absent | **PRESENT** | **LIVE on dispatch** — qou reaches it from `.github/workflows/build.yml:27`, `uses: litlfred/folio-assistant/.github/workflows/publish.yml@37a36ce9296…` (pinned to `.folio-assistant-pin`) |
+| `blueprint.yml` | absent | absent | a **TEMPLATE** at `cat-harness/templates/paper/github/workflows/blueprint.yml` — scaffolding for a new paper repo, runnable nowhere |
+| `lean_ci.yml` | absent | absent | same: a template, runnable nowhere |
+
+**So the heavy render is live, not gone**, and the `gh-pages` site is dormant
+because nobody has **dispatched** `build.yml` since 2026-06-30 — not because its
+producer disappeared. Two sessions in two days got this wrong in opposite
+directions: 2026-09-26 reported all three ABSENT, corrected itself to *"they
+MOVED — all three exist in the platform"* (bean `qou-w5av`), and 2026-09-27
+repeated the original ABSENT claim without reading that bean. **Both
+corrections were over-broad**: one of the three is live, two are templates.
+The lesson is the one the detector-blindness taxonomy keeps recording — *measure
+the right tree, and say which tree you measured.*
+
+**Do NOT "clean up" `build.yml` or `paper-builder-image.yml` on the strength of
+this.** `build.yml` is qou's only render entry point and is what produces the
+paper PDFs that README's chapter table links; `paper-builder-image.yml` builds
+the TeX image `build.yml` passes in as `builder_image:`, which the platform's
+`publish.yml` consumes at three job sites while hardcoding it nowhere. Whether
+the PDF output goes away at all is an owner decision, framed in `qou-w5av`.
 
 ### What actually runs on qou — measured, per workflow, not read off YAML
 
@@ -6009,9 +6030,17 @@ because its billing is not in this state.
 formatting"*. Contents: `lean/` (~9,500 files), `drafts/` (~7,300),
 `rust-api/` (783), `schema-docs/` (206), `python-api/` (20), `papers/` (14),
 plus `qou.pdf`, `main.pdf`, `paper.html`, `visualizer.html`, `axiom-report.txt`,
-`dependency-graph.svg`, `proof-objects.json`, `glossary.json`. Every producer of
-every one of those is absent or dead, so **the snapshot cannot be refreshed** —
-treat it as an archive, never as current output.
+`dependency-graph.svg`, `proof-objects.json`, `glossary.json`.
+
+🛑 **An earlier version of this paragraph said "every producer of every one of
+those is absent or dead, so the snapshot cannot be refreshed". That is wrong.**
+The paper-build half of it — `papers/`, `index.html`, the PDFs, `schema-docs/`,
+`drafts/` — comes from the platform's `publish.yml`, which is **live and
+callable today** via `build.yml`. The snapshot is stale because that workflow
+has not been **dispatched** since 2026-06-30, which is a different fact with a
+different remedy. The `lean/` subtree is the part whose producer really is gone
+(`doc-gen4.yml`, now deprecated below). Treat the site as dormant-but-revivable,
+not as an unrefreshable archive.
 
 ### Deprecated, and where it went
 
