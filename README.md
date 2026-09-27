@@ -403,31 +403,53 @@ The **Folio Assistant** (`folio-assistant/`) is the platform layer providing:
 ## Published Artefacts
 
 Every artefact below is committed to the **`gh-pages` branch of this
-repository**, so the middle column resolves for anyone with repository access
-— whether or not the Pages site is public — and GitHub renders PDFs, SVGs and
-JSON inline.  The right-hand column is the same file served as a web page,
-which needs GitHub Pages to be publicly accessible; use it for the artefacts
-that are only useful rendered (the viewer, the API docs).
+repository**, and the link column resolves for anyone with repository access
+— whether or not the Pages site is public — because these are `github.com`
+blob/tree URLs rather than `litlfred.github.io` ones.  GitHub renders PDFs,
+SVGs and JSON inline.
 
-| Artefact | On `gh-pages` (any collaborator) | Rendered (needs public Pages) |
-|----------|----------------------------------|-------------------------------|
-| Folio landing page | [index.html](https://github.com/litlfred/qou/blob/gh-pages/index.html) | [/](https://litlfred.github.io/qou/) |
-| Paper viewer | [papers/quantum-observable-universe/](https://github.com/litlfred/qou/tree/gh-pages/papers/quantum-observable-universe) | [/papers/quantum-observable-universe/](https://litlfred.github.io/qou/papers/quantum-observable-universe/) |
-| Paper (PDF) | [quantum-observable-universe.pdf](https://github.com/litlfred/qou/blob/gh-pages/quantum-observable-universe.pdf) | [/quantum-observable-universe.pdf](https://litlfred.github.io/qou/quantum-observable-universe.pdf) |
-| Lean interactive docs | [lean/docs/](https://github.com/litlfred/qou/tree/gh-pages/lean/docs) | [/lean/docs/](https://litlfred.github.io/qou/lean/docs/) |
-| Schema docs (TypeDoc) | [schema-docs/](https://github.com/litlfred/qou/tree/gh-pages/schema-docs) | [/schema-docs/](https://litlfred.github.io/qou/schema-docs/) |
-| Python API docs | [python-api/](https://github.com/litlfred/qou/tree/gh-pages/python-api) | [/python-api/](https://litlfred.github.io/qou/python-api/) |
-| Rust API docs | [rust-api/](https://github.com/litlfred/qou/tree/gh-pages/rust-api) | [/rust-api/](https://litlfred.github.io/qou/rust-api/) |
-| Axiom / Gap Report | [axiom-report.txt](https://github.com/litlfred/qou/blob/gh-pages/axiom-report.txt) | [/axiom-report.txt](https://litlfred.github.io/qou/axiom-report.txt) |
-| Dependency Graph | [dependency-graph.svg](https://github.com/litlfred/qou/blob/gh-pages/dependency-graph.svg) | [/dependency-graph.svg](https://litlfred.github.io/qou/dependency-graph.svg) |
-| Proof Objects Manifest | [proof-objects.json](https://github.com/litlfred/qou/blob/gh-pages/proof-objects.json) | [/proof-objects.json](https://litlfred.github.io/qou/proof-objects.json) |
-| Glossary | [glossary.json](https://github.com/litlfred/qou/blob/gh-pages/glossary.json) | [/glossary.json](https://litlfred.github.io/qou/glossary.json) |
-| Feature branch drafts | [drafts/](https://github.com/litlfred/qou/tree/gh-pages/drafts) | [/drafts/](https://litlfred.github.io/qou/drafts/) |
+> **The rendered GitHub Pages site is DEPRECATED (owner, 2026-09-27), and the
+> `litlfred.github.io/qou/` column has been dropped from this table.** It was
+> not a working surface: measured on 2026-09-27, the `gh-pages` head is
+> **2026-07-08** (*"deploy: update PDF with \pm error formatting"*), and
+> **every workflow that produced any of it is gone or dead** — `publish.yml`,
+> `blueprint.yml` and `lean_ci.yml` are **absent from the tree**, and
+> `doc-gen4.yml` last succeeded before 2026-06-30 (461 runs, last conclusion
+> `failure`, 2026-06-30 — the Actions-billing directive date).  Nothing could
+> refresh that site, so the rendered column advertised a frozen snapshot as
+> though it were current.
+>
+> **The branch itself is NOT removed and the links below still work.** It stays
+> as a file store: ~9,500 files under `lean/`, ~7,300 under `drafts/`, plus the
+> paper PDFs and manifests.  Deleting it would break every chapter-PDF link in
+> the table further up this README, which is why the deprecation stops at the
+> rendering.
+
+| Artefact | On `gh-pages` (any collaborator) |
+|----------|----------------------------------|
+| Folio landing page | [index.html](https://github.com/litlfred/qou/blob/gh-pages/index.html) |
+| Paper viewer | [papers/quantum-observable-universe/](https://github.com/litlfred/qou/tree/gh-pages/papers/quantum-observable-universe) |
+| Paper (PDF) | [quantum-observable-universe.pdf](https://github.com/litlfred/qou/blob/gh-pages/quantum-observable-universe.pdf) |
+| Lean interactive docs | [lean/docs/](https://github.com/litlfred/qou/tree/gh-pages/lean/docs) |
+| Schema docs (TypeDoc) | [schema-docs/](https://github.com/litlfred/qou/tree/gh-pages/schema-docs) |
+| Python API docs | [python-api/](https://github.com/litlfred/qou/tree/gh-pages/python-api) |
+| Rust API docs | [rust-api/](https://github.com/litlfred/qou/tree/gh-pages/rust-api) |
+| Axiom / Gap Report | [axiom-report.txt](https://github.com/litlfred/qou/blob/gh-pages/axiom-report.txt) |
+| Dependency Graph | [dependency-graph.svg](https://github.com/litlfred/qou/blob/gh-pages/dependency-graph.svg) |
+| Proof Objects Manifest | [proof-objects.json](https://github.com/litlfred/qou/blob/gh-pages/proof-objects.json) |
+| Glossary | [glossary.json](https://github.com/litlfred/qou/blob/gh-pages/glossary.json) |
+| Feature branch drafts | [drafts/](https://github.com/litlfred/qou/tree/gh-pages/drafts) |
 
 > The **Blueprint** row and the `docs/` row that used to sit here have been
 > removed: neither `blueprint/` nor `docs/` exists on `gh-pages`, so both
 > links were dead in either column.  The Lean docs are published at
 > `lean/docs/`, which is what the row above points at.
+>
+> `docs/` is still absent, and now deliberately so — `docs-site.yml` builds the
+> Jekyll docs site and uploads it as a **workflow artifact**; its gh-pages
+> write step was removed with this deprecation.  It had never fired: the step
+> was gated `if: inputs.publish` with `default: false`, and across all 5 runs
+> of that workflow no `docs/` directory was ever created on the branch.
 
 ## Libraries
 
