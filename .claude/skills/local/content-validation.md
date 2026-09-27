@@ -14,8 +14,8 @@ for structural integrity, constraint compliance, and LaTeX AST correctness.
 
 | Path | Purpose |
 |------|---------|
-| `content/schema/types.ts` | TypeScript types for all block kinds |
-| `content/schema/constraints.ts` | Zod schemas + constraint rules |
+| `folio-assistant/cat-harness/schemas/types.ts` | TypeScript types for all block kinds |
+| `folio-assistant/cat-harness/schemas/constraints.ts` | Zod schemas + constraint rules |
 | `content/schema/builders.ts` | Builder functions (`definition()`, `theorem()`, etc.) |
 | `content/pipeline/validate.ts` | Validation pipeline (schema + constraints + AST) |
 | `content/pipeline/render-latex.ts` | Block → LaTeX rendering + AST validation |
@@ -181,7 +181,7 @@ output, **do not hand-edit the failing block** — run the script.
 
 ## Adding custom constraints
 
-Add rules to `CONSTRAINT_RULES` array in `content/schema/constraints.ts`:
+Add rules to `CONSTRAINT_RULES` array in `folio-assistant/cat-harness/schemas/constraints.ts`:
 
 ```typescript
 CONSTRAINT_RULES.push({

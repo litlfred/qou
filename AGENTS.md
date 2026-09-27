@@ -4633,7 +4633,7 @@ todos/                           ← gitignored
   infra-todos.ts                 ← infrastructure todos (optional)
 ```
 
-The `TodoItem` type is defined in `content/schema/types.ts` for reuse,
+The `TodoItem` type is defined in `folio-assistant/cat-harness/schemas/types.ts` for reuse,
 but no `todos` field exists on any content block type or schema.
 
 The MCP server serves todos at `/api/todos` (JSON) and `/todos` (HTML
@@ -5314,8 +5314,8 @@ Sibling files share the same root name: `rigid-monoidal-category.ts`,
 
 | Path | Purpose |
 |------|---------|
-| `content/schema/types.ts` | TypeScript types (discriminated unions) |
-| `content/schema/constraints.ts` | Zod schemas + constraint rules |
+| `folio-assistant/cat-harness/schemas/types.ts` | TypeScript types (discriminated unions) |
+| `folio-assistant/cat-harness/schemas/constraints.ts` | Zod schemas + constraint rules |
 | `content/schema/builders.ts` | `definition()`, `theorem()`, `prose()`, etc. |
 | `folio-assistant/content/pipeline/validate.ts` | Three-level validation |
 | `folio-assistant/content/pipeline/render-latex.ts` | Block → LaTeX + AST validation |
