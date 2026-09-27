@@ -53,6 +53,11 @@ on:
 jobs:
   gate:
     runs-on: ubuntu-latest
+    # The check itself is 2 s. `setup-folio-assistant.sh` does a FULL clone of a
+    # 2.9 GB / 5115-commit platform repo (no `--depth`) and then `bun install`,
+    # which took ~10 min on the first run. Without a timeout a hang there would
+    # sit for GitHub's 6-hour default.
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
@@ -77,14 +82,28 @@ jobs:
           d["@type"] = ["folio:Remark", "doco:Section"]   # the retired prefix
           open(p, "w").write(json.dumps(d, indent=2) + "\n")
           PY
-          if bun run "$GEN" --check >/dev/null 2>&1; then
+          if bun run "$GEN" --check >/tmp/perturbed.log 2>&1; then
             echo "SELF-TEST FAILED: --check passed on a perturbed file, so it is not looking"
-            git checkout -- "$F"; exit 1
+            cat /tmp/perturbed.log; git checkout -- "$F"; exit 1
           fi
           echo "perturbed -> check fails, as it must"
+
           git checkout -- "$F"
-          bun run "$GEN" --check >/dev/null 2>&1 \
-            || { echo "SELF-TEST FAILED: --check still red after restore"; exit 1; }
+          # Prove the restore actually happened before blaming the check. The
+          # first CI run failed here and the log could not say why, because the
+          # output was sent to /dev/null — so the evidence is kept now.
+          echo "git status after restore (want: empty):"
+          git status --porcelain -- "$F"
+          echo "whole-tree dirt (want: empty):"
+          git status --porcelain | head -20
+
+          if ! bun run "$GEN" --check >/tmp/restored.log 2>&1; then
+            echo "SELF-TEST FAILED: --check still red after restore. Its output:"
+            cat /tmp/restored.log
+            echo "--- diff of the fixture against HEAD, if any ---"
+            git diff -- "$F" | head -40
+            exit 1
+          fi
           echo "restored  -> check passes. The gate is live."
 
       - name: Gate — every .jsonld sibling matches its .ts and the pinned vocabulary
