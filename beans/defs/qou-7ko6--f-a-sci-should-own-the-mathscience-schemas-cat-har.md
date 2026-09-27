@@ -1,10 +1,11 @@
 ---
 # qou-7ko6
 title: 'f-a-sci should own the math/science schemas: cat-harness holds MATH_BLOCK_KINDS and DAK_BLOCK_KINDS as closed enums while its newer registries are open'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-09-27T05:52:03Z
-updated_at: 2026-09-27T05:52:03Z
+updated_at: 2026-09-27T09:15:00Z
 ---
 
 
@@ -405,3 +406,75 @@ silently re-admits the drift `_blockKindsAreExhaustive` exists to stop — the
 formal-reference vocabulary again. **Default if nothing is decided:** the two
 stay in core under a header that flags itself as overruled; nothing breaks, and
 the note directs the next agent to cite the six edges.
+
+---
+
+## 2026-09-27 (later) — 🟩 DONE on the platform side: the six edges are PAID, and `BlockBase` never had to change
+
+Pushed as `folio-assistant` `claude/sci-owns-lean-grammar-probe-2026-09-27`
+(`c9b5781fdb3` + `fef2f9e6ecf`). Partition: **6 wrong-direction edges → 0**;
+core 258 → 256, sci 41 → 44.
+
+### The earlier note's blocker did not exist
+
+`partition/instance-rules.ts` recorded that honouring the ruling *"needs core to
+carry a formal reference whose vocabulary it does not own — `lean` off
+`BlockBase` … That changes `BlockBase`, so it is the owner's call and is not made
+here."*
+
+**`BlockBase` is unchanged.** Core still carries a field named `lean` with a
+`ref` string; it simply no longer knows the grammar of that string. The whole
+price was five call sites, one of which dissolved:
+
+| site | what it needed | how |
+|---|---|---|
+| `schemas/constraints.ts` | the ref pattern + candidate paths | injected |
+| `adapters/document/resolver.ts` | candidate paths | injected |
+| `adapters/mcp-server/server.ts` | candidate paths | injected |
+| `adapters/manifest-entries.ts` | a parse helper | **`tryParseLeanRef` DELETED** — its only two consumers were the two resolvers above |
+| `content/pipeline/qa-utils.ts` | canonical resolution, statement hash, source listing | injected; ~327 lines moved verbatim to sci |
+
+New: `schemas/formal-ref.ts` (core socket, third instance of the
+`references-registry-di` / `value-registry-di` pattern) and
+`content/pipeline/lean-formal-ref.ts` (sci plug).
+
+### Three things worth carrying forward
+
+1. **`LeanRefSchema` had to stop using `.regex()`.** A `z.object({...})` literal
+   evaluates at module init, strictly before any layer can install itself, so
+   `.regex(pattern)` freezes the unconfigured fallback forever. It is now
+   `superRefine`, which runs per `parse()`. This is why the pattern could not be
+   injected before.
+2. **The resolution record carries TWO path lists.** Merging `candidatePaths`
+   and `fallbackPaths` was the obvious move and is a behaviour change in the
+   worse direction: the module-path candidate may be an import-only aggregator
+   (`qou-cu0a`, 65 of 1220 blocks), and merging would put it AHEAD of the real
+   declaration file for the two resolvers — so the MCP server would start
+   serving an `import` list as a block's source. `constraints.ts` accepted that
+   file before and still does; neither resolver did and neither now does.
+3. **NINE core modules import `lean-packages`, not six.** `export-json.ts`,
+   `conjectural-propagation-audit.ts` and `conditional-class-banner-audit.ts`
+   are composition roots (`import.meta.main`), which `partition/engine.ts`
+   exempts from the direction rule while still counting the edge in
+   `totalEdges`. Re-measure with `--edges`, never by grep.
+
+### 🛑 The qou side is BLOCKED on the pin, and must land as ONE commit
+
+Two lines — `configureLeanPackages` imported from `lean-formal-ref` instead of
+`lean-packages` in `scripts/preload-registry.ts` and `scripts/run-validate.ts` —
+and they **must be in the same commit as the `.folio-assistant-pin` advance**.
+Split them and validation regresses in the window between: after the platform
+commit, configuring the package list without importing the installer leaves
+`lean-file-exists` failing CLOSED for every `definition` whose formalisation
+lives in the library tree. Same rule as the q₀-sweep constraint 4 in AGENTS.md,
+for the same reason.
+
+qou keeps working unchanged at the current pin, so there is no urgency and no
+half-state.
+
+### Measured while here: `qou-i2ed` is bigger than its own title says
+
+`0 of 1301` `lean.ref`s resolve in `check-base-ring.ts`, `check-wall-side.ts`
+and `content/pipeline/qa-agent-entry.ts` (which configure nothing), against
+**745** with the layer installed. Both directions of that correction are on
+`qou-i2ed`; that bean's title is wrong and should not be quoted.
