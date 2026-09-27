@@ -8,7 +8,7 @@ tags:
     - platform
     - migration
 created_at: 2026-09-26T11:20:29Z
-updated_at: 2026-09-27T10:22:33Z
+updated_at: 2026-09-27T16:44:43Z
 parent: qou-n4r9
 ---
 
@@ -272,3 +272,71 @@ Stays **todo**. The open items narrow to three, of which only the first is new:
 2. The `folio.config.json` deletion — still gated (`qou-n4r9` / `qou-w5av`).
 3. `qou.config.json:29` / `qou.json:19`'s *"INERT AT THE PIN"* comments — stale
    as to `resolveHarnessConfigPath`, and **`:30` is not stale**, per above.
+
+## Line 84's obligation met 2026-09-27 — and the delete nearly destroyed two things
+
+`git rm folio.config.json` landed in `c8b40bec85`. This bean required it *in the
+pin-bump commit*; the bump landed as `1ea9676d3f` and the delete did not, so it
+is late rather than absent.
+
+### Safe at the pin — verified at the pin sha, not at platform main
+
+`resolveHarnessConfigPath` composes `instanceConfigFilename(inst.name)` from the
+**declaration**, so with `qou.json`'s `"name": "qou"` it resolves
+`qou.config.json` by an outward walk from the instance root. Its docstring
+settles the fallback question in its own words:
+
+> *"`folio.config.json` is not read … It is **not** a fallback: a folio still
+> carrying the old name is not configured, rather than quietly half-configured
+> by a path nothing else agrees about."*
+
+So the delete cannot leave the folio UNCONFIGURED, which is precisely the failure
+`qou.config.json:29` warns about — that warning was measured at the **old** pin
+`df28d02`, and its own escape clause reads *"deleted in the same commit that
+bumps the pin"*.
+
+**Not verified by execution.** This container's platform clone sits at fa#1465's
+head, not at the pin, and per AGENTS.md §4d a count taken against the wrong
+platform is worse than none. The evidence is the source read at
+`37a36ce9296…`, which is checkable by a reviewer with one `git show`.
+
+### 🛑 Two things the delete would have destroyed, found by diffing first
+
+**1. The live config had a DANGLING `simulators.dir`, and only the unread file
+was right.** `qou.config.json` read `"dir": "simulators"` — measured, that
+directory **does not exist**; the 11 simulators are at
+`fsh-guts/deprecated/simulators`, which was recorded *only* in
+`folio.config.json`. So since the 2026-09-26 rename the live config has carried
+a dangling path while the file nothing reads carried the correct one. Corrected
+in the same commit.
+
+**2. `_deprecated_client_side_comment` was the ONLY key present there and absent
+here**, and it is the verbatim record of the owner's 2026-09-26 ruling on heavy
+client-side rendering. Carried across verbatim before the delete.
+
+Machine-checked that nothing else is lost: every non-prose key and nested value
+of `folio.config.json` is now represented in `qou.config.json` — `readme`,
+`qaAxes`, `adapterModule`, `contentType`, `adapter`, `feedbackDir` were already
+byte-identical; `viewer` differed only in its comment.
+
+**The lesson, which is the reusable part:** the instruction was "delete an
+unread file", and an unread file had been carrying the correct value for a live
+one. Diffing before removing is what caught it; deleting first and checking
+after would have lost both silently.
+
+### What this unblocks, and what it does not
+
+`qou-yqko` (move `content/` → `folio/`) gates on this bean in its frontmatter
+(`blocked_by: qou-8321`). That gate is now satisfied. **The move is NOT in this
+change and is deliberately held** for its own session: ~18.8k files, 4,237
+genuine referrers, one mandatory commit, and a trap where the 31,241 `library/`
+hits are JSON-LD namespace URLs rather than paths.
+
+### Status
+
+Stays **todo** only if something remains. Re-reading the bean's own items: the
+pin bump is done, the coupling check is green, and the `git rm` is done. The two
+stale scope comments it also names (`qou.config.json:29` / `qou.json`'s
+`_platform_scope_comment`, both asserting "INERT AT THE PIN" as measured at
+`df28d02`) are **not corrected here** — that is a separate currency pass and is
+the one item left. Leaving `todo` for it rather than closing on a partial.

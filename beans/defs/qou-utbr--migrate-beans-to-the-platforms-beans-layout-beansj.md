@@ -8,7 +8,7 @@ tags:
     - beans-hygiene
     - migration
 created_at: 2026-09-26T11:19:55Z
-updated_at: 2026-09-27T10:03:38Z
+updated_at: 2026-09-27T16:44:44Z
 parent: qou-n4r9
 ---
 
@@ -199,3 +199,49 @@ and script together."*** Its evidence is qou commit `39fc90f6` and bean `dh4f` �
 longer read, and *"a green check is the symptom, not the reassurance."* This is
 the same shape at documentation scale: the store moved cleanly, and the
 instructions telling agents where to look did not move with it.
+
+## 15 skills pointed at `beans/defs/` — 2026-09-27, `ab5daeef13`
+
+40 occurrences across 15 `.claude/skills/local/*.md` files, all of them
+**instructions** (paths an agent is told to read, write or bootstrap), now
+correct. Verified the target on disk BEFORE rewriting, because propagating a
+wrong path into 16 instruction files is worse than leaving them: the queues and
+ledgers are at `beans/defs/` — `beans/defs/canonical-watcher-queue.json`,
+`beans/defs/integration-audit-ledger.md` and eight more.
+
+### 🛑 My replace pattern required the trailing slash and missed one
+
+`mkdir -p .beans` at `integration-watcher.md:316` survived, leaving a
+bootstrap that creates `.beans` and then writes into `beans/defs/` — worse
+than the state it replaced. Caught by re-grepping `\.beans\b` **without** the
+slash. Same one-unknown-spelling class as `sys.path.insert(` vs
+`sys.path[:0]` in the path-bridge audit, which produced 22 false positives
+from one missing spelling.
+
+### Left deliberately: 2 dated records
+
+- `prepare-merge-auto.md:150` — *"a `.beans/`-only change"*, describing what
+  one of the `qou-gwe9` n=5 PRs touched.
+- `todo-manager.md:84` — *"4,928 `.beans` files"*, the duplicate-bean incident.
+
+Rewriting a path inside a dated finding falsifies the finding — the call
+`qou-3nva` made for the 4.66e6 drain.
+
+### Corrected population, and it was mine
+
+I reported **241 files** corpus-wide during the session. Re-measured on merged
+`main`: **354** — docs 143, bean bodies 98, code 70, skills 16, other 27. Low
+by 32 %. The operative claim survives: of the 15 files whose reference sits
+outside a `#`/`//` comment, every one inspected is prose (a docstring, a
+witness `description`, a citation), so no live code path is broken.
+
+One genuine defect inside that population, fixed separately:
+`computations/probes/b3_sign_one_root_probe.py:41` carried
+`-- Ref: [manuscript] .beans/qou-q8vl` — the §1 citation form, resolving to
+nothing.
+
+### Status
+
+Stays **in-progress**. The live instruction surface is done; **338 files remain**
+and are deliberately not swept — docs and bean bodies that record what a dated
+pass measured. That residue is a choice, not a backlog.

@@ -1,14 +1,14 @@
 ---
 # qou-sm2c
 title: folio.config.json carries a live-broken feedbackDir at the pinned platform
-status: todo
+status: completed
 type: bug
 priority: high
 tags:
     - platform
     - config
 created_at: 2026-09-26T10:31:54Z
-updated_at: 2026-09-26T10:36:11Z
+updated_at: 2026-09-27T16:44:44Z
 parent: qou-ty42
 ---
 
@@ -80,3 +80,45 @@ untracked directory belonging to another repo.
 is the value the corpus already chose, and it makes the live config agree with
 the migrated one instead of silently disagreeing on the single value that
 matters. Option 2 is defensible only if the bump is imminent.
+
+## Already fixed — measured 2026-09-27, and the file is now gone entirely
+
+This bean is `todo`, priority **high**, and asserts a **live** defect:
+
+> `folio.config.json` … sets `"feedbackDir": "folio-assistant/feedback"` …
+> points qou's feedback store *inside the platform clone*.
+
+**Measured on `main` `18e1ba553e`, before any change of mine:** that file read
+`"feedbackDir": ".folio-feedback"`, and `qou.config.json` carried a
+`_feedbackDir_comment` recording the same correction in its own words — *"CHANGED
+from `folio-assistant/feedback`, which is the one value that did not survive the
+rename."* So the defect was repaired at some point after this bean was written
+(2026-09-26T10:31) and nothing updated the bean.
+
+`.folio-feedback` does not exist on disk either, so **no data was ever
+implicated** in either direction.
+
+As of `c8b40bec85` the question is moot at a second level: `folio.config.json`
+is **deleted**. The surviving config is `qou.config.json`, whose `feedbackDir`
+is `.folio-feedback`.
+
+### Why this is completable under §13a
+
+§13a bars completing a bean whose subject is an **open conjecture**. This is a
+`type: bug` about a config string: no conjecture, no conditional class, no
+epistemic tier. Its whole task was mechanical and the mechanism is gone.
+
+### Why it mattered while it was wrong
+
+A high-priority bug bean advertising a fixed defect is not inert — it is a
+standing invitation to spend a session on nothing, and it was cited as the
+*urgency* argument for the `folio.config.json` deletion in the 2026-09-27
+blocker-options doc. The argument was spent; the deletion turned out to be
+justified on different grounds (nothing reads the file, per the pinned
+platform's own source), and separately to be *riskier* than this bean implied,
+because the file was the only carrier of a correct `simulators.dir` and of an
+owner ruling. Both are recorded on `qou-8321`.
+
+**Completing** rather than scrapping: the bean was a correct finding when
+written, and its body is the record of how the `feedbackDir` value was
+reasoned about.
