@@ -52,7 +52,7 @@ sys.path.insert(0, str(REPO / "tools" / "qou-substrate" / "python"))
 
 import mpmath as mp  # noqa: E402
 
-from qou_substrate.constants import Q  # noqa: E402
+from qou_substrate.constants import q_at  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 50
@@ -72,7 +72,29 @@ def check(label: str, ok: bool, detail: str = "") -> None:
         FAILURES.append(label)
 
 
-Q0 = mp.mpf(str(Q))
+# `q_at(50)`, NOT `mp.mpf(str(Q))`. `qou_substrate.constants.Q` is a Python
+# `float` (`_solve_q_proton_f64`), so the round-trip through `str` recovers the
+# binary64 exactly and nothing more — **~17 significant digits** (measured:
+# 1.1099785827513808 against q_at(50)'s 1.109978582751380807591669…, rel err
+# 6.84e-18). This file sets `mp.mp.dps = 50` and derives every `[n]_q` and
+# `dim_q` below from this one value, so 33 of those 50 digits were noise.
+#
+# `q_at(dps)` is a Newton solve on the proton substrate identity and is exact at
+# any dps, so this is the SAME pin with the digits it should always have had —
+# not an anchor change. The probe's own banner already says "proton pin", and
+# `q_at` is proton.
+#
+# Four files in `computations/` already carry this fix with the same reasoning in
+# a comment (`log_ratio_binding_prototype`, `derived_bond_graph_binding`,
+# `deltalambda/two_row_support_recount`, `deltalambda/l1_ceiling_d_frame_remeasure`),
+# so the convention was already settled; this site had simply been missed.
+#
+# Do NOT "also fix" `casimir_d6_qcorrection_structure`, `probe3qrv` or
+# `casimir_xi_2_dig_deeper` on the strength of a grep for `mpf(str(Q))`. Those
+# three import `Q_MP as Q` — an `mpf` — so their round-trip is full-precision and
+# is not a launder. `f64_into_mpmath_audit` resolves the import and reports this
+# file alone; the grep does not and reports four.
+Q0 = q_at(50)
 
 
 def q_int(n: int) -> mp.mpf:
