@@ -56,6 +56,33 @@ Also not touched: `HeckeToTemperleyLieb`'s own remaining item (that `tlKernel` i
 compatibility `CoxeterCarrierEquiv` explicitly disclaims — it is one equivalence per fixed
 `n`, and nothing here makes it commute with the level inclusions.
 
+## 🛑 The dimension result does NOT close the equality, and the reason is circularity
+
+Now that the two ideals are comparable, the tempting next step is a counting argument:
+`finrank_traceQuot_eq_catalan` gives `dim (H_n/rad(wtrace)) = catalan (n+1)`, and
+`dim TL_n(δ) = catalan n`, so one inclusion plus equal codimension would force equality.
+**That route does not work, for two independent reasons — measured 2026-09-27, before
+attempting it.**
+
+1. **`dim TL_n(δ) = catalan n` is not available at general `n` in this corpus.** It is proved
+   as an algebra fact only at `n = 2` (`tl2Basis`, `= 2`) and `n = 3` (`tl3Basis`, `= 5`);
+   `TemperleyLiebNormalForm`'s own docstring says the closure lemma that would give the
+   general case "is not done". So there is no general-`n` dimension to compare against.
+2. **Supplying it from this arc is circular.** `TraceRadicalNondegenerate`'s
+   `traceRadical_eq_zero_of_algEquiv_pi_matrix` is the packaged route to the `⊇` half, and
+   its own docstring reduces that half to *"(i) the Wedderburn decomposition [of `TL_n(δ)`],
+   still open"*. The decomposition this arc has is `traceQuotEquiv`, which decomposes
+   `H_n(q)/rad(wtrace)` — a **different algebra**. Feeding it in as `TL_n(δ)`'s decomposition
+   assumes `H_n/rad(wtrace) ≅ TL_n(δ)`, which is the equality being proved.
+
+So both halves remain open. The `⊆` half is the concrete one — the corpus has
+`tlRelator_mem_ker` (a relator inside `tlKernel`) but **no** theorem placing the relators in
+`rad(wtrace)`. The `⊇` half needs `TL_n(δ)`'s own structure, independently of this arc; the
+`TemperleyLiebSpanning` docstring puts it as needing `TL_n(δ)` semisimple.
+
+Recorded here rather than in a bean because this is the file a reader reaches *after* the
+carrier stops being the obstacle, and the counting argument is what they will reach for next.
+
 -- Ref: [manuscript] beans qou-jb7k, qou-0fmb, qou-0cyu.
 -/
 
