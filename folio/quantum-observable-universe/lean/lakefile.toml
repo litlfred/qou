@@ -29,9 +29,9 @@ globs = ["QOU", "QOU.+"]
 # help, because Lean sizes its own worker stacks independently.
 moreLeanArgs = ["-s", "65536"]
 
-# NOTE: Fred2005 has moved to content/fred2005-formal-groups/lean/
+# NOTE: Fred2005 has moved to folio/fred2005-formal-groups/lean/
 # NOTE: GrobnerShirshov (formerly QOU.GrobnerShirshov) has moved to
-#       content/unital-groebner-bases/lean/
+#       folio/unital-groebner-bases/lean/
 
 [[require]]
 name = "mathlib"
