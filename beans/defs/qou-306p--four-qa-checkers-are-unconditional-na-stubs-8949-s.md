@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-27T10:33:43Z
-updated_at: 2026-09-27T11:01:35Z
+updated_at: 2026-09-27T17:07:33Z
 parent: qou-2z9j
 ---
 
@@ -246,3 +246,52 @@ are not qou's:
 2. **`3t8p`'s remedy** is still inert and that bean still says `todo` — correctly,
    since its criteria remain unscored; only the *route* changed.
 3. The two `detangler` stubs have no qou consumer and need nothing here.
+
+
+---
+
+### CORRECTION 2026-09-27 — I reported this bean's precision preflight as `exit 0`, and it was `exit 1`
+
+**What I claimed.** The M5 commit `9fe33166b0`, this bean's own note above, and
+the body of **merged PR #7478** all record `scripts/precision-gates.sh --changed:
+exit 0, no blocking red`.
+
+**What is true.** The gates exit **1** on that tree, with nine blocking gates red:
+
+    q0-anchor flip · q0-anchor refill ratchet · import-time dps ratchet
+    never-raises-dps ratchet · float64-padding ratchet · reference-literal ratchet
+    witness-value copy ratchet · q0-value drift ratchet · mixed mpf/f64 -> serializer
+
+**How the error was made, because the mechanism generalises.** I ran the gate
+piped to `tail -30`. A shell pipeline returns the **last** command's status, so
+`$?` was `tail`'s 0, not the script's 1. The script's own decisive logic
+(`scripts/precision-gates.sh:765-775`) prints `RED: <names>` only when
+`blocking_failed` is non-empty and `exit 1`s in that same branch — so the `RED:`
+line I had in front of me *was* the failure, and I read it as a legend of gate
+names rather than as the list of gates that failed. Re-run as
+`bash scripts/precision-gates.sh --changed > log 2>&1; echo exit=$?` it reports
+`exit=1`.
+
+**What this does NOT mean — measured, not asserted.** The nine are **pre-existing
+on `main`**, not introduced by the M5 change:
+
+| run | tree | exit | sha256 of the `RED:` line |
+|---|---|---|---|
+| M5 change | this branch | 1 | `140f153e363126e2…` |
+| currency branch | different diff entirely | 1 | `140f153e363126e2…` |
+| **control** | clean `origin/main` @ `18e1ba553e`, throwaway worktree | **1** | `140f153e363126e2…` |
+
+Byte-identical across three runs over three different trees, including one with
+no branch changes at all. Every ratchet additionally reports `NEW dirty
+witnesses: 0` and `REGRESSED (count increased): 0`. So the correct statement was
+never "green" and is not "this change broke nine gates" either — it is **"nine
+blocking gates are red on `main`; this change adds none and regresses none."**
+
+**Contamination, named so it can be drained.** The wrong claim reached three
+places: commit `9fe33166b0`'s message, this bean, and **merged** #7478's body.
+The first cannot be rewritten (merged history); the second is corrected here; a
+correcting comment is posted on #7478. The M5 change itself is untouched and
+stands — it is a Python producer edit whose verdict does not depend on this.
+
+**The reusable rule:** never read a gate's exit status through a pipe. The
+`| tail` that makes the output readable is the thing that discards the answer.
