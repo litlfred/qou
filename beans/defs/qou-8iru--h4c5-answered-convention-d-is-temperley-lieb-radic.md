@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-09T14:54:13Z
-updated_at: 2026-09-06T13:29:31Z
+updated_at: 2026-09-27T05:31:07Z
 ---
 
 
@@ -479,3 +479,62 @@ exists for a `RingCon` quotient in the pinned Mathlib (`ker`, `mem_ker`, `ker_eq
 
 **This bean's own §"THE RISK — stated first" is untouched:** C5 is still not a prediction.
 Nothing here bears on that. Bean stays in-progress (rule 13a).
+
+
+
+## 2026-09-27 — the quotient's DIMENSION is now measured at general n, and two of my own claims were wrong
+
+Branch claude/tl-quotient-ringcon-lift-2026-09-26 (PR #7470), commits
+942d01b97d, 29f953a355, f54b280e49. Sweep 4 ok / 0 RED / 0 TIMEOUT /
+0 UNVERIFIED, SWEEP_RC=0; every new declaration prints propext / Classical.choice
+/ Quot.sound (the lift file: propext / Quot.sound) and no sorryAx.
+
+### Added
+
+`QOU/SchurWeyl/WtraceRadicalSemisimple.lean`, 5 declarations:
+
+  finrank_traceQuot      finrank R (H_n/rad(wtrace))
+                           = SUM_{lam in TwoRowIdx n} card(SYT (shape lam))^2
+  finrank_traceQuot_pos  0 < that, reusing traceQuot_one_ne_zero, so the
+                           equation is not 0 = 0
+  isSemisimpleRing_traceQuot_of_hecke   via Hecke semisimplicity, hq0 + hq2 only
+  isSemisimpleRing_traceQuot            via traceQuotEquiv (needs hq21, hgen too)
+  + the two supporting instances
+
+`QOU/MathlibExt/RingConLiftAlgHom.lean` -- the generic RingCon first-isomorphism
+lift, split out of WtraceRadicalQuotient under §7c.
+
+### Correction 1: traceQuotEquiv is NOT the first general-n Wedderburn decomposition here
+
+`heckeWedderburn` (HeckeWedderburnGeneral.lean:112) is, it is older, and it splits
+H_n itself over ALL partitions. What traceQuotEquiv adds is WHICH BLOCKS SURVIVE
+-- the index set drops to at-most-two-row. So semisimplicity of the quotient was
+already reachable without this arc at all (Hecke semisimple + Mathlib's
+RingHom.isSemisimpleRing_of_surjective), under strictly weaker hypotheses. The
+increment is the DIMENSION, where the restricted index set becomes a number.
+
+### Correction 2: I said the Catalan identity was open. It is proved at general n
+
+Retracted in f54b280e49. qou-7wf6 / PR #5360 proved
+SUM_{l(lam)<=2} (f^lam)^2 = catalan n at general n in 2026-08-21. I had cited
+TemperleyLiebNormalForm's card_zero..card_six -- which is the planar-DIAGRAM
+count, a different identity. The real blocker is the HOOK LENGTH FORMULA at
+general n: absent from Mathlib, proved here only for n <= 4 (hypothesis
+`l in shapesLE4`, by decide) plus n = 5. New bean qou-7vht measures it and also
+records a scoping over-claim in TwoRowDimCatalan's docstring and a citation
+defect at TemperleyLiebWedderburn.lean:69 (key jones1985 against jones1987's DOI).
+
+### Two defects in my own #7470, fixed in 29f953a355
+
+traceQuotEquiv's docstring credited `liftAlgHom` for "the missing piece" while
+twoRowQuotHom's docstring fifty lines up said the construction is **not** built
+from it (and liftAlgHom is used nowhere in the corpus). And the module docstring
+still opened "DRAFT — not yet compiled." on a file that sweeps clean. The §7c
+split is what surfaced both.
+
+### Unchanged, and this bean stays open
+
+TL_n(delta) semisimple at general n: open on all six paths. The ideal equality
+<U_i U_j U_i - v^2 U_i> = rad(tr_M): open. The two Algebra R instances on the
+quotient type still do not unify and that is still an owner call, since changing
+which one the corpus uses moves every quotMk consumer.
