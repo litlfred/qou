@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T17:57:00Z
-updated_at: 2026-09-26T17:41:43Z
+updated_at: 2026-09-27T05:35:27Z
 ---
 
 Successor to qou-vndn, whose premise ("Hecke radical vanishing") is refuted at
@@ -463,3 +463,81 @@ evidence that `hgen` is load-bearing. Four valid mutants (`rowLen 3`; `.symm` on
 
 **Still NOT closed**, unchanged: `WenzlTowerStep`, and `HeckeGramFactorial`'s open
 `T_w`-basis determinant. Rule 13a.
+
+
+
+## 🛑 TRAP, 2026-09-27 — `WenzlTowerStep` at the TL/wtrace quotient is now VACUOUS. Do not discharge it and call this bean closed.
+
+Found while extending PR #7470. **This bean stays open** (rule 13a). What changed
+is that its stated target has become dischargeable *without proving anything*, so
+the way it could be falsely closed is now cheap and looks legitimate.
+
+### The class's only field is an implication whose conclusion is now unconditional
+
+`QOU.Machinery.HeckeTowerBasicConstruction.WenzlTowerStep` (:284) has one field:
+
+    semisimple_ascend :
+      IsSemisimpleRing Hn ->
+      (forall y : Hn1, y != 0 -> exists z, trn1 (y * z) != 0) ->
+      IsSemisimpleRing Hn1
+
+At `Hn := TraceQuot (wtrace .. n)` and `Hn1 := TraceQuot (wtrace .. (n+1))` the
+CONCLUSION holds unconditionally, by
+`WtraceRadicalSemisimple.isSemisimpleRing_traceQuot_of_hecke` (PR #7470), which
+needs only `hq0` and `hq2` and goes
+
+  isSemisimpleRing_hecke_generic (general n, any CharZero field, sorry-free)
+  + Mathlib's RingHom.isSemisimpleRing_of_surjective
+    ("any quotient of a semisimple ring is semisimple")
+
+MEASURED, lean-direct RC=0: the field's exact shape at these carriers is proved by
+
+    fun _ _ => isSemisimpleRing_traceQuot_of_hecke hq0 hq2 (n + 1)
+
+i.e. by IGNORING BOTH HYPOTHESES. So an instance at these carriers would carry no
+Wenzl-ascent content whatsoever -- neither the semisimplicity of the lower level
+nor the nondegeneracy of the trace does any work in it.
+
+### Why that is a laundering risk and not a result
+
+This is exactly AGENTS.md §3b-cond rule 5 -- "the class axiomatises HYPOTHESES,
+not the conclusion. A class that carries the block's own conclusion as a field,
+with a theorem that merely projects it, is a vacuous self-assuming projection."
+An agent who supplies this bean's two stated obstacles and then "discharges
+WenzlTowerStep" would produce a sorry-free instance, satisfy the typeclass, and
+have proved nothing about ascent -- while appearing to close this bean and the
+qou-0cyu chain behind it.
+
+Independent corroboration that the class's implication is not a general truth:
+`QOU/QBeta/TraceNondegeneracyInsufficient.lean` proves nondegeneracy of a cyclic
+trace is INSUFFICIENT for semisimplicity, with a witness -- Q[eps]/(eps^2) under
+tau(a + b eps) = b is linear, cyclic, nondegenerate, has trace radical already
+{0}, and is not semisimple (dualNumber_not_isSemisimpleRing :99,
+nondegenerate_cyclic_trace_not_sufficient :117). So the quotient cannot repair it,
+and the ascent argument is where the content has to live.
+
+### What this bean still wants, restated
+
+The two obstacles are UNCHANGED in substance and both are in the class's
+PARAMETERS, not its field:
+
+  1. `[HeckeBraidedPresentationOfRank q rank Hn1 sigman1]` -- the braided
+     presentation restated for the quotient. Needed to even FORM the class type,
+     so it is not optional. Still absent for the quotient.
+  2. `(iota : Hn ->a[R] Hn1)` -- the tower inclusion descending TL_n -> TL_(n+1)
+     compatibly with the radical. qou-twwf's `incl` gives the H-level half;
+     the descent through pairing_descends / mem_radical_of_pairing_zero is open.
+     Brick 3 (#5853) has reflection, CONDITIONAL on HeckeConditionalExpectation,
+     which has no instance.
+
+So the honest position is sharper than before, and worse: the FIELD is now free,
+the PARAMETERS are the whole remaining task, and discharging the class once they
+are supplied would prove nothing. If the Wenzl ascent argument is wanted, it has
+to be stated as a theorem with the hypotheses actually consumed -- not as an
+instance of this class at these carriers.
+
+**Recommendation (my judgement, not a finding): do not create the instance.**
+Either restate the ascent as a theorem whose proof uses both hypotheses, or
+retire `semisimple_ascend` at these carriers as a target and keep only the
+HeckeGramFactorial general T_w-basis Gram determinant, which this bean has always
+named as its real open input and which nothing here touches.
