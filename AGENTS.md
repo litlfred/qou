@@ -3253,10 +3253,11 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **forty-six** rows (re-counted 2026-09-14; 46 landed the same
->   day in `81a8ac98b9`, after this line last said forty-five), and the groups
+>   catalogues **forty-seven** rows (re-counted 2026-09-27: ids 1..47, no gaps,
+>   no duplicates — row 47 landed in `f75b27e70f` and this line still said
+>   forty-six, which is the SEVENTH time it has gone stale), and the groups
 >   below split the FIRST THIRTY-FOUR seven ways — only the first group is
->   about conventions at all. **Rows 35-46 are NOT in this list**: 35 (the
+>   about conventions at all. **Rows 35-47 are NOT in this list**: 35 (the
 >   identifier's alphabet), 36 (the direction of the cast), 37 (the numerator
 >   is an applied argument), 38 (the value audit's variable resolution),
 >   39 (the freshness is on the wrong object), 40, which is the first row
@@ -3283,7 +3284,31 @@ Do not regress either.
 >   it.** Do not read an empty ledger, or a clean `--check-ledger`, as evidence
 >   about the corpus.
 >
->   **46** is the newest — **the PROOF TERM'S GRAMMAR**: `lean-self-assuming-audit.py`
+>   **47 is the newest, and it is the one most likely to bite you TODAY — the
+>   TOOL'S SYMLINK POLICY, not the query at all.** `folio-assistant/` in this
+>   repo IS a symlink (`-> ../folio-assistant`, created by
+>   `scripts/setup-folio-assistant.sh`), and GNU `find` does not traverse a
+>   symlinked start point without `-L`. So `find folio-assistant -name X`
+>   returns **zero for every X, silently, exit 0**, while `find -L …` and
+>   `cd folio-assistant && find . -name X` both return the hit: **a correct
+>   query over a present file reports absence.** Worse, the siblings disagree —
+>   `os.path.exists` and `grep -r` DO resolve the symlink, so a Python audit and
+>   a shell `find` over the same path give opposite answers and the `find` is
+>   the one that reads as corroboration.
+>
+>   **It is the SECOND instance and the first cost a retracted bean** (`qou-7br7`:
+>   two `find folio-assistant …` runs returned nothing and were read as evidence
+>   the library-ingest producer had been deleted; it had not). The repeat read the
+>   same silence as evidence that `gen-block-jsonld` / `gen-library-jsonld` — the
+>   generators **corpus-grep path 0 above names** — had been dropped in the
+>   platform restructure. Both were present the whole time, 11 KB and 28 KB.
+>   **The reusable half is about WHERE a trap is recorded**: the first instance
+>   lived in one Python script's docstring under `scripts/`, invisible unless you
+>   were editing that script, and was never added to this table — the file every
+>   agent is pointed at. A trap recorded only beside the code that hit it will be
+>   hit again. Landed in `f75b27e70f` (bean `qou-gkrt`).
+>
+>   **46** — **the PROOF TERM'S GRAMMAR**: `lean-self-assuming-audit.py`
 >   had a rule for a bare binder and one for a single qualified projection, and
 >   the character `⟨` occurred NOWHERE in the file, so every CONJUNCTIVE form of
 >   a self-assuming projection — Lean's anonymous constructor — was invisible.
