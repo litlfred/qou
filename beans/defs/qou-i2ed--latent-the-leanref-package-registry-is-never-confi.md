@@ -3,8 +3,9 @@
 title: 'LATENT: the lean.ref package registry is never configured in production, so 8 lookup sites can never resolve — masked today because every block also has a sibling .lean'
 status: todo
 type: bug
+priority: normal
 created_at: 2026-09-27T05:54:25Z
-updated_at: 2026-09-27T05:54:25Z
+updated_at: 2026-09-27T09:11:47Z
 ---
 
 
@@ -120,3 +121,86 @@ them are load-bearing for qou's own review discipline:
 `definition-lean-exists` is what `scripts/check-sidecars.sh` leans on, and
 `conjectural-propagation-audit.ts` is what enforces AGENTS.md §3b-cond —
 the rule separating a rigorous conditional result from an unproved conjecture.
+
+
+---
+
+## 2026-09-27 (later the same day) — 🛑 THIS BEAN WAS WRONG IN BOTH DIRECTIONS, and both corrections are mine
+
+Measured with [`/tmp` probe recorded below] against qou `main` content and the
+platform branch `claude/sci-owns-lean-grammar-probe-2026-09-27`:
+
+```
+distinct lean.refs in content/ : 1301
+resolved with NO layer          : 0
+resolved WITH layer installed   : 745
+  unchanged 556  gained 745  lost 0  moved 0
+```
+
+### Correction 1 — the title's "0 callers in production" is FALSE
+
+`configureLeanPackages` has **two** production callers. They are in **this**
+repo, not the platform:
+
+- `scripts/preload-registry.ts:25`
+- `scripts/run-validate.ts:27`
+
+Both pass `LEAN_PACKAGES` from qou's own `schemas/lean-packages.ts`, which is
+exactly the contract the platform docstring describes (*"a folio injects those
+with `configureLeanPackages`"*). The original measurement was
+`grep configureLeanPackages` **across the platform tree**, and it reported an
+absence there as an absence everywhere — the same error class as the `publish.yml`
+retraction on `qou-9olr` / `qou-w5av` the same morning, in a different tree.
+**`leanPackagesConfigured()` having zero callers is unaffected and still true.**
+
+### Correction 2 — and it is the sharper one: "LATENT, masked" understates it
+
+For every pipeline reached through those two entry points, the registry IS
+configured and resolution works. But **three consumers call
+`resolveCanonicalLean` while configuring nothing at all**, verified by reading
+their imports:
+
+| consumer | configures? |
+|---|---|
+| `scripts/check-base-ring.ts` | **no** |
+| `scripts/check-wall-side.ts` | **no** |
+| `content/pipeline/qa-agent-entry.ts:128` | **no** |
+
+In those three, resolution is not degraded — it is **total**: `0 of 1301`. The
+mechanism is provable from the code rather than merely measured: `byName` is
+empty until `configureLeanPackages`, so `leanPackageByName` returns `undefined`
+and `resolveCanonicalLean` returns at its first branch. That argument holds
+identically at pin `37a36ce9296`, so this is not an artifact of the branch the
+745 was measured on.
+
+So: **latent for the validator and the sweep; live and complete for those three
+checkers.** Say which, and never quote this bean's title.
+
+### What that costs, and what is NOT established
+
+`check-wall-side.ts`'s own header states the stake: a checker that *"scores a
+different file from the sweep it is meant to reproduce is worse than no checker
+script"*, citing 77/1191 blocks mis-resolved onto import-only aggregators and
+*"reporting PASS on live fails"*. Unresolved refs put these three on the sibling
+`.lean` instead of the library declaration named by `lean.ref` — and per
+AGENTS.md §0a a sibling may legitimately be a `True := trivial` shadow stub.
+
+**NOT measured, and needed before quoting a verdict impact:** how many of the
+745 have a sibling `.lean` at all. With a sibling, the script scores the wrong
+file; without one, it skips. Those are different failure modes and only the
+count separates them.
+
+**Also unexplained: 556 refs resolve to nothing even WITH the layer installed**
+(43 % of the corpus). Some of that is `qou-cu0a` working as designed — a ref
+naming a decl that exists nowhere correctly returns `undefined` rather than the
+library root. How much is its own question.
+
+### Status
+
+Stays **open**. The fix is two lines per consumer and it is gated on the
+platform pin advancing past `folio-assistant#…` (the `formal-ref` injection
+point), because after that commit the layer must be *installed*, not merely
+configured — see `qou-7ko6`. Mechanism made audible in the meantime:
+`schemas/formal-ref.ts` now emits a one-shot stderr warning when anything
+resolves against no installed layer, which is what printed above the numbers in
+this very measurement.
