@@ -3,18 +3,19 @@ Copyright (c) 2026 QOU contributors. All rights reserved.
 Released under Apache 2.0 license.
 -/
 import QOU.SchurWeyl.WtraceRadicalIdeal
+import QOU.MathlibExt.RingConLiftAlgHom
 
 /-!
 # `H_n(q)/rad(wtrace) ≅ ∏_{ℓ(λ) ≤ 2} M_{f^λ}`
 
-DRAFT — not yet compiled.  `WtraceRadicalIdeal` supplies the two halves of the first
-isomorphism theorem (`traceRadicalIdeal_eq_ker` and `twoRowProduct_surjective`); what is
-missing from the pinned Mathlib is the *lift out of the quotient*, so this file builds it.
+`WtraceRadicalIdeal` supplies the two halves of the first isomorphism theorem
+(`traceRadicalIdeal_eq_ker` and `twoRowProduct_surjective`); this file turns them into an
+`≃ₐ`, which the pinned Mathlib cannot do for a `RingCon` quotient.
 
-`Mathlib/GroupTheory/Congruence/Basic.lean` has `Con.lift` for **monoid** congruences;
-`Mathlib/RingTheory/Congruence/` has no ring analogue and
-`Mathlib/RingTheory/TwoSidedIdeal/` carries only `ker`, `mem_ker`, `ker_eq_bot`.  So
-`liftAlgHom` below is the general-purpose piece and belongs upstream eventually.
+The generic lift that gap calls for now lives in `QOU.MathlibExt.RingConLiftAlgHom`, split
+out under §7c because it mentions no `ℝ`.  🛑 **`traceQuotEquiv` below does not use it** —
+see `twoRowQuotHom`'s docstring for the instance collision that forces an inlined
+construction.  Do not read the split as a dependency.
 -/
 
 namespace QOU.SchurWeyl.WtraceRadicalQuotient
@@ -23,39 +24,6 @@ open QOU.Mathlib QOU.SchurWeyl QOU.SchurWeyl.SeminormalRep
 open QOU.SchurWeyl.WtraceRadicalTwoRow QOU.SchurWeyl.WtraceRadicalIdeal
 open QOU.QBeta.TemperleyLiebTower QOU.QBeta.MarkovTraceQuotient
 
-section Lift
-
-variable {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
-variable {B : Type*} [Ring B] [Algebra R B]
-
-/-- **An algebra hom out of a `RingCon` quotient.**  The ring-theoretic analogue of
-Mathlib's `Con.lift`, which exists only for monoid congruences. -/
-def liftAlgHom (c : RingCon A) (f : A →ₐ[R] B) (H : ∀ x y : A, c x y → f x = f y) :
-    c.Quotient →ₐ[R] B where
-  toFun := Quotient.lift (⇑f) H
-  map_one' := map_one f
-  map_mul' := by rintro ⟨a⟩ ⟨b⟩; exact map_mul f a b
-  map_zero' := map_zero f
-  map_add' := by rintro ⟨a⟩ ⟨b⟩; exact map_add f a b
-  commutes' r := f.commutes r
-
-@[simp] theorem liftAlgHom_coe (c : RingCon A) (f : A →ₐ[R] B)
-    (H : ∀ x y : A, c x y → f x = f y) (a : A) :
-    liftAlgHom c f H (a : c.Quotient) = f a := rfl
-
-@[simp] theorem liftAlgHom_mk (c : RingCon A) (f : A →ₐ[R] B)
-    (H : ∀ x y : A, c x y → f x = f y) (a : A) :
-    liftAlgHom c f H (c.mk' a) = f a := rfl
-
-/-- The lift is **injective** exactly when the congruence is the whole kernel. -/
-theorem liftAlgHom_injective (c : RingCon A) (f : A →ₐ[R] B)
-    (H : ∀ x y : A, c x y → f x = f y) (Hconv : ∀ x y : A, f x = f y → c x y) :
-    Function.Injective (liftAlgHom c f H) := by
-  rintro ⟨a⟩ ⟨b⟩ hab
-  have h : f a = f b := hab
-  exact Quotient.sound (Hconv a b h)
-
-end Lift
 
 section Application
 
@@ -77,7 +45,7 @@ theorem ringCon_iff_twoRowProduct_eq {q : ℝ} (hq0 : q ≠ 0)
 
 /-- The two-row projection, descended to the quotient.
 
-**Not** built from `liftAlgHom` above, and the reason is a live instance collision rather
+**Not** built from `RingConLiftAlgHom.liftAlgHom`, and the reason is a live instance collision rather
 than a stylistic choice: there are **two** `Algebra ℝ` instances on this type — Mathlib's
 `RingCon.instAlgebraQuotient` and the corpus's own
 `QBeta.MarkovTraceQuotient.instAlgebraTraceQuot` — so `liftAlgHom`'s output (which picks
@@ -86,7 +54,8 @@ different `AlgHom` types and do not unify.  Spelling the type as `.ringCon.Quoti
 not help: `instAlgebraTraceQuot` matches whenever the ideal *is* a `traceRadicalIdeal`.
 `TwoRowBlocks` adds a second, smaller mismatch of the same kind (`Pi.semiring` against
 `Pi.ring.toSemiring`).  So this is inlined against the corpus's instances; `liftAlgHom`
-stays as the general-purpose piece, which is what would go upstream.
+stays as the general-purpose piece in `QOU.MathlibExt.RingConLiftAlgHom`, which is
+what would go upstream.
 
 That duplication is a defect in its own right and is **not fixed here** — changing which
 instance the corpus uses is a behavioural change across every `quotMk` consumer, so it is
@@ -128,7 +97,13 @@ theorem twoRowQuotHom_bijective {q : ℝ} (hq0 : q ≠ 0)
 /-- **`H_n(q) / rad(wtrace) ≅ ∏_{ℓ(λ) ≤ 2} M_{f^λ}(ℝ)`**, for every `n`, at convention D.
 
 `WtraceRadicalIdeal` supplied the two halves of the first isomorphism theorem; the missing
-piece was a lift out of a `RingCon` quotient, which `liftAlgHom` above provides. -/
+piece was a lift out of a `RingCon` quotient.
+
+🛑 **Corrected:** an earlier version of this line credited `liftAlgHom` for supplying that
+piece.  It does not — `twoRowQuotHom`, which this is `AlgEquiv.ofBijective` of, is inlined
+against the corpus's algebra instances for the reason its own docstring gives, and
+`liftAlgHom` (now `QOU.MathlibExt.RingConLiftAlgHom.liftAlgHom`) is on no critical path
+here.  The two statements contradicted each other fifty lines apart. -/
 noncomputable def traceQuotEquiv {q : ℝ} (hq0 : q ≠ 0)
     (hq2 : GenericParameter.NotRootOfUnity q) (hq21 : q ^ 2 + 1 ≠ 0)
     (hgen : ∀ k : ℕ, 0 < k → (q ^ 2 : ℝ) ^ k ≠ 1) (n : ℕ) :
