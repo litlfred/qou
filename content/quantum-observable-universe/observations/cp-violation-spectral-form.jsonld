@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/conj-cp-violation-spectral-form",
   "@type": [
-    "folio:Conjecture",
+    "folio-assistant-core:Conjecture",
     "doco:Section"
   ],
   "label": "conj:cp-violation-spectral-form",
@@ -21,7 +21,7 @@
     "complex-substrate",
     "ckm-phase"
   ],
-  "leanRef": "qou:QOU.Observations.cp_violation_spectral_form",
+  "leanRef": "qou:QOU.Observations.CPViolationSpectralForm",
   "text": "cp-violation-spectral-form.md",
   "leanSource": "cp-violation-spectral-form.lean",
   "provenance": "authored"

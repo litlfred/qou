@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/rem-qstar-decay-sector-q0",
   "@type": [
-    "folio:Remark",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
   "label": "rem:qstar-decay-sector-q0",

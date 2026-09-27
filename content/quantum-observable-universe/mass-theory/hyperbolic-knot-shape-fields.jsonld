@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prop-hyperbolic-knot-shape-fields",
   "@type": [
-    "folio:Proposition",
+    "folio-assistant-core:Proposition",
     "doco:Section"
   ],
   "label": "prop:hyperbolic-knot-shape-fields",
@@ -13,7 +13,8 @@
   ],
   "cites": [
     "references/thurston1978",
-    "references/neumann-zagier1985"
+    "references/neumann-zagier1985",
+    "references/martelli2016"
   ],
   "tags": [
     "hyperbolic-volume",

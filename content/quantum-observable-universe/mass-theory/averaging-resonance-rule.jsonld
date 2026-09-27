@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/thm-averaging-resonance-rule",
   "@type": [
-    "folio:Theorem",
+    "folio-assistant-core:Theorem",
     "doco:Section"
   ],
   "label": "thm:averaging-resonance-rule",

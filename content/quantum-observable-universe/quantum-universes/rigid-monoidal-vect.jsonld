@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/ex-rigid-monoidal-vect",
   "@type": [
-    "folio:Example",
+    "folio-assistant-core:Example",
     "doco:Section"
   ],
   "label": "ex:rigid-monoidal-vect",

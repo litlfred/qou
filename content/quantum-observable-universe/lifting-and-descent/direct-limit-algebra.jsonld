@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/def-direct-limit-algebra",
   "@type": [
-    "folio:Definition",
+    "folio-assistant-core:Definition",
     "doco:Section"
   ],
   "label": "def:direct-limit-algebra",
@@ -13,7 +13,8 @@
     "papers/quantum-observable-universe/blocks/ex-c-quantum-observable-universe"
   ],
   "examples": [
-    "papers/quantum-observable-universe/blocks/rem-jet-shell"
+    "papers/quantum-observable-universe/blocks/rem-jet-shell",
+    "papers/quantum-observable-universe/blocks/ex-direct-limit-algebra-su2"
   ],
   "tags": [
     "direct-limit",

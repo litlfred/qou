@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prf-global-gluing",
   "@type": [
-    "folio:Proof",
+    "folio-assistant-core:Proof",
     "doco:Section"
   ],
   "label": "prf:global-gluing",
@@ -13,7 +13,8 @@
   ],
   "cites": [
     "references/yekutieli2008",
-    "references/yekutieli2009"
+    "references/yekutieli2009",
+    "references/yekutieli2015-twisted-dq"
   ],
   "text": "global-gluing-proof.md",
   "provenance": "authored"

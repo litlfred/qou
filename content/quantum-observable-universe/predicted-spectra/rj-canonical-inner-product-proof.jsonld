@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prf-rj-canonical-inner-product",
   "@type": [
-    "folio:Proof",
+    "folio-assistant-core:Proof",
     "doco:Section"
   ],
   "label": "prf:rj-canonical-inner-product",

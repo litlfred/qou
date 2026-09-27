@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/conj-gs-graded-markov-trace-existence",
   "@type": [
-    "folio:Conjecture",
+    "folio-assistant-core:Conjecture",
     "doco:Section"
   ],
   "label": "conj:gs-graded-markov-trace-existence",

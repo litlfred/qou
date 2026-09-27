@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prop-transfer-matrix-level-independence",
   "@type": [
-    "folio:Proposition",
+    "folio-assistant-core:Proposition",
     "doco:Section"
   ],
   "label": "prop:transfer-matrix-level-independence",
@@ -23,7 +23,7 @@
     "markov-trace",
     "level-independence"
   ],
-  "leanRef": "qou:QOU.transfer_matrix_level_independence",
+  "leanRef": "qou:QOU.transfer_matrix_level_independence_of_derived",
   "text": "transfer-matrix-level-independence.md",
   "leanSource": "transfer-matrix-level-independence.lean",
   "provenance": "authored"

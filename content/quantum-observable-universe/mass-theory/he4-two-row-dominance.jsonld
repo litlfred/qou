@@ -2,12 +2,12 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prop-he4-two-row-dominance",
   "@type": [
-    "folio:Proposition",
+    "folio-assistant-core:Proposition",
     "doco:Section"
   ],
   "label": "prop:he4-two-row-dominance",
   "kind": "proposition",
-  "title": "Two-row stratum carries $\\ge 80\\%$ of $\\mathrm{tr}_M(\\beta_{^4\\mathrm{He}})$ at $q_0$ (86.6\\% empirically)",
+  "title": "Two-row stratum carries $\\ge 80\\%$ of $\\mathrm{tr}_M(\\beta_{^4\\mathrm{He}})$ at $q_0$ (exactly $1$ empirically)",
   "uses": [
     "papers/quantum-observable-universe/blocks/def-two-row-stratum"
   ],

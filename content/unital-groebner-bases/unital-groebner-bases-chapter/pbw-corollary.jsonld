@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/unital-groebner-bases/blocks/cor-pbw",
   "@type": [
-    "folio:Corollary",
+    "folio-assistant-core:Corollary",
     "doco:Section"
   ],
   "label": "cor:pbw",

@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/ex-quantum-universe-su2",
   "@type": [
-    "folio:Example",
+    "folio-assistant-core:Example",
     "doco:Section"
   ],
   "label": "ex:quantum-universe-su2",
@@ -12,7 +12,14 @@
     "papers/quantum-observable-universe/blocks/def-frobenius-pairing",
     "papers/quantum-observable-universe/blocks/ex-rigid-monoidal-vect"
   ],
+  "foreshadows": [
+    "papers/quantum-observable-universe/blocks/prop-braiding-induced-ordering",
+    "papers/quantum-observable-universe/blocks/ex-su2-characters-and-quantum-dimension"
+  ],
   "interprets": "papers/quantum-observable-universe/blocks/def-quantum-universe",
+  "cites": [
+    "references/kassel1995"
+  ],
   "tags": [
     "su2",
     "quantum"

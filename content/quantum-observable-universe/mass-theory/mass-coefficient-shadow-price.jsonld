@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prop-mass-coefficient-shadow-price",
   "@type": [
-    "folio:Proposition",
+    "folio-assistant-core:Proposition",
     "doco:Section"
   ],
   "label": "prop:mass-coefficient-shadow-price",
@@ -10,7 +10,8 @@
   "title": "Mass-formula coefficients as shadow prices of the Frobenius positivity constraints",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-mass-categorical-descent",
-    "papers/quantum-observable-universe/blocks/prop-wigner-coefficient-derivation"
+    "papers/quantum-observable-universe/blocks/prop-wigner-coefficient-derivation",
+    "papers/quantum-observable-universe/blocks/prop-operator-selection-lp"
   ],
   "tags": [
     "mass-formula",

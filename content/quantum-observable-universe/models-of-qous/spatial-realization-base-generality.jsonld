@@ -1,0 +1,36 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-spatial-realization-base-generality",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:spatial-realization-base-generality",
+  "kind": "remark",
+  "title": "The base of the spatial realisation: the properties used and the case excluded",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-spatial-realization-functor",
+    "papers/quantum-observable-universe/blocks/def-categorical-point",
+    "papers/quantum-observable-universe/blocks/def-categorical-reeb"
+  ],
+  "foreshadows": [
+    "papers/quantum-observable-universe/blocks/rem-hkr-theorem",
+    "papers/quantum-observable-universe/blocks/rem-yekutieli-setting-explicit"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-spatial-realization-functor",
+  "cites": [
+    "references/hartshorne-1977",
+    "references/hkr-1962",
+    "references/orlik-wagreich1971"
+  ],
+  "tags": [
+    "spatial-realization",
+    "smoothness",
+    "kahler-differentials",
+    "base-manifold",
+    "generality",
+    "singular-base"
+  ],
+  "text": "spatial-realization-base-generality.md",
+  "provenance": "authored"
+}

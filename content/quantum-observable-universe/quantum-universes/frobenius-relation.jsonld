@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prop-frobenius-relation",
   "@type": [
-    "folio:Proposition",
+    "folio-assistant-core:Proposition",
     "doco:Section"
   ],
   "label": "prop:frobenius-relation",
@@ -15,7 +15,8 @@
     "papers/quantum-observable-universe/blocks/prf-frobenius-relation"
   ],
   "examples": [
-    "papers/quantum-observable-universe/blocks/ex-frobenius-su2"
+    "papers/quantum-observable-universe/blocks/ex-frobenius-su2",
+    "papers/quantum-observable-universe/blocks/ex-frobenius-relation-su2"
   ],
   "tags": [
     "category-theory",

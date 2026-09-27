@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/tbl-cl2-pentagon-and-faddeev-partial-table1-data",
   "@type": [
-    "folio:Table",
+    "folio-assistant-core:Table",
     "doco:Table"
   ],
   "label": "tbl:cl2-pentagon-and-faddeev-partial-table1-data",

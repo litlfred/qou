@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/lem-pair-skein-mass-formula",
   "@type": [
-    "folio:Lemma",
+    "folio-assistant-core:Lemma",
     "doco:Section"
   ],
   "label": "lem:pair-skein-mass-formula",

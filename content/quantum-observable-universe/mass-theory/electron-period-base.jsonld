@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prop-electron-period-base",
   "@type": [
-    "folio:Proposition",
+    "folio-assistant-core:Proposition",
     "doco:Section"
   ],
   "label": "prop:electron-period-base",
@@ -15,7 +15,7 @@
   "proofs": [
     "papers/quantum-observable-universe/blocks/prf-electron-period-base"
   ],
-  "leanRef": "qou:QOU.Mass.electron_period_is_base",
+  "leanRef": "qou:QOU.Mass.second_period_contains_me",
   "text": "electron-period-base.md",
   "leanSource": "electron-period-base.lean",
   "provenance": "authored"

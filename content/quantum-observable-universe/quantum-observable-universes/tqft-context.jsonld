@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/rem-tqft-context",
   "@type": [
-    "folio:Remark",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
   "label": "rem:tqft-context",
@@ -17,6 +17,7 @@
     "references/baez1995",
     "references/freed2010",
     "references/kock2004",
+    "references/li2026-two-sphere",
     "references/lurie2009",
     "references/turaev2010",
     "references/witten1988"

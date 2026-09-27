@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-body-number-expansion-classical-floor",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:body-number-expansion-classical-floor",
+  "kind": "remark",
+  "title": "The body-number expansion has a classical floor: no power counting in $q - 1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-subset-cumulant-recursion",
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-frobenius-selection"
+  ],
+  "foreshadows": [
+    "papers/quantum-observable-universe/blocks/rem-brane-tower-q-laplacian-decay-interpretation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-subset-cumulant-recursion",
+  "tags": [
+    "cluster-expansion",
+    "cumulant",
+    "mayer",
+    "ursell",
+    "power-counting",
+    "effective-field-theory",
+    "classical-limit",
+    "scope-b"
+  ],
+  "leanRef": "qou:QOU.MassTheory.b3corpus_classical",
+  "text": "body-number-expansion-classical-floor.md",
+  "provenance": "authored"
+}

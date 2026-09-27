@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/cor-mass-identity-C",
   "@type": [
-    "folio:Corollary",
+    "folio-assistant-core:Corollary",
     "doco:Section"
   ],
   "label": "cor:mass-identity-C",
