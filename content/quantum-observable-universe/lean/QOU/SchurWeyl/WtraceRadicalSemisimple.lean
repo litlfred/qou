@@ -47,11 +47,38 @@ side of the dimension match that a `TL_n(δ)` identification would need.
 
 🛑 **It is not that identification, and a dimension match is not an isomorphism of algebras.**
 The identification needs `⟨U_i U_j U_i − v²·U_i⟩ = rad(tr_M)`, the open item
-`QOU.MathlibExt.HeckeToTemperleyLieb` records; nothing here closes it.  Nor is the Catalan
-identity `Σ_{ℓ(λ) ≤ 2} (f^λ)² = catalan (n+1)` proved anywhere in this corpus at general `n` —
-`QOU.MathlibExt.TemperleyLiebNormalForm` has it as `card_zero … card_six`, i.e. by `decide` at
-seven values, which is not `n`.  Both gaps are stated here precisely so the dimension is not
-over-read.
+`QOU.MathlibExt.HeckeToTemperleyLieb` records; nothing here closes it.
+
+### 🛑 CORRECTED — the Catalan identity IS proved at general `n`; the blocker is the HOOK LENGTH FORMULA
+
+An earlier version of this docstring said the identity `Σ_{ℓ(λ) ≤ 2} (f^λ)² = catalan (n+1)` is
+"proved nowhere in this corpus at general `n`", citing `TemperleyLiebNormalForm`'s
+`card_zero … card_six` as `decide` at seven values.  **That cited a different identity.**  Those
+seven are the *planar-diagram count* `Fintype.card (NormalIdx m) = catalan (m+1)`.  The
+sum-of-squares identity is proved **at general `n`, sorry-free**:
+`QOU.Mathlib.ballot_sq_sum_catalan` (reflection + Vandermonde — no induction, no tableau) and
+`QOU.Mathlib.dimHLF_two_row_sq_sum`.  Bean `qou-7wf6`, PR #5360.
+
+So what blocks `finrank_traceQuot = catalan (n+1)` is **neither** of those, but the two bridges
+between them:
+
+* **The hook length formula, and this is the real gap.**  `dimHLF l := (sz l).factorial /
+  prodHooks l` is the hook-length *formula*, while `finrank_traceQuot` counts
+  `Fintype.card (StandardYoungTableau …)`.  Identifying them is the Frame–Robinson–Thrall
+  theorem, which is **absent from Mathlib** (`Mathlib/Combinatorics/Young/` carries no such
+  result and not even `numStandardYoungTableaux`) and is proved in this corpus only for
+  `n ≤ 4` — `QOU.Mathlib.SYTEnum.numStandardYoungTableaux_eq_dimHLF_le4`, whose hypothesis is
+  literally `hmem : l ∈ shapesLE4`, discharged by `decide` — plus `n = 5` in
+  `QOU.Mathlib.SYTFrobeniusDim`.
+* **A reindexing** of `TwoRowIdx n` by second-row length, to meet
+  `dimHLF_two_row_sq_sum`'s `∑ k ∈ Finset.range (n / 2 + 1)`.  Bounded finite combinatorics.
+
+Consequence worth stating plainly: `QOU.Mathlib.TwoRowDimCatalan`'s own module docstring
+describes `dimHLF_two_row_sq_sum` as *"a statement about actual standard-Young-tableau counts,
+not about binomial coefficients"*.  Under `dimHLF`'s definition that is an **over-claim at
+general `n`** — it is a statement about hook-length-formula values, and their identification
+with actual counts is exactly the `n ≤ 4` bridge above.  Flagged, not edited: that file is not
+in this tranche.
 
 ## The Mathlib position, measured
 
