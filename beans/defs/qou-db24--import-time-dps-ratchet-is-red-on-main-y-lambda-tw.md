@@ -1,11 +1,11 @@
 ---
 # qou-db24
 title: 'import-time dps ratchet is RED on main: y_lambda_two_row_cap_gate.py builds mpf(''1e-30'') before dps is raised'
-status: todo
+status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-28T15:18:36Z
-updated_at: 2026-08-28T15:21:39Z
+updated_at: 2026-09-27T06:17:41Z
 ---
 
 ## Found 2026-08-28, incidentally, on a clean main tree
@@ -92,3 +92,96 @@ run's per-gate counts were unreliable. Both reds were then re-established by
 running the two audits individually against a tree whose only change was one
 unrelated file, and each named its offending file explicitly — which is the
 evidence quoted above, not the racing run.
+
+
+## 2026-09-27 — TRIAGED 7-for-7. Not fixed, and two would be WRONG to fix.
+
+Picked up because this bean was `todo` and unclaimed. Measured on clean
+`origin/main` (`aedd199fc0`) with `computations/mpf_import_time_dps_audit.py`.
+
+**The specific site this bean names is GONE.** `y_lambda_two_row_cap_gate.py:47`
+(`mpf('1e-30')`) does not appear in a fresh run — it was fixed. The **class**
+recurred in different files, so the bean is stale in its instance and live in its
+subject.
+
+**The counts have moved a long way, and mostly the right way:**
+
+| | 2026-08-28 (this bean) | 2026-09-27 |
+|---|---|---|
+| proven lossy (literal) | 1 | **7** |
+| baseline literal / expr | 185 / 103 | 185 / 103 |
+| now literal / expr | — | **7 / 26** (−178 / −77) |
+| NEW files not baselined | 1 | **9** |
+
+So the ratchet has **drained 185 → 7** on literals. The RED is the
+`new_not_baselined` arm (9 files), exactly as this bean describes — not a
+regression in the baselined population.
+
+### 🛑 This bean's stated REASON is wrong, and the correction matters
+
+It argues *"For a bare tolerance like `1e-30` the practical impact is likely nil
+— **the value is exactly representable**"*. **Measured: it is not.** A negative
+power of ten is not a dyadic rational, so it has no exact binary form at any
+precision. dps-15 vs dps-70 relative difference, all seven:
+
+    -2.0693425728   5.457e-17      1e-40      7.071e-17
+    0.577           7.389e-17      4.0e-4     4.792e-17
+    1.82306787      1.905e-17      0.0565947  3.912e-17
+    1e-25           3.849e-17
+
+**Uniformly ~1e-17** — which is what a binary constant pinned at dps 15 costs,
+and it is the same for a "round" literal as for an 11-digit one. The conclusion
+(impact nil) survives; the reason does not, and the reason is what a later agent
+would reuse.
+
+### Why the impact IS nil here — the per-site determination
+
+All seven are **comparison thresholds or deliberately-quoted reference values.
+None is an input to a computed quantity.** Four say so in their own comment:
+
+| site | literal | role |
+|---|---|---|
+| `qbeta/qbeta_ck_c5_slot_and_size_mismatch_probe.py:94` | `-2.0693425728` | `C3_PROTON`, `# recorded extraction; see Caveat` |
+| `qbeta/qbeta_ck_c5_slot_and_size_mismatch_probe.py:95` | `0.577` | `AGENTS_QUOTED_OMITTED_TERM`, `# ppb, as written into AGENTS.md` |
+| `probes/beta_ew_n3_second_trace_probe.py:71` | `1.82306787` | `COT_THETA_W_CODATA` — *"the target the two consumer files compare against, **not as an input to anything computed here**"* |
+| `probes/molien_blast_radius_remainder_triage_probe.py:79` | `1e-25` | `Q_NEAR_ONE = 1 + 1e-25`, a probe point |
+| `probes/uic_sign_decomposition_probe.py:99` | `1e-40` | `ZERO`, a vanishing tolerance |
+| `qbeta/qbeta_fibre_unit_circle_opens_route5_probe.py:102` | `4.0e-4` | `TARGET_OWN_UNCERTAINTY` — experimental gap, PR #6688, TWO sig figs |
+| `qbeta/qbeta_required_phase_target_provenance_probe.py:79` | `0.0565947` | `QUOTED_TARGET`, `# as quoted by HolonomySpectrumSignObstruction` |
+
+In every case the consumer is a comparison whose own tolerance is many orders
+looser than 1e-17. **No number in the corpus is wrong because of these seven.**
+
+### 🛑 TWO of the seven would be ACTIVELY WRONG to "fix"
+
+- **`0.577`** *is the claim under adjudication*, quoted verbatim from AGENTS.md
+  so the probe can test it. Re-deriving it to full precision would destroy the
+  probe's subject — it exists to check a figure *as written*.
+- **`4.0e-4`** is an experimental uncertainty carried at its published two
+  significant figures. Extending it implies precision the measurement lacks.
+
+So a blanket "raise these to `set_compute_dps()`" pass is not a drain, it is a
+corruption of two probes. Whoever takes this must go site by site.
+
+### Why I did not fix the other five
+
+The 2026-09-07 override's exemption 1 tests whether a change makes a number
+*more correct* or a wrong number *impossible*. Measured, none of the five does:
+the consumers are comparisons and the 1e-17 pinning cannot move a verdict. That
+leaves it as tidying-near-a-number, which the override names as **not** exempt,
+and as a per-file basis determination, which it also names. So: measured,
+reported, **not swept**. Bean stays open.
+
+### What would actually clear the RED
+
+The red arm is `new_not_baselined`, so the options are (i) baseline the 9 new
+files — but **baselines drain, never grow**, so no; (ii) fix the five benign
+sites site-by-site and leave the two quoted ones with an explicit
+`# float64-intentional`-style marker if the audit grows one; or (iii) teach the
+audit that a module-scope `mpf("<literal>")` assigned to an UPPER_CASE name
+whose comment marks it as quoted/target/tolerance is the corpus's declared
+convention for a reference value, not a defect. **(iii) is my judgement of the
+right answer** — the corpus has a consistent convention here and the audit does
+not know it — but it is a detector change on a blocking gate, which is the
+owner's call, and I have just been wrong once this session about narrowing a
+blocking gate.
