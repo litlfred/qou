@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T17:57:00Z
-updated_at: 2026-09-27T05:35:27Z
+updated_at: 2026-09-27T10:21:10Z
 ---
 
 Successor to qou-vndn, whose premise ("Hecke radical vanishing") is refuted at
@@ -541,3 +541,88 @@ Either restate the ascent as a theorem whose proof uses both hypotheses, or
 retire `semisimple_ascend` at these carriers as a target and keep only the
 HeckeGramFactorial general T_w-basis Gram determinant, which this bean has always
 named as its real open input and which nothing here touches.
+
+
+## 2026-09-27 — REFRAMED. The class has ZERO consumers, and brick 4's Gram conclusion is stale.
+
+Commit 4af39db07c on claude/two-row-count-eq-dimhlf-2026-09-27 (PR #7481).
+Bean stays open (rule 13a) -- see the bottom for what is actually still open.
+
+I set out to do what this bean asks -- restate the ascent as a theorem that
+consumes both hypotheses instead of the vacuous instance #7470 declined to create
+-- and the corpus-grep turned up two facts that change what the bean is about.
+
+### 1. Nothing depends on WenzlTowerStep
+
+Measured over the whole Lean tree, 27 occurrences:
+
+    1   class definition          HeckeTowerBasicConstruction:284
+    2   discharge targets         HeckeBraidedPresentationRank:303 (trivial), :358 (regTrace)
+    24  prose / docstring mentions
+    0   instance-hypothesis positions
+
+`grep -rn '\[WenzlTowerStep' content/ --include=*.lean` returns NOTHING, and
+`semisimple_ascend` is never projected outside the file holding the two
+discharges. Yet FIVE files name "a WenzlTowerStep instance at the Markov trace" as
+an outstanding blocker: HeckeColimitRadicalDescent:41, TraceNondegeneracyInsufficient:11,
+TLTowerRadicalDescent:38, MarkovTraceQuotient:264, HeckeH4Semisimple:123.
+
+An instance cannot unblock a consumer that does not exist. So obtaining one buys
+nothing until something is written that actually takes `[WenzlTowerStep ...]` as a
+hypothesis -- which is a different task, and arguably the one worth scoping.
+
+### 2. Brick 4's counterexample stands; its NEXT sentence does not
+
+TraceNondegeneracyInsufficient's result -- nondegeneracy of a trace does not imply
+semisimplicity, by the dual numbers Q[eps]/(eps^2) with tau(a+b eps) = b -- is
+UNTOUCHED and remains a scope-(b) structural exclusion.
+
+What is stale is what it concludes from that: "something must supply the regular
+trace form's nondegeneracy, and in the Hecke setting that is exactly
+HeckeGramFactorial's open input -- the general T_w-basis Gram determinant".
+
+For `IsSemisimpleRing` at the Hecke carrier, NOTHING need supply it.
+`QOU.SchurWeyl.isSemisimpleRing_hecke_generic` gives `IsSemisimpleRing (Hecke K q
+q^-1 n)` at EVERY n, over any CharZero field, under q /= 0 and NotRootOfUnity q
+alone. It routes through `heckeWedderburn` -- a Wedderburn block decomposition --
+with no trace form and no Gram determinant anywhere in the cone.
+
+VERIFIED, not read off the docstring: both declarations check
+[propext, Classical.choice, Quot.sound], no sorryAx. Worth stressing because that
+file's docstring asserts "sorry-free" three times and HeckeWedderburnGeneral.lean
+has zero grep hits for `sorry` -- neither of which is the gate. The axiom check is.
+
+### The consequence, stated in Lean rather than left as prose
+
+    QOU.Machinery.HeckeRank.wenzlTowerStep_vacuous_of_isSemisimpleRing
+      (hss : IsSemisimpleRing Hn1) : WenzlTowerStep R q rank Hn Hn1 sigma_n1 iota trn1
+
+any rank, any carrier, discharged by ignoring both hypotheses -- the general form
+of the existing `wenzlTowerStep_H2_H3_trivial`. Its docstring is marked 🛑 as NOT
+the Wenzl ascent and never to be cited as one. Combined with
+`WtraceRadicalSemisimple.isSemisimpleRing_traceQuot_of_hecke` (#7470) this is
+exactly why no instance was created at the wtrace quotient carrier: AGENTS.md
+§3b-cond rule 5. `wenzlTowerStep_regTrace` stays the contrasting case where the
+nondegeneracy hypothesis genuinely does the work.
+
+### NOT claimed
+
+That the Gram determinant is unneeded generally. It may well remain the binding
+constraint for the ideal equality <U_i U_j U_i - v^2 U_i> = rad(tr_M), which is
+the live frontier (qou-jb7k, qou-0cyu) and a different question from
+semisimplicity. Corrected only: the Gram determinant is not what stands between
+this corpus and IsSemisimpleRing of a Hecke algebra.
+
+### WHAT IS STILL OPEN -- why this bean is not closed
+
+1. The genuine ascent, as an open conjecture: does semisimplicity ascend along a
+   nondegenerate MARKOV trace at a carrier where the conclusion is NOT already
+   known? Untouched. Rule 13a alone keeps this bean open.
+2. OWNER DECISION, not mine: whether `WenzlTowerStep` should be retired outright.
+   It is a conjecture class with two discharges and no consumers, and five files
+   cite it as a blocker. Retiring it means editing those five prose sites and
+   deleting the class; keeping it means it stays as a statement of an open
+   question that nothing yet uses. I have NOT touched the five sites beyond the
+   one correction above, and have not proposed a retirement -- the 2026-09-07
+   override makes that an ask, and `CoxeterCarrierEquiv.lean:73` shows the corpus
+   does sometimes prefer retiring over repairing, so it is a real choice.
