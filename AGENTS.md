@@ -5947,53 +5947,86 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `deploy/` | Remote MCP server deployment (Docker Compose, auth, auto-update) |
 | `skills-config.json` | Skill package subscriptions |
 
-## Build output (gh-pages)
+## Build output (gh-pages) — 🛑 THE RENDERED SITE IS DEPRECATED, AND THIS SECTION DESCRIBED THREE WORKFLOWS THAT DO NOT EXIST
 
-Three workflows deploy to the `gh-pages` branch. GitHub Pages must be
-configured to **deploy from the `gh-pages` branch** (not "GitHub Actions").
+**Owner, 2026-09-27: *"depcecate/remove the githubpage"*.** The rendered
+GitHub Pages site at `litlfred.github.io/qou/` is deprecated. The `gh-pages`
+**branch is NOT removed** — it stays as a file store, and every
+`github.com/.../blob/gh-pages/...` link in `README.md` keeps working. The
+deprecation stops at the rendering.
 
-### Workflow → artifact mapping
+**This section previously opened *"Three workflows deploy to the `gh-pages`
+branch"* and tabulated `blueprint.yml`, `lean_ci.yml` and `publish.yml`.
+Measured 2026-09-27: all three are ABSENT from `.github/workflows/`.** So the
+one passage telling an agent where published output comes from named three
+files that do not exist, and an agent sent to fix a broken artifact had nowhere
+to look. (AGENTS.md already said *"There is **no** `lean_ci.yml` in the tree"*
+in the Phase-4 gate table — the two passages contradicted each other.)
 
-| Workflow | Artifacts deployed to gh-pages |
-|----------|-------------------------------|
-| `blueprint.yml` | `blueprint/` (interactive dependency graph), `blueprint.pdf`, `docs/` (doc-gen4 API), `axiom-report.txt`, manifests |
-| `lean_ci.yml` | `lean/content/<paper>/lean/` (per-paper source browsers for QOU/UGB/Fred2005), `lean/.../docs/`, `axiom-report.txt`, `dependency-graph.svg`, manifests |
-| `publish.yml` | `papers/<dir>/` (per-paper viewers), `index.html` (folio), `schema-docs/` (TypeDoc), `drafts/` (feature branches) |
+### What actually runs on qou — measured, per workflow, not read off YAML
 
-### Expected gh-pages contents
+All **14** workflows are `workflow_dispatch`-only (owner directive 2026-06-30,
+Actions billing). Run counts and last conclusions:
 
-| Path | Source | Description |
-|------|--------|-------------|
-| `index.html` | publish.yml | Folio landing page (links to all papers) |
-| `papers/<dir>/index.html` | publish.yml | Per-paper viewer with paper/visualizer toggle |
-| `papers/<dir>/paper.html` | publish.yml | Enhanced HTML paper |
-| `papers/<dir>/<dir>.pdf` | publish.yml | Compiled paper PDF |
-| `papers/<dir>/<dir>.md` | publish.yml | Pandoc Markdown |
-| `quantum-observable-universe.pdf` | publish.yml | Backward-compat copy of first paper PDF |
-| `blueprint/` | blueprint.yml | Interactive dependency graph (plasTeX HTML) |
-| `blueprint.pdf` | blueprint.yml | Print blueprint |
-| `docs/` | blueprint.yml | doc-gen4 API documentation with hover definitions |
-| `content/quantum-observable-universe/lean/` | lean_ci.yml | Raw Lean source files |
-| `content/quantum-observable-universe/lean/docs/` | lean_ci.yml | doc-gen4 or fallback source browser |
-| `axiom-report.txt` | blueprint.yml / lean_ci.yml | sorry audit, axiom dependencies |
-| `dependency-graph.svg` | lean_ci.yml / publish.yml | Visual proof dependency graph |
-| `schema-docs/` | publish.yml | TypeDoc content-object type reference |
-| `proof-objects.json` | all | Formalization status manifest |
-| `glossary.json` | all | Semantic glossary |
-| `mapping.json` | all | Narrative-to-Lean identifier map |
-| `drafts/<branch>/` | publish.yml | Feature branch preview builds |
+| workflow | runs | last conclusion | date |
+|---|---:|---|---|
+| `docs-site` | 5 | **success** | 2026-09-26 |
+| `kg-vocabulary-gate` | 2 | failure | 2026-09-27 |
+| `build` | 3531 | failure | **2026-06-30** |
+| `lean-content-siblings` | 1216 | failure | **2026-06-30** |
+| `witness-staleness` | 953 | failure | **2026-06-30** |
+| `doc-gen4` *(now deprecated)* | 461 | failure | **2026-06-30** |
+| `lean-axiom-guard` | **0** | never ran | — |
+| `lp-dual-gate` | **0** | never ran | — |
+| `probe-float64-gate` | **0** | never ran | — |
+| `lean-orphan-gate` | **0** | never ran | — |
+| `word-provenance-gate` | **0** | never ran | — |
+| `lake-cache-refresh` | **0** | never ran | — |
 
-### Error resilience
+Two facts worth internalising. **Four high-volume workflows last failed on the
+same day**, 2026-06-30 — they were not merely switched to dispatch-only, their
+final run *failed* and then the triggers were removed. And **six workflows have
+never run at all**, among them `lp-dual-gate`, `probe-float64-gate`,
+`word-provenance-gate` and `lean-axiom-guard`, which this document describes as
+enforcement. A gate with zero runs is documentation, which is the same lesson
+§"QA is agent-owned" records for `precision-gates.sh`.
 
-All workflows use `continue-on-error: true` at critical points so partial
-output is still deployed even when the Lean build fails:
+**`docs-site` is the only workflow that has succeeded since 2026-06-30 — and
+it has never published.** Its gh-pages write was gated `if: inputs.publish`
+with `default: false`; `git ls-tree` on the branch head confirms **no `docs/`
+directory has ever existed there**. That step is now removed and the workflow
+uploads an artifact only.
 
-- **Lean build fails** → proof status updates, axiom report generates, source
-  browser deploys.  `proof-objects.json` records which declarations errored.
-- **doc-gen4 fails** → `lean_ci.yml` generates a fallback HTML source browser.
-- **Blueprint compilation fails** → other artifacts (manifests, axiom report)
-  still deploy.
-- **latexdiff fails** → main PDF still publishes; diff PDF is skipped.
+**There is no STAGING pipeline on qou.** The word `STAGING` in `docs-site.yml`
+names a local directory used for front-matter injection. The
+`litlfred.github.io/folio-assistant/STAGING/<branch>/` previews that appear on
+PR comments are the **platform** repo's, and that repo is push-triggered
+because its billing is not in this state.
+
+### What is on the branch, and how stale
+
+`gh-pages` head is **2026-07-08** — *"deploy: update PDF with \pm error
+formatting"*. Contents: `lean/` (~9,500 files), `drafts/` (~7,300),
+`rust-api/` (783), `schema-docs/` (206), `python-api/` (20), `papers/` (14),
+plus `qou.pdf`, `main.pdf`, `paper.html`, `visualizer.html`, `axiom-report.txt`,
+`dependency-graph.svg`, `proof-objects.json`, `glossary.json`. Every producer of
+every one of those is absent or dead, so **the snapshot cannot be refreshed** —
+treat it as an archive, never as current output.
+
+### Deprecated, and where it went
+
+`doc-gen4.yml` is moved to
+[`fsh-guts/deprecated/workflows/doc-gen4.yml`](fsh-guts/deprecated/workflows/doc-gen4.yml)
+— its only job was `peaceiris/actions-gh-pages` into `gh-pages/lean`, and it has
+not succeeded since 2026-06-30. **The `doc-gen4` Lake dependency is a different
+thing and stays**: it is in `lake-manifest.json` and `scripts/lean-build-bg.sh`,
+and is the Lean doc generator itself rather than a publishing workflow. Do not
+conflate them.
+
+**The rule for agents.** Do not write "published at `litlfred.github.io/qou/…`"
+anywhere, and do not restore a `push:` trigger to make any of this automatic.
+If a rendered artifact is genuinely wanted, that is a new decision about a new
+pipeline, not a repair of this one.
 
 ## Axiomatization is NOT a Proof (Anti-Laundering Rule)
 

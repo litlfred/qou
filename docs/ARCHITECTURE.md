@@ -187,7 +187,7 @@ The CI [`lean_ci.yml`](../.github/workflows/lean_ci.yml) uses the [`lake-cache-r
 |---|---|---|---:|
 | [`witness-pipeline.yml`](../.github/workflows/witness-pipeline.yml) | push / PR | 9 substrate-precision smoke scripts | ~2 min |
 | [`lean_ci.yml`](../.github/workflows/lean_ci.yml) | push / PR | `lake build` workspace (with 3-tier cache) | ~30 s warm, ~10 min cold |
-| [`publish.yml`](../.github/workflows/publish.yml) | push / PR | Content → LaTeX → PDF → gh-pages preview (uses `paper-builder` Docker container — Phase C of parallelization) | ~22-28 min |
+| ~~`publish.yml`~~ | — | **ABSENT from the tree** (measured 2026-09-27). The rendered GitHub Pages site is deprecated; see AGENTS.md §"Build output (gh-pages)" for what actually runs and what is on the branch. | — |
 | [`blueprint.yml`](../.github/workflows/blueprint.yml) | push to main | LeanBlueprint dependency graph + axiom report | ~5-10 min |
 | [`paper-builder-image.yml`](../.github/workflows/paper-builder-image.yml) | Dockerfile change | Builds `ghcr.io/litlfred/qou-paper-builder` (TeX Live + bun + py-sci) | ~15-20 min |
 | [`lake-cache-refresh.yml`](../.github/workflows/lake-cache-refresh.yml) | lakefile / lean-toolchain change on main | Refreshes `lake-cache/*` orphan branches | ~5-15 min/pkg |
@@ -205,7 +205,7 @@ The CI [`lean_ci.yml`](../.github/workflows/lean_ci.yml) uses the [`lake-cache-r
 | `index.html` | `publish.yml` | Folio landing page |
 | `papers/<dir>/` | `publish.yml` | Per-paper viewer + PDF |
 | `blueprint/` | `blueprint.yml` | LeanBlueprint interactive graph |
-| `docs/` | `blueprint.yml` | doc-gen4 API documentation |
+| ~~`docs/`~~ | ~~`blueprint.yml`~~ | **Neither exists.** `blueprint.yml` is absent from the tree and no `docs/` directory has ever been created on `gh-pages`. |
 | `content/quantum-observable-universe/lean/` | `lean_ci.yml` | Raw Lean source browser |
 | `schema-docs/` | `publish.yml` | TypeDoc content-object reference |
 | `drafts/<branch>/` | `publish.yml` | Feature-branch previews |

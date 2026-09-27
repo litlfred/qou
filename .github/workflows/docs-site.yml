@@ -13,12 +13,15 @@ name: docs-site
 # not in this state, and copying that trigger across is the mistake this comment
 # exists to prevent.
 on:
+  # No inputs. The `publish` boolean that used to gate a gh-pages write was
+  # removed on 2026-09-27 (owner: "depcecate/remove the githubpage"): the
+  # rendered GitHub Pages site is deprecated, so this workflow builds and
+  # uploads an ARTIFACT and writes nothing to the `gh-pages` branch.
+  #
+  # It never wrote anything anyway. The step defaulted to `publish: false` and
+  # across all 5 runs of this workflow no `docs/` directory was ever created on
+  # gh-pages -- verified by `git ls-tree` on the branch head.
   workflow_dispatch:
-    inputs:
-      publish:
-        description: "Publish to gh-pages (false = build and upload an artifact only)"
-        type: boolean
-        default: false
 
 permissions:
   contents: write
@@ -107,22 +110,3 @@ jobs:
           path: ./_site
           retention-days: 7
 
-      # gh-pages currently serves the paper build's output at the root. This
-      # writes only under docs/ so the two can coexist; `publish.yml` owns the
-      # root and this must not clobber it.
-      - name: Publish to gh-pages/docs
-        if: ${{ inputs.publish }}
-        run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git fetch origin gh-pages --depth 1
-          git worktree add /tmp/ghp origin/gh-pages
-          rm -rf /tmp/ghp/docs
-          mkdir -p /tmp/ghp/docs
-          cp -r ./_site/. /tmp/ghp/docs/
-          touch /tmp/ghp/.nojekyll
-          cd /tmp/ghp
-          git add -A docs .nojekyll
-          git commit -m "docs-site: rebuild from ${GITHUB_SHA::12}" || { echo "no change"; exit 0; }
-          git push origin HEAD:gh-pages
