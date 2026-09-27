@@ -281,3 +281,127 @@ the defect rather than fixing it: `f-a-sci` is still a platform layer, so one
 folio family's data is just as wrong there.
 
 Per-module qou-specificity triage is the next step and is recorded as it is done.
+
+## 2026-09-27 — MEASURED: the ruling costs exactly six edges, and two modules move free
+
+Platform PR: **litlfred/folio-assistant#1453** (branch
+`claude/sci-owns-lean-grammar-probe-2026-09-27`). The options analysis above is
+superseded on one point — **the layering was already declared**, so this was
+never a question of inventing a target, only of correcting one assignment.
+
+### What was already true before touching anything
+
+`cat-harness/scripts/partition/` is a partition engine (`check:partition` →
+`scripts/repo-partition.ts`) that assigns every module to a target repo and
+reports wrong-direction imports against a declared DAG
+(`ALLOWED`: `sci -> [sci, core, harness]`, `harness -> [harness]`). Baseline on
+the pin:
+
+```
+Partition — 1172 modules, 2638 internal import edges
+  cat-harness           310     folio-assistant-core  256
+  folio-assistant-sci    39     smart-base             11
+Wrong-direction edges: 0
+```
+
+So `folio-assistant-sci` **already had 39 modules assigned** — `adapters/paper/`,
+the LaTeX pipeline, `schemas/formalization-types.ts`,
+`schemas/precision-scalar.ts`, `schemas/refactor-strategy.ts`,
+`scripts/check-duplicate-decls.ts`, `check-mirror-drift.ts`,
+`check-self-discharging-instances.ts`, and a keyword rule
+`/(lean|latex|tex|proof|witness|simulator|sage|formaliz|knot)/i`. My
+"option D mover set" was, near enough, a rediscovery of that list.
+
+**Correction to this bean's own earlier entry:** it says the vocabulary "is in
+`cat-harness/schemas/`". That is the *physical directory* and is correct; the
+**declared target layer** for `types.ts`, `constraints.ts`, `block-kinds.ts`,
+`narrative.ts` is **`folio-assistant-core`**, not `cat-harness`. Say which you
+mean — the split's whole point is that the two differ today.
+
+### The ruling reaches FOUR entries, because the overruled test was applied five times
+
+`instance-rules.ts` has a core triage block whose header states the test in
+words and then says *"Same test again"* and *"Same test a third time"*:
+
+> *"The test applied is not 'does the name mention Lean' but 'would core
+> compile and function without the science layer installed'. For
+> `lean-packages.ts` it would not: `BlockBase` carries an optional `lean` field
+> … the field is on shared block kinds by design … **So the grammar belongs
+> wherever the field does.** Only the package list is a property of a folio,
+> and that is injected."*
+
+That is the ruling's target verbatim, in the platform's own words. Entries
+resting on it: `schemas/lean-packages.ts`, `content/pipeline/lean-signature.ts`,
+`content/pipeline/lean-lexer.ts`, `content/pipeline/witness-address.ts`.
+
+Two entries in the same block are **not** affected and were left alone —
+`validate-simulator.ts` (core on a *measured* argument: `simulator` is in
+`DOCUMENT_BLOCK_KINDS`, not `MATH_BLOCK_KINDS`) and `qa-witness.ts` (core
+because it imports only `block-qa`/`kg-qa`/`script-qa`). Neither cites the
+rejected test.
+
+### The probe, and the price
+
+Reassigning all four and re-running the engine:
+
+```
+Wrong-direction edges: 6      folio-assistant-core → folio-assistant-sci: 6
+
+  schemas/constraints.ts        -> schemas/lean-packages.ts
+  adapters/mcp-server/server.ts -> schemas/lean-packages.ts
+  adapters/document/resolver.ts -> schemas/lean-packages.ts
+  adapters/manifest-entries.ts  -> schemas/lean-packages.ts
+  content/pipeline/qa-utils.ts  -> schemas/lean-packages.ts
+  content/pipeline/qa-utils.ts  -> content/pipeline/lean-signature.ts
+```
+
+**Five of the six point at one target.** `lean-lexer.ts` and
+`witness-address.ts` cost **zero** — so the ruling splits cleanly into a free
+half and a priced half, which is not something the options above anticipated.
+
+**Landed (#1453):** the two free ones move to `sci`; the core triage header is
+corrected to record the ruling, name the six edges, and tell the next reader
+that the two remaining entries are core **because of the six edges, not because
+of the test**. Verified `sci 39 → 41`, `core 256 → 254`,
+**wrong-direction 0**, `--strict` exit 0, and `repo-partition.test.ts` +
+`partition-imports.test.ts` + `partition-names.test.ts` **28 pass / 0 fail**.
+
+**Held:** `lean-packages.ts` and `lean-signature.ts`. The six edges exist
+because the overruled header is, *as a statement of fact about today's code*,
+**correct** — core really does reach into the grammar. Honouring the ruling on
+them needs `lean` off `BlockBase`, with the grammar behind the same injection
+`configureLeanPackages` already established for the package **list**, extended
+to the **grammar**. That changes `BlockBase`, so it is an owner call.
+
+### The de-qou-ification the second directive asked for is nearly free
+
+Measured across all 12 candidate modules (~5,479 lines), separating hits in
+**code** from hits in **prose**: only **4 qou-specific lines of code** exist.
+
+| site | what |
+|---|---|
+| `content/pipeline/migrate-lean-refs.ts:48` | `visualizer: "qou"` — a genuine hardcode |
+| `scripts/check-self-discharging-instances.ts:423` | a qou bean id in a `console.log` |
+| `scripts/check-mirror-drift.ts:116` | imports `ARCHIMEDEAN_TYPE_RE` (qou vocabulary) |
+| `scripts/partition/instance-rules.ts:1398` | a path string, not qou-specific |
+
+`schemas/lean-packages.ts`, `precision-scalar.ts`, `lean-lexer.ts`,
+`conditional-class-banner-audit.ts`, `conjectural-propagation-audit.ts`,
+`witness-address.ts`, `check-duplicate-decls.ts` have **zero** code-level qou
+hits. `formalization-types.ts`'s single hit is `| "BraidedMonoidal"` — general
+category theory, not qou. So the raw grep counts (2–12 per file) are almost
+entirely **docstring examples**, and the generalisation burden is four lines,
+not a rewrite.
+
+### Open, and it is the one thing waiting on the owner
+
+Whether to take `lean` off `BlockBase` and put the grammar behind injection.
+**What it costs:** `constraints.ts`, `adapters/mcp-server/server.ts`,
+`adapters/document/resolver.ts`, `adapters/manifest-entries.ts` and
+`content/pipeline/qa-utils.ts` rewired, plus a `.folio-assistant-pin` bump here.
+**What it risks:** a half-done injection leaks `unknown` at the boundary and
+silently re-admits the drift `_blockKindsAreExhaustive` exists to stop — the
+461-block failure mode. **What it commits to:** core never naming a
+formal-reference vocabulary again. **Default if nothing is decided:** the two
+stay in core under a header that flags itself as overruled; nothing breaks, and
+the note directs the next agent to cite the six edges.
