@@ -102,7 +102,7 @@ PATH_RE = re.compile(
 # demands a top-level prefix. Resolving those recovers 22 of 187 (11%).
 REL_RE = re.compile(r"\b([\w-]+(?:/[\w.-]+)*\.(?:py|lean|ts|json))\b")
 REL_PREFIXES = (
-    "", "computations", "content", "scripts", "docs", "tools", "schemas",
+    "", "computations", "folio", "scripts", "docs", "tools", "schemas",
     "computations/probes", "computations/audits", "computations/qbeta",
     "computations/sweeps", "computations/markov", "computations/alpha",
     "computations/deltalambda", "computations/schurweyl",

@@ -65,7 +65,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent
-REGISTRY = REPO / "content" / "values" / "registry.ts"
+REGISTRY = REPO / "folio" / "values" / "registry.ts"
 
 #: Element symbol -> proton number, for the nuclides the registry can name.
 #: Deliberately small: extend it when a pin names a heavier element rather

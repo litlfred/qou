@@ -123,7 +123,7 @@ def main() -> int:
         "docs/audits/2026-06-01-paper-modulus-nonarchimedean-audit.md"
     )
 
-    content_root = REPO_ROOT / "content" / "quantum-observable-universe"
+    content_root = REPO_ROOT / "folio" / "quantum-observable-universe"
     all_sites = []
     for md_path in content_root.rglob("*.md"):
         sites = scan_file(md_path)

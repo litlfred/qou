@@ -91,7 +91,7 @@ def classify_file(content: str) -> tuple[str, list[str]]:
 def main() -> int:
     qou_root = Path(__file__).resolve().parents[1]
     lean_dirs = [
-        qou_root / "content" / "quantum-observable-universe",
+        qou_root / "folio" / "quantum-observable-universe",
     ]
 
     scanned: dict[str, tuple[str, list[str]]] = {}

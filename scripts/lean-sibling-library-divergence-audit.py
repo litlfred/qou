@@ -67,7 +67,7 @@ import re, sys, json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-PAPER = ROOT / "content" / "quantum-observable-universe"
+PAPER = ROOT / "folio" / "quantum-observable-universe"
 LIB = PAPER / "lean"
 
 KINDS = ("axiom", "theorem", "lemma", "def", "abbrev", "class", "structure",

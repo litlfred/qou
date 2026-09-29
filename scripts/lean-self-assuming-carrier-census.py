@@ -60,7 +60,7 @@ def resolve(path: str, line: int, field: str) -> str | None:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--root", default="content")
+    ap.add_argument("--root", default="folio")
     a = ap.parse_args()
 
     if not _chk.builders(_chk.SELFTEST[0]):

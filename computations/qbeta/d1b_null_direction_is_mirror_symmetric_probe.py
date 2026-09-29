@@ -258,7 +258,7 @@ def main() -> int:
     import subprocess
     bar_files = subprocess.run(
         ["grep", "-rl", "bar involution", str(REPO / "computations"),
-         str(REPO / "content"), str(REPO / "docs")],
+         str(REPO / "folio"), str(REPO / "docs")],
         capture_output=True, text=True).stdout.split()
     bar_on_nz = [f for f in bar_files if subprocess.run(
         ["grep", "-lE", "gluing|Neumann|tetrahed", f],

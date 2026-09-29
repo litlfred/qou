@@ -104,7 +104,7 @@ interface BlockQaReport {
 
 // ── Paths / constants ───────────────────────────────────────────────
 const REPO_ROOT = resolve(import.meta.dir, "..", "..");
-const DEFAULT_ROOTS = ["content"];
+const DEFAULT_ROOTS = ["folio"];
 const SKIP_DIRS = new Set([
   ".lake",
   "node_modules",
@@ -2496,7 +2496,7 @@ let _usesGraph: Map<string, string[]> | undefined;
 function usesGraph(): Map<string, string[]> {
   if (_usesGraph) return _usesGraph;
   const g = new Map<string, string[]>();
-  const root = resolve(REPO_ROOT, "content");
+  const root = resolve(REPO_ROOT, "folio");
   const walk = (dir: string): void => {
     let ents: ReturnType<typeof readdirSync<{ withFileTypes: true }>>;
     try {

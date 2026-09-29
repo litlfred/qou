@@ -211,7 +211,7 @@ SELFTEST_KNOWN_MISS = [
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--root", default="content")
+    ap.add_argument("--root", default="folio")
     ap.add_argument("--timeout", type=int, default=180)
     ap.add_argument("--filter", default="")
     ap.add_argument("--selftest", action="store_true", default=True,

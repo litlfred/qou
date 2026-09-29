@@ -104,7 +104,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 TABLE = ROOT / "computations" / "wedderburn_mass_table_z1_20.py"
-THM = (ROOT / "content" / "quantum-observable-universe" / "mass-theory"
+THM = (ROOT / "folio" / "quantum-observable-universe" / "mass-theory"
        / "wedderburn-mass-formula.md")
 SIB_INV = (ROOT / "computations" / "probes"
            / "phi1_is_chain_additive_iff_z_is_an_eigenvalue_probe.py")

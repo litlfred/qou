@@ -193,7 +193,7 @@ def main() -> int:
     print()
 
     root = Path(__file__).resolve().parents[2]
-    blk = root / "content" / "quantum-observable-universe" / "mass-theory"
+    blk = root / "folio" / "quantum-observable-universe" / "mass-theory"
 
     # ---- 0. what the block claims ------------------------------------------
     lean = (blk / "wedderburn-weight-canonical.lean")

@@ -201,7 +201,7 @@ def main() -> int:
     print("5. STEP 10b -- THE CHEAT SHEET STATES AN OBJECTIVE THE CODE DOES NOT HAVE")
     cs = (ROOT / "docs" / "canonical-derivation-cheat-sheet.md").read_text()
     has_btgt = "B_\\mathrm{tgt}" in cs or "B_tgt" in cs
-    spec = (ROOT / "content" / "quantum-observable-universe"
+    spec = (ROOT / "folio" / "quantum-observable-universe"
             / "appendix-mass-binding-algorithms" / "mba-step10-confinement-sdp.md").read_text()
     spec_has_btgt = "B_tgt" in spec or "B_\\mathrm{tgt}" in spec
     spec_has_sum = "Σ_i t_i x_i" in spec or "t_i x_i" in spec
@@ -340,7 +340,7 @@ def main() -> int:
 
     # M_QOU: how many times does it occur in the whole corpus?
     hits = 0
-    for p in (ROOT / "content").rglob("*.md"):
+    for p in (ROOT / "folio").rglob("*.md"):
         try:
             if "\\widehat{\\mathcal{M}}_{\\mathrm{QOU}}" in p.read_text(encoding="utf-8"):
                 hits += 1

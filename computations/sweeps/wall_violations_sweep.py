@@ -49,7 +49,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
-CONTENT = REPO / "content" / "quantum-observable-universe"
+CONTENT = REPO / "folio" / "quantum-observable-universe"
 
 # Markers to flag. Each marker has a regex pattern matched
 # case-insensitively over the proof-block text.

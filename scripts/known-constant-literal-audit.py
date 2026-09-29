@@ -135,7 +135,7 @@ def selftest() -> int:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("paths", nargs="*", default=["content", "computations", "scripts", "docs"])
+    ap.add_argument("paths", nargs="*", default=["folio", "computations", "scripts", "docs"])
     ap.add_argument("--min-digits", type=int, default=12,
                     help="ignore literals with fewer significant digits (default 12)")
     ap.add_argument("--all", action="store_true", help="also list correctly-truncated hits")
@@ -148,7 +148,7 @@ def main() -> int:
         return selftest()
 
     consts = _constants()
-    roots = [Path(p) for p in (args.paths or ["content", "computations", "scripts", "docs"])]
+    roots = [Path(p) for p in (args.paths or ["folio", "computations", "scripts", "docs"])]
     wrong, ok = [], []
 
     for root in roots:

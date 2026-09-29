@@ -64,7 +64,7 @@ import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
-PAPER = REPO / "content" / "quantum-observable-universe"
+PAPER = REPO / "folio" / "quantum-observable-universe"
 
 FAILURES: list[str] = []
 CHECKS = 0

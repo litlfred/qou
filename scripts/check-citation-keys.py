@@ -71,7 +71,7 @@ import re
 import sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-REFS = os.path.join(REPO, "content", "schema", "references.ts")
+REFS = os.path.join(REPO, "folio", "schema", "references.ts")
 
 SENTINELS = {"manuscript"}
 LABEL_RX = re.compile(r"^(conj|def|thm|lem|prop|cor|rem|ex|sim|alg):")
@@ -118,7 +118,7 @@ def entry_ids() -> set[str]:
 
 def block_labels() -> set[str]:
     out: set[str] = set()
-    for path in glob.glob(os.path.join(REPO, "content", "**", "*.ts"), recursive=True):
+    for path in glob.glob(os.path.join(REPO, "folio", "**", "*.ts"), recursive=True):
         out.update(re.findall(r'label:\s*"([^"]+)"',
                               open(path, encoding="utf-8", errors="replace").read()))
     return out
@@ -137,13 +137,13 @@ def resolves_in_repo(tail: str) -> str | None:
 
 def scan() -> list[dict]:
     sites: list[dict] = []
-    for path in glob.glob(os.path.join(REPO, "content", "**", "*.md"), recursive=True):
+    for path in glob.glob(os.path.join(REPO, "folio", "**", "*.md"), recursive=True):
         t = open(path, encoding="utf-8", errors="replace").read()
         for m in re.finditer(r"\\cite[tp]?\*?(?:\[[^\]]*\])*\{([^}]*)\}", t):
             for k in m.group(1).split(","):
                 sites.append({"key": k.strip(), "kind": "md-cite", "path": path,
                               "line": t[:m.start()].count("\n") + 1, "tail": ""})
-    for path in glob.glob(os.path.join(REPO, "content", "**", "*.ts"), recursive=True):
+    for path in glob.glob(os.path.join(REPO, "folio", "**", "*.ts"), recursive=True):
         t = open(path, encoding="utf-8", errors="replace").read()
         for m in re.finditer(r"cites:\s*\[([^\]]*)\]", t):
             for k in m.group(1).split(","):
@@ -151,7 +151,7 @@ def scan() -> list[dict]:
                 if k:
                     sites.append({"key": k, "kind": "ts-cites", "path": path,
                                   "line": t[:m.start()].count("\n") + 1, "tail": ""})
-    for path in glob.glob(os.path.join(REPO, "content", "**", "*.lean"), recursive=True):
+    for path in glob.glob(os.path.join(REPO, "folio", "**", "*.lean"), recursive=True):
         t = open(path, encoding="utf-8", errors="replace").read()
         for m in re.finditer(r"--\s*Ref:\s*\[([^\]]+)\]([^\n]*)", t):
             sites.append({"key": m.group(1).strip(), "kind": "lean-ref", "path": path,
@@ -206,7 +206,7 @@ def main() -> int:
         print(json.dumps({k: v for k, v in b.items()}, indent=1))
         return 1 if (args.strict and b["dangling"]) else 0
 
-    print(f"{len(sites)} citation sites across content/  "
+    print(f"{len(sites)} citation sites across folio/  "
           f"({len(ids)} entries, {len(labels)} block labels)\n")
     for name, why in (("entry", "resolve to a references.ts entry"),
                       ("sentinel", "are the [manuscript] sentinel (AGENTS.md §1)"),

@@ -72,7 +72,7 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-CONTENT = ROOT / "content" / "quantum-observable-universe"
+CONTENT = ROOT / "folio" / "quantum-observable-universe"
 
 fails = 0
 

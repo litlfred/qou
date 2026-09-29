@@ -348,7 +348,7 @@ def main() -> int:
 
     wanted = set(args.only.split(",")) if args.only else None
     targets: dict[str, tuple[Path, int]] = {}
-    for f in sorted((ROOT / "content").rglob("*.lean")):
+    for f in sorted((ROOT / "folio").rglob("*.lean")):
         text = f.read_text(errors="replace")
         for m in re.finditer(rf"^\s*class\s+({IDENT})", text, re.M):
             n = m.group(1)

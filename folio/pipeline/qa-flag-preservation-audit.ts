@@ -154,7 +154,7 @@ function main() {
   const argv = process.argv.slice(2);
   const fix = argv.includes("--fix");
   const json = argv.includes("--json");
-  const root = argv.find((a) => !a.startsWith("--")) ?? "content";
+  const root = argv.find((a) => !a.startsWith("--")) ?? "folio";
 
   const files = globSync(`${root}/**/*.qa.json`);
   const { findings, sidecars } = scan(files);

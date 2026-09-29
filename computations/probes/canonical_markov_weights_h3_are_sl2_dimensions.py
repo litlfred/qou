@@ -108,7 +108,7 @@ def main() -> int:
     print()
 
     root = Path(__file__).resolve().parents[2]
-    md = (root / "content" / "quantum-observable-universe" / "mass-endomorphism"
+    md = (root / "folio" / "quantum-observable-universe" / "mass-endomorphism"
           / "qbeta-canonical-markov-weights-explicit-instance-proof.md")
     txt = md.read_text() if md.exists() else ""
     check("the corpus records this as open, and quotes the values",

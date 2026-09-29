@@ -72,7 +72,7 @@ import { join } from "node:path";
 // folio-assistant/content, which holds only pipeline/, and every paper lookup
 // would miss while the scan cheerfully reported zero candidates.
 const REPO = join(import.meta.dir, "..");
-const CONTENT_DIR = join(REPO, "content");
+const CONTENT_DIR = join(REPO, "folio");
 
 /**
  * Label tokens as they appear in prose: a known kind prefix, a colon, and a

@@ -1300,7 +1300,7 @@ function main() {
   const repoRoot = execFileSync("git", ["rev-parse", "--show-toplevel"])
     .toString()
     .trim();
-  if (!roots.length) roots.push(join(repoRoot, "content"));
+  if (!roots.length) roots.push(join(repoRoot, "folio"));
   if (!branch) {
     try {
       branch = execFileSync("git", ["rev-parse", "--abbrev-ref", "HEAD"], {

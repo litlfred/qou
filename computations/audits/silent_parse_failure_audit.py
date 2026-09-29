@@ -78,7 +78,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 SEARCH_ROOTS = [ROOT / "computations", ROOT / "scripts", ROOT / "tools",
-                ROOT / "content" / "pipeline"]
+                ROOT / "folio" / "pipeline"]
 
 BROAD = {"Exception", "BaseException", "SyntaxError", "ValueError", "OSError"}
 

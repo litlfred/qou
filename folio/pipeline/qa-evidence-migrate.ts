@@ -43,7 +43,7 @@ import { Glob } from "bun";
 const argv = process.argv;
 const apply = argv.includes("--apply");
 const rootIdx = argv.indexOf("--root");
-const root = rootIdx >= 0 ? argv[rootIdx + 1] : "content";
+const root = rootIdx >= 0 ? argv[rootIdx + 1] : "folio";
 
 /** Preference order: the field most likely to carry file:line comes first. */
 const REASON_KEYS = ["notes", "referee_argument", "rationale", "reason"];
