@@ -8,7 +8,7 @@ tags:
     - platform
     - migration
 created_at: 2026-09-26T11:19:21Z
-updated_at: 2026-09-27T18:54:31Z
+updated_at: 2026-09-29T19:40:00Z
 parent: qou-n4r9
 blocked_by:
     - qou-8321
@@ -544,3 +544,45 @@ does not merely travel along"). Rehoming it is a content-model change — 32 Lea
 `-- Ref:` sites, 4 `.ts` `cites[]`, 3 `.jsonld`, plus generated `references.bib`
 — and it is entangled with `qou-cite`, where the `manuscript` key is already
 parked as an owner decision. Not started.
+
+--------
+
+## 2026-09-29 — `leitner2026` rehomed: the paper is the single source (owner chose option 1)
+
+Owner choices this session: **option 1** (derive the self-citation from the
+paper) and **"manifest as-is"** for the printed title and name.
+
+- New `folio/quantum-observable-universe/identity.ts` holds title, authors and
+  date ONCE. It is dependency-free on purpose: `references.ts` is loaded by
+  scripts with no platform link, and importing the manifest would pull in the
+  platform builders.
+- The paper manifest and the `leitner2026` entry both read it. The entry keeps
+  its `id: "leitner2026"` **literal**, because `check-citation-keys.py` and
+  other text scanners collect keys with `\bid:\s*"([^"]+)"`. No citing site
+  changes: 32 Lean `-- Ref:`, 4 `cites[]`, 3 `.jsonld` all name the key only.
+- The citation now reads *"On the Mechanics of Quantum Observable Universes"*,
+  Leitner, Frederick Carl, 2026. It previously read *"Quantum Observable
+  Universe"*, Leitner, Fred: the two copies had drifted.
+
+**Verified.** Regenerating `references.bib` with the platform's
+`export-bibtex` changes exactly two lines, author and title of `leitner2026`.
+The manifest loads with byte-identical values. `cited-source-availability-audit`
+and `run-validate --strict` give output identical to #7485's head.
+
+**`references.bib` was patched on those two lines only, not regenerated.**
+The committed file is already stale: **512 entries against 889** in
+`references.ts`. A full regeneration would sweep 377 unrelated entries into this
+change. That drift is pre-existing and needs its own bean.
+
+### 🛑 Found while verifying: #7485 has a blind spot that reports CLEAN
+
+`scripts/check-citation-keys.py` passes on `main` (exit 0, "13 distinct
+unresolved keys over 39 sites") and **crashes on #7485** with `FileNotFoundError:
+content/schema/references.ts`. Its paths are built from components,
+`os.path.join(REPO, "content", "schema", "references.ts")`, so a sweep matching
+the string `content/` never sees them. Its `glob(join(REPO, "content", "**"))`
+lines would find NOTHING after the move and report a clean run, which is worse
+than the crash. A first grep for component-form `"content"` path joins finds
+**114 lines** on #7485's head. They are unclassified: some are the platform's
+own tree and some are not paths at all. This needs classifying and fixing
+**before #7485 merges.**
