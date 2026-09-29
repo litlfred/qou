@@ -66,7 +66,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent
-PAPER = REPO / "content" / "quantum-observable-universe"
+PAPER = REPO / "folio" / "quantum-observable-universe"
 LEANROOT = PAPER / "lean"
 BASELINE = REPO / "docs" / "audits" / "mirror-drift-baseline.json"
 

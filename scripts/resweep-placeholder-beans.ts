@@ -27,11 +27,11 @@ const today = new Date().toISOString().slice(0, 10);
 function mapScope(scope: string): string | null {
   if (scope === "qou/lean") return null; // whole-tree overlap — skip
   if (scope.startsWith("qou/lean/"))
-    return join(REPO, "content/quantum-observable-universe/lean/QOU", scope.slice("qou/lean/".length));
+    return join(REPO, "folio/quantum-observable-universe/lean/QOU", scope.slice("qou/lean/".length));
   if (scope.startsWith("qou/"))
-    return join(REPO, "content/quantum-observable-universe", scope.slice("qou/".length));
-  if (scope === "schema") return join(REPO, "content/schema");
-  if (scope === "unital-groebner-bases") return join(REPO, "content/unital-groebner-bases");
+    return join(REPO, "folio/quantum-observable-universe", scope.slice("qou/".length));
+  if (scope === "schema") return join(REPO, "folio/schema");
+  if (scope === "unital-groebner-bases") return join(REPO, "folio/unital-groebner-bases");
   return join(REPO, scope);
 }
 

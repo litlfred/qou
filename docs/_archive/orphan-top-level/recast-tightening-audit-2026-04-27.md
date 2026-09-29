@@ -7,7 +7,7 @@ accompanies the pre/post-Archimedean recast plan applied in
 
 ## Part B — dual-leg / asymptotic-bridge candidates
 
-Grep across `content/quantum-observable-universe/**/*.md` for
+Grep across `folio/quantum-observable-universe/**/*.md` for
 "geometric leg / algebraic leg / two legs / both legs / the two agree"
 returned **one** file, `partition-sum-proton-residual.md`, where
 "the two" referred to two numerical values (q-deformed vs classical

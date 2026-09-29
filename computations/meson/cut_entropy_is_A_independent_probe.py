@@ -54,7 +54,7 @@ ran the extension first and found the reason afterwards, which is precisely the
 failure mode `AGENTS.md` §"Formalize-first probe discipline" exists to prevent:
 state the invariant, let it narrow the probe. Recorded so the next agent reads
 the invariant before spending the sweep. The Lean statement is
-`content/quantum-observable-universe/lean/QOU/MassTheory/MarkovMarginalConstant.lean`.
+`folio/quantum-observable-universe/lean/QOU/MassTheory/MarkovMarginalConstant.lean`.
 
 CONTROLS
 ========

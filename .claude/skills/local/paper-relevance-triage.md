@@ -25,18 +25,18 @@ property a batch job can compute.
 
 ## Where the answers go
 
-One file: `content/bib-qa-verifications.json`, the **source ledger**
+One file: `folio/bib-qa-verifications.json`, the **source ledger**
 (`source-ledger/v1`, typed in
 [`folio-assistant/schemas/bib-verification.ts`](../../../folio-assistant/schemas/bib-verification.ts)).
 
 **The ledger stores judgements and joins only.** It carries no title, author,
-year, or DOI — those live in `content/schema/references.ts` and nowhere else. A
+year, or DOI — those live in `folio/schema/references.ts` and nowhere else. A
 row points at a reference by `id`; consumers join. Writing a title into the
 ledger is a review failure, not a convenience.
 
 | Fact | Sole owner |
 |---|---|
-| title, authors, year, DOI, URL, type | `content/schema/references.ts` |
+| title, authors, year, DOI, URL, type | `folio/schema/references.ts` |
 | document ↔ reference join | ledger `source` + `id` |
 | was the source examined | ledger `status` |
 | is it relevant, what to do about it | ledger `relevance` |
@@ -80,7 +80,7 @@ finding — say so and fix the row.
 ### 2. Check the citation status
 
 ```bash
-grep -n "<refid>" content/schema/references.ts                 # does the entry exist
+grep -n "<refid>" folio/schema/references.ts                 # does the entry exist
 grep -rn "cite{<refid>}\|\[<refid>\]" content/ --include=*.md  # is it cited anywhere
 grep -rn "Ref: \[<refid>\]" content/ --include=*.lean          # does a sorry lean on it
 ```
@@ -224,7 +224,7 @@ corpus rules bite here directly:
 Documents are independent, so triage parallelises cleanly: dispatch background
 agents over disjoint slices, each writing its own findings to a scratch JSON,
 and merge into the ledger in one pass. Do **not** have parallel agents write
-`content/bib-qa-verifications.json` concurrently — it is one file and they will
+`folio/bib-qa-verifications.json` concurrently — it is one file and they will
 clobber each other.
 
 Give each agent the identification and citation-status steps as well as the

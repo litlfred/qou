@@ -94,7 +94,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 TABLE_PRODUCER = ROOT / "computations" / "wedderburn_mass_table_z1_20.py"
 RECONSTRUCTION = ROOT / "computations" / "phi_allpairs_reconstruction.py"
-TABLE1 = (ROOT / "content" / "quantum-observable-universe" / "knots-particles-confinement"
+TABLE1 = (ROOT / "folio" / "quantum-observable-universe" / "knots-particles-confinement"
           / "atomic-braid-table1-data.md")
 
 _checks = 0

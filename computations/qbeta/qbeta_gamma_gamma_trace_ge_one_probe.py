@@ -13,7 +13,7 @@ the body withdraws.
 # Ref: AGENTS.md §"Formalize-first probe discipline"
 # Ref: computations/qbeta/qbeta_gamma_gamma_psd_trace_floor_probe.py -- the
 #      WEAKER floor this supersedes, and why it was weaker
-# Ref: content/quantum-observable-universe/lean/QOU/Mass/PsdDetOneTrace.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/Mass/PsdDetOneTrace.lean
 #      (PR #7295) -- `trace_ge_two` and `eq_one_of_trace_eq_two`, the 2x2 case
 #      of the AM-GM step below, already sorry-free
 

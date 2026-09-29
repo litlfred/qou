@@ -77,7 +77,7 @@ import sympy as sp  # noqa: E402
 
 mp.mp.dps = 40
 
-BLOCK = ROOT / ("content/quantum-observable-universe/mass-theory/"
+BLOCK = ROOT / ("folio/quantum-observable-universe/mass-theory/"
                 "frobenius-gram-matrix.md")
 DECLARED_WITNESS = COMP / "probes/frobenius-gram-matrix-probe.witness.json"
 

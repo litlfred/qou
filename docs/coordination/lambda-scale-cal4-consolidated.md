@@ -56,7 +56,7 @@ Markov trace). The polynomial COEFFICIENTS are integers
 (q-independent) — they sit on the correct axis for structural
 derivations of C.
 
-See [`rem:archimedean-image-table`](../../content/quantum-observable-universe/braids-and-knots/archimedean-image-table.md)
+See [`rem:archimedean-image-table`](../../folio/quantum-observable-universe/braids-and-knots/archimedean-image-table.md)
 for the full 13-row catalog.
 
 ## Closure status
@@ -64,8 +64,8 @@ for the full 13-row catalog.
 **Formally acknowledged-CAL-4** as of PR #969 (merged 2026-05-23).
 Both conjecture blocks carry the empirical-exhaustion banner:
 
-- [`conj:lambda-scale-bring-bloch-identity`](../../content/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md) — 8-search tally + acknowledged-CAL-4 paragraph
-- [`conj:lambda-scale-substrate-form`](../../content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md) — q-locality refutation + reframing + "empirical only" title (PR #982)
+- [`conj:lambda-scale-bring-bloch-identity`](../../folio/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md) — 8-search tally + acknowledged-CAL-4 paragraph
+- [`conj:lambda-scale-substrate-form`](../../folio/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md) — q-locality refutation + reframing + "empirical only" title (PR #982)
 
 ## Low-priority open directions (not committed)
 

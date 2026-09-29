@@ -26,7 +26,7 @@ allowed-tools: Read Write Edit Bash Grep Glob Agent WebFetch
 > whether the paper is worth importing at all and what it would attach to.
 > Import is the action a triage *proposes* (`new-block`), not the default
 > disposition of an upload. The triage's verdict and proposed actions live in
-> the source ledger, `content/bib-qa-verifications.json`.
+> the source ledger, `folio/bib-qa-verifications.json`.
 
 ## Overview
 
@@ -123,7 +123,7 @@ blocks to the user for review before committing:
 
 For each confirmed block, generate:
 
-1. **`.ts` manifest** — using `content/schema/builders.ts`:
+1. **`.ts` manifest** — using `folio/schema/builders.ts`:
    ```typescript
    import { theorem } from "../../schema/builders";
    export default theorem({
@@ -221,7 +221,7 @@ qualified refs — they are resolved at folio level, not per-paper.
 
 ### Folio registration and viewer URL
 
-Every imported paper must be registered in `content/folio.ts`:
+Every imported paper must be registered in `folio/folio.ts`:
 
 ```typescript
 paperRef({
@@ -240,7 +240,7 @@ The `url` field enables:
 ### Bibliography integration for imported papers
 
 When the imported paper has a folio viewer URL, include the URL
-in its CSL-JSON entry in `content/schema/references.ts`:
+in its CSL-JSON entry in `folio/schema/references.ts`:
 
 ```typescript
 ref({
@@ -296,7 +296,7 @@ Parse the Atom response for:
 
 ## Bibliography Integration
 
-When importing, check `content/schema/references.ts` for existing entry:
+When importing, check `folio/schema/references.ts` for existing entry:
 - If found, use that citation key
 - If not found, add a `ref()` entry (user confirms)
 - After adding, run `bun run export-bibtex` to regenerate `references.bib`
@@ -348,9 +348,9 @@ Before completing an import:
 - [ ] All `.md` files follow project markdown conventions
 - [ ] All blocks tagged with `["imported", "<source-ref>"]`
 - [ ] `meta.source` populated on every imported block
-- [ ] CSL-JSON entry exists in `content/schema/references.ts` (or suggested to user)
+- [ ] CSL-JSON entry exists in `folio/schema/references.ts` (or suggested to user)
 - [ ] Any `.lean` files have `sorry` with `-- Ref:` citations
 - [ ] `.ts` manifests have `lean.ref` URI set for definition blocks
 - [ ] Todo suggestions presented to user (NOT auto-created)
 - [ ] Chapter manifest references all blocks in order
-- [ ] Paper manifest added to `content/folio.ts` (or existing paper updated)
+- [ ] Paper manifest added to `folio/folio.ts` (or existing paper updated)

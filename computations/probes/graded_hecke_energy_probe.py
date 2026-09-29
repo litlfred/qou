@@ -8,7 +8,7 @@ Phase 8 of the 1 ppb workplan
 — **graded Hecke energy probe** for the canonical small-A atom set.
 
 Demonstrates the truncation bound proved in
-[`prop:graded-hecke-energy-truncation-bound`](../../content/quantum-observable-universe/braids-and-knots/graded-hecke-energy-truncation-bound.md):
+[`prop:graded-hecke-energy-truncation-bound`](../../folio/quantum-observable-universe/braids-and-knots/graded-hecke-energy-truncation-bound.md):
 the mass-spectrum generating function $P_K(q) = \\sum_d c_d q^d$
 has at most $\\ell(K, q_0) + 1$ nonzero grades, where $\\ell(K, q_0)$
 is the confinement level.

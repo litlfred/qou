@@ -25,7 +25,7 @@ is the wrong object -- only that this identification is not established.
    against the ledger's own stated target.
 
 3. THE PROMISED FORMAL DERIVATION IS A TAUTOLOGY.
-   `content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaWenzlDecomposition.lean`
+   `folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaWenzlDecomposition.lean`
    defines
 
        noncomputable def q_beta_c3_wenzl_coefficient (q : R) : R :=

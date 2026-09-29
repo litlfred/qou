@@ -4,7 +4,7 @@ qbeta_ladder_convention_fee_probe.py — the Q_beta ladder's agreement rests on
 THREE simultaneously non-canonical choices, each larger than the residual it
 supports.
 
-# Ref: content/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md
+# Ref: folio/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md
 # Ref: docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md
 # Ref: docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md
 

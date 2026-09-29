@@ -3,7 +3,7 @@
 qou-cds1: the D-frame Habiro generator must be bar-INVARIANT, not bar-odd —
 and c_2 = -1 discriminates the two expansion variables after all.
 
-# Ref: content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaHabiroGeneratorRigidity.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaHabiroGeneratorRigidity.lean
 # Ref: .beans/qou-cds1--s1-science-re-derive-the-qbeta-ck-ladder-under-d-n.md
 
 WHERE THIS CAME FROM. Asked where to look for a structural replacement for

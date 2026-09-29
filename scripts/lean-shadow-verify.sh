@@ -46,7 +46,7 @@
 set -uo pipefail
 
 ROOT=$(git rev-parse --show-toplevel)
-PKG="$ROOT/content/quantum-observable-universe/lean"
+PKG="$ROOT/folio/quantum-observable-universe/lean"
 export PATH="$HOME/.elan/bin:$PATH"
 
 # A bare `lean` does NOT apply the lakefile's [leanOptions].  That is not
@@ -208,7 +208,7 @@ LP="$SHADOW:$PKGROOTS$SIBLINGS$OLEANS"
 ORDER=$(OLEANS="$OLEANS" ROOT="$ROOT" python3 - "$@" <<'PY'
 import os, re, pathlib, subprocess, sys
 root = pathlib.Path(os.environ["ROOT"])
-pkg = root / "content/quantum-observable-universe/lean"
+pkg = root / "folio/quantum-observable-universe/lean"
 oleans = pathlib.Path(os.environ["OLEANS"])
 mod2path = {}
 for p in pkg.glob("QOU/**/*.lean"):

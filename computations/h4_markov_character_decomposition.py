@@ -92,7 +92,7 @@ import sys
 import sympy as sp
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LEAN = os.path.join(REPO, "content/quantum-observable-universe/lean/QOU/Machinery")
+LEAN = os.path.join(REPO, "folio/quantum-observable-universe/lean/QOU/Machinery")
 
 q, z = sp.symbols("q z")
 V = sp.symbols("v0:24")

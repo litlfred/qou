@@ -203,7 +203,7 @@ def main() -> int:
     wb.add_data(
         "lean",
         {
-            "file": "content/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean",
+            "file": "folio/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean",
             "decls": [
                 "QOU.QBeta.zD_full_bar_covariant",
                 "QOU.QBeta.barEven_fullBar_forces_classical",

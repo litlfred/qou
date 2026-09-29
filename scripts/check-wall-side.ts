@@ -109,7 +109,7 @@ function sweep(dir: string) {
  * as "the checker is broken", not "you forgot the path". That is the same
  * failure shape this batch keeps finding: a tool reporting its own misuse as a
  * result. Cf. the unknown-option guard added to
- * `content/pipeline/lean-vacuity-axiom-audit.ts` (#4712). */
+ * `folio/pipeline/lean-vacuity-axiom-audit.ts` (#4712). */
 function requireArg(flag: string, value: string | undefined): string {
   if (value === undefined || value.startsWith("-")) {
     console.error(`check-wall-side: ${flag} requires a path argument.\n`);

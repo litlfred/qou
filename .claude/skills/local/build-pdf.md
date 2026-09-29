@@ -46,7 +46,7 @@ the content build (step 1) while it runs. Ready signal:
 ```bash
 bun run --preload ./scripts/preload-registry.ts \
   ../folio-assistant/content/pipeline/build.ts \
-  content/quantum-observable-universe/quantum-observable-universe.ts \
+  folio/quantum-observable-universe/quantum-observable-universe.ts \
   --out-dir chapters/ \
   --generate-main \
   --main-out main.tex \

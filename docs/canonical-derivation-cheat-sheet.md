@@ -2,7 +2,7 @@
 
 **Audience**: math/phys starting grad — a one-page-up map of "where every QOU formula comes from" and "which script computes it". Treats the chain as a cookbook so you don't have to dig through 700+ scripts to find what's canonical.
 
-**Paper-side companion**: [`prose:pre-archimedean-derivation-chain`](../content/quantum-observable-universe/mass-theory/pre-archimedean-derivation-chain.md) (the rendered version that appears in the paper, in the Mass Analysis chapter's "Pre-Archimedean Derivation Chain and Audit" section). This doc adds the **compute-pipeline mapping**, **Phase 5 findings**, and the **migration backlog** that don't belong in the paper but are essential for code review.
+**Paper-side companion**: [`prose:pre-archimedean-derivation-chain`](../folio/quantum-observable-universe/mass-theory/pre-archimedean-derivation-chain.md) (the rendered version that appears in the paper, in the Mass Analysis chapter's "Pre-Archimedean Derivation Chain and Audit" section). This doc adds the **compute-pipeline mapping**, **Phase 5 findings**, and the **migration backlog** that don't belong in the paper but are essential for code review.
 
 **Highlight to Claude** — referenced from AGENTS.md so any agent picking up final-stage QOU work has the full canonical chain visible.
 
@@ -202,7 +202,7 @@ Every arrow lives in $\mathbb{Q}(q)$ until the Archimedean functor in step 9. No
 > steps 3–11 and every number in the framework ride on it.
 >
 > **What is proved.** `QOU.Mass.HeckeStokes.stokes_curvature_factors`
-> ([`HeckeStokesEigenvalues.lean:38`](../content/quantum-observable-universe/lean/QOU/Mass/HeckeStokesEigenvalues.lean))
+> ([`HeckeStokesEigenvalues.lean:38`](../folio/quantum-observable-universe/lean/QOU/Mass/HeckeStokesEigenvalues.lean))
 > is real and useful — but it is a **factorisation identity over a generic field**:
 >
 > ```lean
@@ -219,7 +219,7 @@ Every arrow lives in $\mathbb{Q}(q)$ until the Archimedean functor in step 9. No
 > **What is assumed.** That the polynomial *is the curvature 2-form*. There is no
 > connection, no curvature form, no surface and no multiplicative integral in that file.
 > The interpretation lives in a **docstring** in
-> [`NaStokesKeystone.lean:22`](../content/quantum-observable-universe/lean/QOU/Mass/NaStokesKeystone.lean):
+> [`NaStokesKeystone.lean:22`](../folio/quantum-observable-universe/lean/QOU/Mass/NaStokesKeystone.lean):
 >
 > > *"The abelianised Cartan connection on the exceptional divisor `S_c` **has** curvature
 > > 2-form `F(σ) = σ² − (q − q⁻¹)σ − 1`. Flatness `F = 0` derives the Hecke quadratic."*
@@ -331,7 +331,7 @@ above is two archimedean views of ONE algebraic object: the AJ
 annihilator $\hat A_K$ of the colored Jones tower, with $\Phi_q$ = the
 root-of-unity saddle regime and $\mathrm{Li}_2^q$ = the real-$q$ saddle
 regime — see
-[`prop:phi-q-aj-machinery-identification`](../content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.md)
+[`prop:phi-q-aj-machinery-identification`](../folio/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.md)
 (conditional on the class-axiomatised `QuantumAPolynomial` +
 regulator-identification inputs; no instances fabricated). Per-knot AJ
 status backing it: strong AJ **proved sorry-free in-repo** for $4_1$
@@ -415,7 +415,7 @@ The forward work has shifted from §5 mechanics to scientific closure:
 2. **Q_β refinement (research-grade, open).** **2026-06-03 reconciliation**: the prior bullet "the 2026-05-24 dashboard shows it now passes 100×" + "c_3 = -2 = J_Hopf(q=1) categorical-closure-friendly" is **STALE**. Live state per `per-observable-100x-status.witness.json` (2026-06-03): Q_β err = 1279 ppb, **miss = 164×**, `beats_100x = False`. The 2026-05-28 q₀ re-pin (per `docs/audits/2026-05-30-q0-repin-stale-witness-audit.md`) reverted the temporary 2026-05-24 pass. The `c_3 = -2 = J_Hopf(q=1)` framing is itself **flip-flop entry #4** in [`docs/coordination/1ppq-qbeta.md`](coordination/1ppq-qbeta.md) — settled as NEAR-MATCH not Taylor-exact (PR #1593 order audit: the per-block Δtr_M is O(√u) ε¹, ladder c_3 is at u³ ε⁶ — accidental 5-ε-order coincidence). Current keystone: **Q_β Habiro element identification** (the scaling map `f: Δtr_M(√u) ↦ Q_β(c_3 at u³)`). **Currency update (2026-06-10):** per-rung tiers live in [`coordination/ck-dk-canonical-registry.md`](coordination/ck-dk-canonical-registry.md); eliminated methods in the [refuted-class map](audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md) (C1–C12 + 1309-candidate real-q saturation + 4 KLR composite preflights refuted at u², PRs #1914/#1924); the extraction precision floor `σ(c_k) = σ_R/u^k` (PR #1844) proves only c_2, c_3 are data-determined ⇒ c_k≥4 is framework-derivation-only. Open axis: fibre-level kernel `R(q,ξ)`/`Φ₂` (constraints: bar-odd `a_1 = √2·Φ₂`, depth ≥ 3 or non-constant, ζ₄ residue, simple pole at u_substrate). Full state of play: [2026-06-10 synthesis](audits/2026-06-10-qbeta-ck-state-of-play-synthesis.md). **Currency update (2026-07-02, per the [`1ppq-qbeta.md`](coordination/1ppq-qbeta.md) ledger tail):** discrete braid-tower probes are exhausted (single-content mode residual 480/606/186/240 %, PR #2502); the live lead is the **continuous E_q(2) contraction** (Hahn–Exton q-Bessel). The content/twist eigenbasis reframing ([2026-06-19 audit](audits/2026-06-19-content-twist-eigenbasis-reframing.md)) makes three verified facts promotable to exact-symbolic lemmas (L1 order-parity = word-length parity; L2 `χ_λ(1/q) = (−1)^L·χ_{λ'}(q)`; L3 the framing 3-pole GF) — Lean follow-up queued; does NOT close the Δ_λ gate.
 3. **Phase-1b BlochWigner Lake-wiring** (PR #956's roadmap) — Lake-wire `QOU.Archimedean.BlochWigner_unit_circle` into the module tree, then strengthen `BringZeroModeBlochClass` field from `∃ z : ℝ, z = bringZeroModeValue` to `∃ θ : ℝ, BlochWigner_unit_circle θ = bringZeroModeValue`. Closes the literal-rfl loophole. Auxiliary to the `VolDensity` refinement.
 4. **L2 100× Subgoal-1 close-out**. **Currency update (2026-07-05)**: the committed `per-observable-100x-status.witness.json` carries `beats_100x_scoreable = 1` / `scoreable_total = 5` — **1 of 5 SCOREABLE predictions** passes 100×, and it is **m_K/m_π** alone. Do **not** quote the bare `beats_100x_count = 2` (AGENTS.md STRICT): it counts the calibration inputs `m_e` and `m_p`, whose errors are *defined* zero rather than measured. And even that 1 is **truncation-fitted + α_em-`sorry`-conditional**, so the **unconditional parameter-free count is 0/5** (red-team 2026-08-22, `docs/audits/2026-08-22-mK-mpi-l2-red-team.md`). **m_p was DROPPED 2026-07-04**: its "pass" (substrate anchor, 0.0004 ppb) held only because a fitted Habiro tower `(1+46u⁴)(1+4u⁵)(1−29u⁶)` — a muon-era fit left applied to the proton-pinned q₀, a live +242 ppb regression — landed it on CODATA; that tower was removed, and the honest documented-pin round-trip is +1.35 ppb, a ~437× miss (full analysis: [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)). So the remaining gaps are the **five scoreable** (m_μ, Q_β, m_n, Δ_pn, m_K/m_π); **m_p is `NOT SCORED`** — the live witness marks it an anchor round-trip (`miss_factor: "N/A"`, "the framework content cancels"). m_μ is a separate gap (211.2 ppb, 970.2× miss — independent μ–p floor, see `docs/audits/2026-06-02-m-mu-pr1556-superseded-by-witness.md`). The (Q_β, m_n, Δ_pn) trio shares a single root cause documented in `docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`. (Supersedes the prior "3 of 7 … m_p PASSES" reconciliation, which predated the 2026-07-04 de-fit.)
-5. **Electroweak triplet (H/W/Z) torus-knot mass route — RT-chain only.** Higgs = T(2,8), Z = T(2,6), W± = T(2,4) per the SM-particle RT-route map [`2026-05-24-sm-particle-categorical-map-rt-route.md`](audits/2026-05-24-sm-particle-categorical-map-rt-route.md) + [`2026-05-24-pr1122-retraction-and-existing-canonical-adaptation.md`](audits/2026-05-24-pr1122-retraction-and-existing-canonical-adaptation.md). (Currency 2026-07-05: the standalone content block was dropped from `archimedean-universe/` in the 2026-05-25 chapter restructure and **re-homed** to [`particle-interactions/electroweak-higgs-torus-link-triplet.md`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md) — the live block for the T(2,k) triplet identification. The structural embedding half is split into [`prop:electroweak-triplet-bring-embedding`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/particle-interactions/electroweak-triplet-bring-embedding.md); the physical identification stays a conjecture. Related EW-cell content also lives in `mass-theory/{hoefsmit-ew-cell-content,weak-symmetric-normalization,weak-spectral-completeness}.md`, and the audit docs above document the RT-route.) T(2, k) is Seifert-fibered with Vol = 0, so the canonical `VolDensity` chain in #1 above does **not** apply directly. Recent results:
+5. **Electroweak triplet (H/W/Z) torus-knot mass route — RT-chain only.** Higgs = T(2,8), Z = T(2,6), W± = T(2,4) per the SM-particle RT-route map [`2026-05-24-sm-particle-categorical-map-rt-route.md`](audits/2026-05-24-sm-particle-categorical-map-rt-route.md) + [`2026-05-24-pr1122-retraction-and-existing-canonical-adaptation.md`](audits/2026-05-24-pr1122-retraction-and-existing-canonical-adaptation.md). (Currency 2026-07-05: the standalone content block was dropped from `archimedean-universe/` in the 2026-05-25 chapter restructure and **re-homed** to [`particle-interactions/electroweak-higgs-torus-link-triplet.md`](https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md) — the live block for the T(2,k) triplet identification. The structural embedding half is split into [`prop:electroweak-triplet-bring-embedding`](https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/particle-interactions/electroweak-triplet-bring-embedding.md); the physical identification stays a conjecture. Related EW-cell content also lives in `mass-theory/{hoefsmit-ew-cell-content,weak-symmetric-normalization,weak-spectral-completeness}.md`, and the audit docs above document the RT-route.) T(2, k) is Seifert-fibered with Vol = 0, so the canonical `VolDensity` chain in #1 above does **not** apply directly. Recent results:
    * **Unified binomial pattern (PR #1125 — `torus-knot-h-expansion-pattern.md`):** Every even-h coefficient of `tr_M(σ_1^{2m})` collapses to `c_{2j}(T(2, 2m)) = C(m+j, 2j) / 2`, verified symbolically across 54 cells. This is the lower-level validator for any candidate RT specialization.
    * **Closed cosh form for the trace polynomial — connects to Phase 5b `cos_q ↔ cosh` synthesis (§4 above).** The trace polynomial `P_m(h) = Σ_{j=0}^{m} C(m+j, 2j)/2 · h^{2j}` reduces (sympy-exact across `m = 1..6`) to a single bar-symmetric ratio:
      $$P_m(h) \;=\; \frac{q^{2m+1} + q^{-(2m+1)}}{2\,[2]_q}, \qquad h = q - q^{-1}.$$
@@ -472,7 +472,7 @@ The forward work has shifted from §5 mechanics to scientific closure:
 
 | Need | Look at |
 |---|---|
-| The full chain rendered in the paper | [`pre-archimedean-derivation-chain.md`](../content/quantum-observable-universe/mass-theory/pre-archimedean-derivation-chain.md) |
+| The full chain rendered in the paper | [`pre-archimedean-derivation-chain.md`](../folio/quantum-observable-universe/mass-theory/pre-archimedean-derivation-chain.md) |
 | 7 first-principles entry points + trust basis hierarchy | `computations/DERIVATION-CHAIN-METHODOLOGY.md` |
 | Canonical-derivation discipline (production scripts) | `computations/derivation_chain.py` |
 | q_0 50-dps canonical pin | `computations/q_parameter.Q_50_DIGIT_STR` |
@@ -483,12 +483,12 @@ The forward work has shifted from §5 mechanics to scientific closure:
 | Catalogue Tier 2/3/4 optimisations | Tier 4 in-memory memoize: [`derived_chi_catalogue_memoize.py`](../computations/derived_chi_catalogue_memoize.py); Tier 3 bar-symmetry: [`derived_chi_catalogue_bar_symmetry_audit.py`](../computations/derived_chi_catalogue_bar_symmetry_audit.py) (1.9× sweep speedup); Tier 2 M_n disk cache: [`derived_chi_catalogue_mn_disk_cache.py`](../computations/derived_chi_catalogue_mn_disk_cache.py) |
 | Catalogue Tier 1 LR factorisation (math + scaffold) | Audit: [`docs/audits/2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md`](audits/2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md); Scaffold: [`derived_chi_catalogue_lr_scaffold.py`](../computations/derived_chi_catalogue_lr_scaffold.py) |
 | Catalogue Phase 3 production wire demo (1189× lookup speedup) | [`derived_chi_catalogue_production_wire_demo.py`](../computations/derived_chi_catalogue_production_wire_demo.py) |
-| Catalogue Lean scaffold | [`content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean`](../content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean) |
+| Catalogue Lean scaffold | [`folio/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean`](../folio/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean) |
 | pyhecke_native GIL release + batched-GP roadmap | [`docs/audits/2026-06-07-pyhecke-native-gil-release-patch.md`](audits/2026-06-07-pyhecke-native-gil-release-patch.md) — Patch 1 (GIL) LANDED in v0.9.0; Patch 2 (batched chi_lambdas_via_gp + Rayon) LANDED but **NOT routed by default** — empirical perf showed threads + Tier 3 outperform batched-Rayon at medium n |
 | Hoefsmit symbolic matrices | `computations/hecke/hecke_character_symbolic.hoefsmit_matrices_symbolic` |
 | Canonical atomic braid construction | `computations/mass_at_3A_proper.atom_braid_word_3A` |
 | LP duality (operator selection) | `computations/lp_dual_solver.py` (`solve_operator_selection_lp`) |
-| Notation register (post-Phase 5n) | [`content/quantum-observable-universe/notation/notation-register.md`](../content/quantum-observable-universe/notation/notation-register.md) |
+| Notation register (post-Phase 5n) | [`folio/quantum-observable-universe/notation/notation-register.md`](../folio/quantum-observable-universe/notation/notation-register.md) |
 | 1ppb coordination ledger | [`docs/coordination/1ppb-categorical-chain.md`](coordination/1ppb-categorical-chain.md) |
 | Precision dashboards | `computations/onepb-status-dashboard.witness.json` (L1) + `per-observable-100x-status.witness.json` (L2) |
 
@@ -579,7 +579,7 @@ compute has already established:
 >
 > `Δ_λ = (−1)^{n(λ)} · dim V_λ` — the **signed Springer dimension**; sign = jet-order
 > valuation parity, magnitude = Wedderburn dimension.
-> [`QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional`](../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/DeltaLambdaGeneralNUnconditional.lean)
+> [`QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional`](../folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/DeltaLambdaGeneralNUnconditional.lean)
 > (PR #4580), wired to [`computations/delta-lambda-witness.json`](../computations/delta-lambda-witness.json).
 >
 > An identification of the **same symbol** with a different object is a
@@ -657,7 +657,7 @@ compute has already established:
 >
 > | assembly | forces | invariant (all sorry-free on `main`) |
 > |---|---|---|
-> | multiplicative / Mayer `W = 1 − ∏ f_ij` | `b₃ > 0` requires `f_pn > 2/3`; every measured `f_pn` is below it (largest `z_D = 0.61269`) ⇒ **`b₃ < 0` always** | [`QOU.MassTheory.MayerThreeBodySign.lt_of_b3_pos`](../content/quantum-observable-universe/lean/QOU/MassTheory/MayerThreeBodySign.lean) |
+> | multiplicative / Mayer `W = 1 − ∏ f_ij` | `b₃ > 0` requires `f_pn > 2/3`; every measured `f_pn` is below it (largest `z_D = 0.61269`) ⇒ **`b₃ < 0` always** | [`QOU.MassTheory.MayerThreeBodySign.lt_of_b3_pos`](../folio/quantum-observable-universe/lean/QOU/MassTheory/MayerThreeBodySign.lean) |
 > | pairwise-additive log `B = −α Σ ln f_ij` | every connected cumulant above 2 vanishes ⇒ **`b₃ = 0` exactly** | arithmetic (uniform `g`: `B(2)=g, B(3)=3g, B(4)=6g`) |
 >
 > Assembly 1 gives `b₃ < 0`, assembly 2 gives `b₃ = 0`, nature gives `b₃ > 0`.
@@ -675,7 +675,7 @@ compute has already established:
 > per-λ re-decomposition of the same Borromean trace reproduces the scalar tower
 > to ≤ 6.6e-7); and it must be **arrangement-independent**, which the linear
 > chain provably is not at `q ≠ 1`
-> ([`ChainBondOrderDependence.orderIndependent_iff`](../content/quantum-observable-universe/lean/QOU/MassTheory/ChainBondOrderDependence.lean)).
+> ([`ChainBondOrderDependence.orderIndependent_iff`](../folio/quantum-observable-universe/lean/QOU/MassTheory/ChainBondOrderDependence.lean)).
 >
 > **Three further fences added the same week**, so effort does not go here:
 >
@@ -778,7 +778,7 @@ linearization-artifact reading from the exact-degree side.
 > the mirror term stays O(0.4) (⁷Li/⁷Be: +0.394) — so M3 stays a
 > near-match at A=3 only. (iii) **Interface-factor algebra Lean-proved
 > sorry-free** (22 theorems, generic field, `q = s²`, no ℝ:
-> [`QOU/Hecke/ClosedFormInterfaceFactors.lean`](../content/quantum-observable-universe/lean/QOU/Hecke/ClosedFormInterfaceFactors.lean)
+> [`QOU/Hecke/ClosedFormInterfaceFactors.lean`](../folio/quantum-observable-universe/lean/QOU/Hecke/ClosedFormInterfaceFactors.lean)
 > — factor algebra, bar-involution behaviour, δ cubic factorization,
 > assembly product, Markov trace bridge); the cross-level `H_{3A}`
 > bond-word induction remains sympy-verified only (the honest boundary).
@@ -824,7 +824,7 @@ structural bond set), the natural job of the operator-valued combiner (#1698) �
 not a weight-fit. Tracking:
 [`2026-05-28-binding-endomorphism-analogy.md`](audits/2026-05-28-binding-endomorphism-analogy.md),
 Δ_λ gate context [`2026-05-18-delta-lambda-gating-context.md`](audits/2026-05-18-delta-lambda-gating-context.md),
-inter-nucleon bonds [`inter-nucleon-channel-color-tube.md`](../content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.md).
+inter-nucleon bonds [`inter-nucleon-channel-color-tube.md`](../folio/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.md).
 
 **Update (2026-06-03) — the gate dissolves into a many-body series; the 4-body
 term EXISTS.** The pairwise bond-sum has a ceiling: the canonical braid is a
@@ -1162,7 +1162,7 @@ Owner ask (queued 2026-09-15): make this sheet reflect every decision of that da
 
 ## See also
 
-- [`pre-archimedean-derivation-chain.md`](../content/quantum-observable-universe/mass-theory/pre-archimedean-derivation-chain.md) — paper-side rendering of this chain
+- [`pre-archimedean-derivation-chain.md`](../folio/quantum-observable-universe/mass-theory/pre-archimedean-derivation-chain.md) — paper-side rendering of this chain
 - [`DERIVATION-CHAIN-METHODOLOGY.md`](../computations/DERIVATION-CHAIN-METHODOLOGY.md) — compute-side discipline
 - [`docs/precision-goals.md`](precision-goals.md) — L1 vs L2 precision targets
 - [`docs/duality-tracker.md`](duality-tracker.md) — coordinate-side classifier of every duality the framework uses or could use (D1-D24); status flags + closure paths; sibling-coordination index

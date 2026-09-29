@@ -7,7 +7,7 @@ roles:
 
 # /language-trap-agent-audit — per-block agentic trap audit
 
-The mechanical scanner (`content/pipeline/language-trap-audit.ts`)
+The mechanical scanner (`folio/pipeline/language-trap-audit.ts`)
 emits high-recall *candidates*. This skill is the required second
 layer: an agent reads **each block in full** and adjudicates **all
 ten categories in context** — including traps the regexes cannot see
@@ -90,7 +90,7 @@ human scholarly drafting, near-universal in unedited model output);
    fixed state:
 
    ```bash
-   bun run content/pipeline/qa-agent-entry.ts \
+   bun run folio/pipeline/qa-agent-entry.ts \
      --block <block.md> --criterion trap-negation-contrast \
      --result pass|fail [--severity major|minor] \
      --evidence "<what was examined / found>" \

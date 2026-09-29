@@ -61,7 +61,7 @@ _spec = importlib.util.spec_from_file_location(
 dfa = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(dfa)
 
-PAPER = REPO / "content/quantum-observable-universe"
+PAPER = REPO / "folio/quantum-observable-universe"
 LIB = PAPER / "lean"
 
 

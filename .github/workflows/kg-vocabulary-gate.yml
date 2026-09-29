@@ -101,7 +101,7 @@ jobs:
           fi
           echo "generator: $GEN"
 
-          F=content/bach2013-double-slit/double-slit-experiment/bach-apparatus.jsonld
+          F=folio/bach2013-double-slit/double-slit-experiment/bach-apparatus.jsonld
           test -f "$F" || { echo "self-test fixture missing: $F"; exit 1; }
 
           # ARM 0, and it is the one run 1 lacked. A CLEAN tree must PASS before

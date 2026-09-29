@@ -19,7 +19,7 @@ Proposal 1 (workplan 2026-05-09-rho-k): empirical Δ_λ tabulation.
 consumes CODATA `M_P_MEV` and `m_n_derived_3input` (lines 100, 102 and lines
 ~395-397) to build the right-hand side of equation (★) below.
 Per the three-calibration discipline
-(`content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md`),
+(`folio/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md`),
 that is a fourth/fifth dimensional input over the allowed
 {CAL-1 m_e, CAL-2 m_μ/m_e → q_0, CAL-3 P_avg^π}.  This script is an
 **empirical-fit probe** for the binding-fraction ansatz space —
@@ -154,7 +154,7 @@ def padded_staircase_partition(n: int) -> tuple[int, ...]:
 
     For triangular n = k(k+1)/2 this is the canonical staircase
     ρ_k = (k, k-1, ..., 1) per
-    `content/quantum-observable-universe/braids-and-knots/staircase-partition.md`.
+    `folio/quantum-observable-universe/braids-and-knots/staircase-partition.md`.
 
     For non-triangular n (e.g. n = 9, 12) we PAD the largest part
     with the surplus.  Examples:

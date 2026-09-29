@@ -165,9 +165,9 @@ The repo uses a **single root Lake workspace** ([`/lakefile.toml`](../lakefile.t
 
 | Package | Paper directory | Library module |
 |---|---|---|
-| `qou` | `content/quantum-observable-universe/lean/` | `QOU` |
-| `ugb` | `content/unital-groebner-bases/lean/` | `UGB` |
-| `fred2005` | `content/fred2005-formal-groups/lean/` | `Fred2005` |
+| `qou` | `folio/quantum-observable-universe/lean/` | `QOU` |
+| `ugb` | `folio/unital-groebner-bases/lean/` | `UGB` |
+| `fred2005` | `folio/fred2005-formal-groups/lean/` | `Fred2005` |
 
 **Preferred build commands** (from repo root):
 
@@ -206,7 +206,7 @@ The CI [`lean_ci.yml`](../.github/workflows/lean_ci.yml) uses the [`lake-cache-r
 | `papers/<dir>/` | `publish.yml` | Per-paper viewer + PDF |
 | `blueprint/` | `blueprint.yml` | LeanBlueprint interactive graph |
 | ~~`docs/`~~ | ~~`blueprint.yml`~~ | **Neither exists.** `blueprint.yml` is absent from the tree and no `docs/` directory has ever been created on `gh-pages`. |
-| `content/quantum-observable-universe/lean/` | `lean_ci.yml` | Raw Lean source browser |
+| `folio/quantum-observable-universe/lean/` | `lean_ci.yml` | Raw Lean source browser |
 | `schema-docs/` | `publish.yml` | TypeDoc content-object reference |
 | `drafts/<branch>/` | `publish.yml` | Feature-branch previews |
 

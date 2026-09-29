@@ -4,7 +4,7 @@
   "scriptFile": "witness_value_copy_audit.py",
   "description": "Source literals of >= 11 significant digits that also appear in a *.witness.json the script does not itself produce \u2014 a value copied instead of loaded. Such a copy goes stale silently when the producer is re-run.",
   "min_sig_digits": 11,
-  "indexed_literals": 233320,
+  "indexed_literals": 233318,
   "total": 428,
   "narrow_total": 222,
   "narrow_files": 148,
@@ -990,7 +990,7 @@
     },
     {
       "file": "computations/deltalambda/rev_e_infinity_g1_bottom_edge_cap_probe.py",
-      "line": 168,
+      "line": 183,
       "literal": "0.0198162676389039602300948111946348416306",
       "sig_digits": 39,
       "spread": "NARROW",

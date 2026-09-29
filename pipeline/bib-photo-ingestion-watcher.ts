@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { createHash } from 'crypto';
-import { references } from '../content/schema/references.js';
+import { references } from '../folio/schema/references.js';
 
 /**
  * Deterministic 12-char fingerprint of a reference entry. Inlined here
@@ -26,10 +26,10 @@ function entryHash(entry: unknown): string {
  *  2. Source-match the usage in QOU.
  *  3. Formalise in Lean.
  *  4. Bib-validate against the references sidecar.
- *  5. Update `content/schema/references.review.json` status to `validated`.
+ *  5. Update `folio/schema/references.review.json` status to `validated`.
  */
 
-const REVIEWS_FILE = 'content/schema/references.review.json';
+const REVIEWS_FILE = 'folio/schema/references.review.json';
 
 interface Payload {
   type: 'github_issue' | 'local_backfill';

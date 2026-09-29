@@ -24,13 +24,13 @@ allowed-tools: Read Write Edit Bash Grep Glob Agent WebFetch
 > `library/<id>/intake.json` convention below covers 1 of the corpus's 284
 > documents; the per-document row — reference join, examination status, and
 > relevance verdict — is now
-> `content/bib-qa-verifications.json` (`source-ledger/v1`), populated by
+> `folio/bib-qa-verifications.json` (`source-ledger/v1`), populated by
 > [`local/paper-relevance-triage`](paper-relevance-triage.md). Use the ledger
 > for "what is this document, is it cited, does it matter"; keep `intake.json`
 > for the multi-stage *extraction* state of a document actually being
 > converted (OCR → blocks → content objects). Do not record a title, author,
 > or year in the ledger — bibliographic metadata belongs in
-> `content/schema/references.ts` alone.
+> `folio/schema/references.ts` alone.
 
 ## Overview
 
@@ -243,7 +243,7 @@ Interactive step — present extracted blocks to user for review:
 
 Generate content objects under `content/<paper-id>/`:
 
-1. **`.ts` manifests** via `content/schema/builders.ts`
+1. **`.ts` manifests** via `folio/schema/builders.ts`
 2. **`.md` content** in project markdown conventions
 3. **Chapter `.ts` manifests** with section structure
 4. **Paper `.ts` manifest** (new or updated)

@@ -4,8 +4,8 @@
 # Context: qou is CONTENT ONLY. The platform it consumes (content
 # pipeline, schemas, LaTeX rendering, viewer, computations) lives in a
 # SEPARATE repo, litlfred/folio-assistant. qou's content `.ts` files and
-# the `content/schema/*.ts` shims import the platform through the in-repo
-# path `folio-assistant/` (e.g. `content/schema/builders.ts` re-exports the
+# the `folio/schema/*.ts` shims import the platform through the in-repo
+# path `folio-assistant/` (e.g. `folio/schema/builders.ts` re-exports the
 # builders from `../../folio-assistant/cat-harness/schemas/builders`), and the
 # package.json scripts run `../folio-assistant/cat-harness/content/pipeline/*.ts`.
 # Both resolve to `<repo-root>/folio-assistant/`.
@@ -257,7 +257,7 @@ esac
 # --- bridge: expose the repo's bibliography to platform checkers ----------
 # ONLY for a pre-split clone. Both consumers were fixed upstream and the
 # bridges are not merely unnecessary against a split clone — they are WRONG
-# there, because `mkdir -p "$CLONE_ABS/content/schema"` would mint directories
+# there, because `mkdir -p "$CLONE_ABS/folio/schema"` would mint directories
 # at a clone root that no longer holds any of the platform's code, and the
 # consumer looking for them has stopped looking.
 #
@@ -290,21 +290,21 @@ esac
 if [ "$PLATFORM_ABS" = "$CLONE_ABS" ]; then
   # qa-checkers-extended.ts (pre-split) resolved references.ts relative to the
   # PLATFORM clone (CONTENT_DIR = <clone>/content), but the bibliography source
-  # of truth lives in THIS repo at content/schema/references.ts. Without this
+  # of truth lives in THIS repo at folio/schema/references.ts. Without this
   # bridge every \cite{} fails bib-cite-resolves with "does not resolve in
   # references.ts" (the 2026-06-21 233-block false-fail batch).
-  if [ ! -e "$CLONE_ABS/content/schema/references.ts" ]; then
-    mkdir -p "$CLONE_ABS/content/schema"
-    ln -s "$ROOT/content/schema/references.ts" \
-      "$CLONE_ABS/content/schema/references.ts" \
-      && info "bridged content/schema/references.ts into pre-split platform clone" \
+  if [ ! -e "$CLONE_ABS/folio/schema/references.ts" ]; then
+    mkdir -p "$CLONE_ABS/folio/schema"
+    ln -s "$ROOT/folio/schema/references.ts" \
+      "$CLONE_ABS/folio/schema/references.ts" \
+      && info "bridged folio/schema/references.ts into pre-split platform clone" \
       || info "could not bridge references.ts — bib-cite-resolves will false-fail"
   fi
 
   # The pre-split platform imported the bibliography by TWO different paths,
   # and bridging only the one above left the other broken:
   #
-  #   qa-checkers-extended.ts  -> <clone>/content/schema/references  (above)
+  #   qa-checkers-extended.ts  -> <clone>/folio/schema/references  (above)
   #   export-bibtex.ts         -> <clone>/schemas/references         (here)
   #
   # Without this second link, regenerating references.bib dies with
@@ -315,7 +315,7 @@ if [ "$PLATFORM_ABS" = "$CLONE_ABS" ]; then
   # 23 "Citation ... undefined" warnings in the full build.
   if [ ! -e "$CLONE_ABS/schemas/references.ts" ]; then
     mkdir -p "$CLONE_ABS/schemas"
-    ln -s "$ROOT/content/schema/references.ts" \
+    ln -s "$ROOT/folio/schema/references.ts" \
       "$CLONE_ABS/schemas/references.ts" \
       && info "bridged schemas/references.ts into pre-split platform clone" \
       || info "could not bridge schemas/references.ts — export-bibtex will fail"
@@ -381,7 +381,7 @@ setup-folio-assistant: done.
   in-repo link   : $LINK -> $TARGET
 
 Next, from the REPO ROOT:
-  bun run scripts/run-validate.ts content/quantum-observable-universe
+  bun run scripts/run-validate.ts folio/quantum-observable-universe
 
 (\`bun run validate\` no longer exists — the package.json alias was dropped in
 the folio-assistant migration; run-validate.ts is its standalone replacement.)

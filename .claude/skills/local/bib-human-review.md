@@ -14,11 +14,11 @@ roles: [collaborator]
 # bib-human-review
 
 Design of record: [`docs/workplans/2026-06-08-bib-human-review-workflow-design.md`](../../../docs/workplans/2026-06-08-bib-human-review-workflow-design.md).
-Status sidecar: [`content/schema/references.review.json`](../../../content/schema/references.review.json).
+Status sidecar: [`folio/schema/references.review.json`](../../../folio/schema/references.review.json).
 
 ## What this skill does
 
-Every entry in `content/schema/references.ts` must be **human-reviewed against its
+Every entry in `folio/schema/references.ts` must be **human-reviewed against its
 source**. This skill manages that status and drives unreviewed references to
 `validated`.
 

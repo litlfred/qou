@@ -90,68 +90,68 @@ A `sorry` is acceptable only with a bibliographic `-- Ref:` citation on or just 
 
 | Chapter | Block | Lean file | sorries | cited | Ref keys / ⚠ uncited lines |
 |---|---|---|--:|--:|---|
-| quantum-observable-universes | `categorical-coordinate-ring` (proposition) | `content/quantum-observable-universe/quantum-observable-universes/categorical-coordinate-ring.lean` | 1 | 1 | `kassel1995` |
-| quantum-observable-universes | `categorical-laplace-transform-exists` (proposition) | `content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.lean` | 1 | 1 | `kassel1995` |
-| quantum-observable-universes | `fai-projector-coadjoint-orbit` (lemma) | `content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/fai_projector_coadjoint_orbit.lean` | 1 | 0 | ⚠ uncited @ 117 |
-| quantum-observable-universes | `fiber-adjoint-involution` (proposition) | `content/quantum-observable-universe/quantum-observable-universes/fiber-adjoint-involution.lean` | 1 | 1 | `manuscript` |
-| quantum-observable-universes | `observation-energy` (proposition) | `content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/observation_energy.lean` | 1 | 1 | `manuscript` |
-| quantum-observable-universes | `quantum-observable-universe-exists` (proposition) | `content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.lean` | 1 | 1 | `kassel1995` |
-| lifting-and-descent | `categorical-jet-prolongation` (proposition) | `content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean` | 1 | 1 | `manuscript` |
-| lifting-and-descent | `ordering-jet-compatibility` (proposition) | `content/quantum-observable-universe/lifting-and-descent/ordering-jet-compatibility.lean` | 1 | 1 | `manuscript` |
-| lifting-and-descent | `qu-to-qou` (theorem) | `content/quantum-observable-universe/lifting-and-descent/qu-to-qou.lean` | 1 | 1 | `manuscript` |
-| braids-and-knots | `hecke-satisfies-blitvic-hypothesis` (proposition) | `content/quantum-observable-universe/lean/QOU/Observations/hecke_satisfies_blitvic_hypothesis.lean` | 1 | 1 | `manuscript` |
-| brings-surface | `brings-euler-characteristic` (lemma) | `content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/brings_euler_characteristic.lean` | 1 | 1 | `manuscript` |
-| brings-surface | `yekutieli-leading-coefficient` (lemma) | `content/quantum-observable-universe/lean/QOU/Archimedean/yekutieli_leading_coefficient.lean` | 1 | 1 | `yekutieli2015` |
-| mass-endomorphism | `explicit-central-idempotent` (proposition) | `content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.lean` | 2 | 2 | `manuscript` |
-| mass-endomorphism | `markov-trace-recursive-reducer` (proposition) | `content/quantum-observable-universe/mass-endomorphism/markov-trace-recursive-reducer.lean` | 1 | 1 | `wenzl1988` |
-| mass-endomorphism | `qbeta-per-block-chi-closed-forms` (proposition) | `content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean` | 1 | 1 | `manuscript` |
-| mass-endomorphism | `topological-mass-cat-descended` (lemma) | `content/quantum-observable-universe/lean/QOU/TopologicalMass/cat_descended_is_base_mass.lean` | 2 | 2 | `manuscript` |
-| mass-endomorphism | `topological-mass-cat-eigenspace` (lemma) | `content/quantum-observable-universe/lean/QOU/TopologicalMass/cat_eigenspace_decomposition.lean` | 1 | 1 | `manuscript` |
-| mass-endomorphism | `topological-mass-cat-transient` (lemma) | `content/quantum-observable-universe/lean/QOU/TopologicalMass/cat_transient_localises_blowup.lean` | 1 | 0 | ⚠ uncited @ 84 |
-| mass-endomorphism | `topological-mass-dilogarithm` (lemma) | `content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_dilogarithm_evaluation.lean` | 1 | 0 | ⚠ uncited @ 84 |
-| mass-endomorphism | `topological-mass-holonomy` (lemma) | `content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_descended_is_holonomy.lean` | 3 | 2 | `manuscript`, `yekutieli2015`, ⚠ uncited @ 77 |
-| mass-endomorphism | `topological-mass-transient-localisation` (lemma) | `content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_transient_localisation.lean` | 2 | 1 | `manuscript`, ⚠ uncited @ 82 |
-| particle-interactions | `atomic-lp-stability` (proposition) | `content/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_lp_stability.lean` | 2 | 2 | `bertsimas1997`, `wenzl1990` |
-| particle-interactions | `compound-beta-shell-calibration` (proposition) | `content/quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.lean` | 3 | 3 | `manuscript` |
-| particle-interactions | `confinement-frobenius-reciprocity` (proposition) | `content/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean` | 1 | 1 | `bertsimas1997` |
-| particle-interactions | `confinement-phase-stratification` (proposition) | `content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.lean` | 2 | 2 | `manuscript` |
-| particle-interactions | `four-term-pair-nucleon` (proposition) | `content/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean` | 1 | 1 | `manuscript` |
-| particle-interactions | `lp-dual-stability` (proposition) | `content/quantum-observable-universe/lean/QOU/ParticleInteractions/lp_dual_stability.lean` | 1 | 1 | `bertsimas1997` |
-| particle-interactions | `nucleon-ordering-factorization` (proposition) | `content/quantum-observable-universe/lean/QOU/Interactions/nucleon_ordering_factorization.lean` | 1 | 1 | `manuscript` |
-| climax-volume-mass | `confinement-local-constancy` (proposition) | `content/quantum-observable-universe/climax-volume-mass/confinement-local-constancy.lean` | 1 | 1 | `manuscript` |
-| climax-volume-mass | `mobius-energy-frobenius-kernel` (lemma) | `content/quantum-observable-universe/lean/QOU/BraidsKnots/mobius_frobenius_kernel.lean` | 1 | 1 | `manuscript` |
-| climax-volume-mass | `nsi-q-deformed-kernel` (lemma) | `content/quantum-observable-universe/lean/QOU/BraidsKnots/nsi_q_deformed_kernel.lean` | 1 | 1 | `manuscript` |
-| mass-theory | `a8-partition-function-identity` (proposition) | `content/quantum-observable-universe/mass-theory/a8-partition-function-identity.lean` | 1 | 1 | `OEIS A000041 https://oeis.org/A000041` |
-| mass-theory | `confinement-sdp` (proposition) | `content/quantum-observable-universe/mass-theory/confinement-sdp.lean` | 1 | 1 | `manuscript` |
-| mass-theory | `crystal-basis-resolves-mass-tower-open-problems` (proposition) | `content/quantum-observable-universe/mass-theory/crystal-basis-resolves-mass-tower-open-problems.lean` | 1 | 1 | `manuscript` |
-| mass-theory | `delta-max-uniform-bound` (proposition) | `content/quantum-observable-universe/mass-theory/delta-max-uniform-bound.lean` | 1 | 1 | `kassel1995 := sorry -- Ref: kassel1995` |
-| mass-theory | `descended-level-zero` (proposition) | `content/quantum-observable-universe/mass-theory/descended-level-zero.lean` | 1 | 1 | `manuscript` |
-| mass-theory | `feynman-markov-identification` (lemma) | `content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals/markov_identification.lean` | 1 | 1 | `manuscript` |
-| mass-theory | `frobenius-self-duality-forces-lp-dual-extraction` (proposition) | `content/quantum-observable-universe/mass-theory/frobenius-self-duality-forces-lp-dual-extraction.lean` | 3 | 3 | `manuscript` |
-| mass-theory | `jucys-murphy-central-elements-qou` (proposition) | `content/quantum-observable-universe/mass-theory/jucys-murphy-central-elements-qou.lean` | 2 | 2 | `jucys1974`, `murphy1992` |
-| mass-theory | `mass-categorical-descent` (proposition) | `content/quantum-observable-universe/lean/QOU/ParticleInteractions/mass_categorical_descent.lean` | 1 | 1 | `manuscript` |
-| mass-theory | `mass-endomorphism-tower` (proposition) | `content/quantum-observable-universe/mass-theory/mass-endomorphism-tower.lean` | 1 | 1 | `manuscript` |
-| mass-theory | `neutron-proton-splitting` (proposition) | `content/quantum-observable-universe/lean/QOU/Torsion/neutron_proton_splitting.lean` | 1 | 1 | `manuscript` |
-| mass-theory | `operator-selection-lp` (proposition) | `content/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean` | 1 | 1 | `bertsimas1997` |
-| mass-theory | `prop-rigid-monoidal-structural-gap-invariance` (proposition) | `content/quantum-observable-universe/mass-theory/prop-rigid-monoidal-structural-gap-invariance.lean` | 1 | 1 | `wenzl1988` |
-| mass-theory | `skein-mass-from-linking` (lemma) | `content/quantum-observable-universe/lean/QOU/BraidsKnots/skein_mass_from_linking.lean` | 1 | 1 | `manuscript` |
-| mass-theory | `symbolic-character-table` (proposition) | `content/quantum-observable-universe/lean/QOU/BraidKnot/symbolic_character_table.lean` | 1 | 1 | `manuscript` |
-| mass-theory | `toroidal-harmonics-delta-lambda` (proposition) | `content/quantum-observable-universe/lean/QOU/QBeta/ToroidalHarmonicsBasis.lean` | 1 | 0 | ⚠ uncited @ 78 |
-| mass-theory | `volume-perturbation-formula` (proposition) | `content/quantum-observable-universe/lean/QOU/BraidKnot/volume_perturbation.lean` | 1 | 1 | `manuscript` |
-| predicted-spectra | `em-coupling-bring-zero-mode` (proposition) | `content/quantum-observable-universe/lean/QOU/Archimedean/EmCouplingBringZeroMode.lean` | 1 | 1 | `suslin1991` |
-| predicted-spectra | `knot-operator-selection` (proposition) | `content/quantum-observable-universe/lean/QOU/Archimedean/knot_operator_selection.lean` | 1 | 1 | `wenzl1990` |
-| predicted-spectra | `tau-leptonic-universality` (proposition) | `content/quantum-observable-universe/lean/QOU/Archimedean/tau_leptonic_universality.lean` | 1 | 1 | `manuscript` |
-| observations | `algebraic-gns-embedding` (proposition) | `content/quantum-observable-universe/observations/algebraic-gns-embedding.lean` | 1 | 1 | `manuscript` |
-| observations | `borromean-hopf-energy-crossover` (proposition) | `content/quantum-observable-universe/observations/borromean-hopf-energy-crossover.lean` | 1 | 1 | `manuscript` |
-| observations | `pair-skein-mass-formula` (lemma) | `content/quantum-observable-universe/lean/QOU/HadronicMass/pair_skein_mass_formula.lean` | 1 | 1 | `jones1987` |
-| molecular-construction | `shell-filling-rule` (proposition) | `content/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean` | 3 | 3 | `manuscript` |
-| fluid-dynamics | `q-ns-wellposedness` (theorem) | `content/quantum-observable-universe/lean/QOU/FluidDynamics/q_ns_wellposedness.lean` | 1 | 1 | `manuscript` |
-| fluid-dynamics | `q-turbulence-spectrum` (proposition) | `content/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean` | 1 | 1 | `manuscript` |
-| stochastic-mechanics | `joint-galois-braid-figure-8-verified` (proposition) | `content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/JointGaloisBraidFigure8.lean` | 1 | 1 | `manuscript` |
-| stochastic-mechanics | `qou-obstruction-reduction` (theorem) | `content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/qou_obstruction_reduction.lean` | 1 | 1 | `manuscript` |
-| information-theory | `q-exponential-taylor` (proposition) | `content/quantum-observable-universe/information-theory/q-exponential-taylor.lean` | 1 | 1 | `manuscript` |
-| q-geometric-langlands | `q-gl-obstruction-calc` (proposition) | `content/quantum-observable-universe/lean/QOU/q_gl_obstruction_calc.lean` | 3 | 3 | `manuscript` |
-| appendix-qvalues | `proton-mass-substrate-identity` (proposition) | `content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean` | 1 | 1 | `manuscript` |
+| quantum-observable-universes | `categorical-coordinate-ring` (proposition) | `folio/quantum-observable-universe/quantum-observable-universes/categorical-coordinate-ring.lean` | 1 | 1 | `kassel1995` |
+| quantum-observable-universes | `categorical-laplace-transform-exists` (proposition) | `folio/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.lean` | 1 | 1 | `kassel1995` |
+| quantum-observable-universes | `fai-projector-coadjoint-orbit` (lemma) | `folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/fai_projector_coadjoint_orbit.lean` | 1 | 0 | ⚠ uncited @ 117 |
+| quantum-observable-universes | `fiber-adjoint-involution` (proposition) | `folio/quantum-observable-universe/quantum-observable-universes/fiber-adjoint-involution.lean` | 1 | 1 | `manuscript` |
+| quantum-observable-universes | `observation-energy` (proposition) | `folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/observation_energy.lean` | 1 | 1 | `manuscript` |
+| quantum-observable-universes | `quantum-observable-universe-exists` (proposition) | `folio/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.lean` | 1 | 1 | `kassel1995` |
+| lifting-and-descent | `categorical-jet-prolongation` (proposition) | `folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean` | 1 | 1 | `manuscript` |
+| lifting-and-descent | `ordering-jet-compatibility` (proposition) | `folio/quantum-observable-universe/lifting-and-descent/ordering-jet-compatibility.lean` | 1 | 1 | `manuscript` |
+| lifting-and-descent | `qu-to-qou` (theorem) | `folio/quantum-observable-universe/lifting-and-descent/qu-to-qou.lean` | 1 | 1 | `manuscript` |
+| braids-and-knots | `hecke-satisfies-blitvic-hypothesis` (proposition) | `folio/quantum-observable-universe/lean/QOU/Observations/hecke_satisfies_blitvic_hypothesis.lean` | 1 | 1 | `manuscript` |
+| brings-surface | `brings-euler-characteristic` (lemma) | `folio/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/brings_euler_characteristic.lean` | 1 | 1 | `manuscript` |
+| brings-surface | `yekutieli-leading-coefficient` (lemma) | `folio/quantum-observable-universe/lean/QOU/Archimedean/yekutieli_leading_coefficient.lean` | 1 | 1 | `yekutieli2015` |
+| mass-endomorphism | `explicit-central-idempotent` (proposition) | `folio/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.lean` | 2 | 2 | `manuscript` |
+| mass-endomorphism | `markov-trace-recursive-reducer` (proposition) | `folio/quantum-observable-universe/mass-endomorphism/markov-trace-recursive-reducer.lean` | 1 | 1 | `wenzl1988` |
+| mass-endomorphism | `qbeta-per-block-chi-closed-forms` (proposition) | `folio/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean` | 1 | 1 | `manuscript` |
+| mass-endomorphism | `topological-mass-cat-descended` (lemma) | `folio/quantum-observable-universe/lean/QOU/TopologicalMass/cat_descended_is_base_mass.lean` | 2 | 2 | `manuscript` |
+| mass-endomorphism | `topological-mass-cat-eigenspace` (lemma) | `folio/quantum-observable-universe/lean/QOU/TopologicalMass/cat_eigenspace_decomposition.lean` | 1 | 1 | `manuscript` |
+| mass-endomorphism | `topological-mass-cat-transient` (lemma) | `folio/quantum-observable-universe/lean/QOU/TopologicalMass/cat_transient_localises_blowup.lean` | 1 | 0 | ⚠ uncited @ 84 |
+| mass-endomorphism | `topological-mass-dilogarithm` (lemma) | `folio/quantum-observable-universe/lean/QOU/LiftingDescent/tm_dilogarithm_evaluation.lean` | 1 | 0 | ⚠ uncited @ 84 |
+| mass-endomorphism | `topological-mass-holonomy` (lemma) | `folio/quantum-observable-universe/lean/QOU/LiftingDescent/tm_descended_is_holonomy.lean` | 3 | 2 | `manuscript`, `yekutieli2015`, ⚠ uncited @ 77 |
+| mass-endomorphism | `topological-mass-transient-localisation` (lemma) | `folio/quantum-observable-universe/lean/QOU/LiftingDescent/tm_transient_localisation.lean` | 2 | 1 | `manuscript`, ⚠ uncited @ 82 |
+| particle-interactions | `atomic-lp-stability` (proposition) | `folio/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_lp_stability.lean` | 2 | 2 | `bertsimas1997`, `wenzl1990` |
+| particle-interactions | `compound-beta-shell-calibration` (proposition) | `folio/quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.lean` | 3 | 3 | `manuscript` |
+| particle-interactions | `confinement-frobenius-reciprocity` (proposition) | `folio/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean` | 1 | 1 | `bertsimas1997` |
+| particle-interactions | `confinement-phase-stratification` (proposition) | `folio/quantum-observable-universe/particle-interactions/confinement-phase-stratification.lean` | 2 | 2 | `manuscript` |
+| particle-interactions | `four-term-pair-nucleon` (proposition) | `folio/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean` | 1 | 1 | `manuscript` |
+| particle-interactions | `lp-dual-stability` (proposition) | `folio/quantum-observable-universe/lean/QOU/ParticleInteractions/lp_dual_stability.lean` | 1 | 1 | `bertsimas1997` |
+| particle-interactions | `nucleon-ordering-factorization` (proposition) | `folio/quantum-observable-universe/lean/QOU/Interactions/nucleon_ordering_factorization.lean` | 1 | 1 | `manuscript` |
+| climax-volume-mass | `confinement-local-constancy` (proposition) | `folio/quantum-observable-universe/climax-volume-mass/confinement-local-constancy.lean` | 1 | 1 | `manuscript` |
+| climax-volume-mass | `mobius-energy-frobenius-kernel` (lemma) | `folio/quantum-observable-universe/lean/QOU/BraidsKnots/mobius_frobenius_kernel.lean` | 1 | 1 | `manuscript` |
+| climax-volume-mass | `nsi-q-deformed-kernel` (lemma) | `folio/quantum-observable-universe/lean/QOU/BraidsKnots/nsi_q_deformed_kernel.lean` | 1 | 1 | `manuscript` |
+| mass-theory | `a8-partition-function-identity` (proposition) | `folio/quantum-observable-universe/mass-theory/a8-partition-function-identity.lean` | 1 | 1 | `OEIS A000041 https://oeis.org/A000041` |
+| mass-theory | `confinement-sdp` (proposition) | `folio/quantum-observable-universe/mass-theory/confinement-sdp.lean` | 1 | 1 | `manuscript` |
+| mass-theory | `crystal-basis-resolves-mass-tower-open-problems` (proposition) | `folio/quantum-observable-universe/mass-theory/crystal-basis-resolves-mass-tower-open-problems.lean` | 1 | 1 | `manuscript` |
+| mass-theory | `delta-max-uniform-bound` (proposition) | `folio/quantum-observable-universe/mass-theory/delta-max-uniform-bound.lean` | 1 | 1 | `kassel1995 := sorry -- Ref: kassel1995` |
+| mass-theory | `descended-level-zero` (proposition) | `folio/quantum-observable-universe/mass-theory/descended-level-zero.lean` | 1 | 1 | `manuscript` |
+| mass-theory | `feynman-markov-identification` (lemma) | `folio/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals/markov_identification.lean` | 1 | 1 | `manuscript` |
+| mass-theory | `frobenius-self-duality-forces-lp-dual-extraction` (proposition) | `folio/quantum-observable-universe/mass-theory/frobenius-self-duality-forces-lp-dual-extraction.lean` | 3 | 3 | `manuscript` |
+| mass-theory | `jucys-murphy-central-elements-qou` (proposition) | `folio/quantum-observable-universe/mass-theory/jucys-murphy-central-elements-qou.lean` | 2 | 2 | `jucys1974`, `murphy1992` |
+| mass-theory | `mass-categorical-descent` (proposition) | `folio/quantum-observable-universe/lean/QOU/ParticleInteractions/mass_categorical_descent.lean` | 1 | 1 | `manuscript` |
+| mass-theory | `mass-endomorphism-tower` (proposition) | `folio/quantum-observable-universe/mass-theory/mass-endomorphism-tower.lean` | 1 | 1 | `manuscript` |
+| mass-theory | `neutron-proton-splitting` (proposition) | `folio/quantum-observable-universe/lean/QOU/Torsion/neutron_proton_splitting.lean` | 1 | 1 | `manuscript` |
+| mass-theory | `operator-selection-lp` (proposition) | `folio/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean` | 1 | 1 | `bertsimas1997` |
+| mass-theory | `prop-rigid-monoidal-structural-gap-invariance` (proposition) | `folio/quantum-observable-universe/mass-theory/prop-rigid-monoidal-structural-gap-invariance.lean` | 1 | 1 | `wenzl1988` |
+| mass-theory | `skein-mass-from-linking` (lemma) | `folio/quantum-observable-universe/lean/QOU/BraidsKnots/skein_mass_from_linking.lean` | 1 | 1 | `manuscript` |
+| mass-theory | `symbolic-character-table` (proposition) | `folio/quantum-observable-universe/lean/QOU/BraidKnot/symbolic_character_table.lean` | 1 | 1 | `manuscript` |
+| mass-theory | `toroidal-harmonics-delta-lambda` (proposition) | `folio/quantum-observable-universe/lean/QOU/QBeta/ToroidalHarmonicsBasis.lean` | 1 | 0 | ⚠ uncited @ 78 |
+| mass-theory | `volume-perturbation-formula` (proposition) | `folio/quantum-observable-universe/lean/QOU/BraidKnot/volume_perturbation.lean` | 1 | 1 | `manuscript` |
+| predicted-spectra | `em-coupling-bring-zero-mode` (proposition) | `folio/quantum-observable-universe/lean/QOU/Archimedean/EmCouplingBringZeroMode.lean` | 1 | 1 | `suslin1991` |
+| predicted-spectra | `knot-operator-selection` (proposition) | `folio/quantum-observable-universe/lean/QOU/Archimedean/knot_operator_selection.lean` | 1 | 1 | `wenzl1990` |
+| predicted-spectra | `tau-leptonic-universality` (proposition) | `folio/quantum-observable-universe/lean/QOU/Archimedean/tau_leptonic_universality.lean` | 1 | 1 | `manuscript` |
+| observations | `algebraic-gns-embedding` (proposition) | `folio/quantum-observable-universe/observations/algebraic-gns-embedding.lean` | 1 | 1 | `manuscript` |
+| observations | `borromean-hopf-energy-crossover` (proposition) | `folio/quantum-observable-universe/observations/borromean-hopf-energy-crossover.lean` | 1 | 1 | `manuscript` |
+| observations | `pair-skein-mass-formula` (lemma) | `folio/quantum-observable-universe/lean/QOU/HadronicMass/pair_skein_mass_formula.lean` | 1 | 1 | `jones1987` |
+| molecular-construction | `shell-filling-rule` (proposition) | `folio/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean` | 3 | 3 | `manuscript` |
+| fluid-dynamics | `q-ns-wellposedness` (theorem) | `folio/quantum-observable-universe/lean/QOU/FluidDynamics/q_ns_wellposedness.lean` | 1 | 1 | `manuscript` |
+| fluid-dynamics | `q-turbulence-spectrum` (proposition) | `folio/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean` | 1 | 1 | `manuscript` |
+| stochastic-mechanics | `joint-galois-braid-figure-8-verified` (proposition) | `folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/JointGaloisBraidFigure8.lean` | 1 | 1 | `manuscript` |
+| stochastic-mechanics | `qou-obstruction-reduction` (theorem) | `folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/qou_obstruction_reduction.lean` | 1 | 1 | `manuscript` |
+| information-theory | `q-exponential-taylor` (proposition) | `folio/quantum-observable-universe/information-theory/q-exponential-taylor.lean` | 1 | 1 | `manuscript` |
+| q-geometric-langlands | `q-gl-obstruction-calc` (proposition) | `folio/quantum-observable-universe/lean/QOU/q_gl_obstruction_calc.lean` | 3 | 3 | `manuscript` |
+| appendix-qvalues | `proton-mass-substrate-identity` (proposition) | `folio/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean` | 1 | 1 | `manuscript` |
 
 ## Block-level drill-down (blocks with failing criteria)
 

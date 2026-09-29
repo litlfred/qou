@@ -10,7 +10,7 @@ bound-vs-REV table (qou-0ie7 / qou-hok7)
 A dispatched agent (qou-0ie7, 2026-09-07) died uncommitted after CLAIMING a short proof that the
 upper bound is O(sqrt n).  This probe re-derives that claim from the definitions the corpus
 actually uses, looks for the flaw, and verifies every step exactly.  The Lean half is
-`content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumRowTangentBound.lean`.
+`folio/quantum-observable-universe/lean/QOU/BraidKnot/HookSumRowTangentBound.lean`.
 
 ## 0. Definitions (exactly as the corpus computes them)
 
@@ -631,7 +631,7 @@ def main() -> int:
             "(7)": "REV_n <= (C + L/2 + pi/sqrt3) sqrt(2n) + C^2/(2L) - C = O(sqrt n)",
             "verdict": "REV_n = Theta(sqrt n); the 3/4 exponent (#7018) is not sharp",
         },
-        "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumRowTangentBound.lean",
+        "lean": "folio/quantum-observable-universe/lean/QOU/BraidKnot/HookSumRowTangentBound.lean",
         "checks": results,
         "checks_passed": n_ok,
         "checks_total": len(results),

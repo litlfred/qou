@@ -13,7 +13,7 @@ contradicted by the source.
 Resolution order for a block's Lean source:
   1. sibling ``<block>.lean``
   2. the ``lean.ref`` ``qou:QOU.<Mod>.<Decl>`` -> library file under
-     ``content/quantum-observable-universe/lean/QOU/<Mod>.lean`` (and the
+     ``folio/quantum-observable-universe/lean/QOU/<Mod>.lean`` (and the
      ``<Mod>/<Decl>.lean`` variant).
 
 Token criteria (evaluated on comment-stripped source):
@@ -34,7 +34,7 @@ from __future__ import annotations
 import argparse, datetime, glob, hashlib, json, os, re, subprocess, sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LEAN_ROOT = "content/quantum-observable-universe/lean/QOU"
+LEAN_ROOT = "folio/quantum-observable-universe/lean/QOU"
 
 # --- comment stripping -------------------------------------------------------
 # State-machine stripper (per Gemini review on PR #2775): a regex stripper

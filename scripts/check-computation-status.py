@@ -63,7 +63,7 @@ import pathlib
 import re
 import sys
 
-CONTENT = pathlib.Path(__file__).resolve().parent.parent / "content"
+CONTENT = pathlib.Path(__file__).resolve().parent.parent / "folio"
 REPO = CONTENT.parent
 
 LABEL = re.compile(r'label:\s*"([^"]+)"')

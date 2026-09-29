@@ -241,9 +241,9 @@ def main() -> int:
           f"max deviation {mp.nstr(worst, 4)}")
 
     print("\nCHECK 6 -- the scoping sentences are IN the blocks (not my paraphrase)")
-    stmt = (REPO / "content/quantum-observable-universe/mass-theory"
+    stmt = (REPO / "folio/quantum-observable-universe/mass-theory"
                    "/wedderburn-mass-formula.md").read_text()
-    proof = (REPO / "content/quantum-observable-universe/mass-theory"
+    proof = (REPO / "folio/quantum-observable-universe/mass-theory"
                     "/wedderburn-mass-formula-proof.md").read_text()
     quotes = [
         ("statement", stmt, "three extremal invariants as the leading-order formula"),

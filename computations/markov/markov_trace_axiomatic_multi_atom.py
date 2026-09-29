@@ -23,7 +23,7 @@ convention is **empirically wrong** — the Schur-Weyl identity
 Σ_λ y_λ(q) χ^λ(β_D) = tr_M(β_D) fails by factor ~5 for that word.
 
 The canonical convention from
-`content/quantum-observable-universe/braids-and-knots/hecke-branching-trace-decomposition.md`
+`folio/quantum-observable-universe/braids-and-knots/hecke-branching-trace-decomposition.md`
 is β_p · I · β_n where I = σ₃ - h/2·1 is an *operator-valued* interface
 crossing (non-scalar A^λ_{μ,ν}(I) for 9 of 11 partitions λ ⊢ 6).  The
 canonical word is built by `mass_at_3A_proper.atom_braid_word_3A(Z, N)`.

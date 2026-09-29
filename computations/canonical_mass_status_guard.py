@@ -240,7 +240,7 @@ NEGATION_WINDOW = 2
 
 
 def _iter_target_files():
-    content = REPO / "content"
+    content = REPO / "folio"
     if content.exists():
         yield from content.rglob("*.md")
     for rel in LIVE_REFERENCE_DOCS:

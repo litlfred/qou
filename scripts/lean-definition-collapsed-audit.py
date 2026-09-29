@@ -49,9 +49,9 @@ from lean_decl_scan import (            # noqa: E402  (path set above)
 )
 
 DEFAULT_ROOTS = [
-    "content/quantum-observable-universe/lean/QOU",
-    "content/unital-groebner-bases/lean",
-    "content/fred2005-formal-groups/lean",
+    "folio/quantum-observable-universe/lean/QOU",
+    "folio/unital-groebner-bases/lean",
+    "folio/fred2005-formal-groups/lean",
 ]
 
 # PLAIN_DEF / THM now come from scripts/lib/lean_decl_scan (bean qou-rfq9).

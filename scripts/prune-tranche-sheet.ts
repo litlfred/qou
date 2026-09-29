@@ -62,7 +62,7 @@ function auditSourcesFor(t: string): string[] {
   return out;
 }
 
-const g = buildContentGraph(resolve(REPO, "content"), REPO);
+const g = buildContentGraph(resolve(REPO, "folio"), REPO);
 
 function reaches(from: string, to: string): boolean {
   const seen = new Set<string>([from]);

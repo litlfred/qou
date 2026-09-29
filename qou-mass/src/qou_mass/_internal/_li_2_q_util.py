@@ -824,7 +824,7 @@ def borromean_markov_trace_h2(q: mpf, q_inv: mpf | None = None) -> mpf:
     two objects do not agree — not a claim that either object is wrong.
 
     Refs:
-      - `content/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanMarkovTrace.lean`
+      - `folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanMarkovTrace.lean`
       - `docs/audits/2026-06-01-vol-density-compute-vs-paper-audit.md` §1
       - `docs/audits/2026-06-01-vol-density-derivation-trace.md` (FITTED row)
       - `computations/audits/per_knot_density_compute_vs_paper_audit.py`

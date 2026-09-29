@@ -43,9 +43,9 @@ Plus 2 back-matter directories flagged for §4b notation-introduction review (lo
 > **Day-2 remediation completed (2026-04-26):**
 > All remaining blockers and majors fixed across three commits.
 > See `8a3891a` (mechanical fixes), the M-10 TM-enumeration block
-> [tm-interaction-completeness.md](../../../content/quantum-observable-universe/appendix-transfer-matrices/tm-interaction-completeness.md),
+> [tm-interaction-completeness.md](../../../folio/quantum-observable-universe/appendix-transfer-matrices/tm-interaction-completeness.md),
 > and the M-11 mass-formula bridge in
-> [topological-mass-formula.md](../../../content/quantum-observable-universe/braids-and-knots/topological-mass-formula.md).
+> [topological-mass-formula.md](../../../folio/quantum-observable-universe/braids-and-knots/topological-mass-formula.md).
 >
 > **Minor sweep (2026-04-26, `36d2934`):** Ch 2 bare `SU(2)` →
 > `$\mathrm{SU}(2)$` across 27 files; Ch 7 vortex `\gamma → \varrho`

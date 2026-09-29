@@ -265,6 +265,6 @@ verification. If they compile, total drops to ~45.
 
 Plus: 0 trivial truths (all resolved).
 
-**Note:** 1 additional sorry exists in `content/unital-groebner-bases/lean/UGB/GrobnerShirshov/NormalForms.lean:284`
+**Note:** 1 additional sorry exists in `folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/NormalForms.lean:284`
 (List.Lex WF API name, not part of the QOU paper). This is excluded from the
 chapter-by-chapter breakdown above which covers only quantum-observable-universe.

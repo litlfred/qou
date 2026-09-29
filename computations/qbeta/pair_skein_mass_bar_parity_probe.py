@@ -198,7 +198,7 @@ def main() -> int:
                  "invariants (finiteness of the q->1 limit; sign-preservation of a mass under "
                  "the bar involution). Says nothing about which Skein normalisation is canonical "
                  "elsewhere -- that is #6820's separate question and is untouched.",
-        "source": "content/quantum-observable-universe/predicted-spectra/hadron-half-life-proof.md:37",
+        "source": "folio/quantum-observable-universe/predicted-spectra/hadron-half-life-proof.md:37",
         "checks": checks,
     }
     _WB.stamp_staleness_metadata(

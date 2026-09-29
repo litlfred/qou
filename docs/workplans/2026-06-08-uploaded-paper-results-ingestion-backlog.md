@@ -23,7 +23,7 @@ paper-ingestion skills (`local/paper-importer`, `local/document-intake`), with t
    it. Where the paper is not formalized, QOU states it as an `axiom`/`class` with
    a `-- Ref:` to the paper (per the §3b conjectural-class convention) and wraps
    that. This is the same move as the KS algebraic-shortcut remarks
-   ([`ks-multiplicativity-via-markov`](../../content/quantum-observable-universe/mass-theory/ks-multiplicativity-via-markov.md))
+   ([`ks-multiplicativity-via-markov`](../../folio/quantum-observable-universe/mass-theory/ks-multiplicativity-via-markov.md))
    — cite the heavy original, give the QOU specialisation.
 
 ## Seed (item 1): the DLM papers — just uploaded, already used
@@ -37,7 +37,7 @@ paper-ingestion skills (`local/paper-importer`, `local/document-intake`), with t
   are *already used by name* in
   [`2026-06-08-spin-network-count-q-dimension-partition-function.md`](../audits/2026-06-08-spin-network-count-q-dimension-partition-function.md).
 - **Action:** add `domagala-lewandowski-2004` + `meissner2004` to
-  `content/schema/references.ts`; switch the spin-network note (and any promoted
+  `folio/schema/references.ts`; switch the spin-network note (and any promoted
   content block) to `\cite{}` them. No QOU Lean overlap yet (the area-operator
   block is not formalized) → no wrapper needed until the spin-network derivation
   is promoted to content.

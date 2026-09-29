@@ -63,7 +63,7 @@ sys.path.insert(0, str(HERE.parent))
 from witness_base import WitnessBuilder  # noqa: E402
 
 REPO_ROOT = HERE.parent.parent
-CONTENT_ROOT = REPO_ROOT / "content"
+CONTENT_ROOT = REPO_ROOT / "folio"
 # Scan the whole computations/ tree, not the audits/ subdirectory this
 # script was relocated into (Phase-2 refactor 2026-06-02): probe
 # witnesses live in computations/probes/ and other cluster subdirs.

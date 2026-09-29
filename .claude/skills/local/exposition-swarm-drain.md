@@ -215,4 +215,4 @@ of `needs_owner` blocks for the author.
 - Author voice: `.claude/skills/local/one-voice-style-guide.md` → "The Milnor exposition standard"
 - Merge pipeline: `.claude/skills/local/prepare-merge-auto.md`
 - Sister drain: `.claude/skills/local/integration-backlog.md`
-- Flag guard: `content/pipeline/qa-flag-preservation-audit.ts`
+- Flag guard: `folio/pipeline/qa-flag-preservation-audit.ts`

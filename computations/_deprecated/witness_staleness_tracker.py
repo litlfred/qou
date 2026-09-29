@@ -69,7 +69,7 @@ DEPRECATED_ARTIFACTS = {
 # Dependency graph: artifact → list of upstream paths (relative to BASE)
 DEPS = {
     "recursive-atom-knot-atlas": [
-        "../../content/quantum-observable-universe/braids-and-knots/confined-particle.md",
+        "../../folio/quantum-observable-universe/braids-and-knots/confined-particle.md",
         "mass-table-ppb.witness.json",
         "methodology-deprecation.witness.json",
         # NOTE: li-atom-knot-search.witness.json is consumed only by the
@@ -82,7 +82,7 @@ DEPS = {
     "methodology-deprecation": [
         "li_atom_knot_search.py",
         "li-atom-knot-search.witness.json",
-        "../../content/quantum-observable-universe/braids-and-knots/confined-particle.md",
+        "../../folio/quantum-observable-universe/braids-and-knots/confined-particle.md",
     ],
     "li-atom-knot-search": [
         "li_atom_knot_search.py",

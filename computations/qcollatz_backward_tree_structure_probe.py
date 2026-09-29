@@ -2,7 +2,7 @@
 """Structure of the q-Collatz backward tree at a primitive cube root of unity.
 
 Supplies the computational half of the argument in
-content/quantum-observable-universe/lean/QOU/AppendixSurreals/collatz_block_descent.lean
+folio/quantum-observable-universe/lean/QOU/AppendixSurreals/collatz_block_descent.lean
 (section "The unit obstruction"), which explains — rather than merely records —
 why no two chained odd-preimages appear in the backward tree, i.e. why no v = 0
 block occurs there.

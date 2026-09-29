@@ -72,17 +72,17 @@ bare/decoupled limit. Show:
 ### Concrete files to read
 
 ```
-content/quantum-observable-universe/molecular-construction/h2-lp-dual-binding.md
-content/quantum-observable-universe/molecular-construction/ilp-covalent-bond.md
-content/quantum-observable-universe/molecular-construction/co2-lp-dual-binding.md
-content/quantum-observable-universe/molecular-construction/molecular-braid.md
-content/quantum-observable-universe/braids-and-knots/operator-selection-lp.md
-content/quantum-observable-universe/braids-and-knots/lp-dual-stability.md
-content/quantum-observable-universe/braids-and-knots/antiparticle-crossing-reversal.md
-content/quantum-observable-universe/braids-and-knots/spectral-sequence-collapse.md
-content/quantum-observable-universe/braids-and-knots/curvature-rank-gb-stratification.md
-content/quantum-observable-universe/braids-and-knots/commutative-chirality-vanishes.md
-content/quantum-observable-universe/braids-and-knots/schur-weyl-vanishing.md
+folio/quantum-observable-universe/molecular-construction/h2-lp-dual-binding.md
+folio/quantum-observable-universe/molecular-construction/ilp-covalent-bond.md
+folio/quantum-observable-universe/molecular-construction/co2-lp-dual-binding.md
+folio/quantum-observable-universe/molecular-construction/molecular-braid.md
+folio/quantum-observable-universe/braids-and-knots/operator-selection-lp.md
+folio/quantum-observable-universe/braids-and-knots/lp-dual-stability.md
+folio/quantum-observable-universe/braids-and-knots/antiparticle-crossing-reversal.md
+folio/quantum-observable-universe/braids-and-knots/spectral-sequence-collapse.md
+folio/quantum-observable-universe/braids-and-knots/curvature-rank-gb-stratification.md
+folio/quantum-observable-universe/braids-and-knots/commutative-chirality-vanishes.md
+folio/quantum-observable-universe/braids-and-knots/schur-weyl-vanishing.md
 computations/substrate/hecke_core.py        # E_HARTREE definition
 computations/h2_lp_dual.py        # if exists
 computations/co2-molecular-binding.py
@@ -96,7 +96,7 @@ EM-coupling expansion.
 ### Deliverable
 
 Write up your derivation attempt as content blocks under
-`content/quantum-observable-universe/descartes-universe/`:
+`folio/quantum-observable-universe/descartes-universe/`:
 
 1. `e-hartree-categorical-derivation.md` (and `.ts`) — either:
    - a `proposition` with a complete categorical proof that

@@ -14,7 +14,7 @@ CODATA proton/neutron/electron mass witness.
 
 Re-exports the canonical CODATA-2022 / AME-2020 values from
 `codata_constants` (M_E_MEV, M_P_MEV, M_N_MEV) into a witness JSON
-so the values registry (`content/values/registry.ts`) and the
+so the values registry (`folio/values/registry.ts`) and the
 `:leanval` codemod can pin Lean and Markdown literals to a single
 source of truth.
 

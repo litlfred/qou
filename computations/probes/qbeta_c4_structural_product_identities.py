@@ -52,7 +52,7 @@ not an additive (linear-recursion) one.
 
 Both identities hold as pure ℚ-rational equalities at silver — Lean-
 formalisable via `norm_num`. Companion proof file:
-content/quantum-observable-universe/mass-theory/qbeta-c4-structural-products.{ts,md,lean}
+folio/quantum-observable-universe/mass-theory/qbeta-c4-structural-products.{ts,md,lean}
 
 ## Honest caveats
 

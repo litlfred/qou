@@ -3,7 +3,7 @@
 
 # Ref: .beans/qou-q9ih--d1-route-c-m1-construct-the-qw-reproducing-34-bar.md
 # Ref: computations/qbeta/dt_third_knot_trefoil_count_probe.py
-# Ref: content/quantum-observable-universe/lean/QOU/QBeta/AomegaM2BPSCohomology.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/QBeta/AomegaM2BPSCohomology.lean
 
 WHAT D1-a ASKS FOR. "Enumerate <=3-4-vertex quivers, DT counts on ray pairs,
 filter (4,3)+(7,1). Either outcome is progress: no hit -> bounded negative;

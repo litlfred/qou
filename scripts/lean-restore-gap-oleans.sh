@@ -76,4 +76,4 @@ for d in "${DESTS[@]}"; do
   echo "restored $N olean(s) into $d from $BRANCH ($C)"
 done
 echo "verify with:  source scripts/lean-direct-env.sh && \\"
-echo "  lean -DautoImplicit=false -s 65536 content/quantum-observable-universe/mass-theory/reeb-bundle.lean"
+echo "  lean -DautoImplicit=false -s 65536 folio/quantum-observable-universe/mass-theory/reeb-bundle.lean"

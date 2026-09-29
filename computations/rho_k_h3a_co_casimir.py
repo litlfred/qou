@@ -75,7 +75,7 @@ fails the residual will be visible.
 REFERENCES
 ==========
 
-  - Theorem: ``content/quantum-observable-universe/braids-and-knots/
+  - Theorem: ``folio/quantum-observable-universe/braids-and-knots/
     frobenius-codim-universal.md``  (``thm:frobenius-codim-universal``).
   - Lean: ``frobenius-codim-universal.lean``
     (``frobenius_codim_universal``, ``frobenius_codim_tau_invariant``,
@@ -403,7 +403,7 @@ def main() -> int:
                 "qou:QOU.BraidKnot.codim_block_contribution",
             ],
             "narrative_md": (
-                "content/quantum-observable-universe/braids-and-knots/"
+                "folio/quantum-observable-universe/braids-and-knots/"
                 "frobenius-codim-universal.md"
             ),
             "rationale": (

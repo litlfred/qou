@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Audit canonical compute scripts for alignment with calibration-inputs.md.
 
-Per content/quantum-observable-universe/braids-and-knots/calibration-inputs.md
+Per folio/quantum-observable-universe/braids-and-knots/calibration-inputs.md
 the canonical 3-input scheme is:
 
   1. m_μ/m_e = 206.768   → fixes q_0 (substrate)

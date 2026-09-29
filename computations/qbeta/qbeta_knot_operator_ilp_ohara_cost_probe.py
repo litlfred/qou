@@ -87,8 +87,8 @@ Beans qou-99qc, qou-uilp (universal-ilp.py aborts at Level 4).
 
 -- Ref: [manuscript] computations/universal-ilp.py
 -- Ref: [manuscript] computations/qbeta/qbeta_ecat_pair_kernel_probe.py
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/Mass/GammaGammaWordSelection.lean
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/QBeta/LetterSumBlindness.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/Mass/GammaGammaWordSelection.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/QBeta/LetterSumBlindness.lean
 """
 
 from __future__ import annotations

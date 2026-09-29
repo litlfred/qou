@@ -52,7 +52,7 @@ no new cross-chapter forward edges, no new topic-mixed blocks, and
 `docs/reorganization-map.md` updated alongside every move. The
 section graph trends toward lower energy. Forward edges that exist
 for architectural reasons (the archimedean wall in
-[`models-of-qous/sec:archimedean-models`](../../content/quantum-observable-universe/models-of-qous/),
+[`models-of-qous/sec:archimedean-models`](../../folio/quantum-observable-universe/models-of-qous/),
 deliberate cross-chapter callbacks) are accepted and recorded as
 `wontfix: architectural`.
 

@@ -44,7 +44,7 @@ ranked reorganisation suggestions.
 ## Prerequisites
 
 - Python 3 and `graphviz` (installed automatically if missing)
-- Content block `.ts` files in `content/quantum-observable-universe/`
+- Content block `.ts` files in `folio/quantum-observable-universe/`
 - Chapter manifests with `sections → blocks` structure
 
 ## Heuristics

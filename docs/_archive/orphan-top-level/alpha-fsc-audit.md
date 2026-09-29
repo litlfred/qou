@@ -20,7 +20,7 @@ deliverable with three sections answering specific questions.
 
 ### 1.1 Derivation procedure (canonical)
 
-Per [`alpha-k-derivation-procedure.md`](../content/quantum-observable-universe/braids-and-knots/alpha-k-derivation-procedure.md):
+Per [`alpha-k-derivation-procedure.md`](../folio/quantum-observable-universe/braids-and-knots/alpha-k-derivation-procedure.md):
 
 The Jones–Markov trace admits a unique central-character expansion
 
@@ -37,11 +37,11 @@ $$
 
 The Hoefsmit character matrix is invertible at generic $q$ (Schur–Weyl–Hecke duality), so the system has a **unique q-rational solution** — no fitting, no transcendental constants, no free parameters.
 
-**Closed form via Wenzl bridge:** [`prop:y-lambda-closed-form-wenzl-bridge`](../content/quantum-observable-universe/braids-and-knots/y-lambda-closed-form-wenzl-bridge.md) gives the explicit q-rational expression $y_\lambda = s_{\lambda, r}(Q) / \sum_\mu d_\mu s_{\mu, r}(Q)$ with $Q = q^2$, computable in $O(p(n) \cdot \max\text{hooks})$ time.
+**Closed form via Wenzl bridge:** [`prop:y-lambda-closed-form-wenzl-bridge`](../folio/quantum-observable-universe/braids-and-knots/y-lambda-closed-form-wenzl-bridge.md) gives the explicit q-rational expression $y_\lambda = s_{\lambda, r}(Q) / \sum_\mu d_\mu s_{\mu, r}(Q)$ with $Q = q^2$, computable in $O(p(n) \cdot \max\text{hooks})$ time.
 
 ### 1.2 Explicit forms (verified)
 
-**H_3** ([`explicit-alpha-k-h3.md`](../content/quantum-observable-universe/braids-and-knots/explicit-alpha-k-h3.md)):
+**H_3** ([`explicit-alpha-k-h3.md`](../folio/quantum-observable-universe/braids-and-knots/explicit-alpha-k-h3.md)):
 
 $$
 \alpha_0 = 1, \quad \alpha_1 = 0, \quad \alpha_2 = z^2, \quad \alpha_3 = h z^2 + z = z(1 + q^{1/2} - q^{-1/2})
@@ -49,7 +49,7 @@ $$
 
 with $z = 1/(\sqrt{q} + 1/\sqrt{q})$, $h = q - q^{-1}$. **Validated at $q_0 \approx 1.110$ in 50 dps mpmath**: the two equivalent closed forms for $\alpha_3$ agree to consistency residual $\sim 1.3 \times 10^{-51}$ (machine precision floor of the symbolic identity).
 
-**H_4** ([`explicit-alpha-k-h4.md`](../content/quantum-observable-universe/braids-and-knots/explicit-alpha-k-h4.md)):
+**H_4** ([`explicit-alpha-k-h4.md`](../folio/quantum-observable-universe/braids-and-knots/explicit-alpha-k-h4.md)):
 
 5 closed-form coefficients $c_C(\lambda) \in \mathbb{Q}(q)$ for the Wedderburn-orthogonal representatives of the $p(4) = 5$ partitions. Stored in [`wedderburn-orthogonal-r-3-h4.witness.json`](../computations/wedderburn-orthogonal-r-3-h4.witness.json), verified against the Hoefsmit character matrix and Jones–Markov $y_\lambda$ values to consistency residual **<10⁻¹⁵** (per the proposition's own Lean / numerical validation).
 
@@ -72,19 +72,19 @@ Inventory of every place α_em / FSC is referenced, with a one-line summary.
 
 | File | Summary |
 |------|---------|
-| [`alpha-em-categorical-trace.md`](../content/quantum-observable-universe/braids-and-knots/alpha-em-categorical-trace.md) | Legacy closed form for $1/\alpha_{EM}$ via PSLQ-confirmed gluon-octet expression; superseded numerical form |
-| [`fine-structure-data.md`](../content/quantum-observable-universe/observations/fine-structure-data.md) | CODATA reference: $\alpha^{-1} \approx 137.035999084(21)$; experimental measurement set |
-| [`fine-structure-observation.md`](../content/quantum-observable-universe/observations/fine-structure-observation.md) | Observation entry: $\alpha_{EM}$ predicted as a function of $q$ via EM coupling projection |
-| [`em-coupling-projection.ts`](../content/quantum-observable-universe/descartes-universe/em-coupling-projection.ts) | Categorical projection that yields $\alpha_{EM}$ from the substrate parameter |
-| [`em-coupling-chern-simons.ts`](../content/quantum-observable-universe/descartes-universe/em-coupling-chern-simons.ts) | Connection between EM coupling and Chern–Simons term |
-| [`chern-simons-as-knot-invariant.md`](../content/quantum-observable-universe/descartes-universe/chern-simons-as-knot-invariant.md) | $\mathcal{S}_q = \mathrm{tr}(\mathcal{L}_q)$ as the categorical action that subsumes classical Chern–Simons |
-| [`picard-lefschetz-thimble.md`](../content/quantum-observable-universe/descartes-universe/picard-lefschetz-thimble.md) | Color-tube cubic + Seiberg–Witten differential at vertical degree $k$ on $\mathcal{S}_c$; foundation for the EM coupling derivation |
-| [`orbital-fourier-decomposition.md`](../content/quantum-observable-universe/descartes-universe/orbital-fourier-decomposition.md) | Trefoil $T_{2,3}$ embedded in Bring's surface; basis for $\alpha_{EM}$ orbital expansion |
-| [`exterior-square-borromean.md`](../content/quantum-observable-universe/braids-and-knots/exterior-square-borromean.md) | Borromean strand-pair representation has dimension 45 — enters the gluon-octet prefactor `45 · [3]_q` |
-| [`mass-predictions-data.md`](../content/quantum-observable-universe/observations/mass-predictions-data.md) | CODATA fundamental-constants set including $\alpha_{EM}$ |
-| [`observations.ts`](../content/quantum-observable-universe/observations/observations.ts) | Manifest entry binding the FSC observation block to the chapter |
-| [`substrate-consistency-window.ts`](../content/quantum-observable-universe/observations/substrate-consistency-window.ts) | Constraints on $q_0$ derived in part from the $\alpha_{EM}$ closed form |
-| [`fine-structure-data.ts`](../content/quantum-observable-universe/observations/fine-structure-data.ts) / [`fine-structure-observation.ts`](../content/quantum-observable-universe/observations/fine-structure-observation.ts) | Manifest siblings |
+| [`alpha-em-categorical-trace.md`](../folio/quantum-observable-universe/braids-and-knots/alpha-em-categorical-trace.md) | Legacy closed form for $1/\alpha_{EM}$ via PSLQ-confirmed gluon-octet expression; superseded numerical form |
+| [`fine-structure-data.md`](../folio/quantum-observable-universe/observations/fine-structure-data.md) | CODATA reference: $\alpha^{-1} \approx 137.035999084(21)$; experimental measurement set |
+| [`fine-structure-observation.md`](../folio/quantum-observable-universe/observations/fine-structure-observation.md) | Observation entry: $\alpha_{EM}$ predicted as a function of $q$ via EM coupling projection |
+| [`em-coupling-projection.ts`](../folio/quantum-observable-universe/descartes-universe/em-coupling-projection.ts) | Categorical projection that yields $\alpha_{EM}$ from the substrate parameter |
+| [`em-coupling-chern-simons.ts`](../folio/quantum-observable-universe/descartes-universe/em-coupling-chern-simons.ts) | Connection between EM coupling and Chern–Simons term |
+| [`chern-simons-as-knot-invariant.md`](../folio/quantum-observable-universe/descartes-universe/chern-simons-as-knot-invariant.md) | $\mathcal{S}_q = \mathrm{tr}(\mathcal{L}_q)$ as the categorical action that subsumes classical Chern–Simons |
+| [`picard-lefschetz-thimble.md`](../folio/quantum-observable-universe/descartes-universe/picard-lefschetz-thimble.md) | Color-tube cubic + Seiberg–Witten differential at vertical degree $k$ on $\mathcal{S}_c$; foundation for the EM coupling derivation |
+| [`orbital-fourier-decomposition.md`](../folio/quantum-observable-universe/descartes-universe/orbital-fourier-decomposition.md) | Trefoil $T_{2,3}$ embedded in Bring's surface; basis for $\alpha_{EM}$ orbital expansion |
+| [`exterior-square-borromean.md`](../folio/quantum-observable-universe/braids-and-knots/exterior-square-borromean.md) | Borromean strand-pair representation has dimension 45 — enters the gluon-octet prefactor `45 · [3]_q` |
+| [`mass-predictions-data.md`](../folio/quantum-observable-universe/observations/mass-predictions-data.md) | CODATA fundamental-constants set including $\alpha_{EM}$ |
+| [`observations.ts`](../folio/quantum-observable-universe/observations/observations.ts) | Manifest entry binding the FSC observation block to the chapter |
+| [`substrate-consistency-window.ts`](../folio/quantum-observable-universe/observations/substrate-consistency-window.ts) | Constraints on $q_0$ derived in part from the $\alpha_{EM}$ closed form |
+| [`fine-structure-data.ts`](../folio/quantum-observable-universe/observations/fine-structure-data.ts) / [`fine-structure-observation.ts`](../folio/quantum-observable-universe/observations/fine-structure-observation.ts) | Manifest siblings |
 
 ### 2.2 Documentation
 
@@ -159,7 +159,7 @@ The canonical α_em pipeline contains:
 - **No free coefficients.** The integer coefficients (`45`, `8`, `1`) are PSLQ-discovered structural constants, not fits.
 - **No CODATA value of α_em used as an input.** CODATA appears only in the *comparison* (residual reporting), never in the formula.
 
-The `45` derives from the dimension of the Borromean strand-pair representation in $H_{10}(q)$ (per [`exterior-square-borromean.md`](../content/quantum-observable-universe/braids-and-knots/exterior-square-borromean.md)). The `[3]_q` factor is the q-integer 3. The `δ_CS = ℏ_q⁴ · [5]_q` correction is the Chern–Simons higher-stratum contribution. None are tuned.
+The `45` derives from the dimension of the Borromean strand-pair representation in $H_{10}(q)$ (per [`exterior-square-borromean.md`](../folio/quantum-observable-universe/braids-and-knots/exterior-square-borromean.md)). The `[3]_q` factor is the q-integer 3. The `δ_CS = ℏ_q⁴ · [5]_q` correction is the Chern–Simons higher-stratum contribution. None are tuned.
 
 ---
 
@@ -208,7 +208,7 @@ A diagnostic finding from round 6: **proton-calibrated $E_0$ fails on the neutro
 ## Open work
 
 - **α_em uniqueness at higher precision — done (2026-04-28).** Extended to tol_dps ∈ {1000, 2000} at DPS = 3000 working precision. Both levels report `relation = None` over the same 52-element basis. Witness: [`alpha-em-pslq-uniqueness-2000dps.witness.json`](../computations/alpha-em-pslq-uniqueness-2000dps.witness.json). Total wall-time ≈ 80 s (much faster than the original "hours per tol level" worry). **Falsifiability bound now**: no q-arithmetic alternative in this 52-element basis matches CODATA at $> 10^{-2000}$ precision.
-- **Lean formalisation of the gluon-octet derivation — done (2026-04-28).** New content block [`prop:alpha-em-gluon-octet-form`](../content/quantum-observable-universe/descartes-universe/alpha-em-gluon-octet-form.md) with full `.ts`/`.md`/`.lean` triple. The `.lean` defines `qInt`, `hbarQ`, `deltaCS`, `alphaEmInverse` over a `SpectralRing`, states the assembly theorem (one `sorry`, citing `[manuscript]`, `[jones1987]`, `[kassel1995]`), and a corollary `alpha_em_no_free_parameter` (proven `trivially` — type-level statement that no fitted constant appears anywhere in the construction). Imports: `EmSpectralCompleteness`, `GaugeCouplingUniqueness`, `GramDeterminantPlancherelRatio`, `ForceCarrierBringUniqueness`, `ExteriorSquareBorromean`. Local Lean toolchain blocked (sandboxed `release.lean-lang.org`), so build-verification deferred to PR CI.
+- **Lean formalisation of the gluon-octet derivation — done (2026-04-28).** New content block [`prop:alpha-em-gluon-octet-form`](../folio/quantum-observable-universe/descartes-universe/alpha-em-gluon-octet-form.md) with full `.ts`/`.md`/`.lean` triple. The `.lean` defines `qInt`, `hbarQ`, `deltaCS`, `alphaEmInverse` over a `SpectralRing`, states the assembly theorem (one `sorry`, citing `[manuscript]`, `[jones1987]`, `[kassel1995]`), and a corollary `alpha_em_no_free_parameter` (proven `trivially` — type-level statement that no fitted constant appears anywhere in the construction). Imports: `EmSpectralCompleteness`, `GaugeCouplingUniqueness`, `GramDeterminantPlancherelRatio`, `ForceCarrierBringUniqueness`, `ExteriorSquareBorromean`. Local Lean toolchain blocked (sandboxed `release.lean-lang.org`), so build-verification deferred to PR CI.
 - **α_k explicit values at H_n for n ≥ 5.** Currently H_3, H_4, **and H_5** have explicit closed forms in $\mathbb{Q}(q)$; H_6 numerically closed but symbolic closed forms remain queued.
   - **H_5 closed forms (2026-04-28).** [`r_k_h5_symbolic.py`](../computations/r_k_h5_symbolic.py) generates all 7 closed-form $r_\lambda$ coefficient tables in 11.8 s total (full Hoefsmit construction with off-diagonal $b \cdot e_{T'}$ entries — fixes a bug in `r_k_h4_symbolic.py` where only diagonal entries were set; the bug happens to cancel for H_4 because non-trivial 2×2 blocks at H_4 land on class-word indices where the off-diagonal product vanishes anyway). Used `sympy.solve` on the gauge-fixed linear system instead of `M.nullspace() + simplify` (the latter explodes at H_5 due to the polynomial-degree growth of cyclotomic denominators). Witness: [`r-k-h5-symbolic.witness.json`](../computations/r-k-h5-symbolic.witness.json). Closed forms factor through cyclotomic denominators of the form $q^6 + 2q^4 + 2q^2 + 1$, $q^{12} + 3q^{10} + 5q^8 + 6q^6 + 5q^4 + 3q^2 + 1$, etc. (Schur-element pattern). Numerical $\alpha_\lambda(H_5)$ values match the [`r-k-h5-h6-numeric.witness.json`](../computations/r-k-h5-h6-numeric.witness.json) entries exactly to 10 digits.
   - **H_6 closed forms (2026-04-28).** [`r_k_h6_symbolic.py`](../computations/r_k_h6_symbolic.py) extends the same scheme to all 11 H_6 partitions in 92.8 s total. Witness: [`r-k-h6-symbolic.witness.json`](../computations/r-k-h6-symbolic.witness.json). Numerical $\alpha_\lambda(H_6)$ values match the numeric witness exactly to 10 digits. Gauge selection per partition matches the H_4 prop convention extended to higher non-hooks (gauge_k = 10 for hooks, 9 for $(4,2)$/$(3,2,1)$/$(2,2,1,1)$, 5 for $(3,3)$/$(2,2,2)$).

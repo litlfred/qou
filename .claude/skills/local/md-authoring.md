@@ -220,7 +220,7 @@ When reviewing `.md` content, check:
 - [ ] No `\operatorname{}` — replaced with `\mathrm{}`
 - [ ] Display math has blank line before `$$`
 - [ ] No raw LaTeX outside `$...$` or `` ```tex `` blocks
-- [ ] `\cite{}` keys match entries in `content/schema/references.ts`
+- [ ] `\cite{}` keys match entries in `folio/schema/references.ts`
 - [ ] Cross-refs `[text](#label)` point to valid labels
 - [ ] Bold/italic delimiters are properly closed
 - [ ] Tables have separator row (`|---|---|`)

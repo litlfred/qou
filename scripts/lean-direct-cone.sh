@@ -31,7 +31,7 @@
 set -euo pipefail
 
 ROOT="$(git rev-parse --show-toplevel)"
-LEANDIR="$ROOT/content/quantum-observable-universe/lean"
+LEANDIR="$ROOT/folio/quantum-observable-universe/lean"
 OUT="$LEANDIR/.lake/build/lib/lean"
 
 export PATH="$HOME/.elan/bin:$PATH"

@@ -19,7 +19,7 @@ Tests are TypeScript using Bun's built-in test runner (`bun:test`).
 | `scripts/tests/report.ts` | Test report generator (outputs `TestReport` JSON) |
 | `scripts/tests/run-tests.sh` | Shell entry point (delegates to `bun test`) |
 | `folio-assistant/schemas/qou-types.ts` | TypeScript types for test definitions, results, reports, coverage |
-| `content/schema/` | Content-object types, Zod schemas, builder functions |
+| `folio/schema/` | Content-object types, Zod schemas, builder functions |
 | `content/pipeline/validate.ts` | Content validation pipeline (schema + constraints + AST) |
 | `content/pipeline/render-latex.ts` | Block → LaTeX rendering + AST validation |
 | `content/pipeline/build.ts` | Full document build from content objects |
@@ -106,14 +106,14 @@ import { validateObjects } from "../../content/pipeline/validate";
 
 describe("Content objects", () => {
   test("all objects pass schema validation", async () => {
-    const result = await validateObjects("content/quantum-observable-universe/quantum-universes/");
+    const result = await validateObjects("folio/quantum-observable-universe/quantum-universes/");
     const errors = result.issues.filter(i => i.level === "error");
     expect(errors).toHaveLength(0);
   });
 
   test("rendered LaTeX passes AST validation", async () => {
     // The validation pipeline includes AST checks automatically
-    const result = await validateObjects("content/quantum-observable-universe/quantum-universes/");
+    const result = await validateObjects("folio/quantum-observable-universe/quantum-universes/");
     expect(result.valid).toBe(true);
   });
 });

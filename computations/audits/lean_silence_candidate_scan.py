@@ -16,7 +16,7 @@ none of it fired.
 
 CANDIDATE GENERATOR, NOT A GATE. An agent adjudicates every hit.
 
-MEASURED, 2026-08-29, on `content/quantum-observable-universe`, BEFORE the
+MEASURED, 2026-08-29, on `folio/quantum-observable-universe`, BEFORE the
 `qou-aymm` fix landed:
 
   blocks with a governing Lean (>= 15 lines)        2458
@@ -56,7 +56,7 @@ import pathlib
 import re
 import sys
 
-ROOT = pathlib.Path("content/quantum-observable-universe")
+ROOT = pathlib.Path("folio/quantum-observable-universe")
 
 # The prose presents the number as a CONSEQUENCE, not as an aside.
 DERIVE = re.compile(

@@ -6,10 +6,10 @@ Most are exploratory/superseded. This README lists the **canonical**
 scripts a new contributor needs to know about.
 
 > **Authoritative scheme**: 3-input canonical per
-> [`content/.../calibration-inputs.md`](../../content/quantum-observable-universe/braids-and-knots/calibration-inputs.md):
+> [`content/.../calibration-inputs.md`](../../folio/quantum-observable-universe/braids-and-knots/calibration-inputs.md):
 > `m_μ/m_e` → `q_0`, `m_e`, `Q_β(n)`. The 6-term mass formula is
 > documented in
-> [`content/.../six-term-mass-formula-complete.md`](../../content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md).
+> [`content/.../six-term-mass-formula-complete.md`](../../folio/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md).
 
 ## Infrastructure (do not modify lightly)
 
@@ -59,7 +59,7 @@ has 6 terms, all DERIVED:
 
 ## Joint-tower SDP (R1–R5)
 
-Per [`prop:atom-knot-mass-derivation`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md):
+Per [`prop:atom-knot-mass-derivation`](../../folio/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md):
 
 | Script | Phase | Output |
 |---|---|---|
@@ -134,7 +134,7 @@ H_5+ blocked on Clarabel-rs algorithmic bug (PR #444 `R5_5_BUG_REPORT.md`).
 ## See also
 
 - [`docs/audits/categorical-vs-fitted-q-decay-ba.md`](../../docs/audits/categorical-vs-fitted-q-decay-ba.md) — by-witness audit
-- [`content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md`](../../content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md) — 6-term formula master index
-- [`content/quantum-observable-universe/braids-and-knots/calibration-inputs.md`](../../content/quantum-observable-universe/braids-and-knots/calibration-inputs.md) — 3-input scheme
-- [`content/quantum-observable-universe/braids-and-knots/np-discrepancy-resolution.md`](../../content/quantum-observable-universe/braids-and-knots/np-discrepancy-resolution.md) — 4-tier formula
+- [`folio/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md`](../../folio/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md) — 6-term formula master index
+- [`folio/quantum-observable-universe/braids-and-knots/calibration-inputs.md`](../../folio/quantum-observable-universe/braids-and-knots/calibration-inputs.md) — 3-input scheme
+- [`folio/quantum-observable-universe/braids-and-knots/np-discrepancy-resolution.md`](../../folio/quantum-observable-universe/braids-and-knots/np-discrepancy-resolution.md) — 4-tier formula
 - [`docs/chi-sym-alt-theorem.md`](../../docs/chi-sym-alt-theorem.md) — exact closed form for χ_sym · χ_alt

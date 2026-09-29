@@ -60,8 +60,8 @@ given by the corpus, so ALL EIGHT are reported rather than the best one; the
 neutron match at 0.79756644 holds for several assignments and is not a
 selected fit.
 
--- Ref: [manuscript] content/quantum-observable-universe/knots-particles-confinement/categorical-proton-properties.md
--- Ref: [manuscript] content/quantum-observable-universe/knots-particles-confinement/categorical-neutron-properties.md
+-- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/categorical-proton-properties.md
+-- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/categorical-neutron-properties.md
 -- Ref: [manuscript] computations/qbeta/qbeta_nucleon_crossing_count_contradiction_probe.py (which this corrects)
 -- Ref: [manuscript] computations/qbeta/qbeta_delta_element_fork_pricing_probe.py (the two-way framing)
 """

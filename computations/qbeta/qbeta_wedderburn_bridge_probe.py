@@ -117,10 +117,10 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
-LEAN = ROOT / "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Wedderburn.lean"
-CONSTR = ROOT / ("content/quantum-observable-universe/lean/QOU/HeckeAlgebra/"
+LEAN = ROOT / "folio/quantum-observable-universe/lean/QOU/HeckeAlgebra/Wedderburn.lean"
+CONSTR = ROOT / ("folio/quantum-observable-universe/lean/QOU/HeckeAlgebra/"
                  "WedderburnConstruction.lean")
-BLOCK = ROOT / "content/quantum-observable-universe/mass-theory/unified-iterative-correction-proof.md"
+BLOCK = ROOT / "folio/quantum-observable-universe/mass-theory/unified-iterative-correction-proof.md"
 
 
 def _strip_lean_comments(src: str) -> str:
@@ -199,7 +199,7 @@ def main() -> int:
     # name in the whole Lean tree was the declaration itself. The remaining
     # mentions are prose, which is what this asserts -- if a real use ever
     # appears the count moves and this fails.
-    tree = ROOT / "content/quantum-observable-universe/lean"
+    tree = ROOT / "folio/quantum-observable-universe/lean"
     term_uses = []
     for f in sorted(tree.rglob("*.lean")):
         if ".lake" in f.parts:
@@ -294,7 +294,7 @@ def main() -> int:
               note="the opaque and the fourth-axiom reasons are retired; the "
                    "shape objection is not. A reader must not read 'the "
                    "embedding was built' as 'the clause was discharged'")
-    wt = ROOT / ("content/quantum-observable-universe/lean/QOU/HeckeAlgebra/"
+    wt = ROOT / ("folio/quantum-observable-universe/lean/QOU/HeckeAlgebra/"
                  "WedderburnTrace.lean")
     wtflat = " ".join(wt.read_text().split()) if wt.exists() else ""
     ok &= chk("the_linear_no_go_is_a_lean_theorem",
@@ -307,7 +307,7 @@ def main() -> int:
               note="the ROOM is a theorem too, not only the no-go: distinct "
                    "decompositions with every block trace equal, so every "
                    "trace-factoring functional is blind to the difference")
-    sd = ROOT / ("content/quantum-observable-universe/lean/QOU/HeckeAlgebra/"
+    sd = ROOT / ("folio/quantum-observable-universe/lean/QOU/HeckeAlgebra/"
                  "SeminormalDimSmall.lean")
     sdflat = " ".join(sd.read_text().split()) if sd.exists() else ""
     ok &= chk("the_21_dimension_fact_is_formalised",
@@ -345,9 +345,9 @@ def main() -> int:
         "assertions": a,
         "allPassed": bool(ok),
         "parameters": {
-            "lean_source": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Wedderburn.lean",
-            "block": "content/quantum-observable-universe/mass-theory/unified-iterative-correction-proof.md",
-            "construction": "content/quantum-observable-universe/lean/QOU/"
+            "lean_source": "folio/quantum-observable-universe/lean/QOU/HeckeAlgebra/Wedderburn.lean",
+            "block": "folio/quantum-observable-universe/mass-theory/unified-iterative-correction-proof.md",
+            "construction": "folio/quantum-observable-universe/lean/QOU/"
                             "HeckeAlgebra/WedderburnConstruction.lean",
             "axiom_footprint_before_2026_09_05":
                 "[propext, Classical.choice, Quot.sound, "

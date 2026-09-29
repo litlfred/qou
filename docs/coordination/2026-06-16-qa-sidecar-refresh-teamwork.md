@@ -1,7 +1,7 @@
 # QA-sidecar refresh — teamwork plan (2026-06-16)
 
 **Goal:** refresh every **stale + missing** QA sidecar across
-`content/quantum-observable-universe/` — **2275 `.qa.json` over 34 chapters** —
+`folio/quantum-observable-universe/` — **2275 `.qa.json` over 34 chapters** —
 all axes, **mechanical (script) + agent**.
 
 ## ⚠ Critical constraint — the QA pipeline migrated out of qou
@@ -10,7 +10,7 @@ The FolioAssistant migration (commits `39fc90f6`, `8e8a2d17`, `ada4c209`) moved
 the QA pipeline — `qa-sweep.ts`, `qa-staleness.ts`, `integration-audit.ts`,
 `qa-checkers-*.ts`, `qa-criteria-registry.ts` — to the **FolioAssistant** repo.
 `content/pipeline/` retains only `qa-agent-drain-queue.ts`, and the
-`content/package.json` `qa-*` scripts are now stale references. **The sidecars
+`folio/package.json` `qa-*` scripts are now stale references. **The sidecars
 themselves still live in qou** (`content/**/*.qa.json`).
 
 → Every mechanical sweep below runs from a **FolioAssistant-enabled checkout**

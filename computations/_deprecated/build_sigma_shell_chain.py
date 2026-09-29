@@ -3,7 +3,7 @@
 Frontier-paydown chain — σ_shell (Term 7) at A=2 closed form.
 
 Per `conj:shell-correction-term-seven`
-(content/quantum-observable-universe/braids-and-knots/shell-correction-term-seven.md):
+(folio/quantum-observable-universe/braids-and-knots/shell-correction-term-seven.md):
 
   Term 7 = m_e · Σ_{λ ⊢ 3A, height(λ) = 6} C_λ(q) · S_λ(Z, N, A)
 

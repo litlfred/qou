@@ -6,7 +6,7 @@
 Habiro divisibility validator — `tail_in_ideal` axiom witness.
 
 The Lean class `QOU.BraidKnot.HabiroCompletion`
-(content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.lean)
+(folio/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.lean)
 records the Habiro-ideal property as
 
     ∀ N : ℕ,

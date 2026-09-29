@@ -41,7 +41,7 @@
 #     FOLIO_ASSISTANT_REF=<branch|tag|sha> scripts/setup-folio-assistant.sh
 #
 # Pinned 2026-08-08 at 428ca5c. Against that platform, corpus 9d6fa7f2c8 measured
-# `run-validate content/quantum-observable-universe` → 4 issue(s) (all warnings).
+# `run-validate folio/quantum-observable-universe` → 4 issue(s) (all warnings).
 #
 # BUMPED 2026-09-07 to df28d02. Both platforms measured against the SAME corpus
 # (the 2026-09-07 main, not the 9d6fa7f2c8 above, which is long superseded — a
@@ -80,7 +80,7 @@
 # at its top level — everything moved under `cat-harness/`. Measured: all five paths
 # GONE on main, `cat-harness/schemas` and `cat-harness/content/pipeline` PRESENT.
 #
-# 147 qou files referenced the old paths (schemas 73, content/pipeline 54, adapters 4,
+# 147 qou files referenced the old paths (schemas 73, folio/pipeline 54, adapters 4,
 # src 9, viewer 7). 77 code/config files were re-pointed to
 # `folio-assistant/cat-harness/<x>` IN THE SAME COMMIT as this bump, because the
 # rewrite is invalid at the old pin and the old paths are invalid at the new one —

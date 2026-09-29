@@ -4,7 +4,7 @@ qbeta_net_trace_invariance_probe.py — step 8 of the fitting-finding audit: wha
 kind of object is `net`, and how much of `epsNPq` can any observable see?
 
 # Ref: docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md (step 8)
-# Ref: content/quantum-observable-universe/lean/QOU/Interactions/qbeta_energy_scale.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/Interactions/qbeta_energy_scale.lean
 # Ref: computations/qbeta/qbeta_epsnpq_functional_mismatch_probe.py
 # Ref: computations/qbeta/qbeta_single_wrap_element_cannot_exist_probe.py
 

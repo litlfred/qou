@@ -58,7 +58,7 @@ its variation in the phase. New probe
 ### Lean anchor (sorry-free)
 
 The algebraic reason G3 holds in general is
-[`QOU.QBeta.IsSigmaUnitary.crossFactor`](../../content/quantum-observable-universe/lean/QOU/QBeta/FaddeevModularDouble.lean)
+[`QOU.QBeta.IsSigmaUnitary.crossFactor`](../../folio/quantum-observable-universe/lean/QOU/QBeta/FaddeevModularDouble.lean)
 (FaddeevModularDouble.lean, `lean`-direct exit 0): for two σ-unitaries
 `u₁, u₂` (the fibre-saddle `Φ_b` at two anchors), the connecting factor
 `w = σ(u₁)·u₂` is itself σ-unitary and `u₁·w = u₂`. Hence **all** cross-anchor
@@ -91,7 +91,7 @@ is flat by construction, so the `Δc_3` swing is a **phase-channel** quantity.
 
 1. The map extracts a real projection (`Re` / `cos`) of the **phase** of the
    fibre-saddle `Φ_b` — consistent with the `Q_β/Q_A = cos Φ(u)` reframe
-   ([`prop:phi-b-unitary-bar-odd`](../../content/quantum-observable-universe/mass-theory/phi-b-unitary-bar-odd.md)).
+   ([`prop:phi-b-unitary-bar-odd`](../../folio/quantum-observable-universe/mass-theory/phi-b-unitary-bar-odd.md)).
 2. Its target is `c_2 = −1` (bar-even, anchor-independent) **and** the
    `c_3 → −2` shadow (bar-odd, anchor-dependent), per the merged registry.
 3. The near-singularity that a magnitude reading needed (`4.4×10⁻⁷`) should
@@ -104,7 +104,7 @@ is flat by construction, so the `Δc_3` swing is a **phase-channel** quantity.
 - Lean: `QOU.QBeta.IsSigmaUnitary.{crossFactor, inv, mul_bar_self}`
   (FaddeevModularDouble.lean)
 - Witness: `qbeta-fmap-phi-b-channel-separation.witness.json`
-- Content: [`prop:phi-b-unitary-bar-odd`](../../content/quantum-observable-universe/mass-theory/phi-b-unitary-bar-odd.md)
+- Content: [`prop:phi-b-unitary-bar-odd`](../../folio/quantum-observable-universe/mass-theory/phi-b-unitary-bar-odd.md)
 - Sibling: PR #3458 B3-U obstruction audit
   (`docs/audits/2026-07-07-z-ck-fmap-b3u-uside-transfer-obstruction.md`)
 - AGENTS.md §"Im(q) at fibre vs observable level"; §"Critical framing — Q_β c_3

@@ -16,7 +16,7 @@ for structural integrity, constraint compliance, and LaTeX AST correctness.
 |------|---------|
 | `folio-assistant/cat-harness/schemas/types.ts` | TypeScript types for all block kinds |
 | `folio-assistant/cat-harness/schemas/constraints.ts` | Zod schemas + constraint rules |
-| `content/schema/builders.ts` | Builder functions (`definition()`, `theorem()`, etc.) |
+| `folio/schema/builders.ts` | Builder functions (`definition()`, `theorem()`, etc.) |
 | `content/pipeline/validate.ts` | Validation pipeline (schema + constraints + AST) |
 | `content/pipeline/render-latex.ts` | Block → LaTeX rendering + AST validation |
 | `content/pipeline/build.ts` | Full document build (all chapters) |
@@ -115,7 +115,7 @@ The markdown AST node types used:
 
 ```bash
 # Validate all objects in a paper (schema + constraints + LaTeX AST)
-bun run scripts/run-validate.ts content/quantum-observable-universe   # after setup-folio-assistant.sh
+bun run scripts/run-validate.ts folio/quantum-observable-universe   # after setup-folio-assistant.sh
 # (legacy form, pre-miga: cd content && bun run pipeline/validate.ts quantum-observable-universe/)
 
 # Full build with validation
@@ -290,7 +290,7 @@ test-engineer skill can consume in unit tests:
 import { validateObjects } from "../../content/pipeline/validate";
 
 test("all content objects valid", async () => {
-  const result = await validateObjects("content/quantum-observable-universe/quantum-universes/");
+  const result = await validateObjects("folio/quantum-observable-universe/quantum-universes/");
   expect(result.valid).toBe(true);
 });
 ```

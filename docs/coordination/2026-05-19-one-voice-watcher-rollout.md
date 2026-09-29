@@ -19,7 +19,7 @@ into CI.
 | Schema | [`folio-assistant/schemas/block-qa.ts`](../../folio-assistant/schemas/block-qa.ts) (`BlockQaReport`, `QaCriterionEntry`) |
 | Skill | [`.claude/skills/local/one-voice-integration-watcher.md`](../../.claude/skills/local/one-voice-integration-watcher.md) |
 | CLI | `content/pipeline/qa-{sweep,staleness,merge-findings}.ts` |
-| Test sweep | `content/quantum-observable-universe/organic-chemistry/` (16 blocks, 8 automated criteria pass / 3 adjudicated pass) |
+| Test sweep | `folio/quantum-observable-universe/organic-chemistry/` (16 blocks, 8 automated criteria pass / 3 adjudicated pass) |
 
 ## Sibling scope map
 
@@ -53,7 +53,7 @@ Scope:
    tells; agent handles borderline). Add `voice-scholarly-default`
    heuristic (second-person address, lecturer cadence patterns).
 2. **Exhaustive baseline sweep.** Run `qa-sweep` across every
-   chapter in `content/quantum-observable-universe/`, dispatching
+   chapter in `folio/quantum-observable-universe/`, dispatching
    the agent for non-automated criteria. Persist sidecars.
 3. **Start the watcher.** Arm `/integration-watch one-voice` so
    the idle sweep picks up any block that goes stale.

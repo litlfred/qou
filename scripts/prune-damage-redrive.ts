@@ -51,7 +51,7 @@ function parseAuditEdges(): Array<[string, string]> {
 }
 
 const claimed = parseAuditEdges();
-const g = buildContentGraph(resolve(REPO, "content"), REPO);
+const g = buildContentGraph(resolve(REPO, "folio"), REPO);
 
 /** Is `to` reachable from `from` through EDITORIAL edges alone? */
 function reaches(from: string, to: string): boolean {

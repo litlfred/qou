@@ -57,5 +57,5 @@ posted back here.
 
 ---
 *Status will move `issue-open → photo-uploaded → validated` in
-`content/schema/references.review.json`. Do not close manually — the watcher
+`folio/schema/references.review.json`. Do not close manually — the watcher
 closes on `validated`.*

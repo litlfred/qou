@@ -1,14 +1,14 @@
 ---
 # qou-yqko
 title: Move content/ to folio/ (owner-confirmed 2026-09-26) — pin bump DONE, still blocked; recorded blast radius is an undercount
-status: todo
+status: in-progress
 type: feature
 priority: normal
 tags:
     - platform
     - migration
 created_at: 2026-09-26T11:19:21Z
-updated_at: 2026-09-27T05:30:00Z
+updated_at: 2026-09-29T20:30:00Z
 parent: qou-n4r9
 blocked_by:
     - qou-8321
@@ -436,3 +436,163 @@ remaining work is the mechanical tree move plus the `qou.json` `path` change in
 the same commit** — the constraint the note states and which is unchanged.
 
 `leitner2026` rides this, per the owner ruling recorded above.
+
+
+---
+
+## LANDED 2026-09-27 — PR #7485, branch `claude/yqko-content-to-folio-2026-09-27`
+
+The move is done: **18,816 files, all pure renames**, tree and `qou.json` `path`
+in ONE commit (`114b24ba5b`) as this bean requires. Four commits, 0 behind `main`.
+
+### What the note above got right, and it was load-bearing
+
+The **existence test** and the warning that *"the 8 `content/pipeline/` sites are
+a miga question, not a rename one"* are the two things that saved this. I ignored
+the second one first and it cost a whole commit — see below.
+
+### 🛑 TWO OF MY OWN DETECTOR ERRORS, in opposite directions
+
+**(1) Blind: lookbehind excluded a preceding `/`.** My first classifier used
+`(?<![\w./-])content/…`, so it could not see `$ROOT/content/quantum-observable-universe/lean`,
+`$PWD/content/…` or `../../content/…`. Measured against the corrected form:
+**46,153 hits across 1,350 files invisible**, i.e. my "97,790" was low by ~47 %,
+and the missing set was disproportionately live shell scripts and skill links
+rather than prose. Same class as the 62-call-site figure this bean already
+corrects. Fix: exclude by TREE NAME, `(?<!folio-assistant/)(?<!cat-harness/)(?<!ns/)`.
+
+**(2) Over-reaching: swept a class this bean told me not to.** Commit
+`615b555336` rewrote 20,259 refs, and **18,275 of them across 1,806 files were
+`content/pipeline/<script>` — the PLATFORM's pipeline in shorthand.** Reverted in
+`b7accffcbc` by existence test: qou's `folio/pipeline/` holds 30 entries, so 41
+refs across 12 names are genuinely qou's and stay, and 18,275 across 41 names go
+back. I had quoted this bean's own warning in the PR body and then included
+`pipeline` anyway, because `content/pipeline/` IS a real qou directory — **being a
+real directory is not the same as being what a given reference names.**
+
+Reverting restores the status quo rather than leaving a new defect: those refs
+were ALREADY dead (`git cat-file -e origin/main:content/pipeline/qa-sweep.ts`
+fails; the real file is `folio-assistant/cat-harness/content/pipeline/qa-sweep.ts`).
+Their fix is the miga re-wiring, not this rename.
+
+**The general lesson, which is new here:** a calibration tests for false
+NEGATIVES on sites you already know about and says nothing about false POSITIVES
+on sites you never doubted. The existence test catches both and is cheap.
+
+### THE ONE THING THAT WAS GENUINELY BROKEN, and only the 4th commit found it
+
+Commits 1-3 excluded `folio/` itself. Inside it, **every one of the 3,653
+`<block>.qa.json` sidecars had its `paths` object pointing at `content/…` — `ts`,
+`md` and `lean` all MISSING.** That field is how a sidecar locates its own source,
+so staleness detection reads it. Fixed in `fc85850b45`: 3,873 files / 18,234 refs.
+
+The intra-tree surface is the §3 trap again, 92 % of it: 194,878 hits are
+`content/pipeline/` reviewer IDs in `/criteria/*/reviewer/id` and were NOT
+touched (`folio/pipeline/` inside `folio/` counts 0 afterwards); 17,494 are the
+folio's own and were.
+
+Existence test over the whole corpus rather than a sample: **8,592 `paths` fields,
+8,582 EXIST, 10 MISSING — every one a `lean` key and every one pre-existing**
+(`git cat-file -e origin/main:…` fails for each; they are sidecars declaring a
+`.lean` sibling that was never on disk).
+
+### Corrected survey — 84 % deliberately not swept
+
+    role                  files     hits
+    ROOT config              13      129    swept
+    CI / workflow             6       13    swept
+    code                   2230    20238    swept
+    agent instructions       63      233    swept
+    docs prose              205     1882    swept
+    dated record           2493   103491    LEFT
+    deprecated/parked        18    17940    LEFT
+    other                     2        8    swept
+    TOTAL                  5030   143934
+
+**2,511 files / 121,431 hits (84 %) stay as they are** — dated audit records and
+parked scratch, per the `qou-3nva` decision.
+
+### A hazard this bean does NOT name, found while classifying
+
+**101 hits are `folio-assistant/content/` or `cat-harness/content/`** — the
+PLATFORM's tree, reached through the symlink; renaming them breaks every pipeline
+invocation. Counted before and after every commit: **101 -> 101**. The bean names
+the `ns/content/v1.jsonld` namespace hazard (31,240 hits, 31,238 `library/` files)
+but not this one. Add it to any future rename plan.
+
+### Verification
+
+436 changed `.py` parse under `ast.parse` (0 failures); all changed `.json` parse;
+14 `.github` YAML files parse; `tomllib` parses both lakefiles with all three
+`require` paths resolving. `scripts/precision-gates.sh` full run: **exit 1, nine
+blocking gates red, `RED:` line BYTE-IDENTICAL to the clean-`origin/main` control
+(sha256 `140f153e363126e2…`)**, every ratchet `NEW dirty 0 / REGRESSED 0` — the
+nine are pre-existing and this branch adds none. Two gate-artefact witnesses that
+`git add -A` swept in were reverted per `qou-v0t8`.
+
+Also fixed, pre-existing: `lakefile.toml` pointed at
+`content/schema/lean-packages.ts`, which NEVER existed on main. Mechanically
+rewriting it would have moved a dead pointer to a new dead address; it now names
+`schemas/lean-packages.ts`.
+
+### STAYS in-progress — `leitner2026` is NOT done
+
+The 2026-09-26 ruling *"leitner2026 should be in folio/"* is **not** satisfied by
+this PR. It rode along INSIDE the moved `schema/references.ts`, which is exactly
+what the ruling says is not enough ("the self-citation rehomes to the folio, it
+does not merely travel along"). Rehoming it is a content-model change — 32 Lean
+`-- Ref:` sites, 4 `.ts` `cites[]`, 3 `.jsonld`, plus generated `references.bib`
+— and it is entangled with `qou-cite`, where the `manuscript` key is already
+parked as an owner decision. Not started.
+
+--------
+
+## 2026-09-29 — a THIRD detector blindness, and it reported CLEAN: component-built paths
+
+Found by `check-citation-keys.py` crashing on this branch while it passed on
+`main`. The sweep matched the STRING `content/`. Code that builds the path from
+components never contains that string:
+
+    os.path.join(REPO, "content", "schema", "references.ts")
+    REPO / "content" / "quantum-observable-universe"
+    ap.add_argument("--root", default="content")
+    git ls-files -- content
+
+The crash was the lucky case. Everywhere else the failure was **silent**: a glob
+or `rglob` over a directory that no longer exists yields nothing, and the tool
+exits 0 over an empty corpus.
+
+**Calibrated both ways.** Five of the fixed scripts, run on this branch's
+UNFIXED head against `main`, all exit 0 but with much less output:
+`dead-lean-pointer-audit` 4 lines vs 70, `duplicate-class-declaration-census`
+7 vs 1475, `lean-cited-not-proved-audit` 19 vs 811. After the fix, nine
+scripts produce output identical to `main`, apart from the path rename.
+
+**What was fixed: 128 lines in 104 files, all qou's own folio root, all by
+existence test.**
+- 106 found with join, `/`, `Path(`, `resolve(` or `[` patterns: 36 sub-paths
+  (each tested to land on a real file under `folio/`), 68 bare roots, and 2
+  `known-constant-literal-audit.py` default lists.
+- 19 in a second form that pattern could not see: `--root default="content"`,
+  `?? "content"`, root tuples, and multi-line join arguments. The w-lambda
+  audit's `("content", "content")` is a (label, path) pair, so only the PATH
+  half changed. The label is an output key.
+- 2 git pathspecs in `scripts/lib/ci-lean-scope.sh` (`-- content`). Unfixed,
+  the Lean sibling CI scope is EMPTY. Fixed, it gives 938 files, the same as
+  `main`.
+- `check-citation-keys.py`'s printed label.
+
+**Deliberately left:** 4 `a["content"]` JSON field reads in
+`human-agent-discussions/tools/` (not paths), 3 in `fsh-guts/deprecated/`
+(parked; #7485 left the tree unswept), 5 tag lists, 1 comment, the math term
+"partition content", and a docstring narrating an old bug.
+
+**Verified:** 74 `.py` parse; 11 `.ts` transpile; `bash -n` passes. The
+`precision-gates.sh` `RED:` line is still byte-identical to `main`
+(`140f153e363126e2`), NEW 0 / REGRESSED 0. `check-citation-keys.py` gives
+8481 sites, 889 entries, 4029 labels, and 13 keys over 39 sites, all the same
+as `main`.
+
+**The general lesson:** the existence test in §6 of the PR is right, but it has to
+run over paths the code BUILDS, not over string literals. A path assembled
+from parts never appears as a string.

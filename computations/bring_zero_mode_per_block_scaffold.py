@@ -40,7 +40,7 @@ the standard convention).
 
 - merged PR #1442 (m_K/m_π Bring closure template)
 - merged PR #1645 (ProtonMassEMSignBlock sign-block hypothesis)
-- content/quantum-observable-universe/brings-surface/ (Bring content blocks)
+- folio/quantum-observable-universe/brings-surface/ (Bring content blocks)
 """
 from __future__ import annotations
 

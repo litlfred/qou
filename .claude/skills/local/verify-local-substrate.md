@@ -38,7 +38,7 @@ The verification covers:
 
 ### Step 1: Collect observational blocks
 
-Scan all `.ts` manifest files under `content/quantum-observable-universe/`
+Scan all `.ts` manifest files under `folio/quantum-observable-universe/`
 for blocks matching either criterion:
 
 - **Provable blocks in Chapter 7**: any block with kind `proposition`,

@@ -2,7 +2,7 @@ import { resolveCanonicalLean } from "../folio-assistant/cat-harness/content/pip
 import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { join } from "node:path";
 const ROOT = "/workspace/qou";
-const CONTENT = join(ROOT, "content/quantum-observable-universe");
+const CONTENT = join(ROOT, "folio/quantum-observable-universe");
 const blocks: {file:string; label:string; ref:string}[] = [];
 (function walk(d: string) {
   for (const e of readdirSync(d)) {

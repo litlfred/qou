@@ -49,7 +49,7 @@ import sys
 
 REPO = pathlib.Path(__file__).resolve().parents[1]
 DEPRECATED = REPO / "computations" / "_deprecated"
-CONTENT = REPO / "content"
+CONTENT = REPO / "folio"
 
 # The convention-C signature: a square root of the substrate parameter. Kept
 # deliberately broader than the main audit's AST matcher — this script is a

@@ -23,7 +23,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const ROOT = "content/quantum-observable-universe";
+const ROOT = "folio/quantum-observable-universe";
 function walk(d, o = []) {
   for (const e of fs.readdirSync(d, { withFileTypes: true })) {
     const p = path.join(d, e.name);

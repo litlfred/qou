@@ -5,7 +5,7 @@ a framework-native closed form, and y0's alignment with Delta is NOT generic.
 
 # Ref: .beans/qou-xzrj--gap-the-767-trace-invisible-remainder-of-epsnpq-st.md
 # Ref: computations/qbeta/qbeta_riesz_element_is_structurally_forced_probe.py
-# Ref: content/quantum-observable-universe/lean/QOU/BraidKnot/LadderConventionLocalisation.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/BraidKnot/LadderConventionLocalisation.lean
 
 WHERE THIS PICKS UP. The previous probe found y0 = mu * dC with
 mu = -2q/((q-z)(qz+1)), and narrowed the whole remaining gap to mu. Two

@@ -2,7 +2,7 @@
 """Probe — `thm:markov-trace-factorization` (I1: proved-in-Lean, no probe).
 
 Claim (content block
-`content/quantum-observable-universe/mass-theory/markov-trace-factorization.md`,
+`folio/quantum-observable-universe/mass-theory/markov-trace-factorization.md`,
 Lean `qou:QOU.Archimedean.markov_trace_factorization` + siblings):
 
 The Markov trace of the nuclear braid word factors exactly as a product of

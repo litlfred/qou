@@ -4,7 +4,7 @@
 Tests the owner lead (2026-07-11): "physically observed things correspond to
 small-ish imaginary q; maybe [the archimedean] projection is this." This is
 exactly **candidate (iii)** of `conj:im-q-physical-role`
-(`content/quantum-observable-universe/mass-theory/conj-im-q-physical-role.md`):
+(`folio/quantum-observable-universe/mass-theory/conj-im-q-physical-role.md`):
 Im(q) as the **non-Hermitian / open-system (decay-width Γ)** parameter — the
 conjecture notes it "needs a categorical formula for decay widths Γ."
 

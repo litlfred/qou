@@ -111,7 +111,7 @@ def BringsSurface : Type* := sorry
 
 Every `sorry` in `Glossary.lean` **must** be preceded by a
 `-- Ref: [key] url` comment linking to the foundational reference.
-The `key` must match a citation key in `content/schema/references.ts` exactly.
+The `key` must match a citation key in `folio/schema/references.ts` exactly.
 (`references.bib` is auto-generated from this file — never edit `.bib` directly.)
 This is enforced by the `axiom_report.py` Theoretical Gap Report.
 
@@ -154,7 +154,7 @@ apply these rulings when scanning narrative text:
 
 All formal proofs over ℤ[q, q⁻¹].  Modules over ℝ or ℂ are the
 archimedean realisation (Chapter 7 only) and NOT part of the formal
-proof chain.  See `content/quantum-observable-universe/lean/QOU/GroundRingAnnotations.lean`.
+proof chain.  See `folio/quantum-observable-universe/lean/QOU/GroundRingAnnotations.lean`.
 
 When an ambiguity is detected, the Ontologist outputs:
 
@@ -199,8 +199,8 @@ macro.  The Ontologist is responsible for ensuring:
 3. **Dependency edges**: `\uses{}` in the blueprint must reference only labels
    that exist and whose glossary entries are resolved (not ambiguous)
 4. **Bibliography references**: Every `-- Ref: [key]` in Glossary.lean must match
-   a citation key in `content/schema/references.ts`; when adding new glossary terms,
-   identify the foundational paper and add a `ref()` entry in `content/schema/references.ts`
+   a citation key in `folio/schema/references.ts`; when adding new glossary terms,
+   identify the foundational paper and add a `ref()` entry in `folio/schema/references.ts`
    (then run `bun run export-bibtex` to regenerate `references.bib`)
 
 ## Content Object Integration
@@ -319,6 +319,6 @@ the paper is the codemod's job
 - [ ] Category-theoretic types have correct universe annotations
 - [ ] Docstrings in `Glossary.lean` match narrative definitions
 - [ ] Every `sorry` in `Glossary.lean` has a `-- Ref: [key] url` comment
-- [ ] All `-- Ref:` keys exist in `content/schema/references.ts`
+- [ ] All `-- Ref:` keys exist in `folio/schema/references.ts`
 - [ ] `blueprint/src/content.tex` has entries for all glossary definitions
 - [ ] `\uses{}` edges in blueprint are bidirectionally valid

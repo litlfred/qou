@@ -53,7 +53,7 @@ for _p in (str(COMP), str(COMP / "substrate")):
 
 from witness_base import WitnessBuilder  # noqa: E402
 
-LEAN_REL = "content/quantum-observable-universe/lean/QOU/Machinery/HeckeH3GramNondegeneracy.lean"
+LEAN_REL = "folio/quantum-observable-universe/lean/QOU/Machinery/HeckeH3GramNondegeneracy.lean"
 
 z, h, q = sp.symbols("z h q")
 

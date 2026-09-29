@@ -335,7 +335,7 @@ def main() -> int:
                 "computations/qbeta/qbeta_utils.py:124-125 (z_C in alpha; the extractor)",
                 "computations/qbeta/qbeta_ck_sseries_exact_rational.py:20,248 "
                 "(z_C in the KC21/KC22 D-ladder core)",
-                "content/quantum-observable-universe/lean/QOU/QBeta/ZBarParity.lean:59-79 "
+                "folio/quantum-observable-universe/lean/QOU/QBeta/ZBarParity.lean:59-79 "
                 "(KC13 bar-even z is z_C = s/(1+s^2), s = sqrt(q))",
                 "docs/coordination/trace-convention-registry.json (channels: mass, "
                 "binding, borromean only — Q_beta channel MISSING)",

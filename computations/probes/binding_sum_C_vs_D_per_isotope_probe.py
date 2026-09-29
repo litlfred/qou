@@ -57,7 +57,7 @@ MUON q_0 = 1.10997859555733471... and are marked q0Anchor: "ambiguous").
 
 Ref: docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md
 Ref: docs/audits/2026-08-08-borromean-trace-convention-forcing.md
-Ref: content/quantum-observable-universe/mass-theory/two-row-stratum.md
+Ref: folio/quantum-observable-universe/mass-theory/two-row-stratum.md
 Ref: computations/two_row_vs_higher_row_binding_split.py (same split, muon inputs)
 Ref: QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional (Delta_lambda value)
 """

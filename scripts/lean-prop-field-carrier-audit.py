@@ -12,7 +12,7 @@ CARRIER = re.compile(r'^\s*(?:@\[[^\]]*\]\s*)?(?:private\s+|protected\s+|noncomp
 FIELD   = re.compile(r'^\s{1,}([A-Za-z_][A-Za-z0-9_\']*)\s*:\s*(.+?)\s*$')
 
 hits=[]
-for p in pathlib.Path('content').rglob('*.lean'):
+for p in pathlib.Path('folio').rglob('*.lean'):
     src=blank_comments(p.read_text(encoding='utf-8',errors='replace'))
     lines=src.split('\n')
     cur=None; fields={}; start=0

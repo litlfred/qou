@@ -86,7 +86,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(REPO, "uploads")
 LIB = os.path.join(REPO, "library")
 LIBNAME = "library"
-LEDGER = os.path.join(REPO, "content", "bib-qa-verifications.json")
+LEDGER = os.path.join(REPO, "folio", "bib-qa-verifications.json")
 
 TEXT_EXT = {".md", ".ts", ".py", ".json", ".sh", ".tex", ".lean", ".yml", ".yaml", ".txt"}
 SKIP_DIRS = {".git", "node_modules", ".lake", "uploads", "library", ".venv", "__pycache__"}

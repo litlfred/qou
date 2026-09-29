@@ -4,7 +4,7 @@ qbeta_d_frame_trace_baseline_probe.py — qou-cds1: the D-frame trace baseline,
 computed rather than substituted, and what it prices.
 
 # Ref: .beans/qou-cds1--s1-science-re-derive-the-qbeta-ck-ladder-under-d-n.md
-# Ref: content/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean
 # Ref: docs/audits/2026-06-16-q-beta-net-ansatz-path-a-counit-vs-trace.md
 
 WHY THIS IS NOT A z-SWAP. qou-cds1 and

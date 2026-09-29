@@ -122,7 +122,7 @@ def main():
     checks = []
     exts = ["py", "md", "ts", "lean", "json"]
     layers = {}
-    for lab, p in (("content", "content"), ("probes", "computations/probes"),
+    for lab, p in (("content", "folio"), ("probes", "computations/probes"),
                    ("audits", "computations/audits"), ("docs", "docs")):
         h = hits(p, exts)
         layers[lab] = None if h is None else len(h)
@@ -131,7 +131,7 @@ def main():
         return 2
 
     # 1. the formal layer: every Lean occurrence must be doc/comment, not code
-    lean_files = hits("content/quantum-observable-universe/lean", ["lean"]) or []
+    lean_files = hits("folio/quantum-observable-universe/lean", ["lean"]) or []
     code_hits = []
     for f in lean_files:
         indoc = False
@@ -159,7 +159,7 @@ def main():
     })
 
     # 2/3. content layer: the block needing scope has it
-    scoped = ROOT / ("content/quantum-observable-universe/mass-theory/"
+    scoped = ROOT / ("folio/quantum-observable-universe/mass-theory/"
                      "q-beta-categorical-precision-ladder-context.qa.json")
     nmark = 0
     if scoped.exists():

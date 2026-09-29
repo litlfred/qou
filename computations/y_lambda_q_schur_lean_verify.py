@@ -6,7 +6,7 @@ audit for tr_M(β_Bor).
 
 This script verifies the just-landed Lean theorem
 `yLambdaQSchur_transpose_pair` in
-[`YLambdaQSchur.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/YLambdaQSchur.lean)
+[`YLambdaQSchur.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/YLambdaQSchur.lean)
 to substrate precision (50 dps), and audits the convention gap
 between q-Schur and Wenzl/Lean Markov-trace evaluations.
 

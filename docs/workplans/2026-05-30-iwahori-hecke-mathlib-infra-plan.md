@@ -95,7 +95,7 @@ PR 4 (Markov trace) unblocks `conj:gs-graded-markov-trace-existence`.
 
 PR 5 (Hoefsmit) closes the operator-valued
 `A^λ_{μ,ν}(I)` content from
-[`prop:hecke-branching-trace-decomposition`](../../content/quantum-observable-universe/mass-endomorphism/hecke-branching-trace-decomposition.md).
+[`prop:hecke-branching-trace-decomposition`](../../folio/quantum-observable-universe/mass-endomorphism/hecke-branching-trace-decomposition.md).
 
 ## Coordination strategy
 
@@ -195,7 +195,7 @@ but the differential is small.
 - Parent plan: [`docs/workplans/2026-05-30-source-conjecture-closure-plan.md`](2026-05-30-source-conjecture-closure-plan.md)
 - §3b-cond reference: [`AGENTS.md` §3b-cond](../../AGENTS.md)
 - Existing QOU §3b-cond placeholder using Iwahori-Hecke:
-  [`prop:hecke-branching-trace-decomposition`](../../content/quantum-observable-universe/mass-endomorphism/hecke-branching-trace-decomposition.md)
+  [`prop:hecke-branching-trace-decomposition`](../../folio/quantum-observable-universe/mass-endomorphism/hecke-branching-trace-decomposition.md)
 - Existing computational stack (Rust): `tools/hecke-engine/`
   + `tools/pyhecke-native/`. The Lean infra targets correctness;
   the Rust stack targets performance.

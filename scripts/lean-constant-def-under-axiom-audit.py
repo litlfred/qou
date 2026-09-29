@@ -112,7 +112,7 @@ def main() -> int:
         return 0 if _selftest() else 1
     args = [a for a in sys.argv[1:] if not a.startswith("-")]
     root = pathlib.Path(args[0]) if args else pathlib.Path(
-        "content/quantum-observable-universe/lean/QOU")
+        "folio/quantum-observable-universe/lean/QOU")
     if not _selftest():
         print("ABORT: self-test failed — a clean result would be meaningless.")
         return 1

@@ -88,7 +88,7 @@ special cases. Full write-up in
    - `binding-alpha-shift-extension` (per-rep Reeb phase at force-carrier torus knot) — exact for D, misses ⁴He by −79%.
    - `magic_A_formula` (ρ_F · m_e · A · 8G) — doubly-magic regime; gets ⁴He to +5.9%.
 2. The §3b-cond `BindingForceCarrierKnot` class only knew the first path — wireup gap, not new math.
-3. PR #1543 ships the wireup as a Lean content-block triple [`prop:magic-A-binding-formula`](../../content/quantum-observable-universe/mass-theory/magic-A-binding-formula.md) (sorry-free §3b-cond) + extended witness emitter + audit doc.
+3. PR #1543 ships the wireup as a Lean content-block triple [`prop:magic-A-binding-formula`](../../folio/quantum-observable-universe/mass-theory/magic-A-binding-formula.md) (sorry-free §3b-cond) + extended witness emitter + audit doc.
 
 **Gap closure factor:** 13.5× for ⁴He (|rel_err| 0.7904 → 0.0587). (The audit doc initially claimed 80×; Copilot review caught the math error, corrected in commit `68176332`.)
 
@@ -104,7 +104,7 @@ special cases. Full write-up in
 
 ### Carry-forward
 
-Both items framed initially as "Open Math A" and "Open Math B" turned out (2026-05-31 reanalysis, commit `f4614a09`) to be **structurally already answered** in the framework: ρ_F = ν_SDP per [`conj:kashaev-density-equals-sdp-multiplicity`](../../content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.md) (RESOLVED 2026-05-24); p/n asymmetry via Bring color-tube weighting in [`closed_form_tau_M.py`](../../computations/closed_form_tau_M.py) `pn_convention="bring_color_weighted"` (PROVED PR #690/#942). Remaining is verification/formalisation: Lean class for [`conj:inter-nucleon-channel-color-tube`](../../content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.md); re-run of `binding_shell_enhancement_derivation.py` with Bring weighting; joint-tower SDP extension to ν_SDP(⁴He). **Pattern post-mortem** of why the existing resolution was missed (third such miss in this session) recorded in audit `## Why was the resolution missed?` section + corrective discipline (grep audits/ + corpus before declaring open).
+Both items framed initially as "Open Math A" and "Open Math B" turned out (2026-05-31 reanalysis, commit `f4614a09`) to be **structurally already answered** in the framework: ρ_F = ν_SDP per [`conj:kashaev-density-equals-sdp-multiplicity`](../../folio/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.md) (RESOLVED 2026-05-24); p/n asymmetry via Bring color-tube weighting in [`closed_form_tau_M.py`](../../computations/closed_form_tau_M.py) `pn_convention="bring_color_weighted"` (PROVED PR #690/#942). Remaining is verification/formalisation: Lean class for [`conj:inter-nucleon-channel-color-tube`](../../folio/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.md); re-run of `binding_shell_enhancement_derivation.py` with Bring weighting; joint-tower SDP extension to ν_SDP(⁴He). **Pattern post-mortem** of why the existing resolution was missed (third such miss in this session) recorded in audit `## Why was the resolution missed?` section + corrective discipline (grep audits/ + corpus before declaring open).
 
 ## 2026-06-03 — PR #1748 bar-pairing extension (cross-PR coord)
 

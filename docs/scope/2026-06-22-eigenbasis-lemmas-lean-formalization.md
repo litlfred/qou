@@ -18,7 +18,7 @@ genuine gap-closure (the probe verifies; Lean proves).
 ## Approach — the abstract-structural pattern
 
 Follow the existing
-[`QOU/BraidKnot/ChiralityWritheRibbon.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/ChiralityWritheRibbon.lean):
+[`QOU/BraidKnot/ChiralityWritheRibbon.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidKnot/ChiralityWritheRibbon.lean):
 model the categorical inputs as abstract structures
 (`WedderburnChannel { kappa, weight }`, `HeckeCharValue { val }`) and the
 ribbon-twist eigenvalue θ_λ = q^{2κ_λ} as the axiom class

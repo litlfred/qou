@@ -1,0 +1,70 @@
+name = "qou"
+defaultTargets = ["QOU"]
+
+[leanOptions]
+autoImplicit = false
+profiler = true          # report per-declaration elaboration times
+
+[[lean_lib]]
+name = "QOU"
+srcDir = "."
+# WIDEN THE BUILD TO THE WHOLE TREE (bean qou-rc7b).
+#
+# Lake's `lean_lib` defaults `globs := roots.map Glob.one`
+# (Lake/Config/LeanLibConfig.lean:45) — a library with no explicit `globs`
+# builds ONLY its root module plus whatever that root transitively imports.
+# `srcDir = "."` widens where Lake *looks for* sources; it does not widen what
+# gets *built*. Measured before this change: 870 of 1655 modules reachable from
+# `QOU.lean`, so 785 (47%) were never compiled by `lake build` and could carry
+# arbitrary breakage — including files that had never compiled at all.
+globs = ["QOU", "QOU.+"]
+# `AllKnownIsotopesUniqueness` is machine-generated: one `abbrev` per
+# isotope for Z = 1..118, ~12800 declarations in a single module. Lean's
+# default elaboration-thread stack overflows on it and aborts with
+# SIGABRT ("Stack overflow detected"), which surfaces only as a bare
+# `Lean exited with code 134`, not as a source error.
+#
+# Raising the thread stack is the whole fix — verified: that file
+# compiles clean under `lean -s 65536`. A shell `ulimit -s` does NOT
+# help, because Lean sizes its own worker stacks independently.
+moreLeanArgs = ["-s", "65536"]
+
+# NOTE: Fred2005 has moved to folio/fred2005-formal-groups/lean/
+# NOTE: GrobnerShirshov (formerly QOU.GrobnerShirshov) has moved to
+#       folio/unital-groebner-bases/lean/
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "f897ebcf72cd16f89ab4577d0c826cd14afaafc7"
+
+# Cross-paper dependency: Gröbner–Shirshov basis engine
+# (provides HeckeGS types for crossing energy / categorical mass)
+[[require]]
+name = "ugb"
+path = "../../unital-groebner-bases/lean"
+
+# doc-gen4 and checkdecls are CI-only dependencies.
+# Pinned to commit hashes matching the Lean toolchain version.
+
+# doc-gen4 is CI-only (blueprint.yml uses docgen-action; lean_ci.yml has
+# a fallback source browser).  Requiring it here forces ~20 heavy
+# metaprogramming modules into every local `lake build`, which can hang
+# on resource-constrained machines.  Un-comment if you need local docs.
+#
+# KEEP COMMENTED ON `main`.  `.github/workflows/doc-gen4.yml` un-comments the
+# block between the sentinels below before building docs, by stripping the
+# leading `# ` from lines starting `# [[require]]` / `# name` / `# git` /
+# `# rev` *within that range only*.  Do not remove the sentinels, and do not
+# reflow these four lines.
+# --- BEGIN doc-gen4 (CI-only) ---
+# [[require]]
+# name = "doc-gen4"
+# git = "https://github.com/leanprover/doc-gen4"
+# rev = "1cd7a1113090e216703e323e8fdcdf099f0a9c8a"
+# --- END doc-gen4 (CI-only) ---
+
+# [[require]]
+# name = "checkdecls"
+# git = "https://github.com/PatrickMassot/checkdecls"
+# rev = "master"

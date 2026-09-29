@@ -12,7 +12,7 @@ That probe closed with:
      but specifically **the rate**."
 
 That is WRONG as written.  `prop:hadron-half-life`
-(content/quantum-observable-universe/predicted-spectra/hadron-half-life.md)
+(folio/quantum-observable-universe/predicted-spectra/hadron-half-life.md)
 states a categorical decay RATE:
 
     Gamma_beta = |W(q)|^2 mu_0 / (2 pi^3) * [2]_q * |M_q|^2 * f(Q),

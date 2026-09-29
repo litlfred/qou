@@ -5,8 +5,8 @@ trace-invisible remainder is invisible to every LINEAR trace but visible to the
 Markov PAIRING, and `net` decomposes exactly into framework-canonical objects.
 
 # Ref: .beans/qou-xzrj--gap-the-767-trace-invisible-remainder-of-epsnpq-st.md
-# Ref: content/quantum-observable-universe/lean/QOU/QBeta/MarkovTraceQuotient.lean
-# Ref: content/quantum-observable-universe/nuclear-interactions/gram-matrix-h3-symbolic.md
+# Ref: folio/quantum-observable-universe/lean/QOU/QBeta/MarkovTraceQuotient.lean
+# Ref: folio/quantum-observable-universe/nuclear-interactions/gram-matrix-h3-symbolic.md
 
 THE BEAN'S QUESTION. "What object in the framework carries a non-cyclic
 functional's value on [H,H]?" The remainder is 7.67 % of `epsNPq` and no Markov

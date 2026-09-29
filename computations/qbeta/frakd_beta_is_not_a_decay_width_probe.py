@@ -224,8 +224,8 @@ def main() -> int:
         "data": {
             "corpus_assertion": "Q_beta = hbar/D_beta, D_beta = 'the neutron beta-decay width'",
             "corpus_sites": [
-                "content/quantum-observable-universe/observations/epistemic-status-of-calibrations.md:3",
-                "content/quantum-observable-universe/observations/three-calibration-discipline-discussion.md:7",
+                "folio/quantum-observable-universe/observations/epistemic-status-of-calibrations.md:3",
+                "folio/quantum-observable-universe/observations/three-calibration-discipline-discussion.md:7",
                 "docs/canonical-derivation-cheat-sheet.md:134",
                 "docs/canonical-derivation-cheat-sheet.md:490",
             ],

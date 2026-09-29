@@ -4,7 +4,7 @@ Kohno-Drinfeld conjugate-partition duality actually lives.
 
 # Ref: .beans/qou-cds1--s1-science-re-derive-the-qbeta-ck-ladder-under-d-n.md
 # Ref: computations/qbeta/qbeta_phase_block_resolution_probe.py
-# Ref: content/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean
 
 BUILDS ON, DOES NOT REPEAT, the master identity of
 `qbeta_phase_block_resolution_probe`, which is exact for every z:

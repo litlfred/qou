@@ -31,7 +31,7 @@ and `.beans/q-usage-watcher-ledger.md`.
 
 - [AGENTS.md §7c — base-ring convention](../../../AGENTS.md) (generic
   `R` vs archimedean `ℝ`).
-- [`notation-collisions.md`](../../../content/quantum-observable-universe/notation/notation-collisions.md)
+- [`notation-collisions.md`](../../../folio/quantum-observable-universe/notation/notation-collisions.md)
   — base-ring convention notation row.
 - [`qa-checkers-q-usage.ts`](../../../content/pipeline/qa-checkers-q-usage.ts)
   — the checker implementation, with the chapter → expected-regime
@@ -102,7 +102,7 @@ changed=$(git diff-tree --no-commit-id --name-only -r "$SHA")
 is_q_usage_event=false
 
 # (i) any block .ts / .md / .lean change
-echo "$changed" | grep -qE 'content/quantum-observable-universe/.*\.(md|ts|lean)$' \
+echo "$changed" | grep -qE 'folio/quantum-observable-universe/.*\.(md|ts|lean)$' \
   && is_q_usage_event=true
 
 # (ii) the checker module or registry itself changed (sweep all blocks)
@@ -110,7 +110,7 @@ echo "$changed" | grep -qE 'content/pipeline/(qa-checkers-q-usage|qa-criteria-re
   && is_q_usage_event=true
 
 # (iii) the chapter-regime table or notation register changed
-echo "$changed" | grep -qE 'content/quantum-observable-universe/notation/notation-(collisions|register)\.md$' \
+echo "$changed" | grep -qE 'folio/quantum-observable-universe/notation/notation-(collisions|register)\.md$' \
   && is_q_usage_event=true
 ```
 

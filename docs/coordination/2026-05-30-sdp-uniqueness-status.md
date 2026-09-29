@@ -18,7 +18,7 @@ theorem, which no concrete consumer currently invokes.
 
 ## Already proven (no sorry, no axiom on the path)
 
-`content/quantum-observable-universe/lean/QOU/MathlibExt/`:
+`folio/quantum-observable-universe/lean/QOU/MathlibExt/`:
 
 | Theorem | File | Status |
 |---|---|---|

@@ -463,7 +463,7 @@ def main() -> int:
                   "canonical 3-CAL layer); qou_substrate.constants."
                   "Q_50_DIGIT_STR (proton, precision layer)"})
     wb.add_data("lean_carrier", {
-        "file": "content/quantum-observable-universe/lean/QOU/"
+        "file": "folio/quantum-observable-universe/lean/QOU/"
                 "Archimedean/BalancedKernelTightness.lean",
         "proved": ["tail_measureReal_le (Markov)",
                    "measure_compl_closedBall_le",

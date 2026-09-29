@@ -59,7 +59,7 @@ lean_scope_files() {
 
   case "$set_name" in
     all)      _lean_scope_all()      { git ls-files -- '*.lean'; } ;;
-    siblings) _lean_scope_all()      { git ls-files -- content | grep '\.lean$' | grep -v '/lean/'; } ;;
+    siblings) _lean_scope_all()      { git ls-files -- folio | grep '\.lean$' | grep -v '/lean/'; } ;;
     *) echo "::error::lean_scope_files: unknown set '$set_name' (want all|siblings)" >&2; return 1 ;;
   esac
 
@@ -93,7 +93,7 @@ lean_scope_files() {
       fi
       case "$set_name" in
         all)      files=$(git diff --name-only --diff-filter=d "$base"...HEAD -- '*.lean' || true) ;;
-        siblings) files=$(git diff --name-only --diff-filter=d "$base"...HEAD -- content \
+        siblings) files=$(git diff --name-only --diff-filter=d "$base"...HEAD -- folio \
                           | grep '\.lean$' | grep -v '/lean/' || true) ;;
       esac
       # Empty IS legitimate here: a PR may touch no Lean at all.

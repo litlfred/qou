@@ -110,9 +110,9 @@ import mpmath as mp  # noqa: E402
 
 mp.mp.dps = 50
 
-BLOCK = ROOT / ("content/quantum-observable-universe/mass-endomorphism/"
+BLOCK = ROOT / ("folio/quantum-observable-universe/mass-endomorphism/"
                 "q-hecke-seminormal-character-closure.md")
-LEAN = ROOT / ("content/quantum-observable-universe/lean/QOU/Interactions/"
+LEAN = ROOT / ("folio/quantum-observable-universe/lean/QOU/Interactions/"
                "MarkovPeelH3.lean")
 DECLARING = COMP / "probes/q-hecke-seminormal-character-closure-probe.witness.json"
 BRIDGE = COMP / "atomic-tr-m-mpfr-50dps.witness.json"

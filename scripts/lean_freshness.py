@@ -44,7 +44,7 @@ import subprocess
 from functools import lru_cache
 from pathlib import Path
 
-DEFAULT_LEAN_ROOT = Path("content/quantum-observable-universe/lean")
+DEFAULT_LEAN_ROOT = Path("folio/quantum-observable-universe/lean")
 
 
 def dirty_paths(scope: Path | str = DEFAULT_LEAN_ROOT) -> set[str]:

@@ -131,7 +131,7 @@ end; its title tells you the subject, never the verdict.
 
 ## TRAP — two ways a `content/` grep lies about coverage (2026-09-04)
 
-**1. Vendored Mathlib sits UNDER `content/`.** `content/quantum-observable-universe/lean/.lake/packages/mathlib/`.
+**1. Vendored Mathlib sits UNDER `content/`.** `folio/quantum-observable-universe/lean/.lake/packages/mathlib/`.
 A `find content` list is 20,472 files; excluding `/.lake/` it is **12,427** — every
 naive `content/` count inflated ~65 %, and `hyperbolic metric` / `uniformizer` /
 `Poincare` return Mathlib docstrings as corpus hits. **Filter `/\.lake/` first.**

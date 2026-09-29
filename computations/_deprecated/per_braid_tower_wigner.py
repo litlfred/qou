@@ -4,7 +4,7 @@ Per-braid + q-Hecke Coulomb + Wigner asymmetry probe.
 
 Adds the SEMF Asymmetry term (per `prop:wigner-np-pairing`) on top
 of the principled Coulomb-corrected hybrid. The Wigner formula
-([wigner-np-pairing.md](../../content/quantum-observable-universe/braids-and-knots/wigner-np-pairing.md))
+([wigner-np-pairing.md](../../folio/quantum-observable-universe/braids-and-knots/wigner-np-pairing.md))
 is
 
     ΔB_Wigner = -m_e · H_q((2,2)) · min(Z, N) / A
