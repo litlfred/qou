@@ -663,7 +663,7 @@ def main() -> int:
         print("\nThese are NOT ingested. Moving them would create a directory the\n"
               "corpus holds and cannot read — invisible at every tier of\n"
               "corpus-grep path 5. Ingest them first, then re-run:\n"
-              "    python3 folio-assistant/scripts/pdf-structure.py --outdir library <pdf>\n"
+              "    python3 folio-assistant/cat-harness/scripts/pdf-structure.py --outdir library <pdf>\n"
               "    python3 scripts/summarize-library.py --apply")
 
     if not args.apply:

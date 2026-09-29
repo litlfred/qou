@@ -76,21 +76,23 @@ jobs:
 
           # RESOLVE the generator; do NOT hardcode a layout.
           #
-          # `setup-folio-assistant.sh` points the in-repo `folio-assistant`
-          # symlink at DIFFERENT targets depending on the platform checkout's
-          # shape, and the two give different paths to the same file:
+          # Two link targets have existed, and they give different paths to
+          # the same file:
           #
-          #   split layout   folio-assistant -> ../folio-assistant/cat-harness
-          #                  => folio-assistant/content/pipeline/...
-          #   root layout    folio-assistant -> ../folio-assistant
+          #   clone root     folio-assistant -> ../folio-assistant
           #                  => folio-assistant/cat-harness/content/pipeline/...
+          #   cat-harness    folio-assistant -> ../folio-assistant/cat-harness
+          #                  => folio-assistant/content/pipeline/...
           #
-          # CI resolves the first; a local clone made by the same script
-          # resolved the second. Run 1 of this gate hardcoded the SECOND and so
-          # could only ever fail on the runner, while reproducing clean by hand.
+          # `setup-folio-assistant.sh` links the clone ROOT since 2026-09-29
+          # (bean qou-msp2), which is what every qou importer expects. Before
+          # that it linked `cat-harness/` on a split clone. The second candidate
+          # stays for a checkout linked by the old script and not yet re-run.
+          # Run 1 of this gate hardcoded ONE layout and so could only ever fail
+          # on the runner, while reproducing clean by hand.
           GEN=""
-          for c in folio-assistant/content/pipeline/gen-block-jsonld.ts \
-                   folio-assistant/cat-harness/content/pipeline/gen-block-jsonld.ts; do
+          for c in folio-assistant/cat-harness/content/pipeline/gen-block-jsonld.ts \
+                   folio-assistant/content/pipeline/gen-block-jsonld.ts; do
             if [ -f "$c" ]; then GEN="$c"; break; fi
           done
           if [ -z "$GEN" ]; then
