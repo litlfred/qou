@@ -1,0 +1,40 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-classical-shadow-of-the-substrate",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:classical-shadow-of-the-substrate",
+  "kind": "remark",
+  "title": "The classical shadow of the substrate: what the obstruction space becomes at $q = 1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-classical-limit-functor",
+    "papers/quantum-observable-universe/blocks/def-classical-limit-obstruction",
+    "papers/quantum-observable-universe/blocks/def-hochschild-homology",
+    "papers/quantum-observable-universe/blocks/rem-hkr-theorem"
+  ],
+  "foreshadows": [
+    "papers/quantum-observable-universe/blocks/conj-wigner-axiom"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-classical-limit-functor",
+  "cites": [
+    "references/weibel1994",
+    "references/cartan1956",
+    "references/kontsevich-2003",
+    "references/nest-tsygan-1995",
+    "references/dolgushev-rubtsov-2005",
+    "references/feng-tsygan-1991",
+    "references/hadfield-krahmer-2005"
+  ],
+  "tags": [
+    "classical-limit",
+    "hochschild-cohomology",
+    "whitehead-lemma",
+    "formality",
+    "fibre-vs-observable",
+    "obstruction"
+  ],
+  "text": "classical-shadow-of-the-substrate.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,676 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-16T02:37:14.289131+00:00",
+  "commitSha": "c144dca416188b1cee3a74b2ff8dbf6b60819f55",
+  "assertions": [
+    {
+      "name": "lr_table_dimension_identity",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "hook-length dims, exact in ℤ"
+    },
+    {
+      "name": "weight_identity_sum_y6_c_eq_y3_y3_to_1e-48",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "convention-D y at n=3,6 from y-lambda-at-q0"
+    },
+    {
+      "name": "branching_rule_free_deuteron_matches_lr_pushforward_to_1e-40",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "atom-chi-rust-d free vs chi-proton/neutron-h3 through the LR table"
+    },
+    {
+      "name": "block_measure_sums_to_one_at_n_6_9_12",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Σ y_λ f^λ per nucleus"
+    },
+    {
+      "name": "entangled_support_is_the_two_row_support_for_all_four",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "y≠0 ⇔ ≤2 rows (convention D) and χ differs on every such block"
+    },
+    {
+      "name": "free_trace_factorises_as_tr_p_Z_tr_n_N_to_1e-40",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean trM_tensor iterated; committed traces"
+    },
+    {
+      "name": "ratio_equals_bond_product_z_plus_d_to_1e-40_all_four",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "corroborates the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe (connected-sum multiplicativity)"
+    },
+    {
+      "name": "free_product_satisfies_reading3_on_all_four",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "χ_λ(free) ≥ 0 on every y>0 block"
+    },
+    {
+      "name": "bound_word_violates_reading3_on_all_four",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "the production bound word has χ_λ < 0 on some y>0 block — the owner-ruled whole-word reading 3 FAILS"
+    },
+    {
+      "name": "tritium_and_he3_deviation_vectors_differ",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "the two A=3 mirror nuclei have different y-weighted deviations on the two-row support"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "branching-pushforward-entangled-support",
+  "scriptFile": "branching_pushforward_entangled_support_probe.py",
+  "scriptHash": "0fd22346e22f",
+  "scriptCommitSha": "8915df70373b54a4008bbd98a8e56ee3adf71d26",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/branching_pushforward_entangled_support_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/branching_pushforward_entangled_support_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0_anchor_reason": "all inputs are proton-pinned committed witnesses; no q0 arithmetic here",
+  "description": "PROBE (bean qou-7dal): on committed data the convention-D Markov weights satisfy the LR weight identity Σ_λ y_λ c^λ_{μν} = y_μ y_ν (S_6 ⊃ S_3×S_3, 9 pairs, to 1e-48); the deuteron's free product characters ARE the LR pushforward of the nucleon characters; hence tr_M(free) = tr_M(p)^Z tr_M(n)^N for D/T/3He/4He; Σ y f = 1 at n=6,9,12; the y-weighted entangled support is exactly the two-row support; T and 3He deviate differently. Nothing selected, nothing fitted, nothing wired.",
+  "weight_family": "markov_y_lambda_convention_D",
+  "lr_table_partitions_of_3": {
+    "(3,)x(3,)": {
+      "(6,)": 1,
+      "(5, 1)": 1,
+      "(4, 2)": 1,
+      "(3, 3)": 1
+    },
+    "(3,)x(2, 1)": {
+      "(5, 1)": 1,
+      "(4, 2)": 1,
+      "(4, 1, 1)": 1,
+      "(3, 2, 1)": 1
+    },
+    "(3,)x(1, 1, 1)": {
+      "(4, 1, 1)": 1,
+      "(3, 1, 1, 1)": 1
+    },
+    "(2, 1)x(2, 1)": {
+      "(4, 2)": 1,
+      "(4, 1, 1)": 1,
+      "(3, 3)": 1,
+      "(3, 2, 1)": 2,
+      "(3, 1, 1, 1)": 1,
+      "(2, 2, 2)": 1,
+      "(2, 2, 1, 1)": 1
+    },
+    "(2, 1)x(1, 1, 1)": {
+      "(3, 2, 1)": 1,
+      "(3, 1, 1, 1)": 1,
+      "(2, 2, 1, 1)": 1,
+      "(2, 1, 1, 1, 1)": 1
+    },
+    "(1, 1, 1)x(1, 1, 1)": {
+      "(2, 2, 2)": 1,
+      "(2, 2, 1, 1)": 1,
+      "(2, 1, 1, 1, 1)": 1,
+      "(1, 1, 1, 1, 1, 1)": 1
+    },
+    "(2, 1)x(3,)": {
+      "(5, 1)": 1,
+      "(4, 2)": 1,
+      "(4, 1, 1)": 1,
+      "(3, 2, 1)": 1
+    },
+    "(1, 1, 1)x(3,)": {
+      "(4, 1, 1)": 1,
+      "(3, 1, 1, 1)": 1
+    },
+    "(1, 1, 1)x(2, 1)": {
+      "(3, 2, 1)": 1,
+      "(3, 1, 1, 1)": 1,
+      "(2, 2, 1, 1)": 1,
+      "(2, 1, 1, 1, 1)": 1
+    }
+  },
+  "weight_identity_rows": [
+    {
+      "mu": [
+        3
+      ],
+      "nu": [
+        3
+      ],
+      "sum_y6_c": "0.25543343216803659133907913288288718961155493108059",
+      "y3_mu_y3_nu": "0.2554334321680365913390791328828871896115549310806",
+      "abs_dev": "5.1434e-51"
+    },
+    {
+      "mu": [
+        3
+      ],
+      "nu": [
+        2,
+        1
+      ],
+      "sum_y6_c": "0.12498539716794710592423978517879254302439813333461",
+      "y3_mu_y3_nu": "0.1249853971679471059242397851787925430243981333346",
+      "abs_dev": "3.0987e-51"
+    },
+    {
+      "mu": [
+        3
+      ],
+      "nu": [
+        1,
+        1,
+        1
+      ],
+      "sum_y6_c": "0.0",
+      "y3_mu_y3_nu": "0.0",
+      "abs_dev": "0.0"
+    },
+    {
+      "mu": [
+        2,
+        1
+      ],
+      "nu": [
+        2,
+        1
+      ],
+      "sum_y6_c": "0.061156244790043746240990431600485659572713133895244",
+      "y3_mu_y3_nu": "0.061156244790043746240990431600485659572713133895241",
+      "abs_dev": "2.6871e-51"
+    },
+    {
+      "mu": [
+        2,
+        1
+      ],
+      "nu": [
+        1,
+        1,
+        1
+      ],
+      "sum_y6_c": "0.0",
+      "y3_mu_y3_nu": "0.0",
+      "abs_dev": "0.0"
+    },
+    {
+      "mu": [
+        1,
+        1,
+        1
+      ],
+      "nu": [
+        1,
+        1,
+        1
+      ],
+      "sum_y6_c": "0.0",
+      "y3_mu_y3_nu": "0.0",
+      "abs_dev": "0.0"
+    },
+    {
+      "mu": [
+        2,
+        1
+      ],
+      "nu": [
+        3
+      ],
+      "sum_y6_c": "0.12498539716794710592423978517879254302439813333461",
+      "y3_mu_y3_nu": "0.1249853971679471059242397851787925430243981333346",
+      "abs_dev": "3.0987e-51"
+    },
+    {
+      "mu": [
+        1,
+        1,
+        1
+      ],
+      "nu": [
+        3
+      ],
+      "sum_y6_c": "0.0",
+      "y3_mu_y3_nu": "0.0",
+      "abs_dev": "0.0"
+    },
+    {
+      "mu": [
+        1,
+        1,
+        1
+      ],
+      "nu": [
+        2,
+        1
+      ],
+      "sum_y6_c": "0.0",
+      "y3_mu_y3_nu": "0.0",
+      "abs_dev": "0.0"
+    }
+  ],
+  "weight_identity_worst_abs_dev": "5.1434e-51",
+  "branching_rows_deuteron": [
+    {
+      "lambda": [
+        6
+      ],
+      "chi_free_witness": "1.5513064682004775733400041715565838634937585726284",
+      "lr_pushforward": "1.5513064682004775733400041715565838634937585726284",
+      "abs_dev": "3.9471e-50"
+    },
+    {
+      "lambda": [
+        5,
+        1
+      ],
+      "chi_free_witness": "0.72222319547663343251347893677940906919180389075582",
+      "lr_pushforward": "0.72222319547663343251347893677940906919180389075584",
+      "abs_dev": "1.729e-50"
+    },
+    {
+      "lambda": [
+        4,
+        2
+      ],
+      "chi_free_witness": "0.82659166702554648129002182549834801191414346754892",
+      "lr_pushforward": "0.82659166702554648129002182549834801191414346754893",
+      "abs_dev": "6.5145e-51"
+    },
+    {
+      "lambda": [
+        4,
+        1,
+        1
+      ],
+      "chi_free_witness": "-2.8133263317193534457867808083023876346566998957614",
+      "lr_pushforward": "-2.8133263317193534457867808083023876346566998957613",
+      "abs_dev": "7.2423e-50"
+    },
+    {
+      "lambda": [
+        3,
+        3
+      ],
+      "chi_free_witness": "1.6556749397493906221165470602755228062160981494215",
+      "lr_pushforward": "1.6556749397493906221165470602755228062160981494214",
+      "abs_dev": "5.0246e-50"
+    },
+    {
+      "lambda": [
+        3,
+        2,
+        1
+      ],
+      "chi_free_witness": "-0.089833625420115395706083967429905079519892136322515",
+      "lr_pushforward": "-0.089833625420115395706083967429905079519892136322513",
+      "abs_dev": "1.9192e-51"
+    },
+    {
+      "lambda": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "chi_free_witness": "-1.453730354789606657392900083615821011017361821925",
+      "lr_pushforward": "-1.453730354789606657392900083615821011017361821925",
+      "abs_dev": "2.7371e-50"
+    },
+    {
+      "lambda": [
+        2,
+        2,
+        2
+      ],
+      "chi_free_witness": "0.77762536791912660023010658965790678908304049819181",
+      "lr_pushforward": "0.77762536791912660023010658965790678908304049819181",
+      "abs_dev": "1.2595e-51"
+    },
+    {
+      "lambda": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "chi_free_witness": "1.3081380721250292477974620795672986184204238901556",
+      "lr_pushforward": "1.3081380721250292477974620795672986184204238901556",
+      "abs_dev": "4.2968e-50"
+    },
+    {
+      "lambda": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "chi_free_witness": "1.2037696005761161990209191908483596756980843133626",
+      "lr_pushforward": "1.2037696005761161990209191908483596756980843133626",
+      "abs_dev": "4.6257e-50"
+    },
+    {
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "chi_free_witness": "0.67325689637021355145356370093896784636070092139872",
+      "lr_pushforward": "0.67325689637021355145356370093896784636070092139872",
+      "abs_dev": "2.0347e-51"
+    }
+  ],
+  "branching_worst_abs_dev": "7.2423e-50",
+  "tr_M_proton": "0.62932840220292191816534574677848592760021940063436",
+  "tr_M_neutron": "0.47513351715568221250609023267500579955840763470875",
+  "q0_from_y_witness": "1.1099785827513808075916690956107688798744991218736",
+  "z_D": "0.61268803714646525159582986394589924802630839154509",
+  "h": "0.20906029879563931543084621312967494385975749526306",
+  "bond_factors_z_plus_d": {
+    "pp": "0.61268803714646525159582986394589924802630839154509",
+    "pn": "0.50822978937673896257799579765589360389830839091657",
+    "nn": "0.40362773835082593616498365081622430416655089628202"
+  },
+  "pn_convention": "bring_color_weighted",
+  "per_nucleus": {
+    "d": {
+      "reading3_violations_atom": [
+        [
+          5,
+          1
+        ]
+      ],
+      "reading3_violations_free": [],
+      "ratio_tr_atom_over_tr_free": "0.50822978937673896257799579765589360389830839091657",
+      "bond_product_z_plus_d": "0.50822978937673896257799579765589360389830839091657",
+      "bond_chain_kinds": [
+        "pn"
+      ],
+      "bond_product_abs_dev": "2.7965e-51",
+      "Z": 1,
+      "N": 1,
+      "n_strands": 6,
+      "blocks": 11,
+      "sum_P": "1.0",
+      "two_row_blocks": 4,
+      "y_weighted_entangled_support_size": 4,
+      "raw_chi_differs": 11,
+      "top_deviation_blocks": [
+        {
+          "lambda": [
+            5,
+            1
+          ],
+          "y_delta": "-0.110890083862082971996412489538"
+        },
+        {
+          "lambda": [
+            4,
+            2
+          ],
+          "y_delta": "-0.0229016573227771316777448435623"
+        },
+        {
+          "lambda": [
+            3,
+            3
+          ],
+          "y_delta": "-0.014242542477333585826529597814"
+        },
+        {
+          "lambda": [
+            6
+          ],
+          "y_delta": "0.000987605681785220391192201894584"
+        }
+      ],
+      "tr_M_atom": "0.15196833920423160759266569775106614127124096465526",
+      "tr_M_free": "0.29901501718464007670216042677098383227494947439702",
+      "weighted_deviation_sum": "-0.14704667798040846910949472901991769100370850974176",
+      "tr_p_pow_Z_tr_n_pow_N": "0.29901501718464007670216042677098383227494947439703",
+      "factorisation_abs_dev": "6.6207e-51",
+      "chi_witness": {
+        "computedAt": "2026-09-07T11:36:23.937707+00:00",
+        "commitSha": "6e9557d5cebd",
+        "description": "Full H_6 chi^λ(β_K) for D (Z=1, N=1), both atom (include_inter=True) and free (include_inter=False) configs. precision=m"
+      }
+    },
+    "t": {
+      "reading3_violations_atom": [
+        [
+          8,
+          1
+        ],
+        [
+          5,
+          4
+        ]
+      ],
+      "reading3_violations_free": [],
+      "ratio_tr_atom_over_tr_free": "0.20513564044864976892685000166038351176091031419586",
+      "bond_product_z_plus_d": "0.20513564044864976892685000166038351176091031419587",
+      "bond_chain_kinds": [
+        "pn",
+        "nn"
+      ],
+      "bond_product_abs_dev": "8.8347e-51",
+      "Z": 1,
+      "N": 2,
+      "n_strands": 9,
+      "blocks": 30,
+      "sum_P": "1.0",
+      "two_row_blocks": 5,
+      "y_weighted_entangled_support_size": 5,
+      "raw_chi_differs": 30,
+      "top_deviation_blocks": [
+        {
+          "lambda": [
+            8,
+            1
+          ],
+          "y_delta": "-0.0503546875623864920089047329876"
+        },
+        {
+          "lambda": [
+            7,
+            2
+          ],
+          "y_delta": "-0.0281343679803984970480072527698"
+        },
+        {
+          "lambda": [
+            6,
+            3
+          ],
+          "y_delta": "-0.022499316313379598655644035678"
+        },
+        {
+          "lambda": [
+            5,
+            4
+          ],
+          "y_delta": "-0.00831562955240038496391523393788"
+        }
+      ],
+      "tr_M_atom": "0.029144042360972065357254218791869844065838803564738",
+      "tr_M_free": "0.14207205679730479747049860425505585620688877446834",
+      "weighted_deviation_sum": "-0.1129280144363327321132443854631860121410499709036",
+      "tr_p_pow_Z_tr_n_pow_N": "0.14207205679730479747049860425505585620688877446834",
+      "factorisation_abs_dev": "6.9726e-51",
+      "chi_witness": {
+        "computedAt": "2026-09-07T11:38:54.012979+00:00",
+        "commitSha": "6e9557d5cebd",
+        "description": "Full H_9 chi^λ(β_K) for T (Z=1, N=2), both atom (include_inter=True) and free (include_inter=False) configs. precision=m"
+      }
+    },
+    "3he": {
+      "reading3_violations_atom": [
+        [
+          8,
+          1
+        ],
+        [
+          5,
+          4
+        ]
+      ],
+      "reading3_violations_free": [],
+      "ratio_tr_atom_over_tr_free": "0.31138631207259565241288839663309982228956162859607",
+      "bond_product_z_plus_d": "0.31138631207259565241288839663309982228956162859607",
+      "bond_chain_kinds": [
+        "pp",
+        "pn"
+      ],
+      "bond_product_abs_dev": "5.2255e-51",
+      "Z": 2,
+      "N": 1,
+      "n_strands": 9,
+      "blocks": 30,
+      "sum_P": "1.0",
+      "two_row_blocks": 5,
+      "y_weighted_entangled_support_size": 5,
+      "raw_chi_differs": 30,
+      "top_deviation_blocks": [
+        {
+          "lambda": [
+            8,
+            1
+          ],
+          "y_delta": "-0.0602887954206858441830524536585"
+        },
+        {
+          "lambda": [
+            7,
+            2
+          ],
+          "y_delta": "-0.0353782262448148634959070476425"
+        },
+        {
+          "lambda": [
+            6,
+            3
+          ],
+          "y_delta": "-0.027830603451028124216183750463"
+        },
+        {
+          "lambda": [
+            5,
+            4
+          ],
+          "y_delta": "-0.0115934196890538856811860062277"
+        }
+      ],
+      "tr_M_atom": "0.058596253654436380218956715452130256830877107284185",
+      "tr_M_free": "0.18817864299948877926347903714586689992069257358945",
+      "weighted_deviation_sum": "-0.12958238934505239904452232169373664308981546630526",
+      "tr_p_pow_Z_tr_n_pow_N": "0.18817864299948877926347903714586689992069257358944",
+      "factorisation_abs_dev": "4.5982e-51",
+      "chi_witness": {
+        "computedAt": "2026-09-07T11:38:55.460990+00:00",
+        "commitSha": "6e9557d5cebd",
+        "description": "Full H_9 chi^λ(β_K) for 3He (Z=2, N=1), both atom (include_inter=True) and free (include_inter=False) configs. precision"
+      }
+    },
+    "4he": {
+      "reading3_violations_atom": [
+        [
+          11,
+          1
+        ],
+        [
+          8,
+          4
+        ]
+      ],
+      "reading3_violations_free": [],
+      "ratio_tr_atom_over_tr_free": "0.12568415289526626941387850586668409901893672284695",
+      "bond_product_z_plus_d": "0.12568415289526626941387850586668409901893672284696",
+      "bond_chain_kinds": [
+        "pp",
+        "pn",
+        "nn"
+      ],
+      "bond_product_abs_dev": "6.4837e-51",
+      "Z": 2,
+      "N": 2,
+      "n_strands": 12,
+      "blocks": 77,
+      "sum_P": "1.0",
+      "two_row_blocks": 7,
+      "y_weighted_entangled_support_size": 7,
+      "raw_chi_differs": 77,
+      "top_deviation_blocks": [
+        {
+          "lambda": [
+            11,
+            1
+          ],
+          "y_delta": "-0.0190033115202107839715048795001"
+        },
+        {
+          "lambda": [
+            8,
+            4
+          ],
+          "y_delta": "-0.0178892737001867315807039667917"
+        },
+        {
+          "lambda": [
+            9,
+            3
+          ],
+          "y_delta": "-0.0172928022429020106131925354354"
+        },
+        {
+          "lambda": [
+            10,
+            2
+          ],
+          "y_delta": "-0.0170439392633978114497344641393"
+        }
+      ],
+      "tr_M_atom": "0.011237417659767421564199549374410607269662696081262",
+      "tr_M_free": "0.089409980501930600382047565819885657048241375217184",
+      "weighted_deviation_sum": "-0.078172562842163178817848016445475049778578679135922",
+      "tr_p_pow_Z_tr_n_pow_N": "0.089409980501930600382047565819885657048241375217184",
+      "factorisation_abs_dev": "3.5125e-52",
+      "chi_witness": {
+        "computedAt": "2026-09-07T13:10:05.078278+00:00",
+        "commitSha": "a4fcf64a10d5",
+        "description": "Full H_12 chi^λ(β_K) for 4He (Z=2, N=2), both atom (include_inter=True) and free (include_inter=False) configs. precisio"
+      }
+    }
+  }
+}

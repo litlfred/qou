@@ -1,0 +1,92 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-15T08:22:01.013053+00:00",
+  "commitSha": "73c2db9b414bdbdc7091ff0485f2e3e88113d5db",
+  "assertions": [
+    {
+      "name": "assembly_reproduces_the_three_published_cells",
+      "computed": "0.000000000000493795136747492963116484589216787226277687418949679155133489",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-9",
+      "source": "independent rebuild of tr_M(Delta_S)(z)*E_0 from q_0 against the three Q_base values in the merged 2026-09-13 audit §5.1"
+    },
+    {
+      "name": "required_z_is_NOT_an_admissible_convention_D_root",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "z solving Q_beta(z) = Q_codata against the roots {q, z_D} of ConventionDAdmissibleRoots.admissible_markov_param_iff"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "qbeta-ruled-base-affine-solve",
+  "scriptFile": "qbeta_ruled_base_affine_solve_probe.py",
+  "scriptHash": "2cb7652812ed",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_ruled_base_affine_solve_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_ruled_base_affine_solve_probe.py"
+  },
+  "description": "The Q_beta base tr_M(Delta_S)(z)*E_0 is AFFINE in z, so the whole one-parameter family inverts in closed form. Exactly one z reaches CODATA and it is not an admissible convention-D root — it sits 0.15% below the excluded z=1 coordinate sum. Closes the search over z negatively; complements the F<=1 form bound, which closes the phase and the rungs.",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561076887987449912187360000000000",
+    "E0_MeV": "4.18598136329447589694506215875900841014348689087871544862230"
+  },
+  "data": {
+    "affine_A": "0.0218531042662609947010096678386941548841069803567611081214237",
+    "affine_B": "-0.209060298795639315430846213129674943859757495263063078255215",
+    "cells": [
+      {
+        "cell": "z_D (RULED)",
+        "z": "0.612688037146465251595829863945899248026308391545087014074774",
+        "abs_tr": "0.106235639848092790892141987160551894399375838398475912519698",
+        "Q_MeV": "0.444700408521780409100962213024942779024902777364453961151380",
+        "published": "0.444700408522",
+        "rel": "0.000000000000493795136747492963116484589216787226277687418949679155133489"
+      },
+      {
+        "cell": "z=q (augmentation)",
+        "z": "1.10997858275138080759166909561076887987449912187360000000000",
+        "abs_tr": "0.210199349900502936568794845696942029965574442560285898369386",
+        "Q_MeV": "0.879890561260119838902965955941296576254288512481633429794461",
+        "published": "0.87989056126",
+        "rel": "0.000000000000136197509374742103704807565636861644396985146108423116738513"
+      },
+      {
+        "cell": "z=1 (retired)",
+        "z": "1.00000000000000000000000000000000000000000000000000000000000",
+        "abs_tr": "0.187207194529378320729836545290980788975650514906301970133791",
+        "Q_MeV": "0.783645827374621213074939751341396890525736441030255026758350",
+        "published": "0.783645827375",
+        "rel": "0.000000000000483364948587912027358556283110406154920507135622998647012740"
+      }
+    ],
+    "z_required_for_codata": "0.998500304411126552507403194644047669921516193192696238972917",
+    "distance_to_z_D": "0.385812267264661300911573330698148421895207801647609224898143",
+    "distance_to_q": "0.111478278340254255084265900966721209952982928680903761027083"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-hecke-monodromy-step-two",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:hecke-monodromy-step-two",
+  "kind": "conjecture",
+  "title": "The Hecke quadratic is the q-deformed branch-point monodromy of the colour cubic (Step 2 of the canonical chain as a conjecture)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-lifted-crossing-locality"
+  ],
+  "cites": [
+    "references/kohno1987",
+    "references/drinfeld1985",
+    "references/jones1987"
+  ],
+  "tags": [
+    "tier:keystone",
+    "step-2",
+    "non-abelian-stokes",
+    "hecke-quadratic",
+    "monodromy",
+    "picard-lefschetz",
+    "kz-connection",
+    "axiom-class",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.Mass.HeckeMonodromy",
+  "text": "hecke-monodromy-step-two.md",
+  "provenance": "authored"
+}

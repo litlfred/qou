@@ -1,4 +1,4 @@
-import { simulator } from "../../../folio-assistant/schemas/builders";
+import { simulator } from "../../../folio-assistant/cat-harness/schemas/builders";
 
 // Stub simulator block: empirical probe of descent-rate β(d) on
 // SYT-cell pairs. Used by mass-tower-syt-cells.md to point at the
@@ -8,7 +8,7 @@ import { simulator } from "../../../folio-assistant/schemas/builders";
 export default simulator({
   label: "sim:descent-rate-probe",
   title: "Empirical descent-rate probe (SYT-cell pairs)",
-  html: "folio-assistant/simulators/descent_rate_probe.html",
+  html: "fsh-guts/deprecated/simulators/descent_rate_probe.html",
   uses: ["rem:mass-tower-syt-cells"],
   tags: ["syt", "descent-rate", "empirical", "todo-html", "interactive"],
   defaultView: {

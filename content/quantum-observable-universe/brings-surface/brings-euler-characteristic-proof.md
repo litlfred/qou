@@ -1,14 +1,3 @@
-**Proof.**
-By [Euler-characteristic stability](#prop:euler-char-stability), the
-categorical Euler characteristic
-$\chi(A) := \mathrm{tr}(\mathrm{id}_A)$ of the base algebra
-coincides with the topological Euler characteristic
-$\chi(\mathcal{S})$ of the archimedean state bundle.  For the
-Descartes universe, $\mathcal{S}$ restricted to a generic fibre is
-Bring's surface $\Sigma_4$, so
-$\chi(A) = \chi(\Sigma_4) = 2 - 2g(\Sigma_4) = 2 - 8 = -6$.
-Equivalently, computing via the categorical trace at
-$\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$, the quantum dimension
-of $A = \mathcal{O}_q(\mathrm{SU}(2))$ specialises at the Descartes
-substrate parameter $q_0$ to the value $-6$, matching the
-topological count.  $\square$
+Bring's curve is a compact Riemann surface of genus $g = 4$ ([Bring's surface](#def:brings-surface)). The classification of compact orientable surfaces gives $\chi_{\mathrm{eu}} = 2 - 2g$, hence $\chi_{\mathrm{eu}}(\Sigma_4) = -6$.
+
+For the Hochschild form, the Hochschild--Kostant--Rosenberg theorem ([HKR](#rem:hkr-theorem)) identifies $HH_n(\Sigma_4) \cong \bigoplus_i H^i(\Sigma_4, \Omega^{i+n})$. The Hodge numbers of a genus-$g$ curve are $h^{0,0} = h^{1,1} = 1$ and $h^{1,0} = h^{0,1} = g$, so $\dim HH_0 = 2$ and $\dim HH_1 = \dim HH_{-1} = g$, and the alternating sum is $2 - 2g$. Equivalently $-6 = \deg T_{\Sigma_4} = \int_{\Sigma_4} c_1(T_{\Sigma_4})$, the degree-two component of the Chern character of the tangent bundle ([Chern character](#rem:chern-character-and-riemann-roch)). $\square$

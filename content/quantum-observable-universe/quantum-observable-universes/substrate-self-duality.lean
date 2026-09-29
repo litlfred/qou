@@ -19,17 +19,27 @@ namespace QOU.AlgebraicSubstrate
 
 universe u v
 
-/-- **Frobenius–Hopf substrate** (inlined from
-    `def:frobenius-hopf-substrate`): a self-dual Frobenius–Hopf algebra
-    object `A` in a rigid monoidal category `C`.
+/-- **Self-dual pairing data**: the object, comultiplication and
+    Frobenius form that the self-duality morphism below consumes, and
+    nothing else.
 
-    Only the fields consumed by the self-duality morphism are retained
-    here (object, comultiplication, Frobenius form); the full
-    Frobenius/snake data is in the canonical sibling block
-    `frobenius-hopf-substrate.lean`.  Keep the two in sync.
+    This is a file-local minimal carrier, **not** a Frobenius–Hopf
+    substrate.  It was named `FrobeniusHopfSubstrate` until 2026-09-15,
+    which collided — at the *fully qualified* name
+    `QOU.AlgebraicSubstrate.FrobeniusHopfSubstrate` — with the canonical
+    eight-field structure in `frobenius-hopf-substrate.lean` and with a
+    third three-field carrier in `categorical-reeb-derivation.lean`.
+    Nothing imported two of the three, so the collision was latent
+    rather than a build error; renamed per bean `qou-hmhw`.
+
+    What it is NOT, and the difference is load-bearing: it carries no
+    multiplication, no unit, no counit, no antipode and no laws — in
+    particular neither snake identity, so the non-degeneracy the
+    self-duality claim below appeals to is *not* available from this
+    structure and is supplied as an external axiom.
 
     Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 -/
-structure FrobeniusHopfSubstrate (C : Type u) [Category.{v} C]
+structure SelfDualPairingData (C : Type u) [Category.{v} C]
     [MonoidalCategory C] where
   /-- The underlying object `A` in `C`. -/
   obj : C
@@ -46,7 +56,7 @@ structure FrobeniusHopfSubstrate (C : Type u) [Category.{v} C]
     where Δ is comultiplication and λ is the Frobenius form.
     This is the categorical analog of `a ↦ Σ a₍₁₎ · λ(a₍₂₎)`. -/
 def selfDualityMorphism {C : Type u} [Category.{v} C]
-    [MonoidalCategory C] (S : FrobeniusHopfSubstrate C) :
+    [MonoidalCategory C] (S : SelfDualPairingData C) :
     S.obj ⟶ S.obj :=
   S.comul ≫ (S.obj ◁ S.frobeniusForm) ≫ (ρ_ S.obj).hom
 
@@ -56,7 +66,7 @@ def selfDualityMorphism {C : Type u} [Category.{v} C]
     isomorphism `A ≅ A`.  The self-duality morphism
     `φ = ρ ∘ (id ⊗ λ) ∘ Δ` is an isomorphism, with inverse
     `ψ = λ ∘ (η̃ ⊗ id) ∘ μ`.  This follows from the snake identities
-    (non-degeneracy axioms) of `FrobeniusHopfSubstrate`, which are
+    (non-degeneracy axioms) of `SelfDualPairingData`, which are
     precisely the zig-zag identities expressing that `(A, A, λ∘μ, η̃)`
     form a duality pair.
 
@@ -70,11 +80,11 @@ def selfDualityMorphism {C : Type u} [Category.{v} C]
 -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 §2.3
 -- Ref: [yekutieli2015] Yekutieli, "Nonabelian Multiplicative Integration on Surfaces," World Scientific 2015 (DOI: 10.1142/9537)
 axiom substrate_self_duality_axiom {C : Type u} [Category.{v} C]
-    [MonoidalCategory C] (S : FrobeniusHopfSubstrate C) :
+    [MonoidalCategory C] (S : SelfDualPairingData C) :
     IsIso (selfDualityMorphism S)
 
 theorem substrate_self_duality {C : Type u} [Category.{v} C]
-    [MonoidalCategory C] (S : FrobeniusHopfSubstrate C) :
+    [MonoidalCategory C] (S : SelfDualPairingData C) :
     IsIso (selfDualityMorphism S) :=
   substrate_self_duality_axiom S
 

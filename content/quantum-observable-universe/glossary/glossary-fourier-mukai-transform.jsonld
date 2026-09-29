@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-fourier-mukai-transform",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-fourier-mukai-transform",
+  "kind": "remark",
+  "title": "Fourier–Mukai transform",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-glossary-derived-category"
+  ],
+  "cites": [
+    "references/orlov1997"
+  ],
+  "tags": [
+    "glossary",
+    "homological-algebra",
+    "derived",
+    "integral-transform"
+  ],
+  "defines": [
+    "fourier-mukai-transform"
+  ],
+  "text": "glossary-fourier-mukai-transform.md",
+  "provenance": "authored"
+}

@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/rem-bk-coordination-multiplicity",
   "@type": [
-    "folio:Remark",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
   "label": "rem:bk-coordination-multiplicity",
@@ -13,6 +13,10 @@
     "papers/quantum-observable-universe/blocks/prop-magic-A-binding-formula"
   ],
   "interprets": "papers/quantum-observable-universe/blocks/conj-binding-manybody-eq-jet-filtration",
+  "cites": [
+    "references/bezdek-reid2013",
+    "references/hales-etal2010"
+  ],
   "tags": [
     "binding",
     "many-body",

@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/alg-q-beta-truncation",
   "@type": [
-    "folio:Algorithm",
+    "folio-assistant-core:Algorithm",
     "doco:Section"
   ],
   "label": "alg:q-beta-truncation",

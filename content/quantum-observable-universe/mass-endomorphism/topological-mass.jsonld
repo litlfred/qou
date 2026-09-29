@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/thm-topological-mass",
   "@type": [
-    "folio:Theorem",
+    "folio-assistant-core:Theorem",
     "doco:Section"
   ],
   "label": "thm:topological-mass",
@@ -16,6 +16,9 @@
   "proofs": [
     "papers/quantum-observable-universe/blocks/prf-topological-mass-categorical",
     "papers/quantum-observable-universe/blocks/prf-topological-mass"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-topological-mass-su2"
   ],
   "tags": [
     "mass",

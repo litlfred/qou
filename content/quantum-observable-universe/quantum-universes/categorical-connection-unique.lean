@@ -53,7 +53,7 @@ universe u v
     genuinely provides. -/
 -- Ref: [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
 theorem CategoricalConnection.unique_up_to_gauge
-    {C : Type u} [Category.{v} C] [MonoidalCategory C]
+    {C : Type u} [Category.{v} C] [MonoidalCategory C] [BraidedCategory C]
     (fh : FrobeniusHopfData C) [Epi fh.mul]
     (D₁ D₂ : CategoricalConnection C fh)
     (hΩ : D₁.Omega1 = D₂.Omega1)

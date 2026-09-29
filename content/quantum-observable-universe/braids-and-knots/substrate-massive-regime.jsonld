@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-substrate-massive-regime",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:substrate-massive-regime",
+  "kind": "proposition",
+  "title": "The Temperley--Lieb anisotropy $\\Delta = \\tfrac{1}{2}(q + q^{-1})$ exceeds unity for every real $q \\neq 1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-two-row-stratum",
+    "papers/quantum-observable-universe/blocks/prop-convention-d-kills-antisymmetriser"
+  ],
+  "cites": [
+    "references/jones1985",
+    "references/jimbo1986"
+  ],
+  "tags": [
+    "temperley-lieb",
+    "anisotropy",
+    "convention-d",
+    "one-dimensional",
+    "spectral-regime"
+  ],
+  "leanRef": "qou:QOU.OneDim.TLIsXXZChain",
+  "text": "substrate-massive-regime.md",
+  "provenance": "authored"
+}

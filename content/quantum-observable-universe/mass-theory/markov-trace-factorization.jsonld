@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/thm-markov-trace-factorization",
   "@type": [
-    "folio:Theorem",
+    "folio-assistant-core:Theorem",
     "doco:Section"
   ],
   "label": "thm:markov-trace-factorization",

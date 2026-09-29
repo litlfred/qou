@@ -9,7 +9,7 @@
 #
 #     git checkout -B <branch> origin/<default>
 #
-# That is correct for CODE and destructive for `.beans/`. A bean committed on the
+# That is correct for CODE and destructive for `beans/defs/`. A bean committed on the
 # old branch but not merged is a TRACKED file absent from the new base, so the
 # checkout DELETES it from the worktree — with no warning, and `git status`
 # afterwards is CLEAN, which is exactly what makes it invisible.
@@ -21,7 +21,7 @@
 #
 # `git add -A` IS NOT A SAFETY NET. It stages what is in the worktree and says
 # nothing about what the worktree lost — the next commit after that incident
-# landed two files and no `.beans/` at all, because there was nothing left to
+# landed two files and no `beans/defs/` at all, because there was nothing left to
 # stage.
 #
 # WHY WARN AND NEVER BLOCK
@@ -50,11 +50,11 @@ bean_delta() {  # $1 = base ref
   local base="$1"
   git rev-parse --verify --quiet "$base" >/dev/null 2>&1 || return 0
   local added modified
-  added=$(git diff --name-only --diff-filter=A "$base...HEAD" -- .beans/ 2>/dev/null)
-  modified=$(git diff --name-only --diff-filter=M "$base...HEAD" -- .beans/ 2>/dev/null)
+  added=$(git diff --name-only --diff-filter=A "$base...HEAD" -- beans/defs/ 2>/dev/null)
+  modified=$(git diff --name-only --diff-filter=M "$base...HEAD" -- beans/defs/ 2>/dev/null)
   [ -n "$added$modified" ] || return 0
   echo "── prebranch-bean-loss-warn ───────────────────────────────────────────"
-  echo "Creating a branch from '$base' will change .beans/ in the worktree."
+  echo "Creating a branch from '$base' will change beans/defs/ in the worktree."
   if [ -n "$added" ]; then
     echo
     echo "  WOULD VANISH (exist only on this branch — $(echo "$added" | grep -c .)):"
@@ -69,7 +69,7 @@ bean_delta() {  # $1 = base ref
   echo "  If those are pushed, they are safe on the remote but ABSENT from the"
   echo "  new worktree — and \`git add -A\` cannot re-add what the checkout removed."
   echo "  Recover onto the new branch with:"
-  echo "      git checkout $(git rev-parse --short HEAD) -- .beans/"
+  echo "      git checkout $(git rev-parse --short HEAD) -- beans/defs/"
   echo "───────────────────────────────────────────────────────────────────────"
 }
 
@@ -100,12 +100,12 @@ if [ "${1:-}" = "--selftest" ]; then
   (
     cd "$tmp" || exit 1
     git init -q .; git config user.email t@t; git config user.name t
-    mkdir -p .beans; echo base > .beans/keep.md
+    mkdir -p beans/defs; echo base > beans/defs/keep.md
     git add -A; git commit -qm base
     git branch base-ref
     # a branch that ADDS one bean and MODIFIES another
     git checkout -q -b work
-    echo new > .beans/new-bean.md; echo changed > .beans/keep.md
+    echo new > beans/defs/new-bean.md; echo changed > beans/defs/keep.md
     git add -A; git commit -qm "bean work"
   ) >/dev/null 2>&1
   ok=1
@@ -156,7 +156,7 @@ esac
 
 ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0
 cd "$ROOT" || exit 0
-[ -d .beans ] || exit 0
+[ -d beans/defs ] || exit 0
 
 BASE=$(base_ref "$CMD")
 [ -n "$BASE" ] || exit 0

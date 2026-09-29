@@ -1,4 +1,5 @@
 import QOU.QuantumObservableUniverse.CategoricalFoundations
+import QOU.QuantumObservableUniverse.FrobeniusBialgebraCollapse
 import Mathlib.CategoryTheory.Monoidal.Conv
 import Mathlib.CategoryTheory.Monoidal.Hopf_
 
@@ -65,8 +66,35 @@ does not extend to a `HopfObj` and `antipode_sq_of_comm` cannot be applied to
 it directly; it is stated for Mathlib's `HopfObj` and recorded here as the
 answer to the `S² = id` question, not as a theorem about the substrate.
 
-Recorded, not acted on — adding a bialgebra axiom is a further change to the
-definition and is the owner's call, as the antipode axiom was.
+**🛑 Superseded 2026-09-14, same day: the bialgebra axiom must NOT be added.**
+This paragraph left it as the owner's call. It is not a decision — it is
+settled by proof. `QOU.FrobeniusHopfData.counit_comp_unit`
+(`FrobeniusBialgebraCollapse.lean`, sorry-free) shows that one of the four
+bimonoid axioms *on its own*, `Δ ∘ η = η ⊗ η`, forces `ε ≫ η = 𝟙_A` — the
+substrate object becomes a retract of the tensor unit, and with the second
+unit-side axiom an isomorphism `A ≅ 𝟙_C`. The Frobenius relation makes `Δ` a
+bimodule map, hence determined by `Δ(1)`; the bimonoid axiom makes `Δ(1)`
+degenerate; the counit law finishes it.
+
+So the substrate is a Frobenius monoid carrying an antipode, and cannot be
+promoted to a Hopf monoid on this `Δ`. That is the expected state of affairs —
+a finite-dimensional Hopf algebra is Frobenius, but its Frobenius
+comultiplication is not its Hopf comultiplication — and it is why
+`antipode_sq_of_comm` below is stated for Mathlib's `HopfObj` rather than
+transported to `FrobeniusHopfData`.
+
+**🛑 And the axioms this file is about do more than that, with no hypothesis at
+all.** `QOU.FrobeniusHopfData.scalar_id_eq_counit_unit` (same file, sorry-free,
+`[propext, Quot.sound]`) shows that `antipode_left` together with the Frobenius
+relation forces `ε(1)·x = ε(x)·1` for every `x`. So a **non-trivial** substrate
+has a **non-unital counit** — `ε(1) ≠ 1`, Mathlib's `BimonObj.one_counit`, the
+normalisation every bialgebra and Hopf algebra assumes without comment. Both
+unit-side bimonoid axioms are therefore individually excluded.
+
+`ε(1) = 1` is not a field here, so this is not a proof that the axioms force
+`A = 𝟙_C`; it is the identity above and its contrapositive. What it does mean is
+that the antipode axiom is not neutral with respect to the rest of the
+definition. Bean `qou-aawz`.
 
 ## References
 
@@ -82,7 +110,7 @@ namespace QOU
 universe u v
 
 variable {C : Type u} [CategoryTheory.Category.{v} C]
-  [CategoryTheory.MonoidalCategory C]
+  [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
 
 namespace FrobeniusHopfData
 
@@ -123,6 +151,7 @@ def toComonObj (F : FrobeniusHopfData C) : ComonObj F.obj where
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 Ch. III
 --      (the antipode is the convolution inverse of the identity, hence unique)
 theorem antipode_unique_of_left (F : FrobeniusHopfData C) (S' : F.obj ⟶ F.obj)
+    (hconv : F.ConvolutionRight)
     (hl : F.comul ≫ S' ▷ F.obj ≫ F.mul = F.counit ≫ F.unit) :
     S' = F.antipode := by
   letI : MonObj F.obj := F.toMonObj
@@ -132,7 +161,8 @@ theorem antipode_unique_of_left (F : FrobeniusHopfData C) (S' : F.obj ⟶ F.obj)
   · rw [CategoryTheory.Conv.mul_eq, CategoryTheory.Conv.one_eq]
     simpa [toMonObj, toComonObj] using hl
   · rw [CategoryTheory.Conv.mul_eq, CategoryTheory.Conv.one_eq]
-    simpa [toMonObj, toComonObj] using F.antipode_right
+    simpa [toMonObj, toComonObj] using
+      (hconv : F.comul ≫ (F.obj ◁ F.antipode) ≫ F.mul = F.counit ≫ F.unit)
 
 /-- **Uniqueness of the antipode**, in the usual two-sided form: anything
     satisfying both antipode axioms is the antipode.
@@ -141,21 +171,24 @@ theorem antipode_unique_of_left (F : FrobeniusHopfData C) (S' : F.obj ⟶ F.obj)
     recorded in that direction because a theorem should not carry a hypothesis
     it does not spend. -/
 theorem antipode_unique (F : FrobeniusHopfData C) (S' : F.obj ⟶ F.obj)
+    (hconv : F.ConvolutionRight)
     (hl : F.comul ≫ S' ▷ F.obj ≫ F.mul = F.counit ≫ F.unit)
     (_hr : F.comul ≫ F.obj ◁ S' ≫ F.mul = F.counit ≫ F.unit) :
     S' = F.antipode :=
-  F.antipode_unique_of_left S' hl
+  F.antipode_unique_of_left S' hconv hl
 
 /-- Restated with the sides swapped, for rewriting. -/
 theorem antipode_eq_of_left (F : FrobeniusHopfData C) (S' : F.obj ⟶ F.obj)
+    (hconv : F.ConvolutionRight)
     (hl : F.comul ≫ S' ▷ F.obj ≫ F.mul = F.counit ≫ F.unit) :
     F.antipode = S' :=
-  (F.antipode_unique_of_left S' hl).symm
+  (F.antipode_unique_of_left S' hconv hl).symm
 
 end FrobeniusHopfData
 
 /-! ### The `S² = id` question -/
 
+omit [CategoryTheory.BraidedCategory C] in
 /-- **`S² = id` needs commutativity — it does not follow from the Hopf axioms
     alone.**
 

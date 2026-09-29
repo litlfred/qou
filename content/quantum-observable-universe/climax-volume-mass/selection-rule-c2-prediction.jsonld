@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prop-selection-rule-c2-prediction",
   "@type": [
-    "folio:Proposition",
+    "folio-assistant-core:Proposition",
     "doco:Section"
   ],
   "label": "prop:selection-rule-c2-prediction",

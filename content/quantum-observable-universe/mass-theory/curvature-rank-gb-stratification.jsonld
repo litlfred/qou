@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prop-curvature-rank-gb-stratification",
   "@type": [
-    "folio:Proposition",
+    "folio-assistant-core:Proposition",
     "doco:Section"
   ],
   "label": "prop:curvature-rank-gb-stratification",

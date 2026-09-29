@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-s1-action-and-loop-space",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:s1-action-and-loop-space",
+  "kind": "remark",
+  "title": "The circle action on Hochschild homology, the free loop space, and the Reeb generator",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hochschild-homology",
+    "papers/quantum-observable-universe/blocks/rem-hkr-theorem",
+    "papers/quantum-observable-universe/blocks/def-categorical-reeb"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-hochschild-homology",
+  "cites": [
+    "references/jones1987-cyclic",
+    "references/loday-1998",
+    "references/connes1994",
+    "references/hadfield-krahmer-2005"
+  ],
+  "tags": [
+    "hochschild-homology",
+    "cyclic-homology",
+    "free-loop-space",
+    "connes-operator",
+    "reeb",
+    "cartan-calculus"
+  ],
+  "text": "s1-action-and-loop-space.md",
+  "provenance": "authored"
+}

@@ -2,14 +2,17 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prop-euler-char-stability",
   "@type": [
-    "folio:Proposition",
+    "folio-assistant-core:Proposition",
     "doco:Section"
   ],
   "label": "prop:euler-char-stability",
   "kind": "proposition",
-  "title": "Stability of the Euler characteristic",
+  "title": "Stability of the categorical trace and of the base Euler characteristic",
   "uses": [
     "papers/quantum-observable-universe/blocks/def-quantum-characteristic-classes"
+  ],
+  "foreshadows": [
+    "papers/quantum-observable-universe/blocks/rem-three-euler-characteristics"
   ],
   "proofs": [
     "papers/quantum-observable-universe/blocks/prf-euler-char-stability",

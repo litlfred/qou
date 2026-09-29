@@ -2,14 +2,19 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/lem-brings-euler-characteristic",
   "@type": [
-    "folio:Lemma",
+    "folio-assistant-core:Lemma",
     "doco:Section"
   ],
   "label": "lem:brings-euler-characteristic",
   "kind": "lemma",
-  "title": "Categorical Euler characteristic of $\\mathcal{O}_q(\\mathrm{SU}(2))$ on Bring's surface",
+  "title": "Euler characteristic of Bring's surface",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-euler-char-stability"
+    "papers/quantum-observable-universe/blocks/prop-euler-char-stability",
+    "papers/quantum-observable-universe/blocks/rem-hkr-theorem"
+  ],
+  "foreshadows": [
+    "papers/quantum-observable-universe/blocks/rem-three-euler-characteristics",
+    "papers/quantum-observable-universe/blocks/rem-euler-characteristic-of-the-regular-representation"
   ],
   "proofs": [
     "papers/quantum-observable-universe/blocks/prf-brings-euler-characteristic"

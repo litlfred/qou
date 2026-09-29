@@ -188,7 +188,7 @@ def class_is_inhabited(cls: str, root: pathlib.Path) -> bool:
     return found
 
 def main() -> int:
-    beans = sorted(pathlib.Path('.beans').glob('qou-pqmw--*.md'))
+    beans = sorted(pathlib.Path('beans/defs').glob('qou-pqmw--*.md'))
     if not beans:
         print("bean qou-pqmw not found", file=sys.stderr); return 2
     rows = re.findall(r"^- `([^`]+):(\d+)` — `([^`]+)`", beans[0].read_text(), re.M)

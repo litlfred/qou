@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/lem-descent",
   "@type": [
-    "folio:Lemma",
+    "folio-assistant-core:Lemma",
     "doco:Section"
   ],
   "label": "lem:descent",
@@ -13,6 +13,9 @@
   ],
   "proofs": [
     "papers/quantum-observable-universe/blocks/prf-descent"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-descent-lemma-su2"
   ],
   "tags": [
     "descent",

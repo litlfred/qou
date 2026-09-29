@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prf-n-equals-1-vacuous-magic",
   "@type": [
-    "folio:Proof",
+    "folio-assistant-core:Proof",
     "doco:Section"
   ],
   "label": "prf:n-equals-1-vacuous-magic",

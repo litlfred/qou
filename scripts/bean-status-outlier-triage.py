@@ -59,7 +59,7 @@ import pathlib
 import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-BEANS = ROOT / ".beans"
+BEANS = ROOT / "beans/defs"
 
 #: beans' own accepted values (`beans update --help`).
 CANONICAL = {"in-progress", "todo", "draft", "completed", "scrapped"}

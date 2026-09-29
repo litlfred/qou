@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T12:27:20.969843+00:00",
-  "commitSha": "e5d934ddaeddc05ae997108fb3f30fa77f55158d",
+  "computedAt": "2026-09-14T18:13:48.615493+00:00",
+  "commitSha": "5c2af221b76dcec548fe73f7d849c792cf69b763",
   "assertions": [
     {
       "name": "same_slot_same_normalisation",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 46290,
+  "durationMs": 57446,
   "computation": "q-plancherel-vs-y-lambda",
   "scriptFile": "q_plancherel_vs_y_lambda_probe.py",
-  "scriptHash": "db9be7829fb3",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "45f5f9aec839",
+  "scriptCommitSha": "5c2af221b76dcec548fe73f7d849c792cf69b763",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,9 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -134,42 +135,42 @@
     "weights_at_proton_pin": {
       "n3_3": {
         "f_lambda": 1,
-        "q_plancherel_w": "0.119471323602971732861540165340253791331027032794630017075759",
-        "corpus_y_conventionD": "0.505404226503930805989540833657598150111143744999389695496899"
+        "q_plancherel_w": "0.119471323602971743864509773969963568475863064985680067192856",
+        "corpus_y_conventionD": "0.505404226503930803187558703240472275660351197749810143353053"
       },
       "n3_2x1": {
         "f_lambda": 2,
-        "q_plancherel_w": "0.328546821370823180824363211135346964996520598655579767581951",
-        "corpus_y_conventionD": "0.247297886748034597005229583171200924944428127500310163685382"
+        "q_plancherel_w": "0.328546821370823183297163796761841363741037632933429749401733",
+        "corpus_y_conventionD": "0.247297886748034598406220648379763862169824401125089916889642"
       },
       "n3_1x1x1": {
         "f_lambda": 1,
-        "q_plancherel_w": "0.223435033655381905489733412389052278675931769894200090797087",
+        "q_plancherel_w": "0.223435033655381889541162632506353704042061669147469955727957",
         "corpus_y_conventionD": "0.0"
       },
       "n4_4": {
         "f_lambda": 1,
-        "q_plancherel_w": "0.0212574720289301870603985795379588915078784874285179879160763",
-        "corpus_y_conventionD": "0.319262584545939954532377422528971782086640984652419774394648"
+        "q_plancherel_w": "0.0212574720289301910541903434989046754695828971906019934084969",
+        "corpus_y_conventionD": "0.319262584545939951022328486461194073063239930519960215397386"
       },
       "n4_3x1": {
         "f_lambda": 3,
-        "q_plancherel_w": "0.0982138515740415458011415858022948998231485453661129479225523",
-        "corpus_y_conventionD": "0.186141641957990851457163411128626368024502760346969921102251"
+        "q_plancherel_w": "0.0982138515740415528103194304710588930062801677950729370646817",
+        "corpus_y_conventionD": "0.186141641957990852165230216779278202597111267229849927955667"
       },
       "n4_2x2": {
         "f_lambda": 2,
-        "q_plancherel_w": "0.0812489346227885838191336279641460400520924711552789585730544",
-        "corpus_y_conventionD": "0.0611562447900437455480661720425745569199253671533379874379070"
+        "q_plancherel_w": "0.0812489346227885848909431483820775015712132318083339858392881",
+        "corpus_y_conventionD": "0.0611562447900437462409904316004856595727131338952429957942734"
       },
       "n4_2x1x1": {
         "f_lambda": 3,
-        "q_plancherel_w": "0.149084035173993051204087997368906025121279582134190032707671",
+        "q_plancherel_w": "0.149084035173993045595901217908704969163544233330020153733053",
         "corpus_y_conventionD": "0.0"
       },
       "n4_1x1x1x1": {
         "f_lambda": 1,
-        "q_plancherel_w": "0.0743509984813888542856454150201462535546521877600070512291162",
+        "q_plancherel_w": "0.0743509984813888439452614145976487348785174358174449576088670",
         "corpus_y_conventionD": "0.0"
       }
     },
@@ -236,11 +237,11 @@
     "normalisation_finding": {
       "sum_M_paper": "1 exactly, every n, every Q (probability measure)",
       "sum_W_corpus_at_proton_pin": {
-        "n2": "0.994581091209831109174429920017166388913000000000000573987127",
-        "n3": "0.987440229773687722631752808948804204753899999999999500386378",
-        "n4": "0.982165323835610774716993637401364047200900000000000516011014",
-        "n5": "0.982224148283254044356782845240412484257199999999999953086865",
-        "n9": "1.11092313495739799418880858484743497680999999999999923203473"
+        "n2": "0.994581091209831111991678463329739263696399999999999745695601",
+        "n3": "0.987440229773687729117875218675544503499500000000000527966129",
+        "n4": "0.982165323835610783872076092737614714004699999999999353423524",
+        "n5": "0.982224148283254053452615576237827417930900000000000438614672",
+        "n9": "1.11092313495739793519940970273453586672199999999999949701791"
       },
       "sum_W_corpus_identically_one": false,
       "NOT_a_defect": "owner ruling 2026-08-16, notation/notation-collisions.md: Sum_lambda w_lambda(q) != 1 at q != 1 BY DESIGN -- 'Never write a normalisation claim on bare w_lambda' -- quoting 0.987 at n=3 and 1.051 at n=8, which these measurements reproduce independently. An earlier draft of this probe called it a corpus defect; RETRACTED.",
@@ -249,17 +250,17 @@
     "normalisation_independent_exclusion": {
       "W_is_conjugation_symmetric": true,
       "z_shape_at_n2": "c * (q^2-1)/(q^2+1) for EVERY normalisation c",
-      "z_unit_at_proton_pin": "0.103963710052410172628193247048798487344900000000000020683351",
-      "c_needed_for_mstar": "4.27436362832622610014781712390808881521268889412163659614525",
-      "sum_W_that_c_implies": "0.233952954627677371765655873690626749768388690183086212257862",
-      "raw_sum_W_n2": "0.994581091209831109174429920017166388913000000000000573987127",
+      "z_unit_at_proton_pin": "0.103963710052410145676652858536390135566200000000000043038550",
+      "c_needed_for_mstar": "4.27436362832622720823335876096392820432460286310503359704664",
+      "sum_W_that_c_implies": "0.233952954627677311115718482258713180348527873509636438579994",
+      "raw_sum_W_n2": "0.994581091209831111991678463329739263696399999999999745695601",
       "conclusion": "no choice of normaliser rescues the d_q^2 weight; the open question of which normaliser is canonical does not bear on this"
     },
     "markov_parameter_by_weight_system": {
       "values_at_proton_pin": {
-        "corpus y_lambda (convention D, production)": "0.612688037146465283246961458246500068463900000000000147781167",
-        "corpus W_lambda = d_q^2/[n]_q! (unnormalized)": "0.103963710052410172628193247048798487344900000000000020683351",
-        "corpus W_lambda normalized -> true d_q^2/D^2": "0.104530149397819685109899072816088192623800000000000035477659",
+        "corpus y_lambda (convention D, production)": "0.612688037146465251595829863945899248026299999999999481630438",
+        "corpus W_lambda = d_q^2/[n]_q! (unnormalized)": "0.103963710052410145676652858536390135566200000000000043038550",
+        "corpus W_lambda normalized -> true d_q^2/D^2": "0.104530149397819657715423106564837471929899999999999969904131",
         "paper M_{n,q} (generic degrees / regular trace)": "0.0"
       },
       "writhe_ceiling_1_over_sqrt5": "0.447213595499957939281834733746255247088123671922304733722148",
@@ -275,6 +276,6 @@
     "verdict": "DIFFERENT weight system (scope-(b) on the identification: exact row-cap zero vs strict positivity), but z = 0 identically, so it cannot supply the interface scalar m -- lead CLOSED, scope-(a); wider consequence: the regular-trace/Plancherel family is excluded, search restricts to Markov traces."
   },
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0AnchorReason": "all numeric weight tables and implied-z values are evaluated at the proton pin (q0 = qou_substrate.constants.Q, Q_paper = q0^2). The verdicts -- W_corpus != M_paper, Sum M = 1, z = 0 -- are proved symbolically in q and hold at every pin; only the reported numbers depend on this one."
 }

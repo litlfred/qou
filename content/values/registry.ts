@@ -774,9 +774,22 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description:
         "Inverse fine-structure constant 1/α (CODATA).  Canonical witness pending.",
       symbol: "\\alpha^{-1}",
+      // REPOINTED 2026-09-26. This read
+      // `computations/alpha/alpha-high-precision.witness.json`, which DOES NOT
+      // EXIST — not at that path, and `witness.schema.json`-style there is no
+      // `computations/alpha/` witness of that name anywhere in the tree. So
+      // `:val[inv_alpha]` had nothing to substitute, for a value AGENTS.md
+      // §"Precision goals" leans on (the alpha_em^-1 L2 row added 2026-09-07,
+      // which moved `scoreable_total` 5 -> 6).
+      //
+      // `needsReview` stays TRUE: the canonical witness is still not identified,
+      // and rule 5 of this module's own docstring is what this fix satisfies —
+      // "provide a placeholder `witnessFile` pointing at the closest EXISTING
+      // witness". The previous pointer failed the word "existing"; identifying
+      // the canonical one is bean `qou-v6so` option 2 and is still open.
       witnessFile:
-        "computations/alpha/alpha-high-precision.witness.json",
-      witnessPath: "computation",
+        "computations/alpha-em-4pi-fixed-point-solve.witness.json",
+      witnessPath: "data.CODATA_alpha_inv",
       defaultPrecision: 6,
       units: null,
       needsReview: true,

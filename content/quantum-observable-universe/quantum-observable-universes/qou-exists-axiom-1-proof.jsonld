@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prf-qou-exists-axiom-1",
   "@type": [
-    "folio:Proof",
+    "folio-assistant-core:Proof",
     "doco:Section"
   ],
   "label": "prf:qou-exists-axiom-1",

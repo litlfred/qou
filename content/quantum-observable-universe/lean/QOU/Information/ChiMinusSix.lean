@@ -41,7 +41,12 @@ def eulerChar (g : ℕ) : ℤ := 2 - 2 * (g : ℤ)
     * **observability** — the observability axiom kills degree-0
       obstructions, `HH⁰(A) = 0`; and
     * **Frobenius–Hopf self-duality** — Yekutieli–Van den Bergh Poincaré
-      duality collapses `HH²(A) ≅ (HH⁰)^∨ ≅ k`, so `HH²` is rank one.
+      duality is invoked for `HH²(A) ≅ (HH¹)^∨ ≅ k`, so `HH²` is rank one.
+      (Corrected 2026-09-15: this line read `(HH⁰)^∨`, which with `hh0 = 0`
+      would give `HH² = 0`.  The rank-one claim itself is now the Wigner
+      axiom, `conj:wigner-axiom`, not a consequence of the QOU axioms:
+      at `q = 1` Whitehead's lemma gives `HH²(U(𝔤), M) = 0`; see
+      `docs/audits/2026-09-15-chi-as-a-component-of-the-chern-character.md` §2.4.)
 
     Encoded by their ranks (`hh0 = 0`, `hh2 = 1`); the rank-one `HH²` is
     exactly *why* the universal obstruction is a single scalar. -/

@@ -1,4 +1,4 @@
-import { simulator } from "../../../folio-assistant/schemas/builders";
+import { simulator } from "../../../folio-assistant/cat-harness/schemas/builders";
 
 // Stub simulator block: multi-level jet-sum visualisation on the
 // atomic mass formula. Used by mass-tower-syt-cells.md to display
@@ -7,7 +7,7 @@ import { simulator } from "../../../folio-assistant/schemas/builders";
 export default simulator({
   label: "sim:multi-level-jet-sum",
   title: "Multi-level jet-sum visualiser",
-  html: "folio-assistant/simulators/multi_level_jet_sum.html",
+  html: "fsh-guts/deprecated/simulators/multi_level_jet_sum.html",
   uses: ["rem:mass-tower-syt-cells"],
   tags: ["jet-sum", "atomic-mass", "tower", "todo-html", "interactive"],
   defaultView: {

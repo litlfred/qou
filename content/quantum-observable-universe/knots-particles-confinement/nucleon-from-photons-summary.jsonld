@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/rem-nucleon-from-photons-summary",
   "@type": [
-    "folio:Remark",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
   "label": "rem:nucleon-from-photons-summary",

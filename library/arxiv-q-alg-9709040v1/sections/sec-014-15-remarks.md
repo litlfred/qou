@@ -1,0 +1,17 @@
+---
+doc_id: arxiv-q-alg-9709040v1
+doc_title: "DEFORMATION QUANTIZATION OF POISSON MANIFOLDS, I"
+section_id: sec-014-15-remarks
+section_title: "Remarks"
+section_number: 1.5
+pages: 4-4
+source_pdf: 9709040v1.pdf
+source_sha256: 8baf650d86c5b8ab
+doc_brief: "DEFORMATION QUANTIZATION OF POISSON MANIFOLDS, I — 83 sections: Front matter; Introduction; Deformation quantization"
+---
+In general, one should consider bidiﬀerential operators Bi with complex coeﬃcients, as we expect to
+associate by quantization self-adjoint operators in a Hilb ert space to real-valued classical observables. In
+this paper we deal with purely formal algebraic properties o f the deformation quantization and work mainly
+over the ﬁeld R of real numbers.
+Also, it is not clear whether the “deformation quantization ” is natural for quantum mechanics. This
+question we will discuss in the next paper. A topological ope n string theory seems to be more relevant.

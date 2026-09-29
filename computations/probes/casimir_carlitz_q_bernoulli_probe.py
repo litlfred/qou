@@ -79,7 +79,7 @@ sys.path.insert(0, str(HERE.parent))
 
 from mpmath import mp, mpf, pi as mp_pi  # noqa: E402
 
-from q_parameter import Q  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
@@ -124,7 +124,7 @@ def main() -> int:
         engine="mpmath",
     )
 
-    q = mpf(Q)
+    q = mpf(Q_50_DIGIT_STR)
     pi_sq = mp_pi ** 2
     pi_sq_720 = pi_sq / 720
     target_zeta_neg_3 = mpf(-1) / 120   # classical ζ(-3) = -B_4/4 = -1/120

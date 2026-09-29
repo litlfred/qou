@@ -1,0 +1,400 @@
+{
+  "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
+  "computedAt": "2026-09-14T06:51:46.776177+00:00",
+  "computation": {
+    "script": "computations/deltalambda/rev_e_infinity_closed_form_probe.py"
+  },
+  "bean": "qou-hok7",
+  "anchor": "physical_proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "description": "Both pieces of e_inf -- the edge energy and the run -- are explicit convergent series in q0, so the last unknown constant of the REV_n asymptotics no longer needs an enumeration to evaluate.  The run re-indexes to sum_d min(d,ell) T(d) - (ln q0/2) ell with T the second difference of eps along the progression, whose intercept resums to a single Lambert-type series; the edge's block-to-bulk tails resum the same way.  Both are checked against the direct pair sums and across a sweep of q, so they are identities rather than anchor coincidences.  What is NOT closed is the SEARCH: the maximising block [3,2,1,1,1] and run length 16 are inputs here, taken from PR #7335, and nothing in this probe proves them optimal.  Nor does anything here prove the limit e_k -> e_inf exists -- the upper bound on M_n is still open.",
+  "constants": {
+    "ln_q0": "0.104340720319519512315906279973",
+    "mp_dps": 60,
+    "target_digits": 55,
+    "eps_depth": 612,
+    "lambert_depth": 309,
+    "comparison_floor": "1.0e-50"
+  },
+  "run_closed_form": {
+    "formula": "Xrun(ell) = sum_{d>=1} min(d,ell) T(d) - (ln q0 / 2) ell",
+    "T": "T(d) = 2 eps(2d) - eps(2d-1) - eps(2d+1)",
+    "intercept_formula": "C = sum_d d T(d) = -sum_r (1/r)(q^r - q^-r)^2 q^(-4r)/(1 - q^(-4r))^2",
+    "intercept_value": "-0.657177947545899893947060755021",
+    "slope": "-0.0521703601597597561579531399865",
+    "value_at_16": "-1.49159228703471596519635576029",
+    "checks_R1": [
+      {
+        "ell": 1,
+        "direct": "-0.4533965449167026114262459",
+        "closed": "-0.4533965449167026114262459",
+        "difference": "-1.26172e-57"
+      },
+      {
+        "ell": 2,
+        "direct": "-0.62270736044987704363386815",
+        "closed": "-0.62270736044987704363386815",
+        "difference": "-2.51029e-57"
+      },
+      {
+        "ell": 3,
+        "direct": "-0.73098452359210675810583301",
+        "closed": "-0.73098452359210675810583301",
+        "difference": "-3.7664e-57"
+      },
+      {
+        "ell": 5,
+        "direct": "-0.88534316251043831386871167",
+        "closed": "-0.88534316251043831386871167",
+        "difference": "-6.2756e-57"
+      },
+      {
+        "ell": 8,
+        "direct": "-1.065613600992247540429723",
+        "closed": "-1.065613600992247540429723",
+        "difference": "-1.00301e-56"
+      },
+      {
+        "ell": 12,
+        "direct": "-1.281564484998038056003841",
+        "closed": "-1.281564484998038056003841",
+        "difference": "-1.50538e-56"
+      },
+      {
+        "ell": 16,
+        "direct": "-1.4915922870347159651963558",
+        "closed": "-1.4915922870347159651963558",
+        "difference": "-2.0074e-56"
+      },
+      {
+        "ell": 20,
+        "direct": "-1.7005265231137943069799073",
+        "closed": "-1.7005265231137943069799073",
+        "difference": "-2.50948e-56"
+      },
+      {
+        "ell": 24,
+        "direct": "-1.9092555498749500564902925",
+        "closed": "-1.9092555498749500564902925",
+        "difference": "-3.0115e-56"
+      },
+      {
+        "ell": 32,
+        "direct": "-2.3266290809595782124990552",
+        "closed": "-2.3266290809595782124990552",
+        "difference": "-4.01543e-56"
+      }
+    ],
+    "halves_R7": {
+      "lean_upward": "QOU.BraidKnot.EdgeDecoupling.sum_tails_eq_sum_min",
+      "lean_downward": "QOU.BraidKnot.EdgeDecoupling.sum_heads_eq_sum_min",
+      "lean_combined": "QOU.BraidKnot.EdgeDecoupling.run_pair_sum_eq_sum_min",
+      "upward_condition": "j < d",
+      "upward_kernel": "eps(2d) - eps(2d+1)",
+      "downward_condition": "ell <= j + d",
+      "downward_kernel": "eps(2d) - eps(2d-1)",
+      "max_half_asymmetry": "3.6032715214765954406",
+      "rows": [
+        {
+          "ell": 1,
+          "up_direct": "0.63412354660363655313512829",
+          "up_closed": "0.63412354660363655313512829",
+          "down_direct": "-1.0353497313605794084034211",
+          "down_closed": "-1.0353497313605794084034211",
+          "up_difference": "7.77877e-62",
+          "down_difference": "-6.22302e-60"
+        },
+        {
+          "ell": 2,
+          "up_direct": "0.95809271801614692176642379",
+          "up_closed": "0.95809271801614692176642379",
+          "down_direct": "-1.4764593581465044530843857",
+          "down_closed": "-1.4764593581465044530843857",
+          "up_difference": "2.33363e-61",
+          "down_difference": "-6.22302e-60"
+        },
+        {
+          "ell": 3,
+          "up_direct": "1.1471664292336288144441248",
+          "up_closed": "1.1471664292336288144441248",
+          "down_direct": "-1.7216398723464563040760984",
+          "down_closed": "-1.7216398723464563040760984",
+          "up_difference": "7.15647e-60",
+          "down_difference": "-6.68974e-60"
+        },
+        {
+          "ell": 5,
+          "up_direct": "1.3371313433582389339148943",
+          "up_closed": "1.3371313433582389339148943",
+          "down_direct": "-1.9616227050698784669938402",
+          "down_closed": "-1.9616227050698784669938402",
+          "up_difference": "2.08471e-59",
+          "down_difference": "-6.53417e-60"
+        },
+        {
+          "ell": 8,
+          "up_direct": "1.4349985131887863189858317",
+          "up_closed": "1.4349985131887863189858317",
+          "down_direct": "-2.0832492329029558101519296",
+          "down_closed": "-2.0832492329029558101519296",
+          "up_difference": "4.12275e-59",
+          "down_difference": "-1.18237e-59"
+        },
+        {
+          "ell": 12,
+          "up_direct": "1.465968666988174752843175",
+          "up_closed": "1.465968666988174752843175",
+          "down_direct": "-2.1214888300690957349515784",
+          "down_closed": "-2.1214888300690957349515784",
+          "up_difference": "6.76753e-59",
+          "down_difference": "-1.08903e-59"
+        },
+        {
+          "ell": 16,
+          "up_direct": "1.4717583032128415144557562",
+          "up_closed": "1.4717583032128415144557562",
+          "down_direct": "-2.1286248276914013811248617",
+          "down_closed": "-2.1286248276914013811248617",
+          "up_difference": "9.3812e-59",
+          "down_difference": "-1.12014e-59"
+        },
+        {
+          "ell": 24,
+          "up_direct": "1.4730523077179397659319969",
+          "up_closed": "1.4730523077179397659319969",
+          "down_direct": "-2.130219213758655674631414",
+          "down_closed": "-2.130219213758655674631414",
+          "up_difference": "1.46863e-58",
+          "down_difference": "-1.08903e-59"
+        }
+      ]
+    }
+  },
+  "edge_closed_form": {
+    "tail_formula": "sum_{d>=m}[eps(2d) - eps(2d+u)] = sum_r (1/r)(1 - q^(-2ur)) q^(-4mr)/(1 - q^(-4r))",
+    "block": [
+      3,
+      2,
+      1,
+      1,
+      1
+    ],
+    "value": "1.96544437107774999613089230171",
+    "checks_R3": [
+      {
+        "block": [
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "direct": "1.9654443710777499961308923",
+        "closed": "1.9654443710777499961308923",
+        "difference": "1.14815e-58"
+      },
+      {
+        "block": [
+          1
+        ],
+        "direct": "0.58195318644387679697717515",
+        "closed": "0.58195318644387679697717515",
+        "difference": "9.21006e-59"
+      },
+      {
+        "block": [
+          2
+        ],
+        "direct": "0.86655173275052257318428034",
+        "closed": "0.86655173275052257318428034",
+        "difference": "9.91015e-59"
+      },
+      {
+        "block": [
+          2,
+          1
+        ],
+        "direct": "1.2525758066084261764722037",
+        "closed": "1.2525758066084261764722037",
+        "difference": "9.86348e-59"
+      },
+      {
+        "block": [
+          3,
+          2,
+          1
+        ],
+        "direct": "1.778718664399674138825925",
+        "closed": "1.778718664399674138825925",
+        "difference": "1.03613e-58"
+      },
+      {
+        "block": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "direct": "1.0548570270200871534607709",
+        "closed": "1.0548570270200871534607709",
+        "difference": "9.77013e-59"
+      },
+      {
+        "block": [
+          4,
+          3,
+          2,
+          1,
+          1
+        ],
+        "direct": "2.1091926474796784456835681",
+        "closed": "2.1091926474796784456835681",
+        "difference": "1.21971e-58"
+      },
+      {
+        "block": [
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "direct": "1.6825893096129236564064952",
+        "closed": "1.6825893096129236564064952",
+        "difference": "1.16993e-58"
+      }
+    ]
+  },
+  "assembled_R4": {
+    "closed": "2.43929645512078402706542884314",
+    "searched_7335": "2.43929645512078402706542884314",
+    "difference": "-2.4024712147395056598e-30"
+  },
+  "asymptotics_R5": {
+    "slope_exact": "-0.0521703601597597561579531399865",
+    "slope_secant_100_200": "-0.0521703601597597561598040306988",
+    "slope_residual_bound": "6.3155756580167902128e-20",
+    "gap_at_16": "0.00031142306734002727796",
+    "gap_at_96": "9.8268507783614099263e-19",
+    "rows": [
+      {
+        "ell": 8,
+        "exact": "-1.065613600992247540429723",
+        "asymptote": "-1.0745408288239779432106859",
+        "gap": "0.008927227832"
+      },
+      {
+        "ell": 16,
+        "exact": "-1.4915922870347159651963558",
+        "asymptote": "-1.491903710102055992474311",
+        "gap": "0.0003114230673"
+      },
+      {
+        "ell": 24,
+        "exact": "-1.9092555498749500564902925",
+        "asymptote": "-1.9092665913801340417379361",
+        "gap": "1.104150518e-5"
+      },
+      {
+        "ell": 32,
+        "exact": "-2.3266290809595782124990552",
+        "asymptote": "-2.3266294726582120910015612",
+        "gap": "3.916986339e-7"
+      },
+      {
+        "ell": 48,
+        "exact": "-3.1613552347214017164733843",
+        "asymptote": "-3.1613552352143681895288115",
+        "gap": "4.929664731e-10"
+      },
+      {
+        "ell": 64,
+        "exact": "-3.9960809977699038719800336",
+        "asymptote": "-3.9960809977705242880560617",
+        "gap": "6.20416076e-13"
+      },
+      {
+        "ell": 96,
+        "exact": "-5.6655325228828364841278771",
+        "asymptote": "-5.6655325228828364851105622",
+        "gap": "9.826850778e-19"
+      }
+    ]
+  },
+  "q_sweep_R6": [
+    {
+      "q": "1.03",
+      "run_difference": "-9.32285e-57",
+      "edge_difference": "4.72949e-58",
+      "intercept_difference": "1.6948e-54"
+    },
+    {
+      "q": "1.07",
+      "run_difference": "-1.18081e-56",
+      "edge_difference": "2.49543e-58",
+      "intercept_difference": "9.37305e-55"
+    },
+    {
+      "q": "1.10997858275138080760",
+      "run_difference": "-7.53172e-57",
+      "edge_difference": "1.03613e-58",
+      "intercept_difference": "3.89816e-55"
+    },
+    {
+      "q": "1.25",
+      "run_difference": "-2.13978e-57",
+      "edge_difference": "1.49352e-59",
+      "intercept_difference": "5.26087e-56"
+    },
+    {
+      "q": "1.6",
+      "run_difference": "-1.69577e-59",
+      "edge_difference": "0.0",
+      "intercept_difference": "1.98553e-58"
+    },
+    {
+      "q": "2.5",
+      "run_difference": "0.0",
+      "edge_difference": "-6.22302e-61",
+      "intercept_difference": "-8.2066e-60"
+    }
+  ],
+  "checks": [
+    {
+      "name": "R1 the re-indexed run form reproduces the direct pair sum at every sampled length",
+      "ok": true,
+      "detail": "10 lengths from 1 to 32; worst difference 4.015e-56 against a floor of 1.0e-50 derived from the 55-digit truncation depths.  The direct side walks every straddling pair of the run; the closed side is one sum over distances, so this checks the re-indexing `sum_{j<=ell} sum_{d>=j} = sum_d min(d, ell)` rather than restating it"
+    },
+    {
+      "name": "R7 both halves of the run collect with the SAME multiplicity min(d, ell), separately",
+      "ok": true,
+      "detail": "8 lengths; worst difference 1.469e-58 against a floor of 1.0e-50.  R1 checks the SUM of the two halves, which a compensating error in the split would survive; this checks each half on its own, so it is the check that ties `EdgeDecoupling.sum_tails_eq_sum_min` (upward, condition `j < d`, kernel `eps(2d) - eps(2d+1)`) and `sum_heads_eq_sum_min` (downward, condition `ell <= j + d`, kernel `eps(2d) - eps(2d-1)`) to the two branches the probe actually walks.  The two halves are NOT equal to one another \u2014 they differ by up to 3.603, since the AP is asymmetric about a displaced row \u2014 so agreeing with the same multiplicity is a statement about the counting, not about a symmetry"
+    },
+    {
+      "name": "R2 the run's intercept agrees between the distance sum and the Lambert series",
+      "ok": true,
+      "detail": "C = -0.65717794754589989394706076, difference 3.899e-55.  The two routes share no algebra: one sums the second difference `T(d)` over distances, the other expands `eps(m) = sum_r t^(-mr)/r` and resums, giving `C = -sum_r (1/r)(q^r - q^-r)^2 q^(-4r)/(1 - q^(-4r))^2`.  That second form is a single Lambert-type series in q0 with no reference to the lattice at all"
+    },
+    {
+      "name": "R3 the Lambert-tail edge form reproduces the direct pair sum on every sampled block",
+      "ok": true,
+      "detail": "8 blocks including the argmax [3, 2, 1, 1, 1]; worst difference 1.22e-58 against the 1.0e-50 floor.  Each block-to-bulk tail `sum_{d>=m}[eps(2d) - eps(2d+u)]` becomes `sum_r (1/r)(1 - q^(-2ur)) q^(-4mr)/(1 - q^(-4r))`, so the edge is a finite sum of Lambert series plus finitely many eps values \u2014 an explicit function of q, evaluated without any lattice sum"
+    },
+    {
+      "name": "R4 the closed forms reproduce #7335's searched e_inf",
+      "ok": true,
+      "detail": "closed 2.439296455120784027065428843 against the searched 2.439296455120784027065428843 \u2014 difference -2.402e-30, at a floor of 2.44e-29 set by the 30 significant digits #7335's witness records.  #7335 obtained this number by exhaustive search over a shape class in scaled-integer arithmetic; this obtains it by evaluating two series.  Nothing is shared but the argmax shape"
+    },
+    {
+      "name": "R5 the run is asymptotically linear with slope -ln q0 / 2 to the predicted residual, and the asymptote is NOT reached at the length e_inf uses",
+      "ok": true,
+      "detail": "the secant slope over ell = 100..200 is -0.0521703601597597561598 against -ln q0/2 = -0.05217036015975975615795, differing by -1.851e-21 against a computed bound of 6.316e-20 \u2014 the largest per-step residual `sum_{d>100} T(d)` in that window.  So the linear part is the quadratic cost and nothing else, and the approach is at exactly the rate T predicts.  At ell = 16, the length e_inf actually uses, the exact form and the asymptote still differ by 0.0003114, four orders above anything else in this arc, falling to 9.827e-19 by ell = 96.  So `min(d, ell)` is load-bearing and the intercept C is a limit rather than a shortcut \u2014 quoting `C - (ln q0/2) ell` as Xrun would corrupt e_inf in its fourth decimal"
+    },
+    {
+      "name": "R6 both closed forms hold across a sweep of q \u2014 identities, not anchor coincidences",
+      "ok": true,
+      "detail": "six values of q from 1.03 to 2.5, spanning the substrate anchor; worst difference across all three identities 1.695e-54 against the 1.0e-50 floor.  This is the check that separates an identity from a numerical coincidence: a closed form fitted to one anchor would not survive q = 2.5, where eps decays an order faster and the series depths derived above shrink accordingly"
+    }
+  ],
+  "verdict": "e_inf = 2 * E_edge + Xrun(2s) is an explicit convergent series in q0 once its argmax shape is fixed: the run re-indexes to a distance sum whose intercept is a Lambert series, and the edge's tails resum the same way.  Verified against the direct pair sums, against PR #7335's independently searched value to the 30 digits its witness records, and across a sweep of q -- identities, not anchor coincidences.  The SEARCH for the argmax shape is not closed, and the existence of the limit is still open."
+}

@@ -87,7 +87,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BEANS = ROOT / ".beans"
+BEANS = ROOT / "beans/defs"
 
 # A path-shaped token inside a bean body. Deliberately narrow: it must look
 # like a real repo path with an extension we care about, so prose does not

@@ -177,9 +177,9 @@ def main() -> int:
         else:
             other[path.suffix].append(rel)
 
-    beans = [f for v in other.values() for f in v if f.startswith(".beans/")]
+    beans = [f for v in other.values() for f in v if f.startswith("beans/defs/")]
     for k in other:
-        other[k] = [f for f in other[k] if not f.startswith(".beans/")]
+        other[k] = [f for f in other[k] if not f.startswith("beans/defs/")]
 
     n_single = len(py_hits["SINGLE-BASE"])
     n_cmp = len(py_hits["COMPARISON"])

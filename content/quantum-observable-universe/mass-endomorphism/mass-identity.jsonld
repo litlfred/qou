@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/def-mass-identity",
   "@type": [
-    "folio:Definition",
+    "folio-assistant-core:Definition",
     "doco:Section"
   ],
   "label": "def:mass-identity",
@@ -11,6 +11,9 @@
   "uses": [
     "papers/quantum-observable-universe/blocks/def-frobenius-pairing",
     "papers/quantum-observable-universe/blocks/def-recursive-brane-tower"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-mass-identity-su2"
   ],
   "tags": [
     "mass",

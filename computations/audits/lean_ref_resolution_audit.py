@@ -22,7 +22,7 @@ operationalising the 305-hit count from the 2026-05-18 idle sweep
 Failure modes classified:
 
   - `unregistered_package`     — the `<package>` prefix is not in
-                                 `folio-assistant/schemas/lean-packages.ts`
+                                 `folio-assistant/cat-harness/schemas/lean-packages.ts`
   - `sibling_missing`          — kind=definition (which schema requires
                                  a sibling) but no sibling `.lean` exists
   - `sibling_no_decl`          — sibling exists but does not declare the
@@ -77,7 +77,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 REPO_ROOT = HERE.parent.parent
 CONTENT_ROOT = REPO_ROOT / "content"
 
-# Mirror of folio-assistant/schemas/lean-packages.ts LEAN_PACKAGES.
+# Mirror of folio-assistant/cat-harness/schemas/lean-packages.ts LEAN_PACKAGES.
 # Kept inline here because Python doesn't import .ts and the registry
 # is small + stable.  See content/pipeline/migrate-lean-refs.ts for
 # the JS resolver this audit shadows.
@@ -362,7 +362,7 @@ def main() -> int:
             expected=1.0, tolerance=0.0,
             unit="boolean",
             source="Every lean.ref prefix must appear in LEAN_PACKAGES "
-                   "(folio-assistant/schemas/lean-packages.ts).",
+                   "(folio-assistant/cat-harness/schemas/lean-packages.ts).",
         )
         .add_assertion(
             name="ok_count_matches_total_minus_failures",

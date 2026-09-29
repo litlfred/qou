@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/conj-stokes-dt-bps-bridge",
   "@type": [
-    "folio:Conjecture",
+    "folio-assistant-core:Conjecture",
     "doco:Section"
   ],
   "label": "conj:stokes-dt-bps-bridge",
@@ -15,8 +15,11 @@
     "references/garoufalidis-gu-marino2023peacock",
     "references/gukov-pei-putrov-vafa2017",
     "references/dimofte-gaiotto-gukov2013",
+    "references/dimofte-gaiotto2011",
+    "references/murakami-y2022",
     "references/gukov-stosic2012",
-    "references/kucharski-reineke-stosic-sulkowski2017"
+    "references/kucharski-reineke-stosic-sulkowski2017",
+    "references/singh-physrevd108106023"
   ],
   "tags": [
     "tier:famous",

@@ -1,0 +1,141 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-12T21:50:19.354185+00:00",
+  "commitSha": "395056f2eec012b47750ce0ba53778599d6b7941",
+  "assertions": [
+    {
+      "name": "response_independent_of_entire_left_word",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "six unrelated left words give the same rational function exactly"
+    },
+    {
+      "name": "response_unchanged_by_empty_left_word",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "the sharpest case: no left word at all, same response"
+    },
+    {
+      "name": "left_word_empty_gives_identical_response",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "symbolic deviation from the nucleon-p reference response"
+    },
+    {
+      "name": "left_word_single_sigma_0_gives_identical_response",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "symbolic deviation from the nucleon-p reference response"
+    },
+    {
+      "name": "left_word_inverse_heavy_gives_identical_response",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "symbolic deviation from the nucleon-p reference response"
+    },
+    {
+      "name": "left_word_all_positive_len5_gives_identical_response",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "symbolic deviation from the nucleon-p reference response"
+    },
+    {
+      "name": "left_word_averaged_heavy_gives_identical_response",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "symbolic deviation from the nucleon-p reference response"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 308453,
+  "computation": "bond-response-junction-factorisation-probe",
+  "scriptFile": "bond_response_junction_factorisation_probe.py",
+  "scriptHash": "4b37ebd1f4ca",
+  "scriptCommitSha": "93134670715c5af160bb1a9827b6fd8e7dbf69dd",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/bond_response_junction_factorisation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/bond_response_junction_factorisation_probe.py"
+  },
+  "description": "qou-ales step 11 mechanism: shows the interface bond's trace response is one-body BECAUSE of connected-sum multiplicativity across the single shared strand, not because of anything about nucleon species. Holding the right nucleon and the bond fixed and varying the LEFT word over six words on <s0,s1> unlike a nucleon -- including the EMPTY word -- leaves the response a symbolic identity. The mechanism is the corpus's own, stated in mass-theory/canonical-trace-factorises-over-chain.md, whose status note records that the connected-sum multiplicativity itself is NOT formalised; so this derives the one-body premise from a cited principle rather than a species table, and does not promote anything to scope-(b). Distinct from MarkovTraceMultiplicative, which models the DISJOINT union (qou-bsfg): the free two-nucleon trace is a disjoint union, the bonded one a connected sum. Refinement worth noting: that block's per-generator product formula needs CHAIN FORM and says interleaved bonds destroy it -- G^3 IS interleaved, and the junction factorisation survives anyway. No AME/CODATA binding value or census read.",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "convention": "D (z = q^3/(q^2+1); two-row weight support at H_6)",
+    "dps": 60,
+    "bond": "V1^3 = (sigma_2 sigma_3^-1)^3 on generators (2,3)",
+    "right_nucleon": "n, 11-letter canonical element on generators (3,4)",
+    "left_parabolic": "<sigma_0, sigma_1> (strands 1-3); shares strand 3 with <sigma_2, sigma_3, sigma_4> (strands 3-6)"
+  },
+  "data": {
+    "left_nucleon_p_reference": {
+      "left_len": 11,
+      "ratio_at_q0": "1.00061119140688077961351843903748032751389873619015012204805",
+      "r_at_q0": "0.0139840866412832240063492549091184388667922041310786488455123",
+      "dev_from_reference": "0"
+    },
+    "left_empty": {
+      "left_len": 0,
+      "ratio_at_q0": "1.00061119140688077961351843903748032751389873619015012204805",
+      "r_at_q0": "0.0139840866412832240063492549091184388667922041310786488455123",
+      "dev_from_reference": "0"
+    },
+    "left_single_sigma_0": {
+      "left_len": 1,
+      "ratio_at_q0": "1.00061119140688077961351843903748032751389873619015012204805",
+      "r_at_q0": "0.0139840866412832240063492549091184388667922041310786488455123",
+      "dev_from_reference": "0"
+    },
+    "left_inverse_heavy": {
+      "left_len": 3,
+      "ratio_at_q0": "1.00061119140688077961351843903748032751389873619015012204805",
+      "r_at_q0": "0.0139840866412832240063492549091184388667922041310786488455123",
+      "dev_from_reference": "0"
+    },
+    "left_all_positive_len5": {
+      "left_len": 5,
+      "ratio_at_q0": "1.00061119140688077961351843903748032751389873619015012204805",
+      "r_at_q0": "0.0139840866412832240063492549091184388667922041310786488455123",
+      "dev_from_reference": "0"
+    },
+    "left_averaged_heavy": {
+      "left_len": 4,
+      "ratio_at_q0": "1.00061119140688077961351843903748032751389873619015012204805",
+      "r_at_q0": "0.0139840866412832240063492549091184388667922041310786488455123",
+      "dev_from_reference": "0"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

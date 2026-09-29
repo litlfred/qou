@@ -25,8 +25,8 @@
  * Usage: `bun run scripts/interprets-graph-questions.ts`
  */
 import { resolve } from "path";
-import { buildContentGraph } from "../folio-assistant/content/pipeline/content-graph";
-import { blockPlacement, pointsForward } from "../folio-assistant/content/pipeline/qa-checkers-extended";
+import { buildContentGraph } from "../folio-assistant/cat-harness/content/pipeline/content-graph";
+import { blockPlacement, pointsForward } from "../folio-assistant/cat-harness/content/pipeline/qa-checkers-extended";
 
 const REPO = resolve(import.meta.dir, "..");
 const g = buildContentGraph(resolve(REPO, "content"), REPO);

@@ -1,0 +1,37 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-fourier-mukai-and-orlov",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:fourier-mukai-and-orlov",
+  "kind": "remark",
+  "title": "Fourier–Mukai transforms and Orlov's theorem: where a derived realisation would close a gap",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-brings-euler-characteristic",
+    "papers/quantum-observable-universe/blocks/def-chern-character",
+    "papers/quantum-observable-universe/blocks/def-hochschild-homology",
+    "papers/quantum-observable-universe/blocks/rem-hkr-theorem",
+    "papers/quantum-observable-universe/blocks/def-spatial-realization-functor",
+    "papers/quantum-observable-universe/blocks/rem-three-euler-characteristics"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/lem-brings-euler-characteristic",
+  "cites": [
+    "references/caldararu-willerton-2010",
+    "references/orlov1997",
+    "references/bondal-orlov2001"
+  ],
+  "tags": [
+    "fourier-mukai",
+    "derived-category",
+    "orlov",
+    "bondal-orlov",
+    "hochschild-homology",
+    "trace-map",
+    "brings-surface",
+    "open-direction"
+  ],
+  "text": "fourier-mukai-and-orlov.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,36 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-hochschild-homology",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:hochschild-homology",
+  "kind": "definition",
+  "title": "Hochschild homology",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-universe"
+  ],
+  "foreshadows": [
+    "papers/quantum-observable-universe/blocks/def-chern-character",
+    "papers/quantum-observable-universe/blocks/rem-hkr-theorem",
+    "papers/quantum-observable-universe/blocks/rem-trace-ledger"
+  ],
+  "cites": [
+    "references/loday-1998",
+    "references/weibel1994"
+  ],
+  "tags": [
+    "hochschild-homology",
+    "homological-algebra",
+    "trace",
+    "cocenter"
+  ],
+  "defines": [
+    "hochschild-homology"
+  ],
+  "leanRef": "qou:QOU.QuantumUniverses.HochschildZero",
+  "text": "hochschild-homology.md",
+  "leanSource": "hochschild-homology.lean",
+  "provenance": "authored"
+}

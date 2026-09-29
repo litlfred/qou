@@ -39,7 +39,7 @@
  * handed, is not an axiom and is not reported here. Use the vacuity audit for
  * those.
  */
-import { loadBlocksUnder } from "../folio-assistant/content/pipeline/block-module";
+import { loadBlocksUnder } from "../folio-assistant/cat-harness/content/pipeline/block-module";
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join, resolve } from "node:path";
 

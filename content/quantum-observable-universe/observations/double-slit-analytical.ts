@@ -1,4 +1,4 @@
-import { simulator } from "../../../folio-assistant/schemas/builders";
+import { simulator } from "../../../folio-assistant/cat-harness/schemas/builders";
 
 /**
  * Double-Slit Analytical View — intensity pattern plotter.
@@ -10,7 +10,7 @@ import { simulator } from "../../../folio-assistant/schemas/builders";
 export default simulator({
   label: "sim:double-slit-analytical",
   title: "Double-Slit Analytical Simulator",
-  html: "folio-assistant/simulators/double_slit_simulator.html",
+  html: "fsh-guts/deprecated/simulators/double_slit_simulator.html",
   uses: [
     "prop:local-substrate-q",
     "def:categorical-dirac-operator",

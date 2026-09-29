@@ -130,17 +130,70 @@ per [`bib-qa.md §Batch intake pipeline`](bib-qa.md#batch-intake-pipeline).
 
 Convert raw format to `extracted-text.md`:
 
+> **🛑 THIS SECTION WAS 82 LINES BEHIND ITS SOURCE UNTIL 2026-09-16, and the
+> stale version named tools instead of programs.** It said *"PDF (text) |
+> `pdftotext` or PDF.js"* and *"PDF (scan) | Tesseract OCR / Claude vision"* —
+> which is precisely the aspirational text `scripts/pdf-extract.py` was written
+> to replace. That script's own docstring records the cost: *"`document-intake`
+> advertises 'Handles OCR extraction' and its routing table sends scanned PDFs
+> to 'Tesseract OCR / Claude vision' — but nothing implemented that, so in
+> practice an agent reached for a Python PDF library, got an empty string or an
+> import crash, and had to guess what went wrong."*
+>
+> The folio-assistant copy was fixed then; this one was not, and **qou is where
+> all 715 ingested documents live**. The drift gate
+> (`gen-skill-docs.ts --check`) covers the published docs site only — nothing
+> checks this file against its source, so assume it can go stale again and
+> diff it against
+> [`skills/folio-paper-adapter/document-intake.md`](https://github.com/litlfred/folio-assistant/blob/main/skills/folio-paper-adapter/document-intake.md)
+> before trusting it.
+
+**The scripts live in the `folio-assistant` clone, not in qou.** Invoke them
+across the boundary, as `scripts/migrate-uploads-to-library.py` already does:
+
 | Format | Extraction method |
 |--------|-------------------|
-| PDF (text) | `pdftotext` or PDF.js |
-| PDF (scan) | Tesseract OCR / Claude vision |
+| PDF (text) | `folio-assistant/scripts/pdf-extract.py` — a 5-rung ladder, not one tool |
+| PDF (scan) | `pdf-extract.py` exits **2**, then `folio-assistant/scripts/pdf-ocr.py` (Tesseract) or Claude vision |
+| PDF (sections) | `folio-assistant/scripts/pdf-structure.py` → `structure.json` + `sections/*.md` |
+| PDF (tables/figures) | `folio-assistant/scripts/pdf-tables.py` → `tables.json`, multipage stitching included |
 | LaTeX | Direct parse (strip preamble) |
 | HTML | Readability + turndown |
 | DOCX | Pandoc → markdown |
 | Images | Claude vision API |
 
-For scanned documents, use Claude's vision capability to extract
-text with structural awareness (headings, lists, tables, boxes).
+```bash
+python3 folio-assistant/scripts/pdf-extract.py FILE.pdf -o extracted-text.md
+python3 folio-assistant/scripts/pdf-ocr.py FILE.pdf --outdir library/<doc-id>/   # scans only
+python3 folio-assistant/scripts/pdf-structure.py FILE.pdf --outdir library --ocr
+python3 folio-assistant/scripts/extract-candidates.py library/<doc-id>/
+```
+
+Four things that matter here and are not guessable from the table:
+
+* **The exit code is the diagnosis.** `pdf-extract.py` returns `0` text · `2`
+  no text layer, i.e. a scan · `3` a parser problem on a file that *does* have
+  text · `4` bad usage. So "swap libraries" and "you need OCR" are decided by
+  evidence rather than by trying things.
+* **`pdf-structure.py` READS the OCR cache; it never runs OCR.** On a scan the
+  order is `pdf-ocr.py` first, `pdf-structure.py --ocr` second. The other way
+  round the sections come out empty.
+* **An OCR'd document whose structure was never re-run is invisible to a
+  `sections/` grep** — which is corpus-grep path 5. Measured here: **26**
+  `library/*/ocr/` trees against only **11** `structure.json` recording
+  `"text_source": "ocr"`, so ~15 documents have their text on disk and a stub
+  in `sections/`. `library/procrsoclondona92/` is the worked case: 1,916 bytes
+  of JSTOR download banner in `sections/` against 46,511 bytes of real text in
+  `ocr/`. This is the same "fourth tier" AGENTS.md describes — and the producer
+  it could not name is `pdf-ocr.py`, whose output path is literally
+  `page-{i:03d}.txt`.
+* **The OCR and table backends are NOT in the shipped image.** Measured
+  2026-09-16: `grep -ci tesseract Dockerfile` → **0**, `pdfplumber` → **0**. So
+  `pdf-ocr.py` refuses with an install hint and `pdf-tables.py` writes
+  `status: "n/a-no-backend"` there. Check before assuming, with
+  `python3 folio-assistant/scripts/pdf-ocr.py --check` and
+  `python3 folio-assistant/scripts/pdf-tables.py --check`; a `n/a` is the
+  contract working, not a failure to diagnose.
 
 **Output**: `extracted-text.md` — raw markdown with preserved structure.
 

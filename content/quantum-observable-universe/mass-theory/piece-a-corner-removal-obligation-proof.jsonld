@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prf-piece-a-corner-removal-obligation",
   "@type": [
-    "folio:Proof",
+    "folio-assistant-core:Proof",
     "doco:Section"
   ],
   "label": "prf:piece-a-corner-removal-obligation",

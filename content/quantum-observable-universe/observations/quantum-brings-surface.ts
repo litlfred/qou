@@ -1,4 +1,4 @@
-import { simulator } from "../../../folio-assistant/schemas/builders";
+import { simulator } from "../../../folio-assistant/cat-harness/schemas/builders";
 
 /**
  * Quantum Bring's Surface — chiral tubes on the projective space-time brane.
@@ -10,7 +10,7 @@ import { simulator } from "../../../folio-assistant/schemas/builders";
 export default simulator({
   label: "sim:quantum-brings-surface",
   title: "Quantum Bring's Surface Simulator",
-  html: "folio-assistant/simulators/quantum_brings_surface.html",
+  html: "fsh-guts/deprecated/simulators/quantum_brings_surface.html",
   uses: [
     "def:quaternionic-spectral-resolvents",
     "prop:color-elliptic",

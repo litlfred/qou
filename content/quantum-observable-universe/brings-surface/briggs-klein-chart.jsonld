@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/def-briggs-klein-chart",
   "@type": [
-    "folio:Definition",
+    "folio-assistant-core:Definition",
     "doco:Section"
   ],
   "label": "def:briggs-klein-chart",

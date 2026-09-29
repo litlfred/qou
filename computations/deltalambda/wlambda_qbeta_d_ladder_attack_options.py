@@ -27,9 +27,16 @@ The operator route (computations/qbeta/qbeta_ck_from_operator_markov_trace_probe
 Two of the three terms die under D, for two INDEPENDENT reasons:
 
   * chi^(2,1) = 0 exactly -- a character fact, convention-free;
-  * y_(1^3) = 0 under D -- and this is exactly the Lean characterisation cds1
-    already cites, markovWeights_eq_jones_of_threeRow_eq_zero: y_(1^3) = 0 iff
-    z = z_D. Verified here against the live bridge.
+  * y_(1^3) = 0 under D -- and the Lean characterisation is a PAIR of one-way
+    lemmas, not the single iff this file used to attribute to
+    markovWeights_eq_jones_of_threeRow_eq_zero. That lemma has y_(1^3) = 0 as its
+    HYPOTHESIS and z*(q+qi) = q^2 as its CONCLUSION, i.e. TL ==> D; it also
+    carries hfaith : y_(2,1) != 0, which is load-bearing (markovWeights_degenerate_root
+    shows the conclusion is FALSE without it). The direction this file needs is the
+    CONVERSE, D ==> TL, which is
+    FibreDimensionForcesTL.threeRow_eq_zero_of_jones_ocneanu (same q, qi frame,
+    division-free over [CommRing R] [IsDomain R]). Together they give the iff.
+    Verified here against the live bridge.
 
 leaving one term, computed here in closed form:
 
@@ -105,10 +112,11 @@ def main():
         "detail": (
             f"Two of three terms die for INDEPENDENT reasons: chi^(2,1) = 0 "
             f"exactly (a character fact, convention-free, PR #1873), and "
-            f"y_(1^3) = {y111} under D -- which is precisely the Lean "
-            f"characterisation cds1 already cites, "
-            f"markovWeights_eq_jones_of_threeRow_eq_zero (y_(1^3) = 0 iff "
-            f"z = z_D), here verified against the live bridge. What remains is "
+            f"y_(1^3) = {y111} under D -- the direction used here is D ==> TL, "
+            f"which is threeRow_eq_zero_of_jones_ocneanu; "
+            f"markovWeights_eq_jones_of_threeRow_eq_zero is its CONVERSE "
+            f"(TL ==> D, plus hfaith), so the iff needs both. Verified here "
+            f"against the live bridge. What remains is "
             f"tr_M(trefoil)|_D = {sp.factor(tr)}. Under C, "
             f"decayLadder_zC_threeRow_ne_zero forces y_(1^3) != 0 for every "
             f"s = sqrt(q) > 1, so the C trace carries TWO terms: the C->D move "

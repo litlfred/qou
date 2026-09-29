@@ -58,7 +58,7 @@ instance : CategoryTheory.Category.{w} (Type w) where
     LaTeX: used in `\label{def:quantum-universe}`, item (ii).
     Ref: [kock2004] -/
 structure FrobeniusHopfData (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] where
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] where
   /-- The underlying object in `C`. -/
   obj : C
   /-- Multiplication morphism `μ : A ⊗ A → A`. -/
@@ -119,32 +119,61 @@ structure FrobeniusHopfData (C : Type u) [CategoryTheory.Category.{v} C]
       `CategoryTheory.ComonObj.comul_assoc`. -/
   comul_assoc :
     comul ≫ obj ◁ comul = comul ≫ (comul ▷ obj) ≫ (α_ obj obj obj).hom
-  /-- **Antipode axiom (left).**  `Δ ≫ S ▷ A ≫ μ = ε ≫ η`.
+  /-- **Antipode axiom 1 — `S` reverses multiplication.**
+      `μ ≫ S = (S ⊗ S) ≫ β ≫ μ`, in elements `S(ab) = S(b)S(a)`.
 
-      This is the Hopf condition proper: `S` is the convolution inverse of
-      `id_A`.  It is what makes `S` *determined* rather than free data —
-      convolution inverses are unique in a monoid, so
-      `QOU.FrobeniusHopfData.antipode_unique` follows.
+      This is the braiding-carrying half of the antipode package and is why
+      the structure now requires `[BraidedCategory C]`: "reverses" is not
+      statable without a way to exchange the two tensor factors.  That is no
+      new demand on the framework — `def:frobenius-hopf-substrate` already
+      says the substrate is available at the level of a *quantum universe*,
+      and `def:quantum-universe` is braided monoidal.
 
-      **Added 2026-09-14** (owner decision; beans `qou-c64q` / `qou-qjhc`).
-      Before that, `def:frobenius-hopf-substrate` named `S` and constrained
-      it with nothing: its axiom 2 wrote `ε ∘ μ = u ∘ (ε ⊗ ε)`, which is
-      multiplicativity of the *counit* and does not mention `S` at all.  `S`
-      was therefore free data, and every question about it — `S² = id`
-      included — was independent of the definition rather than open.  The
-      machine-checked record of that prior state is
-      `QOU.AntipodeIndependence`.
+      **This axiom family REPLACED the convolution condition on 2026-09-15**
+      (owner decision, beans `qou-c64q` / `qou-aawz`).  See the module
+      docstring of `QOU.QuantumObservableUniverse.FrobeniusHopfModelDichotomy`
+      for why: the convolution condition
+      `Δ ≫ (S ▷ A) ≫ μ = ε ≫ η` — which is Mathlib's
+      `HopfObj.antipode_left`, and which this structure carried from
+      2026-09-14 to 2026-09-15 — has **no non-trivial model over a field**.
+      It is not merely unsatisfied by the natural candidates; it forces
+      `dim A ≤ 1`.
 
-      Field shape matches `CategoryTheory.HopfObj.antipode_left`. -/
-  antipode_left : comul ≫ antipode ▷ obj ≫ mul = counit ≫ unit
-  /-- **Antipode axiom (right).**  `Δ ≫ A ◁ S ≫ μ = ε ≫ η`.  Matches
-      `CategoryTheory.HopfObj.antipode_right`. -/
-  antipode_right : comul ≫ obj ◁ antipode ≫ mul = counit ≫ unit
+      The three theorems recording that are **not** deleted.  They are
+      restated to take the convolution condition as an explicit hypothesis
+      rather than to read it off a field, which is strictly stronger: they
+      now constrain *any* morphism satisfying it, not only a structure that
+      declares it. -/
+  antipode_anti_mul :
+    mul ≫ antipode =
+      (antipode ⊗ₘ antipode) ≫ (CategoryTheory.BraidedCategory.braiding obj obj).hom ≫ mul
+  /-- **Antipode axiom 2 — `S` reverses comultiplication.**
+      `S ≫ Δ = Δ ≫ β ≫ (S ⊗ S)`, in elements
+      `Δ(S x) = Σ S(x₂) ⊗ S(x₁)`. -/
+  antipode_anti_comul :
+    antipode ≫ comul =
+      comul ≫ (CategoryTheory.BraidedCategory.braiding obj obj).hom ≫ (antipode ⊗ₘ antipode)
+  /-- **Antipode axiom 3 — `S` fixes the unit.**  `η ≫ S = η`. -/
+  antipode_unit : unit ≫ antipode = unit
+  /-- **Antipode axiom 4 — `S` preserves the counit.**  `S ≫ ε = ε`. -/
+  antipode_counit : antipode ≫ counit = counit
+  /-- **Antipode axiom 5 — `S` is involutive.**  `S ≫ S = 𝟙_A`.
+
+      On its own this pins nothing: `S = 𝟙_A` satisfies it, measured on
+      `S₃` and `D₄` as well as on every abelian group tested
+      (`computations/probes/frobenius_hopf_intermediate_axioms_probe.py`).
+      It earns its place only alongside `antipode_anti_mul`, which `𝟙_A`
+      fails whenever `A` is non-commutative. -/
+  antipode_involutive : antipode ≫ antipode = 𝟙 obj
+  /-- **Antipode axiom 6 — `S` preserves the Frobenius form.**
+      `S ≫ λ = λ`, so the pairing `⟨a, b⟩ = λ(ab)` is `S`-invariant. -/
+  antipode_frobeniusForm : antipode ≫ frobeniusForm = frobeniusForm
 
 namespace FrobeniusHopfData
 
 variable {C : Type u} [CategoryTheory.Category.{v} C]
-  [CategoryTheory.MonoidalCategory C] (F : FrobeniusHopfData C)
+  [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
+  (F : FrobeniusHopfData C)
 
 /-- **Evaluation** `ev = μ ≫ ∫_A : A ⊗ A → 𝟙`.  Together with `coevaluation`
     and the two snake identities, this exhibits `A` as self-dual. -/
@@ -237,7 +266,7 @@ structure QuantumUniverse (R : Type*) [CommRing R] where
       Mathlib has no ribbon layer. -/
   [balancedInst : @QOU.BraidKnot.Balanced.BalancedCategory C catInst monInst braidedInst]
   /-- The Frobenius–Hopf object `A` in `C`. -/
-  frobHopf : @FrobeniusHopfData C catInst monInst
+  frobHopf : @FrobeniusHopfData C catInst monInst braidedInst
   /-- The fibre functor `τ : C → Type*` (abstracting `Vect_R` / `R-Mod`).
       The paper asks for it to be exact, faithful, `R`-linear and monoidal;
       NONE of those four is carried by this type, which is a bare functor to

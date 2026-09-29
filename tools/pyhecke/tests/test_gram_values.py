@@ -190,6 +190,59 @@ def test_gram_inverse_is_gone_and_pseudoinverse_is_the_quotient_inverse():
     assert pyhecke_gram.gram_quotient_inverse() is GP
 
 
+def test_gram_quotient_pinv_mp_is_the_float64_free_twin():
+    """`gram_quotient_pinv_mp` is the Moore-Penrose pseudo-inverse at 60 dps,
+    built from the PROVED radical rather than from an SVD.
+
+    All four Moore-Penrose axioms are checked, not just the two that a
+    regularised stand-in would also satisfy -- the symmetry axioms are what
+    separate the pseudo-inverse from an arbitrary generalised inverse, and
+    generalised inverses of a singular Gram differ precisely by radical
+    terms, which is the whole reason this object needs pinning.
+
+    Tolerances are at WORKING precision (1e-50 against 60 dps), not at
+    float64. A float64 implementation cannot pass these.
+    """
+    import mpmath as mp
+
+    dps = 60
+    with mp.workdps(dps):
+        P = mp.matrix(pyhecke_gram.gram_quotient_pinv_mp(dps))
+        G = mp.matrix(pyhecke_gram.gram_matrix_mp(dps))
+        v = mp.matrix(pyhecke_gram.radical_mp(dps))
+
+        def mx(M):
+            return max(abs(M[i, j]) for i in range(M.rows) for j in range(M.cols))
+
+        assert mx(G * P * G - G) < mp.mpf("1e-50")
+        assert mx(P * G * P - P) < mp.mpf("1e-50")
+        assert mx((G * P) - (G * P).T) < mp.mpf("1e-50")
+        assert mx((P * G) - (P * G).T) < mp.mpf("1e-50")
+
+        # Annihilates the proved radical -- it IS the quotient inverse.
+        Pv = P * v
+        assert max(abs(Pv[i]) for i in range(6)) < mp.mpf("1e-50")
+
+        # Agrees with the single-rhs solve: A^-1 Q = A^-1 - P, so the solve's
+        # minimum-norm answer on e_0 must be this matrix's first column.
+        rhs = [mp.mpf(1)] + [mp.mpf(0)] * 5
+        x, _radcomp = pyhecke_gram.gram_quotient_solve_mp(rhs, dps)
+        assert max(abs(x[i] - P[i, 0]) for i in range(6)) < mp.mpf("1e-50")
+
+        # And it agrees with the float64 constant to float64 epsilon, which
+        # is the honest size of the defect it fixes: G_PINV is SHORT, not
+        # wrong. If this ever fails by much more than ~1e-15, the float64
+        # path has developed a real bug and the assumption above is void.
+        worst = max(abs(mp.mpf(float(pyhecke_gram.G_PINV[i, j])) - P[i, j])
+                    for i in range(6) for j in range(6))
+        assert worst < mp.mpf("1e-13")
+
+    # Strings marshal without float64 and round-trip.
+    rows = pyhecke_gram.gram_quotient_pinv_mp_strings(dps)
+    assert len(rows) == 6 and all(len(r) == 6 for r in rows)
+    assert all(isinstance(c, str) for r in rows for c in r)
+
+
 def test_wedderburn_weights_sum_and_individual():
     # W_SYM + W_STD + W_ALT = 1 (unit measure on Wedderburn components)
     s = pyhecke_gram.W_SYM + pyhecke_gram.W_STD + pyhecke_gram.W_ALT

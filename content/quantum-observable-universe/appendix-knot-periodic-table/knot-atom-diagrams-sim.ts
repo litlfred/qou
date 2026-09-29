@@ -1,9 +1,9 @@
-import { simulator } from "../../../folio-assistant/schemas/builders";
+import { simulator } from "../../../folio-assistant/cat-harness/schemas/builders";
 
 export default simulator({
   label: "sim:knot-atom-diagrams",
   title: "Knot Diagrams of Light Atoms ($Z \\leq 4$)",
-  html: "folio-assistant/simulators/knot_atom_diagrams.html",
+  html: "fsh-guts/deprecated/simulators/knot_atom_diagrams.html",
   uses: ["rem:knot-atom-diagrams"],
   tags: [
     "knot-diagram",

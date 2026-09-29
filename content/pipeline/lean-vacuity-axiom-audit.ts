@@ -63,7 +63,7 @@ import { join, relative, resolve } from "node:path";
 import { execFileSync } from "node:child_process";
 
 // `block-qa/v1` sidecar types, inlined. The canonical schema lives at
-// `folio-assistant/schemas/block-qa.ts`, but `folio-assistant/` is
+// `folio-assistant/cat-harness/schemas/block-qa.ts`, but `folio-assistant/` is
 // gitignored on this branch (the QA pipeline migration), so this
 // scanner carries its own copy to stay self-contained and committable.
 interface QaFieldHash {
@@ -115,7 +115,7 @@ const SKIP_DIRS = new Set([
 const SCRIPT_REL = "content/pipeline/lean-vacuity-axiom-audit.ts";
 
 // Lake package prefix → lakeRoot (inlined to stay free of the migrated
-// `folio-assistant/schemas/lean-packages.ts`).
+// `folio-assistant/cat-harness/schemas/lean-packages.ts`).
 const LAKE_ROOTS: Record<string, string> = {
   qou: "content/quantum-observable-universe/lean",
   ugb: "content/unital-groebner-bases/lean",

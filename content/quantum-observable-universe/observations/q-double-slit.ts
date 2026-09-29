@@ -1,4 +1,4 @@
-import { simulator } from "../../../folio-assistant/schemas/builders";
+import { simulator } from "../../../folio-assistant/cat-harness/schemas/builders";
 
 /**
  * q-Deformed Double Slit — overhead diffraction particle simulator.
@@ -10,7 +10,7 @@ import { simulator } from "../../../folio-assistant/schemas/builders";
 export default simulator({
   label: "sim:q-double-slit",
   title: "q-Deformed Double-Slit Simulator",
-  html: "folio-assistant/simulators/q_double_slit.html",
+  html: "fsh-guts/deprecated/simulators/q_double_slit.html",
   uses: [
     "prop:local-substrate-q",
     "def:categorical-dirac-operator",

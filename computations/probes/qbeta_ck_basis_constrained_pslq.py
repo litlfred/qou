@@ -108,6 +108,25 @@ PIN_REL_MUON = mp.mpf("22e-9")       # 22 ppb
 C3_EMP_PROTON = mp.mpf("-2.06934257711516783787971951725")  # root-of-unity probe
 C3_EMP_MUON_HOPF = mp.mpf("-2.0097")                         # hopf-profile probe (SUPERSEDED; spread only)
 C3_EMP_CACHE = mp.mpf("-2.02018812814143945582016855395")    # ck-cache, extracted AT Q0_CANONICAL
+# 🛑 CONVENTION-C VALUE. `ladder_chain` below is convention D (z = q^3/(q^2+1),
+# line ~119), so this constant and that function are in DIFFERENT FRAMES and the
+# self-check comparing them is RED by construction, by ~972.362 -- which is the
+# C->D extraction shift, not a numerical defect. Corroboration: the D-frame muon
+# c_3 is -974.3821470795362 in
+# computations/qbeta/qbeta-c3-ladder-trace-convention-sensitivity.witness.json
+# (`result.c3.D_muon`), matching this producer's own c3_reproduced_canonical on
+# every printed digit.
+#
+# Do NOT "reconcile" this against anchor_slope_dc3_dq: c3 is computed from q
+# alone in ladder_chain and the slope is an independent OUTPUT field, so there is
+# no reconciliation to perform (bean qou-v6wz records that diagnosis; it is
+# withdrawn, see the bean).
+#
+# Do NOT widen the tolerance or re-baseline -- AGENTS.md forbids it explicitly.
+# Going green requires the convention-D c_k ladder, i.e. bean qou-cds1, which is
+# blocked on the N=1 eigenphase alpha (qou-pdix). Until then the RED is the gate
+# working: it reports that the C-frame cached c_3 is not reproducible under the
+# canonical convention.
 
 MARGIN_DIGITS = 3.0  # confidence margin beyond the raw entropy floor
 

@@ -47,8 +47,8 @@
  * @module content/pipeline/prefixless-ref-audit
  */
 
-import { loadBlocksUnder, reportLoadFailures } from "../../folio-assistant/content/pipeline/block-module";
-import { parseReference } from "../../folio-assistant/schemas/jsonld";
+import { loadBlocksUnder, reportLoadFailures } from "../../folio-assistant/cat-harness/content/pipeline/block-module";
+import { parseReference } from "../../folio-assistant/cat-harness/schemas/jsonld";
 
 /** The fields `gen-block-jsonld` resolves as references, plus scalar `interprets`. */
 const REF_LIST_FIELDS = ["uses", "foreshadows", "proofs", "examples"] as const;

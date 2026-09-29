@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prop-positive-definite-dagger",
   "@type": [
-    "folio:Proposition",
+    "folio-assistant-core:Proposition",
     "doco:Section"
   ],
   "label": "prop:positive-definite-dagger",
@@ -14,6 +14,9 @@
   ],
   "proofs": [
     "papers/quantum-observable-universe/blocks/prf-positive-definite-dagger"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-positive-dagger-su2"
   ],
   "tags": [
     "category-theory",

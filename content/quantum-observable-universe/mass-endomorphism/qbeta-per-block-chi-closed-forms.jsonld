@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prop-qbeta-per-block-chi-closed-forms",
   "@type": [
-    "folio:Proposition",
+    "folio-assistant-core:Proposition",
     "doco:Section"
   ],
   "label": "prop:qbeta-per-block-chi-closed-forms",

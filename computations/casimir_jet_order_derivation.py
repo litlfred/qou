@@ -79,7 +79,7 @@ sys.path.insert(0, str(HERE))
 
 from mpmath import mp, mpf, pi as mp_pi, zeta as mp_zeta  # noqa: E402
 
-from q_parameter import Q  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
@@ -131,7 +131,7 @@ def main() -> int:
     # ─── Test at 3 different q values ───
     q_values = [
         mpf("1.05"),
-        mpf(Q),       # substrate
+        mpf(Q_50_DIGIT_STR),       # substrate
         mpf("1.5"),
     ]
     results = []

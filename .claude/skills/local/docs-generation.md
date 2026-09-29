@@ -12,7 +12,14 @@ description: >
 ## Role
 
 Coordinate all documentation generation pipelines. This covers the
-full set of rendered artifacts published to GitHub Pages, from the
+full set of rendered artifacts. **🛑 The rendered GitHub Pages site is
+DEPRECATED (owner, 2026-09-27) and the workflows this skill's tables name —
+`blueprint.yml` and `lean_ci.yml` exist only as paper-scaffolding TEMPLATES
+under `cat-harness/templates/`, while `publish.yml` is the PLATFORM's and is
+live-but-undispatched via qou's `build.yml`;
+`doc-gen4.yml` is deprecated to `fsh-guts/deprecated/workflows/`. Read
+AGENTS.md §"Build output (gh-pages)" for the measured state before acting on
+any row below.** Historical framing follows, from the
 content-object schemas through to per-paper PDF/HTML viewers.
 
 ## Documentation artifacts

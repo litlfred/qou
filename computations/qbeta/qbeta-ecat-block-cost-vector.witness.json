@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-14T19:02:03.634326+00:00",
-  "commitSha": "ba7241b7faeeb54fe6dd1483d5c89c1316b50bc9",
+  "computedAt": "2026-09-26T21:09:57.085419+00:00",
+  "commitSha": "bb697e8106b5244b7ba3c3f0daa7e8081137adbe",
   "assertions": [
     {
       "name": "the_block_assembly_reproduces_the_independent_trace",
@@ -16,7 +16,7 @@
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "y_(1^3) = 0 exactly -- that vanishing IS convention D (markovWeights_eq_jones_of_threeRow_eq_zero), not a truncation applied here -- and sum_lambda y_lambda dim_lambda = 1.0 recovers tr_M(1) = 1. So the cost vector has a structurally zero column at n = 3 and is effectively 2-dimensional. A reader seeing that zero should know it is the convention"
+      "source": "y_(1^3) = 0 exactly -- that vanishing IS convention D (D => vanish is threeRow_eq_zero_of_jones_ocneanu; the converse is markovWeights_eq_jones_of_threeRow_eq_zero + hfaith), not a truncation applied here -- and sum_lambda y_lambda dim_lambda = 1.0 recovers tr_M(1) = 1. So the cost vector has a structurally zero column at n = 3 and is effectively 2-dimensional. A reader seeing that zero should know it is the convention"
     },
     {
       "name": "the_block_cost_vectors_reconstruct_the_scalar_and_separate",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 229,
+  "durationMs": 284,
   "computation": "qbeta-ecat-block-cost-vector",
   "scriptFile": "qbeta_ecat_block_cost_vector_probe.py",
-  "scriptHash": "ef58a535c15b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "2d393fa05d88",
+  "scriptCommitSha": "27250649ff96f66940106639509311ddd742d23e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,7 +60,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [

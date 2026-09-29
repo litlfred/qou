@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prop-vacuum-state",
   "@type": [
-    "folio:Proposition",
+    "folio-assistant-core:Proposition",
     "doco:Section"
   ],
   "label": "prop:vacuum-state",
@@ -15,6 +15,9 @@
   ],
   "proofs": [
     "papers/quantum-observable-universe/blocks/prf-vacuum-state"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-vacuum-state-su2"
   ],
   "tags": [
     "vacuum-state",

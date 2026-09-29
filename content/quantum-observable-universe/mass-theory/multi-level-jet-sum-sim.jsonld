@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/sim-multi-level-jet-sum",
   "@type": [
-    "folio:Simulator"
+    "folio-assistant-core:Simulator"
   ],
   "label": "sim:multi-level-jet-sum",
   "kind": "simulator",

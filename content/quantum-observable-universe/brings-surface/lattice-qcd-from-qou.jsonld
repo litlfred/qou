@@ -2,12 +2,12 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/rem-lattice-qcd-from-qou",
   "@type": [
-    "folio:Remark",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
   "label": "rem:lattice-qcd-from-qou",
   "kind": "remark",
-  "title": "Lattice QCD as the $q\\to 1$ shadow of the $q$-deformed surface state-sum",
+  "title": "Lattice gauge theory as a proposed $q\\to 1$ shadow of the $q$-deformed surface state-sum",
   "uses": [
     "papers/quantum-observable-universe/blocks/thm-qu-to-qou"
   ],

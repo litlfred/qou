@@ -129,12 +129,12 @@ theorem lightning_path_synthesis :
     -- The volume-determinant constraint `det(g_V) = 1` is exactly the
     -- statement that every gauge element acts as the identity on the
     -- exterior square `Λ²V` — the genuine `SU2Emergence.det_one` field.
-    (∀ {C : Type*} [CategoryTheory.Category C] [CategoryTheory.MonoidalCategory C]
+    (∀ {C : Type*} [CategoryTheory.Category C] [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
         {exteriorSquare : C} (emg : SU2Emergence C exteriorSquare)
         (g : emg.gaugeGroupType),
         emg.ext_sq_action g = CategoryTheory.CategoryStruct.id exteriorSquare)
     -- Pillar 2: Self-dual instantons
-    ∧ (∀ {C : Type*} [CategoryTheory.Category C] [CategoryTheory.MonoidalCategory C]
+    ∧ (∀ {C : Type*} [CategoryTheory.Category C] [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
         (fh : FrobeniusHopfData C) (inst : CategoricalInstanton fh),
         inst.hodge.IsSelfDual inst.curvature)
     -- Pillar 3: Topological mass decomposition

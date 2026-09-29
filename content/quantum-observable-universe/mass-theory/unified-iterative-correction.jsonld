@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prop-unified-iterative-correction",
   "@type": [
-    "folio:Proposition",
+    "folio-assistant-core:Proposition",
     "doco:Section"
   ],
   "label": "prop:unified-iterative-correction",
@@ -10,7 +10,8 @@
   "title": "Unified iterative LP-dual correction: per-step Wedderburn projection over all partitions $\\lambda \\vdash k$ for $k = 2, \\ldots, K$, starting at $A = 1$ (no special cases)",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-wigner-np-pairing",
-    "papers/quantum-observable-universe/blocks/prop-mass-coefficient-shadow-price"
+    "papers/quantum-observable-universe/blocks/prop-mass-coefficient-shadow-price",
+    "papers/quantum-observable-universe/blocks/def-q-resolvent"
   ],
   "cites": [
     "references/kerov1996",

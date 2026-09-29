@@ -207,6 +207,48 @@ One leaked `/tmp/tmp.*` survived thirteen days and drove the container to
 command fails, including the `rm`. Keep `trap 'rm -f "$TGZ"' EXIT INT TERM`.
 `df` lies: ~252G nominal at 100% with ~38G used = a per-session quota near 38G.
 
+## TRAP — when the disk fills, the LEAN TOOLCHAIN ITSELF is the biggest /tmp entry, and deleting it breaks Lean (2026-09-12)
+
+Hit the 0-free state the TRAP above describes, and the instinct "clear the big
+things in /tmp" is a trap of its own. Measured this container:
+
+    2471 MB  /tmp/lean-v4.24.0          <- THE LIVE TOOLCHAIN. DO NOT DELETE.
+     697 MB  /tmp/lean-v4.24.0-linux.zip  <- already extracted; safe
+      56 MB  /tmp/claude-code.log         <- safe
+     173 MB  /tmp/claude-0                <- task outputs + scratchpad
+
+`~/.elan/toolchains/lean-v4.24.0` and `leanprover--lean4---v4.24.0` are both
+**symlinks into `/tmp/lean-v4.24.0`**, so `rm -rf` on that directory removes the
+compiler while leaving elan believing it is installed. Verify before deleting
+anything large in /tmp:
+
+    readlink -f ~/.elan/toolchains/*     # anything pointing into /tmp is LIVE
+
+**The good reclaims, in order of value.** A merged sibling **git worktree** is
+usually the largest safe one — 1500 MB here — because each carries its own
+`.lake`. Check it is clean first, then use `git worktree remove` (not `rm -rf`,
+which leaves a stale registration):
+
+    git worktree list
+    git -C <wt> status --short | wc -l       # must be 0
+    git -C <wt> log --oneline @{u}..HEAD | wc -l   # must be 0
+    git worktree remove <wt>
+
+That removes the checkout, **not the branch ref** — so it does not violate the
+never-delete-merged-branches rule. Zip + log + worktree freed 2.3 G here.
+
+**Two harness facts that make this confusing while you are in it.** The Bash
+tool writes its output capture under `/tmp/claude-*/tasks`, so at 0 free
+*every* command reports "output could not be read" even when it ran fine —
+issue deletes blind and check `df` afterwards. And a background job that was
+mid-run when the disk filled dies with its output lost; re-run it after
+clearing rather than assuming it finished.
+
+**Cost of the cleanup, so budget it:** clearing `tasks/*.output` also removes
+the subagent transcripts, and `rm -rf $SHADOW/QOU` removes the lean-direct
+oleans — so the next `lean`-direct verification needs the dependency chain
+rebuilt from the restored cache before the file under test will compile.
+
 ## TRAP — a "N modules are missing" count taken from a two-root `LEAN_PATH` is WRONG (2026-09-05)
 
 The overlay-shadowing trap below, in its most expensive form: a coordinator
@@ -406,6 +448,19 @@ block's sidecar (128 files for one block) — revert all but yours.
    mutant modules go under a scratch root laid out `QOU/…/Mod.lean` — harness §10.
 
 ## TRAP — a theorem that IS a refutation needs more than the gate → `verification-harness.md` §19
+
+**A `False`-CONCLUDING theorem is a different animal — §19a.** The stock
+instruction *"prove `0 = 1` from the same hypotheses; if you can, they are
+contradictory and the theorem is vacuous"* **cannot discriminate**: `False.elim`
+gives you `0 = 1` for every *true* such theorem, and the hypothesis set is
+unsatisfiable *necessarily* (else the theorem is false). Both questions are
+answered before you open the file. The discriminating test is **DROP-ONE** — for
+each hypothesis, a witness satisfying the other `n−1` **and refuting that one**,
+stated as one conjunction so the second half is forced. Measured 2026-09-14: 6/6
+on `no_triangle_of_triples`. And put a **negative control on your own adversarial
+file** (4-5 deliberately false `example`s, require exit 1 at each seeded line) —
+the §19 guard-the-harness rule, which does not otherwise apply when nothing is
+`sed`-mutated.
 
 `exit 0` + clean `#print axioms` does **not** detect an unused or unsatisfiable
 hypothesis, and for a refutation that failure mode "proves" a route dead on

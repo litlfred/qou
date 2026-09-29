@@ -2,18 +2,24 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/thm-qou-obstruction-reduction",
   "@type": [
-    "folio:Theorem",
+    "folio-assistant-core:Theorem",
     "doco:Section"
   ],
   "label": "thm:qou-obstruction-reduction",
   "kind": "theorem",
-  "title": "In a QOU the classical limit obstruction is one-dimensional",
+  "title": "Conditional on the Wigner axiom: the obstruction is the Euler characteristic of the base",
   "uses": [
+    "papers/quantum-observable-universe/blocks/conj-wigner-axiom",
     "papers/quantum-observable-universe/blocks/def-classical-limit-obstruction",
-    "papers/quantum-observable-universe/blocks/thm-qu-to-qou"
+    "papers/quantum-observable-universe/blocks/thm-qu-to-qou",
+    "papers/quantum-observable-universe/blocks/rem-three-euler-characteristics"
   ],
   "cites": [
-    "references/yekutieli2010"
+    "references/yekutieli2010",
+    "references/brown-zhang-2008",
+    "references/feng-tsygan-1991",
+    "references/hadfield-krahmer-2005",
+    "references/weibel1994"
   ],
   "tags": [
     "obstruction",

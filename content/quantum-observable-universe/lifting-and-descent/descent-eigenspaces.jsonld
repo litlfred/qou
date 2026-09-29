@@ -2,7 +2,7 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prop-descent-eigenspaces",
   "@type": [
-    "folio:Proposition",
+    "folio-assistant-core:Proposition",
     "doco:Section"
   ],
   "label": "prop:descent-eigenspaces",
@@ -14,6 +14,9 @@
   ],
   "proofs": [
     "papers/quantum-observable-universe/blocks/prf-descent-eigenspaces"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-descent-eigenspaces-su2"
   ],
   "tags": [
     "descent",

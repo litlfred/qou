@@ -4,7 +4,7 @@
 # `beans` (https://github.com/hmans/beans) is the Go binary that backs the
 # bean-based session work-plan system used by this repo's agent skills
 # (see .claude/skills/local/todo-manager.md, session-intent.md, pending-show.md).
-# Issues are stored as markdown files under .beans/.
+# Issues are stored as markdown files under beans/defs/.
 #
 # Cloud sandboxes / fresh containers do NOT ship the binary, so this script
 # (re)installs it on demand. It is idempotent — safe to re-run.
@@ -49,9 +49,9 @@ else
   echo "beans installed to $BIN_DIR/beans (not yet on PATH)"
 fi
 
-# Quick smoke test when run from the repo root with a .beans/ dir present.
+# Quick smoke test when run from the repo root with a beans/defs/ dir present.
 # Fall back to the freshly-installed binary if BIN_DIR is not on PATH yet.
-if [ -d .beans ]; then
+if [ -d beans/defs ]; then
   echo "--- beans check ---"
   if command -v beans >/dev/null 2>&1; then
     beans check || true

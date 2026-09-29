@@ -1,4 +1,5 @@
 import Mathlib.CategoryTheory.Monoidal.Category
+import Mathlib.CategoryTheory.Monoidal.Braided.Basic
 import Mathlib.CategoryTheory.Category.Basic
 
 /-!
@@ -29,7 +30,7 @@ universe u v
     LaTeX: `\label{def:frobenius-hopf-substrate}`
     Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 -/
 structure FrobeniusHopfSubstrate (C : Type u) [Category.{v} C]
-    [MonoidalCategory C] where
+    [MonoidalCategory C] [BraidedCategory C] where
   /-- The underlying object `A` in `C`. -/
   obj : C
   /-- Multiplication `μ : A ⊗ A → A`. -/
@@ -78,19 +79,31 @@ structure FrobeniusHopfSubstrate (C : Type u) [Category.{v} C]
   /-- Coassociativity — the "coassociative" of axiom 2. -/
   comul_assoc :
     comul ≫ obj ◁ comul = comul ≫ (comul ▷ obj) ≫ (α_ obj obj obj).hom
-  /-- **Antipode axiom (left)** — `Δ ≫ S ▷ A ≫ μ = ε ≫ η`.
+  /-- **Antipode axiom 1 — `S` reverses multiplication.**
+      `μ ≫ S = (S ⊗ S) ≫ β ≫ μ`, in elements `S(ab) = S(b)S(a)`.
 
-      `S` is the convolution inverse of `id_A`, hence unique: the antipode is
-      *determined* by `(μ, η, Δ, ε)` and is not free data.
+      The braiding is why this structure requires `[BraidedCategory C]`.  That
+      is no new demand: the narrative already places the substrate at the level
+      of a *quantum universe*, which is braided monoidal. -/
+  antipode_anti_mul :
+    mul ≫ antipode = (antipode ⊗ₘ antipode) ≫ (BraidedCategory.braiding obj obj).hom ≫ mul
+  /-- **Antipode axiom 2 — `S` reverses comultiplication.**
+      `S ≫ Δ = Δ ≫ β ≫ (S ⊗ S)`. -/
+  antipode_anti_comul :
+    antipode ≫ comul = comul ≫ (BraidedCategory.braiding obj obj).hom ≫ (antipode ⊗ₘ antipode)
+  /-- **Antipode axiom 3 — `S` fixes the unit.** -/
+  antipode_unit : unit ≫ antipode = unit
+  /-- **Antipode axiom 4 — `S` preserves the counit.** -/
+  antipode_counit : antipode ≫ counit = counit
+  /-- **Antipode axiom 5 — `S` is involutive.**  `S ≫ S = 𝟙_A`.
 
-      Added 2026-09-14 on owner decision (beans `qou-c64q`, `qou-qjhc`).  Until
-      then this structure named `antipode` and constrained it with nothing, so
-      every question about `S` — `S² = id` included — was independent of the
-      definition rather than open.  Record of that state:
-      `QOU.AntipodeIndependence`; the uniqueness proof lives in
-      `QOU.QuantumObservableUniverse.AntipodeDetermined`. -/
-  antipode_left : comul ≫ antipode ▷ obj ≫ mul = counit ≫ unit
-  /-- **Antipode axiom (right)** — `Δ ≫ A ◁ S ≫ μ = ε ≫ η`. -/
-  antipode_right : comul ≫ obj ◁ antipode ≫ mul = counit ≫ unit
+      On its own this pins nothing: `S = 𝟙_A` satisfies it on every group
+      tested (`computations/probes/frobenius_hopf_intermediate_axioms_probe.py`).
+      It earns its place only alongside `antipode_anti_mul`, which `𝟙_A`
+      fails whenever `A` is non-commutative. -/
+  antipode_involutive : antipode ≫ antipode = 𝟙 obj
+  /-- **Antipode axiom 6 — `S` preserves the Frobenius form.**
+      `S ≫ λ = λ`, so the pairing `⟨a, b⟩ = λ(ab)` is `S`-invariant. -/
+  antipode_frobeniusForm : antipode ≫ frobeniusForm = frobeniusForm
 
 end QOU.AlgebraicSubstrate

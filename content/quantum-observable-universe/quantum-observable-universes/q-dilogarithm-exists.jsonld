@@ -2,12 +2,12 @@
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
   "@id": "papers/quantum-observable-universe/blocks/prop-q-dilogarithm-exists",
   "@type": [
-    "folio:Proposition",
+    "folio-assistant-core:Proposition",
     "doco:Section"
   ],
   "label": "prop:q-dilogarithm-exists",
   "kind": "proposition",
-  "title": "Existence of the $q$-dilogarithm",
+  "title": "Inhabitation of the $q$-dilogarithm structure",
   "uses": [
     "papers/quantum-observable-universe/blocks/def-q-dilogarithm",
     "papers/quantum-observable-universe/blocks/prop-q-logarithm-exists"
@@ -20,7 +20,7 @@
     "q-dilogarithm",
     "pentagon-identity"
   ],
-  "leanRef": "qou:QOU.QDilogarithm.exists",
+  "leanRef": "qou:QOU.QDilogarithm.exists_of_addZeroClass",
   "text": "q-dilogarithm-exists.md",
   "leanSource": "q-dilogarithm-exists.lean",
   "provenance": "authored"

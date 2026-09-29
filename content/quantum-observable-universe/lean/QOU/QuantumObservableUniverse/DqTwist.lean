@@ -101,7 +101,7 @@ namespace QOU.DqTwist
 universe u v
 
 variable {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] [CategoryTheory.Preadditive C]
     [CategoryTheory.Linear QOU.GroundRing.R_q C]
 
 /-- **The twist**: `T_q = qinv • 𝟙 + (1 − qinv) • π_V`.

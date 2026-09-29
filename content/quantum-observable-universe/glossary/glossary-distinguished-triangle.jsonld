@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-distinguished-triangle",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-distinguished-triangle",
+  "kind": "remark",
+  "title": "Distinguished triangle",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-glossary-r-linear-category"
+  ],
+  "tags": [
+    "glossary",
+    "homological-algebra",
+    "triangulated"
+  ],
+  "defines": [
+    "distinguished-triangle"
+  ],
+  "text": "glossary-distinguished-triangle.md",
+  "provenance": "authored"
+}

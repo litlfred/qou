@@ -1,18 +1,18 @@
 {
   "$schema": "https://typedoc.org/schema.json",
   "entryPoints": [
-    "folio-assistant/schemas/types.ts",
-    "folio-assistant/schemas/constraints.ts",
-    "folio-assistant/schemas/builders.ts",
-    "folio-assistant/schemas/qou-types.ts",
-    "folio-assistant/schemas/assistant-types.ts",
-    "folio-assistant/schemas/assistant-package.ts",
-    "folio-assistant/schemas/assistant-workflow.ts"
+    "folio-assistant/cat-harness/schemas/types.ts",
+    "folio-assistant/cat-harness/schemas/constraints.ts",
+    "folio-assistant/cat-harness/schemas/builders.ts",
+    "schemas/qou-types.ts",
+    "folio-assistant/cat-harness/schemas/assistant-types.ts",
+    "folio-assistant/cat-harness/schemas/assistant-package.ts",
+    "folio-assistant/cat-harness/schemas/assistant-workflow.ts"
   ],
-  "tsconfig": "folio-assistant/schemas/tsconfig.json",
+  "tsconfig": "folio-assistant/cat-harness/schemas/tsconfig.json",
   "out": "build/schema-docs",
   "name": "QOU Schema Documentation",
-  "readme": "folio-assistant/schemas/README.md",
+  "readme": "folio-assistant/cat-harness/schemas/README.md",
   "excludePrivate": true,
   "excludeInternal": true,
   "categorizeByGroup": true,

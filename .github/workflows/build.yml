@@ -7,7 +7,24 @@ on:
 
 jobs:
   publish:
-    uses: litlfred/folio-assistant/.github/workflows/publish.yml@main
+    # PINNED, and it MUST move together with `.folio-assistant-pin` (qou-pwp9).
+    #
+    # This read `@main` until 2026-09-26. That bypassed the pin entirely: the pin
+    # file governs what an agent measures in its local `folio-assistant/`
+    # checkout, while this line governed what actually PUBLISHES — so the two
+    # could disagree with no signal, which is the exact failure the pin exists to
+    # prevent one level down. The pin file's own text claims "bumping the platform
+    # is now a deliberate, reviewable edit to this one line"; with `@main` here
+    # that claim was false, because there were two lines and it named one.
+    #
+    # Verified input-compatible at this sha before pinning, not assumed: the
+    # pinned publish.yml declares `builder_image` under `workflow_call` and has
+    # ZERO required inputs, so the single input passed below is accepted and
+    # nothing else is owed.
+    #
+    # Keep this sha byte-identical to `.folio-assistant-pin`. When you bump one,
+    # bump both in the same commit.
+    uses: litlfred/folio-assistant/.github/workflows/publish.yml@37a36ce9296b95a9ad4862d51dc496ac44053143
     permissions:
       contents: write
       pull-requests: write

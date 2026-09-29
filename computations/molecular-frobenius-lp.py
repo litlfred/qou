@@ -184,6 +184,23 @@ print()
 # ══════════════════════════════════════════════════════════════
 
 def build_atom_nf(Z, N):
+    """LOCAL float64 copy -- **not** the canonical `build_atom_nf`.
+
+    The canonical one is `pyhecke.gram.build_atom_nf` (native-dispatched,
+    `gram.py:994`), which is what reaches the paper via
+    `all_nuclides_sdp_admissibility.py` -> `nuclear-interactions/demand-stability`.
+    This copy shares its name and its all-pairs topology but accumulates in
+    Python floats (`nf = [1.0, ...]`, `h/2` in f64), so it carries ~16 digits
+    whatever the substrate is set to. It is module-local and no other module
+    imports it.
+
+    Recorded rather than unified while enacting D1 (ledger `docs/coordination/2026-09-05-owner-gated-bean-triage.md`) (2026-09-13): the two
+    builders that decision is about are the CHAIN
+    (`mass_at_3A_proper.atom_braid_word_3A`) and the ALL-PAIRS
+    (`pyhecke.gram.build_atom_nf`); this third, shadowing copy was found while
+    disclosing them and is neither. Retiring it in favour of the canonical entry
+    is a behaviour change needing its own basis determination.
+    """
     nf = [1.0, 0, 0, 0, 0, 0]
     pc, nc = 0, 0
     for k in range(Z + N):

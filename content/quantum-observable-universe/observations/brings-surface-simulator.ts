@@ -1,4 +1,4 @@
-import { simulator } from "../../../folio-assistant/schemas/builders";
+import { simulator } from "../../../folio-assistant/cat-harness/schemas/builders";
 
 /**
  * Bring's Surface — quaternionic spectral resolvent visualisation.
@@ -9,7 +9,7 @@ import { simulator } from "../../../folio-assistant/schemas/builders";
 export default simulator({
   label: "sim:brings-surface",
   title: "Bring's Surface Simulator",
-  html: "folio-assistant/simulators/brings_surface.html",
+  html: "fsh-guts/deprecated/simulators/brings_surface.html",
   uses: ["def:quaternionic-spectral-resolvents"],
   tags: ["brings-surface", "spectral-resolvent", "3d", "simulation"],
   defaultView: {
