@@ -156,7 +156,7 @@ def other_library_root(src: Path, rest: str) -> str:
 def other_paper(src: Path, rest: str) -> str:
     """Same path under ANOTHER paper's lean tree."""
     mine = paper_root(src)
-    for lean in sorted(Path("content").glob("*/lean")):
+    for lean in sorted(Path("folio").glob("*/lean")):
         if paper_root(lean) == mine:
             continue
         for root in sorted(d for d in lean.iterdir() if d.is_dir() and d.name != ".lake"):
@@ -203,7 +203,7 @@ def is_record(lines: list[str], idx: int) -> bool:
     return any(m in window for m in RECORD_MARKERS)
 
 
-def audit(content_root: Path = Path("content")) -> list[dict]:
+def audit(content_root: Path = Path("folio")) -> list[dict]:
     lean_roots = sorted(
         d for d in content_root.glob("*/lean/QOU") if d.is_dir()
     )

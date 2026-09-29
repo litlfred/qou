@@ -75,7 +75,7 @@ from hecke_core import (  # noqa: E402
 set_compute_dps(50)
 
 ROOT = _pl.Path(__file__).resolve().parents[2]
-CONTENT = ROOT / "content" / "quantum-observable-universe"
+CONTENT = ROOT / "folio" / "quantum-observable-universe"
 
 Q = mp.mpf(Q_50_DIGIT_STR)
 H = Q - 1 / Q

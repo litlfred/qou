@@ -41,7 +41,7 @@ const val = (f: string) => {
   const i = argv.indexOf(`--${f}`);
   return i >= 0 ? argv[i + 1] : undefined;
 };
-const root = val("root") ?? "content";
+const root = val("root") ?? "folio";
 
 const sha12 = (p: string) =>
   createHash("sha256").update(readFileSync(p)).digest("hex").slice(0, 12);

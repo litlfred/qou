@@ -43,7 +43,7 @@ LEAN_ROOT = "folio/quantum-observable-universe/lean"
 # figure this script produced before that date was library-only -- including a
 # "0 sorries" claim that was wrong for the corpus and right only for the tree
 # it happened to walk.
-CONTENT_ROOT = "content"
+CONTENT_ROOT = "folio"
 
 
 def scan_paths(rev, root):

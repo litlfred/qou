@@ -83,7 +83,7 @@ function resolveLean(md: string): { path: string | null; kind: Finding["leanKind
   return { path: null, kind: "none" };
 }
 
-const root = process.argv[2] ?? "content";
+const root = process.argv[2] ?? "folio";
 const findings: Finding[] = [];
 
 for (const md of walk(root)) {

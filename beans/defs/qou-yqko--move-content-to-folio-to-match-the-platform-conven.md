@@ -8,7 +8,7 @@ tags:
     - platform
     - migration
 created_at: 2026-09-26T11:19:21Z
-updated_at: 2026-09-29T19:40:00Z
+updated_at: 2026-09-29T20:30:00Z
 parent: qou-n4r9
 blocked_by:
     - qou-8321
@@ -586,3 +586,52 @@ than the crash. A first grep for component-form `"content"` path joins finds
 **114 lines** on #7485's head. They are unclassified: some are the platform's
 own tree and some are not paths at all. This needs classifying and fixing
 **before #7485 merges.**
+## 2026-09-29 — a THIRD detector blindness, and it reported CLEAN: component-built paths
+
+Found by `check-citation-keys.py` crashing on this branch while it passed on
+`main`. The sweep matched the STRING `content/`. Code that builds the path from
+components never contains that string:
+
+    os.path.join(REPO, "content", "schema", "references.ts")
+    REPO / "content" / "quantum-observable-universe"
+    ap.add_argument("--root", default="content")
+    git ls-files -- content
+
+The crash was the lucky case. Everywhere else the failure was **silent**: a glob
+or `rglob` over a directory that no longer exists yields nothing, and the tool
+exits 0 over an empty corpus.
+
+**Calibrated both ways.** Five of the fixed scripts, run on this branch's
+UNFIXED head against `main`, all exit 0 but with much less output:
+`dead-lean-pointer-audit` 4 lines vs 70, `duplicate-class-declaration-census`
+7 vs 1475, `lean-cited-not-proved-audit` 19 vs 811. After the fix, nine
+scripts produce output identical to `main`, apart from the path rename.
+
+**What was fixed: 128 lines in 104 files, all qou's own folio root, all by
+existence test.**
+- 106 found with join, `/`, `Path(`, `resolve(` or `[` patterns: 36 sub-paths
+  (each tested to land on a real file under `folio/`), 68 bare roots, and 2
+  `known-constant-literal-audit.py` default lists.
+- 19 in a second form that pattern could not see: `--root default="content"`,
+  `?? "content"`, root tuples, and multi-line join arguments. The w-lambda
+  audit's `("content", "content")` is a (label, path) pair, so only the PATH
+  half changed. The label is an output key.
+- 2 git pathspecs in `scripts/lib/ci-lean-scope.sh` (`-- content`). Unfixed,
+  the Lean sibling CI scope is EMPTY. Fixed, it gives 938 files, the same as
+  `main`.
+- `check-citation-keys.py`'s printed label.
+
+**Deliberately left:** 4 `a["content"]` JSON field reads in
+`human-agent-discussions/tools/` (not paths), 3 in `fsh-guts/deprecated/`
+(parked; #7485 left the tree unswept), 5 tag lists, 1 comment, the math term
+"partition content", and a docstring narrating an old bug.
+
+**Verified:** 74 `.py` parse; 11 `.ts` transpile; `bash -n` passes. The
+`precision-gates.sh` `RED:` line is still byte-identical to `main`
+(`140f153e363126e2`), NEW 0 / REGRESSED 0. `check-citation-keys.py` gives
+8481 sites, 889 entries, 4029 labels, and 13 keys over 39 sites, all the same
+as `main`.
+
+**The general lesson:** the existence test in §6 of the PR is right, but it has to
+run over paths the code BUILDS, not over string literals. A path assembled
+from parts never appears as a string.

@@ -658,7 +658,7 @@ def selftest() -> int:
 def main():
     if "--selftest" in sys.argv[1:]:
         return selftest()
-    roots = sys.argv[1:] or ["content"]
+    roots = sys.argv[1:] or ["folio"]
     hits = []
     scanned = 0
     for root in roots:

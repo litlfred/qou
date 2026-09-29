@@ -45,7 +45,7 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-CONTENT = Path("content")
+CONTENT = Path("folio")
 
 
 def slots(path: Path):

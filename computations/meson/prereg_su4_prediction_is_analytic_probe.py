@@ -61,7 +61,7 @@ from math import comb
 
 REG = pathlib.Path(__file__).resolve().parents[2] / "docs" / "audits" / \
     "prereg-free-choice-2026-08-27.json"
-GATE = pathlib.Path(__file__).resolve().parents[2] / "content" / \
+GATE = pathlib.Path(__file__).resolve().parents[2] / "folio" / \
     "quantum-observable-universe" / "lean" / "QOU" / "MassTheory" / \
     "SU4SupermultipletGate.lean"
 

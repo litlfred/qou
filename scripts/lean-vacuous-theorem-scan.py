@@ -133,7 +133,7 @@ def main() -> int:
     print("self-test passed\n", file=sys.stderr)
 
     hits = []
-    for p in sorted(pathlib.Path("content").rglob("*.lean")):
+    for p in sorted(pathlib.Path("folio").rglob("*.lean")):
         if ".lake" in p.parts:
             continue
         try:

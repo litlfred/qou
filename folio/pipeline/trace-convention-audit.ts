@@ -1010,7 +1010,7 @@ function main() {
       if (t) targets.push(t);
     }
   }
-  if (!targets.length) targets.push(join(repoRoot, "content"));
+  if (!targets.length) targets.push(join(repoRoot, "folio"));
 
   const tsPaths = [...new Set(targets.flatMap(expandTargets))].sort();
   const findings: Finding[] = [];

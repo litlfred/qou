@@ -73,7 +73,7 @@ _spec = importlib.util.spec_from_file_location(
 dupcensus = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(dupcensus)
 
-CONTENT = ROOT / "content"
+CONTENT = ROOT / "folio"
 
 CLASS_PROP = re.compile(
     r"^\s*(?:noncomputable\s+|private\s+|protected\s+|scoped\s+|local\s+)*"

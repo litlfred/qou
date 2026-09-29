@@ -88,7 +88,7 @@ PRODUCER = os.path.join(os.path.dirname(REPO), "folio-assistant",
 FIELDS = ("title", "title_lines", "authors_raw", "abstract", "arxiv", "doi")
 
 OVERRIDES = os.path.join(REPO, "docs", "audits", "library-title-overrides.json")
-REFS = os.path.join(REPO, "content", "schema", "references.ts")
+REFS = os.path.join(REPO, "folio", "schema", "references.ts")
 
 
 def registered_titles() -> dict[str, str]:

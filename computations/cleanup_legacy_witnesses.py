@@ -145,7 +145,7 @@ def _load_external_text() -> str:
     for d in (
         REPO_ROOT / ".github" / "workflows",
         REPO_ROOT / "scripts",
-        REPO_ROOT / "content" / "pipeline",
+        REPO_ROOT / "folio" / "pipeline",
         REPO_ROOT / "tools",
     ):
         if not d.exists():

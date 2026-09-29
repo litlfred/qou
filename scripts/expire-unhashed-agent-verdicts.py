@@ -65,7 +65,7 @@ def dumps_like(original: str, doc: object) -> str:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--root", default="content")
+    ap.add_argument("--root", default="folio")
     ap.add_argument("--apply", action="store_true", help="write (default: dry-run)")
     args = ap.parse_args()
 

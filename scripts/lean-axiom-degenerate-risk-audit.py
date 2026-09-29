@@ -360,7 +360,7 @@ def main() -> int:
     ap.add_argument("--selftest", action="store_true")
     ap.add_argument("--rev", default="",
                     help="accepted and ignored; the known-false axioms are embedded fixtures")
-    ap.add_argument("--root", default="content")
+    ap.add_argument("--root", default="folio")
     ap.add_argument("--top", type=int, default=25)
     args = ap.parse_args()
 

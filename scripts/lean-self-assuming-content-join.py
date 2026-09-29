@@ -43,7 +43,7 @@ BANNER = re.compile(
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--root", default="content")
+    ap.add_argument("--root", default="folio")
     a = ap.parse_args()
 
     r = subprocess.run([sys.executable, AUDIT, a.root], capture_output=True, text=True)

@@ -39,7 +39,7 @@ DEFAULT_ROOT = pathlib.Path("folio/quantum-observable-universe/lean/QOU")
 # majority of the corpus's axioms. Reporting the library figure without saying so
 # understates the assumption surface by an order of magnitude -- measured 2026-08-26,
 # 22 in the library against 198 corpus-wide. Never quote one for the other.
-CORPUS_ROOT = pathlib.Path("content")
+CORPUS_ROOT = pathlib.Path("folio")
 
 PATTERNS = {
     "sorry": re.compile(r"(?<![\w.])sorry(?![\w])"),

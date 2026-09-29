@@ -122,7 +122,7 @@ def main():
     checks = []
     exts = ["py", "md", "ts", "lean", "json"]
     layers = {}
-    for lab, p in (("content", "content"), ("probes", "computations/probes"),
+    for lab, p in (("content", "folio"), ("probes", "computations/probes"),
                    ("audits", "computations/audits"), ("docs", "docs")):
         h = hits(p, exts)
         layers[lab] = None if h is None else len(h)

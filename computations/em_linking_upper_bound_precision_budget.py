@@ -75,7 +75,7 @@ RATIOS = ["1.1", "1.5", "2", "10"]
 
 # The upper-bound technology one would go looking for.
 ACQUISITION_TERMS = re.compile(r"ropelength|ideal knot", re.IGNORECASE)
-SCAN_ROOTS = ["docs", "computations", "content", "library"]
+SCAN_ROOTS = ["docs", "computations", "folio", "library"]
 
 # This probe NAMES the terms it searches for, and writes them into its own
 # witness. Any artifact it owns is therefore a guaranteed self-hit and must be

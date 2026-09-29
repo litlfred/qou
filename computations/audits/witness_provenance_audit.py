@@ -211,7 +211,7 @@ def build_reference_index() -> tuple[set[str], "dict[str, int]"]:
     paper: set[str] = set()
     try:
         out = subprocess.run(
-            ["grep", "-rhoE", pat, str(repo / "content")],
+            ["grep", "-rhoE", pat, str(repo / "folio")],
             capture_output=True, text=True, timeout=120,
         ).stdout
         paper = set(out.split())

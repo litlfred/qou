@@ -634,7 +634,7 @@ function main(): number {
   );
 
   const repoRoot = process.cwd();
-  const roots = targets.length ? targets : [join(repoRoot, "content")];
+  const roots = targets.length ? targets : [join(repoRoot, "folio")];
   const tsPaths = new Set<string>();
   for (const t of roots) {
     const abs = resolve(t);

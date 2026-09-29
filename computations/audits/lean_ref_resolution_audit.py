@@ -75,7 +75,7 @@ sys.path.insert(0, str(HERE.parent))
 from witness_base import WitnessBuilder  # noqa: E402
 
 REPO_ROOT = HERE.parent.parent
-CONTENT_ROOT = REPO_ROOT / "content"
+CONTENT_ROOT = REPO_ROOT / "folio"
 
 # Mirror of folio-assistant/cat-harness/schemas/lean-packages.ts LEAN_PACKAGES.
 # Kept inline here because Python doesn't import .ts and the registry

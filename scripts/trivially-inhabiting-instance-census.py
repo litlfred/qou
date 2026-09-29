@@ -75,7 +75,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CONTENT = ROOT / "content"
+CONTENT = ROOT / "folio"
 
 # `instance foo (a : T) [Inst] : ClassName args where` / `:= …`, possibly
 # wrapped across lines. Captured lazily to the LAST top-level `:` before the
