@@ -189,12 +189,24 @@ CLONE_ABS="$(cd "$CLONE_DIR" && pwd)" || die "cannot resolve $CLONE_DIR"
 # Probe for a FILE the platform must have, not for the directory: a stray
 # empty `cat-harness/` would otherwise answer "split" and point the link at
 # nothing.
+#
+# The LINK points at the clone ROOT in both layouts (bean qou-msp2). Every qou
+# importer writes the split path in full — `folio-assistant/cat-harness/<x>` —
+# since the 2026-09-26 pin bump re-pointed them. Until 2026-09-29 this script
+# linked one level deeper, to `<clone>/cat-harness`, so each of those imports
+# resolved to `cat-harness/cat-harness/<x>` and failed: `run-validate.ts` could
+# not start after a stock setup. The layout is still DETECTED, because the
+# bibliography bridge below applies to a pre-split clone only, but it is kept
+# in PLATFORM_SPLIT rather than inferred from where the link points.
 if [ -f "$CLONE_ABS/cat-harness/schemas/types.ts" ]; then
-  PLATFORM_ABS="$CLONE_ABS/cat-harness"
-  PLATFORM_LAYOUT="split (cat-harness/)"
+  PLATFORM_ABS="$CLONE_ABS"
+  PLATFORM_SPLIT=1
+  PLATFORM_LAYOUT="split (code under cat-harness/)"
 elif [ -f "$CLONE_ABS/schemas/types.ts" ]; then
   PLATFORM_ABS="$CLONE_ABS"
-  PLATFORM_LAYOUT="pre-split (clone root)"
+  PLATFORM_SPLIT=0
+  PLATFORM_LAYOUT="pre-split (code at clone root)"
+  warn "pre-split platform clone: qou imports folio-assistant/cat-harness/<x>, which a pre-split clone does not have"
 else
   # Neither answers. Do NOT guess: linking to a root that holds no schemas/
   # produces a link that exists and resolves nothing, which is the state this
@@ -287,7 +299,7 @@ esac
 # So this whole block is dead the moment `.folio-assistant-pin` moves past the
 # split. It is kept, guarded, because the pin has NOT moved yet: until it does,
 # a fresh clone is pre-split and needs these links exactly as before.
-if [ "$PLATFORM_ABS" = "$CLONE_ABS" ]; then
+if [ "$PLATFORM_SPLIT" = 0 ]; then
   # qa-checkers-extended.ts (pre-split) resolved references.ts relative to the
   # PLATFORM clone (CONTENT_DIR = <clone>/content), but the bibliography source
   # of truth lives in THIS repo at folio/schema/references.ts. Without this
