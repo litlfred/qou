@@ -46,7 +46,7 @@ cd content && bun run validate
 
 | Consumer | Path it resolves through |
 |---|---|
-| `content/schema/*.ts` shims + content blocks | `folio-assistant/schemas/…` |
+| `folio/schema/*.ts` shims + content blocks | `folio-assistant/schemas/…` |
 | `package.json` scripts (`validate`, `build:content`, `export-json`, `test`, `lint`) | `folio-assistant/content/pipeline/…` (and `folio-assistant/` for tests) |
 | CI ([`.github/workflows/build.yml`](.github/workflows/build.yml)) | the platform's reusable workflow on GitHub — **no local clone needed** |
 

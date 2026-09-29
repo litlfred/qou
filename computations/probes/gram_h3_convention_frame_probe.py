@@ -340,7 +340,7 @@ def main() -> int:
         ),
         "context": {
             "block": "prop:gram-matrix-h3-symbolic",
-            "lean": "content/quantum-observable-universe/lean/QOU/Interactions/GramMatrixH3Symbolic.lean",
+            "lean": "folio/quantum-observable-universe/lean/QOU/Interactions/GramMatrixH3Symbolic.lean",
             "bean": "qou-bm4i",
             "scope": ("(b) structural exclusion per AGENTS.md — the invariant is "
                       "the exact determinant factorisation in check4, not a probe"),

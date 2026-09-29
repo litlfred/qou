@@ -76,7 +76,7 @@ LEAN_OPTS = ["-DautoImplicit=false", "-s", "65536"]
 ROOT = pathlib.Path(
     subprocess.run(["git", "rev-parse", "--show-toplevel"],
                    capture_output=True, text=True, check=True).stdout.strip())
-PKG = ROOT / "content/quantum-observable-universe/lean"   # default; see packages()
+PKG = ROOT / "folio/quantum-observable-universe/lean"   # default; see packages()
 LIB = "QOU"
 
 

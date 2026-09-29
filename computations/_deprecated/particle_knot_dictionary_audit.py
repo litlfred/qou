@@ -59,7 +59,7 @@ def audit_file(path: Path):
 
 
 def main():
-    base = Path("content/quantum-observable-universe")
+    base = Path("folio/quantum-observable-universe")
     chapters = Path("chapters")
 
     counts = defaultdict(int)

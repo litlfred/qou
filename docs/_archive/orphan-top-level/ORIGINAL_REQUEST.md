@@ -11,7 +11,7 @@ Please do the following:
 1. Wait for Batch 5 to complete (you can monitor `gh pr list` or branch status).
 2. Once the workspace is clear, start a loop:
    a. Switch to `main` and pull latest changes: `git checkout main && git pull --rebase`
-   b. Find the next 10 `sorry` or `by sorry` stubs in `content/quantum-observable-universe/lean/QOU/`. If 0, YOU ARE DONE! Stop the loop.
+   b. Find the next 10 `sorry` or `by sorry` stubs in `folio/quantum-observable-universe/lean/QOU/`. If 0, YOU ARE DONE! Stop the loop.
    c. Create a new branch `claude/prove-stubs-batch<N>-2026-06-23`
    d. Spawn 10 worker subagents (using `invoke_subagent` with `teamwork_preview` or `self`) to replace the `sorry` statements with valid Lean proofs (with `import Mathlib`).
    e. Wait for all 10 workers to finish.

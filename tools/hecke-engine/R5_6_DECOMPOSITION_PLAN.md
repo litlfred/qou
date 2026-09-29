@@ -214,5 +214,5 @@ tools/hecke-engine/
 - `src/cross_level_embedding.rs` — produces the linear coupling
   constraints joining tower edges (used by R5.7, included as
   comments in this scaffold for future hookup).
-- `content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md`
+- `folio/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md`
   — formulation of the SDP this code implements.

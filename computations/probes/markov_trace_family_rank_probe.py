@@ -124,7 +124,7 @@ coincidence"*.
 No published source for `rank = n` was found in `library/` (searched INDEX,
 `sections/`, and the `ocr/` tier).  That is **not** evidence of novelty:
 **Wenzl 1988** (*Hecke algebras of type A_n and subfactors*, Invent. Math. 92)
-is cited in `content/schema/references.ts` but is **NOT ingested into
+is cited in `folio/schema/references.ts` but is **NOT ingested into
 `library/`**, and it is the most likely classical home for this statement --
 the polynomiality of the weights in `z` is exactly the route taken above.
 22 further PDFs sit un-ingested in `uploads/`, invisible to the corpus grep.

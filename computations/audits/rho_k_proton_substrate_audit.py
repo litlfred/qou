@@ -9,9 +9,9 @@ PR #1272's γγ-pair-production-decomposition probe identified that
 the 2.89% VolDensity(𝓑₃) residual is NOT a simple h²-coefficient swap
 inside `linking_weight`. Tracing through the canonical 6-term
 mass-endomorphism formula
-([`prop:atom-knot-mass-derivation`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md))
+([`prop:atom-knot-mass-derivation`](../../folio/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md))
 shows the actual closure problem is the **categorical density ρ_K**
-of [`prop:atomic-mass-gb-nf`](../../content/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md):
+of [`prop:atomic-mass-gb-nf`](../../folio/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md):
 
   • The structural 6-term sum at q₀ gives |sum| ≈ 2.21 (= 1.13 MeV)
   • CODATA m_p = 938.27 MeV
@@ -36,7 +36,7 @@ The Borromean `linking_weight` parameterization is just
    same closure).
 
 5. Reports the **graded substrate expansion** of ρ_K per
-   [`prop:rho-k-graded-expansion`](../../content/quantum-observable-universe/braids-and-knots/rho-k-graded-expansion.md):
+   [`prop:rho-k-graded-expansion`](../../folio/quantum-observable-universe/braids-and-knots/rho-k-graded-expansion.md):
      • LO piece: `Z m_p + N m_n + Z m_e` (proved, Wenzl 1988
        Markov multiplicativity) — but for A=1 proton this reduces to
        m_p itself, so the LO piece is trivial here.
@@ -54,8 +54,8 @@ existing decomposition + the (empirical) value of ρ_K^𝔭. The
 substrate derivation of ρ_K's pair-gen component remains open.
 
 Ref: [`docs/audits/2026-05-25-non-abelian-stokes-reading-a-exploration.md`](../../docs/audits/2026-05-25-non-abelian-stokes-reading-a-exploration.md)
-Ref: [`prop:atom-knot-mass-derivation`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md)
-Ref: [`prop:atomic-mass-gb-nf`](../../content/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md)
+Ref: [`prop:atom-knot-mass-derivation`](../../folio/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md)
+Ref: [`prop:atomic-mass-gb-nf`](../../folio/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md)
 """
 from __future__ import annotations
 

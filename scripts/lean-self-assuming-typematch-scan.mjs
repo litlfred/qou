@@ -2,7 +2,7 @@
 /**
  * Name-independent self-assuming-projection detector.
  *
- * The in-repo scanner (`content/pipeline/lean-vacuity-axiom-audit.ts`,
+ * The in-repo scanner (`folio/pipeline/lean-vacuity-axiom-audit.ts`,
  * `detectSelfAssuming`) gates a field-projection on the projected field's
  * NAME matching `CONCLUSION_FIELD` (`claim_`, `_holds`, `_eq`, …). Any class
  * field named outside that convention is invisible no matter how plainly it
@@ -19,7 +19,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const ROOT = process.argv[2] ?? "content/quantum-observable-universe";
+const ROOT = process.argv[2] ?? "folio/quantum-observable-universe";
 
 /* ---------- file walk ---------- */
 function walk(dir, out = []) {

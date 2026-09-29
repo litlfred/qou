@@ -30,7 +30,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ATLAS_MD = (
     HERE.parent
-    / "content"
+    / "folio"
     / "quantum-observable-universe"
     / "appendix-knot-periodic-table"
     / "recursive-atom-knot-atlas.md"

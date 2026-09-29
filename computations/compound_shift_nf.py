@@ -11,7 +11,7 @@ view:
     `D(u) = 2^{2A+1} u^shift (1+u²)^{3A-1}` and per-new-nucleon
     additive linearity `shift(Z,N) = 18Z + 21N + 1` (canonical pppnnn
     ordering) → see
-    content/quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md
+    folio/quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md
   • `claude/improve-charge-precision-AXKIA` (merged) — δ_q decoration
     and the multiplicative chain
     `α_EM⁻¹ = q · [9]_q · [10]_q = q · α_shift(T_{2,9}) · α_shift(T_{3,5})`

@@ -236,6 +236,6 @@ src = "\n".join(L)
 # Lean uses ∧ / ∀ / ∈ ; emit them after assembling to keep the generator ASCII.
 src = (src.replace("@A@", "∧").replace("@O@", "∨").replace("forall ", "∀ ")
           .replace(" in (", " ∈ (").replace("Real", "ℝ"))
-out = "/home/user/qou/content/quantum-observable-universe/lean/QOU/Knot/L6a4AngleStructure.lean"
+out = "/home/user/qou/folio/quantum-observable-universe/lean/QOU/Knot/L6a4AngleStructure.lean"
 open(out, "w").write(src + "\n")
 print("wrote", out, "-", len(src.splitlines()), "lines")

@@ -1,7 +1,7 @@
 """per_atom_hyperbolic_volume_witness.py
 
 Compute Vol(K_atom) for the canonical atom-knot atlas (per
-`content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md`)
+`folio/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md`)
 using SnapPy.  These volumes are the input to the per-knot
 `per_knot_density_per_block(vol_K, tr_M_K, q)` evaluation for Subgoal-1
 m_avg closure.

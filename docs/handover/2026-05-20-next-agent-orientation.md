@@ -39,7 +39,7 @@ Do **not** skim. Each one assumes the prior reads landed.
 | 2 | [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md) | The "one-page-up" map of the derivation chain with per-step math, paper refs, canonical compute scripts, and the Phase 5 findings table (5b through 5q). **Read this before touching any math-affecting code.** |
 | 3 | [`docs/precision-goals.md`](../precision-goals.md) | The L1/L2 precision-leg distinction. Don't conflate "1 ppb compute" with "100× experimental" — they're independent. |
 | 4 | [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](../audits/2026-05-18-delta-lambda-gating-context.md) | The Δ_λ Track-A blocker: six ansätze have failed on deuteron binding. Do **not** propose a seventh fit. Productive directions are GAP-A-3, GAP-A-4, or Option E (Kashiwara crystal). |
-| 5 | [`content/quantum-observable-universe/notation/notation-register.md`](../../content/quantum-observable-universe/notation/notation-register.md) + [`notation-collisions.md`](../../content/quantum-observable-universe/notation/notation-collisions.md) | Symbol register. AGENTS.md no longer mirrors per-chapter tables (drifted in Phase 5n) — these are the single source of truth. |
+| 5 | [`folio/quantum-observable-universe/notation/notation-register.md`](../../folio/quantum-observable-universe/notation/notation-register.md) + [`notation-collisions.md`](../../folio/quantum-observable-universe/notation/notation-collisions.md) | Symbol register. AGENTS.md no longer mirrors per-chapter tables (drifted in Phase 5n) — these are the single source of truth. |
 | 6 | [`docs/coordination/1ppb-categorical-chain.md`](../coordination/1ppb-categorical-chain.md) | Coordination ledger — append a row when you start substantive work. |
 | 7 | The pre-merge commit log: `git log --oneline 2f7eabe1e~20..2f7eabe1e` | Walk the merged content; the 18 commits trace Phase 5l → 5l.1 → 5k.2 → 5l.2 → 5o → 5q. |
 
@@ -55,7 +55,7 @@ Do **not** skim. Each one assumes the prior reads landed.
        tr_M(𝓑_K^vac) = tr_M^3(𝓑_p, q)^Z · tr_M^3(𝓑_n, q)^N
    ```
    Verified at mpfr-50-dps across 5 q-values in the substrate window.
-   See [`prop:constit-factor-tau-M-proton-identity`](../../content/quantum-observable-universe/braids-and-knots/constit-factor-tau-M-proton-identity.md)
+   See [`prop:constit-factor-tau-M-proton-identity`](../../folio/quantum-observable-universe/braids-and-knots/constit-factor-tau-M-proton-identity.md)
    (Lean `pow_succ + field_simp + ring`, sorry-free; the only axiom is
    the §3b-cond `MarkovTraceDisjoint` class which encodes Wenzl §1.7
    disjoint multiplicativity).
@@ -87,7 +87,7 @@ Do **not** skim. Each one assumes the prior reads landed.
 - [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md):
   the single page that orients math-affecting work. Updated whenever a
   Phase finding lands. §5 holds the pipeline-discipline migration backlog.
-- [`notation-collisions.md` §"Archimedean / fibre / forgetful functors"](../../content/quantum-observable-universe/notation/notation-collisions.md):
+- [`notation-collisions.md` §"Archimedean / fibre / forgetful functors"](../../folio/quantum-observable-universe/notation/notation-collisions.md):
   Phase 5o disambiguation note — three functors that were getting
   conflated in chat / commits.
 

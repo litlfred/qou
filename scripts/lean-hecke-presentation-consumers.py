@@ -28,7 +28,7 @@ than by proximity.  Run from the paper root:
 
     python3 ../../scripts/lean-hecke-presentation-consumers.py
 
-or from the repo root with --root content/quantum-observable-universe.
+or from the repo root with --root folio/quantum-observable-universe.
 """
 from __future__ import annotations
 

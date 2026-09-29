@@ -99,7 +99,7 @@ measurements improve — no framework change required.
 > 2026-08-21; this file was not. Bean `qou-m4au`.
 
 q₀ is pinned from the CODATA m_p/m_e ratio (0.017 ppb, the most precise
-available — see [`epistemic-status-of-calibrations.md`](../content/quantum-observable-universe/observations/epistemic-status-of-calibrations.md)).
+available — see [`epistemic-status-of-calibrations.md`](../folio/quantum-observable-universe/observations/epistemic-status-of-calibrations.md)).
 Its 0.017 ppb uncertainty is **inherited from that one measurement**, and
 **improves one-for-one as CODATA improves m_p/m_e**. It is *not* a limit
 of the framework. (If the QOU substrate picture is correct, the highest
@@ -274,7 +274,7 @@ truncation is ~10⁻⁶⁰ absolute (10⁻⁵¹ ppb), far exceeding 1 ppQ.
 trace terminates at $M = 8$ for the proton/neutron (integer coefficients
 $a_m \in \mathbb{Z}[u]$, evaluated at $u_0 = \sqrt{q_0}$). No
 truncation error exists — the formula is a finite sum. See
-[`prop:habiro-precision-ladder-equivalence`](../content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.md).
+[`prop:habiro-precision-ladder-equivalence`](../folio/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.md).
 
 > **Historical note (superseded).** The "precision ladder" (c_k
 > coefficients at each "rung" N=3, N=4, N=5) was the Taylor expansion
@@ -410,7 +410,7 @@ sub-target. See [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](aud
 > terminates at $M = 8$ (integer coefficients $a_m \in \mathbb{Z}[u]$).
 > Evaluating at $u_0 = \sqrt{q_0}$ gives the EXACT Q_β prediction at
 > 5.744 ppb — below the 7.80 ppb target. No per-rung approximation
-> needed. See [`prop:habiro-precision-ladder-equivalence`](../content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.md).
+> needed. See [`prop:habiro-precision-ladder-equivalence`](../folio/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.md).
 
 For light-atom binding energies (B_D, B_T, B_³He, B_⁴He), the experimental
 σ_B is dominated by the AME mass-table uncertainty (~10⁻⁶ for these atoms),
@@ -559,7 +559,7 @@ substrate-derivation of q₀**, four of the five L2 misses are gated on the
 **experimental neutron Q_β measurement**, not on any framework compute:
 
 - **Anchor-invariance prune** — `QOU.QBeta.SRigidity.no_anchor_invariant_realizes_swing`
-  ([`SRigidityPrune.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/SRigidityPrune.lean),
+  ([`SRigidityPrune.lean`](../folio/quantum-observable-universe/lean/QOU/QBeta/SRigidityPrune.lean),
   sorry-free): no *anchor-invariant* datum can equal the c₃ carrier `S` (which
   swings 2.44 % between the proton and muon q₀ anchors). This excludes deformed
   median resummation (anchor-blind) and classical CS/Stokes (anchor-invariant) as

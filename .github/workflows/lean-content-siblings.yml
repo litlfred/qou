@@ -20,7 +20,7 @@ name: lean-content-siblings
 # nothing and are never compiled either." BOTH of the last two clauses are now
 # false, and the second was already false the day the note was written.
 #
-#   * `globs` is NOT unset. `content/quantum-observable-universe/lean/lakefile.toml`
+#   * `globs` is NOT unset. `folio/quantum-observable-universe/lean/lakefile.toml`
 #     declares `globs = ["QOU", "QOU.+"]`, and `QOU.+` is `Glob.andSubmodules`,
 #     so the library target is the WHOLE tree. That landed on 2026-08-08 (bean
 #     qou-rc7b) — the same date as this note, which is presumably how they
@@ -132,14 +132,14 @@ jobs:
       - name: Compile-validity gate (scope=changed)
         if: steps.changed.outputs.files != '' && (inputs.scope || 'all') == 'changed'
         run: |
-          bun run content/pipeline/lean-vacuity-axiom-audit.ts \
+          bun run folio/pipeline/lean-vacuity-axiom-audit.ts \
             ${{ steps.changed.outputs.files }} \
             --quiet \
             --fail-on proof-no-trivial-type-mismatch,lean-import-after-content
       - name: Compile-validity report (scope=all, not a gate)
         if: steps.changed.outputs.files != '' && (inputs.scope || 'all') == 'all'
         run: |
-          bun run content/pipeline/lean-vacuity-axiom-audit.ts \
+          bun run folio/pipeline/lean-vacuity-axiom-audit.ts \
             ${{ steps.changed.outputs.files }} || true
       - name: Agent-inspection ledger gate (scope=changed)
         if: steps.changed.outputs.files != '' && (inputs.scope || 'all') == 'changed'
@@ -150,7 +150,7 @@ jobs:
           # CI to the global inspection backlog (main may carry uninspected
           # candidates at any time), blocking unrelated PRs — the same reason
           # the compile-validity gate is diff-scoped.
-          bun run content/pipeline/lean-vacuity-axiom-audit.ts \
+          bun run folio/pipeline/lean-vacuity-axiom-audit.ts \
             ${{ steps.changed.outputs.files }} \
             --quiet \
             --check-ledger docs/audits/lean-vacuity-review-ledger.json
@@ -186,7 +186,7 @@ jobs:
         with:
           path: |
             .lake
-            content/quantum-observable-universe/lean/.lake
+            folio/quantum-observable-universe/lean/.lake
           key: lean-cache-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
           restore-keys: |
             lean-cache-${{ runner.os }}-

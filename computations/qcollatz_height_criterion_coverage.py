@@ -2,7 +2,7 @@
 """How much of the q-Collatz word space does the height criterion exclude?
 
 Enabled by the exact closed form proved in
-content/quantum-observable-universe/lean/QOU/AppendixSurreals/collatz_general_word.lean
+folio/quantum-observable-universe/lean/QOU/AppendixSurreals/collatz_general_word.lean
 (`wordNum_map_closed`):
 
     phi(n_w) = sum_{i<k, w i} 3^(#odd steps after i) * 2^i

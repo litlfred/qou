@@ -117,7 +117,7 @@ def main() -> None:
     ap.add_argument("--log-dir", default="/tmp/lean-cone-logs")
     ap.add_argument("--top", type=int, default=15)
     ap.add_argument("--lean-root",
-                    default="content/quantum-observable-universe/lean",
+                    default="folio/quantum-observable-universe/lean",
                     help="root the module names resolve against, for the "
                          "sorry-free-illusion cross-check")
     args = ap.parse_args()

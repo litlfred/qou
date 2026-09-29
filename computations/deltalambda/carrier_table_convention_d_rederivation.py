@@ -5,7 +5,7 @@ carrier table under convention D. No fit, no tuning, no re-baselining.
 
 # Ref: docs/audits/2026-08-26-carrier-saturation-five-failures-diagnosis.md
 # Ref: docs/audits/2026-07-13-carrier-saturation-crossover-mechanism.md
-# Ref: content/quantum-observable-universe/mass-theory/wedderburn-trace-identity.md
+# Ref: folio/quantum-observable-universe/mass-theory/wedderburn-trace-identity.md
 
 WHY THIS EXISTS, AND WHY IT IS NOT carrier_saturation_mechanism_probe.py.
 

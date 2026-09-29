@@ -38,7 +38,7 @@ name: lean-orphan-gate
 on:
   # CI auto-triggers disabled (owner directive 2026-06-30: Actions billing).
   # Runnable on demand, and locally:
-  #   bun run content/pipeline/lean-orphan-audit.ts --diff <changed .lean files>
+  #   bun run folio/pipeline/lean-orphan-audit.ts --diff <changed .lean files>
   workflow_dispatch:
 
 jobs:
@@ -62,6 +62,6 @@ jobs:
         # Paths outside the library tree are ignored by the script, so passing
         # the PR's whole .lean diff is safe.
         run: |
-          bun run content/pipeline/lean-orphan-audit.ts --diff ${{ steps.changed.outputs.files }}
+          bun run folio/pipeline/lean-orphan-audit.ts --diff ${{ steps.changed.outputs.files }}
       - name: Survey (informational, never fails)
-        run: bun run content/pipeline/lean-orphan-audit.ts
+        run: bun run folio/pipeline/lean-orphan-audit.ts

@@ -7,7 +7,7 @@
 
 ## The single remaining gap
 
-[`SYTHookFormulaGeneral.dimAitkenIdentity`](../../content/quantum-observable-universe/lean/QOU/Mathlib/SYTHookFormulaGeneral.lean)
+[`SYTHookFormulaGeneral.dimAitkenIdentity`](../../folio/quantum-observable-universe/lean/QOU/Mathlib/SYTHookFormulaGeneral.lean)
 is the only `sorry` in the SYT hook-length cone. Everything else is machine-checked:
 
 - **hook side (i)** `prodHooks l · betaProdGap l = betaFactProd l` — sorry-free (`prodHooks_mul_betaProdGap`).

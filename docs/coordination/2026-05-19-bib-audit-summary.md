@@ -8,9 +8,9 @@ End-of-day summary of the bibliography verification + cleanup work on
 
 | Metric | Count |
 |---|--:|
-| Total refs in `content/schema/references.ts` | 246 |
+| Total refs in `folio/schema/references.ts` | 246 |
 | Local PDFs in `library/` (on `claude/upload-bib-papers-2026-05-19`) | 38 |
-| Verification entries in `content/bib-qa-verifications.json` | 117 (48% of refs tracked) |
+| Verification entries in `folio/bib-qa-verifications.json` | 117 (48% of refs tracked) |
 | `-- Ref:` lines upgraded from bare URL to specific citation | 654 |
 | `validate-bib --cross-check` warnings | 12 (was 149 at start) |
 
@@ -29,7 +29,7 @@ End-of-day summary of the bibliography verification + cleanup work on
 
 | Path | Purpose |
 |---|---|
-| `content/bib-qa-verifications.json` | Hand-curated per-paper verification status (the typed sidecar) |
+| `folio/bib-qa-verifications.json` | Hand-curated per-paper verification status (the typed sidecar) |
 | `content/pipeline/validate-bib.ts` | 5-mode bib correctness audit (--doi / --cross-check / --crossref / --arxiv / --pandoc / --all / --strict) |
 | `scripts/gen-bib-papers-list.py` | Scan `references.ts` → `bib-papers-list.txt` for batch intake |
 | `scripts/bib-papers-list.txt` | Generated intake list (51 entries currently) |
@@ -52,7 +52,7 @@ End-of-day summary of the bibliography verification + cleanup work on
 ## Rendered-bibliography verification marker
 
 After this branch, every `references.ts` entry with a row in
-`content/bib-qa-verifications.json` gets a `annotation =` field in
+`folio/bib-qa-verifications.json` gets a `annotation =` field in
 `references.bib` showing its verification status. Example:
 
 ```bibtex

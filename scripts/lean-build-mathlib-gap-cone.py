@@ -35,7 +35,7 @@ import argparse, os, pathlib, re, subprocess, sys, time
 from concurrent.futures import ThreadPoolExecutor
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-PKG = ROOT / "content/quantum-observable-universe/lean"
+PKG = ROOT / "folio/quantum-observable-universe/lean"
 MATHLIB = PKG / ".lake/packages/mathlib"
 
 

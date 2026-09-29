@@ -370,9 +370,9 @@ def main() -> int:
         "The correction forces the two-tier split: tier 1 is necessary but "
         "nearly free for z-built candidates."))
     w.add_data("prior_art", [
-        "content/quantum-observable-universe/lean/QOU/Observations/"
+        "folio/quantum-observable-universe/lean/QOU/Observations/"
         "centered_hecke_variance_positive.lean — names psi as the z<1 threshold",
-        "content/quantum-observable-universe/predicted-spectra/"
+        "folio/quantum-observable-universe/predicted-spectra/"
         "spectrahedral-phase-collapse.md — psi as convention-C Gram degeneracy "
         "at u = 1/psi, multiplicity 5"])
     for n, ok, _ in checks:

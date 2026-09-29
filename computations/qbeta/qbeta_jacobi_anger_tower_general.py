@@ -64,7 +64,7 @@ fit); TIERED; nothing wired; c_3/Q_β stay cal-anchored.
 
 Ref: docs/audits/2026-06-17-jacobi-anger-physical-weight-n3.md
 Ref: docs/audits/2026-06-13-reeb-phase-qbessel-identification.md §4a
-Ref: content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.md
+Ref: folio/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.md
 Ref: computations/qbeta/qbeta_per_block_paper_closed_forms.py
 Ref: computations/qbeta/qbeta_reeb_tower_jacobi_anger_physical_weight.py
 """

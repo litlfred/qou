@@ -10,7 +10,7 @@ Neutron-side counterpart of
 
 Per [`docs/audits/2026-05-10-1ppb-workplan-update.md §Phase 2`](../../docs/audits/2026-05-10-1ppb-workplan-update.md)
 and the **three-calibration discipline**
-([`calibration-inputs.md`](../../content/quantum-observable-universe/braids-and-knots/calibration-inputs.md);
+([`calibration-inputs.md`](../../folio/quantum-observable-universe/braids-and-knots/calibration-inputs.md);
 PR #637): only CAL-1 $m_e$, CAL-2 $m_\\mu/m_e$ (fixes $q_0$), and
 CAL-3 $Q_\\beta(n)$ may enter as inputs. $m_p$ and $m_n$ are
 **predictions** — consuming them as inputs would violate the
@@ -32,7 +32,7 @@ Identical structure to the proton:
     atom-independent for A=1 atoms — same vortex structure).
   * Quarantined: T2/T3 (A=1 brane-tower structurally empty under
     current level-selection rule — open R&D
-    [`brane-tower-z-habiro`](../../content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.md)),
+    [`brane-tower-z-habiro`](../../folio/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.md)),
     T5 (sign-indefinite at $q_0$: −7.466 for neutron), T6 (small
     Habiro tail, +0.681).
 

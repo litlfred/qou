@@ -11,7 +11,7 @@ Three populations, joined:
 
   cited     `cites[]` on authored blocks (read from the generated `.jsonld`
             graph) plus `-- Ref: [key]` lines in `.lean` files.
-  declared  `content/bib-qa-verifications.json`, the source ledger: each entry
+  declared  `folio/bib-qa-verifications.json`, the source ledger: each entry
             says `source.kind` is an `upload` (with a `file` path) or
             `external` (with a URL).
   held      what `library/` actually contains.
@@ -78,9 +78,9 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-LEDGER = REPO / "content" / "bib-qa-verifications.json"
+LEDGER = REPO / "folio" / "bib-qa-verifications.json"
 LIBRARY = REPO / "library"
-CONTENT = REPO / "content"
+CONTENT = REPO / "folio"
 
 # Keys that are the folio talking about itself, not a source it could hold.
 SELF_KEYS = {"manuscript", "leitner2026"}
@@ -196,7 +196,7 @@ def load_refs() -> dict:
     Optional: without it the recovery pass is skipped and said to be skipped,
     rather than a clean run being reported as evidence of no recoveries.
     """
-    script = REPO / "content" / "schema" / "references.ts"
+    script = REPO / "folio" / "schema" / "references.ts"
     if not script.exists():
         return {}
     prog = (

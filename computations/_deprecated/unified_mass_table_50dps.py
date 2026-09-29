@@ -8,7 +8,7 @@ Reads the six Plan-F per-term witnesses and aggregates per atom:
          = |tr_M(T_w)| + Σ_i Φ_q(|V̂_i|) + z² Σ_{i<j} Φ_q(|V̂_i V̂_j|)
            + τ(C_dim_q) + a_K·C_K + Σ_ℓ Res_{ζ_ℓ}
 
-per [`thm:knot-mass-formula-unified`](../../content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md).
+per [`thm:knot-mass-formula-unified`](../../folio/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md).
 
 For each atom 𝔥 in {electron, proton, neutron, D, T, ³He}, collects:
   - per-term contribution (dimensionless and in MeV)

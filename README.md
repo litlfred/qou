@@ -41,80 +41,80 @@ and shows `—` for a chapter that has not been published.
 
 ### On the Mechanics of Quantum Observable Universes
 
-[`content/quantum-observable-universe/`](content/quantum-observable-universe/) · [full PDF](https://github.com/litlfred/qou/blob/gh-pages/papers/quantum-observable-universe/quantum-observable-universe.pdf)
+[`folio/quantum-observable-universe/`](folio/quantum-observable-universe/) · [full PDF](https://github.com/litlfred/qou/blob/gh-pages/papers/quantum-observable-universe/quantum-observable-universe.pdf)
 
 | # | Chapter | Source | PDF |
 |---|---------|--------|-----|
-| 0 | Introduction | [`introduction/`](content/quantum-observable-universe/introduction/) | — |
-| 1 | Quantum Universes | [`quantum-universes/`](content/quantum-observable-universe/quantum-universes/) | — |
-| 2 | Quantum Observable Universes | [`quantum-observable-universes/`](content/quantum-observable-universe/quantum-observable-universes/) | — |
-| 3 | Models of QOUs | [`models-of-qous/`](content/quantum-observable-universe/models-of-qous/) | — |
-| 4 | Lifting and Descent | [`lifting-and-descent/`](content/quantum-observable-universe/lifting-and-descent/) | — |
-| 5 | Braids and Knots | [`braids-and-knots/`](content/quantum-observable-universe/braids-and-knots/) | — |
-| 6 | Bring's Surface | [`brings-surface/`](content/quantum-observable-universe/brings-surface/) | — |
-| 7 | The Mass Endomorphism | [`mass-endomorphism/`](content/quantum-observable-universe/mass-endomorphism/) | — |
-| 8 | Knots, Particles, and Confinement | [`knots-particles-confinement/`](content/quantum-observable-universe/knots-particles-confinement/) | — |
-| 9 | The Eightfold Way and Flavor Structure | [`eightfold-way/`](content/quantum-observable-universe/eightfold-way/) | — |
-| 10 | Nuclear Interactions and Binding | [`nuclear-interactions/`](content/quantum-observable-universe/nuclear-interactions/) | — |
-| 11 | q-Hyperbolic Geometry | [`climax-volume-mass/`](content/quantum-observable-universe/climax-volume-mass/) | — |
-| 12 | Mass Analysis | [`mass-theory/`](content/quantum-observable-universe/mass-theory/) | — |
-| 13 | Gravity and Spacetime Emergence | [`gravity-spacetime/`](content/quantum-observable-universe/gravity-spacetime/) | — |
-| 14 | Predicted Particle Spectra | [`predicted-spectra/`](content/quantum-observable-universe/predicted-spectra/) | — |
-| 15 | Physical Observations | [`observations/`](content/quantum-observable-universe/observations/) | — |
-| 16 | Molecular Construction from Nucleon Braids | [`molecular-construction/`](content/quantum-observable-universe/molecular-construction/) | — |
-| 17 | Organic Chemistry from Hopf Chains | [`organic-chemistry/`](content/quantum-observable-universe/organic-chemistry/) | — |
-| 18 | Fluid Dynamics of the Brane | [`fluid-dynamics/`](content/quantum-observable-universe/fluid-dynamics/) | — |
-| 19 | Stochastic Mechanics | [`stochastic-mechanics/`](content/quantum-observable-universe/stochastic-mechanics/) | — |
-| 20 | Information-Theoretic Perspectives | [`information-theory/`](content/quantum-observable-universe/information-theory/) | — |
-| 21 | Measurement and Observation | [`measurement-observation/`](content/quantum-observable-universe/measurement-observation/) | — |
-| 22 | $q$-Geometric Langlands Correspondence | [`q-geometric-langlands/`](content/quantum-observable-universe/q-geometric-langlands/) | — |
-| 23 | Glossary | [`glossary/`](content/quantum-observable-universe/glossary/) | [glossary.pdf](https://github.com/litlfred/qou/blob/gh-pages/papers/quantum-observable-universe/glossary.pdf) |
-| App | Knot-Periodic Table of the Elements | [`appendix-knot-periodic-table/`](content/quantum-observable-universe/appendix-knot-periodic-table/) | [appendix-knot-periodic-table.pdf](https://github.com/litlfred/qou/blob/gh-pages/papers/quantum-observable-universe/appendix-knot-periodic-table.pdf) |
-| App | Knot Operation Actions Dictionary | [`appendix-knot-operations/`](content/quantum-observable-universe/appendix-knot-operations/) | — |
-| App | Knot Operations Dictionary — archimedean evaluations at the substrate | [`appendix-knot-operations-archimedean/`](content/quantum-observable-universe/appendix-knot-operations-archimedean/) | — |
-| App | Transfer Matrices | [`appendix-transfer-matrices/`](content/quantum-observable-universe/appendix-transfer-matrices/) | [appendix-transfer-matrices.pdf](https://github.com/litlfred/qou/blob/gh-pages/papers/quantum-observable-universe/appendix-transfer-matrices.pdf) |
-| App | Mass and Binding Algorithms | [`appendix-mass-binding-algorithms/`](content/quantum-observable-universe/appendix-mass-binding-algorithms/) | — |
-| App | Toward the Standard Model | [`appendix-standard-model/`](content/quantum-observable-universe/appendix-standard-model/) | — |
-| App | Normal Form Witnesses | [`appendix-nf-witnesses/`](content/quantum-observable-universe/appendix-nf-witnesses/) | — |
-| App | Imaginary part of the complex volume: $Q$-values from $q$ | [`appendix-qvalues/`](content/quantum-observable-universe/appendix-qvalues/) | — |
-| App | Surreal-number lift of QOU (appendix) | [`appendix-surreals/`](content/quantum-observable-universe/appendix-surreals/) | — |
-| App | Surreal-number lift at the substrate (archimedean appendix) | [`appendix-surreals-archimedean/`](content/quantum-observable-universe/appendix-surreals-archimedean/) | — |
-| — | Index of Definitions | [`index-of-definitions/`](content/quantum-observable-universe/index-of-definitions/) | [index-of-definitions.pdf](https://github.com/litlfred/qou/blob/gh-pages/papers/quantum-observable-universe/index-of-definitions.pdf) |
-| 24 | Notation | [`notation/`](content/quantum-observable-universe/notation/) | — |
+| 0 | Introduction | [`introduction/`](folio/quantum-observable-universe/introduction/) | — |
+| 1 | Quantum Universes | [`quantum-universes/`](folio/quantum-observable-universe/quantum-universes/) | — |
+| 2 | Quantum Observable Universes | [`quantum-observable-universes/`](folio/quantum-observable-universe/quantum-observable-universes/) | — |
+| 3 | Models of QOUs | [`models-of-qous/`](folio/quantum-observable-universe/models-of-qous/) | — |
+| 4 | Lifting and Descent | [`lifting-and-descent/`](folio/quantum-observable-universe/lifting-and-descent/) | — |
+| 5 | Braids and Knots | [`braids-and-knots/`](folio/quantum-observable-universe/braids-and-knots/) | — |
+| 6 | Bring's Surface | [`brings-surface/`](folio/quantum-observable-universe/brings-surface/) | — |
+| 7 | The Mass Endomorphism | [`mass-endomorphism/`](folio/quantum-observable-universe/mass-endomorphism/) | — |
+| 8 | Knots, Particles, and Confinement | [`knots-particles-confinement/`](folio/quantum-observable-universe/knots-particles-confinement/) | — |
+| 9 | The Eightfold Way and Flavor Structure | [`eightfold-way/`](folio/quantum-observable-universe/eightfold-way/) | — |
+| 10 | Nuclear Interactions and Binding | [`nuclear-interactions/`](folio/quantum-observable-universe/nuclear-interactions/) | — |
+| 11 | q-Hyperbolic Geometry | [`climax-volume-mass/`](folio/quantum-observable-universe/climax-volume-mass/) | — |
+| 12 | Mass Analysis | [`mass-theory/`](folio/quantum-observable-universe/mass-theory/) | — |
+| 13 | Gravity and Spacetime Emergence | [`gravity-spacetime/`](folio/quantum-observable-universe/gravity-spacetime/) | — |
+| 14 | Predicted Particle Spectra | [`predicted-spectra/`](folio/quantum-observable-universe/predicted-spectra/) | — |
+| 15 | Physical Observations | [`observations/`](folio/quantum-observable-universe/observations/) | — |
+| 16 | Molecular Construction from Nucleon Braids | [`molecular-construction/`](folio/quantum-observable-universe/molecular-construction/) | — |
+| 17 | Organic Chemistry from Hopf Chains | [`organic-chemistry/`](folio/quantum-observable-universe/organic-chemistry/) | — |
+| 18 | Fluid Dynamics of the Brane | [`fluid-dynamics/`](folio/quantum-observable-universe/fluid-dynamics/) | — |
+| 19 | Stochastic Mechanics | [`stochastic-mechanics/`](folio/quantum-observable-universe/stochastic-mechanics/) | — |
+| 20 | Information-Theoretic Perspectives | [`information-theory/`](folio/quantum-observable-universe/information-theory/) | — |
+| 21 | Measurement and Observation | [`measurement-observation/`](folio/quantum-observable-universe/measurement-observation/) | — |
+| 22 | $q$-Geometric Langlands Correspondence | [`q-geometric-langlands/`](folio/quantum-observable-universe/q-geometric-langlands/) | — |
+| 23 | Glossary | [`glossary/`](folio/quantum-observable-universe/glossary/) | [glossary.pdf](https://github.com/litlfred/qou/blob/gh-pages/papers/quantum-observable-universe/glossary.pdf) |
+| App | Knot-Periodic Table of the Elements | [`appendix-knot-periodic-table/`](folio/quantum-observable-universe/appendix-knot-periodic-table/) | [appendix-knot-periodic-table.pdf](https://github.com/litlfred/qou/blob/gh-pages/papers/quantum-observable-universe/appendix-knot-periodic-table.pdf) |
+| App | Knot Operation Actions Dictionary | [`appendix-knot-operations/`](folio/quantum-observable-universe/appendix-knot-operations/) | — |
+| App | Knot Operations Dictionary — archimedean evaluations at the substrate | [`appendix-knot-operations-archimedean/`](folio/quantum-observable-universe/appendix-knot-operations-archimedean/) | — |
+| App | Transfer Matrices | [`appendix-transfer-matrices/`](folio/quantum-observable-universe/appendix-transfer-matrices/) | [appendix-transfer-matrices.pdf](https://github.com/litlfred/qou/blob/gh-pages/papers/quantum-observable-universe/appendix-transfer-matrices.pdf) |
+| App | Mass and Binding Algorithms | [`appendix-mass-binding-algorithms/`](folio/quantum-observable-universe/appendix-mass-binding-algorithms/) | — |
+| App | Toward the Standard Model | [`appendix-standard-model/`](folio/quantum-observable-universe/appendix-standard-model/) | — |
+| App | Normal Form Witnesses | [`appendix-nf-witnesses/`](folio/quantum-observable-universe/appendix-nf-witnesses/) | — |
+| App | Imaginary part of the complex volume: $Q$-values from $q$ | [`appendix-qvalues/`](folio/quantum-observable-universe/appendix-qvalues/) | — |
+| App | Surreal-number lift of QOU (appendix) | [`appendix-surreals/`](folio/quantum-observable-universe/appendix-surreals/) | — |
+| App | Surreal-number lift at the substrate (archimedean appendix) | [`appendix-surreals-archimedean/`](folio/quantum-observable-universe/appendix-surreals-archimedean/) | — |
+| — | Index of Definitions | [`index-of-definitions/`](folio/quantum-observable-universe/index-of-definitions/) | [index-of-definitions.pdf](https://github.com/litlfred/qou/blob/gh-pages/papers/quantum-observable-universe/index-of-definitions.pdf) |
+| 24 | Notation | [`notation/`](folio/quantum-observable-universe/notation/) | — |
 
 ### Controlled Double-Slit Electron Diffraction
 
-[`content/bach2013-double-slit/`](content/bach2013-double-slit/)
+[`folio/bach2013-double-slit/`](folio/bach2013-double-slit/)
 
 | # | Chapter | Source | PDF |
 |---|---------|--------|-----|
-| 0 | Controlled Double-Slit Electron Diffraction | [`double-slit-experiment/`](content/bach2013-double-slit/double-slit-experiment/) | — |
+| 0 | Controlled Double-Slit Electron Diffraction | [`double-slit-experiment/`](folio/bach2013-double-slit/double-slit-experiment/) | — |
 
 ### Unital Gröbner--Shirshov Bases over Arbitrary Commutative Ground Rings
 
-[`content/unital-groebner-bases/`](content/unital-groebner-bases/)
+[`folio/unital-groebner-bases/`](folio/unital-groebner-bases/)
 
 | # | Chapter | Source | PDF |
 |---|---------|--------|-----|
-| 0 | Introduction | [`introduction/`](content/unital-groebner-bases/introduction/) | — |
-| 1 | Unital Gröbner--Shirshov Bases over Arbitrary Commutative Ground Rings | [`unital-groebner-bases-chapter/`](content/unital-groebner-bases/unital-groebner-bases-chapter/) | — |
-| 2 | Buchberger's Theorem and the PBW Corollary | [`buchberger-and-pbw/`](content/unital-groebner-bases/buchberger-and-pbw/) | — |
+| 0 | Introduction | [`introduction/`](folio/unital-groebner-bases/introduction/) | — |
+| 1 | Unital Gröbner--Shirshov Bases over Arbitrary Commutative Ground Rings | [`unital-groebner-bases-chapter/`](folio/unital-groebner-bases/unital-groebner-bases-chapter/) | — |
+| 2 | Buchberger's Theorem and the PBW Corollary | [`buchberger-and-pbw/`](folio/unital-groebner-bases/buchberger-and-pbw/) | — |
 
 ### Integration of Skewed-Poisson Structures on Non-commutative Formal Groups
 
-[`content/fred2005-formal-groups/`](content/fred2005-formal-groups/)
+[`folio/fred2005-formal-groups/`](folio/fred2005-formal-groups/)
 
 | # | Chapter | Source | PDF |
 |---|---------|--------|-----|
-| 0 | Formal Groups and the Lifting Theorem | [`formal-groups-chapter/`](content/fred2005-formal-groups/formal-groups-chapter/) | — |
+| 0 | Formal Groups and the Lifting Theorem | [`formal-groups-chapter/`](folio/fred2005-formal-groups/formal-groups-chapter/) | — |
 
 ### QOU Visualizer
 
-[`content/visualizer/`](content/visualizer/)
+[`folio/visualizer/`](folio/visualizer/)
 
 | # | Chapter | Source | PDF |
 |---|---------|--------|-----|
-| 0 | Overview | [`overview/`](content/visualizer/overview/) | — |
+| 0 | Overview | [`overview/`](folio/visualizer/overview/) | — |
 
 > PDF links point at the published build on the `gh-pages` branch through github.com, so they resolve for anyone with access to this repository — public or private — and GitHub renders them inline. A chapter with no published PDF shows `—`.
 
@@ -123,7 +123,7 @@ and shows `—` for a chapter that has not been published.
 
 ## Lean 4 Formalization
 
-The Lean 4 formalization lives in `content/quantum-observable-universe/lean/`
+The Lean 4 formalization lives in `folio/quantum-observable-universe/lean/`
 and covers the key mathematical structures, mass-parameter derivations,
 knot theory, and categorical constructions from the manuscript.
 
@@ -489,10 +489,10 @@ The compute pipeline is layered into reusable packages so external researchers c
 | Path | Description |
 |------|-------------|
 | `content/` | **Authoritative content objects** (`.ts` + `.md` + `.lean` triples) |
-| `content/schema/` | Type system, Zod schemas, builder functions |
+| `folio/schema/` | Type system, Zod schemas, builder functions |
 | `content/pipeline/` | Validation, rendering, build pipelines |
-| `content/quantum-observable-universe/` | Main paper — chapters, appendices, Lean |
-| `content/quantum-observable-universe/lean/` | Lean 4 formalization (`lakefile.toml`, `QOU/`) |
+| `folio/quantum-observable-universe/` | Main paper — chapters, appendices, Lean |
+| `folio/quantum-observable-universe/lean/` | Lean 4 formalization (`lakefile.toml`, `QOU/`) |
 | `folio-assistant/` | Platform: MCP server, auth, viewer, chat UI |
 | `folio-assistant/viewer/` | Paper viewer SPA + Pyodide cache |
 | `fsh-guts/deprecated/` | PARKED pre-Skills/Tools client-side rendering: the 11 interactive HTML/WebGL simulators and `ruby-3d-viewer.html`. Moved 2026-09-26 on owner ruling (static just-the-docs render instead); kept, not deleted — "we can pull out later if we need". |
@@ -511,7 +511,7 @@ The compute pipeline is layered into reusable packages so external researchers c
 | `scripts/` | Build, setup, and utility scripts |
 | `main.tex` | LaTeX preamble (rendering target, not source of truth) |
 | `chapters/*.tex` | Generated LaTeX chapters (from content pipeline) |
-| `references.bib` | Auto-generated BibTeX (source: `content/schema/references.ts`) |
+| `references.bib` | Auto-generated BibTeX (source: `folio/schema/references.ts`) |
 | `home_page/` | Jekyll landing page for GitHub Pages |
 
 ## CI/CD Workflows
@@ -542,7 +542,7 @@ The compute pipeline is layered into reusable packages so external researchers c
 
 ```bash
 bun install                          # Install dependencies (root + content/)
-bun run scripts/run-validate.ts content/quantum-observable-universe   # Validate content objects
+bun run scripts/run-validate.ts folio/quantum-observable-universe   # Validate content objects
 bun run build:content                # Generate chapters/*.tex from content objects
 ```
 
@@ -555,7 +555,7 @@ latexmk -pdf main.tex               # Compile PDF from generated LaTeX
 ### Lean formalization
 
 ```bash
-cd content/quantum-observable-universe/lean
+cd folio/quantum-observable-universe/lean
 lake build                           # Build all Lean modules
 ```
 

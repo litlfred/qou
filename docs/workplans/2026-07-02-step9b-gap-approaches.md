@@ -74,7 +74,7 @@ IMME leg, which is a *prediction check*, not a closure search.
 - The depth-stratified tower (`binding_depth_stratified_rust.py:62-88`)
   uses α_0=1, α_1=1, α_2=z², α_3=1, α_{k≥4}=m_e·8G. But the framework's
   own Markov-pairing derivation `prop:alpha-k-derivation-procedure`
-  ([explicit-alpha-k-h3](../../content/quantum-observable-universe/mass-theory/explicit-alpha-k-h3.md))
+  ([explicit-alpha-k-h3](../../folio/quantum-observable-universe/mass-theory/explicit-alpha-k-h3.md))
   gives **α_1 = 0** and **α_3 = h·z² + z ≈ 0.5514** at H₃. The production
   tower silently overrides two of the four derived values.
 - All assignment-repair attempts refuted: geometric recursion

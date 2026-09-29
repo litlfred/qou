@@ -109,8 +109,8 @@ def main():
         "context": {
             "axis": "Δ_λ per-isotope binding closure (GAP-A) — counit+vortex sign test",
             "counit_predecessor": "rho-k-h3a-counit-canonical-integral.witness.json",
-            "vortex_weight_source": "content/quantum-observable-universe/mass-theory/chirality-writhe-ribbon-derivation.md",
-            "interface_factorization": "content/quantum-observable-universe/mass-theory/interface-knot-markov-z.md",
+            "vortex_weight_source": "folio/quantum-observable-universe/mass-theory/chirality-writhe-ribbon-derivation.md",
+            "interface_factorization": "folio/quantum-observable-universe/mass-theory/interface-knot-markov-z.md",
             "audit": "docs/audits/2026-07-04-delta-lambda-counit-canonical-integral-candidate.md",
         },
     }

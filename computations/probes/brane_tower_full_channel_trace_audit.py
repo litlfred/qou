@@ -255,8 +255,8 @@ def main() -> None:
         "provenance": [
             "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
             "zhabiro-physical-z-pin.witness.json (PR #2467)",
-            "content/quantum-observable-universe/mass-theory/hecke-mass-element.md",
-            "content/quantum-observable-universe/observations/atom-mass-full-hecke.md",
+            "folio/quantum-observable-universe/mass-theory/hecke-mass-element.md",
+            "folio/quantum-observable-universe/observations/atom-mass-full-hecke.md",
         ],
     }
     # Hand-rolled write: this payload never reaches `WitnessBuilder.build()`,

@@ -33,7 +33,7 @@ import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent.parent
-CONTENT = REPO / "content"
+CONTENT = REPO / "folio"
 # A cited name may contain an INTERNAL SPACE -- a real corruption class in
 # this corpus (a hyphen replaced by a space inside a filename), which also
 # breaks the markdown link, since an unescaped space terminates a link target.

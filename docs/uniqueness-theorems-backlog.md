@@ -82,4 +82,4 @@ For each item:
 
 - [`canonical-derivation-cheat-sheet.md`](canonical-derivation-cheat-sheet.md)
 - [`audits/2026-05-11-why-individual-mass-residuals-fit-not-derive.md`](audits/2026-05-11-why-individual-mass-residuals-fit-not-derive.md) §"Resolution 2026-05-29"
-- `content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.lean`
+- `folio/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.lean`

@@ -3,9 +3,9 @@
 discretised `E_cat`, closing the last step between a separating scalar and the
 LP/SDP cost vector the operator-selection program takes.
 
-# Ref: content/quantum-observable-universe/lean/QOU/QBeta/ECatBlockDecomposition.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/QBeta/ECatBlockDecomposition.lean
 #      (blockDecomposition_of_linear -- the split is a THEOREM, from linearity alone)
-# Ref: content/quantum-observable-universe/lean/QOU/Mass/GammaGammaWordSelection.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/Mass/GammaGammaWordSelection.lean
 #      (the `cost : W -> R` socket)
 # Ref: computations/qbeta/qbeta_ecat_pair_kernel_probe.py   (the scalar total)
 # Ref: computations/homfly_ocneanu_trace.py                 (`_chi`, skein-validated)

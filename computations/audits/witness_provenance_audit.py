@@ -118,7 +118,7 @@ def _is_prose(value: str) -> bool:
 
     A field whose value says "we do not know" is missing provenance, not
     provenance. Two of the seven now back paper-facing claims
-    (`4he-binding-full-pipeline` -> `content/values/registry.ts`;
+    (`4he-binding-full-pipeline` -> `folio/values/registry.ts`;
     `hecke-core-symbolic-migration` -> two appendix blocks at
     `status: "verified"`), which is what this check exists to surface.
 
@@ -211,7 +211,7 @@ def build_reference_index() -> tuple[set[str], "dict[str, int]"]:
     paper: set[str] = set()
     try:
         out = subprocess.run(
-            ["grep", "-rhoE", pat, str(repo / "content")],
+            ["grep", "-rhoE", pat, str(repo / "folio")],
             capture_output=True, text=True, timeout=120,
         ).stdout
         paper = set(out.split())

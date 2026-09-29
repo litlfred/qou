@@ -48,7 +48,7 @@ quoting any number from this file.
    Schur-Weyl row cap gives dim V_lam = 0 whenever l(lam) > N; the fibre
    is the fundamental of SU_q(2), so N = 2 and y_(3,2,1) = 0 exactly.
    The corpus adjudicates the consequence in
-   `content/quantum-observable-universe/appendix-standard-model/`
+   `folio/quantum-observable-universe/appendix-standard-model/`
    `sm-params-gauge-couplings.md`: "Every route from such a block to a
    physical number is either a Markov trace, which the row cap sends to
    zero, or a spectrum, which has no states to act on." The cot(theta_W)

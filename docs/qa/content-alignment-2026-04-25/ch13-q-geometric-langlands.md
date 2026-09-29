@@ -3,7 +3,7 @@
 
 **Review Date:** 2026-04-25  
 **Manifest:** `q-geometric-langlands.ts`  
-**Chapter Directory:** `content/quantum-observable-universe/q-geometric-langlands/`
+**Chapter Directory:** `folio/quantum-observable-universe/q-geometric-langlands/`
 
 ---
 

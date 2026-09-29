@@ -326,7 +326,7 @@ changed by the commit:
 ### Idle-sweep (full content scan)
 
 1. Enumerate every `prop:*.ts` / `thm:*.ts` / `lem:*.ts` / `cor:*.ts`
-   under `content/quantum-observable-universe/`.
+   under `folio/quantum-observable-universe/`.
 2. For each label `L`:
    - **Step 1 — Lean status.** Read the `.lean` sibling; count
      sorrys, axioms, classes.  Skip blocks where the Lean side is

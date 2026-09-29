@@ -11,21 +11,21 @@
     {
       "id": "R1-em-coulomb-decomposition",
       "channel": "EM",
-      "doc": "content/quantum-observable-universe/climax-volume-mass/coulomb-charge.md:9-15",
+      "doc": "folio/quantum-observable-universe/climax-volume-mass/coulomb-charge.md:9-15",
       "names": "crossing-energy split into 'baseline (strong)' + 'Coulomb correction'",
       "whole": "p*q - m/q",
       "parts": ["(p+m)*(q + 1/q)/2", "((p-m)/2)*(q - 1/q)"],
       "symbols": ["q", "p", "m"],
       "expect": "fail",
       "correct_parts": ["(p-m)*(q + 1/q)/2", "(p+m)*(q - 1/q)/2"],
-      "correct_doc": "content/quantum-observable-universe/observations/crossing-energy-decomposition.md:20-24",
+      "correct_doc": "folio/quantum-observable-universe/observations/crossing-energy-decomposition.md:20-24",
       "lean_witness": "QOU.Braiding.crossingEnergy_split (crossing-energy-decomposition.lean, sorry-free)",
       "comment": "Multiplicities (p+m) and (p-m) are swapped between the cosh and sinh channels. The stated split reconstructs p*q + m/q, flipping the sign on every negative crossing. Agrees with truth iff m=0, which is why the quoted tanh(ln q) ~ 0.104 spot-check passed."
     },
     {
       "id": "R1-em-coulomb-decomposition-corrected",
       "channel": "EM",
-      "doc": "content/quantum-observable-universe/observations/crossing-energy-decomposition.md:20-24",
+      "doc": "folio/quantum-observable-universe/observations/crossing-energy-decomposition.md:20-24",
       "names": "crossing-energy split into symmetric (cosh) + antisymmetric (sinh) channels",
       "whole": "p*q - m/q",
       "parts": ["(p-m)*(q + 1/q)/2", "(p+m)*(q - 1/q)/2"],
@@ -39,7 +39,7 @@
     {
       "id": "R2-skein-form-A-hecke",
       "channel": "strong/EM",
-      "doc": "content/quantum-observable-universe/climax-volume-mass/skein-bar-antisymmetry.md:4",
+      "doc": "folio/quantum-observable-universe/climax-volume-mass/skein-bar-antisymmetry.md:4",
       "names": "Skein relation L+ - L- = (q - q^-1) L0 (AGENTS.md 7a, STRICT)",
       "lhs": "s - si",
       "rhs": "(q - 1/q)*I",
@@ -49,7 +49,7 @@
     {
       "id": "R2-skein-form-B-as-characteristic-equation",
       "channel": "strong/EM",
-      "doc": "content/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.md:29",
+      "doc": "folio/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.md:29",
       "names": "claims q*L+ - q^-1*L- = (q^{1/2} - q^{-1/2}) L0 IS 'simply the characteristic equation of the braiding c_{V,V}'",
       "lhs": "q*s - si/q",
       "rhs": "(sqrt(q) - 1/sqrt(q))*I",
@@ -72,7 +72,7 @@
     {
       "id": "R3-trace-convention-C-wenzl-z",
       "channel": "mass (original defect)",
-      "doc": "content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.md:5",
+      "doc": "folio/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.md:5",
       "names": "stipulated as 'the Markov-trace loop value' in a block naming the JONES-Markov trace",
       "z": "1/(sqrt(q) + 1/sqrt(q))",
       "expect": "fail",

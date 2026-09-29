@@ -13,7 +13,7 @@
 set -uo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 export PATH="$HOME/.elan/bin:$PATH" ELAN_NO_OVERRIDE_NOTICE=1
-LEANDIR="$ROOT/content/quantum-observable-universe/lean"
+LEANDIR="$ROOT/folio/quantum-observable-universe/lean"
 B="$LEANDIR/.lake/build/lib/lean"
 
 LP=""

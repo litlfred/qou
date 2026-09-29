@@ -7,7 +7,7 @@
  *
  * `folio-assistant/cat-harness/content/pipeline/validate-references.ts` is the only checker
  * that cross-checks Lean `-- Ref: [key]` comments and `\cite{}` against
- * `content/schema/references.ts`. Run directly it does not merely report
+ * `folio/schema/references.ts`. Run directly it does not merely report
  * nothing — it THROWS, on its own first statement:
  *
  *   error: Reference registry not configured. The downstream repo must call
@@ -53,10 +53,10 @@
 
 import { configureReferenceRegistry } from "../folio-assistant/cat-harness/content/pipeline/references-registry-di";
 
-const bib = await import("../content/schema/references");
+const bib = await import("../folio/schema/references");
 
 if (!bib.references?.length) {
-  console.error("  ✗ content/schema/references.ts parsed but holds no entries");
+  console.error("  ✗ folio/schema/references.ts parsed but holds no entries");
   process.exit(1);
 }
 

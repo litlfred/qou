@@ -6,7 +6,7 @@ workplan ([2026-05-02-truncation-audit.md](../../docs/audits/2026-05-02-truncati
 Extends `per_braid_tower_hybrid.py` from level-0-only to a sum
 over jet levels n = 0..N_jet plus a geometric-series tail bound.
 The full mass-tower jet form per
-[`rem:mass-endomorphism-jet-tower`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-jet-tower.md)
+[`rem:mass-endomorphism-jet-tower`](../../folio/quantum-observable-universe/braids-and-knots/mass-endomorphism-jet-tower.md)
 is
 
     m = |tr_M(W)| + Σ_{n=0}^{N} (Σ_{ξ∈S_1^(n)} Φ_q(|tr_M(ξ)|)
@@ -14,13 +14,13 @@ is
         + R_N
 
 where R_N is the geometric-series tail bound from
-[`prop:jet-tower-convergence`](../../content/quantum-observable-universe/braids-and-knots/jet-tower-convergence.md).
+[`prop:jet-tower-convergence`](../../folio/quantum-observable-universe/braids-and-knots/jet-tower-convergence.md).
 
 ## Jet lift used here
 
 This module is a **scaffold** — the true jet lift requires the
 explicit Kähler-differential action on H_n(q), which is open
-([`prop:jet-stratified-reduction`](../../content/quantum-observable-universe/braids-and-knots/jet-stratified-reduction.md)).
+([`prop:jet-stratified-reduction`](../../folio/quantum-observable-universe/braids-and-knots/jet-stratified-reduction.md)).
 We use the q-Plancherel-descent lift from
 [`jet_lifted_hecke.qplancherel_avg_T`](jet_lifted_hecke.py): at
 strand count n, the level-1 trace transitions to level 0 with

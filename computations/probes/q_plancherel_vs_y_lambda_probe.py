@@ -106,7 +106,7 @@ which is why both carry the name. Two consequences:
   exactly, at every `n` and every `Q`.
 - 🛑 **That is NOT a defect, and an earlier draft of this file said it was.**
   The owner ruled on 2026-08-16, in
-  `content/quantum-observable-universe/notation/notation-collisions.md`, that
+  `folio/quantum-observable-universe/notation/notation-collisions.md`, that
   `Σ_λ w_λ(q) ≠ 1` at `q ≠ 1` **by design** — *"Never write a normalisation
   claim on bare `w_λ`"* — quoting 0.987 at `n = 3` and 1.051 at `n = 8`. The
   measurements above reproduce that independently (0.98744, and the `n = 8`

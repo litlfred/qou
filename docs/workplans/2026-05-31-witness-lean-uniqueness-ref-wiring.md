@@ -22,7 +22,7 @@ Each per-nucleus / per-atom witness producer should add a
 w.add_data("lean_uniqueness_ref", {
     "<nucleus>": "qou:QOU.BraidKnot.<wrapper>_uniqueness_closed",
     "framework_doc":
-        "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+        "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
     "note": "...",
 })
 ```

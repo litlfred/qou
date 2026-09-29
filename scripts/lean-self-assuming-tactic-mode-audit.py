@@ -47,7 +47,7 @@ TACTIC_NOISE = {
 }
 
 hits=[]
-for f in Path('content').rglob('*.lean'):
+for f in Path('folio').rglob('*.lean'):
     if '.lake' in str(f): continue
     try: src=f.read_text()
     except Exception: continue

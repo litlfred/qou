@@ -2,7 +2,7 @@
 conventions, under every reading of the formula I could construct.
 
 WHAT IS CLAIMED, AND WHERE.  `prop:wedderburn-weight-canonical`
-(content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical)
+(folio/quantum-observable-universe/mass-theory/wedderburn-weight-canonical)
 defines the canonical q-deformed Wedderburn-block weight
 
     w̃_λ(q)  :=  dim_q(λ)² / [n]_q!
@@ -193,7 +193,7 @@ def main() -> int:
     print()
 
     root = Path(__file__).resolve().parents[2]
-    blk = root / "content" / "quantum-observable-universe" / "mass-theory"
+    blk = root / "folio" / "quantum-observable-universe" / "mass-theory"
 
     # ---- 0. what the block claims ------------------------------------------
     lean = (blk / "wedderburn-weight-canonical.lean")

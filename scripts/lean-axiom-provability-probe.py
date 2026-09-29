@@ -158,7 +158,7 @@ def probe(path: pathlib.Path, name: str, start: int, end: int,
 # rather than silently passing.
 SELFTEST_PROVABLE = [
     ("e6233b20bb~1",
-     "content/quantum-observable-universe/quantum-observable-universes/"
+     "folio/quantum-observable-universe/quantum-observable-universes/"
      "spectral-chart-correspondence.lean", "chart_glue_from_spectrum"),
 ]
 
@@ -201,17 +201,17 @@ SELFTEST_PROVABLE = [
 #    rather than one tactic away.
 SELFTEST_KNOWN_MISS = [
     ("e6233b20bb~1",
-     "content/quantum-observable-universe/quantum-observable-universes/"
+     "folio/quantum-observable-universe/quantum-observable-universes/"
      "su2-emergence.lean", "su2_emergence"),
     ("24c6710ad5",
-     "content/quantum-observable-universe/braids-and-knots/"
+     "folio/quantum-observable-universe/braids-and-knots/"
      "frobenius-antipode-lean-stub.lean", "antipode_anti_hom"),
 ]
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--root", default="content")
+    ap.add_argument("--root", default="folio")
     ap.add_argument("--timeout", type=int, default=180)
     ap.add_argument("--filter", default="")
     ap.add_argument("--selftest", action="store_true", default=True,

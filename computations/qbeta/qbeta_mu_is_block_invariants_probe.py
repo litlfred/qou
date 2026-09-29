@@ -5,7 +5,7 @@ invariant of the (2,1) block, and the Hecke quadratic factorises into two of the
 
 # Ref: .beans/qou-xzrj--gap-the-767-trace-invisible-remainder-of-epsnpq-st.md
 # Ref: computations/qbeta/qbeta_mu_normalisation_is_derived_probe.py
-# Ref: content/quantum-observable-universe/lean/QOU/MathlibExt/WenzlSchurElement.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/MathlibExt/WenzlSchurElement.lean
 
 WHERE THIS PICKS UP. mu = (-2/[3]_q) / y_(2,1)(z), with the 1/y_(2,1) DERIVED
 (the block's pairing normalisation) and -2/[3]_q an identified constant. This

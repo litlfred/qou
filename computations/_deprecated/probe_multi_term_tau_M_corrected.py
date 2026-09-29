@@ -6,7 +6,7 @@ This is `probe_multi_term_canonical.py` redone with the trace
 functional CORRECTED per pr-442's selection theorem:
 
   prop:markov-trace-frobenius-selection
-  (content/quantum-observable-universe/braids-and-knots/
+  (folio/quantum-observable-universe/braids-and-knots/
    markov-trace-frobenius-selection.md, on pr-442)
 
 The selection theorem proves that the QOU mass formula's

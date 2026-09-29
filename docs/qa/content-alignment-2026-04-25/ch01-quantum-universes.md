@@ -1,7 +1,7 @@
 # QA Report: Chapter 1 — Quantum Universes
 **Date:** 2026-04-25  
 **Reviewer:** Claude Code (comprehensive audit)  
-**Scope:** All 48 .md files in `/content/quantum-observable-universe/quantum-universes/`
+**Scope:** All 48 .md files in `/folio/quantum-observable-universe/quantum-universes/`
 
 ---
 

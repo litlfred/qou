@@ -61,7 +61,7 @@ block, with severity (error / warning / info).
 | Check | Severity | Rule |
 |-------|----------|------|
 | Every `sorry` has a preceding `-- Ref: [key]` comment | **error** | Unannotated sorry is always a violation |
-| `[key]` in `-- Ref:` exists in `content/schema/references.ts` | **error** | Orphan citation keys break the reference chain |
+| `[key]` in `-- Ref:` exists in `folio/schema/references.ts` | **error** | Orphan citation keys break the reference chain |
 | No `admit` or `native_decide` (unless justified) | **warning** | These bypass the kernel |
 | No `axiom` declarations (unless `Axiom.lean`) | **warning** | Axioms should be centralized |
 
@@ -138,7 +138,7 @@ Report findings as a structured summary:
 2. For each block `.ts`, read the manifest and check §1–§8
 3. For blocks with `.lean`, read the Lean source and check §3–§4
 4. For `uses[]` and label uniqueness, collect all labels first (§2, §7)
-5. Cross-check against `content/schema/references.ts` for sorry citations (§4)
+5. Cross-check against `folio/schema/references.ts` for sorry citations (§4)
 
 ### Single chapter review
 

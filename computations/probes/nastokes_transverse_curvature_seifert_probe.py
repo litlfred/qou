@@ -5,7 +5,7 @@ qou-prjo LEAD-2 (geometric route). Forward, geometric, ZERO-FIT test of the
 surviving deuteron-binding-magnitude carrier: the transverse surface-curvature
 pairing Ω₂ = ½ P ∮∮ [𝓕,𝓕] on the Seifert surface of each isotope's binding
 channel. Companion to the sorry-free Lean structure
-  content/quantum-observable-universe/lean/QOU/MassTheory/TransverseSurfaceCurvature.lean
+  folio/quantum-observable-universe/lean/QOU/MassTheory/TransverseSurfaceCurvature.lean
 and the audit docs/audits/2026-08-08-nastokes-transverse-surface-curvature-geometric-route.md.
 
 CONTEXT (read first):

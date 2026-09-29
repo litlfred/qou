@@ -3,7 +3,7 @@
 sync-references-library — record each source's library location + ingestion
 stage on its `references.ts` entry.
 
-`content/schema/references.ts` is the authoritative bibliography (CSL-JSON).
+`folio/schema/references.ts` is the authoritative bibliography (CSL-JSON).
 It says what a source *is*; until now nothing there said whether we hold a
 copy, where, or how far it has been processed. Answering that meant joining
 three files by hand.
@@ -52,8 +52,8 @@ import re
 import sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-REFS = os.path.join(REPO, "content", "schema", "references.ts")
-LEDGER = os.path.join(REPO, "content", "bib-qa-verifications.json")
+REFS = os.path.join(REPO, "folio", "schema", "references.ts")
+LEDGER = os.path.join(REPO, "folio", "bib-qa-verifications.json")
 LIB = os.path.join(REPO, "library")
 
 FIELD = "library"

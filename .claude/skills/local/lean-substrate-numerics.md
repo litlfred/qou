@@ -88,7 +88,7 @@ have hrcp_lt : 1 / Real.sqrt substrate_q < 1 / 1.05341 := by
 This skill must be re-run after every `lake update` of Mathlib:
 
 ```bash
-cd content/quantum-observable-universe/lean
+cd folio/quantum-observable-universe/lean
 lake build QOU.MassDerivation
 ```
 

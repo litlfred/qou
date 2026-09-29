@@ -93,8 +93,8 @@ For ⁶Li/⁷Li, three signals indicate success:
 
 ## References
 
-- [`prop:joint-tower-sdp-confinement`](../../content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md) — design spec.
-- [`prop:atom-knot-mass-derivation`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md) — consumer of the certificate.
+- [`prop:joint-tower-sdp-confinement`](../../folio/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md) — design spec.
+- [`prop:atom-knot-mass-derivation`](../../folio/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md) — consumer of the certificate.
 - [PR #433](https://github.com/litlfred/qou/pull/433) — R1–R5min that this branch builds on.
 - `RUST_INTEGRATION.md` — the parent integration plan.
 - `tools/hecke-engine/src/sdp_verifier.rs` — the bisection-based

@@ -73,7 +73,7 @@ Warnings: 15 propositions without Lean declarations (work-in-progress).
 
 ### 1. Sorry Audit
 
-**Total sorry instances: 37** (31 in content blocks, 6 in content/quantum-observable-universe/lean)
+**Total sorry instances: 37** (31 in content blocks, 6 in folio/quantum-observable-universe/lean)
 
 **Compliant (with `-- Ref:` citation): 20**
 
@@ -89,15 +89,15 @@ Warnings: 15 propositions without Lean declarations (work-in-progress).
 | CRITICAL | `ch9/.../information-theoretic-time.lean` | 33 |
 | CRITICAL | `ch2/.../reeb-gauge-group.lean` | 36 |
 | CRITICAL | `ch7/.../w-boson-mass-discrepancy.lean` | 177, 188 |
-| HIGH | `content/quantum-observable-universe/lean/QOU/Descartes/BetaDecay.lean` | 249 |
-| HIGH | `content/quantum-observable-universe/lean/QOU/Descartes/AxialCoupling.lean` | 59, 70, 90 |
-| HIGH | `content/quantum-observable-universe/lean/QOU/Descartes/OrderingIndependence.lean` | 62, 89 |
+| HIGH | `folio/quantum-observable-universe/lean/QOU/Descartes/BetaDecay.lean` | 249 |
+| HIGH | `folio/quantum-observable-universe/lean/QOU/Descartes/AxialCoupling.lean` | 59, 70, 90 |
+| HIGH | `folio/quantum-observable-universe/lean/QOU/Descartes/OrderingIndependence.lean` | 62, 89 |
 
 **Worst cluster:** All 6 Ch 9 (Information Theory) files have uncited sorries.
 
 ### 2. Unresolved Citation Keys
 
-**11 `-- Ref:` keys not found in `content/schema/references.ts`:**
+**11 `-- Ref:` keys not found in `folio/schema/references.ts`:**
 
 `[KronheimerMrowka2004]` (case mismatch → `kronheimer2004`), `[bring1786]`,
 `[cohomological-embedding]` (not a real key), `[deligne2007]`, `[kauffman1991]`,
@@ -130,7 +130,7 @@ opportunities for `ring`, `positivity`, or `norm_num`. Minimal commented-out cod
 - **Lean toolchain:** v4.24.0 — pinned correctly
 - **Mathlib:** Pinned to commit hash `f897ebcf72cd16f89ab4577d0c826cd14afaafc7` — GOOD
 - **No `.lake/` or `build/` committed** — GOOD
-- **Note:** AGENTS.md references `lean/` but actual structure uses `content/quantum-observable-universe/lean/`
+- **Note:** AGENTS.md references `lean/` but actual structure uses `folio/quantum-observable-universe/lean/`
 
 ### 7. Content Block Coverage
 
@@ -346,7 +346,7 @@ confuse readers.
 
 9. **Fibre functor notation** in fibre-functor-atlas.md — review `$\omega$` vs `$\tau$`
 10. **Import bloat** in Lean files — consider shared prelude
-11. **AGENTS.md path mismatch** — references `lean/` but actual path is `content/quantum-observable-universe/lean/`
+11. **AGENTS.md path mismatch** — references `lean/` but actual path is `folio/quantum-observable-universe/lean/`
 
 ### LOW / INFO
 

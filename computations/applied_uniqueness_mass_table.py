@@ -33,7 +33,7 @@ Phase 1 of the 1 ppb workplan
 predictions** by consuming the canonical `tr_M(β_K, q_0)` values pinned
 in `markov-trace-assembly-*.derivation.json` and applying the
 `categoricalMass` formula proved in
-[`QOU.BraidKnot.MassFormulaCategorical`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/MassFormulaCategorical.lean):
+[`QOU.BraidKnot.MassFormulaCategorical`](../../folio/quantum-observable-universe/lean/QOU/BraidKnot/MassFormulaCategorical.lean):
 
     M(K) = ρ(K) · m_e · |tr_M(T_w(K))|        (cat units)
     M(K)_MeV = M(K)_cat · M_E_MEV_CODATA       (Lean theorem)

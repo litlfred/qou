@@ -2,7 +2,7 @@
 """HIGGS-SLOT test from the G-action axioms (option 2 of the 2-7 dispatch).
 
 Per the new G-action axioms in
-content/quantum-observable-universe/algebraic-substrate/g-action-on-substrate.md:
+folio/quantum-observable-universe/algebraic-substrate/g-action-on-substrate.md:
 
   dim_q A^W± = [4]_q  (W-host T(2,4))
   dim_q A^Z  = [6]_q  (Z-host T(2,6))

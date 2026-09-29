@@ -35,12 +35,12 @@ exposes `CoxeterMatrix.M : B → B → ℕ` (the Coxeter matrix), and
 
 **QOU follow-ups gated on this:**
 
-- [`QOU.IwahoriHecke.Quotient`](../../content/quantum-observable-universe/lean/QOU/IwahoriHecke/Quotient.lean)
+- [`QOU.IwahoriHecke.Quotient`](../../folio/quantum-observable-universe/lean/QOU/IwahoriHecke/Quotient.lean)
   Sprint 2 follow-up: add **braid relations** to `heckeIdeal`.
   Currently the ideal includes only Hecke quadratic relations;
   braid relations require reading `m_{s,t}` to construct the
   alternating-product polynomial of length `m_{s,t}`.
-- [`QOU.IwahoriHecke.Tw`](../../content/quantum-observable-universe/lean/QOU/IwahoriHecke/Tw.lean)
+- [`QOU.IwahoriHecke.Tw`](../../folio/quantum-observable-universe/lean/QOU/IwahoriHecke/Tw.lean)
   Sprint 2 follow-up: **Matsumoto's well-definedness** of
   `Tw : W → IwahoriHeckeQuot R q S`. The proof requires the
   braid-relation invariance from the ideal extension above.
@@ -81,7 +81,7 @@ ring are partially present; the Hoefsmit basis is **missing**.
 
 **QOU follow-ups gated on this:**
 
-- [`QOU.IwahoriHecke.Hoefsmit`](../../content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean)
+- [`QOU.IwahoriHecke.Hoefsmit`](../../folio/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean)
   Sprint 5 follow-up: **concrete cell-content recurrence** for
   `T_{s_i} · v_T = α · v_T + β · v_{s_i T}`. Currently the file
   has `qBracket` + `alphaCoefficient` signatures; the recurrence

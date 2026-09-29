@@ -9,7 +9,7 @@
 
 ## Follow-ups (deferred — pick up after merge)
 
-- [ ] **Align the `content/package.json` `build` script with CI.** The npm script currently runs `bun run pipeline/build.ts` with no args, so `main.tex` is never produced for local `bun run build`. Either:
+- [ ] **Align the `folio/package.json` `build` script with CI.** The npm script currently runs `bun run pipeline/build.ts` with no args, so `main.tex` is never produced for local `bun run build`. Either:
   - (a) extend the script to pass `--generate-main --main-out ../main.tex --preamble ../latex/preamble.tex`, or
   - (b) add a dedicated `build:paper` script and have CI call it, removing the duplicated invocation in `publish.yml` / `blueprint.yml` / `lean-build.yml` / `lean_ci.yml`.
 - [ ] **Audit other workflows for the same `main.tex` gap.** Confirm every place that library/consumes `main.tex` either generates it explicitly or depends on a job that does. `paper-builder-image.yml` in particular should be re-checked.

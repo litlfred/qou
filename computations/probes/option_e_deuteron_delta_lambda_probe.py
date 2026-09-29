@@ -3,7 +3,7 @@
 Option E deuteron Δ_λ probe — experimental verification harness.
 
 Companion to the Lean infrastructure in
-content/quantum-observable-universe/lean/QOU/OptionE/.
+folio/quantum-observable-universe/lean/QOU/OptionE/.
 
 For the deuteron (Z=1, N=1, A=2, n=6), tries five candidate Δ_λ rules
 derived from crystal-graph data + tests Path-D mass-prediction closure.

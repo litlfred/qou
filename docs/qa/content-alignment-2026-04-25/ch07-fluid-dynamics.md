@@ -365,32 +365,32 @@
 
 #### Minor issues (notational)
 
-1. **File:** `/home/user/qou/content/quantum-observable-universe/fluid-dynamics/madelung-fluid.md`  
+1. **File:** `/home/user/qou/folio/quantum-observable-universe/fluid-dynamics/madelung-fluid.md`  
    **Line:** 60  
    **Issue:** "$\gamma$ whose mass is controlled by..." — should use $\varrho$ for filament.  
    **Fix:** Change to "$\varrho$ whose mass is controlled by..."
 
-2. **File:** `/home/user/qou/content/quantum-observable-universe/fluid-dynamics/discrete-vortex-physical.md`  
+2. **File:** `/home/user/qou/folio/quantum-observable-universe/fluid-dynamics/discrete-vortex-physical.md`  
    **Line:** (Contextual, not line-specific)  
    **Issue:** References to vortex filament use $\gamma$ in some contexts; should be $\varrho$ for consistency with AGENTS.md §7aa.  
    **Fix:** Audit all filament mentions; standardize to $\varrho$.
 
-3. **File:** `/home/user/qou/content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.md`  
+3. **File:** `/home/user/qou/folio/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.md`  
    **Line:** 63–70  
    **Issue:** Decay rate $\gamma_k = \nu_q\Delta_q\partial_t\eta$ (correct use) is close to surrounding filament notation; could cause confusion.  
    **Fix:** Add clarifying phrase: "The **decay rate** $\gamma_k = \nu_q\Delta_q\partial_t\eta$ (not to be confused with filament $\varrho$)..."
 
 #### Simplification opportunities (content clarity)
 
-4. **File:** `/home/user/qou/content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.md`  
+4. **File:** `/home/user/qou/folio/quantum-observable-universe/fluid-dynamics/q-navier-stokes.md`  
    **Issue:** 166-line block with no intermediate summaries; readers may lose track of categorical vs coordinate forms.  
    **Fix:** Add a one-sentence summary after the categorical form and before the archimedean realisation. Insert section header: "**Archimedean realisation** (lines 71–102):" to break visual monotony.
 
-5. **File:** `/home/user/qou/content/quantum-observable-universe/fluid-dynamics/p1-spectral-sobolev.md`  
+5. **File:** `/home/user/qou/folio/quantum-observable-universe/fluid-dynamics/p1-spectral-sobolev.md`  
    **Issue:** 141 lines, three major results (a), (b), (c) stated at lines 12–59; proofs follow. No visual distinction between statement and justification.  
    **Fix:** Box the statement of (a), (b), (c) at top; label proof sections explicitly with "**Proof of (a).**" headers already present (line 68) but could be bolder.
 
-6. **File:** `/home/user/qou/content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.md`  
+6. **File:** `/home/user/qou/folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.md`  
    **Issue:** 157 lines, 5 subsections (a)–(e) scattered throughout; no table of contents or clear section breaks.  
    **Fix:** Add markdown section headers:  
    ```markdown

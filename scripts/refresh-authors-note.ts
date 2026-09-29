@@ -36,7 +36,7 @@ import { computeStats } from "../folio-assistant/scripts/lean-coverage";
 
 const REPO_ROOT = resolve(import.meta.dir, "..");
 const PAPER = "quantum-observable-universe";
-const CONTENT_ROOT = join(REPO_ROOT, "content");
+const CONTENT_ROOT = join(REPO_ROOT, "folio");
 const NOTE = join(CONTENT_ROOT, PAPER, "introduction", "authors-note.md");
 const WITNESS = join(CONTENT_ROOT, PAPER, "introduction", "lean-coverage.json");
 

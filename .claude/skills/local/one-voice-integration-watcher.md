@@ -63,7 +63,7 @@ QA report. Specifically:
 4. **Canonical framework only.** Deprecated notation
    (5-tuple `(M, Θ, G, P, E)`, `$\omega$` fibre functor,
    `$\mathcal{C}$` category, bare `$H_q$`) is replaced; the
-   notation register (`content/quantum-observable-universe/notation/`)
+   notation register (`folio/quantum-observable-universe/notation/`)
    is the authoritative target.
 5. **Archimedean wall preserved.** Per AGENTS.md §7c, algebraic
    substrate blocks must NOT silently specialise to `ℝ`;
@@ -218,7 +218,7 @@ Override the parent's default rule with:
 | No new automated critical findings on `git diff` | `bun run content/pipeline/qa-sweep.ts <changed-section> --ci` exits 0 |
 | `<block>.qa.json` JSON is valid against the `block-qa/v1` schema | `jq '.$schema == "block-qa/v1"' "$qa"` returns true |
 | No block carries a `tags: ["non-scholarly-voice-exception"]` marker without an associated `notes` field in the QA report describing the rationale | grep-style audit |
-| The notation register has not regressed (no new symbol added to a deprecated mapping) | git diff `content/quantum-observable-universe/notation/` for additions to the "deprecated" tables |
+| The notation register has not regressed (no new symbol added to a deprecated mapping) | git diff `folio/quantum-observable-universe/notation/` for additions to the "deprecated" tables |
 
 If any invariant fails on a proposed commit, **block the commit**,
 queue the violation as `critical`, and ask the author (per

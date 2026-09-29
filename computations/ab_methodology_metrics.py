@@ -134,7 +134,7 @@ M5_STUBS = tuple(c for c in M5_CRITS if c in STUB_CRITERIA)
 
 def iter_first_verdicts():
     """Yield (block, criterion, first_entry, n_entries_until_pass)."""
-    for f in sorted((REPO / "content").rglob("*.qa.json")):
+    for f in sorted((REPO / "folio").rglob("*.qa.json")):
         try:
             doc = json.loads(f.read_text())
         except (OSError, json.JSONDecodeError):

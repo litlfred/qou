@@ -19,7 +19,7 @@ description: >-
   register check (`clarity-grad-style`: graduate-level formal-math prose — no
   contractions, second-person, hype, colloquialism, or emoji). Emits per-block
   QA sidecar params under the `clarity-*` criteria via
-  `content/pipeline/definition-clarity-audit.ts`.
+  `folio/pipeline/definition-clarity-audit.ts`.
 ---
 
 # definition-clarity-audit
@@ -60,7 +60,7 @@ last is the **inverse** — a definition hiding in the wrong block kind.
 
 ### Worked example — `def:q-dilogarithm`
 
-[`q-dilogarithm.md`](../../../content/quantum-observable-universe/quantum-observable-universes/q-dilogarithm.md)
+[`q-dilogarithm.md`](../../../folio/quantum-observable-universe/quantum-observable-universes/q-dilogarithm.md)
 is the motivating case and trips three criteria at once:
 
 - opens with a **52-word motivational preamble** ("Beyond the grouplike $\exp_q$
@@ -97,24 +97,24 @@ only, term **bolded**), `prop:q-dilogarithm-pentagon`, `rem:q-dilogarithm-r-matr
 
 ## The scanner
 
-`content/pipeline/definition-clarity-audit.ts` is a qou-local, **self-contained**
+`folio/pipeline/definition-clarity-audit.ts` is a qou-local, **self-contained**
 scanner (no schema import — `folio-assistant/` is gitignored on-branch, so it
 parses `.ts` manifest + `.md` prose by regex, exactly like
 `lean-vacuity-axiom-audit.ts`).
 
 ```bash
 # full corpus → JSON + Markdown report
-bun run content/pipeline/definition-clarity-audit.ts \
+bun run folio/pipeline/definition-clarity-audit.ts \
   --md   docs/audits/2026-06-26-definition-clarity-audit.md \
   --json docs/audits/2026-06-26-definition-clarity-audit.json
 
 # one chapter, one criterion
-bun run content/pipeline/definition-clarity-audit.ts \
-  content/quantum-observable-universe/quantum-observable-universes \
+bun run folio/pipeline/definition-clarity-audit.ts \
+  folio/quantum-observable-universe/quantum-observable-universes \
   --only clarity-defterm-bold
 
 # upsert reviewer.kind="script" candidate entries into <block>.qa.json
-bun run content/pipeline/definition-clarity-audit.ts --write-sidecars
+bun run folio/pipeline/definition-clarity-audit.ts --write-sidecars
 ```
 
 Flags: `[root …]` (default `content/`), `--json`, `--md`, `--only <criterion>`,

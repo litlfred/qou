@@ -65,7 +65,7 @@ A single new script
 1. Imports `markov_trace_canonical.tr_M_word`.
 2. Hard-codes the four braid words above (with literature
    citations to Rolfsen / Knot Atlas — all are in
-   `content/schema/references.ts` already as `[rolfsen1976]` and
+   `folio/schema/references.ts` already as `[rolfsen1976]` and
    `[knotatlas]`).
 3. For each: emits the sympy expression, the mpf value at `q_0`,
    the derivative `d/dq tr_M` at `q_0` (for error budget), and

@@ -205,7 +205,7 @@ def main() -> int:
                        "aspirational; ρ_F=2 (⁴He) is an underived acknowledged input, "
                        "not a derived structural quantity."),
         "refs": ["PR #2552, #2556 (ν_SDP arc)",
-                 "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.md",
+                 "folio/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.md",
                  "computations/deuteron_real_sdp.py"],
         "discipline": "EXPLORATORY — derive-or-refute, no fit, no forced ⁴He number.",
     }

@@ -18,7 +18,7 @@
 # Usage:
 #   scripts/lean-orphan-modules.sh                 # QOU, summary only
 #   scripts/lean-orphan-modules.sh --list          # + every orphan module
-#   scripts/lean-orphan-modules.sh --root content/unital-groebner-bases/lean --lib UGB
+#   scripts/lean-orphan-modules.sh --root folio/unital-groebner-bases/lean --lib UGB
 #
 # ⚠ CORRECTION 2026-08-30 (bean qou-si7d), kept because the superseded text was
 # acted on. This header used to open "list library modules no build ever
@@ -38,7 +38,7 @@
 # reachability, which is a different claim from coverage.
 set -euo pipefail
 
-ROOT="content/quantum-observable-universe/lean"
+ROOT="folio/quantum-observable-universe/lean"
 LIB="QOU"
 LIST=0
 while [ "$#" -gt 0 ]; do

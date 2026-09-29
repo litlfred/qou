@@ -61,7 +61,7 @@ brane-tower-level-selection question, nothing more.
 ## Foundation (from PR #1811 — merging)
 
 The verified
-[`MarkovTraceOnHecke.lean`](../../content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean)
+[`MarkovTraceOnHecke.lean`](../../folio/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean)
 (concrete H₃ Markov trace + cyclicity), plus `trace_formal.py` (formal-q Markov
 trace over `ℚ(s)`) and `gram.py`'s `markov_trace_combo`, are the algebraic
 substrate. The residue-A element, if it exists, is a `Habiro(ℤ)` element whose

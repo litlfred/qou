@@ -54,7 +54,7 @@ bar-oddness is the RIGHT selection principle for the decay element is an
 owner call (bean qou-bg3w).  No c_k is proposed, no fit is performed, nothing
 downstream is re-pointed.
 
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/QBeta/ConventionDAdmissibleRoots.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/QBeta/ConventionDAdmissibleRoots.lean
 -- Ref: [manuscript] computations/qbeta/qbeta_d1_admissible_anchor_probe.py (the functional side)
 -- Ref: [manuscript] computations/qbeta/qbeta_delta_element_fork_pricing_probe.py (the two models)
 -- Ref: [kazhdan1979] Kazhdan, Lusztig, "Representations of Coxeter groups and Hecke algebras", Invent. Math. 53 (1979) 165-184.

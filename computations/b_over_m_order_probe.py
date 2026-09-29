@@ -5,7 +5,7 @@
 # script compares deformation orders the framework already fixes against
 # empirical binding fractions, and states what a real derivation needs.
 #
-# Ref: content/quantum-observable-universe/models-of-qous/symmetric-point-resolution-loss.md
+# Ref: folio/quantum-observable-universe/models-of-qous/symmetric-point-resolution-loss.md
 #      (the ε² channel-resolution stratum and its B/m ~ h² hypothesis)
 """B/m ~ h² order probe.
 

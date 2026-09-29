@@ -275,7 +275,7 @@ Stop when the branch ships (PR merged, or you switch branches):
 - **Lean version bumps**: a Mathlib hash changed in `lakefile.toml` →
   check `cat .lake/packages/mathlib/lean-toolchain` aligns with our
   branch's `lean-toolchain` before continuing the Lean build.
-- **Schema migrations**: if `content/schema/` changed, run
+- **Schema migrations**: if `folio/schema/` changed, run
   `cd content && bun run migrate-lean-refs` and `bun run validate`
   before continuing.
 - **Routine review-cycle commits** (Gemini/Copilot fixes on unrelated

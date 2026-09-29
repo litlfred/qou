@@ -1,0 +1,2158 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:q-collatz",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts",
+    "md": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.md",
+    "lean": "folio/quantum-observable-universe/lean/QOU/QCollatz.lean"
+  },
+  "source_hashes": {
+    "md": "2eb50ab86163",
+    "ts": "b752bd08579d",
+    "lean": "ecdf0fad6ffe",
+    "lean_statement": "aa8247196b2f"
+  },
+  "criteria": {
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.md:69: 2. *The content does not live in the ideal.* By Reeb-flow Turing-completeness the halting set is undecidable, hence not cut out by any ideal ([one length filtration, three problems](#rem:skein-filtrat"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "d0bbb160ee69",
+          "ts": "dca4ac77df81",
+          "lean": "e1d0d7c64d9f"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/lean/QOU/QCollatz.lean:172: so the equation `[3]^a = [2]^b` has no solution for `a, b > 0`."
+      }
+    ],
+    "voice-title-scholarly": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "d0bbb160ee69",
+          "ts": "dca4ac77df81",
+          "lean": "e1d0d7c64d9f"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.md:69: P4:date-ref: 2. *The content does not live in the ideal.* By Reeb-flow Turing-completeness the halting set is undecidable, hence not cut out by any ideal ([one length filtration, three problems](#rem:skein-filtrat"
+      }
+    ],
+    "voice-status-section": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "9f8d395eb812",
+          "md": "bf36fa6b1b74",
+          "lean": "d53370175015"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"real-gt-1\",\"real-positive\",\"symbolic\"],\"chapter\":\"appendix-surreals\",\"expected\":[\"generic-R\",\"na\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "9f8d395eb812",
+          "md": "bf36fa6b1b74",
+          "lean": "d53370175015"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "dca4ac77df81",
+          "md": "20642e0d9f43",
+          "lean": "d53370175015"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "human",
+          "id": "litlfred"
+        },
+        "reviewed_at": "2026-07-13T12:14:53Z",
+        "reviewed_sha": "d539da73180d5888f4a9dc765b90a0efbf32510d",
+        "notes": "Owner-directed dispensation (directive \"can we address those QA issues\", 2026-07-13); transcribed by agent from source inspection, owner to confirm in PR review. Real.sqrt on q-integer ratios in the shared AppendixSurreals Lean; surreal-analytic content is intrinsically archimedean (standard part). Not a gratuitous R."
+      },
+      {
+        "field_hash": {
+          "ts": "9f8d395eb812",
+          "md": "bf36fa6b1b74",
+          "lean": "d53370175015"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/lean/QOU/QCollatz.lean:129 — archimedean Real.* in categorical chapter — Real.sqrt (qInt q 3 / qInt q 2 ^ 2) < 1 := by | folio/quantum-observable-universe/lean/QOU/QCollatz.lean:237 — archimedean Real.* in categorical chapter — Real.log (qInt q 3) / Real.log (qInt q 2) < 2 := by | folio/quantum-observable-universe/lean/QOU/QCollatz.lean:242 — archimedean Real.* in categorical chapter — have hlog2pos : Real.log (qInt q 2) > 0 := Real.log_pos h2gt1 | folio/quantum-observable-universe/lean/QOU/QCollatz.lean:244 — archimedean Real.* in categorical chapter — have h2cast : (2 : ℝ) * Real.log (qInt q 2) = Real.log ((qInt q 2) ^ 2) := by"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "9f8d395eb812",
+          "md": "bf36fa6b1b74",
+          "lean": "d53370175015"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "9f8d395eb812",
+          "md": "bf36fa6b1b74",
+          "lean": "d53370175015"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "9f8d395eb812",
+          "md": "bf36fa6b1b74",
+          "lean": "d53370175015"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "9f8d395eb812",
+          "md": "bf36fa6b1b74",
+          "lean": "d53370175015"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "canonical-script-not-deprecated": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "canonical-no-hardcoded-observable": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "canonical-cal4-acknowledged": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "canonical-ck-tiered-not-binary": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "compute-lp-dual-present": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "detangler-section-band": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "detangler-no-xchapter-fwd": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "detangler-archimedean-wall": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 1,
+          "tanglement_score": 0,
+          "out_degree": 5,
+          "in_degree": 5,
+          "cone_size": 241,
+          "depth": 43,
+          "pagerank": 0.000401,
+          "edge_span_max": 0,
+          "edge_span_mean": 0,
+          "worst_target": ""
+        }
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "detangler-no-dependency-cycle": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:0: uses[] dependency cycle: conj:q-collatz -> rem:skein-filtration-trichotomy -> conj:q-collatz"
+      }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3",
+          "deps_hash": "818ed0189374"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "bib-cited-ref-has-url": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3",
+          "deps_hash": "818ed0189374"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "bib-cited-ref-metadata-ok": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3",
+          "deps_hash": "818ed0189374"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "bib-cited-ref-has-screenshot": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3",
+          "deps_hash": "818ed0189374"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3",
+          "deps_hash": "21d9ff417741"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "proof-no-bare-sorries": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3",
+          "deps_hash": "16d8c7a8984e"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d0bbb160ee69",
+          "ts": "dca4ac77df81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly defined q-Collatz map properly rooted in skein crossing resolutions. Marked as conjecture.",
+        "reviewed_at": "2026-07-08T09:01:27.000Z",
+        "reviewed_sha": "5254db7bab66d2bc0b8ba254d2bf29caa72fca39",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "d0bbb160ee69",
+          "ts": "dca4ac77df81"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d0bbb160ee69",
+          "ts": "dca4ac77df81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-false-claim.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly defined q-Collatz map properly rooted in skein crossing resolutions. Marked as conjecture.",
+        "reviewed_at": "2026-07-08T09:01:27.000Z",
+        "reviewed_sha": "5254db7bab66d2bc0b8ba254d2bf29caa72fca39",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d0bbb160ee69",
+          "ts": "dca4ac77df81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The claims are non-vacuous as they make concrete numerical or algebraic conjectures.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly defined q-Collatz map properly rooted in skein crossing resolutions. Marked as conjecture.",
+        "reviewed_at": "2026-07-08T09:01:27.000Z",
+        "reviewed_sha": "5254db7bab66d2bc0b8ba254d2bf29caa72fca39",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d0bbb160ee69",
+          "ts": "dca4ac77df81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-circular.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly defined q-Collatz map properly rooted in skein crossing resolutions. Marked as conjecture.",
+        "reviewed_at": "2026-07-08T09:01:27.000Z",
+        "reviewed_sha": "5254db7bab66d2bc0b8ba254d2bf29caa72fca39",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d0bbb160ee69",
+          "ts": "dca4ac77df81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-overclaim.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly defined q-Collatz map properly rooted in skein crossing resolutions. Marked as conjecture.",
+        "reviewed_at": "2026-07-08T09:01:27.000Z",
+        "reviewed_sha": "5254db7bab66d2bc0b8ba254d2bf29caa72fca39",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d0bbb160ee69",
+          "ts": "dca4ac77df81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-hidden-dof.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly defined q-Collatz map properly rooted in skein crossing resolutions. Marked as conjecture.",
+        "reviewed_at": "2026-07-08T09:01:27.000Z",
+        "reviewed_sha": "5254db7bab66d2bc0b8ba254d2bf29caa72fca39",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d0bbb160ee69",
+          "ts": "dca4ac77df81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-non-sequitur.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly defined q-Collatz map properly rooted in skein crossing resolutions. Marked as conjecture.",
+        "reviewed_at": "2026-07-08T09:01:27.000Z",
+        "reviewed_sha": "5254db7bab66d2bc0b8ba254d2bf29caa72fca39",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d0bbb160ee69",
+          "ts": "dca4ac77df81"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The referenced Lean file is missing, representing a structural divergence between Lean and content block.",
+        "severity": "minor",
+        "evidence": "The referenced Lean file is missing, representing a structural divergence between Lean and content block."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly defined q-Collatz map properly rooted in skein crossing resolutions. Marked as conjecture.",
+        "reviewed_at": "2026-07-08T09:01:27.000Z",
+        "reviewed_sha": "5254db7bab66d2bc0b8ba254d2bf29caa72fca39",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d0bbb160ee69",
+          "ts": "dca4ac77df81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-citation-misuse.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly defined q-Collatz map properly rooted in skein crossing resolutions. Marked as conjecture.",
+        "reviewed_at": "2026-07-08T09:01:27.000Z",
+        "reviewed_sha": "5254db7bab66d2bc0b8ba254d2bf29caa72fca39",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d0bbb160ee69",
+          "ts": "dca4ac77df81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly defined q-Collatz map properly rooted in skein crossing resolutions. Marked as conjecture.",
+        "reviewed_at": "2026-07-08T09:01:27.000Z",
+        "reviewed_sha": "5254db7bab66d2bc0b8ba254d2bf29caa72fca39",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d0bbb160ee69",
+          "ts": "dca4ac77df81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-empirical-fragility.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly defined q-Collatz map properly rooted in skein crossing resolutions. Marked as conjecture.",
+        "reviewed_at": "2026-07-08T09:01:27.000Z",
+        "reviewed_sha": "5254db7bab66d2bc0b8ba254d2bf29caa72fca39",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d0bbb160ee69",
+          "ts": "dca4ac77df81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-physical-implausibility.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly defined q-Collatz map properly rooted in skein crossing resolutions. Marked as conjecture.",
+        "reviewed_at": "2026-07-08T09:01:27.000Z",
+        "reviewed_sha": "5254db7bab66d2bc0b8ba254d2bf29caa72fca39",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d0bbb160ee69",
+          "ts": "dca4ac77df81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-reproducibility.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly defined q-Collatz map properly rooted in skein crossing resolutions. Marked as conjecture.",
+        "reviewed_at": "2026-07-08T09:01:27.000Z",
+        "reviewed_sha": "5254db7bab66d2bc0b8ba254d2bf29caa72fca39",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d0bbb160ee69",
+          "ts": "dca4ac77df81"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing.",
+        "severity": "minor",
+        "verdict": "survivable-objection",
+        "referee_argument": "The conjectured algebraic or physical relations are completely unproven, and the sibling Lean file is missing.",
+        "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly defined q-Collatz map properly rooted in skein crossing resolutions. Marked as conjecture.",
+        "reviewed_at": "2026-07-08T09:01:27.000Z",
+        "reviewed_sha": "5254db7bab66d2bc0b8ba254d2bf29caa72fca39",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly defined q-Collatz map properly rooted in skein crossing resolutions. Marked as conjecture.",
+        "reviewed_at": "2026-07-08T09:01:27.000Z",
+        "reviewed_sha": "5254db7bab66d2bc0b8ba254d2bf29caa72fca39",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-probe-narrative": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "cite-named-theorem": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "voice-agent-speak": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Clean. `thm:qou-obstruction-reduction` and similar are block labels; \"qou-\" here is the paper's own prefix, not a bean id.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "uses-editorial-hygiene": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "51e33f456ef9",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "c7f602946422"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f",
+        "metrics": {
+          "uses_count": 5,
+          "broken_edges": 0,
+          "redundant_edges": 5
+        }
+      }
+    ],
+    "uses-formal-coverage": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "51e33f456ef9",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "f9b547e15cfd"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f",
+        "metrics": {
+          "formal_only_count": 0,
+          "editorial_only_count": 5
+        }
+      }
+    ],
+    "lean-ref-owns-decl": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "51e33f456ef9",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "c7f602946422"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f",
+        "metrics": {
+          "decl_claimants": 1
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "bf36fa6b1b74",
+          "ts": "9f8d395eb812"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.474Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "777af29c3fcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:07.072Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "High density (9+ denials) but every one is a scope claim the corpus disciplines require: 'not a claim about the classical Collatz problem', 'the attractor is this 2-cycle, not the literal unknot polynomial 1', 'a divisibility fact, not a dynamical one', 'structurally analogous to — not an instance of — the algebrization barrier', 'The class is shared; the verdicts are not.' Substantive-mathematical-contrast class throughout.",
+        "notes": "Density note only: the block is a corrections-carrying conjecture, so denial is its subject matter."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "bf36fa6b1b74",
+          "ts": "9f8d395eb812"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.474Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "777af29c3fcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:07.137Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'Note carefully what this does not say: it bars ... it does not bar ...' is the arity-conflation correction itself, an argument step rather than a setup-then-reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "bf36fa6b1b74",
+          "ts": "9f8d395eb812"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.474Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (5 in 619 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "777af29c3fcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:07.201Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "About five em-dashes over 1281 words, all matched parenthetical pairs ('Unlike the integers — where every element is even or odd — a Laurent polynomial ...')."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "bf36fa6b1b74",
+          "ts": "9f8d395eb812"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.474Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 619 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "777af29c3fcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:07.263Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Three-item enumerations are the shared trichotomy (descent / polynomial budget / bounded) and the divisor set {1,2,3,6}; both are content-determined."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "bf36fa6b1b74",
+          "ts": "9f8d395eb812"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.474Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "777af29c3fcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:07.330Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Ends on a Lean pointer ('this convergence question is Halts / halts_of_len_descent'), not a quotable line."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "bf36fa6b1b74",
+          "ts": "9f8d395eb812"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.474Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "777af29c3fcd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:07.454Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "major",
+        "evidence": "Two sentences narrate the text's own editing rather than the mathematics: 'The caveat ... applies here too, and is stated now so it is not rediscovered' and 'Conflating the two is a recurring error, and this sentence carried it until 2026-08-15.' The second is a dated changelog note in scholarly prose.",
+        "notes": "STRUCTURAL — do not delete the provenance. AGENTS.md §4d puts correction/status notes in the .ts authorNotes field (kind: 'refined-framing', date: '2026-08-15'), not in the .md. Proposed: keep 'Conflating the two is a recurring error.' in prose, move 'and this sentence carried it until 2026-08-15' to authorNotes; likewise trim 'and is stated now so it is not rediscovered'."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "bf36fa6b1b74",
+          "ts": "9f8d395eb812"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.474Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "777af29c3fcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:07.536Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'The conjecture's content therefore sits in the descent measure on the filtration, not in the vanishing of kappa_C' is the inference the two numbered steps establish, not a restatement of the opening."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "bf36fa6b1b74",
+          "ts": "9f8d395eb812"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.474Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "777af29c3fcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:07.612Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No personal or affective register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "bf36fa6b1b74",
+          "ts": "9f8d395eb812"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.474Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "777af29c3fcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:07.685Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Claims are scoped ('One direction is safe'; 'is not established'; 'a scope-(a) objection ... not a proof that no such equivalence holds'), which is the opposite of unqualified maximum-strength."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "bf36fa6b1b74",
+          "ts": "9f8d395eb812"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.474Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "777af29c3fcd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:07.745Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "minor",
+        "evidence": "One sentence stalls aloud through stacked nominalisation and a double negative: 'Cheapness of this kind cannot by itself discharge an equivalence with a hard uniform statement without collapsing the equivalence — a scope-(a) objection to the route as stated, not a proof that no such equivalence holds.'",
+        "notes": "Math-adjacent (it states the scope class), so proposed rather than applied: 'On its own, a cheap vanishing criterion cannot be equivalent to a hard uniform statement — the equivalence would collapse. This is a scope-(a) objection to the route as stated; it does not show that no such equivalence holds.'"
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "b752bd08579d",
+          "lean": "ecdf0fad6ffe",
+          "lean_statement": "aa8247196b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T21:38:10.737Z",
+        "reviewed_sha": "97733e9a58474b8ac6c94d206c896d54b01c010f"
+      }
+    ]
+  },
+  "updated_at": "2026-08-19T21:29:07.745Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
+}

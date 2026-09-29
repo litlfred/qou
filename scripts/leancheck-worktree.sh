@@ -25,7 +25,7 @@ P="$S:"
 for d in mathlib batteries aesop Qq proofwidgets importGraph LeanSearchClient plausible Cli; do
   P="$P$M/.lake/packages/$d/.lake/build/lib/lean:"
 done
-P="$P$M/content/quantum-observable-universe/lean/.lake/build/lib/lean"
+P="$P$M/folio/quantum-observable-universe/lean/.lake/build/lib/lean"
 export LEAN_PATH="$P"
 
 DEPS=()
@@ -39,7 +39,7 @@ done
 
 for mod in ${DEPS+"${DEPS[@]}"}; do
   rel="${mod//.//}"
-  src="$W/content/quantum-observable-universe/lean/$rel.lean"
+  src="$W/folio/quantum-observable-universe/lean/$rel.lean"
   out="$S/$rel.olean"
   if [ -f "$S/$rel.olean" ]; then echo "=== dep cached $mod"; continue; fi
   mkdir -p "$(dirname "$out")"

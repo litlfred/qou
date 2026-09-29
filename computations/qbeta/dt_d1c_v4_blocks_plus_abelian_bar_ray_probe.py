@@ -4,7 +4,7 @@ stipulation, 0 of 128.
 
 # Ref: .beans/qou-q9ih--d1-route-c-m1-construct-the-qw-reproducing-34-bar.md
 # Ref: computations/qbeta/dt_d1c_hecke_block_vertex_bound_probe.py
-# Ref: content/quantum-observable-universe/lean/QOU/QBeta/QuiverMirrorAutomorphismExcluded.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/QBeta/QuiverMirrorAutomorphismExcluded.lean
 
 THE PROPOSAL BEING TESTED. `dt_d1c_hecke_block_vertex_bound_probe` showed the
 per-ray stable count is capped by the vertex count `V`, so D1-c's

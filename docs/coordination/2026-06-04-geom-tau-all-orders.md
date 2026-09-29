@@ -6,7 +6,7 @@ research direction for whoever picks it up next.
 ## What's settled (recap)
 
 The algebraic → geometric → boundary chain (per
-[`rem:geom-bridge-status`](../../content/quantum-observable-universe/mass-theory/geom-bridge-status.md)):
+[`rem:geom-bridge-status`](../../folio/quantum-observable-universe/mass-theory/geom-bridge-status.md)):
 
 | Link | Statement | Status |
 |---|---|---|
@@ -124,12 +124,12 @@ sharpened form. If picked up: branch off
 
 ## Cross-links
 
-- Content block: [`conj:tau-all-orders-bridge`](../../content/quantum-observable-universe/mass-theory/tau-all-orders-bridge.md)
-- Lean class skeleton: `content/quantum-observable-universe/mass-theory/tau-all-orders-bridge.lean` (declares `TauOrderMixingMap` + `TauDistinctInvariants` classes, no instances — honest open state)
+- Content block: [`conj:tau-all-orders-bridge`](../../folio/quantum-observable-universe/mass-theory/tau-all-orders-bridge.md)
+- Lean class skeleton: `folio/quantum-observable-universe/mass-theory/tau-all-orders-bridge.lean` (declares `TauOrderMixingMap` + `TauDistinctInvariants` classes, no instances — honest open state)
 - Precedent disproof: [`phi0_normalization_disproof.py`](../../computations/hecke/phi0_normalization_disproof.py)
-- Anchor proposition: [`prop:crossed-module-euler-characteristic`](../../content/quantum-observable-universe/mass-theory/crossed-module-euler-characteristic.md)
-- Upstream conjecture: [`conj:geom-universality`](../../content/quantum-observable-universe/particle-interactions/geom-universality.md)
-- Status remark this sharpens: [`rem:geom-bridge-status`](../../content/quantum-observable-universe/mass-theory/geom-bridge-status.md)
+- Anchor proposition: [`prop:crossed-module-euler-characteristic`](../../folio/quantum-observable-universe/mass-theory/crossed-module-euler-characteristic.md)
+- Upstream conjecture: [`conj:geom-universality`](../../folio/quantum-observable-universe/particle-interactions/geom-universality.md)
+- Status remark this sharpens: [`rem:geom-bridge-status`](../../folio/quantum-observable-universe/mass-theory/geom-bridge-status.md)
 
 ## Update 2026-06-26 — the a_D^(n) fork settled + 3-layer recursive structure (lever-1, bean z2bn)
 

@@ -100,8 +100,8 @@ def main():
         "result": {"all_ok": bool(all_ok), "per_q": per_q},
         "refs": [
             "docs/audits/2026-06-07-chebyshev-pairing-engine-proved.md",
-            "content/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.md",
-            "content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.md",
+            "folio/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.md",
+            "folio/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.md",
         ],
     }
     sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "substrate"))

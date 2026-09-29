@@ -7,7 +7,7 @@ nav_order: 1
 # Quantum Observable Universe — documentation
 
 This site renders the repository's `docs/` tree. **The paper itself is not here** —
-it lives as content objects under `content/quantum-observable-universe/`, and the
+it lives as content objects under `folio/quantum-observable-universe/`, and the
 `.md` file of each block is its authoritative human-readable face.
 
 What is here is the working record around that paper.
@@ -58,6 +58,6 @@ no `workflow_call:` trigger.
 
 ## Elsewhere
 
-- **The paper** — `content/quantum-observable-universe/`
+- **The paper** — `folio/quantum-observable-universe/`
 - **The work plan** — `beans/defs/`, via the `beans` CLI
 - **Agent instructions** — [`AGENTS.md`](https://github.com/litlfred/qou/blob/main/AGENTS.md)

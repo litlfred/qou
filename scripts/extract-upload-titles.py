@@ -40,7 +40,7 @@ import warnings
 # extraction succeeds regardless.
 warnings.filterwarnings("ignore")
 
-REFERENCES = "content/schema/references.ts"
+REFERENCES = "folio/schema/references.ts"
 UPLOADS_GLOB = "library/*"
 SOURCE_EXT = (".pdf",)
 

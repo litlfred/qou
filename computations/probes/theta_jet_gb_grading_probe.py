@@ -280,9 +280,9 @@ def main():
         "context": {
             "bean": "qou-mlog",
             "audit_doc": "docs/audits/2026-07-20-theta-jet-gb-filtration.md",
-            "consumers": ["content/quantum-observable-universe/lean/QOU/Mass/"
+            "consumers": ["folio/quantum-observable-universe/lean/QOU/Mass/"
                           "BindingGevreyHalf.lean",
-                          "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/"
+                          "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/"
                           "JetOrder.lean",
                           "computations/gb-filtration-jet-order.witness.json"],
             "route_b": "computations/probes/qlift_routeB_connection_matrix_probe.py "

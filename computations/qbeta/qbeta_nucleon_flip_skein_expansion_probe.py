@@ -13,7 +13,7 @@ one-letter reading numerically instead of merely retracting it in prose.
 
 # Ref: computations/qbeta/qbeta_option_e_order_dof_range_probe.py  (NF machinery, calibrated)
 # Ref: computations/qbeta/qbeta_delta_candidate_census_probe.py    (_GEN_CHAINS, the models)
-# Ref: content/quantum-observable-universe/lean/QOU/QBeta/NucleonFlavourIsDetermined.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/QBeta/NucleonFlavourIsDetermined.lean
 # Ref: .beans/qou-99qc--...md  (OWNER RULING 2026-09-08: eps := tr at z_D)
 
 WHY TWO CROSSINGS AND NOT ONE. A nucleon is three quarks, so it carries

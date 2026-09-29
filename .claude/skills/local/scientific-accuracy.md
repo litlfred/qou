@@ -300,9 +300,9 @@ peer-review practices and the methodology of
 
 The QOU framework admits **exactly three** external calibration
 inputs, per
-[`prop:three-calibration-inputs`](../../../content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md)
+[`prop:three-calibration-inputs`](../../../folio/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md)
 and
-[`prop:three-calibration-discipline`](../../../content/quantum-observable-universe/observations/three-calibration-discipline.md):
+[`prop:three-calibration-discipline`](../../../folio/quantum-observable-universe/observations/three-calibration-discipline.md):
 
 | ID | Quantity | DOF of $H^1 = 2W$ | Source |
 |----|----------|-------------------|--------|
@@ -368,7 +368,7 @@ incoming commits + PRs, route the request to
   - `MassDerivation.experimental_mu_e_ratio` (206.768283)
   - `MassDerivation.substrate_q` (1.1097)
 - Every claim citing experimental data must have a `\cite{key}` whose
-  CSL-JSON entry in `content/schema/references.ts` includes a DOI or URL to the original source.
+  CSL-JSON entry in `folio/schema/references.ts` includes a DOI or URL to the original source.
 - The `-- Ref: [key]` annotations in Lean `sorry` markers must cite the
   correct foundational reference for the gap.  Verify that the cited
   paper is relevant to the unproved obligation.

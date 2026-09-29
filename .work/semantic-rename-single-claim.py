@@ -65,7 +65,7 @@ def main() -> int:
     targets = sys.argv[1:]
     if not targets:
         targets = []
-        for p in pathlib.Path('content/quantum-observable-universe/lean/QOU').rglob('*.lean'):
+        for p in pathlib.Path('folio/quantum-observable-universe/lean/QOU').rglob('*.lean'):
             text = p.read_text()
             if re.search(r'^  claim : Prop$', text, re.MULTILINE):
                 targets.append(str(p))

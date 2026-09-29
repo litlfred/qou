@@ -5,7 +5,7 @@ form `t = t` whose two sides are token-identical.
 WHY IT EXISTS.  `scripts/lean-axiom-provability-probe.py` scans `axiom` only:
 a vacuous THEOREM has no axiom to convert and no axiom status to move, so it
 is structurally invisible there.  The corpus vacuity audit
-(`content/pipeline/lean-vacuity-axiom-audit.ts`) keys on a `: True`
+(`folio/pipeline/lean-vacuity-axiom-audit.ts`) keys on a `: True`
 conclusion, which `E = E` is not.  Between them this shape had no detector,
 which is how `figure_eight_branching_rule` stood with a `rfl` conclusion and
 a `chi_actual = chi_actual` hypothesis.
@@ -133,7 +133,7 @@ def main() -> int:
     print("self-test passed\n", file=sys.stderr)
 
     hits = []
-    for p in sorted(pathlib.Path("content").rglob("*.lean")):
+    for p in sorted(pathlib.Path("folio").rglob("*.lean")):
         if ".lake" in p.parts:
             continue
         try:

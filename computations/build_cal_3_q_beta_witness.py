@@ -35,7 +35,7 @@ def main() -> int:
     w.set_description(
         "CAL-3 calibration input: free-neutron β-decay Q-value Q_β(n). "
         "Per the QOU three-calibration discipline "
-        "(content/quantum-observable-universe/braids-and-knots/"
+        "(folio/quantum-observable-universe/braids-and-knots/"
         "three-calibration-inputs.md), Q_β(n) is one of exactly three "
         "external inputs to the framework — alongside m_e (CAL-1) and "
         "m_μ/m_e (CAL-2) — used to fix the hadronic energy scale E_0 "

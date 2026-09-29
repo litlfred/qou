@@ -30,7 +30,7 @@ inputs, plus a derive-or-refute probe:
 `m_sym` = `m_symbolic` ↔ binding form `B_sym = α·ln(tr_free/tr_atom)` (exact
 Kashaev log-trace). `m_qCLT` = `m_qCLT_approx` ↔ `B_qCLT`. The q-Bessel
 second-kind work (q-Lommel **order** recurrence, `b = q₀¹⁰+q₀⁻¹⁰ = 2cosh(10η₀)`,
-[`QLommelOrderRecurrence.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/QLommelOrderRecurrence.lean))
+[`QLommelOrderRecurrence.lean`](../../folio/quantum-observable-universe/lean/QOU/QBeta/QLommelOrderRecurrence.lean))
 supplies two distinct things:
 
 1. a **derived** binding *correction* for the `B_qCLT` channel — the factorized

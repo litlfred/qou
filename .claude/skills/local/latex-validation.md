@@ -46,11 +46,11 @@ repository's `copilot-instructions.md`.
 - Non-breaking spaces (`~`) precede `\ref` and `\eqref`.
 
 ### 5. Bibliography
-- Every `\cite{key}` key must resolve to an entry in `content/schema/references.ts`
+- Every `\cite{key}` key must resolve to an entry in `folio/schema/references.ts`
   (the CSL-JSON source of truth; `references.bib` is auto-generated via `bun run export-bibtex`).
 - Citation keys follow the `<firstauthorlastname><year>` convention.
 - Validate with `bun run validate-refs`.
-- Every new reference: add a `ref()` call in `content/schema/references.ts` with at minimum
+- Every new reference: add a `ref()` call in `folio/schema/references.ts` with at minimum
   `author`, `title`, `issued`, and either `DOI` or `URL`.
 
 ### 6. Commutative Diagrams (Herrlich–Strecker style)
@@ -104,11 +104,11 @@ repository's `copilot-instructions.md`.
 
 ### 9. Blueprint-Bibliography Cross-References
 - Every `-- Ref: [key]` annotation in Lean files must have a matching
-  citation key in `content/schema/references.ts` (exact case-sensitive match).
+  citation key in `folio/schema/references.ts` (exact case-sensitive match).
 - When adding a `sorry` to a Lean file, precede it with a
   `-- Ref: [key] url` comment linking to the foundational reference.
 - `\cite{key}` keys in `blueprint/src/content.tex` must resolve against
-  `references.bib` (auto-generated from `content/schema/references.ts`).
+  `references.bib` (auto-generated from `folio/schema/references.ts`).
 - Validate all citation keys with `bun run validate-refs`.
 
 ## Mechanical enforcement — the preflight linter (run this FIRST)

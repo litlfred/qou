@@ -7,7 +7,7 @@ NO fit, NO tuning, NO wiring.
 # Ref: docs/audits/2026-07-13-carrier-saturation-crossover-mechanism.md
 # Ref: docs/audits/2026-07-13-li6-h18-amplification-discriminator.md
 # Ref: docs/audits/2026-07-13-theta-lambda-magnitude-derive-or-refute.md
-# Ref: content/quantum-observable-universe/mass-theory/wedderburn-trace-identity.md
+# Ref: folio/quantum-observable-universe/mass-theory/wedderburn-trace-identity.md
 
 THE QUESTION (as posed by the discriminator audit R3-b): the θ_λ carrier
     S(A) = Σ_λ y_λ · dim_λ · |Δθ_λ|          (so  m_e·S  in MeV)
@@ -442,7 +442,7 @@ def main() -> int:
                         ".witness.json (cached canonical; NOT recomputed)",
         "li5_li6_free": "chi_free_via_lr (LR parabolic path; validated vs "
                         "the ⁴He MPFR free witness in-run)",
-        "normalization_prop": "content/quantum-observable-universe/"
+        "normalization_prop": "folio/quantum-observable-universe/"
                               "mass-theory/wedderburn-trace-identity.md "
                               "(prop:wedderburn-trace-identity)",
         "B_AME_role": "numerators of reported diagnostic quotients only",

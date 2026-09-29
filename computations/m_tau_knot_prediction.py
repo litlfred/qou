@@ -14,7 +14,7 @@ motivic period, hbar_q = (q-1)/q is algebraic in q, and the substrate q_0 is
 pinned by CODATA m_mu/m_e (currently un-derived).
 
 The paper claims m_tau/m_e is "predicted from q_0 alone"
-(content/quantum-observable-universe/braids-and-knots/calibration-inputs.md:144)
+(folio/quantum-observable-universe/braids-and-knots/calibration-inputs.md:144)
 but never surfaces the formula. This script tests the simplest extension of
 the muon identity: search for a hyperbolic knot/link K_tau and integer
 k_tau such that

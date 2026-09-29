@@ -58,7 +58,7 @@ To bring a deprecated witness back into the audit:
    computations/<name>.witness.json`
 2. Either:
    - add `"auditOnly": "docs/audits/<report>.md"` and `WitnessBuilder.set_audit_only(...)` in the producer, or
-   - point a content block's `computation.witness` (or a `content/values/registry.ts` `witnessFile:`) at it.
+   - point a content block's `computation.witness` (or a `folio/values/registry.ts` `witnessFile:`) at it.
 
 Bulk deletion of this directory is owner-only.
 

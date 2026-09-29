@@ -6,9 +6,9 @@ smaller one, and the D-frame trace baseline is priced across the two.
 
 # Ref: .beans/qou-cds1--s1-science-re-derive-the-qbeta-ck-ladder-under-d-n.md
 # Ref: .beans/qou-avt6--proved-no-typed-crossing-word-difference-has-couni.md
-# Ref: content/quantum-observable-universe/nuclear-interactions/qbeta-counit-closed-form.md
-# Ref: content/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.md
-# Ref: content/quantum-observable-universe/mass-theory/deuteron-binding-dressing-proton-net.md
+# Ref: folio/quantum-observable-universe/nuclear-interactions/qbeta-counit-closed-form.md
+# Ref: folio/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.md
+# Ref: folio/quantum-observable-universe/mass-theory/deuteron-binding-dressing-proton-net.md
 # Ref: computations/qbeta/qbeta_d_frame_trace_baseline_probe.py
 # Ref: computations/qbeta/qbeta_phase_block_resolution_probe.py
 

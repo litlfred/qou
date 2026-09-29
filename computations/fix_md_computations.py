@@ -1,6 +1,6 @@
 import os
 
-content_dir = "/home/litlfred/space_cats/qou/content/quantum-observable-universe/molecular-construction"
+content_dir = "/home/litlfred/space_cats/qou/folio/quantum-observable-universe/molecular-construction"
 
 missing_computations = {
     "ilp-covalent-bond.ts": [

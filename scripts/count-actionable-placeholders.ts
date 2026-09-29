@@ -37,7 +37,7 @@
  *
  * USAGE:
  *   bun scripts/count-actionable-placeholders.ts [dir ...] [--list]
- * Defaults to scanning content/quantum-observable-universe.
+ * Defaults to scanning folio/quantum-observable-universe.
  */
 
 import { readFileSync, existsSync, readdirSync, statSync } from "node:fs";
@@ -168,7 +168,7 @@ function main(): void {
   const dirs = args.filter((a) => !a.startsWith("--"));
   const scopes = dirs.length
     ? dirs.map((d) => resolve(REPO_ROOT, d))
-    : [resolve(REPO_ROOT, "content/quantum-observable-universe")];
+    : [resolve(REPO_ROOT, "folio/quantum-observable-universe")];
 
   let grandSorry = 0;
   let grandTodo = 0;

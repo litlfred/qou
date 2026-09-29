@@ -185,8 +185,8 @@ def main():
         "context": {
             "axis": "Δ_λ per-isotope binding closure (GAP-A) — deuteron anchor",
             "anchor_witness": "rho-k-h3a-co-casimir.witness.json",
-            "refutation_sibling": "content/quantum-observable-universe/mass-theory/frobenius-cocasimir-refuted-deuteron.md",
-            "counit_definition": "content/quantum-observable-universe/particle-interactions/qbeta-counit-transition.md",
+            "refutation_sibling": "folio/quantum-observable-universe/mass-theory/frobenius-cocasimir-refuted-deuteron.md",
+            "counit_definition": "folio/quantum-observable-universe/particle-interactions/qbeta-counit-transition.md",
             "gate_rule": "no seventh FIT-based ansatz (this candidate is parameter-free, permitted; refuted on its own)",
         },
     }

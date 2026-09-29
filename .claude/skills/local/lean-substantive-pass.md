@@ -88,7 +88,7 @@ specific construction requires `ℝ`. `Matrix R d₁ d₂`,
 ```bash
 # Count remaining placeholders by chapter
 grep -lr "^  holds : Prop\|^  claim : Prop\|^  claim_i : Prop" \
-  content/quantum-observable-universe/lean/QOU/ 2>/dev/null \
+  folio/quantum-observable-universe/lean/QOU/ 2>/dev/null \
   | awk -F'/QOU/' '{print $2}' | awk -F/ '{print $1}' \
   | sort | uniq -c | sort -rn
 ```

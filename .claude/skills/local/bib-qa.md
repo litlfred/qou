@@ -3,7 +3,7 @@ name: bib-qa
 roles: [reader, collaborator, owner]
 description: >
   Bibliography quality-assurance agent — validates every reference in
-  content/schema/references.ts against five QA checks: URL availability,
+  folio/schema/references.ts against five QA checks: URL availability,
   URL resolution, metadata completeness, citation coverage, and
   screenshot/image evidence.  Generates bib-qa.json consumed by the
   standalone bib-qa.html dashboard.
@@ -14,7 +14,7 @@ allowed-tools: Read Write Edit Bash Grep Glob WebFetch Agent
 
 ## Purpose
 
-Ensure every entry in the bibliography (`content/schema/references.ts`)
+Ensure every entry in the bibliography (`folio/schema/references.ts`)
 is well-formed, reachable, accurately cited, and backed by evidence.
 The skill operates at two levels:
 
@@ -32,9 +32,9 @@ The skill operates at two levels:
 | 2 | `url_resolves`   | ✓*    | URL responds with HTTP 2xx AND page contains expected title/author (`--check-urls` flag) |
 | 3 | `metadata_ok`    | ✓     | Title, author(s), year present; type-specific fields complete |
 | 4 | `cited_in_paper` | ✓     | Referenced by `\cite{}` in .md/.tex or `-- Ref:` in .lean |
-| 5 | `has_screenshot` | ✓     | Screenshot exists in `content/bib-qa-images/<id>.*` |
+| 5 | `has_screenshot` | ✓     | Screenshot exists in `folio/bib-qa-images/<id>.*` |
 | 6 | `has_local_pdf`  | ✓     | Full paper PDF / data file present at `library/<id>*.{pdf,txt}` for offline verification (added 2026-05-19) |
-| 7 | `verification_status` | ✓ | Per-paper verification record exists in `content/bib-qa-verifications.json` with status ∈ {`verified-clean`, `partial`, `fixed`}. Pending/uncited/unfetchable/paper-mismatch all warn. (added 2026-05-19) |
+| 7 | `verification_status` | ✓ | Per-paper verification record exists in `folio/bib-qa-verifications.json` with status ∈ {`verified-clean`, `partial`, `fixed`}. Pending/uncited/unfetchable/paper-mismatch all warn. (added 2026-05-19) |
 
 \* ✓* = automated but requires `--check-urls` flag (makes network requests).
 
@@ -43,7 +43,7 @@ The **score** (0–7) is the count of passing tags.
 
 ### Verification status model (`bib-qa-verifications.json`)
 
-`content/bib-qa-verifications.json` is the hand-curated sidecar
+`folio/bib-qa-verifications.json` is the hand-curated sidecar
 recording per-paper verification metadata. Loaded by `bib-qa.ts`
 and surfaced both as the `verification_status` QA tag (#7) and in
 each entry's `.verification` field of `bib-qa.json` (which
@@ -94,7 +94,7 @@ The `verification_status` tag passes for `verified-clean` /
 When verifying a paper:
 1. Update the entry's `status`, `verified_at`, `verified_by`,
    `fixes_applied`, `fix_commit` in
-   `content/bib-qa-verifications.json`.
+   `folio/bib-qa-verifications.json`.
 2. Append a row to the markdown ledger's "Verification log" table
    (`docs/coordination/<date>-bib-verification-ledger.md`).
 3. Commit both files alongside any `-- Ref:` fixes (one commit
@@ -120,7 +120,7 @@ offline verification of citation correctness. Once a paper is in
 
 | Tool | Purpose |
 |------|---------|
-| `scripts/gen-bib-papers-list.py` | Scan `content/schema/references.ts` for entries with publicly-downloadable URLs (arxiv, numdam, archive.org, OEIS, faculty pages); emit `scripts/bib-papers-list.txt` |
+| `scripts/gen-bib-papers-list.py` | Scan `folio/schema/references.ts` for entries with publicly-downloadable URLs (arxiv, numdam, archive.org, OEIS, faculty pages); emit `scripts/bib-papers-list.txt` |
 | `scripts/bib-papers-list.txt` | Generated list, one entry per line: `<url>\|<target>\|<description>` |
 | `scripts/upload-bib-papers.sh` | Read the list, download each file (idempotent by file existence), commit per-paper to a fresh `claude/upload-bib-papers-<utc-ymd>` branch via SSH; optional `--pr` to auto-open PR |
 | `scripts/upload-to-uploads.sh` | Single-file intake for ad-hoc additions (manual sources, scans, WHO guidelines etc.) |
@@ -320,7 +320,7 @@ For each failing reference, the agent should:
 5. **Missing screenshot**: For references where the cited result
    (theorem, figure, table) is critical to the paper's argument,
    capture a screenshot of the relevant page/result and save it to
-   `content/bib-qa-images/<refid>.png` (or `.jpg`, `.pdf`).
+   `folio/bib-qa-images/<refid>.png` (or `.jpg`, `.pdf`).
    Multiple images: `<refid>-1.png`, `<refid>-2.png`.
 
 ### 4. Re-run and verify
@@ -394,7 +394,7 @@ When authoring adds a `ref()` entry:
    place the PDF in `library/<id>.pdf` directly via
    `bash scripts/upload-to-uploads.sh <url-or-local-path>`.
 8. **Screenshot** (Optional): For theorem/result citations, capture
-   the relevant page to `content/bib-qa-images/<id>.png`.
+   the relevant page to `folio/bib-qa-images/<id>.png`.
 9. **Cross-check citation site**: Ensure `\cite{<id>}` appears in
    the relevant `.md` file or `-- Ref: [<id>]` in the relevant
    `.lean` file.
@@ -466,7 +466,7 @@ bibliography (PDF + HTML) via the `annotation` field in
   }
 
 `content/pipeline/export-bibtex.ts` reads
-`content/bib-qa-verifications.json` at export time and injects a
+`folio/bib-qa-verifications.json` at export time and injects a
 short status marker per entry. Format:
 
   [<status-symbol>] [<N fixes>] [by <verifier>] [<date>]
@@ -555,7 +555,7 @@ Detection workflow:
    title page.
 2. Compare the title page to the `references.ts` entry's `title` field.
 3. If they disagree, mark the entry as `paper-mismatch` in
-   `content/bib-qa-verifications.json` with a note explaining the
+   `folio/bib-qa-verifications.json` with a note explaining the
    downloaded content vs the expected content.
 4. The `references.ts` URL itself usually needs the fix (not the
    entry's bib metadata); update the URL and re-run
@@ -585,7 +585,7 @@ procedure (per the 2026-05-19 batch experience):
      - **Wrong work**: paper covers a different topic entirely (the
        leitnerpawloski2004 inner-product case) → flag as partial /
        paper-mismatch; defer to author judgement.
-5. **Update both**: `content/bib-qa-verifications.json` status +
+5. **Update both**: `folio/bib-qa-verifications.json` status +
    `docs/coordination/<date>-bib-verification-ledger.md` log row.
 6. **Commit** per-paper (granular history); the
    `local/bib-qa` skill picks up the new status on next `bib-qa.ts`

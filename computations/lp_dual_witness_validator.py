@@ -254,7 +254,7 @@ def _recorded_backends(path: Path) -> tuple[set[str], bool]:
 def collect_wired_witnesses(repo_root: Path) -> set[str]:
     """Collect wired witness basenames from content block `computation.witness`."""
     wired: set[str] = set()
-    content_root = repo_root / "content"
+    content_root = repo_root / "folio"
     ts_files = content_root.glob("*/*/*.ts")
     witness_pattern = re.compile(
         r"witness(?:File)?\s*:\s*[\"']([^\"']+\.json)[\"']"

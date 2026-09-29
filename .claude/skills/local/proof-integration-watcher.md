@@ -437,7 +437,7 @@ parent §6).
 - ❌ Auto-fix a conjecture statement (turn `conjecture` block into
   a `theorem` block) without explicit author approval.
 - ❌ Add a `-- Ref:` to a sorry without verifying it actually
-  cites a real entry in `content/schema/references.ts`.
+  cites a real entry in `folio/schema/references.ts`.
 - ❌ Discharge a sorry without `lean_verify` post-check (axiom
   audit). An "easy fix" adding `Decidable.em` isn't a fix.
 

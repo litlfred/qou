@@ -5,7 +5,7 @@
 """P3.A — Closed-form `f` candidate probe for Δ_coupling at magic shells.
 
 Per docs/audits/2026-05-11-1ppb-gap-narrowing-plan.md §Path A and
-content/quantum-observable-universe/braids-and-knots/conj-magic-shell-stabilization.md:160,
+folio/quantum-observable-universe/braids-and-knots/conj-magic-shell-stabilization.md:160,
 the cross-coupling residual at the doubly-magic ⁴He shell is
 
     Δ_coupling(2, 2) = Δ_cat(⁴He) − 2 · Δ_cat(³He) ≈ +13.20 MeV

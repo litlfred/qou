@@ -120,7 +120,7 @@ makes "union, no text dropped" a claim rather than an intention.
 
 Queue 5 (#7200, #7198, #7201 — beans `qou-m8f3` / `qou-rwhv`) ran with **no QOU
 oleans in the container**: the parent deleted the sibling worktree's 3.4 G
-`content/quantum-observable-universe/lean/.lake/build` to get disk back (1.6 G
+`folio/quantum-observable-universe/lean/.lake/build` to get disk back (1.6 G
 → 5.0 G free), leaving only `.lake/packages/*/.lake/build/lib/lean` (Mathlib
 3480 + aesop/batteries/…). Everything still verified without `lake` and without
 a restore:

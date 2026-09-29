@@ -18,7 +18,7 @@ import re
 import sys
 from collections import Counter
 
-ROOT = "content/quantum-observable-universe"
+ROOT = "folio/quantum-observable-universe"
 LAB = re.compile(r'label:\s*"([^"]+)"')
 USES = re.compile(r'uses:\s*\[(.*?)\]', re.S)
 STR = re.compile(r'"([^"]+)"')

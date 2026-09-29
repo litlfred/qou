@@ -2,7 +2,7 @@
 """Canonical Q / decay / B/A — 4-input scheme (Skein-pair p/n) + 4-tier formula.
 
 Per
-content/quantum-observable-universe/observations/nucleon-mass-splitting-proof.md
+folio/quantum-observable-universe/observations/nucleon-mass-splitting-proof.md
 (commit bd81514, PR #443) the framework's canonical p/n treatment uses
 Skein-pair masses with constituent dressed quark masses:
 

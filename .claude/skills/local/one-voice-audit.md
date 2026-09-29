@@ -113,7 +113,7 @@ violation. Common breakages:
 ### 1. Sweep (greps)
 
 ```bash
-CONTENT=content/quantum-observable-universe
+CONTENT=folio/quantum-observable-universe
 
 # Status emoji + comparison markers in .md
 grep -rEn "[✅❌⚠⏳🔧🚧☑☒]|✓|✗|★" "$CONTENT" --include="*.md"

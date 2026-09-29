@@ -3,7 +3,7 @@
 
 Beans `qou-fi93` (what does the bar-odd channel couple to?) and `qou-hjs8`
 (is the theta_res^2 overshoot real?).  Lean, on `main`, sorry-free:
-`content/quantum-observable-universe/lean/QOU/Observations/CrossingDiscriminantThetaFree.lean`
+`folio/quantum-observable-universe/lean/QOU/Observations/CrossingDiscriminantThetaFree.lean`
   -> `crossingDisc_norm_theta_free`
 
 WHY THIS EXISTS.  `qou-hjs8` established that the CP discriminant is

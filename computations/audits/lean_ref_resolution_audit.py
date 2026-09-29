@@ -75,7 +75,7 @@ sys.path.insert(0, str(HERE.parent))
 from witness_base import WitnessBuilder  # noqa: E402
 
 REPO_ROOT = HERE.parent.parent
-CONTENT_ROOT = REPO_ROOT / "content"
+CONTENT_ROOT = REPO_ROOT / "folio"
 
 # Mirror of folio-assistant/cat-harness/schemas/lean-packages.ts LEAN_PACKAGES.
 # Kept inline here because Python doesn't import .ts and the registry
@@ -83,13 +83,13 @@ CONTENT_ROOT = REPO_ROOT / "content"
 # the JS resolver this audit shadows.
 LEAN_PACKAGES = {
     "qou":      {"paperDir": "quantum-observable-universe",
-                 "lakeRoot": "content/quantum-observable-universe/lean",
+                 "lakeRoot": "folio/quantum-observable-universe/lean",
                  "lib": "QOU"},
     "ugb":      {"paperDir": "unital-groebner-bases",
-                 "lakeRoot": "content/unital-groebner-bases/lean",
+                 "lakeRoot": "folio/unital-groebner-bases/lean",
                  "lib": "UGB"},
     "fred2005": {"paperDir": "fred2005-formal-groups",
-                 "lakeRoot": "content/fred2005-formal-groups/lean",
+                 "lakeRoot": "folio/fred2005-formal-groups/lean",
                  "lib": "Fred2005"},
 }
 
@@ -100,9 +100,9 @@ LEAN_REF_RX = re.compile(
     re.DOTALL,
 )
 # Block kind is encoded in the builder function name used at the
-# `export default <builder>(…)` call site (see content/schema/builders.ts).
+# `export default <builder>(…)` call site (see folio/schema/builders.ts).
 # Capture any identifier (rather than a hard-coded list) so newly-added
-# builders in `content/schema/builders.ts` automatically flow through —
+# builders in `folio/schema/builders.ts` automatically flow through —
 # the audit's downstream consumers can decide whether each captured
 # kind is "provable" / "definition" / "remark" / etc. via their own
 # allow-lists.  Older blocks used a `kind: "<name>"` field in the

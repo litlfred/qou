@@ -11,7 +11,7 @@ import { processIngestion } from '../pipeline/bib-photo-ingestion-watcher.js';
  */
 
 const INTAKE_FILE = 'library/intake.json';
-const REVIEWS_FILE = 'content/schema/references.review.json';
+const REVIEWS_FILE = 'folio/schema/references.review.json';
 
 async function main() {
   if (!existsSync(INTAKE_FILE)) {

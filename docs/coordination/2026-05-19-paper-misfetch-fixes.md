@@ -7,7 +7,7 @@ either a content-side decision or a live network lookup.
 
 ## 1. `margolus1998` — URL fixed, awaiting re-fetch
 
-**Status**: `paper-mismatch` in `content/bib-qa-verifications.json`.
+**Status**: `paper-mismatch` in `folio/bib-qa-verifications.json`.
 
 **Problem**: My initial arxiv ID `cond-mat/9710043` was wrong category.
 Correct id: `quant-ph/9710043` (Margolus-Levitin "The Maximum Speed of

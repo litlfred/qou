@@ -27,7 +27,7 @@ off-path.  `--check-short` closes it for the case that matters here, by asking d
 whether any *reachable* body mentions `S0` or `S1`.  Run it before believing an OFF verdict;
 for this corpus it answers NONE, which is what makes the `HoefsmitRep` verdict safe.
 
-    python3 scripts/lean-general-field-tranche-scope.py --root content/quantum-observable-universe/lean
+    python3 scripts/lean-general-field-tranche-scope.py --root folio/quantum-observable-universe/lean
     python3 scripts/lean-general-field-tranche-scope.py --check-short
 """
 from __future__ import annotations
@@ -54,7 +54,7 @@ def strip_noncode(text: str) -> str:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--root", default="content/quantum-observable-universe/lean")
+    ap.add_argument("--root", default="folio/quantum-observable-universe/lean")
     ap.add_argument("--check-short", action="store_true",
                     help="report reachable bodies mentioning S0/S1, which reachability cannot follow")
     args = ap.parse_args()

@@ -7,7 +7,7 @@ should use q-PV=nRT."
 ## The corpus already contains `q-PV = nRT`
 
 The owner's `q-PV = nRT` is **`prop:quantum-ideal-gas-law`**
-([`quantum-ideal-gas-law.md`](../../content/quantum-observable-universe/information-theory/quantum-ideal-gas-law.md),
+([`quantum-ideal-gas-law.md`](../../folio/quantum-observable-universe/information-theory/quantum-ideal-gas-law.md),
 `qou:QOU.Information.IdealKnotGas`):
 
 $$
@@ -25,7 +25,7 @@ ruling out B). The single-particle partition function is
 
 ## The Kelvin bridge (no separate scale factor)
 
-[`boltzmann-constant.md`](../../content/quantum-observable-universe/information-theory/boltzmann-constant.md):
+[`boltzmann-constant.md`](../../folio/quantum-observable-universe/information-theory/boltzmann-constant.md):
 in QOU natural units `k_B = 1`, and
 
 $$

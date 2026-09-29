@@ -18,7 +18,7 @@
 //! **2. The Gram is therefore SINGULAR**, and that is correct, not a defect.
 //! Under convention D with the right trace the 6×6 Markov–Gram form is
 //! degenerate — see
-//! `content/quantum-observable-universe/lean/QOU/QBeta/GramSignature.lean`.
+//! `folio/quantum-observable-universe/lean/QOU/QBeta/GramSignature.lean`.
 //! Note that file's own retraction (commit `748ba9b1`): its "Lorentzian /
 //! signature (4,1)" reading is WITHDRAWN — under the correct `*`-pairing
 //! (`T_w* = T_{w⁻¹}`) the form is positive semidefinite, `(5,0,1)`. What

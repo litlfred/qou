@@ -1,6 +1,6 @@
 # Back-Matter QA Report
 **Date:** 2026-04-25  
-**Scope:** glossary, index-of-definitions, organic-chemistry, appendix-*, all located in `/home/user/qou/content/quantum-observable-universe/`
+**Scope:** glossary, index-of-definitions, organic-chemistry, appendix-*, all located in `/home/user/qou/folio/quantum-observable-universe/`
 
 ---
 

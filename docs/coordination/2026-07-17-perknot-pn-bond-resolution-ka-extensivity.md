@@ -68,7 +68,7 @@ degeneracy-break — plausibly the same physics as #3808's bar-parity-fall facto
    swap. Under the product aggregate the split reduces **exactly** to
    `w(nn)/w(pp) = (tr_p/tr_n)²`. This algebraic identity is now formalized
    sorry-free over a generic field (§7c, no ℝ) in
-   `content/quantum-observable-universe/lean/QOU/MassTheory/BondWeightIsospinSplit.lean`
+   `folio/quantum-observable-universe/lean/QOU/MassTheory/BondWeightIsospinSplit.lean`
    (`triton_helium3_split`: aggregate ratio = `(a/b)²`; `split_is_nn_over_pp_swap`:
    the two shared pn bonds cancel, leaving the nn-for-pp swap). The exponent 2 is
    a same-type bond's two endpoints — not tuned. Numerically `(tr_p/tr_n)² ≈

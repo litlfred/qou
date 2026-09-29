@@ -2,7 +2,7 @@
 """Item B (B.1a-rev.4) — full LP-dual extraction for a_K.
 
 Solves the operator-selection LP per
-[`prop:mass-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/mass-coefficient-shadow-price.md)
+[`prop:mass-coefficient-shadow-price`](../../folio/quantum-observable-universe/braids-and-knots/mass-coefficient-shadow-price.md)
 explicitly via `lp_dual_solver.solve_operator_selection_lp` and
 reads off the literal dual variables `u_λ*`.
 

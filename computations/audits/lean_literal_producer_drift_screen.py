@@ -111,7 +111,7 @@ def sha12(p: Path) -> str:
 def corpus_lean() -> list[Path]:
     """Every .lean under content/, EXCLUDING .lake (Mathlib + package source)."""
     return sorted(
-        p for p in (ROOT / "content").rglob("*.lean") if ".lake" not in p.parts
+        p for p in (ROOT / "folio").rglob("*.lean") if ".lake" not in p.parts
     )
 
 

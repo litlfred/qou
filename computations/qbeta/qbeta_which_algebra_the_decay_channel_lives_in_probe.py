@@ -3,8 +3,8 @@
 qbeta_which_algebra_the_decay_channel_lives_in_probe.py — qou-879g answered from
 the corpus, and the obstruction it exposes in the Q_beta ansatz.
 
-# Ref: content/quantum-observable-universe/observations/algebraic-gns-embedding-proof.md
-# Ref: content/quantum-observable-universe/observations/algebraic-gns-embedding.md
+# Ref: folio/quantum-observable-universe/observations/algebraic-gns-embedding-proof.md
+# Ref: folio/quantum-observable-universe/observations/algebraic-gns-embedding.md
 # Ref: computations/qbeta/qbeta_d_frame_tl_quotient_phase_probe.py
 # Ref: computations/qbeta/qbeta_net_trace_invariance_probe.py
 

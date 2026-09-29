@@ -6,7 +6,7 @@ backlog" (queue item 5) with a *human-review-gated* bib pipeline.
 
 ## Goal
 
-Every reference in `content/schema/references.ts` must be **human-reviewed against
+Every reference in `folio/schema/references.ts` must be **human-reviewed against
 its source**. Track that status; for refs not yet human-validated, drive
 acquisition + review through **GitHub issues** carrying full QOU context, ending
 in the author uploading a **photo of the relevant page(s)**, which then triggers
@@ -17,7 +17,7 @@ in the author uploading a **photo of the relevant page(s)**, which then triggers
 - **New audit check** (extend `validate-references` / a new `bib-human-review`
   criterion): for each reference, has a human reviewed it against the source?
   Status: `unreviewed | source-in-repo | issue-open | photo-uploaded | validated`.
-- **Where stored:** a bib sidecar — e.g. `content/schema/references.review.json`
+- **Where stored:** a bib sidecar — e.g. `folio/schema/references.review.json`
   (or per-ref `humanReviewed?: { by, date, source, page? }` field, render-skipped),
   hashed against the `references.ts` entry so it goes stale if the entry changes.
 - The audit **flags every `unreviewed` ref** and every ref whose cited QOU result

@@ -59,7 +59,7 @@ compute is wired up.  Two viable implementation paths:
 
 (b) **Wenzl 1988 LR-branching reduction.**  Apply the operator-
     valued branching identity from
-    `content/quantum-observable-universe/braids-and-knots/
+    `folio/quantum-observable-universe/braids-and-knots/
      hecke-branching-trace-decomposition.md`:
 
          χ^λ(β_p · I · β_p · I · β_n · I · β_n)

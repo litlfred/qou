@@ -15,7 +15,7 @@ Any PR that touches:
 - **Sidecar algorithms** — `Δ_λ` closure ansätze, `c_k` truncation ladder, LP/SDP dual-emission contract, witness-JSON pipeline
 
 **must** update the matching `alg:`-block under
-[`content/quantum-observable-universe/appendix-mass-binding-algorithms/`](../../content/quantum-observable-universe/appendix-mass-binding-algorithms/)
+[`folio/quantum-observable-universe/appendix-mass-binding-algorithms/`](../../folio/quantum-observable-universe/appendix-mass-binding-algorithms/)
 in the **same PR**. The expected diff:
 
 | Field | When to update |

@@ -71,7 +71,7 @@ def entry(i,j):
 # The final module closes `gram_symm` from all the entries and derives
 # `trM_cyclic`.
 NCHUNK = 8
-LEAN_DIR = 'content/quantum-observable-universe/lean/QOU/Machinery'
+LEAN_DIR = 'folio/quantum-observable-universe/lean/QOU/Machinery'
 per = (576 + NCHUNK - 1) // NCHUNK
 
 def header(prev, title, blurb):
