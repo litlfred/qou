@@ -79,6 +79,27 @@ CLAIMS: dict[str, str] = {
 }
 
 
+# The paper tree was renamed `content/` -> `folio/` on main (2026-09-29, #7485).
+# `_bna.DEFAULT_ROOTS` tracks the CURRENT layout, so filtering a historical
+# revision by it matches nothing for every commit before the move -- and does so
+# SILENTLY, yielding an empty scan that reads as "no hits" rather than as an
+# error.  `--selftest`'s catch gate is what surfaced it.  Accept every known
+# spelling of the top-level paper tree so `--rev` stays meaningful across the
+# rename in both directions.
+_TREE_ALIASES = ("folio/", "content/")
+
+
+def _rev_roots() -> tuple[str, ...]:
+    roots: set[str] = set()
+    for r in _bna.DEFAULT_ROOTS:
+        roots.add(r)
+        for alias in _TREE_ALIASES:
+            if r.startswith(alias):
+                tail = r[len(alias):]
+                roots.update(other + tail for other in _TREE_ALIASES)
+    return tuple(sorted(roots))
+
+
 def _sources(rev: str | None):
     if rev is None:
         for root in _bna.DEFAULT_ROOTS:
@@ -92,8 +113,9 @@ def _sources(rev: str | None):
         return
     listing = subprocess.run(["git", "-C", REPO, "ls-tree", "-r", "--name-only", rev],
                              capture_output=True, text=True).stdout.split("\n")
+    roots = _rev_roots()
     for path in listing:
-        if path.endswith(".lean") and any(path.startswith(r) for r in _bna.DEFAULT_ROOTS):
+        if path.endswith(".lean") and any(path.startswith(r) for r in roots):
             yield path, subprocess.run(["git", "-C", REPO, "show", f"{rev}:{path}"],
                                        capture_output=True, text=True).stdout
 
