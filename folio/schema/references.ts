@@ -28,6 +28,7 @@
 
 import { z } from "zod";
 import type { Data as CSLData, Person as CSLPerson, Date as CSLDate, ItemType } from "csl-json";
+import { paperIdentity } from "../quantum-observable-universe/identity";
 
 // ── Re-exports for consumer convenience ─────────────────────────
 export type { CSLData, CSLPerson, CSLDate, ItemType };
@@ -2335,14 +2336,21 @@ export const references: Reference[] = [
   }),
 
   // ── Leitner 2026 (this manuscript) ────────────────────────────
+  // The self-citation. Its KEY stays here as a literal, because text scanners
+  // (scripts/check-citation-keys.py and others) collect keys by matching
+  // `id: "..."`. Its title, author and year come from the paper's own
+  // identity module, so the citation cannot drift from the paper it names
+  // (owner ruling 2026-09-26; bean qou-yqko). A name splits at its last space:
+  // "Frederick Carl Leitner" -> family "Leitner", given "Frederick Carl".
   ref({
     id: "leitner2026",
     type: "manuscript",
-    title: "Quantum Observable Universe",
-    author: [
-      { family: "Leitner", given: "Fred" },
-    ],
-    issued: { "date-parts": [[2026]] },
+    title: paperIdentity.title,
+    author: paperIdentity.authors.map((name) => {
+      const i = name.lastIndexOf(" ");
+      return { family: name.slice(i + 1), given: name.slice(0, i) };
+    }),
+    issued: { "date-parts": [[Number(paperIdentity.date.slice(0, 4))]] },
     note: "This manuscript",
   }),
 

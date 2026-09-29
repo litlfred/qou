@@ -1,4 +1,5 @@
 import { paper, chapterRef } from "../schema/builders";
+import { paperIdentity } from "./identity";
 
 /**
  * Quantum Observable Universe — Paper manifest.
@@ -6,12 +7,15 @@ import { paper, chapterRef } from "../schema/builders";
  * This is the authoritative source for document structure.
  * Each chapter is referenced by directory name; the pipeline resolves
  * `<dir>/<dir>.ts` by convention (or uses `uri` override).
+ *
+ * Title, authors and date come from `./identity`, which the self-citation
+ * `leitner2026` in `folio/schema/references.ts` also reads.
  */
 export default paper({
-  title: "On the Mechanics of Quantum Observable Universes",
-  authors: ["Frederick Carl Leitner"],
+  title: paperIdentity.title,
+  authors: paperIdentity.authors,
   affiliations: [],
-  date: "2026-03-21",
+  date: paperIdentity.date,
   abstract:
     "This paper develops the mathematical framework of the Quantum Observable " +
     "Universe (QOU): a rigid braided monoidal category equipped with a " +
