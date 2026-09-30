@@ -3,7 +3,7 @@ The algebraic topological mass formula ([algebraic topological mass](#prop:topol
 
 $$
   (1 - q^{-1})^{2}
-  = \frac{:val[Vol_4_1]{precision=6}}{:val[m_mu_over_e]{precision=7}}
+  = \frac{{{ qou.computations.q-pinning-50-digit.calibration_inputs.Vol_4_1_str | precision: 6 }}}{{{ qou.computations.q-pinning-50-digit.calibration_inputs.m_mu_over_e_str | precision: 7 }}}
   \approx 0.009817,
   \qquad
   1 - q^{-1} \approx 0.09908,
@@ -11,5 +11,5 @@ $$
   q \approx 1.10998.
 $$
 
-The SnapPy witness ([knot volumes verification](#prf:knot-volumes-verification)) independently verifies the numerical values. It computes $q \approx 1.10998$ from $\mathrm{Vol}(4_1) \approx 2.02988321281931$ and $m_\mu/m_e \approx :val[m_mu_over_e]{precision=6}$ (CODATA 2022). The function $f(q) = (1 - q^{-1})^{2}$ is strictly increasing for $q > 1$ and maps $(1,\infty)$ onto $(0,1)$. Thus the root is unique. The $\pm0.001$ uncertainty propagates from the CODATA relative uncertainty ($2.2 \times 10^{-8}$ on $m_\mu / m_e$) and the $\tau$-image SnapPy error bound ($10^{-14}$ on $\mathrm{Vol}(4_1)$). Finite decimal truncation of $q$ provides the dominant contribution. This value aligns with the hadronic mass predictions of [terminal resolution](#prop:terminal-resolution) and the $q$-deformed Hall conductance corrections of [photonic Hall effect](#rem:photonic-hall).
+The SnapPy witness ([knot volumes verification](#prf:knot-volumes-verification)) independently verifies the numerical values. It computes $q \approx 1.10998$ from $\mathrm{Vol}(4_1) \approx 2.02988321281931$ and $m_\mu/m_e \approx {{ qou.computations.q-pinning-50-digit.calibration_inputs.m_mu_over_e_str | precision: 6 }}$ (CODATA 2022). The function $f(q) = (1 - q^{-1})^{2}$ is strictly increasing for $q > 1$ and maps $(1,\infty)$ onto $(0,1)$. Thus the root is unique. The $\pm0.001$ uncertainty propagates from the CODATA relative uncertainty ($2.2 \times 10^{-8}$ on $m_\mu / m_e$) and the $\tau$-image SnapPy error bound ($10^{-14}$ on $\mathrm{Vol}(4_1)$). Finite decimal truncation of $q$ provides the dominant contribution. This value aligns with the hadronic mass predictions of [terminal resolution](#prop:terminal-resolution) and the $q$-deformed Hall conductance corrections of [photonic Hall effect](#rem:photonic-hall).
 

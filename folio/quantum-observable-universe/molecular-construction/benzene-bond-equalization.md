@@ -5,7 +5,7 @@
 
 *Total bond order per C--C bond is $1 + \frac{1}{2} = \frac{3}{2}$.*
 
-*This is the braid-theoretic derivation of the experimentally observed bond order 1.5 in benzene, with equal bond lengths of $:val[bond_len_benzene_ang]{precision=3, witness=computations/molecular-experimental-refs.witness.json}\;\text{\AA}$ (between the C--C single bond length $:val[bond_len_cc_single_ang]{precision=3, witness=computations/molecular-experimental-refs.witness.json}\;\text{\AA}$ and double bond length $:val[bond_len_cc_double_ang]{precision=3, witness=computations/molecular-experimental-refs.witness.json}\;\text{\AA}$).*
+*This is the braid-theoretic derivation of the experimentally observed bond order 1.5 in benzene, with equal bond lengths of ${{ qou.computations.molecular-experimental-refs.data.bond_len_benzene_ang | precision: 3 }}\;\text{Å}\;\text{\AA}$ (between the C--C single bond length ${{ qou.computations.molecular-experimental-refs.data.bond_len_cc_single_ang | precision: 3 }}\;\text{Å}\;\text{\AA}$ and double bond length ${{ qou.computations.molecular-experimental-refs.data.bond_len_cc_double_ang | precision: 3 }}\;\text{Å}\;\text{\AA}$).*
 
 *The construction proves that bond equalization is not an axiom of molecular orbital theory but a theorem of the LP dual. The threading link's $D_6$ symmetry is the unique $\Phi_1$ minimum for 6 $\pi$ electrons on a 6-membered ring.*
 

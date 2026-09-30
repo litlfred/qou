@@ -2,7 +2,7 @@ This remark records the derivation behind [`prop:co-lp-dual-binding`](#prop:co-l
 
 ## Orthogonal channels, not one chain
 
-A multiple bond is not one braid chain made "tighter" by stacking shared pairs into a common orbital. Each bond is an independent covalent channel — the reduced $4$-strand $[\mathfrak{p}_A,\, e_B,\, e_A,\, \mathfrak{p}_B]$ channel of [$H_2$](#prop:h2-lp-dual-binding) — sitting in its own orthogonal orbital ($\sigma$ head-on, $\pi_x, \pi_y$ lateral). Because distinct orbitals are orthogonal, electrons in different channels share no $e$–$e$ crossing. The channels bind independently and additively. The single $\sigma$ channel binds at $:val[sigma_channel_eV]{precision=4, witness=computations/co-bond-order-active-set.witness.json}$ (the $H_2$-scale covalent channel).
+A multiple bond is not one braid chain made "tighter" by stacking shared pairs into a common orbital. Each bond is an independent covalent channel — the reduced $4$-strand $[\mathfrak{p}_A,\, e_B,\, e_A,\, \mathfrak{p}_B]$ channel of [$H_2$](#prop:h2-lp-dual-binding) — sitting in its own orthogonal orbital ($\sigma$ head-on, $\pi_x, \pi_y$ lateral). Because distinct orbitals are orthogonal, electrons in different channels share no $e$–$e$ crossing. The channels bind independently and additively. The single $\sigma$ channel binds at ${{ qou.computations.co-bond-order-active-set.data.sigma_channel_eV | precision: 4 }}\;\text{eV}$ (the $H_2$-scale covalent channel).
 
 ## Failure of a single chain
 
@@ -26,4 +26,4 @@ The orthogonal-channel LP $\max_x \sum_i b_i x_i$ subject to $\sum_i x_i \le \mi
 
 Two limitations remain. (i) The covalent valence derives from $Z$ (octet rule), but $\mathrm{CO}$'s dative third bond is a named channel, not derived. (ii) The channels are modelled as equal independent copies, which overbinds the total energy ($3\,b_\sigma$ versus the observed $D_0$) pending a lateral-$\pi$ overlap reduction. The cardinality result holds; the energy is an upper bound.
 
-The observed dissociation energy $D_0(CO) \approx :val[observed_D0_CO_eV]{precision=4, witness=computations/co-bond-order-active-set.witness.json}$ is consistent with three occupied channels. $CO$ is isoelectronic with $\mathrm{N_2}$. Both carry three shared orthogonal channels with the same Hecke-algebra structure.
+The observed dissociation energy $D_0(CO) \approx {{ qou.computations.co-bond-order-active-set.data.observed_D0_CO_eV | precision: 4 }}\;\text{eV}$ is consistent with three occupied channels. $CO$ is isoelectronic with $\mathrm{N_2}$. Both carry three shared orthogonal channels with the same Hecke-algebra structure.
