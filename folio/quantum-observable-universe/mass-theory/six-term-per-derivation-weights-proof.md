@@ -53,7 +53,7 @@ The assembly is implemented in
 the formal derivation
 as `assemble_per_derivation_weights(Z, N)` with hardcoded
 constants $E_{0,\beta} = 0.78233341$ MeV (CODATA β-decay $Q$),
-$\alpha = m_e \cdot 8G = 3.74446989$ MeV, $m_e = :val[m_e_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV.
+$\alpha = m_e \cdot 8G = 3.74446989$ MeV, $m_e = {{ qou.library.codata-2022.electron-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}$ MeV.
 Across the proton..${}^{9}$Be spectrum (12 atoms):
 
 See [Table 3](#tbl:six-term-per-derivation-weights-table3-data).

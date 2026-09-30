@@ -3,7 +3,7 @@ We anchor the critical temperatures using the $S^3$-boundary action $\mathfrak{S
 **The hydrogen bond as an $h^2$-suppressed crossing.** 
 A covalent $X$–$H$ bond constitutes a $\sigma$-crossing (the shared trefoil). A hydrogen bond $X\!-\!H\cdots Y$ acts as the weak inter-molecular crossing between the donor $\sigma$ and the acceptor lone pair. It sits suppressed by the square of the substrate $q$-deformation parameter $h = q_0 - q_0^{-1}$:
 $$
-  E_{\mathrm{HB}} = h^2 E_{\mathrm{cov}}, \qquad h^2 \approx :val[hbond_h_squared]{precision=4}.
+  E_{\mathrm{HB}} = h^2 E_{\mathrm{cov}}, \qquad h^2 \approx {{ qou.computations.hbond-categorical-action.data.h_squared_hbond_ratio | precision: 4 }}.
 $$
 The formal substrate $q_0$ entirely governs this $h^2$ suppression. It effortlessly matches the measured hydrogen-bond to covalent energy ratio ($\approx 0.044$). The boundary action firmly equates to the sum over the molecule's net hydrogen bonds:
 $$
@@ -19,7 +19,7 @@ We derive the exact boiling temperature $T_q^{(g\to l)} = \mathfrak{S}_q^{(\part
 
 | | $n_{\mathrm{HB}}$ | $\mathrm{sp}^3$? | $L^{\mathrm{pred}}$ (kJ/mol) | $L^{\mathrm{obs}}$ | tier |
 |---|---|---|---|---|---|
-| $\mathrm{H_2O}$ | $2$ | yes | $:val[hbond_h2o_L_pred]{precision=1}$ | $40.7$ | near-match ($:val[hbond_h2o_err_pct]{precision=1}$) |
+| $\mathrm{H_2O}$ | $2$ | yes | ${{ qou.computations.hbond-categorical-action.data.H2O_L_pred_kJmol | precision: 1 }}\;\text{kJ/mol}$ | $40.7$ | near-match (${{ qou.computations.hbond-categorical-action.data.H2O_err_pct | precision: 1 }}\;\text{\%}$) |
 | $\mathrm{HF}$ | $1$ | yes | $24.7$ | $25.2$ | near-match ($1.9\%$) |
 | $\mathrm{H_2S}$ | $-$ | no ($\mathrm{pure}\text{-}p$) | $0$ (H-bond off) | $18.7$ | dispersion |
 
