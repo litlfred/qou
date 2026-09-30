@@ -14,7 +14,7 @@ import { execFileSync } from "child_process";
 import { configureValueRegistry } from "../folio-assistant/cat-harness/content/pipeline/value-registry-di";
 import { configureReferenceRegistry } from "../folio-assistant/cat-harness/content/pipeline/references-registry-di";
 import { WITNESSED_VALUES, lookupValue, verifiedNames } from "../folio/values/registry";
-import { configureLeanPackages } from "../folio-assistant/cat-harness/schemas/lean-packages";
+import { configureLeanPackages } from "../folio-assistant/cat-harness/content/pipeline/lean-formal-ref";
 import { LEAN_PACKAGES } from "../schemas/lean-packages";
 import { validateObjects } from "../folio-assistant/cat-harness/content/pipeline/validate";
 
