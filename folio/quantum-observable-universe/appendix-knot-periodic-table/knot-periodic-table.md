@@ -116,7 +116,7 @@ $2, 8, 20, 28, 50, 82, 126$ (neutrons).
 $q = q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps), $\hbar_q = 1 - q_0^{-1} \approx 0.09908$,
 $\mathfrak{E}_{\times} = \tfrac{1}{2}(q_0 - q_0^{-1}) \approx 0.10453$,
 $m_{\mathfrak{p}} \approx {{ qou.library.codata-2022.proton-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}$ MeV,
-$m_{\mathfrak{n}} \approx {{ qou.library.codata-2022.neutron-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}$ MeV,
+$m_{\mathfrak{n}} \approx {{ qou.computations.codata-masses.data.m_n_MeV | precision: 6 }}\;\text{MeV}$ MeV,
 $m_e \approx 0.51100$ MeV.
 
 **Fundamental constants from $q_0$ (approximate).**
