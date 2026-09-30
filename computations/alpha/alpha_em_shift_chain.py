@@ -56,7 +56,14 @@ from _precision import set_compute_dps  # noqa: E402
 # literal rounded there cannot be recovered by raising dps afterwards.
 set_compute_dps()
 
-CODATA_ALPHA_INV = mp.mpf("137.035999084")  # CODATA 2022 (8.1×10⁻¹⁰ rel. unc.)
+# CODATA 2022 1/α, read from the ingested dataset (library/codata-2022,
+# bean qou-rbdi) rather than typed: the literal here was 137.035999084 — the
+# CODATA-2018 value, labelled 2022. Kept as the exact decimal string, so the
+# mpf carries every published digit.
+_CODATA_2022 = json.loads(
+    (Path(__file__).resolve().parents[2] / "library" / "codata-2022" / "values.json").read_text()
+)
+CODATA_ALPHA_INV = mp.mpf(_CODATA_2022["inverse-fine-structure-constant"]["value"])
 
 
 def q_integer(q: mp.mpf, n: int) -> mp.mpf:

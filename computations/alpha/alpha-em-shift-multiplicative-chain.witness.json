@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:48:16.252139+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-30T14:51:16.674403+00:00",
+  "commitSha": "a22e348a2224b6511a4c86e841281c288626c448",
   "assertions": [
     {
       "name": "chain_equals_bare_to_mpmath_precision",
@@ -25,11 +25,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "alpha-em-shift-multiplicative-chain",
   "scriptFile": "alpha_em_shift_chain.py",
-  "scriptHash": "595a318983c8",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "5c6d2dbd9b20",
+  "scriptCommitSha": "15ea6177a3cc9b264e4a5f23149a427bed2aeb69",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,7 +44,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -65,8 +65,8 @@
     "inv_alpha_chain": "136.8232088535825843080461054044414784949",
     "inv_alpha_bare": "136.8232088535825843080461054044414784949",
     "delta_chain_minus_bare": "0.0",
-    "inv_alpha_codata": "137.035999084",
-    "delta_chain_minus_codata": "0.2127902304"
+    "inv_alpha_codata": "137.035999177",
+    "delta_chain_minus_codata": "0.2127903234"
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
