@@ -1,14 +1,14 @@
 ---
 # qou-8321
 title: Bump .folio-assistant-pin off df28d02 — and the target is moving ~80 commits/hour
-status: todo
+status: completed
 type: feature
 priority: high
 tags:
     - platform
     - migration
 created_at: 2026-09-26T11:20:29Z
-updated_at: 2026-09-27T10:22:33Z
+updated_at: 2026-09-30T15:14:27Z
 parent: qou-n4r9
 ---
 
@@ -272,3 +272,7 @@ Stays **todo**. The open items narrow to three, of which only the first is new:
 2. The `folio.config.json` deletion — still gated (`qou-n4r9` / `qou-w5av`).
 3. `qou.config.json:29` / `qou.json:19`'s *"INERT AT THE PIN"* comments — stale
    as to `resolveHarnessConfigPath`, and **`:30` is not stale**, per above.
+
+
+## Summary of Changes (2026-09-30)
+Bumped 37a36ce -> 378a100 in #7491 (merged, e339aced), with the pin and build.yml in one commit. run-validate: 4 -> 4 issues, the same lines, once run-validate.ts and preload-registry.ts import configureLeanPackages from cat-harness/content/pipeline/lean-formal-ref. Without that import it was 21 (17 false 'requires Lean formalization'). A follow-up bump to the folio-assistant#1620 merge rides with #7490's follow-up PR.
