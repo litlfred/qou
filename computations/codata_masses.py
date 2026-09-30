@@ -23,12 +23,20 @@ inside a `.py` script) already imports from `codata_constants`;
 this witness extends the same chain to `.lean` files and
 `.md` content.
 
-Source values are documented in `codata_constants.py`:
+Source values are what `codata_constants` hands this producer — its
+`*_VALIDATION` names, read from the CODATA 2022 validation witness.
+Measured 2026-09-30:
 
-    M_E_MEV = 0.51099895        (CODATA 2022)
-    M_P_MEV = 938.27208816      (CODATA 2022)
-    M_N_MEV = 939.56542052      (CODATA 2022; M_P + M_E + Q_β by
-                                 construction)
+    M_E_MEV = 0.51099895069     (CODATA 2022)
+    M_P_MEV = 938.27208943      (CODATA 2022)
+    M_N_MEV = 939.56542194      (CODATA 2022, direct)
+
+This block previously listed 938.27208816 (the CODATA-2018 proton mass) and
+939.56542052 as "M_P + M_E + Q_β by construction". The witness carried those
+until its 2026-09-30 regeneration. Note that `codata_2022_source.M_N_MEV`,
+the "de facto" AME-derived choice, is a third value, 939.56542179. Which
+m_n the corpus means is an open question; this witness records the one the
+producer actually reads.
 """
 from __future__ import annotations
 
@@ -63,14 +71,14 @@ def main() -> int:
     # lives in the "source" parameter below.
     w = WitnessBuilder("codata-masses", engine="python")
     w.set_description(
-        "CODATA 2022 / AME 2020 proton, neutron, electron masses "
+        "CODATA 2022 proton, neutron, electron masses "
         "(MeV/c^2), re-exported from "
         "computations/codata_constants.py so the "
         "values registry can pin Lean and Markdown literals via "
         ":leanval[m_e_MeV] / :leanval[m_p_MeV] / :leanval[m_n_MeV]."
     )
     w.set_content_block("prop:three-calibration-inputs")
-    w.add_parameter("source", "CODATA 2022 (m_e, m_p); AME 2020 + Q_β (m_n)")
+    w.add_parameter("source", "CODATA 2022 (m_e, m_p, m_n direct), via codata_constants' validation witness")
 
     w.add_assertion(
         name="m_e_in_codata_2022_window",
