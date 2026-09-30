@@ -21,7 +21,7 @@ CAL-2 fixes $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$.
 
 - $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3) = 6\,\Lambda(\pi/3) \approx 2.0299$ is pure cohomology (no CODATA input).
 - $\hbar_q = (q-1)/q$ is pure algebra (no CODATA input).
-- $q_0 \approx :val[q_0]{precision=6}$ is pinned by matching $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ to the CODATA-2022 value $:val[m_mu_over_e]{precision=10}$.
+- $q_0 \approx {{ qou.computations.q-pinning-50-digit.derived_50_digit.q | precision: 6 }}$ is pinned by matching $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ to the CODATA-2022 value ${{ qou.computations.q-pinning-50-digit.calibration_inputs.m_mu_over_e_str | precision: 10 }}$.
 
 The relation $m_\mu = m_e \times \mathrm{Vol}(4_1)/\hbar_q^2$ is structurally tautological. We defined $q_0$ to enforce it. The muon is the structurally preferred anchor due to a self-duality: the figure-eight knot $4_1$ is amphichiral, and its Neumann–Zagier complex volume is real ([`prop:self-dual-higgs-real-volume`](../braids-and-knots/self-dual-higgs-real-volume.md)). It pins $q_0$ through a quantity with zero imaginary (decay) content. In contrast, the proton pins $m_p/m_e$ through a modulus of a many-body binding endomorphism. The muon provides the cleanest $q_0$ determination. The residual $\mu$–$p$ tension ($\approx 11.6$ ppb in $q_0$) is the genuine substrate floor. The neutron-decay observable does **not** supply an independent third determination of the same modulus, and the $\mu$–$p$ tension is **not** a three-way consistency test. An earlier version of this paragraph asserted both, on the strength of the point $q^{*}$ of [`rem:qstar-decay-sector-q0`](../mass-theory/rem-qstar-decay-sector-q0.md) coinciding with neither mass pin nor their precision-weighted mean. That argument is circular: $q^{*}$ is *defined* as the root of $S(q) = c_3(q) + \mathrm{Vol}(4_1)$, so locating it presupposes $c_3^{\mathrm{even}} = -\mathrm{Vol}(4_1)$ — the hypothesis such a test would have to be independent of. It is independent of the two *mass* pins, which is a different and weaker statement.
 
@@ -35,7 +35,7 @@ The paragraph above argues that the muon is the *structurally* preferred anchor.
 
 | Layer | Pins $q_0$ on | $q_0$ | Status of $m_\mu$ |
 |---|---|---|---|
-| Ideal (canonical 3-CAL) | $m_\mu/m_e$ — CAL-2, proxy for $P_{\mathrm{skew}}^{\beta}$ | $:val[q_0]{precision=17}\ldots$ | anchor input; exact *by construction* |
+| Ideal (canonical 3-CAL) | $m_\mu/m_e$ — CAL-2, proxy for $P_{\mathrm{skew}}^{\beta}$ | ${{ qou.computations.q-pinning-50-digit.derived_50_digit.q | precision: 17 }}\ldots$ | anchor input; exact *by construction* |
 | Experimental (Physical-Observations) | $m_p/m_e$ | $1.1099785827513808\ldots$ | a **prediction**, and a $9.5\sigma$ one |
 
 The two differ by $\approx 11.6$ ppb — the $\mu$–$p$ tension itself. Production compute takes the experimental pin, for one reason: $m_p/m_e$ is known to $0.017$ ppb against the muon ratio's $22$ ppb, so pinning there puts the unavoidable theory residual where it costs least. Anchoring on the muon instead would leave the proton wrong by $\approx 1.4 \times 10^{4}\,\sigma$; anchoring on the proton leaves the muon wrong by $9.5\sigma$. Neither is a free choice, and the arithmetic — not a preference — selects the second.

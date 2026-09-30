@@ -75,7 +75,7 @@ This derivation grounds Anchor II explicitly in categorical structures. See [Tab
 
 ### Verification
 
-At the value $q_0 = :val[q_0]{precision=6}\ldots$, the predicted trace evaluates to:
+At the value $q_0 = {{ qou.computations.q-pinning-50-digit.derived_50_digit.q | precision: 6 }}\ldots$, the predicted trace evaluates to:
 
 $$
   [2]_q \cdot [4]_q^2 \cdot [6]_q \;=\; 2.0109 \cdot 16.892 \cdot 6.388

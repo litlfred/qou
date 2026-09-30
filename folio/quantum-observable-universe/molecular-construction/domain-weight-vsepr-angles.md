@@ -4,12 +4,12 @@ Every electron domain is a braid word weighted $q^{\ell}$ on the symmetric block
 
 | Molecule | Atom $(n)$ | $AX_nE_m$ | Bonds | Lones | Base $\theta_0$ | Predicted | Observed |
 |---|---|---|---|---|---|---|---|
-| $\mathrm{CH_4}$ | C $(2)$ | $AX_4E_0$ | $4\,\sigma\,(q)$ | — | sp$^3$ $109.47^\circ$ | $:val[predicted_ch4_deg]{precision=5, witness=computations/molecular-angle-master-table.witness.json}^\circ$ | $109.5^\circ$ |
-| $\mathrm{NH_3}$ | N $(2)$ | $AX_3E_1$ | $3\,\sigma\,(q)$ | $e^-\,(q^3)$ | sp$^3$ $109.47^\circ$ | $:val[predicted_nh3_deg]{precision=5, witness=computations/molecular-angle-master-table.witness.json}^\circ$ | $107.0^\circ$ |
-| $\mathrm{H_2O}$ | O $(2)$ | $AX_2E_2$ | $2\,\sigma\,(q)$ | $2\,e^-\,(q^3)$ | sp$^3$ $109.47^\circ$ | $:val[predicted_h2o_deg]{precision=5, witness=computations/molecular-angle-master-table.witness.json}^\circ$ | $104.5^\circ$ |
-| $\mathrm{C_2H_4}$ | C $(2)$ | $AX_3$ | $\sigma^2\,(q^2){+}2\,\sigma\,(q)$ | — | sp$^2$ $120^\circ$ | $:val[predicted_c2h4_deg]{precision=5, witness=computations/molecular-angle-master-table.witness.json}^\circ$ | $116.6^\circ$ |
-| $\mathrm{CO_2}$ | C $(2)$ | $AX_2$ | $2\,\sigma^2\,(q^2)$ | — | sp $180^\circ$ | $:val[predicted_co2_deg]{precision=5, witness=computations/molecular-angle-master-table.witness.json}^\circ$ | $180.0^\circ$ |
-| $\mathrm{H_2S}$ | S $(3)$ | $AX_2E_2$ | $2\,\sigma\,(q)$ | $2\,e^-\,(q^3)$ | pure-$p$ $90^\circ$ | $:val[predicted_h2s_deg]{precision=5, witness=computations/molecular-angle-master-table.witness.json}^\circ$ | $92.1^\circ$ |
+| $\mathrm{CH_4}$ | C $(2)$ | $AX_4E_0$ | $4\,\sigma\,(q)$ | — | sp$^3$ $109.47^\circ$ | ${{ qou.computations.molecular-angle-master-table.data.table.CH4.predicted_deg | precision: 5 }}\;\text{deg}^\circ$ | $109.5^\circ$ |
+| $\mathrm{NH_3}$ | N $(2)$ | $AX_3E_1$ | $3\,\sigma\,(q)$ | $e^-\,(q^3)$ | sp$^3$ $109.47^\circ$ | ${{ qou.computations.molecular-angle-master-table.data.table.NH3.predicted_deg | precision: 5 }}\;\text{deg}^\circ$ | $107.0^\circ$ |
+| $\mathrm{H_2O}$ | O $(2)$ | $AX_2E_2$ | $2\,\sigma\,(q)$ | $2\,e^-\,(q^3)$ | sp$^3$ $109.47^\circ$ | ${{ qou.computations.molecular-angle-master-table.data.table.H2O.predicted_deg | precision: 5 }}\;\text{deg}^\circ$ | $104.5^\circ$ |
+| $\mathrm{C_2H_4}$ | C $(2)$ | $AX_3$ | $\sigma^2\,(q^2){+}2\,\sigma\,(q)$ | — | sp$^2$ $120^\circ$ | ${{ qou.computations.molecular-angle-master-table.data.table.C2H4.predicted_deg | precision: 5 }}\;\text{deg}^\circ$ | $116.6^\circ$ |
+| $\mathrm{CO_2}$ | C $(2)$ | $AX_2$ | $2\,\sigma^2\,(q^2)$ | — | sp $180^\circ$ | ${{ qou.computations.molecular-angle-master-table.data.table.CO2.predicted_deg | precision: 5 }}\;\text{deg}^\circ$ | $180.0^\circ$ |
+| $\mathrm{H_2S}$ | S $(3)$ | $AX_2E_2$ | $2\,\sigma\,(q)$ | $2\,e^-\,(q^3)$ | pure-$p$ $90^\circ$ | ${{ qou.computations.molecular-angle-master-table.data.table.H2S.predicted_deg | precision: 5 }}\;\text{deg}^\circ$ | $92.1^\circ$ |
 
 The second-row atoms (C, N, O) have a small $s$–$p$ gap. They hybridise, so the $s$-channel is active and the domains take the sp/sp$^2$/sp$^3$ base by steric number ($180/120/109.47^\circ$). The $q^3$ lone or $q^2$ double-bond weight then shifts this base. This reproduces the angles for $\mathrm{CH_4}, \mathrm{NH_3}, \mathrm{H_2O}, \mathrm{C_2H_4}, \mathrm{CO_2}$ within $0.6^\circ$ and specialises [`prop:h2o-bond-angle-shift`](#prop:h2o-bond-angle-shift).
 

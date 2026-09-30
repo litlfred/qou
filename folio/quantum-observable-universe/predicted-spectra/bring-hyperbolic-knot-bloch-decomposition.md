@@ -114,7 +114,7 @@ $$
   \;=\;
   2\,\mathrm{Cl}_2\!\left(\tfrac{\pi}{3}\right)
   \;\approx\;
-  :val[Vol_4_1]{precision=6}\ldots
+  {{ qou.computations.q-pinning-50-digit.calibration_inputs.Vol_4_1_str | precision: 6 }}\ldots
 $$
 
 The ratio of $2/(3\pi)$ to $\mathrm{Cl}_2(\pi/3)$ is not a small rational. The figure-8 knot alone does not yield the required value. 

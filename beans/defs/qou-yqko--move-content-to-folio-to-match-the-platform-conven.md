@@ -1,17 +1,15 @@
 ---
 # qou-yqko
-title: Move content/ to folio/ (owner-confirmed 2026-09-26) — pin bump DONE, still blocked; recorded blast radius is an undercount
-status: in-progress
+title: 'Move content/ to folio/ (owner-confirmed 2026-09-26) — DONE: #7485 and #7487 merged 2026-09-29'
+status: completed
 type: feature
 priority: normal
 tags:
     - platform
     - migration
 created_at: 2026-09-26T11:19:21Z
-updated_at: 2026-09-29T20:30:00Z
+updated_at: 2026-09-29T21:13:05Z
 parent: qou-n4r9
-blocked_by:
-    - qou-8321
 ---
 
 **Owner direction, 2026-09-26:** *"Can move content/ for to folio/ to match.
@@ -635,3 +633,38 @@ as `main`.
 **The general lesson:** the existence test in §6 of the PR is right, but it has to
 run over paths the code BUILDS, not over string literals. A path assembled
 from parts never appears as a string.
+
+
+--------
+
+## Summary of Changes
+
+Merged to `main` on 2026-09-29, both by owner authorisation:
+
+- **[#7485](https://github.com/litlfred/qou/pull/7485)** (`2c2ecfe0c`): `content/` → `folio/`.
+  18,816 pure renames, with `qou.json`, the lakefiles and `.gitignore` in the
+  same commit. Paths re-pointed by string (§1–§5 above) and, in `6451fd5c0`,
+  128 component-built paths that the string sweep could not see.
+  - Verified: the `precision-gates.sh` `RED:` line is byte-identical to `main`
+    (`140f153e363126e2`), NEW 0 / REGRESSED 0. Nine audit scripts produce
+    output identical to `main`. The unfixed head, as calibration, gave 4–19
+    lines where `main` gives 11–1475.
+- **[#7487](https://github.com/litlfred/qou/pull/7487)** (`32cb188c0`, closes #7486):
+  `leitner2026` now derives its title, authors and date from
+  `folio/quantum-observable-universe/identity.ts`, which the paper manifest
+  also reads. The key literal stays in `references.ts`; no citing site
+  changed. The bibliography changed in exactly 2 lines.
+
+**Not run for either PR:** `lake build` and the PDF render. The verifying
+container had no Lean or LaTeX. The next Lean or PDF run is the first to
+exercise the move.
+
+**Blocker `qou-8321` removed.** It was the pin-bump sequencing constraint.
+The 2026-09-27 measurement showed 0 of 21 resolution sites block, and the
+move has now landed.
+
+**Follow-ups opened, each pre-existing on `main`:**
+- `qou-p3ay`: `references.bib` is stale, with 512 entries against 889 in
+  `references.ts`.
+- `qou-msp2`: `setup-folio-assistant.sh` links one directory too deep for
+  all 46 platform importers.
