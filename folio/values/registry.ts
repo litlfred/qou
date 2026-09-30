@@ -676,8 +676,8 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
     m_n_MeV: Object.freeze({
       name: "m_n_MeV",
       description:
-        "Neutron rest mass in MeV/c^2.  CODATA 2022 direct " +
-        "value 939.56542194 MeV, re-exported from " +
+        "Neutron rest mass in MeV/c^2.  AME-2020-derived " +
+        "(m_p + m_e + Q_beta) value 939.56542179 MeV, re-exported from " +
         "codata_constants.py via the codata-masses witness.",
       symbol: "m_n",
       witnessFile:
