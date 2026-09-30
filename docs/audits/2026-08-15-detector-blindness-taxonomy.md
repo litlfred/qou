@@ -993,4 +993,7 @@ cannot make. A detector that pins its own limit is the part worth copying.
 **Note on the count line in AGENTS.md.** That document said "**thirty-five**
 rows" when this row was added and the true count was 39. It has now been stale
 seven times (13 → 16 → 18 → 22 → 35 → 39 → 46 → 47). Re-count the table; do not quote
-the sentence. **The table is at 47 rows as of 2026-09-26.**
+the sentence. **The table is at 49 rows as of 2026-09-30.** It read 47 while
+the table stood at 48, so it was stale by one before this row was appended and
+is now stale by two — a count line inside the note telling you not to quote a
+count line. Measured, not carried: `grep -cE '^\| *[0-9]+ *\|'` on this file.
