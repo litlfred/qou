@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-06T09:08:15Z
-updated_at: 2026-09-07T11:19:19Z
+updated_at: 2026-09-30T15:14:28Z
 ---
 
 Found by continuing the class-D read (`qou-psjm`) into the 7 deprecated-source
@@ -169,3 +169,7 @@ rounding of CODATA-2018 — lengthening it needs the author's determination.
 What SURVIVES, and is a different defect: CANON in codata_truncation_audit.py is a HAND-WRITTEN list that omits alpha, so the GATE is blind even though the REGISTRY is not. Fixing that is one entry in CANON, not an addition to the registry — much cheaper than this bean says. The 62-file / three-value census below stands and is useful.
 
 Consequence for anyone acting on this bean: do NOT add a fine-structure entry to codata.py (it is already there, and a second one would be the duplicate class). Fix CANON instead, and route producers through codata.codata('inverse fine-structure constant') — done for alpha_em_schwinger_ladder_probe.py in #7069.
+
+
+## 2026-09-30: alpha now has a CODATA 2022 source
+library/codata-2022 (ingested from NIST allascii via codata-ingest, 355 quantities) carries inverse-fine-structure-constant = 137.035999177 and fine-structure-constant. alpha_em_shift_chain.py reads it instead of the literal 137.035999084, which was the CODATA 2018 value labelled 2022; its witness is regenerated. Not done here: wiring codata_truncation_audit's CANON to the dataset, which is what would make the gate see alpha.
