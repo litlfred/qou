@@ -121,4 +121,11 @@
 # and the CODATA 2022 library dataset — the platform half of retiring `:val` and
 # the stale CODATA literals. Both are unusable here until the pin passes it.
 #
-378a1000801f67e7aa02332a9b2c71ec3bc15433
+# BUMPED 2026-09-30 to cb194b1 (folio-assistant#1620 merged): the platform
+# VALIDATES Liquid {{ … }} references by the :val rules (val-resolves,
+# val-precision-bounded, val-filter, val-block-computation). Needed before
+# this repo's :val -> Liquid migration: at 378a100 the 58 migrated references
+# would have lost their validation. run-validate at cb194b1, same corpus: the
+# same 4 issues as at 37a36ce and 378a100.
+#
+cb194b1c56c0764a78c0e1247ec441e652c92465
