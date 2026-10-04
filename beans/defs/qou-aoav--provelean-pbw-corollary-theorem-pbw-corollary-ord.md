@@ -5,13 +5,14 @@ status: completed
 type: task
 priority: normal
 tags:
+    - verify-build
     - paper-ugb
     - repo-infra
     - reorg-2026-10-04
     - lean
     - cited-sorry
 created_at: 2026-08-01T23:31:10Z
-updated_at: 2026-10-04T15:22:42Z
+updated_at: 2026-10-04T15:30:49Z
 parent: qou-k1mq
 ---
 
@@ -31,3 +32,9 @@ parent: qou-k1mq
 ## Summary of Changes
 
 Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] decl found sorry-free & unconditional in folio/unital-groebner-bases or fred2005 tree (k1mq child; sorry gone)
+
+
+
+## Verify by build (2026-10-04)
+
+Closed on 'sorry-free on main' evidence, but the cited declaration could not be matched automatically to a file that a CI Lake target is known to compile (orphan census 2026-10-04: only 654 of 1,309 lean.refs resolve into the compiled library; ugb and fred2005 are separate required packages). Confirm with a build and `#print axioms`; reopen if it does not compile.
