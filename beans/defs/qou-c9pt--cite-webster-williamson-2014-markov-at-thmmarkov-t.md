@@ -3,8 +3,12 @@
 title: Cite [webster-williamson-2014-markov] at thm:markov-trace-factorization
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:55Z
-updated_at: 2026-08-08T23:34:55Z
+updated_at: 2026-10-04T15:17:47Z
+parent: qou-mub3
 ---
 
 The reference currently sits in rem:hecke-markov-interpretation's cites array with no prose invocation. Move it to the block whose claim it actually bears on — the character expansion of the Markov trace — and cite Cor. 13 there with its locator.

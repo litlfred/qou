@@ -1,10 +1,13 @@
 ---
 # qou-f9th
 title: 'RETRACTED: certificates ARE reproducible (f64 = eval/2^pn_count); repair script ready'
-status: todo
+status: completed
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T04:05:44Z
-updated_at: 2026-08-15T04:05:44Z
+updated_at: 2026-10-04T15:24:09Z
 ---
 
 
@@ -124,3 +127,9 @@ records binary + argv + reproduce + q0 + q0_pin on every new certificate, so
 this class cannot recur. If the corpus is ever genuinely needed at the proton
 pin, the answer is a fresh full run with the parameters chosen and recorded —
 a new campaign, not a migration.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [B] RETRACTED: certificates are reproducible; repair script ready - finish or close

@@ -4,9 +4,11 @@ title: '2H ATTACK A: derive the interface offset t from a SPACE index (3S1-3D1 t
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T18:37:51Z
-updated_at: 2026-09-12T10:26:56Z
-parent: qou-9ot5
+updated_at: 2026-10-04T15:16:01Z
+parent: qou-10v9
 ---
 
 ## 2026-08-25 — this is now one of only TWO surviving routes for 2H

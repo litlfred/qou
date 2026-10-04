@@ -4,8 +4,11 @@ title: Isospin lives in the two-row partition channel, not the bond channel
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T06:48:03Z
-updated_at: 2026-09-14T17:07:10Z
+updated_at: 2026-10-04T15:21:00Z
+parent: qou-v2om
 ---
 
 

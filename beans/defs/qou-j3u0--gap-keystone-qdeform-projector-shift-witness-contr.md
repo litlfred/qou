@@ -4,8 +4,11 @@ title: 'GAP: keystone-qdeform-projector-shift witness contradicts its own produc
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T12:44:54Z
-updated_at: 2026-08-30T14:30:56Z
+updated_at: 2026-10-04T15:20:07Z
+parent: qou-9nnz
 ---
 
 ## The disagreement, measured AT THE WITNESS'S OWN PIN

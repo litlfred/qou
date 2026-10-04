@@ -1,11 +1,14 @@
 ---
 # qou-r13s
 title: 'GAP: root `lake build <targets>` EVICTS a restored olean cache — 6990 to 334 measured'
-status: in-progress
+status: todo
 type: bug
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T21:04:18Z
-updated_at: 2026-09-04T11:35:00Z
+updated_at: 2026-10-04T15:10:43Z
+parent: qou-5vkl
 ---
 
 ## What
@@ -135,3 +138,9 @@ deliberate non-measurement, not an oversight. Until someone spends that,
   unfixed version.
 
 PR #6636.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

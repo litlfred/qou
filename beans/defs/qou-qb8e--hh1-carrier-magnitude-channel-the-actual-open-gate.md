@@ -4,8 +4,11 @@ title: 'HH^1 carrier: the MAGNITUDE channel — the actual open gate for c_3'
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T10:15:00Z
-updated_at: 2026-08-29T10:27:34Z
+updated_at: 2026-10-04T15:14:55Z
+parent: qou-avtq
 ---
 
 Successor to qou-qb8b + qou-qb8d, which between them settled the PARITY channel

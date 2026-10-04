@@ -1,10 +1,13 @@
 ---
 # qou-x3be
 title: Cite [bujack2022] at tbl:schrodinger-color-falsifiability-table3-data
-status: todo
+status: completed
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:06Z
-updated_at: 2026-08-08T23:34:06Z
+updated_at: 2026-10-04T15:17:26Z
 ---
 
 Soften 'proved' to match the source's own hedge (p. 5), and re-mark the Table 3 Weber–Fechner row as the source's conjecture rather than a confirmation (p. 8).
@@ -17,3 +20,9 @@ Source: `library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/bu
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] key bujack2022 already present in tbl:schrodinger-color-falsifiability block files (grep)

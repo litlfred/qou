@@ -1,11 +1,14 @@
 ---
 # qou-agvb
 title: Witness provenance is spelled THREE ways (scriptFile / computation / producer) — 139 live witnesses carry none; every orphan count so far keyed on one field
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T13:03:01Z
-updated_at: 2026-08-30T13:49:23Z
+updated_at: 2026-10-04T15:14:26Z
+parent: qou-5vkl
 ---
 
 Found while cross-checking PR #6215 against sibling commit 6f39734ea3 (qou-bake), which landed on main minutes earlier and corrects ITS OWN orphan claim: 'The qou-tekx triage put these in a "producer not found" bucket on the strength of scriptFile: None. That read the WRONG FIELD -- the provenance was in `computation` all along.'
@@ -103,3 +106,9 @@ NOTE ON THIS BEAN'S OWN TEXT: two words above were eaten by shell backtick
 expansion when this body was appended (`computation` and `_probe` ran as
 commands). Repaired. The committed audit doc and commit message used a quoted
 heredoc and were never affected.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

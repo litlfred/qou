@@ -1,12 +1,14 @@
 ---
 # qou-523q
 title: 'GAP: full two-sided ℤ finite-generation of FW eq.(14) row-0 lattice (rank max{A,B})'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-01T20:00:16Z
-updated_at: 2026-08-01T23:14:45Z
-parent: qou-h7yk
+updated_at: 2026-10-04T15:12:53Z
+parent: b9cj
 ---
 
 ## Context
@@ -55,3 +57,9 @@ as `Submodule.FG` / a `span` equality. All still generic `[Field R]`,
 `Recursion` class.
 
 -- Ref: [fantini-wheeler2024] arXiv:2410.20973 §1.2 ("max{A,B} independent integrals")
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-01 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

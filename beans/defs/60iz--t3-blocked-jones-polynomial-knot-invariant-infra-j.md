@@ -1,15 +1,16 @@
 ---
 # 60iz
 title: 'T3 [BLOCKED]: Jones polynomial / knot-invariant infra → jet_filtered_knot_factor value side'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - keystone-infra
     - tier3
+    - reorg-2026-10-04
 created_at: 2026-06-25T17:06:54Z
-updated_at: 2026-06-26T11:20:43Z
-parent: 08a2
+updated_at: 2026-10-04T15:14:04Z
+parent: qou-rtxm
 ---
 
 jonesQuotient abstract; no Mathlib knot-invariant / Kauffman-bracket infra. Could build on Markov trace (Braiding/HnMarkovTrace) long-term; scoped as research-grade.
@@ -25,3 +26,9 @@ PARTIAL (2026-06-25): built JonesViaMarkovTrace.lean — jonesHopf (Jones value 
 
 
 [2026-06-26 WALL LARGELY DOWN — owner option-3] Sibling landed abstract IwahoriHeckeAPI (c2035fb1/1fe4bc37): H_n(q) element algebra (sigma, markov_trace) + MarkovTraceCyclic + MarkovTraceStabilisation + proved markovTrace_stab_comm (Markov move I). Authored MarkovTraceLinkInvariance.lean on it: jonesOfBraid (arbitrary-braid-word Jones = tr_M(∏σ)) + markovTrace_conj_invariant (Markov move II). Moves I+II ⇒ tr_M is a link invariant at general n. REMAINING for jonesQuotient wire: only the (Z,N)→braid-word map (research-grade, not infra). Verification CI-gated: IwahoriHeckeAPI cone needs Nat.Dist/RingTheory.Idempotents oleans absent from sandbox cache (0 mathlib source, network blocked) — authored against fully-read API, CI verifies.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-06-26 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

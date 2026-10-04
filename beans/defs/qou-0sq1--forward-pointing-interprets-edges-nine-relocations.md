@@ -3,8 +3,12 @@
 title: 'Forward-pointing interprets edges: nine relocations, three questions'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T01:51:33Z
-updated_at: 2026-08-16T01:51:33Z
+updated_at: 2026-10-04T15:19:20Z
+parent: qou-hqo3
 ---
 
 Audit: `docs/audits/2026-08-16-forward-interprets.md`.

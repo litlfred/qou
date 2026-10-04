@@ -4,8 +4,11 @@ title: The cell-content definition exists five times in the Lean tree, under fou
 status: todo
 type: task
 priority: low
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T11:00:00Z
-updated_at: 2026-08-24T19:56:00Z
+updated_at: 2026-10-04T15:26:02Z
+parent: qou-59vq
 ---
 
 Found while adding a sixth — caught in review of my own PR (#5205, bean `wpdb`).

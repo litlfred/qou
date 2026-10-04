@@ -1,12 +1,14 @@
 ---
 # qou-g0n2
 title: 'A1b (DPP kernel): Cov_Planch(N_v, ω₃) via BOO discrete-Bessel determinantal kernel'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-25T16:37:35Z
-updated_at: 2026-07-25T16:47:56Z
-parent: qou-v8t7
+updated_at: 2026-10-04T15:10:47Z
+parent: qou-m6dn
 ---
 
 
@@ -15,3 +17,9 @@ DELIVERABLE 1 (2026-07-25). Maya-diagram quadratic representation VERIFIED exact
 
 
 DELIVERABLE 1b (2026-07-25, bounded probe, NOT yet PR'd — fold into deliverable 2). Tested linear-response (Gaussian mean-field) depoissonization: Cov_n(A,B) ~ Cov_theta(A,B) - Cov_theta(A,|lambda|)Cov_theta(B,|lambda|)/Var(|lambda|) at theta=n. RESULT: INSUFFICIENT — recovers only 5-8/8 signs, values wrong (exact n=10 nu is fully alternating -+-+-+-+, linear-response gives -+-----+). So |lambda|=n conditioning is NON-PERTURBATIVE; the cheap poissonized+correction shortcut fails. Route needs the full fixed-n discrete-orthogonal-polynomial (Hahn/Charlier-type) kernel. This is research-grade asymptotics with asymptotic-only (large-n) payoff — NOT a finite-n proof of the conjecture. Deliverable 2 = the fixed-n DOP kernel or accept large-n-only asymptotic sign.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-07-25 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

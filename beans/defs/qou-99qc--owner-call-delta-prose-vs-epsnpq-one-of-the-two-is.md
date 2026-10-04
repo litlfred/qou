@@ -4,8 +4,12 @@ title: 'OWNER CALL: Delta prose vs epsNPq — one of the two is wrong (fork forc
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-26T14:57:25Z
+updated_at: 2026-10-04T15:21:54Z
+parent: qou-10v9
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed

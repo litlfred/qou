@@ -4,8 +4,11 @@ title: 'derive-binding-bond-type: the committed witness is a green PASS for a RE
 status: in-progress
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-26T12:21:32Z
-updated_at: 2026-09-27T05:23:39Z
+updated_at: 2026-10-04T15:12:19Z
+parent: qou-v2om
 ---
 
 Found 2026-09-26 while closing out `qou-udeg` (float64 upstream of a discrete

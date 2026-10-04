@@ -4,8 +4,11 @@ title: Cross-check 1104.0755v2.pdf at computations/probes/awzero_asymptotics_pro
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:04Z
-updated_at: 2026-08-21T17:04:52Z
+updated_at: 2026-10-04T15:18:18Z
+parent: qou-8hur
 ---
 
 Evaluate both sides of the Theorem numerically at the substrate-relevant w and a spread of x, and check the zeros predicted by the theta factor against the tropical corners w^{1-2n} the probe computes. A mismatch would indicate the corpus's normalisation of A_w differs from Morita's; agreement independently validates the refuted-triangulation-free style of check the audit currently lacks.

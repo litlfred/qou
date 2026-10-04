@@ -1,11 +1,13 @@
 ---
 # qou-cq2n
 title: 'RETRACTED measurement: the 88% file-only q0Anchor figure is an over-count'
-status: todo
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T14:21:00Z
-updated_at: 2026-08-24T19:57:58Z
+updated_at: 2026-10-04T15:24:09Z
 ---
 
 
@@ -321,3 +323,9 @@ Also checked: 4 of the 48 mention the muon layer; 2 (`flavor_split_alpha_*`)
 genuinely call `q_muon_at()`. AGENTS.md already adjudicates that shape — a
 producer reading `q_at()`/`q_muon_at()` by name "belongs under
 `physical_proton`" — so the entry is right for them too.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [B] title begins RETRACTED - the bean records its own retraction; nothing left to do (keep as record, status completed)

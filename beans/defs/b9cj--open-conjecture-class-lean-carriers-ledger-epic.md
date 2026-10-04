@@ -1,11 +1,11 @@
 ---
 # b9cj
-title: 'EPIC: open §3b conjecture-class Lean carriers — track all open conjectures'
+title: 'UMBRELLA: open conjectures (formal mathematics only)'
 status: in-progress
-type: epic
+type: milestone
 priority: normal
 created_at: 2026-07-05T13:20:00Z
-updated_at: 2026-08-01T19:55:46Z
+updated_at: 2026-10-04T15:09:55Z
 ---
 
 Ledger of all 23 open §3b conjecture-class Lean carriers (`instance : X := sorry`) across the QOU lean tree. Per AGENTS.md §3b/§1a these are HONEST conjecture placeholders — the `sorry` IS the conjecture, not missing proof; filling with a fabricated instance is an audit-dodge. Beans below track each for status/backing; famous-open encodings (RH/BSD/Collatz/…) are aspirational and NOT action items to 'prove'. Corpus also has ~153 conj: content-block labels (58 already bean-referenced); this epic scopes the open LEAN carriers specifically. One child bean per carrier.
@@ -39,3 +39,9 @@ Ledger of all 23 open §3b conjecture-class Lean carriers (`instance : X := sorr
 ---
 **Hygiene pass 2026-08-01 (PR #4489, branch claude/b9cj-conjecture-carrier-hygiene-2026-08-01).**
 Classified all 23 carriers: **14 genuine** (content-bearing, verified no change), **3 fixed** (cj421 ConfinementNf + cj118 QBSD: residual=0 → content-bearing; cj8c jet_convergence: removed fabricated laundering instance), **6 needs-owner** (cj46f SpectralNormalForm, cj52 LocalInfinitesimalField, cj1b7 DiophantineBirthday — real claim not faithfully encodable without inventing; cj27e BringFig8, cj434 archimedean_agreement, cj4df QouInfraGoncharov — Habiro-dilog/polylog frontier owned by other agents, deferred). NO instances fabricated. Full per-carrier table: docs/audits/2026-08-01-b9cj-conjecture-carrier-hygiene.md
+
+
+
+## Reorganisation 2026-10-04
+
+Umbrella for every open FORMAL conjecture, one epic per family. Owner ruling 2026-10-04: blocks that state a physical identification are routed to the L2 programme or the SM milestone, so no formal family inherits an empirical premise. Register of 182 conjecture blocks (108 formal, 74 identification) measured 2026-10-04.

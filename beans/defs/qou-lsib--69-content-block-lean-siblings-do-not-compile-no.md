@@ -1,11 +1,14 @@
 ---
 # qou-lsib
 title: 'Content-block Lean siblings: 34 unverified as of 2026-08-28, and nothing in CI builds them'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T20:45:00Z
-updated_at: 2026-09-07T08:42:40Z
+updated_at: 2026-10-04T15:10:52Z
+parent: qou-5vkl
 ---
 
 Measured while fixing `qou-rhax`, which was one instance of this population.
@@ -286,3 +289,9 @@ The repair backlog this bean opened with is empty. What remains is entirely the
 wiring half: nothing in CI builds these, and with Actions billing off the
 enforcement is an agent running `scripts/lean-content-sweep.sh` (source-based,
 stronger than the cache check) — which `/prepare-merge` already names.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

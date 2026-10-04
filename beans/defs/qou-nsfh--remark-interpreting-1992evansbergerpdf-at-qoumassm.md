@@ -4,8 +4,11 @@ title: Remark interpreting 1992EvansBerger.pdf at QOU.Mass.MilnorIndeterminacyGa
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:05Z
-updated_at: 2026-08-21T17:05:00Z
+updated_at: 2026-10-04T15:23:36Z
+parent: qou-aqfj
 ---
 
 Record, against the indeterminacy gate, that the gate's conclusion is about the LINK residue and does not apply to a braid-level third-order winding number. Deliberately NOT proposed as aid-proof: I have not checked that the corpus's closure convention and basepoint choices make Psi_ijk well defined on its braid words, nor that it is the right scale/units for a binding channel. Those two checks are what would have to happen first.

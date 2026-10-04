@@ -1,11 +1,13 @@
 ---
 # 9h6x
 title: 'Reseed lake-cache/qou-v4-24-0: archive truncated (6 uniform 94MB parts, gzip EOF — parts beyond part05 missing); restore yields partial oleans (1649/~2919 mathlib, no ProofWidgets/Plausible pkgs)'
-status: in-progress
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-02T17:35:24Z
-updated_at: 2026-08-07T00:00:00Z
+updated_at: 2026-10-04T15:13:47Z
 ---
 
 ## Verification 2026-08-07 — premise no longer holds; recommend closure
@@ -129,3 +131,9 @@ after a build finishes — lake may rewrite it again on completion.
 
 Build a superset target (or plain `lake build`) if the manifest must stay
 intact.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [B] "premise no longer holds; recommend closure" (reseed 3068be7b 2026-08-07) | previously stalled; last update 2026-08-07

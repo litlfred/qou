@@ -4,8 +4,11 @@ title: 'OWNER CALLS (arc bk-crossing): re-scope frobenius-packing-density over-c
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-08-21T16:25:00Z
-updated_at: 2026-08-21T16:25:00Z
+updated_at: 2026-10-04T15:21:55Z
 ---
 
 Two content-block edits surfaced by arc items 2 & 4 (PR #5389) that are OWNER decisions (they edit

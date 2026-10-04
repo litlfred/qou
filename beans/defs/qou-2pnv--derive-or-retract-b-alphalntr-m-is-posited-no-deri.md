@@ -4,9 +4,11 @@ title: 'DERIVE-OR-RETRACT: B = -alpha*ln|tr_M| is posited - no derivation, nothi
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T18:53:53Z
-updated_at: 2026-09-04T10:28:53Z
-parent: qou-9ot5
+updated_at: 2026-10-04T15:18:46Z
+parent: qou-10v9
 ---
 
 ## SELF-CORRECTION 2026-08-25 — significance over-claimed, measurement stands

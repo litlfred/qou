@@ -1,11 +1,13 @@
 ---
 # qou-txru
 title: 'float64-padding ratchet is RED ON MAIN: chi_sym_alt_closed_form substitutes a float64 q then evaluates at 60 dps'
-status: todo
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T18:08:04Z
-updated_at: 2026-08-26T18:35:44Z
+updated_at: 2026-10-04T15:19:12Z
 ---
 
 Found 2026-08-26 while merging 124 commits of main into PR #5843. **Not that
@@ -210,3 +212,9 @@ Two independent agents converging on the same root cause within hours is the
 parallel-exploration policy working as intended (AGENTS.md §"Parallel
 exploration is valuable"). Recorded rather than quietly dropped, because the
 bean above reads as a solo finding and is not one.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: 1c4cc27775 "main's 18bb011854 landed the same fix first"; 4 main commits

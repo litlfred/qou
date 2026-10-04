@@ -4,8 +4,11 @@ title: 'DECISION: 3 producers are dead by construction — deprecate, delete, or
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T14:56:18Z
-updated_at: 2026-08-30T14:57:26Z
+updated_at: 2026-10-04T15:18:37Z
+parent: qou-5vkl
 ---
 
 ## Three producers cannot run, and none can be repaired mechanically

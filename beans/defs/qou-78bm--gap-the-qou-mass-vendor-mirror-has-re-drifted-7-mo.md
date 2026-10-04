@@ -1,10 +1,13 @@
 ---
 # qou-78bm
 title: 'GAP: the qou-mass vendor mirror has RE-DRIFTED (7 modules, 2026-09-26) — qou-hp3g''s drain does not hold, because nothing blocks on --check'
-status: todo
+status: scrapped
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-26T21:22:59Z
-updated_at: 2026-09-26T21:22:59Z
+updated_at: 2026-10-04T15:20:27Z
 parent: qou-weeq
 ---
 
@@ -61,3 +64,10 @@ regenerates all 51 modules at once, so fixing my one module swept all 7 in; I re
 and left `--check` red exactly as it was, because carrying another arc's mechanical drain
 inside a prose PR is scope-widening. **`wedderburn_jones_markov` is in that PR's own arc
 cone**, which is why I looked rather than ignoring it.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-a0j7` (work-plan reorganisation 2026-10-04). Evidence: recurring "qou-mass vendor mirror red/re-drifted" observations of the same missing sync; 1 main commits
+Content is untouched; only this work item is closed.

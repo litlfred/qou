@@ -3,8 +3,12 @@
 title: Cite [neumann-zagier1985] at content/quantum-observable-universe/lean/QOU/Knot/NeumannZagierParit…
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:58Z
-updated_at: 2026-08-08T23:34:58Z
+updated_at: 2026-10-04T15:17:45Z
+parent: qou-mub3
 ---
 
 Add the 'Lemma 4.1(b)' locator to the bare '-- Ref: [neumann-zagier1985]' lines carrying the parity claim, so the hypothesis class's antecedent is checkable at the citation rather than only in the source.

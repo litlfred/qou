@@ -4,8 +4,11 @@ title: Cite 2402.08782v1.pdf at rem:brings-realisations
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:27Z
-updated_at: 2026-08-21T17:04:52Z
+updated_at: 2026-10-04T15:17:19Z
+parent: qou-19m0
 ---
 
 rem:brings-realisations asserts the genus-4 Riemann-surface realization in one unsourced sentence; Thm 3.2 is the citable uniformization, with the {5,4} regular map and the 20-gon.

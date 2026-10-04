@@ -4,8 +4,11 @@ title: 'qou-cds1 fallout: the ladder block claims -0.0066 ppm at the muon pin; t
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T23:21:11Z
-updated_at: 2026-09-13T17:30:00Z
+updated_at: 2026-10-04T15:15:03Z
+parent: qou-avtq
 ---
 
 ## What was measured

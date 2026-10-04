@@ -1,11 +1,14 @@
 ---
 # qou-tqr9
-title: 'Agent-adjudicated QA axes are silently lost by "regenerate rather than merge" conflict resolution'
-status: in-progress
+title: Agent-adjudicated QA axes are silently lost by "regenerate rather than merge" conflict resolution
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-19T21:20:00Z
-updated_at: 2026-08-22T02:30:00Z
+updated_at: 2026-10-04T15:11:50Z
+parent: qou-trd0
 ---
 
 The standard resolution for a `.qa.json` conflict is: do not hand-merge
@@ -172,3 +175,8 @@ code did not match the argument. It does now.
 from the working tree, so it never *caused* a loss. It was incomplete as a
 recovery tool, which is a different failure and a quieter one.
 
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-22 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

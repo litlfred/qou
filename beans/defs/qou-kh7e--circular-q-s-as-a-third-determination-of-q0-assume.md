@@ -1,11 +1,14 @@
 ---
 # qou-kh7e
-title: "CIRCULAR: q*_S as a 'third determination of q0' assumes (H1)"
+title: 'CIRCULAR: q*_S as a ''third determination of q0'' assumes (H1)'
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T03:20:00Z
-updated_at: 2026-08-15T03:20:00Z
+updated_at: 2026-10-04T15:14:43Z
+parent: qou-q4oa
 ---
 
 Found by the author, 2026-08-15, from one observation: **`c_3` is extracted from

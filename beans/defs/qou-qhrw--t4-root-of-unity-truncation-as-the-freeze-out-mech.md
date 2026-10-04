@@ -4,8 +4,10 @@ title: 'T4: root-of-unity truncation as the freeze-out mechanism'
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-03T23:27:16Z
-updated_at: 2026-08-03T23:27:57Z
+updated_at: 2026-10-04T15:24:48Z
 parent: qou-8lxd
 ---
 

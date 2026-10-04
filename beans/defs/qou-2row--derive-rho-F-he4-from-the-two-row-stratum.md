@@ -1,11 +1,14 @@
 ---
 # qou-2row
 title: 'HARD THREAD: derive ρ_F(⁴He)≈1.889 from the two-row Frobenius stratum (item 2 surviving route)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T16:25:00Z
-updated_at: 2026-08-21T16:25:00Z
+updated_at: 2026-10-04T15:13:05Z
+parent: qou-v2om
 ---
 
 Follows item 2 (`he4_rho_F_cpt_mechanism_refuted.py`, PR #5389): the CPT alt-block-doubling
@@ -32,3 +35,9 @@ cherry-picks blocks). (2) DECISIVE: ρ_F=B_AME/(m_e·A·8G) drifts 1.889→2.130
 ⁴He/¹⁶O/⁴⁰Ca (21% spread); Coulomb makes it worse (1.95→2.80). So ρ_F is a per-nucleus A-dependent
 effective prefactor — '2' is the rounded ⁴He value, no constant to derive. The real open target is
 ρ_F(A), harder than 'which integer'. Status stays open; re-posed. No wiring.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-21 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

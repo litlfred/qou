@@ -1,11 +1,14 @@
 ---
 # qou-wn1w
 title: 'GAP: the CODATA stale-edition scan was a gate nobody ran'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T16:00:32Z
-updated_at: 2026-08-22T16:01:01Z
+updated_at: 2026-10-04T15:13:01Z
+parent: qou-2002
 ---
 
 ## What
@@ -56,3 +59,9 @@ The `--changed` widening also means a Lean-only commit now runs the full
 preflight where it previously ran nothing. If that proves too heavy, the
 fix is to scope THIS gate to changed paths — not to narrow the predicate
 back and re-open the hole.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-22 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

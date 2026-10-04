@@ -1,11 +1,13 @@
 ---
 # qou-9b3p
 title: Resolve QOU/ParticleInteractions/lp_dual_stability.lean sorries
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T18:14:38Z
-updated_at: 2026-08-21T21:16:14Z
+updated_at: 2026-10-04T15:24:06Z
 ---
 
 REOPENED 2026-08-21 by the sorry-closure honesty audit (PR #5411).
@@ -30,3 +32,10 @@ hypothesis with the theorem DERIVING the conclusion from it — the
 verified exemplar is QOU/FluidDynamics/q_bkm_criterion.lean, and the
 in-file precedent is the `QTurbulenceCascadeModel` this same batch
 deleted.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-etfq` (work-plan reorganisation 2026-10-04). Evidence: same file lp_dual_stability.lean
+Content is untouched; only this work item is closed.

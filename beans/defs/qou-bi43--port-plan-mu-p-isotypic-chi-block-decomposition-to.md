@@ -3,8 +3,12 @@
 title: 'PORT PLAN: mu_p-isotypic chi block-decomposition to hecke-engine (derived-chi catalogue phase 2)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T18:30:53Z
-updated_at: 2026-08-02T18:30:53Z
+updated_at: 2026-10-04T15:22:08Z
+parent: qou-5vkl
 ---
 
 ## Context

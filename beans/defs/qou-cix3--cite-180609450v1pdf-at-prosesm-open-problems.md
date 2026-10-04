@@ -4,8 +4,11 @@ title: Cite 1806.09450v1.pdf at prose:sm-open-problems
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:32Z
-updated_at: 2026-08-21T17:04:51Z
+updated_at: 2026-10-04T15:17:13Z
+parent: qou-19m0
 ---
 
 The Z_6 row of prose:sm-open-problems attributes a derivation to named authors with no citation; this is that derivation.

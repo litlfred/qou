@@ -4,8 +4,11 @@ title: he4-two-row-dominance pins a convention-C 866/1000 that D makes exactly 1
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T13:41:43Z
-updated_at: 2026-08-16T13:42:16Z
+updated_at: 2026-10-04T15:20:44Z
+parent: qou-cdx1
 ---
 
 Under convention D the two-row share is exactly 1 (QOU.MassTheory.TwoRowCap.twoRow_share_eq_one_of_wenzl, PR #5242, sorry-free). The block asserts >= 0.80 with an empirical 86.6% pinned into a 3b-cond instance 'ratio := 866/1000'.

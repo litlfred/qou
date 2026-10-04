@@ -4,8 +4,11 @@ title: 'TRANCHE: the non-geometric Ptolemy component at n=3 — route E''s one s
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T07:09:45Z
-updated_at: 2026-09-05T19:26:04Z
+updated_at: 2026-10-04T15:15:07Z
+parent: qou-v2om
 ---
 
 OPENED 2026-09-05. Route E's ONE surviving branch, now a named held construction

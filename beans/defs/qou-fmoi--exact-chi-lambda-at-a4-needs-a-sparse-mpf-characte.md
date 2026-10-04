@@ -4,8 +4,11 @@ title: Exact chi_lambda at A=4 needs a sparse-mpf character product (dense mpmat
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T09:11:25Z
-updated_at: 2026-08-24T20:43:16Z
+updated_at: 2026-10-04T15:19:02Z
+parent: qou-v2om
 ---
 
 

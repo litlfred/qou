@@ -1,11 +1,14 @@
 ---
 # qou-bn8e
 title: 'GAP: intra-nucleon EM self-energy E_EM is not derived — the pion sets the length scale but not the magnitude'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T10:36:54Z
-updated_at: 2026-09-13T14:54:35Z
+updated_at: 2026-10-04T15:12:56Z
+parent: qou-v2om
 ---
 
 **Where this stands (2026-08-25, PR #5744, branch `claude/standard-panel-qou-derivation-ixuolx`).**
@@ -1016,3 +1019,9 @@ Jones/Wenzl) plus two property checks on the residue. That is a real narrowing
 read MarkovUniqueness.lean as having done it.
 
 BEAN STAYS OPEN.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -1,11 +1,14 @@
 ---
 # qou-hprp
 title: '23 conjecture carriers assert nothing — the `holds : Prop` shape'
-status: in-progress
+status: todo
 type: task
 priority: medium
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T18:10:00Z
-updated_at: 2026-09-05T05:56:57Z
+updated_at: 2026-10-04T15:14:32Z
+parent: qou-5p7n
 ---
 
 Found sweeping the q-geometric-langlands Lean siblings after the four
@@ -358,3 +361,9 @@ namespace alignment in a directory that has no single convention). Finding:
 
 **Net for this queue:** two closed, one re-classified. The syntax count is right;
 for D11 the implied action is not.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

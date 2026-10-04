@@ -4,8 +4,11 @@ title: 'GAP: convention-D re-derivation for the four C-premised computations sit
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T08:04:34Z
-updated_at: 2026-08-30T07:56:33Z
+updated_at: 2026-10-04T15:19:52Z
+parent: qou-cdx1
 ---
 
 Four convention-C sites in computations/ that must NOT stay on C but CANNOT be

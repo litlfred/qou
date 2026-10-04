@@ -4,9 +4,11 @@ title: Derive the magic-shell coordination regime switch (chain z=A-1 -> magic M
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-03T15:53:59Z
-updated_at: 2026-09-04T02:08:09Z
-parent: qou-guyb
+updated_at: 2026-10-04T15:18:46Z
+parent: qou-v2om
 ---
 
 2026-09-03 RE-SCOPED (earlier roast too pessimistic — corrected). 'Regime switch' largely DISSOLVED: chain coordination FORCED by 3-strands-per-nucleon layout (qou-gwr9, StrandLayoutForcesChain.lean) — no free M(A) to fit, saturation automatic. Sole open = the log-family coefficient (forced-chain 0.79-3.26x AME), identical to qou-brng. Closeable only by a DERIVED per-bond normalisation (carrier-crossing degree factor, or self-vs-mutual linking split) or the honest negative. Do NOT chase hbarq2. Audit 2026-09-03-brng-substubs-closeout-and-coefficient-options.md §3-4.

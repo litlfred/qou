@@ -4,9 +4,11 @@ title: 'BUILD: retype IdealTetrahedron over Mathlib UpperHalfPlane (ℍ) — 62 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T09:08:08Z
-updated_at: 2026-09-04T09:08:08Z
-parent: qou-8lxd
+updated_at: 2026-10-04T15:16:49Z
+parent: qou-c8p8
 ---
 
 **BUILD.** `QOU/MathlibExt/IdealTriangulation.lean:66-70` is

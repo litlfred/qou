@@ -3,12 +3,14 @@
 title: Cite [sauloy2004] at QOU/MathlibExt/RSZIsoformalInterface.lean — Prop 4.1 gives the algebraic 'one slope ⇒ End^{>0}(M0)=0 ⇒ trivial Stokes sheaf' behind rszIsoformalDim_one
 status: todo
 type: task
+priority: normal
 tags:
     - paper-relevance-triage
     - qdiff-stokes
+    - reorg-2026-10-04
 created_at: 2026-09-07T08:36:01Z
-updated_at: 2026-09-07T08:36:01Z
-parent: qou-2akx
+updated_at: 2026-10-04T15:17:46Z
+parent: qou-mub3
 ---
 
 Source: library/arxiv-math-0409393v1/0409393v1.pdf -> [sauloy2004] (Sauloy, algebraic construction of the Stokes sheaf). Relevance: **supporting** — agent assessment, not yet adjudicated. Raised by local/paper-relevance-triage 2026-09-07. One bean for the document's actions.

@@ -1,11 +1,14 @@
 ---
 # qou-nmpr
 title: 'GAP (qou-ylot mirror): Delta_lambda DT-moduli — target under-determines it; concentration obstruction open'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T09:13:18Z
-updated_at: 2026-08-02T09:14:18Z
+updated_at: 2026-10-04T15:12:42Z
+parent: qou-v2om
 ---
 
 Epic qou-r2nh · mirrors bean qou-ylot (which lives on the PR #4553 branch, not on main).
@@ -44,3 +47,9 @@ if no -> substrate under-determines the realization and the DT home is an avatar
 Lean: content/quantum-observable-universe/lean/QOU/BraidsAndKnots/DeltaLambdaDTModuliUnderdetermined.lean
 Audit: docs/audits/2026-08-01-deltalambda-dt-substrate-derivation.md
 Discipline: 0 free params; Delta_lambda/AME/CODATA/q0 never inverted; no instance fabricated.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-02 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

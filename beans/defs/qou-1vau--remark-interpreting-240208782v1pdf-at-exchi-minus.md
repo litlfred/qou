@@ -4,8 +4,11 @@ title: Remark interpreting 2402.08782v1.pdf at ex:chi-minus-six-derivation
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:27Z
-updated_at: 2026-08-21T17:04:40Z
+updated_at: 2026-10-04T15:23:40Z
+parent: qou-aqfj
 ---
 
 The {5,4} map's V - E + F = 30 - 60 + 24 = -6 is an independent arithmetic confirmation of the chi = -6 ledger that the chi-chain derives categorically; worth a remark, and worth stating explicitly that it is a consistency cross-check, not a second derivation of the branch-point count.

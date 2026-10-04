@@ -4,8 +4,11 @@ title: 198 library documents are sectioned but UNREGISTERED — and bulk registr
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T10:08:09Z
-updated_at: 2026-09-07T10:09:09Z
+updated_at: 2026-10-04T15:15:59Z
+parent: qou-mub3
 ---
 
 Measured 2026-09-07, after the orphan drain (#7029) closed the *invisible* population.

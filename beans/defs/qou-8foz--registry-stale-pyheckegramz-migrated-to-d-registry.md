@@ -3,8 +3,12 @@
 title: 'Registry stale: pyhecke.gram.z migrated to D, registry still records C'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T12:54:16Z
-updated_at: 2026-08-16T12:54:16Z
+updated_at: 2026-10-04T15:23:21Z
+parent: qou-5vkl
 ---
 
 tools/pyhecke/python/pyhecke/gram.py:175 now reads `z = q0 ** 3 / (q0 ** 2 + 1)` (convention D), migrated 2026-08-15 per its own banner at :15/:52. But docs/coordination/trace-convention-registry.json still carries it as C in evaluators.z (:426) and in blocked_migrations (:360-371, owner_decision_required: true).

@@ -3,8 +3,12 @@
 title: Remark interpreting [bujack2022] at rem:schrodinger-color-falsifiability
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:06Z
-updated_at: 2026-08-08T23:34:06Z
+updated_at: 2026-10-04T15:23:43Z
+parent: qou-aqfj
 ---
 
 Withdraw the crossover-bracketing sentence: the β_{Δd=5} vs β_{Δd=10} contrast is not a crossover measurement and the source reports no crossover scale. Record the correction and the resulting fact that the framework's η prediction currently has NO empirical corroboration in this source. Scope-(a): as read, this document supplies no crossover datum — it does not refute η either.

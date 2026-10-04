@@ -3,15 +3,17 @@
 title: 'PROVE(lean): cauchyMul_order — theorem cauchyMul_order {q s t : ℝ} {a b : ℕ → K} (ha : IsQGevreyOrder q s a) (hb : IsQGev [cited ramis-sauloy-zhang2013]'
 status: todo
 type: task
+priority: normal
 tags:
     - lean
     - cited-sorry
     - paper-qou
     - repo-infra
     - cite-ramis-sauloy-zhang2013
+    - reorg-2026-10-04
 created_at: 2026-08-01T23:31:06Z
-updated_at: 2026-08-01T23:31:06Z
-parent: qou-k1mq
+updated_at: 2026-10-04T15:22:24Z
+parent: qou-u2al
 ---
 
 **File:** `QOU/Mathlib/QGevreyOrder.lean` (QOU)  ·  1 cited sorry(s)

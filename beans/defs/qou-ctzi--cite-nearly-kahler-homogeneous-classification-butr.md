@@ -4,8 +4,10 @@ title: 'CITE: nearly-Kahler homogeneous classification (Butruille 2005; Gray; Fe
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T09:06:06Z
-updated_at: 2026-09-04T09:06:06Z
+updated_at: 2026-10-04T15:17:55Z
 parent: qou-8lxd
 ---
 

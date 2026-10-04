@@ -3,8 +3,12 @@
 title: 'Discharge JetOrderIndependence honestly: feed ofPivots per-order pivots from jet_order_pivots.py at higher truncation, or prove the column-extension linkage for jacobianRank_eq_three_of_base'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T22:04:32Z
-updated_at: 2026-09-14T20:42:45Z
+updated_at: 2026-10-04T15:18:52Z
+parent: 08a2
 ---
 
 

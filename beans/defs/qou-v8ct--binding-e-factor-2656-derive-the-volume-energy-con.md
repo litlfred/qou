@@ -1,12 +1,14 @@
 ---
 # qou-v8ct
 title: 'Binding E₀ factor 2.656: derive the volume-energy conversion without routing through m_e, or show the residual belongs to the bond factors (decision-frame avenue 1; queued, not dispatched)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T18:27:14Z
-updated_at: 2026-09-08T08:02:38Z
-parent: qou-vyvt
+updated_at: 2026-10-04T15:12:00Z
+parent: qou-v2om
 ---
 
 Decision-frame §5 avenue 1. Derived E₀ = m_e/(q₀(q₀−1)) = 4.186 MeV vs best single scale 11.119 MeV (2.656×). E₀·|ln z| = 2.0507 MeV is the Markov-weight rendering (§7.1). Queued behind qou-qve5 — the shape residual is 22.7× the scale freedom, so shape first.
@@ -120,3 +122,9 @@ question (qou-qve5 / #7165), not parallel to it. Do not reopen "derive E_0" —
 qou-59j5 already closed that; what would move this bean is a derived
 per-nucleon multiplicity (the 3, or a replacement) with a realisable
 mechanism, which qou-0c19 excludes for the colour tube.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

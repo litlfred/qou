@@ -3,8 +3,12 @@
 title: 'GAP: alpha_em [10]_q linchpin — delta_q(T_3,5)=q^10-q^-10 asserted not derived'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T20:56:46Z
-updated_at: 2026-08-22T20:56:46Z
+updated_at: 2026-10-04T15:19:42Z
+parent: qou-3l2l
 ---
 
 Red-team 2026-08-22: docs/audits/2026-08-22-alpha-em-derivation-redteam.md

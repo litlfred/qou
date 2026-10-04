@@ -4,8 +4,11 @@ title: Remark interpreting 0906.1500v4.pdf at content/quantum-observable-univers
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:01Z
-updated_at: 2026-08-21T17:04:58Z
+updated_at: 2026-10-04T15:23:28Z
+parent: qou-aqfj
 ---
 
 Record why the refutation in qou-fl4t is a defect of the |det J| route and not of the torsion itself: the adjoint torsion is a well-defined invariant with an independent CW-level computation, so the negative is scope-(a) (this construction, as computed, is not invariant) and not scope-(b) (the quantity does not exist). Prevents the refutation from over-narrowing the search.

@@ -3,12 +3,14 @@
 title: 'GAP: Frobenius co-Casimir trace sum_lambda 1/dim_q(lambda) has no formalised closed form for n >= 6 (UnifiedKnotMass.coCasimirTrace unconstrained there)'
 status: todo
 type: task
+priority: normal
 tags:
     - lean
     - gap
+    - reorg-2026-10-04
 created_at: 2026-09-03T09:08:30Z
-updated_at: 2026-09-03T09:08:30Z
-parent: qou-ggdk
+updated_at: 2026-10-04T15:20:01Z
+parent: qou-8lxd
 ---
 
 Class B (open Lean work) gap (SM-surface Lean sweep, bean qou-08zf, 2026-09-03). mass-theory/knot-mass-formula-unified.lean now defines partitionInverseDimSum q n as the sum of 1/dim_q over explicit q-hook dimensions (qHookDims, labelled by partition) and PROVES the closed forms for n = 2, 3, 4, 5 (previously match-arms read back by rfl — "an axiom relocated, not discharged", audit docs/audits/2026-08-27-unified-knot-mass-class-is-unsatisfiable.md). For n ≥ 6 the previous code returned (n : ℝ) under a docstring saying 0; it is now an unconstrained structure field, with coCasimir_small_n : n ≤ 5 → coCasimirTrace = partitionInverseDimSum q n.

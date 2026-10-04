@@ -3,8 +3,12 @@
 title: Cite [deturck-gluck2008] at rem:vorticity-lower-bound-argument
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:26Z
-updated_at: 2026-08-08T23:34:26Z
+updated_at: 2026-10-04T15:17:28Z
+parent: qou-1qhv
 ---
 
 A registered reference giving helicity bounds and a Biot-Savart formula in hyperbolic 3-space is uncited while three fluid-dynamics remarks argue about helicity and Biot-Savart strain. Cite it where the ambient-geometry dependence of the helicity bound is discussed.

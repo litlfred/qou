@@ -3,8 +3,12 @@
 title: The value-fingerprint audit swept only the ordering axis; the colour ruling of 2026-08-15 was invisible to it
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T20:16:14Z
-updated_at: 2026-09-14T20:16:14Z
+updated_at: 2026-10-04T15:25:01Z
+parent: qou-5vkl
 ---
 
 ## The gap

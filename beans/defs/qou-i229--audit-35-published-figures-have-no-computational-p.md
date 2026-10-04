@@ -4,8 +4,11 @@ title: 'AUDIT: 35 published figures have no computational provenance anywhere in
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T12:58:18Z
-updated_at: 2026-09-08T07:45:40Z
+updated_at: 2026-10-04T15:16:28Z
+parent: qou-mub3
 ---
 
 

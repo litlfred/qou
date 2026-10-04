@@ -3,8 +3,12 @@
 title: 'Orbit3Braid docstring: size-3 orbit characterised by ADJACENCY, should be COMPARABILITY'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T02:59:25Z
-updated_at: 2026-08-15T02:59:25Z
+updated_at: 2026-10-04T15:21:52Z
+parent: qou-1oif
 ---
 
 

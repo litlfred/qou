@@ -3,8 +3,12 @@
 title: derivation_chain.Q_0 is proton-pinned but c-q-q0 target is muon (11.5ppb, derivation-chain audit FAIL)
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-11T22:07:45Z
-updated_at: 2026-07-11T22:07:45Z
+updated_at: 2026-10-04T15:18:44Z
+parent: qou-2002
 ---
 
 ## Symptom
@@ -56,4 +60,3 @@ Recommend option 1 (internal muon consistency), pending owner sign-off.
   post-rebase witness-drift refresh on `claude/dilog-pole-cusp-phase-2026-07-11`).
 - Related: bean `tnjb` (per-observable 100× status silent-flip), `b0vf` (χ He-4 q₀
   data-integrity), AGENTS.md §"q₀ anchor convention — ideal CAL-2 (muon) vs experimental (proton)".
-

@@ -4,8 +4,11 @@ title: 'raw-float64 backlog triaged by what draining would require: 72 pct is or
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T13:19:30Z
-updated_at: 2026-09-13T13:46:29Z
+updated_at: 2026-10-04T15:23:11Z
+parent: qou-9nnz
 ---
 
 Measured 2026-09-13 after three consecutive drain targets (`r5-full-canonical-knot-solver`,

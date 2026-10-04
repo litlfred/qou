@@ -4,8 +4,11 @@ title: 'A library document can be fully sectioned with no ocr/ dir and still be 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T16:51:33Z
-updated_at: 2026-09-13T17:02:13Z
+updated_at: 2026-10-04T15:16:09Z
+parent: qou-mub3
 ---
 
 Found by doing exactly what `qou-o6ml` instructs — *"re-run path 5 before the

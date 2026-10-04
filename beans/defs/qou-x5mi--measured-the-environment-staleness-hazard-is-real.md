@@ -4,8 +4,11 @@ title: 'MEASURED: the environment staleness hazard is REAL here — 4 producers 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T19:45:51Z
-updated_at: 2026-08-29T19:46:35Z
+updated_at: 2026-10-04T15:21:33Z
+parent: qou-5vkl
 ---
 
 Parent: qou-fl0a. Found trying to declare `q0Anchor: comparison` on the five

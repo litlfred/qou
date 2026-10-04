@@ -4,8 +4,11 @@ title: jones_wenzl_weight is wrong and LIVE at mass_at_3A_proper.py:592
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T18:17:08Z
-updated_at: 2026-08-23T19:34:55Z
+updated_at: 2026-10-04T15:21:01Z
+parent: qou-v2om
 ---
 
 ## Evidence

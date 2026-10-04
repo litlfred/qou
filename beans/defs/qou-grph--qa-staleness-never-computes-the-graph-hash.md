@@ -1,11 +1,15 @@
 ---
 # qou-grph
-title: 'qa-staleness never computes the `graph` hash, so all 9 graph-invalidated criteria are permanently stale by construction'
+title: qa-staleness never computes the `graph` hash, so all 9 graph-invalidated criteria are permanently stale by construction
 status: todo
 type: task
 priority: high
+tags:
+    - close-candidate
+    - reorg-2026-10-04
 created_at: 2026-08-29T16:10:00Z
-updated_at: 2026-08-29T16:10:00Z
+updated_at: 2026-10-04T15:15:02Z
+parent: qou-5vkl
 ---
 
 Found while draining `qou-g7z6`. Running `qa-sweep` over the

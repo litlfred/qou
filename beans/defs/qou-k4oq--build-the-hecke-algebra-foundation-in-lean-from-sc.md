@@ -2,10 +2,11 @@
 # qou-k4oq
 title: Build the Hecke algebra foundation in Lean from scratch — Mathlib has NONE
 status: in-progress
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-09-05T07:53:31Z
-updated_at: 2026-09-05T18:59:58Z
+updated_at: 2026-10-04T15:10:07Z
+parent: qou-rtxm
 ---
 
 LAYER 1 DONE 2026-09-05, sorry-free, lean-direct exit 0 (4.0 s), zero warnings.
@@ -273,3 +274,9 @@ these moves — is low-dimensional topology, absent from Mathlib, and not proved
 here. It is NOT hypothesised anywhere: with it `jonesFn` descends to links;
 without it `jonesFn` is a function on braids constant on the orbits of both
 moves. `MarkovTrace.markovTrace` accordingly stays `noncomputable opaque`.
+
+
+
+## Reorganisation 2026-10-04
+
+Now the epic for P3.HECKE under Lean / Mathlib foundations.

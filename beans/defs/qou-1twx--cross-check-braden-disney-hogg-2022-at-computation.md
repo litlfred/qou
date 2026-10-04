@@ -3,8 +3,12 @@
 title: Cross-check [braden-disney-hogg-2022] at computations/alpha_em_b2_bring_period_matrix_probe.py
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:32Z
-updated_at: 2026-08-08T23:35:32Z
+updated_at: 2026-10-04T15:18:23Z
+parent: qou-mub3
 ---
 
 The corpus recovers tau_0 to 50 dps by an exact SL_2(Z) word and reports a 6-digit match to this paper's 6 d.p. value. Recording that comparison against the printed j(tau_0) = -29^3 x 5/2^5 (rather than only against the derived -121945/32) closes the loop on the published input.

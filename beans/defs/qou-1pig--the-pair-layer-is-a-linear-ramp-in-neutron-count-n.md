@@ -4,8 +4,11 @@ title: The pair layer is a LINEAR RAMP in neutron count, not an isospin structur
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T10:05:43Z
-updated_at: 2026-09-14T16:16:16Z
+updated_at: 2026-10-04T15:24:58Z
+parent: qou-v2om
 ---
 
 ## The question that provoked it

@@ -4,9 +4,11 @@ title: 'BUILD: differential k-forms on a manifold as ContMDiffSection of the alt
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T09:07:55Z
-updated_at: 2026-09-04T09:24:03Z
-parent: qou-8lxd
+updated_at: 2026-10-04T15:16:47Z
+parent: qou-c8p8
 ---
 
 **BUILD (also upstreamable).** The corpus cannot state `Θ ∧ dΘ`, or the hyperbolic

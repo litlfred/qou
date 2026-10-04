@@ -4,8 +4,11 @@ title: prearchimedean_bond_factor.py archimedean block is float64 end-to-end
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T07:55:29Z
-updated_at: 2026-08-29T07:55:49Z
+updated_at: 2026-10-04T15:22:09Z
+parent: qou-9nnz
 ---
 
 Found while migrating this file from convention C to convention D (owner directive 2026-08-29, PR #5972).

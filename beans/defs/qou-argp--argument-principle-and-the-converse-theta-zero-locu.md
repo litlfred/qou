@@ -4,8 +4,11 @@ title: Argument principle on an annulus — the single missing lemma for the con
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T08:00:00Z
-updated_at: 2026-09-26T11:03:25Z
+updated_at: 2026-10-04T15:14:40Z
+parent: qou-c8p8
 ---
 
 Split out of `qou-c1ln` row 2, which is otherwise closed. Everything the

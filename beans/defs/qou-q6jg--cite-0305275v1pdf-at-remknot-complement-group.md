@@ -4,8 +4,11 @@ title: Cite 0305275v1.pdf at rem:knot-complement-group
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:40Z
-updated_at: 2026-08-21T17:05:01Z
+updated_at: 2026-10-04T15:17:02Z
+parent: qou-19m0
 ---
 
 rem:knot-complement-group makes an unsourced claim ('the image of rho characterises the geometric structure') that the rigidity theorem states precisely.

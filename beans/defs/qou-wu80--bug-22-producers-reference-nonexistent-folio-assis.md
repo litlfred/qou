@@ -4,8 +4,11 @@ title: 'BUG: 22 producers reference nonexistent folio-assistant/computations pat
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T09:00:39Z
-updated_at: 2026-08-07T09:00:39Z
+updated_at: 2026-10-04T15:15:35Z
+parent: qou-5vkl
 ---
 
 Found while sweeping producers for float64 re-padding (PR #4653).

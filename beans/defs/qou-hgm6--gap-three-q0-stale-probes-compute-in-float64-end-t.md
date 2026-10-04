@@ -4,8 +4,11 @@ title: 'GAP: three q0-stale probes compute in float64 end-to-end — the literal
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T02:45:28Z
-updated_at: 2026-09-04T02:45:59Z
+updated_at: 2026-10-04T15:20:29Z
+parent: qou-2002
 ---
 
 Found while draining `qou-3f7a`'s q0-value drift (2026-09-04).

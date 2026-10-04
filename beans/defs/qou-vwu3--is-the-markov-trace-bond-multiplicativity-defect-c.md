@@ -4,8 +4,11 @@ title: Is the Markov-trace bond-multiplicativity defect CHARGE-sensitive? The n=
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T17:46:48Z
-updated_at: 2026-09-14T18:37:18Z
+updated_at: 2026-10-04T15:20:59Z
+parent: qou-v2om
 ---
 
 ## ANSWERED 2026-09-14 — the defect IS charge-sensitive, and its charge dependence is ONE bond factor

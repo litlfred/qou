@@ -1,11 +1,14 @@
 ---
 # qou-5sg8
 title: 'float64-padding ratchet RED on main: categorical-bypass-volmatch-demo carries 4 padded binary64 after the mpf lift'
-status: in-progress
+status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T02:03:14Z
-updated_at: 2026-08-26T18:09:23Z
+updated_at: 2026-10-04T15:11:36Z
+parent: qou-9nnz
 ---
 
 Found 2026-08-16 running `scripts/precision-gates.sh` as the prepare-merge §4b
@@ -272,3 +275,9 @@ available in that file (`Q0`, `Q0_PROTON`) are float64, so the fix needs
 Recording it here because this bean has been open since 2026-08-16 and the
 class is still minting instances: the padding ratchet is red on main again,
 now at 59 occurrences / 46 NEW against a baseline of 13.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-26 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

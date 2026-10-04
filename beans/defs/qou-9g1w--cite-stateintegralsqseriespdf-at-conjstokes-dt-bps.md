@@ -4,8 +4,11 @@ title: Cite state.integrals.qseries.pdf at conj:stokes-dt-bps-bridge
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:38Z
-updated_at: 2026-08-21T17:04:47Z
+updated_at: 2026-10-04T15:17:52Z
+parent: qou-19m0
 ---
 
 The block asserting the Stokes/DT state-integral bridge should cite the theorem that produces the q / q-tilde bilinear block structure it uses.

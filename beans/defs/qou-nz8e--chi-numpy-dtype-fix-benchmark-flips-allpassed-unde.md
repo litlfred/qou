@@ -4,8 +4,11 @@ title: chi-numpy-dtype-fix-benchmark flips allPassed under numpy 2.4.6
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T02:50:31Z
-updated_at: 2026-08-16T02:50:49Z
+updated_at: 2026-10-04T15:16:56Z
+parent: qou-v2om
 ---
 
 Found while draining `qou-kx04` (PR #5194). Not fixed — recorded, and the

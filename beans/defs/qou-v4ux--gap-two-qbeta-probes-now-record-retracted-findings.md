@@ -4,8 +4,11 @@ title: 'GAP: two qbeta probes now record retracted findings — nucleon-crossing
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T14:34:40Z
-updated_at: 2026-08-30T14:35:02Z
+updated_at: 2026-10-04T15:20:31Z
+parent: qou-avtq
 ---
 
 Surfaced while draining `qou-srvu` slice E; branch

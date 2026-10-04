@@ -1,10 +1,13 @@
 ---
 # qou-rp5f
 title: 'T1: hibinv — prove i/b-periodicity of Φ₁/Φ₂ ratio everywhere (identity theorem off dual pole lattice)'
-status: todo
+status: scrapped
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-27T14:57:31Z
-updated_at: 2026-07-27T14:57:31Z
+updated_at: 2026-10-04T15:24:43Z
 ---
 
 
@@ -35,3 +38,10 @@ STATUS: this bean is now a COROLLARY of qou-cons, not a peer of it. Put effort
 there. Left as todo rather than completed only because the final `hper` in the
 exact `Basis (Fin 2)` shape that `ratio_const_of_entire_ratio` consumes still
 needs the two periods packaged as a basis — bookkeeping, not analysis.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-cons` (work-plan reorganisation 2026-10-04). Evidence: [B] body: "REDUCED TO qou-cons. no longer an independent input"
+Content is untouched; only this work item is closed.

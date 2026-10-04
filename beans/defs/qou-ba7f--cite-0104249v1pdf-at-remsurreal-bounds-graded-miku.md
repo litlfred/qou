@@ -4,8 +4,11 @@ title: Cite 0104249v1.pdf at rem:surreal-bounds-graded-mikusinski
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:33Z
-updated_at: 2026-08-21T17:04:49Z
+updated_at: 2026-10-04T15:17:00Z
+parent: qou-19m0
 ---
 
 rem:surreal-bounds-graded-mikusinski names 'Apery-style irrationality questions' with only Zagier 1986 attached; Zudilin 2001 (with Rivoal) is the current state of that programme.

@@ -5,13 +5,14 @@ status: todo
 type: task
 priority: normal
 tags:
+    - 5two
+    - reorg-2026-10-04
     - lean
     - mathlib-gap
     - bloch-group
-    - 5two
 created_at: 2026-08-07T18:05:00Z
-updated_at: 2026-09-26T11:07:07Z
-parent: qou-0yqu
+updated_at: 2026-10-04T15:21:31Z
+parent: qou-n4nr
 ---
 
 

@@ -1,11 +1,13 @@
 ---
 # qou-0ubf
 title: 'Session: P≠NP gap inventory refresh — re-measure the cluster against main, correct the stale 2026-07-25 semisimplicity row'
-status: in-progress
-type: epic
+status: completed
+type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T16:32:33Z
-updated_at: 2026-08-29T16:33:12Z
+updated_at: 2026-10-04T15:11:30Z
 ---
 
 ## Finding: the standing plan points at the wrong build
@@ -60,3 +62,9 @@ theorem (Geck-Pfeiffer 7.2.6 = bean qou-0y6h) rather than a missing basis theory
 The wall (TraceFaithfulness / JetHorizonTransfer.transfer) is the Millennium
 problem: refuted as a generic law (generic_transfer_false), blocked as uniform
 (Razborov-Rudich), barred by algebrization (Aaronson-Wigderson). Do not fabricate.
+
+
+
+## Summary of Changes
+
+Session log closed 2026-10-04 (owner decision 2): open children were reparented to programme epics and prose follow-ups extracted as their own beans. Kept as a record, not deleted.

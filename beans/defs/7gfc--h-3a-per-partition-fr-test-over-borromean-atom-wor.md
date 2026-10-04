@@ -4,7 +4,10 @@ title: 'H_3A per-partition FR test over Borromean atom words [BLOCKED in sandbox
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-02T15:21:56Z
-updated_at: 2026-07-02T15:38:42Z
+updated_at: 2026-10-04T15:20:39Z
+parent: qou-5vkl
 ---
 

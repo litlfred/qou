@@ -3,8 +3,12 @@
 title: Remark interpreting [kucharski-reineke-stosic-sulkowski2017] at prop:stokes-dt-bps-bridge
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:16Z
-updated_at: 2026-08-08T23:34:16Z
+updated_at: 2026-10-04T15:23:53Z
+parent: qou-aqfj
 ---
 
 Record that the 4₁ open-BPS count of 5 and the #nodes = det(K) rule are corpus extrapolations from a single worked trefoil, not results of this source — so the '5 ∉ {3,4}' exclusion licensing A_ω = 3 rests on an unsourced step. Name what would need checking: a direct 4₁ reduced-HOMFLY-homology generator count.

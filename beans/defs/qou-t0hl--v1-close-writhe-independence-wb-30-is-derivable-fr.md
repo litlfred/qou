@@ -4,8 +4,11 @@ title: 'V1: close writhe-independence — w(B_3)=0 is DERIVABLE from the gluon u
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T18:23:24Z
-updated_at: 2026-08-10T18:23:24Z
+updated_at: 2026-10-04T15:25:21Z
+parent: qou-8lxd
 ---
 
 The eightfold-way requirement 'second invariant INDEPENDENT of the writhe' is

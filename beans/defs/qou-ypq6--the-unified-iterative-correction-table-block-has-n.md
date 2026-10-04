@@ -3,8 +3,12 @@
 title: The unified-iterative-correction table block has no live producer -- its numbers reproduce from nothing in the tree
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-12T23:18:05Z
-updated_at: 2026-09-12T23:18:05Z
+updated_at: 2026-10-04T15:25:01Z
+parent: qou-5vkl
 ---
 
 

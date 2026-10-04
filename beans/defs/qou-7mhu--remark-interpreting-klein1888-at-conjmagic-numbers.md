@@ -3,8 +3,12 @@
 title: Remark interpreting [klein1888] at conj:magic-numbers-bring
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:53Z
-updated_at: 2026-08-08T23:34:53Z
+updated_at: 2026-10-04T15:23:51Z
+parent: qou-vva9
 ---
 
 Record that the S_5-stable-sublattice attribution at MagicNumbersBring.lean:29 is unverified against the cited work, whose subject is the icosahedron/A_5 and the quintic; the S_5 action on Bring's curve needs a separate source. Scope-(a): as read from the corpus alone the attribution is unsupported, not disproved.

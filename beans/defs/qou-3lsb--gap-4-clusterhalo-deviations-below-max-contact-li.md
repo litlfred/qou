@@ -1,11 +1,14 @@
 ---
 # qou-3lsb
 title: 'GAP-4: cluster/halo deviations below max-contact (⁶Li α+d, ⁹Be)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-11T23:11:26Z
-updated_at: 2026-07-12T00:58:06Z
+updated_at: 2026-10-04T15:12:45Z
+parent: qou-v2om
 ---
 
 
@@ -24,3 +27,9 @@ GAP-2b's constant Li residual is the nucleon-side confirmation of the same fact.
 (α+¹⁶O, below max-contact); (2) `b_αα`≈2.4 MeV is empirical — its substrate derivation is the
 α-level analogue of the nucleon `b*` (#3545 Part 12 connected tr_M / Gram norm), same object one
 scale up. Bridge: docs/audits/2026-07-11-gap4-alpha-bridge-gap3-frontier.md.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-07-12 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

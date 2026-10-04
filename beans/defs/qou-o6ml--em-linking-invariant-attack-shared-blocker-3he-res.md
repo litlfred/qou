@@ -1,11 +1,14 @@
 ---
 # qou-o6ml
 title: 'EM-linking invariant ATTACK (shared blocker: 3He residual 69% + m_d-m_u extraction): trichotomy of routes — (1) higher-order Milnor/third-order-helicity integrals (pairwise lk=0 in Brunnian B3 kills first-order Gauss), (2) Mobius/knot-energy class (nonzero for unlinked pairs; corpus MobiusEnergy.lean exists), (3) h-graded per-pair Hecke trace channel at H_2A with Hochschild-homology classification of trace functionals (Solleveld 1108.5286, uploaded). GATE: must reproduce kappa(A) profile 3.2->2.1-2.3 from em-linking-invariant-scoping witness; no tuned constant (CAL-4)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-14T17:07:10Z
+updated_at: 2026-10-04T15:12:27Z
+parent: qou-5vkl
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -2420,3 +2423,9 @@ confirmed for the bond layer specifically.
 open is narrower than "can EM enter" — it is *a non-Markov-invariant,
 exchange-sensitive per-pair functional that couples charge inside the algebra
 rather than labelling it outside*. Bean stays `in-progress`.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-14 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

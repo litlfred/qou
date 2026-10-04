@@ -3,8 +3,12 @@
 title: Cite [dgkmsv2013] at ex:hadron-proton
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:44Z
-updated_at: 2026-08-08T23:34:44Z
+updated_at: 2026-10-04T15:17:29Z
+parent: qou-mub3
 ---
 
 ex:hadron-proton states the vanishing-pairwise / nonzero-triple classification as the basis of its confinement argument with no source; this document is that classification, and its Borromean case is its opening example.

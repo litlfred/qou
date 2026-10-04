@@ -4,8 +4,11 @@ title: Cite 1611.03697v5.pdf at conj:stokes-dt-bps-bridge
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:13Z
-updated_at: 2026-08-21T17:05:10Z
+updated_at: 2026-10-04T15:17:12Z
+parent: qou-19m0
 ---
 
 conj:stokes-dt-bps-bridge names Omega_DT without a source that defines it as Stokes/RH data; Defn 2.1-2.3 supplies that, and Thm 3.2 supplies the solvable-case precedent.

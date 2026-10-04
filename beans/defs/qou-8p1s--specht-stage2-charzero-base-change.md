@@ -1,10 +1,13 @@
 ---
 # qou-8p1s
 title: 'specht: Stage 2 of specht_form_nondegenerate — general CharZero via Q base change'
-status: todo
+status: completed
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T09:20:00Z
-updated_at: 2026-08-07T09:20:00Z
+updated_at: 2026-10-04T15:24:35Z
 ---
 
 The last `sorry` in `QOU/BraidKnot/SpechtIrreducible.lean`
@@ -79,3 +82,9 @@ cannot separate `R = bot` from `R /= bot`, in any characteristic.**
 
 Do not re-attempt a James-theorem route. Stage 2 needs the rank / base-change
 input described above and at the `sorry`.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] specht_form_nondegenerate: target decl/file sorry-free on main 2026-10-03; [B] sp00 completed epic lists bricks axiom-clean (#print axioms). Conditional-in-form only on SnIsotypicSpechtSplit, whic

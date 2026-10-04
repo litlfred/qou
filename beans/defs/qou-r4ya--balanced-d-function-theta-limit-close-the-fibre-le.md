@@ -1,11 +1,14 @@
 ---
 # qou-r4ya
 title: 'Balanced D-function theta-limit: derive the balanced lattice CLASS (not the extension — see scope note)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-01T21:33:57Z
-updated_at: 2026-09-05T18:21:53Z
+updated_at: 2026-10-04T15:11:58Z
+parent: qou-r9ih
 ---
 
 Run the recentring + theta-limit machinery of
@@ -60,3 +63,9 @@ so the conjecture's closing question stays open either way).
 That is open research, which the **2026-07-11 general reversal** put in scope
 for all agents with no per-item sign-off. Off the owner-gated queue; open as
 work.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

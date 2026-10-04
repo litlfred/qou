@@ -1,11 +1,14 @@
 ---
 # qou-9iwt
 title: Omega_q denotes at least 3 different objects — one is a topological space
-status: in-progress
+status: todo
 type: bug
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-31T07:29:49Z
-updated_at: 2026-09-04T12:25:00Z
+updated_at: 2026-10-04T15:10:44Z
+parent: qou-lv2z
 ---
 
 Found while trying to run the `6 ∣ Ω_q` test that
@@ -122,3 +125,9 @@ register. All three are `\leftrightarrow`: `\left` is a *prefix* of it. That is
 the same prefix trap AGENTS.md documents for `\begin{align` vs
 `\begin{aligned}` — reproduced inside a checker written to enforce that very
 rule. Both files pass the battery once it is read correctly.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

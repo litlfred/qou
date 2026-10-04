@@ -5,7 +5,8 @@ status: in-progress
 type: epic
 priority: normal
 created_at: 2026-09-07T06:24:35Z
-updated_at: 2026-09-07T06:42:42Z
+updated_at: 2026-10-04T15:10:01Z
+parent: b9cj
 ---
 
 Owner directive 2026-09-07: *"Take up idle as relevant. Do q-native alien calculus.
@@ -392,3 +393,9 @@ eight q-difference documents have zero alien hits. You would not be extending a
 literature; you would be starting one, in a corpus where the entire existing alien
 surface has **zero consumers**. That is not a reason to refuse, but it is the correct
 size of the claim, and it must appear in any PR body.
+
+
+
+## Reorganisation 2026-10-04
+
+Now the epic for P2.RES under UMBRELLA: open conjectures (formal mathematics only).

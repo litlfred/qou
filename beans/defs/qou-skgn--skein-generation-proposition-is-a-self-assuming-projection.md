@@ -4,8 +4,11 @@ title: prop:skein-generation is a self-assuming projection — the class field I
 status: todo
 type: task
 priority: medium
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T08:20:00Z
-updated_at: 2026-09-02T21:58:32Z
+updated_at: 2026-10-04T15:26:08Z
+parent: qou-8lxd
 ---
 
 Found on `origin/main` while diffing the `qou-scrx` collision pairs. Not a

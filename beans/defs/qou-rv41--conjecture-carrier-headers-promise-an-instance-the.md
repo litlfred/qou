@@ -1,11 +1,14 @@
 ---
 # qou-rv41
 title: Conjecture-carrier headers promise an instance the file no longer has
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-03T04:11:52Z
-updated_at: 2026-09-03T04:22:08Z
+updated_at: 2026-10-04T15:12:10Z
+parent: qou-5p7n
 ---
 
 MEASURED 2026-09-03 against origin/main d502ed06ce.
@@ -35,3 +38,9 @@ FOUR FALSE POSITIVES FROM MY OWN SHAPE SCANS, recorded so the next agent does no
   4. 'instances=2' on HyperbolicVolumeIndependence etc - the regex matched PROSE LINES BEGINNING WITH THE WORD 'instance'. The one real instance there is the honest axiom-conditional pattern.
 
 Net: 0 defects found by shape, 3 found by reading. The repo's own tool (content/pipeline/lean-vacuity-axiom-audit.ts, criteria proof-no-empty-prop-carrier / proof-claims-unencoded, plus the agent review ledger) exists precisely because this cannot be done by regex. Use it, not a fifth regex.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

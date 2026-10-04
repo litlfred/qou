@@ -1,10 +1,13 @@
 ---
 # qou-sgd1
-title: 'Re-prove specht_gram_diag + Stage-1 nondegeneracy (LinearOrderedField)'
-status: todo
+title: Re-prove specht_gram_diag + Stage-1 nondegeneracy (LinearOrderedField)
+status: completed
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-06T00:00:00Z
+updated_at: 2026-10-04T15:23:13Z
 ---
 
 ## Context
@@ -40,3 +43,9 @@ module back to 0 errors: `specht_gram_diag`, `kap_of_clash_eq_zero`,
 ## Do not
 
 Do not restate `specht_gram_orthogonal` in any form. It is false, not hard.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] specht gram / nondegeneracy: target decl/file sorry-free on main 2026-10-03; [B] sp00 completed epic lists bricks axiom-clean (#print axioms). Conditional-in-form only on SnIsotypicSpechtSplit, wh

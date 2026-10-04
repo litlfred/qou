@@ -1,13 +1,16 @@
 ---
 # fwr11
-title: 'the canonical proof-parent field `of` is dead — 12 blocks, and the upstream fix'
-status: in-progress
+title: the canonical proof-parent field `of` is dead — 12 blocks, and the upstream fix
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T10:55:00Z
-updated_at: 2026-08-10T10:55:00Z
-parent: fwr6
+updated_at: 2026-10-04T15:14:09Z
+parent: qou-mub3
 ---
+
 Branch `claude/agent-beans-stalled-ioej5d`, PR #4921. Picked up from the stalled
 `fwr10` session.
 
@@ -118,3 +121,9 @@ commit next time.
    "declares some, names more" pass.
 4. **The 41-block high-signal head is still unworked** — the original `fwr10`
    scope.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-10 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

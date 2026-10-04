@@ -4,8 +4,11 @@ title: Cross-check 2302.08363v2.pdf at computations/probes/fourone_stokes_series
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T00:10:49Z
-updated_at: 2026-08-21T17:04:38Z
+updated_at: 2026-10-04T15:18:21Z
+parent: qou-8hur
 ---
 
 Extend the existing 4_1 Stokes-series self-check with the independently published eq (4.5) coefficients and record the verified relation M_1 = g_0 * 2G_0 through q^4 (and the absence of a comparable form for M_2). Cross-check only; nothing to wire, and the relation is a consistency test between two sources' notations, not a QOU observable.

@@ -4,8 +4,11 @@ title: Remark interpreting 1105.1998v3.pdf at QOU.MathlibExt.QBesselContiguityRe
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:16Z
-updated_at: 2026-08-21T17:05:02Z
+updated_at: 2026-10-04T15:23:30Z
+parent: qou-aqfj
 ---
 
 Before citing it anywhere, its Hahn-Exton normalisation must be reconciled with the corpus's convention recorded in the gasper-rahman-2004 note (J_nu(x;q) = x^nu (q^{nu+1};q)_inf/(q;q)_inf . 1phi1(0; q^{nu+1}; q, q x^2)). A connection formula in a different normalisation is not transferable, and adopting one because its numbers look right would be a fit.

@@ -4,8 +4,11 @@ title: 'GAP: he_nu_sdp_saturation_obstruction''s indefiniteness premise is contr
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T11:42:47Z
-updated_at: 2026-08-30T11:43:36Z
+updated_at: 2026-10-04T15:20:06Z
+parent: qou-10v9
 ---
 
 `computations/probes/he_nu_sdp_saturation_obstruction.py` states, in its module

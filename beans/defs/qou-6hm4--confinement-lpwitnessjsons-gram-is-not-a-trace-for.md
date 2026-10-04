@@ -4,8 +4,11 @@ title: 'confinement-topological-proof part (i): wrong lambda_-, unlabelled lambd
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T15:30:19Z
-updated_at: 2026-08-30T09:00:27Z
+updated_at: 2026-10-04T15:15:38Z
+parent: qou-v2om
 ---
 
 

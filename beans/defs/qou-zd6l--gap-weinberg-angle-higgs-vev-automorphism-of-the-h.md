@@ -3,12 +3,14 @@
 title: 'GAP: Weinberg angle — Higgs-vev automorphism of the Hoefsmit decomposition and the corrected trace ratio are not formalised (WeinbergAngleCategorical has no instance)'
 status: todo
 type: task
+priority: normal
 tags:
     - lean
     - gap
+    - reorg-2026-10-04
 created_at: 2026-09-03T09:08:29Z
-updated_at: 2026-09-03T09:08:29Z
-parent: qou-ggdk
+updated_at: 2026-10-04T15:20:33Z
+parent: qou-8lxd
 ---
 
 Class B (mathematical) gap left as a content-bearing carrier with NO instance. Found in the SM-surface Lean sweep of bean qou-08zf (2026-09-03); report: docs/audits/2026-09-03-sm-surface-lean-best-practices-sweep.md.

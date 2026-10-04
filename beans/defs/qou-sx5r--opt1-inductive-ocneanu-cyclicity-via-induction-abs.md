@@ -4,8 +4,11 @@ title: 'opt1-inductive: Ocneanu cyclicity via induction — abstract bricks (gen
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-19T18:09:26Z
-updated_at: 2026-08-26T07:20:14Z
+updated_at: 2026-10-04T15:21:49Z
+parent: qou-59vq
 ---
 
 

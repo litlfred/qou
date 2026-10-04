@@ -1,11 +1,14 @@
 ---
 # qou-26f2
 title: 266 witness assertions compare an expression to itself and pass by construction
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T23:58:15Z
-updated_at: 2026-09-07T12:59:16Z
+updated_at: 2026-10-04T15:11:44Z
+parent: qou-5vkl
 ---
 
 
@@ -532,3 +535,9 @@ than widening.
 Cross-ref: qou-17mq carries the full correction and the verification, including
 that observables A (log-volume, kappa spans 313%) and B (cosh-inversion
 degenerate, all |tr_M| < 2, elliptic) are unaffected and stand.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

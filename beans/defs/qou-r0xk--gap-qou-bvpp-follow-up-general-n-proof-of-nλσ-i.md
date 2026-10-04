@@ -3,8 +3,12 @@
 title: 'GAP (qou-bvpp follow-up): general-n proof of (†) n(λ)=Σ_i C(λ''_i,2) — nStatList=sumChoose2∘conjugate'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T09:17:19Z
-updated_at: 2026-08-02T09:17:19Z
+updated_at: 2026-10-04T15:19:29Z
+parent: qou-1oif
 ---
 
 The general-n dtEuler=deltaLambda unification is LANDED in PR #4558 (DeltaLambdaDTIndexGeneralN.lean, sorry-free): the single-degree graded-Euler collapse dtEulerG_collapse (all N,d) gives dtEuler=(-1)^{n(λ)}·dim=Δ_λ for every partition, and the merged n=5 anchor (PartitionOf5.dtEuler) is subsumed (definitional bridge dtEuler_eq_dtEulerG=rfl + re-derivation via collapse).

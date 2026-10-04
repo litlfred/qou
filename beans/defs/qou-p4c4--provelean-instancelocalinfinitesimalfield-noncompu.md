@@ -1,15 +1,17 @@
 ---
 # qou-p4c4
 title: 'PROVE(lean): instance:LocalInfinitesimalField — noncomputable instance : LocalInfinitesimalField  [cited manuscript]'
-status: todo
+status: scrapped
 type: task
+priority: normal
 tags:
-    - lean
     - cited-sorry
     - paper-qou
     - infra-blocked
+    - reorg-2026-10-04
+    - lean
 created_at: 2026-08-01T23:31:00Z
-updated_at: 2026-08-01T23:31:00Z
+updated_at: 2026-10-04T15:22:33Z
 parent: qou-k1mq
 ---
 
@@ -22,3 +24,10 @@ parent: qou-k1mq
   - [manuscript] quantum-observable-universe/appendix-surreals/local-infinitesimal-field.ts
 - **Tractability:** §3b conjecture-instance: open QOU conjecture (surreal local infinitesimal field structure).
 - **Next step:** This sorry IS the open QOU conjecture (§3b instance). No proof attempt — it is the honest open marker. Close only by a genuine derivation, never a fabricated instance.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `cj52` (work-plan reorganisation 2026-10-04). Evidence: [M] 'PROVE(lean): instance:LocalInfinitesimalField' (under qou-k1mq) and 'Conjecture carrier: LocalInfinitesimalField' (under b9cj, §3b) target the same Lean class; keep the §3b carrier as the P2 conj
+Content is untouched; only this work item is closed.

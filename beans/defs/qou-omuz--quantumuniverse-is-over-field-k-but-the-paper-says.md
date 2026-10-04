@@ -1,11 +1,14 @@
 ---
 # qou-omuz
 title: QuantumUniverse is over [Field k] but the paper says commutative ring R — and R_q is not a field
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T03:16:10Z
-updated_at: 2026-08-16T12:45:35Z
+updated_at: 2026-10-04T15:13:41Z
+parent: 08a2
 ---
 
 Raised by the author while reviewing `qou-btq3`: *"why k field, not R ring?"*
@@ -185,3 +188,9 @@ narrowed.
 
 Not changed here — the author framed the spherical question as discussion, and
 retyping an axiom field is not a docstring edit.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

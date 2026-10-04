@@ -4,8 +4,11 @@ title: Cite squier-burau-unitary-1984.pdf at content/quantum-observable-universe
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:20Z
-updated_at: 2026-08-21T17:04:40Z
+updated_at: 2026-10-04T15:17:52Z
+parent: qou-19m0
 ---
 
 q-game-of-life-proof asserts generator unitarity with respect to the Markov trace form with no citation at all; the invariant-Hermitian-form result is the nearest published statement, and citing it will also force the block to say which form it means.

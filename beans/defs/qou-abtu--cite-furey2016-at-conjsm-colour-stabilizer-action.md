@@ -3,8 +3,12 @@
 title: Cite [furey2016] at conj:sm-colour-stabilizer-action
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:01Z
-updated_at: 2026-08-08T23:35:01Z
+updated_at: 2026-10-04T15:17:32Z
+parent: qou-8lxd
 ---
 
 The colour-stabilizer conjecture's prose describes exactly this construction (su(3) = ker(ev_e), the 1 + 3 decomposition of O) and cites dubois-violette-todorov2018 but not this document, which is registered specifically for that purpose and cited nowhere.

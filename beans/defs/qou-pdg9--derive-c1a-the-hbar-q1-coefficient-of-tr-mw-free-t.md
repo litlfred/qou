@@ -1,11 +1,13 @@
 ---
 # qou-pdg9
 title: 'DERIVE c1(A): the hbar_q^1 coefficient of tr_M(W_free) - tr_M(W_atom), exactly, from the Laurent trace'
-status: in-progress
+status: completed
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-03T08:32:06Z
-updated_at: 2026-09-06T11:35:23Z
+updated_at: 2026-10-04T15:10:53Z
 ---
 
 Successor to qou-zrx2. c0(A) = 2^-A - 2^(1-2A) is DERIVED (Schur-Weyl + cycle count, ClassicalTraceFloor.lean). c1 = lim (Dtr - c0)/hbar_q is currently six MEASURED dyadic rationals (pp 19/8, pn 37/16, nn 9/4, T 163/64, 3He 85/32, 4He 259/128), entered into PairwiseChainLeadingOrder.lean as defs. Goal: (1) obtain them EXACTLY via laurent_q_trace.tr_M_atomic_lq (formal (z,h)-polynomial with LaurentQ coefficients) expanded at q = e^eta to first order -- no Richardson; (2) find and prove the closed form in A, by the same route as c0 (first-order term of a permutation-character sum). Branch claude/logz-hbarq-rung-operator-class-2026-09-03 (branch name predates the corpus-grep that found qou-ap3d/qou-ssz6 had already closed the log Z rung question).
@@ -246,3 +248,9 @@ put through `[◇]` (`2¹⁵` basis states). New exact values there: `c₂(⁵He
 Quote the species-independence, not any formula.
 
 Probe: `computations/probes/c2_pairwise_shape_holdout_probe.py` (exact `Fraction`s, no `q`).
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [B] body: "2026-09-03 DERIVED, both ways" c1_leading_coefficient_derived_probe.py; previously stalled; since 2026-09-06 [M]

@@ -3,8 +3,12 @@
 title: 5₂ cross-knot narrowed the bar-odd normalization fork (qou-yh67/qou-pzzl) to 'which ι-odd combination of {3,4}'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T09:38:29Z
-updated_at: 2026-08-02T09:38:29Z
+updated_at: 2026-10-04T15:16:06Z
+parent: qou-avtq
 ---
 
 **PR #4567 finding.** 5₂ (chiral, 3×3 Stokes block) splits the DT spectrum

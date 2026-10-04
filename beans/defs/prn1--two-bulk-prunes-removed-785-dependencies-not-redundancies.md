@@ -1,12 +1,16 @@
 ---
 # prn1
-title: 'two bulk prunes removed 785 dependencies, not redundancies'
-status: in-progress
+title: two bulk prunes removed 785 dependencies, not redundancies
+status: todo
 type: bug
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T04:30:00Z
-updated_at: 2026-08-10T04:30:00Z
+updated_at: 2026-10-04T15:10:44Z
+parent: qou-hqo3
 ---
+
 Audit: `docs/audits/2026-08-10-transitive-prune-overreach.md`.
 
 Two commits pruned `uses[]` edges in bulk on the rule *if A→B and B→C, drop
@@ -444,3 +448,9 @@ content and likewise not from these edits.
 
 Both are author questions, recorded here so the next reader does not have to
 rediscover that "1 cycle" was a snapshot rather than a property.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-10 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

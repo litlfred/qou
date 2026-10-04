@@ -4,8 +4,12 @@ title: 'GAP: binding_from_frobenius_pairing raises on object dtype -- latent beh
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-08-31T04:44:27Z
-updated_at: 2026-08-31T05:11:06Z
+updated_at: 2026-10-04T15:14:52Z
+parent: qou-v2om
 ---
 
 Blocks qou-i7ju together with qou-4m9u. Evidence:

@@ -1,11 +1,14 @@
 ---
 # qou-e58e
 title: 'FIBRE-D: q-parameterise the atom word builder so tr_M(q0^-1) is computable -- unblocks every bar-parity claim'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-19T14:21:19Z
-updated_at: 2026-08-19T19:46:12Z
+updated_at: 2026-10-04T15:12:35Z
+parent: qou-10v9
 ---
 
 THE BLOCKER IS TOOLING, NOT MATHEMATICS. complex_volume_witness.py already attempts the bar-norm ||tr_M||^2 = tr_M(q0)*tr_M(q0^-1) and guards it, with its own comment: "The canonical color-weighted atom word BAKES q0 into its crossing values, so it cannot re-lift at q^-1 (a q-parameterised word builder is required)". Same comment records the fact the whole route turns on: bar-norm and |tr_M|^2 "coincide on the unit circle (where conjugation = bar-involution) and DIFFER at the real anchor q0". So every bar-parity claim about a trace-derived quantity currently rests on a quantity the corpus CANNOT EVALUATE. Task: parameterise tr_m_atom_via_transfer over q, then un-guard the bar-norm. Prerequisite for options B/C/E being more than prose. Cost UNMEASURED -- q0 may be baked in at more than one site. Doc: docs/audits/2026-08-19-frakv-fibre-workplan-options.md option D.
@@ -43,3 +46,9 @@ BLOCKER, NAMED AND FIXABLE: chi_monotone_transfer.word_to_mpfr calls float(h) as
 REFUTED GUESS (recorded): I expected q -> 1/q to act as lambda -> lambda-conjugate (standard H_n(q) iso H_n(1/q)). For the self-mirror deuteron the per-lambda ratios are all approx -1 (defect 1.6e-4..1.8e-3) so the shape is right, but at n=9 they scatter (-0.66, -0.70, +1.08, +3.47). The naive per-lambda conjugation law is REFUTED as stated -- and it could not have been the mechanism anyway, since y_lambda != y_lambda-conj so the sum would not transform cleanly.
 
 Probe extended with part 5; ASSERTIONS PASS. Audit section 4b.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-19 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -7,9 +7,10 @@ priority: normal
 tags:
     - platform
     - tooling
+    - reorg-2026-10-04
 created_at: 2026-09-26T10:33:30Z
-updated_at: 2026-09-26T10:37:02Z
-parent: qou-ty42
+updated_at: 2026-10-04T15:15:50Z
+parent: qou-n4r9
 ---
 
 **Measured 2026-09-26.**

@@ -1,11 +1,14 @@
 ---
 # qou-x0su
 title: 'GAP: CoordinationSaturation''s premise is not instantiated in the channel binding_canonical uses'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-31T03:09:04Z
-updated_at: 2026-08-31T03:19:49Z
+updated_at: 2026-10-04T15:12:49Z
+parent: qou-v2om
 ---
 
 ## The finding (branch `claude/binding-channel-arity-2026-08-31`)
@@ -123,3 +126,9 @@ binding_canonical uses", which conflated channel with bond set.
   `q0, h, me = float(q0), float(h), float(me)` and the binding is accumulated
   with `math.log` — float64 end to end, and it writes
   `derived-bond-graph-binding.witness.json`. Worth its own bean.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-31 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

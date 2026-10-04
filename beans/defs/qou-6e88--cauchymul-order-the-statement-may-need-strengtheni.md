@@ -1,10 +1,13 @@
 ---
 # qou-6e88
 title: 'cauchyMul_order: the statement may need strengthening before it is provable'
-status: todo
+status: scrapped
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T07:04:15Z
-updated_at: 2026-08-08T12:55:00Z
+updated_at: 2026-10-04T15:16:53Z
 ---
 
 `QOU/Mathlib/QGevreyOrder.lean:261`.
@@ -88,3 +91,10 @@ true rather than one known false.
 
 Verified: `lean`-direct exit 0; `#print axioms` clean on all three new results.
 Closing is a human action — leaving status as-is.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-0z7n` (work-plan reorganisation 2026-10-04). Evidence: [M] same statement; qou-0z7n refutes+restates
+Content is untouched; only this work item is closed.

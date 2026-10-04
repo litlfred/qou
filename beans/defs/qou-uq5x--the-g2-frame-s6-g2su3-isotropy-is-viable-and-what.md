@@ -1,11 +1,13 @@
 ---
 # qou-uq5x
 title: 'The G2 frame: S6 = G2/SU(3) isotropy is viable, and what it actually costs'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T02:31:24Z
-updated_at: 2026-09-04T02:31:47Z
+updated_at: 2026-10-04T15:11:10Z
 parent: qou-8lxd
 ---
 
@@ -41,3 +43,9 @@ NEXT (judgement): build W := span(e2..e7) with Le, prove su3 e1 preserves it and
 Lambda^3_C W = 1 -- linear algebra on objects the corpus has, via Mathlib
 ExteriorPower; no manifold needed. Turns the cited Gunaydin-Gursey input into a
 derived one. Does not close O-from-substrate (Hecke transport: qou-ni4b).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

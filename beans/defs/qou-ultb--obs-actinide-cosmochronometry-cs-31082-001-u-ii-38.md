@@ -1,11 +1,14 @@
 ---
 # qou-ultb
 title: 'OBS: actinide cosmochronometry (CS 31082-001 U II 3859.57A) — Gamow-amplified alpha_EM probe; bounds |da/a| <~ 2.08e-3, LOOSER than quasars but at the FORMATION site'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T13:44:35Z
-updated_at: 2026-09-13T09:15:05Z
+updated_at: 2026-10-04T15:13:23Z
+parent: qou-8lxd
 ---
 
 ---
@@ -71,3 +74,9 @@ precision; no ingredient is ruled out.
 
 Probe: `computations/obs/alpha_bound_to_q0_sensitivity_probe.py` (mpmath mpf
 at 60 dps, cross-checked at 90; no float64).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

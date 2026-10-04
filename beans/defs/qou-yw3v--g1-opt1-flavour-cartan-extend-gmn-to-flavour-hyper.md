@@ -4,8 +4,10 @@ title: 'G1-opt1 (flavour Cartan): extend GMN to flavour hypercharge Y_f=B+S+C; d
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T20:19:12Z
-updated_at: 2026-08-02T20:19:15Z
-parent: qou-20sx
+updated_at: 2026-10-04T15:19:25Z
+parent: qou-8lxd
 ---
 

@@ -4,8 +4,11 @@ title: the chi bottleneck is the Geck-Pfeiffer reduction, it scales with WORD LE
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T07:11:37Z
-updated_at: 2026-08-26T20:50:29Z
+updated_at: 2026-10-04T15:24:52Z
+parent: qou-5vkl
 ---
 
 ## Where the time actually goes

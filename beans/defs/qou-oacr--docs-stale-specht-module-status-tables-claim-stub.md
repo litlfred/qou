@@ -1,11 +1,13 @@
 ---
 # qou-oacr
 title: 'DOCS STALE: Specht module status tables claim STUB for cores that are proved'
-status: todo
+status: completed
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T09:58:48Z
-updated_at: 2026-08-08T09:59:12Z
+updated_at: 2026-10-04T15:14:50Z
 ---
 
 
@@ -70,3 +72,9 @@ verification artifact look like it is doing a job it is not.
 - [ ] Consider a CI check: for each declaration a status table calls a STUB,
       assert `sorryAx` really is in its axiom set. A table that can go stale
       silently will.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [B] stale status tables; sp00 complete — verify docs then close (docs-only bean)

@@ -4,8 +4,11 @@ title: 'SIDE QUESTION (owner): what does QOU say about a Boyle resonance at q_0?
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-01T20:07:53Z
-updated_at: 2026-09-01T20:08:30Z
+updated_at: 2026-10-04T15:24:24Z
+parent: qou-8lxd
 ---
 
 Raised by the owner mid-session 2026-09-01, verbatim: *"bean up side question what

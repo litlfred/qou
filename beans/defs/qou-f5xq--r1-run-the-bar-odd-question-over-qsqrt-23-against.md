@@ -3,8 +3,12 @@
 title: 'R1: run the bar-odd question over Q(sqrt-23) against the A6 sigma-pair tower (SHAPE only — value is q0-gated)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-19T13:37:31Z
-updated_at: 2026-08-19T13:37:31Z
+updated_at: 2026-10-04T15:23:08Z
+parent: qou-avtq
 ---
 
 

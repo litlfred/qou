@@ -1,11 +1,14 @@
 ---
 # qou-8s7o
 title: Re-check the External axiom bucket against the corpus, not against docstrings (57 entries)
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T01:10:32Z
-updated_at: 2026-08-26T03:28:11Z
+updated_at: 2026-10-04T15:13:43Z
+parent: qou-6qbv
 ---
 
 Generalization of qou-mame (PR #5807).
@@ -31,3 +34,9 @@ Findings:
 5. Three measurement artifacts recorded: shallow-clone boundary (all 2207 files 'new'), rebase-merge flattening defeating --no-merges, clone-time mtime (845/1046 'stale' = exactly the restored set).
 
 NOT done: full Mathlib-side symbol search for each of the 23 (only spot-checked). Left open.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-26 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

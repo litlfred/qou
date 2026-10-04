@@ -4,8 +4,11 @@ title: Six Iwahori-Hecke presentations coexist in the Lean tree
 status: in-progress
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T04:13:13Z
-updated_at: 2026-09-03T04:28:36Z
+updated_at: 2026-10-04T15:13:57Z
+parent: qou-k4oq
 ---
 
 Measured 2026-08-30 with

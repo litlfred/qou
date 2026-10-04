@@ -3,8 +3,12 @@
 title: Remark interpreting [chlouveraki2016-hdr] at qou:QOU.MassTheory.wenzl_bridge_applicability_qou
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:23Z
-updated_at: 2026-08-08T23:35:23Z
+updated_at: 2026-10-04T15:23:43Z
+parent: qou-aqfj
 ---
 
 The Lean -- Ref: at wenzl-bridge-applicability-qou.lean:82/:106 cites 'HDR Theorem 6.20' without noting that the printed theorem is for Yokonuma-Hecke Y_{d,n}(q) and that the Hecke uniqueness used here is its d=1 case. Record the specialisation so a reader does not have to re-derive it from the PDF.

@@ -1,11 +1,14 @@
 ---
 # qou-5gai
-title: 'EPIC: hyperbolic-volume theory Mathlib infra (tiered H1-H5) — the T2 blocker'
-status: in-progress
-type: epic
+title: Hyperbolic-volume theory Mathlib infra (tiered H1-H5) — the T2 blocker
+status: todo
+type: feature
 priority: medium
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T17:05:00Z
-updated_at: 2026-08-08T17:05:00Z
+updated_at: 2026-10-04T15:46:40Z
+parent: qou-c8p8
 ---
 
 The single blocker behind `qou-idvt` **T2**, `qou-7y3g`, and `qou-krvm` **(iv)**.
@@ -126,3 +129,13 @@ A tier that cannot be closed gets a bean, not a `sorry`.
 * `qou-7y3g` — `Vol(4₁)=2V_tet`, `Vol(B₃)=2V_oct`, blocked on H4/H5
 * `qou-krvm` (iv) — the volume functional on the m004/L6a4 polytopes, blocked on H5
 * `08a2` — the keystone de-abstraction EPIC this belongs under
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+
+Former title (before 2026-10-04, when this became a story under a programme epic): EPIC: hyperbolic-volume theory Mathlib infra (tiered H1-H5) — the T2 blocker

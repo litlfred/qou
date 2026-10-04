@@ -3,8 +3,12 @@
 title: 'ROAST: the squeeze ''existing bricks'' claim is three cases with three bespoke brick sets, not a reusable library'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T14:01:39Z
-updated_at: 2026-08-30T14:01:39Z
+updated_at: 2026-10-04T15:24:12Z
+parent: b9cj
 ---
 
 

@@ -4,8 +4,11 @@ title: 'EXCISE FLOAT64: 222 float()-casts of q-derived constants across 129 file
 status: in-progress
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-09-27T05:21:40Z
+updated_at: 2026-10-04T15:12:31Z
+parent: qou-9nnz
 ---
 
 

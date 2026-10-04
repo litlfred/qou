@@ -4,9 +4,11 @@ title: 'DERIVE: lattice-QCD works from QOU — q-probability + q-CLT + O-S refle
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T18:14:05Z
-updated_at: 2026-08-02T18:17:21Z
-parent: qou-ywj9
+updated_at: 2026-10-04T15:18:47Z
+parent: qou-8lxd
 blocked_by:
     - qou-ud3o
 ---

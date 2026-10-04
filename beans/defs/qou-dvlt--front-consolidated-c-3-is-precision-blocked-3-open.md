@@ -2,9 +2,13 @@
 # qou-dvlt
 title: 'FRONT (consolidated): c_3 is precision-blocked — 3 open beans, 0 decidable tests'
 status: todo
-type: milestone
+type: feature
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T11:22:44Z
-updated_at: 2026-08-15T11:22:44Z
+updated_at: 2026-10-04T15:15:11Z
+parent: qou-avtq
 ---
 
 

@@ -3,8 +3,12 @@
 title: qou_mass canonical_trm_reference looks for its witness in _internal/ where none exists
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T11:12:49Z
-updated_at: 2026-09-13T11:12:49Z
+updated_at: 2026-10-04T15:23:06Z
+parent: qou-5vkl
 ---
 
 

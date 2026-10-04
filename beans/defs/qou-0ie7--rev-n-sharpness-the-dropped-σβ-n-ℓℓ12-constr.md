@@ -4,9 +4,11 @@ title: 'REV_n sharpness: the dropped Σβ = n + ℓ(ℓ−1)/2 constraint after 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T18:06:40Z
-updated_at: 2026-09-11T15:31:12Z
-parent: qou-6g7j
+updated_at: 2026-10-04T15:24:10Z
+parent: qou-10v9
 ---
 
 PR #7093 (branch claude/rev-pair-term-even-gap-minimizer-2026-09-07, 3 commits, awaiting merge permission) closed the (ℓ,W) route: Jensen is optimal per distance class, and the inter-class coupling factor SHRINKS with ℓ (1.208 at ℓ=8 → 1.072 at ℓ=60; 1.128 at the maximizer's ℓ=22, 8.2 % of B against a ~3× gap). The only remaining relaxation of size is the dropped constraint Σβ = n + ℓ(ℓ−1)/2, which ties the β's to n directly rather than through two summary integers. Task: formulate the bound WITH that constraint (fresh formulation, not another bound on the same object), measure against the exact REV_n (n ≤ 44 available from rev_free_energy_over_shapes_probe), and say whether the 3/4 exponent is sharp. REV_n is the free energy over partition shapes: energy = excess hook length, entropy = shape multiplicity. Exact / mpmath, no float64.
@@ -95,4 +97,3 @@ formalisation step if anyone wants the constant in Lean too.
 `Q0_FLIP: 1` = `hadron-knot-table`, `Q0_ANCHOR_UNRECOGNISED: 1` = `qbeta-derived-w-overdetermined-test`,
 verified by running the anchor audit alone); the ten contended audit witnesses it regenerated
 were reverted (bean `qou-v0t8`).
-

@@ -3,8 +3,12 @@
 title: 'GAP: the Ecalle bridge equation (AlienDerivation §4) is unproved'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T13:55:07Z
-updated_at: 2026-08-08T13:55:07Z
+updated_at: 2026-10-04T15:20:25Z
+parent: qou-frzo
 ---
 
 

@@ -1,12 +1,16 @@
 ---
 # trm1
-title: 'prop:terminal-resolution claims sub-keV; its own proof reports ~7 keV'
+title: prop:terminal-resolution claims sub-keV; its own proof reports ~7 keV
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T12:40:00Z
-updated_at: 2026-08-11T11:30:00Z
+updated_at: 2026-10-04T15:22:16Z
+parent: qou-q4oa
 ---
+
 Surfaced by the adversarial second reader on PR #4921 (bean `fwr11`) while
 refuting a proposed `uses[]` edge, and verified independently before filing.
 Not fixed here: this is a content claim, not bookkeeping.

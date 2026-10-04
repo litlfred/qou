@@ -4,8 +4,11 @@ title: Remark interpreting 1108.5286v3.pdf at content/quantum-observable-univers
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:05Z
-updated_at: 2026-08-21T17:04:46Z
+updated_at: 2026-10-04T15:23:30Z
+parent: qou-aqfj
 ---
 
 The inductive-limit Lean file declares the affine construction 'open R&D content' with no literature pointer. A remark recording what IS known about the affine algebra's trace/homology data — Theorem 2's q-independence and Theorem 1(d)'s trace-separation criterion, with the correction caveat — turns an unscoped open item into one with a stated starting point, without wiring anything.

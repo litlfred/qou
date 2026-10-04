@@ -1,11 +1,14 @@
 ---
 # qou-jvav
 title: witness_dependency_drift resolver missed subdirectory upstreams — 357 of 688 drift records were false
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T17:11:30Z
-updated_at: 2026-08-23T17:55:25Z
+updated_at: 2026-10-04T15:14:27Z
+parent: qou-5vkl
 ---
 
 `staleness-gates.sh` is red on `scriptHash + upstream drift`. Two findings, one
@@ -135,3 +138,9 @@ category from 'stale', and no gate distinguishes them.
 69 records across a long tail — 7 on `habiro-coefficients-atomic`, 6 on
 `q-beta-operator-valued-N3`, then 3s and 2s. No single dominant cause remains,
 so the rest is per-upstream work rather than one sweep.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-23 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -3,8 +3,12 @@
 title: 'GAP: hardcoded check totals drift as a class — 3 producers print N/N while N+1 checks execute'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T14:35:10Z
-updated_at: 2026-08-30T14:35:10Z
+updated_at: 2026-10-04T15:20:04Z
+parent: qou-5vkl
 ---
 
 

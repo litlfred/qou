@@ -3,8 +3,12 @@
 title: 'derived_chi_catalogue_build is non-idempotent: add() refuses duplicates, no update path exists'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T14:18:04Z
-updated_at: 2026-08-10T14:18:04Z
+updated_at: 2026-10-04T15:18:47Z
+parent: qou-trd0
 ---
 
 

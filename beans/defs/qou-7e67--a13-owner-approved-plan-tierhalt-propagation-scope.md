@@ -3,8 +3,12 @@
 title: 'A^(1/3): owner-approved plan -- tier+halt propagation, scope-restrict, derive archimedean id, binding-derived size; NO measured-radius input'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T11:51:31Z
-updated_at: 2026-08-09T11:51:31Z
+updated_at: 2026-10-04T15:16:13Z
+parent: qou-v2om
 ---
 
 

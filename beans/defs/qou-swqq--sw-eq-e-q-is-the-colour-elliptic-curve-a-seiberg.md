@@ -4,8 +4,11 @@ title: 'SW = E_q: is the colour elliptic curve a Seiberg-Witten curve? (NOT new 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T02:45:00Z
-updated_at: 2026-08-30T02:56:28Z
+updated_at: 2026-10-04T15:24:38Z
+parent: qou-8lxd
 ---
 
 Owner proposal, 2026-08-30, branch claude/arithmetic-upgrade-pending-543abd (PR #6052).

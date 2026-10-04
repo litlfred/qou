@@ -1,15 +1,17 @@
 ---
 # qou-fsqp
 title: 'PROVE(lean): instance:q_oper_hecke — noncomputable instance : q_oper_hecke  [cited manuscript]'
-status: todo
+status: scrapped
 type: task
+priority: normal
 tags:
+    - infra-blocked
+    - reorg-2026-10-04
     - lean
     - cited-sorry
     - paper-qou
-    - infra-blocked
 created_at: 2026-08-01T23:31:08Z
-updated_at: 2026-08-01T23:31:08Z
+updated_at: 2026-10-04T15:22:34Z
 parent: qou-k1mq
 ---
 
@@ -22,3 +24,10 @@ parent: qou-k1mq
   - [manuscript] quantum-observable-universe/q-geometric-langlands/q-oper-hecke.ts
 - **Tractability:** §3b conjecture-instance: open — q-oper Hecke eigen-property conjecture.
 - **Next step:** This sorry IS the open QOU conjecture (§3b instance). No proof attempt — it is the honest open marker. Close only by a genuine derivation, never a fabricated instance.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `cj7c` (work-plan reorganisation 2026-10-04). Evidence: [M] 'PROVE(lean): instance:q_oper_hecke' (under qou-k1mq) and 'Conjecture carrier: q_oper_hecke' (under b9cj, §3b) target the same Lean class; keep the §3b carrier as the P2 conjecture-family story.
+Content is untouched; only this work item is closed.

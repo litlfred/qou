@@ -4,8 +4,11 @@ title: 'A-operator H_9 extracts: precision_tier float64 — and the two wrong re
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T07:32:44Z
-updated_at: 2026-08-29T07:33:24Z
+updated_at: 2026-10-04T15:16:09Z
+parent: qou-9nnz
 ---
 
 ## The question

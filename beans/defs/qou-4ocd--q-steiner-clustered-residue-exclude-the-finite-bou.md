@@ -4,8 +4,11 @@ title: 'q-Steiner clustered residue: exclude the finite bounded-run words per k_
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T14:25:28Z
-updated_at: 2026-09-08T04:37:28Z
+updated_at: 2026-10-04T15:22:54Z
+parent: qcz14
 ---
 
 ---

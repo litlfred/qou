@@ -3,8 +3,12 @@
 title: 'B2-lift infra (1): land PeriodMapWeight Lean reduction — collapse 2-field TauRhoHodgeLift interface to the single MOC existence field, sorry-free'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T19:31:31Z
-updated_at: 2026-08-02T19:31:31Z
+updated_at: 2026-10-04T15:16:33Z
+parent: b9cj
 ---
 
 ## Scope (from audit 2026-08-02-hodge-lift-bring-h1-model.md §3 + the agent proposal)

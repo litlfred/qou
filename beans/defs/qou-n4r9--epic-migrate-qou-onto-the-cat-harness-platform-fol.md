@@ -8,7 +8,8 @@ tags:
     - platform
     - migration
 created_at: 2026-09-26T11:18:14Z
-updated_at: 2026-09-26T11:22:19Z
+updated_at: 2026-10-04T15:10:14Z
+parent: qou-5vkl
 ---
 
 **Owner direction, 2026-09-26, verbatim:** *"In middle of migration/refactoring
@@ -67,3 +68,9 @@ The `.folio-assistant-pin` header's own rule still binds: when the pin moves,
 **state the before/after issue counts in the commit message**. And `qou-ty42`'s
 ruling that `folio.config.json` must not be deleted holds until `qou-yf1y`
 replaces it deliberately rather than as a side effect.
+
+
+
+## Reorganisation 2026-10-04
+
+Now the epic for MIG under Platform, tooling and hygiene.

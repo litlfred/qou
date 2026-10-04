@@ -3,8 +3,12 @@
 title: Cross-check [braden-northover-2012] at QOU.Archimedean.BringHauptmodulGate
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:52Z
-updated_at: 2026-08-08T23:34:52Z
+updated_at: 2026-10-04T15:18:23Z
+parent: qou-1qhv
 ---
 
 This document gives tau_0 ~ -0.5 + 0.185576i while BringHauptmodulGate.lean:41 records -0.5 + 0.186676i from braden-disney-hogg-2022. Determine which is the corrected value and note the supersession in the Lean, so the gate's numeric context does not silently carry two different tau_0.

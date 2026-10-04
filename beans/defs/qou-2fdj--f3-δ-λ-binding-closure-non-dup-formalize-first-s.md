@@ -4,8 +4,11 @@ title: 'F3: Δ_λ binding closure — non-dup formalize-first slice (scoping age
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-19T00:42:34Z
-updated_at: 2026-07-19T00:50:36Z
+updated_at: 2026-10-04T15:19:05Z
+parent: qou-v2om
 ---
 
 

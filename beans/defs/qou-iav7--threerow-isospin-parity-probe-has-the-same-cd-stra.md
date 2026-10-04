@@ -1,11 +1,14 @@
 ---
 # qou-iav7
 title: threerow_isospin_parity_probe has the same C/D straddle as qou-qdtk, and emits NO witness
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T19:29:30Z
-updated_at: 2026-08-25T21:47:22Z
+updated_at: 2026-10-04T15:14:14Z
+parent: qou-5vkl
 ---
 
 FOUND 2026-08-25 while draining `qou-qdtk` (PR for that is in flight). Not previously
@@ -160,3 +163,9 @@ the ratios/projections are `mpf`. Zero raw float64 in the emitted witness.
 
 **Scope-(a), about this instrument.** The isospin question is neither answered nor
 refuted. A probe that could address it must be built on an object D does not annihilate.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-25 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -4,8 +4,11 @@ title: Cite 2304.07001v3.pdf at rem:st-is-median-resummation
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:23Z
-updated_at: 2026-08-21T17:04:44Z
+updated_at: 2026-10-04T15:17:17Z
+parent: qou-19m0
 ---
 
 rem:st-is-median-resummation asserts median resummation is the unique real single-valued selection but cites only the general Ecalle theory; Thm 1.2 proves existence + radial limits on a named Habiro class.

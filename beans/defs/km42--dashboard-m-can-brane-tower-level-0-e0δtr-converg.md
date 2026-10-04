@@ -3,8 +3,12 @@
 title: 'Dashboard m_can brane tower: level-0 E0·Δtr + convergent higher orders (fix divergent impl)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-06-28T21:14:46Z
-updated_at: 2026-06-29T20:30:00Z
+updated_at: 2026-10-04T15:18:35Z
+parent: qou-2002
 ---
 
 ## SCOPE (2026-06-29) — GATED, do not naively "fix"
@@ -23,4 +27,3 @@ substrate derivation** — the binding-closure frontier (`z2bn`/`w5tg`/`thb7`), 
 Only non-gated slice = a *display-only* robustness fix (show T1, label higher orders as
 "divergent/gated"); optional, not the underlying fix. Full scoping:
 `docs/audits/2026-06-29-km42-mcan-tower-scoping.md`. Keep parked unless owner re-scopes.
-

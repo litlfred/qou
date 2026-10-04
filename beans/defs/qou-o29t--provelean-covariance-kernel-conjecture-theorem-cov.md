@@ -1,15 +1,17 @@
 ---
 # qou-o29t
 title: 'PROVE(lean): covariance_kernel_conjecture — theorem covariance_kernel_conjecture (k : ℕ) : kernelValue k ≤ 0  [cited manuscript]'
-status: todo
+status: scrapped
 type: task
+priority: normal
 tags:
-    - lean
-    - cited-sorry
     - paper-qou
     - infra-blocked
+    - reorg-2026-10-04
+    - lean
+    - cited-sorry
 created_at: 2026-08-01T23:31:04Z
-updated_at: 2026-08-31T02:53:38Z
+updated_at: 2026-10-04T15:22:26Z
 parent: qou-k1mq
 ---
 
@@ -41,3 +43,10 @@ closes a QOU conjecture. What would close it is a proof (or a refutation) of the
 
 The original text is kept above, not deleted: the Tractability line is per-item and is accurate;
 only the Next-step verdict is being corrected.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-085a` (work-plan reorganisation 2026-10-04). Evidence: same decl covariance_kernel_conjecture in YoungDiagramKernel.lean [B]
+Content is untouched; only this work item is closed.

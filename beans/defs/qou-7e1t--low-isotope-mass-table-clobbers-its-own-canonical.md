@@ -4,8 +4,12 @@ title: 'low_isotope_mass_table clobbers its own canonical upstream: default re-r
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-08-22T15:29:23Z
-updated_at: 2026-09-07T07:08:12Z
+updated_at: 2026-10-04T15:15:45Z
+parent: qou-9nnz
 ---
 
 ## What

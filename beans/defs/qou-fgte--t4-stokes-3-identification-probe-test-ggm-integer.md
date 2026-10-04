@@ -1,11 +1,14 @@
 ---
 # qou-fgte
 title: 'T4: Stokes-3 identification probe — test GGM integer A_ω=3 against corpus κ-tower amplitude 2πC_n→3'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-27T14:57:31Z
-updated_at: 2026-08-01T22:59:02Z
+updated_at: 2026-10-04T15:14:06Z
+parent: qou-avtq
 ---
 
 ## Verdict note (2026-08-01, PR #4521)
@@ -17,3 +20,9 @@ Branch `claude/stokes3-identification-aomega-2026-08-01`. Resurgent large-order 
 - **Lean** `Stokes3LargeOrderAmplitude.lean` sorry-free (lean-direct exit 0): honest action-carrier `GeometricKappaAction` (amplitude=3 deliberately NOT asserted) + extraction machinery + the conjugate-pair envelope the data ruled out.
 
 NOT marking completed (owner-only per AGENTS §4a).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-01 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

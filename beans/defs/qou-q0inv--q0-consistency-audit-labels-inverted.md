@@ -1,11 +1,14 @@
 ---
 # qou-q0inv
-title: 'q0_consistency_audit labels the LIVE canonical q0 as "stale" — and contradicts itself'
+title: q0_consistency_audit labels the LIVE canonical q0 as "stale" — and contradicts itself
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T17:25:00Z
-updated_at: 2026-08-23T17:25:00Z
+updated_at: 2026-10-04T15:22:55Z
+parent: qou-5vkl
 ---
 
 `computations/audits/q0_consistency_audit.py` scans `computations/**/*.py` and

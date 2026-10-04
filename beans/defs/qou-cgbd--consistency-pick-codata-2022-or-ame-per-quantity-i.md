@@ -4,8 +4,11 @@ title: 'CONSISTENCY: pick CODATA-2022 or AME per quantity in compute and stop mi
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T06:53:56Z
-updated_at: 2026-08-30T06:57:23Z
+updated_at: 2026-10-04T15:18:07Z
+parent: qou-2002
 ---
 
 ## Why this matters, measured 2026-08-30

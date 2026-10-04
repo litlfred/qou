@@ -1,11 +1,13 @@
 ---
 # qou-hnhg
 title: 'EPIC: Hecke-semisimplicity Mathlib infra — discharge WenzlCriterion (genericity⇒semisimple) end-to-end'
-status: in-progress
+status: scrapped
 type: epic
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-24T16:21:37Z
-updated_at: 2026-07-24T16:28:03Z
+updated_at: 2026-10-04T15:11:17Z
 ---
 
 
@@ -20,3 +22,10 @@ REMAINING: Track 5 arithmetic feeders (B5a-d, tractable) + Track 2 the big lift 
 define H_n(q) (B2a-e; no Hecke algebra in Mathlib) then B2f instantiate track3 at the
 Markov trace form ⟺ [n]_q!≠0. Track 2 is a genuine multi-session build; best as a
 fresh focused effort. WenzlCriterion discharge = B2f (blocked only on track 2 now).
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-59vq` (work-plan reorganisation 2026-10-04). Evidence: [M] SchurWeyl/HeckeSemisimpleReal.wenzlCriterion_of_one_lt + semisimple_of_one_lt_unconditional discharge WenzlCriterion sorry-free; [B] hnhg body only tracks Track 2/B2f = this. close-evidence after 
+Content is untouched; only this work item is closed.

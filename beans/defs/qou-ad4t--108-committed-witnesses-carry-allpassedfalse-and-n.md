@@ -4,8 +4,11 @@ title: 111 committed witnesses carry a recorded assertion failure and nothing re
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T15:08:23Z
-updated_at: 2026-08-21T15:21:12Z
+updated_at: 2026-10-04T15:15:34Z
+parent: qou-5vkl
 ---
 
 Found while fixing `qou-4e5k`: the witness whose assertion named that defect had

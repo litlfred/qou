@@ -4,8 +4,11 @@ title: Cross-check 2209.06973v1.pdf at computations/habiro_borromean_colored_jon
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:50Z
-updated_at: 2026-08-21T17:05:08Z
+updated_at: 2026-10-04T15:18:20Z
+parent: qou-mukd
 ---
 
 Evaluate the arc-graph state-sum on (sigma_1 sigma_2^{-1})^3 and compare against the corpus's Borromean colored-Jones coefficients. This is a verification of an existing witness, not an adoption of an external number; a disagreement would be the finding.

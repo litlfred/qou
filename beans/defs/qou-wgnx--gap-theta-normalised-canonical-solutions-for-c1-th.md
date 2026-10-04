@@ -1,11 +1,14 @@
 ---
 # qou-wgnx
 title: 'GAP: theta-normalised canonical solutions for C1 — the genuine untried route to the Stokes multipliers'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T08:45:09Z
-updated_at: 2026-09-07T06:45:22Z
+updated_at: 2026-10-04T15:10:59Z
+parent: qou-frzo
 ---
 
 ---
@@ -1255,3 +1258,9 @@ in its title.
 
 The genuinely open residue is `qou-vkg5` item 2: **exhibit an analytic q-difference
 module satisfying the q-bridge relation, and compute its weights.** Tracked in `qou-frzo`.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

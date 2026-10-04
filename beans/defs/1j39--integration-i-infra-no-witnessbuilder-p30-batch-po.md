@@ -1,11 +1,13 @@
 ---
 # 1j39
 title: 'Integration: I-infra-no-witnessbuilder-P30 batch port'
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-06-21T21:41:08Z
-updated_at: 2026-09-03T20:28:32Z
+updated_at: 2026-10-04T15:20:57Z
 ---
 
 ## DUPLICATE of `cmiy` — DEFERRED (dedup 2026-06-28)
@@ -422,3 +424,10 @@ port — **255 (73 %)** are ordinary staleness that self-heals on the next run. 
 "~133 scripts" figure in this bean's header is superseded.
 
 Still a duplicate; still awaiting owner close (resolve is human-only).
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `beans/defs/*-watcher-queue.json` (watcher-queue state, not a bean) (work-plan reorganisation 2026-10-04). Evidence: [M] mirrors a watcher-queue finding class; those queue items are all status wontfix/resolved/needs-author in beans/defs/*-queue.json
+Content is untouched; only this work item is closed.

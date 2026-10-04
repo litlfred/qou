@@ -4,8 +4,11 @@ title: Remark interpreting 2604.16077v1.pdf at conj:kashaev-volume-conjecture
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:09Z
-updated_at: 2026-08-21T17:04:53Z
+updated_at: 2026-10-04T15:23:41Z
+parent: qou-vva9
 ---
 
 Record the epistemic status honestly: a rigid semi-classical volume limit is proved for the figure-eight complement, for the quantum hyperbolic invariants and subject to a parity condition. What would need checking before it could touch the Lean class: whether the invariants here and the Kashaev invariant the class axiomatises are the same object at the relevant limit, and whether the parity condition holds at the corpus's chosen longitude/logarithm branch. Until both are settled this is a scope statement, never a discharge of the conjecture.

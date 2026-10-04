@@ -4,8 +4,11 @@ title: Cite 0411647v2.pdf at QOU.BraidsAndKnots.DeltaLambdaDReduction (docstring
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:49Z
-updated_at: 2026-08-21T17:05:07Z
+updated_at: 2026-10-04T15:17:04Z
+parent: qou-19m0
 ---
 
 The Sigma-hat_3 = R_4 + R_2 identity is recorded as machine-verified with no source in both the witness description and the Lean docstring; Thm 4.14 at n=4 is the source.

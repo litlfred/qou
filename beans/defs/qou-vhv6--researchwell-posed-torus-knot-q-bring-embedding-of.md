@@ -3,8 +3,12 @@
 title: 'Research(well-posed): torus-knot -> q-Bring embedding offset — track discriminant/branch-point roots of q-deformed color curve vs q, angle from zeta_5/zeta_3 equivariance'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T13:22:15Z
-updated_at: 2026-08-02T13:22:15Z
+updated_at: 2026-10-04T15:24:03Z
+parent: qou-8lxd
 ---
 
 ## The question (owner, 2026-08-02, restated to be rigorous)

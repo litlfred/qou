@@ -3,8 +3,12 @@
 title: Cite [khesin2003] at rem:helicity-physical
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:47Z
-updated_at: 2026-08-08T23:35:47Z
+updated_at: 2026-10-04T15:17:41Z
+parent: qou-1qhv
 ---
 
 A fully-read, load-bearing helicity source with no citation site in content/; rem:helicity-physical is the block whose subject it is.

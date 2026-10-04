@@ -4,9 +4,11 @@ title: 'CITE: Riemann-Hurwitz has no reference key anywhere in references.ts —
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T09:06:49Z
-updated_at: 2026-09-04T09:06:49Z
-parent: qou-8lxd
+updated_at: 2026-10-04T15:17:56Z
+parent: qou-1qhv
 ---
 
 **Class M/U — the corpus uses Riemann–Hurwitz as arithmetic and has no key for it

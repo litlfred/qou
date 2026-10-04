@@ -1,11 +1,14 @@
 ---
 # qou-fq0f
 title: 'Convention D is Wenzl level r=2 exactly: the row cap the closure block argues against'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T10:24:30Z
-updated_at: 2026-09-08T07:45:35Z
+updated_at: 2026-10-04T15:12:12Z
+parent: qou-rtxm
 ---
 
 ## The measurement
@@ -235,3 +238,9 @@ at `n = 3` (the `Q_β` ladder's `H₃`) and **0.0434 %** at `n = 12` (⁴He). Th
 Full ruling: `docs/coordination/2026-09-05-owner-gated-bean-triage.md` §D7.
 
 ## 2026-09-08: canonical ledger for the convention-C excision family is qou-wgta (the P0 excision tracker; owner-ruling milestone qou-cdx1, S2 science blocker qou-cds2); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 2 / §7.3 C3. Nine trackers, previously linked only cds2↔8iru and htsi→t9r1, now all point there.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

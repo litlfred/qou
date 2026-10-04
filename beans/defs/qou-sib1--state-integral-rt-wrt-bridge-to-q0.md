@@ -4,8 +4,11 @@ title: 'FRONT-1: bridge RT/WRT value-map (roots of unity) to the state-integral 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-11T01:00:00Z
-updated_at: 2026-08-11T01:00:00Z
+updated_at: 2026-10-04T15:19:23Z
+parent: qou-n4nr
 ---
 
 Owner picked front 1 ("overlap ok"). The selected keystone analytic route is the STATE INTEGRAL

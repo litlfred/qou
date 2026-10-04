@@ -1,11 +1,14 @@
 ---
 # qou-7yj0
 title: 'Ten classes named BorromeanQuark, all trivially inhabited: conditional-on-conjecture is decorative'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T12:32:32Z
-updated_at: 2026-09-04T14:03:53Z
+updated_at: 2026-10-04T15:14:07Z
+parent: qou-5p7n
 ---
 
 Measured 2026-09-04, compiler-verified.  Full write-up:
@@ -238,3 +241,9 @@ should be assumed to hold the finding already.
 working as intended; C3 is owner-approved and guarded; C2/C4 belong to the
 Aug-24 probe.  What is left is T3 and T10, and both are authorial (they change
 what the paper claims).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

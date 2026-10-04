@@ -4,9 +4,11 @@ title: The hook length formula at general n is what blocks finrank(H_n/rad) = ca
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-27T05:30:10Z
-updated_at: 2026-09-27T07:21:47Z
-parent: qou-weeq
+updated_at: 2026-10-04T15:24:55Z
+parent: qou-rtxm
 ---
 
 Found while extending PR #7470 (branch claude/tl-quotient-ringcon-lift-2026-09-26).

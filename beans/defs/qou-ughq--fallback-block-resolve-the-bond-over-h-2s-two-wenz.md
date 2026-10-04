@@ -3,8 +3,12 @@
 title: 'Fallback: block-resolve the bond over H_2''s two Wenzl blocks (3S1 vs 1S0)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T06:48:04Z
-updated_at: 2026-09-04T06:48:04Z
+updated_at: 2026-10-04T15:19:06Z
+parent: qou-10v9
 ---
 
 

@@ -4,9 +4,11 @@ title: 'Delta_lambda binding sign = chiral T3 / Wigner-SU(4) grading (qou-20sx c
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T19:31:44Z
-updated_at: 2026-08-29T16:01:06Z
-parent: qou-20sx
+updated_at: 2026-10-04T15:18:42Z
+parent: qou-8lxd
 ---
 
 RESOLVED 2026-08-29 (PR #6019, session 01JBMtTn). The proposed identification does NOT hold, and the reason is which SU(2) the sign grades.

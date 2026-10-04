@@ -4,8 +4,11 @@ title: Add the missing 'free as an R-module' hypothesis to cor:pbw and cor:ugb-p
 status: todo
 type: bug
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T18:29:01Z
-updated_at: 2026-08-09T18:29:01Z
+updated_at: 2026-10-04T15:14:35Z
+parent: qou-q4oa
 ---
 
 BOTH copies of the PBW corollary state the result over an arbitrary commutative

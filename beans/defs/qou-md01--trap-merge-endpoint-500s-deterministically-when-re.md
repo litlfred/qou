@@ -4,8 +4,11 @@ title: 'TRAP: merge endpoint 500s DETERMINISTICALLY when rebase-merging a branch
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T10:32:43Z
-updated_at: 2026-09-13T10:33:36Z
+updated_at: 2026-10-04T15:25:08Z
+parent: qou-nu9d
 blocking:
     - qou-4w5b
 ---

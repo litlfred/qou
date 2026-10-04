@@ -4,8 +4,11 @@ title: def:ew-interface-knot is a dangling reference cited by the convolution gr
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T12:16:52Z
-updated_at: 2026-09-04T12:16:52Z
+updated_at: 2026-10-04T15:15:39Z
+parent: qou-hqo3
 ---
 
 MEASURED 2026-09-04. tbl:knot-indexed-convolution-grid-table1-data row 'EW interface knot bowtie_K' cites 'def:ew-interface-knot' as its defining block, unlinked (plain code, not a markdown link - which is why no link-resolution check caught it). No .ts under content/ declares label 'def:ew-interface-knot': grep -rhoE 'label: *"def:[^"]*"' --include=*.ts . | grep -i interface returns exactly ONE label, def:canonical-braid-interface-composition.

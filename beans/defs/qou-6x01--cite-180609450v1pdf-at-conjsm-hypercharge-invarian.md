@@ -4,8 +4,11 @@ title: Cite 1806.09450v1.pdf at conj:sm-hypercharge-invariant
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:32Z
-updated_at: 2026-08-21T17:04:44Z
+updated_at: 2026-10-04T15:17:13Z
+parent: qou-6t49
 ---
 
 conj:sm-hypercharge-invariant's Z_6 compatibility battery cites only baez-huerta2010 (the representation-kernel route); the geometric route the corpus claims agrees with it is unsourced there.

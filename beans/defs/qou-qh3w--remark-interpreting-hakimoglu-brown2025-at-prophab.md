@@ -3,8 +3,12 @@
 title: Remark interpreting [hakimoglu-brown2025] at prop:habiro-tail-archimedean-action
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:49Z
-updated_at: 2026-08-08T23:34:49Z
+updated_at: 2026-10-04T15:23:50Z
+parent: qou-vva9
 ---
 
 Correct HabiroTailAction.lean:124-127: equations (5), (6) and (7) are quoted there as known, not proved, so 'analytically proved in' should read 'cited as standard in', with the classical source named for the three equations.

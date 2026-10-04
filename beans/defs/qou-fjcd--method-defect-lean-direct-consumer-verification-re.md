@@ -3,8 +3,12 @@
 title: 'METHOD DEFECT: lean-direct consumer verification reads STALE oleans'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T15:43:36Z
-updated_at: 2026-08-08T15:43:36Z
+updated_at: 2026-10-04T15:21:35Z
+parent: qou-5vkl
 ---
 
 

@@ -1,11 +1,14 @@
 ---
 # qou-17mq
 title: 'EM-linking O2 (neutrality obstruction): on a COMPACT quotient int(Laplacian u)=0 forces total charge zero — ''two like charges alone'' is NOT admissible as stated; the Green''s fn acquires a -1/vol(M) offset. Re-pose the two-like-charge invariant relative to a neutralizing background (only charge-neutral combinations well-posed; physically the nucleus IS neutral). Blocks/reshapes the STATEMENT of qou-o6ml, not just its solution'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-01T20:31:20Z
-updated_at: 2026-09-07T16:20:54Z
+updated_at: 2026-10-04T15:12:28Z
+parent: qou-10v9
 ---
 
 ## WORKED 2026-08-25 — O2 applied; it excludes the contest's winner
@@ -568,3 +571,9 @@ State of the front after the merge:
 
 No reason to install SnapPy for this bean. (Still worth it for qou-26f2, whose
 observable C has never been evaluated.)
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

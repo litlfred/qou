@@ -4,8 +4,11 @@ title: 'S2 follow-up: scope C-era witnesses that used the Gram inverse'
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T11:39:53Z
-updated_at: 2026-08-16T11:39:53Z
+updated_at: 2026-10-04T15:24:16Z
+parent: qou-10v9
 ---
 
 Follow-up to `qou-cds2` (S2). Distinct from — check these before starting —

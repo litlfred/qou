@@ -4,8 +4,10 @@ title: 'G1-opt2 (flavour Cartan): a third knot grading orthogonal to (n,T3) = th
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T20:19:12Z
-updated_at: 2026-08-02T20:19:14Z
-parent: qou-20sx
+updated_at: 2026-10-04T15:19:25Z
+parent: qou-8lxd
 ---
 

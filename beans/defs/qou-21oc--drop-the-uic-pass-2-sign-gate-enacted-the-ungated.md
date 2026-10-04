@@ -4,8 +4,11 @@ title: 'Drop the UIC Pass-2 sign gate: enacted; the ungated total is ALSO wrong-
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-12T22:56:10Z
-updated_at: 2026-09-13T01:09:04Z
+updated_at: 2026-10-04T15:18:56Z
+parent: qou-trd0
 ---
 
 

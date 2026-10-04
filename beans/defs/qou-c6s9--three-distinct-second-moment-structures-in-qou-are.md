@@ -1,11 +1,14 @@
 ---
 # qou-c6s9
 title: Three distinct second-moment structures in QOU are NOT one object (Plancherel/Kerov, multiplet mixing, q-CLT)
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T05:11:10Z
-updated_at: 2026-09-13T05:12:50Z
+updated_at: 2026-10-04T15:14:14Z
+parent: qou-m6dn
 ---
 
 ## The finding (measured 2026-09-13)
@@ -49,3 +52,9 @@ substitution to make.
 ## Default if nothing is done
 Nothing changes; the three stay undistinguished in prose and the conflation stays
 available.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

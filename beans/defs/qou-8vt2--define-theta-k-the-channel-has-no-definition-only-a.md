@@ -4,8 +4,11 @@ title: 'DEFINE ϑ_K: the channel has no definition for it, only a docstring phra
 status: todo
 type: task
 priority: critical
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T00:00:00Z
-updated_at: 2026-08-08T00:00:00Z
+updated_at: 2026-10-04T15:14:33Z
+parent: qou-avtq
 ---
 
 Successor to `qou-5nzf` (settled, PR #4513). That bean asked whether the T5

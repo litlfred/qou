@@ -3,8 +3,12 @@
 title: Remark interpreting [kashaev1997] at content/bib-qa-verifications.json
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:37Z
-updated_at: 2026-08-08T23:34:37Z
+updated_at: 2026-10-04T15:23:51Z
+parent: qou-vva9
 ---
 
 Correct the join to kashaev1997 in the ledger so the volume-conjecture key finally has its source document attached, and so faddeev_kashaev1994 stops appearing verified by four documents none of which is it.

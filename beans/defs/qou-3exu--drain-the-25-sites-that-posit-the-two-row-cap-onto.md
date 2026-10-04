@@ -4,8 +4,11 @@ title: Drain the 25 sites that posit the two-row cap onto the proved lemma
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T13:41:44Z
-updated_at: 2026-08-16T13:42:16Z
+updated_at: 2026-10-04T15:18:54Z
+parent: qou-m6dn
 ---
 
 25 sites assert/posit the two-row cap rather than deriving it. Full inventory in

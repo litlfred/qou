@@ -1,11 +1,15 @@
 ---
 # qou-ftuv
 title: LP-dual witnesses carry raw float64 by construction — draining needs the shared contract changed
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-08-10T09:13:32Z
-updated_at: 2026-09-08T04:00:00Z
+updated_at: 2026-10-04T15:13:14Z
+parent: qou-9nnz
 ---
 
 
@@ -2321,3 +2325,9 @@ self-contradiction. It is decidable without judgement — the discriminator is
 the bean asserting *its own* openness, not merely mentioning something open.
 
 Re-close it when the work its body names is actually done.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -4,8 +4,11 @@ title: Apply 1104.0755v2.pdf at content/quantum-observable-universe/lean/QOU/Arc
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:04Z
-updated_at: 2026-08-21T17:05:05Z
+updated_at: 2026-10-04T15:16:22Z
+parent: qou-mub3
 ---
 
 Hypotheses verified to hold, not merely 'related': the paper's A_q is the corpus's A_w term-for-term, and its standing assumption 0 < |q| < 1 is satisfied. The identity supplies the exact theta-factorised form of A_q at infinity that the audit's recentring argument constructs approximately. SCOPE, stated honestly: it does not by itself yield zeta_n = w^{1-2n}(1 + O(w^n)) — the argument-principle/Rouche step against the theta zero lattice still has to be run — but it replaces the hand-built theta limit with a published exact identity, which is the part of the debt that is currently unbacked.

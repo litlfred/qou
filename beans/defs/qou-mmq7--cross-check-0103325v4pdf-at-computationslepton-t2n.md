@@ -4,8 +4,11 @@ title: Cross-check 0103325v4.pdf at computations/lepton_t2n_torus_tower.py
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:44Z
-updated_at: 2026-08-21T17:04:59Z
+updated_at: 2026-10-04T15:18:14Z
+parent: qou-8hur
 ---
 
 The identity [n]_q - [n-1]_q = Delta_q{(2,2n-1)} is q-generic and parameter-free, so it can be verified symbolically against the corpus's own q-integers and Alexander-polynomial machinery. This is an algebraic cross-check, not an adoption of any numerical value; the root-of-unity q of the source must NOT be substituted for the substrate q_0.

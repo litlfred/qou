@@ -1,11 +1,14 @@
 ---
 # qou-pgdw
-title: "precision-gates.sh runs the raw-float64 audit twice and the advisory run overwrites the gating run's committed witness"
+title: precision-gates.sh runs the raw-float64 audit twice and the advisory run overwrites the gating run's committed witness
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T21:10:00Z
-updated_at: 2026-08-15T21:10:00Z
+updated_at: 2026-10-04T15:15:00Z
+parent: qou-9nnz
 ---
 
 ## What

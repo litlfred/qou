@@ -4,8 +4,11 @@ title: Remark interpreting 04procbryden.pdf at docs/coordination/s5-so3-keystone
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T00:10:44Z
-updated_at: 2026-08-21T17:05:08Z
+updated_at: 2026-10-04T15:23:27Z
+parent: qou-aqfj
 ---
 
 Record in the keystone ledger that the Ohtsuki series of Sigma(2,3,5) is Gevrey-1 with slope pi^2 sigma = ±30 = P = h(E8), so the h-expansion has zero radius of convergence and the bar-involution route into the disk is forced rather than merely convenient. This interprets an external result for the folio; it does not discharge any Lean hypothesis, so it is a remark and not an aid-proof.

@@ -1,11 +1,15 @@
 ---
 # qou-bmz8
 title: The ell-1 binding ceiling bounds exactly the CENTRE of H_n, not the family tr_M(.w) — qou-fvzm's 'not a Hecke-trace object at all' is broader than its evidence
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-09-02T21:56:13Z
-updated_at: 2026-09-06T13:30:24Z
+updated_at: 2026-10-04T15:14:10Z
+parent: qou-v2om
 ---
 
 Scope correction on a closed conclusion. Probe: computations/qbeta/qbeta_l1_ceiling_is_one_point_of_a_family_probe.py (6/6). Does NOT close the binding gap.
@@ -421,3 +425,9 @@ derivation against, never a derivation.
 This closes **only** the one item claimed by the 2026-09-06 takeover. The
 bean's wider agenda — the `tr_M(x·w)` family freedom that `qou-fvzm`'s "not a
 Hecke-trace object at all" overstated — is untouched and remains open.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

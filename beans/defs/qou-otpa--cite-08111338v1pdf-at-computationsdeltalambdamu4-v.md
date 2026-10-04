@@ -4,8 +4,11 @@ title: Cite 0811.1338v1.pdf at computations/deltalambda/mu4_vs_nuclear_4n_force_
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:58Z
-updated_at: 2026-08-21T17:05:01Z
+updated_at: 2026-10-04T15:17:06Z
+parent: qou-19m0
 ---
 
 Once registered, the bare-string citations in the probe and the witness's sources list should become the bib key, so validate-bib can see them and the Lean -- Ref: convention (§1) is satisfiable for the Tjon/4N-force claims.

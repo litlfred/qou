@@ -6,8 +6,10 @@ type: task
 priority: normal
 tags:
     - ungated
+    - reorg-2026-10-04
 created_at: 2026-07-11T17:06:19Z
-updated_at: 2026-07-11T22:44:48Z
+updated_at: 2026-10-04T15:18:45Z
+parent: qou-v2om
 ---
 
 

@@ -3,8 +3,12 @@
 title: Cross-check [codata2022] at computations/substrate/experimental_constants.py
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:20Z
-updated_at: 2026-08-08T23:34:20Z
+updated_at: 2026-10-04T15:18:24Z
+parent: qou-mub3
 ---
 
 experimental_constants.py:55,58,71 states 'CODATA 2022' in its header and comments while holding the 2018 m_p/m_n/m_e and the 2018 n-p difference; correct the values or correct the label.

@@ -4,8 +4,11 @@ title: GitHub strips bare <angle-bracket> placeholders from comment bodies, and 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T23:05:29Z
-updated_at: 2026-08-21T23:11:20Z
+updated_at: 2026-10-04T15:20:38Z
+parent: qou-nu9d
 ---
 
 ## Observed

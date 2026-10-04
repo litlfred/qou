@@ -4,8 +4,11 @@ title: 'GAP: Rosso-Jones product-collapse for spectral Q-value decomposition (Le
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T19:36:58Z
-updated_at: 2026-08-29T07:12:10Z
+updated_at: 2026-10-04T15:20:23Z
+parent: b9cj
 ---
 
 The corollary cor:spectral-decomposition-qvalue (content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean) claims Q = Q_bare × Π_{τ∈E_g} F(τ,N), with (iv) the product collapsing to a single active-shell term and (v) the decomposition exact by Rosso-Jones completeness of torus-knot invariants (prop:cohomological-embedding).

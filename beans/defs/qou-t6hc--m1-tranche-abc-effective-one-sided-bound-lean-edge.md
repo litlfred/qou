@@ -1,11 +1,14 @@
 ---
 # qou-t6hc
 title: 'M1 tranche A+B+C: effective one-sided bound, Lean edge-calculus, and the kappa_n correction exponent'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-31T16:30:47Z
+updated_at: 2026-10-04T15:13:15Z
+parent: qou-10v9
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -1380,3 +1383,9 @@ place with a FINDING 3 carrying the data.
 in "`q < 0.90` suffices" improves to **~36×** at n = 800. The reformulation
 still gives a target with a margin; it does not give independence from the
 correlation question.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-31 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

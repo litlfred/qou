@@ -1,11 +1,14 @@
 ---
 # qou-sf1t
 title: 'QPlancherel: constructed partition function + total mass one (retroactive claim for merged PR #5372)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T16:05:17Z
-updated_at: 2026-08-29T01:40:51Z
+updated_at: 2026-10-04T15:13:41Z
+parent: qou-rtxm
 ---
 
 RETROACTIVE CLAIM. Opened 2026-08-21 *after* the work merged, because it was
@@ -101,3 +104,9 @@ RESOLVED (n=3): item 4 (weight family = y_lambda), item 2 (specialisation forced
 weight-level half of item 1. Lean QOU/QBeta/MolienJonesMarkovN3.lean (sorry-free,
 ring, self-contained: N_nu=cleared Molien AND y=M*Z). Probe 6/6 exact Q(q,z).
 Audit 2026-08-29-molien-jones-markov-n3-identification.md. Nothing wired.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-29 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

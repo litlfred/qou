@@ -1,11 +1,14 @@
 ---
 # qou-2ss0
 title: 'b3Agg''s sign IS the origin-secant gap: an exact iff replacing two one-way convexity implications, and the fit trap that follows'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T07:58:29Z
-updated_at: 2026-09-13T11:26:52Z
+updated_at: 2026-10-04T15:11:57Z
+parent: qou-v2om
 ---
 
 ## Result (2026-09-13) — the convexity route analysed; convexity is the WRONG invariant
@@ -356,3 +359,9 @@ picking an `m` because it yields `b₃ > 0` is selection against the target
 (§NO FITTING), and `qou-kj4v` records that running backwards for `σ²`. Under
 `qou-ales` the braid word is selected by γγ + the confinement SDP, and **that
 derivation is what stays open.** Scope (a); no family derived through the door.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

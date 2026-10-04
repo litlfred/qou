@@ -3,8 +3,12 @@
 title: 'qbeta-habiro-element-probe: committed witness is convention-C, live data is D'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T09:01:49Z
-updated_at: 2026-08-24T09:01:49Z
+updated_at: 2026-10-04T15:23:00Z
+parent: qou-avtq
 ---
 
 

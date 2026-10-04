@@ -3,8 +3,12 @@
 title: block_swap_binding's June value is explained — and June's y_lambda table violated the two-row cap by 7%
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-27T06:21:30Z
-updated_at: 2026-08-27T06:21:30Z
+updated_at: 2026-10-04T15:16:43Z
+parent: qou-v2om
 ---
 
 ## Answered: the 3.3x is the y_lambda table, and June's table VIOLATED the two-row cap

@@ -4,9 +4,11 @@ title: 'STALE MEASUREMENT: BraidGroup.lean:8 says no file matches *braid* in Mat
 status: todo
 type: task
 priority: low
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T09:08:24Z
-updated_at: 2026-09-04T09:08:24Z
-parent: qou-8lxd
+updated_at: 2026-10-04T15:26:01Z
+parent: qou-o9ge
 ---
 
 **STALE MEASUREMENT — correct verdict, wrong evidence.** Low severity, cheap fix.

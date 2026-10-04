@@ -4,8 +4,11 @@ title: Cite 1604.02688v1.pdf at computations/probes/figure_eight_3d_index.py
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:22Z
-updated_at: 2026-08-21T17:05:11Z
+updated_at: 2026-10-04T15:17:12Z
+parent: qou-19m0
 ---
 
 The Prop A.3 pairing and Cor 10.21 criterion are asserted in the probe and its witness with no reference key; once the entry exists the probe docstring and the audit lineage should cite it.

@@ -4,8 +4,11 @@ title: Remark interpreting AFST_2007_6_16_3_665_0.pdf at prop:binding-genfun-qdi
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:56Z
-updated_at: 2026-08-21T17:04:49Z
+updated_at: 2026-10-04T15:23:56Z
+parent: qou-aqfj
 ---
 
 Recording that the corpus's q-difference modules canonically determine bundles on the Tate curve of the substrate parameter, with an explicit note on the |q| < 1 convention and on the symbol collision with the reserved calligraphic E_q, would let the connection be used without introducing a notation defect.

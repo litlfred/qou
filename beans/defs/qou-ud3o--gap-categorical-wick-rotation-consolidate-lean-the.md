@@ -1,12 +1,14 @@
 ---
 # qou-ud3o
 title: 'GAP: categorical Wick rotation — consolidate + Lean the i↦-i braiding-flip / Laplace-Fourier collapse'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T18:14:05Z
-updated_at: 2026-08-02T18:50:04Z
-parent: qou-ywj9
+updated_at: 2026-10-04T15:12:49Z
+parent: qou-8lxd
 ---
 
 ## Question (owner, 2026-08-02)
@@ -113,3 +115,9 @@ fell into).
 **Remaining (medium):** consolidate the scattered prose into one
 `prop:q-exp-entire` content-block triple citing this lemma; optionally a
 `Continuous (qExp q)` corollary. The analytic gate is closed.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-02 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

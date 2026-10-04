@@ -1,11 +1,13 @@
 ---
 # qou-brg3
 title: size the isospin-T interface replacement from the deuteron's 27.34 percent one-bond miss
-status: in-progress
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T00:11:01Z
-updated_at: 2026-08-16T13:57:06Z
+updated_at: 2026-10-04T15:13:57Z
 ---
 
 
@@ -75,3 +77,9 @@ Probe: `computations/probes/two_channel_total_binding_floor_probe.py`.
 Self-correction: an earlier revision of the probe asserted the escape as s < 1
 (≈0.60). Wrong direction; caught before commit, and the corrected direction is
 recorded in the Lean docstring because the wrong one is the intuitive one.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] main 1d30ba8736 2026-08-18: 'beans(qou-brg3): closed -- route 4 shut on a framing invariant; opens qou-bid3'; bean not touched after

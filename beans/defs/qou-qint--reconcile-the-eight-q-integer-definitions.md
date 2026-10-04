@@ -1,11 +1,14 @@
 ---
 # qou-qint
-title: 'Reconcile the 8 q-integer definitions — `qInt` names two conventions'
+title: Reconcile the 8 q-integer definitions — `qInt` names two conventions
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T13:40:00Z
-updated_at: 2026-08-08T13:40:00Z
+updated_at: 2026-10-04T15:15:04Z
+parent: qou-cdx1
 ---
 
 Filed from the derivation in

@@ -4,8 +4,11 @@ title: Asselmeyer-Maluga rejects the knot-identification programme our CAL-2 pro
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T21:44:43Z
-updated_at: 2026-08-25T21:45:26Z
+updated_at: 2026-10-04T15:16:23Z
+parent: qou-v2om
 ---
 
 `library/symmetry-11-01298` (Asselmeyer-Maluga, *Braids, 3-manifolds, elementary

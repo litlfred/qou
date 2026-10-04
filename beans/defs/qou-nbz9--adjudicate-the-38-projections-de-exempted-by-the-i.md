@@ -7,9 +7,10 @@ priority: high
 tags:
     - vacuity
     - issue-2472
+    - reorg-2026-10-04
 created_at: 2026-08-10T01:50:40Z
-updated_at: 2026-08-10T01:51:17Z
-parent: qou-5p7n
+updated_at: 2026-10-04T15:14:39Z
+parent: qou-6qbv
 ---
 
 Recommendation 4 of the honest-placeholder criterion, applied: `detectSelfAssuming`'s `isDefProof` branch no longer overrides a `CONCLUSION_FIELD` name-gate match.

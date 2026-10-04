@@ -3,8 +3,12 @@
 title: Inspect the residual shadow stubs the mechanical drain cannot clear
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T00:12:11Z
-updated_at: 2026-08-09T00:12:11Z
+updated_at: 2026-10-04T15:20:55Z
+parent: qou-trd0
 ---
 
 

@@ -3,8 +3,12 @@
 title: Is the convexity obstruction an order-zero artifact? Test the bond ordering in the phi_q tower
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T06:48:02Z
-updated_at: 2026-09-12T12:33:09Z
+updated_at: 2026-10-04T15:20:59Z
+parent: qou-v2om
 ---
 
 

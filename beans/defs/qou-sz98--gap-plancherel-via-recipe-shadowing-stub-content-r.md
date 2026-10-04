@@ -4,8 +4,11 @@ title: 'GAP: plancherel_via_recipe shadowing stub + content-ref points at the va
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T21:12:24Z
-updated_at: 2026-08-21T21:12:54Z
+updated_at: 2026-10-04T15:20:18Z
+parent: qou-6qbv
 ---
 
 Found draining the small-category vacuity tranche (qou-h3ly), PR #5408. NOT fixed there — deferred because it needs a content-block change plus validation the sandbox cannot run.

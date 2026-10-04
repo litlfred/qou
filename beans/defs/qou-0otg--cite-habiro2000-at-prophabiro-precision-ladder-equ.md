@@ -3,8 +3,12 @@
 title: Cite [habiro2000] at prop:habiro-precision-ladder-equivalence
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:29Z
-updated_at: 2026-08-08T23:34:29Z
+updated_at: 2026-10-04T15:17:36Z
+parent: qou-1qhv
 ---
 
 Four Lean sites cite locators (Theorem 1.1, Corollary 1.2) that do not exist in this document, and one attributes a different Habiro title to the key. Either re-point them at the real results here (Props. 5.1-8.2) or register the intended paper - 'On the quantum sl_2 invariants of knots and integral homology spheres' - under its own key and cite that.

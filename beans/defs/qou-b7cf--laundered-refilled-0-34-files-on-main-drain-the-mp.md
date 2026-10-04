@@ -1,11 +1,14 @@
 ---
 # qou-b7cf
 title: LAUNDERED refilled 0 -> 34 files on main -- drain the mpf(str(f64)) sites
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-03T12:46:17Z
-updated_at: 2026-09-06T21:59:06Z
+updated_at: 2026-10-04T15:13:11Z
+parent: qou-cdx1
 ---
 
 ## State (2026-09-03, PR #6489, branch claude/laundered-sweep-2026-09-03)
@@ -293,3 +296,9 @@ the table row above as current** — it is superseded by this block.
 filtered view printed in the same shape as the full one is indistinguishable
 from it. The audit is not at fault — `--tier` does exactly what it says. I
 quoted a number from a report I had narrowed myself.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

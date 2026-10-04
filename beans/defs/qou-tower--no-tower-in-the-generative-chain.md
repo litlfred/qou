@@ -1,11 +1,14 @@
 ---
 # qou-tower
 title: 'There is no tower: the production chain reduces every nucleus to the same 6 dims'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T00:00:00Z
-updated_at: 2026-09-04T21:02:12Z
+updated_at: 2026-10-04T15:11:11Z
+parent: qou-v2om
 ---
 
 Asked to walk the generative production chain step by step, look past the
@@ -726,3 +729,9 @@ is not evidence about the path that does.**
   honour the ruling" — it is **do the two routes agree**, and any probe that
   reasons from `build_atom_nf_mp` to a claim about *the framework's* binding is
   reasoning about the wrong object.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -3,12 +3,14 @@
 title: 'GAP: BringZeroModeBlochClass quantifies over the opaque BlochWigner_unit_circle; the Bloch class [Z] on Bring''s surface is not identified'
 status: todo
 type: task
+priority: normal
 tags:
     - lean
     - gap
+    - reorg-2026-10-04
 created_at: 2026-09-03T09:08:30Z
-updated_at: 2026-09-03T09:08:30Z
-parent: qou-ggdk
+updated_at: 2026-10-04T15:19:47Z
+parent: qou-8lxd
 ---
 
 Advisory from the SM-surface Lean sweep (bean qou-08zf, 2026-09-03); not changed. lean/QOU/Archimedean/EmCouplingBringZeroMode.lean imports QOU.Archimedean.BlochWignerUnitCircle, where BlochWigner_unit_circle is declared "noncomputable opaque (_θ : ℝ) : ℝ" — an unconstrained function. The conjecture class BringZeroModeBlochClass has a single field, ∃ θ, BlochWigner_unit_circle θ = 2/(3π), which is therefore unfalsifiable as stated; against the Clausen definition in BlochWignerMathlibFiller it would be true by the intermediate value theorem (2/(3π) ≈ 0.212 lies in the range of Cl₂), which is not the open claim either. The open claim is the identification of the specific Bloch-group class [Z] from the Yekutieli triple on {T(2,9), T(3,5)} whose τ_arch-image is 2/(3π).

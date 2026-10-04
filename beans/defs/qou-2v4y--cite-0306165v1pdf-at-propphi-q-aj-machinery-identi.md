@@ -4,8 +4,11 @@ title: Cite 0306165v1.pdf at prop:phi-q-aj-machinery-identification
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:27Z
-updated_at: 2026-08-21T17:04:41Z
+updated_at: 2026-10-04T15:17:03Z
+parent: qou-ysb7
 ---
 
 prop:phi-q-aj-machinery-identification's saddle-point framing is uncited; garoufalidis2004 covers the q-difference operator, not the Chern-Simons asymptotics that make 'saddle regime' meaningful.

@@ -1,11 +1,14 @@
 ---
 # qou-y7ea
 title: Drain the 13 q-codifferential axioms to a LinearMap-bundled structure
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T12:09:52Z
-updated_at: 2026-09-04T12:10:27Z
+updated_at: 2026-10-04T15:12:24Z
+parent: qou-6qbv
 ---
 
 ## What was there
@@ -72,3 +75,9 @@ on all 9 declarations. Zero consumers: the 11 other files matching
 `d_classical` / `DiffForm` were checked one by one and every hit is an
 unrelated field of `CategoricalQExtDeriv` or the word "classical" in another
 context — nothing imports `QOU.QuantumGeometry`.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

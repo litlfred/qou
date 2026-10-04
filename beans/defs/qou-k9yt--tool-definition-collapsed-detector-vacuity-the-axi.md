@@ -4,8 +4,11 @@ title: 'TOOL: definition-collapsed detector — vacuity the axiom audit cannot s
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T11:43:54Z
-updated_at: 2026-08-27T11:56:36Z
+updated_at: 2026-10-04T15:25:07Z
+parent: qou-5vkl
 ---
 
 

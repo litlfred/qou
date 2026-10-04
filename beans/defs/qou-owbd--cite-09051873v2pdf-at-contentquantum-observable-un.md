@@ -4,8 +4,11 @@ title: Cite 0905.1873v2.pdf at content/quantum-observable-universe/lean/QOU/Mass
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:59Z
-updated_at: 2026-08-21T17:05:01Z
+updated_at: 2026-10-04T15:17:07Z
+parent: qou-19m0
 ---
 
 Replace the bare 'arXiv:0905.1873' in the TjonSimplexForm docstring with the registered key so the Lean -- Ref: convention holds and validate-bib can see the dependency.

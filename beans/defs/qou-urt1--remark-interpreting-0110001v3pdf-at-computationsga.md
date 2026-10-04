@@ -4,8 +4,11 @@ title: Remark interpreting 0110001v3.pdf at computations/gap2_borromean_triple_c
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:03Z
-updated_at: 2026-08-21T17:05:06Z
+updated_at: 2026-10-04T15:23:24Z
+parent: qou-aqfj
 ---
 
 The GAP-2 audit's M3(K) = mu-bar-irreducible triple count is currently defined only combinatorially on the contact graph. A remark recording the geometric triple-point form of the same count would make the definition checkable on an explicit link realisation. What would need checking first: the corpus's contact graphs are not currently realised as links with Seifert surfaces, so the translation is not automatic.

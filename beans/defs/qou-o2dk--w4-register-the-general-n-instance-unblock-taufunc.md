@@ -1,11 +1,13 @@
 ---
 # qou-o2dk
 title: 'W4: register the general-n instance; unblock TauFunctorReduction observationFrame_* consumers'
-status: todo
+status: completed
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-25T13:00:16Z
-updated_at: 2026-07-25T13:00:16Z
-parent: qou-utb3
+updated_at: 2026-10-04T15:25:30Z
 parent: qou-utb3
 ---
 
@@ -21,3 +23,9 @@ generic-n conditional registration from W2-W3. Acceptance criteria contain no
 positivity (`docs/audits/2026-07-25-markovtrace-w1-class-fields-audit.md`).
 All three class fields now have consumers (`observationFrame_smul` added), so
 a registered instance immediately feeds all three F3-linearity theorems.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] SchurWeyl/MarkovTraceInstance (ocneanuMarkovTrace) + HeckeColimitMarkovTrace instance; consumer wiring to TauFunctorReduction may remain (verify)

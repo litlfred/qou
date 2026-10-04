@@ -4,8 +4,11 @@ title: main regressed 2 witnesses on the raw-float64 ratchet (phase-transition-q
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T09:54:37Z
-updated_at: 2026-08-30T11:08:58Z
+updated_at: 2026-10-04T15:21:25Z
+parent: qou-9nnz
 ---
 
 ## Measured 2026-08-30 on `origin/main`

@@ -4,8 +4,11 @@ title: Cross-check 1172-4.pdf at prop:dilog-pentagon-is-associator
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:46Z
-updated_at: 2026-08-21T17:04:47Z
+updated_at: 2026-10-04T15:18:18Z
+parent: qou-mukd
 ---
 
 Both documents seeded as faddeev_kashaev1994 are by a different author, so no local copy of the work that key names exists and its 9 citation sites are unverified. Also reconcile the DOI carried at QOU/LiftingDescent/tm_dilogarithm_evaluation.lean:71 and :84 against the registered one.

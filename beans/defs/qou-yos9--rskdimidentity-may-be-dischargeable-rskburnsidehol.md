@@ -1,11 +1,13 @@
 ---
 # qou-yos9
 title: 'RSKDimIdentity may be dischargeable: rskBurnsideHolds proves it for all n, unverified by print axioms'
-status: todo
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T18:46:54Z
-updated_at: 2026-09-26T11:03:27Z
+updated_at: 2026-10-04T15:24:14Z
 ---
 
 
@@ -135,3 +137,9 @@ does.
 This closes the arc that opened with `opaque wedderburnEmbed`: axiom (`qou-qb7p`)
 → construction with one named hypothesis (`qou-usol`) → opaque deleted
 (`qou-kp2z`) → hypothesis discharged (here).
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] rskBurnsideHolds universally quantified (SchenstedRSKBurnside.lean:56); remaining = wire RSKDimIdentity to it (one-line) — do as SW-WIRE

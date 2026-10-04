@@ -4,8 +4,11 @@ title: 'GAP: alpha_high_precision is broken on main — bisection bracket no lon
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T14:53:43Z
-updated_at: 2026-08-30T08:00:39Z
+updated_at: 2026-10-04T15:19:43Z
+parent: qou-3l2l
 ---
 
 ## What happens

@@ -3,8 +3,12 @@
 title: 'resolve the delta split: separate the two roles (mass observable vs crossing tilt); subleading coefficient is 1.3147, not 1'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T00:45:37Z
-updated_at: 2026-08-09T00:45:37Z
+updated_at: 2026-10-04T15:24:07Z
+parent: qou-wp3h
 ---
 
 

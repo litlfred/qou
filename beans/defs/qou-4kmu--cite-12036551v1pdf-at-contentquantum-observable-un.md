@@ -4,8 +4,11 @@ title: Cite 1203.6551v1.pdf at content/quantum-observable-universe/mass-theory/h
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:06Z
-updated_at: 2026-08-21T17:04:42Z
+updated_at: 2026-10-04T15:17:08Z
+parent: qou-19m0
 ---
 
 hyperbolic-knot-positive-volume-via-reeb.md asserts '4_1 carries the minimal hyperbolic volume 2v_3 ~ 2.0299' with no source; this paper's introduction is the citable restatement of Cao-Meyerhoff.

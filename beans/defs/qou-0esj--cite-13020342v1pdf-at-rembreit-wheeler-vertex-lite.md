@@ -4,8 +4,11 @@ title: Cite 1302.0342v1.pdf at rem:breit-wheeler-vertex-literature
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:30Z
-updated_at: 2026-08-21T17:04:39Z
+updated_at: 2026-10-04T15:17:09Z
+parent: qou-19m0
 ---
 
 The 'Photonic hopfions' paragraph asserts a Hopf-link-level analogy; the torus-knot generalisation is the version that matches the corpus's own knot inventory.

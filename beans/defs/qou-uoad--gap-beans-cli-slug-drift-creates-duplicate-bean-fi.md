@@ -3,8 +3,12 @@
 title: 'GAP: beans CLI slug drift creates duplicate bean files on --body-append'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T13:22:41Z
-updated_at: 2026-08-23T13:22:41Z
+updated_at: 2026-10-04T15:19:46Z
+parent: qou-5vkl
 ---
 
 

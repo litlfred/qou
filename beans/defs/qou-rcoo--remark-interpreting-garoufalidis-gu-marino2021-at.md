@@ -3,8 +3,12 @@
 title: Remark interpreting [garoufalidis-gu-marino2021] at qou:QOU.QBeta.StokesQZeroDTCount
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:32Z
-updated_at: 2026-08-08T23:35:32Z
+updated_at: 2026-10-04T15:23:48Z
+parent: qou-aqfj
 ---
 
 Two sub-locators do not resolve in 2007.10190: 'eq 59a' (no 59a exists) and 'Thm 9 det W_m = 2' (the identity is present; the paper's only numbered theorem is Thm 3). Re-locate them, or attribute them to the peacock paper if that is where they live.

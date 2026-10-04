@@ -4,8 +4,11 @@ title: 'compute_atom_chi_rust 3He is nondeterministic at the 50th digit: 4 disti
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T08:33:29Z
-updated_at: 2026-09-05T19:08:25Z
+updated_at: 2026-10-04T15:18:01Z
+parent: qou-v2om
 ---
 
 Found 2026-09-05 while doing attribution for `qou-t0wm` on PR #6772 — running

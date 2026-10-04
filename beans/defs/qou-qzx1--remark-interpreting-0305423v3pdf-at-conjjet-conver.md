@@ -4,8 +4,11 @@ title: Remark interpreting 0305423v3.pdf at conj:jet-convergence-classical-limit
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:42Z
-updated_at: 2026-08-21T17:05:02Z
+updated_at: 2026-10-04T15:23:26Z
+parent: qou-aqfj
 ---
 
 Record that the best PROVED distributional rate for the q = 1 character-ratio CLT is n^{-1/4} (Fulman Thm 1.2), with n^{-1/2} only conjectured — so the corpus's O(1/sqrt(k)) prose is stronger than the q = 1 literature supports and needs restating or sourcing.

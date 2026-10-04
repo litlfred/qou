@@ -4,8 +4,12 @@ title: 'Universal object: the corpus already conjectures a terminal object in C_
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-09-06T10:56:11Z
-updated_at: 2026-09-06T11:27:53Z
+updated_at: 2026-10-04T15:25:17Z
+parent: qou-gwte
 ---
 
 content/quantum-observable-universe/brings-surface/universality-general.md:

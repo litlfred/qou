@@ -4,8 +4,11 @@ title: 'GAP: two unreconciled kT assignments -- hbar_q in information-theory vs 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-19T17:31:15Z
-updated_at: 2026-08-19T17:32:16Z
+updated_at: 2026-10-04T15:20:31Z
+parent: qou-v2om
 ---
 
 Found doing the literature check on the S-vs-H question (qou-y0mc, already closed).

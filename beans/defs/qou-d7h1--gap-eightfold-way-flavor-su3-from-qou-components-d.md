@@ -1,12 +1,14 @@
 ---
 # qou-d7h1
 title: 'GAP: Eightfold Way flavor SU(3) from QOU components — distinguish from colour SU(3), then derive octet/decuplet organization'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T17:29:24Z
-updated_at: 2026-09-05T09:04:52Z
-parent: qou-a0gr
+updated_at: 2026-10-04T15:12:52Z
+parent: qou-8lxd
 ---
 
 Near term: inventory the existing I3/Q/Y, strange-quark, and three-strand colour ingredients; prove the corpus already has the right state labels for u,d,s-level organization.
@@ -444,3 +446,9 @@ I first reported **0** bare occurrences. That grep passed both `-E` and `-P`,
 which GNU grep rejects as conflicting matchers — non-zero exit, no output, and
 `wc -l` dutifully printed 0 with stderr suppressed. The true count is 45. A
 suppressed-stderr pipeline reports a failed search as a clean result.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

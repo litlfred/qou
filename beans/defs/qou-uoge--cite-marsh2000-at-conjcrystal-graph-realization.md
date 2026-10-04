@@ -3,8 +3,12 @@
 title: Cite [marsh2000] at conj:crystal-graph-realization
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:25Z
-updated_at: 2026-08-08T23:34:25Z
+updated_at: 2026-10-04T15:17:43Z
+parent: qou-1qhv
 ---
 
 Either drop marsh2000 (and khovanovlauda2009) from the cites array as unused, or add the sentence they are meant to support - the rectangle-diagram parametrisation of Lusztig-cone spanning vectors would naturally back the 'crystal highest-weight vertices are in bijection with GS irreducible forms' clause.

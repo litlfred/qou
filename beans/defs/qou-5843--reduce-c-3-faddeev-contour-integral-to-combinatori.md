@@ -3,8 +3,12 @@
 title: Reduce c_3 Faddeev contour integral to combinatorics via tetraplectic form
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-07T19:14:43Z
-updated_at: 2026-07-07T19:14:43Z
+updated_at: 2026-10-04T15:23:18Z
+parent: qou-avtq
 ---
 
 That is a profound insight. If we can apply the same tetraplectic form machinery to the Faddeev modular double contour integral for c₃, we can completely bypass the need for brute-force numerical quadrature or analytic limits.

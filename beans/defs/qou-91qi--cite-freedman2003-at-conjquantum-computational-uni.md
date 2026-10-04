@@ -3,8 +3,12 @@
 title: Cite [freedman2003] at conj:quantum-computational-universality
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:25Z
-updated_at: 2026-08-08T23:34:25Z
+updated_at: 2026-10-04T15:17:31Z
+parent: qou-1qhv
 ---
 
 The Lean sub-claim states 'at level k >= 3' where the cited source states 'k >= 3, k != 4'. Restore the exception and add the primary reference; a survey citation for a density theorem should name the paper that proves it.

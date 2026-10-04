@@ -4,8 +4,11 @@ title: 'q0 migration DROPS witness provenance: 17 of 122 lost scriptFile/commitS
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-28T14:08:26Z
-updated_at: 2026-08-28T14:28:09Z
+updated_at: 2026-10-04T15:15:47Z
+parent: qou-5vkl
 ---
 
 ## Measured 2026-08-28, on origin/main at cdbdc84af1

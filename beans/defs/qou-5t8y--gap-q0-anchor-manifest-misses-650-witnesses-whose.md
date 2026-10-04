@@ -4,8 +4,11 @@ title: 'GAP: q0_anchor_manifest misses 650 witnesses whose producer filename is 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T14:46:06Z
-updated_at: 2026-08-23T14:46:48Z
+updated_at: 2026-10-04T15:20:19Z
+parent: qou-5vkl
 ---
 
 ## Measured (PR #5550, 2026-08-23)

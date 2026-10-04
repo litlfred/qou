@@ -4,8 +4,11 @@ title: delta_lambda_full_variance_phase5e_1 emits a numpy Gram inverse as raw fl
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T16:29:22Z
-updated_at: 2026-08-23T16:33:00Z
+updated_at: 2026-10-04T15:18:43Z
+parent: qou-9nnz
 ---
 
 `computations/delta_lambda_full_variance_phase5e_1.py:321` emits a numpy matrix:

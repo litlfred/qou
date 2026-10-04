@@ -4,8 +4,11 @@ title: Cross-check 0401068v1.pdf at computations/probes/qbeta_nz_even_series_fou
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:45Z
-updated_at: 2026-08-21T17:04:53Z
+updated_at: 2026-10-04T15:18:15Z
+parent: qou-8hur
 ---
 
 The probe's tau extraction currently reads the CCGLS A-polynomial without a cited value; check the probe's A_{4_1} against Takata's A_{K_{-1}} seed coefficient-by-coefficient.

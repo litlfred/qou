@@ -1,11 +1,13 @@
 ---
 # qou-cdh3
 title: 'H3 (hygiene): regenerate the 14 convention-C witnesses — two hard gates first'
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-16T13:21:37Z
+updated_at: 2026-10-04T15:20:39Z
 ---
 
 Parent: `qou-cdx1`. Successor to the `qou-eea0` cascade, which drained the bulk.
@@ -121,3 +123,10 @@ So: **the saving is per-CONSUMER, not per-cache.** Anything downstream that
 contracts to `Σ_λ y_λ·χ^λ` can skip the dead blocks; anything that inspects
 blocks individually cannot, and the pole-order analyses are in the second class.
 Do not apply it cache-wide on the strength of the n=12 ratio.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-eea0` (work-plan reorganisation 2026-10-04). Evidence: same task at different counts (14 / 99 / 84 C-frame witnesses); eea0 is the newest campaign; 1 main commits
+Content is untouched; only this work item is closed.

@@ -4,8 +4,11 @@ title: Cross-check cspaper.pdf at computations/one_loop_torsion.py
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:22Z
-updated_at: 2026-08-21T17:05:05Z
+updated_at: 2026-10-04T15:18:28Z
+parent: qou-8hur
 ---
 
 Check whether the parity condition of Theorem 2 is the normalisation the corpus records as the dropped flattening monomial, by comparing the resulting ambiguity lattice against the unit-group-of-the-trace-field characterisation already recorded in one-loop-ambiguity-group.witness.json. A match would explain the observed ambiguity; a mismatch is equally informative. No external constant may be adopted either way.

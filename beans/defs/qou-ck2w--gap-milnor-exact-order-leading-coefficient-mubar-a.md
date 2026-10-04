@@ -4,8 +4,11 @@ title: 'GAP: Milnor exact-order leading coefficient mubar_A != 0 (exact law orde
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-01T19:16:41Z
-updated_at: 2026-08-31T04:21:15Z
+updated_at: 2026-10-04T15:20:13Z
+parent: b9cj
 ---
 
 

@@ -2,10 +2,11 @@
 # qou-c8p8
 title: 'Mathlib infra: close class field debt'
 status: in-progress
-type: milestone
+type: epic
 priority: normal
 created_at: 2026-08-24T06:35:32Z
-updated_at: 2026-09-08T07:45:45Z
+updated_at: 2026-10-04T15:10:08Z
+parent: qou-rtxm
 ---
 
 Epic to close conjectural class fields that are standard math (not manuscript claims). Three axes: LP/SDP duality, parallelogram contour, RSK combinatorics.
@@ -138,3 +139,9 @@ library file — but it carries five declarations, so renaming it for one is
 wrong.
 
 ## 2026-09-08: twin qou-vkmt (identical title, in-progress, self-declared duplicate) cross-referenced; this bean is the record. Audit docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 6 / §7.3 C7.
+
+
+
+## Reorganisation 2026-10-04
+
+Now the epic for P3.AN under Lean / Mathlib foundations.

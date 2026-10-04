@@ -4,8 +4,11 @@ title: 'GAP W1: construct the q-difference prolongation D_q from the color spect
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-01T01:43:06Z
-updated_at: 2026-09-12T11:41:04Z
+updated_at: 2026-10-04T15:19:32Z
+parent: qou-8lxd
 ---
 
 

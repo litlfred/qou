@@ -3,8 +3,12 @@
 title: 'The difference-route binding agreement is frame-conditional: multibond B(2H) goes -6.3% to -75.2% under the canonical ordering, exactly the 3.785x factor'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T08:02:15Z
-updated_at: 2026-09-14T08:02:15Z
+updated_at: 2026-10-04T15:24:54Z
+parent: qou-v2om
 ---
 
 ## Measured — `binding_multibond_wenzl`, deuteron, Wenzl bridge at 50 dps

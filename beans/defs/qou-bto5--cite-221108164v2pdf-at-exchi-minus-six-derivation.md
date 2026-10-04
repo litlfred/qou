@@ -4,8 +4,11 @@ title: Cite 2211.08164v2.pdf at ex:chi-minus-six-derivation
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:21Z
-updated_at: 2026-08-21T17:04:50Z
+updated_at: 2026-10-04T15:17:16Z
+parent: qou-19m0
 ---
 
 Step 7 of ex:chi-minus-six-derivation asserts Bring is the unique maximally symmetric genus-4 curve with no citation; Thm 2 gives a precise version of that uniqueness.

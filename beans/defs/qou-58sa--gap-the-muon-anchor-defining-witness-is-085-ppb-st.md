@@ -1,11 +1,13 @@
 ---
 # qou-58sa
 title: 'GAP: the muon anchor-defining witness is 0.85 ppb stale — CODATA-2018 value baked in; blocks the C->D witness migrations'
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T17:20:31Z
-updated_at: 2026-08-23T17:46:55Z
+updated_at: 2026-10-04T15:20:26Z
 ---
 
 Found while starting the B4 half of the convention-C excision (`qou-cds1`,
@@ -138,3 +140,10 @@ Not a reason to stop excising C — a reason to sequence it behind these. The B3
 class (23 sites) must be left alone regardless, and B2 needs the ladder
 re-derivation, so with B4 blocked the *entire* 46-site surface is currently
 gated on something other than the convention decision.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-tekx` (work-plan reorganisation 2026-10-04). Evidence: one defect seen four ways: two muon pins (CODATA-2018 A vs 2022 C) in circulation; 2 main commits
+Content is untouched; only this work item is closed.

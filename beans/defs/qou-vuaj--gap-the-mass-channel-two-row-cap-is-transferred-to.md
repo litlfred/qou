@@ -4,8 +4,11 @@ title: 'GAP: the mass-channel two-row cap is transferred to the DECAY channel, a
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T12:16:30Z
-updated_at: 2026-09-04T12:17:37Z
+updated_at: 2026-10-04T15:20:26Z
+parent: qou-cdx1
 ---
 
 VERIFIED FROM PRIMARY SOURCES 2026-09-04. Surfaced by a sibling audit

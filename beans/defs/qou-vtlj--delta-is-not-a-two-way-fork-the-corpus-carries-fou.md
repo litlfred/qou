@@ -1,11 +1,14 @@
 ---
 # qou-vtlj
 title: 'Delta is not a two-way fork: the corpus carries FOUR net values, and the "13 crossings" sentence contradicts its own block'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T02:49:11Z
-updated_at: 2026-09-03T10:41:10Z
+updated_at: 2026-10-04T15:12:17Z
+parent: qou-10v9
 ---
 
 ## Measured, `qbeta_delta_net_four_values_probe.py`, 6/6
@@ -695,3 +698,9 @@ The retracted claim appeared in: this bean, the caveat authorNote (now
 replaced), and PR #5958's body. It did NOT reach any `.md` prose, any witness,
 or any Lean file -- the note said explicitly it was "deliberately not written
 into this block", which is the one thing that limited the blast radius.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

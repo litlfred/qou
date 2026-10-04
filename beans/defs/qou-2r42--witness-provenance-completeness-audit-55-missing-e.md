@@ -1,11 +1,13 @@
 ---
 # qou-2r42
 title: 'witness provenance COMPLETENESS audit: 55 missing engine/scriptFile/commitSha, and it is in no gate array'
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T15:30:03Z
-updated_at: 2026-08-31T05:41:15Z
+updated_at: 2026-10-04T15:25:38Z
 ---
 
 Found 2026-08-21 while sweeping duplicate witness stems (qou-kcii).
@@ -173,3 +175,10 @@ it is the one that would stop the count rising. **Not implemented here** — thi
 entry is the diagnosis, and wiring a new check is a decision about gate policy
 that belongs with whoever owns `precision-gates.sh`, given this repo's record
 with gates that arrive red.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-7aum` (work-plan reorganisation 2026-10-04). Evidence: [B] both: witness provenance COMPLETENESS audit red at 55 and in no gate array
+Content is untouched; only this work item is closed.

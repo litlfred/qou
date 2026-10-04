@@ -4,8 +4,11 @@ title: Cite 9408099v1.pdf at prop:mi-sw-abelianisation
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:36Z
-updated_at: 2026-08-21T17:05:08Z
+updated_at: 2026-10-04T15:17:21Z
+parent: qou-19m0
 ---
 
 prop:mi-sw-abelianisation states the SW-period identity with an empty cites list; the existing seiberg1994 entry is itself cited nowhere in the corpus despite the machinery being used across two chapters. Fix the primary citation first.

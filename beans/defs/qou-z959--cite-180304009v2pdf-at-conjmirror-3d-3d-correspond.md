@@ -4,8 +4,11 @@ title: Cite 1803.04009v2.pdf at conj:mirror-3d-3d-correspondence
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:08Z
-updated_at: 2026-08-21T17:05:11Z
+updated_at: 2026-10-04T15:17:12Z
+parent: qou-19m0
 ---
 
 conj:mirror-3d-3d-correspondence cites dimofte-gaiotto-gukov2014, terashima-yamazaki2011, neumann-zagier1985 but not the paper that records the T^DGG vs T^6d flat-connection gap its dictionary depends on.

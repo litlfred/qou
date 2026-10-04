@@ -3,8 +3,12 @@
 title: Cite [hakimoglu-brown2025] at prop:habiro-tail-archimedean-action
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:25Z
-updated_at: 2026-08-08T16:13:25Z
+updated_at: 2026-10-04T15:17:37Z
+parent: qou-1qhv
 ---
 
 Add a canonical secondary source (Lewin, Polylogarithms and Associated Functions, 1981; or Zagier, The dilogarithm function, 2007) alongside hakimoglu-brown2025 at prop:habiro-tail-archimedean-action, so the classical golden-ratio Li_2 evaluation and the Lean '-- Ref:' do not rest on a single unrefereed preprint. Not a claim of error in the preprint.

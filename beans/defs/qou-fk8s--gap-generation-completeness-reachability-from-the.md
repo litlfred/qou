@@ -3,12 +3,14 @@
 title: 'GAP: generation completeness — reachability from the generator set rests on GenerationScheme.unknotting_realised (the unknotting-number axiom); no knot type is constructed in Lean'
 status: todo
 type: task
+priority: normal
 tags:
     - lean
     - gap
+    - reorg-2026-10-04
 created_at: 2026-09-03T09:08:30Z
-updated_at: 2026-09-03T09:08:30Z
-parent: qou-ggdk
+updated_at: 2026-10-04T15:20:03Z
+parent: qou-8lxd
 ---
 
 Class B (modelling) gap (SM-surface Lean sweep, bean qou-08zf, 2026-09-03). brings-surface/generation-completeness.lean previously proved nothing: isReachable held for every K (audit docs/audits/2026-08-30-generation-completeness-is-vacuous.md, bean qou-0avp). It now defines ReachableIn (exact-step reachability over a move relation) and GenerationScheme, whose field unknotting_realised : ∀ k, ReachableIn crossingChange (unknottingNumber k) unknot k is the defining property of the unknotting number (Kauffman). generation_completeness composes that field with unknot ∈ 𝒢.

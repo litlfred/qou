@@ -3,9 +3,12 @@
 title: 'Test hypothesis: two AJ saddles emit c_2=-1 (bar-odd) and c_2=-8 (bar-even) [may not match — honest]'
 status: todo
 type: task
-parent: b9cj
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-06-30T20:35:58Z
-updated_at: 2026-07-06T18:18:13Z
+updated_at: 2026-10-04T15:24:50Z
+parent: qou-avtq
 ---
 
 SCOPING (2026-07-06, PR #3434 — probe NOT run, deliberately):

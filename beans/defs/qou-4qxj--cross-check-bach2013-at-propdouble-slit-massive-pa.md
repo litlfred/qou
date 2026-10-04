@@ -3,8 +3,12 @@
 title: Cross-check [bach2013] at prop:double-slit-massive-pattern
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:12Z
-updated_at: 2026-08-08T23:35:12Z
+updated_at: 2026-10-04T15:18:22Z
+parent: qou-mub3
 ---
 
 double-slit-intro.md:5 asserts the q-deviation 'matches' this dataset but names no witness. The comparison of the q-corrected sinc^2 envelope against the digitised Fig. 3e profile should emit a witness so the claim is checkable; a visual match is not evidence and adopting a q-value that improves the fit would be a fit.

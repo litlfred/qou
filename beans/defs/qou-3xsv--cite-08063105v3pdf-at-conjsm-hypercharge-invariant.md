@@ -4,8 +4,11 @@ title: Cite 0806.3105v3.pdf at conj:sm-hypercharge-invariant
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:55Z
-updated_at: 2026-08-21T17:04:42Z
+updated_at: 2026-10-04T15:17:06Z
+parent: qou-6t49
 ---
 
 The block records the ribbon-framing twist as the sole candidate second datum, citing bilson-thompson2005 as literature precedent. Finkelstein's rotation number r is a second, independent published candidate for the same slot and belongs in the same sentence — recorded without endorsement, with the fitted-ordering caveat stated.

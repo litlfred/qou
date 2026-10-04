@@ -4,8 +4,11 @@ title: Cite cspaper.pdf at conj:binding-qbeta-complex-volume
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:21Z
-updated_at: 2026-08-21T17:04:55Z
+updated_at: 2026-10-04T15:17:49Z
+parent: qou-19m0
 ---
 
 conj:binding-qbeta-complex-volume and the notation register both present fraktur-V as the analogue of the Neumann-Zagier complex volume; the simplicial Rogers-dilogarithm formula that makes that object computable comes from here and is uncited.

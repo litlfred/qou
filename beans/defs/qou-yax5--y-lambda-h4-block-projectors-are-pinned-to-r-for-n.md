@@ -3,8 +3,12 @@
 title: y_lambda / H4 block projectors are pinned to R for no reason — lift to LinearOrderedField, then generic Field + poincare-nonzero
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T17:21:11Z
-updated_at: 2026-08-09T17:21:11Z
+updated_at: 2026-10-04T15:25:41Z
+parent: qou-rtxm
 ---
 
 

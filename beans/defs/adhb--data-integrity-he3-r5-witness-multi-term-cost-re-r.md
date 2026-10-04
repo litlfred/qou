@@ -3,8 +3,12 @@
 title: 'Data-integrity: He3 R5 witness multi-term-cost re-run (regen winner diverged)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-06-26T03:39:52Z
-updated_at: 2026-06-30T01:30:00Z
+updated_at: 2026-10-04T15:18:35Z
+parent: qou-5vkl
 ---
 
 ## 2026-06-30 — "wire Term-5 into R5" is a FIT; DO NOT do it. Stays research-grade.

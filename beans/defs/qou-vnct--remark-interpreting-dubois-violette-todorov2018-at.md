@@ -3,8 +3,12 @@
 title: Remark interpreting [dubois-violette-todorov2018] at QOU.MathlibExt.OctonionColourActionBaseModule
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:47Z
-updated_at: 2026-08-08T23:34:47Z
+updated_at: 2026-10-04T15:23:45Z
+parent: qou-2srd
 ---
 
 OctonionComplexStructure.lean:9 and OctonionColourActionBaseModule.lean:10 name the key only inside prose docstrings, so the standard '-- Ref: [key]' grep does not find them. Add the canonical Ref lines so both files register as citation sites in the bibliography audits.

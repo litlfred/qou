@@ -3,8 +3,12 @@
 title: The KG has ZERO domain vocabulary — all 40 context terms are structural
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-27T05:11:12Z
-updated_at: 2026-09-27T05:11:12Z
+updated_at: 2026-10-04T15:24:56Z
+parent: qou-n4r9
 ---
 
 ## Where this came from

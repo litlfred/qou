@@ -3,8 +3,12 @@
 title: 'DEFECT: li_2_q returns inf for |z|>=q, but g(x)=-Li_2^q(-x) is finite for ALL x>0 -- ''atom-word tower diverges'' is false as stated'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T22:45:51Z
-updated_at: 2026-08-08T22:45:51Z
+updated_at: 2026-10-04T15:18:40Z
+parent: qou-r9ih
 ---
 
 

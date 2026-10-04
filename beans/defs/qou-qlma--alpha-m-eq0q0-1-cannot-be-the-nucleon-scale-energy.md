@@ -3,8 +3,12 @@
 title: 'alpha = m_e/(q0(q0-1)) cannot be the nucleon-scale energy: derived bound alpha <= B_AME(2H)/ln2 = 3.2094 MeV, actual 4.1860 (+30.43%)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T00:05:33Z
-updated_at: 2026-08-09T00:05:33Z
+updated_at: 2026-10-04T15:16:19Z
+parent: qou-v2om
 ---
 
 

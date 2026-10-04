@@ -3,8 +3,12 @@
 title: 'Colour-weight blocker attack: shadow price + Frobenius projection; option 3 KILLED by trace conjugation-invariance; gram-matrix-dual is geometrically ill-posed'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T13:43:56Z
-updated_at: 2026-08-09T13:43:56Z
+updated_at: 2026-10-04T15:17:58Z
+parent: qou-8lxd
 ---
 
 

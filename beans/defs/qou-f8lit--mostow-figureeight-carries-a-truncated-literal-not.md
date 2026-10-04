@@ -5,12 +5,13 @@ status: todo
 type: task
 priority: high
 tags:
-    - hyperbolic-volume
     - lean
     - precision
+    - reorg-2026-10-04
+    - hyperbolic-volume
 created_at: 2026-08-29T19:10:00Z
-updated_at: 2026-08-30T15:06:04Z
-parent: qou-8mtd
+updated_at: 2026-10-04T15:14:58Z
+parent: qou-9nnz
 ---
 
 ## The defect

@@ -1,11 +1,15 @@
 ---
 # qou-xsv8
 title: 'ROAST: prf:quantum-dilogarithm-stratified Step 1 pairing is diagonal, not anti-diagonal'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-08-26T05:27:06Z
-updated_at: 2026-08-26T07:30:29Z
+updated_at: 2026-10-04T15:13:50Z
+parent: qou-r9ih
 ---
 
 Found by the F5 agent (`qou-09e0`) as an unplanned second result while
@@ -123,3 +127,9 @@ the truncation identity and the *Practical consequence* both survive); nor that
 **Still open:** Step 4 pairs a central `φ_q^(k)` against a general `T_w ∈ A`, so
 "zero projection on `Z^(k)`" has to be read block-wise. Plausible, unstated, not
 repaired here.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-26 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -1,11 +1,14 @@
 ---
 # qou-w3eg
 title: 'H4/T2: Vol(alpha,beta,gamma) = Lambda-sum — Milnor''s computation, decomposed into H4-1..H4-5'
-status: in-progress
+status: todo
 type: task
 priority: medium
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T17:40:00Z
-updated_at: 2026-09-12T11:29:40Z
+updated_at: 2026-10-04T15:14:33Z
+parent: b9cj
 ---
 
 The hard tier of `qou-5gai`, and the same statement as `qou-idvt` **T2**:
@@ -1128,3 +1131,9 @@ definition with a citation, not an axiom or `sorry`). Whether that shared
 citation leaves H4-5 "done" is an owner call, not an agent one. The obtuse and
 right-angled halves assume nothing the acute one does not; the coverage caveat
 that used to sit beside that question is gone.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-12 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

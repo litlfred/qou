@@ -1,11 +1,14 @@
 ---
 # qou-i6cn
 title: 'TRIAGE: 29 library files carry 59 standalone axioms — Mathlib-gap or laundering?'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T14:57:07Z
-updated_at: 2026-09-05T18:21:49Z
+updated_at: 2026-10-04T15:14:16Z
+parent: qou-6qbv
 ---
 
 
@@ -438,3 +441,9 @@ That is why no single syntactic detector finds them, and why
 published-citation: `Hecke/MarkovTrace` (Jones), `Formal` (Geck–Pfeiffer),
 `ParallelogramContour` (Ahlfors), `SDP` (Todd), `SDPRankEquality` (AHO),
 `SDPRealUniqueness` (AHO).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -3,8 +3,12 @@
 title: 'Remark at cor:pbw: freeness is necessary — PBW fails for Lie algebras over a general commutative ring'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T18:29:19Z
-updated_at: 2026-08-09T18:29:19Z
+updated_at: 2026-10-04T15:23:23Z
+parent: qou-q4oa
 ---
 
 Sharpness remark for `content/unital-groebner-bases/unital-groebner-bases-chapter/`,

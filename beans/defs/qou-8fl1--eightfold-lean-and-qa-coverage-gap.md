@@ -4,8 +4,11 @@ title: 'Eightfold chapter: Lean + QA coverage gap after the honesty pass'
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-28T15:01:59Z
+updated_at: 2026-10-04T15:18:58Z
+parent: qou-5vkl
 ---
 
 ## Context

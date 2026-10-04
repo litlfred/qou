@@ -1,11 +1,14 @@
 ---
 # qou-gmfz
 title: 'Kazhdan-Lusztig classical limit: the KL-basis identification and monoidality are still unstated'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T19:39:51Z
-updated_at: 2026-09-13T10:39:45Z
+updated_at: 2026-10-04T15:13:10Z
+parent: qou-k4oq
 ---
 
 `QOU/BraidKnot/KazhdanLusztigClassicalLimit.lean`. Follow-up to the repair
@@ -194,3 +197,9 @@ cites no source at all. Also newly held: `arxiv-1801.05145v1`,
 
 Holding a source is a **citation**, not a derivation — this unblocks the read,
 not the proof. §13a: stays open.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

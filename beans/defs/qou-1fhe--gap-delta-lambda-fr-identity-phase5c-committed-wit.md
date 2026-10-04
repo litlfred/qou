@@ -4,8 +4,11 @@ title: 'GAP: delta-lambda-fr-identity-phase5c committed witness disagrees with a
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T18:15:05Z
-updated_at: 2026-09-07T18:15:39Z
+updated_at: 2026-10-04T15:19:54Z
+parent: qou-9nnz
 ---
 
 ## What is measured

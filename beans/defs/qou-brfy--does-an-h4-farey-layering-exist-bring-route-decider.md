@@ -1,11 +1,14 @@
 ---
 # qou-brfy
 title: Does an H_4 Farey layering exist? — the one search that decides the Bring route
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T11:52:20Z
-updated_at: 2026-09-07T04:44:58Z
+updated_at: 2026-10-04T15:10:55Z
+parent: qou-v2om
 ---
 
 OPENED 2026-09-06 from the owner proposal: "if we fix on brings, then every
@@ -161,3 +164,9 @@ That is the H_q analogue of the continued fraction of p/q -- the input
 Gueritaud's layering consumes.  It is NOT needed to settle the question above,
 which the face-size argument settles without it; it would be needed by any
 future attempt to build an H_4 word calculus.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

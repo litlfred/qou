@@ -1,11 +1,14 @@
 ---
 # qou-h0ou
 title: 'GAP: HasAction.action is scalar->scalar, so einsteinTensor cannot be rank-2 — wire FrobeniusPairingData'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-15T06:16:39Z
-updated_at: 2026-09-15T09:10:37Z
+updated_at: 2026-10-04T15:12:54Z
+parent: qou-ddmn
 ---
 
 ## 2026-09-15 — DIAGNOSIS CONFIRMED, and a rank-2 field space is now formalized
@@ -280,3 +283,9 @@ no `native_decide`, no `: True`.
   `ArchimedeanObservation`) is PRE-EXISTING — verified absent from my diff —
   and is arguably a false positive, since the structure is the archimedean
   side of the wall by name and construction.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-15 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

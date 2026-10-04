@@ -4,8 +4,11 @@ title: Cross-check 1811.05376v4.pdf at computations/qbeta/qbeta_c3_borel_pade_re
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:24Z
-updated_at: 2026-08-21T17:05:02Z
+updated_at: 2026-10-04T15:18:19Z
+parent: qou-mukd
 ---
 
 The corpus's Borel-Pade probe locates a singularity at A = Vol(4_1)/pi ~ 0.646; Thm 2 says (in its own class) such singularities are exactly complex-CS actions. Cross-checking the probe's numerically located singularity against the 4_1 complex-CS spectrum is a cross-check to run, not a number to adopt.

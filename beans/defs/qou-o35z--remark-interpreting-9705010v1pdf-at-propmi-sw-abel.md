@@ -4,8 +4,11 @@ title: Remark interpreting 9705010v1.pdf at prop:mi-sw-abelianisation
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:17Z
-updated_at: 2026-08-21T17:05:00Z
+updated_at: 2026-10-04T15:23:42Z
+parent: qou-aqfj
 ---
 
 State what classical SW abelianisation actually is (spectral curve + Jacobian fibration) next to prop:mi-sw-abelianisation's open class, and list what would have to be checked to transport it: whether the exceptional-divisor restriction produces a spectral cover, and whether a surface-ordered MI reduces to a path-ordered one there. This is the honest alternative to claiming the gap is closed.

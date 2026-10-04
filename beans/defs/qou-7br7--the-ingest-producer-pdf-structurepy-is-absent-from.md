@@ -4,8 +4,11 @@ title: 'RETRACTED: pdf-structure.py IS present (find does not follow the folio-a
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T23:25:01Z
-updated_at: 2026-09-07T00:13:08Z
+updated_at: 2026-10-04T15:24:09Z
+parent: qou-n4r9
 ---
 
 ## 🛑 RETRACTED, same day, before anyone acted on it

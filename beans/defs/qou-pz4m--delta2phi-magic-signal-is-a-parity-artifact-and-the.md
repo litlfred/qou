@@ -1,11 +1,14 @@
 ---
 # qou-pz4m
-title: 'delta2-Phi magic signal is a parity artifact, and the K=10 table has no producer'
+title: delta2-Phi magic signal is a parity artifact, and the K=10 table has no producer
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T00:00:00Z
-updated_at: 2026-08-30T00:00:00Z
+updated_at: 2026-10-04T15:14:49Z
+parent: qou-5vkl
 ---
 
 Found while answering a status question on magic-shell structure. No prior bean,

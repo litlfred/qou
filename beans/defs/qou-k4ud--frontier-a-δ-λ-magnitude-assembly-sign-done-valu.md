@@ -1,11 +1,14 @@
 ---
 # qou-k4ud
 title: 'FRONTIER A: Δ_λ MAGNITUDE assembly — sign done (valuation); is |Δ_λ|=dim_λ closed-form? tr(g_ρ)→B wiring'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-19T03:32:44Z
-updated_at: 2026-07-19T07:00:00Z
+updated_at: 2026-10-04T15:12:40Z
+parent: qou-v2om
 ---
 
 
@@ -60,3 +63,9 @@ overshoots the ceiling" and re-scope the open item:
 
 Status: b₄ SCALAR m = g_reeb SETTLED (deformed ss-criticality); Vector 2 (icosahedral-entry=m) REFUTED
 as stated; the open magnitude object is now the α-condensation pole regulator. Attack map §4a updated.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-07-19 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

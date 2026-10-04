@@ -2,10 +2,11 @@
 # qou-v2om
 title: 'EPIC: close the low-isotope binding defect — five fronts, formalize-first'
 status: in-progress
-type: task
+type: epic
 priority: normal
 created_at: 2026-08-26T03:37:39Z
-updated_at: 2026-08-26T03:40:29Z
+updated_at: 2026-10-04T15:09:57Z
+parent: qou-10v9
 ---
 
 Owner picked "try all 5, prioritize what is formalized and provable first"
@@ -58,3 +59,9 @@ therefore logically prior to F2/F3/F4, not merely cheapest.
 
 - Single global topological charge functionals (FN, scope-(b), sign + shape).
 - All three `J^bullet` readings (`qou-wjbd`, PR #5812).
+
+
+
+## Reorganisation 2026-10-04
+
+Now the epic for P1.BIND under PROGRAM: L2 at 1 ppQ (mass and binding accuracy).

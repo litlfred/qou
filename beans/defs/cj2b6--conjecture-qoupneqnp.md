@@ -4,9 +4,11 @@ title: 'Conjecture carrier: QouPNeqNp (QouPNeqNp.lean) — §3b, framework/subst
 status: todo
 type: task
 priority: low
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-05T13:20:00Z
-updated_at: 2026-08-19T14:01:10Z
-parent: b9cj
+updated_at: 2026-10-04T15:25:53Z
+parent: qou-b1je
 ---
 
 §3b conjecture-class Lean carrier `instance : QouPNeqNp := sorry` at content/quantum-observable-universe/lean/QOU/Information/QouPNeqNp.lean:75. The sorry IS the conjecture (per AGENTS.md §3b) — do NOT fabricate an instance (audit-dodge). Category: framework/substrate §3b carrier. Track backing/derivation status; advance only via genuine derivation or owner-directed reframing. Parent: b9cj.

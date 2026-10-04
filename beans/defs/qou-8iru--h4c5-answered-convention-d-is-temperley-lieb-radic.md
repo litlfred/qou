@@ -4,8 +4,11 @@ title: 'H4/C5 answered: convention D IS Temperley-Lieb. Radical = TL ideal, dim 
 status: in-progress
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T14:54:13Z
-updated_at: 2026-09-27T07:21:47Z
+updated_at: 2026-10-04T15:13:04Z
+parent: qou-rtxm
 ---
 
 

@@ -4,8 +4,10 @@ title: 'G2-opt3 (flux-tube qou-qpj9): refined Y-junction keeping the gluon stran
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T20:19:13Z
-updated_at: 2026-08-02T20:19:13Z
-parent: qou-20sx
+updated_at: 2026-10-04T15:19:27Z
+parent: qou-8lxd
 ---
 

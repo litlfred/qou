@@ -4,8 +4,11 @@ title: 'GAP: two probes label the MUON value A as proton_q0; their anchor-stabil
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T09:37:35Z
-updated_at: 2026-08-23T09:38:09Z
+updated_at: 2026-10-04T15:20:30Z
+parent: qou-2002
 ---
 
 Found while classifying the hardcoded-q0 literals (PR #5535). NOT fixed there, deliberately -- fixing it means committing a witness regeneration whose numbers move 3-4 orders of magnitude for a reason unrelated to that PR's diff.

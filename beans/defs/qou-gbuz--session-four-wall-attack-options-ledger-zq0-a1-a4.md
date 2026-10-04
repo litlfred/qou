@@ -1,10 +1,13 @@
 ---
 # qou-gbuz
 title: 'Session: four-wall attack-options ledger (z(q0) A1-A4; A-binary B1-B4; swing C1-C3; Route C D1-D4)'
-status: todo
-type: epic
+status: completed
+type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T01:10:21Z
-updated_at: 2026-08-15T01:10:21Z
+updated_at: 2026-10-04T15:15:27Z
 ---
 
 
@@ -22,3 +25,9 @@ Discipline notes: A1/D1 are the only derivation-route options and both carry
 anti-laundering tripwires (seed phase must be derived, quiver must not be
 fitted-and-relabeled). B3/D3 are import/evidence tier. Everything else is
 formalize-first or record-hardening. No option re-opens a recorded negative.
+
+
+
+## Summary of Changes
+
+Session log closed 2026-10-04 (owner decision 2): open children were reparented to programme epics and prose follow-ups extracted as their own beans. Kept as a record, not deleted.

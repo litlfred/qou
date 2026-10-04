@@ -3,8 +3,12 @@
 title: Star-Gram tr_M(a b*) is POSITIVE -- the Lorentzian reading was a wrong-pairing artifact; metric arc unblocked
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T13:34:15Z
-updated_at: 2026-08-09T13:34:15Z
+updated_at: 2026-10-04T15:24:37Z
+parent: qou-10v9
 ---
 
 

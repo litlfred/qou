@@ -4,8 +4,11 @@ title: Cross-check 0905.1873v2.pdf at computations/deltalambda/mu4_vs_nuclear_4n
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:00Z
-updated_at: 2026-08-21T17:05:05Z
+updated_at: 2026-10-04T15:18:16Z
+parent: qou-8hur
 ---
 
 The Lean bound uses 0.300 MeV as 'the N3LO four-nucleon estimate'; the paper says 'of order a few hundred keV' (a range, sourced to its own Ref. [20]) and separately measures 50 keV for the SRG-INDUCED four-body force. Confirm the probe is using the intended one of the two numbers and record which, since the 34x factor depends on it.

@@ -4,8 +4,11 @@ title: 'GAP: derive the Q_beta ladder eigenphase alpha (S1 blocker) — carrier 
 status: in-progress
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-14T23:12:47Z
+updated_at: 2026-10-04T15:12:51Z
+parent: qou-avtq
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is

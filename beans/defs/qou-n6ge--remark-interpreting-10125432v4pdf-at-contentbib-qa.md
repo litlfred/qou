@@ -4,8 +4,11 @@ title: Remark interpreting 1012.5432v4.pdf at content/bib-qa-verifications.json
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:29Z
-updated_at: 2026-08-21T17:04:59Z
+updated_at: 2026-10-04T15:23:29Z
+parent: qou-aqfj
 ---
 
 Record the corrected identification so the ledger stops attributing this file to freedman2003, and queue a genuine first-pass triage of the actual paper (flux-tube knotting and fusion for TQC) against the knots-particles-confinement chapter.

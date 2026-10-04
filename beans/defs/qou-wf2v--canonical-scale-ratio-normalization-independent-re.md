@@ -1,12 +1,14 @@
 ---
 # qou-wf2v
 title: 'canonical-scale-ratio: normalization-independent restatement of 25=deg^2 — outcome (iii) recorded; conditional theta_5 restatement + matching condition; Hodge pin blocked on Riera-Rodriguez Z'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-25T13:41:58Z
-updated_at: 2026-07-25T13:42:24Z
-parent: qou-k42c
+updated_at: 2026-10-04T15:12:04Z
+parent: qou-wp3h
 ---
 
 
@@ -28,3 +30,9 @@ docs/audits/2026-07-25-alpha-em-b2-canonical-scale-ratio.md, ledger row.
 LEFT OPEN (do not close): the deg²=25 observation itself (owner-level,
 double-gated); the cellular pin's two unverified convention legs; the
 Hodge-side canonical evaluation (needs Z).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-07-25 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

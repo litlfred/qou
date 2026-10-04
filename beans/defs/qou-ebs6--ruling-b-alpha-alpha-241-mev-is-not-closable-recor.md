@@ -4,8 +4,11 @@ title: 'RULING: b_alpha-alpha 2.41 MeV is NOT closable — record the non-closab
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T14:47:13Z
-updated_at: 2026-08-30T14:47:51Z
+updated_at: 2026-10-04T15:24:15Z
+parent: qou-v2om
 ---
 
 Arc bk-crossing mass-binding. Raised as the third of three candidate closures (with the

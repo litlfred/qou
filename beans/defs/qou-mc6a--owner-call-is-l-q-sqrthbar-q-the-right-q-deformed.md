@@ -4,8 +4,11 @@ title: 'OWNER CALL: is L_q = sqrt(hbar_q) the right q-deformed filament length? 
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-09-12T20:27:08Z
-updated_at: 2026-09-12T20:28:08Z
+updated_at: 2026-10-04T15:15:00Z
 ---
 
 **Owner decision, not agent work.** Successor to `qou-y3bm`, whose own task

@@ -1,11 +1,14 @@
 ---
 # qou-2q85
-title: 'EPIC: depth-0 to depth-2 bridge - six attack routes for the convolution/volume gap'
+title: Depth-0 to depth-2 bridge - six attack routes for the convolution/volume gap
 status: todo
-type: epic
+type: feature
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T20:42:08Z
-updated_at: 2026-09-04T22:16:50Z
+updated_at: 2026-10-04T15:46:32Z
+parent: qou-n4nr
 ---
 
 THE GAP. bowtie_K and the whole knot-convolution layer sit at TRANSCENDENCE DEPTH 0 (algebraic, no polylogarithms); the volume functor sits at DEPTH 2 (P_2/P_1, real). Measured: 44 files build the convolution layer, 9 build the quantum-function layer, ZERO files mention both. The disconnection is a DEPTH GAP, not an oversight.
@@ -38,3 +41,7 @@ TALLY: B closed by qou-ox7v (shuffle-square lands in the decomposable part, whic
 WHAT REMAINS: E (qou-960k) - PGL(3)/Fock-Goncharov, 35 held library dirs and zero content blocks, and per roast R3 the ONLY route aimed at FLAVOUR, which is what the parent epic qou-8lxd is actually named for. F (qou-zovy) - hygiene, cheap, do regardless.
 
 AND ONE THING THIS EPIC LEARNED THE HARD WAY: three of the four closures came from reading the corpus's own definitions rather than from new mathematics. The 'ind' gloss, the low-(n,K) grid's explicit H_q^(0,K) column, and the three-readings-of-J audit were all already written. The epic's real cost was not derivation; it was that nobody had put those three sentences next to each other.
+
+
+
+Former title (before 2026-10-04, when this became a story under a programme epic): EPIC: depth-0 to depth-2 bridge - six attack routes for the convolution/volume gap

@@ -4,8 +4,11 @@ title: The 382-file broken-sibling list predates the v4.24 lambda reservation, s
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T11:50:38Z
-updated_at: 2026-08-16T11:51:17Z
+updated_at: 2026-10-04T15:24:51Z
+parent: qou-trd0
 ---
 
 Found while trying to verify an appended section in

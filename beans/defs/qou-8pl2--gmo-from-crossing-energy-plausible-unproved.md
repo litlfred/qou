@@ -3,8 +3,12 @@
 title: 'PLAUSIBLE-NOT-PROVED: Gell-Mann–Okubo from the crossing-energy splitting'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-06T00:00:00Z
+updated_at: 2026-10-04T15:22:06Z
+parent: qou-8lxd
 ---
 
 ## UPDATE 2026-08-07 — the question was MIS-POSED; reframed

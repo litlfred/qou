@@ -4,8 +4,11 @@ title: 'DRAIN: 71 sites call the f64 Rust engine where an exact MPFR sibling exi
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T13:16:05Z
-updated_at: 2026-08-24T14:54:25Z
+updated_at: 2026-10-04T15:18:55Z
+parent: qou-cdx1
 ---
 
 Opened by the `F64_ENGINE_ENTRY` tier added to

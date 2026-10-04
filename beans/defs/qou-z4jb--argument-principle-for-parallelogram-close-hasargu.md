@@ -6,8 +6,9 @@ type: task
 priority: normal
 tags:
     - lean
+    - reorg-2026-10-04
 created_at: 2026-08-24T06:36:07Z
-updated_at: 2026-08-24T06:36:07Z
+updated_at: 2026-10-04T15:16:22Z
 parent: qou-c8p8
 blocked_by:
     - qou-f6bb

@@ -4,8 +4,11 @@ title: '§7c push: QBeta cluster (SubstratePeriodsIndependent, OhtsukiTowerBarPa
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-01T23:07:47Z
-updated_at: 2026-08-15T14:51:23Z
+updated_at: 2026-10-04T15:25:45Z
+parent: qou-rtxm
 ---
 
 ## Content-based triage (2026-08-15) — criteria for whoever picks this up

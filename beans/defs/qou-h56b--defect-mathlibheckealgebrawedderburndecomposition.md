@@ -4,8 +4,11 @@ title: 'DEFECT: Mathlib/HeckeAlgebra.WedderburnDecomposition asserts nothing (Pr
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T15:25:51Z
-updated_at: 2026-08-30T06:31:03Z
+updated_at: 2026-10-04T15:18:40Z
+parent: qou-59vq
 ---
 
 Found while scoping the TL_n route for the Wenzl 1988 discharge (PR #5358).

@@ -4,8 +4,11 @@ title: Remark interpreting 0603217v3.pdf at a remark on the polarization convent
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:51Z
-updated_at: 2026-08-21T17:04:57Z
+updated_at: 2026-10-04T15:23:27Z
+parent: qou-aqfj
 ---
 
 The Gukov-vs-Murakami polarization difference at Re(u) != 0 is a real risk to the sign-flip conclusion and is not recorded anywhere in the corpus. Proposing new-remark rather than aid-proof: I have not checked which polarization the corpus's V_41 series actually realises, so this flags a check, it does not close one.

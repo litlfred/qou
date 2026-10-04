@@ -4,8 +4,11 @@ title: 13 citations point at bibliography entries that do not exist — the chec
 status: todo
 type: bug
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T09:55:00Z
-updated_at: 2026-09-26T19:52:00Z
+updated_at: 2026-10-04T15:14:34Z
+parent: qou-mub3
 ---
 
 `cites-resolve` — the check that validates every content block's `cites[]`

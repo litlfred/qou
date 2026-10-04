@@ -1,12 +1,14 @@
 ---
 # qou-atsd-t3
 title: 'T3: rank Sp(2m)=m — m=1 torus fully pinned (lower + torus-upper + self-centralizing over a field); remaining gap = MAXIMALITY via connected-reductive structure theory (root count)'
-status: in-progress
+status: todo
 type: task
 priority: normal
-parent: qou-atsd
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-26T00:55:56Z
-updated_at: 2026-07-26T00:55:56Z
+updated_at: 2026-10-04T15:14:05Z
+parent: qou-8lxd
 ---
 
 DONE (#4285, AtomicityFromSelfDuality.lean, sorry-free) — the m=1 diagonal torus, fully pinned:
@@ -23,3 +25,9 @@ CONNECTED-REDUCTIVE structure theory (self-centralizing torus in connected reduc
 = maximal; all maximal tori conjugate; rank = its dimension). This is the root-count /
 algebraic-group structure theory Mathlib lacks — the multi-session build. Also: general
 m (Sp(2m), rank m); the ≃*-onto-range upgrade.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-07-26 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

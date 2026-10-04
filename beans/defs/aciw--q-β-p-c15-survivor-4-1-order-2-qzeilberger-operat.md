@@ -3,8 +3,12 @@
 title: 'Q_β P-C15 survivor: 4_1 order-2 qZeilberger operator clears bar-parity gate as fibre kernel R(q,ξ) candidate; gated next = H4 Hoefsmit c4^even build (8we6)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-03T19:12:19Z
-updated_at: 2026-07-03T19:12:19Z
+updated_at: 2026-10-04T15:22:55Z
+parent: qou-avtq
 ---
 
 

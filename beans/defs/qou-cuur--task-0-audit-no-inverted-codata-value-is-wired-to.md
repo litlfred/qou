@@ -3,8 +3,12 @@
 title: 'Task-0 audit: no inverted-CODATA value is wired to production; 3 labelling defects + AGENTS.md lambda_A wording'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T13:40:48Z
-updated_at: 2026-08-16T13:40:48Z
+updated_at: 2026-10-04T15:24:49Z
+parent: qou-2002
 ---
 
 Owner directive 2026-08-16: "Delta_lambda from inverted CODATA = NOT ALLOWED",

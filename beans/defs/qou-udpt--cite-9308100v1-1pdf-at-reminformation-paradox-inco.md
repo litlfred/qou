@@ -4,8 +4,11 @@ title: Cite 9308100v1 (1).pdf at rem:information-paradox-incompleteness
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:10Z
-updated_at: 2026-08-21T17:05:05Z
+updated_at: 2026-10-04T15:17:21Z
+parent: qou-19m0
 ---
 
 rem:information-paradox-incompleteness selects one of three positions on the paradox with no citation for the choice; the no-duplication gedanken argument is the standard support.

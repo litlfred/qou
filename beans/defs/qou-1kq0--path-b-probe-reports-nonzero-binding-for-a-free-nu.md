@@ -4,8 +4,11 @@ title: 'path_b probe reports nonzero binding for a FREE nucleon: B_AME(p) = 1.27
 status: todo
 type: task
 priority: low
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-31T03:08:49Z
-updated_at: 2026-08-31T03:08:49Z
+updated_at: 2026-10-04T15:25:59Z
+parent: qou-v2om
 ---
 
 

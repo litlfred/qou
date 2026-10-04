@@ -3,8 +3,12 @@
 title: 'GAP: C1↔SW geometric leg — finite content exhausted, residual is W1-W3 geometric-analysis program'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-01T01:10:50Z
-updated_at: 2026-08-01T01:10:50Z
+updated_at: 2026-10-04T15:19:47Z
+parent: qou-frzo
 ---
 
 

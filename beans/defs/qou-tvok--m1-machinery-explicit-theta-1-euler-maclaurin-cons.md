@@ -4,8 +4,11 @@ title: 'M1 machinery: explicit theta^-1 Euler-Maclaurin constant C_A for Var(Sum
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T01:34:20Z
-updated_at: 2026-09-03T20:29:56Z
+updated_at: 2026-10-04T15:21:20Z
+parent: qou-m6dn
 ---
 
 SCOPE UPDATE (2026-08-29): 'kink cancels => clean theta^{-1} bulk' is RETRACTED (qou-8quz refuted).

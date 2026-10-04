@@ -4,8 +4,11 @@ title: Remark interpreting 0302267v2.pdf at conj:gb-depth-period-correspondence
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:37Z
-updated_at: 2026-08-21T17:04:40Z
+updated_at: 2026-10-04T15:23:25Z
+parent: qou-aqfj
 ---
 
 Record the §6.2 caveat that the D-degree grading refining the depth filtration exists only in the omega-realisation and is not stable under the involution u -> u^{-1} — relevant to whether the corpus's GS-depth <-> period-depth correspondence should be stated at the level of the filtration or the grading. This is a caveat to flag, not a proof aid; I have not checked which side the corpus intends.

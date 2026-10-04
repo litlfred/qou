@@ -4,8 +4,11 @@ title: 'Corpus audits rglob into .claude/worktrees: 40 of 41 scanners lack the e
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T12:38:06Z
-updated_at: 2026-08-22T12:38:38Z
+updated_at: 2026-10-04T15:15:38Z
+parent: qou-trd0
 ---
 
 ## What

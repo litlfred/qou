@@ -3,8 +3,12 @@
 title: 'TRAP: y_lambda_at returns sympy Float for exact Rational input -- zero-tests on it are normalisation-dependent'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T15:34:11Z
-updated_at: 2026-08-22T15:34:11Z
+updated_at: 2026-10-04T15:25:09Z
+parent: qou-nu9d
 ---
 
 FOUND 2026-08-22 while testing a (refuted) closed form for y_lambda.

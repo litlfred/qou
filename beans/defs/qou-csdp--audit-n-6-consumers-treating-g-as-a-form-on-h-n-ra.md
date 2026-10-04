@@ -1,11 +1,13 @@
 ---
 # qou-csdp
 title: Audit n >= 6 consumers treating G as a form on H_n rather than TL_n
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T11:39:30Z
-updated_at: 2026-08-16T11:39:30Z
+updated_at: 2026-10-04T15:16:27Z
 ---
 
 Related: `qou-cds2` (S2 — the Gram singularity), `qou-8iru` (the TL
@@ -83,3 +85,10 @@ Filed 2026-08-16 from an agent that could not reach the `beans` CLI
 (the binary is not shipped in cloud sandboxes; `scripts/install-beans.sh`
 is the fix). Measurements: PR #5207 / merge `05a3178ab9`; PR #5187's
 weight table; `qou-8iru`'s n = 2..7 sweep (worst residual 1.34e-51).
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-ii3w` (work-plan reorganisation 2026-10-04). Evidence: [M] near-identical titles, same date 2026-08-16
+Content is untouched; only this work item is closed.

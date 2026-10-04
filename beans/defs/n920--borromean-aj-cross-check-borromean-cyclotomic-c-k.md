@@ -1,11 +1,14 @@
 ---
 # n920
 title: 'Borromean AJ: cross-check Borromean cyclotomic c_k against Habiro [H1] (simple links, RIMS Kokyuroku 1172) — NOT Masbaum math/0306345 (twist knots only); ref unavailable, DEFERRED'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-04T10:42:30Z
-updated_at: 2026-08-21T15:00:58Z
+updated_at: 2026-10-04T15:12:01Z
+parent: qou-avtq
 ---
 
 UNBLOCKED 2026-07-06: owner uploaded library/arxiv-math-0508100v6/0508100v6.pdf (GL2011).
@@ -107,3 +110,9 @@ per-prime checkpoint commit, so container reclaim resumes instead of
 restarting. Deliverable: explicit operator + q->1 Borromean
 A-polynomial, or an honest primes_used ceiling. See
 docs/audits/2026-08-29-borromean-a-polynomial-revival.md.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-21 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

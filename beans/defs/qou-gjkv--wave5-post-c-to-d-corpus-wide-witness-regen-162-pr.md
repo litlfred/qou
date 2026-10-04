@@ -1,11 +1,14 @@
 ---
 # qou-gjkv
 title: 'wave5: post-C-to-D corpus-wide witness regen (162 producers)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T03:14:24Z
-updated_at: 2026-09-13T11:42:20Z
+updated_at: 2026-10-04T15:14:23Z
+parent: qou-5vkl
 ---
 
 
@@ -285,3 +288,9 @@ artefact of subtracting `z_D` from a June value computed on `z_C`).
 owner decision under the 2026-09-07 ASK-THE-OWNER directive; the re-run done for
 the measurement was reverted. The 299-field raw-float64 drain on that witness
 stays blocked behind the decision (PR #7268 documents it as out of scope).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

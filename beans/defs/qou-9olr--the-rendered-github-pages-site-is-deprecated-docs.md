@@ -3,8 +3,12 @@
 title: The rendered GitHub Pages site is deprecated, docs-site is the only workflow that has ever succeeded since 2026-06-30, and AGENTS.md documented three workflows absent from the tree
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-27T07:41:07Z
-updated_at: 2026-09-27T07:41:07Z
+updated_at: 2026-10-04T15:25:00Z
+parent: qou-n4r9
 ---
 
 

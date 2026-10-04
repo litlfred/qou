@@ -5,9 +5,11 @@ status: todo
 type: task
 priority: normal
 tags:
+    - reorg-2026-10-04
     - sm-26
 created_at: 2026-07-31T20:15:07Z
-updated_at: 2026-09-03T08:32:39Z
+updated_at: 2026-10-04T15:20:12Z
+parent: qou-8lxd
 blocked_by:
     - 08a2
     - qou-htk4

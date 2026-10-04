@@ -3,8 +3,12 @@
 title: Cite [zhao2010-standard-relations] at conj:cl3-zeta5-geometric-realization
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:33Z
-updated_at: 2026-08-08T23:37:33Z
+updated_at: 2026-10-04T15:17:48Z
+parent: qou-1qhv
 ---
 
 The reference exists and its own note names this block as the intended consumer, but no block cites it; the candidates list currently enumerates weight-3 level-5 forms with no relation-space bound.

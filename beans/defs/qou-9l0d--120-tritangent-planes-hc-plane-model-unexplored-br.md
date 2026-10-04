@@ -4,8 +4,10 @@ title: 120 tritangent planes + HC plane model — unexplored Bring structures fr
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-04T17:32:49Z
-updated_at: 2026-08-04T17:32:49Z
+updated_at: 2026-10-04T15:15:57Z
 parent: qou-8lxd
 ---
 

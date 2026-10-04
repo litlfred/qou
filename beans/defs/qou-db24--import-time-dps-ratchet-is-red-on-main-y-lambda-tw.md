@@ -4,8 +4,11 @@ title: 'import-time dps ratchet is RED on main: y_lambda_two_row_cap_gate.py bui
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-28T15:18:36Z
-updated_at: 2026-08-28T15:21:39Z
+updated_at: 2026-10-04T15:15:44Z
+parent: qou-9nnz
 ---
 
 ## Found 2026-08-28, incidentally, on a clean main tree

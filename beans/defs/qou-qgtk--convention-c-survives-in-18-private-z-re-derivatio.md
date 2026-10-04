@@ -1,10 +1,13 @@
 ---
 # qou-qgtk
 title: Convention C survives in 18 private z re-derivations that library fixes cannot reach
-status: todo
+status: completed
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T22:22:29Z
-updated_at: 2026-08-15T22:22:29Z
+updated_at: 2026-10-04T15:18:08Z
 ---
 
 
@@ -110,3 +113,9 @@ this container's rebuilt Rust extension.
 **Unannounced private z_C re-derivations: 0.** What remains is the ladder's
 re-derivation under D, which is a science task owned elsewhere in the arc, not a
 detector or hygiene one.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: 73c2db9b41 "private z_C re-derivations 18 -> 3 -> 0"; body: residue 0, remainder is the ladder (cds1); 1 main commits

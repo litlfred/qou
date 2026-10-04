@@ -3,8 +3,12 @@
 title: Cite 9504020v1.pdf at qou:QOU.QBeta.CyclicDilogPentagon
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:34Z
-updated_at: 2026-08-08T23:35:34Z
+updated_at: 2026-10-04T15:17:22Z
+parent: qou-ysb7
 ---
 
 Once registered, CyclicDilogPentagon.lean should cite the cyclic-dilogarithm R-matrix paper directly rather than only the 1994 quantum-dilogarithm paper, since the cyclic construction is what that file formalises.

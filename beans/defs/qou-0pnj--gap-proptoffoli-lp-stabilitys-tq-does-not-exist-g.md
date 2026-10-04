@@ -1,11 +1,14 @@
 ---
 # qou-0pnj
 title: 'GAP: prop:toffoli-lp-stability''s t(q) does not exist — G is 6x6 Hecke-NF, P_77/P_76 are 8x8 strand-ordering entries'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T09:57:56Z
-updated_at: 2026-09-08T04:00:00Z
+updated_at: 2026-10-04T15:12:58Z
+parent: qou-10v9
 ---
 
 FOUND 2026-08-30 investigating what the q-GoL "stability condition" actually
@@ -263,3 +266,9 @@ self-contradiction. It is decidable without judgement — the discriminator is
 the bean asserting *its own* openness, not merely mentioning something open.
 
 Re-close it when the work its body names is actually done.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

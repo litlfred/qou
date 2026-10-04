@@ -4,8 +4,11 @@ title: 'Route 1 (parent: qnnq): off-lattice ϑ_K = cone-manifold / generalized-D
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-31T19:30:00Z
-updated_at: 2026-08-07T15:16:35Z
+updated_at: 2026-10-04T15:15:05Z
+parent: qou-n4nr
 ---
 
 Literature anchors:

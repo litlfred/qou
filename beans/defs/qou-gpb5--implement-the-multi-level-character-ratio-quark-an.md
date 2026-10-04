@@ -1,11 +1,14 @@
 ---
 # qou-gpb5
 title: 'Implement the multi-level character ratio: quark and nuclear-jet levels are unbuilt'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T06:49:42Z
-updated_at: 2026-09-05T07:05:15Z
+updated_at: 2026-10-04T15:13:07Z
+parent: qou-10v9
 ---
 
 
@@ -304,3 +307,9 @@ reformulated on a well-posed word in a stated convention. This bean now says
 precisely what such a reformulation must supply — a rule fixing the word rather
 than its crossing content, and one trace family across all three levels. Caveats
 added to `conj:jet-filtered-knot-factor` and `prop:confined-knot-binding`.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

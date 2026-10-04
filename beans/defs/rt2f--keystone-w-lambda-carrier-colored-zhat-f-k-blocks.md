@@ -3,8 +3,12 @@
 title: 'Keystone W_λ carrier, route 2: colored Ẑ / F_K(x,q) knot-complement blocks (owner-gated)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-03T00:40:00Z
-updated_at: 2026-07-03T00:40:00Z
+updated_at: 2026-10-04T15:21:02Z
+parent: b9cj
 ---
 
 ## Context

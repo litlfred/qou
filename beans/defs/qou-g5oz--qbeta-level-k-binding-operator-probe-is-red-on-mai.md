@@ -3,8 +3,12 @@
 title: 'qbeta_level_k_binding_operator_probe is RED on main since the ordering ruling: both headline findings are grouped-only, and its witness still says allPassed'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T16:04:30Z
-updated_at: 2026-09-14T16:04:30Z
+updated_at: 2026-10-04T15:23:01Z
+parent: qou-9nnz
 ---
 
 ## Measured, both orderings, same probe internals

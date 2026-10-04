@@ -4,8 +4,11 @@ title: 'GAP: three q0-ratchet REDs on main — manifest declared, WitnessBuilder
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T18:04:28Z
-updated_at: 2026-08-29T19:37:00Z
+updated_at: 2026-10-04T15:20:28Z
+parent: qou-5vkl
 ---
 
 Found while running `/prepare-merge` on PR #6026. **Inherited from `main`, not

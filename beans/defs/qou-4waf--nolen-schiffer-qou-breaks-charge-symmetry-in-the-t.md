@@ -3,8 +3,12 @@
 title: 'Nolen-Schiffer: QOU breaks charge symmetry in the TOPOLOGICAL channel, not the flavour channel'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T10:23:06Z
-updated_at: 2026-08-09T10:23:06Z
+updated_at: 2026-10-04T15:21:42Z
+parent: qou-10v9
 ---
 
 

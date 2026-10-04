@@ -1,11 +1,14 @@
 ---
 # qou-tpdg
 title: The library sweep points at the wrong Mathlib tree — 22 false REDs, and the 2.3GB shadow is redundant
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T11:48:55Z
-updated_at: 2026-09-13T09:22:35Z
+updated_at: 2026-10-04T15:14:12Z
+parent: qou-5vkl
 ---
 
 ## 2026-09-05 — measured, fixed, verified. PR #6827
@@ -380,3 +383,9 @@ and `#print axioms` clean on all four theorems.
 
 Not fixed here: both the label and the cascade are changes to the shared gate, which
 is an owner call under the 2026-09-07 ASK-BEFORE-CHANGING directive.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

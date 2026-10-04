@@ -1,11 +1,14 @@
 ---
 # 8we6
 title: 'u-rung tie decision: genuine c4 rungs — H4 Hoefsmit build for c4^even + c4^odd beyond CAL-anchor (Casoratian W3 sign test)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-02T12:03:38Z
-updated_at: 2026-07-03T00:16:13Z
+updated_at: 2026-10-04T15:14:17Z
+parent: qou-frzo
 ---
 
 ## 2026-07-02 — re-scoped after sibling 1jrh execution (supersedes original scope)
@@ -71,3 +74,9 @@ Surviving cheap admission test: log(Delta(net)_4/Delta(net)_3) = O(u^4).
 Per the audit's disposition a genuine c4-first object requires owner-level
 framework content (a construction whose low-order cancellation is DERIVED,
 not arranged) — bean stays in-progress awaiting that input; do not re-scan.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-07-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

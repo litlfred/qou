@@ -3,8 +3,12 @@
 title: Formalize a reusable saddle/potential pipeline (triangulation -> potential -> critical value) for QOU and for chipping at unproved knot volumes
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T14:01:39Z
-updated_at: 2026-08-30T14:01:39Z
+updated_at: 2026-10-04T15:19:17Z
+parent: b9cj
 ---
 
 

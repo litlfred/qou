@@ -5,13 +5,14 @@ status: todo
 type: task
 priority: normal
 tags:
+    - infra-blocked
+    - reorg-2026-10-04
     - lean
     - cited-sorry
     - paper-qou
-    - infra-blocked
 created_at: 2026-08-01T23:31:05Z
-updated_at: 2026-08-31T02:53:38Z
-parent: qou-k1mq
+updated_at: 2026-10-04T15:22:43Z
+parent: qou-gdcu
 ---
 
 **File:** `QOU/FluidDynamics/q_ns_wellposedness.lean` (QOU)  ·  1 cited sorry(s)

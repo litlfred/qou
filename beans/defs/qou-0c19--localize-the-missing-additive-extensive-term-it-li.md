@@ -1,11 +1,14 @@
 ---
 # qou-0c19
 title: 'Missing additive extensive term: is the inter-nucleon COLOR-TUBE channel (conj:inter-nucleon-channel-color-tube) its home? The arc-count diagnostic that motivated this is REFUTED — R²=0.83/0.26 are not in the cited witness (true 0.2653/0.0018, its own verdict "weak"), and arc count = A−1 so the fit is degenerate with A. W_{c1c2} now rests on the categorical argument alone. OPEN Q: does color-tube weighting saturate at A=4 giving ρ_4? Conditional on conj:s5-so3-fiber-action.'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T15:55:10Z
-updated_at: 2026-09-07T10:31:24Z
+updated_at: 2026-10-04T15:13:21Z
+parent: qou-10v9
 ---
 
 
@@ -224,3 +227,9 @@ missing additive extensive term lives, and whether the weighting saturates at
 Only the discredited *motivation* has been removed; `W_{c1c2}` now rests on the
 categorical argument alone, which is weaker support but is not a refutation of
 the conjecture.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

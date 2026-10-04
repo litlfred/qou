@@ -3,8 +3,12 @@
 title: Cross-check [jing-liu-2021] at computations/tr_m_q_hecke_seminormal.py
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:24Z
-updated_at: 2026-08-08T23:35:24Z
+updated_at: 2026-10-04T15:18:25Z
+parent: qou-mub3
 ---
 
 jing-liu-2021 is cited only in the .ts cites[] and none of its results is used. Its hook (Thm 2.9) and two-row (Thm 2.11) closed forms give a parameter-free external cross-check of the chi^lambda_q values the block's producer computes, which would make the citation load-bearing instead of decorative.

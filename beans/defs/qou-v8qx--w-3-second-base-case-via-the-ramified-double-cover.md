@@ -4,8 +4,11 @@ title: w_3 second base case via the ramified double cover (adjoin q^1/2, x^1/2) 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T07:00:39Z
-updated_at: 2026-08-29T07:01:57Z
+updated_at: 2026-10-04T15:25:31Z
+parent: qou-frzo
 ---
 
 ## Why this is the one live route (bean qou-1xne, PR #5967)

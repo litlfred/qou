@@ -1,11 +1,14 @@
 ---
 # qou-324i
 title: The `independent` q0 disposition tests override-sensitivity, not q0-independence — 7 false positives
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T20:27:28Z
-updated_at: 2026-09-08T07:45:37Z
+updated_at: 2026-10-04T15:14:07Z
+parent: qou-cdx1
 ---
 
 Found on `qou-1c4y` / PR #5464 while re-measuring after #5457 merged (`238fc79f6e`).
@@ -329,3 +332,9 @@ The 10th, deltalambda/s5so3-geometric-wlambda-a4-helium (NEW, landed in the inte
 CHEAP PRE-FILTER for the systematic sweep: all 3 genuine drains carried the identical copy-paste stamp block — the comment '# no q0 in this producer's cone; stamp provenance only.' + q0_anchor=False. That signature spans 372 producers (grep), MOST legitimately independent (the q0_anchor=False branch exists for the ~196/287 that never reach q0, qou-iph3). It is not a defect list — but it is a cheap first sieve: intersect it with 'producer actually reads q0 / witness carries a load-bearing q0 field' before spending an anchor-diff. The mechanical 372-producer sweep is this bean's single-owner drain; not overlapping it.
 
 ## 2026-09-08: canonical ledger for the q₀-gate family is qou-1c4y (the AGENTS.md-named migration tracker); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 3 / §7.3 C3. Sixteen q₀-gate beans, ~10 % cross-reference density, now all point there.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

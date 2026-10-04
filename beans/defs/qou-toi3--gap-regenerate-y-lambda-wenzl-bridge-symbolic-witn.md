@@ -4,8 +4,11 @@ title: 'GAP: regenerate y-lambda-wenzl-bridge-symbolic-witness under D; 3 consum
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T13:42:48Z
-updated_at: 2026-08-10T13:43:19Z
+updated_at: 2026-10-04T15:20:21Z
+parent: qou-5vkl
 ---
 
 

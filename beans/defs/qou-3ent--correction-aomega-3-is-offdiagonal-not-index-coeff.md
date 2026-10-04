@@ -7,8 +7,10 @@ priority: high
 tags:
     - g3-aomega
     - correction
+    - reorg-2026-10-04
 created_at: 2026-08-11T11:20:00Z
-updated_at: 2026-08-11T11:20:00Z
+updated_at: 2026-10-04T15:14:47Z
+parent: qou-avtq
 ---
 
 Found by the LIT3 sweep of GGM 2012.00062v3. The corpus has been treating the exact dictionary

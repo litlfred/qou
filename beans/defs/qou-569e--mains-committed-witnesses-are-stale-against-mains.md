@@ -1,11 +1,13 @@
 ---
 # qou-569e
 title: main's committed witnesses are stale against main's own import cone (23% value move)
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T13:38:21Z
-updated_at: 2026-08-26T17:21:23Z
+updated_at: 2026-10-04T15:21:25Z
 ---
 
 ## The measurement
@@ -168,3 +170,10 @@ landed on main, and the audits that count them were not re-run in the same PR.
 Whoever drains this should re-run the three audits in an environment that has
 numpy and the matching pyhecke_native build, and check the env block before
 committing.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-7tr2` (work-plan reorganisation 2026-10-04). Evidence: [B] main witnesses stale against import cone - same audit
+Content is untouched; only this work item is closed.

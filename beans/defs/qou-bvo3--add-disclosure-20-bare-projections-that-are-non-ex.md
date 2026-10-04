@@ -7,9 +7,10 @@ priority: normal
 tags:
     - vacuity
     - issue-2472
+    - reorg-2026-10-04
 created_at: 2026-08-10T01:47:54Z
-updated_at: 2026-08-10T01:49:55Z
-parent: qou-5p7n
+updated_at: 2026-10-04T15:16:15Z
+parent: qou-6qbv
 ---
 
 **20 declarations** that project a class field verbatim with no disclosure and no citation — and are **non-exempt**, so they count against the scanner today.

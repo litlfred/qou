@@ -3,8 +3,12 @@
 title: Formalise the eight q-Serre critical-pair resolutions to discharge qSerre_is_gs_basis
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T12:46:45Z
-updated_at: 2026-08-10T12:46:45Z
+updated_at: 2026-10-04T15:19:16Z
+parent: qou-1o8n
 ---
 
 

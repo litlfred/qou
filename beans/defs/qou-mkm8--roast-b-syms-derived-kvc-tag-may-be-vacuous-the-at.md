@@ -1,11 +1,14 @@
 ---
 # qou-mkm8
 title: 'ROAST: B_sym''s DERIVED* KVC tag may be vacuous — the atom closures are NOT hyperbolic'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T05:27:07Z
-updated_at: 2026-08-26T06:44:03Z
+updated_at: 2026-10-04T15:13:49Z
+parent: qou-6qbv
 ---
 
 Surfaced by the owner's question "what is conjecture? can we prove?" -- which
@@ -135,3 +138,9 @@ stated condition, or (b) find/write a block that licenses the log directly.
 **Do not close this by re-citing `vol-through-tau`.**
 
 Audit: `docs/audits/2026-08-26-what-licenses-the-log-not-the-volume-conjecture.md`
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-26 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

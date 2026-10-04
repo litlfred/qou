@@ -1,11 +1,14 @@
 ---
 # qou-wjbd
 title: 'wpdb attempt: prove or refute the word-depth -> partition-depth bridge'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T03:01:15Z
-updated_at: 2026-08-26T03:23:34Z
+updated_at: 2026-10-04T15:14:27Z
+parent: qou-n4nr
 ---
 
 ## 2026-08-26 — attempted the bridge. NOT closed. The obstruction is now sharper, and the last reading is dead.
@@ -161,3 +164,9 @@ was created. All four commits are pushed to
 `claude/isotope-mass-binding-dashboard-kdvhz6` and are safe, but the tranche
 currently has no open PR. Did not reopen or duplicate it: the close looks like a
 deliberate act and re-opening someone else's closed thread is not mine to do.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-26 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

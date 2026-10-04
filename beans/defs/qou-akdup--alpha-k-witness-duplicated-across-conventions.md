@@ -4,8 +4,11 @@ title: alpha-k witnesses duplicated at root and alpha/, in DIFFERENT conventions
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-19T20:30:00Z
-updated_at: 2026-08-23T20:36:59Z
+updated_at: 2026-10-04T15:16:19Z
+parent: qou-5vkl
 ---
 
 `alpha-k-jones-markov-h3.witness.json` and `-h4` exist at **two paths**, and the

@@ -4,9 +4,11 @@ title: Port far-commutativity ([A_a,A_b]=0 for |a-b|>=2) from the sparse He4 Mag
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-08T04:07:55Z
-updated_at: 2026-09-08T06:32:33Z
-parent: qou-9c80
+updated_at: 2026-10-04T15:22:07Z
+parent: qou-v2om
 ---
 
 ## VERIFIED 2026-09-08: triton 14/14, the maximal overlap

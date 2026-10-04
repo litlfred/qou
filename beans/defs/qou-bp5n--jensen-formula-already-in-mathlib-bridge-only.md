@@ -9,9 +9,10 @@ tags:
     - hadamard
     - correction
     - paper-qou
+    - reorg-2026-10-04
 created_at: 2026-08-08T03:30:00Z
-updated_at: 2026-08-08T03:30:00Z
-parent: qou-v4if
+updated_at: 2026-10-04T15:16:44Z
+parent: qou-c8p8
 ---
 
 ## Why this bean exists at all — a correction to my own claim

@@ -1,11 +1,14 @@
 ---
 # qou-ni4b
 title: 'GAP: SU(3) colour action on the QOU three-strand Hecke state space — abstract module exists, framework-native action open'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-31T19:56:30Z
-updated_at: 2026-08-02T17:33:41Z
+updated_at: 2026-10-04T15:13:00Z
+parent: qou-8lxd
 ---
 
 2026-08-02 sharpened status.
@@ -17,3 +20,9 @@ This is now strictly the framework-native colour-action gap.
 - Required strengthening for real closure: the action should target the QOU three-strand state space and be compatible with its Hecke / braid structure.
 
 Keep this bean separate from qou-d7h1: colour SU(3) acts on the underlying strand state space; flavor SU(3) organizes hadron multiplets.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-02 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

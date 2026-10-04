@@ -5,11 +5,12 @@ status: todo
 type: task
 priority: normal
 tags:
-    - lean
     - gap
+    - reorg-2026-10-04
+    - lean
 created_at: 2026-09-03T09:08:30Z
-updated_at: 2026-09-03T09:38:55Z
-parent: qou-ggdk
+updated_at: 2026-10-04T15:19:42Z
+parent: qou-3l2l
 ---
 
 Class B gap (SM-surface Lean sweep, bean qou-08zf, 2026-09-03). predicted-spectra/em-coupling-chern-simons.lean now states the .md's LIVE formula 1/α = q[9]_q[10]_q (1 + δ_CS/(1 − δ_CS κ)), with csGramClassical the explicit 2×2 Chern–Simons pairing of the .md, κ = det csGramClassical / det G_q, and G_q a PARAMETER of the conjecture class ChernSimonsCorrectionConjecture (fields gram_nondegenerate, tower_convergent, identity). No instance. gramDetRatio_congr proves basis-independence of κ; alphaInv_eq_bare_mul_tower derives the full-tower form conditionally. Previously the Lean formalised the superseded gluon-octet form with κ := 8q and a CODATA literal as the class content (bean qou-aemx).

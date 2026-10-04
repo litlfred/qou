@@ -8,7 +8,8 @@ tags:
     - keystone-infra
     - lean
 created_at: 2026-06-25T17:06:53Z
-updated_at: 2026-09-04T07:40:02Z
+updated_at: 2026-10-04T15:10:10Z
+parent: qou-rtxm
 ---
 
 Make the still-abstracted keystone §3b classes (post #2791/#2797) genuinely faithful. Corpus-grep (2026-06-25) found QOU already has substantial Lean infra (IwahoriHecke/*, MathlibExt/Q*, BraidKnot/Cl3Zeta5OrbitSum, BringTrilog*, BraidLinkTypes, ζ5/Goncharov), so most work is WIRING keystones to existing infra; only geometric-Langlands / motivic-Galois / Jones-polynomial are genuinely research-grade. Cached Mathlib: YoungDiagram, PresentedGroup, RootsOfUnity+IsPrimitiveRoot, Complex.Circle, Nat.Choose.
@@ -71,3 +72,9 @@ only matches are backticked prose and the string "sorry-free").
 **closed**. Left `in-progress` because the epic covers further tiers — the
 genuinely research-grade items (geometric-Langlands, motivic-Galois,
 Jones-polynomial) named in the header are untouched by this.
+
+
+
+## Reorganisation 2026-10-04
+
+Now the epic for P3.GAP under Lean / Mathlib foundations.

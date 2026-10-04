@@ -4,8 +4,11 @@ title: 64 COMPUTED assertion tolerances are still raw float64 — a producer fix
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-28T19:42:44Z
-updated_at: 2026-08-28T19:43:06Z
+updated_at: 2026-10-04T15:16:07Z
+parent: qou-9nnz
 ---
 
 Left open deliberately by PR #5910, which drained the other 1232.

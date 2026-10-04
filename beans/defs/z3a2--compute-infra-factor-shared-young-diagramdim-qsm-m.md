@@ -4,8 +4,11 @@ title: 'Compute infra: factor shared Young-diagram/dim_q/S(m) machinery into reu
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-06-28T06:54:32Z
-updated_at: 2026-06-28T23:55:00Z
+updated_at: 2026-10-04T15:18:00Z
+parent: qou-5vkl
 ---
 
 

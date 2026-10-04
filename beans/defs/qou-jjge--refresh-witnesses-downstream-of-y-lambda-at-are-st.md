@@ -4,8 +4,11 @@ title: 'REFRESH: witnesses downstream of y_lambda_at are stale in their last ~20
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T12:50:17Z
-updated_at: 2026-08-24T12:50:52Z
+updated_at: 2026-10-04T15:23:19Z
+parent: qou-5vkl
 ---
 
 Opened by PR #5641, which raised the `y_lambda_at` output cap from 30 to 50

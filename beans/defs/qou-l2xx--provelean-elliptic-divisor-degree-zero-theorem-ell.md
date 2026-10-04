@@ -1,15 +1,17 @@
 ---
 # qou-l2xx
 title: 'PROVE(lean): elliptic_divisor_degree_zero — theorem elliptic_divisor_degree_zero {f : ℂ → ℂ} {ω₁ ω₂ : ℂ} (hf : IsElliptic f ω₁ ω₂) (hi [cited manuscript]'
-status: todo
+status: completed
 type: task
+priority: normal
 tags:
     - lean
     - cited-sorry
     - paper-qou
     - infra-blocked
+    - reorg-2026-10-04
 created_at: 2026-08-01T23:31:06Z
-updated_at: 2026-08-31T02:53:38Z
+updated_at: 2026-10-04T15:22:26Z
 parent: qou-k1mq
 ---
 
@@ -30,3 +32,9 @@ theory is genuinely absent from Mathlib and is genuinely required. Kept as-is.
 
 Recorded because the same verdict was WRONG on several siblings; "confirmed" here means checked,
 not merely un-revisited.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] elliptic_divisor_degree_zero theorem uncond, file 0 sorry

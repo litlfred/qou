@@ -1,15 +1,17 @@
 ---
 # qou-ty08
 title: 'PROVE(lean): instance:archimedean_agreement — noncomputable instance : archimedean_agreement  [cited manuscript]'
-status: todo
+status: scrapped
 type: task
+priority: normal
 tags:
     - lean
     - cited-sorry
     - paper-qou
     - infra-blocked
+    - reorg-2026-10-04
 created_at: 2026-08-01T23:31:02Z
-updated_at: 2026-08-01T23:31:02Z
+updated_at: 2026-10-04T15:22:30Z
 parent: qou-k1mq
 ---
 
@@ -22,3 +24,10 @@ parent: qou-k1mq
   - [manuscript] quantum-observable-universe/braids-and-knots/gs-archimedean-agreement-trace.ts
 - **Tractability:** §3b conjecture-instance: Habiro residue-sum = archimedean value; compute-backed, open.
 - **Next step:** This sorry IS the open QOU conjecture (§3b instance). No proof attempt — it is the honest open marker. Close only by a genuine derivation, never a fabricated instance.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-r3vt` (work-plan reorganisation 2026-10-04). Evidence: [M] identical title PROVE(lean) instance:archimedean_agreement, both todo under qou-k1mq
+Content is untouched; only this work item is closed.

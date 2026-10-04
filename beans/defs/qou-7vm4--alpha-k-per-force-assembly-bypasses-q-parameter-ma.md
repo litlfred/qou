@@ -1,11 +1,15 @@
 ---
 # qou-7vm4
 title: 'alpha_k_per_force_assembly bypasses q_parameter: manifest says ideal_muon, code imports q_at directly (proton), and the except-fallback silently picks muon if the import fails'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-08-11T10:31:47Z
-updated_at: 2026-09-08T04:00:00Z
+updated_at: 2026-10-04T15:11:51Z
+parent: qou-2002
 ---
 
 
@@ -184,3 +188,9 @@ self-contradiction. It is decidable without judgement — the discriminator is
 the bean asserting *its own* openness, not merely mentioning something open.
 
 Re-close it when the work its body names is actually done.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

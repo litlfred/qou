@@ -4,8 +4,11 @@ title: 'DEFECT: Hecke/Wedderburn.trace_decomposition is SELF-ASSUMING -- tr_M = 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T18:03:43Z
-updated_at: 2026-08-30T07:53:19Z
+updated_at: 2026-10-04T15:18:39Z
+parent: qou-59vq
 ---
 
 

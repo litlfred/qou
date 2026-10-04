@@ -1,11 +1,14 @@
 ---
 # qou-i0sr
 title: 'GAP WALL-3 lower bound: dH(z-axis) ≥ |log(b/a)| (FTC lower bound)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T13:02:37Z
-updated_at: 2026-08-16T14:01:26Z
+updated_at: 2026-10-04T15:12:42Z
+parent: qou-c8p8
 ---
 
 T2 geodesic-uniqueness, WALL-3 LOWER bound. UPPER bound + existence LANDED
@@ -55,3 +58,9 @@ z-axis points (heights a, b). Added to HyperbolicGeodesicZAxis.lean:
   dH_zpt             : dH (zpt a) (zpt b) = ofReal|log(b/a)|   (EXACT, with dH_zpt_le)
   pathLenH_vseg_eq_dH: the vertical segment is a genuine z-axis length-minimiser.
 #print axioms = [propext, Classical.choice, Quot.sound]. Pending merge; human closes.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -1,11 +1,14 @@
 ---
 # qou-qexu
 title: 'q-RH: QExplicitFormula is uninhabitable — proved for empty spectrum, general case open'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T06:30:00Z
-updated_at: 2026-09-08T04:00:00Z
+updated_at: 2026-10-04T15:11:05Z
+parent: qou-4fqg
 ---
 
 `QExplicitFormula` (`q-geometric-langlands/explicit-formula.lean`) formalises
@@ -150,3 +153,9 @@ self-contradiction. It is decidable without judgement — the discriminator is
 the bean asserting *its own* openness, not merely mentioning something open.
 
 Re-close it when the work its body names is actually done.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

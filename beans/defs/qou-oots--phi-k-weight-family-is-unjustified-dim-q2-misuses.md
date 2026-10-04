@@ -1,11 +1,14 @@
 ---
 # qou-oots
 title: 'Phi_k weight family is unjustified: dim_q^2 misuses a quantum dimension where f^lambda*dim_q (Molien, Lean-proved exactly normalized) or y_lambda (Markov, canonical Frobenius pairing) may belong'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T05:55:40Z
-updated_at: 2026-09-08T07:40:03Z
+updated_at: 2026-10-04T15:13:29Z
+parent: qou-3l2l
 ---
 
 ## 2026-09-05 — requirement derivation + prune + discriminator (in-progress; the CHOICE is open, the PRUNE is not)
@@ -671,3 +674,9 @@ are still live; §7 route 2 (a same-`n`, within-stratum observable) is the
 nearest actionable one.
 
 ## 2026-09-08 — re-affirmed by the owner (chat): Molien. The 2026-09-05 ruling stands; the agent's audit docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §7.1 D2 wrongly listed the choice as open and is corrected on the same branch. Remaining in-progress scope is the α_EM-axis triage (PR #6840), not the choice.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

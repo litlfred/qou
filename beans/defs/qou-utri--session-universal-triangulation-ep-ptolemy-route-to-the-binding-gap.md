@@ -1,11 +1,13 @@
 ---
 # qou-utri
 title: 'Session: universal triangulation — EP/Ptolemy route to the binding gap'
-status: in-progress
-type: epic
+status: completed
+type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T10:55:26Z
-updated_at: 2026-09-06T10:55:26Z
+updated_at: 2026-10-04T15:10:42Z
 ---
 
 Owner brought a dialog proposing: Epstein–Penner canonical decomposition as the
@@ -19,3 +21,9 @@ Bridgeland stability chamber. Asked: (a) does it reach the binding gap,
 Children: qou-ptgd (categorical prune), qou-eptr (the actual binding-gap aim),
 qou-plck (Planck / CAL-4), qou-unob (universal object, C_chi terminal).
 Nothing derived, nothing wired, no number moves until owner picks a route.
+
+
+
+## Summary of Changes
+
+Session log closed 2026-10-04 (owner decision 2): open children were reparented to programme epics and prose follow-ups extracted as their own beans. Kept as a record, not deleted.

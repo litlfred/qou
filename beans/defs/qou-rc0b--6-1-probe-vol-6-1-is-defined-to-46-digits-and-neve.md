@@ -4,8 +4,11 @@ title: '6_1 probe: VOL_6_1 is defined to 46 digits and never read — the strong
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T20:52:43Z
-updated_at: 2026-08-21T20:53:18Z
+updated_at: 2026-10-04T15:16:07Z
+parent: qou-trd0
 ---
 
 Found while fixing a LOSSY module-const in that file during prepare-merge on

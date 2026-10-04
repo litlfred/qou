@@ -4,8 +4,11 @@ title: 'GAP: d_from_scratch emits 3 raw float64 fields — latent, newly visible
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T14:43:39Z
-updated_at: 2026-08-30T14:44:17Z
+updated_at: 2026-10-04T15:19:53Z
+parent: qou-9nnz
 ---
 
 `computations/d_from_scratch.py` **could not run at all** on a clean tree — it

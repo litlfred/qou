@@ -1,11 +1,13 @@
 ---
 # qou-212w
 title: 'T1: q-adic order of the n=4 interleaving cross term z(z^2-hz-1) at convention D — exact in Q(q), no float'
-status: in-progress
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T20:20:46Z
-updated_at: 2026-09-06T03:19:31Z
+updated_at: 2026-10-04T15:14:03Z
 parent: qou-2akx
 ---
 
@@ -20,3 +22,9 @@ Habiro half: normalised traces have a triple pole at Φ4 (the tr(1)=1 normalisat
 CONSEQUENCE (judgement): route B's claim on b3 WEAKENED per the test's own criterion; routes A, C move up. Scope (a): one word pair, convention D. Doc §7c.
 
 Pushed 533a5fbf22; draft PR #6891, issue #6890.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: 0d7261f40f "T1 answered NO — n=4 cross term has q-adic order zero"; d5a482710d; previously stalled (last activity 2026-09-06); 2 main commits

@@ -4,8 +4,11 @@ title: The carrier table straddles TWO disagreeing chi sources — A<=4 reads a 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T11:14:56Z
-updated_at: 2026-09-11T15:14:22Z
+updated_at: 2026-10-04T15:24:52Z
+parent: qou-5vkl
 ---
 
 ## The question this answers

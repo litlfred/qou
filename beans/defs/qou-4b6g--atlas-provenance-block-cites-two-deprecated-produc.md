@@ -4,8 +4,11 @@ title: Atlas provenance block cites two deprecated producers; 'no entry is maint
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T22:10:29Z
-updated_at: 2026-08-25T22:11:06Z
+updated_at: 2026-10-04T15:16:23Z
+parent: qou-mub3
 ---
 
 MEASURED 2026-08-25, bean qou-qpj9's arc.

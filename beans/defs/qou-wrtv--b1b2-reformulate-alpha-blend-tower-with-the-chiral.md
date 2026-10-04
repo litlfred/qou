@@ -4,8 +4,11 @@ title: 'B1/B2: reformulate alpha_blend_tower with the chirality term H_A^2 Phi_3
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T00:31:29Z
-updated_at: 2026-08-25T00:41:13Z
+updated_at: 2026-10-04T15:16:32Z
+parent: qou-3l2l
 ---
 
 IMPLEMENTED (B1) AND MEASURED. The chirality term is real, exact, and does NOT

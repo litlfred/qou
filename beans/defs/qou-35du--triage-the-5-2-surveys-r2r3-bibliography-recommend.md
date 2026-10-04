@@ -3,8 +3,12 @@
 title: 'Triage: the 5_2 survey''s R2/R3 bibliography recommendations are much weaker than presented — corpus-grepped'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-18T21:47:15Z
-updated_at: 2026-08-18T21:47:15Z
+updated_at: 2026-10-04T15:25:12Z
+parent: qou-mub3
 ---
 
 

@@ -4,8 +4,11 @@ title: 'Vacuity ledger: 44 of 149 genuine verdicts are stale and 4 name files th
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-12T11:55:14Z
-updated_at: 2026-09-12T11:55:55Z
+updated_at: 2026-10-04T15:25:25Z
+parent: qou-6qbv
 ---
 
 ## The measurement (2026-09-12)

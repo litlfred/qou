@@ -3,12 +3,14 @@
 title: 'Cite [morita2012b] at QOU/MathlibExt/QBorelKernel.lean — Thm 1/Cor 1: first-kind q-Borel–Laplace of a bilateral series yields a q-elliptic theta-quotient connection coefficient (qou-wgnx route (a) precedent)'
 status: todo
 type: task
+priority: normal
 tags:
     - paper-relevance-triage
     - qdiff-stokes
+    - reorg-2026-10-04
 created_at: 2026-09-07T08:36:12Z
-updated_at: 2026-09-07T08:36:12Z
-parent: qou-2akx
+updated_at: 2026-10-04T15:17:44Z
+parent: qou-1qhv
 ---
 
 Source: library/arxiv-1205.1453v2/1205.1453v2.pdf -> [morita2012b] (Morita, asymptotic formula of the divergent bilateral 1ψ0). Relevance: **supporting** — agent assessment, not yet adjudicated. Raised by local/paper-relevance-triage 2026-09-07. One bean for the document's actions.

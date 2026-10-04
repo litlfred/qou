@@ -4,8 +4,11 @@ title: 'GAP: wlambda probe records qplancherel_sum_dq2_eq_qfact=False and has re
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T14:34:13Z
-updated_at: 2026-08-30T14:34:31Z
+updated_at: 2026-10-04T15:20:34Z
+parent: qou-cdx1
 ---
 
 Surfaced while draining `qou-srvu` slice E (subdirectory witnesses).

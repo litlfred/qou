@@ -4,8 +4,11 @@ title: alpha_5_lp_dual_crystal exceeds a 7-min budget and lacks the required pro
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T08:55:10Z
-updated_at: 2026-08-24T18:04:24Z
+updated_at: 2026-10-04T15:16:20Z
+parent: qou-5vkl
 ---
 
 Surfaced by the #5519 staleness sweep. `computations/alpha/alpha_5_lp_dual_crystal.py`

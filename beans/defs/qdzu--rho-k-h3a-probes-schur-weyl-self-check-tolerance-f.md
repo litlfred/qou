@@ -1,11 +1,14 @@
 ---
 # qdzu
 title: 'rho_k_h3a probes: Schur-Weyl self-check tolerance floor (~1e-8) + crystal WRONG_SIGN'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-05T11:51:01Z
-updated_at: 2026-08-16T21:25:03Z
+updated_at: 2026-10-04T15:13:49Z
+parent: qou-59vq
 ---
 
 
@@ -83,3 +86,9 @@ The 2% remainder is now bean qou-tzsp.
 Separately: the committed `rho-k-h3a-refinement.witness.json` was ALSO carrying
 colour-blind chi (ctype "averaged", abs_tr_M 0.388... vs the colour-weighted
 0.575172329...) and has been refreshed on that PR.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

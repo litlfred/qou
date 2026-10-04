@@ -4,8 +4,11 @@ title: Remark interpreting 2111.04763v2.pdf at QOU.QBeta.StokesQZeroDTCount
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:49Z
-updated_at: 2026-08-21T17:04:42Z
+updated_at: 2026-10-04T15:23:37Z
+parent: qou-aqfj
 ---
 
 Fourteen QBeta Lean sites cite equations and theorems of arXiv:2012.00062 under the key garoufalidis-gu-marino2021, while references.ts registers that arXiv item under garoufalidis-gu-marino2023peacock. Re-key those sites so the Stokes-constant locators point at the paper that actually contains them.

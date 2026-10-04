@@ -4,8 +4,11 @@ title: 'GAP: assembly_chain_11_letter_recompute_probe red on main (3/7) — LIVE
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-12T20:23:33Z
-updated_at: 2026-09-12T20:24:08Z
+updated_at: 2026-10-04T15:19:44Z
+parent: qou-trd0
 ---
 
 Found as a by-product of qou-ales step 10 (PR #7233), while cross-checking the single-nucleon H_3 Markov trace against the exact H_6 two-nucleon computation. NOT caused by that branch and NOT a machinery regression.

@@ -1,11 +1,13 @@
 ---
 # qou-o00s
 title: 'Session: ch1+ch2 audit, ribbon fix, merge, downstream mass/binding analysis'
-status: in-progress
-type: epic
+status: completed
+type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-17T01:45:48Z
-updated_at: 2026-08-17T17:40:30Z
+updated_at: 2026-10-04T15:11:24Z
 ---
 
 ## 2026-08-17 — status corrected after eight check-in passes reported "nothing changed"
@@ -35,3 +37,9 @@ past it while quoting it.
 "beans-only, no Lean changed" after Lean had landed (fixed on pass seven).
 Twice now the stale artifact was *mine*, found only once I started checking my
 own outputs rather than watching for someone else's.
+
+
+
+## Summary of Changes
+
+Session log closed 2026-10-04 (owner decision 2): open children were reparented to programme epics and prose follow-ups extracted as their own beans. Kept as a record, not deleted.

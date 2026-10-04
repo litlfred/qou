@@ -4,8 +4,12 @@ title: 'FALSE THEOREM on main: c_equals_bar_on_one_dim_eigenvalue_neg_q_inv is f
 status: todo
 type: task
 priority: normal
+tags:
+    - needs-owner
+    - reorg-2026-10-04
 created_at: 2026-08-21T21:24:54Z
-updated_at: 2026-08-21T21:25:39Z
+updated_at: 2026-10-04T15:19:07Z
+parent: qou-6qbv
 ---
 
 Found while draining the small-category vacuity tranche (qou-h3ly) in PR #5408 — NOT one of the 22 ledger defects; a separate, worse problem in the same file.

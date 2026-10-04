@@ -1,11 +1,13 @@
 ---
 # qou-tonv
 title: 'Session: l2-1ppq-gaps — cohesive research-program audit (mass, binding, Q_beta, open conjectures)'
-status: in-progress
-type: epic
+status: completed
+type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-08T04:14:07Z
-updated_at: 2026-09-08T08:55:40Z
+updated_at: 2026-10-04T15:11:28Z
 ---
 
 Claimed by branch claude/l2-1-ppq-gaps-c9zuwt (2026-09-08).
@@ -15,3 +17,9 @@ Claimed by branch claude/l2-1-ppq-gaps-c9zuwt (2026-09-08).
 ## 2026-09-08 owner response to the audit's option list: all four selected (ε := augmentation; Molien re-affirmed; coordination repairs C1–C7 authorised; R2 signs-first) plus the ruling recorded in bean qou-ales (γγ + SDP word selection, no census).
 
 2026-09-08 (later): owner ruled ε := z_D after the D7 tension was surfaced (13bb8243d8); recorded everywhere the augmentation had been written.
+
+
+
+## Summary of Changes
+
+Session log closed 2026-10-04 (owner decision 2): open children were reparented to programme epics and prose follow-ups extracted as their own beans. Kept as a record, not deleted.

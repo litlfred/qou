@@ -7,8 +7,10 @@ priority: low
 tags:
     - compute-wiring
     - blocked-domain
+    - reorg-2026-10-04
 created_at: 2026-07-06T04:31:27Z
-updated_at: 2026-07-06T04:31:27Z
+updated_at: 2026-10-04T15:25:55Z
+parent: b9cj
 ---
 
 Blocked: needs q-Hodge-star -> classical Hodge-star reduction + Frobenius pairing -> SU(2) Killing form -> explicit K_FH kernel (q->1 gives 1/r^2). Lean is honest sorry+[manuscript]; no computations/ script. No faithful probe possible without inventing the kernel. Do NOT fabricate.

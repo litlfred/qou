@@ -4,9 +4,11 @@ title: The paper mathlib olean tree is ~1678 modules short of the root tree, so 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-08T04:07:55Z
-updated_at: 2026-09-08T07:54:11Z
-parent: qou-9c80
+updated_at: 2026-10-04T15:24:58Z
+parent: qou-5vkl
 ---
 
 ## Independent confirmation, and the one thing the union does not cover (2026-09-08, bean `qou-ei4q`)

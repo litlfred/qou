@@ -1,11 +1,14 @@
 ---
 # qou-q0rf
 title: The q0-anchor refill ratchet is RED on main (NEW 147) — and the arrival rate, not the backlog, is the thing to fix
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-03T04:40:00Z
-updated_at: 2026-09-08T07:45:39Z
+updated_at: 2026-10-04T15:11:11Z
+parent: qou-cdx1
 ---
 
 `scripts/precision-gates.sh` has a **blocking** gate red on `main`. Nothing
@@ -156,3 +159,9 @@ blocking on the strength of it.** The remaining work is the backlog, which this
 bean already says not to drain.
 
 ## 2026-09-08: canonical ledger for the q₀-gate family is qou-1c4y (the AGENTS.md-named migration tracker); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 3 / §7.3 C3. Sixteen q₀-gate beans, ~10 % cross-reference density, now all point there.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -1,11 +1,14 @@
 ---
 # qou-m7py
 title: 'D2: Rust gram.rs TR_M[5]=z^3 bug is load-bearing under convention D'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-14T16:21:57Z
-updated_at: 2026-08-14T21:56:37Z
+updated_at: 2026-10-04T15:12:16Z
+parent: qou-cdx1
 ---
 
 ## The coupling
@@ -281,3 +284,9 @@ Do not describe all five as "broken by the z³ bug" — only the first is.
 2. Migrate consumers to the quotient inverse under a NEW key.
 3. Rebuild `pyhecke_native`; only then drop the `_native_ok()` guard.
 4. **[OWNER/tnjb]** regenerate the 53 certificates.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-14 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -1,11 +1,14 @@
 ---
 # qou-kwoa
 title: 'Lean/Mathlib-scale: Hecke character theory for det(twGram) at rank >= 2 (Geck-Pfeiffer 7.2.6)'
-status: in-progress
+status: completed
 type: task
 priority: normal
+tags:
+    - verify-build
+    - reorg-2026-10-04
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-05T20:24:35Z
+updated_at: 2026-10-04T15:30:48Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -1005,3 +1008,15 @@ for general `n`.
 for all `n` — now a precise target rather than an ill-posed one; (iii) Tits
 deformation for the converse direction. `SchurElementCriterion` keeps no
 instance.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] HeckeSemisimpleGeneral.lean "Bean qou-kwoa" general-n semisimplicity sorry-free; PR #7136 (Geck-Pfeiffer route) becomes optional story | previously stalled; last update 2026-09-05
+
+
+
+## Verify by build (2026-10-04)
+
+Closed on 'sorry-free on main' evidence, but the cited declaration could not be matched automatically to a file that a CI Lake target is known to compile (orphan census 2026-10-04: only 654 of 1,309 lean.refs resolve into the compiled library; ugb and fred2005 are separate required packages). Confirm with a build and `#print axioms`; reopen if it does not compile.

@@ -4,8 +4,11 @@ title: 'GAP: ground_state_ordering_argmin_sweep fails its own cross-check at 28%
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T11:05:30Z
-updated_at: 2026-08-24T11:06:09Z
+updated_at: 2026-10-04T15:20:03Z
+parent: qou-trd0
 ---
 
 Found at BASELINE while converting `hecke_core_symbolic` to convention D

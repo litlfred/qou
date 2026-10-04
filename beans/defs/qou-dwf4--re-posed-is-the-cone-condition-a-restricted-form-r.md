@@ -1,11 +1,14 @@
 ---
 # qou-dwf4
 title: 'Re-posed: is the cone condition a RESTRICTED-form relation in the 8x8 entries?'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-31T03:18:55Z
-updated_at: 2026-09-04T10:44:38Z
+updated_at: 2026-10-04T15:13:44Z
+parent: qou-v2om
 ---
 
 SUCCESSOR to qou-ahu3 question (b), which was VACUOUS as posed.
@@ -465,3 +468,9 @@ Corpus-grep for 'push the sl2 family into the mass channel' found it proved, sor
 
 ## 2026-09-04 — y_eq_self_conjugate DROPPED (owner ruling A)
 The line above ('is a Lean CLASS FIELD — assumed, not proved — so nothing…') is now historical: the field and its projection theorem were removed from wedderburn-weight-canonical.lean on the owner's ruling (branch claude/drop-y-eq-self-conjugate-2026-09-04). Nothing here depended on it.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

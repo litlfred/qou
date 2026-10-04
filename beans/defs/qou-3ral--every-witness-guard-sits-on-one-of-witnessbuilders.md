@@ -1,10 +1,14 @@
 ---
 # qou-3ral
 title: 'Every witness guard sits on ONE of WitnessBuilder''s two write paths: save(extra) validates nothing, and 124 producers use only that route'
-status: in-progress
+status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T21:23:12Z
-updated_at: 2026-09-04T22:40:00Z
+updated_at: 2026-10-04T15:12:30Z
+parent: qou-5vkl
 ---
 
 
@@ -249,3 +253,9 @@ witness; migrating the 23 onto `wrap_legacy` (which exists for exactly this and
 is what `codata_corpus_literal_scan.py` already does); or leaving it, since it
 is clean and the audit already catches the *output* CI-failingly. Left for now
 because none of the three is this branch's scope and the last is defensible.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

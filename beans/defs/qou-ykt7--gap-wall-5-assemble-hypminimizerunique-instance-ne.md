@@ -4,8 +4,11 @@ title: 'GAP WALL-5: assemble HypMinimizerUnique instance (needs WALL-2 + WALL-4)
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T13:03:26Z
-updated_at: 2026-08-16T14:01:54Z
+updated_at: 2026-10-04T15:19:33Z
+parent: qou-c8p8
 ---
 
 T2 geodesic-uniqueness, WALL-5 — the capstone. Produce the REAL instance

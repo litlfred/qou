@@ -4,8 +4,11 @@ title: 'GAP-row sentinel scoring: audit other producers for the 0.0-means-no-pre
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-19T13:31:33Z
-updated_at: 2026-08-19T13:32:04Z
+updated_at: 2026-10-04T15:19:35Z
+parent: qou-5vkl
 ---
 
 Found in `mass_table_ppb.py` (fixed, commit 863a5aee91): rows with no

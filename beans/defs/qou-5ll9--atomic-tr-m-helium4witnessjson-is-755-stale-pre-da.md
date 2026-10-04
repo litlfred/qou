@@ -4,8 +4,11 @@ title: atomic-tr-m-helium4.witness.json is 7.55% stale — pre-dates the C→D e
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T06:25:32Z
-updated_at: 2026-08-30T06:36:30Z
+updated_at: 2026-10-04T15:16:24Z
+parent: qou-5vkl
 ---
 
 Found while finishing the pin-straddle fix in `atomic_tr_m_helium4.py`

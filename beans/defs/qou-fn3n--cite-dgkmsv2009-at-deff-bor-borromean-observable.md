@@ -3,8 +3,12 @@
 title: Cite [dgkmsv2009] at def:f-bor-borromean-observable
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:58Z
-updated_at: 2026-08-08T23:34:58Z
+updated_at: 2026-10-04T15:17:28Z
+parent: qou-1qhv
 ---
 
 The Borromean observable block asserts the pairwise-trivial-but-globally-linked character of B_3 without a source; this is the standard reference for it and is already registered but cited nowhere.

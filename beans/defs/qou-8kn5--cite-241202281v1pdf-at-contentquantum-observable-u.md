@@ -4,8 +4,11 @@ title: Cite 2412.02281v1.pdf at content/quantum-observable-universe/lean/QOU/QBe
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:18Z
-updated_at: 2026-08-21T17:04:47Z
+updated_at: 2026-10-04T15:17:19Z
+parent: qou-19m0
 ---
 
 Once registered, cite at the connection-matrix Lean file, whose only current analytic reference the corpus has itself recorded as inapplicable to a single-slope module.

@@ -1,11 +1,14 @@
 ---
 # qou-jplv
 title: 'V3 (hard): positive-factor branch-point Riemann sum (k<=k*) -> Li2(x)-pi^2/6 for q>1 partition u:1->1/x hitting branch point x=1; adapt DilogPartAConvergence h(u) machinery (integral_zero_one_eq_LiTwo, riemann_error_bound, tail_bound) to the u>1 side with integrable log singularity'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-25T03:17:08Z
-updated_at: 2026-07-25T11:29:12Z
+updated_at: 2026-10-04T15:14:18Z
+parent: qou-r9ih
 ---
 
 
@@ -148,3 +151,9 @@ UNCONDITIONALLY. Chain: sqrt_fract_badlyApproximable ({k√D}≥c₀/k) ⇒ quad
 STATUS: quadratic-surd sub-class of Subgoal is CLOSED unconditionally in Lean.
 The general-x UNIFORM Diophantine statement (all x, all scalings) remains open.
 10 dilog theorems + 2 MathlibExt, all sorry-free.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-07-25 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

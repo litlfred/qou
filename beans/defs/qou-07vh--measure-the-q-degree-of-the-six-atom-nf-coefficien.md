@@ -1,11 +1,14 @@
 ---
 # qou-07vh
 title: Measure the q-degree of the six atom NF coefficients vs A
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T18:08:19Z
-updated_at: 2026-08-30T18:33:42Z
+updated_at: 2026-10-04T15:13:19Z
+parent: qou-v2om
 ---
 
 ## What is being measured (PR #6304, branch `claude/nf-q-degree-2026-08-30`)
@@ -139,3 +142,9 @@ no pair bonds, a scope label the PR does not currently carry.
    factor, so a control-flow transcription error surfaces where it happens
    rather than being masked by later cancellation — which matters precisely
    because cancellation is what the Z=0 line is made of.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

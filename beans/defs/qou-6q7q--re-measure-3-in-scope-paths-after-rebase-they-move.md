@@ -4,8 +4,11 @@ title: 'Re-measure 3 in-scope paths after rebase: they moved on main while the s
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T13:37:53Z
-updated_at: 2026-08-24T18:24:26Z
+updated_at: 2026-10-04T15:23:13Z
+parent: qou-trd0
 ---
 
 ## The claim that needs qualifying

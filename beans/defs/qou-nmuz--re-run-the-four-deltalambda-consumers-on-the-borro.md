@@ -4,9 +4,11 @@ title: 'Re-run the four deltalambda/ consumers on the borromean-word χ caches r
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-08T07:51:53Z
-updated_at: 2026-09-08T08:11:58Z
-parent: qou-vyvt
+updated_at: 2026-10-04T15:23:14Z
+parent: qou-v2om
 ---
 
 Mechanical follow-up to #7160 (qou-s7ld/qou-zunl). Five matrix-m caches (D/T/³He/⁵Li/⁶Li) moved from the pre-2026-09-05 GROUPED word to the BORROMEAN word; absolute per-λ χ and tr_M moved (D tr_M 2.1754 → 1.4547). These four producers read those caches and their witnesses are stale. Re-run each with tee logging, diff witness payloads vs origin/main (mask volatile keys), and state per producer: which numeric conclusions moved, which verdicts flipped, and whether any content block / audit doc quotes the old number (grep). Do NOT re-run other producers. Precision gates --changed before commit.

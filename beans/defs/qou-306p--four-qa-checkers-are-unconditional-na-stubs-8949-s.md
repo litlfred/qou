@@ -4,9 +4,11 @@ title: Four QA checkers are unconditional n/a stubs — 8949 sidecar entries wit
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-27T10:33:43Z
-updated_at: 2026-09-27T11:01:35Z
-parent: qou-2z9j
+updated_at: 2026-10-04T15:19:21Z
+parent: qou-5vkl
 ---
 
 Measured 2026-09-27 on `main`-derived branch + platform pin `37a36ce`.

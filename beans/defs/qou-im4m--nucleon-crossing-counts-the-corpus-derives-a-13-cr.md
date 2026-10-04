@@ -1,11 +1,14 @@
 ---
 # qou-im4m
 title: 'Nucleon crossing counts: the corpus derives a 13-crossing neutron, hecke_core implements 11'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T01:37:42Z
-updated_at: 2026-08-29T01:38:24Z
+updated_at: 2026-10-04T15:13:23Z
+parent: qou-v2om
 ---
 
 ## Measured (scope-(a)), `qbeta_nucleon_crossing_count_contradiction_probe.py`, 7/7
@@ -61,3 +64,9 @@ Whether the neutron should carry 13 crossings or 11 moves every number
 Measurement note worth keeping: the stored shifts are full-precision `mpf`.
 A first pass compared them via `str(d)`, which round-trips through a 17-digit
 repr and put all 22 crossings in "other". Compare the `mpf` directly.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-29 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

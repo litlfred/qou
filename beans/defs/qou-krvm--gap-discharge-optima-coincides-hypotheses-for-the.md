@@ -4,8 +4,11 @@ title: 'GAP: discharge optima_coincide''s hypotheses for the actual m004/L6a4 po
 status: in-progress
 type: feature
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T17:10:13Z
-updated_at: 2026-09-26T11:07:04Z
+updated_at: 2026-10-04T15:10:46Z
+parent: qou-r9ih
 ---
 
 THE GAP BETWEEN THE GENERAL THEOREM AND THE SPECIFIC MEASUREMENT.

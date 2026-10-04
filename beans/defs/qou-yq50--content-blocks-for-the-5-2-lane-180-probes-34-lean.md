@@ -3,8 +3,12 @@
 title: 'Content blocks for the 5_2 lane: ~180 probes + 34 Lean files have no narrative face in the paper'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-19T07:22:26Z
-updated_at: 2026-08-19T07:22:26Z
+updated_at: 2026-10-04T15:18:07Z
+parent: b9cj
 ---
 
 

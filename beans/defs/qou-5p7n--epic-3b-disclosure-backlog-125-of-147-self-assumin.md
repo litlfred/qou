@@ -9,7 +9,8 @@ tags:
     - vacuity
     - issue-2472
 created_at: 2026-08-10T01:47:52Z
-updated_at: 2026-08-10T01:49:54Z
+updated_at: 2026-10-04T15:10:05Z
+parent: b9cj
 ---
 
 The scanner's §3b placeholder exemption is justified by a stated premise: that these docstrings *"honestly state the content is carried by the context-class axioms with derivation pending"*. PR #4882 codified the honest-placeholder criterion and measured that premise against the 52 §3b-exempt declarations — it failed for 28 of them (54%).
@@ -28,3 +29,9 @@ So **125 of 147 (85%)** carry no disclosure. Split into four child beans by clas
 The criterion, the worked examples, and the reason bulk axiom-conversion is unsound: `docs/audits/2026-08-09-honest-placeholder-criterion.md`.
 
 Scope note: this is *disclosure* work — making the prose match what the Lean does. It does not by itself repair any vacuity. A declaration that discloses honestly and remains an unproved projection is fine per §3b; one that does not disclose is a dishonest dodge regardless of the mathematics.
+
+
+
+## Reorganisation 2026-10-04
+
+Now the epic for P2.HYG under UMBRELLA: open conjectures (formal mathematics only).

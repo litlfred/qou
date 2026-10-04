@@ -1,11 +1,13 @@
 ---
 # qou-9x5u
 title: 'SESSION GAP AUDIT: witnesses stale vs my own code changes, no PR, Lean-first directive violated, cheat sheet untouched'
-status: in-progress
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T12:33:24Z
-updated_at: 2026-09-07T10:44:36Z
+updated_at: 2026-10-04T15:13:55Z
 ---
 
 
@@ -180,3 +182,9 @@ shows nothing. This is `cosmetic_import_cone_drift`, the one bucket the fifth
 staleness-triage run measured **growing 4 → 9** the same day (`qou-e9pp`).
 Two live instances, both cheap, both four weeks stale, and the documented
 triage step cannot see either.
+
+
+
+## Summary of Changes
+
+Session log closed 2026-10-04 (owner decision 2): open children were reparented to programme epics and prose follow-ups extracted as their own beans. Kept as a record, not deleted.

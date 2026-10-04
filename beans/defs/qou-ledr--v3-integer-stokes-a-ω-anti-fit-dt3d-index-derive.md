@@ -4,8 +4,10 @@ title: "V3 integer Stokes A_ω (anti-fit DT/3d-index): derive A_ω=integer count
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-19T02:56:27Z
-updated_at: 2026-07-19T02:57:06Z
-parent: qou-wzgm
+updated_at: 2026-10-04T15:25:22Z
+parent: qou-avtq
 ---
 

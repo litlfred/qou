@@ -4,8 +4,11 @@ title: Cross-check 0706.2213v3.pdf at computations/one_loop_torsion.py (and the 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:54Z
-updated_at: 2026-08-21T17:05:00Z
+updated_at: 2026-10-04T15:18:15Z
+parent: qou-8hur
 ---
 
 Three in-repo implementations disagree on |tau(4_1)| and the disagreement is documented but not externally adjudicated; DHY Tables 1-2 plus Thm 19 give an independent family of values to check against, once the mu-vs-lambda normalisation is pinned.

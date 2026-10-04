@@ -1,11 +1,13 @@
 ---
 # qou-kcii
 title: habiro-coefficients-extended.witness.json exists twice, with different q0Anchor
-status: in-progress
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T15:05:02Z
-updated_at: 2026-09-13T12:35:29Z
+updated_at: 2026-10-04T15:13:05Z
 ---
 
 Found 2026-08-21 diagnosing qou-3zby (the red L1 tr_M gate).
@@ -542,3 +544,10 @@ a possible detector blind spot **from the same uncalibrated count** that had
 already produced the 168-vs-93 artefact two paragraphs up, and did not re-run it
 on the corrected measure before writing it down. A flagged non-gap costs the next
 agent a session, so the correction belongs where the flag was.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-ls7l` (work-plan reorganisation 2026-10-04). Evidence: habiro_coefficients_extended witness defect, same file [title] (m); STALLED claim (in-progress, last update 2026-09-13)
+Content is untouched; only this work item is closed.

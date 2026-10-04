@@ -3,8 +3,12 @@
 title: 'GAP: lake-cache/qou-v4-24-0-new olean set is incomplete (missing Mathlib.Algebra.Module.LinearMap.Polynomial)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T15:19:39Z
-updated_at: 2026-08-10T15:19:39Z
+updated_at: 2026-10-04T15:20:08Z
+parent: qou-5vkl
 ---
 
 

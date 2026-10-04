@@ -1,11 +1,14 @@
 ---
 # qou-eggf
 title: 17 witnesses put free text in q0Anchor instead of the token; the vocabulary cannot parse it
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-03T04:57:50Z
-updated_at: 2026-09-08T07:45:39Z
+updated_at: 2026-10-04T15:11:42Z
+parent: qou-5vkl
 ---
 
 ## The finding
@@ -273,3 +276,9 @@ reachable in this session by any method tried. Their producers are fixed on
 `main`; a run in an environment that can hold a > 50 min compute closes them.
 
 ## 2026-09-08: canonical ledger for the q₀-gate family is qou-1c4y (the AGENTS.md-named migration tracker); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 3 / §7.3 C3. Sixteen q₀-gate beans, ~10 % cross-reference density, now all point there.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

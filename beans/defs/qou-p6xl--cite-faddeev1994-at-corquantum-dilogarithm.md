@@ -3,8 +3,12 @@
 title: Cite [faddeev1994] at cor:quantum-dilogarithm
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:09Z
-updated_at: 2026-08-08T23:35:09Z
+updated_at: 2026-10-04T15:17:31Z
+parent: qou-1qhv
 ---
 
 The pentagon-identity sites (predicted-spectra/cl2-pentagon-and-faddeev-partial.lean:30, braids-and-knots/pentagon-uv-commutation-woronowicz.lean) should cite the 1993 quantum-dilogarithm paper (key faddeev_kashaev1994, library/arxiv-hep-th-9310070v1/9310070v1.pdf, which states the pentagon identity as its main result) rather than, or in addition to, these lectures.

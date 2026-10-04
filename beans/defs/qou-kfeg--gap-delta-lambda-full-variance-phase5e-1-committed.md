@@ -1,11 +1,14 @@
 ---
 # qou-kfeg
 title: 'GAP: delta-lambda-full-variance-phase5e-1 committed witness is not reproducible (~1e-8), cause unidentified'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T09:10:24Z
-updated_at: 2026-09-07T17:55:32Z
+updated_at: 2026-10-04T15:12:50Z
+parent: qou-9nnz
 ---
 
 ## What is established
@@ -145,3 +148,9 @@ I walked into all four of these in one session, and built a causal story on the 
 - **A fresh run**, diffed field-by-field against the committed witness.
 
 AGENTS.md already warns about the shallow boundary — under the `rewritten`/`scriptCommitSha` discussion, where it notes a sha can be missing "merely because the history was never fetched". This is the same fact reached from the other side: **`git log -- <path>` is not a source of provenance here.** Do not ask a shallow clone *when*; ask the artifacts *what*.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

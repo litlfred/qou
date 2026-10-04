@@ -4,8 +4,11 @@ title: The knot convolution and the quantum torus are two layers with no morphis
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T10:28:53Z
-updated_at: 2026-09-04T12:59:20Z
+updated_at: 2026-10-04T15:24:56Z
+parent: qou-n4nr
 ---
 
 MEASURED 2026-09-04 on content/quantum-observable-universe/, all spellings.

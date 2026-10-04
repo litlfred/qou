@@ -4,8 +4,11 @@ title: 'EM-linking route 2: the MUTUAL O''Hara channel is integrable WITHOUT O''
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T09:22:10Z
-updated_at: 2026-09-13T14:25:45Z
+updated_at: 2026-10-04T15:18:59Z
+parent: qou-v2om
 ---
 
 ## LANDED (PR #7284) — the prune, and it is sorry-free

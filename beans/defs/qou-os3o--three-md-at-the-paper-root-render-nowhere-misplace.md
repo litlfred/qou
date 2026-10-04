@@ -4,8 +4,11 @@ title: Three .md at the paper root render nowhere — misplaced as well as unman
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T13:26:02Z
-updated_at: 2026-08-24T13:26:02Z
+updated_at: 2026-10-04T15:25:03Z
+parent: qou-n4r9
 ---
 
 Found while closing `qou-orpc`, whose four are resolved. That bean claimed the

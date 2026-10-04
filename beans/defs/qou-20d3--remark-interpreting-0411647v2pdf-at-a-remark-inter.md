@@ -4,8 +4,11 @@ title: Remark interpreting 0411647v2.pdf at a remark interpreting QOU.BraidsAndK
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:49Z
-updated_at: 2026-08-21T17:04:40Z
+updated_at: 2026-10-04T15:23:27Z
+parent: qou-aqfj
 ---
 
 The genus-grading obstruction (Prop 3.4 applies to polynomial functions on Young diagrams; f^lambda is outside that algebra) is currently stated only inside a Python docstring. It is the load-bearing reason the kernel stays open and deserves a durable, cited home. NOT proposing aid-proof: Sniady does not close Cov_Planch(f^lambda, R_4) <= 0, and the corpus is right that it does not.

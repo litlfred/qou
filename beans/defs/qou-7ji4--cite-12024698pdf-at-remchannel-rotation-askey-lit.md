@@ -4,8 +4,11 @@ title: Cite 1202.4698.pdf at rem:channel-rotation-askey-lit
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T00:10:51Z
-updated_at: 2026-08-21T17:04:45Z
+updated_at: 2026-10-04T15:17:08Z
+parent: qou-19m0
 ---
 
 rem:channel-rotation-askey-lit item 2 currently supports the b <-> 1/b 6j-level rotation claim with the 2001 Clebsch-Gordan/Racah paper alone; the normalisation-fixed b-6j symbol and its new integral representations belong at the same sentence.

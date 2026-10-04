@@ -4,8 +4,11 @@ title: Vector 3 (multi-level jet tower) is NOT open — conj:binding-manybody-eq
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T08:45:07Z
-updated_at: 2026-08-29T18:58:24Z
+updated_at: 2026-10-04T15:25:27Z
+parent: qou-v2om
 ---
 
 2026-08-29, branch claude/tower-gap-lean-and-infra-2026-08-29 (PR #5978),

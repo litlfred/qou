@@ -1,11 +1,13 @@
 ---
 # qou-fwqu
 title: 'Session: next-all — qou-oots Schur-Weyl object choice, qou-5pgl re-run discriminator, qou-hu1f atom_braid_word_3A blast radius'
-status: in-progress
-type: epic
+status: completed
+type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T07:49:12Z
-updated_at: 2026-09-05T07:49:37Z
+updated_at: 2026-10-04T15:11:29Z
 ---
 
 ## Scope (3 fronts, author said "next all")
@@ -15,3 +17,9 @@ updated_at: 2026-09-05T07:49:37Z
 3. **qou-hu1f** — the bean's OWN named next measurement, still open: does anything downstream of `atom_braid_word_3A` depend on its intra-nucleon block being β_Bor? Interleaved IS β_Bor (7.0e-61 vs the Lean closed form); the canonical route uses GROUPED (0.82 away).
 
 Fronts 1 and 2 dispatched to background agents; front 3 foreground.
+
+
+
+## Summary of Changes
+
+Session log closed 2026-10-04 (owner decision 2): open children were reparented to programme epics and prose follow-ups extracted as their own beans. Kept as a record, not deleted.

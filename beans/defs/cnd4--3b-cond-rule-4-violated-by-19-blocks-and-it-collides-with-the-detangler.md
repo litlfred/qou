@@ -1,12 +1,16 @@
 ---
 # cnd4
-title: '§3b-cond rule 4 is violated by 19 blocks — and obeying it collides with the detangler'
+title: §3b-cond rule 4 is violated by 19 blocks — and obeying it collides with the detangler
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T13:20:00Z
-updated_at: 2026-08-10T13:20:00Z
+updated_at: 2026-10-04T15:25:43Z
+parent: qou-5p7n
 ---
+
 Found while working `fwr11` (PR #4921). An adversarial reader flagged one
 instance on `prop:transfer-matrix-level-independence`; the corpus scan says it
 is a class of **19 blocks / 31 undeclared edges**.

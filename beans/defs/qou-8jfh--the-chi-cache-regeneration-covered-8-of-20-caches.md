@@ -4,8 +4,11 @@ title: The chi-cache regeneration covered 8 of 20 caches — every bar-image (at
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T06:02:19Z
-updated_at: 2026-09-07T10:24:09Z
+updated_at: 2026-10-04T15:24:53Z
+parent: qou-5vkl
 ---
 
 ## The claim

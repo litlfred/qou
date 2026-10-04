@@ -3,8 +3,12 @@
 title: 'qou-8p1x/h: Bruhat / GL_n(F_q) realisation of H_n(q) as a native route to PSL(2,7)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T12:40:00Z
-updated_at: 2026-08-07T13:20:00Z
+updated_at: 2026-10-04T15:23:03Z
+parent: qou-8lxd
 ---
 
 Parent: `qou-8p1x`. The strongest idea on the board, gated on `qou-8p1j`.

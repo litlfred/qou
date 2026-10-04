@@ -1,11 +1,14 @@
 ---
 # qou-n4pv
 title: 'PI-1: Hadamard factorization theorem in Mathlib — entire function of finite order = (∏ over zeros, Weierstrass primary factors)·exp(poly). The theorem that pins phiBProd among its elliptic multiples. Hard multi-week complex-analysis build.'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-20T05:12:52Z
-updated_at: 2026-07-20T06:32:43Z
+updated_at: 2026-10-04T15:13:29Z
+parent: qou-c8p8
 ---
 
 
@@ -49,3 +52,9 @@ silently leaked past them.
 
 This closes the verification sub-question only. The three `sorry`s stand,
 and this bean's substantive PI-1 content is unchanged.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-07-20 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

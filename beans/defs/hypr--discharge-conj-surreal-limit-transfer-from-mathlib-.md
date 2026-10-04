@@ -1,7 +1,7 @@
 ---
 # hypr
-title: 'Discharge conj:surreal-limit-transfer from Mathlib Hyperreal (ℝ* is a SurrealField)'
-status: in-progress
+title: Discharge conj:surreal-limit-transfer from Mathlib Hyperreal (ℝ* is a SurrealField)
+status: todo
 type: task
 priority: high
 tags:
@@ -9,8 +9,10 @@ tags:
     - surreals
     - nonstandard
     - conjecture-discharge
+    - reorg-2026-10-04
 created_at: 2026-08-09T19:15:46Z
-updated_at: 2026-08-09T21:40:00Z
+updated_at: 2026-10-04T15:10:55Z
+parent: qou-3kkl
 ---
 
 `QOU/AppendixSurreals/SurrealLimitTransfer.lean` carries `conj:surreal-limit-transfer`
@@ -167,3 +169,9 @@ The ⚠ limitation above stands exactly as written. `Nat.hyperfilter_le_atTop` g
 `Tendsto atTop → IsSt`; the converse is false. Everything here **pushes** real limits into
 `ℝ*` and nothing here discharges a `Tendsto … atTop` goal by a standard-part computation.
 Surreal/standard-part machinery does not replace this corpus's ε–δ arguments.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-09 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

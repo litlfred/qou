@@ -3,8 +3,12 @@
 title: Four statements of the gluon operator, three answers - min-cr vs min-|tr_M| disagree
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T20:59:37Z
-updated_at: 2026-08-24T20:59:37Z
+updated_at: 2026-10-04T15:19:21Z
+parent: qou-8lxd
 ---
 
 Found while closing qou-1ngr, 2026-08-24. Separate from qou-jqjx (trace convention); this one is about the objective, not the weights.

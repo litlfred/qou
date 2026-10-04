@@ -1,16 +1,19 @@
 ---
 # qou-fl4t
 title: 'REPAIR: restore the DG flattening + 1/2 so |det J| is triangulation-invariant, then re-derive the per-cusp factor'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
-    - compute
-    - torsion
     - whitehead
     - refuted-needs-repair
+    - reorg-2026-10-04
+    - needs-owner
+    - compute
+    - torsion
 created_at: 2026-08-07T18:40:00Z
-updated_at: 2026-08-07T23:55:00Z
+updated_at: 2026-10-04T15:13:46Z
+parent: qou-n4nr
 ---
 
 ## Why
@@ -583,3 +586,9 @@ whitehead_c_sigma_torsion.py and borromean_nz_adjoint_torsion.py (bean qou-t0rf'
 class) — independent of everything above.
 
 <!-- 2026-08-08T01:50:00Z branch claude/dg-scope-correction -->
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

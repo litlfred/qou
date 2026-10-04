@@ -1,11 +1,14 @@
 ---
 # qou-pwut
 title: 287 root-level ad-hoc QA writers bypass qa-agent-entry.ts and emit no field_hash
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T06:14:19Z
-updated_at: 2026-08-29T02:35:00Z
+updated_at: 2026-10-04T15:11:45Z
+parent: qou-trd0
 ---
 
 ## What
@@ -316,3 +319,9 @@ the stale text should be **removed** from the sidecars, since a human or agent
 reading a `.qa.json` sees `"result": "pass"` with a confident note and no
 indication it adjudicates nothing. The drain queue knows; a reader does not.
 That is the author's call and nothing here presumes it.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-29 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

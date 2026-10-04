@@ -1,11 +1,14 @@
 ---
 # qou-qbf0
 title: 'LEAD (unsupported so far): is C1 a q-deformation of the polylog connection on P1 minus {0,1,inf}? The map is MISSING'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T10:55:00Z
-updated_at: 2026-08-08T11:15:00Z
+updated_at: 2026-10-04T15:13:12Z
+parent: qou-frzo
 ---
 
 ## Where the lead came from
@@ -147,3 +150,9 @@ the relevant article is **Jarossay, "Pro-unipotent harmonic actions and dynamica
 properties of p-adic cyclotomic multiple zeta values"** (p. 1711) -- the p-adic
 cyclotomic-MZV side of the same `{0,1,inf}` story. Not yet read; noted for whoever
 picks up the periods/values angle left open above.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -3,16 +3,18 @@
 title: 'PROVE(lean): atomic_lp_stability.lean — 2 cited sorries [cited bertsimas1997,manuscript,wenzl1990]'
 status: todo
 type: task
+priority: normal
 tags:
-    - lean
-    - cited-sorry
     - paper-qou
     - repo-infra
     - cite-bertsimas1997
     - cite-wenzl1990
+    - reorg-2026-10-04
+    - lean
+    - cited-sorry
 created_at: 2026-08-01T23:31:06Z
-updated_at: 2026-08-01T23:31:06Z
-parent: qou-k1mq
+updated_at: 2026-10-04T15:22:22Z
+parent: qou-l2vh
 ---
 
 **File:** `QOU/ParticleInteractions/atomic_lp_stability.lean` (QOU)  ·  2 cited sorry(s)

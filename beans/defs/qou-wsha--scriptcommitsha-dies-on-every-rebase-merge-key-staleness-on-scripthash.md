@@ -4,8 +4,11 @@ title: 'Witness provenance: scriptCommitSha dies on every rebase-merge — key s
 status: todo
 type: task
 priority: low
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T03:45:00Z
-updated_at: 2026-08-10T03:45:00Z
+updated_at: 2026-10-04T15:26:04Z
+parent: qou-5vkl
 ---
 
 Small, verified, and cheap to act on. Found while landing PR #4883.

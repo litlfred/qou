@@ -4,8 +4,11 @@ title: QOU perpetual-obstruction instances quantify over p but conclude about a 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T15:26:08Z
-updated_at: 2026-08-26T01:40:00Z
+updated_at: 2026-10-04T15:23:02Z
+parent: qou-6qbv
 ---
 
 FOUND 2026-08-22 while resolving qou-oy4r (main red on

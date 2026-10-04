@@ -3,8 +3,12 @@
 title: 'qou-y2o7 closed as completed with four monotone-kernel consumers unlisted: four qbeta probes are locked to the grouped ordering and its blast radius never named them'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T09:49:46Z
-updated_at: 2026-09-14T09:49:46Z
+updated_at: 2026-10-04T15:23:05Z
+parent: qou-avtq
 ---
 
 ## Measured

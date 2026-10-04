@@ -1,10 +1,14 @@
 ---
 # gpwr
-title: 'Regenerate GP-derived exploratory witnesses after the qou-b2ie GP fix (needs pyhecke_native wheel; canonical chain confirmed clean)'
+title: Regenerate GP-derived exploratory witnesses after the qou-b2ie GP fix (needs pyhecke_native wheel; canonical chain confirmed clean)
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-18T01:30:00Z
-updated_at: 2026-07-18T01:30:00Z
+updated_at: 2026-10-04T15:23:20Z
+parent: qou-5vkl
 ---
 
 ## Context

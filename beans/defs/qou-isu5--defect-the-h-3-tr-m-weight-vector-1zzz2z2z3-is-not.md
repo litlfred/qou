@@ -4,8 +4,11 @@ title: 'DEFECT: the H_3 TR_M weight vector [1,z,z,z2,z2,z3] is NOT A TRACE — n
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T08:58:36Z
-updated_at: 2026-08-30T15:48:57Z
+updated_at: 2026-10-04T15:18:41Z
+parent: qou-59vq
 ---
 
 ## What is ESTABLISHED (two independent proofs)

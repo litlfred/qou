@@ -1,11 +1,14 @@
 ---
 # qou-5k8x
 title: witnesses that read upstreams with bare json.load have no drift edge — and pad float64 to 50 digits
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T09:26:32Z
-updated_at: 2026-08-30T09:48:57Z
+updated_at: 2026-10-04T15:14:27Z
+parent: qou-9nnz
 ---
 
 
@@ -123,3 +126,9 @@ The other 219. Both halves are mechanically detectable — "emits a witness and
 reads one but never calls `record_upstream`" is the query above — so this is a
 sweep someone can run, not a search. Whether it should be a gate is the
 question worth deciding: it would go red on 56% of the relevant corpus today.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

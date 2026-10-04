@@ -4,8 +4,11 @@ title: 'The Hecke oleans were 3 months stale: 3 defs read as AXIOMS and wenzlBri
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T17:29:43Z
-updated_at: 2026-09-26T11:03:28Z
+updated_at: 2026-10-04T15:24:55Z
+parent: qou-5vkl
 ---
 
 

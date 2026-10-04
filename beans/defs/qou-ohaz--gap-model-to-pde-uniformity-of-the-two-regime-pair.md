@@ -1,11 +1,14 @@
 ---
 # qou-ohaz
 title: 'GAP: model-to-PDE uniformity of the two-regime pair-collision model — the surviving lock-uniformity caveat. Phase-1 ODE calculus is theorem-grade (pair_phase1_riccati.lean); Gamma-growth escape closed in-model; what is NOT established is that the NS/q-NS PDE dynamics follows the two-regime ODE through the approach (strain locality, core deformation, V1-d2 phase-plane fidelity). Next honest step: derive the ODE system as a controlled reduction of the vortex-filament/Biot-Savart PDE with error bounds, or find the PDE effect that breaks it.'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-14T16:06:54Z
-updated_at: 2026-09-03T04:33:18Z
+updated_at: 2026-10-04T15:12:57Z
+parent: qou-a3n3
 ---
 
 
@@ -47,3 +50,9 @@ Lean linear_condNumber_forces_beta_one derives beta = 1 from linear growth
 without using any fitted number. Still conditional on the lock formula, which
 is a model input -- so it sharpens the branch reading for one channel and does
 not touch this bean's uniformity question.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

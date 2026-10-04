@@ -1,12 +1,14 @@
 ---
 # qou-yvyd
 title: 'Two-bridge layered triangulation (Guéritaud) from the Farey word of p/q: NZ data for 5₂ = S(7,3) and the cross-knot gate'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T09:52:25Z
-updated_at: 2026-09-07T09:35:38Z
-parent: qou-2akx
+updated_at: 2026-10-04T15:14:17Z
+parent: qou-v2om
 ---
 
 Follow-on to qou-n2cl. The Floyd–Hatcher chain reaches 4₁ only (once-punctured-torus bundle). 5₂ is the two-bridge knot S(7,3) (also S(7,2)); Guéritaud (Geom. Topol. 2006) and Futer–Kalfagianni–Purcell §2.4 (library arxiv-0808.2716v4) give its canonical layered triangulation from the LR word of the continued fraction of p/q. Implement the 4-punctured-sphere layering, derive NZ rows for 4₁ (= S(5,2), a second derivation to cross-check the bundle route) and 5₂, verify Vol(5₂) = 2.8281220883 and the 5₂ shape field (cubic, disc −23), then feed the 5₂ NZ data to the 3d-index / DT machinery so the chirality-split {3,4} gate can be tested on DERIVED data. Chirality matters here (S⁺ vs S⁻): the orientation convention of the layering must be pinned on a chiral case before use. Open.
@@ -28,3 +30,9 @@ Follow-on to qou-n2cl. The Floyd–Hatcher chain reaches 4₁ only (once-punctur
 Landed: meridian frames by the Dehn-filling test (4₁ k*=−1 / 8 sheets, 5₂ k*=0 / 12 sheets), −A₄₁ and A₅₂ recovered, slopes {−4,4} and {−10,−4,0}, chirality frame, Lean chips (FiveTwoAPolynomialFromFareyWord; meridian_row / longitude_row in FiveTwoGluingFromFareyWord). Still open (13a): A_ω arc on derived data; S± identification needs a held source for the Rolfsen-5₂ sign convention; the fold rule as a theorem (Guéritaud not held).
 
 2026-09-07 (option 3 of "1 2 3"): the derived 5_2 data fed back into the A_omega Route-A gate. qou-52sn's SnapPy hardening is done by derivation instead; verdict unchanged (R2 refuted, R1 survives) and now unconditional. The pinned (mu, lambda, Im tau > 0) frame adds nothing to Route A, proved: |max slope| and L-degree are mirror-invariant, so the chirality split {4 in S+, 3 in S-} is not Newton-polygon data. Which chirality GGM's S+/S- are in the derived frame remains the same unheld convention as which 5_2 is Rolfsen's. Audit §3b of 2026-09-06-two-bridge-layering-from-farey-word.md.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

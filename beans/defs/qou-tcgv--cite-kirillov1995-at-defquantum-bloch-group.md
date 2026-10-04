@@ -3,8 +3,12 @@
 title: Cite [kirillov1995] at def:quantum-bloch-group
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:54Z
-updated_at: 2026-08-08T23:36:54Z
+updated_at: 2026-10-04T15:17:41Z
+parent: qou-1qhv
 ---
 
 def:quantum-bloch-group displays the Phi_q pentagon identity and its .ts has no cites field whatsoever, while Sec. 2.5 Prop. 2 / Cor. 11 of an already-registered reference is the source for exactly that identity.

@@ -4,8 +4,11 @@ title: Cite descendants_colored_jones.pdf at cor:habiro-expansion-atomic
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:05Z
-updated_at: 2026-08-21T17:05:01Z
+updated_at: 2026-10-04T15:17:49Z
+parent: qou-ysb7
 ---
 
 The atomic Habiro expansion block constructs colored-Jones/Markov-trace data as a Habiro-ring element; this document states exactly that realization and links it to the pentagon-R-matrix route the corpus also formalises.

@@ -1,11 +1,14 @@
 ---
 # qou-6bla
 title: One notation per object — consolidate the ℏ_q spelling family; the q-integer split is the literature carve-out
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T12:38:14Z
-updated_at: 2026-08-30T12:38:53Z
+updated_at: 2026-10-04T15:11:02Z
+parent: qou-lv2z
 ---
 
 Owner directive, 2026-08-30: *"lets use one notation.... consolidate different
@@ -64,3 +67,9 @@ across the library / block-sibling surfaces
 half one from half two — four equal bodies under four names is sprawl; two
 inequivalent bodies under one name is either a defect (`hbar`) or a
 literature distinction that must be named (`qInt`).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -1,11 +1,13 @@
 ---
 # qou-idvt
 title: 'MATHLIB GAP: ideal-tetrahedron hyperbolic volume theory (blocks qou-krvm (iv) + qou-7y3g)'
-status: in-progress
+status: scrapped
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T08:00:00Z
-updated_at: 2026-08-16T02:35:38Z
+updated_at: 2026-10-04T15:11:02Z
 ---
 
 Split out so two beans stop each carrying the same "large Mathlib gap" note.
@@ -276,3 +278,10 @@ volume ≠ equal set — it does NOT prove the ideal tetrahedron IS the chimney;
 region_eq_chimney (T2) stays OPEN; (iv) not discharged; no instance/axiom.
 
 Bean STAYS OPEN.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-5gai` (work-plan reorganisation 2026-10-04). Evidence: [B 5gai] "the single blocker behind qou-idvt T2" — same gap | STALLED: in-progress, last update 2026-08-16
+Content is untouched; only this work item is closed.

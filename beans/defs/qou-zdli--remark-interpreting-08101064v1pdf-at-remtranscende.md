@@ -4,8 +4,11 @@ title: Remark interpreting 0810.1064v1.pdf at rem:transcendental-accounting
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:57Z
-updated_at: 2026-08-21T17:05:11Z
+updated_at: 2026-10-04T15:23:28Z
+parent: qou-aqfj
 ---
 
 The transcendental-accounting ledger indexes periods by Goncharov depth but records no dimension bound on the span at a given weight/level. A remark recording D(w,N) as the available upper bound — and Zhao's warning that the standard relations do not exhaust the relations at level 4 — makes the ledger's independence claims auditable rather than asserted.

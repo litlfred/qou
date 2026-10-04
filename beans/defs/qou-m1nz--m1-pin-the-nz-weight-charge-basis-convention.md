@@ -1,15 +1,16 @@
 ---
 # qou-m1nz
-title: 'Route C M1 BLOCKER — pin the Neumann-Zagier weight / charge-basis convention so the certified 3d-index reproduces the GGM eq-(61) Stokes tower'
+title: Route C M1 BLOCKER — pin the Neumann-Zagier weight / charge-basis convention so the certified 3d-index reproduces the GGM eq-(61) Stokes tower
 status: todo
 type: task
 priority: high
 tags:
     - g3-aomega
     - route-c
+    - reorg-2026-10-04
 created_at: 2026-08-11T10:30:00Z
-updated_at: 2026-08-11T10:30:00Z
-parent: qou-rtec
+updated_at: 2026-10-04T15:15:06Z
+parent: b9cj
 ---
 
 M1 attempted 2026-08-11 (probe: computations/probes/qbeta_m1_index_stokes_dictionary.py, audit-only, 2/3 assertions — the FAIL is the honest negative).

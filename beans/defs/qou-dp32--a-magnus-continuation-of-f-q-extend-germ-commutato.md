@@ -1,11 +1,14 @@
 ---
 # qou-dp32
 title: 'A: Magnus continuation of F_q — extend germ-commutator-q-curvature to 2nd order, compute Ω₂=½∮[A,A] from Hecke braid commutators, test exp(Ω₁+Ω₂) vs −9% (phys-rep09; structural, no fit)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-19T17:54:14Z
-updated_at: 2026-08-29T18:29:19Z
+updated_at: 2026-10-04T15:11:49Z
+parent: b9cj
 ---
 
 
@@ -32,3 +35,9 @@ qou-v7ro captures via the off-diagonal μ̄(12..A)=±1 (a non-cyclic functional)
 (binding-sign convention) IS essentially the OPEN qou-v7ro bridge: Magnus μ̄=±1 → Markov-trace
 deficit D_A(h) leading coefficient. Lean file MagnusPairingSignStructure.lean formalizes the
 sign-indefinite ESCAPE (theorem 3), cites the existing cyclic-trace-kills lemmas for the control.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-29 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

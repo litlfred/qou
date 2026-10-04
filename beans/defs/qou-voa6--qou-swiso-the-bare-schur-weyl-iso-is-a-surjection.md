@@ -1,11 +1,14 @@
 ---
 # qou-voa6
 title: 'qou-swiso: the bare Schur-Weyl iso is a surjection at N=2 -- three sites, one in the notation register'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T09:39:58Z
-updated_at: 2026-09-07T18:00:00Z
+updated_at: 2026-10-04T15:13:39Z
+parent: qou-mub3
 ---
 
 ## 2026-09-05 — three `≅` sites fixed, one docstring un-contradicted, and a systemic QA blind spot found by accident
@@ -78,3 +81,9 @@ which case the defect is the opposite one, that a sidecar is written at all for
 a block no sweep can reach. Both `notation-register` and `notation-collisions`
 are in the 63, so the two blocks AGENTS.md §7aa calls authoritative for every
 symbol in the paper have **no QA coverage at all**.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

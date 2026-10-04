@@ -4,8 +4,11 @@ title: Remark interpreting 0103325v4.pdf at rem:dictionary-flavor-layer
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:43Z
-updated_at: 2026-08-21T17:04:40Z
+updated_at: 2026-10-04T15:23:23Z
+parent: qou-aqfj
 ---
 
 The corpus assigns T(2, 2k+1) to leptons; this literature assigns the same family to vector quarkonia, and bring-trefoil-cinquefoil-channel assigns T(2,3)/T(2,5) to the colour tube and the zeta_5 carrier. Three inequivalent readings of one knot family deserve an explicit remark rather than silence.

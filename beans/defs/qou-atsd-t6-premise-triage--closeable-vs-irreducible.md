@@ -1,12 +1,14 @@
 ---
 # qou-atsd-t6-premise-triage
 title: 'T6: atomicity premise triage — sp₂=sl₂ (closeable) + de-axiomatize su2 torus + wire-in; rank G=rank Lie G and Tannakian G↪Sp(V) are IRREDUCIBLE premises (do not launder)'
-status: in-progress
+status: todo
 type: task
 priority: normal
-parent: qou-atsd
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-26T20:55:00Z
-updated_at: 2026-07-26T20:55:00Z
+updated_at: 2026-10-04T15:14:06Z
+parent: qou-8lxd
 ---
 
 Honest triage of the 3 remaining atomicity premises (owner asked to "resolve/fix").
@@ -48,3 +50,9 @@ close; only the sp₂=sl₂ core + de-axiomatization + wiring are honest closure
   jet-tower-chain route. Branch claude/atomicity-rankone-single-object-2026-07-26.
 All 3: anti-laundering strict (no fabricated instances), sorry only for cited premises.
 Jet-tower chain axiom = CONCLUSION of {A}+{landed rank≤1}+{C}, not a 4th independent premise.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-07-26 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -3,8 +3,12 @@
 title: Fixed-.parent-count path resolution is wrong in the vendored layout — audit the remaining shims
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T10:32:58Z
-updated_at: 2026-08-23T10:32:58Z
+updated_at: 2026-10-04T15:19:11Z
+parent: qou-trd0
 ---
 
 `_precision.py`, `q_parameter.py` and `witness_base.py` all carried the same

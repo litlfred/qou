@@ -4,8 +4,11 @@ title: 'GAP: is the radical quotient the right repair for the convention-D opera
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T21:23:19Z
-updated_at: 2026-08-25T07:08:51Z
+updated_at: 2026-10-04T15:20:07Z
+parent: qou-cdx1
 ---
 
 ## Where this comes from

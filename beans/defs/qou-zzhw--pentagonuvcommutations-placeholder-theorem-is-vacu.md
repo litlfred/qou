@@ -1,10 +1,14 @@
 ---
 # qou-zzhw
-title: "PentagonUvCommutation's placeholder theorem is vacuous (∨ True) — now that it compiles, the vacuity scanner will see it"
+title: PentagonUvCommutation's placeholder theorem is vacuous (∨ True) — now that it compiles, the vacuity scanner will see it
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T21:40:00Z
-updated_at: 2026-08-08T21:40:00Z
+updated_at: 2026-10-04T15:22:00Z
+parent: qou-5p7n
 ---
 
 Surfaced while draining `QOU/QuantumBloch/PentagonUvCommutation.lean` (bean

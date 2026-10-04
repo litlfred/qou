@@ -1,11 +1,13 @@
 ---
 # qou-c0yc
 title: q-degree of the six NF coefficients of build_atom_nf_sym, all (Z,N)
-status: in-progress
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T18:13:33Z
-updated_at: 2026-08-30T18:42:08Z
+updated_at: 2026-10-04T15:13:34Z
 ---
 
 MEASURED (PR #6308, producer computations/probes/atom_nf_q_degree_probe.py).
@@ -36,3 +38,10 @@ right (compound_shift_nf.py) and abandoned the path on the cost.
 
 OPEN, not derived: the neutron-rich leading-order cancellation, and the A=27
 break. shift_NF = 18Z+21N+1 is a different quantity and matches nothing here.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-07vh` (work-plan reorganisation 2026-10-04). Evidence: [M] same measurement: q-degree of the six atom NF coefficients, same day, both in-progress
+Content is untouched; only this work item is closed.

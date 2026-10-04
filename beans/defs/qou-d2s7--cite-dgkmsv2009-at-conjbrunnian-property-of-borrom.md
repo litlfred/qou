@@ -3,8 +3,12 @@
 title: Cite [dgkmsv2009] at conj:brunnian-property-of-borromean
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:48Z
-updated_at: 2026-08-08T23:35:48Z
+updated_at: 2026-10-04T15:17:28Z
+parent: qou-1qhv
 ---
 
 dgkmsv2009 has zero citation sites in content/ despite being read in full and used to settle an obstruction; conj:brunnian-property-of-borromean is the block whose premise it supports.

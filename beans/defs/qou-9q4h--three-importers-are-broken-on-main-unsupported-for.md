@@ -4,8 +4,11 @@ title: 'Three importers are broken on main: unsupported format string passed to 
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T10:08:46Z
-updated_at: 2026-09-06T10:09:29Z
+updated_at: 2026-10-04T15:15:52Z
+parent: qou-trd0
 ---
 
 Found while verifying the `qou-9ies` Vol(4_1) exactification by running all 8

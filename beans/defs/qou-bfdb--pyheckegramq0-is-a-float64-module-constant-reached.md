@@ -4,8 +4,11 @@ title: pyhecke.gram.q0 is a float64 module constant reached by ~1027 witness-wri
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-03T12:47:15Z
-updated_at: 2026-09-03T12:47:45Z
+updated_at: 2026-10-04T15:15:47Z
+parent: qou-9nnz
 ---
 
 ## Measured

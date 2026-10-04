@@ -4,8 +4,12 @@ title: 'ADJUDICATED (qou-iayk): the D(u) closed-form law is convention-C by cons
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-08-23T19:34:02Z
-updated_at: 2026-08-23T19:35:38Z
+updated_at: 2026-10-04T15:16:17Z
+parent: qou-cdx1
 ---
 
 Adjudicates `qou-iayk`, which blocked the Habiro convention-D regeneration on

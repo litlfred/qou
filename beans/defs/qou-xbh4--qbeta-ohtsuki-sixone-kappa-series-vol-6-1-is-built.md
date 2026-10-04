@@ -3,8 +3,12 @@
 title: qbeta_ohtsuki_sixone_kappa_series VOL_6_1 is built at mp.dps=15 — two blocking precision gates red on main
 status: todo
 type: bug
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T16:38:15Z
-updated_at: 2026-08-21T16:38:15Z
+updated_at: 2026-10-04T15:15:49Z
+parent: qou-9nnz
 ---
 
 Found by `/prepare-merge-auto` on PR #5342 (2026-08-21). **Not that branch's

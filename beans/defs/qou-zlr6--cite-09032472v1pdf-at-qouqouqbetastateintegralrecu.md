@@ -4,8 +4,11 @@ title: Cite 0903.2472v1.pdf at qou:QOU.QBeta.StateIntegralRecursionLattice
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:28Z
-updated_at: 2026-08-21T17:05:11Z
+updated_at: 2026-10-04T15:17:07Z
+parent: qou-19m0
 ---
 
 Once registered, the state-integral definition used in QOU/QBeta should point at its actual origin rather than only at the later GGM/DGG papers.

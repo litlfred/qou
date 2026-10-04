@@ -4,8 +4,11 @@ title: Remark interpreting squier-burau-unitary-1984.pdf at QOU.Machinery.HeckeM
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:19Z
-updated_at: 2026-08-21T17:05:02Z
+updated_at: 2026-10-04T15:24:01Z
+parent: qou-aqfj
 ---
 
 Record the invariant-form statement next to the Burau-at-i monodromy work, together with what must be checked before it is used: whether the J_0 form and the corpus's Markov trace form agree (they are different objects on different modules), and what happens to the form's signature at the specialisation t = -1 / q = i where the corpus's eigenvalues collide. Deliberately not proposed as aid-proof: the Jordan-block proof is already sorry-free and does not need this, and the two forms have not been reconciled.

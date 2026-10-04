@@ -4,8 +4,11 @@ title: Remark interpreting 2402.04839v2.pdf at fundamental-knots-operator-basis
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:07Z
-updated_at: 2026-08-21T17:04:43Z
+updated_at: 2026-10-04T15:23:39Z
+parent: qou-aqfj
 ---
 
 Record that the massless-sector reading rests on the hyperbolic-volume invariant specifically, and that a unified volume for non-hyperbolic manifolds exists in the literature. What would need checking before any stronger claim: the cited invariant is defined for CLOSED 3-manifolds, whereas the corpus's Vol(K) is the volume of a knot complement in S^3, so it is not a drop-in replacement and must not be presented as one.

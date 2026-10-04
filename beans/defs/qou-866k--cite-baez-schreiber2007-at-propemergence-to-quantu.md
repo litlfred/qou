@@ -3,8 +3,12 @@
 title: Cite [baez-schreiber2007] at prop:emergence-to-quantum-flat
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:27Z
-updated_at: 2026-08-08T23:34:27Z
+updated_at: 2026-10-04T15:17:24Z
+parent: qou-1qhv
 ---
 
 prop:emergence-to-quantum-flat cites baez2004 for fake-curvature/2-connection content that lives in this paper instead. Cite baez-schreiber2007 there, which simultaneously fixes the miscitation and retires this bib orphan.

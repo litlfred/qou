@@ -1,15 +1,17 @@
 ---
 # qou-ptnp
-title: 'Three vacuous decls survive in p-vs-np-boundary.lean; one is cited as the warrant for the intractability input'
+title: Three vacuous decls survive in p-vs-np-boundary.lean; one is cited as the warrant for the intractability input
 status: todo
 type: task
 priority: normal
 tags:
+    - anti-laundering
+    - reorg-2026-10-04
     - lean
     - vacuity
-    - anti-laundering
 created_at: 2026-08-22T06:05:00Z
-updated_at: 2026-08-22T06:05:00Z
+updated_at: 2026-10-04T15:25:04Z
+parent: qou-6qbv
 ---
 
 Found while scanning the Lean tree for the `qou-rhax` shape (an axiom whose

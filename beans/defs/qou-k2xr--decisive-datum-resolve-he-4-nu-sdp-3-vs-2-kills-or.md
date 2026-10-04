@@ -3,8 +3,12 @@
 title: 'DECISIVE datum: resolve He-4 nu_SDP = 3 vs 2 — kills or saves the whole monotone {sc(n)=A-1} family'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T16:03:25Z
-updated_at: 2026-08-02T16:03:25Z
+updated_at: 2026-10-04T15:18:38Z
+parent: qou-v2om
 ---
 
 See docs/audits/2026-08-02-ppq-attack-vectors-roast.md §Roast 2.

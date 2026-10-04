@@ -1,11 +1,14 @@
 ---
 # qou-umev
-title: 'prop:unit-modulus-eigenvalue is false in both clauses; its proof derives -2 from a theorem that gives +1.994'
+title: prop:unit-modulus-eigenvalue is false in both clauses; its proof derives -2 from a theorem that gives +1.994
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T05:40:00Z
-updated_at: 2026-08-22T05:40:00Z
+updated_at: 2026-10-04T15:22:16Z
+parent: qou-q4oa
 ---
 
 Found by `agent:n02` on the mass-theory trap-drain; **re-derived

@@ -1,12 +1,18 @@
 ---
 # qou-mtc9
 title: 'GAP: confinement_categorical docstring contradicts its own code (self-assuming projection)'
-status: in-progress
+status: todo
 type: task
 priority: high
-tags: [lean, proof-integrity, 3b-cond, vacuity]
+tags:
+    - reorg-2026-10-04
+    - lean
+    - proof-integrity
+    - 3b-cond
+    - vacuity
 created_at: 2026-08-08T18:45:00Z
-updated_at: 2026-08-08T18:45:00Z
+updated_at: 2026-10-04T15:10:58Z
+parent: qou-5p7n
 ---
 
 Found while working `qou-mtcx` (PR #4756). **Pre-existing on `main`** — not
@@ -98,3 +104,8 @@ attempted, because it needs the Hochschild input this file names as absent from
 Mathlib, and inventing a plausible-looking substitute would reproduce the exact
 defect this bean exists to record. Bean stays open at `in-progress`.
 
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

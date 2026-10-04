@@ -5,13 +5,14 @@ status: in-progress
 type: task
 priority: normal
 tags:
-    - lean
-    - hyperbolic-volume
     - angle-structures
     - "5_2"
+    - reorg-2026-10-04
+    - lean
+    - hyperbolic-volume
 created_at: 2026-08-09T19:15:46Z
-updated_at: 2026-09-26T11:07:08Z
-parent: qou-krvm
+updated_at: 2026-10-04T15:13:14Z
+parent: b9cj
 ---
 
 The corpus has angle-structure polytopes for **m004** (figure-eight,

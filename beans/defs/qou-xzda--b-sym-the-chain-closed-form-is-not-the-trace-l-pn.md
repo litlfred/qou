@@ -3,8 +3,12 @@
 title: 'B_sym: the chain closed form is NOT the trace — L_pn is overridden by a Reeb bound, worth a constant 1.6561 MeV'
 status: todo
 type: bug
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T21:46:07Z
-updated_at: 2026-08-08T21:46:07Z
+updated_at: 2026-10-04T15:15:35Z
+parent: qou-v2om
 ---
 
 MEASURED. `mass_binding_dashboard` documents the chain closed form as reproducing the exact p(3A) trace to |chain - exact| ~ 1e-13. It does not. The gap is 1.6561 MeV, CONSTANT across every isotope:

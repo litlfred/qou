@@ -1,11 +1,13 @@
 ---
 # qou-cr3v
 title: 'GAP: two scratch_*.lean files on main duplicate real modules — 6 un-importable FQN collisions'
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T09:43:46Z
-updated_at: 2026-08-30T09:43:46Z
+updated_at: 2026-10-04T15:20:31Z
 ---
 
 FOUND 2026-08-30 running the /prepare-merge §4a duplicate-decls gate on PR
@@ -43,3 +45,10 @@ NOT DONE HERE because it is two other arcs' territory (qou-7ot6, qou-5iat)
 and unrelated to the Toffoli chapter; widening #6095 to cover it would make
 that PR harder to review for no gain. Lower the gate baseline back to 57
 once drained.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-scrx` (work-plan reorganisation 2026-10-04). Evidence: [M] same defect: two scratch_*.lean duplicate 6 FQNs, same day; scrx has 10.7k body
+Content is untouched; only this work item is closed.

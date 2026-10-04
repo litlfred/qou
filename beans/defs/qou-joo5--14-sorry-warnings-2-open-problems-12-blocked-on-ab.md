@@ -1,11 +1,13 @@
 ---
 # qou-joo5
 title: '14 sorry warnings: 2 open problems, 12 blocked on absent Mathlib theory'
-status: in-progress
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T06:55:56Z
-updated_at: 2026-08-08T08:14:40Z
+updated_at: 2026-10-04T15:11:42Z
 ---
 
 Audit of the 14 `declaration uses 'sorry'` warnings left after qou-k21h
@@ -133,3 +135,9 @@ This audit reads `^\s*sorry\s*$` from source rather than build warnings.
 The earlier count came from a build log and undercounted, because a module
 that fails to compile never reports its own `sorry`s — so the corpus-wide
 figure was only trustworthy once the package built.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] superseded measurement: 15 real sorry terms on main in 6 files (3 content-sibling, 1 Fred2005, 2 scratch/computations) | previously stalled; last update 2026-08-08

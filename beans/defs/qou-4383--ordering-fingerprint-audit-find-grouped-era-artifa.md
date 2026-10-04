@@ -1,11 +1,14 @@
 ---
 # qou-4383
 title: 'Ordering fingerprint audit: find grouped-era artifacts by VALUE, not by symptom'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T04:29:13Z
-updated_at: 2026-09-08T04:28:57Z
+updated_at: 2026-10-04T15:13:25Z
+parent: qou-v2om
 ---
 
 ## The tool
@@ -883,3 +886,9 @@ That is a different defect with a mechanical fix (call `nucleon_word_letters`),
 so they do **not** need the owner call I said they did. Two more of the
 actionable items are on the same list — `probes/b_pred_mirror_slope_closed_form.py`
 and `rho_k_h3a_gg_trajectory.py` — and move to `qou-t29k`.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

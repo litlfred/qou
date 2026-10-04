@@ -4,8 +4,11 @@ title: 'B3: Andersen-Kashaev/GGM normalization literature check — evidence tie
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T02:49:30Z
-updated_at: 2026-08-15T04:09:56Z
+updated_at: 2026-10-04T15:16:36Z
+parent: qou-n4nr
 ---
 
 

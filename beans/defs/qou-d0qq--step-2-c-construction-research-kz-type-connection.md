@@ -1,12 +1,14 @@
 ---
 # qou-d0qq
 title: 'Step-2 option C (research): the sl2 KZ connection on Conf3(C) pulled back along the colour cubic''s root map, at the level FIXED BY q0 (q0 is input; forever-gate) — does its monodromy reproduce the Hecke quadratic and z_D = q^3/(q^2+1)?'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T08:13:53Z
-updated_at: 2026-09-13T16:54:11Z
-parent: qou-2akx
+updated_at: 2026-10-04T15:13:59Z
+parent: qou-wp3h
 ---
 
 2026-09-06 first measurement (exact, mpmath 40 dps at the proton pin): KZ at REAL level cannot give q0 (unit modulus, Lean KZUnitModulusPrune); at IMAGINARY level it can — with q = e^{2πi/(k+2)}, k+2 = 2πi/ln q0 = 60.2179598524791980753 i (ln q0 = 0.10434072031951951232); with q = e^{iπ/(k+2)}, k+2 = 30.1089799262395990377 i. So the prune does not kill C; it fixes the level to be non-unitary. Next: write the KZ connection on Conf of the six branch points at that level and compute its monodromy exactly (Kohno–Drinfeld gives Hecke; the question is whether the framework's connection IS this one).
@@ -56,3 +58,9 @@ QOU/Mass/TwistedPeriodEigenvalueRatio.lean, lean-direct exit 0, axioms propext/C
 ### 2026-09-13 — §C step 5 landed on the same PR (#7277): the twisted-period route is written into the conjecture block
 
 conj:hecke-monodromy-step-two §'What remains conjectural' now carries the second route and its negative: A^0 = X dz (the Seiberg-Witten differential, the framework's one candidate connection on this family) supplies NO twist (push-down exact by Vieta, every lasso holonomy 1; colour_cubic_abelian_twist_holonomy_probe 8/8, 1e-30 at 50 dps); untwisted Gauss-Manin is quasi-unipotent so never has a real eigenvalue > 1 (UntwistedMonodromyPrune); what survives is a TWISTED period whose exponent is forced non-real by step 4 (TwistedPeriodEigenvalueRatio). The exponent is where q0 enters, as an INPUT. The existing KZ paragraph was EXTENDED, not replaced -- KZPullbackGenerators is a separate landed route and both constructions stay open. Render-QA: grep battery clean; expository pass removed a k-for-level vs k-for-order collision with the preceding paragraph. qa-sweep on the block: 99 criteria, 0 findings; the 10 residual stale criteria were already stale at HEAD. REMAINING on this bean: §B step 6 / qou-denm (ingest Kohno 1987 + Drinfeld 1985 -- cited in this block's cites[] but NOT held in library/, so path 5 cannot verify any 'Kohno-Drinfeld gives...' sentence), and the construction itself on either route. Bean stays OPEN.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -2,10 +2,11 @@
 # qcz14
 title: 'TIER B: achievable q-Collatz-on-QOU Lean formalization gaps'
 status: in-progress
-type: milestone
+type: epic
 priority: medium
 created_at: 2026-07-25T03:10:00Z
-updated_at: 2026-08-29T16:26:26Z
+updated_at: 2026-10-04T15:10:04Z
+parent: b9cj
 ---
 
 Achievable Lean chips (real work, no research breakthrough needed). Follow-up
@@ -33,3 +34,9 @@ STALE-REFRESH 2026-08-29. The three items this bean listed as remaining are all 
 - B7 (period-3) LANDED: QCollatz.qcollatz_period3_EEO and qcollatz_period3_EOO.
 - B6 (census -> Lean) SUPERSEDED in substance: collatz_period4.lean covers period 4 exactly, and collatz_one_odd_family.lean proves two INFINITE families, which is strictly stronger than the 'no cycle <= period N' stamp B6 asked for. qcz16 (the B6 task) stays low/optional.
 Tier B is effectively drained. The live successor is the general-word forcing (qou-gwrd).
+
+
+
+## Reorganisation 2026-10-04
+
+Now the epic for P2.QCOLL under UMBRELLA: open conjectures (formal mathematics only).

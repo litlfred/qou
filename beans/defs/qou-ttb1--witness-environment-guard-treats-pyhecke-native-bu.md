@@ -4,8 +4,11 @@ title: witness environment guard treats pyhecke_native_build as ORDERED, but a .
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T20:06:56Z
-updated_at: 2026-08-24T20:24:54Z
+updated_at: 2026-10-04T15:25:38Z
+parent: qou-5vkl
 ---
 
 OBSERVED 2026-08-24 on branch claude/excise-convention-c-2026-08-24.

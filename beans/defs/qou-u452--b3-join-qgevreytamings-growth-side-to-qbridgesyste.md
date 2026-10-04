@@ -4,8 +4,11 @@ title: 'B3: join QGevreyTaming''s growth side to QBridgeSystem''s algebra'
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T06:35:11Z
-updated_at: 2026-09-07T07:17:56Z
+updated_at: 2026-10-04T15:16:36Z
+parent: qou-frzo
 ---
 
 **RE-SCOPED and DOWNGRADED (2026-09-07): still coherent, but no longer on the path to the binding gap.**

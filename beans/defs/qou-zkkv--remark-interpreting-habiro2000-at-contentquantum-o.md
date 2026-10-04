@@ -3,8 +3,12 @@
 title: Remark interpreting [habiro2000] at content/quantum-observable-universe/lean/QOU/Knot/BorromeanVo…
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:31Z
-updated_at: 2026-08-08T23:34:31Z
+updated_at: 2026-10-04T15:23:49Z
+parent: qou-vva9
 ---
 
 The Borromean colored-Jones formula (Prop. 7.1) is now readable and can be transcribed, closing the gap the registry note flagged. Record it with its real locator.

@@ -1,11 +1,14 @@
 ---
 # qou-8dlq
 title: Remark interpreting 2205.01282v2.pdf at QOU.QBeta.StokesDTBPSBridge
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:19Z
-updated_at: 2026-09-08T04:00:00Z
+updated_at: 2026-10-04T15:13:46Z
+parent: qou-aqfj
 ---
 
 Record what would have to be checked before this changes any epistemic tier: whether the knot complements / 3-manifolds the folio's A_omega argument uses fall inside this document's plumbed, negative-definite-linking-matrix class. If they do not, the GPPV identification stays conjectural for the folio's purposes and the bridge's class fields must remain as they are.
@@ -52,3 +55,9 @@ self-contradiction. It is decidable without judgement — the discriminator is
 the bean asserting *its own* openness, not merely mentioning something open.
 
 Re-close it when the work its body names is actually done.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -4,8 +4,11 @@ title: 'GAP (detector): the sqrt(q)/(q+1) spelling is unseen, and a fully-C file
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T01:38:04Z
-updated_at: 2026-08-25T01:38:33Z
+updated_at: 2026-10-04T15:19:29Z
+parent: qou-trd0
 ---
 
 Found during the probe/derived-tower C→D drain (PR #5739), while acting on the

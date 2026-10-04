@@ -3,8 +3,12 @@
 title: Cite [deturck-gluck2008] at content/schema/references.ts
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:11Z
-updated_at: 2026-08-08T23:34:11Z
+updated_at: 2026-10-04T15:17:27Z
+parent: qou-1qhv
 ---
 
 Fix the φ₀ formula in the references.ts note (restore the −1) and give the reference a refid-keyed citation site so the H³ kernels are reachable from the dependency graph rather than only from bibliography metadata.

@@ -1,11 +1,14 @@
 ---
 # qou-qjhc
 title: 'GAP: identify the duality involution on PGL(3,C) reps with the sigma-transport on Ptolemy coordinates'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-14T18:02:56Z
+updated_at: 2026-10-04T15:12:56Z
+parent: qou-v2om
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -1432,3 +1435,9 @@ complex conjugation (via `psi* = int_A . S(psi)` being an involution) is
 archimedean signature argument of
 `docs/audits/2026-09-14-duality-sigma-is-conjugation-derivation.md` is
 unaffected and remains the live route.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-14 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
