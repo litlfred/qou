@@ -66,4 +66,4 @@ left for a follow-up if wanted.
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: ede90ce982 negative on every form; body "L2 relevance: none" (answered-negative; owner may prefer keep per 13a); STALLED claim (last activity 2026-09-11); 1 main commits
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: ede90ce982 negative on every form; body "L2 relevance: none" (answered-negative; owner may prefer keep per 13a); previously stalled (last activity 2026-09-11); 1 main commits

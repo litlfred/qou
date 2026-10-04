@@ -140,4 +140,4 @@ figure was only trustworthy once the package built.
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] superseded measurement: 15 real sorry terms on main in 6 files (3 content-sibling, 1 Fred2005, 2 scratch/computations) | STALLED: in-progress, last update 2026-08-08
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] superseded measurement: 15 real sorry terms on main in 6 files (3 content-sibling, 1 Fred2005, 2 scratch/computations) | previously stalled; last update 2026-08-08

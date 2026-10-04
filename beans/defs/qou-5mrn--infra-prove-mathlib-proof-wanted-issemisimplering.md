@@ -13,4 +13,4 @@ updated_at: 2026-10-04T15:13:07Z
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] MathlibExt.MatrixSemisimple.instIsSemisimpleRing_matrix used by HeckeSemisimpleGeneral (header) | STALLED: in-progress, last update 2026-07-19
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] MathlibExt.MatrixSemisimple.instIsSemisimpleRing_matrix used by HeckeSemisimpleGeneral (header) | previously stalled; last update 2026-07-19

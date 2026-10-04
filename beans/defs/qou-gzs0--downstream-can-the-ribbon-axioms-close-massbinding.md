@@ -362,4 +362,4 @@ answered-negative rather than leaving it in-progress.
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: 22affaed24 "ribbon axioms cannot close the binding gap"; body: "Recommend closing it as answered-negative"; STALLED claim (last activity 2026-08-30); 11 main commits
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: 22affaed24 "ribbon axioms cannot close the binding gap"; body: "Recommend closing it as answered-negative"; previously stalled (last activity 2026-08-30); 11 main commits

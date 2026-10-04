@@ -1,13 +1,13 @@
 ---
 # qou-nalu
-title: 'EPIC: Whitehead Kashaev — state sum → invariant → VC squeeze proof → c_σ'
+title: Whitehead Kashaev — state sum → invariant → VC squeeze proof → c_σ
 status: todo
 type: feature
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T19:45:01Z
-updated_at: 2026-10-04T15:15:21Z
+updated_at: 2026-10-04T15:46:39Z
 parent: qou-n4nr
 ---
 
@@ -27,3 +27,7 @@ NEXT-ARC beans:
   qou-e7yh  — downstream: van der Veen witness → b1-hyperbolic-rows Step-3
   qou-k00d  — (optional) exact c_σ closed form (torsion)
 Owner plan (2026-08-02): 1 land merges → 2 convergence → 3 downstream → 4 c_σ.
+
+
+
+Former title (before 2026-10-04, when this became a story under a programme epic): EPIC: Whitehead Kashaev — state sum → invariant → VC squeeze proof → c_σ

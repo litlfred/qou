@@ -18,4 +18,4 @@ Some LP consumers (shell_filling_rule) carry explicit primal/dual solutions + co
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] strong_duality theorem uncond in Mathlib/LPDuality.lean, SDPDuality.lean (0 sorry) | STALLED: in-progress, last update 2026-08-24
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] strong_duality theorem uncond in Mathlib/LPDuality.lean, SDPDuality.lean (0 sorry) | previously stalled; last update 2026-08-24

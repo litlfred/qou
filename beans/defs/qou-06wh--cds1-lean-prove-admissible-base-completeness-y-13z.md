@@ -35,7 +35,7 @@ algebra is proved. Nothing wired.
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: 84489c2f56 "Lean-prove convention-D base admissibility is closed at two roots {q,z_D}" + 4e9afefa14; §4.1 cites ConventionDAdmissibleRoots.lean sorry-free; STALLED claim (last activity 2026-08-29); 2 
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: 84489c2f56 "Lean-prove convention-D base admissibility is closed at two roots {q,z_D}" + 4e9afefa14; §4.1 cites ConventionDAdmissibleRoots.lean sorry-free; previously stalled (last activity 2026-08-29); 2 
 
 
 

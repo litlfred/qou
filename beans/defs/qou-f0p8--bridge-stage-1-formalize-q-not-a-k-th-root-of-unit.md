@@ -13,4 +13,4 @@ updated_at: 2026-10-04T15:12:02Z
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] GenericParameter.NotRootOfUnity + ofSqNeOne on main (SchurWeyl/GenericParameter*.lean) | STALLED: in-progress, last update 2026-07-19
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] GenericParameter.NotRootOfUnity + ofSqNeOne on main (SchurWeyl/GenericParameter*.lean) | previously stalled; last update 2026-07-19

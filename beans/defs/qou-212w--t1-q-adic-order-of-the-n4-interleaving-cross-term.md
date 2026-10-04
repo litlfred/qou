@@ -27,4 +27,4 @@ Pushed 533a5fbf22; draft PR #6891, issue #6890.
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: 0d7261f40f "T1 answered NO — n=4 cross term has q-adic order zero"; d5a482710d; STALLED claim (last activity 2026-09-06); 2 main commits
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: 0d7261f40f "T1 answered NO — n=4 cross term has q-adic order zero"; d5a482710d; previously stalled (last activity 2026-09-06); 2 main commits

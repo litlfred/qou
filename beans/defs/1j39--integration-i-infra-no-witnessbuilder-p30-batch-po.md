@@ -429,5 +429,5 @@ Still a duplicate; still awaiting owner close (resolve is human-only).
 
 ## Reasons for Scrapping
 
-Duplicate of `beans/defs/*-watcher-queue.json` (watcher-queue state, not a bean`` (work-plan reorganisation 2026-10-04). Evidence: [M] mirrors a watcher-queue finding class; those queue items are all status wontfix/resolved/needs-author in beans/defs/*-queue.json
+Duplicate of `beans/defs/*-watcher-queue.json` (watcher-queue state, not a bean) (work-plan reorganisation 2026-10-04). Evidence: [M] mirrors a watcher-queue finding class; those queue items are all status wontfix/resolved/needs-author in beans/defs/*-queue.json
 Content is untouched; only this work item is closed.

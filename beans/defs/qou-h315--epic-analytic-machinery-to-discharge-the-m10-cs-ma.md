@@ -1,13 +1,13 @@
 ---
 # qou-h315
-title: 'EPIC: analytic machinery to discharge the M1>0 (CS)-margin input (hCS)'
+title: Analytic machinery to discharge the M1>0 (CS)-margin input (hCS)
 status: todo
 type: feature
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T01:33:54Z
-updated_at: 2026-10-04T15:15:15Z
+updated_at: 2026-10-04T15:46:34Z
 parent: qou-m6dn
 ---
 
@@ -34,3 +34,7 @@ power ~0.94; a theta^{-5/6} Airy-edge term is plausible). Route 1 still stands (
 CompositeEulerMaclaurin bulk + Gaussian-bound edge), but qou-tvok must handle the EDGE term explicitly.
 qou-8quz (symmetry proof) SCRAPPED/refuted. Robust: correction small => any rate >= theta^{-1/2}
 closes (CS) (30-300x headroom).
+
+
+
+Former title (before 2026-10-04, when this became a story under a programme epic): EPIC: analytic machinery to discharge the M1>0 (CS)-margin input (hCS)

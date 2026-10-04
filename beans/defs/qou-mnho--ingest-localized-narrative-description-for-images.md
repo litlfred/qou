@@ -43,5 +43,5 @@ to be guessed — see the house rule recorded there.
 
 ## Reasons for Scrapping
 
-Duplicate of `folio-assistant-d5f1` (platform bean in litlfred/folio-assistant`` (work-plan reorganisation 2026-10-04). Evidence: [M] f-a bean folio-assistant-d5f1 "INGEST: narrative description per image, localized" (todo)
+Duplicate of `folio-assistant-d5f1` (platform bean in litlfred/folio-assistant) (work-plan reorganisation 2026-10-04). Evidence: [M] f-a bean folio-assistant-d5f1 "INGEST: narrative description per image, localized" (todo)
 Content is untouched; only this work item is closed.

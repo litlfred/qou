@@ -136,4 +136,4 @@ intact.
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [B] "premise no longer holds; recommend closure" (reseed 3068be7b 2026-08-07) | STALLED: in-progress, last update 2026-08-07
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [B] "premise no longer holds; recommend closure" (reseed 3068be7b 2026-08-07) | previously stalled; last update 2026-08-07

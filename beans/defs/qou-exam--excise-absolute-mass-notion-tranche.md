@@ -1,13 +1,13 @@
 ---
 # qou-exam
-title: 'EPIC: excise the notion of absolute mass (owner ruling 2026-08-11)'
+title: Excise the notion of absolute mass (owner ruling 2026-08-11)
 status: todo
 type: feature
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T01:00:00Z
-updated_at: 2026-10-04T15:10:41Z
+updated_at: 2026-10-04T15:46:33Z
 parent: qou-wp3h
 ---
 
@@ -23,3 +23,7 @@ B(K), Q_β, Δ_pn. No proved result/compute deleted — framing/targets only.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-11 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+
+Former title (before 2026-10-04, when this became a story under a programme epic): EPIC: excise the notion of absolute mass (owner ruling 2026-08-11)

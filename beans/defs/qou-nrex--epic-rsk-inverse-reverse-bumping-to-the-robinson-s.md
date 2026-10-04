@@ -1238,4 +1238,4 @@ Full review: [docs/audits/2026-08-29-rsk-plancherel-arc-currency-review.md](docs
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [B] "Arc verified on main 2026-08-29"; [M] Mathlib/SchenstedRSKBurnside.lean:56 rskBurnsideHolds (n) unconditional, 0 sorry | STALLED: in-progress, last update 2026-08-29
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [B] "Arc verified on main 2026-08-29"; [M] Mathlib/SchenstedRSKBurnside.lean:56 rskBurnsideHolds (n) unconditional, 0 sorry | previously stalled; last update 2026-08-29

@@ -204,4 +204,4 @@ Audit: docs/audits/2026-08-08-hadamard-vs-liouville-route.md
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] HadamardFactorization.lean 0 real sorry (k1mq child "3 cited sorries" stale); open content continues in n4pv | STALLED: in-progress, last update 2026-08-08
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] HadamardFactorization.lean 0 real sorry (k1mq child "3 cited sorries" stale); open content continues in n4pv | previously stalled; last update 2026-08-08

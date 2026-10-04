@@ -103,4 +103,4 @@ survive the parse, so the source is asserting a precision it does not have.
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: bdba6f731e "both halves resolved"; follow-up is qou-qrsp; STALLED claim (last activity 2026-09-15); 4 main commits
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: bdba6f731e "both halves resolved"; follow-up is qou-qrsp; previously stalled (last activity 2026-09-15); 4 main commits

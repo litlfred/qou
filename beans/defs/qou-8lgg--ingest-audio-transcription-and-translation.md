@@ -43,5 +43,5 @@ to be guessed — see the house rule recorded there.
 
 ## Reasons for Scrapping
 
-Duplicate of `folio-assistant-1r0p` (platform bean in litlfred/folio-assistant`` (work-plan reorganisation 2026-10-04). Evidence: [M] identical title "INGEST: audio transcription and translation" is f-a bean folio-assistant-1r0p (todo)
+Duplicate of `folio-assistant-1r0p` (platform bean in litlfred/folio-assistant) (work-plan reorganisation 2026-10-04). Evidence: [M] identical title "INGEST: audio transcription and translation" is f-a bean folio-assistant-1r0p (todo)
 Content is untouched; only this work item is closed.

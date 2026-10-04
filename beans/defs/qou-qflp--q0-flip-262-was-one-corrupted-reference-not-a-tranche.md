@@ -252,4 +252,4 @@ computed at a value that is neither canonical pin.
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: b89969ad1d swarm complete 887/889 + 4d82572eb5; body flags 74 superseded-muon witnesses as NEW class (re-file under 1c4y); STALLED claim (last activity 2026-08-24); 3 main commits
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: b89969ad1d swarm complete 887/889 + 4d82572eb5; body flags 74 superseded-muon witnesses as NEW class (re-file under 1c4y); previously stalled (last activity 2026-08-24); 3 main commits

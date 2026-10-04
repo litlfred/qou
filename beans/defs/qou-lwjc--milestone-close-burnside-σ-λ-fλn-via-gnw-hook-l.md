@@ -13,4 +13,4 @@ updated_at: 2026-10-04T15:11:15Z
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] BraidKnot/BurnsideDischarge.burnside_proved + instBurnsideContext; [B] sp00 sp10 "clean, instance supplied"; rskBurnsideHolds general n. dup cluster with qou-r0jg | STALLED: in-progress, last upda
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] BraidKnot/BurnsideDischarge.burnside_proved + instBurnsideContext; [B] sp00 sp10 "clean, instance supplied"; rskBurnsideHolds general n. dup cluster with qou-r0jg | previously stalled: in-progress, last upda

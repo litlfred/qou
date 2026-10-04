@@ -227,4 +227,4 @@ is retracted — it was float64 laundering, caught by
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: 832635a1c8 "drain landed — 43,901 -> 0" + a18d95eb3f verification closeout; STALLED claim (last activity 2026-08-23); 12 main commits
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: 832635a1c8 "drain landed — 43,901 -> 0" + a18d95eb3f verification closeout; previously stalled (last activity 2026-08-23); 12 main commits

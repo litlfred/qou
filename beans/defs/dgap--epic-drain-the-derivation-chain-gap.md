@@ -1,13 +1,13 @@
 ---
 # dgap
-title: 'EPIC: drain the derivation-chain gap (tiered, 1299 actionable)'
+title: Drain the derivation-chain gap (tiered, 1299 actionable)
 status: todo
 type: feature
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-18T21:00:00Z
-updated_at: 2026-10-04T15:11:16Z
+updated_at: 2026-10-04T15:46:35Z
 parent: qou-trd0
 ---
 
@@ -42,3 +42,7 @@ if it did. Authoring a chain for compute you do not understand is laundering.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-18 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+
+Former title (before 2026-10-04, when this became a story under a programme epic): EPIC: drain the derivation-chain gap (tiered, 1299 actionable)

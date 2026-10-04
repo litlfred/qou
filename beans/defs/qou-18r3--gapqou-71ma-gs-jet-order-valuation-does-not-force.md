@@ -34,4 +34,4 @@ Audit: docs/audits/2026-08-02-deltalambda-jetorder-degree-selection.md.
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] title "crux answered NEGATIVE"; qou-71ma is the question it answers; STALLED in-progress since 2026-08-02 [M]
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] title "crux answered NEGATIVE"; qou-71ma is the question it answers; previously stalled; since 2026-08-02 [M]

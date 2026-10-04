@@ -13,4 +13,4 @@ updated_at: 2026-10-04T15:11:57Z
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] wenzlCriterion_of_one_lt (SchurWeyl/HeckeSemisimpleReal.lean) — B2f goal reached by another route (dimension squeeze, not trace form) | STALLED: in-progress, last update 2026-07-25
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] wenzlCriterion_of_one_lt (SchurWeyl/HeckeSemisimpleReal.lean) — B2f goal reached by another route (dimension squeeze, not trace form) | previously stalled; last update 2026-07-25

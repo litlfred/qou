@@ -37,4 +37,4 @@ Imports added: Mathlib.Tactic.ComputeDegree, Mathlib.Tactic.LinearCombination. m
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] k1mq child: no real sorry left in target file. Ctil_has_nonreal_root theorem uncond, 0 sorry | STALLED: in-progress, last update 2026-08-02
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] k1mq child: no real sorry left in target file. Ctil_has_nonreal_root theorem uncond, 0 sorry | previously stalled; last update 2026-08-02

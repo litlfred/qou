@@ -1013,7 +1013,7 @@ instance.
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] HeckeSemisimpleGeneral.lean "Bean qou-kwoa" general-n semisimplicity sorry-free; PR #7136 (Geck-Pfeiffer route) becomes optional story | STALLED: in-progress, last update 2026-09-05
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] HeckeSemisimpleGeneral.lean "Bean qou-kwoa" general-n semisimplicity sorry-free; PR #7136 (Geck-Pfeiffer route) becomes optional story | previously stalled; last update 2026-09-05
 
 
 

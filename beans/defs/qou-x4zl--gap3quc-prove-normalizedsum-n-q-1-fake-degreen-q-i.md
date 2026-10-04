@@ -18,4 +18,4 @@ PROGRESS 2026-08-29: found a THIRD route to normalizedSum n q = 1, more elementa
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [B] body: closes via general-X telescope at X=0 (fake_degree_via_telescope_probe.py); verify Lean status; STALLED in-progress since 2026-08-29 [M]
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [B] body: closes via general-X telescope at X=0 (fake_degree_via_telescope_probe.py); verify Lean status; previously stalled; since 2026-08-29 [M]

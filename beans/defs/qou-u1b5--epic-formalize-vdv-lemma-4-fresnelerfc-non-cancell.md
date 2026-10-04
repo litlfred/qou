@@ -1,13 +1,13 @@
 ---
 # qou-u1b5
-title: 'EPIC: formalize vdV Lemma 4 (Fresnel/erfc non-cancellation) — discharge VdVWhiteheadLemma4'
+title: Formalize vdV Lemma 4 (Fresnel/erfc non-cancellation) — discharge VdVWhiteheadLemma4
 status: todo
 type: feature
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T00:36:10Z
-updated_at: 2026-10-04T15:15:16Z
+updated_at: 2026-10-04T15:46:36Z
 parent: qou-n4nr
 ---
 
@@ -89,3 +89,7 @@ window -- and the generic infra is already on main (GaussianWindowSum,
 GaussianTailBound, GaussianSumBound, GaussianTiltedSum, GaussianThetaSum,
 GaussianShearIntegral).  ASSEMBLE, do not build: grep MathlibExt/ first.
 Ledger: docs/coordination/whitehead-link-volume-conjecture-join.md
+
+
+
+Former title (before 2026-10-04, when this became a story under a programme epic): EPIC: formalize vdV Lemma 4 (Fresnel/erfc non-cancellation) — discharge VdVWhiteheadLemma4

@@ -253,4 +253,4 @@ Probe: `computations/probes/c2_pairwise_shape_holdout_probe.py` (exact `Fraction
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [B] body: "2026-09-03 DERIVED, both ways" c1_leading_coefficient_derived_probe.py; STALLED in-progress since 2026-09-06 [M]
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [B] body: "2026-09-03 DERIVED, both ways" c1_leading_coefficient_derived_probe.py; previously stalled; since 2026-09-06 [M]

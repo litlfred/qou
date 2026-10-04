@@ -1,13 +1,13 @@
 ---
 # mlnr
-title: 'EPIC: Milnor exposition drain — whole-paper H1–H8 audit+resolve (expo-milnor-clarity) + milnor-brevity'
+title: Milnor exposition drain — whole-paper H1–H8 audit+resolve (expo-milnor-clarity) + milnor-brevity
 status: todo
 type: feature
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-06T11:10:00Z
-updated_at: 2026-10-04T15:10:41Z
+updated_at: 2026-10-04T15:46:33Z
 parent: qou-mub3
 ---
 
@@ -92,3 +92,7 @@ top-level tracker.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-07-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+
+Former title (before 2026-10-04, when this became a story under a programme epic): EPIC: Milnor exposition drain — whole-paper H1–H8 audit+resolve (expo-milnor-clarity) + milnor-brevity

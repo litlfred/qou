@@ -23,7 +23,7 @@ CLOSED. Proved mkDegLexOrder.wf sorry-free by adding a generic 'shortLex_wellFou
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] decl found sorry-free & unconditional in folio/unital-groebner-bases or fred2005 tree (k1mq child; sorry gone) | STALLED: in-progress, last update 2026-08-02
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] decl found sorry-free & unconditional in folio/unital-groebner-bases or fred2005 tree (k1mq child; sorry gone) | previously stalled; last update 2026-08-02
 
 
 

@@ -584,4 +584,4 @@ Options, pros/cons and six open avenues:
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] title "HEADLINE WITHDRAWN — see the closed form"; superseded; STALLED in-progress since 2026-09-03 [M]
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] title "HEADLINE WITHDRAWN — see the closed form"; superseded; previously stalled; since 2026-09-03 [M]

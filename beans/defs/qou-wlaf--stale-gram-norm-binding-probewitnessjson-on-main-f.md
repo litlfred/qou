@@ -1176,4 +1176,4 @@ about the detector that grew out of it.
 
 ## Summary of Changes
 
-Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: ac5d45bbb8 RESOLVED; body "gram-norm-binding-probe is fixed" (remaining detector proposal belongs elsewhere); STALLED claim (last activity 2026-09-06); 27 main commits
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: ac5d45bbb8 RESOLVED; body "gram-norm-binding-probe is fixed" (remaining detector proposal belongs elsewhere); previously stalled (last activity 2026-09-06); 27 main commits
