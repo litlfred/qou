@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:10:17Z
-updated_at: 2026-10-04T18:10:46Z
+updated_at: 2026-10-04T18:23:27Z
 parent: qou-n4r9
 ---
 
@@ -22,3 +22,7 @@ Owner, verbatim: "pdf generation tooling needs to be migrated over to f-a-sci. t
 - qou: main.tex (styling; notation macros stay qou-side, verbatim), qou-all-tables.tex, standalone-index-of-definitions.tex, .github/docker plus paper-builder-image.yml, build.yml (calls the platform publish.yml), split-pdf-by-chapter.py, make-all-tables, check-reference-pdfs, fix-python-pdf-deps.sh, and the build-pdf command and skills.
 - Inventory and plan: docs/audits/2026-10-04-workplan-and-migration/PDF_{inventory.tsv,report.md} (in progress).
 - Claimed by session_01NdDGeP1SyShmoUssLuRZ91. Duplicate qou-eidn scrapped in its favour.
+
+
+## 2026-10-04: inventory and plan landed
+docs/audits/2026-10-04-workplan-and-migration/PDF_{inventory.tsv,report.md}. Headline: no source preamble exists anywhere. The platform deleted cat-harness/latex/preamble.tex (34a70659c7, bean 0uu2) and the only live copy is lines 1-828 of qou main.tex, a generated file, so the qou PDF cannot be regenerated today. Moving the renderer first would create 4 core→sci import edges. Plan: platform P1 (recover the preamble into sci) … P5 (repair publish.yml); qou Q1 (verbatim notation fragment) … Q4 (retire legacy outputs). Owner decisions D1-D7; D1 (does sci own a print template, against the Task_Render text 'preamble belongs to the folio') gates P1.
