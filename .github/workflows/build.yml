@@ -24,7 +24,7 @@ jobs:
     #
     # Keep this sha byte-identical to `.folio-assistant-pin`. When you bump one,
     # bump both in the same commit.
-    uses: litlfred/folio-assistant/.github/workflows/publish.yml@26c5d37b914e2043f7c69a6c8eb9307c9968a34b
+    uses: litlfred/folio-assistant/.github/workflows/publish.yml@5693b174e460442e5159230cdfc2363e82028a43
     permissions:
       contents: write
       pull-requests: write

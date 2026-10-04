@@ -1,14 +1,14 @@
 ---
 # qou-4r5m
 title: '[TOOLS T2] qou: declare computations/ witnesses and fsh-guts/ in qou.json'
-status: in-progress
+status: completed
 type: feature
 priority: normal
 tags:
     - migration
     - tools
 created_at: 2026-10-04T16:35:41Z
-updated_at: 2026-10-04T18:23:08Z
+updated_at: 2026-10-04T21:16:48Z
 parent: qou-k3er
 ---
 
@@ -27,3 +27,8 @@ Owner hard rule: no math or physics content is changed. Done-when must include t
 
 ## Owner ruling 2026-10-04
 Verbatim: "all witnesses tools will need to go into the KG". Every witness producer becomes a declared Tool node whose output is a witness graph node. This needs T1 (the platform computation-witness graph kind) and T5 (wrap the content-wired producers). Recorded by session_01NdDGeP1SyShmoUssLuRZ91.
+
+
+
+## Witness half done 2026-10-04 (session_01NdDGeP1SyShmoUssLuRZ91)
+qou.json now declares `computations/` with graphKinds [code, computation-witness], in the same commit as the platform pin bump to 5693b174e. run-validate is 5 issues before and after, with identical lines. witness:conformance now runs over the declared directory without --dir. The fsh-guts half landed earlier. Both halves are done.

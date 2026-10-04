@@ -1,7 +1,7 @@
 ---
 # qou-qb6t
 title: '[TOOLS T1] f-a: computation-witness graph kind + Zod computation-witness/v1 (sci)'
-status: in-progress
+status: completed
 type: feature
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - tools
     - upstream-fa
 created_at: 2026-10-04T16:35:40Z
-updated_at: 2026-10-04T20:25:35Z
+updated_at: 2026-10-04T21:16:48Z
 parent: qou-k3er
 ---
 
@@ -29,3 +29,13 @@ Verbatim: "all witnesses tools will need to go into the KG". Every witness produ
 
 ## Claimed 2026-10-04 by session_01NdDGeP1SyShmoUssLuRZ91
 Platform half in progress on folio-assistant branch claude/eloquent-wright-l6fdw0. Measured: an envelope schema accepts all 4,070 strict-JSON qou witnesses; the producer contract (qou's own witness-schema 0.1.1) accepts 1,685 of 3,834 in computations/; 5 files in computations/_deprecated/ are not strict JSON (NaN/Infinity). Contract failures are reported as findings by witness:conformance and no witness is edited.
+
+
+
+## Done 2026-10-04 (session_01NdDGeP1SyShmoUssLuRZ91)
+Landed as folio-assistant#2129 (merge 5693b174e), issue #2128.
+- Kind `computation-witness` registered: layer core, holds derived, validator `schemas/computation-witness.ts#ComputationWitnessSchema`. `check:kind-validators` green.
+- The ENVELOPE accepts all 4,070 strict-JSON qou witnesses. The CONTRACT (qou witness-schema 0.1.1, ported) accepts 1,685 of 3,834 in computations/. The failures are listed as findings by `witness:conformance` and were not fixed.
+- `ComputationWitness` is reconciled: scriptFile, scriptHash and scriptCommitSha added.
+- Content parity: 0 files under computations/ or folio/ changed.
+- Placed in core rather than sci: the `computation.witness` block field is core, and nothing about a witness is specific to mathematics.

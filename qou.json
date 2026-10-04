@@ -32,9 +32,10 @@
       "path": "computations/",
       "description": "Python computations and the witnesses they write (<name>.witness.json). A witness value is addressable in prose as {{ qou.computations.<witness>.<json path> }}, resolved once for the PDF, the blueprint and the site.",
       "graphKinds": [
-        "code"
+        "code",
+        "computation-witness"
       ],
-      "_graphKinds_comment": "`code` because the directory holds the Python computations; the WITNESSES they write have no graph kind on the platform yet (folio-assistant bean filed 2026-09-30, 'a graph kind for computation witnesses'). Declared anyway: an undeclared directory is not addressable, and {{ qou.computations.<witness>.<path> }} is the reason for this entry (#7490)."
+      "_graphKinds_comment": "`code` for the Python computations, and `computation-witness` for the witnesses they write (platform kind added in folio-assistant#2129, story TOOLS T1/T2, beans qou-qb6t and qou-4r5m). One directory, two graph kinds: a directory is a place to look, and the witnesses are told apart by their `.witness.json` suffix. `bun run witness:conformance` reports which witnesses meet the producer contract; it never edits one. Addressable as {{ qou.computations.<witness>.<json path> }} (#7490)."
     },
     {
       "id": "fsh-guts",
