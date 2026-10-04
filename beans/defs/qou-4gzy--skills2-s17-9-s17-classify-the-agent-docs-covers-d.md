@@ -1,14 +1,14 @@
 ---
 # qou-4gzy
 title: '[SKILLS2 S17] Classify the agent docs'
-status: todo
+status: in-progress
 type: feature
 priority: normal
 tags:
     - migration
     - skills2
 created_at: 2026-10-04T16:35:53Z
-updated_at: 2026-10-04T16:54:29Z
+updated_at: 2026-10-04T17:35:38Z
 parent: qou-7vh1
 ---
 
@@ -25,3 +25,5 @@ Owner hard rule: no math or physics content is changed. Done-when must include t
 - Outstanding-work docs (docs/backlog/, plans, attack-option lists) go to beans (agent work) or todos/ (the owner's own work).
 - Math notes (derivation notes, cheat sheets, proofs, refutations) are NOT todos: filing them there would count finished derivations as open work. They wait for a working-notes graph kind, filed upstream as folio-assistant bean folio-assistant-8npa (child of 8jt6), or move into folio/ blocks only by an owner-approved verbatim move.
 - Handoffs and coordination logs go to beans/notes; status surveys to beans/surveys (classify first, move by rename after approval).
+
+Claimed 2026-10-04 by session_01NdDGeP1SyShmoUssLuRZ91 on branch claude/migration-wave6-2026-10-04.
