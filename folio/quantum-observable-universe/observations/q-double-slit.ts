@@ -1,4 +1,4 @@
-import { simulator } from "../../../folio-assistant/cat-harness/schemas/builders";
+import { simulator } from "../../schema/builders";
 
 /**
  * q-Deformed Double Slit — overhead diffraction particle simulator.
