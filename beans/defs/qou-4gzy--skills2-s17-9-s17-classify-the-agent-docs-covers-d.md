@@ -1,14 +1,14 @@
 ---
 # qou-4gzy
 title: '[SKILLS2 S17] Classify the agent docs'
-status: in-progress
+status: completed
 type: feature
 priority: normal
 tags:
     - migration
     - skills2
 created_at: 2026-10-04T16:35:53Z
-updated_at: 2026-10-04T17:35:38Z
+updated_at: 2026-10-04T17:43:50Z
 parent: qou-7vh1
 ---
 
@@ -27,3 +27,7 @@ Owner hard rule: no math or physics content is changed. Done-when must include t
 - Handoffs and coordination logs go to beans/notes; status surveys to beans/surveys (classify first, move by rename after approval).
 
 Claimed 2026-10-04 by session_01NdDGeP1SyShmoUssLuRZ91 on branch claude/migration-wave6-2026-10-04.
+
+
+## Done 2026-10-04 (session_01NdDGeP1SyShmoUssLuRZ91)
+Classification: docs/audits/2026-10-04-workplan-and-migration/S17_agent_docs_classification.{tsv,md}, from scripts/classify-agent-docs.py (deterministic). 212 files: 97 coordination-ledger, 47 outstanding-work, 27 handoff, 18 math-note (HOLD for 8npa), 13 live-registry (STAY), 7 status-survey, 3 unclear (owner review). 189/212 referenced from outside scope: any move rewrites references in the same commit. No file moved.
