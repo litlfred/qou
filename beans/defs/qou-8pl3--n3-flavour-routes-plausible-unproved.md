@@ -4,8 +4,11 @@ title: 'PLAUSIBLE-NOT-PROVED: routes to N = 3 for the flavour fundamental'
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-30T02:41:23Z
+updated_at: 2026-10-04T15:22:06Z
+parent: qou-8lxd
 ---
 
 ## UPDATE 2026-08-07 — the obstruction half is now PROVED

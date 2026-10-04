@@ -3,7 +3,11 @@
 title: 'lepton-mass-tower-canonical: Massive gap for lepton_mass_ratio and figure_eight_reduction'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-12T10:22:30Z
-updated_at: 2026-08-12T10:22:30Z
+updated_at: 2026-10-04T15:21:14Z
+parent: qou-8lxd
 ---
 

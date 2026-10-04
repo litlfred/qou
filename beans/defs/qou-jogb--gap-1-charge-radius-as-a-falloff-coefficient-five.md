@@ -4,8 +4,11 @@ title: 'Gap 1: charge radius as a falloff coefficient -- five routes, and the pr
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T05:32:01Z
-updated_at: 2026-09-13T05:33:56Z
+updated_at: 2026-10-04T15:19:30Z
+parent: qou-8lxd
 ---
 
 ## RE-SCOPED 2026-09-13 before any work — this was nearly a duplicate

@@ -1,11 +1,14 @@
 ---
 # qou-8p1x
 title: 'EPIC: routes to a 3-dimensional fibre / colour SU(3) — assessed and roasted'
-status: in-progress
-type: epic
-parent: qou-8lxd
+status: todo
+type: feature
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T12:40:00Z
-updated_at: 2026-08-07T14:20:00Z
+updated_at: 2026-10-04T15:11:18Z
+parent: qou-8lxd
 ---
 
 Umbrella for every proposed route to colour `SU(3)`, old and new, after the
@@ -286,3 +289,9 @@ Two failures of my own, recorded rather than quietly fixed:
    ones are bloated (this one 12.5 KB, `qou-8p1i` 5.9 KB, `qou-8p1e` 5.2 KB).
    Size is inversely correlated with usefulness across this whole set. The
    roast table above belongs on `qou-8lxd` or in an audit doc.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

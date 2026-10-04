@@ -1,11 +1,13 @@
 ---
 # qou-qvpl
 title: 'T2: second crossing invariant (hypercharge) via ribbon twist'
-status: in-progress
+status: todo
 type: task
 priority: critical
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-03T23:27:16Z
-updated_at: 2026-08-04T17:51:00Z
+updated_at: 2026-10-04T15:10:38Z
 parent: qou-8lxd
 ---
 
@@ -36,3 +38,9 @@ C. Z₆ spectrum check: first-generation hypercharges form a Z₆
 
 CROSS-CHECK: strand-twist-datum.md (content block) is well-written
 and honest about epistemic status. No false derivation claims found.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

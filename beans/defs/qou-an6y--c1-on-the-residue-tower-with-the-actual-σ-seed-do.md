@@ -1,11 +1,14 @@
 ---
 # qou-an6y
 title: 'C1 on the residue tower with the ACTUAL Σ seed: do the Jackson / q-d/dz towers on the branch-point expansion of the colour cubic satisfy L_K from level 2? and how underdetermined is the weight problem?'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T12:28:29Z
-updated_at: 2026-09-04T12:40:06Z
+updated_at: 2026-10-04T15:12:04Z
+parent: qou-8lxd
 ---
 
 ## Question (2026-09-04, follows qou-col1 / #6628)
@@ -30,3 +33,9 @@ Trap recorded: a polyroots double root is good to half the working precision (3.
 No new Lean (the backbone is #6628's `twoOp_c1RecFrom_two_iff`); scope note on the conjecture block; audit doc `docs/audits/2026-09-04-c1-residue-tower-on-the-sw-seed.md`.
 
 Waiting on: owner merge permission for #6652.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

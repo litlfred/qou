@@ -3,9 +3,12 @@
 title: 'REFINE: virtual particles = transient/unstable vertex flows (Reeb flow + Demazure + width)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T18:14:05Z
-updated_at: 2026-08-02T18:14:05Z
-parent: qou-ywj9
+updated_at: 2026-10-04T15:23:19Z
+parent: qou-8lxd
 ---
 
 ## Framing (owner, 2026-08-02)

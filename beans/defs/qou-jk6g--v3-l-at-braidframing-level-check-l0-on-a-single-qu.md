@@ -4,8 +4,11 @@ title: 'V3: L at braid/framing level + check L=0 on a single quark'
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T18:23:24Z
-updated_at: 2026-08-10T18:23:25Z
+updated_at: 2026-10-04T15:25:22Z
+parent: qou-8lxd
 ---
 
 Follows LeptonNumberCarrierChirality.lean: L cannot factor through the UNFRAMED

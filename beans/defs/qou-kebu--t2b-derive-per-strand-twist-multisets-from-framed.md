@@ -1,11 +1,13 @@
 ---
 # qou-kebu
 title: 'T2b: derive per-strand twist multisets from framed braid words'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-04T10:16:22Z
-updated_at: 2026-08-16T23:00:29Z
+updated_at: 2026-10-04T15:11:09Z
 parent: qou-8lxd
 ---
 
@@ -99,3 +101,9 @@ reformulated rather than closed.
 The battery's own witness records it: the corpus carries NO per-chiral-fermion
 framed braid words (bean htw2). Until those exist the table cannot be evaluated
 -- which is exactly why it is worth stating now, as the test those words face.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

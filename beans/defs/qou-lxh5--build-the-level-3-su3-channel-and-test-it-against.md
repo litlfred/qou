@@ -3,8 +3,12 @@
 title: Build the level-3 (SU(3)) channel and test it against a colour observable
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T12:55:00Z
-updated_at: 2026-08-16T12:55:00Z
+updated_at: 2026-10-04T15:16:46Z
+parent: qou-8lxd
 ---
 
 HYPOTHESIS, wired to nothing. Named test from PR #5229 §4.

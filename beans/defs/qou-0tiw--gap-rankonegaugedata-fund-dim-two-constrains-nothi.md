@@ -4,8 +4,11 @@ title: 'GAP: RankOneGaugeData fund_dim_two constrains nothing -- circular with S
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-17T22:44:34Z
-updated_at: 2026-08-17T22:46:18Z
+updated_at: 2026-10-04T15:20:21Z
+parent: qou-8lxd
 ---
 
 Found by the ch1+ch2 audit (qou-n4jv), 2026-08-17.

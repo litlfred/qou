@@ -1,11 +1,13 @@
 ---
 # qou-ys29
 title: 'T3h: Fano plane from genus-3 restriction of Bring surface — derive octonions from geometry'
-status: in-progress
+status: todo
 type: task
 priority: critical
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-04T10:18:37Z
-updated_at: 2026-08-04T18:13:56Z
+updated_at: 2026-10-04T15:10:39Z
 parent: qou-8lxd
 ---
 
@@ -155,3 +157,9 @@ REMAINING OPEN QUESTIONS:
   (Expected: the Klein quartic is Hurwitz-maximal at g=3)
 - Is the Seifert surface of T(2,7) a literal subsurface of Bring?
   (Topological, needs separate investigation)
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

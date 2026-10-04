@@ -3,8 +3,13 @@
 title: Demote defect-legendrian + topological-charge blocks to conjecture (post-q407)
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-08-21T15:10:31Z
-updated_at: 2026-08-21T15:10:31Z
+updated_at: 2026-10-04T15:18:43Z
+parent: qou-8lxd
 ---
 
 q407 converted the vacuous 'theorem (h:P):P:=h' Lean siblings of these two blocks to honest 'def : Prop' (Pattern C), clearing the self-assuming-projection flag. But the .ts block kinds are still 'proposition' (defect-legendrian-knot) and 'theorem' (topological-charge-quantization), while their claims are NOT Lean-provable at this abstraction (the docstrings admit this — the geometric content needs the q-torsion leaf / Reeb-derivation substrate). A proposition/theorem block whose Lean only NAMES the claim will read as a proof-statement-integrity gap on the next qa-sweep.

@@ -3,6 +3,7 @@
 title: 'PROVE(lean): shell_filling_rule.lean — 3 cited sorries [cited bertsimas1997,manuscript]'
 status: todo
 type: task
+priority: normal
 tags:
     - lean
     - cited-sorry
@@ -10,9 +11,10 @@ tags:
     - infra-blocked
     - repo-infra
     - cite-bertsimas1997
+    - reorg-2026-10-04
 created_at: 2026-08-01T23:31:06Z
-updated_at: 2026-08-01T23:31:06Z
-parent: qou-k1mq
+updated_at: 2026-10-04T15:22:45Z
+parent: qou-wp6m
 ---
 
 **File:** `QOU/Molecular/shell_filling_rule.lean` (QOU)  ·  3 cited sorry(s)

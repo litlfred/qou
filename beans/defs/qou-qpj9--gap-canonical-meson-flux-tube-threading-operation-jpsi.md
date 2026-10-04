@@ -4,8 +4,11 @@ title: 'GAP: define canonical meson flux-tube threading braid (J/ψ underived)'
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-09-03T08:31:55Z
+updated_at: 2026-10-04T15:19:53Z
+parent: qou-8lxd
 ---
 
 ## The wall

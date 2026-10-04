@@ -3,10 +3,13 @@
 title: 'GAP: m_H — T(2,8) identification conjectural; RT level selection + invariant→mass map open; probes within 2×'
 status: todo
 type: task
+priority: normal
 tags:
     - sm-26
+    - reorg-2026-10-04
 created_at: 2026-09-03T08:31:51Z
-updated_at: 2026-09-03T08:31:51Z
+updated_at: 2026-10-04T15:20:11Z
+parent: qou-8lxd
 ---
 
 Per-term bean for the Higgs mass (session qou-ggdk, bean qou-bsu0). Tier: conjectural (`conj:electroweak-higgs-torus-link-triplet`; provable base proved, identification not). Owner ruling 2026-06-30: 4₁ is the mass mechanism, T(2,8) the boson (qou-rdbr). Not gated on 4-A/B/C; the gate is a level-selection principle. Sibling of qou-z3x8 (v).
