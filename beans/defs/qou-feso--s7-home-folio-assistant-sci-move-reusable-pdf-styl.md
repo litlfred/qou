@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:10:17Z
-updated_at: 2026-10-04T18:25:48Z
+updated_at: 2026-10-04T18:29:08Z
 parent: qou-n4r9
 ---
 
@@ -30,3 +30,7 @@ docs/audits/2026-10-04-workplan-and-migration/PDF_{inventory.tsv,report.md}. Hea
 
 ## Owner decision D1, 2026-10-04: YES, split
 folio-assistant-sci owns a generic paper print template: class and packages, geometry, titlesec formats, theorem styles, LeanBlueprint macros, Lean status marks and margin annotations, unicode safety maps, \defterm/\refterm, \proofstatuslegend. qou keeps a verbatim notation fragment: \bigbowtie, \varTheta, \pp, \yng, \unicode, and the 8 manifest macros. The sci Task_Render sentence "preamble belongs to the folio" is amended accordingly in P1. Parity: the sci template plus the qou fragment reproduce main.tex lines 1-828 as a line set. Next: P1 (platform), then Q1 (qou). D2-D7 still open.
+
+
+## D2 measured 2026-10-04: which unicode maps are notation
+qou main.tex has 133 \newunicodechar plus 163 \DeclareUnicodeCharacter maps (the 163 are accent maps U+00C0-017F, all typography). Classifying the 133 by what they emit: 92 symbol/operator, 31 Greek, 5 blackboard (ℝℂℕℚℤ), 1 calligraphic (𝓑 → \mathcal{B}, the Borromean braid word 𝓑₃), 1 fraktur (𝔙 → \mathfrak{V}). Only the last two encode a font choice. Default unless the owner overrides: 𝓑 and 𝔙 go verbatim into the qou notation fragment; everything else goes to the sci template.
