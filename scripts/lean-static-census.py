@@ -29,8 +29,8 @@ standing) entry for that commit, shadowing a later complete `qa:refresh`
 (cat-harness qa-reports skill, bean 3hk4). `producerSha256` is recorded, so a
 census made by a different version of this script is visibly different.
 
-Measured 2026-10-04 at main 41f7d91d052 (census sha256 8175b24e2ed4…; bean qou-4lx3
-carries both): library 2,953 files / 44,908 decls / 0 sorry / 12 axiom; siblings
+Measured 2026-10-04 at main 41f7d91d052 (bean qou-4lx3 carries the digest;
+it is not written here because producerSha256 covers this file): library 2,953 files / 44,908 decls / 0 sorry / 12 axiom; siblings
 1,039 / 7,856 / 15 / 101. The analysis's "library 1/24" was a lexical
 over-count: it read `sorry`/`axiom` quoted inside docstrings (e.g. the
 history blocks of B1HyperbolicRowsTheorem.lean and LpDualityHypothesisClass.lean),
