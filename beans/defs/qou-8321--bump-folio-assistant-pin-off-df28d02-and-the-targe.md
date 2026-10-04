@@ -8,7 +8,7 @@ tags:
     - platform
     - migration
 created_at: 2026-09-26T11:20:29Z
-updated_at: 2026-09-30T15:14:27Z
+updated_at: 2026-10-04T16:34:44Z
 parent: qou-n4r9
 ---
 
@@ -276,3 +276,9 @@ Stays **todo**. The open items narrow to three, of which only the first is new:
 
 ## Summary of Changes (2026-09-30)
 Bumped 37a36ce -> 378a100 in #7491 (merged, e339aced), with the pin and build.yml in one commit. run-validate: 4 -> 4 issues, the same lines, once run-validate.ts and preload-registry.ts import configureLeanPackages from cat-harness/content/pipeline/lean-formal-ref. Without that import it was 21 (17 false 'requires Lean formalization'). A follow-up bump to the folio-assistant#1620 merge rides with #7490's follow-up PR.
+
+
+
+## Summary of Changes
+
+Done 2026-10-04 on branch claude/s1-platform-pin-2026-10-04: platform pin cb194b1 -> 26c5d37 (platform main) in .folio-assistant-pin and build.yml; qou.json declares needs [folio-assistant-sci], repository and canonicalUrl, and drops the retired dependents key; qou.config.json re-points adapterModule to folio-assistant-sci and authors the dependency edge; folio.config.json removed; setup-folio-assistant.sh fetches the pinned SHA and initialises submodules. run-validate 4 -> 5 issues (same 4 + qa-reports notice); check-instance-graph clean; no content file changed.
