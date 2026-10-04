@@ -4,8 +4,11 @@ title: 'MISLABEL: two rows in gb-filtration-jet-order-reader name knots their br
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T15:30:55Z
-updated_at: 2026-08-21T15:31:16Z
+updated_at: 2026-10-04T15:21:37Z
+parent: qou-trd0
 ---
 
 computations/gb-filtration-jet-order-reader.witness.json:41 names a row 'deuteron 6_2 sigma_1^-1 sigma_2 sigma_1^-1 sigma_2^2 in H_3'. That word closes to a 2-COMPONENT LINK (det 8). 6_2 is a KNOT (1 component, det 11). The row two below it, 'tritium 8_11 sigma_1^-1 sigma_2 sigma_1^-2 sigma_2^3', is also 2-component; 8_11 is a knot. The adjacent figure-8 row '(sigma_1 sigma_2^-1)^2' IS correct (1 component, det 5), so the file's notation convention is the standard one and these two rows are genuinely wrong rather than differently-conventioned.

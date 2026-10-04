@@ -4,8 +4,11 @@ title: 'check-sidecars: two pre-existing gate items (authors-note sidecar unreac
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T13:04:40Z
-updated_at: 2026-08-30T15:41:20Z
+updated_at: 2026-10-04T15:16:55Z
+parent: qou-5vkl
 ---
 
 Found while running `scripts/check-sidecars.sh` as the pre-commit preflight on

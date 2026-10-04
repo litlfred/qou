@@ -4,8 +4,11 @@ title: lean-direct exit 0 is a claim about the olean snapshot, not about the lib
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T07:09:21Z
-updated_at: 2026-09-06T11:48:32Z
+updated_at: 2026-10-04T15:14:55Z
+parent: qou-5vkl
 ---
 
 ## The claim

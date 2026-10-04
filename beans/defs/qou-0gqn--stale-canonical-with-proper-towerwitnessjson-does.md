@@ -4,8 +4,11 @@ title: 'STALE: canonical-with-proper-tower.witness.json does not reproduce -- E_
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-28T20:29:47Z
-updated_at: 2026-08-29T01:17:15Z
+updated_at: 2026-10-04T15:24:36Z
+parent: qou-5vkl
 ---
 
 MEASURED 2026-08-28 on branch `claude/witnessbuilder-provenance-migration-2026-08-28`.

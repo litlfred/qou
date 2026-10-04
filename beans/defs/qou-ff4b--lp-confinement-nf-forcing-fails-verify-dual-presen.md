@@ -4,8 +4,11 @@ title: 'lp-confinement-nf-forcing FAILS verify_dual_present: 6 records where act
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-08T04:46:25Z
-updated_at: 2026-09-08T04:47:04Z
+updated_at: 2026-10-04T15:15:45Z
+parent: qou-trd0
 ---
 
 Found 2026-09-08 while reading bean `qou-aze5` for the `qou-bstl` drain. Not a

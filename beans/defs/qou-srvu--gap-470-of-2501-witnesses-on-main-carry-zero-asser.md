@@ -4,8 +4,11 @@ title: 'GAP: 470 of 2501 witnesses on main carry ZERO assertions and all report 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T09:45:49Z
-updated_at: 2026-08-30T13:01:27Z
+updated_at: 2026-10-04T15:19:37Z
+parent: qou-5vkl
 ---
 
 Surfaced while draining `qou-3e5m`, and this bean exists because **that drain

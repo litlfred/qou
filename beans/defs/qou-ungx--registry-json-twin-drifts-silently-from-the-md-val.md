@@ -1,11 +1,14 @@
 ---
 # qou-ungx
 title: Registry JSON twin drifts silently from the .md — validator never compares them
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T04:32:25Z
-updated_at: 2026-08-15T12:00:00Z
+updated_at: 2026-10-04T15:13:45Z
+parent: qou-trd0
 ---
 
 
@@ -93,3 +96,9 @@ contributes zero warnings on the current corpus).
 Left open here: nothing from this bean's scope. PR #4767 (unmerged) also
 uses the name "R6" for a different check (`doc_claims`) on its own branch;
 whichever lands second renumbers.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-15 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

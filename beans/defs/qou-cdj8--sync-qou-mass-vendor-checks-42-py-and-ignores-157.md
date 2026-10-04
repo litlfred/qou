@@ -4,8 +4,11 @@ title: sync-qou-mass-vendor checks 42 .py and ignores 157 .witness.json — 122 
 status: in-progress
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T21:44:29Z
-updated_at: 2026-08-25T07:35:11Z
+updated_at: 2026-10-04T15:14:02Z
+parent: qou-5vkl
 ---
 
 Split from `qou-hp3g`, whose sync-drift half turned out already fixed

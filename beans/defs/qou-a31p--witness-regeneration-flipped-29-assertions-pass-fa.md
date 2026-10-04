@@ -1,11 +1,14 @@
 ---
 # qou-a31p
 title: Witness regeneration flipped 29 assertions PASS->FAIL and every blocking gate stayed green
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T14:00:03Z
-updated_at: 2026-08-23T15:38:50Z
+updated_at: 2026-10-04T15:14:26Z
+parent: qou-5vkl
 ---
 
 ## What happened
@@ -134,3 +137,9 @@ I saw PASS -> FAIL, assumed my change caused it, and reverted without bisecting.
 The correct first move was the one I eventually made: run the pre-sweep source and
 see whether the failure predates the change. Reverting on suspicion put 15 stale
 passes back into the tree for one commit.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-23 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

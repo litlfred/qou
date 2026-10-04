@@ -1,10 +1,14 @@
 ---
 # qou-zfex
 title: 'wave3 triage: 7 producer failures — 3 Phase-6 migration stragglers + 4 timeouts'
-status: in-progress
+status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:31:03Z
-updated_at: 2026-08-08T23:31:03Z
+updated_at: 2026-10-04T15:14:23Z
+parent: qou-5vkl
 ---
 
 
@@ -78,3 +82,9 @@ cleanup path. Cause not established; the four 900 s timeouts consumed 60 of the
 - [ ] re-run the wave for the ~25 unreached producers plus the 3 fixed
 - [ ] run the 4 slow producers separately with a large `--timeout`
 - [ ] follow-up bean: audit the `mpf(repr(` sites against string-valued fields
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

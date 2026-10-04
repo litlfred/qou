@@ -4,8 +4,10 @@ title: 'f-a-sci should own the math/science schemas: cat-harness holds MATH_BLOC
 status: in-progress
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-27T05:52:03Z
-updated_at: 2026-09-27T09:56:29Z
+updated_at: 2026-10-04T15:12:32Z
 parent: qou-n4r9
 ---
 

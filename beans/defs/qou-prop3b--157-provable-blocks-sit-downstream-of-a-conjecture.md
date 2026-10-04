@@ -1,11 +1,14 @@
 ---
 # qou-prop3b
 title: 'CORRECTED: 34 propagation violators, not ~150 — my screen inverted the answer; 9 platform scripts unrunnable'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T19:05:00Z
-updated_at: 2026-09-03T13:05:02Z
+updated_at: 2026-10-04T15:10:52Z
+parent: qou-5vkl
 ---
 
 Reached from `qou-hprp`'s revised order, which put
@@ -494,3 +497,9 @@ audit while nothing downstream actually became conditional — the same
 satisfying-the-visible-half move this bean refused for `conj:magic-numbers-from-q`.
 The conversion is right **only** as a package with the 7 downstream signatures,
 which is real work across 7 blocks and should be claimed as such.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

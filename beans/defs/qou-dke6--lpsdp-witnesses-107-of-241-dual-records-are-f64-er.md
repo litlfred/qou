@@ -4,8 +4,11 @@ title: 'LP/SDP witnesses: 107 of 241 dual records are f64-era or unattributable;
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T08:14:33Z
-updated_at: 2026-09-04T13:47:48Z
+updated_at: 2026-10-04T15:21:19Z
+parent: qou-5vkl
 ---
 
 Found while wiring `qou-fr4d` (certified LP duality residuals). NOT caused by

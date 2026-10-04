@@ -4,8 +4,11 @@ title: 'ctype coverage guard is RED on main: 3 new family-blind sites, 3 stale b
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-19T21:03:40Z
-updated_at: 2026-08-19T21:04:44Z
+updated_at: 2026-10-04T15:15:39Z
+parent: qou-5vkl
 ---
 
 Measured on origin/main 5b158ef06c, 2026-08-19.

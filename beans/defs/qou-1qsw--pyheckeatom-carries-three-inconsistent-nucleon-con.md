@@ -4,8 +4,11 @@ title: pyhecke.atom carries THREE inconsistent nucleon constructions (nets diffe
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T16:24:57Z
-updated_at: 2026-09-13T19:31:00Z
+updated_at: 2026-10-04T15:22:49Z
+parent: qou-5vkl
 ---
 
 Surfaced by the `qou-cds1` takeover work (`74a52d3486`), which recorded it as

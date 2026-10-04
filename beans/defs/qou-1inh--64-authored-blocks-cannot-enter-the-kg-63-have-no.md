@@ -3,8 +3,12 @@
 title: 64 authored blocks cannot enter the KG — 63 have no label, 1 is in a nested subdir
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-27T05:11:12Z
-updated_at: 2026-09-27T05:11:12Z
+updated_at: 2026-10-04T15:16:06Z
+parent: qou-n4r9
 ---
 
 ## Measured, both causes identified rather than guessed

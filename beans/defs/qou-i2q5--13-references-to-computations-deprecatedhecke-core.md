@@ -3,8 +3,12 @@
 title: 13 references to computations/_deprecated/hecke_core_legacy.py — a path that never existed, from a split blocked on owner OK since 2026-05-24
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T14:51:30Z
-updated_at: 2026-08-24T14:51:30Z
+updated_at: 2026-10-04T15:15:58Z
+parent: qou-5vkl
 ---
 
 ## The path 13 sites point at does not exist

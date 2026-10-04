@@ -3,8 +3,12 @@
 title: '13a sweep: 103 completed beans assert their own subject is still open (candidates, NOT a violation count)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T18:13:32Z
-updated_at: 2026-09-07T18:13:32Z
+updated_at: 2026-10-04T15:15:58Z
+parent: qou-5vkl
 ---
 
 

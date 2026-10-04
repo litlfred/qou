@@ -4,8 +4,11 @@ title: 'Sweep verdicts depend on an unrecorded environment: mpmath absent made 5
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T13:14:20Z
-updated_at: 2026-08-23T13:15:02Z
+updated_at: 2026-10-04T15:24:40Z
+parent: qou-5vkl
 ---
 
 ## What happened

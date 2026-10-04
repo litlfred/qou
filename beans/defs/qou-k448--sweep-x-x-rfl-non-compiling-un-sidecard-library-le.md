@@ -3,8 +3,12 @@
 title: 'Sweep: ''X = X := rfl'' + non-compiling un-sidecar''d library Lean files'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T08:35:57Z
-updated_at: 2026-08-08T08:35:57Z
+updated_at: 2026-10-04T15:24:41Z
+parent: qou-5vkl
 ---
 
 

@@ -1,11 +1,14 @@
 ---
 # qou-58zw
 title: 'Two untrustworthiness classes no existing audit covers: tolerance-below-arithmetic-floor, and producers that SHRANK'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T18:12:32Z
-updated_at: 2026-08-30T21:55:16Z
+updated_at: 2026-10-04T15:14:16Z
+parent: qou-5vkl
 ---
 
 Found 2026-08-30 answering "which probes are on float or not trustworthy". The
@@ -695,3 +698,9 @@ newer than the green it recorded.
 ask-first exemptions — it is neither a precision increase nor corpus-derived.
 The tree was restored after both runs (`git status` clean); nothing was
 committed but this note.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

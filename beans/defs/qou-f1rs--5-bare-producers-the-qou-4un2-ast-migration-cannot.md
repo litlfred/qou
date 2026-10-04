@@ -4,8 +4,11 @@ title: '5 bare producers the qou-4un2 AST migration cannot handle: 3 inline dict
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-28T20:19:49Z
-updated_at: 2026-08-28T20:46:11Z
+updated_at: 2026-10-04T15:16:05Z
+parent: qou-5vkl
 ---
 
 ## Context

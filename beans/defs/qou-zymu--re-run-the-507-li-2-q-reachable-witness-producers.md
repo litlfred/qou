@@ -1,10 +1,14 @@
 ---
 # qou-zymu
 title: Re-run the 507 li_2_q-reachable witness producers after the max_k truncation fix
-status: in-progress
+status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T13:03:00Z
-updated_at: 2026-08-23T13:03:00Z
+updated_at: 2026-10-04T15:13:44Z
+parent: qou-5vkl
 ---
 
 `li_2_q` had `max_k=2000` while its own convergence needs 7,083 terms at the
@@ -54,3 +58,9 @@ provenance/timestamp-only churn rather than commit it. Two hard-won guards:
 Producers whose output carries raw float64 must be fixed at the producer before
 their witnesses land (three were, in dd4ac1494 — and that surfaced both casimir
 producers computing at a float64 `q` wrong beyond digit 16).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-23 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

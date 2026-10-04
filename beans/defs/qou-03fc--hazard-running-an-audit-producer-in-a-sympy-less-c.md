@@ -4,8 +4,11 @@ title: 'HAZARD: running an audit producer in a sympy-less container silently DEG
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T12:39:42Z
-updated_at: 2026-09-05T09:48:00Z
+updated_at: 2026-10-04T15:15:43Z
+parent: qou-5vkl
 ---
 
 Found while running `scripts/precision-gates.sh --changed` as the pre-commit

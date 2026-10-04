@@ -4,8 +4,11 @@ title: rho-k witness merged with a STRIPPED environment — scipy/clarabel dropp
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T13:53:31Z
-updated_at: 2026-08-16T13:53:59Z
+updated_at: 2026-10-04T15:24:11Z
+parent: qou-5vkl
 ---
 
 Self-inflicted, and merged: PR #5199, merge SHA cc2687b3d9. I regenerated computations/rho-k-co-casimir-extended.witness.json on convention D in a container missing two libraries, and the environment block went backwards:

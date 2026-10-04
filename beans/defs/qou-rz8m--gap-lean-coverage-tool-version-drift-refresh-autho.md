@@ -3,8 +3,12 @@
 title: 'GAP: lean-coverage tool version drift — refresh-authors-note rewrites 97.2%->93.9% from platform version alone'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T11:05:51Z
-updated_at: 2026-08-09T11:05:51Z
+updated_at: 2026-10-04T15:20:09Z
+parent: qou-n4r9
 ---
 
 Found during `/prepare-merge` on PR #4597
@@ -65,5 +69,4 @@ comply lands the regression.
 3. Until then, treat the `check-sidecars.sh` authors-note ⚠ as a known
    false positive and do **not** commit the refresh from a feature
    branch.
-
 

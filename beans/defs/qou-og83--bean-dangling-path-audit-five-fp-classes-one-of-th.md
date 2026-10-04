@@ -1,11 +1,14 @@
 ---
 # qou-og83
 title: 'bean-dangling-path-audit: five FP classes, one of them a bug in the extractor'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T06:36:36Z
-updated_at: 2026-09-07T06:37:06Z
+updated_at: 2026-10-04T15:11:59Z
+parent: qou-5vkl
 ---
 
 **Unclaimed when the work was done — opened after the fact.** The script landed
@@ -57,3 +60,9 @@ sub-populations:
 created), measured 2 of 35. No sound test; do not guess from an imperative verb.
 
 PR: https://github.com/litlfred/qou/pull/6998 — `--self-test` 16/16.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

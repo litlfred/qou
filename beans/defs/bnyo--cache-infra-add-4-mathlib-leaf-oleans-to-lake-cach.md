@@ -3,8 +3,12 @@
 title: 'Cache infra: add 4 Mathlib leaf oleans to lake-cache cone (5 cache-artifact files genuinely use them)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-06-27T13:09:47Z
-updated_at: 2026-06-27T13:09:47Z
+updated_at: 2026-10-04T15:16:51Z
+parent: qou-5vkl
 ---
 
 ## Analysis (2026-06-28) — uneven cost; recommend BATCHING, not piecemeal reseed

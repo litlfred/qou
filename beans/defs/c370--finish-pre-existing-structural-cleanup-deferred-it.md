@@ -3,8 +3,12 @@
 title: Finish pre-existing structural cleanup — deferred items (blocked by active PRs / author judgment)
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-06-29T20:02:32Z
-updated_at: 2026-06-29T20:02:32Z
+updated_at: 2026-10-04T15:19:10Z
+parent: qou-5vkl
 ---
 
 

@@ -4,8 +4,11 @@ title: 'GAP: braid_encoding_audit has ZERO assertions and reports allPassed=true
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T15:12:00Z
-updated_at: 2026-09-07T04:32:20Z
+updated_at: 2026-10-04T15:19:47Z
+parent: qou-trd0
 ---
 
 `computations/audits/braid_encoding_audit.py` runs to **exit 0** and writes a

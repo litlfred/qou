@@ -1,11 +1,14 @@
 ---
 # qou-vfy1
 title: 221 blocks assert computation.status "verified"; 64 are not supported by the witness they cite
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T05:20:00Z
-updated_at: 2026-08-23T20:44:21Z
+updated_at: 2026-10-04T15:11:44Z
+parent: qou-5vkl
 ---
 
 The quantified form of class **C2** in the `qou-3nva` ledger — a block and
@@ -544,3 +547,9 @@ work this list as a red-to-green exercise. `lem:frobenius-cocasimir-refuted-deut
 has "refuted" in its label; several of the `conj:` entries are open problems.
 For a good number of these the honest outcome is a status demotion, not a new
 assertion.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-23 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

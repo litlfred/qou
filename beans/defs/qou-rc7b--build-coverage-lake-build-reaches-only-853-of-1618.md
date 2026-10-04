@@ -4,8 +4,11 @@ title: 'BUILD COVERAGE: `lake build` reaches only 853 of 1618 QOU Lean modules â
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T09:29:19Z
-updated_at: 2026-09-26T11:03:25Z
+updated_at: 2026-10-04T15:14:41Z
+parent: qou-5vkl
 ---
 
 

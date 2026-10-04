@@ -1,11 +1,14 @@
 ---
 # qou-g5sp
 title: The entire Bruhat / Coxeter-order component is unreachable from QOU.lean (9 modules, includes merged main work)
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T22:32:32Z
-updated_at: 2026-09-13T13:10:00Z
+updated_at: 2026-10-04T15:14:11Z
+parent: qou-5vkl
 ---
 
 ## The finding
@@ -607,3 +610,9 @@ these modules and **not** a container limit. The observations stand; the
 attribution is dead. The sweep's `UNVERIFIED` class — whose source comment cites
 that very measurement as its motivating case — is the correct home for evidence
 of that shape, and it is where such a result would land today.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

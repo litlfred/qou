@@ -1,11 +1,14 @@
 ---
 # qou-t0wm
 title: 'Seven assertions cannot fail: the tolerance bounds its own residual, in six producers'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T06:21:10Z
-updated_at: 2026-09-05T06:48:36Z
+updated_at: 2026-10-04T15:13:56Z
+parent: qou-5vkl
 ---
 
 Found 2026-09-05 while closing out the `qou-tol0` root cause. That bean's own
@@ -159,3 +162,9 @@ went red the moment the first was **fixed**. A calibration that a successful
 drain breaks is measuring the corpus, not the detector. Both are synthetic
 fixtures now; only the git-history one stays live, durable because it is a
 fixed sha.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

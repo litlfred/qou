@@ -4,8 +4,11 @@ title: 'TRAP: a behind-count on a shallow clone is not a main-advance count'
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-08T05:16:03Z
-updated_at: 2026-09-08T05:16:03Z
+updated_at: 2026-10-04T15:25:08Z
+parent: qou-nu9d
 ---
 
 **Measured 2026-09-08 03:20→05:12 UTC. Cost me most of a check-in turn, and the misleading figure is printed to EVERY agent by the session-start hook.**

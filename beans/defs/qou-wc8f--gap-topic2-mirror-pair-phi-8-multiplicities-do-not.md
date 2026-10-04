@@ -3,8 +3,12 @@
 title: 'GAP: topic2 mirror-pair Phi_8 multiplicities do not reproduce on main, and the fresh values violate the documented scaling law'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T14:21:18Z
-updated_at: 2026-08-30T14:21:18Z
+updated_at: 2026-10-04T15:20:29Z
+parent: qou-trd0
 ---
 
 Found while draining `qou-srvu` slice C. Not drained — deliberately LEFT, and

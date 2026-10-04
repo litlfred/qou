@@ -1,11 +1,14 @@
 ---
 # qou-wpp2
 title: 'Vendor mirror ratchet is RED on main: 9 modules drifted, 1 witness missing from the cone'
-status: in-progress
+status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-19T21:03:40Z
-updated_at: 2026-09-07T06:19:41Z
+updated_at: 2026-10-04T15:11:41Z
+parent: qou-5vkl
 ---
 
 Measured on origin/main 5b158ef06c, 2026-08-19.
@@ -149,3 +152,9 @@ So the mirror was one of THREE carriers, and the one this bean covers is now
 the only one closed by copying. Filed as `qou-36i2`; it needs producer work
 that should land with `qou-xwet` and `qou-3wqg`, which already say that file
 needs regenerating.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -4,8 +4,11 @@ title: Fourteen of 57 committed LP/SDP witnesses report a zero net-constraint du
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T12:19:51Z
-updated_at: 2026-08-22T15:33:12Z
+updated_at: 2026-10-04T15:19:22Z
+parent: qou-5vkl
 ---
 
 

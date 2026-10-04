@@ -1,11 +1,14 @@
 ---
 # qou-37kk
 title: 'Witness drift on main: carrier-saturation-mechanism flips 5 assertions pass->FAIL on a clean re-run'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T15:43:52Z
-updated_at: 2026-08-26T16:08:13Z
+updated_at: 2026-10-04T15:14:25Z
+parent: qou-5vkl
 ---
 
 Found while draining the assertion_kwarg float64 casts (qou-l790). NOT caused by
@@ -114,3 +117,9 @@ guessing, and I did NOT touch a tolerance or an expected value.
 Both witnesses regenerated off main and committed with their TRUE verdicts,
 including the five failures. Recording a real failure is the point; making it
 pass by moving the goalposts would be laundering.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-26 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -1,10 +1,14 @@
 ---
 # qou-sxyr
 title: 'Beans citing a Lean declaration go stale silently: 6 of 10 in sp00 were open while proved'
-status: in-progress
+status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T10:27:08Z
-updated_at: 2026-09-06T10:27:08Z
+updated_at: 2026-10-04T15:11:59Z
+parent: qou-5vkl
 ---
 
 
@@ -202,3 +206,9 @@ That is the churn rate the standing bean `qou-8jjo` exists to live with, measure
 rather than assumed.
 
 Raw output: `docs/audits/2026-09-06-bean-audit-cross-check.txt`.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

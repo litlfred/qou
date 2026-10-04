@@ -4,8 +4,11 @@ title: 'hadron_knot_table crashes: mpmath dtype=object reaches scipy.sparse (qou
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T08:10:16Z
-updated_at: 2026-08-23T23:08:29Z
+updated_at: 2026-10-04T15:20:41Z
+parent: qou-5vkl
 ---
 
 Found while sampling the convention-C witness backlog (`qou-z11r`, PR #5510).

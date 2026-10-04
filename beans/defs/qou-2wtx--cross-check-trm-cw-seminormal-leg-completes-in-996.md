@@ -4,8 +4,11 @@ title: cross_check_trM_cw_seminormal_leg completes in 996s and FAILS (worst 1.91
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T18:49:51Z
-updated_at: 2026-08-29T06:46:21Z
+updated_at: 2026-10-04T15:18:31Z
+parent: qou-5vkl
 ---
 
 ## The measurement

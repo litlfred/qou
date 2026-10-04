@@ -1,11 +1,14 @@
 ---
 # qou-0ndb
 title: to_u_polynomial serializes in the CALLER's symbol name — two copies disagree (u vs check_q), 3 consumers broke
-status: in-progress
+status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T02:36:12Z
-updated_at: 2026-08-18T22:10:15Z
+updated_at: 2026-10-04T15:11:41Z
+parent: qou-trd0
 ---
 
 
@@ -603,3 +606,9 @@ cite it as established.
 Also fixed `witness_shape_guard`: it flagged a witness as COLLAPSED on
 `durationMs: 1 -> 0` while that witness GAINED content. Floored at 1 s, at the
 guard rather than --accept-ing past it.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-18 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

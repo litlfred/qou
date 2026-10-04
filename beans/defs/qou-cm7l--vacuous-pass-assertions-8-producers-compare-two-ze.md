@@ -4,8 +4,11 @@ title: 'Vacuous-pass assertions: 8 producers compare two zero-initialised counte
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T09:37:58Z
-updated_at: 2026-08-26T10:07:46Z
+updated_at: 2026-10-04T15:25:26Z
+parent: qou-5vkl
 ---
 
 ## The shape

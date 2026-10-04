@@ -4,8 +4,11 @@ title: GroundStateOrderingRefutation is convention-independent; qa-sweep sidecar
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T21:35:46Z
-updated_at: 2026-08-24T21:50:15Z
+updated_at: 2026-10-04T15:20:38Z
+parent: qou-5vkl
 ---
 
 PR #5724, branch claude/gso-refutation-convention-d-2026-08-24.

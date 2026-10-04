@@ -1,11 +1,14 @@
 ---
 # qou-3e5m
 title: 'GAP: 56 self-fulfilling MEASURED assertions, hidden by a positional-only detector'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T03:40:10Z
-updated_at: 2026-08-31T07:33:00Z
+updated_at: 2026-10-04T15:12:47Z
+parent: qou-trd0
 ---
 
 Surfaced while draining `qou-p77d`. The detector
@@ -390,3 +393,9 @@ Do NOT read the 2 -> 9 as this bean's campaign regressing. The campaign held;
 new probes arrived carrying a new spelling of the same defect. That is the
 `qou-mnrd` revolving-door shape in a second gate, and it is the third time
 today a "known, stable" audit number turned out to be masking a substitution.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-31 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

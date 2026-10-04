@@ -3,8 +3,12 @@
 title: 'qou-gwe9 has a COUNTEREXAMPLE: Copilot reviewed #6112 (5 comments). n=5 zero-review measurement is falsified'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T07:47:23Z
-updated_at: 2026-08-30T07:47:23Z
+updated_at: 2026-10-04T15:23:04Z
+parent: qou-nu9d
 ---
 
 

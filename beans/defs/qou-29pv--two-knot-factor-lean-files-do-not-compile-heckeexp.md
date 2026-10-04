@@ -4,8 +4,11 @@ title: 'Two knot-factor Lean files do not compile: HeckeExpansion genericisation
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T21:58:32Z
-updated_at: 2026-08-21T21:58:55Z
+updated_at: 2026-10-04T15:25:14Z
+parent: qou-5vkl
 ---
 
 

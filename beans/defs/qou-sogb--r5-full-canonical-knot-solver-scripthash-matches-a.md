@@ -4,8 +4,11 @@ title: 'r5-full-canonical-knot-solver: scriptHash MATCHES and 733 fields move de
 status: todo
 type: bug
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T12:41:19Z
-updated_at: 2026-09-14T18:32:25Z
+updated_at: 2026-10-04T15:14:37Z
+parent: qou-5vkl
 ---
 
 Found 2026-09-13 while screening `r5-full-canonical-knot-solver.witness.json`

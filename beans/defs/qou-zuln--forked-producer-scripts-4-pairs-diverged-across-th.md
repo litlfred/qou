@@ -3,8 +3,12 @@
 title: 'Forked producer scripts: 4 pairs diverged across the reorg, each writing its own witness copy'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T23:17:41Z
-updated_at: 2026-08-15T23:17:41Z
+updated_at: 2026-10-04T15:19:16Z
+parent: qou-5vkl
 ---
 
 

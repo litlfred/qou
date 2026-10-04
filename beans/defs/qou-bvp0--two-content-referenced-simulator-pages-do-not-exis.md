@@ -6,9 +6,10 @@ type: bug
 priority: high
 tags:
     - simulators
+    - reorg-2026-10-04
 created_at: 2026-09-26T10:38:50Z
-updated_at: 2026-09-26T10:48:09Z
-parent: qou-p7z5
+updated_at: 2026-10-04T15:14:37Z
+parent: qou-n4r9
 ---
 
 **Measured 2026-09-26.** Two simulator pages are referenced from content blocks

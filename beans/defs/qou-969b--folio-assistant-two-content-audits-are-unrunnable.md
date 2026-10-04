@@ -4,8 +4,12 @@ title: 'folio-assistant: two content audits are unrunnable against a multi-paper
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - close-candidate
 created_at: 2026-09-02T21:49:25Z
-updated_at: 2026-09-02T22:07:53Z
+updated_at: 2026-10-04T15:19:14Z
+parent: qou-5vkl
 ---
 
 ## What

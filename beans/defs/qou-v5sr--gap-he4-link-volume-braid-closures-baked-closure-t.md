@@ -4,8 +4,11 @@ title: 'GAP: he4_link_volume_braid_closure''s baked CLOSURE table is stale for t
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T16:32:52Z
-updated_at: 2026-09-13T16:33:32Z
+updated_at: 2026-10-04T15:20:05Z
+parent: qou-5vkl
 ---
 
 Found as a by-product of answering the carrier question for `qou-o6ml`

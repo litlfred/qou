@@ -4,8 +4,11 @@ title: 3 live probes import probe_staircase_ew_k3_categorical from _deprecated/
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T14:15:16Z
-updated_at: 2026-08-19T18:24:13Z
+updated_at: 2026-10-04T15:16:03Z
+parent: qou-trd0
 ---
 
 

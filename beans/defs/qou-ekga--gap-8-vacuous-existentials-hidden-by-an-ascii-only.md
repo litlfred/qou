@@ -4,8 +4,11 @@ title: 'GAP: 8 vacuous existentials, hidden by an ASCII-only detector — one cl
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T08:33:27Z
-updated_at: 2026-09-05T09:00:44Z
+updated_at: 2026-10-04T15:19:38Z
+parent: qou-5vkl
 ---
 
 ## What was found

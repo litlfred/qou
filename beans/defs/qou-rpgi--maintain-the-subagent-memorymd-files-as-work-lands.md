@@ -4,9 +4,11 @@ title: Maintain the subagent MEMORY.md files as work lands
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T10:24:44Z
-updated_at: 2026-08-29T10:58:40Z
-parent: qou-j5jq
+updated_at: 2026-10-04T15:21:26Z
+parent: qou-nu9d
 ---
 
 Standing obligation created by `qou-j5jq`, not a scheduled task.
@@ -181,4 +183,3 @@ back in full — so the instruction lives there too.
    not need the agent* — and it makes memory **write-only**, so a new
    resolved-topic row would never reach anyone. Read-when-relevant fails the
    same way: deciding a TRAP is irrelevant requires already knowing it.
-

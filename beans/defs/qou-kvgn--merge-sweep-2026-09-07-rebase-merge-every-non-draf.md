@@ -1,12 +1,14 @@
 ---
 # qou-kvgn
 title: 'Merge sweep 2026-09-07: rebase-merge every non-draft open PR whose mergeable_state is clean, verify replay per PR, report the table'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T18:25:28Z
-updated_at: 2026-09-07T18:44:27Z
-parent: qou-vyvt
+updated_at: 2026-10-04T15:13:19Z
+parent: qou-5vkl
 ---
 
 Owner: 'merge the clean PRs' (2026-09-07). Rule: non-draft AND mergeable_state==clean at the moment of merge, rebase-merge, never delete branches, run scripts/verify-merge-replay.py after each. Drafts skipped. Delegated to a merge-coordinator agent; result table goes here.
@@ -20,3 +22,9 @@ CONFLICTS (8, not merged): #7093 #6807 #6361 #6359 #6358 #6357 #6350 #6342.
 HELD — body says do-not-merge: #6307 (posted for review only), #5402 (audit branch), #5352 (survey; carries a sibling's only copy of 431def4877), #5861 (§6 escalation on pivotalOfBraided).
 HELD — judgement, owner call: #6178 (404 files, 76 producers re-routed from an 8-day-stale tree, merge commits at tip) and #6025 (+419k-line witness, edits raw-float64-baseline.json — baselines drain, never grow).
 Drafts skipped: #7124 #7101 #6878 #6681 #6233 #5338 #5330 #4845.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

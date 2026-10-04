@@ -4,8 +4,11 @@ title: 'Witness integrity: 1 unparseable, 1 non-object root, 2 anchor-without-va
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-19T20:54:16Z
-updated_at: 2026-09-08T07:52:50Z
+updated_at: 2026-10-04T15:25:38Z
+parent: qou-5vkl
 ---
 
 

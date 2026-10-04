@@ -4,8 +4,11 @@ title: Producers that INHERIT a q0 from another witness are stamped from a manif
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T13:34:53Z
-updated_at: 2026-08-24T14:28:34Z
+updated_at: 2026-10-04T15:22:14Z
+parent: qou-5vkl
 ---
 
 ## What it is

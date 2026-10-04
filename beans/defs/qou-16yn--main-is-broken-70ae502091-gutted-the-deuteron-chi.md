@@ -3,8 +3,12 @@
 title: 'MAIN IS BROKEN: 70ae502091 gutted the deuteron chi witness 2h ago -- consumer crashes, values match nothing'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T20:28:09Z
-updated_at: 2026-09-05T20:28:09Z
+updated_at: 2026-10-04T15:21:23Z
+parent: qou-5vkl
 ---
 
 

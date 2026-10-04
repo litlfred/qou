@@ -4,8 +4,11 @@ title: 'Motivate reading (B): where does Geom(K) x trace come from, and what in 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-08-26T03:16:39Z
-updated_at: 2026-08-26T06:59:34Z
+updated_at: 2026-10-04T15:21:38Z
 ---
 
 ANSWERED 2026-08-26. (B) has NO motivation; do not declare it.

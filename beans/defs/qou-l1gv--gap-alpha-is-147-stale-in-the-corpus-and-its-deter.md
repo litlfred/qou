@@ -4,8 +4,11 @@ title: 'GAP: alpha* is 14.7% stale in the corpus and its determining producer ca
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T13:05:13Z
-updated_at: 2026-08-24T21:59:04Z
+updated_at: 2026-10-04T15:19:42Z
+parent: qou-5vkl
 ---
 
 Found while triaging the last convention-C sites (`qou-cds1`, PR #5622).

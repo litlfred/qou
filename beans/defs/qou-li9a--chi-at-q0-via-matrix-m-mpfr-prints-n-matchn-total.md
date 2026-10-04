@@ -4,8 +4,11 @@ title: chi_at_q0_via_matrix_m_mpfr prints n_match/n_total and exits 0 regardless
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-08T05:02:18Z
-updated_at: 2026-09-08T05:02:56Z
+updated_at: 2026-10-04T15:15:37Z
+parent: qou-trd0
 ---
 
 Split out of `qou-7bv5` on 2026-09-08. That bean's *artifact* defect is fixed

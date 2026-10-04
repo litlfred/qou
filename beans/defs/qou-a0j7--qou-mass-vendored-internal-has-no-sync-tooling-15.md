@@ -4,6 +4,11 @@ title: 'qou-mass vendored _internal has no sync tooling: 15 hand-copied files, c
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+created_at: 2026-10-04T14:18:01Z
+updated_at: 2026-10-04T15:23:05Z
+parent: qou-5vkl
 ---
 
 ## The finding

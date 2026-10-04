@@ -4,8 +4,11 @@ title: 'MEASURED: Copilot review does not arrive — AGENTS.md rule 10''s last s
 status: in-progress
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-09-14T11:33:38Z
+updated_at: 2026-10-04T15:11:37Z
+parent: qou-5vkl
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change

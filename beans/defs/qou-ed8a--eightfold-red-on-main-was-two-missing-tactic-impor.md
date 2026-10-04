@@ -4,8 +4,12 @@ title: Eightfold RED on main was two missing tactic imports -- and the library r
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - close-candidate
 created_at: 2026-09-07T09:57:19Z
-updated_at: 2026-09-13T10:39:44Z
+updated_at: 2026-10-04T15:18:58Z
+parent: qou-5vkl
 ---
 
 ## The fix (PR #7039)

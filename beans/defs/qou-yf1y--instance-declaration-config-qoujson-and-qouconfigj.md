@@ -7,8 +7,9 @@ priority: high
 tags:
     - platform
     - config
+    - reorg-2026-10-04
 created_at: 2026-09-26T11:18:46Z
-updated_at: 2026-09-26T11:53:59Z
+updated_at: 2026-10-04T15:10:46Z
 parent: qou-n4r9
 ---
 

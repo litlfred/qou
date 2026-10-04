@@ -3,8 +3,12 @@
 title: 'GAP: witness-reproducibility-check reports allPassed true while recording 4 drifting builders'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T14:28:41Z
-updated_at: 2026-08-30T14:28:41Z
+updated_at: 2026-10-04T15:20:34Z
+parent: qou-5vkl
 ---
 
 Found while draining `qou-srvu` slice C. LEFT in the baseline deliberately —

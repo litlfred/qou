@@ -3,8 +3,12 @@
 title: 'SCREEN: 46 Lean files carry numeric literals citing a producer whose witness no longer matches its source — 1 confirmed (JetOrderIndependence), 45 unverified'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T20:56:23Z
-updated_at: 2026-09-14T21:38:12Z
+updated_at: 2026-10-04T15:24:21Z
+parent: qou-5vkl
 ---
 
 

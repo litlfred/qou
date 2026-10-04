@@ -3,8 +3,12 @@
 title: check-sidecars.sh reads only the working tree — a clean run on a committed branch proves nothing
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T21:20:58Z
-updated_at: 2026-08-08T21:20:58Z
+updated_at: 2026-10-04T15:16:55Z
+parent: qou-5vkl
 ---
 
 

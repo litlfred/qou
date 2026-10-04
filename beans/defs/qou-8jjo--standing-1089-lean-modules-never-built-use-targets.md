@@ -1,10 +1,14 @@
 ---
 # qou-8jjo
 title: 'Standing: 1089 Lean modules never built; use --targets ranking, not another --all sweep'
-status: in-progress
+status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T03:33:19Z
-updated_at: 2026-09-06T03:33:19Z
+updated_at: 2026-10-04T15:13:58Z
+parent: qou-5vkl
 ---
 
 
@@ -200,3 +204,9 @@ re-run per tranche instead of per month.
 deciding to run one — keyed off the last-swept commit recorded somewhere durable
 rather than off a human remembering which audit doc holds it. That is a design
 question, not a measurement, and it is not started.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

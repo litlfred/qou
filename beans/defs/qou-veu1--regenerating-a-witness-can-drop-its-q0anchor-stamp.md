@@ -4,8 +4,11 @@ title: Regenerating a witness can DROP its q0Anchor stamp, removing it from the 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T13:44:57Z
-updated_at: 2026-08-23T20:17:17Z
+updated_at: 2026-10-04T15:23:20Z
+parent: qou-5vkl
 ---
 
 ## The measurement

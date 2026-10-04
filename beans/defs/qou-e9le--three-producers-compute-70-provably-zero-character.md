@@ -4,8 +4,11 @@ title: three producers compute 70 provably-zero characters — the two-row cap i
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T06:46:25Z
-updated_at: 2026-08-26T22:55:00Z
+updated_at: 2026-10-04T15:25:04Z
+parent: qou-5vkl
 ---
 
 ## The claim

@@ -6,9 +6,10 @@ type: task
 priority: normal
 tags:
     - beans-hygiene
+    - reorg-2026-10-04
 created_at: 2026-09-26T10:52:40Z
-updated_at: 2026-09-26T10:54:33Z
-parent: qou-w3yy
+updated_at: 2026-10-04T15:16:00Z
+parent: qou-5vkl
 ---
 
 **Measured 2026-09-26. This bean exists to hold a DECISION, not to be worked

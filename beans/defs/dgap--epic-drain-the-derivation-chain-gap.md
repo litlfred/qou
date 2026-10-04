@@ -1,11 +1,14 @@
 ---
 # dgap
 title: 'EPIC: drain the derivation-chain gap (tiered, 1299 actionable)'
-status: in-progress
-type: epic
+status: todo
+type: feature
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-18T21:00:00Z
-updated_at: 2026-08-18T21:00:00Z
+updated_at: 2026-10-04T15:11:16Z
+parent: qou-trd0
 ---
 
 Program: docs/coordination/derivation-chain-drain-program.md
@@ -33,3 +36,9 @@ Children: dgpc (tier C families), dgpd (tier D singletons), dgpe (tier E orphans
 DISCIPLINE: a chain that CITES is not a chain that DERIVES. A composition chain records
 assembly + provenance; it does not make its inputs derived, and must never be described as
 if it did. Authoring a chain for compute you do not understand is laundering.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-18 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
