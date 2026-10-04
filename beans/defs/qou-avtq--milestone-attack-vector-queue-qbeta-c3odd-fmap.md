@@ -2,10 +2,11 @@
 # qou-avtq
 title: 'MILESTONE: attack-vector queue (Q_beta / c3^odd / f-map)'
 status: in-progress
-type: milestone
+type: epic
 priority: high
 created_at: 2026-08-26T04:22:51Z
-updated_at: 2026-08-26T04:22:51Z
+updated_at: 2026-10-04T15:09:57Z
+parent: qou-10v9
 ---
 
 Ordered queue of every attack vector surfaced by the 2026-08-26 three-gap
@@ -36,3 +37,9 @@ axiomatised cosine.**
 ce is resolved to 1.45% (68.8 sigma) by sigma(Q_beta)/Q_beta. Any identification
 quoted tighter than that is arithmetic, not measurement. Pre-state gates before
 running; a candidate found by search is a fit however good it looks.
+
+
+
+## Reorganisation 2026-10-04
+
+Now the epic for P1.QB under PROGRAM: L2 at 1 ppQ (mass and binding accuracy).

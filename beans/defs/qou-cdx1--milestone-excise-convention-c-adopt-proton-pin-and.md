@@ -2,10 +2,11 @@
 # qou-cdx1
 title: 'MILESTONE: excise convention C, adopt proton pin + colour weighting (owner ruling 2026-08-15)'
 status: todo
-type: milestone
+type: epic
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-15T00:00:00Z
+updated_at: 2026-10-04T15:09:59Z
+parent: qou-10v9
 ---
 
 ## The ruling
@@ -65,3 +66,9 @@ layers compute.
 - `c₂ = −1` Taylor-exactness (the proof; its object now carries its convention).
 - The mass channel: `m_p`/`m_n` unchanged, production was already D.
 - The `z_C` full-bar FAILURE (#5111) now reads as **evidence FOR** the ruling.
+
+
+
+## Reorganisation 2026-10-04
+
+Now the epic for P1.CONV under PROGRAM: L2 at 1 ppQ (mass and binding accuracy).

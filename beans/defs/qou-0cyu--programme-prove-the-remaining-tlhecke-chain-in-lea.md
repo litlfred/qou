@@ -2,10 +2,11 @@
 # qou-0cyu
 title: 'PROGRAMME: prove the remaining TL/Hecke chain in Lean -- four Mathlib gaps, one Mathlib ASSET (Artin-Wedderburn exists)'
 status: todo
-type: task
+type: epic
 priority: normal
 created_at: 2026-08-09T18:18:27Z
-updated_at: 2026-09-27T05:31:07Z
+updated_at: 2026-10-04T15:10:07Z
+parent: qou-rtxm
 ---
 
 
@@ -553,3 +554,9 @@ G5 note for the reader: G5 closed in 2026-08-21 via bean qou-7wf6
 (ballot_sq_sum_catalan, general n). The remaining gap in that direction is the
 HOOK LENGTH FORMULA at general n, not the Catalan combinatorics -- see bean
 qou-7vht, which measures it.
+
+
+
+## Reorganisation 2026-10-04
+
+Now the epic for P3.TL under Lean / Mathlib foundations.

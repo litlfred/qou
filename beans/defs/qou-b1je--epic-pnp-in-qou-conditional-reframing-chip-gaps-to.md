@@ -5,7 +5,8 @@ status: in-progress
 type: epic
 priority: normal
 created_at: 2026-07-24T16:00:13Z
-updated_at: 2026-07-24T16:00:43Z
+updated_at: 2026-10-04T15:10:03Z
+parent: b9cj
 ---
 
 P≠NP-in-QOU program. Owner directive: state everything CONDITIONAL on the QOU
@@ -34,3 +35,9 @@ X", not "impossible"). Not quick sorry-free chips; do NOT fabricate to close:
   the two cited forms IS the Geck-Pfeiffer/Wenzl semisimplicity equivalence —
   same Mathlib gap as 5hul. Chippable only after 5hul infra lands.
 Chippable kernel is now exhausted; further progress needs one of the two walls.
+
+
+
+## Reorganisation 2026-10-04
+
+Now the epic for P2.PNP under UMBRELLA: open conjectures (formal mathematics only).
