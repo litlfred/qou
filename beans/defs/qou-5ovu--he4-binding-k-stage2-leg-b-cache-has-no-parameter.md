@@ -4,8 +4,11 @@ title: he4_binding_k_stage2 Leg B cache has no parameter guard; Leg A does
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T17:14:15Z
-updated_at: 2026-08-24T17:14:52Z
+updated_at: 2026-10-04T15:20:45Z
+parent: qou-v2om
 ---
 
 ## The asymmetry

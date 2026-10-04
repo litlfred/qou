@@ -4,8 +4,11 @@ title: mass_per_knot_density's equivalence assertion has been RED on main since 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T04:49:12Z
-updated_at: 2026-09-07T10:17:01Z
+updated_at: 2026-10-04T15:21:30Z
+parent: qou-9nnz
 ---
 
 ## The claim

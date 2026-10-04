@@ -4,8 +4,11 @@ title: 'GAP: the 3-way tr_M cross-check diverges 6-90% on 12/12 pairs -- likely 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T22:04:11Z
-updated_at: 2026-08-24T23:22:37Z
+updated_at: 2026-10-04T15:20:24Z
+parent: qou-9nnz
 ---
 
 ## What is established

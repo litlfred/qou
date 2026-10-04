@@ -4,9 +4,11 @@ title: '2H ATTACK C: check whether B = -alpha*ln(mu) is the right functional at 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T18:37:51Z
-updated_at: 2026-08-31T03:50:53Z
-parent: qou-9ot5
+updated_at: 2026-10-04T15:16:02Z
+parent: qou-10v9
 ---
 
 ## RESOLVED 2026-08-25 — converges on the braid word. See docs/audits/2026-08-25-deuteron-attack-c-convergence.md

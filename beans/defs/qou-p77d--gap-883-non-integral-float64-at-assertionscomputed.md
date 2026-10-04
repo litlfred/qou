@@ -4,8 +4,11 @@ title: 'GAP: 883 non-integral float64 at .assertions[].computed/.expected across
 status: in-progress
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T02:28:37Z
-updated_at: 2026-09-19T06:26:26Z
+updated_at: 2026-10-04T15:12:48Z
+parent: qou-9nnz
 ---
 
 ## 2 of the 883 are already drained (PR #5952, bean `qou-t39x`) — 2026-08-29

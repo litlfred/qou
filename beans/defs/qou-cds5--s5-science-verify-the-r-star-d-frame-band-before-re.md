@@ -4,8 +4,11 @@ title: 'S5 (SCIENCE): verify the r* D-frame band BEFORE re-scoring the six Delta
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-15T00:00:00Z
+updated_at: 2026-10-04T15:15:06Z
+parent: qou-v2om
 ---
 
 Parent: `qou-cdx1`. **This bean exists to stop a re-scoring that has not earned

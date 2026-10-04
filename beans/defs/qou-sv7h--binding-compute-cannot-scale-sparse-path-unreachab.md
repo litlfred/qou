@@ -1,11 +1,14 @@
 ---
 # qou-sv7h
 title: 'Binding compute cannot scale: sparse path unreachable, zero Rust, float64 straddle'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-09-07T14:14:57Z
+updated_at: 2026-10-04T15:10:49Z
+parent: qou-v2om
 ---
 
 Full measured analysis: `docs/audits/2026-08-30-binding-compute-scaling-bottleneck.md`.
@@ -975,3 +978,9 @@ Launch it unbuffered, straight to a file, with a real budget.
 **What this still does NOT establish.** It measures one partition at both
 arms, not the end-to-end binding compute the title claims cannot scale. The
 bean stays OPEN.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

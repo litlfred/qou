@@ -3,8 +3,12 @@
 title: 'B2 tau-lift resolution: build explicit H1(Bring) Hodge model, reduce lift to minimal tau-dictionary core (alpha_EM per-loop)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T19:03:03Z
-updated_at: 2026-08-02T19:03:03Z
+updated_at: 2026-10-04T15:16:32Z
+parent: qou-3l2l
 ---
 
 

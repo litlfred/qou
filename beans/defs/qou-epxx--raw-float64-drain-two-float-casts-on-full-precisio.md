@@ -4,8 +4,11 @@ title: 'raw-float64 drain: two float() casts on full-precision inputs — q0_pro
 status: in-progress
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-26T14:28:50Z
-updated_at: 2026-09-27T05:22:43Z
+updated_at: 2026-10-04T15:13:42Z
+parent: qou-9nnz
 ---
 
 Picked up 2026-09-26 as exemption-covered drain work while PR #7457 waits on

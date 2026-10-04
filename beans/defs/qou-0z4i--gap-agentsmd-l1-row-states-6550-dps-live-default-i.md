@@ -4,8 +4,11 @@ title: 'GAP: AGENTS.md L1 row states 65/50 dps; live default is 70/60'
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T14:21:27Z
-updated_at: 2026-09-06T12:06:42Z
+updated_at: 2026-10-04T15:19:41Z
+parent: qou-9nnz
 ---
 
 Measured 2026-08-30 on branch claude/srvu-drain-a-2026-08-30, no QOU_* env

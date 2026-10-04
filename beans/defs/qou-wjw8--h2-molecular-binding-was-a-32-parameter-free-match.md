@@ -4,8 +4,11 @@ title: H2 molecular binding was a +3.2% parameter-free match under convention C;
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T16:42:54Z
-updated_at: 2026-08-23T16:44:14Z
+updated_at: 2026-10-04T15:20:39Z
+parent: qou-cdx1
 ---
 
 MEASURED 2026-08-23 while triaging `qou-bm4i` (blocks marked `verified` whose

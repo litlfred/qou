@@ -1,11 +1,14 @@
 ---
 # qou-ix0x
 title: The binding's divergent series is G, its Borel-Stokes plane is EMPTY, and the untried summation is the Habiro/cyclotomic one
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T08:46:20Z
-updated_at: 2026-09-13T08:26:53Z
+updated_at: 2026-10-04T15:14:08Z
+parent: qou-v2om
 ---
 
 Owner pointer, 2026-09-07: *"On A_infty there was a divergent series..."*, against the standing target *"ultimate target is to close gap in binding"*.
@@ -490,3 +493,9 @@ Checking it cost one grep, and the cited audit's next sentence said it was conje
 is not a primary source — including one's own.**
 
 Write-up: `docs/audits/2026-09-14-pair-locality-is-not-a-generic-q-fact-the-brick-dissolves.md`.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

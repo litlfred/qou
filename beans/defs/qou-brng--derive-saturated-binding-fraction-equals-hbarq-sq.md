@@ -4,8 +4,11 @@ title: 'OPEN KERNEL: derive that the saturated nuclear binding fraction = ℏ_q�
 status: in-progress
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-14T17:55:06Z
+updated_at: 2026-10-04T15:13:24Z
+parent: qou-v2om
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was

@@ -4,8 +4,11 @@ title: 'qbeta-ck-basis-constrained-pslq goes RED on re-run: c3 moves by 972, and
 status: todo
 type: bug
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T11:46:20Z
-updated_at: 2026-09-14T08:18:28Z
+updated_at: 2026-10-04T15:14:36Z
+parent: qou-avtq
 ---
 
 FOUND 2026-09-04 as a hook-triggered producer re-run in a working tree, NOT by looking for it. Re-run against main at eb2f4588ce. NOT MY BRANCH'S CHANGE - reverted rather than committed, so this bean is the only record. Reproduce with: run the producer for computations/probes/qbeta-ck-basis-constrained-pslq.witness.json on current main and diff.

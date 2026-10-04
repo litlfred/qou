@@ -1,11 +1,14 @@
 ---
 # qou-j6gb
 title: mpf_import_time_dps_audit is NOT wired into precision-gates.sh — 288 findings, 185 proven lossy, gate silent
-status: in-progress
+status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T02:36:03Z
-updated_at: 2026-09-08T04:00:00Z
+updated_at: 2026-10-04T15:11:38Z
+parent: qou-9nnz
 ---
 
 
@@ -1033,3 +1036,9 @@ self-contradiction. It is decidable without judgement — the discriminator is
 the bean asserting *its own* openness, not merely mentioning something open.
 
 Re-close it when the work its body names is actually done.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

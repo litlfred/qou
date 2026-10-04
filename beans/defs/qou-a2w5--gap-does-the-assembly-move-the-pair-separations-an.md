@@ -4,8 +4,11 @@ title: 'GAP: does the assembly move the pair separations, and by how much — ro
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T19:14:01Z
-updated_at: 2026-09-13T20:08:27Z
+updated_at: 2026-10-04T15:19:57Z
+parent: qou-v2om
 ---
 
 Extracted from `qou-o6ml` §"CONSTRAINT 3b" (2026-09-13, MobiusMutualChannel.lean

@@ -4,9 +4,11 @@ title: 'MEASURED: the proton re-pin moves binding by 128 ppb; the binding error 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T16:38:29Z
-updated_at: 2026-08-25T16:39:01Z
-parent: qou-9ot5
+updated_at: 2026-10-04T15:21:34Z
+parent: qou-v2om
 ---
 
 ## The arithmetic (measured 2026-08-25, PR #5765)

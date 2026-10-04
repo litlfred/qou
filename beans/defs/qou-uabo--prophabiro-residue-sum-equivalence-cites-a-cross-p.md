@@ -4,8 +4,11 @@ title: prop:habiro-residue-sum-equivalence cites a cross-pipeline witness that d
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T23:12:20Z
-updated_at: 2026-08-16T12:50:08Z
+updated_at: 2026-10-04T15:22:15Z
+parent: qou-avtq
 ---
 
 

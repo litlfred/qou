@@ -1,11 +1,14 @@
 ---
 # qou-q6pp
 title: Why is the parameter-free p-n splitting wrong-signed? (and was my own test even valid)
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T06:06:25Z
-updated_at: 2026-09-06T07:17:14Z
+updated_at: 2026-10-04T15:14:25Z
+parent: qou-v2om
 ---
 
 ## RETRACTION — my own committed claim was invalid, in two independent ways
@@ -531,3 +534,9 @@ than edited.
 and mentions neither `3A` nor `qou-jgg0`.
 
 **Bean stays open** (rule 13a).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

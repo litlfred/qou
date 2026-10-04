@@ -4,8 +4,11 @@ title: 'GAP: canonical tr_M is colour-BLIND for every mixed nucleus — the sign
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T18:21:32Z
-updated_at: 2026-08-30T20:00:53Z
+updated_at: 2026-10-04T15:19:48Z
+parent: qou-10v9
 ---
 
 ## The canonical tr_M path structurally cannot honour owner ruling R3

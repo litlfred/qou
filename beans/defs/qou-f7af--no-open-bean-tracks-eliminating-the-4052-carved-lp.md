@@ -4,8 +4,11 @@ title: No open bean tracks eliminating the 4,052 carved LP-dual float64s — qou
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T07:36:54Z
-updated_at: 2026-08-23T07:37:20Z
+updated_at: 2026-10-04T15:21:42Z
+parent: qou-9nnz
 ---
 
 

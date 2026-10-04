@@ -4,8 +4,11 @@ title: The level-3 EM term already exists and is mirror-blind; crossing counts a
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T12:35:18Z
-updated_at: 2026-08-30T12:40:54Z
+updated_at: 2026-10-04T15:24:57Z
+parent: qou-v2om
 ---
 
 ## The ask, and why it inverts

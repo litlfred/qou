@@ -4,8 +4,11 @@ title: prop:demand-stability is marked verified against a float64 witness blind 
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T13:54:58Z
-updated_at: 2026-09-13T13:55:56Z
+updated_at: 2026-10-04T15:15:01Z
+parent: qou-9nnz
 ---
 
 ## The decision

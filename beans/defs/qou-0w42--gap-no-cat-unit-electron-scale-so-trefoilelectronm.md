@@ -4,8 +4,11 @@ title: 'GAP: no cat-unit electron scale, so TrefoilElectronMassConj stays discha
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T09:27:59Z
-updated_at: 2026-08-23T09:28:22Z
+updated_at: 2026-10-04T15:20:15Z
+parent: qou-wp3h
 ---
 
 ## What is open

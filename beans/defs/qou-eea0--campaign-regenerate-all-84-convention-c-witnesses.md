@@ -1,11 +1,14 @@
 ---
 # qou-eea0
 title: 'CAMPAIGN: regenerate all 84 convention-C witnesses under D and report total impact'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T01:15:27Z
-updated_at: 2026-09-08T07:45:34Z
+updated_at: 2026-10-04T15:12:04Z
+parent: qou-cdx1
 ---
 
 
@@ -357,3 +360,9 @@ it is an independent signal from a probe that was not designed to test
 conventions.
 
 ## 2026-09-08: canonical ledger for the convention-C excision family is qou-wgta (the P0 excision tracker; owner-ruling milestone qou-cdx1, S2 science blocker qou-cds2); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 2 / §7.3 C3. Nine trackers, previously linked only cds2↔8iru and htsi→t9r1, now all point there.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

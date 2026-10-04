@@ -4,8 +4,11 @@ title: 'intermediate_knot_detection: float64 but NOT a defect — 1.2e-14 worst 
 status: todo
 type: task
 priority: low
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T13:13:40Z
-updated_at: 2026-09-13T13:14:32Z
+updated_at: 2026-10-04T15:25:58Z
+parent: qou-9nnz
 ---
 
 Screened 2026-09-13 as raw-float64 drain target 9 (350 baseline fields, the

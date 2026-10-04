@@ -3,8 +3,12 @@
 title: 'Δθ_λ: derive per-knot Δ_λ magnitude via the per-vertex q-Reeb eigenphase (surviving qou-3q7t lead)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T09:37:19Z
-updated_at: 2026-08-02T09:37:19Z
+updated_at: 2026-10-04T15:25:45Z
+parent: qou-v2om
 ---
 
 

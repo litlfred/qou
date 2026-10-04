@@ -1,11 +1,14 @@
 ---
 # qou-gba1
 title: 'Magnus Omega2 option E: derive the Omega2 pairing from what Omega2 is'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T11:44:24Z
-updated_at: 2026-09-13T15:22:31Z
+updated_at: 2026-10-04T15:13:17Z
+parent: qou-v2om
 ---
 
 # The only option that ANSWERS the question rather than choosing
@@ -259,3 +262,9 @@ tested it either, and the `t` values themselves are underived (`qou-qqm4` still
 owes the `1/4` and the `(q-1)^2/3`). Note also that `qou-0pzi` reports the
 `pp -> sigma` / `nn -> sigma^-1` orientation FALSIFIED on the two-nucleon signs;
 the law says what a letter contributes, not which letter a flavour pair gets.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

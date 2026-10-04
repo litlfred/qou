@@ -4,8 +4,11 @@ title: 'GENERALISE?: three blocks justified their base field / R codomain by a s
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T21:10:17Z
-updated_at: 2026-08-10T00:48:35Z
+updated_at: 2026-10-04T15:20:37Z
+parent: qou-cdx1
 ---
 
 

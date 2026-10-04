@@ -1,11 +1,14 @@
 ---
 # qou-ndsa
 title: 'Break the confinement-LP homogeneity: get the braid into t or G, not just n_target'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T17:16:15Z
-updated_at: 2026-08-16T13:39:35Z
+updated_at: 2026-10-04T15:10:50Z
+parent: qou-v2om
 ---
 
 THE ONLY SURVIVING FORM of the owner's SDP-offset proposal (2026-08-07).
@@ -199,3 +202,9 @@ content has to reach the **objective**. Candidates 1–3 all leave `t` alone.
 - [ ] Related: `qou/8na1` asks whether `prop:mass-coefficient-shadow-price`
       should read `y₀*` as a shadow price at all, given it is provably zero.
       That decision plausibly subsumes this bean's framing.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

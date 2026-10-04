@@ -1,11 +1,14 @@
 ---
 # qou-cdh4
 title: 'H4 (hygiene): convention-label hygiene — history must say it is history'
-status: in-progress
+status: todo
 type: task
 priority: low
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-16T03:14:32Z
+updated_at: 2026-10-04T15:14:31Z
+parent: qou-10v9
 ---
 
 Parent: `qou-cdx1`.
@@ -133,3 +136,9 @@ Validators after: trace registry `PASS (0 errors, 23 warnings)`;
 **H4 status:** producer sites done (4 labelled, 6 already were), registries done.
 The one open item is deliberately open — `prf:interface-knot-markov-z` stays red
 rather than be laundered, root-caused above to the `qou-j6il` stale binary.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

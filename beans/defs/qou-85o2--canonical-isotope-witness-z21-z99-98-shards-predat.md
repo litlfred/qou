@@ -4,8 +4,11 @@ title: canonical-isotope-witness Z21-Z99 (98 shards) predate the C-excision; a s
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T08:08:03Z
-updated_at: 2026-08-30T08:08:50Z
+updated_at: 2026-10-04T15:15:36Z
+parent: qou-v2om
 ---
 
 Surfaced by the qou-zzwm survey. Filed separately because the cause is NOT

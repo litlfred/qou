@@ -1,11 +1,14 @@
 ---
 # qou-4ohh
 title: mass_binding_dashboard computes in float64 — and its own accuracy claim is the f64 floor
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T06:32:21Z
-updated_at: 2026-09-05T19:49:55Z
+updated_at: 2026-10-04T15:11:02Z
+parent: qou-9nnz
 ---
 
 MEASURED 2026-09-05 (compute-precision-auditor subagent) while producing the
@@ -211,3 +214,9 @@ than an f-string. The existing `_disp` pattern is the sanctioned exception and
 gives the discriminator — a downcast at the display boundary is fine, one in a
 value position is not. Candidate row for
 `docs/audits/2026-08-15-detector-blindness-taxonomy.md` (34 rows).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

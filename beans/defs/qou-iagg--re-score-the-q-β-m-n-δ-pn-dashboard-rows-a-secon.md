@@ -4,8 +4,11 @@ title: Re-score the Q_β / m_n / Δ_pn dashboard rows a SECOND time once a c_k l
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-12T17:55:54Z
-updated_at: 2026-09-12T17:56:45Z
+updated_at: 2026-10-04T15:23:15Z
+parent: qou-avtq
 ---
 
 **Owner-authorised 2026-09-12.** Asked whether item (iii) of the 2026-09-08

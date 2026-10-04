@@ -4,8 +4,11 @@ title: 'HIDDEN ASSUMPTION: F_Bor''s /q^3 is asserted, breaks bar-symmetry, and c
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-18T20:45:53Z
-updated_at: 2026-08-19T14:03:15Z
+updated_at: 2026-10-04T15:20:46Z
+parent: qou-2002
 ---
 
 

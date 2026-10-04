@@ -1,14 +1,15 @@
 ---
 # qou-vr3q
 title: 'Deep-dive 1: G3 monodromy/Stokes-constant keystone — derive A_ω (odd-face Q_β/Φ_b) as GGM 3d-index integer count'
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
     - alien-habiro
+    - reorg-2026-10-04
 created_at: 2026-07-18T17:08:37Z
-updated_at: 2026-08-11T00:20:00Z
-parent: qou-89f9
+updated_at: 2026-10-04T15:10:53Z
+parent: qou-avtq
 ---
 
 CORRECTED FRAMING (2026-07-18): A_ω≈3.8884 (=4√2·e^{-3/8}) is the EVEN-face, q=1 BINDING-period Stokes constant (co-equational, bar-even, binding a_D only) — NOT the odd-face keystone. Do not conflate.
@@ -36,3 +37,9 @@ Last A_ω commit was 10 days prior (`caf115a24`); substantive work 3 weeks prior
 **REMAINING OPEN PIECE — literature-open, NOT a QOU wiring gap (honest terminus).** The internal derivation of the q→0 3d-index DT count from QOU Hecke/Bring data (Wedderburn mult of H_n(q), Markov-trace, Bring embedding) reproducing S⁺(0)₁₂=3 for 4₁ AND the companion 4 / surviving the 5₂ test is an **open problem in the categorification of DT / 3d-index invariants — open in the DT/state-integral literature itself** (per `2026-08-02-aomega-internal-derivation-symmetry-constant-target.md` §B). Recomputing the q→0 index "internally" via the QOU colored Jones / state integral IS re-importing GGM, not a categorical shortcut. Until such a formula exists, `A_ω=3` is certified-as-GGM-DT-count (imported, proven-for-4₁, conditionally adopted) but NOT internally derived; claiming a closure would violate the anti-laundering rule. Consolidated frontier map: `docs/audits/2026-08-11-g3-and-qdifference-slope-frontier-consolidation.md`.
 
 Status left `in-progress` (not `done`): the QOU-actionable content is exhausted, but the naming leg (internal derivation) is a genuine open problem — closing it is a human/owner call, not an agent's, and it awaits a literature advance in DT categorification.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-11 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

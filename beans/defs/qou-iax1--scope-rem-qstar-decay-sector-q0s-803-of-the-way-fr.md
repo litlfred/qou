@@ -4,8 +4,11 @@ title: 'SCOPE: rem-qstar-decay-sector-q0''s ''80.3% of the way from proton to mu
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T16:55:28Z
-updated_at: 2026-08-23T17:10:03Z
+updated_at: 2026-10-04T15:24:21Z
+parent: qou-avtq
 ---
 
 Found while checking whether the C-frame alpha in QBetaQStarClosedFormExclusion.lean (qou-um5h) endangers the q* exclusion argument. IT DOES NOT -- but it does move q*.

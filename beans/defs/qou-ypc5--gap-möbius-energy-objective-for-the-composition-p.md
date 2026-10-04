@@ -4,8 +4,11 @@ title: 'GAP: Möbius-energy objective for the composition program — no argumen
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-16T05:49:42Z
-updated_at: 2026-09-16T06:17:07Z
+updated_at: 2026-10-04T15:20:14Z
+parent: qou-v2om
 ---
 
 

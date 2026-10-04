@@ -1,11 +1,14 @@
 ---
 # qou-c66b
 title: 'conj:im-q-physical-role: Q_beta IS an Im(q)-sensitive observable already in the framework — the conjecture''s stated obstacle is wrong'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T10:42:33Z
-updated_at: 2026-09-05T12:02:58Z
+updated_at: 2026-10-04T15:12:10Z
+parent: qou-avtq
 ---
 
 Parent: `conj:im-q-physical-role`. Reached from `qou-pdix` route 5 (the elliptic
@@ -537,3 +540,9 @@ q-independence belongs to the quantity, not the witness.
 Found by acting on a self-correction #6820 posted about its own branch.
 Adjacent existing beans (no duplicate opened): `qou-xm91`, `qou-eggf`.
 Third instance on main, not mine: `qou-vtlj`.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

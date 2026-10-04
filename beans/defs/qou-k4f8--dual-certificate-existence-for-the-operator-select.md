@@ -1,11 +1,14 @@
 ---
 # qou-k4f8
 title: 'Dual certificate existence for the operator-selection LP: formalize first, then symbolic'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T12:50:00Z
-updated_at: 2026-08-16T13:05:56Z
+updated_at: 2026-10-04T15:12:26Z
+parent: qou-10v9
 ---
 
 Follows `k4ul` (#5216, theorem proved) and `0tjt` (#5231, box shown
@@ -303,3 +306,9 @@ Six days on a missing path read as a missing capability, and the same pattern
 turned up a third time the same day in `lp_dual_witness_validator.py`, which
 dies on import without that path. Worth generalising: **before recording a
 capability as absent, check whether it is merely unrouted.**
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -1,11 +1,15 @@
 ---
 # qou-1jw9
 title: 'GAP (closed): thm:wedderburn-mass-formula''s three invariants were carried — Phi_2/Phi_3 now derived, Phi_1 recomputed under convention D, D table adopted'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-09-12T21:13:56Z
+updated_at: 2026-10-04T15:12:42Z
+parent: qou-wp3h
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -1262,3 +1266,9 @@ the column is the selection-against-the-target the 2026-09-05 anti-fit directive
 forbids.
 
 **Bean stays open** (rule 13a).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-12 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

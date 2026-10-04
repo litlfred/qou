@@ -4,8 +4,11 @@ title: 'canonical-ordering-dof Part 6: eight C-era readings blocked on qou-eea0 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T09:13:33Z
-updated_at: 2026-08-10T09:14:17Z
+updated_at: 2026-10-04T15:16:52Z
+parent: qou-10v9
 ---
 
 

@@ -4,8 +4,11 @@ title: raw-float64 ratchet baseline is calibrated on STALE witnesses, so a refre
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T07:39:37Z
-updated_at: 2026-08-24T07:40:17Z
+updated_at: 2026-10-04T15:23:11Z
+parent: qou-9nnz
 ---
 
 MEASURED on branch claude/q0-anchor-flip-tranche-2026-08-19, 2026-08-24.

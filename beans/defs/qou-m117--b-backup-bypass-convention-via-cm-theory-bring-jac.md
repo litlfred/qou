@@ -1,12 +1,14 @@
 ---
 # qou-m117
 title: 'B (BACKUP): bypass convention via CM theory — Bring Jacobian ~ E^4, compute E period ratio from its Weierstrass model (CM point documented independent of B-N normalization); self-certifies vs the (1,5,5,5) gate'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-25T12:02:29Z
-updated_at: 2026-07-25T13:12:36Z
-parent: qou-k42c
+updated_at: 2026-10-04T15:11:56Z
+parent: qou-3l2l
 ---
 
 
@@ -18,3 +20,9 @@ OUTCOME (2026-07-25, branch claude/alpha-em-cm-weierstrass-scale-2026-07-25, NOT
 - Tau-scale gate NARROWED to a discrete set (Neron per-curve normalization; residual freedom = isogeny-degree pullbacks through Jac(Bring) -> E_{5tau0}^3 x E_{tau0}).
 - OBSERVATION (double-gated, OPEN, owner-level, no ID): route-C gate ratio 24.9997244717 is within 1.1e-5 of 25 = deg(5-isogeny)^2; ratio is normalization-carrying per route C itself.
 - Deliverables: computations/alpha_em/alpha_em_b2_cm_weierstrass_scale_probe.py (+witness 7/7), docs/audits/2026-07-25-alpha-em-b2-cm-weierstrass-scale.md, ledger row in docs/coordination/alpha-em.md. Nothing wired; 1/(8pi) stays phase-4.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-07-25 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

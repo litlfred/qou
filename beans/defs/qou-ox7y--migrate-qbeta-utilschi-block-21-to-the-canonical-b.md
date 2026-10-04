@@ -1,11 +1,14 @@
 ---
 # qou-ox7y
 title: Migrate qbeta_utils.chi_block_21 to the canonical borromean form
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T08:08:28Z
-updated_at: 2026-09-07T08:17:35Z
+updated_at: 2026-10-04T15:13:20Z
+parent: qou-avtq
 ---
 
 
@@ -89,3 +92,9 @@ grouped-frame coefficients kept alongside so the two frames stay comparable.
 `qou-lsib`'s "content-block Lean siblings do not build". It was migrated and
 re-verified rather than left to diverge. Its scope is much smaller than the
 library twin's — it stops at order 1 plus a note — so the swap was four edits.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

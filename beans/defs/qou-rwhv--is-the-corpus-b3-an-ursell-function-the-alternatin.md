@@ -1,11 +1,14 @@
 ---
 # qou-rwhv
 title: Is the corpus b3 an Ursell function? The alternating-sign theorem says the sign obstruction is the positivity hypothesis
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T09:39:42Z
-updated_at: 2026-09-13T10:42:54Z
+updated_at: 2026-10-04T15:13:09Z
+parent: qou-v2om
 ---
 
 ## Where this came from
@@ -205,3 +208,9 @@ Jansen–Kolesnikov by DOI the whole time.
 
 Holding a source is a **citation, not a derivation.** §13a: stays open; the
 residual this bean names is still `qou-brng`, the extensive term.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

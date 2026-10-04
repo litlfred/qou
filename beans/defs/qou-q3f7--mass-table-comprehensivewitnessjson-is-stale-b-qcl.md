@@ -4,8 +4,11 @@ title: 'mass-table-comprehensive.witness.json is stale: B_qCLT is off by a const
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-28T20:01:37Z
-updated_at: 2026-08-28T20:04:47Z
+updated_at: 2026-10-04T15:21:30Z
+parent: qou-v2om
 ---
 
 ## The measurement

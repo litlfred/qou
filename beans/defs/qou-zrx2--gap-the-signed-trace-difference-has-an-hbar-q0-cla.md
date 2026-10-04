@@ -1,11 +1,14 @@
 ---
 # qou-zrx2
 title: 'GAP: the signed trace difference has an hbar_q^0 classical floor -- it is not a pure deformation observable'
-status: in-progress
+status: todo
 type: bug
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-31T10:13:14Z
-updated_at: 2026-09-06T04:42:55Z
+updated_at: 2026-10-04T15:10:44Z
+parent: qou-v2om
 ---
 
 
@@ -666,3 +669,9 @@ and is not recomputed here (H_12 trace, slow).
 Same cause has reopened `qou-pdg9` (its six c1 are also the grouped word's). Probe:
 `computations/probes/c1_is_stale_on_the_reordered_atom_word_probe.py`; audit:
 `docs/audits/2026-09-06-c1-is-stale-on-the-reordered-atom-word.md`.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -4,8 +4,11 @@ title: 'AUDIT: hecke_core.z flipped C->D under every importer — 8 files carry 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T13:23:16Z
-updated_at: 2026-09-05T08:46:05Z
+updated_at: 2026-10-04T15:16:28Z
+parent: qou-cdx1
 ---
 
 Generalises the `alpha_high_precision` finding (`qou-l1gv`) from one file to its

@@ -4,8 +4,11 @@ title: 'TRIAGE: 13 ideal_muon producers carry no anchor rationale in their own s
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T19:40:03Z
-updated_at: 2026-09-04T14:00:52Z
+updated_at: 2026-10-04T15:25:11Z
+parent: qou-2002
 ---
 
 Split out of `qou-1c4y` (the tracked muon->proton migration) after re-measuring

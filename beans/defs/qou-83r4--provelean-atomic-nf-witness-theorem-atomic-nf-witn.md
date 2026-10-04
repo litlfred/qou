@@ -3,14 +3,16 @@
 title: 'PROVE(lean): atomic_nf_witness — theorem atomic_nf_witness (ctx : AtomicNfWitnessContext) : (∀ π : ℕ, ctx.Phi_1 ctx.pi_star [cited manuscript]'
 status: todo
 type: task
+priority: normal
 tags:
-    - lean
-    - cited-sorry
     - paper-qou
     - repo-infra
+    - reorg-2026-10-04
+    - lean
+    - cited-sorry
 created_at: 2026-08-01T23:31:07Z
-updated_at: 2026-08-01T23:31:07Z
-parent: qou-k1mq
+updated_at: 2026-10-04T15:22:22Z
+parent: qou-l2vh
 ---
 
 **File:** `QOU/ParticleInteractions/atomic_nf_witness.lean` (QOU)  ·  1 cited sorry(s)

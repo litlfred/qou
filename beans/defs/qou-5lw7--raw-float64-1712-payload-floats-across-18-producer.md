@@ -4,8 +4,11 @@ title: 'raw-float64: 1712 payload floats across 18 producers — scope, classifi
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T20:23:58Z
-updated_at: 2026-08-09T20:24:29Z
+updated_at: 2026-10-04T15:23:12Z
+parent: qou-9nnz
 ---
 
 

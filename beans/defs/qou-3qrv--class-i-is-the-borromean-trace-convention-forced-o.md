@@ -3,8 +3,12 @@
 title: 'Class I: is the Borromean trace CONVENTION forced, or selected because it lands on CODATA?'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T09:02:45Z
-updated_at: 2026-08-08T12:40:00Z
+updated_at: 2026-10-04T15:17:56Z
+parent: qou-v2om
 ---
 
 > ## ANSWERED 2026-08-08 — `claude/3qrv-borromean-trace-convention-2026-08-08`

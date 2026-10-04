@@ -1,11 +1,14 @@
 ---
 # qou-3q7t
 title: 'GAP: derive C_knot=5.85 (deuteron Δ_λ deficit) — the real ''improve binding'' target, not the scale-ambiguous A=3 near-miss'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-01T23:41:01Z
-updated_at: 2026-08-21T19:58:36Z
+updated_at: 2026-10-04T15:12:50Z
+parent: qou-v2om
 ---
 
 ## 2026-08-02 (PR #4556) — single-factor / single-scale route REFUTED with the pinned weight
@@ -63,3 +66,9 @@ WHAT IS ACTUALLY LEFT. The VALUE Δ_λ = (−1)^{n(λ)}·dim V_λ is proved sorr
 METHODOLOGICAL: any future cross-isotope diagnostic on this axis should report κ alongside the ratio. A spread computed across points of wildly differing κ compares one ill-conditioned measurement against three well-conditioned ones, and the resulting number is not a property of the physics.
 
 NOTE ON THIS BEAN'S TITLE: it still names 'C_knot=5.85', a convention-C value; the convention-D deuteron figure is 6.0679. Not retitled here because that renames the file and siblings may reference it — flagged instead. Full write-up: docs/audits/2026-08-21-c-knot-conditioning-and-stale-convention.md.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-21 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

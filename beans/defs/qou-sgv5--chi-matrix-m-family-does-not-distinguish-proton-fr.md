@@ -4,6 +4,11 @@ title: 'chi-matrix-m family does not distinguish proton from neutron: tr_M ident
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+created_at: 2026-10-04T14:18:01Z
+updated_at: 2026-10-04T15:16:56Z
+parent: qou-wp3h
 ---
 
 ## The observation

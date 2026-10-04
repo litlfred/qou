@@ -1,11 +1,14 @@
 ---
 # qou-7ygi
 title: "DeltaLambdaDTRealization: does a genuine GRADED substrate structure force single-degree (top-cohomology) concentration of Δ_λ into H^top(\U0001D4D1_λ)?"
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T14:06:09Z
-updated_at: 2026-08-02T14:06:17Z
+updated_at: 2026-10-04T15:12:18Z
+parent: qou-v2om
 ---
 
 
@@ -30,3 +33,9 @@ construction of a space with symmetric obstruction theory whose cohomology is co
 in the single degree 2n(λ) with fibre V_λ (Springer top-cohomology realized, not imported).
 VALUE Δ_λ = (-1)^{n(λ)}·dim unaffected (two substrate scalars). Audit:
 docs/audits/2026-08-02-deltalambda-graded-concentration-frontier.md
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-02 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

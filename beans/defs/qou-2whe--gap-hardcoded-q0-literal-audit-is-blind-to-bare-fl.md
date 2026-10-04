@@ -4,8 +4,11 @@ title: 'GAP: hardcoded-q0-literal audit is blind to bare floats and to the canon
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T11:24:04Z
-updated_at: 2026-08-30T11:48:04Z
+updated_at: 2026-10-04T15:20:04Z
+parent: qou-2002
 ---
 
 `computations/audits/hardcoded_q0_literal_families_audit.py` exists to find

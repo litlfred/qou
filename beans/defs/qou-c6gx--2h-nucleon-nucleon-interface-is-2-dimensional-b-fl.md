@@ -3,8 +3,12 @@
 title: '2H: nucleon-nucleon interface is 2-dimensional -- B floor is alpha*ln(1/z) = 2.907 MeV, ABOVE AME 2.2246'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T22:20:37Z
-updated_at: 2026-08-08T22:20:37Z
+updated_at: 2026-10-04T15:16:03Z
+parent: qou-v2om
 ---
 
 Branch: claude/anchor-followups-2026-08-08. Localises the 2H +74.85% overshoot,

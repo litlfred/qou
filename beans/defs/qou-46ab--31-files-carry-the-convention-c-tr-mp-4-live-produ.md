@@ -4,8 +4,11 @@ title: 31 files carry the convention-C tr_M(p); 4 live producers HARDCODE it as 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T06:41:11Z
-updated_at: 2026-08-30T14:28:05Z
+updated_at: 2026-10-04T15:16:03Z
+parent: qou-cdx1
 ---
 
 Generalised from qou-5ll9, where `atomic-tr-m-helium4.witness.json` was shown

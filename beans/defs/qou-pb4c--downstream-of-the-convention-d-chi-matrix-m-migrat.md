@@ -4,6 +4,11 @@ title: 'Downstream of the convention-D chi-matrix-m migration: 23 consumers, 14 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+created_at: 2026-10-04T14:18:01Z
+updated_at: 2026-10-04T15:18:54Z
+parent: qou-cdx1
 ---
 
 ## Why this exists

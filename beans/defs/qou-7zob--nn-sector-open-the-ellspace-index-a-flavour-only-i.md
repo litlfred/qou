@@ -3,8 +3,12 @@
 title: 'NN sector: open the ell/space index -- a flavour-only interface CANNOT split 3S1 from 1S0, proved degenerate'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T03:11:32Z
-updated_at: 2026-08-09T03:11:32Z
+updated_at: 2026-10-04T15:21:41Z
+parent: qou-10v9
 ---
 
 

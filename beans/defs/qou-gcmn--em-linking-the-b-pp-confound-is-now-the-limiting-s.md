@@ -4,8 +4,11 @@ title: 'EM-linking: the B_pp confound is now the limiting systematic. The per-pa
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-01T21:25:42Z
-updated_at: 2026-09-07T09:26:48Z
+updated_at: 2026-10-04T15:19:00Z
+parent: qou-10v9
 ---
 
 ## Answered in sign and low-A scale (PR #6336) — the bean never recorded it

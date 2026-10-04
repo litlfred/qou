@@ -4,8 +4,11 @@ title: 'conj:crossing-graded-mass-expansion: xi -> +inf in the classical limit; 
 status: todo
 type: task
 priority: medium
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T13:45:00Z
-updated_at: 2026-08-08T13:45:00Z
+updated_at: 2026-10-04T15:26:05Z
+parent: qou-wp3h
 ---
 
 **Scope-(a).** This is about the STATEMENT of one conjecture block. It refutes

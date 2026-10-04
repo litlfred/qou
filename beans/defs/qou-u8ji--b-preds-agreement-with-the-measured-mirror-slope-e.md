@@ -3,8 +3,12 @@
 title: 'b_pred''s agreement with the measured mirror slope exists ONLY in the grouped ordering: canonical moves the plateau 1.42 -> 2.69 and flips the sign of kappa_AME'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T06:47:34Z
-updated_at: 2026-09-14T06:47:34Z
+updated_at: 2026-10-04T15:16:38Z
+parent: qou-v2om
 ---
 
 ## OWNER CALL. Do not resolve this mechanically.

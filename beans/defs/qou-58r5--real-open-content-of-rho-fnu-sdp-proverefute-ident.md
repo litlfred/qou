@@ -3,8 +3,12 @@
 title: 'Real open content of rho_F=nu_SDP: prove/refute identity SDP-saturating-mult = bar-fixed-block sc(n) = bond count A-1 (NOT which integer)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T16:03:25Z
-updated_at: 2026-08-02T16:03:25Z
+updated_at: 2026-10-04T15:23:15Z
+parent: qou-10v9
 ---
 
 See docs/audits/2026-08-02-ppq-attack-vectors-roast.md §Roast 2.

@@ -3,8 +3,12 @@
 title: 'GAP: multiplicative interface 4-body cumulant b4 undershoots He4 target (6.3% production / 36% bar-invariant)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T18:36:28Z
-updated_at: 2026-08-02T18:36:28Z
+updated_at: 2026-10-04T15:20:14Z
+parent: qou-v2om
 ---
 
 

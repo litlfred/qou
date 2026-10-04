@@ -1,11 +1,14 @@
 ---
 # qou-mbbf
 title: 'The A+1 component law: the atom word''s Markov closure misses every census carrier, and 7db032fb48 did NOT invalidate that'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T15:47:03Z
-updated_at: 2026-09-13T16:34:15Z
+updated_at: 2026-10-04T15:14:08Z
+parent: qou-v2om
 ---
 
 ## What was asked, and what I nearly got wrong
@@ -145,3 +148,9 @@ a 2x spread), so it is NOT a derived nucleon volume and must not be quoted as
 one. Only the qualitative flip is mode-independent. Filed as `qou-v5sr`, not
 fixed — it is a producer-output change gated by the ask-first rule, and it is
 the same commit and the same open question as `qou-sikd`.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

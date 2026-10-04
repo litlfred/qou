@@ -4,8 +4,11 @@ title: 'Magic-number derivation: measured attack surface, and the two walls'
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T00:00:00Z
-updated_at: 2026-08-30T00:00:00Z
+updated_at: 2026-10-04T15:14:56Z
+parent: qou-v2om
 ---
 
 Follows `qou-pz4m` (delta2-Phi is a parity test). That bean closed a route;

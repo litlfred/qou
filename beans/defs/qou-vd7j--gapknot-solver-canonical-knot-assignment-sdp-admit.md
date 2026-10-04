@@ -4,8 +4,11 @@ title: 'GAP(knot-solver): canonical knot-assignment SDP admits 0/3558 at Frobeni
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T13:56:51Z
-updated_at: 2026-09-11T14:56:33Z
+updated_at: 2026-10-04T15:19:34Z
+parent: qou-v2om
 ---
 
 ## Finding (2026-08-02) — the solver runs; the Frobenius selector is empty

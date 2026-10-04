@@ -4,8 +4,11 @@ title: 'B (convention C): 14 actionable z_C sites + 2 C-specialised closed forms
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T16:31:28Z
-updated_at: 2026-08-25T18:27:50Z
+updated_at: 2026-10-04T15:16:31Z
+parent: qou-cdx1
 ---
 
 ## Result 2026-08-25 (PR #5767): 14 -> 11, and 11 is the FLOOR for a mechanical drain

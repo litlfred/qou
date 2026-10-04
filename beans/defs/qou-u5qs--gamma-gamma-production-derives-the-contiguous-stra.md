@@ -1,11 +1,14 @@
 ---
 # qou-u5qs
 title: gamma-gamma production DERIVES the contiguous strand layout, uniquely — and that is why there is no 3-cell
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T19:44:28Z
-updated_at: 2026-09-15T07:18:21Z
+updated_at: 2026-10-04T15:12:41Z
+parent: qou-v2om
 ---
 
 ## 2026-09-14 — the measurement (probe 15/15, exact combinatorics, read-only)
@@ -484,3 +487,9 @@ comparison must not be made until one is. What *is* settled: it lives on
 adjacent generators in `H₄` while the chain's interface generators sit at
 `3k+2`, three apart and far-commuting, so no reordering of the chain's bonds
 produces it.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-15 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

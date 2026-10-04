@@ -4,8 +4,11 @@ title: 'AUDIT: a convention-C dependency can survive as a derived IDENTITY — i
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T17:24:15Z
-updated_at: 2026-08-24T17:28:24Z
+updated_at: 2026-10-04T15:16:28Z
+parent: qou-cdx1
 ---
 
 Found while sweeping for convention-C spellings during the `qou-cds1` excision.

@@ -4,8 +4,11 @@ title: 'Level-3 charge asymmetry cannot inherit level-4 symmetry: wrong A-scalin
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T11:00:10Z
-updated_at: 2026-08-30T11:00:54Z
+updated_at: 2026-10-04T15:21:14Z
+parent: qou-10v9
 ---
 
 ## The question

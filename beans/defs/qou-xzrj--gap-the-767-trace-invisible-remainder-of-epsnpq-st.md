@@ -1,11 +1,14 @@
 ---
 # qou-xzrj
 title: 'GAP: the 7.67% trace-invisible remainder of epsNPq (step 8)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T21:07:16Z
-updated_at: 2026-08-30T04:34:57Z
+updated_at: 2026-10-04T15:13:00Z
+parent: qou-avtq
 ---
 
 Opened from `qou-cds1` / step 8 of the 2026-05-24 Q_β fitting-finding audit,
@@ -549,3 +552,9 @@ The pairing result is on main: the trace-invisible remainder is Riesz-representa
 Bean stays OPEN. What merged is a *representation* of net, scope (a) throughout — nothing here produces y0 without first inverting net. Step 8's actual postulate, the physical identification Q_beta = |Delta(net)|*E0, is untouched by all seven tranches.
 
 Merge note: GitHub refused rebase-merge (4 merge commits); branch was linearized locally per AGENTS.md rule 8, and the six audit-witness conflicts were resolved to origin/main's side because my regenerated copies carried this container's environment (mpmath 1.3.0, no scipy/clarabel) rather than main's.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

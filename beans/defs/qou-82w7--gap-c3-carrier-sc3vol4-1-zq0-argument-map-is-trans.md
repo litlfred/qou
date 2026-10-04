@@ -3,8 +3,12 @@
 title: 'GAP: c3 carrier S=c3+Vol(4_1) — z(q0) argument map is transcendental, not combinatorial'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-01T01:23:31Z
-updated_at: 2026-08-01T01:23:31Z
+updated_at: 2026-10-04T15:19:48Z
+parent: qou-avtq
 ---
 
 

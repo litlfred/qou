@@ -3,8 +3,12 @@
 title: A=4 / mu_4 helium interface operator
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T00:53:31Z
-updated_at: 2026-08-07T00:53:31Z
+updated_at: 2026-10-04T15:16:12Z
+parent: qou-v2om
 ---
 
 

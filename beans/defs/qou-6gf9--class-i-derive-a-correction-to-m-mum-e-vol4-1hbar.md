@@ -1,11 +1,14 @@
 ---
 # qou-6gf9
 title: 'Class I: derive a correction to m_mu/m_e = Vol(4_1)/hbar_q^2 (the 11.5 ppb mu-p residual)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T09:31:00Z
-updated_at: 2026-09-04T13:05:40Z
+updated_at: 2026-10-04T15:12:08Z
+parent: qou-2002
 ---
 
 Attack the Class I mu-p residual on the **muon carrier** `m_mu/m_e = Vol(4_1)/hbar_q^2`
@@ -302,3 +305,9 @@ strictly harder ask -- a resummation, or a root-of-unity evaluation -- and
 neither is a small next step. An honest reading is that the cheap end of this
 GAP is exhausted, and the next attempt should be scoped as research rather than
 as a measurement.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

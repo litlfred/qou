@@ -1,11 +1,14 @@
 ---
 # qou-foh0
 title: 'GAP: A=4 (4He) >=4-body magnitude scalar m in (0,1/sqrt5) not fixed by a categorical driver'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T09:22:59Z
-updated_at: 2026-08-28T19:51:12Z
+updated_at: 2026-10-04T15:12:48Z
+parent: qou-v2om
 ---
 
 Formalize-first session (branch claude/a4-interface-magnitude-2026-08-02) reduced the A=4 >=4-body magnitude to a SINGLE under-determined scalar m (per-pair bond magnitude) in (0,1/sqrt5).
@@ -36,3 +39,9 @@ WHAT WOULD CHANGE IT: a categorical uniqueness argument singling out ONE functio
 of {q,-1/q} BEFORE seeing the target (e.g. a Lean-proved identity forcing the per-pair
 bond weight = a specific spectral invariant). None known.
 Audit: docs/audits/2026-08-28-a4-interface-operator-driver-search.md
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-28 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

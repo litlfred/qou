@@ -1,11 +1,14 @@
 ---
 # qou-okkz
 title: Consumer-side detector for deliberate convention-C control arms (qou-q0zk drain safety)
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T14:10:58Z
-updated_at: 2026-09-08T07:45:35Z
+updated_at: 2026-10-04T15:12:11Z
+parent: qou-cdx1
 ---
 
 ## MEASURED on main, 2026-08-24 (PR #5669, branch claude/consumer-control-arm-detector-2026-08-24)
@@ -122,3 +125,9 @@ and `3 <= 3` still reads specific. The poisoning is LATENT: the tree is one such
 artifact away from it firing. Recorded rather than tuned away.
 
 ## 2026-09-08: canonical ledger for the convention-C excision family is qou-wgta (the P0 excision tracker; owner-ruling milestone qou-cdx1, S2 science blocker qou-cds2); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 2 / §7.3 C3. Nine trackers, previously linked only cds2↔8iru and htsi→t9r1, now all point there.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

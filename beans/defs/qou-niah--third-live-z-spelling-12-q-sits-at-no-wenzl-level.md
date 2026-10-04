@@ -3,8 +3,12 @@
 title: Third live z spelling 1/[2]_q sits at no Wenzl level
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T12:54:36Z
-updated_at: 2026-08-16T12:54:36Z
+updated_at: 2026-10-04T15:25:03Z
+parent: qou-10v9
 ---
 
 z = 1/(q + q^-1) = q/(q^2+1), numerically 0.4972905456 at the proton pin. It is NOT z_C (0.4993203342) and NOT z_D (0.6126880371). Its formal Wenzl level is 2.6136.

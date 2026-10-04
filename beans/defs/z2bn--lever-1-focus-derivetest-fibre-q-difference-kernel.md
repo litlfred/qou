@@ -1,11 +1,14 @@
 ---
 # z2bn
 title: 'Lever 1 [FOCUS]: derive/test fibre q-difference kernel R(q,x) for binding genfun; kill-switch = magic-A ⁴He +5.87%'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-06-23T14:19:27Z
-updated_at: 2026-06-28T16:30:00Z
+updated_at: 2026-10-04T15:13:13Z
+parent: qou-v2om
 ---
 
 
@@ -388,3 +391,9 @@ a nontrivial outer automorphism (S₆). Ties binding arithmetic to s5-so3 keysto
 (S(n)=Σdim_q=ΣW_λ). Probe `lever1_cyclotomic_boundary_keystone_conjecture.py`; audit
 `docs/audits/2026-07-12-lever1-cyclotomic-boundary-keystone-conjecture.md`. Content block:
 `conj:cyclotomic-boundary-at-keystone` (mass-theory).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-06-28 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -4,8 +4,11 @@ title: Compare the R5-full SDP deuteron winner with the H_6 mass word beyond ari
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T21:21:48Z
-updated_at: 2026-08-21T21:22:18Z
+updated_at: 2026-10-04T15:17:58Z
+parent: qou-v2om
 ---
 
 Opened from PR #5413 (reconciling the two deuteron adjudications of

@@ -3,8 +3,12 @@
 title: 'qbeta c_k ladder doc contract: mba sidecar names a canonical c_k compute that records no c_k (F1/F2 superseded by the red-team audit; F3a RETRACTED)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T16:47:05Z
-updated_at: 2026-08-16T21:05:00Z
+updated_at: 2026-10-04T15:22:58Z
+parent: qou-avtq
 ---
 
 > **⚠ REWRITTEN 2026-08-16T21:05Z after `origin/main` moved.** The first version

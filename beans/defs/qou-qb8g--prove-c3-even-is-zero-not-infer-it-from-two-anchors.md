@@ -4,8 +4,11 @@ title: c_3's bar-parity is UNDETERMINED — neither named split is derived
 status: todo
 type: task
 priority: medium
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T11:45:00Z
-updated_at: 2026-08-29T10:50:30Z
+updated_at: 2026-10-04T15:26:05Z
+parent: qou-avtq
 ---
 
 *** REWRITTEN 2026-08-08 (same day). The original title was "Prove c_3^even = 0".

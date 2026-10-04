@@ -1,11 +1,14 @@
 ---
 # qou-7kq3
 title: 'raw-float64 ratchet is RED on main: 4 new dirty witnesses + 1 regressed'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-14T17:05:00Z
-updated_at: 2026-09-08T07:45:47Z
+updated_at: 2026-10-04T15:13:43Z
+parent: qou-9nnz
 ---
 
 ## What is red
@@ -133,3 +136,9 @@ that is answered the ratchet stays red on these three, and it is red for a true
 reason.
 
 ## 2026-09-08: canonical tracker for the recurring "raw-float64 ratchet is RED on main" event is qou-sknx (most recent OPEN one, 2026-09-04); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 6 / §7.3 C7. Seven beans (08-11 … 09-06) record one recurring event; this one is kept as-is because its body carries its own finding.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -3,8 +3,12 @@
 title: Two declarations of QOU.Interactions.QIntegerMassFormula — one compiled with no consumers, one honest and uncompiled
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T20:01:42Z
-updated_at: 2026-08-29T20:01:42Z
+updated_at: 2026-10-04T15:25:13Z
+parent: qou-wp3h
 ---
 
 

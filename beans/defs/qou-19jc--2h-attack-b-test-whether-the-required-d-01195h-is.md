@@ -4,9 +4,11 @@ title: '2H ATTACK B: test whether the required d = -0.1195h is the sigma^2 stack
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T18:37:51Z
-updated_at: 2026-08-31T03:03:50Z
-parent: qou-9ot5
+updated_at: 2026-10-04T15:16:02Z
+parent: qou-10v9
 ---
 
 ## MEASURED 2026-08-25 (PR #5765) — NEGATIVE, and it redirects the attack

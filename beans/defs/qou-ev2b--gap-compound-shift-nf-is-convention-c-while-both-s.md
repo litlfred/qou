@@ -3,8 +3,12 @@
 title: 'GAP: compound_shift_nf is convention C while both sources it claims to match are D — migration moves TR_M by 22.7-50.6%'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T09:20:48Z
-updated_at: 2026-08-30T09:20:48Z
+updated_at: 2026-10-04T15:19:51Z
+parent: qou-cdx1
 ---
 
 

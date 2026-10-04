@@ -1,12 +1,14 @@
 ---
 # qou-m6gp
 title: 'Evaluate observable C for the first time: SnapPy volume of the DERIVED braid closures (binding_volume_difference_probe leg C never ran)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T18:06:40Z
-updated_at: 2026-09-07T18:37:57Z
-parent: qou-6g7j
+updated_at: 2026-10-04T15:12:29Z
+parent: qou-v2om
 ---
 
 computations/probes/binding_volume_difference_probe.py reports a 'triple refutation' but leg C (SnapPy hyperbolic volume of the derived braid closures, free vs interface-inclusive) has NEVER executed: _snappy_braid_vols returns (None, None, False) on ImportError, indistinguishable from a genuine non-hyperbolic result, and snappy is absent from every agent container measured. The committed witness therefore records C as refuted on the strength of an import failure. Task: install SnapPy, run leg C, report what it actually says; fix the helper so ImportError is a distinct verdict (unevaluated), never a refutation. Misattributed to qou-26f2 by a sibling; qou-17mq records the reason it does not help the EM-linking front. Scope any negative (a)/(b).
@@ -30,3 +32,8 @@ computations/probes/binding_volume_difference_probe.py reports a 'triple refutat
 **Files:** computations/probes/binding_volume_difference_probe.py (helper replaced by `_snappy_leg_c`, ImportError ⇒ `status: unevaluated`; leg A errors now mpf/fmt, drains 12 raw floats from the ratchet baseline), its witness (regenerated, env mpmath 1.4.1 + clarabel 0.11.1 after installing them), mass_at_3A_proper.py docstring correction, audit addendum. Runtime 1m54s (⁴He 512 branches dominates).
 **ROAST 2026-09-07 (qou-pbwj) — verdict: KILL as a research front; keep a ≤10-line chore.** Already answered at scope (b): `docs/audits/2026-08-25-atom-word-closures-are-not-hyperbolic.md` installed SnapPy 3.3.2 and proved every branch closure of `atom_braid_word_3A` is a connected sum of (2,k) torus links, Vol = 0, verified 32/32 against `deconnect_sum` for all A ≤ 24 (invariants: one-run-per-generator normal form; connected sums non-prime; (2,k) torus links Seifert-fibred); `2026-07-04-he4-link-volume-braid-closure-refuted.md` already found the p/n/³H/³He/⁴He closures non-hyperbolic with the wrong component counts. Worse, the code this bean wants to run measures the wrong object: `binding_volume_difference_probe.py:93-111` builds `braid = [k + 1 for (_c, _d, k) in w]`, discarding every crossing sign and averaging weight — an all-positive braid that is none of the 2^(2A+1) branches. Fit exposure: latent selection against the target (choosing a branch/sign resolution to get Vol ≠ 0). L2 relevance: none. Residual value: make ImportError report 'unevaluated' rather than 'refuted' and cross-reference the 08-25 audit from the probe description. Full frame: docs/audits/2026-09-07-takeover-fronts-roast.md §Front 1.
 
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -1,10 +1,14 @@
 ---
 # qou-xf14
 title: 'PINNED: the normaliser convention is delta = [2]_q, forced by the identity sqrt(b_pp.b_nn) = 1/[2]_q at every q — qou-59j5/qou-78pt family span 1.33x collapses to one member'
-status: in-progress
+status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T05:47:43Z
-updated_at: 2026-09-05T05:47:43Z
+updated_at: 2026-10-04T15:13:29Z
+parent: qou-v2om
 ---
 
 `computations/qbeta/qbeta_loop_value_pinned_probe.py` (8/8), symbolic in `q`.
@@ -62,3 +66,9 @@ Also worth recording: `b_pn` is NOT of this form (`b_pn . [2]_q = 1.021998`, not
 a power of `q0`) — as expected, since it is a weight-1 average of the two
 crossings rather than a crossing. The identity is about the two PURE letters and
 is stated that way.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

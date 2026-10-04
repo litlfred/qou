@@ -4,8 +4,11 @@ title: bar_pairing_binding_observable.py OVERWRITES the chi-cache witness it doc
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T05:54:26Z
-updated_at: 2026-09-06T14:05:22Z
+updated_at: 2026-10-04T15:16:38Z
+parent: qou-v2om
 ---
 
 ## Mechanism (measured 2026-09-06)

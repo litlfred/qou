@@ -3,8 +3,12 @@
 title: 'binding forces: weak cannot account for the low-dashboard error; charge-symmetry breaking is 2.97x too large'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T21:46:35Z
-updated_at: 2026-08-08T21:46:35Z
+updated_at: 2026-10-04T15:16:41Z
+parent: qou-v2om
 ---
 
 Asked whether the weak force is a missing binding term. Analysed all four contributions against the measured low-dashboard misses.

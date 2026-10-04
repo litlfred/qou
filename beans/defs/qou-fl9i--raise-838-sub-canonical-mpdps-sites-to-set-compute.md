@@ -4,8 +4,11 @@ title: Raise 838 sub-canonical mp.dps sites to set_compute_dps() — producers s
 status: in-progress
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T08:04:50Z
-updated_at: 2026-08-28T20:47:12Z
+updated_at: 2026-10-04T15:13:42Z
+parent: qou-9nnz
 ---
 
 ## The defect, with evidence

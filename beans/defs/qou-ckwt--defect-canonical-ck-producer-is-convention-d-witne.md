@@ -4,8 +4,11 @@ title: 'DEFECT: canonical c_k producer is convention D, its committed witness is
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T03:28:36Z
-updated_at: 2026-08-26T03:28:36Z
+updated_at: 2026-10-04T15:14:48Z
+parent: qou-avtq
 ---
 
 Parent: `qou-cds1`. CONFIRMED 2026-08-26 by decisive test.

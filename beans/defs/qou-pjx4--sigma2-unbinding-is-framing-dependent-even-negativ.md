@@ -3,8 +3,12 @@
 title: sigma^2 unbinding is framing-dependent; even-NEGATIVE stacking unbinds after writhe normalisation (scope-a, magnitudes still 6-9x)
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T23:24:55Z
-updated_at: 2026-08-15T23:24:55Z
+updated_at: 2026-10-04T15:24:24Z
+parent: qou-v2om
 ---
 
 

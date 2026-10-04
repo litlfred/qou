@@ -1,10 +1,14 @@
 ---
 # ovud
 title: Wire Li2q brane-tower into production F_Bor (replace /q3 normalization)
-status: in-progress
+status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-06-24T03:48:33Z
-updated_at: 2026-06-24T04:00:00Z
+updated_at: 2026-10-04T15:14:25Z
+parent: qou-2002
 ---
 
 
@@ -43,3 +47,9 @@ Probe `computations/li2q_fbor_expansion_probe.py` proves:
 REMAINING (the real ovud): deriving the {46,4,29} term-6 Habiro residue
 is the SAME open Habiro-element problem as the Q_β c_k ladder (s5bb
 keystone). NOT a Li₂^q-tower reparametrisation. Gated on s5bb.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-06-24 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

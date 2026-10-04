@@ -4,8 +4,11 @@ title: 'GAP: qbeta_ck_qholonomic_recurrence_test is BROKEN on main — TypeError
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T21:29:14Z
-updated_at: 2026-08-29T21:29:43Z
+updated_at: 2026-10-04T15:20:20Z
+parent: qou-avtq
 ---
 
 Parent: qou-x5mi. Found while trying to declare `q0Anchor: comparison` on it.

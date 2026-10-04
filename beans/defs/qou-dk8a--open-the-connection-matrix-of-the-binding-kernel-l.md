@@ -1,11 +1,14 @@
 ---
 # qou-dk8a
 title: 'OPEN: the connection matrix of the binding kernel L_K between 0 and infinity — the one surviving resurgence route'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T07:17:06Z
-updated_at: 2026-09-07T17:12:36Z
+updated_at: 2026-10-04T15:13:25Z
+parent: qou-v2om
 ---
 
 **The target is the binding gap.** As of `docs/audits/2026-09-05-binding-gap-groupoids-derived-categories-full-tower.md` the gap is a SHAPE gap (22.5 % p5–p95), not a scale gap (0.99 %), and its one unlocated piece is the irreducibly many-body term: the connected 3-body cumulant `b3 = +1.4262 MeV` against a model value of exactly `0`. The audit locates the cause — `b3 = 0` is a shadow of semisimplicity (`HH^k(H_n(q),H_n(q)) = 0` at generic q), so a trace on that algebra has nowhere to store a 3-body datum.
@@ -55,3 +58,9 @@ Consequence: **`χ` is not in the literature.** There is no published connection
 Morita's Def 4.1 **is** that base change: `t² = x`, `p := √q`. Two independent lines — the corpus's Newton-slope argument and Morita's covering transformation — arrive at the same degree-2 ramified cover, and the corpus reached it without holding the paper. That raises confidence the ramified route is the right one; it does **not** supply any number.
 
 **Re-scoping this bean.** Cost is now known to be large, not small. It sits behind `qou-brng` (which has a live, cheap, falsifiable target in `ρ_pp`) and should not be started until either that resolves or someone wants the resummation for its own sake. The anti-fit gate recorded above is unchanged and still applies.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

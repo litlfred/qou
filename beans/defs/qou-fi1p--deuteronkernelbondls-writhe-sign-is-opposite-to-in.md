@@ -4,8 +4,11 @@ title: DeuteronKernel.bondL's writhe sign is opposite to InterfaceScalar's — l
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T10:54:22Z
-updated_at: 2026-09-13T10:55:12Z
+updated_at: 2026-10-04T15:18:50Z
+parent: qou-v2om
 ---
 
 ## The finding

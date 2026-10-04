@@ -3,8 +3,12 @@
 title: 'Promote bond saturation to a model parameter: f(type, coordination) as the natural relaxation'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T06:48:03Z
-updated_at: 2026-09-04T06:48:03Z
+updated_at: 2026-10-04T15:22:14Z
+parent: qou-v2om
 ---
 
 

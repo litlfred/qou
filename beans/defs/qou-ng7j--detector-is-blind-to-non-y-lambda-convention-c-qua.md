@@ -1,11 +1,14 @@
 ---
 # qou-ng7j
 title: Detector is blind to non-y_lambda convention-C quantities (tr_M, z); Schur-Weyl is the real per-weight test
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T18:42:38Z
-updated_at: 2026-09-15T06:20:35Z
+updated_at: 2026-10-04T15:12:22Z
+parent: qou-cdx1
 ---
 
 
@@ -322,3 +325,9 @@ Only the last row: derived quantities (ρ, Δρ, binding, mass). Those are the h
 case and `qou-u5z0` already warns a C dependency "can survive as a derived
 IDENTITY — invisible to every detector". `tr_M` and `z` were tractable because
 each has a value you can compute and match; a derived identity has neither.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-15 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

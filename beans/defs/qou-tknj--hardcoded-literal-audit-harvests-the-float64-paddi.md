@@ -3,8 +3,12 @@
 title: hardcoded_literal_audit harvests the float64-padding audit's own fixture, turning a blocking gate red
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T10:09:44Z
-updated_at: 2026-08-23T10:09:44Z
+updated_at: 2026-10-04T15:20:43Z
+parent: qou-9nnz
 ---
 
 Two audits reference each other's example data, and the pair trips a BLOCKING gate.

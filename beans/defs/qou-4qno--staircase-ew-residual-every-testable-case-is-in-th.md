@@ -3,8 +3,12 @@
 title: 'Staircase EW-residual: every testable case is in the TL kernel — rho_k has k rows, so only k=2 is physical at N=2, and the block calls that case untestable'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-01T07:53:25Z
-updated_at: 2026-09-01T07:53:25Z
+updated_at: 2026-10-04T15:24:36Z
+parent: qou-10v9
 ---
 
 Found while auditing the Standard-Model work against the full tower (owner request, 2026-09-01). Probe: `computations/qbeta/qbeta_staircase_ew_lives_in_the_tl_kernel_probe.py` (4/4).

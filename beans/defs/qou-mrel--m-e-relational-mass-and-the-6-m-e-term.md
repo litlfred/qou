@@ -1,10 +1,14 @@
 ---
 # qou-mrel
-title: 'Where does m_e come from? — relational mass and the unexplained −6·m_e term'
+title: Where does m_e come from? — relational mass and the unexplained −6·m_e term
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-06T00:00:00Z
+updated_at: 2026-10-04T15:25:34Z
+parent: qou-wp3h
 ---
 
 ## Owner question (2026-08-05/06)

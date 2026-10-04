@@ -3,8 +3,13 @@
 title: Corpus has TWO incompatible Planck lengths (factor t_P ~ 10.1); the Lean hardened a prose '~' into '='
 status: todo
 type: bug
+priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-08-09T11:10:54Z
-updated_at: 2026-08-09T11:10:54Z
+updated_at: 2026-10-04T15:15:38Z
+parent: qou-10v9
 ---
 
 

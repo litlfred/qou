@@ -4,8 +4,11 @@ title: 'GAP: sigma_1^3 is a three-role symbol (electron / deuteron / nucleon bin
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T21:21:18Z
-updated_at: 2026-08-21T21:21:48Z
+updated_at: 2026-10-04T15:20:23Z
+parent: qou-v2om
 ---
 
 Found reconciling the two deuteron adjudications of 2026-08-21 (PR #5413,

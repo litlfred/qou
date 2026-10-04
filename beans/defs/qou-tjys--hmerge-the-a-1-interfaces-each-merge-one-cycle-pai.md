@@ -1,11 +1,14 @@
 ---
 # qou-tjys
 title: 'hmerge: the A-1 interfaces each merge one cycle pair -- discharge ClassicalTraceFloor''s second stated hypothesis'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T22:01:59Z
-updated_at: 2026-09-05T06:04:38Z
+updated_at: 2026-10-04T15:13:06Z
+parent: qou-v2om
 ---
 
 Successor to qou-qro1 (OrbitCount.lean, merged as a08dce2497). That bean proved
@@ -77,3 +80,9 @@ sequences so a drift fails the build. If you extend the pattern, extend the anch
 
 STILL OPEN, unchanged: the Schur-Weyl leg tr = 2^(c-n) (ClassicalTraceFloor step 1,
 assumed as a published theorem because Mathlib has no Schur-Weyl duality).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

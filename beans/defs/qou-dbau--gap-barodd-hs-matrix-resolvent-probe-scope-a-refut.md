@@ -3,8 +3,12 @@
 title: 'GAP: barodd HS matrix-resolvent probe — scope-(a) refutation was derived from the buggy TR_M[5]; bar-parity argument needs redoing'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T12:46:31Z
-updated_at: 2026-08-30T12:46:31Z
+updated_at: 2026-10-04T15:19:45Z
+parent: qou-avtq
 ---
 
 

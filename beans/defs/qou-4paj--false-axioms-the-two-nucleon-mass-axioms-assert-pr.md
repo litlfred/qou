@@ -4,8 +4,12 @@ title: 'FALSE AXIOMS: the two nucleon-mass axioms assert propositions whose nega
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-09-04T02:40:09Z
-updated_at: 2026-09-04T02:40:51Z
+updated_at: 2026-10-04T15:19:07Z
+parent: qou-wp3h
 ---
 
 Kernel-verified 2026-09-04 on `origin/main`. Not a gap and not an over-claim:

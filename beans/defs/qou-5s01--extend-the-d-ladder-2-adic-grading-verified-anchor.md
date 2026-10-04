@@ -3,8 +3,12 @@
 title: Extend the D-ladder 2-adic grading verified anchor from K=5 to K=21 (data already committed)
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-19T17:21:15Z
-updated_at: 2026-08-19T17:21:15Z
+updated_at: 2026-10-04T15:19:03Z
+parent: qou-avtq
 ---
 
 

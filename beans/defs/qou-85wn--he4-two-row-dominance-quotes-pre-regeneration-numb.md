@@ -4,8 +4,11 @@ title: he4-two-row-dominance quotes pre-regeneration numbers — thesis survives
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T12:44:43Z
-updated_at: 2026-09-07T10:30:11Z
+updated_at: 2026-10-04T15:20:44Z
+parent: qou-10v9
 ---
 
 

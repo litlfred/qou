@@ -3,8 +3,12 @@
 title: qbeta_braid_nf_sdp_offset_probe solves against a Gram that is singular under convention D
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T11:29:16Z
-updated_at: 2026-08-16T11:29:16Z
+updated_at: 2026-10-04T15:23:00Z
+parent: qou-cdx1
 ---
 
 Parent: qou-cdx1. Split out of qou-cds2, which migrated pyhecke's mpmath path to

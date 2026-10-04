@@ -4,8 +4,11 @@ title: 'GAP: probes reading muon q-pinning-50-digit against proton-pinned inputs
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T10:34:15Z
-updated_at: 2026-09-04T10:35:02Z
+updated_at: 2026-10-04T15:20:19Z
+parent: qou-2002
 ---
 
 Found while resolving qou-2364 (PR #6596, 2026-09-04). Two related provenance/straddle defects, both wider than the one probe that was fixed.

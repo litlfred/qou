@@ -1,12 +1,14 @@
 ---
 # qou-f0ny
 title: DT/3d-index derives per-partition Δ_λ as ONE graded Euler characteristic (horn unification)
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T08:14:12Z
-updated_at: 2026-08-02T08:16:07Z
-parent: qou-r2nh
+updated_at: 2026-10-04T15:12:25Z
+parent: qou-v2om
 ---
 
 **Epic:** `qou-r2nh` (the two horns → forward DT/3d-index route). **PR:** #4551.
@@ -39,3 +41,9 @@ This dissolves the ledger's "sign is exogenous / magnitude = dim" framing.
 
 Audit: `docs/audits/2026-08-01-deltalambda-dt-3dindex-graded-euler-unification.md`.
 No fit; nothing wired; no anchor inverted.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-02 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

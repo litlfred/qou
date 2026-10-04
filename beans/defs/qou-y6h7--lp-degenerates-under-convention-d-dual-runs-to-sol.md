@@ -4,8 +4,11 @@ title: 'LP degenerates under convention D: dual runs to solver bound because det
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T02:23:24Z
-updated_at: 2026-08-10T02:26:27Z
+updated_at: 2026-10-04T15:21:18Z
+parent: qou-cdx1
 ---
 
 

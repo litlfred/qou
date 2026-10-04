@@ -1,11 +1,14 @@
 ---
 # qou-j1e5
 title: 'c1: the six values are GROUPED-word — re-derive under Borromean, or scope them (blocks the probe going green)'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T03:58:42Z
-updated_at: 2026-09-06T09:51:21Z
+updated_at: 2026-10-04T15:10:51Z
+parent: qou-10v9
 ---
 
 ## The situation, measured
@@ -154,3 +157,9 @@ raised-precision run each, and raising `P_OF` on `main` is `qou-pdg9`'s call.
 
 `c0` is ordering-INVARIANT (verified all six cases), so everything resting on the
 classical floor is untouched.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

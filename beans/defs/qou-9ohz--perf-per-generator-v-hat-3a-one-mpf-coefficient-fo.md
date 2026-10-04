@@ -1,11 +1,14 @@
 ---
 # qou-9ohz
 title: 'PERF: per_generator_V_hat_3A -- one mpf coefficient forces an object-dtype O(dim^3) matmul; the word collapses to alpha*sigma+beta'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T18:57:13Z
-updated_at: 2026-08-25T21:23:00Z
+updated_at: 2026-10-04T15:13:28Z
+parent: qou-v2om
 ---
 
 MEASURED 2026-08-24, branch claude/excise-convention-c-2026-08-24.
@@ -272,3 +275,9 @@ Two rules worth keeping:
 **Consequence: the `qou-wlaf` residue is NOT gated.** Every place that says it
 waits on this patch — this bean, `qou-wlaf`, and PR #5775's body — is stale on
 that point.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-25 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

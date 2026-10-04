@@ -1,11 +1,14 @@
 ---
 # qou-4g4a
 title: 'DERIVED: interface band lies strictly BETWEEN the two isospin weights -- the two NN mechanisms compute on disjoint sets'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T14:09:04Z
-updated_at: 2026-08-09T14:10:04Z
+updated_at: 2026-10-04T15:12:21Z
+parent: qou-v2om
 ---
 
 
@@ -98,3 +101,9 @@ paper. Either derive the quarter-Reeb step or drop it.
   [ ] Prove the quotient form is positive DEFINITE, not merely PSD.
   [ ] Then C1 shadow price, now well-posed.
   [ ] Cost out C5 (H_4) -- strand-count blowup first.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-09 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

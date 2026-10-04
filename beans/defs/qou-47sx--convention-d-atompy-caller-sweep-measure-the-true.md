@@ -1,11 +1,14 @@
 ---
 # qou-47sx
 title: 'Convention-D atom.py caller sweep: measure the true blast radius, regenerate only what is cheap and verifiable'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T12:34:42Z
-updated_at: 2026-09-08T07:45:36Z
+updated_at: 2026-10-04T15:12:13Z
+parent: qou-cdx1
 ---
 
 ## The caller count: "31" is refuted — the true live figure is 20 modules, 15 of them producers
@@ -258,3 +261,9 @@ non-deprecated modules** still reach `atom_per_generator_volumes`, and this one
 is simply the instance this bean's tally happened to name.
 
 ## 2026-09-08: canonical ledger for the convention-C excision family is qou-wgta (the P0 excision tracker; owner-ruling milestone qou-cdx1, S2 science blocker qou-cds2); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 2 / §7.3 C3. Nine trackers, previously linked only cds2↔8iru and htsi→t9r1, now all point there.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

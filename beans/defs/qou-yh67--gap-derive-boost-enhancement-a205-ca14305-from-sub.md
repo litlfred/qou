@@ -4,8 +4,11 @@ title: 'GAP: derive boost-enhancement A≈2.05 (c=√A≈1.4305) from substrate 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-01T23:51:10Z
-updated_at: 2026-08-02T08:39:35Z
+updated_at: 2026-10-04T15:19:55Z
+parent: qou-avtq
 ---
 
 

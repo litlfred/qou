@@ -4,8 +4,11 @@ title: 'q-Bessel tower gate: build H6/H9 chi_lambda(B_n - B_p) via canonical A-n
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-06-26T14:55:05Z
-updated_at: 2026-06-26T15:11:32Z
+updated_at: 2026-10-04T15:22:52Z
+parent: qou-v2om
 ---
 
 ## RE-SCOPED (2026-06-26, PR #2849) — the build exists; the gate is DECIDED

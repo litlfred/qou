@@ -3,8 +3,12 @@
 title: 'The 25 convention-C witnesses are a mixed population: 7 real weights, 4 audit mentions, 14 needing judgement'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T05:02:08Z
-updated_at: 2026-08-24T05:02:08Z
+updated_at: 2026-10-04T15:24:51Z
+parent: qou-cdx1
 ---
 
 <!-- Recovered from PR #5168 (branch claude/conv-c-shared-root-2026-08-16), where

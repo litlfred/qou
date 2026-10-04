@@ -4,8 +4,11 @@ title: 'GAP: formalize Jones/Markov-trace multiplicativity under connected sum (
 status: in-progress
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T12:29:38Z
-updated_at: 2026-09-19T07:37:38Z
+updated_at: 2026-10-04T15:12:52Z
+parent: qou-v2om
 ---
 
 ## Context

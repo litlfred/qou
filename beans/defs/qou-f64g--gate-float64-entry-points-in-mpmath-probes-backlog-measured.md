@@ -1,7 +1,7 @@
 ---
 # qou-f64g
 title: 'INFRA (gated + measured): float64 entry points in mpmath probes — 17546 hits, 4 prior beans, no gate until now'
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
@@ -9,8 +9,10 @@ tags:
     - precision
     - probes
     - ci
+    - reorg-2026-10-04
 created_at: 2026-08-08T09:10:00Z
-updated_at: 2026-08-08T09:10:00Z
+updated_at: 2026-10-04T15:11:00Z
+parent: qou-9nnz
 ---
 
 
@@ -149,3 +151,9 @@ saying why.
 * `j0th`, `qou-gqt5`, `qou-ny4j`, `qou-t0rf` — the four prior beans
 * `qou-orph` — the same diff-scoped-gate-plus-measured-backlog shape
 * `qou-trns` — where the Route 22 instance surfaced
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

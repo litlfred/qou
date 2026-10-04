@@ -1,11 +1,14 @@
 ---
 # qou-dx1t
 title: 'Colour-tube selection rule: it does NOT consume t, but it cannot produce it either -- floor overshoots 2H by 3.2%'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T14:12:47Z
-updated_at: 2026-08-09T14:13:50Z
+updated_at: 2026-10-04T15:12:09Z
+parent: qou-10v9
 ---
 
 
@@ -134,3 +137,9 @@ One workflow agent deleted and re-cloned /workspace/qou/.lake/packages
 9 packages present, content/.../lean/.lake 2.4G with all 9, and every build this
 session exits 0. No action needed, but read-only briefs need to say "do not
 touch .lake" explicitly.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-09 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

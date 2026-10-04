@@ -4,8 +4,11 @@ title: def:confinement-level is a FOURTH reading of J^bullet that no audit has, 
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T17:53:42Z
-updated_at: 2026-09-14T17:54:15Z
+updated_at: 2026-10-04T15:14:48Z
+parent: qou-v2om
 ---
 
 ## The finding

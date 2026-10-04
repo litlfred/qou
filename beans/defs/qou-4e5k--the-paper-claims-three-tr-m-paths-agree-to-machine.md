@@ -3,8 +3,12 @@
 title: The paper claims three tr_M paths agree to machine epsilon; two committed witnesses disagree at 1.4e-4 on the deuteron
 status: todo
 type: bug
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-19T21:29:48Z
-updated_at: 2026-08-19T21:29:48Z
+updated_at: 2026-10-04T15:15:51Z
+parent: qou-10v9
 ---
 
 Found while regenerating the qou-mass vendor mirror (`qou-wpp2`): the mirrored

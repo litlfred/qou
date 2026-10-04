@@ -1,11 +1,14 @@
 ---
 # qou-wgta
 title: 'P0: convention-C excision is INCOMPLETE -- 174 py + 61 lean + tools/ Rust core + a shipped package still on C, incl. 3 hybrids and the registry itself'
-status: in-progress
+status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T12:42:32Z
-updated_at: 2026-09-08T07:45:37Z
+updated_at: 2026-10-04T15:11:38Z
+parent: qou-cdx1
 ---
 
 
@@ -509,3 +512,9 @@ and the corroboration against `qou-mass/CHANGELOG.md` are on `qou-ng7j`.
 Eight of the twelve C hits are the five `*-c-vs-d-*` comparison probes, now in
 the audit's `DELIBERATE` registry — explicitly, not by a shared-stem regex,
 per `qou-4bq3`.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

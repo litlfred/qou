@@ -4,8 +4,11 @@ title: 'GAP: cross_check_trM_1ppb --strict fails on main — peel witness comput
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T12:34:43Z
-updated_at: 2026-08-23T07:59:27Z
+updated_at: 2026-10-04T15:19:53Z
+parent: qou-2002
 ---
 
 ## Cross-link — and a retraction of my own framing (2026-08-23)

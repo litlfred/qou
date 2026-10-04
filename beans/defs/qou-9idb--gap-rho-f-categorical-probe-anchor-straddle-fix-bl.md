@@ -4,8 +4,11 @@ title: 'GAP: rho_f_categorical_probe -- anchor straddle fix BLOCKED behind a flo
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T00:39:16Z
-updated_at: 2026-08-25T00:39:49Z
+updated_at: 2026-10-04T15:20:22Z
+parent: qou-2002
 ---
 
 ## The straddle (real, and the fix is one line)

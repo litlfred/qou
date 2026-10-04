@@ -4,8 +4,11 @@ title: binding-single-pipeline-comparison is 3 months stale and RED when re-run 
 status: todo
 type: bug
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T09:23:58Z
-updated_at: 2026-09-14T19:36:55Z
+updated_at: 2026-10-04T15:14:35Z
+parent: qou-v2om
 ---
 
 Found 2026-09-13 while screening `binding-single-pipeline-comparison` (299 raw

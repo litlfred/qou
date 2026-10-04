@@ -4,8 +4,11 @@ title: 'GAP: log_ratio_binding_prototype has the same float64 defect as qou-vsqh
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-31T04:26:46Z
-updated_at: 2026-08-31T04:27:28Z
+updated_at: 2026-10-04T15:20:10Z
+parent: qou-9nnz
 ---
 
 ## Second instance of `qou-vsqh`, in the log channel

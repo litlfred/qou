@@ -4,8 +4,11 @@ title: 'detector blindspot: pin-STAMPED is not pin-DEPENDENT (symbolic payloads)
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T09:20:24Z
-updated_at: 2026-08-30T09:20:25Z
+updated_at: 2026-10-04T15:18:49Z
+parent: qou-2002
 ---
 
 Found while working the one remaining stage-2 hit from
