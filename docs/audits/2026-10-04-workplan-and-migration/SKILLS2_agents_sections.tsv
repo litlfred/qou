@@ -1,0 +1,101 @@
+1	2	BOOT	# Claude Code — Quantum Observable Universe	qou AGENTS.md
+3	9	GENERIC	## CRITICAL: READ SKILLS BEFORE ACTING (Anti-Guessing Rule)	ch skill_list/skill_fetch; f-a AGENTS.md "Getting skills"
+12	212	GENERIC	## User accessibility	interaction/interaction.json (folio-interaction/v1) + ch conduct-core/interaction-modality
+224	21	RULING-PROC	## The paper is a MATHEMATICAL MODEL by default (owner ruling, 2026-08-07)	qou ruling node R-model-default (2026-08-07)
+245	19	RULING-PROC	### What this does NOT license	same node
+264	12	RULING-MATH	## 🟥 NO FITTING, EXCEPT CAL-1/2/3 (owner directive, 2026-09-05) — STRICT	qou ruling node R-no-fitting (2026-09-05) + convention node on compute/derivation processes
+276	21	RULING-MATH	### What counts as fitting — including the kinds agents keep missing	same
+297	12	RULING-MATH	### The ranking rule agents get backwards	same
+309	12	RULING-MATH	### What to do instead	same
+321	13	RULING-PROC	## 🟥 ASK THE OWNER BEFORE CHANGING THINGS (owner directive, 2026-09-07) — STRICT	qou ruling node R-ask-owner (2026-09-07); overrides ch confirmation-waiver defaults
+334	22	RULING-PROC	### The two exemptions, and they are narrow	same
+356	8	RULING-PROC	### Why the exemptions are shaped this way	same
+364	10	RULING-PROC	### Worked example, the same day	same
+374	11	RULING-PROC	### Interaction with the rest of this document	same
+385	26	RULING-PROC	## Critical-distance license (standing red-team permission, 2026-06-10)	qou ruling node R-red-team (2026-06-10) -> role permission on actor
+411	33	RULING-PROC	## Parallel exploration is valuable — cross-agent duplication is NOT waste (owner directiv	qou ruling node R-parallel-ok (2026-07-17); conflicts with ch duplicate-work stance -> needs-owner reconcile
+444	125	GENERIC	## Subagents with persistent memory (`.claude/agents/`)	ch conduct-core/agent-memory + memory schema
+569	536	GENERIC	## Agent work-plan policy (STRICT)	ch todo-manager, bean-coordination, bean-blocking
+1105	17	GENERIC	## Branch + PR workflow (STRICT — supersedes default "no auto-PR" guidance for this repo)	ch continual-progress
+1122	343	GENERIC+RULING	### Rules	ch continual-progress/prepare-merge/merge-train; rulings no-squash & prepare-merge-always (07-29), draft->ready (09-05) -> qou ruling nodes
+1465	19	PROC-QOU	### Exception: batch audit-job runs	qou skill integration-backlog overlay
+1484	12	GENERIC	### Why this matters	ch continual-progress
+1496	193	RULING-PROC+PROC	## QA is agent-owned; CI is a backup (STRICT, 2026-06-25)	ch qa-reports + qou ruling R-qa-agent-owned (2026-06-25); sidecar part superseded by 2026-10-04 decision 11
+1689	11	RULING-PROC	## CI billing failures — distinguish from real failures (STRICT)	qou ruling R-ci-dispatch-only (2026-06-30, billing) + ch ci-health
+1700	13	PROC-QOU	### How to recognize it	ch ci-health (generic: billing-failure signature)
+1713	18	PROC-QOU	### What to do	ch ci-health
+1731	217	PROC	## Before declaring "open" math / questions / gaps (STRICT)	sci skill corpus-grep-before-open (upstream) + qou overlay paths
+1948	55	PROC	### Grep the claim SHAPE, not only the topic (STRICT, 2026-08-15)	same
+2003	59	PROC	## Before declaring "refuted" / "ruled out" / "dead end" (STRICT)	sci epistemic-claims skill (upstream)
+2062	46	PROC	## Defined residual ≠ derived decomposition (STRICT, 2026-08-08)	sci epistemic-claims skill (upstream)
+2108	27	PROC	## Conditional-proved ≠ premise-established (STRICT, 2026-07-07)	sci epistemic-claims skill (upstream)
+2135	4	PROC	## Formalize-first policy (STRICT)	sci formalize-first skill (upstream)
+2139	80	PROC	## Formalize-first probe discipline (STRICT — narrow the search before running it)	sci formalize-first skill (upstream)
+2219	64	GENERIC	## Always provide GitHub links — default to `.md`	ch delivery-summary
+2283	271	RULING-MATH	## Canonical derivation chain — cheat sheet (READ THIS FIRST for math work)	qou folio data: docs/canonical-derivation-cheat-sheet.md (exists) + ruling nodes CAL canon 06-26, eps Markov 09-08
+2554	443	RULING-MATH	## Precision goals (STRICT — read before any precision-affecting work)	qou folio data: docs/precision-goals.md (exists) + ruling nodes
+2997	875	RULING-MATH	### q₀ anchor convention — ideal CAL-2 (muon) vs experimental anchor (proton) (STRICT)	qou ruling nodes: muon pin CODATA2022 (08-22), conv D/proton/colour (08-15), proton default anchor (08-07), q0 forever gated (08-02), deuteron A (08-29)
+3872	14	STALE+RULING-PROC	## CRITICAL: Protected Files — DO NOT MODIFY	deploy/ retired (owner); CODEOWNERS -> ch permissions policy
+3886	12	STALE	## Skills	skill_list replaces routing table
+3898	96	STALE	### Skill routing (quick reference)	skill_list
+3994	23	GENERIC	### External skill packages	skills-config.json -> ch subscriptions / external skill package decl
+4017	28	STALE	### Skill role assignments	ch scenarios/roles.json + actors
+4045	6	GENERIC	### Coding conventions	ch convention nodes (schemas/convention.ts)
+4051	51	RULING-MATH	### LP / SDP duals — first-class infra (do not skip)	qou convention node on compute processes (LP/SDP duals, prop:operator-selection-lp)
+4102	6	GENERIC	## Writing `.lean` proofs — rules for agents	sci lean skills
+4108	57	PROC-QOU	### 0. Standardized root Lake workspace	sci lean-environment-setup + qou overlay (package table = qou data)
+4165	46	GENERIC	### 0a. Content-block `lean.ref` is a package-qualified URI	sci schema docs (lean.ref URI)
+4211	46	STALE	### 0b. Rebasing across the `lean.ref` migration — instructions for agents	migration complete; aliases pruned by miga
+4257	13	GENERIC	### 1. Every `sorry` requires a bibliographic citation	sci convention: sorry-citation (qou requirements/sorry-citation.ts)
+4270	35	GENERIC	### 1a. No audit-dodging / sorry-workarounds (STRICT, 2026-06-23)	sci lean-proof-vacuity-audit
+4305	11	GENERIC	### 2. Naming convention: LaTeX label → Lean declaration	sci convention label->decl
+4316	9	GENERIC	### 3. Block kind determines Lean requirements	sci block-kind rules
+4325	24	GENERIC	### 3b. Conjectural propagation and Lean formalization of conjectures	sci conjecture-register/convention
+4349	124	RULING-MATH	#### §3b-cond — Conditional-class exception (Option B, 2026-05-02)	sci convention + qou ruling (Option B 2026-05-02)
+4473	100	GENERIC	#### §3b-tax — Primary vs dependent conjectures (taxonomy, derived)	sci conjecture taxonomy (derived)
+4573	42	GENERIC	### 3a. Remark authoring convention — no dangling remarks	core authoring convention (remarks)
+4615	8	GENERIC	### 4. Formalization status is derived, not stored	sci proof-status-tracking
+4623	33	STALE	### 4a. TodoItem lifecycle rules	TodoItem superseded by beans
+4656	20	PROC-QOU	### 4b. Glossary block policy (Chapter 8)	qou overlay glossary-build (Chapter 8 is qou)
+4676	25	GENERIC	### 4c. Glossary terms — `\defterm` / `\refterm` (every occurrence wrapped)	core glossary convention
+4701	257	GENERIC	### 4d. Author notes vs. scholarly prose — `authorNotes` field (STRICT)	core authorNotes convention + one-voice
+4958	11	GENERIC	### 5. Tactic strategy (try in order)	sci lean-build-fix
+4969	10	GENERIC	### 6. Use MCP tools, not shell commands	sci lean MCP
+4979	26	RULING-MATH	### 7. Category theory conventions	qou notation convention node (category theory)
+5005	19	RULING-MATH	### 7aa. Notation register (STRICT) — see content notation block	qou notation register (folio/.../notation) pointer
+5024	14	RULING-MATH	#### Stable font-family conventions (rarely change)	same
+5038	13	RULING-MATH	#### Top-of-mind collision rules (do not violate)	same
+5051	39	RULING-MATH	### 7ab. Observed / derived values — approximation convention (STRICT)	qou convention approx (≈ not =)
+5090	28	RULING-MATH	### 7a. Hecke-Skein convention (STRICT)	qou convention Hecke-Skein
+5118	49	RULING-MATH	### 7b. Symmetric-crystal techniques (KLR / Kashiwara) — authoring guidance	qou authoring guidance KLR
+5167	47	RULING-MATH	### 7c. Base ring convention: generic `R` vs. archimedean `ℝ` (STRICT)	qou/sci convention base ring R vs ℝ
+5214	41	GENERIC	### 7d. Universe conventions (STRICT) — pinning universe-carrying structures	sci lean convention universes
+5255	16	GENERIC	### 8. File hygiene	sci file hygiene
+5271	16	STALE	## Content-object architecture	content/ moved to folio/; 9 of 12 cited paths absent [M]
+5287	5	STALE	### File naming convention	
+5292	10	STALE	### Type system	
+5302	11	STALE	### Pipeline	
+5313	16	STALE	### Key files	
+5329	16	STALE	### Bibliography architecture	
+5345	19	STALE	### Dependency graph integration	
+5364	19	STALE	### Cross-paper references	
+5383	8	STALE	### Markdown content convention (in .md files)	
+5391	57	STALE	### TeX authoring patterns for agents	LaTeX out of scope (owner)
+5448	10	PROC-QOU	## Lean MCP server (lean-lsp-mcp)	sci lean-cache-restore + lean-environment-setup qou overlay
+5458	21	PROC-QOU	### Setup (ChromeOS / Crostini)	same
+5479	24	PROC-QOU	### Local Mathlib cache	same
+5503	314	PROC-QOU	#### Manual fallback when auto-detection fails (cache 403 / LSP timeout)	same (cache branch data)
+5817	31	PROC-QOU	### Remote MCP server	ch MCP config
+5848	14	GENERIC	### Session-start hook	ch session-start sweep
+5862	89	STALE	## Project structure	12 of 30 paths absent [M]; qou.json is the list
+5951	37	STALE	## Build output (gh-pages) — 🛑 THE RENDERED SITE IS DEPRECATED, AND THIS SECTION DESCRIBED	site deprecated 2026-09-27 (owner)
+5988	40	STALE	### What actually runs on qou — measured, per workflow, not read off YAML	
+6028	18	STALE	### What is on the branch, and how stale	
+6046	15	STALE	### Deprecated, and where it went	
+6061	11	GENERIC	## Axiomatization is NOT a Proof (Anti-Laundering Rule)	sci lean-infra/anti-laundering (merge .agents/rules/lean-infra-rule.md)
+6072	7	RULING-PROC	## Strict Lean Discipline (owner directive 2026-07-27)	qou ruling R-strict-lean (2026-07-27) + sci skill
+6079	17	GENERIC	### Zero-sorry default	sci
+6096	22	GENERIC	### No trivial trues, no tautologies, no laundering	sci
+6118	20	GENERIC	### Derive-then-check standard	sci
+6138	14	GENERIC	### Applies to discussions and exploration	sci
+6152	29	RULING-PROC	### When you can't close it — bean the gap (the honest exit)	qou ruling 13a never-close-conjecture-bean (2026-09-06) + ch bean-coordination
