@@ -35,6 +35,15 @@
         "code"
       ],
       "_graphKinds_comment": "`code` because the directory holds the Python computations; the WITNESSES they write have no graph kind on the platform yet (folio-assistant bean filed 2026-09-30, 'a graph kind for computation witnesses'). Declared anyway: an undeclared directory is not addressable, and {{ qou.computations.<witness>.<path> }} is the reason for this entry (#7490)."
+    },
+    {
+      "id": "fsh-guts",
+      "path": "fsh-guts/",
+      "graphKinds": [
+        "fsh-guts"
+      ],
+      "description": "Deprecated and retired material, kept and addressable, deliberately absent from the rendered site (platform kind `fsh-guts`, holds: context). Holds the parked renderers and workflows from the migration (bean qou-6u3n) and older scratch. A file is a graph node only if it declares `$schema: folio-fsh-guts/v1`; the rest is kept bytes, which this declaration makes discoverable rather than claiming they are nodes.",
+      "_comment": "Declared 2026-10-04, story TOOLS T2 (bean qou-4r5m), fsh-guts half. A plain path declaration, not the platform's `source: {kind: branch}` form: qou's trashcan lives in the tree today, and moving it onto a branch is its own owner decision. The computations-witness half of T2 waits on T1 (the platform witness kind, qou-qb6t)."
     }
   ],
   "_platform_scope_comment": "LOAD-BEARING since 2026-10-04: the pin moved to 26c5d37b9 (platform main), which reads this file through readDeclaration. The 2026-09-26 note that it was inert applied to the old pin df28d02."
