@@ -1,4 +1,4 @@
-import { simulator } from "../../../folio-assistant/cat-harness/schemas/builders";
+import { simulator } from "../../schema/builders";
 
 // Stub simulator block: empirical probe of descent-rate β(d) on
 // SYT-cell pairs. Used by mass-tower-syt-cells.md to point at the

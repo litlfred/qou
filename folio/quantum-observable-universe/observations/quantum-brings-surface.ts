@@ -1,4 +1,4 @@
-import { simulator } from "../../../folio-assistant/cat-harness/schemas/builders";
+import { simulator } from "../../schema/builders";
 
 /**
  * Quantum Bring's Surface — chiral tubes on the projective space-time brane.
