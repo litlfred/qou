@@ -17,7 +17,10 @@ set -euo pipefail
 
 # Acquire global lock to prevent parallel git fetches across agent workspaces
 exec 200>"/tmp/qou-coord-sweep.lock"
-flock 200
+# Guarded: under `set -e` a missing `flock` (macOS, minimal images) aborted the
+# whole session-start hook. The lock only serialises parallel fetches, so
+# running without it is safe (T11 audit, bean qou-aq9i).
+if command -v flock >/dev/null 2>&1; then flock 200; fi
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO_ROOT"
