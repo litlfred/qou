@@ -9,7 +9,7 @@ tags:
     - rest
     - upstream-fa
 created_at: 2026-10-04T16:35:58Z
-updated_at: 2026-10-04T16:40:58Z
+updated_at: 2026-10-04T16:54:29Z
 parent: qou-n4r9
 ---
 
@@ -24,3 +24,11 @@ Owner hard rule: no math or physics content is changed. Done-when must include t
 ## Blocked 2026-10-04: no fitting graph kind
 
 Checked against the platform graph-kind registry at 26c5d37: `docs` is renderable and needs docs/docs.json (it would pull qou's working notes into the site), `uploads` is an intake queue (holds: state), and `schemas` needs a schemas.json concern-group declaration. There is no `notes` (context) kind for working notes, which the REST analysis already named as a platform gap. Unblocks when folio-assistant adds that kind; until then declaring docs/ would be wrong rather than incomplete.
+
+
+
+## Owner ruling 2026-10-04: split docs/
+
+- Outstanding-work docs (docs/backlog/, plans, attack-option lists) go to beans (agent work) or todos/ (the owner's own work).
+- Math notes (derivation notes, cheat sheets, proofs, refutations) are NOT todos: filing them there would count finished derivations as open work. They wait for a working-notes graph kind, filed upstream as folio-assistant bean folio-assistant-8npa (child of 8jt6), or move into folio/ blocks only by an owner-approved verbatim move.
+- Handoffs and coordination logs go to beans/notes; status surveys to beans/surveys (classify first, move by rename after approval).
