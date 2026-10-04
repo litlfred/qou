@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:10:17Z
-updated_at: 2026-10-04T18:29:08Z
+updated_at: 2026-10-04T18:58:42Z
 parent: qou-n4r9
 ---
 
@@ -34,3 +34,7 @@ folio-assistant-sci owns a generic paper print template: class and packages, geo
 
 ## D2 measured 2026-10-04: which unicode maps are notation
 qou main.tex has 133 \newunicodechar plus 163 \DeclareUnicodeCharacter maps (the 163 are accent maps U+00C0-017F, all typography). Classifying the 133 by what they emit: 92 symbol/operator, 31 Greek, 5 blackboard (ℝℂℕℚℤ), 1 calligraphic (𝓑 → \mathcal{B}, the Borromean braid word 𝓑₃), 1 fraktur (𝔙 → \mathfrak{V}). Only the last two encode a font choice. Default unless the owner overrides: 𝓑 and 𝔙 go verbatim into the qou notation fragment; everything else goes to the sci template.
+
+
+## Q1 done 2026-10-04 (session_01NdDGeP1SyShmoUssLuRZ91)
+folio/quantum-observable-universe/latex/notation-preamble.tex: the 32 notation lines, verbatim (each a line of main.tex's preamble, checked by line multiset), under an 8-line comment header. paper-feature-build reads it by default. Platform side: folio-assistant#2118 carries P1 (sci template), the fixed feature-build Tool and the skill loop. On qou the render completes, and the regenerated preamble equals qou's committed main.tex preamble as a line multiset. run-validate is unchanged (5 issues). Remaining: P2 and P5 (wiring), Q2 (build.yml), Q3 (skill forks), Q4 (legacy outputs; owner D4).
