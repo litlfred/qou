@@ -4,8 +4,11 @@ title: Cite S0025-5718-07-02027-3.pdf at rem:q-dilog-three-contexts
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:15Z
-updated_at: 2026-08-21T17:05:07Z
+updated_at: 2026-10-04T15:17:52Z
+parent: qou-ysb7
 ---
 
 rem:q-dilog-three-contexts asserts a truncated F_p form and convergent Q_p / C_p forms of the q-dilogarithm with no citation; the computational p-adic polylogarithm side belongs there alongside the finite/p-adic bridge already proposed in the ledger for the companion article.

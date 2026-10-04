@@ -4,8 +4,11 @@ title: Cite 1511.00400v2.pdf at content/quantum-observable-universe/lean/QOU/One
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:12Z
-updated_at: 2026-08-21T17:04:48Z
+updated_at: 2026-10-04T15:17:11Z
+parent: qou-19m0
 ---
 
 OneLoopEdgeLattice.lean names the change-of-curve law as one of its validation criteria and carries only a dimofte-garoufalidis2013 -- Ref:; §5.1 here is the source for that law.

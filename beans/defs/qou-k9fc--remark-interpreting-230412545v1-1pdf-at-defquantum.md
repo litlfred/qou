@@ -4,8 +4,11 @@ title: Remark interpreting 2304.12545v1 (1).pdf at def:quantum-bloch-group
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:45Z
-updated_at: 2026-08-21T17:04:58Z
+updated_at: 2026-10-04T15:23:38Z
+parent: qou-aqfj
 ---
 
 The corpus should record explicitly that the extended Bloch group, not the ordinary one, is what resolves the branch ambiguity — and that the primary sources cited inside this survey (Neumann; Zickert; Goette) still need registering before any Lean statement leans on the lifted 5-term relation.

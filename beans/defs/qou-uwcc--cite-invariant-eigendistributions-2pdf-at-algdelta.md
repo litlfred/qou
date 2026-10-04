@@ -4,8 +4,11 @@ title: Cite Invariant_eigendistributions_2.pdf at alg:delta-lambda-closure
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:40Z
-updated_at: 2026-08-21T17:05:06Z
+updated_at: 2026-10-04T15:17:50Z
+parent: qou-19m0
 ---
 
 alg:delta-lambda-closure calls Delta_lambda 'the signed Springer dimension' with nothing behind the name. A citation should be added; a reviewer should also decide whether this construction or a more canonical Springer-correspondence source is the right primary for the sign convention.

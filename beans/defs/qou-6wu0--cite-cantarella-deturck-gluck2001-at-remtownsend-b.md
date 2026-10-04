@@ -3,8 +3,12 @@
 title: Cite [cantarella-deturck-gluck2001] at rem:townsend-biot-savart-strain
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:38Z
-updated_at: 2026-08-08T23:34:38Z
+updated_at: 2026-10-04T15:17:27Z
+parent: qou-1qhv
 ---
 
 A registered Biot-Savart-operator reference is uncited while a remark named 'townsend-biot-savart-strain' argues about Biot-Savart strain. Cite it there, alongside its hyperbolic companion deturck-gluck2008.

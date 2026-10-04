@@ -4,8 +4,11 @@ title: Cite MotivicPeriodsandP1minus3pointsv3.pdf at rem:vol-as-motivic-period
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:14Z
-updated_at: 2026-08-21T17:04:47Z
+updated_at: 2026-10-04T15:17:50Z
+parent: qou-19m0
 ---
 
 rem:transcendental-accounting and rem:vol-as-motivic-period both invoke motivic periods and the motivic Galois group with no citation whatsoever; this survey is the standard entry point.

@@ -4,8 +4,11 @@ title: Cite 0302267v2.pdf at conj:gb-depth-period-correspondence
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:36Z
-updated_at: 2026-08-21T17:04:39Z
+updated_at: 2026-10-04T15:17:00Z
+parent: qou-19m0
 ---
 
 conj:gb-depth-period-correspondence correlates GS-depth with 'Goncharov period-depth' but no block defines or sources the latter; §6.1 is the definition.

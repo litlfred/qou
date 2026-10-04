@@ -4,8 +4,11 @@ title: Remark interpreting 2108.11825v1.pdf at rem:brings-smoothness
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:54Z
-updated_at: 2026-08-21T17:04:46Z
+updated_at: 2026-10-04T15:23:37Z
+parent: qou-aqfj
 ---
 
 Worth recording that the automorphism-irrep method extends in principle to the folio's genus-4 S_5 surface — and, equally, that the folio currently makes no eigenvalue-multiplicity claim there, so this is an available technique rather than a gap being closed.

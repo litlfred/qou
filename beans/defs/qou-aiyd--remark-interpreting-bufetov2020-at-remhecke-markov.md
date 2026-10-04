@@ -3,8 +3,12 @@
 title: Remark interpreting [bufetov2020] at rem:hecke-markov-interpretation
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:22Z
-updated_at: 2026-08-08T23:34:22Z
+updated_at: 2026-10-04T15:23:43Z
+parent: qou-aqfj
 ---
 
 Record the q-convention check: which of the paper's two q-ranges (convergence of sum q^{-l(w)} vs the later q in [0,1)) applies to Prop 2.3, and whether the substrate q_0 > 1 sits inside it, before the Mallows-measure statement is relied on at q_0.

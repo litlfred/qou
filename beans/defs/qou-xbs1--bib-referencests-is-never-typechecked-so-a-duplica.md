@@ -4,8 +4,11 @@ title: 'BIB: references.ts is never typechecked, so a duplicate object key silen
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-15T22:36:29Z
-updated_at: 2026-09-15T22:37:05Z
+updated_at: 2026-10-04T15:16:41Z
+parent: qou-mub3
 ---
 
 ## The defect, and how it was found

@@ -4,8 +4,11 @@ title: 'Rendering junk: margin markers (∀ draft ∇ # +) leak into Proposition
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-07T21:38:24Z
-updated_at: 2026-08-03T19:43:05Z
+updated_at: 2026-10-04T15:24:02Z
+parent: qou-mub3
 ---
 
 \n**Note:** requires LaTeX template investigation, not a simple content fix

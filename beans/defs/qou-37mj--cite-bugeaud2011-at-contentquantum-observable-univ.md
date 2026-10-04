@@ -3,8 +3,12 @@
 title: Cite [bugeaud2011] at content/quantum-observable-universe/lean/QOU/MathlibExt/RSZIsoformalInterfa…
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:49Z
-updated_at: 2026-08-08T23:35:49Z
+updated_at: 2026-10-04T15:17:26Z
+parent: qou-mub3
 ---
 
 RSZIsoformalInterface.lean L101 names 'Bugeaud [14]' in prose only; now that bugeaud2011 is registered it should be a proper -- Ref: [bugeaud2011] so validate-refs can check it.

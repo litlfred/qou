@@ -4,8 +4,11 @@ title: Remark interpreting 1704.02352v2.pdf at conj:q-plancherel-asymptotic-skel
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:15Z
-updated_at: 2026-08-21T17:05:03Z
+updated_at: 2026-10-04T15:23:34Z
+parent: qou-aqfj
 ---
 
 Same discipline as its companion 1402.4615: the Jack alpha-deformation is not the folio's q-deformation and hypotheses are unchecked, so this is a remark recording the precedent and the required input, not aid-proof. One remark can cover both Jack papers.

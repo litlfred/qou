@@ -4,8 +4,11 @@ title: Cite 1404.2541v1.pdf at content/quantum-observable-universe/lean/QOU/Math
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:15Z
-updated_at: 2026-08-21T17:04:55Z
+updated_at: 2026-10-04T15:17:11Z
+parent: qou-ysb7
 ---
 
 Once registered, cite at the q-Borel kernel level file as a second explicit connection-formula precedent alongside the RSZ entry, which the corpus itself records as inapplicable to a single-slope module.

@@ -4,8 +4,11 @@ title: 'MATH/RENDER anomalies from trap-drain obs-b1/b2/b3: FALSE self-conjugacy
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T11:29:23Z
-updated_at: 2026-08-31T03:41:42Z
+updated_at: 2026-10-04T15:21:31Z
+parent: qou-mub3
 ---
 
 # RECONCILED AGAINST MAIN, 2026-08-19

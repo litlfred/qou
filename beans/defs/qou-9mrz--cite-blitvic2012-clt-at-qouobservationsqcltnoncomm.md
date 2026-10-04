@@ -3,8 +3,12 @@
 title: Cite [blitvic2012-clt] at QOU.Observations.QCltNonCommutative
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:13Z
-updated_at: 2026-08-08T23:35:13Z
+updated_at: 2026-10-04T15:17:25Z
+parent: qou-1qhv
 ---
 
 QOU/Observations/QCltNonCommutative.lean:25-26 pairs the (q,t)-Gaussian title/journal with the arXiv id of the CLT paper — the two keys are conflated in one reference line, in the file whose subject is precisely a non-commutative CLT. The CLT key blitvic2012-clt is the correct citation there.

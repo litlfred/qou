@@ -3,8 +3,12 @@
 title: Remark interpreting [mcspirit-rolen2025] at conj:c1-ggm-bar-parity-faces
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:35Z
-updated_at: 2026-08-08T23:34:35Z
+updated_at: 2026-10-04T15:23:54Z
+parent: qou-vva9
 ---
 
 Record what must be checked before any of its theorems are used: whether the folio's divergent series sit in the half-integer-weight Eichler-integral class the median-resummation results cover. Without that check the connection is thematic only.

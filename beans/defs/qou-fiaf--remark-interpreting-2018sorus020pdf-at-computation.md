@@ -4,8 +4,11 @@ title: Remark interpreting 2018SORUS020.pdf at computations/whitehead_c_sigma_to
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:26Z
-updated_at: 2026-08-21T17:04:54Z
+updated_at: 2026-10-04T15:23:36Z
+parent: qou-vva9
 ---
 
 State what would need checking before claiming this settles the open per-cusp normalization item: whether the thesis's torsion normalization on a c-cusped manifold reproduces the factor 2^{(c-1)/2} for general c, rather than only agreeing at c = 1, 2, 3. Deliberately not proposed as aid-proof.

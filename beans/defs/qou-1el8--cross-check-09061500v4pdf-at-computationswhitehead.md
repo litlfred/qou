@@ -4,8 +4,11 @@ title: Cross-check 0906.1500v4.pdf at computations/whitehead_c_sigma_torsion.py
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:01Z
-updated_at: 2026-08-21T17:04:39Z
+updated_at: 2026-10-04T15:18:17Z
+parent: qou-mukd
 ---
 
 Recompute |tau_adjoint| for 4_1 and for the Whitehead link L5a1 by the Theorem-5 derivative formula on the Wirtinger presentation, and compare against the corpus values sqrt(3) and 2^{5/2}. This is the highest-value item in the slice: it adjudicates a refuted computation (bean qou-fl4t) with a method that is triangulation-independent by construction, and it either restores or kills the c_sigma = 2^{-3/4} derivation.

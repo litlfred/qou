@@ -4,8 +4,11 @@ title: Cross-check 9811173v1.pdf at computations/binding_link_volumes.py
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:38Z
-updated_at: 2026-08-21T17:04:41Z
+updated_at: 2026-10-04T15:18:22Z
+parent: qou-8hur
 ---
 
 Cross-check the corpus's computed link/knot hyperbolic volumes against the published a/b rational invariants for the same complements. This is a cross-check only: any agreement corroborates, and no external number may be adopted into a witness on the strength of a match.

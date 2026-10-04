@@ -4,8 +4,11 @@ title: Cite 0603217v3.pdf at QOU.Knot.FigureEightComplexVolume (docstring) and d
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:50Z
-updated_at: 2026-08-21T17:04:59Z
+updated_at: 2026-10-04T15:17:04Z
+parent: qou-19m0
 ---
 
 The audit doc's literature-object paragraph and the Lean file's docstring both assert the deformed VC for 4_1 without a citable source.

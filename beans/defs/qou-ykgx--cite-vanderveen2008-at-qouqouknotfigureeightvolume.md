@@ -3,8 +3,12 @@
 title: Cite [vanderveen2008] at qou:QOU.Knot.FigureEightVolume.borromeanKashaev
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:27Z
-updated_at: 2026-08-08T23:35:27Z
+updated_at: 2026-10-04T15:17:47Z
+parent: qou-1qhv
 ---
 
 BorromeanVolume.lean sources the Borromean volume conjecture solely from garoufalidis-le-2011. the Whitehead-chain family proved in [vanderveen2008] contains the Borromean rings, so adding [vanderveen2008] there gives an independent second source for the same identification.

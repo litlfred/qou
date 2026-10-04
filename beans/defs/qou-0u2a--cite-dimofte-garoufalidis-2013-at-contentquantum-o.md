@@ -3,8 +3,12 @@
 title: Cite [dimofte-garoufalidis-2013] at content/quantum-observable-universe/lean/QOU/OneLoopEdgeLatti…
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:00Z
-updated_at: 2026-08-08T23:35:00Z
+updated_at: 2026-10-04T15:17:30Z
+parent: qou-mub3
 ---
 
 A registered reference with zero citation sites that directly supplies the 1-loop-from-NZ-datum construction the one-loop edge-lattice file is built around.

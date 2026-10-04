@@ -3,8 +3,12 @@
 title: Remark interpreting [koornwinderswarttouw1992] at QOU.BraidKnot.Keystone
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:47Z
-updated_at: 2026-08-08T23:34:47Z
+updated_at: 2026-10-04T15:23:52Z
+parent: qou-vva9
 ---
 
 Soften the 'on E_q(2)' clause at KeystoneSelfDualSpectralNarrowing.lean:59: the self-reciprocal pair is this document's, but the quantum-group-of-plane-motions setting belongs to the paper it cites rather than to it.

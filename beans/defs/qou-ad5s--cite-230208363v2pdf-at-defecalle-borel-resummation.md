@@ -4,8 +4,11 @@ title: Cite 2302.08363v2.pdf at def:ecalle-borel-resummation
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T00:10:48Z
-updated_at: 2026-08-21T17:04:48Z
+updated_at: 2026-10-04T15:17:16Z
+parent: qou-ysb7
 ---
 
 def:ecalle-borel-resummation defines the Borel transform, lateral sums, Stokes rays and the median average for a single Gevrey-1 series, and never mentions the sum over non-perturbative sectors. Its eqs (2.5)-(2.8) are the natural citation for that second layer.

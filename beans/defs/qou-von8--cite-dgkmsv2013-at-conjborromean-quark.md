@@ -3,8 +3,12 @@
 title: Cite [dgkmsv2013] at conj:borromean-quark
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:45Z
-updated_at: 2026-08-08T23:34:45Z
+updated_at: 2026-10-04T15:17:29Z
+parent: qou-mub3
 ---
 
 conj:borromean-quark makes the same Brunnian / triple-invariant assertion unsourced; the same reference applies, and its integral formula gives the conjecture a geometric representative.

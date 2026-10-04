@@ -4,8 +4,11 @@ title: Cite 1301.4504v4.pdf at rem:information-paradox-incompleteness
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:06Z
-updated_at: 2026-08-21T17:04:53Z
+updated_at: 2026-10-04T15:17:09Z
+parent: qou-19m0
 ---
 
 rem:information-paradox-incompleteness cites only hawking1975, bekenstein1973, goedel1931 while claiming a computational-inaccessibility reading of the paradox.

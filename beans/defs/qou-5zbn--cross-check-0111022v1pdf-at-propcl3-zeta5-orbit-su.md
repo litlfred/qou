@@ -4,8 +4,11 @@ title: Cross-check 0111022v1.pdf at prop:cl3-zeta5-orbit-sum-identity
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:34Z
-updated_at: 2026-08-21T17:04:43Z
+updated_at: 2026-10-04T15:18:14Z
+parent: qou-8hur
 ---
 
 Test whether the orbit-sum / distribution identity used by prop:cl3-zeta5-orbit-sum-identity holds for QOU's Li_2^q = sum x^n/(n [n]_q), as Lemma 4 shows it does for Schlesinger's normalisation. This is a falsifiable numeric check, not an adoption of his result.

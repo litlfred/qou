@@ -4,8 +4,11 @@ title: Cite 2203.17029v1.pdf at prop:habiro-tail-archimedean-action
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:19Z
-updated_at: 2026-08-21T17:05:03Z
+updated_at: 2026-10-04T15:17:15Z
+parent: qou-ysb7
 ---
 
 prop:habiro-tail-archimedean-action contrasts the Faddeev state-integral face of 4_1 with the real-q Habiro tail; Sec 5 is the published treatment of the state-integral/q-difference face.

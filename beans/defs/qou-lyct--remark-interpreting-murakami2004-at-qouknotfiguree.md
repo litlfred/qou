@@ -3,8 +3,12 @@
 title: Remark interpreting [murakami2004] at QOU.Knot.FigureEightComplexVolume
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:13Z
-updated_at: 2026-08-08T23:35:13Z
+updated_at: 2026-10-04T15:23:55Z
+parent: qou-aqfj
 ---
 
 The ref() note carries an explicit 'not independently verified, a reader should confirm' caveat and records the v1 title/single author. The uploaded v3 is now in the corpus and the q_eval normalisation is confirmed verbatim; the caveat should be discharged and the entry aligned with the uploaded version (added author, revised title).

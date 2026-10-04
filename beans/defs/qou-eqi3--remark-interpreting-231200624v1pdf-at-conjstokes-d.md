@@ -4,8 +4,11 @@ title: Remark interpreting 2312.00624v1.pdf at conj:stokes-dt-bps-bridge
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T00:10:50Z
-updated_at: 2026-08-21T17:04:54Z
+updated_at: 2026-10-04T15:23:39Z
+parent: qou-aqfj
 ---
 
 One remark covering both usable items: that a GGM co-author lists the BPS-counting interpretation as open (calibrating the bridge block's 'proved ... for the figure-eight' wording), and that the integrality in question is the convergent-q-series holomorphic-block kind, not the resurgent Stokes kind -- so it is adjacent evidence, not a refutation. State explicitly what remains unchecked: whether the holomorphic-block integers and the resurgent Stokes constants of the same knot are related at all.

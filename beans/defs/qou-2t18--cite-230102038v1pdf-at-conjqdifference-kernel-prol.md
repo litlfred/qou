@@ -4,8 +4,11 @@ title: Cite 2301.02038v1.pdf at conj:qdifference-kernel-prolongation-symbol
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:22Z
-updated_at: 2026-08-21T17:04:41Z
+updated_at: 2026-10-04T15:17:16Z
+parent: qou-19m0
 ---
 
 conj:qdifference-kernel-prolongation-symbol names 'the symbol of the jet-prolongation operator J^n E -> J^{n+1} E' as the object to be identified; the definition should point somewhere.

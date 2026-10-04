@@ -4,8 +4,11 @@ title: Remark interpreting 0111022v1.pdf at rem:q-dilog-three-contexts
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:35Z
-updated_at: 2026-08-21T17:05:03Z
+updated_at: 2026-10-04T15:23:25Z
+parent: qou-vva9
 ---
 
 Record that algebra-closure and shuffle-preservation of q-polylogarithms are normalisation-dependent, and that rem:q-dilog-three-contexts' 'hopf-algebra' tag is currently unbacked for QOU's own normalisation.

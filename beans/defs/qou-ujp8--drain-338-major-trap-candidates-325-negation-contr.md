@@ -1,11 +1,14 @@
 ---
 # qou-ujp8
 title: 'DRAIN: 338 major trap-* candidates (325 negation-contrast, 12 thesis-restatement, 1 meta-commentary) — agent adjudication + prose surgery in batches'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T10:42:07Z
-updated_at: 2026-08-19T21:20:00Z
+updated_at: 2026-10-04T15:12:25Z
+parent: qou-mub3
 ---
 
 ## Arc state — 2026-08-19 (re-planned after the takeover and a container loss)
@@ -71,3 +74,8 @@ normalised. Unnormalised they would never have joined the script
 candidates they adjudicate — an audit that reads as done and joins to
 nothing.
 
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-19 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

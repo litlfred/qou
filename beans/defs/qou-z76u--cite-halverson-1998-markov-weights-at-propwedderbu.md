@@ -3,8 +3,12 @@
 title: Cite [halverson-1998-markov-weights] at prop:wedderburn-weight-canonical
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:08Z
-updated_at: 2026-08-08T23:34:08Z
+updated_at: 2026-10-04T15:17:38Z
+parent: qou-mub3
 ---
 
 Drop this id from the canonical-weight block's cites[] — the type-A weight is supplied by the wenzl/jones entries already in the array — or replace it there with the type-A source that actually carries the hook-content formula.

@@ -4,8 +4,11 @@ title: Cite 2509.02354v2.pdf at prop:dilog-pentagon-is-associator
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:04Z
-updated_at: 2026-08-21T17:04:59Z
+updated_at: 2026-10-04T15:17:20Z
+parent: qou-ysb7
 ---
 
 The dilogarithm-pentagon-associator block states the dilogarithm-braiding relation abstractly and would be strengthened by the explicit four-dilogarithm factorization of the holonomy R-matrix at a root of unity.

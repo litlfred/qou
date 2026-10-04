@@ -4,8 +4,11 @@ title: Remark interpreting Birkhoff-GeneralizedRiemannProblem-1913.pdf at conten
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:29Z
-updated_at: 2026-08-21T17:05:08Z
+updated_at: 2026-10-04T15:23:57Z
+parent: qou-vva9
 ---
 
 Record the scope boundary explicitly so the primary source is not over-read: the connection-matrix formulation is the regular-singular q-difference setting, whereas C1's obstruction at infinity is irregular and pure isoclinic. Adding the reference must not be taken to reopen the RSZ route the 2026-08-08 audit closed.

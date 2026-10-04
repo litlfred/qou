@@ -4,8 +4,11 @@ title: Remark interpreting MonodromyHitchinY.pdf at qou:QOU.MassDerivation.quant
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:35Z
-updated_at: 2026-08-21T17:04:45Z
+updated_at: 2026-10-04T15:23:59Z
+parent: qou-aqfj
 ---
 
 witten1988 is cited at QOU/MassDerivation.lean:170 and QOU/Calculations.lean:142 on lemmas quantum_planck_approx and h_q_value_in_unit_interval, labelled '- Quantum Planck derivation'. Those lemmas are arithmetic facts about the literal hbar_q = 1 - 1/q at q = 1.1097, closed by norm_num; Witten's TQFT paper contains no hbar_q and derives nothing about it. The citation is decorative at those two sites (it is load-bearing at the genuine TQFT/Chern-Simons sites: models-of-qous/categorical-action-vs-chern-simons.md, quantum-observable-universes/reeb-su2.lean, categorical-reeb*.lean, Glossary.lean). Record the split and drop or re-source the two Quantum-Planck sites.

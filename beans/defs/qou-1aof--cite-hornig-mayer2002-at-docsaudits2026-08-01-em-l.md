@@ -3,8 +3,12 @@
 title: Cite [hornig-mayer2002] at docs/audits/2026-08-01-em-linking-reads-round1.md
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:09Z
-updated_at: 2026-08-08T23:34:09Z
+updated_at: 2026-10-04T15:17:39Z
+parent: qou-mub3
 ---
 
 Move the two verified findings out of the references.ts note and into a refid-keyed citation site so they are discoverable by the dependency graph. The audit doc discusses them in prose but never writes the key, so no grep finds them.

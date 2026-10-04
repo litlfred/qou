@@ -3,8 +3,12 @@
 title: Cite [costin1995] at QOU.Mathlib.QGevreyOrder
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:14Z
-updated_at: 2026-08-08T23:35:14Z
+updated_at: 2026-10-04T15:17:27Z
+parent: qou-1qhv
 ---
 
 The Borel-summability/Stokes files carry no classical-ODE anchor; this reference already exists in references.ts and is exactly that anchor. Cite it as the classical leg, explicitly marked as the analogy's source and NOT as a transfer of the theorem to the q-difference setting.

@@ -4,8 +4,11 @@ title: Cross-check 1992EvansBerger.pdf at computations/deltalambda/mixed_multibo
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:06Z
-updated_at: 2026-08-21T17:04:39Z
+updated_at: 2026-10-04T15:18:19Z
+parent: qou-8hur
 ---
 
 Evaluate Psi_ijk on the corpus's own Borromean braid word (sigma_1 sigma_2^{-1})^3 and on a mixed Hopf+Borromean multibond configuration, and compare with the mu-bar values the Magnus machinery already produces. This is a cross-check, not an adoption: any agreement is evidence about the construction, not a licence to wire a number.

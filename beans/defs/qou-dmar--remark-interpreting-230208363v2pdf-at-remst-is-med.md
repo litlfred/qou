@@ -4,8 +4,11 @@ title: Remark interpreting 2302.08363v2.pdf at rem:st-is-median-resummation
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T00:10:48Z
-updated_at: 2026-08-21T17:04:53Z
+updated_at: 2026-10-04T15:23:38Z
+parent: qou-aqfj
 ---
 
 rem:st-is-median-resummation asserts st = L^med as an identity of two selection rules for a transseries, justified by one-series uniqueness (Watson/Nevanlinna-Sokal) on the analytic side. A remark should record that for a transseries the identification additionally needs the sum over sectors to converge, cite the partial-series criterion, and note the 4_1 case where that convergence is argued (radius 1) rather than proved. What would need checking before any stronger claim: whether the QOU substrate transseries actually satisfies the eq (2.8) growth with a common radius.

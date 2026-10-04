@@ -4,8 +4,11 @@ title: Remark interpreting 1204.4824v2.pdf at prop:mi-sw-abelianisation
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:50Z
-updated_at: 2026-08-21T17:04:49Z
+updated_at: 2026-10-04T15:23:32Z
+parent: qou-aqfj
 ---
 
 Before citing, someone should check whether the abelianisation in this paper (flat GL(K,C) connection to flat abelian connection on a branched cover) is the same operation as prop:mi-sw-abelianisation's multiplicative-integral abelianisation on the exceptional divisor. They look analogous; I did not verify that the hypotheses match, so aid-proof is not warranted.

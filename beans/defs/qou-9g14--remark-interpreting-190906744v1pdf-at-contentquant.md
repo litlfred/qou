@@ -4,8 +4,11 @@ title: Remark interpreting 1909.06744v1.pdf at content/quantum-observable-univer
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:17Z
-updated_at: 2026-08-21T17:04:47Z
+updated_at: 2026-10-04T15:23:35Z
+parent: qou-aqfj
 ---
 
 The transpose convention for d_x = dim B_x vs n(lambda) is not settled in the folio and the proved Lean value depends on which one is meant; record the convention check rather than silently asserting the identification. Explicitly not aid-proof — the Lean theorem is already proved by other means and this citation does not enter its proof.

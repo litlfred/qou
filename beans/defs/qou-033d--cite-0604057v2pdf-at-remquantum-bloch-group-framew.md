@@ -4,8 +4,11 @@ title: Cite 0604057v2.pdf at rem:quantum-bloch-group-framework-connection
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:52Z
-updated_at: 2026-08-21T17:04:38Z
+updated_at: 2026-10-04T15:17:04Z
+parent: qou-19m0
 ---
 
 The remark's regulator sentence is currently unsourced; Thm 3.3 sources it.

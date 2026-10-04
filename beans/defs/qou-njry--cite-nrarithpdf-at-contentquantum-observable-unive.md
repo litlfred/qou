@@ -4,8 +4,11 @@ title: Cite nrarith.pdf at content/quantum-observable-universe/braids-and-knots/
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:18Z
-updated_at: 2026-08-21T17:04:59Z
+updated_at: 2026-10-04T15:17:51Z
+parent: qou-19m0
 ---
 
 self-dual-higgs-real-volume leans on 4_1's amphichirality as a structural fact with no source; the amphicheirality criterion supplies one.

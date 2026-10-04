@@ -4,8 +4,11 @@ title: Cross-check 2109.00379v1.pdf at computations/one_loop_torsion.py
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:11Z
-updated_at: 2026-08-21T17:04:53Z
+updated_at: 2026-10-04T15:18:20Z
+parent: qou-8hur
 ---
 
 Regression-check computations/one_loop_torsion.py's 4_1 output against this paper's worked 4_1 example. This is a cross-check only: no external number may be adopted, and a match does not pin the c >= 2 constant the producer's own caveat flags as unpinned.

@@ -1,15 +1,16 @@
 ---
 # qou-at59
 title: Cite [ramis-sauloy2006] at QOU/Mathlib/QAlienBridgeEquation.lean — Thm 3.5/3.6 are the source of the q-alien derivations the file models
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - paper-relevance-triage
     - qdiff-stokes
+    - reorg-2026-10-04
 created_at: 2026-09-07T08:35:51Z
-updated_at: 2026-09-07T09:14:54Z
-parent: qou-2akx
+updated_at: 2026-10-04T15:12:07Z
+parent: qou-1qhv
 ---
 
 Source: library/arxiv-math-0611521v1/0611521v1.pdf -> [ramis-sauloy2006] (Ramis–Sauloy, the q-analogue of the wild fundamental group). Relevance: **core** — agent assessment, not yet adjudicated. Raised by local/paper-relevance-triage 2026-09-07; ledger row in content/bib-qa-verifications.json.
@@ -27,3 +28,9 @@ What to do: add `-- Ref: [ramis-sauloy2006] https://arxiv.org/abs/math/0611521 (
 NOT claimed here: that `QBridgeSystem`'s field `bridge` is satisfied by Ramis–Sauloy's Δ̇_c with any particular weight — that is qou-vkg5's open item 2 and this paper does not settle it; it supplies the object, not the relation.
 
 DONE on PR #7032 (72c0b29742): -- Ref: [ramis-sauloy2006] (Prop. 2.5, Thm 3.5-3.6) and [vanderput2006] (§5 (1), (2), (5)) added; header docstring says QBridgeSystem.bridge abstracts the adjoint action of the dilation on Ramis-Sauloy's Δ̇_c and does NOT claim the relation holds with any weight (qou-vkg5 item 2). Caveat recorded from §5 (2): inside an irreducible non-integral-slope block the extension 1 → G_m → Gal → (Z/n)^2 → 0 is not split, so the Levi sentence is the slope-filtered shape only. lean-direct exit 0. Stays open until #7032 merges.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -4,8 +4,11 @@ title: Remark interpreting state.integrals.qseries.pdf at conj:stokes-dt-bps-bri
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:39Z
-updated_at: 2026-08-21T17:04:49Z
+updated_at: 2026-10-04T15:24:01Z
+parent: qou-aqfj
 ---
 
 Record the scope honestly: Thm 1.1 is proved for the ONE-dimensional family I_{A,B}; the general multi-dimensional statement is described as well known to experts but not proved here. Any corpus use beyond 4_1 / 5_2 should say which case it is relying on.

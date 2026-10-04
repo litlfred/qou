@@ -4,9 +4,11 @@ title: 'CITE: Mostow 1968 is uncited at the two blocks that make it load-bearing
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T09:05:25Z
-updated_at: 2026-09-04T09:05:25Z
-parent: qou-8lxd
+updated_at: 2026-10-04T15:17:55Z
+parent: qou-mub3
 ---
 
 **Class M — the key exists and is bib-QA verified-clean; the two blocks that lean

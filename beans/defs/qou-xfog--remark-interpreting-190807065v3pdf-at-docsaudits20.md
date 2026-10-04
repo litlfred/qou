@@ -4,8 +4,11 @@ title: Remark interpreting 1908.07065v3.pdf at docs/audits/2026-07-12-alien-calc
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:10Z
-updated_at: 2026-08-21T17:05:08Z
+updated_at: 2026-10-04T15:23:35Z
+parent: qou-vva9
 ---
 
 Record the technique and, importantly, the reason it does not apply as-is: the corpus's binding period is Gevrey-1/2 with entire level-1 Borel transform and is not q-holonomic, so the exact-WKB/TBA machinery has no established hook. Writing that down prevents a later agent re-proposing the route as though it were available.

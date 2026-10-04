@@ -4,8 +4,11 @@ title: Remark interpreting 1203.6551v1.pdf at content/quantum-observable-univers
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:07Z
-updated_at: 2026-08-21T17:04:51Z
+updated_at: 2026-10-04T15:23:32Z
+parent: qou-aqfj
 ---
 
 The exponential growth of N_L(v) is a scope caveat on volume-as-identifier that the folio does not currently state anywhere; it belongs as a remark, not folded into an existing statement.

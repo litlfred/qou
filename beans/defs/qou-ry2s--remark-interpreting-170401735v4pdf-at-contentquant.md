@@ -4,8 +4,11 @@ title: Remark interpreting 1704.01735v4.pdf at content/quantum-observable-univer
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:14Z
-updated_at: 2026-08-21T17:05:03Z
+updated_at: 2026-10-04T15:23:34Z
+parent: qou-aqfj
 ---
 
 Not a cite-in-block on the coincidence itself: attaching this citation directly to the E_8-marks paragraph would read as evidence for a claim it does not support. The honest artifact is a remark recording the classical Bring/W(E_8) fact and stating explicitly that it is a distinct E_8 appearance from the quantum-dimension coincidence.

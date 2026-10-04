@@ -5,11 +5,13 @@ status: todo
 type: task
 priority: normal
 tags:
+    - observations
+    - reorg-2026-10-04
     - knot-theory
     - numerics
-    - observations
 created_at: 2026-08-22T06:45:00Z
-updated_at: 2026-08-22T06:45:00Z
+updated_at: 2026-10-04T15:24:51Z
+parent: qou-mub3
 ---
 
 Found by `agent:pq_03` on the `observations/` trap-drain and **re-derived
@@ -149,4 +151,3 @@ these six values would still be wrong afterwards.
 
 `main` touched none of this bean's files (`building-block-knots-table{1,3,5}-data`),
 so nothing here is stale.
-

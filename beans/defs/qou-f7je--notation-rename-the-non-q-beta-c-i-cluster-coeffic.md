@@ -3,8 +3,12 @@
 title: 'NOTATION: rename the non-Q_beta c_i cluster coefficients to an unused symbol'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T09:25:15Z
-updated_at: 2026-08-07T09:25:15Z
+updated_at: 2026-10-04T15:21:42Z
+parent: qou-mub3
 ---
 
 

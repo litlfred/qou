@@ -4,8 +4,11 @@ title: Cite PPN356556735_0036.pdf at alg:delta-lambda-closure
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:19Z
-updated_at: 2026-08-21T17:05:00Z
+updated_at: 2026-10-04T15:17:51Z
+parent: qou-19m0
 ---
 
 alg:delta-lambda-closure uses 'the signed Springer dimension' as its output description with no source, and the Lean docstrings assert the b-invariant / Lusztig a-function identification without one either.

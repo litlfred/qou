@@ -4,9 +4,11 @@ title: 'CITE: bichon2003 / etingof-ostrik2004 metadata is still UNVERIFIED — M
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T09:07:37Z
-updated_at: 2026-09-04T09:07:37Z
-parent: qou-8lxd
+updated_at: 2026-10-04T15:17:53Z
+parent: qou-1qhv
 ---
 
 **Class M — two entries added on 2026-09-03 with their metadata explicitly marked

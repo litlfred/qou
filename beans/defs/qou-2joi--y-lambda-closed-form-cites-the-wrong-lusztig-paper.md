@@ -1,11 +1,14 @@
 ---
 # qou-2joi
 title: y_lambda closed form cites the wrong Lusztig paper; BLM is absent and the DOI contradicts itself
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T13:20:20Z
-updated_at: 2026-08-24T14:21:26Z
+updated_at: 2026-10-04T15:14:28Z
+parent: qou-q4oa
 ---
 
 ## Survey: are the Delta_lambda / y_lambda assertions Lean-proved?
@@ -190,3 +193,9 @@ manifest — two numerical layers genuinely combined in one computation, and a
 singular Gram turned a 2e-8 tilt into a 2e-2 duality gap. That amplifier is
 what made it visible and what made it matter. Absent such an amplifier the
 straddle is mostly cosmetic, which is the opposite of what I asserted.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-24 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

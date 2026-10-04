@@ -3,8 +3,12 @@
 title: Cite [garoufalidis-kashaev2015] at thm:aomega-fourone-dt-count
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:32Z
-updated_at: 2026-08-08T23:34:32Z
+updated_at: 2026-10-04T15:17:33Z
+parent: qou-1qhv
 ---
 
 A registered reference giving closed evaluations of 4_1 state integrals in terms of Rogers and cyclic dilogarithms is uncited while the corpus has a 4_1 state-integral theorem and an explicit Faddeev-vs-Rogers sorting discipline. Cite it at the 4_1 block.

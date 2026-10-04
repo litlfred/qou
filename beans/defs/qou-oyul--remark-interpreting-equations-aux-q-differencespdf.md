@@ -4,8 +4,11 @@ title: Remark interpreting Equations_aux_q-differences.pdf at content/quantum-ob
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:31Z
-updated_at: 2026-08-21T17:05:01Z
+updated_at: 2026-10-04T15:23:58Z
+parent: qou-aqfj
 ---
 
 Deliberately not aid-proof. Sec. 4.4 is an example about a specific series, not a theorem about C1; whether C1's infinity-side formal solution falls in that class is exactly the open stage-S1 question, and the corpus's ramified level-2 answer is an alternative reading, not a contradiction. Record both readings and what would discriminate them.

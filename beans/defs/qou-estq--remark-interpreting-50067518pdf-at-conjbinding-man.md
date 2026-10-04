@@ -4,8 +4,11 @@ title: Remark interpreting 50067518.pdf at conj:binding-manybody-eq-jet-filtrati
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:35Z
-updated_at: 2026-08-21T17:04:54Z
+updated_at: 2026-10-04T15:23:41Z
+parent: qou-aqfj
 ---
 
 A remark aligning the corpus's body-order series with the nuclear-EFT body-order expansion, and recording that the literature independently finds the 3-body term irreducible, would strengthen the conjecture's framing without wiring anything.

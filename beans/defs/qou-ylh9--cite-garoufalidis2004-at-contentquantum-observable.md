@@ -3,8 +3,12 @@
 title: Cite [garoufalidis2004] at content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-mach…
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:45Z
-updated_at: 2026-08-08T23:35:45Z
+updated_at: 2026-10-04T15:17:35Z
+parent: qou-1qhv
 ---
 
 The reference is cited only from Lean; the narrative block backing the AJ/characteristic-variety machinery has no visible source. Add the citation on the .md side of the phi-q-aj-machinery-identification block.

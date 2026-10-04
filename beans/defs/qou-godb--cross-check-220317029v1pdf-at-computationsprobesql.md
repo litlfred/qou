@@ -4,8 +4,11 @@ title: Cross-check 2203.17029v1.pdf at computations/probes/qlift_routeB_connecti
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:19Z
-updated_at: 2026-08-21T17:04:55Z
+updated_at: 2026-10-04T15:18:20Z
+parent: qou-8hur
 ---
 
 The empirical theta-growth q^{m^2/4} recorded for the GGM connection matrix should be checked against the closed-form theta-quotient monodromy entries of Thm 1.6/1.7 rather than left as a numeric observation. This is a cross-check to run, not a number to adopt.

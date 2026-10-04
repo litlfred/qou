@@ -3,8 +3,12 @@
 title: Remark interpreting [habiro2008] at content/quantum-observable-universe/lean/QOU/BraidKnot/Keysto…
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:57Z
-updated_at: 2026-08-08T23:34:57Z
+updated_at: 2026-10-04T15:23:50Z
+parent: qou-vva9
 ---
 
 Record the paraphrase gap: the file cites determination by values at all roots of unity where the source proves determination by a Taylor expansion at any one root and by infinitely many prime-power-order roots, over complex roots rather than the real fold values the Lean interpolates. Scope-(a): the Lean theorems are unaffected — they are self-contained interpolation facts — only the cited antecedent is looser than the source.

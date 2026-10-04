@@ -3,8 +3,12 @@
 title: Cite [habiro2002] at QOU.MassTheory.HabiroMagnitudeA3
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:11Z
-updated_at: 2026-08-08T23:35:11Z
+updated_at: 2026-10-04T15:17:37Z
+parent: qou-1qhv
 ---
 
 HabiroMagnitudeA3.lean:61 uses key [habiro2002] while its own gloss names the colored-Jones-of-simple-links work, which is registered as habiro2000 (references.ts:6922). Dangling key variant — the gloss and the key denote different items.

@@ -3,8 +3,12 @@
 title: Cite [garoufalidis-le-2011] at qou:QOU.Knot.FigureEightVolume.borromeanKashaev
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:26Z
-updated_at: 2026-08-08T23:35:26Z
+updated_at: 2026-10-04T15:17:34Z
+parent: qou-1qhv
 ---
 
 BorromeanVolume.lean cites the paper only by DOI in the header. Naming 'Appendix A, Theorem A.1' at the point where the docstring asserts the identification would make the epistemic-status paragraph checkable without opening the PDF.

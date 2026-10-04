@@ -4,8 +4,11 @@ title: Cite 0304010v1.pdf at prop:q-plancherel-asymptotic-skeleton
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:38Z
-updated_at: 2026-08-21T17:04:54Z
+updated_at: 2026-10-04T15:17:01Z
+parent: qou-19m0
 ---
 
 prop:q-plancherel-asymptotic-skeleton clause (2) cites feray2010 ('Stanley's formula for characters') for a fluctuation/variance claim that paper does not make; the q = 1 CLT source belongs here.

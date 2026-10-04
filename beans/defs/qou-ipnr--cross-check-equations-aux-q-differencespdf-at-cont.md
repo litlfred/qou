@@ -4,8 +4,11 @@ title: Cross-check Equations_aux_q-differences.pdf at content/quantum-observable
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:31Z
-updated_at: 2026-08-21T17:04:56Z
+updated_at: 2026-10-04T15:18:28Z
+parent: qou-8hur
 ---
 
 Re-run the attack plan's degree-budget table against the Sec. 4.4 example: compare the corpus's residual (deg c_n = n^2 against t_n = q^{C(n,2)}) with the 'order exactly two' q-Borel growth Rmk 4.12 computes, and record whether the C1 series is, up to gauge, of the multi-level type that example exhibits. This is a comparison to run, not a result to adopt.

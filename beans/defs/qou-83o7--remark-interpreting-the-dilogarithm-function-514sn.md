@@ -4,8 +4,11 @@ title: Remark interpreting the-dilogarithm-function-514sniwxl7.pdf at content/qu
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:07Z
-updated_at: 2026-08-21T17:04:46Z
+updated_at: 2026-10-04T15:24:02Z
+parent: qou-vva9
 ---
 
 Record that the three kirillov1995 locators in Li2qUniqueness.lean are unverified, and that 'Proposition 2.3' invoked for a generic antiderivative-uniqueness statement is implausible content for a dilogarithm-identities paper. Scope-(a): unverified as cited, not shown to be false.

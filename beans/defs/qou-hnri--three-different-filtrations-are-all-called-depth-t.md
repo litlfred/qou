@@ -4,8 +4,11 @@ title: 'Three different filtrations are all called depth: transcendence n, parti
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T13:59:16Z
-updated_at: 2026-09-04T14:11:44Z
+updated_at: 2026-10-04T15:25:04Z
+parent: qou-lv2z
 ---
 
 MEASURED 2026-09-04, and it has produced repeated errors including my own. THREE distinct filtrations in this corpus are all indexed by something called 'depth':

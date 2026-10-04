@@ -4,8 +4,11 @@ title: Cross-check cJdoubletwistfinal.pdf at prop:habiro-tail-archimedean-action
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:16Z
-updated_at: 2026-08-21T17:04:48Z
+updated_at: 2026-10-04T15:18:27Z
+parent: qou-mukd
 ---
 
 Run the corpus's tail machinery (bar-parity of the tail, optimal-truncation resurgent action) on one or two members of the double-twist family beyond 4_1, to test whether the pi^2/5 action is a 4_1 accident or a family pattern. Cross-check only: any agreement is evidence about the construction, not a value to wire.

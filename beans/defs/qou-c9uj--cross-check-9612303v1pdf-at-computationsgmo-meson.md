@@ -4,8 +4,11 @@ title: Cross-check 9612303v1.pdf at computations/gmo_meson_crosscheck.py
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:55Z
-updated_at: 2026-08-21T17:04:51Z
+updated_at: 2026-10-04T15:18:22Z
+parent: qou-8hur
 ---
 
 Run the folio's own meson machinery against the charged-neutral pion splitting that defeated the single-q route, and record the result whichever way it comes out. This is a cross-check of a published negative, not an import of any number from it.

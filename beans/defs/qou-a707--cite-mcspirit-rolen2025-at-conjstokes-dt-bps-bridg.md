@@ -3,8 +3,12 @@
 title: Cite [mcspirit-rolen2025] at conj:stokes-dt-bps-bridge
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:35Z
-updated_at: 2026-08-08T23:34:35Z
+updated_at: 2026-10-04T15:17:44Z
+parent: qou-1qhv
 ---
 
 The key is discussed in an audit but cited from no block, while two conjecture blocks lean on resurgence/quantum-modularity language. Cite it where median resummation is invoked.

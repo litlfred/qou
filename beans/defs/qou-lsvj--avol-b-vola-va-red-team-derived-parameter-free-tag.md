@@ -4,8 +4,11 @@ title: 'avol B_vol=a_V*A red-team: DERIVED-parameter-free tag is dishonest (cont
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T19:38:38Z
-updated_at: 2026-08-22T19:38:57Z
+updated_at: 2026-10-04T15:16:30Z
+parent: qou-q4oa
 ---
 
 Read-only adversarial audit. Doc: docs/audits/2026-08-22-avol-binding-redteam.md

@@ -4,8 +4,11 @@ title: Remark interpreting 2510.04782v2.pdf at rem:quantum-bloch-group-framework
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:33Z
-updated_at: 2026-08-21T17:04:44Z
+updated_at: 2026-10-04T15:23:40Z
+parent: qou-aqfj
 ---
 
 The K_3 -> Pic regulator on the Habiro ring, with Chern-Simons q-series as sections, is a literature statement in the same shape as the corpus's Bloch-group/regulator picture; a remark recording the parallel (and its limits) is the honest linkage. Explicitly NOT aid-proof: the descent theorem is not the universality claim motivic-substrate-canonicity makes.

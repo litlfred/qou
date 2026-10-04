@@ -4,8 +4,11 @@ title: Remark interpreting modular.qholonomic.modules.pdf at rem:phi-q-aj-machin
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:00Z
-updated_at: 2026-08-21T17:04:48Z
+updated_at: 2026-10-04T15:23:59Z
+parent: qou-vva9
 ---
 
 The improved analyticity across |q| = 1 is directly about the boundary between the corpus's fibre-level formal q and its archimedean real q_0, a distinction AGENTS.md flags as a recurring source of confusion; a remark connecting modularity to that boundary would be more useful than a bare citation.

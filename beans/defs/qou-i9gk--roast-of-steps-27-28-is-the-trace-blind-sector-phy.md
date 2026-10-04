@@ -1,11 +1,14 @@
 ---
 # qou-i9gk
 title: 'ROAST of Steps 27-28: is the trace-blind sector physical, and is E_2/E_1 a vertex or only a propagator?'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-01T04:19:34Z
-updated_at: 2026-09-08T04:00:00Z
+updated_at: 2026-10-04T15:13:49Z
+parent: qou-q4oa
 ---
 
 Two self-identified holes in this session's Steps 27-28 (qou-cds1), either of which would deflate the headline. Both are checkable and neither has been checked.
@@ -254,3 +257,9 @@ self-contradiction. It is decidable without judgement — the discriminator is
 the bean asserting *its own* openness, not merely mentioning something open.
 
 Re-close it when the work its body names is actually done.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

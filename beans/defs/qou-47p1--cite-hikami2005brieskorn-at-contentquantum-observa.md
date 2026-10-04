@@ -3,8 +3,12 @@
 title: Cite [hikami2005brieskorn] at content/quantum-observable-universe/lean/QOU/BraidKnot/BWVacuumRowH…
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:09Z
-updated_at: 2026-08-08T23:34:09Z
+updated_at: 2026-10-04T15:17:39Z
+parent: qou-mub3
 ---
 
 Normalise the identifier at the 12 divergent sites to the one registered for this key — or, if the other identifier genuinely denotes a second Hikami source these probes rely on, register that source under its own key rather than overloading this one.

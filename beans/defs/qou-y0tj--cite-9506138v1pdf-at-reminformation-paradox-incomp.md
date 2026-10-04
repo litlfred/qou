@@ -4,8 +4,11 @@ title: Cite 9506138v1.pdf at rem:information-paradox-incompleteness
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:11Z
-updated_at: 2026-08-21T17:05:09Z
+updated_at: 2026-10-04T15:17:23Z
+parent: qou-19m0
 ---
 
 The block adopts a contested position on the information paradox and states no cost; the locality tension should be cited there so the choice is visibly a choice.

@@ -3,8 +3,12 @@
 title: Cite [yekutieli2015] at prop:topological-mass-eigenspace-decomp
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:13Z
-updated_at: 2026-08-08T23:34:13Z
+updated_at: 2026-10-04T15:17:48Z
+parent: qou-mub3
 ---
 
 Correct or remove the '[Proposition 5.3, yekutieli2015]' locator; the document's numbering is three-level and 5.3.3 says something else.

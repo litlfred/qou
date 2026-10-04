@@ -4,8 +4,11 @@ title: Obtain and triage Kang-Lee-Lee-Oh 2002 — the q-deformed type-A GS basis
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T18:28:16Z
-updated_at: 2026-08-09T18:28:16Z
+updated_at: 2026-10-04T15:14:58Z
+parent: qou-1qhv
 ---
 
 S.-J. Kang, I.-S. Lee, K.-H. Lee, H. Oh, "Hecke algebras, Specht modules and

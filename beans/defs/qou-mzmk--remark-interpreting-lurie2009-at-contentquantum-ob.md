@@ -3,8 +3,12 @@
 title: Remark interpreting [lurie2009] at content/quantum-observable-universe/lean/QOU/Glossary.lean
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:24Z
-updated_at: 2026-08-08T23:34:24Z
+updated_at: 2026-10-04T15:23:53Z
+parent: qou-aqfj
 ---
 
 The Glossary DescentData entry is annotated with a cobordism-hypothesis reference while describing ordinary descent in a fibered category. Either point it at a descent reference or say which part of this document it is meant to gloss.

@@ -4,8 +4,11 @@ title: Cite 0604094v1.pdf at prop:phi-q-aj-machinery-identification
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:44Z
-updated_at: 2026-08-21T17:05:07Z
+updated_at: 2026-10-04T15:17:05Z
+parent: qou-ysb7
 ---
 
 prop:phi-q-aj-machinery-identification asserts the Phi_q to A-polynomial/AJ correspondence; this document derives the A-polynomial from the potential obtained as the classical limit of the quantum-dilogarithm state sum, which is the published form of that correspondence.

@@ -4,8 +4,11 @@ title: Remark interpreting 1002.0126v1.pdf at content/bib-qa-verifications.json
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:15Z
-updated_at: 2026-08-21T17:04:59Z
+updated_at: 2026-10-04T15:23:29Z
+parent: qou-aqfj
 ---
 
 Record the mis-join itself: the ledger/indexer attached this file to faddeev_kashaev1994, a key that already has its correct upload at library/arxiv-hep-th-9310070v1/9310070v1.pdf. Two uploads pointing at one key is the signature of exactly this failure mode and is worth a note so the indexer heuristic can be tightened.

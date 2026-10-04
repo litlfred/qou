@@ -4,8 +4,11 @@ title: Cite 2304.12545v1.pdf at conj:borromean-bloch-group-element
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:13Z
-updated_at: 2026-08-21T17:05:06Z
+updated_at: 2026-10-04T15:17:18Z
+parent: qou-19m0
 ---
 
 conj:borromean-bloch-group-element asserts a nontrivial Bloch-group / K_3(C) class with regulator 8G; the extended-Bloch-group construction it relies on has no citation in the block.

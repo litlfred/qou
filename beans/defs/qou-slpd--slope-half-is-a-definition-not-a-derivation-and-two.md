@@ -4,8 +4,11 @@ title: 'ROAST: slope ½ is a definition, not a derivation — and the two ½s ar
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T02:00:00Z
-updated_at: 2026-08-08T13:00:00Z
+updated_at: 2026-10-04T15:15:05Z
+parent: qou-q4oa
 ---
 
 Found while looking for the *one* C1 result that has a downstream consumer.

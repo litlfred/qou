@@ -5,12 +5,14 @@ status: todo
 type: task
 priority: normal
 tags:
+    - reorg-2026-10-04
     - documentation
     - one-loop
     - c-sigma
     - consistency
 created_at: 2026-08-08T14:07:51Z
-updated_at: 2026-08-08T14:07:51Z
+updated_at: 2026-10-04T15:18:52Z
+parent: qou-mub3
 ---
 
 ## The defect

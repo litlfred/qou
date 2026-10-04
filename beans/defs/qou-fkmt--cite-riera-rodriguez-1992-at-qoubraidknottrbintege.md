@@ -3,8 +3,12 @@
 title: Cite [riera-rodriguez-1992] at QOU.BraidKnot.TrBIntegerTracePrune
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:22Z
-updated_at: 2026-08-08T23:35:22Z
+updated_at: 2026-10-04T15:17:46Z
+parent: qou-1qhv
 ---
 
 TrBIntegerTracePrune.lean:53 attributes a DIFFERENT statement (integer symplectic action on H_1 with entries 0, +-1) to the same 'Thm 1'. The integral homology action is constructed in §2; the 'entries 0, +-1' wording does not appear in the source and should either be sourced to the companion reference already cited on the next line or dropped.

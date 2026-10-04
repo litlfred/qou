@@ -4,8 +4,11 @@ title: Cite 2304.07001v3.pdf at conj:kashaev-surreal
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:24Z
-updated_at: 2026-08-21T17:04:43Z
+updated_at: 2026-10-04T15:17:17Z
+parent: qou-ysb7
 ---
 
 conj:kashaev-surreal can name Cor 1.5 (T(2,2u+1), T(3,2k)) as the proved cases of the resummation half of its statement.

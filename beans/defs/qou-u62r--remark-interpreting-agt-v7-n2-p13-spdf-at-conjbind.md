@@ -4,8 +4,11 @@ title: Remark interpreting agt-v7-n2-p13-s.pdf at conj:binding-qbeta-complex-vol
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:20Z
-updated_at: 2026-08-21T17:05:05Z
+updated_at: 2026-10-04T15:23:56Z
+parent: qou-aqfj
 ---
 
 Record that the corpus's complex-volume observable has a published quantum tower above it whose N = 1 member is the Cheeger-Chern-Simons invariant. Kept as new-remark rather than cite-in-block on conj:binding-qbeta-complex-volume because the corpus's fraktur-V is defined as a Markov-trace expression and is only conjecturally the geometric complex volume; asserting the tower relation as established would smuggle in that conjecture.

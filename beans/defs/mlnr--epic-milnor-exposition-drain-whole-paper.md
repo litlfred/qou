@@ -1,11 +1,14 @@
 ---
 # mlnr
 title: 'EPIC: Milnor exposition drain — whole-paper H1–H8 audit+resolve (expo-milnor-clarity) + milnor-brevity'
-status: in-progress
-type: epic
+status: todo
+type: feature
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-06T11:10:00Z
-updated_at: 2026-07-06T16:55:26Z
+updated_at: 2026-10-04T15:10:41Z
+parent: qou-mub3
 ---
 
 Owner directive: "do all chapters" — bring every narrative `.md` block up to
@@ -83,3 +86,9 @@ SKIP: glossary / notation / index-of-definitions / amc (excised).
 ## Ledger
 scratchpad/milnor-campaign.md (fuller state); this bean is the durable
 top-level tracker.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-07-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

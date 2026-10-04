@@ -4,8 +4,11 @@ title: Remark interpreting 0006111v2.pdf at prop:q-plancherel-asymptotic-skeleto
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:32Z
-updated_at: 2026-08-21T17:05:10Z
+updated_at: 2026-10-04T15:23:23Z
+parent: qou-aqfj
 ---
 
 Record what a q-deformed Definition 1.3 would have to assert, and the obstruction that the Markov trace on H_n(q) is not a positive-definite function on S_q — this turns the open clause (3) into a stated programme rather than a bare conjecture.

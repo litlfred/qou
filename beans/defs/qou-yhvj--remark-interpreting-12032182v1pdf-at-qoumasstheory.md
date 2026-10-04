@@ -4,8 +4,11 @@ title: Remark interpreting 1203.2182v1.pdf at QOU.MassTheory.WhiteheadHH
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:18Z
-updated_at: 2026-08-21T17:05:10Z
+updated_at: 2026-10-04T15:23:31Z
+parent: qou-vva9
 ---
 
 Record that the cartan1956 locator (Ch. IX §7, Whitehead's lemma) cannot be checked against uploads because no copy of that work is in the corpus; the file mis-joined to the key is unrelated. The WhiteheadHH class is a conditional carrier whose only checkable pointer is the secondary [weibel1994] §9.
