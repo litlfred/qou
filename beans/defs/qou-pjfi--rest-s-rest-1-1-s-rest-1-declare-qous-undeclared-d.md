@@ -7,8 +7,9 @@ priority: normal
 tags:
     - migration
     - rest
+    - upstream-fa
 created_at: 2026-10-04T16:35:58Z
-updated_at: 2026-10-04T16:36:32Z
+updated_at: 2026-10-04T16:40:58Z
 parent: qou-n4r9
 ---
 
@@ -17,3 +18,9 @@ From the REST migration analysis (2026-10-04), story S-REST-1. Full report: docs
 1. S-REST-1: Declare qou's undeclared directories. - Scope: add `docs` (split into `notes`/`archive` context kinds), `uploads`, `schemas` and `figures` entries to `qou.json`. - Done when: `harness:dirs:check` and `audit:coverage` list them; `git diff --stat` touches only `qou.json`. - Size S. Depends on: platform pin move (qou-8321).
 
 Owner hard rule: no math or physics content is changed. Done-when must include the content-parity check.
+
+
+
+## Blocked 2026-10-04: no fitting graph kind
+
+Checked against the platform graph-kind registry at 26c5d37: `docs` is renderable and needs docs/docs.json (it would pull qou's working notes into the site), `uploads` is an intake queue (holds: state), and `schemas` needs a schemas.json concern-group declaration. There is no `notes` (context) kind for working notes, which the REST analysis already named as a platform gap. Unblocks when folio-assistant adds that kind; until then declaring docs/ would be wrong rather than incomplete.
