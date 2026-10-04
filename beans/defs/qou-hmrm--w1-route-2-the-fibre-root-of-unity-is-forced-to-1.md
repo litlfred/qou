@@ -1,11 +1,14 @@
 ---
 # qou-hmrm
 title: 'W1 route 2: the fibre root of unity is forced to -1 by squarefreeness, and C1 degenerates there'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T17:48:05Z
-updated_at: 2026-09-07T18:17:28Z
+updated_at: 2026-10-04T15:14:20Z
+parent: qou-frzo
 ---
 
 ## The claim being tested
@@ -102,3 +105,9 @@ eigenvalue identification, a construction at infinity, the global S_3 — stay o
 scope (a) at most, and the audit says so explicitly. `D_q` is NOT constructed.
 
 Audit: docs/audits/2026-09-07-w1-route2-fibre-monodromy-is-order-two.md
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

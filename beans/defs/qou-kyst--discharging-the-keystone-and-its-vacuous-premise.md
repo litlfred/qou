@@ -1,11 +1,14 @@
 ---
 # qou-kyst
-title: 'Discharging the keystone conjecture and its one vacuous premise'
+title: Discharging the keystone conjecture and its one vacuous premise
 status: todo
 type: task
 priority: medium
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T08:10:00Z
-updated_at: 2026-08-08T11:00:00Z
+updated_at: 2026-10-04T15:26:06Z
+parent: qou-r9ih
 ---
 
 The two things above the C1 chain that are open by nature rather than by

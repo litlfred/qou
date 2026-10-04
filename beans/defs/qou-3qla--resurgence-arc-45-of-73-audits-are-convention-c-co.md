@@ -3,8 +3,12 @@
 title: 'Resurgence arc: 45 of 73 audits are convention-C-conditional and none says so; the Borel singularity and the Bring saddle are never connected'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T09:11:28Z
-updated_at: 2026-09-06T09:11:28Z
+updated_at: 2026-10-04T15:24:07Z
+parent: qou-frzo
 ---
 
 

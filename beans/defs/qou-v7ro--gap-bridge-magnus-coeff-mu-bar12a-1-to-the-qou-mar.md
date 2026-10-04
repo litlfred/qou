@@ -1,11 +1,14 @@
 ---
 # qou-v7ro
 title: 'GAP: bridge Magnus coeff mu-bar(12..A)=+/-1 to the QOU Markov-trace deficit leading coefficient (close MilnorExactOrderConjecture)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-01T23:10:14Z
-updated_at: 2026-09-03T10:40:05Z
+updated_at: 2026-10-04T15:12:48Z
+parent: qou-m6dn
 ---
 
 ## What is proved (branch claude/milnor-exact-order-coefficient-proof-2026-08-01)
@@ -288,3 +291,9 @@ the fix is one line.
 
 Blast radius, in real terms: `milnor-a4-deficit-h-form.witness.json` is the only
 artifact, and grep finds no other producer or content block reading it.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

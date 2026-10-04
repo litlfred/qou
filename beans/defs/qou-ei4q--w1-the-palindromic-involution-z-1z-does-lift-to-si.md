@@ -1,11 +1,14 @@
 ---
 # qou-ei4q
 title: 'W1: the palindromic involution z -> 1/z DOES lift to Sigma, and it is the elliptic involution'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-08T04:35:46Z
-updated_at: 2026-09-08T05:00:33Z
+updated_at: 2026-10-04T15:11:12Z
+parent: qou-frzo
 ---
 
 ## Result (2026-09-08) — POSITIVE, then a wider prune
@@ -55,3 +58,9 @@ over the restored 2442-olean one because a SessionStart `lake build` was filling
 the paper package while it ran.
 
 STAYS in-progress: W1 (`qou-d8de`) is open.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

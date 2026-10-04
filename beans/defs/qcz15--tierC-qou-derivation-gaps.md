@@ -1,11 +1,14 @@
 ---
 # qcz15
 title: 'TIER C: q-Collatz-on-QOU derivation gaps (map from QOU, obstruction, Kummer)'
-status: in-progress
-type: milestone
+status: todo
+type: feature
 priority: low
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-25T03:10:00Z
-updated_at: 2026-08-29T18:09:40Z
+updated_at: 2026-10-04T15:14:29Z
+parent: qcz14
 ---
 
 The "on a QOU" content — currently narrative or section-3b-conditional axioms.
@@ -50,3 +53,9 @@ DEFECT FOUND AND FIXED EN ROUTE (commit 876f70faa3): QOU.Substrate.contact_thres
 STILL NOT DONE on C12, and deliberately: collatz-three-forms.ts is untouched, so the block still carries no lean ref. Wiring one needs pipeline validation and folio-assistant is NOT set up in this container (bun present, folio-assistant/ absent), so I did not guess at the ref shape. Note every other collatz library file in the arc is likewise unreferenced from any content block, so this matches the arc's existing pattern rather than leaving C12 uniquely unwired. A later agent with the pipeline should decide whether the arc's library files get content-block refs as a class.
 
 C11 LOCALISED 2026-08-29 (bean qou-7kfp, commits d7a5da7355 + 369528b64d). The residual is now a precisely-bounded target instead of a diffuse 'conditional': exactly the one equation kappa_0 = chi(A), with the surrounding trace apparatus proved decorative and the two literature inputs proved unable to reach it. Tier C is now: C8/C9/C10/C12 done, C11 localised-but-open (needs a real Hochschild computation), nothing untouched.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-29 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -4,8 +4,11 @@ title: 'GAP (A): Ohtsuki saddle-point asymptotic -- decomposed, and NOT out of r
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-31T04:01:44Z
-updated_at: 2026-08-31T04:01:44Z
+updated_at: 2026-10-04T15:19:27Z
+parent: qou-r9ih
 ---
 
 

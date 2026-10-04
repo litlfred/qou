@@ -1,11 +1,14 @@
 ---
 # qou-y3x4
 title: '§3b-cond rule 2 is unchecked: conditional_on_class opens no downstream Lean'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-03T21:13:23Z
-updated_at: 2026-09-03T21:13:59Z
+updated_at: 2026-10-04T15:14:29Z
+parent: qou-5p7n
 ---
 
 ## What is unchecked
@@ -76,3 +79,9 @@ downstream statements taking the hypothesis, or not at all.
 Proper fix: fold this check into `conjectural-propagation-audit.ts` so that
 `conditional_on_class` requires items 1 AND 2, with a third bucket for
 item-1-pass / item-2-fail. That is a folio-assistant change.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

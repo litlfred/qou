@@ -4,8 +4,11 @@ title: 'Front C (P!=NP gate): H1(Sigma_4) non-algebraic residue carrier'
 status: todo
 type: task
 priority: low
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-31T20:00:00Z
-updated_at: 2026-07-31T20:00:00Z
+updated_at: 2026-10-04T15:25:56Z
+parent: b9cj
 ---
 
 The P!=NP gate (per merged #4264 algebrization obstruction): the separating

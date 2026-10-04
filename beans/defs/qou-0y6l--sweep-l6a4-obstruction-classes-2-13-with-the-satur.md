@@ -1,11 +1,14 @@
 ---
 # qou-0y6l
 title: Sweep L6a4 obstruction classes 2-13 with the saturated msolve pipeline
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T03:41:37Z
-updated_at: 2026-09-06T13:06:59Z
+updated_at: 2026-10-04T15:14:01Z
+parent: qou-r9ih
 ---
 
 ## 2026-09-06 — why three class-2 attempts produced no verdict, and the fourth is running
@@ -207,3 +210,9 @@ database holds no pgl3 data for this manifold.
 **NOT open:** the Sym² gate — settled structurally for all 13, needs no variety
 decomposition, unaffected by this negative. That separation is the session's point: the
 expensive question turned out not to be the one that had to be answered.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -1,11 +1,14 @@
 ---
 # qou-qnnq
 title: "GAP: ϑ_K(q₀) — angular/spin deformation on the character variety of knot K. The surviving open DOF in the Δ_λ magnitude chain (\U0001D532_K = ln q₀ + i·ϑ_K). Knot-dependent: different particles = different ϑ. Determined by A(e^\U0001D532,ℓ)=0 boundary condition = G3 monodromy datum. Closes if Faddeev rigidity (hibinv+hratio) forces A_ω=3 AND pins the sheet. Probed values: ϑ_{4₁}(proton)=0.203, ϑ_{4₁}(muon)=0.059, ϑ_{4₁}(q*)=ln q*=0.104."
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-27T15:06:31Z
-updated_at: 2026-08-02T16:08:18Z
+updated_at: 2026-10-04T15:13:02Z
+parent: qou-n4nr
 ---
 
 ## Re-scope (2026-08-01, qou-fs0m) — corrected framing after Fantini–Wheeler
@@ -132,3 +135,9 @@ Audit: docs/audits/2026-08-02-stokes-dt-bridge-moduli-gap-unification.md.
 STILL OPEN: the named missing driver-14 (categorical Behrend-weighted DT moduli of
 the character variety / T[K] BPS Hilbert space) - external per DT-categorification
 literature; not a QOU wiring gap.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-02 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -1,11 +1,14 @@
 ---
 # qou-qbe9x
 title: 'Geometry gap: C1 has a THIRD singular site at x = q^-2 (orbit [1] on E_q) that no analysis has examined'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T10:10:00Z
-updated_at: 2026-08-08T10:25:00Z
+updated_at: 2026-10-04T15:10:59Z
+parent: qou-frzo
 ---
 
 **Raised by the owner 2026-08-08:** "are we missing a pair? where are you looking
@@ -125,3 +128,9 @@ what are the marked points of Bring's `P^1` in the corpus, and is there a morphi
 relating `E_q` (or `C*` with its dilation) to that base which carries the identity
 orbit to the corpus's marked point? Until such a map is exhibited, treat the
 three-point alignment as unsupported.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

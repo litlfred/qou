@@ -3,8 +3,12 @@
 title: 'L4-2: vdV Lemma 2a/2b — Gaussian window estimates S_nk/S~N'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-11T00:36:11Z
-updated_at: 2026-08-11T00:36:11Z
+updated_at: 2026-10-04T15:21:05Z
+parent: qou-r9ih
 ---
 
 RE-SCOPED 2026-08-19 -- BUILD becomes ASSEMBLE.  Do NOT write a Gaussian tail

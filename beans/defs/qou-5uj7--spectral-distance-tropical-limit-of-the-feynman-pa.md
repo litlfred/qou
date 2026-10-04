@@ -3,8 +3,12 @@
 title: 'Spectral distance = tropical limit of the Feynman path sum: formalize d_Connes = minimal Reeb step count'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T12:04:33Z
-updated_at: 2026-08-09T12:04:33Z
+updated_at: 2026-10-04T15:24:36Z
+parent: b9cj
 ---
 
 

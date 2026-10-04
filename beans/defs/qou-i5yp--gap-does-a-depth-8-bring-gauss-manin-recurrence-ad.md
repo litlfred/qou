@@ -4,8 +4,11 @@ title: 'GAP: does a depth-<=8 Bring Gauss-Manin recurrence admit body-order peri
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T07:05:23Z
-updated_at: 2026-08-29T18:46:55Z
+updated_at: 2026-10-04T15:19:57Z
+parent: qou-n4nr
 ---
 
 Falsifiable target handed back to the s5-so3 keystone by PR #5966.

@@ -2,10 +2,13 @@
 # qou-2q85
 title: 'EPIC: depth-0 to depth-2 bridge - six attack routes for the convolution/volume gap'
 status: todo
-type: epic
+type: feature
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T20:42:08Z
-updated_at: 2026-09-04T22:16:50Z
+updated_at: 2026-10-04T15:14:34Z
+parent: qou-n4nr
 ---
 
 THE GAP. bowtie_K and the whole knot-convolution layer sit at TRANSCENDENCE DEPTH 0 (algebraic, no polylogarithms); the volume functor sits at DEPTH 2 (P_2/P_1, real). Measured: 44 files build the convolution layer, 9 build the quantum-function layer, ZERO files mention both. The disconnection is a DEPTH GAP, not an oversight.

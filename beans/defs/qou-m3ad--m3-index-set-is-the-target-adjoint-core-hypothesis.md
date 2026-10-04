@@ -1,15 +1,16 @@
 ---
 # qou-m3ad
 title: 'M3: H_Ad is the dtMin projection (R1 is dtMax) -- not a re-description; but support is ONE data point and rival H_floor survives'
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
     - g3-aomega
     - route-c
+    - reorg-2026-10-04
 created_at: 2026-08-18T21:00:00Z
-updated_at: 2026-09-13T05:26:52Z
-parent: qou-rtec
+updated_at: 2026-10-04T15:11:01Z
+parent: b9cj
 ---
 
 ## The reframing (the main contribution)
@@ -220,3 +221,9 @@ Part 7 said item 1 is "not GL-invariant as posed" (also PR #7101's title, audit 
 Part 9 (2026-09-08): the sister hypothesis (pretzel = (1,3) member of the GK 1-dim family, q<->q~ swap of 5_2) is REFUTED in the 5_2 configuration by the derived index — the swap is invisible in sigma1-sigma1, so the candidate reproduces 5_2's index, not the pretzel's. Item 1 still needs the pretzel's blocks; the 1-dim shortcut is closed in this configuration. qou-x3iv, audit §3g.
 
 Part 10 (2026-09-13): the pretzel's state integral is one-dimensional with factor vector (1,1,2) (one dilogarithm at doubled argument) — derived from DG 2.7/5.2 + SnapPy; explains Part 9's refutation and GGM's level 2. Route to item 1 is now concrete: reduce, residue-evaluate, certify against the index. qou-x3iv Parts 11-12; audit §3h.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

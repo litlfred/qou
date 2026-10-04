@@ -3,8 +3,12 @@
 title: 'GAP W3: anti-fit check symbol(D_q)=C1 computed from Σ independently (kernel_eq_symbol, no target-matching)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-01T01:47:27Z
-updated_at: 2026-08-01T01:47:27Z
+updated_at: 2026-10-04T15:19:32Z
+parent: qou-frzo
 ---
 
 

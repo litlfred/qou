@@ -4,13 +4,14 @@ title: Define the volume of a topological 3-manifold and connect it to the trian
 status: todo
 type: task
 priority: high
-parent: m015
 tags:
     - hyperbolic-volume
     - mathlib-gap
     - open-problem
+    - reorg-2026-10-04
 created_at: 2026-08-10T18:00:39Z
-updated_at: 2026-08-10T18:00:39Z
+updated_at: 2026-10-04T15:14:49Z
+parent: b9cj
 ---
 
 **The gap the exposition arc made visible but did not narrow.**

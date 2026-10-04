@@ -8,9 +8,10 @@ tags:
     - alien-habiro
     - g3-aomega
     - research-programme
+    - reorg-2026-10-04
 created_at: 2026-08-11T00:35:00Z
-updated_at: 2026-09-07T19:22:16Z
-parent: qou-vr3q
+updated_at: 2026-10-04T15:15:06Z
+parent: qou-frzo
 ---
 
 Owner directive 2026-08-11 ("if not then C"): Route A did not close the A_ω internal-derivation gap (qou-rt0a). Pivot to Route C = categorify the DT count as BPS cohomology / cohomological Hall algebra (Kontsevich-Soibelman CoHA; Davison-Meinhardt BPS cohomology) of the 3-CY category attached to T[K], read the count as dim/χ.

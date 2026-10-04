@@ -4,8 +4,11 @@ title: 'GAP: adjudicate the 9 projection-shaped §3b-cond item-5 candidates'
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T14:12:30Z
-updated_at: 2026-09-04T15:51:33Z
+updated_at: 2026-10-04T15:19:41Z
+parent: qou-5p7n
 ---
 
 Found by `bun run scripts/conditional-on-class-hypothesis-audit.ts --projections`

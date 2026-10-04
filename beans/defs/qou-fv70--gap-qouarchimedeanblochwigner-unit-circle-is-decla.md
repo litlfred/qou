@@ -4,8 +4,11 @@ title: 'GAP: QOU.Archimedean.BlochWigner_unit_circle is declared TWICE in one na
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T02:22:50Z
-updated_at: 2026-09-04T02:23:55Z
+updated_at: 2026-10-04T15:20:21Z
+parent: qou-r9ih
 ---
 
 MEASURED 2026-09-04 during the qou-08zf Lean gap assessment. Verified

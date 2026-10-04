@@ -1,11 +1,14 @@
 ---
 # qou-2v7k
 title: 'FRONTIER B: s5-so3 keystone archimedean continuation — RT/WRT fibre root-of-unity → real q0 hyperbolic (τ=tr B geometric)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-19T03:32:44Z
-updated_at: 2026-07-19T03:59:53Z
+updated_at: 2026-10-04T15:12:41Z
+parent: qou-n4nr
 ---
 
 
@@ -46,3 +49,9 @@ machine-evidence" is the ANALYTIC input A_m(α)=±(2/√5)sin(αmπ/5) (LR flat-
 Thm 10 anchor ~1e-38) which is "not a Lean theorem" and whose q₀ continuation "remains open" = the
 loc_matches core gate. So there is NO cheap sorry-free Lean win here — the algebraic part is done, the
 rest is the core construction wall (formalizing the state-integral). No sibling keystone branch active.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-07-19 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

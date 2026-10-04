@@ -4,9 +4,12 @@ title: 'FALSE: "UpperHalfPlane carries no Riemannian metric" — Mathlib Metric.
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-09-04T09:08:24Z
-updated_at: 2026-09-04T09:08:24Z
-parent: qou-8lxd
+updated_at: 2026-10-04T15:14:50Z
+parent: qou-n4nr
 ---
 
 **FALSE CLAIM — two sites, one sentence, one edit pass.**

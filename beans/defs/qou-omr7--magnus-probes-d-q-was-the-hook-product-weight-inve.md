@@ -1,12 +1,14 @@
 ---
 # qou-omr7
 title: 'Magnus probes: d_q was the hook product, weight inverted (4 files)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-03T04:40:28Z
-updated_at: 2026-09-11T15:46:33Z
-parent: qou-x631
+updated_at: 2026-10-04T15:13:17Z
+parent: qou-m6dn
 ---
 
 ## The defect (PR #6442)
@@ -258,3 +260,9 @@ is stale.
 scope-(a): a dimensionless SIGN datum. NOT a MeV (the Delta_lambda magnitude gate
 is open and untouched), NOT a physical binding-sign assertion (qou-v7ro / #6077,
 cited not re-derived). The total is a weighted sum of mixed-sign terms (33+/42-).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-11 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

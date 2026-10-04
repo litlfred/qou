@@ -1,11 +1,15 @@
 ---
 # qou-dw20
 title: 'qou-t2sc saddle-value: prove (2π/N)log S_{n*,k*} → 4G (van der Veen Clausen/Lobachevsky max-value; the single open hsaddle input of whitehead_vc_of_saddle_value)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - close-candidate
+    - reorg-2026-10-04
 created_at: 2026-08-01T23:54:37Z
-updated_at: 2026-08-01T23:55:12Z
+updated_at: 2026-10-04T15:13:40Z
+parent: qou-n4nr
 ---
 
 
@@ -34,3 +38,9 @@ saddle_integral (WhiteheadSaddleClausen.lean): ∫_0^{1/2}(2 log(2sin(π(u+1/4))
 = 4G. Sorry-free (lean-direct). Ingredients all sorry-free: integral_log_two_sin_pi,
 intervalIntegrable_log_two_sin_pi, clausen_three_pi_div_two, integral_A, integral_B_zero.
 REMAINING = the CONVERGENCE half only (new child bean) — the big Riemann-sum campaign.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-01 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

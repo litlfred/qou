@@ -1,11 +1,14 @@
 ---
 # qou-x631
 title: 'EPIC: prove the Δ_λ covariance kernel Cov_Planch(f^λ,Σc²)≤0'
-status: in-progress
-type: epic
+status: todo
+type: feature
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-18T19:55:42Z
-updated_at: 2026-09-11T15:46:32Z
+updated_at: 2026-10-04T15:11:17Z
+parent: b9cj
 ---
 
 ## Goal                                                                     
@@ -111,3 +114,9 @@ is stale.
 scope-(a): a dimensionless SIGN datum. NOT a MeV (the Delta_lambda magnitude gate
 is open and untouched), NOT a physical binding-sign assertion (qou-v7ro / #6077,
 cited not re-derived). The total is a weighted sum of mixed-sign terms (33+/42-).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-11 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

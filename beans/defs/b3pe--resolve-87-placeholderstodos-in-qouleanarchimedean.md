@@ -1,11 +1,14 @@
 ---
 # b3pe
-title: 'qou/lean/Archimedean — track 3 intentional research-grade TODO markers (0 actionable sorries; §3b excluded) [re-scoped from 87]'
+title: qou/lean/Archimedean — track 3 intentional research-grade TODO markers (0 actionable sorries; §3b excluded) [re-scoped from 87]
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-06-22T02:25:51Z
-updated_at: 2026-06-26T15:30:00Z
+updated_at: 2026-10-04T15:23:05Z
+parent: qou-5p7n
 ---
 
 resweep 2026-06-22: honest counter = 4 actionable (claimed 87) via scripts/count-actionable-placeholders.ts.

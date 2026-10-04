@@ -4,8 +4,10 @@ title: 'Phase 3 route 4: RSK increasing-subsequence combinatorial interpretation
 status: todo
 type: task
 priority: low
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-07-24T16:21:38Z
-parent: qou-x631
+updated_at: 2026-10-04T15:25:59Z
+parent: b9cj
 ---
 

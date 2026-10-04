@@ -4,8 +4,11 @@ title: 'Kummer identity: corpus D := Lambda-sum is NOT the standard Bloch-Wigner
 status: todo
 type: task
 priority: medium
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T19:20:00Z
-updated_at: 2026-08-08T19:20:00Z
+updated_at: 2026-10-04T15:26:08Z
+parent: qou-r9ih
 ---
 
 Found 2026-08-08 by reading **Neumann–Zagier 1985 §3** (uploaded by the owner

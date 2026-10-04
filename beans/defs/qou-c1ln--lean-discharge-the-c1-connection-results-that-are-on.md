@@ -4,8 +4,11 @@ title: 'LEAN: discharge the C1 connection results that are only numerical'
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T22:20:00Z
-updated_at: 2026-08-08T13:00:00Z
+updated_at: 2026-10-04T15:14:56Z
+parent: b9cj
 ---
 
 > **⏸ PAUSED by owner, 2026-08-08.** Rows 1–3 are proved; rows 4, 5 and 6 are

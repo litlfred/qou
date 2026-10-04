@@ -3,8 +3,13 @@
 title: The WITHDRAWN resurgent/Ecalle inference is still asserted live in 1ppq-qbeta.md
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-08-14T19:37:12Z
-updated_at: 2026-08-14T19:37:12Z
+updated_at: 2026-10-04T15:25:02Z
+parent: qou-frzo
 ---
 
 Found while fixing the same defect one file over, in PR #5022 (registry §3).

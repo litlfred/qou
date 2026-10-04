@@ -4,8 +4,11 @@ title: BringHyperbolicDecomposition is a renaming sold as a decomposition — id
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T02:22:51Z
-updated_at: 2026-09-04T02:23:55Z
+updated_at: 2026-10-04T15:16:45Z
+parent: qou-r9ih
 ---
 
 MEASURED 2026-09-04 during the qou-08zf Lean gap assessment.

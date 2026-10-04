@@ -4,8 +4,12 @@ title: 'QOU existence: the sorry is closeable DISHONESTLY, which is the real fin
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-08-16T13:56:32Z
-updated_at: 2026-08-17T01:33:37Z
+updated_at: 2026-10-04T15:23:02Z
+parent: b9cj
 ---
 
 ## The sorry

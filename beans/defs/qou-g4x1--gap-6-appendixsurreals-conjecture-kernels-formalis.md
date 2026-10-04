@@ -3,8 +3,12 @@
 title: 'GAP: 6 AppendixSurreals conjecture kernels formalise nothing — statement-level, not instance-level'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T19:15:44Z
-updated_at: 2026-08-08T19:15:44Z
+updated_at: 2026-10-04T15:19:38Z
+parent: qou-3kkl
 ---
 
 

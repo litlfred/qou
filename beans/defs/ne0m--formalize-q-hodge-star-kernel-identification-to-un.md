@@ -7,8 +7,10 @@ priority: low
 tags:
     - compute-wiring
     - blocked-domain
+    - reorg-2026-10-04
 created_at: 2026-07-06T04:31:27Z
-updated_at: 2026-07-06T04:31:27Z
+updated_at: 2026-10-04T15:25:56Z
+parent: b9cj
 ---
 
 Blocked: nsi_q_kernel_hard_singularity is proved sorry-free, but nsi_q_kernel_identification is an honest sorry (q-deformed commutator / q-Hodge star not formalized). A probe would only re-verify the trivial r^2-hbar^2=0 tautology, not the identification. Bean, not fabrication.

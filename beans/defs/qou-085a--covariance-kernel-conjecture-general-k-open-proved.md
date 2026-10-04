@@ -3,8 +3,12 @@
 title: 'covariance_kernel_conjecture: general k open; proved k<=8 in Lean'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T10:50:58Z
-updated_at: 2026-08-09T10:50:58Z
+updated_at: 2026-10-04T15:18:13Z
+parent: qou-m6dn
 ---
 
 

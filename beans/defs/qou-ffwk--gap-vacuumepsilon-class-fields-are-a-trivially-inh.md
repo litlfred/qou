@@ -4,8 +4,11 @@ title: 'GAP: 10 conjecture carriers use a trivially-inhabited ''residual = 0'' p
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T15:15:21Z
-updated_at: 2026-08-30T07:59:10Z
+updated_at: 2026-10-04T15:19:36Z
+parent: qou-5p7n
 ---
 
 

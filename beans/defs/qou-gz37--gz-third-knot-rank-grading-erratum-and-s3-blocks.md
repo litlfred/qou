@@ -1,15 +1,17 @@
 ---
 # qou-gz37
 title: 'Third knot found in-corpus: GZ rank grading is NOT s(x) (guard), a source erratum adjudicated, and W_0 as S_3 partition blocks'
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
     - g3-aomega
     - route-c
     - literature
+    - reorg-2026-10-04
 created_at: 2026-08-19T12:10:00Z
-updated_at: 2026-08-19T15:20:00Z
+updated_at: 2026-10-04T15:11:11Z
+parent: b9cj
 ---
 
 ## Context
@@ -257,3 +259,9 @@ nineTwelve_prediction. Probe 29/29.
    a Number Field" -- likely relevant to the corpus's Habiro-element work), 1303.5278.
 3. The H_Ad polynomial test is STILL open and still needs a genuine Stokes matrix for
    a third knot -- unchanged by this bean, and still not in the corpus.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-19 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

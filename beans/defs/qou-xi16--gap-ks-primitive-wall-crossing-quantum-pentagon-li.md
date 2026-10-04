@@ -4,8 +4,11 @@ title: 'GAP: KS primitive wall-crossing <-> quantum pentagon link is unformalize
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T21:02:22Z
-updated_at: 2026-08-21T21:02:58Z
+updated_at: 2026-10-04T15:20:08Z
+parent: qou-frzo
 ---
 
 Found draining the small-category vacuity tranche (qou-h3ly), PR #5408.
