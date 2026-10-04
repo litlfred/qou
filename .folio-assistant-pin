@@ -128,4 +128,18 @@
 # would have lost their validation. run-validate at cb194b1, same corpus: the
 # same 4 issues as at 37a36ce and 378a100.
 #
-cb194b1c56c0764a78c0e1247ec441e652c92465
+#
+# BUMPED 2026-10-04 to 26c5d37b9 (platform main) — story S1 of the migration epic
+# qou-n4r9, together with the qou.json / qou.config.json re-declaration.
+# Same corpus (qou main 2301b1a11), `run-validate folio/quantum-observable-universe`:
+#
+#     cb194b1c5  →  "4 issue(s)", valid
+#     26c5d37b9  →  "5 issue(s)", valid — the same 4 lines, plus one new warning:
+#        no-orphan-sidecar could not check test/results/block-qa (absent here; the
+#        derived QA corpus lives on the cat-harness qa-reports branch, owner ruling
+#        2026-10-04). Informational, not a content change.
+#
+# Platform main now carries bootstrap and bootstrap-tools as git SUBMODULES, so the
+# clone needs `git submodule update --init` (setup-folio-assistant.sh does this now).
+#
+26c5d37b914e2043f7c69a6c8eb9307c9968a34b
