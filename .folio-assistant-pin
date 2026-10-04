@@ -142,4 +142,18 @@
 # Platform main now carries bootstrap and bootstrap-tools as git SUBMODULES, so the
 # clone needs `git submodule update --init` (setup-folio-assistant.sh does this now).
 #
-26c5d37b914e2043f7c69a6c8eb9307c9968a34b
+# BUMPED 2026-10-04 to 5693b174e (folio-assistant#2129 merged) — story TOOLS T2,
+# beans qou-qb6t / qou-4r5m: the platform now registers the `computation-witness`
+# graph kind, and qou.json declares `computations/` with it in the same commit.
+# Same corpus (qou branch claude/migration-wave12-2026-10-04),
+# `run-validate folio/quantum-observable-universe`:
+#
+#     26c5d37b9  →  "5 issue(s)", valid
+#     5693b174e  →  "5 issue(s)", valid; the 5 issue lines IDENTICAL
+#
+# New at this pin: `bun run witness:conformance` (via folio-assistant/). Over
+# computations/: 3,839 witnesses, 0 malformed, 5 not strict JSON (all in
+# _deprecated/, NaN/Infinity), 1,685 of 3,834 meet the producer contract. The
+# rest are findings against their producers; no witness was edited.
+#
+5693b174e460442e5159230cdfc2363e82028a43
