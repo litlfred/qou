@@ -1,7 +1,7 @@
 ---
 # qou-qb6t
 title: '[TOOLS T1] f-a: computation-witness graph kind + Zod computation-witness/v1 (sci)'
-status: todo
+status: in-progress
 type: feature
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - tools
     - upstream-fa
 created_at: 2026-10-04T16:35:40Z
-updated_at: 2026-10-04T18:23:07Z
+updated_at: 2026-10-04T20:25:35Z
 parent: qou-k3er
 ---
 
@@ -24,3 +24,8 @@ Owner hard rule: no math or physics content is changed. Done-when must include t
 
 ## Owner ruling 2026-10-04
 Verbatim: "all witnesses tools will need to go into the KG". Every witness producer becomes a declared Tool node whose output is a witness graph node. This needs T1 (the platform computation-witness graph kind) and T5 (wrap the content-wired producers). Recorded by session_01NdDGeP1SyShmoUssLuRZ91.
+
+
+
+## Claimed 2026-10-04 by session_01NdDGeP1SyShmoUssLuRZ91
+Platform half in progress on folio-assistant branch claude/eloquent-wright-l6fdw0. Measured: an envelope schema accepts all 4,070 strict-JSON qou witnesses; the producer contract (qou's own witness-schema 0.1.1) accepts 1,685 of 3,834 in computations/; 5 files in computations/_deprecated/ are not strict JSON (NaN/Infinity). Contract failures are reported as findings by witness:conformance and no witness is edited.
