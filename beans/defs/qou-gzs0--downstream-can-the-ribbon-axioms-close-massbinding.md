@@ -1,11 +1,13 @@
 ---
 # qou-gzs0
 title: 'Downstream: can the ribbon axioms close mass/binding derivation gaps'
-status: in-progress
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-17T01:45:48Z
-updated_at: 2026-08-26T21:10:30Z
+updated_at: 2026-10-04T15:12:24Z
 ---
 
 ## 2026-08-17 — first pass: the twist reaches the mass chain, but is ONE AXIOM SHORT
@@ -355,3 +357,9 @@ precisely the fit-hunting the anti-fit rules forbid; a κ must come from structu
 **Verdict for this bean: answer is NO on both halves.** Sphericality's consumer was already
 discharged by a shorter route; the binding term is not ribbon-shaped. Recommend closing it as
 answered-negative rather than leaving it in-progress.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: 22affaed24 "ribbon axioms cannot close the binding gap"; body: "Recommend closing it as answered-negative"; STALLED claim (last activity 2026-08-30); 11 main commits

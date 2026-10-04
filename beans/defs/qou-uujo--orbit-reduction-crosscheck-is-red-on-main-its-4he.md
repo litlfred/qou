@@ -1,10 +1,13 @@
 ---
 # qou-uujo
 title: 'orbit_reduction_crosscheck is RED on main: its 4He smoke pin 0.05534833 predates the ordering ruling and its witness (2026-05-30) still claims allPassed'
-status: todo
+status: completed
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T18:38:47Z
-updated_at: 2026-09-14T18:38:47Z
+updated_at: 2026-10-04T15:21:53Z
 ---
 
 ## Measured, on a CLEAN tree
@@ -146,3 +149,8 @@ three combinations would have varied the two word-level axes, neither of which
 is the axis that separates the pin from today's value. Measured confirmation of
 the documented account, at the cost of the one row that was worth having.
 
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: 2b8206e504 resolve: 4He pin is convention C (explained); 1 main commits

@@ -1,11 +1,13 @@
 ---
 # qou-2z9j
 title: 'Arc review 2026-08-19: vacuity/lean-QA plan'
-status: todo
-type: milestone
+status: completed
+type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-19T21:00:27Z
-updated_at: 2026-08-21T15:55:26Z
+updated_at: 2026-10-04T15:15:09Z
 ---
 
 Reconciliation of the Lean-QA vacuity arc against current main (@ 5b158ef0) after the #3269/#3287/#3299 waves merged. The arc is NOT drained; live state re-measured today.
@@ -59,3 +61,9 @@ First increment landed: 2 dimension-synthesis unused-hypothesis-rfl defects → 
 2. proof-no-provable-axiom (10) — prove or honestly-cite/remove.
 3. proof-no-self-assuming-projection (122) — the bulk; cluster by directory. Many are §3b-cond field-projections needing genuine-hypothesis restructuring (NOT self-assuming class fields per §3b-cond item 5).
 Each batch: fix + lean-direct verify + re-seed ledger (prunes resolved) + check-ledger green + PR. The committed ledger is the authoritative tracker/queue.
+
+
+
+## Summary of Changes
+
+Session log closed 2026-10-04 (owner decision 2): open children were reparented to programme epics and prose follow-ups extracted as their own beans. Kept as a record, not deleted.

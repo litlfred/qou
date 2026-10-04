@@ -1,11 +1,13 @@
 ---
 # qou-rbdi
 title: alpha_em has no CODATA registry entry, so the reference-literal gate is blind to it
-status: todo
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T09:08:15Z
-updated_at: 2026-09-30T15:14:28Z
+updated_at: 2026-10-04T15:16:20Z
 ---
 
 Found by continuing the class-D read (`qou-psjm`) into the 7 deprecated-source
@@ -173,3 +175,9 @@ Consequence for anyone acting on this bean: do NOT add a fine-structure entry to
 
 ## 2026-09-30: alpha now has a CODATA 2022 source
 library/codata-2022 (ingested from NIST allascii via codata-ingest, 355 quantities) carries inverse-fine-structure-constant = 137.035999177 and fine-structure-constant. alpha_em_shift_chain.py reads it instead of the literal 137.035999084, which was the CODATA 2018 value labelled 2022; its witness is regenerated. Not done here: wiring codata_truncation_audit's CANON to the dataset, which is what would make the gate see alpha.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: 33ccc1895b records CODATA-2022 alpha source; 37j2 reanalysis: false premise (registry has alpha); 7 main commits

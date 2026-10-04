@@ -1,11 +1,13 @@
 ---
 # qou-18r3
 title: 'GAP/qou-71ma: GS jet-order valuation does NOT force single-degree selection (crux answered NEGATIVE)'
-status: in-progress
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T13:47:14Z
-updated_at: 2026-08-02T13:47:33Z
+updated_at: 2026-10-04T15:12:46Z
 ---
 
 Epic qou-r2nh. Alias of the orchestrator bean qou-71ma (not committed in this checkout).
@@ -27,3 +29,9 @@ structure (not a valuation) forces the concentration / the DT moduli 𝓑_λ.
 
 Lean: content/quantum-observable-universe/lean/QOU/BraidsAndKnots/DeltaLambdaJetOrderDegreeSelection.lean (lean-verify exit 0).
 Audit: docs/audits/2026-08-02-deltalambda-jetorder-degree-selection.md.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] title "crux answered NEGATIVE"; qou-71ma is the question it answers; STALLED in-progress since 2026-08-02 [M]

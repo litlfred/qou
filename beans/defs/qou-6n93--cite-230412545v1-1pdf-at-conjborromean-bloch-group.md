@@ -1,11 +1,13 @@
 ---
 # qou-6n93
 title: Cite 2304.12545v1 (1).pdf at conj:borromean-bloch-group-element
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:44Z
-updated_at: 2026-08-21T17:04:44Z
+updated_at: 2026-10-04T15:17:18Z
 ---
 
 def:quantum-bloch-group and conj:borromean-bloch-group-element both state Bloch-group/regulator facts (5-term relation, Beilinson regulator = Bloch-Wigner dilogarithm, volume as regulator evaluation) without a source for the extended/lifted version now being used downstream.
@@ -27,3 +29,10 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP, AND THE WORK OF WALTER NEUMANN
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [arxiv-2304.12545v1] as the citation key when you do it.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-uea1` (work-plan reorganisation 2026-10-04). Evidence: [M] same pdf (2304.12545v1 vs its '(1)' copy) at conj:borromean-bloch-group-element
+Content is untouched; only this work item is closed.

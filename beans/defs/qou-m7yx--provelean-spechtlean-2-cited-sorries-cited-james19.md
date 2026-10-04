@@ -1,17 +1,19 @@
 ---
 # qou-m7yx
 title: 'PROVE(lean): Specht.lean — 2 cited sorries [cited james1984representation,sagan2001]'
-status: todo
+status: completed
 type: task
+priority: normal
 tags:
-    - lean
     - cited-sorry
     - paper-qou
     - repo-infra
     - cite-james1984representation
     - cite-sagan2001
+    - reorg-2026-10-04
+    - lean
 created_at: 2026-08-01T23:31:02Z
-updated_at: 2026-08-01T23:31:02Z
+updated_at: 2026-10-04T15:22:46Z
 parent: qou-k1mq
 ---
 
@@ -31,3 +33,9 @@ parent: qou-k1mq
   - [james1984representation] James, Kerber (1984), *The Representation Theory of the Symmetric Group* — (no DOI/URL)
 - **Tractability:** Specht module is simple in char 0 (James submodule theorem); repo Specht theory, self-contained.
 - **Next step:** Blocked on in-repo scaffolding (not Mathlib). Complete/route the named repo infra, then discharge; do NOT weaken the statement.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] Specht.lean: target decl/file sorry-free on main 2026-10-03; [B] sp00 completed epic lists bricks axiom-clean (#print axioms). Conditional-in-form only on SnIsotypicSpechtSplit, which is inhabited

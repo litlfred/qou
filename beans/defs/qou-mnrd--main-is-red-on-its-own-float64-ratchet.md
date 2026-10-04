@@ -1,17 +1,18 @@
 ---
 # qou-mnrd
 title: 'raw-float64 ratchet: main was RED, now GREEN (5 -> 0, drained 2026-08-25) — the revolving door is the finding'
-status: todo
+status: completed
 type: task
 priority: high
 tags:
+    - coordination
+    - reorg-2026-10-04
     - ci
     - precision
     - no-float64
     - ratchet
-    - coordination
 created_at: 2026-08-08T22:45:00Z
-updated_at: 2026-08-31T03:05:45Z
+updated_at: 2026-10-04T15:15:03Z
 ---
 
 ## The finding
@@ -1921,3 +1922,9 @@ stable landmark -- re-read the filename each time rather than assuming it is
 the same one. That is the same masking hazard bean `qou-dqhd` was opened for:
 a permanently non-zero REGRESSED count hides the next real one, and here it
 hid a substitution.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: 8f32d1fac5 "CLOSE — main is GREEN, 5 -> 0"; still todo; 50 main commits

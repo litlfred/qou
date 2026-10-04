@@ -1,11 +1,13 @@
 ---
 # qou-40kk
 title: Przytycki and Bullock are held (15 and 3 library dirs) but unregistered in references.ts
-status: todo
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T09:40:05Z
-updated_at: 2026-09-04T09:43:23Z
+updated_at: 2026-10-04T15:22:49Z
 ---
 
 MEASURED 2026-09-04, corpus-grep path 5. I had reported that 'the corpus has nothing on Przytycki or K_q(S^3)'. That was content/ and docs/ only. In library/: Przytycki 15 dirs, character variety 35, 'skein module of' 10, 'Kauffman bracket skein module' 4, Bullock 3.
@@ -25,3 +27,9 @@ SO THE RANK-1 PREMISE IS NOT CITABLE FROM THE LIBRARY AS INDEXED. Paths searched
 The classical statement wanted is Przytycki's: the Kauffman bracket skein module of S^3 is free of rank 1 on the empty link. A MENTION of Przytycki in 15 directories is not that theorem - see the 'held does not mean held in full' caution above, which applies here too.
 
 SIDE NOTE, not this bean's business: arxiv-2111.06645v3 is highly relevant to the qbeta_habiro producers and the c_k ladder for a different reason (new elements of the Habiro ring, smoothed optimal truncation). Whoever works those should know it is held.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] main a9bed27473 2026-09-04: 'beans(qou-40kk): close the 3-sphere lead NEGATIVE — arxiv-2111.06645v3 is quantum modularity, not skein modules'; bean not touched after

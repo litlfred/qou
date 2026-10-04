@@ -1,11 +1,13 @@
 ---
 # qou-5wi6
 title: 'F1 research: general-n q-involution identity S(n)=Σdim_q via Stanley q-hook-maj + RSK'
-status: in-progress
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-19T01:52:06Z
-updated_at: 2026-09-07T08:02:13Z
+updated_at: 2026-10-04T15:12:32Z
 ---
 
 ## 2026-09-07 — claimed; the general-n route is the one this bean names, and it is now partly walked
@@ -33,3 +35,10 @@ anchor of this exact object in lever1-kernel-maj-involution-identification.witne
 never stated anywhere; and library/arxiv-2105.09342v1 (Dutta et al., q-deformed Plancherel growth,
 hook lengths as free-fermion momenta) plus arxiv-1909.06797v5 are INGESTED BUT UNREGISTERED in
 references.ts, so no block can cite them today.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-3xjy` (work-plan reorganisation 2026-10-04). Evidence: same identity S(n)=Σdim_q general n | STALLED: in-progress, last update 2026-09-07
+Content is untouched; only this work item is closed.

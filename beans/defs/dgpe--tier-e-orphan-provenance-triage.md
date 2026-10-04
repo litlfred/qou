@@ -1,11 +1,13 @@
 ---
 # dgpe
 title: 'Tier E: orphan witnesses — producer missing from disk'
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-18T21:00:00Z
-updated_at: 2026-08-18T21:00:00Z
+updated_at: 2026-10-04T15:25:05Z
 ---
 
 Parent dgap. 186 witnesses whose producer script is not on disk (scriptFile names a file that
@@ -21,3 +23,10 @@ Per witness, exactly one of:
 At least 3 already self-report the loss: scriptFile reads
 "(legacy — no matching producer found; provenance pending manual triage)".
 List them: python3 computations/audits/derivation_gap_categorize.py --tier E-orphan
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-cdvx` (work-plan reorganisation 2026-10-04). Evidence: [B] Tier E orphan witnesses = producerless population triaged in cdvx
+Content is untouched; only this work item is closed.

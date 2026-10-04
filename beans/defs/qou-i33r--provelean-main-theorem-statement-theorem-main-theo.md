@@ -1,15 +1,17 @@
 ---
 # qou-i33r
 title: 'PROVE(lean): main_theorem_statement — theorem main_theorem_statement (ord : AdmissibleOrder G) (sys : RewritingSystem G k) (hgs  [cited manuscript]'
-status: todo
+status: completed
 type: task
+priority: normal
 tags:
-    - lean
-    - cited-sorry
     - paper-ugb
     - repo-infra
+    - reorg-2026-10-04
+    - lean
+    - cited-sorry
 created_at: 2026-08-01T23:31:10Z
-updated_at: 2026-08-01T23:31:10Z
+updated_at: 2026-10-04T15:22:38Z
 parent: qou-k1mq
 ---
 
@@ -23,3 +25,9 @@ parent: qou-k1mq
   - [manuscript] unital-groebner-bases
 - **Tractability:** Main theorem: GS basis ⇒ NF exists + unique (Diamond Lemma); central repo theorem, self-contained but large.
 - **Next step:** Blocked on in-repo scaffolding (not Mathlib). Complete/route the named repo infra, then discharge; do NOT weaken the statement.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] decl found sorry-free & unconditional in folio/unital-groebner-bases or fred2005 tree (k1mq child; sorry gone)

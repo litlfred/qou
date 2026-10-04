@@ -1,11 +1,13 @@
 ---
 # qou-dqhd
 title: 'GAP: he-nu-sdp-saturation-obstruction regressed 5 -> 11 raw float64 on main'
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T14:21:50Z
-updated_at: 2026-08-30T14:22:09Z
+updated_at: 2026-10-04T15:20:05Z
 ---
 
 Found while running the mandated gate for bean qou-srvu (slice A), 2026-08-30.
@@ -31,3 +33,10 @@ has to re-derive that it is not theirs, exactly as I did.
 
 Recommended: identify the producer, re-run it, and confirm whether the 6 new
 raw float64 fields are a genuine precision loss or a serialization change.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-4pmk` (work-plan reorganisation 2026-10-04). Evidence: [M] same regression: he-nu-sdp-saturation-obstruction raw float64 5->11, same day
+Content is untouched; only this work item is closed.

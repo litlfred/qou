@@ -1,10 +1,13 @@
 ---
 # qou-sk6h
 title: 'VACUITY: LiftingDescent ''open inputs'' were tautologies — RESOLVED'
-status: todo
+status: completed
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T11:24:08Z
-updated_at: 2026-08-08T11:24:08Z
+updated_at: 2026-10-04T15:25:26Z
 ---
 
 
@@ -64,3 +67,9 @@ Found while running the first-ever full from-source build of the QOU library
 (1606 modules, 1461 green, 141 real failures). Pre-existing — but the
 namespace-drift sweep's compile fixes had just turned these files green at
 sorry=0, which *overstated* their soundness and removed the only outward signal.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: title says RESOLVED; dup-of qou-nkfq subject

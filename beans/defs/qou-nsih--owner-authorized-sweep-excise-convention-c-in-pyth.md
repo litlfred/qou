@@ -1,11 +1,13 @@
 ---
 # qou-nsih
 title: 'OWNER-AUTHORIZED SWEEP: excise convention C in python AND rust, everywhere'
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T06:53:56Z
-updated_at: 2026-08-30T10:08:24Z
+updated_at: 2026-10-04T15:21:56Z
 ---
 
 ## Measured 2026-08-30 — the surface, before any edit
@@ -276,3 +278,10 @@ starting any mechanical drain, not merely before pushing.
 
 Live count is 16 blocking. The subject-vs-parameter finding above is unaffected
 -- it is about what the remaining sites ARE, not how many.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-wgta` (work-plan reorganisation 2026-10-04). Evidence: owner-authorised sweeps (08-09, 08-30) re-measured by wgta (09-08), the canonical ledger; 9 main commits
+Content is untouched; only this work item is closed.

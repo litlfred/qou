@@ -1,10 +1,13 @@
 ---
 # qou-n9qf
 title: '[HEADLINE WITHDRAWN 2026-09-03 — see the closed form] Delta_tr IS extensive and at A<=4 that is the failure: flat 0.29/nucleon vs B/A moving 6.4x, and two corpus scales for it differ 5.5x'
-status: in-progress
+status: completed
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-03T10:37:26Z
-updated_at: 2026-09-03T10:37:26Z
+updated_at: 2026-10-04T15:11:48Z
 ---
 
 Probe: computations/qbeta/qbeta_extensivity_is_the_failure_probe.py (5/5). Refines qou-imcd / qou-78pt rather than disputing them.
@@ -576,3 +579,9 @@ is a fit and is refused.
 Options, pros/cons and six open avenues:
 `docs/audits/2026-09-04-binding-law-options-decision-frame.md`. Carried to `gm4q`
 (claimed), which is where the owner decision sits.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] title "HEADLINE WITHDRAWN — see the closed form"; superseded; STALLED in-progress since 2026-09-03 [M]

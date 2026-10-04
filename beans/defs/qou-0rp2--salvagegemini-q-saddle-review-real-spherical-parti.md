@@ -1,10 +1,13 @@
 ---
 # qou-0rp2
 title: 'Salvage(gemini q-saddle): review real ''spherical partition algebra'' (arXiv 2402.01890, Ormeno-Bastias/Martin/Ryom-Hansen — NOT Bowman-Orellana) as driver-(x) grounding for nu_SDP'
-status: todo
+status: scrapped
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T13:07:40Z
-updated_at: 2026-08-02T13:07:40Z
+updated_at: 2026-10-04T15:24:18Z
 ---
 
 ## Source
@@ -132,3 +135,10 @@ carries a Hecke block to an SP_k(n) module — consistent with the concrete refu
 - Direct SDP: 0/3558 is an over-determination artifact (qou-vd7j), not a derivation.
 No route derives ν_SDP; conj:kashaev-density-equals-sdp-multiplicity stays honestly
 open with every known bridge concretely closed. No value wired to production.
+
+
+
+## Reasons for Scrapping
+
+Work-plan reorganisation 2026-10-04: [M] "Salvage" items from a refuted external proposal, 2026-08-02, untouched
+Content is untouched; only this work item is closed.

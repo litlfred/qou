@@ -1,11 +1,13 @@
 ---
 # qou-q0zk
 title: 'DRAIN: 99 witnesses may be convention-C-frame under D producers (#4899 sweep tail)'
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-19T20:13:39Z
-updated_at: 2026-08-23T17:04:24Z
+updated_at: 2026-10-04T15:18:56Z
 ---
 
 PR #4899 excised convention C from the producer layer ("178 sites -> 0") and
@@ -232,3 +234,10 @@ will break controls that no witness-level test can see.
 
 `wedderburn-pair-volumes` (confirmed #3) still moves a content-cited number by
 13% and still needs the scope decision. Unchanged from 2026-08-23.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-eea0` (work-plan reorganisation 2026-10-04). Evidence: same task at different counts (14 / 99 / 84 C-frame witnesses); eea0 is the newest campaign; 6 main commits
+Content is untouched; only this work item is closed.

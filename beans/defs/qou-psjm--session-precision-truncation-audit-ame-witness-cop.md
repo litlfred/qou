@@ -1,11 +1,13 @@
 ---
 # qou-psjm
 title: 'Session: precision-truncation audit — AME + witness-copy classes, HARD GATE wiring, drain queue'
-status: in-progress
-type: epic
+status: completed
+type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T12:02:04Z
-updated_at: 2026-09-06T06:37:25Z
+updated_at: 2026-10-04T15:11:30Z
 ---
 
 ## 2026-09-05 — detector extended, wired, calibrated (branch claude/precision-truncation-audit-sidecar-r5vjkx)
@@ -193,3 +195,9 @@ TWELVE scripts at 12 digits with no shared module.
 Residue: 232 class-D findings. NOT confirmed defects — each still needs its own
 read. Automating the split is the failure mode; it got the type case wrong the
 first time it was tried.
+
+
+
+## Summary of Changes
+
+Session log closed 2026-10-04 (owner decision 2): open children were reparented to programme epics and prose follow-ups extracted as their own beans. Kept as a record, not deleted.

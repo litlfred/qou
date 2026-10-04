@@ -1,17 +1,19 @@
 ---
 # qou-phl4
 title: 'PROVE(lean): YoungTableauStandard.lean — 3 cited sorries [cited sagan2001]'
-status: todo
+status: completed
 type: task
+priority: normal
 tags:
-    - lean
-    - cited-sorry
-    - paper-qou
     - infra-blocked
     - repo-infra
     - cite-sagan2001
+    - reorg-2026-10-04
+    - lean
+    - cited-sorry
+    - paper-qou
 created_at: 2026-08-01T23:31:03Z
-updated_at: 2026-08-31T02:57:36Z
+updated_at: 2026-10-04T15:22:48Z
 parent: qou-k1mq
 ---
 
@@ -77,3 +79,9 @@ The tier decided the advice, and the advice decided whether anyone tried.
 `YoungDiagram`, `StandardYoungTableau`, branching and `upSum_eq` — it is tier-P work.
 
 This bean stays OPEN on `branching_two_one` alone.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] YoungTableauStandard.lean: target decl/file sorry-free on main 2026-10-03; [B] sp00 completed epic lists bricks axiom-clean (#print axioms). Conditional-in-form only on SnIsotypicSpechtSplit, whic

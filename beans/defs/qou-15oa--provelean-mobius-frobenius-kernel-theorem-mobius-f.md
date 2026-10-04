@@ -1,7 +1,7 @@
 ---
 # qou-15oa
 title: 'PROVE(lean): mobius_frobenius_kernel — theorem mobius_frobenius_kernel {E : Type*} [NormedAddCommGroup E] [ctx : MobiusFrobeniusK [cited manuscript]'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
@@ -9,8 +9,9 @@ tags:
     - cited-sorry
     - paper-qou
     - repo-infra
+    - reorg-2026-10-04
 created_at: 2026-08-01T23:31:04Z
-updated_at: 2026-09-13T17:34:38Z
+updated_at: 2026-10-04T15:13:34Z
 parent: qou-k1mq
 ---
 
@@ -89,3 +90,9 @@ the detector's four patterns, so it returns before reaching its own structural
 fallback. 16 further cases are invisible for the same reason (26 counted
 becomes 42 with one regex added). Sized and written up as qou-metc; no detector
 change made here.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] k1mq child: no real sorry left in target file. mobius_frobenius_kernel theorem uncond, 0 sorry | STALLED: in-progress, last update 2026-09-13

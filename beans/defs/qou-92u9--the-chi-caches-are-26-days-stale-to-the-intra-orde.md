@@ -1,10 +1,13 @@
 ---
 # qou-92u9
 title: The chi caches are 26 days stale to the intra-ordering change, and it refutes the O3' atom-independence result
-status: todo
+status: completed
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T19:25:18Z
-updated_at: 2026-09-05T19:25:18Z
+updated_at: 2026-10-04T15:24:53Z
 ---
 
 
@@ -340,3 +343,9 @@ instead of assumed.
 **Still open here:** the 357 with neither key. Nothing in those files names a
 producer, so no cone can be walked for them at all. That is a genuine remaining
 blind spot and it is now reported as one instead of being invisible.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] main 5f106338e5 2026-09-06: 'close(qou-92u9): the third timeout is genuinely long, not a budget artifact — and I said otherwise while it was still ru'; bean not touched after

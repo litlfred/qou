@@ -1,14 +1,15 @@
 ---
 # qou-utbr
 title: 'Migrate .beans/ to the platform''s beans/ layout: beans.json, defs/, defs/archive/, workflows/'
-status: in-progress
+status: completed
 type: feature
 priority: high
 tags:
     - beans-hygiene
     - migration
+    - reorg-2026-10-04
 created_at: 2026-09-26T11:19:55Z
-updated_at: 2026-09-27T10:03:38Z
+updated_at: 2026-10-04T15:10:46Z
 parent: qou-n4r9
 ---
 
@@ -199,3 +200,9 @@ and script together."*** Its evidence is qou commit `39fc90f6` and bean `dh4f` â
 longer read, and *"a green check is the symptom, not the reassurance."* This is
 the same shape at documentation scale: the store moved cleanly, and the
 instructions telling agents where to look did not move with it.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] qou/beans/{beans.json,defs} exist, no .beans/; residue (skills pointing at beans/defs) is in open PR #7484

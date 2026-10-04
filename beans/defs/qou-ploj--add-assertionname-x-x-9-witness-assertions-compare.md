@@ -1,11 +1,13 @@
 ---
 # qou-ploj
 title: 'add_assertion(name, X, X): 9 witness assertions compare a value to itself and can never fail'
-status: in-progress
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T19:47:06Z
-updated_at: 2026-08-25T22:24:32Z
+updated_at: 2026-10-04T15:11:50Z
 ---
 
 FOUND 2026-08-25 while draining the two state-2 records of
@@ -188,3 +190,10 @@ arity — and found one: `bar_parity` had inherited a `source=` kwarg that
 
 Verified: audit MEASURED 0 / LITERAL 0, exit 0, `--selftest` OK; all 12 producers re-run
 to completion, rc=0, every witness emitted.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-26f2` (work-plan reorganisation 2026-10-04). Evidence: [B] both: add_assertion(name,X,X) compares a value to itself (9 vs 266 - 26f2 is the superset) | STALLED in-progress, last update 2026-08-25 [M]
+Content is untouched; only this work item is closed.

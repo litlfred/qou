@@ -1,11 +1,13 @@
 ---
 # qou-tbk7
 title: 'Z-resolved b3: build the (Z,N)-resolved binding construction the per-atom word already distinguishes (takeover of #7005)'
-status: in-progress
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T18:06:40Z
-updated_at: 2026-09-07T18:37:57Z
+updated_at: 2026-10-04T15:14:29Z
 parent: qou-6g7j
 ---
 
@@ -60,3 +62,8 @@ left for a follow-up if wanted.
 
 **ROAST 2026-09-07 (qou-pbwj) — verdict: CLOSE-OUT, not continue.** The findings above (18:30 UTC) executed exactly the re-scope the roast would have proposed and returned the predicted negative: the framework's Z-resolved b₃ is pairwise-additive (chain L_pp = z, L_nn = z − h, L_pn = z − h(½ − δ/4)), so its three-body term is identically 0 for both mirror partners and b₃ comes out NEGATIVE on every form against a positive target — the pairwise wall in Z-resolved form; #7005's '5.81 digits lost to convention' is a property of the DATA tower (B(2H) is the only pair reference AME supplies; B_pp, B_nn are unbound), not of the framework averaging Z away. Independent cross-check: ln(L_pp/L_nn) = 0.41736 at the proton pin, E₀·0.41736 = 1.747 MeV = the un-normalised form's 1.74707. Roast of the +0.205 % A=3 landing: it is one form of three at one mirror pair of three, with the writhe factor α·ln(1−h) = −0.98 MeV load-bearing, and the same Z-independent constant misses by 0.65 / 1.59 MeV at A = 7, 13 — selection against the target in miniature; under the ranking rule it is worth LESS than the honest 2.29× miss. Wherever the 0.2 % is repeated, the three-pair table must go with it. Corpus already held the Coulomb reading (mirror-nuclei-coulomb-systematics: 0.99 ± 0.07 of ΔE_C across A = 3..39, strong kernel must be charge-symmetric). L2 relevance: none. Remaining value: one paragraph recording that the pp/nn interface letters (1,0) vs (1,−h) encode a STRONG charge-symmetry breaking the A ≥ 7 data exclude — a constraint on the production word's shape, not on a magnitude. Do not extend to ⁶Li/⁷Li (same pairwise wall; A = 5 unbound). Full frame: docs/audits/2026-09-07-takeover-fronts-roast.md §Front 3.
 
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: ede90ce982 negative on every form; body "L2 relevance: none" (answered-negative; owner may prefer keep per 13a); STALLED claim (last activity 2026-09-11); 1 main commits

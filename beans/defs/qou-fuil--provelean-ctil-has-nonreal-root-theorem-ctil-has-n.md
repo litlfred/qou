@@ -1,16 +1,17 @@
 ---
 # qou-fuil
 title: 'PROVE(lean): Ctil_has_nonreal_root — theorem Ctil_has_nonreal_root : ∃ y : ℂ, Ctilℂ y = 0 ∧ y.im ≠ 0  [cited manuscript]'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
-    - lean
     - cited-sorry
     - paper-qou
     - tractable
+    - reorg-2026-10-04
+    - lean
 created_at: 2026-08-01T23:31:06Z
-updated_at: 2026-08-02T09:52:04Z
+updated_at: 2026-10-04T15:13:33Z
 parent: qou-k1mq
 ---
 
@@ -31,3 +32,9 @@ Route A (discriminant) taken, built from scratch since Mathlib v4.24.0 has NO qu
   * Ctil_has_nonreal_root: C-tilde monic deg 4 splits over C (IsAlgClosed.splits_codomain + eq_prod_roots_of_monic_of_splits_id + Multiset.card_eq_four -> roots = {a,b,c,d}); if all four had im=0 they'd be real, Vieta feeds the helper -> False.
   * Vieta over R extracted via linear_combination of the real polynomial identity hr at the 4 points {0,1,-1,2} (Vandermonde weights precomputed).
 Imports added: Mathlib.Tactic.ComputeDegree, Mathlib.Tactic.LinearCombination. maxHeartbeats 4000000 on the helper (degree-12 ring). DO NOT CLOSE -- human-only per AGENTS.md 4a.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] k1mq child: no real sorry left in target file. Ctil_has_nonreal_root theorem uncond, 0 sorry | STALLED: in-progress, last update 2026-08-02

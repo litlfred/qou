@@ -1,11 +1,13 @@
 ---
 # qou-cds3
 title: 'S3 (SCIENCE): muon -> proton witness migration — 870 not ~840, and 69 straddle both pins'
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T12:28:02Z
+updated_at: 2026-10-04T15:24:17Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -655,3 +657,10 @@ Cross-reference: `qou-2whe` (new, from tekx) records that
 files carry only a bare one) and to the C-family canonical pin entirely (28
 files). Same detector-blindness class as my three over-flagging shapes above,
 from the opposite direction — theirs is too narrow, mine were too broad.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-1c4y` (work-plan reorganisation 2026-10-04). Evidence: same muon->proton witness migration (870 vs ~840); "Related: qou-1c4y (the tracked migration)"; indirect class closed 2098a2da8c; 26 main commits
+Content is untouched; only this work item is closed.

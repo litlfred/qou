@@ -1,10 +1,13 @@
 ---
 # qou-qiw9
 title: 'The h*D -> S bridge: what IS it, and can it carry anchor-dependence? (SHAPE only)'
-status: todo
+status: completed
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-19T17:38:45Z
-updated_at: 2026-08-19T17:38:45Z
+updated_at: 2026-10-04T15:24:54Z
 ---
 
 
@@ -92,3 +95,9 @@ before computing.
 Honest expectation: not closeable from the anchor data. What would change it is
 a THIRD independent evaluation. Until then, further fitting against two numbers
 is not a route however sophisticated the form.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [B] body "Answered — LOCALISED, and negative-shaped"

@@ -1,11 +1,13 @@
 ---
 # qou-9ot5
 title: 'Session: low-isotope mass+binding dashboard — error provenance, convention-D migration audit, cheat-sheet alignment, work plan'
-status: in-progress
-type: epic
+status: completed
+type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T16:28:09Z
-updated_at: 2026-09-07T19:11:30Z
+updated_at: 2026-10-04T15:11:28Z
 ---
 
 ## Session state 2026-08-25 (PR #5765)
@@ -191,3 +193,9 @@ the correction, not duplicating the analysis.
 
 Live counts on `main` `2a6e0828b2` after the session's merges plus sibling
 drain: `Q0_OK` **1451**, `Q0_ANCHOR_UNRECOGNISED` **1**, `Q0_FLIP` **1**.
+
+
+
+## Summary of Changes
+
+Session log closed 2026-10-04 (owner decision 2): open children were reparented to programme epics and prose follow-ups extracted as their own beans. Kept as a record, not deleted.

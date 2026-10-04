@@ -1,15 +1,16 @@
 ---
 # qou-qflp
-title: 'Q0_FLIP 262 was ONE corrupted reference file, not a drainable tranche — restored + guarded'
-status: in-progress
+title: Q0_FLIP 262 was ONE corrupted reference file, not a drainable tranche — restored + guarded
+status: completed
 type: task
 priority: high
 tags:
     - precision-gates
     - q0-anchor
     - data-integrity
+    - reorg-2026-10-04
 created_at: 2026-08-19T17:50:00Z
-updated_at: 2026-08-19T17:50:00Z
+updated_at: 2026-10-04T15:11:06Z
 ---
 
 ## What was asked vs what was there
@@ -246,3 +247,9 @@ and documented. Raw float64 in that witness **36 → 16**.
 
 **NEW CLASS, needs an owner read:** the **74 superseded-muon witnesses** —
 computed at a value that is neither canonical pin.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: b89969ad1d swarm complete 887/889 + 4d82572eb5; body flags 74 superseded-muon witnesses as NEW class (re-file under 1c4y); STALLED claim (last activity 2026-08-24); 3 main commits

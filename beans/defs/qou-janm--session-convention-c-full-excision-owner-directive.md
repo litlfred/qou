@@ -1,11 +1,13 @@
 ---
 # qou-janm
 title: 'Session: convention-C full excision (owner directive 2026-08-29)'
-status: in-progress
-type: epic
+status: completed
+type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T07:36:26Z
-updated_at: 2026-09-08T07:45:33Z
+updated_at: 2026-10-04T15:11:26Z
 ---
 
 PR #5972, branch claude/convention-c-full-excision-2026-08-29. NOT merged; readiness reported.
@@ -32,3 +34,9 @@ NOT DONE, deliberately
   disk at 5.3G. Stated in the commit rather than skipped silently.
 
 ## 2026-09-08: canonical ledger for the convention-C excision family is qou-wgta (the P0 excision tracker; owner-ruling milestone qou-cdx1, S2 science blocker qou-cds2); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 2 / §7.3 C3. Nine trackers, previously linked only cds2↔8iru and htsi→t9r1, now all point there.
+
+
+
+## Summary of Changes
+
+Session log closed 2026-10-04 (owner decision 2): open children were reparented to programme epics and prose follow-ups extracted as their own beans. Kept as a record, not deleted.

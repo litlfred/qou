@@ -1,11 +1,13 @@
 ---
 # qou-30vo
 title: The import-cone staleness audit's 1473 is dominated by the witness-WRITING module
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T23:34:15Z
-updated_at: 2026-08-23T23:48:09Z
+updated_at: 2026-10-04T15:24:56Z
 ---
 
 computations/witness_import_cone_staleness_audit.py is well-designed and targets a real class -- the third staleness direction, where a producer stays byte-identical (SELF green) while a module it imports moves. My peel finding today is a CONFIRMED instance of exactly that (qou-3zby): markov-peel-atomic-tr-m-muon, producer not self-stale, numbers move up to 2.9x on re-run.
@@ -148,3 +150,10 @@ attribution fell through to the next provenance module and the fix LOOKED like
 it had worked -- the headline moved, the top entry changed, and only the module
 name gave it away. A path-based exclusion list needs its entries verified to
 exist; noted in the code.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-7tr2` (work-plan reorganisation 2026-10-04). Evidence: [B] import-cone staleness count dominated by the witness-writing module; 7tr2 triages the same 1473/1799 flags
+Content is untouched; only this work item is closed.

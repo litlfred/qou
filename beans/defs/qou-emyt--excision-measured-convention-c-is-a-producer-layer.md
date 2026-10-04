@@ -1,10 +1,13 @@
 ---
 # qou-emyt
 title: 'EXCISION (measured): convention C is a PRODUCER-layer problem -- 70 producers, 86 witnesses, 12 content blocks'
-status: todo
+status: scrapped
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T19:35:36Z
-updated_at: 2026-08-09T19:35:36Z
+updated_at: 2026-10-04T15:19:02Z
 ---
 
 
@@ -354,3 +357,10 @@ failure at 2.2e-8. The R9 evaluator and the two `pyhecke_native` gates all use
 the proton-pinned registry value and all run against proton-pinned code, so they
 are unaffected — but any future gate placed on muon-pinned code must not reuse
 that constant blindly.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-wgta` (work-plan reorganisation 2026-10-04). Evidence: owner-authorised sweeps (08-09, 08-30) re-measured by wgta (09-08), the canonical ledger; 4 main commits
+Content is untouched; only this work item is closed.

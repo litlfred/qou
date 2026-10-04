@@ -1,11 +1,13 @@
 ---
 # qou-3c2j
 title: 'W1: labelling bijection — blocks of the abstract Wedderburn split <-> PartitionIndex n (uses specht_isSimple + specht_exhausts_irreducibles + spechtIso_imp_dom_both, all now closed)'
-status: in-progress
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T14:41:43Z
-updated_at: 2026-08-15T20:59:57Z
+updated_at: 2026-10-04T15:14:21Z
 ---
 
 
@@ -293,3 +295,9 @@ asserting the identity for all `n`; nothing here touches it — checked with `#p
 by reading imports. General `n` is the RSK correspondence, under construction in the separate
 Schensted programme (`QOU/Mathlib/SchenstedInsertion.lean`, ~1400 lines, brick 1 of its own
 roadmap done). `sn_isotypic_specht_split` is stated for all `n` and stays open.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] W1 labelling (specht_isSimple/exhausts): target decl/file sorry-free on main 2026-10-03; [B] sp00 completed epic lists bricks axiom-clean (#print axioms). Conditional-in-form only on SnIsotypicSpe

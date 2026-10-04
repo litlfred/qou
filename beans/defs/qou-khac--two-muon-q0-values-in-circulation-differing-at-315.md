@@ -1,11 +1,13 @@
 ---
 # qou-khac
 title: Two muon q0 values in circulation, differing at 3.15e-12
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T21:19:10Z
-updated_at: 2026-08-28T16:55:21Z
+updated_at: 2026-10-04T15:25:14Z
 ---
 
 
@@ -280,3 +282,10 @@ producer's `_probe` suffix, so `alpha_em_smatrix_perloop_probe` resolves to
 `computations/alpha_em/alpha-em-smatrix-perloop.witness.json`. A
 stem-equals-producer-name lookup returns NO FILE for it, for
 `qbeta_h4_route_a_gate_probe`, and for `derived_masses`.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-tekx` (work-plan reorganisation 2026-10-04). Evidence: one defect seen four ways: two muon pins (CODATA-2018 A vs 2022 C) in circulation; 3 main commits
+Content is untouched; only this work item is closed.

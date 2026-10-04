@@ -1,11 +1,13 @@
 ---
 # qou-pyk1
 title: Resolve QOU/BraidKnot/volume_perturbation.lean sorries
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T18:09:23Z
-updated_at: 2026-08-21T21:16:15Z
+updated_at: 2026-10-04T15:24:05Z
 ---
 
 REOPENED 2026-08-21 by the sorry-closure honesty audit (PR #5411).
@@ -30,3 +32,10 @@ hypothesis with the theorem DERIVING the conclusion from it — the
 verified exemplar is QOU/FluidDynamics/q_bkm_criterion.lean, and the
 in-file precedent is the `QTurbulenceCascadeModel` this same batch
 deleted.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-brt1` (work-plan reorganisation 2026-10-04). Evidence: same decl/file
+Content is untouched; only this work item is closed.

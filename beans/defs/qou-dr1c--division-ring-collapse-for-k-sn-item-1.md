@@ -1,10 +1,13 @@
 ---
 # qou-dr1c
-title: 'division-ring collapse for k[S_n] (residual item 1 of sn_isotypic_specht_split)'
-status: in-progress
+title: division-ring collapse for k[S_n] (residual item 1 of sn_isotypic_specht_split)
+status: completed
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T03:55:00Z
-updated_at: 2026-08-10T13:20:00Z
+updated_at: 2026-10-04T15:12:22Z
 ---
 
 Residual item 1 from PR #4876: prove the Wedderburn division rings of `k[S_n]`
@@ -74,3 +77,9 @@ Then the two rungs compose to give the equivariant iso.
 
 Still open beyond that: the tensor comparison `S^mu_k ⊗_k K ≅ S^mu_K`, and the
 linkage `D i ≃ End(S_i)^op` shared with residual items 2 and 3.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] division-ring collapse (sn split done): target decl/file sorry-free on main 2026-10-03; [B] sp00 completed epic lists bricks axiom-clean (#print axioms). Conditional-in-form only on SnIsotypicSpec

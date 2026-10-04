@@ -1,7 +1,7 @@
 ---
 # qou-v32l
 title: 'GAP: formalise H_n(q) and the Ocneanu trace in Lean, and prove Wenzl 1988'
-status: todo
+status: completed
 type: task
 priority: low
 tags:
@@ -9,8 +9,9 @@ tags:
     - hecke
     - mathlib-gap
     - wenzl
+    - reorg-2026-10-04
 created_at: 2026-08-16T13:04:38Z
-updated_at: 2026-08-16T13:04:38Z
+updated_at: 2026-10-04T15:25:57Z
 ---
 
 ## What is open
@@ -138,3 +139,9 @@ motivation.
 - `qou-7d08` — the Lean level-family residue.
 - `qou-5hul` (completed) — a prior assessment of "genericity ⇒ semisimple =
   Hecke radical theory, deep Mathlib gap". Read it before re-deriving item 3.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] H_n(q) + Ocneanu trace (MarkovTraceInstance.ocneanuMarkovTrace, wenzlMarkovTrace) + semisimplicity proved on SchurWeyl carrier

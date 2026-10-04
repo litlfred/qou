@@ -1,11 +1,13 @@
 ---
 # qou-ty42
 title: 'EPIC: platform-split migration — stopped at harness.config.json by owner ruling (pin stays df28d02)'
-status: todo
+status: scrapped
 type: epic
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-20T14:33:42Z
-updated_at: 2026-09-26T11:27:38Z
+updated_at: 2026-10-04T15:15:18Z
 ---
 
 **Owner ruling, 2026-09-20: stop here.** The migration is deliberately
@@ -123,3 +125,10 @@ declaration test** — `findDeclarationFile` requires the filename stem to equal
 the `name` field, and `harness` ≠ `qou`. The platform's own phrase for that
 state is "the rename-half-done case `check:instance-config` already reports".
 It was done against the platform of 2026-09-20 and the platform has moved.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-n4r9` (work-plan reorganisation 2026-10-04). Evidence: [B] body: "this epic [n4r9] supersedes it"; keep as record of 2026-09-20 stop ruling; reparent its 5 children
+Content is untouched; only this work item is closed.

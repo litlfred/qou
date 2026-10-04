@@ -1,11 +1,13 @@
 ---
 # qou-ishr
 title: qou-mass/src ships 44,937 raw float64 and is scanned by no ratchet — 97.7% from one producer
-status: in-progress
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T15:22:10Z
-updated_at: 2026-08-23T03:47:43Z
+updated_at: 2026-10-04T15:13:39Z
 ---
 
 Follow-up to `qou-cdj8` (#5431), which surfaced the number, and to the owner's
@@ -220,3 +222,9 @@ PR body corrected on three stale counts: qou-mass is **684**, not 909;
 0; and the "changing the assertion payloads alters assertion semantics" claim
 is retracted — it was float64 laundering, caught by
 `mpf_mixed_arithmetic_audit` and fixed at the source.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: 832635a1c8 "drain landed — 43,901 -> 0" + a18d95eb3f verification closeout; STALLED claim (last activity 2026-08-23); 12 main commits

@@ -1,11 +1,13 @@
 ---
 # qou-4t05
 title: 'DOC: AGENTS.md gh-pages section attributes three platform workflows to this repo'
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-26T13:05:38Z
-updated_at: 2026-09-26T13:07:15Z
+updated_at: 2026-10-04T15:18:53Z
 parent: qou-n4r9
 ---
 
@@ -95,3 +97,10 @@ the platform never names it).
 **Interaction with `qou-w5av`:** if that bean's just-the-docs adoption lands, this section gets
 rewritten anyway. Fixing it first is still worth it, because it is what mis-led the analysis
 *of* `qou-w5av`.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-9olr` (work-plan reorganisation 2026-10-04). Evidence: [B] both about AGENTS.md gh-pages section mis-attributing workflows; 9olr carries the corrected 3-way measurement
+Content is untouched; only this work item is closed.

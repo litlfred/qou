@@ -1,11 +1,13 @@
 ---
 # qou-yh08
 title: 'Sub-canonical dps: 952 sites set precision below OUTPUT_DPS=60 after the 2026-05-31 bump'
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T07:58:25Z
-updated_at: 2026-09-08T07:45:42Z
+updated_at: 2026-10-04T15:24:38Z
 ---
 
 `qou_substrate.precision` was bumped on 2026-05-31 (PR #1595) from 50->60 output
@@ -51,3 +53,10 @@ was itself the wrong constant: 60 is the *serialization* precision; compute
 wants `COMPUTE_DPS` = 70.
 
 ## 2026-09-08: duplicate qou-zo4i scrapped 2026-09-08 (byte-identical body, created 5 s after this one; audit docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 6 / §7.3 C7).
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-fl9i` (work-plan reorganisation 2026-10-04). Evidence: same sub-canonical mp.dps sweep (838 vs 952 sites; yh08 is the zo4i twin that survived C7)
+Content is untouched; only this work item is closed.

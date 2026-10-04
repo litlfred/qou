@@ -1,11 +1,13 @@
 ---
 # qou-2361
 title: 'LIVE SPLIT: q_muon_at() yields C (CODATA-2022) but the anchor-defining witness still holds A'
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T15:41:19Z
-updated_at: 2026-08-22T20:24:13Z
+updated_at: 2026-10-04T15:21:17Z
 ---
 
 Found while attributing a witness refresh on the cds1 branch (PR #5448).
@@ -95,3 +97,10 @@ q0Anchor: muon. Witnesses carrying C: 4.
    never hand-edit).
 3. qou-mass/src/qou_mass/_internal/witness_polynomial.py:48 — a third hardcode,
    sp.Rational('1.10997859555733471').
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-tekx` (work-plan reorganisation 2026-10-04). Evidence: one defect seen four ways: two muon pins (CODATA-2018 A vs 2022 C) in circulation; 2 main commits
+Content is untouched; only this work item is closed.

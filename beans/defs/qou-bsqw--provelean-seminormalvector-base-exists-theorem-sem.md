@@ -1,16 +1,18 @@
 ---
 # qou-bsqw
 title: 'PROVE(lean): seminormalVector_base_exists — theorem seminormalVector_base_exists {k : Type} [Field k] [CharZero k] (μ : YoungDiagram)  [cited vershik-kerov1977]'
-status: todo
+status: completed
 type: task
+priority: normal
 tags:
+    - cite-vershik-kerov1977
+    - reorg-2026-10-04
     - lean
     - cited-sorry
     - paper-qou
     - infra-blocked
-    - cite-vershik-kerov1977
 created_at: 2026-08-01T23:31:02Z
-updated_at: 2026-08-31T02:53:38Z
+updated_at: 2026-10-04T15:22:45Z
 parent: qou-k1mq
 ---
 
@@ -31,3 +33,9 @@ theory is genuinely absent from Mathlib and is genuinely required. Kept as-is.
 
 Recorded because the same verdict was WRONG on several siblings; "confirmed" here means checked,
 not merely un-revisited.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] seminormalVector_base_exists: target decl/file sorry-free on main 2026-10-03; [B] sp00 completed epic lists bricks axiom-clean (#print axioms). Conditional-in-form only on SnIsotypicSpechtSplit, w

@@ -1,11 +1,13 @@
 ---
 # t7qv
 title: Mass/binding gap review + θ_λ via Reeb/na-Stokes jet-filtration (+ 4 gaps)
-status: in-progress
-type: milestone
+status: completed
+type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-03T19:40:00Z
-updated_at: 2026-09-07T07:15:15Z
+updated_at: 2026-10-04T15:10:40Z
 ---
 
 Branch `claude/mass-binding-gap-review-2026-07-03`. Owner: "lots new on main +
@@ -2369,3 +2371,9 @@ in that same document today (fixed on
 document contradicting a correction *it already carries elsewhere* — the fix
 landed in the prose and never reached the table, the summary sentence, or the
 blockquote. A grep that finds the correction reads the file as clean.
+
+
+
+## Summary of Changes
+
+Session log closed 2026-10-04 (owner decision 2): open children were reparented to programme epics and prose follow-ups extracted as their own beans. Kept as a record, not deleted.

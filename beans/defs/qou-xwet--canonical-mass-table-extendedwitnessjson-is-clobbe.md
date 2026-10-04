@@ -1,11 +1,13 @@
 ---
 # qou-xwet
 title: canonical-mass-table-extended.witness.json is CLOBBERED by low_isotope_mass_table.py -- and B_2H_AME_MeV is pinned POSITIONALLY over the shifting row set
-status: todo
+status: completed
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T22:43:14Z
-updated_at: 2026-08-15T23:42:40Z
+updated_at: 2026-10-04T15:15:36Z
 ---
 
 Found 2026-08-15 on the post-merge reorientation pass (PR #4961 landed; this was
@@ -192,3 +194,9 @@ regressions 2 -> 1; only rho-k remains.
 Validator extended to check nuclide identity on KEYED pins too, not only
 positional ones -- otherwise it would verify nothing once this migration
 finished. Negative control reproduces the historical bug verbatim.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: 74e7bdb5cc "record the completed fix"; 5 main commits

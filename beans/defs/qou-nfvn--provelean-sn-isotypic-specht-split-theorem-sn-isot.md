@@ -1,16 +1,18 @@
 ---
 # qou-nfvn
 title: 'PROVE(lean): sn_isotypic_specht_split — theorem sn_isotypic_specht_split (n : ℕ) : ∃ e : MonoidAlgebra R (Equiv.Perm (Fin n)) ≃ₐ[R [cited vershik-kerov1977]'
-status: todo
+status: completed
 type: task
+priority: normal
 tags:
+    - reorg-2026-10-04
     - lean
     - cited-sorry
     - paper-qou
     - repo-infra
     - cite-vershik-kerov1977
 created_at: 2026-08-01T23:31:02Z
-updated_at: 2026-08-01T23:31:02Z
+updated_at: 2026-10-04T15:22:46Z
 parent: qou-k1mq
 ---
 
@@ -23,3 +25,9 @@ parent: qou-k1mq
   - [vershik-kerov1977] Vershik, Kerov (1977), *Asymptotic theory of characters of the symmetric group* — https://doi.org/10.1007/BF01106153
 - **Tractability:** Artin–Wedderburn iso for k[S_n] as a product of Specht matrix blocks; Mathlib has Artin–Wedderburn; needs repo Specht simple-module identification.
 - **Next step:** Blocked on in-repo scaffolding (not Mathlib). Complete/route the named repo infra, then discharge; do NOT weaken the statement.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] sn_isotypic_specht_split: target decl/file sorry-free on main 2026-10-03; [B] sp00 completed epic lists bricks axiom-clean (#print axioms). Conditional-in-form only on SnIsotypicSpechtSplit, which

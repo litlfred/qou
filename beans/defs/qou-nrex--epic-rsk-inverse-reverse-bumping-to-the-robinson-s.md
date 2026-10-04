@@ -1,11 +1,13 @@
 ---
 # qou-nrex
 title: 'EPIC: RSK inverse — reverse bumping to the Robinson-Schensted bijection (taken over from the Schensted programme)'
-status: in-progress
+status: completed
 type: epic
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-29T20:04:44Z
+updated_at: 2026-10-04T15:11:18Z
 ---
 
 
@@ -1231,3 +1233,9 @@ compile axiom-clean on main +3323 commits. One dependency moved benignly
 (`YoungDiagramKernel`, `sorry` -> §3b-cond class). A sibling's M₁ workplan (2026-08-28) carries
 the forward plan and scopes this arc correctly as **first-moment infra, not a covariance**.
 Full review: [docs/audits/2026-08-29-rsk-plancherel-arc-currency-review.md](docs/audits/2026-08-29-rsk-plancherel-arc-currency-review.md).
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [B] "Arc verified on main 2026-08-29"; [M] Mathlib/SchenstedRSKBurnside.lean:56 rskBurnsideHolds (n) unconditional, 0 sorry | STALLED: in-progress, last update 2026-08-29

@@ -1,11 +1,13 @@
 ---
 # qou-xm91
 title: 2453 witnesses (78%) carry no q0Anchor/q0Value provenance pair
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T10:35:54Z
-updated_at: 2026-09-08T05:20:30Z
+updated_at: 2026-10-04T15:16:01Z
 ---
 
 
@@ -234,3 +236,10 @@ producer, not a sweep."* At 1341 undeclared that is a large piece of work, and
 under the 2026-09-07 ask-first override it needs owner sign-off before anyone
 starts. What has changed is only that the baseline is now current and its
 definitions are stated.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-6irj` (work-plan reorganisation 2026-10-04). Evidence: [B] same defect class: witnesses carry no q0Anchor (2453/78% vs 1924/55%); 6irj names the cause (wrap_legacy never stamps)
+Content is untouched; only this work item is closed.

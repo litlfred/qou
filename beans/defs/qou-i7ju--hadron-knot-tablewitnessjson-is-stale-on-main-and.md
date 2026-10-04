@@ -1,11 +1,13 @@
 ---
 # qou-i7ju
 title: hadron-knot-table.witness.json is stale on main and its producer cannot finish
-status: todo
+status: completed
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T13:40:13Z
-updated_at: 2026-09-05T06:29:13Z
+updated_at: 2026-10-04T15:14:54Z
 ---
 
 `computations/hadron-knot-table.witness.json` disagrees with its own producer
@@ -420,3 +422,9 @@ provably blind to a braid defect.
 
 So the witness would record the same numbers either way. Regenerating it is a
 staleness question, not a correctness one.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] main 452a0b2e0d 2026-09-05: 'beans(qou-i7ju): CLOSED — both paths reproduced in one container, exact match'; bean not touched after

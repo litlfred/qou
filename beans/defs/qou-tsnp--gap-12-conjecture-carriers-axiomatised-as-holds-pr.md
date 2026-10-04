@@ -1,11 +1,13 @@
 ---
 # qou-tsnp
 title: 'GAP: 12 conjecture carriers axiomatised as `holds : Prop` assert nothing'
-status: in-progress
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T00:12:10Z
-updated_at: 2026-09-12T18:57:46Z
+updated_at: 2026-10-04T15:12:47Z
 ---
 
 
@@ -542,3 +544,10 @@ its cited Lean proof was `⟨⟨True, True, True⟩, trivial, trivial, trivial�
 *cashed into a claimed proof of a paper proposition*. Separate bean `qou-c46w`, priority
 high, awaiting an owner decision on the block kind. Scanned the other live carriers for
 that shape (self-tested against this known positive): **no others**.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-hprp` (work-plan reorganisation 2026-10-04). Evidence: both: carriers shaped `holds : Prop` [B]; tsnp(12) likely subset of hprp(23) — verify; STALLED claim (in-progress, last update 2026-09-12)
+Content is untouched; only this work item is closed.

@@ -1,11 +1,13 @@
 ---
 # cmiy
 title: 'Integration: canonical watcher - P30 WitnessBuilder rollup'
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-06-21T21:44:26Z
-updated_at: 2026-09-03T20:28:32Z
+updated_at: 2026-10-04T15:20:56Z
 ---
 
 ## Canonical bean for the P30 WitnessBuilder rollup (dedup 2026-06-28)
@@ -599,3 +601,10 @@ exists to avoid. But the scope is now small enough that the deferral is worth
 **Judgement, marked as such:** I would port the **17 non-`milnor_*`** files as one
 commit when the storm quiets, and leave the 6 `milnor_*` to whoever owns
 `qou-v7ro`. That splits cleanly along ownership and keeps the diff reviewable.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-p30w` (work-plan reorganisation 2026-10-04). Evidence: [B] canonical watcher P30 WitnessBuilder rollup = same class
+Content is untouched; only this work item is closed.

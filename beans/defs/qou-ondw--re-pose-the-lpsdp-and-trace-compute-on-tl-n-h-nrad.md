@@ -1,7 +1,7 @@
 ---
 # qou-ondw
 title: Re-pose the LP/SDP and trace compute on TL_n = H_n/rad instead of H_n
-status: todo
+status: scrapped
 type: task
 priority: high
 tags:
@@ -9,8 +9,9 @@ tags:
     - hecke
     - compute
     - temperley-lieb
+    - reorg-2026-10-04
 created_at: 2026-08-16T12:54:01Z
-updated_at: 2026-08-16T12:54:01Z
+updated_at: 2026-10-04T15:15:03Z
 ---
 
 ## Why now
@@ -90,3 +91,10 @@ level-family work, PR #5229). Do not apply this quotient to a C-frame producer.
 - `qou-8iru` (in-progress) — the D-is-TL identification itself.
 - PR #5217 / `docs/audits/2026-08-16-tl-all-n-weight-vanishing.md` — the proof.
 - PR #5230 — axiomatises the Wenzl input the proof rests on.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-y6h7` (work-plan reorganisation 2026-10-04). Evidence: both: re-pose LP/SDP/trace on TL_n = H_n/rad because Gram singular under D
+Content is untouched; only this work item is closed.

@@ -1,11 +1,13 @@
 ---
 # qou-q377
 title: 'GAP: hypercharge Y — second crossing invariant independent of writhe (U(1)_Y undefined; falsified as writhe map, 2026-06-02 audit)'
-status: in-progress
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-31T19:56:30Z
-updated_at: 2026-08-02T17:33:29Z
+updated_at: 2026-10-04T15:12:55Z
 ---
 
 2026-08-02 status note.
@@ -18,3 +20,10 @@ The source audit is now resolved.
 - arXiv:1611.09182 provides the longer subspace derivation background, including `N' = -2Y` on the leptonic subspace.
 
 So the literature-locate subtask is complete. The remaining work for this bean is QOU-native: decide whether the strand-twist datum / second crossing invariant can realize the same role on QOU states, then run the Gell-Mann–Nishijima / first-generation spectrum / `Z6` compatibility battery.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-qvpl` (work-plan reorganisation 2026-10-04). Evidence: [M] both "second crossing invariant (hypercharge)"; qvpl under qou-8lxd; STALLED in-progress since 2026-08-02 [M]
+Content is untouched; only this work item is closed.

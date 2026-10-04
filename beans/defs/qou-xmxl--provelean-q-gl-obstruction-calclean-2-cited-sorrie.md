@@ -1,15 +1,17 @@
 ---
 # qou-xmxl
 title: 'PROVE(lean): q_gl_obstruction_calc.lean — 2 cited sorries [cited manuscript]'
-status: todo
+status: completed
 type: task
+priority: normal
 tags:
     - lean
     - cited-sorry
     - paper-qou
     - repo-infra
+    - reorg-2026-10-04
 created_at: 2026-08-01T23:31:09Z
-updated_at: 2026-08-01T23:31:09Z
+updated_at: 2026-10-04T15:22:43Z
 parent: qou-k1mq
 ---
 
@@ -31,3 +33,9 @@ parent: qou-k1mq
   - [manuscript] prop:q-gl-obstruction-calc
 - **Tractability:** Second conjunct of the q-GL obstruction calculation (same context theorem, distinct goal); repo categorical infra.
 - **Next step:** Blocked on in-repo scaffolding (not Mathlib). Complete/route the named repo infra, then discharge; do NOT weaken the statement.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] k1mq child: no real sorry left in target file. q_gl_obstruction_calc theorem uncond, 0 sorry

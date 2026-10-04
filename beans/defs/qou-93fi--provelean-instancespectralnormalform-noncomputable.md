@@ -1,15 +1,17 @@
 ---
 # qou-93fi
 title: 'PROVE(lean): instance:SpectralNormalForm — noncomputable instance : SpectralNormalForm  [cited manuscript]'
-status: todo
+status: scrapped
 type: task
+priority: normal
 tags:
     - lean
     - cited-sorry
     - paper-qou
     - infra-blocked
+    - reorg-2026-10-04
 created_at: 2026-08-01T23:31:00Z
-updated_at: 2026-08-01T23:31:00Z
+updated_at: 2026-10-04T15:22:36Z
 parent: qou-k1mq
 ---
 
@@ -22,3 +24,10 @@ parent: qou-k1mq
   - [manuscript] quantum-observable-universe/appendix-surreals/spectral-normal-form.ts
 - **Tractability:** §3b conjecture-instance: open QOU conjecture (surreal spectral normal form).
 - **Next step:** This sorry IS the open QOU conjecture (§3b instance). No proof attempt — it is the honest open marker. Close only by a genuine derivation, never a fabricated instance.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `cj46f` (work-plan reorganisation 2026-10-04). Evidence: [M] 'PROVE(lean): instance:SpectralNormalForm' (under qou-k1mq) and 'Conjecture carrier: SpectralNormalForm' (under b9cj, §3b) target the same Lean class; keep the §3b carrier as the P2 conjecture-fam
+Content is untouched; only this work item is closed.

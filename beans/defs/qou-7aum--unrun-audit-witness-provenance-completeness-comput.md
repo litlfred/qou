@@ -1,11 +1,13 @@
 ---
 # qou-7aum
 title: 'Unrun audit: witness provenance COMPLETENESS (computations/audits/) is red at 55 and is in no gate array'
-status: in-progress
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T15:46:27Z
-updated_at: 2026-08-21T15:46:38Z
+updated_at: 2026-10-04T15:14:18Z
 ---
 
 ## Which audit (the trap — read first)
@@ -68,3 +70,10 @@ Plus **1 PROV_PARSE_ERROR** (in none of the above): bean `qou-2ht2`.
    watch the `computation`-clobber (qou-j9yk) on each.
 4. **C3 (11)** — leave until 1–3 land; the disposition is a judgement about
    what `audit_only` means, not a fix.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-2r42` (work-plan reorganisation 2026-10-04). Evidence: [M] same audit: witness provenance completeness red at 55, in no gate array, same day
+Content is untouched; only this work item is closed.

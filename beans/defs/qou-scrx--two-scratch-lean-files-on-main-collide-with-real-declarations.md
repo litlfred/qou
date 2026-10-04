@@ -1,11 +1,13 @@
 ---
 # qou-scrx
 title: Two scratch_*.lean files on main duplicate real declarations — 6 collisions, 0 importers
-status: todo
+status: scrapped
 type: task
 priority: medium
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T08:00:00Z
-updated_at: 2026-09-02T22:07:14Z
+updated_at: 2026-10-04T15:26:09Z
 ---
 
 Found while running the `/prepare-merge` §4a duplicate-declaration gate on the
@@ -233,3 +235,10 @@ strictly redundant.
 
 The `ℤ[q^{±1}]` coefficient ring — `R` is still an arbitrary `CommRing`. That
 is the remaining half of `qou-skgn` route (3), recorded in the module docstring.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-cr3v` (work-plan reorganisation 2026-10-04). Evidence: same 6 FQN collisions from two scratch_*.lean files
+Content is untouched; only this work item is closed.

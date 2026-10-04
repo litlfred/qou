@@ -1,18 +1,19 @@
 ---
 # qou-v4if
 title: 'PROVE(lean): HadamardFactorization.lean — 3 cited sorries [cited manuscript]'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
+    - tractable
+    - reorg-2026-10-04
     - lean
     - cited-sorry
     - paper-qou
     - infra-blocked
     - repo-infra
-    - tractable
 created_at: 2026-08-01T23:31:06Z
-updated_at: 2026-08-08T07:40:00Z
+updated_at: 2026-10-04T15:13:33Z
 parent: qou-k1mq
 ---
 
@@ -198,3 +199,9 @@ name that target first — the current one does not hold.
 Audit: docs/audits/2026-08-08-hadamard-vs-liouville-route.md
 
 <!-- 2026-08-08T07:40:00Z branch claude/dg-scope-correction -->
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] HadamardFactorization.lean 0 real sorry (k1mq child "3 cited sorries" stale); open content continues in n4pv | STALLED: in-progress, last update 2026-08-08
