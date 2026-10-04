@@ -17,6 +17,7 @@ export {
   equation,
   diagram,
   table,
+  figure,
   simulator,
   section,
   sectionRef,

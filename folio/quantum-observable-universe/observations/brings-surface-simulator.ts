@@ -1,4 +1,4 @@
-import { simulator } from "../../../folio-assistant/cat-harness/schemas/builders";
+import { simulator } from "../../schema/builders";
 
 /**
  * Bring's Surface — quaternionic spectral resolvent visualisation.
