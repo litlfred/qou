@@ -1,11 +1,14 @@
 ---
 # qou-c64q
 title: 'GAP: def:frobenius-hopf-substrate has NO antipode axiom -- S is free data, so S^2 = id is independent (owner decision)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T18:01:40Z
-updated_at: 2026-09-15T08:44:53Z
+updated_at: 2026-10-04T15:12:50Z
+parent: qou-6qbv
 ---
 
 ## Measured 2026-09-14 (session: duality-sigma-hermitian-derivation)
@@ -280,3 +283,9 @@ INERT: nothing in the corpus satisfies that hypothesis, so they are archival.
 
 Audit: `docs/audits/2026-09-15-antipode-anti-automorphism-package.md` (incl. a
 red-team section against this change). PR pending.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-15 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -4,8 +4,11 @@ title: 'QuantumUniverse has no constructions: strengthening it is typecheck-free
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T03:12:45Z
-updated_at: 2026-08-16T03:16:59Z
+updated_at: 2026-10-04T15:23:07Z
+parent: qou-6qbv
 ---
 
 Opened while answering a caveat I raised on `qou-w1g8`: *"I have not verified

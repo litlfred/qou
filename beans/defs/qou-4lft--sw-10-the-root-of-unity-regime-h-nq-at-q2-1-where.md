@@ -4,8 +4,10 @@ title: 'SW-10: the root-of-unity regime — H_n(q) at q^2 = 1, where seminormal 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-19T13:43:42Z
-updated_at: 2026-08-19T19:55:53Z
+updated_at: 2026-10-04T15:24:39Z
 parent: qou-59vq
 ---
 

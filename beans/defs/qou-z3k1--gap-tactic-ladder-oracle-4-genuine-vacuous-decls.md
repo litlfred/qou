@@ -5,10 +5,12 @@ status: todo
 type: task
 priority: high
 tags:
-    - lean
     - vacuity
+    - reorg-2026-10-04
+    - lean
 created_at: 2026-08-08T00:05:00Z
-updated_at: 2026-09-05T09:08:08Z
+updated_at: 2026-10-04T15:14:54Z
+parent: qou-6qbv
 ---
 
 Four provable declarations assert nothing about the objects they name, and two

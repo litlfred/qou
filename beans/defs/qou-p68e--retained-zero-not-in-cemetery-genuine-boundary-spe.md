@@ -4,8 +4,11 @@ title: 'RETAINED: zero_not_in_cemetery — genuine boundary spec for CemeteryGro
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - close-candidate
 created_at: 2026-08-03T19:25:39Z
-updated_at: 2026-08-03T19:25:46Z
-parent: qou-ve5n
+updated_at: 2026-10-04T15:24:09Z
+parent: qou-6qbv
 ---
 

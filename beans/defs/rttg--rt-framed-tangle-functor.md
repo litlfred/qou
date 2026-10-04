@@ -1,11 +1,14 @@
 ---
 # rttg
 title: 'RT-2: framed-tangle category + Reshetikhin-Turaev ribbon functor'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T09:20:00Z
-updated_at: 2026-08-02T10:30:00Z
+updated_at: 2026-10-04T15:13:53Z
+parent: qou-o9ge
 ---
 
 Parent: rtep. TIER: LARGE (major Mathlib project, multi-month; not session-scale). The RT functor
@@ -56,3 +59,9 @@ What the scaffold contains:
    + braided + ribbon structure is prerequisite to (1)–(3). NOT started.
 
 Does NOT close `bwse` or `rttg`. Nothing wired to production; L2 unchanged (2/7).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-02 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -7,9 +7,10 @@ priority: high
 tags:
     - vacuity
     - issue-2472
+    - reorg-2026-10-04
 created_at: 2026-08-10T01:47:53Z
-updated_at: 2026-08-10T01:49:55Z
-parent: qou-5p7n
+updated_at: 2026-10-04T15:14:39Z
+parent: qou-6qbv
 ---
 
 **24 declarations** carrying a non-`[manuscript]` `-- Ref:` directly above a verbatim class-field projection, with no disclosure.

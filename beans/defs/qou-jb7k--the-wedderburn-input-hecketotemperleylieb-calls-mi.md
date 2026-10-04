@@ -4,9 +4,11 @@ title: The Wedderburn input HeckeToTemperleyLieb calls missing now EXISTS — bu
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-27T07:42:40Z
-updated_at: 2026-09-27T07:42:40Z
-parent: qou-weeq
+updated_at: 2026-10-04T15:25:02Z
+parent: qou-0cyu
 ---
 
 Measured 2026-09-27 while looking for the next step after

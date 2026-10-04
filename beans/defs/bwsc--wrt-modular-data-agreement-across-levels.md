@@ -4,8 +4,11 @@ title: 'bwS0-closure: WRT=modular-data agreement across enough roots (OPEN)'
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-27T00:30:00Z
-updated_at: 2026-09-03T04:45:09Z
+updated_at: 2026-10-04T15:14:42Z
+parent: qou-o9ge
 ---
 
 Parent: bws0. OPEN. Need bwS0(zeta_N) = d_{zeta_N}(lambda)/D for enough levels N to exceed the

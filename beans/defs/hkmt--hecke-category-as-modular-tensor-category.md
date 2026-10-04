@@ -4,8 +4,11 @@ title: 'BWH-1: the Hecke category as a modular tensor category (S,T from Markov 
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T09:20:00Z
-updated_at: 2026-08-02T09:20:00Z
+updated_at: 2026-10-04T15:14:42Z
+parent: qou-rtxm
 ---
 
 Parent: rtep. TIER: ACHIEVABLE INCREMENTALLY. Formalize the Hecke/Temperley-Lieb side AS a modular

@@ -4,8 +4,11 @@ title: 'bwS0-closure: WRT = BW-localization identification (irreducible cited in
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-27T00:30:00Z
-updated_at: 2026-08-02T09:00:00Z
+updated_at: 2026-10-04T15:16:50Z
+parent: qou-o9ge
 ---
 
 2026-08-02 (branch claude/bwsc-level7-wrt-targets-2026-08-02): DECOMPOSED, still OPEN. New Lean file

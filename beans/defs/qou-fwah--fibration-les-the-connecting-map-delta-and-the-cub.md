@@ -4,8 +4,11 @@ title: 'Fibration LES: the connecting map delta, and the cube-pair bridge'
 status: todo
 type: task
 priority: low
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T19:24:29Z
-updated_at: 2026-08-24T19:49:22Z
+updated_at: 2026-10-04T15:25:55Z
+parent: 08a2
 blocking:
     - qou-jbfx
 ---

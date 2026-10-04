@@ -9,9 +9,10 @@ tags:
     - hadamard
     - mathlib-gap
     - paper-qou
+    - reorg-2026-10-04
 created_at: 2026-08-08T03:30:00Z
-updated_at: 2026-08-08T07:10:00Z
-parent: qou-v4if
+updated_at: 2026-10-04T15:22:27Z
+parent: qou-t5uj
 ---
 
 ## Why

@@ -3,14 +3,16 @@
 title: 'PROVE(lean): cat_descended_is_base_mass.lean — 2 cited sorries [cited manuscript]'
 status: todo
 type: task
+priority: normal
 tags:
     - lean
     - cited-sorry
     - paper-qou
     - repo-infra
+    - reorg-2026-10-04
 created_at: 2026-08-01T23:31:08Z
-updated_at: 2026-08-01T23:31:08Z
-parent: qou-k1mq
+updated_at: 2026-10-04T15:22:23Z
+parent: qou-aabg
 ---
 
 **File:** `QOU/TopologicalMass/cat_descended_is_base_mass.lean` (QOU)  ·  2 cited sorry(s)

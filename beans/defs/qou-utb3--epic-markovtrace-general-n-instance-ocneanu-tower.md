@@ -2,8 +2,12 @@
 # qou-utb3
 title: 'EPIC: MarkovTrace general-n instance — Ocneanu tower route (unblocks TauFunctorReduction F-laws)'
 status: todo
-type: epic
+type: feature
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-25T13:00:16Z
-updated_at: 2026-07-25T13:00:16Z
+updated_at: 2026-10-04T15:15:17Z
+parent: qou-rtxm
 ---
 

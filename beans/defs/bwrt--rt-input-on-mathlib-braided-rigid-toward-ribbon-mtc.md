@@ -1,11 +1,14 @@
 ---
 # bwrt
 title: 'bwse-RT: ground input (RT) in Mathlib braided/rigid categorical dimension (toward ribbon-MTC)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T09:10:00Z
-updated_at: 2026-08-02T09:10:00Z
+updated_at: 2026-10-04T15:12:03Z
+parent: qou-o9ge
 ---
 
 Parent: bwse. Formalize input (RT) — the Reshetikhin-Turaev requirement that bwS0 is the RT surgery
@@ -27,3 +30,9 @@ remains the physics identification. Next possible steps: (a) prove qDimObj(𝟙_
 from Mathlib coherence — modest, removes vac_dim_one as a carried field; (b) define the modular
 S-matrix S_{μλ} categorically (double braiding trace) — larger; (c) the full RT surgery functor —
 multi-session Mathlib contribution, out of scope for a single session.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-02 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -5,9 +5,10 @@ status: todo
 type: task
 priority: high
 tags:
+    - reorg-2026-10-04
     - mathlib
 created_at: 2026-08-24T06:35:58Z
-updated_at: 2026-08-24T06:35:58Z
+updated_at: 2026-10-04T15:14:56Z
 parent: qou-c8p8
 ---
 

@@ -4,8 +4,12 @@ title: 'GAP: hup off-diagonal (DU-UD=I) on the Young lattice — the last brick 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - close-candidate
 created_at: 2026-08-21T19:57:29Z
-updated_at: 2026-09-08T05:15:30Z
+updated_at: 2026-10-04T15:20:06Z
+parent: qou-1oif
 ---
 
 ## What landed (2026-08-21, bean qou-wtny, PR #5403)

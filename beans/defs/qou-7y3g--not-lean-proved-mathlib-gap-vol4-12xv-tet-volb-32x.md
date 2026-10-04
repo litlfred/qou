@@ -4,8 +4,11 @@ title: 'NOT-LEAN-PROVED (Mathlib gap): Vol(4_1)=2xV_tet, Vol(B_3)=2xV_oct are nu
 status: todo
 type: task
 priority: low
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T17:10:12Z
-updated_at: 2026-08-07T17:10:12Z
+updated_at: 2026-10-04T15:25:59Z
+parent: qou-c8p8
 ---
 
 NOT LEAN-PROVED, and NOT REALISTICALLY CLOSABLE SOON — a large Mathlib gap.

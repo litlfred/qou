@@ -3,8 +3,12 @@
 title: 'Orbit-size classification: the 3-cell configuration to size map (1/2/3/6) with the size-2 hook'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T02:59:25Z
-updated_at: 2026-08-15T02:59:25Z
+updated_at: 2026-10-04T15:21:52Z
+parent: qou-1oif
 ---
 
 

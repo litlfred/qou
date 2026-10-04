@@ -1,11 +1,14 @@
 ---
 # qou-u87j
 title: 46 content-block .lean siblings mirror a library structure with a different field set, and all 46 mask its lean.ref
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T07:55:37Z
-updated_at: 2026-08-30T16:53:16Z
+updated_at: 2026-10-04T15:11:47Z
+parent: qou-6qbv
 ---
 
 
@@ -826,3 +829,9 @@ Note this is a class the guards cannot see: both audits parse `def`/`abbrev`
 heads, so a stale identifier reference inside a docstring is invisible to them
 and to the compiler alike. Not worth a detector; worth knowing that a rename's
 prose half has no gate at all.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -4,9 +4,13 @@ title: 'TASK: ten lean.refs with no formalisation — and two of them DO exist e
 status: todo
 type: task
 priority: medium
-tags: [lean, lean-ref]
+tags:
+    - lean
+    - lean-ref
+    - reorg-2026-10-04
 created_at: 2026-08-08T13:00:00Z
-updated_at: 2026-08-08T13:00:00Z
+updated_at: 2026-10-04T15:26:09Z
+parent: qou-6qbv
 ---
 
 Residue of the `lean.ref` drain (#4739). These blocks have **no sibling `.lean`

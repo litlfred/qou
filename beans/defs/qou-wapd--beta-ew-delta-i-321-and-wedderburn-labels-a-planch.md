@@ -1,11 +1,14 @@
 ---
 # qou-wapd
 title: beta_ew_delta_I_321_and_wedderburn labels a Plancherel-weighted sum a 'Markov trace' — it sends the identity to 11.139, not 1
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T12:23:07Z
-updated_at: 2026-09-05T12:52:48Z
+updated_at: 2026-10-04T15:12:00Z
+parent: qou-rtxm
 ---
 
 ## Finding, measured 2026-09-05 — `probes/beta_ew_weight_is_not_markov_probe.py` (4/4)
@@ -140,3 +143,9 @@ Also fixed: the evidence field was sorted(...)[:8] and `q_factorial` sorts NINTH
 in its own provenance set, so the witness recorded a provenance list not
 containing the name that decided the match — a true positive reading as a false
 one.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

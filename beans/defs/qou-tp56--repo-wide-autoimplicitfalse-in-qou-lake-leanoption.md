@@ -1,11 +1,14 @@
 ---
 # qou-tp56
 title: Repo-wide autoImplicit=false in qou Lake leanOptions (Mathlib-standard hygiene; prevents the zeta-notation auto-bound trap) — needs a FULL lake build to validate, CI or non-sandbox
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T03:14:24Z
-updated_at: 2026-08-19T12:35:32Z
+updated_at: 2026-10-04T15:13:47Z
+parent: qou-rtxm
 ---
 
 
@@ -38,3 +41,9 @@ lake-cache/qou-v4-24-0-autoimplicit-off from it (two sandbox attempts
 died at session limits at ~75 min each; do not run concurrently with
 another build). The four-day live soak is strong evidence but is not
 the recorded gate.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-19 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

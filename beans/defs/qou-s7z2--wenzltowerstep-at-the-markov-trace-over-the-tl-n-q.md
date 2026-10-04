@@ -4,8 +4,11 @@ title: WenzlTowerStep at the Markov trace over the TL_n quotient (successor to t
 status: in-progress
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T17:57:00Z
-updated_at: 2026-09-27T05:35:27Z
+updated_at: 2026-10-04T15:14:24Z
+parent: qou-rtxm
 ---
 
 Successor to qou-vndn, whose premise ("Hecke radical vanishing") is refuted at

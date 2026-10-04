@@ -1,11 +1,14 @@
 ---
 # qou-uinl
 title: 'Mathlib infra: orbit-quotient bridge + invariant-function count = the q=1 Schur-Weyl trace d^c(sigma)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T06:17:38Z
-updated_at: 2026-09-05T06:52:10Z
+updated_at: 2026-10-04T15:13:19Z
+parent: qou-59vq
 ---
 
 DONE 2026-09-05, sorry-free, lean-direct exit 0 in 3.0 s, zero warnings, #print
@@ -72,3 +75,9 @@ via PiTensorProduct.lift on the multilinear map v |-> (fun f => prod_i v i (f i)
 with inverse g |-> sum_f g f • tprod (single (f i) 1) and PiTensorProduct.induction_on
 for one direction. This IS the missing basis in the special case needed.
 DO NOT fake stage 2 with a sorry or an axiomatised structure if it does not close.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

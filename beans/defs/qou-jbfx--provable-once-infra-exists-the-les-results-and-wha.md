@@ -4,8 +4,11 @@ title: 'Provable once infra exists: the LES results and what each would buy'
 status: todo
 type: task
 priority: low
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T14:14:28Z
-updated_at: 2026-08-24T14:14:28Z
+updated_at: 2026-10-04T15:26:00Z
+parent: 08a2
 ---
 
 Blocked on `qou-pan0`. Recorded now so the payoff is costed **before** anyone

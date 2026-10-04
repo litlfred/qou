@@ -4,8 +4,11 @@ title: 'GAP: derive the branch-point count 6 from the five QOU axioms (the ONE m
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-15T06:16:39Z
-updated_at: 2026-09-15T09:43:22Z
+updated_at: 2026-10-04T15:14:52Z
+parent: qou-6qbv
 ---
 
 Child of `qou-51l1` (which established that the χ = −6 chain is

@@ -3,8 +3,12 @@
 title: 'elliptic_divisor_degree_zero: blocked on the argument principle'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T07:04:16Z
-updated_at: 2026-08-08T07:04:16Z
+updated_at: 2026-10-04T15:18:58Z
+parent: qou-rtxm
 ---
 
 `QOU/Mathlib/EllipticDivisorDegree.lean:229`.

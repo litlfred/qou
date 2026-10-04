@@ -3,8 +3,12 @@
 title: Reconcile the mu3 arc onto the canonical signed cyclic Markov trace (non-cyclic perblock vs tr_M)
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T09:09:03Z
-updated_at: 2026-08-07T09:09:03Z
+updated_at: 2026-10-04T15:23:16Z
+parent: qou-rtxm
 ---
 
 

@@ -4,9 +4,11 @@ title: 'FALSE: NonAbelianStokes.lean:10 credits Mathlib with manifold differenti
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T09:08:24Z
-updated_at: 2026-09-04T09:08:24Z
-parent: qou-8lxd
+updated_at: 2026-10-04T15:14:51Z
+parent: qou-c8p8
 ---
 
 **FALSE CLAIM.** `QOU/Mathlib/NonAbelianStokes.lean:10` (repeated at `:295`):

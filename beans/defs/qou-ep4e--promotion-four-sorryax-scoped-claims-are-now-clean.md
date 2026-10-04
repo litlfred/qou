@@ -3,8 +3,12 @@
 title: 'PROMOTION: four sorryAx-scoped claims are now clean and their scoping is stale'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T09:20:35Z
-updated_at: 2026-08-30T09:20:35Z
+updated_at: 2026-10-04T15:22:15Z
+parent: qou-6qbv
 ---
 
 Surfaced by lean-axiom-guard while running /prepare-merge on PR 6096 (the Roth arc). NOT this
@@ -35,4 +39,3 @@ nobody acts on it the message is simply not printed again in any way that distin
 the ordinary clean run, so this bean is the durable record.
 
 Related: o1b7 (wire rskBurnsideHolds), qou-0cyu (the TL/Hecke chain programme), agrd.
-

@@ -1,7 +1,7 @@
 ---
 # bday
 title: Audit what the birthday axioms actually establish — they admit a two-valued model
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
@@ -9,9 +9,10 @@ tags:
     - surreals
     - axiom-audit
     - stale-claim-corrected
+    - reorg-2026-10-04
 created_at: 2026-08-10T01:35:00Z
-updated_at: 2026-09-04T09:56:56Z
-parent: hypr
+updated_at: 2026-10-04T15:10:49Z
+parent: qou-6qbv
 ---
 
 Follows from the finding proved in `QOU/AppendixSurreals/HyperrealLimitTransfer.lean`
@@ -942,3 +943,9 @@ the degenerate instance and see what survives. `bday` names 11 modules for the
 surreals; the class is corpus-wide.
 
 Audit: docs/audits/2026-09-03-sibling-lean-compile-sweep.md §"Precedent check".
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

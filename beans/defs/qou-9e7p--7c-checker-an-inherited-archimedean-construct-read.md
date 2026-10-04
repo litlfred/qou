@@ -4,8 +4,11 @@ title: '§7c checker: an inherited archimedean construct reads as gratuitous R'
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T16:45:03Z
-updated_at: 2026-09-26T18:05:07Z
+updated_at: 2026-10-04T15:25:43Z
+parent: qou-rtxm
 ---
 
 ## The false positive

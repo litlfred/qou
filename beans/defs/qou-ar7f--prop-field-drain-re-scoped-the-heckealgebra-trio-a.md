@@ -4,8 +4,12 @@ title: 'Prop-field drain re-scoped: the HeckeAlgebra trio are SHADOWS, and wenzl
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-09-03T13:45:21Z
-updated_at: 2026-09-03T21:47:54Z
+updated_at: 2026-10-04T15:22:15Z
+parent: qou-59vq
 ---
 
 Measured 2026-09-03 while draining the `Prop`-valued-field category the cited-not-proved audit added (#6491). The drain is **not** 96 independent reshapes, and `QOU/Mathlib/HeckeAlgebra.lean` — which has four of them, i.e. the Hecke representation theory the mass derivation runs through — is the worked case.

@@ -4,9 +4,11 @@ title: 'HALF-FALSE: ContactDistributionRank.lean:97 says Mathlib has no exterior
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T09:08:25Z
-updated_at: 2026-09-04T09:08:25Z
-parent: qou-8lxd
+updated_at: 2026-10-04T15:20:42Z
+parent: qou-c8p8
 ---
 
 **HALF-FALSE CLAIM — and the wrong half is the one that matters for the file's route.**

@@ -1,11 +1,14 @@
 ---
 # qou-e6db
 title: Formalize HOMFLY + braid closure in Lean — the sole residue of MFW (split from qou-9ttb)
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T19:25:24Z
-updated_at: 2026-08-29T08:28:11Z
+updated_at: 2026-10-04T15:12:38Z
+parent: qou-0cyu
 ---
 
 ## Why this bean exists
@@ -756,3 +759,9 @@ full length, cover `Fin n` exactly. Until that lands,
 `(verdictsFor w k).length = 2` is unavailable and `Descending` is a
 well-formed definition whose two-entry structure rests on an undischarged
 fact. That is real mathematics, not plumbing.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-29 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

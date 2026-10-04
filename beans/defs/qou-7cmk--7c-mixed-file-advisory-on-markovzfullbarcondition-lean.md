@@ -4,8 +4,11 @@ title: '§7c mixed-file advisory on MarkovZFullBarCondition.lean (branch-introdu
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T15:55:00Z
-updated_at: 2026-08-15T15:55:00Z
+updated_at: 2026-10-04T15:25:43Z
+parent: qou-rtxm
 ---
 
 ## What

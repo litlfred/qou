@@ -4,9 +4,14 @@ title: 'GAP: a redundant `q_real : ℝ` shadows the inherited substrate paramete
 status: todo
 type: task
 priority: high
-tags: [lean, soundness, wall-side]
+tags:
+    - wall-side
+    - reorg-2026-10-04
+    - lean
+    - soundness
 created_at: 2026-08-08T13:30:00Z
-updated_at: 2026-08-08T13:30:00Z
+updated_at: 2026-10-04T15:14:52Z
+parent: qou-rtxm
 ---
 
 Surfaced by the `qou-mtcx` base-ring refactor (PR #4756) as a side effect. It is

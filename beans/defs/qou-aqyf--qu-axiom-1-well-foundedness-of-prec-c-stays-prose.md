@@ -3,8 +3,12 @@
 title: 'QU axiom 1: well-foundedness of prec_c stays prose-only (encoding would be vacuous)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-14T19:52:57Z
-updated_at: 2026-08-14T19:52:57Z
+updated_at: 2026-10-04T15:23:06Z
+parent: qou-6qbv
 ---
 
 

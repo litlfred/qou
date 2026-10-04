@@ -4,9 +4,11 @@ title: 'UPSTREAM: contact structures and contact forms — Mathlib has none (mea
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T09:08:08Z
-updated_at: 2026-09-04T09:08:08Z
-parent: qou-8lxd
+updated_at: 2026-10-04T15:25:20Z
+parent: qou-c8p8
 ---
 
 **UPSTREAM.** Mathlib has **no contact geometry at all**, measured 2026-09-04 against

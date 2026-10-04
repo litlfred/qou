@@ -4,8 +4,11 @@ title: 'RESCOPED: does H_n(q) admit a SECOND Markov trace at N=3 — the Ocneanu
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T12:51:20Z
-updated_at: 2026-09-05T17:05:00Z
+updated_at: 2026-10-04T15:24:03Z
+parent: qou-rtxm
 ---
 
 Opened 2026-09-05 from `qou-wapd`. Not started.

@@ -4,8 +4,11 @@ title: 'Formalisation backlog: 57 blocks whose lean.ref names a declaration that
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T23:25:59Z
-updated_at: 2026-08-22T09:56:25Z
+updated_at: 2026-10-04T15:19:16Z
+parent: qou-6qbv
 ---
 
 Owner directive 2026-08-15: **keep these refs, bean them** — do not delete.

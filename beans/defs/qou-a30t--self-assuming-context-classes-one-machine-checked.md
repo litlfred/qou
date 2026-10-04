@@ -1,11 +1,14 @@
 ---
 # qou-a30t
 title: 'Self-assuming context classes: one machine-checked criterion for four ledger patterns (46 live genuine entries)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-12T12:02:39Z
-updated_at: 2026-09-14T08:56:13Z
+updated_at: 2026-10-04T15:13:54Z
+parent: qou-6qbv
 ---
 
 ## The criterion (2026-09-12, PR #7208)
@@ -428,3 +431,9 @@ I closed were **parameterised**, so by your criterion they need the statability 
   than measured.
 
 Neither is a claim that parameterising was optimal; it is the test you asked for, applied.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-14 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

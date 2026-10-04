@@ -1,11 +1,14 @@
 ---
 # qou-zut2
 title: Ext^1 = Z for the mixed-channel extension contradicts H_n(q0) semisimplicity
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T20:05:49Z
-updated_at: 2026-08-24T20:46:23Z
+updated_at: 2026-10-04T15:12:31Z
+parent: qou-59vq
 ---
 
 Raised while building route 2 to the topological charge (QOU/Mathlib/ExtensionClass.lean, 2026-08-24).
@@ -248,3 +251,9 @@ that Ext^1 supplies no obstruction. Four content files in total:
 `phase-transitions-intro.md`, `phase-transition-boundary.{md,ts,lean}`,
 `phase-transition-interpretation.{md,ts}`,
 `composite-crossing-sublimation-criteria.{md,ts}`.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-24 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -3,8 +3,12 @@
 title: 'GAP: Markov-trace axioms had forall-bound parameters that collapsed tr_M to zero'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T15:43:35Z
-updated_at: 2026-08-08T15:43:35Z
+updated_at: 2026-10-04T15:20:12Z
+parent: qou-rtxm
 ---
 
 

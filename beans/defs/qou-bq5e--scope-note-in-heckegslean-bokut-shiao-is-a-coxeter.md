@@ -3,8 +3,12 @@
 title: 'Scope note in HeckeGS.lean: Bokut-Shiao is a Coxeter-GROUP theorem and there is no general-Coxeter GS theorem'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T18:28:44Z
-updated_at: 2026-08-09T18:28:44Z
+updated_at: 2026-10-04T15:24:20Z
+parent: qou-1o8n
 ---
 
 `content/unital-groebner-bases/lean/UGB/GrobnerShirshov/HeckeGS.lean` now

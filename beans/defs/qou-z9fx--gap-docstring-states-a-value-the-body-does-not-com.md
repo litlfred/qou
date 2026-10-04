@@ -4,8 +4,11 @@ title: 'GAP: docstring-states-a-VALUE the body does not compute — the schurEle
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T21:41:57Z
-updated_at: 2026-09-04T09:25:00Z
+updated_at: 2026-10-04T15:14:53Z
+parent: qou-6qbv
 ---
 
 Proposed on [#5857](https://github.com/litlfred/qou/pull/5857) by the sibling

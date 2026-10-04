@@ -1,11 +1,14 @@
 ---
 # qou-hjf4
 title: Triage the 11 unread trivially-inhabiting-instance candidates
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T14:36:01Z
-updated_at: 2026-09-14T16:04:10Z
+updated_at: 2026-10-04T15:14:15Z
+parent: qou-6qbv
 ---
 
 From `scripts/trivially-inhabiting-instance-census.py` (PR #5621, audit
@@ -226,3 +229,9 @@ Remaining in this bean: the 11 unread trivially-inhabiting-instance candidates
 (unchanged) and the detector-blindness note added 2026-09-14 (the census gates
 on a CONSTANT data field, so a field that is a fitted FUNCTION of `q` is
 structurally invisible to it).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-14 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

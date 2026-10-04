@@ -1,11 +1,14 @@
 ---
 # qou-fngs
 title: 'Vacuous: instance canonical makes GBFiltrationCollapsesAtE2 free for every R'
-status: in-progress
+status: todo
 type: bug
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T14:13:08Z
-updated_at: 2026-09-03T04:29:38Z
+updated_at: 2026-10-04T15:10:45Z
+parent: qou-6qbv
 ---
 
 `QOU/Mathlib/SpectralSequence.lean:125`:
@@ -343,3 +346,9 @@ Both sentences read the page/column index and the GB-depth as one index. They ar
 ### Still open, and unchanged by any of the above
 
 **The concentration itself.** Nothing shows the Gröbner-filtration spectral sequence of `H_n(R,q)` is concentrated in the `p = 0` column. That is `S-GB-spectral-collapse`, it is what the binding-energy exactness rests on, and it is still an assertion. What is no longer assumed is the step from concentration to collapse.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

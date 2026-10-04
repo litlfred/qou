@@ -4,8 +4,11 @@ title: prop:brings-smoothness-resolution is a PROPOSITION whose cited Lean proof
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-12T12:19:32Z
-updated_at: 2026-09-12T12:19:33Z
+updated_at: 2026-10-04T15:15:01Z
+parent: qou-6qbv
 ---
 
 ## The finding (2026-09-12, PR #7208)
