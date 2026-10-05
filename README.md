@@ -307,7 +307,7 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.MassEndomorphism.*` | `9 files` |
 | `QOU.MassTheory.*` | `177 files` |
 | `QOU.Mathlib.*` | `212 files` |
-| `QOU.MathlibExt.*` | `180 files` |
+| `QOU.MathlibExt.*` | `181 files` |
 | `QOU.Molecular.*` | `11 files` |
 | `QOU.Observations.*` | `14 files` |
 | `QOU.OneDim.*` | `3 files` |
@@ -323,7 +323,7 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.QuantumObservableUniverses.*` | `12 files` |
 | `QOU.QuantumUniverse.*` | `1 files` |
 | `QOU.Resurgence.*` | `4 files` |
-| `QOU.SchurWeyl.*` | `85 files` |
+| `QOU.SchurWeyl.*` | `97 files` |
 | `QOU.Shared.*` | `7 files` |
 | `QOU.StandardModel.*` | `22 files` |
 | `QOU.Substrate.*` | `6 files` |
@@ -522,7 +522,8 @@ The compute pipeline is layered into reusable packages so external researchers c
 |----------|---------|
 | `build-lean-mcp.yml` | Build Paper Assistant Image |
 | `build.yml` | build |
-| `doc-gen4.yml` | Build Lean Documentation (doc-gen4) |
+| `compute-qa.yml` | compute-QA (all gates, publish to qa-reports) |
+| `kg-vocabulary-gate.yml` | kg-vocabulary-gate |
 | `lake-cache-refresh.yml` | Lake cache refresh (orphan-branch family) |
 | `lean-axiom-guard.yml` | lean-axiom-guard |
 | `lean-content-siblings.yml` | lean-content-siblings |
