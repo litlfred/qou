@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:10:15Z
-updated_at: 2026-10-05T11:35:34Z
+updated_at: 2026-10-05T11:39:23Z
 parent: qou-n4r9
 ---
 
@@ -22,3 +22,6 @@ Owner hard rule: no math or physics content is changed. Every story ends with a 
 - README: readme:sync:check was red (folio:toc, lean-coverage, lean-modules, workflows). A plain sync would have RENAMED the paper in the README to 'Quantum Observable Universe', taken from folio/folio.ts's paperRef title, a third copy of the title that identity.ts (bean qou-yqko) was made to end. Fixed at the source: folio.ts now carries 'On the Mechanics of Quantum Observable Universes'. It is a literal, not an import of paperIdentity, because the generator reads folio.ts as text (an import made it fall back to the directory name). After that, the sync changes only Lean module counts and the workflow list, and check exits 0.
 - Still open in S3: (3) audit the 786 .tex tables against the 444 table blocks and REPORT tables that exist only in .tex, never dropping content; (4) the broader folio_init layout conformance.
 Parity: no .lean, witness or content .md change; the only folio/ edit is folio.ts's paperRef title.
+
+
+2026-10-05 — END-TO-END PUBLISH VERIFIED. compute-qa.py --all at PR head e36739a7a1 (19 gates, the 2 setup gates excluded) was published with qa-store under pr/7518/e36739a7a123f404bed2bad8587157604445ac94: PUBLISHED on attempt 1, commit c804129bdc. This created refs/heads/cat/cat-harness/qa-reports in qou. Read back with `qa-store.ts read`: q0-anchor-flip.json returned intact (exit 0). The key is the PR's own, so no main/<sha> entry was spent.
