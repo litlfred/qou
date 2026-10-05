@@ -1,14 +1,14 @@
 ---
 # qou-kumy
 title: '[TOOLS T6] witness-refresh BPMN process over run_pipeline.py (+ the overnight drivers)'
-status: in-progress
+status: completed
 type: feature
 priority: normal
 tags:
     - migration
     - tools
 created_at: 2026-10-04T16:35:42Z
-updated_at: 2026-10-05T08:42:52Z
+updated_at: 2026-10-05T10:10:38Z
 parent: qou-k3er
 ---
 
@@ -25,3 +25,11 @@ Owner hard rule: no math or physics content is changed. Done-when must include t
 - Dry run measured: 227 scripts would run; tree unchanged afterwards.
 - Parity: computations/folio/lean index sha unchanged; no witness/lean/md diff.
 Still open: answer platform bean folio-assistant-1l13.
+
+
+2026-10-05 — merged as litlfred/qou#7514 (rebase-merge, 78cd14e878). Done-when, item by item:
+- process loads in workflow_list: workflow_list = processFiles + loadProcessModel (cat-harness-tools/src/tools/workflow.ts:152-156); both verified on qou.
+- dry run identical to run_pipeline.py --dry-run: the plan Tool IS that command (227 scripts).
+- no witness rewritten: index sha over computations/folio/lean unchanged.
+- f-a bean 1l13 answered: litlfred/folio-assistant#2169, merged as 8006002b24 (measured that witness-pipeline.yml cannot run from the platform; the owner decision stays open there).
+The '+ overnight drivers' half is split to qou-hmji: all three drivers are broken as written, so they need an owner decision (repair or retire) before they become Tools.
