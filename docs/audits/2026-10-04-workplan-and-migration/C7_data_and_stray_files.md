@@ -21,4 +21,15 @@ was renamed to `folio/`, so it says nothing about how old a file is.
 | 10 | `folio/bach2013-double-slit/` (a `paperRef`) | tagged `imported`; 3 remarks without `interprets` | `folio.ts` | **owner:** paper, or library entry? |
 | 11 | `folio/visualizer/` (a `paperRef`) | 3 blocks that define viewer-state types and carry `lean.ref` | `folio.ts`; also why `validate-references` needs `--paper` | **owner:** paper, or viewer/tile? |
 
-Parity (P-C): this file is the only change. No `folio/` blob moved.
+Parity (P-C), at classification time: this file was the only change. The rulings below changed the files they name.
+
+## Owner rulings, 2026-10-05
+
+Approved all four groups.
+
+- **Rows 1–3, regenerated.** `foreshadows.json` (`build-foreshadows.ts`: 558 blocks, 953 effective edges), `glossary.json` (`build-glossary.ts`: 45 entries, 0 duplicates) and `lean-coverage.json` (`refresh-authors-note.ts`: 739/750 provable sorry-free, 85 primary conjectures, 75 class-axiomatised). `authors-note.md` already matched, so no prose changed.
+- **Rows 6–7, moved** to `fsh-guts/deprecated/folio-strays/` with a README.
+- **Row 4, JWST: left byte-identical.** The owner gave its provenance: the numbers were taken from the internet (the file's own `dataset` field cites Kokorev et al. 2026, GLIMPSE-17775). So it is external observational data, not a computation. Making it a cited library dataset (the `reference-dataset-ingestion` skill) is a possible follow-up, and nothing is done to it here.
+- **Rows 5, 8–11, kept.** For row 5 and the rest of the bibliography the owner asked for a migration plan. It is in bean `qou-f2ri` (C5) and the plan document `C5_bib_references_migration_plan.md`.
+
+Parity: no `.md`, `.lean` or `.ts` content blob changed. The diff is the three regenerated index `.json` files and the four moved scripts.
