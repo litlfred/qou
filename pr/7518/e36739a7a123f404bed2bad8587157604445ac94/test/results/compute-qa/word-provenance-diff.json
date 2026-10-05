@@ -1,0 +1,15 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "word-provenance-diff",
+  "node": "Task_Words",
+  "title": "Fail on new hardcoded word literals",
+  "verdict": "pass",
+  "reason": "",
+  "mode": "strict",
+  "exit_codes": [
+    0
+  ],
+  "seconds": 0.1,
+  "output_sha256": "08c849c6d1c1734426ab2b92b43a1c73a00763d30d620f1dc34b65e56f8a0d30",
+  "output_head": "word-provenance-gate: nothing to scan -- 0 of 1 named file(s) in scope (computations/), 0 missing. This is NOT a pass; it means no in-scope file was handed to the gate."
+}

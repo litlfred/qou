@@ -1,0 +1,15 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "probe-float64-survey",
+  "node": "Task_Probe",
+  "title": "probe-float64 survey (informational)",
+  "verdict": "pass",
+  "reason": "",
+  "mode": "advisory",
+  "exit_codes": [
+    0
+  ],
+  "seconds": 31.6,
+  "output_sha256": "bc93122384fec443d001562c6ade84c0dc7ed6c61cec1f029b3fc0d8f4ceb58d",
+  "output_head": "\ncomputations/_b0vf_chi_branch_decomp.py\n  computations/_b0vf_chi_branch_decomp.py:60  [float-call]  float(...) -- use int(nint(x)) to pull an integer out of an mpf\n  computations/_b0vf_chi_branch_decomp.py:61  [float-call]  float(...) -- use int(nint(x)) to pull an integer out of an mpf\n\ncomputations/_deprecated/a3_tr_M_symbolic.py\n  computations/_deprecated/a3_tr_M_symbolic.py:40  [float-call]  float(...) -- use int(nint(x)) to pull an integer out of an mpf\n  computations/_deprecated/a3_tr_M_symbolic.py:61  [float-call]  float(...) -- use int(nint(x)) to pull an integer out of an mpf\n\ncomputations/_deprecated/algebraic_primality_probe.py\n  computations/_deprecated/algebraic_primality_probe.py:66  [float-call]  float(...) -- use int(nint(x)) to pull an integer out of an mpf\n\ncomputations/_deprecated/all-nuclei-transfer-matrix.py\n  computations/_deprecated/all-nuclei-transfer-matrix.py:22  [float64-module]  import math"
+}

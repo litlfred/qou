@@ -1,0 +1,16 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "import-time-dps",
+  "node": "Task_Precision",
+  "title": "import-time dps ratchet",
+  "verdict": "fail",
+  "reason": "gate exited 1",
+  "mode": "strict",
+  "exit_codes": [
+    0,
+    1
+  ],
+  "seconds": 8.0,
+  "output_sha256": "6877449898fe8fb3aa47acbb6554116b5975b1d9f1269295ddb06913d4cdb273",
+  "output_head": "SELF-TEST PASSED \u2014 12 cases: lossy literals detected, exactly-representable ones not flagged.\nmodule-scope mpf built before precision is raised: 33  [witness-emitting scripts]\n   proven lossy (literal arg): 7\n   position-risky (expr arg, not statically provable): 26\nfiles affected: 20\n\n  computations/borromean-axial-coupling.py  (4)\n      L376: mpf(<expr>)  [expr]\n      L378: mpf(<expr>)  [expr]\n      L384: mpf(<expr>)  [expr]\n  computations/borromean_binding_recompute.py  (3)\n      L175: mpf(<expr>)  [expr]\n      L175: mpf(<expr>)  [expr]\n      L175: mpf(<expr>)  [expr]\n  computations/probes/one_loop_cusp_normalisation_tension_probe.py  (3)\n      L152: mpf(<expr>)  [expr]"
+}

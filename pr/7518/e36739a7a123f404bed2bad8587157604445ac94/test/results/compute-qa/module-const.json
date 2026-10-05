@@ -1,0 +1,16 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "module-const",
+  "node": "Task_Precision",
+  "title": "module-const precision gate",
+  "verdict": "pass",
+  "reason": "",
+  "mode": "strict",
+  "exit_codes": [
+    0,
+    0
+  ],
+  "seconds": 6.5,
+  "output_sha256": "3e6dc10fce58647cfcd4d41a26b2f28636e53e9c90dd76bbd314da767a66015d",
+  "output_head": "  ok    no raise anywhere: constant is at 15 dps   (want 1, got 1)\n  ok    raise is inside main(), not at module scope \u2014 the m_tau shape   (want 1, got 1)\n  ok    raised at module scope BEFORE the constant   (want 0, got 0)\n  ok    mp.mp.dps set before the constant   (want 0, got 0)\n  ok    raised at module scope but AFTER the constant   (want 1, got 1)\n  ok    exactly representable \u2014 nothing lost at 53 bits   (want 0, got 0)\n  ok    17 significant digits \u2014 LOSSY, not merely a padding risk   (want 1, got 1)\n  ok    a division at 15 dps is caught via its operands   (want 2, got 2)\n  ok    raise indented inside a module-level try: still runs at import   (want 0, got 0)\n  ok    constant itself inside a module-level try, with no raise   (want 1, got 1)\n  ok    inside a function: runs after main() raised precision, out of scope   (want 0, got 0)\n  ok    no mpmath in the file at all   (want 0, got 0)\n  ok    non-literal argument is unknowable, never guessed   (want 0, got 0)\n  ok    tier of '12.776095278687214'     (want LOSSY, got LOSSY)\n  ok    tier of '3477.23'                (want PADDING_RISK, got PADDING_RISK)\n  ok    tier of '1e-25'                  (want PADDING_RISK, got PADDING_RISK)\n\n16/16 passed\nmodule-const-precision: mpf constants built before precision is raised\n\n  LOSSY        (>15 sig digits, truncated at construction) :    0\n  PADDING_RISK (survives, but prints the f64 tail)      :   41\n  across 20 file(s)\n"
+}

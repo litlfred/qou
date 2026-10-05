@@ -1,0 +1,15 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "word-provenance-selftest",
+  "node": "Task_Words",
+  "title": "Detector self-test (known positive)",
+  "verdict": "pass",
+  "reason": "",
+  "mode": "strict",
+  "exit_codes": [
+    0
+  ],
+  "seconds": 0.1,
+  "output_sha256": "c2e3cf4413acce881bbcfc27273f6c3e1e059ef0dc6a52492aa1bf5493018548",
+  "output_head": "word-provenance-gate: self-test passed (9/9)"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "staleness-report",
+  "node": "Task_Staleness",
+  "title": "Witness staleness (warn-mode)",
+  "verdict": "pass",
+  "reason": "",
+  "mode": "warn",
+  "exit_codes": [
+    1
+  ],
+  "seconds": 8.4,
+  "output_sha256": "760a53c1d81e5addc76bb7669af69522eaddfa56b3172c6c809725dd58450c12",
+  "output_head": "Checked 3839 witnesses.\n  upstream edges:   263 declare upstream_witness_hashes (6.9% adoption); 419 drift records.\n  self-staleness:   796 self-stale (scriptHash != current producer); 893 unverifiable/unresolved.\n  transitive:       39 additionally stale via upstream propagation (recorded edges only).\n\nUpstream drift detail:\n  - flavor-dressed-mass-from-substrate-split.witness.json \u2192 probe-flavor-split-substrate.witness.json: upstream_missing\n      recorded: 6c8a6fb1caf207899619096b81b965f4f3f4a097d923743c96297b5c6e4896e0\n  - a3-mirror-residual-reconciliation.witness.json \u2192 per-bond-growth-a3.witness.json: sha256_mismatch\n      recorded: 6e187a84f13fef26687538acfd613c021151560dd31cddd64ece2e604107c884\n      current:  3257b8f42010d4b560cf33ce3a0e8c723abd1b712bd899f1dd50fb484244f427\n  - alpha-k-jones-markov-h12.witness.json \u2192 q-pinning-50-digit.witness.json: sha256_mismatch\n      recorded: 29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f\n      current:  8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837\n  - atomic-mass-via-rho-k.witness.json \u2192 atomic-tr-m-mpfr-50dps-proton.witness.json: sha256_mismatch\n      recorded: c74ec58d263e01428a868dd1e155ae89b96d9eeb7cf92bfd4b7b94ab46f30440\n      current:  cc7d2ad418bd4d5d7e96e2a641db38a53c3bbe826a623e818e1982d7204dfc47\n  - qbeta-multiblock-order-audit.witness.json \u2192 qbeta-per-block-paper-closed-forms.witness.json: sha256_mismatch\n      recorded: 5111d4d8d33fe4c23095c35d848fe64919afa369ec04f3a5602a865b332d131a\n      current:  c6f4efff7cc172d9ef921d4f0cf0ad41653cddb4c87e5cc572cb2c6b5a7d09b8"
+}

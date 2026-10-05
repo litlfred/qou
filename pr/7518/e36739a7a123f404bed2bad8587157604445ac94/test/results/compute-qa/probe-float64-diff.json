@@ -1,0 +1,15 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "probe-float64-diff",
+  "node": "Task_Probe",
+  "title": "Fail on new float64 entry points",
+  "verdict": "pass",
+  "reason": "",
+  "mode": "strict",
+  "exit_codes": [
+    0
+  ],
+  "seconds": 0.1,
+  "output_sha256": "96086c4320b7c6e5ddc36b7e66e51b307d887220530bb5a5d169629f8437fc7c",
+  "output_head": "probe-float64-guard: nothing to scan -- 0 of 1 named file(s) in scope (computations/), 0 missing. This is NOT a pass; it means no in-scope file was handed to the gate."
+}

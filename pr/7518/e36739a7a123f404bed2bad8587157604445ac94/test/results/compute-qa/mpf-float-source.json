@@ -1,0 +1,16 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "mpf-float-source",
+  "node": "Task_Precision",
+  "title": "mpf(<float>) source audit (strict)",
+  "verdict": "pass",
+  "reason": "",
+  "mode": "strict",
+  "exit_codes": [
+    0,
+    0
+  ],
+  "seconds": 16.9,
+  "output_sha256": "4493ef23b55f07538ab57d3d6992c09cec9a22b1d75d6e13278f1f352b7e45f8",
+  "output_head": "SELF-TEST PASSED \u2014 8 cases: non-representable literals flagged, exactly-representable ones not.\n==========================================================================\nmpf(<float>) SOURCE AUDIT \u2014 fake precision at the point of authoring\n==========================================================================\n  DEFECT             0   literal not exactly a binary64 \u2014 precision already lost\n  benign            16   exactly representable \u2014 nothing lost\n  advisory-cast     20   explicit float() downcast \u2014 review, not a failure\n  marked-cast        1   downcast marked `float64-intentional`\n  unparseable        0   FILE DOES NOT PARSE \u2014 this gate is blind to it\n  unreadable         0   FILE COULD NOT BE READ \u2014 this gate is blind to it\n\n  \u2713 no mpf(<non-representable float literal>) in the source tree\n\n  advisory \u2014 explicit float() downcasts (mark deliberate ones with"
+}

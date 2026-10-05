@@ -1,0 +1,15 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "pyhecke-tests",
+  "node": "Task_LpDual",
+  "title": "Unit tests \u2014 provenance, the rescue, and every backend site",
+  "verdict": "pass",
+  "reason": "",
+  "mode": "strict",
+  "exit_codes": [
+    0
+  ],
+  "seconds": 12.6,
+  "output_sha256": "275314a448e1c88ec7386819c33312a649a09e77bac4b4ff77fc292ade340502",
+  "output_head": "..........................................sssssss..................ssss. [ 24%]\n.sss.........................sssssssssssssssssssssssssssssssssssss...... [ 49%]\n........................................................................ [ 74%]\n........................................................................ [ 98%]\n...                                                                      [100%]\n=============================== warnings summary ===============================\ntests/test_gram_values.py::test_pyhecke_gram_atom_per_generator_volumes_matches_hecke_core\n  /tmp/claude-0/-home-user/fa74cf12-13ff-55c3-8e0d-1fc9f8a618bf/scratchpad/pub/tools/pyhecke/tests/test_gram_values.py:299: DeprecationWarning: atom_per_generator_volumes uses H_3 Wedderburn weights for A=12 atom (Z=6, N=6); H_{3A}=36 weights are correct. See docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md. Migrate to mass_at_3A_proper.per_generator_V_hat_3A.\n    py = hecke_core.atom_per_generator_volumes(6, 6)\n\ntests/test_gram_values.py::test_pyhecke_gram_atom_per_generator_volumes_matches_hecke_core\n  /tmp/claude-0/-home-user/fa74cf12-13ff-55c3-8e0d-1fc9f8a618bf/scratchpad/pub/tools/pyhecke/python/pyhecke/gram.py:1160: DeprecationWarning: atom_per_generator_volumes uses H_3 Wedderburn weights for A=12 atom (Z=6, N=6); H_{3A}=36 weights are correct. See docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md. Migrate to mass_at_3A_proper.per_generator_V_hat_3A.\n    return hecke_core.atom_per_generator_volumes(\n"
+}

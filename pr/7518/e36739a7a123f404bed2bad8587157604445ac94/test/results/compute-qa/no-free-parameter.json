@@ -1,0 +1,16 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "no-free-parameter",
+  "node": "Task_Precision",
+  "title": "No-free-parameter certificate",
+  "verdict": "pass",
+  "reason": "",
+  "mode": "warn",
+  "exit_codes": [
+    0,
+    1
+  ],
+  "seconds": 2.6,
+  "output_sha256": "d732e6394c15be74c5a3f0afa7e9672a69b0f4b7b6e9cace82fbb6b44fd7ffbc",
+  "output_head": "SELF-TEST PASSED \u2014 classifier separates 14 synthetic cases (unit/structural vs fitted) correctly.\n==========================================================================\nNO-FREE-PARAMETER CERTIFICATE \u2014 canonical prediction path (T5)\n==========================================================================\n  per entry point:\n    OK binding_K_direct               7 mods    0 untraceable   0 unresolved   (per-isotope binding)\n    OK canonical_mass                11 mods    0 untraceable   0 unresolved   (absolute nucleon mass (m_p, m_n))\n    OK meson_mass_from_hecke          8 mods    0 untraceable   0 unresolved   (meson ratios (m_K/m_pi))\n    OK per_observable_100x_status    10 mods    0 untraceable   0 unresolved   (the L2 dashboard \u2014 all seven scored observables)\n    !! qbeta_t4_stokes3_crux_probe    2 mods    1 untraceable   0 unresolved   (theta channel \u2014 the T4 inversion)\n\n  modules in closure: 17\n  unit/structural   : 26\n  adjudicated legit : 0\n  UNTRACEABLE       : 1\n\n  KNOWN FREE PARAMETERS (adjudicated \u2014 do NOT re-litigate; the\n  gate fails on these BY DESIGN until the parameter is eliminated):\n    qbeta_t4_stokes3_crux_probe.py:60    3                        -> A_omega\n        A_omega = 3 is the GGM literature value of a Stokes datum, imported"
+}

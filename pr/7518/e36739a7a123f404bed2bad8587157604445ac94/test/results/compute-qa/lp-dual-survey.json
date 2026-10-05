@@ -1,0 +1,15 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "lp-dual-survey",
+  "node": "Task_LpDual",
+  "title": "LP-dual survey (informational)",
+  "verdict": "pass",
+  "reason": "",
+  "mode": "advisory",
+  "exit_codes": [
+    0
+  ],
+  "seconds": 0.5,
+  "output_sha256": "17d76c371a3a74f498e8b04b9a35982ecdb627f13a9dfdffa0afa4c4240bb19c",
+  "output_head": "Scanned 3523 witness files; 31 flagged as LP/SDP/operator-selection.\n\n\u2139 2 flagged witness(es) record a float64 solve for a measured reason (F64_BACKEND_EXEMPT):\n  \u00b7  deuteron-real-sdp.witness.json   backend=scipy-highs\n     The phase-B methods stack extra equality rows onto A_eq, which the canonical `solve_operator_selection_lp` cannot express \u2014 it takes the net row plus Gx >= 0 and nothing else. So this is a raw scipy solve of a genuinely different LP, with no MPFR path today: the same gap `solve_frobenius_dual_lp` has, and for the same reason. It records `backend` honestly rather than dropping into the unannotated bucket, which is exactly the laundering this list exists to make unnecessary. Bean `qou/ftuv`.\n  \u00b7  rho-k-h3a-gg-trajectory.witness.json   backend=scipy-highs\n     t = 1/(dim_q \u00b7 |y\u00b7\u03c7|) with a 1e-15 floor spans 1.1 \u2026 1e15, a cost dynamic range of 15 orders. Clarabel's interior-point method returns a false `infeasible` on it (all nucleons NaN) where HiGHS's simplex solves it. Not precision \u2014 167/333/500 bits fail identically \u2014 and not fixable by rescaling, which shifts magnitude but not the ratio between entries. Measured 2026-08-23, bean `qou/ftuv`.\n\n\u2139 8 flagged witness(es) record no backend at all \u2014 produced before the field existed. Reported, not failed: the gate ratchets on NEW float64 solves.\n\nWARN \u2014 6/31 flagged witnesses missing LP dual fields.\n\nSample (first 10):\n  \u2717  benzene-assembly-spine.witness.json"
+}

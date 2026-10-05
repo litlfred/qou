@@ -1,0 +1,15 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "q0-value-drift",
+  "node": "Task_Staleness",
+  "title": "q0-value drift ratchet",
+  "verdict": "fail",
+  "reason": "gate exited 1",
+  "mode": "strict",
+  "exit_codes": [
+    1
+  ],
+  "seconds": 3.4,
+  "output_sha256": "23c5e1a7d5a63c6d8cfa6e177db5418704728648f5a53a58dd11eb5f974bddad",
+  "output_head": "==========================================================================\nq0-VALUE DRIFT AUDIT\n==========================================================================\n  canonical       82  (CAL-2 muon pin \u2014 the computations/ convention)\n  proton-pin    2590  (documented physical-observations layer \u2014 legitimate)\n  STALE          207\n  unknown         25\n  TOTAL         2904 q0-bearing fields in *.witness.json\n\n  stale total: 207   baseline: 329   NEW: 5\n\n  NEW stale (not in baseline) \u2014 fix by RE-RUNNING THE PRODUCER,\n  never by hand-editing the number:\n    computations/_deprecated/alpha-high-precision.witness.json  q_0  (-0.0769 ppb)"
+}

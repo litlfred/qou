@@ -1,0 +1,16 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "mpf-context-dps",
+  "node": "Task_Precision",
+  "title": "mp.dps no-op gate",
+  "verdict": "pass",
+  "reason": "",
+  "mode": "strict",
+  "exit_codes": [
+    0,
+    0
+  ],
+  "seconds": 13.9,
+  "output_sha256": "7a20cb6b80e3e56f6066ea083c4508a0a329e940ea316ae105435a3165beeb79",
+  "output_head": "  ok    module alias, module scope   (want 1, got 1)\n  ok    module alias, indented in try   (want 1, got 1)\n  ok    no alias   (want 1, got 1)\n  ok    prec, not just dps   (want 1, got 1)\n  ok    inside a function   (want 1, got 1)\n  ok    context via from-import   (want 0, got 0)\n  ok    context, aliased   (want 0, got 0)\n  ok    correct module form   (want 0, got 0)\n  ok    both bindings present   (want 0, got 0)\n  ok    reading, not assigning   (want 0, got 0)\n  ok    docstring mentioning mp.dps = 60   (want 0, got 0)\n  ok    comment mentioning it   (want 0, got 0)\n  ok    no mpmath at all   (want 0, got 0)\n\n13/13 passed\nmpf-context-dps: clean \u2014 no no-op precision assignments in gated paths."
+}

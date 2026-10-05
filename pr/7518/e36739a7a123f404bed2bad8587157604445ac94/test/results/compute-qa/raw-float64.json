@@ -1,0 +1,16 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "raw-float64",
+  "node": "Task_Precision",
+  "title": "raw-float64 ratchet",
+  "verdict": "pass",
+  "reason": "",
+  "mode": "strict",
+  "exit_codes": [
+    0,
+    0
+  ],
+  "seconds": 2.7,
+  "output_sha256": "fff024875033c3a31ae63c1be92dbe881d194ac3e38cc55765224d5ce4163928",
+  "output_head": "SELF-TEST PASSED \u2014 37 cases: raw float64 detected in plain/exponent/nested/negative form; strings, ints and bools not flagged; an f64 with a >17-digit *_str companion treated as a shadow, and one with a same-precision *_str still counted (the laundering guard).\n==========================================================================\nRAW-FLOAT64 AUDIT \u2014 float64 that entered a witness at all\n==========================================================================\n  witnesses carrying raw float64 : 975\n  total raw float64 fields       : 25,396\n  f64-integrator carve-out       : 65 field(s) in 3 witness(es)  [NOT drained \u2014 declared precision_tier='float64-integrator']\n          29  computations/qns-crow-efolds-probe.witness.json\n          19  computations/qns-backscatter-sustainment-probe.witness.json\n          17  computations/qns-tail-pileup-probe.witness.json\n  deprecated-f64 carve-out       : 91,732 field(s) in 6 witness(es)  [NOT drained \u2014 declared precision_tier='float64' + deprecated, i.e. exploratory and retired rather than rewritten]\n      22,750  computations/a_operator/A-operator-extract-h9-pp.witness.json\n      22,738  computations/a_operator/A-operator-extract-h9-pn.witness.json\n      17,559  computations/sublemma-2-1-A-operator-extract-h9-pn.witness.json"
+}

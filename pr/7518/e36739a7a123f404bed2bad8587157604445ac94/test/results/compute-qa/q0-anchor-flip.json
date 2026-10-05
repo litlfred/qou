@@ -1,0 +1,15 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "q0-anchor-flip",
+  "node": "Task_Staleness",
+  "title": "q0-anchor flip detector (strict)",
+  "verdict": "fail",
+  "reason": "gate exited 1",
+  "mode": "strict",
+  "exit_codes": [
+    1
+  ],
+  "seconds": 1.7,
+  "output_sha256": "f5bb0104fe54340f575553015fdca5646ece25c9c528486f53c434fcece08236",
+  "output_head": "======================================================================\nq\u2080-anchor consistency audit \u2014 muon/proton flip detector\n======================================================================\n  Q0_OK               : 1499\n  Q0_AMBIGUOUS        : 7\n  Q0_AMBIGUOUS_NO_REASON: 12\n  Q0_INDEPENDENT      : 175\n  Q0_INDEPENDENT_NO_REASON: 5\n  Q0_COMPARISON       : 30\n  Q0_COMPARISON_NO_REASON: 0\n  Q0_COMPARISON_NO_VALUES: 0\n  Q0_ANCHOR_MISSING   : 1657\n  Q0_VALUE_MISSING    : 26\n  Q0_AUDIT_EXEMPT     : 91"
+}

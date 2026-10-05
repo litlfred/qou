@@ -1,0 +1,15 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "word-provenance-survey",
+  "node": "Task_Words",
+  "title": "word-provenance survey (informational)",
+  "verdict": "pass",
+  "reason": "",
+  "mode": "advisory",
+  "exit_codes": [
+    0
+  ],
+  "seconds": 16.6,
+  "output_sha256": "d5ccf12c54de4584c0e791afe9292b719e8befd5a4db6a8b3a1a21c143e143df",
+  "output_head": "  computations/deltalambda/he4_binding_k_stage2_probe.py:217  [word-literal]  repro_word = repro_word = [(1, 6), (1, 7), (-1, 9), (1, 8), (-1, 7)]\n  computations/derived_chi_catalogue_matrix_m.py:695  [word-literal]  hopf_word = hopf_word = [(1, 1), (1, 2), (1, 1)]\n  computations/derived_chi_catalogue_matrix_m.py:705  [word-literal]  mixed_word = mixed_word = [(1, 1), (1, 2), (1, 3), (-1, 2)]\n  computations/habiro/qbeta_h4_stagec_markov_infra.py:99  [word-literal]  extra_words = extra_words = [(0, 0), (1, 1), (0, 0, 1)]\n  computations/iterative_knot_builder.py:169  [word-literal]  sequence = sequence = [\n  computations/option_b_proton_mass_full_chain.py:124  [word-literal]  PROTON_WORD = PROTON_WORD   = [(1, 7), (2, 4)]\n  computations/probe3qrv.py:24  [word-literal]  bor_interleaved = bor_interleaved = [(1.0, 0.0, 0), (1.0, -hn, 1)] * 3\n  computations/probe3qrv.py:25  [word-literal]  bor_grouped = bor_grouped = [(1.0, 0.0, 0)] * 3 + [(1.0, -hn, 1)] * 3\n  computations/probe3qrv_ocneanu.py:37  [word-literal]  BOR = BOR = [(0, \"sigma\"), (1, \"sigma_inv\")] * 3\n  computations/probe3qrv_tl.py:32  [word-literal]  BOR_CROSSINGS = BOR_CROSSINGS = [(0, \"sigma\"), (1, \"sigma_inv\")] * 3   # (s_0 s_1^-1)^3\n  computations/probes/bond_response_junction_factorisation_probe.py:75  [word-literal]  BOND = BOND = [(2, \"sigma\"), (3, \"sigma_inv\")] * 3   # V1^3, the canonical right-borrowing bond\n  computations/probes/chi_content_eigenbasis_probe.py:92  [word-literal]  DELTA2 = DELTA2 = [(0, 'sigma'), (1, 'sigma')] * 3  # full twist (\u03c3\u2080\u03c3\u2081)\u00b3 \u2208 Z(H\u2083)\n  computations/probes/eigenbasis_structural_lemmas_probe.py:146  [word-literal]  DELTA2 = DELTA2 = [(0, 'sigma'), (1, 'sigma')] * 3\n  computations/probes/probe_convention_d_vs_c_borromean.py:125  [word-literal]  bor_crossings = bor_crossings = [(0, \"sigma\"), (1, \"sigma_inv\")] * 3"
+}
