@@ -41,7 +41,7 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 universe u v
 
-attribute [local instance] QuantumUniverse.catInst QuantumUniverse.monInst
+attribute [local instance] QuantumUniverse.catInst QuantumUniverse.monInst QuantumUniverse.braidedInst
 
 /-- **Observation** as a categorical endomorphism `O : A → A` in `C`.
 

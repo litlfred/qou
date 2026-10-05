@@ -51,9 +51,9 @@ universe u v
 
     LaTeX: `\label{def:categorical-q-ext-deriv}` -/
 structure CategoricalQExtDeriv (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] where
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] where
   /-- The Frobenius–Hopf object `A` in `C`. -/
-  frobHopf : @FrobeniusHopfData C _ _
+  frobHopf : @FrobeniusHopfData C _ _ _
   /-- The classical differential `d : Ωᵏ(A) → Ωᵏ⁺¹(A)`. -/
   d_classical : frobHopf.obj ⟶ frobHopf.obj
   /-- The vertical projection `π_V`. -/
@@ -77,7 +77,7 @@ structure CategoricalQExtDeriv (C : Type u) [CategoryTheory.Category.{v} C]
 
 /-- The horizontal projection `π_H = id − π_V`. -/
 def CategoricalQExtDeriv.proj_H {C : Type u}
-    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C]
     (cqd : CategoricalQExtDeriv C) : cqd.frobHopf.obj ⟶ cqd.frobHopf.obj :=
   𝟙 _ - cqd.proj_V
@@ -86,7 +86,7 @@ def CategoricalQExtDeriv.proj_H {C : Type u}
     In a preadditive ℝ-linear category, this is the explicit linear combination.
     This is the categorical analogue of `qExtDeriv`. -/
 noncomputable def CategoricalQExtDeriv.dq {C : Type u}
-    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear R_q C]
     (cqd : CategoricalQExtDeriv C) : cqd.frobHopf.obj ⟶ cqd.frobHopf.obj :=
   -- d_q = q⁻¹ · d + (1 − q⁻¹) · (π_V ≫ d), with `q⁻¹` supplied by `qinv`
@@ -94,7 +94,7 @@ noncomputable def CategoricalQExtDeriv.dq {C : Type u}
 
 /-- When `q = 1`, `d_q` reduces to `d`. -/
 theorem CategoricalQExtDeriv.dq_classical {C : Type u}
-    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear R_q C]
     (cqd : CategoricalQExtDeriv C) (hq : cqd.q = 1) :
     cqd.dq = cqd.d_classical := by
