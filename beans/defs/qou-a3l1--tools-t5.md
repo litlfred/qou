@@ -8,7 +8,7 @@ tags:
     - migration
     - tools
 created_at: 2026-10-04T16:35:42Z
-updated_at: 2026-10-05T07:38:18Z
+updated_at: 2026-10-05T08:19:20Z
 parent: qou-k3er
 ---
 
@@ -39,3 +39,8 @@ witness:parity (with the folio-assistant#2166 fixes) over the 13 cheapest conten
   - 4 differ ONLY by two provenance fields, q0Anchor and q0Value, which the current witness library stamps and these older witnesses lack; every number is identical (qbessel-jackson-contiguity, qbessel-second-order-qdifference-equation, qbeta-qbessel-contiguity-cfinite, qbeta-silver-rationals);
   - 2 differ in content with the script unchanged: rho-k-h3a-refinement (same crossings, different order) and **habiro-frobenius-probe**, where one Frobenius value moved from `u - 1` to `-23u^3+15u^2-6u+29` (imag 0.2378 → -24.59) under an identical scriptHash a845e9dd84ad, i.e. drift in something it imports.
 No witness was edited. Refreshing them means re-running producers, an owner call under the ask-first rule.
+
+
+
+## 2026-10-05: 4 provenance-only witnesses refreshed (owner approved)
+qbessel-jackson-contiguity, qbessel-second-order-qdifference-equation, qbeta-qbessel-contiguity-cfinite and qbeta-silver-rationals were re-run, adding q0Anchor=proton and q0Value. No assertion or data value changed (+24/-16). witness:parity now reads all four as **pass**, so the sample becomes 5 pass, 6 unknown, 2 fail. The 2 remaining fails (rho-k-h3a-refinement, habiro-frobenius-probe) are real content differences under unchanged scripts and await the owner's judgement.
