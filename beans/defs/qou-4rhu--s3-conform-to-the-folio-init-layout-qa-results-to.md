@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:10:15Z
-updated_at: 2026-10-05T11:39:23Z
+updated_at: 2026-10-05T12:02:46Z
 parent: qou-n4r9
 ---
 
@@ -25,3 +25,12 @@ Parity: no .lean, witness or content .md change; the only folio/ edit is folio.t
 
 
 2026-10-05 — END-TO-END PUBLISH VERIFIED. compute-qa.py --all at PR head e36739a7a1 (19 gates, the 2 setup gates excluded) was published with qa-store under pr/7518/e36739a7a123f404bed2bad8587157604445ac94: PUBLISHED on attempt 1, commit c804129bdc. This created refs/heads/cat/cat-harness/qa-reports in qou. Read back with `qa-store.ts read`: q0-anchor-flip.json returned intact (exit 0). The key is the PR's own, so no main/<sha> entry was spent.
+
+
+2026-10-05 — part 3 (.tex tables) MEASURED: docs/audits/2026-10-04-workplan-and-migration/S3_tex_tables{.tsv,_report.md}.
+- 4 tracked .tex files. All 786 tabulars are in ONE generated file, qou-all-tables.tex, a stale snapshot of make-all-tables.py output last touched in b7accffcbc. No hand-written .tex holds a content table.
+- 444 table blocks confirmed. 786 is not 444 plus 342 orphans: markdown pipe tables in non-table blocks also render to tabulars (remark 167, proof 54, proposition 37, conjecture 34, prose 23, ...).
+- 784 of 787 matched to a current block; 3 are the platform legend.
+- ONE table exists only in .tex: qou-all-tables.tex:15472 '[appendix-surreals] #12', an 11-row development-history table (rounds 1-11, commits 12202fb0..710039e7). It is recoverable from b7accffcbc. OWNER DECISION: leave it, or restore it as an authorNotes entry. Default if nobody answers: nothing changes.
+- Recommendation (judgement): treat qou-all-tables.tex as derived output, and retire the '786' figure rather than updating it.
+Remaining in S3: part 4, folio_init layout conformance.
