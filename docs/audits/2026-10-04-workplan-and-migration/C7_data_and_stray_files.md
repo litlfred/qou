@@ -30,6 +30,6 @@ Approved all four groups.
 - **Rows 1–3, regenerated.** `foreshadows.json` (`build-foreshadows.ts`: 558 blocks, 953 effective edges), `glossary.json` (`build-glossary.ts`: 45 entries, 0 duplicates) and `lean-coverage.json` (`refresh-authors-note.ts`: 739/750 provable sorry-free, 85 primary conjectures, 75 class-axiomatised). `authors-note.md` already matched, so no prose changed.
 - **Rows 6–7, moved** to `fsh-guts/deprecated/folio-strays/` with a README.
 - **Row 4, JWST: left byte-identical.** The owner gave its provenance: the numbers were taken from the internet (the file's own `dataset` field cites Kokorev et al. 2026, GLIMPSE-17775). So it is external observational data, not a computation. Making it a cited library dataset (the `reference-dataset-ingestion` skill) is a possible follow-up, and nothing is done to it here.
-- **Rows 5, 8–11, kept.** For row 5 and the rest of the bibliography the owner asked for a migration plan. It is in bean `qou-f2ri` (C5) and the plan document `C5_bib_references_migration_plan.md`.
+- **Rows 5, 8–11, kept.** For row 5 and the rest of the bibliography the owner asked for a migration plan. It is in `C9_bib_references_migration_plan.md` and issue litlfred/qou#7528. (C5, `qou-f2ri`, is editorial cross-references, not the bibliography.)
 
 Parity: no `.md`, `.lean` or `.ts` content blob changed. The diff is the three regenerated index `.json` files and the four moved scripts.
