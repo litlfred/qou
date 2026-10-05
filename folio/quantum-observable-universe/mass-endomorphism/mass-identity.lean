@@ -104,7 +104,7 @@ theorem scalarMass_nonneg {R : Type*} [NormedCommRing R]
     This uses the canonical `FrobeniusHopfData` from quantum-universe.lean
     to maintain type consistency with the foundational definitions. -/
 -- Ref: [manuscript] §3, Definition: Mass (categorical trace)
-def massComposite {C : Type u} [Category.{v} C] [MonoidalCategory C]
+def massComposite {C : Type u} [Category.{v} C] [MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C) : fh.obj ⟶ (𝟙_ C) ⊗ fh.obj :=
   fh.comul ≫ (fh.frobeniusForm ▷ fh.obj)
 
