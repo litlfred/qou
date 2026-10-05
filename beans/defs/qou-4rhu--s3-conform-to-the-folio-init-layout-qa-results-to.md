@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:10:15Z
-updated_at: 2026-10-05T12:02:46Z
+updated_at: 2026-10-05T13:38:45Z
 parent: qou-n4r9
 ---
 
@@ -34,3 +34,6 @@ Parity: no .lean, witness or content .md change; the only folio/ edit is folio.t
 - ONE table exists only in .tex: qou-all-tables.tex:15472 '[appendix-surreals] #12', an 11-row development-history table (rounds 1-11, commits 12202fb0..710039e7). It is recoverable from b7accffcbc. OWNER DECISION: leave it, or restore it as an authorNotes entry. Default if nobody answers: nothing changes.
 - Recommendation (judgement): treat qou-all-tables.tex as derived output, and retire the '786' figure rather than updating it.
 Remaining in S3: part 4, folio_init layout conformance.
+
+
+2026-10-05 — owner: 'fix all', taking the recommendation on the one table that exists only in .tex ('[appendix-surreals] #12', an 11-row development history): LEAVE IT. It is a status-history table, probably dropped on purpose, and it stays recoverable from b7accffcbc:qou-all-tables.tex. Nothing restored. qou-all-tables.tex is treated as derived output.
