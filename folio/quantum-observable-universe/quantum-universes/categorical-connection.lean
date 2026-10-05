@@ -40,7 +40,7 @@ universe u v
     LaTeX: `\label{def:categorical-connection}`
     Ref: [kock2004] -/
 structure CategoricalConnection (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C) where
   /-- The object of 1-forms `Ω¹` in `C`. -/
   Omega1 : C
@@ -64,7 +64,7 @@ structure CategoricalConnection (C : Type u) [CategoryTheory.Category.{v} C]
     i.e. `V` is a left `A`-module in `C`.  (Auxiliary structure used in
     the definition of the categorical action functional.) -/
 structure ModuleAction (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C) where
   /-- The object `V` acted upon. -/
   target : C

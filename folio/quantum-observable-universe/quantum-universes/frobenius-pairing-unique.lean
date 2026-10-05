@@ -59,7 +59,7 @@ universe u v
     C)` axiom. -/
 -- Ref: [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
 axiom FrobeniusHopfData.frobeniusForm_unique_axiom
-    {C : Type u} [Category.{v} C] [MonoidalCategory C]
+    {C : Type u} [Category.{v} C] [MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [Limits.HasZeroMorphisms C]
     (fh₁ fh₂ : FrobeniusHopfData C)
     (hobj : fh₁.obj = fh₂.obj)
@@ -75,7 +75,7 @@ axiom FrobeniusHopfData.frobeniusForm_unique_axiom
     C)` claim originally written here. -/
 -- Ref: [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
 theorem FrobeniusHopfData.frobeniusForm_unique
-    {C : Type u} [Category.{v} C] [MonoidalCategory C]
+    {C : Type u} [Category.{v} C] [MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [Limits.HasZeroMorphisms C]
     (fh₁ fh₂ : FrobeniusHopfData C)
     (hobj : fh₁.obj = fh₂.obj)

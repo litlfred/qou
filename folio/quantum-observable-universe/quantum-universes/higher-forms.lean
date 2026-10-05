@@ -39,10 +39,10 @@ universe u v
 
     LaTeX: `\label{def:higher-forms}` -/
 structure HigherForms (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Limits.HasZeroMorphisms C] where
   /-- The underlying Frobenius–Hopf object `A`. -/
-  frobHopf : @FrobeniusHopfData C _ _
+  frobHopf : @FrobeniusHopfData C _ _ _
   /-- The degree-`k` form object `Ωᵏ(A)` in `C`. -/
   formObj : ℕ → C
   /-- `Ω⁰(A) = A`. -/

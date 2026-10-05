@@ -47,7 +47,7 @@ universe u v
     identities.  This is the categorical content of "the Frobenius
     pairing exists and its adjoint `A → A∨` is an isomorphism". -/
 structure NonDegenerateFrobeniusPairing
-    {C : Type u} [Category.{v} C] [MonoidalCategory C]
+    {C : Type u} [Category.{v} C] [MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C) where
   /-- The pairing morphism `⟨·,·⟩ : A ⊗ A → 𝟙`. -/
   pairing : (fh.obj ⊗ fh.obj) ⟶ (𝟙_ C)
@@ -75,7 +75,7 @@ structure NonDegenerateFrobeniusPairing
     rewriting of `pairing_eq`. -/
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004 (Ch 2)
 def FrobeniusHopfData.nonDegeneratePairing
-    {C : Type u} [Category.{v} C] [MonoidalCategory C]
+    {C : Type u} [Category.{v} C] [MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C) : NonDegenerateFrobeniusPairing fh where
   pairing := fh.mul ≫ fh.frobeniusForm
   pairing_eq := rfl
@@ -100,9 +100,10 @@ def FrobeniusHopfData.nonDegeneratePairing
 noncomputable def FrobeniusHopfData.frobeniusForm_exists
     {R : Type*} [CommRing R] (qu : QuantumUniverse.{u, v} R) :
     Nonempty
-      (@NonDegenerateFrobeniusPairing qu.C qu.catInst qu.monInst qu.frobHopf) :=
+      (@NonDegenerateFrobeniusPairing qu.C qu.catInst qu.monInst qu.braidedInst qu.frobHopf) :=
   letI := qu.catInst
   letI := qu.monInst
+  letI := qu.braidedInst
   ⟨qu.frobHopf.nonDegeneratePairing⟩
 
 end QOU
