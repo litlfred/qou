@@ -1,0 +1,41 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "gorsky-gukov-stosic2013",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 241,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1304.3481v1/1304.3481v1.pdf"
+        },
+        "id": "gorsky-gukov-stosic2013",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Identity confirmed from the document's own cover (arXiv:1304.3481v1 [math.QA], quadruply-graded coloured homology of knots, three authors) and matches the seeded key. Citation status is NOT 'cited': the ref() entry exists (references.ts:4950) but grep over content/ finds no `\\cite{}`, no `[gorsky-gukov-stosic2013]` and no cites-array entry \u2014 a bib orphan. Its only appearance is docs/audits/2026-08-02-aomega-conditional-gukov-stosic-bps-bridge.md:24, an audit whose subject IS the A_omega/BPS bridge; the Lean file that audit produced, QOU/QBeta/StokesDTBPSBridge.lean, cites garoufalidis-gu-marino2023peacock and gukov-pei-putrov-vafa2017 but NOT this one. So the reference was gathered during that investigation and never landed at a block. Worth noting honestly: the document's content is conjectural (its abstract opens 'We conjecture the existence of four independent gradings'), and the folio's own bridge file is explicit that it carries the identifications as class fields rather than as established facts, so leaving this uncited is a defensible editorial choice rather than an omission. Supporting: same programme, no result the corpus currently consumes.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "The audit that gathered this reference produced a Lean file which deliberately cites only the two sources whose statements it carries as class fields. Adding a third, itself-conjectural citation would not strengthen the bridge and could blur which inputs are being assumed.",
+              "target": "QOU.QBeta.StokesDTBPSBridge"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "d0840f2775c0"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "susskind2018",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 265,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1810.11563v1/1810.11563v1.pdf"
+        },
+        "id": "susskind2018",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Lecture notes on quantum complexity and black holes: the complexity/entropy analogy, a second law of complexity, complexity growth as the black-hole interior's volume growth, firewalls as periods of non-increasing complexity, and 'uncomplexity' as a computational resource. rem:p-vs-np-event-horizon opens by claiming to 'formally establish a structural identity between computational complexity and jet horizon information loss', reformulating P vs NP as a horizon boundary condition, and cites nothing -- while an established research programme identifying computational complexity with black-hole horizon geometry exists and is exactly what this document reviews. That is a scholarly-positioning gap, not a mathematical one: nothing in the corpus block is wrong, and this document supplies no lemma the corpus consumes, so it is supporting rather than core. The value is that a referee will ask 'how does this relate to the complexity/horizon literature?' and the block currently has no answer. Note also that the two 'complexities' are not the same object -- the corpus's is worst-case circuit/time complexity of NP-complete decision problems, the document's is minimal-circuit-size complexity of a quantum state -- so any citation must position, not equate.",
+          "keyResults": [
+            {
+              "locator": "Lecture II (second law of complexity and the black-hole interior)",
+              "statement": "Quantum state complexity grows linearly for a time exponential in the entropy before saturating, and this growth is dual to the growth of the black-hole interior; non-increasing complexity is where firewall behaviour appears.",
+              "useForFolio": "Prior art for the complexity-equals-horizon-geometry identification that rem:p-vs-np-event-horizon asserts as its own structural identity; citing it lets the block state what is new in its version.",
+              "targets": [
+                "rem:p-vs-np-event-horizon",
+                "def:computational-horizon"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The block asserts a complexity-horizon structural identity with zero prior-art citation; the reference is the minimum needed to position the claim.",
+              "target": "rem:p-vs-np-event-horizon",
+              "bean": "qou-0775"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "8e17ac8b91bc"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    },
+    {
+      "position": 266,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1810.11563v1/1810.11563v1.pdf"
+        },
+        "id": "susskind2018",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Written-up lecture series on quantum complexity and black hole interiors: the complexity/entropy analogy and a second law of complexity, the relation between non-increasing complexity and firewalls, and the thermodynamics of complexity with 'uncomplexity' as a computational resource. Same programme as the complexity-equals-action upload in this slice, in pedagogical form. Same judgement: the corpus's information-theory chapter shares the subject matter (horizons, computation, information loss) but has none of the machinery \u2014 no holographic dual, no complexity measure on states, no relative-complexity metric \u2014 and grep finds no corpus mention of complexity growth, uncomplexity, or firewalls. Note also that this file is byte-identical (md5 d6b2d238...) to library/arxiv-1810.11563v1/1810.11563v1.pdf, so the upload directory carries it twice. Scope-(a): this document, as read, supplies nothing usable here; that is not a claim the complexity programme is irrelevant to the folio's horizon blocks.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Read and judged to need nothing. Recorded against the horizon/computation block that would have been the docking point.",
+              "target": "rem:p-vs-np-event-horizon"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "8e17ac8b91bc"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "das2022",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 291,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2211.13362v2/2211.13362v2.pdf"
+        },
+        "id": "das2022",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Argues that a full theoretical account of the double-slit experiment requires the JOINT position-and-time distribution of detection (whose position marginal is the familiar fringe pattern), notes there is no consensus quantum time observable, and computes the joint distribution within Bohmian mechanics for a Gaussian packet through a double slit and for a slit shut during flight; it concludes that sufficient longitudinal spread is needed for the temporal aspect to be non-classical, and illustrates against a published helium-atom joint position-time dataset. The corpus does have a double-slit cluster (q-double-slit, double-slit-analytical, double-slit-massive-pattern, double-slit-two-modes), so the subject overlaps genuinely. But those blocks are intensity-envelope simulators \u2014 a q-deformed fringe prediction validated against an electron dataset (bach2013, the only citation in the cluster) \u2014 with no trajectory ontology, no arrival-time observable, and no joint distribution anywhere. The paper's result is a statement about a time observable in a framework the corpus does not have, so there is no place here that wants it. Scope-(a): this document, as read, supplies nothing this folio can consume; it is not a claim that arrival-time structure is irrelevant to a q-deformed interference model.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Read and judged to need nothing. If the folio ever states a q-deformed prediction for detection TIME rather than position, this becomes a live comparison; today it has no such statement.",
+              "target": "folio/quantum-observable-universe/observations/double-slit-analytical.md"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "3becbeaa1135"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

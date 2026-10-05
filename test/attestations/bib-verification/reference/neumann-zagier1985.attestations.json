@@ -1,0 +1,135 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "neumann-zagier1985",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 89,
+      "entry": {
+        "id": "neumann-zagier1985",
+        "status": "partial",
+        "verified_at": "2026-05-19T16:00:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 1,
+        "fix_commit": "(this commit)",
+        "note": "1 bare-URL Ref upgraded with title+author+year form.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1016/0040-9383(85)90004-7"
+        }
+      }
+    },
+    {
+      "position": 202,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds.pdf"
+        },
+        "id": "neumann-zagier1985",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED from front matter (volume, issue and page range match the registered entry). Scanned and OCR-degraded, but readable. This is the most consumed key in my slice after yekutieli2010 (~40 sites across mass-theory, mass-endomorphism, q-geometric-langlands, appendix-surreals, nuclear-interactions and QOU/QBeta/*). I verified the sharpest and most falsifiable claim made against it \u2014 the parity assertion at folio/quantum-observable-universe/lean/QOU/Knot/NeumannZagierParity.lean:75, '(v(u) is odd in u; the potential is even)'. The Lemma 4.1 argument establishes that the ratio tau_i(u) = v_i/u_i is an even function of each of its arguments on the whole parameter neighbourhood, which gives v odd in u; the volume computation later concludes 'This is an even function of u, as desired'; and \u00a71 independently notes the coordinates can be chosen so the dependence is odd, with higher-order terms at least third order 'since v is an odd function'. The Lean's parenthetical is therefore an accurate one-line summary of the document's own \u00a74-5 parity structure, not paraphrase drift. Remaining citations are locator-free and conventional (complex volume; the deformation parameter u).",
+          "keyResults": [
+            {
+              "locator": "Lemma 4.1(a)-(b), \u00a74",
+              "statement": "The ratio tau_i(u) = v_i/u_i is an even function of each deformation parameter; equivalently v(u) is odd in u and the volume/potential is even in u.",
+              "useForFolio": "The literature source for the bar-parity face of the potential that the QBeta parity modules assume.",
+              "targets": [
+                "QOU.Knot.NeumannZagierParity",
+                "QOU.MassTheory.NZBarEvenVolumeFace"
+              ]
+            },
+            {
+              "locator": "\u00a71 (deformation coordinates)",
+              "statement": "Deformations of the hyperbolic structure are holomorphically parametrized by u in a neighbourhood of the origin in C^h, with the Dehn-surgery parameters a discrete subset.",
+              "useForFolio": "The deformed-cusp setting conj:shared-denominator-cusp-holonomy and the meridian-holonomy carrier work in.",
+              "targets": [
+                "conj:shared-denominator-cusp-holonomy"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "The one genuinely checkable claim made against this source is verified in its own \u00a74-5; the remaining citations are conventional and locator-free. Nothing to correct.",
+              "target": "QOU.Knot.NeumannZagierParity"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "e52b539e0f06"
+        }
+      }
+    },
+    {
+      "position": 203,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/1-s20-0040938385900047-main/1-s2.0-0040938385900047-main.pdf"
+        },
+        "id": "neumann-zagier1985",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED from the article's own running header, whose volume, issue and page range match the registered entry exactly (the file is an OCR of the original typescript, so the header is the reliable identifier). LOAD-BEARING AND VERIFIED AGAINST THE SOURCE \u2014 the strongest positive check in this slice. lean/QOU/Knot/NeumannZagierParity.lean:7-11 asserts that the longitude log-holonomy v(u) is an ODD function of the meridian log-holonomy u, hence that the deformation potential is EVEN, and that parity is the entire content of the file's NeumannZagierEvenPotential hypothesis class and of its scope-(b) exclusion of a u^3 rung. I located the supporting statement in the source: Lemma 4.1 states v_i = u_i * tau_i(u_1,...,u_h) for analytic tau_i, with part (b) reading 'tau_i(u_1,...,u_h) is an even function of each of its arguments' \u2014 so v = u * (even) is odd, exactly as claimed. A later passage in the one-cusp computation independently confirms 'This is an even function of u, as desired'. Sixteen further Lean sites and three .md sites cite the same id. GAP: almost every citation is bare (title plus 'see folio/schema/references.ts') with no locator, including NeumannZagierParity.lean:13 and :75, so a reader cannot check the parity claim without re-reading the whole article.",
+          "keyResults": [
+            {
+              "locator": "Lemma 4.1(b)",
+              "statement": "In a neighbourhood of the origin v_i = u_i * tau_i(u_1,...,u_h) with tau_i analytic and even in each argument; hence the longitude log-holonomy v is odd in the meridian log-holonomy u and the deformation potential is even.",
+              "useForFolio": "This is the proved invariant behind the scope-(b) exclusion of a geometric-NZ u^3 rung for the Q_beta bar-odd target; it should be the cited locator wherever NeumannZagierEvenPotential is instantiated or discussed.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/Knot/NeumannZagierParity.lean"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Add the 'Lemma 4.1(b)' locator to the bare '-- Ref: [neumann-zagier1985]' lines carrying the parity claim, so the hypothesis class's antecedent is checkable at the citation rather than only in the source.",
+              "target": "folio/quantum-observable-universe/lean/QOU/Knot/NeumannZagierParity.lean",
+              "bean": "qou-8nmk"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "f0db9d97f2ae"
+        }
+      }
+    },
+    {
+      "position": 408,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-copy-b.pdf"
+        },
+        "id": "neumann-zagier1985",
+        "status": "unreviewed",
+        "note": "Bib key backfilled from duplicate copy of 1-s20-0040938385900047-main, which carries this key. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "alvarez-gaume-moore-vafa1986",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 218,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf"
+        },
+        "id": "alvarez-gaume-moore-vafa1986",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "This is the paper an entire corpus audit is built on and it has no ref() entry. docs/audits/2026-07-25-quillen-anomaly-classification.md opens by naming this upload by filename, calls its Sect. 4 dichotomy 'the organizing principle', quotes its eqs. (4.1)-(4.2) 'verbatim' including the authors' own symbol for the non-holomorphic counterterm, and uses Sect. 2 and Sect. 5 to place the corpus's genus-1 identity det'Delta(E_tau) = (Im tau)^2 |eta(tau)|^4 in the anomaly-carrying class. A second audit, docs/audits/2026-07-25-alpha-em-r2-quillen-curvature-attack.md, cites its eqs. (4.18), (4.25)-(4.32) and (4.31) for the obstruction-weight family and the Weil-Petersson normalisation. Load-bearing in two audits and a probe, with zero bibliographic record: the metadata exists nowhere but an inline prose line in an audit doc.",
+          "keyResults": [
+            {
+              "locator": "Sect. 4, eqs. (4.1)-(4.2)",
+              "statement": "Quillen's theorem in the form det_zeta = |det D|^2 e^{-q}: the zeta-regularised determinant of a chiral Dirac operator fails to be the modulus-squared of a holomorphic function by an explicit non-holomorphic counterterm.",
+              "useForFolio": "The cited theorem behind the audit's class-(b) assignment: it is what turns 'det'Delta has nonzero partial-partialbar curvature' into 'det'Delta is not |f|^2 for any holomorphic f', which is the corpus's exact-gates-vs-stuck-magnitudes split.",
+              "targets": [
+                "computations/probes/quillen_anomaly_classification_probe.py"
+              ]
+            },
+            {
+              "locator": "Sect. 4, eqs. (4.25)-(4.32) and (4.31)",
+              "statement": "For the family D: L^n -> L^{n+2} the holomorphic-anomaly obstruction carries weight 3(n+1)^2 - 1, with an explicit Weil-Petersson normalisation, and the resulting objects make no reference to a distinguished constant.",
+              "useForFolio": "The spin-content candidate family used by the alpha_EM r^2 Quillen-curvature attack; it is the source of the weight formula that audit enumerates candidates against.",
+              "targets": [
+                "computations/probes/quillen_anomaly_classification_probe.py"
+              ]
+            },
+            {
+              "locator": "Sect. 2 (Fermions on a Torus)",
+              "statement": "The genus-1 special case, in which the spin-structure-dependent determinant is expressed through theta and eta functions.",
+              "useForFolio": "Sources the corpus's genus-1 identity det'Delta(E_tau) = (Im tau)^2 |eta(tau)|^4, which the audit computes the exact Quillen curvature of.",
+              "targets": [
+                "computations/probes/quillen_anomaly_classification_probe.py"
+              ]
+            },
+            {
+              "locator": "Sect. 5 (Chiral Dirac Determinants)",
+              "statement": "The spin-structure dependence of the chiral Dirac determinant on a Riemann surface is given by Riemann's theta function.",
+              "useForFolio": "The audit uses this to identify the interior theta factor as the anomaly-carrying norm sector; it is also the natural literature anchor for the corpus's otherwise unsourced one-sentence rem:sign-as-spin-structure, though that remark's object (a ribbon twist sign on sqrt(q)) is not the same object and should not be conflated with a determinant line bundle.",
+              "targets": [
+                "computations/probes/quillen_anomaly_classification_probe.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Quoted by section and equation number in two audit docs and used as the organizing principle of a live research axis, with no ref() entry; its bibliographic data currently lives only in a blockquote in one audit doc.",
+              "target": "computations/probes/quillen_anomaly_classification_probe.py",
+              "bean": "qou-pkum"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "The exact-rational-gates vs anomaly-carrying-magnitudes dichotomy is described in the audit as the organizing principle for the alpha_EM magnitude leg, yet it exists nowhere in content/. Promoting it to a remark (explicitly audit-tier, nothing wired) would make the classification citable from the folio rather than only from docs/audits/.",
+              "target": "rem:alpha-em-categorical-trace",
+              "bean": "qou-d8up"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "c99ca1cd756f"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "diaconis-ram2000",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 50,
+      "entry": {
+        "id": "diaconis-ram2000",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T16:14:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 7,
+        "fix_commit": "(this commit)",
+        "note": "Diaconis & Ram, IHA Metropolis algorithms (Ann. Appl. Probab. 2000, arXiv:math/0401318). 7 bare-URL Refs upgraded with title+publisher form. No local PDF. | PDF verified: Diaconis & Ram, \"Analysis of systematic scan Metropolis algorithms using Iwahori-Hecke algebra techniques,\" arXiv:math/0401318. Verified.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/diaconis-ram2000.pdf"
+        },
+        "local_pdf": "uploads/diaconis-ram2000.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "BROKEN SOURCE JOIN: the named file does not exist, so no citation-support check against the text was possible. The citation is clearly load-bearing where it appears: mass-theory/hecke-markov-transition-proof.md:19 asserts that the systematic-scan Metropolis algorithm on S_n targeting the Mallows measure pi(sigma) proportional to q^inv(sigma) has transition operator K = K_1 K_2 ... K_{n-1}, a product of Hecke algebra elements, and attributes it wholesale to this reference \u2014 i.e. step (ii) of the proof is discharged by citation, not by argument. Seven further sites in mass-theory/hecke-markov-transition.lean (lines 27, 46, 87, 111, 182, 224, 257, 269). VENUE CONTRADICTION INSIDE THE CORPUS: folio/schema/references.ts records one journal for this id while all seven Lean '-- Ref:' strings name a different journal (both strings are given in the triage summary). Those are different periodicals; at most one is right, and a reader following either pointer may not land on the work that supports the proof step.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "A proof step discharged purely by citation should point at a venue the corpus agrees on. Record and resolve the contradiction between the registered entry and the seven Lean Ref strings.",
+              "target": "folio/quantum-observable-universe/mass-theory/hecke-markov-transition.lean",
+              "bean": "qou-906a"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "habiro2000",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 226,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/1172-3/1172-3.pdf"
+        },
+        "id": "habiro2000",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Join CORRECT and this upload settles a standing gap: the file is the RIMS Kokyuroku 1172 (2000) 34-43 note, Habiro, 'On the colored Jones polynomials of some simple links', exactly the registered entry - whose note said the PDF was unavailable in-sandbox and the formula had never been transcribed (bean n920). It is now readable (10 pages). MISCITED at four of its sites, and this is the sharpest finding in the slice. (1) Locators that do not exist: habiro-precision-ladder-equivalence.lean:73 cites '[habiro2000] Theorem 1.1' for the existence of a finite Habiro expansion for any braid word, and lines 90, 110, 157 cite '[habiro2000] Corollary 1.2' for cyclotomic integrality and for evaluation determinacy. This document has NO Theorem 1.1 and NO Corollary 1.2 - its entire numbered apparatus is Propositions 5.1, 6.1, 6.2, 7.1, 8.2 and Remark 8.3, and it is a talk report that explicitly defers proofs ('We give only outlines here; the details will be given in a paper in preparation [H]'). (2) Wrong title attributed: the same file's header at line 31 reads '-- Ref: [habiro2000] Habiro, \"On the quantum sl_2 invariants of knots and integral homology spheres\" (2000)' - a different Habiro paper, not this note. (3) Fabricated DOI: habiro-pochhammer-bridge.lean:12, a8-partition-function-identity.lean:58 and cyclotomic-strand-doubling.lean:34,100 all cite '[habiro2000] https://doi.org/10.2140/gt.2000.4.227', while the registered entry has NO DOI and its note states the venue is unrefereed proceedings with no DOI or arXiv id. The one site that cites it correctly is lean/QOU/Knot/BorromeanVolume.lean:35 ('RIMS Kokyuroku 1172 (2000) 34-43'), and that is also the site the document genuinely supports: Sec. 7, Prop. 7.1 is the Borromean-rings colored-Jones computation.",
+          "keyResults": [
+            {
+              "locator": "Prop. 7.1 (Sec. 7, 'Borromean rings')",
+              "statement": "An explicit closed formula for the colored Jones polynomial of the Borromean rings in the Kauffman-bracket skein module basis, symmetric in the three colours.",
+              "useForFolio": "This is the formula the registry note recorded as never transcribed (bean n920); it is the Borromean input the corpus attributes to this key, and it now has a real locator to cite - Prop. 7.1, not the nonexistent 'Theorem 1.1'.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/Knot/BorromeanVolume.lean"
+              ]
+            },
+            {
+              "locator": "Props. 5.1, 6.1, 6.2, 8.2 and eqs. (1)-(2) in Sec. 3",
+              "statement": "Explicit colored-Jones formulas for the trefoil (both chiralities) and figure-eight knot, and skein-basis propositions in the solid torus.",
+              "useForFolio": "Correct locators to replace 'Theorem 1.1' / 'Corollary 1.2' wherever those were cited, or evidence that the claim belongs to a different Habiro paper and needs its own key.",
+              "targets": [
+                "prop:habiro-precision-ladder-equivalence"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Four Lean sites cite locators (Theorem 1.1, Corollary 1.2) that do not exist in this document, and one attributes a different Habiro title to the key. Either re-point them at the real results here (Props. 5.1-8.2) or register the intended paper - 'On the quantum sl_2 invariants of knots and integral homology spheres' - under its own key and cite that.",
+              "target": "prop:habiro-precision-ladder-equivalence",
+              "bean": "qou-0otg"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Five Lean sites attach DOI 10.2140/gt.2000.4.227 to a key whose registry entry states it has no DOI and is unrefereed RIMS proceedings. Remove or correct the DOI at habiro-pochhammer-bridge.lean:12, a8-partition-function-identity.lean:58, cyclotomic-strand-doubling.lean:34,100.",
+              "target": "prop:habiro-pochhammer-bridge",
+              "bean": "qou-o6x4"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "The Borromean colored-Jones formula (Prop. 7.1) is now readable and can be transcribed, closing the gap the registry note flagged. Record it with its real locator.",
+              "target": "folio/quantum-observable-universe/lean/QOU/Knot/BorromeanVolume.lean",
+              "bean": "qou-zkkv"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "e9c32f59e9db"
+        }
+      }
+    }
+  ]
+}

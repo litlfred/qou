@@ -1,0 +1,84 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "geck-rouquier-centsim",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 375,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/centsim/centsim.pdf"
+        },
+        "id": "geck-rouquier-centsim",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Geck-Rouquier, 'Centers and Simple Modules for Iwahori-Hecke Algebras'. The file has NO text layer (22 pages, CCITTFax scan; pdftotext, pypdf, pdfminer and the built-in stream extractor all return 0 chars, and tesseract is unavailable in this sandbox) -- it was identified and read via the vision path only. It is not merely relevant, it is the primary source for a claim a corpus probe made TODAY. Section 5.1 constructs the centre of the generic Iwahori-Hecke algebra as the basis {z_C} indexed by conjugacy classes C of W, via the class polynomials f_{w,C} determined by phi(T_w) = sum_C f_{w,C} phi(T_{w_C}); that is exactly the object docs/audits/2026-08-08-hh1-h5-bring-root-cocenter-action.md invokes when it writes 'dim Z = 7 is independently the expected value (|Partitions(5)| = 7, the rank of the Geck-Rouquier centre basis)', and the probe computations/hh1_h5_cocenter_action.py carries no reference comment at all. Theorem 5.2 (the reduction map Z(H) -> Z(kH) is surjective for Iwahori-Hecke algebras) is the stability statement that licenses reading the centre after specializing H_5 to the Bring root zeta_5, which is precisely what the probe does; Theorems 3.3 / 5.4 give the genericity of the number of simple modules under specialization. No Geck-Rouquier entry exists in references.ts.",
+          "keyResults": [
+            {
+              "locator": "Sec. 5.1 (the class-polynomial centre basis)",
+              "statement": "For the generic Iwahori-Hecke algebra H of a finite Weyl group W, the elements z_C = sum_w ind(T_w)^{-1} f_C(T_w) T_{w^{-1}}, one per conjugacy class C of W, form an A-basis of the centre of H.",
+              "useForFolio": "The source of the 'Geck-Rouquier centre basis' the H_5(zeta_5) cocenter probe uses as its dim Z = 7 consistency check, currently asserted by name with no citation.",
+              "targets": [
+                "computations/hh1_h5_cocenter_action.py"
+              ]
+            },
+            {
+              "locator": "Thm. 5.2",
+              "statement": "For Iwahori-Hecke algebras the reduction map Z(H) -> Z(kH) on centres is surjective (the centre is stable under specialization).",
+              "useForFolio": "The statement that licenses computing the centre of H_5 after specializing to the Bring root of unity, which is the setting of the HH^0 / HH^1 computation; it is currently taken for granted.",
+              "targets": [
+                "computations/hh1_h5_cocenter_action.py"
+              ]
+            },
+            {
+              "locator": "Thm. 3.3 / Thm. 5.4",
+              "statement": "Under stated height-1 / height-2 prime conditions the number of simple modules of the specialized algebra equals that of a cyclotomic specialization -- the 'genericity' of the number of simple modules for Iwahori-Hecke algebras.",
+              "useForFolio": "The general control on how the Wedderburn block count behaves at a root of unity, which the corpus's root-of-unity Hecke work (H_5 at zeta_5) needs and currently reasons about case by case.",
+              "targets": [
+                "computations/hh1_h5_cocenter_action.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "A same-day probe and audit cite the 'Geck-Rouquier centre basis' by name; there is no Geck-Rouquier entry, and the probe script carries no -- Ref: at all.",
+              "target": "computations/hh1_h5_cocenter_action.py",
+              "bean": "qou-olwz"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Once the key exists, the probe's dim Z = 7 consistency check and its specialization-to-zeta_5 step should cite Sec. 5.1 and Thm 5.2 rather than asserting them.",
+              "target": "computations/hh1_h5_cocenter_action.py",
+              "bean": "qou-pd8e"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record the extraction fact so the next agent does not re-fail: this upload is an image-only scan with no text layer; pdftotext/pypdf/pdfminer all return zero characters and tesseract is unavailable, so it must be read via the vision path. It sat as 'UNVERIFIED -- identify on ingestion' in the 2026-06-08 ingestion backlog for that reason.",
+              "target": "docs/workplans/2026-06-08-uploaded-paper-results-ingestion-backlog.md",
+              "bean": "qou-gbvs"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "41eaa1d757e6"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "arxiv-q-alg-9608020v2",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 340,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-q-alg-9608020v2/9608020v2.pdf"
+        },
+        "id": "arxiv-q-alg-9608020v2",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Okounkov-Olshanski, 'Shifted Jack polynomials, binomial formula, and applications': an explicit binomial formula for Jack polynomials, expanding P_lambda(1 + x) in shifted Jack polynomials evaluated at contents, with applications. The corpus already assessed it: docs/audits/2026-07-24-covariance-kernel-literature-assessment.md classifies it, alongside Sniady, Biane and Dolega-Sniady, as 'supporting; same obstruction' for the Delta_lambda covariance-kernel route, and bean qou-v8t7's attack plan names it directly. I am not re-opening that verdict -- the corpus-grep confirms the assessment stands and the obstruction (character concentration / (dim)^k multiplicities not reaching the mixed-sign target) was subsequently sharpened in 2026-07-25-covariance-kernel-A1-eliminated-dim-threshold.md. What is missing is only the bibliography join: no ref() entry exists for a paper named in a live attack plan.",
+          "keyResults": [
+            {
+              "locator": "Binomial formula (Sec. 1-2)",
+              "statement": "An explicit binomial expansion of Jack polynomials in terms of shifted Jack polynomials evaluated at the contents of the partition.",
+              "useForFolio": "The content-evaluation machinery the Delta_lambda covariance-kernel attack plan (bean qou-v8t7) uses; the 2026-07-24 assessment records it as supporting but blocked by the same dim-threshold obstruction, so it is cited as method, not as a closure.",
+              "targets": [
+                "docs/audits/2026-07-24-covariance-kernel-literature-assessment.md"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Named in a live attack plan and in a literature-assessment audit with no ref() entry.",
+              "target": "docs/audits/2026-07-24-covariance-kernel-literature-assessment.md",
+              "bean": "qou-3ufj"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "727268098db7"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

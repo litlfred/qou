@@ -1,0 +1,82 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "jing-liu-2021",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 129,
+      "entry": {
+        "id": "jing-liu-2021",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T18:45:33Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": "(this commit)",
+        "note": "Jing-Liu Iwahori-Hecke characters type A. DIRECT fit with QOU chi-character content. Cited in q-hecke-seminormal-character-closure.ts (cites array).",
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2104.06067v1/2104.06067v1.pdf"
+        },
+        "local_pdf": "library/arxiv-2104.06067v1/2104.06067v1.pdf",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED from the arXiv title page (arXiv:2104.06067v1, math.QA), which matches the subject and identifier of the seeded entry. CITATION STATUS: exactly ONE site, and it is manifest-level only - mass-endomorphism/q-hecke-seminormal-character-closure.ts:50 cites[]. The sibling .md never cites it in prose (greps for the key, for the author surnames, for 'vertex operator' and for 'Halverson' in that .md return nothing; its only Murnaghan-Nakayama sentence is about a bug in the corpus's own producer, not about this paper). So the citation is NOT load-bearing: the block's actual claim - that the recursive Markov-axiom ascent agrees with the partition-sum Wedderburn form - is not supplied by this document. It is nonetheless an apt background reference, because the block's .md turns precisely on the distinction between the classical Murnaghan-Nakayama character chi^lambda_MN and the q-Hecke character chi^lambda_q, which is this paper's subject, and it carries explicit closed forms the folio's chi^lambda_q producer could be checked against.",
+          "keyResults": [
+            {
+              "locator": "Thm 2.9",
+              "statement": "Closed formula for the irreducible Iwahori-Hecke character chi^lambda labelled by a HOOK partition, for any mu |- n.",
+              "useForFolio": "Independent closed form to cross-check computations/tr_m_q_hecke_seminormal.py and the Hoefsmit chi^lambda_q values on hook irreps.",
+              "targets": [
+                "prop:q-hecke-seminormal-character-closure",
+                "computations/tr_m_q_hecke_seminormal.py"
+              ]
+            },
+            {
+              "locator": "Thm 2.11",
+              "statement": "Closed formula for the irreducible Hecke characters labelled by TWO-ROW partitions.",
+              "useForFolio": "Second independent cross-check family for the same chi^lambda_q compute (n>=4 two-row blocks).",
+              "targets": [
+                "computations/tr_m_q_hecke_seminormal.py"
+              ]
+            },
+            {
+              "locator": "Thm 3.1",
+              "statement": "Determinant-type Murnaghan-Nakayama rule for Hecke characters (dual/vertex-operator derivation), reproving Ram's combinatorial MN formula.",
+              "useForFolio": "The precise literature statement separating chi^lambda_q from the classical chi^lambda_MN - the distinction the block's .md says was previously mis-implemented.",
+              "targets": [
+                "prop:q-hecke-seminormal-character-closure"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "compute-check",
+              "rationale": "jing-liu-2021 is cited only in the .ts cites[] and none of its results is used. Its hook (Thm 2.9) and two-row (Thm 2.11) closed forms give a parameter-free external cross-check of the chi^lambda_q values the block's producer computes, which would make the citation load-bearing instead of decorative.",
+              "target": "computations/tr_m_q_hecke_seminormal.py",
+              "bean": "qou-4py9"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "If the cross-check lands, cite the specific locator (Thm 2.9 / 2.11 / 3.1) in the .md prose rather than leaving a bare cites[] entry.",
+              "target": "prop:q-hecke-seminormal-character-closure",
+              "bean": "qou-hkaq"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "750303181ca0"
+        }
+      }
+    }
+  ]
+}

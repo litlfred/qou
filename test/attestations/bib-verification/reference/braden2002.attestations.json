@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "braden2002",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 148,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-hep-th-0205308v2/0205308v2.pdf"
+        },
+        "id": "braden2002",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Genuine orphan. It rewrites the WDVV associativity equations as functional relations between second derivatives of a single prepotential F, analogous to the dispersionless Hirota equations, and discusses their properties \u2014 with the motivating class being prepotentials from low-energy effective actions of four-dimensional N=2 supersymmetric gauge theories via Seiberg-Witten theory. The folio does have Seiberg-Witten content (prop:mi-sw-abelianisation, prop:sw-period-residue-sum, prop:jet-sw-tau-decomposition), which is why this is tangential rather than not-relevant. But grep across content/, docs/ and computations/ returns ZERO hits for 'WDVV' and zero for 'prepotential' or 'special Kaehler': the folio uses the SW DIFFERENTIAL and its periods as a jet decomposition of the archimedean realisation, and never forms a prepotential F(a) or asks about associativity of a Frobenius-manifold structure. With no prepotential in the corpus there is nothing for the WDVV relations to constrain. Scope-(a): as read, this supplies nothing the folio can currently consume; if a prepotential is ever constructed from the folio's SW periods, it would become relevant immediately. Note for the bibliography: an author of this paper is already registered in the corpus for unrelated work on the folio's genus-4 curve, so name-matching alone should not be used to resolve this document.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "The folio has SW differentials and periods but no prepotential and no Frobenius-manifold/associativity claim, so there is no target for the WDVV relations. Revisit if a prepotential is ever formed from prop:sw-period-residue-sum.",
+              "target": "prop:sw-period-residue-sum"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "2de5a4f40d80"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "hikami2004torus",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 162,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0403224v1/0403224v1.pdf"
+        },
+        "id": "hikami2004torus",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "JOIN CONFIRMED from the arXiv title page (arXiv:math/0403224v1, math.GT): subject, identifier and single-author form all match the seeded entry. CITATION STATUS: BIB ORPHAN. A repo-wide grep for the key outside references.ts, the ledger and library/sm-uploads-intake.json returns ZERO hits - no .md \\cite, no .ts cites[], no Lean -- Ref:. The reference entry's own note concedes it ('relevant to the corpus's colored-Jones tower infrastructure, not to the SM appendix directly'). On merits: the paper proves the N-colored Jones of the torus knot T(s,t) satisfies a second-order q-difference equation (first order for T(2,2m+1)), derives the A-polynomial from it, and gives a q-hypergeometric expression in the T(2,2m+1) case. The folio's knot programme is built entirely on HYPERBOLIC knots and links (4_1, 5_2, 6_2, Borromean rings); torus knots are non-hyperbolic, so the volume / Stokes / 1-loop machinery does not apply to them and there is no torus-knot colored-Jones consumer anywhere in the corpus. Tangential: same field, no result this folio currently consumes. Scope-(a): a statement about this document against the corpus as it stands, not a claim that torus-knot recurrences are excluded from the framework.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Registered but uncited, and no corpus block wants a torus-knot q-difference equation today. Leaving the ref() entry costs nothing; adding a citation would be decorative. Re-triage if a torus-knot / AJ-conjecture consumer ever lands.",
+              "target": "folio/schema/references.ts"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "c25ccba77da3"
+        }
+      }
+    }
+  ]
+}

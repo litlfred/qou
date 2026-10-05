@@ -1,0 +1,62 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "arxiv-1302.0342v1",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 238,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1302.0342v1/1302.0342v1.pdf"
+        },
+        "id": "arxiv-1302.0342v1",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Constructs an analytic family of null solutions of source-free Maxwell whose field lines realise every torus knot and link, via the Bateman and spinor formalisms with complex polynomials on S^3, and shows the topology is preserved under evolution. rem:breit-wheeler-vertex-literature's 'Photonic hopfions' paragraph currently draws the analogy only at the Hopf-link level and cites sugic2021 (structured-light polarisation solitons). The corpus's knot-particle assignments run over torus knots and links, so this paper is the closer physical analogue: it exhibits exactly that family as exact field-line topology in a linear field theory. Supporting rather than core -- it corroborates an interpretive paragraph, it does not enter any derivation.",
+          "keyResults": [
+            {
+              "locator": "abstract + Fig. 2-4 (construction via Bateman variables on S^3)",
+              "statement": "There is a family of null free-space Maxwell fields whose field lines encode all torus knots and links, with the knot/link topology preserved by the evolution (a geodesic, shear-free flow along the Poynting vector).",
+              "useForFolio": "Extends the 'photonic hopfions' alignment paragraph from Hopf links to the torus-knot family the corpus's knot-particle dictionary actually uses.",
+              "targets": [
+                "rem:breit-wheeler-vertex-literature"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry; the corpus has scheeler2014 and kleckner2013 for fluid helicity but nothing for knotted electromagnetic field lines.",
+              "target": "rem:breit-wheeler-vertex-literature",
+              "bean": "qou-cmx2"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "The 'Photonic hopfions' paragraph asserts a Hopf-link-level analogy; the torus-knot generalisation is the version that matches the corpus's own knot inventory.",
+              "target": "rem:breit-wheeler-vertex-literature",
+              "bean": "qou-0esj"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "ec2ca6ba7896"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

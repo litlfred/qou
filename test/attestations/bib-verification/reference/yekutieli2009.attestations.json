@@ -1,0 +1,48 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "yekutieli2009",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 43,
+      "entry": {
+        "id": "yekutieli2009",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T15:48:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": null,
+        "note": "PDF verified: 'MC Elements in Pronilpotent DG Lie Algebras' by Amnon Yekutieli, arXiv:1103.1035 (published JPAA 2012, DOI 10.1016/j.jpaa.2012.03.009). The references.ts entry's `note` field cites an EARLIER arxiv id (0905.0488), but the URL I added (1103.1035) and the title verbatim match \u2014 same paper, later revision. No fix needed.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/yekutieli2009.pdf"
+        },
+        "local_pdf": "uploads/yekutieli2009.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "FILE ABSENT from uploads/ and git; identity unverifiable from front matter. CORPUS-SIDE AUDIT: four sites \u2014 fibre-functor-rigidity.ts:11, global-gluing-proof.ts:9 and .md:1, yekutieli-mapping-table.ts:5 and .md:38 and .md:45. The one prose anchor (global-gluing-proof.md:1) uses the key for 'a connection and a Maurer-Cartan element in a pronilpotent DG Lie algebra', which matches the subject the registered entry's title names, so that site is topically load-bearing. fibre-functor-rigidity.ts:11 is a bare cites[] entry with no prose anchor. Latent join hazard already flagged in the registered entry's note: two arXiv revisions share the title, so a re-upload could land on either and the join would look identical either way.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "The single prose site uses the key for exactly the subject its registered title names; the bare cites[] at fibre-functor-rigidity.ts:11 is thin but not wrong. No corpus change is justified without reading the document.",
+              "target": "prop:fibre-functor-rigidity"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    }
+  ]
+}

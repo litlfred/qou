@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "yuasa-rims2163",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 285,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/yuasa-rims-kokyuroku-2163-05/yuasa-rims-kokyuroku-2163-05.pdf"
+        },
+        "id": "yuasa-rims2163",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "A conference-proceedings article on Kuperberg A_2 (sl_3) web skein theory: a full-twist formula for one-row colored A_2 webs, applied to give an explicit one-row colored sl_3 tail of (2,2m)-torus links. Note the file has no extractable text layer under any rung of the ladder (pdftotext, pypdf, pdfminer, stream extractor all return 0 chars; the producer is a Print-To-PDF with no /Font or /Image objects) -- it was read by rendering pages to images. The sl_3 side is precisely the A_2 the corpus states it does NOT have: prop:a2-from-three-strands and eightfold-intro make it the chapter's 'central honesty constraint' that their A_2 is the Coxeter A_2 of S_3 on three strands, while the sl_3 = A_2 of flavour SU(3) requires dim V = 3 and the framework supplies dim V = 2. So the corpus has no consumer for an sl_3 web calculus. Scope-(a): this document, as read, supplies nothing usable at the corpus's current blocks; it is not a claim that web/spider methods are excluded.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "The corpus's chain is sl_2/Hecke and explicitly disclaims the sl_3 side; nothing consumes an A_2-web twist formula. The extraction failure is worth recording so a later agent does not re-attempt text extraction on this file.",
+              "target": "prop:a2-from-three-strands"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "fa2a585b45c2"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

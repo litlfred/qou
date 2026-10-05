@@ -1,0 +1,59 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "geck-lambropoulou-2004",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 126,
+      "entry": {
+        "id": "geck-lambropoulou-2004",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T18:45:33Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": "(this commit)",
+        "note": "Geck-Lambropoulou Iwahori-Hecke type B Markov traces. DIRECT fit with braids-and-knots Markov work. Cited in hecke-markov-interpretation.ts (cites array).",
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0405508v1/0405508v1.pdf"
+        },
+        "local_pdf": "library/arxiv-math-0405508v1/0405508v1.pdf",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED from front matter (the arXiv identifier and subject match the registered entry). The document's stated aim (\u00a71, p.1) is 'to give a full classification of all linear traces on Iwahori-Hecke algebras of type B which support the Markov property, see Definition 4.1 and Theorem 4.3'. NOT LOAD-BEARING at its single citation site: folio/quantum-observable-universe/mass-theory/hecke-markov-interpretation.ts:22 lists the key in cites[], but the sibling .md is entirely TYPE A \u2014 Hoefsmit seminormal form on standard Young tableaux, Jucys-Murphy elements, the Jones polynomial as an SYT path sum, the Mallows measure. The phrase 'type B' never appears in that block and no result of the source is used, so the corpus cites a type-B classification from a type-A exposition. A genuine, currently uncited consumer exists: folio/quantum-observable-universe/nuclear-interactions/type-b-folding-cpt.md (conj:type-b-folding-cpt) conjectures that the sl_n Cartan datum on H_n(q) folds to a type-B datum B_{n/2} and that the resulting crystal's normal forms are bar-invariant by construction \u2014 a claim about invariants in the folded type-B setting, which is what Thm 4.3 classifies.",
+          "keyResults": [
+            {
+              "locator": "Thm 4.3 (with Def 4.1)",
+              "statement": "Full classification of the linear traces on the Iwahori-Hecke algebra of type B satisfying the Markov property.",
+              "useForFolio": "Bounds which trace functionals a folded type-B Hecke picture may use, i.e. constrains the invariant available to the type-B folding conjecture, whose bar-invariance claim currently has no trace-side source.",
+              "targets": [
+                "conj:type-b-folding-cpt"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Move or add the citation to the block that actually needs type-B trace theory: conj:type-b-folding-cpt asserts a bar-invariance property of the folded type-B picture with no trace-side source, and Thm 4.3 classifies exactly the Markov traces available there. The existing entry at hecke-markov-interpretation.ts:22 sits on a purely type-A block and should be reconsidered or dropped.",
+              "target": "conj:type-b-folding-cpt",
+              "bean": "qou-v56q"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "ef2e41cf67f3"
+        }
+      }
+    }
+  ]
+}

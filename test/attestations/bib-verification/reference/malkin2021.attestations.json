@@ -1,0 +1,63 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "malkin2021",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 393,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/malkin-2021-galois-action-on-motivic-fundamental-groups-thesis.pdf"
+        },
+        "id": "malkin2021",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Genuine orphan; a doctoral thesis (123 pp.) on the motivic Galois action on motivic fundamental groups of punctured elliptic and rational curves, written in the motivic-correlator programme. Its Chapter 2 is 'Shuffle relations for Hodge and motivic correlators on P^1' \u2014 double shuffle relations on correlators \u2014 and \u00a71.2.3 treats multiple polylogarithms; Chapter 3 relates Bianchi hyperbolic threefolds and modular complexes to the Galois Lie coalgebra, with \u00a73.4.2 degenerating to Voronoi complexes and multiple zeta values. The folio has a specific open conjecture in this exact area: conj:qou-infra-discharges-goncharov-zeta5 proposes discharging the depth-3 motivic conjecture at Q(zeta_5), and its stated second route is to express the 22-term relation restricted to fifth roots of unity as an explicit element and kill it by Hecke normal-form reduction. Relations among Li_3 at roots of unity are what the shuffle machinery in Chapter 2 produces. Honest limits, and the reason this is not core: the thesis does not supply the 22-term relation at zeta_5, works mainly in weight <= 4, and I have not verified that its shuffle relations restrict usefully to fifth-root arguments. It is a technique source for an open conjecture, and should be cited as such rather than as a discharge.",
+          "keyResults": [
+            {
+              "locator": "Ch. 2; \u00a71.2.3",
+              "statement": "General families of double shuffle relations on Hodge and motivic correlators on the punctured projective line, together with the correlator-to-multiple-polylogarithm dictionary and new functional equations on the Hodge correlator integrals.",
+              "useForFolio": "The relation-generating machinery the second route of conj:qou-infra-discharges-goncharov-zeta5 needs; also relevant to prop:depth-2-identification-bloch-suslin as the weight-3 continuation of the depth-2 story.",
+              "targets": [
+                "conj:qou-infra-discharges-goncharov-zeta5",
+                "prop:depth-2-identification-bloch-suslin"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry; the folio has an open conjecture explicitly in the depth-3 motivic programme at Q(zeta_5) and no registered source for the shuffle-relation machinery it proposes to use.",
+              "target": "conj:qou-infra-discharges-goncharov-zeta5",
+              "bean": "qou-i93c"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Before this is used for anything stronger, someone must check whether the double shuffle relations here actually restrict to fifth-root-of-unity arguments in weight 3 and generate relations independent of the multiplication formula the conjecture already quotients by. I did not verify that, so aid-proof would be an over-claim.",
+              "target": "conj:qou-infra-discharges-goncharov-zeta5",
+              "bean": "qou-rr3j"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "3bc30dc6a4a0"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "hikami2006",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 180,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0604094v1/0604094v1.pdf"
+        },
+        "id": "hikami2006",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "WRONG JOIN \u2014 the seeded id was faddeev_kashaev1994 and this document is NOT the work that key names. Front matter gives a different single author, a different arXiv identifier (arXiv:math/0604094v1 [math.QA]) and a different venue-era from the registered entry; identity reported separately to the caller. No existing key covers it (the two registered keys for this author are for different papers), so id is set to null and add-reference is the first action. ON THE MERITS the document is genuinely core to this folio, which is exactly why the wrong join matters: the mass-theory and QBeta chapters run on the Neumann-Zagier potential (neumann-zagier1985 is cited at ~40 sites) and on the quantum dilogarithm (faddeev_kashaev1994 at 9 sites), and this document is the bridge between them \u2014 it builds a quantum invariant Z_gamma(M) for a cusped hyperbolic 3-manifold by assigning the quantum dilogarithm to each ideal tetrahedron, shows the classical limit gamma -> 0 reproduces the Neumann-Zagier potential function, and derives the A-polynomial from that potential. That is precisely the Phi_q / AJ-machinery correspondence the corpus asserts at prop:phi-q-aj-machinery-identification and the deformed-cusp setting of conj:shared-denominator-cusp-holonomy.",
+          "keyResults": [
+            {
+              "locator": "abstract + \u00a71",
+              "statement": "For a cusped hyperbolic 3-manifold, the quantum invariant built by assigning the quantum dilogarithm to each ideal tetrahedron has the Neumann-Zagier potential function as its classical limit, and the A-polynomial is derived from that potential.",
+              "useForFolio": "Supplies a published derivation of the potential-from-quantum-dilogarithm link that the Phi_q / AJ identification asserts, and a literature anchor for the deformed-cusp (u-parameter) setting the shared-denominator conjecture works in.",
+              "targets": [
+                "prop:phi-q-aj-machinery-identification",
+                "conj:shared-denominator-cusp-holonomy"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The document has no ref() entry and the ledger currently mis-joins it to faddeev_kashaev1994. Create the entry from its own front matter before any citation is added.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-snuw"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "prop:phi-q-aj-machinery-identification asserts the Phi_q to A-polynomial/AJ correspondence; this document derives the A-polynomial from the potential obtained as the classical limit of the quantum-dilogarithm state sum, which is the published form of that correspondence.",
+              "target": "prop:phi-q-aj-machinery-identification",
+              "bean": "qou-wkai"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "f0c4c36ab0ac"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

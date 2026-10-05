@@ -1,0 +1,62 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "benard2018",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 279,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/2018sorus020/2018SORUS020.pdf"
+        },
+        "id": "benard2018",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "A 2018 Sorbonne doctoral thesis on Reidemeister torsion over character varieties: chapter 2 develops the ADJOINT torsion as a differential form on the character variety, with Main Theorem 1 describing its behaviour at a finite point (and interpreting the singularities via the Alexander polynomial); chapter 3 treats the standard torsion function and both torsions at ideal points. The corpus uses adjoint Reidemeister torsion at one point only -- the discrete faithful structure -- via the Dimofte-Garoufalidis 1-loop invariant |det J_NZ| (borromean_nz_adjoint_torsion.py, whitehead_c_sigma_torsion.py, and the 2026-08-02 unified cusp law exp(2 c_0) = 2^{c-1} / |det J_NZ|). Treating the torsion as a function on the whole character variety, with controlled poles and normalization at ideal points, is the natural technique for the one honest open sub-item that audit records: the general-c derivation of the per-cusp factor 2^{(c-1)/2}, currently pinned only on c = 1, 2, 3. That is a normalization question and this thesis is about torsion normalization -- but whether its conventions actually produce that factor is unverified, so this is new-remark, not aid-proof.",
+          "keyResults": [
+            {
+              "locator": "Ch. 2, Main Theorem 1 (Sec. 2.3.1) + Sec. 2.4 (ideal points)",
+              "statement": "The adjoint Reidemeister torsion is realized as a form on the character variety whose behaviour at finite points is controlled (singularities interpreted through the Alexander polynomial), with a separate analysis at ideal points.",
+              "useForFolio": "Supplies the variety-level normalization framework in which the corpus's empirically-pinned per-cusp factor 2^{(c-1)/2} in the 1-loop cusp law would have to be derived or refuted.",
+              "targets": [
+                "computations/whitehead_c_sigma_torsion.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Adjoint Reidemeister torsion is used in three corpus probes and a unified cusp law with no torsion-theory reference registered; this thesis is a citable systematic treatment.",
+              "target": "computations/probes/borromean_nz_adjoint_torsion.py",
+              "bean": "qou-t5vj"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "State what would need checking before claiming this settles the open per-cusp normalization item: whether the thesis's torsion normalization on a c-cusped manifold reproduces the factor 2^{(c-1)/2} for general c, rather than only agreeing at c = 1, 2, 3. Deliberately not proposed as aid-proof.",
+              "target": "computations/whitehead_c_sigma_torsion.py",
+              "bean": "qou-fiaf"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "c3f929e51959"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

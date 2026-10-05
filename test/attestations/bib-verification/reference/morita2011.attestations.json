@@ -1,0 +1,63 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "morita2011",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 219,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1105.1998v3/1105.1998v3.pdf"
+        },
+        "id": "morita2011",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "WRONG JOIN. The seeded id was gasper-rahman-2004, whose ref() entry (references.ts:482) is a two-volume-style monograph on basic hypergeometric series. This document is a short single-author journal article, arXiv:1105.1998v3 [math.CA], SIGMA 7 (2011) paper 115, 11 pages, deriving a connection formula for the Hahn-Exton q-Bessel function between the origin and infinity via the q-Borel and q-Laplace transformations, and taking the p -> 1^- limit of that formula. It is not the monograph and the join must be broken. No existing ref() key matches it: grep of references.ts for '1105.1998' and for the author name returns nothing (the only same-surname key is an unrelated 1981 quaternionic Standard-Model entry), so id is null. In its own right this is CORE for the folio, which is why the mis-join is costly: the corpus already runs a Hahn-Exton q-Bessel identification programme (references.ts entries around lines 385-441 on E_q(2) matrix coefficients, q-Bessel zeros and q-Lommel recurrences, the self-reciprocal q-Hankel transform; QBesselContiguityRecurrence.lean; KeystoneSelfDualSpectralNarrowing.lean) AND a q-Borel/q-Laplace summability programme (QOU/Mathlib/QGevreyOrder.lean, QAlienBridgeEquation.lean, QOU/Archimedean/BalancedKernelConfluence.lean, which cites divizio-zhang2009 for exactly the q -> 1 confluence route). This document sits precisely at the intersection of those two: q-Borel/q-Laplace applied to the Hahn-Exton q-Bessel, with the confluence limit taken explicitly. Corpus-grep for a prior claim on this ground: docs/audits/ and docs/coordination/ contain no entry for arXiv 1105.1998, and no content/ block cites it, so nothing here re-declares a closed item.",
+          "keyResults": [
+            {
+              "locator": "main connection formula; p -> 1^- limit",
+              "statement": "A connection formula relating the Hahn-Exton q-Bessel function's behaviour at the origin and at infinity, obtained by q-Borel and q-Laplace transformation, together with its confluent limit as the base tends to 1 from below.",
+              "useForFolio": "The corpus's q-Bessel work and its q-Borel/confluence work are currently separate literature legs; this supplies the connection-formula bridge between them, and the explicit base -> 1 limit is the same confluence route BalancedKernelConfluence.lean cites divizio-zhang2009 for. Reading it may sharpen the q-Bessel contiguity/recurrence derivation, though I have NOT checked whether its normalisation matches the corpus's J_nu(x;q) convention \u2014 that check is a precondition for any use.",
+              "targets": [
+                "QOU.Archimedean.BalancedKernelConfluence",
+                "QOU.MathlibExt.QBesselContiguityRecurrence"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The document is directly on two active fronts (Hahn-Exton q-Bessel identification, q-Borel/q-Laplace confluence) and has no ref() entry. Create one before anything cites it; the ledger row must carry id null until then so the false join to the monograph key is not propagated.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-4hdw"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Before citing it anywhere, its Hahn-Exton normalisation must be reconciled with the corpus's convention recorded in the gasper-rahman-2004 note (J_nu(x;q) = x^nu (q^{nu+1};q)_inf/(q;q)_inf . 1phi1(0; q^{nu+1}; q, q x^2)). A connection formula in a different normalisation is not transferable, and adopting one because its numbers look right would be a fit.",
+              "target": "QOU.MathlibExt.QBesselContiguityRecurrence",
+              "bean": "qou-rdvo"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "daf3bffad8eb"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

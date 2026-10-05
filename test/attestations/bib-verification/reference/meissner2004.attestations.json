@@ -1,0 +1,51 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "meissner2004",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 167,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-gr-qc-0407052v1/0407052v1.pdf"
+        },
+        "id": "meissner2004",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED from front matter: the document self-identifies as the preprint id recorded on the registered entry, and its abstract matches the entry's subject. NOT LOAD-BEARING: the id appears only in gravity-spacetime/lqg-entropy-qdim-partition-pole.ts:16 (a cites array) and in zero prose, zero Lean, zero computations. The document is genuinely on-topic for the block that lists it \u2014 it computes the loop-quantum-gravity horizon entropy as a function of horizon area with exact leading and sub-leading terms, and fixes the 'quantum of area' by matching Bekenstein-Hawking \u2014 and the block concerns an LQG-entropy / q-dimension partition-pole correspondence. But nothing in the corpus currently states a claim this document backs, so as it stands the corpus carries a reference it does not use. The registered entry itself flags its own bibliographic fields as best-effort and unreviewed.",
+          "keyResults": [
+            {
+              "locator": "Abstract / eq. (1) and the criticality equation",
+              "statement": "The LQG black-hole entropy has an exact leading term proportional to horizon area plus a logarithmic sub-leading correction; matching Bekenstein-Hawking uniquely fixes the quantum of area.",
+              "useForFolio": "The area-quantum-fixing criticality condition is the external anchor conj:lqg-entropy-qdim-partition-pole compares its q-dimension partition pole against.",
+              "targets": [
+                "conj:lqg-entropy-qdim-partition-pole"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "The conjecture block lists the reference in its manifest but never invokes it. Cite the criticality/area-quantum result at the point in the block's prose where the LQG entropy is compared, so the reference becomes load-bearing or is dropped.",
+              "target": "conj:lqg-entropy-qdim-partition-pole",
+              "bean": "qou-09yi"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "4624ea2fb4d3"
+        }
+      }
+    }
+  ]
+}

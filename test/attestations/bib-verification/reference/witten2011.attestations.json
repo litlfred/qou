@@ -1,0 +1,48 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "witten2011",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 37,
+      "entry": {
+        "id": "witten2011",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T15:48:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 7,
+        "fix_commit": "(this commit)",
+        "note": "Witten, Analytic Continuation of Chern-Simons Theory, arXiv:1001.2933. 7 bare-URL Refs \u2192 title+arxiv form. | PDF verified: 'Analytic Continuation Of Chern-Simons Theory' by Edward Witten, arXiv:1001.2933v4 (hep-th, 2010 Aug rev). Matches references.ts.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/witten2011.pdf"
+        },
+        "local_pdf": "uploads/witten2011.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "DOCUMENT ABSENT \u2014 cannot verify the join. Path does not exist, never committed; no substitute under the arXiv id recorded in the prior ledger row is present in uploads/. 10 corpus hits. The prior row records 7 bare-URL `-- Ref:` upgrades to title+arXiv form, which is the healthy pattern, but the underlying claim-level check is unreproducible without the PDF. Separately worth noting for the merge pass: the key's year digit and the year implied by the registered arXiv id differ by one, so a reader joining on year will mis-resolve.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Cannot verify the document; the corpus-side Ref: hygiene was already normalised by the 2026-05-19 pass.",
+              "target": "folio/schema/references.ts"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    }
+  ]
+}

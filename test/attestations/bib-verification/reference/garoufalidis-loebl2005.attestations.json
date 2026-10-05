@@ -1,0 +1,72 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "garoufalidis-loebl2005",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 170,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0411505v2/0411505v2.pdf"
+        },
+        "id": "garoufalidis-loebl2005",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "The folio's 13-driver menu carries driver (x) as a 'MacMahon-style partition-algebra count' (conj:kashaev-density-equals-sdp-multiplicity, and computations/probes/h4_categorical_drivers_probe.py which computes a MacMahon-master-theorem value at H_4). That driver is currently a menu label with no literature theorem behind it. This paper is exactly that theorem: it derives the colored Jones function from the q-MacMahon Master Theorem as the inverse of a non-commutative fermionic determinant. It does not close any QOU gap by itself -- the folio's driver (x) is about a partition-algebra COUNT at H_4, not about a knot-diagram arc-graph -- so it is background/technique, not a load-bearing input.",
+          "keyResults": [
+            {
+              "locator": "Thm 2 (with Defn 1.4)",
+              "statement": "For every knot diagram K, J_n(K,q) = q^{delta(K,n)} / Ferm(B'_K) n-evaluated, where Ferm(A) = sum over subsets J of (-1)^{|J|} det_q(A_J) is the alternating sum of quantum minors and B'_K is the arc-graph matrix.",
+              "useForFolio": "Supplies the literature link the corpus's driver (x) asserts but does not source: the MacMahon/boson-fermion mechanism is what produces the colored Jones, so a MacMahon-style partition count is not an arbitrary menu entry. Cite it where driver (x) is introduced.",
+              "targets": [
+                "conj:kashaev-density-equals-sdp-multiplicity",
+                "computations/probes/h4_categorical_drivers_probe.py"
+              ]
+            },
+            {
+              "locator": "Thm 1 + Cor 1.5",
+              "statement": "Delta(K,t) = t*det(I - B_K) at q=1 (the same matrix, specialised), and consequently lim_n J_n(K, q^{1/n}) = 1/Delta(K,q) (Melvin-Morton-Rozansky).",
+              "useForFolio": "One matrix yielding both Alexander and colored Jones -- the determinant/Alexander degeneration that also appears in Murakami math/0405126 eq. (1.1) and in the corpus's Alexander-polynomial usage (shell-threading-conjecture, torsion-knot-flow). Useful as the structural explanation for why the abelian branch produces 1/Delta.",
+              "targets": [
+                "conj:shell-threading",
+                "QOU.QBeta.ChannelMeridianIdentification"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry; the folio already registers several Garoufalidis papers and this one carries the MacMahon <-> colored-Jones link the 13-driver menu leans on.",
+              "target": "folio/schema/references.ts (new id, e.g. garoufalidis-loebl2005)",
+              "bean": "qou-2b1f"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Driver (x) is named 'MacMahon-style partition algebra' three times in this block with no source; Thm 2 is the source.",
+              "target": "conj:kashaev-density-equals-sdp-multiplicity",
+              "bean": "qou-3ja5"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "a38cec365e0a"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "jurgenson2009srg",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 200,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-0905.1873v2/0905.1873v2.pdf"
+        },
+        "id": "jurgenson2009srg",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "This paper is the sole source of a numeric bound that a sorry-free Lean theorem in the corpus certifies against, and it has no ref() entry. folio/quantum-observable-universe/lean/QOU/MassTheory/TjonSimplexForm.lean lines 40-45 state that mu4_target_exceeds_n3lo_bound 'certifies the numeric claim behind the GAP-9 probe: the corpus target mu_4 = -4.591 (in units of B(D) = 2.224566 MeV) exceeds 34x the N3LO four-nucleon estimate of 0.300 MeV (Jurgenson-Navratil-Furnstahl, arXiv:0905.1873 ...)'. I verified both quoted figures against the PDF: p.3 col.2 reads 'induced four-body forces, which therefore contribute about 50 keV net at lambda = 2 fm^-1. This is small compared to the rough estimate in Ref. [20] that the contribution from the long-ranged part of the N3LO four-nucleon force to 4He binding is of order a few hundred keV.' The Lean docstring is a faithful quotation. Per \u00a71 of AGENTS.md, that citation should carry a registered bib key, not a bare arXiv id. The paper is also the source of the Tjon-line trajectory the Lean file is named after (Fig. 5, B(4He) vs B(3H)).",
+          "keyResults": [
+            {
+              "locator": "p.3, col.2 (discussion of Fig. 3/4, lambda-dependence)",
+              "statement": "SRG-induced short-range four-body forces contribute about 50 keV net to the 4He ground-state energy at lambda = 2 fm^-1; the long-ranged N3LO four-nucleon contribution to 4He binding is estimated at a few hundred keV.",
+              "useForFolio": "The external numeric ceiling on genuine four-body physics in A = 4 that mu4_target_exceeds_n3lo_bound certifies the corpus target exceeds. It is what turns 'mu_4 = -4.591 is large' into a falsifiable scope-(a) statement about the C(A,k) basis rather than about the operator.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/MassTheory/TjonSimplexForm.lean",
+                "computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py"
+              ]
+            },
+            {
+              "locator": "Fig. 5 and surrounding text, p.4",
+              "statement": "Plotting B(4He) against B(3H), the SRG NN-only results trace out the Tjon line; including the evolved NNN force collapses the trajectory to a short segment through the experimental point.",
+              "useForFolio": "The concrete data the reformulated GAP-9 test needs: the B(3H)-B(4He) plane with the field's own trajectory in it, against which the QOU block-trace operator can be tested convention-free. Gives the Lean file TjonSimplexForm its empirical referent.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/MassTheory/TjonSimplexForm.lean"
+              ]
+            },
+            {
+              "locator": "Abstract + conclusions, p.4",
+              "statement": "The net induced four-body contribution in A = 4 is smaller than the truncation errors of the chiral interaction, but four-nucleon forces are strongly density dependent so their size must be monitored for heavier nuclei.",
+              "useForFolio": "Scopes the bound honestly: the small-4N-force statement is an A = 4 statement, not an all-A statement. Any QOU use of it as a ceiling for heavier isotopes in the mass-table sweep must carry that caveat, or it over-claims.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/MassTheory/TjonSimplexForm.lean"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Orphan supplying a load-bearing numeric claim in sorry-free Lean. Per \u00a71, a citation backing a corpus claim must resolve to a references.ts entry. Suggested id jurgenson-navratil-furnstahl2009 (Phys. Rev. Lett. 103, 082501).",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-g4m2"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Replace the bare 'arXiv:0905.1873' in the TjonSimplexForm docstring with the registered key so the Lean -- Ref: convention holds and validate-bib can see the dependency.",
+              "target": "folio/quantum-observable-universe/lean/QOU/MassTheory/TjonSimplexForm.lean",
+              "bean": "qou-owbd"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "The Lean bound uses 0.300 MeV as 'the N3LO four-nucleon estimate'; the paper says 'of order a few hundred keV' (a range, sourced to its own Ref. [20]) and separately measures 50 keV for the SRG-INDUCED four-body force. Confirm the probe is using the intended one of the two numbers and record which, since the 34x factor depends on it.",
+              "target": "computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py",
+              "bean": "qou-u8cp"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "d4f785469faf"
+        },
+        "note": "Source IS held: library/arxiv-0905.1873v2. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+        "verified_at": "2026-09-03T04:19:53Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

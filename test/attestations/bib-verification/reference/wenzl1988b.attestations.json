@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "wenzl1988b",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 122,
+      "entry": {
+        "id": "wenzl1988b",
+        "status": "pending-placement",
+        "verified_at": "2026-05-19T18:01:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": "(this commit)",
+        "note": "TODO bib lookup. Placeholder for wenzl1988 DOI 10.1007/BF01393839 (distinct from wenzl1988 = BF01404457). Inline-DOI sites in delta-q-decoration.lean reference this paper.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1007/BF01393839"
+        }
+      }
+    }
+  ]
+}

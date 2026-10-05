@@ -1,0 +1,67 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "webster-williamson-2014-markov",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 127,
+      "entry": {
+        "id": "webster-williamson-2014-markov",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T18:45:33Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": "(this commit)",
+        "note": "Webster-Williamson Geometry of Markov traces. DIRECT fit with QOU Markov-trace content. Cited in hecke-markov-interpretation.ts (cites array).",
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-0911.4494v2/0911.4494v2.pdf"
+        },
+        "local_pdf": "library/arxiv-0911.4494v2/0911.4494v2.pdf",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED from front matter: the document self-identifies as arXiv:0911.4494v2, matching the preprint id recorded on the registered entry, and its abstract matches the entry's subject. NOT LOAD-BEARING: the id appears only in one .ts cites array (mass-theory/hecke-markov-interpretation.ts:21) and in zero .md prose, zero .lean, zero computations. The hecke-markov-interpretation.md narrative is entirely about SYT paths, the Hoefsmit seminormal form and the Mallows-measure stochastic operator \u2014 Diaconis-Ram territory \u2014 and never invokes anything from this document. That is a reference carried in a manifest whose results the corpus never uses. Substantively it is a good fit and deserves better than a dangling cites entry: it gives a geometric construction of the Jones-Ocneanu trace on the Hecke algebra via equivariant cohomology of sheaves on SL_n, and expands that trace over the irreducible Hecke characters \u2014 structurally the same shape as the QOU Frobenius pairing tr_M = sum_lambda y_lambda chi_lambda. Two caveats keep this at supporting rather than core: the expansion is bigraded in (q,t) with weights given by mixed Poincare polynomials of character sheaves, not the single-variable y_lambda(q) QOU uses, and QOU's weights already come from the Wedderburn/Jones route, so nothing here is needed. Minor metadata mismatch for references.ts (not for this ledger): the registered entry's venue/date differ from the attached preprint version's date.",
+          "keyResults": [
+            {
+              "locator": "Cor. 13",
+              "statement": "The geometric trace expands over irreducible characters as Tr(x) = sum_chi chi_q(x) * {chi, nu} * M_nu(q,t), where {chi,nu} are Lusztig Fourier-transform matrix coefficients and M_nu is the mixed Poincare polynomial of the corresponding character sheaf.",
+              "useForFolio": "An independent, geometric identification of the character weights in the Markov-trace expansion tr_M = sum_lambda y_lambda chi_lambda \u2014 a second route to the y_lambda that does not go through Wedderburn.",
+              "targets": [
+                "thm:markov-trace-factorization"
+              ]
+            },
+            {
+              "locator": "Thm 6",
+              "statement": "The trace Tr(C'_w) = dim_{q,t} H*_{B_Delta}(IC_w) depends only on the root system, and agrees with the trace defined independently by Gomi.",
+              "useForFolio": "Supplies the well-definedness context for treating the Markov trace as a root-system-level invariant rather than a type-A accident.",
+              "targets": [
+                "thm:markov-trace-factorization"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "The reference currently sits in rem:hecke-markov-interpretation's cites array with no prose invocation. Move it to the block whose claim it actually bears on \u2014 the character expansion of the Markov trace \u2014 and cite Cor. 13 there with its locator.",
+              "target": "thm:markov-trace-factorization",
+              "bean": "qou-c9pt"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "1ba1c79686b1"
+        }
+      }
+    }
+  ]
+}

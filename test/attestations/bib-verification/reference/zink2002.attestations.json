@@ -1,0 +1,29 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "zink2002",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 4,
+      "entry": {
+        "id": "zink2002",
+        "status": "partial",
+        "verified_at": "2026-05-19T17:31:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 1,
+        "note": "uploads/zink2002.pdf is NOT Zink's 'The Display of a Formal p-Divisible Group' paper \u2014 it is the PRELIMINARY PAGES (front matter, pp. I-XII) of the Ast\u00e9risque volume 278 (2002) that Zink's paper appears IN. URL https://www.numdam.org/item/AST_2002__278__R1_0.pdf points at the volume prelims, not Zink's chapter. Fix: update references.ts URL to the actual Zink article (typically AST_2002__278__<startpage>_0.pdf) once the volume TOC is consulted; then re-run upload-bib-papers.sh to re-fetch. The QOU citation in witt-vector-lift.lean:83 itself is about Dist(\u011c) free \u2124_p-module structure \u2014 IS in Zink's actual paper \u00a72 \u2014 so the cite intent is fine, just the local PDF needs replacement. | UPDATE 2026-05-19 17:31: bad URL removed from references.ts. Local PDF (uploads/zink2002.pdf) is vol prelims, can be deleted/renamed. Need to find correct chapter URL on numdam.org/issue/AST_2002__278__ then re-fetch.",
+        "source": {
+          "kind": "external",
+          "url": ""
+        }
+      }
+    }
+  ]
+}

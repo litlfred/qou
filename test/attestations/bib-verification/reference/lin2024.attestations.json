@@ -1,0 +1,79 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "lin2024",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 307,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2412.02281v1/2412.02281v1.pdf"
+        },
+        "id": "lin2024",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "WRONG JOIN \u2014 LOUD, AND THE SECOND ONE ON THIS SAME KEY. The seeded id names a two-author monograph on basic hypergeometric series published by a university press. This PDF's front matter shows a three-author arXiv preprint from two decades later on the explicit evaluation of q-Stokes matrices for confluent hypergeometric q-difference equations. Different author count, different decade, different document type. Two distinct documents in this slice (this one and library/arxiv-1404.2541v1/1404.2541v1.pdf) are both joined to the same id, which is the signature of a machine guess keyed on the words 'basic hypergeometric' appearing in an abstract. I set `id: null`; no `ref()` entry exists for these authors or this arXiv id. GENUINELY RELEVANT AND UNREGISTERED. Corpus-grep per AGENTS.md \u00a7'Before declaring open' over docs/, content/, computations/ and docs/coordination/ finds no entry. The corpus's active W2 Stokes attack (`docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md`, `QOU/MathlibExt/QBorelKernel*.lean`, `QOU/QBeta/C1*.lean`, bean qou-qbp5) needs explicit q-Stokes matrices, and the registry itself records at references.ts:7652 that the registered RSZ frame covers only integral slopes and gives dimension 0 for a single-slope module. This document computes q-Stokes matrices explicitly, in block form, by q-Borel resummation, and shows they degenerate to the classical confluent-hypergeometric Stokes matrices as q \u2192 1 \u2014 a classical-limit consistency check the corpus has no other source for.",
+          "keyResults": [
+            {
+              "locator": "Thm 1.1",
+              "statement": "Under an explicit condition on the matrix A, the q-Stokes matrix S_q(z, \u03bb, \u03bc; E_nn, A) of the confluent hypergeometric q-difference system takes an explicit block matrix form.",
+              "useForFolio": "A closed-form q-Stokes matrix to compare against the 4\u2081 / 5\u2082 descendant equation's Stokes data.",
+              "targets": [
+                "QOU.QBeta.FiveTwoStokesMatrixIdentities",
+                "docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md"
+              ]
+            },
+            {
+              "locator": "Thm 1.2 (proved in \u00a73; connection matrix at Thm 3.8)",
+              "statement": "A connection formula for \u2099\u03c6_{n\u22121}(a\u2081,\u2026,a_{n\u22121},0; b\u2081,\u2026,b_{n\u22121}; q, z) via q-Borel resummation, with the connection matrix given explicitly.",
+              "useForFolio": "An explicit connection matrix for a basic hypergeometric series \u2014 the object C1ConnectionPoles.lean carries abstractly.",
+              "targets": [
+                "QOU.QBeta.C1ConnectionPoles"
+              ]
+            },
+            {
+              "locator": "\u00a74 (q \u2192 1 limit)",
+              "statement": "As q \u2192 1 the q-Stokes matrices recover the known Stokes matrices of the corresponding confluent hypergeometric differential system.",
+              "useForFolio": "A classical-limit consistency check for any q-Stokes construction the corpus builds.",
+              "targets": [
+                "docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry exists; the document supplies explicit q-Stokes matrices and a q\u21921 degeneration the active W2 attack plan currently has no source for.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-ekox"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Once registered, cite at the connection-matrix Lean file, whose only current analytic reference the corpus has itself recorded as inapplicable to a single-slope module.",
+              "target": "folio/quantum-observable-universe/lean/QOU/QBeta/C1ConnectionPoles.lean",
+              "bean": "qou-8kn5"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "ac4127cf4994"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

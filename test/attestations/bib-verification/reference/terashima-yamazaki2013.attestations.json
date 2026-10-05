@@ -1,0 +1,76 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "terashima-yamazaki2013",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 410,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1202.4698v3/1202.4698.pdf"
+        },
+        "id": "terashima-yamazaki2013",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Identified from front matter (hep-th, v3). No ref() entry, no \\cite{} site, no Lean -- Ref:; the arXiv id is absent from content/ -> orphan on all three checks. Note the near-miss: `ponsot-teschner2001` IS registered and IS cited, at rem:channel-rotation-askey-lit item 2, for exactly the modular-double 6j object this document revisits -- so the corpus already has the earlier paper of this line and not this one. Subject: b-6j symbols of the modular double of U_q(sl(2,R)) with q = exp(i pi b^2), new natural normalisations, new integral representations, and a direct saddle-point demonstration that the b -> 0 limit reproduces the volume of a non-ideal hyperbolic tetrahedron. Relevant because rem:q-dilogarithm-pentagon-associator asserts that the quantum dilogarithm IS the quantum associator, equivalently the 6j-symbol, and rem:channel-rotation-askey-lit item 2 makes the b <-> 1/b map the driver of the 6j-level channel rotation: this document is the explicit modular-double instance of both, with the volume asymptotics attached. Supporting rather than core for two reasons, both hypothesis checks: (1) the volume it reproduces is that of a NON-IDEAL tetrahedron parameterised by six dihedral angles, whereas every QOU volume in play (Vol(4_1) = 2*Cl_2(pi/3), Vol(Borromean)) comes from an IDEAL triangulation -- the formula does not specialise to those without taking the ideal limit, which the document does not do; (2) the results are physics-rigor direct calculations and outlined second proofs, not numbered theorems, so nothing here discharges a Lean obligation. No block consumes a result; the value is citation and framing.",
+          "keyResults": [
+            {
+              "locator": "Sec 3.1-3.2, eqs (3.1)-(3.4) and (3.10)-(3.11)",
+              "statement": "The b-6j symbol has b -> 0 saddle-point asymptotics exp(W_pm(A)/(2 pi i b^2)) with W_pm(A) = U(z_pm, A) + Delta(A) - (5/3) pi^2 -+ 2 pi^2 phi, whose imaginary part is the tetrahedron-volume formula (3.3) quoted from its ref [MY, Thm 2]; the potential U(u, A) is an alternating sum of eight dilogarithms in the dihedral-angle variables A_k = exp(i eta_k), and the saddles are the two roots of dU/du = -2 pi i / u.",
+              "useForFolio": "The explicit associator-to-volume computation behind the identification rem:q-dilogarithm-pentagon-associator states structurally ('the quantum dilogarithm is the quantum associator, equivalently the 6j-symbol'). Cite it there as the modular-double realisation, together with the caveat that the tetrahedra are non-ideal, so the QOU ideal-triangulation volumes are a limit of this family and not an instance of it.",
+              "targets": [
+                "rem:q-dilogarithm-pentagon-associator"
+              ]
+            },
+            {
+              "locator": "Sec 2 (normalisations) with eq (2.28) and Appendix B; second derivation in Sec 5, eq (5.17)",
+              "statement": "Natural normalisation conditions for the b-6j symbol are identified -- one of them shown to define a quantisation of Fenchel-Nielsen coordinates -- and new integral representations are derived from Spiridonov elliptic hypergeometric identities; Sec 5 then re-derives the volume asymptotics as the generating function of the canonical transformation between the (l_s, k_s) and (l_t, k_t) Darboux coordinates.",
+              "useForFolio": "rem:channel-rotation-askey-lit item 2 asserts that 'the map b <-> 1/b drives the 6j-level rotation' and that this is what divides Phi_q (Faddeev, non-compact) from Li_2^q (Rogers, compact), citing only `ponsot-teschner2001`. This supplies the normalisation-fixed version of that 6j object plus a second, coordinate-change derivation of its classical limit -- the natural companion citation at the same sentence.",
+              "targets": [
+                "rem:channel-rotation-askey-lit"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Orphan, and the direct sequel to an already-registered and already-cited entry (`ponsot-teschner2001`) at the one block that invokes the 6j-level modular-double rotation.",
+              "target": "rem:channel-rotation-askey-lit",
+              "bean": "qou-7fhj"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "rem:channel-rotation-askey-lit item 2 currently supports the b <-> 1/b 6j-level rotation claim with the 2001 Clebsch-Gordan/Racah paper alone; the normalisation-fixed b-6j symbol and its new integral representations belong at the same sentence.",
+              "target": "rem:channel-rotation-askey-lit",
+              "bean": "qou-7ji4"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "rem:q-dilogarithm-pentagon-associator asserts the dilogarithm-associator-6j identification without a semiclassical anchor. A remark can record that in the modular double the b -> 0 limit of the 6j symbol is a hyperbolic tetrahedron volume, and must state the applicability check: the tetrahedra are non-ideal (six free dihedral angles), so this does not by itself supply Vol(4_1) or any ideal-triangulation volume the corpus uses -- what would need checking is the ideal limit of eq (3.3).",
+              "target": "rem:q-dilogarithm-pentagon-associator",
+              "bean": "qou-u800"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-09T00:10:43.091Z",
+          "source_sha": "54171c652161"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}
