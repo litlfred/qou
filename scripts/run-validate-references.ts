@@ -68,5 +68,15 @@ configureReferenceRegistry({
 
 console.log(`Reference registry configured: ${bib.references.length} entries\n`);
 
+// Default the paper (C9 story B1, issue #7528). Without `--paper` the checker
+// throws on a 5-paper folio, so the wrapper used to exit 1 before checking
+// anything. Measured 2026-10-05: running it with each of the five papers gives
+// IDENTICAL findings (11 errors / 177 warnings / 444 info), because the
+// citation cross-check walks the whole folio. So a default changes nothing
+// about what is checked, and an explicit `--paper` still wins.
+if (!process.argv.includes("--paper")) {
+  process.argv.push("--paper", "quantum-observable-universe");
+}
+
 // Dynamic, and after configuration — see the note above.
 await import("../folio-assistant/cat-harness/content/pipeline/validate-references");
