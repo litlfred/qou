@@ -29,9 +29,18 @@ on:
   # CI auto-triggers disabled (owner directive 2026-06-30): Actions billing.
   workflow_dispatch: {}
 
-# EVERY STRICT GATE IN THIS FILE FAILED OPEN.
+# THE GATES ARE NOW ONE TABLE (TOOLS T7, bean qou-4dj1). Each step below calls
+# `python3 scripts/compute-qa.py --gate <id>`, which runs the exact command this
+# step used to run inline, applies the same strict/warn exit handling, writes the
+# step summary, and records a verdict under test/results/compute-qa/. The order
+# and grouping live in processes/tools/compute-qa.bpmn; each step names its
+# activity with `# bpmn-node:`. The note below is kept as the history of why
+# `shell: bash` is set; the runner no longer pipes through tee, so a red gate
+# fails its step whatever the shell.
 #
-# The steps below all run `python3 <audit>.py --strict | tee /tmp/x.txt`. The
+# EVERY STRICT GATE IN THIS FILE FAILED OPEN (history).
+#
+# The steps below all ran `python3 <audit>.py --strict | tee /tmp/x.txt`. The
 # default shell for a `run:` block on Linux is `bash -e {0}` — `-e` but NOT
 # `-o pipefail` — so the exit status of that pipeline is `tee`'s, which is
 # always 0. A red audit printed its own failure into the step summary and the
@@ -55,16 +64,8 @@ jobs:
         with:
           python-version: "3.11"
       - name: Witness staleness report (warn-only)
-        run: |
-          # stdlib-only validator; no pip install needed.
-          python3 computations/witness_dependency_drift.py | tee /tmp/staleness.txt || true
-          {
-            echo '## Witness staleness (warn-mode)';
-            echo '```';
-            head -20 /tmp/staleness.txt;
-            echo '```';
-            echo '_Upstream drift fails the gate once escalated to `--strict`; self-staleness is warn-only until the backlog drains. See `docs/design/2026-06-16-witness-staleness-propagation.md`._';
-          } >> "$GITHUB_STEP_SUMMARY"
+        # bpmn-node: Task_Staleness (processes/tools/compute-qa.bpmn); gate `staleness-report`, warn.
+        run: python3 scripts/compute-qa.py --gate staleness-report
 
       - name: q0-anchor flip detector (strict)
         # A witness whose q0Value disagrees with its q0Anchor is the muon/proton
@@ -72,14 +73,8 @@ jobs:
         # flip is a genuine correctness error, so this gate is STRICT: exits 1 on
         # any Q0_FLIP. Missing anchors (pre-backfill) are NOT failures — a witness
         # gains its anchor when next produced via WitnessBuilder (PR #4020).
-        run: |
-          python3 computations/audits/q0_anchor_consistency_audit.py --strict | tee /tmp/q0flip.txt
-          {
-            echo '## q0-anchor flip detector (strict)';
-            echo '```';
-            head -14 /tmp/q0flip.txt;
-            echo '```';
-          } >> "$GITHUB_STEP_SUMMARY"
+        # bpmn-node: Task_Staleness (processes/tools/compute-qa.bpmn); gate `q0-anchor-flip`, strict.
+        run: python3 scripts/compute-qa.py --gate q0-anchor-flip
 
       - name: mpf(<float>) source audit (strict — baseline ZERO)
         # Owner directive: NO FLOAT64. The float64-padding ratchet below
@@ -102,15 +97,8 @@ jobs:
         # mpf(2.5), mpf(1e9) lose nothing. An explicit mpf(float(x)) is
         # reported as advisory, not failed; mark deliberate ones with a
         # `# float64-intentional: <reason>` comment.
-        run: |
-          python3 computations/mpf_float_source_audit.py --self-test
-          python3 computations/mpf_float_source_audit.py --strict | tee /tmp/mpfsrc.txt
-          {
-            echo '## mpf(<float>) source audit (baseline zero)';
-            echo '```';
-            head -14 /tmp/mpfsrc.txt;
-            echo '```';
-          } >> "$GITHUB_STEP_SUMMARY"
+        # bpmn-node: Task_Precision (processes/tools/compute-qa.bpmn); gate `mpf-float-source`, strict.
+        run: python3 scripts/compute-qa.py --gate mpf-float-source
 
       - name: import-time dps ratchet (strict on NEW constants built at dps=15)
         # The third member of the float64 family, and the one the other two
@@ -139,15 +127,8 @@ jobs:
         # the audit CANNOT PARSE is never baselined and always fails — that is
         # "no information", not "no findings", and conflating the two is the bug
         # bean qou-brkp records this audit having had once already.
-        run: |
-          python3 computations/mpf_import_time_dps_audit.py --self-test
-          python3 computations/mpf_import_time_dps_audit.py --strict | tee /tmp/impdps.txt
-          {
-            echo '## import-time dps ratchet (strict on NEW)';
-            echo '```';
-            head -16 /tmp/impdps.txt;
-            echo '```';
-          } >> "$GITHUB_STEP_SUMMARY"
+        # bpmn-node: Task_Precision (processes/tools/compute-qa.bpmn); gate `import-time-dps`, strict.
+        run: python3 scripts/compute-qa.py --gate import-time-dps
 
       - name: never-raises-dps ratchet (strict on NEW producers stuck at 15 dps)
         # The blind spot the other three float64 gates SHARE, rather than a gap
@@ -171,15 +152,8 @@ jobs:
         # today; anything new fails. Unlike the import-time audit, the fix here
         # usually MOVES PUBLISHED VALUES — the producer really was computing low,
         # and that movement is the point.
-        run: |
-          python3 computations/never_raises_dps_audit.py --self-test
-          python3 computations/never_raises_dps_audit.py --strict | tee /tmp/nrdps.txt
-          {
-            echo '## never-raises-dps ratchet (strict on NEW)';
-            echo '```';
-            head -16 /tmp/nrdps.txt;
-            echo '```';
-          } >> "$GITHUB_STEP_SUMMARY"
+        # bpmn-node: Task_Precision (processes/tools/compute-qa.bpmn); gate `never-raises-dps`, strict.
+        run: python3 scripts/compute-qa.py --gate never-raises-dps
 
       - name: float64-padding ratchet (strict on NEW fake precision)
         # Owner directive: NO FLOAT64. A value that enters a producer as a
@@ -200,15 +174,8 @@ jobs:
         #
         # Ratchet: the 452-occurrence backlog is baselined and tolerated so
         # the gate can run today; anything new fails.
-        run: |
-          python3 computations/witness_float64_padding_audit.py --self-test
-          python3 computations/witness_float64_padding_audit.py --strict | tee /tmp/f64.txt
-          {
-            echo '## float64-padding ratchet';
-            echo '```';
-            head -14 /tmp/f64.txt;
-            echo '```';
-          } >> "$GITHUB_STEP_SUMMARY"
+        # bpmn-node: Task_Precision (processes/tools/compute-qa.bpmn); gate `float64-padding`, strict.
+        run: python3 scripts/compute-qa.py --gate float64-padding
 
       - name: mp.dps no-op gate (strict — starts at ZERO)
         # Sibling of the step above, catching the OPPOSITE defect.
@@ -232,15 +199,8 @@ jobs:
         # in gated paths, so this starts green and any regression fails.
         # scratch/ is reported but not gated, so exploratory work cannot put a
         # standing backlog in front of it.
-        run: |
-          python3 computations/mpf_context_dps_audit.py --self-test
-          python3 computations/mpf_context_dps_audit.py --strict | tee /tmp/dps.txt
-          {
-            echo '## mp.dps no-op gate';
-            echo '```';
-            head -20 /tmp/dps.txt;
-            echo '```';
-          } >> "$GITHUB_STEP_SUMMARY"
+        # bpmn-node: Task_Precision (processes/tools/compute-qa.bpmn); gate `mpf-context-dps`, strict.
+        run: python3 scripts/compute-qa.py --gate mpf-context-dps
 
       - name: module-const precision gate (strict on LOSSY)
         # Third member of the precision family, and it catches what the other
@@ -256,16 +216,8 @@ jobs:
         # gated: a tolerance like mpf("1e-25") is affected but harmless, and
         # that is a judgement about USE which no static test can make.
         # LOSSY was 11 and is now 0, so this starts green like its siblings.
-        run: |
-          python3 computations/module_const_precision_audit.py --self-test
-          python3 computations/module_const_precision_audit.py --strict \
-            | tee /tmp/mconst.txt
-          {
-            echo '## module-const precision gate';
-            echo '```';
-            head -24 /tmp/mconst.txt;
-            echo '```';
-          } >> "$GITHUB_STEP_SUMMARY"
+        # bpmn-node: Task_Precision (processes/tools/compute-qa.bpmn); gate `module-const`, strict.
+        run: python3 scripts/compute-qa.py --gate module-const
 
       - name: raw-float64 ratchet (strict on NEW dirty witnesses)
         # The step above gates FAKE precision — float64 padded past ~17 digits.
@@ -287,15 +239,8 @@ jobs:
         # goes UP. Fix at the producer (mpmath.mpf from source, serialize
         # with _precision.fmt) — never hand-edit, and never add a file to
         # the baseline to go green.
-        run: |
-          python3 computations/witness_raw_float64_audit.py --self-test
-          python3 computations/witness_raw_float64_audit.py --strict | tee /tmp/rawf64.txt
-          {
-            echo '## raw-float64 ratchet';
-            echo '```';
-            head -14 /tmp/rawf64.txt;
-            echo '```';
-          } >> "$GITHUB_STEP_SUMMARY"
+        # bpmn-node: Task_Precision (processes/tools/compute-qa.bpmn); gate `raw-float64`, strict.
+        run: python3 scripts/compute-qa.py --gate raw-float64
 
       - name: q0-value drift ratchet (strict on NEW staleness)
         # A witness that embeds q_0 freezes whatever value its producer had.
@@ -316,14 +261,8 @@ jobs:
         # A failure means a NEW stale anchor landed. Fix it by RE-RUNNING THE
         # PRODUCER, never by hand-editing the number, and never by
         # --rebaseline (that is for draining only — the count must go DOWN).
-        run: |
-          python3 computations/q0_value_drift_audit.py --strict | tee /tmp/q0drift.txt
-          {
-            echo '## q0-value drift ratchet';
-            echo '```';
-            head -14 /tmp/q0drift.txt;
-            echo '```';
-          } >> "$GITHUB_STEP_SUMMARY"
+        # bpmn-node: Task_Staleness (processes/tools/compute-qa.bpmn); gate `q0-value-drift`, strict.
+        run: python3 scripts/compute-qa.py --gate q0-value-drift
 
       - name: No-free-parameter certificate (strict)
         # Every number entering a predicted observable must be traceable to a
@@ -342,50 +281,8 @@ jobs:
         # code, or (b) a legitimate constant the classifier cannot yet see —
         # add it to VERDICT_LEDGER in the script with a written justification.
         # Never widen the bounds to make a red run green.
-        run: |
-          python3 computations/no_free_parameter_certificate.py --self-test
-          # DECLARED fail-open, not an accidental one — and NOT a hygiene
-          # defect. With pipefail set at the workflow level this gate is
-          # genuinely red, on exactly one literal:
-          #
-          #     qbeta_t4_stokes3_crux_probe.py:  A_omega = 3
-          #
-          # It is red BY DESIGN and cannot be fixed by sourcing the value.
-          # `ADJUDICATED_FREE` in no_free_parameter_certificate.py keys on the
-          # assigned NAME and forces `cls = "UNTRACEABLE"` before the
-          # small-integer whitelist can see it, precisely so that A_omega
-          # cannot be waved through as "just a 3". Its ledger entry says why:
-          # AfreeThetaConstraint.lean proves (sorry-free) that the T4/T5
-          # channel has two anchor equations in three unknowns, so A_omega is
-          # a genuine free parameter pinned only by a one-sided A >= 2.05, and
-          # ratio_attained constructs an admissible A for every target ratio.
-          #
-          # StokesSymmetryConstant.lean does NOT contradict that, though it is
-          # easy to read as if it does. It proves a CONDITIONAL: *if* A_omega
-          # is the Stokes symmetry constant then it is exact and q-independent
-          # at every q. Its own Scope paragraph is explicit — "Nothing here
-          # derives the number 3 from the categorical drivers — that remains
-          # open (qou-qnnq lineage)". Exactness of the reading, not derivation
-          # of the value.
-          #
-          # So this gate goes green when qou-qnnq derives A_omega, and not
-          # before. Removing the entry from ADJUDICATED_FREE to get a green
-          # run is the "widen the bounds" move the sibling steps forbid.
-          # Red-walling the six gates this change just made real, over a
-          # standing open research question, is the worse trade — so it is
-          # named, scoped, and visible in the step summary rather than
-          # silently passing.
-          #
-          # The other two literals this step used to flag, S_muon and
-          # S_proton, WERE hygiene and are fixed: they now read from
-          # qbeta-c3-barodd-sleak.witness.json instead of being hand-copied.
-          python3 computations/no_free_parameter_certificate.py --strict | tee /tmp/nfp.txt || true
-          {
-            echo '## No-free-parameter certificate (strict)';
-            echo '```';
-            head -20 /tmp/nfp.txt;
-            echo '```';
-          } >> "$GITHUB_STEP_SUMMARY"
+        # bpmn-node: Task_Precision (processes/tools/compute-qa.bpmn); gate `no-free-parameter`, warn.
+        run: python3 scripts/compute-qa.py --gate no-free-parameter
 
       - uses: oven-sh/setup-bun@v2
       - name: Author-note Lean-coverage drift gate (strict)
@@ -396,6 +293,7 @@ jobs:
         # scripts/refresh-authors-note.ts (commit note + lean-coverage.json).
         # The agent-side gate is scripts/check-sidecars.sh; this is the
         # CI backup (dispatch-only, per the 2026-06-30 billing directive).
+        # bpmn-node: Task_Staleness (processes/tools/compute-qa.bpmn); gate `authors-note-coverage`, strict.
         run: |
           ./scripts/setup-folio-assistant.sh
-          bun run scripts/refresh-authors-note.ts --check
+          python3 scripts/compute-qa.py --gate authors-note-coverage
