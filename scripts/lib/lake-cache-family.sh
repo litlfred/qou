@@ -38,7 +38,7 @@ import json, sys
 d = json.load(open(sys.argv[1]))
 for e in d.get("directories", []):
     st = e.get("storage") or {}
-    if "lake-cache" in (e.get("graphKinds") or []) and st.get("keyedBy") == "family":
+    if "lake-cache" in (e.get("graphTypologies") or e.get("graphKinds") or []) and st.get("keyedBy") == "family":
         print(st["branchPrefix"]); break
 PY
 )"

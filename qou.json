@@ -12,8 +12,8 @@
     {
       "id": "folio",
       "path": "folio/",
-      "_graphKinds_comment": "RENAMED from `graphs` 2026-09-26. Platform main renamed this field on 2026-09-21 and the old name was the conflation it fixes: `graphs: [\"folio\"]` read literally asserts this directory IS the folio graph, when what is meant is that the graph here is OF KIND folio (cat-harness/schemas/cat-harness.ts, GraphNodeDirectoryShape). `graphs` still WORKS -- `acceptLegacyGraphsKey` accepts it where `graphKinds` is absent, and that alias exists precisely for unmigrated downstream folios like this one -- so this is alignment, not a fix for a break. Deliberately not a merge upstream: if both are present `graphKinds` wins, so never carry both.",
-      "graphKinds": [
+      "_graphTypologies_comment": "RENAMED from `graphs` 2026-09-26. Platform main renamed this field on 2026-09-21 and the old name was the conflation it fixes: `graphs: [\"folio\"]` read literally asserts this directory IS the folio graph, when what is meant is that the graph here is OF KIND folio (cat-harness/schemas/cat-harness.ts, GraphNodeDirectoryShape). `graphs` still WORKS -- `acceptLegacyGraphsKey` accepts it where `graphKinds` is absent, and that alias exists precisely for unmigrated downstream folios like this one -- so this is alignment, not a fix for a break. Deliberately not a merge upstream: if both are present `graphKinds` wins, so never carry both.",
+      "graphTypologies": [
         "folio"
       ],
       "description": "The authored folios: quantum-observable-universe and its siblings, each a directory holding a same-named manifest. NOT `folio/` — see `_comment`.",
@@ -22,7 +22,7 @@
     {
       "id": "library",
       "path": "library/",
-      "graphKinds": [
+      "graphTypologies": [
         "library"
       ],
       "description": "L1 source content: one directory per ingested document, and reference DATASETS (e.g. CODATA) whose values are addressable as {{ qou.library.<entry>.<slug> }}."
@@ -31,16 +31,16 @@
       "id": "computations",
       "path": "computations/",
       "description": "Python computations and the witnesses they write (<name>.witness.json). A witness value is addressable in prose as {{ qou.computations.<witness>.<json path> }}, resolved once for the PDF, the blueprint and the site.",
-      "graphKinds": [
+      "graphTypologies": [
         "code",
         "computation-witness"
       ],
-      "_graphKinds_comment": "`code` for the Python computations, and `computation-witness` for the witnesses they write (platform kind added in folio-assistant#2129, story TOOLS T1/T2, beans qou-qb6t and qou-4r5m). One directory, two graph kinds: a directory is a place to look, and the witnesses are told apart by their `.witness.json` suffix. `bun run witness:conformance` reports which witnesses meet the producer contract; it never edits one. Addressable as {{ qou.computations.<witness>.<json path> }} (#7490)."
+      "_graphTypologies_comment": "`code` for the Python computations, and `computation-witness` for the witnesses they write (platform kind added in folio-assistant#2129, story TOOLS T1/T2, beans qou-qb6t and qou-4r5m). One directory, two graph kinds: a directory is a place to look, and the witnesses are told apart by their `.witness.json` suffix. `bun run witness:conformance` reports which witnesses meet the producer contract; it never edits one. Addressable as {{ qou.computations.<witness>.<json path> }} (#7490)."
     },
     {
       "id": "tools",
       "path": "tool-defs/",
-      "graphKinds": [
+      "graphTypologies": [
         "tools"
       ],
       "description": "qou's Tool nodes: one per computation script a content block wires to a witness, generated from the block manifests by scripts/gen-producer-tools.ts (story TOOLS T5, bean qou-a3l1).",
@@ -49,7 +49,7 @@
     {
       "id": "processes",
       "path": "processes/",
-      "graphKinds": [
+      "graphTypologies": [
         "processes"
       ],
       "description": "qou's BPMN processes, grouped by concern (processes/processes.json). First: content/witness-refresh.bpmn, the owner-gated refresh of computation witnesses (story TOOLS T6, bean qou-kumy)."
@@ -57,7 +57,7 @@
     {
       "id": "qa",
       "path": "test/results/",
-      "graphKinds": [
+      "graphTypologies": [
         "qa"
       ],
       "storage": {
@@ -69,7 +69,7 @@
     {
       "id": "lake-cache",
       "path": "lake-cache/",
-      "graphKinds": [
+      "graphTypologies": [
         "lake-cache"
       ],
       "storage": {
@@ -82,7 +82,7 @@
     {
       "id": "fsh-guts",
       "path": "fsh-guts/",
-      "graphKinds": [
+      "graphTypologies": [
         "fsh-guts"
       ],
       "description": "Deprecated and retired material, kept and addressable, deliberately absent from the rendered site (platform kind `fsh-guts`, holds: context). Holds the parked renderers and workflows from the migration (bean qou-6u3n) and older scratch. A file is a graph node only if it declares `$schema: folio-fsh-guts/v1`; the rest is kept bytes, which this declaration makes discoverable rather than claiming they are nodes.",

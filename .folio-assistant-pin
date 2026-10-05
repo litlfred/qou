@@ -179,4 +179,24 @@
 # platform's own tree, so every corpus path resolves into the wrong root. A
 # platform/declaration mismatch presents as a broken corpus.
 #
-483ed296b59897ce38affe3a66fb3d504a8a4500
+# BUMPED 2026-10-05 to 3f72f018a (platform main, after #2200 and #2216) — and the
+# declaration change cannot land separately, again.
+#
+# #2200 renamed the <instance>.json field `graphKinds` -> `graphTypologies` as a
+# HARD rename with no alias (owner, 2026-10-05). Its shim accepts only the older
+# `graphs` spelling, so at the new platform qou.json fails to parse ("graphTypologies:
+# expected array, received undefined") and every platform script that reads the
+# declaration stops. qou.json and beans/beans.json are renamed in this commit (the
+# `_graphKinds_comment` keys with them; no value changed).
+#
+# Same corpus (qou main 61e7b10d7), `run-validate folio/quantum-observable-universe`:
+#
+#     483ed296b, qou.json @ main     ->  "9 issue(s)", valid
+#     3f72f018a, qou.json @ renamed  ->  "9 issue(s)", valid; the 9 lines IDENTICAL
+#     483ed296b, qou.json @ renamed  ->  "58 issue(s)", INVALID (the old pin cannot
+#        read the new spelling, the same misrooting trap recorded above)
+#
+# Three sites carry the sha and move together: this file, build.yml's `uses:`, and
+# qou.config.json's folio-assistant-sci `ref`.
+#
+3f72f018a227cba5f3df362373074e5b381d6b94
