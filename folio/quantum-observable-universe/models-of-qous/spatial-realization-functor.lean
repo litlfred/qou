@@ -40,7 +40,7 @@ universe u v
     LaTeX: `\label{def:spatial-realization-functor}` -/
 -- Ref: [kock2004], [manuscript] §1
 structure SpatialRealizationFunctor (C : Type u) [Category.{v} C]
-    [MonoidalCategory C] where
+    [MonoidalCategory C] [CategoryTheory.BraidedCategory C] where
   /-- The Frobenius–Hopf object `A` in `C`. -/
   frobHopf : FrobeniusHopfData C
   /-- The object of Kähler differentials `Ω¹(A)` in `C`. -/

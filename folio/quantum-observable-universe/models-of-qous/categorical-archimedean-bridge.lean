@@ -40,7 +40,7 @@ universe u v
     geometric `θ ∧ ℒ_ξ` on the realised manifold. -/
 -- Ref: [kock2004], [manuscript] §1
 structure CategoricalArchimedeanBridge (C : Type u) [Category.{v} C]
-    [MonoidalCategory C] where
+    [MonoidalCategory C] [CategoryTheory.BraidedCategory C] where
   /-- The Frobenius–Hopf object `A` in `C`. -/
   frobHopf : FrobeniusHopfData C
   /-- The vertical projection `π_V` from the weight decomposition. -/
@@ -60,7 +60,7 @@ structure CategoricalArchimedeanBridge (C : Type u) [Category.{v} C]
 /-- The bridge identity: the fibre functor sends the categorical
     vertical-projected differential to the geometric contact operator. -/
 theorem categorical_archimedean_bridge {C : Type u} [Category.{v} C]
-    [MonoidalCategory C]
+    [MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (cab : CategoricalArchimedeanBridge C) :
     letI := cab.catD
     cab.fibreFunctor.map (cab.proj_V ≫ cab.d_classical) = cab.contactOp :=
