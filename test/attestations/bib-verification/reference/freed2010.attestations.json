@@ -1,0 +1,63 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "freed2010",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 5,
+      "entry": {
+        "id": "freed2010",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T06:23:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "note": "Confirmed paper is 'Topological Quantum Field Theories from Compact Lie Groups' by Freed, Hopkins, Lurie, Teleman (arXiv:0905.0731). Title-only citation in Glossary.lean:337 matches paper scope exactly. (Bib entry uses 'freed2010' shorthand for the 4-author group \u2014 acceptable.)",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/freed2010.pdf"
+        },
+        "local_pdf": "uploads/freed2010.pdf",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "INFRA: the file is absent from the working tree and from HEAD; it exists only on the unmerged branch origin/claude/upload-bib-papers-2026-05-19 (intake commit 847008b036). Recovered from git history for this review; sha below is the blob's. Identity confirmed against the document's own cover (arXiv:0905.0731, extended TQFT from compact Lie groups, four authors) and matches the seeded key. Three citation sites, none load-bearing, one wrong-topic: (1) folio/quantum-observable-universe/lean/QOU/Glossary.lean:337 attaches `-- Ref: [freed2010]` to `structure FIsocrystal` (module over the Dieudonne ring Q_p<F,V>/(FV-p), Frobenius + Verschiebung). The document contains ZERO occurrences of 'isocrystal', 'Dieudonne', 'p-adic' or 'Verschiebung'; its only two 'Frobenius' hits are the Frobenius ALGEBRA of 2d TQFT (p. 10, the SO(2)-fixed fully dualizable object correspondence), an unrelated meaning of the word. This is a miscitation: the reference does not support the claim it is attached to, and no p-adic reference exists anywhere in folio/schema/references.ts. (2) folio/quantum-observable-universe/lean/QOU/Elaboration.lean:72 cites it for 'Ad(P) = P x_G su(2) ... H^0(M, Ad(P)) must vanish for observability'; the document has no 'Ad(P)' and no 'adjoint' occurrence \u2014 generic TQFT background, not a source for that claim. (3) folio/quantum-observable-universe/quantum-observable-universes/tqft-context.ts:6 lists it in a seven-item `cites:` array alongside atiyah1988/lurie2009/etc \u2014 legitimate background, non-load-bearing. Verdict is supporting rather than tangential because the document is squarely in the folio's field (extended TQFT, Chern-Simons framing anomaly) and site (3) is an honest background citation; but nothing in the corpus consumes a specific result of it.",
+          "keyResults": [
+            {
+              "locator": "Thm 2.11 / p. 10",
+              "statement": "A fully dualizable object of Alg fixed under the SO(2)-action is equivalently a semisimple Frobenius algebra (A, tr) with nondegenerate trace, and every such pair determines an extended TQFT.",
+              "useForFolio": "If the folio ever wants a literature anchor for 'the Markov trace makes H_n(q) a Frobenius algebra, hence a 2d TQFT', this is the statement to cite \u2014 but no current block asserts that, so it is listed as available, not as owed.",
+              "targets": [
+                "rem:tqft-context"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "Record that the `-- Ref: [freed2010]` on the F-isocrystal glossary structure is a miscitation (no p-adic content in the source) and that the corpus currently has NO p-adic/Dieudonne reference at all; either source the structure properly or drop the Ref line.",
+              "target": "QOU.Glossary.FIsocrystal",
+              "bean": "qou-ffkf"
+            },
+            {
+              "action": "no-action",
+              "rationale": "The tqft-context.ts cites-array entry and the Elaboration.lean background pointer are honest general-background uses; nothing to change there.",
+              "target": "rem:tqft-context"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "bbaeb6898be0"
+        }
+      }
+    }
+  ]
+}

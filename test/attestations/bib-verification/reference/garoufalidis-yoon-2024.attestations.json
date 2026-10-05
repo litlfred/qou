@@ -1,0 +1,59 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "garoufalidis-yoon-2024",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 306,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2411.03801v2/2411.03801v2.pdf"
+        },
+        "id": "garoufalidis-yoon-2024",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED from the arXiv title page (arXiv:2411.03801v2, math.GT): two-author, subject and identifier match the seeded entry. Citation sites: computations/probes/borromean_nz_adjoint_torsion.py:82 and computations/probes/borromean_jones_1loop_torsion.py:50, both asserting that the 1-loop conjecture used below is now a THEOREM for both calibration cases because 4_1 is 2-bridge. LOAD-BEARING AND CORRECT: the PDF's Theorem 1.1 reads verbatim 'The 1-loop equals torsion conjecture holds for hyperbolic 2-bridge knots', and the introduction confirms the object is the 1-loop power series attached to an ideal triangulation of a cusped hyperbolic 3-manifold, whose constant term is conjectured to equal the adjoint Reidemeister torsion. 4_1 is a hyperbolic 2-bridge knot, so the probes' hypothesis check is sound; the reference entry's separate claim that 6_2 is 2-bridge with fraction 11/3 is also correct. Note the probes route the OTHER calibration case (Borromean rings) to pandey-wong-2023 rather than stretching this theorem past its hypothesis - the boundary is respected, which is what a citation at this strength requires.",
+          "keyResults": [
+            {
+              "locator": "Thm 1.1",
+              "statement": "The 1-loop equals adjoint-Reidemeister-torsion conjecture holds for hyperbolic 2-bridge knots.",
+              "useForFolio": "Upgrades the 4_1 reading of exp(2 c_0) = 1/|det J_NZ| from conjecture-conditional to theorem-backed in the Borromean 1-loop/torsion probes.",
+              "targets": [
+                "computations/probes/borromean_jones_1loop_torsion.py",
+                "computations/probes/borromean_nz_adjoint_torsion.py"
+              ]
+            },
+            {
+              "locator": "Introduction (proof strategy)",
+              "statement": "Both invariants are determinants over the trace field - the 1-loop from Neumann-Zagier matrices/shapes (equivalently the Ptolemy Jacobian), the torsion from Fox calculus on a pi_1 presentation in the adjoint representation - and the proof reconciles the two via the already-registered [ohtsuki-takata2015] result plus an explicit computation.",
+              "useForFolio": "Names precisely which determinant the corpus's det J_NZ computation is, and why the identification is not definitional.",
+              "targets": [
+                "computations/probes/borromean_nz_adjoint_torsion.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Cited in two probes for exactly what Theorem 1.1 states, with the hypothesis (2-bridge) checked and the out-of-scope case routed to a different source. Nothing to correct.",
+              "target": "computations/probes/borromean_jones_1loop_torsion.py"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "a7f1f6fa74cb"
+        }
+      }
+    }
+  ]
+}

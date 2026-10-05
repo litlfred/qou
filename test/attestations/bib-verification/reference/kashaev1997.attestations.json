@@ -1,0 +1,76 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "kashaev1997",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 35,
+      "entry": {
+        "id": "kashaev1997",
+        "status": "partial",
+        "verified_at": "2026-05-19T15:38:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 10,
+        "fix_commit": "(this commit)",
+        "note": "Kashaev, The hyperbolic volume of knots from the quantum dilogarithm, Lett. Math. Phys. 39 (1997). 10 bare-URL Refs \u2192 title+publisher.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1023/A:1007364912784"
+        }
+      }
+    },
+    {
+      "position": 338,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-q-alg-9601025v2/9601025v2.pdf"
+        },
+        "id": "kashaev1997",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "WRONG JOIN, with a correct key available. The seeded id was faddeev_kashaev1994 (two authors, Mod. Phys. Lett. A 1994, arXiv:hep-th/9310070). This document is arXiv:q-alg/9601025v2, 'The hyperbolic volume of knots from quantum dilogarithm', by R. M. Kashaev ALONE, dated January 1996 (preprint ENSLAPP-L-577/96). The correct registered key already exists: kashaev1997 at folio/schema/references.ts:4323, 'The hyperbolic volume of knots from the quantum dilogarithm', Kashaev, Lett. Math. Phys. 39 (1997) 269-275, DOI 10.1023/A:1007364912784 - this preprint is that paper. Fourth of four uploads in this slice wrongly seeded to faddeev_kashaev1994. I have set id to kashaev1997. On relevance: this is the paper that states the volume conjecture (the invariant associated with the cyclic quantum dilogarithm grows exponentially at large N with the hyperbolic volume of the complement as growth rate), which is foundational for the framework's volume-based mass formula. Separately, a dangling-locator finding on the key it was misjoined to: five Lean sites cite '[faddeev_kashaev1994] https://doi.org/10.1142/S0217732394002446' (tm_dilogarithm_evaluation.lean:71,84 and the pentagon/monodromy/cyclic-dilog modules), but the registered faddeev_kashaev1994 entry carries DOI 10.1142/S0217732394000447 - a different DOI. Corpus-grep run for the volume conjecture before proposing: it is already present in the corpus via murakami-murakami 2001 and vanderveen2008, so no gap is being declared here.",
+          "keyResults": [
+            {
+              "locator": "Abstract",
+              "statement": "For a hyperbolic knot or link, the absolute value of the cyclic-quantum-dilogarithm link invariant grows exponentially in N with the hyperbolic volume of the complement as the growth rate.",
+              "useForFolio": "This is the volume-conjecture statement underlying the Vol(K) factor in the mass formula; the row should point at kashaev1997, which already has citation sites in the corpus, not at faddeev_kashaev1994.",
+              "targets": [
+                "folio/schema/references.ts"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "Correct the join to kashaev1997 in the ledger so the volume-conjecture key finally has its source document attached, and so faddeev_kashaev1994 stops appearing verified by four documents none of which is it.",
+              "target": "folio/bib-qa-verifications.json",
+              "bean": "qou-cxlo"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Five Lean sites cite faddeev_kashaev1994 with DOI 10.1142/S0217732394002446 while the registry entry has 10.1142/S0217732394000447. Reconcile - either the registry DOI or the Lean docstrings are wrong, and both cannot be the 1994 'Quantum dilogarithm'.",
+              "target": "folio/quantum-observable-universe/lean/QOU/LiftingDescent/tm_dilogarithm_evaluation.lean",
+              "bean": "qou-eiv5"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "369b0a1a92ce"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "garoufalidis-gu-marino2021",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 276,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2007.10190v2/2007.10190v2.pdf"
+        },
+        "id": "garoufalidis-gu-marino2021",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED from the arXiv title page (arXiv:2007.10190v2, hep-th): three-author, subject and identifier match the seeded entry. This is among the corpus's most heavily used references - roughly fifteen Lean -- Ref: sites across QOU/QBeta/*, plus appendix-mass-binding-algorithms and mass-theory prose. SPOT-CHECKS AGAINST THE PDF, all confirmed: eq. (102) is S+_{sigma1,sigma1}(q) = 2 H+_{1,0}(q) H-_{1,0}(q) = 1 - 12q + 3q^2 + 74q^3 + 90q^4 + O(q^5) = Ind_{5_2}(q), exactly as QOU/QBeta/GZWeightGeneral.lean:32 cites it; eqs (96)/(97)/(98) are the 5_2 Stokes matrices and the q -> 0 factorisation of S+(0), as the five 5_2-DT-spectrum sites cite; eq (65) is the Stokes-automorphism relation s+ = S_theta(q~) s-, as StokesSymmetryConstant.lean cites; det(W_m(q)) = 2 is present in the text. *** LOCATOR DEFECT ***: about ten Lean sites spell the citation as '[garoufalidis-gu-marino2021] GGM 2012.00062' - a DIFFERENT arXiv identifier. 2012.00062 is the companion peacock-patterns paper, which the corpus registers separately as garoufalidis-gu-marino2023peacock and cites under that key in mass-theory/stokes-dt-bps-bridge.md. The equation numbers quoted at those sites belong to THIS document, so the mathematics is right and the inline identifier is wrong. Two sites also carry sub-locators I could not resolve here: 'eq 59a sandwich' (there is a (59), no (59a)) and 'Thm 9 det W_m = 2' (the identity is present, but the only numbered theorem in this document is Theorem 3).",
+          "keyResults": [
+            {
+              "locator": "eq. (102)",
+              "statement": "S+_{sigma1,sigma1}(q) = 2 H+_{1,0} H-_{1,0} = 1 - 12q + 3q^2 + 74q^3 + 90q^4 + ... equals the 3d index Ind_{5_2}(q).",
+              "useForFolio": "The Stokes-equals-rotated-3d-index identity the GZ-weight files consume; already cited correctly with this locator at GZWeightGeneral.lean.",
+              "targets": [
+                "qou:QOU.QBeta.GZWeightGeneral"
+              ]
+            },
+            {
+              "locator": "eqs. (96)-(98)",
+              "statement": "Explicit 5_2 Stokes matrices S_{II+ -> III+}(q) etc., and the q -> 0 factorisation S+(0) = S_{sigma3,sigma1} S_{sigma3,sigma2} S_{sigma1,sigma2}.",
+              "useForFolio": "The 5_2 DT spectrum the corpus's Stokes-constant files read off; note that S+(0) is eq. (98), not eq. (60) as two sites state.",
+              "targets": [
+                "qou:QOU.QBeta.FiveTwoDTSpectrumSplit",
+                "qou:QOU.QBeta.StokesQZeroDTCount"
+              ]
+            },
+            {
+              "locator": "Conj. 1 / Conj. 2",
+              "statement": "The Stokes automorphism is a pair of matrices of integer q-series determined by fundamental solutions of two linear q-difference equations; a distinguished entry equals the DGG 3d index.",
+              "useForFolio": "The conjectural frame the corpus's GZWeightSelection.lean cites as 'Conj. 2, Stokes = rotated 3d-index' - correctly attributed.",
+              "targets": [
+                "qou:QOU.QBeta.GZWeightSelection"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "About ten Lean -- Ref: lines label [garoufalidis-gu-marino2021] with arXiv id 2012.00062, which is the separately-registered peacock companion (garoufalidis-gu-marino2023peacock), while the equation numbers they quote are from 2007.10190. Correct the inline id at those sites (or switch the key where the peacock paper is genuinely meant) so key and locator agree.",
+              "target": "qou:QOU.QBeta.FiveTwoDTSpectrumSplit",
+              "bean": "qou-a92u"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Two sub-locators do not resolve in 2007.10190: 'eq 59a' (no 59a exists) and 'Thm 9 det W_m = 2' (the identity is present; the paper's only numbered theorem is Thm 3). Re-locate them, or attribute them to the peacock paper if that is where they live.",
+              "target": "qou:QOU.QBeta.StokesQZeroDTCount",
+              "bean": "qou-rcoo"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "37bcbd3a343b"
+        }
+      }
+    }
+  ]
+}

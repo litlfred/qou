@@ -1,0 +1,72 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "codata2022",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 1,
+      "entry": {
+        "id": "codata2022",
+        "status": "verified-clean",
+        "verified_at": "2026-09-03T04:19:53Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "fixes_applied": 0,
+        "note": "All 5 .lean Ref sites verified against the NIST table: muon-electron mass ratio 206.768 2827(46) \u2713; proton mass energy equiv. 938.272 089 43(29) MeV \u2713; derived hydrogen mass 938.7831 MeV (= m_p + m_e \u2212 13.6 eV/c\u00b2) \u2713. No fixes needed. \u2014 Source IS held: library/revmodphys97025002pdf. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py. Previous source record: {\"kind\": \"upload\", \"file\": \"uploads/codata-2022-constants.txt\"}.",
+        "source": {
+          "kind": "upload",
+          "file": "library/revmodphys97025002pdf/RevModPhys.97.025002.pdf.pdf"
+        },
+        "local_pdf": "uploads/codata-2022-constants.txt",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Join CORRECT: the file is the NIST complete listing for the 2022 adjustment, matching the registered dataset entry. Not present in the working tree on this branch \u2014 recovered from the intake commit blob (git show 6131f6d019:uploads/codata-2022-constants.txt); sha matches the intake record. The key is heavily and genuinely load-bearing: it is the sole source cited for every reference mass in folio/quantum-observable-universe/mass-theory/mass-from-generators.lean:35-59,204 and for local-substrate-q.lean:94, knot-particle-generation.lean:128, plus 5 .ts cites arrays. BUT the citation is NOT load-bearing at the numbers it labels: six of the seven mass literals in mass-from-generators.lean are CODATA-2018, not 2022. From this document: m_e = 0.51099895069 (Lean has 0.51099895000, -1.35 ppb); m_p = 938.27208943 (Lean 938.27208816, -1.35 ppb); m_n = 939.56542194 (Lean 939.56542052, -1.51 ppb); deuteron 1875.61294500 (Lean 1875.61294257); helion 2808.39161112 (Lean 2808.39160743); alpha 3727.3794118 (Lean 3727.37940824). Only the muon (105.6583755) matches. The same stale values sit in computations/substrate/experimental_constants.py:55,58 under a header that explicitly claims 'CODATA 2022', and its n-p difference 1.2933321 +/- 0.0000005 is the 2018 value where this document gives 1.29333251 +/- 0.00000038 (a 317 ppb shift on Delta_np, itself one of the L2-failing observables). Corpus-grep run: docs/audits/2026-06-30-codata-literals-rollup-precision-partition.md treats 938.27208816 as an 'exact-value match' to the registry and does NOT record that it is the 2018 value; no audit, content block, computations file, or docs/coordination ledger records this 2018-vs-2022 discrepancy for m_p/m_n/deuteron/helion/alpha. Scope-(a): this document, as read, does not support the seven literals it is cited for; that is a data-currency finding, not a claim that any downstream derivation is wrong.",
+          "keyResults": [
+            {
+              "locator": "table rows 'electron/proton/neutron/deuteron/helion/alpha particle mass energy equivalent in MeV'",
+              "statement": "The 2022 adjustment values are m_e = 0.51099895069(16), m_p = 938.27208943(29), m_n = 939.56542194(48), m_d = 1875.61294500(58), m_h = 2808.39161112(88), m_alpha = 3727.3794118(12) MeV.",
+              "useForFolio": "Refresh the seven literals in mass-from-generators.lean and computations/substrate/experimental_constants.py that are labelled CODATA 2022 but hold CODATA 2018 values.",
+              "targets": [
+                "prop:mass-from-generators"
+              ]
+            },
+            {
+              "locator": "row 'neutron-proton mass difference energy equivalent in MeV'",
+              "statement": "Delta_np = 1.29333251(38) MeV in the 2022 adjustment.",
+              "useForFolio": "The L2 Delta_pn accuracy target is currently scored against the 2018 value 1.2933321(5) hardcoded in experimental_constants.py; re-score against 1.29333251.",
+              "targets": [
+                "computations/substrate/experimental_constants.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "compute-check",
+              "rationale": "Six of seven mass literals labelled CODATA 2022 in the Lean are CODATA 2018, off by ~1.3-1.5 ppb. Re-run the L2 dashboard against the real 2022 values and report the deltas. Flagged for attention, not asserted: the documented de-fitted m_p round-trip miss is +1.35 ppb and the CODATA 2018->2022 proton shift is also +1.35 ppb; whether these are the same number is a check to run, not a conclusion.",
+              "target": "computations/per-observable-100x-status.witness.json",
+              "bean": "qou-2an8"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "experimental_constants.py:55,58,71 states 'CODATA 2022' in its header and comments while holding the 2018 m_p/m_n/m_e and the 2018 n-p difference; correct the values or correct the label.",
+              "target": "computations/substrate/experimental_constants.py",
+              "bean": "qou-f0qa"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "77fb90e66c40"
+        }
+      }
+    }
+  ]
+}

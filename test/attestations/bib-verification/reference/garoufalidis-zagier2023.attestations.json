@@ -1,0 +1,42 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "garoufalidis-zagier2023",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 295,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2111.06645/2304.09377v2.pdf"
+        },
+        "id": "garoufalidis-zagier2023",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED \u2014 the document's front matter matches every field of the registered entry, including the journal volume and article number. CITATION STATUS IS NOT 'cited': `rg` over content/ and computations/ returns exactly one hit, the `ref()` entry at references.ts:5066. The single hit outside references.ts is `docs/audits/2026-07-20-qlift-literature-check.md:111`, where the key appears inside a list of q-lift literature \u2014 a survey mention, not a use. So this is a BIB ORPHAN: registered, surveyed, never consumed. The registry note names the intended use \u2014 relevance to the \u03a6_q / Li_2^q odd-carrier and the 1ppq A_\u03c9 Stokes program \u2014 and the document's factorised q-series / matrix-valued knot invariant with Habiro-ring and state-integral holomorphic-block structure is a real fit for that program (it is the natural companion to the two resurgence papers, both of which ARE cited). But nothing in the corpus currently depends on a result from it, which is the honest reading of `supporting` rather than `core`.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "The reference is registered and its companion sources are already load-bearing at the Stokes/DT bridge; if the Habiro-ring holomorphic-block structure is in fact used by the A_\u03c9 program, it should carry a citation site there. If it is not used, the honest outcome is to record it as background rather than leave a registered-but-unconsumed entry.",
+              "target": "prop:stokes-dt-bps-bridge",
+              "bean": "qou-1l6l"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "76ae6c6058f4"
+        }
+      }
+    }
+  ]
+}

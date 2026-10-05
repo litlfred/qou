@@ -1,0 +1,57 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "ame2020",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 388,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/mass_1.mas20.txt"
+        },
+        "id": "ame2020",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "SLICE PREMISE CORRECTION: this is not an orphan. It is the mass.mas20 data file of the AME2020 atomic mass evaluation, and the corresponding ref() entry ame2020 already exists in folio/schema/references.ts and is cited extensively via Lean -- Ref: (e.g. folio/quantum-observable-universe/mass-theory/mass-from-generators.lean, many sites). It is also not a paper: docs/workplans/2026-06-08-uploaded-paper-results-ingestion-backlog.md already classified it as 'AME mass table (data, not a paper) | data-pin, not a citation', and folio/bib-qa-verifications.json already carries a row for it. Core because it is the experimental ground truth under every binding-energy and mass comparison in the folio (B_AME, the rho_strong ladder, the canonical isotope witnesses, qou-mass/src/qou_mass/data/ame2020.json). One bibliographic defect surfaced on reading the file header -- see the proposed action.",
+          "keyResults": [
+            {
+              "locator": "MASS LIST columns BINDING ENERGY/A and ATOMIC MASS",
+              "statement": "Per-nuclide mass excess, binding energy per nucleon, beta-decay energy and atomic mass with uncertainties, unrounded, A = 0 to 295.",
+              "useForFolio": "The data pin behind B_AME comparisons, the deuteron/triton/He-4 numbers the Tjon and Delta_lambda probes score against, and the derived qou-mass isotope tables.",
+              "targets": [
+                "qou-mass/src/qou_mass/data/ame2020.json"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Correction, not a new entry. The file header states that paper (I) at Chinese Physics C45 030002 is by W.J.Huang, M.Wang, F.G.Kondev, G.Audi, S.Naimi, and that paper (II) at 030003 is by M.Wang, W.J.Huang, ... The existing ame2020 entry carries the title and page of (I) but the author ORDER of (II) (Wang first instead of Huang). qou-mass/src/qou_mass/data/ame2020.json records the correct order, so the two disagree. Fix the author order on ame2020, and consider adding the (II) companion entry since binding energies are cited from it.",
+              "target": "folio/quantum-observable-universe/mass-theory/mass-from-generators.lean",
+              "bean": "qou-wy51"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "Re-derive the corpus's hard-coded AME-derived constants (notably rho_strong = (1, 3.8128, 13.0316) in gap10_tjon_correlation_probe.py) directly from this file rather than from a transcribed literal, so a re-upload or evaluation change is caught by the source_sha rather than silently persisting.",
+              "target": "computations/deltalambda/gap10_tjon_correlation_probe.py",
+              "bean": "qou-3o9x"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "e8599c6d7f72"
+        }
+      }
+    }
+  ]
+}

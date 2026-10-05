@@ -1,0 +1,78 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "evans-berger1992",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 274,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/1992evansberger/1992EvansBerger.pdf"
+        },
+        "id": "evans-berger1992",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "No text layer (Xerox scan; pdftotext, pypdf and pdfminer all return 0 chars), so read as rendered page images. It constructs a hierarchy of linking integrals whose second-order member is the Gauss/helicity integral and whose third-order member (a Massey-product integral) detects the Borromean rings, with a fourth-order member distinguishing a 4-component Brunnian entanglement from four unlinked rings, and it recasts the whole hierarchy for BRAIDS as a hierarchy of winding numbers. That last move is the reason this is core rather than supporting. The corpus's EM-linking front (bean qou-o6ml, docs/audits/2026-08-01-em-linking-reads-round1.md) is stuck on two obstructions established from the existing helicity cluster (dgkmsv, komendarczyk, khesin, cantarella-deturck-gluck): total antisymmetry of mu-bar(123), and the absence of any per-pair splitting of the Theorem-B integrand. Separately, MilnorIndeterminacyGate.lean proves that a Hopf-linked spectator collapses the mu-bar residue space to ZMod 1, i.e. the LINK invariant carries no triple content in the mixed-bond regime \u2014 which is the regime the mixed-multibond probe operates in. The third-order winding number here (eq. 22, Psi_ijk = Re integral of lambda_ij d lambda_jk + cyclic, built from the Arnol'd generators omega_ij of the braid-group cohomology) is stated as a well-defined BRAID invariant 'irrespective of whether the net second order winding numbers vanish'. The corpus's substrate is braid words in B_n, so a braid-level third-order invariant that survives nonzero pairwise winding is directly constructible here and is a different object from every invariant the EM-linking sweep has already excluded. None of this is in references.ts (no entry for this work or for the third-order-winding-number construction it cites).",
+          "keyResults": [
+            {
+              "locator": "eq. (21)-(22), p. 6",
+              "statement": "The one-form psi_ijk = lambda_ij d lambda_jk + lambda_jk d lambda_ki + lambda_ki d lambda_ij is closed by the Arnol'd relation, so Psi_ijk = Re integral over gamma of psi_ijk is a homotopy-invariant third-order winding number of a 3-string braid, well defined whether or not the net second-order winding numbers vanish.",
+              "useForFolio": "A braid-level third-order invariant that is NOT killed by a Hopf-linked spectator, unlike the mu-bar residue that MilnorIndeterminacyGate.lean collapses to ZMod 1. It is the natural candidate for the mixed-multibond shared channel that the mu-bar-idempotent probe refuted, and it lives on braid words, which is what the corpus actually manipulates.",
+              "targets": [
+                "QOU.Mass.MilnorIndeterminacyGate",
+                "computations/deltalambda/mixed_multibond_mubar_integrality_probe.py"
+              ]
+            },
+            {
+              "locator": "Abstract; sections on n = 3 and n = 4",
+              "statement": "A fourth-order linking integral distinguishes a 4-component Brunnian entanglement (every pair and every triple unlinked) from four unlinked rings, and the construction is sketched for general order n.",
+              "useForFolio": "An explicit A = 4 Brunnian invariant to place beside the corpus's measured A = 4 Brunnian deficit and the exact-order Milnor bridge, where the order law is currently carried as a conjecture class rather than a construction.",
+              "targets": [
+                "QOU.MassTheory.MilnorOrderLawGeneral",
+                "computations/deltalambda/a4-h12-brunnian-deficit-measure.witness.json"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Core and orphan; the EM-linking reference cluster in references.ts has no entry for a braid-level higher-order winding number, which is the one construction its recorded obstructions do not cover.",
+              "target": "QOU.Mass.MilnorIndeterminacyGate",
+              "bean": "qou-09lb"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record, against the indeterminacy gate, that the gate's conclusion is about the LINK residue and does not apply to a braid-level third-order winding number. Deliberately NOT proposed as aid-proof: I have not checked that the corpus's closure convention and basepoint choices make Psi_ijk well defined on its braid words, nor that it is the right scale/units for a binding channel. Those two checks are what would have to happen first.",
+              "target": "QOU.Mass.MilnorIndeterminacyGate",
+              "bean": "qou-nsfh"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "Evaluate Psi_ijk on the corpus's own Borromean braid word (sigma_1 sigma_2^{-1})^3 and on a mixed Hopf+Borromean multibond configuration, and compare with the mu-bar values the Magnus machinery already produces. This is a cross-check, not an adoption: any agreement is evidence about the construction, not a licence to wire a number.",
+              "target": "computations/deltalambda/mixed_multibond_mubar_integrality_probe.py",
+              "bean": "qou-0seq"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "6f100e931a1e"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

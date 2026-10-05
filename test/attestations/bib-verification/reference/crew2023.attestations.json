@@ -1,0 +1,91 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "crew2023",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 294,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2304.07001v3/2304.07001v3.pdf"
+        },
+        "id": "crew2023",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "rem:st-is-median-resummation identifies the surreal standard part st with the Ecalle median resummation L^med and leans on 'the unique real single-valued average' being well defined; conj:kashaev-surreal applies exactly that to the Kashaev transseries at a root of unity. Both currently cite only ecalle1981 and berarducci-mantova2018 -- i.e. the general theory -- while in quantum topology the existence and radial-limit behaviour of S^med is Conjecture 1.1 of Costin-Garoufalidis, still open in general. This paper proves Conjecture 1.1 parts (1) and (2), plus an explicit radial-limit formula (part 3), for every Habiro-ring element Phi_f admitting a strange identity to a partial theta series with even, mean-zero periodic f (Thm 1.2), and derives the full conjecture for the torus-knot families T(2,2u+1) and T(3,2k) (Cor 1.5). That converts the folio's 'conjecturally well-defined median resummation' into 'proved on a named class', which is precisely the epistemic status rem:st-is-median-resummation should be recording. Explicit scope caveat, and the reason no aid-proof is proposed: the hypothesis is a strange identity to a partial theta series, which the trefoil/torus-knot Kontsevich-Zagier series satisfy and the *hyperbolic* 4_1 tail S(q) = sum prod (1-q^j)(1-q^{-j}) of prop:habiro-tail-archimedean-action does NOT. Citing this at the 4_1 block must therefore be a scope statement ('proved for the torus families, open for 4_1'), never a discharge.",
+          "keyResults": [
+            {
+              "locator": "Thm 1.2 (1)-(3), p. 5, with the Borel transform computed at eq. (2.1)",
+              "statement": "For Phi_f in the Habiro ring with strange identity Phi_f 'equals' theta^{(1)}_{a,b,f} (f even, period M, mean zero), F_f(x) has a resurgent Borel transform, S^med_f is analytic on Re(x) > 0 with radial limits at (1/2 pi i)Q on its natural boundary, and those limits are given in closed form by eq. (1.17) as an integral of theta^{(0)} plus an explicit theta^{(1)} term.",
+              "useForFolio": "Upgrades rem:st-is-median-resummation from 'each side is the unique real single-valued value compatible with the asymptotics' (an appeal to Watson/Nevanlinna-Sokal uniqueness) to a cited theorem establishing existence and radial limits on a concrete class of Habiro elements, and supplies the exact vocabulary (median resummation, natural boundary, radial limit at rationals) that rem:ecalle-borel-resurgence-vocabulary fixes.",
+              "targets": [
+                "rem:st-is-median-resummation",
+                "rem:ecalle-borel-resurgence-vocabulary"
+              ]
+            },
+            {
+              "locator": "Cor 1.5 (p. 6), via Thm 1.4 (eq. 1.22)",
+              "statement": "The Costin-Garoufalidis Conjecture 1.1 holds for the torus-knot families T(2,2u+1) and T(3,2k); specialising u = 1 or k = 1 recovers the trefoil.",
+              "useForFolio": "conj:kashaev-surreal asserts that st applied to the Kashaev transseries is its median resummation, i.e. the asymptotic content of the volume conjecture in resummation form. Cor 1.5 gives the first proved knot families in which the resummation half of that statement holds, so the conjecture can name its verified cases rather than standing entirely unanchored.",
+              "targets": [
+                "conj:kashaev-surreal"
+              ]
+            },
+            {
+              "locator": "Sec 1, eqs (1.3)-(1.8) and Conj 1.1",
+              "statement": "Setup identifying the Habiro ring H, the Kashaev invariant Phi_K in H, F_K(x) = Phi_K(e^{-1/x}) in C[[1/x]], its Borel transform G_K and median resummation S^med_K, and the statement of the Costin-Garoufalidis conjecture.",
+              "useForFolio": "Provides the standard dictionary Habiro element -> formal series -> Borel -> median resummation that prop:habiro-tail-archimedean-action uses implicitly when it reads an optimal-truncation resurgent action A_0 off the 4_1 tail, and makes explicit that 4_1 is outside the proved class.",
+              "targets": [
+                "prop:habiro-tail-archimedean-action"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Orphan, though two of its authors are already in references.ts via fantini-rella2024 and fantini-wheeler2024; this is the Habiro-ring-side resurgence result those entries do not cover.",
+              "target": "folio/schema/references.ts (proposed id: crew-fantini-goswami-osburn-wheeler2025)",
+              "bean": "qou-xmgd"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "rem:st-is-median-resummation asserts median resummation is the unique real single-valued selection but cites only the general Ecalle theory; Thm 1.2 proves existence + radial limits on a named Habiro class.",
+              "target": "rem:st-is-median-resummation",
+              "bean": "qou-74i5"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "conj:kashaev-surreal can name Cor 1.5 (T(2,2u+1), T(3,2k)) as the proved cases of the resummation half of its statement.",
+              "target": "conj:kashaev-surreal",
+              "bean": "qou-5le3"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record the scope boundary explicitly: the strange-identity/partial-theta hypothesis of Thm 1.2 covers torus knots and not the hyperbolic 4_1 tail on which prop:habiro-tail-archimedean-action computes A_0 = pi^2/5, so the proved resurgence does not transfer to the 4_1 face. Deliberately a remark and not aid-proof, because the hypotheses demonstrably do not hold there.",
+              "target": "prop:habiro-tail-archimedean-action",
+              "bean": "qou-jeae"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "b6c0d7f50b64"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "arxiv-1301.4504v4",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 237,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1301.4504v4/1301.4504v4.pdf"
+        },
+        "id": "arxiv-1301.4504v4",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Argues that the AMPS firewall thought-experiment requires a quantum computation whose running time is exponential in the black-hole entropy, so the information behind the horizon is present but computationally inaccessible from outside. The corpus's information-theory chapter asserts a structurally identical thesis in categorical language across several blocks: rem:information-paradox-incompleteness ('existence without provability', degree-0 sections behind the horizon that no finite braid computation from outside produces, Bekenstein-Hawking entropy counting only degree-1 witnesses), thm:geometry-of-incompleteness, and rem:p-vs-np-event-horizon. Those blocks cite hawking1975, bekenstein1973 and goedel1931 and nothing from the complexity-of-decoding literature. Supporting, not core: this paper would change no derivation in the folio \u2014 it supplies prior art and independent physical corroboration for a claim the corpus presents as its own novel framing, which is a scholarly-honesty citation rather than a mathematical input. Corpus-grep over content/, docs/, computations/ finds no 'firewall'/'AMPS' and no complexity-theoretic black-hole reference.",
+          "keyResults": [
+            {
+              "locator": "Sect. 3.4 (Two Counting Arguments)",
+              "statement": "A counting bound showing that decoding the relevant degrees of freedom out of the Hawking radiation requires a time exponential in the entropy, so for a wide class of black holes the experiment cannot be performed.",
+              "useForFolio": "External, physics-side precedent for the corpus's claim that degree-0 truth behind the horizon is unreachable by any finite computation from outside while degree-1 witnesses leak; lets rem:information-paradox-incompleteness state its position against the literature instead of alongside it.",
+              "targets": [
+                "rem:information-paradox-incompleteness"
+              ]
+            },
+            {
+              "locator": "Sect. 4.4 (Error Correction and Zero-Knowledge Proofs)",
+              "statement": "The decoding task is recast as a quantum error-correction problem, and connected to zero-knowledge proof structure, to explain where the exponential comes from.",
+              "useForFolio": "The witnesses-versus-theorem framing of rem:p-vs-np-event-horizon (verifiable partial evidence accumulating toward a proof that never terminates) has a direct counterpart here; citing it grounds the analogy in an existing technical construction rather than leaving it as metaphor.",
+              "targets": [
+                "rem:p-vs-np-event-horizon"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry; the corpus asserts horizon computational opacity as a framing contribution without engaging the literature that established the complexity-theoretic version.",
+              "target": "rem:information-paradox-incompleteness",
+              "bean": "qou-tdfe"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "rem:information-paradox-incompleteness cites only hawking1975, bekenstein1973, goedel1931 while claiming a computational-inaccessibility reading of the paradox.",
+              "target": "rem:information-paradox-incompleteness",
+              "bean": "qou-dy2e"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "rem:p-vs-np-event-horizon frames horizon opacity as a P-vs-NP-shaped claim with no reference to prior complexity-theoretic work on black-hole decoding.",
+              "target": "rem:p-vs-np-event-horizon",
+              "bean": "qou-bz6h"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "201acc5bb1d4"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

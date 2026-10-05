@@ -1,0 +1,58 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "tong2017",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 258,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1705.01853v2/1705.01853v2.pdf"
+        },
+        "id": "tong2017",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED from the arXiv title page (arXiv:1705.01853v2, hep-th): single author, subject and identifier match the seeded entry. Citation site: appendix-standard-model/sm-gauge-truncation.md:9, in prose via \\cite. LOAD-BEARING AND CORRECT - the match is close to verbatim. The block writes that 'the global form of the physical gauge group is (SU(3) x SU(2) x U(1))/Gamma with Gamma a subgroup of Z_6 undetermined by current experiment', and the paper's abstract states that there is an ambiguity in the Standard Model gauge group, that it is SU(3) x SU(2) x U(1)/Gamma with Gamma a subgroup of Z6, and that Gamma cannot be determined by current experiments. The citation does real work: it is what licenses the block's deliberate containment-not-isomorphism framing, i.e. it is the reason the conjecture does not overclaim. Supporting rather than core because the folio consumes the paper's ambiguity statement, not its line-operator spectra.",
+          "keyResults": [
+            {
+              "locator": "Abstract",
+              "statement": "The Standard Model gauge group is (SU(3) x SU(2) x U(1))/Gamma with Gamma a subgroup of Z_6 that current experiment cannot determine.",
+              "useForFolio": "Justifies the containment-not-isomorphism caveat in conj:sm-gauge-truncation and blocks any future isomorphism claim there.",
+              "targets": [
+                "conj:sm-gauge-truncation"
+              ]
+            },
+            {
+              "locator": "Body (electric/magnetic/dyonic line operators)",
+              "statement": "The allowed line-operator spectra and theta-angle periodicities differ between the choices of Gamma, so they are the observables that would fix it.",
+              "useForFolio": "Names the falsifiable discriminant a completed QOU derivation would have to predict - the concrete follow-up the block already gestures at.",
+              "targets": [
+                "conj:sm-gauge-truncation"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Cited in prose for exactly the claim the paper makes; nothing to add or correct.",
+              "target": "conj:sm-gauge-truncation"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "895e0b22c93b"
+        }
+      }
+    }
+  ]
+}

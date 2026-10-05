@@ -1,0 +1,77 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "gavrilik2001",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 139,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-hep-ph-0103325v4/0103325v4.pdf"
+        },
+        "id": "gavrilik2001",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "A phenomenological programme that q-deforms the hadronic flavour algebra U_q(su_n) and derives q-analogues of the Gell-Mann--Okubo mass sum rules, then observes that the selecting polynomials [n]_q - [n-1]_q ARE the Alexander polynomials of the (2, 2n-1) torus knots, so that q is fixed as a root of Delta_q{(2n-1)_1}. This puts it in direct contact with two corpus claims. (1) rem:dictionary-flavor-layer assigns torus knots T(2, 2k+1) to LEPTONS; this document assigns the same family 5_1, 7_1, 9_1, 11_1 to the VECTOR QUARKONIA (s-sbar, c-cbar, b-bbar, t-tbar). That is a conflicting knot-to-particle assignment in the prior literature which the dictionary block, an explicitly-labelled consistency ledger, does not mention. (2) rem:meson-mass-splitting withdraws the Gell-Mann--Okubo comparison and records that the framework predicts deviation 0; this document is uncited prior art for a genuinely different q-deformed GMO relation, [3]_q m_omega8 + (2[2]_q - [3]_q) m_rho = 2[2]_q m_K*. Two honesty caveats that belong in any citation: (a) the q here is a ROOT OF UNITY, q_n = exp(i pi/(2n-1)), i.e. |q| = 1, whereas the substrate q_0 ~ 1.10998 is real and > 1 -- these are different archimedean evaluations of the fibre variable per AGENTS.md 'Im(q) at fibre vs observable level', and no numerical agreement should be inferred; (b) the baryon sum rule at q_7 quoted at 0.07% is SELECTED from an explicitly infinite family of sum rules indexed by m >= 6 whose accuracies the paper tabulates, so the 0.07% is a best-of-family figure, not a parameter-free prediction -- cite it as prior art, never as corroboration.",
+          "keyResults": [
+            {
+              "locator": "Sec. 2, 'Labelling flavors by knots invariants'",
+              "statement": "The q-polynomials [n]_q - [n-1]_q coincide with the Alexander polynomials Delta_q of the (2, 2n-1) torus knots ([2]_q - 1 = Delta{3_1}, [3]_q - [2]_q = Delta{5_1}, [4]_q - [3]_q = Delta{7_1}), and the torus knots 5_1, 7_1, 9_1, 11_1 are placed in correspondence with the vector quarkonia s-sbar, c-cbar, b-bbar, t-tbar.",
+              "useForFolio": "A parameter-free algebraic identity between the corpus's own q-integers and Alexander polynomials of the T(2, odd) tower, plus a competing assignment of that tower to quarkonia rather than leptons -- both belong in the T(2,n) lepton-tower probe and in the consistency ledger.",
+              "targets": [
+                "rem:dictionary-flavor-layer",
+                "computations/lepton_t2n_torus_tower.py"
+              ]
+            },
+            {
+              "locator": "Sec. 2, eq. (2)",
+              "statement": "A q-deformed Gell-Mann--Okubo relation [3]_q m_omega8 + (2[2]_q - [3]_q) m_rho = 2[2]_q m_K* holds for the U_q(su_3) meson octet, reducing to classical GMO at q = 1.",
+              "useForFolio": "Uncited prior art for 'q-deformation of the flavour symmetry gives a modified GMO relation', the exact question rem:meson-mass-splitting withdraws; a citation would let that block distinguish its Hecke/braid q from the flavour-algebra q instead of leaving the reader to assume no such literature exists.",
+              "targets": [
+                "rem:meson-mass-splitting"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry exists for a document that is direct prior art for both the torus-knot flavour labelling and the q-deformed GMO relation.",
+              "target": "rem:dictionary-flavor-layer",
+              "bean": "qou-t21b"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "The corpus assigns T(2, 2k+1) to leptons; this literature assigns the same family to vector quarkonia, and bring-trefoil-cinquefoil-channel assigns T(2,3)/T(2,5) to the colour tube and the zeta_5 carrier. Three inequivalent readings of one knot family deserve an explicit remark rather than silence.",
+              "target": "rem:dictionary-flavor-layer",
+              "bean": "qou-25nb"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "The identity [n]_q - [n-1]_q = Delta_q{(2,2n-1)} is q-generic and parameter-free, so it can be verified symbolically against the corpus's own q-integers and Alexander-polynomial machinery. This is an algebraic cross-check, not an adoption of any numerical value; the root-of-unity q of the source must NOT be substituted for the substrate q_0.",
+              "target": "computations/lepton_t2n_torus_tower.py",
+              "bean": "qou-mmq7"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "38590174ab83"
+        },
+        "note": "Source IS held: library/arxiv-hep-ph-0103325v4. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+        "verified_at": "2026-09-03T04:19:53Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

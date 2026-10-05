@@ -1,0 +1,58 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "deturck-gluck2008",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 165,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/0406276v1/0406276v1.pdf"
+        },
+        "id": "deturck-gluck2008",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Join CORRECT with a date caveat: the PDF is arXiv:math/0406276v1, DeTurck-Gluck, 'The Gauss linking integral on the 3-sphere and in hyperbolic 3-space', dated June 2004 on its own front matter; the registry records year 2008 (the journal publication) with this arXiv URL, so the join holds. BIB ORPHAN: a full-tree grep for the key returns zero hits outside folio/schema/references.ts - not a single .md, .lean, .ts, .py, .json or docs/ mention. This one is not previously recorded as uncited, unlike its sibling franecki-kapranov-1999. The paper gives explicit integral formulas for linking, twisting, writhing and helicity on S^3 and in H^3 that are isometry-invariant (geometric, not merely topological), derives them from a steady-state electrodynamics with an explicit Biot-Savart formula and Ampere's law, and obtains upper bounds for helicity and lower bounds for the first curl eigenvalue on subdomains. Note the front matter's own caveat: 'We give only a hint of the proofs.' The folio has live blocks in exactly this area - rem:helicity-physical, rem:townsend-biot-savart-strain, rem:vorticity-lower-bound-argument - which is why this is supporting rather than tangential. Corpus-grep run before proposing: docs/audits/, content/, computations/ and docs/coordination/ carry no citation of this work; the closest recorded reading is the komendarczyk2008 registry note on third-order helicity.",
+          "keyResults": [
+            {
+              "locator": "front matter, bullets 1 and 3",
+              "statement": "Explicit isometry-invariant integral formulas for linking, twisting, writhing and helicity in S^3 and H^3, with the Biot-Savart formula yielding upper bounds for helicity and lower bounds for the first eigenvalue of curl on subdomains.",
+              "useForFolio": "The hyperbolic-space version is the setting the framework actually works in; a helicity upper bound in H^3 is the natural comparison for the vorticity lower-bound argument, which currently argues in the Euclidean setting.",
+              "targets": [
+                "rem:vorticity-lower-bound-argument",
+                "rem:helicity-physical"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "A registered reference giving helicity bounds and a Biot-Savart formula in hyperbolic 3-space is uncited while three fluid-dynamics remarks argue about helicity and Biot-Savart strain. Cite it where the ambient-geometry dependence of the helicity bound is discussed.",
+              "target": "rem:vorticity-lower-bound-argument",
+              "bean": "qou-wrtk"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Before relying on any bound from this note, record that it states 'we give only a hint of the proofs' - the full proofs are in the journal version, and the constants would need checking there.",
+              "target": "rem:helicity-physical",
+              "bean": "qou-t4fe"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "8fdf4b5950e8"
+        }
+      }
+    }
+  ]
+}

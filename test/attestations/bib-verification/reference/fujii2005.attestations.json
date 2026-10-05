@@ -1,0 +1,57 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "fujii2005",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 352,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/fujii-2005-degeneration-of-hyperbolic-structures-figure-eight.pdf"
+        },
+        "id": "fujii2005",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Studies incomplete hyperbolic structures on the figure-eight knot complement. The deformations are parametrised by an open subset of a plane affine curve C of degree four with two ordinary double points, hence of genus one; the paper gives an explicit birational map from C to a nonsingular Weierstrass cubic E defined over Q, and exhibits a concrete correspondence between the closed 3-manifolds arising from degenerations (Sol-manifolds, Haken manifolds decomposing along an embedded torus, Euclidean orbifolds) and points of finite order on E, with the Haken cases corresponding exactly to the rational points, which form a cyclic group of order four. This is a genuinely arithmetic structure on the deformation space of the corpus's single most-used hyperbolic knot -- the figure-eight is the Higgs entry in the fundamental-knots table and the muon anchor Vol(4_1)/hbar_q^2 in the mass formula. Blocks such as prop:cusp-shape-bar-parity and prop:figure-eight-reeb-rotation work with that complement's cusp and deformation data with no arithmetic classification available to them. It is supporting, not core: no corpus claim depends on the degeneration classification today, and the corpus's own elliptic curve (the Descartes curve) is a different object, so the connection must be established rather than assumed. Its likely value is as a prune -- an enumeration of what the figure-eight deformation space can degenerate to, bounded by a torsion group of order four, is the kind of finite structural constraint that narrows a search before it is run.",
+          "keyResults": [
+            {
+              "locator": "Sec. 1 (Introduction), with the curve C at (1)-(2) and the Weierstrass model E at (4)",
+              "statement": "The deformation curve of incomplete hyperbolic structures on the figure-eight knot complement has genus one and is birational to an elliptic curve E over Q; degenerations correspond to points of finite order on E, and the Haken cases correspond exactly to the rational points of E, a cyclic group of order four.",
+              "useForFolio": "Supplies a finite arithmetic classification of what the corpus's muon-anchor knot complement can degenerate to, which bounds any attempt to deform that anchor and gives the cusp/Reeb blocks an arithmetic handle they currently lack.",
+              "targets": [
+                "prop:cusp-shape-bar-parity",
+                "prop:figure-eight-reeb-rotation"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The figure-eight complement is the corpus's most-used hyperbolic object and its deformation space has an explicit arithmetic classification that the corpus does not cite anywhere.",
+              "target": "prop:cusp-shape-bar-parity",
+              "bean": "qou-i7o4"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "bca3996c7a66"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

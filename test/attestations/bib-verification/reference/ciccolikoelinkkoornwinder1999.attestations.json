@@ -1,0 +1,50 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "ciccolikoelinkkoornwinder1999",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 343,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-9805023v1/9805023v1.pdf"
+        },
+        "id": "ciccolikoelinkkoornwinder1999",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED from front matter: the document self-identifies as the preprint id cited on the registered entry, its three-author byline matches, and its subject matches the entry. Exactly one citation site: lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean:60. The citation is HONEST AND ACCURATE but NOT LOAD-BEARING, and the file says so. It describes the document as the analytic prototype of the self-reciprocality the file formalizes categorically (S^4 = 1), and adds that its free-scale c>0 orthogonality is why it is a duality template rather than a zero-degree-of-freedom node screen. Both halves check out against the abstract: the q-Laguerre polynomials correspond to an INDETERMINATE moment problem, so there is a family of orthogonality measures rather than a rigid one (the free scale), and the dual orthogonal system consists of big q-Bessel functions obtained as a rigorous limit of big q-Jacobi polynomials, with SU(1,1) and E(2) quantum-group interpretations \u2014 a genuine spectral duality exchanging two systems. The Lean file itself proves only matrix algebra over a generic CommRing (S symmetric, C an involution, S^2 = C, hence S^4 = 1), so nothing from the document enters a proof; it is cited as an analytic analogy and correctly flagged as such.",
+          "keyResults": [
+            {
+              "locator": "Abstract / \u00a71",
+              "statement": "The q-Laguerre polynomials sit in an indeterminate moment problem; completing them against explicit discrete non-N-extremal measures from Ramanujan's 1-psi-1 summation yields an orthogonal basis whose dual system is the big q-Bessel functions, obtainable as a limit of big q-Jacobi polynomials.",
+              "useForFolio": "The analytic template for the self-reciprocal duality KeystoneSelfDualSpectralNarrowing formalises categorically, and the source of the free-scale observation that rules the q-Bessel family out as a zero-degree-of-freedom node screen.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Checked against the source: the citation says what the document says, and the file already labels it an analogy rather than an input. Nothing to change.",
+              "target": "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "ea8758b2a2bf"
+        }
+      }
+    }
+  ]
+}

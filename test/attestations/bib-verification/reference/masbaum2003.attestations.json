@@ -1,0 +1,105 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "masbaum2003",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 156,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/0306345v1/0306345v1.pdf"
+        },
+        "id": "masbaum2003",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED from front matter (venue, volume/page range and arXiv identifier all match the registered entry). LOAD-BEARING AND VERIFIED LOCATOR-BY-LOCATOR at its single citation site, folio/quantum-observable-universe/lean/QOU/QBeta/HabiroCyclotomicOddLocus.lean:68-90, which cites 'Theorem 4.5 + 5.1 + Remark 5.2' for the 5_2 = K_2 cyclotomic coefficients. All three exist and say what the Lean says: Thm 4.5 gives c'_{n,p} = (-1)^n a^{n(n+3)/2} sum_k a^{phi(k)} [n choose k]; Thm 5.1 gives the colored Jones of the twist knot K_p with f_{K_p,n} = a^{n(n+3)/2} c'_{n,p}; Remark 5.2 restates it in the (q^{1-N})_n (q^{1+N})_n basis with the tilde coefficients \u2014 exactly the basis the Lean names as 'Masbaum's basis' before bridging it to the framework's bar-even f_n(q). The Lean's cross-check that the bridge gives C_n = 1 on 4_1 is independently corroborated by Thm 5.1's own worked example, which states f_{K_{-1},n} = 1 for the figure eight. The registered entry's caveat that this covers twist knots only and NOT the Borromean rings is correct: \u00a75 is titled 'The colored Jones polynomial of twist knots' and Fig. 3 is the twist knot K_p.",
+          "keyResults": [
+            {
+              "locator": "Thm 5.1 + Rem 5.2",
+              "statement": "The colored Jones polynomial of the twist knot K_p equals sum_n f_{K_p,n} {N-n}...{N+n}/{N} with f_{K_p,n} = a^{n(n+3)/2} c'_{n,p}; Remark 5.2 restates it in the (q^{1-N})_n (q^{1+N})_n basis.",
+              "useForFolio": "Supplies the authoritative chiral 5_2 cyclotomic coefficients the odd-locus argument needs, plus the 4_1 basis-bridge check that validates the framework's bar-even tail basis.",
+              "targets": [
+                "QOU.QBeta.HabiroCyclotomicOddLocus"
+              ]
+            },
+            {
+              "locator": "Thm 4.5",
+              "statement": "Closed form for the coefficients c'_{n,p} of omega^p in the Habiro expansion.",
+              "useForFolio": "Its p = 2 specialisation is what produces C_{5_2,n}(q) in the Lean file.",
+              "targets": [
+                "QOU.QBeta.HabiroCyclotomicOddLocus"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "The citation is load-bearing, all three locators exist and match, and the twist-knots-only scope caveat is already recorded in the registered entry. Nothing to change.",
+              "target": "QOU.QBeta.HabiroCyclotomicOddLocus"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "936aa08026b2"
+        }
+      }
+    },
+    {
+      "position": 369,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/agt-v3-n1-p17-p/agt-v3-n1-p17-p.pdf"
+        },
+        "id": "masbaum2003",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED \u2014 the document's front matter matches every field of the registered entry, including volume, pages and publication date. CITATION IS LOAD-BEARING AND CORRECT. The corpus's authoritative 5\u2082 cyclotomic coefficients (`computations/probes/qbeta_5two_masbaum_cyclotomic_probe.py`, witness `qbeta-5two-masbaum-cyclotomic.witness.json`) are taken from 'Thm 5.1 / Rem 5.2 for K_2'. Both exist and say what is claimed: Theorem 5.1 (p. 19) gives the colored Jones polynomial of the twist knot K_p as J'_{K_p}(N) = \u03a3_{n\u22650} f_{K_p,n} \u00b7 {N\u2212n}{N\u2212n+1}\u00b7\u00b7\u00b7{N+n}/{N}, with f_{K_p,n} = a^{n(n+3)/2} c\u2070_{n,p} a Laurent polynomial in a; Remark 5.2 (p. 20) gives an alternative expression via f\u0303_{K_p,n}(q^{1\u2212N})_n(q^{1+N})_n. Fig. 3 (p. 18) fixes the convention: K_p is a LEFT-HANDED trefoil at p = 1 and the figure eight at p = \u22121, so the registry note's '4\u2081 = K_{\u22121}, trefoil = K_1' is right and its chirality is worth preserving when transcribing. The registry's scope caveat is also correct \u2014 the document covers twist knots only and does not cover the Borromean rings. The corpus's own cross-check (K_2 reproducing the standard KnotInfo Jones polynomial at N=2 under t = q\u207b\u00b9) is the right kind of validation: a compute-check against an independent source, not adoption of a matching number.",
+          "keyResults": [
+            {
+              "locator": "Thm 5.1, p. 19",
+              "statement": "J'_{K_p}(N) = \u03a3_{n\u22650} f_{K_p,n} {N\u2212n}{N\u2212n+1}\u00b7\u00b7\u00b7{N+n}/{N} with f_{K_p,n} = a^{n(n+3)/2} c\u2070_{n,p}, a Laurent polynomial in a.",
+              "useForFolio": "The authoritative source of the 5\u2082 = K_2 cyclotomic coefficients already wired into the qbeta 5\u2082 witnesses.",
+              "targets": [
+                "computations/probes/qbeta_5two_masbaum_cyclotomic_probe.py"
+              ]
+            },
+            {
+              "locator": "Rem. 5.2, p. 20; Fig. 3, p. 18",
+              "statement": "An alternative expression via f\u0303_{K_p,n}(q^{1\u2212N})_n(q^{1+N})_n; K_1 is the LEFT-HANDED trefoil and K_{\u22121} the figure eight.",
+              "useForFolio": "Fixes the twist-knot indexing and chirality convention used by the Habiro cyclotomic-odd-locus Lean file.",
+              "targets": [
+                "QOU.QBeta.HabiroCyclotomicOddLocus"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Join correct, Thm 5.1 / Rem 5.2 locators verified, scope caveat (twist knots only, not Borromean) accurate, and the registered identifier is used consistently at every site.",
+              "target": "computations/probes/qbeta_5two_masbaum_cyclotomic_probe.py"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "df196f0a732a"
+        }
+      }
+    }
+  ]
+}

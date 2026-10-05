@@ -1,0 +1,58 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "baez-huerta2010",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 198,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-0904.1556v2/0904.1556v2.pdf"
+        },
+        "id": "baez-huerta2010",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED against the document's front matter. THE ONE CLAIM-BEARING CITATION IS LOAD-BEARING AND CORRECT. `flavor-charge-assignments.md:52` requires that the first-generation hypercharges reproduce {+1/3,+1/3,\u22121,\u22121} (left-handed u,d,e\u207b,\u03bd_e) and {+4/3,\u22122/3,\u22122,0} (right-handed), 'satisfying the \u2124\u2086 compatibility relations'. I checked both halves. Hypercharges: \u00a73 (p. 21\u201322) gives Y = 1/3 for left-handed quarks and derives left-handed lepton hypercharges from Q = I\u2083 + Y/2 (\u03bd_L: Q=0, I\u2083=+1/2 \u21d2 Y=\u22121; e_L: Q=\u22121, I\u2083=\u22121/2 \u21d2 Y=\u22121); for right-handed fermions I\u2083=0 so Q = Y/2, giving u_R 4/3, d_R \u22122/3, e_R \u22122, \u03bd_R 0. All eight values match. \u2124\u2086: \u00a73.1 (p. 40\u201343) establishes that the kernel of the map to SU(5) is \u2124\u2086, realised as the sixth roots of unity embedded as (\u03b1^{\u22123}, \u03b1\u00b2) \u2208 SU(2)\u00d7SU(3), that 'the SU(5) GUT is doomed unless \u2124\u2086 acts trivially on every fermion', and concludes 'we have shown that \u2124\u2086 acts trivially on the Standard Model representation'. That is exactly the compatibility relation the block invokes as a target specification. The other two hits (`sm-hypercharge-invariant.md:11`, `strand-twist-datum.md:11`) are prose mentions of a twist-datum candidate that do not lean on this source. Verdict is `supporting` rather than `core` because the source supplies the TARGET a derived hypercharge must hit, not a step in a QOU derivation.",
+          "keyResults": [
+            {
+              "locator": "\u00a73, p. 21\u201322 (hypercharge table)",
+              "statement": "First-generation weak hypercharges via Gell-Mann\u2013Nishijima: left-handed quarks Y=1/3, left-handed leptons Y=\u22121; right-handed fermions Y=2Q, giving u_R 4/3, d_R \u22122/3, e_R \u22122, \u03bd_R 0.",
+              "useForFolio": "The exact acceptance battery in the flavour-charge block; already correctly transcribed there.",
+              "targets": [
+                "prop:flavor-charge-assignments"
+              ]
+            },
+            {
+              "locator": "\u00a73.1, p. 40\u201343",
+              "statement": "The kernel of the embedding into SU(5) is \u2124\u2086 (sixth roots of unity as (\u03b1^{\u22123}, \u03b1\u00b2)), and \u2124\u2086 acts trivially on the full Standard Model fermion representation \u2014 the condition for the SU(5) GUT to exist.",
+              "useForFolio": "The \u2124\u2086 compatibility relation a candidate assignment must satisfy.",
+              "targets": [
+                "prop:flavor-charge-assignments"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Citation is load-bearing, the transcribed hypercharges are exact, and the \u2124\u2086 attribution is correct. Nothing to fix.",
+              "target": "prop:flavor-charge-assignments"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "a1a43786d817"
+        }
+      }
+    }
+  ]
+}

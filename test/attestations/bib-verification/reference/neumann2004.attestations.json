@@ -1,0 +1,76 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "neumann2004",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 157,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/0307092v2/0307092v2.pdf"
+        },
+        "id": "neumann2004",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Defines the extended Bloch group Bhat(C), proves lambda : H_3(PSL(2,C)^delta; Z) -> Bhat(C) is an isomorphism, and shows the extended Rogers dilogarithm Rhat descends so that R o lambda is the Cheeger--Chern--Simons class, i(vol + i cs) in C/pi^2 Z. Two distinct corpus artifacts depend on precisely this and neither cites it. (1) docs/audits/2026-08-07-extended-bloch-group-fixes-the-normalization-fit.md (dated one day before this triage, PR #4664) builds its whole argument on 'the extended Bloch group is the canonical resolution of the branch-of-logarithm ambiguity' and even quotes Rhat(betahat(M)) = Vol + i CS; the audit itself notes the phrase 'extended Bloch' occurs in exactly one corpus file. This is the source and it has no bibliographic entry. (2) conj:borromean-bloch-group-element states as a CONJECTURE that the Borromean rings complement determines a non-trivial Bloch-group element whose regulator is Vol(B_3) = 8G. Its hypotheses -- complete, finite-volume, hyperbolic 3-manifold -- hold for the Borromean complement (two ideal regular octahedra, volume 8G), so Sec. 1 and Sec. 14 of this document supply the existence, and non-triviality follows because the regulator is non-zero. What this document does NOT supply is the conjecture's second clause, the claim that the Markov-trace coefficient h^4 = -3/4 has a 'K-theoretic shadow' equal to (8G)(-3/4) = -6G; that clause is an unsupported multiplication of two numbers and must stay open. So the conjecture as written bundles a standard theorem with an unproved numerical claim, and only the first half is discharged.",
+          "keyResults": [
+            {
+              "locator": "Sec. 1 (main results) + Sec. 14",
+              "statement": "Any complete hyperbolic 3-manifold of finite volume carries a natural fundamental class in H_3(PSL(2,C); Z) determining an element betahat(M) in the extended Bloch group, and R o lambda computes the Cheeger--Chern--Simons class i(vol(M) + i cs(M)).",
+              "useForFolio": "Discharges the existence-and-regulator clause of conj:borromean-bloch-group-element for the Borromean complement, whose hypotheses are met; the residual open content is then only the h^4 = -3/4 shadow claim.",
+              "targets": [
+                "conj:borromean-bloch-group-element"
+              ]
+            },
+            {
+              "locator": "Sec. 1, 'Roger's dilogarithm function' map R : Bhat(C) -> C/pi^2 Z",
+              "statement": "The extended Rogers dilogarithm is well defined modulo pi^2 Z on flattened shape parameters, giving the complex volume exactly where the ordinary Bloch group determines the Chern--Simons invariant only up to an additive ambiguity.",
+              "useForFolio": "This is the derived-not-chosen datum the corpus's normalization-route argument needs; citing it converts that argument's central assertion from an uncited claim into a sourced theorem.",
+              "targets": [
+                "rem:quantum-bloch-group-framework-connection"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "A live audit and an in-flight PR argument rest on this construction with no bibliographic entry anywhere in the corpus.",
+              "target": "conj:borromean-bloch-group-element",
+              "bean": "qou-xm0j"
+            },
+            {
+              "action": "aid-proof",
+              "rationale": "Hypotheses checked: the theorem requires a complete, finite-volume hyperbolic 3-manifold; the Borromean rings complement satisfies all three. The existence and regulator clause of the conjecture is therefore a corollary, and the block should be re-scoped so that only the h^4 = -3/4 shadow claim remains conjectural. Scope note: this discharges clause 1 only and asserts nothing about clause 2.",
+              "target": "conj:borromean-bloch-group-element",
+              "bean": "qou-bagd"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "The corpus's quantum Bloch group blocks develop the Phi_q pentagon without recording that the CLASSICAL side already has a canonical branch-resolving lift; a remark tying the flattening data to the corpus's fibre-vs-archimedean Im(q) distinction would prevent the branch ambiguity being rediscovered a third time.",
+              "target": "rem:quantum-bloch-group-framework-connection",
+              "bean": "qou-z7v7"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "de2f7ddec49b"
+        },
+        "note": "Source IS held: library/0307092v2. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+        "verified_at": "2026-09-03T04:19:53Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

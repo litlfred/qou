@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "1172-2",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 225,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/1172-2/1172-2.pdf"
+        },
+        "id": "1172-2",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "Could not read it. The document is a 26-page seminar-proceedings survey on L^2-torsion of 3-manifolds whose narrative is in Japanese; the PDF embeds an Adobe-Japan1 font with no available mapping, so pdftotext (poppler 24.02.0) and all five rungs of scripts/pdf-extract.py recover only the LaTeX-escaped formula fragments and the Latin-script bibliography. What IS legible: the Fuglede-Kadison determinant definition (including the explicit log-series formula and the norm bound K >= ||R_B||_inf), the L^2-Betti number b(B), an L^2-Reidemeister vs L^2-analytic torsion comparison, section headings for an S^1-case, one 'Conjecture' line adjacent to a 'Volume' fragment, and bibliography entries pointing at L^2-torsion of hyperbolic manifolds of finite volume. That is enough to identify the topic but not enough to state a theorem or judge which, if any, statement the folio could use. The corpus's torsion usage is adjoint/twisted Reidemeister torsion (the 1-loop = torsion cluster: garoufalidis-yoon, pandey-wong, ohtsuki-takata, dimofte-garoufalidis) and Neumann-Zagier; grep finds no L^2-torsion, no Fuglede-Kadison and no Luck-Schick anywhere in content/, computations/ or docs/. So no consumer is visible from the readable fragments, but I am recording undetermined rather than tangential because the judgement turns on statements I could not read.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Nothing can be proposed against an unreadable body. If the folio wants this line of work, the productive step is obtaining an English-language source for the same material (or an OCR pass with a Japanese language pack) rather than re-triaging this file; a re-upload changes source_sha and re-opens the row.",
+              "target": "library/1172-2/1172-2.pdf"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "390665341d5b"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

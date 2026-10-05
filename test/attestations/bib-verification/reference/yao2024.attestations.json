@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "yao2024",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 205,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/1-s20-s0097316524000426-main/1-s2.0-S0097316524000426-main.pdf"
+        },
+        "id": "yao2024",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "not-relevant",
+          "rationale": "The document proves a conjectured family of inequalities for truncated sums involving b_6(n), the number of 6-regular partitions of n, using a Cayley formula for partitions into parts at most 3, in the tradition of truncated theorems on Euler's pentagonal number theorem. This is additive partition combinatorics. Corpus greps for '6-regular', 'regular partition' and 'truncated pentagonal' return nothing across content/, computations/ and docs/. The corpus's only contact with additive partition counting is p(n) itself, in a8-partition-function-identity (a_8(X) = sum p(n) X^{5-n} for n = 1..5, with p(1..5) = 1,2,3,5,7); nothing there needs b_6(n), a truncated series, or an inequality. Elsewhere 'partition' in this corpus means a Young-diagram index lambda for a Wedderburn block \u2014 a homonym, not the same object. Scope-(a): this document, as read, supplies nothing usable here. That is not a claim that partition combinatorics is irrelevant to the folio.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Read and judged to need nothing. The nearest corpus block that touches additive partition counting is recorded as the target so a later agent can see where the check was made.",
+              "target": "a8-partition-function-identity"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "76a8ab857163"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "baez-huerta2011",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 207,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1003.4485v2/1003.4485v2.pdf"
+        },
+        "id": "baez-huerta2011",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "JOIN CONFIRMED from the arXiv title page (arXiv:1003.4485v2, hep-th): two-author expository survey, identifier and subject match the seeded entry. CITATION STATUS: BIB ORPHAN. A repo-wide grep for the key returns only references.ts, the ledger, library/sm-uploads-intake.json and a read-notes audit doc (docs/audits/2026-08-01-sm-uploads-round2-reads.md); there is no .md \\cite, no .ts cites[] and no Lean -- Ref:. The reference entry's own note says it was registered pending a read ('queued for full read under bean qou-y139'). On merits: it is a survey of 2-groups, 2-bundles, 2-connections and the string 2-group. The folio's categorical substrate is a monoidal / Hecke / braided programme and its archimedean gauge chapter (QOU/QuantumObservableUniverse/GaugeTheory.lean) works with ordinary principal-bundle data, so no result here is currently consumable. Tangential: adjacent field, no consumer. Scope-(a) against the corpus as it stands - not a claim that 2-group structure is excluded from the framework.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Registered, read, and found to have no consumer block. Recording that outcome is the useful result; adding a decorative citation would not be.",
+              "target": "folio/schema/references.ts"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "714d73873cec"
+        }
+      }
+    }
+  ]
+}

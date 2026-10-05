@@ -1,0 +1,49 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "dappiaggi2024",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 22,
+      "entry": {
+        "id": "dappiaggi2024",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T16:40:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "note": "PDF verified: 'Holographic mixing and Fock space dynamics of causal fermion systems' by Dappiaggi, Finster, Kamran, Reintjes (arXiv:2410.18045, Oct 2024 / May 2025). Title matches. Bib orphan. | Re-classified from `uncited`: cited via cites: [...] in cfs-comparison-summary.ts + algebraic-gns-embedding.ts. PDF verified.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/dappiaggi2024.pdf"
+        },
+        "local_pdf": "uploads/dappiaggi2024.pdf",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Join CORRECT (arXiv:2410.18045v2, matching the registered entry's authors and URL; the PDF's own front matter dates it October 2024 / May 2025, so the registered year 2024 is the preprint year). Not in the working tree on this branch; recovered from intake commit af53987f46, sha matches. The single citation site is a bare cites: array entry at folio/quantum-observable-universe/observations/cfs-comparison-summary.ts:12. NOT load-bearing: the block's .md never mentions this work, its authors, holographic mixing, or Fock-space dynamics. The block's actual content is a comparison of the Frobenius Gram matrix G(x,y) = tr_M(x.y) against the Finster causal Lagrangian - pointwise, integral and algebraic-decomposition mismatches - all of which are sourced to the finster2021/2022/2024 entries. This document's results (the limiting case in which the causal action principle over Minkowski space yields linear QED Fock dynamics, and the holographic-mixing concept) are not consumed anywhere in the corpus. Note the block's QA sidecar (cfs-comparison-summary.qa.json:1144) asserts the dappiaggi2024 citation is 'contextually appropriate'; that entry passed a citation with no corresponding text.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "Either drop dappiaggi2024 from the cites array as unused, or add one sentence to rem:cfs-comparison-summary saying what the holographic-mixing/Fock-dynamics limit contributes to the QOU-vs-CFS comparison. As it stands the citation is decorative.",
+              "target": "rem:cfs-comparison-summary",
+              "bean": "qou-0irt"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "c91abcb377f8"
+        }
+      }
+    }
+  ]
+}

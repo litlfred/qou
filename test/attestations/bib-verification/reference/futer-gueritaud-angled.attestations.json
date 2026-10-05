@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "futer-gueritaud-angled",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 434,
+      "entry": {
+        "id": "futer-gueritaud-angled",
+        "status": "unreviewed",
+        "verified_at": "2026-09-03T04:19:53Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "fixes_applied": 0,
+        "fix_commit": "(this commit)",
+        "note": "Source IS held: library/angled-survey. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+        "source": {
+          "kind": "upload",
+          "file": "library/angled-survey/angled-survey.pdf"
+        }
+      }
+    }
+  ]
+}

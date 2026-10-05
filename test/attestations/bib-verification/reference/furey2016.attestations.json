@@ -1,0 +1,52 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "furey2016",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 254,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1611.09182v1/1611.09182v1.pdf"
+        },
+        "id": "furey2016",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED from front matter: the document self-identifies as arXiv:1611.09182v1 and its title page matches the registered entry's title, author and thesis type. Metadata mismatch for references.ts to resolve (not for this ledger): the title page's degree/copyright date differs by one year from the date recorded on the entry. CITATION STATE: a true bib orphan \u2014 zero sites in content/ and zero in computations/, despite the registered entry naming its intended use (a literature route for the SU(3)-colour and hypercharge beans). RELEVANCE: it constructs one-generation Standard Model structure from R (x) C (x) H (x) O, obtaining SU(3) x U(1) as the unbroken stabilizer inside C (x) O with the correct electric charges from a number operator. That is precisely the construction conj:sm-colour-stabilizer-action already paraphrases in prose \u2014 that block describes su(3) = ker(ev_e) as the Gunaydin-Gursey colour subalgebra acting on O = C + C^3 \u2014 and precisely the gap conj:sm-hypercharge-invariant names (a second invariant giving Y). Held at supporting rather than core: QOU's open content is an action on its own three-strand Hecke state space, which this document does not supply, and its charge assignment is read off a number operator on an octonionic module rather than derived from braid data, so it is a parallel construction rather than a result QOU can consume.",
+          "keyResults": [
+            {
+              "locator": "Ch. on C (x) O and the colour stabilizer",
+              "statement": "SU(3) x U(1) arises as the subgroup of the C (x) O structure stabilizing a chosen unit imaginary octonion, with electric charge given by a number operator producing the correct one-generation charge spectrum.",
+              "useForFolio": "The literature precedent conj:sm-colour-stabilizer-action already paraphrases without citing, and the closest existing route to the hypercharge datum conj:sm-hypercharge-invariant declares missing.",
+              "targets": [
+                "conj:sm-colour-stabilizer-action",
+                "conj:sm-hypercharge-invariant"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "The colour-stabilizer conjecture's prose describes exactly this construction (su(3) = ker(ev_e), the 1 + 3 decomposition of O) and cites dubois-violette-todorov2018 but not this document, which is registered specifically for that purpose and cited nowhere.",
+              "target": "conj:sm-colour-stabilizer-action",
+              "bean": "qou-abtu"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "6b40549b96d4"
+        }
+      }
+    }
+  ]
+}

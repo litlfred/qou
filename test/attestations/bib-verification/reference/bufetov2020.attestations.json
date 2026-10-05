@@ -1,0 +1,66 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "bufetov2020",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 16,
+      "entry": {
+        "id": "bufetov2020",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T06:30:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "note": "Confirmed paper is 'Interacting Particle Systems and Random Walks on Hecke Algebras' by Alexey Bufetov (arXiv:2003.02730). QOU .md citation in hecke-markov-interpretation.md cites it for 'Bufetov showed that the ASEP generator is a sum of Hecke algebra elements' \u2014 paper title and abstract confirm this is the central content. Scope match.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/bufetov2020.pdf"
+        },
+        "local_pdf": "uploads/bufetov2020.pdf",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Join CORRECT (arXiv:2003.02730v1, matching the registered entry). Not in the working tree on this branch; recovered from intake commit 98ee815675, sha matches. Cited at folio/quantum-observable-universe/mass-theory/hecke-markov-transition.ts:16 and hecke-markov-interpretation.ts:20, plus a References mention in hecke-markov-transition.lean:29. The citation IS load-bearing: prop:hecke-markov-transition asserts that Hecke generators act as stochastic transition operators with p_+ = q^2/(q^2+1), p_- = 1/(q^2+1), and that the Markov trace factorises as independent one-step expectations; rem:hecke-markov-interpretation asserts the resulting stochastic operator K_i 'targets the Mallows measure'. This document supplies exactly that: it recasts ASEP, M-exclusion TASEP, ASEP(q,j) and stochastic vertex models as random walks on Hecke algebras, and Proposition 2.3 (Section 2.3) states that the Mallows measure is a reversible stationary measure of any such walk. One hypothesis needs checking before the folio leans on Prop 2.3 quantitatively: the paper's Section 2.3 introduces the Mallows measure under the convergence assumption on sum_w q^{-l(w)}, while later sections fix q in [0,1) - two conventions appear in the same paper, and the QOU substrate sits at q_0 ~ 1.11 > 1. This is a convention check, not a defect found.",
+          "keyResults": [
+            {
+              "locator": "Prop. 2.3 (Sec. 2.3)",
+              "statement": "The Mallows measure is a reversible stationary measure of any random walk on a Hecke algebra of a Coxeter group.",
+              "useForFolio": "Sources the 'targets the Mallows measure' assertion in the probability picture of rem:hecke-markov-interpretation.",
+              "targets": [
+                "rem:hecke-markov-interpretation"
+              ]
+            },
+            {
+              "locator": "Prop. 2.1 (Sec. 2)",
+              "statement": "The map i is an involutive anti-homomorphism of the Hecke algebra.",
+              "useForFolio": "The reversibility mechanism behind the stationary measure; relevant to the Markov-property/memorylessness clause (iii) of prop:hecke-markov-transition.",
+              "targets": [
+                "prop:hecke-markov-transition"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "Record the q-convention check: which of the paper's two q-ranges (convergence of sum q^{-l(w)} vs the later q in [0,1)) applies to Prop 2.3, and whether the substrate q_0 > 1 sits inside it, before the Mallows-measure statement is relied on at q_0.",
+              "target": "rem:hecke-markov-interpretation",
+              "bean": "qou-aiyd"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "abf0d1554bde"
+        }
+      }
+    }
+  ]
+}

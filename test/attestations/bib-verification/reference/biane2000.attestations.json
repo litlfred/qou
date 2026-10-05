@@ -1,0 +1,84 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "biane2000",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 136,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0006111v2/0006111v2.pdf"
+        },
+        "id": "biane2000",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "A distinct paper from biane1998 (Adv. Math. 138, 'Representations of symmetric groups and free probability'), which IS in references.ts and IS cited at prop:q-plancherel-asymptotic-skeleton, rem:non-commutative-probability-dictionary and cfs-comparison-summary. This 2000 paper is the follow-up that converts biane1998's asymptotic character theory into a *concentration criterion*: any normalized positive-definite function on S_q satisfying an explicit magnitude bound plus approximate multiplicativity on disjoint supports has its induced measure on Young diagrams concentrated near a single diagram. prop:q-plancherel-asymptotic-skeleton clause (3) \u2014 'for q != 1 the measures mu_n^{(q)} converge weakly' \u2014 is exactly this kind of statement, and is flagged conjectural. Biane 2000 supplies the q=1 template, i.e. the precise hypotheses a q-deformed argument would have to verify. It is NOT an aid-proof: the Markov trace on H_n(q) is a trace on a Hecke algebra, not a positive-definite function on the group S_q, so Definition 1.3's hypotheses are not known to hold in the q != 1 setting the block cares about \u2014 verifying (or refuting) them is the work, and this paper does not do it.",
+          "keyResults": [
+            {
+              "locator": "Def. 1.3 + Thm 1",
+              "statement": "Defining F^n_{c,delta} as normalized positive-definite psi on S_q with |psi(rho)| <= c_l q^{-l/2} for |rho| = l and |psi(rho sigma) - psi(rho)psi(sigma)| <= delta q^{-l/2} on disjoint supports, every psi in F^n_{c,delta} is (delta + q^{-1})^{1/2}-supported on Young diagrams with |m_l(lambda) - m_l(psi)| <= K(delta + q^{-1})^{1/4} q^{l/2} for l <= n/2.",
+              "useForFolio": "Gives the explicit hypothesis list a q-analogue would need, turning clause (3) of prop:q-plancherel-asymptotic-skeleton from a bare 'converges weakly' conjecture into a checkable programme: exhibit the q-Plancherel weight tilde-w_lambda as arising from a psi satisfying a q-deformed (1)+(2), then the concentration is automatic.",
+              "targets": [
+                "prop:q-plancherel-asymptotic-skeleton"
+              ]
+            },
+            {
+              "locator": "Thm 2",
+              "statement": "Under the same hypotheses, |chi^lambda(rho) - psi(rho)| <= K(delta + q^{-1})^{1/4} q^{-l/2} for all rho with |rho| = l <= n/2 \u2014 concentration stated directly on normalized character values.",
+              "useForFolio": "Character-level concentration is the form clause (2) of prop:q-plancherel-asymptotic-skeleton uses ('character fluctuations have variance O(1/sqrt(n-3))'); Thm 2 is the q=1 statement of that shape from a source that actually proves a fluctuation bound, unlike the currently-cited feray2010 (see the 0304010v1 row).",
+              "targets": [
+                "prop:q-plancherel-asymptotic-skeleton"
+              ]
+            },
+            {
+              "locator": "Cor. 1",
+              "statement": "The same concentration holds for the free cumulants R_l of the transition measure: |R_l(lambda) - R_l(psi)| <= K(delta + q^{-1})^{1/4} q^{l/2}.",
+              "useForFolio": "rem:non-commutative-probability-dictionary already frames the Hecke GNS data as a non-commutative probability space with free-cumulant language; Cor. 1 is the concentration statement in exactly those coordinates, so it can be cited there without translation.",
+              "targets": [
+                "rem:non-commutative-probability-dictionary"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Orphan: references.ts has biane1998 only; this is a different Biane paper and has no entry.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-gehx"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Clauses (1)/(2) of the block cite vershik-kerov1977 + biane1998 + feray2010; the concentration result they actually lean on is this paper's Thm 1/Thm 2.",
+              "target": "prop:q-plancherel-asymptotic-skeleton",
+              "bean": "qou-femd"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record what a q-deformed Definition 1.3 would have to assert, and the obstruction that the Markov trace on H_n(q) is not a positive-definite function on S_q \u2014 this turns the open clause (3) into a stated programme rather than a bare conjecture.",
+              "target": "prop:q-plancherel-asymptotic-skeleton",
+              "bean": "qou-yaw8"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "cd99f45d686e"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

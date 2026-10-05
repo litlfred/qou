@@ -1,0 +1,48 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "klein1888",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 12,
+      "entry": {
+        "id": "klein1888",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T06:30:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "note": "Confirmed book is 'Vorlesungen \u00fcber das Ikosaeder und die Aufl\u00f6sung der Gleichungen vom f\u00fcnften Grade' by Felix Klein, 1888 (282 pages, archive.org/details/vorlesungenber00kleiuoft). Index entries include \u00a7142 'Die Bring'sche Form', \u00a7192 'Classification der Curven und Fl\u00e4chen', \u00a7207 'Die Bring'sche Transformation', \u00a7189 'Die Hauptresolvente der Ikosaedergleichung'. The QOU citations in magic-numbers-bring.{md,lean} for (1) S_5-stable sub-lattice classification and (2) Bring's curve as unique genus-4 with maximal S_5 \u2014 both covered by Klein's icosahedron-and-quintic book.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/klein1888.pdf"
+        },
+        "local_pdf": "uploads/klein1888.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "BROKEN SOURCE JOIN: the named file does not exist in the tree and no scan corresponding to this id is present under uploads/. Identity unconfirmable from front matter. Citation sites: zero .md prose; three .ts cites arrays (klein-bring-icosahedral-bridge.ts:19, magic-numbers-bring.ts:16, n-v-bring-action.ts:6) and four .lean files. Load-bearing assessment splits in two. (a) brings-surface/klein-bring-icosahedral-bridge.lean:120 cites it for the icosahedral quotient identity P^1/A_5 = S^2(2,3,5), which is squarely the subject matter of the cited work and is plausible. (b) lean/QOU/Conjectures/MagicNumbersBring.lean:29 attributes to it a classification of S_5-stable sub-lattices on Bring's curve. That attribution is doubtful on its face: the cited work is about the icosahedron, A_5 and the solution of the quintic, not about S_5-stable sublattices on Bring's curve, which is later literature. observations/magic-numbers-bring.lean:21 already records the pointer as unverified. This is a candidate cited-for-a-claim-it-does-not-support and needs the source, or a different reference, before conj:magic-numbers-bring leans on it.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "Record that the S_5-stable-sublattice attribution at MagicNumbersBring.lean:29 is unverified against the cited work, whose subject is the icosahedron/A_5 and the quintic; the S_5 action on Bring's curve needs a separate source. Scope-(a): as read from the corpus alone the attribution is unsupported, not disproved.",
+              "target": "conj:magic-numbers-bring",
+              "bean": "qou-7mhu"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    }
+  ]
+}

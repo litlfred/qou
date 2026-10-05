@@ -1,0 +1,48 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "kitaev2006",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 71,
+      "entry": {
+        "id": "kitaev2006",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T16:14:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 2,
+        "fix_commit": "(this commit)",
+        "note": "2 bare-URL Refs upgraded with title+publisher form. | PDF verified: Kitaev, \"Anyons in an exactly solved model and beyond,\" Ann. Phys. 321 (2006), arXiv:cond-mat/0506438. Verified.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/kitaev2006.pdf"
+        },
+        "local_pdf": "uploads/kitaev2006.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "DOCUMENT ABSENT \u2014 cannot verify the join. Path does not exist, never committed; no substitute under the recorded arXiv id in uploads/. 17 corpus hits; the prior pass upgraded 2 bare-URL Refs. Claim-level verification is unreproducible in-repo.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Cannot verify the document; corpus Ref: form was already normalised.",
+              "target": "folio/schema/references.ts"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    }
+  ]
+}

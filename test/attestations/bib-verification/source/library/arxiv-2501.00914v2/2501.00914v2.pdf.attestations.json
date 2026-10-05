@@ -1,0 +1,42 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "source",
+    "id": "library/arxiv-2501.00914v2/2501.00914v2.pdf",
+    "path": "library/arxiv-2501.00914v2/2501.00914v2.pdf"
+  },
+  "verifications": [
+    {
+      "position": 446,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2501.00914v2/2501.00914v2.pdf"
+        },
+        "id": null,
+        "status": "unreviewed",
+        "note": "Identified from the arXiv title page (arXiv:2501.00914v2, math.GT, 13 Mar 2026): Baldwin and Sivek, 'L-spaces and knot traces', 37 pp, 21 sections. No ref() entry, none created (tangential).",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Four-dimensional knot detection via traces X_n(K) = B^4 \u222a (n-framed 2-handle along K) and Heegaard Floer homology. Read: Introduction and \u00a71.1 (Thm 1.2 the 0-trace detects every L-space knot; Thm 1.3 any trace detects whether a knot is an L-space knot and its genus; Thm 1.4 L-space knots with diffeomorphic 0-surgeries are equal \u2014 via Lee\u2013Taubes / Kutluhan\u2013Lee\u2013Taubes symplectic-Floer \u2194 HF of the mapping torus; Thm 1.5 positive torus knots are detected by every n-trace with n \u2264 0; Thm 1.6 the positive-trace case for T_{2,2g+1} up to a knot-Floer coincidence). Corpus-grep, all surfaces: zero hits for 'L-space', 'knot trace', 'characterizing slope', 'Heegaard Floer', 'HFK'. The folio's knot invariants are the Jones / Markov trace tr_M of a braid closure in H_n(q) and the hyperbolic gluing data; it has no Floer theory and no 4-manifold layer. Homonym trap worth recording: 'knot trace' (the 4-manifold) is unrelated to the folio's 'Markov trace' and 'trace field', so a corpus-grep on 'trace' lands falsely. The nearest contact \u2014 \u00a72's fixed-point-free monodromy (FFPF) criterion for fibred knots, alongside the NZ-from-braid chain's use of the figure-eight fibre monodromy \u2014 is a Floer-theoretic input, not a gluing datum, and nothing here changes the corpus's monodromy computation. Scope-(a): as read, supplies nothing usable.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "No result attaches to a block, Lean declaration or script; no reference created.",
+              "target": "folio/bib-qa-verifications.json"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "coding-agent-session-0134BL9GG95tgycYMjLVX35V"
+          },
+          "assessed_at": "2026-09-06T13:42:16Z",
+          "source_sha": "d94bd6edf854"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "besser-dejeu2008",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 366,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/s0025-5718-07-02027-3/S0025-5718-07-02027-3.pdf"
+        },
+        "id": "besser-dejeu2008",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Describes an algorithm for computing Coleman's p-adic polylogarithms to a given precision. This is the algorithm a live corpus probe implements, by name and by proposition number: computations/probes/gswz_coleman_li2_full_precision_probe.py opens by naming this article and this exact uploaded filename as 'THE previously-missing ingredient, now available' for bean qou-9p9y, and its body implements Prop 4.3 (the recursion g_0(v) = v - 1 - (v-1)^p/(v^p - (v-1)^p), g'_{n+1} = -g_n/(v - v^2), giving Li^{(p)}_n(z) = g_n(1/(1-z))), Prop 4.2 (the telescoped Frobenius formula recovering Li_n(zeta) from Li^{(p)}_n at Teichmueller points) and the coefficient-integrality/precision bound of Prop 6.1, then checks the result against printed data to mod 5^4. I verified all three propositions are present at those numbers in the PDF. Separately, an existing ledger row already treats a different article by one of the same authors as the source for the finite/p-adic polylogarithm bridge at rem:q-dilog-three-contexts; this one is the computational companion. references.ts has no entry for either. A production probe whose stated algorithm has no bibliographic entry is a citation gap on the critical path, not background.",
+          "keyResults": [
+            {
+              "locator": "Prop. 4.3",
+              "statement": "Li^{(p)}_n(z) = g_n(1/(1-z)) where the g_n are determined by an explicit differential recursion with g_n(0) = 0.",
+              "useForFolio": "The series the corpus probe evaluates to 120 terms to obtain full-precision Coleman Li_2 at Teichmueller points; currently implemented against an uncited source.",
+              "targets": [
+                "computations/probes/gswz_coleman_li2_full_precision_probe.py"
+              ]
+            },
+            {
+              "locator": "Prop. 4.2",
+              "statement": "For zeta a non-trivial (p^f - 1)-th root of unity, Li_n(zeta) is recovered from the Li^{(p)}_n(zeta^{p^r}) by a telescoped Frobenius sum with factor (p^{nf} - 1)^{-1}.",
+              "useForFolio": "The step that converts the computable truncated polylogarithm into the Coleman value at roots of unity, which is what the corpus's mod-5 dilogarithm cross-check needs.",
+              "targets": [
+                "computations/probes/gswz_coleman_li2_full_precision_probe.py"
+              ]
+            },
+            {
+              "locator": "Prop. 6.1",
+              "statement": "The coefficients of the g_n are p-integral with an explicit valuation lower bound, giving a computable precision/truncation estimate.",
+              "useForFolio": "The proved premise behind the probe's truncation choice (N = 120, tail valuation > 20); without it the probe's precision claim is an assertion.",
+              "targets": [
+                "computations/probes/gswz_coleman_li2_full_precision_probe.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Core and orphan; a live probe names this article as its algorithm source and there is no ref() entry.",
+              "target": "computations/probes/gswz_coleman_li2_full_precision_probe.py",
+              "bean": "qou-ikze"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "rem:q-dilog-three-contexts asserts a truncated F_p form and convergent Q_p / C_p forms of the q-dilogarithm with no citation; the computational p-adic polylogarithm side belongs there alongside the finite/p-adic bridge already proposed in the ledger for the companion article.",
+              "target": "rem:q-dilog-three-contexts",
+              "bean": "qou-vux7"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "080b5ac8542f"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

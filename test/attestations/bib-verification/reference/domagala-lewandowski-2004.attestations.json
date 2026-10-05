@@ -1,0 +1,51 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "domagala-lewandowski-2004",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 166,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-gr-qc-0407051v2/0407051v2.pdf"
+        },
+        "id": "domagala-lewandowski-2004",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED from front matter (arXiv identifier and subject match the registered entry). Single citation site: folio/quantum-observable-universe/gravity-spacetime/lqg-entropy-qdim-partition-pole.ts:15, a bare cites[] entry with no \\cite anchor in the .md. SUBSTANTIVELY APPROPRIATE: the block recasts the loop-quantum-gravity horizon state count as a q-dimension partition-function pole and derives the Barbero-Immirzi parameter from criticality, and this document is precisely the corrected state count \u2014 its abstract states that the counting procedure used in the earlier literature contains an error, that spins above 1/2 contribute non-negligibly, and that the Barbero-Immirzi value is therefore revised. The block's own scope note ('an algebraic recasting of an established analytic result, not a from-scratch derivation') is the right register and matches what the source supports. Weakness: with no prose anchor a reader cannot see which of the block's three numbered claims it underwrites \u2014 it is claim 3, 'Immirzi from criticality'.",
+          "keyResults": [
+            {
+              "locator": "abstract + state-counting section",
+              "statement": "The corrected horizon state count in quantum geometry; contributions from spins above 1/2 are not negligible, revising the Barbero-Immirzi parameter.",
+              "useForFolio": "The established analytic result the q-dimension partition-function pole is claimed to recast, and the source of the parameter value claim 3 matches to.",
+              "targets": [
+                "conj:lqg-entropy-qdim-partition-pole"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Add an inline \\cite at the block's claim 3 ('Immirzi from criticality') and at its scope note's 'established analytic result', so the bare cites[] entry at lqg-entropy-qdim-partition-pole.ts:15 becomes visibly load-bearing rather than an unanchored list entry.",
+              "target": "conj:lqg-entropy-qdim-partition-pole",
+              "bean": "qou-jdxo"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "2de07e909b17"
+        }
+      }
+    }
+  ]
+}

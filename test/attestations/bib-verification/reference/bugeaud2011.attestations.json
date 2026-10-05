@@ -1,0 +1,51 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "bugeaud2011",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 349,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/crmath-2011-349-19-20-1037-0/CRMATH_2011__349_19-20_1037_0.pdf"
+        },
+        "id": "bugeaud2011",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Not an orphan: registered as bugeaud2011 (references.ts L7638-7653) and \u2014 per its own note \u2014 registered TODAY (2026-08-08) with a detailed, already-correct scoping. I read the note (French/English abstracts, Notations, \u00a71 Introduction) and confirm the note's characterisation: it takes van der Put and Reversat's normal form for a pure q-difference module with non-integral slopes and deduces explicit matricial descriptions of the isoformal analytic classes and of the formal Galois group. The registered note's key caveat is verified from the document's own section structure: \u00a72 is titled for the TWO-slope isoformal classification, so this does not supply Stokes data for a pure isoclinic (single-slope) module \u2014 which is what the folio's C1 kernel is (c1Slope = 1/2 in QOU/Mass/ThetaSlopeArithmetic.lean). The one actionable gap: QOU/MathlibExt/RSZIsoformalInterface.lean L101 refers to it in prose as 'Bugeaud [14]' \u2014 the upstream paper's own bibliography number \u2014 instead of carrying a `-- Ref: [bugeaud2011]` key, so the now-registered entry is not machine-linked to the only place that uses it.",
+          "keyResults": [
+            {
+              "locator": "Abstract; \u00a72",
+              "statement": "Explicit matricial descriptions of the isoformal analytic classes and of the formal Galois group for pure q-difference modules whose Newton-polygon slopes are not assumed integral, obtained from the van der Put-Reversat normal form \u2014 stated in the two-slope setting.",
+              "useForFolio": "Documents the regime outside ramis-sauloy-zhang2013 \u00a73.3 (integral slopes) that the folio's non-integral c1Slope = 1/2 falls into, and simultaneously records that it still does not cover the single-slope case \u2014 a negative the RSZ interface class is designed to expose.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/MathlibExt/RSZIsoformalInterface.lean"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "RSZIsoformalInterface.lean L101 names 'Bugeaud [14]' in prose only; now that bugeaud2011 is registered it should be a proper -- Ref: [bugeaud2011] so validate-refs can check it.",
+              "target": "folio/quantum-observable-universe/lean/QOU/MathlibExt/RSZIsoformalInterface.lean",
+              "bean": "qou-37mj"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "fd5bd0558dfe"
+        }
+      }
+    }
+  ]
+}

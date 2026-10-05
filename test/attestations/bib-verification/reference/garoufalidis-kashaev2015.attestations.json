@@ -1,0 +1,57 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "garoufalidis-kashaev2015",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 246,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1411.6062v2/1411.6062v2.pdf"
+        },
+        "id": "garoufalidis-kashaev2015",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Join CORRECT (arXiv:1411.6062v2, Garoufalidis-Kashaev, 'Evaluation of state integrals at rational points', matching the registered entry's title, authors, year and DOI). BIB ORPHAN: full-tree grep returns zero citation sites in content/; the only hit is .beans/qou-5mkt-... which mentions the key in passing as an already-registered naming precedent for a different paper. The paper evaluates 1-dimensional state integrals of products of Faddeev quantum dilogarithms at rational points using quasi-periodicity, expressing the answer via the Rogers dilogarithm, the cyclic quantum dilogarithm and finite state-sums at roots of unity, illustrated on 4_1, 5_2 and the (-2,3,7) pretzel knot. This lands squarely on live corpus fronts - the Faddeev Phi_q vs Rogers Li_2^q context-sorting named in the AGENTS.md cheat sheet, the 4_1 state-integral blocks (thm:aomega-fourone-dt-count), and the fibre-level root-of-unity framing the c_k work uses. Supporting rather than core because no block currently derives anything from it, and I have not checked whether its rational-point hypotheses reach the substrate evaluation point.",
+          "keyResults": [
+            {
+              "locator": "Thm 1.1 (Sec. 2.2); Sec. 1.2-1.4",
+              "statement": "One-dimensional state integrals of products of Faddeev quantum dilogarithms admit closed evaluation at rational points in terms of the Rogers dilogarithm, the cyclic quantum dilogarithm and finite state-sums at roots of unity; worked for 4_1, 5_2 and (-2,3,7).",
+              "useForFolio": "The Faddeev-to-Rogers translation at rational points is exactly the Phi_q vs Li_2^q sorting the framework has to keep straight, and the 4_1 evaluation is directly comparable to the folio's figure-eight state-integral counts.",
+              "targets": [
+                "thm:aomega-fourone-dt-count"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "A registered reference giving closed evaluations of 4_1 state integrals in terms of Rogers and cyclic dilogarithms is uncited while the corpus has a 4_1 state-integral theorem and an explicit Faddeev-vs-Rogers sorting discipline. Cite it at the 4_1 block.",
+              "target": "thm:aomega-fourone-dt-count",
+              "bean": "qou-fadm"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Before any numerical comparison, record what needs checking: the paper evaluates at RATIONAL points and the substrate q_0 is not one, so the results bear on the fibre-level object, not directly on the archimedean evaluation. Numerical agreement, if found, is a cross-check and never an adoption.",
+              "target": "conj:stokes-dt-bps-bridge",
+              "bean": "qou-9gej"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "5abd328d027d"
+        }
+      }
+    }
+  ]
+}
