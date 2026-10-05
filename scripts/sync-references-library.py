@@ -173,6 +173,12 @@ def notes_to_doc(text: str) -> dict[str, str]:
     return out
 
 
+def held(doc_id: str) -> bool:
+    """Is this copy still on disk? Wider than `library_index()`, which skips a
+    split bound issue's container — a copy the library still holds."""
+    return bool(doc_id) and os.path.isdir(os.path.join(LIB, doc_id))
+
+
 def render(info: dict, indent: str = "    ") -> str:
     order = ["docId", "dir", "pdf", "claimedPath", "stage", "pages", "sections", "arxiv",
              "alternates", "duplicateOf"]
@@ -186,8 +192,14 @@ def render(info: dict, indent: str = "    ") -> str:
     return "\n".join(lines)
 
 
-def sync(text: str, mapping: dict[str, str], index: dict[str, dict]) -> tuple[str, int, int]:
-    """Insert or refresh the library block on each matching ref({...})."""
+def sync(text: str, mapping: dict[str, str], index: dict[str, dict], kept: list[str] | None = None) -> tuple[str, int, int]:
+    """Insert or refresh the library block on each matching ref({...}).
+
+    An existing block whose entry no join reaches is kept verbatim and its id
+    appended to `kept` — unconfirmed, not refuted.
+    """
+    kept = [] if kept is None else kept
+    canon_of = {a: d for d, v in index.items() for a in v.get("alternates", [])}
     added = updated = 0
     out: list[str] = []
     pos = 0
@@ -206,8 +218,13 @@ def sync(text: str, mapping: dict[str, str], index: dict[str, dict]) -> tuple[st
             # extraction that recovered 2 sections of 22 pages while another
             # copy of the same paper had 8 of 25. Redirect, and keep the
             # joined path as an alternate so nothing is lost.
-            if info and info.get("duplicateOf"):
-                canon = index.get(info["duplicateOf"])
+            # The marker can sit on either side: a copy may say `duplicate_of`,
+            # or only the canonical copy may list it in `duplicate_copies`.
+            # Read both — with one side missing, Riera-Rodríguez flipped back
+            # to its 3-section extraction from the 8-section one.
+            target = (info or {}).get("duplicateOf") or canon_of.get(doc_id or "")
+            if info and target and target != doc_id:
+                canon = index.get(target)
                 if canon:
                     info = dict(canon)
                     info["alternates"] = sorted(set(info.get("alternates", [])) | {doc_id})
@@ -222,9 +239,37 @@ def sync(text: str, mapping: dict[str, str], index: dict[str, dict]) -> tuple[st
             text[pos:], re.S,
         )
         if existing:
+            block = existing.group(0)
             pos += existing.end()
-            if info:
-                updated += 1
+            if not info:
+                # No join reaches this entry any more, but a block is already
+                # here. It is an earlier identification (by hand or by an
+                # older join) that this run cannot CONFIRM — which is not the
+                # same as refuting it. Dropping it read as "not held" for ten
+                # sources we hold (owner ruling 2026-10-05: keep unconfirmed
+                # links). Keep it verbatim and count it, so it is visible.
+                kept.append(rid)
+                out.append(block)
+                continue
+            # Alternates already recorded stay recorded while the copy is
+            # still in the library: a refresh must not forget a known copy
+            # just because the duplicate markers moved.
+            # So does the copy the block used to name, when the join now
+            # resolves to a different (canonical) one.
+            old_alt: set[str] = set()
+            prior = re.search(r"alternates: (\[.*?\])", block)
+            if prior:
+                try:
+                    old_alt = {a for a in json.loads(prior.group(1)) if held(a)}
+                except ValueError:
+                    pass
+            prior_doc = re.search(r'docId: "([^"]+)"', block)
+            if prior_doc and held(prior_doc.group(1)):
+                old_alt.add(prior_doc.group(1))
+            alt = (set(info.get("alternates", [])) | old_alt) - {info.get("docId")}
+            if alt:
+                info = {**info, "alternates": sorted(alt)}
+            updated += 1
         elif info:
             added += 1
 
@@ -246,7 +291,8 @@ def main() -> int:
     text = open(REFS, encoding="utf-8").read()
     mapping = notes_to_doc(text)
     mapping.update(ref_to_doc())        # ledger is authoritative where both exist
-    new, added, updated = sync(text, mapping, index)
+    kept: list[str] = []
+    new, added, updated = sync(text, mapping, index, kept)
 
     joined = sum(1 for r in mapping if mapping[r] in index)
     absent = sum(1 for r in mapping if mapping[r].startswith(MISSING))
@@ -254,6 +300,7 @@ def main() -> int:
     print(f"joins usable (ledger+note): {joined}")
     print(f"claimed-but-absent files : {absent}")
     print(f"entries added / refreshed: {added} / {updated}")
+    print(f"kept, unconfirmed by any join: {len(kept)}" + (f" ({', '.join(kept)})" if kept else ""))
 
     stages: dict[str, int] = {}
     for v in index.values():
