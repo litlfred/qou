@@ -1,14 +1,14 @@
 ---
 # qou-gl2k
 title: '[TOOLS T9] Regenerate-and-diff process for the Lean content producers gen-gluing-lean.py and gen-hecke-corner-column.py'
-status: in-progress
+status: completed
 type: feature
 priority: normal
 tags:
     - migration
     - tools
 created_at: 2026-10-04T16:35:44Z
-updated_at: 2026-10-05T10:19:17Z
+updated_at: 2026-10-05T11:28:35Z
 parent: qou-k3er
 ---
 
@@ -27,3 +27,6 @@ Owner hard rule: no math or physics content is changed. Done-when must include t
 - Tool lean-regenerate-check (satisfies lean-generation); process processes/content/lean-regenerate-and-diff.bpmn (strict; drift goes to the author as a userTask). loadProcessModel parses it (7 nodes); discoverTools(qou) = 206, 0 failures.
 - Content parity: index sha over computations/folio/lean unchanged.
 - Needs SnapPy (pip install snappy) for the gluing half; without it the check says unknown.
+
+
+2026-10-05 — merged as litlfred/qou#7516 (rebase-merge, 0de344046a). Done-when met: regenerated GeneratedGluing.lean is byte-identical (all 19 knot blocks), and the process is modelled on atomic-mass-drift-check.bpmn.

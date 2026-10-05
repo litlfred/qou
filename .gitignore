@@ -279,3 +279,6 @@ computations/.sparse-cache/
 # Jekyll staging tree written by .github/workflows/docs-site.yml and by
 # scripts/docs-site-frontmatter.py --stage. Generated; never committed.
 _docs-stage/
+
+# compute-QA verdicts (scripts/compute-qa.py): published to qa-reports, never committed (TOOLS T7)
+test/results/

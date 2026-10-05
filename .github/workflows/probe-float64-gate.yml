@@ -54,7 +54,8 @@ jobs:
         if: steps.changed.outputs.files != ''
         # Paths outside `computations/` are ignored by the script, so passing the
         # PR's whole .py diff is safe.
-        run: |
-          python3 scripts/probe-float64-guard.py --diff ${{ steps.changed.outputs.files }}
+        # bpmn-node: Task_Probe (processes/tools/compute-qa.bpmn); gate `probe-float64-diff`, strict.
+        run: python3 scripts/compute-qa.py --gate probe-float64-diff --files ${{ steps.changed.outputs.files }}
       - name: Survey (informational, never fails)
-        run: python3 scripts/probe-float64-guard.py
+        # bpmn-node: Task_Probe (processes/tools/compute-qa.bpmn); gate `probe-float64-survey`, advisory.
+        run: python3 scripts/compute-qa.py --gate probe-float64-survey

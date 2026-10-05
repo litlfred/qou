@@ -92,8 +92,44 @@ export function leanRegenCheckTool(baseUrl?: string): ToolDefinition {
   });
 }
 
+interface ComputeQaGate {
+  id: string;
+  node: string;
+  title: string;
+  mode: "strict" | "warn" | "advisory";
+  diff: boolean;
+  setup: string | null;
+  command: string;
+}
+
+/**
+ * One Tool per compute-QA gate (TOOLS T7, bean `qou-4dj1`), from
+ * `compute-qa-gates.json`, which `scripts/compute-qa.py --write-tool-defs`
+ * generates from the runner's own table. The activity each gate belongs to is
+ * named in `processes/tools/compute-qa.bpmn`.
+ */
+export function computeQaTools(): ToolDefinition[] {
+  const raw = JSON.parse(readFileSync(join(import.meta.dir, "compute-qa-gates.json"), "utf8")) as { gates: ComputeQaGate[] };
+  return raw.gates.map((g) =>
+    defineTool({
+      id: `compute-qa-${g.id}`,
+      title: `compute-QA: ${g.title}`,
+      description:
+        `Run the compute-QA gate \`${g.id}\` (${g.mode}), activity \`${g.node}\` of processes/tools/compute-qa.bpmn: ` +
+        `\`${g.command}${g.diff ? " <changed .py files>" : ""}\`. ` +
+        "Writes its verdict to test/results/compute-qa/ (gitignored; published with qa:publish). " +
+        (g.setup ? `Needs setup first: ${g.setup}.` : "Needs no setup."),
+      install: { none: true },
+      invoke: { shell: `python3 scripts/compute-qa.py --gate ${g.id}${g.diff ? " --base origin/main" : ""}` },
+      io: { inputs: [], outputs: [] },
+      satisfies: ["compute-audit"],
+      requires: { runtime: g.command.startsWith("bun ") ? ["python3", "bun"] : ["python3"], network: false },
+    }),
+  );
+}
+
 export function tools(baseUrl?: string): ToolDefinition[] {
-  return [refreshPlanTool(baseUrl), leanRegenCheckTool(baseUrl), ...producerTools(baseUrl)];
+  return [refreshPlanTool(baseUrl), leanRegenCheckTool(baseUrl), ...computeQaTools(), ...producerTools(baseUrl)];
 }
 
 function producerTools(baseUrl?: string): ToolDefinition[] {
