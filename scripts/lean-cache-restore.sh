@@ -17,9 +17,10 @@
 #         matching cache branch / empty payload.
 set -uo pipefail
 source "$(dirname "$0")/lib/lean-env.sh"
+source "$(dirname "$0")/lib/lake-cache-family.sh"
 
 slug="$(lean_toolchain_slug)"
-branch="lake-cache/qou-$slug"
+branch="$(lake_cache_read_branch "qou-$slug")"
 echo "lean-cache-restore: toolchain slug=$slug  branch=$branch"
 
 # Already restored? (count mathlib oleans; ~2900 when complete)
@@ -33,7 +34,7 @@ fi
 if ! git -C "$REPO_ROOT" fetch --depth=1 origin "$branch" 2>/dev/null; then
   echo "lean-cache-restore: branch '$branch' not found on origin." >&2
   echo "  available lake-cache branches:" >&2
-  git -C "$REPO_ROOT" ls-remote origin 'lake-cache/*' 2>/dev/null \
+  lake_cache_ls_remote 2>/dev/null \
     | awk '{print "    " $2}' >&2
   exit 1
 fi
