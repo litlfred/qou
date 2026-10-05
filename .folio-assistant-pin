@@ -156,4 +156,27 @@
 # _deprecated/, NaN/Infinity), 1,685 of 3,834 meet the producer contract. The
 # rest are findings against their producers; no witness was edited.
 #
-5693b174e460442e5159230cdfc2363e82028a43
+# BUMPED 2026-10-05 to 483ed296b (platform main) — beans rva2 / j9cs, the
+# lake-cache family migration (owner: "migratez qou"). qou.json now declares the
+# `lake-cache` directory with storage.keyedBy "family", which 5693b174e's schema
+# does not accept: measured, the new qou.json FAILS to parse at the old pin and
+# parses at this one. So the declaration and the bump cannot land separately.
+#
+# Same corpus (qou 6cfeab8de + this branch's scripts), `run-validate
+# folio/quantum-observable-universe`, each pin run with the qou.json it can parse:
+#
+#     5693b174e, qou.json @ HEAD  →  "6 issue(s)", valid
+#     483ed296b, qou.json @ new   →  "9 issue(s)", valid — the same 6 lines, plus
+#        3 [unlisted-block] warnings (qbeta-toroidal-harmonics-basis,
+#        atomic-q-reeb-universal-rho, delta-max-numerical-scale): blocks that sit
+#        in a chapter directory but no section lists. A NEW platform check over
+#        pre-existing corpus state, not a content change.
+#
+# Trap, measured: running the OLD pin against the NEW qou.json reports
+# "✗ Invalid — 55 issue(s)" — 17 Lean siblings, witnesses and simulator assets
+# all "missing". None are. `findContentRepoRoot` walks up from cwd, the
+# unparseable declaration makes qou a non-candidate, and it falls back to the
+# platform's own tree, so every corpus path resolves into the wrong root. A
+# platform/declaration mismatch presents as a broken corpus.
+#
+483ed296b59897ce38affe3a66fb3d504a8a4500

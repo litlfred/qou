@@ -67,6 +67,19 @@
       "description": "What a QA process produced about this folio, published to the qa-reports branch keyed by commit and never committed (owner ruling 2026-10-04, decision 11: QA results go to the cat-harness qa-reports store). Today it holds the compute-QA verdicts, one qou-compute-qa/v1 file per gate under compute-qa/, written by scripts/compute-qa.py (TOOLS T7, bean qou-4dj1) and published by .github/workflows/compute-qa.yml. The directory is gitignored except for a .gitkeep, so it is present in every checkout and a reader never mistakes an absent directory for a clean run. Story S3, bean qou-4rhu."
     },
     {
+      "id": "lake-cache",
+      "path": "lake-cache/",
+      "graphKinds": [
+        "lake-cache"
+      ],
+      "storage": {
+        "branchPrefix": "cat/folio-assistant-sci/lake-cache/",
+        "keyedBy": "family",
+        "keyFrom": "<package>-<toolchain-slug>, or toolchain-<slug>, or an addon suffix such as qou-v4-24-0-mathlib-gap-modules"
+      },
+      "description": "Lean build caches, one orphan branch per package and toolchain, restored so a build starts warm. Declared here, on the folio that builds the Lean packages, rather than as a row in folio-assistant's special-branches.json (owner, 2026-10-03). MIGRATED 2026-10-05 (owner: \"migratez qou\") from the legacy `lake-cache/<member>` names: scripts/lib/lake-cache-family.sh writes the declared name and reads it first, falling back to `lake-cache/<member>`, whose branches are kept and never deleted (AGENTS.md rule 9). `lake-cache/` is where a member is mounted; the restore scripts untar into `.lake/`, which the dot-prefix guard forbids declaring."
+    },
+    {
       "id": "fsh-guts",
       "path": "fsh-guts/",
       "graphKinds": [
