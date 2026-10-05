@@ -44,7 +44,7 @@
   everything passes.
 
   Refs:
-    [kassel1995quantum] Kassel, "Quantum Groups," Springer 1995,
+    [kassel1995] Kassel, "Quantum Groups," Springer 1995,
        §X (rigid monoidal categories), §XIV (ribbon-category braiding).
     [turaev2010quantum] Turaev, "Quantum Invariants of Knots
        and 3-Manifolds," de Gruyter 2010, §I (closed-braid
@@ -201,7 +201,7 @@ the bilinearity of `lk`, discharged from `LinearMap.map_add` /
 variable {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
 
 /-- `Lk_R^{(k)}(−, b)` is additive. -/
--- Ref: [kassel1995quantum] §XIV (R-linear rigid monoidal axioms)
+-- Ref: [kassel1995] §XIV (R-linear rigid monoidal axioms)
 -- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 1"
 theorem lk_add_left (D : LinkingData R A) (k : ℤ) (a a' b : A) :
     D.lk k (a + a') b = D.lk k a b + D.lk k a' b := by
@@ -238,7 +238,7 @@ theorem lk_bilinear (D : LinkingData R A) (k : ℤ) :
 
 /-- **Property 2 (`.md`), proved:** `Lk_R^{(0)}(a, b) = τ_R(b) · a^*`.
     The previous revision "proved" this as `q ^ (0 : ℕ) = 1`. -/
--- Ref: [kassel1995quantum] §X (rigid monoidal categories, coev/eval, duals)
+-- Ref: [kassel1995] §X (rigid monoidal categories, coev/eval, duals)
 -- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 2"
 theorem lk_zero (D : LinkingData R A) (a b : A) :
     D.lk 0 a b = D.tau b • D.dual a := by
@@ -256,7 +256,7 @@ Property 3 under "proved"; that is the pre-trace statement. -/
     pre-composition with `c_{A,A}`,
     `PreLk^{(k₁+k₂)}(a, b) = c^{k₂} · PreLk^{(k₁)}(a, b)`, by
     `zpow_add` in the group `Aˣ`. -/
--- Ref: [kassel1995quantum] §X (integer-power group law in monoidal categories)
+-- Ref: [kassel1995] §X (integer-power group law in monoidal categories)
 -- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 3"
 theorem preLk_add (D : LinkingData R A) (k₁ k₂ : ℤ) (a b : A) :
     D.preLk (k₁ + k₂) a b = ↑(D.c ^ k₂) * D.preLk k₁ a b := by
@@ -295,7 +295,7 @@ theorem preLk_add (D : LinkingData R A) (k₁ k₂ : ℤ) (a b : A) :
 
   No instance is provided; supplying one asserts the conjecture. -/
 -- Ref: [manuscript] conj:categorical-linking-operation
--- Ref: [kassel1995quantum] §XIV (ribbon-category braiding, bar-functoriality)
+-- Ref: [kassel1995] §XIV (ribbon-category braiding, bar-functoriality)
 class CategoricalLinkingOperation
     (R : Type*) [CommRing R] (A : Type*) [Ring A] [Algebra R A]
     (D : LinkingData R A) : Prop where

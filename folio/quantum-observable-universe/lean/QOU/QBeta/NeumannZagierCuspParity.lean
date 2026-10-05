@@ -70,7 +70,7 @@
 
   Sorry-free. No `axiom`, no conditional class, no `native_decide`.
 
-  -- Ref: [neumann-zagier-1985] Volumes of hyperbolic three-manifolds,
+  -- Ref: [neumann-zagier1985] Volumes of hyperbolic three-manifolds,
   --      Topology 24 (1985) 307-332, eqs (52), (65)-(66), (68)
   -- Ref: [manuscript] computations/qbeta/qbeta_neumann_zagier_cusp_modulus_probe.py
   -- Ref: [manuscript] QOU/QBeta/CuspShapeBarParity.lean  (the hexagonal lattice)

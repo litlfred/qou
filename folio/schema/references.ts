@@ -5612,6 +5612,14 @@ export const references: Reference[] = [
   // ── O'Hara 1991 (energy of knots) ────────────────────────────
   ref({
     id: "ohara1991",
+    library: {
+      docId: "1-s20-0040938391900102-main",
+      dir: "library/1-s20-0040938391900102-main",
+      pdf: "library/1-s20-0040938391900102-main/1-s2.0-0040938391900102-main.pdf",
+      stage: "sections",
+      pages: 7,
+      sections: 2,
+    },
     type: "article-journal",
     title: "Energy of a knot",
     author: [
@@ -17251,6 +17259,93 @@ export const references: Reference[] = [
     DOI: "10.1515/9781400881819",
     URL: "https://doi.org/10.1515/9781400881819",
     note: "The link of an isolated singularity; the Milnor fibration. Not ingested.",
+  }),
+  // ── Added 2026-10-05 (C9, #7528): works cited by Lean `-- Ref:` keys that the bibliography lacked ──
+  ref({
+    id: "bjornerbrenti2005",
+    type: "book",
+    title: "Combinatorics of Coxeter Groups",
+    author: [
+      { family: "Björner", given: "Anders" },
+      { family: "Brenti", given: "Francesco" },
+    ],
+    publisher: "Springer",
+    issued: { "date-parts": [[2005]] },
+    "collection-title": "Graduate Texts in Mathematics",
+    "collection-number": 231,
+    DOI: "10.1007/3-540-27596-7",
+    note: "Added 2026-10-05 so a Lean `-- Ref:` key resolves (C9, issue #7528; owner ruling). Metadata written by an agent from standard bibliographic knowledge and NOT checked against the source in this session; review status stays unreviewed until a human validates it.",
+  }),
+
+  ref({
+    id: "matsumoto1964",
+    type: "article-journal",
+    title: "Générateurs et relations des groupes de Weyl généralisés",
+    author: [{ family: "Matsumoto", given: "Hideya" }],
+    "container-title": "Comptes Rendus de l'Académie des Sciences, Paris",
+    volume: "258",
+    page: "3419-3422",
+    issued: { "date-parts": [[1964]] },
+    note: "Added 2026-10-05 so a Lean `-- Ref:` key resolves (C9, issue #7528; owner ruling). Metadata written by an agent from standard bibliographic knowledge and NOT checked against the source in this session; review status stays unreviewed until a human validates it.",
+  }),
+
+  ref({
+    id: "humphreys1990",
+    type: "book",
+    title: "Reflection Groups and Coxeter Groups",
+    author: [{ family: "Humphreys", given: "James E." }],
+    publisher: "Cambridge University Press",
+    issued: { "date-parts": [[1990]] },
+    "collection-title": "Cambridge Studies in Advanced Mathematics",
+    "collection-number": 29,
+    DOI: "10.1017/CBO9780511623646",
+    note: "Added 2026-10-05 so a Lean `-- Ref:` key resolves (C9, issue #7528; owner ruling). Metadata written by an agent from standard bibliographic knowledge and NOT checked against the source in this session; review status stays unreviewed until a human validates it.",
+  }),
+
+  ref({
+    id: "tits1969",
+    type: "paper-conference",
+    title: "Le problème des mots dans les groupes de Coxeter",
+    author: [{ family: "Tits", given: "Jacques" }],
+    "container-title": "Symposia Mathematica, Vol. 1 (INDAM, Rome, 1967/68)",
+    publisher: "Academic Press",
+    page: "175-185",
+    issued: { "date-parts": [[1969]] },
+    note: "Added 2026-10-05 so a Lean `-- Ref:` key resolves (C9, issue #7528; owner ruling). Metadata written by an agent from standard bibliographic knowledge and NOT checked against the source in this session; review status stays unreviewed until a human validates it.",
+  }),
+
+  ref({
+    id: "bourbaki1968",
+    type: "book",
+    title: "Groupes et algèbres de Lie, Chapitres IV, V et VI",
+    author: [{ family: "Bourbaki", given: "Nicolas" }],
+    publisher: "Hermann",
+    issued: { "date-parts": [[1968]] },
+    note: "Added 2026-10-05 so a Lean `-- Ref:` key resolves (C9, issue #7528; owner ruling). Metadata written by an agent from standard bibliographic knowledge and NOT checked against the source in this session; review status stays unreviewed until a human validates it.",
+  }),
+
+  ref({
+    id: "hatcher2002",
+    type: "book",
+    title: "Algebraic Topology",
+    author: [{ family: "Hatcher", given: "Allen" }],
+    publisher: "Cambridge University Press",
+    issued: { "date-parts": [[2002]] },
+    note: "Added 2026-10-05 so a Lean `-- Ref:` key resolves (C9, issue #7528; owner ruling). Metadata written by an agent from standard bibliographic knowledge and NOT checked against the source in this session; review status stays unreviewed until a human validates it.",
+  }),
+
+  ref({
+    id: "reid1991",
+    type: "article-journal",
+    title: "[title not verified — see note] Bull. London Math. Soc. 23(4):383",
+    author: [{ family: "Reid", given: "Alan W." }],
+    "container-title": "Bulletin of the London Mathematical Society",
+    volume: "23",
+    issue: "4",
+    page: "383",
+    issued: { "date-parts": [[1991]] },
+    DOI: "10.1112/blms/23.4.383",
+    note: "The DOI is the one the citing Lean files give (Archimedean/VolumeTranscendental.lean, HyperbolicVolumeTranscendence.lean). The TITLE is a placeholder: doi.org and Crossref were unreachable from the session that added this entry, and the title was not guessed. Resolve the DOI and replace the title before validating. Added 2026-10-05 so a Lean `-- Ref:` key resolves (C9, issue #7528; owner ruling). Metadata written by an agent from standard bibliographic knowledge and NOT checked against the source in this session; review status stays unreviewed until a human validates it.",
   }),
 ];
 
