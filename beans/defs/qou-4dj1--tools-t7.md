@@ -8,7 +8,7 @@ tags:
     - migration
     - tools
 created_at: 2026-10-04T16:35:43Z
-updated_at: 2026-10-05T11:28:35Z
+updated_at: 2026-10-05T11:39:24Z
 parent: qou-k3er
 blocked_by:
     - qou-4rhu
@@ -29,3 +29,6 @@ Owner hard rule: no math or physics content is changed. Done-when must include t
 Tools: 21 compute-qa-<gate> Tools, generated from the runner's table via tool-defs/compute-qa-gates.json (--check-tool-defs). discoverTools(qou) = 227, 0 failures.
 Content parity: no change under computations/, folio/, *.lean or any witness.
 Trap worth knowing: several of these audits WRITE their audit witness files as a side effect. Run them in a worktree (as here) or restore afterwards; never commit what they rewrite.
+
+
+2026-10-05 — publish half: qou now declares qa storage and has the cat/cat-harness/qa-reports branch (#7518, bean qou-4rhu). compute-qa.yml is the one publisher. Verified end to end under pr/7518/<sha>. Done once #7518 merges.
