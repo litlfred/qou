@@ -47,7 +47,7 @@ knots; it derives nothing about `A_ω`.
 
 -- Ref: [manuscript] computations/probes/two_bridge_layered_nz_probe.py (#6985)
 -- Ref: [manuscript] docs/audits/2026-09-06-two-bridge-layering-from-farey-word.md
--- Ref: [garoufalidis-zagier2021] library/arxiv-2111.06645v3 §2.1 (the transcribed table this replaces for 4₁, 5₂)
+-- Ref: [garoufalidis-zagier-2024] library/arxiv-2111.06645v3 §2.1 (the transcribed table this replaces for 4₁, 5₂)
 -/
 
 namespace QOU.QBeta.FloorRemainderFromDerivedShapeFields

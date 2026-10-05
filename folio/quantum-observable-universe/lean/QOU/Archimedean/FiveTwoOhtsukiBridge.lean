@@ -158,7 +158,7 @@ closing `8₁₁` would be an overstatement.
 Archimedean (ℝ, ℂ).
 
 -- Ref: [manuscript] prop:qbeta-c8-c10-silver-rationals
--- Ref: [ohtsuki2016-52] doi:10.4171/QT/83
+-- Ref: [ohtsuki2016] doi:10.4171/QT/83
 -/
 
 namespace QOU.Archimedean.FiveTwoOhtsukiBridge
