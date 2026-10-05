@@ -47,7 +47,33 @@ export function producers(): Producer[] {
   return raw.producers.filter((p) => p.scriptExists && p.witnesses.length > 0);
 }
 
+/**
+ * The first step of `processes/content/witness-refresh.bpmn`: list the
+ * producers a refresh would run, writing nothing. It wraps the existing
+ * `computations/run_pipeline.py --dry-run --content-only` rather than
+ * re-deriving the list, so the plan and the runner cannot disagree.
+ */
+export function refreshPlanTool(baseUrl?: string): ToolDefinition {
+  return defineTool({
+    id: "witness-refresh-plan",
+    title: "Plan a witness refresh",
+    description:
+      "List the content-wired computation scripts a witness refresh would run, without running any of them or writing a witness. " +
+      "Wraps `computations/run_pipeline.py --dry-run --content-only`. The first activity of `processes/content/witness-refresh.bpmn`; " +
+      "the refresh itself waits on the owner's approval in that process.",
+    install: { none: true },
+    invoke: { shell: "python3 computations/run_pipeline.py --dry-run --content-only" },
+    io: { inputs: [], outputs: [] },
+    satisfies: ["compute-audit"],
+    requires: { runtime: ["python3"], network: false },
+  });
+}
+
 export function tools(baseUrl?: string): ToolDefinition[] {
+  return [refreshPlanTool(baseUrl), ...producerTools(baseUrl)];
+}
+
+function producerTools(baseUrl?: string): ToolDefinition[] {
   const B = baseUrl ?? "";
   const t = (n: Parameters<typeof toolTypeIri>[1]): string => toolTypeIri(B, n);
   return producers().map((p) =>
