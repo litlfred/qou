@@ -106,9 +106,9 @@ The QOU production stack computes $\mathrm{tr}_M$ on the canonical atomic word â
 
 | atom | $\mathrm{tr}_M(\beta_{\rm atom}, q_0)$ | peel vs combiner |
 |---|---:|---:|
-| proton | $1.1457596924573009$ | $2.67\times 10^{-50}$ |
-| neutron | $0.9877436881158096$ | $3.74\times 10^{-50}$ |
-| deuteron | $0.5751722439177719$ | $1.47\times 10^{-50}$ |
+| proton | ${{ qou.computations.atomic-tr-m-mpfr-50dps-proton.results.0.tr_M_at_q0_50dps | precision: 17 }}$ | ${{ qou.computations.atomic-tr-m-mpfr-50dps-proton.results.0.peel_cross_check.abs_diff_vs_bridge | precision: 3 | scientific }}$ |
+| neutron | ${{ qou.computations.atomic-tr-m-mpfr-50dps-proton.results.1.tr_M_at_q0_50dps | precision: 17 }}$ | ${{ qou.computations.atomic-tr-m-mpfr-50dps-proton.results.1.peel_cross_check.abs_diff_vs_bridge | precision: 3 | scientific }}$ |
+| deuteron | ${{ qou.computations.atomic-tr-m-mpfr-50dps-proton.results.2.tr_M_at_q0_50dps | precision: 17 }}$ | ${{ qou.computations.atomic-tr-m-mpfr-50dps-proton.results.2.peel_cross_check.abs_diff_vs_bridge | precision: 3 | scientific }}$ |
 
 The agreement column is the residual between those two paths at 50 dps, and it sits at the serialization floor rather than at any tolerance the computation imposes; the L1 target is $1$ ppQ ($10^{-15}$), which it clears by 35 orders.
 
