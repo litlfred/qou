@@ -49,6 +49,10 @@ The platform already has schemas and tools for most of this:
 2. **101 verifications have no verifier.** The migration must carry them as unknown and must not attribute them.
 3. **Human review covers 2 of 892 references.** That is not a migration defect, but the attestations move should make the gap visible.
 
+4. **`references.bib` has drifted** (found by B2's check, 2026-10-05). The committed copy, last generated 2026-08-16, is 5,658 lines; regenerating gives 8,920. The first difference is a stale `uploads/` path that is now under `library/`. Regenerating it rewrites a committed file, so it waits for B6 or a ruling.
+5. **Platform finding: `export-bibtex.ts` hardcodes this folio's title.** Its header reads "% Bibliography for Quantum Observable Universe" and names the source path as `folio/schema/references.ts`, both inside the platform. They should come from the instance, not from a literal.
+6. **`bib-qa-images/` is not `uploads`.** The `uploads` kind is an ingestion queue whose files read as absent. These images are evidence for verifications, so they move with B4 (attestations), not in B2.
+
 ## 4. Stories (proposed, in order)
 
 | # | story | done-when (parity P-C: no `.md`/`.lean`/`.ts` content blob changes except the files named) | owner? |

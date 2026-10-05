@@ -126,6 +126,28 @@ export function qouMassVendorSyncTool(): ToolDefinition {
   });
 }
 
+/**
+ * C9 story B2 (issue #7528): is the committed `references.bib` what the
+ * CSL-JSON bibliography generates? Regenerates into a temp file and compares,
+ * ignoring only the `% Generated:` timestamp. Writes nothing in the tree.
+ */
+export function referencesBibCheckTool(): ToolDefinition {
+  return defineTool({
+    id: "references-bib-check",
+    title: "Check references.bib against the bibliography",
+    description:
+      "Regenerate `references.bib` from `folio/schema/references.ts` with the platform's `export-bibtex.ts` into a temp " +
+      "file and compare it with the committed copy, ignoring the `% Generated:` timestamp line. Exit 0 current, 1 drift " +
+      "(with the first differing line), 2 could not run. Writes nothing in the tree; regenerating the committed file is " +
+      "a separate, deliberate step.",
+    install: { none: true },
+    invoke: { shell: "bun run scripts/check-references-bib.ts" },
+    io: { inputs: [], outputs: [] },
+    satisfies: ["bib-qa"],
+    requires: { runtime: ["bun"], network: false },
+  });
+}
+
 interface ComputeQaGate {
   id: string;
   node: string;
@@ -163,7 +185,7 @@ export function computeQaTools(): ToolDefinition[] {
 }
 
 export function tools(baseUrl?: string): ToolDefinition[] {
-  return [refreshPlanTool(baseUrl), leanRegenCheckTool(baseUrl), qouMassVendorSyncTool(), ...computeQaTools(), ...producerTools(baseUrl)];
+  return [refreshPlanTool(baseUrl), leanRegenCheckTool(baseUrl), qouMassVendorSyncTool(), referencesBibCheckTool(), ...computeQaTools(), ...producerTools(baseUrl)];
 }
 
 function producerTools(baseUrl?: string): ToolDefinition[] {
