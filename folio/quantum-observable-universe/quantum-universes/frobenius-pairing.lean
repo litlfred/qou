@@ -31,7 +31,7 @@ universe u v
     LaTeX: `\label{def:frobenius-pairing}`
     Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 -/
 structure FrobeniusPairing (C : Type u) [Category.{v} C]
-    [MonoidalCategory C] (fh : FrobeniusHopfData C) where
+    [MonoidalCategory C] [CategoryTheory.BraidedCategory C] (fh : FrobeniusHopfData C) where
   /-- The Frobenius pairing morphism `⟨-,-⟩_F : A ⊗ A → 𝟙`,
       defined as the composite `λ ∘ μ`. -/
   pairing : (fh.obj ⊗ fh.obj) ⟶ (𝟙_ C)
@@ -41,7 +41,7 @@ structure FrobeniusPairing (C : Type u) [Category.{v} C]
 /-- Construct the canonical Frobenius pairing from a Frobenius–Hopf datum. -/
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 def FrobeniusHopfData.canonicalPairing {C : Type u} [Category.{v} C]
-    [MonoidalCategory C] (fh : FrobeniusHopfData C) :
+    [MonoidalCategory C] [CategoryTheory.BraidedCategory C] (fh : FrobeniusHopfData C) :
     FrobeniusPairing C fh where
   pairing := fh.mul ≫ fh.frobeniusForm
   pairing_eq := rfl
@@ -50,7 +50,7 @@ def FrobeniusHopfData.canonicalPairing {C : Type u} [Category.{v} C]
     commutative (i.e., `μ ∘ β = μ` where `β` is the braiding).
     In this case `⟨a, b⟩_F = ⟨b, a⟩_F`. -/
 theorem FrobeniusPairing.symmetric_of_comm {C : Type u} [Category.{v} C]
-    [MonoidalCategory C] {fh : FrobeniusHopfData C}
+    [MonoidalCategory C] [CategoryTheory.BraidedCategory C] {fh : FrobeniusHopfData C}
     (fp : FrobeniusPairing C fh)
     (β : fh.obj ⊗ fh.obj ⟶ fh.obj ⊗ fh.obj)
     (h_comm : β ≫ fh.mul = fh.mul) :
@@ -62,7 +62,7 @@ theorem FrobeniusPairing.symmetric_of_comm {C : Type u} [Category.{v} C]
     `A → A∨` (currying one argument of the pairing) is an isomorphism.
     Stated as: the snake identities hold. -/
 structure FrobeniusPairing.NonDegenerate {C : Type u} [Category.{v} C]
-    [MonoidalCategory C] {fh : FrobeniusHopfData C}
+    [MonoidalCategory C] [CategoryTheory.BraidedCategory C] {fh : FrobeniusHopfData C}
     (fp : FrobeniusPairing C fh) where
   /-- The coevaluation morphism `η̃ : 𝟙 → A ⊗ A` dual to the pairing. -/
   coevaluation : (𝟙_ C) ⟶ (fh.obj ⊗ fh.obj)
@@ -84,7 +84,7 @@ structure FrobeniusPairing.NonDegenerate {C : Type u} [Category.{v} C]
     non-degenerate canonical pairing. -/
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 def FrobeniusHopfData.hasNonDegeneratePairing {C : Type u} [Category.{v} C]
-    [MonoidalCategory C] (fh : FrobeniusHopfData C) :
+    [MonoidalCategory C] [CategoryTheory.BraidedCategory C] (fh : FrobeniusHopfData C) :
     FrobeniusPairing.NonDegenerate (fh.canonicalPairing) where
   coevaluation := fh.coevaluation
   snake_left := by

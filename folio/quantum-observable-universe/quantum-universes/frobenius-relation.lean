@@ -35,7 +35,7 @@ universe u v
     LaTeX: `\label{prop:frobenius-relation}`
     Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 -/
 theorem frobenius_relation_holds {C : Type u} [Category.{v} C]
-    [MonoidalCategory C] (fh : FrobeniusHopfData C) :
+    [MonoidalCategory C] [CategoryTheory.BraidedCategory C] (fh : FrobeniusHopfData C) :
     fh.mul ≫ fh.comul =
       (fh.comul ▷ fh.obj) ≫ (α_ fh.obj fh.obj fh.obj).hom ≫
       (fh.obj ◁ fh.mul) := by
@@ -47,7 +47,7 @@ theorem frobenius_relation_holds {C : Type u} [Category.{v} C]
     This is the direct field from `FrobeniusHopfData`. -/
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 theorem frobenius_relation_left {C : Type u} [Category.{v} C]
-    [MonoidalCategory C] (fh : FrobeniusHopfData C) :
+    [MonoidalCategory C] [CategoryTheory.BraidedCategory C] (fh : FrobeniusHopfData C) :
     (fh.comul ▷ fh.obj) ≫ (α_ fh.obj fh.obj fh.obj).hom ≫
       (fh.obj ◁ fh.mul) = fh.mul ≫ fh.comul := by
   exact fh.frobenius_relation.symm
