@@ -1,0 +1,29 @@
+{
+ "$schema": "folio-site-qa/v1",
+ "blocks": 3616,
+ "findings": [
+  {
+   "block": "mass-theory/piece-a-corner-removal-obligation-proof",
+   "class": "stray-dollar",
+   "excerpt": "(L4) The row sum. By (L2), $2h(r,j) - 1 = 2(s-j) + 2,\\mathrm{colLen}(j) 2"
+  },
+  {
+   "block": "appendix-qvalues/qvalue-derivation-chain",
+   "class": "katex",
+   "excerpt": "KaTeX parse error: No such environment: psmallmatrix at position 16: T(c,d) = \\begin{̲p̲s̲m̲a̲l̲l̲m̲a̲t̲r̲i̲x̲}̲ c(q-q^{ — in: T(c,d) = \\begin{psmallmatrix} c(q-q^{-1})+d & c \\\\ c & d \\en"
+  },
+  {
+   "block": "notation/notation-collisions",
+   "class": "raw-tex",
+   "excerpt": "trace is a trace functional \\cite{jones1987, geckpfeiffer2000}; the modulus co"
+  }
+ ],
+ "counts": {
+  "raw-tex": 1,
+  "raw-directive": 0,
+  "stray-dollar": 1,
+  "katex": 1,
+  "missing-image": 0
+ },
+ "unknown": []
+}
