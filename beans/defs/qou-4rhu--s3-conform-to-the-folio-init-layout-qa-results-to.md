@@ -1,15 +1,24 @@
 ---
 # qou-4rhu
 title: S3 Conform to the folio_init layout; QA results to the cat-harness qa-reports branch
-status: todo
+status: in-progress
 type: feature
+priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:10:15Z
-updated_at: 2026-10-04T15:10:15Z
+updated_at: 2026-10-05T11:35:34Z
 parent: qou-n4r9
 ---
 
 Size M. Owner ruling 2026-10-04 (decision 11): QA sidecars use cat-harness qa-reports. README markers via readme:sync:check. Audit 786 .tex tables vs 444 table blocks and REPORT tables that exist only in .tex; never drop content.
 
 Owner hard rule: no math or physics content is changed. Every story ends with a parity check: block, chapter and .lean counts unchanged, statements byte-identical by hash, witnesses unchanged.
+
+
+2026-10-05 — part 1 (QA results to qa-reports) and part 2 (README markers) on claude/s3-qa-reports-2026-10-05.
+- qou.json now declares the `qa` directory: test/results/, graphKinds [qa], storage branch cat/cat-harness/qa-reports (the platform's QA_BRANCH, same at pin 5693b174). The platform's resolveQaLocation(qou) resolves it, present=true. Gitignored except test/results/.gitkeep.
+- .github/workflows/compute-qa.yml (dispatch-only) runs every gate with every gate's setup (`compute-qa.py --every`) and is the ONLY publisher. Reason: qa:publish never overwrites an entry, so if four workflows published the same commit, the first write would stand and the other three would be dropped.
+- README: readme:sync:check was red (folio:toc, lean-coverage, lean-modules, workflows). A plain sync would have RENAMED the paper in the README to 'Quantum Observable Universe', taken from folio/folio.ts's paperRef title, a third copy of the title that identity.ts (bean qou-yqko) was made to end. Fixed at the source: folio.ts now carries 'On the Mechanics of Quantum Observable Universes'. It is a literal, not an import of paperIdentity, because the generator reads folio.ts as text (an import made it fall back to the directory name). After that, the sync changes only Lean module counts and the workflow list, and check exits 0.
+- Still open in S3: (3) audit the 786 .tex tables against the 444 table blocks and REPORT tables that exist only in .tex, never dropping content; (4) the broader folio_init layout conformance.
+Parity: no .lean, witness or content .md change; the only folio/ edit is folio.ts's paperRef title.

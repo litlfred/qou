@@ -55,6 +55,18 @@
       "description": "qou's BPMN processes, grouped by concern (processes/processes.json). First: content/witness-refresh.bpmn, the owner-gated refresh of computation witnesses (story TOOLS T6, bean qou-kumy)."
     },
     {
+      "id": "qa",
+      "path": "test/results/",
+      "graphKinds": [
+        "qa"
+      ],
+      "storage": {
+        "branch": "cat/cat-harness/qa-reports",
+        "keyedBy": "commit"
+      },
+      "description": "What a QA process produced about this folio, published to the qa-reports branch keyed by commit and never committed (owner ruling 2026-10-04, decision 11: QA results go to the cat-harness qa-reports store). Today it holds the compute-QA verdicts, one qou-compute-qa/v1 file per gate under compute-qa/, written by scripts/compute-qa.py (TOOLS T7, bean qou-4dj1) and published by .github/workflows/compute-qa.yml. The directory is gitignored except for a .gitkeep, so it is present in every checkout and a reader never mistakes an absent directory for a clean run. Story S3, bean qou-4rhu."
+    },
+    {
       "id": "fsh-guts",
       "path": "fsh-guts/",
       "graphKinds": [

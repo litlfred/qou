@@ -281,4 +281,5 @@ computations/.sparse-cache/
 _docs-stage/
 
 # compute-QA verdicts (scripts/compute-qa.py): published to qa-reports, never committed (TOOLS T7)
-test/results/
+test/results/*
+!test/results/.gitkeep

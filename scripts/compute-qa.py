@@ -182,6 +182,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--gate", action="append", default=[], help="gate id (repeatable)")
     ap.add_argument("--all", action="store_true", help="every gate that needs no extra setup")
+    ap.add_argument("--every", action="store_true", help="every gate, including those that need setup (the compute-qa.yml job)")
     ap.add_argument("--list", action="store_true")
     ap.add_argument("--base", default=None, help="diff base for the --diff gates (e.g. origin/main)")
     ap.add_argument("--files", nargs="*", default=None, help="explicit changed .py files for the --diff gates")
@@ -202,9 +203,9 @@ def main() -> int:
         for x in GATES:
             print(f"{x['id']:<26} {x['mode']:<9} {x['node']:<15} {x['title']}" + (f"  [setup: {x['setup']}]" if x["setup"] else ""))
         return 0
-    ids = a.gate or ([x["id"] for x in GATES if not x["setup"]] if a.all else [])
+    ids = a.gate or ([x["id"] for x in GATES] if a.every else [x["id"] for x in GATES if not x["setup"]] if a.all else [])
     if not ids:
-        ap.error("give --gate <id>, --all, or --list")
+        ap.error("give --gate <id>, --all, --every, or --list")
     unknown_ids = [i for i in ids if i not in BY_ID]
     if unknown_ids:
         ap.error(f"no such gate: {', '.join(unknown_ids)} (see --list)")
