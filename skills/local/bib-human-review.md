@@ -14,7 +14,10 @@ roles: [collaborator]
 # bib-human-review
 
 Design of record: [`docs/workplans/2026-06-08-bib-human-review-workflow-design.md`](../../../docs/workplans/2026-06-08-bib-human-review-workflow-design.md).
-Status sidecar: [`folio/schema/references.review.json`](../../../folio/schema/references.review.json).
+Status record: the attestation store's `bib-human-review` family, one file per reference at
+`test/attestations/bib-human-review/reference/<id>.attestations.json` (moved from
+`folio/schema/references.review.json` on 2026-10-05, hashes unchanged). Read and write it only through
+`folio-assistant/cat-harness/schemas/bib-attestations.ts` (`readHumanReviews` / `writeHumanReviews`).
 
 ## What this skill does
 
@@ -24,7 +27,7 @@ source**. This skill manages that status and drives unreviewed references to
 
 ## 1. Audit — find unreviewed references
 
-- Read `references.review.json`. Any `references.ts` id whose effective status is
+- Read the human reviews (`readHumanReviews`). Any `references.ts` id whose effective status is
   not `validated` is **flagged** (absent ⇒ `unreviewed` by default).
 - An entry is **stale** when its `entryHash` (12-char SHA-256 *prefix* of the
   canonical-JSON-serialized `references.ts` entry) drifts — treat as `unreviewed`.

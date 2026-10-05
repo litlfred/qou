@@ -34,17 +34,17 @@ The skill operates at two levels:
 | 4 | `cited_in_paper` | ✓     | Referenced by `\cite{}` in .md/.tex or `-- Ref:` in .lean |
 | 5 | `has_screenshot` | ✓     | Screenshot exists in `folio/bib-qa-images/<id>.*` |
 | 6 | `has_local_pdf`  | ✓     | Full paper PDF / data file present at `library/<id>*.{pdf,txt}` for offline verification (added 2026-05-19) |
-| 7 | `verification_status` | ✓ | Per-paper verification record exists in `folio/bib-qa-verifications.json` with status ∈ {`verified-clean`, `partial`, `fixed`}. Pending/uncited/unfetchable/paper-mismatch all warn. (added 2026-05-19) |
+| 7 | `verification_status` | ✓ | Per-paper verification record exists in the source ledger (`test/attestations/bib-verification/`) with status ∈ {`verified-clean`, `partial`, `fixed`}. Pending/uncited/unfetchable/paper-mismatch all warn. (added 2026-05-19) |
 
 \* ✓* = automated but requires `--check-urls` flag (makes network requests).
 
 Each tag resolves to `pass`, `fail`, `warn`, or `unchecked`.
 The **score** (0–7) is the count of passing tags.
 
-### Verification status model (`bib-qa-verifications.json`)
+### Verification status model (the source ledger)
 
-`folio/bib-qa-verifications.json` is the hand-curated sidecar
-recording per-paper verification metadata. Loaded by `bib-qa.ts`
+The source ledger records per-paper verification metadata. It is
+the source ledger — since 2026-10-05 the attestation store's `bib-verification` family, one file per reference under `test/attestations/bib-verification/` (rows with no reference id under `source/<file>`). Read and write it only through the platform's `folio-assistant/cat-harness/schemas/bib-attestations.ts` (Python: `scripts/lib/bib_ledger.py`, read-only); never hand-edit a store file's `position`, and never add `verified_by` to a row marked `verifier: "unknown"`. Loaded by `bib-qa.ts`
 and surfaced both as the `verification_status` QA tag (#7) and in
 each entry's `.verification` field of `bib-qa.json` (which
 flows through to the standalone `bib-qa.html` dashboard).
@@ -94,7 +94,7 @@ The `verification_status` tag passes for `verified-clean` /
 When verifying a paper:
 1. Update the entry's `status`, `verified_at`, `verified_by`,
    `fixes_applied`, `fix_commit` in
-   `folio/bib-qa-verifications.json`.
+   the source ledger (`test/attestations/bib-verification/`).
 2. Append a row to the markdown ledger's "Verification log" table
    (`docs/coordination/<date>-bib-verification-ledger.md`).
 3. Commit both files alongside any `-- Ref:` fixes (one commit
@@ -172,7 +172,7 @@ for the design rationale and per-server feature matrix.)
    ```
 
 2. **Verification cross-check** — for any entry in
-   `bib-qa-verifications.json` whose status is `partial` or
+   the source ledger whose status is `partial` or
    `pending`, `read_arxiv_paper(arxiv_id)` returns the parsed
    body. Grep the cited `-- Ref: [<id>] <description>` keywords
    against that body to confirm the description anchors a real
@@ -455,7 +455,7 @@ The `bib-qa.json` schema:
 
 ## Verification status rendered in PDF/HTML (added 2026-05-19)
 
-The bib-qa-verifications.json status surfaces in the rendered
+The source-ledger status surfaces in the rendered
 bibliography (PDF + HTML) via the `annotation` field in
 `references.bib`:
 
@@ -466,7 +466,7 @@ bibliography (PDF + HTML) via the `annotation` field in
   }
 
 `content/pipeline/export-bibtex.ts` reads
-`folio/bib-qa-verifications.json` at export time and injects a
+the source ledger at export time and injects a
 short status marker per entry. Format:
 
   [<status-symbol>] [<N fixes>] [by <verifier>] [<date>]
@@ -555,7 +555,7 @@ Detection workflow:
    title page.
 2. Compare the title page to the `references.ts` entry's `title` field.
 3. If they disagree, mark the entry as `paper-mismatch` in
-   `folio/bib-qa-verifications.json` with a note explaining the
+   the source ledger (`test/attestations/bib-verification/`) with a note explaining the
    downloaded content vs the expected content.
 4. The `references.ts` URL itself usually needs the fix (not the
    entry's bib metadata); update the URL and re-run
@@ -585,7 +585,7 @@ procedure (per the 2026-05-19 batch experience):
      - **Wrong work**: paper covers a different topic entirely (the
        leitnerpawloski2004 inner-product case) → flag as partial /
        paper-mismatch; defer to author judgement.
-5. **Update both**: `folio/bib-qa-verifications.json` status +
+5. **Update both**: the source ledger (`test/attestations/bib-verification/`) status +
    `docs/coordination/<date>-bib-verification-ledger.md` log row.
 6. **Commit** per-paper (granular history); the
    `local/bib-qa` skill picks up the new status on next `bib-qa.ts`

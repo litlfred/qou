@@ -26,7 +26,7 @@ allowed-tools: Read Write Edit Bash Grep Glob Agent WebFetch
 > whether the paper is worth importing at all and what it would attach to.
 > Import is the action a triage *proposes* (`new-block`), not the default
 > disposition of an upload. The triage's verdict and proposed actions live in
-> the source ledger, `folio/bib-qa-verifications.json`.
+> the source ledger, `test/attestations/bib-verification/`.
 
 ## Overview
 

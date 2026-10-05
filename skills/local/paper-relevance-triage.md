@@ -25,7 +25,7 @@ property a batch job can compute.
 
 ## Where the answers go
 
-One file: `folio/bib-qa-verifications.json`, the **source ledger**
+The **source ledger** — the source ledger — since 2026-10-05 the attestation store's `bib-verification` family, one file per reference under `test/attestations/bib-verification/` (rows with no reference id under `source/<file>`). Read and write it only through the platform's `folio-assistant/cat-harness/schemas/bib-attestations.ts` (Python: `scripts/lib/bib_ledger.py`, read-only); never hand-edit a store file's `position`, and never add `verified_by` to a row marked `verifier: "unknown"` —
 (`source-ledger/v1`, typed in
 [`folio-assistant/schemas/bib-verification.ts`](../../../folio-assistant/schemas/bib-verification.ts)).
 
@@ -224,8 +224,8 @@ corpus rules bite here directly:
 Documents are independent, so triage parallelises cleanly: dispatch background
 agents over disjoint slices, each writing its own findings to a scratch JSON,
 and merge into the ledger in one pass. Do **not** have parallel agents write
-`folio/bib-qa-verifications.json` concurrently — it is one file and they will
-clobber each other.
+the source ledger concurrently — every writer reads the whole ledger and writes
+it back, so they will clobber each other even though it is now many files.
 
 Give each agent the identification and citation-status steps as well as the
 judgement; an agent handed only "is this relevant" without the corpus in front

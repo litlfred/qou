@@ -6,7 +6,7 @@ description: >-
   agent-identified), OCR/read it, formalise the cited result in Lean (per-paper
   package, wrapper-for-overlap), confirm the QOU usage matches the source, run
   machine + agent bib validation, then set the reference status to `validated`
-  and refresh references.review.json. Use when processing a bib-physical-review
+  and refresh the reference's human-review record. Use when processing a bib-physical-review
   issue that has an attached photo, or when ingesting an uploaded paper.
 roles: [collaborator]
 ---
@@ -14,7 +14,7 @@ roles: [collaborator]
 # bib-photo-ingestion-watcher
 
 The automation half of the [`bib-human-review`](bib-human-review.md) workflow.
-Companion to the status sidecar `folio/schema/references.review.json` and the
+Companion to the human-review record (attestation store, `test/attestations/bib-human-review/`) and the
 design `docs/workplans/2026-06-08-bib-human-review-workflow-design.md`.
 
 ## Trigger
@@ -41,7 +41,7 @@ design `docs/workplans/2026-06-08-bib-human-review-workflow-design.md`.
 4. **Bib-validate.** DOI/metadata cross-check, `validate-references`, `-- Ref:`
    resolution, `entryHash` recompute.
 5. **Set status.** On success set the ref `validated`, record
-   `{ by, date, source, page, entryHash }` in `references.review.json`, refresh
+   `{ by, date, source, page, entryHash }` in the human-review record (`writeHumanReviews`), refresh
    the sidecar, and post the outcome on the issue. On failure, post the specific
    blocker (mismatch / unresolved DOI / Lean gap) and leave status `issue-open`.
 
