@@ -1,14 +1,14 @@
 ---
 # qou-zs4r
 title: '[TOOLS T4] Parity harness: witness-parity Tool'
-status: completed
+status: in-progress
 type: feature
 priority: normal
 tags:
     - migration
     - tools
 created_at: 2026-10-04T16:35:42Z
-updated_at: 2026-10-04T17:04:26Z
+updated_at: 2026-10-05T05:21:33Z
 parent: qou-k3er
 ---
 
@@ -26,3 +26,13 @@ Done 2026-10-04: scripts/witness-parity.py, a three-state parity oracle (PASS / 
 - chi-sym-alt-closed-form (pyhecke_native 0.9.0 and clarabel absent here): UNKNOWN, with substantiveEqual False, reproducing the TOOLS analysis's 60th-digit finding. Never PASS without the recorded environment.
 - binding-wn-link-volume-probe, mass-sweep-bar-sym-h2-coefficient, mmu-r9-consistency-check (environment matches): PASS on re-run.
 Every --run left the tree with 0 changes (git status empty afterwards); no witness was written. The installable environment (scripts/build-pyhecke-native.sh) is what turns UNKNOWN into PASS/FAIL for the native producers.
+
+
+
+## Built 2026-10-04/05 (session_01NdDGeP1SyShmoUssLuRZ91), platform PR folio-assistant#2133
+`witness:parity` re-runs the COMMITTED producer in a scratch git worktree, so the qou tree is never written, and compares the result with the run-specific fields masked (`WITNESS_EPHEMERAL_FIELDS` = qou's `_EPHEMERAL_META_FIELDS`, unchanged).
+
+Calibration on qou, measured:
+- Without pyhecke_native: chi-sym-alt-closed-form gives **unknown**, naming pyhecke_native and clarabel. This matches the done-when.
+- With pyhecke_native 0.9.0 built from today's source plus clarabel 0.11.1: also **unknown**, not pass. The committed witness records build `88833bbb2bd7f717` and today's source builds `fd6b97f9ca5fec82`. The re-run's values differ from the committed ones only near the 60th significant digit (relative 1e-48 to 1e-60), at the 60-digit output precision. The tool now reads the re-run's own `environment` and calls any difference unknown, so this is reported as a different build, not as pass or fail. No numeric tolerance was added. The done-when's expected pass for this witness is not reproducible here, because the recorded native build is not the one current source produces.
+- Sample, the 10 cheapest witnesses whose recorded environment matches this container: **10 pass, 0 fail**. The qou tree was untouched and no worktree was left. Run with pyhecke_native installed, the same 10 come back unknown, because the producer records the extra package; that is correct, since it is a different environment.
