@@ -28,7 +28,7 @@ universe u v
     inherits a connection ∇' from the original connection ∇. -/
 -- Ref: [kock2004], [manuscript] §1
 structure ProlongedConnection (C : Type u) [Category.{v} C]
-    [MonoidalCategory C] where
+    [MonoidalCategory C] [CategoryTheory.BraidedCategory C] where
   /-- The original Frobenius–Hopf object A. -/
   fh : FrobeniusHopfData C
   /-- The jet object J¹(A) = A ⊗ Ω¹(A). -/
@@ -55,7 +55,7 @@ structure ProlongedConnection (C : Type u) [Category.{v} C]
     Frobenius form from A, making it a Frobenius–Hopf object. -/
 -- Ref: [kock2004], [manuscript] §1
 structure JetPreservesQU (C : Type u) [Category.{v} C]
-    [MonoidalCategory C] where
+    [MonoidalCategory C] [CategoryTheory.BraidedCategory C] where
   /-- The original Frobenius–Hopf object. -/
   original : FrobeniusHopfData C
   /-- The jet Frobenius–Hopf object J¹(A). -/
@@ -94,7 +94,7 @@ structure JetPreservesQU (C : Type u) [Category.{v} C]
     structure refactor that is deliberately not guessed at here. -/
 -- Ref: [manuscript] prop:categorical-jet-prolongation
 theorem categorical_jet_prolongation (C : Type u) [Category.{v} C]
-    [MonoidalCategory C]
+    [MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C) : ∃ (jet : JetPreservesQU C), jet.original = fh :=
   ⟨{ original := fh
      jet := fh

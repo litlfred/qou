@@ -39,7 +39,7 @@ universe u v
 -- Ref: [manuscript] §3
 -- Ref: [fred2005] Integration of Skewed-Poisson Structures on Non-co — see folio/schema/references.ts
 structure JetProlongation (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C) where
   /-- The Kähler differentials Ω¹(A) as an object of C.
       Abstractly: Ω¹(A) = ker(μ : A ⊗ A → A). -/
@@ -75,7 +75,7 @@ structure JetProlongation (C : Type u) [CategoryTheory.Category.{v} C]
 -- Ref: [manuscript] §3
 theorem jet_prolongation_preserves_observability
     {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C)
     (adjointObj : C)
     (jetAdjointObj : C)
