@@ -148,6 +148,43 @@ export function referencesBibCheckTool(): ToolDefinition {
   });
 }
 
+/**
+ * C9 story B5 (issue #7528): qou's bibliography scripts as Tool nodes. Only the
+ * modes that write nothing are declared — a check, a proposal, a dry run — so
+ * no Tool here can change `references.ts`, a `library/` entry or a source file.
+ * The writing modes (`--apply`, the backfill, the metadata refresh) wait on the
+ * owner, as the plan records, and stay undeclared until a process gates them.
+ */
+const BIB_TOOLS: Array<{ id: string; title: string; shell: string; what: string; runtime: string }> = [
+  { id: "references-pdf-check", title: "Check every reference's PDF path resolves",
+    shell: "python3 scripts/check-reference-pdfs.py", runtime: "python3",
+    what: "Check that every `pdf:` path in `folio/schema/references.ts` resolves on disk, and the reverse: a `library/<doc-id>/` holding more than one PDF. Read-only." },
+  { id: "references-library-sync-check", title: "Check references.ts is in sync with the library",
+    shell: "python3 scripts/sync-references-library.py --check", runtime: "python3",
+    what: "Exit 1 when the generated `library:` blocks in `folio/schema/references.ts` are out of date with `library/`. Read-only; the fix, `--apply`, rewrites references.ts and waits on the owner." },
+  { id: "references-propose-from-library", title: "Propose bibliography entries for uncited library documents",
+    shell: "python3 scripts/library-propose-references.py --band high", runtime: "python3",
+    what: "List candidate CSL entries for library documents no reference points at, at the high-confidence band. Writes nothing into references.ts." },
+  { id: "reference-literals-dry-run", title: "Preview replacing hand-typed constants with CODATA symbols",
+    shell: "python3 scripts/drain-reference-literals.py --dry-run", runtime: "python3",
+    what: "Print the diff that would rewrite hand-typed CODATA/AME literals named by the audit witness into `codata_constants` symbols. `--dry-run` writes nothing; the real run is a sweep and needs the owner." },
+];
+
+export function bibTools(): ToolDefinition[] {
+  return BIB_TOOLS.map((b) =>
+    defineTool({
+      id: b.id,
+      title: b.title,
+      description: b.what,
+      install: { none: true },
+      invoke: { shell: b.shell },
+      io: { inputs: [], outputs: [] },
+      satisfies: ["bib-qa"],
+      requires: { runtime: [b.runtime], network: false },
+    }),
+  );
+}
+
 interface ComputeQaGate {
   id: string;
   node: string;
@@ -185,7 +222,7 @@ export function computeQaTools(): ToolDefinition[] {
 }
 
 export function tools(baseUrl?: string): ToolDefinition[] {
-  return [refreshPlanTool(baseUrl), leanRegenCheckTool(baseUrl), qouMassVendorSyncTool(), referencesBibCheckTool(), ...computeQaTools(), ...producerTools(baseUrl)];
+  return [refreshPlanTool(baseUrl), leanRegenCheckTool(baseUrl), qouMassVendorSyncTool(), referencesBibCheckTool(), ...bibTools(), ...computeQaTools(), ...producerTools(baseUrl)];
 }
 
 function producerTools(baseUrl?: string): ToolDefinition[] {
