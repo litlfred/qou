@@ -1,14 +1,14 @@
 ---
 # qou-4dj1
 title: '[TOOLS T7] compute-QA process (precision-gates, staleness-gates, lp-dual, float64, word-provenance, witness-staleness…'
-status: in-progress
+status: completed
 type: feature
 priority: normal
 tags:
     - migration
     - tools
 created_at: 2026-10-04T16:35:43Z
-updated_at: 2026-10-05T11:39:24Z
+updated_at: 2026-10-05T13:38:18Z
 parent: qou-k3er
 blocked_by:
     - qou-4rhu
@@ -32,3 +32,6 @@ Trap worth knowing: several of these audits WRITE their audit witness files as a
 
 
 2026-10-05 — publish half: qou now declares qa storage and has the cat/cat-harness/qa-reports branch (#7518, bean qou-4rhu). compute-qa.yml is the one publisher. Verified end to end under pr/7518/<sha>. Done once #7518 merges.
+
+
+2026-10-05 — DONE. #7517 (runner, process, Tools, workflows) and #7518 (qa storage declared, compute-qa.yml as the single publisher, cat/cat-harness/qa-reports branch created and an end-to-end publish verified) are both merged. All three done-when items are met.
