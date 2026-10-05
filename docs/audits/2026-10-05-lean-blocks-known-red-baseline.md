@@ -1,5 +1,15 @@
 # Lean blocks — first known-red baseline (2026-10-05)
 
+> **Update, 2026-10-05 (after measurement): the 30 are fixed.** litlfred/qou#7538
+> (merged as `015a93a39b26`) adds the missing `[BraidedCategory C]` binder to all 30
+> consumers. Re-checked by the same lean-direct path as this baseline: every one went
+> from exit 1 to exit 0, with error counts before the edit matching the table below, and
+> no `sorryAx`. Current reds are the **6 `QOUAudits`** files only (3 superseded, 2
+> fragments, 1 red by construction), none of which is a corpus defect. The tables below
+> are left as measured; the JSON records the resolution in `resolutions` /
+> `current_counts` and a `resolved` field on each of the 30 entries.
+
+
 Story LEANNODES **L3**, bean `qou-1f1w`, epic `qou-ahxm`, issue litlfred/qou#7513.
 Machine-readable twin:
 [`2026-10-05-lean-blocks-known-red-baseline.json`](2026-10-05-lean-blocks-known-red-baseline.json),
