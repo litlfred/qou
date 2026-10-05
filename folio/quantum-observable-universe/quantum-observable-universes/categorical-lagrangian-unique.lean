@@ -37,7 +37,7 @@ universe u v
 theorem CategoricalLagrangian.unique
     {R : Type*} [CommRing R]
     {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear R C]
     (fh : FrobeniusHopfData C)
     (L₁ L₂ : CategoricalLagrangian R C fh)

@@ -54,7 +54,7 @@ universe u v
     claims — q-deformation introduces no additional gauge freedom. -/
 -- Ref: [connes1994] Noncommutative Geometry
 theorem CategoricalQConnection.unique
-    (C : Type u) [Category.{v} C] [MonoidalCategory C]
+    (C : Type u) [Category.{v} C] [MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [Preadditive C] [Linear Archimedean.R_q C]
     (c₁ c₂ : CategoricalQConnection C)
     (hA : c₁.A = c₂.A)

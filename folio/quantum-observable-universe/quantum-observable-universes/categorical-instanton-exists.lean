@@ -38,7 +38,7 @@ universe u v
 -- Ref: [atiyah1978]
 theorem CategoricalInstanton.exists
     {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
     (hodge : CatHodgeInvolution fh.obj) :
     ∃ I : CategoricalInstanton fh, I.curvature = 0 :=

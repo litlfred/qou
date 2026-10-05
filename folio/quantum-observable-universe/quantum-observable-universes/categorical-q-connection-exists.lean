@@ -52,7 +52,7 @@ universe u v
 -- Ref: [connes1994] Noncommutative Geometry
 theorem CategoricalQConnection.exists
     {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C]
     [CategoryTheory.Linear Archimedean.R_q C]
     (A Omega1 : C)

@@ -40,8 +40,8 @@ universe u v
 
     LaTeX: `\label{def:categorical-instanton}` -/
 structure CategoricalInstanton {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    (fh : @FrobeniusHopfData C _ _) where
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
+    (fh : @FrobeniusHopfData C _ _ _) where
   /-- The connection morphism `∇ : A → A ⊗ Ω¹(A)` (represented as endo). -/
   connection : fh.obj ⟶ fh.obj
   /-- The curvature `F_∇ = ∇² : A → Ω²(A)` (represented as endo). -/

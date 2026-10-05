@@ -45,12 +45,12 @@ namespace QOU.QuantumObservableUniverse
 -- (data, not a proposition).  Per Copilot review on PR #794.
 def exists_axiom_1_frobenius_data
     {R : Type*} [CommRing R] (Q : QOU.QuantumObservableUniverse.{u, v} R) :
-    @QOU.FrobeniusHopfData Q.C Q.catInst Q.monInst :=
+    @QOU.FrobeniusHopfData Q.C Q.catInst Q.monInst Q.braidedInst :=
   Q.frobHopf
 
 lemma exists_axiom_1_frobenius
     {R : Type*} [CommRing R] (Q : QOU.QuantumObservableUniverse.{u, v} R) :
-    Nonempty (@QOU.FrobeniusHopfData Q.C Q.catInst Q.monInst) :=
+    Nonempty (@QOU.FrobeniusHopfData Q.C Q.catInst Q.monInst Q.braidedInst) :=
   ⟨exists_axiom_1_frobenius_data Q⟩
 
 end QOU.QuantumObservableUniverse

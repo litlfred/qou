@@ -71,7 +71,7 @@ private theorem inv_unique_of_mul_eq_one {R : Type*} [CommMonoid R] {q a b : R}
 -- Ref: [majid2002] A Quantum Groups Primer (Cambridge UP), §5
 theorem CategoricalQExtDeriv.unique
     (C : Type u) [Category.{v} C]
-    [MonoidalCategory C]
+    [MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (E₁ E₂ : CategoricalQExtDeriv C)
     (hfh : E₁.frobHopf = E₂.frobHopf)
     (hd : HEq E₁.d_classical E₂.d_classical)
@@ -96,7 +96,7 @@ theorem CategoricalQExtDeriv.unique
 -- Ref: [majid2002] A Quantum Groups Primer (Cambridge UP), §5
 theorem CategoricalQExtDeriv.dq_determined
     (C : Type u) [Category.{v} C]
-    [MonoidalCategory C]
+    [MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [Preadditive C]
     -- `Linear ℝ C` before the ground-ring migration; `dq` is now built over
     -- `R_q = ℤ[q, q⁻¹]`, so the linearity has to be over the same ring —

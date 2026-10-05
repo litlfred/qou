@@ -40,7 +40,7 @@ universe u v
 theorem CategoricalDirac.unique
     {R : Type*} [CommRing R]
     {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear R C]
     (fh : FrobeniusHopfData C)
     (D₁ D₂ : CategoricalDiracOperator R C fh)
