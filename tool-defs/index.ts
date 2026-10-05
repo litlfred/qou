@@ -92,6 +92,40 @@ export function leanRegenCheckTool(baseUrl?: string): ToolDefinition {
   });
 }
 
+/**
+ * TOOLS T14 (bean `qou-ll3i`): the generator that keeps `qou-mass`'s vendored
+ * `_internal/` modules equal to their `computations/` sources.
+ *
+ * `downstream`, not `maintains`: `maintains` names a PUBLISHED artefact that
+ * `check:maintained-artefacts` looks for in `_site/`, and `_internal/` is a
+ * committed package directory the site never carries (schemas/tool.ts,
+ * "Why this is not `maintains`"). The drift gate is the compute-QA gate
+ * `qou-mass-vendor-drift`, which runs `--check` and writes nothing. Running
+ * this Tool regenerates the copies, which waits on the owner (TOOLS report
+ * §5.7), so it is declared here and is not part of any automatic process.
+ */
+export function qouMassVendorSyncTool(): ToolDefinition {
+  return defineTool({
+    id: "qou-mass-vendor-sync",
+    title: "Regenerate qou-mass's vendored modules",
+    description:
+      "Regenerate `qou-mass/src/qou_mass/_internal/` from the `computations/` modules it vendors, flattening the " +
+      "directory layout and dropping `import _path_bridge`; nothing else is rewritten. `--check` (exit 1 on drift) is " +
+      "the compute-QA gate `qou-mass-vendor-drift`; this Tool is the `--apply` that fixes the drift, and it needs " +
+      "the owner's approval because it rewrites the vendored copies.",
+    install: { none: true },
+    invoke: { shell: "python3 scripts/sync-qou-mass-vendor.py --apply" },
+    io: { inputs: [], outputs: [] },
+    satisfies: ["compute-audit"],
+    requires: { runtime: ["python3"], network: false },
+    downstream: {
+      output: "qou-mass/src/qou_mass/_internal",
+      inputs: ["scripts/sync-qou-mass-vendor.py", "computations"],
+      judgedAt: "checkout",
+    },
+  });
+}
+
 interface ComputeQaGate {
   id: string;
   node: string;
@@ -129,7 +163,7 @@ export function computeQaTools(): ToolDefinition[] {
 }
 
 export function tools(baseUrl?: string): ToolDefinition[] {
-  return [refreshPlanTool(baseUrl), leanRegenCheckTool(baseUrl), ...computeQaTools(), ...producerTools(baseUrl)];
+  return [refreshPlanTool(baseUrl), leanRegenCheckTool(baseUrl), qouMassVendorSyncTool(), ...computeQaTools(), ...producerTools(baseUrl)];
 }
 
 function producerTools(baseUrl?: string): ToolDefinition[] {

@@ -29,7 +29,7 @@
 
 WHY ONE PROCESS. The gates used to live as inline steps in four workflow files, so nothing named them as a set, and the order an agent ran them in locally was whatever it remembered. They are now one table (`scripts/compute-qa.py`) and this one diagram; the workflows call the table, and each step carries a `# bpmn-node:` back-reference here.
 
-THE COMMANDS DID NOT CHANGE. Each gate runs the exact command the workflow step ran, with the same exit-code handling: a strict gate fails on a non-zero exit, a warn or advisory gate always passes and its output is the report. Measured on `main` before the move and after it, every gate's exit codes and output are identical.
+THE COMMANDS DID NOT CHANGE. Each gate runs the exact command the workflow step ran, with the same exit-code handling: a strict gate fails on a non-zero exit, a warn or advisory gate never fails the run and its output is the report; when it exits non-zero its verdict is WARN rather than PASS, so a finding is not recorded as green. Measured on `main` before the move and after it, every gate's exit codes and output are identical.
 
 QA IS AGENT-OWNED; CI IS A BACKUP. These workflows are dispatch-only (owner directive 2026-06-30, Actions billing), and several have never run. So the normal way through this process is an agent running `python3 scripts/compute-qa.py` before it commits, not CI. The lane says who runs a gate, not where.
 
@@ -148,7 +148,7 @@ VERDICTS ARE NOT COMMITTED. Each gate writes `test/results/compute-qa/&lt;gate&g
       <bpmn:outgoing>Flow_Unknown</bpmn:outgoing>
     </bpmn:exclusiveGateway>
 
-    <bpmn:endEvent id="EndEvent_Green" name="Every gate passed">
+    <bpmn:endEvent id="EndEvent_Green" name="No gate failed&#10;(warns are reported)">
       <bpmn:incoming>Flow_Green</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:endEvent id="EndEvent_Red" name="A gate failed: fix at the&#10;producer, never widen a baseline">
@@ -172,7 +172,7 @@ VERDICTS ARE NOT COMMITTED. Each gate writes `test/results/compute-qa/&lt;gate&g
     <bpmn:sequenceFlow id="Flow_W2" sourceRef="Task_Words" targetRef="Gateway_Join" />
     <bpmn:sequenceFlow id="Flow_2" sourceRef="Gateway_Join" targetRef="Task_Publish" />
     <bpmn:sequenceFlow id="Flow_3" sourceRef="Task_Publish" targetRef="Gateway_Verdict" />
-    <bpmn:sequenceFlow id="Flow_Green" name="all pass" sourceRef="Gateway_Verdict" targetRef="EndEvent_Green" />
+    <bpmn:sequenceFlow id="Flow_Green" name="all pass or warn" sourceRef="Gateway_Verdict" targetRef="EndEvent_Green" />
     <bpmn:sequenceFlow id="Flow_Red" name="any fail" sourceRef="Gateway_Verdict" targetRef="EndEvent_Red" />
     <bpmn:sequenceFlow id="Flow_Unknown" name="none fail, one unknown" sourceRef="Gateway_Verdict" targetRef="EndEvent_Unknown" />
   </bpmn:process>

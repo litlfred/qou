@@ -12,7 +12,8 @@ THE COMMANDS ARE UNCHANGED. Every entry below is the exact argv the workflow
 ran, and the mode reproduces what the step did with its exit code:
 
   strict    a non-zero exit fails the gate (the step had no `|| true`)
-  warn      always passes; the output is the report (`|| true` in the step)
+  warn      never fails the run; the output is the report (`|| true` in the step).
+            A non-zero exit records WARN, not PASS, so a finding never reads as green.
   advisory  same as warn, for the "survey (informational, never fails)" steps
 
 A gate whose script cannot even start (missing module, missing binary) is
@@ -80,6 +81,11 @@ GATES = [
       selftest=[PY, "computations/witness_raw_float64_audit.py", "--self-test"]),
     g("q0-value-drift", "Task_Staleness", "q0-value drift ratchet",
       [[PY, "computations/q0_value_drift_audit.py", "--strict"]]),
+    # ── qou-mass vendor drift (TOOLS T14, bean qou-ll3i): report-only. The fix,
+    # `sync-qou-mass-vendor.py --apply`, regenerates `_internal/` and waits on the
+    # owner, so this gate warns and never regenerates anything.
+    g("qou-mass-vendor-drift", "Task_Staleness", "qou-mass vendored _internal/ vs computations/ (warn)",
+      [[PY, "scripts/sync-qou-mass-vendor.py", "--check"]], mode="warn", lines=20),
     g("no-free-parameter", "Task_Precision", "No-free-parameter certificate",
       [[PY, "computations/no_free_parameter_certificate.py", "--strict"]], mode="warn", lines=20,
       selftest=[PY, "computations/no_free_parameter_certificate.py", "--self-test"]),
@@ -160,6 +166,11 @@ def run_gate(gate: dict, files: list[str] | None) -> dict:
             verdict = "fail"
             reason = f"{'self-test' if is_selftest else 'gate'} exited {p.returncode}"
             break
+        # A warn/advisory gate that exits non-zero has FOUND something, so its verdict is
+        # `warn`, never `pass`: recording `pass` made a drift report read as green. It
+        # still does not fail the run; only a strict gate or a self-test does that.
+        if p.returncode != 0 and verdict == "pass":
+            verdict, reason = "warn", f"gate exited {p.returncode} ({gate['mode']}: reported, not failed)"
     body = "".join(log)
     return dict(gate=gate["id"], node=gate["node"], title=gate["title"], verdict=verdict, reason=reason,
                 mode=gate["mode"], exit_codes=codes, seconds=round(time.time() - t0, 1),
@@ -174,7 +185,7 @@ def emit(res: dict) -> None:
     if summary:
         with open(summary, "a") as f:
             f.write(f"## {res.get('title', res['gate'])} — {res['verdict']}\n```\n{res['output_head']}\n```\n")
-    mark = {"pass": "✓", "fail": "✗", "unknown": "?"}[res["verdict"]]
+    mark = {"pass": "✓", "warn": "!", "fail": "✗", "unknown": "?"}[res["verdict"]]
     print(f"{mark} {res['gate']:<26} {res['verdict']:<8} {res['seconds']:>7}s  {res['reason']}")
 
 
@@ -216,7 +227,7 @@ def main() -> int:
     for i in ids:
         res = run_gate(BY_ID[i], files)
         emit(res)
-        worst = max(worst, {"pass": 0, "unknown": 2, "fail": 1}[res["verdict"]] if res["verdict"] != "fail" else 3)
+        worst = max(worst, {"pass": 0, "warn": 0, "unknown": 2, "fail": 3}[res["verdict"]])
     return {0: 0, 2: 2, 3: 1}[worst]
 
 
