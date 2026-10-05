@@ -2,14 +2,23 @@
   "schema": "foreshadows/v1",
   "paper": "quantum-observable-universe",
   "generated_from": "block .md narratives (](#kind:label) links + `kind:label` mentions), filtered to labels later in reading order and absent from uses[], unioned with the manifest's declared foreshadows[]",
-  "note": "GENERATED — do not hand-edit. Rebuild with `bun run content/pipeline/build-foreshadows.ts <paper>`. The QA checkers derive the same data from source on every run and never read this file, so it cannot go stale in a way that changes a verdict.",
+  "note": "GENERATED — do not hand-edit. Rebuild with `bun run cat-harness/content/pipeline/build-foreshadows.ts <paper>`. The QA checkers derive the same data from source on every run and never read this file, so it cannot go stale in a way that changes a verdict.",
   "totals": {
-    "blocks": 514,
-    "derived": 878,
-    "declared": 18,
-    "effective": 888
+    "blocks": 558,
+    "derived": 929,
+    "declared": 38,
+    "effective": 953
   },
   "blocks": {
+    "conj:adelic-critical-line-persistence": {
+      "derived": [
+        "thm:hasse-weil-bound"
+      ],
+      "declared": [],
+      "effective": [
+        "thm:hasse-weil-bound"
+      ]
+    },
     "conj:algebraic-geometric-dilog-equivalence": {
       "derived": [
         "conj:shared-denominator-cusp-holonomy"
@@ -28,6 +37,15 @@
       "effective": [
         "tbl:b1-hyperbolic-rows-theorem-table1-data",
         "tbl:b1-hyperbolic-rows-theorem-table2-data"
+      ]
+    },
+    "conj:binding-manybody-eq-jet-filtration": {
+      "derived": [
+        "conj:qdifference-kernel-prolongation-symbol"
+      ],
+      "declared": [],
+      "effective": [
+        "conj:qdifference-kernel-prolongation-symbol"
       ]
     },
     "conj:binding-qbeta-complex-volume": {
@@ -112,6 +130,15 @@
         "tbl:e-hartree-categorical-derivation-table11-data",
         "tbl:e-hartree-categorical-derivation-table12-data",
         "tbl:e-hartree-categorical-derivation-table13-data"
+      ]
+    },
+    "conj:explicit-central-idempotent": {
+      "derived": [
+        "prop:explicit-central-idempotent"
+      ],
+      "declared": [],
+      "effective": [
+        "prop:explicit-central-idempotent"
       ]
     },
     "conj:g-action-on-substrate": {
@@ -204,6 +231,15 @@
         "def:canonical-braid-interface-composition"
       ]
     },
+    "conj:jet-filtered-knot-factor": {
+      "derived": [
+        "prop:canonical-closure-torus-chain"
+      ],
+      "declared": [],
+      "effective": [
+        "prop:canonical-closure-torus-chain"
+      ]
+    },
     "conj:joint-galois-braid-action": {
       "derived": [
         "conj:bring-trilog-depth-3-witness"
@@ -224,6 +260,15 @@
         "rem:algebraic-core-survives",
         "rem:analytic-obstructions",
         "rem:st-is-median-resummation"
+      ]
+    },
+    "conj:lifted-crossing-locality": {
+      "derived": [
+        "conj:hecke-monodromy-step-two"
+      ],
+      "declared": [],
+      "effective": [
+        "conj:hecke-monodromy-step-two"
       ]
     },
     "conj:local-infinitesimal-field": {
@@ -264,17 +309,6 @@
         "prop:topological-mass-formula",
         "thm:knot-mass-formula-unified",
         "thm:topological-mass"
-      ]
-    },
-    "thm:motivic-perpetual-obstruction": {
-      "derived": [
-        "ex:archimedean-yekutieli",
-        "ex:chi-minus-six-derivation"
-      ],
-      "declared": [],
-      "effective": [
-        "ex:archimedean-yekutieli",
-        "ex:chi-minus-six-derivation"
       ]
     },
     "conj:on-p-modular-hecke": {
@@ -476,6 +510,15 @@
         "prop:weak-symmetric-normalization"
       ]
     },
+    "conj:wigner-axiom": {
+      "derived": [
+        "thm:qou-obstruction-reduction"
+      ],
+      "declared": [],
+      "effective": [
+        "thm:qou-obstruction-reduction"
+      ]
+    },
     "conj:yang-mills-mass-gap": {
       "derived": [
         "tbl:yang-mills-mass-gap-table-data"
@@ -565,6 +608,15 @@
         "prop:benzene-threading-emergence"
       ]
     },
+    "def:braid-twist-flip": {
+      "derived": [
+        "rem:braid-group-action"
+      ],
+      "declared": [],
+      "effective": [
+        "rem:braid-group-action"
+      ]
+    },
     "def:canonical-braid-interface-composition": {
       "derived": [
         "tbl:canonical-braid-interface-composition-table1-data",
@@ -605,6 +657,15 @@
         "tbl:torus-knot-shell-binding-table1-data"
       ]
     },
+    "def:chern-character": {
+      "derived": [],
+      "declared": [
+        "ex:su2-characters-and-quantum-dimension"
+      ],
+      "effective": [
+        "ex:su2-characters-and-quantum-dimension"
+      ]
+    },
     "def:color-tube-coordinates": {
       "derived": [
         "rem:lagrange-resolvents"
@@ -612,6 +673,17 @@
       "declared": [],
       "effective": [
         "rem:lagrange-resolvents"
+      ]
+    },
+    "def:coulomb-charge": {
+      "derived": [
+        "conj:sm-hypercharge-invariant",
+        "prop:crossing-energy-decomposition"
+      ],
+      "declared": [],
+      "effective": [
+        "conj:sm-hypercharge-invariant",
+        "prop:crossing-energy-decomposition"
       ]
     },
     "def:delta-q-decoration": {
@@ -632,6 +704,17 @@
         "ex:frobenius-pairing-su2"
       ]
     },
+    "def:grothendieck-group-of-a-qou": {
+      "derived": [],
+      "declared": [
+        "def:chern-character",
+        "ex:su2-characters-and-quantum-dimension"
+      ],
+      "effective": [
+        "def:chern-character",
+        "ex:su2-characters-and-quantum-dimension"
+      ]
+    },
     "def:h2-molecular-braid": {
       "derived": [
         "tbl:h2-molecular-braid-table-data"
@@ -639,6 +722,19 @@
       "declared": [],
       "effective": [
         "tbl:h2-molecular-braid-table-data"
+      ]
+    },
+    "def:hochschild-homology": {
+      "derived": [],
+      "declared": [
+        "def:chern-character",
+        "rem:hkr-theorem",
+        "rem:trace-ledger"
+      ],
+      "effective": [
+        "def:chern-character",
+        "rem:hkr-theorem",
+        "rem:trace-ledger"
       ]
     },
     "def:hq-bi-filtration": {
@@ -848,8 +944,13 @@
       "derived": [
         "tbl:quantum-universe-su2-table1-data"
       ],
-      "declared": [],
+      "declared": [
+        "ex:su2-characters-and-quantum-dimension",
+        "prop:braiding-induced-ordering"
+      ],
       "effective": [
+        "ex:su2-characters-and-quantum-dimension",
+        "prop:braiding-induced-ordering",
         "tbl:quantum-universe-su2-table1-data"
       ]
     },
@@ -860,6 +961,15 @@
       "declared": [],
       "effective": [
         "tbl:qvalue-benchmark-table-table-data"
+      ]
+    },
+    "ex:su2-characters-and-quantum-dimension": {
+      "derived": [],
+      "declared": [
+        "rem:euler-characteristic-of-the-regular-representation"
+      ],
+      "effective": [
+        "rem:euler-characteristic-of-the-regular-representation"
       ]
     },
     "ex:torus-ns-regular": {
@@ -878,6 +988,29 @@
       "declared": [],
       "effective": [
         "rem:bond-order-eq-jet-degree-context"
+      ]
+    },
+    "lem:brings-euler-characteristic": {
+      "derived": [
+        "rem:euler-characteristic-of-the-regular-representation",
+        "rem:three-euler-characteristics"
+      ],
+      "declared": [
+        "rem:euler-characteristic-of-the-regular-representation",
+        "rem:three-euler-characteristics"
+      ],
+      "effective": [
+        "rem:euler-characteristic-of-the-regular-representation",
+        "rem:three-euler-characteristics"
+      ]
+    },
+    "lem:genus-from-hecke-completeness": {
+      "derived": [
+        "rem:torus-evaluation-block-rank"
+      ],
+      "declared": [],
+      "effective": [
+        "rem:torus-evaluation-block-rank"
       ]
     },
     "prf:adelic-reeb-restricted-product": {
@@ -965,6 +1098,15 @@
       "declared": [],
       "effective": [
         "rem:archimedean-chirality"
+      ]
+    },
+    "prf:brings-euler-characteristic": {
+      "derived": [
+        "rem:chern-character-and-riemann-roch"
+      ],
+      "declared": [],
+      "effective": [
+        "rem:chern-character-and-riemann-roch"
       ]
     },
     "prf:categorical-instanton-exists": {
@@ -1138,6 +1280,24 @@
         "prop:wigner-np-pairing"
       ]
     },
+    "prf:eigenvalue-product-expansion": {
+      "derived": [
+        "prop:flavor-split-substrate"
+      ],
+      "declared": [],
+      "effective": [
+        "prop:flavor-split-substrate"
+      ]
+    },
+    "prf:euler-char-stability": {
+      "derived": [
+        "rem:trace-ledger"
+      ],
+      "declared": [],
+      "effective": [
+        "rem:trace-ledger"
+      ]
+    },
     "prf:exterior-square-borromean": {
       "derived": [
         "rem:alpha-em-categorical-trace",
@@ -1209,6 +1369,15 @@
       "declared": [],
       "effective": [
         "tbl:frobenius-s-classification-table3-data"
+      ]
+    },
+    "prf:genus-from-hecke-completeness": {
+      "derived": [
+        "rem:torus-evaluation-block-rank"
+      ],
+      "declared": [],
+      "effective": [
+        "rem:torus-evaluation-block-rank"
       ]
     },
     "prf:golden-skew-dual-node": {
@@ -1302,6 +1471,15 @@
       "effective": [
         "prop:centered-hecke-variance-positive",
         "rem:markov-axioms-primitive"
+      ]
+    },
+    "prf:interface-knot-markov-z": {
+      "derived": [
+        "prop:flavor-split-substrate"
+      ],
+      "declared": [],
+      "effective": [
+        "prop:flavor-split-substrate"
       ]
     },
     "prf:jones-mobius-diagonal": {
@@ -1540,15 +1718,6 @@
         "prop:q-beta-c-k-recursion-from-habiro-q-difference"
       ]
     },
-    "prf:qou-obstruction-reduction": {
-      "derived": [
-        "tbl:qou-obstruction-reduction-table2-data"
-      ],
-      "declared": [],
-      "effective": [
-        "tbl:qou-obstruction-reduction-table2-data"
-      ]
-    },
     "prf:quantum-dilog-convergence": {
       "derived": [
         "conj:brane-tower-z-habiro"
@@ -1715,6 +1884,15 @@
       "effective": [
         "def:quantum-planck-constant",
         "ex:q-reeb-flow"
+      ]
+    },
+    "prf:sw-period-residue-sum": {
+      "derived": [
+        "prop:sw-classical-jet-exactness"
+      ],
+      "declared": [],
+      "effective": [
+        "prop:sw-classical-jet-exactness"
       ]
     },
     "prf:tau-M-asymptotic-rep-theory": {
@@ -1996,6 +2174,15 @@
         "rem:binding-alpha-shift-extension-context"
       ]
     },
+    "prop:binding-genfun-qdifference": {
+      "derived": [
+        "conj:qdifference-kernel-prolongation-symbol"
+      ],
+      "declared": [],
+      "effective": [
+        "conj:qdifference-kernel-prolongation-symbol"
+      ]
+    },
     "prop:binding-scale-catalan": {
       "derived": [
         "def:algebraic-quantum-volume"
@@ -2144,6 +2331,19 @@
         "prf:collatz-no-cycles"
       ]
     },
+    "prop:confined-knot-binding": {
+      "derived": [
+        "conj:jet-convergence-classical-limit",
+        "conj:jet-filtered-knot-factor",
+        "prop:wedderburn-weight-canonical"
+      ],
+      "declared": [],
+      "effective": [
+        "conj:jet-convergence-classical-limit",
+        "conj:jet-filtered-knot-factor",
+        "prop:wedderburn-weight-canonical"
+      ]
+    },
     "prop:core-levi-form": {
       "derived": [
         "conj:critical-exponent",
@@ -2186,6 +2386,15 @@
         "rem:cyclotomic-l-value-decomposition-details"
       ]
     },
+    "prop:delta-lambda-dt-index-unification": {
+      "derived": [
+        "alg:delta-lambda-closure"
+      ],
+      "declared": [],
+      "effective": [
+        "alg:delta-lambda-closure"
+      ]
+    },
     "prop:delta-max-uniform-bound": {
       "derived": [
         "thm:markov-trace-factorization"
@@ -2213,6 +2422,19 @@
       "declared": [],
       "effective": [
         "tbl:eos-borromean-cfl-table-data"
+      ]
+    },
+    "prop:euler-char-stability": {
+      "derived": [
+        "def:archimedean-condition",
+        "rem:three-euler-characteristics"
+      ],
+      "declared": [
+        "rem:three-euler-characteristics"
+      ],
+      "effective": [
+        "def:archimedean-condition",
+        "rem:three-euler-characteristics"
       ]
     },
     "prop:explicit-central-idempotent": {
@@ -2350,15 +2572,6 @@
         "prop:wedderburn-weight-canonical"
       ]
     },
-    "prop:hecke-1d-irrep-closed-form-character": {
-      "derived": [
-        "conj:borromean-quark"
-      ],
-      "declared": [],
-      "effective": [
-        "conj:borromean-quark"
-      ]
-    },
     "prop:hecke-branching-trace-decomposition": {
       "derived": [
         "rem:operator-valued-magnitude-budget"
@@ -2422,6 +2635,15 @@
         "prop:mass-coefficient-shadow-price"
       ]
     },
+    "prop:knot-operator-transition": {
+      "derived": [
+        "prop:flavor-split-substrate"
+      ],
+      "declared": [],
+      "effective": [
+        "prop:flavor-split-substrate"
+      ]
+    },
     "prop:lr-coefficient-hecke": {
       "derived": [
         "prop:crystal-r-matrix-sub-lemma"
@@ -2429,17 +2651,6 @@
       "declared": [],
       "effective": [
         "prop:crystal-r-matrix-sub-lemma"
-      ]
-    },
-    "prop:magic-A-binding-formula": {
-      "derived": [
-        "conj:magic-numbers-bring",
-        "prop:gravity-spectral-prefactor"
-      ],
-      "declared": [],
-      "effective": [
-        "conj:magic-numbers-bring",
-        "prop:gravity-spectral-prefactor"
       ]
     },
     "prop:main-commutative-diagram": {
@@ -2558,6 +2769,24 @@
         "rem:phi-q-aj-machinery-identification-details"
       ]
     },
+    "prop:plancherel-term-7-formulation": {
+      "derived": [
+        "prop:q-plancherel-asymptotic-skeleton"
+      ],
+      "declared": [],
+      "effective": [
+        "prop:q-plancherel-asymptotic-skeleton"
+      ]
+    },
+    "prop:pn-averaging-uniqueness": {
+      "derived": [
+        "prf:interface-knot-markov-z"
+      ],
+      "declared": [],
+      "effective": [
+        "prf:interface-knot-markov-z"
+      ]
+    },
     "prop:proton-mass-substrate-identity": {
       "derived": [
         "rem:proton-mass-substrate-identity-derivation"
@@ -2592,6 +2821,24 @@
       "declared": [],
       "effective": [
         "prop:phi-q-aj-machinery-identification"
+      ]
+    },
+    "prop:q-beta-spectral-bridge": {
+      "derived": [
+        "tbl:q-beta-spectral-bridge-table-data"
+      ],
+      "declared": [],
+      "effective": [
+        "tbl:q-beta-spectral-bridge-table-data"
+      ]
+    },
+    "prop:q-dilogarithm-exists": {
+      "derived": [
+        "prop:q-dilogarithm-unique"
+      ],
+      "declared": [],
+      "effective": [
+        "prop:q-dilogarithm-unique"
       ]
     },
     "prop:q-hecke-seminormal-character-closure": {
@@ -2717,15 +2964,6 @@
         "thm:optimal-normal-form-valley"
       ]
     },
-    "prop:shell-structure-eigenvalues": {
-      "derived": [
-        "conj:borromean-quark"
-      ],
-      "declared": [],
-      "effective": [
-        "conj:borromean-quark"
-      ]
-    },
     "prop:six-canonical-knot-operators": {
       "derived": [
         "rem:six-canonical-knot-operators-context"
@@ -2757,6 +2995,15 @@
         "tbl:substrate-consistency-window-table2-data",
         "tbl:substrate-consistency-window-table3-data",
         "tbl:substrate-consistency-window-table4-data"
+      ]
+    },
+    "prop:sw-period-residue-sum": {
+      "derived": [
+        "prop:sw-classical-jet-exactness"
+      ],
+      "declared": [],
+      "effective": [
+        "prop:sw-classical-jet-exactness"
       ]
     },
     "prop:tau-M-asymptotic-rep-theory": {
@@ -2929,15 +3176,6 @@
         "rem:wedderburn-trace-identity-context"
       ]
     },
-    "prop:wigner-coefficient-derivation": {
-      "derived": [
-        "conj:q-integer-mass-formula"
-      ],
-      "declared": [],
-      "effective": [
-        "conj:q-integer-mass-formula"
-      ]
-    },
     "prose:knot-periodic-table": {
       "derived": [
         "prop:recursive-atom-knot-atlas"
@@ -2954,6 +3192,15 @@
       "declared": [],
       "effective": [
         "rem:per-observable-100x-status-dashboard"
+      ]
+    },
+    "prose:sm-params-neutrino": {
+      "derived": [
+        "prose:sm-open-problems"
+      ],
+      "declared": [],
+      "effective": [
+        "prose:sm-open-problems"
       ]
     },
     "rem:adelic-substrate-integration": {
@@ -3107,10 +3354,12 @@
     },
     "rem:bk-coordination-multiplicity": {
       "derived": [
+        "prop:brunnian-binding-channel",
         "rem:alpha-cluster-model-g-closure"
       ],
       "declared": [],
       "effective": [
+        "prop:brunnian-binding-channel",
         "rem:alpha-cluster-model-g-closure"
       ]
     },
@@ -3138,6 +3387,15 @@
         "tbl:body-asymptotics-catalog-table1-data",
         "tbl:body-asymptotics-catalog-table2-data",
         "tbl:body-asymptotics-catalog-table3-data"
+      ]
+    },
+    "rem:body-number-expansion-classical-floor": {
+      "derived": [],
+      "declared": [
+        "rem:brane-tower-q-laplacian-decay-interpretation"
+      ],
+      "effective": [
+        "rem:brane-tower-q-laplacian-decay-interpretation"
       ]
     },
     "rem:bond-order-eq-jet-degree-context": {
@@ -3281,6 +3539,15 @@
         "rem:skein-mass-relation"
       ]
     },
+    "rem:canonical-trace-factorises-over-chain": {
+      "derived": [
+        "rem:bond-log-ratio-is-a-free-energy"
+      ],
+      "declared": [],
+      "effective": [
+        "rem:bond-log-ratio-is-a-free-energy"
+      ]
+    },
     "rem:categorical-neutrality-saturated-shells-interpretation": {
       "derived": [
         "conj:magic-numbers-from-q",
@@ -3314,6 +3581,15 @@
         "rem:beta-decay-energy-scale",
         "rem:meson-to-proton-via-borromean",
         "tbl:categorical-neutron-table-data"
+      ]
+    },
+    "rem:categorical-proton-properties": {
+      "derived": [
+        "rem:gluon-stabiliser-ledger"
+      ],
+      "declared": [],
+      "effective": [
+        "rem:gluon-stabiliser-ledger"
       ]
     },
     "rem:chain-ring-comparison-interpretation": {
@@ -3378,6 +3654,15 @@
         "tbl:cl2-pentagon-and-faddeev-partial-table1-data",
         "tbl:cl2-pentagon-and-faddeev-partial-table2-data",
         "tbl:cl2-pentagon-and-faddeev-partial-table3-data"
+      ]
+    },
+    "rem:classical-shadow-of-the-substrate": {
+      "derived": [],
+      "declared": [
+        "conj:wigner-axiom"
+      ],
+      "effective": [
+        "conj:wigner-axiom"
       ]
     },
     "rem:clausen-function-mathlib-filler": {
@@ -3674,6 +3959,17 @@
         "thm:six-term-mass-formula-complete"
       ]
     },
+    "rem:gluon-stabiliser-ledger": {
+      "derived": [
+        "rem:antiquark-channel-ledger",
+        "rem:categorical-neutron-properties"
+      ],
+      "declared": [],
+      "effective": [
+        "rem:antiquark-channel-ledger",
+        "rem:categorical-neutron-properties"
+      ]
+    },
     "rem:gram-matrix-spectral-connection": {
       "derived": [
         "thm:frobenius-codim-universal"
@@ -3718,10 +4014,12 @@
     },
     "rem:hadron-half-life-fermi": {
       "derived": [
+        "ex:hadron-half-life-verification",
         "rem:building-block-knots"
       ],
       "declared": [],
       "effective": [
+        "ex:hadron-half-life-verification",
         "rem:building-block-knots"
       ]
     },
@@ -3870,6 +4168,15 @@
         "rem:information-theoretic-time-julia-microscopic"
       ]
     },
+    "rem:isospin-mass-split-em-localisation": {
+      "derived": [
+        "prop:chirality-dual-space-derivation"
+      ],
+      "declared": [],
+      "effective": [
+        "prop:chirality-dual-space-derivation"
+      ]
+    },
     "rem:jet-planck-particle-spectrum": {
       "derived": [
         "tbl:jet-planck-steps-table2-data"
@@ -4002,8 +4309,8 @@
         "thm:motivic-perpetual-obstruction"
       ],
       "effective": [
-        "thm:motivic-perpetual-obstruction",
-        "def:motivic-substrate"
+        "def:motivic-substrate",
+        "thm:motivic-perpetual-obstruction"
       ]
     },
     "rem:linking-relations-table": {
@@ -4061,12 +4368,23 @@
         "lem:feynman-eigenbasis-decomposition"
       ]
     },
+    "rem:markov-trace-ambient-s3": {
+      "derived": [
+        "def:reeb-bundle"
+      ],
+      "declared": [],
+      "effective": [
+        "def:reeb-bundle"
+      ]
+    },
     "rem:markov-trace-gibbs-free-energy": {
       "derived": [
+        "rem:bond-log-ratio-is-a-free-energy",
         "rem:fibre-channel-capacity"
       ],
       "declared": [],
       "effective": [
+        "rem:bond-log-ratio-is-a-free-energy",
         "rem:fibre-channel-capacity"
       ]
     },
@@ -4329,6 +4647,15 @@
         "rem:vortex-intensity-modes"
       ]
     },
+    "rem:pn-bond-cannot-be-extremal": {
+      "derived": [
+        "rem:bond-log-ratio-is-a-free-energy"
+      ],
+      "declared": [],
+      "effective": [
+        "rem:bond-log-ratio-is-a-free-energy"
+      ]
+    },
     "rem:prolongation-categorical": {
       "derived": [
         "ssec:descent"
@@ -4345,6 +4672,17 @@
       "declared": [],
       "effective": [
         "prop:nuclear-spin-parity"
+      ]
+    },
+    "rem:q-beta-c3-continuum-geometry": {
+      "derived": [
+        "def:ecalle-borel-resummation",
+        "rem:dilog-saddle-regime"
+      ],
+      "declared": [],
+      "effective": [
+        "def:ecalle-borel-resummation",
+        "rem:dilog-saddle-regime"
       ]
     },
     "rem:q-beta-categorical-precision-ladder-context": {
@@ -4493,6 +4831,17 @@
         "rem:hausdorff-dimension-recurrence"
       ]
     },
+    "rem:rho-s3-holonomy-exposition": {
+      "derived": [
+        "def:su2-generators",
+        "rem:braid-group-action"
+      ],
+      "declared": [],
+      "effective": [
+        "def:su2-generators",
+        "rem:braid-group-action"
+      ]
+    },
     "rem:schrodinger-color-falsifiability": {
       "derived": [
         "tbl:schrodinger-color-falsifiability-table1-data",
@@ -4591,12 +4940,36 @@
         "tbl:soft-confinement-at-q0-table-data"
       ]
     },
+    "rem:spatial-realization-base-generality": {
+      "derived": [],
+      "declared": [
+        "rem:hkr-theorem",
+        "rem:yekutieli-setting-explicit"
+      ],
+      "effective": [
+        "rem:hkr-theorem",
+        "rem:yekutieli-setting-explicit"
+      ]
+    },
     "rem:spectral-decomposition-qvalue-geometric": {
       "derived": [
         "tbl:spectral-decomposition-qvalue-table3-data"
       ],
       "declared": [],
       "effective": [
+        "tbl:spectral-decomposition-qvalue-table3-data"
+      ]
+    },
+    "rem:spectral-decomposition-qvalue-interpretation": {
+      "derived": [
+        "tbl:spectral-decomposition-qvalue-table1-data",
+        "tbl:spectral-decomposition-qvalue-table2-data",
+        "tbl:spectral-decomposition-qvalue-table3-data"
+      ],
+      "declared": [],
+      "effective": [
+        "tbl:spectral-decomposition-qvalue-table1-data",
+        "tbl:spectral-decomposition-qvalue-table2-data",
         "tbl:spectral-decomposition-qvalue-table3-data"
       ]
     },
@@ -4658,6 +5031,23 @@
         "rem:millennium-unification",
         "rem:p-vs-np-surreal-bound",
         "rem:rh-surreal-bound"
+      ]
+    },
+    "rem:three-euler-characteristics": {
+      "derived": [
+        "def:archimedean-condition",
+        "rem:chern-character-and-riemann-roch",
+        "rem:euler-characteristic-of-the-regular-representation"
+      ],
+      "declared": [
+        "def:archimedean-condition",
+        "rem:chern-character-and-riemann-roch",
+        "rem:euler-characteristic-of-the-regular-representation"
+      ],
+      "effective": [
+        "def:archimedean-condition",
+        "rem:chern-character-and-riemann-roch",
+        "rem:euler-characteristic-of-the-regular-representation"
       ]
     },
     "rem:topological-field-ansatz": {
@@ -4737,6 +5127,17 @@
         "tbl:u-coordinate-discharges-table-data"
       ]
     },
+    "rem:up-quark-properties": {
+      "derived": [
+        "def:down-quark",
+        "rem:flavor-charge-assignments"
+      ],
+      "declared": [],
+      "effective": [
+        "def:down-quark",
+        "rem:flavor-charge-assignments"
+      ]
+    },
     "rem:vacuum-polarization-virtual-pairs": {
       "derived": [
         "tbl:vacuum-polarization-virtual-pairs-table-data"
@@ -4764,6 +5165,15 @@
       "effective": [
         "conj:bring-figure-eight-depth-2-witness",
         "rem:algebraic-core-survives"
+      ]
+    },
+    "rem:vertex-operator-dictionary": {
+      "derived": [
+        "conj:hecke-monodromy-step-two"
+      ],
+      "declared": [],
+      "effective": [
+        "conj:hecke-monodromy-step-two"
       ]
     },
     "rem:vortex-intensity-modes": {
@@ -4805,6 +5215,15 @@
       "declared": [],
       "effective": [
         "prop:mass-categorical-descent"
+      ]
+    },
+    "rem:yekutieli-setting-explicit": {
+      "derived": [],
+      "declared": [
+        "rem:hkr-theorem"
+      ],
+      "effective": [
+        "rem:hkr-theorem"
       ]
     },
     "sec:approach-to-exceptional-divisor": {
@@ -5193,6 +5612,15 @@
         "prop:chirality-dual-space-derivation"
       ]
     },
+    "tbl:substrate-consistency-window-table1-data": {
+      "derived": [
+        "sec:fine-structure-data"
+      ],
+      "declared": [],
+      "effective": [
+        "sec:fine-structure-data"
+      ]
+    },
     "tbl:surreal-notation-cheat-sheet-table-data": {
       "derived": [
         "def:q-from-epsilon"
@@ -5245,6 +5673,26 @@
       "declared": [],
       "effective": [
         "rem:markov-axioms-primitive"
+      ]
+    },
+    "thm:markov-trace-factorization": {
+      "derived": [
+        "rem:canonical-trace-factorises-over-chain"
+      ],
+      "declared": [],
+      "effective": [
+        "rem:canonical-trace-factorises-over-chain"
+      ]
+    },
+    "thm:motivic-perpetual-obstruction": {
+      "derived": [
+        "ex:archimedean-yekutieli",
+        "ex:chi-minus-six-derivation"
+      ],
+      "declared": [],
+      "effective": [
+        "ex:archimedean-yekutieli",
+        "ex:chi-minus-six-derivation"
       ]
     },
     "thm:ns-singularity-descartes": {
