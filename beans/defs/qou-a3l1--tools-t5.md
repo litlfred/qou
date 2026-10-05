@@ -8,7 +8,7 @@ tags:
     - migration
     - tools
 created_at: 2026-10-04T16:35:42Z
-updated_at: 2026-10-05T08:19:20Z
+updated_at: 2026-10-05T14:06:58Z
 parent: qou-k3er
 ---
 
@@ -44,3 +44,10 @@ No witness was edited. Refreshing them means re-running producers, an owner call
 
 ## 2026-10-05: 4 provenance-only witnesses refreshed (owner approved)
 qbessel-jackson-contiguity, qbessel-second-order-qdifference-equation, qbeta-qbessel-contiguity-cfinite and qbeta-silver-rationals were re-run, adding q0Anchor=proton and q0Value. No assertion or data value changed (+24/-16). witness:parity now reads all four as **pass**, so the sample becomes 5 pass, 6 unknown, 2 fail. The 2 remaining fails (rho-k-h3a-refinement, habiro-frobenius-probe) are real content differences under unchanged scripts and await the owner's judgement.
+
+
+2026-10-05 — the 2 parity FAILS are diagnosed. Neither is a producer bug or nondeterminism (each re-run was stable under PYTHONHASHSEED 0, 12345 and random). Both witnesses are STALE against the 2026-09-05/06 owner ruling that made the alternating β_Bor word canonical instead of the grouped one (qou-hu1f, qou-y2o7). Each was reproduced EXACTLY by restoring the old upstream in a scratch worktree.
+- habiro-frobenius-probe: a data dependency. Its input habiro-coefficients-atomic.witness.json was regenerated under the borromean word in a4909014a56 (2026-09-06). With the old input restored: 0 diff. 35 of 45 per-cell Frobenius values move; the summary verdicts (45/45 numerator test, 2/45 full-trace) do not. Consumers: block mass-endomorphism/qou-motivic-galois-instance (status 'verified'); habiro_frobenius_norm_probe, then conjugate_orbit_probe. FrobeniusNormRoute.lean's quoted '0.046' matches NEITHER version (committed 0.0912, fresh 0.0906).
+- rho-k-h3a-refinement: import-cone drift. 7db032fb482 set intra_order default='borromean' in atom_braid_word_3A, and the deuteron tr_M witness was regenerated (0a06f1f4e93, b50af164896). With grouped plus the old tr_M restored, everything agrees to about 45+ digits. Fresh: the dominant partition moves (5,1)→(6), and Δ_λ moves −17.143→−24.200. Consumers: block mass-theory/rho-k-h3a-refinement (status 'experimental') plus six rho_k_h3a_* producers. markov-trace-frobenius-selection.md:111 still prints the grouped-era deuteron tr_M.
+- PRECISION FIXES APPLIED (exemption 1), with witnesses NOT re-run: experimental_constants.py Q_NEUTRON_MEV and m_n_derived_3input moved inside the 60-dps pin (they were binary64-in-mpf; m_n_derived_3input now == M_N_MEV exactly, as its comment claims). habiro_frobenius_probe.py raised from 30 to 70 dps (it wrote 60 digits, of which 31-60 were manufactured).
+- OWNER DECISION still open: re-run the two chains under the ruled word (option a)? That changes which partition the deuteron binding is attributed to.
