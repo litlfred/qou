@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:08:29.259537+00:00",
-  "commitSha": "3bc8229b5cbafad21c9b85fde44625b75d636308",
+  "computedAt": "2026-10-05T14:22:02.892102+00:00",
+  "commitSha": "21ddc42fa77458b1226f3fcd08020dcdccc58bd4",
   "assertions": [
     {
       "name": "norm_routes_agree",
@@ -92,11 +92,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1830,
+  "durationMs": 3095,
   "computation": "habiro-frobenius-conjugate-orbit-probe",
   "scriptFile": "habiro_frobenius_conjugate_orbit_probe.py",
   "scriptHash": "35f2cc49e18c",
-  "scriptCommitSha": "1a3a41ab2650b38c5cd6744562e5b3d3eae83e39",
+  "scriptCommitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -108,10 +108,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "mpmath": "1.3.0"
   },
   "invocation": {
     "argv": [
@@ -131,7 +128,7 @@
       13
     ],
     "coefficients_source": "computations/habiro/habiro-coefficients-atomic.witness.json",
-    "coefficients_sha256_16": "d59c76efc7cdc505",
+    "coefficients_sha256_16": "4ec945d56ca192a8",
     "deprecated_coefficients_present": true,
     "deprecated_coefficients_sha256_16": "1b9f2c56e349b788"
   },
@@ -396,50 +393,50 @@
               {
                 "k": 1,
                 "coeffs_in_zeta_basis": [
-                  -1,
-                  13,
-                  16,
-                  14
+                  -3955,
+                  -1226,
+                  -3208,
+                  1215
                 ],
-                "expr": "-u**3 + 13*u**2 + 16*u + 14"
+                "expr": "-3955*u**3 - 1226*u**2 - 3208*u + 1215"
               },
               {
                 "k": 3,
                 "coeffs_in_zeta_basis": [
-                  17,
-                  -1,
-                  -12,
-                  13
+                  747,
+                  -3955,
+                  5181,
+                  -2740
                 ],
-                "expr": "17*u**3 - u**2 - 12*u + 13"
+                "expr": "747*u**3 - 3955*u**2 + 5181*u - 2740"
               },
               {
                 "k": 7,
                 "coeffs_in_zeta_basis": [
-                  13,
-                  -29,
-                  12,
-                  1
+                  -1226,
+                  4434,
+                  -5181,
+                  2441
                 ],
-                "expr": "13*u**3 - 29*u**2 + 12*u + 1"
+                "expr": "-1226*u**3 + 4434*u**2 - 5181*u + 2441"
               },
               {
                 "k": 9,
                 "coeffs_in_zeta_basis": [
-                  -29,
-                  17,
-                  -16,
-                  30
+                  4434,
+                  747,
+                  3208,
+                  -1993
                 ],
-                "expr": "-29*u**3 + 17*u**2 - 16*u + 30"
+                "expr": "4434*u**3 + 747*u**2 + 3208*u - 1993"
               }
             ],
             "representative_is_rational_integer": null,
-            "galois_norm": 101321,
-            "galois_norm_orbit_route": 101321,
-            "galois_norm_abs": 101321,
+            "galois_norm": 1606039171,
+            "galois_norm_orbit_route": 1606039171,
+            "galois_norm_abs": 1606039171,
             "is_unit": false,
-            "representative": "-u**3 + 13*u**2 + 16*u + 14",
+            "representative": "-3955*u**3 - 1226*u**2 - 3208*u + 1215",
             "unit_multiplicative_order": null,
             "norm_cross_check": "orbit-product == resultant"
           },
@@ -538,50 +535,50 @@
               {
                 "k": 1,
                 "coeffs_in_zeta_basis": [
-                  65,
-                  88,
-                  99,
-                  50
+                  -94937,
+                  -3334,
+                  -60738,
+                  55338
                 ],
-                "expr": "65*u**3 + 88*u**2 + 99*u + 50"
+                "expr": "-94937*u**3 - 3334*u**2 - 60738*u + 55338"
               },
               {
                 "k": 3,
                 "coeffs_in_zeta_basis": [
-                  34,
-                  65,
-                  -153,
-                  115
+                  34199,
+                  -94937,
+                  98271,
+                  -39599
                 ],
-                "expr": "34*u**3 + 65*u**2 - 153*u + 115"
+                "expr": "34199*u**3 - 94937*u**2 + 98271*u - 39599"
               },
               {
                 "k": 7,
                 "coeffs_in_zeta_basis": [
-                  88,
-                  -187,
-                  153,
-                  -38
+                  -3334,
+                  64072,
+                  -98271,
+                  58672
                 ],
-                "expr": "88*u**3 - 187*u**2 + 153*u - 38"
+                "expr": "-3334*u**3 + 64072*u**2 - 98271*u + 58672"
               },
               {
                 "k": 9,
                 "coeffs_in_zeta_basis": [
-                  -187,
-                  34,
-                  -99,
-                  149
+                  64072,
+                  34199,
+                  60738,
+                  -5400
                 ],
-                "expr": "-187*u**3 + 34*u**2 - 99*u + 149"
+                "expr": "64072*u**3 + 34199*u**2 + 60738*u - 5400"
               }
             ],
             "representative_is_rational_integer": null,
-            "galois_norm": 1114531,
-            "galois_norm_orbit_route": 1114531,
-            "galois_norm_abs": 1114531,
+            "galois_norm": 194330739691,
+            "galois_norm_orbit_route": 194330739691,
+            "galois_norm_abs": 194330739691,
             "is_unit": false,
-            "representative": "65*u**3 + 88*u**2 + 99*u + 50",
+            "representative": "-94937*u**3 - 3334*u**2 - 60738*u + 55338",
             "unit_multiplicative_order": null,
             "norm_cross_check": "orbit-product == resultant"
           },
@@ -594,82 +591,82 @@
               {
                 "k": 1,
                 "coeffs_in_zeta_basis": [
-                  -104,
-                  18,
-                  210,
-                  -410,
-                  420,
-                  -238
+                  -18043,
+                  -119807,
+                  309747,
+                  -408737,
+                  342250,
+                  -160349
                 ],
-                "expr": "-104*u**5 + 18*u**4 + 210*u**3 - 410*u**2 + 420*u - 238"
+                "expr": "-18043*u**5 - 119807*u**4 + 309747*u**3 - 408737*u**2 + 342250*u - 160349"
               },
               {
                 "k": 3,
                 "coeffs_in_zeta_basis": [
-                  -428,
-                  410,
-                  10,
-                  200,
-                  -514,
-                  172
+                  -288930,
+                  408737,
+                  -66487,
+                  98990,
+                  -426780,
+                  248388
                 ],
-                "expr": "-428*u**5 + 410*u**4 + 10*u**3 + 200*u**2 - 514*u + 172"
+                "expr": "-288930*u**5 + 408737*u**4 - 66487*u**3 + 98990*u**2 - 426780*u + 248388"
               },
               {
                 "k": 5,
                 "coeffs_in_zeta_basis": [
-                  438,
-                  86,
-                  428,
-                  -18,
-                  228,
-                  -256
+                  222443,
+                  137850,
+                  288930,
+                  119807,
+                  189940,
+                  -40542
                 ],
-                "expr": "438*u**5 + 86*u**4 + 428*u**3 - 18*u**2 + 228*u - 256"
+                "expr": "222443*u**5 + 137850*u**4 + 288930*u**3 + 119807*u**2 + 189940*u - 40542"
               },
               {
                 "k": 9,
                 "coeffs_in_zeta_basis": [
-                  -210,
-                  -200,
-                  -314,
-                  -210,
-                  -228,
-                  -28
+                  -309747,
+                  -98990,
+                  -327790,
+                  -32503,
+                  -189940,
+                  149398
                 ],
-                "expr": "-210*u**5 - 200*u**4 - 314*u**3 - 210*u**2 - 228*u - 28"
+                "expr": "-309747*u**5 - 98990*u**4 - 327790*u**3 - 32503*u**2 - 189940*u + 149398"
               },
               {
                 "k": 11,
                 "coeffs_in_zeta_basis": [
-                  314,
-                  -524,
-                  104,
-                  -86,
-                  514,
-                  -342
+                  327790,
+                  -360293,
+                  18043,
+                  -137850,
+                  426780,
+                  -178392
                 ],
-                "expr": "314*u**5 - 524*u**4 + 104*u**3 - 86*u**2 + 514*u - 342"
+                "expr": "327790*u**5 - 360293*u**4 + 18043*u**3 - 137850*u**2 + 426780*u - 178392"
               },
               {
                 "k": 13,
                 "coeffs_in_zeta_basis": [
-                  -10,
-                  210,
-                  -438,
-                  524,
-                  -420,
-                  182
+                  66487,
+                  32503,
+                  -222443,
+                  360293,
+                  -342250,
+                  181901
                 ],
-                "expr": "-10*u**5 + 210*u**4 - 438*u**3 + 524*u**2 - 420*u + 182"
+                "expr": "66487*u**5 + 32503*u**4 - 222443*u**3 + 360293*u**2 - 342250*u + 181901"
               }
             ],
             "representative_is_rational_integer": null,
-            "galois_norm": 12088259072,
-            "galois_norm_orbit_route": 12088259072,
-            "galois_norm_abs": 12088259072,
+            "galois_norm": 1789496558770579,
+            "galois_norm_orbit_route": 1789496558770579,
+            "galois_norm_abs": 1789496558770579,
             "is_unit": false,
-            "representative": "-104*u**5 + 18*u**4 + 210*u**3 - 410*u**2 + 420*u - 238",
+            "representative": "-18043*u**5 - 119807*u**4 + 309747*u**3 - 408737*u**2 + 342250*u - 160349",
             "unit_multiplicative_order": null,
             "norm_cross_check": "orbit-product == resultant"
           },
@@ -762,50 +759,50 @@
               {
                 "k": 1,
                 "coeffs_in_zeta_basis": [
-                  13,
-                  4,
-                  -3,
-                  -13
+                  -104280,
+                  -77205,
+                  -112163,
+                  -12762
                 ],
-                "expr": "13*u**3 + 4*u**2 - 3*u - 13"
+                "expr": "-104280*u**3 - 77205*u**2 - 112163*u - 12762"
               },
               {
                 "k": 3,
                 "coeffs_in_zeta_basis": [
-                  -16,
-                  13,
-                  -17,
-                  0
+                  -7883,
+                  -104280,
+                  181485,
+                  -117042
                 ],
-                "expr": "-16*u**3 + 13*u**2 - 17*u"
+                "expr": "-7883*u**3 - 104280*u**2 + 181485*u - 117042"
               },
               {
                 "k": 7,
                 "coeffs_in_zeta_basis": [
-                  4,
-                  -1,
-                  17,
-                  -17
+                  -77205,
+                  189368,
+                  -181485,
+                  64443
                 ],
-                "expr": "4*u**3 - u**2 + 17*u - 17"
+                "expr": "-77205*u**3 + 189368*u**2 - 181485*u + 64443"
               },
               {
                 "k": 9,
                 "coeffs_in_zeta_basis": [
-                  -1,
-                  -16,
-                  3,
-                  -16
+                  189368,
+                  -7883,
+                  112163,
+                  -124925
                 ],
-                "expr": "-u**3 - 16*u**2 + 3*u - 16"
+                "expr": "189368*u**3 - 7883*u**2 + 112163*u - 124925"
               }
             ],
             "representative_is_rational_integer": null,
-            "galois_norm": 101321,
-            "galois_norm_orbit_route": 101321,
-            "galois_norm_abs": 101321,
+            "galois_norm": 2314302445411,
+            "galois_norm_orbit_route": 2314302445411,
+            "galois_norm_abs": 2314302445411,
             "is_unit": false,
-            "representative": "13*u**3 + 4*u**2 - 3*u - 13",
+            "representative": "-104280*u**3 - 77205*u**2 - 112163*u - 12762",
             "unit_multiplicative_order": null,
             "norm_cross_check": "orbit-product == resultant"
           },
@@ -818,82 +815,82 @@
               {
                 "k": 1,
                 "coeffs_in_zeta_basis": [
-                  -18,
-                  10,
-                  12,
-                  -22,
-                  4,
-                  -8
+                  144440,
+                  -531110,
+                  868832,
+                  -903292,
+                  608557,
+                  -206550
                 ],
-                "expr": "-18*u**5 + 10*u**4 + 12*u**3 - 22*u**2 + 4*u - 8"
+                "expr": "144440*u**5 - 531110*u**4 + 868832*u**3 - 903292*u**2 + 608557*u - 206550"
               },
               {
                 "k": 3,
                 "coeffs_in_zeta_basis": [
-                  -32,
-                  22,
-                  -18,
-                  10,
-                  -40,
-                  14
+                  -372182,
+                  903292,
+                  -294735,
+                  34460,
+                  -758852,
+                  696742
                 ],
-                "expr": "-32*u**5 + 22*u**4 - 18*u**3 + 10*u**2 - 40*u + 14"
+                "expr": "-372182*u**5 + 903292*u**4 - 294735*u**3 + 34460*u**2 - 758852*u + 696742"
               },
               {
                 "k": 5,
                 "coeffs_in_zeta_basis": [
-                  14,
-                  8,
-                  32,
-                  -10,
-                  22,
-                  -18
+                  77447,
+                  386670,
+                  372182,
+                  531110,
+                  337722,
+                  324560
                 ],
-                "expr": "14*u**5 + 8*u**4 + 32*u**3 - 10*u**2 + 22*u - 18"
+                "expr": "77447*u**5 + 386670*u**4 + 372182*u**3 + 531110*u**2 + 337722*u + 324560"
               },
               {
                 "k": 9,
                 "coeffs_in_zeta_basis": [
-                  -12,
-                  -10,
-                  -30,
-                  8,
-                  -22,
-                  4
+                  -868832,
+                  -34460,
+                  -724392,
+                  260275,
+                  -337722,
+                  662282
                 ],
-                "expr": "-12*u**5 - 10*u**4 - 30*u**3 + 8*u**2 - 22*u + 4"
+                "expr": "-868832*u**5 - 34460*u**4 - 724392*u**3 + 260275*u**2 - 337722*u + 662282"
               },
               {
                 "k": 11,
                 "coeffs_in_zeta_basis": [
-                  30,
-                  -22,
-                  18,
-                  -8,
-                  40,
-                  -26
+                  724392,
+                  -464117,
+                  -144440,
+                  -386670,
+                  758852,
+                  -62110
                 ],
-                "expr": "30*u**5 - 22*u**4 + 18*u**3 - 8*u**2 + 40*u - 26"
+                "expr": "724392*u**5 - 464117*u**4 - 144440*u**3 - 386670*u**2 + 758852*u - 62110"
               },
               {
                 "k": 13,
                 "coeffs_in_zeta_basis": [
-                  18,
-                  -8,
-                  -14,
-                  22,
-                  -4,
-                  -4
+                  294735,
+                  -260275,
+                  -77447,
+                  464117,
+                  -608557,
+                  402007
                 ],
-                "expr": "18*u**5 - 8*u**4 - 14*u**3 + 22*u**2 - 4*u - 4"
+                "expr": "294735*u**5 - 260275*u**4 - 77447*u**3 + 464117*u**2 - 608557*u + 402007"
               }
             ],
             "representative_is_rational_integer": null,
-            "galois_norm": 281122304,
-            "galois_norm_orbit_route": 281122304,
-            "galois_norm_abs": 281122304,
+            "galois_norm": 15652593660234049,
+            "galois_norm_orbit_route": 15652593660234049,
+            "galois_norm_abs": 15652593660234049,
             "is_unit": false,
-            "representative": "-18*u**5 + 10*u**4 + 12*u**3 - 22*u**2 + 4*u - 8",
+            "representative": "144440*u**5 - 531110*u**4 + 868832*u**3 - 903292*u**2 + 608557*u - 206550",
             "unit_multiplicative_order": null,
             "norm_cross_check": "orbit-product == resultant"
           },
