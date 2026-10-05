@@ -83,8 +83,13 @@ import sympy as sp
 # than enough for the display-only complex-value evaluation; the
 # *truth* is the exact algebraic Z[ζ_{2p}] representative computed
 # via sp.Poly arithmetic.
-mpmath.mp.dps = 30
-_DISPLAY_DPS = 30
+#
+# RAISED 30 -> 70 (2026-10-05, a precision fix). The values are serialised by
+# `_precision.fmt` at 60 digits, so at 30 dps digits 31-60 of `real`, `imag` and
+# `abs_frob` were manufactured: two runs agreed to ~30 digits and then diverged.
+# 70 matches the platform compute default and leaves a guard above the 60 written.
+mpmath.mp.dps = 70
+_DISPLAY_DPS = 70
 
 # Frobenius evaluation runs in **exact algebraic arithmetic** in
 # Z[ζ_{2p}] = Z[u] / Φ_{2p}(u), the cyclotomic integer ring. Every
