@@ -47,6 +47,14 @@
       "_comment": "At tool-defs/, not tools/: qou's tools/ holds its Rust and Python packages, and renaming it would touch 601 files including paper content and every producer's script hash. Owner ruling 2026-10-05, option A on bean qou-kbqy: declare the Tool graph at a new path instead. Overrides match on id, so this is the instance's `tools` graph."
     },
     {
+      "id": "processes",
+      "path": "processes/",
+      "graphKinds": [
+        "processes"
+      ],
+      "description": "qou's BPMN processes, grouped by concern (processes/processes.json). First: content/witness-refresh.bpmn, the owner-gated refresh of computation witnesses (story TOOLS T6, bean qou-kumy)."
+    },
+    {
       "id": "fsh-guts",
       "path": "fsh-guts/",
       "graphKinds": [
