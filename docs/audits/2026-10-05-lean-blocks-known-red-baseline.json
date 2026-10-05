@@ -3696,7 +3696,12 @@
    "exit": 1,
    "n_errors": 5,
    "seconds": 2.8,
-   "first_error": "folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean:33:7: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean:33:7: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:LiftingAndDescent.CategoricalQReebFlow": {
    "library": "QOUBlocks",
@@ -3839,7 +3844,12 @@
    "exit": 1,
    "n_errors": 2,
    "seconds": 2.7,
-   "first_error": "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation.lean:43:10: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation.lean:43:10: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:LiftingAndDescent.JetProlongationC": {
    "library": "QOUBlocks",
@@ -3861,7 +3871,12 @@
    "exit": 1,
    "n_errors": 1,
    "seconds": 2.7,
-   "first_error": "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.lean:52:11: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.lean:52:11: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:LiftingAndDescent.LocalizedKnot": {
    "library": "QOUBlocks",
@@ -4290,7 +4305,12 @@
    "exit": 1,
    "n_errors": 1,
    "seconds": 2.9,
-   "first_error": "folio/quantum-observable-universe/mass-endomorphism/mass-identity.lean:108:10: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/mass-endomorphism/mass-identity.lean:108:10: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:MassEndomorphism.MassIdentityC": {
    "library": "QOUBlocks",
@@ -7106,7 +7126,12 @@
    "exit": 1,
    "n_errors": 1,
    "seconds": 2.6,
-   "first_error": "folio/quantum-observable-universe/models-of-qous/categorical-archimedean-bridge.lean:45:13: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/models-of-qous/categorical-archimedean-bridge.lean:45:13: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:ModelsOfQous.Instanton": {
    "library": "QOUBlocks",
@@ -7205,7 +7230,12 @@
    "exit": 1,
    "n_errors": 1,
    "seconds": 2.6,
-   "first_error": "folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:45:13: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:45:13: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:ModelsOfQous.SymmetricPointChannelCollapse": {
    "library": "QOUBlocks",
@@ -9163,7 +9193,12 @@
    "exit": 1,
    "n_errors": 5,
    "seconds": 2.3,
-   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-action.lean:37:10: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-action.lean:37:10: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumObservableUniverses.CategoricalActionExists": {
    "library": "QOUBlocks",
@@ -9229,7 +9264,12 @@
    "exit": 1,
    "n_errors": 3,
    "seconds": 3.0,
-   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-dirac-operator-unique.lean:45:10: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-dirac-operator-unique.lean:45:10: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumObservableUniverses.CategoricalDqSquared": {
    "library": "QOUBlocks",
@@ -9284,7 +9324,12 @@
    "exit": 1,
    "n_errors": 1,
    "seconds": 2.7,
-   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-instanton.lean:44:10: error: type expected, got"
+   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-instanton.lean:44:10: error: type expected, got",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumObservableUniverses.CategoricalInstantonExists": {
    "library": "QOUBlocks",
@@ -9295,7 +9340,12 @@
    "exit": 1,
    "n_errors": 2,
    "seconds": 2.5,
-   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-instanton-exists.lean:42:10: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-instanton-exists.lean:42:10: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumObservableUniverses.CategoricalInstantonUnique": {
    "library": "QOUBlocks",
@@ -9306,7 +9356,12 @@
    "exit": 1,
    "n_errors": 1,
    "seconds": 2.4,
-   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-instanton-unique.lean:53:10: error: type expected, got"
+   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-instanton-unique.lean:53:10: error: type expected, got",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumObservableUniverses.CategoricalIrreducible": {
    "library": "QOUBlocks",
@@ -9339,7 +9394,12 @@
    "exit": 1,
    "n_errors": 2,
    "seconds": 3.0,
-   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian.lean:48:10: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian.lean:48:10: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumObservableUniverses.CategoricalLagrangianExists": {
    "library": "QOUBlocks",
@@ -9350,7 +9410,12 @@
    "exit": 1,
    "n_errors": 3,
    "seconds": 3.1,
-   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists.lean:43:10: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists.lean:43:10: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumObservableUniverses.CategoricalLagrangianUnique": {
    "library": "QOUBlocks",
@@ -9361,7 +9426,12 @@
    "exit": 1,
    "n_errors": 3,
    "seconds": 3.3,
-   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-unique.lean:42:10: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-unique.lean:42:10: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumObservableUniverses.CategoricalLaplaceTransform": {
    "library": "QOUBlocks",
@@ -9438,7 +9508,12 @@
    "exit": 1,
    "n_errors": 1,
    "seconds": 2.8,
-   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-q-connection-exists.lean:63:12: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-q-connection-exists.lean:63:12: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumObservableUniverses.CategoricalQConnectionUnique": {
    "library": "QOUBlocks",
@@ -9449,7 +9524,12 @@
    "exit": 1,
    "n_errors": 2,
    "seconds": 2.8,
-   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-q-connection-unique.lean:59:13: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-q-connection-unique.lean:59:13: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumObservableUniverses.CategoricalQExtDeriv": {
    "library": "QOUBlocks",
@@ -9460,7 +9540,12 @@
    "exit": 1,
    "n_errors": 5,
    "seconds": 2.6,
-   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv.lean:56:13: error: type expected, got"
+   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv.lean:56:13: error: type expected, got",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumObservableUniverses.CategoricalQExtDerivExists": {
    "library": "QOUBlocks",
@@ -9471,7 +9556,12 @@
    "exit": 1,
    "n_errors": 2,
    "seconds": 2.1,
-   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-exists.lean:41:14: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-exists.lean:41:14: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumObservableUniverses.CategoricalQExtDerivUnique": {
    "library": "QOUBlocks",
@@ -9482,7 +9572,12 @@
    "exit": 1,
    "n_errors": 6,
    "seconds": 2.3,
-   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-unique.lean:75:13: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-unique.lean:75:13: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumObservableUniverses.CategoricalQLieBracket": {
    "library": "QOUBlocks",
@@ -9548,7 +9643,12 @@
    "exit": 1,
    "n_errors": 1,
    "seconds": 3.1,
-   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean:41:7: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean:41:7: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumObservableUniverses.CategoricalSelfDualityProof": {
    "library": "QOUBlocks",
@@ -9658,7 +9758,12 @@
    "exit": 1,
    "n_errors": 3,
    "seconds": 2.5,
-   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/fiber-adjoint-involution.lean:47:10: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/fiber-adjoint-involution.lean:47:10: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumObservableUniverses.FiberAdjointSu2": {
    "library": "QOUBlocks",
@@ -9746,7 +9851,12 @@
    "exit": 1,
    "n_errors": 4,
    "seconds": 2.6,
-   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/observation.lean:55:13: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/observation.lean:55:13: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumObservableUniverses.PawlowskiLeitnerBasis": {
    "library": "QOUBlocks",
@@ -9966,7 +10076,12 @@
    "exit": 1,
    "n_errors": 1,
    "seconds": 2.1,
-   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/q-hodge-star.lean:40:10: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/q-hodge-star.lean:40:10: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumObservableUniverses.QJacobiator": {
    "library": "QOUBlocks",
@@ -10120,7 +10235,12 @@
    "exit": 1,
    "n_errors": 3,
    "seconds": 2.2,
-   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-1.lean:48:4: error: type expected, got"
+   "first_error": "folio/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-1.lean:48:4: error: type expected, got",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumObservableUniverses.QouExistsAxiom2": {
    "library": "QOUBlocks",
@@ -10461,7 +10581,12 @@
    "exit": 1,
    "n_errors": 2,
    "seconds": 2.2,
-   "first_error": "folio/quantum-observable-universe/quantum-universes/categorical-connection.lean:44:10: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/quantum-universes/categorical-connection.lean:44:10: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumUniverses.CategoricalConnectionExists": {
    "library": "QOUBlocks",
@@ -10527,7 +10652,12 @@
    "exit": 1,
    "n_errors": 13,
    "seconds": 2.3,
-   "first_error": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing.lean:34:31: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing.lean:34:31: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumUniverses.FrobeniusPairingExists": {
    "library": "QOUBlocks",
@@ -10538,7 +10668,12 @@
    "exit": 1,
    "n_errors": 5,
    "seconds": 2.0,
-   "first_error": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.lean:51:10: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.lean:51:10: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumUniverses.FrobeniusPairingUnique": {
    "library": "QOUBlocks",
@@ -10549,7 +10684,12 @@
    "exit": 1,
    "n_errors": 5,
    "seconds": 2.0,
-   "first_error": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-unique.lean:64:15: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-unique.lean:64:15: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumUniverses.FrobeniusRelation": {
    "library": "QOUBlocks",
@@ -10560,7 +10700,12 @@
    "exit": 1,
    "n_errors": 2,
    "seconds": 2.0,
-   "first_error": "folio/quantum-observable-universe/quantum-universes/frobenius-relation.lean:38:31: error: failed to synthesize"
+   "first_error": "folio/quantum-observable-universe/quantum-universes/frobenius-relation.lean:38:31: error: failed to synthesize",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumUniverses.FundamentalObject": {
    "library": "QOUBlocks",
@@ -10582,7 +10727,12 @@
    "exit": 1,
    "n_errors": 1,
    "seconds": 2.2,
-   "first_error": "folio/quantum-observable-universe/quantum-universes/higher-forms.lean:45:13: error: type expected, got"
+   "first_error": "folio/quantum-observable-universe/quantum-universes/higher-forms.lean:45:13: error: type expected, got",
+   "resolved": {
+    "verdict": "green",
+    "exit": 0,
+    "by": "litlfred/qou#7538"
+   }
   },
   "QOUBlocks:QuantumUniverses.HigherFormsSu2": {
    "library": "QOUBlocks",
@@ -11123,5 +11273,32 @@
    "seconds": 1.5,
    "first_error": null
   }
+ },
+ "resolutions": [
+  {
+   "pr": "litlfred/qou#7538",
+   "merged_head": "015a93a39b26",
+   "date": "2026-10-05",
+   "verification": "lean-direct -DautoImplicit=false -s 65536 against the L3 shadow mirror (same compile path as this baseline): all 30 exit 1 -> 0, error counts before matching this file, no sorryAx",
+   "class": "corpus:consumer-not-ported-to-BraidedCategory",
+   "modules": 30
+  }
+ ],
+ "current_counts": {
+  "QOUBlocks": {
+   "green": 902,
+   "red": 0
+  },
+  "UGBBlocks": {
+   "green": 22
+  },
+  "Fred2005Blocks": {
+   "green": 12
+  },
+  "QOUAudits": {
+   "green": 24,
+   "red": 6
+  },
+  "_comment": "counts after the resolutions above; `counts` stays the 2026-10-05 measurement"
  }
 }
