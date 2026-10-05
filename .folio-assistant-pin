@@ -199,4 +199,21 @@
 # Three sites carry the sha and move together: this file, build.yml's `uses:`, and
 # qou.config.json's folio-assistant-sci `ref`.
 #
-3f72f018a227cba5f3df362373074e5b381d6b94
+# BUMPED 2026-10-05 to 717aa19a6 (folio-assistant#2232 merged): the bibliography
+# ledgers' new home, the `attestations` graph (C9 stories B3/B4). The pin moves in
+# the same commit that deletes folio/bib-qa-verifications.json and
+# folio/schema/references.review.json, because two qou readers
+# (bib-agent-backfill.ts, bib-photo-ingestion-watcher.ts) import the shared module
+# that only exists from #2232, while the platform readers at the old pin still read
+# the legacy files.
+#
+# Same corpus (qou branch claude/bib-attestations-2026-10-05),
+# `run-validate folio/quantum-observable-universe`:
+#
+#     3f72f018a  ->  "9 issue(s)", valid
+#     717aa19a6  ->  "9 issue(s)", valid; the 9 lines IDENTICAL
+#
+# Before the removal: bib_ledger.py --parity identical on both ledgers, and
+# bib:attestations:migrate --check byte-identical (456 rows / 423 files; 2 reviews).
+#
+717aa19a660caa54be312f50abfc813b0b1bdb76
