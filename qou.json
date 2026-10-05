@@ -38,6 +38,15 @@
       "_graphKinds_comment": "`code` for the Python computations, and `computation-witness` for the witnesses they write (platform kind added in folio-assistant#2129, story TOOLS T1/T2, beans qou-qb6t and qou-4r5m). One directory, two graph kinds: a directory is a place to look, and the witnesses are told apart by their `.witness.json` suffix. `bun run witness:conformance` reports which witnesses meet the producer contract; it never edits one. Addressable as {{ qou.computations.<witness>.<json path> }} (#7490)."
     },
     {
+      "id": "tools",
+      "path": "tool-defs/",
+      "graphKinds": [
+        "tools"
+      ],
+      "description": "qou's Tool nodes: one per computation script a content block wires to a witness, generated from the block manifests by scripts/gen-producer-tools.ts (story TOOLS T5, bean qou-a3l1).",
+      "_comment": "At tool-defs/, not tools/: qou's tools/ holds its Rust and Python packages, and renaming it would touch 601 files including paper content and every producer's script hash. Owner ruling 2026-10-05, option A on bean qou-kbqy: declare the Tool graph at a new path instead. Overrides match on id, so this is the instance's `tools` graph."
+    },
+    {
       "id": "fsh-guts",
       "path": "fsh-guts/",
       "graphKinds": [
