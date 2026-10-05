@@ -53,7 +53,8 @@ import sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REFS = os.path.join(REPO, "folio", "schema", "references.ts")
-LEDGER = os.path.join(REPO, "folio", "bib-qa-verifications.json")
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib"))
+import bib_ledger  # noqa: E402  -- the source ledger's reader (attestation store, legacy fallback)
 LIB = os.path.join(REPO, "library")
 
 FIELD = "library"
@@ -114,9 +115,8 @@ def library_index() -> dict[str, dict]:
 
 def ref_to_doc() -> dict[str, str]:
     """references.ts id -> doc-id, via the ledger's source.file."""
-    if not os.path.exists(LEDGER):
-        return {}
-    led = json.load(open(LEDGER))
+    led, note = bib_ledger.read_source_ledger(REPO)
+    print(note, file=sys.stderr)
     entries = led.get("entries", [])
     # `entries` may be a dict keyed by reference id, and a row does not
     # have to repeat that id inside itself — 269 of 355 do not. Take the

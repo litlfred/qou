@@ -1,4 +1,5 @@
 import { readFileSync, existsSync } from 'fs';
+import { readHumanReviews } from '../folio-assistant/cat-harness/schemas/bib-attestations';
 import { join } from 'path';
 import { processIngestion } from '../pipeline/bib-photo-ingestion-watcher.js';
 
@@ -11,7 +12,6 @@ import { processIngestion } from '../pipeline/bib-photo-ingestion-watcher.js';
  */
 
 const INTAKE_FILE = 'library/intake.json';
-const REVIEWS_FILE = 'folio/schema/references.review.json';
 
 async function main() {
   if (!existsSync(INTAKE_FILE)) {
@@ -30,9 +30,12 @@ async function main() {
   console.log(`[Backfill] Analyzing intake.json for reference: ${targetRefId}`);
 
   let needsReview = true;
-  if (existsSync(REVIEWS_FILE)) {
-    const reviews = JSON.parse(readFileSync(REVIEWS_FILE, 'utf8'));
-    const status = reviews.reviews[targetRefId]?.status;
+  // The human-review record: the attestation store's `bib-human-review` family,
+  // or the legacy file before migration — the platform's one reader says which.
+  const read = readHumanReviews(process.cwd());
+  console.log(`[Backfill] ${read.note}`);
+  {
+    const status = read.reviews[targetRefId]?.status;
     if (status === 'validated') {
       console.log(`[Backfill] Reference ${targetRefId} is already validated.`);
       needsReview = false;
