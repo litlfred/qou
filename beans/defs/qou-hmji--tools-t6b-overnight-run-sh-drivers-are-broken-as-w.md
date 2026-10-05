@@ -1,13 +1,14 @@
 ---
 # qou-hmji
 title: '[TOOLS T6b] overnight run-*.sh drivers are broken as written — repair or retire?'
-status: todo
+status: completed
 type: task
+priority: normal
 tags:
     - migration
     - tools
 created_at: 2026-10-05T10:10:28Z
-updated_at: 2026-10-05T10:10:28Z
+updated_at: 2026-10-05T13:37:57Z
 parent: qou-k3er
 ---
 
@@ -27,3 +28,6 @@ Default if no answer: nothing changes, and the drivers stay broken where they ar
 - [ ] owner picks A or B
 - [ ] if A: each driver runs to its first step, the process loads in workflow_list, and no witness is rewritten
 - [ ] content parity: no change to computations/** outputs, folio/** or *.lean
+
+
+2026-10-05 — owner: 'fix all', i.e. take the recommendation, which was B, retire. All three drivers git-mv'd to fsh-guts/deprecated/overnight-drivers/ (moved, not deleted) with a README recording why. Nothing referenced them (git grep: only themselves, the TOOLS inventory and an old file list). Their outputs (computations/hecke-k*.json) and the .sage inputs are untouched. Content parity: no witness, lean, folio or content change.
