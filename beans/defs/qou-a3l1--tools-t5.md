@@ -8,7 +8,7 @@ tags:
     - migration
     - tools
 created_at: 2026-10-04T16:35:42Z
-updated_at: 2026-10-05T14:06:58Z
+updated_at: 2026-10-05T14:43:22Z
 parent: qou-k3er
 ---
 
@@ -51,3 +51,10 @@ qbessel-jackson-contiguity, qbessel-second-order-qdifference-equation, qbeta-qbe
 - rho-k-h3a-refinement: import-cone drift. 7db032fb482 set intra_order default='borromean' in atom_braid_word_3A, and the deuteron tr_M witness was regenerated (0a06f1f4e93, b50af164896). With grouped plus the old tr_M restored, everything agrees to about 45+ digits. Fresh: the dominant partition moves (5,1)→(6), and Δ_λ moves −17.143→−24.200. Consumers: block mass-theory/rho-k-h3a-refinement (status 'experimental') plus six rho_k_h3a_* producers. markov-trace-frobenius-selection.md:111 still prints the grouped-era deuteron tr_M.
 - PRECISION FIXES APPLIED (exemption 1), with witnesses NOT re-run: experimental_constants.py Q_NEUTRON_MEV and m_n_derived_3input moved inside the 60-dps pin (they were binary64-in-mpf; m_n_derived_3input now == M_N_MEV exactly, as its comment claims). habiro_frobenius_probe.py raised from 30 to 70 dps (it wrote 60 digits, of which 31-60 were manufactured).
 - OWNER DECISION still open: re-run the two chains under the ruled word (option a)? That changes which partition the deuteron binding is attributed to.
+
+
+2026-10-05 — OWNER: 're-run both chains'. Done on claude/rerun-borromean-chains-2026-10-05; all 12 producers exited 0 and only those 12 witnesses changed.
+- Habiro chain: frobenius_probe (70 dps), norm_probe, conjugate_orbit_probe, head_divisibility_probe, all_primes_probe (423 s). Frobenius summary verdicts unchanged.
+- rho chain: rho_k_h3a_refinement, then co_casimir, frobenius_pairing, lp_dual, wenzl_bridge, crystal, rho_k_co_casimir_extended. Δρ −7.5688 → −28.6465; Occam Δ_λ = −24.2001 (λ=(6)), as the diagnosis predicted.
+- precision-gates --changed: no finding names any of the 12 witnesses. The audit witnesses it rewrote were restored, not committed.
+- NOT changed (content, owner's call): markov-trace-frobenius-selection.md:111 still prints the grouped-era deuteron tr_M; FrobeniusNormRoute.lean's '0.046' comment matches neither version (now 0.0906).
