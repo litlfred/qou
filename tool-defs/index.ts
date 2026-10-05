@@ -69,8 +69,31 @@ export function refreshPlanTool(baseUrl?: string): ToolDefinition {
   });
 }
 
+/**
+ * The check of `processes/content/lean-regenerate-and-diff.bpmn` (TOOLS T9):
+ * regenerate the machine-written Lean in memory and diff it against the
+ * committed files. Exit 0 identical, 1 drift, 2 unknown (a generator could
+ * not run); it writes nothing.
+ */
+export function leanRegenCheckTool(baseUrl?: string): ToolDefinition {
+  return defineTool({
+    id: "lean-regenerate-check",
+    title: "Check the generated Lean is in sync",
+    description:
+      "Regenerate the machine-written Lean in memory with `scripts/gen-gluing-lean.py` (every knot block of " +
+      "`QOU/Knot/GeneratedGluing.lean`) and `scripts/gen-hecke-corner-column.py 3` (`BokutShiaoCornerDepth3` in " +
+      "`UGB/GrobnerShirshov/HeckeCompletion.lean`), and diff each against the committed text. Exit 0 identical, " +
+      "1 drift (with a unified diff), 2 unknown when a generator cannot run — never reported as a pass. Writes nothing.",
+    install: { none: true },
+    invoke: { shell: "python3 scripts/check-generated-lean.py" },
+    io: { inputs: [], outputs: [] },
+    satisfies: ["lean-generation"],
+    requires: { runtime: ["python3"], network: false },
+  });
+}
+
 export function tools(baseUrl?: string): ToolDefinition[] {
-  return [refreshPlanTool(baseUrl), ...producerTools(baseUrl)];
+  return [refreshPlanTool(baseUrl), leanRegenCheckTool(baseUrl), ...producerTools(baseUrl)];
 }
 
 function producerTools(baseUrl?: string): ToolDefinition[] {
