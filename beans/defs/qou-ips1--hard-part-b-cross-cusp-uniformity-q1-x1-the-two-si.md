@@ -1,11 +1,14 @@
 ---
 # qou-ips1
 title: 'HARD: Part B cross-cusp uniformity (q→1⁺, x→1⁻) — the two-sided/complex analytic successor to B3.1-B3.5; iπ branch-phase assembly (algebraic pieces log_neg_factor_split + LiTwo_one already sorry-free)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-24T20:47:13Z
-updated_at: 2026-07-25T02:51:51Z
+updated_at: 2026-10-04T15:13:05Z
+parent: b9cj
 ---
 
 
@@ -22,3 +25,9 @@ Still open (the hard analytic core): the *uniform* cancellation of the i*pi towe
 subtracted regularization converges (uniformly in the q->1+ x n->inf scaling) to
 Li2(x) - pi^2/3. Two-sided Tauberian successor to B3.1-B3.5; needs complex/
 meromorphic uniformity, not just the per-factor identity. Bean stays open.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-07-25 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

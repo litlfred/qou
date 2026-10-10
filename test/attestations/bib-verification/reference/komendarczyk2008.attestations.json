@@ -1,0 +1,107 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "komendarczyk2008",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 190,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-0808.1533v1/0808.1533v1.pdf"
+        },
+        "id": "komendarczyk2008",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED against the document's front matter. THE REGISTRY NOTE IS ACCURATE \u2014 I checked every specific claim it makes and all four hold: Theorem 6.1 (Energy bound), p. 25, gives |H\u2081\u2082\u2083(X;T)| \u2264 C_T (E\u2082(X))^{3/2} with C_T bounded by a GEOMETRIC quantity (\u2016\u03c9\u2016\u00b2_{L\u221e} \u03a9\u00b2(T\u0303)(Vol S\u00b3)\u00b3 / \u221a\u03bb_{1,N}), not a topological one; Remark 2.6, p. 12, proves the antisymmetry of the integral formula (9); Corollary 2.5, p. 11, is the pair-indexed torus restriction forced to zero under the unlinked hypothesis; eq. (43), p. 26, reads E_{3/2}(X) \u2265 (\u03c0/16)^{1/4} \u03a3_{k=1}^n ac(L_k, L)|Flux(X_k)| \u00b7 min_k|Flux(X_k)|, confirming BOTH corrections the note records \u2014 that ac(L_k, L) is ONE COMPONENT AGAINST THE WHOLE LINK (not pairwise) and that the prefactor is a pure constant with NO volume factor. SAME DEFECT AS ITS TWO SIBLINGS IN THIS SLICE: it is a BIB ORPHAN. `rg` over content/, computations/ and docs/ returns exactly one hit, the `ref()` entry at references.ts:8108. The audit doc `2026-08-01-em-linking-reads-round1.md` works through this source at length in \u00a7Round 3 and \u00a7Round 5 but never writes the refid, so no key-based grep reaches it. A negative that settles two obstructions for bean qou-o6ml is stored where the dependency graph cannot see it.",
+          "keyResults": [
+            {
+              "locator": "Thm 6.1 + eq. (41), p. 25",
+              "statement": "|H\u2081\u2082\u2083(X;T)| \u2264 C_T (E\u2082(X))^{3/2} for a volume-preserving field with an invariant unlinked domain; C_T is estimated by geometric data (\u2016\u03c9\u2016_{L\u221e}, \u03a9(T\u0303), Vol(S\u00b3), \u03bb_{1,N}).",
+              "useForFolio": "A third-order-helicity energy bound DOES exist, but its constant is geometric and degrades as the handlebodies approach \u2014 exactly the regime the binding attack needs.",
+              "targets": [
+                "docs/audits/2026-08-01-em-linking-reads-round1.md"
+              ]
+            },
+            {
+              "locator": "Rem. 2.6, p. 12",
+              "statement": "The third-order integral formula (9) is antisymmetric.",
+              "useForFolio": "Proves obstruction O1 (antisymmetry) rather than merely conjecturing it.",
+              "targets": [
+                "docs/audits/2026-08-01-em-linking-reads-round1.md"
+              ]
+            },
+            {
+              "locator": "eq. (43), p. 26",
+              "statement": "E_{3/2}(X) \u2265 (\u03c0/16)^{1/4} \u03a3_k ac(L_k, L)|Flux(X_k)| \u00b7 min_k |Flux(X_k)|, where ac(L_k, L) is the asymptotic crossing number of ONE component against the WHOLE link.",
+              "useForFolio": "Rules out a per-pair asymptotic-crossing-number reading of the Freedman\u2013He bound; the prefactor carries no volume factor.",
+              "targets": [
+                "docs/audits/2026-08-01-em-linking-reads-round1.md"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Add refid-keyed citation sites in the em-linking audit doc (and in any bean qou-o6ml artifact) so the Thm 6.1 / Rem 2.6 / eq. (43) findings stop living only in a references.ts note.",
+              "target": "docs/audits/2026-08-01-em-linking-reads-round1.md",
+              "bean": "qou-o001"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "85bb9732afdd"
+        }
+      }
+    },
+    {
+      "position": 191,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-0808.1533v3/0808.1533v3.pdf"
+        },
+        "id": "komendarczyk2008",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Join CORRECT (arXiv:0808.1533v3, Komendarczyk, 'The third order helicity of magnetic fields via link maps'). Note the registry note says the uploaded file is 0808.1533v1; the file present is v3 (dated 18 Jun 2009), so the note's version reference is stale even though the paper is right. BIB ORPHAN: full-tree grep returns zero hits outside folio/schema/references.ts. This is the odd case in the slice - the registry note records a full, careful reading (twice, including a round-5 re-read of Sec. 6 eq. (43)) with substantive findings that overturned two prior corpus readings, yet the key is cited nowhere and those findings live only inside a CSL note field. The paper's content, confirmed from the abstract and Sec. 1: an alternative construction of third-order helicity for a volume-preserving field B via the correspondence between Milnor's mu-bar-123 for 3-component links and homotopy invariants of maps to configuration spaces, with a geometric proof in the Borromean case, an L^2-energy lower bound for B, and an Arnold-style ergodic interpretation as an average asymptotic mu-bar-123 of orbits. The registry note's own scoping is correct and worth preserving: the energy bound's constant is geometric, not topological, and degrades exactly in the regime of interest. Supporting rather than core because the folio has helicity blocks that would host it but no block currently derives anything from it.",
+          "keyResults": [
+            {
+              "locator": "Abstract; Sec. 6 (incl. eq. (43)); Rem. 2.6; Cor. 2.5",
+              "statement": "Third-order helicity of a volume-preserving field on invariant unlinked domains, realised as an average asymptotic mu-bar-123 of orbits, with an L^2-energy lower bound whose constant is geometric.",
+              "useForFolio": "The Borromean third-order invariant is the natural many-body object for the Borromean-link blocks; the registry note already extracted the two negatives (total antisymmetry of mu-bar-123, and Flux^3 rather than Flux^2 scaling) that constrain a Coulomb-like pair-energy ansatz.",
+              "targets": [
+                "rem:helicity-physical"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "The registry CSL note is carrying multi-paragraph mathematical findings from two full reads - including corrections to prior corpus readings of the Freedman-He bound - that belong in a citable remark, not in a bibliography note field. Promote the findings to a remark and cite the key there, which also retires the bib orphan.",
+              "target": "rem:helicity-physical",
+              "bean": "qou-2vx4"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "3e003cc35a4e"
+        }
+      }
+    }
+  ]
+}

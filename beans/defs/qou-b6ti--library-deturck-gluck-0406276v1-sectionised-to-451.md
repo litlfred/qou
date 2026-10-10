@@ -4,8 +4,11 @@ title: 'Library: DeTurck-Gluck (0406276v1) sectionised to 4510 chars of 40 pages
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T08:20:08Z
-updated_at: 2026-09-07T11:33:28Z
+updated_at: 2026-10-04T15:21:15Z
+parent: qou-mub3
 ---
 
 Found 2026-09-07 by a six-path corpus-grep on the EM-linking front

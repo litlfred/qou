@@ -36,7 +36,7 @@ universe u v
     - λ is the Frobenius form -/
 -- Ref: [donaldson1990], [manuscript] §1
 structure CategoricalYangMills (C : Type u) [Category.{v} C]
-    [MonoidalCategory C] [CategoryTheory.Limits.HasZeroMorphisms C] where
+    [MonoidalCategory C] [CategoryTheory.BraidedCategory C] [CategoryTheory.Limits.HasZeroMorphisms C] where
   /-- The Frobenius–Hopf object A. -/
   fh : FrobeniusHopfData C
   /-- The curvature object (2-forms). -/
@@ -59,7 +59,7 @@ structure CategoricalYangMills (C : Type u) [Category.{v} C]
 /-- **Instanton condition**: F_∇ is self-dual (F⁻ = 0). -/
 -- Ref: [donaldson1990], [manuscript] §1
 structure Instanton (C : Type u) [Category.{v} C]
-    [MonoidalCategory C] [CategoryTheory.Limits.HasZeroMorphisms C]
+    [MonoidalCategory C] [CategoryTheory.BraidedCategory C] [CategoryTheory.Limits.HasZeroMorphisms C]
     extends CategoricalYangMills C where
   /-- The anti-self-dual part vanishes: F⁻ = 0.
       Encoded: the projection to Ω⁻ is zero. -/
@@ -69,7 +69,7 @@ structure Instanton (C : Type u) [Category.{v} C]
 /-- **Self-duality theorem**: critical points of S[∇] are instantons. -/
 -- Ref: [donaldson1990], [manuscript] §1
 theorem categorical_self_duality {C : Type u} [Category.{v} C]
-    [MonoidalCategory C] [CategoryTheory.Limits.HasZeroMorphisms C]
+    [MonoidalCategory C] [CategoryTheory.BraidedCategory C] [CategoryTheory.Limits.HasZeroMorphisms C]
     (ym : CategoricalYangMills C)
     (h_crit : ym.curvature ≫ ym.projMinus = 0) :
     ∃ inst : Instanton C, inst.toCategoricalYangMills = ym :=

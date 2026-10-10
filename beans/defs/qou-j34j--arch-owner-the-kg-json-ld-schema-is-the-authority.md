@@ -2,10 +2,13 @@
 # qou-j34j
 title: 'ARCH (owner): the KG (JSON-LD + schema) is the AUTHORITY; .ts becomes a rendered artifact'
 status: todo
-type: epic
+type: feature
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-26T14:20:26Z
-updated_at: 2026-09-26T20:02:00Z
+updated_at: 2026-10-04T15:15:13Z
+parent: qou-n4r9
 ---
 
 ## The ruling (owner, 2026-09-26, verbatim)

@@ -7,9 +7,10 @@ priority: high
 tags:
     - platform
     - config
+    - reorg-2026-10-04
 created_at: 2026-09-26T10:31:54Z
-updated_at: 2026-09-26T10:36:11Z
-parent: qou-ty42
+updated_at: 2026-10-04T15:14:36Z
+parent: qou-n4r9
 ---
 
 **Measured 2026-09-26. This is the one LIVE defect in the set — it bites at the

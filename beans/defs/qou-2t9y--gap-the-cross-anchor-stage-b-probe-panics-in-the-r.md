@@ -4,8 +4,11 @@ title: 'GAP: the cross-anchor Stage B probe panics in the Rust engine — its co
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T07:02:45Z
-updated_at: 2026-09-13T07:03:34Z
+updated_at: 2026-10-04T15:20:25Z
+parent: qou-2002
 ---
 
 

@@ -4,8 +4,11 @@ title: 'GAP: a Lean rename has no transitive-consumer guard — two regressions 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T16:26:11Z
-updated_at: 2026-08-30T16:26:54Z
+updated_at: 2026-10-04T15:19:39Z
+parent: qou-5vkl
 ---
 
 ## The evidence — two regressions, one cause, both mine

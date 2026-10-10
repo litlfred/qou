@@ -1,13 +1,15 @@
 ---
 # qou-274x
 title: 'GAP MAP: Sₙ rep-theory frontier — what exists vs what''s genuinely open'
-status: todo
+status: completed
 type: task
+priority: normal
 tags:
     - lean
     - sn-rep-theory
+    - reorg-2026-10-04
 created_at: 2026-08-02T00:08:48Z
-updated_at: 2026-08-02T00:08:48Z
+updated_at: 2026-10-04T15:19:30Z
 parent: qou-0ap1
 ---
 
@@ -27,3 +29,9 @@ GENUINELY OPEN (hard, multi-session; sorries concentrated here):
 3. Specht module completeness (P1: every Sₙ irrep is some S^λ) + JM seminormal eigenvalue LABELLING (JucysMurphy.seminormalVector_base_exists, SnWedderburnPartitionBridge.sn_isotypic_specht_split). Needs Mathlib.RepresentationTheory — only ~30 RT oleans in the qou lake-cache (partial), so LARGELY NOT lean-direct verifiable in this sandbox. This is the labelling that turns the proved abstract Wedderburn blocks into λ⊢n-indexed ones.
 
 BOTTOM LINE: 'build the missing Sₙ infra' is mostly DONE. Residual = (a) RSK proof, (b) HLF proof, (c) Specht/JM partition-LABELLING of already-proved abstract blocks — each a genuine theorem, (c) needs a full-Mathlib env. See docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md (phases P1-P5, all updates through 2026-07-02).
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] Sn frontier gap map: target decl/file sorry-free on main 2026-10-03; [B] sp00 completed epic lists bricks axiom-clean (#print axioms). Conditional-in-form only on SnIsotypicSpechtSplit, which is i

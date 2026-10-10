@@ -4,8 +4,11 @@ title: Two in-scope producers CRASH and cannot be regenerated — and one crashe
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T14:55:28Z
-updated_at: 2026-08-24T14:52:21Z
+updated_at: 2026-10-04T15:25:14Z
+parent: qou-5vkl
 ---
 
 Both reproduce under a recorded environment (`mpmath 1.3.0 / sympy 1.14.0 /

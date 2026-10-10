@@ -3,8 +3,12 @@
 title: 'ordering-cache.json: 9 of 11 checkable entries are stale, and a plain re-run TRUNCATES it 270 to 11'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T02:59:18Z
-updated_at: 2026-08-16T02:59:18Z
+updated_at: 2026-10-04T15:21:53Z
+parent: qou-5vkl
 ---
 
 

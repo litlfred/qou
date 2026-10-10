@@ -4,8 +4,11 @@ title: 'MAIN-SIDE: ~508 of 2749 witnesses carry a drifted scriptHash (18%)'
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T07:40:00Z
-updated_at: 2026-08-08T07:40:00Z
+updated_at: 2026-10-04T15:14:57Z
+parent: qou-5vkl
 ---
 
 Found during the PR #4513 prepare-merge gate check. **This is a main-side

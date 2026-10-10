@@ -4,8 +4,11 @@ title: 'GAP: are the six antipode axioms independent, and is the braiding instan
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-15T08:45:13Z
-updated_at: 2026-09-15T09:15:12Z
+updated_at: 2026-10-04T15:19:44Z
+parent: qou-6qbv
 ---
 
 ## Two loose ends from the 2026-09-15 antipode change (`qou-c64q`), both found by red-teaming it

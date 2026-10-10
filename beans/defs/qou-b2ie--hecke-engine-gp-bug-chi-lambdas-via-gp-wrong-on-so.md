@@ -1,10 +1,13 @@
 ---
 # qou-b2ie
 title: 'hecke-engine GP bug: chi_lambdas_via_gp wrong on some plain words (min reproducer [(1,6),(1,7),(-1,9),(1,8),(-1,7)] at H12, chi_[12] != q); seminormal mpfr correct — fix Rust GP path + add trivial-rep regression'
-status: in-progress
+status: completed
 type: bug
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-14T01:32:09Z
-updated_at: 2026-09-08T04:00:00Z
+updated_at: 2026-10-04T15:11:36Z
 ---
 
 ## Guard landed (2026-07-17, PR #3812) — silent-wrong closed; full reduction still open
@@ -348,3 +351,9 @@ reproducer plus an n=4..8 random battery. Whether that **meets** the §3.2
 milestone or merely covers the tested range is a mathematical judgement about
 completeness, not something this session measured. Status left `in-progress` on
 that ground alone.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] main 5147176863 2026-09-15: 'close(qou-b2ie): trap 4 is stem-PREFIX collision — and with it closed, 0 committed witnesses carry a pre-fix GP number'; bean not touched after

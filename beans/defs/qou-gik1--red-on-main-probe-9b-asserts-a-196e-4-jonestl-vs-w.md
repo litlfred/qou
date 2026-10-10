@@ -4,8 +4,11 @@ title: 'RED on main: probe_9b asserts a 1.96e-4 Jones/TL-vs-Wenzl trace gap that
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T06:21:19Z
-updated_at: 2026-09-13T09:14:16Z
+updated_at: 2026-10-04T15:23:17Z
+parent: qou-9nnz
 ---
 
 ## The measurement

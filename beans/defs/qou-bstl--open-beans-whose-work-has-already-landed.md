@@ -4,8 +4,11 @@ title: Open beans whose work has already landed — measured, and it cost this s
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T08:40:00Z
-updated_at: 2026-09-05T09:31:23Z
+updated_at: 2026-10-04T15:14:59Z
+parent: qou-5vkl
 ---
 
 ## The finding

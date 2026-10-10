@@ -1,11 +1,13 @@
 ---
 # qou-6g7j
 title: 'Session: stalled-agent takeover 2026-09-07 — observable C, #7092 coboundary, Z-resolved b3, REV Σβ, SandwichReduces'
-status: in-progress
-type: epic
+status: completed
+type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T18:06:39Z
-updated_at: 2026-09-12T18:02:40Z
+updated_at: 2026-10-04T15:11:33Z
 ---
 
 Branch claude/stalled-agents-em-linking-jilmbv. Owner instruction 2026-09-07: several agents stalled; bean up, take up their work, dispatch agents, consolidate toward L2 with the binding gap read as SHAPE (PR #7005: 5.81 digits of b3 resolution lost to the mirror convention, none to experiment; qou-hok7: REV_n is a free energy over partition shapes).
@@ -53,3 +55,9 @@ Lean `QOU/Mass/GradedBindingFunctionalPairTerm.lean` (generic CommRing; formal l
 **Collision found, not resolved (no functional picked by its numbers):** the corpus carries two inequivalent log readings -- log of the Markov-weighted TOTAL trace (bond-additive on the chain) vs `unified-iterative-correction`'s weighted sum of PER-BLOCK logs. A single Wedderburn block is not multiplicative even on the chain. The production UIC scan exceeded 300 s/atom and is left as the one open measurement on `qou-zlra`; it is the only corpus functional outside the additive class, so it is the one place a type-two two-bond correlation could still live.
 
 Net: classes A, B, C of `qou-brng` are closed or narrowed by proved invariants, and class D is narrowed to the per-block log. `qou-brng` stays OPEN (rule 13a).
+
+
+
+## Summary of Changes
+
+Session log closed 2026-10-04 (owner decision 2): open children were reparented to programme epics and prose follow-ups extracted as their own beans. Kept as a record, not deleted.

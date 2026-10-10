@@ -4,8 +4,10 @@ title: 'STALE: 2026-05-30 atom-braid audit says Mathlib CoxeterSystem API is in 
 status: todo
 type: task
 priority: low
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T09:08:25Z
-updated_at: 2026-09-04T09:08:25Z
+updated_at: 2026-10-04T15:26:01Z
 parent: qou-8lxd
 ---
 

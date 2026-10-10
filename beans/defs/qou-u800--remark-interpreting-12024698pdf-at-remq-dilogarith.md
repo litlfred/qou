@@ -4,8 +4,11 @@ title: Remark interpreting 1202.4698.pdf at rem:q-dilogarithm-pentagon-associato
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T00:10:51Z
-updated_at: 2026-08-21T17:05:05Z
+updated_at: 2026-10-04T15:23:30Z
+parent: qou-vva9
 ---
 
 rem:q-dilogarithm-pentagon-associator asserts the dilogarithm-associator-6j identification without a semiclassical anchor. A remark can record that in the modular double the b -> 0 limit of the 6j symbol is a hyperbolic tetrahedron volume, and must state the applicability check: the tetrahedra are non-ideal (six free dihedral angles), so this does not by itself supply Vol(4_1) or any ideal-triangulation volume the corpus uses -- what would need checking is the ideal limit of eq (3.3).

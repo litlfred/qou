@@ -4,8 +4,11 @@ title: 'q-RH: the spectral coordinate map alpha_i = q^rho_i has no carrier'
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T17:00:00Z
-updated_at: 2026-08-31T07:31:14Z
+updated_at: 2026-10-04T15:15:01Z
+parent: qou-4fqg
 ---
 
 The cheapest real gap in the q-Riemann-hypothesis arc. Review:

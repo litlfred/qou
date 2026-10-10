@@ -1,11 +1,17 @@
 ---
 # qou-v2aa
 title: 'Phase 1: Split PI into Ch9 (defs) + Ch11 (compute) manifests'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-04T01:29:45Z
-updated_at: 2026-08-04T01:30:00Z
-parent: qou-vwu9
+updated_at: 2026-10-04T15:13:28Z
+parent: qou-8lxd
 ---
 
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

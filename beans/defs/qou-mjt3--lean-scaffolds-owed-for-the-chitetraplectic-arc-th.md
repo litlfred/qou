@@ -4,9 +4,11 @@ title: 'Lean scaffolds owed for the chi/tetraplectic arc (the ''all assertions l
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-15T21:23:32Z
-updated_at: 2026-09-15T22:57:52Z
-parent: qou-dgce
+updated_at: 2026-10-04T15:21:09Z
+parent: qou-8lxd
 ---
 
 Owner instruction 2026-09-15: 'bean up and roast as recommended'. LEDGER of the arc's assertions by epistemic tier (measured 2026-09-15). LEAN, sorry-free, on the branch: (a) S_5 character arithmetic — H^1(T_{Sigma_4}) = [4,1]+[3,2], Sym^2/Sym^3/Alt^2 of V_4, V_4 (x) [3,2], forms on [3,2] and on H^1(T), the S_5-invariant Hochschild ledger of the base (QOU/Brings/S5CharactersOnBringDeformations.lean, decide, axioms [propext]); (b) the exact rational identities behind the two regularisations of dim_q(O_q(SU(2))) and [2]_q = q + q^-1 (QOU/Information/DimqRegularisationIdentities.lean, field_simp); (c) pre-existing: categorical trace = Markov trace under convention D at n=3 (markovWeights_eq_jones_of_fibre_categorical), Cartan contraction lemmas, the quaternion bracket (BringCone.lean), gammaGamma_length_even. PROBE-MEASURED, exact rationals, NOT Lean: brute-force check of the power-sum formulas over 120 permutations (the Lean takes the formulas as definitions). CITED THEOREMS, not formalised: HKR for a smooth curve; Serre duality; the normal-bundle splitting N_C = O(2)+O(3) and H^1(T_P3|_C) = 0 (route 2); Max Noether (route 1); Whitehead's lemmas; Brown–Zhang twisted duality; the zeta-continuation convention; deg K = 2g-2 and the link-of-cone = circle bundle of O(-1) (bean on the 3-Sasakian finding). NOT YET WRITTEN (this bean): (1) class WignerAxiom over a field k with fields finrank_obstruction_eq_one and euler_image (the archimedean image of the generator is the Euler class of T_{M_0}) — the §3b-cond carrier for def:skein-resolution-obstruction / thm:qou-obstruction-reduction, which E1 already made conditional on conj:wigner-axiom; (2) equivariance no-go: given the decomposition (a), any S_5-equivariant linear map from a trivial 1-dim representation into H^1(T) is zero — Schur, finite; states in Lean what bean qou-nnyn's analysis says in prose; (3) K_0 -> HH_0 -> k: dim_q(V_n) = [n+1]_q as the evaluation of ch on the Wedderburn blocks (needs the QuantumUniverse.dimQ field; scaffold as a def + the n=1 identity); (4) link Euler number: e(T_{Sigma_4}) = 2 - 2g = -6 = -deg(B) with deg = 2*3 — trivial arithmetic, but it pins the -6 to the cone geometry. Items 1-2 are the ones that make thm:qou-obstruction-reduction honest under §3b-cond; do them first.

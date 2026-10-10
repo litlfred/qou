@@ -1,11 +1,14 @@
 ---
 # bws0
 title: 'Keystone: full formal closure of bwS0_eq_hecke (the loc_matches gate)'
-status: in-progress
-type: milestone
+status: todo
+type: feature
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-27T00:30:00Z
-updated_at: 2026-09-03T04:47:36Z
+updated_at: 2026-10-04T15:10:39Z
+parent: b9cj
 ---
 
 Full formal closure of `bwS0_eq_hecke` (`KeystoneVerlindeSMatrixBridge.BWVacuumRowIsHecke`) —
@@ -53,3 +56,9 @@ The list above still reads:
 So the closure condition in this bean's last line — *"Closure = bwsc + bwsd landed; then bwse is the one remaining cited hinge"* — should read: **closure = bwsc landed** (at level 6, or via the all-roots family with no degree hypothesis), then `bwse`.
 
 Neither correction touches the open content. `bwsc` is still the WRT agreement itself, of which `KeystoneLRAmplitudeReal` (#4365) supplies the `Sigma(2,3,5)` slice; `bwse` is still a physics input that `AGENTS.md §Axiomatization-is-NOT-a-Proof` forbids laundering into a derivation.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

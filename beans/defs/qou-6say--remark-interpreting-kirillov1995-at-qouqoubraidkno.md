@@ -3,8 +3,12 @@
 title: Remark interpreting [kirillov1995] at qou:QOU.BraidKnot.Li2qUniqueness
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:55Z
-updated_at: 2026-08-08T23:36:55Z
+updated_at: 2026-10-04T15:23:51Z
+parent: qou-vva9
 ---
 
 Three of the four Lean -- Ref: locators in Li2qUniqueness.lean point at content that is not at the cited place (Propositions 2.1 and 2.3 do not exist under this paper's numbering; the q-dilogarithm is Definition 9 of Sec. 2.5, not Sec. 2.1, and in the asymmetric normalisation). The locators need correcting and the symmetric-versus-asymmetric normalisation difference needs stating. Deliberately NOT filed as aid-proof: the Sec. 2.3 classification looks like it could prune candidate dilogarithm closed forms, but I have not checked that the corpus's candidates satisfy its algebraicity and rationality hypotheses, so no claim is made that any gap closes.

@@ -4,8 +4,11 @@ title: lean-build-bg.sh anti-eviction guard is INERT in both directions on a tra
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T05:41:01Z
-updated_at: 2026-09-13T05:43:14Z
+updated_at: 2026-10-04T15:21:10Z
+parent: qou-5vkl
 ---
 
 ## Measured 2026-09-13 by the lean-verifier subagent, on this container

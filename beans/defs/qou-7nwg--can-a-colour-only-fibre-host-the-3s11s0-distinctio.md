@@ -3,8 +3,12 @@
 title: can a colour-only fibre host the 3S1/1S0 distinction at all? the two-nucleon bound/unbound split is spin-tensor, and Schur-Weyl kills spinor C^2
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T02:09:31Z
-updated_at: 2026-08-16T02:09:31Z
+updated_at: 2026-10-04T15:16:51Z
+parent: qou-v2om
 ---
 
 

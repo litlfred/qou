@@ -4,8 +4,11 @@ title: Remark interpreting 0306165v1.pdf at conj:kashaev-volume-conjecture
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:27Z
-updated_at: 2026-08-21T17:04:50Z
+updated_at: 2026-10-04T15:23:26Z
+parent: qou-vva9
 ---
 
 The generalised (one-parameter) volume conjecture strictly contains the Kashaev statement the corpus adopts; a remark recording that containment would place the corpus's 4_1 anchor in its published family.

@@ -1,11 +1,14 @@
 ---
 # qou-3zby
 title: cross-check-trM-1ppb committed witness is stale on main — C/D straddle across its four methods
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T13:23:15Z
-updated_at: 2026-08-23T15:35:27Z
+updated_at: 2026-10-04T15:12:15Z
+parent: qou-2002
 ---
 
 Found during /prepare-merge on PR #5199 (provenance triage). NOT that branch's regression -- cross_check_trM_1ppb.py reads none of its files (inputs are atomic-tr-m-mpfr-50dps, canonical-tr-m-via-chi-cache, habiro-coefficients-extended, markov-peel-atomic-tr-m-muon, q-pinning-50-digit). Confirmed inherited: a pristine origin/main worktree (cbb49a1a35) exits 1 on the same gate.
@@ -249,3 +252,9 @@ whose substantive fields did not move. I reverted it here rather than
 commit it. `precision-gates.sh` already treats `invocation` as ephemeral
 and auto-reverts on that basis, so the two disagree about whether the
 field is worth committing; worth reconciling when this bean is worked.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-23 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

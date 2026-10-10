@@ -3,8 +3,12 @@
 title: 'RELATED-WORK + ROAST: McPhail-Snyder 2601.05136 diagrammatic state integrals vs the qnnq braid->data gap — verdict: relocates the gap, does NOT close it (ρ is an INPUT; k∈Z^E is SUMMED not selected; root-of-unity/fibre object, not q₀; targets Volume Conjecture not c₃)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-01T18:52:13Z
-updated_at: 2026-08-01T18:52:13Z
+updated_at: 2026-10-04T15:23:22Z
+parent: qou-n4nr
 ---
 
 ## Related work

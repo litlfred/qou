@@ -4,8 +4,11 @@ title: Cite 1102.3530v1.pdf at rem:complex-volume-character-variety-path
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:00Z
-updated_at: 2026-08-21T17:04:41Z
+updated_at: 2026-10-04T15:17:08Z
+parent: qou-19m0
 ---
 
 The complex-volume path block discusses the Vol + i*CS pairing and its phase companion along the deformation path; this document gives the 4_1-specific colored-Jones extraction of CS together with the torsion.

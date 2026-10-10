@@ -1,11 +1,14 @@
 ---
 # qou-a3qo
 title: 'AGENTS/cheat-sheet: "the lambda_A fit artifact" cites an audit measured 6-of-7 ROBUST'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T18:32:11Z
-updated_at: 2026-09-14T18:32:11Z
+updated_at: 2026-10-04T15:11:51Z
+parent: qou-nu9d
 ---
 
 ## 2026-09-14 — the finding, the fix, and the two things NOT touched
@@ -79,3 +82,9 @@ is to open the cited doc and read its conclusion, not its title.
 **And "3 sites" was wrong before it was measured.** I told the owner ~3; it is 4,
 all in one file, and zero in the file I named first. Measure the surface before
 quoting its size, including when the surface is prose.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-14 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

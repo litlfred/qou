@@ -4,8 +4,11 @@ title: 'Compute infra: audit substrate probes for BlockCache/LaurentQ wiring + s
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-06-28T06:54:32Z
-updated_at: 2026-06-28T15:06:10Z
+updated_at: 2026-10-04T15:18:00Z
+parent: qou-5vkl
 ---
 
 

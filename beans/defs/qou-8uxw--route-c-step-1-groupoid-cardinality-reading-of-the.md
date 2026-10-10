@@ -1,12 +1,14 @@
 ---
 # qou-8uxw
 title: 'Route C step 1: groupoid-cardinality reading of the q=1 component-count cross term (Baez–Hoffnung–Walker)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T03:31:25Z
-updated_at: 2026-09-07T10:03:41Z
-parent: qou-2akx
+updated_at: 2026-10-04T15:13:52Z
+parent: qou-v2om
 ---
 
 ## 2026-09-06 — MEASURED: POSITIVE and exact at q = 1
@@ -95,3 +97,9 @@ docstring):
 Step 1 (S2 Lean) was correctly declined on 2026-09-07 as definitional; step 3
 (S1) landed as `WeightedCountConvolution`. So the plan's queue is now clear
 except for the packaging in limit 3.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

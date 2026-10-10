@@ -5,15 +5,17 @@ status: todo
 type: task
 priority: high
 tags:
+    - whitehead-link
+    - borromean-rings
+    - reorg-2026-10-04
     - one-loop
     - c-sigma
     - adjoint-torsion
     - van-der-veen
     - gukov-murakami
-    - whitehead-link
-    - borromean-rings
 created_at: 2026-08-08T14:07:16Z
-updated_at: 2026-08-08T22:00:00Z
+updated_at: 2026-10-04T15:14:40Z
+parent: qou-n4nr
 ---
 
 ## The ask — RESTATED 2026-08-08, after qou-vdvS closed

@@ -1,10 +1,13 @@
 ---
 # qou-qqzm
 title: Add reference for [dgkmsv2009] at conj:brunnian-property-of-borromean
-status: todo
+status: scrapped
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:47Z
-updated_at: 2026-08-08T23:35:47Z
+updated_at: 2026-10-04T15:16:16Z
 ---
 
 The published journal version (venue, year, volume, pages, DOI) differs from the registered preprint stanza; either correct dgkmsv2009 to the published metadata or register the published version as a distinct entry and cross-note the two uploads.
@@ -17,3 +20,10 @@ Source: `library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/de
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-d2s7` (work-plan reorganisation 2026-10-04). Evidence: [M] same cite key + same target block
+Content is untouched; only this work item is closed.

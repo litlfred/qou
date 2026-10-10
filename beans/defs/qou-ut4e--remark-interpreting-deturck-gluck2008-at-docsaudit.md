@@ -3,8 +3,12 @@
 title: Remark interpreting [deturck-gluck2008] at docs/audits/2026-08-01-em-linking-reads-round1.md
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:10Z
-updated_at: 2026-08-08T23:34:10Z
+updated_at: 2026-10-04T15:23:44Z
+parent: qou-aqfj
 ---
 
 Correct the audit doc's 'mixed/corrupted; only tail pages recovered' verdict for this file and remove the source from the re-upload list — the PDF reads cleanly and all three cited theorems are verifiable in-repo.

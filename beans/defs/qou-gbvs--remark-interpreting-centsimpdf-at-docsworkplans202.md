@@ -4,8 +4,11 @@ title: Remark interpreting centsim.pdf at docs/workplans/2026-06-08-uploaded-pap
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:35Z
-updated_at: 2026-08-21T17:04:55Z
+updated_at: 2026-10-04T15:23:57Z
+parent: qou-aqfj
 ---
 
 Record the extraction fact so the next agent does not re-fail: this upload is an image-only scan with no text layer; pdftotext/pypdf/pdfminer all return zero characters and tesseract is unavailable, so it must be read via the vision path. It sat as 'UNVERIFIED -- identify on ingestion' in the 2026-06-08 ingestion backlog for that reason.

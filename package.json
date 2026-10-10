@@ -2,11 +2,7 @@
   "name": "qou",
   "private": true,
   "type": "module",
-  "scripts": {
-    "build:docs": "typedoc"
-  },
   "devDependencies": {
-    "typedoc": "^0.28.17",
     "typescript": "^5.9.3"
   },
   "dependencies": {

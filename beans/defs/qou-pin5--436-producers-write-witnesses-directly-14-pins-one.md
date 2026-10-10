@@ -4,8 +4,11 @@ title: 436 producers write witnesses with a raw json.dump — 14 pinned witnesse
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T21:40:00Z
-updated_at: 2026-08-16T11:42:13Z
+updated_at: 2026-10-04T15:16:04Z
+parent: qou-9nnz
 ---
 
 Found by causing it. On 2026-08-08 I fixed `t25_cinquefoil_deltalambda_sign_probe`'s

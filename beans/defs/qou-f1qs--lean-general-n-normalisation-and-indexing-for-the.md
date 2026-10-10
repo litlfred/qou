@@ -3,8 +3,12 @@
 title: 'Lean: general-n normalisation and indexing for the two-row weights (yw_branching is done)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T17:54:39Z
-updated_at: 2026-08-10T17:54:39Z
+updated_at: 2026-10-04T15:21:11Z
+parent: qou-0cyu
 ---
 
 

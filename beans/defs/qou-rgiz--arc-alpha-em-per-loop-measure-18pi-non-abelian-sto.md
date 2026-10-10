@@ -1,13 +1,15 @@
 ---
 # qou-rgiz
 title: 'Arc: alpha_EM per-loop measure 1/(8pi) — non-abelian Stokes germ route (owner-gated on MOC/Phi, low program-value)'
-status: in-progress
-type: milestone
+status: todo
+type: feature
 priority: normal
 tags:
     - sm-26
+    - reorg-2026-10-04
 created_at: 2026-08-29T16:24:57Z
-updated_at: 2026-09-03T08:31:53Z
+updated_at: 2026-10-04T15:11:13Z
+parent: qou-3l2l
 blocked_by:
     - 08a2
     - qou-aemx
@@ -23,3 +25,9 @@ State 2026-08-29: 1/(8pi) OPEN/phase-4, owner-gated on MOC/Phi (=E(q) Gauss-Mani
 (iv) Next: adjudicate which construction is canonical (`qou-aemx`), then the germ route now that the EM holonomy germ is live (`2026-08-29-alpha-em-germ-viability-live.md`) — necessary, not sufficient.
 (v) Forecast: stays `partial`; 0.313 ppb is 209× short of L2 and will not close by adding terms.
 Tower status [reading: qou-ggdk]: MIXED — the ladder is order-by-order, truncated at cubic with Δ₂ uncomputed; `[2]_q(1 − h²α)` is fibre-level (Habiro); the CS resummation 1/(1 − δκ) is all-orders but κ is conjectural. No full-tower derivation of the measure exists.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

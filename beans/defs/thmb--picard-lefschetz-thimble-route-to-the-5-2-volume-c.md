@@ -1,6 +1,6 @@
 ---
 # thmb
-title: 'Picard–Lefschetz / thimble route to the 5₂ volume conjecture — literature + feasibility'
+title: Picard–Lefschetz / thimble route to the 5₂ volume conjecture — literature + feasibility
 status: todo
 type: task
 priority: normal
@@ -8,9 +8,11 @@ tags:
     - thimbles
     - hyperbolic-volume
     - literature
-    - 5_2
+    - "5_2"
+    - reorg-2026-10-04
 created_at: 2026-08-09T19:15:46Z
-updated_at: 2026-08-09T19:15:46Z
+updated_at: 2026-10-04T15:22:04Z
+parent: qou-n4nr
 ---
 
 **Why this bean exists.** The figure-eight volume conjecture is *machine-proved in this

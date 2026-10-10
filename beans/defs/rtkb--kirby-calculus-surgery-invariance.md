@@ -4,8 +4,11 @@ title: 'RT-3: Kirby calculus (surgery presentation + Kirby-move invariance of th
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T09:20:00Z
-updated_at: 2026-08-02T09:20:00Z
+updated_at: 2026-10-04T15:24:14Z
+parent: qou-o9ge
 ---
 
 Parent: rtep. TIER: RESEARCH WALL (3-manifold topology, essentially absent from Mathlib). The RT

@@ -3,8 +3,12 @@
 title: Cite [meissner2004] at conj:lqg-entropy-qdim-partition-pole
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:56Z
-updated_at: 2026-08-08T23:34:56Z
+updated_at: 2026-10-04T15:17:44Z
+parent: qou-1qhv
 ---
 
 The conjecture block lists the reference in its manifest but never invokes it. Cite the criticality/area-quantum result at the point in the block's prose where the LQG entropy is compared, so the reference becomes load-bearing or is dropped.

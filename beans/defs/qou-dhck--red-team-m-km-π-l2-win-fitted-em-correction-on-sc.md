@@ -3,8 +3,12 @@
 title: 'RED-TEAM m_K/m_π L2 win: fitted EM correction on scan-selected term, NOT parameter-free'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T15:35:55Z
-updated_at: 2026-08-22T15:35:55Z
+updated_at: 2026-10-04T15:23:17Z
+parent: qou-3l2l
 ---
 
 Verdict: the single claimed L2 accuracy success (m_K/m_π, 23.45 ppb, 'beats 100x') is NOT a genuine parameter-free prediction.

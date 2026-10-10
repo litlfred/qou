@@ -3,8 +3,12 @@
 title: Remark interpreting [deturck-gluck2008] at rem:helicity-physical
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:27Z
-updated_at: 2026-08-08T23:34:27Z
+updated_at: 2026-10-04T15:23:44Z
+parent: qou-vva9
 ---
 
 Before relying on any bound from this note, record that it states 'we give only a hint of the proofs' - the full proofs are in the journal version, and the constants would need checking there.

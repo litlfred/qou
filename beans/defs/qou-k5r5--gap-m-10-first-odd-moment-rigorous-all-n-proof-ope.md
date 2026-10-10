@@ -1,12 +1,14 @@
 ---
 # qou-k5r5
 title: 'GAP: M_1>0 (first odd moment) — rigorous all-n proof OPEN; identity Lean-proved, Kerov-CLT gives asymptotic only'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-13T11:10:00Z
-parent: qou-x631
+updated_at: 2026-10-04T15:12:57Z
+parent: b9cj
 ---
 
 
@@ -1846,3 +1848,9 @@ positive axis D is non-increasing and 1-Lipschitz"*. All four were re-derived in
 here and all four were already held.
 
 `qou-k5r5` stays OPEN.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

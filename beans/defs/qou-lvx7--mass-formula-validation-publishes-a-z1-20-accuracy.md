@@ -1,11 +1,14 @@
 ---
 # qou-lvx7
 title: mass-formula-validation publishes a Z=1-20 accuracy table at status:verified with NO producer that can make it
-status: in-progress
+status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T08:08:02Z
-updated_at: 2026-09-03T20:34:57Z
+updated_at: 2026-10-04T15:11:37Z
+parent: qou-9nnz
 ---
 
 Surfaced by the qou-zzwm survey (owner question: "investigate 2.4 accuracy
@@ -166,3 +169,9 @@ table, and #6043 already produces one.
 **NOT DONE HERE.** No content edited; this entry is the measurement and the
 recommendation only. Awaiting the owner's word, since (b) touches published
 claims across a whole block.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

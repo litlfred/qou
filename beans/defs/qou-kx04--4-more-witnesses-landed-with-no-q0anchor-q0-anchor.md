@@ -1,11 +1,13 @@
 ---
 # qou-kx04
 title: 4 more witnesses landed with no q0Anchor (Q0_ANCHOR_MISSING 1885 -> 1889)
-status: in-progress
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T22:39:50Z
-updated_at: 2026-09-08T07:45:38Z
+updated_at: 2026-10-04T15:11:47Z
 parent: qou-pq8k
 ---
 
@@ -268,3 +270,10 @@ leak the fix targets is not occurring on this path at all**, which is why the
 **Bean stays open on the fourth witness only.** Three of its four are closed.
 
 ## 2026-09-08: canonical ledger for the q₀-gate family is qou-1c4y (the AGENTS.md-named migration tracker); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 3 / §7.3 C3. Sixteen q₀-gate beans, ~10 % cross-reference density, now all point there.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-6irj` (work-plan reorganisation 2026-10-04). Evidence: [B] increment of the same count (Q0_ANCHOR_MISSING 1885->1889) | STALLED in-progress, last update 2026-09-08 [M]
+Content is untouched; only this work item is closed.

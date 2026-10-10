@@ -4,9 +4,11 @@ title: 'BUILD: give BlochWigner_unit_circle its body (Cl_2) — the opaque seal 
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T09:07:54Z
-updated_at: 2026-09-04T09:07:54Z
-parent: qou-8lxd
+updated_at: 2026-10-04T15:14:41Z
+parent: qou-rtxm
 ---
 
 **BUILD.** `QOU/Archimedean/BlochWignerUnitCircle.lean:67` declares

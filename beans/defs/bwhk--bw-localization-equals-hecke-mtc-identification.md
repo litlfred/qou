@@ -4,8 +4,11 @@ title: 'BWH-2: Beasley-Witten localization = Hecke MTC (the physics identificati
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T09:20:00Z
-updated_at: 2026-08-02T09:20:00Z
+updated_at: 2026-10-04T15:16:49Z
+parent: b9cj
 ---
 
 Parent: rtep. TIER: PHYSICS — NOT a Lean theorem. That the CS/Beasley-Witten localization on S³/2I

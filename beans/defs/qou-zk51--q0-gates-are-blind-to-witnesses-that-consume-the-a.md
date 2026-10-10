@@ -1,11 +1,14 @@
 ---
 # qou-zk51
 title: q0 gates are blind to witnesses that consume the anchor but record only derived numbers
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T08:24:15Z
-updated_at: 2026-09-08T07:45:39Z
+updated_at: 2026-10-04T15:13:35Z
+parent: qou-5vkl
 ---
 
 
@@ -398,3 +401,9 @@ change did far more than it did.** Measure the delta; never diff an absolute
 against a figure recorded on a different base.
 
 ## 2026-09-08: canonical ledger for the q₀-gate family is qou-1c4y (the AGENTS.md-named migration tracker); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 3 / §7.3 C3. Sixteen q₀-gate beans, ~10 % cross-reference density, now all point there.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

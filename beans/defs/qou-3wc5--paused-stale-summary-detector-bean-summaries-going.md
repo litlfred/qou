@@ -4,8 +4,11 @@ title: 'PAUSED: stale-summary detector — bean summaries going stale against co
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T19:21:07Z
-updated_at: 2026-09-14T08:09:00Z
+updated_at: 2026-10-04T15:21:59Z
+parent: qou-5vkl
 ---
 
 

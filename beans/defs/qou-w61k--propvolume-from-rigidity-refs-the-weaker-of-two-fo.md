@@ -4,8 +4,11 @@ title: prop:volume-from-rigidity refs the WEAKER of two formalisations
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T10:38:07Z
-updated_at: 2026-08-23T10:40:20Z
+updated_at: 2026-10-04T15:22:17Z
+parent: b9cj
 ---
 
 ## The ref points at the weaker of two formalisations

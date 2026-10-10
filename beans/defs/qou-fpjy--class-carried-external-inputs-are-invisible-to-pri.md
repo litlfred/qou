@@ -8,8 +8,10 @@ tags:
     - lean
     - audit
     - honesty
+    - reorg-2026-10-04
 created_at: 2026-08-16T12:55:03Z
-updated_at: 2026-08-16T12:55:03Z
+updated_at: 2026-10-04T15:17:57Z
+parent: qou-6qbv
 ---
 
 ## What PR #5230 surfaced

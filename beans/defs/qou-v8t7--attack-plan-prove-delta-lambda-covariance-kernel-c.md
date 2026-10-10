@@ -1,12 +1,14 @@
 ---
 # qou-v8t7
 title: 'ATTACK PLAN: prove Delta_lambda covariance kernel Cov(f,Sc2)<=0'
-status: in-progress
+status: todo
 type: feature
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-25T03:29:34Z
-updated_at: 2026-08-15T23:07:07Z
-parent: qou-x631
+updated_at: 2026-10-04T15:10:45Z
+parent: b9cj
 ---
 
 ## Target
@@ -29,3 +31,9 @@ Okounkov-Olshanski 9608020. lean-lsp available (A4). arXiv-search MCP network-bl
 
 ## Children: A1 exact-eval · A2 log-cov sign · A3 remainder bound · A4 Lean scaffold · A5 Śniady genus.
 ## Session order: A2+A3 (the two legs) first; A4 in parallel (achievable now); A1/A5 as deep bets.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-15 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

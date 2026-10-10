@@ -1,0 +1,47 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "corteel-mallet2006",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 377,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/cor-ma1/cor-ma1.pdf"
+        },
+        "id": "corteel-mallet2006",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "WRONG JOIN. The seeded id was gasper-rahman-2004, whose registered entry is a two-author monograph in a book series. This PDF is a two-author repository preprint on overpartitions, lattice paths and Rogers-Ramanujan identities \u2014 a research article, not that book; identity reported separately to the caller. The filename is an author-abbreviation string, presumably what the seeding matched on. No matching key exists in references.ts, so id is null. ON THE MERITS: the document extends successive-ranks / generalized-Durfee-square / lattice-path machinery to overpartitions, unifying Gordon-type and Goellnitz-Gordon-type Rogers-Ramanujan identities. The folio has no overpartition or Rogers-Ramanujan-identity content \u2014 its q-series work is Habiro cyclotomic expansions, Markov traces and Askey-Wilson recurrences \u2014 and I can name no block that would consume such an identity. Scope: this document, as read, supplies nothing usable here; not a claim that overpartition combinatorics is excluded. SEPARATELY on the gasper-rahman-2004 citation itself: its single site is QOU/QBeta/StageCSigma3LiftObligation.lean:54, cited for three-term recurrences and Casoratian positivity for orthogonal polynomial systems at a specific section locator. That citation is topically load-bearing \u2014 the module's decision rule turns on a single Askey-Wilson three-term recurrence forcing constant Casoratian sign \u2014 but the section locator is now UNVERIFIED, because no copy of the monograph is present in uploads/ (this file is a different work).",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "compute-check",
+              "rationale": "gasper-rahman-2004 is cited at QOU/QBeta/StageCSigma3LiftObligation.lean:54 with a specific section locator for the three-term-recurrence / Casoratian-sign fact the sigma3 lift-kill test depends on, and no copy of the monograph is in uploads/. Confirm the section number in the edition the entry records before the kill test is relied on.",
+              "target": "QOU.QBeta.StageC",
+              "bean": "qou-xugx"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "d90c91dcd82b"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

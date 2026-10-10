@@ -119,6 +119,20 @@ if [ -e "$CLONE_DIR" ] && [ ! -d "$CLONE_DIR/.git" ]; then
   die "$CLONE_DIR exists but is not a git clone — move it aside or set FOLIO_ASSISTANT_DIR"
 fi
 
+# A 40-hex SHA pin (the default, from .folio-assistant-pin) cannot be cloned with
+# --branch, and the fallback full clone of the monorepo did not finish within ten
+# minutes through a proxied sandbox (2026-10-04). Fetch exactly the pinned commit
+# instead: one shallow fetch, then the unified checkout below finds it locally.
+if [ ! -d "$CLONE_DIR/.git" ] && printf '%s' "$REF" | grep -Eq '^[0-9a-f]{40}$'; then
+  info "pin is a SHA — fetching only $REF into $CLONE_DIR"
+  mkdir -p "$CLONE_DIR" && git -C "$CLONE_DIR" init --quiet \
+    && git -C "$CLONE_DIR" remote add origin "$REPO_URL" \
+    && git_retry git -C "$CLONE_DIR" fetch --quiet --depth 1 origin "$REF" \
+    && git -C "$CLONE_DIR" checkout --quiet FETCH_HEAD \
+    || die "shallow fetch of $REF failed (check network / repo access)"
+  SHALLOW_PIN_FETCHED=1
+fi
+
 if [ ! -d "$CLONE_DIR/.git" ]; then
   info "cloning $REPO_URL -> $CLONE_DIR (ref: $REF)"
   # --branch accepts a branch or tag but NOT a SHA; on a SHA ref this first
@@ -127,6 +141,12 @@ if [ ! -d "$CLONE_DIR/.git" ]; then
   git_retry git clone --branch "$REF" "$REPO_URL" "$CLONE_DIR" \
     || git_retry git clone "$REPO_URL" "$CLONE_DIR" \
     || die "clone failed after retries (check network / repo access)"
+elif [ "${SHALLOW_PIN_FETCHED:-0}" = 1 ]; then
+  : # just fetched exactly the pinned commit above; a full `fetch --tags` would undo the point
+elif printf '%s' "$REF" | grep -Eq '^[0-9a-f]{40}$' && ! git -C "$CLONE_DIR" rev-parse --verify --quiet "$REF^{commit}" >/dev/null 2>&1; then
+  info "platform clone exists at $CLONE_DIR — fetching only the pinned commit $REF"
+  git_retry git -C "$CLONE_DIR" fetch --quiet --depth 1 origin "$REF" \
+    || info "fetch failed (offline?) — using existing clone as-is"
 else
   info "platform clone exists at $CLONE_DIR — fetching $REF"
   git_retry git -C "$CLONE_DIR" fetch --tags origin \
@@ -166,6 +186,14 @@ if git -C "$CLONE_DIR" rev-parse --verify --quiet "$REF^{commit}" >/dev/null 2>&
   fi
 else
   info "ref '$REF' not found locally or on origin — leaving clone on its current branch"
+fi
+
+# Platform main (2026-10) carries bootstrap/ and bootstrap-tools/ as git
+# SUBMODULES; without them every pipeline import fails with "Cannot find module
+# ../../bootstrap-tools/schemas/graph". Initialise them at the recorded commits.
+if [ -f "$CLONE_DIR/.gitmodules" ]; then
+  git_retry git -C "$CLONE_DIR" submodule update --init --depth 1 --quiet \
+    || warn "submodule init failed — imports into bootstrap/ and bootstrap-tools/ will not resolve"
 fi
 
 # absolute, normalized path to the clone

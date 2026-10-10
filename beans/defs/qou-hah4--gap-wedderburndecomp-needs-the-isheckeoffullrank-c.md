@@ -4,8 +4,11 @@ title: 'GAP: WedderburnDecomp needs the IsHeckeOfFullRank companion and a block_
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T16:32:36Z
-updated_at: 2026-08-21T16:33:26Z
+updated_at: 2026-10-04T15:20:32Z
+parent: qou-59vq
 ---
 
 Branch `claude/wedderburn-instance-artin-2026-08-21`, PR #5387. Answers item 3

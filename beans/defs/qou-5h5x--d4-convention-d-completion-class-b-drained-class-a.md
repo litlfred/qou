@@ -1,10 +1,14 @@
 ---
 # qou-5h5x
-title: "D4: convention-D completion — class B drained, class A (gram.py) documented blocked"
+title: 'D4: convention-D completion — class B drained, class A (gram.py) documented blocked'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-14T16:21:57Z
-updated_at: 2026-08-14T16:21:57Z
+updated_at: 2026-10-04T15:18:33Z
+parent: qou-cdx1
 ---
 
 ## The question this settles

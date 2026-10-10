@@ -1,11 +1,14 @@
 ---
 # qou-g94g
 title: 'per_irrep_pole_atom_crystal: pole_u off by exactly one at the first atom'
-status: in-progress
+status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T10:15:38Z
-updated_at: 2026-09-07T10:02:54Z
+updated_at: 2026-10-04T15:11:39Z
+parent: qou-trd0
 ---
 
 Surfaced by the qou-hu1f regeneration pass. Pre-existing: fails identically under both intra orderings.
@@ -99,3 +102,9 @@ millisecond string. Zero raw float64 fields remain. (The bean said 4; it is 9
 once every atom runs rather than stopping at the first mismatch.)
 
 The top-level assertion still fails, correctly — the two laws do disagree.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

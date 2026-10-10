@@ -4,8 +4,10 @@ title: Weierstrass points (60, not 10) vs SM fermion spectrum — explore S₅-o
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-04T17:32:48Z
-updated_at: 2026-08-04T17:32:48Z
+updated_at: 2026-10-04T15:25:32Z
 parent: qou-8lxd
 ---
 

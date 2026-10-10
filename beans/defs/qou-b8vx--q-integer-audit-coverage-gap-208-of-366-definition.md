@@ -1,11 +1,14 @@
 ---
 # qou-b8vx
 title: 'q-integer audit coverage gap: 208 of 366 definitions are not symbolically evaluable (q0-pinned or needing module globals) — the convention of those 208 is UNMEASURED'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T14:02:19Z
-updated_at: 2026-09-13T13:07:55Z
+updated_at: 2026-10-04T15:13:35Z
+parent: qou-cdx1
 ---
 
 MEASURED 2026-09-13. New audit: computations/audits/q_integer_global_resolution_audit.py. It resolves module globals instead of giving up on them -- walks each module's own top-level assignments, evaluates them symbolically against one root symbol, binds the result, and only then applies the function.
@@ -514,3 +517,9 @@ Two known false positives deliberately survive the narrowing (`L2_bracket`,
 `mirror_bracket`) because excluding them would need a rule I have not
 measured, and an unmeasured rule is how the denominator got wrong in the
 first place.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

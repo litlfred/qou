@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "lee-vanderveen-colored-jones-polynomials-wit",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 213,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/lee-vanderveen-colored-jones-polynomials-without-tails/lee-vanderveen-colored-jones-polynomials-without-tails.pdf"
+        },
+        "id": "lee-vanderveen-colored-jones-polynomials-wit",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Genuine orphan. It exhibits an infinite family of Montesinos knots (the pretzel knot P(5,-3,5) and the family C(5,-3,5,u)) whose first colored Jones coefficient grows LINEARLY in the colour n, so the stability phenomenon known for alternating knots and the resulting 'tail' does not generalize naively; the authors name these Manx knots. This is a clean counterexample result, and I looked for a corpus claim it would bear on. Corpus-grep: content/ has no claim of stability or boundedness of colored Jones coefficients; the folio's colored-Jones-adjacent claims are conj:three-knot-jet-order-independence (which uses the Habiro cyclotomic expansion, a different grading that exists for all knots and is untouched by tail failure) and conj:b1-hyperbolic-rows-theorem (which uses Volume-Conjecture asymptotics, not coefficient stability). Also none of the Manx knots is in the folio's knot inventory, which is torus knots plus 4_1 plus the Borromean rings. So the counterexample has nothing here to counter. Scope-(a): as read, supplies nothing usable \u2014 this is not a claim that tail/stability phenomena are irrelevant to the folio, only that no current block depends on them. Note: one author is already registered for a different paper (vanderveen2008, cited from two Lean files), so an automated author match on this file would be a false positive.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "No folio block assumes stability of colored Jones coefficients or uses tails, and the Manx family is not in the folio's knot inventory; there is no target for the counterexample.",
+              "target": "conj:three-knot-jet-order-independence"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "fcc45aebd34e"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -1,11 +1,15 @@
 ---
 # qou-gl58
 title: 30 files use the CLASSICAL q-integer (q^n-1)/(q-1) under names q_int/qint — check each consumer expects it, not the symmetric one; several are in deltalambda/ (Track A)
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - needs-owner
+    - reorg-2026-10-04
 created_at: 2026-09-07T14:02:18Z
-updated_at: 2026-09-13T14:05:42Z
+updated_at: 2026-10-04T15:11:45Z
+parent: qou-cdx1
 ---
 
 WORKED 2026-09-07 (audit sec 22). 0 of 363 files carry BOTH conventions — no internal inconsistency anywhere. My 'the word hecke appears' classifier is NOISE: tw_gram_determinant_probe.py is CORRECT (its q_int is the Gaussian bracket and its docstring says the conventions match QOU/Hecke/TwMul.lean, whose rule sigma_i T_v = (q-1)T_v + q T_{v s_i} is the T_w basis, where classical IS right); deltalambda_jet_filtration_magnitude_probe.py DECLARES the convention in its docstring ('Coxeter-length / coinvariant Poincare convention, NOT the balanced'). THE REAL DISCRIMINATOR IS THE BASIS: T_w / Iwahori unnormalised -> classical; normalised / quantum-dimension -> symmetric. Defensible figures: at most 28 unclassified, 1 confirmed ambiguous (helium_four_body_cluster_probe.py, sum(q**k), undeclared, Borromean cluster context), 2 confirmed fine. term7_chi5_basis.py stays OPEN: it feeds a q-hook-length dim_q, and my attempt to settle it against y_lambda_at was the WRONG TEST — y_lambda_at is the SU(2)-restricted Markov weight (zero on height>2 partitions), term7 computes Plancherel dim_q^2/[n]_q! over all partitions.
@@ -237,3 +241,9 @@ and are untouched by this append, as by the previous one.
 STILL OPEN in this bean: term7_chi5_basis.py (feeds a q-hook-length dim_q;
 the y_lambda_at test was the wrong test and it has not been re-settled), and
 the original 30's per-consumer correctness question.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

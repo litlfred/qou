@@ -4,8 +4,11 @@ title: 'FRONT-2: probe the irreducibly-external Behrend-weighted DT count (drive
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-11T01:00:00Z
-updated_at: 2026-09-08T04:37:29Z
+updated_at: 2026-10-04T15:19:24Z
+parent: qou-avtq
 ---
 
 Owner picked front 2. Per 2026-08-02-1ppq-lever-map: Δ_λ (partition-level) and A_ω (knot-level) are

@@ -4,8 +4,11 @@ title: 'B2: Iwahori–Hecke algebra H_n(q) as field-algebra (via Mathlib Coxeter
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-09-04T10:36:12Z
+updated_at: 2026-10-04T15:16:33Z
+parent: qou-k4oq
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not

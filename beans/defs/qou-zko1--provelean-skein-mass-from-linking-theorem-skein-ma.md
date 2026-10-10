@@ -3,14 +3,16 @@
 title: 'PROVE(lean): skein_mass_from_linking — theorem skein_mass_from_linking [ctx : SkeinMassFromLinkingContext] : ctx.mass = ctx.Q * c [cited manuscript]'
 status: todo
 type: task
+priority: normal
 tags:
     - lean
     - cited-sorry
     - paper-qou
     - repo-infra
+    - reorg-2026-10-04
 created_at: 2026-08-01T23:31:04Z
-updated_at: 2026-08-01T23:31:04Z
-parent: qou-k1mq
+updated_at: 2026-10-04T15:22:46Z
+parent: qou-aabg
 ---
 
 **File:** `QOU/BraidsKnots/skein_mass_from_linking.lean` (QOU)  ·  1 cited sorry(s)

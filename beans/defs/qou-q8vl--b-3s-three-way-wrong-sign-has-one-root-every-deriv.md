@@ -1,11 +1,14 @@
 ---
 # qou-q8vl
 title: 'b_3''s three-way wrong sign has ONE root: every derived bond scalar is confined to (0,1), and uniform attraction does not escape it'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-12T12:28:23Z
-updated_at: 2026-09-13T10:39:43Z
+updated_at: 2026-10-04T15:11:58Z
+parent: qou-v2om
 ---
 
 ## Resolved as far as it goes: ONE root, and the stated escape is insufficient
@@ -128,3 +131,9 @@ affineness."* That step does not escape. Flagged on that PR
 
 **Still OPEN and NOT closeable** (§13a): the third bond family is an open
 derivation. Only the *escape question* is closed, as a question.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

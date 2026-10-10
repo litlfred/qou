@@ -1,11 +1,13 @@
 ---
 # qou-jfr8
 title: 'SW-5: irreducibility + pairwise inequivalence of the ρ_λ'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-23T13:12:14Z
+updated_at: 2026-10-04T15:14:00Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -688,3 +690,9 @@ that the bar-even content bracket is transpose-blind. Corpus-grepped before
 salvaging — the corpus knows other transpose-invariance facts (hook multisets,
 d_lambda' = d_lambda) but not this one, and it explains *why* the cosh criterion
 in their own file is vacuous on every transpose pair.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-23 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

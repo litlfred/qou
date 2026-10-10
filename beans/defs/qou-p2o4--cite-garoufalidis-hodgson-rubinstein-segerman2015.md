@@ -3,8 +3,12 @@
 title: Cite [garoufalidis-hodgson-rubinstein-segerman2015] at content/quantum-observable-universe/lean/Q…
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:01Z
-updated_at: 2026-08-08T23:35:01Z
+updated_at: 2026-10-04T15:17:33Z
+parent: qou-mub3
 ---
 
 GZWeightSelection.lean reads a specific 3d-index coefficient off 4_1 as if the index were canonically attached to the manifold; that well-definedness is this document's theorem and is currently uncited anywhere in the corpus.

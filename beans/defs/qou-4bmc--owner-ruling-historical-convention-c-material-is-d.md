@@ -3,8 +3,12 @@
 title: 'OWNER RULING: historical convention-C material is deprecated and leaves the corpus; audit-only'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T19:33:50Z
-updated_at: 2026-08-10T19:33:50Z
+updated_at: 2026-10-04T15:21:56Z
+parent: qou-cdx1
 ---
 
 

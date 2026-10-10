@@ -3,8 +3,12 @@
 title: 'ROOT: vendored ame2020.json stores all 3558 binding energies as JSON float64 (640 with visible artifact tails)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T12:55:18Z
-updated_at: 2026-08-16T12:55:18Z
+updated_at: 2026-10-04T15:24:13Z
+parent: qou-2002
 ---
 
 

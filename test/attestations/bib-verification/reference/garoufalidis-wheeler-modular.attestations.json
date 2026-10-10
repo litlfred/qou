@@ -1,0 +1,152 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "garoufalidis-wheeler-modular",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 286,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2203.17029v1/2203.17029v1.pdf"
+        },
+        "id": "garoufalidis-wheeler-modular",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "This is the toolkit the keystone conj:qdifference-kernel-prolongation-symbol is currently being worked with, supplied at theorem strength and with the 4_1 case computed explicitly. The block's own authorNotes name exactly this machinery -- 'formal q-Borel diagonal-invariant mismatch', 'numeric connection-matrix theta-growth q^{m^2/4}', Newton-polygon slopes and RSZ isoclinicity -- while the corpus has no reference for any of it. The paper defines a class of linear q-difference equations (modular q-holonomic modules) whose fundamental matrices at 0 and infinity have *computable* monodromy, gives an algorithm for the fundamental matrix (Sec 2.2) and the q-Borel/q-Laplace resummation used to build it (Sec 2.3), proves the generalised q-hypergeometric equation is modular and self-dual (Thm 1.4), and devotes Sec 5 to the q-difference equation of the 4_1 knot -- monodromy, residues, determinants, state integral, and an analytic lift of the coloured Jones polynomial. The 4_1 equation and the Faddeev quantum dilogarithm state-integral factorisation are the same objects prop:habiro-tail-archimedean-action and the QBeta 4_1 probes evaluate. Caveat kept explicit: no theorem here is a drop-in lemma for a named QOU sorry -- the paper supplies the framework and the 4_1 computation, not the prolongation-symbol identification, so no aid-proof is claimed.",
+          "keyResults": [
+            {
+              "locator": "Thm 1.6(a) and Thm 1.7(a) (Sec 1.5)",
+              "statement": "For the Chern-Simons q-holonomic modules the monodromy matrix M(t,lambda,mu,q)=V^{-1}U is unipotent (resp. -1/1 diagonal) with the single non-trivial entry M_{2,1} an explicit ratio/product of Jacobi theta functions theta(qt;q)theta(t*lambda;q)....",
+              "useForFolio": "Gives a closed-form theta-function expression for the connection/monodromy matrix entries in exactly the class the qlift Route-B probe measured numerically as 'connection-matrix theta-growth q^{m^2/4}'. The probe's empirical growth exponent can be checked against these theta entries instead of being left as a numeric observation.",
+              "targets": [
+                "conj:qdifference-kernel-prolongation-symbol",
+                "computations/probes/qlift_routeB_connection_matrix_probe.py"
+              ]
+            },
+            {
+              "locator": "Sec 2.2 (algorithm for a fundamental matrix), Sec 2.3 (q-Borel and q-Laplace transforms), Sec 2.5 (duality)",
+              "statement": "An effective construction of fundamental solution matrices at 0 and infinity for modular q-holonomic modules, with q-Borel/q-Laplace resummation and a duality theory for the module.",
+              "useForFolio": "The authorNotes on conj:qdifference-kernel-prolongation-symbol record that the surviving well-posed form of the kernel lives on the q-Borel (Gevrey-normalised) transform with predicted depth 2. This section is the citable source for that transform and for the fundamental-matrix construction the Door-i..Door-v analysis manipulates.",
+              "targets": [
+                "conj:qdifference-kernel-prolongation-symbol",
+                "prop:binding-genfun-qdifference"
+              ]
+            },
+            {
+              "locator": "Sec 5 (5.1-5.9), in particular 5.2 monodromy, 5.3 residues, 5.4 determinants, 5.8 analytic lift of the coloured Jones",
+              "statement": "The q-difference equation of the 4_1 knot is worked out completely: solutions, monodromy, residues, determinants, state integral, x-deformation, and an analytic lift of the coloured Jones polynomial.",
+              "useForFolio": "The 4_1 Habiro tail S(q) and its two archimedean faces (state-integral Faddeev vs real-q Habiro) are the subject of prop:habiro-tail-archimedean-action; this section supplies the published q-difference/state-integral side of that comparison, which the block currently asserts without a source.",
+              "targets": [
+                "prop:habiro-tail-archimedean-action"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Orphan; the machinery it defines is already in active use in the keystone block's authorNotes and in the qlift probes with no citation anywhere in references.ts.",
+              "target": "folio/schema/references.ts (proposed id: garoufalidis-wheeler2022)",
+              "bean": "qou-hhbn"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "conj:qdifference-kernel-prolongation-symbol reasons about q-Borel normalisation, connection matrices and Newton-polygon slopes with no reference for the q-difference-module framework.",
+              "target": "conj:qdifference-kernel-prolongation-symbol",
+              "bean": "qou-ue8e"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "prop:habiro-tail-archimedean-action contrasts the Faddeev state-integral face of 4_1 with the real-q Habiro tail; Sec 5 is the published treatment of the state-integral/q-difference face.",
+              "target": "prop:habiro-tail-archimedean-action",
+              "bean": "qou-ssly"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "The empirical theta-growth q^{m^2/4} recorded for the GGM connection matrix should be checked against the closed-form theta-quotient monodromy entries of Thm 1.6/1.7 rather than left as a numeric observation. This is a cross-check to run, not a number to adopt.",
+              "target": "computations/probes/qlift_routeB_connection_matrix_probe.py",
+              "bean": "qou-godb"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "5557f7f272cb"
+        },
+        "note": "Bib key backfilled from duplicate copy of modularqholonomicmodules, which carries this key. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    },
+    {
+      "position": 390,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/modularqholonomicmodules/modular.qholonomic.modules.pdf"
+        },
+        "id": "garoufalidis-wheeler-modular",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Introduces MODULAR q-holonomic modules -- those whose fundamental matrices define an SL(2,Z) cocycle with improved analyticity, extending from the cut plane across the unit circle -- proves the generalised q-hypergeometric equation is modular and self-dual, and shows that three key q-holonomic modules of complex Chern--Simons theory are modular; an alternative title the authors give is 'Modular linear q-difference equations', and the stated payoff is an EFFECTIVE METHOD to solve the corresponding linear q-difference equations, with fundamental solutions whose residues are expressed in terms of the solutions themselves. This lands squarely on the corpus's active front. The bibliography already carries the peacock-patterns paper (registered as the structural fact that Stokes constants are integer Donaldson--Thomas invariants of the associated q-difference structure) and the Borel-summability paper for 4_1 and 5_2, and an audit records a Stokes-matrix identification target for the 4_1 descendant equation; the corpus is chasing solutions and Stokes data of exactly the q-difference equations this document makes effectively solvable, and has no entry for it. The corpus's own Im(q) framing also matters here: this document's improved analyticity is precisely about crossing |q| = 1, the boundary between the corpus's fibre-level formal q and its archimedean real q_0, so the modularity property is relevant to how the two levels connect rather than merely a technical convenience.",
+          "keyResults": [
+            {
+              "locator": "Def. 1.1 with Thm 1.2 (the slash operator), and Thm 1.4",
+              "statement": "A q-difference equation is modular when the monodromy relation holds for all of SL(2,Z); it suffices to check the generators S and T, and the generalised q-hypergeometric equation is modular and self-dual with the two natural cocycles equal.",
+              "useForFolio": "A checkable criterion (two generators) for the modularity of the q-difference equations the corpus works with, and with it the effective solution method the Stokes-matrix work currently lacks.",
+              "targets": [
+                "conj:stokes-dt-bps-bridge",
+                "rem:phi-q-aj-machinery-identification-details"
+              ]
+            },
+            {
+              "locator": "Sec. 1.5 (modular q-holonomic modules in Chern--Simons theory), Thm 1.5",
+              "statement": "Three q-holonomic modules arising in complex Chern--Simons theory are modular, with explicitly computed monodromy and cocycles.",
+              "useForFolio": "Places the corpus's own state-integral and descendant equations inside a class with computable monodromy, which is the missing ingredient in the Stokes-matrix identification target for the figure-eight descendant equation.",
+              "targets": [
+                "conj:stokes-dt-bps-bridge"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The corpus registers two companion papers on resurgence and Stokes data in complex Chern--Simons but not the one that supplies the effective solution method for the underlying q-difference equations.",
+              "target": "conj:stokes-dt-bps-bridge",
+              "bean": "qou-ny5l"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "The improved analyticity across |q| = 1 is directly about the boundary between the corpus's fibre-level formal q and its archimedean real q_0, a distinction AGENTS.md flags as a recurring source of confusion; a remark connecting modularity to that boundary would be more useful than a bare citation.",
+              "target": "rem:phi-q-aj-machinery-identification-details",
+              "bean": "qou-9s4f"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "640303a68dd7"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

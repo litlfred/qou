@@ -4,8 +4,11 @@ title: 'Library doc-id mis-stamp: arxiv-2111.06645/ holds 2304.09377v2.pdf — t
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T09:03:34Z
-updated_at: 2026-09-07T09:04:17Z
+updated_at: 2026-10-04T15:21:15Z
+parent: qou-mub3
 ---
 
 Found 2026-09-07 during the corpus-grep for `qou-17mq`. Verified directly

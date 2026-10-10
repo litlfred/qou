@@ -1,18 +1,20 @@
 ---
-# qou-fybg
-title: 'Derive `hc` and `hτ` in OneLoopPrefactorInvariance from the four analytic theorems (the successor to qou-mlgp)'
+# fybg
+title: Derive `hc` and `hτ` in OneLoopPrefactorInvariance from the four analytic theorems (the successor to qou-mlgp)
 status: todo
 type: task
 priority: normal
 tags:
-    - lean
     - c-sigma
     - one-loop
     - saddle-point
     - kashaev-invariant
     - formalization-gap
+    - reorg-2026-10-04
+    - lean
 created_at: 2026-08-09T00:00:00Z
-updated_at: 2026-08-09T17:00:00Z
+updated_at: 2026-10-04T15:26:45Z
+parent: qou-n4nr
 ---
 
 ## Why this bean exists
@@ -1753,3 +1755,7 @@ computation (`computations/one_loop_torsion.py`), DG's own worked example.
 Whoever picks it up needs the 1-loop invariant formalised first; the target is
 already pinned in Lean as `abs_cot_saddle_div_two` so the gap is a definite
 claim rather than prose.
+
+
+
+Also known as `qou-fybg` (its former front-matter header id; the beans CLI uses the filename id `fybg`). Recorded 2026-10-04.

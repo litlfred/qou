@@ -3,8 +3,12 @@
 title: 'CHECK THEN REMARK at thm:buchberger: does LC in R^x buy back the field case over a commutative ground ring?'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T18:29:20Z
-updated_at: 2026-08-09T18:29:20Z
+updated_at: 2026-10-04T15:16:54Z
+parent: qou-q4oa
 ---
 
 [bokutchen2015pbw] section 1 (pp. 2-3) notes that Groebner-Shirshov theory over a

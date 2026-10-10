@@ -1,11 +1,13 @@
 ---
 # htw2
 title: 'GAP: per-chiral-fermion framed braid words — derive strand-twist totals (not enumerate). Residual of qou-q377 after the total-twist reduction.'
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-09-26T11:03:27Z
+updated_at: 2026-10-04T15:20:17Z
 ---
 
 Child of `qou-q377` (hypercharge Y second invariant). PR #4561 /
@@ -283,3 +285,10 @@ as the same state, not a borrowed rule about helon signs.
 Cross-check unchanged and now better motivated: sign-coherence forces
 nu = {0,0,0}, the same answer ComponentFraming.nu_framing_is_zero DERIVES from
 "leptons are knots". Two routes, agreeing.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-kebu` (work-plan reorganisation 2026-10-04). Evidence: [M] both derive per-strand twist from framed braid words; htw2 newer (09-26) may survive instead
+Content is untouched; only this work item is closed.

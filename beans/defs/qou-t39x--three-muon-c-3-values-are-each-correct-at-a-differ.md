@@ -1,11 +1,14 @@
 ---
 # qou-t39x
 title: Three muon c_3 values are each correct at a different muon anchor; -2.0097 matches none, and four files pair it with three different pins
-status: in-progress
+status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T02:27:01Z
-updated_at: 2026-08-31T18:30:12Z
+updated_at: 2026-10-04T15:11:40Z
+parent: qou-avtq
 ---
 
 Found chasing the root cause behind `qou-kt8o` (the `dc_3/dq ≈ 4.6e6`
@@ -179,3 +182,9 @@ Probe `qbeta-c3-muon-anchor-codata-edition-attribution` (11/11).
 336 ancestor-bearing files, sequenced behind PR #5500 and `qou-1c4y`; and the
 audit docs under `docs/audits/` that record `−2.02020024` — those are dated
 records of what was true then and were deliberately left alone.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-31 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

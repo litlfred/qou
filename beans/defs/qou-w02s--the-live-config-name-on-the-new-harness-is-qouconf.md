@@ -1,14 +1,15 @@
 ---
 # qou-w02s
 title: The live config name on the new harness is qou.config.json, not harness.config.json
-status: todo
+status: completed
 type: feature
 priority: high
 tags:
     - platform
     - config
+    - reorg-2026-10-04
 created_at: 2026-09-26T10:31:23Z
-updated_at: 2026-09-26T10:35:27Z
+updated_at: 2026-10-04T15:14:38Z
 parent: qou-ty42
 ---
 
@@ -71,3 +72,9 @@ block from `harness.json`, name it `qou.config.json`.
 
 Do NOT delete `folio.config.json` as part of this — `qou-ty42` says it "must
 not be", and at the pin it is the only config actually read.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] qou.config.json exists; title's claim realised

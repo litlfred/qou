@@ -1,11 +1,14 @@
 ---
 # qou-svnb
 title: 'F4 option-2: prove abstract cyclic_iff_gram_symm reduction; refactor trM_cyclic into proved-reduction + scoped Gram residual'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-19T03:00:12Z
-updated_at: 2026-07-19T06:19:25Z
+updated_at: 2026-10-04T15:12:33Z
+parent: qou-59vq
 ---
 
 
@@ -77,3 +80,9 @@ KEY: mulNF bilinearity proved with mulσ kept OPAQUE (only linearity lemmas fire
 shrank from "all cyclicity" to the finite 276-entry Gram-symmetry base
 (gram_symm), still whnf-blocked. Stop-condition was NOT hit — bilinearity and
 expansion did NOT grind. Honest partial as planned; not a closure. Audit updated.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-07-19 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

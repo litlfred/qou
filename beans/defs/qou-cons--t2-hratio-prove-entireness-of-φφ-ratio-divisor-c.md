@@ -3,8 +3,12 @@
 title: 'T2: hratio — prove entireness of Φ₁/Φ₂ ratio (divisor cancellation: two FaddeevPhi solutions share zero/pole lattice)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-27T14:57:31Z
-updated_at: 2026-07-27T14:57:31Z
+updated_at: 2026-10-04T15:24:43Z
+parent: qou-r9ih
 ---
 
 

@@ -4,8 +4,11 @@ title: Remark interpreting 1811.05376v4.pdf at rem:ohtsuki-tower-bar-parity
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:24Z
-updated_at: 2026-08-21T17:04:52Z
+updated_at: 2026-10-04T15:23:35Z
+parent: qou-aqfj
 ---
 
 Record that the Borel-poles = complex-CS-values statement is PROVED only for Seifert fibered homology spheres, and state what a transfer to the 4_1 complement would require, so the corpus's heuristic placement of the Ohtsuki-tower Borel singularity is not read as literature-backed.

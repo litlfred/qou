@@ -1,11 +1,14 @@
 ---
 # dgpc
 title: 'Tier C: family chains — one chain drains many witnesses'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-18T21:00:00Z
-updated_at: 2026-09-05T20:02:56Z
+updated_at: 2026-10-04T15:14:14Z
+parent: qou-5vkl
 ---
 
 Parent dgap. 66 witnesses across producers that emit MORE THAN ONE witness. The audit matches
@@ -204,3 +207,9 @@ Compare today's vacuity-detector blind spot (a reducible `abbrev` made a
 verbatim self-assuming projection character-different, so the cleanest instance
 of four went unreported). Same shape: the detector was right about what it
 measured and blind to how the tree was spelled.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

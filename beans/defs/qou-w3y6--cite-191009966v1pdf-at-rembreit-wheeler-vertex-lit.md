@@ -4,8 +4,11 @@ title: Cite 1910.09966v1.pdf at rem:breit-wheeler-vertex-literature
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:03Z
-updated_at: 2026-08-21T17:05:07Z
+updated_at: 2026-10-04T15:17:14Z
+parent: qou-19m0
 ---
 
 rem:breit-wheeler-vertex-literature is the corpus's literature-alignment block for braid-preon models and already cites the preon reference; this document extends that alignment to hyperbolic knot complements and to the division-algebra route, both of which the corpus tracks.

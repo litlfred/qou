@@ -1,11 +1,14 @@
 ---
 # qou-qbc7
-title: 'Lean-encode the CITED RSZ assertions so a mis-citation is a type error, not prose drift'
+title: Lean-encode the CITED RSZ assertions so a mis-citation is a type error, not prose drift
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T09:35:00Z
-updated_at: 2026-08-08T09:35:00Z
+updated_at: 2026-10-04T15:14:55Z
+parent: qou-6qbv
 ---
 
 **Motivation — a real incident, this session.** The chain "C1 slope 1/2 =>

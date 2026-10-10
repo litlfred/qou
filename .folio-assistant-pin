@@ -128,4 +128,92 @@
 # would have lost their validation. run-validate at cb194b1, same corpus: the
 # same 4 issues as at 37a36ce and 378a100.
 #
-cb194b1c56c0764a78c0e1247ec441e652c92465
+#
+# BUMPED 2026-10-04 to 26c5d37b9 (platform main) — story S1 of the migration epic
+# qou-n4r9, together with the qou.json / qou.config.json re-declaration.
+# Same corpus (qou main 2301b1a11), `run-validate folio/quantum-observable-universe`:
+#
+#     cb194b1c5  →  "4 issue(s)", valid
+#     26c5d37b9  →  "5 issue(s)", valid — the same 4 lines, plus one new warning:
+#        no-orphan-sidecar could not check test/results/block-qa (absent here; the
+#        derived QA corpus lives on the cat-harness qa-reports branch, owner ruling
+#        2026-10-04). Informational, not a content change.
+#
+# Platform main now carries bootstrap and bootstrap-tools as git SUBMODULES, so the
+# clone needs `git submodule update --init` (setup-folio-assistant.sh does this now).
+#
+# BUMPED 2026-10-04 to 5693b174e (folio-assistant#2129 merged) — story TOOLS T2,
+# beans qou-qb6t / qou-4r5m: the platform now registers the `computation-witness`
+# graph kind, and qou.json declares `computations/` with it in the same commit.
+# Same corpus (qou branch claude/migration-wave12-2026-10-04),
+# `run-validate folio/quantum-observable-universe`:
+#
+#     26c5d37b9  →  "5 issue(s)", valid
+#     5693b174e  →  "5 issue(s)", valid; the 5 issue lines IDENTICAL
+#
+# New at this pin: `bun run witness:conformance` (via folio-assistant/). Over
+# computations/: 3,839 witnesses, 0 malformed, 5 not strict JSON (all in
+# _deprecated/, NaN/Infinity), 1,685 of 3,834 meet the producer contract. The
+# rest are findings against their producers; no witness was edited.
+#
+# BUMPED 2026-10-05 to 483ed296b (platform main) — beans rva2 / j9cs, the
+# lake-cache family migration (owner: "migratez qou"). qou.json now declares the
+# `lake-cache` directory with storage.keyedBy "family", which 5693b174e's schema
+# does not accept: measured, the new qou.json FAILS to parse at the old pin and
+# parses at this one. So the declaration and the bump cannot land separately.
+#
+# Same corpus (qou 6cfeab8de + this branch's scripts), `run-validate
+# folio/quantum-observable-universe`, each pin run with the qou.json it can parse:
+#
+#     5693b174e, qou.json @ HEAD  →  "6 issue(s)", valid
+#     483ed296b, qou.json @ new   →  "9 issue(s)", valid — the same 6 lines, plus
+#        3 [unlisted-block] warnings (qbeta-toroidal-harmonics-basis,
+#        atomic-q-reeb-universal-rho, delta-max-numerical-scale): blocks that sit
+#        in a chapter directory but no section lists. A NEW platform check over
+#        pre-existing corpus state, not a content change.
+#
+# Trap, measured: running the OLD pin against the NEW qou.json reports
+# "✗ Invalid — 55 issue(s)" — 17 Lean siblings, witnesses and simulator assets
+# all "missing". None are. `findContentRepoRoot` walks up from cwd, the
+# unparseable declaration makes qou a non-candidate, and it falls back to the
+# platform's own tree, so every corpus path resolves into the wrong root. A
+# platform/declaration mismatch presents as a broken corpus.
+#
+# BUMPED 2026-10-05 to 3f72f018a (platform main, after #2200 and #2216) — and the
+# declaration change cannot land separately, again.
+#
+# #2200 renamed the <instance>.json field `graphKinds` -> `graphTypologies` as a
+# HARD rename with no alias (owner, 2026-10-05). Its shim accepts only the older
+# `graphs` spelling, so at the new platform qou.json fails to parse ("graphTypologies:
+# expected array, received undefined") and every platform script that reads the
+# declaration stops. qou.json and beans/beans.json are renamed in this commit (the
+# `_graphKinds_comment` keys with them; no value changed).
+#
+# Same corpus (qou main 61e7b10d7), `run-validate folio/quantum-observable-universe`:
+#
+#     483ed296b, qou.json @ main     ->  "9 issue(s)", valid
+#     3f72f018a, qou.json @ renamed  ->  "9 issue(s)", valid; the 9 lines IDENTICAL
+#     483ed296b, qou.json @ renamed  ->  "58 issue(s)", INVALID (the old pin cannot
+#        read the new spelling, the same misrooting trap recorded above)
+#
+# Three sites carry the sha and move together: this file, build.yml's `uses:`, and
+# qou.config.json's folio-assistant-sci `ref`.
+#
+# BUMPED 2026-10-05 to 717aa19a6 (folio-assistant#2232 merged): the bibliography
+# ledgers' new home, the `attestations` graph (C9 stories B3/B4). The pin moves in
+# the same commit that deletes folio/bib-qa-verifications.json and
+# folio/schema/references.review.json, because two qou readers
+# (bib-agent-backfill.ts, bib-photo-ingestion-watcher.ts) import the shared module
+# that only exists from #2232, while the platform readers at the old pin still read
+# the legacy files.
+#
+# Same corpus (qou branch claude/bib-attestations-2026-10-05),
+# `run-validate folio/quantum-observable-universe`:
+#
+#     3f72f018a  ->  "9 issue(s)", valid
+#     717aa19a6  ->  "9 issue(s)", valid; the 9 lines IDENTICAL
+#
+# Before the removal: bib_ledger.py --parity identical on both ledgers, and
+# bib:attestations:migrate --check byte-identical (456 rows / 423 files; 2 reviews).
+#
+717aa19a660caa54be312f50abfc813b0b1bdb76

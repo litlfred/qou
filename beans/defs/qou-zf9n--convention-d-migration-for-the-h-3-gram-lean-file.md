@@ -1,11 +1,14 @@
 ---
 # qou-zf9n
 title: Convention-D migration for the H_3 Gram Lean file and its spectrahedral-phase-collapse consumer
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T19:27:04Z
-updated_at: 2026-08-24T17:18:45Z
+updated_at: 2026-10-04T15:12:14Z
+parent: qou-cdx1
 ---
 
 Found while dispositioning `qou-bm4i` block 5/12 (`prop:gram-matrix-h3-symbolic`).
@@ -477,3 +480,9 @@ Probe: `computations/probes/mirror_penalty_decomposition_probe.py`, 5/5.
 Noted in passing, not chased: `delta_lambda_canonical_residual.py` does
 `float(r["B_MeV"])` and imports `math` — a float64 path in a producer, which
 the precision discipline forbids. It bounds the precision of everything above.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-24 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

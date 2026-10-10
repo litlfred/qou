@@ -4,8 +4,11 @@ title: S-polynomial reduction needs R to have no quasi-zeros (Lei-Pawlowski); ch
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T16:22:40Z
-updated_at: 2026-08-09T16:23:35Z
+updated_at: 2026-10-04T15:24:15Z
+parent: qou-q4oa
 ---
 
 

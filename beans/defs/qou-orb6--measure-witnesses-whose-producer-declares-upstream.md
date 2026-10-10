@@ -4,8 +4,11 @@ title: 'MEASURE: witnesses whose producer declares upstreams but that record no 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T16:15:24Z
-updated_at: 2026-08-24T19:28:37Z
+updated_at: 2026-10-04T15:21:32Z
+parent: qou-5vkl
 ---
 
 ## Not a new class — a RECURRENCE of the one `producer_upstream_edge_gap_audit`

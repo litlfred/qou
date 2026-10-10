@@ -3,8 +3,12 @@
 title: 'GAP: exact FW->GGM Jacobian + Z[q^pm] Stokes prefactor linking 5₂ I_{0,0} to median-Borel resummation of Phi_{5₂}'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-01T19:03:18Z
-updated_at: 2026-08-01T19:03:18Z
+updated_at: 2026-10-04T15:19:59Z
+parent: qou-frzo
 ---
 
 ## QUEUED — launch a dedicated agent AFTER the two in-flight agents land

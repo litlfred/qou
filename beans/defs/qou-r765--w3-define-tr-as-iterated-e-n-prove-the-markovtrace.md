@@ -1,12 +1,14 @@
 ---
 # qou-r765
 title: 'W3: define tr as iterated E_n; prove the MarkovTrace fields (cyclic + Markov normalization) from the tower'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-25T13:00:16Z
-updated_at: 2026-08-26T15:10:28Z
-parent: qou-utb3
+updated_at: 2026-10-04T15:14:22Z
+parent: qou-rtxm
 ---
 
 
@@ -127,3 +129,9 @@ Author's call — it is a signature change to classes predating this work that
 JonesBasicConstruction also binds.
 
 And this is ONE RUNG. Nothing here speaks to general n; WenzlTowerStep untouched.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-26 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -1,11 +1,14 @@
 ---
 # qou-2g9j
 title: 'Delta=2 Milnor residual: the mod-delta formula is HELD (Mellor-Melvin), so the residual is not blocked'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T10:58:08Z
-updated_at: 2026-09-14T06:34:43Z
+updated_at: 2026-10-04T15:12:18Z
+parent: b9cj
 ---
 
 Successor to `qou-768r` route 3, which closed the `Delta = 0` (min-span) family and
@@ -253,3 +256,9 @@ wearing an assertion's clothes — fine as a record, but it is not a check, and 
 reader scanning "5/5 passed" should not count it as one.
 
 Consumed by `qou-o6ml`, which now cites this probe (it did not before).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-14 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

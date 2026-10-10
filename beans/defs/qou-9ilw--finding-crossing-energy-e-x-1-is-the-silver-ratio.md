@@ -1,10 +1,14 @@
 ---
 # qou-9ilw
 title: 'FINDING: crossing energy E_x = 1 IS the silver-ratio beta-decay null (h=2 branch); E_x=0 is the h=0 branch'
-status: in-progress
+status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T14:01:38Z
-updated_at: 2026-08-30T17:00:00Z
+updated_at: 2026-10-04T15:12:36Z
+parent: qou-v2om
 ---
 
 
@@ -306,3 +310,9 @@ weakest:
 Residual risk sits in `div_eq_one_iff_eq` (name/signature), the `simpa`
 normalisations in the two limit lemmas, and `Filter.Tendsto.div`'s argument
 order. If CI reddens, those are the places to look first.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

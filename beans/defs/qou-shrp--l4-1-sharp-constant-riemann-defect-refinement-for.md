@@ -1,11 +1,14 @@
 ---
 # qou-shrp
 title: 'L4-1 sharp constant: Riemann-defect refinement for phi (the 1/2 the antitone squeeze cannot pin)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-11T12:00:00Z
-updated_at: 2026-08-11T12:30:00Z
+updated_at: 2026-10-04T15:13:10Z
+parent: qou-n4nr
 ---
 
 Reopens the sharp half of L4-1 after the correction recorded in
@@ -203,3 +206,9 @@ the L4-1 route was going to produce.
 Nothing is deleted; the work here is correct and sorry-free.  Downstream
 consumers should cite kashaev_log_sum_asymptotic instead.
 Audit: docs/audits/2026-08-19-l41-was-already-proved-on-main.md
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-11 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

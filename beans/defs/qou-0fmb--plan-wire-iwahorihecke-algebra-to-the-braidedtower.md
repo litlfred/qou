@@ -4,8 +4,11 @@ title: 'PLAN: wire IwahoriHecke algebra to the BraidedTower theorem (#7153) -- d
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-12T11:54:27Z
-updated_at: 2026-09-14T18:57:46Z
+updated_at: 2026-10-04T15:22:05Z
+parent: qou-59vq
 ---
 
 Parent epic: qou-08a2. Records the 2026-09-12 finding that the growing+h!=0 BraidedTower instance (qou-301d's remaining gap) is a WIRING job, not a from-scratch build -- the two halves already exist and are unconnected.

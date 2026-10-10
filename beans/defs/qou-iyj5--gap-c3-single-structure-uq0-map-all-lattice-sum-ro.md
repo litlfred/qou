@@ -3,9 +3,12 @@
 title: 'REDUCED: c3 single-structure u(q0) map — lattice-sum routes closed (scope-b Thurston); on-anchor-singularity REFUTED (R=2logφ≈0.96, #4508); survivor is the NZ-½ boost factor A≈2 (c=√2), precision-ceilinged → successor qou-yh67'
 status: todo
 type: task
-parent: qou-82w7
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-01T21:10:52Z
-updated_at: 2026-08-07T15:00:00Z
+updated_at: 2026-10-04T15:23:18Z
+parent: qou-avtq
 ---
 
 ## RESOLUTION (2026-08-07 read of the merged decisive test + sibling)

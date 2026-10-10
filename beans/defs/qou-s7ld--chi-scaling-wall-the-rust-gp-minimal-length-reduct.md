@@ -1,11 +1,14 @@
 ---
 # qou-s7ld
 title: 'chi scaling wall: the Rust GP minimal-length reduction is the cost, not dim — a dim-free seminormal path-sum makes 5Li/6Li seconds'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-08T04:08:11Z
-updated_at: 2026-09-08T04:18:06Z
+updated_at: 2026-10-04T15:10:52Z
+parent: qou-v2om
 ---
 
 ## Summary (2026-09-07/08, branch claude/chi-scaling-wall-symmetry-symbolic-2026-09-07)
@@ -21,3 +24,9 @@ Owner ask: "Investigate why slow — can we optimize / get rid of bottlenecks / 
 **Second finding.** D/T/³He/⁵Li/⁶Li matrix-m caches on main were on the pre-2026-09-05 GROUPED word (match it at 1e-49…1e-41; borromean off by O(1)); only ⁴He was borromean. Grouped word = single-generator segments ⇒ GP reduction has nothing to do — which is why the Aug caches took 69 s and why the "20 ms/λ dim-independent" docstring was believed. All five regenerated on the borromean word (D/T/³He in a separate revertible commit).
 
 Audit: docs/audits/2026-09-07-chi-scaling-wall-level-local-path-sum.md. Not established: complexity class of the reduction; whether the four deltalambda/ consumers' conclusions move; whether the binding producer (qou-sv7h) words are level-local.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

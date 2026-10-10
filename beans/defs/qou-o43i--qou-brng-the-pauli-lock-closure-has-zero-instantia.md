@@ -1,11 +1,14 @@
 ---
 # qou-o43i
 title: 'qou-brng: the Pauli-lock closure has ZERO instantiation sites — its equal-scalars hypothesis is not a corpus claim a D9 witness could settle'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T20:22:33Z
-updated_at: 2026-09-06T04:17:52Z
+updated_at: 2026-10-04T15:13:38Z
+parent: qou-10v9
 ---
 
 Follows `qou-brng`'s 2026-09-04 entry, which named `separable_interface_degenerate`'s
@@ -253,3 +256,9 @@ Audit + reproduction script: `docs/audits/2026-09-06-check-sidecars-r-assign-fal
 for every changed block with no staleness test. It produces no wrong *verdict*, only an
 always-printed suggestion, and changing it needs its own measurement of what "stale"
 should mean for a sidecar. Recorded so it is not mistaken for an oversight.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

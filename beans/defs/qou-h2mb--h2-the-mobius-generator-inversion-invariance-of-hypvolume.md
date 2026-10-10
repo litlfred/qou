@@ -4,8 +4,11 @@ title: 'H2 (Möbius): inversion invariance of hypVolume — the last generator, 
 status: todo
 type: task
 priority: medium
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T03:30:00Z
-updated_at: 2026-08-10T03:30:00Z
+updated_at: 2026-10-04T15:26:07Z
+parent: qou-c8p8
 ---
 
 The one gap left in **H2** of `qou-5gai`, and the reason every PR in the H4 tier

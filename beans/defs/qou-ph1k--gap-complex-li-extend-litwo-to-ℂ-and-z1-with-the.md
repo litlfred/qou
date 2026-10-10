@@ -3,8 +3,12 @@
 title: 'GAP: complex Li₂ — extend LiTwo to ℂ and |z|>1, with the complex reflection identity'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-03T14:48:28Z
-updated_at: 2026-08-03T14:48:28Z
+updated_at: 2026-10-04T15:19:51Z
+parent: qou-r9ih
 ---
 
 

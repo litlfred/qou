@@ -5,10 +5,12 @@ status: todo
 type: task
 priority: medium
 tags:
+    - reorg-2026-10-04
     - lean
     - vacuity
 created_at: 2026-08-08T12:00:00Z
-updated_at: 2026-08-08T12:00:00Z
+updated_at: 2026-10-04T15:26:07Z
+parent: qou-wp3h
 ---
 
 Found while draining the `wall-side-correct` WEAK queue, where it is **not** the

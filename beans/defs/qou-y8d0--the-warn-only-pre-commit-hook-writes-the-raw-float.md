@@ -4,8 +4,11 @@ title: The warn-only pre-commit hook WRITES the raw-float64 ratchet witness on e
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T09:19:43Z
-updated_at: 2026-09-06T09:20:18Z
+updated_at: 2026-10-04T15:25:01Z
+parent: qou-9nnz
 ---
 
 ## The finding (2026-09-06)

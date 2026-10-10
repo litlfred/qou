@@ -1,11 +1,14 @@
 ---
 # qou-wngo
 title: 'BUG: main is RED on lake build QOU — HyperbolicGeodesicZAxis.lean, 4 errors, 2 of them one-word fixes'
-status: in-progress
+status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T14:02:16Z
-updated_at: 2026-08-16T21:45:28Z
+updated_at: 2026-10-04T15:11:35Z
+parent: qou-5vkl
 ---
 
 Found running `prepare-merge` Step 4 on PR #5205. The **only** build errors in
@@ -168,3 +171,9 @@ CI is `workflow_dispatch`-only repo-wide, so nothing built it on push. Under
 per-file check of a *different* file cannot catch this. **Whole-library
 breakage is the class with no automated catcher**, and this is what that costs:
 a four-token defect, live on `main`, invisible to every gate.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

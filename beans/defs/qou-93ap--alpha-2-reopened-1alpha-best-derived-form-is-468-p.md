@@ -3,8 +3,12 @@
 title: 'ALPHA-2 reopened: 1/alpha best derived form is -468 ppb, not resolved at 6.7'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T15:13:57Z
-updated_at: 2026-08-21T15:13:57Z
+updated_at: 2026-10-04T15:16:19Z
+parent: qou-3l2l
 ---
 
 

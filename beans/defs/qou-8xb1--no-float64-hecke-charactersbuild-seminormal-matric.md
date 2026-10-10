@@ -1,11 +1,15 @@
 ---
 # qou-8xb1
 title: 'NO-FLOAT64: hecke_characters.build_seminormal_matrices still f64-bound (qou-d8gq fixed only the pyhecke twin)'
-status: in-progress
+status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-08-25T16:38:19Z
-updated_at: 2026-09-08T04:00:00Z
+updated_at: 2026-10-04T15:11:38Z
+parent: qou-9nnz
 ---
 
 ## Found 2026-08-25 while draining the 5 NEW raw-float64 witnesses on main
@@ -241,3 +245,9 @@ self-contradiction. It is decidable without judgement — the discriminator is
 the bean asserting *its own* openness, not merely mentioning something open.
 
 Re-close it when the work its body names is actually done.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

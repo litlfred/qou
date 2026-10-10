@@ -4,8 +4,11 @@ title: 'Pull through Solleveld: affine-Hecke HH is nonzero in higher degrees, an
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T21:16:54Z
-updated_at: 2026-08-30T14:33:39Z
+updated_at: 2026-10-04T15:22:49Z
+parent: qou-k4oq
 ---
 
 `arxiv-1108.5286v3` (Solleveld, *Hochschild homology of affine Hecke algebras*)

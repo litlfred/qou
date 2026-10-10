@@ -1,11 +1,14 @@
 ---
 # qou-jgg0
 title: 'qou-atbr: def:atomic-braid and the mass law''s atomic braid are DIFFERENT objects sharing a name and a symbol'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T09:58:53Z
-updated_at: 2026-09-07T18:00:00Z
+updated_at: 2026-10-04T15:13:38Z
+parent: qou-v2om
 ---
 
 ## 2026-09-05 — measured: they are DIFFERENT OBJECTS, not a disagreement about a number
@@ -668,3 +671,9 @@ unknown and not guessed. Tracked in `qou-1jw9`.
 **Bean stays open** (rule 13a): the `3A+Z` third cell in
 `mass-endomorphism/atomic-mass-gb-nf.md:3` is still untouched — the owner ruled
 on two cells.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

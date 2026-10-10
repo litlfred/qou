@@ -4,8 +4,11 @@ title: Cite centsim.pdf at computations/hh1_h5_cocenter_action.py
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:35Z
-updated_at: 2026-08-21T17:05:01Z
+updated_at: 2026-10-04T15:17:49Z
+parent: qou-19m0
 ---
 
 Once the key exists, the probe's dim Z = 7 consistency check and its specialization-to-zeta_5 step should cite Sec. 5.1 and Thm 5.2 rather than asserting them.

@@ -4,8 +4,11 @@ title: 'GAP: vanishing_step''s combinatorial input is a HYPOTHESIS, not a proved
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T16:48:48Z
-updated_at: 2026-09-08T04:37:28Z
+updated_at: 2026-10-04T15:20:32Z
+parent: qou-0cyu
 ---
 
 

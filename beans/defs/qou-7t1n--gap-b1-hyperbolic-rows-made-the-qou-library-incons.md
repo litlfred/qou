@@ -3,8 +3,12 @@
 title: 'GAP: b1_hyperbolic_rows made the QOU library inconsistent (FIXED); audit the same shape elsewhere'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T17:15:19Z
-updated_at: 2026-08-08T17:15:19Z
+updated_at: 2026-10-04T15:19:45Z
+parent: qou-rtxm
 ---
 
 

@@ -4,9 +4,13 @@ title: 'uses[] dependency cycles: 20 independent, not 69 — 16 are mutual pairs
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T13:46:44Z
-updated_at: 2026-08-09T13:46:44Z
+updated_at: 2026-10-04T15:25:20Z
+parent: qou-hqo3
 ---
+
 `detangler-no-dependency-cycle` reports **69 failing blocks**, surfaced when the
 detangler axis went live in #4867 (it had returned `n/a` almost everywhere
 before, so these had never been triaged).

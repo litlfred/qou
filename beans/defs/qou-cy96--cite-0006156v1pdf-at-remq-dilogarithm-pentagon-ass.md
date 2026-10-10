@@ -4,8 +4,11 @@ title: Cite 0006156v1.pdf at rem:q-dilogarithm-pentagon-associator
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:00Z
-updated_at: 2026-08-21T17:04:52Z
+updated_at: 2026-10-04T15:16:59Z
+parent: qou-ysb7
 ---
 
 rem:q-dilogarithm-pentagon-associator cites faddeev_kashaev1994 for the operator pentagon; this paper carries a proof at complex b, which is the regime the corpus's fibre-level (non-real q) framing requires.

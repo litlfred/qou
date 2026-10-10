@@ -1,0 +1,85 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "fulman2003",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 154,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0305423v3/0305423v3.pdf"
+        },
+        "id": "fulman2003",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Companion to 0304010v1 (Ivanov-Olshanski) in this slice: Fulman reproves Kerov's character-ratio CLT by Stein's method and \u2014 the point \u2014 attaches an explicit error term, which the Kerov/Hora/Ivanov-Olshanski moment proofs do not have. QOU asserts convergence RATES (conj:jet-convergence-classical-limit's O(1/sqrt(k)); prop:q-plancherel-asymptotic-skeleton clause (2)'s O(1/sqrt(n-3))) without any source that states a rate. Fulman gives the q = 1 benchmark rate. Secondarily, his exchangeable pair is built from harmonic functions on Bratteli diagrams, which is the same combinatorial object as prop:wedderburn-bratteli-recursion. Supporting rather than core: it is q = 1 and the corpus's claims are q-deformed, so it calibrates rather than establishes them.",
+          "keyResults": [
+            {
+              "locator": "Thm 1.2",
+              "statement": "For n >= 2 and all real x_0, |P(((n-1)/sqrt(2)) chi^lambda(12)/dim(lambda) <= x_0) - Phi(x_0)| <= 40.1 n^{-1/4}, with a conjectured C n^{-1/2}.",
+              "useForFolio": "The only explicit Berry-Esseen rate for the Plancherel character-ratio CLT. Gives a concrete q = 1 number against which the corpus's asserted O(1/sqrt(k)) / O(1/sqrt(n-3)) rates can be sanity-checked, and shows the best proved distributional rate is n^{-1/4}, not n^{-1/2} \u2014 which is weaker than what the corpus's prose implies.",
+              "targets": [
+                "prop:q-plancherel-asymptotic-skeleton",
+                "conj:jet-convergence-classical-limit"
+              ]
+            },
+            {
+              "locator": "\u00a72 (harmonic functions and exchangeable pairs)",
+              "statement": "Coherence relation for measures on a Bratteli diagram: M_n(lambda) = sum_{lambda -> Lambda} (dim(lambda) kappa(lambda,Lambda)/dim(Lambda)) M_{n+1}(Lambda), with Plancherel measure on the Young lattice (kappa == 1) as the special case; the down-transition gives an exchangeable pair.",
+              "useForFolio": "The same down-transition structure prop:wedderburn-bratteli-recursion uses for Hecke Wedderburn blocks, stated in the general Bratteli-diagram form with the dim-ratio weights. Usable as the probabilistic reading of that recursion (coherent measures = harmonic functions), and as a source for the fact that this construction is what makes a CLT with error term possible.",
+              "targets": [
+                "prop:wedderburn-bratteli-recursion"
+              ]
+            },
+            {
+              "locator": "\u00a75",
+              "statement": "Eigenvalues and eigenvectors of the Markov chain on partitions underlying the exchangeable pair, applied to the asymptotic decomposition of tensor powers of symmetric-group representations.",
+              "useForFolio": "The tensor-power decomposition asymptotics are the q = 1 shadow of the operator-valued branching combiner that Subgoal-1 names as the closure path for the per-isotope binding tower; a spectral description of the down-transition chain is a candidate structural input there. Flagged as a lead, not a wired result.",
+              "targets": [
+                "prop:wedderburn-bratteli-recursion"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Orphan; no Fulman entry.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-ce02"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Clause (2) of prop:q-plancherel-asymptotic-skeleton asserts a fluctuation rate with no rate-bearing source; Thm 1.2 is the q = 1 explicit rate.",
+              "target": "prop:q-plancherel-asymptotic-skeleton",
+              "bean": "qou-ystb"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record that the best PROVED distributional rate for the q = 1 character-ratio CLT is n^{-1/4} (Fulman Thm 1.2), with n^{-1/2} only conjectured \u2014 so the corpus's O(1/sqrt(k)) prose is stronger than the q = 1 literature supports and needs restating or sourcing.",
+              "target": "conj:jet-convergence-classical-limit",
+              "bean": "qou-qzx1"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "e4554f9084ba"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

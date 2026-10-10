@@ -1,11 +1,13 @@
 ---
 # pxhb
 title: "Follow-up session: work the open-conjecture frontier surfaced by the 2026-07-02 closure sweep — 5nx8 (\U0001D519 fibre-descent: binding kernel characterized-not-closed, single-\U0001D519 assembly open) + 1jrh (AW 3-term recurrence, gated on c3^even) + the s013 q-Bessel self-conjugate target; per docs/audits/2026-07-02-internal-conjecture-closure-sweep.md these are advance-paths, not mechanical closures"
-status: in-progress
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-02T17:04:06Z
-updated_at: 2026-08-19T14:22:31Z
+updated_at: 2026-10-04T15:12:38Z
 ---
 
 ## Triage 2026-08-07 — all three named children are CLOSED; residual is 2 items
@@ -86,3 +88,9 @@ Re-triaged this axis against what the qou-cds1 arc established (observable level
  qou-sglq  E  re-scope the four "Q_beta is bar-odd" corpus sites
 
 Not beaned, deliberately: NZ/A-polynomial (option C) is real but does not become concrete until qou-e58e lands; Habiro/cyclotomic (option B) routes through the GATED c_k Habiro element and is NOT recommended now. Pre-existing todos 5lcg (zeta4-residue Lean certificate + surviving cubic) and pusy (zeta4 character-parity prune, generic R) remain the Lean-side complements to qou-ztod and are NOT duplicated by it.
+
+
+
+## Summary of Changes
+
+Session log closed 2026-10-04 (owner decision 2): open children were reparented to programme epics and prose follow-ups extracted as their own beans. Kept as a record, not deleted.

@@ -3,12 +3,14 @@
 title: Cite [ramis-sauloy2006] at QOU/MathlibExt/QBorelKernel.lean — Thm 3.8/3.9 tie the level-δ q-Borel invariants to the alien derivations by theta multiplication
 status: todo
 type: task
+priority: normal
 tags:
     - paper-relevance-triage
     - qdiff-stokes
+    - reorg-2026-10-04
 created_at: 2026-09-07T08:35:56Z
-updated_at: 2026-09-07T08:35:56Z
-parent: qou-2akx
+updated_at: 2026-10-04T15:17:45Z
+parent: qou-1qhv
 ---
 
 Source: library/arxiv-math-0611521v1/0611521v1.pdf -> [ramis-sauloy2006]. Relevance: **core** — agent assessment, not yet adjudicated. Raised by local/paper-relevance-triage 2026-09-07.

@@ -1,0 +1,53 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "hikami2001",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 142,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-ph-0105039v1/0105039v1.pdf"
+        },
+        "id": "hikami2001",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "*** WRONG JOIN ***. The seeded id points at a two-author 1994 quantum-dilogarithm entry. The document's own title page shows a SINGLE-author paper from a different year on a different topic - a quantum-dilogarithm-based knot invariant in integral form (arXiv:math-ph/0105039v1). Author set, year and subject all differ from the seeded entry, so the join is wrong. No registered key matches it: references.ts carries entries for this author's math-ph/0405028 and math/0403224 papers only, and a grep for '0105039' in references.ts is empty. id set to null. Judged on its own merits the document sits squarely in the folio's subject area: it studies a non-compact analogue of the Kashaev / colored-Jones invariant defined by an integral, and shows the hyperbolicity gluing-consistency conditions arise in the classical limit as the SADDLE-POINT equation of that integral. The corpus runs a large state-integral / saddle-point programme (QOU/QBeta/StateIntegralRecursionLattice.lean, QOU/QBeta/PhibSaddleA1Exact.lean, mass-endomorphism/complex-volume-character-variety-path.md), so this is usable background; I could not identify a specific corpus statement it discharges, so supporting rather than core.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The document is a distinct, corpus-relevant paper with no ref() entry; the ledger currently mis-joins it onto faddeev_kashaev1994. Register a new key (metadata from the title page: Hikami, math-ph/0105039) before any citation is added.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-diu5"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "The paper's 'gluing consistency = saddle point of the quantum-dilogarithm integral' statement is the geometric reading behind the corpus's own saddle-point work; a remark recording the provenance would keep the state-integral chapter honest about which parts are literature.",
+              "target": "folio/quantum-observable-universe/mass-endomorphism/complex-volume-character-variety-path.md",
+              "bean": "qou-7ldu"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "850e6a00721e"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

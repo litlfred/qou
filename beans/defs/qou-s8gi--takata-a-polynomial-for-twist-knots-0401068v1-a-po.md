@@ -3,8 +3,12 @@
 title: 'Takata A-polynomial for twist knots (0401068v1): A-poly from Masbaum recurrences — bridge to geometric rho_inf face'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-18T22:17:25Z
-updated_at: 2026-07-18T22:17:25Z
+updated_at: 2026-10-04T15:24:49Z
+parent: c7vs
 ---
 
 

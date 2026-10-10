@@ -3,8 +3,12 @@
 title: Cite [domagala-lewandowski-2004] at conj:lqg-entropy-qdim-partition-pole
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:42Z
-updated_at: 2026-08-08T23:34:42Z
+updated_at: 2026-10-04T15:17:30Z
+parent: qou-1qhv
 ---
 
 Add an inline \cite at the block's claim 3 ('Immirzi from criticality') and at its scope note's 'established analytic result', so the bare cites[] entry at lqg-entropy-qdim-partition-pole.ts:15 becomes visibly load-bearing rather than an unanchored list entry.

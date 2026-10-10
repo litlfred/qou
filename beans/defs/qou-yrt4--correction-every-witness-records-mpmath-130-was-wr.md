@@ -4,8 +4,11 @@ title: 'CORRECTION: ''every witness records mpmath 1.3.0'' was wrong -- 703 alre
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T20:20:48Z
-updated_at: 2026-08-24T20:21:25Z
+updated_at: 2026-10-04T15:18:12Z
+parent: qou-5vkl
 ---
 
 WRITTEN INTO A COMMIT MESSAGE, so correcting it here where a reviewer can find it.

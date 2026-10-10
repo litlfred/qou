@@ -1,16 +1,18 @@
 ---
 # qou-fj8u
 title: 'PROVE(lean): numSYT_mul_hookProduct — theorem numSYT_mul_hookProduct (μ : YoungDiagram) : numSYT μ * hookProduct μ = (μ.card).fa [cited sagan2001]'
-status: todo
+status: completed
 type: task
+priority: normal
 tags:
-    - lean
-    - cited-sorry
     - paper-qou
     - infra-blocked
     - cite-sagan2001
+    - reorg-2026-10-04
+    - lean
+    - cited-sorry
 created_at: 2026-08-01T23:31:03Z
-updated_at: 2026-08-31T02:53:38Z
+updated_at: 2026-10-04T15:22:41Z
 parent: qou-k1mq
 ---
 
@@ -41,3 +43,9 @@ in-repo work -- substantial, but in-repo.
 
 The original text is kept above, not deleted: the Tractability line is per-item and is accurate;
 only the Next-step verdict is being corrected.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] numSYT_mul_hookProduct: target decl/file sorry-free on main 2026-10-03; [B] sp00 completed epic lists bricks axiom-clean (#print axioms). Conditional-in-form only on SnIsotypicSpechtSplit, which i

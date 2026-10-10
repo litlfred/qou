@@ -5,12 +5,14 @@ status: todo
 type: task
 priority: normal
 tags:
+    - wenzl-level
+    - reorg-2026-10-04
     - lean
     - qbeta
     - hecke
-    - wenzl-level
 created_at: 2026-08-16T12:55:47Z
-updated_at: 2026-08-16T12:55:47Z
+updated_at: 2026-10-04T15:21:09Z
+parent: qou-rtxm
 ---
 
 ## This is the RESIDUE of PR #5229, not a duplicate of it

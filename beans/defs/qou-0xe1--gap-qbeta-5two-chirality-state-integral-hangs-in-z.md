@@ -4,8 +4,11 @@ title: 'GAP: qbeta_5two_chirality_state_integral hangs in z_state_integral at G1
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T00:26:33Z
-updated_at: 2026-09-04T00:26:59Z
+updated_at: 2026-10-04T15:20:20Z
+parent: qou-avtq
 ---
 
 MEASURED 2026-09-04 (bean qou-9ugp, probes/ tranche).

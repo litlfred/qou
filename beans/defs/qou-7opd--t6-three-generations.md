@@ -4,8 +4,10 @@ title: 'T6: three generations'
 status: todo
 type: task
 priority: low
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-03T23:27:17Z
-updated_at: 2026-08-03T23:27:58Z
+updated_at: 2026-10-04T15:26:01Z
 parent: qou-8lxd
 ---
 

@@ -1,11 +1,14 @@
 ---
 # qou-2tuv
 title: 'H_3 vs H_{3A}: the proper sum is infeasible past A~12, so substitution cannot fix the heavy-atom rows'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-09-15T08:23:44Z
+updated_at: 2026-10-04T15:13:04Z
+parent: qou-v2om
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -1657,3 +1660,9 @@ the reason this bean establishes (p(3A) growth), and migrating the A-bounded
 callers is a change to derived numbers that several producers publish, so it is
 the owner's call under the 2026-09-07 ask-before-changing directive. Recording
 the measurement only.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-15 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

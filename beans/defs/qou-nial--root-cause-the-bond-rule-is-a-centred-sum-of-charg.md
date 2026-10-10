@@ -4,8 +4,11 @@ title: 'ROOT CAUSE: the bond rule is a centred SUM of charges where Coulomb need
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T13:00:13Z
-updated_at: 2026-08-30T13:54:55Z
+updated_at: 2026-10-04T15:24:13Z
+parent: qou-v2om
 ---
 
 ## The finding

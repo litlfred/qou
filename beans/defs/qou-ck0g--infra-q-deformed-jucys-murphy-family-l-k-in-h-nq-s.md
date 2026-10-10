@@ -1,11 +1,14 @@
 ---
 # qou-ck0g
 title: 'INFRA: q-deformed Jucys-Murphy family L_k in H_n(q) + seminormal eigenvalues'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T19:02:23Z
-updated_at: 2026-08-16T11:30:00Z
+updated_at: 2026-10-04T15:11:00Z
+parent: qou-1oif
 ---
 
 
@@ -129,3 +132,9 @@ item 2 needs. Its own notes flag the convention point that matters here: the JM
 eigenvalue `q^{2c}` is a per-cell *content* while `genMat`'s diagonal is a
 content *difference*. I am **not** attempting item 2; #5205 stops at the
 conditional class and says so.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

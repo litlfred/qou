@@ -1,11 +1,13 @@
 ---
 # qou-9ies
 title: The canonical Vol(4_1) is a live float64 with 8 importers, and a 2026-06 audit called it a comment
-status: todo
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T07:17:23Z
-updated_at: 2026-09-07T09:13:21Z
+updated_at: 2026-10-04T15:24:52Z
 ---
 
 Found while hand-reading the 13 witness-copy findings whose source is a RETIRED
@@ -178,3 +180,9 @@ measures **213 live** (+4 generated). That figure is on its second correction:
 so and points at the probe instead of restating a number.
 
 Probe now exits 0 with 11 named checks.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: 4d7f192bad "Vol(4_1) is an exact closed form, not a SnapPy measurement"; 4 main commits

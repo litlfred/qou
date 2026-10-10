@@ -3,8 +3,12 @@
 title: 'binding: the gap is coordination geometry, not a missing force term — derive the bond count from the SU(4) partition shape'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T20:51:00Z
-updated_at: 2026-08-08T20:51:00Z
+updated_at: 2026-10-04T15:16:42Z
+parent: qou-v2om
 ---
 
 MEASUREMENT (read-only, this session). B_AME / B_sym_chain on the most-bound isotope at each A:

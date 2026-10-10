@@ -3,8 +3,12 @@
 title: the raw-float64 LOCATOR in witness.py lacks the shadow rule its own GATE has -- it now cries wolf on a correctly-drained witness
 status: todo
 type: bug
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T23:35:32Z
-updated_at: 2026-08-15T23:35:32Z
+updated_at: 2026-10-04T15:15:52Z
+parent: qou-9nnz
 ---
 
 Found 2026-08-15 while draining `canonical-mass-table-extended` under `qou-xwet`.

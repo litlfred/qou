@@ -4,8 +4,11 @@ title: Cite 2402.04839v2 (1).pdf at fundamental-knots-operator-basis
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:51Z
-updated_at: 2026-08-21T17:05:09Z
+updated_at: 2026-10-04T15:17:19Z
+parent: qou-19m0
 ---
 
 Once the entry exists, the fundamental-knots table and the three-calibration proof should cite it at the exact points where they say 'simplest hyperbolic knot', replacing an informal appeal with the minimality statement.

@@ -3,12 +3,14 @@
 title: 'GAP: categorical-linking-operation.lean still carries LkMultiplicative / LkTraceCutSymmetric := True and a global instance canonical (outside the SM sweep''s file list)'
 status: todo
 type: task
+priority: normal
 tags:
     - lean
     - gap
+    - reorg-2026-10-04
 created_at: 2026-09-03T09:08:30Z
-updated_at: 2026-09-03T09:08:30Z
-parent: qou-ggdk
+updated_at: 2026-10-04T15:19:50Z
+parent: qou-5vkl
 ---
 
 Class A (hygiene) defect found but NOT fixed by the SM-surface Lean sweep (bean qou-08zf, 2026-09-03) because the file is outside that sweep's file list. mass-theory/categorical-linking-operation.lean defines LkMultiplicative and LkTraceCutSymmetric as Prop := True, proves them by trivial, and installs a GLOBAL instance canonical : CategoricalLinkingOperation R q — so conj:categorical-linking-operation is discharged for free (AGENTS.md §1a / §3b-tax, proof-claims-unencoded). The previous inlined copy in categorical-higgs-mechanism.lean has been DROPPED (not propagated); the Higgs carrier now states its linking input as MassEigenstateCountThree lk.

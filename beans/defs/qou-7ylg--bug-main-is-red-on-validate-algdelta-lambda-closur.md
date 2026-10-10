@@ -4,8 +4,11 @@ title: 'BUG: main is RED on validate — alg:delta-lambda-closure cites only a r
 status: todo
 type: bug
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T10:49:35Z
-updated_at: 2026-09-26T11:03:25Z
+updated_at: 2026-10-04T15:14:35Z
+parent: qou-9nnz
 ---
 
 Reproduced on origin/main (not a branch artifact): 12 issues, 2 of them ERRORS.

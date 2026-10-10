@@ -1,12 +1,14 @@
 ---
 # qou-b5h9
 title: 'OPEN: 8_11 (triton knot-ID) KVC is not in Murakami 3.3 - Ohtsuki machinery stops at 6 crossings, this is a paper'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T19:18:13Z
-updated_at: 2026-08-30T15:10:00Z
-parent: qou-9ot5
+updated_at: 2026-10-04T15:13:24Z
+parent: qou-r9ih
 ---
 
 ## ANSWERED 2026-08-25 — partly. See docs/audits/2026-08-25-is-8-11-kvc-attackable.md
@@ -239,3 +241,9 @@ two-bridge knots in the Hessian reading — 8₁₁ included, predicting
 Kashaev asymptotic prefactor for 8₁₁ is the part that stays open.
 
 **Status: unchanged. 8₁₁ remains the corpus's load-bearing open VC instance.**
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

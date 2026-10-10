@@ -1,11 +1,14 @@
 ---
 # qou-uk8o
 title: 'Sweep: 23 producers still weight partitions by dim_q^2/[n]_q!; triage by CROSS-ATOM exposure (c_n cancels within one n)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T05:55:41Z
-updated_at: 2026-09-05T06:31:36Z
+updated_at: 2026-10-04T15:14:02Z
+parent: qou-10v9
 ---
 
 ## Sweep complete (2026-09-05)
@@ -57,3 +60,9 @@ assertion is left EXPECTED-TRUE/measured-FALSE on purpose (it is the corpus's
 own detector). Re-measured symbolically in the process: the identity is false in
 sympy exactly, not merely numerically — the n=2 ratio is 2q/(q^2+1). That is
 stronger evidence than the upstream numerical table and is independent of it.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

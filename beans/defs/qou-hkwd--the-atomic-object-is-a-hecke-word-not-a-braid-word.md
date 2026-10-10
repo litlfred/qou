@@ -1,11 +1,14 @@
 ---
 # qou-hkwd
 title: 'RENAME TRANCHE: the atomic object is a Hecke word, not a braid word — 5 mathematically-false lines, not a 672-file rename'
-status: in-progress
-type: milestone
+status: todo
+type: feature
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T12:25:33Z
-updated_at: 2026-09-06T12:25:33Z
+updated_at: 2026-10-04T15:10:40Z
+parent: qou-mub3
 ---
 
 Owner instruction 2026-09-06: "do a separate rename tranche. coordinate with all
@@ -75,3 +78,9 @@ and it is NOT a free choice in the way I implied -- an averaged letter and BOTH
 its resolutions project to the SAME transposition, so the component partition,
 non-interaction and strand blocks are branch-INDEPENDENT. Some topology is
 readable; volumes, crossing numbers and genus are not.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

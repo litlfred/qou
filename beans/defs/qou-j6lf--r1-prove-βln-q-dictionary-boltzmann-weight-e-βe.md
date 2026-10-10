@@ -1,12 +1,14 @@
 ---
 # qou-j6lf
 title: 'R1: prove β=ln q dictionary — Boltzmann weight e^{-βE_λ} ≡ Frobenius weight y_λ(q); read off E_λ'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T18:33:15Z
-updated_at: 2026-08-02T18:59:26Z
-parent: qou-3ffh
+updated_at: 2026-10-04T15:13:42Z
+parent: qou-8lxd
 ---
 
 Near-term. Identify the stat-mech Boltzmann factor with the Frobenius/Markov weight y_λ(q): e^{-β E_λ} = y_λ(q) with β = ln q ⇒ E_λ = -ln y_λ(q)/ln q. Lean: a clean identity over ℝ (archimedean — uses ln). Grounds the 'partitions ARE thermal states' claim. Cross-ref qou-ud3o (Wick: real q=thermal, |q|=1=real-time).
@@ -34,3 +36,9 @@ Frobenius weights are supplied by R2/Schur-Weyl `qou-mpq5`); and it closes
 no physics observable — energies are relative to the weights, not absolute
 masses. Honest scope: the dictionary is proved; the weights that feed it
 are R2's job.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-02 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

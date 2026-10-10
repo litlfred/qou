@@ -1,11 +1,13 @@
 ---
 # qou-keu7
 title: 'TRAP: checkout -B from origin/main silently discards beans committed on the old branch'
-status: todo
+status: completed
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T10:41:27Z
-updated_at: 2026-08-30T10:42:09Z
+updated_at: 2026-10-04T15:15:08Z
 ---
 
 ## TRAP — measured, 2026-08-30, cost: two beans lost from main for ~40 minutes
@@ -167,3 +169,9 @@ stating plainly: git blocks a checkout that would overwrite *uncommitted*
 changes. The silent loss happens only for work that is **committed on the branch
 and absent from the target** — which is why it is invisible, and why `git status`
 is clean afterwards.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] trap documented in f-a cat-harness/skills/sdlc/sdlc-core/bean-coordination.md:398 and pickup.md:121

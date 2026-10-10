@@ -3,8 +3,12 @@
 title: Remark interpreting [finster2022] at content/quantum-observable-universe/observations/cfs-compari…
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:39Z
-updated_at: 2026-08-08T23:35:39Z
+updated_at: 2026-10-04T15:23:47Z
+parent: qou-vva9
 ---
 
 Either use the paper (the CFS comparison block discusses matter content but never the baryogenesis mechanism this reference is for) or drop it from cites[]; and correct the ledger note, which names a second citation site that does not exist.

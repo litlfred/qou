@@ -1,11 +1,14 @@
 ---
 # qou-6xt9
 title: Ingest the knot-energy literature (O'Hara, Freedman-He-Wang, survey)
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T11:56:16Z
-updated_at: 2026-09-13T15:00:59Z
+updated_at: 2026-10-04T15:13:08Z
+parent: qou-mub3
 ---
 
 ## THE PREMISE WAS WRONG, AND IT WAS MY CLAIM (2026-09-13)
@@ -312,3 +315,9 @@ proved from the invariance hypothesis, not from these citations. The
 realisable-triples question `qou-zfs6` stays open on is also untouched: this
 document quantifies over actual space curves, so it says nothing about whether
 the characterisation survives on realisable distance triples only.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

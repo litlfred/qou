@@ -4,8 +4,11 @@ title: 'GAP: LieValuedStokes + NonAbelianStokes are self-certifying carriers (Pr
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T17:00:30Z
-updated_at: 2026-09-07T17:58:08Z
+updated_at: 2026-10-04T15:20:10Z
+parent: qou-6qbv
 ---
 
 Found while draining the 22 small-category vacuity defects (qou-h3ly).

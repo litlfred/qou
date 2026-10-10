@@ -1,12 +1,14 @@
 ---
 # qou-q2oa
 title: The ladder phase alpha has no derivation from the actual Wedderburn weights
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T11:40:16Z
-updated_at: 2026-08-21T15:24:14Z
-parent: qou-cdx1
+updated_at: 2026-10-04T15:11:10Z
+parent: qou-10v9
 ---
 
 Parent tranche: `qou-cds1` (S1 — re-derive the Q_β `c_k` ladder under D).
@@ -161,3 +163,9 @@ mathlib oleans 6990 before and after (read-only, no `lake build`).
 asserted upstream and undrived; `qou-cds1` (the D-frame `c_k` ladder) is
 untouched; and whether the decay channel carries `α` or its mirror-covariant
 projection `α − h²/4` is a question about the framing, not the weights.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-21 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

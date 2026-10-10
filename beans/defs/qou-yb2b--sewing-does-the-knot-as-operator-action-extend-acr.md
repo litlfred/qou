@@ -4,8 +4,11 @@ title: 'Sewing: does the knot-as-operator action extend across the complement, o
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T09:23:16Z
-updated_at: 2026-09-04T10:29:37Z
+updated_at: 2026-10-04T15:24:23Z
+parent: qou-v2om
 ---
 
 THE OWNER'S ASK, verbatim (2026-09-04): "remember the knots themselves are operators and sewing should be able to extend the not actions to the knot compliment, or show that they degenerate there."

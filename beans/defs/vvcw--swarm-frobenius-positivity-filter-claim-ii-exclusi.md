@@ -1,12 +1,14 @@
 ---
 # vvcw
 title: 'Swarm: frobenius_positivity_filter claim_ii_exclusion_count (Config cardinality — likely closeable)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-05T23:07:21Z
-updated_at: 2026-07-05T23:08:37Z
-parent: uudc
+updated_at: 2026-10-04T15:14:01Z
+parent: qou-6qbv
 ---
 
 
@@ -20,3 +22,9 @@ the count 2^(A-1) lives over the 2^A sign-pattern space (exclusion=odd parity),
 not the 4^A config space. Proved `parity_odd_card` sorry-free + reframed
 `frobenius_positivity_filter` as a proved §3b-cond conditional theorem (no sorry).
 .md wording fixed; audit doc records finding+resolution. #print axioms clean.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-07-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

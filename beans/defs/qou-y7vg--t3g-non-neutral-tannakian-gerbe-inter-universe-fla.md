@@ -4,8 +4,10 @@ title: 'T3g: non-neutral Tannakian / gerbe -- inter-universe flavour'
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-04T00:07:01Z
-updated_at: 2026-08-26T15:18:09Z
+updated_at: 2026-10-04T15:24:47Z
 parent: qou-8lxd
 ---
 

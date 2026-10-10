@@ -1,0 +1,71 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "sauloy2000",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 346,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/aif-2000-50-4-1021-0/AIF_2000__50_4_1021_0.pdf"
+        },
+        "id": "sauloy2000",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "French-language article on regular singular q-difference systems: it constructs the q-characters e_{q,c} as theta quotients (built from the Jacobi theta), forms the Birkhoff connection matrix P = (X^(infinity))^{-1} X^(0) comparing the canonical solutions at 0 and infinity, proves P has ELLIPTIC coefficients, gives the complete classification by the triplet (N^(0), P, N^(infinity)) of two log-character matrices plus the connection matrix, describes the spirals q^Z of zeros and poles of the non-trivial characters, and in its final section analyses the behaviour of P as q tends to 1 (confluence to the monodromy). Every one of those is a named ingredient of the corpus's W2 Birkhoff-matrix infrastructure. QOU/MathlibExt/QCharacter.lean says in its own docstring that e_{q,c} is concretely a theta quotient \u2014 crediting this document's author by surname, in prose, with no ref() entry to resolve it \u2014 names the connection matrix P = (X^infinity)^{-1} X^0, and proves the ellipticity source lemma ('why the Birkhoff matrix is theta-valued') \u2014 i.e. the Lean file is built directly on this document's construction, cites it by author name in prose, and there is NO ref() entry for it anywhere in references.ts. prop:c1-theta-zero-locus-and-pole-divisor likewise asserts that the connection matrix's poles are theta zeros. This is a missing foundational citation for live infrastructure, not background.",
+          "keyResults": [
+            {
+              "locator": "sections 1-2 (construction of the characters e_{q,c}; 'Matrice de connexion et classification', the Birkhoff matrix with elliptic coefficients)",
+              "statement": "For a regular singular q-difference system the canonical solutions at 0 and infinity are built from theta-quotient characters, and their connection matrix P = (X^infinity)^{-1} X^0 has elliptic coefficients; the triplet (N^(0), P, N^(infinity)) is a complete classifying invariant.",
+              "useForFolio": "The literature source for QCharacter.lean's e_{q,c} theta quotient, for its ellipticity lemma, and for the pole-divisor claim in prop:c1-theta-zero-locus-and-pole-divisor \u2014 all currently carried without a bibliographic entry.",
+              "targets": [
+                "QOU.MathlibExt.QCharacter",
+                "prop:c1-theta-zero-locus-and-pole-divisor"
+              ]
+            },
+            {
+              "locator": "section 4 ('Comportement de la matrice de connexion lorsque q -> 1')",
+              "statement": "As q tends to 1 the connection matrix converges, recovering the monodromy of the confluent differential system.",
+              "useForFolio": "The classical-limit statement the corpus needs whenever it argues that a q-difference object is the q-lift of a classical monodromy datum rather than an analogy; it sits beside the existing confluence references in the q-lift cluster.",
+              "targets": [
+                "QOU.MathlibExt.QCharacter"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Core and orphan; QCharacter.lean credits this work in prose with no ref() entry to resolve, and it is the construction the whole W2 Birkhoff-matrix layer rests on.",
+              "target": "QOU.MathlibExt.QCharacter",
+              "bean": "qou-sg2y"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "prop:c1-theta-zero-locus-and-pole-divisor states that every pole of the connection matrix P = Y_0^{-1} Y_infinity is a theta zero; the theta-quotient construction of the characters and the ellipticity of P are the source for that.",
+              "target": "prop:c1-theta-zero-locus-and-pole-divisor",
+              "bean": "qou-l4dc"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "a7ca398590a2"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

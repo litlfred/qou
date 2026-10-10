@@ -4,8 +4,11 @@ title: 'qbeta Wenzl decomposition c3 = -2 - (3/2)W4: the ledger''s -0.0005 ppm '
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T04:26:48Z
-updated_at: 2026-09-04T06:28:44Z
+updated_at: 2026-10-04T15:22:59Z
+parent: qou-avtq
 ---
 
 ## The claim

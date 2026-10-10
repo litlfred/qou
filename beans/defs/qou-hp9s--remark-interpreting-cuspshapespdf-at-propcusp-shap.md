@@ -4,8 +4,11 @@ title: Remark interpreting CuspShapes.pdf at prop:cusp-shape-bar-parity
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:39Z
-updated_at: 2026-08-21T17:04:56Z
+updated_at: 2026-10-04T15:23:57Z
+parent: qou-aqfj
 ---
 
 Pin down which object 'cusp shape' names in prop:cusp-shape-bar-parity -- the Teichmuller modulus of the cusp torus, or the ideal-tetrahedron shape parameter tiling it -- and confirm the figure-eight value against the standard one. Deliberately a remark and not aid-proof: I could not settle the numerical question in this session, and the downstream cusp lattice Z<1, omega> depends on the answer.

@@ -1,11 +1,13 @@
 ---
 # qou-52i4
 title: Seed lake-cache/qou-v4-24-0 orphan branch after full build (preserve for next agent)
-status: in-progress
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-13T15:55:00Z
-updated_at: 2026-08-15T15:53:58Z
+updated_at: 2026-10-04T15:13:54Z
 ---
 
 
@@ -186,3 +188,10 @@ traces: 0          # zero, and 0/50 sampled newly-built oleans have a .trace sib
 The distinction this bean turns on therefore still stands: **only a real `lake build` run produces the traced set** described in the claim above (4459/4459, 100 %). A future agent who sees a container with a mostly-built QOU tree should check `find … -name '*.trace' | wc -l` before treating it as a reseed candidate — a full-looking olean count is not evidence of a seedable cache.
 
 The `would_shrink()` decision recorded above is untouched and still needs the owner's call.
+
+
+
+## Reasons for Scrapping
+
+Work-plan reorganisation 2026-10-04: [B] seed lake-cache/qou-v4-24-0 (2026-08-15, in-progress, stalled); f-a lake-cache.sh measured that very cache as trace-gutted (775/7268) - re-seed via current lake-cache.sh instead | STALLED in-progr
+Content is untouched; only this work item is closed.

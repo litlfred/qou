@@ -1,11 +1,14 @@
 ---
 # kehn
 title: Q_β c_k/Habiro keystone — improve m_n (lever 1)
-status: in-progress
-type: milestone
+status: todo
+type: feature
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-06-24T03:18:40Z
-updated_at: 2026-08-09T18:24:25Z
+updated_at: 2026-10-04T15:11:15Z
+parent: qou-avtq
 ---
 
 ## 2026-06-24 — PR #2723: Kashiwara b² Q_β wired into production neutron
@@ -48,3 +51,9 @@ comparison target was contaminated:
 So lever 2's true size is 139x-164x, and the honest experimental spread on
 Q_beta is now ~194 ppb rather than 1814 ppb (which matters if anyone was
 treating the determination spread as headroom).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-09 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

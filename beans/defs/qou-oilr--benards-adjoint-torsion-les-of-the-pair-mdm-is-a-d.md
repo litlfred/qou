@@ -4,8 +4,11 @@ title: Benard's adjoint-torsion LES of the pair (M,dM) is a dim-H1 machine — a
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T17:34:25Z
-updated_at: 2026-08-24T19:57:28Z
+updated_at: 2026-10-04T15:16:40Z
+parent: 08a2
 ---
 
 ## The source

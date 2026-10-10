@@ -9,9 +9,10 @@ tags:
     - dilogarithm
     - lean
     - mathlib-gap
+    - reorg-2026-10-04
 created_at: 2026-08-07T15:20:00Z
-updated_at: 2026-09-26T11:07:07Z
-parent: qou-0yqu
+updated_at: 2026-10-04T15:13:32Z
+parent: qou-n4nr
 ---
 
 

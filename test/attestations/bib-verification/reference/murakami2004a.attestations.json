@@ -1,0 +1,60 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "murakami2004a",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 164,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0405126v1/0405126v1.pdf"
+        },
+        "id": "murakami2004a",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "This is the source of Theorem 3.1 quoted in library/arxiv-math-0603217v3/0603217v3.pdf (Murakami, 'A version of the volume conjecture'), which IS load-bearing for the corpus's deformed volume conjecture (QOU/Knot/FigureEightComplexVolume.lean, QOU/QBeta/ChannelMeridianIdentification.lean, docs/audits/2026-07-26-sdeformed-channel-signflip.md). On its own it supplies the torus-knot case only, which the corpus does not evaluate; its independent value here is the caution it documents -- the deformed limit is NOT continuous at r = 1 for torus knots, and on the Im r < 0 branch it degenerates to the inverse Alexander polynomial rather than a volume. Both are branch/continuity facts the corpus's Im u reasoning brushes against. Supporting, not core: no QOU quantity is computed from it.",
+          "keyResults": [
+            {
+              "locator": "Thm 1.1, eqs. (1.1) and (1.2)",
+              "statement": "For r in a punctured neighbourhood of 1 with r not real: lim_N J_N(T(a,b); e^{2*pi*r*i/N}) = 1/Delta(T(a,b); e^{2*pi*r*i}) when Im r < 0, while lim_N log J_N / N = (1 - 1/(2abr) - abr/2)*pi*i when Im r > 0.",
+              "useForFolio": "Pins the two branches of the deformed colored-Jones limit and shows the exponential rate is non-zero even though Vol(T(a,b)) = 0 -- the explicit control case for the corpus's 'deformed volume conjecture is an N -> infinity statement' reasoning, and a check that the Im u sign convention there picks the intended branch.",
+              "targets": [
+                "QOU.QBeta.ChannelMeridianIdentification",
+                "computations/probes/qbeta_qnnq_theta_is_im_u_probe.py"
+              ]
+            },
+            {
+              "locator": "Remark 1.2 / abstract",
+              "statement": "The limit cannot be extended to a continuous function of r at r = 1 for torus knots (contrast with Kashaev-Tirkkonen's polynomial growth at r = 1 exactly).",
+              "useForFolio": "A documented discontinuity in the deformation parameter -- a standing caution for any QOU argument that treats the u-deformed evaluation as continuous through u = 0.",
+              "targets": [
+                "QOU.QBeta.ChannelMeridianIdentification"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry, and it is the cited source of the torus-knot half of the parameterized volume conjecture paper (0603217v3) that this triage recommends registering as load-bearing; registering only the latter leaves a dangling internal citation.",
+              "target": "folio/schema/references.ts (new id, e.g. murakami2004torus; note the collision hazard with the existing murakami2004 = math/0401084 figure-eight paper)",
+              "bean": "qou-0iwj"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "713498dbe80f"
+        }
+      }
+    }
+  ]
+}

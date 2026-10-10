@@ -4,8 +4,11 @@ title: 'The pole-to-cusp bijection: the .md clause is a cardinality mismatch, an
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T15:56:47Z
-updated_at: 2026-09-14T19:59:20Z
+updated_at: 2026-10-04T15:15:07Z
+parent: b9cj
 ---
 
 Measured 2026-09-14 while running the one cheap check that could open or close

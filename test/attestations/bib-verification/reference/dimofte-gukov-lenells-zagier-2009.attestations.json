@@ -1,0 +1,53 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "dimofte-gukov-lenells-zagier-2009",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 197,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-0903.2472v1/0903.2472v1.pdf"
+        },
+        "id": "dimofte-gukov-lenells-zagier-2009",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "*** WRONG JOIN ***. The seeded id points at a two-author 1994 quantum-dilogarithm entry. The document's own title page shows a FOUR-author paper on perturbative Chern-Simons theory with complex gauge group (arXiv:0903.2472v1, hep-th); none of its authors is the first author of the seeded entry, and the year differs. id set to null: no registered key matches (greps for '0903.2472' and for the third author's surname in references.ts are both empty). Judged on its own merits this is a CORE-relevance document rather than background. It constructs the all-loop perturbative invariants of complex Chern-Simons theory and the state-integral formalism on which the corpus's entire Q_beta / resurgence chapter rests: QOU/QBeta/StateIntegralRecursionLattice.lean, PhibSaddleA1Exact.lean, PhiBProdDivisor.lean, OneInstantonNormalization.lean and mass-theory/stokes-dt-bps-bridge.md all work with state integrals, and the corpus registers and cites three of this paper's descendants (garoufalidis-gu-marino2021, dimofte-garoufalidis, dimofte-gaiotto-gukov2013) while the foundational document itself is unregistered. That is a citation-hygiene gap, not merely an unused upload.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The foundational all-loop complex-Chern-Simons / state-integral paper underlying the corpus's Q_beta resurgence chapter has no ref() entry, while three of its descendants do. Register it from its own title page (arXiv:0903.2472).",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-57xa"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Once registered, the state-integral definition used in QOU/QBeta should point at its actual origin rather than only at the later GGM/DGG papers.",
+              "target": "qou:QOU.QBeta.StateIntegralRecursionLattice",
+              "bean": "qou-zlr6"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "637cfd1d4d83"
+        },
+        "note": "Source IS held: library/arxiv-0903.2472v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+        "verified_at": "2026-09-03T04:19:53Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -1,11 +1,14 @@
 ---
 # qou-hok7
 title: 'Deuteron-wall resummation: classical Borel on q=1 period is the WRONG transform (substrate object is q-Gevrey) -> reopen; needs q-Borel of Z_n(q0)'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-14T19:17:35Z
+updated_at: 2026-10-04T15:10:54Z
+parent: qou-v2om
 ---
 
 
@@ -1877,3 +1880,9 @@ corrected, and the witness field is renamed `agreement_widest_cap_ONE_SIDED` wit
 saying it is not a G1 verdict — so the next agent cannot read the one-sided number as one.
 
 **Do not close this bean.**
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-14 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

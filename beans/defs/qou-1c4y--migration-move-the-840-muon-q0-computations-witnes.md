@@ -1,11 +1,14 @@
 ---
 # qou-1c4y
 title: 'MIGRATION: move the ~840 muon-q0 computations/ witnesses to the experimental (proton) anchor'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-09-08T07:45:42Z
+updated_at: 2026-10-04T15:13:20Z
+parent: qou-2002
 ---
 
 
@@ -1596,3 +1599,9 @@ Chosen because AGENTS.md names it as the migration tracker. Family members and s
 | qou-tekx | todo | muon pin migration to CODATA 2022 — staging, not a sweep |
 
 Previously measured cross-citation (16 beans, 17 directed links, ~10 %): 3f7a→{q0rf,y98b}, 324i→{zk51,1c4y}, aj91→{3f7a,1c4y}, zk51→3f7a, q0rf→{3f7a,1c4y}, eggf→{q0rf,tekx}, y98b→kx04, 1c4y→{324i,aj91}, i229→po7i, 9ugp→{3f7a,y98b,1c4y}, silm→3f7a, m4au→silm.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

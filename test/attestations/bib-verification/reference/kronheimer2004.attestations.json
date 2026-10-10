@@ -1,0 +1,55 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "kronheimer2004",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 70,
+      "entry": {
+        "id": "kronheimer2004",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T16:14:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 2,
+        "fix_commit": "(this commit)",
+        "note": "2 bare-URL Refs upgraded with title+publisher form. | PDF verified: Kronheimer & Mrowka, \"Witten's conjecture and Property P,\" Geom. & Topol. 8 (2004), arXiv:math/0311489. Verified from page 2 Introduction matching bib title.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/kronheimer2004.pdf"
+        },
+        "local_pdf": "uploads/kronheimer2004.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "FILE ABSENT: the ledger row points at this path but the file does not exist anywhere in the working tree (verified by find over the whole repo; uploads/ holds 294 files and this is not one of them). The prior 2026-05-19 verification row therefore cannot be re-checked, and I could not confirm the seeded join against the document's own front matter. The verdict is undetermined on that ground alone. The corpus-side citation audit below did not need the document and is reported in full. *** SUSPECTED MISCITATION - the strongest corpus-side finding in this slice. *** The registered entry is a short gauge-theory paper deducing Property P for non-trivial knots from Witten's Seiberg-Witten-equals-Donaldson conjecture. It is cited at five sites, and at four of them the surrounding claim is about the QOU MASS derivation, which that result has no bearing on. (a) QOU/Calculations.lean:96, on theorem skein_mass_residue, whose docstring reads 'Given the topological mass conjecture, the muon-electron mass ratio equals the figure-eight volume divided by the squared quantum Planck constant' - and which separately carries 'Ref: Manuscript Conjecture 4.25', the actual source. (b) QOU/Calculations.lean:238, on full_derivation_chain, annotated in the -- Ref: line itself as 'Topological mass conjecture'. (c) QOU/MassDerivation.lean:221, inside derive_substrate_q, the |q - 1.1097| < 0.001 numerical step. (d) mass-theory/terminal-resolution.lean:81, attached to `noncomputable def qou_proton_MeV : R := 938.272` - a literal whose own docstring calls it a CODATA-pinned PLACEHOLDER and warns 'do NOT fabricate a derivation by editing the literals'. Only (e) QOU/HadronicMass.lean:45, a module-header reading list, is neutral. Nothing in a Property-P result supports a muon-to-electron mass ratio, a figure-eight-volume relation, or a 'topological mass conjecture'; the pattern is consistent with the phrase having been matched to the words 'Witten's conjecture' in the registered title. The verdict stays undetermined because the file is absent and I did not read the body - but the mismatch is visible from the registered subject and the citing docstrings alone and should be treated as a citation defect pending that read.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "Four of the five kronheimer2004 sites attach a Property-P gauge-theory paper to QOU mass-derivation statements (skein_mass_residue, full_derivation_chain, derive_substrate_q) and to a CODATA-pinned placeholder literal (qou_proton_MeV := 938.272). The manuscript's own Conjecture 4.25, already named in the same docstring, is the actual source. Re-source or drop those four; keep the module-header entry only if the paper is genuinely part of the reading list.",
+              "target": "qou:QOU.Calculations.skein_mass_residue",
+              "bean": "qou-xg4l"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "terminal-resolution.lean:81 attaches this reference to a literal the file itself labels a placeholder. A placeholder should carry the manuscript/CODATA references it already has and no external theorem citation, which reads as backing a derivation that the file explicitly says does not exist yet.",
+              "target": "qou:QOU.MassTheory.qou_proton_MeV",
+              "bean": "qou-qzdm"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    }
+  ]
+}

@@ -3,8 +3,12 @@
 title: Symbolic closed form for the colour-cubic saddle points via the palindromic reduction
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T09:30:03Z
-updated_at: 2026-09-06T09:30:03Z
+updated_at: 2026-10-04T15:24:42Z
+parent: qou-8lxd
 ---
 
 

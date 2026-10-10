@@ -4,8 +4,11 @@ title: Cite 1304.2705v1.pdf at conj:stokes-dt-bps-bridge
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:09Z
-updated_at: 2026-08-21T17:04:56Z
+updated_at: 2026-10-04T15:17:10Z
+parent: qou-19m0
 ---
 
 conj:stokes-dt-bps-bridge invokes Kontsevich-Soibelman DT data for the knot's q-difference structure; Cor. 1.6(b) is the published statement that these knot q-series are KS-admissible.

@@ -4,8 +4,11 @@ title: 'RED-TEAM: m_p = 2(m_μ·F_Bor − 6·m_e) — parameter-free-in-q₀ but
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T20:34:54Z
-updated_at: 2026-08-22T20:36:44Z
+updated_at: 2026-10-04T15:23:18Z
+parent: qou-wp3h
 ---
 
 ## Findings (2026-08-22) — audit doc docs/audits/2026-08-22-mp-fbor-massformula-redteam.md

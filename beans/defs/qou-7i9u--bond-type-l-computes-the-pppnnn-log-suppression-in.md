@@ -4,8 +4,11 @@ title: _bond_type_L computes the pp/pn/nn log-suppression in float64 inside a wi
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-03T14:56:24Z
-updated_at: 2026-09-03T14:56:24Z
+updated_at: 2026-10-04T15:16:08Z
+parent: qou-9nnz
 ---
 
 Found 2026-09-03 while reading what the production pp/nn bond IS (session qou-s42j follow-up).

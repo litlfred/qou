@@ -4,8 +4,11 @@ title: 'GAP: alpha_em structural residual -468 ppb survives exact resummation â€
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T01:00:00Z
-updated_at: 2026-08-07T01:00:00Z
+updated_at: 2026-10-04T15:19:43Z
+parent: qou-3l2l
 ---
 
 ## What changed (PR #4647)

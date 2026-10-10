@@ -1,0 +1,87 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "bilson-thompson2005",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 18,
+      "entry": {
+        "id": "bilson-thompson2005",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T16:40:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "note": "PDF verified: 'A topological model of composite preons' by Sundance O. Bilson-Thompson (arXiv:hep-ph/0503213, ADP-05-05/T615). Title matches references.ts. Bib orphan \u2014 no QOU citation. Likely candidate for citation alongside QOU's knot-particle model (braids-and-knots/ chapters); the Bilson-Thompson preon-as-braid construction parallels QOU's topological-particle approach. Decision pending. | Re-classified from `uncited`: 3 citation sites (\\cite{bilson-thompson2005,bilsonthompson2007} in breit-wheeler-vertex-literature.md + vertex-factorisation-intro.md + cites: in .ts). PDF verified.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/bilson-thompson2005.pdf"
+        },
+        "local_pdf": "uploads/bilson-thompson2005.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "BROKEN SOURCE JOIN: the named file does not exist. The real source for this work is library/arxiv-hep-ph-0503213v2/0503213v2.pdf, which the ledger already carries as a separate unreviewed row. DUPLICATE-KEY DEFECT, the significant finding here: folio/schema/references.ts registers the same work twice, under the id in this row (references.ts:5412) and under a hyphenated variant id (references.ts:7900), with identical descriptive fields. Every substantive prose citation uses the HYPHENATED variant: eightfold-way/flavor-charge-assignments.md:37, appendix-standard-model/strand-twist-datum.md:11, appendix-standard-model/sm-gauge-truncation.md:13, appendix-standard-model/sm-hypercharge-invariant.md:11, and appendix-standard-model/sm-hypercharge-invariant.lean:30. The un-hyphenated id in this row is referenced only from one .ts cites array (mass-theory/breit-wheeler-vertex-literature.ts:20) and from no prose at all, which is why it scans as a bib orphan. The two entries should be merged onto one id; until then any citation-count or orphan audit over either id is wrong.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "The work is genuinely used by the corpus, but through the duplicate id. The action is a bibliography merge of the two ids plus re-pointing this ledger row at library/arxiv-hep-ph-0503213v2/0503213v2.pdf \u2014 reference-record repair, not a content-block action.",
+              "target": "rem:breit-wheeler-vertex-literature"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    },
+    {
+      "position": 172,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-hep-ph-0503213v2/0503213v2.pdf"
+        },
+        "id": "bilson-thompson2005",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Identity confirmed from the document's own cover (arXiv:hep-ph/0503213v2, a topological model of composite preons, single author, report number ADP-05-05/T615) and matches the seeded key. Four citation sites, all correctly scoped and one numerically verified. The corpus's recorded normalisation \u2014 'electric charge read off ribbon TWIST (+/-2 pi <-> +/- e/3)' in the references.ts note, and the same in folio/quantum-observable-universe/appendix-standard-model/strand-twist-datum.md:11 (Q_twist = T(t)/3) \u2014 is VERIFIED verbatim: the document's assumption (1) states that tweedle pairs carry total twist 0 mod 2 pi, that the combinations UU, EE, UE correspond to ribbons twisted by +2 pi, -2 pi, 0, and that 'A twist through +/-2 pi is interpreted as an electric charge of +/- e/3'. (I checked this against a plausible off-by-a-factor error, since the document's primitive twists are +/- pi; the +/-2 pi statement is the helon-level one and is what the corpus quotes.) All four sites \u2014 flavor-charge-assignments.md:37, strand-twist-datum.md:11, sm-hypercharge-invariant.md:11 and .lean:30, sm-gauge-truncation.md:13 \u2014 cite it as literature PRECEDENT for the ribbon-twist candidate and say so explicitly ('recorded here without endorsement', 'no numerical claim is made here', 'a candidate that requires tuning a coupling to pass either battery is a fit, not a derivation'). That is the correct epistemic scoping for an external model, so verdict is supporting rather than core: nothing in the folio is derived from it.",
+          "keyResults": [
+            {
+              "locator": "\u00a7 assumptions (1)-(3), the helon construction",
+              "statement": "Primitive +/- pi ribbon twists ('tweedles') pair into helons of total twist 0 mod 2 pi; the three helon types carry ribbon twist +2 pi, -2 pi, 0, and a twist through +/-2 pi is interpreted as electric charge +/- e/3. Braided triplets of helons in B_3 model fermions, unbraided triplets model gauge bosons; charge mixing (H+ with H-) in one triplet is forbidden.",
+              "useForFolio": "It is the literature precedent the hypercharge conjecture cites for 'a second crossing invariant independent of the writhe could be the ribbon-framing twist'. The +/-2 pi <-> +/- e/3 normalisation is the number the corpus quotes; the no-charge-mixing rule is an additional structural constraint the corpus has not picked up.",
+              "targets": [
+                "conj:sm-gauge-truncation",
+                "def:strand-twist-datum"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "All four sites cite the model as unendorsed precedent and state the falsification batteries (Gell-Mann-Nishijima against the derived Q and I_3, and the first-generation hypercharge spectrum with Z_6 compatibility) that any candidate must pass. Correctly scoped; nothing to change.",
+              "target": "conj:sm-gauge-truncation"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "637a9e53b9b3"
+        }
+      }
+    }
+  ]
+}

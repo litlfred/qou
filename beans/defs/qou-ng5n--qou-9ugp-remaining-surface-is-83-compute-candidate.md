@@ -4,8 +4,11 @@ title: qou-9ugp remaining surface is 83 COMPUTE candidates, not the 48 reported 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T04:05:58Z
-updated_at: 2026-09-04T04:06:45Z
+updated_at: 2026-10-04T15:23:04Z
+parent: qou-trd0
 ---
 
 ## Measured 2026-09-04 with a committed, self-tested tool

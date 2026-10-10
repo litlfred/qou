@@ -1,11 +1,14 @@
 ---
 # qou-j3m4
 title: '37 unknown-field warnings triaged: one chapter contradiction, five lost author notes'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T14:46:15Z
-updated_at: 2026-09-03T04:49:12Z
+updated_at: 2026-10-04T15:11:46Z
+parent: qou-mub3
 ---
 
 `folio-assistant` #113 made `run-validate` warn when a block declares a key no
@@ -157,3 +160,9 @@ against the current tree rather than picking up from the old list.
 
 Reproduce: `bun run scripts/run-validate.ts content/quantum-observable-universe`,
 then `grep 'Unknown field'`. Cheap, seconds, no producer involved.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

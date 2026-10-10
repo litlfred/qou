@@ -1,10 +1,13 @@
 ---
 # qou-r307
 title: 'Salvage(gemini q-saddle): probe NZ 1-loop/adjoint-Reidemeister-torsion vs nu_SDP {1,2} for 6_2, 8_11 (Garoufalidis-Yoon 2411.03801)'
-status: todo
+status: scrapped
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T13:07:12Z
-updated_at: 2026-08-02T13:07:12Z
+updated_at: 2026-10-04T15:24:18Z
 ---
 
 ## Source
@@ -103,3 +106,10 @@ computation; normalization differs (4₁ |τ|=√3/2 vs 3). Kept as the independ
 1-loop-side confirmation; the sibling probe is the authority for the torsion
 value. Two independent routes, one verdict — per AGENTS.md "two independent
 confirmations of an open result are valuable." No conflict, no duplication churn.
+
+
+
+## Reasons for Scrapping
+
+Work-plan reorganisation 2026-10-04: [M] "Salvage" items from a refuted external proposal, 2026-08-02, untouched
+Content is untouched; only this work item is closed.

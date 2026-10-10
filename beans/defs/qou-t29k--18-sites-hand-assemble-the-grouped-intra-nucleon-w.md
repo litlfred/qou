@@ -1,11 +1,14 @@
 ---
 # qou-t29k
 title: '18 sites hand-assemble the grouped intra-nucleon word: a third mechanism, distinct from qou-cgyn and qou-y2o7'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T06:35:57Z
-updated_at: 2026-09-14T06:45:48Z
+updated_at: 2026-10-04T15:11:43Z
+parent: qou-v2om
 ---
 
 ## The mechanism
@@ -509,3 +512,9 @@ Neither is from this work and neither is a `qou-t29k` defect:
 Because both consumers are red for unrelated reasons, the switch was verified
 directly instead — ratios, absolute traces and word structure all as predicted
 above.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-14 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

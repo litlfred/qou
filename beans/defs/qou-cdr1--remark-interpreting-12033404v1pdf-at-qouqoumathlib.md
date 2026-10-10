@@ -4,8 +4,11 @@ title: Remark interpreting 1203.3404v1.pdf at qou:QOU.MathlibExt.QBorelKernelLev
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:29Z
-updated_at: 2026-08-21T17:04:51Z
+updated_at: 2026-10-04T15:23:31Z
+parent: qou-vva9
 ---
 
 The corpus's q-Airy A_q reference is registered at metadata-verification level only; this paper is a readable, in-repo source for the q-Borel-Laplace connection problem behind it. A remark naming what it does and does not settle would stop the gap being re-declared.

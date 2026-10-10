@@ -3,8 +3,12 @@
 title: 'L4-6: limit integral nonvanishing — erfc infra + Im>0 domination; then instance VdVWhiteheadLemma4'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-11T00:36:12Z
-updated_at: 2026-08-11T00:36:12Z
+updated_at: 2026-10-04T15:21:06Z
+parent: qou-n4nr
 ---
 
 RE-SCOPED 2026-08-19 -- QOU/MathlibExt/GaussianShearIntegral.lean already
@@ -42,4 +46,3 @@ The value of the limit integral is in hand; the sum-to-integral step is not.
 
 So this brick becomes: CITE integral_vdv_step4, do not build erfc infra.
 Ledger: docs/coordination/whitehead-link-volume-conjecture-join.md
-

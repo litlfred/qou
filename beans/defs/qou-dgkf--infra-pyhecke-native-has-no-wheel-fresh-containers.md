@@ -3,8 +3,12 @@
 title: 'INFRA: pyhecke_native has no wheel — fresh containers cannot run any deltalambda probe without a 3.5-min maturin build'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T00:45:42Z
-updated_at: 2026-08-07T00:45:42Z
+updated_at: 2026-10-04T15:20:52Z
+parent: qou-5vkl
 ---
 
 

@@ -3,8 +3,12 @@
 title: 'convergence_safe_vhat_tower: vhat_bar is not the bar image — chain keeps the unbarred h'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T07:36:35Z
-updated_at: 2026-08-25T07:36:35Z
+updated_at: 2026-10-04T15:18:11Z
+parent: qou-v2om
 ---
 
 Found while working `qou-dhbr` on PR #5750. **This is not the naming issue

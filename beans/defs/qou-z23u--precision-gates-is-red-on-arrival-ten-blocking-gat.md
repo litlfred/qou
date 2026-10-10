@@ -1,11 +1,14 @@
 ---
 # qou-z23u
 title: 'precision-gates is red on arrival: ten blocking gates, all inherited debt'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-03T15:43:09Z
-updated_at: 2026-09-11T14:54:24Z
+updated_at: 2026-10-04T15:13:30Z
+parent: qou-9nnz
 ---
 
 ## Measured 2026-09-03 on main `26bd234527` — and mostly already owned
@@ -331,3 +334,9 @@ entry recorded nine/ten names only partially.
 TRAP measured the same day: `precision-gates.sh | tail -N` returns TAIL's exit
 code. A run piped that way reports `exit 0` while the script itself exits 1.
 Read the `^RED:` line; never the exit status of a pipeline.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-11 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

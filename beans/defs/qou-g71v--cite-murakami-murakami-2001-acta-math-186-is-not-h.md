@@ -4,9 +4,11 @@ title: 'CITE: Murakami-Murakami 2001 (Acta Math. 186) is not held — U — 63 c
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T09:03:28Z
-updated_at: 2026-09-04T09:03:28Z
-parent: qou-8lxd
+updated_at: 2026-10-04T15:14:44Z
+parent: qou-1qhv
 ---
 
 **Class U — registered, cited 63 times, and not in `library/`.**

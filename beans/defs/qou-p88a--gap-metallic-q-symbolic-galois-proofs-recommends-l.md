@@ -4,8 +4,12 @@ title: 'GAP: metallic_q_symbolic_galois_proofs recommends Lean-formalising two i
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-08-30T14:27:45Z
-updated_at: 2026-08-30T14:27:45Z
+updated_at: 2026-10-04T15:15:42Z
+parent: b9cj
 ---
 
 

@@ -1,11 +1,15 @@
 ---
 # qou-p6m1
 title: The q-D-module symbol calculus is PRESENT, not absent — split the conflated wall claim at every site
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-09-06T13:46:21Z
-updated_at: 2026-09-06T14:03:30Z
+updated_at: 2026-10-04T15:14:13Z
+parent: qou-n4nr
 ---
 
 ## The claim, and why half of it is false
@@ -111,3 +115,9 @@ registries carry OPPOSITE rules for what is now the same class — the registry
 count, while a ledger entry is 'the ONLY thing that stops a binding from
 blocking'. So the headline C number depends on which file an agent wrote in.
 Their call, their PR.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -4,9 +4,11 @@ title: 'LEAD: m_e*Vol(6_2) gives 2H binding to 1.09% vs production B_sym''s 27.3
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T19:18:14Z
-updated_at: 2026-08-25T19:51:56Z
-parent: qou-9ot5
+updated_at: 2026-10-04T15:21:08Z
+parent: qou-v2om
 ---
 
 ## REFUTED AS A LEAD 2026-08-25 — it is an admitted fit. Do not quote +1.09%.

@@ -4,8 +4,11 @@ title: Convention-C weights survive in the reader-facing three-channel H_3 table
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T19:55:48Z
-updated_at: 2026-08-30T20:24:23Z
+updated_at: 2026-10-04T15:18:09Z
+parent: qou-cdx1
 ---
 
 Found 2026-08-30 draining `qou-58zw`'s tolerance-floor audit. The producer

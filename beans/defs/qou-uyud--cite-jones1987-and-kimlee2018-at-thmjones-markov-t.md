@@ -3,8 +3,12 @@
 title: Cite [jones1987] and [kimlee2018] at thm:jones-markov-trace — the block titled '(Jones, 1987)' cites nothing
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T18:29:45Z
-updated_at: 2026-08-09T18:29:45Z
+updated_at: 2026-10-04T15:17:40Z
+parent: qou-mub3
 ---
 
 `content/quantum-observable-universe/braids-and-knots/jones-markov-trace.ts` has

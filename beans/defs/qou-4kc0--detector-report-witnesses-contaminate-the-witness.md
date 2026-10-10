@@ -4,8 +4,11 @@ title: Detector-report witnesses contaminate the witness-copy index — measured
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T07:31:18Z
-updated_at: 2026-09-06T07:32:13Z
+updated_at: 2026-10-04T15:18:50Z
+parent: qou-5vkl
 ---
 
 Found by USING the audit (bean `qou-psjm`), while checking whether three values

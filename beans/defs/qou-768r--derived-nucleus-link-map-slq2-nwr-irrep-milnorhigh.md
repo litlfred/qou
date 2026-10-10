@@ -1,11 +1,14 @@
 ---
 # qou-768r
 title: 'Derived nucleus->link map: SLq(2) (N,w,r)->irrep + Milnor/higher-helicity energy bound — held-lit survey and fetch list'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-09-05T19:49:51Z
+updated_at: 2026-10-04T15:12:20Z
+parent: qou-10v9
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -928,3 +931,9 @@ proof of link equivalence.
 parity preservation, shared orbit partition, words-are-reverses. The fifth (partitions
 related by reversal) held. The counts survived all five, which is the pattern worth
 keeping.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

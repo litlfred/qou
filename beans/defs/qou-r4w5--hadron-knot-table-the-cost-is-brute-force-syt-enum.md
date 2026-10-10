@@ -4,8 +4,11 @@ title: 'hadron_knot_table: the cost is brute-force SYT enumeration in hecke_core
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T06:51:25Z
-updated_at: 2026-08-29T06:51:49Z
+updated_at: 2026-10-04T15:20:42Z
+parent: qou-5vkl
 ---
 
 Measured 2026-08-29 (PR #5962, item 6 of the q0 drain backlog). The backlog

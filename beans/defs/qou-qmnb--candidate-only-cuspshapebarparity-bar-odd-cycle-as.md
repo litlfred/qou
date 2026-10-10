@@ -4,8 +4,11 @@ title: 'CANDIDATE ONLY: CuspShapeBarParity bar-odd cycle as the theta_K identifi
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T17:10:14Z
-updated_at: 2026-08-07T17:10:14Z
+updated_at: 2026-10-04T15:16:51Z
+parent: qou-avtq
 ---
 
 AN UNVERIFIED IDENTIFICATION, flagged as a CANDIDATE in PR #4513 and in the

@@ -3,8 +3,12 @@
 title: Cite [bilsonthompson2007] at def:strand-twist-datum
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:49Z
-updated_at: 2026-08-08T23:35:49Z
+updated_at: 2026-10-04T15:17:25Z
+parent: qou-1qhv
 ---
 
 def:strand-twist-datum and rem:flavor-charge-assignments cite bilson-thompson2005 but not its braided-ribbon-graph successor (this upload, bilsonthompson2007), which is the version supplying the conserved-quantum-number and stability arguments those blocks lean on.

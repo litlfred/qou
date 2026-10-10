@@ -3,8 +3,12 @@
 title: '24 producers on main cannot complete: 14 crash, 10 exceed 240s'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T20:16:11Z
-updated_at: 2026-08-23T20:16:11Z
+updated_at: 2026-10-04T15:16:01Z
+parent: qou-5vkl
 ---
 
 

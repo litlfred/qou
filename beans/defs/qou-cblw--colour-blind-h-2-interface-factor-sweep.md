@@ -1,11 +1,14 @@
 ---
 # qou-cblw
 title: 'p-n interface factor: colour-BLIND z - h/2 where canonical is z - h*(1/2 - delta/4)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T21:35:00Z
-updated_at: 2026-09-07T19:31:33Z
+updated_at: 2026-10-04T15:13:27Z
+parent: qou-10v9
 ---
 
 Found 2026-08-25 while validating an exact-rational evaluation pipeline for the
@@ -537,3 +540,9 @@ same reasoning the dangling-path audit leaves PROPOSALS unfiltered.
 
 The convention **flip** itself stays owner-scoped. Nothing here changes a
 number; this is a count and a classifier.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

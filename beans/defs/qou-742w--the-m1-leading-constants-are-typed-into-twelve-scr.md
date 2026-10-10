@@ -1,11 +1,14 @@
 ---
 # qou-742w
 title: The M1 leading constants are typed into twelve scripts, not imported
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T06:28:48Z
-updated_at: 2026-09-07T09:11:40Z
+updated_at: 2026-10-04T15:14:13Z
+parent: qou-10v9
 ---
 
 Found by the `qou-psjm` hand pass over the witness-copy audit. Full taxonomy:
@@ -192,3 +195,9 @@ since the question is answered, but do not quote that projection.
 derivation is not. What should close alongside it is the recorded literal --
 `0.979796195657` should carry only the digits it has earned, or be replaced by
 the closed form.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

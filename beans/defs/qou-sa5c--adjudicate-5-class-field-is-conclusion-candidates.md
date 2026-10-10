@@ -1,11 +1,14 @@
 ---
 # qou-sa5c
-title: 'Adjudicate the 5 class-field-is-conclusion candidates the fixed self-assuming detector surfaced'
+title: Adjudicate the 5 class-field-is-conclusion candidates the fixed self-assuming detector surfaced
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T21:20:00Z
-updated_at: 2026-08-22T21:20:00Z
+updated_at: 2026-10-04T15:16:17Z
+parent: b9cj
 ---
 
 `scripts/lean-self-assuming-audit.py` was blind to the class-instance self-assuming variant

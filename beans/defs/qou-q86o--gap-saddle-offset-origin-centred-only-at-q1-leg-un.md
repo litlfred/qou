@@ -1,11 +1,14 @@
 ---
 # qou-q86o
 title: 'GAP: saddle offset ''origin-centred only at q=1'' leg untested — certified DT Stokes series diverge at q=1'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T13:46:14Z
-updated_at: 2026-08-02T15:03:30Z
+updated_at: 2026-10-04T15:12:59Z
+parent: qou-r9ih
 ---
 
 ## Context
@@ -80,3 +83,9 @@ Surviving FIBRE-level leg (bar-odd Habiro element whose bar-fixed coefficient de
 3. {3,4} is q-EXACT, no resurgent tail (#4554 symmetryConstant_const) => driver-11/13 q->0 DT count, NOT a Habiro object.
 4. Substrate wall (HabiroMagnitudeA3 pochAbs_unbounded, non-summable at q0>1) + bar-odd resummation anchor-blind (#4519).
 Scope-(a); nothing wired. Audit: docs/audits/2026-08-02-fibre-habiro-q1-centring-verdict.md. alpha_EM precedent does not transfer (bar-EVEN/finite/fixed). Only live neighbour = DT-count categorification (q->0). Left open for owner to close.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-02 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

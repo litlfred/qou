@@ -1,11 +1,14 @@
 ---
 # qou-m8f3
 title: 'Dominant-summand extensive test: Ursell-invert log|y_λ χ^λ(β_A)| of the trace''s dominant summand alone (qou-brng live remainder)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-12T05:08:33Z
-updated_at: 2026-09-12T11:28:50Z
+updated_at: 2026-10-04T15:12:23Z
+parent: qou-v2om
 ---
 
 Claimed 2026-09-12 by branch claude/dominant-summand-extensive-test-2026-09-12. Front: the live remainder named in qou-brng (2026-09-11, PR #7181 section) — the dominant summand's own log-weight L(A) = log|y_λ* χ^λ*(β_A)|, Ursell-inverted alone, on the live post-2026-09-05 alternating-core atom word (qou-hu1f), proton pin, convention D. Caches chi-<atom>-h<n>-at-q0-50dps (computedAt 2026-09-06) verified against a live recompute of the deuteron: max |cache − live| over χ and y_λ = 1.4e-49.
@@ -28,3 +31,9 @@ Producer `computations/brng_dominant_summand_ursell_probe.py` (14/14, 60 dps, pr
 Bean stays OPEN pending merge of #7200; its subject (qou-brng's extensive term) is an open conjecture and qou-brng stays open regardless (rule 13a).
 
 2026-09-12 pointer: option 2 of the audit's §8 (extend to A ≥ 6 on the two-row dominant, typed decomposition from the start) is being run as bean qou-vn6h, branch claude/two-row-dominant-block-a6-2026-09-12. Append-only.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-12 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

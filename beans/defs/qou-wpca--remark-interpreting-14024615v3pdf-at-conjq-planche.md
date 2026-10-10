@@ -4,8 +4,11 @@ title: Remark interpreting 1402.4615v3.pdf at conj:q-plancherel-asymptotic-skele
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:10Z
-updated_at: 2026-08-21T17:05:07Z
+updated_at: 2026-10-04T15:23:33Z
+parent: qou-aqfj
 ---
 
 Not aid-proof: the Jack alpha-deformation is a different deformation from the folio's q-deformed Wedderburn weight and none of its hypotheses have been checked in that setting. The honest artifact is a remark at the q-Plancherel skeleton recording the Jack precedent and naming what would have to be checked (polynomiality of the q-character structure constants).

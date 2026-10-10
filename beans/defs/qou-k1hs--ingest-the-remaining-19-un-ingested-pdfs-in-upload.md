@@ -4,9 +4,11 @@ title: Ingest the remaining 19 un-ingested PDFs in uploads/
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T18:48:29Z
-updated_at: 2026-08-25T19:15:48Z
-parent: qou-8lxd
+updated_at: 2026-10-04T15:20:53Z
+parent: qou-mub3
 ---
 
 19 of the 26 PDFs in uploads/ remain un-ingested, i.e. invisible to corpus-grep path 5. The 7 from commit 21ae4db28 were done 2026-08-25 (PR #5764). Remaining stems: 0105186v2, 1006.1099v3, 1103.4815v3, 1109.3255v2, 1211.1812v5, 1409.4073v1, 1901.08945v2, 2010.12445v1, 2111.12409v4, 2301.08311v4, 2311.14221v2, 2508.03145v1, 2601.07042v1, 2605.19310v1, 2607.10525v1, 978-3-98547-562-9-volume-4-chapter-5483, noniterativeroth2, roth_lemma.

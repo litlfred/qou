@@ -4,8 +4,11 @@ title: '§7c push: BraidKnot cluster (KeystoneC2QDimTranspose, DepthStratifiedFr
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-01T23:07:46Z
-updated_at: 2026-08-15T14:57:34Z
+updated_at: 2026-10-04T15:25:44Z
+parent: qou-rtxm
 ---
 
 ## Content-based triage (2026-08-15) — criteria for whoever picks this up

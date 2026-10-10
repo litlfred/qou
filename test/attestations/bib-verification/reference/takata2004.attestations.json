@@ -1,0 +1,146 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "takata2004",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 159,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0401068v1/0401068v1.pdf"
+        },
+        "id": "takata2004",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Relevant but partly superseded inside the corpus already, and I want to be exact about that. QOU's prop:phi-q-aj-machinery-identification carries the AJ conjecture as a conditional-class input; references.ts already holds le2006 ('The colored Jones polynomial and the A-polynomial of knots'), whose note records that it PROVES AJ for a large class of two-bridge knots including all twist knots \u2014 strictly stronger than Takata's result, which the abstract itself describes only as 'supports the AJ conjecture'. (le2006 is itself a bib orphan: it exists in references.ts and is cited by no block.) So the AJ-backing value of this paper is low. Its distinctive, non-duplicated value is computational: it writes Masbaum's twist-knot colored-Jones formula in a rearranged normalisation with the three explicit summand ratios f_0, f_1, f_2, and gives the root-of-unity evaluation. computations/aj_masbaum_crosscheck.py cross-checks the QOU 4_1 (= K_{-1}) and trefoil (= K_1) towers against Masbaum, and its own docstring records a prior mis-attribution in that area \u2014 an independent second published transcription of the same coefficients is exactly what such a script wants.",
+          "keyResults": [
+            {
+              "locator": "eqs. (1)-(2) and (3)-(5)",
+              "statement": "Masbaum's colored Jones formula for the twist knot K_p, J_{K_p}(n) = sum_k C_{K_p}(k) {n-k}...{n+k}/{n} with C_{K_p}(k) explicit, rearranged so that the summand F(n,k,l) has closed-form ratios f_0 = F(n+1,k,l)/F(n,k,l), f_1 = F(n,k+1,l)/F(n,k,l), f_2 = F(n,k,l+1)/F(n,k,l).",
+              "useForFolio": "An independently published transcription of the same twist-knot coefficients that computations/aj_masbaum_crosscheck.py checks the QOU 4_1 and trefoil towers against, in a different normalisation \u2014 so agreement is a genuine second witness against transcription error, which that script's docstring shows is a real failure mode here.",
+              "targets": [
+                "computations/aj_masbaum_crosscheck.py"
+              ]
+            },
+            {
+              "locator": "Thm 2.2 and \u00a74",
+              "statement": "Setting q = 1 in the summand recurrences and solving f_0 = l, f_1 = f_2 = 1 recovers a polynomial B_{K_p}(l,m) equal to the A-polynomial A_{K_p}(l,m); \u00a74 additionally derives the A-polynomials of 5_2 and 6_1 from explicit colored-Jones recursions.",
+              "useForFolio": "Concrete worked instances of the classical limit of the AJ machinery that prop:phi-q-aj-machinery-identification describes abstractly. Weaker than le2006, so the honest action is to cite le2006 at that block and keep this as the explicit-computation companion.",
+              "targets": [
+                "prop:phi-q-aj-machinery-identification"
+              ]
+            },
+            {
+              "locator": "eq. (16), \u00a74",
+              "statement": "Explicit evaluation hat-J_{K_p}(n) of the twist-knot colored Jones at q = exp(2 pi i / n), stated for the volume conjecture 2 pi lim (log|hat-J_K(n)|/n) = Vol(M_K).",
+              "useForFolio": "A directly runnable formula for the Kashaev/volume-conjecture asymptotic on 4_1 = K_{-1}, whose Vol(4_1) = 2*Cl_2(pi/3) is the CAL-2 numerical anchor. A finite-n numeric cross-check of Vol(4_1) from this formula is a falsifiable compute-check; it must NOT be used to adopt or re-derive the anchor value.",
+              "targets": [
+                "computations/aj_masbaum_crosscheck.py",
+                "computations/aj_figure_eight_certificate.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Orphan (references.ts has Ohtsuki-Takata 2015 only, a different paper). Low priority: its AJ content is superseded by the already-present le2006; register it for the explicit twist-knot recurrences.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-770a"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "Cross-check the QOU 4_1 / trefoil colored-Jones towers against Takata's rearranged Masbaum normalisation (eqs. 1-5) as an independent second transcription; the script's docstring documents a prior mis-attribution in exactly this area.",
+              "target": "computations/aj_masbaum_crosscheck.py",
+              "bean": "qou-7q3s"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Separate finding surfaced by this read: le2006 already exists in references.ts, proves AJ for all twist knots, and is cited by NO block \u2014 while prop:phi-q-aj-machinery-identification carries AJ as an unsourced conditional-class input. The right fix is to cite le2006 there.",
+              "target": "prop:phi-q-aj-machinery-identification",
+              "bean": "qou-dvqx"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "8168d7e7f606"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    },
+    {
+      "position": 160,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0401068v1/0401068v1.pdf"
+        },
+        "id": "takata2004",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Same subject area as the corpus's AJ machinery (prop:phi-q-aj-machinery-identification, QOU/Machinery/StrongAJFigureEight.lean, QOU/BraidKnot/AJFigureEight*.lean) and its twist-knot cyclotomic work (masbaum2003, bean xcyc). Its AJ-support claim is weaker than what the corpus already has: le2006 (math/0407521, already registered) PROVES the AJ conjecture for a large class of two-bridge knots including all twist knots, whereas Takata only shows the A-polynomial is recoverable from recursions of the SUMMAND of Masbaum's formula. What is genuinely usable is the explicit Hoste-Shanahan A-polynomial data it reproduces (Thm 3.1), including the closed A_{4_1} and A_{trefoil}, which the corpus currently reads off the CCGLS A-polynomial by hand in qbeta_nz_even_series_fourone_probe.py. Not load-bearing; a cross-check source.",
+          "keyResults": [
+            {
+              "locator": "Thm 3.1 (quoting Hoste-Shanahan), eqs. after (6)",
+              "statement": "A_{K_p}(l,m) obeys the two-term recursion A_{K_p} = c A_{K_{p-1}} - d A_{K_{p-2}} with c = -l + l^2 + 2lm^2 + m^4 + 2lm^4 + l^2 m^4 + 2lm^6 + m^8 - lm^8, d = m^4 (l+m^2)^4, and explicit seeds A_{K_1} = l + m^6 (trefoil), A_{K_{-1}} = -l + lm^2 + m^4 + 2lm^4 + l^2 m^4 + lm^6 - lm^8 (figure-eight).",
+              "useForFolio": "Independent published source for the 4_1 A-polynomial that qbeta_nz_even_series_fourone_probe.py uses to recognise the leading longitude coefficient tau = (0, -+1, 1); lets the probe cite a value instead of asserting it, and supplies the whole twist-knot family if the tau extraction is ever run past 4_1.",
+              "targets": [
+                "computations/probes/qbeta_nz_even_series_fourone_probe.py",
+                "prop:phi-q-aj-machinery-identification"
+              ]
+            },
+            {
+              "locator": "Thm 2.2",
+              "statement": "For the twist knot K_p, B_{K_p}(l,m) built from the recursion h_p(m,x) of the summand of Masbaum's colored-Jones formula equals A_{K_p}(l,m).",
+              "useForFolio": "Concrete worked route from a cyclotomic-summand recursion to the A-polynomial, the same shape as the corpus's qZeilberger-telescope annihilation arguments in QOU/BraidKnot/AJFigureEightAnnihilation.lean; usable as a citable precedent for the summand-level (rather than sum-level) recursion technique.",
+              "targets": [
+                "QOU.BraidKnot.AJFigureEightAnnihilation",
+                "prop:phi-q-aj-machinery-identification"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry; the folio has an AJ/twist-knot cluster (garoufalidis2004, le2006, masbaum2003, hikami2004) this belongs in, and the A-polynomial seeds are worth a citable home.",
+              "target": "folio/schema/references.ts (new id, e.g. takata2004)",
+              "bean": "qou-vhe7"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "The probe's tau extraction currently reads the CCGLS A-polynomial without a cited value; check the probe's A_{4_1} against Takata's A_{K_{-1}} seed coefficient-by-coefficient.",
+              "target": "computations/probes/qbeta_nz_even_series_fourone_probe.py",
+              "bean": "qou-e1me"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "8168d7e7f606"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

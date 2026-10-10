@@ -1,11 +1,14 @@
 ---
 # 95jh
-title: 'qou/lean/BraidKnot — track 5 intentional TODO markers (0 actionable sorries; §3b excluded) [re-scoped from 213]'
+title: qou/lean/BraidKnot — track 5 intentional TODO markers (0 actionable sorries; §3b excluded) [re-scoped from 213]
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-06-22T02:25:51Z
-updated_at: 2026-06-26T15:30:00Z
+updated_at: 2026-10-04T15:23:06Z
+parent: qou-5p7n
 ---
 
 resweep 2026-06-22: honest counter = 7 actionable (claimed 213) via scripts/count-actionable-placeholders.ts.

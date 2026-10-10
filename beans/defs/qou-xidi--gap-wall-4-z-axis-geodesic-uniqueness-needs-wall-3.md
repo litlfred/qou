@@ -4,8 +4,11 @@ title: 'GAP WALL-4: z-axis geodesic uniqueness (needs WALL-3 lower bound)'
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T13:03:26Z
-updated_at: 2026-08-16T14:01:53Z
+updated_at: 2026-10-04T15:19:33Z
+parent: qou-c8p8
 ---
 
 T2 geodesic-uniqueness, WALL-4. DEPENDS ON WALL-3 lower bound (bean qou-i0sr).

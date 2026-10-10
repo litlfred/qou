@@ -4,8 +4,11 @@ title: The SDP producer's primal_obj/duality_gap are the arithmetic floor, not a
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T09:11:29Z
-updated_at: 2026-09-04T10:34:05Z
+updated_at: 2026-10-04T15:25:00Z
+parent: qou-5vkl
 ---
 
 Found by the FIRST real application of the certified-residual check

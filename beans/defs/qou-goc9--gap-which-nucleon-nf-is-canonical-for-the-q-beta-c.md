@@ -1,11 +1,14 @@
 ---
 # qou-goc9
 title: 'GAP: which nucleon NF is canonical for the Q_beta counit chain? single-wrap vs typed 6-term differ by 0.579%, 3.6x the phase'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T00:54:05Z
-updated_at: 2026-08-28T19:11:15Z
+updated_at: 2026-10-04T15:13:02Z
+parent: qou-avtq
 ---
 
 Surfaced from `qou-pdix` (PR #5448). Probe:
@@ -193,3 +196,9 @@ the record.
 the question. `.beans/` is not under `docs/`, `content/`, `computations/` or
 `library/` — it is **path 6**, added 2026-08-26 for exactly this, and the entry
 that would have stopped this was in a bean body and nowhere else.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-28 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

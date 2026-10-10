@@ -1,14 +1,15 @@
 ---
 # qou-29i6
 title: harness.json and harness.config.json assert platform-main behaviour as present-tense fact
-status: todo
+status: completed
 type: bug
 priority: normal
 tags:
     - platform
     - docs
+    - reorg-2026-10-04
 created_at: 2026-09-26T10:32:57Z
-updated_at: 2026-09-26T10:37:01Z
+updated_at: 2026-10-04T15:15:43Z
 parent: qou-ty42
 ---
 
@@ -71,3 +72,9 @@ the pin.
 agent to touch the instance config starts from a false model of which file is
 live. `qou-ty42` already carries the true state, but nothing points from these
 two files to it.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] harness.json/harness.config.json no longer exist (renamed qou.json/qou.config.json)

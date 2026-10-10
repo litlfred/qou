@@ -1,0 +1,72 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "li-wang2006",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 179,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0604057v2/0604057v2.pdf"
+        },
+        "id": "li-wang2006",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "The corpus asserts, in rem:quantum-bloch-group-framework-connection, that 'the regulator map B(q) -> R sends the algebraic volume to the hyperbolic volume' -- an unsourced claim in a remark block. This paper is the rigorous version of that statement on the A-polynomial curve: it uses the Beilinson-Deligne regulator to show the symbol {l,m} in K_2(C(Y)) is torsion for every component Y of the A-polynomial zero locus of a hyperbolic knot, and derives a quantization of the Chern-Simons period. Supporting rather than core because QOU's Bloch-group content is q-deformed and Hecke-traced, and no QOU number is computed from Li-Wang; the paper supplies the classical statement the q-deformed one is modelled on.",
+          "keyResults": [
+            {
+              "locator": "Thm 3.3 (i)-(ii)",
+              "statement": "The closed real 1-form eta(l,m) = log|l| d arg m - log|m| d arg l is EXACT on Y_h; and for any loop gamma in Y_h, (1/4pi^2) times the integral of (log|m| d log|l| + arg l d arg m) equals k/N where N is the ORDER of the symbol {l,m} in K_2(C(Y)).",
+              "useForFolio": "Makes rigorous the corpus's 'regulator sends algebraic volume to hyperbolic volume' assertion, and supplies the quantization statement that docs/scope/2026-07-12-mq0-unified-boundary-selection.md gestures at ('a quantization condition' on the Im V = 0 locus) with no source. The torsion order N is a concrete arithmetic invariant of the A-polynomial curve that the folio's regulator language currently lacks.",
+              "targets": [
+                "rem:quantum-bloch-group-framework-connection",
+                "def:quantum-bloch-group",
+                "docs/scope/2026-07-12-mq0-unified-boundary-selection.md"
+              ]
+            },
+            {
+              "locator": "Abstract + section 3 (main construction)",
+              "statement": "The class r(l,m) in H^1(Y_h, C*) is a flat line bundle -- the pullback of the universal Heisenberg line bundle over C* x C* -- and the derived 1-form is its Chern-Simons secondary class; the generalized volume conjecture is reformulated via this 1-form.",
+              "useForFolio": "Gives the A-polynomial curve a K-theoretic/line-bundle structure, which is the classical shadow of what the folio calls the quantum Bloch group. Cite where def:quantum-bloch-group motivates the regulator.",
+              "targets": [
+                "def:quantum-bloch-group"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry; the folio has a Bloch-group/regulator cluster (champanerkar2003 is the nearest, a thesis) and this is the published theorem-level statement.",
+              "target": "folio/schema/references.ts (new id, e.g. li-wang2006)",
+              "bean": "qou-5arj"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "The remark's regulator sentence is currently unsourced; Thm 3.3 sources it.",
+              "target": "rem:quantum-bloch-group-framework-connection",
+              "bean": "qou-033d"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "649fad141dc3"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

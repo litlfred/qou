@@ -1,0 +1,65 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "li2026-two-sphere",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 448,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2605.20846v1/2605.20846v1.pdf"
+        },
+        "id": "li2026-two-sphere",
+        "status": "uncited",
+        "note": "Identified from the title page (arXiv:2605.20846v1, math.AT, 20 May 2026): Chris Li, 'Topological Field Theories and the Algebraic Structures of the Two-Sphere', 99 pp, 17 sections, thesis-style (the text calls itself a thesis; no institution on the extracted pages). No ref() entry existed. Entry li2026-two-sphere created 2026-09-06; no citation site yet.",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "The lead was the categorical-foundations chapter; the block that actually wants it is rem:tqft-context (folio/quantum-observable-universe/quantum-observable-universes/tqft-context.md), which asserts that the Frobenius\u2013Hopf object A 'carries the 2d cobordism data' inside the 3d TQFT and that Hom(1, Ad(A)) = 0 is the 'categorical contact condition' for its irreducibility. Read: Introduction (Thms 1.0.3, 1.0.5\u20131.0.8), \u00a75.1 (Def 5.1.1, Lemma 5.1.2, Def 5.1.7 P/L-monoids), \u00a75.2 heading, \u00a7A.2. Thm 1.0.8 (= Thm 3.3.6) is the precise theorem behind the block's first sentence: a canonical isomorphism Cob(2) \u2245 Cob(3)_{S^2,CF} between the 2d bordism category and the commutative-Frobenius sub-bordism category of the S^2-sector of Cob(3), sending n circles to n spheres and multiplication/unit/trace/comultiplication to their S^2 counterparts, a genus-g bordism to g connect-sum factors of S^2 \u00d7 S^1. Thms 1.0.5/1.0.6 give the full presentation of Cob(3)_{S^2}: one extra generator per closed oriented irreducible prime 3-manifold (Kneser\u2013Milnor, Thm 1.0.7) plus 'legs' relations; \u00a75.1 packages a 3d TFT's Z(S^2) as a P-monoid \u2245 L-monoid (commutative Frobenius monoid with prime-labelled units). Corpus-grep: 'Cob(' / 'bordism' occur in content/ only in this block (quantum-universes, quantum-observable-universes, models-of-qous: one hit); references.ts has the general TQFT frame (atiyah1988, kock2004, lurie2009, turaev2010) but no statement of the S^2-sector. Why 'supporting' and not 'core': Li's monoids are commutative and sit in a symmetric monoidal target; QOU's A is a Hopf algebra in a braided category and is not assumed commutative, so the match is at the Frobenius-structure level and does not identify A with Z(S^2) of any TFT. The prime-labelled units are extra structure the QOU axioms do not use. Scope-(a) on that: nothing here says the Hopf half or the braiding is incompatible with an S^2-sector reading \u2014 it is simply not addressed.",
+          "keyResults": [
+            {
+              "locator": "Thm 1.0.8 (= Thm 3.3.6), Introduction p. 9 and \u00a73.3",
+              "statement": "There is a canonical isomorphism S : Cob(2) \u2192 Cob(3)_{S^2,CF}; the commutative-Frobenius part of the S^2-sector of the 3d oriented bordism category is exactly the 2d cobordism category.",
+              "useForFolio": "Makes rem:tqft-context's 'A carries the 2d cobordism data' a cited theorem: for every 3d TFT, Z(S^2) is a commutative Frobenius monoid whose Frobenius data is Cob(2). Cite with the caveat that QOU's A is braided-Hopf, not assumed commutative.",
+              "targets": [
+                "rem:tqft-context"
+              ]
+            },
+            {
+              "locator": "Thms 1.0.5, 1.0.6 (= Thms 4.4.13, 4.3.2); Def 5.1.7, Lemma 5.1.2",
+              "statement": "Cob(3)_{S^2} is presented by commutative Frobenius generators plus one generator per closed oriented irreducible prime 3-manifold (a unit \u2205 \u2192 S^2 or an endomorphism of S^2), subject to commutative-Frobenius and legs relations; P-monoids and L-monoids are in bijection.",
+              "useForFolio": "Names the structure the S^2-sector carries beyond Frobenius \u2014 prime-3-manifold-labelled units \u2014 which the QOU axioms do not use; a one-sentence remark in rem:tqft-context can record that scope honestly.",
+              "targets": [
+                "rem:tqft-context"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Relevant and no ref() entry existed; created in this triage pass as li2026-two-sphere (preprint, no DOI).",
+              "target": "folio/schema/references.ts"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "rem:tqft-context's 2d-cobordism claim has only the general TQFT references; Thm 1.0.8 is the specific theorem. Add the citation and one caveat sentence (commutative/symmetric vs braided-Hopf).",
+              "target": "rem:tqft-context",
+              "bean": "qou-2re6"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "coding-agent-session-0134BL9GG95tgycYMjLVX35V"
+          },
+          "assessed_at": "2026-09-06T13:42:16Z",
+          "source_sha": "db27cb6d01c4"
+        }
+      }
+    }
+  ]
+}

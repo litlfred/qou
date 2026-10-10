@@ -1,11 +1,14 @@
 ---
 # qou-hah0
 title: 'precision-gates.sh: preflight let 4 phantom REDs through; the 6 real reds diagnosed'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T09:30:50Z
-updated_at: 2026-08-30T11:06:13Z
+updated_at: 2026-10-04T15:13:31Z
+parent: qou-9nnz
 ---
 
 ## The gate defect — FIXED in this branch
@@ -126,3 +129,9 @@ compute budget; do not attempt it in an idle pass.
 **Reds still open: 2, 5, 6** (anchor-refill ratchet — owned by `qou-fl0a`;
 q0-value drift ratchet; witness scriptFile provenance, 1 unnamed witness).
 Red 1 is diagnosed but blocked on the long compute above.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

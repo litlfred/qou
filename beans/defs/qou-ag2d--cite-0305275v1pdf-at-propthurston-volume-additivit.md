@@ -4,8 +4,11 @@ title: Cite 0305275v1.pdf at prop:thurston-volume-additivity
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:41Z
-updated_at: 2026-08-21T17:04:48Z
+updated_at: 2026-10-04T15:17:02Z
+parent: qou-19m0
 ---
 
 prop:thurston-volume-additivity's triangulation-independence in the cusped case is Thm 4.9/4.10.

@@ -4,8 +4,11 @@ title: 'DEFECT: JetOrderIndependence full_rank was discharged by fabricated cons
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T22:14:20Z
-updated_at: 2026-09-14T20:43:31Z
+updated_at: 2026-10-04T15:15:40Z
+parent: qou-5p7n
 ---
 
 

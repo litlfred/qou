@@ -4,8 +4,11 @@ title: Six sites report the twist exponent q^{2c} as Lean-PROVED; ChiralityWrith
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T19:30:27Z
-updated_at: 2026-08-24T19:47:41Z
+updated_at: 2026-10-04T15:24:25Z
+parent: qou-6qbv
 ---
 
 ## The claim, and what backs it

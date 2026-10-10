@@ -1,11 +1,13 @@
 ---
 # qou-ca7s
 title: q0 staleness gate scans 55 of 2848 witnesses — 3 stale reported, 454 real
-status: todo
+status: scrapped
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T20:17:00Z
-updated_at: 2026-08-23T20:17:40Z
+updated_at: 2026-10-04T15:15:48Z
 ---
 
 ## What
@@ -108,3 +110,10 @@ undeclared + 52 muon) are not actionable without the `qou-1c4y` sign-off.
 3. Flip `--tree` to the default **only** after 1 and 2, or the blocking gate
    cannot be green.
 4. Update `qou-bdkx` to say its counts were 55-file-scoped.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-6irj` (work-plan reorganisation 2026-10-04). Evidence: [B] q0 staleness gate scans 55/2848 because most witnesses carry no anchor - consequence of 6irj
+Content is untouched; only this work item is closed.

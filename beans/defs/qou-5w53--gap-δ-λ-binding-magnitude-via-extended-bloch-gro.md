@@ -4,8 +4,11 @@ title: 'GAP: Δ_λ binding magnitude via extended Bloch group'
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T13:22:26Z
-updated_at: 2026-08-16T13:42:50Z
+updated_at: 2026-10-04T15:20:35Z
+parent: qou-v2om
 ---
 
 WALL REPORT (PR #5242). No Delta_lambda number proposed; nothing inverted from CODATA.

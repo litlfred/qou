@@ -3,8 +3,12 @@
 title: mpf-into-f-string crashes on mpmath 1.3.0 but NOT 1.4.1 — one latent site, and my first detector returned 0 against a true 5646
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T19:29:11Z
-updated_at: 2026-08-24T19:29:11Z
+updated_at: 2026-10-04T15:21:38Z
+parent: qou-cdx1
 ---
 
 

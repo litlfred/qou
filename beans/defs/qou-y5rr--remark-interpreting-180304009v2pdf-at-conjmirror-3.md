@@ -4,8 +4,11 @@ title: Remark interpreting 1803.04009v2.pdf at conj:mirror-3d-3d-correspondence
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:09Z
-updated_at: 2026-08-21T17:05:09Z
+updated_at: 2026-10-04T15:23:34Z
+parent: qou-aqfj
 ---
 
 The T^DGG-realises-only-a-subset-of-flat-connections caveat should be stated in the folio rather than left implicit, since the conjecture's whole content is an equality of partition functions. NOT proposed as aid-proof: the enhancement criterion is stated for one torus boundary and B_3 has three cusps, so its applicability to the corpus's manifold is unchecked.

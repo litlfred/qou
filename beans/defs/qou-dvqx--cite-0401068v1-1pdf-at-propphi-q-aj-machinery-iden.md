@@ -4,8 +4,11 @@ title: Cite 0401068v1 (1).pdf at prop:phi-q-aj-machinery-identification
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:44Z
-updated_at: 2026-08-21T17:04:53Z
+updated_at: 2026-10-04T15:17:03Z
+parent: qou-ysb7
 ---
 
 Separate finding surfaced by this read: le2006 already exists in references.ts, proves AJ for all twist knots, and is cited by NO block — while prop:phi-q-aj-machinery-identification carries AJ as an unsourced conditional-class input. The right fix is to cite le2006 there.

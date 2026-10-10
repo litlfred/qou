@@ -4,8 +4,11 @@ title: 37.6% of the vacuous-green backlog is 8 producer families, not 423 proble
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T14:35:45Z
-updated_at: 2026-08-30T14:39:15Z
+updated_at: 2026-10-04T15:16:04Z
+parent: qou-5vkl
 ---
 
 ## Measurement

@@ -4,8 +4,11 @@ title: excise float64 from the UIC resolvent cone (mu_lambda, s_*) -- owner dire
 status: in-progress
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-12T20:47:33Z
-updated_at: 2026-09-12T22:30:21Z
+updated_at: 2026-10-04T15:12:30Z
+parent: qou-9nnz
 ---
 
 ## Measured surface and the residual (2026-09-12)

@@ -1,0 +1,58 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "fantini-wheeler2024",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 305,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2410.20973v1/2410.20973v1.pdf"
+        },
+        "id": "fantini-wheeler2024",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Identity confirmed from the document's own cover (arXiv:2410.20973v1 [math.GT], summability for state integrals of hyperbolic knots, two authors) and matches the seeded key. Two citation sites, both load-bearing, both locators VERIFIED. (1) QOU/Mathlib/BorelStateIntegralSummability.lean:5,59,72 is declared 'Conditional on [fantini-wheeler2024], arXiv:2410.20973 Thm 1.4' and axiomatised as a Lean class. Theorem 1.4 EXISTS and reads: the asymptotic series Phi_Xi(-2 pi i / tau) are Borel-Laplace summable with Stokes rays on a countable set of rays with two accumulation points at arg(tau) = +- pi/2. The corpus's use is faithful, and carrying it as a named conditional class rather than as a proved lemma is the correct \u00a73b-cond disposition. (2) QOU/QBeta/StateIntegralRecursionLattice.lean:60 cites 'eq. (14)'. Equation (14) EXISTS and is a recursion on the state integrals I_{m,l}: sum_k binom(B,k)(-1)^k q^{-l k} I_{m+k,l} = I_{m,l+1} = (-1)^A q^{A+m} I_{m+A,l}. The document uses it exactly as a lattice relation (e.g. at eqs. (66) and (67), 'where the equality follows from Equation (14)'), which matches the citing file's name and purpose. Also verified: the abstract states the document PROVES the Garoufalidis-Gu-Marino conjectures for 4_1 and 5_2 and gives an algorithm computing the Borel-Laplace resummation as a combination of Andersen-Kashaev state integrals, allowing explicit Stokes-constant computation \u2014 consistent with the ref() note.",
+          "keyResults": [
+            {
+              "locator": "Thm 1.4",
+              "statement": "The asymptotic series Phi_Xi(-2 pi i / tau) are Borel-Laplace summable, with Stokes rays lying on a countable set of rays having two accumulation points at arg(tau) = +- pi/2.",
+              "useForFolio": "It is the sole hypothesis of the BorelStateIntegralSummability conditional class; the class is honest precisely because this is an external theorem the folio does not prove.",
+              "targets": [
+                "QOU.Mathlib.BorelStateIntegralSummability"
+              ]
+            },
+            {
+              "locator": "eq. (14)",
+              "statement": "A finite-difference recursion among the state integrals I_{m,l}: a binomial-weighted alternating sum in m equals I_{m,l+1} equals a q-power multiple of I_{m+A,l}.",
+              "useForFolio": "It is the lattice relation StateIntegralRecursionLattice.lean formalises, and the document applies it concretely in its 4_1 worked example, so the folio's use is on the same objects the source computes with.",
+              "targets": [
+                "QOU.QBeta.StateIntegralRecursionLattice"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Both locators verified against the source; both citing files carry the results as declared external inputs (one as a conditional class, one as a formalised relation). Correctly scoped.",
+              "target": "QOU.Mathlib.BorelStateIntegralSummability"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "852b7bbc81a6"
+        }
+      }
+    }
+  ]
+}

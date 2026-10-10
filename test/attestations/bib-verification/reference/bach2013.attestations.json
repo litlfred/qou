@@ -1,0 +1,59 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "bach2013",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 108,
+      "entry": {
+        "id": "bach2013",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T18:18:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 1,
+        "fix_commit": "(this commit)",
+        "note": "1 bare-URL Ref upgraded with title+author+year form. | UPDATE 2026-05-19 18:18: PDF in library/arxiv-1210.6243v1/1210.6243v1.pdf is Bach, Pope, Liou, Batelaan 'Controlled double-slit electron diffraction' (Phys. Rev. Lett./NJP 2013) \u2014 exact match.",
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1210.6243v1/1210.6243v1.pdf"
+        },
+        "local_pdf": "library/arxiv-1210.6243v1/1210.6243v1.pdf",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Identity confirmed from the document's own cover (arXiv:1210.6243v1, controlled double-slit electron diffraction, four authors) and matches the seeded key; the ref() entry's venue/volume are consistent with the published form. Citation is load-bearing and the locators check out. Sites: (1) folio/bach2013-double-slit/double-slit-experiment/bach-intensity-profile.md:1 'digitized from Figure 3e' \u2014 VERIFIED: the document's figure 3 runs 3a-3e and line 132 of the extracted text reads 'In figure 3e the pattern ...', so the named sub-panel exists and is the accumulated-pattern panel a digitisation would use. (2) bach-single-electron-buildup.md:9 'Figure 3 shows the buildup' \u2014 VERIFIED (lines 76, 91, 130-132: single-electron accumulation across 3a-3d). (3) bach-introduction.md:8 credits the full realisation of the Feynman thought experiment \u2014 VERIFIED verbatim in the abstract. (4) folio/quantum-observable-universe/observations/double-slit-massive-pattern.md:48 and double-slit-intro.md:5 use it as the experimental comparison target for the q-corrected sinc^2 envelope, with double-slit-massive-pattern.lean:89 carrying the matching `-- Ref:`. One caution worth recording, not a citation defect: double-slit-intro.md:5 says the QOU anomalies 'match the Bach et al. 600 eV electron diffraction dataset'; a match against a digitised figure is a compute-check obligation, not an adoption, and no witness is named at either block.",
+          "keyResults": [
+            {
+              "locator": "Fig. 3e",
+              "statement": "The accumulated single-electron double-slit diffraction pattern for the controlled (movable-mask) geometry, from which an intensity profile can be digitised.",
+              "useForFolio": "It is the actual data source behind bach-intensity-profile; the folio's q-corrected sinc^2 envelope is compared against it.",
+              "targets": [
+                "prop:double-slit-massive-pattern"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "compute-check",
+              "rationale": "double-slit-intro.md:5 asserts the q-deviation 'matches' this dataset but names no witness. The comparison of the q-corrected sinc^2 envelope against the digitised Fig. 3e profile should emit a witness so the claim is checkable; a visual match is not evidence and adopting a q-value that improves the fit would be a fit.",
+              "target": "prop:double-slit-massive-pattern",
+              "bean": "qou-4qxj"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "3ff2f5358b25"
+        }
+      }
+    }
+  ]
+}

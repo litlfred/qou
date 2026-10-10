@@ -4,8 +4,11 @@ title: 'S2 follow-up: make the hecke-gram schema contract actually execute'
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T11:39:42Z
-updated_at: 2026-08-16T11:39:42Z
+updated_at: 2026-10-04T15:24:16Z
+parent: qou-5vkl
 ---
 
 Follow-up to `qou-cds2` (S2). Related: `qou-m7py` (the Rust/Python

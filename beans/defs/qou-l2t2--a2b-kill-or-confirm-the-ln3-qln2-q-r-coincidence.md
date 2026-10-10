@@ -4,9 +4,11 @@ title: 'A2b: kill-or-confirm the ln[3]_q/ln[2]_q ~ r* coincidence'
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T08:37:48Z
-updated_at: 2026-08-07T08:39:57Z
-parent: qou-kemt
+updated_at: 2026-10-04T15:16:09Z
+parent: qou-v2om
 blocked_by:
     - qou-fvzm
 ---

@@ -4,9 +4,11 @@ title: 'forward-ref arc: what is left, and why an agent should not decide it'
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T00:45:00Z
-updated_at: 2026-09-26T11:03:27Z
-parent: fwr1
+updated_at: 2026-10-04T15:19:20Z
+parent: qou-hqo3
 ---
 
 Closes out the `fwr1`-`fwr5` arc. **Forward `uses[]` references went 274 -> 193**

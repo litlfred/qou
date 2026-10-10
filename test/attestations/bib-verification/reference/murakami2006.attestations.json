@@ -1,0 +1,88 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "murakami2006",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 178,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0603217v3/0603217v3.pdf"
+        },
+        "id": "murakami2006",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "docs/audits/2026-07-26-sdeformed-channel-signflip.md names the literature backing for the corpus's deformed volume conjecture as 'Gukov 2003; H. Murakami; Ohtsuki 2016; Murakami-Yokota' -- with no ref() entry for the H. Murakami item. This is that item, in its most directly usable form: it states the parameterized volume conjecture at exactly the corpus's evaluation point exp((u + 2*pi*i)/N), defines v_K(u) and the volume function, and -- the part that matters most here -- explains in section 4 that its polarization DIFFERS from Gukov's and that the two agree only when Re(u) = 0. The corpus's SDeformedVolumeChannel work is a SIGN-FLIP probe on Im V_41(u) = (sqrt3/4)(Re^2 u - Im^2 u), i.e. it lives precisely where Re(u) != 0 and the polarization choice bites. Citing the wrong polarization there would flip a sign.",
+          "keyResults": [
+            {
+              "locator": "Conj 2.1, eqs. (2.1)-(2.3)",
+              "statement": "H(K;u) = (u + 2*pi*i) * lim_N log J_N(K; exp((u+2*pi*i)/N))/N is analytic on an open O_K; with v_K(u) := 2 dH/du - 2*pi*i, the volume function satisfies V(K;u) = Im H(K;u) - pi*Re(u) - (1/2)*Re(u)*Im(v_K(u)).",
+              "useForFolio": "The precise definition of the (u, v) pair and of the volume function that QOU/Knot/FigureEightComplexVolume.lean encodes as 'the NZ relation V'(u) proportional to v(u)'. It replaces a paraphrase with the exact functional relation, including the -pi*Re(u) and -(1/2)Re(u)Im(v) terms that a Re(u) != 0 evaluation cannot drop.",
+              "targets": [
+                "QOU.Knot.FigureEightComplexVolume",
+                "QOU.QBeta.PhiBSArgumentIdentification.SDeformedVolumeChannel",
+                "conj:binding-qbeta-complex-volume"
+              ]
+            },
+            {
+              "locator": "Section 2, paragraph after Rmk 2.5 (via Murakami-Yokota Cor 2.4), and section 4",
+              "statement": "Conjecture 2.1 is PROVED for the figure-eight knot; and for 4_1 the Gukov-type statement that (-exp(-v_K(u)/2), exp(u/2)) is a zero of the A-polynomial is also proved.",
+              "useForFolio": "Theorem-level backing for the two facts QOU/Knot/FigureEightComplexVolume.lean assumes about 4_1: that the deformed limit exists and is analytic, and that (u, v) lies on the A-polynomial curve -- the latter is what qbeta_nz_even_series_fourone_probe.py uses to read tau off the CCGLS A-polynomial.",
+              "targets": [
+                "QOU.Knot.FigureEightComplexVolume",
+                "computations/probes/qbeta_nz_even_series_fourone_probe.py"
+              ]
+            },
+            {
+              "locator": "Section 4, final paragraph of the Conj 4.1 discussion; also Rmk 2.2",
+              "statement": "Gukov's generalization uses a different polarization; it agrees with Conjecture 2.1 only when Re(u) = 0, the difference for Re(u) != 0 being a polarization choice. Rmk 2.2 further flags a meridian/longitude convention difference from CCGLS and a missing factor of four in a CCGLS formula.",
+              "useForFolio": "A named, published convention hazard sitting directly under the corpus's sign-flip probe, which evaluates at Re(u) != 0. Any QOU statement citing 'the generalized volume conjecture' must say WHICH polarization; this is the source that makes that choice explicit.",
+              "targets": [
+                "docs/audits/2026-07-26-sdeformed-channel-signflip.md",
+                "QOU.QBeta.PhiBSArgumentIdentification"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry despite being named (as 'H. Murakami') as theorem backing in a live audit doc; register so the SDeformedVolumeChannel work can cite a key.",
+              "target": "folio/schema/references.ts (new id, e.g. murakami2006version)",
+              "bean": "qou-06qg"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "The audit doc's literature-object paragraph and the Lean file's docstring both assert the deformed VC for 4_1 without a citable source.",
+              "target": "QOU.Knot.FigureEightComplexVolume (docstring) and docs/audits/2026-07-26-sdeformed-channel-signflip.md",
+              "bean": "qou-lxqf"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "The Gukov-vs-Murakami polarization difference at Re(u) != 0 is a real risk to the sign-flip conclusion and is not recorded anywhere in the corpus. Proposing new-remark rather than aid-proof: I have not checked which polarization the corpus's V_41 series actually realises, so this flags a check, it does not close one.",
+              "target": "a remark on the polarization convention attached to conj:binding-qbeta-complex-volume",
+              "bean": "qou-ixu7"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "d7375d4fee00"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

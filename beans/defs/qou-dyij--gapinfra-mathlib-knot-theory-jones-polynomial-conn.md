@@ -1,11 +1,14 @@
 ---
 # qou-dyij
 title: 'GAP/INFRA: Mathlib knot theory — Jones polynomial, connected sum, Markov-trace multiplicativity'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T12:33:56Z
-updated_at: 2026-08-30T13:20:00Z
+updated_at: 2026-10-04T15:12:46Z
+parent: qou-rtxm
 ---
 
 Consumer: qou-301d (discharge the ArchimedeanTraceBridge multiplicativity hypothesis). Parent epic:
@@ -147,3 +150,9 @@ J(linked)/∏J`. Both objections survive verbatim, and the recommendation ("not 
 only, upstreamed") stands. What changes is the **cost estimate**: less of route B is greenfield than
 this bean assumed, because the layer it says Mathlib provides does not exist and the layer it says
 must be built partly now does — in this repo.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

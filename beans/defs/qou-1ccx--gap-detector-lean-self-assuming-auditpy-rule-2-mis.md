@@ -4,8 +4,11 @@ title: 'GAP (detector): lean-self-assuming-audit.py rule 2 misses the ANONYMOUS 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-15T06:44:54Z
-updated_at: 2026-09-15T06:45:18Z
+updated_at: 2026-10-04T15:19:29Z
+parent: qou-5vkl
 ---
 
 ## MEASURED 2026-09-15 — three probes, one variable each

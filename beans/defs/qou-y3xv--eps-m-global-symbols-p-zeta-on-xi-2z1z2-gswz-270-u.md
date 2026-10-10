@@ -1,11 +1,14 @@
 ---
 # qou-y3xv
 title: 'eps_m GLOBAL symbols: P_zeta on xi = 2[z1]+[z2] (GSWZ 270) — unramified mu_{624m} fields, d=ord_5(624m); z1=1-a^2, z2=z1^2-z1+2 verified 5-units both components; z3=z1; extend gswz_epsm_kummer_level machinery'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T13:39:32Z
-updated_at: 2026-08-11T00:07:20Z
+updated_at: 2026-10-04T15:12:29Z
+parent: qou-r9ih
 ---
 
 
@@ -42,3 +45,9 @@ Extract the 5_2 Nahm z-data of the psi_{0,z,1}(w,x)^3 bracket
 the shifted-tail hypothesis for the (287) lambda with THOSE arguments
 (the roots-of-unity argument set is refuted; witness digits in
 gswz_psi_section_division.witness.json).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-11 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

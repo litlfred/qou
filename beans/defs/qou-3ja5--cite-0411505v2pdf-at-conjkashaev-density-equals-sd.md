@@ -4,8 +4,11 @@ title: Cite 0411505v2.pdf at conj:kashaev-density-equals-sdp-multiplicity
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:47Z
-updated_at: 2026-08-21T17:04:41Z
+updated_at: 2026-10-04T15:17:03Z
+parent: qou-ysb7
 ---
 
 Driver (x) is named 'MacMahon-style partition algebra' three times in this block with no source; Thm 2 is the source.

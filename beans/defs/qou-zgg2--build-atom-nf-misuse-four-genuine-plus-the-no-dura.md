@@ -4,8 +4,11 @@ title: 'build_atom_nf misuse: four genuine, plus the no-durable-home claim that 
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T06:26:13Z
-updated_at: 2026-09-05T07:17:51Z
+updated_at: 2026-10-04T15:14:41Z
+parent: qou-v2om
 ---
 
 AUDITED 2026-09-05 (corpus-grepper subagent, read-only, branch/gating resolved

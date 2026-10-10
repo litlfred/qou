@@ -1,11 +1,14 @@
 ---
 # qou-qrsp
 title: 'PRODUCER FIX: 37 of 45 measured producers re-pad float64 on re-run (qou-gqt5 follow-up)'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T09:01:16Z
-updated_at: 2026-09-14T18:50:18Z
+updated_at: 2026-10-04T15:11:05Z
+parent: qou-9nnz
 ---
 
 Follow-up to qou-gqt5 (parent-less: beans disallows task-under-task).
@@ -837,3 +840,9 @@ short. Do not "fix" it.
 `raw-float64-baseline.json` is left untouched: the entry records the historical
 floor and the audit computes the drain against it. Hand-editing it is the move
 the ratchet exists to prevent.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-14 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

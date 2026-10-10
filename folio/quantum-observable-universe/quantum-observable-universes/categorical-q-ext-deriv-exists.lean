@@ -37,14 +37,14 @@ namespace QOU
     as a named axiom pending that infrastructure. -/
 -- Ref: [majid2002] A Quantum Groups Primer (Cambridge UP), §5
 axiom CategoricalQExtDeriv.exists_axiom (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] :
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] :
     Nonempty (CategoricalQExtDeriv C)
 
 /-- **Existence of the categorical q-exterior derivative** (conditional on
     `CategoricalQExtDeriv.exists_axiom`). -/
 theorem CategoricalQExtDeriv.exists
     (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] :
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] :
     Nonempty (CategoricalQExtDeriv C) :=
   CategoricalQExtDeriv.exists_axiom C
 

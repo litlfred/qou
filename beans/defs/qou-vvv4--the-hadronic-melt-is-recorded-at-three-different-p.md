@@ -1,11 +1,14 @@
 ---
 # qou-vvv4
 title: The hadronic melt is recorded at three different points, and two of them are in sibling blocks that contradict each other
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T14:42:14Z
-updated_at: 2026-08-30T17:05:07Z
+updated_at: 2026-10-04T15:14:12Z
+parent: qou-10v9
 ---
 
 ## Measured 2026-08-30 — the mechanism, and what it does to the melt
@@ -102,3 +105,9 @@ Verification: pipeline render exit 0; `run-validate` exit 0 "Valid" with the new
 cross-ref RESOLVING (absent from the undefined-xref warning); qa-sweep 0/0/0
 with all 8 mechanical criteria refreshed at 0 findings; grep battery + expository
 pass clean.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

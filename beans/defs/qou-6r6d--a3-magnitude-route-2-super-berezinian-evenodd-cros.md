@@ -6,8 +6,10 @@ type: task
 priority: normal
 tags:
     - a3-cross-channel
+    - reorg-2026-10-04
 created_at: 2026-08-01T23:36:58Z
-updated_at: 2026-08-01T23:55:59Z
+updated_at: 2026-10-04T15:16:11Z
+parent: qou-v2om
 ---
 
 ROUTE 2 result (scope-(a), 2026-08-01): the super-Berezinian even/odd cross-term t=B·D⁻¹·C does NOT derive the A=3 magnitude r*=μ3/c3≈1.585 — it supplies it only as a FIT.

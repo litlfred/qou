@@ -3,8 +3,12 @@
 title: 'Route 3 (parent: qnnq): multi-cusp effects — proton = Borromean (3 cusps), deformation space is (u₁,u₂,u₃) ∈ ℂ³ (6 real DOF), not one 2D cusp torus. Probe: Murakami-style cone-manifold volume of Borromean with independent per-component cone angles; test if the proton ϑ ≈ 0.203 arises as an asymmetric filling (two components at ln q₀, third carrying the angular datum). Lean: extend SDeformedVolumeChannel u-field to a 3-vector for links.'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-31T19:30:00Z
-updated_at: 2026-07-31T19:30:00Z
+updated_at: 2026-10-04T15:24:13Z
+parent: qou-avtq
 ---
 
 Literature anchors:

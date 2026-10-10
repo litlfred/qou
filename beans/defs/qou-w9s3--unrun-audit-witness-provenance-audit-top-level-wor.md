@@ -1,10 +1,13 @@
 ---
 # qou-w9s3
 title: 'Unrun audit: witness_provenance_audit (top-level) works, is wired nowhere, and finds 7 real defects'
-status: todo
+status: scrapped
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T23:24:47Z
-updated_at: 2026-08-15T23:24:47Z
+updated_at: 2026-10-04T15:25:18Z
 ---
 
 
@@ -197,3 +200,10 @@ the 3 survivors are witnesses naming `.py` files that exist nowhere.
    means "module documented" and it already carries `evaluator_module`.
 2. **3 SCRIPT_MISSING** — each names an absent `.py`. Needs per-witness
    investigation: renamed, deleted, or never existed. Not mechanical.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-7aum` (work-plan reorganisation 2026-10-04). Evidence: [B] unrun provenance audit wired nowhere - same gap as 7aum
+Content is untouched; only this work item is closed.

@@ -1,15 +1,16 @@
 ---
 # qou-q3np
 title: 'Q3 NEGATIVE: no literature connects knot Stokes/DT data to decay observables — and integrality is a structural obstruction to A_omega -> S'
-status: todo
+status: completed
 type: task
 priority: high
 tags:
     - g3-aomega
     - honesty
     - load-bearing
+    - reorg-2026-10-04
 created_at: 2026-08-11T11:20:00Z
-updated_at: 2026-08-11T11:20:00Z
+updated_at: 2026-10-04T15:15:02Z
 ---
 
 Swept all 329 uploads (324 text-extractable) cross-tabulating resurgence/DT/BPS vocabulary
@@ -39,3 +40,9 @@ mechanism mapping an integer Stokes constant to a small signed real residual, or
 that A_omega -> S is a conjecture with NO literature support and scope the downstream claims
 accordingly. Elaborating the periphery without addressing this is exactly the failure mode the
 anti-laundering rules exist to prevent.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] title "Q3 NEGATIVE" (literature search done)

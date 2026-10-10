@@ -4,8 +4,11 @@ title: 'Integration: I14 and I-cal-input aggregate full-corpus re-runs'
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-06-21T21:41:08Z
-updated_at: 2026-08-21T16:01:22Z
+updated_at: 2026-10-04T15:20:58Z
+parent: qou-trd0
 ---
 
 ## I14 half ANSWERED 2026-08-21 (PR #5373)

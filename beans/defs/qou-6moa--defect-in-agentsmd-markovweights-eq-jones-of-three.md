@@ -4,8 +4,11 @@ title: 'DEFECT in AGENTS.md: markovWeights_eq_jones_of_threeRow_eq_zero is cited
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-26T14:15:29Z
-updated_at: 2026-09-26T14:56:49Z
+updated_at: 2026-10-04T15:14:48Z
+parent: qou-rtxm
 ---
 
 ## The mis-citation

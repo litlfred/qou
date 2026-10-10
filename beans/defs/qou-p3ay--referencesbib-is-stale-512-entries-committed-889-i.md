@@ -5,9 +5,11 @@ status: todo
 type: bug
 priority: normal
 tags:
+    - reorg-2026-10-04
     - bibliography
 created_at: 2026-09-29T21:12:39Z
-updated_at: 2026-09-29T21:12:39Z
+updated_at: 2026-10-04T15:15:50Z
+parent: qou-mub3
 ---
 
 **Measured 2026-09-29 on main `32cb188c0`:** `references.bib` holds **512**

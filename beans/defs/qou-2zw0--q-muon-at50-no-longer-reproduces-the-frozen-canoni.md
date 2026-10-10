@@ -1,11 +1,13 @@
 ---
 # qou-2zw0
 title: q_muon_at(50) no longer reproduces the frozen canonical muon pin
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T07:29:21Z
-updated_at: 2026-08-26T07:29:59Z
+updated_at: 2026-10-04T15:22:55Z
 ---
 
 ## The fact
@@ -66,3 +68,10 @@ question and it is the next step.
 PR #5823 (bean `qou-aj91`), as the control run that separated pin-effect from
 environment-effect. Not caused by that change and deliberately not fixed
 there.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-tekx` (work-plan reorganisation 2026-10-04). Evidence: one defect seen four ways: two muon pins (CODATA-2018 A vs 2022 C) in circulation; 1 main commits
+Content is untouched; only this work item is closed.

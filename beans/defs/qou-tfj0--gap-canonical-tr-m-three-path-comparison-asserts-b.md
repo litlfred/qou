@@ -4,8 +4,11 @@ title: 'GAP: canonical_tr_m_three_path_comparison asserts bridge = markov_peel w
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T14:23:36Z
-updated_at: 2026-08-30T14:24:36Z
+updated_at: 2026-10-04T15:19:48Z
+parent: qou-9nnz
 ---
 
 Surfaced while draining slice B of `qou-srvu` (witnesses reporting

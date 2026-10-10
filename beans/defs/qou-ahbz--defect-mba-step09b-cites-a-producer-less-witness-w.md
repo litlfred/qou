@@ -4,9 +4,11 @@ title: 'DEFECT: mba-step09b cites a producer-less witness whose numbers contradi
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T16:34:31Z
-updated_at: 2026-08-25T16:35:06Z
-parent: qou-9ot5
+updated_at: 2026-10-04T15:18:40Z
+parent: qou-5vkl
 ---
 
 ## Verified 2026-08-25 (PR #5765)

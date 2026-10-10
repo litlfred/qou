@@ -1,11 +1,14 @@
 ---
 # qou-u96j
 title: Walk the canonical derivation chain step by step and catalogue where CONDITIONS emerge
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T07:49:59Z
-updated_at: 2026-09-14T17:55:06Z
+updated_at: 2026-10-04T15:14:22Z
+parent: qou-v2om
 ---
 
 ## 2026-09-14 — first tranche: steps 5 and 10 walked
@@ -488,3 +491,9 @@ asserts *dependency* (so the labels should name `prop:jet-prefix-gb-filtration`,
 which is where the `uses[]` graph actually routes) or is narrative.
 
 Probe: `computations/audits/step7_bridge_disposition_probe.py`, 23/23. PR #7375.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-14 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

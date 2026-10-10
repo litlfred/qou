@@ -1,11 +1,13 @@
 ---
 # qou-7r6d
 title: 'Session: dark-matter / antimatter-domain feasibility (gamma-gamma C-symmetry, QOU cosmology)'
-status: todo
-type: epic
+status: completed
+type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T11:50:19Z
-updated_at: 2026-09-07T12:03:24Z
+updated_at: 2026-10-04T15:15:26Z
 ---
 
 ## Session findings (2026-09-07) — chat-only delivery, no paper content written
@@ -130,3 +132,9 @@ MIRROR defines the antiparticle; `prop:c-equals-bar-iff-all-1dim` proves mirror
 2. Replace `bare_mass_invariance`'s crossing-count proxy with a Vol(mirror) lemma.
 3. Check whether density bar-parity is structural or accidental.
 4. Is the gamma-gamma production functor C-equivariant (not merely bar-equivariant)?
+
+
+
+## Summary of Changes
+
+Session log closed 2026-10-04 (owner decision 2): open children were reparented to programme epics and prose follow-ups extracted as their own beans. Kept as a record, not deleted.

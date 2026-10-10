@@ -4,8 +4,11 @@ title: 'GAP: the gamma-gamma character exclusion does not reach the colour-weigh
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T11:46:21Z
-updated_at: 2026-09-13T11:46:21Z
+updated_at: 2026-10-04T15:20:25Z
+parent: qou-10v9
 ---
 
 Child of `qou-99qc`, sibling of `qou-cblw`. Opened by PR #7295 rather than

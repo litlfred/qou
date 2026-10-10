@@ -4,8 +4,11 @@ title: 'Import-cone staleness backlog: 1799 flags triaged to 7 module questions 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T16:19:30Z
-updated_at: 2026-08-30T16:20:19Z
+updated_at: 2026-10-04T15:20:48Z
+parent: qou-5vkl
 ---
 
 Measured 2026-08-30 on `claude/convention-c-migration-tranche-1-2026-08-30`

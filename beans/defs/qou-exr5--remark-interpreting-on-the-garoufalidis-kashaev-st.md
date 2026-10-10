@@ -4,8 +4,11 @@ title: Remark interpreting On the Garoufalidis-Kashaev State-Integral Invariant.
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:32Z
-updated_at: 2026-08-21T17:04:54Z
+updated_at: 2026-10-04T15:23:59Z
+parent: qou-vva9
 ---
 
 Surfaced while reading this thesis: the corpus names 'the Andersen-Kashaev state integral' in a reference note and in the 5_2 GK-bridge audit's definition of state-integral dressing, but no Andersen-Kashaev ref() entry exists. The PRIMARY source is the one actually missing; this thesis is only its exposition.

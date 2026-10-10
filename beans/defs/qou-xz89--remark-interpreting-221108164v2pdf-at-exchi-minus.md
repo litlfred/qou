@@ -4,8 +4,11 @@ title: Remark interpreting 2211.08164v2.pdf at ex:chi-minus-six-derivation
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:21Z
-updated_at: 2026-08-21T17:05:09Z
+updated_at: 2026-10-04T15:23:37Z
+parent: qou-aqfj
 ---
 
 Step 5's parenthetical ('S_3 subset S_5 orbits on the 6 Weierstrass points of Bring's surface') is inconsistent with transitivity + simplicity (one orbit, 60 points) and with the corpus's own 2026-07-18 audit line recording 60 weight-1 Aut-transitive Weierstrass points. Flagged as needing author adjudication of what the 6 actually counts; not proposed as an automatic edit and not a claim that chi(A) = -6 is wrong.

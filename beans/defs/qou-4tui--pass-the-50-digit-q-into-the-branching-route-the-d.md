@@ -3,8 +3,12 @@
 title: Pass the 50-digit q into the branching route; the D row is 16 digits, not 50
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T06:38:32Z
-updated_at: 2026-09-05T06:38:32Z
+updated_at: 2026-10-04T15:21:59Z
+parent: qou-cdx1
 ---
 
 

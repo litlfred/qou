@@ -6,8 +6,9 @@ type: task
 priority: normal
 tags:
     - mathlib
+    - reorg-2026-10-04
 created_at: 2026-08-24T06:35:58Z
-updated_at: 2026-08-24T06:35:58Z
+updated_at: 2026-10-04T15:24:22Z
 parent: qou-c8p8
 ---
 

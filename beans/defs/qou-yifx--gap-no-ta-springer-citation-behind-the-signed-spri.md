@@ -3,8 +3,12 @@
 title: 'GAP: no T.A. Springer citation behind the ''signed Springer dimension'' (Delta_lambda)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T22:27:03Z
-updated_at: 2026-08-08T22:27:03Z
+updated_at: 2026-10-04T15:20:16Z
+parent: qou-mub3
 ---
 
 ## The gap

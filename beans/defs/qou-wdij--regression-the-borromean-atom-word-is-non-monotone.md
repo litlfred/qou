@@ -1,11 +1,14 @@
 ---
 # qou-wdij
 title: 'REGRESSION: the Borromean atom word is non-monotone, so every monotone-transfer consumer is dead on main'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T18:12:11Z
-updated_at: 2026-09-06T12:54:55Z
+updated_at: 2026-10-04T15:13:45Z
+parent: qou-v2om
 ---
 
 ## Measured, not assumed (branch claude/atom-trace-nonmonotone-regression-2026-09-05)
@@ -312,3 +315,9 @@ vector to collapse:** the claim here is about the VALUE of `tr` splitting as a p
 and bonds, not about the intermediate state space having a repeated element to cache. The two can
 both be true — and the fact that they are is a hint that whatever makes the product work is visible
 in the trace and not in the transfer's state list.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -3,8 +3,12 @@
 title: 'GAP W2: extract principal symbol of D_q at ramified pole (Ramis-Sauloy-Zhang local q-difference classification)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-01T01:47:27Z
-updated_at: 2026-08-01T01:47:27Z
+updated_at: 2026-10-04T15:19:32Z
+parent: qou-frzo
 ---
 
 

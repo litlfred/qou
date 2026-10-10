@@ -1,11 +1,14 @@
 ---
 # qou-nlw5
 title: The canonical braid word's interface d implies a q0 matching NEITHER pin — 7.2e-5 off both
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T04:15:44Z
-updated_at: 2026-08-26T04:16:25Z
+updated_at: 2026-10-04T15:14:09Z
+parent: qou-v2om
 ---
 
 MEASURED 2026-08-26, found while triaging CRASH verdicts in the `qou-wlaf`
@@ -70,3 +73,9 @@ silently.
 
 Filed rather than fixed: deciding between "add a fourth case" and "fix the
 upstream anchor" needs someone who owns the interface convention.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-26 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

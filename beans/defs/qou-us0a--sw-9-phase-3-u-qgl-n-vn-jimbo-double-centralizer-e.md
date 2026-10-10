@@ -4,8 +4,10 @@ title: 'SW-9 (Phase 3): U_q(gl_N) + V^⊗n + Jimbo double centralizer End_{U_q}(
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T19:33:08Z
-updated_at: 2026-09-05T16:45:29Z
+updated_at: 2026-10-04T15:24:39Z
 parent: qou-59vq
 blocked_by:
     - qou-0h5k

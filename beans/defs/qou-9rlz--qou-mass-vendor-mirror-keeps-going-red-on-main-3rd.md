@@ -1,11 +1,13 @@
 ---
 # qou-9rlz
 title: qou-mass vendor mirror keeps going red on main (3rd observation today)
-status: todo
+status: scrapped
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T18:48:51Z
-updated_at: 2026-08-24T18:49:30Z
+updated_at: 2026-10-04T15:15:49Z
 ---
 
 ## Three observations in one day, all on clean `main`
@@ -49,3 +51,10 @@ changes were already in sync — restoring the 21 left the branch clean.
    names this hazard), so any agent re-running an isotope producer without
    re-syncing re-reds the gate. If that is the mechanism, the durable fix is a
    post-producer sync step, not another manual re-sync.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-a0j7` (work-plan reorganisation 2026-10-04). Evidence: recurring "qou-mass vendor mirror red/re-drifted" observations of the same missing sync; 1 main commits
+Content is untouched; only this work item is closed.

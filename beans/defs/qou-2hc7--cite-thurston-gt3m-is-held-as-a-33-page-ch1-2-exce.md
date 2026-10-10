@@ -4,9 +4,11 @@ title: 'CITE: Thurston GT3M is held as a 33-page Ch.1-2 excerpt — M — 113 ci
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T09:02:44Z
-updated_at: 2026-09-04T09:02:44Z
-parent: qou-8lxd
+updated_at: 2026-10-04T15:14:45Z
+parent: qou-1qhv
 ---
 
 **Class M — held, correctly attributed, but the held copy cannot support the locators.**

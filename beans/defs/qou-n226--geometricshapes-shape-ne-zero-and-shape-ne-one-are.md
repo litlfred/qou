@@ -4,8 +4,11 @@ title: GeometricShape's shape_ne_zero and shape_ne_one are redundant given im_po
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T09:06:00Z
-updated_at: 2026-09-04T09:06:46Z
+updated_at: 2026-10-04T15:20:37Z
+parent: 08a2
 ---
 
 MINOR, recorded not changed. shared-denominator-cusp-holonomy.lean:92 declares

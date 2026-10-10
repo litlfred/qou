@@ -4,8 +4,11 @@ title: 'Entanglement history in the GS filtration: is the trace the only lossy s
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-28T20:01:42Z
-updated_at: 2026-09-16T01:25:54Z
+updated_at: 2026-10-04T15:19:00Z
+parent: 08a2
 ---
 
 ## 2026-09-16 — status cross-reference (session qou-0nrt; not my bean, appended only)

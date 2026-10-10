@@ -3,8 +3,12 @@
 title: Remark interpreting [komendarczyk2008] at rem:helicity-physical
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:28Z
-updated_at: 2026-08-08T23:34:28Z
+updated_at: 2026-10-04T15:23:52Z
+parent: qou-vva9
 ---
 
 The registry CSL note is carrying multi-paragraph mathematical findings from two full reads - including corrections to prior corpus readings of the Freedman-He bound - that belong in a citable remark, not in a bibliography note field. Promote the findings to a remark and cite the key there, which also retires the bib orphan.

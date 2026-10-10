@@ -4,8 +4,11 @@ title: Cite 0006051v1.pdf at rem:q-dilog-three-contexts
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:30Z
-updated_at: 2026-08-21T17:04:43Z
+updated_at: 2026-10-04T15:16:58Z
+parent: qou-ysb7
 ---
 
 rem:q-dilog-three-contexts currently states the F_p truncation and the Q_p/C_p convergence with zero citations; Besser Prop. 2.1 is the standard source for the q=1 finite/p-adic polylogarithm relation.

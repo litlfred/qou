@@ -1,11 +1,15 @@
 ---
 # qou-t2sc
 title: Whitehead VC squeeze proof — Lean bricks (à la 4₁ E1-E5 / Borromean B1-B5), gated on the positive-sum form
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - close-candidate
+    - reorg-2026-10-04
 created_at: 2026-08-01T19:45:02Z
-updated_at: 2026-08-01T20:03:15Z
+updated_at: 2026-10-04T15:14:24Z
+parent: qou-n4nr
 ---
 
 
@@ -67,3 +71,9 @@ saddle-term value with 4G (van der Veen's Clausen/Lobachevsky max-value
 evaluation). This needs the QOU.Infra.Clausen import → a QOU-library build
 to verify (no longer Mathlib-only). Deferred to avoid lake-build collision
 while the #4394 prepare-merge agent is active on the shared workspace.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-01 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

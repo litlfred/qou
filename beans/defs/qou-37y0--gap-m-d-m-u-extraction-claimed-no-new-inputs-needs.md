@@ -3,8 +3,12 @@
 title: 'GAP: m_d - m_u extraction claimed ''no new inputs'' — needs the underived EM coupling k, and does not cite the existing substrate split'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T08:11:57Z
-updated_at: 2026-08-08T08:11:57Z
+updated_at: 2026-10-04T15:20:11Z
+parent: qou-8lxd
 ---
 
 Surfaced 2026-08-08 while surveying the new `eightfold-way/` +

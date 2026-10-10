@@ -4,8 +4,11 @@ title: Vol(6_2) literal disagrees with census in m_tau_knot_prediction.py
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T15:03:20Z
-updated_at: 2026-08-21T15:30:44Z
+updated_at: 2026-10-04T15:25:28Z
+parent: qou-2002
 ---
 
 computations/m_tau_knot_prediction.py:91 carries `"6_2": "4.0597664956578801590"` in KNOT_VOL_TABLE. The canonical census value (computations/substrate/knot_volumes.py:144, SnapPy HP 50-dps) is 4.40083251612304610144... The literal is 7.75% low and agrees to 8 digits with 2*Vol(4_1) = 4.05976642..., suggesting a doubled-figure-eight substitution. Separate from the knot-identity question in qou-e5jf; this is a wrong number under a right name.

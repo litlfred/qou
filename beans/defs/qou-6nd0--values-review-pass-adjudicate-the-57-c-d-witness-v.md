@@ -1,10 +1,15 @@
 ---
 # qou-6nd0
 title: 'VALUES review pass: adjudicate the 57 C->D witness value changes, sign flips first'
-status: in-progress
+status: todo
 type: task
+priority: normal
+tags:
+    - needs-owner
+    - reorg-2026-10-04
 created_at: 2026-08-09T09:51:39Z
-updated_at: 2026-08-09T09:51:39Z
+updated_at: 2026-10-04T15:14:19Z
+parent: qou-10v9
 ---
 
 
@@ -66,3 +71,9 @@ not the physical object, it is where the series was stopped.
    2026-08-09 that it is NOT wired into the binding path (no reference in
    mass_binding_dashboard.py or chi_monotone_transfer.py). Effect ~3.2e-4 MeV.
    Negligible is exactly the case the directive covers.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-09 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

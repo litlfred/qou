@@ -9,8 +9,10 @@ tags:
     - resurgence
     - independent-check
     - qou-0yqu
+    - reorg-2026-10-04
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-09-26T11:03:29Z
+updated_at: 2026-10-04T15:26:00Z
+parent: qou-frzo
 ---
 
 ## What this is, and what it is NOT

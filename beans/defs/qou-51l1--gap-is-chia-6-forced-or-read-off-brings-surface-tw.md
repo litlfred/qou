@@ -4,8 +4,11 @@ title: 'GAP: is chi(A) = -6 forced or read off Bring''s surface? two corpus stat
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T19:59:53Z
-updated_at: 2026-09-14T21:47:24Z
+updated_at: 2026-10-04T15:20:07Z
+parent: qou-ddmn
 ---
 
 Raised 2026-09-14, session `claude/funny-faraday-nyyfla`. REPORT ONLY — no prose

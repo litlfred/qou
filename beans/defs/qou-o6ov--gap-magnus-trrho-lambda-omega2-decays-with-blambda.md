@@ -4,9 +4,11 @@ title: 'RESEARCH: does |tr(rho_lambda Omega2^P)|/dim decay in b across the <=2-r
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-11T15:46:32Z
-parent: qou-x631
+updated_at: 2026-10-04T15:24:04Z
+parent: qou-10v9
 ---
 
 **RESCOPED 2026-09-05 (owner: "rescope and continue"), after PR #6822. Read this header, not the historical one below it.**

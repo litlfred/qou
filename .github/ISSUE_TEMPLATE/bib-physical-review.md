@@ -57,5 +57,5 @@ posted back here.
 
 ---
 *Status will move `issue-open → photo-uploaded → validated` in
-`folio/schema/references.review.json`. Do not close manually — the watcher
+the reference's human-review record (`test/attestations/bib-human-review/`). Do not close manually — the watcher
 closes on `validated`.*

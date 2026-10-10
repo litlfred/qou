@@ -3,8 +3,12 @@
 title: Cite [habiro2002] at QOU.BraidKnot.HabiroNewtonLadder
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:10Z
-updated_at: 2026-08-08T23:35:10Z
+updated_at: 2026-10-04T15:17:37Z
+parent: qou-1qhv
 ---
 
 HabiroNewtonLadder.lean:59 cites [habiro2002] for the Habiro-Le colored-Jones double-Pochhammer formula; the same file already cites habiro2004cyclotomic correctly at line 18. Align line 59 with line 18.

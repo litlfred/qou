@@ -4,8 +4,11 @@ title: 'q-NS probe arithmetic: 16 of 17 compute in float64 — wider than the tw
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T08:11:29Z
-updated_at: 2026-09-14T08:11:29Z
+updated_at: 2026-10-04T15:22:53Z
+parent: qou-a3n3
 ---
 
 Measured 2026-09-14 on `main`-equivalent tree, while answering a

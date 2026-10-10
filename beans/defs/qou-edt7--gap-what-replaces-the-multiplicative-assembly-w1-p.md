@@ -1,12 +1,14 @@
 ---
 # qou-edt7
 title: 'GAP: what replaces the multiplicative assembly W=1-PROD f — both corpus assemblies miss the 3-body sign, in OPPOSITE directions'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-09-03T14:58:34Z
-parent: qou-mhj9
+updated_at: 2026-10-04T15:13:01Z
+parent: qou-v2om
 ---
 
 Opened 2026-08-30 after #6059 merged (207ee81f). The merged tranche 3 named the
@@ -1061,3 +1063,9 @@ the next real move is an ingredient from outside it, not another search inside.
 carrier-screening tranche. The counting argument makes such a tranche unable to
 close by construction, and its most likely output is a plausible-looking weight
 that would then need labelling as a fit.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

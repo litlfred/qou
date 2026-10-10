@@ -1,11 +1,14 @@
 ---
 # qou-zv2l
 title: 'GAP: canonical-ordering-dof witness is genuinely self-stale on scriptHash (producer re-run needed)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T12:56:59Z
-updated_at: 2026-08-10T14:37:08Z
+updated_at: 2026-10-04T15:12:49Z
+parent: qou-5vkl
 ---
 
 
@@ -76,3 +79,9 @@ cross-check the added comment block documents.
 That field is not wall time — the probe takes **46 s** (`durationMs` itself went
 3 → 6). Cheap either way, so the "just re-run it" call was right, but the
 number was wrong.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-10 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

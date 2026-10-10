@@ -5,7 +5,8 @@ status: in-progress
 type: epic
 priority: normal
 created_at: 2026-08-02T19:32:20Z
-updated_at: 2026-08-19T13:39:28Z
+updated_at: 2026-10-04T15:10:07Z
+parent: qou-rtxm
 ---
 
 The load-bearing gap for the whole QOU->SM program: no Schur-Weyl in Mathlib at all. Goal: construct HeckeWedderburnData (QOU.SchurWeyl) for the real H_n(q) -- H_n(q) iso ⊕_{λ⊢n} M_{d_λ}(K), d_λ=#SYT(λ), tr_M=Σ_λ w_λ χ_λ; Phase 3 the Jimbo double-centralizer U_q(gl_N)×H_n(q) on V^⊗n. Realizes R2-inst under qou-mpq5. Dependency-ordered children SW-1..SW-9.
@@ -63,3 +64,9 @@ lower bound `dim H_n(q) >= n!` (the other half of `uoal`) needs either
 sum d_lambda^2 = n! plus joint injectivity of the rho_lambda, or the GS normal-form
 route — the latter is `qou-auq3`, actively owned by a sibling. Do not duplicate
 auq3; the representation-theoretic route runs through SW-3.
+
+
+
+## Reorganisation 2026-10-04
+
+Now the epic for P3.SW under Lean / Mathlib foundations.

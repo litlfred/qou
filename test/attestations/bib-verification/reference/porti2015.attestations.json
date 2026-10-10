@@ -1,0 +1,79 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "porti2015",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 249,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1511.00400v2/1511.00400v2.pdf"
+        },
+        "id": "porti2015",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "A survey, so nothing here is new \u2014 but it is the standard reference for exactly the machinery the folio's 1-loop / adjoint-torsion work runs on, and that work currently cites only dimofte-garoufalidis2013. QOU/OneLoopEdgeLattice.lean states that the multi-cusp 1-loop construction was validated numerically in part by 'the change-of-curve law against SnapPy's cusp shapes' \u2014 the change-of-curve law for the adjoint torsion as a function on the character variety is \u00a75.1 of this survey (Lemma 5.12, Prop 5.14). The folio also has registered entries for the 1-loop = adjoint-torsion theorem (garoufalidis-yoon-2024, ohtsuki-takata) but no reference for the torsion theory itself. Corpus-grep: no ref() entry, no 'character varieties' or 'Porti' hit.",
+          "keyResults": [
+            {
+              "locator": "\u00a75.1 (Lemma 5.12 eq. (40), Prop. 5.13, Prop. 5.14 as used in Ex. 5.15)",
+              "statement": "For a chamber-regular character, a \u2229 [gamma] = d(a* log_gamma) identifies H^1(M;Ad rho) with the cotangent space via peripheral logarithms, giving a change-of-curve law under which the torsion volume form is independent of the chosen peripheral curve.",
+              "useForFolio": "The literature statement of the change-of-curve law that the folio's multi-cusp 1-loop derivation validates numerically against SnapPy cusp shapes; the audit and the Lean docstring assert the law without a source.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/OneLoopEdgeLattice.lean",
+                "docs/audits/2026-08-07-one-loop-multicusp-derivation.md"
+              ]
+            },
+            {
+              "locator": "\u00a73.2.3-\u00a73.2.4 + Prop. 3.25 (surgery formula), Cor. 3.27",
+              "statement": "Torsion behaviour under Dehn filling, with an explicit surgery formula, worked on Dehn fillings of the figure-eight knot.",
+              "useForFolio": "The Dehn-filling side of the same torsion apparatus, on 4_1 specifically \u2014 relevant background for the folio's Neumann-Zagier / Borromean 1-loop determinant work (QOU/Knot/NeumannZagierParity.lean, computations/one_loop_torsion.py).",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/Knot/NeumannZagierParity.lean"
+              ]
+            },
+            {
+              "locator": "\u00a74.5 + Thm 4.5 (M\u00fcller)",
+              "statement": "Higher-dimensional-representation torsions of a closed hyperbolic 3-manifold have asymptotics governed by the volume; the adjoint torsion occurs in the volume conjecture.",
+              "useForFolio": "Background linking torsion asymptotics to hyperbolic volume \u2014 the two quantities the folio pairs in its mass law and in the Kashaev/volume-conjecture blocks. Context only; no QOU statement depends on it.",
+              "targets": [
+                "conj:kashaev-volume-conjecture"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Orphan; the folio's torsion apparatus has result-level citations but no reference for the theory itself.",
+              "target": "folio/schema/references.ts (new id, e.g. porti2016)",
+              "bean": "qou-qnr5"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "OneLoopEdgeLattice.lean names the change-of-curve law as one of its validation criteria and carries only a dimofte-garoufalidis2013 -- Ref:; \u00a75.1 here is the source for that law.",
+              "target": "folio/quantum-observable-universe/lean/QOU/OneLoopEdgeLattice.lean (-- Ref:)",
+              "bean": "qou-afzu"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T00:00:00Z",
+          "source_sha": "6cb493049394"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

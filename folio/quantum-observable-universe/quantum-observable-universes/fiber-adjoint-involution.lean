@@ -43,7 +43,7 @@ universe u v
     LaTeX: `\label{prop:fiber-adjoint-involution}`
     Ref: [lusztig1993] -/
 structure FiberAdjointInvolution (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C) where
   /-- The adjoint bundle object `Ad(A)` in `C`. -/
   adjointObj : C
@@ -89,13 +89,13 @@ structure FiberAdjointInvolution (C : Type u) [CategoryTheory.Category.{v} C]
     See `docs/audits/2026-08-09-inhabitation-is-a-weak-discriminator.md`.) -/
 
 class FiberAdjointInvolutionContext (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] (fh : FrobeniusHopfData C) where
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] (fh : FrobeniusHopfData C) where
   exists_inv : ∃ inv : FiberAdjointInvolution C fh, inv.adjointObj = fh.obj
 
 -- Ref: [lusztig1993] Introduction to Quantum Groups
 -- Ref: [manuscript] prop:fiber-adjoint-involution
 theorem fiber_adjoint_involution_exists (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] (fh : FrobeniusHopfData C)
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] (fh : FrobeniusHopfData C)
     [ctx : FiberAdjointInvolutionContext C fh] :
     ∃ inv : FiberAdjointInvolution C fh, inv.adjointObj = fh.obj :=
   ctx.exists_inv

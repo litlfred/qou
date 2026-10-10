@@ -4,8 +4,11 @@ title: Cite 0006111v2.pdf at prop:q-plancherel-asymptotic-skeleton
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:32Z
-updated_at: 2026-08-21T17:04:54Z
+updated_at: 2026-10-04T15:16:58Z
+parent: qou-19m0
 ---
 
 Clauses (1)/(2) of the block cite kerov1981 + biane1998 + feray2010; the concentration result they actually lean on is this paper's Thm 1/Thm 2.

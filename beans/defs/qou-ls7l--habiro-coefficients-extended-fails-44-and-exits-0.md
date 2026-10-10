@@ -4,8 +4,11 @@ title: habiro_coefficients_extended fails 4/4 and exits 0 — the L1 gate's Habi
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T15:17:49Z
-updated_at: 2026-08-21T15:18:22Z
+updated_at: 2026-10-04T15:20:40Z
+parent: qou-avtq
 ---
 
 Found 2026-08-21 while trying to fix the pin straddle in qou-3zby. The fix I had proposed -- 'regenerate habiro-coefficients-extended under QOU_Q0_ANCHOR=ideal' -- would have DESTROYED the only working copy. That is why this is filed separately.

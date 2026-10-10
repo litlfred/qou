@@ -4,8 +4,11 @@ title: 'REGRESSION on main: fcc65c1380 doubled raw float64 in he-nu-sdp-saturati
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T13:08:55Z
-updated_at: 2026-08-30T13:09:30Z
+updated_at: 2026-10-04T15:15:50Z
+parent: qou-9nnz
 ---
 
 Found while auditing my OWN probe against the raw-float64 ratchet (bean

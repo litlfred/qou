@@ -4,8 +4,11 @@ title: 2026-07-05 delta-lambda gate-status PROBE 2 table is convention-C-frame a
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T07:05:14Z
-updated_at: 2026-08-29T07:05:55Z
+updated_at: 2026-10-04T15:16:00Z
+parent: qou-cdx1
 ---
 
 docs/audits/2026-07-05-delta-lambda-gate-status.md section PROBE 2 quotes

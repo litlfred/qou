@@ -18,7 +18,7 @@ BEANS_PKG="github.com/hmans/beans@latest"
 
 if command -v beans >/dev/null 2>&1; then
   echo "beans already installed: $(command -v beans)"
-  beans --version 2>/dev/null || true
+  beans version 2>/dev/null || true  # `beans --version` is "unknown flag"
   exit 0
 fi
 
@@ -44,7 +44,7 @@ esac
 
 if command -v beans >/dev/null 2>&1; then
   echo "beans installed: $(command -v beans)"
-  beans --version 2>/dev/null || true
+  beans version 2>/dev/null || true  # `beans --version` is "unknown flag"
 else
   echo "beans installed to $BIN_DIR/beans (not yet on PATH)"
 fi

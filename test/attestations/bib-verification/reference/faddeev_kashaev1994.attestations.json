@@ -1,0 +1,98 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "faddeev_kashaev1994",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 9,
+      "entry": {
+        "id": "faddeev_kashaev1994",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T16:00:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 1,
+        "note": "Confirmed paper is 'Quantum Dilogarithm' by Faddeev & Kashaev (arXiv:hep-th/9310070, 1993-09 \u2014 published Mod. Phys. Lett. A 1994). pentagon-uv-commutation-woronowicz.lean:40 cites it alongside Woronowicz 1989 for the pentagon equation \u2014 this is the Faddeev-Kashaev quantum-dilogarithm paper's central result. Verified scope match.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/faddeev-kashaev-1994-quantum-dilogarithm.pdf"
+        },
+        "local_pdf": "uploads/faddeev-kashaev-1994-quantum-dilogarithm.pdf",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "PATH DANGLING BUT DOCUMENT RECOVERED. The listed path does not exist; the same document is present in-repo as `library/arxiv-hep-th-9310070v1/9310070v1.pdf`, which the ledger already carries as a separate `unreviewed` row under the same id. So this is a duplicate-row-with-dead-path, not a lost document. Join CONFIRMED against the recovered file's front matter. Citation is LOAD-BEARING and correct: `pentagon-uv-commutation-woronowicz.lean:40` cites this id alongside `[woronowicz1989]` for the pentagon-ascension structure, and the recovered document's abstract is exactly that result \u2014 a quantum generalisation of the five-term (pentagon) dilogarithm identity whose classical limit recovers the classical one, plus a finite-dimensional realisation. Also underpins the Phi_b / Li_2^q line the corpus develops via `faddeev1995`. `source_sha` below is that of the recovered file.",
+          "keyResults": [
+            {
+              "locator": "Abstract; pentagon identity section",
+              "statement": "A quantum generalisation of the five-term (pentagon) dilogarithm identity, whose classical limit gives the classical identity; a finite-dimensional realisation on the Fermat curve is also constructed.",
+              "useForFolio": "Source of the pentagon relation carried as a \u00a73b-cond input by the pentagon-ascension conjecture.",
+              "targets": [
+                "conj:pentagon-uv-commutation"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Citation is load-bearing and correct; the only defect is the ledger's dead source.file path, which duplicates a live row already pointing at library/arxiv-hep-th-9310070v1/9310070v1.pdf Merge-time dedupe, not a content change.",
+              "target": "folio/bib-qa-verifications.json"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "b979ebf2f47a"
+        }
+      }
+    },
+    {
+      "position": 330,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-hep-th-9310070v1/9310070v1.pdf"
+        },
+        "id": "faddeev_kashaev1994",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Identity confirmed from the document's own cover (arXiv:hep-th/9310070v1, dated September/October 1993, quantum dilogarithm, two authors) and matches the seeded key's title and its recorded journal volume/pages. NOTE the duplicate join in this slice: library/arxiv-1002.0126v1/1002.0126v1.pdf was ALSO seeded to faddeev_kashaev1994 and is a different document entirely; this file is the correct one. Seven citation sites, load-bearing, and the substance matches the document's own abstract, which states that a quantum generalisation of Rogers' five-term (pentagon) dilogarithm identity is proposed, that the classical limit gives Rogers' identity, and that in the finite-dimensional realisation the quantum dilogarithm is constructed as a function on the Fermat curve. That is exactly what the pentagon/associator sites use: braids-and-knots/pentagon-uv-commutation-woronowicz.lean:44,297; QuantumObservableUniverses/DilogPentagonAssociator.lean:53; QBeta/CyclicDilogPentagon.lean:52. The remaining sites (LiftingDescent/tm_dilogarithm_evaluation.lean:71,84; QBeta/MonodromyDatumRigidity.lean:54) cite it for the quantum dilogarithm generally. One metadata nit, not a substantive defect: tm_dilogarithm_evaluation.lean:71,84 attach DOI 10.1142/S0217732394002446 while the ref() entry gives 10.1142/S0217732394000447 \u2014 the two Ref lines and the entry disagree on the digits.",
+          "keyResults": [
+            {
+              "locator": "abstract; the finite-dimensional (Fermat curve) realisation",
+              "statement": "A quantum generalisation of Rogers' five-term pentagon dilogarithm identity, whose classical limit recovers Rogers' identity; in the finite-dimensional case the quantum dilogarithm is realised as a function on the Fermat curve and the identity holds there.",
+              "useForFolio": "It is the primary source for the pentagon identity that the associator, cyclic-pentagon and UV-commutation Lean files cite \u2014 and it is the source the ~19 [faddeev1994] sites in this slice arguably should be pointing at for the pentagon specifically, since the document filed under that other key states the pentagon only in passing.",
+              "targets": [
+                "QOU.QuantumObservableUniverses.DilogPentagonAssociator",
+                "QOU.QBeta.CyclicDilogPentagon"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "Two problems converge on this key. (a) The indexer joined a second, unrelated upload (library/arxiv-1002.0126v1/1002.0126v1.pdf) to it; that join must be broken. (b) tm_dilogarithm_evaluation.lean:71,84 carries a DOI that differs from the one in references.ts for the same key. Record both so the key's joins and identifiers are cleaned in one pass.",
+              "target": "QOU.LiftingDescent.tm_dilogarithm_evaluation",
+              "bean": "qou-80bn"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "b979ebf2f47a"
+        }
+      }
+    }
+  ]
+}

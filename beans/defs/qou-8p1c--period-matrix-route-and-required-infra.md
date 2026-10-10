@@ -3,8 +3,12 @@
 title: 'qou-8pl1/c: period-matrix route — BLOCKED on infra, requirements recorded'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T00:00:00Z
-updated_at: 2026-08-07T14:20:00Z
+updated_at: 2026-10-04T15:23:03Z
+parent: qou-8lxd
 ---
 
 Parent: `qou-8pl1`. The decisive route, and the expensive one.

@@ -12,6 +12,34 @@ NOTHING is auto-injected here (measured) — read this yourself. Sibling files:
 
 ---
 
+## STABLE — staleness by LAKE'S OWN SOURCE HASH, not mtime/commit time (2026-10-05)
+
+Every olean in the `a792c46d01b` seed has a `.trace` whose `inputs` holds
+`["<abs path>.lean", "<Hash.ofText of the source>"]`. `import Lake` +
+`(Lake.Hash.ofText (← IO.FS.readFile p)).val` reproduces it exactly
+(KnotTheory: `10187092109162527967` both sides). Equal ⇒ own-fresh; then take the
+import closure. Measured: 2540 fresh / 190 changed / 253 no-olean of 2983;
+dirty closure 628; only **76** fell in the blocks' cone (rebuilt green in 3.5 min).
+Driver: `scripts/lean-blocks-baseline/` (L3, bean `qou-1f1w`).
+
+## TRAP — cache tarball stores `content/…` paths; the tree is `folio/…` (2026-10-05)
+
+Extract with `tar xzf - --transform 's,^content/,folio/,'`, or the 2703 QOU oleans
+land in a `content/` dir nothing reads. `lean-content-sweep.sh`,
+`lean-library-sweep.py`, `lean-shadow-verify.sh`, `lean-restore-gap-oleans.sh`
+still glob `content/*` (read, not run) — the first finds zero targets.
+
+## TRAP — `git push` from the shallow main clone streamed GIGABYTES (2026-10-05)
+
+A 2-commit branch: `pack-objects --shallow` had written 1.87 GB after 16 min.
+Push instead from a throwaway bare repo: `fetch --depth=1 --filter=blob:none`
+the base sha, `fetch` the branch from the local repo, `fetch --deepen=30
+--filter=blob:none origin main` until the base is an ancestor of
+`origin/main` (check `rev-list --objects br --not origin/main | wc -l` is tiny
+— 16 here), then push: 2.6 s. Also: a sibling session may switch the shared
+worktree's branch under you — commit with a private `GIT_INDEX_FILE` +
+`commit-tree` + `update-ref`.
+
 ## TRAP — the LEAN_PATH answer: oleans live one level DEEPER than you think
 
 If `lean` reports `unknown module prefix 'Mathlib'` while listing the directory

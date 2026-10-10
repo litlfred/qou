@@ -4,8 +4,11 @@ title: 'V2: fix the framing convention — CWF decides whether T(t) is the writh
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T18:23:24Z
-updated_at: 2026-08-10T18:23:25Z
+updated_at: 2026-10-04T15:25:22Z
+parent: qou-v2om
 ---
 
 Calugareanu-White-Fuller: Lk = Tw + Wr (in-corpus at helicity-conservation.md;

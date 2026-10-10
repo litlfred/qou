@@ -4,8 +4,11 @@ title: migrate-uploads-to-library keys on filename while pdf-structure keys on t
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T13:48:45Z
-updated_at: 2026-09-14T19:45:00Z
+updated_at: 2026-10-04T15:14:58Z
+parent: qou-5vkl
 ---
 
 Found pre-merge on #6955 while probing its merge ordering against #6942. **A defect

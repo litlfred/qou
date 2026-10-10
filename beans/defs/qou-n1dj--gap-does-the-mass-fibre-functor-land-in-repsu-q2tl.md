@@ -4,8 +4,11 @@ title: 'GAP: does the MASS fibre functor land in Rep(SU_q(2))~TL or full H_3(q)?
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T09:50:22Z
-updated_at: 2026-08-16T03:04:29Z
+updated_at: 2026-10-04T15:19:57Z
+parent: qou-wp3h
 ---
 
 > **Status reverted to `todo` by the parent session (2026-08-08).** The research

@@ -4,8 +4,11 @@ title: AGENTS.md's y_lambda_at layer-straddle warning is stale — the cache pat
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T21:40:25Z
-updated_at: 2026-08-23T21:55:27Z
+updated_at: 2026-10-04T15:16:18Z
+parent: qou-5vkl
 ---
 
 ## What AGENTS.md says

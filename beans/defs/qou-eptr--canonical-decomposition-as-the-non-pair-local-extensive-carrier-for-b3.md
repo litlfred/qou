@@ -1,11 +1,14 @@
 ---
 # qou-eptr
 title: EP/canonical decomposition as the non-pair-local extensive carrier for b_3 — aim, and the hard blocker at the light end
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T10:56:11Z
-updated_at: 2026-09-07T04:51:20Z
+updated_at: 2026-10-04T15:10:56Z
+parent: qou-10v9
 ---
 
 WHY IT IS WELL-AIMED at the ONE open piece of the binding gap
@@ -169,3 +172,9 @@ nothing about reaching `qou-brng`'s extensive term by some other route.
 Its subject is the binding gap's irreducibly many-body term (`b_3 = +1.4262`
 MeV measured, model exactly 0), which is open. What is now closed is one route
 to it, for a stated structural reason.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

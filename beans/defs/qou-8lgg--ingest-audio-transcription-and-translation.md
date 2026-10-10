@@ -1,11 +1,13 @@
 ---
 # qou-8lgg
 title: 'INGEST: audio transcription and translation'
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-15T21:51:47Z
-updated_at: 2026-09-15T22:17:26Z
+updated_at: 2026-10-04T15:20:54Z
 ---
 
 ## Every narrative description names its author, human or agentic (owner, 2026-09-15)
@@ -36,3 +38,10 @@ Vocabulary: `prov:` is already in the folio JSON-LD context
 (`prov:wasDerivedFrom` is mapped), so the attribution has somewhere to live
 without inventing a term. The exact predicate is part of `qou-mp5u` and is not
 to be guessed — see the house rule recorded there.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `folio-assistant-1r0p` (platform bean in litlfred/folio-assistant) (work-plan reorganisation 2026-10-04). Evidence: [M] identical title "INGEST: audio transcription and translation" is f-a bean folio-assistant-1r0p (todo)
+Content is untouched; only this work item is closed.

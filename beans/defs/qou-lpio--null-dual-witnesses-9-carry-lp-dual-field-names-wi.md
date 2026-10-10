@@ -4,8 +4,11 @@ title: 'Null-dual witnesses: 9 carry LP-dual field names with empty values — t
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T14:49:12Z
-updated_at: 2026-08-24T14:50:11Z
+updated_at: 2026-10-04T15:21:44Z
+parent: qou-5vkl
 ---
 
 

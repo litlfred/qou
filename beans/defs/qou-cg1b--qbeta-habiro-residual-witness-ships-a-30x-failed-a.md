@@ -3,8 +3,12 @@
 title: qbeta-habiro-residual witness ships a 30x failed assertion — the 112th recorded-failure witness
 status: todo
 type: bug
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T16:38:18Z
-updated_at: 2026-08-21T16:38:18Z
+updated_at: 2026-10-04T15:15:48Z
+parent: qou-avtq
 ---
 
 Found by `/prepare-merge-auto` on PR #5342 (2026-08-21). **Not that branch's

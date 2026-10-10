@@ -1,11 +1,13 @@
 ---
 # qou-8t3k
 title: 'Attack-option roast: A/B/C open fronts red-teamed (2026-08-28)'
-status: in-progress
-type: milestone
+status: completed
+type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-28T19:00:24Z
-updated_at: 2026-08-28T19:01:59Z
+updated_at: 2026-10-04T15:11:13Z
 ---
 
 MAPPING (each option → its EXISTING bean; no duplicates created) + ROAST.
@@ -73,3 +75,9 @@ NEW DERIVED quantity, and none exists. The two live, non-fit, bounded targets ar
 (A1) derive/bound b4's m formalize-first, (A2) derive the EM coupling k. Everything
 else is foreclosed (A3,C8), no-payoff (B4), heavy-prior-against (C6,C7), or
 infrastructure (B5-M1).
+
+
+
+## Summary of Changes
+
+Session log closed 2026-10-04 (owner decision 2): open children were reparented to programme epics and prose follow-ups extracted as their own beans. Kept as a record, not deleted.

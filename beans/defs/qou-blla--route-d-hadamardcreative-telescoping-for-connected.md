@@ -4,8 +4,11 @@ title: 'ROUTE D: Hadamard/creative-telescoping for connected sum - order <= n1*n
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T20:42:09Z
-updated_at: 2026-09-04T20:43:04Z
+updated_at: 2026-10-04T15:24:14Z
+parent: qou-n4nr
 ---
 
 ROUTE D of epic qou-2q85. TEMPLATE, NOT AN ANSWER - and its naive form is already EXCLUDED.

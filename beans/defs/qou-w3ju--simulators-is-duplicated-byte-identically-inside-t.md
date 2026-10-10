@@ -1,13 +1,14 @@
 ---
 # qou-w3ju
 title: simulators/ is duplicated byte-identically inside the platform clone
-status: todo
+status: scrapped
 type: bug
 priority: low
 tags:
     - simulators
+    - reorg-2026-10-04
 created_at: 2026-09-26T10:39:24Z
-updated_at: 2026-09-26T10:48:09Z
+updated_at: 2026-10-04T15:25:46Z
 parent: qou-p7z5
 ---
 
@@ -42,3 +43,10 @@ Deleting the platform's copy is a change to **another repository** and is not
 qou's call. The useful qou-side action is to make sure the config points at qou's
 tree and that the README's `folio:simulators` section renders from it — which it
 does: that section lists qou's 11.
+
+
+
+## Reasons for Scrapping
+
+Work-plan reorganisation 2026-10-04: [M] qou/simulators/ no longer exists (moved to fsh-guts/deprecated/simulators); duplication premise gone - verify platform side
+Content is untouched; only this work item is closed.

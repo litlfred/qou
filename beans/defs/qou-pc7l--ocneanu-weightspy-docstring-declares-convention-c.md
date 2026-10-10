@@ -4,8 +4,11 @@ title: ocneanu_weights.py docstring declares convention C while its code runs co
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T18:17:07Z
-updated_at: 2026-08-23T18:18:41Z
+updated_at: 2026-10-04T15:21:46Z
+parent: qou-cdx1
 ---
 
 ## Evidence

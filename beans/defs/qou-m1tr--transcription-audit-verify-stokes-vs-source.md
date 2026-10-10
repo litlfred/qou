@@ -7,8 +7,10 @@ priority: high
 tags:
     - g3-aomega
     - integrity
+    - reorg-2026-10-04
 created_at: 2026-08-11T10:50:00Z
-updated_at: 2026-08-11T10:50:00Z
+updated_at: 2026-10-04T15:15:08Z
+parent: qou-mub3
 ---
 
 THE GAP (raised by the owner 2026-08-11: "do we have proof these are correct?"). Several

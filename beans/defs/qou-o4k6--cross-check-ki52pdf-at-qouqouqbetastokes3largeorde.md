@@ -4,8 +4,11 @@ title: Cross-check ki52.pdf at qou:QOU.QBeta.Stokes3LargeOrderAmplitude
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:36Z
-updated_at: 2026-08-21T17:05:00Z
+updated_at: 2026-10-04T15:18:29Z
+parent: qou-8hur
 ---
 
 Once registered, the all-orders 5_2 Poincare asymptotics give a parameter-free comparison against the large-order amplitude the corpus extracts from the GGM Stokes constants - a genuine external check rather than an internal consistency test.

@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "chari1994guide",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 53,
+      "entry": {
+        "id": "chari1994guide",
+        "status": "partial",
+        "verified_at": "2026-05-19T15:51:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 5,
+        "fix_commit": "(this commit)",
+        "note": "Chari & Pressley, A Guide to Quantum Groups (CUP 1994). 5 bare-URL Refs upgraded with title+publisher form. No local PDF.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1017/CBO9780511622670"
+        }
+      }
+    }
+  ]
+}

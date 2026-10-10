@@ -3,8 +3,12 @@
 title: Cite [jing-liu-2021] at prop:q-hecke-seminormal-character-closure
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:24Z
-updated_at: 2026-08-08T23:35:24Z
+updated_at: 2026-10-04T15:17:39Z
+parent: qou-mub3
 ---
 
 If the cross-check lands, cite the specific locator (Thm 2.9 / 2.11 / 3.1) in the .md prose rather than leaving a bare cites[] entry.

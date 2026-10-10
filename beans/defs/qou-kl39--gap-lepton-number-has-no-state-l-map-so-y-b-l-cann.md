@@ -4,9 +4,11 @@ title: 'GAP: lepton number has no state->L map, so Y = B - L cannot be assembled
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T11:07:51Z
-updated_at: 2026-08-10T18:01:04Z
-parent: qou-5b8n
+updated_at: 2026-10-04T15:20:09Z
+parent: qou-8lxd
 ---
 
 Found 2026-08-09 while checking whether the corpus's existing lepton number closes

@@ -4,8 +4,11 @@ title: 'GAP: Mathas 3.7 forward half -- the source''s selection rule for the ind
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T15:03:40Z
-updated_at: 2026-09-06T22:25:41Z
+updated_at: 2026-10-04T15:14:54Z
+parent: qou-hqo3
 ---
 
 ## What is open

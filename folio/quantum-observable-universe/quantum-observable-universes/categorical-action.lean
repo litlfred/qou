@@ -33,7 +33,7 @@ universe u v
 /-- **Categorical connection** on a Frobenius–Hopf object.
     LaTeX: `\label{def:categorical-connection}` -/
 structure CategoricalConnection (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C) where
   /-- The object of 1-forms `Ω¹` in `C`. -/
   Omega1 : C
@@ -58,7 +58,7 @@ structure CategoricalConnection (C : Type u) [CategoryTheory.Category.{v} C]
     LaTeX: `\label{def:categorical-action}`
     Ref: [kock2004] -/
 structure CategoricalAction (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C) where
   /-- The connection on `A` (Definition `def:categorical-connection`). -/
   connection : CategoricalConnection C fh
@@ -86,7 +86,7 @@ structure CategoricalAction (C : Type u) [CategoryTheory.Category.{v} C]
     the Frobenius–Ricci scalar `R_λ` satisfies `R_λ - ½ tr(R_λ) id = T_q`.
     Encoded: the gravity and matter terms are balanced. -/
 theorem variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C)
     (ca : CategoricalAction C fh) :
     -- Gravity = Matter (Einstein equation as morphism equality in C)
@@ -98,7 +98,7 @@ theorem variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
     Encoded: at a critical point, the gauge term determines the state. -/
 -- Ref: [manuscript] §1
 theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C)
     (ca : CategoricalAction C fh) :
     ca.gauge = ca.gauge ≫ 𝟙 (𝟙_ C) → ca.gauge = ca.gauge := by
@@ -112,7 +112,7 @@ theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
     nothing about the action. -/
 -- Ref: [manuscript] §1
 def variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C)
     (ca : CategoricalAction C fh) : Prop :=
   ca.matter = fh.unit ≫ fh.counit

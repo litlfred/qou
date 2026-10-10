@@ -4,8 +4,11 @@ title: 'GAP: two lever1 producers flip muon->proton and drop q0Anchor on re-run 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T22:13:38Z
-updated_at: 2026-08-22T20:40:40Z
+updated_at: 2026-10-04T15:20:30Z
+parent: qou-2002
 ---
 
 Measured 2026-08-21 while fixing the wrap_legacy `computation` clobber (PR #5436).

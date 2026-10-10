@@ -3,8 +3,12 @@
 title: 'Task5: close m_K/m_π EM-factor truncation-honesty gap — derive (3q²−1)/2q² or re-scope 47 ppb as truncation-dependent'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T20:13:22Z
-updated_at: 2026-08-08T20:13:22Z
+updated_at: 2026-10-04T15:24:50Z
+parent: qou-3l2l
 ---
 
 

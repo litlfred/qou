@@ -1,11 +1,13 @@
 ---
 # qou-sv9q
 title: Resolve QOU/ParticleInteractions/four_term_pair_nucleon.lean sorries
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T18:13:58Z
-updated_at: 2026-08-21T21:16:15Z
+updated_at: 2026-10-04T15:24:06Z
 ---
 
 REOPENED 2026-08-21 by the sorry-closure honesty audit (PR #5411).
@@ -30,3 +32,10 @@ hypothesis with the theorem DERIVING the conclusion from it — the
 verified exemplar is QOU/FluidDynamics/q_bkm_criterion.lean, and the
 in-file precedent is the `QTurbulenceCascadeModel` this same batch
 deleted.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-4mrb` (work-plan reorganisation 2026-10-04). Evidence: same decl four_term_pair_nucleon
+Content is untouched; only this work item is closed.

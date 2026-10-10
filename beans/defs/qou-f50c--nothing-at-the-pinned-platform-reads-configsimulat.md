@@ -7,9 +7,10 @@ priority: normal
 tags:
     - simulators
     - platform
+    - reorg-2026-10-04
 created_at: 2026-09-26T10:39:57Z
-updated_at: 2026-09-26T10:48:09Z
-parent: qou-p7z5
+updated_at: 2026-10-04T15:21:43Z
+parent: qou-n4r9
 ---
 
 **Measured 2026-09-26.** `folio.config.json` and `harness.config.json` both carry

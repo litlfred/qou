@@ -4,8 +4,11 @@ title: 'Sweep: which other corpus claims rest on cited-but-unchecked literature 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T09:35:00Z
-updated_at: 2026-08-08T09:35:00Z
+updated_at: 2026-10-04T15:24:41Z
+parent: qou-mub3
 ---
 
 Follow-on from `qou-qbp5` / `qou-qbc7`. The C1 mis-citation was not a computation

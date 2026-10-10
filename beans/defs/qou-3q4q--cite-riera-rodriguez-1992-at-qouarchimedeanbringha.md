@@ -3,8 +3,12 @@
 title: Cite [riera-rodriguez-1992] at QOU.Archimedean.BringHauptmodulGate
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:22Z
-updated_at: 2026-08-08T23:35:22Z
+updated_at: 2026-10-04T15:17:46Z
+parent: qou-1qhv
 ---
 
 BringHauptmodulGate.lean:39 attributes the Gamma_0(5) residual gauge to 'Thm 1'; in the source that is Lemma 1 (p. 184) plus the proposition immediately after it. Correct the locator — the claim itself is supported.

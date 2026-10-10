@@ -1,11 +1,14 @@
 ---
 # qou-u2jg
 title: 'KEYSTONE: convention D is the UNIQUE non-trivial Markov trace on H3 killing the antisymmetriser -- z is free at n=2, forced at n=3'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T16:17:25Z
-updated_at: 2026-08-09T16:18:13Z
+updated_at: 2026-10-04T15:13:10Z
+parent: qou-rtxm
 ---
 
 
@@ -174,3 +177,9 @@ cherry-pick pointers (5232610373). Ledger at
 docs/coordination/hecke-tower-and-trace-parameter.md. Subscribed to the PR.
 Asks 1 (convention-C prose in their MarkovTraceH2) and 2 (qou-awp7 via the H4A
 Wedderburn isomorphism) are still open with them.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-09 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

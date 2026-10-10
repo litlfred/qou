@@ -1,11 +1,14 @@
 ---
 # qou-o3ta
 title: 'BLOCKER MERGE: the metric blocker and the colour-weight blocker are the SAME null vector, and convention D created it'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T13:52:13Z
-updated_at: 2026-08-09T13:53:17Z
+updated_at: 2026-10-04T15:12:01Z
+parent: qou-cdx1
 ---
 
 
@@ -118,3 +121,9 @@ uses a different pairing than the one D fixes, or D is wrong somewhere, or the
   C5 held as the structural fallback if C1's shadow price comes back large.
 
 Per AGENTS.md:779 each of these gets its Lean scaffold BEFORE any Python.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-09 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

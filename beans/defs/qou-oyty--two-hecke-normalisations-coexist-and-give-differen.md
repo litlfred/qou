@@ -4,8 +4,11 @@ title: 'Two Hecke normalisations coexist and give different Ext^1: Z vs Z[i]'
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T20:25:30Z
-updated_at: 2026-08-24T20:46:23Z
+updated_at: 2026-10-04T15:25:13Z
+parent: qou-k4oq
 ---
 
 Found while computing Ext^1 for bean qou-zut2 (2026-08-24). Not a defect in either block on its own — a discrepancy BETWEEN blocks that changes a stated answer, and it is invisible unless the two are read together.

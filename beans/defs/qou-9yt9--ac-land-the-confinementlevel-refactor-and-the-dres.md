@@ -1,11 +1,14 @@
 ---
 # qou-9yt9
 title: 'A+C: land the ConfinementLevel refactor and the DressedParticle shadowing fix'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T09:08:06Z
-updated_at: 2026-09-14T18:03:09Z
+updated_at: 2026-10-04T15:10:47Z
+parent: qou-v2om
 ---
 
 ## Landed (A + C)
@@ -630,3 +633,9 @@ than them, and two decisions raised during the arc are still open and recorded o
   only to `k = 3`.
 
 Neither is enacted. Closing this bean would bury both.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-14 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -4,8 +4,11 @@ title: 'OWNER RULING 2026-09-08: braid-word selection via gamma-gamma production
 status: in-progress
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-08T07:40:02Z
-updated_at: 2026-09-19T06:37:25Z
+updated_at: 2026-10-04T15:11:03Z
+parent: qou-v2om
 ---
 
 ## Ruling (owner, 2026-09-08, chat, verbatim)

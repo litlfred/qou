@@ -8,9 +8,10 @@ tags:
     - platform
     - config
     - qa
+    - reorg-2026-10-04
 created_at: 2026-09-26T10:32:26Z
-updated_at: 2026-09-26T10:36:11Z
-parent: qou-ty42
+updated_at: 2026-10-04T15:15:48Z
+parent: qou-n4r9
 ---
 
 **Measured 2026-09-26.**

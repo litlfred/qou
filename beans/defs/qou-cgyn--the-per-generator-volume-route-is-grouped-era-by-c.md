@@ -3,8 +3,12 @@
 title: The per-generator volume route is grouped-era by construction and cannot express the borromean ordering
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T19:38:09Z
-updated_at: 2026-09-13T19:38:09Z
+updated_at: 2026-10-04T15:24:59Z
+parent: qou-v2om
 ---
 
 

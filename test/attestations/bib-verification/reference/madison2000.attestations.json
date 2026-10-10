@@ -1,0 +1,49 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "madison2000",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 109,
+      "entry": {
+        "id": "madison2000",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T16:14:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": null,
+        "note": "PDF verified: Madison, Chevy, Wohlleben, Dalibard, \"Vortex formation in a stirred Bose-Einstein condensate,\" Phys. Rev. Lett. 84 (2000), arXiv:cond-mat/9912015. Verified.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/madison2000.pdf"
+        },
+        "local_pdf": "uploads/madison2000.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "FILE ABSENT: the ledger row points at this path but the file does not exist anywhere in the working tree (verified by find over the whole repo; uploads/ holds 294 files and this is not one of them). The prior 2026-05-19 verification row therefore cannot be re-checked, and I could not confirm the seeded join against the document's own front matter. The verdict is undetermined on that ground alone. The corpus-side citation audit below did not need the document and is reported in full. CITATION AUDIT: one site, observations/bec-vortex-data.ts:9 (cites[]) with matching prose in bec-vortex-data.md on stirred-condensate vortex formation in 87-Rb and 23-Na. The registered entry's subject matches the block's use as the founding experimental citation for quantised vortex formation, which is a low-risk attribution - it is the standard reference for that observation. I could not verify the block's specific numbers or thresholds against the source because the file is absent. Companion note: this row and the gauthier2019 row concern the same block, so one re-obtain pass covers both.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "Same block as gauthier2019: bec-vortex-data.md rests on two experimental papers, neither of which is present in the tree, and neither citation carries a figure or section locator. Re-obtain both and add locators in one pass.",
+              "target": "folio/quantum-observable-universe/observations/bec-vortex-data.md",
+              "bean": "qou-w5go"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    }
+  ]
+}

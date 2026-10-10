@@ -4,8 +4,11 @@ title: Which element is Delta? Two nucleon-word models (1-/2-crossing vs 11-cros
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-28T15:47:38Z
-updated_at: 2026-09-12T18:49:38Z
+updated_at: 2026-10-04T15:15:08Z
+parent: qou-5vkl
 ---
 
 Parent: `qou-cds1`. Surfaced by

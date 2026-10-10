@@ -4,8 +4,11 @@ title: 'GAP: 253 producers import inside a truncating with-open(w); one has alre
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-08T04:25:11Z
-updated_at: 2026-09-08T04:26:25Z
+updated_at: 2026-10-04T15:19:36Z
+parent: qou-5vkl
 ---
 
 FOUND 2026-09-08 by triage, then verified independently. Priority: the CLASS is latent; ONE member has already fired and is RED on main.

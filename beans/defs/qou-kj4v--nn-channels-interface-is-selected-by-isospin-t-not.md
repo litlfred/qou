@@ -3,8 +3,12 @@
 title: 'NN channels: interface is selected by isospin T, not by nucleon content -- crossing-multiplicity route is REFUTED, not merely unfitted'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T02:34:49Z
-updated_at: 2026-08-09T02:34:49Z
+updated_at: 2026-10-04T15:21:41Z
+parent: qou-v2om
 ---
 
 

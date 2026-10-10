@@ -4,8 +4,11 @@ title: 'CHAR-ZERO: audit which Specht CharZero hypotheses are load-bearing and w
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T11:34:53Z
-updated_at: 2026-08-08T11:35:33Z
+updated_at: 2026-10-04T15:14:43Z
+parent: qou-1oif
 ---
 
 

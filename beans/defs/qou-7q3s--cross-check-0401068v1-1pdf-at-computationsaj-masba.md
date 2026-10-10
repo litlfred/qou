@@ -4,8 +4,11 @@ title: Cross-check 0401068v1 (1).pdf at computations/aj_masbaum_crosscheck.py
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:44Z
-updated_at: 2026-08-21T17:04:45Z
+updated_at: 2026-10-04T15:18:14Z
+parent: qou-8hur
 ---
 
 Cross-check the QOU 4_1 / trefoil colored-Jones towers against Takata's rearranged Masbaum normalisation (eqs. 1-5) as an independent second transcription; the script's docstring documents a prior mis-attribution in exactly this area.

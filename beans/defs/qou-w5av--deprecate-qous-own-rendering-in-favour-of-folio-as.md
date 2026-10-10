@@ -7,8 +7,9 @@ priority: normal
 tags:
     - rendering
     - platform
+    - reorg-2026-10-04
 created_at: 2026-09-26T11:21:37Z
-updated_at: 2026-09-26T13:22:12Z
+updated_at: 2026-10-04T15:15:53Z
 parent: qou-n4r9
 ---
 

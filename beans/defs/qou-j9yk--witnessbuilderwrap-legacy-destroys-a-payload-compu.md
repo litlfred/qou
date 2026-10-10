@@ -4,8 +4,11 @@ title: WitnessBuilder.wrap_legacy destroys a payload 'computation' method-descri
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T15:58:35Z
-updated_at: 2026-08-21T15:58:57Z
+updated_at: 2026-10-04T15:25:39Z
+parent: qou-5vkl
 ---
 
 ## The defect

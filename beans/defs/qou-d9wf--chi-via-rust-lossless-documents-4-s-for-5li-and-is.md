@@ -4,8 +4,11 @@ title: chi_via_rust_lossless documents ~4 s for 5Li and is still running at 10 m
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T13:29:22Z
-updated_at: 2026-09-07T13:29:22Z
+updated_at: 2026-10-04T15:16:56Z
+parent: qou-trd0
 ---
 
 ## The claim, and the measurement

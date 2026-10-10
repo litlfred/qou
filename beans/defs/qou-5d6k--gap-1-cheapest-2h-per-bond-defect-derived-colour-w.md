@@ -4,9 +4,11 @@ title: 'GAP-1 (cheapest): 2H per-bond defect - derived colour weight gives t=0.4
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T16:43:39Z
-updated_at: 2026-08-25T17:01:38Z
-parent: qou-9ot5
+updated_at: 2026-10-04T15:19:34Z
+parent: qou-10v9
 ---
 
 ## 2026-08-25 (PR #5765) — REACHABLE is not DERIVABLE. Downgrading my own recommendation.

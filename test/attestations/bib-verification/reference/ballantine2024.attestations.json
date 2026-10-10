@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "ballantine2024",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 300,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2401.04019v1/2401.04019v1.pdf"
+        },
+        "id": "ballantine2024",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "WRONG JOIN. The seeded id was andrews1976, whose registered entry is a monograph with a single author and an ISBN. This PDF is arXiv:2401.04019v1 [math.CO], a two-author research article on truncated theta series related to the Jacobi Triple Product identity \u2014 a different work entirely and a different document type, so no upload of the registered monograph actually exists. No matching key found in references.ts, so id is null. ON THE MERITS for this folio: the document proves the first three cases of a stronger truncated-JTP conjecture and gives a combinatorial interpretation for 5-regular partitions. The folio's only partition-function consumer is folio/quantum-observable-universe/mass-theory/a8-partition-function-identity.lean, which needs nothing beyond the five values p(1..5) = 1,2,3,5,7 (already available from Mathlib's Nat.Partition), and the QBeta work uses cyclotomic expansions rather than truncated theta identities. I can name no block that would consume a truncated-JTP inequality. Scope: this document, as read, supplies nothing usable here \u2014 not a claim that truncated theta methods are excluded from the framework. SEPARATELY on the andrews1976 citation itself (its one site, mass-theory/a8-partition-function-identity.lean:55): it is a plausible background pointer for a p(n) value table but does very little work, since the Lean file's own commentary says the bridge is to Mathlib's Fintype.card (Nat.Partition n) by decidability.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "No block in the folio consumes truncated theta / Jacobi-Triple-Product identities, so no citation is warranted. The actionable item is the join correction recorded here, not a content change.",
+              "target": "QOU.BraidKnot.A8Partition"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "1a29e52a8163"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

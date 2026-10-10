@@ -1,10 +1,13 @@
 ---
 # qou-0vsu
 title: 'F4 option-1: converge trM_cyclic onto main''s abstract MarkovStabilization cyclic-trace lemma (no duplicate derivation)'
-status: todo
+status: scrapped
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-19T03:00:12Z
-updated_at: 2026-07-19T03:00:12Z
+updated_at: 2026-10-04T15:19:05Z
 ---
 
 
@@ -67,3 +70,10 @@ open-item-A home and record the convergence:
 Definition-of-done (b) met: documented residual sorry + duplication noted +
 convergence/intent recorded in the canonical doc. Full closure (a) awaits the
 abstract lemma (no live owner yet). Bean stays open pending that.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-bhrx` (work-plan reorganisation 2026-10-04). Evidence: both F4 option-1: Ocneanu cyclic-trace lemma on MarkovStabilization; 1 main commits
+Content is untouched; only this work item is closed.

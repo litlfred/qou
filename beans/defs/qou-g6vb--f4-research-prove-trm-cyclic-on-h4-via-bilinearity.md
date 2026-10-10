@@ -1,11 +1,14 @@
 ---
 # qou-g6vb
 title: 'F4 research: prove trM_cyclic on H4 via bilinearity ⇒ 24² basis identities'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-19T01:52:06Z
-updated_at: 2026-07-19T02:17:07Z
+updated_at: 2026-10-04T15:12:34Z
+parent: qou-59vq
 ---
 
 
@@ -39,3 +42,9 @@ Convergence: confirms main's abstract-algebra/MarkovStabilization direction is
 the only path; brute Fin-24 compute is a dead end. This module's n=4 mulNF is
 complementary to main's H4 rung (mulσ/trace only), not a duplicate.
 Next actionable: upstream abstract cyclic-trace lemma (discharges all n at once).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-07-19 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

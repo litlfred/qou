@@ -1,11 +1,13 @@
 ---
 # qou-vibo
 title: 'Session: M_n(K) magnitude gap -- can new 24h math close it'
-status: in-progress
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T06:16:39Z
-updated_at: 2026-08-29T06:53:59Z
+updated_at: 2026-10-04T15:13:56Z
 ---
 
 FINDING 2026-08-29 (honest, scope-a): the binding MAGNITUDE gap is GEOMETRIC, not algebraic, and the new 24h math does NOT close it.
@@ -16,3 +18,9 @@ FINDING 2026-08-29 (honest, scope-a): the binding MAGNITUDE gap is GEOMETRIC, no
 - Actionable magnitude frontier = GAP-2: run validated binding_mn_milnor_linking.py mu-bar tower on He4 link, count nonzero Borromean triples, test m_e a_D^(3) w_3 M3(He4) vs 14.95 MeV, no tuning (anti-fit: w_3 from na-Stokes+deuteron, NOT from He4 residual). Possible connection: fake-degree cyclotomic prod(1-u^d_i) <-> GAP-3 Habiro (q-1)^2 Phi kernel, but GAP-3 mostly done (join z2bn, don't parallel).
 
 GAP-2 done (qou-klgu): He4 magic surplus is NOT Milnor -- max-contact K4 has all lk=1 so higher mu-bar indeterminate mod 1 => M3_irr=M4=0 (scope-b, Milnor indeterminacy). Surplus lives in the non-link-invariant SU(4)[1^4] shell object. Milnor route works for loosely-bound low-lk terms (triton triple = Borromean +1), blind to tightly-bound He4.
+
+
+
+## Summary of Changes
+
+Session log closed 2026-10-04 (owner decision 2): open children were reparented to programme epics and prose follow-ups extracted as their own beans. Kept as a record, not deleted.

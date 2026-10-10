@@ -4,8 +4,11 @@ title: witness shape guard cannot distinguish a producer speedup from an interru
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-27T07:19:03Z
-updated_at: 2026-08-27T07:19:42Z
+updated_at: 2026-10-04T15:25:39Z
+parent: qou-5vkl
 ---
 
 ## The false positive, measured

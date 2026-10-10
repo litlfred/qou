@@ -3,14 +3,16 @@
 title: 'PROVE(lean): parity_regime_selection — theorem parity_regime_selection [ctx : ParityRegimeSelectionContext] : ctx.sign_val = (-(1 [cited manuscript]'
 status: todo
 type: task
+priority: normal
 tags:
-    - lean
-    - cited-sorry
     - paper-qou
     - repo-infra
+    - reorg-2026-10-04
+    - lean
+    - cited-sorry
 created_at: 2026-08-01T23:31:07Z
-updated_at: 2026-08-01T23:31:07Z
-parent: qou-k1mq
+updated_at: 2026-10-04T15:22:42Z
+parent: qou-l2vh
 ---
 
 **File:** `QOU/ParticleInteractions/parity_regime_selection.lean` (QOU)  ·  1 cited sorry(s)

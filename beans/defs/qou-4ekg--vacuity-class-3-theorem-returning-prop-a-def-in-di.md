@@ -3,8 +3,12 @@
 title: 'VACUITY class 3: theorem-returning-Prop — a def in disguise that proves nothing'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T11:54:19Z
-updated_at: 2026-08-08T11:54:19Z
+updated_at: 2026-10-04T15:25:24Z
+parent: qou-6qbv
 ---
 
 

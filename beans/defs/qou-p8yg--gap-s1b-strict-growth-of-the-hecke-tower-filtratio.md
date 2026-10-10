@@ -1,11 +1,13 @@
 ---
 # qou-p8yg
 title: 'GAP S1b: strict growth of the Hecke tower filtration -- H 1 < H 2 is a WIRE (H3 exists sorry-free); general n needs the (n+1)! lower bound'
-status: todo
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-12T19:02:09Z
-updated_at: 2026-09-26T15:15:50Z
+updated_at: 2026-10-04T15:19:31Z
 ---
 
 Parent: qou-cins / plan qou-0fmb, epic qou-08a2. Opened 2026-09-12 after S1 merged (#7228, 3653e9ce).
@@ -350,3 +352,9 @@ cleanup on `exists_tower_with_nonzero_h` — is also untouched.
 Verification: `lean -DautoImplicit=false -s 65536` exit 0; `#print axioms` on all
 five declarations `[propext, Classical.choice, Quot.sound]`; three mutants all
 required to fail and all do.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] SchurWeyl/HeckeTowerStrict*.lean + finrank_hecke_eq_factorial ; SchurWeyl/HeckeTowerStrict.lean header: "Bean qou-p8yg ... strictly increasing at every m"

@@ -1,11 +1,14 @@
 ---
 # qou-ls86
 title: 'Many-body collective term R: strictly positive and bounded on the well-bound regime'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-17T00:44:48Z
-updated_at: 2026-09-04T03:13:26Z
+updated_at: 2026-10-04T15:13:18Z
+parent: qou-v2om
 ---
 
 Opened working the many-body R term at owner direction ('go on many body').
@@ -279,3 +282,9 @@ Scope (a), positive existence, narrow: production atom_braid_word_3A is sequenti
 
 
 ## 2026-09-04 (qou-sorn) — general-n answer sharpened, then measured. Smallest failing instance is n=3 content (2,2) (cyclic square vs Hopf chain, cross = z²−hz−1); production words are monotone so the product formula is exact for them (MonotoneWordTraceFactorizes). The one cross-term-bearing class, put into the production words at every bond, is worth ≤1 MeV and shrinks with A — not the collective term R. See qou-sorn.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

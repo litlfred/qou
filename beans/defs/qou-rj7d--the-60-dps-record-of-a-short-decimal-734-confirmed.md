@@ -4,8 +4,11 @@ title: 'The 60-dps record of a SHORT decimal: 734 confirmed fields the float64-p
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T08:40:07Z
-updated_at: 2026-09-13T08:41:03Z
+updated_at: 2026-10-04T15:15:51Z
+parent: qou-9nnz
 ---
 
 Found 2026-09-13 while draining `bar_pairing_binding_observable` (raw-float64

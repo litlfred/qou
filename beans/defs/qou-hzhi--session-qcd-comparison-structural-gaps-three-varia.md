@@ -1,11 +1,13 @@
 ---
 # qou-hzhi
 title: 'Session: QCD-comparison structural gaps — three variances, five collisions, general ansatz-content theorem'
-status: in-progress
-type: epic
+status: completed
+type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T05:11:09Z
-updated_at: 2026-09-13T10:34:25Z
+updated_at: 2026-10-04T15:11:31Z
 ---
 
 ## Session outcome 2026-09-13 — merged as `3cb26d4b9f8` (PR #7255)
@@ -57,3 +59,9 @@ Also corrected: commit `8522f4af2` contains 22 PDF renames its message never
 mentions — `git add <paths>` followed by a **bare** `git commit` commits the
 whole index, and a concurrent agent had staged 409 files into it. The safe form
 is `git commit -F- -- <paths>`.
+
+
+
+## Summary of Changes
+
+Session log closed 2026-10-04 (owner decision 2): open children were reparented to programme epics and prose follow-ups extracted as their own beans. Kept as a record, not deleted.

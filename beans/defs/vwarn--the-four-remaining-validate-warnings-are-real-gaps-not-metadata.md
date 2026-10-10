@@ -1,15 +1,17 @@
 ---
 # vwarn
-title: 'The 4 remaining validate warnings are content gaps, not metadata defects — and the tempting fix would manufacture vacuity'
+title: The 4 remaining validate warnings are content gaps, not metadata defects — and the tempting fix would manufacture vacuity
 status: todo
 type: task
 priority: medium
 tags:
-    - qa
     - verification
     - lean
+    - reorg-2026-10-04
+    - qa
 created_at: 2026-08-08T17:10:00Z
-updated_at: 2026-08-08T17:10:00Z
+updated_at: 2026-10-04T15:26:09Z
+parent: qou-5vkl
 ---
 
 `✓ Valid — 5 issue(s)`, down from `✗ Invalid — 32`. Every cross-reference

@@ -1,11 +1,14 @@
 ---
 # qou-kt8o
 title: The ck-dk registry JSON twin never absorbed the dc_3/dq 3.84e6 correction, and a green probe assertion still pins the stale 4.6e6
-status: in-progress
+status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T01:22:39Z
-updated_at: 2026-08-29T07:52:16Z
+updated_at: 2026-10-04T15:11:40Z
+parent: qou-5vkl
 ---
 
 Found working the `dc_3/dq ≈ 4.6×10⁶` staleness. **The interesting part is not
@@ -262,3 +265,9 @@ down as a cost argument against wiring.
 
 Also noted, not fixed: AGENTS.md places kernel_constraints_registry_validate.py
 under computations/. It is at docs/coordination/.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-29 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

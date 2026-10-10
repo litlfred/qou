@@ -4,8 +4,11 @@ title: Cross-check Ohtsuki-99.pdf at computations/probes/keystone_colored_sigma2
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T00:10:45Z
-updated_at: 2026-08-21T17:04:43Z
+updated_at: 2026-10-04T15:18:30Z
+parent: qou-8hur
 ---
 
 Expand the corpus's Sigma(2,3,5) series in h = q-1 and compare lambda_1 against ±6 and lambda_2 against 39, after fixing the orientation convention against Lin-Wang's right-handed-trefoil normalisation; apply the lambda_2 in 3Z sieve as a precondition. This validates the transcription that the whole colored-WRT keystone step rests on. The external values are comparison targets, never inputs to be wired.

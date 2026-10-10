@@ -1,12 +1,14 @@
 ---
 # qou-ogrk
 title: 'A2 (leg 1): prove Cov_Planch(ln f, omega3) <= 0 via Ivanov-Olshanski 2nd-order covariance'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-25T03:30:08Z
-updated_at: 2026-08-21T15:28:59Z
-parent: qou-v8t7
+updated_at: 2026-10-04T15:10:48Z
+parent: qou-m6dn
 ---
 
 A2 — leg 1: Cov_Planch(ln f, ω₃) ≤ 0. ADVANCE (2026-07-25 hook/Frullani reduction). Exact reduction to a clean one-parameter sign: (1) hook-length formula ln f=ln n!−Σ ln h ⇒ Cov(ln f,ω₃)=−Σ_v ln(v)ν_v, ν_v=Cov(N_v,ω₃); moments Σν_v=0, Σv²ν_v=Cov(Σh²,ω₃)=Var(ω₃)=n(n-1)(n-2)/3 via the CLASSICAL IDENTITY Σ_□h²=Σ_□c²+n² (verified all λ). (2) Frullani ⇒ EXACT integral rep Cov(ln f,ω₃)=∫_0^∞(1/s)Cov(H_s,ω₃)ds, H_s=Σ_□ e^{−s h} (verified n≤10). REDUCTION: A2 ⇐ Cov_Planch(H_s,ω₃)≤0 ∀s>0, VERIFIED strictly<0 on interior (fine grid n≤13). OPEN sub-problem: prove Cov(H_s,ω₃)≤0 ∀s>0 (H_s a hook functional ∉ algebra A; the dim²→dim³ obstruction trades log for exp). Materially cleaner target: a single positive analytic statistic with 2 exact moment constraints (Σν_v=0, Σv²ν_v=|C₃|). Audit: 2026-07-25-covariance-kernel-A2-hook-reduction.md
@@ -30,3 +32,9 @@ PROVED SUB-RESULT (2026-07-25). Executed the even-k proof lead: even hook-power 
 
 
 M_1 REFORMULATION (2026-08-21). M_1 = Cov_Planch(Sum(i+j), Sum c^2) -- antidiagonal vs diagonal spread (transpose-even, = 2Cov(n_lam,Sc2) = Cov(Sum h,Sum h^2), n<=17). rho ~ 0.85-0.92 near-perfect; Var(Sum c^2)=|C3| exact; no closed form. Route = Kerov CLT integral (open). Audit: 2026-08-21-covariance-kernel-M1-antidiagonal-reformulation.md
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-21 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

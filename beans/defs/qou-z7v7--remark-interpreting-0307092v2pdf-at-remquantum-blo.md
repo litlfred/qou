@@ -4,8 +4,11 @@ title: Remark interpreting 0307092v2.pdf at rem:quantum-bloch-group-framework-co
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:46Z
-updated_at: 2026-08-21T17:05:10Z
+updated_at: 2026-10-04T15:23:26Z
+parent: qou-aqfj
 ---
 
 The corpus's quantum Bloch group blocks develop the Phi_q pentagon without recording that the CLASSICAL side already has a canonical branch-resolving lift; a remark tying the flattening data to the corpus's fibre-vs-archimedean Im(q) distinction would prevent the branch ambiguity being rediscovered a third time.

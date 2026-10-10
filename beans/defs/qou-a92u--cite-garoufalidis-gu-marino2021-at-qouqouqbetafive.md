@@ -3,8 +3,12 @@
 title: Cite [garoufalidis-gu-marino2021] at qou:QOU.QBeta.FiveTwoDTSpectrumSplit
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:31Z
-updated_at: 2026-08-08T23:35:31Z
+updated_at: 2026-10-04T15:17:32Z
+parent: qou-mub3
 ---
 
 About ten Lean -- Ref: lines label [garoufalidis-gu-marino2021] with arXiv id 2012.00062, which is the separately-registered peacock companion (garoufalidis-gu-marino2023peacock), while the equation numbers they quote are from 2007.10190. Correct the inline id at those sites (or switch the key where the peacock paper is genuinely meant) so key and locator agree.

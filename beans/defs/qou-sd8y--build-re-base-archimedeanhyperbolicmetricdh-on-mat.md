@@ -4,9 +4,11 @@ title: 'BUILD: re-base Archimedean.HyperbolicMetric.dH on Mathlib Geometry/Manif
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T09:08:08Z
-updated_at: 2026-09-04T09:08:08Z
-parent: qou-8lxd
+updated_at: 2026-10-04T15:16:48Z
+parent: qou-rtxm
 ---
 
 **BUILD — a method proposal for an already-open gap, not a new gap.**

@@ -11,7 +11,8 @@ Three populations, joined:
 
   cited     `cites[]` on authored blocks (read from the generated `.jsonld`
             graph) plus `-- Ref: [key]` lines in `.lean` files.
-  declared  `folio/bib-qa-verifications.json`, the source ledger: each entry
+  declared  the source ledger (test/attestations/bib-verification/, read by
+            scripts/lib/bib_ledger.py): each entry
             says `source.kind` is an `upload` (with a `file` path) or
             `external` (with a URL).
   held      what `library/` actually contains.
@@ -78,7 +79,8 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-LEDGER = REPO / "folio" / "bib-qa-verifications.json"
+sys.path.insert(0, str(Path(__file__).resolve().parent / "lib"))
+import bib_ledger  # noqa: E402  -- the source ledger's reader (attestation store, legacy fallback)
 LIBRARY = REPO / "library"
 CONTENT = REPO / "folio"
 
@@ -130,9 +132,9 @@ def load_ledger() -> tuple[dict, list]:
     can cite it. Keying the whole file on `e["id"]` collapses all of those onto
     one `None`, which is how they stayed invisible.
     """
-    if not LEDGER.exists():
-        return {}, []
-    entries = json.loads(LEDGER.read_text()).get("entries", [])
+    led, note = bib_ledger.read_source_ledger(str(REPO))
+    print(note, file=sys.stderr)
+    entries = led.get("entries", [])
     keyed = {e["id"]: e for e in entries if isinstance(e.get("id"), str)}
     unkeyed = [e for e in entries if not isinstance(e.get("id"), str)]
     # A repeated id is not automatically a defect. The ledger has one row per

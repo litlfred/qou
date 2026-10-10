@@ -3,9 +3,12 @@
 title: 'FEATURE: partition-function unification — Z_statmech = Σ_λ Frobenius = J_K state-sum are one tr_M (β=ln q)'
 status: todo
 type: feature
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T18:33:15Z
-updated_at: 2026-08-02T18:33:15Z
-parent: qou-ywj9
+updated_at: 2026-10-04T15:15:54Z
+parent: qou-8lxd
 ---
 
 ## Question (owner, 2026-08-02)

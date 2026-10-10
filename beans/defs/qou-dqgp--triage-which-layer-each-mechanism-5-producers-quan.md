@@ -1,11 +1,14 @@
 ---
 # qou-dqgp
 title: 'TRIAGE: which LAYER each mechanism-5 producer''s quantity belongs to'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T19:47:01Z
-updated_at: 2026-08-24T19:47:39Z
+updated_at: 2026-10-04T15:14:16Z
+parent: qou-10v9
 ---
 
 ## What this is
@@ -108,3 +111,9 @@ a move reaching 14.741 %. It belongs to `qou-1c4y` under the recorded
 Also not measured: whether each `E` producer's numbers move by the full
 11.54 ppb or by less. That needs a per-producer re-run — the sweep this
 triage exists to scope, not to perform.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-24 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

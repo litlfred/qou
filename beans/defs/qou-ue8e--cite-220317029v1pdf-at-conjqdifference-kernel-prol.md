@@ -4,8 +4,11 @@ title: Cite 2203.17029v1.pdf at conj:qdifference-kernel-prolongation-symbol
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:18Z
-updated_at: 2026-08-21T17:05:06Z
+updated_at: 2026-10-04T15:17:15Z
+parent: qou-19m0
 ---
 
 conj:qdifference-kernel-prolongation-symbol reasons about q-Borel normalisation, connection matrices and Newton-polygon slopes with no reference for the q-difference-module framework.

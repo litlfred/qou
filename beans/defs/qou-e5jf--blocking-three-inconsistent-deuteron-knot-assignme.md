@@ -4,8 +4,11 @@ title: 'BLOCKING: three inconsistent deuteron knot assignments block any Bloch-g
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T13:41:44Z
-updated_at: 2026-08-21T15:41:59Z
+updated_at: 2026-10-04T15:16:43Z
+parent: qou-10v9
 ---
 
 The corpus carries three live, inconsistent deuteron knot assignments:

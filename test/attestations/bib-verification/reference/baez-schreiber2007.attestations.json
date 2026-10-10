@@ -1,0 +1,52 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "baez-schreiber2007",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 176,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0511710v2/0511710v2.pdf"
+        },
+        "id": "baez-schreiber2007",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Join CORRECT (arXiv:math/0511710v2, Baez-Schreiber, 'Higher Gauge Theory', matching the registered entry). BIB ORPHAN: a full-tree grep returns zero citation sites in content/; the only hits are library/sm-uploads-intake.json:39,68 and docs/audits/2026-08-01-sm-uploads-round2-reads.md:42, i.e. intake records, not citations. This is the highest-value orphan in the slice, because the corpus is citing the WRONG paper for content this one contains: emergence-to-quantum-flat.lean:36,63 cites [baez2004] (Baez-Lauda, 2-Groups) for the quantum-flatness / instanton-equation / simplicity-constraint claim, and Baez-Lauda contains none of that. This document does: its abstract states that a 2-connection allows parametrisation-independent parallel transport along paths and surfaces, and that in Breen-Messing terms this requires the fake curvature to vanish; the body develops the point (2-connections on principal 2-bundles are equivalent to Breen-Messing connections on nonabelian gerbes precisely when the fake curvature vanishes, and that condition forces H = dB + d alpha(A) ^ B to be constrained). One caveat the folio must carry if it cites this: the abstract says 'we summarize the main results of our theory without proofs'.",
+          "keyResults": [
+            {
+              "locator": "Abstract; and the vanishing-fake-curvature discussion in the body",
+              "statement": "A 2-connection on a principal 2-bundle gives parametrisation-independent parallel transport along surfaces exactly when the fake curvature vanishes; this is the condition matching Breen-Messing connections on nonabelian gerbes.",
+              "useForFolio": "This is the actual source for the flatness condition that prop:emergence-to-quantum-flat currently attributes to baez2004; citing it fixes a wrong-source citation and gives the F = B / F^- = 0 discussion a real 2-gauge-theoretic footing.",
+              "targets": [
+                "prop:emergence-to-quantum-flat",
+                "prf:emergence-to-quantum-flat"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "prop:emergence-to-quantum-flat cites baez2004 for fake-curvature/2-connection content that lives in this paper instead. Cite baez-schreiber2007 there, which simultaneously fixes the miscitation and retires this bib orphan.",
+              "target": "prop:emergence-to-quantum-flat",
+              "bean": "qou-866k"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "f88f50d45908"
+        }
+      }
+    }
+  ]
+}

@@ -4,8 +4,11 @@ title: 'pyhecke.atom: nucleon_gen_chains'' docstring claims it matches build_nuc
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T18:28:14Z
-updated_at: 2026-08-29T18:28:48Z
+updated_at: 2026-10-04T15:22:50Z
+parent: qou-5vkl
 ---
 
 Sibling of `qou-bg3w` (which element is Delta) but NOT the same question, and

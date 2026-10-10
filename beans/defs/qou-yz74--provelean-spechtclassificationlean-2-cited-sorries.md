@@ -1,17 +1,19 @@
 ---
 # qou-yz74
 title: 'PROVE(lean): SpechtClassification.lean — 2 cited sorries [cited james1984representation,sagan2001]'
-status: todo
+status: completed
 type: task
+priority: normal
 tags:
+    - cite-james1984representation
+    - cite-sagan2001
+    - reorg-2026-10-04
     - lean
     - cited-sorry
     - paper-qou
     - repo-infra
-    - cite-james1984representation
-    - cite-sagan2001
 created_at: 2026-08-01T23:31:03Z
-updated_at: 2026-08-01T23:31:03Z
+updated_at: 2026-10-04T15:22:47Z
 parent: qou-k1mq
 ---
 
@@ -31,3 +33,9 @@ parent: qou-k1mq
   - [sagan2001] Sagan (2001), *The Symmetric Group: Representations, Combinatorial Algorithms, and Symmetric Functions* — (no DOI/URL)
 - **Tractability:** Every simple k[S_n]-module is a Specht module (exhaustion); repo Specht classification + Wedderburn count.
 - **Next step:** Blocked on in-repo scaffolding (not Mathlib). Complete/route the named repo infra, then discharge; do NOT weaken the statement.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] SpechtClassification.lean: target decl/file sorry-free on main 2026-10-03; [B] sp00 completed epic lists bricks axiom-clean (#print axioms). Conditional-in-form only on SnIsotypicSpechtSplit, whic

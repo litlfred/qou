@@ -4,9 +4,11 @@ title: Long computes launched with setsid/nohup DIE at session boundaries; the h
 status: todo
 type: bug
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-08T06:02:23Z
-updated_at: 2026-09-08T06:32:33Z
-parent: qou-9c80
+updated_at: 2026-10-04T15:14:36Z
+parent: qou-5vkl
 ---
 
 ## UPDATE 2026-09-08: harness tasks survived a 31-min boundary

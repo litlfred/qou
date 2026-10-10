@@ -3,8 +3,12 @@
 title: 'SCOPE: axiom-discharged conjectures — 35 files total, 9+9 done, 17 remain (8 have consumers)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T12:26:23Z
-updated_at: 2026-08-08T12:26:23Z
+updated_at: 2026-10-04T15:24:20Z
+parent: qou-5p7n
 ---
 
 

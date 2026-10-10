@@ -4,8 +4,11 @@ title: Cite 1301.4504v4.pdf at rem:p-vs-np-event-horizon
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:07Z
-updated_at: 2026-08-21T17:04:50Z
+updated_at: 2026-10-04T15:17:09Z
+parent: qou-19m0
 ---
 
 rem:p-vs-np-event-horizon frames horizon opacity as a P-vs-NP-shaped claim with no reference to prior complexity-theoretic work on black-hole decoding.

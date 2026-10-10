@@ -1,11 +1,15 @@
 ---
 # qou-prjo
 title: 'GAP: deuteron Delta_lambda magnitude — naive per-pair z dead across A; surviving object is transverse NA-Stokes surface-curvature (not braid-word, not scale, not level, not edge, not DT-count)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-08-02T19:09:10Z
-updated_at: 2026-08-09T07:54:56Z
+updated_at: 2026-10-04T15:12:51Z
+parent: qou-v2om
 ---
 
 ## State (PR #4615, 2026-08-02)
@@ -593,3 +597,9 @@ proton anchor (germ is q-dependent at A≥3, so the pin is material). Nothing wi
 Audit: `docs/audits/2026-08-09-germ-gauge-covariance-verdict.md`.
 
 **The ≥3-body binding MAGNITUDE gate is untouched. Bean stays OPEN.**
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-09 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

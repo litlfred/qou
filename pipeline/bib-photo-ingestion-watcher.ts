@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { readHumanReviews, writeHumanReviews } from '../folio-assistant/cat-harness/schemas/bib-attestations';
 import { createHash } from 'crypto';
 import { references } from '../folio/schema/references.js';
 
@@ -26,10 +26,14 @@ function entryHash(entry: unknown): string {
  *  2. Source-match the usage in QOU.
  *  3. Formalise in Lean.
  *  4. Bib-validate against the references sidecar.
- *  5. Update `folio/schema/references.review.json` status to `validated`.
+ *  5. Set the reference's human-review status to `validated` — in the
+ *     attestation store's `bib-human-review` family (or the legacy
+ *     `folio/schema/references.review.json` before migration), through the
+ *     platform's one reader/writer, `schemas/bib-attestations.ts`.
  */
 
-const REVIEWS_FILE = 'folio/schema/references.review.json';
+/** The folio repository root: these scripts run from it. */
+const REPO_ROOT = process.cwd();
 
 interface Payload {
   type: 'github_issue' | 'local_backfill';
@@ -53,13 +57,12 @@ export async function processIngestion(payload: Payload) {
   // TODO: invoke local/paper-importer skill
 
   // 4. Validate and set status
-  console.log(`[Watcher] -> Step 4: Validating and updating references.review.json`);
+  console.log(`[Watcher] -> Step 4: Validating and updating the human-review record`);
   
-  if (existsSync(REVIEWS_FILE)) {
-    const reviews = JSON.parse(readFileSync(REVIEWS_FILE, 'utf8'));
-    if (!reviews.reviews) {
-      reviews.reviews = {};
-    }
+  const read = readHumanReviews(REPO_ROOT);
+  console.log(`[Watcher]    ${read.note}`);
+  if (read.from !== 'none') {
+    const reviews = { reviews: { ...read.reviews } as Record<string, unknown> };
     const entry = references.find(r => r.id === payload.referenceId);
     const hash = entry ? entryHash(entry) : 'pending';
 
@@ -71,7 +74,7 @@ export async function processIngestion(payload: Payload) {
       page: 'auto-identified',
       entryHash: hash
     };
-    writeFileSync(REVIEWS_FILE, JSON.stringify(reviews, null, 2));
+    console.log(`[Watcher]    ${writeHumanReviews(REPO_ROOT, reviews.reviews as never).note}`);
     console.log(`[Watcher] -> Success. Reference ${payload.referenceId} marked as validated.`);
   }
 }

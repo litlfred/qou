@@ -1,11 +1,14 @@
 ---
 # qou-fs4r
 title: 'Owner-decision queue: 51 in-progress beans are blocked on a ruling, uncounted until now'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T10:28:57Z
-updated_at: 2026-09-05T07:53:36Z
+updated_at: 2026-10-04T15:13:27Z
+parent: qou-5vkl
 ---
 
 ## Owner ruled 2026-09-05: triage + propose a default, owner vetoes (Q2 option 3)
@@ -117,3 +120,9 @@ with a full options doc and recommendation already written.
 
 **The queue is now drained to decisions.** Nothing further is triageable without
 owner rulings.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

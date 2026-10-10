@@ -1,10 +1,13 @@
 ---
 # qou-5et6
 title: 'One genuine open ppq derivation lever: alpha_EM per-loop measure Clauses A+B (theta-factor) — derive not fit'
-status: todo
+status: scrapped
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T16:03:25Z
-updated_at: 2026-08-02T16:03:25Z
+updated_at: 2026-10-04T15:21:47Z
 ---
 
 
@@ -25,3 +28,10 @@ Audit: 2026-08-02-alpha-em-perloop-clauses-obstruction.md. Agent-C survey (anti-
   polarized-Epstein det, #3911). Last-correction, NOT ppq. Feeds derived-alpha into m_K/m_pi.
 - SELF-CORRECTION: exposed Roast-1's wrong derived alpha_em (609 -> correct 136.82);
   m_K/m_pi derived-alpha degradation is ~8x (47->363 ppb), not 4 orders. Fixed in audit+bean.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-rgiz` (work-plan reorganisation 2026-10-04). Evidence: alpha_EM per-loop measure Clauses A+B (08-02, RESOLVED-in-body, wall = B2 tau-lift) — same lever as rgiz arc
+Content is untouched; only this work item is closed.

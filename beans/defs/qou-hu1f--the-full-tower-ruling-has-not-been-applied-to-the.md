@@ -1,11 +1,14 @@
 ---
 # qou-hu1f
 title: The full-tower ruling has not been applied to the mass/binding surface, where H_3 is the whole object
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T20:54:56Z
-updated_at: 2026-09-06T08:12:15Z
+updated_at: 2026-10-04T15:14:11Z
+parent: qou-v2om
 ---
 
 Audit: [`2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md`](../docs/audits/2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md)
@@ -1109,3 +1112,9 @@ reordering, and that is verified rather than assumed — interfaces are single l
 nucleon blocks, so nothing reordered within a nucleon can reach them. A candidate rule for triaging
 the rest of the list: a quantity built only from INTER-nucleon structure should survive the ruling;
 one built from intra-nucleon letter positions should be assumed broken until measured.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

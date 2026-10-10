@@ -1,11 +1,13 @@
 ---
 # qou-wlaf
 title: 'STALE: gram-norm-binding-probe.witness.json on main fails its own cross-check assertion by 7 orders of magnitude'
-status: in-progress
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-09-06T09:20:57Z
+updated_at: 2026-10-04T15:13:58Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -1169,3 +1171,9 @@ is that a detector reporting a wrong finding is worse than one reporting none.
 
 **Not reopening the headline.** `gram-norm-binding-probe` is fixed; this is
 about the detector that grew out of it.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: ac5d45bbb8 RESOLVED; body "gram-norm-binding-probe is fixed" (remaining detector proposal belongs elsewhere); previously stalled (last activity 2026-09-06); 27 main commits

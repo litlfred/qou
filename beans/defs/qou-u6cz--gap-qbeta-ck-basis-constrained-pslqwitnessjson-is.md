@@ -1,10 +1,13 @@
 ---
 # qou-u6cz
 title: 'GAP: qbeta-ck-basis-constrained-pslq.witness.json is STALE and asserts allPassed:true for a chain that now FAILS'
-status: todo
+status: scrapped
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T15:14:19Z
-updated_at: 2026-08-15T15:14:19Z
+updated_at: 2026-10-04T15:20:19Z
 ---
 
 
@@ -57,3 +60,10 @@ Blocks `qou-s6b9` (the `Vol(4_1)=2*Lambda(pi/3)` key mislabel at line 313 — a
 correct rename that cannot land until this witness can be regenerated validly).
 
 Found while completing the Vol(4₁) drain in PR #5119.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-v6wz` (work-plan reorganisation 2026-10-04). Evidence: same witness qbeta-ck-basis-constrained-pslq: u6cz=stale allPassed(08-15), v6wz=RED on re-run(09-14)
+Content is untouched; only this work item is closed.

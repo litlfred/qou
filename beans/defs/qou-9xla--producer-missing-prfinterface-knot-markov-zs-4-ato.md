@@ -1,10 +1,14 @@
 ---
 # qou-9xla
 title: 'PRODUCER (missing): prf:interface-knot-markov-z''s 4-atom table has no producer -- write one, regenerate under D'
-status: in-progress
+status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T22:49:46Z
-updated_at: 2026-08-09T22:49:46Z
+updated_at: 2026-10-04T15:13:32Z
+parent: qou-v2om
 ---
 
 
@@ -94,3 +98,9 @@ The atom-table producer itself. It cannot be written honestly on top of
 `mass_at_3A_proper.py` while that file's `Z_MARKOV` is convention C — the output
 would be C numbers wearing a fresh witness. Blocked on item 1/2 above, or on a
 decision to parameterise that producer by `z` explicitly.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-09 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

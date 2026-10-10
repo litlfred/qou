@@ -3,8 +3,12 @@
 title: 'ROAST: m_K/m_pi ''meets 100x'' leans on experimental alpha_em (derived alpha_em=609 -> 157000 ppb miss); EM factor full-log fits WORSE than the 2-term truncation — re-scope claim'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T16:03:25Z
-updated_at: 2026-08-02T16:03:25Z
+updated_at: 2026-10-04T15:24:12Z
+parent: qou-3l2l
 ---
 
 See docs/audits/2026-08-02-ppq-attack-vectors-roast.md §Roast 1.

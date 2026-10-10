@@ -4,8 +4,11 @@ title: Cite 0006156v1.pdf at prop:faddeev-phib-uniqueness
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:59Z
-updated_at: 2026-08-21T17:05:02Z
+updated_at: 2026-10-04T15:16:59Z
+parent: qou-ysb7
 ---
 
 prop:faddeev-phib-uniqueness currently cites only faddeev1995 + faddeev1994 while stating the product formula and the strip-growth hypothesis that this paper's eqs. (21)-(22) give explicitly.

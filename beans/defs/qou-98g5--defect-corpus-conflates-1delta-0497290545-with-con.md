@@ -4,8 +4,11 @@ title: 'DEFECT: corpus conflates 1/delta = 0.497290545 with convention-C z = 0.4
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T17:08:37Z
-updated_at: 2026-08-09T17:09:25Z
+updated_at: 2026-10-04T15:18:39Z
+parent: qou-cdx1
 ---
 
 

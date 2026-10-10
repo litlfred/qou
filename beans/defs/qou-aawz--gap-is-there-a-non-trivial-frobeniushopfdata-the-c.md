@@ -4,8 +4,11 @@ title: 'GAP: is there a NON-TRIVIAL FrobeniusHopfData? the corpus only exhibits 
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T19:59:47Z
-updated_at: 2026-09-15T08:44:53Z
+updated_at: 2026-10-04T15:14:53Z
+parent: qou-ddmn
 ---
 
 ## Surfaced 2026-09-14 while proving the bialgebra collapse

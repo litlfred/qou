@@ -49,9 +49,9 @@ universe u v
 -- Ref: [atiyah1978] https://doi.org/10.1098/rspa.1978.0143
 theorem CategoricalInstanton.unique_up_to_gauge
     {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    (fh : @FrobeniusHopfData C _ _)
-    (I₁ I₂ : @CategoricalInstanton C _ _ fh)
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
+    (fh : @FrobeniusHopfData C _ _ _)
+    (I₁ I₂ : @CategoricalInstanton C _ _ _ fh)
     (hconn : I₁.connection = I₂.connection)
     (hcurv : I₁.curvature = I₂.curvature)
     (hhodge : I₁.hodge = I₂.hodge) : I₁ = I₂ := by

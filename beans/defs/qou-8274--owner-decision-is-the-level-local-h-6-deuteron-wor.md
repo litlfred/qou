@@ -4,8 +4,11 @@ title: 'OWNER DECISION: is the level-local H_6 deuteron word the right binding o
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-12T07:39:47Z
-updated_at: 2026-09-12T07:40:28Z
+updated_at: 2026-10-04T15:21:55Z
+parent: qou-v2om
 ---
 
 Residual of `qou-w6x3` (option 2 of `qou-hxz4`, PR #7202). Nothing is enacted;

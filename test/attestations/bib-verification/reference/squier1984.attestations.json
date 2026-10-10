@@ -1,0 +1,69 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "squier1984",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 400,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/squier-burau-unitary-1984/squier-burau-unitary-1984.pdf"
+        },
+        "id": "squier1984",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Proves that a slight modification of the Burau representation of the braid group is unitary with respect to an explicitly constructed Hermitian form: there is a nonsingular (n-1)x(n-1) matrix J_0 over Z[t, t^{-1}] with beta(w)* J_0 beta(w) = J_0 for every braid word, becoming genuinely Hermitian after passing to Z[s, s^{-1}] with s^2 = t, and each standard generator acts as a unitary reflection. Two corpus places touch this. First, the T2 layer computes explicit Burau-at-i matrices and QOU/Machinery/HeckeMonodromyJordan.lean proves the monodromy is non-semisimple there ((sigma - i)^2 = 0, eigenvalues colliding at q = i), where the behaviour of an invariant Hermitian form is exactly the sort of structure that governs whether a Jordan block can appear. Second, q-game-of-life-proof asserts flatly that 'each generator is unitary with respect to the Markov trace form' with no citation. Supporting rather than core, for an honest reason: the form proved invariant here is J_0 on the reduced Burau module, which is NOT the same object as the Markov trace form on H_n(q) that the corpus's unitarity claim names, and no corpus derivation currently consumes an invariant Hermitian form. It is the right literature to cite and the right thing to check against, not a discharge.",
+          "keyResults": [
+            {
+              "locator": "Theorem (p. 199) and section 3",
+              "statement": "There is a nonsingular matrix J_0 over Z[t,t^{-1}] with beta(w)* J_0 beta(w) = J_0 for all braid words; over Z[s,s^{-1}] (s^2 = t) a change of basis makes it Hermitian, and each generator acts as a unitary reflection.",
+              "useForFolio": "Supplies the standard invariant-form statement for the braid representation the corpus's Burau-at-i computation uses, and a citable anchor for the corpus's otherwise unsourced unitarity assertion.",
+              "targets": [
+                "QOU.Machinery.HeckeMonodromyJordan",
+                "folio/quantum-observable-universe/information-theory/q-game-of-life-proof.md"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Relevant, no ref() entry; references.ts mentions Burau only inside a note on a different (Lawrence-Krammer) entry and has no unitarity source.",
+              "target": "QOU.Machinery.HeckeMonodromyJordan",
+              "bean": "qou-m62k"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record the invariant-form statement next to the Burau-at-i monodromy work, together with what must be checked before it is used: whether the J_0 form and the corpus's Markov trace form agree (they are different objects on different modules), and what happens to the form's signature at the specialisation t = -1 / q = i where the corpus's eigenvalues collide. Deliberately not proposed as aid-proof: the Jordan-block proof is already sorry-free and does not need this, and the two forms have not been reconciled.",
+              "target": "QOU.Machinery.HeckeMonodromyJordan",
+              "bean": "qou-rpe2"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "q-game-of-life-proof asserts generator unitarity with respect to the Markov trace form with no citation at all; the invariant-Hermitian-form result is the nearest published statement, and citing it will also force the block to say which form it means.",
+              "target": "folio/quantum-observable-universe/information-theory/q-game-of-life-proof.md",
+              "bean": "qou-1rgm"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "5087ee3cb486"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -4,8 +4,11 @@ title: 'unified_low_isotope_predictor: committed witness is 24.8x stale AND its 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T16:32:15Z
-updated_at: 2026-08-26T18:00:53Z
+updated_at: 2026-10-04T15:25:16Z
+parent: qou-v2om
 ---
 
 Measured 2026-08-26 while answering "are all witnesses and their dependencies

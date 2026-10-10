@@ -4,8 +4,11 @@ title: 'OBS: GW170817 kilonova Sr II — is the r-process path a nuclear-chart p
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T13:44:34Z
-updated_at: 2026-09-13T09:15:06Z
+updated_at: 2026-10-04T15:21:45Z
+parent: qou-8lxd
 ---
 
 ---

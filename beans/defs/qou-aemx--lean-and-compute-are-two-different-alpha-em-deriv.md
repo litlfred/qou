@@ -1,11 +1,14 @@
 ---
 # qou-aemx
-title: 'The alpha_em Lean file holds TWO rival conjectures and the block cites only one; the 470 ppb figure compares the .md to the UNCITED one (corrected 2026-08-29)'
-status: in-progress
+title: The alpha_em Lean file holds TWO rival conjectures and the block cites only one; the 470 ppb figure compares the .md to the UNCITED one (corrected 2026-08-29)
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-28T16:32:49Z
-updated_at: 2026-08-29T01:25:00Z
+updated_at: 2026-10-04T15:11:09Z
+parent: qou-3l2l
 ---
 
 Found while re-examining the two open knobs on `m_K/m_pi` (the framework's
@@ -380,3 +383,9 @@ still requires deriving the pairing, which nothing in the corpus supplies.
 residual, and the required `κ ≈ 1.9153` are all as they were. The `opaque` Prop
 and its absent instance are untouched — which tier the conjecture belongs to
 remains an author call, and the 0/5-unconditional L2 count is unaffected.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-29 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

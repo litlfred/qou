@@ -3,8 +3,12 @@
 title: 'GAP: residual channel-dependent Pade bias plateau (~0.27%) in V3 extraction'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-03T14:28:58Z
-updated_at: 2026-08-03T14:28:58Z
+updated_at: 2026-10-04T15:20:22Z
+parent: qou-r9ih
 ---
 
 

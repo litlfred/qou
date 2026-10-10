@@ -3,8 +3,12 @@
 title: 'AUDIT: LWC-2 namespace sweep (22728b8801) touched 20+ Lean files; 2 confirmed breaks (ext_toSsyt, Partition.*) — audit the rest for stripped type-name prefixes'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T17:38:02Z
-updated_at: 2026-08-07T17:38:02Z
+updated_at: 2026-10-04T15:16:29Z
+parent: qou-5vkl
 ---
 
 

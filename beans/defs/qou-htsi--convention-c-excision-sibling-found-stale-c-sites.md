@@ -1,12 +1,14 @@
 ---
 # qou-htsi
 title: 'Convention C excision: sibling-found stale C sites and compute-closed gates to re-examine (owner 2026-09-06)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T09:38:55Z
-updated_at: 2026-09-08T07:45:34Z
-parent: qou-2akx
+updated_at: 2026-10-04T15:12:12Z
+parent: qou-cdx1
 ---
 
 Owner, 2026-09-06 (verbatim): 'Be suspicious of closed gates based on compute. Lots of stale and sibling found convention C still around. Need to excise that.' Queued (not pivoted) behind the NZ derivation (qou-n2cl). Scope: (1) re-run scripts/convention-c-value-audit.py and scripts/convention-c-producer-audit.py on main; (2) list every 'closed' / 'refuted' / 'gate' verdict in docs/audits and .beans whose evidence is a computation run under convention C (z = sqrt(q)/(q+1)) and mark it C-conditional; (3) drain what qou-t9r1 / qou-pmkh have not. Value audit last measured 85 C bindings in computations/ (AGENTS.md R1 note).
@@ -35,3 +37,9 @@ precision-gates.sh --changed: RED on the tree-wide ratchets (q0-anchor flip=1 ha
 Sibling comment on #6969 (from #6968 / qou-p6m1): the comparison ledger EXEMPTS a `deliberate-c-frame` site from `convention-c-value-audit.py`'s blocking count, while `trace-convention-registry.json`'s `blocked_on_rederivation` keeps the same class COUNTED ("a declaration accounts for a site without excusing it"). The two registries have zero overlap (26 vs 13 rows) and opposite accounting rules, so the headline C figure depends on which file a site was written into. Options: (1) keep ledger for provenance but have the value audit still count `deliberate-c-frame` rows (matches the registry rule; headline goes 0 -> 14 blocking, all c_k ladder); (2) move the registry to the ledger rule. Not resolved in #6969.
 
 ## 2026-09-08: canonical ledger for the convention-C excision family is qou-wgta (the P0 excision tracker; owner-ruling milestone qou-cdx1, S2 science blocker qou-cds2); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 2 / §7.3 C3. Nine trackers, previously linked only cds2↔8iru and htsi→t9r1, now all point there.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

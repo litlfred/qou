@@ -1,11 +1,14 @@
 ---
 # qou-6p3b
 title: 'qfac/dim_q threading: 12 decisions, not 133 edits (scoped)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T14:15:32Z
-updated_at: 2026-08-29T18:22:17Z
+updated_at: 2026-10-04T15:13:36Z
+parent: qou-cdx1
 ---
 
 ## Scoped 2026-08-24 — full analysis in docs/audits/2026-08-24-qfac-dimq-threading-scope.md
@@ -398,3 +401,9 @@ STATE OF THE ARC AFTER LANDING
       UNKNOWN (interrupted at ~2100s on 3H by a container reclaim).
    3. block_swap_binding — do NOT re-run at a larger budget. Row 1 <=19s, row 2
       unfinished at 7181s (>378x). Instrument per-row timing first.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-29 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

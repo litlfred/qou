@@ -4,8 +4,11 @@ title: pyhecke_native in this container is a 2026-08-09 wheel, two weeks behind 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T16:43:53Z
-updated_at: 2026-08-23T17:21:17Z
+updated_at: 2026-10-04T15:22:50Z
+parent: qou-5vkl
 ---
 
 `pyhecke_native` installed in this container is **version 0.9.0, built 2026-08-09**.

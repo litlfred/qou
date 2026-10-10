@@ -4,8 +4,11 @@ title: Cite 0305423v3.pdf at prop:q-plancherel-asymptotic-skeleton
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:42Z
-updated_at: 2026-08-21T17:05:10Z
+updated_at: 2026-10-04T15:17:02Z
+parent: qou-19m0
 ---
 
 Clause (2) of prop:q-plancherel-asymptotic-skeleton asserts a fluctuation rate with no rate-bearing source; Thm 1.2 is the q = 1 explicit rate.

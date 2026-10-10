@@ -1,10 +1,13 @@
 ---
 # qou-0z7n
 title: 'MI-2: cauchyMul_order is FALSE as stated — refute, restate, prove the envelope upper bound'
-status: in-progress
+status: completed
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T15:44:37Z
-updated_at: 2026-08-08T15:44:37Z
+updated_at: 2026-10-04T15:13:20Z
 ---
 
 Branch: `claude/sorry-audit-joo5` (qou).
@@ -112,3 +115,9 @@ Kept, adapted to their names and definitions:
 Dropped as duplicates of theirs: `cauchyEnvelope_add_le`,
 `cauchyMul_norm_le_envelope`, `eventually_linear_le_rpow_sq`,
 `cauchyMul_norm_eventually_le`.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] main 6723f1a2be 2026-08-08: 'beans: close qou-0z7n and qou-2tkh (cited-sorry falsity sweep)'; bean not touched after

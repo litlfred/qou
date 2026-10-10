@@ -3,8 +3,12 @@
 title: De-axiomatise qSerreRewritingSystem far enough to prove its rules monic, discharging the hlc left hanging on ugb_pbw_corollary
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T10:15:22Z
-updated_at: 2026-08-10T10:15:22Z
+updated_at: 2026-10-04T15:18:36Z
+parent: qou-1o8n
 ---
 
 

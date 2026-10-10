@@ -1,11 +1,14 @@
 ---
 # qou-rutm
 title: 'Source a charge lattice for the 5_2 sigma: T[5_2] flavour lattice from 3d-3d (D1-b arrow test)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T07:37:09Z
-updated_at: 2026-09-05T08:31:48Z
+updated_at: 2026-10-04T15:13:58Z
+parent: b9cj
 ---
 
 
@@ -413,3 +416,9 @@ live items it hands on are already-open beans rather than new ones:
 against the now-legible published 5×5 matrix — the OCR of `C_41` reads cleanly
 in sec-005 lines 100-115) and `qou-bk77` (cite the source at the block whose
 non-degeneracy table asserts that count).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

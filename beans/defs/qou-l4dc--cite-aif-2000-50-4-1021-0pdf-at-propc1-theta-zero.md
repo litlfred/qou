@@ -4,8 +4,11 @@ title: Cite AIF_2000__50_4_1021_0.pdf at prop:c1-theta-zero-locus-and-pole-divis
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:13Z
-updated_at: 2026-08-21T17:04:58Z
+updated_at: 2026-10-04T15:17:48Z
+parent: qou-19m0
 ---
 
 prop:c1-theta-zero-locus-and-pole-divisor states that every pole of the connection matrix P = Y_0^{-1} Y_infinity is a theta zero; the theta-quotient construction of the characters and the ellipticity of P are the source for that.

@@ -4,8 +4,11 @@ title: Cite 9705010v1.pdf at prop:sw-period-residue-sum
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:17Z
-updated_at: 2026-08-21T17:05:04Z
+updated_at: 2026-10-04T15:17:23Z
+parent: qou-19m0
 ---
 
 prop:sw-period-residue-sum treats lambda_SW as a given meromorphic 1-form with poles at branch points; the definition and the period-coordinate property come from here.

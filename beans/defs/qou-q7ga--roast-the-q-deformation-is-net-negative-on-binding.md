@@ -1,11 +1,14 @@
 ---
 # qou-q7ga
 title: 'ROAST: the q-deformation is NET-NEGATIVE on binding — derived asymmetry +2(q0-1)(N-Z) has the wrong sign (data wants ~-0.15), and layout-free bond counting (A-1) beats every isospin-resolved variant'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T07:07:35Z
-updated_at: 2026-09-04T20:51:04Z
+updated_at: 2026-10-04T15:13:50Z
+parent: qou-v2om
 ---
 
 Measured 2026-09-04 on 2548 AME nuclides with MEASURED binding energies
@@ -155,3 +158,9 @@ cap `l <= 2` leaves exactly three self-conjugate shapes -- `(1)`, `(2,1)`,
 `(2,2)`, none at any level >= 5. Of the two the mechanism names, `(2,2)`
 survives and `(3,1,1)` has zero Markov weight. **Whether `y_lambda = 0` forces
 `C_lambda = 0` is NOT established** and is not assumed. `qou-a5jk`.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

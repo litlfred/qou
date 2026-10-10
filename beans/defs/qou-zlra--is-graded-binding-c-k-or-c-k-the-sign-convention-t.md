@@ -4,8 +4,11 @@ title: Is graded binding +c_k or -c_k? The sign convention the type-two result h
 status: in-progress
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T12:02:10Z
-updated_at: 2026-09-12T21:54:12Z
+updated_at: 2026-10-04T15:13:08Z
+parent: qou-v2om
 ---
 
 

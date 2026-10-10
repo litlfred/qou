@@ -1,11 +1,14 @@
 ---
 # qou-lzzi
 title: 'Route C M3: the pretzel''s level-2 Stokes matrix and the s(x) adjoint-weight test'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T17:46:35Z
-updated_at: 2026-09-13T19:12:54Z
+updated_at: 2026-10-04T15:13:52Z
+parent: qou-v2om
 ---
 
 ## Claimed 2026-09-13 — the OPERATOR route (branch `claude/pretzel-level2-stokes-2026-09-13`, PR #7333)
@@ -124,3 +127,9 @@ TWO THINGS WORTH CARRYING:
 
 Nothing in the s(x) verdict moved; the operator and every symbolic gate were
 untouched (G3 validates the operator pointwise at 2.2e-29 regardless).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

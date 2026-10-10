@@ -1,11 +1,14 @@
 ---
 # qou-wqto
 title: 'V9: chirality grading u_L vs u_R -- no braid word distinguishes them'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T18:57:48Z
-updated_at: 2026-08-16T02:43:04Z
+updated_at: 2026-10-04T15:14:19Z
+parent: qou-8lxd
 ---
 
 Y = B - L is a statement about the LEFT-HANDED sector
@@ -175,3 +178,9 @@ orbit-level map), and should NOT try to read chirality off the matter-fixing ι.
 Still open, unchanged: the geometric identification of the Reeb involution on
 the physical state space (CR geometry; archimedean-chirality asserts rather than
 derives it). Nothing here is wired to compute and no observable is predicted.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

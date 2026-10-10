@@ -3,8 +3,12 @@
 title: 'PRECISION: rho-k-co-casimir-extended stale accumulator — regen blocked on compute, not on a producer defect'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T10:57:22Z
-updated_at: 2026-08-15T10:57:22Z
+updated_at: 2026-10-04T15:22:10Z
+parent: qou-9nnz
 ---
 
 

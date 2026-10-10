@@ -4,9 +4,11 @@ title: Running-example placement audit across QU/QOU/lifting chapters
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-15T18:29:18Z
-updated_at: 2026-09-15T23:34:35Z
-parent: qou-dgce
+updated_at: 2026-10-04T15:24:15Z
+parent: qou-mub3
 ---
 
 Where the SU(2) example starts and where a new definition lacks its ex:*-su2 sibling.

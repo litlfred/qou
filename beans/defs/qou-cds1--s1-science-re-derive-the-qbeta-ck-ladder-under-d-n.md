@@ -4,8 +4,11 @@ title: 'S1 (SCIENCE): re-derive the Q_beta c_k ladder under D — not a z-swap, 
 status: in-progress
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-26T14:57:25Z
+updated_at: 2026-10-04T15:11:08Z
+parent: qou-avtq
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the

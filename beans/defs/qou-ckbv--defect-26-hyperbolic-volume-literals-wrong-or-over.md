@@ -4,8 +4,11 @@ title: 'DEFECT: 26 hyperbolic-volume literals wrong or over-claiming precision (
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T21:33:05Z
-updated_at: 2026-08-30T14:20:00Z
+updated_at: 2026-10-04T15:18:39Z
+parent: qou-9nnz
 ---
 
 ## Measured, not estimated

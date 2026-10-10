@@ -1,11 +1,13 @@
 ---
 # qou-m90h
 title: Witness timing key "ms" is not in _EPHEMERAL_META_FIELDS — 28 witnesses report a false real-change on every re-run
-status: todo
+status: scrapped
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T11:01:32Z
-updated_at: 2026-09-14T19:47:46Z
+updated_at: 2026-10-04T15:15:52Z
 ---
 
 Found on PR #7061 while classifying witness churn from verification runs.
@@ -287,3 +289,10 @@ says the same.
 
 **The 28-file false-positive stands** and is unaffected by any of this: 26
 genuine durations still read as REAL VALUE CHANGE on every re-run.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-pg2r` (work-plan reorganisation 2026-10-04). Evidence: [B] both: a timing key (durationSec / ms) missing from _EPHEMERAL_META_FIELDS - one fix
+Content is untouched; only this work item is closed.

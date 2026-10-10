@@ -1,11 +1,13 @@
 ---
 # qou-a6rd
 title: 'Session: Borel/alien-calculus arc (A_ω / c3-odd) — review + work plan (branch n24484)'
-status: todo
-type: epic
+status: completed
+type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-19T21:00:32Z
-updated_at: 2026-08-19T21:36:16Z
+updated_at: 2026-10-04T15:15:24Z
 ---
 
 ARC REVIEW (2026-08-19, main): A_ω / c3-odd epic qou-esx7 — derive odd-channel Stokes constant (Qβ/m_n/Δpn, 2/7→5/7).
@@ -16,3 +18,9 @@ Plan (user picked all 4): 1✔ adjudicate qb8f (DONE→owner-close ready); 2 Rou
 NEW live thread: whole c3 ladder is convention-C-frame, awaits convention-D re-derivation (qou-cds1).
 
 PROGRESS: [1✔ qb8f adjudication verified→owner-close]. [3✔ bankable Lean gap: cauchyMul_leadingCoeff_ge_endpoint sorry-free, PR #5348; residual = zsg6 interior case]. [4 triage: fgte=owner-close ready (action Vol(4₁)/π confirmed, amplitude honestly not); zezz/yju0 = stale empty placeholders, no branch, no recorded progress]. [2 Route C = research-grade CoHA/BPS, out of session scope per 2026-08-11 audit; not attempted — honest].
+
+
+
+## Summary of Changes
+
+Session log closed 2026-10-04 (owner decision 2): open children were reparented to programme epics and prose follow-ups extracted as their own beans. Kept as a record, not deleted.

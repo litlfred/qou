@@ -4,8 +4,11 @@ title: Apply 0307092v2.pdf at conj:borromean-bloch-group-element
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:45Z
-updated_at: 2026-08-21T17:04:49Z
+updated_at: 2026-10-04T15:16:21Z
+parent: qou-mub3
 ---
 
 Hypotheses checked: the theorem requires a complete, finite-volume hyperbolic 3-manifold; the Borromean rings complement satisfies all three. The existence and regulator clause of the conjecture is therefore a corollary, and the block should be re-scoped so that only the h^4 = -3/4 shadow claim remains conjectural. Scope note: this discharges clause 1 only and asserts nothing about clause 2.

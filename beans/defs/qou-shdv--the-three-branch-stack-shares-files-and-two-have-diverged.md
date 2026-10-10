@@ -5,12 +5,15 @@ status: todo
 type: task
 priority: medium
 tags:
+    - close-candidate
     - infra
     - ci
     - coordination
     - qou-glbl
+    - reorg-2026-10-04
 created_at: 2026-08-09T16:00:00Z
-updated_at: 2026-08-09T16:00:00Z
+updated_at: 2026-10-04T15:26:08Z
+parent: qou-5vkl
 ---
 
 ## Why this exists

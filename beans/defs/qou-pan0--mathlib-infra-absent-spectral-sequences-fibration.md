@@ -4,8 +4,11 @@ title: 'Mathlib infra absent: spectral sequences, fibration LES, octonions and G
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T14:13:56Z
-updated_at: 2026-08-24T14:13:56Z
+updated_at: 2026-10-04T15:21:32Z
+parent: qou-c8p8
 ---
 
 Surveyed 2026-08-24 against the pinned Mathlib (Lean 4.24.0) by listing the

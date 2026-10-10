@@ -3,7 +3,12 @@
 title: Wire c_3 into Q_beta computations
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-07-07T19:12:42Z
-updated_at: 2026-07-07T19:12:42Z
+updated_at: 2026-10-04T15:25:35Z
+parent: qou-avtq
 ---
 

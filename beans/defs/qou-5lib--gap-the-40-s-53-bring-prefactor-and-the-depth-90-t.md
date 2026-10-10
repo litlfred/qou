@@ -4,8 +4,11 @@ title: 'GAP: the 40 = |S_5|/3 Bring prefactor and the depth-90 tower are not der
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-03T21:48:29Z
-updated_at: 2026-09-03T21:48:57Z
+updated_at: 2026-10-04T15:20:24Z
+parent: qou-n4nr
 ---
 
 ## What was closed, and what was not

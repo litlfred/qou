@@ -4,8 +4,11 @@ title: Cross-check On_the_geometry_of_two_state_models_for_the_colore.pdf at com
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:57Z
-updated_at: 2026-08-21T17:05:03Z
+updated_at: 2026-10-04T15:18:30Z
+parent: qou-8hur
 ---
 
 Cross-check the folio's colored Jones / Markov-trace values for (sigma_1 sigma_2^{-1})^2 and (sigma_1 sigma_2^{-1})^3 against the arc-graph state-sum this paper computes for 3-braid closures. A disagreement would be a real finding; an agreement is a corroboration only.

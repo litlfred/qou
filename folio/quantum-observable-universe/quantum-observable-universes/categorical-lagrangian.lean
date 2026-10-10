@@ -43,7 +43,7 @@ universe u v
 abbrev CategoricalLagrangian.re_export
     (R : Type*) [CommRing R]
     (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear R C]
     (fh : FrobeniusHopfData C) : Type _ :=
   CategoricalLagrangian R C fh

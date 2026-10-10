@@ -1,11 +1,15 @@
 ---
 # qou-s2gm
 title: precision-gates.sh --changed silently passes after a commit; full run stamps sandbox lib versions into an audit witness
-status: in-progress
+status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-08-16T13:48:36Z
-updated_at: 2026-09-08T04:00:00Z
+updated_at: 2026-10-04T15:11:39Z
+parent: qou-9nnz
 ---
 
 Both found while running the mandatory precision preflight on PR #5241 after
@@ -137,3 +141,9 @@ self-contradiction. It is decidable without judgement — the discriminator is
 the bean asserting *its own* openness, not merely mentioning something open.
 
 Re-close it when the work its body names is actually done.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

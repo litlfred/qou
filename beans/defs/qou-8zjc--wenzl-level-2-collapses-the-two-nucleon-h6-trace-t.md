@@ -3,8 +3,12 @@
 title: 'Wenzl level-2 collapses the two-nucleon H6 trace to 4 blocks: 3 unbind, (3,3) sign-flips, and NO conjugate pair survives at n=6'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T12:43:11Z
-updated_at: 2026-08-16T12:43:11Z
+updated_at: 2026-10-04T15:25:33Z
+parent: qou-10v9
 ---
 
 

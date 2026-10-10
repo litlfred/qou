@@ -1,16 +1,18 @@
 ---
 # qou-brkp
 title: 'BUG (fixed) + stale witness: a dps remediation broke 2 producers, and its own gate reported them clean'
-status: in-progress
+status: todo
 type: bug
 priority: high
 tags:
-    - precision
-    - probes
     - witnesses
     - infra
+    - reorg-2026-10-04
+    - precision
+    - probes
 created_at: 2026-08-08T09:40:00Z
-updated_at: 2026-09-04T21:36:37Z
+updated_at: 2026-10-04T15:10:43Z
+parent: qou-9nnz
 ---
 
 
@@ -485,3 +487,9 @@ real gap in the probe and is named in `qou-49vn`.
 not "which of two numbers", but whether the whole committed `chi-*-at-q0-50dps`
 family is cache-carried past two fixes written to distrust that cache. It still
 needs the Rust kernel restored before any verdict — see `qou-49vn` step 1.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

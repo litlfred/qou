@@ -3,8 +3,12 @@
 title: 'GAP: muon magnitude of SDeformedVolume channel — boost-rapidity factor c=√A≈1.43'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-01T23:34:46Z
-updated_at: 2026-08-01T23:34:46Z
+updated_at: 2026-10-04T15:20:14Z
+parent: qou-avtq
 ---
 
 Deriving `S = Q_β/E₀` (Subgoal-2) via the SDeformedVolume channel

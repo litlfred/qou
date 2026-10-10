@@ -1,12 +1,14 @@
 ---
 # qou-n2cl
 title: 'Route E for A_ω (Bring embedding → ideal triangulation → Neumann–Zagier data): the exact wall'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T09:01:48Z
-updated_at: 2026-09-06T09:52:25Z
-parent: qou-2akx
+updated_at: 2026-10-04T15:13:53Z
+parent: qou-avtq
 ---
 
 Owner asked 2026-09-06: "If we restrict to Bring's surface can we do more" on A_ω. Corpus answer (bean qou-arc1, audit 2026-08-11-aomega-internal-derivation-attack-options.md §3 Route E): the ONLY Bring-specific handle on A_ω is Route E — derive the Neumann–Zagier gluing data of an ideal triangulation of S³∖K from the Bring embedding of K, so the 3d-index (hence the q→0 Stokes/DT count) becomes internal by construction.
@@ -34,3 +36,9 @@ The Bring/CS/Lawson dialog (docs/audits/2026-09-06-bring-cs-lawson-dialog-assess
 - **3-manifold leg (knot complements).** `‖S³∖K‖ = Vol(S³∖K)/v₃` with `v₃` the regular ideal tetrahedron volume — Martelli Thm 13.2.11 (`Vol = v₃‖M‖`, :158-159), Prop 13.2.13 `Vol ≤ v₃‖M‖` (:208). So `‖S³∖4₁‖ = 2` exactly (two regular ideal tetrahedra), and `‖S³∖5₂‖ = Vol(5₂)/v₃ ≈ 2.83`, not an integer.
 
 What this buys: a common *frame* — both legs carry a Gromov norm, proportional to hyperbolic volume/area on each — which is what the dialog was looking for and then dismissed. What it does NOT buy, stated so nobody reads it otherwise: **no numerical relation between `12` and any framework quantity is proposed or admissible** — `‖X_Bring‖ = 12 = Area/π` is a topological count (`2|χ|`), and reading it against a coordination number, a kissing number, or `A = 12` would be the selection-against-target fit the NO-FITTING rule names. The wall in items 1–4 above is untouched: a Gromov norm on each side is not a dictionary between the sides.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

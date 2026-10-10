@@ -3,8 +3,12 @@
 title: Align 29 sibling stubs whose lean.ref has no candidate-2 resolution (MISMATCH/NEEDED)
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T00:12:11Z
-updated_at: 2026-08-09T00:12:11Z
+updated_at: 2026-10-04T15:16:18Z
+parent: qou-6qbv
 ---
 
 

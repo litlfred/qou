@@ -1,14 +1,16 @@
 ---
 # qou-notr
-title: 'The notation register contradicts itself on seven points, including the z convention the owner settled and its own E rule'
+title: The notation register contradicts itself on seven points, including the z convention the owner settled and its own E rule
 status: todo
 type: task
 priority: normal
 tags:
     - notation
     - convention-d
+    - reorg-2026-10-04
 created_at: 2026-08-22T07:40:00Z
-updated_at: 2026-08-22T08:05:00Z
+updated_at: 2026-10-04T15:24:58Z
+parent: qou-mub3
 ---
 
 From `agent:pq_11`, the batch that closed the trap drain. These matter more than

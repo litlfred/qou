@@ -3,8 +3,12 @@
 title: 'qou-8pl1/e: the colour route after the marked-pair exclusion — which premise gets dropped?'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T11:05:00Z
-updated_at: 2026-08-07T12:00:00Z
+updated_at: 2026-10-04T15:23:04Z
+parent: qou-8lxd
 ---
 
 Parent: `qou-8pl1`. Successor to `qou-8p1b`, which closed with a **scope-(b)

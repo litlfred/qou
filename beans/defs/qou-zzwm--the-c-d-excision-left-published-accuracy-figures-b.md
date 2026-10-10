@@ -1,11 +1,15 @@
 ---
 # qou-zzwm
 title: The C->D excision left published accuracy figures behind — my mass table was the first, not the only
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-08-30T08:06:31Z
-updated_at: 2026-08-30T09:36:16Z
+updated_at: 2026-10-04T15:14:08Z
+parent: qou-cdx1
 ---
 
 FOUND while answering the owner's question "investigate 2.4 accuracy loss --
@@ -178,3 +182,9 @@ COORDINATED: posted findings on #6144 (their 95-field C->D movement profile was
 measured against the pre-fix TR_M[5] = z^3 -- the h*z^2+z fix landed 14 min
 before their last commit and their branch does not carry it; verified directly)
 and on #6058 (their finding 1 landed on main as 064eff1240 / 8a505f2b5a).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

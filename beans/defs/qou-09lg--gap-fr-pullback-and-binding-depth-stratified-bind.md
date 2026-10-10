@@ -4,8 +4,11 @@ title: 'GAP: fr_pullback_* and binding_depth_stratified_* bind q as a Python flo
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T16:17:15Z
-updated_at: 2026-08-29T16:17:54Z
+updated_at: 2026-10-04T15:20:01Z
+parent: qou-9nnz
 ---
 
 Parent: qou-k6b3. Surfaced draining the F64_ENGINE_ENTRY PROPAGATES bucket

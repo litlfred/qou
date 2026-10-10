@@ -1,10 +1,14 @@
 ---
 # qou-sym2
-title: 'Sym2Gate.lean is vacuous — demote or encode the real decomposition claim'
+title: Sym2Gate.lean is vacuous — demote or encode the real decomposition claim
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-06T00:00:00Z
+updated_at: 2026-10-04T15:24:41Z
+parent: qou-6qbv
 ---
 
 ## The defect

@@ -5,10 +5,12 @@ status: todo
 type: task
 priority: normal
 tags:
-    - qa-sidecar
     - block-qa
+    - reorg-2026-10-04
+    - qa-sidecar
 created_at: 2026-08-22T07:30:00Z
-updated_at: 2026-08-22T07:50:00Z
+updated_at: 2026-10-04T15:24:59Z
+parent: qou-5vkl
 ---
 
 Found while validating a batch whose sidecars carried exactly two `agent:pq_12`
@@ -182,4 +184,3 @@ capability limit: 28 edits to other agents' verdicts should be applied
 deliberately — by extending the checker with a `--resolve` mode that drops the
 un-noted default, or by whoever owns the axis — not as a side effect of an
 audit that happened to notice them.
-

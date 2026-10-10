@@ -1,11 +1,14 @@
 ---
 # qou-v1eu
 title: 'Route C M3: derive the pretzel''s GL(r) normalisation from the q-Wronskian pairing (GGM 92/93)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T17:43:28Z
-updated_at: 2026-09-14T17:44:03Z
+updated_at: 2026-10-04T15:13:52Z
+parent: qou-v2om
 ---
 
 
@@ -445,3 +448,9 @@ computing more**: Part 1's G3 wording (fixed by Part 2's G5), Part 2's attributi
 Three of the five looked like compute bugs and were source-reading gaps. The one genuine compute
 bug found in the tranche — Part 12b's `(-1)**(-k)` float — was found by reading a WITNESS, also
 not by computing.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-14 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

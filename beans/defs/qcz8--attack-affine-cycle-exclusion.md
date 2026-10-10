@@ -1,12 +1,14 @@
 ---
 # qcz8
 title: 'Attack B: full nontrivial-cycle exclusion (affine A≠1 case)'
-status: in-progress
+status: todo
 type: task
 priority: medium
-parent: qcz6
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-24T16:46:17Z
-updated_at: 2026-07-24T21:14:30Z
+updated_at: 2026-10-04T15:14:33Z
+parent: qcz14
 ---
 
 Goal: no periodic orbit with holonomy A = [3]_q^{ko}/[2]_q^k ≠ 1 other than
@@ -38,3 +40,9 @@ PROGRESS (period-1 case CLOSED): qcollatz_odd_fixed_point (odd fixed pt forces q
 PERIOD-1 CLOSED (odd fixed pt -q^-2, even fixed pt 0, neither positive). WALL: period>=2 affine exclusion = q-analog Steiner/Simons-de Weger cycle-value bound (needs height/valuation input). Census (<=period 18) is negative evidence only. Documented in the 2026-07-18 audit.
 
 PERIOD-2 CLOSED: qcollatz_period2_eveneven (EE => q(q+2)P=0 => P=0), _oddodd (OO => (q^2+2q+2)(P-P1)=0 => P=P1, degenerates), _evenodd (EO => q*P1=1 => P1=q^-1, the fundamental). Only positive 2-cycle is {q^-1,1+q^-1}. Sorry-free. Period>=3 still open (q-Steiner).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-07-24 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -4,8 +4,11 @@ title: 'The committed chi caches carry a value no live route reproduces: cached 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T19:13:20Z
-updated_at: 2026-09-05T19:14:14Z
+updated_at: 2026-10-04T15:24:53Z
+parent: qou-v2om
 ---
 
 

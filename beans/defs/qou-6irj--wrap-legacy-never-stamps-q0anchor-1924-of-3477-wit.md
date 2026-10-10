@@ -4,8 +4,11 @@ title: 'wrap_legacy never stamps q0Anchor: 1,924 of 3,477 witnesses (55.3%) are 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T03:21:09Z
-updated_at: 2026-09-04T03:21:40Z
+updated_at: 2026-10-04T15:25:40Z
+parent: qou-5vkl
 ---
 
 ## Measured 2026-09-04 (branch claude/standard-model-terms-status-ftoejr)

@@ -1,11 +1,14 @@
 ---
 # qou-rv6z
 title: 'Orphan witness a4-interface-magnitude-one-scalar-gate: no provenance, no producer, carries stale z_C; needs a producer before its number can be regenerated'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T11:21:24Z
-updated_at: 2026-08-30T12:54:29Z
+updated_at: 2026-10-04T15:13:25Z
+parent: qou-5vkl
 ---
 
 RESOLVED 2026-08-30. Producer written: computations/deltalambda/a4_interface_magnitude_one_scalar_gate.py.
@@ -51,3 +54,9 @@ json.loads it. Checked before changing shape, not after.
 NOT MINE: the ratchet reports regressed 0 -> 1, which is
 he-nu-sdp-saturation-obstruction.witness.json (5 -> 11), untouched by this
 branch and last modified on main by fcc65c1380 (qou-tekx muon-pin fix).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

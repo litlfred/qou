@@ -3,8 +3,12 @@
 title: Cite [avrin-2012] at rem:knot-formula-table
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:46Z
-updated_at: 2026-08-08T23:35:46Z
+updated_at: 2026-10-04T15:17:24Z
+parent: qou-1qhv
 ---
 
 rem:knot-formula-table is the folio's knot-to-particle dictionary and fundamental-knots-operator-basis is its operator table; neither cites the registered prior art whose bibliography note explicitly flags the overlap.

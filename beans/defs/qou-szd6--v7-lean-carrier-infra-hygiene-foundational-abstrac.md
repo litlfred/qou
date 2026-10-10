@@ -4,9 +4,11 @@ title: 'V7 Lean carrier + infra hygiene (foundational): abstract keystone carrie
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-19T02:56:27Z
-updated_at: 2026-07-19T02:57:06Z
-parent: qou-wzgm
+updated_at: 2026-10-04T15:25:24Z
+parent: qou-5vkl
 ---
 
 

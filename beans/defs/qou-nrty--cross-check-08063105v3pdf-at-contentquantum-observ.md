@@ -4,8 +4,11 @@ title: Cross-check 0806.3105v3.pdf at content/quantum-observable-universe/append
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:56Z
-updated_at: 2026-08-21T17:05:00Z
+updated_at: 2026-10-04T15:18:16Z
+parent: qou-t6rw
 ---
 
 Evaluate Q_e = -(e/6)(w + r + 1) and t_0 = -(r+1)/6 on the QOU proton/neutron knot states: the nucleon doublet is the recorded falsification for writhe-only Y, so whether adding r separates it is a one-shot decisive test of the candidate. A pass does not wire it (the correspondence is fitted upstream); a fail prunes the candidate.

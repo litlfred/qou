@@ -4,8 +4,11 @@ title: float64 taint in meson_gmor_derivation_probe.py:276 (winner_vs_fusion via
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-03T04:24:34Z
-updated_at: 2026-09-03T04:25:02Z
+updated_at: 2026-10-04T15:19:12Z
+parent: qou-9nnz
 ---
 
 Surfaced by mpf-mixed-arithmetic-audit during a precision-gates.sh --changed run on 2026-09-03 (unrelated to the qou-o6ov work that triggered the gate). Pre-existing, not introduced by me.

@@ -1,11 +1,13 @@
 ---
 # qou-83g1
 title: 'RETRACTED: the pdf-structure outline-preference defect is environment-dependent, not a file defect'
-status: todo
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T21:55:50Z
-updated_at: 2026-08-25T21:56:39Z
+updated_at: 2026-10-04T15:24:10Z
 ---
 
 In commit `02105d0517` and in the PR #5799 body I wrote that
@@ -50,3 +52,9 @@ regeneration is a no-op.
 **Lesson for the ingest path specifically:** two agents ingesting the same PDF in
 parallel produce add/add conflicts on every generated artifact. Worth checking
 `origin/main` for the doc-id before ingesting, which I did not do.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [B] title begins RETRACTED - the bean records its own retraction; nothing left to do (keep as record, status completed)

@@ -25,8 +25,8 @@ $$
   h(i,s) \;=\; (\lambda_i - s) + (r - i).
 $$
 
-**(L4) The row sum.** By (L2), $2h(r,j) - 1 = 2(s-j) + 2\,\mathrm{colLen}(j)
-- 2r - 1$. Summing over $j = 0, \ldots, s-1$ and using
+**(L4) The row sum.** By (L2), $2h(r,j) - 1 = 2(s-j) + 2\,\mathrm{colLen}(j) - 2r - 1$.
+Summing over $j = 0, \ldots, s-1$ and using
 $\sum_{j<s}(s-j) = \tfrac{1}{2}s(s+1)$,
 
 $$

@@ -4,8 +4,11 @@ title: triv_hecke and triv_wedderburn are globally registered PUnit instances th
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T16:32:45Z
-updated_at: 2026-08-21T16:34:00Z
+updated_at: 2026-10-04T15:25:12Z
+parent: qou-6qbv
 ---
 
 Branch `claude/wedderburn-instance-artin-2026-08-21`, PR #5387.

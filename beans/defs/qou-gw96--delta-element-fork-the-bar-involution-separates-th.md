@@ -1,11 +1,14 @@
 ---
 # qou-gw96
 title: 'Delta element fork: the bar involution separates the two models — Delta_S is exactly bar-odd, Delta_L has no definite parity'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T00:50:31Z
-updated_at: 2026-08-29T00:50:58Z
+updated_at: 2026-10-04T15:12:17Z
+parent: qou-v2om
 ---
 
 ## Measured (scope-(a)), `qbeta_delta_bar_parity_probe.py`, 14/14
@@ -60,3 +63,9 @@ the criterion has independent standing, the order of discovery does not.
 
 Nothing is wired; no c_k is proposed; the fork is NOT adjudicated here.
 Remains an owner call.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-29 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

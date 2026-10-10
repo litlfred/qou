@@ -1,12 +1,14 @@
 ---
 # qou-4wl1
 title: 'A3 (leg 2): bound remainder |R|<|g''(0)| via mixed-cumulant (Sniady genus) scaling'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-25T03:30:08Z
-updated_at: 2026-07-25T11:14:07Z
-parent: qou-v8t7
+updated_at: 2026-10-04T15:10:48Z
+parent: qou-m6dn
 ---
 
 ## A3 — leg 2: remainder |R|<|g'(0)|. Complete-monotonicity route TESTED and REFUTED (2026-07-25).
@@ -20,3 +22,9 @@ is necessary but not sufficient; it just re-expresses the Phase-7 bound |R|<|g'(
 STATUS: remainder-domination target stands but WITHOUT the CM/Bernstein shortcut. Next: the genus
 grading (Śniady 0411647) as an effective (not exact) bound on the mixed cumulants — the harder route.
 Audit: 2026-07-25-covariance-kernel-complete-monotonicity-target.md.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-07-25 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -1,11 +1,14 @@
 ---
 # qou-cvst
-title: 'Does the 4_1 character variety carry the odd-odd Behrend stratum the parity obstruction demands?'
+title: Does the 4_1 character variety carry the odd-odd Behrend stratum the parity obstruction demands?
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-11T11:00:00Z
-updated_at: 2026-08-11T11:00:00Z
+updated_at: 2026-10-04T15:18:53Z
+parent: qou-frzo
 ---
 
 Deferred follow-up to qou-dt14 (PR #4998, DTBehrendParityObstruction.lean). That result proved a

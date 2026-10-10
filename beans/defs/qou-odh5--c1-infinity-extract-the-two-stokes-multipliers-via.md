@@ -1,11 +1,14 @@
 ---
 # qou-odh5
 title: 'C1 infinity: extract the TWO Stokes multipliers via q-Borel/theta resummation (leading blocks now known)'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-06T23:30:00Z
-updated_at: 2026-09-07T06:22:35Z
+updated_at: 2026-10-04T15:10:50Z
+parent: qou-frzo
 ---
 
 ## Why this matters
@@ -284,3 +287,9 @@ Work continues from `main` on `claude/alien-calculus-surreal-integration-2t823z`
 closure audit names as the successor — NOT the retired RSZ slope-½ chain, and NOT
 the local-isoformal object that `2026-08-08-c1-infinity-has-no-stokes-multiplier.md`
 proves has dimension 0.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

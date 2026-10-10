@@ -3,8 +3,12 @@
 title: Cite [geck-lambropoulou-2004] at conj:type-b-folding-cpt
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:42Z
-updated_at: 2026-08-08T23:34:42Z
+updated_at: 2026-10-04T15:17:35Z
+parent: qou-1qhv
 ---
 
 Move or add the citation to the block that actually needs type-B trace theory: conj:type-b-folding-cpt asserts a bar-invariance property of the folded type-B picture with no trace-side source, and Thm 4.3 classifies exactly the Markov traces available there. The existing entry at hecke-markov-interpretation.ts:22 sits on a purely type-A block and should be reconsidered or dropped.

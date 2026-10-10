@@ -3,8 +3,12 @@
 title: unified_iterative_correction_jet still carries the disproved sign gate (zero callers, so not changed)
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-12T22:56:20Z
-updated_at: 2026-09-12T22:56:20Z
+updated_at: 2026-10-04T15:25:16Z
+parent: qou-v2om
 ---
 
 

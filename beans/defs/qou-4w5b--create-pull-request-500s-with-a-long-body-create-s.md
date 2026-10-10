@@ -1,12 +1,13 @@
 ---
 # qou-4w5b
 title: GitHub PR create, update AND merge all 5xx intermittently — and a 5xx does NOT mean the write failed; re-read before retrying
-status: todo
+status: completed
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T09:09:13Z
-updated_at: 2026-09-13T11:53:30Z
-updated_at: 2026-09-13T10:32:20Z
+updated_at: 2026-10-04T15:20:38Z
 ---
 
 ## Measured 2026-09-13, opening #7281
@@ -231,3 +232,9 @@ no-ops too. Two sessions, same check, same answer.
 
 **Practical upshot, unchanged:** open with a short body, fill it in with a
 second call, and put anything long in a comment.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] f-a cat-harness/skills/conduct/conduct-core/retry-backoff.md + src/core/retry.ts cover 5xx re-read-before-retry

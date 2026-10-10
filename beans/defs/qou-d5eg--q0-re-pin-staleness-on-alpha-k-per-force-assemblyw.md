@@ -4,8 +4,11 @@ title: 'q0 re-pin staleness on alpha-k-per-force-assembly.witness.json: committe
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-11T00:51:30Z
-updated_at: 2026-08-15T22:32:50Z
+updated_at: 2026-10-04T15:22:54Z
+parent: qou-2002
 blocked_by:
     - qou-7vm4
 ---

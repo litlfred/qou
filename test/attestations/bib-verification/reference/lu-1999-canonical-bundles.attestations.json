@@ -1,0 +1,49 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "lu-1999-canonical-bundles",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 132,
+      "entry": {
+        "id": "lu-1999-canonical-bundles",
+        "status": "pending-placement",
+        "verified_at": "2026-05-19T23:58:55Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": "(this commit)",
+        "note": "Lu canonical bundle sections over Riemann surface. No QOU citation site located. Status: defer to author.",
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-9911033v1/9911033v1.pdf"
+        },
+        "local_pdf": "library/arxiv-math-9911033v1/9911033v1.pdf",
+        "relevance": {
+          "verdict": "not-relevant",
+          "rationale": "JOIN CONFIRMED from front matter (arXiv identifier and subject match the registered entry). BIB ORPHAN: the ref() entry exists but there are ZERO citation sites anywhere in content/ \u2014 no .md \\cite, no .ts cites[], no Lean -- Ref:. The registered entry's own note already admits this and marks it pending-placement; nothing has been placed since. Judging on the merits rather than deferring again: the document is about lower-bound estimates for L^2 norms of holomorphic sections of L^m over a Kaehler manifold, a counterexample, partial uniform estimates and a uniform corona problem (its own table of contents, \u00a71-5). What the folio's Riemann-surface chapters need from that side is arithmetic and period-matrix data for Bring's curve (hauptmodul, j-invariants, the Prym/Jacobian isogeny), none of which is estimate-theoretic. Corpus grep for 'canonical bundle', 'Bergman kernel' and 'holomorphic sections' across folio/quantum-observable-universe/**/*.md returns nothing. Scope: this document, as read, supplies nothing this folio can consume \u2014 not a claim that Kaehler estimate techniques are excluded from the framework.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "No citation site exists and none is warranted: the estimate-theoretic content has no consumer in the Bring's-curve chapters, whose needs are arithmetic and period-theoretic. The honest disposition is to leave the entry as a recorded non-placement rather than manufacture a citation.",
+              "target": "rem:x5-bring-prym-jacobian"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "196c05d2e341"
+        }
+      }
+    }
+  ]
+}

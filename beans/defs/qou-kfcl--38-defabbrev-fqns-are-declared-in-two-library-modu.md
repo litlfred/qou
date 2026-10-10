@@ -1,11 +1,14 @@
 ---
 # qou-kfcl
 title: 38 def/abbrev FQNs are declared in two library modules each — those module pairs can never be imported together, and QOU.R_q means two different rings
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T16:49:53Z
-updated_at: 2026-08-30T11:40:08Z
+updated_at: 2026-10-04T15:11:46Z
+parent: qou-rtxm
 ---
 
 
@@ -371,3 +374,9 @@ throughout: each module `lean`-direct exit 0 with olean rebuilt,
 call over one module pair: `addCell` / `IsAddableCell`,
 `YoungDiagramAddCell` (2 importers) vs `YoungDiagramAddable` (1, in the root
 build), both consumed.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

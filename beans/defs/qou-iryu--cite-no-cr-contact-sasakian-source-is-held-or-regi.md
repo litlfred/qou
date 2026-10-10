@@ -4,9 +4,11 @@ title: 'CITE: no CR / contact / Sasakian source is held OR registered — U — 
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T09:04:09Z
-updated_at: 2026-09-04T09:04:09Z
-parent: qou-8lxd
+updated_at: 2026-10-04T15:14:45Z
+parent: qou-mub3
 ---
 
 **Class U — and this is the strongest absence on the arc: nothing is held AND

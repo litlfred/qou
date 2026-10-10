@@ -4,9 +4,11 @@ title: 'B6: census -> Lean bridge — "no positive cycle <= period N" as a Lean 
 status: todo
 type: task
 priority: low
-parent: qcz14
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-25T03:30:00Z
-updated_at: 2026-07-25T03:30:00Z
+updated_at: 2026-10-04T15:25:46Z
+parent: b9cj
 ---
 
 Lean-certify what the exact Python census (computations/qcollatz_cycle_census.py,

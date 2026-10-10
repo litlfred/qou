@@ -1,0 +1,62 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "arxiv-hep-th-9506138v1",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 337,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-hep-th-9506138v1/9506138v1.pdf"
+        },
+        "id": "arxiv-hep-th-9506138v1",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Sets black hole complementarity against locality: it examines whether the complementarity picture can be reconciled with local effective field theory outside the horizon, and this is the standard reference for the tension between the two. Its value to the folio is as a counterweight, not as support. rem:information-paradox-incompleteness picks 'information is preserved but inaccessible' and rejects the other two positions without recording any cost; the locality tension is the principal known objection to the position it picks. Under the corpus's own critical-distance discipline, an interpretive block that adopts a contested position should carry the contest. Supporting, not core: nothing in the derivation chain moves, and the corpus has no effective-field-theory layer for the argument to bite on formally.",
+          "keyResults": [
+            {
+              "locator": "Abstract and introduction",
+              "statement": "Black hole complementarity is in tension with locality/effective field theory outside the horizon; reconciling the two requires giving something up.",
+              "useForFolio": "Supplies the caveat that rem:information-paradox-incompleteness currently omits when it adopts the 'preserved but inaccessible' position.",
+              "targets": [
+                "rem:information-paradox-incompleteness"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Relevant, no ref() entry.",
+              "target": "rem:information-paradox-incompleteness",
+              "bean": "qou-41b3"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "The block adopts a contested position on the information paradox and states no cost; the locality tension should be cited there so the choice is visibly a choice.",
+              "target": "rem:information-paradox-incompleteness",
+              "bean": "qou-y0tj"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "bb85afba0530"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

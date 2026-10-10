@@ -62,8 +62,9 @@ coefficients past index 14 (bean `qou-lrnd`).
 
 The original observation about the *trace* witness stands and is unrelated:
 `habiro-frobenius-probe.witness.json` records `abs_frob` at **one** embedding
-per prime, frequently `< 1` (proton at `p = 11`: `0.046`), which is not an
-orbit.
+per prime, frequently `< 1` (for the proton at `p = 11`, see its
+`atoms.0.frobenius.4.abs_frob`: read the value there, it is not copied here
+so it cannot drift), which is not an orbit.
 
 Ref: [yekutieli2010] — obstruction theory
 -/

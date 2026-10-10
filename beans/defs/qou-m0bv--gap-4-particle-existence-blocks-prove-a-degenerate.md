@@ -3,8 +3,12 @@
 title: 'GAP: 4 particle-existence blocks prove a degenerate witness (zero-mass proton, two-unknot hadron)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T19:26:21Z
-updated_at: 2026-08-08T19:26:21Z
+updated_at: 2026-10-04T15:19:37Z
+parent: qou-wp3h
 ---
 
 

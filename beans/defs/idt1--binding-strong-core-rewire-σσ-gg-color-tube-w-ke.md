@@ -3,8 +3,13 @@
 title: 'Binding strong-core rewire: σ/σ⁻¹ → gg color-tube W (keystone-gated, 754x step 5b)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-06-30T23:51:28Z
-updated_at: 2026-06-30T23:51:28Z
+updated_at: 2026-10-04T15:16:42Z
+parent: qou-v2om
 ---
 
 

@@ -1,0 +1,122 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "lovejoy-osburn",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 260,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1710.04865v2/1710.04865v2.pdf"
+        },
+        "id": "lovejoy-osburn",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Genuine orphan with two named places that want it. First, conj:three-knot-jet-order-independence states that the Habiro cyclotomic expansion J_K(q) = sum c_n(K) (q;q)_n supplies the vertical jet-degree grading and that algebraic independence to order N is 'strictly decidable' \u2014 but it is stated for three knots. This document gives explicit q-hypergeometric formulas for the colored Jones polynomial of the double twist knots K(-m,-p) and K(-m,p), i.e. computable c_n for an infinite family, which is exactly the data needed to test that decidable claim beyond three knots. Second, conj:b1-hyperbolic-rows-theorem conditionally covers twist-knot rows and its Table 2 lists Bring-embeddable hyperbolic knots awaiting Volume-Conjecture discharge; twist knots are the p = 1 sub-family here. Honest scope: this paper supplies FORMULAS, not VC discharges, so it does not close any Table 2 row \u2014 the corpus's own text says 'the rate-limiting step is the VC discharge per knot', and this is not one. I read the abstract, \u00a71 and eq. (1.1) (the Lauridsen cyclotomic expansion the paper builds on). Supporting, not core: no folio block currently uses double-twist-knot cyclotomic coefficients.",
+          "keyResults": [
+            {
+              "locator": "Abstract; \u00a71",
+              "statement": "Explicit formulas for the colored Jones polynomial of the double twist knots K(-m,-p) and K(-m,p), which in the (-m,-p) case yield q-hypergeometric families generalizing the Kontsevich-Zagier series, together with a duality at roots of unity with the generating function for strongly unimodal sequences.",
+              "useForFolio": "Supplies computable cyclotomic coefficients c_n(K) for an infinite knot family, which is the input conj:three-knot-jet-order-independence needs to be tested past its current three knots.",
+              "targets": [
+                "conj:three-knot-jet-order-independence",
+                "conj:b1-hyperbolic-rows-theorem"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry; two blocks (the jet-order-independence conjecture and the hyperbolic-rows conjecture) work with exactly the objects this paper computes.",
+              "target": "conj:three-knot-jet-order-independence",
+              "bean": "qou-g1zx"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "The folio computes Habiro cyclotomic expansions for the Borromean rings (computations/habiro_borromean_colored_jones.py, aj_borromean_colored_jones_tower.py). The double-twist formulas here are an independent source of c_n for a family that includes 4_1 (= K(2)), giving a cross-check of the folio's cyclotomic machinery on a knot it already uses. Cross-check only \u2014 do not adopt any coefficient because it matches.",
+              "target": "computations/habiro_borromean_colored_jones.py",
+              "bean": "qou-ybzb"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "ac8f436173d5"
+        },
+        "note": "Bib key backfilled from duplicate copy of cjdoubletwistfinal, which carries this key. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    },
+    {
+      "position": 373,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/cjdoubletwistfinal/cJdoubletwistfinal.pdf"
+        },
+        "id": "lovejoy-osburn",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Proves a formula for the colored Jones polynomial of the double twist knots K(-m,-p) and K(-m,p); in the (-m,-p) case this produces new families of q-hypergeometric series generalising the Kontsevich-Zagier series, and comparison with the cyclotomic expansion of the K(m,p) colored Jones gives a generalisation of the root-of-unity duality between the Kontsevich-Zagier function and the generating function for strongly unimodal sequences. The corpus's Habiro layer sits inside this family: prop:habiro-tail-archimedean-action works with the 4_1 Kashaev-Habiro cyclotomic tail S(q) = sum prod (1-q^j)(1-q^{-j}) and its resurgent action pi^2/5, masbaum2003 is registered specifically for Habiro's TWIST-knot cyclotomic expansions (4_1 = K_{-1}, trefoil = K_1), and the document itself notes that its m = 1 specialisation K(1,p) is the usual p-th twist knot. So this is the one-parameter generalisation of the exact family the corpus computes in, and the strongly-unimodal duality is the kind of q-series identity the c_k / Habiro programme keeps looking for. Supporting rather than core: the corpus's derivations all live at 4_1 and the trefoil, which are already covered by the registered twist-knot source; nothing here is consumed today, and the value is as a family to cross-check against.",
+          "keyResults": [
+            {
+              "locator": "Theorem 1.1 and the (-m,-p) case",
+              "statement": "An explicit formula for the colored Jones polynomial of the double twist knots K(-m,-p) and K(-m,p), yielding new q-hypergeometric families generalising the Kontsevich-Zagier series, with m = 1 recovering the usual twist knots.",
+              "useForFolio": "Extends the corpus's single-knot Habiro-tail computation to a two-parameter family, giving cross-check targets for the tail's bar-parity and resurgent-action machinery beyond 4_1.",
+              "targets": [
+                "prop:habiro-tail-archimedean-action"
+              ]
+            },
+            {
+              "locator": "the duality section (comparison with the cyclotomic expansion of J_N(K(m,p)))",
+              "statement": "A generalisation of the duality at roots of unity between the Kontsevich-Zagier function and the generating function for strongly unimodal sequences.",
+              "useForFolio": "A root-of-unity duality on the same objects the corpus evaluates at roots of unity in the Habiro/zeta-fibre work; a candidate structural identity to test rather than a number to adopt.",
+              "targets": [
+                "prop:habiro-tail-archimedean-action"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Relevant, no ref() entry; complements the registered twist-knot cyclotomic source with the double-twist generalisation.",
+              "target": "prop:habiro-tail-archimedean-action",
+              "bean": "qou-au5j"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "Run the corpus's tail machinery (bar-parity of the tail, optimal-truncation resurgent action) on one or two members of the double-twist family beyond 4_1, to test whether the pi^2/5 action is a 4_1 accident or a family pattern. Cross-check only: any agreement is evidence about the construction, not a value to wire.",
+              "target": "prop:habiro-tail-archimedean-action",
+              "bean": "qou-9zcl"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "a1e18db5232b"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

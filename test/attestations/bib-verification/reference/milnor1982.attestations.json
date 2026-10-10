@@ -1,0 +1,28 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "milnor1982",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 416,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/milnor-1982-hyperbolic-geometry-the-first-150-years/milnor-1982-hyperbolic-geometry-the-first-150-years.pdf"
+        },
+        "id": "milnor1982",
+        "status": "unreviewed",
+        "note": "Source IS held: library/milnor-1982-hyperbolic-geometry-the-first-150-years. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+        "verified_at": "2026-09-03T04:19:53Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

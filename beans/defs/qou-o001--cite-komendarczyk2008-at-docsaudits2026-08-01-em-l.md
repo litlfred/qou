@@ -3,8 +3,12 @@
 title: Cite [komendarczyk2008] at docs/audits/2026-08-01-em-linking-reads-round1.md
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:11Z
-updated_at: 2026-08-08T23:34:11Z
+updated_at: 2026-10-04T15:17:42Z
+parent: qou-mub3
 ---
 
 Add refid-keyed citation sites in the em-linking audit doc (and in any bean qou-o6ml artifact) so the Thm 6.1 / Rem 2.6 / eq. (43) findings stop living only in a references.ts note.

@@ -3,8 +3,12 @@
 title: 'main is RED: QJucysMurphy.lean uses ring on a NONCOMMUTATIVE algebra — 6 sites, none compile'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T13:30:42Z
-updated_at: 2026-08-15T13:30:42Z
+updated_at: 2026-10-04T15:21:24Z
+parent: qou-5vkl
 ---
 
 Found while building QOU for an unrelated UGB change (qou-auq3). Not mine to fix: QOU/SchurWeyl/QJucysMurphy.lean is bean qou-ck0g, in-progress with another session.

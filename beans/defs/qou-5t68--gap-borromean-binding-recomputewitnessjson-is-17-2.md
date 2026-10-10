@@ -4,8 +4,11 @@ title: 'GAP: borromean-binding-recompute.witness.json is 17-23% stale — and th
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T10:01:14Z
-updated_at: 2026-08-24T13:49:11Z
+updated_at: 2026-10-04T15:19:46Z
+parent: qou-v2om
 ---
 
 Found while converting `probe_9b_perlambda_brane_tower.py` for the convention-C

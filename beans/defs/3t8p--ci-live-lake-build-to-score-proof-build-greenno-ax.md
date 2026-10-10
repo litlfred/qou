@@ -6,8 +6,10 @@ type: task
 priority: normal
 tags:
     - lightning-followup
+    - reorg-2026-10-04
 created_at: 2026-07-06T04:11:12Z
-updated_at: 2026-09-27T10:34:14Z
+updated_at: 2026-10-04T15:16:57Z
+parent: qou-5vkl
 ---
 
 3 CI-only Lean criteria n/a on path (214/118/191). Need proof-objects.json+axiom-report.txt from full lake build. Run in lean_ci.yml.

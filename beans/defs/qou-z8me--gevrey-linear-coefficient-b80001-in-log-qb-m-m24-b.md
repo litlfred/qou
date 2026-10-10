@@ -1,11 +1,15 @@
 ---
 # qou-z8me
-title: 'Gevrey linear coefficient B=8.0001 in -log_q|b_m| = m^2/4 + Bm + C — exactly 8, or a log-correction artifact? (do NOT read as the self-linking 8 until derived)'
+title: Gevrey linear coefficient B=8.0001 in -log_q|b_m| = m^2/4 + Bm + C — exactly 8, or a log-correction artifact? (do NOT read as the self-linking 8 until derived)
 status: todo
 type: task
 priority: low
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-08-07T01:00:00Z
-updated_at: 2026-08-07T01:00:00Z
+updated_at: 2026-10-04T15:25:58Z
+parent: qou-frzo
 ---
 
 ## Observation (PR #4647, `c3_w2_c1_qborel_singularity.py`)

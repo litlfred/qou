@@ -5,13 +5,14 @@ status: in-progress
 type: task
 priority: high
 tags:
+    - reorg-2026-10-04
     - qbeta
     - dilogarithm
     - 5two
     - analysis
 created_at: 2026-08-07T21:15:00Z
-updated_at: 2026-09-26T11:07:06Z
-parent: qou-0yqu
+updated_at: 2026-10-04T15:11:06Z
+parent: qou-n4nr
 ---
 
 

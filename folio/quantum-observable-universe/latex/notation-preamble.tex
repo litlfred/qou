@@ -1,0 +1,41 @@
+% Notation fragment for the quantum-observable-universe paper.
+%
+% Appended after the folio-assistant-sci paper print template
+% (folio-assistant-sci/adapters/paper/latex/paper-preamble.tex) by the
+% paper-feature-build Tool, which reads this path by default. These lines are
+% VERBATIM from main.tex lines 1-827 at ddd4841b8ce (owner decisions D1/D2,
+% 2026-10-04, bean qou-feso): the paper's own notation, kept with the paper.
+% Do not edit a line here to fix a rendering; fix the .md.
+
+\newunicodechar{𝓑}{\unimathsafe{\mathcal{B}}}      % U+1D4D1 script B (braid word)
+\newcommand{\bigbowtie}{\mathop{\triangleright\!\!\!\triangleleft}}
+% Contact form (pseudo-Hermitian structure) symbol.  NOTE: paper-specific —
+% per this file's header, such macros belong in a paper's generated preamble,
+% not in the shared template; left here pending migration to the content repo.
+% \varTheta is the upright capital theta, visually distinct from the
+% lowercase contact-form letter θ and from italic \Theta.
+% Some recent TeX Live distributions predefine \varTheta; redefine safely.
+\providecommand{\varTheta}{}
+\renewcommand{\varTheta}{\mathrm{\Theta}}
+% ── Reeb / compound-macro stubs: REMOVED 2026-08-22 ───────────────────────────
+% This block defined 16 macros whose names are author typos — a control
+% sequence written without the space that separates it from the next token
+% (\pi c_s -> \pic_s, \xi Z -> \xiZ, \lambda L -> \lambdaL). Defining the
+% glued name makes the page compile, and that is the problem: it converts a
+% loud failure into silently-wrong printed mathematics. Two did exactly that.
+% \pic expanded to \pi, so `2\pic_s` printed 2\pi_s and the sound speed
+% vanished from a Hawking-temperature denominator that the same block's prose
+% writes correctly as 2\pi c_s. \xid expanded to \xi_d, so
+% `\mathcal{L}_\xid\alpha` printed the Lie derivative along a subscripted
+% field with no argument instead of \mathcal{L}_\xi d\alpha. \xid, \xiZ and
+% \xiA were commented here as "Reeb vector field variants"; no such notation
+% is registered in folio/quantum-observable-universe/notation/, so the
+% comment documents three typos as though they were notation.
+% Every source site is fixed; do not restore these. If one reappears, the
+% undefined-control-sequence error is the correct outcome — fix the .md.
+\newcommand{\pp}{p}             % prime p — used in p-adic content (\mathbb{Q}_\pp, \mathbb{F}_\pp, v_\pp). Italic per math-mode convention; not \mathfrak{p} which is reserved for the proton (CLAUDE.md §7aa).
+% \unicode{codepoint} — ConTeXt-style; used in appendix-surreals for ☉ (U+2609)
+\newcommand{\unicode}[1]{\ensuremath{\odot}}
+% Young-diagram macro stub (ytableau not loaded; renders partition as list)
+\newcommand{\yng}[1]{{\scriptsize[#1]}}
+\newunicodechar{𝔙}{\mathfrak{V}}

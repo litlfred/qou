@@ -4,8 +4,11 @@ title: 'Muon q0 has no canonical home: 336 files carry a stranded literal, three
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T19:59:35Z
-updated_at: 2026-08-24T12:46:10Z
+updated_at: 2026-10-04T15:21:39Z
+parent: qou-2002
 ---
 
 ## Standing on qou-khac, not replacing it

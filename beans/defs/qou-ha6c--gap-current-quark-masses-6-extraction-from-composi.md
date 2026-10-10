@@ -6,8 +6,10 @@ type: task
 priority: normal
 tags:
     - sm-26
+    - reorg-2026-10-04
 created_at: 2026-07-31T20:15:07Z
-updated_at: 2026-09-03T08:32:39Z
+updated_at: 2026-10-04T15:20:12Z
+parent: qou-8lxd
 blocked_by:
     - qou-bn8e
     - qou-o6ml

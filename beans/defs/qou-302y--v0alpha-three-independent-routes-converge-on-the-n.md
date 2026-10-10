@@ -4,9 +4,11 @@ title: 'V0/alpha: three independent routes converge on the NN interface energy s
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T18:45:57Z
-updated_at: 2026-08-30T03:34:50Z
-parent: qou-mhj9
+updated_at: 2026-10-04T15:25:20Z
+parent: qou-v2om
 ---
 
 NOT YET STARTED — scoping only, opened 2026-08-29 (PR #6059 session).

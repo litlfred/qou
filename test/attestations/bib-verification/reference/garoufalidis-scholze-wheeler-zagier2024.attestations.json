@@ -1,0 +1,71 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "garoufalidis-scholze-wheeler-zagier2024",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 308,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2412.04241v2/2412.04241v2.pdf"
+        },
+        "id": "garoufalidis-scholze-wheeler-zagier2024",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "This is the single highest-value citation gap in the slice, and it is a corpus problem rather than a reading backlog: the document is ALREADY deep-read and load-bearing across three layers of the repo, with no ref() entry anywhere. It is named by bare arXiv id in at least four Lean library files (QOU/Machinery/HeckeTauAssignmentGaugeGate.lean L38-39, HabiroBracketFamily.lean L22-26, HabiroZetaFamily.lean L5/L30-32, HabiroZeta4Bracket.lean L17), in 7 audit docs (2026-06-03-habiro-per-knot-lambda-derivation, 2026-06-09-per-basis-structural-invariants-scoping, 2026-07-26-tau-coherence-orbit-program-and-habiro-bridge \u2014 which contains a verified \u00a71.2-1.5 / \u00a74.5-4.6 deep-read addendum \u2014 2026-07-18-ck-odd-fibre-attack-options, 2026-07-11-qbeta-ck-untested-avenues-and-literature, 2026-06-04-h3-h4-jump-literature-import, 2026-07-19-a6-gswz-habiro-archimedean-state), and two probe scripts are named after it (computations/probes/gswz_frobenius_teichmuller_probe.py, gswz_padic_dilog_modp_probe.py). Because there is no ref() key, none of these citations is checkable by validate-refs and no Lean `-- Ref:` can point at it. Content check against the text confirms the corpus's reading: Def 1.1 gives the Frobenius-twisted p-adic re-expansion gluing between the root-of-unity fibres, and \u00a71.5 gives the K_3(K)-graded modules \u2014 the exact 'vertical edge' structure the tau-coherence orbit program (bean qou-vegn) is trying to name. I read \u00a71.1-1.5 (Prologue, integrality/congruence experiments, the original Habiro ring, the Habiro ring of K, the K_3-indexed modules) and the abstract's statement of the admissible-series / infinite-Pochhammer origin; that is enough to confirm the identification without re-doing the corpus's own \u00a74.5-4.6 read.",
+          "keyResults": [
+            {
+              "locator": "Def. 1.1 (\u00a71.4)",
+              "statement": "An element of the Habiro ring of a number field is a collection of power series f_m(x) in R[zeta_m][[x]], one per root of unity, satisfying a Frobenius-twisted p-adic re-expansion gluing f_m(x + zeta_pm - zeta_m) = (phi_p f_pm)(x).",
+              "useForFolio": "This is the executable form of the 'vertical edges' the tau-assignment gauge gate cites in prose; registering it lets HeckeTauAssignmentGaugeGate.lean carry a real -- Ref: key instead of a bare arXiv id in a docstring.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/Machinery/HeckeTauAssignmentGaugeGate.lean"
+              ]
+            },
+            {
+              "locator": "\u00a71.5",
+              "statement": "Modules H_{R,xi} over the Habiro ring of K graded by elements xi of K_3(K), with the correction series at each prime determined by a Bloch-group element and the p-adic dilogarithm.",
+              "useForFolio": "The corpus already grades its Habiro-side objects by K_3 / Bloch-group data (conj:borromean-bloch-group-element, def:quantum-bloch-group); this supplies the published statement of that grading rather than the corpus asserting it in audit prose.",
+              "targets": [
+                "conj:borromean-bloch-group-element",
+                "def:quantum-bloch-group"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Cited by bare arXiv id in 4 Lean library files, 7 audit docs and 2 probe script names, with no ref() entry \u2014 the citation is unverifiable and no Lean -- Ref: key exists for it.",
+              "target": "folio/quantum-observable-universe/lean/QOU/Machinery/HeckeTauAssignmentGaugeGate.lean",
+              "bean": "qou-nap3"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Once the ref() key exists, the four Machinery/Habiro* Lean files should carry -- Ref: [<key>] at the docstring lines that currently name only the arXiv id, so the reference becomes machine-checkable.",
+              "target": "folio/quantum-observable-universe/lean/QOU/Machinery/HabiroZetaFamily.lean",
+              "bean": "qou-chx8"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "308d1dd1c42b"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

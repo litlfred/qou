@@ -4,8 +4,11 @@ title: frobenius-gram-delta-lambda witness is 93% stale on main, and it is NOT t
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T03:50:09Z
-updated_at: 2026-09-04T03:50:43Z
+updated_at: 2026-10-04T15:19:23Z
+parent: qou-9nnz
 ---
 
 ## The move

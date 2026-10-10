@@ -1,11 +1,14 @@
 ---
 # qou-zdz5
 title: 'DRAIN: Vol(4_1) Lambda-Cl2 wrong forms — 54 sites / 35 files still live (computations/ + docs/ never swept)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T15:22:10Z
-updated_at: 2026-09-07T07:07:24Z
+updated_at: 2026-10-04T15:12:25Z
+parent: qou-mub3
 ---
 
 
@@ -387,3 +390,9 @@ measured with a search that assumes one spelling.
 `3·Cl₂(π/3) = 3.0448` is a legitimate volume for a 3-tetrahedron manifold, so
 whether these are defects depends on WHICH knot they annotate. Do not
 "fix" them without checking the manifold.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

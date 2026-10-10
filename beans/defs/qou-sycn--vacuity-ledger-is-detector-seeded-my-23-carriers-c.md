@@ -4,8 +4,11 @@ title: Vacuity ledger is DETECTOR-SEEDED — my 23 carriers cannot be added, onl
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T19:47:19Z
-updated_at: 2026-08-29T19:47:20Z
+updated_at: 2026-10-04T15:25:25Z
+parent: qou-6qbv
 ---
 
 Resolves the "two parallel records" question raised on qou-hjf4.

@@ -4,8 +4,11 @@ title: 'Laundering sweep: the qou-00c5 defect class is NOT mechanically detectab
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T20:27:08Z
-updated_at: 2026-08-24T20:27:45Z
+updated_at: 2026-10-04T15:21:08Z
+parent: qou-cdx1
 ---
 
 ## Outcome: NEGATIVE. Do not trust a proximity detector for this defect class.

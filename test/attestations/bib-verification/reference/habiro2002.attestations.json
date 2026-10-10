@@ -1,0 +1,71 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "habiro2002",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 58,
+      "entry": {
+        "id": "habiro2002",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T18:01:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 4,
+        "fix_commit": "(this commit)",
+        "note": "4 bare-URL Refs upgraded with title+publisher form. | PDF verified: Habiro, \"Bottom tangles and universal invariants,\" Algebr. Geom. Topol. 6 (2006) (arXiv:math/0505219). Note: bib `issued` says 2008 but PDF says 2006; same paper, journal published in 2006. | UPDATE 2026-05-19 18:01: year fixed 2008 \u2192 2006 (published Algebr. Geom. Topol. 6) per validate-bib year-mismatch.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/habiro2002.pdf"
+        },
+        "local_pdf": "uploads/habiro2002.pdf",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "INFRA: file absent from HEAD and the working tree; exists only on origin/claude/upload-bib-papers-2026-05-19 (intake commit 720a96221d). Recovered from git history. Identity confirmed from the document's own header (Algebraic & Geometric Topology 6 (2006) 1113-1214, bottom tangles and universal invariants, single author) and matches the seeded key's title. THREE of the FOUR citation sites are miscitations of this key, and the corpus already knows why: folio/schema/references.ts:2138 records that key habiro2004cyclotomic was added on 2026-06-07 precisely to 'untangle the overloaded [habiro2002] key: most QOU citers intended this ring-definition paper, not Bottom tangles (habiro2002) or colored Jones of simple links (habiro2000)' \u2014 but the citation sites were never migrated. Evidence from full-text grep of the recovered PDF: 'colored Jones' 0 hits; 'cyclotomic' 1 hit, and that hit is in the BIBLIOGRAPHY (entry [24], pointing at the separate cyclotomic-completions paper). So this document contains no colored-Jones content and no cyclotomic-completion theorem. Site-by-site: (1) folio/quantum-observable-universe/mass-theory/residue-at-root-proof.md:20 cites [habiro2002] for 'the Habiro ring's cyclotomic projection pi_n is a Z-algebra map for each n', and :28 for 'the Habiro-completion theorem' \u2014 both belong to habiro2004cyclotomic; this is a LOAD-BEARING miscitation inside a proof block. (2) folio/quantum-observable-universe/lean/QOU/MassTheory/HabiroMagnitudeA3.lean:61 writes `-- Ref: [habiro2002] K. Habiro, On the colored Jones polynomials of some simple links, Surikaisekikenkyusho Kokyuroku 1172 (2000) 34-43` \u2014 the key/gloss mismatch is explicit in the line itself; that gloss is the registered key habiro2000 (references.ts:6922). (3) folio/quantum-observable-universe/lean/QOU/BraidKnot/HabiroNewtonLadder.lean:59 cites [habiro2002] for the Habiro-Le double-Pochhammer colored-Jones formula 'which the literature proves' \u2014 again not this document; note the same file already cites habiro2004cyclotomic CORRECTLY at line 18, so the two Ref lines in one file disagree. (4) folio/quantum-observable-universe/lean/QOU/BraidKnot/BraidLinkTypes.lean:166 is the only CORRECT site. Verdict supporting: the bottom-tangle/universal-invariant machinery is real background for the folio's braid-closure picture, but only one corpus site actually uses it.",
+          "keyResults": [
+            {
+              "locator": "abstract / \u00a7intro",
+              "statement": "A finite generating set for the subcategory B of framed oriented tangles acting on bottom tangles, and a braided functor J from B to Mod_H for a ribbon Hopf algebra H, giving an algebraic handle on the range of quantum link invariants.",
+              "useForFolio": "This is what BraidLinkTypes.lean:166 legitimately leans on (braid/tangle closure types); it is the only claim in the corpus this document actually supports.",
+              "targets": [
+                "QOU.BraidKnot.BraidLinkTypes"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "residue-at-root-proof.md:20 and :28 attribute the cyclotomic projection pi_n and the Habiro-completion theorem to this document, which contains neither; the registered key for those statements is habiro2004cyclotomic (references.ts:2127). This is the load-bearing one \u2014 it sits inside a proof block.",
+              "target": "prop:residue-at-root",
+              "bean": "qou-jps5"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "HabiroNewtonLadder.lean:59 cites [habiro2002] for the Habiro-Le colored-Jones double-Pochhammer formula; the same file already cites habiro2004cyclotomic correctly at line 18. Align line 59 with line 18.",
+              "target": "QOU.BraidKnot.HabiroNewtonLadder",
+              "bean": "qou-qc8k"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "HabiroMagnitudeA3.lean:61 uses key [habiro2002] while its own gloss names the colored-Jones-of-simple-links work, which is registered as habiro2000 (references.ts:6922). Dangling key variant \u2014 the gloss and the key denote different items.",
+              "target": "QOU.MassTheory.HabiroMagnitudeA3",
+              "bean": "qou-poym"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "ed52afc409ae"
+        }
+      }
+    }
+  ]
+}

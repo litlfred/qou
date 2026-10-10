@@ -1,11 +1,14 @@
 ---
 # qou-bhrx
 title: 'F4-opt1: abstract Ocneanu cyclic-trace lemma on MarkovStabilization (light permanent closure, all-n)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-19T17:13:51Z
-updated_at: 2026-08-22T09:35:16Z
+updated_at: 2026-10-04T15:12:34Z
+parent: qou-rtxm
 ---
 
 
@@ -50,3 +53,9 @@ checking the corpus, which is the cost. Evidence:
 **Not closing this bean** — it is scoped "all-n", and general `n` is not done;
 only H₃ and H₄ are. Left `in-progress` for its owner. If the intent was H₄
 closure, it is closeable on the evidence above.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-22 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

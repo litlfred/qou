@@ -4,8 +4,11 @@ title: Remark interpreting 6gtx-j455.pdf at content/bib-qa-verifications.json
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:36Z
-updated_at: 2026-08-21T17:05:11Z
+updated_at: 2026-10-04T15:23:42Z
+parent: qou-aqfj
 ---
 
 Correct the ledger identification so this file stops standing in for Wald's textbook, and record that the wald1984 citations at MonoidalCalcVar.lean:41,109 and GaugeTheory.lean:197 are therefore still unverified against any source in the repo.

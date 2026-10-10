@@ -1,0 +1,42 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "source",
+    "id": "library/arxiv-2208.13448v2/2208.13448v2.pdf",
+    "path": "library/arxiv-2208.13448v2/2208.13448v2.pdf"
+  },
+  "verifications": [
+    {
+      "position": 455,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2208.13448v2/2208.13448v2.pdf"
+        },
+        "id": null,
+        "status": "unreviewed",
+        "note": "Identified from the title page (arXiv:2208.13448v2, dated July 6 2023 in the header, two authors, 37 pp, 18 sections). No ref() entry, none created (tangential).",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "An algorithm for the difference Galois group of an order-THREE equation over a large class of difference operators (shift, q-difference over C(z^{1/*}), Mahler, elliptic), reducing to ancillary problems (rational / hyperexponential solutions of Riccati-type equations), with criteria for the irreducible and imprimitive cases and a differential-transcendence corollary. Read: \u00a71, \u00a72.1 (Zudilin's Rogers-Ramanujan double sum U(z,t) and its order-3 q-difference equation (1.1); Thm 6.13: its Galois group over C(z^{1/*}) is GL_3(C) for all t != 0, hence no algebraic differential relations among U(z,t), U(qz,t), U(q^2z,t)), Thm 2.1 (reduction of the system into the Galois group), \u00a73.2 Thm 3.3/3.5 and Prop 3.7-3.10 (imprimitive case, prime order), \u00a73.3 Prop 3.18 (primitive case: SO_3 vs SL_3), \u00a76.4 (the algorithm summarised), \u00a77 Thm 7.1 (a three-condition partial-transcendence criterion for order 3). Corpus-grep for a consumer: the only order-3 q-difference objects are (a) the 4_1 strong-AJ operator in computations/figure_eight_aj_operator.py, cited to nguyen-tran-2021 and not re-derived, whose Galois group nobody asks for, and (b) the rank-3 base q-connection of the W1 wall, which QOU/Mass/ColorCubicIrreducible.lean and docs/audits/2026-09-04-w1-route1-base-qshift-rationality-prune.md PROVE does not exist as a rational system (so there is no order-3 equation there to compute a Galois group of); 'Rogers-Ramanujan' / 'Nahm sum' have no content-block consumer; 'Dreyfus' / 'Poulet' have zero hits. Scope-(a): no block, probe or bean wants an order-3 difference Galois group or a differential-transcendence statement, so this document as read supplies nothing consumable. Recorded for a future reader: if the Galois group of the order-3 AJ operator of 4_1 were ever wanted, \u00a76.4 is the algorithm (Case Q) and Thm 7.1 the transcendence criterion.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "No named block computes an order-3 difference Galois group; the one candidate object (the rank-3 base q-connection) is proved not to exist and the other (the 4_1 AJ operator) has no Galois-group consumer.",
+              "target": "computations/figure_eight_aj_operator.py"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-09-07T08:38:46Z",
+          "source_sha": "8bfa244cf7ca"
+        }
+      }
+    }
+  ]
+}

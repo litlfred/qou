@@ -4,8 +4,12 @@ title: canonical-mass-table-extended stores the PRE-RULING grouped word in braid
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-09-07T06:18:30Z
-updated_at: 2026-09-14T19:53:35Z
+updated_at: 2026-10-04T15:15:36Z
+parent: qou-9nnz
 ---
 
 Found while draining `qou-wpp2` (the vendor mirror ratchet). The mirror drain

@@ -4,8 +4,10 @@ title: 'q-zero-stokes-region-identification.lean: encode 3 :True class fields'
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-11T18:41:38Z
-updated_at: 2026-07-11T18:41:38Z
+updated_at: 2026-10-04T15:15:02Z
 parent: qou-6qbv
 ---
 

@@ -3,8 +3,12 @@
 title: 'GAP: A=3 Delta_lambda magnitude 1.585x lives OUTSIDE the finite-type filtration of the single Borromean deficit'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-01T23:13:32Z
-updated_at: 2026-08-01T23:13:32Z
+updated_at: 2026-10-04T15:19:40Z
+parent: qou-v2om
 ---
 
 ## What is open

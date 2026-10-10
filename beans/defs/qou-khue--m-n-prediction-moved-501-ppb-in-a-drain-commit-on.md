@@ -4,8 +4,12 @@ title: m_n prediction moved 501 ppb in a drain commit on 2026-08-24, invisible b
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-08-28T18:18:52Z
-updated_at: 2026-09-14T19:42:26Z
+updated_at: 2026-10-04T15:15:46Z
+parent: qou-avtq
 ---
 
 ## Found 2026-08-28, by restoring the p/n rows (qou-7e1t option 3)

@@ -1,11 +1,13 @@
 ---
 # qou-m6sp
 title: 'Session: ingest eight owner-uploaded PDFs (4afe434526) into library/'
-status: in-progress
-type: epic
+status: completed
+type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-06T10:29:29Z
-updated_at: 2026-09-07T05:43:20Z
+updated_at: 2026-10-04T15:11:27Z
 ---
 
 ## Status 2026-09-06 — branch claude/ingest-uploads-2026-09-06, PR #6964
@@ -49,3 +51,9 @@ migrated on 2026-09-05 (d6091d15d4) with no `structure.json`.
 ## Reduced twice on the coordinator's rebase (2026-09-07)
 
 Sibling #6955 landed the sectioning of all eight documents on main; sibling #6962 then landed bibliography rows for the four supporting ones under its own ids (`hales-etal2010`, `bezdek-reid2013`, `martelli2016`, `li2026-two-sphere`) and deliberately created no reference for the four tangential ones. The eight `ref()` rows and eight ledger rows this session wrote are therefore DROPPED from PR #6964 (four would duplicate a document under a second id, one — `martelli2016` — would collide on the id itself; four contradict a landed triage judgement). What #6964 still carries: the eight `candidates.json` extractions (main has none), the regenerated summaries, and the NZ 1985 re-section (`qou-dcd0`). The file:line locators measured here survive in the PR body and in the 2026-09-06 dialog-assessment audit.
+
+
+
+## Summary of Changes
+
+Session log closed 2026-10-04 (owner decision 2): open children were reparented to programme epics and prose follow-ups extracted as their own beans. Kept as a record, not deleted.

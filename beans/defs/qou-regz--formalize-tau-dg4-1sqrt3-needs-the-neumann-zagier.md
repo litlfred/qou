@@ -4,8 +4,11 @@ title: 'Formalize tau_DG(4_1)=sqrt(3): needs the Neumann-Zagier gluing-equation 
 status: todo
 type: task
 priority: low
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T02:14:00Z
-updated_at: 2026-08-09T02:14:00Z
+updated_at: 2026-10-04T15:25:56Z
+parent: b9cj
 ---
 
 Scoped plan for the one leg of PR #4824 §7 that was deliberately **not**

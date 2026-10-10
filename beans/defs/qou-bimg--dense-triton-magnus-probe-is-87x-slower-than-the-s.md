@@ -3,8 +3,12 @@
 title: Dense triton Magnus probe is 87x slower than the sparse route that already reproduces it
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T09:03:15Z
-updated_at: 2026-09-13T09:03:15Z
+updated_at: 2026-10-04T15:18:43Z
+parent: qou-trd0
 ---
 
 

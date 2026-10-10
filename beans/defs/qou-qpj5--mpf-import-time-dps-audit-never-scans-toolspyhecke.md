@@ -3,8 +3,12 @@
 title: mpf_import_time_dps_audit never scans tools/pyhecke, where _PROTON_G0 is frozen — and test_nucleon_gen_chains_q_param fails on main because of it
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T06:42:55Z
-updated_at: 2026-09-14T06:42:55Z
+updated_at: 2026-10-04T15:21:39Z
+parent: qou-9nnz
 ---
 
 ## Measured

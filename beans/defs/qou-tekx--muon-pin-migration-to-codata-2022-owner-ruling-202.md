@@ -4,8 +4,11 @@ title: Muon pin migration to CODATA 2022 (owner ruling 2026-08-30) — staging, 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T10:45:49Z
-updated_at: 2026-09-08T07:45:41Z
+updated_at: 2026-10-04T15:21:39Z
+parent: qou-2002
 ---
 
 ## The ruling

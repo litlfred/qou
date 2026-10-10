@@ -4,8 +4,11 @@ title: 'HyperbolicVolumeIndependence: OPEN CONJECTURE, not actionable'
 status: draft
 type: task
 priority: deferred
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T07:04:17Z
-updated_at: 2026-08-08T07:04:17Z
+updated_at: 2026-10-04T15:26:10Z
+parent: qou-n4nr
 ---
 
 `QOU/Archimedean/HyperbolicVolumeIndependence.lean:39`.

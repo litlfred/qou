@@ -4,8 +4,11 @@ title: Cite 1906.12122v2.pdf at rem:feynman-qou-comparison
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:53Z
-updated_at: 2026-08-21T17:04:41Z
+updated_at: 2026-10-04T15:17:14Z
+parent: qou-19m0
 ---
 
 rem:feynman-qou-comparison contrasts the folio's zero-fitted-parameter formula with the five-coefficient SEMF; a modern EFT benchmark belongs in that comparison, and its absence is the kind of gap a referee flags first.

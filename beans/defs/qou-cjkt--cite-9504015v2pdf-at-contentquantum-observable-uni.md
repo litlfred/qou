@@ -4,8 +4,11 @@ title: Cite 9504015v2.pdf at content/quantum-observable-universe/lean/QOU/BraidK
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T00:10:47Z
-updated_at: 2026-08-21T17:04:51Z
+updated_at: 2026-10-04T15:17:22Z
+parent: qou-19m0
 ---
 
 KeystoneRTSurgeryConstruction.lean carries the RT/WRT = Chern-Simons identification as a named, cited-but-unformalised hypothesis whose '-- Ref:' list currently names only Reshetikhin-Turaev 1991 / Turaev 1994 and beasleywitten2005. Adding this paper documents the perturbative form of that identification and its explicit verification on the Seifert class the file's manifold belongs to, so a reader can see how far the cited literature actually goes. It documents the hypothesis; it does not discharge it, and the file's honest-scope banner should stay unchanged.

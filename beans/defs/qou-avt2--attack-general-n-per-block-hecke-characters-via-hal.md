@@ -1,11 +1,14 @@
 ---
 # qou-avt2
 title: 'ATTACK 2: general-n per-block Hecke characters via Halverson-Ram / Jing-Liu'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T04:14:19Z
-updated_at: 2026-09-02T21:39:56Z
+updated_at: 2026-10-04T15:11:55Z
+parent: qou-59vq
 ---
 
 Newly enabled by the owner's 2026-08-26 Murnaghan-Nakayama upload drop
@@ -101,3 +104,9 @@ The engine wants a signed 1-BASED word: [(1, i+1), ...].
 
 No ask. If chi_lambda_braid's normalisation or word convention changes, ping
 qou-kwoa — that probe asserts the identity and will fail loudly.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-02 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

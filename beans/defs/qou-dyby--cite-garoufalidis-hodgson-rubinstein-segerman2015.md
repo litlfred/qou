@@ -3,8 +3,12 @@
 title: Cite [garoufalidis-hodgson-rubinstein-segerman2015] at computations/probes/borromean_3d_index.py
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:37Z
-updated_at: 2026-08-08T23:35:37Z
+updated_at: 2026-10-04T15:17:32Z
+parent: qou-1qhv
 ---
 
 The 3d-index probes compute an index from a specific triangulation and report it as a manifold invariant without citing the triangulation-independence theorem that licenses that. This registered-but-uncited entry is exactly the missing source.

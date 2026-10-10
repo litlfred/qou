@@ -3,8 +3,12 @@
 title: 'Pre-existing RED: raw-float64 ratchet (new_not_baselined=4) + 2 stale q0 audit witnesses on main'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-14T16:28:22Z
-updated_at: 2026-08-14T16:28:22Z
+updated_at: 2026-10-04T15:22:09Z
+parent: qou-9nnz
 ---
 
 

@@ -4,8 +4,11 @@ title: 887 sidecar entries claim a Lean sibling fails to compile; measured ~86% 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T10:39:37Z
-updated_at: 2026-08-23T12:31:20Z
+updated_at: 2026-10-04T15:16:07Z
+parent: qou-5vkl
 ---
 
 ## Measured

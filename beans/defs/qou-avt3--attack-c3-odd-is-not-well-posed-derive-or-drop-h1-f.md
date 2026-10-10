@@ -4,8 +4,11 @@ title: 'ATTACK 3 (blocked upstream): c3^odd is not well-posed until (H1) is deri
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T04:14:19Z
-updated_at: 2026-08-26T04:14:19Z
+updated_at: 2026-10-04T15:16:25Z
+parent: qou-avtq
 ---
 
 Recording WHY c3^odd should not be attacked directly yet, so the next agent does

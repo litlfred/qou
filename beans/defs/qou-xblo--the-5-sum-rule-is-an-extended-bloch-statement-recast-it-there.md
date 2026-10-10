@@ -1,10 +1,14 @@
 ---
 # qou-xblo
-title: 'The 5₂ sum rule is an EXTENDED Bloch statement — Σ R̂(y_σ; ε_σ, 0) = −π²/6, flattening supplied by the cubic'
-status: in-progress
+title: The 5₂ sum rule is an EXTENDED Bloch statement — Σ R̂(y_σ; ε_σ, 0) = −π²/6, flattening supplied by the cubic
+status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T10:30:00Z
-updated_at: 2026-08-09T10:30:00Z
+updated_at: 2026-10-04T15:14:07Z
+parent: qou-r9ih
 ---
 
 Claimed by the session on `claude/fivetwo-level7-ladder-numerators` (restarted
@@ -1479,3 +1483,9 @@ it. Do not let the sum rule's proof be read as progress on the volume.
 **The 5₂ sum rule is PROVED**: `FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
 and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. Bean `qou-xblo`
 and its parent `qou-0yqu` are closed by this route.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-09 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

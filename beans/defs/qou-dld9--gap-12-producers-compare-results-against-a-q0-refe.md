@@ -4,8 +4,11 @@ title: 'GAP: 12 producers compare results against a q0 reference at the OTHER an
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T21:42:27Z
-updated_at: 2026-08-25T00:31:45Z
+updated_at: 2026-10-04T15:19:36Z
+parent: qou-5vkl
 ---
 
 ## Provenance: the generalization of a defect found and fixed in PR #5723

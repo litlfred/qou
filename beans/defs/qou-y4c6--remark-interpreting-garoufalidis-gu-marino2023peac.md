@@ -3,8 +3,12 @@
 title: Remark interpreting [garoufalidis-gu-marino2023peacock] at prop:stokes-dt-bps-bridge
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:16Z
-updated_at: 2026-08-08T23:34:16Z
+updated_at: 2026-10-04T15:23:48Z
+parent: qou-vva9
 ---
 
 Correct 'proved … for the figure-eight 4₁' to match the document's own accounting (proofs for the q-difference equations; numerical illustration for 4₁ and 5₂), and re-state the Stokes=DT=BPS first equality as conditional on Conjecture 3(d). The downstream A_ω = 3 argument should carry that conditionality explicitly.

@@ -1,11 +1,14 @@
 ---
 # qou-3quc
 title: 'GAP(lean): general-n Molien/fake-degree q-analogue -- concrete n<=4 proved, general blocked on #SYT + coinvariant grading'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T21:13:18Z
-updated_at: 2026-09-03T05:28:46Z
+updated_at: 2026-10-04T15:12:43Z
+parent: qou-1oif
 ---
 
 OPENED 2026-08-21 alongside the concrete cases, per AGENTS.md "if you cannot
@@ -219,3 +222,9 @@ machine-verified for every n, every 1 < q, with NO hypotheses beyond the substra
 regime. The math (probe exact n<=5) AND the Lean are both closed. Nothing open remains
 on qou-3quc's Lean side; the induction/(B) route (qou-x4zl/qou-ognw) remains an
 independent second proof.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

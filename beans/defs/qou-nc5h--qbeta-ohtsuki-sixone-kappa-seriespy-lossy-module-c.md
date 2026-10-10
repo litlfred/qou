@@ -1,11 +1,13 @@
 ---
 # qou-nc5h
 title: 'qbeta_ohtsuki_sixone_kappa_series.py: LOSSY module-const VOL_6_1 reds two precision gates on main'
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T09:43:54Z
-updated_at: 2026-08-22T09:44:20Z
+updated_at: 2026-10-04T15:23:01Z
 ---
 
 ## What
@@ -58,3 +60,10 @@ Per the audit's own instruction: call the idempotent `set_compute_dps()`
 at module scope, above the constant. Safe alongside the existing call in
 `main()`. Then regenerate both audit witnesses and commit them with the
 count change named. Do NOT baseline the file.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-xbh4` (work-plan reorganisation 2026-10-04). Evidence: identical: VOL_6_1 in qbeta_ohtsuki_sixone_kappa_series built at dps 15, reds two gates
+Content is untouched; only this work item is closed.

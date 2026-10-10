@@ -4,8 +4,11 @@ title: Remark interpreting 2304.07001v3.pdf at prop:habiro-tail-archimedean-acti
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:25Z
-updated_at: 2026-08-21T17:04:57Z
+updated_at: 2026-10-04T15:23:38Z
+parent: qou-vva9
 ---
 
 Record the scope boundary explicitly: the strange-identity/partial-theta hypothesis of Thm 1.2 covers torus knots and not the hyperbolic 4_1 tail on which prop:habiro-tail-archimedean-action computes A_0 = pi^2/5, so the proved resurgence does not transfer to the 4_1 face. Deliberately a remark and not aid-proof, because the hypotheses demonstrably do not hold there.

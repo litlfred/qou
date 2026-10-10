@@ -4,8 +4,11 @@ title: 'AUDIT: six scanners match prose ABOUT q0/CODATA rather than code USING i
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T03:58:32Z
-updated_at: 2026-08-26T05:31:44Z
+updated_at: 2026-10-04T15:16:29Z
+parent: qou-2002
 ---
 
 Split out of `qou-1c4y`, which records six instances of this defect found the

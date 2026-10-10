@@ -3,8 +3,12 @@
 title: 'GAP: deuteron C_knot=5.853 needs eigenphase-weighted handle-commutator charge on the NON-abelian H_6 interface braid (trefoil H_2 scalar channel proved null)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T20:08:58Z
-updated_at: 2026-08-02T20:08:58Z
+updated_at: 2026-10-04T15:19:56Z
+parent: qou-v2om
 ---
 
 ## What was attempted (branch `claude/deuteron-symbolic-closed-form-2026-08-02`, PR #4621)
@@ -44,4 +48,3 @@ master-formula **normalization artifact**, and the honest resolution may be the 
 Either (a) construct the H₆-interface handle-commutator charge symbolically and check its
 eigenphase-weighted trace against 5.853 (0-fit, derive-then-check), or (b) pursue the fibre→τ-transfer
 normalization resolution. Do NOT re-attempt a scalar trefoil invariant — proved null.
-

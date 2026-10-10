@@ -4,8 +4,11 @@ title: 'Framing spin-orbit: the 2l+1 shape is derived, the scale is not'
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T00:00:00Z
-updated_at: 2026-08-30T00:00:00Z
+updated_at: 2026-10-04T15:14:51Z
+parent: qou-v2om
 ---
 
 First real test of the framing route (`qou-mgq3` option 1), the only path to

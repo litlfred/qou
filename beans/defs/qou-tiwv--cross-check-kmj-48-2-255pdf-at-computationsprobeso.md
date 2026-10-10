@@ -4,8 +4,11 @@ title: Cross-check KMJ-48-2-255.pdf at computations/probes/one_loop_ohtsuki_5_2_
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:58Z
-updated_at: 2026-08-21T17:05:04Z
+updated_at: 2026-10-04T15:18:29Z
+parent: qou-8hur
 ---
 
 Evaluate the explicit two-bridge formula for 5_2 = S(7,3) and compare with the corpus's existing 5_2 cross-check probe. This verifies an existing witness with an independent formula; no external number is adopted, and a disagreement is the finding.

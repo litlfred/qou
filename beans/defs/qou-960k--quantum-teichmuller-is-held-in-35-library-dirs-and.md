@@ -4,8 +4,11 @@ title: Quantum Teichmuller is held in 35 library dirs and used in ZERO content b
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T10:28:54Z
-updated_at: 2026-09-04T23:16:55Z
+updated_at: 2026-10-04T15:23:06Z
+parent: qou-mub3
 ---
 
 MEASURED 2026-09-04. Held-but-unused, the largest such body found this session:

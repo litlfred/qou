@@ -4,8 +4,11 @@ title: 'Front B (cycle exclusion): period-4 word-elimination + q-Steiner bound'
 status: todo
 type: task
 priority: medium
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-31T20:00:00Z
-updated_at: 2026-08-29T16:26:26Z
+updated_at: 2026-10-04T15:26:07Z
+parent: qcz14
 ---
 
 Period-1/2/3 cycle exclusion proved (word-elimination via linear_combination).

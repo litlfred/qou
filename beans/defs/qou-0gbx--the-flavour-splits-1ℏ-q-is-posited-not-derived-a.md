@@ -4,8 +4,11 @@ title: The flavour split's (1+ℏ_q³) is posited, not derived — and summing i
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T07:50:02Z
-updated_at: 2026-09-05T08:03:03Z
+updated_at: 2026-10-04T15:24:54Z
+parent: qou-10v9
 ---
 
 

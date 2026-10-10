@@ -4,8 +4,11 @@ title: 'GAP: 45 class-(a) q0 literal transcriptions blocked on the A->C muon re-
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-23T09:37:26Z
-updated_at: 2026-08-23T09:47:22Z
+updated_at: 2026-10-04T15:19:37Z
+parent: qou-2002
 ---
 
 Ledger: computations/audits/q0-literal-classification.json (45 rows, substate a-blocked). Validator: computations/audits/q0_literal_classification_audit.py --strict. Audit doc: docs/audits/2026-08-23-q0-literal-transcription-classification.md. Opened by PR #5535.

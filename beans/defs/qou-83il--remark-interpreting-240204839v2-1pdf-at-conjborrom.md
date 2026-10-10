@@ -4,8 +4,11 @@ title: Remark interpreting 2402.04839v2 (1).pdf at conj:borromean-bloch-group-el
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:52Z
-updated_at: 2026-08-21T17:04:46Z
+updated_at: 2026-10-04T15:23:39Z
+parent: qou-aqfj
 ---
 
 The universality of the Borromean rings is a genuinely new structural fact for this corpus and deserves an interpreting remark rather than a bare citation.

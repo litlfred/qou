@@ -4,9 +4,13 @@ title: 'forward-ref backlog: 294 edges, diffuse — needs a uses[] semantics rul
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T13:46:44Z
-updated_at: 2026-08-09T13:46:44Z
+updated_at: 2026-10-04T15:19:20Z
+parent: qou-hqo3
 ---
+
 `detangler-no-forward-ref` reports **257 failing blocks / 294 edges**, surfaced
 when the detangler axis went live in #4867. The axis had returned `n/a` almost
 everywhere before, so this backlog has never been triaged.

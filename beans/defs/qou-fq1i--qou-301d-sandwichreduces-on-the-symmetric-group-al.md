@@ -1,11 +1,14 @@
 ---
 # qou-fq1i
 title: 'qou-301d: SandwichReduces on the symmetric-group algebra tower — a growing filtration with a NON-multiplicative trace'
-status: in-progress
+status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T18:06:40Z
-updated_at: 2026-09-07T20:30:00Z
-parent: qou-6g7j
+updated_at: 2026-10-04T15:13:37Z
+parent: qou-k4oq
 ---
 
 qou-301d after #7079: TowerSpan reduces to the local rule g·c·g (SandwichReduces), and InvolutionTowerWitness has a growing filtration but a multiplicative (augmentation) trace, so it exercises TowerSpan's filtration content only. Task: the cheaper of the two towers Mathlib lacks — MonoidAlgebra R (Equiv.Perm (Fin n)) with the standard inclusions, a non-multiplicative Markov-type trace, and SandwichReduces proved there. Zero-sorry; lean-direct with -DautoImplicit=false -s 65536 against the restored cache; state what the witness still does NOT exercise. Roast on record: payoff is hygiene not physics — bound the effort, bean the gap if it does not close.
@@ -31,3 +34,8 @@ Verification env: restored lake-cache/qou-v4-24-0 + hardlinked shadow rebuild of
 
 **ROAST 2026-09-07 (qou-pbwj) — verdict: KILL as a front; allow as a capped (≤1 session) chore.** The model exists in one line and the labour is Mathlib plumbing that reaches nothing: on MonoidAlgebra R (Equiv.Perm (Fin n)) with g_m = (m m+1) = g_m⁻¹, the q = 1 Ocneanu trace tr(w) = z^{n − c(w)} (c = number of cycles) satisfies every field of OcneanuTrace.MarkovTrace — T1 class function, T2 tr(1) = 1, T3/T3' since right-multiplying a ∈ S_n by (n n+1) merges the cycle of n with the fixed point n+1 — and is non-multiplicative (tr(g₁)² = z² ≠ 1 = tr(g₁²)). SandwichReduces for it is the double-coset decomposition S_{m+1} = S_m ⊔ S_m s_m S_m, a two-line fact. So the witness is guaranteed before the session starts, and it exercises exactly what qou-301d predicted: the q = 1 shadow, not the Hecke tower (where the quadratic relation is the content) and not the atom word (DisjointBlockTraceLaw.lean:470-480 — maximal level occurs four times). The bond-product reading stays MEASURED, NOT DERIVED afterwards exactly as before. Arity hazard: a sorry-free S_n witness cited downstream as 'TowerSpan holds for a Hecke-type tower' (shared type, different instance). Worth writing down even so: the S_n class-function trace SATISFIES DisjointBlockMultiplicative, so it is not the counterexample DisjointBlockTraceLaw records as 'NOT ACHIEVED' — a counterexample needs h ≠ 0 or a non-class-function trace. L2 relevance: none. If done: docstring must say 'q = 1 shadow only'. Full frame: docs/audits/2026-09-07-takeover-fronts-roast.md §Front 5.
 
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

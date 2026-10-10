@@ -1,10 +1,14 @@
 ---
 # qou-y2np
 title: 'SHAPE-1: the symmetry-energy sign is a BAR BRANCH (exactly +/- 2 ln q), the corpus took the branch that fits nuclear binding worse, and beta-decay does NOT pin it (Q_beta uses |Delta net|)'
-status: in-progress
+status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T06:49:20Z
-updated_at: 2026-09-05T06:49:20Z
+updated_at: 2026-10-04T15:13:56Z
+parent: qou-v2om
 ---
 
 `computations/qbeta/qbeta_asymmetry_sign_is_a_bar_branch_probe.py` (6/6).
@@ -199,3 +203,9 @@ That reframes the open question usefully. The bar swap was refuted as a repair
 binary: the real quantity is `w`, the corpus sits at `0.500344`, and the target
 is anything below `0.448018`. A derivation of `w` is the live item, not a choice
 between two labels.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

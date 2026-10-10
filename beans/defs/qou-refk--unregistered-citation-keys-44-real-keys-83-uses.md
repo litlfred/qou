@@ -4,8 +4,11 @@ title: 'UNREGISTERED CITATION KEYS: 46 real bibliography keys cited with no refe
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T09:00:00Z
-updated_at: 2026-08-08T09:00:00Z
+updated_at: 2026-10-04T15:25:18Z
+parent: qou-mub3
 ---
 
 AGENTS.md §1: *"The `[key]` must match an entry in `content/schema/references.ts`

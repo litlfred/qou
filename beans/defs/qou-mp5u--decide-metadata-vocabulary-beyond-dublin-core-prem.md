@@ -4,8 +4,12 @@ title: 'DECIDE: metadata vocabulary beyond Dublin Core (PREMIS fixity, CSVW tabu
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-09-15T21:51:48Z
-updated_at: 2026-09-15T22:12:45Z
+updated_at: 2026-10-04T15:18:37Z
+parent: qou-n4r9
 ---
 
 ## The method is already decided in the corpus — read it before proposing one (2026-09-15)

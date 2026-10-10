@@ -4,8 +4,11 @@ title: Pre-register free-choice classifications for live open binding candidates
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-27T06:16:28Z
-updated_at: 2026-08-27T13:04:32Z
+updated_at: 2026-10-04T15:22:09Z
+parent: qou-v2om
 ---
 
 AMENDMENT 1 (same day, before any outcome): the SU(4) call OVER-CLAIMED and is corrected in a NEW dated file, not by editing the registry.

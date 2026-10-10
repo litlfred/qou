@@ -1,11 +1,14 @@
 ---
 # qou-ghy5
 title: '68 dangling citation keys in .lean -- Ref: and .ts cites[] — neither path is checked'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T15:54:24Z
-updated_at: 2026-09-06T10:03:05Z
+updated_at: 2026-10-04T15:11:48Z
+parent: qou-mub3
 ---
 
 MEASURED 2026-08-21 (found while draining the library registration backlog, bean qou-kqbk).
@@ -413,3 +416,9 @@ connection). `scripts/enrich-dangling-citations.py` still cannot run.
 
 **The `requirePaper()` blocker recorded above is unchanged**; it is a one-line
 fix in `folio-assistant` and outside this repo's scope.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

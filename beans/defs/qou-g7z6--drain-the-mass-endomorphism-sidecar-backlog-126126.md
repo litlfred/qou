@@ -4,8 +4,11 @@ title: Drain the mass-endomorphism sidecar backlog (126/126 stale)
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T12:04:07Z
-updated_at: 2026-09-03T04:20:00Z
+updated_at: 2026-10-04T15:18:55Z
+parent: qou-mub3
 ---
 
 Surfaced while verifying #6016, not caused by it.

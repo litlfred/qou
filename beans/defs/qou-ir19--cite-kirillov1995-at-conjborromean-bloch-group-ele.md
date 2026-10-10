@@ -3,8 +3,12 @@
 title: Cite [kirillov1995] at conj:borromean-bloch-group-element
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:54Z
-updated_at: 2026-08-08T23:36:54Z
+updated_at: 2026-10-04T15:17:41Z
+parent: qou-1qhv
 ---
 
 Sec. 2.3 relates dilogarithm identities to K_3 torsion, which is the subject of the Borromean Bloch-group conjecture and of the Borel-rank proposition; neither cites this already-registered reference.

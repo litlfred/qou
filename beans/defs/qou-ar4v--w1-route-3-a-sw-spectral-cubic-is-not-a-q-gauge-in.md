@@ -1,11 +1,14 @@
 ---
 # qou-ar4v
 title: 'W1 route 3: a SW spectral cubic is not a q-gauge invariant, so Sigma cannot be a q-difference module''s spectral curve'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-12T10:59:36Z
-updated_at: 2026-09-12T11:01:07Z
+updated_at: 2026-10-04T15:14:20Z
+parent: qou-frzo
 ---
 
 ## Result (2026-09-12, PR #7208)
@@ -49,3 +52,9 @@ the probe and never used as a fact. Route 3 itself stays open: a q-difference mo
 over `(ℂ(z), σ_q)` is fine, and Σ may still enter one as Newton-polygon/slope data,
 the Birkhoff connection matrix, or the `E_q` bundle of RSZ §6.3. `D_q` is not
 constructed; nothing is fitted or wired.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-12 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -1,12 +1,16 @@
 ---
 # msc1
-title: 'mis-aimed citations, a phantom attribution, and a weight-family collision in the Phi_q pair'
+title: mis-aimed citations, a phantom attribution, and a weight-family collision in the Phi_q pair
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T14:05:00Z
-updated_at: 2026-08-16T02:45:00Z
+updated_at: 2026-10-04T15:21:36Z
+parent: qou-mub3
 ---
+
 Found by the adversarial reader on PR #4921 while adjudicating `prn1` tranche-1
 edges. These are **prose defects**, not `uses[]` defects — filed rather than
 fixed, because each changes what a block claims.
@@ -253,4 +257,3 @@ Merging them would collapse a lemma into its application and lose the `α_k` /
 divisor-sum content. The shared "open uniform-bound note" that made them look
 alike is one gap appearing in both, which is what a lemma and its application
 should look like.
-

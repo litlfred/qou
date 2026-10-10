@@ -1,11 +1,13 @@
 ---
 # qou-yw40
 title: 'beans check fails on main: 13 orphaned parent links to two IDs that never existed'
-status: todo
+status: scrapped
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-29T15:59:30Z
-updated_at: 2026-08-29T16:00:22Z
+updated_at: 2026-10-04T15:16:40Z
 ---
 
 Measured 2026-08-29 while running /prepare-merge-auto on PR #6009. Not caused by
@@ -52,3 +54,10 @@ above). Filed rather than fixed.
 CHEAPEST NEXT STEP: on a full clone, `git log --all -- '.beans/0yqu--*'`. If
 empty there too, (a) holds and the 13 `parent:` fields are simply wrong -- decide
 per child whether it belongs to a live parent or to none.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-2cyi` (work-plan reorganisation 2026-10-04). Evidence: [B] both: 13 broken parent links to two never-existing IDs (0yqu, krvm)
+Content is untouched; only this work item is closed.

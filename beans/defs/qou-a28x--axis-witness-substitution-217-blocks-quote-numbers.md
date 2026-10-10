@@ -4,8 +4,11 @@ title: 'AXIS: witness-substitution -- 217 blocks quote numbers no declared witne
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T03:43:44Z
-updated_at: 2026-08-16T11:31:13Z
+updated_at: 2026-10-04T15:16:31Z
+parent: qou-5vkl
 ---
 
 

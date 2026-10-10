@@ -4,8 +4,11 @@ title: 'LATENT: the lean.ref package registry is never configured in production,
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-27T05:54:25Z
-updated_at: 2026-09-27T09:11:47Z
+updated_at: 2026-10-04T15:15:44Z
+parent: qou-5vkl
 ---
 
 

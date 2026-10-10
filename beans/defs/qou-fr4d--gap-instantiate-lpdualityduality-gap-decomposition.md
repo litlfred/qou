@@ -1,11 +1,14 @@
 ---
 # qou-fr4d
 title: 'GAP: instantiate LPDuality.duality_gap_decomposition against emitted LP duals'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T07:51:51Z
-updated_at: 2026-09-04T08:01:20Z
+updated_at: 2026-10-04T15:12:56Z
+parent: qou-v2om
 ---
 
 ## What exists
@@ -67,3 +70,9 @@ is 3.95e-44, so it cannot discriminate a correct mapping from a wrong one).
   NOT true now: the clarabel-MPFR backend at `prec_bits=167` (~50 dps) exists,
   returns `*_str` decimal companions, and this branch measured the difference
   (`y0_star` first differing significant digit: 6).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

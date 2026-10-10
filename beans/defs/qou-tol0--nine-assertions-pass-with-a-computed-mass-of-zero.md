@@ -1,11 +1,14 @@
 ---
 # qou-tol0
 title: Nine assertions pass with a computed mass of zero or negative — tolerance >= |expected| makes them unfalsifiable
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T03:30:00Z
-updated_at: 2026-09-04T10:49:59Z
+updated_at: 2026-10-04T15:13:22Z
+parent: qou-9nnz
 ---
 
 `computations/atom-mass-derived.witness.json` reports `allPassed: true` over
@@ -111,3 +114,9 @@ so "delete the assertions" may be the right answer rather than "fix them".
 No content block cites this witness (only `docs/audits/`), so nothing
 published rests on it. That bounds the damage; it does not make the pass
 honest.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

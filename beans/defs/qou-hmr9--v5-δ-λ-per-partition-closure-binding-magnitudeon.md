@@ -4,8 +4,10 @@ title: 'V5 Δ_λ per-partition closure (binding): magnitude=one scalar m∈(0,1/
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-19T02:56:27Z
-updated_at: 2026-07-19T02:57:06Z
-parent: qou-wzgm
+updated_at: 2026-10-04T15:25:23Z
+parent: b9cj
 ---
 

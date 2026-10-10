@@ -4,8 +4,11 @@ title: Remark interpreting fulltext.pdf at QOU.BraidKnot.Li2qUniqueness
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:21Z
-updated_at: 2026-08-21T17:04:56Z
+updated_at: 2026-10-04T15:23:58Z
+parent: qou-aqfj
 ---
 
 Record that all three kirillov1995 locators (§2.1, Prop 2.1, Prop 2.3) in Li2qUniqueness.lean are currently uncheckable because the file joined to that key is a different work, and that Prop 2.3 in particular is attached to a generic FTC-uniqueness statement that the Lean file proves from Mathlib. Someone with access to the named work should confirm or re-locate all three.

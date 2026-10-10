@@ -3,8 +3,12 @@
 title: Cite [blitvic2012-clt] at prop:hecke-satisfies-blitvic-hypothesis
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:12Z
-updated_at: 2026-08-08T23:35:12Z
+updated_at: 2026-10-04T15:17:25Z
+parent: qou-mub3
 ---
 
 hecke-satisfies-blitvic-hypothesis-proof.md:82 cites '[blitvic2012], eq. (1.2)', a locator that does not exist in the uploaded Blitvic document and cannot be checked against the un-uploaded one. Cite blitvic2012-clt Thm 2 eq. (12) at t=1, which the corpus can verify from its own uploads.

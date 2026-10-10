@@ -4,8 +4,11 @@ title: 'GAP: five keystone witnesses are hand-written — no script emits them, 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T12:36:18Z
-updated_at: 2026-08-30T12:45:30Z
+updated_at: 2026-10-04T15:19:59Z
+parent: qou-5vkl
 ---
 
 ## The finding

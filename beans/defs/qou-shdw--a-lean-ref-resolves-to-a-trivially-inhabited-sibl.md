@@ -1,11 +1,14 @@
 ---
 # qou-shdw
-title: 'A lean.ref resolves to a trivially-inhabited sibling while the substantive theorem of the same name sits in the library'
+title: A lean.ref resolves to a trivially-inhabited sibling while the substantive theorem of the same name sits in the library
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-22T04:40:00Z
-updated_at: 2026-08-22T04:40:00Z
+updated_at: 2026-10-04T15:16:08Z
+parent: qou-6qbv
 ---
 
 AGENTS.md §0a bans shadowing stubs, and gives the shape as

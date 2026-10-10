@@ -4,8 +4,11 @@ title: 'GAP: no map from a braid word to a curve on the Bring surface — the em
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T16:50:05Z
-updated_at: 2026-09-15T20:03:17Z
+updated_at: 2026-10-04T15:20:16Z
+parent: qou-v2om
 ---
 
 

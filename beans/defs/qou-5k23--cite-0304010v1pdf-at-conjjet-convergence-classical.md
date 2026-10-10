@@ -4,8 +4,11 @@ title: Cite 0304010v1.pdf at conj:jet-convergence-classical-limit
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:39Z
-updated_at: 2026-08-21T17:04:42Z
+updated_at: 2026-10-04T15:17:01Z
+parent: qou-19m0
 ---
 
 conj:jet-convergence-classical-limit's prose names a 'Feray-Meliot q-Plancherel Central Limit Theorem' but cites feray2010 + kerov1996; the named q-CLT paper is absent from references.ts and the q = 1 antecedent is uncited. Add this and verify the Feray-Meliot citation separately.

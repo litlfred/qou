@@ -3,8 +3,12 @@
 title: 'Delta_L''s e_minus coordinate vanishes ONLY in the grouped frame: canonical gives -(q^2-1)^2*Phi_12(q)^2/(2q^6), so net != tr_M(z=1) on the long model'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T17:42:13Z
-updated_at: 2026-09-14T17:42:13Z
+updated_at: 2026-10-04T15:18:42Z
+parent: qou-v2om
 ---
 
 ## Measured

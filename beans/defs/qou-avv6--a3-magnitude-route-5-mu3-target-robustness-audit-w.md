@@ -3,10 +3,13 @@
 title: 'A=3 magnitude ROUTE 5: mu3 target robustness audit — well-posed at ~10pct, NOT an artifact, NOT to 3 sig figs'
 status: todo
 type: task
+priority: normal
 tags:
     - a3-cross-channel
+    - reorg-2026-10-04
 created_at: 2026-08-01T23:55:59Z
-updated_at: 2026-08-01T23:55:59Z
+updated_at: 2026-10-04T15:16:12Z
+parent: qou-v2om
 ---
 
 Red-team audit of whether mu3=+0.4708 (numerator of r*=mu3/c3~1.585) is a structural target or a residual-decomposition artifact.

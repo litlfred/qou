@@ -4,8 +4,11 @@ title: Triage mass_table_comprehensive.py — the one ppb consumer that timed ou
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-16T01:49:31Z
-updated_at: 2026-08-16T10:57:34Z
+updated_at: 2026-10-04T15:25:11Z
+parent: qou-v2om
 ---
 
 ## Triage answer: NOT broken. Slow — and hiding something much worse.

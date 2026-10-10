@@ -4,8 +4,11 @@ title: mass_binding_dashboard._row re-casts q0 to float64 one line in — 2 of 1
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T14:05:57Z
-updated_at: 2026-09-14T20:17:19Z
+updated_at: 2026-10-04T15:14:57Z
+parent: qou-9nnz
 ---
 
 ## The claim

@@ -4,8 +4,11 @@ title: Remark interpreting 1604.02688v1.pdf at computations/probes/figure_eight_
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:23Z
-updated_at: 2026-08-21T17:05:06Z
+updated_at: 2026-10-04T15:23:33Z
+parent: qou-aqfj
 ---
 
 Flag the near-collision: 2026-08-01-arrow-a-stateintegral-saddle-not-index-series.md writes 'GHRS arXiv:1604.02688 Rmk 1.13', mixing the GHHR author string of this paper with the acronym of the already-registered garoufalidis-hodgson-rubinstein-segerman2015 (arXiv:1303.5278). Two distinct papers, and the ambiguity should be resolved when the key is minted.

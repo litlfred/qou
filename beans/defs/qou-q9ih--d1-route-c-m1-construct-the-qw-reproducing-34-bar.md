@@ -1,11 +1,14 @@
 ---
 # qou-q9ih
 title: 'D1: Route C M1 — construct the (Q,W) reproducing {3,4} + bar split (7,1); fitted quiver = candidate only (parent qou-rtec)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T02:49:30Z
-updated_at: 2026-08-22T20:24:44Z
+updated_at: 2026-10-04T15:12:16Z
+parent: qou-v2om
 ---
 
 
@@ -1144,3 +1147,9 @@ flavour lattice of `T[5₂]` — not held in `library/`, not computable here. Th
 next step is **acquiring a source**, not another probe against what is held.
 
 Detail and the 6/6 probe: `qou-rutm`, PR #6599.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-22 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

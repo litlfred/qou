@@ -3,8 +3,12 @@
 title: Cross-check [bujack2022] at content/quantum-observable-universe/predicted-spectra/schrodinger-col…
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:34:07Z
-updated_at: 2026-08-08T23:34:07Z
+updated_at: 2026-10-04T15:18:24Z
+parent: qou-1qhv
 ---
 
 q₀ ≈ 1.109978595554181 in the block matches neither documented pin; per the 2026-08-07 owner directive new/touched compute defaults to the proton pin. Recompute η and d* at q_parameter.Q and state the pin used.

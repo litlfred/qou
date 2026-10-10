@@ -4,8 +4,11 @@ title: 'GAP: name the dynamics that makes the Markov trace a FINITE-temperature 
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-19T17:31:15Z
-updated_at: 2026-08-31T16:40:23Z
+updated_at: 2026-10-04T15:20:15Z
+parent: qou-rtxm
 ---
 
 Opened from the literature check on qou-y0mc.

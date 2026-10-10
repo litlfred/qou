@@ -4,8 +4,11 @@ title: Cite 0302267v2.pdf at conj:qou-infra-discharges-goncharov-zeta5
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:36Z
-updated_at: 2026-08-21T17:05:07Z
+updated_at: 2026-10-04T15:17:01Z
+parent: qou-19m0
 ---
 
 The zeta_5 / mu_N depth-3 blocks presuppose the motivic pi_1 of P^1 \ {0, infinity, mu_N} constructed in §5.

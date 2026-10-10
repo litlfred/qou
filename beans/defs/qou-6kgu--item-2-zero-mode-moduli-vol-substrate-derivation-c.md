@@ -4,8 +4,11 @@ title: 'Item 2: zero-mode moduli Vol substrate-derivation constraints (det′=2(
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-19T13:32:43Z
-updated_at: 2026-07-19T13:37:15Z
+updated_at: 2026-10-04T15:21:00Z
+parent: qou-v2om
 ---
 
 

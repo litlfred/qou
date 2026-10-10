@@ -4,8 +4,11 @@ title: Cite 1304.2705v1.pdf at conj:modular-s-transform-q-q-tilde
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:13:08Z
-updated_at: 2026-08-21T17:04:58Z
+updated_at: 2026-10-04T15:17:10Z
+parent: qou-19m0
 ---
 
 conj:modular-s-transform-q-q-tilde asserts modular continuation and a q<->q~ duality with no explicit factorisation anchor in its cites[] (kashaev1997, neumann-zagier1985, kashaev-tirkkonen2014). Cor. 1.7 is a proved instance.

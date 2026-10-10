@@ -4,8 +4,11 @@ title: script-QA sweeper audits ZERO qou producers — its only root is folio-as
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T09:19:22Z
-updated_at: 2026-08-26T14:02:07Z
+updated_at: 2026-10-04T15:24:21Z
+parent: qou-5vkl
 ---
 
 Found while wiring qou-3xk6. `computations/hecke/hecke_characters.py` changed, so

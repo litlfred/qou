@@ -3,8 +3,12 @@
 title: 'GAP-3: derived R(q,x) q-difference weight kernel (formalize-first)'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-11T23:11:26Z
-updated_at: 2026-07-11T23:11:26Z
+updated_at: 2026-10-04T15:19:34Z
+parent: b9cj
 ---
 
 

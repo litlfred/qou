@@ -1,11 +1,14 @@
 ---
 # rtrb
 title: 'RT-1: RibbonCategory layer (twist θ) on Mathlib BraidedCategory+RightRigidCategory'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-02T09:20:00Z
-updated_at: 2026-08-17T21:46:04Z
+updated_at: 2026-10-04T15:11:08Z
+parent: qou-o9ge
 ---
 
 Parent: rtep. TIER: ACHIEVABLE (~1-2 sessions). Mathlib has BraidedCategory + Right/LeftRigidCategory
@@ -52,3 +55,9 @@ scratch. If you own this arc: the axiom exists, build on it.
 section omits `[BraidedCategory C]` and lets the braiding come from
 `SymmetricCategory` — the `KeystonePivotalSpherical` dodge. I first recorded
 that dodge as non-transferable and had to retract it; it transfers exactly.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-17 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

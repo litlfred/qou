@@ -1,0 +1,60 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "chlouveraki2016-hdr",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 119,
+      "entry": {
+        "id": "chlouveraki2016-hdr",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T18:18:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 1,
+        "fix_commit": "(this commit)",
+        "note": "TODO bib lookup (Chlouveraki HDR thesis 2016). 4 .lean sites cite 'HDR Theorem 6.20' but I haven't re-keyed them yet (need to find specific sites). Entry exists; sites can be updated when HDR metadata is filled in. | UPDATE 2026-05-19 18:13: .lean sites re-keyed; entry now has citation backing (still TODO: fill in title/URL metadata). | UPDATE 2026-05-19 18:18: PDF in library/hdr/HDR.pdf is Chlouveraki's HDR thesis 'Hecke algebras, generalisations and representation theory' \u2014 exact match for the TODO entry.",
+        "source": {
+          "kind": "upload",
+          "file": "library/hdr/HDR.pdf"
+        },
+        "local_pdf": "library/hdr/HDR.pdf",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED: the document's own HAL cover page and title page identify it as the habilitation memoir that the seeded key names, with the same HAL handle recorded in the reference entry. Citation sites: mass-theory/wenzl-bridge-applicability-qou.lean:82 and :106, plus a manifest-level cites[] entry at braids-and-knots/f-bor-borromean-observable.ts:46. LOAD-BEARING AND CORRECT at both Lean sites. Theorem 6.20 (PDF text line 3388) asserts, for indeterminates z, x_1..x_{d-1} over C(q), the existence and UNIQUENESS of a linear Markov trace on the tower of Yokonuma-Hecke algebras Y_{d,n}(q) determined by four rules: cyclicity tr(ab)=tr(ba), normalisation tr(1)=1, the Markov rule tr(a g_n) = z tr(a), and tr(a t_{n+1}^k) = x_k tr(a). The statement closes with: 'For d = 1, the trace tr_1 is defined by only the first three rules, and it is the Ocneanu trace on the Iwahori-Hecke algebra H_n(q)'. The Lean class MarkovTraceFamilyOneDim encodes exactly that d=1 uniqueness content (two normalised traces sharing the Markov parameter z coincide), so the cited scope is right. SCOPE CAVEAT: as printed the theorem is a Yokonuma-Hecke statement and the Hecke uniqueness the corpus uses is its d=1 specialisation; neither Lean -- Ref: line says so. The f-bor cites[] entry is manifest-level only - that .md never mentions Markov-trace uniqueness, so the citation does no work there.",
+          "keyResults": [
+            {
+              "locator": "Thm 6.20",
+              "statement": "Unique linear Markov trace on the Yokonuma-Hecke tower Y_{d,n}(q) fixed by cyclicity, normalisation and the Markov/framing rules; at d=1 it is the Ocneanu trace on H_n(q).",
+              "useForFolio": "Backs the uniqueness hypothesis MarkovTraceFamilyOneDim that wenzl_bridge_applicability_qou consumes; the d=1 sentence is the exact Hecke specialisation the corpus needs.",
+              "targets": [
+                "qou:QOU.MassTheory.wenzl_bridge_applicability_qou",
+                "prop:y-lambda-closed-form-wenzl-bridge"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "The Lean -- Ref: at wenzl-bridge-applicability-qou.lean:82/:106 cites 'HDR Theorem 6.20' without noting that the printed theorem is for Yokonuma-Hecke Y_{d,n}(q) and that the Hecke uniqueness used here is its d=1 case. Record the specialisation so a reader does not have to re-derive it from the PDF.",
+              "target": "qou:QOU.MassTheory.wenzl_bridge_applicability_qou",
+              "bean": "qou-tp3j"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "35c190fd2d2a"
+        }
+      }
+    }
+  ]
+}

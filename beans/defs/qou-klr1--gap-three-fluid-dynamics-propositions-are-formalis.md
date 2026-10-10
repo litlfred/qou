@@ -4,8 +4,11 @@ title: 'GAP: three fluid-dynamics propositions are formalised twice and the LIBR
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-14T07:59:14Z
-updated_at: 2026-09-14T07:59:14Z
+updated_at: 2026-10-04T15:20:28Z
+parent: qou-6qbv
 ---
 
 Found while adjudicating the 13 of `qou-vh1o` (2026-09-13/14). **Author call,

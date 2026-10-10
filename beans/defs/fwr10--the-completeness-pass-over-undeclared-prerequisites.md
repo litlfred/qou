@@ -4,9 +4,11 @@ title: completeness pass over blocks that declare no prerequisites
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T03:35:00Z
-updated_at: 2026-09-26T11:03:26Z
-parent: fwr6
+updated_at: 2026-10-04T15:17:59Z
+parent: qou-mub3
 ---
 
 Branch `claude/fwr10-completeness-pass-2026-08-10`. `fwr6` item 6.

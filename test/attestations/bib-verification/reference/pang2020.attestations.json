@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "pang2020",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 428,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2002.07369v2/2002.07369v2.pdf"
+        },
+        "id": "pang2020",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Groebner-Shirshov bases for the finite Coxeter GROUPS of the exceptional types G2, F4, E6, E7, E8, computed by Shirshov's algorithm over K<X> under deg-lex: a re-labelled presentation of E_n (Def 3.1, p. 6), then GB(E6) (Thm 3.2, pp. 6-7), GB(E7) (Thm 3.3, p. 8), GB(E8) (Thm 3.4, p. 10), with GB(G2) and GB(F4) in Appendix A (Thms A.3, A.4, p. 12) and a remark that n = 9 in the same presentation is the affine group. Sec. 2 is textbook GS setup and adds nothing the folio does not already have via bokutchen2014. The stated contribution is completing the exceptional types after the classical A_n, B_n, D_n cases. Two independent mismatches with this folio, either decisive. (1) TYPE: every GS object here is type A -- H_n(q) on braid generators, the normal-form words spanning H_3(q), the GS confinement filtration on T_w, the plactic/crystal bridge in type A_n. This document proves nothing in type A; the A_5 relations quoted at the head of the Thm 3.2 proof are cited, not proved. (2) DEFORMATION: its object is the Coxeter group as a semigroup presentation over a field, never the Iwahori-Hecke algebra. The folio's E6/E7/E8 sightings are affine-E8 Coxeter MARKS via McKay (cyclotomic-boundary-at-keystone) and ADE labels on ALE singularities, not normal forms in W(E8); grep for 'Coxeter group of type' and 'Weyl group of E8' over content returns nothing. None of the live fronts touches an exceptional Coxeter group. One fact worth carrying forward, reported here rather than proved here (p. 2): Chen and Liu produced a counter-example to the general Bokut conjecture on GS bases of arbitrary Coxeter groups -- that document is library/arxiv-0910.0096v1/0910.0096v1.pdf in this same batch, now registered as chenliu2009, and is the primary for the caution. Scope-(a) negative: as read, this document supplies nothing this folio can consume; that is not a claim that GS bases for Coxeter groups are irrelevant here -- the type-A member of that literature is load-bearing, it is simply a different paper.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Orphan in an adjacent literature the folio genuinely uses, but for types the folio never touches, and at q = 1. add-reference would be inflation and cite-in-block has no honest site. Recording the classification is the useful output: a future search for 'Groebner-Shirshov bases for Coxeter groups' should not re-open this file expecting the type-A source, which is [bokut2001] for the group case and, for the deformation, Kang-Lee-Lee-Oh 2002 (bean qou-qspu).",
+              "target": "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/HeckeGS.lean"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-09T19:30:00Z",
+          "source_sha": "6b8b1e509553"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

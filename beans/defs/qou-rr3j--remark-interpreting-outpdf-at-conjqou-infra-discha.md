@@ -4,8 +4,11 @@ title: Remark interpreting out.pdf at conj:qou-infra-discharges-goncharov-zeta5
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:58Z
-updated_at: 2026-08-21T17:05:02Z
+updated_at: 2026-10-04T15:24:00Z
+parent: qou-aqfj
 ---
 
 Before this is used for anything stronger, someone must check whether the double shuffle relations here actually restrict to fifth-root-of-unity arguments in weight 3 and generate relations independent of the multiplication formula the conjecture already quotients by. I did not verify that, so aid-proof would be an over-claim.

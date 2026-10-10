@@ -4,8 +4,11 @@ title: Cite 0611504v1.pdf at def:quantum-bloch-group
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T16:12:53Z
-updated_at: 2026-08-21T17:04:57Z
+updated_at: 2026-10-04T15:17:05Z
+parent: qou-19m0
 ---
 
 def:quantum-bloch-group describes the state-sum/Kashaev construction in prose with primary-source citations only; this is the framework it sits in.

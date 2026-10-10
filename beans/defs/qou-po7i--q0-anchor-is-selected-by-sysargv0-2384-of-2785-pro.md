@@ -1,11 +1,14 @@
 ---
 # qou-po7i
 title: q0 anchor is selected by sys.argv[0] — 2384 of 2785 producers undeclared, 1887 witnesses carry no anchor
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-10T02:20:19Z
-updated_at: 2026-09-08T07:45:38Z
+updated_at: 2026-10-04T15:13:35Z
+parent: qou-5vkl
 ---
 
 
@@ -290,3 +293,9 @@ bean's own if the difference is load-bearing.
 quote it as current.
 
 ## 2026-09-08: canonical ledger for the q₀-gate family is qou-1c4y (the AGENTS.md-named migration tracker); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 3 / §7.3 C3. Sixteen q₀-gate beans, ~10 % cross-reference density, now all point there.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

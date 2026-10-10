@@ -1,11 +1,13 @@
 ---
 # qou-vkmt
 title: 'Mathlib infra: close class field debt'
-status: in-progress
+status: scrapped
 type: milestone
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T06:43:02Z
-updated_at: 2026-09-08T07:45:45Z
+updated_at: 2026-10-04T15:11:14Z
 ---
 
 Epic: close conjectural class fields that are standard math
@@ -22,3 +24,10 @@ Recording rather than merging or scrapping either, because which is canonical is
 Found the way `AGENTS.md` says these get found: by running the exact-title existence check that `beans create` does not run for you. I found it *after* creating a third bean on the same subject (`qou-bi00`, now scrapped), so this pair cost one more duplicate before it was noticed.
 
 ## 2026-09-08: audit docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 6 lists this with qou-c8p8 as a byte-identical pair. Diffed: NOT identical — c8p8 (138 lines) holds the measured Mathlib triage; this bean already records itself as the duplicate (2026-09-03 note). Both in-progress. Not scrapped here because the bodies differ; recommended: scrap THIS one and keep qou-c8p8.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-c8p8` (work-plan reorganisation 2026-10-04). Evidence: [M] twin in-progress milestones 'Mathlib infra: close class field debt' created same day; reparent vkmt's 13 children to c8p8 (4 of them are themselves dups below)
+Content is untouched; only this work item is closed.

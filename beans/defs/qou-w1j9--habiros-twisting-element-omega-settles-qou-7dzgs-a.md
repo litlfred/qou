@@ -4,8 +4,11 @@ title: Habiro's twisting element omega settles qou-7dzg's (A)-vs-(B) — the rib
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T17:33:32Z
-updated_at: 2026-08-24T21:05:12Z
+updated_at: 2026-10-04T15:20:40Z
+parent: qou-avtq
 ---
 
 ## The source, and why it is decisive

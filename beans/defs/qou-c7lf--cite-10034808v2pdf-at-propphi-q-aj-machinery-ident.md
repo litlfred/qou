@@ -4,8 +4,11 @@ title: Cite 1003.4808v2.pdf at prop:phi-q-aj-machinery-identification
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:37:21Z
-updated_at: 2026-08-21T17:04:50Z
+updated_at: 2026-10-04T15:17:07Z
+parent: qou-ysb7
 ---
 
 The block's Phi_q-vs-Li_2^q context sorting is precisely the quantum-VC saddle framing these lectures develop, and it currently carries no citation for it.

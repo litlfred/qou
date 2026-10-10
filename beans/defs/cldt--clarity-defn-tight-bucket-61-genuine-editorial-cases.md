@@ -4,8 +4,11 @@ title: 'Clarity EPIC: clarity-defn-tight bucket — 61 genuine editorial cases (
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-07-12T00:55:00Z
-updated_at: 2026-07-12T00:55:00Z
+updated_at: 2026-10-04T15:17:56Z
+parent: qou-mub3
 ---
 
 ## Assessment (2026-07-12)

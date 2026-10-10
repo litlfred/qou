@@ -4,8 +4,11 @@ title: HeckeAlgebra names five declarations across two quadratic conventions
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T13:50:38Z
-updated_at: 2026-08-30T13:51:39Z
+updated_at: 2026-10-04T15:20:45Z
+parent: qou-k4oq
 ---
 
 Found while merging #6158, and **#6158 is what made it five** — I added the second convention, so

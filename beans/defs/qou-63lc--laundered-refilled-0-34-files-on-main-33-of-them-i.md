@@ -1,10 +1,13 @@
 ---
 # qou-63lc
 title: LAUNDERED refilled 0 -> 34 files on main, 33 of them in the last 3 days
-status: todo
+status: scrapped
 type: bug
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-03T04:20:34Z
-updated_at: 2026-09-03T04:20:34Z
+updated_at: 2026-10-04T15:15:44Z
 ---
 
 
@@ -79,3 +82,10 @@ on an unrelated `qou-cds1` commit. The gate is doing its job; nothing on my
 branch is implicated (neither new file appears in any red section). Worth noting
 that the gate is `workflow_dispatch`-only per the 2026-06-30 Actions directive,
 so **nothing runs it on a push** — these 34 landed without it firing once.
+
+
+
+## Reasons for Scrapping
+
+Duplicate of `qou-b7cf` (work-plan reorganisation 2026-10-04). Evidence: [M] same title/measurement; qou-b7cf in-progress carries PR #6489
+Content is untouched; only this work item is closed.

@@ -4,8 +4,11 @@ title: 'GAP: deprecated aliases + call-site migration for the 10 cellContent / 3
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T19:50:56Z
-updated_at: 2026-08-24T19:52:10Z
+updated_at: 2026-10-04T15:19:55Z
+parent: qou-5vkl
 ---
 
 Follow-up to `qou-cdup`, opened from PR #5704 (additive tranche). Two halves of

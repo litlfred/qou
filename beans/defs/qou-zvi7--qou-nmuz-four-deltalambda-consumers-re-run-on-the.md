@@ -1,12 +1,14 @@
 ---
 # qou-zvi7
 title: 'qou-nmuz: four deltalambda consumers re-run on the borromean 5Li/6Li chi caches (#7160 follow-up)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-08T08:04:05Z
-updated_at: 2026-09-08T08:11:15Z
-parent: qou-vyvt
+updated_at: 2026-10-04T15:13:39Z
+parent: qou-5vkl
 ---
 
 ## Why this bean has this ID
@@ -129,3 +131,9 @@ Two grep hits in `recursive-atom-knot-atlas-registry.md` (87216.6121, 250.9095) 
 ## PR
 
 https://github.com/litlfred/qou/pull/7172 (non-draft, opened 2026-09-08). Commits f63d8a0d50b / 78abdeef74b / 11cf449f38f / 1c75a957356 (one per producer) + 54dc0affd2a (this bean). Precision gates: every RED is on files this PR does not touch (list in the PR body); audit witnesses reverted per the gate.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

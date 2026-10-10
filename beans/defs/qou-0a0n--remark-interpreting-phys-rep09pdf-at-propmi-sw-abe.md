@@ -4,8 +4,11 @@ title: Remark interpreting phys-rep09.pdf at prop:mi-sw-abelianisation
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:36:24Z
-updated_at: 2026-08-21T17:04:39Z
+updated_at: 2026-10-04T15:24:00Z
+parent: qou-aqfj
 ---
 
 Record the path-ordered Magnus representation and its convergence criterion next to prop:mi-sw-abelianisation's no-instance note, stating plainly that Magnus covers the one-dimensional case only and that the surface-ordered case the corpus needs is not addressed here. Deliberately not aid-proof: the dimension mismatch is exactly the unchecked hypothesis.

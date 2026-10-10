@@ -1,11 +1,14 @@
 ---
 # qou-avt1
 title: 'ATTACK 1 (best): derive the counit->trace transport; the cosine is the unjustified step'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-26T04:14:19Z
-updated_at: 2026-08-29T10:50:29Z
+updated_at: 2026-10-04T15:10:48Z
+parent: qou-avtq
 ---
 
 Parent: `qou-cds1`. The highest-value Q_beta vector, and it is already in the
@@ -140,3 +143,9 @@ Under canonical D the cosine correction is NOT derived: its evenness-forcing (Ma
 
 ## 2026-08-29 — G2 is now PROVED-LEAN (landed)
 QOU/QBeta/LadderCosClash.lean committed (0f4df6eed6), sorry-free, verified lean-direct (axioms={propext,Classical.choice,Quot.sound}): transport_even_sum (affine even part =1), evalMap_ratio_eq_transportFactor (KC19 ratio = 1-4a/(h(h-2))), cos_correction_ne_affine_even_part (cos a != affine even part on (0,2pi)). The cosine is the SOLE carrier of the O(a^2) term. Still open: the fork bean (does a bar-odd alpha_D exist reproducing the H3 V_(2,1) spectrum) + C-scope/drop BOTH cosine carriers (QBetaCosResummation + V21Eigenphase).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-29 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

@@ -1,11 +1,14 @@
 ---
 # qou-kc21im
 title: 'GAP: is KC21''s "structural parity is convention-immune" VERIFIED or asserted? c_3(q) is DEFINED BY the C-frame extractor'
-status: in-progress
+status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-15T15:05:00Z
-updated_at: 2026-08-15T18:40:00Z
+updated_at: 2026-10-04T15:10:58Z
+parent: qou-avtq
 ---
 
 ## The question
@@ -176,3 +179,9 @@ probe, both fixed at the producer). Left standing and not from this branch:
 **Not closed** — closing is human-only. Awaiting owner review of the two
 corrections, particularly correction 2, which weakens an evidential claim the
 corpus has been relying on.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-15 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

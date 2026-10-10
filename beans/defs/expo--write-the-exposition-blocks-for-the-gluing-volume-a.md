@@ -1,16 +1,17 @@
 ---
 # expo
-title: 'Write the exposition blocks for the gluing / volume / surreal-transfer arc'
-status: in-progress
+title: Write the exposition blocks for the gluing / volume / surreal-transfer arc
+status: todo
 type: task
 priority: high
 tags:
+    - reorg-2026-10-04
     - content
     - exposition
     - hyperbolic-volume
-parent: m015
 created_at: 2026-08-10T05:00:00Z
-updated_at: 2026-08-10T05:00:00Z
+updated_at: 2026-10-04T15:11:12Z
+parent: qou-mub3
 ---
 
 **The arc has proved results with no paper presence.** That is the opposite of the usual
@@ -218,3 +219,9 @@ over that file did not.
 
 Verified as before: ref resolves by `#check`; baseline unchanged at 42; positive control
 42 → 43 on removing the `lean` field, reverted from an explicit backup.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-10 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

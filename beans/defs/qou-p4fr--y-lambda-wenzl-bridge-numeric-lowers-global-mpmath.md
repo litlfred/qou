@@ -3,8 +3,12 @@
 title: y_lambda_wenzl_bridge_numeric lowers global mpmath precision and never restores it
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-13T09:21:45Z
-updated_at: 2026-09-13T09:21:45Z
+updated_at: 2026-10-04T15:25:41Z
+parent: qou-9nnz
 ---
 
 

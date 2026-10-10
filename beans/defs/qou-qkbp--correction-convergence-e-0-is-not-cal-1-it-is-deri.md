@@ -1,10 +1,14 @@
 ---
 # qou-qkbp
 title: 'CORRECTION + CONVERGENCE: E_0 is NOT CAL-1 — it is derived as m_e.c_q^2.hbar_q = the energy of one Hecke reduction step, which is exactly what log_z tr_M counts. Remaining freedom is the ~1% brane-tower truncation, and the two derived forms BRACKET the measured peak.'
-status: in-progress
+status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-05T06:17:21Z
-updated_at: 2026-09-05T06:17:21Z
+updated_at: 2026-10-04T15:12:14Z
+parent: qou-wp3h
 ---
 
 `computations/qbeta/qbeta_e0_is_derived_probe.py` (6/6).
@@ -96,3 +100,9 @@ The sole exception is **4He at 1.0758** — the corpus's own most-worked anomaly
 `qou-guyb`). This is a STRUCTURAL argument, not a proximity one: boundedness is a
 property of the whole table and cannot be tuned by moving a scale 0.99 % toward
 one point.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

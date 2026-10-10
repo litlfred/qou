@@ -6,7 +6,7 @@
     {
       "id": "defs",
       "path": "defs",
-      "graphKinds": [
+      "graphTypologies": [
         "bean-defs"
       ],
       "description": "Work items — one Markdown file each, in the layout the `beans` CLI reads. Also holds the watcher queue JSON files (`*-queue.json`) that AGENTS.md work-plan §4 names."

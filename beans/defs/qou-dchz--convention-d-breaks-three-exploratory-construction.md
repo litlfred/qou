@@ -4,8 +4,11 @@ title: Convention D breaks three exploratory constructions that were valid under
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-24T21:29:51Z
-updated_at: 2026-08-29T08:28:37Z
+updated_at: 2026-10-04T15:18:09Z
+parent: qou-cdx1
 ---
 
 Found 2026-08-24 completing the qou-37xc conversion of _li_2_q_util (PR #5622,

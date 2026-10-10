@@ -4,9 +4,11 @@ title: 'CITE: Riera-Rodriguez 1992 §2 sources the unsourced 240 and B = Delta/G
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-04T09:03:28Z
-updated_at: 2026-09-04T09:03:28Z
-parent: qou-8lxd
+updated_at: 2026-10-04T15:14:45Z
+parent: qou-mub3
 ---
 
 **Class M — the source is held, registered, and cited for a different section of itself.**

@@ -4,8 +4,11 @@ title: 'confinement_categorical: MarkovTraceContext has NO instance anywhere —
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T11:07:51Z
-updated_at: 2026-09-26T11:03:27Z
+updated_at: 2026-10-04T15:18:03Z
+parent: qou-rtxm
 ---
 
 

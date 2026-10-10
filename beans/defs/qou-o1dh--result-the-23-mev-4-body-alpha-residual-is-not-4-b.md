@@ -1,11 +1,13 @@
 ---
 # qou-o1dh
 title: 'RESULT: the "23 MeV 4-body alpha-residual" is not 4-body -- 3-body dominates 3.05x'
-status: todo
+status: completed
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-31T17:05:03Z
-updated_at: 2026-08-31T17:05:03Z
+updated_at: 2026-10-04T15:15:04Z
 ---
 
 
@@ -147,3 +149,9 @@ floor as the top-grade associated graded; the unbound `¹S₀` diproton and
 dineutron with their scattering lengths; the Ursell–Mayer cluster expansion; the
 `w₄/w₃` bound; the structural argument for what neither filtration can express;
 and the SM / eightfold-way position including the SEMF evaluation at `A = 4`.
+
+
+
+## Summary of Changes
+
+Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. Evidence: [M] title RESULT; record then close

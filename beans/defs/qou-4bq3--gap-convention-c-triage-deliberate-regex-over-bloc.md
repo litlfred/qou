@@ -3,8 +3,12 @@
 title: 'GAP: convention-c-triage DELIBERATE regex over-blocks 8 of 24 B3 verdicts'
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-25T01:09:17Z
-updated_at: 2026-08-25T01:09:17Z
+updated_at: 2026-10-04T15:19:51Z
+parent: qou-cdx1
 ---
 
 

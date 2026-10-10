@@ -4,8 +4,11 @@ title: 21 dirty witnesses sit at a path NO producer writes — 1550 baseline fie
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-07T17:37:47Z
-updated_at: 2026-09-13T12:33:07Z
+updated_at: 2026-10-04T15:16:00Z
+parent: qou-5vkl
 ---
 
 ## What was measured

@@ -1,11 +1,14 @@
 ---
 # qou-lt8x
 title: 'The convention-D blast radius does NOT cover 31 of the 43 structurally-C witnesses: read-set != write-set'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-11T01:13:43Z
-updated_at: 2026-08-16T13:48:41Z
+updated_at: 2026-10-04T15:14:10Z
+parent: qou-cdx1
 ---
 
 
@@ -353,3 +356,9 @@ mine. Zero NEW dirty witnesses attributable to this work.
 witnesses). Each needs 2× that for an isolated C-vs-D delta. All restored cleanly.
 Regenerating `multi-level-jet-sum` also drained a STALE q0 anchor
 (`q0-value-drift-audit`: STALE 314→313, proton-pin 801→802).
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

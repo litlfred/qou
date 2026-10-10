@@ -1,11 +1,14 @@
 ---
 # qou-580o
 title: 'UNDISCLOSED C->D FLIP: the PSLQ probe''s z was switched to convention D inside a Lambda-Cl2 naming commit, and its witness was never regenerated'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-18T08:21:15Z
-updated_at: 2026-08-18T15:40:19Z
+updated_at: 2026-10-04T15:14:17Z
+parent: qou-cdx1
 ---
 
 ## Found by re-running, not by reading (2026-08-18, while draining qou-zdz5)
@@ -142,3 +145,9 @@ re-substituted.
 Retracted wherever I published it: PR #5265 body, commit 70b10900e's message,
 and the qou-zdz5 note.  The zdz5 naming fixes themselves are unaffected --
 they were correct and remain correct.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-08-18 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.

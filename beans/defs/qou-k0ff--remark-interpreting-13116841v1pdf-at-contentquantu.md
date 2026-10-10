@@ -4,8 +4,11 @@ title: Remark interpreting 1311.6841v1.pdf at content/quantum-observable-univers
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-08T23:35:31Z
-updated_at: 2026-08-21T17:04:57Z
+updated_at: 2026-10-04T15:23:32Z
+parent: qou-aqfj
 ---
 
 The observations chapter already compares QOU against parallel unification programmes (causal fermion systems). A q-deformed-LQG comparison entry is the same kind of external-context remark and this document is the source for it.

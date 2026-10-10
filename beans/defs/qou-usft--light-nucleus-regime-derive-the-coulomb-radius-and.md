@@ -4,8 +4,11 @@ title: 'Light-nucleus regime: derive the Coulomb radius AND density shape from b
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-09T10:35:13Z
-updated_at: 2026-08-09T10:57:36Z
+updated_at: 2026-10-04T15:21:15Z
+parent: qou-8lxd
 ---
 
 

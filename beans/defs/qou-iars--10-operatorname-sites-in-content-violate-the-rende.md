@@ -4,8 +4,11 @@ title: 10 \operatorname sites in content/ violate the render-QA gate
 status: todo
 type: bug
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-31T06:01:00Z
-updated_at: 2026-08-31T06:01:01Z
+updated_at: 2026-10-04T15:15:34Z
+parent: qou-mub3
 ---
 
 AGENTS.md's render-QA gate lists, among the mandatory preflight greps, *"no

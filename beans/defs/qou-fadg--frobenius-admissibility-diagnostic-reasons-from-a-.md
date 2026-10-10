@@ -1,11 +1,14 @@
 ---
 # qou-fadg
-title: 'frobenius_admissibility_diagnostic reasons from a rank-6 Gram that is rank 5'
+title: frobenius_admissibility_diagnostic reasons from a rank-6 Gram that is rank 5
 status: todo
 type: task
 priority: medium
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-30T00:00:00Z
-updated_at: 2026-08-30T00:00:00Z
+updated_at: 2026-10-04T15:26:06Z
+parent: qou-v2om
 ---
 
 Found while stamping the convolution onto the generative-isotope SDP path

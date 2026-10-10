@@ -4,8 +4,11 @@ title: Refresh 7 consumers of the T4 theta values after the q0 unit-conflation f
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-07T22:02:31Z
-updated_at: 2026-08-07T22:11:34Z
+updated_at: 2026-10-04T15:15:04Z
+parent: qou-avtq
 ---
 
 The T4 crux probe's q0 was fixed (PR #4513) from the hardcoded 1.11020 to the

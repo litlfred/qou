@@ -2,14 +2,16 @@
 # mlgp
 title: 'Mathlib gaps this lane needs: Clausen/Lobachevsky, Λ″ = −cot, constrained concavity'
 status: todo
-type: epic
+type: feature
 priority: high
 tags:
+    - reorg-2026-10-04
     - lean
     - mathlib-gap
     - hyperbolic-volume
 created_at: 2026-08-09T19:45:00Z
-updated_at: 2026-08-30T19:30:00Z
+updated_at: 2026-10-04T15:14:34Z
+parent: qou-c8p8
 ---
 
 Inventory of what Mathlib does **not** have that the volume lane needs, with what

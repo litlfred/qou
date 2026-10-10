@@ -4,8 +4,11 @@ title: 'OWNER CALL: is a Z-clustered SnapPy pseudo-volume the right geometric in
 status: todo
 type: task
 priority: high
+tags:
+    - reorg-2026-10-04
+    - needs-owner
 created_at: 2026-09-12T20:15:44Z
-updated_at: 2026-09-12T20:16:26Z
+updated_at: 2026-10-04T15:15:00Z
 ---
 
 **This is an owner decision, not agent work**, and it is the successor to

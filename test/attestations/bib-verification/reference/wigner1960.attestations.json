@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "wigner1960",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 116,
+      "entry": {
+        "id": "wigner1960",
+        "status": "uncited",
+        "verified_at": "2026-05-19T17:20:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": null,
+        "note": "Wigner \u2014 'Unreasonable Effectiveness' 1960. Bib orphan (0 cites). Decision: keep as canonical reference / remove.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1002/cpa.3160130102"
+        }
+      }
+    }
+  ]
+}

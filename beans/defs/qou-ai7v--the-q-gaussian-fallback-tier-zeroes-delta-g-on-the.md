@@ -3,8 +3,12 @@
 title: The q-Gaussian fallback tier zeroes delta_g on the SAME disproved complementary-slackness argument
 status: todo
 type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-09-12T22:56:19Z
-updated_at: 2026-09-12T22:56:19Z
+updated_at: 2026-10-04T15:24:59Z
+parent: qou-v2om
 ---
 
 

@@ -4,8 +4,11 @@ title: 'q₀: re-centre the 79 Lean statements, plus 8 content sites deferred fr
 status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-08-21T15:55:00Z
-updated_at: 2026-08-21T15:55:00Z
+updated_at: 2026-10-04T15:23:07Z
+parent: qou-2002
 ---
 
 The 2026-08-21 legibility + prose pass (option 3 + 2 of

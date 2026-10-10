@@ -1,11 +1,14 @@
 ---
 # gm4q
 title: 'Author input needed on generator-volume-decomposition: Binding energy scales exponentially to physically absurd values instead of saturating (e.g. 8.25x10^13 for Bi-210)'
-status: in-progress
+status: todo
 type: task
 priority: normal
+tags:
+    - reorg-2026-10-04
 created_at: 2026-06-28T23:02:55Z
-updated_at: 2026-09-04T02:27:55Z
+updated_at: 2026-10-04T15:11:55Z
+parent: qou-v2om
 ---
 
 **Answered 2026-09-04** (branch `claude/q407-self-assuming-projections-2026-08-21`).
@@ -48,3 +51,9 @@ Producer: `computations/qbeta/qbeta_binding_law_options_probe.py` (10/10).
 additive law (Option B in that note), or say why not. This bean stays open until
 that decision lands on every surface stating `B = Q_beta . Delta_tr` — a
 correction is not landed until it reaches every surface stating the old claim.
+
+
+
+## Claim reset 2026-10-04
+
+Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
