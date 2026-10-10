@@ -41,6 +41,10 @@ so the saddle points are the roots of a **trinomial in Bring–Jerrard normal
 form**, `u³ − u + 2/5`, whose discriminant is `−8/25 = −2³/5²`. The value
 `−80000 = −2⁷·5⁴` is the discriminant of the reduced cubic `16w³ + 24w² − 13w + 2`
 (as `ColourCubicBranchLocus` states), not of the sextic (bean `qou-ozyt`).
+The sextic's own discriminant is `−5120000000000 = −2¹⁹·5¹⁰`, proved as
+`QOU.Brings.colourSextic_discr` in `QOU.Brings.ColourCubicDiscriminantValues`
+(Sylvester-formula discriminant on leading-first coefficient vectors; that file
+also proves `reducedCubic_discr = −80000` and `saddleTrinomial_discr = −8/25`).
 
 The last theorem explains, as algebra rather than observation, *why* one
 conjugate pair of roots lies exactly on the unit circle: the trinomial's real
