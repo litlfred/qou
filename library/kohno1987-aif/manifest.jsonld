@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/agent-aa0db88738c4896fe/kohno1987-aif/manifest.jsonld",
+  "@type": [
+    "folio-assistant-core:SourceDocument"
+  ],
+  "title": "Monodromy representations of braid groups and Yang-Baxter equations",
+  "contains": [
+    "library/kohno1987-aif/sections/sec-front-matter",
+    "library/kohno1987-aif/sections/sec-000",
+    "library/kohno1987-aif/sections/sec-001",
+    "library/kohno1987-aif/sections/sec-002",
+    "library/kohno1987-aif/sections/sec-003",
+    "library/kohno1987-aif/sections/sec-004",
+    "library/kohno1987-aif/sections/sec-005",
+    "library/kohno1987-aif/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "kohno1987-aif",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "kohno1987-aif.pdf",
+    "source_sha256": "88c5119985dfe878f41c40936d3df957ea2f48e9afb04c1f3f0712e2baa78d6a",
+    "pages": 23,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

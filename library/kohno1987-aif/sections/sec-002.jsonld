@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/kohno1987-aif/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Description of the monodromy by means",
+  "pageStart": 6,
+  "pageEnd": 10,
+  "contains": [
+    "library/kohno1987-aif/blocks/prose-sec-002"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/agent-aa0db88738c4896fe/kohno1987-aif/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/agent-aa0db88738c4896fe/kohno1987-aif/manifest.jsonld",
+  "provenance": "ingested"
+}
