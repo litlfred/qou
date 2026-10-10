@@ -125,6 +125,7 @@ import {
   writeFileSync,
 } from "node:fs";
 import { basename, dirname, join, relative, resolve } from "node:path";
+import { blockQaReadPath, blockQaWritePath, blockRootOf, saveBlockQa } from "./block-qa-io.ts";
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -674,7 +675,7 @@ function expandTargets(p: string): string[] {
   if (existsSync(abs) && statSync(abs).isDirectory()) return [...walk(abs)];
   if (abs.endsWith(".ts")) return [abs];
   if (abs.endsWith(".md")) return [abs.slice(0, -3) + ".ts"];
-  if (abs.endsWith(".qa.json")) return [abs.slice(0, -8) + ".ts"];
+  if (abs.endsWith(".qa.json")) return [blockRootOf(abs) + ".ts"]; // a results-tree path names its block too (#7642)
   return [abs + ".ts"];
 }
 
@@ -692,9 +693,9 @@ function writeSidecar(
   metrics: Record<string, number>,
   prov: { scriptHash: string; scriptSha: string; reviewedSha: string; depsHash: string },
 ) {
-  const qaPath = join(b.dir, `${b.root}.qa.json`);
+  const qaPath = blockQaReadPath(join(b.dir, b.root));
   let doc: any = {};
-  if (existsSync(qaPath)) {
+  if (qaPath && existsSync(qaPath)) {
     try {
       doc = JSON.parse(readFileSync(qaPath, "utf8"));
     } catch {
@@ -726,8 +727,11 @@ function writeSidecar(
   if (evidence) entry.evidence = evidence;
   doc.criteria[CRITERION] = [entry];
   doc.updated_at = now;
-  writeFileSync(qaPath, JSON.stringify(doc, null, 2) + "\n");
-  return relative(process.cwd(), qaPath);
+  // Issue #7642: saved the split way. This writer produces script entries
+  // only, so the judgement half comes from test/attestations/block-qa.
+  const saved = saveBlockQa(join(b.dir, b.root), doc, "script");
+  if (!saved.ok) throw new Error(saved.reason);
+  return relative(process.cwd(), saved.path);
 }
 
 // ---------------------------------------------------------------------------
@@ -1028,7 +1032,7 @@ function main() {
       kind: b.kind,
       block: b.root,
       mdPath: b.md ? b.mdPath : b.tsPath,
-      qaPath: relative(repoRoot, join(b.dir, `${b.root}.qa.json`)),
+      qaPath: relative(repoRoot, blockQaWritePath(join(b.dir, b.root))),
       result: !inScope ? "n/a" : hits.length ? "fail" : "pass",
       severity,
       hits,
@@ -1061,7 +1065,7 @@ function main() {
     for (const p of tsPaths) {
       const b = loadBlock(p, repoRoot);
       if (!b) continue;
-      const f = findings.find((x) => x.block === b.root && x.qaPath.startsWith(relative(repoRoot, b.dir)));
+      const f = findings.find((x) => x.block === b.root && x.qaPath === relative(repoRoot, blockQaWritePath(join(b.dir, b.root))));
       if (!f) continue;
       const metrics: Record<string, number> = {
         registry_fingerprints: fps.length,

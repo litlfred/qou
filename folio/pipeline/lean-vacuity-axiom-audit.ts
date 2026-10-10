@@ -61,6 +61,7 @@ import {
 } from "node:fs";
 import { join, relative, resolve } from "node:path";
 import { execFileSync } from "node:child_process";
+import { blockQaReadPath, blockQaWritePath, saveBlockQa } from "./block-qa-io.ts";
 
 // `block-qa/v1` sidecar types, inlined. The canonical schema lives at
 // `folio-assistant/cat-harness/schemas/block-qa.ts`, but `folio-assistant/` is
@@ -3158,7 +3159,7 @@ function* walkBlocks(rootDir: string): Generator<BlockPaths> {
         ts: full,
         md: existsSync(md) ? md : undefined,
         lean: leanResolved,
-        qa: root + ".qa.json",
+        qa: blockQaWritePath(root),
       };
     }
   }
@@ -3183,9 +3184,9 @@ function writeSidecars(
   for (const [leanAbs, hits] of flaggedByLean) {
     const block = blockByLean.get(resolve(leanAbs));
     if (!block) continue; // library file with no owning block — witness only
-    const qaPath = block.qa;
+    const qaPath = blockQaReadPath(block.root);
     let report: BlockQaReport | undefined;
-    if (existsSync(qaPath)) {
+    if (qaPath && existsSync(qaPath)) {
       try {
         const raw = JSON.parse(readFileSync(qaPath, "utf-8"));
         if (raw?.$schema === "block-qa/v1") report = raw;
@@ -3264,7 +3265,10 @@ function writeSidecars(
       report.criteria[cat] = report.criteria[cat] ?? [];
       report.criteria[cat].push(entry);
     }
-    writeFileSync(qaPath, JSON.stringify(report, null, 2) + "\n");
+    // Issue #7642: saved the split way (script entries only; judgements from
+    // test/attestations/block-qa).
+    const saved = saveBlockQa(block.root, report, "script");
+    if (!saved.ok) throw new Error(saved.reason);
     written++;
   }
   return written;

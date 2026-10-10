@@ -114,6 +114,7 @@ import {
 } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { join, relative, resolve, dirname, basename } from "node:path";
+import { blockQaReadPath, blockQaWritePath, saveBlockQa } from "./block-qa-io.ts";
 
 // ---------------------------------------------------------------------------
 // `block-qa/v1` sidecar types, inlined. The canonical schema lives at
@@ -1041,7 +1042,7 @@ function mkFinding(b: Block, criterion: Criterion): Finding {
     evidence: "",
     metrics: {},
     mdPath: b.mdPath,
-    qaPath: join(b.dir, `${b.root}.qa.json`),
+    qaPath: blockQaWritePath(join(b.dir, b.root)),
   };
 }
 
@@ -1154,9 +1155,9 @@ function writeSidecar(
   scriptSha: string,
   reviewedSha: string,
 ) {
-  const qaPath = join(b.dir, `${b.root}.qa.json`);
+  const qaPath = blockQaReadPath(join(b.dir, b.root));
   let doc: any = {};
-  if (existsSync(qaPath)) {
+  if (qaPath && existsSync(qaPath)) {
     try {
       doc = JSON.parse(readFileSync(qaPath, "utf8"));
     } catch {
@@ -1191,7 +1192,10 @@ function writeSidecar(
     doc.criteria[f.criterion] = [entry];
   }
   doc.updated_at = now;
-  writeFileSync(qaPath, JSON.stringify(doc, null, 2) + "\n");
+  // Issue #7642: saved the split way. This writer produces script entries
+  // only, so the judgement half comes from test/attestations/block-qa.
+  const saved = saveBlockQa(join(b.dir, b.root), doc, "script");
+  if (!saved.ok) throw new Error(saved.reason);
 }
 
 // ---------------------------------------------------------------------------
