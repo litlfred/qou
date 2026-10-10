@@ -1711,6 +1711,41 @@
     ],
     "expo-milnor-clarity": [
       {
+        "field_hash": {
+          "md": "01a778e23fe4",
+          "ts": "06c55e4988a1",
+          "lean": "ca9686c3c1ef",
+          "lean_statement": "f3ea8eae3e9c"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 10,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 1,
+            "H3": 1,
+            "H4": 1,
+            "H5": 1,
+            "H6": 2,
+            "H7": 1,
+            "H8": 1
+          }
+        },
+        "evidence": "H4/H5: this is the third definition of $q$ in the chapter — 'the deformation parameter of $A$', with $q\\in\\mathbb C^*$ (L1) — alongside $q:=\\lambda_+$ (prop:braiding-eigenvalue-extraction) and $q\\in\\mathrm{End}(\\mathbf1)$ (def:substrate-parameter). H8: L11 'The invertibility condition $q\\ne0$ ensures $A$ is a genuine Hopf algebra with well-defined antipode' is asserted without reason.",
+        "notes": "Milnor H1-H8 = [2, 1, 1, 1, 1, 2, 1, 1] (T=10/16, fail); weakest: H2, H3, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Do not redefine $q$; cite the one definition and define only $\\hbar_q:=1-q^{-1}$ here. Example: 'for $\\mathcal O_q(\\mathrm{SU}(2))$, $\\alpha\\beta=q\\beta\\alpha$, and $\\hbar_q$ measures the failure of commutativity to first order.' Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      },
+      {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
@@ -2216,6 +2251,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T07:01:36.950Z",
+  "updated_at": "2026-10-10T12:00:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

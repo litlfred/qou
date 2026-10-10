@@ -496,8 +496,43 @@
         "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/outro-quantum-universes.md (3 lines, kind=prose, title=\"Chapter close - Quantum Universes\"). prose reads aloud without stalling; no noun-chain built for the eye only",
         "notes": "no fix needed"
       }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "564c4e381d60",
+          "ts": "fcf27e692a26"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 11,
+          "max": 16,
+          "rubric": {
+            "H1": 1,
+            "H2": 2,
+            "H3": 2,
+            "H4": 1,
+            "H5": 1,
+            "H6": 2,
+            "H7": 1,
+            "H8": 1
+          }
+        },
+        "evidence": "H5: L3 says the next chapter adjoins 'the substrate parameter $q$ and the Reeb derivation $\\xi$', but sec:qou-definition-intro says Chapter 2 imposes rigidity, non-degenerate integration, observability, measurability and the volume constraint; def:quantum-universe L28 says $q$ is emergent, not adjoined. L1 calls the Poisson bracket 'the concrete payoff of this chapter', which the chapter never presents as its goal.",
+        "notes": "Milnor H1-H8 = [1, 2, 2, 1, 1, 2, 1, 1] (T=11/16, fail); weakest: H1, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): L1: 'This chapter built the quantum universe and the differential vocabulary it supports: connection, jets, Hodge star, internal Poisson bracket.' L3: 'Chapter 2 adds rigidity, observability, measurability and the volume constraint, which together force the gauge group to be $\\mathrm{SU}(2)$.' Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      }
     ]
   },
-  "updated_at": "2026-08-22T06:08:08.355Z",
+  "updated_at": "2026-10-10T12:00:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
