@@ -1,6 +1,6 @@
 ---
 # qou-nmib
-title: Formalize H3 Delta baryon map and Wigner SU(2) gap resolution
+title: Formalize the Delta(1232) isospin quartet as Sym^3 of the N=2 fundamental (dim C(4,3) = 4) -- UNGATED by qou-j3w6; the full decuplet is qou-3oi0
 status: todo
 type: task
 priority: normal
@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - 8f-lean
 created_at: 2026-07-20T00:46:28Z
-updated_at: 2026-10-10T08:24:45Z
+updated_at: 2026-10-10T08:28:05Z
 parent: qou-8lxd
 ---
 
@@ -100,3 +100,29 @@ claimed, which is why it has not moved since 2026-07-20.
 `QOU/BraidsAndKnots/WignerSU4FromSpinIsospin.lean`,
 `QOU/Mass/WignerSU4RowBoundInactive.lean`,
 `QOU/Eightfold/RowCapObstruction.lean`. No compute, no witness.
+
+
+## Split enacted 2026-10-10 — this bean is now the UNGATED `Δ`-quartet half only
+
+Option 1 of the options above, enacted. Retitled, and the other two halves moved
+out so each can be claimed:
+
+| half | bean | state |
+|---|---|---|
+| `Δ(1232)` isospin quartet, `Sym³` at `N = 2`, `dim = 4` | **this bean** | **startable today — the one genuinely ungated Lean item on the `8f-lean` front** |
+| "Wigner `SU(2)` gap resolution" | **`qou-x0th`** | probably a verify-and-close against two existing sorry-free files |
+| full flavour-`SU(3)` decuplet, `dim = 10`, needs `N = 3` | **`qou-3oi0`** | `blocked-by qou-j3w6` |
+
+**Scope of this bean, stated so it does not re-absorb the other two.** Formalise
+`Sym³` of the existing `N = 2` fundamental and the map onto the four quartet
+states `Δ⁺⁺, Δ⁺, Δ⁰, Δ⁻` indexed by `I₃ ∈ {+3/2, +1/2, −1/2, −3/2}`. The
+dimension is `C(N+2,3) = C(4,3) = 4` at `N = 2`, which is a finite computation.
+**Do not touch `Ω⁻`, `Σ*` or `Ξ*`** — they are strange, need `N = 3`, and belong
+to `qou-3oi0`.
+
+Content side already exists: `prop:borromean-decuplet` tabulates all four quartet
+states with `I₃` and strangeness.
+
+**Watch the base ring (§7c).** `Sym³` over a generic `{R : Type*} [CommRing R]`
+is the right signature; there is no archimedean construct in a dimension count,
+so do not specialise to `ℝ`.

@@ -62,10 +62,10 @@ pattern truncates all five to `qou-atsd` and `sort -u` then reports the front as
 **1 of 5**. Measured, by making that exact mistake while writing this table.
 The two excluded IDs are the milestone and this epic, which print as tree rows.
 
-| tag | ready (2026-10-10) | front |
+| tag | ready (2026-10-10, after the `8f-lean` triage) | front |
 |---|---:|---|
 | `8f-flavour` | 14 | Flavour `SU(3)`, `N = 3`, the flavour Cartan (G1-opt1..4), Bring structures. **The arc's gate.** |
-| `8f-lean` | 8 | Lean scaffolds owed, vacuity/self-assuming projections, opaque carriers, float64 in `close_321_weinberg_gap.py`. |
+| `8f-lean` | 7 | Lean scaffolds owed, vacuity/self-assuming projections, opaque carriers, float64 in `close_321_weinberg_gap.py`. |
 | `8f-colour` | 15 | Colour `SU(3)` action and its construction routes (sub-epic `qou-8p1x`). |
 | `8f-mass` | 10 | SM mass gaps: `m_u/m_d`, `m_s/m_c`, `m_b/m_t`, `m_tau`, neutrinos, `m_H`, the lepton tower. |
 | `8f-ew` | 9 | Electroweak: `sin^2 theta_W`, Weinberg angle, vev `v`, Higgs mechanism, hypercharge `Y = B - L`, CKM + PMNS. |
@@ -75,7 +75,7 @@ The two excluded IDs are the milestone and this epic, which print as tree rows.
 | `8f-tseries` | 5 | `T2`–`T6` derivation spine: hypercharge via ribbon twist, twist multisets, root-of-unity freeze-out, no-free-parameter certificate. |
 | `8f-atomicity` | 5 | The `qou-atsd` T0-T6 chain (`dim V = 2` crux, `Sp` rank, the hard Tannakian Mathlib gap). |
 | `8f-arch` | 4 | Chapter architecture. Ch. `eightfold-way` **exists and is wired**; the restructure is owner-gated. |
-| `8f-decide` | 10 | Owner decisions. **Grew 4 -> 10 on 2026-10-10** as triage moved owner-gated items out of `8f-lean`. Mostly *prepared* one-liners now: a drafted replacement, options with cost, a recommendation and a default. Cheapest front to shrink, and it shrinks by answering, not by working. |
+| `8f-decide` | 11 | Owner decisions. **Grew 4 -> 10 on 2026-10-10** as triage moved owner-gated items out of `8f-lean`. Mostly *prepared* one-liners now: a drafted replacement, options with cost, a recommendation and a default. Cheapest front to shrink, and it shrinks by answering, not by working. |
 | `8f-obs` | 3 | Observational cross-checks (kilonova Sr II, Reticulum II, actinide cosmochronometry). |
 
 ### Suggested order
@@ -100,23 +100,35 @@ are open Lean formalisation. So `8f-lean` is not the cheap front; triaging it
 2. **`8f-lit`** — 7 items, mostly the four P4.SM queues; drains fast and unblocks
    citations other fronts need. **Untriaged**: the measured lesson above applies,
    read each body first.
-3. **`8f-lean` — 8 items, and triage before work.** The front splits three ways:
+3. **`8f-lean` — 7 items, and it is now FULLY TRIAGED. 2 are actionable; 5 are
+   open research.** All 14 original bodies have been read. The actionable two:
+
+   - **`qou-nmib`** — formalise the `Δ(1232)` isospin quartet as `Sym³` of the
+     existing `N = 2` fundamental, `dim C(4,3) = 4`. A finite computation,
+     **ungated by `qou-j3w6`** (the gate bites only on the full decuplet, which
+     needs `N = 3` because `Ω⁻` is strange — split out as `qou-3oi0`). This is
+     the one genuinely startable Lean item on the front.
+   - **`qou-x0th`** — probably a *verify-and-close*: check whether the "Wigner
+     `SU(2)` gap" is already carried by two existing sorry-free files
+     (`WignerSU4FromSpinIsospin.lean`, `WignerSU4RowBoundInactive.lean`). Read
+     before writing Lean.
+
+   The 5 tagged `8f-open` are real formalisation research and should not be
+   picked up expecting a repair:
+
+   | bean | why it is open |
+   |---|---|
+   | `qou-0tiw` | needs a circularity broken — the hypothesis would need the conclusion |
+   | `qou-006b` | needs a conjecture class restructured, and warns that a green file would mean nothing either way |
+   | `qou-ibck` | needs a `Fin`-enumeration of `p(n)` partitions, or a route that is still sorry-blocked |
+   | `qou-apma` | the clean half is **proved** (`VirtualProjection.lean`, `pi0_eq_zero_iff`); the residual needs non-normal spectral theory, shared with `qou-ud3o` |
+   | `qou-d8de` | **wall W1** — construct `D_q`. Actively maintained; ends on "`D_q` is not constructed". Downstream home of the `qou-an6y` prune: *do not fit the weights to the recurrence, a fit always exists.* |
 
    ```
-   beans list --tag 8f-lean --ready                    # 8 — the queue
-   beans list --tag 8f-lean --no-tag 8f-open --ready   # 5 — not yet triaged
-   beans list --tag 8f-open -q                         # 3 — triaged, OPEN work
+   beans list --tag 8f-lean --ready                    # 7
+   beans list --tag 8f-lean --no-tag 8f-open --ready   # 2 — actionable
+   beans list --tag 8f-open -q                         # 5 — open research
    ```
-
-   The 3 `8f-open` are real formalisation research and should not be picked up
-   expecting a repair: `qou-0tiw` needs a circularity broken (the hypothesis
-   would need the conclusion), `qou-006b` needs a conjecture class restructured
-   and warns that a green file would mean nothing either way, `qou-ibck` needs a
-   `Fin`-enumeration of `p(n)` partitions or a route that is still sorry-blocked.
-   Of the 5 untriaged, **3 are title-only** (`qou-xlw1`, `qou-nmib`, `qou-eo5q`)
-   and so cannot be claimed as they stand — same organisational defect as
-   `qou-6766`, which had seven findings packed into a title and sat `todo` for
-   eight weeks because of it.
 4. **`8f-tseries`** then **`8f-colour`** — the research spine and the one front
    where several routes are already excluded, so the survivors are known.
 5. **`8f-mass` / `8f-ew` / `8f-gen` / `8f-qcd`** — the 26-parameter gap map. Most
@@ -124,14 +136,22 @@ are open Lean formalisation. So `8f-lean` is not the cheap front; triaging it
    bean before starting, several say so explicitly.
 
 > **Do not call any front "mechanical" before triaging it — including on my own
-> recommendation above.** Measured rate on the one front triaged: **2 of 9** were
-> the mechanical repairs the tag implied. Triage is cheap (read the body, ~1-3k
+> recommendation above.** `8f-lean` is the one front triaged to completion: of
+> its **14** bodies, **2** were the mechanical repairs the tag implied, 2 were
+> already done, 2 are now actionable items of a different shape, 5 are open
+> research, and 3 became owner decisions. Triage is cheap (read the body, ~1-3k
 > chars) and a tag is a title's guess; the claim "this front is mechanical" has
 > now been wrong once in this index and must be earned per front, not inherited.
 
-> **A title-only bean is not a small bean — it is an unclaimable one.** Three
-> remain in `8f-lean`. Give it a body (what is wrong, where, measured; options
-> with cost; a default) or it will sit, exactly as `qou-6766` did.
+> **A title-only bean is not a small bean — it is an unclaimable one.**
+> `8f-lean` had three (`xlw1` at priority **high**, empty five weeks; `nmib`,
+> twelve weeks; `eo5q`, ten) and now has none. Each took one measurement pass
+> and each turned out to be a *different kind of item* than its title implied —
+> `xlw1` a third argument about a sentence `rydq` already owns, `nmib` two
+> halves with different dimensional requirements, `eo5q` an indexing shift plus
+> two further defects. Give a new bean a body (what is wrong, where, measured;
+> options with cost; a default) or it will sit, exactly as `qou-6766` did for
+> eight weeks.
 
 ## The gate, stated once
 

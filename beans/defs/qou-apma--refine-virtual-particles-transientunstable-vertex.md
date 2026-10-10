@@ -7,8 +7,9 @@ priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-lean
+    - 8f-open
 created_at: 2026-08-02T18:14:05Z
-updated_at: 2026-10-10T07:16:20Z
+updated_at: 2026-10-10T08:26:12Z
 parent: qou-8lxd
 ---
 
@@ -134,3 +135,40 @@ of this bean.
 **Still open (from the roast):** the *width* of an unstable excitation as
 `Im(s_pole)` of the resolvent `R_q(s)` from a non-self-adjoint Demazure-
 truncated `Δ_q` — that needs non-normal spectral theory and stays open here.
+
+
+## Triaged 2026-10-10 — tagged `8f-open`; NOT a scaffolding task
+
+Read as part of finishing the `8f-lean` front's triage. Verified on the live
+post-rename tree and re-classified: the mechanical half of this bean is **done**,
+and what remains is research, so it should not be picked up expecting a repair.
+
+**Done and verified.** `folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/VirtualProjection.lean`
+(2739 B) carries `pi0` (line 40), `pi0_offshell` (45) and the non-vacuous
+biconditional `pi0_eq_zero_iff` (56, under `[IsDomain K] [NoZeroSMulDivisors K A]`).
+That is attack option 2 of this bean, closed.
+
+**Open, and it is the hard kind.** The width as `Im(s_pole)` of `R_q(s)` from a
+non-self-adjoint Demazure-truncated `Δ_q` needs non-normal spectral theory —
+nothing in Mathlib, and the corpus has no carrier. Shares `R_q(s)` with
+`qou-ud3o` (Wick), so the two should be attacked together or not at all.
+
+**Option 1 (consolidate + relabel) is NOT done and is the cheap residual.**
+Measured: there is no `def:virtual-particle-vertex-flow` block, and
+`virtual-particles-exceptional-divisor.md` is the only `virtual-particle*` block
+in the tree. So the flow / Demazure / width triple is still implicit. That is a
+content change under the ask-first rule, and it should wait for the width half
+anyway — relabelling around a mechanism that is not yet derived would fix the
+vocabulary to a guess.
+
+**Stale links, recorded not fixed.** This bean's GitHub URLs all point at
+`blob/claude/agent-task-662242-vag458/content/...` — a dead branch *and* the
+pre-rename `content/` path (main renamed `content/` -> `folio/`). Live paths are
+given above. Not swept, because every bean written before the rename has the
+same defect and a blanket rewrite is its own tranche.
+
+**The correction already in this bean's roast is the most reusable thing in it**
+and is repeated here so a skimmer does not re-derive it: **width is NOT
+`Im(q)`.** `Im(q₀) = 0` at the observable level while resonance widths are
+measured, so that framing is self-inconsistent. The width is `Im(s_pole)` in the
+energy plane at real `q₀`.
