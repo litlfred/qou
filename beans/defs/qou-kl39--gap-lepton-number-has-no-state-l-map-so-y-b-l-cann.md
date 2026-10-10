@@ -8,8 +8,8 @@ tags:
     - reorg-2026-10-04
     - 8f-ew
 created_at: 2026-08-09T11:07:51Z
-updated_at: 2026-10-10T07:16:59Z
-parent: qou-8lxd
+updated_at: 2026-10-10T18:10:00Z
+parent: qou-20sx
 ---
 
 Found 2026-08-09 while checking whether the corpus's existing lepton number closes
@@ -100,3 +100,7 @@ Route 2 is the interesting one: that framing datum is T(t)
 hypercharge. If L needs framing while Y needs a framing-independent second
 invariant, that tension is worth making explicit before either is wired.
 Neither route pursued yet.
+
+## 2026-10-10 — reparented under qou-20sx
+
+Owner decision 7b (ofri, 2026-10-10): the electroweak (`8f-ew`) beans are grouped under `qou-20sx`, the electroweak front's node, instead of directly under the epic `qou-8lxd`. Only the parent changed. Status, scope and body are untouched.

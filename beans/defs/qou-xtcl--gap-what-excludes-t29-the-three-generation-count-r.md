@@ -9,7 +9,7 @@ tags:
     - 8f-gen
     - 8f-open
 created_at: 2026-08-01T22:05:54Z
-updated_at: 2026-10-10T12:47:09Z
+updated_at: 2026-10-10T18:12:00Z
 parent: qou-8lxd
 ---
 
@@ -210,3 +210,7 @@ consequence, the register defect, the three-"three"s caution, and the bijection
 statement. **No criterion is adopted, no block is edited, no number moves.**
 The two remaining dispositions (candidate 3 ⇒ two generations; candidate 1 ⇒
 four) stay open and are still the owner's.
+
+## 2026-10-10 — owner decision
+
+Owner decision 2a (ofri, 2026-10-10): adopt none of the four generation-count rules; the count stays an open problem, as already recorded in `docs/audits/2026-10-10-generation-count-two-independent-countings.md`. The task this bean names is still open: build a bijection between the branch-point pairs and the allowed $T(2,n)$, or prove there is none. Rule 13a: not closed.
