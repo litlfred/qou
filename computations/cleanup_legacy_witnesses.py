@@ -39,7 +39,7 @@ import sys
 from pathlib import Path
 
 COMP_DIR = Path(__file__).resolve().parent
-DEPRECATED_DIR = COMP_DIR / "_deprecated"
+DEPRECATED_DIR = COMP_DIR.parent / "fsh-guts" / "deprecated" / "computations"
 REPO_ROOT = COMP_DIR.parent.parent
 
 _IMPORT_RE = re.compile(

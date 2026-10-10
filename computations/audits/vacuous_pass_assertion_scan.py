@@ -7,7 +7,7 @@ sys.path.insert(0,"computations/audits")
 from _source_normalise import code_only
 
 files=[p for p in subprocess.run(["git","ls-files","computations"],capture_output=True,text=True)
-       .stdout.split() if p.endswith(".py") and "_deprecated" not in p]
+       .stdout.split() if p.endswith(".py") and ("_deprecated" not in p and "fsh-guts" not in p)]
 
 
 def _label(node):

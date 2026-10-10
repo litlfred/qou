@@ -142,7 +142,7 @@ def main() -> int:
     cat = collections.Counter()
     producers: dict[str, list[str]] = collections.defaultdict(list)
     for p in glob.glob(os.path.join(REPO, "computations/**/*.witness.json"), recursive=True):
-        if "_deprecated" in p:
+        if ("_deprecated" in p or "fsh-guts" in p):
             continue
         t = open(p, encoding="utf-8", errors="ignore").read()
         if MU not in t:

@@ -95,7 +95,7 @@ def main() -> int:
                      "is broken")
     dep = _scan(ROOT.glob("computations/_deprecated/**/*.py"), SRC)
     live = _scan([p for p in ROOT.glob("computations/**/*.py")
-                  if "_deprecated" not in str(p)], SRC)
+                  if ("_deprecated" not in str(p) and "fsh-guts" not in str(p))], SRC)
     dep_only = sorted(set(dep) - set(live))
     if not dep_only:
         fails.append("no deprecated-only values found, so the deprecated-"

@@ -190,7 +190,7 @@ def check_witness(witness_path: Path) -> tuple[list[dict], bool]:
             # rejects an absolute pattern outright
             _base = Path(ups_name).name
             matches = sorted(HERE.rglob(_base)) if _base else []
-            matches = [m for m in matches if "_deprecated" not in m.parts]
+            matches = [m for m in matches if ("_deprecated" not in m.parts and "fsh-guts" not in m.parts)]
             if matches:
                 if len(matches) > 1:
                     _AMBIGUOUS_UPSTREAMS.setdefault(
@@ -238,7 +238,7 @@ def _build_producer_index(roots: list[Path]) -> dict[str, list[Path]]:
         if not root.is_dir():
             continue
         for py in root.rglob("*.py"):
-            if "_deprecated" in py.parts or ".lake" in py.parts:
+            if ("_deprecated" in py.parts or "fsh-guts" in py.parts) or ".lake" in py.parts:
                 continue
             index.setdefault(py.name, []).append(py)
     return index

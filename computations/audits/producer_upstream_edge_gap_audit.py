@@ -120,7 +120,7 @@ def main() -> int:
     reads, records, gaps = [], [], []
     for p in sorted((REPO / "computations").rglob("*.py")):
         sp = str(p)
-        if "_deprecated" in sp or "__pycache__" in sp:
+        if ("_deprecated" in sp or "fsh-guts" in sp) or "__pycache__" in sp:
             continue
         try:
             src = p.read_text()

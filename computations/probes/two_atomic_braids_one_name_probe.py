@@ -186,7 +186,7 @@ def main() -> int:
         for p in (REPO / "computations").rglob("*.py")
         # exclude THIS file: it carries the pattern in order to search for it,
         # so a naive scan reports itself as a third-convention producer.
-        if "_deprecated" not in str(p)
+        if ("_deprecated" not in str(p) and "fsh-guts" not in str(p))
         and p.resolve() != pathlib.Path(__file__).resolve()
         and re.search(r"3\s*\*?\s*A\s*\+\s*Z", p.read_text(errors="ignore"))
     )

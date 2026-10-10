@@ -296,7 +296,7 @@ def main(argv: list[str]) -> int:
     # walk happened to achieve for that one directory.
     witnesses = sorted(
         w for w in list(root.rglob("*.witness.json")) + list(root.rglob("*-witness.json"))
-        if "_deprecated" not in w.parts
+        if ("_deprecated" not in w.parts and "fsh-guts" not in w.parts)
     )
     flagged = []
     for w in witnesses:

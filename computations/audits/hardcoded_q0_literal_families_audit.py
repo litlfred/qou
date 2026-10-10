@@ -214,7 +214,7 @@ def scan() -> dict:
     families: dict[int | None, list] = defaultdict(list)
     for p in sorted(_SCAN_ROOT.rglob("*.py")):
         rel = p.relative_to(_SCAN_ROOT)
-        if "worktrees" in rel.parts or "_deprecated" in rel.parts:
+        if "worktrees" in rel.parts or ("_deprecated" in rel.parts or "fsh-guts" in rel.parts):
             continue
         try:
             src = p.read_text(encoding="utf-8", errors="replace")

@@ -47,7 +47,7 @@ from pathlib import Path
 import numpy as np
 
 _HERE = Path(__file__).resolve().parent
-for _p in (_HERE, _HERE / "_deprecated", _HERE / "substrate"):
+for _p in (_HERE, _HERE.parent / "fsh-guts" / "deprecated" / "computations", _HERE / "substrate"):
     if str(_p) not in sys.path:
         sys.path.insert(0, str(_p))
 

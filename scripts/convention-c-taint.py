@@ -71,7 +71,7 @@ def build_graph(root: pathlib.Path):
     """owner[witness] -> producer;  reads[producer] -> {witness, ...}."""
     owner, docs = {}, {}
     for p in sorted(root.rglob("*witness.json")):
-        if "_deprecated" in str(p):
+        if ("_deprecated" in str(p) or "fsh-guts" in str(p)):
             continue
         try:
             raw = p.read_text()
@@ -134,7 +134,7 @@ def _read_source(root: pathlib.Path, prod: str,
         except OSError:
             continue
     for hit in sorted(root.rglob(name)):
-        if "_deprecated" in hit.parts:
+        if ("_deprecated" in hit.parts or "fsh-guts" in hit.parts):
             continue
         try:
             return hit.read_text()
@@ -151,7 +151,7 @@ def _module_sources(root: pathlib.Path) -> dict:
     # the filesystem happened to hand over first — stable on one tree, but not
     # across machines. Bean qou-kcii.
     for p in sorted(root.rglob("*.py")):
-        if "_deprecated" in str(p):
+        if ("_deprecated" in str(p) or "fsh-guts" in str(p)):
             continue
         try:
             out.setdefault(p.stem, p.read_text())

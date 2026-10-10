@@ -242,7 +242,7 @@ def main() -> int:
     # AND false-flagged sibling audits (they legitimately reference the
     # policed constants). Skip _deprecated and the audits/ dir.
     for py in sorted((HERE.parent).rglob("*.py")):
-        if "_deprecated" in py.parts or HERE.name in py.parts:
+        if ("_deprecated" in py.parts or "fsh-guts" in py.parts) or HERE.name in py.parts:
             continue
         if py.name.startswith("_"):
             continue

@@ -70,9 +70,9 @@ def main() -> int:
     print(f"manifest entries: {len(listed)} (" +
           ", ".join(f"{c}={len(man.get(c, []))}" for c in CLASSES) + ")")
 
-    live = {p.stem for p in COMP.rglob("*.py") if "_deprecated" not in p.parts}
+    live = {p.stem for p in COMP.rglob("*.py") if ("_deprecated" not in p.parts and "fsh-guts" not in p.parts)}
     dead = {p.stem: str(p.relative_to(REPO))
-            for p in COMP.rglob("*.py") if "_deprecated" in p.parts}
+            for p in COMP.rglob("*.py") if ("_deprecated" in p.parts or "fsh-guts" in p.parts)}
 
     deprecated_only = []
     missing_entirely = []

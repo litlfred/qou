@@ -104,7 +104,7 @@ def index_sources() -> dict[str, Path]:
     """Map bare module name -> path, over all of `computations/`."""
     idx: dict[str, Path] = {}
     for p in sorted(SRC_ROOT.rglob("*.py")):
-        if "_deprecated" in p.parts:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue
         idx.setdefault(p.stem, p)
     return idx
@@ -212,7 +212,7 @@ def required_witnesses(cone: list[str], idx: dict[str, Path]) -> dict[str, Path]
         names.update(re.findall(r"[a-z0-9][a-z0-9._-]*\.witness\.json", text))
     found: dict[str, Path] = {}
     for name in sorted(names):
-        hits = [p for p in SRC_ROOT.rglob(name) if "_deprecated" not in p.parts]
+        hits = [p for p in SRC_ROOT.rglob(name) if ("_deprecated" not in p.parts and "fsh-guts" not in p.parts)]
         if hits:
             found[name] = hits[0]
     return found
@@ -239,11 +239,11 @@ def extra_witnesses(wits: dict) -> dict:
     """
     src_idx: dict[str, Path] = {}
     for q in (REPO / "computations").rglob("*.witness.json"):
-        if "_deprecated" not in q.parts:
+        if ("_deprecated" not in q.parts and "fsh-guts" not in q.parts):
             src_idx.setdefault(q.name, q)
     out: dict[Path, Path] = {}
     for dest in sorted(WITNESS_DEST.rglob("*.witness.json")):
-        if "_deprecated" in dest.parts:
+        if ("_deprecated" in dest.parts or "fsh-guts" in dest.parts):
             continue
         if dest.parent == WITNESS_DEST:      # the cone copies, handled above
             continue
@@ -353,7 +353,7 @@ def main() -> int:
         uncovered = sorted(
             q.relative_to(WITNESS_DEST).as_posix()
             for q in WITNESS_DEST.rglob("*.witness.json")
-            if "_deprecated" not in q.parts and q.name not in covered
+            if ("_deprecated" not in q.parts and "fsh-guts" not in q.parts) and q.name not in covered
         )
         if uncovered:
             print(f"  note: {len(uncovered)} witness(es) have no source under "

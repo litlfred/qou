@@ -398,7 +398,7 @@ def _resolve_producer(doc, witness: pathlib.Path, index, stems):
         if not isinstance(val, str) or not val:
             continue
         hit = index.get(pathlib.Path(val).name)
-        if hit and "_deprecated" not in str(hit):
+        if hit and ("_deprecated" not in str(hit) and "fsh-guts" not in str(hit)):
             return hit
     base = witness.name
     for suffix in (".witness.json", "-witness.json", ".json"):
@@ -406,7 +406,7 @@ def _resolve_producer(doc, witness: pathlib.Path, index, stems):
             base = base[: -len(suffix)]
             break
     hit = stems.get(base.replace("-", "_"))
-    if hit and "_deprecated" not in str(hit):
+    if hit and ("_deprecated" not in str(hit) and "fsh-guts" not in str(hit)):
         return hit
     return None
 
@@ -417,7 +417,7 @@ def work_list():
     stems = {p.stem: p for p in (REPO / "computations").rglob("*.py")}
     items, orphans = [], []
     for w in sorted((REPO / "computations").rglob("*.json")):
-        if "_deprecated" in str(w):
+        if ("_deprecated" in str(w) or "fsh-guts" in str(w)):
             continue
         try:
             raw = w.read_text()

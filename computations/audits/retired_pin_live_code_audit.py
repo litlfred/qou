@@ -152,7 +152,7 @@ def main(argv: list[str]) -> int:
     grep_files = 0
     for d in dirs:
         for p in sorted(pathlib.Path(d).rglob("*.py")):
-            if "_deprecated" in p.parts:
+            if ("_deprecated" in p.parts or "fsh-guts" in p.parts):
                 continue
             if p.resolve() == pathlib.Path(__file__).resolve():
                 continue      # this file DEFINES the literal it hunts for

@@ -124,7 +124,7 @@ def _artifact_pin(name: str) -> str:
         return ""
     verdict = ""
     for cand in COMPUTE_DIR.rglob(stem):
-        if "_deprecated" in cand.parts:
+        if ("_deprecated" in cand.parts or "fsh-guts" in cand.parts):
             continue
         try:
             raw = cand.read_text(encoding="utf-8", errors="replace")
@@ -442,7 +442,7 @@ def find_producer(script_name: str) -> Path | None:
     # DEPRECATED copy (path_b_habiro_mass_probe, rho_k_markov_multiplicativity_probe,
     # term5_aK_audit). A retired copy is by definition not the producer.
     hits = [p for p in REPO.rglob(script_name)
-            if ".git" not in p.parts and "_deprecated" not in p.parts
+            if ".git" not in p.parts and ("_deprecated" not in p.parts and "fsh-guts" not in p.parts)
             and ".claude" not in p.parts and p.is_file()]
     if not hits:
         return None

@@ -228,7 +228,7 @@ def main() -> int:
             "off_canonical": off,
             "all_pins_present": sorted(found),
             "paths": {n: [p for p, _ in found[n]] for n in found},
-            "deprecated": "_deprecated" in path,
+            "deprecated": ("_deprecated" in path or "fsh-guts" in path),
             "is_audit": "/audits/" in path or "audit" in Path(path).stem,
             "n_unresolved_leaves": len(unresolved),
         })

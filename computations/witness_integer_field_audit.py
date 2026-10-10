@@ -135,7 +135,7 @@ def _has_live_producer(d: dict) -> bool:
         return False
     name = Path(sf).name
     for cand in (ROOT / "computations").rglob(name):
-        if "_deprecated" not in cand.parts:
+        if ("_deprecated" not in cand.parts and "fsh-guts" not in cand.parts):
             return True
     return False
 
@@ -156,7 +156,7 @@ def scan(root: Path | None = None):
                  "name": "", "witnesses": set()})
     declared = integer_fields()
     for p in sorted(root.rglob("*.witness.json")):
-        if "_deprecated" in p.parts:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue
         try:
             d = json.loads(p.read_text(encoding="utf-8"))

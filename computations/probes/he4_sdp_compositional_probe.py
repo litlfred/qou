@@ -99,7 +99,7 @@ def _anchor_witness_path() -> Path:
     by convention) — check both explicitly."""
     for cand in (
         COMP / "magic-shell-empirical-instantiation.witness.json",
-        COMP / "_deprecated" / "magic-shell-empirical-instantiation.witness.json",
+        COMP.parent / "fsh-guts" / "deprecated" / "computations" / "magic-shell-empirical-instantiation.witness.json",
     ):
         if cand.exists():
             return cand
@@ -142,7 +142,7 @@ def main() -> int:
     delta_cat = {
         k: mp.mpf(v["delta_cat_MeV_50dps"]) for k, v in per_atom.items()
     }
-    if "_deprecated" in str(anchor_path):
+    if ("_deprecated" in str(anchor_path) or "fsh-guts" in str(anchor_path)):
         builder.add_caveat(
             "Δ_cat anchors loaded from computations/_deprecated/"
             "magic-shell-empirical-instantiation.witness.json — the anchor "

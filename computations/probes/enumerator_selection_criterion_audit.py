@@ -61,7 +61,7 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
 import _path_bridge as _bridge  # noqa: E402, F401
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
-WITNESS = _COMP / "_deprecated" / "binding-k-enumerator.witness.json"
+WITNESS = _COMP.parent / "fsh-guts" / "deprecated" / "computations" / "binding-k-enumerator.witness.json"
 ATOMS = ["deuteron", "tritium", "he3"]
 
 
