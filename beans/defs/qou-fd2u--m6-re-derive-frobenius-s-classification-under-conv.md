@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-10T08:52:03Z
-updated_at: 2026-10-10T08:57:45Z
+updated_at: 2026-10-10T08:58:06Z
 parent: qou-d8c7
 ---
 
@@ -13,3 +13,5 @@ frobenius-s-classification-proof.md:16 and table2-data:9 rest on z being invaria
 
 
 2026-10-10: under D, S maps z_D to 1/(q(q^2+1)) = z - h (sympy-verified), i.e. S swaps the two loop values. So Phi_1 = sum log|z a_i + b_i| needs re-derivation (its partner is sum log|(z-h) a_i + b_i|). Scope notes added to the proof and table2 on PR #7562.
+
+Lean: frobenius-s-classification.lean:48 assigns z : SEigenvalue := .even, which is the C reading.
