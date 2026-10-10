@@ -1,6 +1,6 @@
 ---
 # qou-jgp2
-title: 'PROVE(lean): hecke_baer_star_generic — theorem hecke_baer_star_generic [ctx : HeckeBaerStarGenericContext] : ∀ I : ctx.RightAnnih [cited kassel1995,manuscript]'
+title: 'De-axiomatise hecke_baer_star_generic: claim rests on two axioms in the sibling .lean'
 status: todo
 type: task
 priority: normal
@@ -12,7 +12,7 @@ tags:
     - cite-kassel1995
     - reorg-2026-10-04
 created_at: 2026-08-01T23:31:02Z
-updated_at: 2026-10-10T07:00:32Z
+updated_at: 2026-10-10T07:01:01Z
 parent: qou-d8c7
 ---
 
@@ -31,3 +31,10 @@ parent: qou-d8c7
 ## 2026-10-10 — reparented to the mass-endomorphism epic
 
 This bean is carrier M3 of epic `qou-d8c7` (issue litlfred/qou#7547). Parent moved from `qou-an4u` to `qou-d8c7`; nothing in the body above was changed by the move.
+
+
+## 2026-10-10 — status update (title changed; survey for epic `qou-d8c7`, issue #7547)
+
+Former title began 'PROVE(lean): hecke_baer_star_generic — theorem hecke_baer_star_generic ...'.
+
+Checked on `main` 2026-10-10: the library file `QOU/BraidKnot/HeckeBaerStarGeneric/hecke_baer_star_generic.lean` is 33 lines with no theorem. The chapter sibling `mass-endomorphism/hecke-baer-star-generic.lean` carries the claim and rests on two axioms: `matrix_algebra_baer_right_axiom` (line 60) and `hecke_baer_star_generic_sketch_axiom` (line 144). The open work is replacing those axioms with proofs (Wedderburn decomposition into matrix algebras, then the Baer-* property of each matrix block). Axioms are not a proof (anti-laundering rule), so this stays open.
