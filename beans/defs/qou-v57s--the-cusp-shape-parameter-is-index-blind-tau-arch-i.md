@@ -4,7 +4,7 @@ title: 'The cusp shape parameter is INDEX-BLIND: tau_arch is not a function of t
 status: in-progress
 type: task
 created_at: 2026-10-10T12:34:17Z
-updated_at: 2026-10-10T12:34:17Z
+updated_at: 2026-10-10T13:10:00Z
 ---
 
 Measured 2026-10-10 (PR #7586, issue #7585) while working `qou-3kni`'s cusp
@@ -143,4 +143,124 @@ leg.
 `in-progress`, not completed. **The conjecture is open** and this bean's
 subject is a constraint on it, so per AGENTS.md it does not close on the
 recording being done.
+
+---
+
+## 🛑 CORRECTION, same day — the six-path corpus-grep landed and cut this bean down three ways
+
+The measurement stands. The write-up over-claimed, and two of the three
+corrections are the checklist catching this bean. Verified at the source, not
+taken from the grep agent's report.
+
+### 1. `τ_arch` is a GLYPH COLLISION and this bean walked into it
+
+`τ_arch` is an **established** corpus object and it is **not** a seed→shape
+map. It is the archimedean evaluation of the fibre functor, typed
+`τ_arch = π_∞ ∘ τ : C → ℝ` — read directly at
+`QOU/MotivesArchimedean.lean:98` and `mass-theory/vol-through-tau.lean:49`,
+catalogued in `docs/audits/2026-07-11-archimedean-functor-taxonomy.md` (whose
+TL;DR is that these objects are not functors at all). It is **real-valued**,
+so it cannot produce a shape with `Im z > 0`. The `τ_arch(q₀^{-k})` of the
+carrier's caveat is a **different, wished-for object with an incompatible
+codomain**, sharing a glyph across 16 files. **The discriminator is the
+codomain.**
+
+This bean's title and body use the glyph for the hypothetical map. Read them
+that way; nothing here is about the real `τ_arch`. The title is left as
+published rather than rewritten, since the bean ID is already cited in a PR
+and a probe — but it is **wrong as a name**, and that is the point of this
+entry. AGENTS.md registry §2: attributes do not transfer across overloaded
+symbols. Same defect class as the `BlochWignerD : ℝ → ℝ` typing one file over.
+
+### 2. "The seed is not the shape" is ALREADY a sorry-free theorem — naming these same three manifolds
+
+`mass-theory/shared-denominator-cusp-holonomy.lean:178`,
+`seed_is_not_the_cusp_shape`, proves `shape k ≠ (r : ℂ)` for every real `r`.
+Its docstring, verbatim: *"`m004`, `m003` and `L6a4`, and concludes the
+identity `q₀^{-k} = z_k` cannot hold. Here it follows from the conjecture
+itself, since `im_pos` excludes every real shape."*
+
+So the headline is **not this bean's**. What is this bean's is stronger and
+different in kind: that theorem says the shape is not **real**, which leaves
+open that the shapes distinguish the indices. The isometry collapse says
+**the shapes do not distinguish the indices at all.**
+
+### 3. The composition was removed on purpose, and a cardinality refutation is already committed
+
+- **Bean `qou-rj44` (`completed`)**: the class field `shape` is typed
+  `UpperHalfPlane` and **supplied by the instance**, precisely because
+  composing seed→shape *was* the defect. The dilog carrier's docstring: *"The
+  repair is to **un-compose** the map … it is not the shape."* And
+  `shape : Fin n → ℂ` is **label**-indexed — an assignment the caller
+  supplies. There is no function of the seed in either Lean file to refute.
+- **Bean `qou-mfdq` Finding 1** (`todo`, priority **high**, on `origin/main`,
+  380 lines) already refutes the pole-to-cusp bijection **scope-(b), invariant
+  = cardinality**, by a *different* count: the `n` roots against the **four**
+  ideal vertices of one tetrahedron, forcing `n = 4` while clause (2) sends
+  `n → ∞`. Its own scoping — *"excludes the claim as literally written; does
+  not exclude the intent"* — is the same shape as this bean's.
+
+**The arity row in this bean is a THIRD count** — `n` roots against `c`
+**cusps** (2v1, 2v1, 8v3) — independent of and consistent with `qou-mfdq`.
+Cite `qou-mfdq` for the bijection refutation. Cite this bean only for the two
+things below.
+
+### What survives as this bean's own
+
+1. **The isometry collapse of the committed data.** L6a4's two recorded shape
+   values are ONE tetrahedron (`rotate` twice), so all three manifolds have
+   exactly **one** isometry class. Searched on `origin/main` by content for
+   `index-blind`, `up to isometry`, `regular ideal tetrahedron`,
+   `IM_PERTURBATION`, `isometry class` — **in no committed artifact**, and
+   neither `qou-3kni` nor `qou-mfdq` contains `isometry`, `pigeonhole` or
+   `index-blind`.
+2. **The lift knob.** ~half the published 0.4–0.9 is `IM_PERTURBATION = 0.1`;
+   lift-free real-part floor **0.400918284** on m004. Also in no committed
+   artifact.
+
+### Three further findings from the grep, NOT acted on here
+
+- **A live type defect, unbeaned.** `mass-theory/archimedean-functor-uniqueness.lean:113`
+  `archimedean_functor_uniqueness` takes `(D τ_arch : ℝ → ℝ)`. The corpus
+  *proves* Bloch–Wigner vanishes on the reals — `eq_zero_of_conjAntisymm_ofReal`,
+  sorry-free, in **two** files — so instantiating `D : ℝ → ℝ` as the real
+  restriction of genuine Bloch–Wigner forces `D ≡ 0`, hence `τ_arch ≡ 0`. Its
+  `figure8_calibration` docstring writes `Vol(4₁) = c · 2 · D(e^{iπ/3})` while
+  the theorem is over `z₀ : ℝ`, and `e^{iπ/3}` is not real. **This is the
+  defect `qou-rj44` fixed one file over, not propagated here.** Nearest bean
+  `qou-n226` (`todo`) does not cover it. Owner call; not beaned by me yet.
+- **Citation holes on a 63-citer arc.** Murakami–Murakami 2001 is
+  **registered but not held** (`references.ts:5934`, zero `library:` lines),
+  cited from `archimedean-functor-uniqueness.lean:139`. `library/0803219`
+  (Murakami's volume-conjecture survey) is **held but unregistered**
+  (`grep -c 0803219 references.ts` = 0), so no block can cite it.
+  `thurston1978` is held **Ch. 1–2 only** — §4.5, the gluing equations, is
+  **not held**, and is cited by locator at
+  `shared-denominator-cusp-holonomy.lean:91`.
+- **A stale figure inside the constraint probes.** `qbeta_c3_barodd_*` rest
+  their "a smooth `m(q₀)` is excluded" on `dc₃/dq ≈ 4.66e6` at 5 sites. That
+  is the **superseded** value; live is `3.8375e6` (bean `qou-kt8o`). AGENTS.md
+  states the prune **stands** either way, so do not re-derive on the stale
+  number and do not read its staleness as weakening the exclusion.
+
+### The open link, already named by the corpus — and it is not "what is τ_arch"
+
+`computations/qbeta/qbeta_c3_barodd_gluing_newton_solve.py:42-49`: *"**THE
+OPEN LINK (single, named): the map `q₀ → m`** (the meridian holonomy the
+substrate assigns to 4₁). … This probe computes `𝔙(m)` for any given `m` but
+does **NOT** fit `m(q₀)` (that would be a fit)."*
+
+That is the correct statement of the question. The machinery that consumes `m`
+exists and is committed (`gluing_residual(z, m)`, Newton-solved, recovering
+`Vol(4₁) = 2.029883213` to 10 digits with `CS = 0`), and `algebraic_seeds(q, n)`
+exists at `snappy_cusp_seeding.py:60`. **Measured: the two have never met** —
+of 8 files carrying a gluing residual, seven have zero seed references and the
+eighth uses `x = q^{-k}` only as a coordinate label. So the forward measurement
+is a **composition, not a derivation**. Inverting `m` against a target would be
+a fit and is forbidden.
+
+### Status
+
+Still **`in-progress`**. The conjecture is open; three of this bean's four
+claims now belong to other artifacts, and the two that remain are narrow.
 

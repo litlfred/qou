@@ -12,6 +12,63 @@ that function is the subject of further work."
 This probe shows there is no such function to find, and does so WITHOUT any
 distance measurement, by counting.
 
+🛑 THREE CORRECTIONS TO THIS PROBE'S OWN FRAMING, ADDED AFTER A SIX-PATH
+CORPUS-GREP. READ THEM BEFORE CITING ANYTHING BELOW.
+---------------------------------------------------------------------------
+The measurement stands. The write-up over-claimed three ways, and two of the
+three are the corpus-grep discipline catching this probe.
+
+(1) **"tau_arch" IS A GLYPH COLLISION, AND THIS PROBE WALKED INTO IT.**
+    `tau_arch` is an ESTABLISHED corpus object and it is NOT a seed-to-shape
+    map. It is the archimedean evaluation of the fibre functor, typed
+    **`tau_arch = pi_inf . tau : C -> R`** -- verified at
+    `QOU/MotivesArchimedean.lean:98` and `mass-theory/vol-through-tau.lean:49`,
+    and catalogued in `docs/audits/2026-07-11-archimedean-functor-taxonomy.md`,
+    whose TL;DR is that these objects are not functors at all. It is
+    REAL-VALUED, so it cannot produce a shape with `Im z > 0`. The
+    `tau_arch(q_0^{-k})` of the carrier's caveat is a DIFFERENT, wished-for
+    object with an incompatible codomain, sharing a glyph across 16 files.
+    **The discriminator is the codomain.** Read every "tau_arch" below as
+    "the hypothetical seed-to-shape assignment"; the real one is `-> R` and
+    nothing here is about it. This is AGENTS.md registry-section-2's rule --
+    attributes do not transfer across overloaded symbols -- and it is the same
+    defect class as the `BlochWignerD : R -> R` typing one file over.
+
+(2) **THE CONCLUSION "THE SEED IS NOT THE SHAPE" IS ALREADY A SORRY-FREE
+    THEOREM, AND ITS DOCSTRING ALREADY NAMES THESE THREE MANIFOLDS.**
+    `mass-theory/shared-denominator-cusp-holonomy.lean:178`,
+    `seed_is_not_the_cusp_shape`, proves `shape k != (r : C)` for every real
+    `r`. Its docstring: *"`m004`, `m003` and `L6a4`, and concludes the identity
+    `q_0^{-k} = z_k` cannot hold. Here it follows from the conjecture itself,
+    since `im_pos` excludes every real shape."* So the headline is not this
+    probe's. What IS this probe's is STRICTLY STRONGER and different in kind:
+    that theorem says the shape is not REAL, which leaves open that the shapes
+    distinguish the indices; the isometry collapse below says **the shapes do
+    not distinguish the indices at all.**
+
+(3) **THE SEED-TO-SHAPE COMPOSITION WAS REMOVED ON PURPOSE, AND A CARDINALITY
+    REFUTATION IS ALREADY COMMITTED.** Bean `qou-rj44` (`completed`): the
+    class field `shape` is typed `UpperHalfPlane` and SUPPLIED BY THE INSTANCE
+    precisely because composing seed-to-shape was the defect -- the dilog
+    carrier's docstring says *"The repair is to un-compose the map ... it is
+    not the shape."* And `shape : Fin n -> C` in the class above is
+    LABEL-indexed, an assignment the caller supplies: there is no function of
+    the seed anywhere in either Lean file to refute. Separately, bean
+    `qou-mfdq` Finding 1 (`todo`, priority high, on `origin/main`) already
+    refutes the pole-to-cusp bijection **scope-(b), invariant = cardinality**,
+    by a different count (the `n` roots against the FOUR ideal vertices of one
+    tetrahedron). The arity row below -- `n` roots against `c` CUSPS -- is a
+    THIRD count, independent of and consistent with it. Cite `qou-mfdq` for
+    the bijection; cite this only for the isometry collapse and the lift knob.
+
+WHAT SURVIVES AS THIS PROBE'S OWN, after all three:
+  - the ISOMETRY COLLAPSE of the committed data (L6a4's two recorded values
+    are one tetrahedron, `rotate` twice; so all three manifolds have exactly
+    ONE isometry class), which no committed artifact states; and
+  - the LIFT KNOB (below): that ~half the published 0.4-0.9 is this probe's
+    own `IM_PERTURBATION = 0.1`, with a lift-free real-part floor of
+    0.400918284.
+
 WHAT IS MEASURED
 ----------------
 Read from the committed `snappy-cusp-seeding.witness.json` (SnapPy is not
