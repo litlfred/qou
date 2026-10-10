@@ -1,6 +1,11 @@
 {
  "leanDocs": "lean/docs/",
- "leanStatus": null,
- "qouCommit": "45d75bf72",
+ "leanStatus": {
+  "measured_at": "2026-10-10T14:01:50Z",
+  "qou_commit": "c92edd7683f71ba0fafcea4a0024c73ef60e0905",
+  "method": "lean-content-sweep.sh + lean-library-sweep.py (lean-direct, shadow tree)",
+  "toolchain": "leanprover/lean4:v4.24.0"
+ },
+ "qouCommit": "f1dbce766",
  "repository": "litlfred/qou"
 }
