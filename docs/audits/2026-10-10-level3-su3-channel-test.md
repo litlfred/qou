@@ -111,3 +111,113 @@ adjusted after this commit. Number of comparisons against a measured target:
   block on 2 strands).
 - Whether constructing the channel needed a flavour/colour object `W` with
   `Lambda^3 W != 0` (the audit's "A collapses into C" risk).
+
+## 5. Results
+
+*Appended after the pre-registration commit `ce171d625e`; sections 0-4 above
+are unchanged.* Producer:
+[`computations/eightfold/level3_su3_channel_probe.py`](../../computations/eightfold/level3_su3_channel_probe.py),
+witness `computations/eightfold/level3-su3-channel.witness.json`
+(`q0Anchor: comparison`, both pins recorded). Exact arithmetic in sympy over
+`Q(q)`; numerics in mpmath at `mp.dps = 70`; no float arithmetic. Wall time
+~23 s.
+
+### 5.1 Construction checks (all pass)
+
+- Seminormal matrices satisfy the braid and Hecke relations on every irrep of
+  `H_2, H_3, H_4` over `Q(q)`, and on every irrep of `H_5` at `q = 7/5` (17
+  irreps).
+- Weights: hook-content `s_lambda(1, Q, Q^2)` equals the bialternant for all
+  `l(lambda) <= 3`, `n <= 4`.
+- `tr^(2)(sigma_1) = q^3/(q^2+1)` and `tr^(3)(sigma_1) = q^5/(q^4+q^2+1) = q^3/[3]_q`.
+- Markov property `tr(x sigma_n) = z_3 tr(x)` holds for every basis element
+  `T_w`, `w in S_n`: `n = 3` over `Q(q)`; `n = 4` at `q = 7/5` and `q = 3/2`
+  (exact rationals).
+- **Control: `r = 2` reproduces `(4+h^2-3h^4-h^6)/(h^2+4)` exactly**
+  (difference simplifies to 0).
+
+### 5.2 Level-3 quantities (exact)
+
+Level-3 weights at `n = 3`, `Phi_3 = q^2+q+1`, `Phi_6 = q^2-q+1`:
+`y_(3) = (q^4+1)Phi_5 Phi_10 / (Phi_3 Phi_6)^3`,
+`y_(2,1) = q^2 (q^2+1)^2 (q^4+1) / (Phi_3 Phi_6)^3`,
+`y_(1,1,1) = q^6 / (Phi_3 Phi_6)^3`.
+
+```
+tr^(3)(beta_Bor) = -(q^16 - 2q^14 - q^12 - 5q^8 - q^4 - 2q^2 + 1)
+                   / (q^4 Phi_6^2 Phi_3^2)
+
+tr^(3) - tr^(2)  = -(q-1)^4 (q+1)^4 Phi_10 Phi_5
+                   / (q^2 (q^2+1)^2 Phi_6^2 Phi_3^2)          = O(h^4)
+```
+
+### 5.3 Primary test (section 3), at `q_0` from CAL-2 alone
+
+`q_0 = 1.10997859564273904668179512938...` (`q_muon_at`, CODATA 2022
+`m_mu/m_e = 206.7682827(46)`). Target: CODATA 2022
+`m_p/m_e = 1836.152673426(32)`. `sigma_pred` = `|dR/d(m_mu/m_e)| * sigma(m_mu/m_e)`
+(mpmath derivative through the `q_0` solve) in quadrature with
+`sigma(m_p/m_e)`.
+
+| | `abs tr(beta)` | `F_Bor` | `R_r` | residual | `sigma_pred` | residual / `sigma_pred` | rel. residual | verdict (rule verbatim) |
+|---|---|---|---|---|---|---|---|---|
+| `r = 2` (baseline) | 0.998562163193 | 4.469138596907 | 1836.152225661420 | -4.4776e-4 | 4.7165e-5 | **9.494** | 2.4386e-7 | NEAR-MATCH |
+| `r = 3` (test) | 0.998295962844 | 4.467947197613 | **1835.659538489631** | **-0.49313** | 4.7175e-5 | **10453.2** | **2.6857e-4** | **NEAR-MATCH** |
+
+Secondary (proton pin `q_0 = 1.10997858275138...`): `R_2 = 1836.152673426`
+(zero residual by construction, -1.3e-70), `R_3 = 1835.659986355657`
+(rel. residual -2.683e-4).
+
+**Verdict: NEAR-MATCH under the pre-registered rule, and that label must be
+read with its scope.** The rule is applied verbatim: `r = 3` is not PASS
+(10453 sigma) and its relative residual 2.69e-4 is inside the 1e-2 near-match
+band. Labelled near-match, wired to nothing. Three things the label does not
+say:
+
+1. **Level 3 is ~1100x worse than level 2** on the same quantity (2.69e-4 vs
+   2.44e-7 relative; 10453 sigma vs 9.49 sigma). The `r = 2` baseline
+   reproduces the known mu-p tension (9.49 sigma on the ratio — the
+   AGENTS.md figure), which is a consistency check on the whole pipeline.
+2. **The 1e-2 band is uninformative for this substitution.** `tr^(3) - tr^(2)`
+   is `O(h^4)` with `h^4 ~ 1.9e-3` at `q_0`, so *any* level substitution of
+   this form lands within ~1e-3 of the level-2 value and therefore inside the
+   band. The near-match is a statement about how close the two traces are, not
+   evidence that the three-row block carries colour content.
+3. Scope (a): this construction — the level-3 trace substituted into the
+   unchanged corpus proton identity, with the constants `2`, `12` and the
+   normalisation `[3]_q!/q^3` carried over from level 2 — does not reproduce
+   `m_p/m_e` from CAL-1/2. It is not a structural exclusion of the
+   `l(lambda) = 3` sector from any closure: no invariant is named.
+
+### 5.4 Section-4 quantities (compared to nothing)
+
+- `z_3 = q^5/(q^4+q^2+1)`; at `q_0` (muon pin): `z_3 = 0.449304823303`, against
+  `z_2 = 0.612688050638`.
+- Quotient dimensions `sum_{l<=3} (f^lambda)^2`, `n = 1..8`:
+  `1, 2, 6, 23, 103, 513, 2761, 15767` — **match W6** (`wenzl-level-family.json`).
+- `l(lambda) = 3` Markov shares `sum_{l=3} y_lambda f^lambda` at `q_0`:
+  n=3 0.035464334, n=4 0.106393001, n=5 0.201134308, n=6 0.306778842,
+  n=7 0.412987597, n=8 0.512818417. At `q = 1` they equal the SU(3) state
+  fractions of `3^(x)n` in three-row irreps exactly
+  (1/27, 1/9, 17/81, 233/729, 313/729, 1163/2187) — consistency by
+  construction, not evidence.
+- `T(2,9) = sigma_1^9`: level 2 `(q^18+q^14-q^12+q^10-q^8+q^6-q^4+q^2-1)/(q^7(q^2+1))`
+  = 1.828414019 at `q_0`; level 3 `(q^20+q^16-1)/(q^7 Phi_3 Phi_6)` = 1.588844579.
+  Two strands: no `l = 3` block; the level enters only through `z_r`.
+- **Was a flavour/colour object `W` with `Lambda^3 W != 0` needed?** No separate
+  object was introduced — the only input is the integer `r = 3`. But by
+  Jimbo–Schur–Weyl the level-3 trace *is* the normalised trace on `V^(x)n` for
+  a 3-dimensional `U_q(gl_3)`-module `V` with `Lambda^3 V != 0` (the `(1,1,1)`
+  weight `q^6/(Phi_3 Phi_6)^3` is the q-determinant line) and
+  `Lambda^4 V = 0`. So the channel is equivalent to choosing such a 3-dim
+  object: **the colour object is assumed via `r`, not derived** — the "A
+  collapses into C" risk is realised in that sense.
+
+### 5.5 Caveats
+
+- Level 3 contradicts the premise of `FibreDimensionForcesTL.lean` (the mass
+  fibre is 2-dimensional, forcing level 2). This probe tests the substitution;
+  it does not touch that theorem.
+- The `n = 4` Markov check is at two exact rational `q`, not over `Q(q)`.
+- `sigma_pred` is dominated by `sigma(m_mu/m_e)` (22 ppb); `sigma(m_p/m_e)` is
+  negligible in quadrature.
