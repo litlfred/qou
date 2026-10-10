@@ -1,0 +1,2455 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:qbeta-ck-truncation-canonical",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "folio/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.ts",
+    "md": "folio/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.md",
+    "lean": "folio/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.lean"
+  },
+  "source_hashes": {
+    "md": "f4f684a1b8cb",
+    "ts": "572b7961f0d4",
+    "lean": "052d3355428e",
+    "lean_statement": "c75155fd7c9e"
+  },
+  "criteria": {
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "bbc03dd9670f",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5a542b9ddb77",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "acd4a73894ee",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "7e311e463351",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "voice-title-scholarly": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "dbe50250022f",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "acd4a73894ee",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "voice-status-section": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "cf3d4ea0ab0a",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "37b3fa59a3bc",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "002bca0094e3",
+          "md": "5fec8806828a",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"appendix-qvalues\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "002bca0094e3",
+          "md": "5fec8806828a",
+          "lean": "5ca960c6d000"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "002bca0094e3",
+          "md": "5fec8806828a",
+          "lean": "5ca960c6d000"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "002bca0094e3",
+          "md": "5fec8806828a",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "002bca0094e3",
+          "md": "5fec8806828a",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "002bca0094e3",
+          "md": "5fec8806828a",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "002bca0094e3",
+          "md": "5fec8806828a",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c58bf6bca27b",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "49e4352f8aa9",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3050ae1775d6",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "canonical-script-not-deprecated": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "89bcd82bd3ff",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "a065b3633f0f",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "canonical-no-hardcoded-observable": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "96a346415fd2",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "canonical-cal4-acknowledged": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2ca3d3131a21",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "canonical-ck-tiered-not-binary": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "5fb9d70acf54",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "47384e4fd1b4",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "compute-lp-dual-present": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "772b3e8dc930",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e",
+          "graph": "80f1bc13b2cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "316cc94d5aa5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "detangler-section-band": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e",
+          "graph": "80f1bc13b2cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "696ee4c80040",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "detangler-no-xchapter-fwd": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e",
+          "graph": "80f1bc13b2cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "b01f61430d2a",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "detangler-archimedean-wall": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e",
+          "graph": "80f1bc13b2cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3edb7220507a",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e",
+          "graph": "80f1bc13b2cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "7b9de841a5d5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 1,
+          "in_degree": 0,
+          "cone_size": 1,
+          "depth": 1,
+          "pagerank": 0.000075,
+          "edge_span_max": 0,
+          "edge_span_mean": 0,
+          "worst_target": ""
+        }
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e",
+          "graph": "80f1bc13b2cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "53f3fcf3f37b",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e",
+          "graph": "80f1bc13b2cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "280aea9a61d8",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "detangler-no-dependency-cycle": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e",
+          "graph": "80f1bc13b2cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8dda7ee9ac99",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "bib-cited-ref-has-url": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "a730f195e37d",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "4fec9686f32c"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "bib-cited-ref-metadata-ok": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "b7cc0ee7d062",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "4fec9686f32c"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "bib-cited-ref-has-screenshot": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "d3202b194d13",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "4fec9686f32c"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "03da884f842b",
+          "ts": "64c27f86f6ed",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "78239d5e66a5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "21d9ff417741"
+        },
+        "reviewed_at": "2026-09-14T17:56:37.185Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "proof-no-bare-sorries": [
+      {
+        "field_hash": {
+          "md": "03da884f842b",
+          "ts": "64c27f86f6ed",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "5f54e3f82f73",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T17:56:37.185Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "badf9b8e012f",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "16d8c7a8984e"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6",
+        "notes": "stale: cached lean_sha 5ca960c6d000 != current 052d3355428e; re-run content/pipeline/lean-compile-audit.ts to refresh"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "acd4a73894ee",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.528600Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.528600Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "acd4a73894ee",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "acd4a73894ee",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "The headline witness assertion N3_beats_100x_experimental_target has computed:38.61 expected:6.02 passed:false — N=3 does NOT beat the 7.8 ppb target under the current anchor; '+6.02' is a frozen pre-re-pin number.",
+        "rebuttal": "partial — the .md never asserts N=3 beats the target (only the tiering), so the stale number does not propagate into a false narrative claim; but the block ships a stale/false witness assertion as backing.",
+        "evidence": [
+          {
+            "text": "qbeta-ck-truncation-order-analysis.witness.json:9-12,82 'passed:false'"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.528600Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.528600Z",
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+        "severity": "major"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "acd4a73894ee",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "Post-2026-06-04 'near-match' understates the corpus position — the universal-fibre reading is falsified, not merely unproved; the block (2026-05-31) predates and ignores this.",
+        "rebuttal": "partial — block does not claim c_3 is a derivation; 'near-match, anchor-dependent, no predictive content' is directionally correct (honest-tiering carve-out); defect is staleness, not fabrication.",
+        "evidence": [
+          {
+            "text": "qbeta-ck-truncation-canonical.md:25-32; ck-dk-canonical-registry.md:65"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.528600Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.528600Z",
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "acd4a73894ee",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": ".ts see: points only to the superseded 2026-05-31 framing doc (header: 'SUPERSEDED for status'); neither .md nor .ts references ck-dk-canonical-registry.md.",
+        "rebuttal": "minor — the superseded doc still chains forward to the registry, but the manifest's auditable pointer leads to a doc explicitly marked superseded.",
+        "evidence": [
+          {
+            "text": "qbeta-ck-truncation-canonical.ts see:"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.528600Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.528600Z",
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "acd4a73894ee",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "Lean sibling vacuity check.",
+        "rebuttal": "rebutted — Lean states the real proposition with sorry + -- Ref:, no library shadow, honest §3b conjecture class; the c_2=-1 leg is genuinely proved (q-beta-c-2-eq-neg-one-structural.lean).",
+        "evidence": [
+          {
+            "text": "qbeta-ck-truncation-canonical.lean"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.528600Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.528600Z",
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "acd4a73894ee",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "warn",
+        "verdict": "survivable-objection",
+        "referee_argument": "The block presents c_3 = -2 = J_Hopf(q=1) as a respectable 'structural near-match' while the corpus's authoritative 2026-06-04 registry (post-dating this block) has since REFUTED every real-q c_3 form as a single-anchor coincidence, and the block cites neither the registry nor the falsification.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.528600Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.528600Z",
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+        "evidence": "The block presents c_3 = -2 = J_Hopf(q=1) as a respectable 'structural near-match' while the corpus's authoritative 2026-06-04 registry (post-dating this block) has since REFUTED every real-q c_3 form as a single-anchor coincidence, and the block cites neither the registry nor the falsification."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "acd4a73894ee",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.528600Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.528600Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-false-claim.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "acd4a73894ee",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.528600Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.528600Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-circular.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "acd4a73894ee",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.528600Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.528600Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-hidden-dof.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "acd4a73894ee",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.528600Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.528600Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-non-sequitur.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "acd4a73894ee",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.528600Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.528600Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The Lean file uses the class-conjecture pattern with sorry, matching the conjectural nature of the markdown.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "acd4a73894ee",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.528600Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.528600Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "acd4a73894ee",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.528600Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.528600Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-empirical-fragility.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "acd4a73894ee",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.528600Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.528600Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-physical-implausibility.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9b284af269a5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "4fec9686f32c"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Streamlined Q-value explanations. Restructured the $c_k$ truncation coefficient statuses to be concise, declarative, and direct. Removed conversational padding.",
+        "reviewed_at": "2026-07-07T14:26:55.528600Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.528600Z"
+        },
+        "field_hash": {
+          "md": "acd4a73894ee",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-probe-narrative": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "cite-named-theorem": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "voice-agent-speak": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Clean. No branch/audit working labels, bean ids, PR or branch names, AGENTS.md / skill-file or audit-memo pointers, dated status notes, or first-person work narration found in the .md body or the published .ts title.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Re-reviewed under the added scope, which splits workplan uses of \"gate\" from mathematical ones. \"Target precision, not a canonicity gate, determines $N$\" is now \"... not a canonicity criterion ...\". The truncation-order inequality and the 2.07-digits-per-rung estimate are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "uses-editorial-hygiene": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "1d50b09b0497",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "a86dfebb515f"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6",
+        "metrics": {
+          "uses_count": 1,
+          "broken_edges": 0,
+          "redundant_edges": 0
+        }
+      }
+    ],
+    "uses-formal-coverage": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "b7b208d4a0c4",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "3b16849c7b53"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6",
+        "metrics": {
+          "formal_only_count": 0,
+          "editorial_only_count": 1
+        }
+      }
+    ],
+    "lean-ref-owns-decl": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "b1c323c3439c",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "a86dfebb515f"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6",
+        "metrics": {
+          "decl_claimants": 1
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "5fec8806828a",
+          "ts": "002bca0094e3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.957Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "major",
+        "evidence": "2 negation-contrast construction(s): \", not an exact identity.\"; \", not a prediction.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "38962aa3e428",
+          "ts": "7d5a49c91451"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:57.919Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Post-fix. Remaining denials are substantive scope statements ('a structural resemblance, not an exact identity'; 'a calibration record, not a prediction') required by the corpus refutation-scoping rule. Scanner had flagged these two.",
+        "notes": "FIXED: 'The target precision fixes the truncation order N: ... . Target precision, not a canonicity criterion, determines N.' -> '... ; N is a precision setting rather than a criterion for whether a rung is canonical.' (the second sentence restated the first by denial)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "5fec8806828a",
+          "ts": "002bca0094e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.957Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "38962aa3e428",
+          "ts": "7d5a49c91451"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:58.003Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No setup-then-reframe construction; the closing 'Until then, ...' is a temporal scope statement about an open item."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "5fec8806828a",
+          "ts": "002bca0094e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.957Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (4 in 341 words)"
+      },
+      {
+        "field_hash": {
+          "md": "38962aa3e428",
+          "ts": "7d5a49c91451"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:23:18.066Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "5 em-dashes over 430 words; three are bullet label/gloss separators, two introduce genuine appositives. No comma-vs-full-stop dodging."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "5fec8806828a",
+          "ts": "002bca0094e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.957Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 341 words)"
+      },
+      {
+        "field_hash": {
+          "md": "38962aa3e428",
+          "ts": "7d5a49c91451"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:23:18.138Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'proved, near-matched, or calibration-anchored' names the three tiers the block then enumerates; the three consequences of a Habiro element are distinct technical claims."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "5fec8806828a",
+          "ts": "002bca0094e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.957Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "38962aa3e428",
+          "ts": "7d5a49c91451"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:58.161Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Closes on 'higher rungs serve as a calibration record, not a prediction' — a factual status statement about the open conjecture, not a manufactured quotable."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "5fec8806828a",
+          "ts": "002bca0094e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.957Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "38962aa3e428",
+          "ts": "7d5a49c91451"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:58.220Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "major",
+        "evidence": "Opener narrated the block's own act ('We set out the epistemic status ...'), with a dangling anaphor ('It designates' after a 'We' subject — sweep damage), and paragraph 5 opened by narrating the conjecture just stated ('This conjecture outlines the requirement for closure.').",
+        "notes": "FIXED: opener -> 'The Q_beta truncation coefficients differ in epistemic status. The tiering below records, for each rung, whether it is proved, near-matched, or calibration-anchored, so that its open status is explicit and checkable.'; deleted 'This conjecture outlines the requirement for closure.'"
+      },
+      {
+        "field_hash": {
+          "md": "38962aa3e428",
+          "ts": "7d5a49c91451"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:52:06.384Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Superseding the earlier agent:r01 fail on this block: the two narrating sentences were removed in this batch, so the CURRENT text carries no meta-commentary. Retained for the record: the opener read 'We set out the epistemic status ... It designates ...' (dangling anaphor) and paragraph 5 opened 'This conjecture outlines the requirement for closure.'",
+        "notes": "FIXED: opener -> 'The Q_beta truncation coefficients differ in epistemic status. The tiering below records, for each rung, whether it is proved, near-matched, or calibration-anchored, so that its open status is explicit and checkable.'; deleted 'This conjecture outlines the requirement for closure.'"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "5fec8806828a",
+          "ts": "002bca0094e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.957Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "38962aa3e428",
+          "ts": "7d5a49c91451"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:58.294Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Post-fix. The one restating sentence was the deleted 'This conjecture outlines the requirement for closure.' (recorded under meta-commentary); the block now ends on new scope information."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "5fec8806828a",
+          "ts": "002bca0094e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.957Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "38962aa3e428",
+          "ts": "7d5a49c91451"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:58.351Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No personal or affective register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "5fec8806828a",
+          "ts": "002bca0094e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.957Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "38962aa3e428",
+          "ts": "7d5a49c91451"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:58.459Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Claims are hedged to their tier ('structural resemblance', 'carry no predictive content'); no unqualified maxima."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "5fec8806828a",
+          "ts": "002bca0094e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.957Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "38962aa3e428",
+          "ts": "7d5a49c91451"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:23:18.218Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Sentences parse aloud; bullet labels are short noun phrases."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "03da884f842b",
+          "ts": "64c27f86f6ed",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T17:56:37.185Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ],
+    "foreshadows-point-forward": [
+      {
+        "field_hash": {
+          "md": "f4f684a1b8cb",
+          "ts": "572b7961f0d4",
+          "lean": "052d3355428e",
+          "lean_statement": "c75155fd7c9e",
+          "graph": "80f1bc13b2cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "782f89f534a5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-14T18:01:32.693Z",
+        "reviewed_sha": "5504da2e6a11f9fa609c5d43ea211d2265e9c6e6"
+      }
+    ]
+  },
+  "updated_at": "2026-09-14T18:01:32.693Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
+}
