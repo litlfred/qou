@@ -161,7 +161,7 @@ SIBLINGS=$(ls -d "$ROOT"/folio/*/lean/.lake/build/lib/lean 2>/dev/null |
 # correct by luck of environment.  Bean `qou-tpdg`.
 # Build this with a LOOP, not `ls -d <pat1> <pat2>`: `ls` SORTS its arguments,
 # so it reorders the two patterns ("$ROOT/.lake/..." sorts before
-# "$ROOT/folio/...") and the root tree would win the pinning above -- which is
+# "$ROOT/content/...") and the root tree would win the pinning above -- which is
 # exactly the bug being fixed, reintroduced by the fix.  Shell glob expansion
 # keeps the patterns in the order written.
 #
