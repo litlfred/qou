@@ -2,7 +2,7 @@ At $q = q_0$, the stability cubic ([Diophantine valley](#rem:diophantine-valley)
 
 $$
   t^3 =  2p(1 + ct^2),
-  \qquad c = 0.01497, \quad A = t^3
+  \qquad c \approx 0.0145158337, \quad A = t^3
 $$
 
 See [Table](#tbl:stability-cubic-plot-table-data).

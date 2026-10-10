@@ -269,3 +269,9 @@ Ruling (ofri): option (b). Done on branch `claude/opjb-neutron-constant-2026-10-
   Lean sibling `neutron-prediction-comparison.lean` (`asymmetry_coeff`; its
   `predicted_mass_number` uses yet another inversion). Leaving them is an owner call.
 - Display mismatch (first section): already resolved in the prior entry.
+
+## 2026-10-10 follow-up (owner picks "1 2")
+
+- New c ≈ 0.0145158337 now in `observations/stability-cubic-plot.md` and the Lean sibling `observations/neutron-prediction-comparison.lean` (`asymmetry_coeff`; docstrings now quote the probe witness: mean 1.8155, max 7 at p = 52). lean-direct `-DautoImplicit=false -s 65536` exit 0.
+- NOT changed: `predicted-spectra/elliptic-stability-locus.md`. Its claim "p ≈ 67.8 (erbium)" does not follow from its own equation p² = (1−c)/(4c³) at either c: 270.93 (c = 0.01497), 283.81 (new c). The elimination step itself is also off: with z = −(2cp+1), z²+1 = 4c²p²+4cp+2, not 4c²p²+1; the corrected condition 4c³p² + 4c²p + 2c − 1 = 0 gives p ≈ 237.5 at the old c. No reading gives 67.8. Owner decision pending.
+- Also measured: the stated cubic t³ = 2p(1+ct²) does not reproduce `tbl:stability-cubic-plot-table-data` at either c (U: 218 vs 144 in the table). The inversion A = 2p + c·p·A^{2/3} comes closer but still misses (U: 145 old c, 143 new c, vs 144). The table's source is untraced. Not fixed.
