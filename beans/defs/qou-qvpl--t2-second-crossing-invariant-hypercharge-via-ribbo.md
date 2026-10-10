@@ -7,8 +7,9 @@ priority: critical
 tags:
     - reorg-2026-10-04
     - 8f-tseries
+    - 8f-open
 created_at: 2026-08-03T23:27:16Z
-updated_at: 2026-10-10T07:16:10Z
+updated_at: 2026-10-10T12:02:25Z
 parent: qou-8lxd
 ---
 
@@ -45,3 +46,30 @@ and honest about epistemic status. No false derivation claims found.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Triage 2026-10-10 — open, and the body's own OPEN list is the reason
+
+Tagged `8f-open`. The body above is unusually well-stated and needs no
+correction: five Lean-proved facts, four battery results, and three explicitly
+OPEN sub-items (A: is `Y_t = 2(T(t)/3 − I₃)` derived or a candidate — the body
+answers its own question, **CANDIDATE**; B: the Asselmeyer-Maluga independent
+route; C: the `Z₆` spectrum check).
+
+**Why it cannot be mechanical:** sub-item A is the whole question, and the body
+states its status honestly — the formula "makes GMN hold iff `Q_twist = Q`
+against Coulomb charge", which is a consistency property, not a derivation from
+axioms. Under §NO FITTING a formula selected because it makes a known relation
+hold is selection against the target; the body does not claim otherwise, and
+nothing should be wired until A is answered.
+
+**Its own cross-check is a positive finding worth preserving:**
+`strand-twist-datum.md` was audited and found honest about epistemic status,
+with no false derivation claims. That is the state to maintain, not to fix.
+
+**Relation to `qou-kebu` (T2b).** The body credits T2b's battery as PASSED
+(items 6–9), which reads as T2b being done. It is not: `kebu`'s own body
+records the derivation gap explicitly — *"the battery proves CONSISTENCY … but
+does NOT DERIVE them from QOU axioms"* — and its "DEPENDS ON: T2" names this
+bean. So the dependency runs `kebu` → this bean, and a reader going by T2's
+item 6–9 alone would close T2b wrongly. Recorded on both.

@@ -72,7 +72,7 @@ The two excluded IDs are the milestone and this epic, which print as tree rows.
 | `8f-gen` | 7 | Three generations, chirality grading, what excludes `T(2,9)`. |
 | `8f-qcd` | 8 | Gluon flux tube (G2-opt1..3), lattice QCD from QOU, partition-function unification. |
 | `8f-lit` | 7 | Literature + the four P4.SM queues (cite / cross-check / prove-lean / remark-interpreting). |
-| `8f-tseries` | 5 | `T2`–`T6` derivation spine: hypercharge via ribbon twist, twist multisets, root-of-unity freeze-out, no-free-parameter certificate. |
+| `8f-tseries` | 5 | `T2`–`T6` derivation spine: hypercharge via ribbon twist, twist multisets, root-of-unity freeze-out, no-free-parameter certificate. **FULLY TRIAGED 2026-10-10: 5 of 5 are `8f-open` research — 0 mechanical, 0 already-done.** All five bodies read; two were title-only or stale-bodied and now carry their measurement. |
 | `8f-atomicity` | 5 | The `qou-atsd` T0-T6 chain (`dim V = 2` crux, `Sp` rank, the hard Tannakian Mathlib gap). |
 | `8f-arch` | 4 | Chapter architecture. Ch. `eightfold-way` **exists and is wired**; the restructure is owner-gated. |
 | `8f-decide` | 11 | Owner decisions. **Grew 4 -> 10 on 2026-10-10** as triage moved owner-gated items out of `8f-lean`. Mostly *prepared* one-liners now: a drafted replacement, options with cost, a recommendation and a default. Cheapest front to shrink, and it shrinks by answering, not by working. |
@@ -129,8 +129,11 @@ are open Lean formalisation. So `8f-lean` is not the cheap front; triaging it
    beans list --tag 8f-lean --no-tag 8f-open --ready   # 2 — actionable
    beans list --tag 8f-open -q                         # 5 — open research
    ```
-4. **`8f-tseries`** then **`8f-colour`** — the research spine and the one front
-   where several routes are already excluded, so the survivors are known.
+4. ~~**`8f-tseries`** then~~ **`8f-colour`** — ~~the research spine and~~ the one
+   front where several routes are already excluded, so the survivors are known.
+   **`8f-tseries` is now FULLY TRIAGED and is NOT a next step: 5 of 5 are
+   `8f-open` research, 0 mechanical, 0 already-done** (2026-10-10). Struck
+   through rather than rewritten, because it was recommended here.
 5. **`8f-mass` / `8f-ew` / `8f-gen` / `8f-qcd`** — the 26-parameter gap map. Most
    are blocked on `8f-flavour` or `8f-colour` landing first; read the individual
    bean before starting, several say so explicitly.
@@ -142,6 +145,45 @@ are open Lean formalisation. So `8f-lean` is not the cheap front; triaging it
 > research, and 3 became owner decisions. Triage is cheap (read the body, ~1-3k
 > chars) and a tag is a title's guess; the claim "this front is mechanical" has
 > now been wrong once in this index and must be earned per front, not inherited.
+
+> **Second data point, and it CONFIRMS this index's own prediction (2026-10-10).**
+> `8f-tseries` is the second front triaged to completion, and the contrast with
+> `8f-lean` is the whole finding:
+>
+> | front | named by | bodies | mechanical | already done | owner | open research |
+> |---|---|---:|---:|---:|---:|---:|
+> | `8f-lean` | *kind of work* | 14 | 2 | 2 | 3 | 5 (+2 rescoped) |
+> | `8f-tseries` | *subject matter* | 5 | **0** | **0** | 0 | **5** |
+>
+> That is what §"the front tags came from titles" predicted — fronts named for
+> **what kind of work it is** move; fronts named for **subject matter** do not,
+> because subject matter says nothing about tractability. The prediction is now
+> measured rather than asserted, and the practical consequence is: **do not
+> expect a subject-matter front to yield closures.** Triage it anyway — it is
+> cheap and it produced four body corrections here — but budget it as
+> *scoping*, not as *draining*.
+>
+> **What the `8f-tseries` triage produced instead of closures**, all four worth
+> more than a status change:
+>
+> - **`qou-s16e` (T5)** — its "half-built" framing understated the state (the
+>   certificate is BUILT: 5 entry points, 17 modules, 0 unresolved, 4 of 5 at
+>   **0 untraceable**, the 5th red by design) *and* its stated target is the
+>   wrong target: `predict(obs)` is a **data lookup**, not a closed term, so a
+>   literal-classifying audit cannot speak to it. Now detector-blindness
+>   taxonomy **row 50**, with a committed guard. The trap is recorded: adding
+>   `qou-mass` as a sixth entry point would print a clean `0` that **means
+>   nothing**, because the path does no arithmetic at any closure size.
+> - **`qou-db6w`** — title-only (294 chars) since 2026-07-31, which is why it
+>   was never claimable. Body written; it is the **gap statement** whose one
+>   candidate route is `qou-qhrw`, and nothing in the corpus recorded that.
+>   Now `blocked-by`.
+> - **`qou-qvpl` (T2) / `qou-kebu` (T2b)** — T2's body lists T2b's battery under
+>   "BATTERY PASSED", which reads as T2b being **done**. It is not: T2b's own
+>   body states the gap (*"proves CONSISTENCY … does NOT DERIVE"*). A reader
+>   going by T2 alone would close T2b wrongly. Guarded from both sides, and the
+>   dependency (`kebu` → `qvpl` → `htw2`) is now in the graph rather than in
+>   prose.
 
 > **A title-only bean is not a small bean — it is an unclaimable one.**
 > `8f-lean` had three (`xlw1` at priority **high**, empty five weeks; `nmib`,
