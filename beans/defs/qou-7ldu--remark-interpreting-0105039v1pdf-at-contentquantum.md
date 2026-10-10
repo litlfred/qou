@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:25Z
-updated_at: 2026-10-04T15:23:24Z
+updated_at: 2026-10-10T07:01:35Z
 parent: qou-aqfj
 ---
 
@@ -24,3 +24,8 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Hyperbolic Structure Arising from a Knot Invariant
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [hikami2001] as the citation key when you do it.
+
+
+## 2026-10-10 — pointer
+
+Tracked under carrier M14 (qou-9w2m) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.

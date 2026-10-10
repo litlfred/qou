@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:08Z
-updated_at: 2026-10-04T15:17:38Z
+updated_at: 2026-10-10T07:01:39Z
 parent: qou-mub3
 ---
 
@@ -17,3 +17,8 @@ Source: `library/arxiv-math-9806163v1/9806163v1.pdf` (`halverson-1998-markov-wei
 Relevance: **tangential** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+
+## 2026-10-10 — pointer
+
+Tracked under carrier M14 (qou-9w2m) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.

@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T17:53:42Z
-updated_at: 2026-10-04T15:14:48Z
+updated_at: 2026-10-10T07:01:40Z
 parent: qou-v2om
 ---
 
@@ -87,3 +87,8 @@ not close on the recording of its own openness.
 
 Measured by `computations/audits/step7_bridge_disposition_probe.py` §6, 23/23.
 PR #7375.
+
+
+## 2026-10-10 — pointer
+
+Tracked under related carrier M12 (wpdb) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.

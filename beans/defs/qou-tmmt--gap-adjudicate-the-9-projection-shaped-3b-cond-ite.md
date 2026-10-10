@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T14:12:30Z
-updated_at: 2026-10-04T15:19:41Z
+updated_at: 2026-10-10T07:01:38Z
 parent: qou-5p7n
 ---
 
@@ -332,3 +332,8 @@ The right follow-up is therefore **not** another detector. It is extending the
 existing `proof-no-self-assuming-projection` sweep to content-block siblings —
 one change, covering a whole surface — and separately diagnosing the
 `MarkovTraceRecursiveReducerContext` miss, which that change would not fix.
+
+
+## 2026-10-10 — pointer
+
+Tracked under related carrier M10 of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
