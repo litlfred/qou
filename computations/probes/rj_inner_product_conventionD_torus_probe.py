@@ -27,6 +27,9 @@ Method (no fitting, no floats):
            (-1)^j d_lambda q^{2 s c_lambda / r}.
      (C) is the standard Rosso-Jones shape (Rosso-Jones 1993); it is tested,
      not assumed.
+       (D) at s = r (the full twist Delta^2, a central element):
+           [2]^r tr_M(Delta^2) = sum_lambda d_lambda f^lambda q^{2 c_lambda},
+           i.e. Delta^2 acts on V_lambda by theta_lambda = q^{2 c_lambda}.
   4. Also check the unknot-normalised invariant [2]^{r-1} q^{-2e} tr_M(beta)
      (e = writhe) against the classical Jones polynomial of the trefoil at t = q^{-2}, to pin
      the variable convention.
@@ -233,6 +236,7 @@ def main():
     # torus braids
     print("\n-- torus braids beta=(sigma_1..sigma_{r-1})^s, value [2]^r tr_M(beta) --")
     rows = []
+    fulltwist = []
     for r, srange in ((2, range(1, 8)), (3, range(1, 8)), (4, range(1, 6))):
         cox = tuple(range(1, r))
         for s in srange:
@@ -250,8 +254,16 @@ def main():
                         for l in hooks)
                 )
                 okC = sp.simplify(val - C) == 0
+            okD = None
+            if s == r:
+                # full twist Delta^2 = (sigma_1..sigma_{r-1})^r acts on V_lambda
+                # by theta_lambda = q^{2 c_lambda}; f^lambda = #SYT
+                D = sp.cancel(sum(d_sl2(l) * len(syt(l)) * q ** (2 * content(l))
+                                  for l in lams))
+                okD = sp.simplify(val - D) == 0
+                fulltwist.append(okD)
             rows.append((r, s, okA, okB, okC))
-            print(f"r={r} s={s}: (A) {okA}  (B) {okB}  (C) {okC}   value={val}")
+            print(f"r={r} s={s}: (A) {okA}  (B) {okB}  (C) {okC}  (D) {okD}   value={val}")
 
     # recorded expectations
     report("(A) printed form holds only for r=2, s even",
@@ -262,6 +274,14 @@ def main():
            any(not okB for r, s, _, okB, _ in rows if r == 3))
     report("(C) Rosso-Jones hook form holds for every gcd(r,s)=1 case",
            all(okC for *_, okC in rows if okC is not None))
+
+    report("(D) full twist: [2]^r tr_M(Delta^2) = sum d_lambda f^lambda q^{2c_lambda}, r=2,3,4",
+           len(fulltwist) == 3 and all(fulltwist))
+
+    report("closed form: d_(r) = [r+1], d_(r-1,1) = [r-1] for r = 2..7",
+           all(sp.simplify(d_sl2((r,)) - qint(r + 1)) == 0
+               and sp.simplify(d_sl2((r - 1, 1)) - qint(r - 1)) == 0
+               for r in range(2, 8)))
 
     # trefoil pin: T(2,3), writhe 3, invariant [2]^{r-1} q^{-2e} tr_M
     V = sp.expand(sp.cancel(qint(2) * q ** (-6) * tr_M(2, (1, 1, 1), Z_BLOCK)))
