@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T09:49:46Z
-updated_at: 2026-10-10T10:40:00Z
+updated_at: 2026-10-10T13:45:00Z
 parent: qou-avtq
 ---
 
@@ -96,3 +96,18 @@ Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap 
 The probes still call `chi_monotone_transfer` (e.g. `d_frame_trace_baseline_probe.py:93`); migration to `chi_all_lambda_any` (`chi_general_word.py:180`) has not happened. Open code step, with the deltas to be recorded.
 
 Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-up: `qou-review/avtq-reopened-beans-2026-10-10.md` (project files). Status unchanged.
+
+## 2026-10-10 — piece 2 done: kernel migrated, zero numeric change; the frame is now a choice
+
+All four probes now take `chi_general_word.chi_all_lambda_any`, and each docstring says grouped is a choice, no longer forced. Each probe was re-run three ways at mpmath 70 dps, with output diffed line by line:
+
+| probe | as was | kernel swap only | canonical word (`atom_braid_word_3A`) |
+|---|---|---|---|
+| `qbeta_d_frame_trace_baseline` | 4/4 | 4/4, **byte-identical** | 4/4; D-frame trace −15.451 % → **−17.496 %**; three-row −27.278 % → −29.702 %; gap/ladder **92.106× → 104.29×** |
+| `qbeta_d_frame_baseline_element_consistency` | 5/5 | 5/5, byte-identical | **4/5**: `frobenius_pairing_at_N2_IS_the_markov_trace_at_zD` fails, because its other side is still built on the grouped word, so a half-migration breaks it by construction |
+| `qbeta_epsnpq_functional_mismatch` | 7/7 | 7/7, byte-identical | 7/7, identical output (its printed quantities don't move) |
+| `qbeta_chi_block_symbolic_closure` | 9/9 | 9/9, byte-identical | not run: its symbolic object is the grouped word, so a frame change means re-deriving it |
+
+Witness data is unchanged. Only metadata and environment fields moved.
+
+**Still open (owner call):** whether these probes should trace the canonical word. Under the canonical word the numbers move as shown. `gap_over_ladder_ratio` is quoted in AGENTS.md as the calibration for the Δ fork-pricing probe, so 92.1 → 104.3 would move a cited figure. Default: they stay grouped, now as a declared choice. Bean stays open.
