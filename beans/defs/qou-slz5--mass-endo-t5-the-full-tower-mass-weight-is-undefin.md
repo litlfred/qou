@@ -5,7 +5,7 @@ status: todo
 type: epic
 priority: normal
 created_at: 2026-10-10T06:48:53Z
-updated_at: 2026-10-10T12:58:45Z
+updated_at: 2026-10-10T13:05:46Z
 ---
 
 Thread (session https://claude.ai/code/session_01ST9RpvTF7JHNdUNafrjf9J). OWNER DECISION gating this thread: D7 (docs/coordination/2026-09-05-owner-gated-bean-triage.md, 2026-09-07) puts mass/binding on the full tower, but production tr_M_via_wenzl_bridge still applies D's two-row cap (keeps 0.0434% of H_12 at 4He). No full-tower mass weight is defined. Candidates: Molien (ruled only for Phi_k), C y_λ (excised), Ocneanu N≠2 (changes the trace).
@@ -30,3 +30,12 @@ Note qou-d8c7's M7 correction (#7552): the Molien ruling is scoped to the Φ_k f
 
 ## 2026-10-10 OWNER RESPONSE (session_01ST9RpvTF7JHNdUNafrjf9J)
 Owner: 'i think it may be plancherel. see what else in corpus' + D (derive first). So: corpus-search everything bearing on Plancherel (d_q^2/D^2) as the full-tower mass/binding weight, and attempt a derivation rather than adopt by result. Owner leaning is a hypothesis, not a ruling; no production change.
+
+
+## 2026-10-10 — derivation step 1: structural conditions on a full-tower weight (session_01ST9RpvTF7JHNdUNafrjf9J)
+Probe `computations/deltalambda/full_tower_trace_coherence_probe.py` (10/10, exact in Q(q,y); no float64).
+- **Branching coherence** (one trace on the whole tower, w_λ = Σ_{μ=λ+□} w_μ) fails for **quantum Plancherel dim_q²/D²**, first at λ=(3) (26 failing λ for n ≤ 6; defect at q0 −1.298e-5). It holds at n = 1, 2. So Plancherel is not the weight of a single trace on the full tower. That is a structural exclusion *if* the mass functional must be one trace on H_∞. It is not excluded if the functional may be an unrelated per-n functional; owner to confirm which reading of D7 applies.
+- **Molien f q^{−κ} dim_q/[n]!** is coherent, and so is its mirror (q^{+κ}). These are the two canonical traces (τ(σ_w) = δ for σ, resp. for σ⁻¹).
+- **Ocneanu/Markov family at imaginary rank x = iy**: coherent, every weight > 0 (faithful on all λ), with z(y) = (q−q⁻¹)y²/(y²+1). y→0 gives Molien and y→∞ gives mirror Molien. Real rank gives a negative weight (sample x=3: column of length 12). So for real q>1, the positive Markov traces that are faithful on every partition are exactly z ∈ [0, q−q⁻¹] (≈ [0, 0.2091] at q0). Convention D's z_D = 0.6127 lies outside, consistent with D7.
+- **Not selected:** which point of that interval. Candidates are an endpoint (a canonical trace, i.e. Molien) or the self-dual midpoint y=1, z=(q−q⁻¹)/2, fixed by σ ↦ −σ⁻¹ / λ ↦ λ'. That choice needs a further principle and is not made here.
+- Checked for n ≤ 6 / n ≤ 5, not proved for all n. Next: formalise the λ=(3) Plancherel incoherence and the interval statement in Lean.
