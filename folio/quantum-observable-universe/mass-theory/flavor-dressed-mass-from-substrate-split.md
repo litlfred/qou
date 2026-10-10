@@ -22,6 +22,8 @@ $$
 
 The CODATA neutron-proton mass difference is no longer an input. The functor extracts the splitting purely from $q_0$ and the scale $M_N$. The individual masses $\mu_{\mathfrak{u}}$ and $\mu_{\mathfrak{d}}$ are then pinned by the baryon-content sum-rule.
 
+Here $z_{\mathrm{mkv}} = \sqrt q/(q+1)$ is the excised convention-C Markov weight, inherited from the [pair-Skein formula](#lem:pair-skein-mass-formula). The statement is a convention-C result until that formula is re-derived under the canonical weight $z = q^3/(q^2+1)$.
+
 **Conditional on two upstream results, neither yet formalised.** The formal
 backing is a named accessor for a hypothesis carrying the substrate side
 ([`prop:flavor-split-substrate`](#prop:flavor-split-substrate)) together with
