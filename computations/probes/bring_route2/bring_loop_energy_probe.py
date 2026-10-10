@@ -53,14 +53,15 @@ def act(A, z):
     return (A[0] * z + A[1]) / (A[2] * z + A[3])
 
 
-def key(A, digits=18):
+def key(A, digits=12):
     """Projective key: fix the sign so the first entry that is not ~0 is positive."""
     sgn = 1
     for x in A:
         if abs(x) > mp.mpf(10) ** -10:
             sgn = 1 if x > 0 else -1
             break
-    return tuple(mp.nstr(sgn * x, digits) for x in A)
+    # entries that are 0 up to rounding must give one key, not '1e-30' vs '-2e-31'
+    return tuple("0" if abs(x) < mp.mpf(10) ** -12 else mp.nstr(sgn * x, digits) for x in A)
 
 
 def cosh_disp_i(A):
@@ -193,19 +194,42 @@ def crosses_axis(h):
     return (e0 > 0) != (e1 > 0)
 
 
+COARSE = 40
+
+
 def energy(ker_nonstab, L, N, kernel):
-    """Periodic trapezoid of 1/D^2 - 1/delta^2 (kernel 'flat') or the sinh version."""
+    """Periodic trapezoid of 1/D^2 - 1/delta^2 (kernel 'flat') or the sinh version.
+
+    Speed-up, exact rather than approximate: d(A(s), hA(t)) is 1-Lipschitz in each of
+    s and t, and each fine node is within L/COARSE of its nearest coarse node in each
+    coordinate, so d moves by at most 2L/COARSE between them.  A fine node is evaluated
+    for h only if the nearest coarse node has d < L/2 + 2L/COARSE; every skipped node
+    therefore has d >= L/2 >= delta and contributes 0 for that h."""
     hstep = L / N
     pts = [-L / 2 + k * hstep for k in range(N)]
     A = [mp.mpc(0, mp.exp(x)) for x in pts]
-    # D2[a][b] = best cosh-distance from non-stabiliser h (smaller is closer)
-    best = {}
+    cstep = L / COARSE
+    cpts = [-L / 2 + k * cstep for k in range(COARSE)]
+    cA = [mp.mpc(0, mp.exp(x)) for x in cpts]
     capc = mp.cosh(L / 2)
+    capcoarse = mp.cosh(L / 2 + 2 * L / COARSE)
+    near = [min(range(COARSE), key=lambda k: abs(cpts[k] - x)) for x in pts]
+    best = {}
     for h in ker_nonstab:
-        hA = [act(h, z) for z in A]
+        chA = [act(h, z) for z in cA]
+        hot = {(a, b) for a in range(COARSE) for b in range(COARSE)
+               if cosh_dist(cA[a], chA[b]) < capcoarse}
+        if not hot:
+            continue
+        hA = {}
         for ia in range(N):
             za = A[ia]
+            ca = near[ia]
             for ib in range(N):
+                if (ca, near[ib]) not in hot:
+                    continue
+                if ib not in hA:
+                    hA[ib] = act(h, A[ib])
                 cd = cosh_dist(za, hA[ib])
                 if cd < capc:
                     k = (ia, ib)
@@ -233,15 +257,17 @@ def main():
         st = loop_setup(name, s_mp, u_mp, sigmas[0], rho)
         L = st["L"]
         R = mp.mpf(3) / 2 * L
-        ker, nseen = enumerate_kernel(st["gens"], R, mp.mpf(3))
-        ker2, _ = enumerate_kernel(st["gens"], R, mp.mpf(4))
+        ker, nseen = enumerate_kernel(st["gens"], R, mp.mpf(1))
+        ker2, _ = enumerate_kernel(st["gens"], R, mp.mpf(2))
         stab = [h for h in ker if is_axis_stabiliser(h)]
-        tl = sorted({mp.nstr(2 * mp.acosh(abs(h[0] + h[3]) / 2), 20) for h in stab})
+        # |tr| = 2 to rounding (identity, possibly keyed twice) gives length 0
+        tl = sorted({"0.0" if abs(h[0] + h[3]) <= 2 + mp.mpf(10) ** -15
+                     else mp.nstr(2 * mp.acosh(abs(h[0] + h[3]) / 2), 20) for h in stab})
         nonstab = [h for h in ker if not is_axis_stabiliser(h)]
         crossing = [h for h in nonstab if crosses_axis(h)]
         row = {"L": mp.nstr(L, 25), "r": st["r"], "kernel_elements_within_1.5L": len(ker),
                "delta_elements_enumerated": nseen,
-               "slack_3_vs_4_same_kernel_set": {key(h) for h in ker} == {key(h) for h in ker2},
+               "slack_1_vs_2_same_kernel_set": {key(h) for h in ker} == {key(h) for h in ker2},
                "axis_stabiliser_translation_lengths": tl,
                "self_crossing_elements": len(crossing),
                "dist_midpoint_to_cone_point": mp.nstr(st["dist_m_cone"], 10)}
@@ -261,7 +287,7 @@ def main():
                     print(f"   {kern} N={N}: {mp.nstr(vals[N], 15)}", flush=True)
                 row[f"E_{kern}_by_N"] = {str(k): mp.nstr(v, 20) for k, v in vals.items()}
         out[name] = row
-        checks[f"{name}_slack_stable"] = row["slack_3_vs_4_same_kernel_set"]
+        checks[f"{name}_slack_stable"] = row["slack_1_vs_2_same_kernel_set"]
         checks[f"{name}_loop_translation_in_kernel"] = Lstr in tl
     a, b = out["gluon_s1_s0"], out["gluon_s1_s1"]
     checks["conjugate_pair_same_E"] = (a.get("E"), a.get("E_flat_by_N", {}).get("480")) == \
