@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-14T16:21:57Z
-updated_at: 2026-10-04T15:18:33Z
+updated_at: 2026-10-10T07:47:05Z
 parent: qou-cdx1
 ---
 
@@ -84,3 +84,14 @@ merge decision rests on.
       construction
 - [ ] the 6 remaining orphans (`chi-*-matrix-m`) — need the `hecke-engine` CLI,
       not a Python producer
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+Premise has MOVED but the bean is not closed. Its 'class A (gram.py)
+documented blocked' no longer holds -- `pyhecke.gram` is convention D and the
+registry's `intra_module_split_waivers` is EMPTY with a note saying the split
+is closed. What survives is its definition of 'complete', which is now
+answerable. Live, and cheap: re-read it against the registry.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

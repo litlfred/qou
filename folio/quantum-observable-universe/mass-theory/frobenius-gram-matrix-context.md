@@ -48,8 +48,10 @@ $\mathrm{tr}_M(\sigma_0\sigma_1\sigma_0)
 (the last step uses the Markov axiom on $\sigma_1$ paired with
 $\sigma_0 \in H_1$).
 
-At $q_0 = 1.109978595642739\ldots$ (50 dps), $hz^2 + z \approx 0.5514$ (the stale
-$z^3 \approx 0.1245$ was off by a factor of 4.4).
+At the proton-pinned $q_0 \approx 1.1099785828$ with $z = q^3/(q^2+1)$,
+$hz^2 + z \approx 0.6912$, and the naive $z^3 \approx 0.2300$ is off by a
+factor of 3.0. (Until 2026-10-10 this line quoted $0.5514$ and $0.1245$, the
+excised convention-C values at the muon pin.)
 
 ## Operator identification via the dual
 

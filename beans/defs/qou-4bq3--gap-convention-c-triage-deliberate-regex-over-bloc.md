@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-25T01:09:17Z
-updated_at: 2026-10-04T15:19:51Z
+updated_at: 2026-10-10T07:47:05Z
 parent: qou-cdx1
 ---
 
@@ -103,3 +103,13 @@ comparisons" on a verdict that does not hold. They were not: #5739 migrated
 all six. The risk this bean describes is therefore realised-and-survived
 rather than hypothetical -- which is the argument for fixing the regex before
 the next drain, when no one may check.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+`convention-c-triage.py`'s DELIBERATE regex compiles `C_` with `re.I` and so
+matches `c_` inside ordinary identifiers, over-blocking 8 of 24 B3 verdicts --
+a detector telling an agent to skip a real site. Live: a false DELIBERATE is
+the dangerous direction, and the value audit does not use this regex.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

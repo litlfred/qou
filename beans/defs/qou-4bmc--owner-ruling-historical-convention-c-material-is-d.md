@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T19:33:50Z
-updated_at: 2026-10-04T15:21:56Z
+updated_at: 2026-10-10T07:47:04Z
 parent: qou-cdx1
 ---
 
@@ -136,3 +136,12 @@ feeding six live consumers): **a witness whose producer is deprecated is not
 thereby unused.** The ruling says history leaves the corpus; it does not say
 what to do when the corpus is still reading it. That needs answering per
 witness, with the content blocks in scope.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+The owner ruling that historical convention-C material is deprecated and
+leaves the corpus, audit-only. A ruling to be ENACTED, not a site to measure.
+Live until the material moves.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

@@ -13,7 +13,10 @@ The Jones value of the (2,k) torus link is the Markov trace tr_M(sigma_1^k) in
 H_2(q). With the Hecke relation sigma^2 = h*sigma + 1 (h = q - 1/q, AGENTS.md
 Sec 7a), sigma^k = a_k*sigma + b_k with (a_0,b_0)=(0,1),
 (a_{k+1},b_{k+1})=(h*a_k+b_k, a_k); and tr_M(sigma^k) = a_k*z + b_k with the
-canonical Markov parameter z = 1/(sqrt(q) + 1/sqrt(q)).
+canonical Markov parameter z = q**3 / (q**2 + 1) (convention D, canonical per
+the 2026-08-15 owner ruling R1). This read `1/(sqrt(q) + 1/sqrt(q))` —
+convention C — while line 59 has computed the D value throughout; corrected
+2026-10-10, bean `qou-u5z0`.
 
 Assertions (all parameter-free / symbolic-exact):
   1. unknot  (2,1): tr = z                 -> the Lean `jonesUnknot`   closed form
@@ -143,7 +146,10 @@ def main() -> int:
             "consumes": "QOU/BraidKnot/JonesNuclearQuotient.lean (jonesUnknot / jonesHopfLink / jonesTrefoil)",
             "conjecture": "conj:jet-filtered-knot-factor Part-4 (OPEN): a(Z,N) = J_beta_bar(q)",
             "hecke_relation": "sigma^2 = h*sigma + 1, h = q - q^{-1} (AGENTS.md Sec 7a)",
-            "markov_parameter": "z = 1/(sqrt(q) + 1/sqrt(q))",
+            # Was `z = 1/(sqrt(q) + 1/sqrt(q))` (convention C) while line 59
+            # computes `z = q ** 3 / (q ** 2 + 1)` (convention D, canonical
+            # per the 2026-08-15 ruling R1). Bean qou-u5z0.
+            "markov_parameter": "z = q**3 / (q**2 + 1)",
             "scope": "infra RHS construction; NOT a closure of the conjecture",
         },
     }

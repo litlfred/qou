@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T14:34:13Z
-updated_at: 2026-10-04T15:20:34Z
+updated_at: 2026-10-10T07:47:10Z
 parent: qou-cdx1
 ---
 
@@ -66,3 +66,12 @@ this probe kept local. The n = 3 arithmetic above is a two-line reproduction.
 Decide which of the two it is, then either fix the normalisation (and the flag
 goes true) or record a scoped negative naming the invariant that fails. Do NOT
 close it by deleting the check.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+A probe recording `qplancherel_sum_dq2_eq_qfact=False` while reporting
+`allPassed=true`. A probe that passes while its own field records a failure is
+a reporting defect independent of convention. Live.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

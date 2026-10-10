@@ -158,6 +158,8 @@ using `pyhecke_native` for full $\mathrm{tr}_M$ at $H_n$ for $n \in \{6, 9, 12\}
 
 Max rel. err. across all 4 atoms: $\sim 10^{-15}$ — exact at f64 precision.
 
+These four rows were measured under the excised convention-C weight $z = \sqrt q/(q+1)$, and the run has not been repeated at the canonical $z = q^3/(q^2+1)$. The factorisation $(\star)$ is an identity in $z$, so at $z = q^3/(q^2+1)$ it predicts $0.6127$, $0.2473$, $0.3754$ and $0.1515$; the full-trace check of those values is open.
+
 Per-atom interface census (from `atom_braid_word_3A`):
 
 - **D**: $p \cdot \sigma_3 \cdot n$ — 1 positive (p-n).
@@ -208,3 +210,4 @@ $$
   \;=\; z \cdot (2q - 1) \,+\, O(h^4)
   \;=\; \frac{2q - 1}{q^{1/2} + q^{-1/2}} \,+\, O(h^4).
 $$
+The second equality substitutes the excised convention-C weight $z = 1/(q^{1/2} + q^{-1/2})$ and is kept as a historical form. At the canonical $z = q^3/(q^2+1)$ the step is $q^3(2q-1)/(q^2+1) \approx 0.7475$ at $q_0$; the constit-side conjecture was itself measured under C, so this combination is unverified at D.

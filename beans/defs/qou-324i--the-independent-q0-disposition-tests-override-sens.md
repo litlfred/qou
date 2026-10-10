@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T20:27:28Z
-updated_at: 2026-10-04T15:14:07Z
+updated_at: 2026-10-10T07:56:23Z
 parent: qou-cdx1
 ---
 
@@ -338,3 +338,38 @@ CHEAP PRE-FILTER for the systematic sweep: all 3 genuine drains carried the iden
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 re-audit verdict: **REPARENT** (bean `qou-am5t`)
+
+Same: the `independent` q0 disposition classifier is pin-axis. Keep open, re-
+home.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+
+## RETRACTION, same session — this bean was CORRECTLY parented and my verdict above was wrong (bean `qou-am5t`)
+
+The 2026-10-10 verdict above says **REPARENT**, on the reasoning that this is the
+q0/colour axis rather than the convention axis and therefore the wrong milestone.
+**That reasoning is wrong, and `qou-cdx1`'s own title says so**:
+
+> `MILESTONE: excise convention C, adopt proton pin + colour weighting (owner ruling 2026-08-15)`
+
+Its body states the three rulings explicitly — **R1** convention D canonical / C
+excised, **R2** proton pin canonical, **R3** `bring_color_weighted` canonical.
+So the milestone is a THREE-RULING milestone, not a C-excision milestone, and a
+q0-pin bean (R2) or a colour-weight bean (R3) sits under it by design.
+
+My §9 paragraph calling the shared milestone an artefact of the two rulings
+"landing in the same message" had it backwards: they share a milestone because
+the milestone was scoped to cover all three, deliberately.
+
+**This bean stays under `qou-cdx1`. It is not re-parented, and the REPARENT
+verdict above is withdrawn.** Everything else in that verdict — that it is live
+and worth doing — stands.
+
+Third correction of this session, and the same class each time: a claim about a
+bean made without reading that bean's own primary text closely enough. The first
+was `qou-m7py` (called satisfied off one grepped line), the second was the
+66-unscoped paper classifier.

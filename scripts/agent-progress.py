@@ -50,6 +50,45 @@ def latest_block(path: str):
     return last, is_done
 
 
+def is_agent_output(path: str) -> bool:
+    """True iff `path` is an AGENT transcript rather than a Bash job's stdout.
+
+    The session tasks dir holds `<id>.output` for BOTH, and the glob fallback
+    in `main()` cannot tell them apart by name. Measured 2026-10-10: a
+    heartbeat over a dir with one agent and six backgrounded Bash commands
+    printed seven rows, six of them `[live] (no progress block yet — agent
+    still spinning up)` — for `pip install`, `setup-folio-assistant.sh` and a
+    `precision-gates.sh` run. They never advance, because a Bash job does not
+    emit `⟦PROGRESS⟧` blocks, so they read as permanently-hung agents and
+    invite a `SendMessage` nudge to something that cannot receive one.
+
+    Worse, it hides a real signal: one of those six had **timed out**
+    (`GATE_EXIT=124`) and its row said "spinning up".
+
+    The discriminator is the first line. An agent transcript is JSONL whose
+    first record is a dict carrying `isSidechain`/`parentUuid`/`promptId`;
+    Bash stdout is arbitrary text. Checking the first line only keeps this
+    O(1) per file, which matters because the heartbeat runs every 120 s.
+    """
+    try:
+        with open(path) as fh:
+            first = fh.readline(4096).lstrip()
+    except OSError:
+        return False
+    if not first.startswith("{"):
+        return False
+    try:
+        obj = json.loads(first)
+    except Exception:
+        # A truncated first JSON line still indicates JSONL; a Bash job that
+        # happens to print `{...}` as its first line does not. Require one of
+        # the transcript-shaped keys to appear in the raw text.
+        return any(k in first for k in ("isSidechain", "parentUuid", "promptId"))
+    return isinstance(obj, dict) and any(
+        k in obj for k in ("isSidechain", "parentUuid", "promptId", "message")
+    )
+
+
 def read_map(tasks: str) -> dict:
     """Map agentId -> label from a `dispatch-map.txt` beside the tasks dir.
 
@@ -79,7 +118,15 @@ def main() -> int:
     if labels:
         outputs = [os.path.join(tasks, aid + ".output") for aid in labels]
     else:
-        outputs = sorted(glob.glob(os.path.join(tasks, "*.output")))
+        # No dispatch map: fall back to the glob, but keep only genuine agent
+        # transcripts. A Bash job's stdout lands here too and would otherwise
+        # be reported as a hung agent -- see `is_agent_output`.
+        allout = sorted(glob.glob(os.path.join(tasks, "*.output")))
+        outputs = [p for p in allout if is_agent_output(p)]
+        skipped = len(allout) - len(outputs)
+        if skipped:
+            print(f"(skipped {skipped} non-agent .output file(s) — "
+                  f"backgrounded Bash jobs, not agents)\n")
     if not outputs:
         print(f"(no agent output files in {tasks})")
         return 0

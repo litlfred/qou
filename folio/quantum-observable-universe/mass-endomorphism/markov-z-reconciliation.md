@@ -1,4 +1,4 @@
-Two conventions for the Markov parameter $z$ appear in the literature and in this paper. They differ by a factor of $q - 1$ and arise from different normalisation choices for the trace.
+Two conventions for the Markov parameter $z$ appear in the literature and in this paper. They arise from different normalisation choices for the trace.
 
 **Convention 1 (Jones link normalisation).** Producing a link invariant from the trace requires a writhe-dependent prefactor outside the trace ([Jones–Markov trace](#thm:jones-markov-trace)); the normalisation parameter absorbed into that prefactor is
 $$
@@ -12,17 +12,17 @@ At $q_0 \approx 1.110$, this gives $z_{\mathrm{J}} \approx 0.027$. The trace its
 $$
   z_{\mathrm{m}}
   \;=\;
-  \frac{1}{q^{1/2} + q^{-1/2}},
+  \frac{q^3}{q^2+1},
 $$
-giving $z_{\mathrm{m}} \approx 0.499$ at $q_0$.
+giving $z_{\mathrm{m}} \approx 0.6127$ at the proton-pinned $q_0$. This is convention D of the trace-convention registry. Until 2026-10-10 this paragraph defined $z_{\mathrm{m}}$ as $z_{\mathrm{C}} = 1/(q^{1/2} + q^{-1/2}) \approx 0.499$, the convention-C parameter excised for the mass channels; $z_{\mathrm{C}}$ is kept below where the comparison needs it.
 
-**Relation.** The two parameters satisfy
+**Relation.** The Jones normalisation is tied to the convention-C parameter, not to $z_{\mathrm{m}}$:
 $$
   z_{\mathrm{J}}
   \;=\;
-  (q - 1)\,z_{\mathrm{m}}^{\,2},
+  (q - 1)\,z_{\mathrm{C}}^{\,2},
 $$
-since $z_{\mathrm{m}}^2 = 1/(q^{1/2}+q^{-1/2})^2$ by definition. Equivalently, $z_{\mathrm{m}} = z_{\mathrm{J}}^{1/2}\,(q - 1)^{-1/2}$.
+since $z_{\mathrm{C}}^2 = 1/(q^{1/2}+q^{-1/2})^2$ by definition. Equivalently, $z_{\mathrm{C}} = z_{\mathrm{J}}^{1/2}\,(q - 1)^{-1/2}$.
 
 **Origin of the two conventions.** Convention 1 normalises the Jones polynomial as a link invariant: the factor $(q-1)$ absorbs the writhe correction and makes $J_L(q)$ independent of the braid representative. Convention 2 is the trace evaluated on a single generator without the writhe prefactor: $\mathrm{tr}_M(\sigma_i) = z_{\mathrm{m}}$.
 
@@ -33,11 +33,12 @@ $$
   z_{-}\,\mathrm{tr}_M(x),
   \qquad
   z_{-} \;=\; z_{\mathrm{m}} - (q - q^{-1})
-  \;\approx\; 0.290
+  \;=\; \frac{1}{q(q^2+1)}
+  \;\approx\; 0.4036
 $$
-at $q_0$ ([Markov axioms](#rem:markov-axioms-primitive)). This is the value the pyhecke normal-form reduction computes for $\mathrm{tr}_M(\sigma_i^{-1})$; it is neither $z_{\mathrm{m}}$ nor $z_{\mathrm{m}}^{-1}$.
+at $q_0$ ($0.290$ under the excised convention C) ([Markov axioms](#rem:markov-axioms-primitive)). This is the value the pyhecke normal-form reduction computes for $\mathrm{tr}_M(\sigma_i^{-1})$; it is neither $z_{\mathrm{m}}$ nor $z_{\mathrm{m}}^{-1}$.
 
-**Block weights.** The two loop values jointly determine the Wedderburn block weights of the convention-C trace in closed form:
+**Block weights.** The two loop values jointly determine the Wedderburn block weights of the trace in closed form:
 
 $$
   w_\lambda
@@ -50,7 +51,7 @@ $$
 
 with $c(x)$ the content and $h(x)$ the hook length of the cell $x$ — the Ocneanu weight formula at framing ratio $a^2 = z_{\mathrm{m}}/z_{-}$, verified exactly for every $\lambda \vdash n \leq 5$ ([witness](computations/markov-trace-weights-wenzl.witness.json)). The single-cell case recovers $\mathrm{tr}_M(1) = (z_{\mathrm{m}} - z_{-})/(q - q^{-1}) = 1$.
 
-**Convention.** The parameter $z_{\mathrm{m}} = 1/(q^{1/2} + q^{-1/2}) = \sqrt{q}/(1+q)$ is **convention C** of the [trace-convention registry](docs/coordination/trace-convention-registry.md), there named the full-Hecke Ocneanu/Wenzl $z$-trace. The **mass** and **binding** channels are registered as **convention D**, $z_{\mathrm{D}} = q^3/(q^2+1)$, in both their definitional and production layers, following the owner ruling of 2026-08-09 that excised convention C for those channels. The two differ by $195.8$ ppm on $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ and $-197$ ppm on $\mathfrak{m}_{\mathfrak{p}}$. The numerical values quoted above ($z_{\mathrm{m}} \approx 0.499$, $z_{-} \approx 0.290$) and the weights evaluated at them are therefore **convention-C values**, and do not describe the parameter the mass tables use.
+**Convention.** The parameter $z_{\mathrm{m}} = q^3/(q^2+1)$ is **convention D** of the [trace-convention registry](docs/coordination/trace-convention-registry.md), registered for the **mass** and **binding** channels in both their definitional and production layers, following the owner ruling of 2026-08-09 that excised convention C, $z_{\mathrm{C}} = \sqrt{q}/(1+q)$ (there named the full-Hecke Ocneanu/Wenzl $z$-trace), for those channels. The two differ by $195.8$ ppm on $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ and $-197$ ppm on $\mathfrak{m}_{\mathfrak{p}}$. The values this block quoted until 2026-10-10 ($z_{\mathrm{m}} \approx 0.499$, $z_{-} \approx 0.290$) were convention-C values.
 
 **A structural separation between the two conventions.** The justification on record for the convention-D ruling is empirical — the $195.8$ ppm and $-197$ ppm figures above. There is also a structural one, and it involves no anchor, no measurement and no ppm figure. Using $\hbar_\times = q - q^{-1}$ and $[2]_q^2 - \hbar_\times^2 = 4$, the two loop values of convention D satisfy
 
@@ -71,13 +72,13 @@ $$
 
 mixing half-integer and integer powers of $q$ in one numerator, with no factorisation and no monomial framing ratio. Both conventions are admissible — $\mathrm{tr}_M(1) = (z - z_{-})/(q - q^{-1}) = 1$ holds in each — so this is not convention C being invalid; it is convention C being structureless.
 
-Two further forms, recorded because they make the pair comparable at a glance. Convention D admits the exact analogue of the $z_{\mathrm{m}} = 1/[2]_{\sqrt q}$ above,
+Two further forms, recorded because they make the pair comparable at a glance. Convention D admits the exact analogue of the $z_{\mathrm{C}} = 1/[2]_{\sqrt q}$ above,
 
 $$
   z_{\mathrm{D}} \;=\; \frac{q^2}{[2]_q} ,
 $$
 
-and the two are bridged by $z_{\mathrm{D}}(q) = q^2\,z_{\mathrm{m}}(q^2)$.
+and the two are bridged by $z_{\mathrm{D}}(q) = q^2\,z_{\mathrm{C}}(q^2)$.
 
 All of the above is sorry-free in `QOU.Information.markovZNeg_eq`, `markov_loop_value_product`, `markov_framing_ratio_eq`, `markovZ_eq_qsq_div_qDimTwo` and `qDimTwo_sq_sub_hbar_sq`, with the symbolic cross-check in [`markov_loop_value_product_and_framing_ratio.py`](https://github.com/litlfred/qou/blob/main/computations/probes/markov_loop_value_product_and_framing_ratio.py) (13/13). It was found while chasing the algebraic relation between $z$ and $\hbar_\times$ out of the Toffoli LP arc, where it first appeared only as an obstruction.
 

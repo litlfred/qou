@@ -8693,3 +8693,34 @@ The candidates were pre-registered at 07:46Z, before any value was computed at q
 
 - **Step 27** cites `qbeta_level_k_binding_operator_probe.py` as "(8/8)" for "the level-k operator IS binding". A re-run today gives **6/8**, exit 1, failing `binding_character_is_largest_in_a_tl_kernel_block` and `the_only_small_eigenphases_are_in_blind_blocks`. Both headline findings of Step 27 are red. `qou-g5oz` (parent `qou-9nnz`) tracks the probe.
 - **The swing-gate cancellation and α(q0):** `qbeta-c3-swing-gate.witness.json` fails `swing_matches_o2` (3.4e-4 against tol 1e-6) and carries no q0Anchor. `qbeta-symbolic-chain-alpha-b.witness.json` fails `alpha_q0_matches_probe_n3_witness` (0.01185 against tol 1e-30).
+
+
+## 2026-10-10 — re-audit: you are the ONLY thing left, and the 8593 lines above are why nobody could tell (bean `qou-am5t`)
+
+Measured the whole C→D surface today rather than quoting any figure. Result:
+**this bean is the migration.** Three of the four trace channels are `agreed`
+with definitional and production convention both D; `qbeta-decay` is the fourth
+and is yours. Across the entire repo there is **one non-probe production file**
+binding convention C — `computations/qbeta/qbeta_ck_cache.py:140`,
+`z = sqrt(q) / (1 + q)` — and 11 of the registry's 12
+`blocked_on_rederivation` rows point here.
+
+Everything else an audit still reports is accounted: 143 adjudicated comparison
+arms (the last 6 adjudicated today, `BLOCKING` 6 → 0, `e6a5d23e9`), 1 stays-C
+by design, 18 deliberate Lean definitions, 1 symbolically-C witness.
+
+**Nothing about the mathematics is new here.** The one thing worth adding is a
+pointer, because this bean is 8593 lines and its own framing of the blocker was
+wrong until 2026-09-14: the ladder is **not** blocked on the phase `α`
+(`qou-pdix`). `cos ≤ 1` caps `F_N2(α) = cos(α − u/2)·(1 − u²)` at
+`1 − u² = 0.99992745` for every real `α`, while the ruled `z_D` base needs
+`F_required = 1.75923699418` (order-zero `E₀`) or `1.20016236389` (the
+dashboard-scored cell) — so no `α` unblocks it, and the two cells a cosine can
+reach are the two the 2026-09-08 ruling does not select. The live question is
+**what object supplies a factor above 1 at all** — the base or the assembly.
+
+State summary with the command behind each number:
+[`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §5.
+
+**Not reclaiming this bean** — the claim reset of 2026-10-04 stands and the open
+item is research, not drain.

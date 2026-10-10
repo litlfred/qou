@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T19:29:11Z
-updated_at: 2026-10-04T15:21:38Z
-parent: qou-cdx1
+updated_at: 2026-10-10T07:55:52Z
+parent: qou-9nnz
 ---
 
 
@@ -76,3 +76,12 @@ statically decidable without type inference, and the 5646 -> 7 -> 1 funnel
 shows why a grep-driven sweep would be almost entirely false positives. The
 runtime signal — a producer that exits 1 — is the reliable detector, and it
 already caught the only instance that mattered.
+
+
+## 2026-10-10 re-audit verdict: **REPARENT** (bean `qou-am5t`)
+
+Not a convention question. An `mpf` reaching an f-string `:.4f` crashes on
+mpmath 1.3.0 and not 1.4.1 -- an environment/serialization defect. Keep open,
+re-home.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

@@ -44,7 +44,12 @@ the product formula.  $\square$
 **The ratio = 1.000000 in the computational verification is
 exact by construction** — the product formula and the direct
 trace compute the same algebraic object.  The canonical
-verification confirms code correctness, not an approximation:
+verification confirms code correctness, not an approximation.
+The values below were computed under the excised convention-C weight
+$z = \sqrt q/(q+1)$ by a producer now in `computations/_deprecated/`; they
+are not the canonical traces (for ${}^{2}\mathrm{H}$ the convention-D value is
+$z = q^3/(q^2+1) \approx 0.61269$). The ratio column does not depend on the
+convention, because the factorization is an algebraic identity in $z$.
 
 | Nucleus | $A$ | $\binom{A}{2}$ | $\prod_i \hat{V}_i$ | Direct trace | Ratio |
 |---------|-----|:-:|------|------|:-----:|
