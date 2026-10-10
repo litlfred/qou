@@ -35,11 +35,12 @@ equals $3$ — it does not assume it (the non-degeneracy requirement of the brid
 
 ### Scope
 
-This is a **theorem for $4_1$** — Garoufalidis--Gu--Mariño proved peacock
-Conjecture 3 for the figure-eight, so the bridge instance is discharged there;
-the *general* statement (all hyperbolic knots) is the open conjecture
-[`conj:stokes-dt-bps-bridge`](#conj:stokes-dt-bps-bridge). The result is
-**conditional** on that adopted bridge and is **not** carried downstream:
+The result is **conditional** on the adopted bridge
+[`conj:stokes-dt-bps-bridge`](#conj:stokes-dt-bps-bridge) **for $4_1$ as well as
+in general**. Garoufalidis--Gu--Mariño state Conjecture 3(d) as a conjecture and do
+not prove it for any knot. What they prove is their Conjecture 5 for $4_1$ and
+$5_2$ (their Theorem 6), and they verify Conjecture 4 by computation. So no
+instance of the bridge is discharged. The result is **not** carried downstream:
 no mass prediction and no rung of the $Q_\beta$ ladder depends on it. The *internal*
 derivation of the integer $3$ from the QOU categorical drivers (Hecke $H_3$ /
 Bring / Wedderburn), rather than importing it from Garoufalidis--Gu--Mariño,
@@ -47,6 +48,7 @@ remains open.
 
 The bridge here is the **closed** / state-integral BPS sector. The **open**-HOMFLY
 Gukov--Stošić bridge gives the $4_1$ count $\det(4_1) = 5$ (five HOMFLY-homology
-generators / five quiver nodes) and does *not* reproduce $\{3, 4\}$ — see the
+generators / five quiver nodes) and does *not* reproduce the $4_1$ Stokes integer
+$3$ — see the
 non-degeneracy discussion in
 [`conj:stokes-dt-bps-bridge`](#conj:stokes-dt-bps-bridge).
