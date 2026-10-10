@@ -1,0 +1,151 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "traczyk1991-periodic-knots",
+ "source": {
+  "file": "traczyk1991-periodic-knots.pdf",
+  "sha256": "2e9236877cec46044e45476754b2a1a854f5f41d52190ad97b620bc4d09f80d9",
+  "bytes": 1110440,
+  "pages": 12,
+  "text_source": "ocr",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T19:16:47Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Periodic knots and the skein polynomial",
+  "authors_raw": "Paweł Traczyk",
+  "title_lines": [
+   "Invent. Math. 106, 73-84 (1991)",
+   "Inventiones",
+   "mathematicae",
+   "C Springer-Verlag 1991"
+  ],
+  "abstract": null,
+  "docinfo": {},
+  "title_raw": "Invent. Math. 106, 73-84 (1991) Inventiones mathematicae C Springer-Verlag 1991",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "text": "Invent. Math. 106, 73-84 (1991) Inventiones mathematicae C Springer-Verlag 1991",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_note": "title/authors set by hand from the article's first page. Invent. Math. 106 (1991), pp. 73-84; cut from PDF pp. 80-91 of the 673-page GDZ volume scan (first and last page checked visually by OCR of the journal header/page number; the next article starts on the following PDF page). PDF page n here = journal page 72 + n.",
+  "rights_note": "Cut from the Göttingen State and University Library (SUB/GDZ) digitisation of Inventiones Mathematicae vol. 106 (1991), WerkId PPN356556735_0106. The GDZ Terms and Conditions on page 1 of that volume file state that access is provided 'strictly for noncommercial educational, research and private purposes', that 'each copy of any part of this document must contain these Terms and Conditions', and that 'Reproductions of material on the web site may not be made for or donated to other repositories, nor may be further reproduced without written permission from the Goettingen State- and University Library.' The volume file itself is NOT held in this repository; this per-article cut does not carry the GDZ cover page. Owner decision whether to keep this copy.",
+  "journal_ref": "Invent. Math. 106 (1991) 73-84",
+  "volume_pdf_pages": "80-91",
+  "journal_page_offset": 72
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Reduction to torus knots",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "P_0 polynomial for torus knots",
+   "page": 4,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "An application involving satellites",
+   "page": 10,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 12,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 291,
+   "n_words": 39
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3704,
+   "n_words": 653
+  },
+  {
+   "id": "sec-001-2-reduction-to-torus-knots",
+   "number": "2",
+   "title": "Reduction to torus knots",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 5302,
+   "n_words": 973
+  },
+  {
+   "id": "sec-002-3-p-0-polynomial-for-torus-knots",
+   "number": "3",
+   "title": "P_0 polynomial for torus knots",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 10,
+   "n_chars": 11498,
+   "n_words": 2200
+  },
+  {
+   "id": "sec-003-4-an-application-involving-satellites",
+   "number": "4",
+   "title": "An application involving satellites",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 2426,
+   "n_words": 431
+  },
+  {
+   "id": "sec-004-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1067,
+   "n_words": 167
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": true,
+  "toc_entries": 5,
+  "toc_inferred_entries": 5,
+  "sections": 6,
+  "chars_total": 24288
+ },
+ "structure_note": "Sectioning: split by hand at the OCR'd numbered section headings (journal pages from the printed contents / running heads)."
+}

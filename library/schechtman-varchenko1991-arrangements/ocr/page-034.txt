@@ -1,0 +1,35 @@
+172 V.V. Schechtman and A.N. Varchenko
+bii
+in [K, $ 1.2]; the isomorphism maps generators é;eg(A) to e;; Ji to fi, and
+is identity on h. This isomorphism maps the form K to the form (.J-) defined
+in [K, Ch. 2].
+We have Ker K=Ker Scg. The quotient g(B)=g(B)/Ker S is the Kac-
+Moody Lie algebra associated with A. Suppose that A is a generalized Cartan
+matrix, that is, aijeZ, aij≤O for i+j. Then the Gabber-Kac theorem [K, Theo-
+(ade;)nij(ej), nij= -aij+ 1, ij.
+6.4 Verma modules. Let Aeh*. Denote by M(4) ("a Verma module") the g-
+<h, A>v, heh. M(A) is isomorphic to Un as the n-module. We'll use the
+notations of $5 for M(M)a. If a=(ki,..., kr) then M(4)a=^xeM(M)lhx=
+h, A- Z k; αi).x for all heh.
+i=1
+The contragradient module M(A)* is by definition the dual space to M(M)
+with the g-module structure defined by the rule <x, gβ>= < - t(g)x, β>, xe M(4)
+Pe M(M)*, geg.
+6.4.1 Lemma-definition. There is a unigue bilinear form S on M(A) such that
+S(v, v)= 1; S(fix, y)= S(x, eiy);
+S(e;x, y)= S(x, fiy) for all x, ye M(A); ie[r]. S is symmetric. Subspaces M(A),
+are pairwise orthogonal with respect to S.
+Proof is left to the reader.
+The form S induces the map of g-modules S: M(A)-→ M(4)*. ker S is the
+maximal proper submodule of M(A), [K, 9.2]. We put L(A):=M(4)/ker S. It
+is the irreducible g-module with the highest weight A.
+More generally,definethe symmetric form on spaces
+APn M(A1)@ ... @ M(An), A;eh*, by the rule
+(6.4.2) S(gi ^... ^g,@x1@... @xn, gi ^... ^g,@xi @... @xn)
+= det(S(gi, g). II S(xi, x)
+i=1
+So we get the map of graded spaces
+(6.4.3) S: C.(n, M(41)? ... @ M(4n) -→(C.(n, M(41)@ ... β M(4n)*.
+Below we'll introduce the differential on the r.h.s. of (6.4.3) so that S will be
+map of complexes.
+We'll call the form S the contravariant or the Shapovalov form.

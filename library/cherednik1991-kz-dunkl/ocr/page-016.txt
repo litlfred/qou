@@ -1,0 +1,35 @@
+426 I. Cherednik
+which gives (see (3.5) the well-known classical "abstract" Yang-Baxter relation
+[ra, ra+p] + [ra, rg] + [ra+β, rp]  O. (3.6)
+For B2 we obtain the relation
+R.Ra+βRα+2βRβ = RpRa+2βRα+βRα 
+which results in
+[ra, rg + raα+p]  [ra+2β, ra+β - rp] (3.7)
+because of the orthogonality conditions [ra, ra+ 2p] -- O = [ra+β, rg], which follow
+from the corresponding conditions for R. For G2 one has (see [Bo])
+RR3α+βR2α+βR2β+ 3αRα+βRβ = RpRa+βR2β+ 3αR2α+βR3α+β Ra
+and the relations
+[rp, rα + ra+β] + [r2a+β, r3a+β - r3α+2β] = [ra, r3α+β] + [r3α+2β, rα+β] (3.8)
+together with (3.6) for rp, r3a+β, r3a+ 2β and
+[rg, r2α+β] = [ra+β, r3α+β] = [rα, r3α+2β] = 0 .
+Relations (3.6-8) modulo the orthogonality y conditions (α, β) = O=)
+[ra, rp] = O) are equivalent to Definition 3.1. Owing to (3.3) we have only one
+unknown element r. in the case of A2 and two of them (ra and rg) for B2, G2. 
+Let us consider A - EndcC(Y)@c A or A = EndcC(y) c A instead of A,
+where C(Y) and C(y) are from Sect. 1. We have the homomorphism W × W -→ A
+taking 1 × w to Vo(w)e 1@A and w × 1 to the corresponding automorphism of C(Y)
+or C(y). By definition
+To(w) = wVo(w), we W, (3.9)
+where w, vo(w) are identified respectively with w × 1 and 1 × vo(w). One has:
+wvo(w') -- vo(w')w for any w, w'e W.
+Let (pa, αeE) be a classical A-valued (i.e. “constant") r-matrix with the
+following "quasi-unitary" condition
+Pα + Vo(sa)pαVo(ss) = 1 + Vo(sα) or = 0 (3.10)
+respectively in the case of Y or y. We fix k', k", S', S" e C and denote by K. either k' or
+k" for short or long roots, K; =- Ka (the same notations hold for §).
+Theorem 3.4 The set
+rα = Ka(pα + (Yα- 1)-1 vo(ss)(1 - sα)), αeZ, (3.11)
+ro = Ke(pα + y 1 vo(s)(1 - Sas) for y (3.12)
+is a classical A-valued r-matrix with respect to Vo.
+The proof is based on the following lemma directly resulting from formulas (2.1),
+(2.3).
