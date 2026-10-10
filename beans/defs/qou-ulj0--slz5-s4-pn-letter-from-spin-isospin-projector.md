@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-10T15:10:00Z
-updated_at: 2026-10-10T18:40:00Z
+updated_at: 2026-10-10T18:30:00Z
 parent: qou-slz5
 ---
 
@@ -22,3 +22,15 @@ tr(f(c1) g(c2)) - tr(g(c1) f(c2)) = (a1 b2 - a2 b1)(tr c2 - tr c1).
 A Markov trace has tr sigma_i = z for every i, so the deuteron (S=1,T=0) and singlet (S=0,T=1) are EXACTLY degenerate when spin and isospin each ride on one generator, adjacent or far. Scope (b), invariant tr c1 = tr c2; converse over a domain. Exact H_4 check: (s1,s2) and (s1,s3) give 0; (s1, s2 s3 s2) gives h z^2 (a1 b2 - a2 b1).
 
 Surviving door: carriers with UNEQUAL traces (e.g. a crossing over a third strand, tr(s2 s3 s2) = z + h z^2). Open: a derived (not chosen) reason spin and isospin ride on carriers of different length, or the 3S1-3D1 tensor/space index of qou-kj4v. Stays open.
+
+## 2026-10-10 — option 1 (derive a carrier asymmetry from the 3-quark geometry): scope (a) negative
+
+In six-quark Schur–Weyl language a two-nucleon spin S is the two-row diagram (3+S, 3−S), and the same holds for isospin T. So the deuteron is spin (4,2) ⊗ isospin (3,3), and the singlet is spin (3,3) ⊗ isospin (4,2). Within one nucleon both spin and isospin are the mixed (2,1) block on the SAME three quark strands. The geometry therefore gives spin and isospin identical data: both are SU(2) doublets on identical strands. If each factor is weighted by a Markov trace, the deuteron/singlet weight ratio is r(z_spin)/r(z_iso), where
+
+r(z) = w(4,2)/w(3,3) = (q²−q+1)²(q²+q+1)²(q⁵z+q³z+qz+1) / [q²(qz+1)(q⁴−q³+q²−q+1)(q⁴+q³+q²+q+1)]
+
+(sympy, from the Ocneanu closed form). r is increasing in z: 1.4404 at 0, 1.8522 at h/2, 2.1864 at h, 3.0437 at z_D. A split therefore needs z_spin ≠ z_iso. Nothing in the 3-strand geometry supplies that difference, and choosing it would be a fit.
+
+Physics reading: this is Wigner SU(4) spin–isospin symmetry. The S-wave pair lies in the SU(4) antisymmetric 6, which contains (S,T) = (1,0) and (0,1). The letters respect SU(4), so they cannot split the deuteron from the singlet. In nature that splitting is SU(4)-breaking, and the tensor force (spin coupled to orbital angular momentum, not to isospin) supplies it. Corpus: folio/.../nuclear-interactions/audit/wigner-su4-alpha-cluster-probe.md already uses SU(4) as the shell organiser.
+
+Next door (judgement): the space/tensor index of qou-kj4v, i.e. the ³S₁–³D₁ mixing. It distinguishes spin from isospin by construction. This bean stays open.
