@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2101.10016v16/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Unitary braided symmetry and involutive Tannaka-Krein duality",
+  "pageStart": 96,
+  "pageEnd": 100,
+  "contains": [
+    "library/arxiv-2101.10016v16/blocks/prose-sec-012",
+    "library/arxiv-2101.10016v16/blocks/prop-sec-012-01",
+    "library/arxiv-2101.10016v16/blocks/prop-sec-012-02",
+    "library/arxiv-2101.10016v16/blocks/rem-sec-012-03",
+    "library/arxiv-2101.10016v16/blocks/cor-sec-012-04",
+    "library/arxiv-2101.10016v16/blocks/thm-sec-012-05",
+    "library/arxiv-2101.10016v16/blocks/rem-sec-012-06",
+    "library/arxiv-2101.10016v16/blocks/ex-sec-012-07",
+    "library/arxiv-2101.10016v16/blocks/rem-sec-012-08",
+    "library/arxiv-2101.10016v16/blocks/thm-sec-012-09"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2101.10016v16/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2101.10016v16/manifest.jsonld",
+  "provenance": "ingested"
+}

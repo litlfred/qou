@@ -1,0 +1,47 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ariasabad2015-revcolmat/manifest.jsonld",
+  "@type": [
+    "folio-assistant-core:SourceDocument"
+  ],
+  "title": "ariasabad2015-revcolmat",
+  "contains": [
+    "library/ariasabad2015-revcolmat/sections/sec-front-matter",
+    "library/ariasabad2015-revcolmat/sections/sec-000",
+    "library/ariasabad2015-revcolmat/sections/sec-001",
+    "library/ariasabad2015-revcolmat/sections/sec-002",
+    "library/ariasabad2015-revcolmat/sections/sec-003",
+    "library/ariasabad2015-revcolmat/sections/sec-004",
+    "library/ariasabad2015-revcolmat/sections/sec-005",
+    "library/ariasabad2015-revcolmat/sections/sec-006",
+    "library/ariasabad2015-revcolmat/sections/sec-007",
+    "library/ariasabad2015-revcolmat/sections/sec-008",
+    "library/ariasabad2015-revcolmat/sections/sec-009",
+    "library/ariasabad2015-revcolmat/sections/sec-010",
+    "library/ariasabad2015-revcolmat/sections/sec-011",
+    "library/ariasabad2015-revcolmat/sections/sec-012",
+    "library/ariasabad2015-revcolmat/sections/sec-013",
+    "library/ariasabad2015-revcolmat/sections/sec-014",
+    "library/ariasabad2015-revcolmat/sections/sec-015",
+    "library/ariasabad2015-revcolmat/sections/sec-016",
+    "library/ariasabad2015-revcolmat/sections/sec-017"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "ariasabad2015-revcolmat",
+    "title_source": "slug",
+    "source_file": "ariasabad2015-revcolmat.pdf",
+    "source_sha256": "822d696773a274e09ea983c9c2aca64c1e8801d672c9a24599b3b472b2f7fa7c",
+    "pages": 38,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

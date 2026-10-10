@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/ariasabad2015-revcolmat/blocks/thm-sec-002-01",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "Artin [3]",
+  "pageStart": 2,
+  "pageEnd": 4,
+  "text": "thm-sec-002-01.md",
+  "derivedFrom": "library/ariasabad2015-revcolmat/sections/sec-002",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ariasabad2015-revcolmat/manifest.jsonld",
+  "provenance": "ingested"
+}
