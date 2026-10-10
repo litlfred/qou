@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T02:49:11Z
-updated_at: 2026-10-04T15:12:17Z
-parent: qou-10v9
+updated_at: 2026-10-10T06:49:08Z
+parent: qou-moj0
 ---
 
 ## Measured, `qbeta_delta_net_four_values_probe.py`, 6/6
@@ -704,3 +704,8 @@ into this block", which is the one thing that limited the blast radius.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+
+## 2026-10-10 — consolidated (owner-approved, session_01ST9RpvTF7JHNdUNafrjf9J)
+Re-homed under thread qou-moj0. Previous parent: qou-10v9.

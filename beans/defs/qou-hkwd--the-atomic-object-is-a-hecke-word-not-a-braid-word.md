@@ -7,8 +7,8 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T12:25:33Z
-updated_at: 2026-10-04T15:10:40Z
-parent: qou-mub3
+updated_at: 2026-10-10T06:49:09Z
+parent: qou-moj0
 ---
 
 Owner instruction 2026-09-06: "do a separate rename tranche. coordinate with all
@@ -84,3 +84,8 @@ readable; volumes, crossing numbers and genus are not.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+
+## 2026-10-10 — consolidated (owner-approved, session_01ST9RpvTF7JHNdUNafrjf9J)
+Re-homed under thread qou-moj0. Previous parent: qou-mub3.

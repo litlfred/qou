@@ -1,13 +1,13 @@
 ---
 # qou-2cof
 title: markov-trace proof block was convention C at the muon pin while its statement was D at proton — 15% disagreement
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T04:46:54Z
-updated_at: 2026-10-04T15:21:29Z
+updated_at: 2026-10-10T06:49:37Z
 parent: qou-cdx1
 ---
 
@@ -77,3 +77,7 @@ remaining C surface be treated as **unmeasured**, and this is one more
 data point for that, not a measurement of it. A targeted sweep would be:
 for each migrated statement block, check whether its proof sibling's
 numbers still evaluate under C.
+
+
+## 2026-10-10 closed (session_01ST9RpvTF7JHNdUNafrjf9J)
+Fix landed. Residual sweep of other proof siblings for C survivors moved into thread qou-moj0.

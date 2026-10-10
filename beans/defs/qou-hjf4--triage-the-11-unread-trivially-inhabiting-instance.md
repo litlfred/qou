@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T14:36:01Z
-updated_at: 2026-10-04T15:14:15Z
+updated_at: 2026-10-10T06:49:38Z
 parent: qou-6qbv
 ---
 
@@ -235,3 +235,7 @@ structurally invisible to it).
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-14 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J)
+Mass-endomorphism slice of this bean is now tracked in thread qou-9bxg; this bean keeps its own scope and parent.

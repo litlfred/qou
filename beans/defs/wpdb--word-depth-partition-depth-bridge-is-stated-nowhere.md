@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T02:30:00Z
-updated_at: 2026-10-04T15:14:10Z
-parent: qou-n4nr
+updated_at: 2026-10-10T06:49:12Z
+parent: qou-5knn
 ---
 
 Surfaced in #5183 as an open question, investigated and confirmed. Full
@@ -505,3 +505,8 @@ deliberate act and re-opening someone else's closed thread is not mine to do.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-26 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+
+## 2026-10-10 — consolidated (owner-approved, session_01ST9RpvTF7JHNdUNafrjf9J)
+Re-homed under thread qou-5knn. Previous parent: qou-n4nr.

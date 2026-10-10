@@ -1,6 +1,6 @@
 ---
 # qou-0w3s
-title: 'PROVE(lean): cat_descended_is_base_mass.lean — 2 cited sorries [cited manuscript]'
+title: 'Frobenius descent: prove tr(τ̂α)=tr₀(α₀) + base norm (cat_descended_is_base_mass has 0 sorries; gap is the CatDescendedInputs ''Open input'' class)'
 status: todo
 type: task
 priority: normal
@@ -11,8 +11,8 @@ tags:
     - repo-infra
     - reorg-2026-10-04
 created_at: 2026-08-01T23:31:08Z
-updated_at: 2026-10-04T15:22:23Z
-parent: qou-aabg
+updated_at: 2026-10-10T06:49:33Z
+parent: qou-thkm
 ---
 
 **File:** `QOU/TopologicalMass/cat_descended_is_base_mass.lean` (QOU)  ·  2 cited sorry(s)
@@ -31,3 +31,12 @@ parent: qou-aabg
   - [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.md
 - **Tractability:** mnorm(baseTrace) = baseMass; repo mass-norm identity.
 - **Next step:** Blocked on in-repo scaffolding (not Mathlib). Complete/route the named repo infra, then discharge; do NOT weaken the statement.
+
+
+
+## 2026-10-10 — consolidated (owner-approved, session_01ST9RpvTF7JHNdUNafrjf9J)
+Re-homed under thread qou-thkm. Previous parent: qou-aabg.
+
+
+## 2026-10-10 re-scope (session_01ST9RpvTF7JHNdUNafrjf9J)
+Verified at HEAD: no sorries remain; bodies are ctx.trace_compat / ctx.base_norm projections of CatDescendedInputs. Old title ('2 cited sorries') was stale. Kept OPEN (rule 13a: the descent theorem itself is unproved). Blocked by qou-e524.

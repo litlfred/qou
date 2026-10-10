@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T07:49:59Z
-updated_at: 2026-10-04T15:14:22Z
+updated_at: 2026-10-10T06:49:40Z
 parent: qou-v2om
 ---
 
@@ -497,3 +497,6 @@ Probe: `computations/audits/step7_bridge_disposition_probe.py`, 23/23. PR #7375.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-14 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J) — defect #4 linked from thread qou-5knn.

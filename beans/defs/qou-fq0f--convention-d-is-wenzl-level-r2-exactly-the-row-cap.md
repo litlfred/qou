@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T10:24:30Z
-updated_at: 2026-10-04T15:12:12Z
-parent: qou-rtxm
+updated_at: 2026-10-10T06:49:11Z
+parent: qou-slz5
 ---
 
 ## The measurement
@@ -244,3 +244,8 @@ Full ruling: `docs/coordination/2026-09-05-owner-gated-bean-triage.md` §D7.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+
+## 2026-10-10 — consolidated (owner-approved, session_01ST9RpvTF7JHNdUNafrjf9J)
+Re-homed under thread qou-slz5. Previous parent: qou-rtxm.

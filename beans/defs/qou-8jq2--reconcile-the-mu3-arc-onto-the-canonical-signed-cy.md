@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T09:09:03Z
-updated_at: 2026-10-04T15:23:16Z
-parent: qou-rtxm
+updated_at: 2026-10-10T06:49:12Z
+parent: qou-slz5
 ---
 
 
@@ -77,3 +77,8 @@ A=3 words can be re-expressed Brunnian-ly, which would collapse the question ent
    signed object — the violator sets will change.
 3. Either way, the μ₃ producers state which trace object they use, in the docstring
    and the witness, so the next reader does not have to infer it from a call site.
+
+
+
+## 2026-10-10 — consolidated (owner-approved, session_01ST9RpvTF7JHNdUNafrjf9J)
+Re-homed under thread qou-slz5. Previous parent: qou-rtxm.

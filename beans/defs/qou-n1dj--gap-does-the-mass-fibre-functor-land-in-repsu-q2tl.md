@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T09:50:22Z
-updated_at: 2026-10-04T15:19:57Z
-parent: qou-wp3h
+updated_at: 2026-10-10T06:49:05Z
+parent: qou-thkm
 ---
 
 > **Status reverted to `todo` by the parent session (2026-08-08).** The research
@@ -543,3 +543,8 @@ All four touched siblings now compile clean under `-DautoImplicit=false`
 `volume-from-rigidity`); one of them was red before. Library: `check-base-ring`
 PASS, `check-wall-side` PASS, `run-validate` unchanged at 51 issues (no issue
 added or removed).
+
+
+
+## 2026-10-10 — consolidated (owner-approved, session_01ST9RpvTF7JHNdUNafrjf9J)
+Re-homed under thread qou-thkm. Previous parent: qou-wp3h.

@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-19T21:29:48Z
-updated_at: 2026-10-04T15:15:51Z
-parent: qou-10v9
+updated_at: 2026-10-10T06:49:08Z
+parent: qou-moj0
 ---
 
 Found while regenerating the qou-mass vendor mirror (`qou-wpp2`): the mirrored
@@ -286,3 +286,8 @@ colour-blind deuteron** (0.575090958682446712), and neither of its two witnesses
 records a `pn_convention`. That producer computes via `Σ y_λ·χ^λ`, not through
 either path fixed here. It belongs to `qou-cds4` / ruling R3, and picking its
 frame is that tranche's call.
+
+
+
+## 2026-10-10 — consolidated (owner-approved, session_01ST9RpvTF7JHNdUNafrjf9J)
+Re-homed under thread qou-moj0. Previous parent: qou-10v9.

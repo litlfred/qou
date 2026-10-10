@@ -1,7 +1,7 @@
 ---
 # tmvac
 title: 'GAP: the topological-mass cluster defines its content trivially (0, 1, identity)'
-status: todo
+status: completed
 type: task
 priority: medium
 tags:
@@ -9,7 +9,7 @@ tags:
     - lean
     - vacuity
 created_at: 2026-08-08T12:00:00Z
-updated_at: 2026-10-04T15:26:07Z
+updated_at: 2026-10-10T06:49:36Z
 parent: qou-wp3h
 ---
 
@@ -65,3 +65,7 @@ The **base-ring** question for these files was answered separately and is closed
 the cluster's `ℝ` is load-bearing by meaning (a `nrm : ℝ → ℝ` is a norm; the rest
 are masses and a holonomy), and §7c acknowledgements were added to the referring
 blocks. That verdict is independent of this one.
+
+
+## 2026-10-10 closed (session_01ST9RpvTF7JHNdUNafrjf9J)
+Verified at HEAD: all three files use opaque constants + §3b input classes (CatTransientInputs, TMTransientLocalisationContext, TmDescendedInputs), citing qou-t4cv. Only the optional detector idea 'proof-trivial-definition-cone' remained; it is noted in thread qou-9bxg.

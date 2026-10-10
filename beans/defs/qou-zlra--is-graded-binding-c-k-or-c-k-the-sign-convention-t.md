@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T12:02:10Z
-updated_at: 2026-10-04T15:13:08Z
+updated_at: 2026-10-10T06:49:36Z
 parent: qou-v2om
 ---
 
@@ -292,3 +292,7 @@ it is underived and its stated justification false; it does NOT show it is wrong
 
 Audit: `docs/audits/2026-09-12-uic-functional-resolution.md`.
 Probe: `computations/probes/uic_functional_resolution_probe.py` (16/16).
+
+
+## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J)
+Core question judged resolved by the consolidation triage, but NOT closed: unchecked residual items / owner decision / rule-13a hold remain in the body.

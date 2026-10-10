@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-18T20:45:53Z
-updated_at: 2026-10-04T15:20:46Z
-parent: qou-2002
+updated_at: 2026-10-10T06:49:11Z
+parent: qou-slz5
 ---
 
 
@@ -467,3 +467,8 @@ half of the hook-content formula), and it is a much better-posed target than
 "what derives 3". Not attempted here.
 
 Scope-(a). Does not refute F_Bor; does not touch the Lean-proved |tr_M|.
+
+
+
+## 2026-10-10 — consolidated (owner-approved, session_01ST9RpvTF7JHNdUNafrjf9J)
+Re-homed under thread qou-slz5. Previous parent: qou-2002.

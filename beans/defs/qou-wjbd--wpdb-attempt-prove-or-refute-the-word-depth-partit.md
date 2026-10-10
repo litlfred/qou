@@ -1,13 +1,13 @@
 ---
 # qou-wjbd
 title: 'wpdb attempt: prove or refute the word-depth -> partition-depth bridge'
-status: todo
+status: scrapped
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T03:01:15Z
-updated_at: 2026-10-04T15:14:27Z
+updated_at: 2026-10-10T06:49:37Z
 parent: qou-n4nr
 ---
 
@@ -170,3 +170,7 @@ deliberate act and re-opening someone else's closed thread is not mine to do.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-26 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 scrapped as duplicate (session_01ST9RpvTF7JHNdUNafrjf9J)
+Body is a verbatim copy of wpdb's 2026-08-26 entry. The open question continues in wpdb (thread qou-5knn).

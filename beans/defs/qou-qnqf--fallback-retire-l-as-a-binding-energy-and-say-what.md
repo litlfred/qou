@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T06:48:04Z
-updated_at: 2026-10-04T15:19:06Z
+updated_at: 2026-10-10T06:49:35Z
 parent: qou-v2om
 ---
 
@@ -238,3 +238,7 @@ chasing. I flagged it as "more interesting but more speculative"; it was neither
 The statement in `rem:bond-log-ratio-is-a-free-energy` is unaffected — it says
 "near-null vector of the unweighted block sum ... survives in `z+d` only because
 `w₊ ≠ w₋`", which is correct as written.
+
+
+## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J)
+Core question judged resolved by the consolidation triage, but NOT closed: unchecked residual items / owner decision / rule-13a hold remain in the body.

@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T19:27:04Z
-updated_at: 2026-10-04T15:12:14Z
-parent: qou-cdx1
+updated_at: 2026-10-10T06:49:12Z
+parent: qou-slz5
 ---
 
 Found while dispositioning `qou-bm4i` block 5/12 (`prop:gram-matrix-h3-symbolic`).
@@ -486,3 +486,8 @@ the precision discipline forbids. It bounds the precision of everything above.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-24 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+
+## 2026-10-10 — consolidated (owner-approved, session_01ST9RpvTF7JHNdUNafrjf9J)
+Re-homed under thread qou-slz5. Previous parent: qou-cdx1.

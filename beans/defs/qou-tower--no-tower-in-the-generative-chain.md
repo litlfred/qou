@@ -7,8 +7,8 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T00:00:00Z
-updated_at: 2026-10-04T15:11:11Z
-parent: qou-v2om
+updated_at: 2026-10-10T06:49:10Z
+parent: qou-6lx4
 ---
 
 Asked to walk the generative production chain step by step, look past the
@@ -735,3 +735,8 @@ is not evidence about the path that does.**
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+
+## 2026-10-10 — consolidated (owner-approved, session_01ST9RpvTF7JHNdUNafrjf9J)
+Re-homed under thread qou-6lx4. Previous parent: qou-v2om.

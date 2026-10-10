@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T08:33:27Z
-updated_at: 2026-10-04T15:19:38Z
+updated_at: 2026-10-10T06:49:39Z
 parent: qou-5vkl
 ---
 
@@ -274,3 +274,7 @@ Practical consequence for anyone extending this: **run the elaborating oracle
 before widening regexes.** The regex route has now been widened twice (ASCII→
 Unicode, then `∀`-prefix) for a combined 9 findings, of which the oracle had
 already listed several a year earlier.
+
+
+## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J)
+Mass-endomorphism slice of this bean is now tracked in thread qou-9bxg; this bean keeps its own scope and parent.

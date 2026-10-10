@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T15:15:21Z
-updated_at: 2026-10-04T15:19:36Z
+updated_at: 2026-10-10T06:49:38Z
 parent: qou-5p7n
 ---
 
@@ -820,3 +820,7 @@ The instance itself is fixed in PR #6133 (the `.md` re-synced to the `.lean`). W
 done, and belongs to this bean: re-running the search under both generalisations — any field
 whose conjunction admits a witness, not just a constant; and across `.md` lean blocks as well
 as `.lean` files.
+
+
+## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J)
+Mass-endomorphism slice of this bean is now tracked in thread qou-9bxg; this bean keeps its own scope and parent.

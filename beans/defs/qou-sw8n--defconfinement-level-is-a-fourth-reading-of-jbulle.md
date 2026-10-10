@@ -7,8 +7,8 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T17:53:42Z
-updated_at: 2026-10-04T15:14:48Z
-parent: qou-v2om
+updated_at: 2026-10-10T06:49:13Z
+parent: qou-5knn
 ---
 
 ## The finding
@@ -87,3 +87,8 @@ not close on the recording of its own openness.
 
 Measured by `computations/audits/step7_bridge_disposition_probe.py` §6, 23/23.
 PR #7375.
+
+
+
+## 2026-10-10 — consolidated (owner-approved, session_01ST9RpvTF7JHNdUNafrjf9J)
+Re-homed under thread qou-5knn. Previous parent: qou-v2om.

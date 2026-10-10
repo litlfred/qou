@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T14:12:30Z
-updated_at: 2026-10-04T15:19:41Z
+updated_at: 2026-10-10T06:49:39Z
 parent: qou-5p7n
 ---
 
@@ -332,3 +332,7 @@ The right follow-up is therefore **not** another detector. It is extending the
 existing `proof-no-self-assuming-projection` sweep to content-block siblings —
 one change, covering a whole surface — and separately diagnosing the
 `MarkovTraceRecursiveReducerContext` miss, which that change would not fix.
+
+
+## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J)
+Mass-endomorphism slice of this bean is now tracked in thread qou-9bxg; this bean keeps its own scope and parent.

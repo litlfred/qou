@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T13:05:29Z
-updated_at: 2026-10-04T15:13:23Z
+updated_at: 2026-10-10T06:49:35Z
 parent: qou-10v9
 ---
 
@@ -534,3 +534,7 @@ deliberately not bundled into the verified Lean commit.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J)
+Core question judged resolved by the consolidation triage, but NOT closed: unchecked residual items / owner decision / rule-13a hold remain in the body.

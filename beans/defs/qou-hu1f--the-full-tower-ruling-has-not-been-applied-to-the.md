@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T20:54:56Z
-updated_at: 2026-10-04T15:14:11Z
-parent: qou-v2om
+updated_at: 2026-10-10T06:49:35Z
+parent: qou-6lx4
 ---
 
 Audit: [`2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md`](../docs/audits/2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md)
@@ -1118,3 +1118,12 @@ one built from intra-nucleon letter positions should be assumed broken until mea
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+
+## 2026-10-10 — consolidated (owner-approved, session_01ST9RpvTF7JHNdUNafrjf9J)
+Re-homed under thread qou-6lx4. Previous parent: qou-v2om.
+
+
+## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J)
+Core question judged resolved by the consolidation triage, but NOT closed: unchecked residual items / owner decision / rule-13a hold remain in the body.

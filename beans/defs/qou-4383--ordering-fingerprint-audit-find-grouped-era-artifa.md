@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T04:29:13Z
-updated_at: 2026-10-04T15:13:25Z
+updated_at: 2026-10-10T06:49:39Z
 parent: qou-v2om
 ---
 
@@ -892,3 +892,6 @@ and `rho_k_h3a_gg_trajectory.py` — and move to `qou-t29k`.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J) — linked from thread qou-moj0 (nucleon word/ordering).
