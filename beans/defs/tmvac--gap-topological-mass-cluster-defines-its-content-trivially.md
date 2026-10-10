@@ -9,7 +9,7 @@ tags:
     - lean
     - vacuity
 created_at: 2026-08-08T12:00:00Z
-updated_at: 2026-10-10T07:00:31Z
+updated_at: 2026-10-10T07:01:23Z
 parent: qou-d8c7
 ---
 
@@ -70,3 +70,11 @@ blocks. That verdict is independent of this one.
 ## 2026-10-10 — reparented to the mass-endomorphism epic
 
 This bean is carrier M2 of epic `qou-d8c7` (issue litlfred/qou#7547). Parent moved from `qou-wp3h` to `qou-d8c7`; nothing in the body above was changed by the move.
+
+
+## 2026-10-10 — residues added by the epic survey (carrier M2 of `qou-d8c7`)
+
+Absorbs `qou-m5fy` (scrapped today with a pointer here), and links `qou-0w3s`, `qou-wuxx`, `qou-ki4u`, and the `qou-lf1m` / `qou-hjf4` items. Two residues no bean owned, checked on `main` 2026-10-10:
+
+- `instance trivialVortex` at `topological-mass-conjecture.lean:180` is a live global instance, so any `[...]`-conditional statement over that class is discharged trivially wherever it is in scope.
+- `tm_transient_localisation.lean` carries its inputs as class fields that a zero instance satisfies, so the localisation statement says nothing as written.

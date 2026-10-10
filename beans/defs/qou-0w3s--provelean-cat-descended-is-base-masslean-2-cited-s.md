@@ -1,6 +1,6 @@
 ---
 # qou-0w3s
-title: 'PROVE(lean): cat_descended_is_base_mass.lean — 2 cited sorries [cited manuscript]'
+title: 'Descent inputs of CatDescendedInputs (cat_descended_is_base_mass.lean): no sorries remain, two open inputs'
 status: todo
 type: task
 priority: normal
@@ -11,7 +11,7 @@ tags:
     - repo-infra
     - reorg-2026-10-04
 created_at: 2026-08-01T23:31:08Z
-updated_at: 2026-10-04T15:22:23Z
+updated_at: 2026-10-10T07:01:01Z
 parent: qou-aabg
 ---
 
@@ -31,3 +31,12 @@ parent: qou-aabg
   - [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.md
 - **Tractability:** mnorm(baseTrace) = baseMass; repo mass-norm identity.
 - **Next step:** Blocked on in-repo scaffolding (not Mathlib). Complete/route the named repo infra, then discharge; do NOT weaken the statement.
+
+
+## 2026-10-10 — status update (title changed; survey for epic `qou-d8c7`, issue #7547)
+
+Former title: 'PROVE(lean): cat_descended_is_base_mass.lean — 2 cited sorries [cited manuscript]'.
+
+The body above describes a file that no longer exists in that form. Checked on `main` 2026-10-10: `QOU/TopologicalMass/cat_descended_is_base_mass.lean` has **no `sorry`**. The two identities are now fields of `class CatDescendedInputs : Prop` (documented as "Open input 1" and "Open input 2"), and the two theorems project them (`ctx.trace_compat` and its sibling). So the open item is the two class inputs, not two sorries. `qou-50p7` recorded the structural wall: as stated the inputs relate independent opaque constants, so nothing in the repo forces them.
+
+Tracked under carrier M2 (`tmvac`) of epic `qou-d8c7`. Stays open: the inputs are conjectural (rule 13a).
