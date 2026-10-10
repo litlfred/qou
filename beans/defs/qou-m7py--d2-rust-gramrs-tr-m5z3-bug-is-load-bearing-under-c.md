@@ -394,3 +394,22 @@ mass-regeneration posture (`tnjb`), and it is the only thing keeping this bean
 open. Consumers found by grep are the v9/v10/v11 binaries and `_deprecated/`
 scripts only, so no paper-facing number reads these fields.
 
+
+## 2026-10-10 — after #7606 merged: the 12 BLOCK files are convention C
+
+The 22 re-anchorable certificates landed on `main` (574778dcd2). Of the 29
+left (12 BLOCK, 1 KEEP, 16 SKIP), the 12 BLOCK carry a `tr_markov_f64` the
+script called "no exact source". Measured: `v9.rs` computes it as
+`Σ_ℓ jets[ℓ]·z^ℓ / 2^pn_count` with `z = 1/(t+t⁻¹)`, `t = √q`, i.e.
+`z_C = √q/(q+1)`. The exact `jets` reproduce the committed value at
+`q = 1.10998` to ~12 digits on 4H (0.34245912352), 5He, 5Li, 8Be, 8Li; the
+ill-conditioned files differ by float64 cancellation only (40Ar's jets are
+65 entries, 1 non-empty, so there `tr_markov_cleared` is the source).
+
+So these 12 values are **convention-C**, not merely un-anchored; re-anchoring
+gives C at the proton pin. A D value needs a re-derivation, not a z-swap.
+Consumers: `fsh-guts/deprecated/computations/{certificate-to-mass,
+atom_mass_integrated,isotope-mass-table}.py` only. `v9.rs` is a Rust
+convention-C site that the `.py`-only detectors cannot see. Disposition put
+to the owner on a decision card (record / strip / re-derive / leave);
+data unchanged. Bean stays open: the 12 + 16 are not resolved.
