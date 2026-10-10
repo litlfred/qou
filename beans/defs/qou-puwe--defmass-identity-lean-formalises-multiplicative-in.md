@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T02:47:59Z
-updated_at: 2026-10-04T15:12:17Z
-parent: qou-wp3h
+updated_at: 2026-10-10T07:00:33Z
+parent: qou-d8c7
 ---
 
 
@@ -173,3 +173,8 @@ carrying "multiplicative integration agrees with the categorical trace" as a
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-22 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — reparented to the mass-endomorphism epic
+
+This bean is carrier M1 of epic `qou-d8c7` (issue litlfred/qou#7547). Parent moved from `qou-wp3h` to `qou-d8c7`; nothing in the body above was changed by the move.

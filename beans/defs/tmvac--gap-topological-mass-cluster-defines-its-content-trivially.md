@@ -9,8 +9,8 @@ tags:
     - lean
     - vacuity
 created_at: 2026-08-08T12:00:00Z
-updated_at: 2026-10-04T15:26:07Z
-parent: qou-wp3h
+updated_at: 2026-10-10T07:00:31Z
+parent: qou-d8c7
 ---
 
 Found while draining the `wall-side-correct` WEAK queue, where it is **not** the
@@ -65,3 +65,8 @@ The **base-ring** question for these files was answered separately and is closed
 the cluster's `ℝ` is load-bearing by meaning (a `nrm : ℝ → ℝ` is a norm; the rest
 are masses and a holonomy), and §7c acknowledgements were added to the referring
 blocks. That verdict is independent of this one.
+
+
+## 2026-10-10 — reparented to the mass-endomorphism epic
+
+This bean is carrier M2 of epic `qou-d8c7` (issue litlfred/qou#7547). Parent moved from `qou-wp3h` to `qou-d8c7`; nothing in the body above was changed by the move.
