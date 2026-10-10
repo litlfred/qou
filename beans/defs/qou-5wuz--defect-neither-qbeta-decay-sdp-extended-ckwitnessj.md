@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T03:27:52Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-10-10T10:40:00Z
 parent: qou-avtq
 ---
 
@@ -20,3 +20,13 @@ Evidence: Half fixed. `computations/qbeta/qbeta-decay-sdp-extended-ck.witness.js
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+## 2026-10-10 — follow-up review (re-check of the `qou-avtq` sweep flags)
+
+**Cause R1 — a convention-D input read with convention-C formulas.** `computations/q-beta-operator-valued-N3.witness.json` (2026-08-21) carries the D-frame phase (α = −0.0404857773) and Q_N2 = 0.7828047136. `qbeta_decay_sdp_full_ck.py`, `qbeta_decay_sdp_extended_ck.py` and `probes/qbeta_ck_qholonomic_recurrence_test.py` extract c_k = (R−1)/u^k from R(q0) = Q_AME/(Q_N2/N2) using C-frame rungs. Reproduced: C gives Q_N2 = 0.782334410 and c_2 = −1.0150; D gives Q_N2 = 0.782804714 and c_2 = −9.2962338, matching the witness. The c_3 = −974 and c_4…c_7 = −1.1e5…−1.8e11 follow from that. Per `qou-8ofm`/`qou-frch`, one scalar R fixes at most one rung, so no extracted c_k at k ≥ 3 is evidence in either convention.
+
+**Consequence here.** The c_k divergence this bean worried an anchor mismatch might explain is explained by R1 instead. Also: the title says the sibling records `muon`; it records `proton`. The wiring witness still has no `q0Anchor` (`q0-anchor-missing-baseline.json:1218`); its producer reads the proton, D-frame N3 witness.
+
+**Open step (needs owner OK):** pin or retire `qbeta_closed_form_wiring_n4_to_n10.py`; then this bean can close.
+
+Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-up: `qou-review/avtq-reopened-beans-2026-10-10.md` (project files). Status unchanged.

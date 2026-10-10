@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T21:29:14Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-10-10T10:40:00Z
 parent: qou-avtq
 ---
 
@@ -85,3 +85,13 @@ Evidence: `3277607d39` is on main. `qbeta_ck_qholonomic_recurrence_test.py:337` 
 
 Status: `todo` → `completed`.
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+## 2026-10-10 — follow-up review (re-check of the `qou-avtq` sweep flags)
+
+**Cause R1 — a convention-D input read with convention-C formulas.** `computations/q-beta-operator-valued-N3.witness.json` (2026-08-21) carries the D-frame phase (α = −0.0404857773) and Q_N2 = 0.7828047136. `qbeta_decay_sdp_full_ck.py`, `qbeta_decay_sdp_extended_ck.py` and `probes/qbeta_ck_qholonomic_recurrence_test.py` extract c_k = (R−1)/u^k from R(q0) = Q_AME/(Q_N2/N2) using C-frame rungs. Reproduced: C gives Q_N2 = 0.782334410 and c_2 = −1.0150; D gives Q_N2 = 0.782804714 and c_2 = −9.2962338, matching the witness. The c_3 = −974 and c_4…c_7 = −1.1e5…−1.8e11 follow from that. Per `qou-8ofm`/`qou-frch`, one scalar R fixes at most one rung, so no extracted c_k at k ≥ 3 is evidence in either convention.
+
+**Consequence here.** The probe's input ladder is the R1 artifact, so its "NEGATIVE (scope-(a))" kill is **inconclusive**, not a negative. Re-run reproduces 3 FAILs, `main()` returns 0 unconditionally (`:627`), and the verdict paragraph is hardcoded (`:466-480`, says "+7.4" where the probe prints 1507.4).
+
+**Open code step (needs owner OK):** exit non-zero when `allPassed` is false and compute the verdict text.
+
+Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-up: `qou-review/avtq-reopened-beans-2026-10-10.md` (project files). Status unchanged.

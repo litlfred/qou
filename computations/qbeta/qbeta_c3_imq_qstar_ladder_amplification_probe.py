@@ -78,8 +78,12 @@ def main() -> int:
 
     qp, qm = q_at(60), q_muon_at(60)
     print("\n[0] reproduce anchors (c3_target_at deterministic):")
-    print(f"    S(proton)={mp.nstr(S(qp),8)} (tgt −0.03945936)   S(muon)={mp.nstr(S(qm),8)} (tgt +0.00968298)")
-    repro = abs(S(qp) - mp.mpf("-0.03945936")) < mp.mpf("1e-6") and abs(S(qm) - mp.mpf("0.00968298")) < mp.mpf("1e-6")
+    # Reference values at the live pins. The muon target was +0.00968298 at the
+    # CODATA-2018 muon pin; the CODATA-2022 pin (fca08de7d2) moves q_muon by
+    # 8.5e-11 and S(muon) by 3.399e-4, which is what turned this check red
+    # (2026-10-10 follow-up, bean qou-iax1). S(proton) is unchanged.
+    print(f"    S(proton)={mp.nstr(S(qp),8)} (tgt −0.03945936)   S(muon)={mp.nstr(S(qm),8)} (tgt +0.01002290)")
+    repro = abs(S(qp) - mp.mpf("-0.03945936")) < mp.mpf("1e-6") and abs(S(qm) - mp.mpf("0.01002290")) < mp.mpf("1e-6")
 
     # ---- 1. q* root-found ----
     qstar = mp.findroot(S, (qp + qm) / 2)
@@ -95,7 +99,7 @@ def main() -> int:
     print("\n[2] hypersensitivity decomposition (NOT a singularity):")
     print(f"    u(q*)={mp.nstr(u,8)}  1/u³={mp.nstr(1/u**3,6)}")
     print(f"    S'(q*)={mp.nstr(dS,8)} = {mp.nstr(prefactor,6)} × 1/u³   (smooth O(1) prefactor)")
-    print("    ⇒ dc₃/dq≈4.66e6 is the 1/u³ ladder-inversion amplification of a smooth")
+    print(f"    ⇒ dc₃/dq≈{mp.nstr(dS,3)} is the 1/u³ ladder-inversion amplification of a smooth")
     print("      numerator zero — the 'near-singular map' framing is re-scoped (numbers stand).")
 
     # ---- 3. real limit = experimental Q_β ----
