@@ -1,7 +1,7 @@
 ---
 # qou-6766
 title: 'REVIEW: n-v-leading-order-derivation — Proof+QED inside a conjecture block, ''derives from substrate'' vs sibling''s empirical closure (anti-laundering); + neutron-prediction n_pred/p* mismatch, Li6 table order, nitrogen-14 ''negative weight'' wording, lepton-discrepancies garbled closer, misplaced QED in magic-numbers computation (trap-drain obs-b4/b5)'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - 8f-lean
     - reorg-2026-10-04
 created_at: 2026-08-15T11:28:11Z
-updated_at: 2026-10-10T07:34:41Z
+updated_at: 2026-10-10T08:15:08Z
 parent: qou-8lxd
 ---
 
@@ -78,3 +78,45 @@ these blocks** (all pre-existing: 3 unlisted blocks, bibliography registry, one
 Lean-less lemma, one val-block-computation, two simulator stubs).
 Render-QA grep battery on both: `$`/`$$` balanced, braces balanced,
 `\begin`/`\end` matched. Both markdown links I added resolve on disk.
+
+
+## SPLIT and CLOSED 2026-10-10 — the four residuals now have their own beans
+
+This bean's own recommendation above was *"Consider splitting them out: a
+seven-item bundle cannot be claimed, worked or closed by one agent in one pass,
+which is the organisational defect, not just a backlog."* Enacted.
+
+**Why closing is honest.** This is a **REVIEW** bean. Its deliverable was: find
+the defects, characterise them, fix what is mechanical. All seven are found and
+characterised, three are fixed, and the four unfixed ones are now individually
+tracked and individually claimable. Nothing is lost by closing the umbrella;
+what was lost was the ability to work any of it. Rule 13a is not engaged — the
+subject is a prose review, not a conjecture.
+
+| residual | bean | front | what it is |
+|---|---|---|---|
+| neutron-prediction `n_pred`/`p*` | **`qou-opjb`** | `8f-decide` | the display defines the inverse map, and `c = 0.01497` traces to an SEMF ratio, not to any definition in the corpus |
+| Li6 table order | **`qou-dids`** | `8f-decide` | **does not reproduce**; what is there is `\|def\|` as an undefined synonym for the defined `\|dem\|`, in 2 blocks |
+| nitrogen-14 "negative weight" | **`qou-652e`** | `8f-decide` | wording only — it is the *negative-crossing* weight; the numbers check out and a minus must NOT be added |
+| lepton-discrepancies closer | **`qou-j98x`** | `8f-decide` | one dead sentence, no referent and no predicate; the empirical hedge beside it is legitimate under §3a |
+
+**Each of the four carries its own measurement, options with costs, a stated
+recommendation marked as judgement, a default-if-unanswered, and its blast
+radius** — so each can be answered without reading this bean or the others.
+
+**Two of the four turned on measurement rather than on the title**, which is the
+same lesson the `8f-lean` triage has produced three times already:
+
+- **"Li6 table order" is not a defect.** Narrative and table agree on every
+  orderable claim (Regime I→II→III, fifth = Hopf, sixth = bare `C_pn`, build
+  order terminating at `3p3n`). Surfaces searched are named in `qou-dids`. A
+  *different*, real defect was found in the same block pair instead.
+- **"nitrogen-14 negative weight" is not a sign error.** The tempting repair —
+  restore the minus, since the Hecke eigenvalues are `q` and `−q^{-1}` — would
+  **break** the block's two arithmetic checks (`(q+q^{-1})/2 = 1.00545 ≈ 1.005`,
+  `(q−q^{-1})/2 = 0.10454 ≈ 0.105`). It is `σ^{-1}` = negative *crossing* per
+  §7a, weight `q^{-1} > 0`. Recorded in `qou-652e` as a rejected hypothesis.
+
+All three enacted fixes stand as recorded above; `needs-owner` is left on this
+bean so a reader looking for the owner-gated material still lands here and is
+forwarded to the four.
