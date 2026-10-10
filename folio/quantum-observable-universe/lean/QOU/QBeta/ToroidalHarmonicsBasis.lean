@@ -35,11 +35,23 @@ habiro trace, toroidal harmonics, weber equation, liouville-green
 
 namespace QOU.QBeta
 
-/-- The toroidal coordinate `η` (placeholder geometry: `η = log q`). -/
+/-- The toroidal coordinate `η` (placeholder geometry: `η = log q`, i.e. `q = e^η`). -/
 noncomputable def ToroidalHarmonicEta (q : ℝ) : ℝ :=
   Real.log q
 
-/-- The change of variables `x(w) = -1 + 1/(2w)` (`x = cosh η`, `w = z²`). -/
+/-- The change of variables `x(w) = -1 + 1/(2w)`. The definition itself is
+    convention-neutral: it holds for whatever `w` is later identified with.
+
+    **Reading under convention D** (canonical; `z = q³/(q²+1)`, `q = e^η`): with
+    the negative loop value `z₋ = z − (q − q⁻¹) = 1/(q(q²+1))`, the bar-invariant
+    product `w = z·z₋ = 1/[2]_q² = 1/(2(cosh 2η + 1))` gives `x = cosh 2η`.
+    The former convention-C reading `w = z² = 1/(2(cosh η + 1))`, `x = cosh η`
+    (with `z = √q/(q+1)`) is excised; under D, `w = z²` gives `x ≈ 0.332 < 1` at
+    the substrate and has no toroidal reading.
+
+    **Open:** whether `w = z·z₋` is the right variable is not established. The
+    proved Markov-parameter recursion is written in `q − 1`, a different
+    variable, and no link from it to this `w` is proved here (bean `qou-nxjw`). -/
 noncomputable def x_of_w (w : ℝ) : ℝ :=
   -1 + 1 / (2 * w)
 
@@ -51,7 +63,8 @@ noncomputable def ToroidalOperator (n : ℝ) (y : ℝ → ℝ) (x : ℝ) : ℝ :
 /-- The second-order `w`-operator obtained from `ToroidalOperator` by the
     change of variables `x = 1/(2w) − 1`, after clearing denominators.
     Named `…MarkovW…`, not `…MarkovZ…`: its identification with the proved
-    `z`-recursion generating function is asserted elsewhere, not here. -/
+    `z`-recursion generating function is not established (under convention D
+    the toroidal reading is `w = z·z₋`; see `x_of_w`). -/
 noncomputable def ToroidalMarkovWOperator (n : ℝ) (f : ℝ → ℝ) (w : ℝ) : ℝ :=
   (16 * w^3 - 4 * w^2) * deriv (deriv f) w + 16 * w^2 * deriv f w
     + (4 * n^2 - 1) * f w
