@@ -121,3 +121,43 @@ The honest state is a visibly stale derived file plus this note.
 if derived QA moved to `test/`, are the ~900 in-tree `.qa.json` sidecars now
 legacy, and should they be retired rather than left to go stale on every edit?
 That is a larger call than this bean, and an owner one.
+
+
+## 2026-10-10 — the state this bean describes has CHANGED. Re-measured, no action taken.
+
+Observed while running `qa-sweep` on twelve blocks for the owner's content
+decisions. Recording because this bean's framing — *"undeclared and
+unignored"* — is now only half right, and an agent arriving on the old wording
+would file a defect that no longer exists.
+
+**What is true now, measured on `main` + this branch:**
+
+- `test/attestations/` is **tracked and populated**: `git ls-files` counts
+  **434** files. So it is no longer *undeclared* in the sense of nobody having
+  decided; main carries it deliberately.
+- It is still **not gitignored**: `git check-ignore -v` on a block-qa path
+  returns `rc=1`. So the "unignored" half of the title stands.
+- **Twelve sweeps on nine blocks whose `.md` I had just edited left the tree
+  byte-clean.** Not one attestation changed, which is the interesting part.
+
+**Why it did not change, and it is not a bug in the sweep.** The entries are
+**agent** verdicts, not mechanical ones, and they label their own staleness
+blindness in the data: every note I inspected opens
+`[EXPIRED-NO-FIELD-HASH]`. There is no `source_hashes` key anywhere in the
+file. So the store is an archive of agent judgements that already announces it
+cannot tell whether the source moved under it — which is the same thing
+`qa-sweep` warns about on stdout for the `dak-*` criteria (*"a verdict that
+cannot go stale is worse than a missing one"*).
+
+**The mechanical verdicts I relied on did NOT come from this store.** The
+`0 critical / 0 major / 0 minor` results in this session are computed live by
+the sweep each run; the store holds only the `needs-agent` side. So nothing in
+the content decisions rests on it, and that is worth stating plainly before
+anyone re-reads those numbers.
+
+**No action taken, deliberately.** Whether a tracked 434-file agent-verdict
+archive that self-labels `EXPIRED-NO-FIELD-HASH` should be gitignored, moved to
+the cat-harness `qa-reports` branch (which `.folio-assistant-pin` says is where
+the derived QA corpus now lives, owner ruling 2026-10-04), or given a field
+hash, is an owner call about someone else's arc. This bean stays `todo` at
+`high` with its title's second half intact.
