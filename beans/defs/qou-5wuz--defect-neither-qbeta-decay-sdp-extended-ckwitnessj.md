@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T03:27:52Z
-updated_at: 2026-10-10T10:40:00Z
+updated_at: 2026-10-10T13:30:00Z
 parent: qou-avtq
 ---
 
@@ -30,3 +30,11 @@ Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap 
 **Open step (needs owner OK):** pin or retire `qbeta_closed_form_wiring_n4_to_n10.py`; then this bean can close.
 
 Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-up: `qou-review/avtq-reopened-beans-2026-10-10.md` (project files). Status unchanged.
+
+## 2026-10-10 — wiring witness pinned; the extended-ck witness straddles
+
+**Wiring witness: pinned as muon, at the retired pin.** Inverting its recorded `hbar_q_squared_at_q0` (`q = 1/(1 − √ℏ_q²)`) gives `1.109978595557334719899763`, which is the retired self-certified muon pin to 1.8e-17. It is 2.8e-12 from CODATA 2018, 7.7e-11 from CODATA 2022 and 1.2e-8 from proton. Stamped `q0Anchor: muon` plus that `q0Value`, with a `q0Note` saying how it was recovered. Its entry was drained from `q0-anchor-missing-baseline.json`. The ratchet's `--strict` is red on `main` at 189 newly-unstamped witnesses with or without this change.
+
+**Wiring producer now refuses (exit 2).** Re-run today, it reads the proton, z_D N3 witness with convention-C closed-form `c_k` and lands at **6.0e11 ppQ**. The committed witness says 7.4e6 ppQ. That is the same R1 defect as the extractors (`qou-54g5`), so it gets the same treatment the owner chose there: refuse, and keep the old body as `_main_convention_c_historical()`. The witness is not rewritten.
+
+**New: `qbeta-decay-sdp-extended-ck.witness.json` straddles layers.** It records `q_0_50dps` / `q0Anchor` = muon (CODATA 2022), but its `hbar_q_sq_50dps = 0.00981718645427507…` is the **proton** value from the current N3 witness. One quantity carries inputs from both layers, which AGENTS.md calls a defect at any size. Its producer refuses now, so nothing regenerates it. Whether to delete, re-label or keep it as history is open, so this bean stays open.
