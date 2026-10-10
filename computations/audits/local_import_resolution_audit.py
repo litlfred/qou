@@ -44,7 +44,8 @@ coverage limit.
 
 Usage:
     python3 -I computations/audits/local_import_resolution_audit.py
-    python3 -I computations/audits/local_import_resolution_audit.py --selftest
+    python3 -I computations/audits/local_import_resolution_audit.py --self-test
+    python3 -I computations/audits/local_import_resolution_audit.py --selftest  (same)
 """
 from __future__ import annotations
 
@@ -224,8 +225,34 @@ def selftest() -> int:
     return 0 if ok else 1
 
 
+def _flags() -> tuple[bool, list[str]]:
+    """Both spellings of the self-test flag, and an error on anything else.
+
+    `scripts/precision-gates.sh` tries `--self-test` FIRST and falls back to
+    `--selftest` only when the exit is non-zero AND the output carries
+    argparse's `unrecognized arguments`. A hand-rolled `argv` check emits no
+    such message, so `--self-test` was silently ignored, the REAL scan ran,
+    and its honest exit 1 (3 unresolved imports) was printed under
+    "SELF-TEST FAILED -- a detector that cannot be shown to fire is a no-op".
+    The detector fired fine; the harness could not tell a mis-spelled flag
+    from a broken calibration.
+
+    Rejecting an unknown flag is the other half of the fix, and the one that
+    generalises: a flag matching nothing must not produce a clean-looking
+    run. That is the same silent-wrong-input class as a pathspec matching
+    nothing -- see the `content/` -> `folio/` family in bean qou-wu38.
+    """
+    flags = [a for a in sys.argv[1:] if a.startswith("-")]
+    unknown = [a for a in flags if a not in ("--selftest", "--self-test")]
+    return bool(set(flags) & {"--selftest", "--self-test"}), unknown
+
+
 def main() -> int:
-    if "--selftest" in sys.argv:
+    want_selftest, unknown = _flags()
+    if unknown:
+        print(f"unrecognized arguments: {' '.join(unknown)}", file=sys.stderr)
+        return 2
+    if want_selftest:
         return selftest()
     mods, ambiguous = discover(ROOT)
     res = Resolver(mods, ambiguous).scan(sorted(set(mods.values())))
