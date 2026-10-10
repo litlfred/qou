@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-14T19:57:29Z
-updated_at: 2026-10-10T12:35:00Z
+updated_at: 2026-10-10T14:32:58Z
 parent: b9cj
 ---
 
@@ -378,3 +378,78 @@ blocks no commit. The 57 dead citations stay as they are.
 pass, the way `snappy_cusp_seeding.py` already reads. It is the only option
 that preserves the provenance a reader needs while making the surface
 drainable — and it is reversible, where restoring a carrier is not.
+
+---
+
+## 2026-10-10 — the gate is BLOCKING, as a draining ratchet at 26 (owner ruling "c1")
+
+Owner, relayed: the label gate *"blocks only when the count INCREASES, not at
+0. Also pin its cwd to the repo root: run from `computations/` it reports 399
+instead of 25."* Both halves landed — `d16a0362f1` (cwd) and `66fab2f5de`
+(ratchet + flip), PR #7586.
+
+### Zero is unreachable, and a FIX is what proved it
+
+This bean's own §"The decision this leaves with the owner" says the scope-them
+option *"makes the gate flippable to blocking"*, with 0 as the implied trigger.
+**That trigger cannot be met.** The audit cannot distinguish CITING a dead
+label from DOCUMENTING that one is dead, so a producer that explains a retired
+label in prose RAISES the count. Measured: redirecting
+`prop:per-partition-k-lambda-rule`'s two citations to the audit doc holding its
+record moved the count **25 -> 26** and the citations **57 -> 58**, because the
+explanatory note has to name both the `prop:` and the `rem:` spelling in order
+to say they are gone. The corpus surface did not grow; the documentation did.
+
+No syntactic discriminator is proposed — "mentioned in a sentence saying it is
+dead" is not a property of the AST — so a zero-threshold gate would punish
+exactly the fix it is meant to reward. Recorded as a known false-positive class
+in the audit's own header, with the instance worked through.
+
+`--max N` inverts it: the bound may only fall. Verified, all five branches —
+`--max 26` rc=0 at the bound; `--max 30` rc=0 "DRAINED by 4, lower the bound";
+`--max 25` rc=1 RATCHET FAILED; `--max` bare and `--max abc` rc=2; `--selftest`
+unaffected. Replayed through the harness loop verbatim with the args field.
+
+### The cwd swing was 15x, and both halves of the audit hid it
+
+Same tree, same commit, varying nothing but the cwd: **26 dead / 58 citations**
+from the root, **400 dead / 1052 citations** from `computations/`. (The relayed
+figure was 399; re-measured here at 400 after the k_lambda redirect, which is
+the same +1 the ratchet note above explains.) The scan itself is
+cwd-independent — both runs report the same **488 labels over 862 files**,
+because `ROOT` comes from `__file__` — so the two halves disagreed *silently*:
+`git ls-files` listed only `computations/`, and `git grep -- folio/ content/`
+matched nothing because neither path exists relative to `computations/`. Every
+git call is now pinned to `git rev-parse --show-toplevel`, and `--selftest`
+asserts `folio/` is in the tracked set with >= 1000 entries, so the pin cannot
+be lost quietly.
+
+### Four citations redirected (A1), count unchanged at 26
+
+`conj:pl-jsj-mass-integration-equivalence` in `q_pochhammer_seed.py` and
+`snappy_cusp_seeding.py` -> the `f86ea9d7ac` removal record;
+`probes/lr_hecke_character_probe.py` -> the parent
+`prop:hecke-branching-trace-decomposition`, verified live (which is why
+distinct labels go 488 -> 489 while dead stays 26). The fourth,
+`b_over_a_evaluator.py`, was not merely a dead *label* but a **markdown link to
+a `.md` file deleted in `c703e576b5`** — a reader following it got a 404.
+Replaced with that commit's own finding, quoted: the formula *"is NOT the
+canonical formula. v3 was attacking the wrong target."*
+
+### 🛑 Correction to my own plan: the import gate reads 3 here, not 0
+
+I reported that the companion import gate was ready to flip "now that it reads
+0". **That 0 is a property of a branch.** Same hour, same audit, varying only
+the checkout: `claude/qou2cz1-unresolved-imports-2026-10-10` reads **0**, this
+branch reads **3**, `origin/main` reads **3**, and `ac520bba3b` is **not** an
+ancestor of main (`git merge-base --is-ancestor`, not inferred). Flipping would
+have shipped a gate red on arrival — the failure `precision-gates.sh`'s own
+header says gets a gate muted rather than fixed. It stays advisory, with all
+three counts and the flip condition recorded in place. Same class as the
+`qou-wu38` cost-figure error: a figure measured in one place, quoted about
+another.
+
+**The bean stays `todo`.** Items 1 and 2 are untouched, item 2 still turns on
+the open `A_ω → S` identification, and the per-label disposition of the 26 is
+still the owner's call — the ratchet makes the surface *drainable*, it does not
+decide how.
