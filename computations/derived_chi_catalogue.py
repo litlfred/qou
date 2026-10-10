@@ -19,8 +19,33 @@ work-plan documented in
 
 Each (K, λ, A) cell carries: a derived χ^λ(β_K)(q) q-polynomial,
 Hoefsmit |μ|-eigenvalues, the per-partition truncation order k_λ
-(`prop:per-partition-k-lambda-rule`), the leading Markov weight
+(basis OPEN -- see the `k_λ` note below), the leading Markov weight
 y_λ(0), the SDP shadow price y_λ⋆, and a `tier` provenance flag.
+
+## The `k_λ` basis is OPEN (corrected 2026-10-10)
+
+    `prop:per-partition-k-lambda-rule` NO LONGER EXISTS, and the block it named
+    established no rule. It was `rem:per-partition-k-lambda-rule`, a remark whose
+    body was a table of SIX candidate per-partition `k_lambda` selection ansaetze,
+    ALL EMPIRICALLY REFUTED, removed in 690458d6b0 (2026-06-17) under the owner
+    principle "refuted-ansatz lemmas -> audit doc only". Its record is preserved in
+    docs/audits/2026-06-17-refuted-ansatz-lemmas.md, which states the surviving
+    question -- "does a structural `k_lambda` / `n*` selector exist?" -- is **open**,
+    and is the open part of `conj:brane-tower-z-habiro`.
+
+    So the rule used here ("1 iff lambda is the max-|mu| partition, 2 otherwise") is
+    NOT supported by the block it cited. Measured: "max-|mu|" appears NOWHERE in that
+    audit doc, so it is not even one of the six refuted candidates, and NO live
+    content block in folio/ establishes any `k_lambda` rule. Owner ruling via relay,
+    2026-10-10: the carrier stays audit-doc-only and its citations point there.
+
+    THE VALUE IS UNCHANGED BY THIS NOTE. `k_lambda` is emitted as before; what
+    changes is that its basis is now stated rather than implied by a dead citation.
+    Three witnesses carry `k_lambda` as a field -- derived-chi-catalogue,
+    derived-chi-catalogue-sweep, and delta-lambda-categorical-verification (the
+    Delta_lambda arc). Whether the selector is derived or is a per-partition
+    discrete choice under the NO-FITTING directive is an OWNER decision and is not
+    settled here. Bean qou-3kni.
 
 ## Provenance tiers
 
@@ -120,7 +145,12 @@ class KnotPartitionAtomCell:
     # Feeds k_λ.
     mu_eigenvalues: list[str]
     # `k_lambda`: per-partition truncation order. 1 iff λ is the max-|μ|
-    # partition of β_H (per `prop:per-partition-k-lambda-rule`), 2 otherwise.
+    # partition of β_H, 2 otherwise.
+    #
+    # 🛑 THE BASIS OF THAT RULE IS OPEN. This cited
+    # `prop:per-partition-k-lambda-rule` until 2026-10-10. See the module
+    # docstring's `k_λ` note and
+    # docs/audits/2026-06-17-refuted-ansatz-lemmas.md.
     k_lambda: int
     # `y_lambda_at_zero`: leading Markov-normalisation weight y_λ(0), as an
     # mpf string. Derived via T18 template (Markov axioms on the Wedderburn

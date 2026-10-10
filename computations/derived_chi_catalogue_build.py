@@ -295,7 +295,13 @@ def derive_h3_knot(
             strand_count=3,
             chi_lambda_q_laurent=laurent_pairs(chi_21, q),
             mu_eigenvalues=["?", "?"],  # Hoefsmit follow-up commit
-            k_lambda=1,  # max-|μ| partition per prop:per-partition-k-lambda-rule
+            # max-|μ| partition. BASIS OPEN: this cited
+            # `prop:per-partition-k-lambda-rule`, a block removed in
+            # 690458d6b0 whose body was six REFUTED k_λ ansätze; the
+            # selector question is open per
+            # docs/audits/2026-06-17-refuted-ansatz-lemmas.md. Value
+            # unchanged; only its stated basis is corrected.
+            k_lambda=1,
             y_lambda_at_zero=(
                 "1/4" if knot_name == "borromean"
                 else "?"  # T18 result only covers Borromean; others later

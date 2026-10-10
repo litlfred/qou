@@ -16,6 +16,27 @@ import ast, pathlib, re, subprocess, collections, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent  # computations/
 # uppercase and underscore are LOAD-BEARING here -- see the calibration note.
+# 🛑 KNOWN FALSE-POSITIVE CLASS: this audit cannot distinguish CITING a dead
+# label from DOCUMENTING that it is dead. Measured 2026-10-10 — redirecting
+# `prop:per-partition-k-lambda-rule`'s two citations to the audit doc that holds
+# its record moved this audit's own count 25 -> 26 and 57 -> 58, because the
+# explanatory note names both `prop:` and the `rem:` spelling in order to say
+# they are gone. The CORPUS SURFACE DID NOT GROW; the documentation did.
+#
+# This is the second such class in this detector (the first was the regex tail
+# truncating an uppercase-bearing label) and it is the same shape as the reason
+# the audit skips its own file: prose ABOUT a label is not a reference TO one.
+# No automatic discriminator is proposed — "mentioned in a sentence saying it is
+# dead" is not a syntactic property — so the rule for a reader is:
+#
+#   when this count RISES after a citation fix, check whether the fix's own
+#   explanatory text is what rose. A drain that documents itself reads as growth.
+#
+# Consequence for the FLIP-TO-BLOCKING condition in scripts/precision-gates.sh:
+# the count cannot reach 0 while any producer explains a retired label in prose,
+# so "0" is the wrong trigger for this gate as written. Flagged, not changed —
+# the gate's threshold is an owner decision (bean qou-3kni).
+
 LABEL = re.compile(r'\b((?:conj|prop|def|thm|lem|cor|rem|sec|ex|sim|alg):'
                    r'[A-Za-z0-9][A-Za-z0-9_-]{2,})')
 
