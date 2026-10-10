@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T06:46:25Z
-updated_at: 2026-10-10T12:25:40Z
+updated_at: 2026-10-10T12:39:39Z
 parent: qou-5vkl
 ---
 
@@ -152,3 +152,12 @@ move no number; the defect is only that they defeat a `None`/truthiness prune.
 - a_K^dual = 13.98 / 10.11 / 188.7 / 923.6 / 384.8 / 17734 against the closed form C = 1 / 1 / 1.209 / 0.956 / 0.956 / 0.915. **Scope-(a) negative for the block-diagonal projector basis only.** The proposition's LP is over the full Hecke basis, which is still open.
 - Author note added to `mass-coefficient-shadow-price.ts`.
 - probe-float64-guard: 9 hits both before and after (all pre-existing).
+
+
+## 2026-10-10 — (B) done: 90-dps deuteron matrix-M cache refreshed
+
+- `chi-deuteron-h6-at-q0-90dps-matrix-m` and its summary sibling `chi-at-q0-matrix-m-deuteron` disagreed with their own producer, `chi_at_q0_via_matrix_m_mpfr.py`. tr_M was 2.17545 recorded and 1.45470 live.
+- The two 1-dim characters are byte-identical: χ(6) = 11.0214 and χ(1⁶) = −0.0907. Every higher-dimensional χ moved by O(1). So the crossing signs agree and only the word ORDER differs, consistent with the 2026-09-05 grouped→interleaved word change (inferred from the pattern, not bisected).
+- The re-run reproduces the earlier regeneration byte-for-byte. The producer's own cross-check against `chi_q_via_gp` gives 11/11 at 1e-85.
+- NOT a contradiction with `chi-deuteron-h6-at-q0-50dps` (tr_M 0.152). That cache declares convention `colour-weighted-averaged-crossing`; the 90-dps one declares `sign-only-crossings`. They are different objects.
+- No code consumer (orphan-witness triage Tier C). The 90-dps file is in the sign-only convention, not the R3-canonical colour weighting. Whether to retire it is left open here.
