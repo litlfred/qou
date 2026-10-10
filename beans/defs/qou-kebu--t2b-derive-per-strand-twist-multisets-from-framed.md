@@ -9,7 +9,7 @@ tags:
     - 8f-tseries
     - 8f-open
 created_at: 2026-08-04T10:16:22Z
-updated_at: 2026-10-10T12:02:25Z
+updated_at: 2026-10-10T14:47:45Z
 parent: qou-8lxd
 blocked_by:
     - qou-qvpl
@@ -155,3 +155,28 @@ are *possible given a braid*, before any search.
 per-chiral-fermion framed braid words** (bean `htw2`), so the derived table
 cannot be evaluated. That is why the constraints are worth having now: they are
 the test those words will face.
+
+
+---
+
+## Carrier files re-verified on `main` `3c0351a40da` (2026-10-10)
+
+This bean already cites `ComponentFraming` / `SignCoherentTwist` nine times. The
+checkable part, measured today rather than carried:
+
+    ComponentFraming.lean    304 lines  rc=0  0 diagnostics  0 sorry/axiom/native_decide
+    SignCoherentTwist.lean   226 lines  rc=0  0 diagnostics  0 sorry/axiom/native_decide
+
+`lean -DautoImplicit=false -s 65536`, exit status captured directly (not through
+a pipe — a `| head` makes `$?` report *head's* status, which is how a first pass
+of this check produced four meaningless `exit=0`s). All seven declarations the
+predecessor bean names resolve: `lepton_framing_determined`,
+`nu_framing_is_zero`, `nu_distinct_multiset_excluded`, `e_framing_is_neg_one`,
+`d_multiset_forced`, `coherent_iff_all_same_sign`, `cancel_preserves_total`.
+
+**Note on the predecessor.** `htw2` is `scrapped` as this bean's duplicate, and
+its 294-line body is where the lepton closure and the `θ_V = q^{1/2}·id_V`
+ribbon-normal-form upgrade are actually written up. It is not superseded content
+— only a closed work item. The full open/closed split is appended to
+`qou-h0zz`; the correction to a stale "root blocker" recommendation of mine is
+on `qou-8lxd`.
