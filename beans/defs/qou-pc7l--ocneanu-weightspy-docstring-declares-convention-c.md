@@ -1,13 +1,13 @@
 ---
 # qou-pc7l
 title: ocneanu_weights.py docstring declares convention C while its code runs convention D
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T18:17:07Z
-updated_at: 2026-10-04T15:21:46Z
+updated_at: 2026-10-10T07:47:21Z
 parent: qou-cdx1
 ---
 
@@ -53,3 +53,16 @@ with three or more rows carries weight zero at convention D**. The family is
 truncates nothing. Lean-proved sorry-free as
 `QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows` (PR #5575); probe in
 `computations/schurweyl/ocneanu_weight_convention_d_support.py`.
+
+
+## 2026-10-10 re-audit verdict: **CLOSE** (bean `qou-am5t`)
+
+FIXED 2026-10-10. The bean was right and understated it: the docstring label
+(`:8`) said convention C AND so did the runtime banner (`:524`), while `z_num
+= Q0**3/(Q0**2+1)` and `z_sym = q**3/(q**2+1)` were both D. A mislabelled
+runtime banner is worse than a docstring, because it prints alongside the
+number it misnames. Both labels corrected to `z = q^3/(q^2+1)`; producer re-
+run exits 0 and prints `z = q3/(q2+1) = 0.612688`, the canonical D value. No
+binding changed — the value audit never reported one here.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

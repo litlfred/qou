@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T06:41:11Z
-updated_at: 2026-10-10T07:01:36Z
+updated_at: 2026-10-10T07:47:04Z
 parent: qou-cdx1
 ---
 
@@ -480,3 +480,14 @@ mirror, correctly left alone.
 ## 2026-10-10 — pointer
 
 Tracked under carrier M6 (qou-2cof) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+31 files carrying a convention-C `tr_M(p)` as a recorded VALUE, with 4 live
+producers hardcoding it as a reference. A hardcoded reference value is
+invisible to the value audit, which evaluates `z` bindings, not published
+constants. Live, and it is the sharpest of the 41: a recorded number cannot be
+re-spelled into visibility.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

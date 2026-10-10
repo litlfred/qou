@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-30T08:06:31Z
-updated_at: 2026-10-04T15:14:08Z
+updated_at: 2026-10-10T07:47:10Z
 parent: qou-cdx1
 ---
 
@@ -188,3 +188,13 @@ and on #6058 (their finding 1 landed on main as 064eff1240 / 8a505f2b5a).
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+The C->D excision left PUBLISHED ACCURACY FIGURES behind. Live, and confirmed
+in kind by today's paper scan: 159 convention mentions over 89 files, 136
+explicitly scoped and 23 residual. Scoped figures are the correct disposition;
+the live work is the citations that quote them as current.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

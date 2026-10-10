@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T14:10:58Z
-updated_at: 2026-10-04T15:12:11Z
+updated_at: 2026-10-10T07:47:08Z
 parent: qou-cdx1
 ---
 
@@ -131,3 +131,13 @@ artifact away from it firing. Recorded rather than tuned away.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+A consumer-side detector for deliberate convention-C control arms. Live and
+now more load-bearing, not less: today's pass added SIX ledger adjudications,
+so the population of declared control arms grew 137 -> 143 and the risk this
+bean names -- a deliberate C object cited as though it were D -- grew with it.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

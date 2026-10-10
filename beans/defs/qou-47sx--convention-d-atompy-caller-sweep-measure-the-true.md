@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T12:34:42Z
-updated_at: 2026-10-10T07:01:42Z
+updated_at: 2026-10-10T07:46:17Z
 parent: qou-cdx1
 ---
 
@@ -272,3 +272,12 @@ Was in-progress with no bean update since 2026-09-08 and no main commit naming i
 ## 2026-10-10 — pointer
 
 Tracked under carrier M7 (qou-g16t) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+
+## 2026-10-10 re-audit verdict: **REPARENT** (bean `qou-am5t`)
+
+`atom_per_generator_volumes` caller sweep is its own migration (a shape
+change), reached via the convention work but not a convention-C site. Keep
+open, re-home.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T12:16:30Z
-updated_at: 2026-10-04T15:20:26Z
+updated_at: 2026-10-10T07:47:09Z
 parent: qou-cdx1
 ---
 
@@ -78,3 +78,12 @@ with y_(1^3) free rather than 0, and determine whether the "measured-negative"
 conclusion survives. If it does, the fix is warrant-only (cite nothing for the
 cap, state g as a choice) and cheap. If it does not, the terminus is withdrawn
 and qou-cds1's arc is not closed.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+The mass-channel two-row cap transferred to the DECAY channel against its own
+source. Live, and it is a correctness question about convention D's scope (the
+D7 ruling), not about residual C.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

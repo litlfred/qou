@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T13:52:13Z
-updated_at: 2026-10-04T15:12:01Z
+updated_at: 2026-10-10T07:46:17Z
 parent: qou-cdx1
 ---
 
@@ -127,3 +127,12 @@ Per AGENTS.md:779 each of these gets its Lean scaffold BEFORE any Python.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-09 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 re-audit verdict: **REPARENT** (bean `qou-am5t`)
+
+The metric/colour-weight null-vector merge is a Gram-degeneracy science
+question downstream of convention D, not a C site to excise. Belongs with
+`qou-cds2`/`qou-v7qj`, not the excision milestone. Keep open, re-home.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

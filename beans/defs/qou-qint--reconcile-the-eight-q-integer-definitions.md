@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T13:40:00Z
-updated_at: 2026-10-04T15:15:04Z
+updated_at: 2026-10-10T07:46:15Z
 parent: qou-cdx1
 ---
 
@@ -367,3 +367,11 @@ correction is how it would have survived three more.
 The rule that would have caught it costs one command: **open the file.** A
 bean, an audit ✅, a docstring and a sibling's finding are all secondary
 sources. `lean`-direct is the primary one.
+
+
+## 2026-10-10 re-audit verdict: **REPARENT** (bean `qou-am5t`)
+
+Same axis: `qInt` naming two q-integer conventions. Not the Markov parameter.
+Keep open, re-home.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

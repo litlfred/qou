@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-14T16:21:57Z
-updated_at: 2026-10-10T07:27:31Z
+updated_at: 2026-10-10T07:47:11Z
 parent: qou-cdx1
 ---
 
@@ -333,3 +333,15 @@ headline bug is fixed, the bean is not. Retracted on `qou-cdx1` as well. It is
 an instance of exactly the hazard the re-audit's own status doc warns about: a
 path- or line-level match tests whether a *file* still carries a defect, not
 whether a *bean's claim* is closed.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+See the dedicated 2026-10-10 append: both divergences it names were resolved
+2026-08-15, ONE DAY after its last substantive update, but Remaining items 3-4
+(rebuild `pyhecke_native`, drop the `_native_ok()` guard; regenerate the 53
+certificates, [OWNER]) are unverified and `pyhecke_native` is absent here. I
+called this one satisfied off a single grepped line and retracted it within
+the hour.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

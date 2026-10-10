@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T14:15:32Z
-updated_at: 2026-10-04T15:13:36Z
+updated_at: 2026-10-10T07:46:15Z
 parent: qou-cdx1
 ---
 
@@ -407,3 +407,11 @@ STATE OF THE ARC AFTER LANDING
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-29 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 re-audit verdict: **REPARENT** (bean `qou-am5t`)
+
+qfac/dim_q threading is q-deformation plumbing, not the Markov parameter. Keep
+open, re-home.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
