@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T09:29:44.908529+00:00",
-  "commitSha": "be0795b0c101cbaab51379ce1d07aa3c2dee6815",
+  "computedAt": "2026-09-14T17:44:50.417210+00:00",
+  "commitSha": "582a92afae21fbe99c661f394b07a12259f0b27c",
   "assertions": [
     {
       "name": "prefactor_pi2_over_720_from_disjoint_count",
@@ -31,11 +31,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 36,
+  "durationMs": 43,
   "computation": "casimir-n-unknot-construction",
   "scriptFile": "casimir_n_unknot_construction.py",
-  "scriptHash": "b3f20d929af0",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "eac422020c6a",
+  "scriptCommitSha": "b3343c2e1480aea5902103aa743ec8f80b3c5635",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,7 +50,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -61,9 +61,9 @@
   "description": "Sub-problem 1 attempt for conj:casimir-epsilon-vacuum. n-stability selection uniquely picks the bare disjoint-unknot count (no y_λ); the geometric n³ degeneracy + ζ(-3) derives π²/720. Conditional on the free-field ↔ disjoint-unknot identification, ξ_k = 0 at leading order.",
   "contentBlock": "conj:casimir-epsilon-vacuum",
   "parameters": {
-    "substrate_q": 1.1099785827513808,
-    "h2_substrate": 0.04370620853252199,
-    "delta_quantum_dim": 2.002722363860533
+    "substrate_q": "1.10997858275138080759166909561076887987449912187357763605672",
+    "h2_substrate": "0.0437062085325219894020193356773883097682139607135052757850332",
+    "delta_quantum_dim": "2.00272236386053329050782023799163176253410508509069632187091"
   },
   "data": {
     "selection_principle": {
@@ -71,52 +71,52 @@
       "per_n": [
         {
           "n": 2,
-          "count_relh2": 0.0,
-          "jones_unlink_relh2": 0.031143903256988844,
-          "wenzl_unnorm_relh2": 6.115297574035459e-50,
-          "normalized_trace": 1.0
+          "count_relh2": "0.0",
+          "jones_unlink_relh2": "0.0311439032569888454691468442651593082871897559317992001047166",
+          "wenzl_unnorm_relh2": "6.11529757403545818258469896577483640933373408037977681995562e-50",
+          "normalized_trace": "1.00000000000000000000000000000000000000000000000000000000000"
         },
         {
           "n": 3,
-          "count_relh2": 0.0,
-          "jones_unlink_relh2": 0.06233019903232908,
-          "wenzl_unnorm_relh2": 0.08243262891601154,
-          "normalized_trace": 1.0
+          "count_relh2": "0.0",
+          "jones_unlink_relh2": "0.0623301990323290766749495655599252117593894329079306728230130",
+          "wenzl_unnorm_relh2": "0.0824326289160115328020735494675754464622732751678534908013132",
+          "normalized_trace": "1.00000000000000000000000000000000000000000000000000000000000"
         },
         {
           "n": 4,
-          "count_relh2": 0.0,
-          "jones_unlink_relh2": 0.09355894502995066,
-          "wenzl_unnorm_relh2": 0.16516224756400746,
-          "normalized_trace": 1.0
+          "count_relh2": "0.0",
+          "jones_unlink_relh2": "0.0935589450299506520208271792973675962561832764369954303109377",
+          "wenzl_unnorm_relh2": "0.165162247564007467097731423595887608723641010137857228376721",
+          "normalized_trace": "1.00000000000000000000000000000000000000000000000000000000000"
         },
         {
           "n": 5,
-          "count_relh2": 0.0,
-          "jones_unlink_relh2": 0.12483019903232907,
-          "wenzl_unnorm_relh2": 0.3306214848599993,
-          "normalized_trace": 1.0
+          "count_relh2": "0.0",
+          "jones_unlink_relh2": "0.124830199032329076674949565559925211759389432907896010405679",
+          "wenzl_unnorm_relh2": "0.330621484859999335689047171853568668086284284514392343016003",
+          "normalized_trace": "1.00000000000000000000000000000000000000000000000000000000000"
         },
         {
           "n": 6,
-          "count_relh2": 0.0,
-          "jones_unlink_relh2": 0.15614401890059232,
-          "wenzl_unnorm_relh2": 0.4972686810839288,
-          "normalized_trace": 1.0
+          "count_relh2": "0.0",
+          "jones_unlink_relh2": "0.156144018900592317349196561734606088835374060346100314051798",
+          "wenzl_unnorm_relh2": "0.497268681083928810254700218765109507725752136010760554821558",
+          "normalized_trace": "1.00000000000000000000000000000000000000000000000000000000000"
         },
         {
           "n": 7,
-          "count_relh2": 0.0,
-          "jones_unlink_relh2": 0.18750046257462785,
-          "wenzl_unnorm_relh2": 0.7477798349366065,
-          "normalized_trace": 1.0
+          "count_relh2": "0.0",
+          "jones_unlink_relh2": "0.187500462574627862608582252717610568257658819602994737557448",
+          "wenzl_unnorm_relh2": "0.747779834936606492261595901648562379083104430315356963827348",
+          "normalized_trace": "0.999999999999999999999999999999999999999999999999997327235290"
         },
         {
           "n": 8,
-          "count_relh2": 0.0,
-          "jones_unlink_relh2": 0.21889958807318993,
-          "wenzl_unnorm_relh2": 1.0009754648658136,
-          "normalized_trace": 1.0
+          "count_relh2": "0.0",
+          "jones_unlink_relh2": "0.218899588073189928909237898218607329635679775683991510762750",
+          "wenzl_unnorm_relh2": "1.00097546486581347414512752580216889046062680992540508237082",
+          "normalized_trace": "1.00000000000000000000000000000000000000000000000000267276471"
         }
       ],
       "verdict": {

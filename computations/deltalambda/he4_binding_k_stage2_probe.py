@@ -96,7 +96,7 @@ from canonical_braid_crossings import _avg_color_delta  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from tr_m_wenzl_bridge_mpfr import _build_seminormal_matrices_mpf  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 N = 12
@@ -309,20 +309,35 @@ def main() -> int:
                                    + b_cw * branch_chi[-1][lam])
     print(f"  seminormal-mpfr evals done in {time.time()-t0:.1f}s")
 
+    # |y_λ·χ_λ(K)| kept as mpf and serialised once, per AGENTS.md NO-FLOAT64.
+    # It was `float(abs(...))` at the record, which is the cast-at-the-record
+    # shape: both factors are mpf (`y_lambda_at` and the seminormal-mpfr χ),
+    # so the f64 was introduced HERE and nowhere upstream.
+    #
+    # It has three consumers and only one of them may be f64: the LP cost
+    # vector below, because clarabel takes doubles. That downcast is now
+    # explicit and at the solver boundary. The sort key and the display read
+    # the mpf.
+    _yx = {lam: abs(y[lam] * chi_exact[lam]) for lam in map(tuple, shapes)}
     per_lambda = sorted(
         ({"lambda": list(lam), "chi_K": mp.nstr(chi_exact[lam], 20),
           "y_lambda": mp.nstr(y[lam], 16),
-          "y_times_chi_abs": float(abs(y[lam] * chi_exact[lam]))}
+          "y_times_chi_abs": fmt(_yx[lam])}
          for lam in map(tuple, shapes)),
-        key=lambda r: -r["y_times_chi_abs"])
+        key=lambda r: -_yx[tuple(r["lambda"])])
     print("  top 5 channels by |y_λ·χ_λ(K)|:")
     for r in per_lambda[:5]:
-        print(f"    λ={str(tuple(r['lambda'])):24s} |y·χ| = {r['y_times_chi_abs']:.6g}")
+        print(f"    λ={str(tuple(r['lambda'])):24s} "
+              f"|y·χ| = {mp.nstr(_yx[tuple(r['lambda'])], 6)}")
     tr_M_K = sum(y[lam] * chi_exact[lam] for lam in map(tuple, shapes))
     print(f"  tr_M(K) = {mp.nstr(tr_M_K, 20)}")
 
     # operator-selection LP with duals (AGENTS.md LP-dual rule)
-    t_costs = -np.array([r["y_times_chi_abs"] for r in per_lambda])
+    # EXPLICIT downcast at the solver boundary: clarabel takes doubles, so the
+    # LP is f64 by construction and that is where the cast belongs — not at the
+    # record, where it also truncated the value a reader sees.
+    t_costs = -np.array([float(_yx[tuple(r["lambda"])]) for r in per_lambda],
+                        dtype=float)
     # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by whether
     # the Rust binary happens to be built, so the same script yields different
     # numbers on different boxes. Bean `qou/ftuv`.
@@ -359,7 +374,7 @@ def main() -> int:
 
     per_block = []
     min_eig_overall = float("inf")
-    xcheck_worst = 0.0
+    xcheck_worst = mp.mpf(0)   # mpf: xrel is mpf now (see the chi_e note)
     t0 = time.time()
 
     # Resume cache: Leg B per-block. Each large (dim ~5940) block eigen-
@@ -386,7 +401,11 @@ def main() -> int:
                 _legB_legacy += 1
             per_block.append(_b)
             done_lambdas.add(tuple(_b["lambda"]))
-            xcheck_worst = max(xcheck_worst, _b["chi_exact_rel_diff"])
+            # Cached blocks carry the serialised string; lift it back to mpf
+            # so a resumed run compares like with like. A run that resumed
+            # from a pre-fix cache would otherwise mix a float and a string.
+            xcheck_worst = max(xcheck_worst,
+                               mp.mpf(str(_b["chi_exact_rel_diff"])))
             min_eig_overall = min(min_eig_overall, _b["min_eig_sym"])
         if _legB_dropped:
             print(f"  Leg B: dropped {_legB_dropped} cached blocks computed "
@@ -470,8 +489,23 @@ def main() -> int:
                 MT[jo] += tmp
         M = MT.T
         chi_f = float(np.trace(M))
-        chi_e = float(chi_exact[lam])
-        xrel = abs(chi_f - chi_e) / max(abs(chi_e), 1e-300)
+        # `chi_f` is f64 BY CONSTRUCTION and stays so — it is the f64 arm of a
+        # deliberate two-arm cross-check, and lifting it would measure nothing.
+        #
+        # `chi_e` was `float(chi_exact[lam])`, and THAT was the defect: the
+        # EXACT arm was pre-rounded to f64 before the comparison, so `xrel`
+        # was an f64-minus-f64 difference over an f64 denominator. The
+        # quantity this cross-check exists to measure — how far the f64
+        # pipeline drifts from exact — was itself being measured through a
+        # second rounding. `chi_exact` is `dict[tuple, mp.mpf]`, so the exact
+        # value was available and discarded one line before it was used.
+        #
+        # The VERDICT does not move: TRACE_XCHECK_TOL is 1e-8 against a worst
+        # recorded 1.99e-15, seven orders of headroom, and the double-rounding
+        # perturbs xrel by ~1e-16 relative. This is a fix to what is RECORDED,
+        # not a correction of the conclusion — say so rather than overselling.
+        chi_e = chi_exact[lam]
+        xrel = abs(mp.mpf(chi_f) - chi_e) / max(abs(chi_e), mp.mpf("1e-300"))
         xcheck_worst = max(xcheck_worst, xrel)
         Ms = (M + M.T) / 2.0
         eigs = np.linalg.eigvalsh(Ms)
@@ -479,7 +513,7 @@ def main() -> int:
         min_eig_overall = min(min_eig_overall, mn)
         per_block.append({
             "lambda": list(lam), "dim": dim,
-            "chi_f64": chi_f, "chi_exact_rel_diff": xrel,
+            "chi_f64": chi_f, "chi_exact_rel_diff": fmt(xrel),
             "min_eig_sym": mn, "max_eig_sym": mx,
             "psd_within_tol": bool(mn >= -1e-9),
             "near_zero_flagged": bool(abs(mn) < NEAR_ZERO_FLAG),
@@ -489,7 +523,7 @@ def main() -> int:
         done_d2 += dim * dim
         el = time.time() - t0
         print(f"  λ={str(lam):26s} d={dim:5d}  min_eig={mn:+.3e}  "
-              f"χ xcheck={xrel:.1e}  [{done_d2/total_d2:5.1%} of Σd², "
+              f"χ xcheck={mp.nstr(xrel, 2)}  [{done_d2/total_d2:5.1%} of Σd², "
               f"{el:.0f}s]", flush=True)
         del M, MT, Ms, gens
     alpha_gap = max(0.0, -min_eig_overall)
@@ -498,7 +532,7 @@ def main() -> int:
 
     print(f"\n  min eig overall = {min_eig_overall:+.6e}   α_gap = {alpha_gap:.6e}")
     print(f"  PSD (all 77 blocks, tol −1e-9): {psd_all}")
-    print(f"  worst leg-A/leg-B trace cross-check: {xcheck_worst:.2e}")
+    print(f"  worst leg-A/leg-B trace cross-check: {mp.nstr(xcheck_worst, 3)}")
 
     verdict = (
         f"A=4 STAGE 2 executed on the certified convention: K(⁴He) = T·cp⁻¹ "
@@ -508,7 +542,8 @@ def main() -> int:
         f"{lp_dict.get('duality_gap')}. Leg B (f64 diagnostic spectra, the "
         f"A≤3 solver's precision class): min symmetrized eigenvalue "
         f"{min_eig_overall:+.3e}, α_gap {alpha_gap:.3e}, PSD-within-tol "
-        f"{psd_all}; worst exact-vs-f64 trace cross-check {xcheck_worst:.1e}. "
+        f"{psd_all}; worst exact-vs-f64 trace cross-check "
+        f"{mp.nstr(xcheck_worst, 2)}. "
         "PSD-feasibility is the A≤3 'binding stability' certificate at A=4; "
         "the LP duals mark the receptive Wedderburn channels. Scope-(a); "
         "no AME input; no fit; nothing wired."
@@ -567,7 +602,7 @@ def main() -> int:
             "min_eig_overall": min_eig_overall,
             "alpha_gap": alpha_gap,
             "psd_within_tol_all": psd_all,
-            "trace_xcheck_worst_rel": xcheck_worst,
+            "trace_xcheck_worst_rel": fmt(xcheck_worst),
             "near_zero_flagged": [b["lambda"] for b in per_block
                                   if b["near_zero_flagged"]],
             "per_block": per_block,

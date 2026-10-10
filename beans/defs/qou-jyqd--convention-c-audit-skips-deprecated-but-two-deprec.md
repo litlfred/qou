@@ -138,3 +138,97 @@ the audit's view without removing its influence on published numbers.
 and is not in the actionable count.
 
 Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+## 2026-10-10 re-measure on `main` `ac111c1814`: the detector works, 3 hits, all CITATIONS
+
+The deliverable is on `main` and runs clean. Fresh numbers against the
+2026-08-29 ones in the table above:
+
+| quantity | 2026-08-29 | 2026-10-10 |
+|---|---:|---:|
+| deprecated `.py` producers | 567 | **568** |
+| ...carrying a convention-C shape | 139 | **139** |
+| ...**AND named by something in `content/`** | **2** | **3** |
+
+The third hit is new and is not a regression — it is a *correction banner* that
+did not exist in August:
+
+| producer | named by | DEPENDENCY or CITATION? |
+|---|---|---|
+| `integer-lp-gluon.py` | `categorical-neutron-properties.{md,ts,qa.json}`, `categorical-proton-properties.ts`, `gluon-stabiliser-ledger.ts` | **CITATION** |
+| `protium-witness.py` | `mass-theory/binding-scale-catalan.qa.json` | **CITATION** |
+| `transfer_matrix_symbolic.py` | `mass-theory/markov-trace-factorization.md` | **CITATION** |
+
+Each adjudicated by reading the site, per this bean's own rule that the script
+reports and does not adjudicate:
+
+1. **`integer-lp-gluon.py`** — `qou-jqjx` HAS landed on `main`. The depth claim
+   is struck through (`~~…~~`) and the paragraph beneath it names this producer
+   as the *source of the retired numbers*: *"Those two figures come from
+   `computations/_deprecated/integer-lp-gluon.py`, which computes the Markov
+   trace on convention C with $\mathrm{tr}_M(e^-) = z^3$."* So the live
+   DEPENDENCY this bean measured on `main` in August is gone, and what is left
+   is exactly the provenance shape the bean says a corrected block should have.
+2. **`protium-witness.py`** — a QA reviewer note citing it, alongside
+   `borromean-markov-trace-closed-form.md`, as the source of the repo's own
+   canonical braid word `(σ₀σ₁⁻¹)³` while **confirming a braid-word error** in
+   the block. Provenance inside an audit record.
+3. **`transfer_matrix_symbolic.py`** — a *"⚠ Readout corrected 2026-09-05"*
+   banner naming it as the source of the wrong readout
+   `z·(M)₁₁ + (M)₂₁`, with the three-bond table showing the corrected
+   `z·(M)₂₁ + (M)₂₂` reproduces `z + d` exactly at every bond
+   (`pp 0.612688037146`, `nn 0.403627738351`, `pn 0.508229789377`).
+
+**So: zero live dependencies into a convention-C deprecated producer.** The
+category this bean opened to catch is empty on `main`, and the detector that
+keeps it empty exists.
+
+## 🛑 But the detector is UNWIRED, and its number is being quoted for a DIFFERENT question
+
+Two findings, and the second is the consequential one.
+
+**It runs nowhere.** `grep -rn 'convention-c-deprecated-citation-audit'` over
+`*.sh` / `*.yml` / `*.py` finds exactly two live hits: its own usage string, and
+a prose citation in a planning doc. It is not in `scripts/precision-gates.sh`,
+not in any workflow. Per AGENTS.md's own recurring lesson — *"a gate nobody
+invokes is documentation"* — this is documentation. Not proposed for wiring
+here: it is a loose text cross-reference by design and would be advisory at
+best, and §🟥 ASK THE OWNER governs adding it to the blocking preflight.
+
+**Its 3 is being read as an answer to T13's question, and the two questions are
+different.** [`docs/audits/2026-10-04-workplan-and-migration/TOOLS_report.md:137`](../../docs/audits/2026-10-04-workplan-and-migration/TOOLS_report.md)
+gives T13 ("move `computations/_deprecated` → `fsh-guts/`") the evidence
+
+> `convention-c-deprecated-citation-audit.py` shows 0 content citations into
+> `_deprecated` before the move
+
+That is false in two ways. The audit shows **3**, not 0. And it could not answer
+T13 even at 0, because it scans only the **139 of 568** deprecated producers
+*carrying a convention-C shape* — T13 breaks on **any** reference. Measured
+directly:
+
+    git grep -l 'computations/_deprecated' -- 'folio/**' | grep -v '\.lake/'
+    → 27 files   (11 .json, 7 .ts, 5 .lean, 4 .md)
+    15 distinct deprecated producers / witnesses named
+
+One of the 27 is **structural rather than prose**:
+`mass-theory/wedderburn-weight-canonical.ts` carries
+
+    computation: { engine: "python",
+                   script: "computations/_deprecated/bw_wenzl_shadow_equivalence.py",
+                   witness: "docs/audits/2026-05-01-p1-3a-bw-equivalence.witness.json",
+                   status: "verified" }
+
+— a content block declaring `status: "verified"` against a producer the corpus
+deprecated. The other 6 `.ts` hits are `authorNotes` bodies, prose strings or
+comments.
+
+Recorded on `qou-6u3n` (TOOLS T13), which is where the decision lives. This bean
+keeps it because the mis-citation is *of this bean's own script*, and that is
+the reusable lesson: a narrow detector's count, quoted as evidence for a wider
+claim, is the same defect class as everything in the detector-blindness
+taxonomy, one level up.
+
+**Status: staying `todo`** — not on the dependency question, which is closed,
+but because the unwired-detector and T13-precondition items above are live and
+unowned.

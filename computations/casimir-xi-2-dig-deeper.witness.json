@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T07:03:02.571347+00:00",
-  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
+  "computedAt": "2026-09-14T17:42:10.273390+00:00",
+  "commitSha": "497de5fac89c32344c43e048e1907bca3f132af1",
   "assertions": [
     {
       "name": "normalized_markov_trace_identity_is_one",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 49,
+  "durationMs": 35,
   "computation": "casimir-xi-2-dig-deeper",
   "scriptFile": "casimir_xi_2_dig_deeper.py",
-  "scriptHash": "fdd141bcfce6",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "2cc900907c75",
+  "scriptCommitSha": "b3343c2e1480aea5902103aa743ec8f80b3c5635",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -44,8 +44,8 @@
   "description": "Resolves the ξ_2 flip-flop on conj:casimir-epsilon-vacuum. Shows the ξ_k=0 calibration is circular and that ξ_2 is gated on the N_⊙ construction: normalized Markov trace of identity ≡ 1 ∀q (tautological ξ_k=0), unnormalized weight sum diverges with n.",
   "contentBlock": "conj:casimir-epsilon-vacuum",
   "parameters": {
-    "substrate_q": 1.1099785827513808,
-    "h2_substrate": 0.04370620853252199
+    "substrate_q": "1.10997858275138080759166909561076887987449912187357763605672",
+    "h2_substrate": "0.0437062085325219894020193356773883097682139607135052757850332"
   },
   "data": {
     "finding_A_calibration_is_circular": {

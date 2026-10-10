@@ -85,9 +85,40 @@ theorem eq_one_or_neg_one_of_offDiag_eq_zero (hq0 : q ≠ 0) (hq2 : QOU.SchurWey
   · rw [offDiag_of_not_neg q (by omega)] at hzero
     exact absurd hzero one_ne_zero
 
+/-- **`offDiag` vanishes exactly at `d = -1`** — the biconditional, and it is *stronger* than
+the disjunction `eq_one_or_neg_one_of_offDiag_eq_zero` concludes.
+
+The `d = 1` disjunct is never realised: `offDiag` takes the plain branch for every `d ≥ 0`
+(`offDiag_of_not_neg`), so `offDiag q 1 = 1 ≠ 0` in any field. Only the negative branch can
+vanish, and there the two-to-one argument leaves `d = -1` alone.
+
+This is the honest `_iff_` for this entry, and it is **not** the one the declaration's old name
+`offDiag_eq_zero_iff` promised. That name suggested `offDiag q d = 0 ↔ d = 1 ∨ d = -1`, whose
+reverse direction is **false** at `d = 1` — so no amount of work could have produced it. Bean
+`qou-y4ca` asked whether that converse was true; it is not, and this is what the corpus licenses
+instead. -/
+theorem offDiag_eq_zero_iff_eq_neg_one (hq0 : q ≠ 0)
+    (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) {d : ℤ} :
+    offDiag q d = 0 ↔ d = -1 := by
+  constructor
+  · intro hzero
+    rcases eq_one_or_neg_one_of_offDiag_eq_zero q hq0 hq2 hzero with h | h
+    · subst h
+      rw [offDiag_one] at hzero
+      exact absurd hzero one_ne_zero
+    · exact h
+  · intro h
+    subst h
+    exact offDiag_neg_one q hq0 hq2
+
 /-- **Admissible swaps carry a nonzero off-diagonal entry.**  Combines
-`TableauCells.two_le_natAbs_axialDist` with `eq_one_or_neg_one_of_offDiag_eq_zero`: an admissible swap is at
-distance `|d| ≥ 2`, and `offDiag` only vanishes at `±1`. -/
+`TableauCells.two_le_natAbs_axialDist` with `offDiag_eq_zero_iff_eq_neg_one`: an admissible swap
+is at distance `|d| ≥ 2`, and `offDiag` vanishes only at `d = -1`.
+
+Retargeted from `eq_one_or_neg_one_of_offDiag_eq_zero` (bean `qou-y4ca`). The disjunction
+obliged this proof to dispatch a `d = 1` case that cannot occur — `offDiag q 1 = 1 ≠ 0` — so
+the `rcases … <;> omega` discharged one real case and one vacuous one. The biconditional
+supplies `d = -1` directly. -/
 theorem offDiag_axialDist_ne_zero {μ : YoungDiagram} (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q)
     (T : QOU.Mathlib.StandardYoungTableau μ) {k : ℕ}
     (hk : k ∈ Set.Icc 1 μ.cells.card) (hk' : k + 1 ∈ Set.Icc 1 μ.cells.card)
@@ -95,7 +126,9 @@ theorem offDiag_axialDist_ne_zero {μ : YoungDiagram} (hq0 : q ≠ 0) (hq2 : QOU
     offDiag q (TableauCells.axialDist T k) ≠ 0 := by
   intro hzero
   have hbound := TableauCells.two_le_natAbs_axialDist T hk hk' hadm
-  rcases eq_one_or_neg_one_of_offDiag_eq_zero q hq0 hq2 hzero with h | h <;> omega
+  have h : TableauCells.axialDist T k = -1 :=
+    (offDiag_eq_zero_iff_eq_neg_one q hq0 hq2).mp hzero
+  omega
 
 end SeminormalRep
 

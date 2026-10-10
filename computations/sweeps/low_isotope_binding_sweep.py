@@ -58,9 +58,15 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as Q0, HBAR_Q, HBAR_Q_SQ
-# CAL-1: m_e sourced from codata_constants registry (P31-triage Phase A);
-# coerced to float for json-serialisable arithmetic in this script.
+import mpmath as mp  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
+# The _MP / _MPF twins, not the float64 names. Both spellings exist side by
+# side in these modules (the constant-module mpf migration is half done --
+# bean qou-ke35), and importing the float name silently caps this whole sweep
+# at f64 while the mpf value sits one identifier away.
+from q_parameter import Q_MP as Q0, HBAR_Q_MP as HBAR_Q, HBAR_Q_SQ_MP as HBAR_Q_SQ
+# CAL-1: m_e sourced from codata_constants registry (P31-triage Phase A).
 from codata_constants import AME_B_HE4_MEV_VALIDATION, M_E_MEV as _M_E_MEV_MP
 
 # Knot volumes — single source of truth (knot_volumes module,
@@ -69,15 +75,37 @@ from codata_constants import AME_B_HE4_MEV_VALIDATION, M_E_MEV as _M_E_MEV_MP
 # 4.7495 = 4 digits, VOL_6_2 = 4.40083 = 5 digits, etc.); now all
 # derive from the same 50-dps source. See knot-vol _precision
 # propagation in PR #781 coordination ledger.
+#
+# The comment above says these "derive from the same 50-dps source", and they
+# do -- but the BARE names are the f64 renderings of it, so importing them
+# threw the 50 dps away at the door. The _MPF twins carry it.
 from knot_volumes import (  # noqa: E402
-    CATALAN_G,
-    VOL_BORROMEAN,
-    VOL_7_SQ_1 as VOL_7_2_1,    # legacy alias preserved
-    VOL_6_2,
-    VOL_8_11,
+    CATALAN_G_MPF as CATALAN_G,
+    VOL_BORROMEAN_MPF as VOL_BORROMEAN,
+    VOL_7_SQ_1_MPF as VOL_7_2_1,    # legacy alias preserved
+    VOL_6_2_MPF as VOL_6_2,
+    VOL_8_11_MPF as VOL_8_11,
 )
 
-M_E_MEV = float(_M_E_MEV_MP)
+# Kept as mpf. It was `float(_M_E_MEV_MP)`, and the comment above said why:
+# "coerced to float for json-serialisable arithmetic in this script". That
+# workaround is what this fix removes -- the answer to "mpf is not JSON
+# serializable" is _ser() at the write, not a float64 compute. The workaround
+# also did not survive contact with `70ae502091a`, which made
+# AME_B_HE4_MEV_VALIDATION an mpf without giving it the same coercion, so the
+# producer has died at json.dumps ever since.
+M_E_MEV = _M_E_MEV_MP
+
+
+def _ser(o):
+    """Recursively replace mpf with its full-precision decimal string."""
+    if isinstance(o, mp.mpf):
+        return fmt(o)
+    if isinstance(o, dict):
+        return {k: _ser(v) for k, v in o.items()}
+    if isinstance(o, list):
+        return [_ser(v) for v in o]
+    return o
 
 # Strategy-(B) α-cluster parameters
 B_4HE_MEV = AME_B_HE4_MEV_VALIDATION                      # AME2020
@@ -294,7 +322,7 @@ def main() -> int:
     witness.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
         witness, script_path=__file__, engine=None, q0_anchor=None)
-    out_path.write_text(json.dumps(witness, indent=2))
+    out_path.write_text(json.dumps(_ser(witness), indent=2))
     print(f"\n  Wrote {out_path}")
     return 0
 
