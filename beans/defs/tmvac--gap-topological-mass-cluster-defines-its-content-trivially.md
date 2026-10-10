@@ -9,7 +9,7 @@ tags:
     - lean
     - vacuity
 created_at: 2026-08-08T12:00:00Z
-updated_at: 2026-10-10T07:01:23Z
+updated_at: 2026-10-10T13:15:19Z
 parent: qou-d8c7
 ---
 
@@ -78,3 +78,15 @@ Absorbs `qou-m5fy` (scrapped today with a pointer here), and links `qou-0w3s`, `
 
 - `instance trivialVortex` at `topological-mass-conjecture.lean:180` is a live global instance, so any `[...]`-conditional statement over that class is discharged trivially wherever it is in scope.
 - `tm_transient_localisation.lean` carries its inputs as class fields that a zero instance satisfies, so the localisation statement says nothing as written.
+
+## 2026-10-10 — fixed on branch claude/tm-vacuity-fix-2026-10-10 (018e5d30b, 76d129b37)
+
+Note: on main the 0/1/identity definitions this bean names had already been replaced by `opaque` constants (bean qou-t4cv); the remaining defects were a Prop-class field projected back (cat-transient), a data class the all-zero instance satisfies (transient-localisation, the residue above), and disc triviality assumed as a field (holonomy). All three modules are now fully parametric, no opaque constants:
+
+- **cat_transient_localises_blowup** — generic `CommRing R`, arbitrary R-module. Hypothesis: transient ∈ ⨆_{i<N} ker 𝔡ᵢ (the .md's support clause, NOT derived). Derived: split into local pieces, trace distributes (map_sum), and pieces are unique under `iSupIndep` (`localPiece_unique`), so tr_trans(ϱ,pᵢ) is well defined.
+- **tm_descended_is_holonomy** — MI valued in an arbitrary Monoid (ordered List.prod). Hypotheses: multiplicativity, naturality under blow-down, discs collapse to a point, MI over a point = 1, non-abelian Stokes. Derived: disc triviality, then the identity.
+- **tm_transient_localisation** — only the inequality ‖MI∫_Σ‖ ≤ Σ‖MI∫_{Eᵢ}‖ is derivable (triangle inequality of a group seminorm). `norm_additivity_not_forced` exhibits data in Multiplicative ℝ meeting both hypotheses with 0 ≠ 2, scope (a). The block's equality is now the conjecture class `TransientLocalisationNormEquality` with no instance; .ts carries a caveat.
+
+Verification: lean-direct (-DautoImplicit=false -s 65536) exit 0 on all three, no sorry; #print axioms ⊆ {propext, Classical.choice, Quot.sound}. No Lean consumers of the old declarations exist. validate: 9 issues (baseline).
+
+Open: the transient-localisation block's equality (proof step 'norm of product = sum of norms' is false for a general group norm). Owner call: restate the lemma as an inequality, or demote it to a conjecture. Not closeable while that stands; the vacuity itself is fixed. Residue trivialVortex (topological-mass-conjecture.lean:180) not touched — out of this bean's three modules.
