@@ -21,5 +21,6 @@ export default remark({
   uses: [
     "prop:integer-stability",
     "def:color-tube-fibers",
+    "prop:neutron-prediction-comparison",
   ],
 });
