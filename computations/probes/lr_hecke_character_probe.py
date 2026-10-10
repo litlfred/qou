@@ -23,8 +23,26 @@ The STRUCTURAL (per-partition) identity is proved in the proposition's
 proof sketch and is q-independent in its LR coefficients; the numerical
 probe here validates the Markov-trace corollary that follows from it.
 
+🛑 `prop:free-config-chi-lr-equivalence` IS REMOVED -- as a TRUE DUPLICATE, at
+the author's own request. Owner ruling "a1", relayed 2026-10-10: the carrier
+stays removed and citations point at the record. Deleted in 44abba3fc8,
+2026-05-30, "consolidate(props): demote lr-tensor-character-bridge -> corollary,
+delete free-config-chi-lr-equivalence". That commit records three near-identical
+LR-character propositions and names this one "strictly the n_i = 3
+specialisation of lr-tensor (true duplicate)", consolidated under the new parent
+`prop:hecke-branching-trace-decomposition` (general I in H_{n+m}(q),
+operator-valued) -- and states the reason: "The author asked for 'simply stated
+theorems with nice simple corollaries' rather than a forest of special-case
+propositions."
+
+So the identity this probe tests SURVIVES; only its special-case carrier is
+gone. Cite the parent `prop:hecke-branching-trace-decomposition`, or
+`prop:lr-tensor-character-bridge` (the trivial-interface specialisation, demoted
+to a corollary in the same commit). Do NOT restore the duplicate.
+
 References:
-  prop:free-config-chi-lr-equivalence — the identity being tested
+  prop:hecke-branching-trace-decomposition — the general parent (live)
+  prop:free-config-chi-lr-equivalence — REMOVED duplicate; see the note above
   conj:block-multiplicativity-v-free  — downstream conjecture
   [macdonald1995] I.7 — classical (q=1) LR identity
 """
