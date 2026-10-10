@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-10T08:52:03Z
-updated_at: 2026-10-10T14:48:20Z
+updated_at: 2026-10-10T18:16:37Z
 parent: qou-d8c7
 ---
 
@@ -32,3 +32,7 @@ Statement .md: Phi_1 has no S-eigenvalue (only Phi_1^+ is S-even); term 1 shown 
 Lean: chirality_is_unique_S_odd removed (a duplicate of the Phi_1^+ tag rfl-classification under a name asserting uniqueness). Added, sorry-free over generic CommRing, all hypotheses used: mass_S_difference, chirality_sole_S_odd_channel_iff, s_invariant_ansatz_captures_S_odd_iff. #print axioms: propext, Classical.choice, Quot.sound. frobenius_s_classification docstring now says it is about Phi_1^+. isospin-mass-split-em-localisation.md row that cited chirality_is_unique_S_odd now cites mass_S_difference. scripts/prior-art-probe.py docstring still mentions the old name (historical list; its --selftest already fails 4/5 on origin/main, unrelated).
 
 Still open, so keep open: the Phi_3 '(-1)^n chi swap' argument in the proof checks only (1,0) and was not repaired; .qa.json sidecars for frobenius-s-classification and its proof/table blocks are stale; the FrobeniusClassification tag structure remains hardcoded defaults (rfl classification), not derived.
+
+
+2026-10-10 (session_01UboXkGB32JJhxiv7omapE4): Phi3 step generalised. Proof .md now derives S-oddness of Phi3 for every chain of bar-homogeneous factors (the three primitives and the unit are homogeneous; products stay homogeneous; S swaps chi_sym/chi_alt up to sign, so the ratio inverts). Lean, sorry-free over a generic field: chi_swap, barHom_hmul, barHom_chainProd, primitives_barHom, chiRatio_inverts in frobenius-s-classification.lean (axioms: propext, Classical.choice, Quot.sound only). Scope stated: NOT true on all of H_2 (sigma+1 gives ratio product -(q+1)^2/(q-1)^2). Probe |Phi3 + Phi3 o S| <= 1.4e-51 on all seven chains.
+Still open: (a) the statement block itself (decision 3 restatement, two S-odd channels); (b) the in-tree .qa.json sidecars for -proof and the main block are stale. qa-sweep now writes test/attestations/block-qa/*.attestations.json instead and left 4 trap-* criteria needs-agent; not committed, since the old sidecars are what is stale.
