@@ -8741,3 +8741,18 @@ Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-u
 ## 2026-10-10 — owner decision: convention-D extractor support is tracked here
 
 `qbeta_decay_sdp_full_ck.py` and `qbeta_decay_sdp_extended_ck.py` now **refuse** (exit 2) instead of reading the D-frame N3 witness with C-frame rungs (which produced c_2 = −9.296, c_3 = −974). The owner chose (2026-10-10, PR #7574) to merge the refusal and track D support **in this bean**: the extractors can run again only once the c_k ladder is re-derived under convention D, which is the open research item here, not a code change. The old C-frame bodies are kept as `_main_convention_c_historical()`. Bean stays open.
+
+
+## 2026-10-10 (3) — the functional half has a ceiling below 2, and the "small Lean target" above was already on `main`
+
+**Correction first.** Entry (2) lists as a follow-up *"a small Lean target: `χ_(2,1)(Δ_S) = 0`, and hence the admissible functionals on `Δ_S` are exactly `{y_(3), 1}·χ_(3)(Δ_S)`"*. Both halves were already proved, sorry-free: `QOU.QBeta.DecayBlockCarrier.chi21_deltaS` (for every split of the σ-support) and `decay_carried_by_single_block`. Corpus-grep path 3/Lean would have found them.
+
+**What is new** — `QOU/QBeta/DFrameFunctionalFactorCeiling.lean` (9 declarations, `lean -DautoImplicit=false -s 65536` exit 0, axioms `[propext, Classical.choice, Quot.sound]`), for every `q`:
+- the functional side of any D-frame correction on `Δ_S` is ONE scalar `F = w₃/y₃ᴰ` — no series, no `u`, no rung;
+- `1 < F ↔ w₂₁ < y₂₁ᴰ` (a factor above 1 is exactly weight moved out of the 2-dim block below its D value);
+- positive normalised admissible ⇒ `0 ≤ F ≤ (q²+1)²/(q⁴+1) = 1 + 2q²/(q⁴+1) < 2` (`q² ≠ 1`), ceiling attained iff `w₂₁ = 0` (augmentation);
+- composed with any ladder factor `L ≤ 1`, the whole correction is `< 2`.
+
+**Numbers** (`qbeta_d_frame_functional_factor_ceiling_probe.py`, 8/8, mpmath 70 dps, calibrated: `Q_base = 0.44470040852178`, `F_required = 1.75923699418343`): ceiling `1.97861424096` (= `Q_aug/Q_base`); `F_required` is **interior**, at `w₂₁* = 0.0554370939` against the only two admissible Markov points `0` and `y₂₁ᴰ = 0.2472978867`.
+
+**Scope (a), not an exclusion.** Magnitude does not rule out a functional-side source; what rules it out as a *derivation* is that the interior point needs a free non-Markov weight — one parameter, one anchor. `w₂₁*` is a location, not a proposed value. Positivity of the weights is a hypothesis (reading 3), not a theorem. Element side (`qou-99qc`, gluon-letter ruling) untouched. Bean stays open.
