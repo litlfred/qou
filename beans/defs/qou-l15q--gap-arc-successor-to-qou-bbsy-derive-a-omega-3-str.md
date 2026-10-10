@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T20:20:55Z
-updated_at: 2026-10-04T15:19:27Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -73,3 +73,13 @@ generalization and re-open 5_2, which is the better test anyway.
 STATUS: "why 3" has NO cheap well-posed test. The arc is blocked on a
 DERIVATION, not on compute. Scope note:
 docs/scope/2026-08-01-aomega-three-test-illposed.md (Addendum).
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: OPEN.** disc
+
+Evidence: The rank-2 identity is a tautology (finding 2). The bean body omits commit `9f527376a9` (2026-08-01). That commit found the rank-3 transcription is not constant (1.56–4.08) and that both candidates (
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

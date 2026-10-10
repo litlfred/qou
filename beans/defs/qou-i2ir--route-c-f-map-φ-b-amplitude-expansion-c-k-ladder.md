@@ -1,13 +1,13 @@
 ---
 # qou-i2ir
 title: 'Route C (f-map): Φ_b amplitude expansion → c_k ladder, BAR-EVEN channel — the sole open f-map frontier'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T21:28:47Z
-updated_at: 2026-10-04T15:13:51Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -38,3 +38,13 @@ NET: all 4 f-map routes fenced (A/B/redirect trace-weights + C amplitude). c3=J_
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-21 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: CLOSED-REFUTED.** The single-scale amplitude map cannot force (c₂, c₃) = (−1, −2), shown by an exact gate that reproduces. Those targets are convention-C rung values, so this closes the C-frame route only. The title's "sole open f-map frontier" is stale, and any D-frame amplitude route belongs to qou-cds1. Drop the √3-parity argument from this body (the probe retracted it), and fix the tautological check.
+
+Evidence: Re-ran `computations/qbeta/fmap_c3_routeC_amplitude_exclusion.py`: exit 0, 6/6, sympy exact, λ₂ = 455π²/7776, λ₃ = 270463√3π³/6298560, 4λ₂³+λ₃² = 6.088480. The derivation (σ²λ₂ = −1, σ³λ₃ = −2 ⇒ 4λ₂³+λ₃² = 0) checks, given c₁ = 0. Caveats: (1) the targets c₂ = −1, c₃ = −2 are convention C per `qou-cds1`. (2) The probe's own 2026-08-23 CORRECTION withdraws the √3-parity leg that the bean body still cites. (3) Check `odd_cumulant_carries_sqrt3` is tautological (`... or sp.sqrt(3)==sp.sqrt(3)`). (4) The multi-scale exclusion is cited, not computed. No witness is emitted. `r2bf` is already scrapped as its duplicate.
+
+Status: `todo` → `completed`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

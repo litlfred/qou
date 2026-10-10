@@ -1,13 +1,13 @@
 ---
 # qou-floy
 title: 'qbeta Wenzl decomposition c3 = -2 - (3/2)W4: the ledger''s -0.0005 ppm ''exact match'' is convention-C; under canonical D it is +601 ppm'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T04:26:48Z
-updated_at: 2026-10-04T15:22:59Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -151,3 +151,13 @@ sweep use `(q^n - q^(-n)) / (q - 1/q)`. Those are different brackets (the Lean
 one is the Python one at `sqrt q`). Not the cause of anything above — the sweep
 reproduces the witness with the Python convention — but do not assume the two
 `W_4` agree when carrying a number between them.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: DONE.** The fixes landed and +601 ppm reproduces. The ledger's -0.0005 ppm "exact match" is not reproducible under any recipe. But +601 ppm is the z-swapped C ladder, not a genuine D-frame result (qou-cds1), so this rules out the claim as recorded and says nothing about Wenzl weights in a future D ladder.
+
+Evidence: Re-ran `probe_q_beta_wenzl_projectors.py` (exit 0, 200 dps, proton pin): **eps = +600.9688 ppm**, same as the committed `computations/q-beta-c3-wenzl-decomposition.witness.json` `eps_ppm` (the bean says 600.9666, a 0.002 ppm difference, immaterial). Fixes that landed: the probe reads q0 by name; the ledger correction is at `docs/coordination/2026-06-13-qbeta-habiro-element-ledger.md` L28-50; the tautology was replaced by `q_beta_c3_wenzl_coefficient_ne_neg_two` (`QOU/BraidKnot/QBetaWenzlDecomposition.lean` L84, sorry-free by grep, commit 876d4b9b53). **Caveat:** the probe's "D" is a z-swap (`z = q³/(q²+1)` at L37 inside the C-shaped ladder), which cds1 proves is not the D ladder. The witness records no convention field.
+
+Status: `todo` → `completed`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
