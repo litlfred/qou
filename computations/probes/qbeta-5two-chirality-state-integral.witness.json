@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T15:42:42.668087+00:00",
-  "commitSha": "128aa42dedcdadb684023f98e00f5deef9da9ff2",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-10-10T11:05:52.195677+00:00",
+  "commitSha": "39981af85da295cc75acf8d56e4280190eade3ce",
   "assertions": [
     {
       "name": "gate_4one_b1_closed_form",
-      "computed": 1.0966730746646413e-19,
+      "computed": 1.0966730746668506e-19,
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-08",
@@ -14,7 +14,7 @@
     },
     {
       "name": "gate_5two_quadrature_vs_factorization",
-      "computed": 3.4041802397701307e-14,
+      "computed": 1.0188807373386095e-32,
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-06",
@@ -22,7 +22,7 @@
     },
     {
       "name": "frame_reduced_split_exact",
-      "computed": 1.4004393044605273e-31,
+      "computed": 1.2861004159724018e-71,
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-25",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 44,
+  "durationMs": 13,
   "computation": "qbeta-5two-chirality-state-integral",
   "scriptFile": "qbeta_5two_chirality_state_integral_probe.py",
-  "scriptHash": "4eaea3601cd9",
-  "scriptCommitSha": "128aa42dedcdadb684023f98e00f5deef9da9ff2",
+  "scriptHash": "6b4d7a6dabc4",
+  "scriptCommitSha": "39981af85da295cc75acf8d56e4280190eade3ce",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,37 +58,50 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_5two_chirality_state_integral_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_5two_chirality_state_integral_probe.py"
   },
   "description": "A1 (bean qou-u5xq): the 5₂ Andersen–Kashaev state integral Z = ∫Φ_b(v)³e^{−2πiv²}dv on the substrate ray τ = iβ (b = √β·e^{iπ/4}, q = 1/q₀, q̃ ≈ 1e-165), computed TWO independent ways: bent-contour quadrature with the corpus-validated Φ_b evaluator, and the GGM eq-110/Peacock eq-82 H-series factorization (A2-validated machinery). Gated by the exact 4₁ b=1 closed form (GK 1411.6062 eq 2). Measurement: the frame-reduced chirality split Ẑ = e^{−πi/4}Z = [R^{1/8}H⁺₁H⁻₁] + i·[−(R^{1/8}/2)(βH⁺₂H⁻₀ − (1/β)H⁺₀H⁻₂)] — the real part is the bar-even index channel, the imaginary part is the DERIVED chirality-odd datum of 5₂ at the substrate (calibration-free, fibre-level). Honest: anchor-smooth (SRigidityPrune binds — odd ingredient, not the swing). No fit; no c_k wired; auditOnly.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
   "data": {
     "substrate": {
       "muon": {
-        "beta": "0.01660634324080984569633929",
-        "b": "(0.09112174065723790182347256 + 0.09112174065723790182347256j)"
+        "beta": "0.01660634325305559745972737",
+        "b": "(0.09112174069083513030266161 + 0.09112174069083513030266161j)"
       },
       "proton": {
         "beta": "0.0166063414046204952981553",
         "b": "(0.0911217356195010568296142 + 0.0911217356195010568296142j)"
       }
     },
-    "Z_factorization_muon": "(-205890935084619.092778127 + 352915120999620.2138638369j)",
-    "Z_quadrature_muon": "(-205890935084609.5166087874 + 352915120999610.1265135837j)",
+    "Z_factorization_muon": "(-205890922852349.6244162358 + 352915116245016.2241590013j)",
+    "Z_quadrature_muon": "(-205890922852349.6244162358 + 352915116245016.2241590013j)",
     "chirality_split": {
       "muon": {
-        "even_ReZhat": "103961798858928.9802518005",
-        "odd_ImZhat": "395135551625275.8073359853"
+        "even_ReZhat": "103961804146436.9476547552",
+        "odd_ImZhat": "395135539613742.3939792244"
       },
       "proton": {
-        "even_ReZhat": "103961006019138.6902769926",
-        "odd_ImZhat": "395137352695083.2064296253"
+        "even_ReZhat": "103961006019137.7291687523",
+        "odd_ImZhat": "395137352695075.9044302708"
       }
     },
     "anchor_rel_log_slope_odd": "3.559365e+02",
     "verdict": "DERIVED CHIRALITY STATE-INTEGRAL DATUM LANDED: Z_5₂ on the substrate ray computed two independent ways (quadrature vs factorization) and gated by the exact 4₁ closed form; the frame-reduced odd part Im Ẑ is the fibre-level chirality datum at q₀ — the state-integral face of the same odd channel as A2's Stokes datum. Anchor-smooth (honest: not the swing). No fit; no c_k wired; auditOnly."
-  }
+  },
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029012",
+    "proton": "1.109978582751380807591669095610768879874499121873600"
+  },
+  "q0AnchorReason": "computes the 5_2 chirality state integral at BOTH pins and reports each under its own key; the mu-vs-p difference is the subject"
 }
