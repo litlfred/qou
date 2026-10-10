@@ -8,6 +8,29 @@ description: >
 allowed-tools: Read Grep Glob TodoWrite AskUserQuestion
 ---
 
+> **🟧 Beans are branch-mounted (issue #7642, owner 2026-10-10). This overrides every "commit the bean" instruction below.**
+> `beans/` lives on `cat/cat-harness/beans` and is gitignored on main. The
+> SessionStart hook mounts it at `beans/`; by hand:
+> `bun folio-assistant/cat-harness/scripts/state-mount.ts`. `beans` CLI
+> commands work on the mount unchanged. Write edits back with
+> `bun folio-assistant/cat-harness/scripts/branch-store.ts push --id beans`, a
+> non-forcing splice where `conflict` means re-read and retry. Bean edits are
+> no longer part of a PR's commits. If the mount failed, an empty list means
+> unreachable, not "no work".
+
+
+> **🟧 Block-QA location (issue #7642, owner 2026-10-10). This overrides every `<block>.qa.json` path below.**
+> The derived block report (`block-qa/v1`) is no longer beside its block. It is
+> `test/results/block-qa/<repo-relative block path>.qa.json` (gitignored),
+> published to `cat/cat-harness/qa-reports` keyed by commit. Fetch it first:
+> `bun folio-assistant/cat-harness/scripts/qa-store.ts fetch --ref main`.
+> Agent and human verdicts live on main in
+> `test/attestations/block-qa/<same path>.attestations.json`. Read and write
+> through `folio/pipeline/block-qa-io.ts` (Python: `scripts/lib/block_qa.py`);
+> never build the sibling path by hand. An empty results tree means unfetched,
+> not clean.
+
+
 # Session Task Manager (`beans`)
 
 > **Disambiguation:**

@@ -9,6 +9,17 @@ description: >-
 roles: [reader]
 ---
 
+> **🟧 Beans are branch-mounted (issue #7642, owner 2026-10-10). This overrides every "commit the bean" instruction below.**
+> `beans/` lives on `cat/cat-harness/beans` and is gitignored on main. The
+> SessionStart hook mounts it at `beans/`; by hand:
+> `bun folio-assistant/cat-harness/scripts/state-mount.ts`. `beans` CLI
+> commands work on the mount unchanged. Write edits back with
+> `bun folio-assistant/cat-harness/scripts/branch-store.ts push --id beans`, a
+> non-forcing splice where `conflict` means re-read and retry. Bean edits are
+> no longer part of a PR's commits. If the mount failed, an empty list means
+> unreachable, not "no work".
+
+
 # idle-backlog
 
 Generalises the AGENTS.md §"5-minute idle trigger" / "Work the queue while idle"
