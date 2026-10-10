@@ -1797,6 +1797,40 @@
     ],
     "expo-milnor-clarity": [
       {
+        "field_hash": {
+          "md": "d95984ef3fdf",
+          "ts": "25f191d48ee9",
+          "lean": "941226465afe"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 10,
+          "max": 16,
+          "rubric": {
+            "H1": 1,
+            "H2": 1,
+            "H3": 1,
+            "H4": 1,
+            "H5": 2,
+            "H6": 2,
+            "H7": 1,
+            "H8": 1
+          }
+        },
+        "evidence": "H8: the hypothesis 'the only $f$ satisfying the relation is $f=0$' (L4-11) is the conclusion for differences, so the proposition is a restatement; L3 '(mul, compl, div)' and L13 '$\\mathrm{Li}_2^q$-eval' are formal field names. H3: why uniqueness of the evaluation map matters is not said.",
+        "notes": "Milnor H1-H8 = [1, 1, 1, 1, 2, 2, 1, 1] (T=10/16, fail); weakest: H1, H2, H3, H4, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): 'The five-term relation is linear in $f$, so two solutions differ by a solution of the homogeneous relation; if that relation has only the zero solution on $H$, the $q$-dilogarithm's values are unique.' Drop the field-name notation. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      },
+      {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
@@ -2369,6 +2403,6 @@
       }
     ]
   },
-  "updated_at": "2026-09-06T13:26:10.257Z",
+  "updated_at": "2026-10-10T12:00:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
