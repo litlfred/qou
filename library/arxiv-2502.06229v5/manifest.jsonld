@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2502.06229v5/manifest.jsonld",
+  "@type": [
+    "folio-assistant-core:SourceDocument"
+  ],
+  "title": "Constructing equivalences between fusion categories of quantum groups and of vertex operator algebras via quantum gauge groups",
+  "contains": [
+    "library/arxiv-2502.06229v5/sections/sec-front-matter",
+    "library/arxiv-2502.06229v5/sections/sec-000",
+    "library/arxiv-2502.06229v5/sections/sec-001",
+    "library/arxiv-2502.06229v5/sections/sec-002",
+    "library/arxiv-2502.06229v5/sections/sec-003",
+    "library/arxiv-2502.06229v5/sections/sec-004",
+    "library/arxiv-2502.06229v5/sections/sec-005",
+    "library/arxiv-2502.06229v5/sections/sec-006",
+    "library/arxiv-2502.06229v5/sections/sec-007",
+    "library/arxiv-2502.06229v5/sections/sec-008",
+    "library/arxiv-2502.06229v5/sections/sec-009",
+    "library/arxiv-2502.06229v5/sections/sec-010",
+    "library/arxiv-2502.06229v5/sections/sec-011",
+    "library/arxiv-2502.06229v5/sections/sec-012",
+    "library/arxiv-2502.06229v5/sections/sec-013",
+    "library/arxiv-2502.06229v5/sections/sec-014",
+    "library/arxiv-2502.06229v5/sections/sec-015",
+    "library/arxiv-2502.06229v5/sections/sec-016",
+    "library/arxiv-2502.06229v5/sections/sec-017",
+    "library/arxiv-2502.06229v5/sections/sec-018",
+    "library/arxiv-2502.06229v5/sections/sec-019"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2502.06229v5",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2502.06229v5.pdf",
+    "source_sha256": "3499c40ea150a6175b7748fd163ef5cd92923f0156e8574646292df9d4aed8e9",
+    "pages": 35,
+    "arxiv": {
+      "id": "2502.06229",
+      "version": "5",
+      "primary_class": "math.OA",
+      "stamp_date": "14 Apr 2026"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

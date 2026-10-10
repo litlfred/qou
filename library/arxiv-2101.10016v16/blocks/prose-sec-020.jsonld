@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2101.10016v16/blocks/prose-sec-020",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Kazhdan-Lusztig-Finkelberg theorem for Õ_ℓ, unitarity of Kirillov inner product",
+  "pageStart": 131,
+  "pageEnd": 133,
+  "text": "../sections/sec-020-21-kazhdan-lusztig-finkelberg-theorem-for-unitarit.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2101.10016v16/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2101.10016v16/manifest.jsonld",
+  "provenance": "ingested"
+}

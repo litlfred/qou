@@ -1,0 +1,20 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2502.06229v5/blocks/thm-sec-008-02",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 14,
+  "pageEnd": 16,
+  "text": "thm-sec-008-02.md",
+  "derivedFrom": "library/arxiv-2502.06229v5/sections/sec-008",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2502.06229v5/manifest.jsonld",
+  "provenance": "ingested"
+}

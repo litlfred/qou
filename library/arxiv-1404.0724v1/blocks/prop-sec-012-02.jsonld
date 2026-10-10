@@ -1,0 +1,20 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1404.0724v1/blocks/prop-sec-012-02",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 26,
+  "pageEnd": 32,
+  "text": "prop-sec-012-02.md",
+  "derivedFrom": "library/arxiv-1404.0724v1/sections/sec-012",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1404.0724v1/manifest.jsonld",
+  "provenance": "ingested"
+}
