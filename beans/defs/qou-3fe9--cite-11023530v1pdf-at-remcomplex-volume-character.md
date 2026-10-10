@@ -1,13 +1,13 @@
 ---
 # qou-3fe9
 title: Cite 1102.3530v1.pdf at rem:complex-volume-character-variety-path
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:00Z
-updated_at: 2026-10-10T07:01:36Z
+updated_at: 2026-10-10T07:26:04Z
 parent: qou-19m0
 ---
 
@@ -33,3 +33,5 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-10-10 — pointer
 
 Tracked under carrier M14 (qou-9w2m) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+## 2026-10-10 — Done in issue litlfred/qou#7552: `complex-volume-character-variety-path.md` cites `\cite[Thm.~1.4]{murakami-h2011}`, scoped to 4_1 on the irreducible branch, 0<u<0.9624, and says it covers nothing at the abelian endpoint.
