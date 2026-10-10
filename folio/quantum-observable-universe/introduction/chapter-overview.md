@@ -50,13 +50,13 @@ The relation is used in reverse: it is inverted for $q_0$, so it is the CAL-2 ca
 
 [*Nuclear Interactions and Binding*](#chap:nuclear-interactions) develops the interaction-selection mechanism. A **semidefinite program** selects the unique transfer operator minimizing the categorical action at each vertex. Bring's surface embeddability bound limits these operators to a **six-dimensional** basis in $H_3(q)$, covering identity, $\beta$-decay, photon handling, and pair production without free parameters.
 
-[*$q$-Hyperbolic Geometry*](#chap:climax-volume-mass) defines the topological mass formula:
+[*$q$-Hyperbolic Geometry*](#chap:climax-volume-mass) relates mass to hyperbolic volume. For a knot $K$ with complement volume $\mathrm{Vol}(K)$ and per-block density $\rho(K)$, the mass is the volume–density product in units of the electron mass:
 $$
-  \mathfrak{m}(K) = m_e \cdot \mathrm{Geom}(K) \cdot \varrho(K).
+  \frac{\mathfrak{m}(K)}{m_e} = \frac{\mathrm{Vol}(K)\,\rho(K)}{\hbar_q^{2}}.
 $$
-The geometric term $\mathrm{Geom}(K) = \mathrm{Vol}(K)/\hbar_q^{2}$ acts as a regularized Feynman path integral over finite dimensions.
+The content of this formula is the dimensionless ratio on the left: the electron mass only fixes the unit, so the formula is read through mass ratios and binding energies, never as a prediction of an absolute mass in MeV. The volume factor $\mathrm{Vol}(K)/\hbar_q^{2}$ is the [topological mass formula](#prop:topological-mass-formula) for hyperbolic knots, and it acts as a regularized Feynman path integral over finite dimensions.
 
-[*Mass Analysis*](#chap:mass-theory) traces the computational pipeline. Every mass, $\beta$-decay, and binding-energy prediction derives from three calibration inputs over $\mathbb{Q}(q)$. A **complex volume** $\mathfrak{V}$ separates binding energy (real part) from the $\beta$-decay $Q$-value (imaginary part).
+[*Mass Analysis*](#chap:mass-theory) traces the computational pipeline. Every mass-ratio, $\beta$-decay, and binding-energy prediction derives from three calibration inputs over $\mathbb{Q}(q)$. A **complex volume** $\mathfrak{V}$ separates binding energy (real part) from the $\beta$-decay $Q$-value (imaginary part).
 
 [*Gravity and Spacetime Emergence*](#chap:gravity-spacetime-emergence) explicitly extracts long-range gravity from the trace term $\mathrm{tr}(q \cdot R_{\int})$. Contact geometry dynamically constructs the spacetime arena.
 
