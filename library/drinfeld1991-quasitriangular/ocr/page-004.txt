@@ -1,0 +1,84 @@
+[[ spread 4, left page ]]
+834 V. G. DRINFEL'D
+of Pkz is obvious). To prove (1.6), we consider (2.2) for n  4 in the region
+(z1, Z2, Z3 , z4) E R* I Zi < Z2 < Z, < z4} and distinguish five zones:
+1) Z2  Z ≤ Z  Z Z4  Z 3) Z - Z2  Z4  Z2 < Z4  Z 
+2) Z - Z2 < Z3 - Z_ ≤ Z4 - Z1 4) Z4  Z < Z4 - Z2 < Z4  Z1
+These zones correspond to the “vertices" of the pentagon (1.7) in accordance
+with the following rule: if V, and V, fall between any two corresponding paren-
+theses and V is outside these parentheses, then Iz; - zji < Iz; - zzl; for
+example, (Vi  (V2  V)  V4 corresponds to the second zone.
+LEMMA. There exist unique solutions Wi, ... , Ws 'of the system (2.2) with
+the following asymptotic behaviors in the corresponding zones:
+1+
+Wi ~(z2 - z1)
+23
+W2 ~ (z3 - z2)
+23 14
+Wg ~ (z3 - z2)
+34
+W4 ~ (z4 - z3)
+12
+Ws ~ (z2 - z)t"( (z4 - z,)
+It is to be understood here that, e.g., for W, this means that
+W, = f(u, U)(z2 - z,)ht*
+where u  (z2 - z1)/(z4 - z1),  = (z4 - z3)/(z4 - z1), f is analytic in a
+neighborhood of (0, 0), and f(0, 0) -- 1 .
+Proor. Consider, say, the fifth zone. Make the substitution W = g(u, )
+23
+×(z4-z)*T, where T=112++13+14+f23 f23 ++24 ++34, u = (22-21)/(24 - 2) 
+and ' - (z4 - z3)/(z4 - zi). Then for g we obtain a system of equations of
+the form
++ R(U, v)) - g(u, ),
+(2.3)
+8g + S(u, )) · g(u, v),
+where the functions R and S, with values in (Ug)3, are analytic in a neigh-
+that [A, Bl = O, in view of the integrability of the connection  correspond-
+ing to (2.3)). We must prove existence and uniqueness of a solution of the
+borhood of (0, 0) and Φ(O, O) - 1. In other words, we must prove exis-
+tence and uniqueness of an analytic function β(u, w) such that p(O, O) = l ,
+Vu = o/ou- h(Au-1 + R(u, v) and V, = o/a -h(Bu-1 + S(u, v)). This
+can be done by the method of successive approximations.
+It is easily seen that Wi : ..: , Ws have analytic continuations into the whole
+
+[[ spread 4, right page ]]
+QUASITRIANGULAR QUASI-HOPF ALGEBRAS 835
+region z, < z2 < Z3 < z4. Formula (1.2) follows from the equalities Wi
+W, . (Aidid)(Φkz): and W, = W, : (idid &)(@kz). We show how to
+prove the first two of these. 34
++++?
+Putting Vi  W -(z4 - zi) and
+V2 - W2 (@kz @ 1) · (z4 - z1)
+124
+we will prove that V, = V2. It is easily verified that Vi and V2 are analyltic
+for Zj < Z2 < z3, _Z4 E RP'V[z1, zg] (z4 can also equal oo !). Furthermore, V
+and V, both satisfy the equations
+i2, 3. (2.4)
+=h .V-hy te?+++++? (2.5)
+-Zi Z Z4
+14
+[t4, V] (2.6)
+j#4 Z4 - Zi
+From (2.4), (2.5), and the asymptotics of V, and V it foliows that Vi and V2
+coincide for z4 = co . This and (2.6) imply Vi = V2.
+and
+U, = W, (idα A id)(@kz) (z3 - z2)
+we show that U, = U . It is easily verified that U, and U, are analytic in the
+region Zy < Z2 < z4: z < Z3 < Z4 (z2 can equal z, !). Furthermore, U, and
+U satisfy the equations
+i=1,4. (2.7)
+8zi jti
+23
+t2j
+(2.8)
+822 j#2,3 Z3
+(2.9)
+823 j#2,3 Z3 - Zj Z2 - Z3
+It is easily seen that U, and Uz coincide for z2 = zg . From this and (2.8) it
+follows that U, - U2 :
+the equality
+±321  Φ-1 (2.10)
+Therefore (1.6b) follows from (1.6a): it suffices to apply to both sides of (1.6a)
+the operator that interchanges the first tensor factor with the third, and to em-
+ploy the equalities R21 - R and 4' - A. The proof of (1.6a) is contained in
+
