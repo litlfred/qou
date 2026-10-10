@@ -50,3 +50,5 @@ Evidence: `computations/probes/qbeta_5two_chirality_state_integral_probe.py`: `t
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+Addendum (same sweep): a long re-run, `timeout 2700 python3 -u computations/probes/qbeta_5two_chirality_state_integral_probe.py`, also did not finish. It was still in G1 after about 45 CPU-minutes. `qou-he82` records a full 5/5 pass in 1424 s on 2026-08-10, so this is a regression in runtime, not a hang the probe has always had. One plausible cause is the mpmath upgrade (1.4.1 in this environment), but that is unverified. Until it reproduces, the G1 relative error 1.097e-19 that `qou-he82` and `qou-azs1` cite as settled is not currently reproducible. The committed witness (`durationMs 44`, no q0Anchor) matches no recorded run.
