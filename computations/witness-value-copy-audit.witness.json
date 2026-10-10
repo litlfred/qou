@@ -4,7 +4,7 @@
   "scriptFile": "witness_value_copy_audit.py",
   "description": "Source literals of >= 11 significant digits that also appear in a *.witness.json the script does not itself produce \u2014 a value copied instead of loaded. Such a copy goes stale silently when the producer is re-run.",
   "min_sig_digits": 11,
-  "indexed_literals": 233293,
+  "indexed_literals": 233318,
   "total": 428,
   "narrow_total": 222,
   "narrow_files": 148,
@@ -5163,7 +5163,7 @@
     },
     {
       "file": "computations/substrate/experimental_constants.py",
-      "line": 281,
+      "line": 275,
       "literal": "2.828122088330783",
       "sig_digits": 16,
       "spread": "SHARED",
@@ -5178,7 +5178,7 @@
     },
     {
       "file": "computations/substrate/experimental_constants.py",
-      "line": 344,
+      "line": 338,
       "literal": "4.400832516123046",
       "sig_digits": 16,
       "spread": "SHARED",
@@ -5193,7 +5193,7 @@
     },
     {
       "file": "computations/substrate/experimental_constants.py",
-      "line": 346,
+      "line": 340,
       "literal": "8.286316817806593",
       "sig_digits": 16,
       "spread": "SHARED",
@@ -5208,7 +5208,7 @@
     },
     {
       "file": "computations/substrate/experimental_constants.py",
-      "line": 350,
+      "line": 344,
       "literal": "4.749499981874439",
       "sig_digits": 16,
       "spread": "SHARED",

@@ -5,7 +5,7 @@
   "data": {
     "counts": {
       "STALE": 207,
-      "proton-pin": 2590,
+      "proton-pin": 2586,
       "unknown": 25,
       "canonical": 82
     },
@@ -16232,20 +16232,6 @@
         "ppb_vs_canonical": -11.614060207725885
       },
       {
-        "file": "computations/qbeta/qbessel-jackson-contiguity.witness.json",
-        "field": "q0Value",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.61406020773339
-      },
-      {
-        "file": "computations/qbeta/qbessel-second-order-qdifference-equation.witness.json",
-        "field": "q0Value",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.61406020773339
-      },
-      {
         "file": "computations/qbeta/qbeta-F-coordinate-bridge-audit.witness.json",
         "field": "data.q0",
         "value": "1.10997858275138080759166909561076887987449912187357873607281",
@@ -18087,13 +18073,6 @@
         "ppb_vs_canonical": -11.61406020773339
       },
       {
-        "file": "computations/qbeta/qbeta-qbessel-contiguity-cfinite.witness.json",
-        "field": "q0Value",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.61406020773339
-      },
-      {
         "file": "computations/qbeta/qbeta-qbessel-crossanchor-smoothness-refutation.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -18235,13 +18214,6 @@
       },
       {
         "file": "computations/qbeta/qbeta-signed-vs-abs-tower-diagnostic.witness.json",
-        "field": "q0Value",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.61406020773339
-      },
-      {
-        "file": "computations/qbeta/qbeta-silver-rationals.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
@@ -20344,10 +20316,10 @@
   },
   "scriptFile": "q0_value_drift_audit.py",
   "scriptHash": "d1e66a3b0067",
-  "scriptCommitSha": "6ff3254a0f7d56d7961ba93607680644b8d7b07b",
-  "commitSha": "56109c8579a2cf9ae1b5875e745352030b869267",
+  "scriptCommitSha": "c9ce7e21f1a8255292142925f7602f0b242e9909",
+  "commitSha": "6a939b9882577e2209fe46fb9551731997642d4a",
   "engine": "python",
-  "computedAt": "2026-10-10T08:18:27.504214+00:00",
+  "computedAt": "2026-09-27T18:36:20.595871+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
