@@ -3,10 +3,12 @@
 title: Cite queue (P4.SM)
 status: todo
 type: feature
+priority: normal
 tags:
+    - 8f-lit
     - reorg-2026-10-04
 created_at: 2026-10-04T15:17:05Z
-updated_at: 2026-10-04T15:17:05Z
+updated_at: 2026-10-10T07:16:30Z
 parent: qou-8lxd
 ---
 

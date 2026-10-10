@@ -6,8 +6,9 @@ type: task
 priority: critical
 tags:
     - reorg-2026-10-04
+    - 8f-flavour
 created_at: 2026-08-04T10:18:37Z
-updated_at: 2026-10-04T15:10:39Z
+updated_at: 2026-10-10T07:15:49Z
 parent: qou-8lxd
 ---
 

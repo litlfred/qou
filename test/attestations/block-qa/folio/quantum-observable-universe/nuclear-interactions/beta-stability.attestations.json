@@ -1,0 +1,1009 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/beta-stability",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/beta-stability"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0",
+          "lean": "ae5fc332faa9"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0",
+          "lean": "ae5fc332faa9"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0",
+          "lean": "ae5fc332faa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.223467Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.223467Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement is a bare mathematical claim."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0",
+          "lean": "ae5fc332faa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.223467Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.223467Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0",
+          "lean": "ae5fc332faa9"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0",
+          "lean": "ae5fc332faa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.223467Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.223467Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement respects the chapter's base-ring regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0",
+          "lean": "ae5fc332faa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.223467Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.223467Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Proof machinery matches the statement regime."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0",
+          "lean": "ae5fc332faa9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.223467Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.223467Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Beta-stability line from the Skein binding Lagrangian' is unverified due to Lean compilation failures: folio/quantum-observable-universe/particle-interactions/beta-stability.lean:27:13: error: unexpected token 'section'; expected 'lemma'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/beta-stability.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0",
+          "lean": "ae5fc332faa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.223467Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.223467Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Beta-stability line from the Skein binding Lagrangian' presents substantial mathematical content: The stable neutron number $n^(p)$ for each element is determined by extremizing the Skein binding Lagrangian (Skein b...",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0",
+          "lean": "ae5fc332faa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.223467Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.223467Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Beta-stability line from the Skein binding Lagrangian'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/beta-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0",
+          "lean": "ae5fc332faa9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.223467Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.223467Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Beta-stability line from the Skein binding Lagrangian' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor",
+        "evidence": "The prose presents 'Beta-stability line from the Skein binding Lagrangian' as verified, but the sibling Lean file fails to compile."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0",
+          "lean": "ae5fc332faa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.223467Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.223467Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Beta-stability line from the Skein binding Lagrangian'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/beta-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0",
+          "lean": "ae5fc332faa9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.223467Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.223467Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/beta-stability.lean.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/beta-stability.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0",
+          "lean": "ae5fc332faa9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.223467Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.223467Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/beta-stability.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor",
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/beta-stability.lean fails compilation, causing divergence from the narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0",
+          "lean": "ae5fc332faa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.223467Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.223467Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Beta-stability line from the Skein binding Lagrangian', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/beta-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0",
+          "lean": "ae5fc332faa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.223467Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.223467Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Beta-stability line from the Skein binding Lagrangian' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/beta-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0",
+          "lean": "ae5fc332faa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.223467Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.223467Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Beta-stability line from the Skein binding Lagrangian' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/beta-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0",
+          "lean": "ae5fc332faa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.223467Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.223467Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Beta-stability line from the Skein binding Lagrangian' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/beta-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0",
+          "lean": "ae5fc332faa9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.223467Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.223467Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/beta-stability.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/beta-stability.lean:1 — folio/quantum-observable-universe/particle-interactions/beta-stability.lean:27:13: error: unexpected token 'section'; expected 'lemma'"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0",
+          "lean": "ae5fc332faa9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.223467Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.223467Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/beta-stability.lean fails compilation: folio/quantum-observable-universe/particle-interactions/beta-stability.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/beta-stability.lean for 'Beta-stability line from the Skein binding Lagrangian' fails compilation with error: folio/quantum-observable-universe/particle-interactions/beta-stability.lean:27:13: error: unexpected token 'section'; expected 'lemma'. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/beta-stability.lean fails compilation: folio/quantum-observable-universe/particle-interactions/beta-stability.lean:27:13: error: unexpected token 'section'; expected 'lemma'"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq22"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:08.205Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "major",
+        "evidence": "Full-context read of prop:beta-stability (lead sentence + italic statement + two displays). Verified the algebra: A* = p(2 + (a_C/2a_A) A*^{2/3}) is the exact inversion of p* = A/(2 + a_C A^{2/3}/(2a_A)), and the latter is the standard SEMF valley-of-stability formula. Two content notes reported separately: (i) the block uses p for the PROTON COUNT while the notation register reserves p for the brane point and assigns Z to the proton count - and the same statement writes L = Z frak-p (+) N frak-n correctly one line earlier, so the two conventions collide inside one sentence; (ii) the extremisation is stated as dL_bind/dn = 0 at fixed p, whereas its interpretation sibling minimises the full mass M at fixed A over p - these differ by the (m_p - m_n) term, which that sibling also drops.",
+        "notes": "No trap of this category; the block is a lead sentence plus a bare proposition statement."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:08.246Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "major",
+        "evidence": "Full-context read of prop:beta-stability (lead sentence + italic statement + two displays). Verified the algebra: A* = p(2 + (a_C/2a_A) A*^{2/3}) is the exact inversion of p* = A/(2 + a_C A^{2/3}/(2a_A)), and the latter is the standard SEMF valley-of-stability formula. Two content notes reported separately: (i) the block uses p for the PROTON COUNT while the notation register reserves p for the brane point and assigns Z to the proton count - and the same statement writes L = Z frak-p (+) N frak-n correctly one line earlier, so the two conventions collide inside one sentence; (ii) the extremisation is stated as dL_bind/dn = 0 at fixed p, whereas its interpretation sibling minimises the full mass M at fixed A over p - these differ by the (m_p - m_n) term, which that sibling also drops.",
+        "notes": "No trap of this category; the block is a lead sentence plus a bare proposition statement."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:08.293Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:beta-stability (lead sentence + italic statement + two displays). Verified the algebra: A* = p(2 + (a_C/2a_A) A*^{2/3}) is the exact inversion of p* = A/(2 + a_C A^{2/3}/(2a_A)), and the latter is the standard SEMF valley-of-stability formula. Two content notes reported separately: (i) the block uses p for the PROTON COUNT while the notation register reserves p for the brane point and assigns Z to the proton count - and the same statement writes L = Z frak-p (+) N frak-n correctly one line earlier, so the two conventions collide inside one sentence; (ii) the extremisation is stated as dL_bind/dn = 0 at fixed p, whereas its interpretation sibling minimises the full mass M at fixed A over p - these differ by the (m_p - m_n) term, which that sibling also drops.",
+        "notes": "No trap of this category; the block is a lead sentence plus a bare proposition statement."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:08.335Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:beta-stability (lead sentence + italic statement + two displays). Verified the algebra: A* = p(2 + (a_C/2a_A) A*^{2/3}) is the exact inversion of p* = A/(2 + a_C A^{2/3}/(2a_A)), and the latter is the standard SEMF valley-of-stability formula. Two content notes reported separately: (i) the block uses p for the PROTON COUNT while the notation register reserves p for the brane point and assigns Z to the proton count - and the same statement writes L = Z frak-p (+) N frak-n correctly one line earlier, so the two conventions collide inside one sentence; (ii) the extremisation is stated as dL_bind/dn = 0 at fixed p, whereas its interpretation sibling minimises the full mass M at fixed A over p - these differ by the (m_p - m_n) term, which that sibling also drops.",
+        "notes": "No trap of this category; the block is a lead sentence plus a bare proposition statement."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:08.378Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "major",
+        "evidence": "Full-context read of prop:beta-stability (lead sentence + italic statement + two displays). Verified the algebra: A* = p(2 + (a_C/2a_A) A*^{2/3}) is the exact inversion of p* = A/(2 + a_C A^{2/3}/(2a_A)), and the latter is the standard SEMF valley-of-stability formula. Two content notes reported separately: (i) the block uses p for the PROTON COUNT while the notation register reserves p for the brane point and assigns Z to the proton count - and the same statement writes L = Z frak-p (+) N frak-n correctly one line earlier, so the two conventions collide inside one sentence; (ii) the extremisation is stated as dL_bind/dn = 0 at fixed p, whereas its interpretation sibling minimises the full mass M at fixed A over p - these differ by the (m_p - m_n) term, which that sibling also drops.",
+        "notes": "No trap of this category; the block is a lead sentence plus a bare proposition statement."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:08.417Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "major",
+        "evidence": "Full-context read of prop:beta-stability (lead sentence + italic statement + two displays). Verified the algebra: A* = p(2 + (a_C/2a_A) A*^{2/3}) is the exact inversion of p* = A/(2 + a_C A^{2/3}/(2a_A)), and the latter is the standard SEMF valley-of-stability formula. Two content notes reported separately: (i) the block uses p for the PROTON COUNT while the notation register reserves p for the brane point and assigns Z to the proton count - and the same statement writes L = Z frak-p (+) N frak-n correctly one line earlier, so the two conventions collide inside one sentence; (ii) the extremisation is stated as dL_bind/dn = 0 at fixed p, whereas its interpretation sibling minimises the full mass M at fixed A over p - these differ by the (m_p - m_n) term, which that sibling also drops.",
+        "notes": "No trap of this category; the block is a lead sentence plus a bare proposition statement."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:08.457Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "major",
+        "evidence": "Full-context read of prop:beta-stability (lead sentence + italic statement + two displays). Verified the algebra: A* = p(2 + (a_C/2a_A) A*^{2/3}) is the exact inversion of p* = A/(2 + a_C A^{2/3}/(2a_A)), and the latter is the standard SEMF valley-of-stability formula. Two content notes reported separately: (i) the block uses p for the PROTON COUNT while the notation register reserves p for the brane point and assigns Z to the proton count - and the same statement writes L = Z frak-p (+) N frak-n correctly one line earlier, so the two conventions collide inside one sentence; (ii) the extremisation is stated as dL_bind/dn = 0 at fixed p, whereas its interpretation sibling minimises the full mass M at fixed A over p - these differ by the (m_p - m_n) term, which that sibling also drops.",
+        "notes": "No trap of this category; the block is a lead sentence plus a bare proposition statement."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:08.499Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:beta-stability (lead sentence + italic statement + two displays). Verified the algebra: A* = p(2 + (a_C/2a_A) A*^{2/3}) is the exact inversion of p* = A/(2 + a_C A^{2/3}/(2a_A)), and the latter is the standard SEMF valley-of-stability formula. Two content notes reported separately: (i) the block uses p for the PROTON COUNT while the notation register reserves p for the brane point and assigns Z to the proton count - and the same statement writes L = Z frak-p (+) N frak-n correctly one line earlier, so the two conventions collide inside one sentence; (ii) the extremisation is stated as dL_bind/dn = 0 at fixed p, whereas its interpretation sibling minimises the full mass M at fixed A over p - these differ by the (m_p - m_n) term, which that sibling also drops.",
+        "notes": "No trap of this category; the block is a lead sentence plus a bare proposition statement."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:08.542Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:beta-stability (lead sentence + italic statement + two displays). Verified the algebra: A* = p(2 + (a_C/2a_A) A*^{2/3}) is the exact inversion of p* = A/(2 + a_C A^{2/3}/(2a_A)), and the latter is the standard SEMF valley-of-stability formula. Two content notes reported separately: (i) the block uses p for the PROTON COUNT while the notation register reserves p for the brane point and assigns Z to the proton count - and the same statement writes L = Z frak-p (+) N frak-n correctly one line earlier, so the two conventions collide inside one sentence; (ii) the extremisation is stated as dL_bind/dn = 0 at fixed p, whereas its interpretation sibling minimises the full mass M at fixed A over p - these differ by the (m_p - m_n) term, which that sibling also drops.",
+        "notes": "No trap of this category; the block is a lead sentence plus a bare proposition statement."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:08.583Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:beta-stability (lead sentence + italic statement + two displays). Verified the algebra: A* = p(2 + (a_C/2a_A) A*^{2/3}) is the exact inversion of p* = A/(2 + a_C A^{2/3}/(2a_A)), and the latter is the standard SEMF valley-of-stability formula. Two content notes reported separately: (i) the block uses p for the PROTON COUNT while the notation register reserves p for the brane point and assigns Z to the proton count - and the same statement writes L = Z frak-p (+) N frak-n correctly one line earlier, so the two conventions collide inside one sentence; (ii) the extremisation is stated as dL_bind/dn = 0 at fixed p, whereas its interpretation sibling minimises the full mass M at fixed A over p - these differ by the (m_p - m_n) term, which that sibling also drops.",
+        "notes": "No trap of this category; the block is a lead sentence plus a bare proposition statement."
+      }
+    ]
+  }
+}

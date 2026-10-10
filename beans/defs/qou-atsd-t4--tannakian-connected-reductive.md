@@ -6,8 +6,9 @@ type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - 8f-atomicity
 created_at: 2026-07-25T20:32:48Z
-updated_at: 2026-10-04T15:24:47Z
+updated_at: 2026-10-10T07:16:14Z
 parent: qou-8lxd
 ---
 

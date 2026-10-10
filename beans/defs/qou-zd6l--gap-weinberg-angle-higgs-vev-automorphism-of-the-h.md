@@ -8,8 +8,9 @@ tags:
     - lean
     - gap
     - reorg-2026-10-04
+    - 8f-ew
 created_at: 2026-09-03T09:08:29Z
-updated_at: 2026-10-04T15:20:33Z
+updated_at: 2026-10-10T07:15:58Z
 parent: qou-8lxd
 ---
 
