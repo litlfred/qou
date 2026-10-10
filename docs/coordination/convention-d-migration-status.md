@@ -391,11 +391,10 @@ useful axis:
 - **Reader-facing content** — `qou-enn6` (C weights in the three-channel H₃
   table), `qou-zzwm` (published accuracy figures), `qou-2cof`, `qou-34oo`,
   `qou-zf9n` (a `theorem` block stated in convention C).
-- **A detector or exemption that is itself wrong** — `qou-4bq3` (the DELIBERATE
-  regex matches `c_` inside ordinary identifiers, over-blocking 8 of 24),
-  `qou-jyqd` (`_deprecated/` is skipped by design while content still cites it),
-  `qou-okkz` (consumer-side control arms — and today's six new adjudications
-  grew that population 137 → 143, so this got *more* load-bearing, not less).
+- **A detector or exemption that is itself wrong** — `qou-4bq3`, `qou-jyqd`,
+  `qou-okkz`. **🛑 All three were re-measured against `main` `ac111c1814` later
+  the same day and the verdicts above are wrong in three different ways — see
+  §11.**
 - **Open mathematics downstream of D** — `qou-cxon`, `qou-egqr`, `qou-v7qj`,
   `qou-vuaj`, `qou-5h5x` (premise moved: `pyhecke.gram` is D and the registry's
   `intra_module_split_waivers` is empty — cheap to re-read), `qou-580o`,
@@ -517,6 +516,94 @@ closely enough:
 | 66 paper sites unscoped | 23; the other 43 say *was/now/withdrawn/retracted* in C-vs-D tables | §4 |
 | `qou-m7py` measurably satisfied | its headline bug is fixed, its owner items are not | §9, and on the bean |
 | 12 beans mis-parented | 8; `qou-cdx1` covers R2 and R3 by design | §9 above |
+
+## 11. The three "wrong-detector" beans, re-measured — and §9 got all three wrong
+
+§9 grouped `qou-4bq3`, `qou-jyqd` and `qou-okkz` as LIVE under *"a detector or
+exemption that is itself wrong"*, on the strength of their bodies. Re-measured
+against `main` `ac111c1814`:
+
+| bean | §9's verdict | measured | now |
+|---|---|---|---|
+| `qou-4bq3` | LIVE — regex over-blocks 8 of 24 B3 | **fixed 2026-08-25**, six weeks before the triage | `completed` |
+| `qou-jyqd` | LIVE — content still cites `_deprecated` | **3 hits, all CITATIONS**; zero live dependencies | `todo`, re-scoped |
+| `qou-okkz` | LIVE — 229 edges / 122 consumers | **8 edges / 8 consumers**, −29× | `todo`, 7 hand verdicts |
+
+### `qou-4bq3` — the regex has not existed since 2026-08-25
+
+`convention-c-producer-migrate.py:58` — the line the bean names — is not a
+regex. Line 66 is `DELIBERATE = is_deliberate_c_name`, from
+[`scripts/lib/convention_c_names.py`](../../scripts/lib/convention_c_names.py),
+which replaced the `re.I` blob with three case-aware patterns and carries
+`SELFTEST_MUST_NOT_MATCH` as a regression lock naming **all eight** false-B3
+bases from the bean plus a ninth (`desc_tr_M`) the implementer found
+independently. **51 selftest rows, 0 FAIL.**
+
+Confirmed from the output side as well, which is the check that cannot be
+fooled by reading the patterns: `convention-c-triage.py --json` gives **133
+records, 119 `deliberate=True`**, and every reason string names a genuine
+C-named target (`z_c`, `Z_C`, `zC`, `z_C_expr`, `z_C_num`, `z_C_of_t`, `_zC`,
+`z_C_historical()`). **Not one `c_k`, `q_fac_n`, `qfac_3`, `desc_tr_M` or
+`__doc__`.**
+
+**How §9 got it wrong, because it is this document's own subject one level up.**
+The triage read the bean's `## Not fixed on PR #5738` and `## Fix` sections and
+did not grep for the symbol. `grep -rn 'is_deliberate_c_name' --include='*.py' .`
+settles it in one command. §path-6 of AGENTS.md says a bean's status note is not
+authoritative, and this is an instance — made *more* persuasive by the bean
+being well-measured, since the file, the line number and the regex all went
+stale together.
+
+### `qou-jyqd` — the detector works; its COUNT is being mis-cited
+
+3 hits on `main` (was 2), and all three are CITATIONS rather than dependencies:
+`integer-lp-gluon.py` is named by a struck-through, explicitly-retracted
+paragraph (`qou-jqjx` landed); `protium-witness.py` by a QA note confirming a
+braid-word error; `transfer_matrix_symbolic.py` by a *"Readout corrected
+2026-09-05"* banner. So the live dependency §9 feared is **gone**.
+
+What *is* live is a mis-citation of this bean's own script.
+[`TOOLS_report.md`](../audits/2026-10-04-workplan-and-migration/TOOLS_report.md)
+gave T13 the evidence *"shows 0 content citations into `_deprecated` before the
+move"*. It shows 3 — and it is the wrong audit either way, scanning only the
+**139 of 568** deprecated producers *carrying a convention-C shape*. T13 breaks
+on any reference: **27 tracked `folio/` files** name `computations/_deprecated`,
+one of them structurally (`wedderburn-weight-canonical.ts` carries
+`computation.script` into `_deprecated` with `status: "verified"`). Corrected in
+that report; recorded on `qou-6u3n` and `qou-vfy1`.
+
+### `qou-okkz` — the drain happened, and the number proves it
+
+| | 2026-08-24 | 2026-10-10 |
+|---|---:|---:|
+| witnesses scanned | 2938 | **3728** (+27 %) |
+| carrying the `z_C` fingerprint | 36 | **14** |
+| foreign READ edges of C witnesses | **229 / 122** | **8 / 8** |
+| CONTROL-ARM | 1 | **1** |
+
+**The growing denominator is what makes this conclusive.** A falling count
+against a growing corpus cannot be a sampling artifact — the artifacts went
+away. The bean's standing *"228 unmeasured, NOT clear"* warning survives in kind
+and collapses in scale: **7 hand verdicts**, now listed verbatim in the bean,
+two of them on `hadron-knot-table.witness.json` — which is independently the
+corpus's one remaining `Q0_FLIP`.
+
+### A fourth finding: the FIXED detector's first measured blind spot
+
+`convention-c-triage.py` reports `computations/qbeta/qbeta_ck_cache.py:140` as
+`deliberate=False`, bucket *"computations — live producers"* — the canonical
+`c_k` producer. **It is a false positive**, and an earlier chat line in this
+session wrongly offered it as the one live residual. The site's D path prints
+REFUSING TO RUN and exits 2; C is reachable only via
+`--historical-convention-C`; it is adjudicated `completed` under `qou-ckwt`.
+
+It is invisible because the target is a bare **`z`** — the deliberateness lives
+in a `convention != "C"` raise, a parameter and a CLI flag, so **no name-keyed
+check can see it however the patterns are widened.** Recorded as **row 52** of
+the detector-blindness taxonomy, and in the direction the module's docstring
+declares acceptable: this *under*-blocks (a false actionable costs one reading)
+where the `re.I` bug *over*-blocked (a false deliberate hid a defect).
+
 
 ---
 
