@@ -5,7 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-14T19:56:26Z
-updated_at: 2026-09-14T19:57:11Z
+updated_at: 2026-10-10T06:43:35Z
+parent: b9cj
 ---
 
 Measured 2026-09-14 while exploring `qou-mfdq` Finding 3 (PR #7401, issue #7400).
