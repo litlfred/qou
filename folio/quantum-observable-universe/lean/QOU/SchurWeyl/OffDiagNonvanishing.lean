@@ -85,18 +85,6 @@ theorem eq_one_or_neg_one_of_offDiag_eq_zero (hq0 : q ≠ 0) (hq2 : QOU.SchurWey
   · rw [offDiag_of_not_neg q (by omega)] at hzero
     exact absurd hzero one_ne_zero
 
-/-- **Admissible swaps carry a nonzero off-diagonal entry.**  Combines
-`TableauCells.two_le_natAbs_axialDist` with `eq_one_or_neg_one_of_offDiag_eq_zero`: an admissible swap is at
-distance `|d| ≥ 2`, and `offDiag` only vanishes at `±1`. -/
-theorem offDiag_axialDist_ne_zero {μ : YoungDiagram} (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q)
-    (T : QOU.Mathlib.StandardYoungTableau μ) {k : ℕ}
-    (hk : k ∈ Set.Icc 1 μ.cells.card) (hk' : k + 1 ∈ Set.Icc 1 μ.cells.card)
-    (hadm : TableauCells.SwapAdmissible T k) :
-    offDiag q (TableauCells.axialDist T k) ≠ 0 := by
-  intro hzero
-  have hbound := TableauCells.two_le_natAbs_axialDist T hk hk' hadm
-  rcases eq_one_or_neg_one_of_offDiag_eq_zero q hq0 hq2 hzero with h | h <;> omega
-
 /-- **`offDiag` vanishes exactly at `d = -1`** — the biconditional, and it is *stronger* than
 the disjunction `eq_one_or_neg_one_of_offDiag_eq_zero` concludes.
 
@@ -122,6 +110,25 @@ theorem offDiag_eq_zero_iff_eq_neg_one (hq0 : q ≠ 0)
   · intro h
     subst h
     exact offDiag_neg_one q hq0 hq2
+
+/-- **Admissible swaps carry a nonzero off-diagonal entry.**  Combines
+`TableauCells.two_le_natAbs_axialDist` with `offDiag_eq_zero_iff_eq_neg_one`: an admissible swap
+is at distance `|d| ≥ 2`, and `offDiag` vanishes only at `d = -1`.
+
+Retargeted from `eq_one_or_neg_one_of_offDiag_eq_zero` (bean `qou-y4ca`). The disjunction
+obliged this proof to dispatch a `d = 1` case that cannot occur — `offDiag q 1 = 1 ≠ 0` — so
+the `rcases … <;> omega` discharged one real case and one vacuous one. The biconditional
+supplies `d = -1` directly. -/
+theorem offDiag_axialDist_ne_zero {μ : YoungDiagram} (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q)
+    (T : QOU.Mathlib.StandardYoungTableau μ) {k : ℕ}
+    (hk : k ∈ Set.Icc 1 μ.cells.card) (hk' : k + 1 ∈ Set.Icc 1 μ.cells.card)
+    (hadm : TableauCells.SwapAdmissible T k) :
+    offDiag q (TableauCells.axialDist T k) ≠ 0 := by
+  intro hzero
+  have hbound := TableauCells.two_le_natAbs_axialDist T hk hk' hadm
+  have h : TableauCells.axialDist T k = -1 :=
+    (offDiag_eq_zero_iff_eq_neg_one q hq0 hq2).mp hzero
+  omega
 
 end SeminormalRep
 
