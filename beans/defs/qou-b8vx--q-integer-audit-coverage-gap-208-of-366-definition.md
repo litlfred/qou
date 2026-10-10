@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T14:02:19Z
-updated_at: 2026-10-10T07:46:14Z
-parent: qou-cdx1
+updated_at: 2026-10-10T07:55:53Z
+parent: qou-4cu3
 ---
 
 MEASURED 2026-09-13. New audit: computations/audits/q_integer_global_resolution_audit.py. It resolves module globals instead of giving up on them -- walks each module's own top-level assignments, evaluates them symbolically against one root symbol, binds the result, and only then applies the function.

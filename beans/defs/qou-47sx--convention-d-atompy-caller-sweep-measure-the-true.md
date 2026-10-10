@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T12:34:42Z
-updated_at: 2026-10-10T07:46:17Z
-parent: qou-cdx1
+updated_at: 2026-10-10T07:55:52Z
+parent: qou-9nnz
 ---
 
 ## The caller count: "31" is refuted — the true live figure is 20 modules, 15 of them producers
