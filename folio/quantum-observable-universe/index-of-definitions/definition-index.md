@@ -1003,7 +1003,7 @@
 | [lem:piece-a-hook-content-identity](#lem:piece-a-hook-content-identity) | Piece A — the hook–content identity $\sum_{\square} h(\square)^2 = \sum_{\square} c(\square)^2 + n^2$ | Ch 12 | `qou:QOU.BraidKnot.PieceA.pieceA` |
 | [lem:topological-mass-dilogarithm](#lem:topological-mass-dilogarithm) | Quantum dilogarithm evaluation of exceptional-divisor contributions | Ch 7 | `qou:QOU.LiftingDescent.tm_dilogarithm_evaluation` |
 | [lem:fai-projector-coadjoint-orbit](#lem:fai-projector-coadjoint-orbit) | Rank-1 projectors embed $\mathbb{P}(V)$ as a coadjoint orbit in $\mathrm{Ad}(A)$ | Ch 2 | `qou:QOU.QuantumObservableUniverse.fai_projector_coadjoint_orbit` |
-| [lem:bring-cone-reeb-quaternionic-twist](#lem:bring-cone-reeb-quaternionic-twist) | Reeb quaternionic twist on the Bring-cone link: $[M_i, M_j] = 2M_k$ and cyclic | Ch 6 | `qou:QOU.Tetraplectic.reeb_twist_ij` |
+| [lem:bring-cone-reeb-quaternionic-twist](#lem:bring-cone-reeb-quaternionic-twist) | Reeb quaternionic twist on the Bring-cone model: $[M_i, M_j] = 2M_k$ and cyclic | Ch 6 | `qou:QOU.Tetraplectic.reeb_twist_ij` |
 | [lem:brings-riemann-hurwitz](#lem:brings-riemann-hurwitz) | Riemann--Hurwitz count for the canonical map $\Sigma_4 \to \mathbb{P}(V)$ | Ch 6 | `qou:QOU.ArchimedeanUniverse.brings_riemann_hurwitz` |
 | [lem:staircase-corner-hook](#lem:staircase-corner-hook) | Staircase corner hook $h_{\mathrm{corner}}(\rho_k) = 2k - 1$ | Ch 12 | `qou:QOU.StaircaseCornerHook.staircase_corner_hook_eq_two_k_sub_one` |
 | [lem:surreal-squeeze](#lem:surreal-squeeze) | Surreal squeeze: standard-scale cost dominates infinitesimal dissipation | Ch 25 | `qou:QOU.AlgebraicSubstrate.surreal_squeeze` |

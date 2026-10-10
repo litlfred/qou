@@ -409,3 +409,33 @@ conclusion that the phrase is pervasively ambiguous. They do not support it —
 reader cannot tell. Three separate samples of that bucket turned out to be
 plainly clear linear-algebraic and representation uses. If you re-measure, count
 the **bare** uses whose own sentence leaves the sense open; that number is small.
+
+## Demand magnitude: always $|\mathrm{dem}|$, never $|\mathrm{def}|$
+
+[`def:demand-profile`](#def:demand-profile) defines, for a derived atom in
+normal form $\mathcal{A}(Z,N) = \sum_w c_w \cdot w$,
+
+$$
+  \mathrm{dem}(\mathcal{A}) = \{(w, c_w) : c_w < 0\},
+  \qquad
+  |\mathrm{dem}| = \sum_{c_w < 0} |c_w| ,
+$$
+
+the sum of the negative normal-form coefficients. **That quantity has one
+name.** The spelling $|\mathrm{def}|$ ("deficit") carried the same meaning in two
+example blocks — `ex:li6-derived-nf` and `ex:o16-derived-nf`, where $|def| = 0$
+was justified by *"all coefficients positive"*, which is $|\mathrm{dem}| = 0$
+under the definition above — while appearing in no definition anywhere. Both are
+migrated; use $|\mathrm{dem}|$.
+
+**The prose word "deficit" is not banned**, and the distinction matters when
+reading older blocks: *deficit-free*, *deficit closure* and *the periodic table
+deficit conjecture* are English for the same condition and read naturally. What
+is banned is the **symbol** $|\mathrm{def}|$, because a reader meeting it has no
+definition to resolve it against.
+
+Why it is recorded here rather than left as a one-token fix: the two spellings
+were not in competition. $\mathrm{dem}$ occurs in five `.md` files, including the
+three `demand-*` blocks that define and consume it; $\mathrm{def}$ occurred in
+two, and **neither symbol appeared in the register**, so nothing would have
+caught a third spelling either.
