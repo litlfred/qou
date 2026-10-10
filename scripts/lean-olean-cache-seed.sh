@@ -255,7 +255,7 @@ for pkg in batteries aesop Qq plausible importGraph LeanSearchClient proofwidget
     | sed 's#^\./##' >> "$LIST" || true
 done
 if [ "${SEED_PAPER:-0}" = "1" ]; then
-  for paperbuild in content/*/lean/.lake/build; do
+  for paperbuild in folio/*/lean/.lake/build; do
     [ -d "$paperbuild" ] || continue
     find "$paperbuild" \( -name '*.olean' -o -name '*.ilean' -o -name '*.trace' \
                        -o -name '*.c' -o -name '*.setup.json' \) -type f 2>/dev/null \

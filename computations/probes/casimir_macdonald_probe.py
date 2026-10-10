@@ -206,6 +206,14 @@ def main() -> int:
         engine="mpmath",
     )
 
+    # NOT `mpf(Q)` / `mpf(str(Q))`: `q_parameter.Q` is `float(_d["q"])`, so
+    # either form lifts the DOUBLE's binary expansion and caps this whole
+    # probe at ~17 digits.  Read the pin as the SOURCE STRING and build the
+    # mpf here, i.e. AFTER `set_compute_dps()`.  Do NOT substitute the
+    # module-level `Q_MP`: `q_parameter` builds it at `mp.dps = 50`, so it is
+    # a 50-digit cap, which is BELOW `OUTPUT_DPS = 60`.  Measured against the
+    # exact 50-digit decimal in `Fraction` arithmetic, `mpf(Q_50_DIGIT_STR)`
+    # built at dps 70 sits 4.594e-72 from it and `Q_MP` sits 2.015e-50.
     q = mpf(Q_50_DIGIT_STR)
     pi_sq = mp_pi ** 2
     pi_sq_720 = pi_sq / 720

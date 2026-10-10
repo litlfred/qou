@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -301,6 +302,96 @@ Fixed by the owner ruling of 2026-08-15, which excised convention C
 """
 
 
+#: Every ``markov_convention`` spelling measured in the corpus, as fixtures for
+#: :func:`_normalise_markov_convention`.  Produced 2026-10-10 by scanning the
+#: 3510 non-``_deprecated`` ``computations/**/*.witness.json``: **44 declare the
+#: field (1.3 %), in 23 distinct spellings for 4 states.**  Kept here so a
+#: change to the normaliser cannot silently reclassify one of them.
+MARKOV_CONVENTION_SPELLINGS = {
+    # -- D ----------------------------------------------------------------
+    "D": "D",
+    "D canonical": "D",
+    "D (N = 2)": "D",
+    "D (z = q^3/(q^2+1))": "D",
+    "D  (z = q^3/(q^2+1))": "D",                      # note the double space
+    "D (with C as control)": "D",
+    "D canonical, C carried as control": "D",
+    "D — z_D = q^3/(q^2+1), Wenzl level 2": "D",
+    "D — the ruled functional, z_D = q^3/(q^2+1)": "D",
+    "D (z = q^3/(q^2+1)); C measured for comparison": "D",
+    "D (z = q^3/(q^2+1)) via closed_form_tau_M.markov_z": "D",
+    # -- C ----------------------------------------------------------------
+    "C": "C",
+    # -- both compared; the stamp privileges neither ----------------------
+    "both (C and D compared)": "both",
+    "both, compared — D canonical": "both",
+    "both admissible parameters are evaluated: z = q (level 1, the "
+    "augmentation) and z_D = q^3/(q^2+1) (level 2, convention D)": "both",
+    # -- no Markov parameter enters at all --------------------------------
+    "not applicable": "n/a",
+    "n/a (counit only)": "n/a",
+    "n/a - no Markov parameter z enters": "n/a",
+    "not applicable — no z enters this computation": "n/a",
+    "convention-free — no z is specialised": "n/a",
+    "convention-free — no Markov parameter is specialised": "n/a",
+    "convention-free — z is symbolic; the D pin appears as one root": "n/a",
+    "convention-free — the results hold for every z, and the floor contains "
+    "no Markov parameter at all": "n/a",
+}
+
+
+def _normalise_markov_convention(raw) -> str:
+    """Map a free-text ``markov_convention`` stamp to D / C / both / n/a.
+
+    **Why this exists — a LATENT defect, not a live one.**  The check in
+    :func:`_convention_frame_check` was
+
+        matched = str(conv).strip().upper() == CANONICAL_MARKOV_CONVENTION
+
+    an exact equality against the single character ``"D"``.  Measured
+    2026-10-10 over the 3510 non-``_deprecated`` witnesses: **44 carry the
+    field, in 23 distinct spellings, and only 13 are a bare** ``"D"``.  So ten
+    of the eleven spellings that MEAN convention D — ``"D canonical"``,
+    ``"D (z = q^3/(q^2+1))"``, ``"D (N = 2)"``, ``"D — the ruled functional,
+    …"`` — classified as ``INHERITED_C``: a correctly-stamped *canonical*
+    artifact reported as carrying the *excised* convention, on the dashboard
+    AGENTS.md directs readers to quote for L2 status.
+
+    It has never produced a wrong verdict, because the one cache this dashboard
+    reads (``qbeta-ck-cache.witness.json``) carries the bare ``"C"`` — which
+    the old check got right.  **Zero wrong verdicts is not a sound check**
+    (detector-blindness taxonomy row 34): the moment ``qou-cds1`` lands and
+    that cache is re-stamped with anything longer than one character, the
+    dashboard calls the ruled result convention C.
+
+    **Deliberately conservative.**  An unrecognised spelling returns
+    ``"unparsed"`` — never ``"D"``, never ``"C"`` — so a new spelling fails
+    *loudly* rather than being absorbed into either verdict.  ``"unparsed"`` is
+    **not a clearance**: it means this function has nothing to say, in the same
+    sense as the sibling consumer-control-arm audit's ``unmeasured``.
+    """
+    if raw is None:
+        return "unparsed"
+    s = " ".join(str(raw).split())           # collapse runs of whitespace
+    for spelling, state in MARKOV_CONVENTION_SPELLINGS.items():
+        if s == " ".join(spelling.split()):
+            return state
+    low = s.lower()
+    # Rules below run only after the exact vocabulary misses.  Each is anchored
+    # at the START of the stamp: a mention of C further along is in practice
+    # "C carried as a control", which describes a D-framed computation.
+    if low.startswith(("not applicable", "n/a", "convention-free",
+                       "convention free")):
+        return "n/a"
+    if low.startswith("both"):
+        return "both"
+    if re.match(r"^d\b", low):
+        return "D"
+    if re.match(r"^c\b", low):
+        return "C"
+    return "unparsed"
+
+
 def _convention_frame_check(cache: dict) -> dict:
     """Record the Markov convention a cached Q_β prediction was BUILT in.
 
@@ -346,10 +437,26 @@ def _convention_frame_check(cache: dict) -> dict:
                        "cannot be verified from the artifact alone"),
             "canonical": CANONICAL_MARKOV_CONVENTION,
         }
-    matched = str(conv).strip().upper() == CANONICAL_MARKOV_CONVENTION
+    # The stamp is FREE TEXT -- 23 spellings for 4 states corpus-wide -- so it
+    # is normalised rather than compared character-for-character against "D".
+    # See `_normalise_markov_convention` for the measurement and for why an
+    # unrecognised spelling is reported rather than absorbed into a verdict.
+    state = _normalise_markov_convention(conv)
+    matched = state == CANONICAL_MARKOV_CONVENTION
+    status = {
+        "D": "matched",
+        "C": "INHERITED_C",
+        "both": "both_conventions_compared",
+        "n/a": "no_markov_parameter",
+        "unparsed": "unparsed_stamp",
+    }[state]
     return {
-        "status": "matched" if matched else "INHERITED_C",
+        "status": status,
+        # `INHERITED_C` is the only status any consumer acts on, and only `C`
+        # now reaches it. `unparsed_stamp` is NOT a clearance -- it says this
+        # check has nothing to say about the frame.
         "cache_convention": conv,
+        "cache_convention_normalised": state,
         "canonical": CANONICAL_MARKOV_CONVENTION,
         "cache_note": data.get("markov_convention_note"),
         # Deliberately None, not 0 and not a guess -- see the docstring.
@@ -709,9 +816,35 @@ def _inherited_qbeta_scope(conv: dict, adm: dict,
     Returns None when neither scope applies, so a future state in which the
     ladder is re-derived under D on an admissible functional silently drops
     the note rather than leaving a stale one.
+
+    **That promise did not hold, and the guard below is the repair.** The C
+    note was gated on ``conv["status"] == "INHERITED_C"``, which is a property
+    of ``qbeta-ck-cache.witness.json`` and not of the value this row scores.
+    The cache is a convention-C artifact *by construction* and
+    ``qbeta_ck_cache.py`` raises ``SystemExit(2)`` under D, so that status can
+    never become anything else — the note could never drop, whatever happened
+    downstream. Meanwhile the 2026-09-12 re-score moved ``Q_pred`` onto the
+    ruled ``z_D`` base, so the committed witness carried both notes appended
+    and they contradict each other: "the Q_beta term **was built in Markov
+    convention C** … **not reproducible under the canonical convention**"
+    beside "the Q_beta term **is now** |tr_M(Delta_S)(z_D)|*E0 at
+    z_D = q^3/(q^2+1)". The second is current; the first is superseded and, on
+    this row, false in both of its operative clauses — the value is built at
+    z_D, which *is* the canonical convention.
+
+    So the C note now fires only when the row does **not** rest on the ruled
+    base, i.e. when the scored value genuinely came from the C cache. That is
+    the same condition that selects ``Q_pred`` in the caller, which is what
+    makes it the right one: it keys on the provenance of the number rather
+    than on the convention of a file the number may no longer touch. What
+    remains true under the ruled base — that no ``c_k`` ladder exists on an
+    admissible functional — is already stated, correctly and in full, by the
+    RULED-base note. Bean ``qou-zzwm``.
     """
     parts = []
-    if conv.get("status") == "INHERITED_C":
+    _on_ruled_base = bool(ruled is not None
+                          and ruled.get("calibrated_against_probe_witness"))
+    if conv.get("status") == "INHERITED_C" and not _on_ruled_base:
         parts.append(
             f"INHERITS THE Q_beta CONVENTION FRAME: this value is "
             f"m_p(substrate) + Q_beta + m_e, and the Q_beta term was built in "
@@ -720,7 +853,7 @@ def _inherited_qbeta_scope(conv: dict, adm: dict,
             f"Not reproducible under the canonical convention "
             f"(bean {conv.get('tracked_by')})."
         )
-    if ruled is not None and ruled.get("calibrated_against_probe_witness"):
+    if _on_ruled_base:
         # Re-scored 2026-09-12 on owner authorisation. The note that stood here
         # said the miss "understates the gap by an amount that is NOT yet
         # quantifiable" -- true while the row was on the retired cell, and now
@@ -993,7 +1126,18 @@ def main() -> dict:
             Q_beta_best = Q_pred
             _anchor_note = ""
             _conv_note = ""
-            if qbeta_convention.get("status") == "INHERITED_C":
+            # Same repair as in `_inherited_qbeta_scope`: this note must key on
+            # whether the SCORED VALUE came from the C cache, not on the cache's
+            # own convention. Two lines up, `Q_pred` is the ruled `z_D` base
+            # whenever the calibration holds — built in convention D — so firing
+            # the note on the cache's status printed "this prediction was built
+            # in Markov convention C … UNREPRODUCIBLE under the canonical
+            # convention" over a number built at `z_D = q³/(q²+1)`, which IS the
+            # canonical convention. Both clauses were false of the published row.
+            # What is still true (no `c_k` ladder on an admissible base) is said
+            # by `_adm_note` / the ruled-base note below. Bean `qou-zzwm`.
+            if (qbeta_convention.get("status") == "INHERITED_C"
+                    and not _ruled["calibrated_against_probe_witness"]):
                 _conv_note = (
                     f" ⚠ CONVENTION FRAME: this prediction was built in Markov "
                     f"convention {qbeta_convention['cache_convention']}, which "
@@ -1329,7 +1473,32 @@ def main() -> dict:
         ),
         "rows": rows,
         "anchor_layer_qbeta": qbeta_anchor,
-        "convention_frame_qbeta": qbeta_convention,
+        # `qbeta_convention` describes `qbeta-ck-cache.witness.json`, which is a
+        # convention-C artifact by construction — `qbeta_ck_cache.py` raises
+        # SystemExit(2) under D, so its `status` is pinned at INHERITED_C
+        # forever. Read bare, that looks like a statement about the rows this
+        # dashboard publishes, and since the 2026-09-12 re-score it is not one.
+        # Say which, in the block itself, so a reader does not have to infer it
+        # from `qbeta_ruled_base` three keys away. Bean `qou-zzwm`.
+        "convention_frame_qbeta": {
+            **qbeta_convention,
+            "describes": "qbeta-ck-cache.witness.json (the c_k ladder cache)",
+            "scored_rows_consume_this_cache": not bool(
+                _ruled.get("calibrated_against_probe_witness")),
+            "scored_rows_note": (
+                "The Q_beta / m_n / Delta_pn rows published here are built at "
+                "z_D = q^3/(q^2+1) -- the canonical convention -- on the base "
+                "the owner ruled 2026-09-08, re-scored 2026-09-12. They do NOT "
+                "consume this C cache, so this block records the cache's frame "
+                "and is NOT a caveat on those rows. What IS open is that no "
+                "c_k ladder exists on an admissible base (qou-cds1); see "
+                "qbeta_ruled_base.ladder_on_admissible_base_exists."
+            ) if _ruled.get("calibrated_against_probe_witness") else (
+                "The Q_beta / m_n / Delta_pn rows published here DO consume "
+                "this convention-C cache, so the frame above applies to them "
+                "directly."
+            ),
+        },
         "functional_admissibility_qbeta": _functional_admissibility_check(),
         # EMITTED 2026-09-12. `_qbeta_ruled_base()` computes the element, the
         # E_0 form, the calibration verdict, the four candidate elements and the
@@ -1455,7 +1624,16 @@ if __name__ == "__main__":
     w.add_data("convention_frame_qbeta", out["convention_frame_qbeta"])
     w.add_data("functional_admissibility_qbeta", out["functional_admissibility_qbeta"])
     w.add_data("qbeta_ruled_base", out["qbeta_ruled_base"])
-    if out["convention_frame_qbeta"].get("status") == "INHERITED_C":
+    # Third and last site of the same repair (see `_inherited_qbeta_scope`).
+    # This caveat asserted that the three published rows "were built in Markov
+    # convention C" and are "UNREPRODUCIBLE under the canonical convention".
+    # Since the 2026-09-12 re-score they are built at `z_D = q³/(q²+1)`, so
+    # both clauses are false of what the witness publishes, and the caveat sat
+    # in the same file as `qbeta_ruled_base`, which says so. Gate on the scored
+    # value's provenance, not on the cache's convention. Bean `qou-zzwm`.
+    if (out["convention_frame_qbeta"].get("status") == "INHERITED_C"
+            and not out["qbeta_ruled_base"].get(
+                "calibrated_against_probe_witness")):
         w.add_caveat(
             "Q_β / m_n / Δ_pn rows: these figures were built in Markov "
             "convention C (z = √q/(q+1)), which the owner ruling of "

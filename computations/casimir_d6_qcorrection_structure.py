@@ -55,10 +55,10 @@ from pathlib import Path
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
-from q_parameter import Q_MP as Q  # noqa: E402 (bootstraps qou_substrate path)
+from q_parameter import Q_MP  # noqa: E402 (bootstraps qou_substrate path)
 import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
@@ -78,18 +78,33 @@ def main() -> int:
     )
     builder.set_content_block("conj:casimir-epsilon-vacuum")
 
-    q0 = mp.mpf(str(Q))
+    # Was `mp.mpf(str(Q))` where the import already read `Q_MP as Q` — a decimal
+    # round-trip of an mpf, NOT a float64 lift.  Using Q_MP directly drops the
+    # round-trip and the alias that made the two indistinguishable by grep.
+    q0 = Q_MP
     h = q0 - 1 / q0
     h2 = h * h
 
     # ── 1. minimal braid closures: hyperbolic volume by crossing number ──
     # Known volumes (Thurston / SnapPy); torus closures are non-hyperbolic.
+    # The `vol` column is deliberately NOT uniform in type, and the width of
+    # each entry records how well the datum is known: `fmt`-serialized strings
+    # for the values this file computes or knows exactly, a bare 6-figure float
+    # for the one that is only cited to 6 figures.
+    VOL_ZERO = fmt(mp.mpf(0))   # exact: a torus closure has Vol = 0 identically
     closures = [
-        {"knot": "unknot 0_1", "braid": "1", "crossings": 0, "vol": 0.0, "hyperbolic": False, "type": "trivial"},
-        {"knot": "Hopf 2_1²", "braid": "σ₁²", "crossings": 2, "vol": 0.0, "hyperbolic": False, "type": "torus (2,2)"},
-        {"knot": "trefoil 3_1", "braid": "σ₁³", "crossings": 3, "vol": 0.0, "hyperbolic": False, "type": "torus (2,3)"},
-        {"knot": "figure-8 4_1", "braid": "σ₁σ₂⁻¹σ₁σ₂⁻¹", "crossings": 4, "vol": float(2 * mp.clsin(2, mp.pi / 3)), "hyperbolic": True, "type": "HYPERBOLIC (minimal)"},
-        {"knot": "5_1", "braid": "σ₁⁵", "crossings": 5, "vol": 0.0, "hyperbolic": False, "type": "torus (2,5)"},
+        {"knot": "unknot 0_1", "braid": "1", "crossings": 0, "vol": VOL_ZERO, "hyperbolic": False, "type": "trivial"},
+        {"knot": "Hopf 2_1²", "braid": "σ₁²", "crossings": 2, "vol": VOL_ZERO, "hyperbolic": False, "type": "torus (2,2)"},
+        {"knot": "trefoil 3_1", "braid": "σ₁³", "crossings": 3, "vol": VOL_ZERO, "hyperbolic": False, "type": "torus (2,3)"},
+        # Vol(4_1) = 2·Cl₂(π/3), serialized at full width: it is COMPUTED here,
+        # so a float() cast would have thrown away digits mp.clsin produced.
+        {"knot": "figure-8 4_1", "braid": "σ₁σ₂⁻¹σ₁σ₂⁻¹", "crossings": 4, "vol": fmt(2 * mp.clsin(2, mp.pi / 3)), "hyperbolic": True, "type": "HYPERBOLIC (minimal)"},
+        {"knot": "5_1", "braid": "σ₁⁵", "crossings": 5, "vol": VOL_ZERO, "hyperbolic": False, "type": "torus (2,5)"},
+        # Vol(5_2) stays a 6-digit JSON float ON PURPOSE. It is a CITED SnapPy
+        # value, not a truncated mpf: there is no closed form here to compute it
+        # from, so `fmt` would pad 2.82812 out to 60 places of zeros and claim a
+        # precision the source does not have. A float64 that round-trips its own
+        # shortest repr is the honest record of a 6-significant-figure datum.
         {"knot": "5_2", "braid": "σ₁²σ₂σ₁⁻¹σ₂", "crossings": 5, "vol": 2.82812, "hyperbolic": True, "type": "hyperbolic"},
     ]
     first_hyp = next(c for c in closures if c["hyperbolic"])
@@ -109,9 +124,9 @@ def main() -> int:
     # ── 3. substrate anchor: Vol(4_1) fixes q0 ──
     vol_41 = 2 * mp.clsin(2, mp.pi / 3)
 
-    builder.add_parameter("substrate_q", float(q0))
-    builder.add_parameter("h2_substrate", float(h2))
-    builder.add_parameter("Vol_4_1", float(vol_41))
+    builder.add_parameter("substrate_q", fmt(q0))
+    builder.add_parameter("h2_substrate", fmt(h2))
+    builder.add_parameter("Vol_4_1", fmt(vol_41))
 
     builder.add_data(
         "minimal_closures_volume_table",
@@ -191,8 +206,11 @@ def main() -> int:
     print(f"q0={float(q0):.8f}  h²={float(h2):.6f}  Vol(4_1)={float(vol_41):.6f}")
     print("minimal closures (crossings → Vol, hyperbolic?):")
     for c in closures:
+        # float() is DISPLAY-ONLY (AGENTS.md): `vol` is now a decimal string
+        # for every row but 5_2, so this is a parse for the format spec and no
+        # arithmetic uses its result.
         print(f"  {c['knot']:<14} {c['braid']:<14} n={c['crossings']} "
-              f"Vol={c['vol']:.4f} hyp={c['hyperbolic']}  [{c['type']}]")
+              f"Vol={float(c['vol']):.4f} hyp={c['hyperbolic']}  [{c['type']}]")
     print(f"\nfirst hyperbolic mode = {first_hyp['knot']}  (= substrate-defining knot)")
     print(f"q-weight J_4_1(q0) = {mp.nstr(J,12)} = 1 + (3/4)h² + O(h⁴)")
     print(f"  exact leading coef = 3/4; identity J = h²+3−√(h²+4): {identity_ok}")

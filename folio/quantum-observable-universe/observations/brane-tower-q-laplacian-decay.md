@@ -4,7 +4,7 @@ $$
 $$
 *The tower sum converges absolutely. It is dominated by the local contribution.*
 
-**Bound.** For $q^{1/2} + q^{-1/2} > 2$ and bounded $L^2$ norm:
+**Bound.** For $1 < q < q_*$, where $q_* \approx 1.2$ is the edge of the range on which the proof's geometric series converges (this range contains $q_0 \approx 1.110$), and bounded $L^2$ norm:
 $$
   \boxed{\;
   \bigl|\,T(\rho) - \hbar_q^2 \,\Delta^{(1)}(\rho)\,\bigr|

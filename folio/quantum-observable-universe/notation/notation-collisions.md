@@ -58,9 +58,25 @@ A handful of common letters carry overloaded meanings in the literature. We enfo
       (`computations/eigenvalue_reeb_extension_h4_h5.py`,
       `atom-word-braid-letter-census.witness.json`). The corpus *asserts* the
       first two are equal — [thurston-relaxation](#sec:thurston-relaxation)
-      calls it the "GB-PL bijection" — but the carrier it names for that,
-      `prop:jet-gb-pl-correspondence`, has **no file in the tree**, so the
-      identification is currently unsupported rather than merely unproved.
+      calls it the "GB-PL bijection" — and names **no carrier at all** for it:
+      that parenthetical is bare prose, with no label and no link of its own, so
+      the assertion cannot be reached by grepping for any block. **Scoped on an
+      owner ruling, 2026-10-10:** that line now says the identification is
+      asserted rather than established and carries the tier of
+      `conj:algebraic-geometric-dilog-equivalence`, whose clause (1) rests on it.
+      Read the link that now appears there carefully — it points at the
+      conjecture that *depends* on the identification, not at a carrier *for* it,
+      so the absence this entry records is unchanged. The label the
+      dated audits record for it, `prop:jet-gb-pl-correspondence`, resolves to
+      **no file in the tree** (and to no witness: the
+      `jet-gb-pl-correspondence.witness.json` that
+      `docs/audits/2026-05-18-compute-integration-sweep.md` lists is absent
+      too); both audits place it at
+      `content/quantum-observable-universe/descartes-universe/`, a directory
+      that no longer exists. So the identification is currently unsupported
+      rather than merely unproved — the ruling scoped how it is *stated*, and
+      decided no mathematics — and this entry is the only live site that names
+      the label, which it does solely to record the absence.
       Never write a bare $n$ in this arc.
 
     - **tower depth** $N$ — the brane-tower truncation index, as in $\mathfrak{E}_0^{(N)}$ and $N_v = 120\,q_0^{90}$. This is the one sense the register already carried, inside the energy row of the fraktur table, where nothing marked it as a claim on the word.
@@ -91,7 +107,7 @@ A handful of common letters carry overloaded meanings in the literature. We enfo
 - **$u$** = LP shadow-price $u_\lambda, u_0$ (Schrijver convention for operator-selection LP dual variables, see Table 3 row 15) or the $Q_\beta$ precision-ladder step variable $u_{\text{ladder}} = b\,\hbar_q^2$ with $Q_\beta = Q_{\text{base}} \prod_k (1 + c_k\,u_{\text{ladder}}^k)$, $b$ the Hoefsmit coupling and $\hbar_q = (q-1)/q$. At $q_0$, $u_{\text{ladder}} \approx 0.00852$. We do not use the Habiro convention $u = q^{1/2}$. We write the Habiro-ring expansion as $\mathrm{tr}_M = \sum_m a_m(\check{q})\,(\check{q};\check{q})_m / D(\check{q})$ with $\check{q}$ the spinor rate above. When a compute script uses BOTH the ladder step and either the LP shadow-price $u_\lambda$ or the older Habiro $u$, the ladder variable must be spelled `u_ladder` to keep contexts unambiguous. Single-context scripts may keep bare `u` when an in-script comment annotates which meaning applies (`u = sqrt(q)` for Habiro-facing scripts is permitted when accompanied by `# = \check{q}, spinor rate` annotation).
 - **"Borel"** = three unrelated senses, never to be cross-linked: (i) the Lie-theoretic **Borel subalgebra** (Armand Borel) of the $q$-oper chapter ([`def:q-oper`](../q-geometric-langlands/q-oper.md)); (ii) the K-theoretic **Borel regulator** (Armand Borel, 1977) of [`prop:borel-partial-resolution`](../appendix-surreals/borel-partial-resolution.md) and [`conj:borel-zagier-qou-volumes`](../predicted-spectra/borel-zagier-qou-volumes.md) — the only "Borel" in the definition index before 2026-07; (iii) **Écalle–Borel resummation** (Émile Borel) — the Borel transform $\mathcal{B}$, lateral/median Laplace–Borel sums, alien derivatives $\Delta_\omega$ ([`def:ecalle-borel-resummation`](../appendix-surreals-archimedean/ecalle-borel-resummation.md)). Resummation statements bear neither on regulator transcendence (ℚ-linear independence of volumes) nor on flag/oper data; conflating the senses is a notation violation.
 - **$\ell$** = Wenzl principal-specialisation length (number of points in $s_\lambda(1, q^2, \ldots, q^{2(\ell-1)})$). Older text writes $r_W$ for this quantity.
-- **$\mathcal{A}$ vs $\mathcal{B}_K$ — two different braids, historically both called "the atomic braid" and both written $\mathcal{A}$.** $\mathcal{A} \in H_{A+Z}(q)$ is the **neutral atom**: $Z$ protons, $N$ neutrons and $Z$ **electrons** on $A + Z$ strands, with the six crossing types of [`def:atomic-braid`](../knots-particles-confinement/atomic-braid.md) including the three electronic ones ($\mathfrak{p}e$, $\mathfrak{n}e$, $ee$). $\mathcal{B}_K \in H_{3A}(q)$ is the **electron-free nuclear core** — three quark strands per nucleon, no electron content — and keeps the entry it already has in Table 3. They are not two conventions for one object: $H_{A+Z}$ cannot hold the $3A$ word at any $A$ (the proton's word needs $3$ strands and $A+Z$ gives it $2$), and $A+Z < 3A$ strictly for every $Z \geq 1$. **Owner ruling, 2026-09-12: $\mathcal{A}$ is the $A+Z$ object; a $3A$ element is written $\mathcal{B}_K$ and never $\mathcal{A}$.** The ruling is a *scoping* decision, not a rename — no call site moves, because the $3A$ object already has its own registered symbol. Decided on the recorded $\Phi_3$ column of the $Z=1$–$20$ mass table, which the $A+Z$ strand content reproduces on $19$ of $19$ rows parameter-free while the nucleon-only, $3A$ and $3A+Z$ contents each reproduce $0$ ([audit](../../../docs/audits/2026-09-12-phi3-column-discriminates-the-strand-count.md), bean `qou-jgg0`). **A third count $3A+Z$ remains live and unresolved** in [`mass-endomorphism/atomic-mass-gb-nf.md`](../mass-endomorphism/atomic-mass-gb-nf.md), which cites `def:atomic-braid` while using a count that definition contradicts; the ruling above does not settle it.
+- **$\mathcal{A}$ vs $\mathcal{B}_K$ — two different braids, historically both called "the atomic braid" and both written $\mathcal{A}$.** $\mathcal{A} \in H_{A+Z}(q)$ is the **neutral atom**: $Z$ protons, $N$ neutrons and $Z$ **electrons** on $A + Z$ strands, with the six crossing types of [`def:atomic-braid`](../knots-particles-confinement/atomic-braid.md) including the three electronic ones ($\mathfrak{p}e$, $\mathfrak{n}e$, $ee$). $\mathcal{B}_K \in H_{3A}(q)$ is the **electron-free nuclear core** — three quark strands per nucleon, no electron content — and keeps the entry it already has in Table 3. They are not two conventions for one object: $H_{A+Z}$ cannot hold the $3A$ word at any $A$ (the proton's word needs $3$ strands and $A+Z$ gives it $2$), and $A+Z < 3A$ strictly for every $Z \geq 1$. **Owner ruling, 2026-09-12: $\mathcal{A}$ is the $A+Z$ object; a $3A$ element is written $\mathcal{B}_K$ and never $\mathcal{A}$.** The ruling is a *scoping* decision, not a rename — no call site moves, because the $3A$ object already has its own registered symbol. Decided on the recorded $\Phi_3$ column of the $Z=1$–$20$ mass table, which the $A+Z$ strand content reproduces on $19$ of $19$ rows parameter-free while the nucleon-only, $3A$ and $3A+Z$ contents each reproduce $0$ ([audit](../../../docs/audits/2026-09-12-phi3-column-discriminates-the-strand-count.md), bean `qou-jgg0`). **A third count $3A+Z$ was resolved on 2026-10-10 (owner choice B1, bean `qou-jgg0`):** [`mass-endomorphism/atomic-mass-gb-nf.md`](../mass-endomorphism/atomic-mass-gb-nf.md) had written $\mathcal{B}_K \in B_{3A+Z}$ while citing `def:atomic-braid`. It now states $\mathcal{B}_K$ on $3A$ strands, the count its own producer uses, and names $\mathcal{A}$ only as the object $\mathcal{B}_K$ is the core of.
 - We do not use numerical $q \approx 1.110$ (or any specific value of the substrate parameter) outside the introduction, Chapter 8 (Information Theory, for falsifiability computations), and Chapter 11 (Observations). Geometry chapters use symbolic $q$.
 
 **Approximation convention (derived / observed values).** Numerical values derived from the substrate parameter $q_0$ or compared to experimental data use $\approx$ (or $\simeq$), never $=$, unless an explicit error term is present. Exact algebraic identities (e.g. $c_q = 1/(q-1)$) use $=$ since they hold for all $q$.
@@ -409,3 +425,33 @@ conclusion that the phrase is pervasively ambiguous. They do not support it —
 reader cannot tell. Three separate samples of that bucket turned out to be
 plainly clear linear-algebraic and representation uses. If you re-measure, count
 the **bare** uses whose own sentence leaves the sense open; that number is small.
+
+## Demand magnitude: always $|\mathrm{dem}|$, never $|\mathrm{def}|$
+
+[`def:demand-profile`](#def:demand-profile) defines, for a derived atom in
+normal form $\mathcal{A}(Z,N) = \sum_w c_w \cdot w$,
+
+$$
+  \mathrm{dem}(\mathcal{A}) = \{(w, c_w) : c_w < 0\},
+  \qquad
+  |\mathrm{dem}| = \sum_{c_w < 0} |c_w| ,
+$$
+
+the sum of the negative normal-form coefficients. **That quantity has one
+name.** The spelling $|\mathrm{def}|$ ("deficit") carried the same meaning in two
+example blocks — `ex:li6-derived-nf` and `ex:o16-derived-nf`, where $|def| = 0$
+was justified by *"all coefficients positive"*, which is $|\mathrm{dem}| = 0$
+under the definition above — while appearing in no definition anywhere. Both are
+migrated; use $|\mathrm{dem}|$.
+
+**The prose word "deficit" is not banned**, and the distinction matters when
+reading older blocks: *deficit-free*, *deficit closure* and *the periodic table
+deficit conjecture* are English for the same condition. What
+is banned is the **symbol** $|\mathrm{def}|$, because a reader meeting it has no
+definition to resolve it against.
+
+Why it is recorded here rather than left as a one-token fix: the two spellings
+were not in competition. $\mathrm{dem}$ occurs in five `.md` files, including the
+three `demand-*` blocks that define and consume it; $\mathrm{def}$ occurred in
+two, and **neither symbol appeared in the register**, so nothing would have
+caught a third spelling either.

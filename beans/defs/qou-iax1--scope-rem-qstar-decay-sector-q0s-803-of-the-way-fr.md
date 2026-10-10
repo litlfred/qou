@@ -1,13 +1,13 @@
 ---
 # qou-iax1
 title: 'SCOPE: rem-qstar-decay-sector-q0''s ''80.3% of the way from proton to muon'' is convention-C; under D q* leaves the anchor interval entirely'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T16:55:28Z
-updated_at: 2026-10-04T15:24:21Z
+updated_at: 2026-10-10T10:40:00Z
 parent: qou-avtq
 ---
 
@@ -68,3 +68,28 @@ WHAT STANDS, unchanged: the CONVENTION finding. With the correct constants,
 C->D displacement 2.551e-4 = 19921.5 gaps, which is 690,000x the constant-choice artifact. The block sentence placing the landmark between the anchors remains CONVENTION-C-FRAME.
 
 REMAINING ACTION is now SMALLER than I said: no figure refresh is needed. Only the convention scoping, and that still wants a D re-derivation (qou-cds1) rather than a z-swap.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: DONE.** Done: the block now scopes the 80.3 % placement as convention C (683febd8ee). A genuine D-frame q* waits on qou-cds1 and is not this bean's task.
+
+Evidence: Commit 683febd8ee scoped the sentence. `rem-qstar-decay-sector-q0.md` lines 7 and 15–41 carry "convention-C-frame placement" plus a Convention note with a C/D table. Probe `computations/qbeta/qstar_anchor_interval_convention_probe.py` exists. The bean's own retraction (80.3 % is faithful) stands.
+
+Status: `todo` → `completed`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+
+## 2026-10-10 — a witness this bean cites is red (cross-cluster check, verification sweep of `qou-avtq`)
+
+q* reproduces, but the cited witness `qbeta-c3-imq-qstar-ladder-amplification.witness.json` (2026-08-29, no q0Anchor) fails its own `anchors_reproduced_exactly` (0 vs 1). That fits the bean's C-frame scoping, but do not quote the witness as green.
+
+## 2026-10-10 — follow-up review (re-check of the `qou-avtq` sweep flags)
+
+**Cause R2 — the muon pin moved from CODATA 2018 to 2022.** `q_muon_at` is now 1.10997859564274 (was …5557, Δ = 8.5e-11), which moves S(muon) by 3.399e-4 — exactly the miss of `anchors_reproduced_exactly` against the literal at `qbeta_c3_imq_qstar_ladder_amplification_probe.py:82`. Stale reference value, not a mathematical defect.
+
+Re-run gives q* = 1.109978593031523 at 79.744 %. `rem-qstar-decay-sector-q0.md` still says 80.3 %, its table (lines 26–27) prints 1.10997859340… and 1.11023370740… (values this bean retracted), and its interval width 1.281e-8 and gap count 19,921 are CODATA-2018 figures.
+
+**Open steps:** fix the block values; refresh the muon literal (code, needs owner OK).
+
+Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-up: `qou-review/avtq-reopened-beans-2026-10-10.md` (project files). Status unchanged.

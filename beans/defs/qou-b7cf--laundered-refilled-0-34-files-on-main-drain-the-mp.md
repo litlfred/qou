@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-03T12:46:17Z
-updated_at: 2026-10-04T15:13:11Z
-parent: qou-cdx1
+updated_at: 2026-10-10T07:55:51Z
+parent: qou-9nnz
 ---
 
 ## State (2026-09-03, PR #6489, branch claude/laundered-sweep-2026-09-03)
@@ -302,3 +302,12 @@ quoted a number from a report I had narrowed myself.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 re-audit verdict: **REPARENT** (bean `qou-am5t`)
+
+Not a convention question. `mpf(str(f64))` laundering is the float64 axis
+(`qou-840k` family); its subject is precision loss, not the Markov parameter.
+Keep open, re-home off `qou-cdx1`.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

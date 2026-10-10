@@ -85,11 +85,15 @@ particular weight system does not supply `m`.
 
 It closes something wider, and that is the part worth carrying forward. Any
 weight system arising from a trace that VANISHES on non-identity braid elements
-yields `z = 0` by the same one-line argument. The interface needs a trace with a
-Markov property; the regular trace is explicitly not one. So the search should
-be restricted to Markov traces (or their deformations) from the outset, which
-excludes the whole regular-trace/Plancherel family — including, by the same
-argument, the classical `q → 1` Plancherel measure `(dim λ)²/n!`.
+yields `z = 0` by the same one-line argument. CORRECTED 2026-10-10 (bean
+`qou-we2d`): this used to say the regular trace "is explicitly not" a Markov
+trace. It IS one, with parameter `z = 0` — `x·σ_n` has no identity component,
+so `τ(x·σ_n) = 0 = 0·τ(x)` — and its weights are the Molien weights
+(`QOU.SchurWeyl.MolienSymmetrisingTrace`). What the interface needs is a Markov
+trace with `z ≠ 0`, so the search should be restricted to Markov traces with
+non-zero parameter, which excludes the whole regular-trace/Plancherel family —
+including, by the same argument, the classical `q → 1` Plancherel measure
+`(dim λ)²/n!`. The conclusion is unchanged; only the reason was misstated.
 
 **(4) The corpus's own "q-Plancherel" is a different deformation, and it is
 not normalized.** `computations/deltalambda/` uses

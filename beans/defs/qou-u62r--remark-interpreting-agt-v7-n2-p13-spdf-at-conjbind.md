@@ -1,13 +1,13 @@
 ---
 # qou-u62r
 title: Remark interpreting agt-v7-n2-p13-s.pdf at conj:binding-qbeta-complex-volume
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:36:20Z
-updated_at: 2026-10-04T15:23:56Z
+updated_at: 2026-10-10T07:26:05Z
 parent: qou-aqfj
 ---
 
@@ -28,3 +28,10 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Quantum hyperbolic geometry
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [baseilhac-benedetti2007] as the citation key when you do it.
+
+
+## 2026-10-10 — pointer
+
+Tracked under carrier M14 (qou-9w2m) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+## 2026-10-10 — Done in issue litlfred/qou#7552: 'Literature' bullet added to `binding-qbeta-complex-volume.md` citing `\cite[\S6, Thm.~6.4]{baseilhac-benedetti2007}` (QHFT H_N, N=1 = Cheeger-Chern-Simons), stating V is only conjecturally such a volume.

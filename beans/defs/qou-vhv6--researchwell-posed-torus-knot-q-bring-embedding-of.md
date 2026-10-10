@@ -6,8 +6,9 @@ type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - 8f-flavour
 created_at: 2026-08-02T13:22:15Z
-updated_at: 2026-10-04T15:24:03Z
+updated_at: 2026-10-10T07:15:50Z
 parent: qou-8lxd
 ---
 

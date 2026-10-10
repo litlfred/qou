@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T12:42:32Z
-updated_at: 2026-10-04T15:11:38Z
+updated_at: 2026-10-10T07:47:11Z
 parent: qou-cdx1
 ---
 
@@ -518,3 +518,161 @@ per `qou-4bq3`.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 🛑 TITLE IS STALE BY ~30× — re-measured 2026-10-10 (bean `qou-am5t`)
+
+This bean's title reads **"174 py + 61 lean + tools/ Rust"**, and `qou-cds2`
+names this bean as *"the canonical ledger for the convention-C excision
+family"*. So a reader who follows that pointer to find the state of the
+migration gets the worst available answer. Measured today on `main`
+`77695711d`:
+
+| surface | this title | **measured 2026-10-10** | command |
+|---|---|---|---|
+| Python, blocking | 174 | **0** | `convention-c-value-audit.py` |
+| Python, actionable by shape | — | 13 (12 probes + 1 producer) | `convention-c-producer-audit.py` |
+| Lean, actionable | 61 | **0** (23 C defs, all deliberate) | `lean-markov-convention-audit.py` |
+| `tools/` Rust | "Rust" | **0 live** (only `archive/v2.rs`) | by hand — no audit scans `.rs` |
+| witnesses | — | 0 structural, 1 symbolic | `convention-c-witness-audit.py` |
+
+`BLOCKING` was 6 this morning and is **0** as of `e6a5d23e9`: the six were read
+and adjudicated into `docs/audits/convention-c-comparison-ledger.json` (137 →
+143 entries) as two-convention comparison arms, with a rationale each.
+
+**What is actually left is one producer and one research question**, not a
+drain:
+
+- `computations/qbeta/qbeta_ck_cache.py:140` — the canonical `c_k` producer, the
+  only non-probe production file still on C, and the `qbeta-decay` channel
+  (registry: definitional D, production **C**, `agreed-migration-pending`).
+- It is **not drainable by substituting `z_D`** —
+  `QOU.QBeta.decayLadder_zC_threeRow_ne_zero`, sorry-free.
+- And it is **not blocked on the ladder phase `α`** (`qou-pdix`), which the
+  corpus asserted in two places until 2026-09-14: `cos ≤ 1` caps the N=2 factor
+  at `1 − u² = 0.99992745` for every real `α`, while the ruled `z_D` base needs
+  `F_required = 1.759` (order-zero `E₀`) or `1.200` (the dashboard-scored cell).
+  No `α` reaches either. The live question is what object supplies a factor
+  above 1 at all.
+
+**Status proposal, not enacted:** this bean's *claim* — that the excision is
+incomplete at that scale — is measurably false, and its role as the family's
+canonical ledger is now served by
+[`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md),
+which carries the command for every number. I have **not** changed the status or
+the title: retitling a bean whose body is an append-only ledger of a campaign
+would rewrite the record of what the campaign believed, and the owner's call is
+whether this becomes `completed` with the residual re-homed on `qou-cds1`, or
+stays open as the family root with a corrected title. Nothing downstream depends
+on the answer — the status doc is the thing readers should be pointed at either
+way.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+See the dedicated 2026-10-10 append on this bean: title stale by ~30x (174 py
++ 61 lean vs a measured 0/0), residual is one producer plus `qou-cds1`. Left
+open deliberately -- retitling an append-only campaign ledger rewrites what
+the campaign believed; status is an owner call.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+## 2026-10-10 re-measure on `main` `606d034db2`: 3 of 4 CRITICALs fixed; the 4th is live and invisible
+
+Every claim below is measured against `main`, not read off a sibling bean.
+
+### The four CRITICALs
+
+| # | site | state |
+|---|---|---|
+| 1 | `computations/borromean_binding_recompute.py` HYBRID | **FIXED** — the same day this bean was opened |
+| 2 | `observations/neutron-proton-mass-splitting.lean` C in the INTEGERS | **🛑 LIVE** |
+| 3 | `computations/y_lambda_wenzl_bridge.py` HYBRID | **FIXED** |
+| 4 | `computations/hecke/hecke_symbolic.py:46` `Z_SYMB` default arg | **FIXED** |
+
+1. `_params` now reads `E0 = me/(q*(q-1)); z = q**3/(q**2+1)`, with a docstring
+   headed *"CONVENTION-HYBRID BUG, fixed 2026-08-09 (bean qou-wgta item 1)"* —
+   so item 1 was fixed on the day this bean was filed and the bean never
+   recorded it.
+3. `y_lambda_wenzl_bridge.py:30` declares *"This module is **convention D**,
+   z = q³/(q²+1)"*, and `markov_z_numeric` returns `q**3/(q**2+1)`.
+4. `hecke_symbolic.py:60` is `z_markov = q**3 / (q**2 + 1)  # convention D`,
+   and it is still the default `Z_SYMB`, so the ~20 call sites that omit `z` now
+   silently get **D**.
+
+### Item 2 is live, and it is the one no detector can see
+
+This is the bean's own strongest claim and it holds. The convention is **not a
+`z` symbol** — it is a rational folded into integer coefficients:
+
+    quarkPhiClosedForm "uud" = log |(4993·q₀² + 20000·q₀ − 4993)
+                                  · (5000·q₀² − 4993·q₀ − 5000) / (2·10⁸ q₀²)|
+
+`4993/10000 = 0.4993` is the rounded `z_C = √q/(q+1) = 0.4993203342` at `q₀`;
+the coefficients are `10000·(z q² + 2q − z)`, `5000·(q² − 2z q − 1)` and
+`10000·(q² − z q − 1)`. There is no `z`, no `Real.sqrt`, no `markovZ`.
+
+**Confirmed invisible, by running the detectors rather than reasoning about
+them:**
+
+| detector | on this file |
+|---|---|
+| `scripts/lean-markov-convention-audit.py` | does not name it (**23** C defs found, **0 actionable**, 23 deliberate) |
+| `scripts/convention-c-value-audit.py` | 0 — does not scan `.lean` |
+| `scripts/convention-c-producer-audit.py` | 0 — does not scan `.lean` |
+| any detector keyed on the literal | none knows `4993`; the producer audit knows the *decimal* `0.4993203342` and has a selftest for it |
+
+A structural scan of the whole tree for this spelling (a standalone `4993`/`9986`
+integer token adjacent to a `q` power, so decimals like `0.4993203342` are
+excluded) finds **one `.lean` declaration and its provenance audit doc, and
+nothing else** — so it is narrow, not a class. Recorded as **row 54** of the
+detector-blindness taxonomy.
+
+### What it publishes, and both frames
+
+`splitting_value : abs (massSplitting 3.7445 - 1.302) < 0.001` is **sorry-free**
+and is the framework's published n–p splitting against CODATA. Re-derived at
+50 dps, with the harness **calibrated against the file's own rounded
+`quarkPhi` constants first** (`Φ(uud)` 5.08e-5, `Φ(udd)` 6.19e-5 — both inside
+the docstring's own claimed ~5e-5, and the calibration caught a `log 2` error in
+my first reconstruction before any number was reported):
+
+| frame | `z` | `\|ΔΦ\|` | `Δm` (MeV) | vs CODATA `1.29333217` | the theorem |
+|---|---|---|---|---|---|
+| **C, as published** | `4993/10000` | `0.3476040278` | `1.301603282` | **+0.64 %** | **HOLDS** (`3.967e-4 < 1e-3`) |
+| **D, canonical** | `q³/(q²+1)` | `0.2815089929` | `1.054110424` | **−18.5 %** | **FAILS** (`0.2479`, **248×** its tolerance) |
+
+`z_C → z_D` moves `|ΔΦ|` by **−19.01 %**. The bean predicted the theorem would
+fail under D; it does, by 248×.
+
+### Scope, and what must NOT be done
+
+**Scope-(a).** Nothing here excludes the quark-ordering-volume route — no proved
+invariant forbids a traced volume from carrying the splitting. And the C frame's
+closer agreement is **not** evidence for C: it was obtained in the excised
+convention, and picking a trace convention by its residual is precisely what
+§NO FITTING forbids. **Do not substitute `z_D` into these coefficients to
+"improve" the number.** The re-derivation is real work and is not done here.
+
+**Done here:** the `.md` carries the frame in its statement, the `.lean`
+docstrings carry it on both `quarkPhiClosedForm` and `splitting_value`, and the
+tracking material sits in `authorNotes` where §4d puts it. Verified rather than
+assumed — `scripts/lean-content-sweep.sh` **RED 0**, sorry-free, **zero
+declaration lines touched**; `qa-sweep` cleared a `[major]
+voice-author-notes-pollution` my first draft of the prose note earned (an ISO
+date and a bean ID in body prose), which is why the split exists.
+
+### The headline counts are stale, and one is a category error
+
+| the headline | today |
+|---|---|
+| 174 live Python files on C | `convention-c-value-audit.py` (by VALUE, not shape): **85** bindings in `computations/`; shape audit **9–13 actionable** |
+| 61 Lean files on C | **23 defs, 0 actionable, 23 deliberate** — and item 2 is in *none* of them |
+| 49 content `.md`/`.ts` | **3** live unscoped (2026-08-29), now 2 with item 2's `.md` scoped |
+| 3 convention HYBRIDS | **0** — items 1 and 3 were two of the three |
+| "a SHIPPED PYTHON PACKAGE" | **not shipped.** `qou-mass` 404s on PyPI, has no `dist/` and no publish step; AGENTS.md corrects this |
+
+**Re-scoped.** The P0 framing was right about the one thing that mattered — a
+convention-C constant feeding a published CODATA comparison — and that is now
+scoped rather than silent. What remains is the `z_D` re-derivation of
+`quarkPhiClosedForm`, which is mathematics, not a sweep.

@@ -160,4 +160,88 @@ theorem decuplet_ne_quadruplet :
   rw [decuplet_dim, quadruplet_dim]
   decide
 
+
+/-! ### The `N = 2` quartet is the isospin-3/2 ladder
+
+`quadruplet_dim` says the symmetric channel at `N = 2` is *four-dimensional*. That is a
+count, and a count does not say the four states are the `Δ(1232)` isospin quartet. This
+section supplies the label: the third isospin component, and the four facts that make it
+a faithful one.
+
+With index `0 = u` and `1 = d` (the convention `weightDiagram`'s own docstring fixes),
+`u` carries `I₃ = +1/2` and `d` carries `I₃ = -1/2`, so a degree-3 monomial carries
+`I₃ = (n_u - n_d)/2`. Everything below is stated on the doubled value `2I₃ = n_u - n_d`,
+to stay in `ℤ` and keep the statements free of division.
+
+Nothing here is archimedean and nothing needs the base ring, so these are `ℕ`/`ℤ`
+statements (§7c).
+
+**The contrast with `N = 3` is deliberate and is NOT proved here.** At three flavours
+`I₃` alone is not a faithful label — strangeness is a second independent coordinate, and
+`Σ*⁰` and `Λ`-like states share an `I₃`. That is the decuplet's business and is gated on
+`N = 3` existing at all. -/
+
+/-- A weight-diagram point at two flavours has quark counts summing to the degree. -/
+theorem coordSum_of_mem {w : Fin 2 →₀ ℕ} (hw : w ∈ weightDiagram 2 n) :
+    w 0 + w 1 = n := by
+  have h : w.degree = n := hw
+  rwa [Finsupp.degree_eq_sum, Fin.sum_univ_two] at h
+
+/-- **Twice the third isospin component**, `2I₃ = n_u - n_d`. Doubled so that the
+half-integer weights of a fermionic multiplet are integers. -/
+def twoI3 (w : Fin 2 →₀ ℕ) : ℤ := (w 0 : ℤ) - (w 1 : ℤ)
+
+/-- The `k`-th point of the degree-3 two-flavour diagram: `u^(3-k) d^k`. -/
+noncomputable def quartetPoint (k : Fin 4) : Fin 2 →₀ ℕ :=
+  Finsupp.single 0 (3 - (k : ℕ)) + Finsupp.single 1 (k : ℕ)
+
+/-- Each `quartetPoint` really is a point of the diagram. -/
+theorem quartetPoint_mem (k : Fin 4) : quartetPoint k ∈ weightDiagram 2 3 := by
+  show (quartetPoint k).degree = 3
+  rw [Finsupp.degree_eq_sum, Fin.sum_univ_two]
+  simp only [quartetPoint, Finsupp.add_apply, Finsupp.single_eq_same,
+    Finsupp.single_eq_of_ne, ne_eq, zero_ne_one, not_false_eq_true,
+    one_ne_zero]
+  omega
+
+/-- **The ladder is attained.** `2I₃` on the four diagram points runs `3, 1, -1, -3`.
+Together with `twoI3_mem_ladder` this makes the value set exactly those four. -/
+theorem twoI3_quartetPoint (k : Fin 4) : twoI3 (quartetPoint k) = 3 - 2 * (k : ℤ) := by
+  unfold twoI3 quartetPoint
+  simp only [Finsupp.add_apply, Finsupp.single_eq_same, Finsupp.single_eq_of_ne,
+    ne_eq, zero_ne_one, not_false_eq_true, one_ne_zero]
+  omega
+
+/-- **The ladder is closed.** Every point of the degree-3 two-flavour diagram carries one
+of the four isospin-3/2 weights. -/
+theorem twoI3_mem_ladder {w : Fin 2 →₀ ℕ} (hw : w ∈ weightDiagram 2 3) :
+    twoI3 w = 3 ∨ twoI3 w = 1 ∨ twoI3 w = -1 ∨ twoI3 w = -3 := by
+  have h := coordSum_of_mem hw
+  have h1 : w 1 ≤ 3 := by omega
+  unfold twoI3
+  interval_cases hv : (w 1) <;> omega
+
+/-- **The weights are half-integral**, i.e. `2I₃` is odd at every point. This is the
+statement that distinguishes a fermionic multiplet, and it is degree-dependent: at even
+degree the same construction gives even `2I₃`. -/
+theorem twoI3_odd {w : Fin 2 →₀ ℕ} (hw : w ∈ weightDiagram 2 3) : ¬ (2 ∣ twoI3 w) := by
+  have h := coordSum_of_mem hw
+  unfold twoI3
+  omega
+
+/-- **The label is faithful.** Distinct points of the diagram carry distinct `I₃`, so the
+four-dimensionality of `quadruplet_dim` is a count of four *isospin-labelled* states and
+not merely of four basis vectors. -/
+theorem twoI3_injOn : Set.InjOn twoI3 (weightDiagram 2 3) := by
+  intro v hv w hw h
+  have hv' := coordSum_of_mem hv
+  have hw' := coordSum_of_mem hw
+  unfold twoI3 at h
+  have h0 : v 0 = w 0 := by omega
+  have h1 : v 1 = w 1 := by omega
+  ext i
+  fin_cases i
+  · exact h0
+  · exact h1
+
 end QOU.EightfoldWay.SymmetricChannelDimension

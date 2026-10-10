@@ -15,14 +15,17 @@ export default lemma({
   authorNotes: [
     {
       kind: "note",
-      date: "2026-08-08",
+      date: "2026-10-10",
       body:
-        "**§7c base-ring note (archimedean specialisation).** " +
-        "The Lean module `lean/QOU/TopologicalMass/cat_transient_localises_blowup.lean` " +
-        "carries the Frobenius trace `trFrob : ℝ →+ ℝ` of the mass endomorphism. " +
-        "The `ℝ` is therefore forced by the statement itself rather than " +
-        "chosen, so the block sits on the archimedean side of the §7c wall " +
-        "by construction.",
+        "**Lean scope (bean `tmvac`).** The Lean module " +
+        "`lean/QOU/TopologicalMass/cat_transient_localises_blowup.lean` is stated over a " +
+        "generic commutative ring `R` and an arbitrary `R`-module (§7c: the statement is " +
+        "linear algebra). The support clause — the transient component lies in the span " +
+        "of the local kernels `ker 𝔡_{n+1}|_{p_i}` — is an explicit hypothesis, not derived; " +
+        "the trace decomposition is derived from it by linearity, and the local " +
+        "contributions are shown unique when the kernels are independent. The earlier " +
+        "module defined its inputs as opaque reals and projected the decomposition back " +
+        "out of a class field.",
     },
   ],
 

@@ -81,7 +81,7 @@ from mpmath import mp, mpf, pi as mp_pi  # noqa: E402
 
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
@@ -124,6 +124,14 @@ def main() -> int:
         engine="mpmath",
     )
 
+    # NOT `mpf(Q)` / `mpf(str(Q))`: `q_parameter.Q` is `float(_d["q"])`, so
+    # either form lifts the DOUBLE's binary expansion and caps this whole
+    # probe at ~17 digits.  Read the pin as the SOURCE STRING and build the
+    # mpf here, i.e. AFTER `set_compute_dps()`.  Do NOT substitute the
+    # module-level `Q_MP`: `q_parameter` builds it at `mp.dps = 50`, so it is
+    # a 50-digit cap, which is BELOW `OUTPUT_DPS = 60`.  Measured against the
+    # exact 50-digit decimal in `Fraction` arithmetic, `mpf(Q_50_DIGIT_STR)`
+    # built at dps 70 sits 4.594e-72 from it and `Q_MP` sits 2.015e-50.
     q = mpf(Q_50_DIGIT_STR)
     pi_sq = mp_pi ** 2
     pi_sq_720 = pi_sq / 720
@@ -161,11 +169,14 @@ def main() -> int:
         # ζ(-3) = -1/120 to π²/720):
         casimir_candidate = abs(val) * pi_sq / 6
         rel_residue = abs(casimir_candidate - pi_sq_720) / pi_sq_720
+        # mpf-valued: `rel_residue_vs_pi_sq_720` is the `min()` key below AND
+        # is compared against 0.01 in the assertion, so it is arithmetic, not
+        # display.  Serialized once, at the witness.
         candidates.append({
             "form": name,
-            "raw_value": float(val),
-            "casimir_candidate": float(casimir_candidate),
-            "rel_residue_vs_pi_sq_720": float(rel_residue),
+            "raw_value": val,
+            "casimir_candidate": casimir_candidate,
+            "rel_residue_vs_pi_sq_720": rel_residue,
         })
 
     # ─── Step 4: pick best match ───
@@ -187,29 +198,35 @@ def main() -> int:
             "Wakayama q-zeta machinery."
         )
         .set_content_block("conj:casimir-epsilon-vacuum")
-        .add_parameter("substrate_q", float(q))
-        .add_parameter("target_pi_sq_720", float(pi_sq_720))
-        .add_parameter("target_zeta_neg_3", float(target_zeta_neg_3))
+        .add_parameter("substrate_q", fmt(q))
+        .add_parameter("target_pi_sq_720", fmt(pi_sq_720))
+        .add_parameter("target_zeta_neg_3", fmt(target_zeta_neg_3))
         .add_data(
             "carlitz_q_bernoulli_numbers",
             [
                 {
                     "n": n,
-                    "beta_n_q_at_substrate": float(beta_q[n]),
-                    "B_n_classical": float(beta_at_q1[n]),
-                    "ratio": float(beta_q[n] / beta_at_q1[n])
+                    "beta_n_q_at_substrate": fmt(beta_q[n]),
+                    "B_n_classical": fmt(beta_at_q1[n]),
+                    "ratio": fmt(beta_q[n] / beta_at_q1[n])
                         if beta_at_q1[n] != 0 else "n/a (classical 0)",
                 }
                 for n in range(len(beta_q))
             ],
         )
-        .add_data("casimir_candidates", candidates)
+        .add_data(
+            "casimir_candidates",
+            [
+                {k: (v if k == "form" else fmt(v)) for k, v in c.items()}
+                for c in candidates
+            ],
+        )
         .add_data(
             "best_carlitz_match",
             {
                 "form": best["form"],
-                "casimir_candidate": best["casimir_candidate"],
-                "rel_residue": best["rel_residue_vs_pi_sq_720"],
+                "casimir_candidate": fmt(best["casimir_candidate"]),
+                "rel_residue": fmt(best["rel_residue_vs_pi_sq_720"]),
             },
         )
         .add_assertion(

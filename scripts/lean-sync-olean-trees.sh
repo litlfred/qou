@@ -4,7 +4,7 @@
 # WHY THIS EXISTS.  There are two locations a package's oleans can live:
 #
 #   ROOT   $ROOT/.lake/packages/<pkg>/.lake/build/lib/lean
-#   PAPER  $ROOT/content/*/lean/.lake/packages/<pkg>/.lake/build/lib/lean
+#   PAPER  $ROOT/folio/*/lean/.lake/packages/<pkg>/.lake/build/lib/lean
 #
 # and Lean resolves a package from the FIRST `LEAN_PATH` root that holds that
 # package's directory -- not from the first root that holds the MODULE.  So a
@@ -47,7 +47,7 @@ ROOT="${LEAN_TREE_ROOT:-$(git rev-parse --show-toplevel)}"
 # was invisible to "does it run": it exited 0 and printed a plausible summary.
 if [ "${1:-}" = "--selftest" ]; then
   T=$(mktemp -d); trap 'rm -rf "$T"' EXIT
-  rt="$T/.lake/packages"; pp="$T/content/paper/lean/.lake/packages"
+  rt="$T/.lake/packages"; pp="$T/folio/paper/lean/.lake/packages"
   mk() { mkdir -p "$(dirname "$1")"; printf '%s' "$2" > "$1"; }
   # mathlib: root has A, paper has B  -> both must end with A and B
   mk "$rt/mathlib/.lake/build/lib/lean/Mathlib/A.olean" xx
@@ -71,7 +71,7 @@ fi
 # `ls` sorts its arguments and would silently reorder the two locations.
 declare -A TREES=()
 for d in "$ROOT"/.lake/packages/*/.lake/build/lib/lean \
-         "$ROOT"/content/*/lean/.lake/packages/*/.lake/build/lib/lean; do
+         "$ROOT"/folio/*/lean/.lake/packages/*/.lake/build/lib/lean; do
   [ -d "$d" ] || continue
   # <pkg>/.lake/build/lib/lean -> four levels up.  Three lands on ".lake",
   # which collapses EVERY package into one group and cross-links them.  That

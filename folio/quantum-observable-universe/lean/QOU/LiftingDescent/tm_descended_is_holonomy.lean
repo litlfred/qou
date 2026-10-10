@@ -14,110 +14,79 @@ descended term equals the unknot-core holonomy:*
 
 ## Structure (hypotheses vs. derivation)
 
-The proof narrative has three genuine sub-claims, each stated as its
-own named proposition (honest `sorry` + citation per AGENTS.md §1,
-§1a item 2), and the main theorem *derives* the .md identity by
-composing them — it does not assume the conclusion:
+Everything is a **parameter**; nothing is a named constant.  The
+multiplicative integral takes values in an arbitrary (not necessarily
+commutative) monoid `G` — the structure group in which holonomies live —
+so the blow-up product is an *ordered* `List.prod`.  Surfaces and
+integrands are arbitrary types, and the multiplicative integral is an
+arbitrary map `MI : Form → Surf → G`.
 
-1. `descended_MI_factorises` — the multiplicative integral is
-   multiplicative over the blow-up decomposition:
-   `MI∫_Σ = MI∫_{Σ₀} · Π_i MI∫_{D_i}` (Yekutieli multiplicative
-   integration on surfaces).
-2. `descended_exceptional_disc_trivial` — the *descended* term
-   `τ̂ₙ(α)` is base-level, so its contribution over each exceptional
-   disc `D_i` is trivial: `MI∫_{D_i} τ̂ₙ(α) = 1`.
-3. `descended_core_stokes` — non-abelian Stokes on the spanning disc:
-   `MI∫_{Σ₀} τ̂ₙ(α) = Hol_{∇A}(ϱ₀; 𝔊)`.
+The descended term is modelled as what the proof block says it is: a
+level-`n` section `β` pulled back along the blow-down,
+`τ̂ₙ(α) = pullback β` (the ascent embedding `ℓₙ`).  The hypotheses are
+the standard properties of the multiplicative integral the proof uses,
+each strictly more primitive than the conclusion:
 
-The derivation collapses the product of trivial exceptional-disc
-contributions (`Finset.prod_eq_one`, `mul_one`) and chains through
-Stokes — a genuine algebraic composition, per the
-lean-proof-vacuity-audit fix recipe and AGENTS.md §3b-cond item 5.
+1. `hfact` — multiplicativity over the blow-up decomposition (Yekutieli):
+   `MI∫_Σ = MI∫_{Σ₀} · Π_i MI∫_{D_i}` (ordered product).
+2. `hnat` — naturality under the blow-down on the exceptional discs:
+   `MI∫_{D_i} (pullback β) = MI∫_{blowdown D_i} β`.
+3. `hcollapse` — each exceptional disc collapses to a point under the
+   blow-down: `blowdown D_i = pt`.
+4. `hpt` — the multiplicative integral over a degenerate (point) surface
+   is the identity.
+5. `hstokes` — non-abelian Stokes on the spanning disc:
+   `MI∫_{Σ₀} (pullback β) = Hol_{∇A}(ϱ₀; 𝔊)`.
 
-## Model
+**Derived**: (2)+(3)+(4) give that every exceptional-disc contribution is
+`1` (`descended_exceptional_disc_trivial`, formerly an assumed class
+field); (1) then collapses the ordered product and (5) closes.
 
-The multiplicative-integral values are modelled as named `opaque`
-reals (an `opaque` constant needs a concrete inhabited carrier, so a
-generic `R` per §7c is unavailable; group-valued holonomies enter this
-chapter through their archimedean scalar values).
+An earlier revision modelled the five quantities as `opaque` reals and
+assumed disc triviality directly as a `Prop`-class field; one earlier
+still *defined* `descendedMIdisc := 1`, collapsing the lemma to `rfl`.
+Bean `tmvac`.
 -/
 
 namespace QOU.LiftingDescent
 
-/-! The five primitives below are `opaque`.  That is load-bearing, not
-stylistic: an earlier revision *defined* them (`descendedBlowupCount := 0`,
-`descendedMIdisc := 1`, `descendedMI := descendedMIcore := unknotHolonomy`),
-which silently collapsed all three "open inputs" into tautologies —
-`descended_MI_factorises` became `x = x * (empty product)`, and the other two
-became `rfl`.  The three theorems then *looked* proved while asserting nothing,
-and `tm_descended_is_holonomy` "derived" its conclusion from them.  Keeping the
-primitives opaque is what makes the open inputs falsifiable statements and the
-final theorem a genuine composition.  Bean `qou-t4cv`. -/
+variable {G Surf Form : Type*} [Monoid G]
 
-/-- The unknot-core holonomy `Hol_{∇A}(ϱ₀; 𝔊)`. -/
-opaque unknotHolonomy : ℝ
-
-/-- Number of blow-up points `N` in the decomposition
-    `Σ = Σ₀ ∪ ⋃_{i=1}^N D_i`. -/
-opaque descendedBlowupCount : ℕ
-
-/-- The descended-term multiplicative surface integral over the whole
-    surface: `MI∫_Σ τ̂ₙ(α)`. -/
-opaque descendedMI : ℝ
-
-/-- The descended-term multiplicative integral over the spanning disc
-    `Σ₀` of the unknot core: `MI∫_{Σ₀} τ̂ₙ(α)`. -/
-opaque descendedMIcore : ℝ
-
-/-- The descended-term multiplicative integral over the `i`-th
-    exceptional disc: `MI∫_{D_i} τ̂ₙ(α)`. -/
-opaque descendedMIdisc : ℕ → ℝ
-
-class TmDescendedInputs : Prop where
-  /-- Open input 1 -/
-  factorises : descendedMI = descendedMIcore * ∏ i ∈ Finset.range descendedBlowupCount, descendedMIdisc i
-  /-- Open input 2 -/
-  trivial : ∀ i : ℕ, descendedMIdisc i = 1
-  /-- Open input 3 -/
-  stokes : descendedMIcore = unknotHolonomy
-
-/-- **Open input 1 — multiplicativity over the blow-up decomposition.**
-    Yekutieli's multiplicative surface integral is multiplicative over
-    `Σ = Σ₀ ∪ ⋃ D_i`; not in Mathlib. -/
--- Ref: [yekutieli2015] https://doi.org/10.1142/9537
-theorem descended_MI_factorises [ctx : TmDescendedInputs] :
-    descendedMI
-      = descendedMIcore
-          * ∏ i ∈ Finset.range descendedBlowupCount, descendedMIdisc i :=
-  ctx.factorises
-
-/-- **Open input 2 — the descended term is trivial on exceptional
-    discs.**  `τ̂ₙ(α)` is base-level (descended), so it carries no
-    contribution over the blow-up discs `D_i`. -/
--- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.md
-theorem descended_exceptional_disc_trivial [ctx : TmDescendedInputs] :
-    ∀ i : ℕ, descendedMIdisc i = 1 :=
-  ctx.trivial
-
-/-- **Open input 3 — non-abelian Stokes on the spanning disc.**
-    The multiplicative integral of the descended term over `Σ₀` is the
-    boundary holonomy of the unknot core `ϱ₀`. -/
--- Ref: [yekutieli2015] https://doi.org/10.1142/9537
-theorem descended_core_stokes [ctx : TmDescendedInputs] :
-    descendedMIcore = unknotHolonomy :=
-  ctx.stokes
+/-- **Exceptional discs contribute trivially (derived).**  A pulled-back
+(descended) integrand has trivial multiplicative integral over every
+exceptional disc: naturality moves the integral to the blow-down image,
+which is a point, where the multiplicative integral is the identity. -/
+theorem descended_exceptional_disc_trivial
+    (MI : Form → Surf → G) (pullback : Form → Form) (blowdown : Surf → Surf)
+    (pt : Surf) (D : ℕ → Surf) (β : Form)
+    (hnat : ∀ i, MI (pullback β) (D i) = MI β (blowdown (D i)))
+    (hcollapse : ∀ i, blowdown (D i) = pt)
+    (hpt : ∀ ω, MI ω pt = 1) :
+    ∀ i, MI (pullback β) (D i) = 1 := by
+  intro i
+  rw [hnat, hcollapse, hpt]
 
 /-- **Descended term = unknot-core holonomy**
     ([`lem:topological-mass-holonomy`]).
 
-`MI∫_Σ τ̂ₙ(α) = Hol_{∇A}(ϱ₀; 𝔊)`.  *Derived* (not assumed): factorise
-over the blow-up decomposition, collapse the product of trivial
-exceptional-disc contributions, then apply Stokes on the spanning
-disc. -/
-theorem tm_descended_is_holonomy [TmDescendedInputs] : descendedMI = unknotHolonomy := by
-  rw [descended_MI_factorises,
-    Finset.prod_eq_one fun i _ => descended_exceptional_disc_trivial i,
-    mul_one]
-  exact descended_core_stokes
+`MI∫_Σ τ̂ₙ(α) = Hol_{∇A}(ϱ₀; 𝔊)` with `τ̂ₙ(α) = pullback β`.  *Derived*
+(not assumed): factorise over the blow-up decomposition, show each
+exceptional-disc factor is trivial from naturality and collapse, collapse
+the ordered product, then apply Stokes on the spanning disc. -/
+theorem tm_descended_is_holonomy
+    (MI : Form → Surf → G) (pullback : Form → Form) (blowdown : Surf → Surf)
+    (pt Sig Sig0 : Surf) (D : ℕ → Surf) (N : ℕ) (β : Form) (hol : G)
+    (hfact : MI (pullback β) Sig
+      = MI (pullback β) Sig0 * ((List.range N).map fun i => MI (pullback β) (D i)).prod)
+    (hnat : ∀ i, MI (pullback β) (D i) = MI β (blowdown (D i)))
+    (hcollapse : ∀ i, blowdown (D i) = pt)
+    (hpt : ∀ ω, MI ω pt = 1)
+    (hstokes : MI (pullback β) Sig0 = hol) :
+    MI (pullback β) Sig = hol := by
+  have htriv := descended_exceptional_disc_trivial MI pullback blowdown pt D β
+    hnat hcollapse hpt
+  have hprod : ((List.range N).map fun i => MI (pullback β) (D i)).prod = 1 := by
+    simp [htriv]
+  rw [hfact, hprod, mul_one, hstokes]
 
 end QOU.LiftingDescent

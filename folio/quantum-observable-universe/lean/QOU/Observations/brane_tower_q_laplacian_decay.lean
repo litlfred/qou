@@ -9,7 +9,7 @@ Dropping the locality assumption for composite physical observables
 requires summing over the brane tower — an infinite jet prolongation
 `T(ρ) = ∑_{n ≥ 1} ℏ_q^{2n} Δ⁽ⁿ⁾(ρ)`, where `Δ⁽ⁿ⁾` is the `n`-th iterated
 q-Laplacian on the Reeb bundle. The remainder past the single-jet term
-decays geometrically with ratio `q⁻² < 1` in the Wenzl regime.
+decays geometrically with ratio `q⁻² < 1` for `q > 1`.
 
 ## Disposition (derived, not projected)
 
@@ -21,7 +21,7 @@ re-emitted it (pure self-assuming projection).
 Here the class carries the genuine **inputs** the physics supplies:
 
   * `0 ≤ r`, `r < 1` — the geometric ratio `r = q⁻²` is `< 1` in the
-    Wenzl regime `q > 1` (the exponential q-Laplacian mode damping);
+    regime `q > 1` (the exponential q-Laplacian mode damping);
   * `remainder_le_geom` — the tail `T(ρ) − ℏ_q²Δ⁽¹⁾(ρ)` is dominated,
     **level by level**, by the geometric majorant `∑' k, ℏ_q⁴‖ρ‖·r^{k+1}`
     (the `.md`'s displayed geometric-series line: each iterated Laplacian
@@ -60,9 +60,9 @@ class BraneTowerQLaplacianDecayContext where
   r : ℝ
   /-- The ratio is the substrate `q⁻²`. -/
   ratio_eq : r = q_real ^ (-2 : ℤ)
-  /-- Wenzl-regime positivity: `0 ≤ r`. -/
+  /-- Positivity: `0 ≤ r`. -/
   r_nonneg : 0 ≤ r
-  /-- Wenzl-regime contraction: `r < 1` (i.e. `q > 1`). -/
+  /-- Contraction: `r < 1` (i.e. `q > 1`). -/
   r_lt_one : r < 1
   /-- **Termwise exponential-decay input.** The tail past the single-jet
       term is majorised, level by level, by the geometric series with
@@ -76,7 +76,7 @@ class BraneTowerQLaplacianDecayContext where
 
 /-- **Brane-tower convergence via q-Laplacian decay** ([`prop:brane-tower-q-laplacian-decay`]).
 
-    In the Wenzl regime the remainder of the brane tower past the local
+    For `q > 1` the remainder of the brane tower past the local
     single-jet term is bounded by the manuscript's closed form
     `ℏ_q⁴‖ρ‖·q⁻²/(1 − q⁻²)`.
 

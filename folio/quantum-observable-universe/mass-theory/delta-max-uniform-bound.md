@@ -111,22 +111,27 @@ For the deuteron representative
 $\beta_{\mathrm{D}} = \sigma_0 \in B_2$:
 $L = 1$, $\|\rho\|_{\mathrm{op}} = |q^{1/2}| \approx 1.0536$
 at $q_0 \approx 1.1100$, and
-$\mathfrak{m}^{(0)}(\varrho_{\mathrm{free}}) \approx 0.49932$
-(the level-0 Markov trace of the Hopf link).  Substituting,
+$\mathfrak{m}^{(0)}(\varrho_{\mathrm{free}}) = z \approx 0.61269$
+(the level-0 Markov trace of the Hopf link, at the canonical weight
+$z = q^3/(q^2+1)$).  Substituting,
 
 $$
   \Delta_{\max}(\mathrm{D})
   \;\leq\;
-  2 \cdot 1 \cdot (1.0536)^{2} \cdot 0.49932
-  \;\approx\; 1.109.
+  2 \cdot 1 \cdot (1.0536)^{2} \cdot 0.61269
+  \;\approx\; 1.360.
 $$
 
 The $\hbar_q^{2(N+1)}/(1 - \hbar_q^{2})$ tail factor at $N = 2$
 gives $\approx 0.00982^{3}/(1 - 0.00982) \approx 9.6 \times 10^{-7}$.
 Multiplying, the level-$\ge 3$ truncation error on the deuteron
-is bounded by $\approx 1.07 \times 10^{-6}$ in categorical
+is bounded by $\approx 1.30 \times 10^{-6}$ in categorical
 units, i.e. **sub-ppm binding precision** when calibrated by
 $E_0 \approx m_e \cdot 8G \approx 3.744$ MeV.
+
+Until 2026-10-10 this section used the excised convention-C trace
+$z = 1/(q^{1/2} + q^{-1/2}) \approx 0.49932$, giving $1.109$ and
+$1.07 \times 10^{-6}$.
 
 ## Corollary for the binding energy
 

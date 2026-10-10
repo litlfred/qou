@@ -47,7 +47,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "substrate"))
 sys.path.insert(0, str(HERE.parent))
 try:
-    from _precision import set_compute_dps  # noqa: E402
+    from _precision import set_compute_dps, fmt  # noqa: E402
     set_compute_dps()
 except Exception:
     set_compute_dps()
@@ -164,15 +164,18 @@ def main() -> int:
         for cname, wfn in {**CANDIDATES, **CONTROLS}.items():
             preds = {K: mu_pred(K, wfn, aggfn) for K in MU_TARGET}
             r = t_3he_ratio(wfn, aggfn)
-            relerr = float((r - tgt_ratio) / tgt_ratio * 100)
+            relerr = (r - tgt_ratio) / tgt_ratio * 100
             pred_asc = sorted(preds, key=lambda k: preds[k])
             order_ok = (pred_asc == target_asc)
-            row = f"     {cname:<7}" + "".join(f"{float(preds[K]):>10.4f}" for K in ("D", "T", "3He", "4He"))
-            row += f"{float(r):>10.4f}{relerr:>10.2f}{('yes' if order_ok else 'no'):>8}"
+            row = f"     {cname:<7}" + "".join(f"{preds[K]:>10.4f}" for K in ("D", "T", "3He", "4He"))
+            row += f"{r:>10.4f}{relerr:>10.2f}{('yes' if order_ok else 'no'):>8}"
             print(row)
+            # mpf-valued: `best`/`split_hit`/`right_dir` below select on these,
+            # so they are arithmetic, not display. Serialized once, at the
+            # witness, via fmt.
             results[f"{aggname}:{cname}"] = {
-                "mu_pred": {K: float(preds[K]) for K in MU_TARGET},
-                "t_3he_ratio": float(r),
+                "mu_pred": {K: preds[K] for K in MU_TARGET},
+                "t_3he_ratio": r,
                 "t_3he_relerr_pct": relerr,
                 "ordering_full_match": bool(order_ok),
                 "is_control": cname in CONTROLS,
@@ -188,7 +191,7 @@ def main() -> int:
     right_dir = b["t_3he_ratio"] > 1.0
     print("### Decisive test — the T/³He degeneracy-break (scale-free)")
     print(f"     best genuine combo : {best}")
-    print(f"     T/³He pred = {b['t_3he_ratio']:.6f}  vs target {float(tgt_ratio):.6f}  "
+    print(f"     T/³He pred = {b['t_3he_ratio']:.6f}  vs target {tgt_ratio:.6f}  "
           f"(relerr {b['t_3he_relerr_pct']:+.2f}%)  right-direction={right_dir}")
     print(f"     split <5% : {split_hit}     full-ordering match : {b['ordering_full_match']}")
     # controls
@@ -241,17 +244,22 @@ def main() -> int:
             wb.add_data("discipline", "EXPLORATORY")
             wb.add_data("production_wired", False)
             wb.add_data("scope", "(a)")
-            wb.add_data("tr_M", {k: float(v) for k, v in TR.items()})
-            wb.add_data("targets", {k: float(v) for k, v in MU_TARGET.items()})
-            wb.add_data("t_3he_ratio_target", float(tgt_ratio))
+            wb.add_data("tr_M", {k: fmt(v) for k, v in TR.items()})
+            wb.add_data("targets", {k: fmt(v) for k, v in MU_TARGET.items()})
+            wb.add_data("t_3he_ratio_target", fmt(tgt_ratio))
             wb.add_data("bonds", BONDS)
-            wb.add_data("candidates", results)
+            wb.add_data("candidates", {
+                k: {**v,
+                    "mu_pred": {K: fmt(x) for K, x in v["mu_pred"].items()},
+                    "t_3he_ratio": fmt(v["t_3he_ratio"]),
+                    "t_3he_relerr_pct": fmt(v["t_3he_relerr_pct"])}
+                for k, v in results.items()})
             wb.add_data("best_genuine_combo", best)
             wb.add_data("t_3he_ratio_pred_vs_target", {
-                "pred": b["t_3he_ratio"], "target": float(tgt_ratio),
-                "relerr_pct": b["t_3he_relerr_pct"], "right_direction": right_dir,
+                "pred": fmt(b["t_3he_ratio"]), "target": fmt(tgt_ratio),
+                "relerr_pct": fmt(b["t_3he_relerr_pct"]), "right_direction": right_dir,
                 "split_under_5pct": split_hit})
-            wb.add_data("per_isotope", b["mu_pred"])
+            wb.add_data("per_isotope", {K: fmt(v) for K, v in b["mu_pred"].items()})
             wb.add_data("verdict", verdict)
             wb.add_assertion(
                 name="t3he_split_reproduced_under_5pct_right_direction",

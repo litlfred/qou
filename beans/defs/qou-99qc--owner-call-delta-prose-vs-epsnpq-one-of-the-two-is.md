@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-10-04T15:21:54Z
+updated_at: 2026-10-10T12:30:00Z
 parent: qou-10v9
 ---
 
@@ -3333,3 +3333,13 @@ citations, and 3 further files carry the same assertion with no lemma named at
 all, so a grep on the identifier cannot find them. Full per-site table and blast
 radius on `qou-6moa`; fixed so far in AGENTS.md and
 `QOU/Mass/AltCharShiftMultiset.lean` (PR #7459).
+
+
+## 2026-10-10 — the energy / O'Hara selection principle, route 1: what an embedding energy can and cannot select
+
+Full entry on `qou-pzsi`; probe `computations/probes/ohara_link_energy/`.
+
+- **The 2-crossing gluon dressings close to two links, not four.** `gluon_s0_s1` ≅ `gluon_s0_s0` = `nuc11_interleaved`, and `gluon_s1_s0` ≅ `gluon_s1_s1`, by hand-checked braid conjugacy. Any closure or embedding energy therefore ties the live element with `gluon_s0_s1` by construction.
+- **Flowed link Möbius energy (upper bounds, multi-start).** It ranks `nuc9` (234.2) well below both dressing classes (≈291), which sit well below `gen_grouped` (>311). It does **not** separate the two dressing classes: the gap is 1.1 against a combined error of 1.2.
+- **So the owner's 2026-09-14 direction is confirmed as the right class.** The energy is order-sensitive where letter-sums are not. But on this candidate set it **cannot pick among the gluon dressings**, and it cannot see the letter decoration at all.
+- The gluon dressing stays unselected. No dashboard row was re-scored.

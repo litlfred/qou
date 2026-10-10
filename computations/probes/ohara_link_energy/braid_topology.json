@@ -1,0 +1,326 @@
+{
+ "cal_hopf_s1^2": {
+  "word": [
+   0,
+   0
+  ],
+  "strands": 2,
+  "permutation": [
+   0,
+   1
+  ],
+  "components": 2,
+  "strands_per_component": [
+   1,
+   1
+  ],
+  "linking_number": 1,
+  "self_crossing_writhe": [
+   0,
+   0
+  ],
+  "jones_A": "-1/A**2 - 1/A**10",
+  "alexander_t": "1 - t"
+ },
+ "cal_hopf_3strand": {
+  "word": [
+   0,
+   0,
+   1
+  ],
+  "strands": 3,
+  "permutation": [
+   0,
+   2,
+   1
+  ],
+  "components": 2,
+  "strands_per_component": [
+   1,
+   2
+  ],
+  "linking_number": 1,
+  "self_crossing_writhe": [
+   0,
+   1
+  ],
+  "jones_A": "-1/A**2 - 1/A**10",
+  "alexander_t": "1 - t"
+ },
+ "cal_T24_s1^4": {
+  "word": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "strands": 2,
+  "permutation": [
+   0,
+   1
+  ],
+  "components": 2,
+  "strands_per_component": [
+   1,
+   1
+  ],
+  "linking_number": 2,
+  "self_crossing_writhe": [
+   0,
+   0
+  ],
+  "jones_A": "-1/A**6 - 1/A**14 + A**(-18) - 1/A**22",
+  "alexander_t": "-(t - 1)*(t**2 + 1)"
+ },
+ "cal_trefoil_s1^3": {
+  "word": [
+   0,
+   0,
+   0
+  ],
+  "strands": 2,
+  "permutation": [
+   1,
+   0
+  ],
+  "components": 1,
+  "strands_per_component": [
+   2
+  ],
+  "linking_number": null,
+  "self_crossing_writhe": [
+   3
+  ],
+  "jones_A": "A**(-4) + A**(-12) - 1/A**16",
+  "alexander_t": "t**2 - t + 1"
+ },
+ "nuc9": {
+  "word": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   0,
+   0,
+   1
+  ],
+  "strands": 3,
+  "permutation": [
+   0,
+   2,
+   1
+  ],
+  "components": 2,
+  "strands_per_component": [
+   1,
+   2
+  ],
+  "linking_number": 3,
+  "self_crossing_writhe": [
+   0,
+   3
+  ],
+  "jones_A": "-1/A**14 - 1/A**22",
+  "alexander_t": "-(t - 1)*(t**6 + t**3 + 1)"
+ },
+ "nuc11_interleaved": {
+  "word": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   0,
+   0,
+   1,
+   0,
+   0
+  ],
+  "strands": 3,
+  "permutation": [
+   0,
+   2,
+   1
+  ],
+  "components": 2,
+  "strands_per_component": [
+   1,
+   2
+  ],
+  "linking_number": 4,
+  "self_crossing_writhe": [
+   0,
+   3
+  ],
+  "jones_A": "-1/A**18 - 1/A**26 + A**(-42) - 1/A**46",
+  "alexander_t": "-(t - 1)*(t + 1)**2*(t**2 - t + 1)*(t**4 - t**3 + t**2 - t + 1)"
+ },
+ "nuc11_gen_grouped": {
+  "word": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "strands": 3,
+  "permutation": [
+   1,
+   0,
+   2
+  ],
+  "components": 2,
+  "strands_per_component": [
+   2,
+   1
+  ],
+  "linking_number": 2,
+  "self_crossing_writhe": [
+   7,
+   0
+  ],
+  "jones_A": "-1/A**18 - 2/A**26 + 2/A**30 - 3/A**34 + 3/A**38 - 4/A**42 + 4/A**46 - 3/A**50 + 3/A**54 - 2/A**58 + A**(-62)",
+  "alexander_t": "-(t - 1)*(t**2 + 1)*(t**6 - t**5 + t**4 - t**3 + t**2 - t + 1)"
+ },
+ "gluon_s1_s0": {
+  "word": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   0,
+   0,
+   1,
+   1,
+   0
+  ],
+  "strands": 3,
+  "permutation": [
+   1,
+   0,
+   2
+  ],
+  "components": 2,
+  "strands_per_component": [
+   2,
+   1
+  ],
+  "linking_number": 3,
+  "self_crossing_writhe": [
+   5,
+   0
+  ],
+  "jones_A": "-1/A**18 - 1/A**26 - 1/A**38 + A**(-42) - 1/A**46 + A**(-50)",
+  "alexander_t": "-(t - 1)*(t**8 + t**5 - t**4 + t**3 + 1)"
+ },
+ "gluon_s0_s1": {
+  "word": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   0,
+   0,
+   1,
+   0,
+   1
+  ],
+  "strands": 3,
+  "permutation": [
+   2,
+   1,
+   0
+  ],
+  "components": 2,
+  "strands_per_component": [
+   2,
+   1
+  ],
+  "linking_number": 4,
+  "self_crossing_writhe": [
+   3,
+   0
+  ],
+  "jones_A": "-1/A**18 - 1/A**26 + A**(-42) - 1/A**46",
+  "alexander_t": "-(t - 1)*(t + 1)**2*(t**2 - t + 1)*(t**4 - t**3 + t**2 - t + 1)"
+ },
+ "gluon_s1_s1": {
+  "word": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   0,
+   0,
+   1,
+   1,
+   1
+  ],
+  "strands": 3,
+  "permutation": [
+   0,
+   2,
+   1
+  ],
+  "components": 2,
+  "strands_per_component": [
+   1,
+   2
+  ],
+  "linking_number": 3,
+  "self_crossing_writhe": [
+   0,
+   5
+  ],
+  "jones_A": "-1/A**18 - 1/A**26 - 1/A**38 + A**(-42) - 1/A**46 + A**(-50)",
+  "alexander_t": "-(t - 1)*(t**8 + t**5 - t**4 + t**3 + 1)"
+ },
+ "gluon_s0_s0": {
+  "word": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   0,
+   0,
+   1,
+   0,
+   0
+  ],
+  "strands": 3,
+  "permutation": [
+   0,
+   2,
+   1
+  ],
+  "components": 2,
+  "strands_per_component": [
+   1,
+   2
+  ],
+  "linking_number": 4,
+  "self_crossing_writhe": [
+   0,
+   3
+  ],
+  "jones_A": "-1/A**18 - 1/A**26 + A**(-42) - 1/A**46",
+  "alexander_t": "-(t - 1)*(t + 1)**2*(t**2 - t + 1)*(t**4 - t**3 + t**2 - t + 1)"
+ }
+}

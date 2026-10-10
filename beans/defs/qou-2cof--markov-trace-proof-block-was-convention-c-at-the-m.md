@@ -1,14 +1,14 @@
 ---
 # qou-2cof
 title: markov-trace proof block was convention C at the muon pin while its statement was D at proton — 15% disagreement
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T04:46:54Z
-updated_at: 2026-10-04T15:21:29Z
-parent: qou-cdx1
+updated_at: 2026-10-10T12:55:10Z
+parent: qou-d8c7
 ---
 
 ## What it is
@@ -77,3 +77,45 @@ remaining C surface be treated as **unmeasured**, and this is one more
 data point for that, not a measurement of it. A targeted sweep would be:
 for each migrated statement block, check whether its proof sibling's
 numbers still evaluate under C.
+
+
+## 2026-10-10 — reparented to the mass-endomorphism epic
+
+This bean is carrier M6 of epic `qou-d8c7` (issue litlfred/qou#7547). Parent moved from `qou-cdx1` to `qou-d8c7`; nothing in the body above was changed by the move.
+
+
+
+## 2026-10-10 — measured: 21 live survivors (6 in the D-statement/C-sibling pattern, 15 in unmarked blocks), ~38 deliberate, 4 undetermined groups
+
+Read-only scan of all 3635 content .md blocks, values recomputed under C and D in mpmath at the proton pin (calculator calibrated against this bean's 1.63315 / 1.88432). Full table and blind spots: /mnt/project-files/mass-endomorphism/m6-convention-c-count.md (issue #7558). Notable: `markov-trace-product-proof.md:43` calls a C value 'canonical'; `frobenius-s-classification` claims q→1/q invariance of z, true only for z_C. No edits made: a sweep needs the owner's go (ask-first rule).
+
+
+2026-10-10: Group A (6 sites, statement D / sibling C) fixed in PR #7562, commit bbd38f07. Each D value recomputed at the proton pin (mpmath 30 dps); old C figure kept in a dated note. Remaining: 15 Group B unmarked sites + 4 undetermined groups, per-file plan awaiting owner approval (mass-endomorphism/m6-group-b-plan.md in project files).
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+A proof block whose numerical witness was C at the muon pin under a D
+statement at proton. The CODE surface is clean, but a published proof block's
+recorded numbers are not code -- re-deriving them is the `qou-cds1` ladder
+work or a scoped note. Not closeable by a value audit.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+
+
+## 2026-10-10: undetermined groups measured and partly applied
+Measurement: /mnt/project-files/mass-endomorphism/m6-undetermined-measured.md.
+- **Group 1 (Pair-Skein), applied (1a):** the denominator q^{1/2}+q^{-1/2} is 1/z_C. Four .md blocks now say so (pair-skein-mass-formula + proof, flavor-split-substrate-proof, flavor-dressed-mass-from-substrate-split, beta-decay-skein-properties). The re-derivation is qou-cds1's. The fit flag in flavor-split Step 2 is beaned separately.
+- **Group 3 (six muon literals), applied (3a):** the labels now name the pin each producer actually recorded (CODATA-2018 muon, or none). The proton re-pin is queued on qou-1c4y.
+- **Group 4:** moot under the owner's 2a pick.
+- **Group 2 (GNS positivity), OPEN, needs an owner pick.** Under D the trace is positive for every q>0 (numeric check n=2..8; Jones, [2]_q>=2). Rewriting the proof is a math-claim change.
+Stays open for group 2.
+
+## 2026-10-10: group 2 applied (2a + 2c + 2d), PR #7594 merged
+
+- **2c:** Lean `QOU.SchurWeyl.ocneanuWeight_conventionD_pos_of_two_rows` (new file OcneanuWeightTwoRowPositive.lean) proves the closed-form convention-D weight is strictly positive on shapes with at most two rows, for q>0 and q!=1, over an ordered field. Sorry-free; lean-direct exit 0.
+- **2a:** the GNS embedding is stated for every real q>0 with sigma_i*=sigma_i, positivity via Jones TL ([2]_q>=2). centered-hecke-variance-positive now has a dated update that closes its D-threshold note.
+- **2d:** blitvic proof, hecke-branching proof and brane-tower decay are reworded. The decay statement is narrowed to 1<q<q_*, the range its proof uses.
+
+All four groups are now resolved. Re-derivations stay elsewhere: Pair-Skein under D is tracked on qou-cds1, the proton re-pin of the muon literals on qou-1c4y. Not done: the Lean identification of ocneanuWeight with the Markov weight at general n is still open (OcneanuWeight.lean). This bean does not track it, so completing it is safe.

@@ -5,7 +5,7 @@ The Markov trace on the Iwahori–Hecke algebra $H_r(q)$ induces a unique inner 
 **Proposition.**
 *Let $H_r(q)$ be the Iwahori–Hecke algebra on $r$ strands with parameter $q \neq 0, 1$. Let $R(H_r(q)) = \bigoplus_{\lambda \vdash r} \mathbb{Z} \cdot [\lambda]$ be its representation ring.*
 
-**(i)** *The Markov trace $\mathrm{tr}_M \colon H_r(q) \to \mathbb{Q}(q^{1/2})$ uses Markov parameter $z = (q^{1/2} + q^{-1/2})^{-1}$. It descends to a bilinear form on $R(H_r(q))$:*
+**(i)** *The Markov trace $\mathrm{tr}_M \colon H_r(q) \to \mathbb{Q}(q)$ uses the canonical Markov parameter $z = q^3/(q^2+1) = q^2/[2]_q$. It descends to a bilinear form on $R(H_r(q))$:*
 
 $$
   \langle [\lambda], [\mu] \rangle_{\mathrm{RJ}}
@@ -13,26 +13,30 @@ $$
   d_\lambda(q) \cdot \delta_{\lambda\mu},
 $$
 
-*where $d_\lambda(q) = \prod_{\Box \in \lambda} \frac{[h(\Box)]_q}{[h'(\Box)]_q}$ is the quantum dimension. Here $h(\Box)$ is the hook length (arm $+$ leg $+ 1$) and $h'(\Box) = a'(\Box) + l'(\Box) + 1$ is the content hook (co-arm $+$ co-leg $+ 1$) of cell $\Box$ in the Young diagram $\lambda$. The $q$-integer is $[n]_q = (q^{n/2} - q^{-n/2})/(q^{1/2} - q^{-1/2})$.*
+*where $d_\lambda(q) = \prod_{\Box \in \lambda} \frac{[2 + c(\Box)]_q}{[h(\Box)]_q}$ is the $U_q(\mathfrak{sl}_2)$ quantum dimension of $V_\lambda$. Here $c(\Box)$ is the content and $h(\Box)$ the hook length (arm $+$ leg $+ 1$) of cell $\Box$ in the Young diagram $\lambda$, and $[n]_q = (q^n - q^{-n})/(q - q^{-1})$. The Markov block weights are $w_\lambda = \mathrm{tr}_M(p_\lambda) = d_\lambda(q)/[2]_q^{\,r}$ for a minimal idempotent $p_\lambda$. Because $d_\lambda = 0$ whenever $\lambda$ has more than two rows, the form is degenerate: its radical is spanned by the classes $[\lambda]$ with more than two rows, and it is non-degenerate on the span of the two-row classes.*
 
-**(ii)** *This inner product is unique up to an overall scalar. Schur orthogonality for the irreducible characters $\chi_\lambda$ of $H_r(q)$ forces:*
-
-$$
-  \mathrm{tr}_M\!\bigl(\chi_\lambda \cdot \chi_\mu\bigr)
-  = 
-  d_\lambda(q) \cdot \delta_{\lambda\mu}.
-$$
-
-*Any bilinear form on $R(H_r(q))$ that is diagonal in the irrep basis and compatible with the Markov trace normalization $\mathrm{tr}_M(1) = 1$ is a scalar multiple of $\langle -, - \rangle_{\mathrm{RJ}}$.*
-
-**(iii)** *The Rosso–Jones invariant of a torus knot $\tau(r,s)$ is the evaluation of this inner product on the full-twist element $\omega^s$:*
+**(ii)** *The form is the one induced by the Markov trace on minimal idempotents:*
 
 $$
-  J(\tau(r,s))
-  = 
-  \sum_{\lambda \vdash r} d_\lambda(q) \cdot \omega_\lambda^s
-  = 
-  \langle \omega^s, [\mathrm{triv}] \rangle_{\mathrm{RJ}},
+  \langle [\lambda], [\mu] \rangle_{\mathrm{RJ}}
+  =
+  [2]_q^{\,r} \, \mathrm{tr}_M\!\bigl(p_\lambda \, p_\mu\bigr)
+  =
+  d_\lambda(q) \cdot \delta_{\lambda\mu},
 $$
 
-*where $\omega_\lambda = q^{c_\lambda}$ is the eigenvalue of the full twist on irrep $\lambda$, and $c_\lambda$ is the content of $\lambda$.*
+*which does not depend on the choice of minimal idempotents, since conjugate idempotents have equal trace and $p_\lambda p_\mu = 0$ for $\lambda \neq \mu$. Equivalently $[2]_q^{\,r}\,\mathrm{tr}_M(x) = \sum_{\lambda \vdash r} d_\lambda(q)\, \chi_\lambda(x)$ for $x \in H_r(q)$. The Markov trace with $\mathrm{tr}_M(1) = 1$ is unique for a given $z$, so the form is determined by $z$ alone. Diagonality in the irrep basis does not by itself determine the form: a diagonal form has one free entry for each two-row class, and the normalisation $\mathrm{tr}_M(1) = 1$ fixes only one combination of them.*
+
+**(iii)** *Let $\gamma = \sigma_1 \cdots \sigma_{r-1}$, so that $\gamma^r = \Delta^2$ is the full twist, which acts on $V_\lambda$ by $\theta_\lambda = q^{2 c_\lambda}$, where $c_\lambda$ is the content sum of $\lambda$. For $\gcd(r,s) = 1$ the torus knot $\tau(r,s)$ is the closure of $\gamma^s$, and its trace is given by the Rosso–Jones formula:*
+
+$$
+  [2]_q^{\,r} \, \mathrm{tr}_M\!\bigl(\gamma^{s}\bigr)
+  =
+  \sum_{j=0}^{r-1} (-1)^{j} \, d_{(r-j,1^j)}(q) \, \theta_{(r-j,1^j)}^{\,s/r}
+  =
+  [r+1]_q \, q^{s(r-1)} - [r-1]_q \, q^{s(r-3)}.
+$$
+
+*The sum runs over the hooks $(r-j, 1^j)$, and the signs $(-1)^j$ are the coefficients of the Adams operation $\psi^r$ applied to the fundamental representation. Since $c_{(r-j,1^j)} = r(r-1-2j)/2$, each exponent $2 s c_\lambda / r = s(r-1-2j)$ is an integer. Only $j = 0, 1$ contribute, because $d_\lambda = 0$ for every hook with more than two rows. The unknot-normalised invariant $[2]_q^{\,r-1} \, q^{-2s(r-1)} \, \mathrm{tr}_M(\gamma^s)$ is the Jones polynomial of $\tau(r,s)$ at $t = q^{-2}$.*
+
+Until 2026-10-10 this proposition used the excised convention-C parameter $z = (q^{1/2} + q^{-1/2})^{-1}$, with values in $\mathbb{Q}(q^{1/2})$, half-integer $q$-integers and the quantum dimension $\prod [h(\Box)]_q/[h'(\Box)]_q$; under that convention the form had no radical. The same revision corrected two statements. Part (iii) previously read $J(\tau(r,s)) = \sum_{\lambda \vdash r} d_\lambda(q)\, q^{c_\lambda s}$: that sum runs over all partitions rather than the hooks, omits the Adams-operation signs, and uses the exponent $c_\lambda s$ in place of $2 c_\lambda s / r$. In exact arithmetic over $\mathbb{Q}(q)$ it agrees with the directly computed trace only for $r = 2$ with $s$ even, that is, for two-component torus links, while the formula above agrees for every coprime pair tested ($r = 2, 3, 4$). Part (ii) previously asserted that every diagonal form compatible with $\mathrm{tr}_M(1) = 1$ is a scalar multiple of $\langle -, - \rangle_{\mathrm{RJ}}$, which is false as stated; the uniqueness is that of the Markov trace.

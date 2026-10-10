@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T11:32:06.619380+00:00",
-  "commitSha": "74887971c02cd91f58e6fa5f360c19502b2a2e63",
+  "engineVersion": "python 3.11.17",
+  "computedAt": "2026-10-10T08:14:33.956607+00:00",
+  "commitSha": "56109c8579a2cf9ae1b5875e745352030b869267",
   "assertions": [
     {
       "name": "N2_factor_equals_one_minus_u_squared",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 248,
+  "durationMs": 263,
   "computation": "qbeta-symbolic-chain-alpha-b",
   "scriptFile": "qbeta_symbolic_chain_alpha_b.py",
-  "scriptHash": "15d9d9178a77",
-  "scriptCommitSha": "0d9aedfc69c9dbd371b6575158a873eed02bc09a",
+  "scriptHash": "084f72ec56c7",
+  "scriptCommitSha": "6ff3254a0f7d56d7961ba93607680644b8d7b07b",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -34,14 +34,14 @@
     "truncation_bound": "1e-50"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.17",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "2986fe4aa825b156"
   },
   "invocation": {
     "argv": [
@@ -53,7 +53,7 @@
   "contentBlock": "prop:q-beta-c-2-eq-neg-one-structural",
   "data": {
     "symbolic_closed_forms": {
-      "z": "1/(sqrt(q) + 1/sqrt(q))",
+      "z": "q**3 / (q**2 + 1)",
       "h": "q - 1/q",
       "alpha": "(z - 1)*h/2",
       "b": "sqrt(q**4 + q**2 + 1)/(q**2 + 1)",

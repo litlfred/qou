@@ -6,8 +6,9 @@ type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - 8f-ew
 created_at: 2026-09-03T05:01:07Z
-updated_at: 2026-10-04T15:19:50Z
+updated_at: 2026-10-10T07:16:01Z
 parent: qou-8lxd
 ---
 

@@ -40,8 +40,11 @@ with adjacent generators $\sigma_0$ and $\sigma_1$: the naïve
 vertex volume product gives $z^3$, but the **correct Markov
 trace** (Ocneanu--Wenzl recursion) is $hz^2 + z$
 ([corrected Markov trace](#prop:corrected-markov-trace)).
-canonical at $q_0$: vertex-product $z^3 \approx 0.1245$
-vs canonical $hz^2 + z \approx 0.5514$ (4.4$\times$ off).
+At the proton-pinned $q_0$ with the canonical weight $z = q^3/(q^2+1)$
+(convention D): vertex-product $z^3 \approx 0.2300$ vs Markov trace
+$hz^2 + z \approx 0.6912$ (3.0$\times$ off). The figures $0.1245$ and
+$0.5514$ (4.4$\times$) quoted here before 2026-10-10 were the excised
+convention-C values.
 (Earlier versions had these two values swapped;
 fixed.)
 

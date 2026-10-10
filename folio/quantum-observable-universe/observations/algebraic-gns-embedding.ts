@@ -23,7 +23,7 @@ export default proposition({
   authorNotes: [
     {
       kind: "status",
-      body: "**Established, not conjectural.** This is the Jones–Wenzl subfactor construction (`jones1985`, `wenzl1988`): the Markov trace's positivity in the Wenzl regime, consistency under the inductive system $H_n(q) \\subset H_{n+1}(q)$ (Markov property), and the GNS construction are all standard. The four-step derivation lives in the proof block `prf:algebraic-gns-embedding`.",
+      body: "**Established, not conjectural.** This is the Jones–Wenzl subfactor construction (`jones1985`, `wenzl1988`): the Markov trace's positivity for every real $q > 0$ (under convention D it factors through Temperley–Lieb with loop value $[2]_q \\geq 2$, which is Jones's positivity range), consistency under the inductive system $H_n(q) \\subset H_{n+1}(q)$ (Markov property), and the GNS construction are all standard. The four-step derivation lives in the proof block `prf:algebraic-gns-embedding`.",
     },
     {
       kind: "caveat",

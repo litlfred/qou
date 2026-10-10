@@ -1,23 +1,31 @@
 import { lemma } from "../../schema/builders";
 
 /**
- * The 3-Sasakian boundary of the Bring cone and its Reeb triad.
+ * The Bring-cone link, and the Reeb triad of its quaternionic model.
  *
- * The 4-dimensional cone has a 3-dimensional link. Where the bulk carries an
- * invariant volume form, that link carries a 3-Sasakian (degenerate
- * quaternionic-contact) structure: not one Reeb vector field but an SU(2)
- * triad of contact forms and dual Reeb fields.
+ * The 4-dimensional cone has a 3-dimensional link, and that link is the unit
+ * tangent bundle UT(Sigma_4) with Seifert Euler number -6: it has SL~2
+ * geometry, infinite pi_1, and the triad of flows it supports closes into the
+ * SPLIT real form sl_2(R).
  *
  * Modelling the triad as right-multiplication by the quaternionic units gives
- * the bracket [M_i, M_j] = 2 M_k and cyclic — the su(2) commutation relations
- * with structure constant +2. This is the one formalized piece of the
- * tetraplectic layer: sorry-free in `lean/QOU/BringCone.lean`, over a generic
- * `CommRing` rather than ℝ, since nothing archimedean enters.
+ * the bracket [M_i, M_j] = 2 M_k and cyclic — the COMPACT su(2) commutation
+ * relations with structure constant +2. That is a statement about H = C^2, the
+ * smooth local model of the cone (own link: the Hopf fibration S^3, Euler
+ * number -1), and is a local/frame statement rather than a structure on the
+ * link. It is the one formalized piece of the tetraplectic layer: sorry-free in
+ * `lean/QOU/BringCone.lean`, over a generic `CommRing` rather than ℝ, since
+ * nothing archimedean enters; `lean/QOU/BringConeSplit.lean` (also sorry-free)
+ * runs the same construction on the split quaternions and `split_ne_compact`
+ * shows the two brackets are distinct.
+ *
+ * The su(2) survives in this layer as the structure group of the quaternionic
+ * resolvent bundle — `rem:tetraplectic-su2-gauge-reading` — not as a Reeb triad.
  */
 export default lemma({
   label: "lem:bring-cone-reeb-quaternionic-twist",
   title:
-    "Reeb quaternionic twist on the Bring-cone link: $[M_i, M_j] = 2M_k$ and cyclic",
+    "Reeb quaternionic twist on the Bring-cone model: $[M_i, M_j] = 2M_k$ and cyclic",
   lean: {
     ref: "qou:QOU.Tetraplectic.reeb_twist_ij",
     sorryFree: true,
@@ -26,6 +34,12 @@ export default lemma({
   uses: ["def:bring-cone-tetraplectic-structure"],
   cites: ["fothleitner2003"],
   authorNotes: [
+    {
+      kind: "status",
+      date: "2026-10-10",
+      body:
+        "**The two caveats below are now IN the statement (owner decision, bean `qou-rydq`).** The prose asserted a 3-Sasakian (degenerate quaternionic-contact) structure on the link while these notes recorded, from 2026-09-03, that the link is $UT(\\Sigma_4)$ at Euler number $-6$ with $\\widetilde{\\mathrm{SL}}_2$ geometry and a split $\\mathfrak{sl}_2(\\mathbb{R})$ triad. A caveat is for author tracking (AGENTS.md \u00a74d), not for carrying the correction to a false claim, so the statement now leads with the link's identity and scopes the compact $\\mathfrak{su}(2)$ bracket to the model $\\mathbb{H} = \\mathbb{C}^2$. Added as a third independent argument (bean `qou-xlw1`): a NON-DEGENERATE quaternionic-contact structure needs $\\dim = 4n+3$ with $n \\geq 1$, i.e. $\\dim \\geq 7$, and the link has dimension 3. **Do not read that as a dimensional refutation of 3-Sasakian** — $4n+3$ allows $n = 0$ and $S^3$ is 3-Sasakian; it is the infinite $\\pi_1$ / asphericity argument that excludes that reading. **No Lean changed**: `reeb_twist_ij/jk/ki` are quaternion identities and the restatement makes the prose MORE faithful to them, not less.",
+    },
     {
       kind: "caveat",
       date: "2026-09-03",
@@ -77,7 +91,7 @@ export default lemma({
     "tetraplectic",
     "bring-cone",
     "reeb-triad",
-    "3-sasakian",
+    "3-sasakian-retired",
     "quaternionic-contact",
     "su2",
     "lean-formalised",

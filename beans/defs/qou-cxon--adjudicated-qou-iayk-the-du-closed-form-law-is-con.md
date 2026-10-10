@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-23T19:34:02Z
-updated_at: 2026-10-04T15:16:17Z
+updated_at: 2026-10-10T07:47:06Z
 parent: qou-cdx1
 ---
 
@@ -421,3 +421,11 @@ the Field version I set out to write.
   CLOSED (co-location rule, 12/12), and the mechanism now PROVED in Lean.
 
 Nothing in this bean is left at "interpretation".
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+The D(u) closed-form law is convention-C by construction and must be re-
+derived. A landed closed form, not a binding. Live and coupled to `qou-cds1`.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

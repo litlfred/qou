@@ -33,7 +33,7 @@ $$
   \bigl(\hbar_q^2 \, C \, q^{2k}\bigr)^n.
 $$
 
-**Step 4: Geometric-series sum.** We sum over $n$ with $k = 1$ fixed to extract the dominant mode contribution. We use $\hbar_q^2 C q^2 < 1$ in the Wenzl regime, which holds for $q \in (1, q_*)$ with $q_* \approx 1.2$. This range comfortably covers the substrate $q_0 \approx 1.110$:
+**Step 4: Geometric-series sum.** We sum over $n$ with $k = 1$ fixed to extract the dominant mode contribution. We use $\hbar_q^2 C q^2 < 1$, which holds for $q \in (1, q_*)$ with $q_* \approx 1.2$. This range comfortably covers the substrate $q_0 \approx 1.110$:
 $$
   \sum_{n=1}^{\infty} \hbar_q^{2n} C^n q^{2n}
   \;=\;

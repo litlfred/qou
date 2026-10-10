@@ -5,9 +5,10 @@ status: todo
 type: task
 priority: normal
 tags:
+    - 8f-qcd
     - reorg-2026-10-04
 created_at: 2026-08-02T18:33:15Z
-updated_at: 2026-10-04T15:13:42Z
+updated_at: 2026-10-10T07:16:10Z
 parent: qou-8lxd
 ---
 

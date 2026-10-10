@@ -77,6 +77,8 @@ $$
 
 These are distinct when $\mu_a \neq \mu_b$. The asymmetry $\mathcal{S}_{ab} - \mathcal{S}_{ba} = (q - q^{-1})(\mu_a - \mu_b)/(q^{1/2} + q^{-1/2})$ is the weak asymmetry. This drives the $Q$-value.
 
+The pair Skein formula uses the excised convention-C Markov weight $1/(q^{1/2}+q^{-1/2})$. The identification $\mathcal{S}_{ba}(q) = \mathcal{S}_{ab}(q^{-1})$ also relies on that convention: the C denominator is invariant under $q \leftrightarrow q^{-1}$, but the canonical weight $z = q^3/(q^2+1)$ is not. Both statements are convention-C results until the pair-Skein formula is re-derived under the canonical weight.
+
 ## The lepton pair from $T_{3,5}$ decomposition
 
 Gröbner–Shirshov reduction decomposes the $T_{3,5}$ braid $(\sigma_1 \sigma_2)^5$ into the lepton pair and a reduction residue. The electron trefoil $T_{2,3} = (\sigma_1)^3$ accounts for $3$ of the $10$ crossings. The antineutrino unknot $K_{0_1}$ accounts for $0$. The remaining $7$ crossings are the weak vertex residue. They are absorbed into R2 moves during re-reduction.

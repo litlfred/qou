@@ -60,11 +60,14 @@ $$
   \;=\; h z^2 + z.
 $$
 
-Equivalently, using $h / (q^{1/2} + q^{-1/2}) = q^{1/2} - q^{-1/2}$:
+Equivalently, since $hz = q^2(q^2-1)/(q^2+1)$ for $z = q^3/(q^2+1)$:
 
 $$
-  \alpha_3 \;=\; z \bigl(1 + q^{1/2} - q^{-1/2}\bigr).
+  \alpha_3 \;=\; z\,(1 + hz) \;=\; \frac{q^3}{q^2+1}\Bigl(1 + \frac{q^2(q^2-1)}{q^2+1}\Bigr).
 $$
+
+(The form $z(1 + q^{1/2} - q^{-1/2})$ that stood here until 2026-10-10 holds
+only for the excised convention-C weight $z = \sqrt q/(q+1)$.)
 
 $\square$
 

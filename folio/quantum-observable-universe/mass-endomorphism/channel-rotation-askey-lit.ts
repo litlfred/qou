@@ -14,6 +14,7 @@ export default remark({
     "prop:q-gaussian-obstruction-at-q0",
   ],
   cites: [
+    "terashima-yamazaki2013",
     "askey1989qhermite",
     "ismail-masson1994",
     "zhedanov1991",

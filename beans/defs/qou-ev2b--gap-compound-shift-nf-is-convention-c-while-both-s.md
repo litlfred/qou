@@ -1,13 +1,13 @@
 ---
 # qou-ev2b
 title: 'GAP: compound_shift_nf is convention C while both sources it claims to match are D — migration moves TR_M by 22.7-50.6%'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T09:20:48Z
-updated_at: 2026-10-04T15:19:51Z
+updated_at: 2026-10-10T07:47:21Z
 parent: qou-cdx1
 ---
 
@@ -92,3 +92,14 @@ Worth recording the shape: this bean asked for a decision on a 22.7-50.6 %
 numeric move, and the answer arrived from a parallel agent while the question
 sat open. The measurement was still the right output — it is what made the
 incoming migration checkable rather than something to take on trust.
+
+
+## 2026-10-10 re-audit verdict: **CLOSE** (bean `qou-am5t`)
+
+`compound_shift_nf.py:321` now reads `z = q0 ** 3 / (q0 ** 2 + 1)` —
+convention D. The module also carries a C-vs-D determinant comparison table at
+`:301-304` naming `z_D / h.z^2+z` as 'the true D form'. The bean's claim
+('both named sources are D and this module is C') is measurably false; the
+module migrated. It appears in no convention-C binding report.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

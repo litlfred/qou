@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T14:34:40Z
-updated_at: 2026-10-04T15:20:31Z
+updated_at: 2026-10-10T10:40:00Z
 parent: qou-avtq
 ---
 
@@ -69,3 +69,23 @@ one**, because the 11-vs-13 question is live enough that a guard against
 regression is worth having, and **(2) for nl84**, whose subject (an unsourced
 figure) is simply no longer unsourced. Default if nobody acts: they stay red,
 which is safe but noisy.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: OPEN.** Still red, and the defect detectors now fail on corrected corpus behaviour. nl84 fails 2 of 4 checks, not 1. The rescope-or-retire decision is still the owner's. Until it is made, both witnesses record retracted findings.
+
+Evidence: Re-ran both probes (exit 1 each). `qbeta_nucleon_crossing_count_contradiction_probe.py`: 4/7, failing `corpus_derives_a_thirteen_crossing_neutron`, `THE_CONTRADICTION_…`, `the_citation_does_not_say_what_it_is_cited_for`. `qbeta_nl84_provenance_probe.py`: **2/4** (not 1/4 as the bean says), failing `neither_the_block_…declares_a_producer` and `N_l_eq_84_is_an_UNSOURCED_FIGURE`. Its corpus grep count is now 59 (witness 51). Neither probe has been rescoped or retired. Witnesses `computations/qbeta/qbeta-{nucleon-crossing-count-contradiction,nl84-provenance}.witness.json` are allPassed false, computedAt 2026-08-30.
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+## 2026-10-10 — follow-up review (re-check of the `qou-avtq` sweep flags)
+
+**The nl84 "producer added" result is a false positive.** `has_computation()` in `qbeta_nl84_provenance_probe.py:118` is a substring test, and it matches caveat prose in `ilp-solution-count-unwrap.ts`, which has no `computation` field. So N_ℓ = 84 is **still unsourced**, and retiring nl84 on the strength of that check would be wrong.
+
+The nucleon fix is real: the corpus now says 11 crossings.
+
+**Open steps:** fix the detector to test for a `computation` field (code, needs owner OK); rescope-or-retire of the nucleon probe stays the owner's call.
+
+Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-up: `qou-review/avtq-reopened-beans-2026-10-10.md` (project files). Status unchanged.

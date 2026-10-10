@@ -1,13 +1,13 @@
 ---
 # qou-qnqf
 title: 'Fallback: retire L as a binding energy and say what it is instead'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T06:48:04Z
-updated_at: 2026-10-04T15:19:06Z
+updated_at: 2026-10-10T07:02:44Z
 parent: qou-v2om
 ---
 
@@ -238,3 +238,8 @@ chasing. I flagged it as "more interesting but more speculative"; it was neither
 The statement in `rem:bond-log-ratio-is-a-free-energy` is unaffected — it says
 "near-null vector of the unweighted block sum ... survives in `z+d` only because
 `w₊ ≠ w₋`", which is correct as written.
+
+
+## 2026-10-10 — completed (survey for epic `qou-d8c7`, issue litlfred/qou#7547)
+
+The question this bean held in reserve was answered on 2026-09-05 (section "ANSWERED": the free-energy reading cannot supply the binding identification), and the follow-on prose sweep is recorded as done the same day. Nothing in the body is still pending. The negative is listed under "Tried, failed (structural)" in the epic's catalogue; the kT question it touches stays open in `qou-892m`.

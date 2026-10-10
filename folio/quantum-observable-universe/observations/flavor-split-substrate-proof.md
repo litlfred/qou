@@ -12,7 +12,7 @@ $$
   [2]_q \cdot z_{\text{mkv}} \cdot (\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}),
 $$
 
-where $z_{\text{mkv}} = (q^{1/2} + q^{-1/2})^{-1}$. Dividing by $\mu_{\text{avg}} = (\mu_{\mathfrak{u}} + \mu_{\mathfrak{d}})/2$:
+where $z_{\text{mkv}} = (q^{1/2} + q^{-1/2})^{-1} = \sqrt q/(q+1)$ is the excised convention-C Markov weight, inherited from the pair-Skein formula. Steps 1 and 3 therefore hold in the convention-C frame only. At the canonical weight $z = q^3/(q^2+1)$ the product $[2]_q z$ would be exactly $q^2$, but that substitution is not valid until the pair-Skein formula is re-derived under the canonical weight. Dividing by $\mu_{\text{avg}} = (\mu_{\mathfrak{u}} + \mu_{\mathfrak{d}})/2$:
 
 $$
   \frac{m_n - m_p}{\mu_{\text{avg}}}
@@ -40,6 +40,13 @@ This is the minimal substrate-atom combination satisfying three conditions:
 (b) Leading order $(q-1)^3$ at the classical limit.
 (c) Numerical agreement to $-0.67\%$ at $q = q_0$.
 
+**Note (2026-10-10, scope of Step 2).** Equation (2) is a fitted ansatz, not a derived one. Condition (c) chooses the form because it agrees with experiment, which is selection against the target. Conditions (a) and (b) do not single it out:
+
+- (b) holds: the right-hand side is $4(q-1)^3 + O((q-1)^4)$.
+- (a) does not hold as stated. Writing $f(q) = h_q^2\,\hbar_q/\sqrt{q}$, one finds $f(q^{-1}) = -q^2 f(q)$, so $f$ is antisymmetric under $q \mapsto q^{-1}$ only up to the factor $q^2$ (checked symbolically).
+
+Everything downstream of (2) therefore inherits a fitted input. The derivation that would replace it is open.
+
 *Step 3 (Algebraic identity tying the equivalent forms).*
 
 $$
@@ -54,7 +61,7 @@ $$
   z_0,
 $$
 
-and $\hbar_q \cdot \sqrt{q} = (q - 1)/\sqrt{q} = q^{1/2} - q^{-1/2} = z_0$. So $h_q \cdot z_{\text{mkv}} = z_0 = \hbar_q \cdot \sqrt{q}$. This gives the chain of equivalent forms:
+and $\hbar_q \cdot \sqrt{q} = (q - 1)/\sqrt{q} = q^{1/2} - q^{-1/2} = z_0$. So $h_q \cdot z_{\text{mkv}} = z_0 = \hbar_q \cdot \sqrt{q}$. The first equality holds for the convention-C weight only: at the canonical weight $h_q z \approx 0.1281$ at $q_0$, against $q_0^{1/2} - q_0^{-1/2} \approx 0.1044$. This gives the chain of equivalent forms:
 
 $$
   h_q^2 \cdot \frac{\hbar_q}{\sqrt{q}}

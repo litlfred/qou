@@ -1,13 +1,13 @@
 ---
 # qou-5nyg
 title: 'qbeta-habiro-element-probe: committed witness is convention-C, live data is D'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T09:01:49Z
-updated_at: 2026-10-04T15:23:00Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -67,3 +67,13 @@ Re-run on a container matching the recorded environment and commit the D-frame
 witness as part of the convention-D tranche, citing this bean. The script fix
 is already landed and is a precondition — before it, the producer could not
 produce *any* witness, C or D.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: DONE.** The D-frame witness the bean asked for is committed (2026-09-07), matching the bean's "fresh run (D)" column. Close.
+
+Evidence: `computations/probes/qbeta-habiro-element-probe.witness.json` (computedAt 2026-09-07) now carries the D-frame values: p_denom `4*u**26 + 8*u**22 + 4*u**18`, n_denom `4*u**18`, `shared: false`, p rel_ppm 0.000000. No `check_q` remains.
+
+Status: `todo` → `completed`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

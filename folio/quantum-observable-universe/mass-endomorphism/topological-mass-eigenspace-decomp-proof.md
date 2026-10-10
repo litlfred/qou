@@ -35,7 +35,7 @@ $$
 
 for every section $\alpha$.  Applying this to the mass integrand and
 using the additivity of the nonabelian multiplicative integral over
-orthogonal direct sums \[Proposition 5.3, yekutieli2015]:
+orthogonal direct sums:
 
 ```tex
 \begin{equation}\label{eq:mi-decomp}

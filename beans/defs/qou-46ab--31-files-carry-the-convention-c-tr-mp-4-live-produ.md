@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T06:41:11Z
-updated_at: 2026-10-04T15:16:03Z
+updated_at: 2026-10-10T08:01:18Z
 parent: qou-cdx1
 ---
 
@@ -475,3 +475,200 @@ convention-independent and are marked as such.
 
 **Residues after this pass:** one — the `qou-mass/.../data/_deprecated/`
 mirror, correctly left alone.
+
+
+## 2026-10-10 — pointer
+
+Tracked under carrier M6 (qou-2cof) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+31 files carrying a convention-C `tr_M(p)` as a recorded VALUE, with 4 live
+producers hardcoding it as a reference. A hardcoded reference value is
+invisible to the value audit, which evaluates `z` bindings, not published
+constants. Live, and it is the sharpest of the 41: a recorded number cannot be
+re-spelled into visibility.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+
+## 2026-10-10 re-measure: the SERIOUS SUBSET is 4 -> 0, and the 32 are triaged (bean `qou-am5t`)
+
+Re-measured on `main` `3bfe6c5037`, by the literal, as this bean prescribes.
+
+### The four hardcoded references: all clear
+
+| producer | hits on `1.06530622861316` |
+|---|---|
+| `computations/skein_proton_canonical.py` | **0** |
+| `computations/probes/rho_f_categorical_probe.py` | **0** |
+| `computations/canonical_tr_m_three_path_comparison.py` | **0** |
+| `computations/markov/markov_weights_symbolic.py` | 1 — and it is the **comment recording the fix** (`CONVENTION FIX (2026-08-30, bean qou-46ab)`), not a constant |
+
+So the subset this bean called serious — *"hardcoded constants that other
+computations are CHECKED AGAINST"* — is drained, and the surviving match
+documents that drain. `canonical_tr_m_three_path_comparison.py`'s *"matches
+bridge to all digits"* comment, which this bean proved false, is gone with it.
+
+### The 32 files, triaged into the buckets this bean predicted
+
+The literal is now in **32** files (31 -> 32, excluding `__pycache__` and agent
+worktrees). The **neutron** literal `0.92323329718615` drained **20 -> 7**.
+
+| bucket | n |
+|---|---|
+| **(b) scoped** — the literal sits within 4 lines of a convention-C / excised / historical / CONVENTION-FIX marker | **24** (15 `.py`, 6 `.md`/`.ts`, 1 `.json`, 1 `.lean`, 1 witness) |
+| bean bodies recording their own analyses | 4 |
+| a dated audit doc (`2026-06-17-l1-1ppq-certification-gap.md`) | 1 |
+| `computations/q0_sweep_full_309_result.txt` — the deliberate sweep record this bean itself predicted would be bucket (b) | 1 |
+| `qou-mass/.../data/_deprecated/markov_weights_symbolic.witness.json` — deprecated by placement | 1 |
+| **(c) a LIVE producer** | **1** |
+
+Bean bodies and dated audit docs are deliberately left, same decision as the
+`4.66e6` drain (`qou-3nva`): rewriting a figure inside a dated record falsifies
+the record.
+
+### The one live producer — fixed, and it was a CROSS-CHECK TARGET
+
+`computations/habiro/habiro_coefficients_atomic.py:95`. Its docstring declared
+*"Canonical Wenzl-bridge convention"* and then published, as the numbers to
+verify the producer against:
+
+    proton:   1.0653062286131670      <- convention C
+    neutron:  0.9232332971861535      <- convention C
+
+citing `cross-check-trM-1ppb.witness.json` as their source. **That witness
+contains neither literal.** It carries `markov_peel` and
+`chi_cache_canonical` = `1.1457597828869253187149279265985273678220205972661`.
+So the stated targets disagreed with the file named as supplying them — the
+inverted failure `markov_weights_symbolic.py` already records for this same
+literal: a reader verifying the producer against a C target sees the *correct*
+D computation as wrong.
+
+Corrected in place. The literals remain only inside the explanatory note.
+
+### TWO NEW FINDINGS, neither resolved here
+
+1. **The cited witness is MUON-pinned** — `q0Anchor: "muon"`,
+   `q0Value: 1.10997859564273904668…` — the ideal CAL-2 layer, while production
+   compute defaults to the proton pin (owner directive 2026-08-07). So it is not
+   a drop-in target for a proton-pinned run. That is bean `qou-3zby`'s subject
+   (*"cross-check-trM-1ppb committed witness is stale on main — C/D straddle"*)
+   and this is independent corroboration of it from a consumer.
+
+2. **THREE D-frame proton |tr_M| values live in the corpus**, in two families
+   ~79 ppb apart:
+
+       1.1457596924573008697...    ~90 occurrences  (corpus-dominant)
+       1.1457597822878355047       ~20 occurrences  (the value THIS bean quotes)
+       1.1457597828869253187...    the cited witness, muon pin
+
+   The first is ~79 ppb from the other two; those two are ~0.5 ppb apart. **The
+   μ–p substrate tension is ~11.6 ppb and so accounts for under a tenth of the
+   79 ppb gap** — the pin alone does not explain the spread, which is the
+   tempting reading. Note this bean's own D figure
+   (`1.1457597822878355047`) is in the MINORITY family, 20 against 90.
+
+   Which family is canonical is an open measurement. Not decided here, and
+   deliberately not decided in the docstring either — picking one by majority
+   would be selection, not derivation.
+
+### Disposition
+
+The `(c)` class this bean was opened for is **closed**: 4 hardcoded references
+plus 1 cross-check target, all now either removed or scoped. What is left under
+this bean is the two findings above, of which the three-value spread is the
+substantive one. Leaving `todo` rather than completing, per the rule against
+closing a bean whose live subject is an unsettled measurement.
+
+## 2026-10-10 re-measure on `main` `ac111c1814`: the serious subset is RESOLVED, and the re-derivation this bean asked for is done
+
+### The 4 hardcoding producers — all four now READ the value
+
+This bean's "THE SERIOUS SUBSET — 4 live producers HARDCODE it as a REFERENCE"
+is closed, and closed the right way rather than by substituting the D literal.
+[`computations/canonical_trm_reference.py`](../../computations/canonical_trm_reference.py)
+now serves `tr_m_nucleon` to **27 consumers**, reading the value from the
+50-dps witness **at the pin the running producer actually resolves to**, and
+raising if neither recorded witness matches. Its own docstring makes the
+argument this bean implies:
+
+> *"WHY NOT JUST SUBSTITUTE THE D LITERAL. Because that is how the corpus got
+> here. A hardcoded D constant is stale the moment the anchor or the convention
+> moves again, and it carries no way for a reader to tell which frame it is
+> in."*
+
+All three named files import it (`skein_proton_canonical.py:63`,
+`markov_weights_symbolic.py:323`, `probes/rho_f_categorical_probe.py:78`); the
+surviving `1.0653062286` mentions in them are prose explaining what was removed.
+
+Measured over every tracked `.py` outside `_deprecated`: **0 live-numeric
+sites.** Classifying all 35 carriers of either literal —
+
+    live-numeric (an mpf() on a non-comment line)   0
+    comment / docstring (the migration's records)  12
+    deliberate C reference (3 probes + the module)  5
+    markdown prose                                 12
+    witness / .work logs / .txt / .lean             6
+
+And that module records a finding this bean should carry, because it is the
+same lesson one level up: *"the previous migration could not have caught it —
+`.work/convention-c-regen*.jsonl` logs `markov_weights_symbolic.py` as `ok`,
+5.2 s and its C constant is still there today, because **re-running a producer
+cannot change a literal.** A regeneration sweep is the wrong instrument for
+this class and reports success against it."*
+
+### The rounding-aware re-derivation this bean asked for — measured
+
+§"A literal scan cannot bridge three renderings of one number" asks that
+*"anything relying on that 31 should be re-derived with a rounding-aware
+match"*. Done. The count is almost entirely a function of the prefix chosen:
+
+| prefix scanned | files |
+|---|---:|
+| `1.065306228` (10 sig digits) | **84** |
+| `1.0653062286` | 54 |
+| `1.06530622861316` ← **this bean's literal** | **35** |
+| `1.0653062286131670` | 31 ← the figure in the title |
+| `1.065306228613167059` | 21 |
+| `1.0653062286131670594` (full 20) | **7** |
+
+So the title's **31 is a 2.7× undercount** against a 10-significant-digit
+match, and the full 50-dps literal would have found **7** — a 12× swing from
+one end of the same quantity to the other. `1.065306228` is still specific
+(the D value is `1.1457…`), so 84 is the honest surface.
+
+The 49 files between 35 and 84 are not noise: **33 of them carry
+`1.0653062285923893…`**, which is the `*-tr-M-q0` / `markov-trace-assembly-*`
+chain pair's value (`qou-1ucq`), and it diverges from this bean's literal at
+the **11th** significant digit, rel `1.9504e-11`.
+
+### 🛑 Three things I checked expecting to find a defect, and did not
+
+Recorded so the next reader does not re-walk them.
+
+1. **A-vs-B at `1.95e-11` is NOT a contradiction.** Both chains in `qou-1ucq`
+   declare `target_tolerance: 1e-09`, and `1.95e-11` is *inside* that. It is a
+   precision difference between a 50-dps witness and a 1e-9-tolerance chain,
+   which is exactly why a **rounding-aware** match is the right instrument
+   here — a value-exact one splits one quantity into two.
+2. **It is not the pin either.** The μ–p separation is `11.6 ppb = 1.16e-8`,
+   about **600×** larger than the A/B gap, so no choice of anchor explains it.
+3. **The third rendering's bad error bar is ALREADY withdrawn.**
+   `markov-trace-frobenius-selection.md` quotes `1.0653061442544499` with
+   `≤ 2.57e-16` — `7.92e-8` from both other renderings, i.e. `3.1e8×` its own
+   bound. That looked like a live reader-facing defect; it is not. Line 117 of
+   that block already **replaces** the C table and states the diagnosis
+   verbatim: *"Its superseded error column, ≤ 8.16×10⁻¹⁶, measured agreement
+   among paths that were all in the same convention — it was never a bound on
+   the quantity."*
+
+### Status
+
+The **serious subset is resolved** and the asked-for re-derivation is done, so
+what remains is the 12 markdown-prose carriers plus the 12 Python comments.
+Those are records of the migration, and per the `4.66e6` precedent (`qou-3nva`)
+dated records are deliberately left. **Re-scoped to the prose carriers alone**;
+anyone quoting "31 files" should quote **84 at 10 digits / 35 at 15 / 7 at 20**
+and say which.

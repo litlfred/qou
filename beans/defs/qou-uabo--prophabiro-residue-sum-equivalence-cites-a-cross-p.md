@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T23:12:20Z
-updated_at: 2026-10-04T15:22:15Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -168,3 +168,13 @@ on *weights* (3+-row `y_lambda`, half-integer q powers) and neither can see a
 recorded *trace value*. A block quoting `0.3883` and declaring one of those
 witnesses would pass the witness-substitution axis, the convention-C witness
 audit, and R9/R10/R11, because all four look at either weights or producers.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: OPEN.** The block quotes non-canonical (Schur-Weyl) numbers. Its cited cross-validation witness also predates the convention-D regeneration and agrees bit-exactly, so it may not be independent. Regenerate the cross-validation witness against the D-frame atomic witness, check that the two paths really are independent, and only then re-table. Until then the Lean axiom's empirical backing is stale.
+
+Evidence: The block `folio/.../mass-theory/habiro-residue-sum-equivalence.md` (l.41–45) still quotes p 2.1225825095 / D 0.1774369242. Its cited witness `computations/markov/markov-pipeline-cross-validation.witness.json` exists (2026-08-23, allPassed) but carries p 1.14575969…, n 0.98774368…, D 0.57517224…. Those are pre-regeneration values: today's convention-D atomic witness gives p 0.6293284, n 0.4751335, D 0.1519683 at q₀. Its rel_diff is exactly 0.0 to 60 digits, which suggests the two "paths" share an upstream. The block's Lean `habiro-residue-sum-equivalence.lean` carries `axiom protonExample_archimedean_agreement_axiom`, justified by this empirical table.
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

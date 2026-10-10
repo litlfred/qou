@@ -7,7 +7,16 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-19T00:05:02Z
-updated_at: 2026-10-04T15:24:43Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: OPEN.** Open. The field premise was fixed by qou-ynff, and the closed-form computation has not been run.
+
+Evidence: Premise corrected by qou-ynff (completed): trace field disc −23 (`FiveTwoSumRuleIntegrand.lean:249 disc_eq_neg_23`). Commits a0417e9822/853560fde5 only retitled it, and no result exists.
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

@@ -8,7 +8,7 @@ import Mathlib.CategoryTheory.Category.Basic
 The topological charge of the unit particle is quantized: the algebraic
 residue at z = 1, computed via the observer trace Φ, equals unity.
 
-LaTeX label: `thm:topological-charge-quantization`
+LaTeX label: `conj:topological-charge-quantization`
 
 ## References
 

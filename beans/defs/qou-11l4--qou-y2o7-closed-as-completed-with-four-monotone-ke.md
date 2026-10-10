@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T09:49:46Z
-updated_at: 2026-10-04T15:23:05Z
+updated_at: 2026-10-10T10:40:00Z
 parent: qou-avtq
 ---
 
@@ -80,3 +80,19 @@ check E counts declared uses out loud instead of letting them disappear.
 
 That `qou-y2o7`'s completed work is wrong. Everything it did land was verified.
 The gap is enumeration: it fixed the consumers it found.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: OPEN.** Half done. The frame is declared at each call site (ac3b804c11), but the four probes still sit on the monotone kernel, and their grouped-frame numbers are cross-nucleon differences that will move once they migrate to chi_all_lambda_any. They reproduce today in the grouped frame only, which is not evidence for the canonical frame.
+
+Evidence: Piece 1 (declare the frame) DONE in `ac3b804c11` (2026-09-14): all four probes now build `_word` via `pyhecke.atom.grouped_word_from_chains`, and their docstrings name the `chi_monotone_transfer` constraint and `qou-11l4`. Piece 2 (move to `chi_general_word.chi_all_lambda_any`) NOT done: all four still `from chi_monotone_transfer import chi_all_lambda` (e.g. `qbeta_d_frame_trace_baseline_probe.py:93`). Re-ran all four (`timeout 300`), all exit 0: 9/9, 5/5, 4/4, 7/7. Witness data reproduced byte-for-byte; only metadata (scriptHash, commitSha, native build) differs.
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+## 2026-10-10 — follow-up review (re-check of the `qou-avtq` sweep flags)
+
+The probes still call `chi_monotone_transfer` (e.g. `d_frame_trace_baseline_probe.py:93`); migration to `chi_all_lambda_any` (`chi_general_word.py:180`) has not happened. Open code step, with the deltas to be recorded.
+
+Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-up: `qou-review/avtq-reopened-beans-2026-10-10.md` (project files). Status unchanged.

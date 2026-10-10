@@ -1,13 +1,13 @@
 ---
 # qou-kc21im
 title: 'GAP: is KC21''s "structural parity is convention-immune" VERIFIED or asserted? c_3(q) is DEFINED BY the C-frame extractor'
-status: todo
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T15:05:00Z
-updated_at: 2026-10-04T15:10:58Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -185,3 +185,13 @@ corpus has been relying on.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-15 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: CLOSED-PROVED.** S(-ε)+S(ε)\
+
+Evidence: Re-ran `qbeta_kc21_parity_convention_immunity_probe.py`: exit 0, **12/12**, 60 dps, proton pin. A4 (D-frame ε-parity) holds; A6 shows c3^D=-974.43; A12 shows the literal full-value oddness is false (\
+
+Status: `todo` → `completed`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

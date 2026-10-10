@@ -1,0 +1,118 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.17",
+  "computedAt": "2026-10-10T08:34:30.948287+00:00",
+  "commitSha": "38f760df095589f24efc897e7daa4304910a10ec",
+  "assertions": [
+    {
+      "name": "supergolden_divides_zC_minus_q_exactly",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "source": "numer(z_C - q) = -u*(u**3 + u - 1); divided by u^3+u-1 -> quotient -u, remainder 0 (EXACT in Q[u], not a numerical zero)"
+    },
+    {
+      "name": "zD_minus_q_has_no_positive_root",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "source": "z_D - q = -q/(q**2 + 1); numerator -q has no positive root, so the factor carrying C's threshold is nowhere zero under D"
+    },
+    {
+      "name": "D_vanishing_is_the_markov_relation_not_z_minus_q",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "source": "((q^2+1)z - q^3) == 0 identically under D (this is markovWeightD_root), so D's det-vanishing and C's supergolden threshold have disjoint mechanisms"
+    },
+    {
+      "name": "C_markov_factor_vanishes_only_at_u_eq_1",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "source": "numer under C factors as -u*(u - 1)*(u**6 + u**5 + 2*u**4 + u**3 + u**2 + u + 1); its only positive real root is u = [1] (i.e. q = 1, the classical point), NOT the supergolden value"
+    },
+    {
+      "name": "C_qz_plus_1_factor_has_no_positive_root",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "source": "numer(q*z_C + 1) = u**3 + u**2 + 1 -- the supergolden-family conjugate cubic -- with no positive real root, so the (qz+1)^5 factor supplies no threshold on u > 0"
+    },
+    {
+      "name": "zD_minus_q_at_supergolden_is_far_from_zero",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "source": "u = 1/psi = 0.682327803828019327369483739711...; z_D - q at q = u^2 is -0.382633011901595784675..., i.e. O(0.1), not a near-vanishing. (Evaluating z_C - q here in float64 returns ~5.6e-17, the floor of that arithmetic -- which is why the verdict rests on check 1's exact division and not on this number.)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "gram-h3-supergolden-is-convention-c-artefact",
+  "scriptFile": "gram_h3_supergolden_is_convention_c_artefact_probe.py",
+  "scriptHash": "100ec0d873a7",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.17",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2986fe4aa825b156"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gram_h3_supergolden_is_convention_c_artefact_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gram_h3_supergolden_is_convention_c_artefact_probe.py"
+  },
+  "description": "Settles bean qou-zf9n item 3: the supergolden threshold u^3+u-1 of prop:spectrahedral-phase-collapse is the numerator of the convention-C factor (z - q), by exact division in Q[u] with remainder 0. Under the canonical convention D that factor is -q/(q^2+1), which has no positive root, and D's identical determinant-vanishing comes from the Markov relation ((q^2+1)z - q^3) = 0 instead. The two frames' vanishings have disjoint mechanisms and C's threshold has no D-frame counterpart. Scope (a), not (b): no supergolden feature is excluded anywhere else.",
+  "data": {
+    "determinant_factors_generic": {
+      "(z - q)": "-q + z",
+      "(q*z + 1)": "q*z + 1",
+      "((q^2+1)*z - q^3)": "-q**3 + z*(q**2 + 1)",
+      "(q^3*z + q*z + 1)": "q**3*z + q*z + 1"
+    },
+    "factors_under_convention_C_in_sqrt_variable": {
+      "(z - q)": "-u*(u**3 + u - 1)/(u**2 + 1)",
+      "(q*z + 1)": "(u**3 + u**2 + 1)/(u**2 + 1)",
+      "((q^2+1)*z - q^3)": "-u*(u - 1)*(u**6 + u**5 + 2*u**4 + u**3 + u**2 + u + 1)/(u**2 + 1)",
+      "(q^3*z + q*z + 1)": "(u + 1)*(u**6 - u**5 + u**4 - u**3 + 2*u**2 - u + 1)/(u**2 + 1)"
+    },
+    "factors_under_convention_D": {
+      "(z - q)": "-q/(q**2 + 1)",
+      "(q*z + 1)": "(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)",
+      "((q^2+1)*z - q^3)": "0",
+      "(q^3*z + q*z + 1)": "q**4 + 1"
+    },
+    "markov_parameter_C": "z_C = sqrt(q)/(q+1) = u/(u^2+1) with q = u^2",
+    "markov_parameter_D": "z_D = q^3/(q^2+1) (canonical, owner ruling R1)",
+    "supergolden_cubic": "u**3 + u - 1",
+    "supergolden_root_1_over_psi_50dps": "0.68232780382801932736948373971104825689118858189800",
+    "exact_division": {
+      "numerator_of_zC_minus_q": "-u*(u**3 + u - 1)",
+      "divided_by": "u**3 + u - 1",
+      "quotient": "-u",
+      "remainder": "0",
+      "note": "remainder 0 in Q[u] -- exact, not a numerical zero"
+    },
+    "verdict": "convention-C artefact of the substitution z = u/(u^2+1)",
+    "scope": "(a) scope-limited negative, NOT (b) structural exclusion",
+    "does_not_establish": [
+      "the generic factorisation (consumed from qou-zf9n / gram_h3_convention_frame_probe.py, not re-derived here)",
+      "what prop:spectrahedral-phase-collapse should say instead -- authoring in a second content block, owner's call (qou-zf9n item 2)",
+      "that no supergolden feature exists elsewhere in the framework"
+    ],
+    "tracked_by": "qou-zf9n (item 3)"
+  }
+}
