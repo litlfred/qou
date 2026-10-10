@@ -1,11 +1,11 @@
 ---
 # qou-y4ca
 title: Prove the two converses the iff-rename tranche left one-directional
-status: completed
+status: in-progress
 type: task
 priority: low
 created_at: 2026-10-10T07:29:24Z
-updated_at: 2026-10-10T09:04:14Z
+updated_at: 2026-10-10T09:55:01Z
 parent: b9cj
 ---
 
@@ -231,3 +231,69 @@ numbers move.
 Done by a sibling (`570ee7fdb6`, `denomPoly_eq_zero_iff`, verified exit 0 /
 sorry-free). So **both items of this bean are now resolved** — one by a proof,
 one by a measured negative that turned into a stronger proof.
+
+
+## 2026-10-10 (later) — 🛑 MY "5 consumers" FIGURE WAS WRONG. It is ONE, and the refactor landed.
+
+Owner authorised the consumer refactor. Measuring it properly first showed the
+figure this bean and PR #7546 both published was **a grep line count, not a
+consumer count** — the exact error class this session spent the day correcting
+elsewhere.
+
+`grep -rn eq_one_or_neg_one_of_offDiag_eq_zero folio/ --include=*.lean` returns
+**5 lines**, and they classify as:
+
+| line | what it is |
+|---|---|
+| `:45` | the **declaration** itself |
+| `:89` | a **docstring** mention, in `offDiag_axialDist_ne_zero`'s doc |
+| `:98` | a **real use** |
+| `:101` | a **docstring** mention — in the doc of the iff I had just added |
+| `:117` | a **real use** — inside the iff I had just added |
+
+So: **one pre-existing call site, zero cross-file consumers.** Two of the five
+were prose, one was the declaration, and one was my own new theorem citing the
+old one. "5 in-tree consumers" over-stated the blast radius **five-fold**, and
+it is in PR #7546's merged body and merge commit, where it cannot be edited.
+
+### What the refactor actually was
+
+One `rcases` in `offDiag_axialDist_ne_zero`:
+
+```lean
+-  rcases eq_one_or_neg_one_of_offDiag_eq_zero q hq0 hq2 hzero with h | h <;> omega
++  have h : TableauCells.axialDist T k = -1 :=
++    (offDiag_eq_zero_iff_eq_neg_one q hq0 hq2).mp hzero
++  omega
+```
+
+The disjunction obliged that proof to dispatch a `d = 1` case **that cannot
+occur** — `offDiag q 1 = 1 ≠ 0` — so `rcases … <;> omega` discharged one real
+case and one vacuous one. The biconditional supplies `d = -1` directly.
+
+The iff was **moved above** `offDiag_axialDist_ne_zero` so the dependency order
+is right; nothing else in the file moved.
+
+### Blast radius, measured after the change
+
+`offDiag_axialDist_ne_zero`'s **statement is unchanged**, so its one real
+cross-file consumer (`SeminormalRangeTop.lean:63`) needs no edit — and it was
+verified anyway rather than assumed. `eq_one_or_neg_one_of_offDiag_eq_zero`
+**keeps its name, statement and proof**; it now has zero call sites and is
+retained as the directional form.
+
+Verified, both files, `lean -DautoImplicit=false -s 65536`:
+
+```
+OffDiagNonvanishing.lean   exit=0  errors=0  warnings=0
+SeminormalRangeTop.lean    exit=0  errors=0  warnings=0
+```
+
+### The reusable half
+
+**Classify grep hits before quoting them as consumers.** A declaration, its own
+docstring, a sibling's docstring and a call site all match the same identifier,
+and in a corpus whose docstrings cite lemmas by name — which this one does,
+deliberately and usefully — prose dominates. Here it was 3 prose-or-self of 5.
+Had the refactor been genuinely 5 cross-file call sites, the estimate would have
+been right by luck rather than by measurement.
