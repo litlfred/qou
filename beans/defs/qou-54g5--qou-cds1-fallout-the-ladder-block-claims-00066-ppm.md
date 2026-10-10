@@ -1,13 +1,13 @@
 ---
 # qou-54g5
 title: 'qou-cds1 fallout: the ladder block claims -0.0066 ppm at the muon pin; the implementation gives +7.34 ppb'
-status: todo
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T23:21:11Z
-updated_at: 2026-10-04T15:15:03Z
+updated_at: 2026-10-10T07:02:44Z
 parent: qou-avtq
 ---
 
@@ -623,3 +623,8 @@ Both are the same failure: treating a bean's surface as its state.
 **No producer was re-run and no witness was committed as a result of this
 check** — the only change a re-run would have produced is a provenance
 downgrade, and the tree was reverted.
+
+
+## 2026-10-10 — completed (survey for epic `qou-d8c7`, issue litlfred/qou#7547)
+
+The headline question was settled on 2026-08-31 (sign positive, `+0.0071` ppm) and the 2026-09-13 entries confirm the witness carries the live value. The one open residue, the cause of the 7.133 ppb epoch offset, is moved to `qou-cds1` (appended there today), where the ladder re-derivation lives.

@@ -12012,10 +12012,10 @@ export const references: Reference[] = [
     },
     type: "article",
     title: "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories",
-    author: [{ family: "Terashima", given: "Yuji" }, { family: "Yamazaki", given: "Masahito" }],
+    author: [{ family: "Teschner", given: "J." }, { family: "Vartanov", given: "G. S." }],
     issued: { "date-parts": [[2013]] },
     URL: "https://arxiv.org/abs/1202.4698",
-    note: "PDF library/arxiv-1202.4698v3/ — Held copy v3 [hep-th], 30 Apr 2013. Author attribution read from the head line; verify before citing.",
+    note: "PDF library/arxiv-1202.4698v3/ — Held copy v3 [hep-th], 30 Apr 2013. AUTHORS CORRECTED 2026-10-10 (issue litlfred/qou#7552): the title page of the held PDF reads 'J. Teschner and G. S. Vartanov, DESY Theory, Hamburg'; the entry previously named Terashima and Yamazaki. The id 'terashima-yamazaki2013' is retained for cross-ref stability (it is used by bean, attestation and slug-map records), exactly as for orellana1998.",
   }),
 
   ref({

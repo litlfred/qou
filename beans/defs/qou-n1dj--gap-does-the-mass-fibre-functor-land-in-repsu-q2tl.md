@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T09:50:22Z
-updated_at: 2026-10-04T15:19:57Z
-parent: qou-wp3h
+updated_at: 2026-10-10T07:00:33Z
+parent: qou-d8c7
 ---
 
 > **Status reverted to `todo` by the parent session (2026-08-08).** The research
@@ -543,3 +543,8 @@ All four touched siblings now compile clean under `-DautoImplicit=false`
 `volume-from-rigidity`); one of them was red before. Library: `check-base-ring`
 PASS, `check-wall-side` PASS, `run-validate` unchanged at 51 issues (no issue
 added or removed).
+
+
+## 2026-10-10 — reparented to the mass-endomorphism epic
+
+This bean is carrier M8 of epic `qou-d8c7` (issue litlfred/qou#7547). Parent moved from `qou-wp3h` to `qou-d8c7`; nothing in the body above was changed by the move.

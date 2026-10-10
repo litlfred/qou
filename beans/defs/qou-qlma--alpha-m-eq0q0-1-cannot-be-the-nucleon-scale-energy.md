@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T00:05:33Z
-updated_at: 2026-10-04T15:16:19Z
+updated_at: 2026-10-10T07:01:43Z
 parent: qou-v2om
 ---
 
@@ -369,3 +369,8 @@ already-disputed mass channel.
 
 - [ ] does the binding channel's C assignment have a forcing argument, or is it
       inherited from the definitional doc the way the mass channel's was?
+
+
+## 2026-10-10 — pointer
+
+Tracked under carrier M8 (qou-n1dj) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.

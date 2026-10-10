@@ -17,7 +17,7 @@ The recursive Markov-axiom ascent and partition-sum Wedderburn formulas must agr
 Two layers have to be got right, and each has a natural wrong answer:
 
 1. **Weight layer.** The weight is $y_\lambda(q)$, the Wenzl Schur principal specialisation (`prop:hecke-branching-trace-decomposition`), and what distinguishes it from the naive two-variable Schur function $s_\lambda(q, q^{-1}) / H_q(\lambda)$ is the **normalisation**: $y_\lambda$ divides by $Z = \sum_\mu s_\mu f^\mu$, fixed by $\sum_\lambda y_\lambda f^\lambda = \mathrm{tr}_M(1) = 1$, not by the hook polynomial $H_q(\lambda)$.
-2. **Character layer.** The $q = 1$ limit of the Hecke character is not the character required here; the trace must be taken of the $q$-Hecke character $\chi^\lambda_q(\mathcal{B}_K) = \mathrm{tr}\,\rho_\lambda^q(\mathcal{B}_K)$, via Hoefsmit seminormal matrices at $q_0$.
+2. **Character layer.** The $q = 1$ limit of the Hecke character is not the character required here; the trace must be taken of the $q$-Hecke character $\chi^\lambda_q(\mathcal{B}_K) = \mathrm{tr}\,\rho_\lambda^q(\mathcal{B}_K)$, via Hoefsmit seminormal matrices at $q_0$. The $q$-Murnaghan–Nakayama rule for $\chi^\lambda_q$ is \cite[Thm.~4.1, Cor.~4.2]{jing-liu-2021}, with hook values in closed form \cite[Thm.~2.9]{jing-liu-2021}; those results use $T_i^2 = (q-1)T_i + q$, so their values must be rescaled to the $\sigma_i$ convention here.
 
 > **Corrected 2026-09-06** (`qou-fq0f`). Bullet 1 used to discriminate on
 > *vanishing*: that $s_\lambda(q,q^{-1})/H_q(\lambda)$ "vanishes for partitions

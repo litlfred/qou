@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-10-04T15:11:08Z
+updated_at: 2026-10-10T07:02:43Z
 parent: qou-avtq
 ---
 
@@ -8591,3 +8591,8 @@ citations, and 3 further files carry the same assertion with no lemma named at
 all, so a grep on the identifier cannot find them. Full per-site table and blast
 radius on `qou-6moa`; fixed so far in AGENTS.md and
 `QOU/Mass/AltCharShiftMultiset.lean` (PR #7459).
+
+
+## 2026-10-10 — item moved here from `qou-54g5` (epic `qou-d8c7`, issue litlfred/qou#7547)
+
+`qou-54g5` is completed today: the ladder headline it questioned was settled on 2026-08-31 (sign positive, `+0.0071` ppm) and its 2026-09-13 entries confirm the witness carries the live `7.133937` ppb. One thing it left open belongs with this re-derivation: **the cause of the 7.133 ppb epoch offset** between the published-epoch column and the recomputed N=3 row (`qou-54g5` lines ~386-430, marked there "NOT FITTED: the cause ... is not identified"). It is not identified here either.

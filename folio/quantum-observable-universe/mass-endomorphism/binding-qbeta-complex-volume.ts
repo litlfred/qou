@@ -17,6 +17,8 @@ export default conjecture({
     "conj:block-multiplicativity-v-free",
   ],
   cites: [
+    "neumann-cspaper",
+    "baseilhac-benedetti2007",
     "neumann-zagier1985",
     "kashaev1997",
   ],

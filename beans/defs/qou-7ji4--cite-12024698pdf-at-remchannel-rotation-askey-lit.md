@@ -1,13 +1,13 @@
 ---
 # qou-7ji4
 title: Cite 1202.4698.pdf at rem:channel-rotation-askey-lit
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T00:10:51Z
-updated_at: 2026-10-04T15:17:08Z
+updated_at: 2026-10-10T07:26:04Z
 parent: qou-19m0
 ---
 
@@ -28,3 +28,10 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [terashima-yamazaki2013] as the citation key when you do it.
+
+
+## 2026-10-10 — pointer
+
+Tracked under carrier M14 (qou-9w2m) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+## 2026-10-10 — Done in issue litlfred/qou#7552: `channel-rotation-askey-lit.md` item 2 cites `\cite[\S2.1, \S2.3]{terashima-yamazaki2013}` for the b <-> 1/b self-duality, and notes the source writes q~ = e^{+i pi/b^2}, the complex conjugate of the block's. The entry's AUTHORS were wrong: the held PDF is J. Teschner and G. S. Vartanov; corrected in references.ts, id kept.

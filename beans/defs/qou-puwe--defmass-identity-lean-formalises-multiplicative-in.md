@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T02:47:59Z
-updated_at: 2026-10-04T15:12:17Z
-parent: qou-wp3h
+updated_at: 2026-10-10T07:01:23Z
+parent: qou-d8c7
 ---
 
 
@@ -173,3 +173,13 @@ carrying "multiplicative integration agrees with the categorical trace" as a
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-22 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — reparented to the mass-endomorphism epic
+
+This bean is carrier M1 of epic `qou-d8c7` (issue litlfred/qou#7547). Parent moved from `qou-wp3h` to `qou-d8c7`; nothing in the body above was changed by the move.
+
+
+## 2026-10-10 — untracked residue found in the epic survey
+
+Two declarations claim `def:mass-identity`. The block's `mass-identity.ts:12` points at `qou:QOU.Torsion.MassIdentity` (`validation: not_checked`), while the sibling `mass-identity.lean` defines `frobeniusMass` (line 74) and `scalarMass` (line 92). Which one the block means is part of this bean's formulation question; nothing was changed.

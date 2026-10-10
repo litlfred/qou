@@ -26,7 +26,7 @@ At the substrate anchor $q_0 > 1$, the even-channel measure fails to form a prob
 ## Literature precedents
 
 1. **Askey and Ismail–Masson**: The $q > 1$ continuation of continuous $q$-Hermite \cite{askey1989qhermite} provides the eigenfunction rotation \cite{ismail-masson1994}.
-2. **The modular double**: The non-compact channel couples $q = e^{i\pi b^2}$ to $\tilde{q} = e^{-i\pi/b^2}$. Ponsot–Teschner Racah–Wigner coefficients for $U_q(\mathfrak{sl}(2,\mathbb{R}))$ \cite{ponsot-teschner2001} sit at the non-compact Askey–Wilson level. The map $b \leftrightarrow 1/b$ drives the $6j$-level rotation. This divides $\Phi_q$ (Faddeev, non-compact) from $\mathrm{Li}_2^q$ (Rogers, compact).
+2. **The modular double**: The non-compact channel couples $q = e^{i\pi b^2}$ to $\tilde{q} = e^{-i\pi/b^2}$. Ponsot–Teschner Racah–Wigner coefficients for $U_q(\mathfrak{sl}(2,\mathbb{R}))$ \cite{ponsot-teschner2001} sit at the non-compact Askey–Wilson level. The map $b \leftrightarrow 1/b$ drives the $6j$-level rotation: the self-dual representations of $U_q$ are automatically $U_{\tilde q}$-representations \cite[\S2.1, \S2.3]{terashima-yamazaki2013}. That source writes $\tilde q = e^{+i\pi/b^2}$, the complex conjugate of the $\tilde q$ above. This divides $\Phi_q$ (Faddeev, non-compact) from $\mathrm{Li}_2^q$ (Rogers, compact).
 3. **Quantum modularity**: The Andersen–Kashaev state integral of a knot factors into a $q$-series and a $\tilde{q}$-series. The leading asymptotics trace $\mathrm{Vol} + i\,\mathrm{CS}$ \cite{garoufalidis-zagier-2024}. One complex object dictates two channel factorizations, mirroring the Neumann–Zagier structure \cite{neumann-zagier1985} that $\mathfrak{V}$ transports to binding and decay.
 
 ## Leonard pairs
