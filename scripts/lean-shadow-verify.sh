@@ -142,13 +142,13 @@ if [ ! -d "$SHADOW/QOU" ]; then
 fi
 
 # Every paper package's build dir, not just qou's: a file may import across
-# packages (`content/.../lean/QOU.lean` imports `UGB`), and a missing entry
+# packages (`folio/.../lean/QOU.lean` imports `UGB`), and a missing entry
 # shows up as `unknown module prefix`, which reads exactly like a real error.
-SIBLINGS=$(ls -d "$ROOT"/content/*/lean/.lake/build/lib/lean 2>/dev/null |
+SIBLINGS=$(ls -d "$ROOT"/folio/*/lean/.lake/build/lib/lean 2>/dev/null |
              grep -v "^$OLEANS\$" | tr '\n' ':')
 # BOTH package locations, PAPER FIRST.  The root Lake workspace has
 # `.lake/packages/` and each paper package has its own
-# `content/*/lean/.lake/packages/`; the documented sandbox restore
+# `folio/*/lean/.lake/packages/`; the documented sandbox restore
 # (AGENTS.md §"Mathlib cache 403 fallback") fills the PAPER one, so that is the
 # tree it GUARANTEES.
 #
@@ -161,7 +161,7 @@ SIBLINGS=$(ls -d "$ROOT"/content/*/lean/.lake/build/lib/lean 2>/dev/null |
 # correct by luck of environment.  Bean `qou-tpdg`.
 # Build this with a LOOP, not `ls -d <pat1> <pat2>`: `ls` SORTS its arguments,
 # so it reorders the two patterns ("$ROOT/.lake/..." sorts before
-# "$ROOT/content/...") and the root tree would win the pinning above -- which is
+# "$ROOT/folio/...") and the root tree would win the pinning above -- which is
 # exactly the bug being fixed, reintroduced by the fix.  Shell glob expansion
 # keeps the patterns in the order written.
 #
@@ -183,13 +183,13 @@ SIBLINGS=$(ls -d "$ROOT"/content/*/lean/.lake/build/lib/lean 2>/dev/null |
 # Non-empty oleans only, so the 0-byte `Mathlib/Tactic.olean` of bean
 # `qou-tpdg` counts as the absence it behaves like.
 PKGROOTS=""
-for d in "$ROOT"/content/*/lean/.lake/packages/*/.lake/build/lib/lean \
+for d in "$ROOT"/folio/*/lean/.lake/packages/*/.lake/build/lib/lean \
          "$ROOT"/.lake/packages/*/.lake/build/lib/lean; do
   [ -d "$d" ] && PKGROOTS="$PKGROOTS$d:"
 done
 
 _mlfirst=""; _mlworst=""; _mlbest=""
-for _loc in "$ROOT"/content/*/lean/.lake/packages "$ROOT"/.lake/packages; do
+for _loc in "$ROOT"/folio/*/lean/.lake/packages "$ROOT"/.lake/packages; do
   [ -d "$_loc/mathlib/.lake/build/lib/lean" ] || continue
   _c=$(find "$_loc/mathlib/.lake/build/lib/lean" -name '*.olean' -size +0 2>/dev/null | wc -l)
   [ -z "$_mlfirst" ] && _mlfirst=$_c            # the one that actually shadows
