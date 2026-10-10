@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-10-10T07:04:47Z
+updated_at: 2026-10-10T08:52:56Z
 parent: qou-3e6w
 ---
 
@@ -2001,3 +2001,87 @@ record and the first thing to read before picking up any child. **Nothing was de
 problem they bear on; only arc-wide reframings come back here.
 
 **Do not close this bean** — its subject is an open conjecture (owner directive 2026-09-06).
+
+
+## 🛑 CORRECTION 2026-10-10 — four figures in this bean are stale against the committed probe, and one is INVERTED
+
+Re-ran `computations/deltalambda/rev_e_infinity_xbot_relaxation_probe.py` from the branch
+`claude/xbot-upper-bound-2026-09-15` (#7419) on `main` + that branch. R1–R4 complete, R5
+7 of 9 frames; **R5/R6 did not finish** — see the budget finding on `qou-as81`. Everything
+below is from that run, not from memory.
+
+**The three stale figures.** Each was written in the 2026-09-15 section *before* the
+probe's final edit landed in `39329828903`, so they describe an earlier version of the
+same script. The conclusions all survive; the numbers do not.
+
+| this bean says | measured 2026-10-10 |
+|---|---|
+| R1 agrees over **36** `(pe, block)` pairs | **43** pairs (worst diff `8.65955e-25`, unchanged) |
+| R2 min concavity gap **0.0057** | **0.0016707802**, at `pe = 4, T = 2`, 300 seeded triples |
+| relaxed sup peaks at **`pe = 3` (2.742)**, declining 4: 2.672, 5: 2.414, 6: 1.978 | peaks at **`pe = 4` (3.0825)**; the whole profile is shifted **two frames** and the peak is **12.4 % higher** |
+
+The `pe` profile in full, R4 at `T ≤ 12` (the recorded one was `T ≤ 6`, and that truncation
+is the entire discrepancy — every frame optimises at the boundary `T = 12`, so even this is
+a lower bound on the true profile):
+
+    pe = 0  1.53539138607047383
+    pe = 1  2.27576061362907053
+    pe = 2  2.74201217067973621     <- the value this bean attributes to pe = 3
+    pe = 3  2.99241794528878216
+    pe = 4  3.08251683268933314     <- the actual peak
+    pe = 5  3.06493014680884017
+    pe = 6  2.98905604183360738
+    pe = 7  2.87240361178974294
+    pe = 8  2.69255850033782009
+
+**The inference resting on it SURVIVES**: there is a single interior maximum and a monotone
+decline to `pe = 8`, so `P_EXT_MAX = 8` is past the peak. That was the load-bearing part and
+it is now measured over a wider window rather than inferred from a truncated one. Only the
+peak's location and value were wrong.
+
+**🛑 And the fourth is INVERTED, not merely stale.** This bean says, of the padded rows:
+
+> *"I wrote the transfer first and asserted the padded rows are charged zero; they are not
+> — every `Gamma_j` is strictly POSITIVE … Measured padded charge **2.4707** at `pe = 2`."*
+
+The committed probe reports, on every one of the 7 frames that ran:
+
+    padded charge 0.0, tail 0.0  [exactly zero (g <= 0, lo = w = 0, Gamma monotone)]
+
+**Exactly zero, at all nine frames measured, for a reason that is not "Gamma vanishes".**
+`Gamma_j` is indeed strictly positive — that part of the bean is right and is unchanged.
+What makes the charge zero is that at the *fixed* ascent point the padded coordinates have
+**gradient `g <= 0`** and sit at `lo = w = 0`, which is precisely the hypothesis of
+`QOU.BraidKnot.SupergradientCertificate.box_charge_eq_zero_of_nonpos`.
+
+So the 2.4707 was real but its scope was the **broken** ascent — it was a symptom of the
+two search bugs (cold start with value-based stopping; the lower barrier assumed to be 0),
+not a property of the frame. Once those were fixed the padded block contributes nothing.
+
+**This inverts the epistemic status of two Lean lemmas, in the direction of strength.**
+`sum_charge_extend` (padded rows charged zero ⇒ bound unchanged) is the lemma the
+computation **uses**; `sum_charge_extend_le` (bound grows by at most the padded total) is a
+safety net that is never exercised. The 2026-09-15 entry calls the latter *"the honest
+form, which bounds the padded block instead of deleting it, because that is what a
+geometrically decaying tail permits and a vanishing one would not"* — written on the
+strength of the 2.4707. The tail does not merely decay; it is **exactly zero**, so the
+all-T certificate is tight rather than tail-bounded. PR #7419's body carries the same
+inverted claim and is corrected there.
+
+**Nothing in the Lean changes.** All nine declarations are sorry-free and
+`#print axioms`-clean, verified 2026-10-10 by `lean`-direct at the file's post-rename path
+`folio/quantum-observable-universe/lean/QOU/BraidKnot/SupergradientCertificate.lean`
+(exit 0; two-sided `autoImplicit` control; a negative control on the same file goes red;
+counterexamples compiled showing both hypotheses of `box_charge_eq_zero_of_nonpos`
+load-bearing). `sum_charge_extend_le` stays — a lemma that proves the weaker thing is not
+wrong for being unneeded, and nothing yet proves the charge is zero at *every* admissible
+ascent point rather than at the nine measured ones.
+
+**One caveat on `SearchCoercivity`, also from that verification.** This bean and #7419 both
+say the probe's `delta(m)` is *"precisely the object `SearchCoercivity.sub_le_mul_of_antitone_step`
+is stated over, so the probe and the formalisation are testing the same thing."* The
+mathematical claim stands, but `SupergradientCertificate.lean` **imports only Mathlib** and
+names `SearchCoercivity` in prose alone — so that correspondence is a reading, not a
+machine-checked fact.
+
+**Do not close this bean.**
