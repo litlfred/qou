@@ -2,6 +2,18 @@
 description: Drain the integration-watcher backlog into reviewable PRs. Clusters open findings into ≤ 49-file batches (Gemini review limit), creates a PR per batch, runs prepare-merge, addresses comments, merges, repeats until the axis is clear. With no arg, asks which axis.
 ---
 
+> **🟧 Block-QA location (issue #7642, owner 2026-10-10). This overrides every `<block>.qa.json` path below.**
+> The derived block report (`block-qa/v1`) is no longer beside its block. It is
+> `test/results/block-qa/<repo-relative block path>.qa.json` (gitignored),
+> published to `cat/cat-harness/qa-reports` keyed by commit. Fetch it first:
+> `bun folio-assistant/cat-harness/scripts/qa-store.ts fetch --ref main`.
+> Agent and human verdicts live on main in
+> `test/attestations/block-qa/<same path>.attestations.json`. Read and write
+> through `folio/pipeline/block-qa-io.ts` (Python: `scripts/lib/block_qa.py`);
+> never build the sibling path by hand. An empty results tree means unfetched,
+> not clean.
+
+
 Run the **`local/integration-backlog`** dispatcher skill against the
 current paper's QA sidecars. The full protocol lives in
 [`.claude/skills/local/integration-backlog.md`](../skills/local/integration-backlog.md);

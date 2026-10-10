@@ -577,6 +577,23 @@ and [`.claude/skills/local/bean-coordination.md`](.claude/skills/local/bean-coor
 The plan is the agent's source of truth for "what next" — not the
 user's last message, not the most recently mentioned file.
 
+> **🟧 BEANS ARE BRANCH-MOUNTED, NOT ON MAIN (owner ruling 2026-10-10, issue
+> #7642).** `beans/` (`beans.json` + `defs/`) lives on the orphan branch
+> `cat/cat-harness/beans`, declared in `qou.json` as `source: {kind: branch,
+> keyedBy: tip}`, and is gitignored on main (`/beans/**`). The SessionStart
+> hook (`scripts/session-start-coord-sweep.sh` §4a) mounts it at `beans/`
+> with `state:mount`. By hand:
+> `bun folio-assistant/cat-harness/scripts/state-mount.ts`. The `beans` CLI
+> works on the mount unchanged, because `.beans.yml` still says
+> `path: beans/defs`. **A bean edit is no longer a commit in your PR.** Push it
+> back with `bun folio-assistant/cat-harness/scripts/branch-store.ts push --id
+> beans`. That is a splice with `expect`; it never forces, and two writers of
+> one file get `conflict`, so re-read and retry. The CLI never pushes, so an
+> edit you have not pushed is lost when the container goes. If the mount
+> failed, an empty `beans list` means the work plan is **unreachable**, not
+> that there is no work. Every `beans/defs/...` path below now names a file in
+> the mount.
+
 > **Migration note (2026-06-19).** Beans **supersede** the older
 > `TodoWrite`-tool / `todos/*.json` work-plan mechanism. Wherever this
 > document still says *"TodoWrite list"* / *"todo list"* below, read it
@@ -587,7 +604,12 @@ user's last message, not the most recently mentioned file.
 > the Folio-Assistant Infrastructure Migration — the `miga` epic.)
 
 > **A bean is an APPEND-ONLY ledger, and concurrent appends collide on
-> essentially every landing (measured 2026-09-13).** `main` takes **169
+> essentially every landing (measured 2026-09-13).** *(Since the 2026-10-10
+> branch mount, beans are no longer merged through PRs, so the merge-time
+> collision below no longer happens on `main`. A concurrent write now
+> surfaces as `conflict` from `branch-store.ts push --id beans`. The record
+> below is kept as history, and `bean-append-merge.py` is only for a branch
+> cut before the mount.)* `main` takes **169
 > commits / 24 h**; `beans/defs/qou-brng--…` is touched by **9** of them and
 > `beans/defs/qou-zlra--…` by **6**, so a branch that appends to `qou-brng`
 > goes un-mergeable roughly **every 2.7 h**. In the #7237 / #7245 /
@@ -774,6 +796,19 @@ user's last message, not the most recently mentioned file.
       items whose `block_or_script` overlaps the current PR's
       scope (e.g. the same chapter or the same Python/Lean file).
    4. **Refresh stale sidecars + witnesses** (added 2026-06-03).
+      **🟧 Where block QA lives (issue #7642, owner 2026-10-10).** The
+      derived block reports (`block-qa/v1`) are NOT beside their blocks any
+      more. They live in `test/results/block-qa/<block path>.qa.json`
+      (gitignored), published to the `cat/cat-harness/qa-reports` branch
+      keyed by commit. Fetch them before reading any verdict:
+      `bun folio-assistant/cat-harness/scripts/qa-store.ts fetch --ref main`.
+      Agent and human verdicts (judgements) live on main in
+      `test/attestations/block-qa/<block path>.attestations.json`
+      (`qa-attestations/v1`). Read and write through
+      `folio/pipeline/block-qa-io.ts`, or `scripts/lib/block_qa.py` from
+      Python; never build `<root>.qa.json` by hand. A `qa-sweep` refresh
+      changes the results tree, which is published, not committed. Below,
+      "sidecar" means that report.
       The QA pipeline depends on `*.qa.json` sidecars and
       `computations/*.witness.json` files staying
       in sync with the source they audit. Sidecars are stale
@@ -782,7 +817,7 @@ user's last message, not the most recently mentioned file.
       SHA-256 prefixes) drift from the current file contents;
       refresh by deleting the stale `criteria.<crit>` entry from
       the `.qa.json` and running
-      `bun run folio-assistant/content/pipeline/qa-sweep.ts <path> --only <crit>`
+      `bun run folio-assistant/cat-harness/content/pipeline/qa-sweep.ts <path> --only <crit>`
       (single canonical invocation; use `/integration-audit
       <axis>` to batch a whole axis). Witnesses are stale when
       `witness.scriptHash` (SHA-256 prefix of producer file
@@ -1915,7 +1950,10 @@ corpus — run the **corpus-grep checklist**:
    lists that document's extracted theorems and definitions if you want
    the claims rather than the prose.
 
-6. **The beans** — `grep -rl <topic> beans/defs/`. The work-plan tracker is a
+6. **The beans** — `grep -rl <topic> beans/defs/`, **on the mount** (since
+   2026-10-10 `beans/` is mounted from `cat/cat-harness/beans`; if
+   `beans/defs` is missing, run `state-mount` first, or this path is an empty
+   grep that reads as a clean bill). The work-plan tracker is a
    corpus in its own right (tens of thousands of files) and it is where a
    prior agent's *conclusion* most often sits before it reaches an audit
    doc or a content block. It is **not** covered by paths 1–5: `beans/`
