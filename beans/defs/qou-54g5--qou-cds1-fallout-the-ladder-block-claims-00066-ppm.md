@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T23:21:11Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-10-10T10:40:00Z
 parent: qou-avtq
 ---
 
@@ -643,3 +643,13 @@ Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap 
 ## 2026-10-10 — a witness this bean cites is red (cross-cluster check, verification sweep of `qou-avtq`)
 
 `computations/qbeta/qbeta-decay-sdp-full-ck-derivation.witness.json` (2026-08-29) has **no q0Anchor**, and its `c_4..c_7_extracted_matches_empirical` checks all fail (|Δ| = 1.1e5, 1.3e7, 1.6e9, 1.8e11). So "the SDP extraction decides it" (c_5 = −1.2229 ruling out 3c_3²+b) is unsupported: that extractor emits the accuracy floor (`qou-8ofm`/`qou-frch`/`qou-tv6l`). The superseded-producer finding may still stand on provenance alone. The completed status (set today by another session) is unchanged.
+
+## 2026-10-10 — follow-up review (re-check of the `qou-avtq` sweep flags)
+
+**Cause R1 — a convention-D input read with convention-C formulas.** `computations/q-beta-operator-valued-N3.witness.json` (2026-08-21) carries the D-frame phase (α = −0.0404857773) and Q_N2 = 0.7828047136. `qbeta_decay_sdp_full_ck.py`, `qbeta_decay_sdp_extended_ck.py` and `probes/qbeta_ck_qholonomic_recurrence_test.py` extract c_k = (R−1)/u^k from R(q0) = Q_AME/(Q_N2/N2) using C-frame rungs. Reproduced: C gives Q_N2 = 0.782334410 and c_2 = −1.0150; D gives Q_N2 = 0.782804714 and c_2 = −9.2962338, matching the witness. The c_3 = −974 and c_4…c_7 = −1.1e5…−1.8e11 follow from that. Per `qou-8ofm`/`qou-frch`, one scalar R fixes at most one rung, so no extracted c_k at k ≥ 3 is evidence in either convention.
+
+**Consequence here.** The section "the SDP extraction decides it" is unsupported. The witness records c_5 = −13400478.76; the −1.2229 quoted is a hardcoded string (`qbeta_decay_sdp_full_ck.py:114`), and so is the "ALL … REPRODUCED EXACTLY" banner (`:129`). What survives is provenance plus the Lean definition c_5 = −(b²+½), which is a definition from the corpus, not a derivation. That finding should be read as withdrawn.
+
+**Open code step (needs owner OK):** make the extractor refuse D-frame input and compute its comparison column instead of printing literals.
+
+Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-up: `qou-review/avtq-reopened-beans-2026-10-10.md` (project files). Status unchanged.

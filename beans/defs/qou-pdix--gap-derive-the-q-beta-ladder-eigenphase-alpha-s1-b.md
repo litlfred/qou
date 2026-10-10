@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-10-10T10:40:00Z
 parent: qou-avtq
 ---
 
@@ -3381,3 +3381,11 @@ Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap 
 `qbeta_habiro_wenzl_tower_zeta_n.py` is listed as an "asset on main" for route A, but its witness (`qbeta-habiro-wenzl-tower-zeta-n.witness.json`, 2026-06-02, no q0Anchor) fails `level_4_tower_holds_at_M_11` (0 vs 1) and predates the C→D move. Do not cite it as a working asset.
 
 See also `qou-cds1`'s 2026-10-10 entries: on the ruled base no phase α unblocks the ladder, so this bean is not on the critical path for `qou-cds1` (cluster 3 found the chain `iagg ← cds1 ← pdix` broken). This bean stays open on its own terms.
+
+## 2026-10-10 — follow-up review (re-check of the `qou-avtq` sweep flags)
+
+The Habiro–Wenzl tower probe cannot run on main: it looks for the helium witnesses under `qbeta/`, but they live in `computations/` (`:144-161`). With the paths fixed in a scratch copy it reports **"FALSIFIED at levels [2, 4]"**. The level-2 baseline the route builds on now fails too (|S_7(ζ_8)| = 69650); the 06-02 witness had it passing, but its inputs were regenerated on 09-06/09-07.
+
+Suggested: strike it from the assets list (`:1706`) and drop "S1 blocker" from the title; fix the helium path (code, needs owner OK). Whether route A stays viable is the owner's call. α itself stays open.
+
+Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-up: `qou-review/avtq-reopened-beans-2026-10-10.md` (project files). Status unchanged.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-06-24T03:18:40Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-10-10T10:40:00Z
 parent: qou-avtq
 ---
 
@@ -72,3 +72,9 @@ Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap 
 ## 2026-10-10 — a witness this bean cites is red (cross-cluster check, verification sweep of `qou-avtq`)
 
 The headline `m_n: −1759 → +1.04 ppb` (via `m_p_substrate_identity_50dps.py`, PR #2723) no longer holds on main: `computations/m-p-substrate-identity-50dps.witness.json` (2026-08-29, proton q0) fails `m_n_matches_codata_within_10ppb` at **501.43 ppb** (tolerance 10). `qou-khue` records the 501 ppb move. Cite `qou-khue`, not the 1.04 ppb figure.
+
+## 2026-10-10 — follow-up review (re-check of the `qou-avtq` sweep flags)
+
+The 1.04 ppb and 139–164× figures are from the **retired z = 1 base, convention C**. The `m-p-substrate-identity-50dps` witness fails at 501 ppb, and the dashboard gives m_n at 1.389e5 ppb with no ladder on the ruled base. These figures should be read as superseded (see `qou-khue`). Whether to rescope this bean or fold it into `qou-iagg`/`qou-cds1` is the owner's call.
+
+Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-up: `qou-review/avtq-reopened-beans-2026-10-10.md` (project files). Status unchanged.
