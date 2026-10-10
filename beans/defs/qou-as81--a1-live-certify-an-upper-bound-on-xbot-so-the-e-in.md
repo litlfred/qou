@@ -1,13 +1,13 @@
 ---
 # qou-as81
 title: 'A1 (live): certify an UPPER bound on Xbot so the e_inf join needs no G1'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-10T07:03:48Z
-updated_at: 2026-10-10T07:04:47Z
+updated_at: 2026-10-10T08:52:56Z
 parent: qou-3e6w
 blocking:
     - qou-jz80
@@ -121,3 +121,75 @@ Re-run the full probe (the final `B_allT`, the λ scan, `pe0` and the G1-free cu
 partially observed before a container restart), then land it via task A6.
 
 **Do not close on a partial run.**
+
+
+## 2026-10-10 — R5 partial, the tightness number, and a BUDGET finding that blocks the PR
+
+Full re-run attempted on `main` + `claude/xbot-upper-bound-2026-09-15` (#7419). **R1–R4
+complete and green; R5 reached 7 of 9 frames; R6 never ran.** The corrections this forced
+to `qou-hok7`'s recorded figures are on that bean, including one that is inverted rather
+than stale.
+
+### 🛑 The probe does not fit in one run window, and that is the live blocker
+
+Measured: **~58 min to complete R1–R4, then ~30 min for 7 of R5's 9 frames**, at which
+point the 90-minute background limit killed it. Remaining when killed: 2 frames, the `lam`
+scan (a grid of ascents at the worst frame), and R6. The script is **straight-line with no
+`--only` / no resume** — a restart re-runs R1–R4 from scratch before reaching R5, so a
+second attempt is a coin flip against the 2-hour maximum.
+
+**So #7419 cannot be merged on its own stated standard yet**, and the obstruction is not
+mathematical. Three ways out, in the order I would try them:
+
+1. **Checkpoint R1–R4.** They are cheap verifications whose results do not change between
+   runs; caching them to a sidecar and skipping on a hash match recovers ~58 min, which is
+   the whole shortfall. This is the fix I would make.
+2. **A `--only` selector.** Smaller than (1) and makes the probe usable interactively, but
+   it does not help an unattended full run.
+3. Narrow `TMAX`/`JPAD`. **Rejected** — that is fitting the test to the budget, and the
+   `T <= 12` sweep is exactly what corrected `qou-hok7`'s `pe` profile.
+
+### R5 as far as it got — ascent at 26 rows, all-T bound over 32
+
+| `pe` | relaxed sup at the ascent point | all-T bound | KKT residual |
+|---|---|---|---|
+| 0 | 1.53872109027161153 | 2.15980237611828596 | 8.691e-14 |
+| 1 | 2.31171169398245923 | 2.31171169400596190 | 9.826e-14 |
+| 2 | 2.81390919493735196 | 2.81390919496107597 | 9.320e-14 |
+| 3 | 3.10309806570584077 | 3.10309806572697677 | 7.974e-14 |
+| 4 | 3.23776802870188959 | 3.23776802872415138 | 8.297e-14 |
+| 5 | 3.27638211927474961 | 3.27638211929654931 | 7.697e-14 |
+| 6 | 3.27708095409687544 | 3.27708095412283411 | 9.445e-14 |
+
+Three things worth keeping from that table, none of which needed the last two frames:
+
+- **The all-T bound agrees with the ascent value to ~2.4e-11 at every frame.** That is the
+  T-freeness of `Gamma_j` doing its job: the certificate at a zero-padded point bounds every
+  longer block, so one certificate covers all lengths and the 32-row evaluation adds
+  essentially nothing over the 26-row ascent.
+- **`pe = 0`'s all-T bound is the enumerated maximum to 18 digits** (`2.15980237611828596`
+  vs `2.159802376118285961604`). Not a coincidence and not a bug: the certificate is
+  reported against `max(integer incumbent, G_lam(w))`, and at `pe = 0` the relaxed value
+  (1.5387) sits *below* the integer maximum, so the incumbent dominates.
+- **Padded charge is exactly 0.0 at every frame**, for the reason
+  `box_charge_eq_zero_of_nonpos` names (`g <= 0`, `lo = w = 0`). See the inverted claim on
+  `qou-hok7`.
+
+### The tightness number to watch — 1.517x, not 1.23x
+
+Peak all-T bound so far is **3.27708** at `pe = 6`, against the enumerated `Xbot` maximum
+**2.159802376118285961604**: a ratio of **1.517x**. The `T <= 6` smoke range suggested
+**1.23x**, so the gap widens with the window rather than closing, and `pe = 6` was still
+rising (3.27638 -> 3.27708, nearly flat) when the run died.
+
+Compare: #7349's certified top edge closed at **1.04x** and even its 1.82x predecessor gave
+an unenumerable cut of 90. The coercivity route was **9.62x**. So 1.517x keeps the concave
+route clearly alive and clearly not yet a tool — **and the honest statement of the result
+is "1.5x with the cut not yet computed", not "the certificate closes with slack 3.9e-12"**,
+which is a statement about the *smoke range* and is how this would get over-reported.
+
+What is still unmeasured, and would decide it: the two remaining frames, the `lam` scan
+(which is the only thing that can pull 1.517x down, since the gap is an integrality gap),
+and R6's actual cut width.
+
+**Do not quote 1.23x. Do not merge #7419 until R5/R6 complete.**
