@@ -8,6 +8,7 @@ pages: 13-13
 source_pdf: A_Tutorial_on_Knots_and_Quantum_Mechanics.pdf
 source_sha256: 18321b615ffc968b
 toc_source: outline
+doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
 In this section we will explain how knots can be used in the description of quantum mechanics. In fact, the
 main idea was already anticipated in the last section, when we introduce a matrix description of knots and

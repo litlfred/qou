@@ -8,6 +8,7 @@ pages: 30-32
 source_pdf: 1707.00196v3.pdf
 source_sha256: 9908b71521275b17
 toc_source: outline
+doc_brief: "Yang-Baxter representations of the inﬁnite symmetric group — Every unitary involutive solution of the quantum Yang-Baxter equation (R- matrix) deﬁnes an extremal character and a representation of the"
 ---
 As a simple class of examples which exist in any dimension, we consider involutive
 R-matrices of diagonal type. An R-matrix R ∈R0 is said to be diagonal if it is of the

@@ -8,6 +8,7 @@ pages: 26-33
 source_pdf: A_Tutorial_on_Knots_and_Quantum_Mechanics.pdf
 source_sha256: 18321b615ffc968b
 toc_source: outline
+doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
 In the previous section we made an observation that disconnected topologies correspond to separable
 states in quantum theory, while connected ones are avatars of entangled states. In most cases we would

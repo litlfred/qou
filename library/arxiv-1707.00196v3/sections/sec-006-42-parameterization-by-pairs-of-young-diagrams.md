@@ -8,6 +8,7 @@ pages: 20-22
 source_pdf: 1707.00196v3.pdf
 source_sha256: 9908b71521275b17
 toc_source: outline
+doc_brief: "Yang-Baxter representations of the inﬁnite symmetric group — Every unitary involutive solution of the quantum Yang-Baxter equation (R- matrix) deﬁnes an extremal character and a representation of the"
 ---
 The correspondence in Thm. 4.7 classiﬁes the family of Yang-Baxter characters, but
 it does not classify R0/∼because the dimension of the base space is not recorded

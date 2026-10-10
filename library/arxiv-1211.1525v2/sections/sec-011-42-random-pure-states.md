@@ -8,6 +8,7 @@ pages: 18-19
 source_pdf: 1211.1525v2.pdf
 source_sha256: 51ff1c8f90c025a4
 toc_source: outline
+doc_brief: "PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES: EXACT FORMULAS AND MEANDERS — We investigate the asymptotic behavior of the empirical eigenvalues distribution of the partial transpose of a random quantum"
 ---
 the latter shows a connection to the meander polynomials.
 4.2. Random pure states. We start with the case l = 1 of trivial environ-

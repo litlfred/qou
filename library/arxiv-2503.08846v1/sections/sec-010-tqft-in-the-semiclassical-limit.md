@@ -8,6 +8,7 @@ pages: 23-24
 source_pdf: A_Tutorial_on_Knots_and_Quantum_Mechanics.pdf
 source_sha256: 18321b615ffc968b
 toc_source: outline
+doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
 In Chern-Simons theory, the coupling constant k (also called the level of Chern-Simons theory) appears as
 a factor multiplying the Lagrangian, e.g. (79). Hence, it has a role similar to the inverse Planck constant.

@@ -1,0 +1,136 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2503.08846v1",
+ "source_sha256": "18321b615ffc968b",
+ "brief": "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path",
+ "extended": "**A Tutorial on Knots and Quantum Mechanics**\n\n*Dmitry Melnikov*\n\n51 pp, 23 sections.\n\n**Abstract.** These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path integral formalism. In this description quantum states and operators are encoded by the topology of spaces that are used as modules to build the quantum mechanical model, while expectation values and probabilities are given by topological in- variants of spaces, knots and links. The notes focus on the specific way the topology encodes quantum mechanical features, or, equivalently, on how these features can be controlled through the topology. A topological classification of entanglement is discussed, as well as properties of entanglement entropy and basic quantum protocols. The primary aim is to build a less conventional diagrammatic intuition about quantum mechanics, expanding the paradigm of “Quantum Picturalism”.\n\n**Outline.** Front matter; Introduction; Basics of knot theory; Topological invariants from matrix traces; Skein relation; Bracket and Jones polynomials; Matrix representation; Topological bits; Topological Quantum Field Theory; Topological Quantum Mechanics; Chern-Simons theory; TQFT in the Semiclassical Limit; Quantum Entanglement; Topological Tangling and Quantum Entanglement; SLOCC Classification; Entropy of Entanglement; Inequalities for the Entanglement entropy; Quantum Teleportation",
+ "tokens": {
+  "brief": 49,
+  "extended": 369
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-basics-of-knot-theory",
+   "title": "Basics of knot theory",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-002-topological-invariants-from-matrix-traces",
+   "title": "Topological invariants from matrix traces",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-003-skein-relation",
+   "title": "Skein relation",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-004-bracket-and-jones-polynomials",
+   "title": "Bracket and Jones polynomials",
+   "pages": "8-11"
+  },
+  {
+   "id": "sec-005-matrix-representation",
+   "title": "Matrix representation",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-006-topological-bits",
+   "title": "Topological bits",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-007-topological-quantum-field-theory",
+   "title": "Topological Quantum Field Theory",
+   "pages": "13-16"
+  },
+  {
+   "id": "sec-008-topological-quantum-mechanics",
+   "title": "Topological Quantum Mechanics",
+   "pages": "16-19"
+  },
+  {
+   "id": "sec-009-chern-simons-theory",
+   "title": "Chern-Simons theory",
+   "pages": "19-23"
+  },
+  {
+   "id": "sec-010-tqft-in-the-semiclassical-limit",
+   "title": "TQFT in the Semiclassical Limit",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-011-quantum-entanglement",
+   "title": "Quantum Entanglement",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-012-topological-tangling-and-quantum-entanglement",
+   "title": "Topological Tangling and Quantum Entanglement",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-013-slocc-classification",
+   "title": "SLOCC Classification",
+   "pages": "26-33"
+  },
+  {
+   "id": "sec-014-entropy-of-entanglement",
+   "title": "Entropy of Entanglement",
+   "pages": "33-36"
+  },
+  {
+   "id": "sec-015-inequalities-for-the-entanglement-entropy",
+   "title": "Inequalities for the Entanglement entropy",
+   "pages": "36-38"
+  },
+  {
+   "id": "sec-016-quantum-teleportation",
+   "title": "Quantum Teleportation",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-017-quantum-algorithms",
+   "title": "Quantum Algorithms",
+   "pages": "38-40"
+  },
+  {
+   "id": "sec-018-dense-coding",
+   "title": "Dense Coding",
+   "pages": "40-42"
+  },
+  {
+   "id": "sec-019-outlook",
+   "title": "Outlook",
+   "pages": "42-43"
+  },
+  {
+   "id": "sec-020-multipartite-entanglement",
+   "title": "Multipartite Entanglement",
+   "pages": "43-44"
+  },
+  {
+   "id": "sec-021-quantum-gravity",
+   "title": "Quantum Gravity",
+   "pages": "44-51"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

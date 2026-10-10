@@ -8,6 +8,7 @@ pages: 22-22
 source_pdf: 1707.00196v3.pdf
 source_sha256: 9908b71521275b17
 toc_source: outline
+doc_brief: "Yang-Baxter representations of the inﬁnite symmetric group — Every unitary involutive solution of the quantum Yang-Baxter equation (R- matrix) deﬁnes an extremal character and a representation of the"
 ---
 Our basic Def. 1.1 of equivalence of R-matrices refers only to the Sn-representations
 ρ(n)

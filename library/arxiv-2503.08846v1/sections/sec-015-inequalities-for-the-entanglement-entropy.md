@@ -8,6 +8,7 @@ pages: 36-38
 source_pdf: A_Tutorial_on_Knots_and_Quantum_Mechanics.pdf
 source_sha256: 18321b615ffc968b
 toc_source: outline
+doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
 In the previous parts of section 4 we discussed expression of quantum entanglement in terms of topology
 and showed how a specific measure of entanglement – the von Neumann entropy – gets a topological
