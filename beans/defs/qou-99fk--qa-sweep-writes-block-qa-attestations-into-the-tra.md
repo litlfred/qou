@@ -1,0 +1,79 @@
+---
+# qou-99fk
+title: qa-sweep writes block-qa attestations into the TRACKED test/attestations store -- undeclared and unignored
+status: todo
+type: task
+priority: normal
+created_at: 2026-10-10T07:37:59Z
+updated_at: 2026-10-10T07:37:59Z
+---
+
+## The finding
+
+`qa-sweep` at platform pin `717aa19a` writes **two** artifacts per block:
+
+| path | state |
+|---|---|
+| `test/results/block-qa/<block>.qa.json` | **gitignored** (`.gitignore:284 test/results/*`) — the destination the owner ruling intends |
+| `test/attestations/block-qa/<block>.attestations.json` | **NOT ignored**, and its parent `test/attestations/` is a **committed store** (426 tracked files) |
+
+So running `qa-sweep` on any block leaves an **untracked file** in a tracked
+store. Caught by the session stop-hook's untracked-files check after a routine
+two-block sweep; it will fire for every agent who runs qa-sweep, every time.
+
+## Why it is not obvious which way to fix it
+
+**Three readings, and the corpus supports more than one:**
+
+1. **It should be gitignored**, like its `test/results/` twin. `qou.json:67`
+   states the QA store is "published to the qa-reports branch keyed by commit and
+   **never committed** (owner ruling 2026-10-04, decision 11)". Taken literally
+   that covers this file too.
+2. **It should be declared and committed.** `test/attestations/` is otherwise a
+   *committed* store — `bib-human-review` (reference attestations) and
+   `bib-verification` are both tracked. On that reading `block-qa` is a third
+   attestation kind that simply has no `qou.json` entry yet.
+3. **The platform should not write there at all** — the duplicate write is the
+   defect, and `test/results/block-qa/` alone is correct.
+
+**Measured, to narrow it:** `git ls-files test/attestations/` yields exactly two
+subtrees, `bib-human-review` and `bib-verification`. **Zero** `block-qa`
+attestations are committed anywhere in history, and `qou.json` carries **no**
+`attestations/block-qa` declaration. So reading 2 has no precedent behind it
+today — but that is an absence, not a decision, and the absence is equally
+consistent with "nobody has declared it yet".
+
+## What was done, and what was deliberately NOT done
+
+**Done:** the two generated files were **deleted, not committed** — derived
+output, regenerable by re-running qa-sweep, and the ruling says QA results are
+never committed. That is the conservative action under all three readings.
+
+**Not done:** no `.gitignore` line was added. Adding one picks reading 1 over
+readings 2 and 3 and silences the signal, and the destination of a derived store
+is an owner/platform call rather than agent cleanup. A `.gitignore` entry would
+also make the duplicate write permanently invisible, which is the wrong outcome
+if reading 3 is right.
+
+## Blast radius
+
+Low in content terms, recurring in agent terms. Nothing in `folio/`,
+`computations/` or the Lean tree is affected. The cost is one false
+"untracked files" stop-hook hit per agent per qa-sweep run, and the standing
+risk that someone resolves it by committing the files — which would start an
+undeclared derived store inside a committed one.
+
+## Recommendation (agent judgement, not a finding)
+
+Reading **1**: gitignore `test/attestations/block-qa/`, matching the
+`test/results/*` precedent and the "never committed" wording, and keep a
+`.gitkeep` so an absent directory is never mistaken for a clean run — the same
+pattern `test/results/` already uses. Reading 3 is cleaner if the platform
+agrees the second write is redundant, but that is a `folio-assistant` change,
+not a qou one.
+
+## Default if nothing is done
+
+Nothing breaks. Every agent running qa-sweep keeps getting a spurious untracked
+-files prompt and has to re-derive this analysis to know the files are safe to
+delete. Which is the cost this bean exists to remove.
