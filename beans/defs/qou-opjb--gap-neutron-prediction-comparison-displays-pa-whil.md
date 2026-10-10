@@ -3,13 +3,13 @@
 title: 'GAP: neutron-prediction-comparison displays p*(A) while naming n_pred(p), and its c = 0.01497 traces to an SEMF ratio, not to a definition in the corpus'
 status: todo
 type: task
-priority: normal
+priority: high
 tags:
     - reorg-2026-10-04
     - split-from-6766
     - 8f-decide
 created_at: 2026-10-10T08:12:47Z
-updated_at: 2026-10-10T08:14:44Z
+updated_at: 2026-10-10T08:32:53Z
 parent: qou-8lxd
 ---
 
@@ -85,3 +85,105 @@ and it decides between the others. If `λ_C`/`a_A` are genuinely undefined, (2).
 `tbl:neutron-prediction-comparison-table-data` + its `-interpretation` sibling,
 and whatever cites `prop:beta-stability`. Nothing in the mass / binding / Q_β
 chain reads any of them.
+
+
+## Option 1 EXECUTED 2026-10-10 — and it CORRECTS this bean's own central claim
+
+Option 1 above was *"trace `λ_C` and `a_A` and show `0.01497` is derived"* —
+measuring, not changing, so it needed no permission. Done. **The claim I wrote
+above, that `λ_C` is "nowhere defined", is WRONG. Both coefficients are defined
+and derived in the corpus**, and I did not find them because I searched only
+`prop:beta-stability`'s own chapter.
+
+`folio/quantum-observable-universe/lean/QOU/Interactions/QIntegerMassFormula.lean`
+(mirrored at `mass-theory/q-integer-mass-formula.lean`, tabulated at
+`mass-theory/mass-formula-regime-switching-table1-data.md`) defines all seven
+mass-formula coefficients as products of quantum integers times `m_e`, with
+
+```lean
+q_int q n = (q^n - q^(-n)) / (q - q⁻¹)        -- line 27, BALANCED convention
+lambda_C  = (q - q⁻¹) * q_int q 6 * m_e       -- line 42
+a_asym    = 3 * q_int q 2 * q_int q 7 * m_e   -- line 46
+```
+
+So `a_A`, called "the Pauli asymmetry coefficient" with no definition in
+`prop:beta-stability`, has a derived counterpart `a_asym` two chapters over. The
+gap is **local to that block**, not corpus-wide.
+
+### Measured, and the provenance question is NOT settled by it
+
+Arithmetic in `decimal` at 50 digits (arbitrary precision, no float64), proton
+pin `q₀ = 1.1099785827513808`, `m_e = 0.510998950690` MeV from the corpus's own
+CODATA table (`qou_substrate/data/allascii.txt:109`):
+
+| candidate provenance of `c` | value | vs the published `0.01497` |
+|---|---|---|
+| **published in the block** | `0.01497000` | — |
+| **SEMF** `a_C/(2a_A) = 0.714/(2·23.69)` | `0.01506965` | **+0.67 %** |
+| **corpus-derived** `λ_C/(2·a_asym)` | `0.01451583` | **−3.03 %** |
+| the block's **own literal chain**, `a_C = (q−q⁻¹)·λ_C` | `0.00303468` | **−79.73 %** |
+
+**Neither candidate reproduces `0.01497` exactly**, so the provenance is
+undetermined; the SEMF reading is 4.5× closer. **Do not upgrade "4.5× closer"
+to "it is the SEMF ratio"** — the two candidate inputs are themselves close
+(below), so this margin does not cleanly discriminate.
+
+### The hard finding, which does NOT depend on provenance
+
+**The block's own stated formula, followed literally, misses its own published
+numeral by 80 %.** `prop:beta-stability` writes `a_C = (q − q⁻¹)·λ_C`, while the
+Lean `λ_C` **already contains** `(q − q⁻¹)`. Composing them double-counts `h`
+and gives `c = 0.00303`. Reading `a_C ≡ λ_C` instead gives `0.01452`, 3 % away.
+So one of the two is a transcription error, and that is an internal
+inconsistency inside the corpus, independent of where the numeral came from.
+
+### A separate and more interesting fact — and it is a POSTDICTION, stated as one
+
+| | derived | SEMF | gap |
+|---|---|---|---|
+| Coulomb | `λ_C = 0.682437` MeV | `a_C = 0.714` MeV | **−4.42 %** |
+| asymmetry | `a_asym = 23.50663` MeV | `a_A = 23.69` MeV | **−0.77 %** |
+
+The framework's *derived* asymmetry coefficient `3[2]_q[7]_q·m_e` lands within
+**0.77 %** of the empirical SEMF `a_A`. That is a postdiction of a textbook
+phenomenological constant from `q₀` and two quantum integers, and it is the
+reason the provenance question is not cheap: **the derived and empirical inputs
+agree too well for a 3 %-vs-0.67 % comparison to settle which one was used.**
+
+Register discipline, since this is exactly where it matters: this is a
+comparison of a model quantity against a fitted literature constant, not
+evidence that the framework derives nuclear masses. The corpus itself names
+`a_A` as empirical — `computations/_deprecated/per_braid_tower_wigner.py:81`,
+*"SEMF `a_A` is empirically 23.69 MeV"* — in a file whose own docstring reports
+that its *categorical* asymmetry scale (hook product of `(3,1)`) gives
+`~m_e·[4]_q·[2]_q ≈ 4.5` MeV, **an order of magnitude too small**. So the corpus
+holds two different categorical candidates for this one coefficient, 5× apart,
+and `a_asym` is the one that works.
+
+### Revised options
+
+1. **~~Trace `λ_C` and `a_A`~~ — DONE, above.** It did not dissolve the
+   objection; it relocated it.
+2. **Fix the formula, which is now the narrowest real defect.** Make
+   `prop:beta-stability` state `a_C` consistently with the Lean `λ_C` (drop the
+   duplicated `(q − q⁻¹)`, or rename), and cite `a_asym` where it says "the
+   Pauli asymmetry coefficient". Then **recompute `c` and publish what the
+   derived chain actually gives** (`0.01452`), with the residual `|Δn|` that
+   follows. Cost: two prose edits plus a re-run of the comparison table. Risk:
+   the mean `|Δn| = 1.7` will move; that is the point.
+   **Recommended (agent judgement)** — it replaces an untraced numeral with a
+   derived one and makes the postdiction above visible instead of hidden.
+3. **Keep `0.01497`, declare the SEMF import explicitly**, and demote the block
+   from `proposition` (per §NO FITTING, an imported phenomenological constant is
+   somebody else's fit and does not belong in a provable kind).
+4. **Nothing.** The block keeps a numeral that neither candidate chain
+   reproduces and a formula that misses it by 80 %.
+
+**Default if unanswered: (4).** Nothing numerical moves elsewhere — no witness,
+no Lean, no compute reads this block.
+
+### And the display mismatch is unchanged
+
+Everything in the first section still stands: the block names `n_pred(p)` and
+displays `p*(A)`, the inverse map, while its parent reaches `n*` through the
+fixed point `A*(p) = p(2 + (a_C/2a_A)·A*^{2/3})`, `n* = A* − p`.
