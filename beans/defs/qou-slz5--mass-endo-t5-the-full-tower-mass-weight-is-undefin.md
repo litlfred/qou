@@ -5,7 +5,7 @@ status: todo
 type: epic
 priority: normal
 created_at: 2026-10-10T06:48:53Z
-updated_at: 2026-10-10T13:05:46Z
+updated_at: 2026-10-10T13:13:18Z
 ---
 
 Thread (session https://claude.ai/code/session_01ST9RpvTF7JHNdUNafrjf9J). OWNER DECISION gating this thread: D7 (docs/coordination/2026-09-05-owner-gated-bean-triage.md, 2026-09-07) puts mass/binding on the full tower, but production tr_M_via_wenzl_bridge still applies D's two-row cap (keeps 0.0434% of H_12 at 4He). No full-tower mass weight is defined. Candidates: Molien (ruled only for Phi_k), C y_λ (excised), Ocneanu N≠2 (changes the trace).
@@ -39,3 +39,11 @@ Probe `computations/deltalambda/full_tower_trace_coherence_probe.py` (10/10, exa
 - **Ocneanu/Markov family at imaginary rank x = iy**: coherent, every weight > 0 (faithful on all λ), with z(y) = (q−q⁻¹)y²/(y²+1). y→0 gives Molien and y→∞ gives mirror Molien. Real rank gives a negative weight (sample x=3: column of length 12). So for real q>1, the positive Markov traces that are faithful on every partition are exactly z ∈ [0, q−q⁻¹] (≈ [0, 0.2091] at q0). Convention D's z_D = 0.6127 lies outside, consistent with D7.
 - **Not selected:** which point of that interval. Candidates are an endpoint (a canonical trace, i.e. Molien) or the self-dual midpoint y=1, z=(q−q⁻¹)/2, fixed by σ ↦ −σ⁻¹ / λ ↦ λ'. That choice needs a further principle and is not made here.
 - Checked for n ≤ 6 / n ≤ 5, not proved for all n. Next: formalise the λ=(3) Plancherel incoherence and the interval statement in Lean.
+
+
+## 2026-10-10 — corpus-grep result (session_01ST9RpvTF7JHNdUNafrjf9J; paths 1-6, corpus_search MCP unavailable)
+- **In the held literature, 'the Plancherel measure of a Hecke algebra' is the measure of the canonical symmetrising trace Tr(T_w)=δ_{w,1}.** Sources: Parkinson arxiv-1110.6212v2 sec-001:148-180; Geck/Chlouveraki hdr sec-002:47 and sec-025 Rem 6.21/6.43; Féray–Méliot arxiv-1001.2180v2 sec-017 (q-Plancherel = the Thoma point ω_q); Kerov q-Plancherel arxiv-2105.09342v1. Lean already proves this trace is Molien = z=0 Markov (qou-we2d: MolienSymmetrisingTrace.lean molienMarkovTrace_symmetrising, eq_molien_of_zero, sum_addable_molienWeight). So the owner's 'Plancherel', in the literature's sense, is the Molien endpoint; d_q²/D² is the RT/Verlinde weight (conjectural keystone origin) and is not coherent.
+- Already proved: markovTrace_unique (determined by z); the Wenzl lattice; the D trace is not faithful (not_isFaithful_trLim); markov_param_eq_half_h (transpose-symmetric weights give z=h/2).
+- Absent: no Lean statement of the faithful positive window [0, h]. The generic-z Markov property is one evaluation step from MolienSymmetrisingTrace's eval_zero_eq_of_eval_pow.
+- Tension: qou-za3q (2026-09-13) adopted Wenzl z_D for the Ω₂ binding pairing, after D7. Not reconciled.
+- Stale pre-D7 statements: TwoRowCapDerived.lean frames mass as two-row; the trace-convention-registry lists mass/binding as D. The z=h/2 Ocneanu measure is close to, but not equal to, d_q²/D² (agent's check at q=111/100).
