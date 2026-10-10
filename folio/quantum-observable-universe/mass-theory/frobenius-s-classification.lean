@@ -226,4 +226,123 @@ theorem zC_not_bar_equivariant :
 
 end ConventionD
 
+/-! ## Why `Φ₃` is S-odd on chains of the primitives (bean qou-fd2u)
+
+A two-strand element `c σ + d` is the pair `(c, d)`; with `h = q − q⁻¹` the
+Hecke relation `σ² = h σ + 1` gives the product `hmul`.  The two characters
+are `χ_sym(σ) = q` and `χ_alt(σ) = −q⁻¹`.  The bar involution acts on the
+coefficients by a field automorphism `σ̄ : K →+* K` with `σ̄ q = q⁻¹`, and
+sends `σ ↦ σ⁻¹ = σ − h`, so `S(c, d) = (σ̄ c, σ̄ d − σ̄ c · h)` (`sbar`).
+
+The key notion is *bar-homogeneity*: `σ̄ c = ε c` and `σ̄ d = −ε d`.  The three
+quark primitives `(1, 0)`, `(1, −h)`, `(1, −h/2)` have `ε = 1`, and the unit
+`(0, 1)` has `ε = −1`.  Homogeneous elements are closed under products
+(`ε'' = −ε ε'`), and on a homogeneous element `S` swaps the two characters up
+to the common sign `−ε` (`chi_swap`).  Hence on every chain of homogeneous
+factors `S` inverts the ratio `χ_sym / χ_alt`, which gives `Φ₃ ∘ S = −Φ₃`
+term by term.  Nothing here is claimed for non-homogeneous elements: for
+`σ + 1` the ratio is not inverted (see the proof block). -/
+
+section ChiralitySwap
+
+variable {K : Type*} [Field K]
+
+/-- Product of `a σ + b` and `c σ + d` under `σ² = h σ + 1`. -/
+def hmul (h : K) (X Y : K × K) : K × K :=
+  (X.1 * Y.1 * h + X.1 * Y.2 + X.2 * Y.1, X.1 * Y.1 + X.2 * Y.2)
+
+/-- The symmetric character, `σ ↦ q`. -/
+def chiSym (q : K) (X : K × K) : K := X.1 * q + X.2
+
+/-- The alternating character, `σ ↦ −q⁻¹`. -/
+def chiAlt (q : K) (X : K × K) : K := -X.1 * q⁻¹ + X.2
+
+/-- The bar involution on `c σ + d`: coefficients by `σ̄`, `σ ↦ σ − h`. -/
+def sbar (σ : K →+* K) (h : K) (X : K × K) : K × K :=
+  (σ X.1, σ X.2 - σ X.1 * h)
+
+/-- Bar-homogeneity of sign `ε`: `σ̄ c = ε c`, `σ̄ d = −ε d`. -/
+def BarHom (σ : K →+* K) (ε : K) (X : K × K) : Prop :=
+  σ X.1 = ε * X.1 ∧ σ X.2 = -ε * X.2
+
+/-- The chain product of a list of two-strand factors. -/
+def chainProd (h : K) : List (K × K) → K × K
+  | [] => (0, 1)
+  | P :: Ps => hmul h P (chainProd h Ps)
+
+/-- `σ̄ h = −h` when `σ̄ q = q⁻¹`. -/
+theorem bar_h (σ : K →+* K) (q : K) (hσ : σ q = q⁻¹) :
+    σ (q - q⁻¹) = -(q - q⁻¹) := by
+  rw [map_sub, map_inv₀, hσ, inv_inv]; ring
+
+/-- The bar involution is multiplicative on two-strand elements. -/
+theorem sbar_hmul (σ : K →+* K) (h : K) (hh : σ h = -h) (X Y : K × K) :
+    sbar σ h (hmul h X Y) = hmul h (sbar σ h X) (sbar σ h Y) := by
+  simp only [sbar, hmul, map_add, map_mul, hh, Prod.mk.injEq]
+  constructor <;> ring
+
+/-- Bar of a chain is the chain of the barred factors. -/
+theorem sbar_chainProd (σ : K →+* K) (h : K) (hh : σ h = -h) (Ps : List (K × K)) :
+    sbar σ h (chainProd h Ps) = chainProd h (Ps.map (sbar σ h)) := by
+  induction Ps with
+  | nil => simp [chainProd, sbar]
+  | cons P Ps ih => simp only [chainProd, List.map_cons, sbar_hmul σ h hh, ih]
+
+/-- Homogeneous elements are closed under products, with `ε'' = −ε ε'`. -/
+theorem barHom_hmul (σ : K →+* K) (h : K) (hh : σ h = -h) {ε ε' : K} {X Y : K × K}
+    (hX : BarHom σ ε X) (hY : BarHom σ ε' Y) :
+    BarHom σ (-(ε * ε')) (hmul h X Y) := by
+  obtain ⟨h1, h2⟩ := hX
+  obtain ⟨h3, h4⟩ := hY
+  refine ⟨?_, ?_⟩ <;> simp only [hmul, map_add, map_mul, h1, h2, h3, h4, hh] <;> ring
+
+/-- Every chain of homogeneous factors is homogeneous. -/
+theorem barHom_chainProd (σ : K →+* K) (h : K) (hh : σ h = -h) (Ps : List (K × K))
+    (hPs : ∀ P ∈ Ps, ∃ ε, BarHom σ ε P) : ∃ ε, BarHom σ ε (chainProd h Ps) := by
+  induction Ps with
+  | nil => exact ⟨-1, by simp [chainProd, BarHom]⟩
+  | cons P Ps ih =>
+    obtain ⟨ε, hP⟩ := hPs P List.mem_cons_self
+    obtain ⟨ε', hR⟩ := ih (fun Q hQ => hPs Q (List.mem_cons_of_mem _ hQ))
+    exact ⟨_, barHom_hmul σ h hh hP hR⟩
+
+/-- **Character swap.** On a homogeneous element of sign `ε`, the bar
+    involution exchanges the two characters up to the sign `−ε`. -/
+theorem chi_swap (σ : K →+* K) (q : K) (hq : q ≠ 0) {ε : K} {X : K × K}
+    (hX : BarHom σ ε X) :
+    chiSym q (sbar σ (q - q⁻¹) X) = -ε * chiAlt q X ∧
+      chiAlt q (sbar σ (q - q⁻¹) X) = -ε * chiSym q X := by
+  obtain ⟨h1, h2⟩ := hX
+  refine ⟨?_, ?_⟩ <;> simp only [chiSym, chiAlt, sbar, h1, h2]
+  · ring
+  · field_simp; ring
+
+/-- The three quark primitives `uu = (1,0)`, `dd = (1,−h)`, `ud = (1,−h/2)`
+    are homogeneous of sign `1`. -/
+theorem primitives_barHom (σ : K →+* K) (q : K) (hσ : σ q = q⁻¹) :
+    BarHom σ 1 (1, 0) ∧ BarHom σ 1 (1, -(q - q⁻¹)) ∧
+      BarHom σ 1 (1, -(q - q⁻¹) / 2) := by
+  have hh := bar_h σ q hσ
+  refine ⟨⟨?_, ?_⟩, ⟨?_, ?_⟩, ⟨?_, ?_⟩⟩ <;>
+    simp only [map_one, map_zero, map_neg, map_div₀, hh, map_ofNat] <;> ring
+
+/-- **`Φ₃` is S-odd on chains of homogeneous factors.** For a chain `Ps`
+    of bar-homogeneous factors, `S` inverts the ratio `χ_sym/χ_alt`
+    (stated without division), so `log|χ_sym/χ_alt|` changes sign
+    under `S` at every evaluation point where both characters are nonzero. -/
+theorem chiRatio_inverts (σ : K →+* K) (q : K) (hq : q ≠ 0) (hσ : σ q = q⁻¹)
+    (Ps : List (K × K)) (hPs : ∀ P ∈ Ps, ∃ ε, BarHom σ ε P) :
+    chiSym q (chainProd (q - q⁻¹) (Ps.map (sbar σ (q - q⁻¹)))) *
+        chiSym q (chainProd (q - q⁻¹) Ps) =
+      chiAlt q (chainProd (q - q⁻¹) (Ps.map (sbar σ (q - q⁻¹)))) *
+        chiAlt q (chainProd (q - q⁻¹) Ps) := by
+  have hh := bar_h σ q hσ
+  obtain ⟨ε, hX⟩ := barHom_chainProd σ (q - q⁻¹) hh Ps hPs
+  rw [← sbar_chainProd σ _ hh Ps]
+  obtain ⟨s1, s2⟩ := chi_swap σ q hq hX
+  rw [s1, s2]; ring
+
+end ChiralitySwap
+
+
 end QOU.WedderburnMass
