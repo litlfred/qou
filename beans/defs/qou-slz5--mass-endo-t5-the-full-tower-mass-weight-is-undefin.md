@@ -5,7 +5,7 @@ status: todo
 type: epic
 priority: normal
 created_at: 2026-10-10T06:48:53Z
-updated_at: 2026-10-10T14:26:29Z
+updated_at: 2026-10-10T15:10:00Z
 ---
 
 Thread (session https://claude.ai/code/session_01ST9RpvTF7JHNdUNafrjf9J). OWNER DECISION gating this thread: D7 (docs/coordination/2026-09-05-owner-gated-bean-triage.md, 2026-09-07) puts mass/binding on the full tower, but production tr_M_via_wenzl_bridge still applies D's two-row cap (keeps 0.0434% of H_12 at 4He). No full-tower mass weight is defined. Candidates: Molien (ruled only for Phi_k), C y_λ (excised), Ocneanu N≠2 (changes the trace).
@@ -73,3 +73,17 @@ Owner rejected evaluating B_log at z_D (option A) and asked to explore changing 
 - **Ordering fact**: d_nn < d_pn < d_pp, so any monotone-decreasing functional of the factor binds nn most, pp least, at every z. The two-nucleon spectrum (only pn binds) cannot come from the functional; it is in the letters (qou-kj4v).
 - **Unexplored C3 (speculative, not computed):** per-block determinant `Σ_λ μ_λ log|det ρ_λ(·)|`, multiplicative for any word and defined on faithful traces since σ is invertible. Owner consent needed before any code.
 - **Literature:** none found in library/ (INDEX + sections grep) on log-of-Markov-trace binding with signed factors. The nearest precedent for "log of a quantum trace" is the volume conjecture, which takes log|J_N|. Positivity of Markov traces is classical (Wenzl 1988, not held); Orellana arxiv-math-9806163v1 gives the weights.
+
+## 2026-10-10 — stepping stones (story)
+
+The B_log-on-the-faithful-window problem stays OPEN. Stones, in dependency order:
+
+1. `qou-5zl1` general-z bond formula in Lean (in progress, worker on #7612).
+2. `qou-oc6i` C3 trace-of-log probe: measured; pp = -nn at every z, both 0 only at z = h/2; pn weakly anti-bound (-0.0054 alpha). The functional inherits the letters' isospin antisymmetry.
+3. `qou-v47j` letter provenance (done): pp = sigma, nn = sigma^-1 are assumed (no ruling); delta/4 underived; delta convention-C only.
+4. `qou-ulj0` pn letter from a spin x isospin projector (S=1, T=0): the untried door through both proved escapes.
+5. `qou-1jg0` selection principle for the functional (log tr / 1 - prod / tr log; b3 trilemma qou-edt7).
+6. `qou-wktw` which z in [0, h].
+7. `qou-3tz5` rebase #7612 onto #7596.
+
+Reading (judgement): every functional tried so far reproduces the letters' sign pattern, so the letters (stones 3-4) are the upstream place to dig.
