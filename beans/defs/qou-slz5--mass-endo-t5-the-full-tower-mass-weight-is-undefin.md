@@ -5,7 +5,7 @@ status: todo
 type: epic
 priority: normal
 created_at: 2026-10-10T06:48:53Z
-updated_at: 2026-10-10T08:03:01Z
+updated_at: 2026-10-10T12:58:45Z
 ---
 
 Thread (session https://claude.ai/code/session_01ST9RpvTF7JHNdUNafrjf9J). OWNER DECISION gating this thread: D7 (docs/coordination/2026-09-05-owner-gated-bean-triage.md, 2026-09-07) puts mass/binding on the full tower, but production tr_M_via_wenzl_bridge still applies D's two-row cap (keeps 0.0434% of H_12 at 4He). No full-tower mass weight is defined. Candidates: Molien (ruled only for Phi_k), C y_λ (excised), Ocneanu N≠2 (changes the trace).
@@ -26,3 +26,7 @@ Kept: this thread is cross-chapter (mass-theory / binding compute), outside qou-
 
 
 Note qou-d8c7's M7 correction (#7552): the Molien ruling is scoped to the Φ_k functional, not to H_3 Wedderburn weights. This thread's question — what weight the FULL-TOWER mass/binding channel uses under D7 — is therefore still undefined, not settled by that ruling. Two-arm data (Molien balanced / Plancherel) is in computations/deltalambda/full-tower-weight-two-arm-probe.witness.json.
+
+
+## 2026-10-10 OWNER RESPONSE (session_01ST9RpvTF7JHNdUNafrjf9J)
+Owner: 'i think it may be plancherel. see what else in corpus' + D (derive first). So: corpus-search everything bearing on Plancherel (d_q^2/D^2) as the full-tower mass/binding weight, and attempt a derivation rather than adopt by result. Owner leaning is a hypothesis, not a ruling; no production change.

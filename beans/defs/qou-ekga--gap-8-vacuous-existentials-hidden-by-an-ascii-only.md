@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T08:33:27Z
-updated_at: 2026-10-10T07:08:15Z
+updated_at: 2026-10-10T12:58:45Z
 parent: qou-5vkl
 ---
 
@@ -282,3 +282,7 @@ Mass-endomorphism slice of this bean is now tracked in thread qou-9bxg; this bea
 
 ## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J) — measured, not changed
 QOU.BraidKnot.MarkovTraceAxioms: no consumers outside its file; inside it is only an unused binder on 4 theorems + the zero-consumer 'discharge' of MarkovDisjointStabilisation. The trace-bearing MarkovTraceAxioms are QOU/Hecke/MarkovTraceProduct.lean:63 and mass-theory/markov-trace-product.lean:83. Recommendation (agent judgement): demote; owner decides canonical.
+
+
+## 2026-10-10 OWNER DECISION (session_01ST9RpvTF7JHNdUNafrjf9J)
+Owner chose A + B + C: (A) demote the trivial QOU.BraidKnot.MarkovTraceAxioms and withdraw its 7 vacuous theorems; (B) restate the honest claims (k-fold stabilisation gives tau*z^k; disjoint factorisation) against a content-bearing trace class and prove them; (C) merge the two content-bearing copies (QOU.Braiding in mass-theory/markov-trace-product.lean, QOU.Hecke in lean/QOU/Hecke/MarkovTraceProduct.lean) into one canonical class. In progress.
