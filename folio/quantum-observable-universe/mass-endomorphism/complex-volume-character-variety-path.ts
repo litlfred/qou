@@ -13,6 +13,8 @@ export default remark({
     "conj:binding-qbeta-complex-volume",
   ],
   cites: [
+    "murakami-h2011",
+    "hikami2001",
     "neumann-zagier1985",
     "garoufalidis-zagier-2024",
   ],

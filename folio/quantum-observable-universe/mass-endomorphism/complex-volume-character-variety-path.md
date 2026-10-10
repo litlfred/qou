@@ -16,7 +16,9 @@ $$
 \mathfrak{Q}_\beta = \mathrm{Im}\mathfrak{V},
 $$
 
-where $\Phi$ acts as a potential on the deformation path. The endpoint difference of $\Phi$ equals the projection defect $\mathrm{tr}_M\bigl((\Pi_{\text{free}} - \mathbf{1}) \circ \mathcal{M}\bigr)$. Its bar-even part represents the volume (binding) channel. Its bar-odd part captures the phase accumulated along the path. This matches how the Chern–Simons invariant acts as the phase companion to hyperbolic volume, consistent with the state-integral factorization picture \cite{garoufalidis-zagier-2024}.
+where $\Phi$ acts as a potential on the deformation path. The endpoint difference of $\Phi$ equals the projection defect $\mathrm{tr}_M\bigl((\Pi_{\text{free}} - \mathbf{1}) \circ \mathcal{M}\bigr)$. Its bar-even part represents the volume (binding) channel. Its bar-odd part captures the phase accumulated along the path. This matches how the Chern–Simons invariant acts as the phase companion to hyperbolic volume, consistent with the state-integral factorization picture \cite{garoufalidis-zagier-2024}. For the figure-eight knot this phase is extracted along a one-parameter path of irreducible $\mathrm{SL}(2,\mathbb{C})$ representations, with meridian eigenvalue $e^{u/2}$ for real $0 < u < 0.9624$, from the coloured Jones asymptotics jointly with the twisted Reidemeister torsion \cite[Thm.~1.4]{murakami-h2011}; that result says nothing about the abelian endpoint of the path.
+
+In the literature, the classical limit of a quantum-dilogarithm integral knot invariant has saddle-point equations that coincide with the hyperbolicity (gluing) consistency conditions, and evaluates to a sum of Rogers dilogarithms when the geometrically preferred solutions dominate \cite[\S5, eq.~(5.20)]{hikami2001}. Completeness of that saddle-point picture and the choice of branch are not proved there.
 
 ## Categorical carrier
 
