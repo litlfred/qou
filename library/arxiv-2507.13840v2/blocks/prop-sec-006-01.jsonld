@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2507.13840v2/blocks/prop-sec-006-01",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "title": "Efficient certification of circuit depth",
+  "pageStart": 35,
+  "pageEnd": 36,
+  "text": "prop-sec-006-01.md",
+  "derivedFrom": "library/arxiv-2507.13840v2/sections/sec-006",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/agent-aa0db88738c4896fe/arxiv-2507.13840v2/manifest.jsonld",
+  "provenance": "ingested"
+}
