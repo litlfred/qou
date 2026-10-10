@@ -8,6 +8,7 @@ pages: 214-220
 source_pdf: 2101.10016v16.pdf.txt
 source_sha256: 51d21209730be025
 toc_source: inferred
+doc_brief: "Unitary coboundary weak quasi-Hopf algebras in the Kazhdan-Lusztig-Finkelberg theorem — We construct, for every complex simple Lie algebra g and every positive integer level k, a unitary modular"
 ---
 34. Loop groups, primary fields, tensor product theorem for initial
 terms 34.7

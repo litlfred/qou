@@ -8,6 +8,7 @@ pages: 20-21
 source_pdf: 2502.06229v5.pdf
 source_sha256: 3499c40ea150a617
 toc_source: outline
+doc_brief: "Constructing equivalences between fusion categories of quantum groups and of vertex operator algebras via quantum gauge groups — This paper establishes connections between a problem posed by"
 ---
 Drinfeld-Kohno Theorem and Theorem 29.4 in [10]
 We next outline general ideas that make our strategy possible, useful to prove part (b),

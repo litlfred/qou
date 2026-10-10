@@ -8,6 +8,7 @@ pages: 2-4
 source_pdf: ariasabad2015-revcolmat.pdf
 source_sha256: 822d696773a274e0
 toc_source: inferred
+doc_brief: "Introduction to Representations of Braid Groups — These are lecture notes prepared for a minicourse given at the Cimpa Research School Algebraic and geometric aspects of representation the- ory, held"
 ---
 descriptions provides a method for constructing representations of Bn: funda-
 mental groups act via monodromy, mapping class groups act on the homology

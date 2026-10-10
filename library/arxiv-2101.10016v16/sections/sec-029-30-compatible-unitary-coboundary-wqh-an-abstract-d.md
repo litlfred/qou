@@ -8,6 +8,7 @@ pages: 183-187
 source_pdf: 2101.10016v16.pdf.txt
 source_sha256: 51d21209730be025
 toc_source: inferred
+doc_brief: "Unitary coboundary weak quasi-Hopf algebras in the Kazhdan-Lusztig-Finkelberg theorem — We construct, for every complex simple Lie algebra g and every positive integer level k, a unitary modular"
 ---
 30. Compatible unitary coboundary wqh, an abstract Drinfeld-Kohno
 We know from a theorem of Galindo [66] that a braiding of a unitary fusion category

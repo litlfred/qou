@@ -8,6 +8,7 @@ pages: 27-29
 source_pdf: 2502.06229v5.pdf
 source_sha256: 3499c40ea150a617
 toc_source: outline
+doc_brief: "Constructing equivalences between fusion categories of quantum groups and of vertex operator algebras via quantum gauge groups — This paper establishes connections between a problem posed by"
 ---
 In Doplicher-Roberts theory, a unique gauge compact subgroup of SU(d) is in particular
 constructed in the case of a rigid symmetric tensor C∗-category with simple unit and a

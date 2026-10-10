@@ -8,6 +8,7 @@ pages: 2-11
 source_pdf: 2101.10016v16.pdf.txt
 source_sha256: 51d21209730be025
 toc_source: inferred
+doc_brief: "Unitary coboundary weak quasi-Hopf algebras in the Kazhdan-Lusztig-Finkelberg theorem — We construct, for every complex simple Lie algebra g and every positive integer level k, a unitary modular"
 ---
 1. Introduction
 1.1. Historical context of the KLF equivalence. Let g be a f.d. complex simple Lie
