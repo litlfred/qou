@@ -863,6 +863,7 @@ import QOU.QBeta.EigenphaseCarrierClassicalLimit
 import QOU.QBeta.MonodromyTraceInvariance
 import QOU.QBeta.CosineParametrisationUnfalsifiable
 import QOU.QBeta.DecayFunctionalUnification
+import QOU.QBeta.DeltaSTwoRowCharacterVanishes
 import QOU.QBeta.SLeakZeroCrossing
 import QOU.QBeta.SLeakMagnitudeOffsetRatio
 import QOU.QBeta.SLeakMagnitudeTaylorRatio

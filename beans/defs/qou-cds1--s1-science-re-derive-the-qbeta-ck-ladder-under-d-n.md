@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-10-10T12:20:00Z
+updated_at: 2026-10-10T13:30:00Z
 parent: qou-avtq
 ---
 
@@ -8741,3 +8741,15 @@ Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-u
 ## 2026-10-10 — owner decision: convention-D extractor support is tracked here
 
 `qbeta_decay_sdp_full_ck.py` and `qbeta_decay_sdp_extended_ck.py` now **refuse** (exit 2) instead of reading the D-frame N3 witness with C-frame rungs (which produced c_2 = −9.296, c_3 = −974). The owner chose (2026-10-10, PR #7574) to merge the refusal and track D support **in this bean**: the extractors can run again only once the c_k ladder is re-derived under convention D, which is the open research item here, not a code change. The old C-frame bodies are kept as `_main_convention_c_historical()`. Bean stays open.
+
+## 2026-10-10 (3) — `χ_(2,1)(Δ_S) = 0` is now a sorry-free Lean theorem
+
+`QOU/QBeta/DeltaSTwoRowCharacterVanishes.lean` turns the exact half of entry (2) into a theorem over an arbitrary field. It compiles with `lean`-direct exit 0 and no warnings, and `#print axioms` gives `[propext, Classical.choice, Quot.sound]` on all six results.
+
+- **`trace_deltaS_eq_zero`:** for ANY `A B : Matrix (Fin 2) (Fin 2) K` with `tr A = tr B = h`, `tr((h²/2)·1 − (h/2)(A+B)) = 0`. This is basis-free.
+- **`s1_quadratic`, `s2_quadratic`, `braid`:** an explicit two-row representation with `σ₁ = diag(q, −q⁻¹)` and `σ₂ = [[h − z_D, 1], [b², z_D]]`. It satisfies `(σ − q)(σ + q⁻¹) = 0` and the braid relation, and each generator has trace `h`. Its entries are the corpus's own objects: `z_D = q³/(q²+1)`, Hoefsmit `b²`, and `h − z_D = −1/(q(q²+1))` (`h_sub_zD`).
+- **`chi21_deltaS_eq_zero`:** the composition.
+
+**Consequence, as entry (2) stated.** Every convention-D functional on `Δ_S` is `a_(3)·χ_(3)(Δ_S)`, so the functional side of "what supplies a factor above 1" reduces to the trivial-block weight `{y_(3), 1}`.
+
+**Scope.** That this representation IS the `(2,1)` irreducible for generic `q` is the standard Hoefsmit fact and is not re-proved. The basis-free theorem does not need it. Nothing numerical enters.
