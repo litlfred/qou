@@ -41,7 +41,7 @@ denominators are cleared. Same discipline as `sum_div_of_pinned`.
 `dVdy x y = 0` unfolds to `(1−y)(1−x·y)(1−y/x) = y²`, which after clearing `x`
 is `x·y² = (1−y)(1−x·y)(x−y)` — the deformed saddle, and by
 `deformed_saddle_iff_curve` that **is** the curve (`dVdy_eq_zero_iff_exp`,
-`exp_saddle_iff_curve`). An earlier draft of this docstring concluded from that
+`curve_eq_zero_of_saddle`). An earlier draft of this docstring concluded from that
 "so the envelope hypothesis is free on the curve". **That is false**, and
 Route 30 G2 caught it:
 
@@ -269,7 +269,7 @@ theorem dVdy_eq_zero_iff_exp {x y : ℂ} (hy : y ≠ 0) :
     linear_combination -h
 
 /-- The exponentiated saddle condition **is** the curve. -/
-theorem exp_saddle_iff_curve {x y : ℂ} (hx : x ≠ 0)
+theorem curve_eq_zero_of_saddle {x y : ℂ} (hx : x ≠ 0)
     (h : (1 - y) * (1 - x * y) * (1 - y / x) = y ^ 2) :
     curve x y = 0 := by
   rw [← deformed_saddle_iff_curve]

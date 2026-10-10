@@ -110,7 +110,7 @@ omit [IsOrderedAddMonoid R] in
 both bounds are tight, recovering `diff_of_saturated`. So saturation is the
 *extreme* case of the two-sided situation, not a mild simplification of it: it
 assumes the upper bound coincides with the lower one. -/
-theorem diff_bounded_collapses_iff_saturated {E₁ E₂ B₁ B₂ : R}
+theorem diff_eq_of_bounds_saturated {E₁ E₂ B₁ B₂ : R}
     (h₁ : B₁ ≤ E₁) (h₁' : E₁ ≤ B₁) (h₂ : B₂ ≤ E₂) (h₂' : E₂ ≤ B₂) :
     E₁ - E₂ = B₁ - B₂ :=
   diff_of_saturated (le_antisymm h₁' h₁) (le_antisymm h₂' h₂)

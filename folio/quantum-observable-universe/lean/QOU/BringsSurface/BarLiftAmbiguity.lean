@@ -153,7 +153,7 @@ theorem colourCurve27_invLift_defect (u : K) :
 
 /-- The defect vanishes exactly where the shared object does, so the two lifts
 agree only on the fixed locus `z = 0` (`u² = 1`). -/
-theorem invLift_defect_eq_zero_iff (h2 : (2 : K) ≠ 0) (h5 : (5 : K) ≠ 0)
+theorem invLift_defect_ne_zero (h2 : (2 : K) ≠ 0) (h5 : (5 : K) ≠ 0)
     {u : K} (hz : z u ≠ 0) (h3 : 4 * (z u) ^ 2 + 3 ≠ 0) :
     colourCurve27 (z u) - colourCurve27 (z (invLift u)) ≠ 0 := by
   rw [colourCurve27_invLift_defect]
