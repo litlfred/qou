@@ -400,8 +400,77 @@ theorem trace_H_pow (s : ℕ) : (H R ^ s).trace = if s % 2 = 0 then 2 else 0 := 
 
 end RJ4
 
+
+
 namespace H4
 
+open RJ4
+
+theorem qIntBal_two_ne_zero (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (hq1 : q ^ 2 + 1 ≠ 0) :
+    qIntBal q 2 ≠ 0 := by
+  rw [qIntBal_two q hq hq2]
+  intro h; apply hq1; field_simp at h; linear_combination h
+
+/-- **Rosso–Jones at `r = 4`, every `s`**, on the coordinate Markov trace of `H₄(q)`:
+`[2]⁴ · tr_M((σ₁σ₂σ₃)ˢ) = [5] q^{3s} + [3] · qˢ · χ₄(s) + χ₂(s)`, where
+`χ₄(s) = 3` if `4 ∣ s` else `−1` (the `(3,1)` block, on which `Δ² = γ⁴` acts by `q⁴`),
+and `χ₂(s) = 2` if `2 ∣ s` else `0` (the `(2,2)` block, on which `Δ²` acts by `1`).
+The value is obtained by evaluating the forced coordinate trace through the concrete
+Markov trace `RJ4.tau` (uniqueness, `markov4_unique`). -/
+theorem h4Trace_rossoJones (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (hq1 : q ^ 2 + 1 ≠ 0)
+    (s : ℕ) :
+    qIntBal q 2 ^ 4 * markovTr q (markovZD q) (gammaPow q s)
+      = qIntBal q 5 * q ^ (3 * s) + qIntBal q 3 * (q ^ s * (if s % 4 = 0 then 3 else -1))
+        + (if s % 2 = 0 then 2 else 0) := by
+  have hS := eval_gammaPow q (S1 q) (S2 q) (S3 q) (S1_sq q hq) (S2_sq q hq) (S3_sq q hq)
+    (S12_braid q hq) (S23_braid q hq) (S13_comm q hq) s
+  have hU := markov4_unique q (S1 q) (S2 q) (S3 q) (S1_sq q hq) (S2_sq q hq) (S12_braid q hq)
+    (markovZD q) (tau q) (tau_one q hq hq2 hq1) (tau_S1 q hq hq2 hq1) (tau_cyc q)
+    (tau_mark2 q hq hq2 hq1) (tau_mark3_adjoin q hq hq2 hq1) (gammaPow q s)
+  rw [← hU, hS]
+  have hprod : S1 q * S2 q * S3 q = (q ^ 3, G q, H R) := by
+    simp only [S1, S2, S3, Prod.mk_mul_mk, B123 q hq, C121 q hq]
+    congr 1; ring
+  rw [hprod]
+  simp only [tau, LinearMap.coe_mk, AddHom.coe_mk, Prod.pow_mk, trace_G_pow q hq,
+    trace_H_pow]
+  have h2 := qIntBal_two_ne_zero q hq hq2 hq1
+  rw [← pow_mul]
+  field_simp
+
+/-- **Torus knots `τ(4, s)`, `s` odd**: the block's formula
+`[r+1] q^{s(r−1)} − [r−1] q^{s(r−3)}` at `r = 4`. -/
+theorem h4Trace_rossoJones_coprime (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+    (hq1 : q ^ 2 + 1 ≠ 0) (s : ℕ) (hs : Odd s) :
+    qIntBal q 2 ^ 4 * markovTr q (markovZD q) (gammaPow q s)
+      = qIntBal q 5 * q ^ (s * 3) - qIntBal q 3 * q ^ (s * 1) := by
+  obtain ⟨k, rfl⟩ := hs
+  rw [h4Trace_rossoJones q hq hq2 hq1, if_neg (by omega), if_neg (by omega)]
+  ring
+
 end H4
+
+open H4 in
+/-- **Part (iii) at `r = 4` for every Markov trace.** In any `R`-algebra `A` with
+`s₁, s₂, s₃` satisfying the Hecke, braid and far-commutation relations, any linear
+functional satisfying the convention-D Markov conditions has
+`[2]⁴ · t((s₁s₂s₃)ˢ) = [5] q^{3s} + [3]·qˢ·χ₄(s) + χ₂(s)`. -/
+theorem h4_markov_rossoJones {A : Type*} [Ring A] [Algebra R A] (q : R)
+    (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (hq1 : q ^ 2 + 1 ≠ 0) (s1 s2 s3 : A)
+    (hs1 : s1 * s1 = (q - q⁻¹) • s1 + 1) (hs2 : s2 * s2 = (q - q⁻¹) • s2 + 1)
+    (hs3 : s3 * s3 = (q - q⁻¹) • s3 + 1) (hbr : s1 * s2 * s1 = s2 * s1 * s2)
+    (hbr' : s2 * s3 * s2 = s3 * s2 * s3) (hc : s1 * s3 = s3 * s1)
+    (t : A →ₗ[R] R) (ht1 : t 1 = 1) (hts1 : t s1 = markovZD q)
+    (hcyc : ∀ x y : A, t (x * y) = t (y * x))
+    (hmark2 : ∀ c d : R,
+      t ((c • (1 : A) + d • s1) * s2) = markovZD q * t (c • (1 : A) + d • s1))
+    (hmark3 : ∀ x ∈ Algebra.adjoin R ({s1, s2} : Set A), t (x * s3) = markovZD q * t x)
+    (s : ℕ) :
+    qIntBal q 2 ^ 4 * t ((s1 * s2 * s3) ^ s)
+      = qIntBal q 5 * q ^ (3 * s) + qIntBal q 3 * (q ^ s * (if s % 4 = 0 then 3 else -1))
+        + (if s % 2 = 0 then 2 else 0) := by
+  rw [← eval_gammaPow q s1 s2 s3 hs1 hs2 hs3 hbr hbr' hc,
+    markov4_unique q s1 s2 s3 hs1 hs2 hbr (markovZD q) t ht1 hts1 hcyc hmark2 hmark3]
+  exact h4Trace_rossoJones q hq hq2 hq1 s
 
 end QOU.Archimedean
