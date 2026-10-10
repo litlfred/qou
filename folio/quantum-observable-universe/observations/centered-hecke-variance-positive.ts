@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:centered-hecke-variance-positive",
   title:
-    "Centred Hecke transfer matrix has strictly positive variance in the Wenzl regime",
+    "Centred Hecke transfer matrix has strictly positive variance for every $q > 0$",
   lean: { ref: "qou:QOU.Observations.centered_hecke_variance_positive", validation: "not_checked" },
   uses: [
     "thm:jones-markov-trace",
