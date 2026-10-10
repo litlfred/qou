@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-cyclotomic-l-value-decomposition-details",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:cyclotomic-l-value-decomposition-details",
+  "kind": "remark",
+  "title": "Cyclotomic $L$-value decomposition — verification, $N=5$ instance, and analytic-number-theory bridge",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cyclotomic-l-value-decomposition",
+    "papers/quantum-observable-universe/blocks/prop-jonquiere-cyclotomic-tate-rationality",
+    "papers/quantum-observable-universe/blocks/prop-cyclotomic-dimension-synthesis-all-depths"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-cyclotomic-l-value-decomposition",
+  "cites": [
+    "references/bloch2000",
+    "references/zagier1986"
+  ],
+  "tags": [
+    "dirichlet-l-value",
+    "catalan-beta",
+    "cyclotomic",
+    "analytic-number-theory-bridge",
+    "numerical-verification"
+  ],
+  "text": "cyclotomic-l-value-decomposition-details.md",
+  "provenance": "authored"
+}

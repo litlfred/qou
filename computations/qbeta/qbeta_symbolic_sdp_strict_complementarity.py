@@ -396,7 +396,13 @@ def main() -> int:
               f"{'YES' if scale_invariant else 'NO'}")
     else:
         scale_invariant = False
-        dir_diff = float("nan")
+        # mpmath's NaN, not `float("nan")`: the feasible branch above binds
+        # `dir_diff` to an mpf built from the solver's decimal-string
+        # companions, so a float64 sentinel here makes ONE name carry two
+        # types and drags a float64 into the `mp.nstr(dir_diff, 50)` sink at
+        # the witness write. `mp.nan` renders identically ("nan") and keeps
+        # the whole variable mpf-typed on both paths.
+        dir_diff = mp.nan
         print("    LP infeasible at one of the targets — cannot test")
     print()
 

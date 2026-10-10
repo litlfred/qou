@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-feynman-eigenbasis-decomposition",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:feynman-eigenbasis-decomposition",
+  "kind": "proof",
+  "title": "Proof of eigenbasis decomposition for the Feynman amplitude",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-feynman-eigenbasis-decomposition"
+  ],
+  "text": "feynman-eigenbasis-decomposition-proof.md",
+  "provenance": "authored"
+}

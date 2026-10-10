@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-q-heat-kernel-peter-weyl-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:q-heat-kernel-peter-weyl-table-data",
+  "kind": "table",
+  "title": "Data table from prop:q-heat-kernel-peter-weyl",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-heat-kernel-peter-weyl"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "q-heat-kernel-peter-weyl-table-data.md",
+  "provenance": "authored"
+}

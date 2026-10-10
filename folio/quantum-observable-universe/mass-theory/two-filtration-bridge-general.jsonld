@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-two-filtration-bridge-general",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:two-filtration-bridge-general",
+  "kind": "proposition",
+  "title": "Two-filtration bridge map in full generality: bar-class determines iterated-integral depth (self-conj $\\to$ 2, chiral pair $\\to$ 3) for all partitions",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cyclotomic-cl3-orbit-sum-general"
+  ],
+  "cites": [
+    "references/bloch2000"
+  ],
+  "tags": [
+    "two-filtration-bridge",
+    "general-partitions",
+    "bar-eigenspace",
+    "self-conjugate",
+    "chiral-pair",
+    "graded-mikusinski",
+    "theorem-level"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.TwoFiltrationBridgeGeneral.bridge_map_general",
+  "text": "two-filtration-bridge-general.md",
+  "provenance": "authored"
+}

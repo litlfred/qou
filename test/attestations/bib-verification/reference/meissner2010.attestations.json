@@ -1,0 +1,57 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "meissner2010",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 210,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1011.1343v1/1011.1343v1.pdf"
+        },
+        "id": "meissner2010",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "A personal-recollections essay written for Gerry Brown's 85th birthday, not a technical paper: it narrates the development of chiral EFT nuclear forces from the author's vantage. It has already been read into the corpus once \u2014 docs/audits/2026-08-02-t3-writhe-vs-delta-lambda-sign.md lines 149-153 record that it 'corroborate[s] the same Pauli-principle spin-isospin correlation; no additional sign structure beyond the exchange symmetry was found', i.e. an honest negative. Reading it again confirms that: the only reusable technical content is Fig. 4 and its surrounding paragraph (p.6), which restates the Weinberg-counting hierarchy that library/arxiv-0811.1338v1/0811.1338v1.pdf gives more authoritatively and in more detail. It is therefore a corroborating secondary source for a statement the corpus already has from a better source, and no result in it is load-bearing anywhere. Recording it as supporting rather than tangential only because a durable audit doc cites it by bare arXiv id and that citation should resolve.",
+          "keyResults": [
+            {
+              "locator": "Fig. 4 and adjacent text, \u00a74, p.6",
+              "statement": "Three-nucleon forces appear only two orders after the dominant NN forces, and four-nucleon forces are further suppressed, appearing only at N3LO \u2014 presented as the Weinberg power-counting diagram hierarchy for the 2N/3N/4N effective potential.",
+              "useForFolio": "A second, independent statement of the k-body hierarchy already taken from Epelbaum-Hammer-Meissner. Its only use is corroboration: it lets the GAP-9 framing cite two sources for the ordering rather than one, which matters because the ordering is what makes the mu_4 comparison meaningful.",
+              "targets": [
+                "docs/audits/2026-08-02-t3-writhe-vs-delta-lambda-sign.md",
+                "computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "A durable audit doc cites it by bare arXiv id with no ref() entry. One entry closes that dangling citation. Low priority \u2014 the technical content is fully covered by 0811.1338. Suggested id meissner2010chiral (note: distinct author from the existing meissner2004 entry, which is Krzysztof A. Meissner on loop-quantum-gravity BH entropy \u2014 do not collide the keys).",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-546f"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "7d50e5e28e69"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

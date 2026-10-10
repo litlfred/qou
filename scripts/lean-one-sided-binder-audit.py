@@ -74,7 +74,7 @@ import pathlib
 import re
 import sys
 
-DEFAULT_ROOT = "content/quantum-observable-universe/lean/QOU"
+DEFAULT_ROOT = "folio/quantum-observable-universe/lean/QOU"
 
 
 def binder_names(sig: str) -> list[tuple[str, bool]]:

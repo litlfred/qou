@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-quantum-planck-constant",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:quantum-planck-constant",
+  "kind": "definition",
+  "title": "Quantum Planck Constant",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter"
+  ],
+  "tags": [
+    "planck",
+    "deformation"
+  ],
+  "leanRef": "qou:QOU.quantumPlanckConstant",
+  "text": "quantum-planck-constant.md",
+  "leanSource": "quantum-planck-constant.lean",
+  "provenance": "authored"
+}

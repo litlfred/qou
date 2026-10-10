@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-heat-equation-unique",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-heat-equation-unique",
+  "kind": "proposition",
+  "title": "Uniqueness of solutions of the $q$-heat equation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-heat-equation-exists"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-q-heat-equation-unique"
+  ],
+  "tags": [
+    "uniqueness",
+    "q-heat-equation"
+  ],
+  "leanRef": "qou:QOU.QHeatEquation.unique_solution",
+  "text": "q-heat-equation-unique.md",
+  "leanSource": "q-heat-equation-unique.lean",
+  "provenance": "authored"
+}

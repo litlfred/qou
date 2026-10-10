@@ -3,7 +3,7 @@ block closed forms for χ_λ(β_n - β_p) and extract per-block contributions
 to the Q_β precision-ladder coefficients.
 
 The paper's content block
-`content/quantum-observable-universe/braids-and-knots/chi-per-irrep-cyclotomic-closed-forms.md`
+`folio/quantum-observable-universe/braids-and-knots/chi-per-irrep-cyclotomic-closed-forms.md`
 states:
 
   χ_(3)(β_n) - χ_(3)(β_p)     = -(q²+1)²(q²-1)/(4q)

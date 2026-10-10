@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-reidemeister-action-table",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:reidemeister-action-table",
+  "kind": "proposition",
+  "title": "Reidemeister moves on the categorical action: complete accounting",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-markov-trace-factorization"
+  ],
+  "tags": [
+    "reidemeister",
+    "hecke-algebra",
+    "lagrangian",
+    "action",
+    "writhe",
+    "volume",
+    "energy",
+    "mass",
+    "invariant"
+  ],
+  "leanRef": "qou:QOU.Archimedean.reidemeister_action_table",
+  "text": "reidemeister-action-table.md",
+  "leanSource": "reidemeister-action-table.lean",
+  "provenance": "authored"
+}

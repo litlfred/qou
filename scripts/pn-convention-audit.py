@@ -65,7 +65,7 @@ EXCLUDE_DIRS = (
     "/_deprecated/",
     "/node_modules/",
     "/.git/",
-    "/.beans/",
+    "/beans/defs/",
     "/lake-packages/",
     "/.lake/",
 )

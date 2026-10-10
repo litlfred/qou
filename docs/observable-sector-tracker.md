@@ -72,7 +72,7 @@ honest discipline call (DERIVED / PARTIAL / OPEN / NUMEROLOGY).
 Corrected 2026-08-18.)
 m_p was dropped 2026-07-04: its "0.0004 ppb" was the fitted Habiro
 tower (see banner above); de-fitted it is +1.35 ppb, a ~437× miss.
-m_μ is a **9.5σ proton-anchored prediction** (209.8 ppb — the μ–p
+m_μ is a **9.70σ proton-anchored prediction** (211.2 ppb — the μ–p
 substrate tension), **not** "~0 ppb / met": the earlier ~0 ppb value
 was the **muon-q₀ CAL-2 calibration tautology** mis-scored as a
 prediction (see AGENTS.md §"q₀ anchor convention" + bean `tnjb`).
@@ -93,7 +93,25 @@ near-match.
 |---|---|---|---|---|---|
 | **m_e** | CAL-1 anchor (CODATA 2022) | — | `codata_masses.py` → `codata-masses.witness.json` | 0 ppb (anchor) | DERIVED (anchor) |
 | **m_μ / m_e** | `Vol(4_1) / ℏ_q²` | `mass-formula-validation.md`, Lean `m_mu_over_m_e_via_vol_4_1` | `m_p_borromean_verification_50dps.py` | exact at q₀ | DERIVED |
-| **m_μ** | `m_e · (m_μ/m_e)` | derived | proton-anchored prediction (μ–p tension) | 209.8 ppb (9.5σ) | PREDICTION (not anchor) |
+| **m_μ** | `m_e · (m_μ/m_e)` | derived | proton-anchored prediction (μ–p tension) | 211.2 ppb (**9.70σ** on the MASS σ) | PREDICTION (not anchor) |
+<!-- Both m_μ rows above read `209.8 ppb (9.5σ)` until 2026-09-14. Two separate
+     corrections, and they are not the same kind of thing:
+       1. 209.8 -> 211.2 ppb is genuine STALENESS — 209.8 is the CODATA-2018
+         residual; the muon anchor moved to CODATA 2022 on 2026-08-22
+         (fca08de7d2). Live source: per-observable-100x-status.witness.json,
+         rows[] where obs == "m_mu", err_ppb 211.2. This tracker was missed by
+         the qou-m4au drain, which swept AGENTS.md, docs/precision-goals.md and
+         two content blocks.
+       2. 9.5 -> 9.70 sigma is NOT staleness, it is the DENOMINATOR. One
+         residual, two published sigma: 211.20/21.768 = 9.7022 against the
+         sigma on the MASS m_mu (witness sigma_exp_ppb 21.77), and
+         211.20/22.247 = 9.4934 against the sigma on the RATIO m_mu/m_e
+         (constants.MASS_RATIO_MU_E_ERR 4.6e-6 over 206.7682827). These rows
+         name the MASS and quote the dashboard's mass-denominated ppb, so 9.70
+         is the figure that belongs here. Corpus sites that say 9.5 sigma of
+         the RATIO are correct as written and must NOT be swept — adjudicated
+         in epistemic-status-of-calibrations.ts authorNotes (bean qou-silm)
+         and restated in AGENTS.md ss q0-anchor convention. -->
 | **m_τ** | `m_e · (Vol(4_1) / ℏ_q²)²` (?) — **claimed** but not pin-tight | `m-tau-knot-prediction.md` | `m_tau_knot_prediction.py` | ~few % off | **PARTIAL** — has prediction, not in 100× dashboard, not Lean-proved |
 | **m_e generations** (electron family relationships) | — | — | — | — | OPEN — no canonical chain for the 3-generation structure |
 
@@ -181,7 +199,7 @@ states (next section).
 
 | observable | canonical formula | Lean proof | production | residual | status |
 |---|---|---|---|---|---|
-| **Q_β (free neutron)** | Form A `m_e · |q²−2q−1| · (q+1) / (2q³)` × c_k ladder; **only c_2 = −1 Taylor-exact** | `prop:q-beta-categorical-precision-ladder` (c_2 via Kashiwara N2_factor, PROVED); c_3 §3b-cond conditional `QbetaC3StructuralFormClass` | `per_observable_100x_status.py` scores the **RULED `z_D` base** (`_qbeta_ruled_base`, 2026-09-12); the `Q_N2` rung is recorded on the row as the retired `z = 1` cell | **4.316e+8 ppb (`z_D` base, 0 rungs)** — ✗ 100×, ✗ 1× | **DERIVED, no rungs.** Was `1279 ppb (Q_N2)` — convention-C on the inadmissible `z = 1` cell — until item (iii) of the 2026-09-08 ruling was re-scored on the 2026-09-12 owner authorisation (`qou-99qc`). Not D's accuracy: no ladder on an admissible base (`qou-cds1`, blocked on `qou-pdix`; second re-score `qou-iagg`) |
+| **Q_β (free neutron)** | Form A `m_e · |q²−2q−1| · (q+1) / (2q³)` × c_k ladder; **only c_2 = −1 Taylor-exact** | `prop:q-beta-categorical-precision-ladder` (c_2 via Kashiwara N2_factor, PROVED); c_3 §3b-cond conditional `QbetaC3StructuralFormClass` | `per_observable_100x_status.py` scores the **RULED `z_D` base** (`_qbeta_ruled_base`, 2026-09-12); the `Q_N2` rung is recorded on the row as the retired `z = 1` cell | **1.668e+8 ppb (`z_D` base, 0 rungs)** — ✗ 100×, ✗ 1× | **DERIVED, no rungs.** Was `1279 ppb (Q_N2)` — convention-C on the inadmissible `z = 1` cell — until item (iii) of the 2026-09-08 ruling was re-scored on the 2026-09-12 owner authorisation (`qou-99qc`). Not D's accuracy: no ladder on an admissible base (`qou-cds1`, blocked on `qou-pdix`; second re-score `qou-iagg`) |
 | Q_β c_k (k≥3) | structural forms (J_Hopf, J−ℏ², c_3·b⁴) — **stale-q₀ near-matches, NOT Taylor-exact** | §3b-cond `QbetaC3StructuralFormClass`, `QbetaHabiroTaylorBridgeClass` (conditional, no instance) | NOT wired | item-1: 3.35% off at canonical q₀, q₀-drifting | **NOT derivations** — `qbeta-delta-tr-vs-formA.witness.json` |
 | **bridge `f`: Q_β = m_e·f(Δtr_M, q)** | — | — | — | item-1 bounds what it is NOT (not the Form-A slot) | **OPEN** — the genuine derivation target (multi-block Habiro q-difference) |
 | **τ_n (neutron lifetime)** | depends on `(ft)`, `g_A`, Q_β | — | — | — | OPEN — only the Q_β leg is wired |
@@ -197,9 +215,19 @@ states (next section).
   multi-Wedderburn-block Habiro q-difference solution is the research
   target (`docs/audits/2026-05-30-qbeta-habiro-derivation-gap-plan.md`).
 - **Superseded 2026-09-12:** Q_β is no longer at the μ-p substrate tension
-  floor — it is on the RULED `z_D` base at 4.316e+8 ppb with zero `c_k` rungs
+  floor — it is on the RULED `z_D` base at 1.668e+8 ppb with zero `c_k` rungs
   (`qou-99qc` item (iii), owner-authorised). The floor statement below described
   the laddered `z = 1` figure and is kept as the record of that state.
+  - 🛑 **Both figures here read `4.316e+8` ppb until 2026-09-13 (PR #7283).**
+    That is the **`delta_S`** element at order-zero `E₀`; the scored element has
+    been the γγ-selected `nuc11_interleaved` since `573b2ece24`, which landed
+    **31 minutes after** the re-score that wrote this line and updated the
+    producer and witness but no prose. Stale by 2.588×, the same factor that
+    hit `docs/precision-goals.md` (25 sites) and `AGENTS.md`. Take
+    `miss_factor` live from `per-observable-100x-status.witness.json`, and
+    note the element is ruled in only **6 of its 11 letters** — γγ words have
+    even length and this one is eleven, so the quark block (3, odd) and the
+    gluon pair (2, both positive) stay census-derived.
 - Q_β at the μ-p substrate tension floor (1279 ppb); this is the honest
   production state, not a wiring gap.
 

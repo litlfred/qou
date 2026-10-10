@@ -17,7 +17,7 @@ the ORDER, rather than to the choice of word, is what this probe does.
 # Ref: computations/qbeta/qbeta_option_e_order_dof_range_probe.py   (the order DOF, merged)
 # Ref: computations/qbeta/qbeta_delta_candidate_census_probe.py     (both models)
 # Ref: computations/qbeta/qbeta_nucleon_flip_skein_expansion_probe.py (the flip)
-# Ref: content/quantum-observable-universe/lean/QOU/QBeta/GammaGammaSelectedDeltaVanishes.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/QBeta/GammaGammaSelectedDeltaVanishes.lean
 
 THE ARGUMENT, AND IT IS STRUCTURAL RATHER THAN NUMERICAL. The census carries
 two orderings of the SAME eleven-letter multiset. Their confinement cores are:

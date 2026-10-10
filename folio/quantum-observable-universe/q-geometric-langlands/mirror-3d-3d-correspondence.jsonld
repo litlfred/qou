@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-mirror-3d-3d-correspondence",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:mirror-3d-3d-correspondence",
+  "kind": "conjecture",
+  "title": "3d–3d correspondence — Hecke partition functions on hyperbolic 3-manifolds ↔ 3d $\\mathcal{N}{=}2$ gauge theories",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-borromean-bloch-group-element"
+  ],
+  "cites": [
+    "references/dimofte-gaiotto-gukov2014",
+    "references/terashima-yamazaki2011",
+    "references/neumann-zagier1985"
+  ],
+  "tags": [
+    "tier:S",
+    "mirror-symmetry",
+    "3d-3d",
+    "duality-d18",
+    "n2-gauge-theory",
+    "partition-function",
+    "research-grade",
+    "long-horizon",
+    "axiom-class",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.Mirror3d3dCorrespondence",
+  "text": "mirror-3d-3d-correspondence.md",
+  "leanSource": "mirror-3d-3d-correspondence.lean",
+  "provenance": "authored"
+}

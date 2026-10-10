@@ -1,0 +1,50 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "ramis-sauloy-zhang2013",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 196,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-0903.0853v3/0903.0853v3.pdf"
+        },
+        "id": "ramis-sauloy-zhang2013",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Identity confirmed from the document's own title page (arXiv:0903.0853v3 [math.QA], local analytic classification of q-difference equations, three authors) and matches the seeded key. Eight citation sites, load-bearing, and the section locators VERIFY against the document: QOU/Mass/ThetaSlopeArithmetic.lean:62 cites '\u00a71.3.2 (order/level), \u00a72.2 (Newton polygon), \u00a72.3.2 + Ex. 3.3.3 (level = slope difference)' \u2014 \u00a71.3.2 is 'q-Gevrey levels' and introduces the space of formal series of q-Gevrey order s; \u00a72.2 is 'The Newton polygon and the slope filtration'; \u00a72.3.2 is 'The case of two slopes'; \u00a73.3.3 exists as 'Computational consequences of the Birkhoff-Guenther normal form' (a subsection, not literally an 'Example', a trivial locator imprecision). The other seven sites (QGevreyOrder.lean:39,467; QAlienBridgeEquation.lean:51; DoorVParityNoIdentity.lean:39; RamificationParityMonodromy.lean:64; OddDecayWeightParity.lean:54; EvenFaceMassShadow.lean:44) cite it for q-difference formal classification / Stokes, which is the document's subject. Notably ThetaSlopeArithmetic.lean is HONEST about the open premise it leans on: it says in its own docstring that 'the grounding claimed for c1Slope = 1/2 runs through the Route-B ORDER, while RSZ would tie the slope to the LEVEL. Those cannot both be the Newton slope' and that the order-vs-level identification 'is the premise that remains'. That is a correctly-declared conditional, not a laundered one.",
+          "keyResults": [
+            {
+              "locator": "\u00a71.3.2, \u00a72.2, \u00a72.3.2",
+              "statement": "q-Gevrey order/level for formal q-difference series; the Newton polygon and its slope filtration; and in the two-slope case the level determined by the slope difference.",
+              "useForFolio": "It is the source of the order-vs-level distinction that ThetaSlopeArithmetic.lean identifies as the remaining premise behind c1Slope = 1/2 \u2014 i.e. the reference does not close the gap, it is what makes the gap precise.",
+              "targets": [
+                "QOU.Mass.ThetaSlopeArithmetic"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Locators verified; the one file that leans hardest on it already states its residual premise explicitly rather than treating the citation as closure. Only nit: 'Ex. 3.3.3' is a subsection, not an example.",
+              "target": "QOU.Mass.ThetaSlopeArithmetic"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "d4295d4b18b2"
+        }
+      }
+    }
+  ]
+}

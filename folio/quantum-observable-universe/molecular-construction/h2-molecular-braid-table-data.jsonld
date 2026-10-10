@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-h2-molecular-braid-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:h2-molecular-braid-table-data",
+  "kind": "table",
+  "title": "Data table from def:h2-molecular-braid",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-h2-molecular-braid"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "h2-molecular-braid-table-data.md",
+  "provenance": "authored"
+}

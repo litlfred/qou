@@ -1,0 +1,192 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-14T23:11:51.703181+00:00",
+  "commitSha": "807f3a76cd370080bfad9342401cb88c618dcd72",
+  "assertions": [
+    {
+      "name": "1. det rho(sigma_i) = -1 identically",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "2. Hecke inverse is Laurent: sigma.sigma^-1 = I",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "3. det rho(w) = (-1)^(exponent sum)",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "4. tr rho(w) has integer coefficients",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "5. no word is bounded-but-not-constant",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "6. constant characters lie in [-2,2]",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "7. q-uniform eigenphase set on V_(2,1) is finite",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "8. Kronecker: alpha in 2*pi*Q (general d)",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "9. alpha_req is NOT in the quantized set",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "10. every admissible cell needs a factor > 1; no cosine rung supplies it",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "11. the two reachable cells are exactly the two the ruling does NOT select",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "12. the 2026-08-22 cosh exclusion is base-dependent and is VOID under D",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "13. no clean cosh closed form on offer - re-opening only, no candidate",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "14. only the augmentation cell admits a bounded rung (recorded only)",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "15. the near-2pi landing is a one-cell coincidence - priced, not a lead",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "qbeta-eigenphase-rationality-quantization",
+  "scriptFile": "qbeta_eigenphase_rationality_quantization_probe.py",
+  "scriptHash": "db5d90fe003d",
+  "scriptCommitSha": "624a98a7d05d1ae0dc1aa9421cc9f1439316e54b",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_eigenphase_rationality_quantization_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_eigenphase_rationality_quantization_probe.py"
+  },
+  "description": "PART 1 (scope-(b), proved): the sibling braid-image exclusion closes only a q-VARYING ansatz; carrying its boundedness argument through integrality shows a q-uniform braid-image eigenphase on V_(2,1) lies in the five-element set {0, pi/3, pi/2, 2pi/3, pi} (general d: Kronecker gives alpha in 2*pi*Q), so the CONSTANT case is closed too and alpha is convention-free; alpha_req is not in that set. PART 3 (scope-(b), proved, BASE-INDEPENDENT): deriving alpha cannot unblock qou-cds1 at all -- every base cell the 2026-09-08 ruling admits sits BELOW CODATA and so needs a ladder factor ABOVE 1, while the N=1 rung is a cosine bounded by 1 and the N=2 rung is < 1. The Q_beta L2 residual is a BASE problem, not a phase problem. PART 4: the 2026-08-22 cosh exclusion was computed on the retired z=1 base and is VOID on the ruled one -- re-opened, with no candidate offered. A rational-phase candidate (2*pi/120) was carried in an earlier revision and was EXCISED on owner ruling 2026-09-14 as a fit.",
+  "data": {
+    "part1_structural": {
+      "words_swept": 5460,
+      "max_word_length": 6,
+      "det_rho_equals_sign_of_exponent_sum": true,
+      "characters_integral": true,
+      "bounded_but_not_constant_count": 0,
+      "constant_characters_observed": [
+        -1,
+        0,
+        2
+      ],
+      "quantized_eigenphase_set_V21": [
+        "0",
+        "pi/3",
+        "pi/2",
+        "2pi/3",
+        "pi"
+      ],
+      "alpha_req_in_that_set": false
+    },
+    "part3_base_not_phase": {
+      "cells_pct_vs_codata": {
+        "nuc11_interleaved_tower_E0_LIVE": "-16.678",
+        "zD_delta_S_tower_E0": "-42.594",
+        "zD_delta_S_order_zero_E0": "-43.157",
+        "bar_odd_survivor": "-54.825",
+        "augmentation_z_eq_q_NOT_RULED": "+12.470",
+        "retired_z_eq_1": "+0.170"
+      },
+      "stale_figure_corrected": "This probe first hardcoded Q_D = 0.4447004 (-43.157%, factor 1.7592). That cell had ALREADY MOVED when written: the scored base is nuc11_interleaved at -16.678% (factor 1.2002). Conclusion unaffected (still > 1); the number was wrong by 1.47x. Part 4 of this same probe names that failure class.",
+      "Q_codata_MeV": "0.782333409999999999999999999999999999999999999999999409829604",
+      "required_ladder_factor_live_cell": "1.20016322219821895777825784306665706536088908091500444060392",
+      "N1_cos_rung_upper_bound": "1",
+      "N2_rung_at_c2_minus_1": "0.999927456715617626498201895199068388200910824829000565864302",
+      "admissible_cells_all_need_factor_above_one": true,
+      "c3_required_on_live_cell": "324098.735988813964079934839915649511283381262641527593443787",
+      "cosh_exclusion_status": "The 2026-08-22 cosh exclusion was computed on the now-RETIRED z=1 base (required factor 0.9983 < 1, cosh >= 1 wrong side). On the admissible base the required factor is > 1 > 1, so that argument is VOID and the route is RE-OPENED. No candidate is offered: arccosh(required)/{ln q, h, hbar_q} computed on the LIVE cell, none near an integer or half-integer.",
+      "augmentation_cell_note": "CODATA/Q(z=q) = 0.8891 < 1, so only the augmentation cell admits a bounded multiplicative rung. RECORDED ONLY - z_D is owner-ruled and nothing here proposes changing it.",
+      "conclusion": "Deriving alpha CANNOT unblock qou-cds1. The N=1 rung is a cosine, bounded by 1, and the ruled base needs a factor 1.759 > 1. The Q_beta L2 residual is a BASE problem, not a phase problem. Scope-(b), citing Real.cos_le_one; Lean twin QOU.QBeta.EigenphaseQuantization.cos_rung_lt_of_base_short (sorry-free)."
+    },
+    "part2_excised": {
+      "status": "EXCISED on owner ruling 2026-09-14 - it was a fit",
+      "what_it_was": "2*pi/120 as the unique primitive rational phase with N <= 1000 inside the |c3| <= 1 ladder window",
+      "why_excised": "selection against the target (AGENTS.md NO FITTING); cross-anchor swing identical to convention C so it discriminated nothing; a unique hit at N <= 1000 is generic (E = 1.06); and the icosahedral mechanism is refuted - S_5 max element order 6, 2I max 10, so no primitive 120th root of unity arises",
+      "also_moot": "its base is the RETIRED z=1 cell, and by part 3 no phase matters on any admissible base",
+      "history": "bean qou-pdix; PR #7262",
+      "anchors": {
+        "proton": {
+          "q": "1.10997858275138080759166909561076887987449912187357873607281",
+          "alpha_required": "-0.0523586835189829612683390201367188553105075795678015941701873",
+          "window": "0.0000109188954779461631285168868228782960365456228657642407878528",
+          "alpha_C": "-0.0523361202682288387988645268899341706130483170063913394628427",
+          "C_windows_from_required": "2.06644076772191995705195608594805334338836037573049797736072",
+          "c3_implied_by_C": "-2.06934257711516783787971951724962858902203099810343886691284"
+        },
+        "muon": {
+          "q": "1.10997859564273904668179512938000175270006556102901155697405",
+          "alpha_required": "-0.0523581499635160434626895776333973382680583331992507089800460",
+          "window": "0.0000109190050253229102323936350853989865658702781152094102327814",
+          "alpha_C": "-0.0523361261306329914387156968056517003995486652718903362771579",
+          "C_windows_from_required": "2.01701829351440454419791588205723025157869351759630925463346",
+          "c3_implied_by_C": "-2.01986031187400546349321995587646029747377592135260349078716"
+        }
+      }
+    }
+  }
+}

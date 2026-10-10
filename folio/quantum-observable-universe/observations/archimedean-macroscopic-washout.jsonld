@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-archimedean-macroscopic-washout",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:archimedean-macroscopic-washout",
+  "kind": "remark",
+  "title": "Archimedean macroscopic wash-out: why bounded observers see continuous q-Gaussian bell curves on a discrete substrate",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-centered-hecke-variance-positive",
+  "cites": [
+    "references/marsh2006",
+    "references/blitvic2012"
+  ],
+  "tags": [
+    "archimedean-realization",
+    "q-clt",
+    "q-gaussian",
+    "macroscopic-limit",
+    "operational-entropy",
+    "reeb-flow",
+    "issue-649"
+  ],
+  "text": "archimedean-macroscopic-washout.md",
+  "provenance": "authored"
+}

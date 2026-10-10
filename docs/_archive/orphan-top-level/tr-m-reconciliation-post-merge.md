@@ -3,12 +3,12 @@
 After PR #457 merged, two PRs landed on main that *appeared* to resolve the
 tr_M-normalization ambiguity:
 
-- **PR #472** (content): [`prop:habiro-residue-sum-equivalence`](../content/quantum-observable-universe/braids-and-knots/habiro-residue-sum-equivalence.md) — cross-validates `tr_M(D, q_0)` between the polynomial-ring path and the residue-spectral-sum path at relative tolerance $\leq 10^{-9}$.
+- **PR #472** (content): [`prop:habiro-residue-sum-equivalence`](../folio/quantum-observable-universe/braids-and-knots/habiro-residue-sum-equivalence.md) — cross-validates `tr_M(D, q_0)` between the polynomial-ring path and the residue-spectral-sum path at relative tolerance $\leq 10^{-9}$.
 - **PR #473** (computation registry): `D-tr-M-q0.derivation.json` — registered $0.177437$ as the "canonical" value via an 8-step derivation chain.
 
 ## Correction (PR #447, now merged): the registry value is τ_SW, not τ_M
 
-[`prop:markov-trace-frobenius-selection`](../content/quantum-observable-universe/braids-and-knots/markov-trace-frobenius-selection.md)
+[`prop:markov-trace-frobenius-selection`](../folio/quantum-observable-universe/braids-and-knots/markov-trace-frobenius-selection.md)
 (merged via PR #447) shows the QOU mass formula's Frobenius co-Casimir construction
 $C_{\dim_q} = \sum_\lambda [\dim_q(\lambda)\cdot \tau(p_\lambda)]^{-1} p_\lambda$
 requires $\tau$ **non-degenerate on every Wedderburn block**. Two
@@ -78,7 +78,7 @@ requires.
    algebraic Vol_q^tower form is finite and physically scaled
    ($O(1)$ per atom); the Φ_q (Kashaev) form is finite-but-pathological
    near the substrate boundary. Per
-   [`prop:mass-endomorphism-tower`](../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md)
+   [`prop:mass-endomorphism-tower`](../folio/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md)
    the algebraic form is the canonical statement.
 
 ## Wenzl-bridge witness audit (PR #487 follow-up)

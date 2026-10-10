@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-geom-bridge-status",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:geom-bridge-status",
+  "kind": "remark",
+  "title": "Logical status of the algebraic → geometric → boundary chain",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-crossed-module-euler-characteristic",
+    "papers/quantum-observable-universe/blocks/conj-geom-universality"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-crossed-module-euler-characteristic",
+  "tags": [
+    "geom",
+    "non-abelian-stokes",
+    "open-problem",
+    "bring-surface"
+  ],
+  "text": "geom-bridge-status.md",
+  "provenance": "authored"
+}

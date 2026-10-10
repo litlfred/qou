@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-jones-mobius-diagonal",
+  "@type": [
+    "folio-assistant-core:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:jones-mobius-diagonal",
+  "kind": "lemma",
+  "title": "Jones polynomial as the diagonal of the categorical Möbius kernel",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-mobius-energy",
+    "papers/quantum-observable-universe/blocks/lem-mobius-energy-frobenius-kernel",
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace",
+    "papers/quantum-observable-universe/blocks/rem-mobius-surreal-renormalization"
+  ],
+  "cites": [
+    "references/freedman1994",
+    "references/ohara1991"
+  ],
+  "leanRef": "qou:QOU.Braiding.JonesMobiusDiagonal.markov_eq_mobius_contact",
+  "text": "jones-mobius-diagonal.md",
+  "provenance": "authored"
+}

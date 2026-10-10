@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-magic-shell-coupling-kappa-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:magic-shell-coupling-kappa-table-data",
+  "kind": "table",
+  "title": "Data table from def:magic-shell-coupling-kappa (retained; the comparison it tabulates is withdrawn)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-magic-shell-coupling-kappa"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "magic-shell-coupling-kappa-table-data.md",
+  "provenance": "authored"
+}

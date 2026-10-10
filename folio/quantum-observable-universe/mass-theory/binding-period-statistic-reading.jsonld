@@ -1,0 +1,19 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-binding-period-statistic-reading",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:binding-period-statistic-reading",
+  "kind": "remark",
+  "title": "Reading: the binding period as an involution statistic and the shape of its kernel",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-binding-period-involution-statistic",
+  "text": "binding-period-statistic-reading.md",
+  "provenance": "authored"
+}

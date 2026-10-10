@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-euler-characteristic-of-the-regular-representation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:euler-characteristic-of-the-regular-representation",
+  "kind": "remark",
+  "title": "The quantum dimension of the regular representation is regularisation-dependent",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-brings-euler-characteristic",
+    "papers/quantum-observable-universe/blocks/rem-three-euler-characteristics"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/lem-brings-euler-characteristic",
+  "tags": [
+    "quantum-dimension",
+    "regularisation",
+    "peter-weyl",
+    "frobenius-hopf-object",
+    "scope-a"
+  ],
+  "text": "euler-characteristic-of-the-regular-representation.md",
+  "provenance": "authored"
+}

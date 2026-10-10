@@ -15,10 +15,11 @@
 #     tests full command lines, and the heredoc contained the name), killing the
 #     write before the file existed.  Hence the rename: nothing greps for this.
 set -euo pipefail
+source "$(dirname "$0")/lib/lake-cache-family.sh"
 cd /workspace/qou
 FULL_COMMIT="${1:?full orphan commit}"
 BR="${2:?target branch}"
-STAGE="${STAGE:-lake-cache/staging-test}"
+STAGE="${STAGE:-$(lake_cache_write_branch staging-test)}"
 BATCH="${BATCH:-5}"
 git check-ref-format "refs/heads/$STAGE" || { echo "invalid staging ref: $STAGE"; exit 1; }
 

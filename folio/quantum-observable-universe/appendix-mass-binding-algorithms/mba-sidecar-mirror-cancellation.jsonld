@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-mirror-baseline-cancellation",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:mirror-baseline-cancellation",
+  "kind": "proposition",
+  "title": "Mirror-pair cancellation of the bar-even binding baseline",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/alg-delta-lambda-closure"
+  ],
+  "tags": [
+    "mba",
+    "sidecar",
+    "delta-lambda",
+    "mirror-pair",
+    "bar-parity",
+    "z-correction",
+    "writhe"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.mirror_baseline_cancels",
+  "text": "mba-sidecar-mirror-cancellation.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "hu-mathas2012graded",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 11,
+      "entry": {
+        "id": "hu-mathas2012graded",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T06:23:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "note": "Confirmed paper is 'Graded Induction for Specht Modules' by Hu & Mathas (arXiv:1008.1462). StructuralRank.lean:84 cites it for 'graded induction for Specht modules' \u2014 title is the citation text, exact match. (Bib key has '2012' but arXiv is 2010-08; the paper was published 2012 \u2014 version mismatch is acceptable.)",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/hu-mathas2012graded.pdf"
+        },
+        "local_pdf": "uploads/hu-mathas2012graded.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "FILE ABSENT. The path recorded in the ledger's source/local_pdf fields does not exist in this checkout: `ls uploads/` has 294 entries with no match, and `git ls-files uploads` shows no such blob, so the PDF was never committed despite an existing ledger row asserting the document was confirmed. I cannot verify identity from front matter and decline to inherit that claim. CORPUS-SIDE AUDIT (which I could do): exactly two citation sites, both Lean docstrings \u2014 folio/quantum-observable-universe/lean/QOU/BraidKnot/StructuralRank.lean:87 and :221, on the classes PanelRankDecomposition and PanelImageStructure. Both are honestly scoped: the docstring at :78-85 says the within-mu nesting is 'Not explicitly stated in the published literature for the fitting-matrix / column-rank shape used here, but mechanically a corollary of those filtration results'. That is the correct register for an indicative citation and does not over-claim. No key-spelling variants found.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Both citation sites are honestly scoped indicative background; nothing to fix on the corpus side. The defect is that the ledger's source.file points at a PDF absent from the repo, which is a ledger-hygiene item for the merge pass rather than a content action.",
+              "target": "QOU.BraidKnot.StructuralRank.PanelRankDecomposition"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    }
+  ]
+}

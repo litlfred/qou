@@ -1,0 +1,78 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "mario2023",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 412,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2312.00624v1/2312.00624v1.pdf"
+        },
+        "id": "mario2023",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Identified from front matter (hep-th preprint). No ref() entry, no \\cite{} site, no Lean -- Ref:, arXiv id absent from content/ -> orphan on all three checks. Subject is the SL(2,C) Chern-Simons wave function on hyperbolic knot complements, worked out for the figure-eight and the three-twist knot -- the corpus's own knots and the same state integral. Checked specifically against the brief's Stokes question and it does NOT bear on it in the way a title-level read would suggest: the words Stokes, Borel, resurgence and Donaldson-Thomas do not occur in the body at all (only in its bibliography), and its footnote 1 states explicitly that its resummation is of a *convergent* series and does not involve divergent-series resummation. Its integrality conjecture is about the holomorphic blocks of the resummed WKB q-series and the cancellation of the ll in 2 pi Q singularities, which is a different object from the resurgent Stokes constants of GGM Conjecture 3(d). So it neither proves nor refutes the statement the corpus over-claims. What it does supply is (i) a clean, quotable separation of the convergent-q-series layer from the Borel/resurgent layer, which rem:channel-rotation-askey-lit item 3 currently runs together, and (ii) a calibration datum on the BPS identification (see keyResults). Supporting, not core: no result here is consumed by any block, and the integrality conjecture itself is conjectural and unverified in this setting.",
+          "keyResults": [
+            {
+              "locator": "Sec 6 Conclusions, first open question (its ref [42] = `dimofte-gaiotto-gukov2013`)",
+              "statement": "The interpretation of the integrality structure of the resummed WKB wave function 'in terms of an enumerative problem, or a BPS counting problem, in the dual supersymmetric theory' is listed as an open question raised by the work, citing the same 3d-3d dictionary the corpus's bridge invokes.",
+              "useForFolio": "Calibration for conj:stokes-dt-bps-bridge, which adopts Stokes = DT = dim H_BPS(T[K]) and describes the first equality as 'proved ... for the figure-eight 4_1'. This document shares an author with `garoufalidis-gu-marino2023peacock` and, on the same knots, treats the BPS-counting reading of its integer invariants as open. IMPORTANT CAVEAT to carry with any use: those integers are the holomorphic-block integrality invariants of a convergent q-series, NOT the resurgent Stokes constants, so this is adjacent evidence about authorial stance and not a statement about Conjecture 3(d) itself. Scope-(a).",
+              "targets": [
+                "conj:stokes-dt-bps-bridge"
+              ]
+            },
+            {
+              "locator": "footnote 1, p. 2 (attached to Sec 1)",
+              "statement": "The q-series obtained by resumming the WKB expansion is a resummation of a convergent series and therefore does not involve the techniques of resummation of divergent series such as Borel resummation.",
+              "useForFolio": "rem:channel-rotation-askey-lit item 3 says the Andersen-Kashaev state integral 'factors into a q-series and a q~-series' whose leading asymptotics trace Vol + i CS, and the corpus's Stokes/Habiro discussion sits next to it. This is a one-line source for the fact that the q-series factorisation layer and the Borel/resurgent layer are analytically different regimes -- useful because conflating them is a live failure mode in the c_k and A_omega chains.",
+              "targets": [
+                "rem:channel-rotation-askey-lit"
+              ]
+            },
+            {
+              "locator": "Sec 1 eq (1.1) with Sec 3.2",
+              "statement": "The resummed WKB q-series wave function has apparent singularities at every ll in 2 pi Q (i.e. at roots of unity q = exp(i ll)), absent from the non-perturbative definition; a conjectured integrality of the holomorphic blocks makes them cancel against the anti-holomorphic blocks, leaving a finite wave function, with the epsilon-expansion mechanics in Appendix A.",
+              "useForFolio": "A stated cancellation mechanism at rational points, worked explicitly for the figure-eight in Sec 4.1 and Sec 5. Recorded against conj:stokes-dt-bps-bridge only as context for the same 4_1 wave function; there is no block that consumes it, which is why the verdict stays supporting.",
+              "targets": [
+                "conj:stokes-dt-bps-bridge"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Orphan; same knots and same state integral as the corpus's A_omega / c_3 chain, and needed as the source for the calibration remark below.",
+              "target": "conj:stokes-dt-bps-bridge",
+              "bean": "qou-0ddm"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "One remark covering both usable items: that a GGM co-author lists the BPS-counting interpretation as open (calibrating the bridge block's 'proved ... for the figure-eight' wording), and that the integrality in question is the convergent-q-series holomorphic-block kind, not the resurgent Stokes kind -- so it is adjacent evidence, not a refutation. State explicitly what remains unchecked: whether the holomorphic-block integers and the resurgent Stokes constants of the same knot are related at all.",
+              "target": "conj:stokes-dt-bps-bridge",
+              "bean": "qou-eqi3"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-09T00:10:43.091Z",
+          "source_sha": "bda867f7b84f"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

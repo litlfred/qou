@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-categorical-archimedean-bridge",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:categorical-archimedean-bridge",
+  "kind": "proof",
+  "text": "categorical-archimedean-bridge-proof.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-quantum-universe-axiom-motivation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:quantum-universe-axiom-motivation",
+  "kind": "remark",
+  "title": "What each axiom buys",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-universe"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-universe",
+  "tags": [
+    "quantum-universe",
+    "braiding",
+    "frobenius-hopf",
+    "spherical",
+    "motivation",
+    "so3"
+  ],
+  "text": "quantum-universe-axiom-motivation.md",
+  "provenance": "authored"
+}

@@ -43,7 +43,7 @@ Lean 4.24.0 / Mathlib f897ebcf, in the order they were hit:
 
 Usage:
     python3 computations/markov/gen_h4_word_operators.py --chunks 4 \\
-        --out content/quantum-observable-universe/lean/QOU/Hecke
+        --out folio/quantum-observable-universe/lean/QOU/Hecke
 """
 
 from __future__ import annotations
@@ -53,7 +53,7 @@ import re
 from pathlib import Path
 
 SIGMA = "σ"
-MARKOV_H4 = "content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceH4.lean"
+MARKOV_H4 = "folio/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceH4.lean"
 BINDERS = "(R : Type u) [Field R] (q : R)"
 
 

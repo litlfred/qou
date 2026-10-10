@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-local-shadow-ordering",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:local-shadow-ordering",
+  "kind": "definition",
+  "title": "Local shadow-price ordering $\\preceq_q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-unstable-atom"
+  ],
+  "tags": [
+    "ordering",
+    "shadow-price",
+    "open-neighborhood",
+    "continuity",
+    "phase-boundary"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.LocalShadowOrdering",
+  "text": "local-shadow-ordering.md",
+  "leanSource": "local-shadow-ordering.lean",
+  "provenance": "authored"
+}

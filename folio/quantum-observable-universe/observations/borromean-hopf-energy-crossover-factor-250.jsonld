@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-borromean-hopf-energy-crossover-factor-250",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:borromean-hopf-energy-crossover-factor-250",
+  "kind": "remark",
+  "title": "The factor of $250$: why color superconductivity is inaccessible at nuclear densities",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-borromean-hopf-energy-crossover",
+  "tags": [
+    "borromean",
+    "hopf",
+    "color-superconductivity",
+    "critical-density",
+    "neutron-star"
+  ],
+  "text": "borromean-hopf-energy-crossover-factor-250.md",
+  "provenance": "authored"
+}

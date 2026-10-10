@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-covalent-bond-types",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:covalent-bond-types",
+  "kind": "definition",
+  "title": "Covalent bond (shared Hopf links)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-metallic-character-knot"
+  ],
+  "tags": [
+    "covalent-bond",
+    "hopf-link",
+    "shared-sub-link",
+    "single-bond",
+    "double-bond",
+    "triple-bond",
+    "electron",
+    "molecular"
+  ],
+  "leanRef": "qou:QOU.Organic.CovalentBond",
+  "text": "covalent-bond-types.md",
+  "leanSource": "covalent-bond-types.lean",
+  "provenance": "authored"
+}

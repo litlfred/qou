@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-q-pochhammer-partial-product",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:q-pochhammer-partial-product",
+  "kind": "definition",
+  "title": "$q$-Pochhammer partial product $\\Phi_n(x; q)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-quantum-dilogarithm-stratified"
+  ],
+  "cites": [
+    "references/faddeev1994",
+    "references/kashaev1997"
+  ],
+  "tags": [
+    "q-pochhammer",
+    "quantum-dilogarithm",
+    "partial-product",
+    "phi-q",
+    "denominator"
+  ],
+  "leanRef": "qou:QOU.QPochhammer.partialProduct",
+  "text": "q-pochhammer-partial-product.md",
+  "leanSource": "q-pochhammer-partial-product.lean",
+  "provenance": "authored"
+}

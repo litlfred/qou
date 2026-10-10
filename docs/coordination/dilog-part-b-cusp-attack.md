@@ -118,7 +118,7 @@ V4 `qou-9m98`. Building block already landed: `qou-ips1` / #4173.
 
 **W-P2 is CLOSED** (the Dedekind-eta asymptotic, #4191). **W-P1's entire
 machinery is now landed sorry-free** in
-`content/quantum-observable-universe/lean/QOU/Archimedean/DilogPartBBranchPointSum.lean`:
+`folio/quantum-observable-universe/lean/QOU/Archimedean/DilogPartBBranchPointSum.lean`:
 
 | Brick | Lemma | PR |
 |---|---|---|

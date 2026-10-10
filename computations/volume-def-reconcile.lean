@@ -8,7 +8,7 @@ Conjecture) and leaves the proof as `sorry` with bibliographic refs, per
 AGENTS.md §1 (every `sorry` requires `-- Ref:`) and §3b-cond (conditional-class
 discipline). It is placed alongside the probe
 `volume_def_reconcile.py`; if/when wired into the QOU Lake package it should
-move under `content/quantum-observable-universe/mass-theory/` with a content
+move under `folio/quantum-observable-universe/mass-theory/` with a content
 block and a package-qualified `lean.ref`.
 
 ## The reconciliation

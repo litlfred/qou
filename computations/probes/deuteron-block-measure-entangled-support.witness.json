@@ -1,0 +1,340 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-16T02:18:42.870116+00:00",
+  "commitSha": "49e7be09dd5d46f7983b764ecc56f565d66c2776",
+  "assertions": [
+    {
+      "name": "block_measure_sums_to_one_to_50dps",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Σ_λ y_λ f^λ over λ ⊢ 6 from y-lambda-at-q0.witness.json (Lean: blockMass_sum_eq_one)"
+    },
+    {
+      "name": "nonzero_masses_are_positive",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "convention D: two-row masses > 0, ≥3-row masses = 0 (TwoRowCapDerived)"
+    },
+    {
+      "name": "weighted_entangled_support_is_two_row_support",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "atom-chi-rust-d.witness.json: χ differs on all 11 blocks; weighted by y_λ only the four two-row blocks survive"
+    },
+    {
+      "name": "entangled_support_nonempty_so_binding_form_nonzero_is_permitted",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "contrapositive of trM_eq_of_entangledSupp_empty"
+    },
+    {
+      "name": "displacement_dominated_by_5_1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "|y_λ(χ_atom − χ_free)| is largest on (5,1)"
+    },
+    {
+      "name": "lp_dual_and_block_measure_rank_two_row_blocks_differently",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "P ranks (4,2) > (5,1) > (6) > (3,3); deuteron-real-sdp y* ranks (6) > (3,3) > (5,1) > (4,2)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "deuteron-block-measure-entangled-support",
+  "scriptFile": "deuteron_block_measure_entangled_support_probe.py",
+  "scriptHash": "14224ef7aba1",
+  "scriptCommitSha": "49e7be09dd5d46f7983b764ecc56f565d66c2776",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/deuteron_block_measure_entangled_support_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/deuteron_block_measure_entangled_support_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0_anchor_reason": "y_λ read from the proton-pinned y-lambda-at-q0 cache; no q₀ arithmetic here",
+  "description": "PROBE (bean qou-jfx8): the convention-D Markov block measure P(λ)=y_λ f^λ on H_6 at the proton pin sums to 1 and is positive on the two-row blocks; the deuteron's y-weighted entangled support {λ: y_λ≠0, χ_λ(atom)≠χ_λ(free)} is exactly the four two-row blocks, dominated by (5,1); the LP-dual y* of deuteron-real-sdp ranks those blocks in nearly the opposite order to P. Committed inputs only; nothing fitted; nothing wired.",
+  "inputs": {
+    "y_lambda": "y-lambda-at-q0.witness.json",
+    "chi": "atom-chi-rust-d.witness.json",
+    "lp_dual": "deuteron-real-sdp.witness.json",
+    "chi_witness_q0Anchor_recorded": null,
+    "chi_witness_computedAt": "2026-09-07T11:36:23.937707+00:00"
+  },
+  "weight_family": "markov_y_lambda_convention_D",
+  "rows": [
+    {
+      "partition": [
+        6
+      ],
+      "f_lambda": 1,
+      "y_lambda": "0.11532422490206616611036906989019053151376047733151",
+      "P": "0.11532422490206616611036906989019053151376047733151",
+      "chi_atom": "1.5598701995641515927061666224371716599524918200175",
+      "chi_free": "1.5513064682004775733400041715565838634937585726284",
+      "displacement_y_times_chi_diff": "0.00098760568178522039119220189458397100078987308612299",
+      "chi_differs": true,
+      "in_weighted_entangled_support": true,
+      "lp_dual_y_star_float64_source": "1.5598701995641606",
+      "weight_family": "markov_y_lambda_convention_D"
+    },
+    {
+      "partition": [
+        5,
+        1
+      ],
+      "f_lambda": 5,
+      "y_lambda": "0.078952962475926678987719631392210998525081319853836",
+      "P": "0.39476481237963339493859815696105499262540659926918",
+      "chi_atom": "-0.68228501276057044641239950847620023335096905058466",
+      "chi_free": "0.72222319547663343251347893677940906919180389075582",
+      "displacement_y_times_chi_diff": "-0.11089008386208297199641248953817848078663696374581",
+      "chi_differs": true,
+      "in_weighted_entangled_support": true,
+      "lp_dual_y_star_float64_source": "0.643263468447179",
+      "weight_family": "markov_y_lambda_convention_D"
+    },
+    {
+      "partition": [
+        4,
+        2
+      ],
+      "f_lambda": 9,
+      "y_lambda": "0.046032434692020426936520153786581544499316813480772",
+      "P": "0.41429191222818384242868138407923390049385132132695",
+      "chi_atom": "0.32908034753961323775704153752221780532274628165492",
+      "chi_free": "0.82659166702554648129002182549834801191414346754892",
+      "displacement_y_times_chi_diff": "-0.022901657322777131677744843562348275913600542861118",
+      "chi_differs": true,
+      "in_weighted_entangled_support": true,
+      "lp_dual_y_star_float64_source": "0.18604391800380654",
+      "weight_family": "markov_y_lambda_convention_D"
+    },
+    {
+      "partition": [
+        4,
+        1,
+        1
+      ],
+      "f_lambda": 10,
+      "y_lambda": "0.0",
+      "P": "0.0",
+      "chi_atom": "-1.2048051340890402241435135085474942280236731990496",
+      "chi_free": "-2.8133263317193534457867808083023876346566998957614",
+      "displacement_y_times_chi_diff": "0.0",
+      "chi_differs": true,
+      "in_weighted_entangled_support": false,
+      "lp_dual_y_star_float64_source": "0.16842649060054837",
+      "weight_family": "markov_y_lambda_convention_D"
+    },
+    {
+      "partition": [
+        3,
+        3
+      ],
+      "f_lambda": 5,
+      "y_lambda": "0.015123810098023319304470277813904115073396320414472",
+      "P": "0.07561905049011659652235138906952057536698160207236",
+      "chi_atom": "0.71394515175138574642252125970790802050354907040102",
+      "chi_free": "1.6556749397493906221165470602755228062160981494215",
+      "displacement_y_times_chi_diff": "-0.014242542477333585826529597813974905304260876220952",
+      "chi_differs": true,
+      "in_weighted_entangled_support": true,
+      "lp_dual_y_star_float64_source": "0.8498804045835335",
+      "weight_family": "markov_y_lambda_convention_D"
+    },
+    {
+      "partition": [
+        3,
+        2,
+        1
+      ],
+      "f_lambda": 16,
+      "y_lambda": "0.0",
+      "P": "0.0",
+      "chi_atom": "0.38502861152691393838195665216469095029420110137675",
+      "chi_free": "-0.089833625420115395706083967429905079519892136322515",
+      "displacement_y_times_chi_diff": "0.0",
+      "chi_differs": true,
+      "in_weighted_entangled_support": false,
+      "lp_dual_y_star_float64_source": "0.16842649060054837",
+      "weight_family": "markov_y_lambda_convention_D"
+    },
+    {
+      "partition": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "f_lambda": 10,
+      "y_lambda": "0.0",
+      "P": "0.0",
+      "chi_atom": "1.0043722855323384096612245044756104563761342432712",
+      "chi_free": "-1.453730354789606657392900083615821011017361821925",
+      "displacement_y_times_chi_diff": "0.0",
+      "chi_differs": true,
+      "in_weighted_entangled_support": false,
+      "lp_dual_y_star_float64_source": "0.16842649060054837",
+      "weight_family": "markov_y_lambda_convention_D"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2
+      ],
+      "f_lambda": 5,
+      "y_lambda": "0.0",
+      "P": "0.0",
+      "chi_atom": "-1.1804319536021514605302658617433936688365417807772",
+      "chi_free": "0.77762536791912660023010658965790678908304049819181",
+      "displacement_y_times_chi_diff": "0.0",
+      "chi_differs": true,
+      "in_weighted_entangled_support": false,
+      "lp_dual_y_star_float64_source": "0.16842649060054837",
+      "weight_family": "markov_y_lambda_convention_D"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "f_lambda": 9,
+      "y_lambda": "0.0",
+      "P": "0.0",
+      "chi_atom": "-0.036698171845523450423048631745848489536874060518191",
+      "chi_free": "1.3081380721250292477974620795672986184204238901556",
+      "displacement_y_times_chi_diff": "0.0",
+      "chi_differs": true,
+      "in_weighted_entangled_support": false,
+      "lp_dual_y_star_float64_source": "0.16842649060054837",
+      "weight_family": "markov_y_lambda_convention_D"
+    },
+    {
+      "partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "f_lambda": 5,
+      "y_lambda": "0.0",
+      "P": "0.0",
+      "chi_atom": "-0.3382626406827009674633726604751482830584775766849",
+      "chi_free": "1.2037696005761161990209191908483596756980843133626",
+      "displacement_y_times_chi_diff": "0.0",
+      "chi_differs": true,
+      "in_weighted_entangled_support": false,
+      "lp_dual_y_star_float64_source": "0.16842649060054837",
+      "weight_family": "markov_y_lambda_convention_D"
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "f_lambda": 1,
+      "y_lambda": "0.0",
+      "P": "0.0",
+      "chi_atom": "-0.67687668343293797886250168375128986008721472052128",
+      "chi_free": "0.67325689637021355145356370093896784636070092139872",
+      "displacement_y_times_chi_diff": "0.0",
+      "chi_differs": true,
+      "in_weighted_entangled_support": false,
+      "lp_dual_y_star_float64_source": "0.16842649060054837",
+      "weight_family": "markov_y_lambda_convention_D"
+    }
+  ],
+  "sum_P": "1.0",
+  "weighted_entangled_support": [
+    [
+      6
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      3,
+      3
+    ]
+  ],
+  "raw_chi_differs_count": 11,
+  "dominant_displacement_block": [
+    5,
+    1
+  ],
+  "rank_by_P": [
+    [
+      4,
+      2
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      6
+    ],
+    [
+      3,
+      3
+    ]
+  ],
+  "rank_by_lp_dual_y_star": [
+    [
+      6
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      4,
+      2
+    ]
+  ],
+  "tr_M_atom_from_pairing": "0.15196833920423160759266569775106614127124096465526",
+  "tr_M_free_from_pairing": "0.29901501718464007670216042677098383227494947439702",
+  "deuteron_real_sdp_tr_M_beta_D_as_recorded_float64_source_str": "0.5751722457697739",
+  "caveats": [
+    "atom-chi-rust-d.witness.json records no q0Anchor field. Its y-weighted trace 0.15197 differs from deuteron-real-sdp's recorded tr_M_beta_D 0.57517; BOTH witnesses were last regenerated in the same commit 870c65d84b (2026-09-15), so this is NOT an element-generation dating artifact. Which element or normalisation deuteron_real_sdp traces is NOT adjudicated here.",
+    "LP-dual y* is float64 in its source witness; used for rank only."
+  ]
+}

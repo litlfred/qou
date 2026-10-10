@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-corrected-markov-trace",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:corrected-markov-trace",
+  "kind": "proof",
+  "title": "Proof of corrected markov trace",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-corrected-markov-trace"
+  ],
+  "text": "corrected-markov-trace-proof.md",
+  "provenance": "authored"
+}

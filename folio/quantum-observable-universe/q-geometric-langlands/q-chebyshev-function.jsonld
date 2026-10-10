@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-q-chebyshev-function",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:q-chebyshev-function",
+  "kind": "definition",
+  "title": "The $q$-Chebyshev function",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-von-mangoldt-function"
+  ],
+  "tags": [
+    "chebyshev",
+    "q-deformation",
+    "counting-function",
+    "spectral-geometry"
+  ],
+  "defines": [
+    "q-chebyshev-function"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.QChebyshevFunction",
+  "text": "q-chebyshev-function.md",
+  "leanSource": "q-chebyshev-function.lean",
+  "provenance": "authored"
+}

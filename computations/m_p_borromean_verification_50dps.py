@@ -102,7 +102,7 @@ violation.
 Numerical verification of the Borromean baryon mass formula at q_0.
 
 Tests
-[`conj:borromean-baryon-mass-formula`](../../content/quantum-observable-universe/braids-and-knots/borromean-baryon-mass-formula.md)
+[`conj:borromean-baryon-mass-formula`](../../folio/quantum-observable-universe/braids-and-knots/borromean-baryon-mass-formula.md)
 against CODATA proton + neutron masses at MPFR 50 dps.
 
 ## The formula (canonical, post-PR #1080)
@@ -583,7 +583,7 @@ def main() -> int:
         "proton": "qou:QOU.BraidKnot.PeriodicTableUniqueness.h_uniqueness_closed",
         "neutron": "qou:QOU.BraidKnot.nucleus_uniqueness_closed (n=3)",
         "framework_doc":
-            "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+            "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
         "note": (
             "These theorems certify T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). The real per-nucleus SDP (multi-term cost + non-empty constraints) is per-nucleus substantive open work. Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
         ),

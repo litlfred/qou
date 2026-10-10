@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-archimedean-image-table-table2-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:archimedean-image-table-table2-data",
+  "kind": "table",
+  "title": "Table 2 from rem:archimedean-image-table",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-archimedean-image-table"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "archimedean-image-table-table2-data.md",
+  "provenance": "authored"
+}

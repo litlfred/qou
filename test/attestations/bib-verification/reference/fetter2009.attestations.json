@@ -1,0 +1,48 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "fetter2009",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 44,
+      "entry": {
+        "id": "fetter2009",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T15:48:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": null,
+        "note": "PDF verified: 'Rotating Trapped Bose-Einstein Condensates' by Alexander L. Fetter, arXiv:0801.2952. Vortex physics \u2014 matches cited topic.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/fetter2009.pdf"
+        },
+        "local_pdf": "uploads/fetter2009.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "BROKEN SOURCE JOIN: the named file does not exist in the tree, so identity could not be confirmed from front matter. Exactly one citation site: observations/bec-vortex-data.md:1, a two-key \\cite backing the claim that Bose-Einstein condensates provide the cleanest experimental realisation of quantised vortex dynamics. That is a review-article-level claim and the registered entry is a review on rotating trapped condensates, so the citation is prima facie appropriate and modestly load-bearing: it sources the empirical framing the whole bec-vortex-data block compares the q -> 1 vortex spectrum against. The specific claim could not be checked against the text without the file.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Citation looks appropriate for the claim it backs; the only defect is the missing source file behind this ledger row.",
+              "target": "folio/quantum-observable-universe/observations/bec-vortex-data.md"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    }
+  ]
+}

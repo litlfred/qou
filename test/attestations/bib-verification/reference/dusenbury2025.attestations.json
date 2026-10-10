@@ -1,0 +1,53 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "dusenbury2025",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 361,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/on-the-garoufalidis-kashaev-state-integral-invariant/On the Garoufalidis-Kashaev State-Integral Invariant.pdf"
+        },
+        "id": "dusenbury2025",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "A 2025 Boise State MSc thesis giving a careful exposition of the Andersen-Garoufalidis-Kashaev state-integral over an archimedean local field: the construction from an ideal triangulation with balanced angle data valued in a Gaussian group, convergence of the integrand as a tempered distribution under positivity and a homological constraint, the pentagon identity for the angle-deformed quantum dilogarithm Psi_{a,c} supporting 2-3 Pachner invariance, and gauge invariance under changes of internal angle data. It contributes no new theorem -- it re-derives results the corpus's primary sources already own -- so its key-results list is empty per the skill's rule. It is nonetheless worth registering as a readable secondary account of two objects the corpus asserts: the operator pentagon Phi(P)Phi(Q) = Phi(Q)Phi(P+Q)Phi(P) in rem:q-dilogarithm-pentagon-associator, and the balanced-angle-structure setting the corpus's angle-structure LP/SDP dictionary uses. Reading it surfaced a separate citation gap worth recording (see the actions).",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "A citable expository account of the angle-deformed (charged) quantum dilogarithm pentagon and the balanced-angle state integral, both asserted in the corpus.",
+              "target": "rem:q-dilogarithm-pentagon-associator",
+              "bean": "qou-85c2"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Surfaced while reading this thesis: the corpus names 'the Andersen-Kashaev state integral' in a reference note and in the 5_2 GK-bridge audit's definition of state-integral dressing, but no Andersen-Kashaev ref() entry exists. The PRIMARY source is the one actually missing; this thesis is only its exposition.",
+              "target": "rem:q-dilogarithm-pentagon-associator",
+              "bean": "qou-exr5"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "eda230da2a59"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 # QA Review: Chapter 6 — The Algebraic Substrate
 
 **Review Date:** 2026-04-25  
-**Chapter Directory:** `content/quantum-observable-universe/algebraic-substrate/`  
+**Chapter Directory:** `folio/quantum-observable-universe/algebraic-substrate/`  
 **Manifest:** `algebraic-substrate.ts`  
 **Total Files Reviewed:** 58 markdown + 25 lean + 90+ TypeScript manifests
 

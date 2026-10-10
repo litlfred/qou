@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-typed-garside-element",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:typed-garside-element",
+  "kind": "definition",
+  "title": "Typed Garside element of the nuclear braid",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-typed-crossing-operator",
+    "papers/quantum-observable-universe/blocks/prop-braiding-induced-ordering"
+  ],
+  "tags": [
+    "garside-element",
+    "hecke-algebra",
+    "typed-crossing",
+    "nuclear",
+    "braid-word",
+    "normal-form",
+    "staircase"
+  ],
+  "leanRef": "qou:QOU.Archimedean.TypedGarsideElement",
+  "text": "typed-garside-element.md",
+  "leanSource": "typed-garside-element.lean",
+  "provenance": "authored"
+}

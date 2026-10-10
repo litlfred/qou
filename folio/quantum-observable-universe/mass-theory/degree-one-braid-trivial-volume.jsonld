@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-degree-one-braid-trivial-volume",
+  "@type": [
+    "folio-assistant-core:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:degree-one-braid-trivial-volume",
+  "kind": "lemma",
+  "title": "Degree-one Hecke elements have vanishing archimedean volume: $\\mathrm{Vol}\\bigl(\\overline{1 + \\sum_i \\phi_i \\sigma_i}\\bigr) = 0$",
+  "cites": [
+    "references/jones1987",
+    "references/kashaev1997"
+  ],
+  "tags": [
+    "photon",
+    "masslessness",
+    "degree-one",
+    "archimedean",
+    "linearity",
+    "unknot"
+  ],
+  "leanRef": "qou:QOU.Photon.geom_degree_one_zero",
+  "text": "degree-one-braid-trivial-volume.md",
+  "leanSource": "degree-one-braid-trivial-volume.lean",
+  "provenance": "authored"
+}

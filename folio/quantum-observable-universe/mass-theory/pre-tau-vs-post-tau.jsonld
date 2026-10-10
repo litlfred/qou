@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-pre-tau-vs-post-tau",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:pre-tau-vs-post-tau",
+  "kind": "remark",
+  "title": "Archimedean wall discipline: pre-$\\tau$ vs post-$\\tau$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-archimedean-realization-functor"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-archimedean-realization-functor",
+  "cites": [
+    "references/yekutieli2015"
+  ],
+  "tags": [
+    "archimedean-wall",
+    "discipline",
+    "motivic",
+    "habiro",
+    "interpretation",
+    "encounter"
+  ],
+  "text": "pre-tau-vs-post-tau.md",
+  "provenance": "authored"
+}

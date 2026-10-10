@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-qbeta-toroidal-harmonics-basis",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:qbeta-toroidal-harmonics-basis",
+  "kind": "proposition",
+  "title": "Toroidal harmonics global basis",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-beta-categorical-precision-ladder"
+  ],
+  "tags": [
+    "qbeta",
+    "toroidal-harmonics",
+    "habiro",
+    "continuum-limit"
+  ],
+  "text": "qbeta-toroidal-harmonics-basis.md",
+  "provenance": "authored"
+}

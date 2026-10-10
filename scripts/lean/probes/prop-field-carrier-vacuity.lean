@@ -106,7 +106,7 @@ To run (needs the QOU oleans; `QOU.Mathlib.HeckeAlgebra` only):
 
     ROOT=$PWD; LP=""
     for d in "$ROOT"/.lake/packages/*/.lake/build/lib/lean; do LP="$LP$d:"; done
-    LEAN_PATH="$LP$ROOT/content/quantum-observable-universe/lean/.lake/build/lib/lean" \
+    LEAN_PATH="$LP$ROOT/folio/quantum-observable-universe/lean/.lake/build/lib/lean" \
       lean scripts/lean/probes/prop-field-carrier-vacuity.lean
 
 Verified exit 0 on lean-v4.24.0 — 2026-08-30 as the defect report, and again

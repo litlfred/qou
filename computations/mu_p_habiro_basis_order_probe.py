@@ -6,7 +6,7 @@ BEAN `qou-6gf9`. Successor to `mu_p_cyclotomic_ladder_magnitude_probe.py`, which
 closed the 4_1 cyclotomic ladder (floor 5430x the residual). Source for the
 Sigma(2,3,5) series: `library/arxiv-2605.15740v1` (Lovejoy, Osburn & Storzer,
 *Bailey pairs, Eichler integrals and unified WRT invariants*), registered as
-`lovejoy2026` in `content/schema/references.ts` at intake and — until now —
+`lovejoy2026` in `folio/schema/references.ts` at intake and — until now —
 cited nowhere in the corpus.
 
 ## Result 1 (structural, exact): the bar-even precondition is FREE in the Habiro ring

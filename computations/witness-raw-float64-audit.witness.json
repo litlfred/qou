@@ -3,8 +3,8 @@
   "name": "witness-raw-float64-audit",
   "description": "Witnesses carrying raw float64 JSON numbers. Enforces the stated NO-FLOAT64 rule, which the padding audit does not: that gate catches only FAKE precision (float64 padded past ~17 digits), so honest float64 passes it. Ratchet only \u2014 draining is PR #4677.",
   "data": {
-    "dirty_witnesses": 992,
-    "total_fields": 28127,
+    "dirty_witnesses": 975,
+    "total_fields": 25396,
     "lp_dual_carved_out_fields": 392,
     "lp_dual_carved_out_by_file": {
       "computations/a-K-via-lp-dual-full.witness.json": 141,
@@ -36,9 +36,12 @@
       "y0_star",
       "y_star"
     ],
-    "ephemeral_duration_carved_out_fields": 97,
+    "ephemeral_duration_carved_out_fields": 125,
     "ephemeral_duration_carved_out_by_file": {
+      "computations/deltalambda/rev-excess-scaling-exponent.witness.json": 11,
       "computations/atom-mass-derived.witness.json": 10,
+      "computations/deltalambda/rev-edge-relaxation-window.witness.json": 7,
+      "computations/deltalambda/rev-exact-maximiser-small-n.witness.json": 6,
       "computations/derived-chi-catalogue-sweep.witness.json": 6,
       "computations/level1-qvalues.witness.json": 6,
       "computations/sigma-all-symbolic-decay.witness.json": 6,
@@ -52,10 +55,14 @@
       "computations/probes/bpp-higher-a-sparse.witness.json": 2,
       "computations/a_operator/A-operator-extract-general.witness.json": 1,
       "computations/atom-nf-symbolic-D.witness.json": 1,
+      "computations/brng-dominant-summand-ursell.witness.json": 1,
+      "computations/brng-multiplicity-channel-bound.witness.json": 1,
+      "computations/brng-two-row-dominant-block-a6.witness.json": 1,
       "computations/chi-lambda-he4-full-partition-table.witness.json": 1,
       "computations/deltalambda/b1-kappa-window-extension.witness.json": 1,
       "computations/deltalambda/he4-binding-k-stage2.witness.json": 1,
       "computations/deltalambda/he4-stage2-ranking-seminormal-xcheck.witness.json": 1,
+      "computations/deltalambda/m1-site-density-jensen-reduction.witness.json": 1,
       "computations/option-e-probe1-derive-1plusq-over-2.witness.json": 1,
       "computations/probes/qbeta-habiro-phi8-squared-from-z-squared-probe.witness.json": 1,
       "computations/probes/qbeta-nz-even-series-fourone.witness.json": 1,
@@ -118,18 +125,18 @@
       "computations/qns-tail-pileup-probe.witness.json": 17
     },
     "f64_integrator_declared_tier": "float64-integrator",
-    "baseline_files": 1004,
-    "baseline_fields": 30990,
+    "baseline_files": 1003,
+    "baseline_fields": 30985,
     "new_not_baselined": 0,
     "regressed": 0,
-    "drained_files": 16
+    "drained_files": 35
   },
   "scriptFile": "witness_raw_float64_audit.py",
   "scriptHash": "9eb501eed27a",
   "scriptCommitSha": "d1bc358ade1369639d19fd60f10e64ad7e7886d3",
-  "commitSha": "4a02360480dab8727707457a24bae59f93090373",
+  "commitSha": "6a939b9882577e2209fe46fb9551731997642d4a",
   "engine": "python",
-  "computedAt": "2026-09-11T14:51:52.587238+00:00",
+  "computedAt": "2026-09-27T18:34:06.444318+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

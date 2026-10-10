@@ -78,7 +78,7 @@ jobs:
           # and tools/hecke-engine/ from the context root — all of which
           # exist in THIS repo and none of which exist in the platform.
           # folio-assistant is expected at ./folio-assistant.
-          file: folio-assistant/adapters/mcp-server/Dockerfile
+          file: folio-assistant/cat-harness/adapters/mcp-server/Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

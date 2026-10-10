@@ -129,11 +129,28 @@ def main():
     set_compute_dps()
     wb = WitnessBuilder("binding-rotation-phase-lead", engine="mpmath")
 
+    # NO `float()` ON THESE FOUR. They arrive from `codata_constants` as mpf and
+    # the only consumer immediately lifts them back (`mpf(str(AME[iso]))`, the
+    # `rho` dict below), so the cast was a round trip through binary64 for no
+    # gain — and AGENTS.md permits `float(x)` only inside an f-string.
+    #
+    # It happened to LOSE NOTHING here, and the reason is worth keeping because
+    # it is easy to get backwards in both directions:
+    #   * `mpf(str(float(v)))` round-trips EXACTLY for these four — measured
+    #     rel_err 0.0 on all of D/T/3He/4He — because Python's `str` prints the
+    #     shortest decimal that reparses to the same double, and all four have
+    #     well under 17 significant digits (2.2245662 … 28.2956624).
+    #   * `mpf(float(v))` would NOT. That lifts the binary64 itself and differs
+    #     at ~1e-17; it is the defect fixed in `atom_vhyp_bar_trace_test.py`.
+    # So the cast was harmless only because a `str()` sat downstream of it.
+    # Removing it stops the safety depending on that coincidence, and clears two
+    # `mpf_mixed_arithmetic_audit` candidates at their root rather than by
+    # widening the detector's carve-out (see the commit message).
     AME = {
-        "D": float(AME_B_DEUTERON_MEV_VALIDATION),
-        "T": float(AME_B_TRITIUM_MEV_VALIDATION),
-        "3He": float(AME_B_HE3_MEV_VALIDATION),
-        "4He": float(AME_B_HE4_MEV_VALIDATION),
+        "D": AME_B_DEUTERON_MEV_VALIDATION,
+        "T": AME_B_TRITIUM_MEV_VALIDATION,
+        "3He": AME_B_HE3_MEV_VALIDATION,
+        "4He": AME_B_HE4_MEV_VALIDATION,
     }
     # y_λ sources (same as delta_lambda_binding_full_evaluation)
     y_H6 = load_y("rho-k-h3a-lp-dual.witness.json", ["per_lambda"])

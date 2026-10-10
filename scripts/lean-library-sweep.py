@@ -42,6 +42,9 @@ never rebuilt.
     scripts/lean-library-sweep.py [--shadow DIR] [--jobs N] [--limit N]
 
 `--shadow` reuses a shadow across runs (~2.3 GB, and the copy is the slow part).
+A reused shadow is topped up on every run -- anything the real olean tree
+gained since it was built is linked in, because the shadow MASKS that tree
+rather than layering over it and a gap reads as a RED (see refresh_shadow).
 `--jobs` parallelises independent modules within a topological layer.
 """
 
@@ -73,7 +76,7 @@ LEAN_OPTS = ["-DautoImplicit=false", "-s", "65536"]
 ROOT = pathlib.Path(
     subprocess.run(["git", "rev-parse", "--show-toplevel"],
                    capture_output=True, text=True, check=True).stdout.strip())
-PKG = ROOT / "content/quantum-observable-universe/lean"   # default; see packages()
+PKG = ROOT / "folio/quantum-observable-universe/lean"   # default; see packages()
 LIB = "QOU"
 
 
@@ -128,7 +131,17 @@ def load_graph() -> tuple[dict, dict]:
 def last_commit_times() -> dict[str, int]:
     """Repo-relative path -> unix time of its most recent commit, in one pass."""
     out = subprocess.run(
-        ["git", "log", "--format=%ct", "--name-only", "--", str(PKG / LIB)],
+        # BOTH paths.  `PKG/LIB` is the namespace DIRECTORY; the library root
+        # module `PKG/LIB.lean` sits BESIDE it and is not under it, so a log
+        # scoped to the directory alone never sees the root and returns no time
+        # for it.  `dirty_closure` then marks a module with no commit time as
+        # changed UNCONDITIONALLY, so the root was permanently dirty by
+        # construction -- a floor of exactly 1 that no amount of rebuilding can
+        # clear.  Measured 2026-09-14: after a full progressive reseed took the
+        # QOU closure 1261 -> 1, that surviving 1 was the root, and it was this,
+        # not work left undone.
+        ["git", "log", "--format=%ct", "--name-only", "--",
+         str(PKG / LIB), str(PKG / f"{LIB}.lean")],
         cwd=ROOT, capture_output=True, text=True).stdout
     times, ts = {}, None
     for line in out.splitlines():
@@ -295,9 +308,18 @@ def main() -> int:
                     help="stop after N modules (for a smoke test)")
     ap.add_argument("--all", action="store_true",
                     help="compile EVERY module, not just the dirty closure -- the "
-                         "measurement for 'how much of the library compiles', since "
-                         "1863 of 2773 are outside the root build and so outside "
-                         "every routine check.  Hours, not minutes.")
+                         "measurement for 'how much of the library compiles'.  "
+                         "CORRECTED 2026-09-13: this said '1863 of 2773 are outside "
+                         "the ROOT BUILD'.  Both halves were wrong.  The count came "
+                         "from a direct-import measure corrected on 2026-09-08 (the "
+                         "transitive figure is ~48%%, 1385 of 2836); and `lake build "
+                         "QOU` builds the WHOLE TREE, because the paper lakefile "
+                         "declares globs = [\"QOU\", \"QOU.+\"] (bean qou-rc7b, done "
+                         "2026-08-08) -- so those modules are outside the root's "
+                         "IMPORT CLOSURE, not outside the build.  What IS true is "
+                         "that nothing runs that build automatically (CI is "
+                         "workflow_dispatch-only), which is why this flag is worth "
+                         "having.  Hours, not minutes.  Bean qou-g5sp.")
     ap.add_argument("--only", metavar="PREFIX",
                     help="restrict to modules whose name starts with PREFIX "
                          "(e.g. QOU.BraidKnot).  Exists so a --all run can be "
@@ -317,6 +339,19 @@ def main() -> int:
                          "module starts with it, so the root's chunk silently "
                          "became the whole corpus (measured: `TO COMPILE 2774 "
                          "[--only QOU + its untrusted deps]`).")
+    ap.add_argument("--report", action="store_true",
+                    help="print the snapshot-drift census and EXIT 0 without "
+                         "compiling anything.  Exists because the numbers this "
+                         "sweep already computes are the answer to a question "
+                         "nobody could ask cheaply: `lean`-direct exit 0 is a "
+                         "claim about the olean SNAPSHOT, not about the library "
+                         "source (bean qou-56qy), and the size of that gap was "
+                         "only obtainable by importing this module and calling "
+                         "its internals -- which is how the last measurement got "
+                         "`len()` of a 4-tuple and reported a closure of 4 "
+                         "against a 683-module seed.  A closure cannot be smaller "
+                         "than its seed; print it here so the check is one "
+                         "command and that class of error has nowhere to live.")
     ap.add_argument("--package", action="append", metavar="LIB",
                     help="library name (QOU, UGB, Fred2005); repeatable, "
                          "default all discovered")
@@ -344,12 +379,87 @@ def main() -> int:
     return rc
 
 
+def refresh_shadow(src: pathlib.Path, dst: pathlib.Path) -> int:
+    """Link into a REUSED shadow every file the real tree has and it lacks.
+
+    A shadow is only populated once, when it is created.  With `--shadow` it is
+    reused across runs, and anything written into the real olean tree after that
+    point is missing from it -- a background `lake build` is the documented case
+    (AGENTS.md: a SessionStart build re-fired by compaction moved the QOU tree
+    2660 -> 2713 oleans mid-sweep).
+
+    That is not a harmless gap.  Per the masking note at the call site, Lean
+    commits to the FIRST LEAN_PATH root holding `<LIB>/` and never consults a
+    later root for anything beneath it, so the real tree is NOT a fallback: a
+    module missing from the shadow reads as "does not exist" and the sweep
+    reports a RED that is about its own shadow.  Measured by a sibling session
+    on `lean-content-sweep.sh`'s `cp -al` shadow: 209 files missing, surfacing
+    as a bogus `QOU.BraidKnot` failure naming an `EdgeDecoupling.olean` that was
+    present in the real tree the whole time (PR #7378 comment 5677632542).
+
+    Only MISSING paths are linked.  A shadow file that differs from its real-tree
+    twin is one a previous run REBUILT -- newer and correct -- and overwriting it
+    would throw away the work the shadow exists to hold.
+    """
+    linked = 0
+    for dirpath, _dirnames, filenames in os.walk(src):
+        rel = pathlib.Path(dirpath).relative_to(src)
+        for name in filenames:
+            target = dst / rel / name
+            if target.exists():
+                continue
+            target.parent.mkdir(parents=True, exist_ok=True)
+            try:
+                os.link(pathlib.Path(dirpath) / name, target)
+            except OSError:
+                shutil.copy2(pathlib.Path(dirpath) / name, target)
+            linked += 1
+    return linked
+
+
 def sweep_one(args) -> int:
-    oleans = find_oleans()
+    if args.report:
+        # Report mode must survive a package with no snapshot at all, because
+        # that IS one of the things worth reporting.  `find_oleans` exits for
+        # the sweep path on purpose -- a gate with no tree to check against
+        # must not silently pass -- so catch it here only, leaving that
+        # behaviour untouched for every non-report run.  Measured: without
+        # this, a plain `--report` aborts on Fred2005 (no olean tree in a
+        # container restored from the qou cache branch) and never reaches QOU,
+        # which is the package anyone running it cares about.
+        try:
+            oleans = find_oleans()
+        except SystemExit as e:
+            print(f"  no snapshot for {LIB}: {e}")
+            return 0
+    else:
+        oleans = find_oleans()
     print(f"olean tree: {oleans}")
     mod2path, imports = load_graph()
     dirty, changed, never_built, untrusted = dirty_closure(mod2path, imports,
                                                 oleans, all_dirty=args.all)
+
+    if args.report:
+        total = len(mod2path)
+        pct = (100.0 * len(dirty) / total) if total else 0.0
+        print(f"  modules in graph                              {total}")
+        print(f"  never built (no olean at all)                 {len(never_built)}")
+        print(f"  changed (source newer than its own olean)     {len(changed)}")
+        print(f"  standard-dirty (snapshot cannot vouch)        {len(untrusted)}")
+        print(f"  DIRTY CLOSURE (changed + their importers)     {len(dirty)}"
+              f"  ({pct:.1f}% of the library)")
+        print(f"  clean in snapshot                             {total - len(dirty)}")
+        print("  -- a `lean`-direct green on any DIRTY module is a claim about "
+              "the snapshot, not the source; rebuild its cone first.")
+        if sel := (args.only or args.only_exact):
+            hit = ({m for m in dirty if m == args.only_exact} if args.only_exact
+                   else {m for m in dirty if m.startswith(args.only)})
+            print(f"  selection {sel}: {len(hit)} of them are dirty")
+            for m in sorted(hit):
+                tag = ("NEVER-BUILT" if m in never_built
+                       else "CHANGED" if m in changed else "via-imports")
+                print(f"      {tag:12s} {m}")
+        return 0
     sel = args.only or args.only_exact
     if sel:
         # Filter the population to compile, NOT the import graph -- dependencies
@@ -440,6 +550,12 @@ def sweep_one(args) -> int:
                 print(f"  hardlink failed ({e}); falling back to a real copy")
                 shutil.rmtree(shadow / LIB, ignore_errors=True)
                 shutil.copytree(oleans / LIB, shadow / LIB)
+        else:
+            # Reused shadow (`--shadow`): top it up.  See refresh_shadow().
+            added = refresh_shadow(oleans / LIB, shadow / LIB)
+            if added:
+                print(f"refreshing reused shadow: linked {added} file(s) "
+                      f"the real tree gained since it was built")
 
         siblings = [str(p) for p in ROOT.glob("content/*/lean/.lake/build/lib/lean")
                     if p != oleans]

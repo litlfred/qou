@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-penrose-ccc-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:penrose-ccc-table-data",
+  "kind": "table",
+  "title": "Data table from rem:penrose-ccc",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-penrose-ccc"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "penrose-ccc-table-data.md",
+  "provenance": "authored"
+}

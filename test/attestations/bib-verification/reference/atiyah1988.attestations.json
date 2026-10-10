@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "atiyah1988",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 28,
+      "entry": {
+        "id": "atiyah1988",
+        "status": "partial",
+        "verified_at": "2026-05-19T07:00:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 12,
+        "fix_commit": "(this commit)",
+        "note": "Atiyah, 'Topological quantum field theories', Publ. IHES 68 (1988). 12 bare-URL Refs \u2192 title+journal form. No local PDF (IHES paywalled in this case; an open numdam mirror likely exists \u2014 could be intake candidate). Partial.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1007/BF02698547"
+        }
+      }
+    }
+  ]
+}

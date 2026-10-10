@@ -1,0 +1,63 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "kleinkreisler1996",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 341,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-hep-ph-9612303v1/9612303v1.pdf"
+        },
+        "id": "kleinkreisler1996",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Genuine orphan and the most directly comparable prior art in the slice for the folio's q-deformed hadron programme. It asks whether SU(2) isospin is really a quantum group, builds pion, nucleon and Delta wavefunctions from a q-quark doublet, redoes the quark-model magnetic moments and mass relations \u2014 and reports a specific NEGATIVE: a single q of U_q(sl(2)) cannot parametrize the charged-neutral pion mass difference without explicit electromagnetic corrections, stated in the abstract as 'it is not true that the extra parameter q allows one to fit anything'. That matters here because rem:meson-mass-splitting asserts that q-deformation lifts the meson octet degeneracy through quantum dimensions, crossing energy and Markov-trace weights, and the folio has a live pion prediction path (computations/probes/m_pi_hecke_prediction_probe.py, computations/gmo_meson_crosscheck.py). The folio also maintains rem:q-deformed-nuclear-models-comparison, a block whose explicit job is comparing against q-deformed models, which does not mention this line of work. Supporting rather than core: it supplies a caution and a falsifiable target, not a result the folio derives from. Scoping note per the refuted-claims rule: the negative here is scope-(a) \u2014 a single-q U_q(sl(2)) isospin deformation, as tested in that paper, did not reproduce the charged-neutral pion splitting. It is not a claim that q-deformation is excluded from meson mass splittings, and the folio's mechanism (Hecke Markov trace on knot representatives) is not the same construction.",
+          "keyResults": [
+            {
+              "locator": "Abstract; \u00a75",
+              "statement": "Baryon magnetic moments and mass relations go through smoothly under a q-deformed isospin doublet, but the charged-neutral pion mass difference cannot be parametrized by the single quantum-group parameter q without invoking explicit electromagnetic corrections.",
+              "useForFolio": "A falsifiable benchmark for rem:meson-mass-splitting: if the folio's q-deformed splitting mechanism is genuinely different from a single-q isospin deformation, it should be able to say what it predicts for the charged-neutral pion splitting where that route failed.",
+              "targets": [
+                "rem:meson-mass-splitting",
+                "rem:q-deformed-nuclear-models-comparison"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry; this is prior art on exactly the question rem:meson-mass-splitting addresses, and rem:q-deformed-nuclear-models-comparison exists precisely to survey q-deformed models.",
+              "target": "rem:q-deformed-nuclear-models-comparison",
+              "bean": "qou-7vgs"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "Run the folio's own meson machinery against the charged-neutral pion splitting that defeated the single-q route, and record the result whichever way it comes out. This is a cross-check of a published negative, not an import of any number from it.",
+              "target": "computations/gmo_meson_crosscheck.py",
+              "bean": "qou-c9uj"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "5311d7faf2b3"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

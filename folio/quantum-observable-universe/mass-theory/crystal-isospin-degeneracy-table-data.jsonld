@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-crystal-isospin-degeneracy-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:crystal-isospin-degeneracy-table-data",
+  "kind": "table",
+  "title": "Data table from prop:crystal-isospin-degeneracy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-crystal-isospin-degeneracy"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "crystal-isospin-degeneracy-table-data.md",
+  "provenance": "authored"
+}

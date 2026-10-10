@@ -1,0 +1,52 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "cantarella-deturck-gluck2001",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 374,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/candetgl/candetgl.pdf"
+        },
+        "id": "cantarella-deturck-gluck2001",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Join CORRECT (Cantarella, DeTurck and Gluck, 'The Biot-Savart operator for application to knot theory, fluid dynamics, and plasma physics', J. Math. Phys. 42, 876 (2001), DOI 10.1063/1.1329659 - matching the registered entry's authors and year). BIB ORPHAN: full-tree grep returns zero hits outside folio/schema/references.ts. The paper is the Euclidean-space companion of deturck-gluck2008 (also in this slice, also uncited): it develops the Biot-Savart operator on a domain, its self-adjointness and image characterisation, and the resulting helicity and curl-eigenvalue estimates. The folio has three live blocks in this exact area - rem:townsend-biot-savart-strain, rem:helicity-physical and rem:vorticity-lower-bound-argument - none of which cites it. Supporting rather than core: the blocks argue about Biot-Savart strain and helicity bounds and would be strengthened by the operator-theoretic source, but no folio result currently depends on a theorem of this paper. Note the uploaded file is the AIP scitation front-matter version; the text layer begins with the citation banner, so I have identified it from that banner and the abstract page rather than from a full read.",
+          "keyResults": [
+            {
+              "locator": "title and abstract (J. Math. Phys. 42, 876)",
+              "statement": "Operator-theoretic development of the Biot-Savart operator on domains, with the helicity and first-curl-eigenvalue estimates it yields, framed for knot theory, fluid dynamics and plasma physics.",
+              "useForFolio": "The Euclidean baseline against which the hyperbolic-space version (deturck-gluck2008) is the generalisation; together they would let rem:vorticity-lower-bound-argument state which ambient geometry its bound is taken in.",
+              "targets": [
+                "rem:townsend-biot-savart-strain",
+                "rem:vorticity-lower-bound-argument"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "A registered Biot-Savart-operator reference is uncited while a remark named 'townsend-biot-savart-strain' argues about Biot-Savart strain. Cite it there, alongside its hyperbolic companion deturck-gluck2008.",
+              "target": "rem:townsend-biot-savart-strain",
+              "bean": "qou-6wu0"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "d788af715428"
+        }
+      }
+    }
+  ]
+}

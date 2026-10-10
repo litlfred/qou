@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-ch4-tetrahedral-from-phi1",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:ch4-tetrahedral-from-phi1",
+  "kind": "remark",
+  "title": "Tetrahedral geometry of methane from $\\Phi_1$ minimisation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-ch4-molecular-braid"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-ch4-molecular-braid",
+  "tags": [
+    "methane",
+    "CH4",
+    "tetrahedral",
+    "S4",
+    "Phi1",
+    "bond-energy"
+  ],
+  "text": "ch4-tetrahedral-from-phi1.md",
+  "provenance": "authored"
+}

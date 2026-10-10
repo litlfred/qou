@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-generator-volume-decomposition",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:generator-volume-decomposition",
+  "kind": "proof",
+  "title": "Proof of generator volume decomposition",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-generator-volume-decomposition"
+  ],
+  "text": "generator-volume-decomposition-proof.md",
+  "provenance": "authored"
+}

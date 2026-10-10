@@ -1,0 +1,81 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "s00526-018-1443-6",
+ "source_sha256": "34f3cd94e3b2d9d7",
+ "brief": "Calc. Var. (2019) 58:16 Calculus of Variations On the analyticity of critical points of the Möbius energy Simon Blatt 1 · Nicole Vorderobermeier 1 © The Author(s) 2018 — We prove that smooth critical",
+ "extended": "**Calc. Var. (2019) 58:16 Calculus of Variations On the analyticity of critical points of the Möbius energy Simon Blatt 1 · Nicole Vorderobermeier 1 © The Author(s) 2018**\n\n28 pp, 12 sections.\n\n**Abstract.** We prove that smooth critical points of the Möbius energy E parametrized by arc-length are analytic. Together with the main result in Blatt et al. (Trans Am Math Soc 368(9):6391–6438, 2016) this implies that critical points of the Möbius energy with merely bounded energy are not only C∞ but also analytic. Our proof is based on Cauchy’s method of majorants and a decomposition of the gradient which has already proved useful in the proof of the regularity results in Blatt and Reiter (Manuscr Math 140(1–2):29–50, 2013) and Blatt et al. (Trans Am Math Soc 368(9):6391–6438, 2016). To the best of the authors knowledge, this is the ﬁrst analyticity result in the context of non-local differential equations. Mathematics Subject Classiﬁcation 35B65 · 57M25\n\n**Outline.** Front matter; On the analyticity of critical points of the M; Abstract; 1 Introduction; Exposé of the present work; 2.1 Fractional Sobolev spaces; 2 Preliminaries; 2.2 Properties of analytic functions; 4 Estimate of the main term Q; 6 Form of the remaining parts; Acknowledgements; References",
+ "tokens": {
+  "brief": 49,
+  "extended": 317
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-on-the-analyticity-of-critical-points-of-the-möb",
+   "title": "On the analyticity of critical points of the Möbius energy",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-003-exposé-of-the-present-work",
+   "title": "Exposé of the present work",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-004-21-fractional-sobolev-spaces",
+   "title": "Fractional Sobolev spaces",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-005-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-006-22-properties-of-analytic-functions",
+   "title": "Properties of analytic functions",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-007-4-estimate-of-the-main-term-q",
+   "title": "Estimate of the main term Q",
+   "pages": "8-16"
+  },
+  {
+   "id": "sec-008-6-form-of-the-remaining-parts",
+   "title": "Form of the remaining parts",
+   "pages": "16-27"
+  },
+  {
+   "id": "sec-009-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-010-references",
+   "title": "References",
+   "pages": "27-28"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

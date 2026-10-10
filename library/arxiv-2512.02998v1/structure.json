@@ -1,0 +1,311 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2512.02998v1",
+ "source": {
+  "file": "2512.02998v1.pdf",
+  "sha256": "146ff93cd70baad4d0eb036180471abaaf4324d7b0e795651e73976e93381998",
+  "bytes": 745336,
+  "pages": 32,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2512.02998",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "2 Dec 2025"
+  },
+  "doi": null,
+  "title": "STABILITY OFKNOT EQUIVALENCE AT LOW REGULARITY, AND SYMMETRIC CRITICAL KNOTS FOR THEM\u00d6BIUS ENERGY",
+  "authors_raw": "SIMON BLATT, ALEXANDRA GILSBACH, PHILIPP REITER, AND HEIKO VON DER MOSEL",
+  "title_lines": [
+   "STABILITY OFKNOT EQUIVALENCE AT LOW REGULARITY, AND",
+   "SYMMETRIC CRITICAL KNOTS FOR THEM\u00d6BIUS ENERGY"
+  ],
+  "abstract": "We present sufficient criteria for the equivalence of tame knots at low regularity. To this end, we introduce a localized version of Gromov\u2019s distortion for any closed path-connected subset ofR n. If two such sets have local Gromov distortion below a universal dimension- dependent constantg n at some scale, and if their Hausdorff-distance is less than one quarter of that scale, we can show that the fundamental groups of their complements are isomorphic. In addition, we construct this isomorphism so that it restricts to the corresponding peripheral subgroups as an isomorphism as well. Applied to the images of one-dimensional knots it follows that two knots are equivalent if their Hausdorff-distance is bounded in terms of the scale under which their local Gromov distortion is controlled. From that we deduce novel stability results for knot equivalence in the Lipschitz category, and in the setting of fractional Sobolev regularity belowC 1. Moreover, we prove a compactness theorem of knot equivalence classes with respect to weakW 3/2,2-convergence. As an application we show that the M\u00a8 obius energy introduced by O\u2019Hara [32] can be mini- mized within arbitrary prime knot classes under a symmetry constraint, and that these mini- mizers are in fact critical points and therefore smooth and even real analytic. In particular, in every torus knot class there are at least two distinct critical knots for the M\u00a8 obius energy.",
+  "docinfo": {
+   "Author": "Simon Blatt; Alexandra Gilsbach; Philipp Reiter; Heiko von der Mosel",
+   "Creator": "arXiv GenPDF (tex2pdf:4177c2c)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "Stability of knot equivalence at low regularity, and symmetric critical knots for the M\\\"obius energy"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Motivation",
+   "page": 1,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Isomorphic fundamental groups via localized distortion",
+   "page": 2,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Stability of knot equivalence",
+   "page": 3,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Symmetric critical points for scale-invariant knot energies",
+   "page": 4,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "Strategy and outline of the paper",
+   "page": 5,
+   "source": "outline",
+   "number": "1.5"
+  },
+  {
+   "level": 1,
+   "title": "Sets with local distortion below a quarter circle",
+   "page": 6,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Pseudo-gradient flow for the distance function",
+   "page": 9,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Isomorphisms of fundamental groups",
+   "page": 12,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Stability of knot equivalence",
+   "page": 15,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Harmonic substitution",
+   "page": 17,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Weak fractional compactness",
+   "page": 23,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Symmetric critical knots",
+   "page": 29,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1628,
+   "n_words": 256
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-11-motivation",
+   "number": "1.1",
+   "title": "Motivation",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-12-isomorphic-fundamental-groups-via-localized-d",
+   "number": "1.2",
+   "title": "Isomorphic fundamental groups via localized distortion",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 7720,
+   "n_words": 1223
+  },
+  {
+   "id": "sec-003-13-stability-of-knot-equivalence",
+   "number": "1.3",
+   "title": "Stability of knot equivalence",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2273,
+   "n_words": 337
+  },
+  {
+   "id": "sec-004-14-symmetric-critical-points-for-scale-invariant",
+   "number": "1.4",
+   "title": "Symmetric critical points for scale-invariant knot energies",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 3874,
+   "n_words": 612
+  },
+  {
+   "id": "sec-005-15-strategy-and-outline-of-the-paper",
+   "number": "1.5",
+   "title": "Strategy and outline of the paper",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 3918,
+   "n_words": 628
+  },
+  {
+   "id": "sec-006-2-sets-with-local-distortion-below-a-quarter-cir",
+   "number": "2",
+   "title": "Sets with local distortion below a quarter circle",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 7010,
+   "n_words": 1187
+  },
+  {
+   "id": "sec-007-3-pseudo-gradient-flow-for-the-distance-function",
+   "number": "3",
+   "title": "Pseudo-gradient flow for the distance function",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 12,
+   "n_chars": 9732,
+   "n_words": 1629
+  },
+  {
+   "id": "sec-008-4-isomorphisms-of-fundamental-groups",
+   "number": "4",
+   "title": "Isomorphisms of fundamental groups",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 9526,
+   "n_words": 1599
+  },
+  {
+   "id": "sec-009-5-stability-of-knot-equivalence",
+   "number": "5",
+   "title": "Stability of knot equivalence",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 6358,
+   "n_words": 1050
+  },
+  {
+   "id": "sec-010-6-harmonic-substitution",
+   "number": "6",
+   "title": "Harmonic substitution",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 23,
+   "n_chars": 12970,
+   "n_words": 2192
+  },
+  {
+   "id": "sec-011-7-weak-fractional-compactness",
+   "number": "7",
+   "title": "Weak fractional compactness",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 29,
+   "n_chars": 16156,
+   "n_words": 2827
+  },
+  {
+   "id": "sec-012-8-symmetric-critical-knots",
+   "number": "8",
+   "title": "Symmetric critical knots",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 6045,
+   "n_words": 1084
+  },
+  {
+   "id": "sec-013-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 792,
+   "n_words": 117
+  },
+  {
+   "id": "sec-014-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 6986,
+   "n_words": 986
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 15,
+  "sections": 16,
+  "chars_total": 94988
+ }
+}

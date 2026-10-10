@@ -1,0 +1,42 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "source",
+    "id": "library/qt2pf5d0mn/qt2pf5d0mn.pdf",
+    "path": "library/qt2pf5d0mn/qt2pf5d0mn.pdf"
+  },
+  "verifications": [
+    {
+      "position": 449,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/qt2pf5d0mn/qt2pf5d0mn.pdf"
+        },
+        "id": null,
+        "status": "unreviewed",
+        "note": "Identified from the abstract page (eScholarship id qt2pf5d0mn; PDF CreationDate 2016-06-09): Xingshan Cui, 'Higher Categories and Topological Quantum Field Theories', UC Santa Barbara PhD dissertation, 106 pp, 18 sections. The structure.json title 'UC Santa Barbara' is the repository banner, not the document title. No ref() entry, none created (tangential). A published version exists (Cui, 'Four dimensional topological quantum field theories from G-crossed braided categories', Algebr. Geom. Topol. 19, 2019 \u2014 recalled, not verified in-sandbox); cite that rather than the thesis if a citation is ever wanted.",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "A (3+1)-dimensional Turaev\u2013Viro-type state-sum TQFT built from a G-crossed braided spherical fusion category (G finite), generalising Crane\u2013Yetter and Yetter's homotopy-2-type invariants, with a monoidal 2-category with duals extracted from the input. Read: Abstract, Introduction (survey of RT / TV / Kuperberg / Hennings / Crane\u2013Yetter constructions), \u00a72 headings, \u00a75 open questions (H^4(G,U(1)) obstruction; G-BSFC \u2194 ribbon fusion categories containing Rep(G) by equivariantisation; a (3+1) Kuperberg invariant; Walker\u2013Wang realisation). Corpus-grep: content/ and docs/audits have no 4-manifold invariant, no Crane\u2013Yetter, no G-crossed or G-graded fusion category; the single 'equivariantiz' hit is docs/audits/2026-08-25-gerbe-tannakian-intake-triage.md, which already holds a primary source on equivariantisation (Galindo\u2013Gallego\u2013Morales, arxiv-2607.10525v1) for the eightfold-way fibre-functor question. The folio uses ribbon fusion categories (Rep SU_q(2), braids-and-knots) at the (2+1) level, for which references.ts already holds turaev2010, bakalovkirillov2001 and etingof-ostrik; \u00a72.1's exposition adds nothing to those. The framework explicitly has no four-manifold layer. Scope-(a): as read, supplies nothing usable; not a claim that (3+1) or G-crossed structures are excluded from a future formulation.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "No result attaches to a block, Lean declaration or script; no reference created.",
+              "target": "folio/bib-qa-verifications.json"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "coding-agent-session-0134BL9GG95tgycYMjLVX35V"
+          },
+          "assessed_at": "2026-09-06T13:42:16Z",
+          "source_sha": "4c8581c3b463"
+        }
+      }
+    }
+  ]
+}

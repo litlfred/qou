@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-heat-kernel-peter-weyl",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-heat-kernel-peter-weyl",
+  "kind": "proposition",
+  "title": "Peter--Weyl decomposition of the $q$-heat kernel (archimedean)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-fourier",
+    "papers/quantum-observable-universe/blocks/prop-q-gaussian-solves-q-heat"
+  ],
+  "tags": [
+    "q-heat-equation",
+    "peter-weyl",
+    "heat-kernel",
+    "hecke",
+    "wedderburn",
+    "archimedean"
+  ],
+  "leanRef": "qou:QOU.qHeatKernelPeterWeyl",
+  "text": "q-heat-kernel-peter-weyl.md",
+  "leanSource": "q-heat-kernel-peter-weyl.lean",
+  "provenance": "authored"
+}

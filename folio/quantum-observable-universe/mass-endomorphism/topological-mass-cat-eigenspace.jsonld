@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-topological-mass-cat-eigenspace",
+  "@type": [
+    "folio-assistant-core:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:topological-mass-cat-eigenspace",
+  "kind": "lemma",
+  "title": "Eigenspace decomposition of the categorical mass integrand",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-mass-identity",
+    "papers/quantum-observable-universe/blocks/prop-descent-eigenspaces"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-topological-mass-cat-eigenspace"
+  ],
+  "tags": [
+    "descent-involution",
+    "frobenius-norm",
+    "categorical-trace",
+    "mass"
+  ],
+  "leanRef": "qou:QOU.TopologicalMass.cat_eigenspace_decomposition",
+  "text": "topological-mass-cat-eigenspace.md",
+  "provenance": "authored"
+}

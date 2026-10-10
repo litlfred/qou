@@ -2,7 +2,7 @@
 import os
 import re
 
-root_dir = '/home/litlfred/space_cats/qou/content/quantum-observable-universe'
+root_dir = '/home/litlfred/space_cats/qou/folio/quantum-observable-universe'
 for dirpath, _, filenames in os.walk(root_dir):
     for f in filenames:
         if f.endswith('.md'):

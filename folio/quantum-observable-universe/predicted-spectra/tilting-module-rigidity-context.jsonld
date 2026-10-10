@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-tilting-module-rigidity-context",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:tilting-module-rigidity-context",
+  "kind": "remark",
+  "title": "Cemetery-vertex condensation and the JWST hydrogen cocoon",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-tilting-module-rigidity"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/lem-tilting-module-rigidity",
+  "tags": [
+    "cemetery-group",
+    "tilting-module",
+    "jwst"
+  ],
+  "text": "tilting-module-rigidity-context.md",
+  "provenance": "authored"
+}

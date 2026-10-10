@@ -1,0 +1,128 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "kegel2024",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 302,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2402.04839v2/2402.04839v2.pdf"
+        },
+        "id": "kegel2024",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Introduces topological volume volt(M), the smallest volume of the complement of a (possibly empty) hyperbolic link in a closed 3-manifold M, and computes it for families of non-hyperbolic manifolds. Two of its statements bear directly on assertions the corpus makes without a source. (1) The corpus repeatedly justifies its choice of the figure-eight knot as 'the simplest hyperbolic knot', described in one audit as making Vol(4_1)/hbar_q^2 carry 'no free parameter', and in three-calibration-inputs-proof as 'simplest hyperbolic knot invariant' -- always as an informal appeal, never with a citation. Example 2.1 of this document states volt(S^3) = 2 v_0 = 2.02988 with the figure-eight knot as the minimiser, i.e. the figure-eight complement is the MINIMAL-volume hyperbolic link complement in the three-sphere. That converts an unsourced hand-wave into a precise minimality theorem, and the numerical value 2 v_0 (twice the ideal regular tetrahedron) matches the corpus's Vol(4_1) = 2*Cl_2(pi/3) exactly, so no external number is being adopted -- the corpus's own value is being characterised. (2) The Borromean rings are listed among the known universal links, meaning every closed orientable 3-manifold is a branched cover of the three-sphere over them, with Cor. 2.11 giving volt(M) <= d_L(M) volH(L). A framework whose nucleon IS the Borromean link should know that its nucleon knot is universal in that sense; the corpus has no occurrence of 'universal link' in this sense anywhere. Corpus-grep run over docs/audits/, docs/coordination/, content/ and computations/ for 'universal link', 'minimal volume', 'smallest volume' and the Cao--Meyerhoff minimality: no prior closure found.",
+          "keyResults": [
+            {
+              "locator": "Example 2.1",
+              "statement": "volt(S^3) = 2 v_0 ~ 2.02988, where v_0 is the volume of the ideal regular tetrahedron, with the figure-eight knot complement realising the minimum among hyperbolic link complements in the three-sphere.",
+              "useForFolio": "Sources and sharpens the corpus's repeated but uncited 'simplest hyperbolic knot' justification for the figure-eight anchor, turning an informal appeal into a minimality theorem about the very number the corpus already uses.",
+              "targets": [
+                "fundamental-knots-operator-basis",
+                "prop:pion-half-figure-eight"
+              ]
+            },
+            {
+              "locator": "Cor. 2.11 and the surrounding discussion of universal links",
+              "statement": "The Borromean rings are a universal link -- every closed orientable 3-manifold is a cover of the three-sphere branched over them -- and for a hyperbolic universal link L, volt(M) <= d_L(M) volH(L).",
+              "useForFolio": "A structural fact about the corpus's nucleon knot that is absent from the corpus: the Borromean complement is not merely a convenient hyperbolic link but a universal one, which is the kind of no-choice selection argument the framework's knot assignments otherwise lack.",
+              "targets": [
+                "fundamental-knots-operator-basis"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The minimality of the figure-eight complement and the universality of the Borromean rings are both load-bearing for the framework's knot selection and are currently unsourced.",
+              "target": "fundamental-knots-operator-basis",
+              "bean": "qou-upyp"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Once the entry exists, the fundamental-knots table and the three-calibration proof should cite it at the exact points where they say 'simplest hyperbolic knot', replacing an informal appeal with the minimality statement.",
+              "target": "fundamental-knots-operator-basis",
+              "bean": "qou-xiaj"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "The universality of the Borromean rings is a genuinely new structural fact for this corpus and deserves an interpreting remark rather than a bare citation.",
+              "target": "conj:borromean-bloch-group-element",
+              "bean": "qou-83il"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "daf09811c350"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    },
+    {
+      "position": 303,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2402.04839v2/2402.04839v2.pdf"
+        },
+        "id": "kegel2024",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Studies a real-valued invariant of closed 3-manifolds defined as the smallest volume of the complement of a (possibly empty) hyperbolic link in the manifold: basic properties, asymptotically tight upper and lower bounds, a classification of all non-hyperbolic closed 3-manifolds with the invariant at most 3.07, and the determination of the minimising link in lens spaces via Dehn filling. Its relevance here is as the literature answer to a standing exposure in the corpus: several blocks assign hyperbolic volume 0 to every torus knot and read that vanishing as physics ('torus knots carry zero hyperbolic volume, representing the massless, force-carrying sector'; Vol(3_1) = Vol(5_1) = Vol(Hopf) = 0 in building-block-knots.lean). Zero is correct for the Gromov-norm volume of a Seifert-fibred complement, but it is a property of the chosen invariant, and this document is the construction that gives every 3-manifold a unified, generally nonzero volume by minimising over hyperbolic links. That is exactly the objection a referee raises at the massless-sector claim, made precise. It is NOT load-bearing: the invariant is defined for closed manifolds, so it does not directly redefine the corpus's Vol(K) for a knot complement in S^3, and no corpus derivation changes.",
+          "keyResults": [
+            {
+              "locator": "Abstract; section 2",
+              "statement": "Passing to hyperbolic links inside a (possibly non-hyperbolic) closed 3-manifold gives a unified volume for all closed 3-manifolds, with tight asymptotic bounds and a complete classification below 3.07; the number of components of the minimising link partitions the class of 3-manifolds, and is zero exactly for hyperbolic manifolds.",
+              "useForFolio": "Lets the corpus state honestly that Vol = 0 on torus knots is a statement about the hyperbolic-volume invariant, not the absence of any volume, and cite the alternative rather than leaving the claim exposed.",
+              "targets": [
+                "fundamental-knots-operator-basis"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Relevant, no ref() entry.",
+              "target": "fundamental-knots-operator-basis",
+              "bean": "qou-55jq"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record that the massless-sector reading rests on the hyperbolic-volume invariant specifically, and that a unified volume for non-hyperbolic manifolds exists in the literature. What would need checking before any stronger claim: the cited invariant is defined for CLOSED 3-manifolds, whereas the corpus's Vol(K) is the volume of a knot complement in S^3, so it is not a drop-in replacement and must not be presented as one.",
+              "target": "fundamental-knots-operator-basis",
+              "bean": "qou-5m9w"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "daf09811c350"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

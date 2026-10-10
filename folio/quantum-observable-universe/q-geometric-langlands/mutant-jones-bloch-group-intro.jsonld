@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-mutant-jones-bloch-group-preamble",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:mutant-jones-bloch-group-preamble",
+  "kind": "prose",
+  "text": "mutant-jones-bloch-group-intro.md",
+  "provenance": "authored"
+}

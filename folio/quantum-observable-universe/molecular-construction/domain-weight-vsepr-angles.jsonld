@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-domain-weight-vsepr-angles",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:domain-weight-vsepr-angles",
+  "kind": "remark",
+  "title": "Bond angles from the $q^{\\ell}$ domain weight",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-h2o-molecular-braid",
+    "papers/quantum-observable-universe/blocks/prop-h2o-bond-angle-shift"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-symmetric-block-domain-weight",
+  "tags": [
+    "VSEPR",
+    "bond-angle",
+    "AXE",
+    "hybridisation",
+    "H2S",
+    "molecular-geometry"
+  ],
+  "text": "domain-weight-vsepr-angles.md",
+  "provenance": "authored"
+}

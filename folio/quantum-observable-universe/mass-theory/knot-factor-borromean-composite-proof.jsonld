@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-knot-factor-borromean-composite",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:knot-factor-borromean-composite",
+  "kind": "proof",
+  "title": "Proof of knot factor borromean composite",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-knot-factor-borromean-composite"
+  ],
+  "text": "knot-factor-borromean-composite-proof.md",
+  "provenance": "authored"
+}

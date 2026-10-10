@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-dilog-archimedean",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-dilog-archimedean",
+  "kind": "remark",
+  "title": "Archimedean realisation of $\\mathrm{Li}_2^q$ (Kirillov dilogarithm)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-dilogarithm"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-dilogarithm",
+  "tags": [
+    "hopf-algebra",
+    "dilogarithm",
+    "archimedean",
+    "q-series"
+  ],
+  "text": "q-dilog-archimedean.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,53 @@
+{
+ "probe": "ptolemy_duality_generic",
+ "manifold": "5_2",
+ "obstruction_class": 1,
+ "field": {
+  "generator": "t",
+  "min_poly": "t**6 + 37*t**5 + 892*t**4 + 24713*t**3 + 530806*t**2 + 10419927*t + 166530271",
+  "degree": 6,
+  "irreducible_over_Q": true,
+  "discriminant": "-700971909060291189473042937007563103715437488"
+ },
+ "n_automorphisms": 2,
+ "K_over_Q_normal": false,
+ "automorphism_element_orders": [
+  1,
+  2
+ ],
+ "automorphism_group_axioms_verified": {
+  "roots": true,
+  "identity": true,
+  "closed": true,
+  "inverses": true
+ },
+ "relator_gate": true,
+ "sl3_lift": true,
+ "rows": {
+  "t -> t": {
+   "untwisted_dim": 0,
+   "untwisted_found": false,
+   "twisted_dim": 0,
+   "twisted_found": false,
+   "lambda": "other",
+   "is_identity": true
+  },
+  "t -> -66887486617*t**5/19131326108526409 - 1519647033283*t**4/19131326108526409 - 28733097987094*t**3/19131326108526409 - 1376035181729902*t**2/19131326108526409 - 28483111833284161*t/19131326108526409 - 521766461391098298/19131326108526409": {
+   "untwisted_dim": 6,
+   "untwisted_found": true,
+   "twisted_dim": 6,
+   "twisted_found": true,
+   "lambda": "all 1",
+   "is_identity": false
+  }
+ },
+ "refutation_control_passes": true,
+ "untwisted_winners": [
+  "t -> -66887486617*t**5/19131326108526409 - 1519647033283*t**4/19131326108526409 - 28733097987094*t**3/19131326108526409 - 1376035181729902*t**2/19131326108526409 - 28483111833284161*t/19131326108526409 - 521766461391098298/19131326108526409"
+ ],
+ "twisted_winners": [
+  "t -> -66887486617*t**5/19131326108526409 - 1519647033283*t**4/19131326108526409 - 28733097987094*t**3/19131326108526409 - 1376035181729902*t**2/19131326108526409 - 28483111833284161*t/19131326108526409 - 521766461391098298/19131326108526409"
+ ],
+ "schur_dims_ok": true,
+ "verdict": "UNTWISTED duality HOLDS for ['t -> -66887486617*t**5/19131326108526409 - 1519647033283*t**4/19131326108526409 - 28733097987094*t**3/19131326108526409 - 1376035181729902*t**2/19131326108526409 - 28483111833284161*t/19131326108526409 - 521766461391098298/19131326108526409'] -- an equality of GL(3,K) representations, reproducing the L6a4 class-1 phenomenon on 5_2."
+}

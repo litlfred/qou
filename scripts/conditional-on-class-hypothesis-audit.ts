@@ -51,11 +51,11 @@ import { join } from "node:path";
 
 const REPO = "/home/user/qou";
 const LAKE_ROOTS: Record<string, string> = {
-  qou: "content/quantum-observable-universe/lean",
-  ugb: "content/unital-groebner-bases/lean",
-  fred2005: "content/fred2005-formal-groups/lean",
+  qou: "folio/quantum-observable-universe/lean",
+  ugb: "folio/unital-groebner-bases/lean",
+  fred2005: "folio/fred2005-formal-groups/lean",
 };
-const PAPER = join(REPO, "content/quantum-observable-universe");
+const PAPER = join(REPO, "folio/quantum-observable-universe");
 const witnessPath = process.argv.slice(2).find((a) => !a.startsWith("--")) ??
   join(REPO, "docs/audits/2026-05-01-p3-1-conjectural-propagation.witness.json");
 

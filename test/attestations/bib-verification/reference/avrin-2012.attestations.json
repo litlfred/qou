@@ -1,0 +1,52 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "avrin-2012",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 402,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/symmetry-04-00039-v3/symmetry-04-00039-v3.pdf"
+        },
+        "id": "avrin-2012",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Not an orphan: the ref() entry exists (references.ts L339-352, id avrin-2012) with a substantive note already calling it 'Independent prior art for the QOU torus-knot particle skeleton'. But grep finds ZERO citation sites in content/**/*.md and zero Lean -- Ref: \u2014 so a strong prior-art acknowledgement lives only in a bibliography note nobody renders. Reading the document's own abstract and \u00a71 confirms the note's characterisation: it builds fermions, bosons, hadrons and leptons from the unknot and the trefoil, deriving spin, isospin, mass, charge and CPT from particle conformation, and uses icosahedral geometry to organise three generations. The overlap with the folio is direct and uncomfortable \u2014 rem:knot-formula-table is the folio's own knot-to-particle dictionary and fundamental-knots-operator-basis assigns 4_1 to the Higgs and the Borromean rings to the nucleon. The honest reading is that this is prior art the folio should cite for the torus-knot generational skeleton, while the folio's Hecke/Markov-trace and complex-volume formalisation is the distinct content. It supplies no theorem the folio consumes, hence supporting, not core.",
+          "keyResults": [
+            {
+              "locator": "Abstract; \u00a77-\u00a78",
+              "statement": "A two-knot (unknot + trefoil) torus model reproduces fermion/boson and lepton/hadron distinctions with spin, isospin, charge and CPT, and organises three generations via icosahedral SU(3) flavour scaffolding.",
+              "useForFolio": "Prior art for the folio's knot-to-particle dictionary; citing it at the dictionary block is a priority claim the folio currently omits.",
+              "targets": [
+                "rem:knot-formula-table",
+                "fundamental-knots-operator-basis"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "rem:knot-formula-table is the folio's knot-to-particle dictionary and fundamental-knots-operator-basis is its operator table; neither cites the registered prior art whose bibliography note explicitly flags the overlap.",
+              "target": "rem:knot-formula-table",
+              "bean": "qou-hatf"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "1aa8a8191688"
+        }
+      }
+    }
+  ]
+}

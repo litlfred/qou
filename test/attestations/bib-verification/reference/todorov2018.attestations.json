@@ -1,0 +1,77 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "todorov2018",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 263,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1806.09450v1/1806.09450v1.pdf"
+        },
+        "id": "todorov2018",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Derives the Standard Model gauge group in its Z_6 global form as the intersection of two maximal-rank subgroups of the compact automorphism group of the exceptional Jordan algebra, using Borel-de Siebenthal theory (eq. 1.4 = eq. 4.4). prose:sm-open-problems states in its status table that the Z_6 global form of G_SM is 'doubly grounded: representation-kernel condition (Baez-Huerta) and geometric F_4-stabilizer derivation (Dubois-Violette-Todorov) agree' -- and that second grounding is uncited in the corpus. The two entries that exist, dubois-violette2016 and dubois-violette-todorov2018, are themselves bib orphans cited from no block, and neither is this Borel-de Siebenthal F_4 derivation. So the corpus names this derivation by author and uses it in the Z_6 compatibility battery without a source. Core: the claim is load-bearing for conj:sm-hypercharge-invariant's battery and this document is the derivation being invoked.",
+          "keyResults": [
+            {
+              "locator": "eq. (1.4) = eq. (4.4), sec. 4",
+              "statement": "The intersection of the maximal-rank subgroups Spin(9) and SU(3)xSU(3)/Z_3 inside the compact automorphism group of the exceptional Jordan algebra is S[U(2)xU(3)] = (SU(3)xSU(2)xU(1))/Z_6, i.e. the Standard Model gauge group in its Z_6 global form.",
+              "useForFolio": "Sources the 'geometric F_4-stabilizer derivation' half of the Z_6 grounding claimed in prose:sm-open-problems and used as the battery condition tau/3 + w/2 + Y/2 in Z for conj:sm-hypercharge-invariant.",
+              "targets": [
+                "prose:sm-open-problems",
+                "conj:sm-hypercharge-invariant"
+              ]
+            },
+            {
+              "locator": "eq. (1.5)-(1.6), sec. 4",
+              "statement": "The analogous intersections inside the compact forms of the structure and conformal groups of the same Jordan algebra give S[U(2)xU(2)xU(3)] and S[U(2)xU(3)xU(3)].",
+              "useForFolio": "Gives the concrete extension candidates a Z_6-grounded framework would have to rule out; useful for the 'a completed derivation would have to predict Gamma' remark in sm-gauge-truncation.",
+              "targets": [
+                "conj:sm-gauge-truncation"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry. Distinct from the existing dubois-violette-todorov2018 entry, which is a different paper in the same programme.",
+              "target": "prose:sm-open-problems",
+              "bean": "qou-fte6"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "The Z_6 row of prose:sm-open-problems attributes a derivation to named authors with no citation; this is that derivation.",
+              "target": "prose:sm-open-problems",
+              "bean": "qou-cix3"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "conj:sm-hypercharge-invariant's Z_6 compatibility battery cites only baez-huerta2010 (the representation-kernel route); the geometric route the corpus claims agrees with it is unsourced there.",
+              "target": "conj:sm-hypercharge-invariant",
+              "bean": "qou-6x01"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "8556b67d9785"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

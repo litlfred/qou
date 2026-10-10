@@ -25,17 +25,11 @@ table in step — this file's disagreed until 2026-08-31 and `AGENTS.md`'s until
 
 ## TRAP — the queue you were handed may ALREADY be merged; `git cherry` FIRST
 
-2026-09-07: dispatched to merge four PRs "measured CLEAN by `merge-tree` at
-18:05Z"; all 22 commits had been rebase-merged at 18:04:20–37Z (committer =
-owner, 6 s cadence) and my worktree's own start HEAD was the last of them.
-`merge-tree --write-tree` is **vacuous for an applied patch** — clean either
-way. Before any checkout/rebase/push: `git fetch origin
-refs/pull/N/head:refs/remotes/pr/N` (needs no API), then `git cherry
-origin/main pr/N` (`-` = already upstream) and `scripts/verify-merge-replay.py
---branch pr/N --merged origin/main`. A rebase that "skips cherry-picks" and
-leaves HEAD == `origin/main` is the same signal — stop, do not push. I
-force-pushed a merged PR's branch to main's tip before reading it and had to
-restore it. Branch name for a `pr/N` sha: `git ls-remote --heads origin`.
+2026-09-07: four PRs "measured CLEAN by `merge-tree`" were already rebase-merged (`merge-tree --write-tree` is vacuous for an applied patch). Before any checkout/rebase/push: `git fetch origin refs/pull/N/head:refs/remotes/pr/N`, then `git cherry origin/main pr/N` (`-` = upstream) and `scripts/verify-merge-replay.py --branch pr/N --merged origin/main`. A rebase that skips everything and leaves HEAD == `origin/main` is the same signal — stop. I force-pushed a merged branch to main's tip once and had to restore it.
+
+## TRAP — the same staleness reads as a phantom CONFLICT, not just a false clean
+
+2026-09-26, the inverse of the entry above. Rebase-merge rewrites every sha, so a merged branch's leftover ref is **not** an ancestor of `main`: `--is-ancestor` returns FALSE and `merge-tree --write-tree` reports **add/add CONFLICT** on every file it created. Measured on four leftovers — all read NOT-merged with real-looking conflicts, **all four PRs had merged**; one conflicting file's theorem bodies were byte-identical to main's and the whole 26-line "conflict" was docstring. Leftovers are the NORMAL state (deletion is forbidden) and `session-start-coord-sweep.sh` lists exactly them, so this reading is available on every sibling, every session. **Resolve branch → PR state before reading git ancestry as coordination signal:** `GET /pulls?state=all&head=litlfred:<branch>` — `state=open` alone returns `[]` and looks like "no PR ever". Detail + the four shas: [`stale-merged-branch-phantom-conflict.md`](stale-merged-branch-phantom-conflict.md).
 
 ## TRAP — worktree hook refuses variables · MCP "connected" but toolless · gates exit 2
 
@@ -111,15 +105,7 @@ verify/extend/refute and cites the first.
 
 ## STABLE — stalled-claim takeover
 
-A bean at `in-progress` whose backing branch has had **no commit for > 3 h** is
-presumed abandoned and may be taken over. **Scope: only the branch backing a
-live in-progress bean** — never the thousands of long-idle `claude/*` branches,
-which are permanently stale and are never takeover targets by age alone.
-
-First confirm real staleness (> 3 h AND no newer PR activity / in-flight CI — a
-long build is not a stall), re-claim the bean with a `--body-append` naming the
-takeover and the stale SHA, then continue from that tip or from `main`. **Never
-force-push over a sibling's branch.** The one sanctioned exception.
+Policy text is in AGENTS.md (in your prompt): > 3 h with no commit AND no newer PR activity, only the branch backing a LIVE in-progress bean (never long-idle `claude/*` branches by age alone), re-claim with `--body-append` naming the stale SHA, never force-push over a sibling's branch.
 
 ## STABLE — commit granularity
 
@@ -130,18 +116,13 @@ a sweep, > 50 files or > 1000 lines means break it up.
 
 ## STABLE — asking the author anything at all
 
-Full six-part frame is in AGENTS.md §User accessibility, already in your prompt.
-The part that bites *in this role*: naming a decision **is** asking a question
-even in an end-of-turn line, a `**next**` bean entry or a PR body's "suggested
-follow-up", and each owes what-it-means / costs / risks / commits-to, **the
-default if they say nothing**, and a recommendation marked as judgement. Mirror
-any `AskUserQuestion` as chat prose above the call; `multiSelect: true`, 🟡.
-**Cheapest correct move when you won't spend the words: don't raise it.**
+Six-part frame is in AGENTS.md (in your prompt). What bites here: naming a decision in an end-of-turn line, a `**next**` bean entry or a PR "follow-up" IS asking, and owes the frame plus the default-if-silent and a recommendation marked as judgement; mirror `AskUserQuestion` in chat, `multiSelect: true`, 🟡. Won't spend the words? Don't raise it.
 
 ## STABLE — un-draft is ONE REST call; the rate-limit message is a LIE twice over
 
 **`POST /repos/litlfred/qou/pulls/<n>/ccr/ready_for_review` → `200 {"draft":
-false}`** — measured #7230 2026-09-12, **first try**, after `draft:false` returned
+false}`** — #7230 first try, **but `503` in outage windows (81 min, #7393): a
+`503` HERE clears, the `403` below never does.** It fires after `draft:false` returned
 the usual *"rate limit already exceeded for user ID 662242"*. Two misdirections
 behind that message: `PATCH /pulls/<n> {"draft": false}` returns **200 with `draft`
 still true** (REST ignores the field, silently), and GraphQL is **403-BLOCKED
@@ -165,9 +146,9 @@ Recipes and full diagnosis: [`api-down-and-shared-worktree.md`](api-down-and-sha
    does not clear on retry. **Intermittent** (down #6395/#6400/#6415, up #6404
    same day). Merge git-natively: branch first, then the **same SHA** to `main`,
    non-force (FF-only, self-guarding).
-2. **`/home/user/qou` is SHARED with concurrent siblings** — a sibling's commit
-   landed on my branch and nearly shipped in #6395. Symptom: **`HEAD` is not
-   what you set it to**. Work in `git worktree add --detach`; never
+2. **`/home/user/qou` is SHARED — with siblings AND any agent YOU dispatch**
+   (2nd instance #7276). A commit landed on my branch, nearly shipping in #6395.
+   Symptom: **`HEAD` is not what you set**. Use `git worktree add --detach`; never
    `git add -A`; never `git checkout <ref> -- <path>` to peek (it writes the
    index) — use `git show <ref>:<path> >`.
 3. **`probe-float64-guard`**: `# float64-ok:` must sit **on** the flagged line;
@@ -197,3 +178,15 @@ body — where a reviewer looks first). **Enumerate every surface stating the
 old claim before you start**: module docstring, runtime output, PR body, bean,
 audit doc, `AGENTS.md`. A wrong figure here routinely survives in five places
 after being fixed in one.
+
+## BASELINE — CCR `review_threads` 503 clears in HOURS (~2 h on #7395), not minutes
+
+`200 []` is the only thing that establishes zero threads; two 503s an hour apart establish nothing. Detail: [`api-down-and-shared-worktree.md`](api-down-and-shared-worktree.md) §CCR windows.
+
+## TRAP — a scratch shadow that holds only NEW oleans hides the WHOLE QOU tree (2026-09-15, #7426)
+
+Lean resolves a module by the FIRST `LEAN_PATH` root whose `QOU/` directory exists and then expects every `QOU.*` olean under it — so `LEAN_PATH=$SHADOW:/tmp/overlay:…` with `$SHADOW/QOU/` holding just the PR's new modules fails every file importing an existing module with "object file … of module QOU.Basic does not exist" in 0.1 s. Make the shadow a full farm first (`cp -rs /tmp/overlay/QOU $SHADOW/QOU`), `os.unlink` an entry before `lean -o` writes it (writing through a symlink overwrites the real olean), then build the PR's library modules in import order and the content siblings last: 19/19 in 40 s once done right. A worktree has no `.lake`: source `lean-direct-env.sh` from the MAIN checkout (`ROOT` = the script's own location) and symlink `folio-assistant` into the worktree for `bun`.
+
+## TRAP — `qa-staleness.ts` says `fresh: 0` of 3557 blocks; that is not evidence about a PR
+
+Its `want_criteria` list carries watcher criteria the reactive sweep never populates, so every block is "stale_or_partial" corpus-wide. Measure a PR's sidecars directly: `source_hashes.md/ts` vs sha256 of the files, then the LAST verdict per criterion, then the same criterion on `origin/main`'s copy (`git show`) — a `fail` that is also `fail` on main is inherited, not a regression (6 of 7 on #7426). And a dependency-cycle `fail` can be FRESH on its own md/ts hashes and stale on `field_hash.graph`: fixing the cycle in the OTHER blocks leaves this block's verdict saying `fail`; re-run that one criterion (`qa-sweep <stem> --only detangler-no-dependency-cycle` → pass, 0 findings).

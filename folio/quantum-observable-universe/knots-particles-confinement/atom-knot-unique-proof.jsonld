@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-atom-knot-unique",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:atom-knot-unique",
+  "kind": "proof",
+  "title": "Proof of atom knot unique",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-atom-knot-unique"
+  ],
+  "text": "atom-knot-unique-proof.md",
+  "provenance": "authored"
+}

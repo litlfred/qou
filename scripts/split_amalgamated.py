@@ -20,7 +20,7 @@ def merge_qa_sidecar(target_qa_path, source_qa_data):
             json.dump(target_data, f, indent=2)
 
 def run():
-    base_dir = "/Users/litlfred/space_cats/qou/content/quantum-observable-universe"
+    base_dir = "/Users/litlfred/space_cats/qou/folio/quantum-observable-universe"
     done_dir = "/Users/litlfred/space_cats/qou/amalgamated_done"
     
     if not os.path.exists(done_dir):

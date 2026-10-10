@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-local-infinitesimal-field",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:local-infinitesimal-field",
+  "kind": "conjecture",
+  "title": "Substrate parameter as a local infinitesimal field $\\varepsilon(x)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-valuation-ring-finite-surreals"
+  ],
+  "cites": [
+    "references/conway1976",
+    "references/ehrlich2012",
+    "references/berarducci-mantova2018"
+  ],
+  "tags": [
+    "tier:P",
+    "surreal-numbers",
+    "substrate-parameter",
+    "local-field",
+    "infinitesimal",
+    "points-and-topology",
+    "sheaf",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.LocalInfinitesimalField",
+  "text": "local-infinitesimal-field.md",
+  "provenance": "authored"
+}

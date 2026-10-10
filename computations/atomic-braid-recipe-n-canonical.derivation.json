@@ -6,12 +6,24 @@
       "sigma"
     ],
     [
-      0,
-      "sigma"
+      1,
+      "sigma_inv"
     ],
     [
       0,
       "sigma"
+    ],
+    [
+      1,
+      "sigma_inv"
+    ],
+    [
+      0,
+      "sigma"
+    ],
+    [
+      1,
+      "sigma_inv"
     ],
     [
       0,
@@ -22,28 +34,16 @@
       "averaged"
     ],
     [
+      1,
+      "sigma_inv"
+    ],
+    [
       0,
       "sigma"
     ],
     [
       0,
       "sigma"
-    ],
-    [
-      1,
-      "sigma_inv"
-    ],
-    [
-      1,
-      "sigma_inv"
-    ],
-    [
-      1,
-      "sigma_inv"
-    ],
-    [
-      1,
-      "sigma_inv"
     ]
   ],
   "target_tolerance": 0.0,
@@ -79,7 +79,7 @@
     },
     {
       "name": "Canonical proton word in B_3 (operator-valued)",
-      "operation": "Per `mass_at_3A_proper.atom_braid_word_3A(Z=1, N=0)`, the proton's canonical Hecke normal form is the 11-crossing word `[(0, 'sigma'), (0, 'sigma'), (0, 'sigma'), (0, 'sigma'), (0, 'averaged'), (0, 'sigma'), (0, 'sigma'), (1, 'sigma_inv'), (1, 'sigma_inv'), (1, 'sigma_inv'), (1, 'averaged')]` in the operator-valued convention with averaged crossings `I = σ − (h/2)·1`.  PR #608's SDP solver (`r5_full_canonical_knot_solver`) confirms this word is in the LP-optimum canonical-knot class identified by `conj:canonical-knot-id-sdp`.",
+      "operation": "Per `mass_at_3A_proper.atom_braid_word_3A(Z=1, N=0)`, the proton's canonical Hecke normal form is the 11-crossing word `[(0, 'sigma'), (1, 'sigma_inv'), (0, 'sigma'), (1, 'sigma_inv'), (0, 'sigma'), (1, 'sigma_inv'), (0, 'sigma'), (0, 'averaged'), (1, 'averaged'), (0, 'sigma'), (0, 'sigma')]` in the operator-valued convention with averaged crossings `I = σ − (h/2)·1`.  PR #608's SDP solver (`r5_full_canonical_knot_solver`) confirms this word is in the LP-optimum canonical-knot class identified by `conj:canonical-knot-id-sdp`.",
       "inputs": [
         "nucleon_in_V3"
       ],
@@ -90,12 +90,24 @@
           "sigma"
         ],
         [
-          0,
-          "sigma"
+          1,
+          "sigma_inv"
         ],
         [
           0,
           "sigma"
+        ],
+        [
+          1,
+          "sigma_inv"
+        ],
+        [
+          0,
+          "sigma"
+        ],
+        [
+          1,
+          "sigma_inv"
         ],
         [
           0,
@@ -106,28 +118,16 @@
           "averaged"
         ],
         [
-          0,
-          "sigma"
-        ],
-        [
-          0,
-          "sigma"
-        ],
-        [
-          1,
-          "sigma_inv"
-        ],
-        [
-          1,
-          "sigma_inv"
-        ],
-        [
-          1,
-          "sigma_inv"
-        ],
-        [
           1,
           "averaged"
+        ],
+        [
+          0,
+          "sigma"
+        ],
+        [
+          0,
+          "sigma"
         ]
       ],
       "trust_basis": "script-cited",
@@ -137,7 +137,7 @@
     },
     {
       "name": "Canonical neutron word in B_3 (operator-valued)",
-      "operation": "Per `mass_at_3A_proper.atom_braid_word_3A(Z=0, N=1)`, the neutron's canonical Hecke normal form is the 11-crossing word `[(0, 'sigma'), (0, 'sigma'), (0, 'sigma'), (0, 'averaged'), (0, 'averaged'), (0, 'sigma'), (0, 'sigma'), (1, 'sigma_inv'), (1, 'sigma_inv'), (1, 'sigma_inv'), (1, 'sigma_inv')]` in the operator-valued convention.  Differs from the proton by the averaged-vs-σ pattern at strand-1 positions 4–5, encoding the (udd) quark-content signature.  Same SDP-LP-optimum status as the proton via `conj:canonical-knot-id-sdp`.",
+      "operation": "Per `mass_at_3A_proper.atom_braid_word_3A(Z=0, N=1)`, the neutron's canonical Hecke normal form is the 11-crossing word `[(0, 'sigma'), (1, 'sigma_inv'), (0, 'sigma'), (1, 'sigma_inv'), (0, 'sigma'), (1, 'sigma_inv'), (0, 'averaged'), (0, 'averaged'), (1, 'sigma_inv'), (0, 'sigma'), (0, 'sigma')]` in the operator-valued convention.  Differs from the proton by the averaged-vs-σ pattern at strand-1 positions 4–5, encoding the (udd) quark-content signature.  Same SDP-LP-optimum status as the proton via `conj:canonical-knot-id-sdp`.",
       "inputs": [
         "nucleon_in_V3"
       ],
@@ -148,12 +148,24 @@
           "sigma"
         ],
         [
-          0,
-          "sigma"
+          1,
+          "sigma_inv"
         ],
         [
           0,
           "sigma"
+        ],
+        [
+          1,
+          "sigma_inv"
+        ],
+        [
+          0,
+          "sigma"
+        ],
+        [
+          1,
+          "sigma_inv"
         ],
         [
           0,
@@ -164,28 +176,16 @@
           "averaged"
         ],
         [
+          1,
+          "sigma_inv"
+        ],
+        [
           0,
           "sigma"
         ],
         [
           0,
           "sigma"
-        ],
-        [
-          1,
-          "sigma_inv"
-        ],
-        [
-          1,
-          "sigma_inv"
-        ],
-        [
-          1,
-          "sigma_inv"
-        ],
-        [
-          1,
-          "sigma_inv"
         ]
       ],
       "trust_basis": "script-cited",
@@ -233,7 +233,7 @@
     },
     {
       "name": "Specialisation: neutron = (Z = 0, N = 1)",
-      "operation": "Apply the assembly rule at (Z = 0, N = 1) to obtain the 11-crossing canonical word `[(0, 'sigma'), (0, 'sigma'), (0, 'sigma'), (0, 'averaged'), (0, 'averaged'), (0, 'sigma'), (0, 'sigma'), (1, 'sigma_inv'), (1, 'sigma_inv'), (1, 'sigma_inv'), (1, 'sigma_inv')]` in B_{3}.  Internal assertion in the builder guards that the assembly reproduces `canonical_braid_crossings.atom_canonical_crossings(0, 1)` bit-for-bit.",
+      "operation": "Apply the assembly rule at (Z = 0, N = 1) to obtain the 11-crossing canonical word `[(0, 'sigma'), (1, 'sigma_inv'), (0, 'sigma'), (1, 'sigma_inv'), (0, 'sigma'), (1, 'sigma_inv'), (0, 'averaged'), (0, 'averaged'), (1, 'sigma_inv'), (0, 'sigma'), (0, 'sigma')]` in B_{3}.  Internal assertion in the builder guards that the assembly reproduces `canonical_braid_crossings.atom_canonical_crossings(0, 1)` bit-for-bit.",
       "inputs": [
         "atom_assembly"
       ],
@@ -244,12 +244,24 @@
           "sigma"
         ],
         [
-          0,
-          "sigma"
+          1,
+          "sigma_inv"
         ],
         [
           0,
           "sigma"
+        ],
+        [
+          1,
+          "sigma_inv"
+        ],
+        [
+          0,
+          "sigma"
+        ],
+        [
+          1,
+          "sigma_inv"
         ],
         [
           0,
@@ -260,28 +272,16 @@
           "averaged"
         ],
         [
+          1,
+          "sigma_inv"
+        ],
+        [
           0,
           "sigma"
         ],
         [
           0,
           "sigma"
-        ],
-        [
-          1,
-          "sigma_inv"
-        ],
-        [
-          1,
-          "sigma_inv"
-        ],
-        [
-          1,
-          "sigma_inv"
-        ],
-        [
-          1,
-          "sigma_inv"
         ]
       ],
       "trust_basis": "derived",

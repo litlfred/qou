@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-conway-normal-form",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:conway-normal-form",
+  "kind": "remark",
+  "title": "Conway normal form unifies Big-O / little-o / $\\Theta$ / $\\sim$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-surreal-blowup-calculus"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-birthday-grading",
+  "cites": [
+    "references/conway1976",
+    "references/gonshor1986",
+    "references/ehrlich2012"
+  ],
+  "tags": [
+    "surreal-numbers",
+    "conway-normal-form",
+    "big-o",
+    "little-o",
+    "asymptotic",
+    "leading-exponent",
+    "notation",
+    "cross-reference"
+  ],
+  "text": "conway-normal-form.md",
+  "provenance": "authored"
+}

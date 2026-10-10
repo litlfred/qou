@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-self-dual-higgs-real-volume",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:self-dual-higgs-real-volume",
+  "kind": "proposition",
+  "title": "The self-dual Higgs ($4_1$) has a real complex volume ($\\mathrm{CS}=0$)",
+  "cites": [
+    "references/nguyen-tran-2021",
+    "references/koelink-stokman-2003",
+    "references/kashaev1997",
+    "references/murakami-murakami2001"
+  ],
+  "tags": [
+    "figure-eight",
+    "higgs",
+    "amphichiral",
+    "self-duality",
+    "complex-volume",
+    "chern-simons",
+    "aj-conjecture",
+    "askey-wilson",
+    "keystone"
+  ],
+  "leanRef": "qou:QOU.Knot.SelfDuality.higgs_complex_volume_real",
+  "text": "self-dual-higgs-real-volume.md",
+  "provenance": "authored"
+}

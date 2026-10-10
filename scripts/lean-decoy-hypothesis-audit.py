@@ -84,7 +84,7 @@ def carriers(path):
 
 
 hits = []
-for p in sorted(pathlib.Path("content").rglob("*.lean")):
+for p in sorted(pathlib.Path("folio").rglob("*.lean")):
     for name, line, fields in carriers(p):
         props = {n for n, t in fields.items() if t.strip() == "Prop"}
         if not props:

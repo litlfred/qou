@@ -1,0 +1,76 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "andersen-mistegard2020",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 267,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1811.05376v4/1811.05376v4.pdf"
+        },
+        "id": "andersen-mistegard2020",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Andersen-Mistegard, resurgence analysis of quantum invariants of Seifert fibered homology spheres. Its Theorem 2 states that the poles of the Borel transform of the Ohtsuki series Z_0(X) coincide with the classical complex Chern-Simons values, and Theorem 3 that the GPPV q-series Z-hat_0(X;q) is a Borel-Laplace resummation of Z_0(X). The corpus applies exactly this principle heuristically: rem:ohtsuki-tower-bar-parity asserts that the Borel-Pade resummation of the odd (Gevrey-1) Ohtsuki sub-tower has its Borel singularity at the real action A = Vol(4_1)/pi, off the imaginary integration ray, hence no Stokes ambiguity -- a statement about where Borel singularities sit relative to complex-CS actions. So the paper supplies the theorem-form of a principle the corpus uses. It is NOT core, and deliberately not aid-proof: the results are proved for Seifert fibered homology spheres, a class the corpus contains no member of, whereas the corpus's object is a hyperbolic knot complement (4_1). Transporting the pole-location theorem across that gap is precisely what would need checking, and this document does not do it.",
+          "keyResults": [
+            {
+              "locator": "Thm. 2",
+              "statement": "For a Seifert fibered homology sphere X, the poles of the Borel transform of the Ohtsuki series Z_0(X) coincide with the set of classical complex Chern-Simons values CS_C(X).",
+              "useForFolio": "A proved instance of 'Borel singularities sit at complex CS actions', the assumption behind the corpus's placement of the Ohtsuki-tower Borel singularity at Vol(4_1)/pi; usable as corroboration of the principle and as the statement whose hypotheses a knot-complement transfer would have to reproduce.",
+              "targets": [
+                "rem:ohtsuki-tower-bar-parity"
+              ]
+            },
+            {
+              "locator": "Thm. 3",
+              "statement": "Z-hat_0(X;q) is a Borel-Laplace resummation of the Ohtsuki series Z_0(X), with a full asymptotic expansion as q -> exp(2 pi i / k) recovering the WRT invariant tau_k(X).",
+              "useForFolio": "The resummation-side template for the corpus's open multi-instanton / median-resummation residual on the one-instanton normalization (the quantitatively open leg of the u(q_0) map).",
+              "targets": [
+                "computations/qbeta/qbeta_c3_borel_pade_resummation_probe.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Named in two beans (rt2f, s013) as 'Seifert resurgence machinery' but has no ref() entry.",
+              "target": "rem:ohtsuki-tower-bar-parity",
+              "bean": "qou-3jeq"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record that the Borel-poles = complex-CS-values statement is PROVED only for Seifert fibered homology spheres, and state what a transfer to the 4_1 complement would require, so the corpus's heuristic placement of the Ohtsuki-tower Borel singularity is not read as literature-backed.",
+              "target": "rem:ohtsuki-tower-bar-parity",
+              "bean": "qou-dh8d"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "The corpus's Borel-Pade probe locates a singularity at A = Vol(4_1)/pi ~ 0.646; Thm 2 says (in its own class) such singularities are exactly complex-CS actions. Cross-checking the probe's numerically located singularity against the 4_1 complex-CS spectrum is a cross-check to run, not a number to adopt.",
+              "target": "computations/qbeta/qbeta_c3_borel_pade_resummation_probe.py",
+              "bean": "qou-r0fd"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "a486709d0a78"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

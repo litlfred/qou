@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-laplacian-expansion",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-laplacian-expansion",
+  "kind": "remark",
+  "title": "Three-term expansion of the $q$-Laplacian",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-harmonic-form",
+    "papers/quantum-observable-universe/blocks/rem-q-codifferential-formula"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-harmonic-form",
+  "tags": [
+    "q-laplacian",
+    "expansion",
+    "coriolis"
+  ],
+  "text": "q-laplacian-expansion.md",
+  "provenance": "authored"
+}

@@ -33,7 +33,7 @@ reported in §"Alternative: vacuum drag formula" below.
 See:
   docs/audits/2026-05-01-math-framework-deep-audit.md §2·F
   docs/audits/2026-05-01-math-framework-workplan.md P1.6
-  content/quantum-observable-universe/descartes-universe/neutrino-knot.md
+  folio/quantum-observable-universe/descartes-universe/neutrino-knot.md
 """
 
 import json

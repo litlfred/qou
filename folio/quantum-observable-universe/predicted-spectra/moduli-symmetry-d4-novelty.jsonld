@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-moduli-symmetry-d4-novelty",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:moduli-symmetry-d4-novelty",
+  "kind": "remark",
+  "title": "Mathematical novelty of $\\mathbb{Z}[i]$ as ring of definition for the Möbius family",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-moduli-symmetry-d4"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-moduli-symmetry-d4",
+  "text": "moduli-symmetry-d4-novelty.md",
+  "provenance": "authored"
+}

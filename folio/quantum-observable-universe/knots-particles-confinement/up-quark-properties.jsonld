@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-up-quark-properties",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:up-quark-properties",
+  "kind": "remark",
+  "title": "Up quark: crossing orientation and isolation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-coulomb-charge"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-up-quark",
+  "tags": [
+    "quark",
+    "up",
+    "crossing",
+    "borromean",
+    "confinement"
+  ],
+  "text": "up-quark-properties.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-witness-8be",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:witness-8be",
+  "kind": "definition",
+  "title": "Pauli witness for ${}^8\\mathrm{Be}$ (exact in $q$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hecke-normal-form",
+    "papers/quantum-observable-universe/blocks/prop-shell-closure-normal-form"
+  ],
+  "tags": [
+    "pauli-witness",
+    "beryllium-8",
+    "exact-polynomial"
+  ],
+  "leanRef": "qou:QOU.Archimedean.PauliWitness.witness_8Be",
+  "text": "witness-8be.md",
+  "leanSource": "witness-8be.lean",
+  "provenance": "authored"
+}

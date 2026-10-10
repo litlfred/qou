@@ -112,7 +112,7 @@ import sympy as sp
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "tools" / "qou-substrate" / "python"))
-LEAN = REPO / "content/quantum-observable-universe/lean/QOU/Machinery"
+LEAN = REPO / "folio/quantum-observable-universe/lean/QOU/Machinery"
 RUNG = LEAN / "HeckeH4StabilizationRung.lean"
 LAWS = LEAN / "HeckeH4AlgebraLaws.lean"
 GENACT = LEAN / "H4GeneratorAction.lean"
@@ -405,9 +405,9 @@ def main() -> int:
         "computation": {
             "script": "computations/h4_cyclicity_generator_route_check.py",
             "sources_read": [
-                "content/quantum-observable-universe/lean/QOU/Machinery/HeckeH4StabilizationRung.lean",
-                "content/quantum-observable-universe/lean/QOU/Machinery/HeckeH4AlgebraLaws.lean",
-                "content/quantum-observable-universe/lean/QOU/Machinery/H4GeneratorAction.lean",
+                "folio/quantum-observable-universe/lean/QOU/Machinery/HeckeH4StabilizationRung.lean",
+                "folio/quantum-observable-universe/lean/QOU/Machinery/HeckeH4AlgebraLaws.lean",
+                "folio/quantum-observable-universe/lean/QOU/Machinery/H4GeneratorAction.lean",
             ],
             "arithmetic": "exact (sympy over Q[z,h]); no floats, no substrate anchor",
         },

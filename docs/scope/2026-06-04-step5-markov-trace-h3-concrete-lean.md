@@ -3,7 +3,7 @@
 **Companion to** [`2026-06-04-fibre-composite4-implementation-spec.md`](2026-06-04-fibre-composite4-implementation-spec.md)
 **Step 5**. This delivers the Lean replacement for the `True`-marker
 `MarkovTrace` class in
-[`MarkovTraceOnHecke.lean`](../../content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean):
+[`MarkovTraceOnHecke.lean`](../../folio/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean):
 a **concrete H₃(q) Markov-trace functional** on the NF free module, with
 linearity, the Hecke operator identity, and the Markov reduction proved
 as lemmas — mirroring `gram.py`'s NF basis + `TR_M` exactly.
@@ -11,7 +11,7 @@ as lemmas — mirroring `gram.py`'s NF basis + `TR_M` exactly.
 ## Status — committed + verified GREEN ✅
 
 The code below is **committed and building** in
-[`MarkovTraceOnHecke.lean`](../../content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean)
+[`MarkovTraceOnHecke.lean`](../../folio/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean)
 (this doc is now the cross-verification + toolchain record, not a
 pending drop-in). `lake build QOU.Machinery.MarkovTraceOnHecke` →
 *"Build completed successfully (922 jobs)"*, exit 0, **sorry-free**.
@@ -168,7 +168,7 @@ Then `lean_diagnostic_messages` on the file should report no errors and
 
 Once Step 4 names the residue-A element, the
 `UniversalHabiroStructure.markov_trace_origin` field (currently `True`
-in [`MmuR9V9Closure.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/MmuR9V9Closure.lean))
+in [`MmuR9V9Closure.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidKnot/MmuR9V9Closure.lean))
 can be discharged using `markovTrace_realized` for that specific element,
 turning the conditional closure theorem into an unconditional one — the
 ultimate Step-5 goal. The concrete `trM` here is the bridge: it is the

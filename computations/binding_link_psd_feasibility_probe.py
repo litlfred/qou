@@ -35,7 +35,7 @@ uniqueness arg). If false, the binding-link path is refuted just
 like the whole-atom path; back to drawing board.
 
 Ref: docs/coordination/2026-06-02-m-p-linking-weight-and-binding-link-scope.md
-Ref: content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md
+Ref: folio/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md
 Ref: docs/audits/2026-06-02-subgoal-1-sdp-canonical-knot-run.md
 """
 from __future__ import annotations

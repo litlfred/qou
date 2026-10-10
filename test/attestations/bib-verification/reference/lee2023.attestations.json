@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "lee2023",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 299,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2311.02632v2/2311.02632v2.pdf"
+        },
+        "id": "lee2023",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Proves that the first Laplacian eigenvalue of the genus-7 Hurwitz surface has sevenfold multiplicity in [1.23, 1.26], numerically identifies the corresponding 7-dimensional representation of its order-504 automorphism group, and determines a Dirichlet domain with algebraic vertex coordinates for a uniformising Fuchsian group. Adjacent to the corpus's Bring-curve chapter (highly symmetric Riemann surfaces, automorphism-group isotypic decompositions), but the corpus's curve is genus 4 with automorphism group of order 120, not a Hurwitz surface, and nothing in the tree computes Laplacian spectra of Riemann surfaces: 'Fuchsian', 'Dirichlet domain' and 'uniformiz' return one hit total across content/, in an unrelated block. The one transferable item -- the method of decomposing an eigenspace into irreps of the automorphism group -- would only become usable if the corpus ever wanted the S_5-isotypic decomposition of the Bring-curve Laplacian, which no block currently asks for.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "No block computes or needs a Laplacian spectrum on a Riemann surface; proposing a citation here would be inflating adjacency into relevance.",
+              "target": "def:brings-surface"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "0da5ba097b79"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

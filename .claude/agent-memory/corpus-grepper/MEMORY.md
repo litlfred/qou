@@ -131,7 +131,7 @@ end; its title tells you the subject, never the verdict.
 
 ## TRAP — two ways a `content/` grep lies about coverage (2026-09-04)
 
-**1. Vendored Mathlib sits UNDER `content/`.** `content/quantum-observable-universe/lean/.lake/packages/mathlib/`.
+**1. Vendored Mathlib sits UNDER `content/`.** `folio/quantum-observable-universe/lean/.lake/packages/mathlib/`.
 A `find content` list is 20,472 files; excluding `/.lake/` it is **12,427** — every
 naive `content/` count inflated ~65 %, and `hyperbolic metric` / `uniformizer` /
 `Poincare` return Mathlib docstrings as corpus hits. **Filter `/\.lake/` first.**
@@ -333,3 +333,4 @@ these open, and add a row whenever a sweep settles one.
 - 2026-09-06 · `qou-yc1m` singular-locus A-scaling · **grep-open on all six, but the claim SHAPE fails at the held text**: Yekutieli 2-dim bad set is keyed on the FORMS, the kite map is linear; the "singular points of σ" line is the 1-dim case · detail in `resolved-topics.md`.
 - 2026-09-06 · external dialog (Bring as Lawson surface in S³; CS 3-form on a surface; Gromov norm) · **C1 0/6 paths and a category error; C2 already in corpus prose, Lean carrier is a discharged tautology; simplicial volume of a SURFACE absent** · NZ 1985 "held 3×" = one 4-page tail (TRAP); INDEX.md 27 rows behind · detail in `resolved-topics.md`.
 - 2026-09-07 · `qou-hok7` hook-product partition sum (Nekrasov-Okounkov / CS / Littlewood) · **object ALREADY CLOSED as `prop:binding-period-involution-statistic`** (their S_n = S^bal/((q-q^-1)^n[n]_q!) exactly); **NO formula, Han, the CS sinh-hook reading, and Littlewood's identity are 0/6** · detail in `resolved-topics.md`.
+- 2026-09-14 · ideal-triangulation ↔ q-NS arc map (owner: "where are we, what's open") · **the (A)↔(B) LINK is two `prose` blocks and nothing else** — 0 `uses[]` edges either way, 0 computations, 0 library; q-NS probes never evaluate q₀ · two homonym traps (`hyperbolic`=saddle on the fluid side; `qns` ⊂ `eqns`) · detail in [`resolved-topics.md`](resolved-topics.md).

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/alg-delta-lambda-closure",
+  "@type": [
+    "folio-assistant-core:Algorithm",
+    "doco:Section"
+  ],
+  "label": "alg:delta-lambda-closure",
+  "kind": "algorithm",
+  "title": "$\\Delta_\\lambda$ per-partition value (PROVED $(-1)^{n(\\lambda)}\\dim V_\\lambda$); many-body magnitude open",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-delta-lambda-dt-index-unification",
+    "papers/quantum-observable-universe/blocks/rem-term6-binding-density",
+    "papers/quantum-observable-universe/blocks/prop-wedderburn-trace-identity"
+  ],
+  "tags": [
+    "mba",
+    "sidecar",
+    "delta-lambda",
+    "value-proved",
+    "magnitude-open"
+  ],
+  "text": "mba-sidecar-delta-lambda-closure.md",
+  "provenance": "authored"
+}

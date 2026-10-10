@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-bigbang-heatdeath",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:bigbang-heatdeath",
+  "kind": "conjecture",
+  "title": "Big Bang and heat-death functors as evaluations at named surreal endpoints",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-classical-limit-stpart"
+  ],
+  "cites": [
+    "references/conway1976"
+  ],
+  "tags": [
+    "tier:P",
+    "surreal-numbers",
+    "big-bang",
+    "heat-death",
+    "cosmology",
+    "functor-limit",
+    "named-infinity",
+    "open-problem",
+    "speculative"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.BigBangHeatDeath",
+  "text": "bigbang-heatdeath.md",
+  "provenance": "authored"
+}

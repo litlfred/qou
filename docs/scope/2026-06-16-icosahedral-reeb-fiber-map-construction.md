@@ -21,7 +21,7 @@ checker [`scripts/s5so3_branching_backbone_verify.py`](../audits/scripts/s5so3_b
 The corpus also already realizes the **S₃ side geometrically** via the q-Reeb flow on the
 exceptional divisor ($\mathcal{S}_p\cong\mathbb{CP}^1=S^2$, Hopf bundle $S^3\to S^2$, six $S_3$ knot
 operators, $S_3$-Galois boundary monodromy;
-[`exceptional-divisor-reeb-intro.md`](../../content/quantum-observable-universe/mass-theory/exceptional-divisor-reeb-intro.md)).
+[`exceptional-divisor-reeb-intro.md`](../../folio/quantum-observable-universe/mass-theory/exceptional-divisor-reeb-intro.md)).
 
 **What is unbuilt:** that construction realizes only the cyclic $C_5$ (Lagrange-resolvent
 diagonalization) on a *single*-point blow-up, and is a *3-strand* (S₃-target) construction. The
@@ -66,7 +66,7 @@ A first pass at the gate (corpus + structural reasoning, anchored in the verifie
 INGREDIENT-1 block) sharpened ingredient 1 and **corrected two framing errors**:
 
 1. **The $\mathbb{CP}^1$ is the spin / state-bundle fibre, NOT a blow-up of the Bring curve.**
-   [`fivefold-symmetry.md`](../../content/quantum-observable-universe/brings-surface/fivefold-symmetry.md)
+   [`fivefold-symmetry.md`](../../folio/quantum-observable-universe/brings-surface/fivefold-symmetry.md)
    establishes $\Sigma_4$ is a **genus-4 curve** (complex dim 1), $\mathrm{Aut}=S_5$. You cannot get a
    $\mathbb{CP}^1$ exceptional divisor by blowing up a point on a curve ($\mathbb{P}^{1-1}=\mathbb{P}^0=$
    a point). The $\mathbb{CP}^1$ is the **state-bundle fibre** $\mathcal{S}=P\times_G\mathbb{CP}^1$
@@ -86,7 +86,7 @@ INGREDIENT-1 block) sharpened ingredient 1 and **corrected two framing errors**:
    $\mathbb{C}^2$. The rotation $I\subset\mathrm{SO}(3)=\mathrm{PSU}(2)$ on $S^2=\mathbb{P}^1$ lifts to the
    **binary icosahedral $2I\subset\mathrm{SU}(2)$** (order 120, dims $\{1,2,2,3,3,4,4,5,6\}$, $\sum d^2=120$,
    the E₈ McKay irreps) on $\mathbb{C}^2$. So the icosahedral fibre action **is** the spin $\mathrm{SU}(2)_S$
-   lift of [`spin-from-so3-fiber.md`](../../content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.md)
+   lift of [`spin-from-so3-fiber.md`](../../folio/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.md)
    — the same lift, not two. Globally $S^3/2I=$ the Poincaré homology sphere $=$ link of the E₈ singularity,
    constraining the Reeb/Hopf-bundle topology.
 
@@ -107,11 +107,11 @@ genuinely unbuilt object.
 A corpus pass on the spin structure resolves the **existence** leg and reclassifies the residual:
 
 - **The bundle's structure group is already $\mathrm{SU}(2)$** (the spin double cover) —
-  [`quaternion-so3-motivation.md`](../../content/quantum-observable-universe/braids-and-knots/quaternion-so3-motivation.md):
+  [`quaternion-so3-motivation.md`](../../folio/quantum-observable-universe/braids-and-knots/quaternion-so3-motivation.md):
   $G=\mathrm{SU}(2)\cong\mathrm{Sp}(1)$, and "the $\mathrm{SO}(3)$ holonomy of the chiral sheets lifts to
   $\mathrm{Sp}(1)$ conjugation" via $\mathrm{Ad}:\mathrm{SU}(2)\twoheadrightarrow\mathrm{SO}(3)$.
 - **The binary-lift principle is already in the corpus, with the $S_3$ case done explicitly** —
-  [`su2-generators.md`](../../content/quantum-observable-universe/brings-surface/su2-generators.md):
+  [`su2-generators.md`](../../folio/quantum-observable-universe/brings-surface/su2-generators.md):
   "Every finite subgroup of $\mathrm{SO}(3)$ lifts, via the double cover
   $\mathrm{SU}(2)\twoheadrightarrow\mathrm{SO}(3)$, to a binary subgroup of $\mathrm{SU}(2)$. For
   $S_3\cong D_3$ the lift is the binary dihedral $\mathrm{Dic}_3$ of order 12." So the existing $S_3$ Reeb
@@ -259,7 +259,7 @@ genuine remaining content of `conj:s5-so3-fiber-action`. Everything algebraic/co
 
 - **Building 1–4 proves the geometric map EXISTS; it does NOT guarantee the physics.** The $S_3$-side
   lepton mass attempt already misses CODATA by 99% with a divergent tau
-  ([`lepton-bring-surface-h3-3channel.md`](../../content/quantum-observable-universe/mass-theory/lepton-bring-surface-h3-3channel.md)),
+  ([`lepton-bring-surface-h3-3channel.md`](../../folio/quantum-observable-universe/mass-theory/lepton-bring-surface-h3-3channel.md)),
   so a correct functor can still fail at ingredient 5.
 - **C₅ → A₅ may not promote on a single divisor.** If the one-point blow-up's geometry resists the
   full icosahedral action (ingredient 1 fails), the Reeb-on-ED route describes the $S_3$ target only
@@ -284,7 +284,7 @@ genuine remaining content of `conj:s5-so3-fiber-action`. Everything algebraic/co
 - [`2026-06-16-s5so3-branching-backbone-verified.md`](../audits/2026-06-16-s5so3-branching-backbone-verified.md) — backbone + bridge verification (ingredient 3)
 - [`2026-06-13-s5-so3-fiber-action-functor-resolution.md`](../audits/2026-06-13-s5-so3-fiber-action-functor-resolution.md) — the candidate functor $\mathrm{Res}^{S_5}_{S_3}$
 - [`2026-06-16-mtau-and-binding-converge-on-s5so3-keystone.md`](../audits/2026-06-16-mtau-and-binding-converge-on-s5so3-keystone.md) — the synthesis (single open object)
-- [`exceptional-divisor-reeb-intro.md`](../../content/quantum-observable-universe/mass-theory/exceptional-divisor-reeb-intro.md) — the existing S₃-side Reeb construction
-- [`spin-from-so3-fiber.md`](../../content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.md) — `conj:s5-so3-fiber-action` spin SU(2)_S lift (= ingredient 1's $2I$ lift)
-- [`fivefold-symmetry.md`](../../content/quantum-observable-universe/brings-surface/fivefold-symmetry.md) — $\Sigma_4$ is a genus-4 *curve*, Aut $=S_5$ (the dimension fact behind finding 1)
-- `content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean` — the keystone scaffold (open `partition_to_rotation`)
+- [`exceptional-divisor-reeb-intro.md`](../../folio/quantum-observable-universe/mass-theory/exceptional-divisor-reeb-intro.md) — the existing S₃-side Reeb construction
+- [`spin-from-so3-fiber.md`](../../folio/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.md) — `conj:s5-so3-fiber-action` spin SU(2)_S lift (= ingredient 1's $2I$ lift)
+- [`fivefold-symmetry.md`](../../folio/quantum-observable-universe/brings-surface/fivefold-symmetry.md) — $\Sigma_4$ is a genus-4 *curve*, Aut $=S_5$ (the dimension fact behind finding 1)
+- `folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean` — the keystone scaffold (open `partition_to_rotation`)

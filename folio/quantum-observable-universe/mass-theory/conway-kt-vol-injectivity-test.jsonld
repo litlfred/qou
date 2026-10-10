@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-conway-kt-vol-injectivity-test",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:conway-kt-vol-injectivity-test",
+  "kind": "remark",
+  "title": "Conway--Kinoshita--Terasaka mutant pair: a volume-injectivity check for the depth correspondence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-transcendental-accounting",
+    "papers/quantum-observable-universe/blocks/prop-knot-indexed-convolution-grid"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-transcendental-accounting",
+  "cites": [
+    "references/thurston1978"
+  ],
+  "tags": [
+    "mutant-pair",
+    "conway-knot",
+    "kinoshita-terasaka",
+    "vol-injectivity",
+    "ruberman-theorem",
+    "sanity-check",
+    "graded-mikusinski"
+  ],
+  "text": "conway-kt-vol-injectivity-test.md",
+  "provenance": "authored"
+}

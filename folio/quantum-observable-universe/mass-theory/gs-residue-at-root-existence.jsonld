@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-gs-residue-at-root-existence",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:gs-residue-at-root-existence",
+  "kind": "conjecture",
+  "title": "Existence of the cyclotomic residue at each filtration level",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-gs-graded-markov-trace-existence",
+    "papers/quantum-observable-universe/blocks/def-habiro-ring"
+  ],
+  "tags": [
+    "gs-filtration",
+    "spectral-sequence",
+    "residue",
+    "cyclotomic",
+    "quantum-dilogarithm",
+    "noncomputable-opaque",
+    "audit-flag-13a"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.ResidueAtRoot",
+  "text": "gs-residue-at-root-existence.md",
+  "provenance": "authored"
+}

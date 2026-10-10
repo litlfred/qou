@@ -28,10 +28,10 @@ This script produces `q-beta-predicted.witness.json` recording:
 
 References:
   * `prop:beta-decay-energy-scale`
-    (content/quantum-observable-universe/particle-interactions/
+    (folio/quantum-observable-universe/particle-interactions/
      beta-decay-energy-scale.md)
   * `prop:meson-to-proton-via-borromean`
-    (content/quantum-observable-universe/archimedean-universe/
+    (folio/quantum-observable-universe/archimedean-universe/
      meson-to-proton-via-borromean.md)
 """
 from __future__ import annotations

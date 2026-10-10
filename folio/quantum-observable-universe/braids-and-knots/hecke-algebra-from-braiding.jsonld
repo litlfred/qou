@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-hecke-algebra-from-braiding",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hecke-algebra-from-braiding",
+  "kind": "remark",
+  "title": "The Iwahori--Hecke algebra $H_n(q)$ as a categorical quotient",
+  "interprets": "papers/quantum-observable-universe/blocks/thm-jones-markov-trace",
+  "tags": [
+    "hecke-algebra",
+    "braiding",
+    "substrate-parameter",
+    "categorical",
+    "groebner-basis"
+  ],
+  "text": "hecke-algebra-from-braiding.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-defect-legendrian-knot",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:defect-legendrian-knot",
+  "kind": "proposition",
+  "title": "The unit defect as a Legendrian knot",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-unit-particle-state",
+    "papers/quantum-observable-universe/blocks/def-categorical-reeb-derivation"
+  ],
+  "tags": [
+    "legendrian",
+    "knot",
+    "contact-geometry",
+    "torsion-leaf"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.defect_legendrian_knot",
+  "text": "defect-legendrian-knot.md",
+  "leanSource": "defect-legendrian-knot.lean",
+  "provenance": "authored"
+}

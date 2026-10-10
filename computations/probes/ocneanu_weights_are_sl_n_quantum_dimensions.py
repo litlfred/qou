@@ -152,7 +152,7 @@ def main() -> int:
     zD = q ** 3 / (q ** 2 + 1)
 
     # ---- 0. the corpus's own formula and weights ----------------------------
-    blk = (Path(__file__).resolve().parents[2] / "content"
+    blk = (Path(__file__).resolve().parents[2] / "folio"
            / "quantum-observable-universe" / "mass-endomorphism"
            / "markov-z-reconciliation.md")
     txt = blk.read_text() if blk.exists() else ""

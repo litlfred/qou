@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/bach2013-double-slit/blocks/ex-bach-intensity-profile",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:bach-intensity-profile",
+  "kind": "example",
+  "title": "Digitized Intensity Profile (Bach et al. 2013, Figure 3e)",
+  "uses": [
+    "papers/bach2013-double-slit/blocks/ex-bach-single-electron-buildup",
+    "papers/bach2013-double-slit/blocks/rem-bach-slit-parameters"
+  ],
+  "tags": [
+    "imported",
+    "arxiv:1210.6243",
+    "double-slit",
+    "experimental",
+    "intensity-profile",
+    "digitized-data"
+  ],
+  "text": "bach-intensity-profile.md",
+  "meta": {
+    "source": "arxiv:1210.6243",
+    "originalSection": "3",
+    "originalFigure": "3e",
+    "digitizedFrom": "Figure 3e, 6235 electron detections",
+    "digitizationMethod": "Threshold-based pixel extraction from arXiv PDF, 150-bin histogram",
+    "importedAt": "2026-03-25T00:00:00Z"
+  },
+  "provenance": "authored"
+}

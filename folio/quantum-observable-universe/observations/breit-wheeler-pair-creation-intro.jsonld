@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-breit-wheeler-pair-creation-intro",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:breit-wheeler-pair-creation-intro",
+  "kind": "prose",
+  "text": "breit-wheeler-pair-creation-intro.md",
+  "provenance": "authored"
+}

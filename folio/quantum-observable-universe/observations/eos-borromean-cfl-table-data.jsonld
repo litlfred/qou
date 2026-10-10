@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-eos-borromean-cfl-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:eos-borromean-cfl-table-data",
+  "kind": "table",
+  "title": "Data table from prop:eos-borromean-cfl",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-eos-borromean-cfl"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "eos-borromean-cfl-table-data.md",
+  "provenance": "authored"
+}

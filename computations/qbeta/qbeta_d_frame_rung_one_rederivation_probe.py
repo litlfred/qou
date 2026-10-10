@@ -5,8 +5,8 @@ ladder's convention-dependence is one additive phase in rung 1, and that phase
 is exactly the gap between the inadmissible baseline and the admissible one.
 
 # Ref: .beans/qou-cds1--s1-science-re-derive-the-qbeta-ck-ladder-under-d-n.md
-# Ref: content/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md
-# Ref: content/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean
+# Ref: folio/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md
+# Ref: folio/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean
 # Ref: docs/audits/2026-08-26-qbeta-epsilon-is-inadmissible-under-convention-d.md
 
 WHY THIS IS A RE-DERIVATION AND NOT A z-SWAP. qou-cds1 and

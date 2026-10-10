@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-harmonic-basis-brane",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-harmonic-basis-brane",
+  "kind": "remark",
+  "title": "$q$-Harmonic basis of the brane tower",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+    "papers/quantum-observable-universe/blocks/rem-betti-numbers-brane"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-recursive-brane-tower",
+  "tags": [
+    "q-harmonic",
+    "brane-tower",
+    "self-duality"
+  ],
+  "text": "q-harmonic-basis-brane.md",
+  "provenance": "authored"
+}

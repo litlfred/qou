@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-branching-qvalue-factorization",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:branching-qvalue-factorization",
+  "kind": "proposition",
+  "title": "Exact factorization of the branching Q-value",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-spectator-normalization"
+  ],
+  "tags": [
+    "factorization",
+    "q-value",
+    "character-sum",
+    "exact",
+    "branching"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.branching_qvalue_factorization",
+  "text": "branching-qvalue-factorization.md",
+  "provenance": "authored"
+}

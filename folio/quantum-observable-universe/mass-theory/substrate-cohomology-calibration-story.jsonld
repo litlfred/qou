@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-substrate-cohomology-calibration-story",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:substrate-cohomology-calibration-story",
+  "kind": "prose",
+  "text": "substrate-cohomology-calibration-story.md",
+  "provenance": "authored"
+}

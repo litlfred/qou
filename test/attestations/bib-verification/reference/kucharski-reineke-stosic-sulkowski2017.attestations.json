@@ -1,0 +1,59 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "kucharski-reineke-stosic-sulkowski2017",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 259,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1707.02991v1/1707.02991v1.pdf"
+        },
+        "id": "kucharski-reineke-stosic-sulkowski2017",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED against the document's front matter. THE CITED RULE IS LOAD-BEARING AND CORRECT, BUT THE INFERENCE BUILT ON IT OVERREACHES THE SOURCE. `stokes-dt-bps-bridge.md:36` asserts 'the quiver of a knot has one node per HOMFLY-PT homology generator'. The document states exactly that (p. 4): 'We claim that the size of the matrix C (and so the number of vertices in the corresponding quiver) is equal to the number of such generators', where 'such generators' are the monomials a^{a_i} q^{q_i} t^{t_i} of the uncolored reduced superpolynomial, i.e. the HOMFLY-PT homology generators. WHERE THE BLOCK GOES BEYOND THE SOURCE: it continues '\u2026so the 4\u2081 open-BPS count is det(4\u2081) = 5 (calibrated by that paper's worked trefoil, 3 = det 3\u2081 nodes)', and then uses '5 \u2209 {3,4}' as the load-bearing EXCLUSION that rules out the open-HOMFLY bridge and licenses A_\u03c9 = 3. The document supplies neither half of that step: it never states a #nodes = det(K) rule, and it never computes the 4\u2081 node count \u2014 its worked example (p. 5, 'Example \u2013 trefoil knot') is the trefoil only. So the exclusion rests on a one-data-point extrapolation from the trefoil, not on a result in this source. The block's own wording ('calibrated by that paper's worked trefoil') is honest about the calibration, but the downstream use as an exclusion is stronger than the calibration supports. Scope-(a): this document, as read, does not supply det(4\u2081)=5 or a determinant rule \u2014 nor does it refute them.",
+          "keyResults": [
+            {
+              "locator": "p. 4 (statement of the correspondence, around eq. (12))",
+              "statement": "The size of the quiver matrix C \u2014 hence the number of quiver vertices \u2014 equals the number of generators of the uncolored reduced HOMFLY-PT homology; diagonal entries C_{i,i} = t_i are homological degrees, l_i = q_i \u2212 t_i, and a_i are a-degrees.",
+              "useForFolio": "Supports the node-count \u2194 generator-count rule the bridge block asserts.",
+              "targets": [
+                "prop:stokes-dt-bps-bridge"
+              ]
+            },
+            {
+              "locator": "p. 5, 'Example \u2013 trefoil knot'",
+              "statement": "The correspondence is worked explicitly for the trefoil only (the quiver of fig. 1); no figure-eight node count is computed anywhere.",
+              "useForFolio": "Establishes that det(4\u2081)=5 is the corpus's extrapolation, not this document's result.",
+              "targets": [
+                "prop:stokes-dt-bps-bridge"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "Record that the 4\u2081 open-BPS count of 5 and the #nodes = det(K) rule are corpus extrapolations from a single worked trefoil, not results of this source \u2014 so the '5 \u2209 {3,4}' exclusion licensing A_\u03c9 = 3 rests on an unsourced step. Name what would need checking: a direct 4\u2081 reduced-HOMFLY-homology generator count.",
+              "target": "prop:stokes-dt-bps-bridge",
+              "bean": "qou-ophe"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "f4f539f74403"
+        }
+      }
+    }
+  ]
+}

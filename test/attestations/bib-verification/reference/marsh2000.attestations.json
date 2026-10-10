@@ -1,0 +1,50 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "marsh2000",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 125,
+      "entry": {
+        "id": "marsh2000",
+        "status": "verified-clean",
+        "verified_at": "2026-06-23T00:00:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-8"
+        },
+        "fixes_applied": 1,
+        "fix_commit": "(this commit)",
+        "note": "RENAMED 2026-06-23 (doth) from carter-leal-saliola-2000: arXiv:math/0008040 is single-author R. J. Marsh, NOT Carter/Leal/Saliola. Lusztig cones type A; fits QOU crystal-basis / Hecke content. Cited in crystal-graph-realization.ts. Link-title confidence (sandbox 403'd arXiv page). See docs/audits/2026-06-23-bibliography-doi-verification-doth.md \u00a7B.",
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0008040v1/0008040v1.pdf"
+        },
+        "local_pdf": "library/arxiv-math-0008040v1/0008040v1.pdf",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Join CORRECT: arXiv:math/0008040v1, single-author R. Marsh, 'Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A'. This confirms by direct reading the correction already recorded in the registry note (the key was formerly carter-leal-saliola-2000 with the wrong author; docs/audits/2026-06-23-bibliography-doi-verification-doth.md B). The citation is NOT load-bearing. Its only site is a bare cites: array entry at folio/quantum-observable-universe/knots-particles-confinement/crystal-graph-realization.ts:16. The block's .md is seven lines and carries four \\cite calls - brundankleshchev2009, kashiwara1991, lecouvey2007 - and never mentions Marsh, rectangle diagrams, Lusztig cones, canonical-basis parametrisation, or Lusztig's piecewise-linear function. The paper's actual results (rectangle combinatorics describing the spanning vectors of Lusztig cones as monomials in Kashiwara root operators, and the computation of the corresponding Lusztig parameters, with a conjecture about simplicial regions of linearity) are not consumed anywhere in the corpus. Related-but-unused: the block is about crystal highest-weight vectors, so the connection is thematic, but no statement of this paper is invoked. Also worth flagging: the block's QA sidecar (crystal-graph-realization.qa.json:1256) asserts that marsh2000 and khovanovlauda2009 'are consistent with the sources referenced in the text' - neither key appears in the text at all, so that sidecar entry is a false pass.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Either drop marsh2000 (and khovanovlauda2009) from the cites array as unused, or add the sentence they are meant to support - the rectangle-diagram parametrisation of Lusztig-cone spanning vectors would naturally back the 'crystal highest-weight vertices are in bijection with GS irreducible forms' clause.",
+              "target": "conj:crystal-graph-realization",
+              "bean": "qou-uoge"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "a72319b55dba"
+        }
+      }
+    }
+  ]
+}

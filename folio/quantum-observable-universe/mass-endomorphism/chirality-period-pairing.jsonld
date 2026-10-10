@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-chirality-period-pairing",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:chirality-period-pairing",
+  "kind": "remark",
+  "title": "Chirality structure on Goncharov period classes via the bar involution",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-bring-trilog-depth-3-witness"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-hecke-baer-star-generic",
+  "cites": [
+    "references/bloch2000"
+  ],
+  "tags": [
+    "chirality",
+    "amphichirality",
+    "bar-involution",
+    "period-pairing",
+    "chern-simons",
+    "tate-twist",
+    "graded-mikusinski"
+  ],
+  "text": "chirality-period-pairing.md",
+  "provenance": "authored"
+}

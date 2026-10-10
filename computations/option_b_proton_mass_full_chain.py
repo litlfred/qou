@@ -15,7 +15,7 @@ USER-DIRECTED STRUCTURE (Phase 1.6 of the 1ppb plan):
 This script implements that construction explicitly.  It does NOT
 algebraically patch the +1 ratio anomaly — it derives m_p from the
 rational-in-q closed form of `tr_M(σ_1^7 σ_2^4)` documented in
-`content/quantum-observable-universe/braids-and-knots/markov-trace-axiomatic-closed-form.md`,
+`folio/quantum-observable-universe/braids-and-knots/markov-trace-axiomatic-closed-form.md`,
 applies γγ pair-production reductions per
 `pair-production-nf.witness.json` (γγ = σ² → (q − q^{-1})·σ + 𝟏),
 runs SDP knot-operator selection per the `prop:operator-selection-lp`
@@ -671,7 +671,7 @@ def main() -> int:
         "emits the rational-in-q anchors from which any downstream mass-formula "
         "assembly should derive m_p without algebraic +1 patches.  See "
         "docs/audits/2026-05-09-proton-m_e-anomaly.md for the audit; "
-        "content/quantum-observable-universe/braids-and-knots/markov-trace-axiomatic-closed-form.md "
+        "folio/quantum-observable-universe/braids-and-knots/markov-trace-axiomatic-closed-form.md "
         "for the formal proposition."
     )
     w.set_content_block("prop:markov-trace-axiomatic-closed-form")

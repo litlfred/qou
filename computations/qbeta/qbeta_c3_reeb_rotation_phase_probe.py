@@ -7,7 +7,7 @@ qbeta_c3_wall_branch_structure_probe.py) is the DERIVED q-Reeb rotation angle
 θ of the figure-eight operator, rather than an unconstrained fit.
 
 THE REEB OBJECT (derived, parameter-free; content block
-`content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.md`):
+`folio/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.md`):
 the figure-eight knot operator `M_{4₁} = (σ₀ σ₁⁻¹)²` acting on the 2-dim lepton
 channel `V_{(2,1)}` of `H₃(q)` has eigenvalues `λ_{4₁} = e^{±iθ}`, `|λ|=1`. The
 phase θ is the accumulated q-Reeb rotation angle (rotates between the symmetric

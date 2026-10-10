@@ -1,0 +1,59 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "dimofte-gaiotto-gukov2013",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 223,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1112.5179v1/1112.5179v1.pdf"
+        },
+        "id": "dimofte-gaiotto-gukov2013",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED against the document's front matter. THE LOAD-BEARING CITATION CHECKS OUT EXACTLY. `WindingGFTransform.lean:19` calls eq. C.7 'the DGG quantum A-polynomial annihilator' and carries it as the conditional class `FourOneIndexAnnihilated`. Appendix C confirms it verbatim: eq. (C.7) is introduced and then described as 'The quantum Lagrangian (C.7) is well known in knot theory and Chern-Simons theory as the \"quantum A-polynomial\" of the figure-eight knot', with the complementary '\u2212' operator obtained from it by M\u0302 \u2192 M\u0302\u208b, \u2113\u0302 \u2192 \u2113\u0302\u208b. The file's \u00a73b-cond handling is honest \u2014 it labels the annihilator 'a cited literature input, NOT proved here' and makes everything downstream carry it as a hypothesis. TWO DEFECTS AT THAT ONE SITE, both in the Ref: block. (a) `WindingGFTransform.lean:47` attaches an identifier to this key that is not the one registered for it and that belongs to a different journal series. (b) The very next line, `WindingGFTransform.lean:48`, writes `-- Ref: [garoufalidis-gu-marino2021] GGM 2012.00062` \u2014 but arXiv 2012.00062 is the peacock paper, registered under the DIFFERENT key `garoufalidis-gu-marino2023peacock`; the key `garoufalidis-gu-marino2021` is registered against a different arXiv id entirely. The site attaches one work's arXiv id to another work's key.",
+          "keyResults": [
+            {
+              "locator": "Appendix C, eq. (C.7)",
+              "statement": "The quantum Lagrangian / quantum A-polynomial annihilator of the figure-eight knot, with the complementary '\u2212' operator obtained by M\u0302 \u2192 M\u0302\u208b, \u2113\u0302 \u2192 \u2113\u0302\u208b.",
+              "useForFolio": "The analytic-continuation vehicle for the 4\u2081 winding generating function; already carried as the class FourOneIndexAnnihilated.",
+              "targets": [
+                "QOU.QBeta.WindingGFTransform.FourOneIndexAnnihilated"
+              ]
+            },
+            {
+              "locator": "\u00a74.3 (flux-sum gluing rule); tetrahedron index I_\u0394(m,e)",
+              "statement": "The total 3d index of an ideal triangulation as a sum over internal edge-flux integers subject to the gluing equations.",
+              "useForFolio": "The registry note's stated derivation source for the integer Stokes / DT data behind the A_\u03c9 target.",
+              "targets": [
+                "prop:stokes-dt-bps-bridge"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Fix both Ref: lines in WindingGFTransform.lean \u2014 the identifier attached to this key (use the registered one) and the garoufalidis-gu-marino2021 / arXiv-2012.00062 mismatch (that arXiv id belongs to garoufalidis-gu-marino2023peacock).",
+              "target": "folio/quantum-observable-universe/lean/QOU/QBeta/WindingGFTransform.lean",
+              "bean": "qou-zxlz"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "b58af08336c4"
+        }
+      }
+    }
+  ]
+}

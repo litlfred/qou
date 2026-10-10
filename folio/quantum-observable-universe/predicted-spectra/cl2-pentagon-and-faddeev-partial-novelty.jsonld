@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-cl2-pentagon-and-faddeev-partial-novelty",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:cl2-pentagon-and-faddeev-partial-novelty",
+  "kind": "remark",
+  "title": "Mathematical novelty of the Cl_2 pentagon / Faddeev-Kashaev boundary closures",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cl2-pentagon-and-faddeev-partial"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-cl2-pentagon-and-faddeev-partial",
+  "text": "cl2-pentagon-and-faddeev-partial-novelty.md",
+  "provenance": "authored"
+}

@@ -129,7 +129,7 @@ def main() -> int:
     w.add_parameter("q0", Q_50_DIGIT_STR)
     w.add_data("lean_declarations_guarded", list(LEAN_DECLS))
     w.add_data("lean_file",
-               "content/quantum-observable-universe/lean/QOU/QBeta/InterfaceScalar.lean")
+               "folio/quantum-observable-universe/lean/QOU/QBeta/InterfaceScalar.lean")
     w.add_data("closed_form", "-(q^2 - q + 1)(q^2 + q + 1) / (q^2 + 1)^2")
     w.add_data("symbolic_difference", str(symbolic_zero))
     w.add_data("defect_at_q0", mp.nstr(defect_direct(q0), 40))

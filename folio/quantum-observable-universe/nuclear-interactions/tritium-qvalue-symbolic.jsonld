@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-tritium-qvalue-symbolic",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:tritium-qvalue-symbolic",
+  "kind": "proposition",
+  "title": "Symbolic Q-value for tritium beta decay",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-branching-qvalue-factorization"
+  ],
+  "tags": [
+    "tritium",
+    "q-value",
+    "symbolic",
+    "closed-form",
+    "beta-decay"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.tritium_qvalue_symbolic",
+  "text": "tritium-qvalue-symbolic.md",
+  "provenance": "authored"
+}

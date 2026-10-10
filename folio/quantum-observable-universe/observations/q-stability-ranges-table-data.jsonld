@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-q-stability-ranges-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:q-stability-ranges-table-data",
+  "kind": "table",
+  "title": "Data table from rem:q-stability-ranges",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-q-stability-ranges"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "q-stability-ranges-table-data.md",
+  "provenance": "authored"
+}

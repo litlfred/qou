@@ -1,0 +1,63 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "seiberg-witten1994b",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 333,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-hep-th-9408099v1/9408099v1.pdf"
+        },
+        "id": "seiberg-witten1994b",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "The matter-multiplet companion to the N=2 exact-solution programme: for every SU(2) model with matter it derives the exact metric on the moduli space of quantum vacua and the exact spectrum of stable massive states, with monopole condensation driving chiral symmetry breaking. The corpus uses the Seiberg-Witten differential and its periods a_D as load-bearing machinery -- prop:mi-sw-abelianisation states that the non-abelian multiplicative integral abelianises to the n-th prolonged SW period, prop:sw-period-residue-sum turns that period into an algebraic residue sum, and conj:binding-manybody-eq-jet-filtration builds the whole binding series on it -- and none of those blocks carries any citation. Separately, seiberg1994 (the pure-gauge predecessor) does exist in references.ts and is cited by no block at all: it is a bib orphan while its machinery is used throughout mass-theory and brings-surface. Supporting rather than core because the corpus's usage is of the general lambda_SW / a_D formalism, for which the predecessor is the primary; this upload is the matter extension.",
+          "keyResults": [
+            {
+              "locator": "abstract + sec. 3-4 (exact moduli-space metric and BPS spectrum for SU(2) with matter)",
+              "statement": "For SU(2) N=2 gauge theory with matter hypermultiplets the exact quantum moduli space, its metric via the periods (a, a_D), and the exact stable massive spectrum are determined, with electric-magnetic duality manifest when conformal invariance is broken only by masses.",
+              "useForFolio": "The literature home of the lambda_SW / a_D period formalism that prop:mi-sw-abelianisation and prop:sw-period-residue-sum use without citation; the matter case is the one with branch points and a spectral curve, matching the corpus's colour spectral-curve setting.",
+              "targets": [
+                "prop:mi-sw-abelianisation",
+                "prop:sw-period-residue-sum"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "prop:mi-sw-abelianisation states the SW-period identity with an empty cites list; the existing seiberg1994 entry is itself cited nowhere in the corpus despite the machinery being used across two chapters. Fix the primary citation first.",
+              "target": "prop:mi-sw-abelianisation",
+              "bean": "qou-wxe1"
+            },
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry for the matter-multiplet paper, which is distinct from seiberg1994 (the pure-gauge one). Add it if the corpus wants the with-matter/spectral-curve case that its colour-bundle picture resembles.",
+              "target": "prop:sw-period-residue-sum",
+              "bean": "qou-vshq"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "b534faddd2e3"
+        },
+        "note": "Source IS held: library/arxiv-hep-th-9408099v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+        "verified_at": "2026-09-03T04:19:53Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

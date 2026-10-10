@@ -79,7 +79,7 @@ path, never via this script's output.
 a tensor-product χ^λ primitive — useful as input to a future
 canonical Wenzl-bridge consumer that handles non-tensor inter-
 nucleon braiding per
-[`hecke-branching-trace-decomposition.md`](../../content/quantum-observable-universe/braids-and-knots/hecke-branching-trace-decomposition.md).
+[`hecke-branching-trace-decomposition.md`](../../folio/quantum-observable-universe/braids-and-knots/hecke-branching-trace-decomposition.md).
 Until that consumer is implemented, the script's output stays
 audit-only.
 

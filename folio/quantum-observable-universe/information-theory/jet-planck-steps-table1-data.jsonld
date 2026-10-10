@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-jet-planck-steps-table1-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:jet-planck-steps-table1-data",
+  "kind": "table",
+  "title": "Data table 1 from rem:jet-planck-steps",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-jet-planck-steps"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "jet-planck-steps-table1-data.md",
+  "provenance": "authored"
+}

@@ -2,7 +2,7 @@
 """The j=0 singularity in (A), removed by subtraction rather than estimated.
 
 Bean `qou-mlgp` (A).  Formalised (the split itself) in
-`content/quantum-observable-universe/lean/QOU/Knot/KashaevEndpointSplit.lean`
+`folio/quantum-observable-universe/lean/QOU/Knot/KashaevEndpointSplit.lean`
 as `sum_log_two_sin_split`.
 
 THE OBSTRUCTION.  Every attempt at (A) foundered at `j = 0`, where

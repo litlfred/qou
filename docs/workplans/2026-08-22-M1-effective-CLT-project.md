@@ -73,7 +73,7 @@ Extend to `(C/κ)²` once `C` is explicit.
 
 ## 3. In-repo assets already built (reusable)
 
-- `content/quantum-observable-universe/lean/QOU/BraidsAndKnots/YoungDiagramKernel.lean` — carrier.
+- `folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/YoungDiagramKernel.lean` — carrier.
 - Exact facts (Lean-formalizable): `Σh = Σ_uD(u)² + Σ|c|`; `β₃ = (n−2)/(n+1)`;
   `ΣD²(μ)−ΣD²(λ) = 2(d_a−d_r+1)`; 1-Lipschitz `|D(u+1)−D(u)|≤1`.
 - Probes: `wlambda_covariance_epic_M1_{kappa_analytic_IO, fulman_exchangeable_pair, edge_ratio_structure, IO_mode_decomposition, kerov_clt_leading_kappa}.py`.

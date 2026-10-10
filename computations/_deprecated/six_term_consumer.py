@@ -3,7 +3,7 @@
 
 Sprint A v4 — canonical-only enumeration audit (T4 wired).
 
-Per `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md`,
+Per `folio/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md`,
 the canonical mass is
 
     𝔪(ρ) = |tr_M(T_w)|                            (T1)

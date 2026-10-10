@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-surreal-rate-calculus-setup",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:surreal-rate-calculus-setup",
+  "kind": "remark",
+  "title": "Surreal rate calculus — infinitesimal setup and classical-limit rate table",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-surreal-rate-calculus",
+    "papers/quantum-observable-universe/blocks/def-reeb-epsilon",
+    "papers/quantum-observable-universe/blocks/def-q-from-epsilon",
+    "papers/quantum-observable-universe/blocks/thm-quantum-gap-collapse"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-surreal-rate-calculus",
+  "tags": [
+    "surreal",
+    "reeb-infinitesimal",
+    "rate-table",
+    "classical-limit",
+    "appendix"
+  ],
+  "text": "surreal-rate-calculus-setup.md",
+  "provenance": "authored"
+}

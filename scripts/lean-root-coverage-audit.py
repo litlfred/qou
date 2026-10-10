@@ -1,9 +1,33 @@
 #!/usr/bin/env python3
 """Which QOU library modules does the library ROOT actually import?
 
-`lake build QOU` builds the import closure of `QOU.lean`.  A module outside that
-closure is built by nothing -- not by the root build, and not by any sweep that
-starts from the root.  This reports the gap.
+This reports the import-closure gap.  Read the next paragraph before drawing any
+conclusion from it.
+
+CORRECTED 2026-09-13: this docstring said "`lake build QOU` builds the import
+closure of `QOU.lean`.  A module outside that closure is built by nothing."
+**That premise is false and has been since 2026-08-08.**  The paper lakefile
+declares the library with an explicit glob:
+
+    [[lean_lib]]
+    name = "QOU"
+    srcDir = "."
+    globs = ["QOU", "QOU.+"]          # WIDEN THE BUILD TO THE WHOLE TREE (qou-rc7b)
+
+A Lake library with no explicit `globs` defaults to `roots.map Glob.one` -- root
+plus transitive imports, which is the state this script was written against.
+`qou-rc7b` (status `done`) widened it to the whole tree.  So `lake build QOU`
+compiles EVERY module under `QOU/`, and the modules this script reports are
+outside the root's IMPORT CLOSURE, not outside the BUILD.
+
+Import closure != build coverage.  What this script measures is a real and useful
+property -- the root's import graph reaches about half the tree -- but it is not
+evidence that anything goes unbuilt.  Measured 2026-09-13: 2836 modules, 1451
+reachable, 1385 outside (48.8%), and a full `--all` sweep compiled 2821 of them
+with 0 RED.
+
+The 2026-09-08 correction below fixed the COUNT and left this PREMISE intact, so
+both needed separate fixing.  Bean qou-g5sp.
 
 CORRECTED 2026-09-08: this measured the root's DIRECT import lines and called
 everything else "not in the root".  `lake build QOU` builds the TRANSITIVE closure,
@@ -58,7 +82,7 @@ def measure(lean_dir, lib):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--lean-dir", default="content/quantum-observable-universe/lean")
+    ap.add_argument("--lean-dir", default="folio/quantum-observable-universe/lean")
     ap.add_argument("--package", default="QOU")
     ap.add_argument("--list", metavar="NS",
                     help="print every missing module in this namespace")

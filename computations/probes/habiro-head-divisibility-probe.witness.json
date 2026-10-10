@@ -1,6 +1,6 @@
 {
   "computation": "habiro-head-divisibility-probe",
-  "computedAt": "2026-08-28T15:00:55.134401+00:00",
+  "computedAt": "2026-10-05T14:22:04.481388+00:00",
   "description": "j = 2 head-divisibility criterion feeding the sorry-free Lean lemma QOU.Habiro.habiroEval_ne_zero_of_head_not_dvd. For odd p the criterion reduces to a single integer A = a_0(-1) + 2*a_1(-1) per atom: it fires — hence Frob_p != 0 — at every odd prime not dividing A. j = 1 is vacuous for odd p because 1 - zeta_{2p} is a unit there (Norm = Phi_{2p}(1) = 1 when 2p is not a prime power), which is the head_criterion_vacuous_of_isUnit case. The closed form is cross-checked against brute-force divisibility in Z[u]/Phi_{2p}(u) at 14 primes. All arithmetic is exact; no floating point is used anywhere in this script.",
   "reference_lean": [
     "qou:QOU.Habiro.habiroEval_ne_zero_of_head_not_dvd",
@@ -34,7 +34,7 @@
       "Z": 1,
       "N": 0,
       "n_habiro_coefficients": 9,
-      "head_j2_poly": "172*u**2 - 164",
+      "head_j2_poly": "100*u**2 - 92",
       "closed_form_A": 8,
       "A_prime_factors": [
         2
@@ -148,7 +148,7 @@
       "Z": 0,
       "N": 1,
       "n_habiro_coefficients": 9,
-      "head_j2_poly": "34*u**2 - 32",
+      "head_j2_poly": "16*u**2 - 14",
       "closed_form_A": 2,
       "A_prime_factors": [
         2
@@ -262,7 +262,7 @@
       "Z": 1,
       "N": 1,
       "n_habiro_coefficients": 14,
-      "head_j2_poly": "8544*u**2 - 8352",
+      "head_j2_poly": "5088*u**2 - 4896",
       "closed_form_A": 192,
       "A_prime_factors": [
         2,
@@ -379,7 +379,7 @@
       "Z": 1,
       "N": 2,
       "n_habiro_coefficients": 17,
-      "head_j2_poly": "23616*u**2 - 23232",
+      "head_j2_poly": "13248*u**2 - 12864",
       "closed_form_A": 384,
       "A_prime_factors": [
         2,
@@ -496,7 +496,7 @@
       "Z": 2,
       "N": 1,
       "n_habiro_coefficients": 17,
-      "head_j2_poly": "101376*u**2 - 99840",
+      "head_j2_poly": "59904*u**2 - 58368",
       "closed_form_A": 1536,
       "A_prime_factors": [
         2,
@@ -615,12 +615,12 @@
     "n_atoms_firing_at_all_odd_primes": 2,
     "n_atoms_firing_at_p2": 1
   },
+  "scriptFile": "habiro_head_divisibility_probe.py",
   "scriptHash": "85cb63b8901d",
-  "scriptCommitSha": "unknown",
-  "commitSha": "c45fdfeccc206b6e81a0f9108e9c2df9ba7445c0",
+  "scriptCommitSha": "70ce2eb5a1a8b8f1f6e2e57f67161387eeba5e99",
+  "commitSha": "21ddc42fa77458b1226f3fcd08020dcdccc58bd4",
   "engine": "python",
   "durationMs": 0,
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "habiro_head_divisibility_probe.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

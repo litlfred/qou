@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-standard-part-classical-limit",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:standard-part-classical-limit",
+  "kind": "remark",
+  "title": "Standard-part as the exact classical-limit substitute",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-birthday-grading"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-standard-part-functor",
+  "tags": [
+    "surreal-numbers",
+    "standard-part",
+    "classical-limit",
+    "jackson-derivative",
+    "archimedean"
+  ],
+  "text": "standard-part-classical-limit.md",
+  "provenance": "authored"
+}

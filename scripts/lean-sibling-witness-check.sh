@@ -33,7 +33,7 @@ LP=""
 for d in "$ROOT"/.lake/packages/*/.lake/build/lib/lean; do
   [ -d "$d" ] && LP="$LP:$d"
 done
-LP="$LP:$ROOT/content/quantum-observable-universe/lean/.lake/build/lib/lean"
+LP="$LP:$ROOT/folio/quantum-observable-universe/lean/.lake/build/lib/lean"
 export LEAN_PATH="${LP#:}"
 
 TMP="$(mktemp -d)"

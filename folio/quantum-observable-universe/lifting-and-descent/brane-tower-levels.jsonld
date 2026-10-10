@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-brane-tower-levels",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:brane-tower-levels",
+  "kind": "example",
+  "title": "Archimedean realisation of the brane tower",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-recursive-brane-tower",
+    "papers/quantum-observable-universe/blocks/cor-jet-prolongation-C"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-recursive-brane-tower",
+  "tags": [
+    "archimedean",
+    "brane-tower"
+  ],
+  "text": "brane-tower-levels.md",
+  "provenance": "authored"
+}

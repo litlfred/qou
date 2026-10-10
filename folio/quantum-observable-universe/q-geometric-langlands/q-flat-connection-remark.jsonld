@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-flat-connection",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-flat-connection",
+  "kind": "remark",
+  "title": "The $d_q^2 \\neq 0$ obstruction as curvature",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-flat-connection"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-flat-connection",
+  "tags": [
+    "geometric-langlands",
+    "curvature",
+    "q-deformation"
+  ],
+  "text": "q-flat-connection-remark.md",
+  "provenance": "authored"
+}

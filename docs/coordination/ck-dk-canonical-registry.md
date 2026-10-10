@@ -47,14 +47,14 @@ cross-referenced so they are never conflated again.
 
 | symbol | meaning | governed here? | where |
 |---|---|---|---|
-| **c_k** | Q_β β-decay **precision-ladder** coefficients: `Q_β = Q_base·∏_k(1 + c_k·u^k)`, `u = b·ℏ_q²` | **YES** (§3) | [`q-beta-c-k-recursion-from-habiro-q-difference.md`](../../content/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md), [`appendix-mass-binding-algorithms/`](../../content/quantum-observable-universe/appendix-mass-binding-algorithms/) |
-| **`c̃_k`** | **normalised-series** coefficients of the *same* ladder model: the `u^k` Taylor coefficients of `Φ(u)/Φ(0)`, i.e. of `cos(α−u/2)·∏(1+c_j u^j)` divided by its own value at `u = 0`. Distinct from `c_k` because the cosine factor contributes at every order. `c̃₂ = c₂ − 1/8` **exactly and independently of `α`** (Lean, sorry-free: `QOU.QBeta.normalisedQuadCoeff_eq`) ⇒ at the committed `c₂ = −1`, `c̃₂ = −9/8`. **Both numbers are right**; they are one model read at two normalisations, not a discrepancy — see §9i | **YES** (§9i) | [`LadderCoeffNormalisation.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/LadderCoeffNormalisation.lean); `qbeta_alpha_eff_ladder_reconciliation_probe.py` (which measured `−9/8`) |
+| **c_k** | Q_β β-decay **precision-ladder** coefficients: `Q_β = Q_base·∏_k(1 + c_k·u^k)`, `u = b·ℏ_q²` | **YES** (§3) | [`q-beta-c-k-recursion-from-habiro-q-difference.md`](../../folio/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md), [`appendix-mass-binding-algorithms/`](../../folio/quantum-observable-universe/appendix-mass-binding-algorithms/) |
+| **`c̃_k`** | **normalised-series** coefficients of the *same* ladder model: the `u^k` Taylor coefficients of `Φ(u)/Φ(0)`, i.e. of `cos(α−u/2)·∏(1+c_j u^j)` divided by its own value at `u = 0`. Distinct from `c_k` because the cosine factor contributes at every order. `c̃₂ = c₂ − 1/8` **exactly and independently of `α`** (Lean, sorry-free: `QOU.QBeta.normalisedQuadCoeff_eq`) ⇒ at the committed `c₂ = −1`, `c̃₂ = −9/8`. **Both numbers are right**; they are one model read at two normalisations, not a discrepancy — see §9i | **YES** (§9i) | [`LadderCoeffNormalisation.lean`](../../folio/quantum-observable-universe/lean/QOU/QBeta/LadderCoeffNormalisation.lean); `qbeta_alpha_eff_ladder_reconciliation_probe.py` (which measured `−9/8`) |
 | **`c₂^even`** | the **bar-even part** of the ladder's quadratic data, exact in `ℚ(√3)`, ≈ `−8.00641` | no — a third object; do **not** read it as either `c₂` or `c̃₂` | `qbeta_c3even_exact_sseries_probe.py`, bean `8we6` |
-| `c_k(n)` | exponents in the cyclotomic expansion `F_n(z) = ∏_k(1 − q^{−k}z)^{−c_k(n)}` | no — different object | [`braids-and-knots/`](../../content/quantum-observable-universe/braids-and-knots/) |
+| `c_k(n)` | exponents in the cyclotomic expansion `F_n(z) = ∏_k(1 − q^{−k}z)^{−c_k(n)}` | no — different object | [`braids-and-knots/`](../../folio/quantum-observable-universe/braids-and-knots/) |
 | `(c_k, d_k)` | eigenvalue-factor **pair** in `χ_sym(β) = ∏_k(c_k q + d_k)` | no — different object | per-block character blocks |
 | **`cl_k`** (was `c_k`) | **cluster / Ursell** coefficients of the many-body expansion, MeV-valued. `cl_3 = −E₀·Δ²g` is the μ₃-door three-body coefficient (`μ₃ > 0 ⟺ Δ²g < 0`); the Borromean H₉ magnitude lift is the same family. **Renamed off `c_k` 2026-08-07** — it sat within ~12 % of the ladder `c_3 = −2` with no signal they were unrelated objects | no — different object | [`2026-08-07-mu3-door-status-consolidated.md`](../audits/2026-08-07-mu3-door-status-consolidated.md), `computations/deltalambda/` |
 | **d_k** | m_p mass **brane-tower** coefficients (mass-side analog of the Q_β ladder) | **YES** (§4) | [`2026-05-30-qbeta-ck-mp-dk-deep-audit.md`](../audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md), mass compute |
-| `d_k` | chain-complex **differential** (`d_{k+1}∘d_k = 0`, d²=0) | no — unrelated homological `d` | [`confined-knot-binding.md`](../../content/quantum-observable-universe/mass-theory/confined-knot-binding.md) |
+| `d_k` | chain-complex **differential** (`d_{k+1}∘d_k = 0`, d²=0) | no — unrelated homological `d` | [`confined-knot-binding.md`](../../folio/quantum-observable-universe/mass-theory/confined-knot-binding.md) |
 | **a₁ (kernel)** | c_k-recursion kernel **leading coefficient** `a₁ = −c₃ = √2·Φ₂ ≈ 2.07`; q=1 shadow `2 ≠ 0`; parity: nonzero bar-ODD **part** (NOT exactly odd — see §9 KC6) | **YES** (§9) | `QBetaCKRecursionKernelConstraints.lean` |
 | `a₁` (heat-route) | per-mode heat coefficient `κ_{(2,1)}(q)·S` — **exactly** bar-odd, vanishes at q=1, magnitude ~1e-3 (Stage B refuted the per-mode identification; 2000× magnitude mismatch) | no — **distinct object**; do NOT transfer its attributes to the kernel a₁ (the 2026-07-07 tension was exactly this transfer) | [2026-06-13 heat audit](../audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md); [2026-07-07 investigation](../audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md) |
 | `a_n` (z-Taylor) | ℏ-Taylor coefficients of `Δtr_M` / the `z(q)` 3-term recursion sequence (PR #2465 / #1739) | no — upstream z-side data, related by the **open f-map** | `qbeta-z-recursion-to-ck-recursion-bridge.md` |
@@ -73,7 +73,7 @@ cross-referenced so they are never conflated again.
 >
 > | axis | this table | the other value you may meet |
 > |---|---|---|
-> | expansion variable | `u = b·ℏ_q²` | `h = q − 1/q` — and `u^k = (b/(q+1)²)^k·h^{2k}` **exactly**, so a `u`-rung of order `k` is an `h`-rung of order `2k` and odd `h`-orders are unreachable from any `u`-ladder ([`LadderFrameChange.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/LadderFrameChange.lean), sorry-free) |
+> | expansion variable | `u = b·ℏ_q²` | `h = q − 1/q` — and `u^k = (b/(q+1)²)^k·h^{2k}` **exactly**, so a `u`-rung of order `k` is an `h`-rung of order `2k` and odd `h`-orders are unreachable from any `u`-ladder ([`LadderFrameChange.lean`](../../folio/quantum-observable-universe/lean/QOU/QBeta/LadderFrameChange.lean), sorry-free) |
 > | normalisation | explicit factor `(1 + c_k u^k)` | normalised series `Φ(u)/Φ(0)`, whose `c̃₂ = c₂ − 1/8` (§9i) |
 >
 > **A single declaration rather than a per-row column** because all rows are
@@ -200,7 +200,7 @@ empirical integer extraction, not a derivation. The current categorical
 
 ## 5. The c_k recursion — what is actually proved
 
-Block: [`prop:q-beta-c-k-recursion-from-habiro-q-difference`](../../content/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md)
+Block: [`prop:q-beta-c-k-recursion-from-habiro-q-difference`](../../folio/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md)
 (kind `proposition`, title **"Proposition (scaffolding)"**, Lean **sorry-free**).
 
 **Proved (sorry-free):**
@@ -390,7 +390,7 @@ none. Verified in
 > 1. **Not new, and previously uncited.** The mechanism was already established
 >    as **Route A** (2026-08-01) — the ratio is *anchor-offset arithmetic near
 >    the S-zero*, not a period — and is **Lean-proved sorry-free** in
->    [`SLeakMagnitudeOffsetRatio.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/SLeakMagnitudeOffsetRatio.lean)
+>    [`SLeakMagnitudeOffsetRatio.lean`](../../folio/quantum-observable-universe/lean/QOU/QBeta/SLeakMagnitudeOffsetRatio.lean)
 >    (`linear_ratio_slope_independent`, `smooth_ratio_near_one`,
 >    `smooth_period_excluded_as_magnitude`). §9b restated it without the
 >    citation. The citation is now here.
@@ -673,7 +673,7 @@ box at the end of this section.) The supporting
 argument that `q*_S` "is not the precision-weighted mean" (0.0007 % muon-ward)
 is true and irrelevant: no in-window `V` gives a reconciliation either.
 
-Consistent with this, [`SLeakMagnitudeOffsetRatio.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/SLeakMagnitudeOffsetRatio.lean)
+Consistent with this, [`SLeakMagnitudeOffsetRatio.lean`](../../folio/quantum-observable-universe/lean/QOU/QBeta/SLeakMagnitudeOffsetRatio.lean)
 already states the same thing from the magnitude side — *"the magnitude fixes
 only **where the anchors fall** relative to `q*`"*. The anchor offsets and the
 `80.3 %` are one datum, not two.
@@ -842,7 +842,7 @@ to C.
 
 Branch (1) is now **proved**, by an elementary boundedness argument instead:
 `QOU.QBeta.BraidImageEigenphase.no_braid_character_C` / `_D`
-([`BraidImageEigenphaseExclusion.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/BraidImageEigenphaseExclusion.lean),
+([`BraidImageEigenphaseExclusion.lean`](../../folio/quantum-observable-universe/lean/QOU/QBeta/BraidImageEigenphaseExclusion.lean),
 sorry-free, axioms `[propext, Classical.choice, Quot.sound]`). A braid word's
 character is a Laurent polynomial and `|2cos α| ≤ 2` always; a Laurent
 polynomial bounded on `(0,∞)` is constant; and `α_C`, `α_D` are both
@@ -870,7 +870,7 @@ stronger than boundedness: `α` attains **every** non-positive real on `[1,∞)`
 so each level set `{s : 2cos α(s) = c}`, `c ∈ [−2,2]`, is **infinite** — and
 infinitely many solutions kill a polynomial relation of **any** degree, Laurent
 or algebraic. `QOU.QBeta.BraidImageEigenphase.coeffs_zero_of_surjective_nonpos`
-([`BraidImageEigenphaseAlgebraic.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/BraidImageEigenphaseAlgebraic.lean),
+([`BraidImageEigenphaseAlgebraic.lean`](../../folio/quantum-observable-universe/lean/QOU/QBeta/BraidImageEigenphaseAlgebraic.lean),
 sorry-free, axioms `[propext, Classical.choice, Quot.sound]`): if
 `∑_{j≤d} p_j(s)·(2cos α s)^j = 0` on `[1,∞)` then **every** `p_j = 0`. Three
 applications of "a polynomial with infinitely many roots is zero" — freeze `Y`
@@ -948,7 +948,7 @@ neighbourhood, real on the interval). It never reads `z`'s *formula*. So the
 immunity is not a C-vs-D coincidence but a property of the whole class — a
 control convention `z_X = q/(1+q²)`, present in no channel, has the parity too.
 Formalized sorry-free in
-[`LadderParityReflection.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/LadderParityReflection.lean):
+[`LadderParityReflection.lean`](../../folio/quantum-observable-universe/lean/QOU/QBeta/LadderParityReflection.lean):
 `alphaPhase_im_odd_of_reflective_markov` is quantified over *every* reflective
 `z`, with `zD_reflective` the concrete D instance. Only a convention whose `z`
 carries an explicit `i`, or introduces a branch point/pole inside the disc used,
@@ -1013,7 +1013,7 @@ The tilde device is fine; the precedent is not available.)
 | **`c₂^even`** | ≈ `−8.00641` | the **bar-even part**, exact in `ℚ(√3)` | `qbeta_c3even_exact_sseries_probe.py`, bean `8we6` |
 
 **The relation is proved, not measured.**
-[`LadderCoeffNormalisation.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/LadderCoeffNormalisation.lean)
+[`LadderCoeffNormalisation.lean`](../../folio/quantum-observable-universe/lean/QOU/QBeta/LadderCoeffNormalisation.lean)
 (sorry-free, `#print axioms` clean, base ring `ℝ` per §7c since `Real.cos` is
 genuinely archimedean):
 

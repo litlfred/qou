@@ -21,8 +21,8 @@
  */
 import { existsSync, readFileSync } from "fs";
 import { resolve } from "path";
-import { buildContentGraph } from "../folio-assistant/content/pipeline/content-graph";
-import { pointsForward } from "../folio-assistant/content/pipeline/qa-checkers-extended";
+import { buildContentGraph } from "../folio-assistant/cat-harness/content/pipeline/content-graph";
+import { pointsForward } from "../folio-assistant/cat-harness/content/pipeline/qa-checkers-extended";
 
 const REPO = resolve(import.meta.dir, "..");
 const AUDIT = resolve(REPO, "docs/audits/2026-08-10-transitive-prune-overreach.md");
@@ -42,7 +42,7 @@ function auditEdges(): Array<[string, string]> {
   return out;
 }
 
-const g = buildContentGraph(resolve(REPO, "content"), REPO);
+const g = buildContentGraph(resolve(REPO, "folio"), REPO);
 
 function reaches(from: string, to: string): boolean {
   const seen = new Set<string>([from]);

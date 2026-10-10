@@ -1,6 +1,6 @@
 # Chapter 2 QA Report: Quantum Observable Universes
 **Date:** 2026-04-25  
-**Chapter dir:** `/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/`  
+**Chapter dir:** `/home/user/qou/folio/quantum-observable-universe/quantum-observable-universes/`  
 **Manifest:** `quantum-observable-universes.ts`
 
 ---

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-mass-from-generators",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:mass-from-generators",
+  "kind": "remark",
+  "title": "Mass spectrum from $T_{m,n}$ generators and linking operations",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-torus-knot-generators"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-knot-particle-generation",
+  "tags": [
+    "mass",
+    "generator",
+    "torus-knot",
+    "hopf-link",
+    "color-tube",
+    "skein",
+    "CODATA",
+    "atomic-chart"
+  ],
+  "text": "mass-from-generators.md",
+  "leanSource": "mass-from-generators.lean",
+  "provenance": "authored"
+}

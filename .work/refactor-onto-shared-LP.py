@@ -33,7 +33,7 @@ REDUNDANT_FIELDS = {
 def find_md_sibling(lean_path: pathlib.Path) -> pathlib.Path | None:
     base_underscore = lean_path.stem
     base_hyphen = lean_path.stem.replace('_', '-')
-    root = pathlib.Path('content/quantum-observable-universe')
+    root = pathlib.Path('folio/quantum-observable-universe')
     if not root.is_dir():
         return None
     candidates: list[pathlib.Path] = []
@@ -190,7 +190,7 @@ def main() -> int:
     targets = sys.argv[1:]
     if not targets:
         targets = []
-        for p in pathlib.Path('content/quantum-observable-universe/lean/QOU').rglob('*.lean'):
+        for p in pathlib.Path('folio/quantum-observable-universe/lean/QOU').rglob('*.lean'):
             text = p.read_text()
             if re.search(r'^  claim_\w+ : Prop$', text, re.MULTILINE):
                 targets.append(str(p))

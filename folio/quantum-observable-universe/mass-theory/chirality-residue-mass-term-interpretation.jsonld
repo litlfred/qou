@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-chirality-residue-mass-term-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:chirality-residue-mass-term-interpretation",
+  "kind": "remark",
+  "title": "Physical interpretation: the chirality channel as confining background",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-chirality-residue-mass-term",
+    "papers/quantum-observable-universe/blocks/rem-confinement-curvature-rank"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-chirality-residue-mass-term",
+  "tags": [
+    "chirality",
+    "confinement",
+    "mass-tower",
+    "binding-energy",
+    "gauge-invariant"
+  ],
+  "text": "chirality-residue-mass-term-interpretation.md",
+  "provenance": "authored"
+}

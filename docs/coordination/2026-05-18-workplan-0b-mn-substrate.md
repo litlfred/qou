@@ -18,7 +18,7 @@
 | [#735](https://github.com/litlfred/qou/pull/735) | merged | predecessor | Workplan-0b spec |
 | [#772](https://github.com/litlfred/qou/pull/772) | open | **overlap (constructive)** | Audit doc: clarifies that `ρ_K · m_e` (per-atom categorical density × m_e) is distinct from substrate Planck-tick `E_0^(N=0)`; the 210× ratio between them is structural, not a missing normalization |
 | [#761](https://github.com/litlfred/qou/pull/761) | open | dependency-check | Hoefsmit/GP combined stack; #751 Route B probe consumes the Python symbolic-q `hoefsmit_matrices_symbolic(shape, Q)` entry — needs API stability |
-| [#736](https://github.com/litlfred/qou/pull/736) | open | text-conflict | Both PRs edit `content/schema/references.ts`; #751 adds 1 entry (`lang2002algebra`), #736 adds 29. Additive, semantically clean |
+| [#736](https://github.com/litlfred/qou/pull/736) | open | text-conflict | Both PRs edit `folio/schema/references.ts`; #751 adds 1 entry (`lang2002algebra`), #736 adds 29. Additive, semantically clean |
 | [#776](https://github.com/litlfred/qou/pull/776) | open | tangent | Demonstrates canonical pattern for co-located `.lean` → Lake-tree migration; #751's new block uses the co-located pattern with `validation: "stub"`; eventual Lake-tree lift can be a separate follow-up |
 | [#763](https://github.com/litlfred/qou/pull/763) | merged | parallel | Bucket D sample: substrate-derived E_0 for proton/neutron predictions. No file conflict; same workplan-0b scope |
 | [#758](https://github.com/litlfred/qou/pull/758) | merged | parallel | Bucket B batch 2: scripts migrated off direct M_P/M_N symbols. My probes already use the `experimental_constants` registry |

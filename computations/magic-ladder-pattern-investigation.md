@@ -67,7 +67,7 @@ This forces the magic-ladder selection rule to come from an
 candidate dynamical inputs in the QOU framework:
 
 1. **BB-stratum complete-intersection**
-   ([conj:homological-shell-condensation](../../content/quantum-observable-universe/lifting-and-descent/homological-shell-condensation.md))
+   ([conj:homological-shell-condensation](../../folio/quantum-observable-universe/lifting-and-descent/homological-shell-condensation.md))
    — the additional algebraic-geometry condition on the Hecke
    stratum that is *not* implied by self-conjugacy.
 2. **Yekutieli MC-equation** — solvability of the Maurer–Cartan
@@ -75,7 +75,7 @@ candidate dynamical inputs in the QOU framework:
    conjecturally restrictive on the isotropic-oscillator ladder.
 3. **LP/SDP active-basis collapse** — the dominant LR-fusion module
    being self-conjugate *and* uniquely shadow-priced in
-   [`prop:operator-selection-lp`](../../content/quantum-observable-universe/particle-interactions/operator-selection-lp.md).
+   [`prop:operator-selection-lp`](../../folio/quantum-observable-universe/particle-interactions/operator-selection-lp.md).
 4. **Spin-orbit reordering** — physically, magic numbers come from
    the Mayer–Jensen 3D-oscillator-plus-spin-orbit shell-filling
    ordering. The categorical framework would need to encode this
@@ -87,9 +87,9 @@ The negative result is **valuable**: it eliminates pure-partition-
 combinatorics as a candidate explanation and pins the magic-ladder
 selection on the spectral-sequence / BB-stratification side of the
 framework. The
-[homological-condensation conjecture](../../content/quantum-observable-universe/lifting-and-descent/homological-shell-condensation.md)
+[homological-condensation conjecture](../../folio/quantum-observable-universe/lifting-and-descent/homological-shell-condensation.md)
 is therefore doing the *real* work, and the
-[diagrammatic LR-fusion conjecture](../../content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.md)
+[diagrammatic LR-fusion conjecture](../../folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.md)
 should be read as the *necessary* part of the criterion (constituent
 self-conjugacy + content additivity force $\kappa_{\lambda_A} = 0$),
 with the *sufficient* part requiring the homological condensation.

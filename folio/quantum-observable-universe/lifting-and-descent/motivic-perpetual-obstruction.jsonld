@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-motivic-perpetual-obstruction",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:motivic-perpetual-obstruction",
+  "kind": "theorem",
+  "title": "Motivic perpetual obstruction: $\\chi^{\\mathrm{mot}}_A$ is non-trivial at almost every finite place when $\\chi(A) \\neq 0$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-motivic-galois-character",
+    "papers/quantum-observable-universe/blocks/rem-kummer-tower"
+  ],
+  "cites": [
+    "references/yekutieli2010"
+  ],
+  "tags": [
+    "tier:S",
+    "motivic-galois",
+    "perpetuity",
+    "yekutieli",
+    "kummer-tower",
+    "frobenius"
+  ],
+  "leanRef": "qou:QOU.LiftingDescent.motivic_perpetual_obstruction_frobenius",
+  "text": "motivic-perpetual-obstruction.md",
+  "provenance": "authored"
+}

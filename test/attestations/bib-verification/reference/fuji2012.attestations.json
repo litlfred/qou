@@ -1,0 +1,53 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "fuji2012",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 230,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1203.2182v1/1203.2182v1.pdf"
+        },
+        "id": "fuji2012",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "WRONG JOIN. The seeded id was cartan1956, whose ref() entry (references.ts:3875) is a 1956 homological-algebra monograph cited for Whitehead's lemma. This document is a 2012 high-energy-physics preprint, arXiv:1203.2182v1 [hep-th], JHEP style, three authors plus an appendix author, on the refined and categorified volume conjecture. It is not the monograph and the join must be broken. No existing ref() key matches it: grep of references.ts for '1203.2182' and for the third author's surname returns only an unrelated 2017 knots-and-quivers entry, so id is null. Consequence for the corpus worth recording: the single cartan1956 citation site, folio/quantum-observable-universe/mass-theory/spectral-sequence-collapse.lean:72, attaches '[cartan1956] Ch. IX \u00a77 (Whitehead's lemma)' to the class field `WhiteheadHH.inner_of_derivation` (every derivation of a semisimple algebra is inner, i.e. HH^1(A,A) = 0). That locator is therefore UNVERIFIABLE from the corpus's own uploads, because the document filed under that key is a different work entirely; the site also carries a second pointer ([weibel1994] \u00a79) which is the one a reader can currently check. In its own right this document is relevant background: the folio already cites two adjacent works by overlapping authors (gorsky-gukov-stosic2013 on quadruply-graded coloured homology, gukov-pei-putrov-vafa2017 on BPS spectra and 3-manifold invariants), and this is the refined/categorified volume-conjecture paper in that same line. Supporting, not core: no corpus block currently needs a result from it.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Relevant to the folio's active refined/categorified knot-homology front and has no ref() entry. The ledger row must carry id null until an entry exists, so the false join to the homological-algebra key is not propagated.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-za7h"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record that the cartan1956 locator (Ch. IX \u00a77, Whitehead's lemma) cannot be checked against uploads because no copy of that work is in the corpus; the file mis-joined to the key is unrelated. The WhiteheadHH class is a conditional carrier whose only checkable pointer is the secondary [weibel1994] \u00a79.",
+              "target": "QOU.MassTheory.WhiteheadHH",
+              "bean": "qou-yhvj"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "2fe21af194f6"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

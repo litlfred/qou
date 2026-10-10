@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-operational-entropy",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:operational-entropy",
+  "kind": "definition",
+  "title": "Operational entropy of the Reeb dynamics",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-reeb-operations-per-planck"
+  ],
+  "tags": [
+    "information-theory",
+    "metric-entropy",
+    "julia-set",
+    "reeb-flow",
+    "hausdorff-dimension"
+  ],
+  "leanRef": "qou:QOU.Information.operationalEntropy",
+  "text": "operational-entropy.md",
+  "leanSource": "operational-entropy.lean",
+  "provenance": "authored"
+}

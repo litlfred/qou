@@ -1,14 +1,14 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-07T10:38:40.403384+00:00",
-  "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
+  "computedAt": "2026-09-13T11:53:16.540574+00:00",
+  "commitSha": "b1b7e4b259ecfe514ded4b0c52c5b415f7196cdb",
   "assertions": [
     {
       "name": "atlas |tr_M| cross-check (this compute vs Layer-1 table)",
-      "computed": "0.4507326393606963470895380727255613210787527224134073812141123789657843",
+      "computed": "1.62668461921715403020754201063925670296460776325873179669642543551311e-50",
       "expected": 0.0,
-      "passed": false,
+      "passed": true,
       "tolerance": "1e-12",
       "unit": "relative",
       "source": "markov_peel.tr_M_atomic vs canonical-mass-table-extended.witness.json"
@@ -23,8 +23,8 @@
       "source": "Family A m_avg layer (S(p) = 0) vs CODATA m_p; the 29 000 ppm Family A residual is the m_avg gap that Bring-Bloch / categorical q-dilog tower closes (open R&D)."
     }
   ],
-  "allPassed": false,
-  "durationMs": 430,
+  "allPassed": true,
+  "durationMs": 387,
   "computation": "skein-proton-canonical",
   "scriptFile": "skein_proton_canonical.py",
   "scriptHash": "5c356ce83ac5",
@@ -74,13 +74,13 @@
       "tr_M_q_0_canonical": "0.629328402202921918165345746778",
       "abs_tr_M": "0.629328402202921918165345746778",
       "compute_path": "markov_peel.tr_M_atomic(1, 0) symbolic, evaluated at q_0",
-      "wall_sec": "0.14"
+      "wall_sec": "0.13"
     },
     "atlas_cross_check": {
-      "atlas_layer_1_value": "1.145759692457300869689082",
+      "atlas_layer_1_value": "0.6293284022029219181653457",
       "this_compute": "0.6293284022029219181653457",
-      "diff": "-0.516431290254379",
-      "rel_diff": "0.450732639361"
+      "diff": "1.0237188323e-50",
+      "rel_diff": "1.62668461922e-50"
     },
     "skein_hypothesis_panel": {
       "Vol(𝓑₃)/ℏ_q²": "746.4180075979671389879351",

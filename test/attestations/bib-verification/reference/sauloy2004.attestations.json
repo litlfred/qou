@@ -1,0 +1,66 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "sauloy2004",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 451,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0409393v1/0409393v1.pdf"
+        },
+        "id": "sauloy2004",
+        "status": "uncited",
+        "note": "Identified from the title page (arXiv:math/0409393v1, single author, 26 pp; the ingestion produced 3 sections, the first of which holds the whole of \u00a71-2). No ref() entry existed; sauloy2004 created 2026-09-07 by the triage. Cited by ramis-sauloy2006 as its reference [28]. No citation site yet; one bean queued.",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "An algebraic (no discrete summation, no Newlander-Nirenberg) route to the RSZ local classification, whose Prop 4.1 gives in one line the fact the corpus currently argues from RSZ \u00a74.4 / Thm 3.3.5: the sheaf underlying the Stokes sheaf is the vector bundle over E_q of End^{>0}(M0) = sum over mu_i > mu_j of Hom(P_j, P_i), so a single-slope (pure isoclinic) formal class has End^{>0} = 0 and a trivial Stokes sheaf. Read: \u00a71.1 (aims; three classical steps recalled), \u00a72.1 (devissage: flat bundles over E_q, F_A for A in GL_n(C)), Thm 2.1, Prop 2.3, Thm 2.5/2.6 (recalled from RSZ: F(M0) -> H^1(E_q, Lambda_I)), Lemma 2.7-Cor 2.10 (flatness and q-Gevrey decay), \u00a73 Thm 3.7 (canonical resummation F_D(U,V) along a divisor direction D, unique under a divisor bound on the over-diagonal blocks), Cor 3.8-3.9, Prop 3.12, Prop 3.14, Cor 3.16 (the (F_{D,D'}(U)) are a Cech cocycle), Thm 3.18 (F(M0) = H^1(E_q, Lambda_I(M0)) bijectively, algebraic proof), \u00a74 Prop 4.1-4.2 and Lemma 4.3-Prop 4.4 (q-Gevrey filtration; H^1 of a proper open subset of E_q is trivial). Corpus consumers: RSZIsoformalInterface.lean (rszIsoformalDim_one, 'a pure isoclinic module has no isoformal moduli'), the c1-infinity-has-no-stokes-multiplier audit \u00a7'Why, from RSZ' item 2 (the Stokes-sheaf argument), QGevreyOrder.lean (q-Gevrey order \u2014 this paper's \u00a74 filtration is the sheaf-level version). Not load-bearing: every corpus conclusion it supports is already sourced to RSZ; this is a cleaner and earlier citation for one of them. 'Stokes sheaf' greps: 1 content hit (references.ts note), 2 audits, 1 bean (qou-wgnx) \u2014 all RSZ-framed, none cites this paper.",
+          "keyResults": [
+            {
+              "locator": "Prop 4.1 (\u00a74.1)",
+              "statement": "lambda_I(M0) is the sheaf of sections of the holomorphic vector bundle over E_q associated to End^{>0}(M0), the sum of Hom(P_j, P_i) over mu_i > mu_j; the q-Gevrey filtration is the one inherited from End^{>0}(M0).",
+              "useForFolio": "With one slope End^{>0}(M0) = 0: the algebraic one-line form of 'pure isoclinic => trivial Stokes sheaf' behind rszIsoformalDim_one and the c1-infinity audit \u00a72.",
+              "targets": [
+                "QOU.MathlibExt.RSZIsoformalInterface",
+                "docs/audits/2026-08-08-c1-infinity-has-no-stokes-multiplier.md"
+              ]
+            },
+            {
+              "locator": "Thm 3.7, Thm 3.18",
+              "statement": "Canonical resummation of the formal isomorphism along a divisor 'direction' D on E_q, and the bijection F(M0) = H^1(E_q, Lambda_I(M0)) proved by the Cech cocycle of the F_{D,D'}.",
+              "useForFolio": "The 'direction of summation is a divisor on E_q' formulation, the algebraic counterpart of the theta-torsor reading in bean qou-wgnx.",
+              "targets": [
+                "qou-wgnx"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry existed; created as sauloy2004 in this triage.",
+              "target": "folio/schema/references.ts"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "rszIsoformalDim_one and the c1-infinity audit argue 'one slope => no Stokes data' from RSZ; Prop 4.1 is the algebraic form of the same fact and belongs beside the RSZ ref.",
+              "target": "folio/quantum-observable-universe/lean/QOU/MathlibExt/RSZIsoformalInterface.lean",
+              "bean": "qou-vsho"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-09-07T08:38:46Z",
+          "source_sha": "2107d961f606"
+        }
+      }
+    }
+  ]
+}

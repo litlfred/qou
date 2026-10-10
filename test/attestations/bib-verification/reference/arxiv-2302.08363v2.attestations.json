@@ -1,0 +1,101 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "arxiv-2302.08363v2",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 411,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2302.08363v2/2302.08363v2.pdf"
+        },
+        "id": "arxiv-2302.08363v2",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Identified from front matter (hep-th preprint, v2). No ref() entry, no \\cite{} site in content/**/*.md, no -- Ref: in content/**/*.lean; the arXiv id appears nowhere in content/ -> orphan on all three checks. Its Section 4 is the figure-eight (4_1) Andersen-Kashaev state integral written explicitly as a lateral Borel resummation of a trans-series, i.e. the QOU muon anchor. What it supplies that the corpus does not already have from `fantini-wheeler2024`: that reference proves Borel summability of the *perturbative* series; this document addresses the SECOND stage -- after each sector is Borel resummed, the trans-series is still an infinite sum over exponentially small corrections, which is a potential new divergence (the so-called divergence of the OPE). def:ecalle-borel-resummation stops at the single-series median sum and rem:st-is-median-resummation then asserts st = L^med for a *transseries*, so the corpus is currently silently assuming exactly the premise this document isolates. Epistemic scope, stated honestly: this is not a theorem-numbered result. For complex Chern-Simons (Sec 4) the convergence is DERIVED from exact expressions for M_1, M_2 that the document itself attributes as conjectural to its ref [41] (the GGM resurgent-structure paper, arXiv:2007.10190); for the integrable models (Sec 5) it is numerical evidence. Its eq (4.5) coefficients were cross-checked here against the q-series already self-checked in computations/probes/fourone_stokes_series_selfcheck.py and reproduce them exactly (see keyResults), which is what raises this from supporting to core: there is a concrete, named script that should carry the check.",
+          "keyResults": [
+            {
+              "locator": "Sec 2, eqs (2.5)-(2.8)",
+              "statement": "The Borel-resummed trans-series s_pm(Phi) = sum_l y^l s_pm(phi_l)(g) is itself an infinite sum over non-perturbative sectors and is a potential new source of divergence; reorganising by fixed power n of the coupling gives the partial series G_n(y) = sum_l a_{n,l} y^l, and convergence of the G_n with a common radius R (eq 2.8) is the property that makes the resummed trans-series a well-defined function.",
+              "useForFolio": "Supplies the second-stage premise that def:ecalle-borel-resummation does not define and rem:st-is-median-resummation silently uses. That remark identifies st(f~|_eps) with L^med(f~) for a transseries f~, citing Watson/Nevanlinna-Sokal uniqueness -- which is a one-series statement. The sum over sectors is a separate convergence question, and this gives the vocabulary (partial series, common radius R) to state it.",
+              "targets": [
+                "def:ecalle-borel-resummation",
+                "rem:st-is-median-resummation"
+              ]
+            },
+            {
+              "locator": "Sec 4, eqs (4.1)-(4.3), (4.8)-(4.10)",
+              "statement": "For the figure-eight complement the Andersen-Kashaev invariant I(tau) is written as a lateral Borel resummation of an explicit trans-series with two complex-instanton towers q~^l exp(-+ V/(2 pi tau)), q~ = exp(-2 pi i / tau), V = 2.029883... the hyperbolic volume, with perturbative series phi_g(tau) = 3^{-1/4}(1 + ...) and phi_c(tau) = phi_g(-tau); the partial series factorise as G^i_n(y) = a_n M_i(y), so the radius-1 convergence of M_{1,2} gives convergence of every partial series, with the same radius for all n.",
+              "useForFolio": "The 4_1 instance of the previous item, at the corpus's own muon anchor and with V = Vol(4_1) as the instanton action. The corpus has a 5_2 analogue (computations/probes/qbeta_5two_median_borel_resummation_probe.py, which records that the substrate ray misses every Stokes ray) but no 4_1 counterpart; this is the published trans-series a 4_1 probe would be written against.",
+              "targets": [
+                "rem:st-is-median-resummation",
+                "computations/probes/qbeta_5two_median_borel_resummation_probe.py"
+              ]
+            },
+            {
+              "locator": "Sec 4, eq (4.5)",
+              "statement": "M_1(q) = 1 - 8q - 9q^2 + 18q^3 + 46q^4 + O(q^5) and M_2(q) = -9q - 3q^2 + 39q^3 + 69q^4 + O(q^5), the power series in q~ multiplying the two 4_1 instanton towers, stated to be convergent with radius of convergence R = 1 and with exact expressions attributed to its ref [41].",
+              "useForFolio": "Independent published values for the same 4_1 object that computations/probes/fourone_stokes_series_selfcheck.py already self-checks from the `fantini-wheeler2024` eq (74) blocks g_0(q) = 1 - q - 2q^2 - 2q^3 - 2q^4 + ... and 2G_0(q) = 1 - 7q - 14q^2 - 8q^3 - 2q^4 + ... . Verified during this triage by exact rational power-series arithmetic: M_1 = g_0 * 2G_0 exactly through the printed order q^4 (product coefficients 1, -8, -9, 18, 46 reproduce eq (4.5) term by term). M_2 has no comparable factorisation at this order: M_2/g_0 = -9q - 12q^2 + 9q^3 + 36q^4, M_2/(g_0 * 2G_0) = -9q - 75q^2 - 642q^3 - 5580q^4. This turns the existing single-source self-check into a genuine cross-source consistency test between two independent papers' notations for the 4_1 Stokes data. Scope: 4 non-trivial coefficients matched, which is evidence of the identity, not a proof of it.",
+              "targets": [
+                "computations/probes/fourone_stokes_series_selfcheck.py"
+              ]
+            },
+            {
+              "locator": "Sec 4, sentence following eq (4.5)",
+              "statement": "The exact expressions for M_1, M_2 -- the entries carrying the 4_1 Stokes data -- are described as having been *conjectured* in the document's ref [41], not proved.",
+              "useForFolio": "Epistemic calibration for conj:stokes-dt-bps-bridge, whose .md currently reads 'proved by Garoufalidis--Gu--Mari{\\~n}o for the figure-eight 4_1' (same wording repeated at thm:aomega-fourone-dt-count Scope and at docs/audits/2026-08-02-aomega-conditional-gukov-stosic-bps-bridge.md:58-59). This document shares an author with `garoufalidis-gu-marino2023peacock` and, writing about the same 4_1 Stokes data, calls the exact expressions conjectural. Scope-(a): this is evidence about how the source literature describes its own status, not a demonstration that any particular GGM statement is false.",
+              "targets": [
+                "conj:stokes-dt-bps-bridge",
+                "thm:aomega-fourone-dt-count"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Orphan on all three checks and carries the trans-series-convergence layer the resummation blocks depend on. The ref() entry is the prerequisite for the cite-in-block and new-remark actions below.",
+              "target": "def:ecalle-borel-resummation",
+              "bean": "qou-y7ss"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "def:ecalle-borel-resummation defines the Borel transform, lateral sums, Stokes rays and the median average for a single Gevrey-1 series, and never mentions the sum over non-perturbative sectors. Its eqs (2.5)-(2.8) are the natural citation for that second layer.",
+              "target": "def:ecalle-borel-resummation",
+              "bean": "qou-ad5s"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "rem:st-is-median-resummation asserts st = L^med as an identity of two selection rules for a transseries, justified by one-series uniqueness (Watson/Nevanlinna-Sokal) on the analytic side. A remark should record that for a transseries the identification additionally needs the sum over sectors to converge, cite the partial-series criterion, and note the 4_1 case where that convergence is argued (radius 1) rather than proved. What would need checking before any stronger claim: whether the QOU substrate transseries actually satisfies the eq (2.8) growth with a common radius.",
+              "target": "rem:st-is-median-resummation",
+              "bean": "qou-dmar"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "Extend the existing 4_1 Stokes-series self-check with the independently published eq (4.5) coefficients and record the verified relation M_1 = g_0 * 2G_0 through q^4 (and the absence of a comparable form for M_2). Cross-check only; nothing to wire, and the relation is a consistency test between two sources' notations, not a QOU observable.",
+              "target": "computations/probes/fourone_stokes_series_selfcheck.py",
+              "bean": "qou-07m1"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-09T00:10:43.091Z",
+          "source_sha": "c2244e03b170"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

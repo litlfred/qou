@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-self-dual-2group",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:self-dual-2group",
+  "kind": "remark",
+  "title": "Self-duality as constrained 2-group gauge theory",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-instanton"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-categorical-self-duality",
+  "tags": [
+    "2-group",
+    "gauge-theory",
+    "instanton"
+  ],
+  "text": "self-dual-2group.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-brane-tower-terminology",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:brane-tower-terminology",
+  "kind": "remark",
+  "title": "Terminology: brane vs Yekutieli",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-recursive-brane-tower",
+    "papers/quantum-observable-universe/blocks/prop-jet-prolongation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-recursive-brane-tower",
+  "tags": [
+    "brane-tower",
+    "terminology",
+    "yekutieli"
+  ],
+  "text": "brane-tower-terminology.md",
+  "provenance": "authored"
+}

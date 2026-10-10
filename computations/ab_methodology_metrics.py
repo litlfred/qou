@@ -100,10 +100,41 @@ PASS = {"pass"}
 M1_CRIT = "proof-statement-integrity"
 M5_CRITS = ("proof-no-bare-sorries", "proof-no-axiom-growth")
 
+# Criteria whose PLATFORM CHECKER is an unconditional `n/a` stub: it reads no
+# file and can return no verdict at any commit, under any config, with any
+# artefact present. Averaging one into a pass rate contributes 0% BY
+# CONSTRUCTION -- the same defect the `field_hash` filter below exists to
+# prevent, one level up: not a wrong number but a number about nothing.
+#
+# Measured 2026-09-27 against platform pin 37a36ce, over 3653 sidecars: both
+# are 100.0% `n/a` across every entry since 2026-07-13. `proof-lean-compiles`
+# is the control -- same file, same domain, reads a cached artefact, and
+# reports real verdicts -- so this is these two checkers, not the sweep.
+#
+# Owner decision 2026-09-27 (option 2 of bean qou-306p): a metric with a stub
+# among its criteria publishes NO number, with the reason recorded, rather
+# than a diluted one. Deleting the stub from M5_CRITS instead would silently
+# redefine M5 as a one-criterion metric against its own scope doc (§39).
+# Remove an entry here only when the upstream checker is implemented or
+# retired -- upstream bean folio-assistant-89wq.
+STUB_CRITERIA = {
+    "proof-no-axiom-growth":
+        'checkProofNoAxiomGrowth (qa-checkers-extended.ts:2783) is a bare '
+        '`return {result: "n/a", hits: []}`; its one parameter is '
+        "underscore-prefixed and unread",
+    "proof-build-green":
+        'checkProofBuildGreen (qa-checkers-extended.ts:2789) is a bare '
+        '`return {result: "n/a", hits: []}`; likewise. Its name reads as '
+        '"this block\'s Lean builds" and it has never opened a Lean file',
+}
+
+# M5's criteria that cannot report. Non-empty => M5 publishes no number.
+M5_STUBS = tuple(c for c in M5_CRITS if c in STUB_CRITERIA)
+
 
 def iter_first_verdicts():
     """Yield (block, criterion, first_entry, n_entries_until_pass)."""
-    for f in sorted((REPO / "content").rglob("*.qa.json")):
+    for f in sorted((REPO / "folio").rglob("*.qa.json")):
         try:
             doc = json.loads(f.read_text())
         except (OSError, json.JSONDecodeError):
@@ -126,10 +157,20 @@ def iter_first_verdicts():
             # of M2's input (3286 of 3297) and 99.6% of M1's (1096 of 1100),
             # because taking the FIRST verdict systematically selects the oldest
             # entry -- exactly the one that batch overwrote. M1 and M2 are
-            # therefore NOT COMPUTABLE from resolvable data and are reported as
-            # such rather than as a number; see `insufficient` in the witness.
-            # M5 is unaffected (0% unhashed) and the cohort axis is intact
-            # (3 cohorts survive: 145/983/2404 blocks).
+            # therefore reported only where the residual sample survives, with
+            # `M1_n` / `M2_n` carrying that sample size -- read the n before
+            # the rate. CORRECTED 2026-09-27: this comment used to end "are
+            # reported as such rather than as a number; see `insufficient` in
+            # the witness", and NO SUCH KEY EXISTED -- the witness published
+            # `M1_pass_pct` off a single-digit sample with nothing marking it
+            # thin. (Deliberately not quoting the n: it drifts with the
+            # corpus, and a drifting number in a comment is this repo's most
+            # reliable way to manufacture a stale claim.) The key
+            # exists now but covers M5 only (STUB_CRITERIA); M1/M2 remain a
+            # thin-sample caveat, which is a different and weaker claim than
+            # not-computable. Do not widen it without measuring.
+            # M5's own filter loss is 0% unhashed, and the cohort axis is
+            # intact (3 cohorts survive: 145/983/2404 blocks).
             dated = [e for e in entries
                      if isinstance(e, dict) and e.get("reviewed_at")
                      and e.get("field_hash")]
@@ -168,7 +209,11 @@ def main() -> int:
         r["cohort"] = block_first[r["block"]][:7]   # YYYY-MM of the block
 
     cohorts = defaultdict(lambda: {
-        "blocks": set(), "m1": [], "m2": [], "m4": [], "m5": []})
+        "blocks": set(), "m1": [], "m2": [], "m4": [], "m5": [],
+        # per-criterion split of the m5 population, so the `insufficient`
+        # record can evidence the dilution with COUNTS (never a rate -- a
+        # rate here would be a substitute M5 by another name).
+        "m5_by_crit": defaultdict(list)})
     for r in rows:
         c = cohorts[r["cohort"]]
         c["blocks"].add(r["block"])
@@ -197,6 +242,7 @@ def main() -> int:
             c["m4"].append(r["to_green"])
         if r["crit"] in M5_CRITS:
             c["m5"].append(r["result"] in PASS)
+            c["m5_by_crit"][r["crit"]].append(r["result"] in PASS)
 
     def rate(xs):
         """Pass rate as an exact percentage, serialized -- never a float."""
@@ -214,8 +260,43 @@ def main() -> int:
             "M2_n": len(c["m2"]),
             "M4_median_revisions_to_green": (
                 _median_exact(c["m4"]) if c["m4"] else None),
-            "M5_pass_pct": rate(c["m5"]),
+            # None when any M5 criterion is a stub -- see STUB_CRITERIA
+            # and `data.insufficient.M5`. `M5_n` still reports the
+            # population so a reader can see there IS data and that it is
+            # deliberately not aggregated.
+            "M5_pass_pct": None if M5_STUBS else rate(c["m5"]),
+            "M5_n": len(c["m5"]),
         })
+
+    # Metrics that deliberately publish no number, with the reason. A reader
+    # or a downstream aggregator must be able to tell "not reportable" from
+    # "reported as zero" WITHOUT reading this source file.
+    insufficient = {}
+    if M5_STUBS:
+        m5_pop = defaultdict(int)
+        for month in cohorts:
+            for crit, vals in cohorts[month]["m5_by_crit"].items():
+                m5_pop[crit] += len(vals)
+        insufficient["M5"] = {
+            "reported": None,
+            "reason": (
+                "M5 aggregates " + str(len(M5_CRITS)) + " criteria and "
+                + str(len(M5_STUBS))
+                + (" of them has" if len(M5_STUBS) == 1 else " of them have")
+                + " no checker: an "
+                "unconditional `n/a` stub contributes 0 passes by "
+                "construction, so any M5 rate is a weighted average of the "
+                "real criterion and zero. Reported as insufficient rather "
+                "than diluted (owner decision 2026-09-27, bean qou-306p)."
+            ),
+            "stub_criteria": {c: STUB_CRITERIA[c] for c in M5_STUBS},
+            # COUNTS ONLY, deliberately. A per-criterion pass RATE here would
+            # be M5 published under another name, which is what this record
+            # exists to prevent.
+            "first_verdicts_by_criterion": dict(sorted(m5_pop.items())),
+            "unblocked_by": "implementing or retiring the upstream checkers",
+            "beans": ["qou-306p", "folio-assistant-89wq"],
+        }
 
     crit_counts = defaultdict(int)
     for r in rows:
@@ -240,7 +321,7 @@ def main() -> int:
               f"{_short(t['M1_pass_pct']):>9} {t['M1_n']:>5} "
               f"{_short(t['M2_mean_score']):>9} {t['M2_n']:>5} "
               f"{_short(t['M4_median_revisions_to_green']):>7} "
-              f"{_short(t['M5_pass_pct']):>9}")
+              f"{('insuf' if t['M5_pass_pct'] is None and M5_STUBS else _short(t['M5_pass_pct'])):>9}")
 
     from witness_base import WitnessBuilder
     builder = WitnessBuilder.wrap_legacy(
@@ -263,7 +344,9 @@ def main() -> int:
                 "adoption_dates": dict(sorted(adoption.items())),
                 "criteria_counts": dict(top_crits),
                 "cohort_table": table,
+                "insufficient": insufficient,
                 "caveats": [
+                    "M5 publishes no number: one of its two criteria is an unconditional-n/a platform stub (see data.insufficient.M5)",
                     "cohort key is the block's earliest proof verdict (proxy for creation until the v2 git walk)",
                     "M3 + survivorship deferred to v2",
                     "model-version stratification deferred to v2 (needs #2115 archive metadata)",

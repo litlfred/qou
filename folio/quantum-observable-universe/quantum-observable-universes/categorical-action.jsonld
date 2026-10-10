@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-categorical-action",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:categorical-action",
+  "kind": "definition",
+  "title": "Categorical action",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-observable-universe"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-categorical-action-notation-su2",
+    "papers/quantum-observable-universe/blocks/rem-physicist-translation",
+    "papers/quantum-observable-universe/blocks/ex-photon-wavefront"
+  ],
+  "tags": [
+    "action",
+    "categorical",
+    "compositional",
+    "string-diagram"
+  ],
+  "defines": [
+    "categorical-action"
+  ],
+  "leanRef": "qou:QOU.CategoricalAction",
+  "text": "categorical-action.md",
+  "leanSource": "categorical-action.lean",
+  "provenance": "authored"
+}

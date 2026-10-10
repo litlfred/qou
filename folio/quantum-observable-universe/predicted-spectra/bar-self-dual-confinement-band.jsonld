@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-bar-self-dual-confinement-band",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:bar-self-dual-confinement-band",
+  "kind": "proposition",
+  "title": "The open interval $(1/\\varphi^2,\\,\\varphi^2)$ is the maximal bar-self-dual confinement band",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-golden-skew-dual-node",
+    "papers/quantum-observable-universe/blocks/rem-deconfinement-golden-threshold"
+  ],
+  "tags": [
+    "golden-ratio",
+    "bar-involution",
+    "skew-symmetry",
+    "confinement",
+    "deconfinement",
+    "phase-boundary",
+    "substrate-parameter"
+  ],
+  "leanRef": "qou:QOU.Archimedean.BarSelfDualConfBand.bar_self_dual_confinement_band",
+  "text": "bar-self-dual-confinement-band.md",
+  "leanSource": "bar-self-dual-confinement-band.lean",
+  "provenance": "authored"
+}

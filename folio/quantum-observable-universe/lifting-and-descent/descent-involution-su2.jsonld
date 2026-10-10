@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-descent-involution-su2",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:descent-involution-su2",
+  "kind": "example",
+  "title": "Descent involution for $\\mathrm{SU}(2)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-descent-involution",
+    "papers/quantum-observable-universe/blocks/ex-jet-prolongation-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-descent-involution",
+  "tags": [
+    "su2",
+    "descent",
+    "involution",
+    "equivariant"
+  ],
+  "text": "descent-involution-su2.md",
+  "provenance": "authored"
+}

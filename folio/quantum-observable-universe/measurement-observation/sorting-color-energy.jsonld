@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-sorting-color-energy",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:sorting-color-energy",
+  "kind": "proposition",
+  "title": "Sorting deposits energy $q + q^{-1}$ per crossing in the colour fibre",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-observation-braid"
+  ],
+  "tags": [
+    "sorting",
+    "colour-fibre",
+    "energy",
+    "R-matrix",
+    "adjoint",
+    "symmetric",
+    "antisymmetric",
+    "observation"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.sorting_color_energy",
+  "text": "sorting-color-energy.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "berarducci-mantova2018",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 6,
+      "entry": {
+        "id": "berarducci-mantova2018",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T06:23:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "note": "Confirmed paper is 'Surreal numbers, derivations and transseries' by Berarducci & Mantova (arXiv:1503.00315). PolynomialEval.lean:202 cites \u00a72 \u2014 \u00a72 (subsections 2.1 Order and simplicity, 2.2 Field operations, ...) is where the surreal field structure + polynomial extensions are developed. Cited scope matches.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/berarducci-mantova-2018-surreal-derivations.pdf"
+        },
+        "local_pdf": "uploads/berarducci-mantova-2018-surreal-derivations.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "FILE ABSENT: the ledger row points at this path but the file does not exist anywhere in the working tree (verified by find over the whole repo; uploads/ holds 294 files and this is not one of them). The prior 2026-05-19 verification row therefore cannot be re-checked, and I could not confirm the seeded join against the document's own front matter. The verdict is undetermined on that ground alone. The corpus-side citation audit below did not need the document and is reported in full. CITATION AUDIT: two Lean sites, QOU/AppendixSurreals/PolynomialEval.lean:52 (a joint -- Ref: with [conway1976] for the real subfield of No) and :205 (a bare '-- Ref: [key] section 2'). Both are section-level pointers into a surreal-numbers source attached to surreal polynomial-evaluation material, which is a coherent pairing on its face; the registered entry's subject is the right area for that file. I cannot check that section 2 carries the specific content the declaration needs without the document. Note that nothing physical rests on this: the corpus records all surreal narrowings as Language-tier bookkeeping (AGENTS.md section 7ab; the 2026-06-08 transcendental-surreal narrowing ledger).",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "Re-obtain the source or re-scope the citation: two Lean sites cite 'section 2' of a document that is no longer in the tree, so the locator is currently uncheckable by any later reader.",
+              "target": "qou:QOU.AppendixSurreals.PolynomialEval",
+              "bean": "qou-rxen"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    }
+  ]
+}

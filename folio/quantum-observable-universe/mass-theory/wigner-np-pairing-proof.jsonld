@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-wigner-np-pairing",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:wigner-np-pairing",
+  "kind": "proof",
+  "title": "Proof of wigner np pairing",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-wigner-np-pairing"
+  ],
+  "text": "wigner-np-pairing-proof.md",
+  "provenance": "authored"
+}

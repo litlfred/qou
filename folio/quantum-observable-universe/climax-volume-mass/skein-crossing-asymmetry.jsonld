@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-skein-crossing-asymmetry",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:skein-crossing-asymmetry",
+  "kind": "remark",
+  "title": "Crossing asymmetry and emergent Coulomb repulsion",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-skein-crossing-asymmetry"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-skein-crossing-asymmetry",
+  "tags": [
+    "skein",
+    "crossing",
+    "coulomb",
+    "repulsion",
+    "braiding",
+    "r-matrix",
+    "nucleus",
+    "binding"
+  ],
+  "text": "skein-crossing-asymmetry.md",
+  "provenance": "authored"
+}

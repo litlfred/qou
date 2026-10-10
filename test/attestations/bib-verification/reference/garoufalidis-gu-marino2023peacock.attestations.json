@@ -1,0 +1,67 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "garoufalidis-gu-marino2023peacock",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 278,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2012.00062v3/2012.00062v3.pdf"
+        },
+        "id": "garoufalidis-gu-marino2023peacock",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED against the document's front matter. THE QUOTED TEXT IS EXACT; THE STATUS ATTACHED TO IT IS NOT. `stokes-dt-bps-bridge.md:17-19` quotes Conjecture 3(d) \u2014 'the Stokes constants are integers corresponding to the Donaldson\u2013Thomas invariants and the BPS degeneracies' \u2014 and I confirm it verbatim on p. 7: '(d) The Stokes matrix S uniquely determines the Stokes matrices at each Stokes ray, and the Stokes constants are integers corresponding to the Donaldson\u2013Thomas invariants in [KS11, KS14, KS] and the BPS degeneracies in [GMN10, GMN13].' MISCITED CLAIM: the block continues '\u2014 proved by Garoufalidis\u2013Gu\u2013Mari\u00f1o for the figure-eight 4\u2081.' The document does not prove it for 4\u2081. Its abstract partitions its own results explicitly: 'We provide PROOFS of our statements regarding the q-difference equations and their properties of their fundamental solutions and ILLUSTRATE our conjectures regarding the Stokes matrices with NUMERICAL CALCULATIONS for the two simplest hyperbolic 4\u2081 and 5\u2082 knots.' The 4\u2081 treatment is numerical illustration of a conjecture, not a proof of it \u2014 and Conjecture 3 is labelled a conjecture throughout. This matters because the block uses that sentence as the first equality of the Stokes = DT = BPS chain that licenses A_\u03c9 = 3; upgrading 'numerically illustrated conjecture' to 'proved for 4\u2081' converts a conditional into an established link. The corpus does hold an unconditional machine-checked anchor for the q\u21920 value S\u207a(0)_{01} = 3 (`QOU.QBeta.StokesQZeroDTCount`), but that is the corpus's own result, not a proof of Conjecture 3(d) by the authors.",
+          "keyResults": [
+            {
+              "locator": "Conjecture 3(d), p. 7",
+              "statement": "The Stokes matrix S uniquely determines the Stokes matrices at each Stokes ray, and the Stokes constants are integers corresponding to Donaldson\u2013Thomas invariants and BPS degeneracies.",
+              "useForFolio": "The first equality of the Stokes = DT = BPS chain \u2014 correctly quoted, but it is a CONJECTURE.",
+              "targets": [
+                "prop:stokes-dt-bps-bridge"
+              ]
+            },
+            {
+              "locator": "Abstract, p. 1",
+              "statement": "Proofs are supplied only for the q-difference equations and their fundamental solutions; the Stokes-matrix conjectures are illustrated numerically for 4\u2081 and 5\u2082.",
+              "useForFolio": "Establishes that 'proved \u2026 for the figure-eight 4\u2081' is not supported by the source.",
+              "targets": [
+                "prop:stokes-dt-bps-bridge"
+              ]
+            },
+            {
+              "locator": "Conjecture 3(b),(c),(e), p. 7",
+              "statement": "Factorisation of the Stokes automorphism through a fundamental solution W of a dual linear q-difference equation, and the inversion relation S\u208a(x;q)\u1d40 S\u208b(x\u207b\u00b9;q) = 1.",
+              "useForFolio": "The structural relations behind the corpus's FiveTwoStokesMatrixIdentities / StokesSymmetryConstant files.",
+              "targets": [
+                "QOU.QBeta.FiveTwoStokesMatrixIdentities"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "Correct 'proved \u2026 for the figure-eight 4\u2081' to match the document's own accounting (proofs for the q-difference equations; numerical illustration for 4\u2081 and 5\u2082), and re-state the Stokes=DT=BPS first equality as conditional on Conjecture 3(d). The downstream A_\u03c9 = 3 argument should carry that conditionality explicitly.",
+              "target": "prop:stokes-dt-bps-bridge",
+              "bean": "qou-y4c6"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "2aacb7fa43f5"
+        }
+      }
+    }
+  ]
+}

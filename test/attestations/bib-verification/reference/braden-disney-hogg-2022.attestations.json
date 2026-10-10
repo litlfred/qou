@@ -1,0 +1,108 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "braden-disney-hogg-2022",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 288,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2208.13692v1/2208.13692v1.pdf"
+        },
+        "id": "braden-disney-hogg-2022",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED from the arXiv title page (arXiv:2208.13692v1, math.AG): two-author, subject and identifier match the seeded entry. Citation sites: QOU/Archimedean/BringEllipticFactor.lean:55 and QOU/Archimedean/TauFunctorTargetSpec.lean:37, with heavy downstream use of its numbers in docs/coordination/alpha-em.md and the alpha_em probes. LOAD-BEARING AND NUMERICALLY VERIFIED against the PDF: the document states that a Riemann matrix for Bring's curve is tau_B = tau_0 M with tau_0 = -0.5 + 0.186676i (6 d.p.), characterised by j(tau_0) = -29^3 x 5 / 2^5 and j(5 tau_0) = -25/2, and explicitly records that an earlier source had the two j-values SWAPPED (first noted in the intermediate paper the corpus also cites). The corpus's j(tau_0) = -5 x 29^3 / 2^5 = -121945/32, its tau_0 = -0.5 + 0.18667646246... at 50 dps, and its note that the earlier source swapped them all reproduce this document exactly. The X_0(50) elliptic-quotient identification the reference entry claims is also present (text line 1728). The corpus treats these as PUBLISHED INPUTS, not derived quantities, and the alpha-em ledger keeps 1/(8 pi) OPEN - so this is a clean literature-value citation, not a laundered fit.",
+          "keyResults": [
+            {
+              "locator": "section on the period matrix (j-invariant conditions)",
+              "statement": "tau_0 = -0.5 + 0.186676i to 6 d.p., characterised by j(tau_0) = -29^3 x 5/2^5 and j(5 tau_0) = -25/2; Riera-Rodriguez swapped the two values.",
+              "useForFolio": "The published tau_Bring / j(E) input used by BringEllipticFactor.lean and the alpha_em period-matrix probes; also the authority for the swap correction the corpus records.",
+              "targets": [
+                "qou:QOU.Archimedean.BringEllipticFactor",
+                "computations/alpha_em_b2_bring_period_matrix_probe.py"
+              ]
+            },
+            {
+              "locator": "section identifying the new elliptic quotient",
+              "statement": "A new elliptic quotient of Bring's curve is identified, with a model for the modular curve X_0(50).",
+              "useForFolio": "Backs the X_0(50) / 50a labelling used in computations/probes/x050_50a_hecke_gate_probe.py.",
+              "targets": [
+                "computations/probes/x050_50a_hecke_gate_probe.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "compute-check",
+              "rationale": "The corpus recovers tau_0 to 50 dps by an exact SL_2(Z) word and reports a 6-digit match to this paper's 6 d.p. value. Recording that comparison against the printed j(tau_0) = -29^3 x 5/2^5 (rather than only against the derived -121945/32) closes the loop on the published input.",
+              "target": "computations/alpha_em_b2_bring_period_matrix_probe.py",
+              "bean": "qou-1twx"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "567eff9fb44e"
+        }
+      }
+    },
+    {
+      "position": 398,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/s40879-023-00706-0/s40879-023-00706-0.pdf"
+        },
+        "id": "braden-disney-hogg-2022",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Join CORRECT, with a version note: the registered entry is the arXiv:2208.13692 preprint (2022) and this upload is the published version, Eur. J. Math. (2024) 10:3, DOI 10.1007/s40879-023-00706-0, accepted 16 Oct 2023 - same paper, and the registry note explicitly says the journal DOI was omitted pending verification, so this upload supplies it. Cited at twelve-plus Lean sites across QOU/Archimedean/ (BringEllipticFactor, BringHauptmodulGate, HodgeGramLift, PeriodMapWeightReduction, TauRhoHodgeShadow, TauRhoHodgeLiftInterface, B2LiftAutomaticIngredients, PerLoopMeasureShadowAssembly, SigmaJGeometricCarrier, TauFunctorAssembly, VertexLocalTauModel, HodgeWeilRealStructure). Load-bearing and VERIFIED numerically against the source: BringHauptmodulGate.lean:41 cites the key for j(tau_0) = -121945/32, and this document gives j(tau_0) = -(5 x 29^3)/2^5, which is -(5 x 24389)/32 = -121945/32 exactly. The document also confirms the second half of the corpus's citation - it notes that the earlier Riera-Rodriguez equations for j(tau_0) and j(5 tau_0) were incorrectly labelled, which is precisely the correction the Lean attributes to braden-northover-2012 in the adjacent comment. The paper's other results (complete automorphism realisation for a plane-curve model, the new elliptic quotient identified with X_0(50), the theta-characteristic orbit decomposition, the invariant characteristic as the divisor of the Szego kernel) are the Bring's-curve inputs the Archimedean modules build on.",
+          "keyResults": [
+            {
+              "locator": "Sec. 4 (j-invariant computations; eq. (13) and the surrounding elliptic-quotient discussion)",
+              "statement": "j(tau_0) = -(5 x 29^3)/2^5 = -121945/32 for Bring's curve, with the companion value j(5 tau_0), correcting the labelling of the two equations in the earlier Riera-Rodriguez treatment.",
+              "useForFolio": "This is the exact rational the hauptmodul-sextic root theorem is built on; the reading confirms the value the Lean asserts, and supplies the journal DOI the registry note was waiting for.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/Archimedean/BringHauptmodulGate.lean"
+              ]
+            },
+            {
+              "locator": "Abstract; Sec. 1",
+              "statement": "Bring's curve is the unique genus-4 Riemann surface with automorphism group S_5; the paper gives a new elliptic quotient identified with the modular curve X_0(50) and identifies the unique S_5-invariant theta characteristic with the divisor of the Szego kernel.",
+              "useForFolio": "The S_5 structure and the invariant theta characteristic are the geometric inputs the TauRhoHodge / period-map modules cite; having the published version pins the statements.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/Archimedean/BringEllipticFactor.lean"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The registry note says the journal DOI was omitted pending verification and that the arXiv URL is authoritative. This upload is the published European Journal of Mathematics version, so the DOI can now be added to the existing entry.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-kg76"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "4c5af312d2e5"
+        }
+      }
+    }
+  ]
+}

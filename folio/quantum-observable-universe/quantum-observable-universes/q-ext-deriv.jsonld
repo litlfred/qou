@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-q-ext-deriv",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:q-ext-deriv",
+  "kind": "example",
+  "title": "$q$-Deformed exterior derivative",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-reeb-decomposition",
+    "papers/quantum-observable-universe/blocks/prop-categorical-dq-squared"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-q-ext-deriv",
+  "tags": [
+    "exterior-derivative",
+    "archimedean"
+  ],
+  "leanRef": "qou:QOU.qExtDeriv",
+  "text": "q-ext-deriv.md",
+  "leanSource": "q-ext-deriv.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-pair-creation-energy",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:pair-creation-energy",
+  "kind": "remark",
+  "title": "Energy cost of electron--positron conversion",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-trefoil-vortex-chirality-flip",
+    "papers/quantum-observable-universe/blocks/rem-mass-comparison-table"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-crossing-energy",
+  "tags": [
+    "pair-creation",
+    "crossing-energy",
+    "electron",
+    "positron",
+    "energy-budget",
+    "exceptional-divisor",
+    "chirality"
+  ],
+  "text": "pair-creation-energy.md",
+  "provenance": "authored"
+}

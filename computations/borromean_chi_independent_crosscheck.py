@@ -3,7 +3,7 @@
 """Independent cross-check of the Borromean Markov-trace closed form.
 
 Verifies the per-representation claims of
-`content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.md`
+`folio/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.md`
 (the merged GAP-A-4 result; categorical derivation in PR #1933 T17 Schur-Weyl
 R-matrix, content proposition PR #1942) using a **completely independent
 method**: the signed Ocneanu-trace engine `homfly_ocneanu_trace`, whose

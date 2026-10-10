@@ -1,0 +1,50 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "minkov1996",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 339,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-nucl-th-9605013v1/9605013v1.pdf"
+        },
+        "id": "minkov1996",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED from front matter (arXiv identifier, five-author list and subject match the registered entry). LOAD-BEARING AND VERIFIED at its single citation site, folio/quantum-observable-universe/observations/q-deformed-nuclear-models-comparison.md:7. That block attributes to the source (a) a Hamiltonian proportional to the second Casimir of SU_q(2) with spectrum E_I = (1/2 theta)[I]_q[I+1]_q + E_0, and (b) a phase deformation q = e^{i phi} with [I]_q = sin(phi I)/sin(phi) fitted per band. Both check out: the document gives H = (1/2 theta) C_2[SU_q(2)] + E_0 on pp.1-2, and on p.2 (restated p.3) treats q as a phase with the resulting sin(tau I) sin(tau(I+1)) spectrum, tying tau to the valence-pair number and the variable-moment-of-inertia softness parameter exactly as the block's critique describes. This is the good case of a contrast citation: the block uses the source to sharpen a distinction (fitted phase on the unit circle versus the framework's real q_0 > 1) and represents it accurately, without borrowing a number.",
+          "keyResults": [
+            {
+              "locator": "eqs. (1)-(2), \u00a71",
+              "statement": "H = (1/2 theta) C_2[SU_q(2)] + E_0 with q a phase, giving the oscillatory rotational spectrum through [I]_q = sin(tau I)/sin(tau), with tau fitted per band.",
+              "useForFolio": "The comparison baseline for rem:q-deformed-nuclear-models-comparison: same Casimir, different analytic branch, and a per-band fit where the framework has one derived constant.",
+              "targets": [
+                "rem:q-deformed-nuclear-models-comparison"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "The citation is load-bearing, both attributed claims are verified against the source, and the block adopts no number from it. Nothing to change.",
+              "target": "rem:q-deformed-nuclear-models-comparison"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "cdeab7717dcb"
+        }
+      }
+    }
+  ]
+}

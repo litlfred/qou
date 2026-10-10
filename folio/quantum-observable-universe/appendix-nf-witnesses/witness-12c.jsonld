@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-witness-12c",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:witness-12c",
+  "kind": "definition",
+  "title": "Pauli witness for ${}^{12}\\mathrm{C}$ (exact in $q$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hecke-normal-form",
+    "papers/quantum-observable-universe/blocks/prop-shell-closure-normal-form"
+  ],
+  "tags": [
+    "pauli-witness",
+    "carbon-12",
+    "doubly-magic",
+    "exact-polynomial"
+  ],
+  "leanRef": "qou:QOU.Archimedean.PauliWitness.witness_12C",
+  "text": "witness-12c.md",
+  "leanSource": "witness-12c.lean",
+  "provenance": "authored"
+}

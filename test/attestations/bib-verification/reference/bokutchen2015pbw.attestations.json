@@ -1,0 +1,89 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "bokutchen2015pbw",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 425,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1502.06472v1/1502.06472v1.pdf"
+        },
+        "id": "bokutchen2015pbw",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "A 13-page survey of Groebner-Shirshov / Composition-Diamond machinery organised around eight PBW theorems; it proves nothing new, and a full-text keyword scan returns zero hits for Hecke, Temperley, Iwahori, Catalan, Young and quantum group, so it bears on NONE of the branch's five live fronts. Its bearing is on the other chapter, unital-groebner-bases, and it is specific. Sec. 3.7 (p. 6, read and verified in the PDF) collects the counterexamples to PBW for Lie algebras over a commutative algebra: Shirshov 1953 and Cartier 1958 unconditionally, plus Cohn's 1963 family L_p = Lie_K(x1,x2,x3 | y3x3 = y2x2 + y1x1) over K = k[y1,y2,y3 | y_i^p = 0], proved for p = 2, 3, 5 by Bokut-Chen-Chen. Both folio copies of the PBW corollary -- cor:pbw and cor:ugb-pbw -- state Ug isomorphic to Sg as an R-module for a Lie algebra over an arbitrary commutative ring with unity and carry NO freeness hypothesis, while both proofs open by choosing a well-ordered basis for g (verified in the working tree: pbw-corollary.md and pbw-corollary-proof.md in unital-groebner-bases-chapter, and pbw-corollary.md in buchberger-and-pbw). Every neighbouring block in that chapter states 'free as an R-module' explicitly, so the omission reads as a drafting slip. Cohn's K is a commutative ring with unity and L_p is not K-free, so the counterexample family sits inside the corollary's stated hypotheses, and a module isomorphism compatible with the canonical map would force g -> Ug injective. Graded supporting rather than core because the document is a secondary source: it reports the counterexamples in one paragraph and proves none of them, so the primary citations belong to Cartier 1958 / Shirshov 1953 / Bokut-Chen-Chen 2011, none of which is in references.ts or has been read. It supplies nothing toward the one open sorry in the PBW Lean files (normal_form_exists, the termination half), so no aid-proof is proposed.",
+          "keyResults": [
+            {
+              "locator": "Sec. 3.7, p. 6",
+              "statement": "Shirshov (1953) and Cartier (1958) give counterexamples to PBW for Lie algebras over a commutative algebra; Cohn (1963) conjectures that L_p = Lie_K(x1,x2,x3 | y3x3 = y2x2 + y1x1) over K = k[y1,y2,y3 | y_i^p = 0] does not embed into its universal enveloping associative algebra, and Bokut-Chen-Chen prove the conjecture for p = 2, 3, 5.",
+              "useForFolio": "Names the counterexamples showing the missing 'free as an R-module' hypothesis in cor:pbw / cor:ugb-pbw cannot simply be dropped, and supplies the citation for both the hypothesis fix and a sharpness remark.",
+              "targets": [
+                "cor:pbw",
+                "cor:ugb-pbw",
+                "prf:pbw"
+              ]
+            },
+            {
+              "locator": "Sec. 3.1, p. 4",
+              "statement": "For L = Lie_k(X|S) with U(L) = k<X | S^(-)>: S is a Lie GS basis iff S is an associative GS basis, and in that case U(L) has linear basis {u_1 ... u_t : u_1 <= ... <= u_t, u_i in Irr(S) intersect ALSW(X)}.",
+              "useForFolio": "prf:pbw asserts 'the argument that G is a Groebner-Shirshov basis is exactly as in the classical setting' and cites nothing at all (pbw-corollary-proof.ts has no cites field). This is the classical field-case statement that sentence defers to.",
+              "targets": [
+                "prf:pbw"
+              ]
+            },
+            {
+              "locator": "Sec. 1, pp. 2-3",
+              "statement": "Over a commutative algebra K one works in the double-free algebra M_{k[Y]}(X) with lcm(u_Y u_X, v_Y v_X) = lcm(u_Y,v_Y) lcm(u_X,v_X); a composition relative to a trivial lcm(u_X,v_X) is automatically trivial over a field but NOT over a commutative algebra when lcm(u_Y,v_Y) != u_Y v_Y, so a given pair generally has infinitely many compositions.",
+              "useForFolio": "Candidate one-line remark on why the commutative ground ring costs this chapter nothing -- the folio requires unit leading coefficients (LC in R^x, lambda in R^*) plus a monomial basis, so coefficients never entangle with the word monoid. GATED: it must first be checked that those unit conditions genuinely exclude the non-trivial trivial-lcm compositions rather than merely making them unreachable in the worked examples.",
+              "targets": [
+                "thm:buchberger",
+                "thm:ugb-buchberger",
+                "def:s-polynomial"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "cor:pbw states the isomorphism over an arbitrary commutative ring with unity with no hypothesis on g, but its proof begins 'Choose a well-ordered basis {x_i | i in I} for g'. Add 'which is free as an R-module' to the statement, matching the wording every other block in the chapter uses, and cite Sec. 3.7 for why it cannot be dropped. The joined bean covers both copies plus the Lean docstrings.",
+              "target": "cor:pbw",
+              "bean": "qou-pwd4"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Same defect in the second copy: buchberger-and-pbw/pbw-corollary.md states the corollary with no freeness hypothesis and then proves it by 'Choosing a well-ordered basis {x_i | i in I} for g'. Fix both copies in one change so they do not drift apart.",
+              "target": "cor:ugb-pbw",
+              "bean": "qou-pwd4"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "A sharpness remark recording that the freeness hypothesis is not cosmetic: over a commutative ring PBW genuinely fails, and Cohn's family is the standard witness. Must be phrased as reported-by-survey unless the primaries are read first; none of Cohn, Cartier, Shirshov or Bokut-Chen-Chen is in references.ts.",
+              "target": "cor:pbw",
+              "bean": "qou-tvsp"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "One-line remark on why the commutative ground ring costs nothing here, gated on the check named in the third keyResult. Drop the remark if the check fails -- in which case thm:buchberger has a defect and needs its own item.",
+              "target": "thm:buchberger",
+              "bean": "qou-bzj5"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-09T19:30:00Z",
+          "source_sha": "381cd869fcc0"
+        }
+      }
+    }
+  ]
+}

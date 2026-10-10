@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-local-substrate-q",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:local-substrate-q",
+  "kind": "proposition",
+  "title": "Local Value of the Substrate Parameter",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-terminal-resolution",
+    "papers/quantum-observable-universe/blocks/rem-photonic-hall"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-local-substrate-q"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/rem-mass-from-generators",
+    "papers/quantum-observable-universe/blocks/rem-knot-formula-table",
+    "papers/quantum-observable-universe/blocks/rem-mass-comparison-table",
+    "papers/quantum-observable-universe/blocks/rem-w-boson-mass-discrepancy"
+  ],
+  "tags": [
+    "substrate",
+    "mass",
+    "observation"
+  ],
+  "leanRef": "qou:QOU.Experimental.LocalSubstrateQ",
+  "text": "local-substrate-q.md",
+  "leanSource": "local-substrate-q.lean",
+  "provenance": "authored"
+}

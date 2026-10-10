@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-markov-lambda-knot-operations",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:markov-lambda-knot-operations",
+  "kind": "remark",
+  "title": "Knot operations, Markov chain, and the partition $\\lambda$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-hecke-markov-interpretation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-jones-markov-trace",
+  "cites": [
+    "references/diaconis-ram2000",
+    "references/jones1987"
+  ],
+  "tags": [
+    "markov-chain",
+    "young-graph",
+    "syt",
+    "wedderburn",
+    "markov-moves",
+    "reidemeister",
+    "plancherel"
+  ],
+  "text": "markov-lambda-knot-operations.md",
+  "provenance": "authored"
+}

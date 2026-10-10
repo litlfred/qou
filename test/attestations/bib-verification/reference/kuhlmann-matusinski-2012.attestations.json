@@ -1,0 +1,49 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "kuhlmann-matusinski-2012",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 128,
+      "entry": {
+        "id": "kuhlmann-matusinski-2012",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T18:45:33Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": "(this commit)",
+        "note": "Kuhlmann-Matusinski surreal exp-log equivalence. Fits Surreal Numbers appendix. Cited in calculus-up-to-epsilon.ts (cites array).",
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1203.4538v1/1203.4538v1.pdf"
+        },
+        "local_pdf": "library/arxiv-1203.4538v1/1203.4538v1.pdf",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Identity confirmed from the document's own cover (arXiv:1203.4538v1 [math.AC], exponential-logarithmic equivalence classes of surreal numbers, two authors) and matches the seeded key. Single citation site: folio/quantum-observable-universe/appendix-surreals/calculus-up-to-epsilon.ts:19, inside the `cites:` array. NOT load-bearing: the sibling calculus-up-to-epsilon.md never mentions exponential or logarithmic equivalence classes anywhere. Its five numbered sections are the Jackson q-derivative as native d/dx, the Berarducci-Mantova derivation and its right inverse, limits-as-evaluations at omega, formal power series, and the Loeb hyperfinite measure \u2014 the surreal results it actually consumes are Gonshor's exp/log and Berarducci-Mantova's derivation, both of which the prose names explicitly and neither of which is this document. The document's own main result (a recursive and sign-sequence description of the representatives of minimal length of the exponential equivalence classes) has no consumer in the block. Verdict supporting rather than tangential: it is genuinely part of the surreal exp/log literature the appendix sits in, and per the AGENTS.md surreal-narrowing ledger this whole area is Language-tier, so a background cite is appropriate \u2014 it is simply not doing work.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "A background entry in a cites-array for an appendix in the same subject area is a legitimate, low-cost citation. Flagging it as 'must be surfaced inline' would inflate its role; the honest record is that no corpus claim depends on it.",
+              "target": "rem:calculus-up-to-epsilon"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "5e44909e355c"
+        }
+      }
+    }
+  ]
+}

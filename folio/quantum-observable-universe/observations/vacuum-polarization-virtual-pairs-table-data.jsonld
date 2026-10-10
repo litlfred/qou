@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-vacuum-polarization-virtual-pairs-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:vacuum-polarization-virtual-pairs-table-data",
+  "kind": "table",
+  "title": "QFT concepts and their QOU brane-tower realisations",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-vacuum-polarization-virtual-pairs"
+  ],
+  "tags": [
+    "virtual-particles",
+    "vacuum-polarisation",
+    "qft-dictionary",
+    "summary-table"
+  ],
+  "text": "vacuum-polarization-virtual-pairs-table-data.md",
+  "provenance": "authored"
+}

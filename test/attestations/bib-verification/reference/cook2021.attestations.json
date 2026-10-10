@@ -1,0 +1,62 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "cook2021",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 280,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/210811825v1/2108.11825v1.pdf"
+        },
+        "id": "cook2021",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Genuine orphan; a doctoral thesis on Laplacian eigenvalue multiplicities of constant-negative-curvature surfaces with large symmetry groups, treating the Bolza surface (genus 2, automorphism group GL_2(Z_3) semidirect Z_2) and the Klein quartic (genus 3, PGL_2(Z_7) semidirect Z_2), proving mult(lambda_1) = 3 and mult(lambda_2) = 4 for Bolza and mult(lambda_1) in {6,7,8} for the Klein quartic, with numerical eigenvalue appendices for those surfaces and the Fermat quartic. The folio's central object is a genus-4 surface with automorphism group S_5 \u2014 the exact next member of that family \u2014 and folio/quantum-observable-universe/brings-surface/hyperelliptic-quintic.md already places a folio surface 'in the Bolza family' citing bolza1887. So the METHOD (decompose L^2 of the surface into irreducibles of the automorphism group, then bound eigenvalue multiplicities representation-theoretically) transfers directly. Honest limits: the thesis does NOT treat the genus-4 case, the Bolza lambda_1 result is stated as conditional on a further conjecture with numerical evidence, and \u2014 the reason this is not core \u2014 grep finds no folio claim about a Laplacian spectral gap or first eigenvalue on its surface for the method to serve. It is a technique source with no current consumer.",
+          "keyResults": [
+            {
+              "locator": "Abstract; Ch. 3",
+              "statement": "Representation-theoretic decomposition under the full automorphism group determines Laplacian eigenvalue multiplicities on maximally symmetric hyperbolic surfaces: multiplicity 3 for lambda_1 and 4 for lambda_2 on the Bolza surface (the lambda_1 result conditional on a stated conjecture supported numerically).",
+              "useForFolio": "The transferable method for any future folio claim about the Laplacian spectrum of its genus-4 S_5-symmetric surface; the numerical appendices give reference eigenvalues for the neighbouring genus-2 and genus-3 cases.",
+              "targets": [
+                "rem:brings-smoothness"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry; the folio already cites the 19th-century Bolza source and works the same surface family one genus up, so the modern spectral treatment is the natural companion.",
+              "target": "rem:brings-smoothness",
+              "bean": "qou-c5y8"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Worth recording that the automorphism-irrep method extends in principle to the folio's genus-4 S_5 surface \u2014 and, equally, that the folio currently makes no eigenvalue-multiplicity claim there, so this is an available technique rather than a gap being closed.",
+              "target": "rem:brings-smoothness",
+              "bean": "qou-7vmi"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "1c2a4b317d62"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

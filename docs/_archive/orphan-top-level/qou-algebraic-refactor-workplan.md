@@ -65,7 +65,7 @@ In `observations`, kind `example`, sibling section to `magic-numbers-from-q`:
 ### Lean (axiom-class pattern, AGENTS.md §3b)
 
 Each `conj:` block carries a Lean file under
-`content/quantum-observable-universe/lean/QOU/` declaring the
+`folio/quantum-observable-universe/lean/QOU/` declaring the
 conjecture as a typeclass with named structural fields. Downstream
 results (e.g. magic-number ladder) become conditional theorems
 parameterised on the relevant typeclass instance.
@@ -137,7 +137,7 @@ only when:
 ## Phase 2.5 — Mathlib bridge wired
 
 - Mathlib `YoungDiagram` is now wired into the QOU Lake build
-  via [`QOU/BraidKnot/MathlibBridge.lean`](../content/quantum-observable-universe/lean/QOU/BraidKnot/MathlibBridge.lean).
+  via [`QOU/BraidKnot/MathlibBridge.lean`](../folio/quantum-observable-universe/lean/QOU/BraidKnot/MathlibBridge.lean).
   - `fromMathlib : Mathlib.YoungDiagram → QOU.YoungDiagram` is a
     concrete definition (no axioms): take the multiset of cell
     contents `j - i` from `Y.cells.val`.
@@ -170,7 +170,7 @@ only when:
 
 CSL-JSON keys follow the canonical `authorYEAR` (or
 `author1-author2YEAR`) lowercase ASCII format used elsewhere in
-`content/schema/references.ts`. The following may be added if not
+`folio/schema/references.ts`. The following may be added if not
 already present:
 
 - `bialynicki-birula1973` — BB stratification
@@ -178,7 +178,7 @@ already present:
 - `ariki1996` — Specht modules at roots of unity
 - `ram1991` — Hecke trace / RSK
 
-Existing keys reused (already in `content/schema/references.ts`):
+Existing keys reused (already in `folio/schema/references.ts`):
 `hoefsmit1974`, `jucys1974`, `murphy1992`, `mathas1999`,
 `kassel1995`, `turaev2010`, `yekutieli2010`, `yekutieli2008`,
 `yekutieli2015`.

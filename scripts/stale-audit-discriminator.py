@@ -85,7 +85,7 @@ REPO = Path(subprocess.run(["git", "rev-parse", "--show-toplevel"],
 TREES = {
     "docs/audits": REPO / "docs" / "audits",
     "docs/coordination": REPO / "docs" / "coordination",
-    ".beans": REPO / ".beans",
+    "beans/defs": REPO / "beans/defs",
 }
 
 # (a) topic.  Bare `peel` is far too common in prose, so it counts only in a
@@ -683,7 +683,7 @@ def reconcile():
                 a.append(t)
         a10 = [t for t in a if extract_decimals(t)]
         bu = bu10 = bc = bc10 = 0
-        for f in sorted(glob.glob(str(REPO / ".beans/*.md"))):
+        for f in sorted(glob.glob(str(REPO / "beans/defs/*.md"))):
             t = Path(f).read_text(errors="replace")
             if not pat.search(t):
                 continue

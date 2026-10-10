@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-type-b-folded-crystal-combinatorics",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:type-b-folded-crystal-combinatorics",
+  "kind": "proposition",
+  "title": "Type-B folded crystal combinatorics: $c(\\lambda) + c(\\lambda^T) = 0$ summand-by-summand",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-crystal-basis-resolves-mass-tower-open-problems",
+    "papers/quantum-observable-universe/blocks/prop-chirality-writhe-ribbon-derivation"
+  ],
+  "cites": [
+    "references/kashiwara1991",
+    "references/brundankleshchev2009",
+    "references/lecouvey2007"
+  ],
+  "tags": [
+    "type-b-folding",
+    "kashiwara-crystal",
+    "partition-content",
+    "transpose-involution",
+    "chirality-factor",
+    "combinatorics"
+  ],
+  "leanRef": "qou:QOU.Archimedean.TypeBCrystal.PartitionWithCells.content_sum_plus_transpose_content_sum_eq_zero",
+  "text": "type-b-folded-crystal-combinatorics.md",
+  "provenance": "authored"
+}

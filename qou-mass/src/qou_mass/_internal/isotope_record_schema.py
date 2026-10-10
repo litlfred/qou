@@ -192,7 +192,7 @@ CANONICAL_INTERFACE_PN = "pn coupling: σ + (-h/2)·𝟙 at gen 3k+2 (averaged)"
 # the *uniform-flavor* channel assignment (one Hecke generator per
 # inter-nucleon arc, indexed only by the pair of nucleon types).  Per
 # `conj:inter-nucleon-channel-color-tube`
-# (`content/quantum-observable-universe/braids-and-knots/`),
+# (`folio/quantum-observable-universe/braids-and-knots/`),
 # this is the **flavor-only projection** of a categorically-refined
 # Bring color-tube weighted assignment that averages over the 9 color-
 # pair couplings (3 colors per nucleon × 3 colors per nucleon) on each

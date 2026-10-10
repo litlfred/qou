@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-benzene-threading-emergence",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:benzene-threading-emergence",
+  "kind": "proposition",
+  "title": "Threading link $T(2,6)$ emerges as the LP-optimal $\\pi$ configuration",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-q-integer-mass-formula",
+    "papers/quantum-observable-universe/blocks/def-benzene-molecular-braid",
+    "papers/quantum-observable-universe/blocks/prop-co2-lp-dual-binding"
+  ],
+  "tags": [
+    "benzene",
+    "threading-link",
+    "delocalization",
+    "LP-dual",
+    "aromatic",
+    "emergence"
+  ],
+  "leanRef": "qou:QOU.Molecular.benzene_threading_emergence",
+  "text": "benzene-threading-emergence.md",
+  "provenance": "authored"
+}

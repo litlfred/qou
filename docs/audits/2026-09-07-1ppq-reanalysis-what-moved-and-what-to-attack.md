@@ -27,6 +27,55 @@ needed from research and lit."*
 > **Not touched, deliberately:** the 66 files that hardcode `137.035999084`. That is bean
 > `qou-7ot6`'s drain and is not a blind sweep to launch off this document.
 
+> **🛑 AMENDED 2026-09-13 — TWO OWNER RULINGS LANDED THE DAY AFTER THIS DOCUMENT, AND THE `Q_β`
+> BAND IN §1 IS RETIRED BY A FACTOR OF 1.3 × 10⁵. Read this before §1, §2a, §3 (W1) or §5 item 2.**
+>
+> This document put "which functional is `ε` in `Q_β = |ε(Δ)|·E₀`" and "which element is `Δ`" to
+> the owner as the open fork. **Both were ruled on 2026-09-08, and both rulings selected the LESS
+> accurate option** — which is the 🟥 anti-fit directive working exactly as written, not a defect
+> in either ruling. Accuracy is a diagnostic here, never a tie-breaker.
+>
+> - **R1 — `ε` := the Markov trace at `z_D = q³/(q²+1)`** (`2a13dbd85d`, following D7). Of the
+>   three cells this document's §2a tabulated, the ruled one is the **farthest** from CODATA:
+>   −43.157 % against the published +0.168 % and the augmentation's +12.470 %.
+> - **R2 — the γγ word-selection ruling (`qou-ales`) selects the nucleon braid ORDERING**, landed
+>   via #7212 / `85ffb930e2`. It picks `nuc11_interleaved` (−17.496 %) over `nuc11_gen_grouped`
+>   (−15.451 %) — again the less accurate of the two.
+>
+> **What that did to §1's table.** `22ff8a86d2` and `573b2ece24` re-scored the three derived rows
+> onto the ruled base. Committed witness `per-observable-100x-status.witness.json`
+> (`scriptHash 98317bdcfb5c`, current with its producer):
+>
+> | row | §1 above | after R1+R2 | degraded by |
+> |---|---:|---:|---:|
+> | `Q_β` | 1279 ppb, **164.0×** | 1.668e8 ppb, **2.139e7×** | 1.30e5× |
+> | `m_n` | 0.9029 ppb, **176.7×** | 1.389e5 ppb, **2.718e7×** | 1.54e5× |
+> | `Δ_pn` | 658.0 ppb, **151.7×** | 1.009e8 ppb, **2.327e7×** | 1.53e5× |
+>
+> `m_μ` (970.2×) and `m_K/m_π` (0.195× ✓) are unchanged, and `α_EM` is on the dashboard at 238.3×
+> per the banner above, so the headline is **`beats_100x_scoreable = 1`, `scoreable_total = 6`** —
+> **1/6, not the 1/5 written throughout this document.** The `0/5 unconditional` statement becomes
+> **0/6**; the reason is unchanged.
+>
+> **The 1.3e5× has a measured anatomy and it is NOT one defect** (`173da443b6`): **257× is the
+> functional** (the ruled `z_D` cell against the retired `z = 1` one) and **1312× is the missing
+> ladder** — `ck_rungs_applied: 0`, because no `c_k` ladder exists on the ruled base. A second
+> re-score is pre-authorised once `qou-pdix` (the phase) closes, tracked on `qou-iagg`. So most of
+> the degradation is a *not-yet-built* ladder rather than a *wrong* functional.
+>
+> **§5 item 2 has changed shape, not priority.** It asked for "a non-ladder derivation of `Q_β`".
+> The functional half of that is now ruled, so what remains open is the **element**, and it is
+> sharper than "which of four": the scored `nuc11_interleaved` is **eleven** letters, every γγ word
+> has **even** length (`gammaGamma_length_even`, sorry-free), so R2 reaches only the **6-letter
+> core** and provably cannot reach the 3-letter quark block (odd) or the 2-letter gluon pair (both
+> letters positive). **5 of 11 letters are still census-derived and have no derived constraint** —
+> and `qou-ales` is *"shouldn't use census"*. That is where a closing `Δ` would have to come from,
+> and it is now the single most sharply-stated open item in W1 (bean `qou-99qc`, still `todo`).
+>
+> **Not amended below:** §1's table, §2a, §3 and §5 item 2 are left as written. They are the
+> measurement that motivated the question the owner then answered, and rewriting them in place
+> would destroy the record of what was known when the question was put. Read them as of 2026-09-07.
+
 Supersedes, as a status document,
 [`2026-08-18-mass-binding-accuracy-what-is-closeable.md`](2026-08-18-mass-binding-accuracy-what-is-closeable.md)
 — its §1 recount and §3 refutation both stand and are re-confirmed below; its §7 ranking is

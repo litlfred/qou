@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-torus-embeddable-complete",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:torus-embeddable-complete",
+  "kind": "proof",
+  "title": "Proof of torus embeddable complete",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-torus-embeddable-complete"
+  ],
+  "text": "torus-embeddable-complete-proof.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-mi-sw-abelianisation",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:mi-sw-abelianisation",
+  "kind": "proof",
+  "title": "Proof of Abelianisation of the MI integral on exceptional divisors",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-mi-sw-abelianisation",
+    "papers/quantum-observable-universe/blocks/lem-mi-sw-abelianisation-cartan"
+  ],
+  "text": "mi-sw-abelianisation-proof.md",
+  "provenance": "authored"
+}

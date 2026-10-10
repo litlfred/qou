@@ -1,0 +1,106 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "braden-northover-2012",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 234,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1206.6004v2/1206.6004v2.pdf"
+        },
+        "id": "braden-northover-2012",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED against the document's front matter. CITATIONS ARE LOAD-BEARING AND EVERY CHECKABLE CLAIM HOLDS. The \u03b1_EM B2 route takes the S\u2085-invariant period matrix Z = \u03c4\u2080\u00b7C from the companion 1992 source and applies this document's correction to it (`alpha_em_b2_bring_period_matrix_probe.py:239`, `x5-bring-prym-jacobian.md:12`, `BringEllipticFactor.lean:57`, `BringHauptmodulGate.lean:43`, `TrBIntegerTracePrune.lean:53`). The registry's CAVEAT is verbatim in the PDF at p. 15: 'Riera and Rodr\u00edguez swap these two equations. However, we believe this to be a typographical error.' The 29\u00b3\u00d75 numerator behind the corpus's j(\u03c4\u2080) = \u22125\u00b729\u00b3/2\u2075 appears at the same location, matching the BringHauptmodulGate comment 'corrected j(\u03c4\u2080)/j(5\u03c4\u2080)'. The abstract confirms the document recovers and extends the earlier period matrix via an algebraic sextic model and identifies the vector of Riemann constants \u2014 supporting both roles the ~14 citation sites assign it. Citation form is healthy: every `-- Ref:` I inspected carries the registered identifier.",
+          "keyResults": [
+            {
+              "locator": "p. 15 (j-invariant equations)",
+              "statement": "The document states that the earlier source swaps the two j-invariant equations and identifies this as a typographical error; the corrected values carry the 29\u00b3\u00d75 numerator.",
+              "useForFolio": "The correction the \u03b1_EM B2 Bring-period probes apply; already wired.",
+              "targets": [
+                "computations/alpha_em/alpha_em_bring_real_structure_probe.py"
+              ]
+            },
+            {
+              "locator": "Abstract; algebraic-model section",
+              "statement": "Recovery and extension of the period matrix of the genus-4 Bring curve (Aut = S\u2085) via an algebraic sextic model, plus identification of the vector of Riemann constants.",
+              "useForFolio": "Structural input (a) of the \u03b1_EM B2 route.",
+              "targets": [
+                "prop:x5-bring-prym-jacobian"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Join correct, identifier consistent across sites, and both the period-matrix role and the typographical-error correction verified against the document.",
+              "target": "prop:x5-bring-prym-jacobian"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "b490672c8c35"
+        }
+      }
+    },
+    {
+      "position": 399,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/sigma12-065/sigma12-065.pdf"
+        },
+        "id": "braden-northover-2012",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED from front matter (venue, volume/article number, page count and DOI on the title page match the registered entry). LOAD-BEARING AND VERIFIED at the sharpest of its four sites. QOU/Archimedean/BringHauptmodulGate.lean:43 cites it for the 'corrected j(tau_0)/j(5 tau_0) labelling (RR92 swaps the two equations)'. That is exactly right: eq. (4.3) gives j(tau_0) = -29^3 x 5 / 2^5 and j(5 tau_0) = -25/2, and its footnote 5 reads 'Riera and Rodriguez swap these two equations. However, we believe this to be a typographical error.' The value -29^3 x 5/2^5 = -121945/32 is the constant the Lean's sextic-root theorem (hauptmodul_sextic_root) uses, so the arithmetic gate and its cited source agree exactly. The other three sites are consistent with the document's stated content (the period matrix tau = tau_0 C, the S_5-invariant structure, the vector of Riemann constants in its Thm 3): QOU/Archimedean/BringEllipticFactor.lean:58, QOU/BraidKnot/TrBIntegerTracePrune.lean:56, and rem:x5-bring-prym-jacobian at x5-bring-prym-jacobian.md:12. ONE NUMERICAL DISCREPANCY worth a cross-check: this document gives tau_0 ~ -0.5 + 0.185576i (below eq. 4.2), while BringHauptmodulGate.lean:41 records tau_0 ~ -0.5 + 0.186676i from braden-disney-hogg-2022. The two differ in the fourth decimal. The Lean is right to treat only the invariants as exact, but the pair should be reconciled rather than left as undocumented drift.",
+          "keyResults": [
+            {
+              "locator": "eq. (4.3) + footnote 5, \u00a74",
+              "statement": "tau_0 is defined by j(tau_0) = -29^3 x 5/2^5 = -121945/32 and j(5 tau_0) = -25/2; the earlier literature swaps these two equations, which the authors believe to be a typographical error.",
+              "useForFolio": "The corrected labelling the Bring hauptmodul gate depends on, and the source of the -121945/32 constant in its exact-rational sextic-root theorem.",
+              "targets": [
+                "QOU.Archimedean.BringHauptmodulGate"
+              ]
+            },
+            {
+              "locator": "eq. (1.1), \u00a74 and Thm 3",
+              "statement": "Bring's curve has period matrix tau = tau_0 C in a canonical basis adapted to the S_5 symmetry, with tau_0 ~ -0.5 + 0.185576i; Thm 3 identifies the vector of Riemann constants for that homology basis.",
+              "useForFolio": "The period-matrix input behind the Prym/Jacobian isogeny recovering J(Bring) ~ E^4 in rem:x5-bring-prym-jacobian.",
+              "targets": [
+                "rem:x5-bring-prym-jacobian"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "compute-check",
+              "rationale": "This document gives tau_0 ~ -0.5 + 0.185576i while BringHauptmodulGate.lean:41 records -0.5 + 0.186676i from braden-disney-hogg-2022. Determine which is the corrected value and note the supersession in the Lean, so the gate's numeric context does not silently carry two different tau_0.",
+              "target": "QOU.Archimedean.BringHauptmodulGate",
+              "bean": "qou-mre6"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "a6e0e0da5cc5"
+        }
+      }
+    }
+  ]
+}

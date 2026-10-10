@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/fred2005-formal-groups/blocks/thm-grobner-shirshov-basis-exists",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:grobner-shirshov-basis-exists",
+  "kind": "theorem",
+  "title": "Existence of Groebner--Shirshov basis",
+  "uses": [
+    "papers/fred2005-formal-groups/blocks/def-non-commutative-formal-group",
+    "papers/fred2005-formal-groups/blocks/def-grobner-shirshov-basis"
+  ],
+  "cites": [
+    "references/fred2005"
+  ],
+  "tags": [
+    "groebner-shirshov",
+    "existence",
+    "flat-deformation"
+  ],
+  "leanRef": "fred2005:Fred2005.grobner_shirshov_basis_exists",
+  "text": "grobner-shirshov-basis-exists.md",
+  "leanSource": "grobner-shirshov-basis-exists.lean",
+  "provenance": "authored"
+}

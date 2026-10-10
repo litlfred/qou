@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-prolonged-periods-fixed-depth",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:prolonged-periods-fixed-depth",
+  "kind": "proof",
+  "title": "Proof that a fixed-depth recurrence for the prolonged periods exists",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-prolonged-periods-fixed-depth"
+  ],
+  "text": "prolonged-periods-fixed-depth-proof.md",
+  "provenance": "authored"
+}

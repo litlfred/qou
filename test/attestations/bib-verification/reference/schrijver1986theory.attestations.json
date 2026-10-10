@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "schrijver1986theory",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 38,
+      "entry": {
+        "id": "schrijver1986theory",
+        "status": "partial",
+        "verified_at": "2026-05-19T15:38:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 8,
+        "fix_commit": "(this commit)",
+        "note": "Schrijver, Theory of Linear and Integer Programming, Wiley 1986. 8 bare-URL Refs \u2192 title+publisher.",
+        "source": {
+          "kind": "external",
+          "url": "https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-stable-atom-properties",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:stable-atom-properties",
+  "kind": "remark",
+  "title": "Properties of ILP stability",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-stable-atom",
+    "papers/quantum-observable-universe/blocks/def-confinement-level",
+    "papers/quantum-observable-universe/blocks/prop-mass-endomorphism-tower"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-stable-atom",
+  "tags": [
+    "stability",
+    "ilp",
+    "lp-dual",
+    "frobenius-positivity",
+    "confinement"
+  ],
+  "text": "stable-atom-properties.md",
+  "provenance": "authored"
+}

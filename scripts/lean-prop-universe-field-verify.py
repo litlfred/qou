@@ -10,7 +10,7 @@ than with *a* proposition —
 
 The instance chooses the proposition, so `⟨_, True⟩` inhabits the carrier and
 any `[DescentData]`-conditional result is unconditional. The audit
-(`content/pipeline/lean-vacuity-axiom-audit.ts`) flags it; this decides it, so
+(`folio/pipeline/lean-vacuity-axiom-audit.ts`) flags it; this decides it, so
 a ledger verdict rests on a re-runnable check rather than on trust.
 
 `legit` requires one of: no bare `Prop` field; an `@marker` / `opaque marker`

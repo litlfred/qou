@@ -23,7 +23,7 @@ Both finite-truncation predictions are justified by the **eigenfunction dampenin
 
 ### 1A. New content block: `q-beta-spectral-bridge.md/.ts/.lean`
 
-Location: `content/quantum-observable-universe/particle-interactions/`
+Location: `folio/quantum-observable-universe/particle-interactions/`
 
 **Statement (md content)**:
 
@@ -92,7 +92,7 @@ This is a **tractable Mathlib proof** (Taylor expansion + algebra). Should reduc
 
 ### 2B. Close mechanical sorries in existing files
 
-**`content/quantum-observable-universe/lean/QOU/MassEndomorphism/PhiQConvergence.lean`** (cycle 3, this branch):
+**`folio/quantum-observable-universe/lean/QOU/MassEndomorphism/PhiQConvergence.lean`** (cycle 3, this branch):
 
 2 mechanical zpow normalization sorries. Close via:
 - Lemma 1: `zpow_neg_add_one` to rewrite $q^{-(k+1)}$ as $q^{-1} \cdot q^{-k}$
@@ -156,9 +156,9 @@ PR #637's deliverables stand as-is. No further work needed on this branch beyond
 | `docs/audits/2026-05-11-q-beta-residual-decomposition.md` | The Frobenius factorization 1.00744 = 1.00168 × 1.00579 |
 | `docs/audits/2026-05-11-q-beta-form-A-vs-form-B-canonical-choice.md` | Form A vs Form B + bridge derivation + eigenfunction dampening (read cycles 5, 6, 7) |
 | `docs/coordination/2026-05-10-non-calibrated-q-beta-mass.md` | Sibling PR map (cycles 1-3) |
-| `content/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean` | 10+12 Lean gap inventory with citations |
-| `content/quantum-observable-universe/lean/QOU/MassEndomorphism/PhiQConvergence.lean` | Gap 4 partial — 2 mechanical sorries to close |
-| `content/quantum-observable-universe/lean/QOU/BraidKnot/BraneTowerNStar.lean` | Gap 5 partial — substantive predicate replacing tautological True |
+| `folio/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean` | 10+12 Lean gap inventory with citations |
+| `folio/quantum-observable-universe/lean/QOU/MassEndomorphism/PhiQConvergence.lean` | Gap 4 partial — 2 mechanical sorries to close |
+| `folio/quantum-observable-universe/lean/QOU/BraidKnot/BraneTowerNStar.lean` | Gap 5 partial — substantive predicate replacing tautological True |
 
 ## Conventions enforced by this branch
 

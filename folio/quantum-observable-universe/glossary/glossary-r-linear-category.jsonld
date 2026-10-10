@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-r-linear-category",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-r-linear-category",
+  "kind": "remark",
+  "title": "$R$-linear category",
+  "tags": [
+    "glossary",
+    "category-theory",
+    "enrichment"
+  ],
+  "defines": [
+    "r-linear-category"
+  ],
+  "text": "glossary-r-linear-category.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,129 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "garoufalidis2021",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 281,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2109.00379v1/2109.00379v1.pdf"
+        },
+        "id": "garoufalidis2021",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Defines a twisted version of the Neumann-Zagier matrices of an ideal triangulation, establishes their symplectic properties, shows how to compute them from triangulation combinatorics, and uses them to define a twisted 1-loop invariant that determines the 1-loop invariant of cyclic covers and conjecturally equals the adjoint twisted Alexander polynomial. The corpus's NZ/1-loop machinery is active and recently corrected: computations/probes/borromean_nz_adjoint_torsion.py carries a 2026-08-07 correction retracting a wrong determinant construction, computations/one_loop_torsion.py is now the triangulation-invariant producer, and the multi-cusp overall constant is explicitly recorded as not pinned. Supporting rather than core because the corpus consumes the UNtwisted theory only: NZ matrices are already sourced to neumann-zagier1985 and the 1-loop invariant to dimofte-garoufalidis-2013, both cited, and nothing in the folio uses a twisted NZ matrix or a twisted Alexander polynomial. Its real value here is as a modern, self-contained account of the symplectic properties plus worked 4_1 numbers to check the corrected producer against.",
+          "keyResults": [
+            {
+              "locator": "Sects. 1.3 and 2",
+              "statement": "Neumann-Zagier matrices and their twisted version, with the symplectic properties proved and an explicit recipe for computing them from the combinatorics of an ideal triangulation.",
+              "useForFolio": "A clean modern statement of the symplectic constraints the corpus's determinant must respect; relevant precisely because a wrong matrix was in production until 2026-08-07 and the corrected one still inherits an unpinned constant at c >= 2.",
+              "targets": [
+                "computations/one_loop_torsion.py"
+              ]
+            },
+            {
+              "locator": "Sects. 3.1 and 5.1 (the knot 4_1)",
+              "statement": "Fully worked NZ matrices and 1-loop invariant for the figure-eight knot.",
+              "useForFolio": "An independent published 4_1 value to regression-test computations/one_loop_torsion.py against, which matters because the corpus's 4_1 calibration was previously off by exactly a factor of two.",
+              "targets": [
+                "computations/one_loop_torsion.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry; the corpus's NZ-matrix work is live and recently corrected, and this is the current reference for the matrices' symplectic structure and their computation from a triangulation.",
+              "target": "computations/one_loop_torsion.py",
+              "bean": "qou-d30z"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "Regression-check computations/one_loop_torsion.py's 4_1 output against this paper's worked 4_1 example. This is a cross-check only: no external number may be adopted, and a match does not pin the c >= 2 constant the producer's own caveat flags as unpinned.",
+              "target": "computations/one_loop_torsion.py",
+              "bean": "qou-epkn"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "f0c9bd89312a"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    },
+    {
+      "position": 397,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/s40687-023-00400-3/s40687-023-00400-3.pdf"
+        },
+        "id": "garoufalidis2021",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Defines a TWISTED version of the Neumann--Zagier matrices of an ideal triangulation, establishes their symplectic properties, and shows how to compute them from the combinatorics of the triangulation; as an application it defines a twisted one-loop invariant which determines the one-loop invariant of the cyclic covers of a hyperbolic knot complement and is conjecturally the adjoint twisted Alexander polynomial. The corpus depends on NZ matrices heavily and got one wrong. computations/probes/borromean_nz_adjoint_torsion.py carries a correction banner dated 2026-08-07 stating that its determinant is 'the WRONG construction', that its 4_1 calibration of sqrt(3) is exactly twice the correct value, and that its |det J_NZ(B_3)| = 64 'is not an invariant' because it varies under retriangulation and framing. The same arc's audit says the multi-cusp derivation 'is not in DG at all', i.e. the corpus went looking for literature covering its case and did not find this paper. A systematic treatment of NZ matrices computed directly from triangulation combinatorics is exactly what a construction that just failed retriangulation-invariance needs. One scoping limit must be respected and stated: the twisted one-loop invariant here is defined for ONE-CUSPED hyperbolic 3-manifolds. That covers the corpus's 4_1 calibration, which is where the factor-of-two error was found, but it does NOT cover the three-cusped Borromean complement, so this document must not be cited as settling the multi-cusp case. Corpus-grep run: no ref() entry for it (checked by author and by DOI stem; the neighbouring 2023 entry in the same journal is a different paper), and no audit or coordination ledger mentions twisted NZ matrices.",
+          "keyResults": [
+            {
+              "locator": "Abstract and the construction of twisted NZ matrices from triangulation combinatorics",
+              "statement": "Twisted Neumann--Zagier matrices are defined, shown to retain the symplectic properties of the untwisted ones, and computed directly from the combinatorics of an ideal triangulation.",
+              "useForFolio": "The reference construction against which the corpus's corrected NZ determinant should be checked, in a form that is explicitly combinatorial and therefore testable for the retriangulation invariance the corpus's earlier version failed.",
+              "targets": [
+                "computations/probes/borromean_nz_adjoint_torsion.py"
+              ]
+            },
+            {
+              "locator": "Application: the twisted one-loop invariant (stated for one-cusped hyperbolic 3-manifolds)",
+              "statement": "The twisted one-loop invariant is a topological invariant determining the one-loop invariant of the cyclic covers of a hyperbolic knot complement, conjecturally equal to the adjoint twisted Alexander polynomial.",
+              "useForFolio": "Directly relevant to the corpus's 4_1 one-loop calibration, which is one-cusped and is where the factor-of-two error was caught; explicitly NOT applicable to the three-cusped Borromean target, and any citation must say so.",
+              "targets": [
+                "computations/probes/borromean_jones_1loop_torsion.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The corpus's NZ-matrix arc was corrected one day before this triage and its audit states the multi-cusp case is absent from the literature it had; this paper is the systematic NZ-matrix treatment it lacks, and has no entry.",
+              "target": "computations/probes/borromean_nz_adjoint_torsion.py",
+              "bean": "qou-mcty"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "Recompute the 4_1 NZ matrices by the document's combinatorial recipe and compare against the corpus's corrected one-loop torsion producer, including the retriangulation-invariance test the earlier construction failed. This is a verification of the corpus's own corrected value, not an adoption of an external one. Restrict strictly to the one-cusped case; do not extend the comparison to the Borromean complement.",
+              "target": "computations/probes/borromean_nz_adjoint_torsion.py",
+              "bean": "qou-68uk"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "fd7638a8cf51"
+        },
+        "note": "Bib key backfilled from duplicate copy of arxiv-2109.00379v1, which carries this key. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

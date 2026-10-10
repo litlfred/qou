@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-wigner-axiom",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:wigner-axiom",
+  "kind": "conjecture",
+  "title": "The Wigner axiom: a one-dimensional classical-limit obstruction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-classical-limit-obstruction",
+    "papers/quantum-observable-universe/blocks/lem-brings-euler-characteristic"
+  ],
+  "cites": [
+    "references/wigner1960",
+    "references/weibel1994",
+    "references/brown-zhang-2008",
+    "references/hadfield-krahmer-2005"
+  ],
+  "tags": [
+    "conjecture",
+    "primary-conjecture",
+    "classical-limit",
+    "obstruction",
+    "millennium-problem",
+    "wigner"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.WignerAxiom",
+  "text": "wigner-axiom.md",
+  "provenance": "authored"
+}

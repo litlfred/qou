@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-p-bandwidth-bound",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:p-bandwidth-bound",
+  "kind": "proposition",
+  "title": "Polynomial computation as sub-horizon bandwidth",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-computational-horizon"
+  ],
+  "tags": [
+    "P-class",
+    "bandwidth",
+    "information-flow",
+    "planck-step",
+    "complexity",
+    "polynomial-time"
+  ],
+  "leanRef": "qou:QOU.Information.p_bandwidth_bound",
+  "text": "p-bandwidth-bound.md",
+  "provenance": "authored"
+}

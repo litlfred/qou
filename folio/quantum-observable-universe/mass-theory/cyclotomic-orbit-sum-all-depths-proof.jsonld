@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-cyclotomic-orbit-sum-all-depths",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:cyclotomic-orbit-sum-all-depths",
+  "kind": "proof",
+  "title": "Proof of cyclotomic orbit sum all depths",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cyclotomic-orbit-sum-all-depths"
+  ],
+  "text": "cyclotomic-orbit-sum-all-depths-proof.md",
+  "provenance": "authored"
+}

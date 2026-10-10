@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-single-volume-irrationality",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:single-volume-irrationality",
+  "kind": "conjecture",
+  "title": "Irrationality of a single hyperbolic knot volume",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-hyperbolic-volume-transcendence"
+  ],
+  "tags": [
+    "tier:famous",
+    "irrationality",
+    "hyperbolic-volume",
+    "bloch-wigner",
+    "clausen-function",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.Archimedean.SingleVolumeIrrationality",
+  "text": "single-volume-irrationality.md",
+  "provenance": "authored"
+}

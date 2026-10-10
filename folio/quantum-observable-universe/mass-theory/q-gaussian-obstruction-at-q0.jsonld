@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-gaussian-obstruction-at-q0",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-gaussian-obstruction-at-q0",
+  "kind": "proposition",
+  "title": "Bożejko–Speicher $q$-Gaussian obstruction at the substrate $q_0 > 1$",
+  "cites": [
+    "references/bozejko-speicher1991"
+  ],
+  "tags": [
+    "q-gaussian",
+    "bozejko-speicher",
+    "moment-problem",
+    "touchard",
+    "crossing-number",
+    "substrate-q0",
+    "obstruction"
+  ],
+  "leanRef": "qou:QOU.MassTheory.qGaussianObstructionAtQ0",
+  "text": "q-gaussian-obstruction-at-q0.md",
+  "leanSource": "q-gaussian-obstruction-at-q0.lean",
+  "provenance": "authored"
+}

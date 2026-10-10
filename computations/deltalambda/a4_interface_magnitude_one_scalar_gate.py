@@ -107,13 +107,13 @@ import time  # noqa: E402
 import mpmath as mp  # noqa: E402
 
 from _precision import fmt, set_compute_dps  # noqa: E402
-from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON, Q_50_DIGIT_STR as Q0_PROTON_STR  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from codata_constants import AME_B_HE4_MEV_VALIDATION
 
 set_compute_dps(50)
 
-LEAN = ("content/quantum-observable-universe/lean/QOU/MassTheory/"
+LEAN = ("folio/quantum-observable-universe/lean/QOU/MassTheory/"
         "A4InterfaceMagnitude.lean")
 
 # The three targets the witness documents. Read ONLY to demonstrate
@@ -285,7 +285,7 @@ def main() -> int:
 
     # ── 5 · BOTH naive-z conventions — the staleness this closes ─────────
     print("\n5 · naive per-pair magnitude: convention C (excised) vs D (canonical)")
-    q0 = mp.mpf(Q0_PROTON)
+    q0 = mp.mpf(Q0_PROTON_STR)
     zc, zd = z_C_historical(q0), z_D(q0)
     naive = {}
     for label, z, note in (("z_C (EXCISED, historical)", zc,
@@ -432,7 +432,7 @@ def main() -> int:
     w.add_assertion("magnitude_closed_by_this_probe", False, False)
     w.save({
         "q0Anchor": "proton",
-        "q0Value": str(Q0_PROTON),
+        "q0Value": str(Q0_PROTON_STR),
         "q0AnchorReason": (
             "the canonical convention-D naive bond factor z_D = q0^3/(q0^2+1) "
             "is evaluated at the proton pin (the standing default, owner "

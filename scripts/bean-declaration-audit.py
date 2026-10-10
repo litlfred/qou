@@ -69,9 +69,9 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BEANS = ROOT / ".beans"
-SRC = ROOT / "content/quantum-observable-universe/lean/QOU"
-BUILD = ROOT / "content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU"
+BEANS = ROOT / "beans/defs"
+SRC = ROOT / "folio/quantum-observable-universe/lean/QOU"
+BUILD = ROOT / "folio/quantum-observable-universe/lean/.lake/build/lib/lean/QOU"
 
 DONE = {"completed", "done", "scrapped"}
 IDENT = re.compile(r"\bQOU(?:\.[A-Za-z_][A-Za-z0-9_']*){2,}\b")

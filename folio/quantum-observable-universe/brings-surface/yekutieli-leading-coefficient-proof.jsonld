@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-yekutieli-leading-coefficient",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:yekutieli-leading-coefficient",
+  "kind": "proof",
+  "title": "Proof that obstruction equals the leading Chebyshev coefficient",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-yekutieli-leading-coefficient"
+  ],
+  "text": "yekutieli-leading-coefficient-proof.md",
+  "provenance": "authored"
+}

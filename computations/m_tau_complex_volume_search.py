@@ -456,7 +456,7 @@ def main() -> None:
                   "any attainable match, so the closest knot is expected by chance.")
 
     witness = {
-        "$schema": "../../folio-assistant/schemas/witness.schema.json",
+        "$schema": "../../folio-assistant/cat-harness/schemas/witness.schema.json",
         "computation": "m-tau-complex-volume-search",
         "description": ("Complex-volume (Vol + i*CS) extension of the refuted "
                         "25-knot m_tau search: derived torus carrier + wide "

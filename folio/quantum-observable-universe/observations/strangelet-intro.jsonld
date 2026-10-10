@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-strangelet-intro",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:strangelet-intro",
+  "kind": "prose",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-golden-ratio-degeneration"
+  ],
+  "cites": [
+    "references/alford1999",
+    "references/witten1984"
+  ],
+  "text": "strangelet-intro.md",
+  "meta": {
+    "position": "opening"
+  },
+  "provenance": "authored"
+}

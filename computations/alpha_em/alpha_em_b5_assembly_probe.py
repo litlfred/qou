@@ -125,7 +125,7 @@ def main():
     #     pair count != b1 (no conflation), lift NOT axiomatised (honesty check:
     #     the Lean file must contain explicit-binder hypotheses and no `axiom`/`sorry`)
     lean_path = os.path.join(os.path.dirname(os.path.dirname(_here())),
-                             "content", "quantum-observable-universe", "lean",
+                             "folio", "quantum-observable-universe", "lean",
                              "QOU", "Archimedean", "PerLoopMeasureShadowAssembly.lean")
     src = open(lean_path).read()
     # strip the module docstring (/- ... -/) and comments; scan CODE lines for

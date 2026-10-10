@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-main-commutative-diagram",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:main-commutative-diagram",
+  "kind": "proof",
+  "title": "Proof of Main Commutative Diagram",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-main-commutative-diagram"
+  ],
+  "leanRef": "qou:QOU.main_commutative_diagram",
+  "text": "main-commutative-diagram-proof.md",
+  "provenance": "authored"
+}

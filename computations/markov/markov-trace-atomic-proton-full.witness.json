@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-09-07T10:00:41.961080+00:00",
-  "commitSha": "7c490996cfb8da857faa3e4d9e6d785540a3d26f",
+  "computedAt": "2026-09-14T06:32:16.488989+00:00",
+  "commitSha": "281f9145dcfb05bb618aa7d52bc702138523577d",
   "assertions": [
     {
       "name": "convention_d_form_has_no_half_integer_q_powers",
@@ -16,8 +16,8 @@
   "durationMs": 0,
   "computation": "markov-trace-atomic-proton-full",
   "scriptFile": "markov_trace_atomic_proton_full.py",
-  "scriptHash": "06e123bc49fe",
-  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
+  "scriptHash": "0518d262c928",
+  "scriptCommitSha": "b90fd28620b4f20b296f31053e146c888078a139",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e87a23f8d6fd6732"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -54,7 +54,7 @@
   "tr_M_proton_at_q0": "1.88431946725497502509029472310815626347249744177148556611060",
   "tr_M_proton_at_inv_q0": "-0.131355694929666015388541720828137752411765101466138447735261",
   "ratio_at_inv_q": "-0.0697098858300399522964678384875076040021097937802134516281624",
-  "rho_p_codata": "974.438004175215075372613460349834371486956088579552847143258",
+  "rho_p_codata": "974.438095736543669307437244952995419599771474013784165284907",
   "cross_check": "none — the only available reference was a frozen convention-C decimal (1.6334); see bean qou-pdfx",
   "ratio_to_historical_convention_c_decimal": "1.153618"
 }

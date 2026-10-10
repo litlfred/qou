@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-beta-stability-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:beta-stability-interpretation",
+  "kind": "remark",
+  "title": "Derivation, verification, and limiting behaviour of beta-stability",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prose-knot-periodic-table"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-beta-stability",
+  "tags": [
+    "stability",
+    "beta-decay",
+    "valley-of-stability",
+    "derivation"
+  ],
+  "text": "beta-stability-interpretation.md",
+  "provenance": "authored"
+}

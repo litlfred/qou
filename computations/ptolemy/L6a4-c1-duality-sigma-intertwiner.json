@@ -1,0 +1,75 @@
+{
+ "probe": "ptolemy_duality_sigma_intertwiner",
+ "manifold": "L6a4",
+ "obstruction_class": 1,
+ "method": "exact linear solve for the intertwiner A",
+ "rows": {
+  "id": {
+   "nullspace_dim": 0,
+   "invertible_intertwiner": false,
+   "lambda": {
+    "a": "-1805/1293 + 19/8000*T + -1/625000*T^2 + 19/12626953125*T^3",
+    "b": "1",
+    "c": "1"
+   }
+  },
+  "tau": {
+   "nullspace_dim": 0,
+   "invertible_intertwiner": false,
+   "lambda": {
+    "a": "-1805/1293 + 19/8000*T + -1/625000*T^2 + 19/12626953125*T^3",
+    "b": "1",
+    "c": "1"
+   }
+  },
+  "sigma_a": {
+   "nullspace_dim": 0,
+   "invertible_intertwiner": false,
+   "lambda": {
+    "a": "1",
+    "b": "1",
+    "c": "1"
+   }
+  },
+  "sigma_b": {
+   "nullspace_dim": 4,
+   "invertible_intertwiner": true,
+   "lambda": {
+    "a": "1",
+    "b": "1",
+    "c": "1"
+   },
+   "A": [
+    [
+     "0",
+     "0",
+     "-6959/23274 + -256/113642578125*T^3"
+    ],
+    [
+     "0",
+     "-16315/23274 + 256/113642578125*T^3",
+     "0"
+    ],
+    [
+     "1",
+     "0",
+     "0"
+    ]
+   ],
+   "det_A": "-22475/15516 + -128/37880859375*T^3",
+   "longer_word_check": {
+    "tested": 8,
+    "failures": []
+   },
+   "lambda_in_mu3": true,
+   "lambda_identically_one": true,
+   "schur_dim_matches_degree": true,
+   "relator_check_failures": []
+  }
+ },
+ "intertwiner_exists_for": [
+  "sigma_b"
+ ],
+ "controls_passed": true,
+ "verdict": "PROVED for L6a4 class 1: an invertible A over K conjugates sigma_b(rho) to lambda (x) rho^{-T} on the generators, hence on EVERY word by multiplicativity. lambda == 1 identically, so the conjugacy holds in GL(3,K) on the nose -- the mu_3 twist is ABSENT, not merely invisible in PGL(3). (See ptolemy_duality_lambda_class_rigidity.py: the triviality is FORCED, since every SL(3)-preserving redecoration has N_b(mu) = mu.mu^2 = 1.)"
+}

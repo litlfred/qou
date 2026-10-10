@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-groebner-shirshov-energy",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:groebner-shirshov-energy",
+  "kind": "theorem",
+  "title": "Energy as a Gröbner--Shirshov invariant of the nuclear braid",
+  "uses": [
+    "papers/unital-groebner-bases/blocks/thm-main-theorem"
+  ],
+  "tags": [
+    "groebner-shirshov",
+    "hecke-algebra",
+    "energy",
+    "braid-word",
+    "normal-form",
+    "division-algorithm",
+    "topological-invariant"
+  ],
+  "leanRef": "qou:QOU.Archimedean.groebner_shirshov_energy",
+  "text": "groebner-shirshov-energy.md",
+  "leanSource": "groebner-shirshov-energy.lean",
+  "provenance": "authored"
+}

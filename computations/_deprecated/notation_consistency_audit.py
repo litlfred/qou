@@ -4,8 +4,8 @@ notation_consistency_audit.py — Lightweight audit agent that scans
 the codebase + audit docs for notation violations of the rules
 documented in:
 
-  content/quantum-observable-universe/notation/notation-register.md
-  content/quantum-observable-universe/notation/notation-collisions.md
+  folio/quantum-observable-universe/notation/notation-register.md
+  folio/quantum-observable-universe/notation/notation-collisions.md
 
 Currently enforced rules (Round-3 PR #546):
 
@@ -75,10 +75,10 @@ PATTERNS_FORBIDDEN_R_W = [
 
 # Numerical q values allowed only in intro / Ch 8 / Ch 11.
 NUMERIC_Q_ALLOWED_PATHS = (
-    "content/quantum-observable-universe/introduction",
-    "content/quantum-observable-universe/information-theory",
-    "content/quantum-observable-universe/observations",
-    "content/quantum-observable-universe/notation",  # notation register can mention q_0
+    "folio/quantum-observable-universe/introduction",
+    "folio/quantum-observable-universe/information-theory",
+    "folio/quantum-observable-universe/observations",
+    "folio/quantum-observable-universe/notation",  # notation register can mention q_0
     "docs/audits",                                    # audits can quote numerical
     "computations",                   # scripts compute numerically
     "folio-assistant/feedback",                       # session feedback may quote

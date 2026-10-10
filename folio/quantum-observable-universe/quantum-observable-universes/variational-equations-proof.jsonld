@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-variational-equations",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:variational-equations",
+  "kind": "proof",
+  "title": "Proof of Variational equations of the categorical action",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-variational-equations"
+  ],
+  "text": "variational-equations-proof.md",
+  "provenance": "authored"
+}

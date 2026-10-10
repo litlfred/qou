@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-borromean-baryon",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:borromean-baryon",
+  "kind": "definition",
+  "title": "Borromean baryon",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hadron",
+    "papers/quantum-observable-universe/blocks/prop-pairwise-interaction-decomposition"
+  ],
+  "tags": [
+    "borromean",
+    "baryon",
+    "unknot",
+    "color-confinement",
+    "link"
+  ],
+  "leanRef": "qou:QOU.Braiding.BorromeanBaryon",
+  "text": "borromean-baryon.md",
+  "leanSource": "borromean-baryon.lean",
+  "provenance": "authored"
+}

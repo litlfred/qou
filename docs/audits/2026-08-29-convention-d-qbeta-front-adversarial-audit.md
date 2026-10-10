@@ -29,8 +29,20 @@ theorems:
   decay ladder carries a **nonzero three-row weight** `y_(1³)` for every
   `s=√q>1` — it does **not** factor through Temperley–Lieb.
 - `markovWeights_eq_jones_of_threeRow_eq_zero`
-  (`MarkovTraceTLUniqueness.lean:97`): `y_(1³)=0` ⟺ `z=z_D` (the two-row /
-  TL / Jones trace). Strengthened by the red-team: `qou-06wh` / PR #5925 now
+  (`MarkovTraceTLUniqueness.lean:119`): `y_(1³)=0` **⟹** `z=z_D` (the two-row /
+  TL / Jones trace) — **one direction, not an iff.**
+
+  > **🛑 Corrected 2026-09-26 (bean `qou-6moa`), two ways.** This row read
+  > `⟺` and `:97`. The `⟺` is wrong: `y_(1³) = 0` is the lemma's *hypothesis*
+  > and `z·(q+qi) = q²` its *conclusion*, and it carries
+  > `hfaith : y_(2,1) ≠ 0` besides — `markovWeights_degenerate_root` proves the
+  > conclusion **false** without it, so the forward direction is not even
+  > unconditionally true as stated. The converse, `z=z_D ⟹ y_(1³)=0`, is
+  > `FibreDimensionForcesTL.threeRow_eq_zero_of_jones_ocneanu` (`:179`); the two
+  > together give the iff. And `:97` is a prose line, not a declaration — the
+  > theorem is at `:119`. Separately, this audit's `decayLadder_zC_threeRow_ne_zero`
+  > reference is in a **different file**, `QBeta/MarkovZFullBarCondition.lean:214`,
+  > not `MarkovTraceTLUniqueness.lean:147`. Strengthened by the red-team: `qou-06wh` / PR #5925 now
   Lean-proves `y_(1³)(z)` has exactly two roots `{q, z_D}` with `net`
   **excluded**.
 - Eigenphase bar-parity **flips**: under C, `α` is bar-odd (defect 0); under D,

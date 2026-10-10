@@ -129,10 +129,32 @@ def run(group="low"):
             # reason is recorded next to it.
             "W_lam": (w_lam if (w_lam is not None and math.isfinite(w_lam))
                       else None),
+            # CORRECTED (bean `qou-cqk6`). This read "W_lambda not
+            # representable at this A", which is FALSE and contradicted the
+            # comment four lines above it — that comment already draws the right
+            # distinction ("a value this computation could not represent, not a
+            # pole of the underlying quantity") and then the string asserted the
+            # pole. Measured: W_lambda is finite at both affected isotopes; it is
+            # the f64 `[n]_q!` INTERMEDIATE that overflows, because
+            # `mass_binding_dashboard._row` re-casts q0 to float64 on its first
+            # line. Handed an mpf q0 the same `W_lambda_float` returns a finite
+            # value. No number is quoted here on purpose: this producer does not
+            # compute the mpf value, and prose carrying a figure the code does
+            # not derive is the staleness trap. `qou-cqk6` has the table.
+            #
+            # The VERDICT is unaffected and is not weakened by any of this: the
+            # occupancy reading is invalid because W_lambda > 1, which already
+            # holds two isotopes earlier where f64 works fine and both types
+            # agree. The breakdown never rested on the overflow.
             "W_lam_undefined_reason": (
                 None if (w_lam is not None and math.isfinite(w_lam))
-                else "float64 overflow in [n]_q! / prod(q-hooks)^2 — "
-                     "W_lambda not representable at this A"),
+                else "float64 overflow in the [n]_q! intermediate of "
+                     "[n]_q! / prod(q-hooks)^2 — W_lambda ITSELF is finite and "
+                     "representable at this A; only the f64 intermediate is "
+                     "not (mass_binding_dashboard._row casts q0 to float64). "
+                     "The occupancy reading is invalid here because "
+                     "W_lambda > 1, not because the quantity is undefined. "
+                     "See bean qou-cqk6."),
             "E_gate": E_gate,
             "bindings": cand,
             "err": {k: (bame / v if v else None) for k, v in cand.items()},

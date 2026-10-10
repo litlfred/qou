@@ -3,16 +3,16 @@ import os
 import shutil
 
 repo_root = '/home/litlfred/space_cats/qou'
-lean_root = os.path.join(repo_root, 'content/quantum-observable-universe/lean')
+lean_root = os.path.join(repo_root, 'folio/quantum-observable-universe/lean')
 
 # Move palindromicity-orbital-type.lean
-src_pal = os.path.join(repo_root, 'content/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.lean')
+src_pal = os.path.join(repo_root, 'folio/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.lean')
 dst_pal = os.path.join(lean_root, 'QOU/Molecular/PalindromicityOrbitalType.lean')
 if os.path.exists(src_pal):
     shutil.copyfile(src_pal, dst_pal)
 
 # Move shell-closure-nf-term-count.lean
-src_shell = os.path.join(repo_root, 'content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.lean')
+src_shell = os.path.join(repo_root, 'folio/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.lean')
 dst_shell = os.path.join(lean_root, 'QOU/Molecular/ShellClosureNfTermCount.lean')
 if os.path.exists(src_shell):
     shutil.copyfile(src_shell, dst_shell)

@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-jones-faithfulness-crossing-8",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:jones-faithfulness-crossing-8",
+  "kind": "remark",
+  "title": "Bring-embeddable Jones-faithfulness: theorem at crossing $\\leq 10$, falsified for Conway-KT at crossing 11",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-conway-kt-vol-injectivity-test"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-knot-exhaustiveness",
+  "cites": [
+    "references/thurston1978"
+  ],
+  "tags": [
+    "jones-faithfulness",
+    "crossing-number",
+    "hoste-thistlethwaite-weeks",
+    "conway-knot",
+    "mutant-pair",
+    "tightening",
+    "graded-mikusinski"
+  ],
+  "text": "jones-faithfulness-crossing-8.md",
+  "provenance": "authored"
+}

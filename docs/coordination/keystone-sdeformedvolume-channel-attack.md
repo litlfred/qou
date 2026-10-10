@@ -53,7 +53,7 @@ Beans: milestone `qou-o93x`; T1 `qou-6s8k`; T2 `qou-fook`.
 
 ## Outcome (2026-07-26)
 
-**T1 landed.** [`QOU/Knot/FigureEightComplexVolume.lean`](../../content/quantum-observable-universe/lean/QOU/Knot/FigureEightComplexVolume.lean)
+**T1 landed.** [`QOU/Knot/FigureEightComplexVolume.lean`](../../folio/quantum-observable-universe/lean/QOU/Knot/FigureEightComplexVolume.lean)
 — concrete `V₄₁(u) = Vol(4₁) + i·(√3/4)·u²` (NZ leading form), lean-verify exit 0
 sorry-free. `V₄₁_zero_re` (= 2·Cl₂(π/3), exact), `V₄₁_even`, `imV₄₁`
 (`Im 𝔙₄₁ = (√3/4)(Re²u−Im²u)`), and the T2 invariants. Class open surface reduced

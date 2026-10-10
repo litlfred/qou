@@ -1,0 +1,42 @@
+{
+  "_comment": "This instance's CONFIGURATION -- what the qou folio IS (adapter, QA axes, viewer, simulators, feedback store). Renamed from `harness.config.json` on 2026-09-26 because platform main declares that name RETIRED: `export const LEGACY_HARNESS_CONFIG = \"harness.config.json\"` in cat-harness/schemas/harness-config.ts, docstring 'kept as a constant so check:instance-config can FIND it, never so a reader can fall back to it'. The live name is `<name>.config.json` at the instantiation root, per the owner's 2026-09-20 ruling quoted in that file. Paired with `qou.json`, the declaration.",
+  "contentType": "paper",
+  "adapter": "paper",
+  "_adapterModule_comment": "Re-pointed 2026-10-04 (story S1): the paper adapter moved from cat-harness/adapters/paper to folio-assistant-sci/adapters/paper (PaperContentAdapter, folio-assistant-sci/adapters/paper/index.ts). Still reached through the `folio-assistant/` platform link that scripts/setup-folio-assistant.sh creates; after the repo split only this path and the dependency below change.",
+  "adapterModule": "folio-assistant/folio-assistant-sci/adapters/paper/index.ts",
+  "_dependencies_comment": "Added 2026-10-04 (story S1). The fetchable edge behind qou.json `needs`: folio-assistant-sci still lives inside the folio-assistant monorepo, so `git` is that repository, `ref` equals .folio-assistant-pin, and `path` is the sci directory behind the local platform link. When the sci repository is seeded only this entry changes.",
+  "dependencies": {
+    "folioAssistant": [
+      {
+        "name": "folio-assistant-sci",
+        "git": "https://github.com/litlfred/folio-assistant",
+        "ref": "717aa19a660caa54be312f50abfc813b0b1bdb76",
+        "path": "folio-assistant/folio-assistant-sci"
+      }
+    ]
+  },
+  "_qaAxes_comment": "The opt-in for THIS folio's mathematics. folio-assistant fenced the `framework`, `wall` and `detangler-archimedean-wall` criteria behind this axis in #523, because they encode one folio's mathematics rather than a platform concern — `folioOptionalAxes()` in content/pipeline/qa-criteria-registry.ts reads this key and registers none of them when it is absent. This key did NOT arrive with the folio.config.json rename, so all six criteria have been unregistered since: `framework-canonical`, `wall-side-correct`, `wall-side-statement`, `wall-side-proof`, `wall-base-ring-minimal` and `detangler-archimedean-wall`, together with the matching watcher buckets, which are gated on the same axis so a bucket cannot name a criterion the registry never registered. The COMPUTATION was not entirely lost — q-usage-audit.ts calls checkWallSide and checkBaseRingMinimal directly — but the registered criteria were, so there are no QA sidecar verdicts for any of the six and nothing reported their absence. ONE axis name opens all six deliberately: the platform comment is explicit that it is one wall, so a folio opens both halves with one key and cannot end up half-fenced. NOTE `q-usage` is a SEPARATE axis gating seven more criteria and is deliberately not listed here — that is its own decision.",
+  "qaAxes": [
+    "archimedean-wall"
+  ],
+  "_feedbackDir_comment": "CHANGED from `folio-assistant/feedback`, which is the one value that did not survive the rename. That path does not exist under either layout, and `feedbackDir` is resolved against the FOLIO root, so the old value pointed the feedback store inside the platform checkout — a directory `FeedbackStore` would have created on first write, in a submodule/symlink qou does not own. No data moves: qou has no feedback store on disk today. `.folio-feedback` is the platform default and what `folio_init` writes.",
+  "feedbackDir": ".folio-feedback",
+  "viewer": {
+    "_comment": "`port` is read (src/index.ts -> FolioServer.viewerPort). `dir` currently is not read by anything — kept because it is the documented shape in harness.config.example.json and it does resolve.",
+    "dir": "folio-assistant/cat-harness/viewer",
+    "port": 8080
+  },
+  "simulators": {
+    "_comment": "The FOLIO's own directory — simulators are subject matter, so this path is relative to the qou root, not the platform.",
+    "dir": "simulators",
+    "pyodideCache": true
+  },
+  "readme": {
+    "linkStyle": "blob",
+    "publishRef": "gh-pages",
+    "pagesBaseUrl": "https://litlfred.github.io/qou"
+  },
+  "_not_folio_assistant_config_comment": "It is NOT `folio-assistant.config.json`. The filename stem names THIS INSTANCE, not the harness the instance runs on -- `findDeclarationFile` requires stem == the file's own `name`, and the platform's own checkout names its files after cat-harness / bootstrap / folio-assist-core, which are ITS instances. A `folio-assistant.config.json` here would declare qou's checkout to BE an instance called folio-assistant; it is an instance called qou that DEPENDS on folio-assistant, and that dependency is expressed by `dependencies.folioAssistant` inside this file, never by its name.",
+  "_platform_scope_comment": "LOAD-BEARING since 2026-10-04: the pin moved to 26c5d37b9, which reads this file (resolveHarnessConfigPath) and no longer reads folio.config.json, so folio.config.json was removed in the same commit as qou-8321 required.",
+  "_qaAxes_correction_comment": "CORRECTION 2026-09-26 (bean qou-qqia). The comment above says six criteria 'have been unregistered since' the rename. That is true of platform MAIN and FALSE of the pin. Measured at df28d02: the string `archimedean-wall` occurs EXACTLY ONCE in content/pipeline/qa-criteria-registry.ts, and it is part of a criterion ID (`detangler-archimedean-wall`, line 1389) -- not an axis name. The only axis the pin gates on is `q-usage` (lines 2193, 2264), and framework-canonical / wall-side-correct are registered UNCONDITIONALLY (lines 307, 329). So this key is a NO-OP at the pin and becomes load-bearing only after the bump. It is set in folio.config.json too, for the same reason. Separately and still open: `q-usage` IS an axis at the pin and is NOT listed here, so its seven criteria are unregistered right now -- deliberately, per the comment above; whether qou wants that axis on is an owner call and is not decided by this commit."
+}

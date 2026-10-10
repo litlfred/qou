@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-neutrino-knot",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:neutrino-knot",
+  "kind": "definition",
+  "title": "Neutrino",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-torus-knot-generators"
+  ],
+  "tags": [
+    "neutrino",
+    "unknot",
+    "lepton",
+    "fermion",
+    "vacuum-drag"
+  ],
+  "leanRef": "qou:QOU.Archimedean.Neutrino",
+  "text": "neutrino-knot.md",
+  "leanSource": "neutrino-knot.lean",
+  "provenance": "authored"
+}

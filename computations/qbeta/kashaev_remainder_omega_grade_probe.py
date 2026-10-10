@@ -8,7 +8,7 @@ derivation, never a fit to it.
 
 ## The gap this fills
 
-`content/quantum-observable-universe/appendix-surreals/kashaev-surreal.md` sets
+`folio/quantum-observable-universe/appendix-surreals/kashaev-surreal.md` sets
 `n = omega` and recasts the volume conjecture as a STANDARD-PART identity,
 
     Vol(4_1)  =  st( 2*pi * log|J(zeta_omega, omega)| / omega ),
@@ -21,9 +21,24 @@ Kashaev asymptotic remainder).
 
 `st` is not free here.  What it discards is not a pure infinitesimal.
 
-## Derived first, from the cited asymptotic
+## Derived first -- and the input is DERIVED IN THIS CORPUS, not cited
 
-Ohtsuki / Andersen-Hansen give, for the figure-eight,
+CORRECTED 2026-09-13.  This docstring, and this probe's witness `description`,
+originally attributed the asymptotic below to "the cited Ohtsuki /
+Andersen-Hansen expansion" and said the probe does not re-derive it.  That was
+written without running the corpus-grep, and it is weaker than the truth:
+
+    folio/quantum-observable-universe/mass-theory/one-loop-prefactor-provenance.md
+    (prop:one-loop-prefactor-provenance)
+
+DERIVES both `3^{-1/4}` and the power `3/2` from the one-variable saddle at
+`theta* = 5*pi/6` -- Stirling factor `2*sin(theta*) = 1`, Hessian
+`|cot(theta*)| = sqrt 3` -- with Lean backing `c_pow_four_eq_third`, and states
+in its own words that "the 4_1 calibration on which the whole c_sigma arc
+rested is thereby retired."  Near-miss worth recording: `ohtsuki2016` in
+references.ts is about the **5_2** knot, not 4_1.
+
+So the leading asymptotic for the figure-eight,
 
     <4_1>_N  =  (N^{3/2} / 3^{1/4}) * exp(N*V/(2*pi)) * (1 + O(1/N)),   V := Vol(4_1)
 
@@ -76,10 +91,15 @@ observe is `3*pi*log(2)/N`, which this probe predicts before measuring.
 
 ## Scope
 
-**(a)** -- this is an asymptotic statement about `4_1` only, resting on the cited
-Ohtsuki / Andersen-Hansen expansion, which the probe does not re-derive.  What
-the probe establishes is that the corpus's own computed Kashaev sum agrees with
-that expansion to the precision shown, and that the three consequences hold.  It
+**(a)** -- this is an asymptotic statement about `4_1` only.  Its input, the
+leading asymptotic, is derived by `prop:one-loop-prefactor-provenance` (above),
+not cited -- but the `O(1/N^2)` tail of (*) is NOT derived there: that
+proposition states a leading asymptotic and records the step from its two
+machine-checked analytic inputs to the saddle hypotheses as still assumed.  The
+`O(1/N^2)` is MEASURED by check 1 below, whose residual ratios approach 1/2 on
+each doubling.  What the probe establishes is that the corpus's own computed
+Kashaev sum agrees with that expansion to the precision shown, and that the
+three consequences hold.  It
 does NOT touch the volume conjecture, does not alter `st`, and asserts nothing
 about knots other than `4_1`.
 
@@ -165,12 +185,13 @@ def main() -> int:
         print(f"    N={N:5d}  resid-model = {mp.nstr(d, 10):>14}")
     print(f"    ratios on doubling: {[mp.nstr(r, 6) for r in ratios]}  (O(1/N) => 1/2)")
     check(
-        "asymptotic_shape_matches_cited_expansion",
+        "asymptotic_shape_matches_derived_expansion",
         all(abs(r - mp.mpf(1) / 2) < mp.mpf("0.02") for r in ratios),
         "log<4_1>_N - N*V/(2pi) tracks (3/2)logN - (1/4)log3 with an O(1/N) "
         f"residual: the residual ratio on each doubling is {[mp.nstr(r, 6) for r in ratios]}, "
         "against 1/2 for a clean 1/N tail. The N^{3/2}/3^{1/4} prefactor of the "
-        "cited expansion is therefore reproduced by this corpus's own sum.",
+        "expansion derived in prop:one-loop-prefactor-provenance is therefore "
+        "reproduced by this corpus's own sum.",
     )
 
     # --- check 2: N*delta/logN -> 3pi, with the DERIVED offset --------------
@@ -194,7 +215,7 @@ def main() -> int:
         f"the DERIVED two-term prediction 3pi - (pi log3)/(2 logN) tracks the measured "
         f"N*delta/logN to within {mp.nstr(worst, 6)} across N = {LADDER[0]}..{LADDER[-1]}; "
         f"at N={LADDER[-1]} the gap is {grade_rows[-1]['gap']}. The offset was derived "
-        "from the cited expansion before being measured, so this is a test of the "
+        "from the derived expansion before being measured, so this is a test of the "
         "derivation, not a fit to the data.",
     )
 
@@ -254,7 +275,11 @@ def main() -> int:
         "description": (
             "The omega-grade of the Kashaev remainder for 4_1. kashaev-surreal.md "
             "recasts the volume conjecture as a standard-part identity and never says "
-            "what st() discards. Derived from the cited Ohtsuki/Andersen-Hansen "
+            "what st() discards. Derived from the leading asymptotic that "
+            "prop:one-loop-prefactor-provenance DERIVES from the saddle at "
+            "theta*=5pi/6 (Lean c_pow_four_eq_third) -- NOT cited to "
+            "Ohtsuki/Andersen-Hansen, which is what this description said "
+            "before the 2026-09-13 correction: "
             "expansion: delta_N = 3pi logN/N - (pi log3)/(2N) + O(1/N^2), so "
             "ord_omega(delta) = -1 in the coarse grading but delta is NOT a grade-(-1) "
             "monomial -- omega*delta is infinite and the convergence is logarithmically "
@@ -262,7 +287,7 @@ def main() -> int:
             "measurement. Exact mpmath at 50 dps; no float64."
         ),
         "bean": "qou-cds1",
-        "fills_gap_in": "content/quantum-observable-universe/appendix-surreals/kashaev-surreal.md",
+        "fills_gap_in": "folio/quantum-observable-universe/appendix-surreals/kashaev-surreal.md",
         "derived_remainder": "delta_N = 3*pi*log(N)/N - (pi*log 3)/(2N) + O(1/N^2)",
         "omega_grade": {
             "coarse_ord_omega": -1,
@@ -283,7 +308,7 @@ def main() -> int:
             "richardson": rich_rows,
         },
         "scope": {
-            "kind": "(a) asymptotic statement about 4_1, resting on a cited expansion not re-derived here",
+            "kind": "(a) asymptotic statement about 4_1; its leading-asymptotic input is DERIVED in-corpus (prop:one-loop-prefactor-provenance), while the O(1/N^2) tail is MEASURED (check 1), not derived",
             "not_claimed": "nothing about the volume conjecture, about st(), or about any knot but 4_1",
         },
         "assertions": [{"name": n, "passed": ok, "detail": d} for n, ok, d in results],

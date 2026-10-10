@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-exponential-realisations",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-exponential-realisations",
+  "kind": "remark",
+  "title": "Realisations of $\\exp_q$: universal property, base rings, the Habiro ring, and the Reeb flow",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-exponential",
+    "papers/quantum-observable-universe/blocks/def-categorical-laplace",
+    "papers/quantum-observable-universe/blocks/def-habiro-ring"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-exponential",
+  "tags": [
+    "hopf-algebra",
+    "grouplike",
+    "q-exponential",
+    "reeb-flow"
+  ],
+  "text": "q-exponential-realisations.md",
+  "provenance": "authored"
+}

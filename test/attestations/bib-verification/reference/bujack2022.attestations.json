@@ -1,0 +1,87 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "bujack2022",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 124,
+      "entry": {
+        "id": "bujack2022",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T18:18:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": "(this commit)",
+        "note": "PDF is Bujack et al. 'The non-Riemannian nature of perceptual color space' (PNAS 2022) \u2014 exact match.",
+        "source": {
+          "kind": "upload",
+          "file": "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-color-space.pdf"
+        },
+        "local_pdf": "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-color-space.pdf",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED against the document's own front matter and against the registered entry's volume/issue/article-number. Citation is heavily load-bearing in `rem:schrodinger-color-falsifiability` \u2014 and TWO of the claims made there are NOT supported by the source. (1) MISCITED \u2014 FABRICATED CROSSOVER. `schrodinger-color-falsifiability.md:41` writes: 'Bujack et al. found the diminishing-returns effect barely significant at \u0394d = 5 (\u03b2=0.048, p=0.010) and strongly significant at \u0394d = 10 (\u03b2=0.119, p<0.001). The perceptual crossover empirically lies in [5,10], bracketing the predicted d* \u2248 9.6.' Both numbers are quoted correctly from Table 1 (p. 5) \u2014 but they are the regression coefficients on the \u0394d INDICATOR LEVELS, i.e. how much larger a \u0394d=10 stimulus pair is judged than the baseline. They rise with \u0394d under ANY monotone metric, including a purely Riemannian one, so they carry no information about a Riemannian\u2192logarithmic crossover. The source's diminishing-returns coefficient is the SEPARATE \u03b2_d\u0304 = \u22120.005, a single number that is not a function of \u0394d. The source reports NO crossover scale anywhere. The 'empirical crossover in [5,10] bracketing d* \u2248 9.6' is therefore an artifact of misreading the regression \u2014 and it is the only numerical corroboration the block offers for \u03b7. (2) OVERSTATED \u2014 'proved'. Line 5 of the block says the source 'proved that perceived color differences violate Riemannian additivity'. The source explicitly hedges the very coefficient at issue (p. 5): the \u03b2_d\u0304 result 'relies on the L* axis being nearly perceptually uniform. This assumption may not be appropriate, so we interpret the negativity of the \u03b2_d\u0304 as WEAKLY SUPPORTING our claim of nonadditivity and as motivation to carry out further analysis.' (3) STATUS INFLATION in the Table 3 data block: the second-order Weber\u2013Fechner row is marked '\u2713' under 'Empirical status', but the source calls it a conjecture \u2014 'Our findings HINT at the potential existence of a second-order Weber\u2013Fechner law\u2026 More research must go into the validation of this conjecture' (p. 8). WHAT IS CORRECT: every Table-1 figure is quoted exactly (\u03b2\u2080=0.161/t=8.894; \u03b2_{\u0394d=5}=0.048/t=2.815/p=0.010; \u03b2_{\u0394d=10}=0.119/t=6.632; \u03b2_d\u0304=\u22120.005/t(60)=\u22125.566; R\u00b2=0.556, F(3,60)=25.00); the sub-additivity direction \u0394E(A,C) < \u0394E(A,B)+\u0394E(B,C) matches the source's diminishing-returns finding; the ~0.5 power-law exponent attribution to prior suprathreshold work matches p. 3. Verdict is `supporting` not `core`: the source genuinely supplies the qualitative non-Riemannian / sub-additive fact the block needs, and supplies none of the quantitative agreement the block claims from it. Separate minor item: the block evaluates at q\u2080 \u2248 1.109978595554181, which matches NEITHER documented pin (proton 1.1099785827513808, muon 1.10997859555733471) \u2014 it diverges from the muon value at the 11th decimal.",
+          "keyResults": [
+            {
+              "locator": "Table 1, p. 5",
+              "statement": "Regression coefficients: \u03b2\u2080=0.161 (t(60)=8.894), \u03b2_{\u0394d=5}=0.048 (t=2.815, P=0.010), \u03b2_{\u0394d=10}=0.119 (t=6.632, P<0.001), \u03b2_d\u0304=\u22120.005 (t(60)=\u22125.566, P<0.001); R\u00b2=0.556, F(3,60)=25.00.",
+              "useForFolio": "\u03b2_d\u0304 is the ONLY diminishing-returns coefficient; the \u0394d-level coefficients must be removed from the crossover argument in the falsifiability remark.",
+              "targets": [
+                "rem:schrodinger-color-falsifiability"
+              ]
+            },
+            {
+              "locator": "p. 5, interpretation of \u03b2_d\u0304",
+              "statement": "The authors interpret the negativity of \u03b2_d\u0304 as WEAKLY supporting nonadditivity, conditional on the L* axis being nearly perceptually uniform \u2014 an assumption they say 'may not be appropriate'.",
+              "useForFolio": "Downgrades the block's 'proved' to 'reported evidence for'.",
+              "targets": [
+                "rem:schrodinger-color-falsifiability"
+              ]
+            },
+            {
+              "locator": "p. 8, Discussion",
+              "statement": "The second-order Weber\u2013Fechner law is stated as a conjecture requiring further validation, not as a finding.",
+              "useForFolio": "The Table 3 '\u2713' in the Empirical status column must become 'conjectured by' / 'consistent with'.",
+              "targets": [
+                "tbl:schrodinger-color-falsifiability-table3-data"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "Withdraw the crossover-bracketing sentence: the \u03b2_{\u0394d=5} vs \u03b2_{\u0394d=10} contrast is not a crossover measurement and the source reports no crossover scale. Record the correction and the resulting fact that the framework's \u03b7 prediction currently has NO empirical corroboration in this source. Scope-(a): as read, this document supplies no crossover datum \u2014 it does not refute \u03b7 either.",
+              "target": "rem:schrodinger-color-falsifiability",
+              "bean": "qou-w34d"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Soften 'proved' to match the source's own hedge (p. 5), and re-mark the Table 3 Weber\u2013Fechner row as the source's conjecture rather than a confirmation (p. 8).",
+              "target": "tbl:schrodinger-color-falsifiability-table3-data",
+              "bean": "qou-x3be"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "q\u2080 \u2248 1.109978595554181 in the block matches neither documented pin; per the 2026-08-07 owner directive new/touched compute defaults to the proton pin. Recompute \u03b7 and d* at q_parameter.Q and state the pin used.",
+              "target": "folio/quantum-observable-universe/predicted-spectra/schrodinger-color-falsifiability.md",
+              "bean": "qou-fls0"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "2bc66a26d390"
+        }
+      }
+    }
+  ]
+}

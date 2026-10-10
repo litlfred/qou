@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-ordering-jet-compatibility",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:ordering-jet-compatibility",
+  "kind": "proposition",
+  "title": "The admissible ordering extends through the jet tower",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-direct-limit-algebra",
+    "papers/unital-groebner-bases/blocks/def-jet-stratified-reduction"
+  ],
+  "tags": [
+    "ordering",
+    "jet-tower",
+    "direct-limit",
+    "admissible-system",
+    "groebner",
+    "time"
+  ],
+  "leanRef": "qou:QOU.Torsion.degLex_wellFounded",
+  "text": "ordering-jet-compatibility.md",
+  "leanSource": "ordering-jet-compatibility.lean",
+  "provenance": "authored"
+}

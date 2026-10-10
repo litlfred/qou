@@ -1,0 +1,72 @@
+{
+  "name": "aomega-m3-wronskian-bar-involution-constraint",
+  "description": "The bar-involution constraint det W(q) det W(q^-1) = c that GGM's orthogonality relations impose on the Wronskian determinant, its constants for 4_1 and 5_2, and the resulting sharper statement of the rank-6 gap.",
+  "computation": "aomega-m3-wronskian-bar-involution-constraint",
+  "engine": "python+sympy",
+  "scriptFile": "aomega_m3_wronskian_bar_involution_constraint_probe.py",
+  "computedAt": "2026-09-14T18:04:22.284314+00:00",
+  "durationMs": 0,
+  "auditOnly": true,
+  "parameters": {
+    "rule": "det W_m(q) det W_l(q^-1) = det(RHS) / (pref^r det J)"
+  },
+  "data": {
+    "c_4_1": "1",
+    "c_5_2": "4",
+    "c_pretzel": null,
+    "det_W_4_1_at_m_minus_1": "1",
+    "ratio_254": "1",
+    "ratio_276": "-1",
+    "pretzel_constraint": "det W_0(x;q) * det W_0(x;q^-1) = c_pretzel   (with det W_m = q^{4m} det W_0)"
+  },
+  "verdict": "DERIVED: the orthogonality relations constrain det W_0 by a BAR-INVOLUTION functional equation. Taking determinants of pref * W_m(q) J W_l(q^-1)^T = RHS gives det W_m(q) det W_l(q^-1) = det(RHS)/(pref^r det J) =: c, a constant fixed per knot. From GGM's printed pairings: c = 1 for 4_1 (137) and c = 4 for 5_2 (92) — so c is NOT universal. The derivation is cross-checked against GGM's own printed determinant (136): det W_m = x^{3m+3} gives det W_-1 = 1 with no q at all, product 1, matching c = 1 exactly (G2). A theta solves such an equation for free, since GGM (109) extended to |q| != 1 gives theta(y;q^-1) = theta(y;q)^-1 — which is why their 5_2 answer IS a theta. GGM also print TWO normalisations of the same 5_2 operator, (254) and (276), both with Casoratian ratio 1 (G4) that do NOT agree — ratios +1 and -1, differing by the sign gauge lambda = -1 — so the ratio is gauge-dependent even in sign. That FORCES A CORRECTION to Part 1 (G5): a palindromic operator has ratio (-1)^r, which is m-independence only at EVEN rank; at odd rank it alternates, and GGM's m-independent 5_2 statement lives in the ANTI-palindromic (254), not the palindromic (276). CONSEQUENCE for the arc: at rank 6 the missing input is not 'the GL(r) normalisation' in the abstract but ONE function det W_0(x;q) and ONE constant c_pretzel, tied by that equation — and c_pretzel is unknown because no held source prints a rank-6 orthogonality relation (T1, a recorded negative).",
+  "assertions": [
+    {
+      "name": "G1-the 4_1 bar-involution constant, derived from GGM's printed (137) by taking determinants, is c = 1",
+      "passed": true,
+      "c": "1"
+    },
+    {
+      "name": "G2-GGM's OWN printed determinant (136) SATISFIES that constraint at m = l = -1: det W_-1 = x^0 = 1, carries no q, so the product is 1 — the derivation is cross-checked against their data rather than assumed",
+      "passed": true,
+      "det_W_minus1": "1",
+      "product": "1"
+    },
+    {
+      "name": "G3-the 5_2 constant is c = 4, NOT 1 — so c is fixed per knot by (det J, det RHS) and is not a universal constant to be assumed at rank 6",
+      "passed": true,
+      "c": "4"
+    },
+    {
+      "name": "G4-GGM print TWO normalisations of the same 5_2 operator and they do NOT agree: (254) has end coefficients (1, -1) and ratio +1, (276) has (1, 1) and ratio -1. They differ by the SIGN gauge lambda = -1, which flips the ratio by lambda^-r = (-1)^3 = -1 — exactly the observed gap. So the ratio is gauge-dependent even in sign, and only its class modulo lambda^r is invariant",
+      "passed": true,
+      "ratio_254": "1",
+      "ratio_276": "-1",
+      "gauge_between": "lambda = -1",
+      "end_coeffs_254": [
+        "1",
+        "-1"
+      ]
+    },
+    {
+      "name": "G5-CORRECTION to Part 1: a PALINDROMIC operator has ratio (-1)^r, which is m-INDEPENDENCE only at EVEN r; at odd r it ALTERNATES. GGM's m-independent 5_2 statement (det W_{m+1} = det W_m) is in the ANTI-palindromic (254), ratio +1 — not in the palindromic (276), ratio -1. Part 1's G3 called the palindrome gauge 'what makes GGM's Wronskian m-independent', and for this odd-rank knot that is wrong",
+      "passed": true,
+      "palindromic_ratio": "-1",
+      "ggm_m_independent_ratio": "1",
+      "rank": 3,
+      "parity": "odd"
+    },
+    {
+      "name": "T1-c_pretzel is known, i.e. some held source prints a rank-6 orthogonality relation from which it can be read off",
+      "passed": false,
+      "constraint": "det W_0(x;q) * det W_0(x;q^-1) = c_pretzel   (with det W_m = q^{4m} det W_0)",
+      "searched": "GGM arxiv-2012.00062v3 secs 011/015 (the only printed pairings: (137) rank 2, (92)/(93) rank 3); no rank-6 analogue",
+      "consequence": "the gap is ONE function det W_0 and ONE constant c, tied by a bar-involution equation — not 'the GL(r) normalisation' in the abstract"
+    }
+  ],
+  "scriptHash": "3732f32e3349",
+  "scriptCommitSha": "unknown",
+  "commitSha": "461013b5219f7aaf8df697be0cea9cd1dc3a4522",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}

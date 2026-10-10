@@ -33,7 +33,7 @@ Two-stage by design, because the parser alone is not trustworthy here:
 The verdict is the compiler's. Treat the propose stage as a candidate list.
 
 SCOPE — what this does NOT see. The scan walks
-`content/quantum-observable-universe/lean/QOU/` only. Content-block `.lean`
+`folio/quantum-observable-universe/lean/QOU/` only. Content-block `.lean`
 siblings under `content/<paper>/<chapter>/` are a separate surface: they
 compile standalone, cannot import one another, and win **candidate 1** of
 `lean.ref` resolution ahead of anything in the Lake tree. So a clean run here
@@ -77,7 +77,7 @@ import tempfile
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-LEANROOT = REPO / "content/quantum-observable-universe/lean"
+LEANROOT = REPO / "folio/quantum-observable-universe/lean"
 BASELINE = REPO / "docs/audits/lean-duplicate-fqn-baseline.json"
 
 DECL = re.compile(

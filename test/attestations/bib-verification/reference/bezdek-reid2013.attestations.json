@@ -1,0 +1,74 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "bezdek-reid2013",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 443,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1210.5756v1/1210.5756v1.pdf"
+        },
+        "id": "bezdek-reid2013",
+        "status": "uncited",
+        "note": "Identified from the arXiv title page (arXiv:1210.5756v1, math.MG, 21 Oct 2012): Bezdek and Reid, 'Contact graphs of unit sphere packings revisited', 19 pp, 13 sections. No ref() entry existed (references.ts had no packing entry). Entry bezdek-reid2013 created 2026-09-06; no citation site yet \u2014 bib orphan pending the cite-in-block bean.",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "The lead to check was that the contact-number bounds bear on QOU.Mass.CoordinationSaturation (bounded-degree coordination, bean qou-brng). Verified against the text: Theorem 1(i) (p. 2, proved in \u00a72 via Hales' 13-ball separation, Theorem 5, and an isoperimetric bound on the union of enlarged balls) gives touching pairs < 6n \u2212 0.926 n^{2/3} for ANY packing of n \u2265 2 unit balls in E^3; Theorem 1(ii) < 6n \u2212 3.665 n^{2/3} for lattice packings; and fcc packings with n = (2k^3+k)/3 balls achieve > 6n \u2212 7.862 n^{2/3}. That is precisely the affine-plus-sub-affine shape the corpus's saturation model assumes \u2014 bulk term 6n = 12\u00b7n/2 from the kissing number 12 (bounded degree k = 12) and a surface deficit \u221d n^{2/3} \u2014 and it brackets the coefficient of the n^{2/3} surface term the corpus computes for fcc facets in docs/audits/2026-09-05-coordination-surface-deficit.md. Theorem 2 (touching triplets \u2264 25n/3, quadruples \u2264 11n/4) bounds the higher-body-order contact counts that QOU.MassTheory.BodyOrderRecurrenceDepth says the extensive term needs (depth \u2265 3), IF a geometric packing model is adopted. Why not 'core': the corpus already declined to cite exactly these forms on principle (docs/audits/2026-09-05-max-contact-sub-affine-negative.md \u00a75 \u2014 qou-rav3 demands an internal packing argument; the ambient geometry is hyperbolic and using it consistently costs 2.64x; three-dimensionality is derived nowhere; the exponent is imported). Bezdek\u2013Reid is Euclidean and settles none of those; it converts an unreferenced import into a referenced one. Also verified: Theorems 4/5 (\u00a72) are where the kissing-number-12 rigidity enters, via Hales' result that a 13th ball must sit at distance \u2265 2.52 \u2014 so the 'k = 12' of the Lean has a theorem behind it here, not only a picture. Scope-(a) on the negative half: this document does not derive coordination from the framework; it constrains what any Euclidean-packing realisation of it could give.",
+          "keyResults": [
+            {
+              "locator": "Theorem 1(i), p. 2; proof \u00a72 (Theorem 4, Corollary 2, isoperimetric step)",
+              "statement": "The number of touching pairs in an arbitrary packing of n \u2265 2 unit balls in E^3 is less than 6n \u2212 0.926 n^{2/3}.",
+              "useForFolio": "The held, sharp form of the bounded-degree (k = 12) plus sub-affine surface-deficit shape that QOU.Mass.CoordinationSaturation and 2026-09-05-coordination-surface-deficit.md assume; cite it where the corpus currently says 'geometric close-packing count'. It makes the Euclidean import citable, not derived \u2014 the four recorded objections stand.",
+              "targets": [
+                "prop:coordination-saturation",
+                "rem:bk-coordination-multiplicity"
+              ]
+            },
+            {
+              "locator": "Theorem 1(ii) and the fcc lower bound quoted from Bezdek [2] on p. 2 (n = (2k^3+k)/3)",
+              "statement": "Lattice packings have fewer than 6n \u2212 3.665 n^{2/3} touching pairs, while explicit fcc clusters have more than 6n \u2212 7.862 n^{2/3}.",
+              "useForFolio": "Brackets the coefficient of the n^{2/3} surface term for fcc clusters, [0.926, 7.862] in general and [3.665, 7.862] for lattices \u2014 a cross-check target for the fcc-facet surface-deficit coefficients the corpus tabulates.",
+              "targets": [
+                "prop:coordination-saturation"
+              ]
+            },
+            {
+              "locator": "Theorem 2(i)\u2013(iii), p. 2; \u00a74\u2013\u00a76 (Theorem 3: \u2264 25 touching pairs / \u2264 11 triplets among caps of angular radius \u03c0/6 on S^2)",
+              "statement": "Touching triplets (resp. quadruples) in a packing of n unit balls in E^3 number at most 25n/3 (resp. 11n/4); fcc clusters realise > 8n \u2212 12(3n/2)^{2/3} + 4n^{1/3} triplets.",
+              "useForFolio": "Bounds the 3- and 4-body contact counts a geometric realisation of the extensive term would carry, relevant to the body-order depth \u2265 3 forcing (QOU.MassTheory.BodyOrderRecurrenceDepth) and the 3-body cumulant sign result (QOU.MassTheory.MayerThreeBodySign); a constraint on any packing model, not a derivation.",
+              "targets": [
+                "QOU.MassTheory.BodyOrderRecurrenceDepth"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Relevant and no ref() entry existed; created in this triage pass as bezdek-reid2013 (journal volume/pages recalled, DOI omitted \u2014 Crossref unreachable in-sandbox).",
+              "target": "folio/schema/references.ts"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "prop:coordination-saturation's docstring and rem:bk-coordination-multiplicity invoke the close-packing count with no source; Theorem 1(i) is the statement they mean. Combined with the hales-etal2010 citation in one bean because both land in the same sentence.",
+              "target": "prop:coordination-saturation",
+              "bean": "qou-ywbd"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "coding-agent-session-0134BL9GG95tgycYMjLVX35V"
+          },
+          "assessed_at": "2026-09-06T13:42:16Z",
+          "source_sha": "c7546a79a85b"
+        }
+      }
+    }
+  ]
+}

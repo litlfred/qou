@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-q-gl-fiber-functor",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:q-gl-fiber-functor",
+  "kind": "conjecture",
+  "title": "Fibre-functor mediation of the $q$-Langlands correspondence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-q-geometric-langlands",
+    "papers/quantum-observable-universe/blocks/rem-fibre-functor-rigidity"
+  ],
+  "cites": [
+    "references/frenkel2007"
+  ],
+  "tags": [
+    "geometric-langlands",
+    "fiber-functor",
+    "tannaka-krein"
+  ],
+  "leanRef": "qou:QOU.QGeometricLanglands.q_gl_fiber_functor",
+  "text": "q-gl-fiber-functor.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-markov-axiom-recursive-ascent",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:markov-axiom-recursive-ascent",
+  "kind": "definition",
+  "title": "Markov-axiom recursive ascent for atomic $\\mathrm{tr}_M$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-markov-pair-z2",
+    "papers/quantum-observable-universe/blocks/thm-topological-mass"
+  ],
+  "tags": [
+    "markov-trace",
+    "computation",
+    "algorithm"
+  ],
+  "defines": [
+    "markov-axiom-recursive-ascent"
+  ],
+  "leanRef": "qou:QOU.Interactions.markov_peel",
+  "text": "markov-axiom-recursive-ascent.md",
+  "provenance": "authored"
+}

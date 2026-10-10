@@ -336,7 +336,7 @@ def selftest() -> int:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--root", default="content")
+    ap.add_argument("--root", default="folio")
     ap.add_argument("--json")
     ap.add_argument("--selftest", action="store_true")
     a = ap.parse_args()

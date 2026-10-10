@@ -1,0 +1,97 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "habiro2004",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 97,
+      "entry": {
+        "id": "habiro2004",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T16:14:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 1,
+        "fix_commit": "(this commit)",
+        "note": "1 bare-URL Ref upgraded with title+author+year form. | PDF verified: Habiro, \"A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres,\" arXiv:math/0605314. Verified.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/habiro2004.pdf"
+        },
+        "local_pdf": "uploads/habiro2004.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "BROKEN SOURCE JOIN: the named file does not exist. DUPLICATE-KEY DEFECT: the ids 'habiro2004' (references.ts:2113) and 'habiro2004' (references.ts:2142) name the SAME work \u2014 identical descriptive fields, identical DOI, identical preprint id \u2014 and the 2004-named id is itself registered with an issue date four years later than its own name implies. The one real source, library/arxiv-math-0605314v1/0605314v1.pdf, is joined in this same slice to 'habiro2004'. DOI CONTRADICTIONS AT SITES: no citation site uses the registered DOI. mass-theory/full-pole-structure-mass-trace.lean:31/104/145/165 and mass-theory/habiro-residue-sum-equivalence.lean:39 attach one DOI; mass-theory/q-beta-q-eq-one-shadow-gate.lean:33, q-beta-radius-of-convergence-gate.lean:36, q-beta-c-k-recursion-from-habiro-q-difference.lean:30 and q-beta-bar-even-kernel-invariant.lean:42 attach a second, different one. Three DOIs, one id. CLAIM CHECK, partially resolvable: mass-theory/full-pole-structure-mass-trace-proof.md:1-6 cites this id for the statement that the Habiro ring is by definition the inverse limit lim_n Z[q]/((q;q)_n). I verified in library/arxiv-math-0605314v1/0605314v1.pdf that its section 1.2 does state Zhat[q] = lim_n Z[q]/((q)_n), so the claim IS present in the cited work \u2014 but that work's own bibliography attributes the construction to the cyclotomic-completions paper, which this corpus registers separately as 'habiro2004cyclotomic' and whose source is present at library/arxiv-math-0209324v1/0209324v1.pdf The citation is supportable but points at the recollection rather than the source.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "Merge habiro2004 into habiro2004 (one work, two ids), reconcile the two site-level DOIs against the registered one, and re-point the Habiro-ring-definition citation at habiro2004cyclotomic where the ring is introduced.",
+              "target": "prop:full-pole-structure-mass-trace",
+              "bean": "qou-f13w"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    },
+    {
+      "position": 181,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0605314v1/0605314v1.pdf"
+        },
+        "id": "habiro2004",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED from front matter: the document self-identifies as the preprint id recorded on the registered entry, and its abstract matches the entry's subject. DUPLICATE-KEY DEFECT: this is the identical work registered a second time as 'habiro2004' (references.ts:2113) with identical descriptive fields, DOI and preprint id; see the habiro2004 row. NOT LOAD-BEARING at its four sites \u2014 and the files say so honestly. lean/QOU/BraidKnot/KeystoneHabiroInfiniteRigidity.lean:11 invokes it as motivation (a unified WRT invariant is an element of the Habiro ring determined by its values at all roots of unity), but every theorem in that file and in KeystoneHabiroRootFamily.lean is pure real-polynomial interpolation discharged by Mathlib's Polynomial.eq_of_infinite_eval_eq; nothing from the document is used as a hypothesis, and KeystoneHabiroRootFamily.lean:35-37 states explicitly that Habiro rigidity is cited, not proved. Also cited at KeystoneGaugeRowRigidity.lean:36 and lean/QOU/MassTheory/HabiroMagnitudeA3.lean:62. PARAPHRASE GAP worth recording: the Lean docstring's 'determined by its values at all roots of unity' is weaker than what the document proves \u2014 its abstract says tau_zeta(M) for all roots of unity is determined by a Taylor expansion at ANY single root, and by the values at infinitely many roots of PRIME POWER order. Separately, the document's roots of unity are complex, whereas the Lean interpolates real fold values 2cos(k*pi/N), so the analogy is looser than the docstring suggests.",
+          "keyResults": [
+            {
+              "locator": "\u00a71.2",
+              "statement": "The Habiro ring is Zhat[q] = lim_n Z[q]/((q)_n), and each element is determined by its Taylor expansion at any root of unity.",
+              "useForFolio": "The actual definitional statement behind the Habiro-ring blocks; note the document itself attributes the construction to the cyclotomic-completions paper registered here as habiro2004cyclotomic.",
+              "targets": [
+                "cor:habiro-expansion-atomic"
+              ]
+            },
+            {
+              "locator": "Abstract / Thm 1.1",
+              "statement": "J_M in Zhat[q] unifies the SU(2) WRT invariants: evaluation at each root of unity zeta recovers tau_zeta(M), and tau_zeta(M) for all roots of unity is determined by the values at infinitely many roots of unity of prime power order.",
+              "useForFolio": "The precise rigidity statement the Keystone files gesture at; using the prime-power-order form would make the cited antecedent match the source.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneHabiroInfiniteRigidity.lean"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "Record the paraphrase gap: the file cites determination by values at all roots of unity where the source proves determination by a Taylor expansion at any one root and by infinitely many prime-power-order roots, over complex roots rather than the real fold values the Lean interpolates. Scope-(a): the Lean theorems are unaffected \u2014 they are self-contained interpolation facts \u2014 only the cited antecedent is looser than the source.",
+              "target": "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneHabiroInfiniteRigidity.lean",
+              "bean": "qou-bivd"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "5fb8b89b4324"
+        }
+      }
+    }
+  ]
+}

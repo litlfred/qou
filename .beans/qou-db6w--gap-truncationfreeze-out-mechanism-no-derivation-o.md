@@ -1,9 +1,0 @@
----
-# qou-db6w
-title: 'GAP: truncation/freeze-out mechanism — no derivation of suppression of high-action morphisms'
-status: todo
-type: task
-created_at: 2026-07-31T19:56:30Z
-updated_at: 2026-07-31T19:56:30Z
----
-

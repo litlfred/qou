@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-incompleteness-implies-horizon",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:incompleteness-implies-horizon",
+  "kind": "proposition",
+  "title": "Turing completeness with $\\mathbb{N}$-embedding implies non-empty computational horizon",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-computational-horizon"
+  ],
+  "cites": [
+    "references/goedel1931",
+    "references/turing1936"
+  ],
+  "tags": [
+    "incompleteness",
+    "goedel",
+    "turing-completeness",
+    "diagonal-argument",
+    "computational-horizon",
+    "nat-embedding",
+    "non-computable"
+  ],
+  "leanRef": "qou:QOU.IncompletenessHorizon.exists_noncomputable",
+  "text": "incompleteness-implies-horizon.md",
+  "leanSource": "incompleteness-implies-horizon.lean",
+  "provenance": "authored"
+}

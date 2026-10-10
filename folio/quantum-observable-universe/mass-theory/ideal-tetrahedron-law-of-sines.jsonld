@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-ideal-tetrahedron-law-of-sines",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:ideal-tetrahedron-law-of-sines",
+  "kind": "theorem",
+  "title": "The law of sines for an ideal tetrahedron: $\\lVert z \\rVert = \\sin\\theta_2 / \\sin\\theta_3$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-rivin-concavity-one-tetrahedron"
+  ],
+  "cites": [
+    "references/thurston1978",
+    "references/neumann-zagier1985",
+    "references/milnor1982"
+  ],
+  "tags": [
+    "hyperbolic-volume",
+    "ideal-tetrahedron",
+    "dilogarithm",
+    "kummer",
+    "law-of-sines"
+  ],
+  "leanRef": "qou:QOU.Knot.IdealTet.norm_eq_sin_div_sin",
+  "text": "ideal-tetrahedron-law-of-sines.md",
+  "provenance": "authored"
+}

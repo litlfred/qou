@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-golden-skew-dual-node",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:golden-skew-dual-node",
+  "kind": "proof",
+  "title": "Proof of golden skew dual node",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-golden-skew-dual-node"
+  ],
+  "text": "golden-skew-dual-node-proof.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/unital-groebner-bases/blocks/prf-pbw",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:pbw",
+  "kind": "proof",
+  "uses": [
+    "papers/unital-groebner-bases/blocks/cor-pbw",
+    "papers/unital-groebner-bases/blocks/thm-buchberger"
+  ],
+  "text": "pbw-corollary-proof.md",
+  "provenance": "authored"
+}

@@ -19,7 +19,7 @@ So a **color flux tube** — a cylinder with a core — has its transverse modes
 
 ### Why this is structurally exact in QOU, not an analogy
 
-- The Hahn–Exton q-Bessel is the **matrix coefficient of `E_q(2)`** (the quantum group of motions of the plane, the `SU_q(2) → E_q(2)` contraction; Vaksman–Korogodsky 1989 / Koelink 1994 — cited in [`QBesselContiguityRecurrence.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/QBesselContiguityRecurrence.lean)). `E_q(2)` is the symmetry of a **q-cylinder**.
+- The Hahn–Exton q-Bessel is the **matrix coefficient of `E_q(2)`** (the quantum group of motions of the plane, the `SU_q(2) → E_q(2)` contraction; Vaksman–Korogodsky 1989 / Koelink 1994 — cited in [`QBesselContiguityRecurrence.lean`](../../folio/quantum-observable-universe/lean/QOU/QBeta/QBesselContiguityRecurrence.lean)). `E_q(2)` is the symmetry of a **q-cylinder**.
 - The **first/second-kind partners** (`qbessel_first_kind_coeff_closed_form` / `qbessel_second_kind_coeff_closed_form`, wired in this PR) are the **`SU_q(1,1)` (quantum *hyperbolic* plane)** solutions — the negative-curvature "throat" geometry of a flux tube.
 - The **Reeb flow** (writhe/framing rotational flow on knot operations) is the radial datum: the "growth sector" `|r_λ|>1`, `θ_λ = arccosh|r_λ|`, the extensive `q^{writhe}` channel ([`2026-06-20-qbessel-reeb-flow-radial-argument.md`](../audits/2026-06-20-qbessel-reeb-flow-radial-argument.md)).
 

@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-braiding-eigenvalue-extraction-novelty",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:braiding-eigenvalue-extraction-novelty",
+  "kind": "remark",
+  "title": "Mathematical novelty: $q$ is extracted, not posited",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-braiding-eigenvalue-extraction",
+    "papers/quantum-observable-universe/blocks/prop-tannaka-krein-reconstruction"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-braiding-eigenvalue-extraction",
+  "cites": [
+    "references/kassel1995"
+  ],
+  "tags": [
+    "braiding",
+    "eigenvalue",
+    "substrate-parameter",
+    "categorical"
+  ],
+  "text": "braiding-eigenvalue-extraction-novelty.md",
+  "provenance": "authored"
+}

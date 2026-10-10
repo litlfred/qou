@@ -1,0 +1,76 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "reyescarocca2022",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 290,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2211.08164v2/2211.08164v2.pdf"
+        },
+        "id": "reyescarocca2022",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "A 10-page note whose headline theorem (infinitely many non-hyperelliptic genus-3 surfaces with Aut acting transitively on the Weierstrass points) is not something the folio consumes. Its *second* theorem is: for g > 2 with simple Weierstrass points, a transitive action occurs iff g = 4 and X is Bring's curve, or g = 3 and X is one of the C_t (t != 0,3). That is a sharp, citable uniqueness characterisation of Bring's curve, and ex:chi-minus-six-derivation Step 7 currently asserts 'the unique maximally symmetric genus-4 curve is Bring's surface' with no source. Reading it also surfaces a discrepancy worth the author's attention (below): the same block's Step 5 speaks of 'the 6 Weierstrass points of Bring's surface', whereas transitivity plus simplicity forces a single Aut-orbit of g^3-g = 60 weight-1 points -- and the corpus already records exactly that count from Braden-Disney-Hogg in docs/audits/2026-07-18-uploaded-papers-binding-mass-gap-ideas.md line 409 ('60 weight-1 Weierstrass points, Aut-transitive'). Per the corpus-grep discipline this is flagged as an internal inconsistency between a content block and an existing audit, not as a new discovery, and not as a claim that chi(A) = -6 is wrong: the '6 branch points' conclusion may well be right for another reason, but the parenthetical derivation 'from the S_3 subset S_5 orbits on the 6 Weierstrass points' cannot be read as stated if there are 60 of them in one orbit.",
+          "keyResults": [
+            {
+              "locator": "Thm 2 (Sec 4, p. 6-7); intro item (3), p. 1",
+              "statement": "For g > 2 with simple Weierstrass points, Aut(X) acts transitively on the Weierstrass points iff g = 4 and X is Bring's curve, or g = 3 and X is C_t for some t != 0, 3; and Bring's curve is listed with Klein's quartic and Macbeath's curve among the classically known transitive examples.",
+              "useForFolio": "Supplies the missing source for Step 7 of ex:chi-minus-six-derivation ('the unique maximally symmetric genus-4 curve is Bring's surface') in a precise, checkable form, and simultaneously fixes the orbit structure Step 5 appeals to: transitive + simple means one orbit of 60, not an S_3-orbit decomposition of 6.",
+              "targets": [
+                "ex:chi-minus-six-derivation"
+              ]
+            },
+            {
+              "locator": "Sec 4, remark following Thm 2 (p. 7) citing Edge, J. London Math. Soc. 18 (1978) 539-545, and Braden-Disney-Hogg arXiv:2208.13692 Sec 3.1",
+              "statement": "The Weierstrass points of Bring's curve were determined by Edge; see also Braden-Disney-Hogg Sec 3.1.",
+              "useForFolio": "Names the primary source (Edge 1978) for the Bring Weierstrass-point set, which is the datum ex:chi-minus-six-derivation Step 5 is implicitly using; Braden-Disney-Hogg is already digested in the 2026-07-18 audit, so the two independently agree.",
+              "targets": [
+                "ex:chi-minus-six-derivation"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Orphan; supplies the uniqueness characterisation of Bring's curve that a live content block asserts unsourced.",
+              "target": "folio/schema/references.ts (proposed id: reyes-carocca-speziali2024)",
+              "bean": "qou-jrm0"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Step 7 of ex:chi-minus-six-derivation asserts Bring is the unique maximally symmetric genus-4 curve with no citation; Thm 2 gives a precise version of that uniqueness.",
+              "target": "ex:chi-minus-six-derivation",
+              "bean": "qou-bto5"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Step 5's parenthetical ('S_3 subset S_5 orbits on the 6 Weierstrass points of Bring's surface') is inconsistent with transitivity + simplicity (one orbit, 60 points) and with the corpus's own 2026-07-18 audit line recording 60 weight-1 Aut-transitive Weierstrass points. Flagged as needing author adjudication of what the 6 actually counts; not proposed as an automatic edit and not a claim that chi(A) = -6 is wrong.",
+              "target": "ex:chi-minus-six-derivation",
+              "bean": "qou-xz89"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "aff9ff3ef5ac"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

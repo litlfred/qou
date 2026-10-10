@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-yekutieli-lifting",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:yekutieli-lifting",
+  "kind": "proposition",
+  "title": "Categorical lifting condition holds in the brane tower",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-characteristic-classes"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-yekutieli-lifting"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-yekutieli-lifting-su2"
+  ],
+  "tags": [
+    "yekutieli",
+    "lifting",
+    "brane-tower"
+  ],
+  "leanRef": "qou:QOU.BringsSurface.yekutieli_lifting",
+  "text": "yekutieli-lifting.md",
+  "leanSource": "yekutieli-lifting.lean",
+  "provenance": "authored"
+}

@@ -49,7 +49,7 @@ local re-derivations into backward references to one source.
 
 ### Item 1 — Verlinde / ADE reference + citations (smallest, do first)
 - Add Verlinde (1988, *Nucl. Phys. B* 300:360) + an ADE / quantum-
-  dimension reference to `content/schema/references.ts`.
+  dimension reference to `folio/schema/references.ts`.
 - Cite from the 5 existing `Verlinde`-mentioning blocks
   (`root-of-unity-truncation.md`, `zeta8-witness-level2-su2.md`, …),
   replacing ad-hoc mentions with `\cite{}`.

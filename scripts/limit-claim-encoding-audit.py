@@ -119,8 +119,8 @@ if __name__ == '__main__':
     if '--selftest' in sys.argv:
         sys.exit(selftest())
     if not args:
-        args = (glob.glob("content/quantum-observable-universe/lean/QOU/FluidDynamics/*.lean")
-                + glob.glob("content/quantum-observable-universe/fluid-dynamics/*.lean"))
+        args = (glob.glob("folio/quantum-observable-universe/lean/QOU/FluidDynamics/*.lean")
+                + glob.glob("folio/quantum-observable-universe/fluid-dynamics/*.lean"))
     paths = []
     for a in args:
         paths += glob.glob(os.path.join(a, "*.lean")) if os.path.isdir(a) else [a]

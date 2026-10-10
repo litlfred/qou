@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-hadron-half-life-verification-table5-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:hadron-half-life-verification-table5-data",
+  "kind": "table",
+  "title": "Data table 5 from ex:hadron-half-life-verification",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-hadron-half-life-verification"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "hadron-half-life-verification-table5-data.md",
+  "provenance": "authored"
+}

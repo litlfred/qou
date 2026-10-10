@@ -56,7 +56,7 @@
 set -uo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")/.." && pwd)"
-PKG="$ROOT/content/quantum-observable-universe/lean"
+PKG="$ROOT/folio/quantum-observable-universe/lean"
 
 cmd="${1:-}"; shift || true
 OVL="${LEAN_OVERLAY:-${TMPDIR:-/tmp}/lean-overlay-$(id -u)}"

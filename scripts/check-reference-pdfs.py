@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Check that every `pdf:` path in references.ts resolves on disk.
 
-Why this exists: `content/schema/references.ts` carries 370 `pdf:` fields
+Why this exists: `folio/schema/references.ts` carries 370 `pdf:` fields
 pointing into `library/`, and nothing validated them. A bibliography entry
 whose PDF has been renamed or tidied away fails silently -- the entry still
 renders, the citation still resolves, and only someone opening the file finds
@@ -28,7 +28,7 @@ import pathlib
 import re
 import sys
 
-REFS = pathlib.Path("content/schema/references.ts")
+REFS = pathlib.Path("folio/schema/references.ts")
 LIBRARY = pathlib.Path("library")
 
 

@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-atom-knot-unique",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:atom-knot-unique",
+  "kind": "proposition",
+  "title": "Uniqueness of the atom-knot up to Markov equivalence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-atom-knot-exists"
+  ],
+  "tags": [
+    "uniqueness",
+    "atom-knot",
+    "markov-equivalence"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.AtomKnot.unique_up_to_markov",
+  "text": "atom-knot-unique.md",
+  "leanSource": "atom-knot-unique.lean",
+  "provenance": "authored"
+}

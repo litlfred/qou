@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-primordial-vortex",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:primordial-vortex",
+  "kind": "remark",
+  "title": "Primordial vortex and the deep-quantum limit",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-q-torsion-leaf",
+    "papers/quantum-observable-universe/blocks/rem-heisenberg-commutator"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-planck-constant",
+  "text": "primordial-vortex.md",
+  "provenance": "authored"
+}

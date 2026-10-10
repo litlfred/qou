@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-bar-apply-transfer",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:bar-apply-transfer",
+  "kind": "proposition",
+  "title": "Bar-transfer principle: one-sided bounds on bar-invariant properties extend for free",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-bar-t-duality-substrate"
+  ],
+  "tags": [
+    "bar-involution",
+    "skew-symmetry",
+    "transfer-principle",
+    "stability-margin",
+    "proof-reuse"
+  ],
+  "leanRef": "qou:QOU.Archimedean.BarApplyTransfer.bar_apply_transfer",
+  "text": "bar-apply-transfer.md",
+  "leanSource": "bar-apply-transfer.lean",
+  "provenance": "authored"
+}

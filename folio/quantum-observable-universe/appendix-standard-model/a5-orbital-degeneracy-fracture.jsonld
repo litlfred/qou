@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-a5-orbital-degeneracy-fracture",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:a5-orbital-degeneracy-fracture",
+  "kind": "remark",
+  "title": "Orbital degeneracies fracture along $A_5$ irreducibles",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-sm-gauge-truncation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-sm-gauge-truncation",
+  "tags": [
+    "appendix",
+    "standard-model",
+    "icosahedral",
+    "orbitals",
+    "brings-surface"
+  ],
+  "text": "a5-orbital-degeneracy-fracture.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-torus-ns-regular",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:torus-ns-regular",
+  "kind": "example",
+  "title": "The torus quantum universe: $\\chi(A) = 0$ and NS regularity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-ns-obstruction",
+    "papers/quantum-observable-universe/blocks/thm-ns-singularity-descartes"
+  ],
+  "tags": [
+    "example",
+    "torus",
+    "euler-characteristic",
+    "ns-regular",
+    "contrast"
+  ],
+  "text": "torus-ns-regular.md",
+  "provenance": "authored"
+}

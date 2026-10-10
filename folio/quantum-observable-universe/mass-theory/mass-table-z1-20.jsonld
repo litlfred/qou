@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-mass-table-z1-20",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:mass-table-z1-20",
+  "kind": "remark",
+  "title": "Predicted vs observed masses, $Z = 1$--$20$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-kashaev-volume-density"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-wedderburn-mass-formula",
+  "text": "mass-table-z1-20.md",
+  "provenance": "authored"
+}

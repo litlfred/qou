@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-skein-mass-from-linking",
+  "@type": [
+    "folio-assistant-core:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:skein-mass-from-linking",
+  "kind": "lemma",
+  "title": "Mass functional on a Skein resolution: linking-energy plus constituent volume",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hadron"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-skein-mass-from-linking"
+  ],
+  "tags": [
+    "skein-resolution",
+    "binding-energy",
+    "torus-knot",
+    "hopf-link"
+  ],
+  "leanRef": "qou:QOU.BraidsKnots.skein_mass_from_linking",
+  "text": "skein-mass-from-linking.md",
+  "provenance": "authored"
+}

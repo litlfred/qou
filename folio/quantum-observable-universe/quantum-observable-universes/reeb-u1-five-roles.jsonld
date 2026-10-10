@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-reeb-u1-five-roles",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:reeb-u1-five-roles",
+  "kind": "remark",
+  "title": "Five roles of the Reeb $U(1)$: Wick rotation, $i$, chart-swap, knot framing, OS reflection",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-reeb-u1-chart-swap",
+    "papers/quantum-observable-universe/blocks/rem-affine-chart-origin-of-i-and-q",
+    "papers/quantum-observable-universe/blocks/def-frobenius-hopf-substrate"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-reeb-u1-chart-swap",
+  "tags": [
+    "reeb",
+    "chart-transition",
+    "wick-rotation",
+    "imaginary-unit",
+    "u1-action",
+    "knot-operator"
+  ],
+  "text": "reeb-u1-five-roles.md",
+  "provenance": "authored"
+}

@@ -11,7 +11,7 @@ eight cusp modulus is τ = −i√3 (CCGLS A-polynomial, ℚ(√−3)), so the l
 complex-volume coefficient a₂ = 𝔙″(0)/2 is PURELY IMAGINARY, a₂ = i·√3/4, hence
   RIGHT:  Im 𝔙₄₁(u) = (√3/4)(Re²u − Im²u)
 proved sorry-free as `imV₄₁` in
-  content/quantum-observable-universe/lean/QOU/Knot/FigureEightComplexVolume.lean
+  folio/quantum-observable-universe/lean/QOU/Knot/FigureEightComplexVolume.lean
 Audit: docs/audits/2026-07-26-sdeformed-channel-signflip.md.
 Authoritative corrected geometry-side readout (this probe AGREES with it):
   computations/qbeta/qbeta_geometric_boost_udeform_probe.py.

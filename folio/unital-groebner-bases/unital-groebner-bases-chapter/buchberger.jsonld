@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/unital-groebner-bases/blocks/thm-buchberger",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:buchberger",
+  "kind": "theorem",
+  "title": "Buchberger's theorem over commutative rings",
+  "uses": [
+    "papers/unital-groebner-bases/blocks/def-admissible-system",
+    "papers/unital-groebner-bases/blocks/def-groebner-basis",
+    "papers/unital-groebner-bases/blocks/prop-s-polynomial-decomposition"
+  ],
+  "proofs": [
+    "papers/unital-groebner-bases/blocks/prf-buchberger"
+  ],
+  "tags": [
+    "groebner-basis",
+    "buchberger",
+    "s-polynomial"
+  ],
+  "leanRef": "ugb:UGB.UnitalGroebner.buchberger",
+  "text": "buchberger.md",
+  "leanSource": "buchberger.lean",
+  "provenance": "authored"
+}

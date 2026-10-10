@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-force-knot-identification",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:force-knot-identification",
+  "kind": "remark",
+  "title": "Force carriers from the involutive structure and saturating generators",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-torus-knot-prime-powers"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-torus-embeddable-complete",
+  "tags": [
+    "force",
+    "electromagnetic",
+    "strong",
+    "weak",
+    "involution",
+    "dagger",
+    "torus-knot",
+    "crossing-energy",
+    "coulomb",
+    "symplectic"
+  ],
+  "text": "force-knot-identification.md",
+  "provenance": "authored"
+}

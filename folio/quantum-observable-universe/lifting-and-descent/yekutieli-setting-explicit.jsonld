@@ -1,0 +1,44 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-yekutieli-setting-explicit",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:yekutieli-setting-explicit",
+  "kind": "remark",
+  "title": "Yekutieli's hypotheses made explicit: which the axioms supply, and which they do not",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-yekutieli-lifting",
+    "papers/quantum-observable-universe/blocks/def-yekutieli-lifting-condition",
+    "papers/quantum-observable-universe/blocks/def-quantum-characteristic-classes",
+    "papers/quantum-observable-universe/blocks/def-spatial-realization-functor",
+    "papers/quantum-observable-universe/blocks/def-hochschild-homology"
+  ],
+  "foreshadows": [
+    "papers/quantum-observable-universe/blocks/rem-hkr-theorem"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-yekutieli-lifting",
+  "cites": [
+    "references/yekutieli2010",
+    "references/kontsevich-2003",
+    "references/hkr-1962",
+    "references/hartshorne-1977"
+  ],
+  "tags": [
+    "yekutieli",
+    "gerbes",
+    "deformation-quantization",
+    "maurer-cartan",
+    "formal-parameter",
+    "smoothness",
+    "hypotheses"
+  ],
+  "text": "yekutieli-setting-explicit.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-topological-mass-dilogarithm",
+  "@type": [
+    "folio-assistant-core:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:topological-mass-dilogarithm",
+  "kind": "lemma",
+  "title": "Quantum dilogarithm evaluation of exceptional-divisor contributions",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-topological-mass-holonomy",
+    "papers/quantum-observable-universe/blocks/lem-topological-mass-transient-localisation"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-topological-mass-dilogarithm"
+  ],
+  "tags": [
+    "quantum-dilogarithm",
+    "exceptional-divisor",
+    "briggs-klein",
+    "spectral-coordinates"
+  ],
+  "leanRef": "qou:QOU.LiftingDescent.tm_dilogarithm_evaluation",
+  "text": "topological-mass-dilogarithm.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "aubert2001",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 110,
+      "entry": {
+        "id": "aubert2001",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T16:14:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": null,
+        "note": "PDF verified: Aubert et al. (BaBar Collab.), \"Observation of CP violation in the B0 meson system,\" Phys. Rev. Lett. 87 (2001), arXiv:hep-ex/0107013 (BABAR-PUB-01/18). Verified.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/aubert2001.pdf"
+        },
+        "local_pdf": "uploads/aubert2001.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "DOCUMENT ABSENT \u2014 cannot verify the join. Path does not exist, never committed; no substitute under the recorded arXiv id in uploads/. Only 3 corpus hits and 0 fixes recorded by the prior pass \u2014 the thinnest citation in this slice. The registered entry is a collaboration measurement announcement, i.e. an experimental datum rather than a technique the folio consumes; with no claim-bearing citation site anywhere I cannot identify anything the corpus uses from it, and I cannot check the document to see whether anything is usable.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Cannot verify the document, and the citation carries no claim at any site. Worth a human decision on whether the reference is needed at all.",
+              "target": "folio/schema/references.ts"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    }
+  ]
+}

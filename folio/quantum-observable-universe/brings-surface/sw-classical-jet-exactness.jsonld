@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-sw-classical-jet-exactness",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:sw-classical-jet-exactness",
+  "kind": "proposition",
+  "title": "The classical-jet prolongation of $\\lambda_{\\mathrm{SW}}$ is exact for $n \\ge 1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-sw-period-residue-sum",
+    "papers/quantum-observable-universe/blocks/prop-mi-sw-abelianisation"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-sw-classical-jet-exactness"
+  ],
+  "leanRef": "qou:QOU.Brings.classical_jet_period_zero",
+  "text": "sw-classical-jet-exactness.md",
+  "leanSource": "sw-classical-jet-exactness.lean",
+  "provenance": "authored"
+}

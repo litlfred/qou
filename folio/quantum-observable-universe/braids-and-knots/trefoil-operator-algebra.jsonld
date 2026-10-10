@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-trefoil-operator-algebra",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:trefoil-operator-algebra",
+  "kind": "example",
+  "title": "Trefoil braid relation and operator algebra",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-su2-generators"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-su2-generators",
+  "tags": [
+    "trefoil",
+    "su2",
+    "operator-algebra"
+  ],
+  "text": "trefoil-operator-algebra.md",
+  "provenance": "authored"
+}

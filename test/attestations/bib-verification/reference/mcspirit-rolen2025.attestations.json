@@ -1,0 +1,58 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "mcspirit-rolen2025",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 309,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2505.00799v2/2505.00799v2.pdf"
+        },
+        "id": "mcspirit-rolen2025",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Join CORRECT (arXiv:2505.00799v2, McSpirit-Rolen, 'Quantum Modular Forms and Resurgence', revised 29 May 2025, matching the registered entry). BIB ORPHAN: full-tree grep returns zero citation sites in content/; the only hit is docs/audits/2026-08-01-fantini-wheeler-summability-c3-borel-reframe.md:102, where it is discussed by name but never cited from a block. The paper unifies all of Zagier's original quantum-modular examples under resurgence, strengthens known quantum-modularity results for holomorphic Eichler integrals of half-integer-weight modular forms, and - its stated main addition - proves median-resummation results showing the holomorphic quantum modular forms considered can be recovered from their asymptotics. That last point is the one that bears on the folio: median resummation of a divergent asymptotic series is exactly the operation the c_k / Stokes-constant work needs, and the corpus already has a Borel-summability audit that names this paper. Supporting rather than core: nothing derives from it yet, and I have not checked whether the folio's series fall in the class its median-resummation theorems cover.",
+          "keyResults": [
+            {
+              "locator": "Sec. 1, 'main addition to the literature' (median resummation results)",
+              "statement": "The holomorphic quantum modular forms treated can be recovered from their asymptotic expansions (or those of closely related functions) by median resummation.",
+              "useForFolio": "A recovery-from-asymptotics statement is the resurgence-side counterpart of the Habiro/Stokes framing; it would give the c1/GGM bar-parity and Stokes-DT blocks a citable resummation result instead of an informal appeal to resurgence.",
+              "targets": [
+                "conj:c1-ggm-bar-parity-faces",
+                "conj:stokes-dt-bps-bridge"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "The key is discussed in an audit but cited from no block, while two conjecture blocks lean on resurgence/quantum-modularity language. Cite it where median resummation is invoked.",
+              "target": "conj:stokes-dt-bps-bridge",
+              "bean": "qou-a707"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record what must be checked before any of its theorems are used: whether the folio's divergent series sit in the half-integer-weight Eichler-integral class the median-resummation results cover. Without that check the connection is thematic only.",
+              "target": "conj:c1-ggm-bar-parity-faces",
+              "bean": "qou-5f6d"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "cc9d2ab4c6c7"
+        }
+      }
+    }
+  ]
+}

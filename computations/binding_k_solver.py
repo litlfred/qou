@@ -73,6 +73,57 @@ of K is the "binding stability" certificate.  The witness emits per-
 block primal/dual via the operator-selection LP per AGENTS.md.
 
 Output: `binding-k-solver.witness.json`.
+
+*** MEASURED DEFECT, FIXED 2026-09-13: a q-dimension of exactly 1 was being
+    recorded as 0 ***
+
+`dim_q(λ, q)` was evaluated at `qou_substrate.constants.Q` — the **float64**
+proton pin, 17 digits of a 50-digit constant — and then `float()`-cast.  Rule C
+(`rule_C_floor_dim_q`) predicts `ρ` with `int(qd)`, which is a **FLOOR**, and
+`int(round(...))` in rules B and D is likewise **discontinuous**.  A 1e-16 error
+in `qd` is therefore not a 1e-16 error in the verdict; it is a whole unit.
+
+Measured across all 33 (atom, block) pairs:
+
+  * SIX blocks have an exact `dim_q` of **1** — the trivial and sign
+    representations, `λ = (n)` and `λ = (1^n)`, whose q-dimension is 1 by
+    definition.
+  * At the float64 pin, **four of the six** evaluate to `0.99999999999999978`,
+    so `int(qd)` returned **0 for a q-dimension of exactly 1**.  The other two
+    landed at `1.00000000000000022` and were correct **by luck**, on a margin
+    of 2e-16.
+  * The worst `|qd_float64 − qd_exact|` over all blocks is **1.84e-13** —
+    ~800× the margin those two survived on, and three orders worse than
+    float64 epsilon, because `dim_q` is a ratio of q-integer products.
+
+Fixed by evaluating `dim_q` at `Q0_PROTON_EXACT` (the 50-digit string) and
+taking `mp.nint` / `mp.floor` on the `mpf`, which puts the rounding decision ~54
+orders from the boundary instead of 0–2.
+
+**The headline verdict did NOT change** and that is worth stating plainly: no
+atom's *dominant* block is one of the six (they are `(5,1)`, `(8,1)`, `(6,3)` at
+`qd` = 5.22, 8.95, 62.25 — all far from an integer), so "0 of 4 candidate rules
+reproduce ρ" and `rules_consistent_with_all_observations: []` are unchanged.
+The defect was in the recorded per-block `dim_q`, and it was one dominance
+change away from reaching the verdict.
+
+*** WHAT IS NOT DRAINED HERE, and why ***
+
+Raw float64 fields: 773 → 524.  The remaining 524 are two layers that cannot be
+made exact at this problem size, and they are left as honest float64 rather than
+rendered at 60 digits (which is the laundering the gate forbids):
+
+  * **The matrix layer** — `chi`, `det`, `min_eig_sym`, `eigenvalues_sym` come
+    from `numpy` on the seminormal blocks.  `build_seminormal_matrices`
+    dispatches on the operand and *would* give exact arithmetic for an `mpf`
+    `q` (bean `qou-8xb1`), but the largest block at `n_0 = 9` has **dim 216**;
+    an mpmath `eigsy`/`det` there is O(10⁷) mpf operations per block, over 30
+    blocks and 3 atoms.  Not feasible.  An exact route would have to go through
+    the Rust engine.
+  * **The LP layer** — Clarabel returns float64 by construction.  `t` is
+    explicitly downcast at the LP boundary; see the comment there for the
+    25-order residual excursion that happens if exact data is pushed in
+    instead, which is NOT understood and was deliberately not shipped.
 """
 from __future__ import annotations
 
@@ -98,6 +149,27 @@ from codata_constants import (
 )
 
 Q0 = float(Q_FLOAT)
+
+# EXACT proton pin, for the quantities that need no matrix (2026-09-13).
+# `qou_substrate.constants.Q` is the FLOAT64 pin — 17 digits of a 50-digit
+# constant — and `dim_q` fed through it lands 2e-16 BELOW an exact integer on
+# four blocks, which `int()` then floors to zero. See MEASURED DEFECT in the
+# module docstring. The matrix layer still runs at `Q0`; see WHAT IS NOT
+# DRAINED HERE for why, and note the two are the same pin at different
+# precision, not two anchors.
+from _precision import set_compute_dps, fmt  # noqa: E402
+from mpmath import mp, mpf  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR as _Q50  # noqa: E402
+
+# BEFORE the mpf below, not after: this producer never called
+# `set_compute_dps()` at all, so `mp.dps` was the mpmath default of 15 and
+# `mpf(<50-digit string>)` would have been silently truncated to 15 — the
+# `mp.dps` no-op the precision gates exist to catch, reintroduced by the very
+# line meant to fix a precision bug.
+set_compute_dps()
+
+Q0_PROTON_EXACT = mpf(_Q50)
+
 HERE = Path(__file__).parent
 
 
@@ -175,7 +247,10 @@ def load_wenzl_weights(n: int) -> dict:
     if table is None:
         return {}
     return {
-        tuple(w["partition"]): float(w["y_lambda_numeric"])
+        # `mpf(str(...))`, not `float(...)`: the witness stores these as
+        # decimal strings at full precision and the cast threw ~35 digits away
+        # at read time (2026-09-13). They feed the dominant-block selection.
+        tuple(w["partition"]): mpf(str(w["y_lambda_numeric"]))
         for w in table["weights"]
     }
 
@@ -346,6 +421,27 @@ def is_hook_partition(shape: tuple) -> bool:
     return all(r == 1 for r in shape[1:])
 
 
+
+def _serialise(obj):
+    """Render an `mpf`-bearing structure for the witness.
+
+    The exactly-computable quantities (`dim_q`, `y_wenzl`, the rule values)
+    are carried as `mpf` and become text HERE, once, via `_precision.fmt`.
+    The matrix- and LP-derived fields are genuine float64 and pass through
+    UNTOUCHED — see "WHAT IS NOT DRAINED HERE" in the module docstring. They
+    are deliberately not run through `fmt`: rendering a float64 at 60 digits
+    is exactly the laundering the raw-float64 gate forbids ("do NOT stringify
+    the float").
+    """
+    if isinstance(obj, dict):
+        return {k: _serialise(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_serialise(v) for v in obj]
+    if isinstance(obj, mp.mpf):
+        return fmt(obj)
+    return obj
+
+
 def dominant_lambda_and_rho_rules(K_eval: dict, n_0: int, observed_rho: int):
     """For K ∈ H_{n_0}(q_0), identify dominant λ* via |y_λ · χ_λ(K)|
     and evaluate the five candidate ρ rules."""
@@ -353,30 +449,40 @@ def dominant_lambda_and_rho_rules(K_eval: dict, n_0: int, observed_rho: int):
     if not wenzl:
         # Fallback: uniform 1/|P(n_0)| (still picks dominant by χ alone).
         n_part = sum(1 for _ in partitions_of(n_0))
-        wenzl = {tuple(p): 1.0 / n_part for p in partitions_of(n_0)}
+        wenzl = {tuple(p): mpf(1) / n_part for p in partitions_of(n_0)}
 
     per_lambda = []
     for lam, blk in K_eval["per_block"].items():
         chi = blk["chi"]
-        y = wenzl.get(lam, 0.0)
+        y = wenzl.get(lam, mpf(0))
         per_lambda.append({
             "lambda": list(lam),
             "is_hook": is_hook_partition(lam),
             "chi_K": chi,
             "y_wenzl": y,
             "y_times_chi_abs": abs(y * chi),
-            "dim_q": float(dim_q(lam, Q0_PROTON)),
+            # EXACT (2026-09-13). `dim_q` is a rational function of q and needs
+            # no matrix, so it is computed at the full 50-digit proton pin and
+            # kept as `mpf` — see MEASURED DEFECT in the module docstring: at
+            # the float64 pin, FOUR blocks whose exact dim_q is 1 evaluate to
+            # 0.99999999999999978, and rule C's `int()` is a FLOOR, so it
+            # returned 0 for a q-dimension of exactly 1.
+            "dim_q": dim_q(lam, Q0_PROTON_EXACT),
         })
     per_lambda.sort(key=lambda r: r["y_times_chi_abs"], reverse=True)
     dominant = per_lambda[0]
     qd = dominant["dim_q"]
 
+    # Round and floor on the EXACT value. `int(round(x))` and `int(x)` are
+    # DISCONTINUOUS, so a 1e-16 error in `qd` is not a 1e-16 error in the
+    # verdict — it is a whole unit. `mp.nint` / `mp.floor` at 70 dps put the
+    # decision 54 orders of magnitude away from the boundary instead of 0-2.
     rules = {
         "rule_A_exact_dim_q":         {"value": qd, "rho_predicted": qd},
-        "rule_B_round_dim_q":         {"value": qd, "rho_predicted": int(round(qd))},
-        "rule_C_floor_dim_q":         {"value": qd, "rho_predicted": int(qd)},
+        "rule_B_round_dim_q":         {"value": qd, "rho_predicted": int(mp.nint(qd))},
+        "rule_C_floor_dim_q":         {"value": qd, "rho_predicted": int(mp.floor(qd))},
         "rule_D_hook_special_case":   {"value": qd, "rho_predicted": (
-            1 if (dominant["lambda"] == [n_0 - 1, 1]) else int(round(qd))
+            1 if (dominant["lambda"] == [n_0 - 1, 1]) else int(mp.nint(qd))
         )},
     }
     for v in rules.values():
@@ -398,7 +504,22 @@ def dominant_lambda_and_rho_rules(K_eval: dict, n_0: int, observed_rho: int):
 
 def operator_selection_lp_for_K(per_lambda: list) -> dict:
     K = len(per_lambda)
-    t = -np.array([r["y_times_chi_abs"] for r in per_lambda])
+    # EXPLICIT float64 downcast at the LP boundary (2026-09-13), and it loses
+    # nothing real: `y_times_chi_abs = |y·χ|` already has a float64 factor in
+    # `χ`, which comes out of the numpy matrix layer.
+    #
+    # It is explicit because it must not be accidental. `y` became `mpf` in
+    # this same change, so `np.array([...])` silently produced an OBJECT array
+    # and pushed exact data into a float64 solver. Measured consequence: the
+    # certified residual `gap_recomputed_str` moved 2.6e-43 -> -5.7e-18, 25
+    # orders, because `_certified_residuals` sets its working precision from
+    # the INPUT data's width — so exact `t` makes it re-measure the float64
+    # solution against exact constraints instead of against the data the
+    # solver saw. Whether that larger number is the honest residual or an
+    # artefact is NOT established here; keeping the LP on float64 keeps this
+    # change to the defect it was made for. Tracked in bean `qou-sogb`.
+    t = -np.array([float(r["y_times_chi_abs"]) for r in per_lambda],
+                  dtype=float)
     G = np.eye(K)
     # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
     # whether the Rust binary happens to be built, so the same script
@@ -688,9 +809,9 @@ def main():
     }
     (
         w.add_data("registry", REGISTRY)
-         .add_data("per_atom_results", per_atom)
-         .add_data("cross_particle_consistency", consistency)
-         .add_data("summary", summary)
+         .add_data("per_atom_results", _serialise(per_atom))
+         .add_data("cross_particle_consistency", _serialise(consistency))
+         .add_data("summary", _serialise(summary))
          .add_caveat(
             "Numerical evaluation at f64 precision; deuteron uses H_6 "
             "(11 partitions, max d_λ = 16), tritium and ³He use H_9 "

@@ -54,7 +54,7 @@ for _p in (str(COMP), str(COMP / "substrate")):
 from witness_base import WitnessBuilder  # noqa: E402
 
 LEAN_REL = (
-    "content/quantum-observable-universe/lean/QOU/Interactions/GramMatrixH3Symbolic.lean"
+    "folio/quantum-observable-universe/lean/QOU/Interactions/GramMatrixH3Symbolic.lean"
 )
 ENTRY_RE = re.compile(r"^\s*\|\s*(\d)\s*,\s*(\d)\s*=>\s*(.+?)\s*$")
 

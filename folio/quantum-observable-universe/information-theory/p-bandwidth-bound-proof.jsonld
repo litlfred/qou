@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-p-bandwidth-bound",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:p-bandwidth-bound",
+  "kind": "proof",
+  "title": "Proof of p bandwidth bound",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-p-bandwidth-bound"
+  ],
+  "text": "p-bandwidth-bound-proof.md",
+  "provenance": "authored"
+}

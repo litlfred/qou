@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "maclane1971",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 69,
+      "entry": {
+        "id": "maclane1971",
+        "status": "partial",
+        "verified_at": "2026-05-19T15:57:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 2,
+        "fix_commit": "(this commit)",
+        "note": "2 bare-URL Refs upgraded with title+publisher form.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1007/978-1-4757-4721-8"
+        }
+      }
+    }
+  ]
+}

@@ -36,12 +36,70 @@ BUILTIN = set(dir(builtins))
 Q = sp.Symbol('q', positive=True)
 NAMEPAT = ('q_int', 'qint', 'qb', 'q_bracket', 'qbracket', 'q_num', 'bracket')
 
+# NAMEPAT is a SUBSTRING match, which admits two false-positive families.
+# Measured on the full tree: 13 of 174 one-argument candidates matched on a
+# substring alone, and 12 of those are not q-integer definitions.
+#
+#   'qb' inside 'qbeta' (8).  In this corpus `qbeta` is the BETA-DECAY
+#   Q-VALUE -- a different quantity from [n]_q, per the CAL-2 row of
+#   AGENTS.md's derivation cheat-sheet.  `_sigma_qbeta`, `dc3_dQbeta`,
+#   `_qbeta_dln_dlnq`, `load_qbeta_precision_ladder` are about Q_beta and
+#   have no bracket in them.
+#
+#   a VERB-named helper (4).  `verify_bracket_cancellation` returns bool,
+#   `check_bracketing` returns a dict report; both are test helpers, not
+#   definitions.  `L2_bracket` is a dilogarithm bracket
+#   (ln z/(1-z)^2 - ln(1-z)/z^2) and `mirror_bracket` is 5*2^(-A-1) -
+#   13*4^(-A); neither is a q-integer.
+#
+# The thirteenth, `_bracket`, IS genuine -- its docstring and body are
+# exactly (q^n - q^-n)/(q - q^-1) -- so the inner-substring match is not
+# excluded wholesale, only these two families.
+#
+# WHAT THIS DOES NOT CHANGE, and it is the reassuring part: every one of the
+# 12 landed in OTHER (2) or UNRESOLVED (10).  NOT ONE was counted as a
+# convention, so the "zero new conventions" result was never contaminated by
+# them -- they only inflated the denominator and the dark set.
+_QBETA_IS_THE_DECAY_Q_VALUE = 'qbeta'
+_HELPER_PREFIXES = ('verify_', 'check_', 'load_', 'test_', 'assert_')
+
+
+def _is_candidate_name(name: str) -> bool:
+    """A NAMEPAT hit that is not one of the two measured false-positive families."""
+    n = name.lower()
+    if not any(k in n for k in NAMEPAT):
+        return False
+    if n.lstrip('_').startswith(_HELPER_PREFIXES):
+        return False
+    # Drop a match that survives ONLY because 'qb' sits inside 'qbeta'.
+    if _QBETA_IS_THE_DECAY_Q_VALUE in n:
+        without_qbeta = n.replace(_QBETA_IS_THE_DECAY_Q_VALUE, '')
+        if not any(k in without_qbeta for k in NAMEPAT):
+            return False
+    return True
+
 # Names that are LIBRARIES, not quantities -- bound to shims, never to q.
 LIBS = {'mp', 'mpmath', 'sp', 'sympy', 'np', 'numpy', 'math'}
 # Sources that MEAN "the substrate modulus".  A root assignment, not a guess:
 # each is the corpus's own published entry point for q0.
 ROOT_SOURCES = ('Q_50_DIGIT_STR', 'q_at', 'Q_MUON_50_DIGIT_STR', 'q_muon_at',
                 'q_muon_frozen_at', 'Q_STR')
+
+# The anchor SOLVERS.  `constants.py` binds the canonical modulus as
+#     Q = _solve_q_proton_f64(MASS_RATIO_P_E, VOL_FIGURE_EIGHT)
+# -- a numerical root-find, which no symbolic evaluator can execute, so `Q`
+# came back unresolvable and took the corpus's OWN `q_int` / `q_int_err` down
+# with it.  Those two are the canonical q-integer entry points, so the audit
+# was dark on exactly the definition it most needed to measure.
+#
+# Recognising these is CITING the corpus, not inferring from a spelling:
+# AGENTS.md §"q0 anchor convention" says verbatim that "Package layer
+# tools/qou-substrate/.../constants.py (Q, q_at(), Q_50_DIGIT_STR) is
+# proton-pinned (_solve_q_proton_f64)".  The designation names the function.
+#
+# Scoped to ANCHOR_MODULES below for the same reason _ANCHOR_KEYS is: a call
+# to something named like a solver in an arbitrary producer proves nothing.
+ANCHOR_SOLVERS = ('_solve_q_proton', '_solve_q_muon')
 
 # Modules AGENTS.md designates as the canonical q0 accessors.  Inside one of
 # these -- and ONLY inside one -- a subscript keyed "q" is the substrate
@@ -143,6 +201,18 @@ def top_level_imports(tree: ast.Module) -> dict[str, str]:
         if isinstance(node, ast.ImportFrom) and node.module:
             for a in node.names:
                 out[a.asname or a.name] = f'{node.module}::{a.name}'
+        # Plain `import mpmath as _mp` -- recorded with a '*' member so the
+        # evaluator can bind the ALIAS the module actually uses.  Without
+        # this, `q_parameter`'s `Q_INV_MP = _mp.mpf(1) / Q_MP` is
+        # unresolvable on the name `_mp`, and so are HA_MP, HBAR_Q_MP and
+        # everything downstream of them -- while `Q_MP` itself resolves
+        # fine, because it short-circuits on _ANCHOR_KEYS BEFORE any
+        # evaluation happens.  That asymmetry is why the cluster looked
+        # like corpus opacity rather than a missing alias: the one name a
+        # reader would test is the one name that does not need the alias.
+        elif isinstance(node, ast.Import):
+            for a in node.names:
+                out[a.asname or a.name.split('.')[0]] = f'{a.name}::*'
     return out
 
 
@@ -217,9 +287,24 @@ def resolve(name: str, assigns: dict[str, ast.expr], seen: frozenset[str],
         return Q, 'root'                      # this name IS the substrate modulus
     if in_anchor_module and any(k in src for k in _ANCHOR_KEYS) and '[' in src:
         return Q, 'root (anchor-module q key)'
+    if in_anchor_module and any(sv in src for sv in ANCHOR_SOLVERS):
+        return Q, 'root (anchor-module solver)'
     ns: dict[str, object] = {'sp': sp, 'sympy': sp}
     shim = _Shim()
     ns['mp'] = ns['mpmath'] = shim
+    # Bind whatever ALIAS this module imported mpmath / sympy under, read from
+    # its own `import` statement rather than guessed from the spelling. The
+    # corpus writes `import mpmath as _mp` in q_parameter and `as mp`
+    # elsewhere; hardcoding the latter made the former's derived constants
+    # unresolvable.
+    for _alias, _target in imports.items():
+        _mod, _member = _target.split('::', 1)
+        if _member != '*':
+            continue
+        if _mod in ('mpmath',):
+            ns[_alias] = shim
+        elif _mod in ('sympy',):
+            ns[_alias] = sp
     ns['mpf'] = lambda x, *a, **k: sp.nsimplify(sp.sympify(x), rational=True)
     for sub in ast.walk(expr):
         if isinstance(sub, ast.Name) and isinstance(sub.ctx, ast.Load):
@@ -289,7 +374,15 @@ def main() -> int:
     blocked, results = 0, []
     for r in roots:
         for p in sorted(r.rglob('*.py')):
-            if '_deprecated' in str(p):
+            # Align the skip list with the sibling q_integer_duplication_audit,
+            # which already excludes these.  This audit skipped only
+            # `_deprecated`, so it was walking TEST files and counting their
+            # functions as q-integer definitions -- `test_smoke.py::
+            # test_q_int_quantum_integers` was in the denominator.  A test
+            # ASSERTS a bracket; it does not DEFINE one, and the two audits
+            # disagreeing about that is a difference with no reason behind it.
+            if any(k in str(p) for k in ('_deprecated', '/tests/', '.lake',
+                                         'node_modules')):
                 continue
             try:
                 tree = ast.parse(p.read_text())
@@ -299,7 +392,7 @@ def main() -> int:
             imports = top_level_imports(tree)
             for node in tree.body:
                 if not (isinstance(node, ast.FunctionDef)
-                        and any(k in node.name.lower() for k in NAMEPAT)):
+                        and _is_candidate_name(node.name)):
                     continue
                 if len(node.args.args) >= 2:
                     continue                      # the duplication audit reaches these
@@ -351,7 +444,22 @@ def main() -> int:
                     if g == 'lru_cache':
                         ns[g] = lambda *a, **k: (lambda f: f)
                         continue
-                    v, why = resolve(g, assigns, frozenset(), imports)
+                    # THE MODULE A DEFINITION LIVES IN IS AN ANCHOR MODULE
+                    # TOO.  `in_anchor_module` was set only when RESOLVE
+                    # HOPPED INTO a module via an import, and defaulted False
+                    # here -- so for a definition that already lives in
+                    # `constants.py` or `q_parameter.py`, none of the
+                    # anchor-module special cases could ever fire.  That kept
+                    # the corpus's OWN `q_int` / `q_int_err` dark, which is
+                    # the canonical q-integer entry point and the one
+                    # definition this audit most needed to measure.
+                    #
+                    # Same test as the hop at the top of `resolve`, applied to
+                    # the file we are already in.  "The module I'm in" and
+                    # "the module I hopped to" were being treated differently
+                    # when they are the same question.
+                    v, why = resolve(g, assigns, frozenset(), imports, 0,
+                                     any(m in p.stem for m in ANCHOR_MODULES))
                     if v is None:
                         why_fail = f'`{g}`: {why}'
                         break
@@ -414,6 +522,28 @@ def main() -> int:
         print('\nstill unresolved, by reason:')
         for w, c in fails.most_common(8):
             print(f'   {c:>4}  {w}')
+
+    # LIST THE MEMBERS.  Every pass of qou-b8vx that found a gap found it by
+    # listing what a bucket actually contained, and every pass that stalled
+    # stalled by reasoning about the bucket's label instead.  Three published
+    # figures of mine described my own tooling rather than the corpus -- 29
+    # "genuinely q0-pinned" (really 6), a Q_MP cluster "diagnosed as aliased
+    # imports" (really a self-tripping cycle guard), 27 "function-scope
+    # bindings" (really 7) -- and all three were caught the same way.  Yet
+    # this script printed only the counts, so using it required leaving it.
+    # Grouped by reason so a bucket can be read whole.
+    unres = [(p_, n_, w) for p_, n_, v, w in results if v == 'UNRESOLVED']
+    if unres:
+        print(f'\nUNRESOLVED members ({len(unres)}), grouped by reason:')
+        by_reason: dict[str, list[str]] = {}
+        for p_, n_, w in unres:
+            by_reason.setdefault((w or '(no reason recorded)').split(':')[-1].strip(),
+                                 []).append(f'{p_}::{n_}')
+        for reason, members in sorted(by_reason.items(), key=lambda e: -len(e[1])):
+            print(f'\n  [{len(members)}] {reason}')
+            for m in sorted(members):
+                print(f'       {m}')
+
     print('\nAn UNRESOLVED definition is UNMEASURED, not agreeing.')
     return 0
 

@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-b1-torus-knot-rows-theorem-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:b1-torus-knot-rows-theorem-table-data",
+  "kind": "table",
+  "title": "Data table from prop:b1-torus-knot-rows-theorem",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-b1-torus-knot-rows-theorem"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "b1-torus-knot-rows-theorem-table-data.md",
+  "provenance": "authored"
+}

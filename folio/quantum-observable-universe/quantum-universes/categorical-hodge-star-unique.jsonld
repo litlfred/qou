@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-hodge-star-unique",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-hodge-star-unique",
+  "kind": "proposition",
+  "title": "Uniqueness of the categorical Hodge star",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-hodge-star-exists"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-hodge-star-unique"
+  ],
+  "tags": [
+    "uniqueness",
+    "hodge-star"
+  ],
+  "leanRef": "qou:QOU.CategoricalHodgeStar.unique",
+  "text": "categorical-hodge-star-unique.md",
+  "leanSource": "categorical-hodge-star-unique.lean",
+  "provenance": "authored"
+}

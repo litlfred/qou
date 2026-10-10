@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-markov-trace-recursive-reducer",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:markov-trace-recursive-reducer",
+  "kind": "proposition",
+  "title": "Existence of a recursive symbolic Markov-trace reducer for $H_n(q)$ with disjoint-product property",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-axiomatic-closed-form"
+  ],
+  "cites": [
+    "references/jones1987",
+    "references/kassel1995",
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "markov-trace",
+    "axiomatic-reduction",
+    "recursive-algorithm",
+    "disjoint-product",
+    "memoisation",
+    "termination"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.markovTraceRecursiveReducer",
+  "text": "markov-trace-recursive-reducer.md",
+  "leanSource": "markov-trace-recursive-reducer.lean",
+  "provenance": "authored"
+}

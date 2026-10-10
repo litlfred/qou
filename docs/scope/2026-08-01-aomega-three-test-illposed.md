@@ -16,7 +16,7 @@ S^+_{12}(q) + S^+_{21}(q) = 3\,S^+_{11}(q)
 $$
 
 exact as an integer q-series (GGM 2012.00062 symmetry eq 65), Lean-formalized in
-[`StokesSymmetryConstant.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/StokesSymmetryConstant.lean).
+[`StokesSymmetryConstant.lean`](../../folio/quantum-observable-universe/lean/QOU/QBeta/StokesSymmetryConstant.lean).
 Bean `qou-l15q` proposed deciding **why 3** by computing the analogous constant `c`
 for 5₂, since two structural candidates split sharply there:
 
@@ -93,8 +93,8 @@ Checking it against the corpus before acting kills it too.
 Rank 2 means a **quadratic imaginary invariant trace field**. For knot complements
 in S³ that is essentially the figure-eight alone: **Reid (1991) established 4₁ as
 the unique arithmetic hyperbolic knot** — already cited in-corpus at
-[`hyperbolic-volume-transcendence.md`](../../content/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.md)
-and [`three-knot-jet-order-independence.md`](../../content/quantum-observable-universe/predicted-spectra/three-knot-jet-order-independence.md).
+[`hyperbolic-volume-transcendence.md`](../../folio/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.md)
+and [`three-knot-jet-order-independence.md`](../../folio/quantum-observable-universe/predicted-spectra/three-knot-jet-order-independence.md).
 Strictly, Reid gives *arithmetic ⇒ 4₁*, and quadratic-imaginary-trace-field ⇒
 arithmetic needs integral traces (non-integral traces would force a closed
 essential surface, Bass), so a non-arithmetic knot with quadratic trace field is

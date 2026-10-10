@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-non-commutative-probability-dictionary",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:non-commutative-probability-dictionary",
+  "kind": "remark",
+  "title": "QOU as a non-commutative probability space: transfer matrices, traces, knot invariants as moments",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-algebraic-gns-embedding",
+  "cites": [
+    "references/biane1998",
+    "references/blitvic2012"
+  ],
+  "tags": [
+    "non-commutative-probability",
+    "voiculescu",
+    "transfer-matrices",
+    "markov-trace",
+    "knot-invariants",
+    "free-probability",
+    "dictionary"
+  ],
+  "text": "non-commutative-probability-dictionary.md",
+  "provenance": "authored"
+}

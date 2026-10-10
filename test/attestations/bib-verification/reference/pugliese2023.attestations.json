@@ -1,0 +1,64 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "pugliese2023",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 292,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2301.02038v1/2301.02038v1.pdf"
+        },
+        "id": "pugliese2023",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "A review (Contemporary Mathematics memorial volume) of Vinogradov's Secondary Calculus: infinite prolongation E subset J^infty of a PDE system, the Cartan distribution C, the diffiety (E, C), horizontal de Rham cohomology, the C-spectral sequence, and the homotopy-theoretic reformulation. QOU's step-9b keystone conj:qdifference-kernel-prolongation-symbol is stated in exactly this vocabulary -- 'the symbol of the jet-prolongation operator J^n E -> J^{n+1} E' -- and neither that block nor prop:jet-filtration-binding-extensive, rem:bond-order-eq-jet-degree-context, nor QOU/Torsion/JetProlongation.lean carries any citation for the prolongation formalism; a corpus grep for 'diffiety', 'Vinogradov', 'secondary calculus' and 'C-spectral' returns only substring false positives ('quaternionic-spectral'). So the paper is the canonical citable source for the language the keystone is phrased in. Deliberately NOT called core and NOT proposed as aid-proof: Vinogradov's setting is prolongation of a nonlinear PDE system, whereas QOU prolongs a Seiberg-Witten connection and then compares against a q-difference module; the symbol-of-prolongation identification the conjecture needs does not follow from anything here, and I have not checked that any diffiety hypothesis holds in the SW setting.",
+          "keyResults": [
+            {
+              "locator": "Introduction, eqs (0.1)-(0.2) and the definition of the diffiety (E, C); Sec on the C-spectral sequence",
+              "statement": "The infinite prolongation of a PDE system is a submanifold E of J^infty carrying the involutive Cartan distribution C spanned by total derivatives; the pair (E, C) is a diffiety, and differential calculus on the solution space is calculus up to homotopy on the horizontal de Rham algebra, organised by the C-spectral sequence.",
+              "useForFolio": "Gives conj:qdifference-kernel-prolongation-symbol a citable, coordinate-free definition of the prolongation operator J^n -> J^{n+1} and of what 'its symbol' means, which the block currently uses as undefined vocabulary; also backs the jet-degree language of rem:bond-order-eq-jet-degree-context and prop:jet-filtration-binding-extensive.",
+              "targets": [
+                "conj:qdifference-kernel-prolongation-symbol",
+                "rem:bond-order-eq-jet-degree-context",
+                "prop:jet-filtration-binding-extensive"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Orphan; the folio's keystone binding conjecture is phrased entirely in prolongation/jet vocabulary with no source for it.",
+              "target": "folio/schema/references.ts (proposed id: pugliese-sparano-vitagliano2023)",
+              "bean": "qou-z2l7"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "conj:qdifference-kernel-prolongation-symbol names 'the symbol of the jet-prolongation operator J^n E -> J^{n+1} E' as the object to be identified; the definition should point somewhere.",
+              "target": "conj:qdifference-kernel-prolongation-symbol",
+              "bean": "qou-2t18"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "27b303939826"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

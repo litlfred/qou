@@ -62,7 +62,8 @@ jobs:
         # that has stopped matching is legible in the log rather than buried.
         # Per bean `qou-5pgl`: a detector without a known positive can report
         # the whole class clean.
-        run: python3 scripts/word-provenance-gate.py --selftest
+        # bpmn-node: Task_Words (processes/tools/compute-qa.bpmn); gate `word-provenance-selftest`, strict.
+        run: python3 scripts/compute-qa.py --gate word-provenance-selftest
       - name: Compute changed .py files
         id: changed
         run: |
@@ -75,7 +76,8 @@ jobs:
         if: steps.changed.outputs.files != ''
         # Paths outside `computations/` are ignored by the script, so passing the
         # PR's whole .py diff is safe.
-        run: |
-          python3 scripts/word-provenance-gate.py --diff ${{ steps.changed.outputs.files }}
+        # bpmn-node: Task_Words (processes/tools/compute-qa.bpmn); gate `word-provenance-diff`, strict.
+        run: python3 scripts/compute-qa.py --gate word-provenance-diff --files ${{ steps.changed.outputs.files }}
       - name: Survey (informational, never fails)
-        run: python3 scripts/word-provenance-gate.py
+        # bpmn-node: Task_Words (processes/tools/compute-qa.bpmn); gate `word-provenance-survey`, advisory.
+        run: python3 scripts/compute-qa.py --gate word-provenance-survey

@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-hkr-theorem",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hkr-theorem",
+  "kind": "remark",
+  "title": "The Hochschild–Kostant–Rosenberg theorem, and what it does not say at $q \\neq 1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hochschild-homology",
+    "papers/quantum-observable-universe/blocks/def-classical-limit-obstruction",
+    "papers/quantum-observable-universe/blocks/rem-hochschild-kummer-connection"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-classical-limit-obstruction",
+  "cites": [
+    "references/hkr-1962",
+    "references/loday-1998",
+    "references/kontsevich-2003",
+    "references/hartshorne-1977"
+  ],
+  "tags": [
+    "hochschild-homology",
+    "hkr",
+    "classical-limit",
+    "deformation-theory",
+    "lifting"
+  ],
+  "text": "hkr-theorem.md",
+  "provenance": "authored"
+}

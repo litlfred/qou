@@ -183,7 +183,7 @@ def main() -> None:
     # Δ(net) = h(h-2)/2 vanishes at h = 2 (silver-ratio root)
     # b² = 1 - 1/[2]_q² = 7/8 exactly at silver
     # Both are bar-symmetric per def:bar-involution. See
-    # content/quantum-observable-universe/particle-interactions/
+    # folio/quantum-observable-universe/particle-interactions/
     # silver-ratio-beta-decay-null.md
     h_at_silver = Fraction(2)
     delta_net_at_silver = h_at_silver * (h_at_silver - 2) / 2

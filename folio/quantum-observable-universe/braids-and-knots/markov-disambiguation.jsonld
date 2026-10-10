@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-markov-disambiguation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:markov-disambiguation",
+  "kind": "remark",
+  "title": "Three uses of \\emph{Markov} in this work",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-jones-markov-trace",
+  "tags": [
+    "notation",
+    "markov",
+    "disambiguation"
+  ],
+  "text": "markov-disambiguation.md",
+  "provenance": "authored"
+}

@@ -154,7 +154,7 @@ land — not a 6th scalar guess.
 Three independent pieces:
 
 1. **Operator-valued LR branching trace decomposition** (open;
-   live in [`prop:hecke-branching-trace-decomposition`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/mass-endomorphism/hecke-branching-trace-decomposition.md)
+   live in [`prop:hecke-branching-trace-decomposition`](https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/mass-endomorphism/hecke-branching-trace-decomposition.md)
    / [#1443](https://github.com/litlfred/qou/pull/1443) / IwahoriHecke
    Sprint 2 in [#1524](https://github.com/litlfred/qou/pull/1524)).
    The operator-valued combiner that replaces the failing scalar

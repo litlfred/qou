@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-gl-physical-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-gl-physical-interpretation",
+  "kind": "remark",
+  "title": "Physical interpretation of $q$-Geometric Langlands",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-q-geometric-langlands",
+  "tags": [
+    "geometric-langlands",
+    "physical-interpretation"
+  ],
+  "text": "q-gl-physical-interpretation.md",
+  "provenance": "authored"
+}

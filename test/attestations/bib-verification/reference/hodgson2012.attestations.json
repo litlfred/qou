@@ -1,0 +1,78 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "hodgson2012",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 232,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1203.6551v1/1203.6551v1.pdf"
+        },
+        "id": "hodgson2012",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Not a result the folio consumes, but it bears directly on how much a hyperbolic volume can be trusted to identify a manifold \u2014 and QOU's mass law m(K) = m_e\u00b7Vol(K)\u00b7rho(K)/hbar_q^2 is indexed by volume, with Vol(4_1) as the CAL-2 anchor. The paper's introduction is a clean, citable statement of the volume-multiplicity facts (Cao-Meyerhoff: the minimal cusped volume v_omega = 2.029883... is attained by TWO orientable cusped 3-manifolds, m004 = the 4_1 complement and its sister m003; N_C(v_omega) = 2), and its third main result shows the number of hyperbolic LINK complements sharing a volume grows at least exponentially in v. Its own theorems (Dehn-filling families with N(x_i) = 1) have no QOU consumer. Corpus-grep: no ref() entry, no title/author hit in folio/schema/references.ts; the folio's 'smallest hyperbolic volume' assertions carry no source.",
+          "keyResults": [
+            {
+              "locator": "\u00a71 Introduction, p.1 (citing Cao-Meyerhoff [9])",
+              "statement": "There are exactly two orientable cusped hyperbolic 3-manifolds of lowest volume v_omega ~ 2.029883 \u2014 the figure-eight knot complement m004 and its sister m003 \u2014 so N_C(v_omega) = 2.",
+              "useForFolio": "Supplies the missing citation for the folio's repeated 'Vol(4_1) is the minimal/smallest hyperbolic volume' assertions, and adds the precision that the minimum is attained twice among cusped 3-manifolds (uniquely only among knot complements in S^3). The folio's phrasing is correct as written but unsourced.",
+              "targets": [
+                "folio/quantum-observable-universe/mass-theory/hyperbolic-knot-positive-volume-via-reeb.md",
+                "folio/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.md"
+              ]
+            },
+            {
+              "locator": "\u00a71 Introduction (third main result) + \u00a75",
+              "statement": "The number N_L(v) of hyperbolic link complements with a given volume v can grow at least exponentially fast with v.",
+              "useForFolio": "A structural caution for the volume-indexed mass law: hyperbolic volume is a badly degenerate label for links, so Vol(K) alone cannot separate two distinct link-indexed particles at larger v. Worth stating once as a scope note wherever the folio treats Vol(K) as the identifying geometric datum of a knot/link.",
+              "targets": [
+                "folio/quantum-observable-universe/mass-theory/hyperbolic-knot-positive-volume-via-reeb.md",
+                "folio/quantum-observable-universe/information-theory/quantum-volume-interpretation.md"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry exists; both key results need a citable source before either can be used.",
+              "target": "folio/schema/references.ts (new id, e.g. hodgson-masai2012)",
+              "bean": "qou-npbr"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "hyperbolic-knot-positive-volume-via-reeb.md asserts '4_1 carries the minimal hyperbolic volume 2v_3 ~ 2.0299' with no source; this paper's introduction is the citable restatement of Cao-Meyerhoff.",
+              "target": "folio/quantum-observable-universe/mass-theory/hyperbolic-knot-positive-volume-via-reeb.md",
+              "bean": "qou-4kmu"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "The exponential growth of N_L(v) is a scope caveat on volume-as-identifier that the folio does not currently state anywhere; it belongs as a remark, not folded into an existing statement.",
+              "target": "folio/quantum-observable-universe/information-theory/quantum-volume-interpretation.md",
+              "bean": "qou-cc4t"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T00:00:00Z",
+          "source_sha": "a8e84f8ed63d"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

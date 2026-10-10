@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-q-beta-q-eq-one-shadow-gate",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:q-beta-q-eq-one-shadow-gate",
+  "kind": "proof",
+  "title": "Proof of q beta q eq one shadow gate",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-beta-q-eq-one-shadow-gate"
+  ],
+  "text": "q-beta-q-eq-one-shadow-gate-proof.md",
+  "provenance": "authored"
+}

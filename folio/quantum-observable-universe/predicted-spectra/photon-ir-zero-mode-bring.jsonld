@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-photon-ir-zero-mode-bring",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:photon-ir-zero-mode-bring",
+  "kind": "proposition",
+  "title": "Photon IR zero-mode on Bring's surface: $\\delta(1/\\alpha_{EM})_{\\mathrm{IR}} = b_1/\\mathrm{Area} = 2g/(4\\pi(g-1))$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-em-coupling-bring-zero-mode",
+    "papers/quantum-observable-universe/blocks/prop-force-carrier-bring-uniqueness",
+    "papers/quantum-observable-universe/blocks/prop-jet-sw-tau-decomposition",
+    "papers/quantum-observable-universe/blocks/prop-alpha-em-habiro-bar-involution"
+  ],
+  "tags": [
+    "alpha-em",
+    "bring-surface",
+    "hodge",
+    "gauss-bonnet",
+    "photon-zero-mode",
+    "harmonic-forms",
+    "from-lagrangian"
+  ],
+  "leanRef": "qou:QOU.Archimedean.PhotonIRZeroMode.photonZeroModeShift_eq",
+  "text": "photon-ir-zero-mode-bring.md",
+  "provenance": "authored"
+}

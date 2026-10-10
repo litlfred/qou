@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-crystal-probe-q",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:crystal-probe-q",
+  "kind": "remark",
+  "title": "Crystal-lattice probe of $q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-local-substrate-q",
+    "papers/quantum-observable-universe/blocks/ex-q-torsion-leaf"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-local-substrate-q",
+  "tags": [
+    "crystal",
+    "substrate",
+    "observation"
+  ],
+  "text": "crystal-probe-q.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-birthday-axioms-underdetermine",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:birthday-axioms-underdetermine",
+  "kind": "theorem",
+  "title": "The birthday axioms do not characterise Conway's birthday: a two-valued function satisfies all six",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-ideal-tetrahedron-relabelling-invariance"
+  ],
+  "cites": [
+    "references/conway1976",
+    "references/robinson1966"
+  ],
+  "tags": [
+    "surreal",
+    "hyperreal",
+    "axiomatisation",
+    "defect-report",
+    "limit-transfer"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.HyperrealTransfer.flatBirthday_avg_le",
+  "text": "birthday-axioms-underdetermine.md",
+  "provenance": "authored"
+}

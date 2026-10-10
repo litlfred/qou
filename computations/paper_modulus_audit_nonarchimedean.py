@@ -10,7 +10,7 @@ distinction (PR #1616): the |...| modulus is an ARCHIMEDEAN operation
 (takes a signed real to a positive real, breaking bar-asymmetry). It
 should NOT appear in categorical / pre-τ definitions.
 
-AUDIT SCOPE: all .md files under content/quantum-observable-universe/
+AUDIT SCOPE: all .md files under folio/quantum-observable-universe/
 that contain absolute-value notation (\\|...\\|, \\lvert...\\rvert, or
 literal |...|) AROUND tr_M, tr, χ, or other categorical objects.
 
@@ -123,7 +123,7 @@ def main() -> int:
         "docs/audits/2026-06-01-paper-modulus-nonarchimedean-audit.md"
     )
 
-    content_root = REPO_ROOT / "content" / "quantum-observable-universe"
+    content_root = REPO_ROOT / "folio" / "quantum-observable-universe"
     all_sites = []
     for md_path in content_root.rglob("*.md"):
         sites = scan_file(md_path)

@@ -1,0 +1,77 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "singh-physrevd108106023",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 364,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/physrevd108106023/PhysRevD.108.106023.pdf"
+        },
+        "id": "singh-physrevd108106023",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Derives quiver representations for the double-twist knot family by reverse-engineering the Melvin-Morton-Rozansky expansion, and prints the explicit quiver matrix for the figure-eight as the simplest member. That matrix is 5x5, matching the general size formula (4mp+1) at m = p = 1. This is a direct, independent check on a load-bearing number in conj:stokes-dt-bps-bridge: the corpus's sector non-degeneracy argument concludes that the open-HOMFLY bridge gives a figure-eight count of 5, and therefore cannot reproduce the resurgent-Stokes spectrum {3,4} or license A_omega = 3. Corpus-grep of docs/audits shows that count was *inferred* -- from the knots-quivers one-node-per-HOMFLY-generator rule together with det(4_1) = 5 -- not read off a published quiver. Here the quiver is exhibited. Core: it verifies rather than merely accompanies a step the corpus's argument depends on.",
+          "keyResults": [
+            {
+              "locator": "sec. III A, the explicit matrix C^{4_1}, with the size formula in sec. III (\"(4mp+1) x (4mp+1)\")",
+              "statement": "The figure-eight knot, as the double-twist knot with both twist parameters equal to one, has an explicit 5x5 quiver matrix under the knots-quivers correspondence.",
+              "useForFolio": "Independently confirms the 5-node open-BPS count that conj:stokes-dt-bps-bridge's sector non-degeneracy argument infers from det(4_1) = 5, turning an inference into a checked value.",
+              "targets": [
+                "conj:stokes-dt-bps-bridge",
+                "computations/probes/aomega_bps_sector_nondegeneracy.py"
+              ]
+            },
+            {
+              "locator": "sec. II, eq. (8)-(9) and sec. IV",
+              "statement": "A quiver presentation of the colored Jones polynomial is proposed for all double twist knots, with the quiver matrix built recursively from a base set of blocks; the Alexander polynomial of the family takes the form 1 - pmX.",
+              "useForFolio": "Extends the check beyond the figure-eight to a family, so the corpus's open-vs-closed sector separation could be tested at a second knot rather than only at 4_1.",
+              "targets": [
+                "conj:stokes-dt-bps-bridge"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry; the corpus cites kucharski-reineke-stosic-sulkowski2017 for the correspondence but has no source for an explicit quiver of the knot its argument turns on.",
+              "target": "conj:stokes-dt-bps-bridge",
+              "bean": "qou-qu53"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "The non-degeneracy table in conj:stokes-dt-bps-bridge asserts the 4_1 open count is 5; the explicit published quiver is the direct evidence for that entry.",
+              "target": "conj:stokes-dt-bps-bridge",
+              "bean": "qou-bk77"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "Cross-check the probe's 5-node figure-eight count against the published explicit 5x5 quiver matrix, and record in the witness that the count is now confirmed rather than inferred from det(4_1).",
+              "target": "computations/probes/aomega_bps_sector_nondegeneracy.py",
+              "bean": "qou-48dw"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "50c7980e88cd"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

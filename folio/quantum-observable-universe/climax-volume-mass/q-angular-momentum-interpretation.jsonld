@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-angular-momentum-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-angular-momentum-interpretation",
+  "kind": "remark",
+  "title": "Jones polynomial connection, building block values, and nuclear $q$-angular momentum",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-angular-momentum"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-angular-momentum",
+  "tags": [
+    "angular-momentum",
+    "jones-polynomial",
+    "nuclear",
+    "spin",
+    "q-deformed"
+  ],
+  "text": "q-angular-momentum-interpretation.md",
+  "provenance": "authored"
+}

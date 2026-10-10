@@ -57,7 +57,7 @@ jobs:
         with:
           path: |
             .lake
-            content/quantum-observable-universe/lean/.lake
+            folio/quantum-observable-universe/lean/.lake
           key: lean-cache-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
           restore-keys: |
             lean-cache-${{ runner.os }}-
@@ -86,7 +86,7 @@ jobs:
 
       - name: Build the registry's modules (NOT the QOU root)
         if: steps.warm.outputs.warm == 'yes'
-        working-directory: content/quantum-observable-universe/lean
+        working-directory: folio/quantum-observable-universe/lean
         run: |
           export PATH="$HOME/.elan/bin:$PATH"
           # --print-modules keeps the prerequisite list in ONE place (the

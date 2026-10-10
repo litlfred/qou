@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-beta-decay-simulator-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:beta-decay-simulator-table-data",
+  "kind": "table",
+  "title": "Verification nuclei: $Q$-values and observed half-lives",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/sim-beta-decay-halflife"
+  ],
+  "tags": [
+    "beta-decay",
+    "half-life",
+    "verification-nuclei",
+    "ensdf"
+  ],
+  "text": "beta-decay-simulator-table-data.md",
+  "provenance": "authored"
+}

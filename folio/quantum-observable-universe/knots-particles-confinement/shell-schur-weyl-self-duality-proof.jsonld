@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-shell-schur-weyl-self-duality",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:shell-schur-weyl-self-duality",
+  "kind": "proof",
+  "title": "Proof of shell schur weyl self duality",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-shell-schur-weyl-self-duality"
+  ],
+  "text": "shell-schur-weyl-self-duality-proof.md",
+  "provenance": "authored"
+}

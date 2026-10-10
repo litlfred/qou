@@ -1,6 +1,6 @@
 # Rust integration plan — joint-tower SDP certificate emitter
 
-Production-scale solver for [`prop:joint-tower-sdp-confinement`](../../content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md)
+Production-scale solver for [`prop:joint-tower-sdp-confinement`](../../folio/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md)
 at H_18 (⁶Li), H_21 (⁷Li), and the α-cluster scale H_24 → H_120
 (⁸Be → ⁴⁰Ca).
 
@@ -256,7 +256,7 @@ Update [`witness_staleness_tracker.py`](../../computations/witness_staleness_tra
     "../../tools/hecke-engine/src/seminormal.rs",
     "../../tools/hecke-engine/src/laurent_poly_q.rs",
     # Atom registry
-    "../../content/quantum-observable-universe/braids-and-knots/confined-particle.md",
+    "../../folio/quantum-observable-universe/braids-and-knots/confined-particle.md",
 ],
 ```
 
@@ -309,9 +309,9 @@ Once Phase R5 lands and successfully solves the SDP for ⁶Li / ⁷Li:
 
 ## References
 
-- [`prop:joint-tower-sdp-confinement`](../../content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md)
+- [`prop:joint-tower-sdp-confinement`](../../folio/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md)
   — design spec.
-- [`prop:atom-knot-mass-derivation`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md)
+- [`prop:atom-knot-mass-derivation`](../../folio/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md)
   — consumer of the certificate.
 - [`gb-filtration-jet-order.witness.json`](../../computations/gb-filtration-jet-order.witness.json)
   — Python PoC of the certificate format.

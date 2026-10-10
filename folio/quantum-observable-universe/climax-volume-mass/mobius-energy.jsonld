@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-mobius-energy",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:mobius-energy",
+  "kind": "proposition",
+  "title": "Categorical recovery of Möbius energy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-action",
+    "papers/quantum-observable-universe/blocks/thm-topological-mass",
+    "papers/quantum-observable-universe/blocks/rem-frobenius-simplification"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-mobius-energy"
+  ],
+  "tags": [
+    "mobius-energy",
+    "categorical-mass",
+    "knot-energy",
+    "q-deformation"
+  ],
+  "leanRef": "qou:QOU.Braiding.mobius_energy",
+  "text": "mobius-energy.md",
+  "provenance": "authored"
+}

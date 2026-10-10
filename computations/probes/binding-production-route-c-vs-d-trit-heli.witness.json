@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T13:12:08.420540+00:00",
-  "commitSha": "951515eaa56344c8371a1afc42abef02ad530563",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-13T16:22:40.991375+00:00",
+  "commitSha": "008a66176c469b5a6d54177586c463edbd817a16",
   "assertions": [
     {
       "name": "tritium_delta_tr_changes_under_D",
@@ -23,8 +23,8 @@
   "durationMs": 19,
   "computation": "binding-production-route-c-vs-d-trit-heli",
   "scriptFile": "binding_production_route_C_vs_D_probe.py",
-  "scriptHash": "e485d5a63ca7",
-  "scriptCommitSha": "951515eaa56344c8371a1afc42abef02ad530563",
+  "scriptHash": "e20029d09f06",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,8 +34,20 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/binding_production_route_C_vs_D_probe.py",
+      "--atoms",
+      "tritium,helium-3"
+    ],
+    "reproduce": "python3 -u computations/probes/binding_production_route_C_vs_D_probe.py --atoms tritium,helium-3"
   },
   "description": "PRODUCTION binding route (delta_tr = tr_M(free) - tr_M(atom), B = E_0 * delta_tr, per binding_canonical.py) evaluated under the binding channel's current convention C and under the mass channel's settled convention D, at the EXPERIMENTAL (proton) q_0. Measurement only.",
   "contentBlock": "prop:h3-markov-wenzl-weights",
@@ -55,20 +67,22 @@
       "n_strands": 9,
       "n_partitions": 30,
       "n_zeroed_under_D": 25,
-      "E_0_MeV": "0.7823334093100222",
-      "tr_M_atom_C": "0.1040710573547306686400139",
-      "tr_M_free_C": "0.908023915599213337520469",
-      "tr_M_atom_D": "0.2293101021045564978650688",
-      "tr_M_free_D": "1.117846228978226577328341",
-      "delta_tr_C": "0.8039528582444826688804551",
-      "delta_tr_D": "0.8885361268736700794632726",
-      "delta_tr_D_over_C": "1.10520923928",
-      "B_MeV_C": "0.628959180514943",
-      "B_MeV_D": "0.695131497432201",
+      "two_row_only": false,
+      "C_values_are_two_row_partial": false,
+      "E_0_MeV": "0.78233340930999994977668166029616259038448333740234375",
+      "tr_M_atom_C": "0.006375612917297563053494356",
+      "tr_M_free_C": "0.05562746408712548082128775",
+      "tr_M_atom_D": "0.02914404236097206535725422",
+      "tr_M_free_D": "0.1420720567973047974704986",
+      "delta_tr_C": "0.04925185116982791776779339",
+      "delta_tr_D": "0.1129280144363327321132444",
+      "delta_tr_D_over_C": "2.29286842533",
+      "B_MeV_C": "0.0385313686405202",
+      "B_MeV_D": "0.0883473585405851",
       "B_AME2020_MeV": "8.481821",
-      "rel_err_C": "-0.9258462091",
-      "rel_err_D": "-0.9180445452",
-      "two_row_share_of_delta_tr_C": "0.603482250933"
+      "rel_err_C": "-0.9954571821",
+      "rel_err_D": "-0.9895839162",
+      "two_row_share_of_delta_tr_C": "1.14213564899"
     },
     "helium-3": {
       "atom": "helium-3",
@@ -77,20 +91,24 @@
       "n_strands": 9,
       "n_partitions": 30,
       "n_zeroed_under_D": 25,
-      "E_0_MeV": "0.7823334093100222",
-      "tr_M_atom_C": "0.2065784335106723348951209",
-      "tr_M_free_C": "1.047756325354979671782512",
-      "tr_M_atom_D": "0.4037670368514281536992283",
-      "tr_M_free_D": "1.296675612244944017737899",
-      "delta_tr_C": "0.8411778918443073368873911",
-      "delta_tr_D": "0.892908575393515864038671",
-      "delta_tr_D_over_C": "1.0614979115",
-      "B_MeV_C": "0.658081567962774",
-      "B_MeV_D": "0.698552209989764",
+      "two_row_only": false,
+      "C_values_are_two_row_partial": false,
+      "E_0_MeV": "0.78233340930999994977668166029616259038448333740234375",
+      "tr_M_atom_C": "0.01539874255108246924325852",
+      "tr_M_free_C": "0.07810171486064640338497834",
+      "tr_M_atom_D": "0.05859625365443638021895672",
+      "tr_M_free_D": "0.188178642999488779263479",
+      "delta_tr_C": "0.06270297230956393414171982",
+      "delta_tr_D": "0.1295823893450523990445223",
+      "delta_tr_D_over_C": "2.06660680622",
+      "B_MeV_C": "0.0490546301008117",
+      "B_MeV_D": "0.101376632442851",
       "B_AME2020_MeV": "7.718043",
-      "rel_err_C": "-0.914734659",
-      "rel_err_D": "-0.9094910186",
-      "two_row_share_of_delta_tr_C": "0.584675589399"
+      "rel_err_C": "-0.9936441621",
+      "rel_err_D": "-0.9868649822",
+      "two_row_share_of_delta_tr_C": "1.06615296176"
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-qvalue-benchmark-table",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:qvalue-benchmark-table",
+  "kind": "example",
+  "title": "Benchmark Q-values: $\\mathcal{Q}_q$ predictions vs NNDC data ($2 \\times 2 = 6 \\times 6$, MAE $\\approx 4.4\\%$, zero fitting)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-qvalue-derivation-chain",
+    "papers/quantum-observable-universe/blocks/cor-spectral-decomposition-qvalue"
+  ],
+  "tags": [
+    "q-value",
+    "beta-decay",
+    "benchmark",
+    "error-bounds",
+    "nndc",
+    "codata",
+    "q-weighted",
+    "channel-separation",
+    "shell-correction"
+  ],
+  "text": "qvalue-benchmark-table.md",
+  "provenance": "authored"
+}

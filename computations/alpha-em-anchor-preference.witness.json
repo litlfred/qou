@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-03T16:20:58.439445+00:00",
-  "commitSha": "157d6b22130e25f17aaa880e4084235600c9d02f",
+  "computedAt": "2026-09-14T19:55:37.179896+00:00",
+  "commitSha": "c9a59c58bb87a7a2e2f9432cf1c04fa94ff443cf",
   "assertions": [
     {
       "name": "alpha_em_prefers_proton_anchor",
@@ -14,7 +14,7 @@
     },
     {
       "name": "proton_delta_sub_ppb",
-      "computed": "0.24472874732248980802",
+      "computed": "0.14541438638875874833",
       "expected": "0",
       "passed": true,
       "tolerance": "1",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 9,
   "computation": "alpha-em-anchor-preference",
   "scriptFile": "alpha_em_anchor_preference_probe.py",
-  "scriptHash": "1955d46c27dc",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "68906de778c2",
+  "scriptCommitSha": "0f1ac562fd0293aa610df2d363ae3c7d7b8fdfda",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -52,20 +52,20 @@
   "description": "Inverts the pure-q0 alpha_EM fixed-point form for the q0 that reproduces CODATA (q_alpha), then compares to the proton and muon pins. Finding: q_alpha is ~0.245 ppb from the PROTON pin but ~11.8 ppb from the MUON pin (= the mu-p tension) — alpha_EM is a THIRD EM-sector cross-check preferring the proton anchor, agreeing with m_p against the muon. No coefficient fitted (only q0 solved for); scope-(a).",
   "contentBlock": "prop:em-coupling-bring-zero-mode",
   "data": {
-    "q_alpha": "1.10997858247973713954661009259",
+    "q_alpha": "1.10997858258997395309968385902",
     "anchor_deltas_ppb": {
-      "proton": "0.24472874732248980802",
-      "muon": "11.858789092784570035",
+      "proton": "0.14541438638875874833",
+      "muon": "11.759474730697395995",
       "mu_p_gap": "11.614060342619785788"
     },
     "alpha_inv_residual_ppb": {
-      "proton": "1.6723270456964245288",
-      "muon": "81.035740382392584513"
+      "proton": "0.99367325607867091580",
+      "muon": "80.357086538914549772"
     },
     "interpretation": {
       "prefers": "proton",
-      "factor": "48.456869993935462488",
-      "q0_sensitivity": "6.8333903239211523668",
+      "factor": "80.868716106664818857",
+      "q0_sensitivity": "6.8333903288197548320",
       "note": "alpha_EM (EM sector) agrees with proton pin to sub-ppb; muon is the outlier (mu-p tension)"
     }
   },

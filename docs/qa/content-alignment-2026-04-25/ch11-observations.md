@@ -1,7 +1,7 @@
 # Chapter 11 — Observations (Physical Predictions) — QA Report
 
 **Review Date:** 2026-04-25
-**Chapter Directory:** `content/quantum-observable-universe/observations/`
+**Chapter Directory:** `folio/quantum-observable-universe/observations/`
 **Coverage:** 108 .md, ~21 .lean (grep-driven audit)
 
 ## Inventory

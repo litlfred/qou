@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-chirality-residue-mass-term",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:chirality-residue-mass-term",
+  "kind": "proof",
+  "title": "Proof of chirality residue mass term",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-chirality-residue-mass-term"
+  ],
+  "text": "chirality-residue-mass-term-proof.md",
+  "provenance": "authored"
+}

@@ -111,7 +111,7 @@ J_SITES = [
     "knots-particles-confinement/crossing-energy.md",
     "appendix-transfer-matrices/tm-notation-table1-data.md",
 ]
-PAPER = REPO / "content" / "quantum-observable-universe"
+PAPER = REPO / "folio" / "quantum-observable-universe"
 
 
 def site_live(rel: str) -> bool:

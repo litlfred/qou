@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-fivetwo-bar-odd-arithmetic-home",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:fivetwo-bar-odd-arithmetic-home",
+  "kind": "remark",
+  "title": "The bar-odd channel of $5_2$ is confined to the $\\sqrt{-23}$ line, and chirality is why the question is asked on $5_2$ rather than $4_1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-fivetwo-trace-field",
+    "papers/quantum-observable-universe/blocks/prop-fivetwo-saddle-sum-rule"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-fivetwo-trace-field",
+  "tags": [
+    "five-two",
+    "bar-odd",
+    "bar-involution",
+    "chirality",
+    "amphichiral",
+    "trace-field"
+  ],
+  "text": "fivetwo-bar-odd-arithmetic-home.md",
+  "provenance": "authored"
+}

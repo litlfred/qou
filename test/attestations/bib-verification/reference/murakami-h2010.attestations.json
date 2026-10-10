@@ -1,0 +1,53 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "murakami-h2010",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 206,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1002.0126v1/1002.0126v1.pdf"
+        },
+        "id": "murakami-h2010",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "WRONG JOIN. The seeded id was faddeev_kashaev1994, whose ref() entry (references.ts:6311) names the quantum-dilogarithm paper. This document is nothing of the sort: it is a single-author expository introduction to the volume conjecture for non-experts, arXiv:1002.0126 [math.GT], 31 Jan 2010 \u2014 a survey covering the definition of the coloured Jones polynomial, elementary examples, elementary hyperbolic geometry, Kashaev's invariant, and the deformed/Dehn-surgery generalisation. The correct source for faddeev_kashaev1994 is library/arxiv-hep-th-9310070v1/9310070v1.pdf, which IS that paper and is separately in this slice; so the key already has its true upload and this file was mis-attached to it. No existing ref() key matches this document: grep of references.ts for '1002.0126' and for 'Introduction to the Volume Conjecture' returns nothing, so id is null rather than corrected. Relevance in its own right is real but background-tier: the folio's volume-conjecture cone is already anchored on primary sources (kashaev1997, murakami-murakami2001, murakami2004, nguyen-tran-2021), so this survey duplicates coverage rather than adding a consumable result. Supporting, not core.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The document is in the folio's core subject area and would be a reasonable single-pointer survey for the volume-conjecture chapter, but it must first exist in references.ts under its own key. Until then the ledger row must carry id null so the false join to the quantum-dilogarithm key is not propagated.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-t90i"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record the mis-join itself: the ledger/indexer attached this file to faddeev_kashaev1994, a key that already has its correct upload at library/arxiv-hep-th-9310070v1/9310070v1.pdf Two uploads pointing at one key is the signature of exactly this failure mode and is worth a note so the indexer heuristic can be tightened.",
+              "target": "folio/bib-qa-verifications.json",
+              "bean": "qou-ni2p"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "ea218a0586a1"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

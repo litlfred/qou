@@ -3,7 +3,7 @@
 # scalars at q = q_0, not symbolic-in-q polynomials.
 """MPFR-native per-generator Wedderburn volumes for the atom braid.
 
-Per [`prop:mass-endomorphism-tower`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md)
+Per [`prop:mass-endomorphism-tower`](../../folio/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md)
 lines 162–183, the brane-tower terms T2 and T3 in the unified mass
 formula require per-generator additive Wedderburn volumes
 $\\hat V_i^{\\text{full}}$ for $i = 0, \\ldots, n_{\\text{gens}} - 1$

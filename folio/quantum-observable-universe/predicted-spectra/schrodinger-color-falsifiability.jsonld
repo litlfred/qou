@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-schrodinger-color-falsifiability",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:schrodinger-color-falsifiability",
+  "kind": "remark",
+  "title": "Schrödinger's color metric, diminishing returns, and a falsifiable $q_0$ prediction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-q-chromaticity"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-q-chromaticity",
+  "cites": [
+    "references/bujack2022",
+    "references/schrodinger1920color"
+  ],
+  "tags": [
+    "color",
+    "chromaticity",
+    "color-perception",
+    "schrodinger",
+    "weber-fechner",
+    "falsifiability",
+    "non-riemannian",
+    "skein",
+    "substrate-parameter"
+  ],
+  "text": "schrodinger-color-falsifiability.md",
+  "provenance": "authored"
+}

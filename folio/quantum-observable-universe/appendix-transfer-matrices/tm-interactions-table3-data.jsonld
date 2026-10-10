@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-tm-interactions-table3-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:tm-interactions-table3-data",
+  "kind": "table",
+  "title": "Table 3 from tm-interactions",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/tm-interactions"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "tm-interactions-table3-data.md",
+  "provenance": "authored"
+}

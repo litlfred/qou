@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-heat-kernel-peter-weyl-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-heat-kernel-peter-weyl-interpretation",
+  "kind": "remark",
+  "title": "Convergence, the $q$-Gaussian equilibrium mode, and the place in the $q$-heat story",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-heat-kernel-peter-weyl",
+    "papers/quantum-observable-universe/blocks/prop-q-gaussian-solves-q-heat",
+    "papers/quantum-observable-universe/blocks/def-categorical-laplace",
+    "papers/quantum-observable-universe/blocks/def-q-dilogarithm"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-q-heat-kernel-peter-weyl",
+  "text": "q-heat-kernel-peter-weyl-interpretation.md",
+  "provenance": "authored"
+}

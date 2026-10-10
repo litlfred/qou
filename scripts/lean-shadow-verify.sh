@@ -46,7 +46,7 @@
 set -uo pipefail
 
 ROOT=$(git rev-parse --show-toplevel)
-PKG="$ROOT/content/quantum-observable-universe/lean"
+PKG="$ROOT/folio/quantum-observable-universe/lean"
 export PATH="$HOME/.elan/bin:$PATH"
 
 # A bare `lean` does NOT apply the lakefile's [leanOptions].  That is not
@@ -208,7 +208,7 @@ LP="$SHADOW:$PKGROOTS$SIBLINGS$OLEANS"
 ORDER=$(OLEANS="$OLEANS" ROOT="$ROOT" python3 - "$@" <<'PY'
 import os, re, pathlib, subprocess, sys
 root = pathlib.Path(os.environ["ROOT"])
-pkg = root / "content/quantum-observable-universe/lean"
+pkg = root / "folio/quantum-observable-universe/lean"
 oleans = pathlib.Path(os.environ["OLEANS"])
 mod2path = {}
 for p in pkg.glob("QOU/**/*.lean"):
@@ -263,39 +263,130 @@ def isdirty(m):
     clean.add(m); return False
 need = sorted(m for m in cone if isdirty(m))
 
-order, done = [], set()
+# Emit topological LEVELS, one per line, not a flat order.  Every module in a
+# level has all of its dirty imports in a STRICTLY EARLIER level, so a level's
+# modules are mutually independent and can be compiled concurrently.
+#
+# The frozen `done` snapshot is what makes that true, and the previous version
+# did not take one: it mutated `done` inside the scan, so a module appearing
+# later in `need` than one it imports saw that import already `done` and joined
+# the SAME pass.  Flattened into a serial order that was still correct -- the
+# dependency preceded the dependent in the list -- so this is not a latent bug
+# being fixed, it is the invariant parallelism needs being established.
+# Computing `ready` against a frozen `done` is the whole difference.
+levels, done = [], set()
 while len(done) < len(need):
-    prog = False
-    for n in need:
-        if n not in done and all(d in done or d not in need for d in imports[n]):
-            order.append(n); done.add(n); prog = True
-    if not prog:
+    ready = [n for n in need
+             if n not in done and all(d in done or d not in need for d in imports[n])]
+    if not ready:
         print("CYCLE", file=sys.stderr); sys.exit(1)
-print(f"# cone={len(cone)} changed_since_snapshot={len(changed)} rebuild={len(need)}",
+    levels.append(ready)
+    done.update(ready)
+print(f"# cone={len(cone)} changed_since_snapshot={len(changed)} rebuild={len(need)} "
+      f"levels={len(levels)} widest={max((len(l) for l in levels), default=0)}",
       file=sys.stderr)
-print("\n".join(order))
+for lv in levels:
+    print(" ".join(lv))
 PY
 ) || exit 1
 
-n=$(printf '%s' "$ORDER" | grep -c . || true)
-echo "rebuilding $n module(s) from source ..."
-i=0
-for m in $ORDER; do
-  i=$((i+1))
-  src="$PKG/${m//./\/}.lean"
-  out="$SHADOW/${m//./\/}.olean"
-  mkdir -p "$(dirname "$out")"
-  # The shadow is hardlinked to the real tree: REMOVE the target before
-  # `lean -o` writes it, or the write lands on the shared inode and mutates the
-  # real olean tree -- the thing the shadow exists to prevent.
+# PARALLEL REBUILD, LEVEL BY LEVEL (bean qou-srb1).
+#
+# $ORDER is one topological LEVEL per line; every module in a level has all its
+# dirty imports in a strictly earlier level, so a level compiles concurrently
+# and levels run in sequence.
+#
+# WHAT IT BUYS, AND WHERE IT COSTS -- both measured, 4-core container.
+#
+# The win is real and it is nearly linear.  Controlled A/B over 40 MUTUALLY
+# INDEPENDENT modules (one level, no barriers), same modules both arms, page
+# cache pre-warmed:
+#
+#     1 job  x 4 threads   3m05.2 wall   user 2m36.5  sys 51.7   1.12 cores
+#     2 jobs x 2 threads   1m34.3 wall   user 2m40.3  sys 47.1   2.20 cores
+#                          ^^^^^^ 1.96x, and CPU time is UNCHANGED (3m28 vs
+#                          3m27) -- no overhead penalty, the same work spread.
+#
+# The reason it pays is the 1.12: Lean's OWN threading gets barely one core on
+# these modules even at LEAN_NUM_THREADS=4, so the parallelism has to come from
+# running separate modules, not from inside one.
+#
+# 🛑 But it LOSES on a narrow cone, and that is not hypothetical.  A cone-40
+# target (39 modules over 15 levels, i.e. 2.6 per level) measured 2m52.8 here
+# against 2m45.5 serial -- 4.4% SLOWER, with user and sys both up.  A level of
+# one module is serial plus an xargs spawn.  The full content-sweep cone is the
+# other regime (1478 modules, 27 levels, widest 555, ~55 per level) and is
+# where this is worth having.  NOT measured end-to-end at that size: the A/B
+# would have cost ~12 h of machine time, so what is established is the
+# mechanism (1.96x on a wide level) and the shape, not a sweep-level number.
+#
+# The narrow-cone loss is a LEVEL-BARRIER artifact, not a mechanism one: a
+# global work queue -- start a module the moment its own deps are done, rather
+# than when its whole level is -- would remove it.  That is the follow-up.
+#
+# Three properties are load-bearing and must survive any future edit:
+#
+#   1. The per-module `rm -f` STAYS, and stays per module.  The shadow is
+#      hardlinked to the real olean tree, so `lean -o` without the unlink writes
+#      through the shared inode and mutates the tree the shadow exists to
+#      protect.  Parallelism does not change this; it multiplies it.  Verified:
+#      the real tree is byte-identical (path, mtime, size, 2793 oleans) after a
+#      parallel rebuild AND after one killed with SIGKILL mid-write.
+#   2. A worker writes ONLY inside $SHADOW.  Its log goes to $SHADOW/.rb/, one
+#      file per module -- the serial version shared a single `.rb.log`, which
+#      concurrent workers would interleave into an unreadable failure report.
+#   3. Jobs should DIVIDE nproc, and LEAN_NUM_THREADS is nproc/jobs, matching
+#      `lean-library-sweep.py --jobs`: a non-divisor wastes the remainder.
+#      Only 2x2 and 1x4 were measured here (above); the 3x1 comparison in that
+#      script's docs is ITS workload, not this one.  Override REBUILD_JOBS=<n>.
+_np=$(nproc 2>/dev/null || echo 2)
+REBUILD_JOBS="${REBUILD_JOBS:-$(( _np >= 2 ? _np / 2 : 1 ))}"
+[ "$REBUILD_JOBS" -ge 1 ] || REBUILD_JOBS=1
+LNT=$(( _np / REBUILD_JOBS )); [ "$LNT" -ge 1 ] || LNT=1
+
+rebuild_one() {
+  local m="$1"
+  local src="$PKG/${m//./\/}.lean"
+  local out="$SHADOW/${m//./\/}.olean"
+  local log="$SHADOW/.rb/$m.log"
+  mkdir -p "$(dirname "$out")" "$SHADOW/.rb"
+  # See property 1 above -- do not hoist, do not drop.
   rm -f "$out" "${out%.olean}.olean.hash" "${out%.olean}.ilean"
-  if ! (cd "$PKG" && LEAN_PATH="$LP" lean $LEAN_OPTS "${src#$PKG/}" -o "$out") > "$SHADOW/.rb.log" 2>&1; then
-    echo "REBUILD FAILED [$i/$n] $m"
-    grep -v '^note:' "$SHADOW/.rb.log" | head -30
+  if ! (cd "$PKG" && LEAN_PATH="$LP" LEAN_NUM_THREADS="$LNT" \
+          lean $LEAN_OPTS "${src#$PKG/}" -o "$out") > "$log" 2>&1; then
+    echo "REBUILD FAILED $m"
+    grep -v '^note:' "$log" | head -30
+    return 1
+  fi
+  printf '  ok  %s\n' "$m"
+  return 0
+}
+export -f rebuild_one
+export PKG SHADOW LP LEAN_OPTS LNT
+
+n=$(printf '%s' "$ORDER" | tr ' ' '\n' | grep -c . || true)
+nlev=$(printf '%s' "$ORDER" | grep -c . || true)
+echo "rebuilding $n module(s) from source, $nlev level(s), ${REBUILD_JOBS}x${LNT} (jobs x threads) ..."
+mkdir -p "$SHADOW/.rb"
+i=0
+lv=0
+while IFS= read -r level; do
+  [ -n "$level" ] || continue
+  lv=$((lv+1))
+  cnt=$(printf '%s\n' $level | grep -c .)
+  # On a failure `xargs` lets the siblings ALREADY IN FLIGHT finish, so one or
+  # two `ok` lines can follow the REBUILD FAILED.  That is correct and is not a
+  # missing kill: the next LEVEL never starts, which is the only thing that
+  # could compile against a module that did not build.  Verified with a seeded
+  # failure -- error body printed, exit 1, later levels not entered.
+  if ! printf '%s\n' $level \
+       | xargs -r -n1 -P "$REBUILD_JOBS" bash -c 'rebuild_one "$@"' _; then
+    echo "rebuild failed in level $lv/$nlev"
     exit 1
   fi
-  printf '  [%d/%d] %s\n' "$i" "$n" "$m"
-done
+  i=$((i+cnt))
+  printf '  [%d/%d] level %d/%d done (%d module(s))\n' "$i" "$n" "$lv" "$nlev" "$cnt"
+done <<< "$ORDER"
 
 if [ -n "${REBUILD_ONLY:-}" ]; then
   # Prepare the shadow and stop.  `scripts/lean-content-sweep.sh` uses this to

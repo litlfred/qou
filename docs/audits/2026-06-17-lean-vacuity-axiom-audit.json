@@ -1,21 +1,21 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-09-13T06:02:43.317Z",
+  "generated": "2026-09-14T17:58:31.471Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3807,
-  "files_flagged": 94,
-  "total_defects": 55,
+  "scanned_files": 3854,
+  "files_flagged": 102,
+  "total_defects": 68,
   "total_exempt": 59,
-  "total_promoted_from_exempt": 26,
+  "total_promoted_from_exempt": 48,
   "categories": {
-    "proof-claims-unencoded": 11,
-    "proof-no-self-assuming-projection": 41,
+    "proof-no-self-assuming-projection": 63,
+    "proof-no-trivial-true": 2,
     "proof-no-decide-masking": 1,
     "proof-docstring-sorry-mismatch": 1,
-    "proof-no-trivial-true": 1
+    "proof-claims-unencoded": 1
   },
   "conjecture_graph": {
-    "total": 310,
+    "total": 308,
     "primary": [
       {
         "name": "A3CrossTermMagnitudeClosed",
@@ -575,12 +575,7 @@
       {
         "name": "HeckeAnyonicSubstrate",
         "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/HeckeAnyonicSubstrate.lean",
-        "line": 54
-      },
-      {
-        "name": "HeckeAnyonicSubstrate",
-        "file": "content/quantum-observable-universe/nuclear-interactions/hecke-anyonic-substrate.lean",
-        "line": 19
+        "line": 66
       },
       {
         "name": "HeckeMonodromy",
@@ -791,11 +786,6 @@
         "name": "MagicNumbersBring",
         "file": "content/quantum-observable-universe/lean/QOU/Conjectures/MagicNumbersBring.lean",
         "line": 48
-      },
-      {
-        "name": "MagicNumbersBring",
-        "file": "content/quantum-observable-universe/observations/magic-numbers-bring.lean",
-        "line": 50
       },
       {
         "name": "MarkovDisjointStabilisation",
@@ -1020,7 +1010,7 @@
       {
         "name": "QBetaCKClosedForms",
         "file": "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean",
-        "line": 58
+        "line": 70
       },
       {
         "name": "QbetaCkTruncationCanonicalClass",
@@ -1630,7 +1620,7 @@
         "decl": "acoustic_horizon_regularity",
         "severity": "critical",
         "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt_reason": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.lean": [
@@ -1642,7 +1632,7 @@
         "decl": "discrete_vortex_spectrum",
         "severity": "critical",
         "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt_reason": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.lean": [
@@ -1653,8 +1643,8 @@
         "snippet": "def root_of_unity_truncation_conditional",
         "decl": "root_of_unity_truncation_conditional",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.lean": [
@@ -1665,30 +1655,8 @@
         "snippet": "def vorticity_lower_bound_conditional",
         "decl": "vorticity_lower_bound_conditional",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
-      }
-    ],
-    "content/quantum-observable-universe/information-theory/computational-horizon.lean": [
-      {
-        "line": 243,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "structure HorizonStructure where",
-        "decl": "HorizonStructure",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (degree_one_leaks, degree_two_leaks) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [HorizonStructure]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
-      }
-    ],
-    "content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean": [
-      {
-        "line": 237,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "structure ObstructionParallel where",
-        "decl": "ObstructionParallel",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (q_regularized, classical_obstruction) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [ObstructionParallel]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/knots-particles-confinement/confinement-phase-stratification.lean": [
@@ -1704,15 +1672,16 @@
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       }
     ],
-    "content/quantum-observable-universe/knots-particles-confinement/hadron-fibre-embedding.lean": [
+    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/ClassicalLimitStpart.lean": [
       {
-        "line": 42,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "structure HadronFibreEmbedding where",
-        "decl": "HadronFibreEmbedding",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (confined) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [HadronFibreEmbedding]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
+        "line": 65,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "applied-field-projection",
+        "snippet": "theorem classical_limit_eq_stpart [inst : ClassicalLimitStpart]",
+        "decl": "classical_limit_eq_stpart",
+        "severity": "critical",
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean": [
@@ -1726,6 +1695,18 @@
         "exempt": true,
         "exempt_reason": "vacuous-by-design: the triviality IS the content — this records that the conjunct was provable for every `SQ`.",
         "detail": "concludes `∃ Q, … = Q` and proves it `⟨QOU_StandardPart K SQ, rfl⟩` — the witness IS the expression, so the statement holds for every value of `QOU_StandardPart K SQ` and says nothing about it"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicIsometryReflection.lean": [
+      {
+        "line": 87,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "applied-field-projection",
+        "snippet": "theorem dH_verticalReflection (x y : E) :",
+        "decl": "dH_verticalReflection",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/MassTowerOpenProblemsClasses.lean": [
@@ -1815,6 +1796,42 @@
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/archimedean.lean": [
+      {
+        "line": 42,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "applied-field-projection",
+        "snippet": "theorem descartes",
+        "decl": "descartes",
+        "severity": "critical",
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/metallic_character_knot.lean": [
+      {
+        "line": 43,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "applied-field-projection",
+        "snippet": "theorem metallic_character_knot",
+        "decl": "metallic_character_knot",
+        "severity": "critical",
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/noble_gas_characterization.lean": [
+      {
+        "line": 60,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "applied-field-projection",
+        "snippet": "theorem noble_gas_characterization [a : AtomLike] (h_stable : a.stable) :",
+        "decl": "noble_gas_characterization",
+        "severity": "critical",
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/ElectronShell.lean": [
       {
         "line": 95,
@@ -1841,15 +1858,16 @@
         "detail": "the projected field `s.spectral_decomposition` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/HeckeAnyonicSubstrate.lean": [
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/KnotFactorFrobeniusPairing.lean": [
       {
-        "line": 54,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "class HeckeAnyonicSubstrate (R : Type u) [CommRing R] (q : R) where",
-        "decl": "HeckeAnyonicSubstrate",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (heckeQuadratic) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [HeckeAnyonicSubstrate]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
+        "line": 80,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "applied-field-projection",
+        "snippet": "theorem markov_trace_factors {R : Type*} [CommRing R] [inst : KnotFactorFrobeniusPairing R]",
+        "decl": "markov_trace_factors",
+        "severity": "critical",
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/LevelSufficiency.lean": [
@@ -1946,6 +1964,18 @@
         "severity": "critical"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/geom_universality.lean": [
+      {
+        "line": 68,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "applied-field-projection",
+        "snippet": "theorem geom_universality",
+        "decl": "geom_universality",
+        "severity": "critical",
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/spectral_sequence_h3_explicit.lean": [
       {
         "line": 81,
@@ -1974,9 +2004,31 @@
         "snippet": "theorem volume_perturbation [ctx : VolumePerturbationContext] :",
         "decl": "volume_perturbation",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
-        "detail": "the projected field `ctx.perturbation_formula` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+        "exempt": false,
+        "detail": "the projected field `ctx.perturbation_formula` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
+        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Braiding/non_self_intersection.lean": [
+      {
+        "line": 44,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "applied-field-projection",
+        "snippet": "theorem non_self_intersection",
+        "decl": "non_self_intersection",
+        "severity": "critical",
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/ComponentCountSelectivity.lean": [
+      {
+        "line": 96,
+        "category": "proof-no-trivial-true",
+        "pattern": "reflexive-tautology",
+        "snippet": "theorem proton_neutron_indistinguishable (f : ℕ → R) :",
+        "decl": "proton_neutron_indistinguishable",
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/WignerSU4FromSpinIsospin.lean": [
@@ -2002,6 +2054,18 @@
         "severity": "critical"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/BringsSurface/lagrange_resolvent_transform.lean": [
+      {
+        "line": 72,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "applied-field-projection",
+        "snippet": "theorem lagrange_resolvent_transform_equivariance",
+        "decl": "lagrange_resolvent_transform_equivariance",
+        "severity": "critical",
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/FlavorDressing/DressedMassFromSubstrateSplit.lean": [
       {
         "line": 122,
@@ -2023,8 +2087,8 @@
         "snippet": "theorem acoustic_horizon_conditions [ctx : AcousticHorizonConditionsContext] :",
         "decl": "acoustic_horizon_conditions",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/FluidDynamics/discrete_vortex_spectrum.lean": [
@@ -2035,8 +2099,8 @@
         "snippet": "theorem discrete_vortex_spectrum [ctx : DiscreteVortexSpectrumContext] :",
         "decl": "discrete_vortex_spectrum",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/FluidDynamics/ns_obstruction_tower.lean": [
@@ -2071,19 +2135,8 @@
         "snippet": "theorem root_of_unity_truncation [ctx : RootOfUnityTruncationContext] :",
         "decl": "root_of_unity_truncation",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Information/GeometryOfIncompleteness.lean": [
-      {
-        "line": 32,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "structure DegreeZeroDatum where",
-        "decl": "DegreeZeroDatum",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (formallyProvable) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [DegreeZeroDatum]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Information/p_bandwidth_bound.lean": [
@@ -2179,6 +2232,28 @@
         "snippet": "theorem borromean_crossing_minimal :",
         "decl": "borromean_crossing_minimal",
         "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/LiftingDescent/descent_cocycle_deviation.lean": [
+      {
+        "line": 57,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "applied-field-projection",
+        "snippet": "theorem descent_cocycle_deviation",
+        "decl": "descent_cocycle_deviation",
+        "severity": "critical",
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
+      },
+      {
+        "line": 68,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "applied-field-projection",
+        "snippet": "theorem twisted_cech_cocycle_equation",
+        "decl": "twisted_cech_cocycle_equation",
+        "severity": "critical",
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_descended_is_holonomy.lean": [
@@ -2399,15 +2474,16 @@
         "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/OptionE/RungSelection.lean": [
+    "content/quantum-observable-universe/lean/QOU/Optimization/AngleStructureFeasibility.lean": [
       {
-        "line": 48,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "structure RungRule (n : ℕ) where",
-        "decl": "RungRule",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (substrate_derived) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [RungRule]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
+        "line": 173,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "applied-field-projection",
+        "snippet": "theorem exists_angleStructure_of_expansion [DecidableEq E] (star : V → Finset E)",
+        "decl": "exists_angleStructure_of_expansion",
+        "severity": "critical",
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean": [
@@ -2604,6 +2680,54 @@
         "detail": "the projected field `tmd.decomposition` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/emergence_to_quantum_flat.lean": [
+      {
+        "line": 50,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "applied-field-projection",
+        "snippet": "theorem emergence_to_quantum_flat",
+        "decl": "emergence_to_quantum_flat",
+        "severity": "critical",
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/frobenius_relation.lean": [
+      {
+        "line": 63,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "applied-field-projection",
+        "snippet": "theorem frobenius_relation [ctx : FrobeniusRelationContext] (x : ctx.TensorAA) :",
+        "decl": "frobenius_relation",
+        "severity": "critical",
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/substrate_radial_coordinate.lean": [
+      {
+        "line": 59,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "applied-field-projection",
+        "snippet": "theorem substrate_radial_coordinate",
+        "decl": "substrate_radial_coordinate",
+        "severity": "critical",
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/volume_from_rigidity.lean": [
+      {
+        "line": 51,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "applied-field-projection",
+        "snippet": "theorem volume_from_rigidity",
+        "decl": "volume_from_rigidity",
+        "severity": "critical",
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
+      }
+    ],
     "content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.lean": [
       {
         "line": 43,
@@ -2613,7 +2737,7 @@
         "decl": "ccg_cosimplicial_identities",
         "severity": "critical",
         "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt_reason": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/lifting-and-descent/ccg-crossed-module-structure.lean": [
@@ -2625,7 +2749,7 @@
         "decl": "ccg_crossed_module_structure",
         "severity": "critical",
         "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt_reason": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/lifting-and-descent/ordering-jet-compatibility.lean": [
@@ -2641,14 +2765,14 @@
     ],
     "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean": [
       {
-        "line": 131,
+        "line": 163,
         "category": "proof-no-self-assuming-projection",
         "pattern": "applied-tuple-projection",
         "snippet": "theorem qbeta_c_k_closed_forms_derived",
         "decl": "qbeta_c_k_closed_forms_derived",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean": [
@@ -2659,6 +2783,16 @@
         "snippet": "def strong_duality (lp : OperatorSelectionLP bounded feasible)",
         "decl": "strong_duality",
         "severity": "critical"
+      },
+      {
+        "line": 158,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "applied-field-projection",
+        "snippet": "theorem complementary_slackness (lp : OperatorSelectionLP bounded feasible)",
+        "decl": "complementary_slackness",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/mass-theory/conj-rho-prefactor-structural.lean": [
@@ -2683,7 +2817,7 @@
         "decl": "crystal_basis_reduction",
         "severity": "critical",
         "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt_reason": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/mass-theory/he4-channel-active-set.lean": [
@@ -2697,6 +2831,28 @@
         "exempt": true,
         "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
         "detail": "the projected field `h.strong_duality` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/kashaev-volume-conjecture.lean": [
+      {
+        "line": 144,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "applied-field-projection",
+        "snippet": "theorem figure_eight_volume_from_vc (q : ℝ) [inst : VolumeConjecture q] :",
+        "decl": "figure_eight_volume_from_vc",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "canonical §3b placeholder projection (tracked; triage pending)"
+      },
+      {
+        "line": 154,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "applied-field-projection",
+        "snippet": "theorem borromean_volume_from_vc (q : ℝ) [inst : VolumeConjecture q] :",
+        "decl": "borromean_volume_from_vc",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.lean": [
@@ -2724,6 +2880,16 @@
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       },
       {
+        "line": 137,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "applied-field-projection",
+        "snippet": "theorem mass_q_one_shadow_forward",
+        "decl": "mass_q_one_shadow_forward",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "canonical §3b placeholder projection (tracked; triage pending)"
+      },
+      {
         "line": 177,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
@@ -2733,6 +2899,16 @@
         "exempt": false,
         "detail": "the projected field `hC.magnitude_within_threshold` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
+      },
+      {
+        "line": 247,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "applied-field-projection",
+        "snippet": "theorem mass_side_kernel_implies_q_one_shadow",
+        "decl": "mass_side_kernel_implies_q_one_shadow",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.lean": [
@@ -2779,7 +2955,7 @@
         "decl": "bar_even_kernel_implies_q_one_shadow",
         "severity": "critical",
         "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt_reason": "canonical §3b placeholder projection (tracked; triage pending)"
       },
       {
         "line": 133,
@@ -2815,7 +2991,7 @@
         "decl": "qbeta_q_eq_one_shadow_anchors",
         "severity": "critical",
         "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt_reason": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate.lean": [
@@ -2857,17 +3033,6 @@
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       }
     ],
-    "content/quantum-observable-universe/nuclear-interactions/hecke-anyonic-substrate.lean": [
-      {
-        "line": 19,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "class HeckeAnyonicSubstrate where",
-        "decl": "HeckeAnyonicSubstrate",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (holds) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [HeckeAnyonicSubstrate]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
-      }
-    ],
     "content/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.lean": [
       {
         "line": 329,
@@ -2879,28 +3044,6 @@
         "exempt": false,
         "detail": "the projected field `inst.forms_agree` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
-      }
-    ],
-    "content/quantum-observable-universe/nuclear-interactions/universal-ilp-algorithm.lean": [
-      {
-        "line": 16,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "structure KnotOperator (q : ℝ) where",
-        "decl": "KnotOperator",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (is_knot) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [KnotOperator]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
-      }
-    ],
-    "content/quantum-observable-universe/observations/magic-numbers-bring.lean": [
-      {
-        "line": 34,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "structure BringPeriodSublattice where",
-        "decl": "BringPeriodSublattice",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (s5_stable, tau_stable) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [BringPeriodSublattice]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
       }
     ],
     "content/quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation.lean": [
@@ -2966,7 +3109,9 @@
         "snippet": "structure TannakaKreinReconstruction",
         "decl": "TannakaKreinReconstruction",
         "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (universal_property) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [TannakaKreinReconstruction]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
+        "exempt": true,
+        "exempt_reason": "explicit @marker / opaque-tag opt-out",
+        "detail": "unconsumed universe-typed field(s) `: Prop` (universal_property) — honestly framed; tracked not counted"
       }
     ]
   }

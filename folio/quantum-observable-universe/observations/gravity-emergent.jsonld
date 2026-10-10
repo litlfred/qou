@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-gravity-emergent",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:gravity-emergent",
+  "kind": "remark",
+  "title": "Gravity as emergent substrate geometry",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-gr-substrate-geometry"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+  "tags": [
+    "gravity",
+    "emergent",
+    "observation"
+  ],
+  "text": "gravity-emergent.md",
+  "provenance": "authored"
+}

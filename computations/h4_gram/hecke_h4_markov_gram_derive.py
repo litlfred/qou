@@ -2,7 +2,7 @@
 """gram_h4.py — 24x24 Gram matrix G4 of the H4(q) Markov trace (T2-b, bean qou-5lbe).
 
 Transcribes TRM / mulsigma0/1/2 / mulNF word structure EXACTLY from
-  content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceH4.lean
+  folio/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceH4.lean
 (convention: T_s^2 = 1 + h*T_s, h = q - 1/q; Ocneanu trace tr(1)=1, tr(x T_top)=z tr(x)).
 
 Cross-checks the transcription against the independent generator

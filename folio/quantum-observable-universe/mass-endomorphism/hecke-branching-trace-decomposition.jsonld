@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-hecke-branching-trace-decomposition",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:hecke-branching-trace-decomposition",
+  "kind": "proposition",
+  "title": "Hecke branching trace decomposition: $\\mathrm{tr}_{V_\\lambda}(\\rho_\\lambda(\\beta_1 I \\beta_2)) = \\sum_{\\mu,\\nu} \\mathrm{tr}\\,A^\\lambda_{\\mu,\\nu}(I) \\cdot (\\rho_\\mu(\\beta_1) \\otimes \\rho_\\nu(\\beta_2))$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hoefsmit-seminormal-form",
+    "papers/quantum-observable-universe/blocks/prop-wenzl-bridge-applicability-qou"
+  ],
+  "cites": [
+    "references/wenzl1988",
+    "references/hoefsmit1974",
+    "references/orellana1998"
+  ],
+  "tags": [
+    "hecke",
+    "branching-rule",
+    "littlewood-richardson",
+    "wedderburn-decomposition",
+    "hoefsmit-seminormal",
+    "trace-decomposition",
+    "operator-valued"
+  ],
+  "leanRef": "qou:QOU.MassEndomorphism.branch_trace",
+  "text": "hecke-branching-trace-decomposition.md",
+  "leanSource": "hecke-branching-trace-decomposition.lean",
+  "provenance": "authored"
+}
