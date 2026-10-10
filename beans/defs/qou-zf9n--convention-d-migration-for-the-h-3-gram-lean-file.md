@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T19:27:04Z
-updated_at: 2026-10-10T08:23:35Z
+updated_at: 2026-10-10T08:49:22Z
 parent: qou-slz5
 ---
 
@@ -512,3 +512,7 @@ Both were stale CONSUMERS of grouped-era data (upstream chi-deuteron-h6 and bind
 
 ## 2026-10-10 — six 10A−5 sites rescoped (owner: 'Rescope', session session_01ST9RpvTF7JHNdUNafrjf9J)
 Docstring/prose only; no theorem statement changed (all are arithmetic or carry the law as a hypothesis). Each now says the near-match was read off the grouped word and is not supported on the canonical interleaved word, citing the regenerated witness. Sites: Mass/BindingResidualExponent.lean (module note + residualExponent_five docstring retitled 'Arithmetic at w = 5'); BraidKnot/DeltaLambdaExponentKeystone.lean (third doubt layer added to the hexp caveat); BraidKnot/DeltaLambdaIMME.lean:12; QBeta/QLommelOrderRecurrence.lean (note after the Δ_λ ≈ q₀^(10A−5) paragraph); BraidsAndKnots/KeystoneFiveFoldStructure.lean:31; notation-collisions.md B_sym/B_lin paragraph. Still open: the TL-support probe rerun (writes its own witness; its >3 check would fail at 1.2031).
+
+
+## 2026-10-10 — TL-support probe rerun (owner chose option 1, session session_01ST9RpvTF7JHNdUNafrjf9J)
+Rerun on the regenerated (interleaved-word) rho-w witness. Found and fixed a precision artifact first: the 2026-09-06 chi-deuteron-h6 cache stores y_λ on ≥3-row partitions as ~1e-72 round-off, not 0, which made 3 support assertions FAIL spuriously. rho_w_crystal_vertex_trace.py now carries exact 0 there (ocneanuWeight_conventionD_eq_zero_of_three_rows), refusing if any entry exceeds 10^-(dps-10). B_pred unchanged (0.27164 MeV). Result: support assertions 6/6 PASS (support on the TL quotient stands, exact); surviving_sum_is_cancellation_dominated FAILS at 1.20312x (was 3.44x on the grouped word) — left failing, threshold not moved. Probe docstring carries a rescope note; description/headline now computed.

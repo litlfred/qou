@@ -1,5 +1,16 @@
 #!/usr/bin/env python3
-"""Where can the missing 83.5% of the Delta_lambda closure possibly live?
+"""Where can the missing part of the Delta_lambda closure possibly live?
+
+RESCOPED 2026-10-10 (bean qou-zf9n, PR #7551). The figures quoted in the body
+below (16.48 % capture, 0.3666 MeV, |total| 0.7174, 3.44x cancellation, (5,1)
+at 177 %) were computed from the pre-2026-09-05 GROUPED atom word. The source
+witness `rho-w-crystal-vertex-trace` has since been regenerated on the canonical
+INTERLEAVED word: total -0.717445 -> +0.531580, capture 16.480 % -> 12.211 %,
+cancellation 3.44x -> 1.203x. So the SUPPORT result (y_lambda = 0 on >= 3-row
+blocks, exact Schur vanishing at N = 2) survives, and the CANCELLATION claim
+does not: `surviving_sum_is_cancellation_dominated` (> 3x) now FAILS and is
+deliberately left failing rather than re-thresholded. The body is kept as the
+historical record; the witness carries the live numbers.
 
 `rho_w_crystal_vertex_trace` computes the parameter-free deuteron binding as
 
@@ -190,8 +201,10 @@ def main() -> int:
             "Support analysis of the parameter-free Delta_lambda closure. y_lambda "
             "vanishes on every >= 3-row partition, so the sum is supported entirely "
             "on the Temperley-Lieb quotient and no per-block weight on a >= 3-row "
-            "block can contribute to it. The surviving 4-term sum is "
-            "cancellation-dominated (3.44x)."
+            "block can contribute to it. Cancellation ratio of the surviving sum: "
+            f"{nstr(abs_sum / abs(total), 6)}x (was 3.44x on the pre-2026-09-05 "
+            "grouped word; the > 3x cancellation claim does not hold on the canonical "
+            "interleaved word)."
         ),
         "source_witness": SOURCE,
         "n_strands": w.get("n_strands"),
@@ -251,8 +264,9 @@ def main() -> int:
         script_path=__file__, engine="python+mpmath(exact combinatorics)",
     ).save()
 
-    print("=== Where can the missing 83.5% live? ===")
-    print(f"  captured {float(w.get('captured_fraction', 0)) * 100:.2f}%  "
+    _cap = mpf(str(w.get("captured_fraction", 0))) * 100
+    print(f"=== Where can the missing {nstr(100 - _cap, 3)}% live? ===")
+    print(f"  captured {nstr(_cap, 4)}%  "
           f"closure_status = {w.get('closure_status')}")
     print()
     print(f"  {'lambda':<18} {'rows':>4} {'y_lambda':>16}  contributes")

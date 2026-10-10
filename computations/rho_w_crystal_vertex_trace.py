@@ -353,6 +353,20 @@ def main() -> int:
     cache = json.loads(cache_path.read_text())
     chi_cache = {tuple(e["partition"]): mpf(e["chi_lambda"]) for e in cache["by_partition"]}
     y_cache = {tuple(e["partition"]): mpf(e["y_lambda"]) for e in cache["by_partition"]}
+    # Exact Schur vanishing: under convention D (N = 2) the Ocneanu weight is
+    # EXACTLY zero on every partition with >= 3 rows
+    # (QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows, sorry-free).
+    # The 2026-09-06 cache stores those entries as ~1e-72 round-off from a
+    # numerical evaluation; carry the exact value instead. Refuse if any such
+    # entry is above the precision floor, so this cannot hide a real nonzero.
+    _floor = mpf(10) ** (-(mp.dps - 10))
+    for _lam in list(y_cache):
+        if len(_lam) >= 3:
+            if abs(y_cache[_lam]) > _floor:
+                raise SystemExit(
+                    f"y_lambda{_lam} = {y_cache[_lam]} exceeds the precision floor "
+                    f"{_floor}; exact Schur vanishing at N = 2 would be violated")
+            y_cache[_lam] = mpf(0)
     dim_cache = {tuple(e["partition"]): int(e["dim"]) for e in cache["by_partition"]}
 
     parts = partitions_of(n)
