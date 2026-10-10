@@ -1,7 +1,7 @@
 ---
 # qou-opjb
 title: 'GAP: neutron-prediction-comparison displays p*(A) while naming n_pred(p), and its c = 0.01497 traces to an SEMF ratio, not to a definition in the corpus'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - split-from-6766
     - 8f-decide
 created_at: 2026-10-10T08:12:47Z
-updated_at: 2026-10-10T10:19:41Z
+updated_at: 2026-10-10T12:00:00Z
 parent: qou-8lxd
 ---
 
@@ -244,3 +244,28 @@ quote the `a_asym = 23.50663` MeV vs SEMF `a_A = 23.69` MeV agreement (0.77 %)
 as evidence for the framework — `a_asym` is a chosen monomial in q-integers, so
 that is a postdiction of an empirical constant by an assignment, which is
 exactly the comparison §NO FITTING says to rank below a derivation.
+
+
+## 2026-10-10 — owner decision 1b ENACTED: `c = λ_C/(2·a_asym) ≈ 0.01452` published, labelled "assigned, not derived"
+
+Ruling (ofri): option (b). Done on branch `claude/opjb-neutron-constant-2026-10-10`.
+
+- **Constant.** `c = (q₀−q₀⁻¹)[6]_{q₀} / (6[2]_{q₀}[7]_{q₀}) = 0.0145158337165852716…` at the proton pin
+  (`qou_substrate.constants.q_at`), balanced q-integers, `m_e` cancels. Prose says it is
+  "fixed by the q-integer coefficient assignments of Ch 11 §8, not derived".
+- **New producer** (the table never had one):
+  `computations/observations/neutron_prediction_comparison_probe.py` + witness
+  (`q0Anchor: proton`), mpmath 60 dps. It also states the observation rule for the
+  first time: `n_obs(p)` = N of the most abundant isotope (NUBASE2020 `IS=`, parsed from
+  `library/kondev-2021-…/sections/`), else the longest-lived ground state.
+- **Result, reported as it came out:** mean `|Δn|` **1.7 → 1.8155 (worse)**, max **8 → 7**
+  (now at p = 52, Te; ¹³⁰Te is far on the neutron-rich side). Bins 0/1/2/3/4/5–7 =
+  16/34/25/16/8/4 (sum 103). Under the same observation rule the OLD c gives 1.7961, max 8
+  at p = 102, so the published 1.7 also depended on an unstated observation table, not
+  only on the constant. (That old table was inconsistent anyway: its `5–8` row listed 7
+  elements against a count of 4.)
+- **Still carry 0.01497, outside this ruling's scope:** `observations/stability-cubic-plot.md`,
+  `predicted-spectra/elliptic-stability-locus.md` (its erbium `p ≈ 67.8` estimate), and the
+  Lean sibling `neutron-prediction-comparison.lean` (`asymmetry_coeff`; its
+  `predicted_mass_number` uses yet another inversion). Leaving them is an owner call.
+- Display mismatch (first section): already resolved in the prior entry.
