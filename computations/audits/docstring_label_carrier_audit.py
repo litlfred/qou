@@ -113,7 +113,7 @@ cites = collect()
 # failure. Rejecting an unknown flag is the half that generalises: a flag
 # matching nothing must not produce a clean-looking run (bean qou-wu38).
 _FLAGS = [a for a in sys.argv[1:] if a.startswith("-")]
-_UNKNOWN = [a for a in _FLAGS if a not in ("--selftest", "--self-test", "-v")]
+_UNKNOWN = [a for a in _FLAGS if a not in ("--selftest", "--self-test", "-v", "--max")]
 if _UNKNOWN:
     print(f"unrecognized arguments: {' '.join(_UNKNOWN)}", file=sys.stderr)
     sys.exit(2)
@@ -165,4 +165,48 @@ if dead:
           "block anywhere in folio/ or content/. `uses-resolve` reads MANIFEST\n"
           "uses[], so a label in a docstring is not a manifest edge and no\n"
           "existing gate sees it. A reader following one lands on nothing.")
-sys.exit(1 if dead else 0)
+# --max N: a DRAINING RATCHET, not a zero-threshold. Owner ruling "c1", relayed
+# 2026-10-10: this gate "blocks only when the count INCREASES, not at 0".
+#
+# Why 0 is the wrong trigger, measured rather than argued: this audit cannot
+# distinguish CITING a dead label from DOCUMENTING that one is dead, so a
+# producer that explains a retired label in prose RAISES the count. Recorded in
+# the header block above, where the 25 -> 26 instance is worked through. A
+# zero-threshold gate would therefore punish exactly the fix it is meant to
+# reward.
+#
+# The ratchet inverts that: the surface may only shrink. A new dead citation
+# fails the gate; draining one lowers the bound in the same commit that drains
+# it, and the number lives in scripts/precision-gates.sh where a reviewer sees
+# it next to the gate. Same discipline as raw-float64-baseline.json --
+# baselines drain, never grow.
+_MAX = None
+if "--max" in sys.argv:
+    _i = sys.argv.index("--max")
+    if _i + 1 >= len(sys.argv):
+        print("--max requires a value", file=sys.stderr); sys.exit(2)
+    try:
+        _MAX = int(sys.argv[_i + 1])
+    except ValueError:
+        print(f"--max takes an integer, got {sys.argv[_i + 1]!r}", file=sys.stderr)
+        sys.exit(2)
+
+if _MAX is None:
+    sys.exit(1 if dead else 0)
+
+if len(dead) > _MAX:
+    print(f"\nRATCHET FAILED: {len(dead)} dead labels against a bound of {_MAX}.")
+    print("A NEW dead citation has landed. Either give the label a carrier, or")
+    print("-- if it names a deliberately removed block -- point the citation at")
+    print("the removal record AND lower --max in scripts/precision-gates.sh in")
+    print("the same commit. Do not raise the bound.")
+    sys.exit(1)
+
+if len(dead) < _MAX:
+    print(f"\nRATCHET: {len(dead)} dead labels, bound {_MAX} -- the surface has")
+    print(f"DRAINED by {_MAX - len(dead)}. Lower --max in")
+    print("scripts/precision-gates.sh to {} so the gain cannot be lost.".format(len(dead)))
+    sys.exit(0)
+
+print(f"\nRATCHET: {len(dead)} dead labels, at the bound. No new dead citation.")
+sys.exit(0)

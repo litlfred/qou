@@ -269,9 +269,26 @@ GATES=(
   # SUPERSEDED ALGORITHM rather than missing names, so there is no candidate of
   # any name to import. Re-measure before quoting either number; do not read
   # "2 remain" as "2 renames pending".
+  #
+  # 🛑 AND THAT IS A STATEMENT ABOUT A BRANCH, NOT ABOUT THE TREE YOU ARE ON.
+  # Measured 2026-10-10 at the same hour, same audit, varying only the checkout:
+  #
+  #     claude/qou2cz1-unresolved-imports-2026-10-10  ->  UNRESOLVED 0
+  #     claude/qou3kni-docstrings-and-import-gate-...  ->  UNRESOLVED 3
+  #     origin/main                                    ->  UNRESOLVED 3
+  #
+  # `ac520bba3b` ("UNRESOLVED 2 -> 0") is NOT an ancestor of origin/main, so
+  # the drain exists only on the branch that did it. This entry was one edit
+  # away from being flipped to blocking on the strength of the 0 -- which would
+  # have shipped a gate RED ON ARRIVAL at 3 on main, the exact failure this
+  # file's header says gets a gate muted rather than fixed.
+  #
+  # FLIP TO BLOCKING ONLY FROM A TREE WHERE IT MEASURES 0, i.e. after the
+  # qou-2cz1 fixes land on main -- and re-measure there, because a count read
+  # on a feature branch is a property of that branch.
   "local import resolution (advisory)|computations/audits/local_import_resolution_audit.py||yes|no"
-  # ADVISORY, red on arrival at 25, and the surface was UNMEASURED until now
-  # (bean qou-3kni item 3: "the population is unmeasured").
+  # BLOCKING as a DRAINING RATCHET (--max 26), not at zero. The surface was
+  # UNMEASURED until now (bean qou-3kni item 3: "the population is unmeasured").
   #
   # A corpus label cited in a producer DOCSTRING that resolves to no block.
   # `uses-resolve` reads MANIFEST uses[], so a label in a docstring is not a
@@ -281,8 +298,30 @@ GATES=(
   # in two files"; the worst single label is cited by NINE files, among them
   # the load-bearing computations/_li_2_q_util.py.
   #
-  # FLIP TO BLOCKING WHEN THE DEAD COUNT REACHES 0. Not blocking now because
-  # most of the 25 name blocks in the removed descartes-universe/ chapter, and
+  # 🛑 ZERO IS THE WRONG TRIGGER, and this entry said otherwise until
+  # 2026-10-10 ("FLIP TO BLOCKING WHEN THE DEAD COUNT REACHES 0"). The audit
+  # cannot distinguish CITING a dead label from DOCUMENTING that one is dead,
+  # so a producer that explains a retired label in prose RAISES the count:
+  # redirecting prop:per-partition-k-lambda-rule's two citations to the audit
+  # doc holding its record moved the count 25 -> 26, because the explanatory
+  # note has to name the label in order to say it is gone. A zero-threshold
+  # gate punishes exactly the fix it is meant to reward.
+  #
+  # So the bound is a ratchet: 26 today, and it may only fall. A new dead
+  # citation fails the gate; draining one lowers --max HERE, in the same
+  # commit that drains it, where a reviewer sees the number next to the gate.
+  # Same discipline as raw-float64-baseline.json -- baselines drain, never
+  # grow. Owner ruling "c1", relayed 2026-10-10: the gate "blocks only when
+  # the count INCREASES, not at 0".
+  #
+  # The count is also PINNED TO THE REPO ROOT as of the same ruling: git
+  # ls-files and git grep resolve pathspecs relative to the cwd, so the same
+  # tree at the same commit read 26 from the root and 400 from computations/.
+  # The gate harness happens to run from the root, so the gate read the right
+  # number while a human running it beside the files it scans read the wrong
+  # one. A gate whose count depends on its cwd has no threshold at all.
+  #
+  # Most of the 26 name blocks in the removed descartes-universe/ chapter, and
   # whether each becomes a restored carrier, a retired citation, or a scoped
   # one is a content decision per label, not a sweep. --selftest asserts no
   # truncation plus two known-live and two known-dead labels; mutation-tested
@@ -290,7 +329,7 @@ GATES=(
   # used [a-z0-9-] for the stem and silently clipped
   # prop:constit-factor-tau-M-proton-identity at the uppercase M, then reported
   # the fragment as dead -- the label's own character class was the blind spot.
-  "docstring label carriers (advisory)|computations/audits/docstring_label_carrier_audit.py||yes|no"
+  "docstring label carriers|computations/audits/docstring_label_carrier_audit.py|--max 26|yes|yes"
   # BLOCKING as of 2026-08-19, and green on arrival. Bean qou-irzg.
   #
   # It ran ADVISORY because the ratchet had no MEMORY for this tree, not
