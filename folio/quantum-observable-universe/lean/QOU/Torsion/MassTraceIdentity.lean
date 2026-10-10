@@ -162,6 +162,26 @@ theorem massIntegrand_eq_id_of_frobeniusForm_eq_counit
     (h : F.frobeniusForm = F.counit) : massIntegrand F = 𝟙 F.obj := by
   simp [massIntegrand, h, reassoc_of% F.counit_comul]
 
+/-- Left multiplication applied to an element is the convolution product:
+    `x ≫ L_y = y * x`. -/
+theorem comp_leftMul (x y : 𝟙_ C ⟶ F.obj) : x ≫ leftMul F y = conv F y x := by
+  conv_lhs => rw [← unit_leftMul F x]
+  rw [Category.assoc, ← leftMul_conv, unit_leftMul]
+
+/-- **The mass integrand applied to a cycle, then integrated.** For `x : 𝟙 ⟶ A`,
+    `∫_A(Ψ ∘ x) = ∫_A(u · x)`. This is the well-typed reading of
+    `∫_A((∫_A ⊗ id) ∘ Δ ∘ ϱ)`: the composite `𝟙 → A → A → 𝟙` needs no trace. -/
+theorem frobeniusForm_massIntegrand (x : 𝟙_ C ⟶ F.obj) :
+    x ≫ massIntegrand F ≫ F.frobeniusForm = conv F (density F) x ≫ F.frobeniusForm := by
+  rw [massIntegrand_eq_leftMul_density, ← Category.assoc, comp_leftMul]
+
+/-- If the Frobenius form is the counit, `∫_A(Ψ ∘ x) = ∫_A(x)`: the mass of a cycle is the
+    Frobenius form of the cycle itself. -/
+theorem frobeniusForm_massIntegrand_of_frobeniusForm_eq_counit
+    (h : F.frobeniusForm = F.counit) (x : 𝟙_ C ⟶ F.obj) :
+    x ≫ massIntegrand F ≫ F.frobeniusForm = x ≫ F.frobeniusForm := by
+  rw [massIntegrand_eq_id_of_frobeniusForm_eq_counit F h, Category.id_comp]
+
 /-- **Trace of a left multiplication.** `tr(L_y) = ∫_A(y · c)`. -/
 theorem leftTrace_leftMul (y : 𝟙_ C ⟶ F.obj) :
     F.leftTrace (leftMul F y) = casimir F ≫ leftMul F y ≫ F.frobeniusForm := by
