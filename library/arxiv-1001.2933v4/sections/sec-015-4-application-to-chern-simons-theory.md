@@ -8,6 +8,7 @@ pages: 62-63
 source_pdf: 1001.2933v4.pdf.txt
 source_sha256: b02636c86d593c02
 toc_source: inferred
+doc_brief: "Analytic Continuation Of Chern-Simons Theory — The title of this article refers to analytic continuation of three-dimensional ChernSimons gauge theory away from integer values of the usual coupling"
 ---
 4 Application To Chern-Simons Theory
 Can the framework of section 3 be applied in the infinite-dimensional context of ChernSimons gauge theory? The critical points pσ certainly make sense. The Euler-Lagrange

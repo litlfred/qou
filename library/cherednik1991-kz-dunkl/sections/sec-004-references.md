@@ -9,6 +9,7 @@ source_pdf: cherednik1991-kz-dunkl.pdf
 source_sha256: cae9cf747bb98a46
 toc_source: inferred
 text_source: ocr (rapidocr-onnxruntime, 300 dpi, one page per PDF page; quality: prose good, display math partly lost)
+doc_brief: "A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras — 6 sections: Front matter; Introduction; Affine Hecke algebras and the inte"
 ---
 References
 [BGG] Bernstein, I.N., Gelfand, I.M., Gelfand, S.I.: Schubret cells and the cohomology of

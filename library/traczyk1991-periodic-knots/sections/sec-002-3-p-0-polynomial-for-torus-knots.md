@@ -9,6 +9,7 @@ source_pdf: traczyk1991-periodic-knots.pdf
 source_sha256: 2e9236877cec4604
 toc_source: inferred
 text_source: ocr (rapidocr-onnxruntime, 300 dpi, one page per PDF page; quality: prose good, display math partly lost)
+doc_brief: "Periodic knots and the skein polynomial — 6 sections: Front matter; Introduction; Reduction to torus knots"
 ---
 3 P polynomial for torus knots
 where p is a prime number, and O<k<p. We still consider the coefficients

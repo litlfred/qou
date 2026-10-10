@@ -8,6 +8,7 @@ pages: 3-4
 source_pdf: 0006183v1.pdf
 source_sha256: 2c9c4d97ce4f71a3
 toc_source: inferred
+doc_brief: "Fine-tuning and the Wilson renormalization group — We use the Wilson renormalization group (RG) formulation to solve the ﬁne-tuning proce- dure needed in renormalization schemes breaking the gauge"
 ---
 2
 Renormalization group ﬂow

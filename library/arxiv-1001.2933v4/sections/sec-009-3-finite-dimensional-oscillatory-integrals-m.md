@@ -8,6 +8,7 @@ pages: 23-23
 source_pdf: 1001.2933v4.pdf.txt
 source_sha256: b02636c86d593c02
 toc_source: inferred
+doc_brief: "Analytic Continuation Of Chern-Simons Theory — The title of this article refers to analytic continuation of three-dimensional ChernSimons gauge theory away from integer values of the usual coupling"
 ---
 3 Finite-Dimensional Oscillatory Integrals, Morse Theory, And Steepest Descent
 The goal of the present section is to describe in more detail the finite-dimensional case of

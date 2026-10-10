@@ -9,6 +9,7 @@ source_pdf: traczyk1991-periodic-knots.pdf
 source_sha256: 2e9236877cec4604
 toc_source: inferred
 text_source: ocr (rapidocr-onnxruntime, 300 dpi, one page per PDF page; quality: prose good, display math partly lost)
+doc_brief: "Periodic knots and the skein polynomial — 6 sections: Front matter; Introduction; Reduction to torus knots"
 ---
 4 An application involving satellites
 As announced in the Introduction the criterion for periodicity described in this

@@ -9,6 +9,7 @@ source_pdf: schechtman-varchenko1991-arrangements.pdf
 source_sha256: 0100fd32438740f0
 toc_source: inferred
 text_source: ocr (rapidocr-onnxruntime, 300 dpi, one page per PDF page; quality: prose good, display math partly lost)
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 10 sections: Front matter; Introduction; Orlik-Solomon algebra (Part I. Coh"
 ---
 7 Knizhnik-Zamolodchikov equations
 In this section we calculate the Gauss-Manin connection in the top cohomology

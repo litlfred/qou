@@ -8,6 +8,7 @@ pages: 41-48
 source_pdf: 1001.2933v4.pdf.txt
 source_sha256: b02636c86d593c02
 toc_source: inferred
+doc_brief: "Analytic Continuation Of Chern-Simons Theory — The title of this article refers to analytic continuation of three-dimensional ChernSimons gauge theory away from integer values of the usual coupling"
 ---
 3.3 Symmetries
 Since gauge symmetry is an essential ingredient in Chern-Simons theory, including symmetries in our finite-dimensional models will improve their analogy with Chern-Simons. Before

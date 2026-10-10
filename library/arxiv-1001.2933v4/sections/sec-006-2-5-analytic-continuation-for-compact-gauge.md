@@ -8,6 +8,7 @@ pages: 12-17
 source_pdf: 1001.2933v4.pdf.txt
 source_sha256: b02636c86d593c02
 toc_source: inferred
+doc_brief: "Analytic Continuation Of Chern-Simons Theory — The title of this article refers to analytic continuation of three-dimensional ChernSimons gauge theory away from integer values of the usual coupling"
 ---
 2.5 Analytic Continuation For Compact Gauge Groups
 Now we will discuss the analytic continuation of Chern-Simons theory with a compact gauge

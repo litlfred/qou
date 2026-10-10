@@ -9,6 +9,7 @@ source_pdf: ram1991-frobenius-formula.pdf
 source_sha256: 26b2fc85338d9150
 toc_source: inferred
 text_source: ocr (rapidocr-onnxruntime, 300 dpi, one page per PDF page; quality: prose good, display math partly lost)
+doc_brief: "A Frobenius formula for the characters of the Hecke algebras — This paper uses the theory of quantum groups and the quantum Yang-Baxter equation as a guide in order to produce a method of computing"
 ---
 References
 [Bou] Bourbaki, N.: Groupes et Algebres de Lie, Chapters 4-6. Paris: Hermann 1960
