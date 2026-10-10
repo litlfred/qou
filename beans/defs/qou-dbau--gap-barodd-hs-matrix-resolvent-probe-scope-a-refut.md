@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T12:46:31Z
-updated_at: 2026-10-04T15:19:45Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -138,3 +138,13 @@ the convention-D Gram singularity tracked in `qou-cds2`. Not asserted — the
 frames differ and I have not checked whether the mechanism is shared. Flagged
 because two independent near-singular Gram reports in the same corpus should not
 sit unconnected.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: EVIDENCE-UNRELIABLE.** mu
+
+Evidence: `computations/qbeta/qbeta_c3_barodd_hs_matrix_resolvent_probe.py`: the TR_M[5] fix is in, and the witness has `allPassed: False`. The probe's own text is now self-contradictory. The header (dbau re-analysis) says "the scope-(a) negative SURVIVES" on leg 1. The later docstring (lines ~110–122) and the `RESULT` print path say "THE SCOPE-(a) NEGATIVE IS WITHDRAWN". It adds that z is still convention C (`sub = substrate_ladder_quantities(q, convention="C")`, z = 1/(√q+1/√q)) and that the resolvent is "inverted in float64 near a now-SINGULAR Gram, so the large-
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

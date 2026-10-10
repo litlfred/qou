@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T02:27:01Z
-updated_at: 2026-10-04T15:11:40Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -188,3 +188,13 @@ records of what was true then and were deliberately left alone.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-31 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: OPEN.** The four files named in the bean are fixed and the attribution reproduces 11/11. The same superseded -2.0097 is still a live constant in at least 9 other producers (listed in the evidence column), and the muon re-pin waits on qou-1c4y. All these values are convention-C.
+
+Evidence: Landed: PR #5952, plus 636c1541c0 and 1ee9666f7d. The four named files are fixed: `qbeta_eigenphase_taylor_in_u.py:104` = -2.02020023502, `qbeta_exponentiated_per_block_probe.py:124` = -2.02018812814, the pslq file keeps -2.0097 only as a labelled spread constant at L109, and the multiblock audit renamed to `Q0_PROTON_PIN` (L96). `qbeta_c3_muon_anchor_codata_edition_attribution_probe.py` re-run exits 0, 11/11. **Still open:** at least 9 other producers use `-2.0097` as a live empirical muon c_3: `probes/qbeta_li2q_spectral_combiner_crossanchor_probe.py:147`, `probes/qbeta_borromean_cyclotomic_probe.py:146`, `probes/qbeta_c3_habiro_3rung_crossanchor_rigidity_probe.py:74`, `probes/phi_q_spectral_combiner_probe.py:170`, `probes/qbeta_complex_c3_fibre_probe.py:95`, `c_3_categorical_derivation_attempt.py:371`, `habiro/habiro_mode_to_ladder_bridge.py:232`, `qbeta/qbeta_ck_truncation_order_analysis.py:237`, `qbeta/qbeta_c4_qhermite_entry_gate_probe.py:61`. The re-pin is queued behind `qou-1c4y` (todo).
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

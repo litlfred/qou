@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T11:22:44Z
-updated_at: 2026-10-04T15:15:11Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -333,3 +333,13 @@ crystal-diffraction gamma spectrometry or Penning-trap limits, from memory) is
 exactly the failure mode this whole front is a case study in. **Whoever picks
 this up with working network can close it in one pass.** Nothing else in D
 depends on it; every other number traces to a committed witness.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: EVIDENCE-UNRELIABLE.** c_3
+
+Evidence: Structural part reproduces. `qbeta_modular_double_reciprocity.py` exits 0; it has `log q·log q~=4π²`, short by 60.22×, needs q0>2.92. `ModularDoubleReciprocity.lean` is sorry-free by grep. `qbeta_c3_slope_filter.py` exits 0 with 15.41 ppm / 60.98%. **The headline thresholds are C-frame and partly stale.** `qbeta_c3_measurement_proposal_budget.py` (exit 0) and its committed witness give **25.503× / 31.981× / 125.906×**; the bean and `docs/audits/2026-08-15-c3-front-measurement-ask.md` say 25.7× / 32.0× / **130.3×**. `qbeta_habiro_evaluation_dichotomy_and_test_power.py` still prints 25.679×, because it cross-checks a different, older budget witness (`docs/audits/scripts/qbeta-qstar-experimental-budget.witness.json`). "Precision-blocked" holds for the C extractor (σ/
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-04T10:42:30Z
-updated_at: 2026-10-04T15:12:01Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -116,3 +116,13 @@ docs/audits/2026-08-29-borromean-a-polynomial-revival.md.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-21 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: OPEN.** The explicit order-6 Borromean operator and a classical A-polynomial candidate exist. Exact annihilation is checked only for n ≤ 9, and the gap with the r = 5 existence certificate is unexplained. The claim that the AJ→c_k bridge is dead cites KC22, which is a finite-window exclusion on convention-C ladder data, not a proved non-holonomicity, so do not cite it as scope-(b).
+
+Evidence: The bean's last stated deliverable (explicit operator) has partly landed. `computations/borromean-operator-explicit.json`: `order: 6`, `primes_used: 6`, `verified_exact: False` (annihilation re-checked only for n ≤ 9). `borromean-a-polynomial-classical.json`: candidate, `degenerate: False`, "NOT independently checked". The bean records neither. The order-6 result is not reconciled with the r = 5 existence certificate (`borromean-diagonal-recurrence-hunt.witness.json`). The "PROVED non-holonomic (KC22)" closeout of the physics hope is overstated: registry KC22 (`docs/coordination/ck-dk-canonical-registry.md` row KC22) excludes only low-order windows (r≤3, E≤3 etc.) on convention-C d_k Taylor data. That is not a proof of non-holonomicity.
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

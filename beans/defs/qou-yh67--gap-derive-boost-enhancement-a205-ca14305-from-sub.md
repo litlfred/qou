@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T23:51:10Z
-updated_at: 2026-10-04T15:19:55Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -80,3 +80,13 @@ scale and the A-binary are one unknown, in ratio exactly 2 between the two
 conventions. No sorry-free asset pins ‖c‖ independently, so the binary is
 UNDETERMINED at order b² by current assets — but any future independent
 bridge-scale pin now decides A mechanically, and vice versa.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: EVIDENCE-UNRELIABLE.** The Lean dictionary work stands, but the numeric target A≈2.05 is not a measurement: σ_A ≈ 268 from CAL-3 (±1.262 on S_mu), the value is 2.126 at the CODATA-2022 pin, and it is C-frame. Remove "≈2.05" as a target, and also record the factor-2 residual inherited via qou-u14x/pzzl.
+
+Evidence: `ObservableComplexVolumeVsFullPotential.lean` (Φ=2𝔙) and `OhtsukiNZBridgeScale.lean` have 0 real sorries, and the structural analysis stands. But the target A≈2.054 uses the CODATA-2018 S_mu (2.126 at the live pin) and is convention-C. The bean's "sigma_A ~ 40%" contradicts the witness: σ_A ≈ 1.262/(κ ln²q0) ≈ 268.
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

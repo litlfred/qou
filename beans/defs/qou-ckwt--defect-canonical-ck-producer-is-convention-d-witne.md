@@ -1,13 +1,13 @@
 ---
 # qou-ckwt
 title: 'DEFECT: canonical c_k producer is convention D, its committed witness is C (471x regression pending)'
-status: todo
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T03:28:36Z
-updated_at: 2026-10-04T15:14:48Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -52,3 +52,13 @@ concludes. INTERIM ASK: a guard so the producer cannot be run into the cache by
 accident.
 
 Audit: docs/audits/2026-08-26-three-gap-assessment-and-ck-cache-convention-confirm.md
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: DONE.** The interim ask (a guard so the D producer cannot overwrite the cache) has landed and was verified. The witness now declares itself C. The final disposition belongs to qou-cds1. Nothing left for this bean.
+
+Evidence: `computations/qbeta/qbeta_ck_cache.py:86-131` has the guard (cites qou-ckwt): the D path prints "REFUSING TO RUN" and exits 2. Re-run confirmed exit=2 with no write. C is reachable only via `--historical-convention-C`. The witness now records `"markov_convention": "C"` plus a note. c_3 is still -2.0693…, now honestly labelled C.
+
+Status: `todo` → `completed`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

@@ -1,13 +1,13 @@
 ---
 # qou-goc9
 title: 'GAP: which nucleon NF is canonical for the Q_beta counit chain? single-wrap vs typed 6-term differ by 0.579%, 3.6x the phase'
-status: todo
+status: scrapped
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T00:54:05Z
-updated_at: 2026-10-04T15:13:02Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -202,3 +202,13 @@ that would have stopped this was in a bean body and nowhere else.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-28 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: SUPERSEDED.** Superseded by the owner ruling of 2026-08-30 (single-wrap is canonical for the Q_β channel, recorded in qou-pdix). The epsNPq functional it fed was itself replaced on 2026-09-08 (ε := tr_M at z_D). That was a ruling, not a derivation; record it as such.
+
+Evidence: Owner ruling 2026-08-30, recorded in qou-pdix (~line 868, "single-wrap. it's A=1, no gluon, no electron"), settles the NF. It is asserted in `qbeta_three_nucleon_nf_alpha_spread_probe.py` (9/9). The 2026-09-08 ruling then replaced epsNPq with tr_M(z_D) (AGENTS.md:2329), which moots "which NF feeds epsNPq".
+
+Status: `todo` → `scrapped`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
