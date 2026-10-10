@@ -1,11 +1,11 @@
 ---
 # qou-wu38
 title: lake-cache/qou-v4-24-0 delivers 2702 QOU oleans to the PRE-RENAME content/ path and exits 0
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-10-10T07:31:52Z
-updated_at: 2026-10-10T07:31:52Z
+updated_at: 2026-10-10T09:02:02Z
 parent: qou-n4r9
 ---
 
@@ -151,3 +151,53 @@ capture and *every* command fails including the `rm` that would fix it. Fetch
 into a throwaway repo under the scratchpad so `rm -rf` reclaims it, or -- as
 here -- use the GitHub API for the branch's head and date and measure the
 extracted tree locally.
+
+
+## 2026-10-10 — FIXED on main by a sibling session, and the diagnosis held exactly
+
+`94b88ccbbb` (session `016AEU7xkxdUcw9r7adTXgyr`, on main via #7546's base) takes
+**option 2** of the three framed above — relocate the payload on extraction:
+
+```sh
+-tar xzf "$tgz" -C "$REPO_ROOT"
++tar xzf "$tgz" -C "$REPO_ROOT" --transform 's,^content/,folio/,'
+```
+
+Their independent measurement of the tarball confirms this bean's diagnosis
+**exactly**: *"13670 `content/` members, 0 `folio/`"*. So every paper olean in the
+payload was stale-prefixed, not merely some, and the 2702 counted here was the
+whole QOU-own tree rather than a sample.
+
+The same commit repaired four more rename casualties the bean did not reach —
+`lean-library-sweep.py` found **0 of 3** packages, `lean-content-sweep.sh` **0**
+targets against its documented 938, `lean-shadow-verify.sh` dead at three
+pinning sites, and `lean-olean-cache-seed.sh`'s `SEED_PAPER=1` glob would have
+seeded **0** paper oleans. That last one matters most for this bean: a reseed
+under the old glob would have produced an *empty* paper tree, so the branch
+could not have been repaired by reseeding until this landed.
+
+### What is fixed, and what is NOT — do not read this closure as the class being closed
+
+**Fixed:** delivery. The transform is a no-op once the branch is re-seeded from a
+`folio/` tree, so it is correct in both regimes.
+
+**NOT fixed: the silent success.** `lean-cache-restore.sh`'s check still counts
+mathlib at `$REPO_ROOT/.lake/packages/mathlib` — the workspace-root path, which
+no rename has touched — so it still cannot distinguish "payload delivered" from
+"payload delivered somewhere nothing reads". Today's instance is repaired; the
+**next** path change will be just as silent. That was option 3 and the
+recommendation above, and it is deliberately not part of this closure.
+
+Carried forward rather than lost: the remaining work is a check that counts
+QOU-own oleans at the declared `lake-root` and fails loudly on zero. Small, and
+in both §ASK-THE-OWNER exemptions by the reasoning above — but it is a change to
+a gate's behaviour, so it waits on the owner rather than riding this closure.
+
+**Measured consequence while this was open**, worth keeping as the cost record:
+the two-location split it describes is what made `/prepare-merge` on #7546 read
+worse than the code was. The content sweep reported RED on both changed siblings
+with `Mathlib/Tactic.olean does not exist` at the *paper* path (root tree: 3480
+oleans, `Mathlib/Tactic.olean` PRESENT; paper tree: 1674, absent), and the
+library sweep's 2 UNVERIFIED were the same shape. Both were environment, not
+corpus — the library sweep says so in its own words, *"(NOT a corpus defect on
+this evidence)"*.
