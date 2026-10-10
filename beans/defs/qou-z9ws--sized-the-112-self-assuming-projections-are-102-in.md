@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T13:41:46Z
-updated_at: 2026-09-03T21:20:50Z
+updated_at: 2026-10-10T10:30:38Z
 ---
 
 Full measurement: docs/audits/2026-08-30-sizing-the-self-assuming-projection-drain.md
@@ -563,3 +563,8 @@ name, an instance-binder class head, or a file-level `variable` (which
 
 ## 2026-09-03 21:5xZ — landed under PR #6526, which re-targeted; one dangling consumer left on main
 b34a9c689b removed MarkovIdentificationContext while PR #6526 (bean qou-gzgi) was inhabiting it from the proved convention-D Markov trace. Re-targeted the same proof at the new Prop: MarkovIdentificationInstance.markovTrace_branching_of_markovTrace proves markovTrace_branching (#blocks) (Ocneanu weights) (seminormal block traces) (T.tr n x) for every Markov trace at z_D — i.e. the identity this file lists as 'Open' is a theorem at D, one module over. Not fixed here: docs/audits/2026-08-30-context-classes-hand-adjudicated.lean:713 still writes 'instance : MarkovIdentificationContext' and now references a removed class (docs file, not a library module; noting, not repairing).
+
+
+
+## 2026-10-10: the .md side now matches the Lean label
+The four pair-Skein .md blocks now state that the denominator is the convention-C Markov weight, matching skeinNormaliserC (M6 1a, qou-2cof). Migration remains qou-cds1's.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-10-04T15:13:20Z
+updated_at: 2026-10-10T10:30:37Z
 parent: qou-2002
 ---
 
@@ -1605,3 +1605,8 @@ Previously measured cross-citation (16 beans, 17 directed links, ~10 %): 3f7a→
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+
+## 2026-10-10 (M6, qou-2cof): six content blocks owe a proton re-pin
+physics-names-knot-operations:17, mass-tower-coefficient-stratification-proof:26, exterior-square-borromean-proof:47, derived-mass-formula-light-isotopes-proof:21 and its -context:1, schrodinger-color-falsifiability:33. They are now labelled with the muon pin their producers actually used. None is an E1/E2 exception. Two need a producer re-run (wedderburn-strata, deprecated derived-only-formula); one cites a missing cache; two have no producer.
