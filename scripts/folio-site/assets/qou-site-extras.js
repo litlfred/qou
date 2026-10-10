@@ -104,14 +104,18 @@
 
   // ── Decorate each block's link row ──
   const done = new WeakSet();
+  const summaryP = {};
   const decorate = async (row) => {
     if (done.has(row)) return;
     done.add(row);
     const src = row.dataset.src || "";
     const m = src.match(/^folio\/[^/]+\/(.+)\.md$/);
     if (!m) return;
-    let data;
-    try { const r = await fetch(`${pbase}qa/${m[1]}.json`); if (!r.ok) return; data = await r.json(); } catch { return; }
+    const chapter = m[1].split("/")[0];
+    summaryP[chapter] ??= fetch(`${pbase}qa-summary/${chapter}.json`).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+    const data = (await summaryP[chapter])[m[1]];
+    if (!data) return;
+    const full = () => fetch(`${pbase}qa/${m[1]}.json`).then((r) => r.json());
     const title = row.dataset.sec || row.dataset.block || src;
     // Lean: replace the platform's sibling-only link with the resolved one.
     row.querySelectorAll('a[data-fa-link="source"]').forEach((a) => a.remove());
@@ -141,7 +145,7 @@
       if (c.bad) b.classList.add("has-bad");
       if (mil.some((r) => r !== "pass")) b.classList.add("milnor-bad");
     } else { b.textContent = "QA —"; b.classList.add("none"); }
-    b.addEventListener("click", (e) => { e.preventDefault(); openQa(data, title); });
+    b.addEventListener("click", async (e) => { e.preventDefault(); try { openQa(await full(), title); } catch { openQa({ lean: data.lean, qa: null }, title); } });
     row.prepend(b);
   };
   const scan = (n) => (n.querySelectorAll ? n.querySelectorAll(".block-links[data-src]") : []).forEach(decorate);
