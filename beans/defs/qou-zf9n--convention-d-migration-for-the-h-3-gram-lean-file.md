@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T19:27:04Z
-updated_at: 2026-10-10T07:01:37Z
+updated_at: 2026-10-10T07:47:10Z
 parent: qou-cdx1
 ---
 
@@ -491,3 +491,14 @@ Was in-progress with no bean update since 2026-08-24 and no main commit naming i
 ## 2026-10-10 — pointer
 
 Tracked under carrier M6 (qou-2cof) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+A content block of kind `theorem` whose statement opens 'Theorem (convention
+C).' with its own section saying the reading does not survive D. Honestly
+scoped, and the live question -- may a `theorem` block stand on an excised
+convention? -- is an owner call. One of the 23 paper-side residuals today's
+scan flagged.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

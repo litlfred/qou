@@ -1,13 +1,13 @@
 ---
 # qou-htsi
 title: 'Convention C excision: sibling-found stale C sites and compute-closed gates to re-examine (owner 2026-09-06)'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T09:38:55Z
-updated_at: 2026-10-04T15:12:12Z
+updated_at: 2026-10-10T07:47:22Z
 parent: qou-cdx1
 ---
 
@@ -43,3 +43,18 @@ Sibling comment on #6969 (from #6968 / qou-p6m1): the comparison ledger EXEMPTS 
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 re-audit verdict: **CLOSE** (bean `qou-am5t`)
+
+Scope item 1 -- 're-run `scripts/convention-c-value-audit.py` and
+`scripts/convention-c-producer-audit.py`' -- was executed 2026-10-10 on the
+owner's instruction, together with the Lean and witness audits and a by-hand
+Rust pass. Results: value audit BLOCKING **6 -> 0** (the six adjudicated into
+the comparison ledger, 137 -> 143 entries); producer audit 13 actionable, of
+which ONE is a non-probe producer; Lean 0 actionable; `tools/` 0; witnesses 1.
+The owner's 'be suspicious of closed gates based on compute' was the right
+instinct and the re-run honoured it -- it found six unadjudicated sites and
+three stale trackers.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

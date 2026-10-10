@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T13:16:05Z
-updated_at: 2026-10-04T15:18:55Z
+updated_at: 2026-10-10T07:46:13Z
 parent: qou-cdx1
 ---
 
@@ -356,3 +356,12 @@ propagators are now accounted for — this one is deliberate, and
 `fr_pullback_cosh_h_test` is in the HALF-FIX family (`dim_q`/`qfac` return
 floats). The next agent should start from the **terminal** list, or narrow the
 proxy first.
+
+
+## 2026-10-10 re-audit verdict: **REPARENT** (bean `qou-am5t`)
+
+Not a convention question. f64 Rust engine entry points vs exact MPFR siblings
+is the float64 axis (sibling of `qou-840k`, as the bean itself says). Keep
+open, re-home.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

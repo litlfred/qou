@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T12:42:32Z
-updated_at: 2026-10-10T07:25:48Z
+updated_at: 2026-10-10T07:47:11Z
 parent: qou-cdx1
 ---
 
@@ -566,3 +566,13 @@ whether this becomes `completed` with the residual re-homed on `qou-cds1`, or
 stays open as the family root with a corrected title. Nothing downstream depends
 on the answer — the status doc is the thing readers should be pointed at either
 way.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+See the dedicated 2026-10-10 append on this bean: title stale by ~30x (174 py
++ 61 lean vs a measured 0/0), residual is one producer plus `qou-cds1`. Left
+open deliberately -- retitling an append-only campaign ledger rewrites what
+the campaign believed; status is an owner call.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T13:23:16Z
-updated_at: 2026-10-04T15:16:28Z
+updated_at: 2026-10-10T07:47:06Z
 parent: qou-cdx1
 ---
 
@@ -274,3 +274,13 @@ The carrier-3 **conclusion survives** — "the towers are fitting experiment" ho
 
 - **The Greek-letter blind spot bit on the first run.** The keyword gate was ASCII-only (`tr_M|trace|markov|hecke|braid`) and the confirmed table row is `` | `(σ₀σ₁⁻¹)³` — true β_Bor | 0.998562… | ``, matching none of them: **1 of 3** figures scored, **3 of 3** after adding Greek. Same class as the thirteen-blind-spellings problem.
 - **A float64 smell in `probe3qrv.py` that is INERT — reporting the negative.** Line 26 does `hn = float(h0)`. Measured rather than assumed, same word both ways: float64 `h` → `0.998562163836787265951213135147`; exact 50-dps `h` → **byte-identical**. The coefficient enters symbolically and the substitution carries the precision. Tested for the interleaved Borromean word only; the cast is worth removing on principle, but the 18 quoted digits are **not** contaminated by it.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+8 files carrying constants CALIBRATED before `hecke_core.z` flipped C->D. A
+constant fitted under C and left in place is invisible to any detector that
+reads `z`, because the `z` is gone and only its consequence remains. Live,
+same class as `qou-46ab`.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-03T04:40:00Z
-updated_at: 2026-10-04T15:11:11Z
+updated_at: 2026-10-10T07:46:16Z
 parent: qou-cdx1
 ---
 
@@ -165,3 +165,11 @@ bean already says not to drain.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 re-audit verdict: **REPARENT** (bean `qou-am5t`)
+
+Same as `qou-3f7a`: the q0-anchor refill ratchet is the pin axis, not the
+convention axis. Keep open, re-home.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

@@ -295,11 +295,104 @@ python3 scripts/convention-c-witness-audit.py               # §3e below
 
 ### 3e. Witnesses
 
-`convention-c-witness-audit.py`: **0** witnesses by the structural detector
-(nonzero `y_λ` on a 3+ row block), **1** by the symbolic one
-(`computations/y-lambda-macdonald-telescope.witness.json`, 14 expressions
-carrying a half-integer power of `q` in a weight). Bean `qou-eea0` is titled
-*"regenerate all 84 convention-C witnesses"*; the live figure is 1.
+**Three witness detectors exist and they disagree. Say which you ran.**
+
+| detector | result 2026-10-10 |
+|---|---|
+| `convention-c-witness-audit.py`, structural (nonzero `y_λ` on a 3+ row block) | **0** |
+| `convention-c-witness-audit.py`, symbolic (half-integer power of `q` in a weight) | **1** — `computations/y-lambda-macdonald-telescope.witness.json`, 14 expressions |
+| `computations/audits/y_lambda_convention_c_fingerprint_audit.py` | **1** — `computations/probes/sdp-o3-falsifier.witness.json`, `λ=(1,1,1) y=1.45e-17` |
+
+The fingerprint hit is **not a convention-C weight**: under convention D
+`y_(1³)` is exactly 0, so `1.45e-17` is a float64 zero — the DEAD_TOL
+float64-noise sub-class that `qou-a6yh` already named. The structural detector's
+0 and the fingerprint detector's 1 are the same tree seen through two
+thresholds, and that disagreement is precisely the blind spot `qou-bvk7` is
+about, so it is live evidence rather than a tooling nuisance.
+
+Bean `qou-eea0` is titled *"regenerate all 84 convention-C witnesses"*; the live
+figure is 1, and it is noise.
+
+> **Measurement hazard — a live worktree inflates every repo-wide audit.** The
+> fingerprint audit reported *2* files, one of which was
+> `.claude/worktrees/agent-<id>/computations/probes/sdp-o3-falsifier.witness.json`
+> — a dispatched agent's own copy of the other. Any audit that walks the repo
+> root double-counts while a `isolation: "worktree"` agent is running. De-dupe
+> on the path suffix, or quiesce the agent, before quoting a count.
+
+---
+
+## 9. The 41-bean reading queue — verdicts, 2026-10-10
+
+§6 item 3 established that 41 of the 57 `qou-cdx1` children name only
+already-clean files, and that this is a **reading queue, not a close list**.
+Each of the 41 has now been read. Verdicts and evidence are appended to the
+beans themselves; this is the index.
+
+### CLOSED — 6, each on evidence
+
+| bean | why it closed |
+|---|---|
+| `qou-ev2b` | `compound_shift_nf.py:321` is now `z = q0**3/(q0**2+1)` — D. Its claim that the module is C is measurably false. |
+| `qou-pc7l` | **Fixed here.** Docstring `:8` *and* the runtime banner `:524` both labelled C while `z_num`/`z_sym` were D. Both corrected; producer exits 0 printing the canonical `0.612688`. |
+| `qou-eea0` | "84 convention-C witnesses" → **1**, and that 1 is `y=1.45e-17`, a float64 zero, not a C weight. |
+| `qou-a6yh` | Same measurement; the "mixed population of 25" is now the one noise entry this bean itself identified. |
+| `qou-htsi` | Its scope item 1 — re-run the value and producer audits — was executed today. It found 6 unadjudicated sites and 3 stale trackers, so the owner's "be suspicious of closed gates based on compute" was right and is now discharged. |
+| `qou-lt8x` | Superseded by method. It finds that a READ-SET blast radius missed 31 of 43 structurally-C witnesses; the value audit uses no read-set — it evaluates every binding — so the gap it names cannot exist under the current detector. |
+
+### MIS-PARENTED — 12, real work on the wrong milestone
+
+These are live and worth doing, and **none of them is about the Markov
+parameter.** They are why the convention question looked 57 beans deep.
+
+| axis | beans |
+|---|---|
+| float64 / laundering (`qou-840k` family) | `qou-b7cf`, `qou-nmza`, `qou-eg4l` |
+| q-integer convention (Gaussian bracket vs classical) | `qou-b8vx`, `qou-gl58`, `qou-qint`, `qou-6p3b` |
+| q₀ **pin** axis (ruling R2, not R1) | `qou-3f7a`, `qou-q0rf`, `qou-324i` |
+| other migrations reached via this work | `qou-47sx` (`atom_per_generator_volumes` shape change), `qou-o3ta` (Gram null-vector science) |
+
+The pin group is the instructive one: R1 (convention D) and R2 (proton pin)
+landed in the **same 2026-08-15 ruling**, which is how they came to share a
+milestone — but they are independent surfaces with independent audits, and
+folding them together makes each look worse than it is.
+
+**Re-parenting is proposed, not enacted.** It reshapes someone's milestone, and
+the owner's call is whether these get a sibling milestone each or move under the
+existing float64 / q-integer / pin trackers.
+
+### LIVE — 23, and the reason they survive a clean code surface
+
+Grouped by *what makes them invisible to a value-based detector*, which is the
+useful axis:
+
+- **A recorded NUMBER, not a binding** — `qou-46ab` (31 files carrying a C
+  `tr_M(p)`; 4 producers hardcode it), `qou-5pgl` (8 files whose constants were
+  *calibrated* before `hecke_core.z` flipped), `qou-u5z0` (a C dependency
+  surviving as a derived identity), `qou-ng7j`, `qou-bvk7`. **This is the
+  sharpest group:** a published constant cannot be re-spelled into visibility,
+  and no detector that reads `z` can see one.
+- **Reader-facing content** — `qou-enn6` (C weights in the three-channel H₃
+  table), `qou-zzwm` (published accuracy figures), `qou-2cof`, `qou-34oo`,
+  `qou-zf9n` (a `theorem` block stated in convention C).
+- **A detector or exemption that is itself wrong** — `qou-4bq3` (the DELIBERATE
+  regex matches `c_` inside ordinary identifiers, over-blocking 8 of 24),
+  `qou-jyqd` (`_deprecated/` is skipped by design while content still cites it),
+  `qou-okkz` (consumer-side control arms — and today's six new adjudications
+  grew that population 137 → 143, so this got *more* load-bearing, not less).
+- **Open mathematics downstream of D** — `qou-cxon`, `qou-egqr`, `qou-v7qj`,
+  `qou-vuaj`, `qou-5h5x` (premise moved: `pyhecke.gram` is D and the registry's
+  `intra_module_split_waivers` is empty — cheap to re-read), `qou-580o`,
+  `qou-zmw4`.
+- **Already appended separately** — `qou-wgta`, `qou-m7py`.
+
+### What this changes about the milestone
+
+`qou-cdx1` is now **51 todo / 6 completed** rather than 57 todo. If the 12
+mis-parented beans move, the convention-excision milestone is **~39 children**,
+of which one (`qou-pmkh`) names a still-actionable file and the rest are
+recorded numbers, reader-facing text, detector defects, or mathematics behind
+`qou-cds1`.
 
 ---
 

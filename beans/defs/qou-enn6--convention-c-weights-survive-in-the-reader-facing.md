@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T19:55:48Z
-updated_at: 2026-10-04T15:18:09Z
+updated_at: 2026-10-10T07:47:07Z
 parent: qou-cdx1
 ---
 
@@ -142,3 +142,12 @@ the remaining choice is only between:
 **Recommendation (judgement, not finding): 4 for now, 3 bundled with
 `qou-5ll9`** when someone takes the trace leg. Half-migrating a three-column
 table is the one move worth avoiding.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+Convention-C weights surviving in the READER-FACING three-channel H_3 table
+(alt weight 0.02 vs 0.0x). The producer is fixed; the content blocks are not.
+Live, and it is reader-facing, which ranks it above most of this list.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

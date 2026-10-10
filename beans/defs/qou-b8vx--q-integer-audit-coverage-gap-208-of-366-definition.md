@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T14:02:19Z
-updated_at: 2026-10-04T15:13:35Z
+updated_at: 2026-10-10T07:46:14Z
 parent: qou-cdx1
 ---
 
@@ -523,3 +523,13 @@ first place.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 re-audit verdict: **REPARENT** (bean `qou-am5t`)
+
+Not the Markov-parameter convention. q-integer definitions are a DIFFERENT
+convention axis (Gaussian bracket vs classical `(q^n-1)/(q-1)`); conflating
+the two is how the convention question came to look 57 beans deep. Keep open,
+re-home with `qou-qint`/`qou-gl58`.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

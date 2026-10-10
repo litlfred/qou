@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T20:27:28Z
-updated_at: 2026-10-04T15:14:07Z
+updated_at: 2026-10-10T07:46:17Z
 parent: qou-cdx1
 ---
 
@@ -338,3 +338,11 @@ CHEAP PRE-FILTER for the systematic sweep: all 3 genuine drains carried the iden
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 re-audit verdict: **REPARENT** (bean `qou-am5t`)
+
+Same: the `independent` q0 disposition classifier is pin-axis. Keep open, re-
+home.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

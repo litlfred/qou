@@ -91,3 +91,13 @@ Read-only scan of all 3635 content .md blocks, values recomputed under C and D i
 
 
 2026-10-10: Group A (6 sites, statement D / sibling C) fixed in PR #7562, commit bbd38f07. Each D value recomputed at the proton pin (mpmath 30 dps); old C figure kept in a dated note. Remaining: 15 Group B unmarked sites + 4 undetermined groups, per-file plan awaiting owner approval (mass-endomorphism/m6-group-b-plan.md in project files).
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+A proof block whose numerical witness was C at the muon pin under a D
+statement at proton. The CODE surface is clean, but a published proof block's
+recorded numbers are not code -- re-deriving them is the `qou-cds1` ladder
+work or a scoped note. Not closeable by a value audit.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T17:24:15Z
-updated_at: 2026-10-04T15:16:28Z
+updated_at: 2026-10-10T07:47:09Z
 parent: qou-cdx1
 ---
 
@@ -113,3 +113,13 @@ flag `/\s*two_q_half` or `two_q_half\s*\*\*\s*-1`.
 found (the hyperbolic identity above), one near-miss class recorded, the rest
 clean. Recording the negatives so the next agent does not re-sweep them — the
 value of the method is knowing which forms are *excluded*, not only which hit.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+A convention-C dependency surviving as a DERIVED IDENTITY, invisible to every
+detector. Live, and the bean's own framing is right: the instance is low-
+stakes, the class is not. No value-based detector can see an identity that no
+longer mentions `z`.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
