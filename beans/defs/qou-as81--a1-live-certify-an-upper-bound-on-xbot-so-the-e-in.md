@@ -679,6 +679,40 @@ cheapest available signal that the step or the precision is wrong, and it costs 
   on `lean -DautoImplicit=false -s 65536` exit 0 plus `#print axioms` clean on all 12
   declarations, and on the one clean sweep run.
 
+## 2026-10-10 — support branching: antitonicity does NOT license the 27-branch reduction (Lean)
+
+[`SupportBranchingValidity.lean`](https://github.com/litlfred/qou/blob/claude/bring-surface-categorical-trace-wtrwtb/folio/quantum-observable-universe/lean/QOU/BraidKnot/SupportBranchingValidity.lean),
+7 theorems, `lean -DautoImplicit=false -s 65536` exit 0, `#print axioms` clean (no `sorryAx`).
+All statements are over arbitrary real functions; no probe number enters.
+
+1. **A fixed-`w` supergradient certificate is invariant under the support split**
+   (`affine_box_max_eq_split_max`, `certificate_split_eq`). Per coordinate, `max g(x-w)` over
+   `{0} ∪ [1,U]` equals the max over `[0,U]` for `U >= 1`: both endpoints survive the split.
+   So branching helps only if the ascent point is re-solved per branch — one concave solve per
+   branch. This was the unverified "the architecture cannot exploit integrality" remark; it is
+   now a theorem.
+2. **Antitone `Gamma_j` alone does not make an initial segment optimal**
+   (`antitone_slope_not_sufficient`): two concave rows, slopes 2 > 1 at the origin, curvatures
+   3 and 1/10; on `u >= 1` row 1 reaches 5/2 while row 0 never exceeds -1. The slope at `u = 0`
+   says nothing about the value on `u >= 1`, which is where a support branch lives.
+3. **What it does license** (`sum_le_sum_initial_segment`, `separable_branch_max_le_initial`):
+   for a SEPARABLE branch bound `sum_{j in S} c_j` with `c` antitone, initial segments dominate,
+   so `2^J -> J+1`. But such a bound needs no branching at all
+   (`separable_branch_le_positive_part`), and `G` is not separable (pair terms).
+
+Scope: (b) for the implication "antitone Gamma ⟹ initial-segment support suffices" (a proved
+counterexample shows it does not follow). Whether `G` itself has an initial-segment-optimal
+support is NOT settled — it would need an exchange property of `G`, unmeasured.
+
+**New lead, not yet checked against the literature in the library (corpus-grep for
+Murota / L-natural / discrete convex analysis: no hits).** `G` has exactly the form
+`sum_j phi_j(u_j) + sum_{j<jp} psi(u_jp - u_j)` with every univariate piece concave
+(one-body `-R`, tail `-W`, cost `-(ln q0/2) u^2`, linear wall cost, pair `-eps(g + d)`). On `Z^J`
+that is the textbook L♮-concave form (Murota, *Discrete Convex Analysis*, 2003), whose integer
+maximum is characterised by local optimality over `±χ_X` and found by steepest ascent without
+enumeration. If that holds here, the integer maximum per `(pe, T)` is certifiable directly, and
+the integrality gap the relaxation fights would not need branching. To verify before relying on.
+
 ## 2026-10-10 (afternoon) — integer hi_j floor, checkpoint, and the Murota lead CHECKED
 
 **Integer box (`hi_j` floor), scope (a) negative.** Rounding the per-row confinement box to
