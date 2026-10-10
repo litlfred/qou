@@ -3,8 +3,9 @@
 title: Mass endomorphism
 status: todo
 type: epic
+priority: normal
 created_at: 2026-10-10T07:00:10Z
-updated_at: 2026-10-10T07:00:10Z
+updated_at: 2026-10-10T07:24:59Z
 ---
 
 One home for every bean whose subject is the mathematics of `chap:mass-endomorphism`
@@ -110,3 +111,12 @@ Scrapped with a pointer to their carrier: `qou-m5fy` -> M2, `qou-g3mz` -> M5,
 epoch offset moved to `qou-cds1`). `qou-2150` was rewritten into the M4 carrier instead of
 scrapped, because it is the only open bean on an open conjecture (rule 13a);
 `qou-8hm1` is cross-chapter and left alone.
+
+## 2026-10-10 — correction to the M7 row (issue #7552)
+
+The M7 row says the weights are "`dim_q^2/[3]!` weights vs ruled Molien". That
+overstates the ruling: the Molien choice is scoped to the Φ_k functional, not to the
+H_3 Wedderburn weights in `mass_endomorphism.py`, so no weight change is owed there.
+Full correction on `qou-g16t`. The diagnosis-script item of M7 is done (ported, not
+retired). M14: the eight citation items are applied in the same PR; the
+`terashima-yamazaki2013` entry's authors are corrected to Teschner–Vartanov (id kept).

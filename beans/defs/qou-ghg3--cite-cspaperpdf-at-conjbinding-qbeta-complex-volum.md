@@ -1,13 +1,13 @@
 ---
 # qou-ghg3
 title: Cite cspaper.pdf at conj:binding-qbeta-complex-volume
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:36:21Z
-updated_at: 2026-10-10T07:01:40Z
+updated_at: 2026-10-10T07:26:04Z
 parent: qou-19m0
 ---
 
@@ -33,3 +33,5 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-10-10 — pointer
 
 Tracked under carrier M14 (qou-9w2m) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+## 2026-10-10 — Done in issue litlfred/qou#7552: `binding-qbeta-complex-volume.md` now cites `\cite{neumann-zagier1985}` for V(K)=Vol+iCS and `\cite[Thm.~1]{neumann-cspaper}` for the simplicial Rogers-dilogarithm formula (source: library/cspaper sec-001, p. 245). Key added to the .ts cites.

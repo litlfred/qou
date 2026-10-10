@@ -1,10 +1,11 @@
 ---
 # qou-9w2m
 title: 'Citations at mass-endomorphism chapter blocks: six references.ts keys cited in no block'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-10-10T07:00:16Z
-updated_at: 2026-10-10T07:00:16Z
+updated_at: 2026-10-10T07:26:06Z
 parent: qou-d8c7
 ---
 
@@ -33,3 +34,5 @@ Open items, each still its own bean:
   (a witness cross-check) mentions it.
 
 Citation edits to math-bearing `.md` need the render-QA battery before commit.
+
+## 2026-10-10 — Applied in issue litlfred/qou#7552: ghg3, 7ji4, 3fe9, 7ldu, u62r, ki4u, hkaq completed; 11p0 half done (stays open for the orellana1998 call). `gelca-nagasato`: no mass-endomorphism block discusses skein modules or twist knots, so it stays uncited by decision. Bibliography defect found and fixed: `terashima-yamazaki2013` is Teschner-Vartanov.
