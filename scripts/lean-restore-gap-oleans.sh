@@ -1,5 +1,19 @@
 #!/usr/bin/env bash
-# Restore the 86 Mathlib oleans that lake-cache/qou-<slug> is missing.
+# Restore the 91 Mathlib oleans that lake-cache/qou-<slug> is missing.
+#
+# 86 -> 91 on 2026-10-10 (branch commits bc84c9f0e8d, 9ebccc6dd64).  A full
+# 2952-module QOU library sweep found two more modules the cache could not
+# serve: QOU.QBeta.LaurentBoundedness needs Mathlib.Analysis.Polynomial.Basic
+# (one module, its cone already cached), and
+# QOU.QuantumObservableUniverse.AntipodeDetermined needs
+# Mathlib.CategoryTheory.Monoidal.Conv (cone of four: Monoidal.Mon_,
+# Monoidal.Braided.Opposite, Monoidal.Comon_, Monoidal.Conv).  All five were
+# built with lean-direct from the pinned mathlib source (rev f897ebcf72), each
+# exit 0.  Superset again: the 86 are byte-identical.  The sweep's third
+# unverifiable module, QOU.Eightfold.ObstructionH2Mathlib, needs LowDegree,
+# which the 86 already carried: that container had simply never run this
+# script.  So a sweep reporting "missing olean ... (mathlib cache)" means
+# "run this script first" before it means "the cache is short".
 #
 # 7 -> 86 on 2026-09-11 (branch commit d7e3ae8c662).  The original seven unblocked
 # seven content blocks.  The 79 added are the transitive cone of
