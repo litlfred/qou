@@ -153,7 +153,7 @@ These are genuine functors (they act on morphisms). What is **not** a functor is
 
 **Critical distinction — $B_{\mathrm{sym}}$ (exact) vs $B_{\mathrm{lin}}$ (linear).** $B_{\mathrm{lin}}$ is the linearization of $B_{\mathrm{sym}}$ (Kashaev $\mathrm{tr}_M \sim \exp(\mathrm{Vol})$; the scalar $\Delta\mathrm{tr}$ is the first-order term). They are NOT interchangeable. Their ratio is the binding deficit
 $$ B_{\mathrm{sym}} / B_{\mathrm{lin}} \;\approx\; q_0^{\,5(2A-1)}, $$
-i.e. the $\Delta_\lambda = B_{\mathrm{AME}}/B_{\mathrm{lin}}$ residual. We always subscript $B$. A bare $B$ in prose denotes the production $B_{\mathrm{lin}}$.
+i.e. the $\Delta_\lambda = B_{\mathrm{AME}}/B_{\mathrm{lin}}$ residual. This exponent is a near-match read off the pre-2026-09-05 grouped atom word; on the canonical interleaved word $\log_{q_0}\Delta_\lambda$ is $28.39$ for ²H against $5(2A-1) = 15$, so it is not supported there (bean `qou-zf9n`). We always subscript $B$. A bare $B$ in prose denotes the production $B_{\mathrm{lin}}$.
 
 ## Mass: endomorphism $\mathcal{M}$ vs element $\Phi_{\mathrm{mass}}$ vs functional $\mathfrak{m}$
 

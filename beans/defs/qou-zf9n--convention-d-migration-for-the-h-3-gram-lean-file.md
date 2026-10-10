@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T19:27:04Z
-updated_at: 2026-10-10T08:03:00Z
+updated_at: 2026-10-10T08:23:35Z
 parent: qou-slz5
 ---
 
@@ -508,3 +508,7 @@ Both were stale CONSUMERS of grouped-era data (upstream chi-deuteron-h6 and bind
 - delta-lambda-canonical-residual: 10A−5 near-match REFUTED on the canonical word. log_q0 Δ: D 28.388 (vs 15), T 43.745, ³He 41.522, ⁴He 58.817, ⁶Li 70.580, ⁷Li 79.488, ⁷Be 76.448. Assertions deuteron_exponent_matches_15 (13.388 vs tol 0.05) and N_ge_Z_family_within_half_unit (23.817 vs 0.5) FAIL — tolerances left unchanged.
 - NOT done: delta_lambda_closure_tl_support_probe not rerun (writes its own witness; its '>3' check would see 1.2031 and FAIL; docstring still quotes 16.48%/3.44×/0.7174).
 - Lean/content still asserting the 10A−5 law (not edited): notation-collisions.md:135; Mass/BindingResidualExponent.lean; BraidKnot/DeltaLambdaExponentKeystone.lean; BraidKnot/DeltaLambdaIMME.lean:12; QBeta/QLommelOrderRecurrence.lean:80-103; BraidsAndKnots/KeystoneFiveFoldStructure.lean:31.
+
+
+## 2026-10-10 — six 10A−5 sites rescoped (owner: 'Rescope', session session_01ST9RpvTF7JHNdUNafrjf9J)
+Docstring/prose only; no theorem statement changed (all are arithmetic or carry the law as a hypothesis). Each now says the near-match was read off the grouped word and is not supported on the canonical interleaved word, citing the regenerated witness. Sites: Mass/BindingResidualExponent.lean (module note + residualExponent_five docstring retitled 'Arithmetic at w = 5'); BraidKnot/DeltaLambdaExponentKeystone.lean (third doubt layer added to the hexp caveat); BraidKnot/DeltaLambdaIMME.lean:12; QBeta/QLommelOrderRecurrence.lean (note after the Δ_λ ≈ q₀^(10A−5) paragraph); BraidsAndKnots/KeystoneFiveFoldStructure.lean:31; notation-collisions.md B_sym/B_lin paragraph. Still open: the TL-support probe rerun (writes its own witness; its >3 check would fail at 1.2031).
