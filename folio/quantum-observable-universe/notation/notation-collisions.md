@@ -446,7 +446,7 @@ migrated; use $|\mathrm{dem}|$.
 
 **The prose word "deficit" is not banned**, and the distinction matters when
 reading older blocks: *deficit-free*, *deficit closure* and *the periodic table
-deficit conjecture* are English for the same condition and read naturally. What
+deficit conjecture* are English for the same condition. What
 is banned is the **symbol** $|\mathrm{def}|$, because a reader meeting it has no
 definition to resolve it against.
 

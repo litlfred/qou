@@ -1,7 +1,7 @@
 ---
 # qou-j98x
 title: 'WORDING: rem:lepton-discrepancies ends on a garbled sentence with no referent or predicate (''This is likely where the discrepancy tracks specifically with the tau channel'')'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - split-from-6766
     - 8f-decide
 created_at: 2026-10-10T08:14:29Z
-updated_at: 2026-10-10T08:14:45Z
+updated_at: 2026-10-10T10:18:49Z
 parent: qou-8lxd
 ---
 
@@ -71,3 +71,22 @@ no number, label, or downstream reader is affected.
 **Blast radius:** `rem:lepton-discrepancies` only. Its two outbound links
 (`rem:archimedean-leptons`, `rem:symmetry-preserving-leptons`) are untouched by
 any of the three options.
+
+
+## ENACTED 2026-10-10 — owner picked it; option 2 (the replacement), as recommended
+
+`rem:lepton-discrepancies` now closes:
+
+> If so, the tension should track the tau channel specifically and not the
+> electron or muon channels, which satisfy both criteria.
+
+The dead sentence is gone and the remark ends on a falsifiable consequence of
+the structural reading, which is what distinguishes it from the heavy-loop
+reading.
+
+**The sentence before it was left exactly as it was**, deliberately: the
+`B`-factory hedge is interpretation in a `remark`, which AGENTS.md §3a makes
+that block kind's job, and it is correctly hedged ("may reflect"). This was never
+a no-empirical-predictions finding.
+
+`qa-sweep` on the block after the edit: **0 critical, 0 major, 0 minor**.

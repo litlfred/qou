@@ -1,17 +1,15 @@
 ---
 # qou-xlw1
 title: 'Contact volume form: alpha ^ (d alpha)^n gives a COMPLEX rank-n object; rank 3 forces dim M = 7'
-status: todo
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
     - 8f-lean
 created_at: 2026-09-04T03:32:39Z
-updated_at: 2026-10-10T08:23:32Z
+updated_at: 2026-10-10T10:14:21Z
 parent: qou-8lxd
-blocked_by:
-    - qou-rydq
 ---
 
 ## Body written 2026-10-10 — this bean was TITLE-ONLY from 2026-09-04
@@ -115,3 +113,27 @@ sibling), `rem:tetraplectic-su2-gauge-reading`,
 `def:bring-cone-tetraplectic-structure`. Lean importers of `BringCone`:
 `QuaternionicElectroweak.lean`, `BringConeSplit.lean`,
 `Brings/CategoricalLagrangianDMCubic.lean`. No compute, no witness.
+
+
+## ENACTED 2026-10-10 — folded into `qou-rydq`'s option (2)+(3), as recommended
+
+The owner took option (2)+(3) on `qou-rydq`, and this bean's argument went into
+the same paragraph rather than a second edit to the same prose — which was the
+whole reason it was `blocked-by` that bean.
+
+What landed, as argument **(iii)** of the restated lemma: a non-degenerate
+quaternionic-contact structure is a rank-3 contact object (three forms `α_a`,
+each with `α_a ∧ (dα_a)^n` a volume form) and lives on a `(4n+3)`-manifold with
+`n ≥ 1`, i.e. **dimension ≥ 7**; the link has dimension 3, so no non-degenerate
+quaternionic-contact structure exists on it.
+
+**The half-correction this bean made to its own title is in the block too**, and
+it is the part worth keeping: the block says explicitly that dimension alone
+excludes *nothing* about 3-Sasakian structures, since `4n+3` allows `n = 0` and
+`S³` is 3-Sasakian. It is the infinite-`π₁` / asphericity argument (ii), not a
+dimension count, that excludes that reading. Nobody should now write "dim 3
+contradicts 3-Sasakian" from this bean's title.
+
+The measured absence stands and is unchanged: `α ∧ (dα)^n` in any spelling,
+`4n+3`, and `dim M = 7` all returned **zero** hits corpus-wide before this, so
+the constraint was genuinely unrecorded rather than merely mis-stated.

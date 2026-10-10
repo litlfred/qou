@@ -1,14 +1,14 @@
 ---
 # qou-rydq
 title: 'FINDING: the link of the Bring cone singularity is the unit tangent circle bundle of Sigma_4 (Euler number chi_eu = -6), NOT a 3-Sasakian S^3/Gamma; BringCone.lean models H = C^2, the cone over S^3'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-decide
 created_at: 2026-09-15T21:23:32Z
-updated_at: 2026-10-10T08:08:34Z
+updated_at: 2026-10-10T10:14:21Z
 parent: qou-8lxd
 ---
 
@@ -44,3 +44,28 @@ scope the quaternionic triad as local/frame). **Default if unanswered: nothing
 changes; the lemma keeps a prose identification that is true of the local model
 `ℍ = ℂ²` and not of the Bring cone, and `rem:spatial-realization-base-generality`
 already records the correct statement elsewhere.**
+
+
+## ENACTED 2026-10-10 — owner chose option (2)+(3), the recommendation
+
+Owner decision taken on PR #7553. `lem:bring-cone-reeb-quaternionic-twist` now
+leads with what the link **is** — `UT(Σ₄)`, Seifert Euler number **−6**,
+`SL̃₂` geometry, split `sl₂(ℝ)` triad — and scopes the compact `su(2)` bracket
+to the quaternionic model `ℍ = ℂ²` (own link: the Hopf fibration, Euler number
+−1). Three arguments are stated, with their scopes kept apart; the `su(2)`
+survives as the structure group of the resolvent bundle, and
+`rem:tetraplectic-su2-gauge-reading` now opens with that scope. The `-proof`
+sibling's closing line is scoped the same way.
+
+**This turned out NOT to be new analysis, and that is the reusable part.** The
+manifest's own `authorNotes` have carried both halves since **2026-09-03** —
+including the `BringConeSplit.lean` sign flip and `split_ne_compact` — while the
+*statement* went on asserting 3-Sasakian. A caveat is for author tracking
+(AGENTS.md §4d); it is not a place to park the correction to a false claim. So
+the work was promotion, not derivation, and a `status` note records it.
+
+**No Lean changed.** `reeb_twist_ij/jk/ki` are quaternion identities; the
+restatement makes the prose *more* faithful to them.
+
+`qou-xlw1` contributed the third argument (dimension ≥ 7 for a non-degenerate
+quaternionic-contact structure) and is closed with this.

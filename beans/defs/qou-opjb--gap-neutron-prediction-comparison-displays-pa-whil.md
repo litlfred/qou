@@ -1,7 +1,7 @@
 ---
 # qou-opjb
 title: 'GAP: neutron-prediction-comparison displays p*(A) while naming n_pred(p), and its c = 0.01497 traces to an SEMF ratio, not to a definition in the corpus'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - split-from-6766
     - 8f-decide
 created_at: 2026-10-10T08:12:47Z
-updated_at: 2026-10-10T08:32:53Z
+updated_at: 2026-10-10T10:19:41Z
 parent: qou-8lxd
 ---
 
@@ -187,3 +187,60 @@ no Lean, no compute reads this block.
 Everything in the first section still stands: the block names `n_pred(p)` and
 displays `p*(A)`, the inverse map, while its parent reaches `n*` through the
 fixed point `A*(p) = p(2 + (a_C/2a_A)·A*^{2/3})`, `n* = A* − p`.
+
+
+## 2026-10-10 — the owner asked "but lean proved?". ANSWER: NO. Half enacted, numeral HELD.
+
+Owner leaned to option 1 and asked whether the derived chain is Lean-proved.
+Measured, and it is not — this is the sorry-free-≠-derived distinction one step
+further back, because there is no theorem to be sorry-free *about*.
+
+| object | what it is |
+|---|---|
+| `lambda_C = (q - q⁻¹) * q_int q 6 * m_e` | **`noncomputable def`**, `QIntegerMassFormula.lean:42`, `-- Ref: [manuscript] Ch 11 §8` |
+| `a_asym = 3 * q_int q 2 * q_int q 7 * m_e` | **`noncomputable def`**, line 46, same Ref |
+| `asym_volume_relation` | theorem, `a_asym = (3/2)·lambda_V`, discharged by `unfold; ring` |
+| `exchange_coulomb_relation` | theorem, discharged by `unfold; field_simp` |
+
+Both theorems are **true by definition** — `3[2][7]` against `2[2][7]`, and an
+identity after clearing denominators. AGENTS.md Strict Lean Discipline item 8
+names exactly this: *"if it's true by definition / by unfolding / by `rfl`, then
+it is not a theorem — it is notation."* **Nothing derives the assignments
+`[6]_q` or `3[2]_q[7]_q`.** They are asserted in Ch 11 §8.
+
+**And the file's conjecture class is laundered, which is worth knowing before
+building on any of it.** Its own 2026-08-24 correction note (bean `qou-hjf4`)
+records that `IsAMEValue` carries a third field `fits_bound` — docstring
+*"Trivialized bound hypothesis to close sorry"* — asserting the 1 % agreement
+outright, so `fits_AME_conditional` reduces to `∀ …, [claim] → [claim]`.
+`canonical` was demoted `instance` → `def` to stop it reading as established,
+and its `f_magic := fun _ => 0` means that model zeroes every magic correction.
+
+### What landed (both change ZERO numbers, both corpus-derived)
+
+1. **`prop:beta-stability` no longer double-counts $(q-q^{-1})$.** It wrote
+   `a_C = (q - q^{-1})·λ_C` while the Lean `λ_C` already contains that factor;
+   following the block's own chain literally gives `c = 0.00303468`, **80 % off
+   its own published 0.01497**. It now states
+   `a_C = λ_C = (q-q⁻¹)[6]_q m_e` and `a_A = a_asym = 3[2]_q[7]_q m_e`, with a
+   line saying the factor appears once. This is the §7aa exemption-2 case — the
+   convention is declared one file over and violated here.
+2. **The comparison block's prose no longer promises what it does not show.** It
+   now says the display is the beta-stability *line* `p*(A)` and that
+   `n_pred(p) = A*(p) − p` comes from inverting it through the fixed point
+   `A* = p(2 + c·A*^{2/3})`.
+
+### What is HELD, and what unblocks it
+
+Republishing `c = 0.01451583` and re-running the `|Δn|` table. That swaps an
+untraced numeral for a **definitionally-asserted** one — better, not a
+derivation — and it moves a reported figure (`mean |Δn| = 1.7`). One word
+enacts it. The full measurement is now an `authorNotes` caveat on
+`prop:neutron-prediction-comparison` so it is readable without this bean.
+
+**The honest framing for whoever enacts it:** label `c` as fixed by the
+q-integer coefficient *assignments* of Ch 11 §8, not as derived. And do not
+quote the `a_asym = 23.50663` MeV vs SEMF `a_A = 23.69` MeV agreement (0.77 %)
+as evidence for the framework — `a_asym` is a chosen monomial in q-integers, so
+that is a postdiction of an empirical constant by an assignment, which is
+exactly the comparison §NO FITTING says to rank below a derivation.

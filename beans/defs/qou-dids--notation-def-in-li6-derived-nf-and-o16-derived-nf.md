@@ -1,7 +1,7 @@
 ---
 # qou-dids
 title: 'NOTATION: |def| in li6-derived-nf and o16-derived-nf is an undefined synonym for the formally-defined |dem| (demand magnitude); the Li6 ''table order'' complaint does not reproduce'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - split-from-6766
 created_at: 2026-10-10T08:13:13Z
-updated_at: 2026-10-10T08:14:44Z
+updated_at: 2026-10-10T10:18:49Z
 parent: qou-8lxd
 ---
 
@@ -81,3 +81,31 @@ symbol; no number moves, nothing downstream reads either name.
 
 **Blast radius:** `ex:li6-derived-nf`, `ex:o16-derived-nf`, and
 `notation/notation-register.md`. No compute, no Lean, no witness.
+
+
+## ENACTED 2026-10-10 — owner picked it; option 1, as recommended
+
+`|\mathrm{def}|` → `|\mathrm{dem}|` at both sites (`li6-derived-nf.md:18`,
+`o16-derived-nf.md:23`), and a new **"Demand magnitude: always $|\mathrm{dem}|$,
+never $|\mathrm{def}|$"** section in
+`folio/quantum-observable-universe/notation/notation-collisions.md`. Measured
+after: **zero** `mathrm{def}` occurrences remain anywhere in the content tree.
+
+It went to the collisions file rather than a per-chapter register table because
+`nuclear-interactions` has no register table of its own, and because a
+same-quantity-two-names defect is a *collision*, which is that file's stated
+subject.
+
+**One thing the register entry is careful about**, and it is the part to keep:
+the prose word **"deficit" is not banned**. *deficit-free*, *deficit closure*
+and *the periodic table deficit conjecture* are English for the same condition
+and are fine. Only the undefined **symbol** is banned, because a reader meeting
+it has nothing to resolve it against.
+
+**Verification, including a self-caught regression.** The first draft of the
+register section tripped `voice-editorializing` (the word *naturally*) — a
+**new** minor on a block whose measured baseline was 1 critical / 2 major /
+**0 minor**. The adverb was dropped and the block is back to exactly that
+baseline, so this edit adds **zero** findings. The pre-existing critical
+(`voice-unicode-crash`, line 137) and two majors (lines 21, 26) are untouched
+and are not in the new section.

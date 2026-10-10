@@ -1,7 +1,7 @@
 ---
 # qou-652e
 title: 'WORDING: nitrogen-14-threading calls q^{-1} = 0.901 ''the negative weight''; it is the NEGATIVE-CROSSING weight and is positive (numbers are correct, do not add a minus)'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - split-from-6766
 created_at: 2026-10-10T08:14:01Z
-updated_at: 2026-10-10T08:14:44Z
+updated_at: 2026-10-10T10:18:48Z
 parent: qou-8lxd
 ---
 
@@ -72,3 +72,17 @@ bean's author was not sent to, so it waits under the ask-first rule.
 correct computation.
 
 **Blast radius:** `ex:nitrogen-14-threading` only.
+
+
+## ENACTED 2026-10-10 — owner picked it; the draft went in verbatim
+
+`nitrogen-14-threading.md:13` now reads *"averages the positive-crossing weight
+$q = q_0$ and the negative-crossing weight $q^{-1} = 0.901$."*
+
+**The numbers were not touched and must stay untouched.** Re-verified after the
+edit: $(q+q^{-1})/2 = 1.00545$ against the block's "≈ 1.005", and
+$(q-q^{-1})/2 = 0.10454$ against its "≈ 0.105". The rejected repair — restoring
+a minus from the Hecke eigenvalues $q$, $-q^{-1}$ — would break both, and that
+rejection is recorded in the body above so it is not re-attempted.
+
+`qa-sweep` on the block after the edit: **0 critical, 0 major, 0 minor**.

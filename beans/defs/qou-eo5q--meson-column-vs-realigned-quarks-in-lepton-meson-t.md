@@ -1,14 +1,14 @@
 ---
 # qou-eo5q
 title: 'Meson column vs realigned quarks in lepton-meson-torus-knot-dictionary: phi = s-sbar carries generation-2 flavour content while sitting in the generation-3 row. Left unharmonised deliberately in the 2026-08-01 realignment; resolve or document.'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-decide
 created_at: 2026-08-01T22:05:55Z
-updated_at: 2026-10-10T08:28:17Z
+updated_at: 2026-10-10T10:19:12Z
 parent: qou-8lxd
 ---
 
@@ -99,3 +99,49 @@ generation, a primality claim the chapter's own bound contradicts, and a loose
 **Blast radius:** `prop:lepton-meson-torus-knot-dictionary` + its `-proof`
 sibling + `lepton-meson-torus-knot-dictionary.lean`. Defect 2 touches the
 `8f-gen` front's open `T(2,9)` question — do not resolve it here.
+
+
+## ENACTED 2026-10-10 — owner said "do it correct"; read as option 1, and here is why
+
+All three defects in this bean are fixed. The column question got the
+**relabel**, not the Υ repopulation, and the reasoning is on the record so it
+can be overruled cheaply.
+
+**Defect 1 — the indexing shift.** `prop:lepton-meson-torus-knot-dictionary`'s
+meson column header is now *"Meson at $2n$ crossings ($q\bar q$)"*, the closing
+sentence says the meson is the pair whose **total** crossing number is $2n$ and
+that the column is indexed by that total rather than by the row's quark
+generation, and a new paragraph spells out the offset: $\pi = \bar u d$ is $3+3$
+(pure gen-1), $K = \bar u s$ is $3+5$ (**mixed** gen-1/gen-2), $\phi = s\bar s$
+is $5+5$ (pure gen-**2**, in the gen-3 row).
+
+**Why option 1 and not option 2.** "Do it correct" admits two readings — make
+the label match the content, or make the content match the label. Populating the
+row with $\Upsilon$ at $7+7 = 14$ crossings would commit the framework to a
+prediction **nothing in the corpus computes**, which under §NO FITTING is worse
+than an honest label: a route is ranked by derivational cleanliness, not by
+looking complete. So the block now states the *factual* position without
+claiming either as a framework row — the third-generation quarkonia are
+$\Upsilon = \mathfrak{b}\bar{\mathfrak{b}}$, which would sit at 14 crossings and
+is not computed here, and $\mathfrak{t}\bar{\mathfrak{t}}$, which is not a bound
+state. If the stronger version was wanted, it is a one-line change from here.
+
+**Defect 2 — "(odd primes)" is gone**, replaced by *"odd $n = 3, 5, 7, \ldots$"*,
+which is what $2k+1$ is and claims nothing more. The parenthesis had been
+resolving the `8f-gen` front's open *"what excludes $T(2,9)$"* question in
+passing, against the chapter's own embeddability bound $(m-1)(n-1) \le 8$, which
+**admits** $T(2,9)$.
+
+**Defect 3 — $\eta$ split from $\phi$** in the `-proof` sibling: $\phi$ is
+$s\bar s$ at $5+5$; $\eta$ sits at the same rung but is an
+$\mathrm{SU}(3)_{\mathrm{f}}$-octet mixture of $u\bar u$, $d\bar d$, $s\bar s$.
+
+**Verification.** `qa-sweep` on both blocks after the edits: **0 critical, 0
+major, 0 minor**. One transient to record rather than hide: the first batch run
+reported `[major] detangler-no-forward-ref` at
+`lepton-meson-torus-knot-dictionary.ts:0` — and that `.ts` is **unchanged from
+`origin/main`**, whose baseline for the same block is 0/0/0. Three subsequent
+runs, including one repeating the batch's exact ordering, report 0; the
+attestation store holds no `detangler` criterion, so it is not
+cache-suppression. Unreproducible, on a file this branch does not touch; not
+claimed clean, not claimed broken.
