@@ -1712,6 +1712,41 @@
     ],
     "expo-milnor-clarity": [
       {
+        "field_hash": {
+          "md": "f63663a4d31e",
+          "ts": "907a67ec9650",
+          "lean": "0b62ef91d10a",
+          "lean_statement": "370e5f77b361"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 14,
+          "max": 16,
+          "rubric": {
+            "H1": 1,
+            "H2": 2,
+            "H3": 2,
+            "H4": 1,
+            "H5": 2,
+            "H6": 2,
+            "H7": 2,
+            "H8": 2
+          }
+        },
+        "evidence": "H4: L18-22 uses $\\rho^{-1}$, $\\alpha^{-1}$ and $\\lambda_A$ for the unitors/associator, while def:rigid-monoidal-category writes the left unitor $\\ell_X$; $\\lambda$ also indexes Wedderburn blocks. H1: L25 repeats L1 ('recovers the quantum-dimension pairing'), a term never defined.",
+        "notes": "Milnor H1-H8 = [1, 2, 2, 1, 2, 2, 2, 2] (T=14/16, warn); weakest: H1, H4. Suggested rewrite (not applied; owner rule 'ask before changing'): Write the composite with the unitor names of def:rigid-monoidal-category ($\\ell$, $\\rho$) or suppress coherence isomorphisms ('suppressing associators and unitors'). Delete L25 or replace with one line saying what the quantum-dimension pairing is. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      },
+      {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
@@ -2237,6 +2272,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T06:08:03.942Z",
+  "updated_at": "2026-10-10T12:00:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

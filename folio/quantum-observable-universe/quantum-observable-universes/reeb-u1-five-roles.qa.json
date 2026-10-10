@@ -1123,6 +1123,39 @@
     ],
     "expo-milnor-clarity": [
       {
+        "field_hash": {
+          "md": "c222a3023fae",
+          "ts": "b38b1f9864f8"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 7,
+          "max": 16,
+          "rubric": {
+            "H1": 1,
+            "H2": 1,
+            "H3": 1,
+            "H4": 1,
+            "H5": 1,
+            "H6": 2,
+            "H7": 0,
+            "H8": 0
+          }
+        },
+        "evidence": "H5: item 4 gives the Reeb flow as $Z\\mapsto e^{-t}Z$, a real scaling, while prop:substrate-radial-coordinate gives $\\mathcal L_\\xi Z=J\\hbar_qZ$, a rotation. H7/H8: L8 'Knot operators function as Reeb-$U(1)$ Wilson loops' and 'The Osterwalder–Schrader reflection embodies the antipodal $\\mathbb Z_2$' import physics machinery as identifications.",
+        "notes": "Milnor H1-H8 = [1, 1, 1, 1, 1, 2, 0, 0] (T=7/16, fail); weakest: H1, H2, H3, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Reconcile item 4 with the rotation formula. Reduce L8 to what is shown, or mark it as interpretation with references. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      },
+      {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
@@ -1584,6 +1617,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T05:02:41.624Z",
+  "updated_at": "2026-10-10T12:00:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
