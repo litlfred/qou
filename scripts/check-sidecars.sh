@@ -21,6 +21,20 @@ set -uo pipefail
 ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || { echo "not a git repo"; exit 0; }
 cd "$ROOT"
 
+# Where a block's QA report is READ (issue #7642, the block-QA split): the
+# results tree first, as the platform's qa-paths.ts reads it, then the legacy
+# sibling. The results tree is gitignored and comes from the qa-reports branch;
+# when it is absent the block reads as "no sidecar yet", which is said loudly
+# below rather than taken as clean.
+qa_for() {
+  if [ -f "test/results/block-qa/$1.qa.json" ]; then echo "test/results/block-qa/$1.qa.json"
+  else echo "$1.qa.json"; fi
+}
+if [ -z "$(ls -A test/results/block-qa 2>/dev/null)" ]; then
+  echo "⚠ no block-QA results tree here (test/results/block-qa is empty): every block below reads as having no sidecar."
+  echo "  Fetch it first: bun run folio-assistant/cat-harness/scripts/qa-store.ts fetch --ref main"
+fi
+
 # Shared changed-file collection. ONE definition, so the fifth gate script
 # cannot repeat the defect the first four shared (bean qou-pt9b).
 . "$ROOT/scripts/lib/changed-files.sh"
@@ -114,7 +128,7 @@ for f in "${files[@]}"; do
       base="${f%.lean}"
       if [ -f "$base.md" ] || [ -f "$base.ts" ]; then
         # Content-block Lean — has (or should have) a .qa.json sidecar.
-        qa="$base.qa.json"
+        qa="$(qa_for "$base")"
         echo "▸ $f  [content-block Lean]"
         if [ -f "$qa" ]; then
           crits=$(grep -oE '"(q-usage-[a-z0-9-]+|wall-side-correct|[a-z-]+-statement-integrity|da-[a-z0-9-]+|one-voice-[a-z0-9-]+)"' "$qa" 2>/dev/null | tr -d '"' | sort -u | paste -sd', ' -)
@@ -314,7 +328,7 @@ for f in "${files[@]}"; do
       ;;
     folio/*.md|folio/*.ts)
       base="${f%.*}"
-      qa="$base.qa.json"
+      qa="$(qa_for "$base")"
       # A chapter/paper MANIFEST is `<dir>/<dir>.ts` with no `.md` sibling — it
       # lists blocks, it is not one. 47 of them exist, and without this the arm
       # below reports "(no sidecar yet)" and prints a qa-sweep line that cannot
