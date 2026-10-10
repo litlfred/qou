@@ -54,3 +54,9 @@ All sorry-free, lean-direct `-DautoImplicit=false` exit 0, axioms propext / Clas
 
 So [n]_Q!/c_λ(Q) = Σ_{S∈SYT(λ)} Q^{maj S}, with nonnegative integer coefficients. The bean statement is closed.
 Not done (separate, not this bean's statement): bridge `MajStandardization.SYTe` to `QOU.Mathlib.StandardYoungTableau`.
+
+## Update 2026-10-10 (bridge)
+
+`QOU.Mathlib.MajSYTBridge.sytEquiv : SYTe μ ≃ StandardYoungTableau μ` (shift entries by one), with
+`card_SYTe` and `fmaj_eval_one : (fmaj μ).eval 1 = numStandardYoungTableaux μ`. Sorry-free,
+lean-direct exit 0, axioms propext/Classical.choice/Quot.sound. The bridge gap noted above is closed.

@@ -30,11 +30,12 @@ inequality `d · W_d(B) ≤ W_1(B)` (`mul_weight_le`) is elementary: `W_d + P_d 
 (`P_d` = bead pairs on a runner), and `b ↦ (b mod d) + d · (rank of b on its runner)` is injective
 (`abacus_injOn`), so `Σ (b mod d) + d · P_d ≥ C(|B|, 2) ≥ P_1`.
 
-## What is NOT proved here
+## Nonnegativity (proved elsewhere)
 
 That `P` has **nonnegative** coefficients — the fake-degree / `maj` formula
-`[n]_Q!/∏[h] = Σ_{T ∈ SYT(λ)} Q^{maj(T) − n(λ)}` — is not established by this route. It stays open
-(bean `qou-q3q2`). The integrality proved here is the polynomiality half.
+`[n]_Q!/∏[h] = Σ_{T ∈ SYT(λ)} Q^{maj(T) − n(λ)}` — is not established by this route. It is proved
+in `QOU.Mathlib.MajFormula` (`qFactorial_eq_schurElt_mul_fmaj`, `coeff_fmaj_nonneg`; bean
+`qou-q3q2`). The integrality proved here is the polynomiality half.
 
 Base ring (§7c): the polynomial statements are over a generic `[CommRing R]`; the evaluation
 statement is over a generic `[Field F]`. No ordering or archimedean input.
