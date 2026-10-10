@@ -1,7 +1,7 @@
 ---
 # qou-as81
 title: 'A1 (live): certify an UPPER bound on Xbot so the e_inf join needs no G1'
-status: completed
+status: in-progress
 type: task
 priority: high
 tags:
@@ -193,6 +193,102 @@ What is still unmeasured, and would decide it: the two remaining frames, the `la
 and R6's actual cut width.
 
 **Do not quote 1.23x. Do not merge #7419 until R5/R6 complete.**
+
+
+## 2026-10-10 (later) — R5 COMPLETE and PASSED, and it refutes three claims I made an hour earlier
+
+Second full re-run, killed at the **2-hour maximum** (the harness's longest window) with
+**5 of 6 checks green**: R1-R4 and **R5 complete**. R6 printed its banner and nothing else.
+So the arc now has a real `B_allT`, and it is not the number I was quoting.
+
+### The result
+
+    B_allT = 3.37712160481715115067163  at pe = 8, lam = 0.010434072
+           = 1.56363x the enumerated Xbot maximum 2.159802376118285961604
+    Gamma_max measured      = 1.418957192   (uniform bound 2*Rg(0) = 4.392059968)
+    wall depth bound: pe0   = 66  for blocks of length <= 26
+    worst KKT residual over the 9 frames ~ 9.2e-14
+
+`lam* = 0.010434072` is **non-zero**, so the `u^2 >= u` tightening was selected and exercised
+rather than discarded — which is what the "select on the certificate, never on the tangent sum"
+rule was written for. 1.56363x is therefore the **post-tightening** figure.
+
+### The full R5 profile, and why I misread it
+
+| pe | ascent value | all-T bound | padded charge |
+|---|---|---|---|
+| 0 | 1.53872109027161153 | 2.15980237611828596 | 0.0 |
+| 1 | 2.31171169398245923 | 2.31171169400596190 | 0.0 |
+| 2 | 2.81390919493735196 | 2.81390919496107597 | 0.0 |
+| 3 | 3.10309806570584077 | 3.10309806572697677 | 0.0 |
+| 4 | 3.23776802870188959 | 3.23776802872415138 | 0.0 |
+| 5 | 3.27638211927474961 | 3.27638211929654931 | 0.0 |
+| 6 | 3.27708095409687544 | 3.27708095412283411 | 0.0 |
+| 7 | 3.27708095409687544 | 3.27708095412057675 | 0.0 |
+| **8** | 3.27705877732425894 | **3.37712160481715115** | **0.100063** |
+
+### 🛑 Three claims of mine, all wrong, all from reading an incomplete run
+
+1. **"The bound has saturated in `pe` — a plateau, not a climb."** Wrong. `pe = 6` and `pe = 7`
+   agreeing to 18 digits is a **local flat**, and `pe = 8` jumps **+0.10004**. The maximum sits
+   on the **last frame scanned**.
+2. **"`PEMAX` is adequate for R5 on R5's own showing."** Wrong, and backwards: a maximum at the
+   boundary of the scanned range is precisely the "still rising at the edge" signature I had
+   just claimed was retired. It is the same defect that made this bean's `T <= 6` `pe` profile
+   wrong, one check later. **`PEMAX = 8` is NOT self-justifying for R5** — R4's turnover at
+   `pe = 4` does not transfer, because R5 runs a different program (full padded length, `lam`
+   tightening) and its profile is monotone where R4's turns over.
+3. **"Padded charge is 0.0 on every single frame, so `sum_charge_extend` is the operative lemma
+   and `sum_charge_extend_le` is never exercised."** Wrong at `pe = 8`: **0.100063**. The zero
+   holds at `pe <= 7` only.
+
+Note what 1 and 3 have in common: both were true of the **8 frames that had run** and false of
+the **9th**, and in both cases the 9th is the one that matters. Reading a monotone-looking
+prefix as a converged whole is the error, and it is the third time this session the same shape
+has bitten (the `T <= 6` profile; the stale `.lake` tree; this).
+
+### What survives, and one conservative choice that paid off within the hour
+
+- **`fe54aa347ff` is still correct as Lean.** `padded_tail_charge_eq_zero` is *conditional* on
+  `Gamma J <= lam`; at `pe = 8` that premise evidently fails for some row, so the theorem simply
+  does not apply there. A conditional lemma is not refuted by its hypothesis failing.
+- **Keeping `sum_charge_extend_le` was right, for exactly the reason given.** Its retention note
+  read: *"nothing yet proves the charge is zero at EVERY admissible ascent point rather than at
+  the nine measured ones."* The counterexample arrived two frames later. The tail-bounded form
+  is **load-bearing at `pe = 8`** and must not be removed.
+- `tail 0.0` still holds at all nine frames — it is the *padded block*, not the geometric tail,
+  that is non-zero at `pe = 8`.
+
+### 🛑 The probe cannot complete in one harness window — the checkpoint is now REQUIRED
+
+Run 1: killed at 90 min with R5 at 7/9. Run 2: killed at **120 min, the maximum**, with R5
+complete and R6 unstarted. Timings are reproducible: R1-R4 ~58 min both times, R5 ~55 min.
+R6 needs more than the ~2 min left. **Do not simply restart it** - the harness note is explicit
+that a job already at the longest window should not be re-run unchanged, and two data points say
+it does not fit.
+
+So the checkpoint is no longer a nice-to-have. Design constraints, measured:
+
+- R5 needs **`_r4`** (the per-`(pe,T)` records, to pick the worst frame) and **`_ARG[(pe,T)]`**
+  (the ascent point, as a warm start). A flag cannot skip R4; state must persist.
+- The probe is **deterministic**: `pe = 2` returned `2.74201217067973621` byte-identically across
+  both runs. So a checkpoint is sound in principle.
+- Key it on a hash of **both** sources - this probe and the executed
+  `rev_e_infinity_edge_limit_probe.py` - and make a key mismatch **refuse to load**, loudly, so
+  no report can claim 6/6 fresh from a resumed run.
+- **Do NOT** pass the worst frame in as a hint. That turns R5's frame selection from a
+  measurement into an input.
+- **Do NOT** narrow `TMAX`/`JPAD`/`PEMAX` to fit the budget. Correction 2 above makes that
+  worse, not better: `PEMAX` may need to **grow**.
+
+### Consequences for the arc
+
+- **#7419 still cannot merge on its own standard.** R6's cut is the one number its conclusion
+  needs and it has never been computed.
+- **`PEMAX` must be re-measured**, not inherited. If `B_allT` keeps rising past `pe = 8` the
+  1.56363x is itself a lower bound and the G1-free cut is wider still.
+- **Quote 1.56363x, not 1.23x and not 1.517x.** Both earlier figures were partial-run artifacts
+  of mine; 1.23x was the `T <= 6` smoke range and 1.517x was the 8-frame prefix.
 
 ## 2026-10-10 (afternoon) — integer hi_j floor, checkpoint, and the Murota lead CHECKED
 
