@@ -1,0 +1,27 @@
+166 V.V. Schechtman and A.N. Varchenko
+It has two kinds of vertices: N circles and n crosses which are enumerated
+by numbers from 1 to N and from 1 to n respectively. For each Jk (resp. Ir)
+we successively connect by edges all circles Oj, jeJk (resp., all circles Oi, ielk
+and a cross xx) in the order induced from [N] (we put Xk to the end of the
+chain). So we get a picture like this:
+x2
+We'll call connected components of a graph islands. Islands that do not
+contain a cross are called fixed; the corresponding to sets Ik. All the picture
+is called an archipelago.
+Edges of n;n are in one-to-one correspondence with archipelagos. Given
+an edge L, to define an edge LcL of codimension 1 is the same as to connect
+two swimming islands of L or to fasten a swimming islands to a fixed one.
+(It is not allowed to connect two fixed islands.)
+A flag is a growing archipelago.
+5.6.4 Relations in flag groups '(6n;N). Suppose we have a non-complete flag
+F =(LI - ...  Li- Li+2- ... - LP). Let us draw the archipelago of Li:
+Islands
+we have to make twice a connection of two islands. This gives two types of
+relations in :
+(5.6.4) (a)
+and
+(5.6.4) (b)
+where we labelled connecting edges to represent the order of connections.
+5.7 Multiplication of flags. Given two subsets J[N], I[n], denote by
+Bi;jCBn;n the subset consisting of all hyperplanes Hjniz with ji, jzeJ, and
+H, with jeJ, iel.

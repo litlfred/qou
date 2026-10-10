@@ -1,0 +1,105 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "ram1991-frobenius-formula",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "26b2fc85338d915051bd4ad75ccf390a0182f148ed7364c870b6964c5bc5f5a6",
+  "file": "ram1991-frobenius-formula.pdf"
+ },
+ "provenance": {
+  "title": "A Frobenius formula for the characters of the Hecke algebras",
+  "authors": "Arun Ram",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "remark": 5,
+   "lemma": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "Although here we have chosen to work over the field C(g) of rational",
+   "section_file": "sections/sec-001-1-the-symmetric-group-s-f-and-the-hecke-alge.md",
+   "section_title": "The symmetric group S_f and the Hecke algebra H_f",
+   "pages": "2-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "Actually Theorem (2.7) follows from the double centralizer theory only",
+   "section_file": "sections/sec-002-2-remarks-on-the-quantum-group-u-q-sl-n-and.md",
+   "section_title": "Remarks on the quantum group U_q(sl(n)) and the solutions of the quantum Yang-Baxter equation",
+   "pages": "4-7",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.5",
+   "name": null,
+   "statement": "shows that, for an idempotent pe Hf, one can compute tr(Dp) by",
+   "section_file": "sections/sec-003-3-the-action-of-h-f-on-v-f.md",
+   "section_title": "The action of H_f on V^{\u2297f}",
+   "pages": "7-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "Some possible choices for the partition of unity in the proof of the above",
+   "section_file": "sections/sec-003-3-the-action-of-h-f-on-v-f.md",
+   "section_title": "The action of H_f on V^{\u2297f}",
+   "pages": "7-10",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "The above proposition is just a proof of the fact that the trace of the",
+   "section_file": "sections/sec-004-4-the-frobenius-formula-for-the-characters-o.md",
+   "section_title": "The Frobenius formula for the characters of H_f",
+   "pages": "10-16",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "For each permutation \u03c0 e S, define t(\u03c0) = (t1, :. :. : , tk) to be the cycle type",
+   "section_file": "sections/sec-005-5-formulas-for-the-irreducible-characters-of.md",
+   "section_title": "Formulas for the irreducible characters of H_f",
+   "pages": "16-19",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

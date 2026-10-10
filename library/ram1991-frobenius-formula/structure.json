@@ -1,0 +1,238 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "ram1991-frobenius-formula",
+ "source": {
+  "file": "ram1991-frobenius-formula.pdf",
+  "sha256": "26b2fc85338d915051bd4ad75ccf390a0182f148ed7364c870b6964c5bc5f5a6",
+  "bytes": 1982991,
+  "pages": 28,
+  "text_source": "ocr",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T19:16:49Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "A Frobenius formula for the characters of the Hecke algebras",
+  "authors_raw": "Arun Ram",
+  "title_lines": [
+   "Invent. math. 106, 461-488 (1991)",
+   "Inventiones",
+   "mathematicae",
+   "Springer-Verlag 1991",
+   "A Frobenius formula for the characters of",
+   "the Hecke algebras"
+  ],
+  "abstract": null,
+  "docinfo": {},
+  "title_raw": "Invent. math. 106, 461-488 (1991) Inventiones mathematicae Springer-Verlag 1991 A Frobenius formula for the characters of the Hecke algebras",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "text": "Invent. math. 106, 461-488 (1991) Inventiones mathematicae Springer-Verlag 1991 A Frobenius formula for the characters of the Hecke algebras",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_note": "title/authors set by hand from the article's first page. Invent. Math. 106 (1991), pp. 461-488; cut from PDF pp. 468-495 of the 673-page GDZ volume scan (first and last page checked visually by OCR of the journal header/page number; the next article starts on the following PDF page). PDF page n here = journal page 460 + n.",
+  "rights_note": "Cut from the Göttingen State and University Library (SUB/GDZ) digitisation of Inventiones Mathematicae vol. 106 (1991), WerkId PPN356556735_0106. The GDZ Terms and Conditions on page 1 of that volume file state that access is provided 'strictly for noncommercial educational, research and private purposes', that 'each copy of any part of this document must contain these Terms and Conditions', and that 'Reproductions of material on the web site may not be made for or donated to other repositories, nor may be further reproduced without written permission from the Goettingen State- and University Library.' The volume file itself is NOT held in this repository; this per-article cut does not carry the GDZ cover page. Owner decision whether to keep this copy.",
+  "journal_ref": "Invent. Math. 106 (1991) 461-488",
+  "volume_pdf_pages": "468-495",
+  "journal_page_offset": 460
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "The symmetric group S_f and the Hecke algebra H_f",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Remarks on the quantum group U_q(sl(n)) and the solutions of the quantum Yang-Baxter equation",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The action of H_f on V^{⊗f}",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "The Frobenius formula for the characters of H_f",
+   "page": 10,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Formulas for the irreducible characters of H_f",
+   "page": 16,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "A combinatorial rule for computing the irreducible characters of the Hecke algebras",
+   "page": 19,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Work of King-Wybourne and Vershik-Kerov",
+   "page": 23,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Tables and formulas for special cases",
+   "page": 25,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 27,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1372,
+   "n_words": 205
+  },
+  {
+   "id": "sec-000-0-introduction",
+   "number": "0",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3329,
+   "n_words": 553
+  },
+  {
+   "id": "sec-001-1-the-symmetric-group-s-f-and-the-hecke-alge",
+   "number": "1",
+   "title": "The symmetric group S_f and the Hecke algebra H_f",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 4501,
+   "n_words": 914
+  },
+  {
+   "id": "sec-002-2-remarks-on-the-quantum-group-u-q-sl-n-and",
+   "number": "2",
+   "title": "Remarks on the quantum group U_q(sl(n)) and the solutions of the quantum Yang-Baxter equation",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 4495,
+   "n_words": 868
+  },
+  {
+   "id": "sec-003-3-the-action-of-h-f-on-v-f",
+   "number": "3",
+   "title": "The action of H_f on V^{⊗f}",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 5770,
+   "n_words": 1189
+  },
+  {
+   "id": "sec-004-4-the-frobenius-formula-for-the-characters-o",
+   "number": "4",
+   "title": "The Frobenius formula for the characters of H_f",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 16,
+   "n_chars": 7121,
+   "n_words": 1439
+  },
+  {
+   "id": "sec-005-5-formulas-for-the-irreducible-characters-of",
+   "number": "5",
+   "title": "Formulas for the irreducible characters of H_f",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 19,
+   "n_chars": 4666,
+   "n_words": 898
+  },
+  {
+   "id": "sec-006-6-a-combinatorial-rule-for-computing-the-irr",
+   "number": "6",
+   "title": "A combinatorial rule for computing the irreducible characters of the Hecke algebras",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 23,
+   "n_chars": 6245,
+   "n_words": 1208
+  },
+  {
+   "id": "sec-007-7-work-of-king-wybourne-and-vershik-kerov",
+   "number": "7",
+   "title": "Work of King-Wybourne and Vershik-Kerov",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 3561,
+   "n_words": 671
+  },
+  {
+   "id": "sec-008-8-tables-and-formulas-for-special-cases",
+   "number": "8",
+   "title": "Tables and formulas for special cases",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 1940,
+   "n_words": 568
+  },
+  {
+   "id": "sec-009-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 2897,
+   "n_words": 425
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": true,
+  "toc_entries": 10,
+  "toc_inferred_entries": 10,
+  "sections": 11,
+  "chars_total": 45897
+ },
+ "structure_note": "Sectioning: split by hand at the OCR'd numbered section headings (journal pages from the printed contents / running heads)."
+}
