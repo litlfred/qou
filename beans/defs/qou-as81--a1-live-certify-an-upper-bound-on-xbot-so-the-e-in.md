@@ -657,6 +657,28 @@ cheapest available signal that the step or the precision is wrong, and it costs 
   initial segment — `J + 1 = 27` branches instead of `2^26` — remains **not established** and is
   the next Lean lemma worth writing.
 
+### Two infra findings from verifying the above
+
+- **🛑 The module-const precision gate was red because of me, and all five LOSSY entries in the
+  corpus were in my new probe.** `SUP_G_LOWER`, `ENUM_XBOT`, `NEED_CUT32`, `NEED_CUT27` and
+  `REQ_CUT32` were `mp.mpf('...')` at module scope, i.e. built at the default `mp.dps = 15` and
+  already truncated when the first comparison read them. The substance is unaffected — the
+  conclusion turns on the third digit, not the sixteenth — but **the digits past 15 in the
+  probe's own printed floor were not trustworthy**, which is exactly the class
+  `module_const_precision_audit.py` exists to catch. Fixed as it prescribes
+  (`set_compute_dps()` above the constants); LOSSY `5 -> 0`, that gate exits 0, and the
+  measurement reproduces byte-for-byte. Imported from the **package**
+  (`qou_substrate.precision`) rather than the bare `_precision` shim, and both the measurement
+  and SKIP paths re-verified under `env -u PYTHONPATH` — the `_path_bridge` ordering trap.
+- **The library sweep's verdict is non-deterministic** — `1 ok` on one run and
+  `UNVERIFIED (missing olean <pkg>, build order)` on later ones, naming `Qq` then
+  `LeanSearchClient`, both of which are present on disk in **both** olean trees. Tracked as
+  bean `qou-fo7l` with the per-run table; not chased here. Run 1's `Batteries.Data.Array.Merge`
+  WAS a genuine gap and `scripts/lean-sync-olean-trees.sh` closed it (paper mathlib tree
+  `2713 -> 3486` oleans), so the sync is worth knowing about on its own. The Lean's green rests
+  on `lean -DautoImplicit=false -s 65536` exit 0 plus `#print axioms` clean on all 12
+  declarations, and on the one clean sweep run.
+
 ## 2026-10-10 (afternoon) — integer hi_j floor, checkpoint, and the Murota lead CHECKED
 
 **Integer box (`hi_j` floor), scope (a) negative.** Rounding the per-row confinement box to
