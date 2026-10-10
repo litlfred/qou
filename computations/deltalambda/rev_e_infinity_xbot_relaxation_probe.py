@@ -140,10 +140,21 @@ shrinks on the dominant row, where `Gamma ~ 1.42 >> lam`.  Choosing by that prox
   R4  the relaxed supremum per `(pe, T)` with a supergradient certificate at each — valid,
       converged (KKT residual and the `sup` non-decreasing in `T`), and measurably not tight
   R5  the `u^2 >= u` tightening, the all-`T` certificate and the rigorous `pe` bound
+  R5b the same certificate on the INTEGER box `[ceil(lo_j), floor(U_j)]` — sound for `Xbot`,
+      which is an integer maximum, and never looser than the real box
   R6  what a certified `B_bot` buys: the cut that follows from `B_top` and `B_bot` separately,
       with G1 not used
 
 Proton-pinned; `mp.dps = 25`; no float64.
+
+## Running it inside a 120-minute window
+
+The full run is ~200 min.  R1..R5 are keyed checkpoints and every ascent and `xrun` call is
+disk-memoised (see the block above `R1`), so a killed run is simply re-run: finished stages
+replay in seconds and a half-finished stage resumes at its last completed call.  The key is a
+hash of the source and every input, so a restore can never return a number from other code.
+`REV_XBOTR_CKPT=0` forces a cold run; `REV_XBOTR_CKPT_DIR` moves the store (default
+`~/.cache/qou/xbot-relaxation-ckpt`).  The witness records which stages were restored.
 
 -- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/BraidKnot/SupergradientCertificate.lean
 """
@@ -500,7 +511,8 @@ def cap_sum(pe: int, lam=None) -> mp.mpf:
                 f"sum as a bound.")
 
 
-def certificate(pe: int, w, incumbent, caps_total=None, rows_n=None, all_T=False, lam=None):
+def certificate(pe: int, w, incumbent, caps_total=None, rows_n=None, all_T=False, lam=None,
+                integer_box=False):
     """A rigorous upper bound on `sup G` over the `pe` frame at block length `len(w)` — or, with
     `all_T`, at EVERY block length at once (see R5).
 
@@ -524,6 +536,17 @@ def certificate(pe: int, w, incumbent, caps_total=None, rows_n=None, all_T=False
     the extension carries rows until the charge is negligible and then BOUNDS the remainder by
     its geometric tail instead of dropping it.  What comes back is an upper bound at every block
     length, not only at `len(w)`.
+
+    **The integer box** (`integer_box=True`).  `Xbot` is a maximum over INTEGER blocks, and an
+    integer `u` reaching the incumbent has `u_j in [L_j, U_j] ∩ Z = [ceil(lo_j), floor(U_j)]`.
+    So the per-coordinate maximum of the linear term may be taken over that smaller interval:
+    `g_j (floor(U_j) - w_j)` when `g_j >= 0`, `g_j (ceil(lo_j) - w_j)` when `g_j < 0`.  Both are
+    `<=` the real-box charge (`floor(U) <= U` with `g >= 0`; `ceil(lo) >= lo` with `g < 0`), so
+    the bound only tightens, and it stays a bound on the INTEGER supremum only — which is all
+    `Xbot` needs, and all the `lam` program was ever valid for (`u^2 >= u` holds on integers
+    only).  An empty integer interval means no integer point reaches the incumbent, and the
+    frame is excluded.  Only the explicitly charged rows are rounded; the tail past them keeps
+    its real-box bound, which dominates the integer one, so no new tail argument is needed.
     """
     lam = mp.mpf(0) if lam is None else lam
     Q = LNQ - 2 * lam                       # the effective quadratic coefficient is `Q / 2`
@@ -575,12 +598,21 @@ def certificate(pe: int, w, incumbent, caps_total=None, rows_n=None, all_T=False
         if b is None:
             return incumbent, None, None, rows, True, None, (mp.mpf(0), "excluded")
         lo, Uj = b
+        # The real-box charge, kept even under `integer_box`: the geometric tail past `n` is
+        # bounded from it, and it dominates the integer charge, so the tail stays valid.
+        real_term = gvec[j] * (Uj - wfull[j]) if gvec[j] >= 0 else gvec[j] * (lo - wfull[j])
+        if integer_box:
+            # Round OUTWARD by TOL first: a `U_j` that is an integer up to arithmetic error must
+            # not be floored to the integer below it.  Erring this way can only loosen the bound.
+            lo, Uj = mp.ceil(lo - TOL), mp.floor(Uj + TOL)
+            if Uj < lo:
+                return incumbent, None, None, rows, True, None, (mp.mpf(0), "excluded")
         term = gvec[j] * (Uj - wfull[j]) if gvec[j] >= 0 else gvec[j] * (lo - wfull[j])
         slack += term
         naive += abs(gvec[j]) * (Uj - lo)
         if j >= len(w):
             pad_charged += abs(term)
-            last_term = abs(term)
+            last_term = abs(real_term)
         rows.append({"row": j, "grad": mp.nstr(gvec[j], 12), "lo": mp.nstr(lo, 12),
                      "U": mp.nstr(Uj, 12), "w": mp.nstr(wfull[j], 12),
                      "term": mp.nstr(term, 12)})
@@ -726,7 +758,7 @@ def cut_for(b_top, b_bot) -> int:
     """The largest run length that can still reach `e_inf` given SEPARATE caps on the two edges.
     With `b_top == b_bot` this is #7349's `cut_for`; the point is that it never needs G1."""
     th = E_INF_7335 - b_top - b_bot
-    return max(ell for ell in range(1, 3000) if xrun(ell) > th)
+    return max(ell for ell in range(1, 3000) if xrun_ck(ell) > th)
 
 
 def blocks_with_sum_at_most(S: int) -> int:
@@ -744,6 +776,188 @@ def blocks_with_sum_at_most(S: int) -> int:
 
 
 # --------------------------------------------------------------------------------------------
+# Keyed checkpoint.  The full run is ~200 min against a 120-min harness ceiling, and the script
+# was straight-line, so a killed run restarted from R1.  Each stage R1..R5 is now a block that
+# either RUNS (and saves what it defined, its printed output and its checks) or is RESTORED.
+#
+# The key is a SHA-256 of everything the stage's numbers can depend on: this file's source up
+# to the END of that stage (so it covers the prelude and every earlier stage, and editing R6
+# invalidates nothing), the committed evaluator's source, the q0 string, `mp.dps` and every
+# `REV_XBOT*` environment override.  Change any of them and the stage recomputes; there is no
+# way to restore a number computed from different code.  mpf values are stored as their exact
+# binary `_mpf_` tuples, so a restore is bit-identical rather than a decimal round trip.
+#
+# Within R5 and R6 the expensive CALLS are memoised to disk the same way (`_disk_memo`), so a
+# run killed mid-stage resumes at the last finished ascent / run length rather than at the
+# stage start.  `REV_XBOTR_CKPT=0` disables all of it; the witness records which stages were
+# restored, and from which key, so a restored figure is never presented as a fresh one.
+# --------------------------------------------------------------------------------------------
+import hashlib  # noqa: E402
+import io  # noqa: E402
+
+_CKPT_ON = os.environ.get("REV_XBOTR_CKPT", "1") != "0"
+_CKPT_DIR = os.environ.get(
+    "REV_XBOTR_CKPT_DIR",
+    os.path.join(os.path.expanduser("~"), ".cache", "qou", "xbot-relaxation-ckpt"))
+_SELF_TEXT = open(os.path.abspath(__file__)).read()
+_ENV_KEY = sorted((k, v) for k, v in os.environ.items() if k.startswith("REV_XBOT"))
+_CKPT_LOG: list[dict] = []
+
+
+def _stage_key(end_marker: str) -> str:
+    """Hash of the source up to `end_marker` plus every non-source input."""
+    if _SELF_TEXT.count(end_marker) != 1:
+        raise SystemExit(f"checkpoint marker {end_marker!r} is not unique — refusing to key on it")
+    h = hashlib.sha256()
+    for part in (_SELF_TEXT[:_SELF_TEXT.index(end_marker)], _TEXT, Q_50_DIGIT_STR,
+                 str(mp.dps), json.dumps([[k, v] for k, v in _ENV_KEY if k != "REV_XBOTR_CKPT"])):
+        h.update(part.encode())
+        h.update(b"\0")
+    return h.hexdigest()
+
+
+def _enc(x):
+    if isinstance(x, mp.mpf):
+        s, man, e, bc = x._mpf_
+        return {"__mpf__": [s, hex(man), e, bc]}
+    if isinstance(x, (bool, int, str)) or x is None:
+        return x
+    if isinstance(x, tuple):
+        return {"__tuple__": [_enc(v) for v in x]}
+    if isinstance(x, list):
+        return [_enc(v) for v in x]
+    if isinstance(x, dict):
+        return {"__dict__": [[_enc(k), _enc(v)] for k, v in x.items()]}
+    raise TypeError(type(x).__name__)
+
+
+def _dec(x):
+    if isinstance(x, list):
+        return [_dec(v) for v in x]
+    if isinstance(x, dict):
+        if "__mpf__" in x:
+            s, man, e, bc = x["__mpf__"]
+            return mp.make_mpf((s, int(man, 16), e, bc))
+        if "__tuple__" in x:
+            return tuple(_dec(v) for v in x["__tuple__"])
+        return {(tuple(_dec(k)) if isinstance(k, list) else _dec(k)): _dec(v)
+                for k, v in x["__dict__"]}
+    return x
+
+
+class _Tee(io.TextIOBase):
+    def __init__(self, inner):
+        self.inner, self.buf = inner, io.StringIO()
+
+    def write(self, s):
+        self.buf.write(s)
+        return self.inner.write(s)
+
+    def flush(self):
+        self.inner.flush()
+
+
+_STAGE: dict = {}
+
+
+def _stage_begin(name: str, end_marker: str) -> bool:
+    """True: run the stage.  False: it was restored (globals, output and checks replayed)."""
+    key = _stage_key(end_marker)
+    path = os.path.join(_CKPT_DIR, f"{name}-{key[:24]}.json")
+    if _CKPT_ON and os.path.exists(path):
+        with open(path) as fh:
+            rec = json.load(fh)
+        if rec.get("key") == key:
+            globals().update({k: _dec(v) for k, v in rec["globals"].items()})
+            CHECKS.extend((n, bool(o), d) for n, o, d in rec["checks"])
+            print(f"  [checkpoint] {name} RESTORED (key {key[:16]}, computed "
+                  f"{rec['computed_at']}, {rec['seconds']:.0f}s then) — replaying its output:")
+            sys.stdout.write(rec["stdout"])
+            _CKPT_LOG.append({"stage": name, "restored": True, "key": key,
+                              "computed_at": rec["computed_at"]})
+            return False
+    _STAGE.update(name=name, key=key, path=path, t0=time.time(), nchk=len(CHECKS),
+                  before={k: id(v) for k, v in globals().items()}, tee=_Tee(sys.stdout))
+    sys.stdout = _STAGE["tee"]
+    return True
+
+
+def _stage_end() -> None:
+    if not _STAGE:
+        return                                      # the stage was restored
+    sys.stdout = _STAGE["tee"].inner
+    before = _STAGE["before"]
+    saved, skipped = {}, []
+    for k, v in list(globals().items()):
+        if k.startswith("__") or (k in before and before[k] == id(v)) or k == "_STAGE":
+            continue
+        try:
+            saved[k] = _enc(v)
+        except TypeError:
+            skipped.append(k)                       # e.g. a module, a closure, an iterator
+    secs = time.time() - _STAGE["t0"]
+    rec = {"key": _STAGE["key"], "stage": _STAGE["name"], "seconds": secs,
+           "computed_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+           "globals": saved, "skipped": skipped,
+           "checks": [list(c) for c in CHECKS[_STAGE["nchk"]:]],
+           "stdout": _STAGE["tee"].buf.getvalue()}
+    if _CKPT_ON:
+        os.makedirs(_CKPT_DIR, exist_ok=True)
+        tmp = _STAGE["path"] + ".tmp"
+        with open(tmp, "w") as fh:
+            json.dump(rec, fh)
+        os.replace(tmp, _STAGE["path"])             # atomic: a kill mid-write leaves no record
+    _CKPT_LOG.append({"stage": _STAGE["name"], "restored": False, "key": _STAGE["key"],
+                      "seconds": round(secs, 1), "not_checkpointed": skipped})
+    _STAGE.clear()
+
+
+def _disk_memo(tag: str, args, fn, key=None):
+    """`fn()` memoised to disk under (`tag`, a source/env key, `args`).  Used for the single
+    expensive calls inside a stage, so a killed run resumes at call granularity.  `key` defaults
+    to the whole prelude's key; pass a narrower one only for a function that provably reads
+    nothing else."""
+    if not _CKPT_ON:
+        return fn()
+    h = hashlib.sha256((key or _stage_key("# ===CKPT-" + "MEMO-KEY===")).encode())
+    h.update(tag.encode())
+    h.update(json.dumps(_enc(args), sort_keys=True).encode())
+    path = os.path.join(_CKPT_DIR, "memo", f"{tag}-{h.hexdigest()[:32]}.json")
+    if os.path.exists(path):
+        with open(path) as fh:
+            return _dec(json.load(fh))
+    out = fn()
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path + ".tmp", "w") as fh:
+        json.dump(_enc(out), fh)
+    os.replace(path + ".tmp", path)
+    return out
+
+
+# ===CKPT-MEMO-KEY===
+
+
+def _relaxed_sup_ck(pe: int, Tlen: int, warm=None, lam=None):
+    """`relaxed_sup`, disk-memoised on its full argument list (the warm start included, exactly)."""
+    return tuple(_disk_memo("relaxed_sup", [pe, Tlen, warm, lam],
+                            lambda: list(relaxed_sup(pe, Tlen, warm=warm, lam=lam))))
+
+
+_XRUN_MEMO: dict[int, mp.mpf] = {}
+# `xrun` reads only the committed evaluator (`_ap_value`, `_sc`) at this q0 and precision, so it
+# is keyed on exactly those: an edit to the certificate or the ascent must not cost R6's ~40 min.
+_XRUN_KEY = hashlib.sha256("\0".join((_TEXT, Q_50_DIGIT_STR, str(mp.dps))).encode()).hexdigest()
+
+
+def xrun_ck(ell: int) -> mp.mpf:
+    """`xrun`, memoised in memory AND on disk.  The two `cut_for` calls in R6 share every value,
+    and un-memoised R6 alone was measured at ~87 min (qou-as81).  Semantics are unchanged: the
+    same committed `_ap_value` is evaluated once per `ell` instead of once per call."""
+    if ell not in _XRUN_MEMO:
+        _XRUN_MEMO[ell] = _disk_memo("xrun", [ell], lambda: xrun(ell), key=_XRUN_KEY)
+    return _XRUN_MEMO[ell]
+
+# --------------------------------------------------------------------------------------------
 print("the BOTTOM edge's value is concave too — sup_s Xbot is a concave program")
 print(f"  q0 = {mp.nstr(Q0, 20)} (proton pin);  mp.dps = {mp.dps};  series depth {RSER}")
 print(f"  frame: b0(j) = j for j < pe, 2j - pe for j >= pe   (k = {K}, read from the bottom)")
@@ -751,427 +965,475 @@ print(f"  programs: pe = 0..{PEMAX}, T = 1..{TMAX};  all-T certificate over {JPA
 print(flush=True)
 
 # --------------------------------------------------------------------------------------------
-print("R1  does the real extension reproduce the committed integer evaluator?")
-_r1 = []
-_r1_worst = mp.mpf(0)
-# Enumerate the VALID (pe, block) pairs rather than hand-picking: most hand-picked blocks are
-# rejected by the ordering constraint, and a sample chosen before knowing which survive says
-# more about the guesser than about the extension.
-_r1_pool = [b for b in _bot_profiles(5, 3) if b]
-for _pe in range(0, min(PEMAX, 4) + 1):
-    _L = K + 1 + _pe
-    _b0f = _staircase_beta(K, _L)
-    _nb0f = [-x for x in _b0f]
-    _taken = 0
-    for _bot in _r1_pool:
-        if _taken >= 12:
-            break
-        _uu = _make_u(_L, (), _bot, 0, 0)
-        if _uu is None:
+if _stage_begin("R1", "# ===END " + "R1==="):
+    print("R1  does the real extension reproduce the committed integer evaluator?")
+    _r1 = []
+    _r1_worst = mp.mpf(0)
+    # Enumerate the VALID (pe, block) pairs rather than hand-picking: most hand-picked blocks are
+    # rejected by the ordering constraint, and a sample chosen before knowing which survive says
+    # more about the guesser than about the extension.
+    _r1_pool = [b for b in _bot_profiles(5, 3) if b]
+    for _pe in range(0, min(PEMAX, 4) + 1):
+        _L = K + 1 + _pe
+        _b0f = _staircase_beta(K, _L)
+        _nb0f = [-x for x in _b0f]
+        _taken = 0
+        for _bot in _r1_pool:
+            if _taken >= 12:
+                break
+            _uu = _make_u(_L, (), _bot, 0, 0)
+            if _uu is None:
+                continue
+            _iv = _delta_excess(_uu, K, _b0f, _nb0f, require_zero_sum=False)
+            if _iv is None:
+                continue
+            # `bot` is written top-to-bottom; `G` indexes from the bottom, so reverse it
+            _rv = G([mp.mpf(x) for x in reversed(_bot)], _pe)
+            _d = abs(_rv - _sc(_iv))
+            _r1.append({"pe": _pe, "bot": list(_bot), "integer": mp.nstr(_sc(_iv), 22),
+                        "real": mp.nstr(_rv, 22), "diff": mp.nstr(_d, 6)})
+            _r1_worst = max(_r1_worst, _d)
+            _taken += 1
+    print(f"    {len(_r1)} (pe, block) pairs compared against `delta_excess`")
+    print(f"    worst |real - integer| = {mp.nstr(_r1_worst, 6)}")
+    for _r in _r1[:5]:
+        print(f"      pe={_r['pe']} {str(_r['bot']):16s} {_r['integer']:26s} vs {_r['real']:26s}",
+              flush=True)
+    check(
+        "R1 the extended objective restricts to the integer one",
+        _r1_worst < TOL and len(_r1) >= 20,
+        f"over {len(_r1)} (pe, block) pairs the real-u objective agrees with the committed "
+        f"`delta_excess` to {mp.nstr(_r1_worst, 4)} — scale-1e-40 integers against mp.dps = "
+        f"{mp.dps} reals.  This is the check that makes the relaxation a relaxation of the RIGHT "
+        f"problem: the one-body term `fi(beta) - fi(b0)` is a partial sum with no canonical real "
+        f"extension, and the obvious integral extension is concave but NOT exact at integers.  "
+        f"`R(b0) - R(b0+u)` with `R(x) = sum_{{j>=1}} eps(x+j)` is both, because the constant "
+        f"`sum_m eps(m)` cancels",
+    )
+    print(flush=True)
+
+# ===END R1===
+_stage_end()
+# --------------------------------------------------------------------------------------------
+if _stage_begin("R2", "# ===END " + "R2==="):
+    print("R2  is the extended objective concave?  (the relaxation's whole premise)")
+    random.seed(23)
+    _r2_worst = None
+    _r2_n = 0
+    for _ in range(300):
+        _pe = random.randint(0, PEMAX)
+        _T = random.randint(2, 7)
+
+        def _rp(pe=_pe, Tl=_T):
+            v = [mp.mpf(0)] * Tl
+            for i in range(Tl - 1, -1, -1):
+                hi = (mp.mpf(b0_of(pe, Tl) - b0_of(pe, i)) if i == Tl - 1
+                      else mp.mpf(b0_of(pe, i + 1) - b0_of(pe, i)) + v[i + 1])
+                v[i] = mp.mpf(random.uniform(0, float(hi) * 0.85))
+            return v
+
+        _a, _b = _rp(), _rp()
+        _lam = mp.mpf(random.uniform(mp.mpf("0.05"), mp.mpf("0.95")))
+        _mid = [_lam * p + (1 - _lam) * q for p, q in zip(_a, _b)]
+        _ga, _gb, _gm = G(_a, _pe), G(_b, _pe), G(_mid, _pe)
+        if mp.isinf(_ga) or mp.isinf(_gb) or mp.isinf(_gm):
             continue
-        _iv = _delta_excess(_uu, K, _b0f, _nb0f, require_zero_sum=False)
-        if _iv is None:
-            continue
-        # `bot` is written top-to-bottom; `G` indexes from the bottom, so reverse it
-        _rv = G([mp.mpf(x) for x in reversed(_bot)], _pe)
-        _d = abs(_rv - _sc(_iv))
-        _r1.append({"pe": _pe, "bot": list(_bot), "integer": mp.nstr(_sc(_iv), 22),
-                    "real": mp.nstr(_rv, 22), "diff": mp.nstr(_d, 6)})
-        _r1_worst = max(_r1_worst, _d)
-        _taken += 1
-print(f"    {len(_r1)} (pe, block) pairs compared against `delta_excess`")
-print(f"    worst |real - integer| = {mp.nstr(_r1_worst, 6)}")
-for _r in _r1[:5]:
-    print(f"      pe={_r['pe']} {str(_r['bot']):16s} {_r['integer']:26s} vs {_r['real']:26s}",
+        _gap = _gm - (_lam * _ga + (1 - _lam) * _gb)
+        _r2_n += 1
+        if _r2_worst is None or _gap < _r2_worst[0]:
+            _r2_worst = (_gap, _pe, _T, _lam)
+    print(f"    {_r2_n} random feasible triples, pe = 0..{PEMAX}, T = 2..7")
+    print(f"    min G(mid) - [lam G(a) + (1-lam) G(b)] = {mp.nstr(_r2_worst[0], 8)} "
+          f"at pe = {_r2_worst[1]}, T = {_r2_worst[2]}", flush=True)
+    check(
+        "R2 the bottom-edge value is concave in u — measured, not assumed",
+        _r2_worst[0] >= 0 and _r2_n >= 100,
+        f"minimum concavity gap {mp.nstr(_r2_worst[0], 6)} over {_r2_n} random feasible triples "
+        f"spanning both environments of the frame.  The reason is one second derivative used four "
+        f"times: `-R(b0 + u)` is concave because `-R' = sum_j gx(b0+u+j)` is decreasing; every pair "
+        f"term is `-eps(g + (u_i - u_j))`, concave composed with a linear map; the above-block tail "
+        f"is `-eps(g - u_j)`; the cost is `-(ln q0/2) sum u^2`.  So maximising over real u is a "
+        f"CONCAVE PROGRAM and a coordinate-wise stationary point is the global maximum",
+    )
+    print(flush=True)
+
+# ===END R2===
+_stage_end()
+# --------------------------------------------------------------------------------------------
+if _stage_begin("R3", "# ===END " + "R3==="):
+    print("R3  the resummations and the analytic gradient against direct computation")
+    _r3_R = max(abs(R(mp.mpf(x)) - mp.fsum(epsx(mp.mpf(x) + j) for j in range(1, 500)))
+                for x in ("0", "0.5", "3", "7.25"))
+    _r3_Rg = max(abs(Rg(mp.mpf(x)) - mp.fsum(gx(mp.mpf(x) + j) for j in range(1, 500)))
+                 for x in ("0", "0.5", "3", "7.25"))
+    _r3_W = mp.mpf(0)
+    _r3_Wg = mp.mpf(0)
+    for _pe, _T in ((0, 3), (5, 2), (8, 3), (3, 6)):
+        _m = max(0, _pe - _T)
+        _full = list(range(_m)) + [_m + 2 * t for t in range(300)]
+        for _y in ("0.25", "1", "2.5"):
+            _yy = mp.mpf(_y)
+            _r3_W = max(_r3_W, abs(W(_yy, _pe, _T) - mp.fsum(epsx(_yy + d) for d in _full)))
+            _r3_Wg = max(_r3_Wg, abs(Wg(_yy, _pe, _T) - mp.fsum(gx(_yy + d) for d in _full)))
+    _r3_g = mp.mpf(0)
+    _hstep = mp.mpf(10) ** (-9)
+    for _pe, _T in ((0, 3), (6, 4), (8, 2)):
+        _u = [mp.mpf("0.4") + mp.mpf(i) / 10 for i in range(_T)]
+        _an = gradG(_u, _pe)
+        for _i in range(_T):
+            _up, _dn = list(_u), list(_u)
+            _up[_i] += _hstep
+            _dn[_i] -= _hstep
+            _r3_g = max(_r3_g, abs(_an[_i] - (G(_up, _pe) - G(_dn, _pe)) / (2 * _hstep)))
+    # and the T-independence of Gamma, which the all-T certificate rests on
+    _r3_gam = max(abs(gamma(_pe, _j)
+                      - (Rg(mp.mpf(b0_of(_pe, _j)))
+                         + mp.fsum(gx(b0_of(_pe, _j) - b0_of(_pe, _q)) for _q in range(_j))
+                         - Wg(mp.mpf(b0_of(_pe, _Tl) - b0_of(_pe, _j)), _pe, _Tl)
+                         - mp.fsum(gx(b0_of(_pe, _q) - b0_of(_pe, _j))
+                                   for _q in range(_j + 1, _Tl))))
+                  for _pe in (0, 4, 8) for _Tl in (3, 7, 11) for _j in range(_Tl))
+    print(f"    R  vs direct sum: {mp.nstr(_r3_R, 6)}    Rg: {mp.nstr(_r3_Rg, 6)}")
+    print(f"    W  vs direct sum: {mp.nstr(_r3_W, 6)}    Wg: {mp.nstr(_r3_Wg, 6)}")
+    print(f"    analytic gradient vs central difference (h = 1e-9): {mp.nstr(_r3_g, 6)}")
+    print(f"    Gamma_j is T-free: worst spread over T in {{3,7,11}} = {mp.nstr(_r3_gam, 6)}",
           flush=True)
-check(
-    "R1 the extended objective restricts to the integer one",
-    _r1_worst < TOL and len(_r1) >= 20,
-    f"over {len(_r1)} (pe, block) pairs the real-u objective agrees with the committed "
-    f"`delta_excess` to {mp.nstr(_r1_worst, 4)} — scale-1e-40 integers against mp.dps = "
-    f"{mp.dps} reals.  This is the check that makes the relaxation a relaxation of the RIGHT "
-    f"problem: the one-body term `fi(beta) - fi(b0)` is a partial sum with no canonical real "
-    f"extension, and the obvious integral extension is concave but NOT exact at integers.  "
-    f"`R(b0) - R(b0+u)` with `R(x) = sum_{{j>=1}} eps(x+j)` is both, because the constant "
-    f"`sum_m eps(m)` cancels",
-)
-print(flush=True)
+    check(
+        "R3 the closed-form tails, the analytic gradient and the T-independence of Gamma hold",
+        (_r3_R < TOL and _r3_Rg < TOL and _r3_W < TOL and _r3_Wg < TOL
+         and _r3_g < mp.mpf(10) ** (-12) and _r3_gam < TOL),
+        f"the resummed `R` and `W` agree with direct sums to {mp.nstr(max(_r3_R, _r3_W), 4)} and "
+        f"their derivative forms to {mp.nstr(max(_r3_Rg, _r3_Wg), 4)}; the analytic gradient agrees "
+        f"with a central difference to {mp.nstr(_r3_g, 4)}.  The direction of that last test "
+        f"matters: the CERTIFICATE uses the analytic form, because the supergradient inequality is "
+        f"about the true gradient and a difference quotient would make it a statement about the "
+        f"step size — the finite difference is here only to catch an algebra slip.  And `Gamma_j` "
+        f"agrees to {mp.nstr(_r3_gam, 4)} across block lengths 3, 7 and 11, which is the fact the "
+        f"all-T certificate rests on: the block rows above `j` and the undisplaced tail above the "
+        f"block are one sum split at an arbitrary place",
+    )
+    print(flush=True)
 
+# ===END R3===
+_stage_end()
 # --------------------------------------------------------------------------------------------
-print("R2  is the extended objective concave?  (the relaxation's whole premise)")
-random.seed(23)
-_r2_worst = None
-_r2_n = 0
-for _ in range(300):
-    _pe = random.randint(0, PEMAX)
-    _T = random.randint(2, 7)
+if _stage_begin("R4", "# ===END " + "R4==="):
+    print("R4  the relaxed supremum and its certificate, per (pe, T)")
+    _t0 = time.time()
+    _BOTS = _bot_profiles(BMAX, BUMAX)
+    _XB = _bot_table(_BOTS)
+    INT_SUP_BOT = _sc(max(v for v, _, _ in _XB.values()))
+    _int_arg = max(_XB.items(), key=lambda kv: kv[1][0])
+    print(f"    enumerated Xbot max (BMAX={BMAX}, BUMAX={BUMAX}): {mp.nstr(INT_SUP_BOT, 22)} "
+          f"at s = {_int_arg[0]}, bot {list(_int_arg[1][1])}, pe = {_int_arg[1][2]}  "
+          f"[{time.time() - _t0:.0f}s]", flush=True)
 
-    def _rp(pe=_pe, Tl=_T):
-        v = [mp.mpf(0)] * Tl
-        for i in range(Tl - 1, -1, -1):
-            hi = (mp.mpf(b0_of(pe, Tl) - b0_of(pe, i)) if i == Tl - 1
-                  else mp.mpf(b0_of(pe, i + 1) - b0_of(pe, i)) + v[i + 1])
-            v[i] = mp.mpf(random.uniform(0, float(hi) * 0.85))
-        return v
+    _r4 = []
+    _best_relax = None
+    _ARG: dict[tuple[int, int], list] = {}
+    _mono_viol = []
+    _res_worst = mp.mpf(0)
+    for _pe in range(0, PEMAX + 1):
+        _bp = None
+        _warm = None
+        _prev_v = None
+        for _T in range(1, TMAX + 1):
+            _v, _u, _res = _relaxed_sup_ck(_pe, _T, warm=_warm)
+            if mp.isinf(_v):
+                continue
+            _warm = list(_u)
+            _ARG[(_pe, _T)] = list(_u)
+            _res_worst = max(_res_worst, _res)
+            # sup must be non-decreasing in T: padding the length-(T-1) optimum with a zero is
+            # feasible at length T and has the same value (Gamma is T-free).  A drop means the
+            # ascent failed, and nothing else reports that.
+            if _prev_v is not None and _v < _prev_v - TOL:
+                _mono_viol.append({"pe": _pe, "T": _T, "sup": mp.nstr(_v, 18),
+                                   "prev": mp.nstr(_prev_v, 18)})
+            _prev_v = _v
+            _r4.append({"pe": _pe, "T": _T, "sup": mp.nstr(_v, 22),
+                        "kkt_residual": mp.nstr(_res, 8),
+                        "argmax": [mp.nstr(x, 10) for x in _u]})
+            if _bp is None or _v > _bp[0]:
+                _bp = (_v, _T, list(_u))
+            if _best_relax is None or _v > _best_relax[0]:
+                _best_relax = (_v, _pe, _T, list(_u))
+        if _bp:
+            print(f"    pe = {_pe}: best relaxed {mp.nstr(_bp[0], 18):22s} at T = {_bp[1]:2d}   "
+                  f"[{', '.join(mp.nstr(x, 5) for x in _bp[2][:6])}"
+                  f"{'...' if len(_bp[2]) > 6 else ''}]", flush=True)
+    B_RELAX, _PE_STAR, _T_STAR, _U_STAR = _best_relax
+    print(f"    worst KKT residual over all programs: {mp.nstr(_res_worst, 6)};  "
+          f"monotonicity violations in T: {len(_mono_viol)}", flush=True)
+    # The ascent value is ACHIEVED, so it is a valid incumbent — and a tighter one than the
+    # enumeration.  A larger incumbent narrows the certificate's box; it cannot invalidate it.
+    INCUMBENT = max(B_RELAX, INT_SUP_BOT)
+    _best_cert = None
+    _cert_rows_star = _naive_star = None
+    for _row in _r4:
+        _pe, _T = _row["pe"], _row["T"]
+        _w = _ARG[(_pe, _T)]                     # the ascent point itself, not a 10-digit round trip
+        _cb, _cs, _cn, _crows, _excl, _, _ = certificate(
+            _pe, _w, INCUMBENT,
+            caps_total=mp.fsum(row_cap(_pe, j) for j in range(_T)))
+        _row["certified_bound"] = mp.nstr(_cb, 22)
+        _row["slack"] = None if _cs is None else mp.nstr(_cs, 12)
+        _row["excluded_by_row_box"] = _excl
+        if _best_cert is None or _cb > _best_cert[0]:
+            _best_cert = (_cb, _pe, _T, _cs)
+            _cert_rows_star, _naive_star = _crows, _cn
+    B_CERT, _PE_CERT, _T_CERT, _SLACK = _best_cert
+    _dt4 = time.time() - _t0
+    print(f"    B_relax = {mp.nstr(B_RELAX, 22)} at (pe, T) = ({_PE_STAR}, {_T_STAR})")
+    print(f"    argmax (bottom row first) = [{', '.join(mp.nstr(x, 6) for x in _U_STAR)}]")
+    print(f"    B_cert  = {mp.nstr(B_CERT, 24)} at (pe, T) = ({_PE_CERT}, {_T_CERT})   "
+          f"slack {'n/a' if _SLACK is None else mp.nstr(_SLACK, 8)}")
+    print(f"    {len(_r4)} programs in {_dt4:.0f}s", flush=True)
+    # The tail of the per-pe T-sequence, which is what says whether the plain relaxation settles.
+    _tail_inc = {}
+    for _pe in range(0, PEMAX + 1):
+        _seq = [mp.mpf(r["sup"]) for r in _r4 if r["pe"] == _pe]
+        if len(_seq) >= 2:
+            _tail_inc[_pe] = _seq[-1] - _seq[-2]
+    _worst_inc = max(_tail_inc.values()) if _tail_inc else mp.mpf(0)
+    print(f"    last T-increment by pe: "
+          f"{ {p: mp.nstr(v, 6) for p, v in sorted(_tail_inc.items())} }", flush=True)
+    check(
+        "R4 the plain u >= 0 relaxation is valid and CONVERGED — and measurably not tight",
+        (B_CERT >= INT_SUP_BOT and B_CERT >= B_RELAX and not _mono_viol
+         and _res_worst < mp.mpf("1e-10")),
+        f"B_cert = {mp.nstr(B_CERT, 22)} at (pe, T) = ({_PE_CERT}, {_T_CERT}), "
+        f"{mp.nstr(B_CERT / INT_SUP_BOT, 6)}x the enumerated maximum {mp.nstr(INT_SUP_BOT, 16)}.  "
+        f"The ascent point is verified stationary rather than assumed to be: worst KKT residual "
+        f"{mp.nstr(_res_worst, 6)} over {len(_r4)} programs, and 0 violations of the invariant that "
+        f"sup is non-decreasing in T (padding the length-(T-1) optimum with a zero is feasible) — "
+        f"which is the check that caught a cold-start ascent returning 1.8466 at T = 6 against "
+        f"2.0310 at T = 5, and again a search whose lower barrier was wrongly fixed at 0 when the "
+        f"rows BELOW force `u_i > u_j - (b0_i - b0_j)`.  **But the sup does not settle**: the last "
+        f"increment in T is still {mp.nstr(_worst_inc, 6)} at T = {TMAX}.  That is not a "
+        f"convergence failure, it is the relaxation being loose in kind — every Gamma_j is strictly "
+        f"positive, so a real u collects a gain from an arbitrarily small displacement on "
+        f"arbitrarily many rows, and no integer block can do that because its entries jump from 0 "
+        f"to 1.  The top edge has no such gap: its class forces u >= 1, which is exactly why ITS "
+        f"relaxation lands at 1.04x.  R5 closes the gap with a valid inequality rather than by "
+        f"running T further"
+        if (B_CERT >= INT_SUP_BOT and not _mono_viol and _res_worst < mp.mpf("1e-10")) else
+        f"the ascent did not converge: worst KKT residual {mp.nstr(_res_worst, 6)}, "
+        f"{len(_mono_viol)} violations of `sup non-decreasing in T` ({_mono_viol[:3]}).  The "
+        f"certificate is still SOUND — it is valid at any w — but a non-stationary w makes it "
+        f"loose, and B_cert = {mp.nstr(B_CERT, 12)} should not be used"
+        if B_CERT >= INT_SUP_BOT else
+        f"B_cert = {mp.nstr(B_CERT, 22)} does NOT dominate the enumerated maximum "
+        f"{mp.nstr(INT_SUP_BOT, 16)} — an upper bound below an achieved value is unsound, so the "
+        f"extension, the certificate or the frame indexing is wrong.  Do not use this number",
+    )
+    print(flush=True)
 
-    _a, _b = _rp(), _rp()
-    _lam = mp.mpf(random.uniform(mp.mpf("0.05"), mp.mpf("0.95")))
-    _mid = [_lam * p + (1 - _lam) * q for p, q in zip(_a, _b)]
-    _ga, _gb, _gm = G(_a, _pe), G(_b, _pe), G(_mid, _pe)
-    if mp.isinf(_ga) or mp.isinf(_gb) or mp.isinf(_gm):
-        continue
-    _gap = _gm - (_lam * _ga + (1 - _lam) * _gb)
-    _r2_n += 1
-    if _r2_worst is None or _gap < _r2_worst[0]:
-        _r2_worst = (_gap, _pe, _T, _lam)
-print(f"    {_r2_n} random feasible triples, pe = 0..{PEMAX}, T = 2..7")
-print(f"    min G(mid) - [lam G(a) + (1-lam) G(b)] = {mp.nstr(_r2_worst[0], 8)} "
-      f"at pe = {_r2_worst[1]}, T = {_r2_worst[2]}", flush=True)
-check(
-    "R2 the bottom-edge value is concave in u — measured, not assumed",
-    _r2_worst[0] >= 0 and _r2_n >= 100,
-    f"minimum concavity gap {mp.nstr(_r2_worst[0], 6)} over {_r2_n} random feasible triples "
-    f"spanning both environments of the frame.  The reason is one second derivative used four "
-    f"times: `-R(b0 + u)` is concave because `-R' = sum_j gx(b0+u+j)` is decreasing; every pair "
-    f"term is `-eps(g + (u_i - u_j))`, concave composed with a linear map; the above-block tail "
-    f"is `-eps(g - u_j)`; the cost is `-(ln q0/2) sum u^2`.  So maximising over real u is a "
-    f"CONCAVE PROGRAM and a coordinate-wise stationary point is the global maximum",
-)
-print(flush=True)
-
+# ===END R4===
+_stage_end()
 # --------------------------------------------------------------------------------------------
-print("R3  the resummations and the analytic gradient against direct computation")
-_r3_R = max(abs(R(mp.mpf(x)) - mp.fsum(epsx(mp.mpf(x) + j) for j in range(1, 500)))
-            for x in ("0", "0.5", "3", "7.25"))
-_r3_Rg = max(abs(Rg(mp.mpf(x)) - mp.fsum(gx(mp.mpf(x) + j) for j in range(1, 500)))
-             for x in ("0", "0.5", "3", "7.25"))
-_r3_W = mp.mpf(0)
-_r3_Wg = mp.mpf(0)
-for _pe, _T in ((0, 3), (5, 2), (8, 3), (3, 6)):
-    _m = max(0, _pe - _T)
-    _full = list(range(_m)) + [_m + 2 * t for t in range(300)]
-    for _y in ("0.25", "1", "2.5"):
-        _yy = mp.mpf(_y)
-        _r3_W = max(_r3_W, abs(W(_yy, _pe, _T) - mp.fsum(epsx(_yy + d) for d in _full)))
-        _r3_Wg = max(_r3_Wg, abs(Wg(_yy, _pe, _T) - mp.fsum(gx(_yy + d) for d in _full)))
-_r3_g = mp.mpf(0)
-_hstep = mp.mpf(10) ** (-9)
-for _pe, _T in ((0, 3), (6, 4), (8, 2)):
-    _u = [mp.mpf("0.4") + mp.mpf(i) / 10 for i in range(_T)]
-    _an = gradG(_u, _pe)
-    for _i in range(_T):
-        _up, _dn = list(_u), list(_u)
-        _up[_i] += _hstep
-        _dn[_i] -= _hstep
-        _r3_g = max(_r3_g, abs(_an[_i] - (G(_up, _pe) - G(_dn, _pe)) / (2 * _hstep)))
-# and the T-independence of Gamma, which the all-T certificate rests on
-_r3_gam = max(abs(gamma(_pe, _j)
-                  - (Rg(mp.mpf(b0_of(_pe, _j)))
-                     + mp.fsum(gx(b0_of(_pe, _j) - b0_of(_pe, _q)) for _q in range(_j))
-                     - Wg(mp.mpf(b0_of(_pe, _Tl) - b0_of(_pe, _j)), _pe, _Tl)
-                     - mp.fsum(gx(b0_of(_pe, _q) - b0_of(_pe, _j))
-                               for _q in range(_j + 1, _Tl))))
-              for _pe in (0, 4, 8) for _Tl in (3, 7, 11) for _j in range(_Tl))
-print(f"    R  vs direct sum: {mp.nstr(_r3_R, 6)}    Rg: {mp.nstr(_r3_Rg, 6)}")
-print(f"    W  vs direct sum: {mp.nstr(_r3_W, 6)}    Wg: {mp.nstr(_r3_Wg, 6)}")
-print(f"    analytic gradient vs central difference (h = 1e-9): {mp.nstr(_r3_g, 6)}")
-print(f"    Gamma_j is T-free: worst spread over T in {{3,7,11}} = {mp.nstr(_r3_gam, 6)}",
-      flush=True)
-check(
-    "R3 the closed-form tails, the analytic gradient and the T-independence of Gamma hold",
-    (_r3_R < TOL and _r3_Rg < TOL and _r3_W < TOL and _r3_Wg < TOL
-     and _r3_g < mp.mpf(10) ** (-12) and _r3_gam < TOL),
-    f"the resummed `R` and `W` agree with direct sums to {mp.nstr(max(_r3_R, _r3_W), 4)} and "
-    f"their derivative forms to {mp.nstr(max(_r3_Rg, _r3_Wg), 4)}; the analytic gradient agrees "
-    f"with a central difference to {mp.nstr(_r3_g, 4)}.  The direction of that last test "
-    f"matters: the CERTIFICATE uses the analytic form, because the supergradient inequality is "
-    f"about the true gradient and a difference quotient would make it a statement about the "
-    f"step size — the finite difference is here only to catch an algebra slip.  And `Gamma_j` "
-    f"agrees to {mp.nstr(_r3_gam, 4)} across block lengths 3, 7 and 11, which is the fact the "
-    f"all-T certificate rests on: the block rows above `j` and the undisplaced tail above the "
-    f"block are one sum split at an arbitrary place",
-)
-print(flush=True)
+if _stage_begin("R5", "# ===END " + "R5==="):
+    print("R5  closing the integrality gap: the valid inequality `u^2 >= u`")
+    # `lam` is free in [0, ln q0 / 2) and every value gives a VALID bound, so the best is the
+    # smallest.  **Select on the certificate, not on the tangent sum.**  Measured, the T-free
+    # tangent sum `sum_j cap_j(lam)` goes the WRONG way — 14.17 at lam = 0 rising to 251 at
+    # 0.95 lam_max — because the cap is `Gamma'^2 / (2(ln q0 - 2 lam))` and the denominator
+    # collapses faster than the numerator shrinks on the dominant row, where `Gamma ~ 1.42 >> lam`.
+    # Choosing lam by that proxy picks lam = 0 and throws the whole tightening away.  What lam
+    # actually buys is at the OTHER end of the frame: a padded row with `Gamma_j < lam` has a
+    # negative gradient at `w_j = 0`, so its box maximum is at `lo_j = 0 = w_j` and it is charged
+    # exactly nothing.
+    _LAMS = [LAM_MAX * mp.mpf(f) / 20 for f in (0, 4, 10)]
+    _tan_lam = {str(mp.nstr(L, 8)): {pe: cap_sum(pe, L) for pe in range(0, PEMAX + 1)}
+                for L in _LAMS}
+    _tan = _tan_lam[str(mp.nstr(_LAMS[0], 8))]
+    _B_TAN = max(_tan.values())
+    _pe_tan = max(_tan, key=lambda p: _tan[p])
+    print(f"    lam = 0 tangent sums by pe: { {p: mp.nstr(v, 8) for p, v in sorted(_tan.items())} }")
+    print(f"    B_tangent(lam = 0) = {mp.nstr(_B_TAN, 14)} at pe = {_pe_tan} "
+          f"({mp.nstr(_B_TAN / INT_SUP_BOT, 6)}x) — and it RISES with lam, which is why the scan "
+          f"below selects on the certificate instead")
 
-# --------------------------------------------------------------------------------------------
-print("R4  the relaxed supremum and its certificate, per (pe, T)")
-_t0 = time.time()
-_BOTS = _bot_profiles(BMAX, BUMAX)
-_XB = _bot_table(_BOTS)
-INT_SUP_BOT = _sc(max(v for v, _, _ in _XB.values()))
-_int_arg = max(_XB.items(), key=lambda kv: kv[1][0])
-print(f"    enumerated Xbot max (BMAX={BMAX}, BUMAX={BUMAX}): {mp.nstr(INT_SUP_BOT, 22)} "
-      f"at s = {_int_arg[0]}, bot {list(_int_arg[1][1])}, pe = {_int_arg[1][2]}  "
-      f"[{time.time() - _t0:.0f}s]", flush=True)
+    # Stage 1: scan lam at the single worst frame (|lam| ascents), rather than at every frame
+    # (|lam| x |pe| ascents).  The minimiser is a property of the accumulation being suppressed,
+    # which is the same mechanism in every frame.
+    _pe_scan = max(range(0, PEMAX + 1),
+                   key=lambda p: max((mp.mpf(r["sup"]) for r in _r4 if r["pe"] == p),
+                                     default=mp.mpf(0)))
+    _best_T_scan = max((r for r in _r4 if r["pe"] == _pe_scan), key=lambda r: mp.mpf(r["sup"]))["T"]
+    _scan = []
+    _lam_star = None
+    _lam_best = None
+    _warm_l = _ARG[(_pe_scan, _best_T_scan)]
+    for _lm in _LAMS:
+        _vs, _ws, _rs = _relaxed_sup_ck(_pe_scan, JPAD, warm=_warm_l, lam=_lm)
+        _warm_l = list(_ws)
+        # The incumbent must be a lower bound on THIS program's sup, and `B_RELAX` — the lam = 0
+        # ascent value — need not be one: `G_lam(u) = G(u) + lam sum u(u-1)` is SMALLER than `G(u)`
+        # wherever the optimum's coordinates sit below 1, which several of them do.  What survives
+        # the change of program is the integer maximum, because an integer point has
+        # `sum u(u-1) >= 0` and so `G_lam >= G` there.  (A too-large incumbent would not make the
+        # certificate unsound — `sup <= max(V, ...)` holds for any V — but it would floor the
+        # reported bound at a number this program may never reach.)
+        _inc_l = max(INT_SUP_BOT, _vs)
+        _bs, _, _, _rws, _exs, _pads, _tls = certificate(
+            _pe_scan, _ws, _inc_l, caps_total=_tan_lam[str(mp.nstr(_lm, 8))][_pe_scan],
+            all_T=True, lam=_lm)
+        _scan.append({"lam": mp.nstr(_lm, 12), "frac_of_max": mp.nstr(_lm / LAM_MAX, 4),
+                      "ascent": mp.nstr(_vs, 18), "all_T_bound": mp.nstr(_bs, 18),
+                      "padded_charge": mp.nstr(_pads, 8), "rows": len(_rws or [])})
+        print(f"    lam = {mp.nstr(_lm, 10):12s} ({mp.nstr(_lm / LAM_MAX, 4):>7s} of max): "
+              f"ascent {mp.nstr(_vs, 12):16s} all-T bound {mp.nstr(_bs, 14):18s} "
+              f"padded charge {mp.nstr(_pads, 6)}", flush=True)
+        if _lam_best is None or _bs < _lam_best:
+            _lam_best, _lam_star = _bs, _lm
+    print(f"    certificate-optimal lam = {mp.nstr(_lam_star, 10)} "
+          f"({mp.nstr(_lam_star / LAM_MAX, 4)} of the concavity limit), scanned at pe = {_pe_scan}",
+          flush=True)
 
-_r4 = []
-_best_relax = None
-_ARG: dict[tuple[int, int], list] = {}
-_mono_viol = []
-_res_worst = mp.mpf(0)
-for _pe in range(0, PEMAX + 1):
-    _bp = None
-    _warm = None
-    _prev_v = None
-    for _T in range(1, TMAX + 1):
-        _v, _u, _res = relaxed_sup(_pe, _T, warm=_warm)
-        if mp.isinf(_v):
+    _allT = {}
+    _best_allT = None
+    _best_int = None
+    for _pe in range(0, PEMAX + 1):
+        _rows_pe = [r for r in _r4 if r["pe"] == _pe]
+        if not _rows_pe:
             continue
-        _warm = list(_u)
-        _ARG[(_pe, _T)] = list(_u)
-        _res_worst = max(_res_worst, _res)
-        # sup must be non-decreasing in T: padding the length-(T-1) optimum with a zero is
-        # feasible at length T and has the same value (Gamma is T-free).  A drop means the
-        # ascent failed, and nothing else reports that.
-        if _prev_v is not None and _v < _prev_v - TOL:
-            _mono_viol.append({"pe": _pe, "T": _T, "sup": mp.nstr(_v, 18),
-                               "prev": mp.nstr(_prev_v, 18)})
-        _prev_v = _v
-        _r4.append({"pe": _pe, "T": _T, "sup": mp.nstr(_v, 22),
-                    "kkt_residual": mp.nstr(_res, 8),
-                    "argmax": [mp.nstr(x, 10) for x in _u]})
-        if _bp is None or _v > _bp[0]:
-            _bp = (_v, _T, list(_u))
-        if _best_relax is None or _v > _best_relax[0]:
-            _best_relax = (_v, _pe, _T, list(_u))
-    if _bp:
-        print(f"    pe = {_pe}: best relaxed {mp.nstr(_bp[0], 18):22s} at T = {_bp[1]:2d}   "
-              f"[{', '.join(mp.nstr(x, 5) for x in _bp[2][:6])}"
-              f"{'...' if len(_bp[2]) > 6 else ''}]", flush=True)
-B_RELAX, _PE_STAR, _T_STAR, _U_STAR = _best_relax
-print(f"    worst KKT residual over all programs: {mp.nstr(_res_worst, 6)};  "
-      f"monotonicity violations in T: {len(_mono_viol)}", flush=True)
-# The ascent value is ACHIEVED, so it is a valid incumbent — and a tighter one than the
-# enumeration.  A larger incumbent narrows the certificate's box; it cannot invalidate it.
-INCUMBENT = max(B_RELAX, INT_SUP_BOT)
-_best_cert = None
-_cert_rows_star = _naive_star = None
-for _row in _r4:
-    _pe, _T = _row["pe"], _row["T"]
-    _w = _ARG[(_pe, _T)]                     # the ascent point itself, not a 10-digit round trip
-    _cb, _cs, _cn, _crows, _excl, _, _ = certificate(
-        _pe, _w, INCUMBENT,
-        caps_total=mp.fsum(row_cap(_pe, j) for j in range(_T)))
-    _row["certified_bound"] = mp.nstr(_cb, 22)
-    _row["slack"] = None if _cs is None else mp.nstr(_cs, 12)
-    _row["excluded_by_row_box"] = _excl
-    if _best_cert is None or _cb > _best_cert[0]:
-        _best_cert = (_cb, _pe, _T, _cs)
-        _cert_rows_star, _naive_star = _crows, _cn
-B_CERT, _PE_CERT, _T_CERT, _SLACK = _best_cert
-_dt4 = time.time() - _t0
-print(f"    B_relax = {mp.nstr(B_RELAX, 22)} at (pe, T) = ({_PE_STAR}, {_T_STAR})")
-print(f"    argmax (bottom row first) = [{', '.join(mp.nstr(x, 6) for x in _U_STAR)}]")
-print(f"    B_cert  = {mp.nstr(B_CERT, 24)} at (pe, T) = ({_PE_CERT}, {_T_CERT})   "
-      f"slack {'n/a' if _SLACK is None else mp.nstr(_SLACK, 8)}")
-print(f"    {len(_r4)} programs in {_dt4:.0f}s", flush=True)
-# The tail of the per-pe T-sequence, which is what says whether the plain relaxation settles.
-_tail_inc = {}
-for _pe in range(0, PEMAX + 1):
-    _seq = [mp.mpf(r["sup"]) for r in _r4 if r["pe"] == _pe]
-    if len(_seq) >= 2:
-        _tail_inc[_pe] = _seq[-1] - _seq[-2]
-_worst_inc = max(_tail_inc.values()) if _tail_inc else mp.mpf(0)
-print(f"    last T-increment by pe: "
-      f"{ {p: mp.nstr(v, 6) for p, v in sorted(_tail_inc.items())} }", flush=True)
-check(
-    "R4 the plain u >= 0 relaxation is valid and CONVERGED — and measurably not tight",
-    (B_CERT >= INT_SUP_BOT and B_CERT >= B_RELAX and not _mono_viol
-     and _res_worst < mp.mpf("1e-10")),
-    f"B_cert = {mp.nstr(B_CERT, 22)} at (pe, T) = ({_PE_CERT}, {_T_CERT}), "
-    f"{mp.nstr(B_CERT / INT_SUP_BOT, 6)}x the enumerated maximum {mp.nstr(INT_SUP_BOT, 16)}.  "
-    f"The ascent point is verified stationary rather than assumed to be: worst KKT residual "
-    f"{mp.nstr(_res_worst, 6)} over {len(_r4)} programs, and 0 violations of the invariant that "
-    f"sup is non-decreasing in T (padding the length-(T-1) optimum with a zero is feasible) — "
-    f"which is the check that caught a cold-start ascent returning 1.8466 at T = 6 against "
-    f"2.0310 at T = 5, and again a search whose lower barrier was wrongly fixed at 0 when the "
-    f"rows BELOW force `u_i > u_j - (b0_i - b0_j)`.  **But the sup does not settle**: the last "
-    f"increment in T is still {mp.nstr(_worst_inc, 6)} at T = {TMAX}.  That is not a "
-    f"convergence failure, it is the relaxation being loose in kind — every Gamma_j is strictly "
-    f"positive, so a real u collects a gain from an arbitrarily small displacement on "
-    f"arbitrarily many rows, and no integer block can do that because its entries jump from 0 "
-    f"to 1.  The top edge has no such gap: its class forces u >= 1, which is exactly why ITS "
-    f"relaxation lands at 1.04x.  R5 closes the gap with a valid inequality rather than by "
-    f"running T further"
-    if (B_CERT >= INT_SUP_BOT and not _mono_viol and _res_worst < mp.mpf("1e-10")) else
-    f"the ascent did not converge: worst KKT residual {mp.nstr(_res_worst, 6)}, "
-    f"{len(_mono_viol)} violations of `sup non-decreasing in T` ({_mono_viol[:3]}).  The "
-    f"certificate is still SOUND — it is valid at any w — but a non-stationary w makes it "
-    f"loose, and B_cert = {mp.nstr(B_CERT, 12)} should not be used"
-    if B_CERT >= INT_SUP_BOT else
-    f"B_cert = {mp.nstr(B_CERT, 22)} does NOT dominate the enumerated maximum "
-    f"{mp.nstr(INT_SUP_BOT, 16)} — an upper bound below an achieved value is unsound, so the "
-    f"extension, the certificate or the frame indexing is wrong.  Do not use this number",
-)
-print(flush=True)
+        _bw = max(_rows_pe, key=lambda r: mp.mpf(r["sup"]))
+        # The ascent must COVER the rows the certificate charges.  Padding a SHORT optimum and
+        # charging the appended rows `g_j U_j` at `w_j = 0` cost 19.27 in an earlier run — those
+        # rows were never ascended, so their gradients are the whole positive slope.  Run the ascent
+        # at the long length instead (warm-started from the T-loop, so it is a few sweeps); only the
+        # rows past it are padded, where `Gamma_j ~ T2^(-b0_j)` has decayed to nothing.
+        _vl, _w_pe, _resl = _relaxed_sup_ck(_pe, JPAD, warm=_ARG[(_pe, _bw["T"])], lam=_lam_star)
+        _res_worst = max(_res_worst, _resl)
+        _ab, _as_, _an2, _arows, _aexcl, _apad, _atail = certificate(
+            _pe, _w_pe, max(INT_SUP_BOT, _vl),     # see the incumbent note in the lam scan above
+            caps_total=_tan_lam[str(mp.nstr(_lam_star, 8))][_pe],
+            all_T=True, lam=_lam_star)
+        _atail, _tmode = _atail
+        # The integer box (`integer_box=True`): the same certificate with each charged row's
+        # interval rounded to the integers it contains.  Taken at two incumbents and the
+        # smaller kept — both are valid, and they trade off: the ascent value narrows the box
+        # but floors the result at a REAL value no integer block need reach; the enumerated
+        # maximum is achieved by an integer block and floors nothing, at a wider box.
+        _ib = min(certificate(_pe, _w_pe, _inc, caps_total=_tan_lam[str(mp.nstr(_lam_star, 8))][_pe],
+                              all_T=True, lam=_lam_star, integer_box=True)[0]
+                  for _inc in (max(INT_SUP_BOT, _vl), INT_SUP_BOT))
+        _allT[_pe] = {"bound": mp.nstr(_ab, 22), "bound_integer_box": mp.nstr(_ib, 22),
+                      "rows": len(_arows or []),
+                      "ascent_rows": JPAD, "ascent_value": mp.nstr(_vl, 22),
+                      "kkt_residual": mp.nstr(_resl, 8), "excluded": _aexcl,
+                      "padded_charge": mp.nstr(_apad, 10), "tail": mp.nstr(_atail, 10),
+                      "tail_mode": _tmode}
+        print(f"    pe = {_pe}: ascent at {JPAD} rows -> {mp.nstr(_vl, 18):22s} (KKT "
+              f"{mp.nstr(_resl, 4)});  all-T bound {mp.nstr(_ab, 18):22s} over "
+              f"{len(_arows or []):3d} rows, padded charge {mp.nstr(_apad, 6)}, tail "
+              f"{mp.nstr(_atail, 6)} [{_tmode}];  integer box {mp.nstr(_ib, 18)}", flush=True)
+        if _best_int is None or _ib > _best_int[0]:
+            _best_int = (_ib, _pe)
+        if _best_allT is None or _ab > _best_allT[0]:
+            _best_allT = (_ab, _pe, _arows, _atail, _apad, _tmode)
+    B_ALLT, _PE_ALLT, _allT_rows, _allT_tail, _allT_pad, _allT_tmode = _best_allT
+    print(f"    B_allT = {mp.nstr(B_ALLT, 24)} at pe = {_PE_ALLT}, lam = {mp.nstr(_lam_star, 8)}  "
+          f"({mp.nstr(B_ALLT / INT_SUP_BOT, 6)}x the enumerated maximum)", flush=True)
+    B_ALLT_INT, _PE_ALLT_INT = _best_int
+    print(f"    B_allT, integer box = {mp.nstr(B_ALLT_INT, 24)} at pe = {_PE_ALLT_INT}  "
+          f"({mp.nstr(B_ALLT_INT / INT_SUP_BOT, 6)}x; gain {mp.nstr(B_ALLT - B_ALLT_INT, 8)})",
+          flush=True)
+    check(
+        "R5b the integer box is sound and no looser than the real box",
+        INT_SUP_BOT <= B_ALLT_INT <= B_ALLT,
+        f"B_allT with every charged row's interval rounded to its integers is "
+        f"{mp.nstr(B_ALLT_INT, 22)} against {mp.nstr(B_ALLT, 22)} on the real box — "
+        f"{mp.nstr(B_ALLT_INT / INT_SUP_BOT, 6)}x the enumerated maximum, a gain of "
+        f"{mp.nstr(B_ALLT - B_ALLT_INT, 8)}.  Sound because Xbot is a maximum over integer "
+        f"blocks only (as the lam program already requires: u^2 >= u holds on integers only), "
+        f"and it still dominates the enumerated maximum, which an integer block attains"
+        if INT_SUP_BOT <= B_ALLT_INT <= B_ALLT else
+        f"B_allT(integer box) = {mp.nstr(B_ALLT_INT, 22)} is outside "
+        f"[enumerated max {mp.nstr(INT_SUP_BOT, 16)}, real box {mp.nstr(B_ALLT, 16)}] — below the "
+        f"enumerated maximum it is unsound, above the real box the rounding is wrong",
+    )
+    # A uniform slope bound valid at EVERY pe and j, not only the measured frames: the downward
+    # pair gains sit at distinct positive integer gaps, so they sum to at most `Rg(0)`, and the
+    # one-body slope is at most `Rg(0)` too.
+    _gam_uni = 2 * Rg(mp.mpf(0))
+    _gam_max = max(gamma(p, j) for p in range(0, PEMAX + 1) for j in range(0, 24))
+    _Qs = LNQ - 2 * _lam_star
+    _pe0 = None
+    for _pp in range(1, 20000):
+        _gp = _gam_uni - LNQ * (_pp - JPAD + 1) - _lam_star
+        # Compare against the ENUMERATED maximum, which is achieved at an integer point: excluding a
+        # frame is only licensed by a value something actually attains.
+        if _pp > JPAD and JPAD * (_gp * _gp / (2 * _Qs) if _gp > 0 else mp.mpf(0)) < INT_SUP_BOT:
+            _pe0 = _pp
+            break
+    print(f"    Gamma_max measured = {mp.nstr(_gam_max, 10)};  uniform bound 2*Rg(0) = "
+          f"{mp.nstr(_gam_uni, 10)}")
+    print(f"    wall depth bound: pe0 = {_pe0} for blocks of length <= {JPAD}", flush=True)
+    # Compare like with like: both of these are the all-T bound AT THE SCAN FRAME, one with the
+    # tightening off and one at the selected lam.  `B_ALLT` is the max over every frame at lam*, so
+    # it is a different quantity and comparing the two would be the apples-to-oranges error this
+    # file has already had to correct once (`B_cert` is a per-program bound over T <= TMAX).
+    _B_ALLT_LAM0 = mp.mpf(_scan[0]["all_T_bound"])
+    _B_ALLT_SCAN = mp.mpf(min(_scan, key=lambda r: mp.mpf(r["all_T_bound"]))["all_T_bound"])
+    _LAM_GAIN = _B_ALLT_LAM0 - _B_ALLT_SCAN
+    check(
+        "R5 the all-T bound is sound, both dimensions are bounded, and the tightening is measured",
+        (_allT_tail is not None and _allT_tail < TOL and _pe0 is not None
+         and B_ALLT >= INT_SUP_BOT and _LAM_GAIN >= 0),
+        f"Every integer `u_j >= 0` satisfies `u_j^2 >= u_j`, so for any `lam >= 0` the integer "
+        f"supremum is bounded by `sup_{{real u >= 0}} [G(u) + lam sum_j (u_j^2 - u_j)]` — and since "
+        f"`+lam sum u^2` eats into `G`'s own `-(ln q0/2) sum u^2`, that stays CONCAVE for "
+        f"`lam < ln q0/2 = {mp.nstr(LAM_MAX, 8)}`.  Every lam gives a valid bound, so the best is "
+        f"the smallest: the scan picks lam = {mp.nstr(_lam_star, 8)} "
+        f"({mp.nstr(_lam_star / LAM_MAX, 4)} of the concavity limit), giving B_allT = "
+        f"{mp.nstr(B_ALLT, 22)} at pe = {_PE_ALLT}, which is {mp.nstr(B_ALLT / INT_SUP_BOT, 6)}x the "
+        f"enumerated maximum against 9.62x for the sibling probe's per-row coercivity bound.  What "
+        f"lam is worth, measured LIKE FOR LIKE at the scan frame pe = {_pe_scan}: "
+        f"{mp.nstr(_B_ALLT_LAM0, 12)} with the tightening off against {mp.nstr(_B_ALLT_SCAN, 12)} at "
+        f"lam*, a gain of {mp.nstr(_LAM_GAIN, 6)}.  (`B_cert` = {mp.nstr(B_CERT / INT_SUP_BOT, 6)}x "
+        f"is NOT comparable to either — it is a per-program bound over T <= {TMAX} only.)  "
+        f"The charge `-lam u_j` falls on exactly the rows the "
+        f"relaxation was exploiting: every row with `Gamma_j < lam` is driven to zero, which "
+        f"truncates at a finite support the accumulation of arbitrarily-small displacements that no "
+        f"integer block can make.  The bound covers every block length because `Gamma_j` is T-free "
+        f"(R3), so padding the ascent point with zeros changes neither `G(w)` nor any box; the "
+        f"padded rows are charged {mp.nstr(_allT_pad, 6)} in total and the remainder beyond them is "
+        f"{_allT_tmode} ({mp.nstr(_allT_tail, 6)}) — never dropped.  The wall "
+        f"depth is bounded separately and uniformly in pe: every slope is at most `2 Rg(0) = "
+        f"{mp.nstr(_gam_uni, 8)}` (one-body plus downward gains, which sit at distinct positive "
+        f"integer gaps), while a block of length <= {JPAD} in a pe-deep wall pays "
+        f"`ln q0 (pe - T + 1)` per row, so none in a wall deeper than pe0 = {_pe0} reaches the "
+        f"incumbent.  pe was a CAP in the enumeration (P_EXT_MAX = 8), not a bound"
+        if (_pe0 is not None and B_ALLT >= INT_SUP_BOT and _LAM_GAIN >= 0) else
+        f"the all-T bound did not close: B_allT = {mp.nstr(B_ALLT, 12)} at lam = "
+        f"{mp.nstr(_lam_star, 8)} against {mp.nstr(_B_ALLT_LAM0, 12)} at lam = 0, tail "
+        f"{'n/a' if _allT_tail is None else mp.nstr(_allT_tail, 6)}, pe0 = {_pe0}.  The valid "
+        f"inequality is sound — `u^2 >= u` holds for every non-negative integer — so the bound "
+        f"stands either way; this is a statement about the scan, the grid or the ascent",
+    )
+    print(flush=True)
 
-# --------------------------------------------------------------------------------------------
-print("R5  closing the integrality gap: the valid inequality `u^2 >= u`")
-# `lam` is free in [0, ln q0 / 2) and every value gives a VALID bound, so the best is the
-# smallest.  **Select on the certificate, not on the tangent sum.**  Measured, the T-free
-# tangent sum `sum_j cap_j(lam)` goes the WRONG way — 14.17 at lam = 0 rising to 251 at
-# 0.95 lam_max — because the cap is `Gamma'^2 / (2(ln q0 - 2 lam))` and the denominator
-# collapses faster than the numerator shrinks on the dominant row, where `Gamma ~ 1.42 >> lam`.
-# Choosing lam by that proxy picks lam = 0 and throws the whole tightening away.  What lam
-# actually buys is at the OTHER end of the frame: a padded row with `Gamma_j < lam` has a
-# negative gradient at `w_j = 0`, so its box maximum is at `lo_j = 0 = w_j` and it is charged
-# exactly nothing.
-_LAMS = [LAM_MAX * mp.mpf(f) / 20 for f in (0, 4, 10)]
-_tan_lam = {str(mp.nstr(L, 8)): {pe: cap_sum(pe, L) for pe in range(0, PEMAX + 1)}
-            for L in _LAMS}
-_tan = _tan_lam[str(mp.nstr(_LAMS[0], 8))]
-_B_TAN = max(_tan.values())
-_pe_tan = max(_tan, key=lambda p: _tan[p])
-print(f"    lam = 0 tangent sums by pe: { {p: mp.nstr(v, 8) for p, v in sorted(_tan.items())} }")
-print(f"    B_tangent(lam = 0) = {mp.nstr(_B_TAN, 14)} at pe = {_pe_tan} "
-      f"({mp.nstr(_B_TAN / INT_SUP_BOT, 6)}x) — and it RISES with lam, which is why the scan "
-      f"below selects on the certificate instead")
-
-# Stage 1: scan lam at the single worst frame (|lam| ascents), rather than at every frame
-# (|lam| x |pe| ascents).  The minimiser is a property of the accumulation being suppressed,
-# which is the same mechanism in every frame.
-_pe_scan = max(range(0, PEMAX + 1),
-               key=lambda p: max((mp.mpf(r["sup"]) for r in _r4 if r["pe"] == p),
-                                 default=mp.mpf(0)))
-_best_T_scan = max((r for r in _r4 if r["pe"] == _pe_scan), key=lambda r: mp.mpf(r["sup"]))["T"]
-_scan = []
-_lam_star = None
-_lam_best = None
-_warm_l = _ARG[(_pe_scan, _best_T_scan)]
-for _lm in _LAMS:
-    _vs, _ws, _rs = relaxed_sup(_pe_scan, JPAD, warm=_warm_l, lam=_lm)
-    _warm_l = list(_ws)
-    # The incumbent must be a lower bound on THIS program's sup, and `B_RELAX` — the lam = 0
-    # ascent value — need not be one: `G_lam(u) = G(u) + lam sum u(u-1)` is SMALLER than `G(u)`
-    # wherever the optimum's coordinates sit below 1, which several of them do.  What survives
-    # the change of program is the integer maximum, because an integer point has
-    # `sum u(u-1) >= 0` and so `G_lam >= G` there.  (A too-large incumbent would not make the
-    # certificate unsound — `sup <= max(V, ...)` holds for any V — but it would floor the
-    # reported bound at a number this program may never reach.)
-    _inc_l = max(INT_SUP_BOT, _vs)
-    _bs, _, _, _rws, _exs, _pads, _tls = certificate(
-        _pe_scan, _ws, _inc_l, caps_total=_tan_lam[str(mp.nstr(_lm, 8))][_pe_scan],
-        all_T=True, lam=_lm)
-    _scan.append({"lam": mp.nstr(_lm, 12), "frac_of_max": mp.nstr(_lm / LAM_MAX, 4),
-                  "ascent": mp.nstr(_vs, 18), "all_T_bound": mp.nstr(_bs, 18),
-                  "padded_charge": mp.nstr(_pads, 8), "rows": len(_rws or [])})
-    print(f"    lam = {mp.nstr(_lm, 10):12s} ({mp.nstr(_lm / LAM_MAX, 4):>7s} of max): "
-          f"ascent {mp.nstr(_vs, 12):16s} all-T bound {mp.nstr(_bs, 14):18s} "
-          f"padded charge {mp.nstr(_pads, 6)}", flush=True)
-    if _lam_best is None or _bs < _lam_best:
-        _lam_best, _lam_star = _bs, _lm
-print(f"    certificate-optimal lam = {mp.nstr(_lam_star, 10)} "
-      f"({mp.nstr(_lam_star / LAM_MAX, 4)} of the concavity limit), scanned at pe = {_pe_scan}",
-      flush=True)
-
-_allT = {}
-_best_allT = None
-for _pe in range(0, PEMAX + 1):
-    _rows_pe = [r for r in _r4 if r["pe"] == _pe]
-    if not _rows_pe:
-        continue
-    _bw = max(_rows_pe, key=lambda r: mp.mpf(r["sup"]))
-    # The ascent must COVER the rows the certificate charges.  Padding a SHORT optimum and
-    # charging the appended rows `g_j U_j` at `w_j = 0` cost 19.27 in an earlier run — those
-    # rows were never ascended, so their gradients are the whole positive slope.  Run the ascent
-    # at the long length instead (warm-started from the T-loop, so it is a few sweeps); only the
-    # rows past it are padded, where `Gamma_j ~ T2^(-b0_j)` has decayed to nothing.
-    _vl, _w_pe, _resl = relaxed_sup(_pe, JPAD, warm=_ARG[(_pe, _bw["T"])], lam=_lam_star)
-    _res_worst = max(_res_worst, _resl)
-    _ab, _as_, _an2, _arows, _aexcl, _apad, _atail = certificate(
-        _pe, _w_pe, max(INT_SUP_BOT, _vl),     # see the incumbent note in the lam scan above
-        caps_total=_tan_lam[str(mp.nstr(_lam_star, 8))][_pe],
-        all_T=True, lam=_lam_star)
-    _atail, _tmode = _atail
-    _allT[_pe] = {"bound": mp.nstr(_ab, 22), "rows": len(_arows or []),
-                  "ascent_rows": JPAD, "ascent_value": mp.nstr(_vl, 22),
-                  "kkt_residual": mp.nstr(_resl, 8), "excluded": _aexcl,
-                  "padded_charge": mp.nstr(_apad, 10), "tail": mp.nstr(_atail, 10),
-                  "tail_mode": _tmode}
-    print(f"    pe = {_pe}: ascent at {JPAD} rows -> {mp.nstr(_vl, 18):22s} (KKT "
-          f"{mp.nstr(_resl, 4)});  all-T bound {mp.nstr(_ab, 18):22s} over "
-          f"{len(_arows or []):3d} rows, padded charge {mp.nstr(_apad, 6)}, tail "
-          f"{mp.nstr(_atail, 6)} [{_tmode}]", flush=True)
-    if _best_allT is None or _ab > _best_allT[0]:
-        _best_allT = (_ab, _pe, _arows, _atail, _apad, _tmode)
-B_ALLT, _PE_ALLT, _allT_rows, _allT_tail, _allT_pad, _allT_tmode = _best_allT
-print(f"    B_allT = {mp.nstr(B_ALLT, 24)} at pe = {_PE_ALLT}, lam = {mp.nstr(_lam_star, 8)}  "
-      f"({mp.nstr(B_ALLT / INT_SUP_BOT, 6)}x the enumerated maximum)", flush=True)
-# A uniform slope bound valid at EVERY pe and j, not only the measured frames: the downward
-# pair gains sit at distinct positive integer gaps, so they sum to at most `Rg(0)`, and the
-# one-body slope is at most `Rg(0)` too.
-_gam_uni = 2 * Rg(mp.mpf(0))
-_gam_max = max(gamma(p, j) for p in range(0, PEMAX + 1) for j in range(0, 24))
-_Qs = LNQ - 2 * _lam_star
-_pe0 = None
-for _pp in range(1, 20000):
-    _gp = _gam_uni - LNQ * (_pp - JPAD + 1) - _lam_star
-    # Compare against the ENUMERATED maximum, which is achieved at an integer point: excluding a
-    # frame is only licensed by a value something actually attains.
-    if _pp > JPAD and JPAD * (_gp * _gp / (2 * _Qs) if _gp > 0 else mp.mpf(0)) < INT_SUP_BOT:
-        _pe0 = _pp
-        break
-print(f"    Gamma_max measured = {mp.nstr(_gam_max, 10)};  uniform bound 2*Rg(0) = "
-      f"{mp.nstr(_gam_uni, 10)}")
-print(f"    wall depth bound: pe0 = {_pe0} for blocks of length <= {JPAD}", flush=True)
-# Compare like with like: both of these are the all-T bound AT THE SCAN FRAME, one with the
-# tightening off and one at the selected lam.  `B_ALLT` is the max over every frame at lam*, so
-# it is a different quantity and comparing the two would be the apples-to-oranges error this
-# file has already had to correct once (`B_cert` is a per-program bound over T <= TMAX).
-_B_ALLT_LAM0 = mp.mpf(_scan[0]["all_T_bound"])
-_B_ALLT_SCAN = mp.mpf(min(_scan, key=lambda r: mp.mpf(r["all_T_bound"]))["all_T_bound"])
-_LAM_GAIN = _B_ALLT_LAM0 - _B_ALLT_SCAN
-check(
-    "R5 the all-T bound is sound, both dimensions are bounded, and the tightening is measured",
-    (_allT_tail is not None and _allT_tail < TOL and _pe0 is not None
-     and B_ALLT >= INT_SUP_BOT and _LAM_GAIN >= 0),
-    f"Every integer `u_j >= 0` satisfies `u_j^2 >= u_j`, so for any `lam >= 0` the integer "
-    f"supremum is bounded by `sup_{{real u >= 0}} [G(u) + lam sum_j (u_j^2 - u_j)]` — and since "
-    f"`+lam sum u^2` eats into `G`'s own `-(ln q0/2) sum u^2`, that stays CONCAVE for "
-    f"`lam < ln q0/2 = {mp.nstr(LAM_MAX, 8)}`.  Every lam gives a valid bound, so the best is "
-    f"the smallest: the scan picks lam = {mp.nstr(_lam_star, 8)} "
-    f"({mp.nstr(_lam_star / LAM_MAX, 4)} of the concavity limit), giving B_allT = "
-    f"{mp.nstr(B_ALLT, 22)} at pe = {_PE_ALLT}, which is {mp.nstr(B_ALLT / INT_SUP_BOT, 6)}x the "
-    f"enumerated maximum against 9.62x for the sibling probe's per-row coercivity bound.  What "
-    f"lam is worth, measured LIKE FOR LIKE at the scan frame pe = {_pe_scan}: "
-    f"{mp.nstr(_B_ALLT_LAM0, 12)} with the tightening off against {mp.nstr(_B_ALLT_SCAN, 12)} at "
-    f"lam*, a gain of {mp.nstr(_LAM_GAIN, 6)}.  (`B_cert` = {mp.nstr(B_CERT / INT_SUP_BOT, 6)}x "
-    f"is NOT comparable to either — it is a per-program bound over T <= {TMAX} only.)  "
-    f"The charge `-lam u_j` falls on exactly the rows the "
-    f"relaxation was exploiting: every row with `Gamma_j < lam` is driven to zero, which "
-    f"truncates at a finite support the accumulation of arbitrarily-small displacements that no "
-    f"integer block can make.  The bound covers every block length because `Gamma_j` is T-free "
-    f"(R3), so padding the ascent point with zeros changes neither `G(w)` nor any box; the "
-    f"padded rows are charged {mp.nstr(_allT_pad, 6)} in total and the remainder beyond them is "
-    f"{_allT_tmode} ({mp.nstr(_allT_tail, 6)}) — never dropped.  The wall "
-    f"depth is bounded separately and uniformly in pe: every slope is at most `2 Rg(0) = "
-    f"{mp.nstr(_gam_uni, 8)}` (one-body plus downward gains, which sit at distinct positive "
-    f"integer gaps), while a block of length <= {JPAD} in a pe-deep wall pays "
-    f"`ln q0 (pe - T + 1)` per row, so none in a wall deeper than pe0 = {_pe0} reaches the "
-    f"incumbent.  pe was a CAP in the enumeration (P_EXT_MAX = 8), not a bound"
-    if (_pe0 is not None and B_ALLT >= INT_SUP_BOT and _LAM_GAIN >= 0) else
-    f"the all-T bound did not close: B_allT = {mp.nstr(B_ALLT, 12)} at lam = "
-    f"{mp.nstr(_lam_star, 8)} against {mp.nstr(_B_ALLT_LAM0, 12)} at lam = 0, tail "
-    f"{'n/a' if _allT_tail is None else mp.nstr(_allT_tail, 6)}, pe0 = {_pe0}.  The valid "
-    f"inequality is sound — `u^2 >= u` holds for every non-negative integer — so the bound "
-    f"stands either way; this is a statement about the scan, the grid or the ascent",
-)
-print(flush=True)
-
+# ===END R5===
+_stage_end()
 # --------------------------------------------------------------------------------------------
 print("R6  what a certified B_bot buys — the cut, with G1 not used")
 # NOT `min(B_CERT, B_ALLT)`: `B_CERT` is a per-program bound over the measured lengths
 # `T <= TMAX` only, so it is not comparable.  `B_ALLT` is the one that covers every length.
-B_BOT = B_ALLT
+# The integer box is a bound on the same integer supremum and never looser (R5b), so it is the
+# one the cut uses; the real-box cut is still printed so the gain is visible as a cut width.
+B_BOT = min(B_ALLT, B_ALLT_INT)
 _cut_g1 = cut_for(B_TOP_CERT, B_TOP_CERT)      # #7349's cut, which goes through G1
+_cut_free_real = cut_for(B_TOP_CERT, B_ALLT)   # the real-box B_allT, as before
 _cut_free = cut_for(B_TOP_CERT, B_BOT)         # the same cut from two separate caps
 _n_g1 = blocks_with_sum_at_most(_cut_g1) if _cut_g1 <= 32 else None
 _n_free = blocks_with_sum_at_most(_cut_free) if _cut_free <= 32 else None
 print(f"    via G1   (Xbot <= Xblock <= B_top = {mp.nstr(B_TOP_CERT, 14)}): cut {_cut_g1}"
       f"   {f'{_n_g1:,} blocks' if _n_g1 is not None else 'not enumerable'}")
 print(f"    G1-free  (B_top = {mp.nstr(B_TOP_CERT, 14)}, B_bot = {mp.nstr(B_BOT, 14)}): "
-      f"cut {_cut_free}   {f'{_n_free:,} blocks' if _n_free is not None else 'not enumerable'}",
-      flush=True)
+      f"cut {_cut_free}   {f'{_n_free:,} blocks' if _n_free is not None else 'not enumerable'}"
+      f"   (real box: cut {_cut_free_real})", flush=True)
 check(
     "R6 the G1-free cut is enumerable",
     _cut_free <= 32,
@@ -1240,6 +1502,10 @@ _wit = {
         "B_certified_per_program": mp.nstr(B_CERT, 30),
         "B_certified_at": {"pe": _PE_CERT, "T": _T_CERT},
         "B_certified_all_T": mp.nstr(B_ALLT, 30),
+        "B_certified_all_T_integer_box": mp.nstr(B_ALLT_INT, 30),
+        "B_certified_all_T_integer_box_at_pe": _PE_ALLT_INT,
+        "cut_G1_free_real_box": _cut_free_real,
+        "checkpoint": _CKPT_LOG,
         "B_bot": mp.nstr(B_BOT, 30),
         "B_tangent_bottom_T_free": mp.nstr(_B_TAN, 30),
         "B_tangent_by_pe": {str(p): mp.nstr(v, 20) for p, v in sorted(_tan.items())},
