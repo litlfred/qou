@@ -37,7 +37,9 @@ function run(result: string, evidence?: string) {
   ];
   if (evidence !== undefined) argv.push("--evidence", evidence);
   const r = spawnSync("bun", argv, { encoding: "utf8" });
-  const qa = join(dir, "b.qa.json");
+  // Since #7642 the derived report is under the instance's results tree; a
+  // block outside any instance is its own instance root (block-qa-io.ts).
+  const qa = join(dir, "test", "results", "block-qa", "b.qa.json");
   return {
     code: r.status,
     stderr: r.stderr ?? "",

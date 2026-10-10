@@ -1,6 +1,10 @@
 #!/usr/bin/env bun
 /**
- * Append an agent (or human) reviewer entry to a block's QA sidecar.
+ * Append an agent (or human) reviewer entry to a block's QA verdict.
+ *
+ * Since issue #7642 the entry is a JUDGEMENT kept on main in
+ * `test/attestations/block-qa/`, and the derived report it is composed into
+ * lives in `test/results/block-qa/` (see `block-qa-io.ts`).
  *
  * The adjudication counterpart of the script scanners: a sub-agent that
  * has read a block in full records its verdict per criterion without
@@ -28,6 +32,8 @@ import { createHash } from "node:crypto";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { basename, dirname, join, resolve } from "node:path";
+
+import { blockQaReadPath, saveBlockQa } from "./block-qa-io.ts";
 
 function arg(name: string): string | undefined {
   const i = process.argv.indexOf(`--${name}`);
@@ -85,7 +91,9 @@ if (!existsSync(blockMd)) {
 const dir = dirname(blockMd);
 const root = basename(blockMd, ".md");
 const tsPath = join(dir, `${root}.ts`);
-const qaPath = join(dir, `${root}.qa.json`);
+// The report is read where the platform reads it (results tree, else the
+// legacy sibling) and saved through the attestation store: issue #7642.
+const qaPath = blockQaReadPath(join(dir, root));
 
 const REPO_ROOT = resolve(import.meta.dir, "..", "..");
 
@@ -167,7 +175,7 @@ try {
 }
 
 let doc: any = {};
-if (existsSync(qaPath)) {
+if (qaPath && existsSync(qaPath)) {
   try {
     doc = JSON.parse(readFileSync(qaPath, "utf8"));
   } catch {
@@ -219,5 +227,11 @@ if (notes) entry.notes = notes;
 
 doc.criteria[criterion].push(entry);
 doc.updated_at = entry.reviewed_at;
-writeFileSync(qaPath, JSON.stringify(doc, null, 2) + "\n");
-console.log(`${qaPath}: ${criterion} <- agent ${result}`);
+// The judgement goes to test/attestations/block-qa (kept on main) and is read
+// back before the derived projection under test/results/block-qa is saved.
+const saved = saveBlockQa(join(dir, root), doc, "attesting");
+if (!saved.ok) {
+  console.error(saved.reason);
+  process.exit(1);
+}
+console.log(`${saved.path}: ${criterion} <- agent ${result}`);

@@ -45,7 +45,9 @@ function run(siblings: { ts?: boolean; lean?: boolean }) {
     "--result", "pass",
     "--id", "local/fieldhash-test",
   ], { encoding: "utf8" });
-  const qa = join(dir, "b.qa.json");
+  // Since #7642 the derived report is under the instance's results tree; a
+  // block outside any instance is its own instance root (block-qa-io.ts).
+  const qa = join(dir, "test", "results", "block-qa", "b.qa.json");
   return {
     code: r.status,
     stderr: r.stderr ?? "",
@@ -99,7 +101,7 @@ describe("qa-agent-entry field_hash guard", () => {
     ], { encoding: "utf8" });
     expect(r.status).toBe(0);
     const after = JSON.parse(
-      readFileSync(join(a.dir, "b.qa.json"), "utf8"),
+      readFileSync(join(a.dir, "test", "results", "block-qa", "b.qa.json"), "utf8"),
     ).criteria["da-overclaim"].at(-1).field_hash.lean;
     expect(after).not.toBe(before);
   });
