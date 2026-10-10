@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/traczyk1991-periodic-knots/manifest.jsonld",
+  "@type": [
+    "folio-assistant-core:SourceDocument"
+  ],
+  "title": "traczyk1991-periodic-knots",
+  "contains": [
+    "library/traczyk1991-periodic-knots/sections/sec-front-matter",
+    "library/traczyk1991-periodic-knots/sections/sec-000",
+    "library/traczyk1991-periodic-knots/sections/sec-001",
+    "library/traczyk1991-periodic-knots/sections/sec-002",
+    "library/traczyk1991-periodic-knots/sections/sec-003",
+    "library/traczyk1991-periodic-knots/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "traczyk1991-periodic-knots",
+    "title_source": "slug",
+    "source_file": "traczyk1991-periodic-knots.pdf",
+    "source_sha256": "2e9236877cec46044e45476754b2a1a854f5f41d52190ad97b620bc4d09f80d9",
+    "pages": 12,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

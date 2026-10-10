@@ -1,0 +1,20 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/traczyk1991-periodic-knots/blocks/thm-sec-000-01",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 1,
+  "pageEnd": 2,
+  "text": "thm-sec-000-01.md",
+  "derivedFrom": "library/traczyk1991-periodic-knots/sections/sec-000",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/traczyk1991-periodic-knots/manifest.jsonld",
+  "provenance": "ingested"
+}

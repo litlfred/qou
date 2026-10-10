@@ -1,0 +1,20 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/lect-mathematical-ideas-notions-qft-2002/blocks/cor-sec-003-05",
+  "@type": [
+    "folio-assistant-core:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 21,
+  "pageEnd": 30,
+  "text": "cor-sec-003-05.md",
+  "derivedFrom": "library/lect-mathematical-ideas-notions-qft-2002/sections/sec-003",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lect-mathematical-ideas-notions-qft-2002/manifest.jsonld",
+  "provenance": "ingested"
+}
