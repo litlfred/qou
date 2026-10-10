@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - 8f-colour
 created_at: 2026-08-09T13:43:56Z
-updated_at: 2026-10-10T07:15:40Z
+updated_at: 2026-10-10T13:49:53Z
 parent: qou-8lxd
 ---
 
@@ -113,3 +113,52 @@ row-cap null direction. Quotient by the radical and projection becomes valid.
 
 Items 2 and 4 are new math. Lean scaffold FIRST, before Python. That directive
 was violated repeatedly earlier in this session; do not repeat it here.
+
+
+---
+
+## `gram-matrix-dual.py` prints the convention-C FORMULA next to the convention-D VALUE (verified 2026-10-10)
+
+`computations/gram-matrix-dual.py:45`:
+
+    print(f"z   = 1/(q^½+q^-½) = {z:.10f}")
+
+and the `z` it formats is imported two lines up from `pyhecke.gram`, where
+(`tools/pyhecke/python/pyhecke/gram.py:199`):
+
+    z = q0 ** 3 / (q0 ** 2 + 1)
+
+That is **convention D**, canonical since the owner ruling of 2026-08-15. The label
+is **convention C**. At the proton pin the two differ by 0.113 — `z_C = 0.4993203342`
+against `z_D = 0.6126880371` — so the printed line is internally contradictory: the
+number is right and the formula beside it is for a different number.
+
+This is squarely the AGENTS.md case *"a producer's own convention is declared and
+violated one line down"*, and it is **invisible to every convention detector in the
+repo**, which key on the convention of a *binding* rather than on the text of a
+format string. `convention-c-producer-audit.py` scans assignment targets and return
+forms; `convention-c-value-audit.py` evaluates bindings at sample points. A label in
+an f-string is neither. Candidate row for
+`docs/audits/2026-08-15-detector-blindness-taxonomy.md` — *the convention is in the
+PROSE, not in the arithmetic* — but it is one site, so measure the class first
+before claiming a row.
+
+**Not fixed here.** It is a one-string change and it is arguably exemption 2 of
+§🟥 ASK THE OWNER (the corpus fixes the convention; the imported binding declares D
+one line up). But this is not my arc, the file belongs to the colour-weight attack
+this bean tracks, and a print label is what a reader of the output quotes. Owner
+call, with the above as the whole basis.
+
+## Front question — this bean may be filed under the wrong front
+
+The title is about the **colour-weight blocker** and `gram-matrix-dual`'s
+ill-posedness, but the body's subject matter is nuclear binding, not colour. It
+carries `8f-colour`. Whether it belongs under `8f-mass` instead is a routing
+question for `qou-8lxd`, not a research question — recorded, not moved, since
+retagging someone else's bean mid-front is exactly the kind of tidying §🟥 ASK THE
+OWNER removed from standing authorisation.
+
+Provenance: cross-session read-only pre-read
+(`/mnt/project-files/eightfold/8f-colour-preread.md`); both the line-45 finding and
+the `pyhecke.gram.z` convention were re-verified on this branch rather than taken on
+trust.

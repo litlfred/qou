@@ -7,7 +7,7 @@ priority: high
 tags:
     - 8f-index
 created_at: 2026-08-03T23:27:15Z
-updated_at: 2026-10-10T07:18:30Z
+updated_at: 2026-10-10T13:50:38Z
 parent: qou-0uga
 ---
 
@@ -360,3 +360,52 @@ titles describe subject matter; expect the disposition-flavoured fronts
   read 23 (is **10**, i.e. the ingest queue *drained*, it did not grow).
 - Per AGENTS.md rule 13a, **nothing whose subject is an open conjecture was
   closed here.** The five closures are all mechanical, each with its evidence.
+
+
+---
+
+## `8f-colour` — partial verification pass (2026-10-10), NOT a triage
+
+A read-only sibling session pre-read all 15 open `8f-colour` beans at this branch's
+`37bdbeef6b3` and left notes at `/mnt/project-files/eightfold/8f-colour-preread.md`,
+stating explicitly that dispositions stay here and that **its own path checks were
+run partly against `main` at `3a71395875` and its "sorry-free" judgements are
+grep-only**. I verified five of its concrete claims on this branch. Scoreboard:
+
+| its claim | verdict |
+|---|---|
+| `prop:color-su3-from-g2` empty-`uses[]` claim in `8p1x`/`8p1e`/`8p1h` is **stale** | **confirmed** — `uses: ["def:octonion-algebra"]` at `color-su3-from-g2.ts:23`, discharged 2026-08-29 |
+| `8p1i` and `8p1j` are scrapped, so `8p1h` is gated on an abandoned route | **confirmed** — both `scrapped` |
+| `gram-matrix-dual.py:45` prints the convention-C formula beside the D value | **confirmed** — label `1/(q^½+q^-½)`, value `pyhecke.gram.z = q0³/(q0²+1)`, 0.113 apart |
+| `ozyt` is title-only | **confirmed** — 14 lines, and its *title* is the defect |
+| `−80000` is mis-attributed to the sextic in `Brings/ColourCubicDiscriminant.lean` | **confirmed, after I first wrongly refuted it** — see below |
+| its companion figure `−2^19·5^10`, flagged by it as unverified | **confirmed exactly** — it is the sextic's discriminant |
+
+So **6 of 6 checked claims hold**, including the one I reported as refuted. The
+pre-read's caveats about its own method did not cost it a single verdict.
+
+### What this front actually yielded, and it is not a closure
+
+No bean closed. One **false instruction** found and documented (`ozyt`'s title tells
+the next agent to Lean-prove `disc = −2^7·5^4` of an object whose discriminant is
+`−2^19·5^10`), one **new corpus number** measured (the sextic discriminant, nowhere
+on record, which independently confirms `z03j`'s composite-chain item 3 via the
+`2^12·5^6` ratio), one **detector blind spot candidate** (a convention carried in an
+f-string label, invisible to both convention audits — one site only, so measure the
+class before claiming a taxonomy row), and **three beans carrying one stale fact** a
+fourth bean had fixed six weeks earlier.
+
+That last is this epic's own recorded pattern for the third front running: fronts
+named for *subject matter* yield scoping, not closures. `8f-colour` is now
+**partially scoped, not triaged** — 9 of 15 beans unexamined.
+
+### The rule this front sharpens
+
+**Do not second-guess a path that resolves.** I treated the pre-read's verbatim path
+`Brings/ColourCubicDiscriminant.lean` as an approximation of two files I had already
+found — `Mass/ColourCubicDiscriminant.lean` (no `80000`) and
+`Brings/ColourCubicBranchLocus.lean` (`80000`, correctly attributed) — and reported
+the finding refuted. A **third** file exists with exactly the name given. Three of the
+four names in `{Brings, Mass} × {ColourCubicDiscriminant, ColourCubicBranchLocus}` are
+real files, two of them proving overlapping facts over different base rings. In a
+corpus with that naming surface, `ls` the path before concluding it does not exist.
