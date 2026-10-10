@@ -219,6 +219,7 @@ def main() -> int:
 
     idx = {p: index_lean(REPO / r) for p, r in LEAN_PACKAGES.items() if (REPO / r).exists()}
 
+    summaries: dict[Path, dict] = {}
     totals = {"blocks": 0, "qa": 0, "lean_found": 0, "lean_absent": 0, "lean_via_ref": 0}
     papers = json.loads((base / "papers.json").read_text()).get("papers", [])
     for p in papers:
@@ -254,9 +255,19 @@ def main() -> int:
             out = {"lean": lean, "qa": rep}
             if rep:
                 totals["qa"] += 1
+            # One small summary per chapter (badge + Lean link, fetched once per page);
+            # the full report only when the reader opens it.
+            summ = {"lean": lean}
+            if rep:
+                summ["qa"] = {"counts": rep["counts"], "milnor": rep["milnor"], "kind": rep["kind"]}
+            summaries.setdefault(pdir / "qa-summary" / (rel.parts[0] + ".json"), {})[str(rel.with_suffix(""))] = summ
             dst = pdir / "qa" / rel
             dst.parent.mkdir(parents=True, exist_ok=True)
             dst.write_text(json.dumps(out, separators=(",", ":")) + "\n")
+
+    for f, d in summaries.items():
+        f.parent.mkdir(parents=True, exist_ok=True)
+        f.write_text(json.dumps(d, separators=(",", ":")) + "\n")
 
     (base / "assets").mkdir(exist_ok=True)
     for f in ("qou-site-extras.js", "qou-site-extras.css"):
