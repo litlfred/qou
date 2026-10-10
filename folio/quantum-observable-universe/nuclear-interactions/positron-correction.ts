@@ -27,7 +27,7 @@ export default proposition({
         "nothing in the corpus reads either name. Checked before removing: " +
         "`audit/positron-correction-probe` does not exist anywhere in the " +
         "tree, and the only positron compute is the deprecated " +
-        "`computations/_deprecated/positron_lifted_sdp.py`. So the field " +
+        "`fsh-guts/deprecated/computations/positron_lifted_sdp.py`. So the field " +
         "could not be promoted to `computation.script`, which the pipeline " +
         "resolves against a real file — it recorded an intended probe, not " +
         "an existing one. Recorded here so the intent survives the removal. " +

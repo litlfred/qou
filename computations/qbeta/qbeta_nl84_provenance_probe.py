@@ -31,7 +31,7 @@ The answer is that nothing computes it.  Full corpus-grep checklist:
 
  4. THE ONLY ILP-COUNTING CODE IN THE CORPUS is deprecated, heuristic, and
     structurally cannot return 84.
-    computations/_deprecated/confinement_adaptive.py::
+    fsh-guts/deprecated/computations/confinement_adaptive.py::
     ilp_solution_count_nucleon_level(Z, N) returns 3 (both magic), 2 (one
     magic), 1 (neither), or 0 (A < 2).  Its own docstring: "Heuristic (proxy
     for Lenstra ILP enumeration) ... This is a categorical proxy; the full ILP
@@ -190,7 +190,7 @@ def main() -> int:
           f"but not to the number", w)
 
     # 4 -- the only counting code
-    dep = ROOT / "computations/_deprecated/confinement_adaptive.py"
+    dep = ROOT / "fsh-guts/deprecated/computations/confinement_adaptive.py"
     src = dep.read_text() if dep.exists() else ""
     returns = sorted({int(m) for m in re.findall(r"return (\d+)\n", src)})
     importers = subprocess.run(

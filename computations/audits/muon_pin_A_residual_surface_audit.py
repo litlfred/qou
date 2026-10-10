@@ -24,7 +24,7 @@ assumption.  Of every tracked `*.witness.json`:
   * **carrying the A literal at all:** 40
   * **COMPUTED at A** (its own `q0Value` is A): **4**
       - `computations/hadron-knot-table.witness.json`               <- the only live one
-      - three under `qou-mass/src/qou_mass/data/_deprecated/`       <- deprecated mirror
+      - three under `fsh-guts/deprecated/qou-mass/src/qou_mass/data/`       <- deprecated mirror
   * **mentioning A without being computed at it:** 36
 
 That 36 is the important distinction and it is why a grep for the literal

@@ -163,7 +163,7 @@ Deuteron has $\bowtie_D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N +
 
 **Re-survey findings load-bearing for the 1 ppb / Δ_λ thread:**
 
-1. **No deprecated-script revivals** since #787 merged (`git log origin/main -- computations/_deprecated/` returns zero). The systemic paper↔compute wiring gap persists.
+1. **No deprecated-script revivals** since #787 merged (`git log origin/main -- fsh-guts/deprecated/computations/` returns zero). The systemic paper↔compute wiring gap persists.
 2. **4 propositions wired to *alternate* scripts**, not the catalog's deprecated ones — supersession-disposition still owed:
    - `prop:mass-endomorphism-tower` → `habiro_exact_mass_endomorphism.py` (337 LoC); 4 deprecated towers orphaned.
    - `prop:atomic-mass-gb-nf` → `canonical_mass_table_extended.py` (507 LoC); `anti_self_reciprocity_universality_probe.py` orphaned.

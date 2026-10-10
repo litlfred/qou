@@ -70,7 +70,7 @@ stamp it", and it says nothing about whether re-running is SAFE. Measured over
     script uses to classify it into bucket C. AGENTS.md's "bare producers"
     hazard. **FIXED for all 5** by having each producer emit those three keys
     itself; 4 of them then stamped cleanly. (The fix also repaired 2 DANGLING
-    `auditOnly` pointers: both targets had moved to `docs/audits/_deprecated/`
+    `auditOnly` pointers: both targets had moved to `fsh-guts/deprecated/docs/audits/`
     and nothing checks that the path resolves.)
   * **4 move numbers** -- `qou-fl9i`'s `mp.dps = 50` -> `set_compute_dps()` fix
     landed in the producers and their witnesses were never regenerated.

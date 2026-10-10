@@ -30,6 +30,10 @@
           },
           {
             "type": "command",
+            "command": "./scripts/mount-fsh-guts.sh >\"${TMPDIR:-/tmp}/qou-mount-fsh-guts.log\" 2>&1"
+          },
+          {
+            "type": "command",
             "command": "./scripts/session-start-coord-sweep.sh"
           }
         ]

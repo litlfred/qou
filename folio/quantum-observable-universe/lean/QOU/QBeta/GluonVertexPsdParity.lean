@@ -32,7 +32,7 @@ and nothing else.
 ## Why this is the durable form of the rule
 
 The rule it replaces was a Frobenius-positivity test evaluated numerically
-against a Gram matrix (`computations/_deprecated/integer-lp-gluon.py`). That
+against a Gram matrix (`fsh-guts/deprecated/computations/integer-lp-gluon.py`). That
 test went stale twice over — it was built at convention C's Markov parameter
 and on the superseded `tr_M(e⁻) = z³` rule — and under the production
 convention D its premise no longer holds at all, so it selects nothing

@@ -65,7 +65,7 @@ class is now inhabitable at the honest data.  Measurement:
 (10/10).
 
 The BW/LP scaling ratio — verified symbolically in
-`computations/_deprecated/bw_wenzl_shadow_equivalence.py`
+`fsh-guts/deprecated/computations/bw_wenzl_shadow_equivalence.py`
 for `λ = (2,2)` and `λ = (3,2,1)` (both self-conjugate) — is
 
   β / C = -1/h        (all λ),

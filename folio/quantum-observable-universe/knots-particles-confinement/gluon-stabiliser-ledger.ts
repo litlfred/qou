@@ -34,7 +34,7 @@ export default remark({
         "premise that the feasible set is restricted to `L±` is wrong. " +
         "`computations/universal-ilp.py` ranges over `{σ₀, σ₁, σ₀⁻¹, " +
         "σ₁⁻¹}` words up to six crossings; the retired " +
-        "`computations/_deprecated/integer-lp-gluon.py` ranges over " +
+        "`fsh-guts/deprecated/computations/integer-lp-gluon.py` ranges over " +
         "`{σ₀, σ₁, L₊, L₋}` words up to length three. Both reach `e⁻`.",
     },
     {

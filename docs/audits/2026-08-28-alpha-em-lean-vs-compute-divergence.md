@@ -221,7 +221,7 @@ residual exactly 0.
 - [`binding-knots-visual-inventory.md`](../../content/quantum-observable-universe/knots-particles-confinement/binding-knots-visual-inventory.md):
   the binding scale `α = m_e · 8G ≈ 3.7445 MeV`
 
-And it is the reading `computations/_deprecated/alpha_em_q9_q10_derivation.py`
+And it is the reading `fsh-guts/deprecated/computations/alpha_em_q9_q10_derivation.py`
 gives outright: **`κ = 8q = q · Vol(𝓑₃)/G`**.
 
 ## 9b. So the live `.lean` carried the weaker of two available readings

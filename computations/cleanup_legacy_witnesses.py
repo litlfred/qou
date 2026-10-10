@@ -14,7 +14,7 @@ Criteria (all must hold for a script to be moved to ``_deprecated/``):
    script filename, the witness filename, or the script stem.
 
 This mirrors the heuristic recorded in
-``computations/_deprecated/README.md`` from the
+``fsh-guts/deprecated/computations/README.md`` from the
 original cleanup pass.
 
 Usage

@@ -15,7 +15,7 @@ The m_can brane-tower mass is `m(ρ) = T1 + T2 + T3 + …`:
 - **T1** (`|tr_M|`, level-0 `E0·Δtr`) is the convergent, canonical, already-wired part.
 - **T2/T3** (the brane tower — *dominant*) **diverge at q₀**: the archimedean `Φ_q` is **not
   Markov-invariant**, so tiny p/n asymmetries amplify ~10⁵× (e.g. T−³He ≈ −737 MeV vs CODATA
-  +0.019 MeV). All brane-tower compute lives in `computations/_deprecated/` for this reason.
+  +0.019 MeV). All brane-tower compute lives in `fsh-guts/deprecated/computations/` for this reason.
 
 "Fix the divergent impl" = make T2/T3 converge = find a **trace-invariant reformulation**.
 That is the **open derivation question**, pinned in

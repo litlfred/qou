@@ -158,7 +158,7 @@ purpose, and reconstructing it would mean resurrecting the 24-54%-error table
 the owner ordered removed. Do NOT do that.
 
 For mass predictions use the canonical witness. Disposition of this file
-(deprecate to computations/_deprecated/, or delete) is an owner decision;
+(deprecate to fsh-guts/deprecated/computations/, or delete) is an owner decision;
 tracked as bean `qou-s1yn`.""")
     with open(witness_path) as f:
         mtw = json.load(f)

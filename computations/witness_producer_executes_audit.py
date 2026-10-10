@@ -162,7 +162,7 @@ def resolve(ref: str) -> Path | None:
     # A `_deprecated/` copy is by definition NOT the producer, but it counts
     # toward the uniqueness test below, so a live producer with a retired twin
     # resolved to None. Measured: `rho_k_markov_multiplicativity_probe.py`
-    # exists at BOTH computations/probes/ and computations/_deprecated/, and
+    # exists at BOTH computations/probes/ and fsh-guts/deprecated/computations/, and
     # the witness sitting next to the live one was reported producerless --
     # which is how a content block citing it as PROVED came to look like it
     # rested on nothing. Every other scan in this repo already skips

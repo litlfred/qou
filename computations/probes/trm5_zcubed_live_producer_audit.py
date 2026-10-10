@@ -42,7 +42,7 @@ Gram; they disagreed only because one carries the bug.
 
 This is a scope-(a) finding about five named files, not a claim that every
 `z**3` in the corpus is wrong -- `z^3` is the correct weight for other
-objects, and 14 further hits live under `computations/_deprecated/` and are
+objects, and 14 further hits live under `fsh-guts/deprecated/computations/` and are
 out of scope. Each site below was confirmed to use the SAME six-element NF
 basis `[(), (0,), (1,), (0,1), (1,0), (0,1,0)]` before being listed.
 

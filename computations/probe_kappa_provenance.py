@@ -4,7 +4,7 @@ produced it concluded.
 
 `qou-o16k` recorded the empirical kappa as tracing to a "PR #656 v6 single-magic
 anchor fit" that was "not in the tree in any form".  That was wrong: the fit
-survives, under `computations/_deprecated/`, in
+survives, under `fsh-guts/deprecated/computations/`, in
 `interface-type-resolved-coupling-probe.witness.json`.  Reading it settles the
 provenance question and turns up something sharper than a missing record.
 
@@ -198,7 +198,7 @@ def main() -> None:
         "contentBlock": "conj:magic-shell-coupling-kappa",
         "description": (
             "Locates the fit that produced the published kappa. It survives under "
-            "computations/_deprecated/. The published value is the 3He arm alone; "
+            "fsh-guts/deprecated/computations/. The published value is the 3He arm alone; "
             "the T arm has the opposite sign; and the producing witness records "
             "hypothesis_supported=false. The fit was to Delta_coupling, not to "
             "binding energy as the content block states."
