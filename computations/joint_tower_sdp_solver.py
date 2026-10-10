@@ -3,7 +3,7 @@
 
 Implements the design specification of
 [prop:joint-tower-sdp-confinement](
-  ../../content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md).
+  ../../folio/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md).
 
 PHASE 3a — H_3 ground-truth VERIFIER:
 

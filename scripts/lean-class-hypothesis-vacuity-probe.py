@@ -163,7 +163,7 @@ def probe(path: pathlib.Path, c: dict, lean: str, lean_path: str,
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--root", default="content")
+    ap.add_argument("--root", default="folio")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--timeout", type=int, default=300)
     ap.add_argument("--json")

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-bond-log-ratio-is-a-free-energy",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:bond-log-ratio-is-a-free-energy",
+  "kind": "remark",
+  "title": "The bond log-ratio is a free-energy difference; that it is the binding energy is a separate, open claim",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-markov-trace-factorization",
+    "papers/quantum-observable-universe/blocks/rem-canonical-trace-factorises-over-chain",
+    "papers/quantum-observable-universe/blocks/rem-pn-bond-cannot-be-extremal"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-markov-trace-factorization",
+  "tags": [
+    "mass-theory",
+    "markov-trace",
+    "binding-energy",
+    "bond-constants",
+    "free-energy",
+    "open-problem",
+    "draft"
+  ],
+  "text": "bond-log-ratio-is-a-free-energy.md",
+  "provenance": "authored"
+}

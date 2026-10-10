@@ -99,7 +99,7 @@ measurements improve — no framework change required.
 > 2026-08-21; this file was not. Bean `qou-m4au`.
 
 q₀ is pinned from the CODATA m_p/m_e ratio (0.017 ppb, the most precise
-available — see [`epistemic-status-of-calibrations.md`](../content/quantum-observable-universe/observations/epistemic-status-of-calibrations.md)).
+available — see [`epistemic-status-of-calibrations.md`](../folio/quantum-observable-universe/observations/epistemic-status-of-calibrations.md)).
 Its 0.017 ppb uncertainty is **inherited from that one measurement**, and
 **improves one-for-one as CODATA improves m_p/m_e**. It is *not* a limit
 of the framework. (If the QOU substrate picture is correct, the highest
@@ -274,7 +274,7 @@ truncation is ~10⁻⁶⁰ absolute (10⁻⁵¹ ppb), far exceeding 1 ppQ.
 trace terminates at $M = 8$ for the proton/neutron (integer coefficients
 $a_m \in \mathbb{Z}[u]$, evaluated at $u_0 = \sqrt{q_0}$). No
 truncation error exists — the formula is a finite sum. See
-[`prop:habiro-precision-ladder-equivalence`](../content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.md).
+[`prop:habiro-precision-ladder-equivalence`](../folio/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.md).
 
 > **Historical note (superseded).** The "precision ladder" (c_k
 > coefficients at each "rung" N=3, N=4, N=5) was the Taylor expansion
@@ -341,7 +341,7 @@ is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 |---|---|---:|---:|---:|---|
 | m_e | CAL-1 anchor | 0.313 ppb | 3.1 ppt | 0 (anchor, *defined*) | **anchor — NOT SCORED** (σ read 0.29 ppb / 2.9 ppt until 2026-09-08; witness `sigma_exp_ppb 0.3131`, `target_100x_ppb 0.003131`) |
 | ~~m_p~~ (absolute) | ~~CAL-2 numerical anchor~~ | — | — | — | **EXCISED** (absolute mass, `qou-exam`; the ratio `m_p/m_e` remains the CAL-2 pin, a calibration *input*, not a scored prediction) |
-| m_μ/m_e | prediction (ratio) | 21.8 ppb | **0.22 ppb** | 211 ppb | **misses ~970×** (9.5σ μ-p tension) — ratio, retained |
+| m_μ/m_e | prediction (ratio) | 21.8 ppb | **0.22 ppb** | 211 ppb | **misses ~970×** — the μ–p tension. **Two σ, both published, one residual: say which.** This row's `21.8` is the σ on the **mass** `m_μ` (witness `sigma_exp_ppb 21.77` = `2.30000e-6 MeV / 105.658375496 MeV`), so against it the residual is **9.70σ** (`211.20 / 21.768`); the σ on the **ratio** `m_μ/m_e` is `22.247` ppb (`constants.MASS_RATIO_MU_E_ERR = 4.6e-6` over `206.7682827`), giving the familiar **9.49σ** (`211.20 / 22.247`). Every dashboard figure in this row — `21.8`, `0.22`, `211`, `~970×` — is **mass**-denominated, so `9.70σ` is the one that belongs beside them; `9.5σ` elsewhere in the corpus is the **ratio** figure and is correct there. Neither is stale (CODATA 2018 gave 9.534σ on the ratio, 2022 gives 9.4934σ) — do **not** sweep one into the other. Adjudication: `epistemic-status-of-calibrations.ts` `authorNotes`, bean `qou-silm`; AGENTS.md §q₀-anchor. — ratio, retained |
 | Q_β | prediction (CAL-2 proxy cross-check; read "CAL-3" until 2026-09-08 — ruling 2026-06-26) | 0.78 ppm | **7.8 ppb** | **1.668e+8 ppb** | **misses 2.139e+7×** on the RULED base — `ε` = the Markov trace at `z_D = q³/(q²+1)`, owner ruling 2026-09-08, re-scored on the 2026-09-12 authorisation (`qou-99qc` item (iii)), **zero `c_k` rungs**. Was 1279 ppb / ~164× — a convention-C figure on the `z = 1` cell the witness stamps `INADMISSIBLE_FUNCTIONAL`. **Two corrections here, 2026-09-12:** this said "ε decided as the augmentation", which is wrong — the ruling chose **`z_D`**, the augmentation (`z = q`) being the other admissible point and the *finer one-row* truncation, so not convention D; and "not yet re-scored", which is no longer true. Do NOT read the new figure as convention D's accuracy: no ladder exists on an admissible base (`qou-cds1`, blocked on `qou-pdix`), and a second re-score is authorised for when one does (`qou-iagg`) — see §L1 |
 | ~~m_n~~ (absolute) | ~~prediction (Path C)~~ | — | — | — | **EXCISED** (absolute mass, `qou-exam`; content lives in `Δ_pn` below + the m_e scale) |
 | Δm_pn | prediction (Path C) | 434 ppb | **4.34 ppb** | 658 ppb | **misses ~151.7×** — splitting, retained. (Read `474 / 4.74 / 774 / ~163×` until 2026-09-07; all four were stale against the witness.) Inherits the Q_β frame + functional defect above |
@@ -410,7 +410,7 @@ sub-target. See [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](aud
 > terminates at $M = 8$ (integer coefficients $a_m \in \mathbb{Z}[u]$).
 > Evaluating at $u_0 = \sqrt{q_0}$ gives the EXACT Q_β prediction at
 > 5.744 ppb — below the 7.80 ppb target. No per-rung approximation
-> needed. See [`prop:habiro-precision-ladder-equivalence`](../content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.md).
+> needed. See [`prop:habiro-precision-ladder-equivalence`](../folio/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.md).
 
 For light-atom binding energies (B_D, B_T, B_³He, B_⁴He), the experimental
 σ_B is dominated by the AME mass-table uncertainty (~10⁻⁶ for these atoms),
@@ -559,7 +559,7 @@ substrate-derivation of q₀**, four of the five L2 misses are gated on the
 **experimental neutron Q_β measurement**, not on any framework compute:
 
 - **Anchor-invariance prune** — `QOU.QBeta.SRigidity.no_anchor_invariant_realizes_swing`
-  ([`SRigidityPrune.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/SRigidityPrune.lean),
+  ([`SRigidityPrune.lean`](../folio/quantum-observable-universe/lean/QOU/QBeta/SRigidityPrune.lean),
   sorry-free): no *anchor-invariant* datum can equal the c₃ carrier `S` (which
   swings 2.44 % between the proton and muon q₀ anchors). This excludes deformed
   median resummation (anchor-blind) and classical CS/Stokes (anchor-invariant) as

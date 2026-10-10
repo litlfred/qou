@@ -700,7 +700,7 @@ def paper_six_term_mass(Z, N, include_inter=True,
         t3 = mp.mpf(0)
     elif tower_mode == "per-partition-k":
         # P1.D (2026-05-12): per-partition $k_\lambda$ truncation rule.
-        # Per content/quantum-observable-universe/braids-and-knots/
+        # Per folio/quantum-observable-universe/braids-and-knots/
         # per-partition-k-lambda-rule.md, uniform truncation $k$ across
         # all Wedderburn blocks of $H_n(q_0)$ is dominated by ONE
         # specific partition per atom (D: [2,2,1,1], T: [6,3], 3He: [5,4]).

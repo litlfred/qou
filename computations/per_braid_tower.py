@@ -2,7 +2,7 @@
 """per_braid_tower.py — convergent per-braid brane tower for nuclear binding.
 
 Implements the CONVERGENT per-braid form of `prop:per-braid-mass-tower`
-(content/quantum-observable-universe/mass-theory/per-braid-mass-tower.md),
+(folio/quantum-observable-universe/mass-theory/per-braid-mass-tower.md),
 replacing the DIVERGENT per-generator `binding_3A_tower` / `mass_from_tower`
 (deuteron B ≈ 6.9M MeV — the superseded `prop:mass-endomorphism-tower`
 Φ_q-of-per-generator-product form).

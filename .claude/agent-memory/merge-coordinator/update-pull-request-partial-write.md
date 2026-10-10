@@ -76,6 +76,40 @@ them for you.
 rate-limit window (1 h), so do not plan on it clearing within a session — take
 the REST route rather than waiting.
 
+### Amendment 2026-09-14 (`qou#7383`) — there IS a direct REST twin, and the CCR route was 503 while it worked
+
+Two things the table above does not say, measured in one check-in.
+
+**1. `get_review_comments` has a plain-REST twin and it is not `ccr/`.** The
+row marks it "dead" with no replacement, so the entry recommends *inferring*
+the answer from `get_reviews == []`. The underlying endpoint answers directly:
+
+```sh
+curl -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" \
+  "https://api.github.com/repos/litlfred/qou/pulls/<n>/comments?per_page=100"
+# -> HTTP 200, a JSON array of the line-level review comments
+```
+
+Measured on `#7383` at 19:56Z: `get_review_comments` → the usual
+*"API rate limit already exceeded for user ID 662242"*; the curl above →
+**HTTP 200, `[]`**. Same PR, same minute. The inference from `get_reviews` is
+sound and stays the cheap first move; this is what to run when you want the
+comments themselves rather than a proof of their absence.
+
+**2. The `ccr/` route is NOT the fallback to reach for first — it has its own
+outages.** `GET /repos/litlfred/qou/pulls/7383/ccr/review_threads` returned
+**503** *"GitHub is temporarily unavailable. Retry shortly."* in the same
+minute that plain REST returned 200. That is a second, independent instance of
+the CCR-family outage window AGENTS.md §8a records from `#7350` earlier the
+same day, and it sharpens the ordering: **plain REST first, `ccr/` only for
+what plain REST genuinely cannot do** (the draft flip, thread resolve).
+
+**And I re-derived this file's own lesson again.** I ran `get_reviews` → `[]`
+in this check-in — the proof the TRAP above says is sufficient — and still
+reported to the user that the thread state was unknown, then went hunting for
+two more routes. That is the identical failure the TRAP was written to stop,
+now at its second recorded occurrence. Read the file.
+
 ---
 
 Related in kind to the CI-billing rule in AGENTS.md: an infrastructure error

@@ -1,0 +1,22 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-human-review",
+  "subject": {
+    "kind": "reference",
+    "id": "leitnerpawloski2004",
+    "path": null
+  },
+  "reviews": [
+    {
+      "position": 1,
+      "review": {
+        "status": "validated",
+        "by": "agent-backfill",
+        "date": "2026-06-12",
+        "source": "library/arxiv-math-0409565v2/0409565v2.pdf",
+        "page": "auto-identified",
+        "entryHash": "bc4b9215fa90"
+      }
+    }
+  ]
+}

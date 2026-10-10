@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-projective-line-object",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:projective-line-object",
+  "kind": "definition",
+  "title": "Projective line object",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-maximal-torus"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-projective-line-su2"
+  ],
+  "tags": [
+    "projective-line"
+  ],
+  "leanRef": "qou:QOU.ProjectiveLineObject",
+  "text": "projective-line-object.md",
+  "leanSource": "projective-line-object.lean",
+  "provenance": "authored"
+}

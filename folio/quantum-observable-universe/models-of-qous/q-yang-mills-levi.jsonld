@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-q-yang-mills-levi",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:q-yang-mills-levi",
+  "kind": "definition",
+  "title": "$q$-Weighted Yang--Mills--Levi functional",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-c-quantum-observable-universe",
+    "papers/quantum-observable-universe/blocks/ex-instanton"
+  ],
+  "tags": [
+    "yang-mills",
+    "functional"
+  ],
+  "leanRef": "qou:QOU.QYangMillsLevi",
+  "text": "q-yang-mills-levi.md",
+  "leanSource": "q-yang-mills-levi.lean",
+  "provenance": "authored"
+}

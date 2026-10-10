@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-pawlowski-leitner-inner-product",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:pawlowski-leitner-inner-product",
+  "kind": "proposition",
+  "title": "Inner product on intertwiner spaces",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-pawlowski-leitner-basis",
+    "papers/quantum-observable-universe/blocks/rem-adjoint-trace"
+  ],
+  "cites": [
+    "references/leitnerpawloski2004"
+  ],
+  "tags": [
+    "inner-product",
+    "intertwiner",
+    "orthogonality",
+    "pawlowski-leitner"
+  ],
+  "leanRef": "qou:QOU.PawLeiInnerProduct",
+  "text": "pawlowski-leitner-inner-product.md",
+  "leanSource": "pawlowski-leitner-inner-product.lean",
+  "provenance": "authored"
+}

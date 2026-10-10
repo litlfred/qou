@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "yilmaz2012",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 424,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1203.6531v1/1203.6531v1.pdf"
+        },
+        "id": "yilmaz2012",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Buchberger-Shirshov algorithm applied to the AFFINE Weyl group A~_n: a reduced Groebner-Shirshov basis G' (Lemma 4, families g_1..g_10, deglex with r_0 > ... > r_n), a classification of reduced words as r.w with w an 'arranged word' (Def. 12, Thm 13), and a generating-function count matched against the known Poincare polynomial of A~_n to certify G' via Composition-Diamond (Thm 18). Same machinery as the folio's Groebner-Shirshov strand (def:hecke-normal-form, tagged groebner-shirshov; trace-locality-meets-gs-nonlocality; ks-finiteness-via-diamond-lemma; sourced by bergman1978/bokut2005/bokutchen2014/lecouvey2007) but no consumable result: every Coxeter object in this folio is FINITE type A_{n-1} (B_n -> H_n(q) -> S_n), and corpus-grep over content/ excluding .lake gives 'affine weyl' 0 hits, 'affine hecke' 0 hits, 'affine braid' 0 hits, 'Poincare polynomial' 0 hits. Checked against all five live fronts: no Temperley-Lieb/Hecke-trace/Wenzl content, no meander or Gram determinant, no Lip-norm or spectral distance, nothing nuclear. The axis needing a careful rather than keyword ruling is Young-diagram combinatorics, and it was checked directly: Def. 15 'basic partitions' (k,1^l) are hooks and Thm 16 bijects chains of connected basic partitions with partitions in a fixed n x n box via the shifted sum (+)a_i = sum sigma^{i-1}(a_i), a principal-hook/Frobenius-style decomposition proved by induction on the number of hooks. That is NOT bean qou-7gei's need, which is the corner-DELETION covering relation over the repo's IsCornerCell/eraseCorner API in QOU/Mathlib/YoungDiagramCorner.lean; this document has no removable-corner notion and no covering relation, and its partitions sit in a fixed box rather than differing by one cell. The folio also already owns a proved hook decomposition (QOU/Mass/PaddedShapeLevelRational.lean section HookSplit; bean 0bt9 completed). Its q-binomial (Def. 17) is the standard Gaussian binomial already carried in QOU/MathlibExt/QGaussianBinomialPascal.lean, not the ballot-multiplicity identity [2]^n = sum_k m_k [n-2k+1] with m_k = C(n,k)-C(n,k-1) that the TL/Hecke work wants. Scope-(a) negative: as read, it supplies nothing usable here; that is not a claim that Groebner-Shirshov methods are excluded. Incidental and deliberately NOT actioned on this row because it belongs to other documents: def:hecke-normal-form's confluence claim is both unsourced and false as stated (see the rows for library/fd58d8e182edda805fed0946606c5ab82f81/fd58d8e182edda805fed0946606c5ab82f81.pdf and library/arxiv-0910.0096v1/0910.0096v1.pdf, and bean qou-43co).",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Read in full and judged: the affine A~_n basis is not the finite type A_{n-1} rewriting system def:hecke-normal-form rests on, and no block in content/ mentions affine Weyl groups. Orphan stays an orphan; no ref() entry should be created. Recorded so a later search for 'Groebner-Shirshov basis for Coxeter groups' does not re-open this file expecting the type-A source.",
+              "target": "def:hecke-normal-form"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-09T19:30:00Z",
+          "source_sha": "29541f28c1c6"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

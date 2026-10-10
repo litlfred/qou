@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-hadron-half-life-verification",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:hadron-half-life-verification",
+  "kind": "example",
+  "title": "Half-life predictions for selected beta emitters",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-hadron-half-life-regimes"
+  ],
+  "tags": [
+    "half-life",
+    "beta-decay",
+    "verification",
+    "numerical",
+    "tritium",
+    "cobalt-60",
+    "carbon-14"
+  ],
+  "leanRef": "qou:QOU.Archimedean.HalfLifeVerification.all_six_agree",
+  "text": "hadron-half-life-verification.md",
+  "leanSource": "hadron-half-life-verification.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-dressed-particle",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:dressed-particle",
+  "kind": "definition",
+  "title": "Dressed particle via shell-attachment morphism",
+  "tags": [
+    "morphism",
+    "dressing",
+    "shell",
+    "confinement-category",
+    "atom",
+    "noble-gas"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.DressedParticle",
+  "text": "dressed-particle.md",
+  "leanSource": "dressed-particle.lean",
+  "provenance": "authored"
+}

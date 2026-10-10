@@ -1,0 +1,121 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "kimlee2018",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 426,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1808.05026v1/1808.05026v1.pdf"
+        },
+        "id": "kimlee2018",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "VERDICT CHANGED BY THE WRITER from supporting to tangential, on evidence the single-document pass could not have: this is the arXiv sibling of the published document assessed at library/fd58d8e182edda805fed0946606c5ab82f81/fd58d8e182edda805fed0946606c5ab82f81.pdf (registered as kimlee2018), by the same two authors in the same year, and its Sec. 3 -- the only folio-relevant part of either -- is VERBATIM the same type A_{n-1} review, down to Prop. 3.1, the monomial order, the standard-monomial description and Example 3.2 with |M_{T(A_3)}| = C_4 = 14. Both quote that proposition from Kang-Lee-Lee-Oh, J. Algebra 252 (2002) Prop. 6.2. The two documents differ only in their own theorems: the published one does type B, this one does types B and D (dim T(B_n) = (n+2)C_n - 1, dim T(D_n) = ((n+3)/2)C_n - 1), and the folio is strictly type A -- corpus-grep for 'Coxeter type', 'type B_n', 'type D_n' over content/ returns nothing outside .lake. So this document contributes no citable content the published sibling does not already carry, and registering it would create a bibliography entry with no load-bearing citation site. Tangential is the honest verdict on THIS row and it should be read together with the kimlee2018 row rather than as a judgement on the mathematics, which is identical. The Sec. 3 content that does matter to the folio -- dim TL_n = Catalan(n) from an explicit standard-monomial basis, and the convention check that the loop parameter enters only through E_i^2 = delta E_i with E_iE_jE_i = E_i un-rescaled and delta a free complex parameter -- is recorded on the kimlee2018 row and now cited from there. A reviewer who wants type D in the bibliography should register this separately and say what cites it; do not register it unattached.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "The document's own theorems (GS bases and dimensions for Temperley-Lieb of types B and D) have no consumer: the folio's Hecke tower is the type-A Artin braid group throughout, and no block, Lean declaration or script mentions a Coxeter type other than A.",
+              "target": "prop:markov-trace-frobenius-selection"
+            },
+            {
+              "action": "no-action",
+              "rationale": "No ref() entry for this document. Its Sec. 3 is verbatim the published sibling's, which was registered as kimlee2018 in the same commit as this row and is the citable venue; a second entry would be a bib orphan by construction. Recorded so a later pass does not re-open the question or mint a colliding refid -- both triage passes independently proposed the id 'kimlee2018' for these two distinct documents.",
+              "target": "folio/schema/references.ts"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-09T19:30:00Z",
+          "source_sha": "2781e0b34e78"
+        },
+        "note": "Bib key backfilled from duplicate copy of fd58d8e182edda805fed0946606c5ab82f81, which carries this key. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    },
+    {
+      "position": 430,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/fd58d8e182edda805fed0946606c5ab82f81/fd58d8e182edda805fed0946606c5ab82f81.pdf"
+        },
+        "id": "kimlee2018",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Identified from the running head and title page, not the filename (the filename is an opaque hash). A Groebner-Shirshov basis and standard monomials for the Temperley-Lieb algebra of type B_n, after a review of type A_{n-1}, with dim T(B_n) = (n+2)C_n - 1. A document about presentations and counting, not about traces, forms or specialisations, and against the folio's live fronts it supplies almost nothing: no Markov trace, no Wedderburn weights, no q-integers, no SU(2) specialisation, nothing resembling [2]^n = sum_k m_k [n-2k+1] or sum_k m_k^2 = Catalan(n); no bilinear form of any kind, hence nothing on the meander/TL Gram determinant or positive-definiteness at real delta; nothing on Lip-norms; nothing on the Young-lattice covering relation for qou-7gei; nothing nuclear. Wenzl is not cited anywhere in it, so it neither confirms nor denies the Invent. Math. 92 (1988) attribution the branch wants. What makes it supporting is Sec. 3, and it has two live homes. First, Prop. 3.1 is a published explicit linear basis and normal form for TL_n with cardinality C_n, i.e. dim TL_n = Catalan(n) at general n from the literature, at a moment when thm:jones-markov-trace asserts H_n(q)/rad = TL_n(q) and that Catalan count with an EMPTY cites list (its own title reads '(Jones, 1987)'), and when the folio's support for the general-n count is TemperleyLiebTower.lean's catalan_three/four/five checking the folio's own table against Mathlib -- internal consistency, not a source. Second, and more consequential, Prop. 3.1's basis needs TWO FAMILIES BEYOND the defining relations (E_{i,j}E_i - E_{i-2,j}E_i and E_jE_{i,j} - E_jE_{i,j+2}), i.e. the presentation must be COMPLETED before it is confluent -- which is exactly the phenomenon that makes def:hecke-normal-form's uncited assertion 'This reduction is confluent' FALSE for the folio's three-rule system, as NotAGSBasis.hecke_not_gs_basis_four machine-refutes at n = 4. Sec. 3 also serves as an external convention check: the loop parameter enters only through E_i^2 = delta E_i, the E_iE_jE_i = E_i relation is un-rescaled and delta is a free complex parameter, which is the convention the folio adopted (e_i := q - sigma_i, e_i^2 = [2]_q e_i, delta = [2]_q) with no square root. WRITER CORRECTION to the triage that produced this row: it reported the GS basis as E_i^2 - E_i, 'the idempotent normalisation in which delta does not appear'. That was a text-extraction artifact -- the delta glyph is dropped by pypdf on this PDF. The relation is E_i^2 - delta E_i, verified against the same verbatim Sec. 3 in the sibling document library/arxiv-1808.05026v1/1808.05026v1.pdf, whose text layer renders delta correctly. Two caveats keep it out of core: Prop. 3.1 is quoted from Kang-Lee-Lee-Oh, J. Algebra 252 (2002) Prop. 6.2, which is the primary and is not yet in references.ts; and dim TL_n = C_n does not by itself give the open identity sum_k m_k^2 = Catalan(n), which additionally needs semisimplicity of TL_n at delta = 2.0108969 and the two-row indexing of the Wedderburn blocks, neither of which this document states. The document's own theorem (type B) is deliberately not recorded as a key result: the folio's type-B cluster is about partition-content cancellation and folded crystals and has no site that wants a type-B TL dimension.",
+          "keyResults": [
+            {
+              "locator": "Prop. 3.1, p. 14 (quoted from Kang-Lee-Lee-Oh [9, Prop. 6.2])",
+              "statement": "Under degree-lex with E_1 < ... < E_{n-1}, T(A_{n-1}) has the Groebner-Shirshov basis {E_i^2 - delta E_i; E_iE_j - E_jE_i for i > j+1; E_{i,j}E_i - E_{i-2,j}E_i for i > j; E_jE_{i,j} - E_jE_{i,j+2} for i > j} (with E_{i,j} = E_i E_{i-1} ... E_j), and its standard monomials E_{i1,j1}...E_{ip,jp} with strictly increasing i's and j's and i_k >= j_k number the nth Catalan number, so dim T(A_{n-1}) = C_n.",
+              "useForFolio": "Two uses. (a) A literature source for dim TL_n = Catalan(n) at general n, asserted uncited at thm:jones-markov-trace and at markov-trace-frobenius-selection.md:82 and supported today only by fixed-n Lean instances. (b) The basis needs two families beyond the defining relations, which is the completion phenomenon that def:hecke-normal-form's confluence claim ignores and that NotAGSBasis.hecke_not_gs_basis_four refutes at n = 4 for the Hecke system.",
+              "targets": [
+                "thm:jones-markov-trace",
+                "def:hecke-normal-form",
+                "qou:QOU.QBeta.TemperleyLiebTower.counts_are_catalan"
+              ]
+            },
+            {
+              "locator": "Sec. 3, defining relations of T(A_{n-1}), pp. 13-14",
+              "statement": "The loop parameter enters only through E_i^2 = delta E_i; the relation E_iE_jE_i = E_i for j = i +/- 1 is un-rescaled, and delta is a free complex parameter.",
+              "useForFolio": "External convention check for the notation register's delta = [2]_q = q + q^-1 ruling: the standard presentation in the literature is the one the folio adopted, with no q^{1/2} and no delta-scaling of the E_iE_jE_i relation, which is exactly the excised convention-C error the register warns against.",
+              "targets": [
+                "tbl:notation-register-table3-data"
+              ]
+            },
+            {
+              "locator": "Remark (1), p. 14",
+              "statement": "The product of two standard monomials of T(A_{n-1}) is again a standard monomial up to a scalar, so the multiplication table closes on the basis.",
+              "useForFolio": "The concrete multiplication rule on the 14-element TL_4 basis, needed only if the C5 / H_4 interface claim recorded as arithmetic in TemperleyLiebTower.interface_dimension_gain is ever exhibited explicitly rather than counted. Not needed today, and qou-8iru is explicit that the H_4 interface must not be fitted.",
+              "targets": [
+                "qou:QOU.QBeta.TemperleyLiebTower.interface_dimension_gain"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "def:hecke-normal-form asserts, with no cites field at all, that the three-rule rewriting system on H_n(q) is confluent -- which the folio's own sorry-free NotAGSBasis.hecke_not_gs_basis_four refutes at n = 4. This is a defect fix, not merely a missing citation: Prop. 3.1 here shows the same completion is needed on the Temperley-Lieb quotient, and [bokut2001] names the Coxeter-side completion family. Cite only after the block is corrected, and note that the q-deformed primary is Kang-Lee-Lee-Oh 2002, not this document.",
+              "target": "def:hecke-normal-form",
+              "bean": "qou-43co"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "thm:jones-markov-trace has an empty cites list while asserting H_n(q)/rad = TL_n(q), that the vanishing blocks span the radical of the trace form, and that the surviving sum of dim^2 is Catalan(n); its own title names Jones 1987. jones1987 is already in references.ts and is the primary missing citation; this document's Prop. 3.1 is the secondary source for dim TL_n = Catalan(n) with an explicit basis.",
+              "target": "thm:jones-markov-trace",
+              "bean": "qou-uyud"
+            },
+            {
+              "action": "add-reference",
+              "rationale": "Kang-Lee-Lee-Oh, J. Algebra 252 (2002) 258-292 is the source Prop. 3.1 is quoted from and, per this document's and its sibling's introductions, the paper that computes GS bases for Hecke algebras AND Temperley-Lieb algebras of type A -- i.e. the q-deformed statement that def:hecke-normal-form and bean qou-auq3 actually need and that [bokut2001] (a Coxeter-group theorem) does not supply. NOT READ: this is a lead from two bibliographies, not a triaged source. Obtain and triage before citing it as load-bearing.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-qspu"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-09T19:30:00Z",
+          "source_sha": "292cb048e709"
+        }
+      }
+    }
+  ]
+}

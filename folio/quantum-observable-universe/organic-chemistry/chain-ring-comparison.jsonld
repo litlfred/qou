@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-chain-ring-comparison",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:chain-ring-comparison",
+  "kind": "proposition",
+  "title": "Predicted vs. observed $\\mathrm{C}_6$ ring-closure barrier",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-chain-ring-energy"
+  ],
+  "tags": [
+    "comparison",
+    "experimental",
+    "theoretical",
+    "activation-energy",
+    "benzene",
+    "carbyne",
+    "ring-closure",
+    "substrate-parameter"
+  ],
+  "leanRef": "qou:QOU.Organic.benzene_weights",
+  "text": "chain-ring-comparison.md",
+  "leanSource": "chain-ring-comparison.lean",
+  "provenance": "authored"
+}

@@ -4,7 +4,7 @@
 Per the Item B audit
 (`docs/audits/2026-05-18-m-p-item-b-t5-categorical-attribution.md`)
 §7b, a_K is the **chirality-active dual sum** of the operator-selection
-LP per [`prop:mass-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/mass-coefficient-shadow-price.md).
+LP per [`prop:mass-coefficient-shadow-price`](../../folio/quantum-observable-universe/braids-and-knots/mass-coefficient-shadow-price.md).
 This script computes four candidate a_K values from the chi-cache
 witnesses (no new compute — pure re-read of existing per-partition
 χ^λ and y_λ data) and emits a comparison witness for downstream

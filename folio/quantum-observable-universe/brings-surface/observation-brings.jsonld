@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-observation-brings",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:observation-brings",
+  "kind": "remark",
+  "title": "Observations on the Bring's surface",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-two-observer-parallelogram"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-observation",
+  "tags": [
+    "archimedean-universe",
+    "observation",
+    "brings-surface"
+  ],
+  "text": "observation-brings.md",
+  "provenance": "authored"
+}

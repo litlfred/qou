@@ -1,0 +1,47 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "gromov1982",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 17,
+      "entry": {
+        "id": "gromov1982",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T16:40:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "note": "PDF verified: 'Volume and bounded cohomology' by Michael Gromov, Publications IHES vol 56 (1982). Title matches references.ts. Bib orphan \u2014 no .lean or .md citation sites in QOU. Decision pending (keep as forward-ref / remove / find use). Likely candidate for citation alongside thurston1978 in hyperbolic-volume contexts. | Re-classified from `uncited`: discovered citation via cites: [] array in per-braid-mass-tower.ts + \\cite{gromov1982,...} in atom-knot-mass-derivation.md. Earlier inventory missed multi-arg \\cite and .ts cites: arrays.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/gromov1982.pdf"
+        },
+        "local_pdf": "uploads/gromov1982.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "FILE ABSENT from uploads/ and from git, so identity cannot be confirmed from front matter and I do not inherit the prior ledger row's claim. CORPUS-SIDE AUDIT: three sites, all one block \u2014 atom-knot-mass-derivation-proof.ts:12, .lean:103, .md:82. The .md cites it for the norm theorem alongside thurston1978, and the block then states in its own prose (just below line 82): 'This is **borrowed, conventional, and used only as naming**. The QOU mass identity above does not depend on the volume conjecture in any way.' So the citation is deliberately and self-declaredly NOT load-bearing \u2014 honest practice, not a defect. A prior ledger row called this key a bib orphan; it is no longer one (this block cites it), but its role is naming-only.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "The single citing block self-declares the reference as naming-only and disclaims dependence on it; no corpus change is warranted, and the verdict on the document must stay undetermined while no PDF is present.",
+              "target": "prop:atom-knot-mass-derivation"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    }
+  ]
+}

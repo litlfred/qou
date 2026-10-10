@@ -1,0 +1,50 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "gukov-pei-putrov-vafa2017",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 255,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1701.06567v2/1701.06567v2.pdf"
+        },
+        "id": "gukov-pei-putrov-vafa2017",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Identity confirmed from the document's own cover (arXiv:1701.06567v2 [hep-th], BPS spectra and 3-manifold invariants, four authors) and matches the seeded key. One citation site and it is load-bearing and VERIFIED: QOU/QBeta/StokesDTBPSBridge.lean:55 glosses it as 'GPPV 1701.06567 (BPS Hilbert space of T[M_3] categorifying the index)'. The document says exactly that \u2014 the categorifying object 'can be understood as the BPS Hilbert space of the effective 3d N = 2 theory T[M_3] on D^2 x R', obtained by reducing the 6d (2,0) theory on M_3, and the abstract states that the D^2 x S^1 half-index refines the Chern-Simons (WRT) invariant with an unrefined linear combination recovering the analytically continued WRT invariant. The citing file is also correctly scoped: its docstring states that it carries the two identifications (stokes = dt from the peacock conjecture, dt = bps from this source) as class FIELDS and does not carry the conclusion A_omega = 3 as a field, deriving that instead by composing them with a separately certified Stokes datum. That is the \u00a73b-cond pattern applied honestly \u2014 the source is cited as a conjectural INPUT, not as established.",
+          "keyResults": [
+            {
+              "locator": "abstract + \u00a71 (6d (2,0) on M_3 x D^2 x R)",
+              "statement": "Homological invariants H_a(M_3) labelled by abelian flat connections, physically defined as the BPS sector of the 6d (2,0) theory on M_3 x D^2 x R, equivalently the BPS Hilbert space of T[M_3] on D^2 x R; its D^2 x S^1 half-index refines the WRT invariant and an unrefined linear combination gives the analytically continued WRT invariant.",
+              "useForFolio": "It is the 'dt = bps' leg of the StokesDTBPSBridge conditional class, i.e. one of the two named conjectural inputs from which the 4_1 BPS count is derived rather than assumed.",
+              "targets": [
+                "QOU.QBeta.StokesDTBPSBridge"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Gloss verified against the source; the citing file treats it as a conjectural class field, which is the correct epistemic scoping. Nothing to change.",
+              "target": "QOU.QBeta.StokesDTBPSBridge"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "c1610b50f5a7"
+        }
+      }
+    }
+  ]
+}

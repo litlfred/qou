@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-nucleon-from-photons-summary",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:nucleon-from-photons-summary",
+  "kind": "remark",
+  "title": "The full photon-to-atom derivation chain",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-four-term-pair-nucleon"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-four-term-pair-nucleon",
+  "tags": [
+    "derivation-chain",
+    "summary",
+    "pair-production",
+    "confinement",
+    "atom",
+    "conservation"
+  ],
+  "text": "nucleon-from-photons-summary.md",
+  "provenance": "authored"
+}

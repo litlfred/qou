@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-q-heat-kernel-peter-weyl",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:q-heat-kernel-peter-weyl",
+  "kind": "proof",
+  "title": "Proof of q heat kernel peter weyl",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-heat-kernel-peter-weyl"
+  ],
+  "text": "q-heat-kernel-peter-weyl-proof.md",
+  "provenance": "authored"
+}

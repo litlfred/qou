@@ -1,6 +1,6 @@
 # Path to 1 ppb — Content Blocks
 
-*Relevant `.md`/`.ts`/`.lean` triples in `content/quantum-observable-universe/`.*
+*Relevant `.md`/`.ts`/`.lean` triples in `folio/quantum-observable-universe/`.*
 
 ## Foundational (categorical-action → mass identity)
 

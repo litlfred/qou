@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-rho-k-h3a-refinement-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:rho-k-h3a-refinement-interpretation",
+  "kind": "remark",
+  "title": "Block-local binding correction $\\Delta_\\lambda$ as categorical shell structure",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-rho-k-h3a-refinement",
+    "papers/quantum-observable-universe/blocks/conj-hoefsmit-scattering-pipeline"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-rho-k-h3a-refinement",
+  "text": "rho-k-h3a-refinement-interpretation.md",
+  "provenance": "authored"
+}

@@ -17,7 +17,7 @@ explicit and gives the two routes through it.
 
 ## What exists today (the trivial shell to replace)
 
-[`QOU/BraidKnot/NucleusEmptySDPUniqueness.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean):
+[`QOU/BraidKnot/NucleusEmptySDPUniqueness.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean):
 
 - `nucleusEmptySDP n : SDPPrimal (heckeDim n) ℝ Empty` — cost = `1` (identity), **`ι = Empty`**
   (no constraints), optimum `Φ⋆ = 0` (`rfl`).
@@ -27,7 +27,7 @@ explicit and gives the two routes through it.
   `real_strict_complementarity_unique_of_dualSlack_posDef`. **Trivial** (optimum is 0).
 
 The engine `real_strict_complementarity_unique_of_dualSlack_posDef`
-([`QOU/MathlibExt/SDPRealUniqueness`](../../content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRealUniqueness.lean)) is **proved** and is what we ride: given a
+([`QOU/MathlibExt/SDPRealUniqueness`](../../folio/quantum-observable-universe/lean/QOU/MathlibExt/SDPRealUniqueness.lean)) is **proved** and is what we ride: given a
 `RealStrongDualityPair` whose `dualSlack` is **PosDef** (interior optimum), the
 feasible-and-optimal matrix is unique. The B–V boundary axiom
 (`strict_complementarity_unique_axiom`, gate **G3**) is **not** needed when the optimum
@@ -48,7 +48,7 @@ actual confinement data (`n₀ = 3·A = 9`, `A = 3`):
   (the `³He` row: PSD-feasible, α⋆ = 0, recovered word `(σ₁σ₂⁻¹)³` in the `(2,1)`
   Wedderburn block).
 - **constraints `ι`** — encode the `Δ_max` Frobenius ball
-  ([`prop:delta-max-uniform-bound`](../../content/quantum-observable-universe/mass-theory/)).
+  ([`prop:delta-max-uniform-bound`](../../folio/quantum-observable-universe/mass-theory/)).
   `ι` is **no longer `Empty`** — this is the substantive difference from the shell.
 - **rhs** — the constraint bounds.
 

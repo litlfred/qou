@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-jet-prolongation",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:jet-prolongation",
+  "kind": "proposition",
+  "title": "Jet Prolongation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-observable-universe"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-jet-prolongation"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-jet-prolongation-su2",
+    "papers/quantum-observable-universe/blocks/rem-prolongation-categorical",
+    "papers/quantum-observable-universe/blocks/ex-brane-tower-levels"
+  ],
+  "tags": [
+    "jet-bundle",
+    "frobenius-hopf",
+    "prolongation"
+  ],
+  "leanRef": "qou:QOU.JetProlongation",
+  "text": "jet-prolongation.md",
+  "leanSource": "jet-prolongation.lean",
+  "provenance": "authored"
+}

@@ -68,7 +68,7 @@ import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
-CONTENT = REPO / "content"
+CONTENT = REPO / "folio"
 PAPER = CONTENT / "quantum-observable-universe"
 
 FAILURES: list[str] = []

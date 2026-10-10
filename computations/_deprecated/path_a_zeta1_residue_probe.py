@@ -167,7 +167,7 @@ def main() -> int:
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "zeta_1_identified_as": "1 (the trivial root of unity)",
         "source_for_zeta_1_definition":
-            "content/quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.md",
+            "folio/quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.md",
         "rows": rows,
     }
     out = HERE / "path-a-zeta1-residue-probe.witness.json"

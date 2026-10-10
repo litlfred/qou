@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-linking-relations-table",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:linking-relations-table",
+  "kind": "remark",
+  "title": "Linking relations between building block knots",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-knot-formula-table"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-embeddability-closure",
+  "tags": [
+    "linking",
+    "hopf-link",
+    "skein",
+    "crossing",
+    "composite",
+    "building-block",
+    "appendix",
+    "connected-sum",
+    "satellite"
+  ],
+  "text": "linking-relations-table.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-tannaka-krein-overview",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:tannaka-krein-overview",
+  "kind": "remark",
+  "title": "Tannaka--Krein duality: what the fibre functor gives us",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-universe"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-universe",
+  "cites": [
+    "references/deligne1990",
+    "references/tannaka1939",
+    "references/woronowicz1988"
+  ],
+  "tags": [
+    "tannaka-krein",
+    "reconstruction"
+  ],
+  "text": "tannaka-krein-overview.md",
+  "provenance": "authored"
+}

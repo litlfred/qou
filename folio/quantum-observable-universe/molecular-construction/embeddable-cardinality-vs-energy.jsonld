@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-embeddable-cardinality-vs-energy",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:embeddable-cardinality-vs-energy",
+  "kind": "remark",
+  "title": "Overlap weighting changes energy, not channel count",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-embeddable-knot-operator"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-embeddable-knot-operator",
+  "tags": [
+    "cardinality",
+    "bond-order",
+    "overlap-weight",
+    "N2",
+    "active-set"
+  ],
+  "text": "embeddable-cardinality-vs-energy.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-arc-space-brane-tower",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:arc-space-brane-tower",
+  "kind": "remark",
+  "title": "The brane tower as a jet-scheme tower carrying motivic integration",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-arc-space",
+    "papers/quantum-observable-universe/blocks/def-recursive-brane-tower",
+    "papers/quantum-observable-universe/blocks/def-motivic-mass-measure",
+    "papers/quantum-observable-universe/blocks/def-algebraic-quantum-volume"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-arc-space",
+  "tags": [
+    "arc-space",
+    "jet-scheme",
+    "brane-tower",
+    "motivic"
+  ],
+  "text": "arc-space-brane-tower.md",
+  "provenance": "authored"
+}

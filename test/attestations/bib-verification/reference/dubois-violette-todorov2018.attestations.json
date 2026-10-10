@@ -1,0 +1,52 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "dubois-violette-todorov2018",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 264,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1808.08110v1/1808.08110v1.pdf"
+        },
+        "id": "dubois-violette-todorov2018",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED from front matter (arXiv identifier and two-author list match the registered entry). Three citation sites: appendix-standard-model/sm-colour-stabilizer-action.md:11 (a \\cite for 'the 1 + 3 colour decomposition of O = C + C^3') and docstring mentions at QOU/MathlibExt/OctonionComplexStructure.lean:9 and QOU/MathlibExt/OctonionColourActionBaseModule.lean:10. LOAD-BEARING AND ACCURATE \u2014 and in fact better sourced here than at the earlier companion: \u00a72 (p.3) states directly that the subgroup preserving the splitting C + C^3 is SU(3), and that the automorphisms acting on C + C^3 give SU(3) x SU(3)/Z_3 with the first factor identified as the colour group. That stabilizer statement is precisely what QOU/MathlibExt/OctonionSU3Stabilizer.lean formalizes as su(3) = ker(ev_e) inside the derivation algebra, so the citation underwrites the exact construction the Lean carries. The Z_6-quotient programme named in the registered entry's note also matches the document's abstract. Stylistic note: two of the three sites name the key inside a prose docstring in backtick form rather than as a '-- Ref:' line, so a Lean-side grep for the standard Ref form finds nothing.",
+          "keyResults": [
+            {
+              "locator": "\u00a72 (unimodularity of the colour group), p. 3",
+              "statement": "Within the derivation algebra of the octonions, the subgroup preserving the splitting C + C^3 is SU(3); the automorphisms acting on C + C^3 give SU(3) x SU(3)/Z_3 with the first factor the colour group.",
+              "useForFolio": "The literature statement matching QOU's octonion colour stabilizer su(3) = ker(ev_e) as a Lie subalgebra of the derivation algebra \u2014 the source the stabilizer construction is modelled on.",
+              "targets": [
+                "conj:sm-colour-stabilizer-action",
+                "QOU.MathlibExt.OctonionSU3Stabilizer"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "OctonionComplexStructure.lean:9 and OctonionColourActionBaseModule.lean:10 name the key only inside prose docstrings, so the standard '-- Ref: [key]' grep does not find them. Add the canonical Ref lines so both files register as citation sites in the bibliography audits.",
+              "target": "QOU.MathlibExt.OctonionColourActionBaseModule",
+              "bean": "qou-vnct"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "4bf98566792d"
+        }
+      }
+    }
+  ]
+}

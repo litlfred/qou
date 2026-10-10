@@ -12,6 +12,34 @@ NOTHING is auto-injected here (measured) — read this yourself. Sibling files:
 
 ---
 
+## STABLE — staleness by LAKE'S OWN SOURCE HASH, not mtime/commit time (2026-10-05)
+
+Every olean in the `a792c46d01b` seed has a `.trace` whose `inputs` holds
+`["<abs path>.lean", "<Hash.ofText of the source>"]`. `import Lake` +
+`(Lake.Hash.ofText (← IO.FS.readFile p)).val` reproduces it exactly
+(KnotTheory: `10187092109162527967` both sides). Equal ⇒ own-fresh; then take the
+import closure. Measured: 2540 fresh / 190 changed / 253 no-olean of 2983;
+dirty closure 628; only **76** fell in the blocks' cone (rebuilt green in 3.5 min).
+Driver: `scripts/lean-blocks-baseline/` (L3, bean `qou-1f1w`).
+
+## TRAP — cache tarball stores `content/…` paths; the tree is `folio/…` (2026-10-05)
+
+Extract with `tar xzf - --transform 's,^content/,folio/,'`, or the 2703 QOU oleans
+land in a `content/` dir nothing reads. `lean-content-sweep.sh`,
+`lean-library-sweep.py`, `lean-shadow-verify.sh`, `lean-restore-gap-oleans.sh`
+still glob `content/*` (read, not run) — the first finds zero targets.
+
+## TRAP — `git push` from the shallow main clone streamed GIGABYTES (2026-10-05)
+
+A 2-commit branch: `pack-objects --shallow` had written 1.87 GB after 16 min.
+Push instead from a throwaway bare repo: `fetch --depth=1 --filter=blob:none`
+the base sha, `fetch` the branch from the local repo, `fetch --deepen=30
+--filter=blob:none origin main` until the base is an ancestor of
+`origin/main` (check `rev-list --objects br --not origin/main | wc -l` is tiny
+— 16 here), then push: 2.6 s. Also: a sibling session may switch the shared
+worktree's branch under you — commit with a private `GIT_INDEX_FILE` +
+`commit-tree` + `update-ref`.
+
 ## TRAP — the LEAN_PATH answer: oleans live one level DEEPER than you think
 
 If `lean` reports `unknown module prefix 'Mathlib'` while listing the directory
@@ -69,7 +97,7 @@ Check the manifests agree on the mathlib rev first; here both were `f897ebcf72cd
 ## STABLE — workspace shape
 
 - Single **root** Lake workspace (`/lakefile.toml`, `/lean-toolchain`); packages
-  `qou`→`QOU` (`content/quantum-observable-universe/lean/`), `ugb`→`UGB`, `fred2005`→`Fred2005`.
+  `qou`→`QOU` (`folio/quantum-observable-universe/lean/`), `ugb`→`UGB`, `fred2005`→`Fred2005`.
 - A bare root `lake build` is a **no-op** (exit 0, "0 jobs"); name the targets.
 - `lean.ref` URIs are package-qualified (`qou:QOU.Torsion.lifting_exists`).
 - Toolchain: `export PATH="$HOME/.elan/bin:$PATH" ELAN_NO_OVERRIDE_NOTICE=1`.
@@ -207,6 +235,48 @@ One leaked `/tmp/tmp.*` survived thirteen days and drove the container to
 command fails, including the `rm`. Keep `trap 'rm -f "$TGZ"' EXIT INT TERM`.
 `df` lies: ~252G nominal at 100% with ~38G used = a per-session quota near 38G.
 
+## TRAP — when the disk fills, the LEAN TOOLCHAIN ITSELF is the biggest /tmp entry, and deleting it breaks Lean (2026-09-12)
+
+Hit the 0-free state the TRAP above describes, and the instinct "clear the big
+things in /tmp" is a trap of its own. Measured this container:
+
+    2471 MB  /tmp/lean-v4.24.0          <- THE LIVE TOOLCHAIN. DO NOT DELETE.
+     697 MB  /tmp/lean-v4.24.0-linux.zip  <- already extracted; safe
+      56 MB  /tmp/claude-code.log         <- safe
+     173 MB  /tmp/claude-0                <- task outputs + scratchpad
+
+`~/.elan/toolchains/lean-v4.24.0` and `leanprover--lean4---v4.24.0` are both
+**symlinks into `/tmp/lean-v4.24.0`**, so `rm -rf` on that directory removes the
+compiler while leaving elan believing it is installed. Verify before deleting
+anything large in /tmp:
+
+    readlink -f ~/.elan/toolchains/*     # anything pointing into /tmp is LIVE
+
+**The good reclaims, in order of value.** A merged sibling **git worktree** is
+usually the largest safe one — 1500 MB here — because each carries its own
+`.lake`. Check it is clean first, then use `git worktree remove` (not `rm -rf`,
+which leaves a stale registration):
+
+    git worktree list
+    git -C <wt> status --short | wc -l       # must be 0
+    git -C <wt> log --oneline @{u}..HEAD | wc -l   # must be 0
+    git worktree remove <wt>
+
+That removes the checkout, **not the branch ref** — so it does not violate the
+never-delete-merged-branches rule. Zip + log + worktree freed 2.3 G here.
+
+**Two harness facts that make this confusing while you are in it.** The Bash
+tool writes its output capture under `/tmp/claude-*/tasks`, so at 0 free
+*every* command reports "output could not be read" even when it ran fine —
+issue deletes blind and check `df` afterwards. And a background job that was
+mid-run when the disk filled dies with its output lost; re-run it after
+clearing rather than assuming it finished.
+
+**Cost of the cleanup, so budget it:** clearing `tasks/*.output` also removes
+the subagent transcripts, and `rm -rf $SHADOW/QOU` removes the lean-direct
+oleans — so the next `lean`-direct verification needs the dependency chain
+rebuilt from the restored cache before the file under test will compile.
+
 ## TRAP — a "N modules are missing" count taken from a two-root `LEAN_PATH` is WRONG (2026-09-05)
 
 The overlay-shadowing trap below, in its most expensive form: a coordinator
@@ -314,10 +384,10 @@ so Lake would clone and build Mathlib from source (~3.3 GB) — infeasible at th
 same mathlib rev `f897ebcf72cd`, so the restored oleans serve UGB directly.
 
 Recipe: topologically order the 29 modules (`UGB.lean` + 28 under `UGB/`) by
-their `import UGB.` lines, then from `content/unital-groebner-bases/lean`
+their `import UGB.` lines, then from `folio/unital-groebner-bases/lean`
 `lean -o .lake/build/lib/lean/<M>.olean -i …ilean <M>.lean` with `LEAN_PATH` =
 that output dir + every `.lake/packages/*/.lake/build/lib/lean` under BOTH the
-repo root and `content/quantum-observable-universe/lean`. **29/29 exit 0, ~4 min
+repo root and `folio/quantum-observable-universe/lean`. **29/29 exit 0, ~4 min
 total, 31 MB** — 1-5 s each except `GrobnerShirshov.HeckeCompletion` at 170 s.
 Preserved (plain `tar`, untraced, restore-only-for-lean-direct) on
 **`lake-cache/ugb-v4-24-0`**, single 11 MB blob `addon-oleans.tgz`, no chunking:
@@ -407,6 +477,19 @@ block's sidecar (128 files for one block) — revert all but yours.
 
 ## TRAP — a theorem that IS a refutation needs more than the gate → `verification-harness.md` §19
 
+**A `False`-CONCLUDING theorem is a different animal — §19a.** The stock
+instruction *"prove `0 = 1` from the same hypotheses; if you can, they are
+contradictory and the theorem is vacuous"* **cannot discriminate**: `False.elim`
+gives you `0 = 1` for every *true* such theorem, and the hypothesis set is
+unsatisfiable *necessarily* (else the theorem is false). Both questions are
+answered before you open the file. The discriminating test is **DROP-ONE** — for
+each hypothesis, a witness satisfying the other `n−1` **and refuting that one**,
+stated as one conjunction so the second half is forced. Measured 2026-09-14: 6/6
+on `no_triangle_of_triples`. And put a **negative control on your own adversarial
+file** (4-5 deliberately false `example`s, require exit 1 at each seeded line) —
+the §19 guard-the-harness rule, which does not otherwise apply when nothing is
+`sed`-mutated.
+
 `exit 0` + clean `#print axioms` does **not** detect an unused or unsatisfiable
 hypothesis, and for a refutation that failure mode "proves" a route dead on
 nothing. A red mutant proves only **syntactic** dependence (`rewrite failed`);
@@ -422,7 +505,7 @@ a `section` name is not part of a full name. Guard the mutation harness — a
 
 Exactly three (AGENTS.md §1a / §"Strict Lean Discipline"): **prove it**;
 **queue it** — the *real* proposition with `sorry` + `-- Ref: [key]` matching
-`content/schema/references.ts`; **demote it** — a `conjecture`, or a
+`folio/schema/references.ts`; **demote it** — a `conjecture`, or a
 content-bearing conditional class carrying the *hypotheses*. Banned: `: True :=
 trivial` in any declaration kind (incl. `def`-disguised), tautologies,
 `native_decide` over an unproved structural claim, an `axiom`/`class`
@@ -476,7 +559,7 @@ trusting a green OR debugging a red. Does NOT invalidate every restore.
 
 Single-file `lean`-direct certifies against on-disk oleans, so the only way to
 know `main` is green is to rebuild what the cache cannot vouch for. Recipe
-(bean `qou-n9j7`, PRs #6649/#6674), from `content/quantum-observable-universe/lean`:
+(bean `qou-n9j7`, PRs #6649/#6674), from `folio/quantum-observable-universe/lean`:
 
 1. Full topological order of `QOU/**/*.lean` → `/tmp/full_topo_all.txt`
    (regenerate it; `main` adds modules daily).
@@ -543,7 +626,7 @@ merge is not a current claim.
 | what | command | last seen | when |
 |---|---|---|---|
 | root mathlib oleans, healthy tree | `find .lake/packages/mathlib -name '*.olean' \| wc -l` | **3480** on the `a792c46d01b` seed — REPRODUCED exactly 2026-09-13 (3470 on 2026-09-04; 6990 on 2026-09-03) | 2026-09-13 |
-| per-paper mathlib oleans (the OTHER half — check, but it may not EXIST) | `find content/quantum-observable-universe/lean/.lake/packages -name '*.olean' \| wc -l` | **10**, and NONE is a `Mathlib/` olean — a `lake update` clones the deps and builds only the `cache` exe (5 `mathlib/Cache/*` + 3 batteries + 2 `lakefile.olean`). So still **ONE `Mathlib/` olean root, no shadowing, no union mirror** — but the SOURCE clone now lives here and a restore must not clobber it (0 on 2026-09-11; 2846 on 2026-09-04) | 2026-09-13 |
+| per-paper mathlib oleans (the OTHER half — check, but it may not EXIST) | `find folio/quantum-observable-universe/lean/.lake/packages -name '*.olean' \| wc -l` | **10**, and NONE is a `Mathlib/` olean — a `lake update` clones the deps and builds only the `cache` exe (5 `mathlib/Cache/*` + 3 batteries + 2 `lakefile.olean`). So still **ONE `Mathlib/` olean root, no shadowing, no union mirror** — but the SOURCE clone now lives here and a restore must not clobber it (0 on 2026-09-11; 2846 on 2026-09-04) | 2026-09-13 |
 | whole restore, fresh container | `find . -name '*.olean' \| wc -l` | **6492** = root 3758 (mathlib 3480) + QOU 2703 + UGB 29 + Fred2005 2; archive = 32461 entries / 6492 olean / 6493 trace. Tree read 6502 = those +10 pre-existing. Trace coverage **100.0 % (3758/3758)** | 2026-09-13 |
 | restore cost, streamed (no tarball on disk) | §STABLE streaming recipe | fetch **1m33s** (1.70 GiB, 20 parts), extract **58 s**; disk 16 G → 25 G used, 14 G free | 2026-09-13 |
 | lean-direct, 3-import Mathlib-only file (`Mathlib.Tactic` + `Ring.Defs` + `Fin.VecNotation`) | `time lean -DautoImplicit=false -s 65536 <f>` | **19.8 s cold / 2.9 s warm**; `user` 2.0 s BOTH — cold page cache, not a rebuild | 2026-09-13 |

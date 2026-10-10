@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-introduction-overview",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:introduction-overview",
+  "kind": "prose",
+  "cites": [
+    "references/wigner1960"
+  ],
+  "text": "intro.md",
+  "meta": {
+    "position": "opening"
+  },
+  "provenance": "authored"
+}

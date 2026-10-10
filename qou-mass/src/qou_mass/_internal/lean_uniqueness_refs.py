@@ -21,7 +21,7 @@ NUCLEUS_EMPTY_SDP_THEOREM = (
 )
 
 FRAMEWORK_DOC = (
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/"
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/"
     "NucleusEmptySDPUniqueness.lean"
 )
 

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-implications-algebraic-independence",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:implications-algebraic-independence",
+  "kind": "remark",
+  "title": "Implications if the QOU volumes are algebraically independent",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-yekutieli-transcendence-shadow",
+    "papers/quantum-observable-universe/blocks/prop-cs-evaluation-faithfulness"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-hyperbolic-volume-transcendence",
+  "cites": [
+    "references/yekutieli2010"
+  ],
+  "tags": [
+    "transcendence",
+    "algebraic-independence",
+    "yekutieli",
+    "milnor",
+    "confinement"
+  ],
+  "text": "implications-algebraic-independence.md",
+  "provenance": "authored"
+}

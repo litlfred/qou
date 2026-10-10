@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-per-nucleon-shift-additive-linearity",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:per-nucleon-shift-additive-linearity",
+  "kind": "proposition",
+  "title": "Per-new-nucleon additive linearity: $\\mathrm{shift}(Z, N) = 18Z + 21N + 1$ on canonical pppnnn ordering",
+  "tags": [
+    "atomic-markov-trace",
+    "shift-exponent",
+    "per-nucleon-decomposition",
+    "additive-linearity",
+    "canonical-pppnnn-ordering",
+    "d-u-closed-form",
+    "isotope-prediction"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.per_nucleon_shift_additive_linearity",
+  "text": "per-nucleon-shift-additive-linearity.md",
+  "provenance": "authored"
+}

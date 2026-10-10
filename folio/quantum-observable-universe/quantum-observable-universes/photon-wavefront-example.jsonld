@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-photon-wavefront",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:photon-wavefront",
+  "kind": "example",
+  "title": "Continuing example: photon wavefront through a double slit",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-wavefront-propagation",
+    "papers/quantum-observable-universe/blocks/rem-instanton-on-shell",
+    "papers/quantum-observable-universe/blocks/rem-knot-basis-color-content"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-localized-knot",
+  "tags": [
+    "photon",
+    "wavefront",
+    "double-slit",
+    "empty-knot",
+    "diffraction",
+    "color-content"
+  ],
+  "text": "photon-wavefront-example.md",
+  "provenance": "authored"
+}

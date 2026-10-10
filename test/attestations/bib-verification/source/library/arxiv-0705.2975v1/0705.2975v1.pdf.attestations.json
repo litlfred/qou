@@ -1,0 +1,42 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "source",
+    "id": "library/arxiv-0705.2975v1/0705.2975v1.pdf",
+    "path": "library/arxiv-0705.2975v1/0705.2975v1.pdf"
+  },
+  "verifications": [
+    {
+      "position": 453,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-0705.2975v1/0705.2975v1.pdf"
+        },
+        "id": null,
+        "status": "unreviewed",
+        "note": "Identified from the title page via pypdf (arXiv:0705.2975v1, math.CA, 21 May 2007, three authors, 31 pp). The library directory holds ONLY the PDF: no structure.json, no sections/, no summary.json, no INDEX.md row \u2014 so corpus-grep path 5 cannot see its text; an ingestion pass is owed before any 'not held' claim about its content. No ref() entry, none created (tangential).",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Compares the definitions of the Galois group of a linear difference equation from algebra (Picard-Vessiot rings, van der Put-Singer), analysis/field theory (Franke; weak Picard-Vessiot fields), model theory (Chatzidakis-Hrushovski) and the tannakian side, and shows they agree over suitable fields. Read: Abstract, \u00a71, Thm 2.9 (for k with algebraically closed constants and K = k(C_K): the Picard-Vessiot ring over k and the ring K[V, 1/det V] built from a weak Picard-Vessiot field over K have isomorphic Galois groups over the algebraic closure of C_K), \u00a73 (Thm 3.1: the tannakian version for q-difference equations over C(x), Aut^tensor(omega_M) tensor C_K-bar = Aut^tensor(omega_{M_K}) tensor C_K-bar), \u00a74 (the model-theoretic group; Prop 4.8-4.15 on Picard-Vessiot rings over fields with non-algebraically-closed constants). Same field as the corpus's q-difference Galois usage, but no block varies the constant field, uses a weak Picard-Vessiot field, or invokes the model-theoretic group: 'difference Galois' has 3 content hits, all in QAlienBridgeEquation.lean / QOper.lean docstrings that name 'the local q-difference Galois group' without depending on which definition; 'Chatzidakis' / 'Hardouin' have zero hits anywhere. Scope-(a): as read, nothing here is consumed by a named block; it is the foundational reassurance that 'the' q-difference Galois group is definition-independent, which the corpus takes for granted and does not cite.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "No block consumes a definition-comparison result; the one hygiene item (the directory is un-sectioned) belongs to library intake, not to a content change.",
+              "target": "library/arxiv-0705.2975v1"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-09-07T08:38:46Z",
+          "source_sha": "683d6bd44cea"
+        }
+      }
+    }
+  ]
+}

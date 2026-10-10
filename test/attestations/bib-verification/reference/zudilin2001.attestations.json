@@ -1,0 +1,63 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "zudilin2001",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 141,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0104249v1/0104249v1.pdf"
+        },
+        "id": "zudilin2001",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Pure Diophantine number theory: hypergeometric constructions giving irrationality of at least one zeta(odd) in explicit ranges, and delta(a) > 0.395 log a for the dimension of the Q-span of 1, zeta(3), ..., zeta(a). Nothing here is q-deformed, categorical, or knot-theoretic, so no QOU derivation consumes it. It is nevertheless a citable state-of-the-art for one named claim already in the corpus: rem:surreal-bounds-graded-mikusinski predicts a depth-3 surreal bound applies to 'Apery-style irrationality questions (Zagier 1986)', and rem:transcendental-accounting's zeta(3) row records 'irrationality (Apery 1978); transcendence open'. Both cite 1978/1986-era sources for a line of work whose current state is Rivoal/Zudilin. Scope note: this is a citation-quality improvement, not evidence for or against any QOU claim.",
+          "keyResults": [
+            {
+              "locator": "Thm 4",
+              "statement": "For every odd a >= 3, delta(a) > 0.395 log a, where delta(a) = dim_Q span{1, zeta(3), zeta(5), ..., zeta(a)}.",
+              "useForFolio": "Makes concrete what 'Apery-style irrationality questions' currently means quantitatively, so rem:surreal-bounds-graded-mikusinski's depth-3 prediction is stated against the real state of the art rather than against Apery 1978 alone. Purely a citation upgrade; it does not test the surreal-bound prediction.",
+              "targets": [
+                "rem:surreal-bounds-graded-mikusinski",
+                "rem:transcendental-accounting"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No entry (grep 'Zudilin' returns 0 in references.ts).",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-tem4"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "rem:surreal-bounds-graded-mikusinski names 'Apery-style irrationality questions' with only Zagier 1986 attached; Zudilin 2001 (with Rivoal) is the current state of that programme.",
+              "target": "rem:surreal-bounds-graded-mikusinski",
+              "bean": "qou-ba7f"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "c2fcdefc73b8"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

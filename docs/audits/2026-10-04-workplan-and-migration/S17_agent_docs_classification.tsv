@@ -1,0 +1,213 @@
+path	class	destination	confidence	mixed	math_dollars	inbound_refs	bytes	rule	title
+.claude/validation-errors-handoff.md	handoff	beans/notes	h	no	0	1	3966	/handoff/	Content Validation Errors — Handoff Summary
+docs/agent-briefs/2026-05-03-e-hartree-categorical-derivation.md	handoff	beans/notes	h	yes	60	1	7025	/agent-brief/	Agent brief: categorical derivation of E_h ∝ m_e c² α² via J¹ vanishing
+docs/agent-briefs/2026-05-11-lambda-scale-borromean-baryon-derivation.md	handoff	beans/notes	h	yes	318	3	16727	/agent-brief/	Agent brief: derive $\lambda_{\text{scale}}$ in the Borromean-baryon mass formula
+docs/agent-briefs/2026-05-22-lambda-scale-qdilog-tower-direct.md	handoff	beans/notes	h	no	4	9	46718	/agent-brief/	Agent brief — `λ_scale` from q-dilog tower direct parametrisation
+docs/agent-briefs/lambda_scale.md	handoff	beans/notes	h	no	0	2	14662	/agent-brief/	Stage Primary block (.md) Role
+docs/coordination/1ppb-categorical-chain.md	coordination-ledger	beans/notes	m	yes	384	10	57744	/coordination/	Coordination ledger: 1 ppb categorical-chain frontier
+docs/coordination/1ppb-compute-tranche-queue.md	outstanding-work	beans	h	no	0	4	4686	/tranche/	1ppb compute tranche — prioritised work queue
+docs/coordination/1ppb.md	coordination-ledger	beans/notes	m	yes	266	24	96226	/coordination/	Coordination ledger — 1 ppb mass-prediction goal
+docs/coordination/1ppq-qbeta.md	coordination-ledger	beans/notes	m	no	0	153	305083	/ledger/	1ppQ Master Ledger — Q_β
+docs/coordination/2026-05-09-three-sibling-pr-cleanup.md	coordination-ledger	beans/notes	h	no	2	1	8164	/sibling/	Coordination ledger — 2026-05-09 sibling PR cleanup
+docs/coordination/2026-05-10-non-calibrated-q-beta-mass.md	coordination-ledger	beans/notes	m	yes	58	1	21953	/coordination/	Coordination ledger — non-calibrated Q_β + mass cleanup
+docs/coordination/2026-05-11-neutron-mass-substrate-vol-form.md	coordination-ledger	beans/notes	m	no	34	1	5869	/coordination/	Coordination ledger — neutron-mass substrate Vol-form derivation (Phase 2)
+docs/coordination/2026-05-18-integration-watch-queue-sweep.md	outstanding-work	beans	h	no	0	1	3458	/queue/	Integration-watch queue idle-sweep — coordination ledger
+docs/coordination/2026-05-18-lambda-scale-falsification.md	coordination-ledger	beans/notes	m	yes	68	2	8104	/coordination/	Coordination ledger — λ_scale substrate-form falsification
+docs/coordination/2026-05-18-workplan-0b-mn-substrate.md	outstanding-work	beans	h	no	0	1	11201	/workplan/	Coordination ledger — workplan-0b/M_N substrate derivation
+docs/coordination/2026-05-19-bib-audit-summary.md	status-survey	beans/surveys	h	no	0	2	11404	/audit-summary/	Bibliography Audit Summary — 2026-05-19
+docs/coordination/2026-05-19-bib-verification-ledger.md	coordination-ledger	beans/notes	h	no	0	2	18618	/bib-/	Bibliography Verification Ledger — 2026-05-19
+docs/coordination/2026-05-19-detangler-architectural-acceptances.md	outstanding-work	beans	m	no	0	3	9075	/tranche/	Detangler mega-tranche — architectural-accept rationale for remaining items
+docs/coordination/2026-05-19-i1-hecke-cluster-handover.md	handoff	beans/notes	h	no	0	2	10476	/handover/	I1 Hecke/Hoefsmit Cluster — Session Handover
+docs/coordination/2026-05-19-i12-a-namespaced-decl-audit-regex.md	unclear	owner-review	l	no	0	1	2829	no rule fired	I12 cluster A — namespaced-decl audit regex fix
+docs/coordination/2026-05-19-level-selection-rule.md	coordination-ledger	beans/notes	m	no	30	1	4595	/coordination/	Coordination ledger — level-selection rule (averaging-resonance, $c_k$ sectors)
+docs/coordination/2026-05-19-one-voice-watcher-rollout.md	coordination-ledger	beans/notes	h	no	0	1	8523	/watch/	2026-05-19 — one-voice watcher rollout coordination
+docs/coordination/2026-05-19-paper-misfetch-fixes.md	coordination-ledger	beans/notes	h	no	0	1	6205	/misfetch/	Paper-Misfetch Items — Suggested Fixes
+docs/coordination/2026-05-19-refreshed-workplan.md	outstanding-work	beans	h	no	8	3	7282	/workplan/	Refreshed workplan — 2026-05-19 (after #781 / #797 / #808 / #802 landed; #822 in flight)
+docs/coordination/2026-05-19-review-math-exposition.md	coordination-ledger	beans/notes	m	no	0	1	6415	/coordination/	Coordination ledger — `claude/review-math-exposition-03e6H`
+docs/coordination/2026-05-20-bib-agent-vs-human-verification.md	coordination-ledger	beans/notes	h	no	0	1	5691	/bib-/	Coordination — bib `verified_by` agent-vs-human structure
+docs/coordination/2026-05-20-conjecture-priority-queue.md	outstanding-work	beans	h	yes	61	1	6963	/priority/	Conjecture priority queue (2026-05-20)
+docs/coordination/2026-05-20-lambda-p-followons-ledger.md	outstanding-work	beans	h	no	24	7	10082	/followons/	Coordination ledger — PR #852 `claude/lambda-p-followons`
+docs/coordination/2026-05-20-phase-5l-combined-handover.md	handoff	beans/notes	h	yes	58	1	7916	/handover/	Phase 5l + 5l.1 + canonical-derivation cheat sheet — handover
+docs/coordination/2026-05-20-stage-2-prop-revival-coordination.md	coordination-ledger	beans/notes	h	no	0	1	4077	/coordination/	Coordination Ledger: #840 Stage 2 (Prop Revival)
+docs/coordination/2026-05-22-cal4-lambda-scale.md	coordination-ledger	beans/notes	m	no	16	2	5224	/coordination/	Coordination ledger — CAL-4 λ_scale cluster (2026-05-22)
+docs/coordination/2026-05-22-cheat-sheet-manager.md	coordination-ledger	beans/notes	h	no	0	3	8980	/cheat-sheet-manager/	Cheat-sheet §5 manager — 2026-05-22
+docs/coordination/2026-05-22-detangler-backlog-survey.md	status-survey	beans/surveys	h	no	0	1	13902	/survey/	Detangler backlog survey — 2026-05-22 watcher session
+docs/coordination/2026-05-22-lambda-scale-alts-strategy-d-ledger.md	outstanding-work	beans	h	no	0	1	7245	/strategy/	Coordination ledger — PR #916 `claude/lambda-scale-alts-strategy-d`
+docs/coordination/2026-05-22-mcp-paper-search-services.md	status-survey	beans/surveys	m	no	1	2	12032	/status/	MCP paper-search services — features, status, integration with bib-qa
+docs/coordination/2026-05-22-proof-integration-watch.md	outstanding-work	beans	m	no	0	1	5667	/tranche/	Coordination ledger — proof-integration-watcher tranche
+docs/coordination/2026-05-22-tier-1a-rust-laurent-q.md	coordination-ledger	beans/notes	m	no	0	1	3194	/coordination/	Coordination ledger — Tier 1.A (Rust LaurentQ reduce + MPFR pipeline)
+docs/coordination/2026-05-22-wenzl-lr-consumer-docstring.md	coordination-ledger	beans/notes	h	no	0	1	3749	/consumer/	Coordination ledger — Wenzl-LR consumer docstring fix
+docs/coordination/2026-05-23-algebraic-geometric-observable-consistency.md	coordination-ledger	beans/notes	m	no	12	6	13975	/coordination/	Coordination: algebraic → geometric → observable consistency gap
+docs/coordination/2026-05-23-cheat-sheet-fix-3-default-flip.md	coordination-ledger	beans/notes	h	no	0	2	3277	/fix-/	Coordination ledger — cheat-sheet §5 fix #3 default flip
+docs/coordination/2026-05-23-detangler-cluster4-batch-drafts.md	math-note	HOLD:folio-assistant-8npa	l	no	65	1	12525	no name rule; 65 $	Detangler cluster-4 remaining splits — batch drafts
+docs/coordination/2026-05-24-archimedean-wall-per-script-swap-workplan.md	outstanding-work	beans	h	no	0	1	6367	/workplan/	Coordination — `respects_archimedean_wall` per-script swaps (deferred)
+docs/coordination/2026-05-24-canonical-mass-table-f64-default-finding.md	coordination-ledger	beans/notes	m	no	0	1	3709	/coordination/	Coordination — canonical_mass_table_extended.py default precision (RETRACTED)
+docs/coordination/2026-05-24-fix-validate-ci-ledger.md	coordination-ledger	beans/notes	h	no	0	1	3561	/fix-/	Coordination ledger — `claude/fix-validate-ci-2026-05-24`
+docs/coordination/2026-05-24-lambda-scale-absorption-cleanup-ledger.md	coordination-ledger	beans/notes	h	no	0	1	5800	/cleanup/	Coordination ledger — `claude/yekutieli-mass-table-gap4-2026-05-24`
+docs/coordination/2026-05-24-library-reuse-production-readiness.md	coordination-ledger	beans/notes	m	no	0	20	3896	/coordination/	Coordination ledger — Library-reuse production-readiness
+docs/coordination/2026-05-24-low-isotope-mass-anatomy-ledger.md	coordination-ledger	beans/notes	h	no	0	6	26627	/ledger/	Coordination ledger — low-isotope mass-error anatomy + λ_scale purge
+docs/coordination/2026-05-24-mass-table-script-breakage-finding.md	coordination-ledger	beans/notes	m	no	0	1	4052	/coordination/	Coordination — 2 mass-table scripts broken on main (finding)
+docs/coordination/2026-05-24-post-1089-followups-ledger.md	outstanding-work	beans	h	no	0	2	8969	/followups/	Coordination ledger — post-PR-#1089 follow-ups (Tier 1 + Tier 2)
+docs/coordination/2026-05-24-pr1127-improvement-opportunities.md	outstanding-work	beans	h	no	0	2	9069	/opportunit/	Improvement opportunities — paper / compute / exposition (2026-05-24)
+docs/coordination/2026-05-24-pr1127-prioritized-workplan.md	outstanding-work	beans	h	no	0	2	7079	/workplan/	Prioritized workplan — PR #1127 Q_β / complex-q / ρ_q purge (2026-05-24)
+docs/coordination/2026-05-24-q-beta-fitting-and-complex-q.md	coordination-ledger	beans/notes	m	no	0	3	12084	/coordination/	Coordination ledger — Q_β fitting concern + complex-q substrate exploration (2026-05-24)
+docs/coordination/2026-05-24-q-beta-pr1127-queued-work.md	outstanding-work	beans	h	no	10	2	9950	/queue/	Queued work — PR #1127 Q_β / complex-q / ρ_q purge (2026-05-24)
+docs/coordination/2026-05-24-quark-exposition-pr1076-pr1089.md	coordination-ledger	beans/notes	m	no	0	1	2269	/coordination/	Coordination ledger — 2026-05-24
+docs/coordination/2026-05-24-script-references-bulk-population-plan.md	outstanding-work	beans	h	no	1	1	6547	/-plan/	Coordination — script `references` metadata bulk-population workplan
+docs/coordination/2026-05-25-post-1231-wire-up-ledger.md	coordination-ledger	beans/notes	h	no	0	2	7786	/ledger/	Coordination ledger — post-PR #1231 wire-up + H_3/H_{3A} bug fix
+docs/coordination/2026-05-26-proton-mass-identity-workplan.md	outstanding-work	beans	h	no	4	2	4199	/workplan/	Proton-mass substrate-identity work plan (PR #1272)
+docs/coordination/2026-05-28-publish-ci-followups.md	outstanding-work	beans	h	no	2	1	3533	/followups/	Publish CI follow-ups (post `copilot/fix-latexmk-errors`)
+docs/coordination/2026-05-29-binding-a3-honesty.md	math-note	HOLD:folio-assistant-8npa	h	no	0	4	9589	/binding/	A≥3 binding honesty — per-λ overclaim + shell review
+docs/coordination/2026-05-30-a567-and-alpha-em-coupling.md	coordination-ledger	beans/notes	m	no	0	1	13197	/coordination/	2026-05-30 — coordination: A∈{5,6,7} binding (#1431) ↔ α_EM Bring (#1444) ↔ operator-valued LR (#1443) ↔ meson EM (#1442
+docs/coordination/2026-05-30-alpha-em-4pi-rt-2loop-derivation-plan.md	outstanding-work	beans	h	no	24	3	7514	/-plan/	α/(4π) — RT 2-loop categorical derivation plan
+docs/coordination/2026-05-30-alpha-em-4pi-thread.md	coordination-ledger	beans/notes	m	no	0	3	7569	/coordination/	α/(4π) thread — coordination ledger
+docs/coordination/2026-05-30-alpha-em-canonical-chain-walkthrough.md	math-note	HOLD:folio-assistant-8npa	h	no	20	1	14326	/chain/	α_EM — canonical chain walkthrough
+docs/coordination/2026-05-30-alpha-em-fsc-closure.md	coordination-ledger	beans/notes	m	no	0	2	4178	/coordination/	α_EM 1ppQ closure — coordination ledger
+docs/coordination/2026-05-30-alpha-em-habiro-ledger-entry.md	coordination-ledger	beans/notes	h	no	0	1	4022	/ledger/	α/(4π) coordination ledger — Habiro entry (2026-05-30)
+docs/coordination/2026-05-30-alpha-em-phase1-rt-ledger.md	coordination-ledger	beans/notes	h	no	0	1	3699	/ledger/	α/(4π) coord ledger entry — Phase 1 RT + items closure (2026-05-30)
+docs/coordination/2026-05-30-alpha-em-phase2-ledger.md	coordination-ledger	beans/notes	h	no	0	1	4230	/ledger/	α/(4π) Phase 2 RT — coord ledger entry (2026-05-30)
+docs/coordination/2026-05-30-mu-thread-pivot.md	outstanding-work	beans	h	no	0	3	4852	/pivot/	m_μ thread pivot — open the genuine next-largest gap
+docs/coordination/2026-05-30-proof-gap-audit.md	math-note	HOLD:folio-assistant-8npa	h	no	0	1	4853	/proof/	Proof-gap audit (2026-05-30, post-#1448)
+docs/coordination/2026-05-30-sdp-uniqueness-status.md	status-survey	beans/surveys	h	no	0	8	10202	/status/	SDP strict-complementarity uniqueness — status audit (2026-05-30)
+docs/coordination/2026-05-31-cal-3-m-pi-hunt.md	coordination-ledger	beans/notes	m	no	0	2	7237	/coordination/	CAL-3 = m_π — coordination ledger
+docs/coordination/2026-06-01-closed-route-followups.md	outstanding-work	beans	h	no	0	3	4677	/followups/	Closed-route follow-ups (PR #1581 continuation) — 2026-06-01
+docs/coordination/2026-06-01-h4-residual-derivation.md	math-note	HOLD:folio-assistant-8npa	h	no	0	6	4386	/derivation/	h⁴-residual structural-derivation hunt — 2026-06-01
+docs/coordination/2026-06-01-mp-yekutieli-and-mn-flavorsplit.md	unclear	owner-review	l	no	0	4	9778	no rule fired	m_p Yekutieli + m_n/Δ_pn flavor-split — 2026-06-01
+docs/coordination/2026-06-01-phi8-da-m-interference.md	coordination-ledger	beans/notes	m	no	0	7	3512	/coordination/	Φ_8² Δa_m interference mechanism — coordination ledger
+docs/coordination/2026-06-01-post-1650-trio.md	outstanding-work	beans	h	no	0	2	4295	/trio/	Post-PR-#1650 trio: Bring zero-mode + m_n at H_3+ + Δ_λ — 2026-06-01
+docs/coordination/2026-06-01-qbeta-habiro-followup.md	coordination-ledger	beans/notes	m	no	0	5	5604	/coordination/	Q_β Habiro follow-up — coordination ledger
+docs/coordination/2026-06-01-qbeta-wenzl-habiro-keystone.md	coordination-ledger	beans/notes	m	no	0	1	2673	/coordination/	Q_β Wenzl-Habiro keystone — coordination ledger
+docs/coordination/2026-06-01-sign-block-template-expansion.md	outstanding-work	beans	h	no	0	2	5414	/expansion/	Sign-block / Plancherel template expansion — 2026-06-01
+docs/coordination/2026-06-01-vol-density-bz3-refinement-scope.md	outstanding-work	beans	h	no	0	1	5803	/scope/	VolDensity(𝓑₃, q₀) refinement — research-direction scope
+docs/coordination/2026-06-01-vol-density-bz3-refinement-session-status.md	status-survey	beans/surveys	h	no	0	2	6819	/status/	Topic 1 VolDensity(𝓑₃) refinement — session status (2026-06-01)
+docs/coordination/2026-06-02-abs-content-hecke-energy-scoping.md	math-note	HOLD:folio-assistant-8npa	h	no	0	2	11037	/hecke/	Categorical scoping: `|content(λ)|` as Hecke-energy density
+docs/coordination/2026-06-02-m-avg-subgoal-1-operator-combiner-scope.md	outstanding-work	beans	h	no	0	5	11121	/scope/	Topic 2 — m_avg +2.89% via Subgoal-1 operator-valued Wenzl branching
+docs/coordination/2026-06-02-m-p-linking-weight-and-binding-link-scope.md	outstanding-work	beans	h	no	0	5	5811	/scope/	Topics 2+3 — m_p linking_weight derivation + binding-link canonical object
+docs/coordination/2026-06-02-mass-sweep-a4-plus-status-refresh.md	status-survey	beans/surveys	h	no	0	1	12448	/status/	Mass-sweep A≥4 atom→knot rule — 2026-06-02 status refresh
+docs/coordination/2026-06-02-mba-appendix-maintenance-contract.md	math-note	HOLD:folio-assistant-8npa	m	no	0	2	6114	/mass/	Mass-and-Binding-Algorithms appendix — maintenance contract
+docs/coordination/2026-06-02-qbeta-1ppq-closure-scope.md	outstanding-work	beans	h	no	0	4	6080	/scope/	Q_β 1ppQ closure — three-step plan
+docs/coordination/2026-06-02-qbeta-habiro-element-scope.md	outstanding-work	beans	h	no	0	4	6016	/scope/	Topic 1 — Q_β Habiro element categorical identification
+docs/coordination/2026-06-02-qbeta-habiro-recursion-prearchimedean-scope.md	outstanding-work	beans	h	no	0	3	3620	/scope/	Q_β Habiro recursion — pre-archimedean derivation + bridge
+docs/coordination/2026-06-02-substrate-fermi-and-qbeta-coord.md	coordination-ledger	beans/notes	m	no	0	1	4787	/coordination/	Substrate Fermi statistics + Q_β coordination — 2026-06-02
+docs/coordination/2026-06-02-yekutieli-multicell-and-coulomb-channel.md	math-note	HOLD:folio-assistant-8npa	m	no	0	2	5507	/substrate/	α_EM multi-cell Yekutieli + substrate Coulomb channel — 2026-06-02
+docs/coordination/2026-06-03-nuclear-binding-color-averaging.md	coordination-ledger	beans/notes	m	no	0	2	2921	/coordination/	Coordination ledger — nuclear A=3 binding + color-averaging wiring
+docs/coordination/2026-06-03-qbeta-habiro-chain-1-scope.md	outstanding-work	beans	h	no	0	5	11476	/scope/	Q_β Habiro element scope — next session entry point (2026-06-03)
+docs/coordination/2026-06-03-section-3b-cond-audit-stubs-triage.md	outstanding-work	beans	h	no	0	1	11461	/triage/	§3b-cond audit-visibility stubs — triage (2026-06-03)
+docs/coordination/2026-06-04-ci-billing-blocked.md	status-survey	beans/surveys	m	no	0	1	1937	/status/	CI status: GitHub Actions is billing-blocked (2026-06-04)
+docs/coordination/2026-06-04-geom-tau-all-orders.md	outstanding-work	beans	m	no	0	1	9095	/research direction/	Geom bridge: τ at all orders (open research direction)
+docs/coordination/2026-06-04-session-backlog.md	outstanding-work	beans	h	no	0	1	4575	/backlog/	Session backlog — 2026-06-04 (canonical-discipline + Geom + QA hygiene)
+docs/coordination/2026-06-05-integration-backlog-qa.md	outstanding-work	beans	h	no	1	1	13616	/backlog/	Coordination — QA staleness infra + `/integration-backlog all` drain (#1885)
+docs/coordination/2026-06-05-step9-binding-closure.md	coordination-ledger	beans/notes	m	no	4	12	34631	/coordination/	Step-9 binding closure — coordination ledger (flag-bearer hub)
+docs/coordination/2026-06-07-geom-uniqueness-transcendence-fate.md	outstanding-work	beans	h	no	0	1	7872	/fate/	Geom(K) uniqueness + `conj:hyperbolic-volume-transcendence` fate
+docs/coordination/2026-06-07-lake-cache-restore-discipline.md	coordination-ledger	beans/notes	m	no	10	2	6265	/coordination/	Coordination — Lean build-cache restore/seed discipline (lake-cache/qou-*)
+docs/coordination/2026-06-08-lean-cache-architecture.md	coordination-ledger	beans/notes	m	no	18	5	5166	/coordination/	Coordination ledger — Lean architecture / cache (sandbox build)
+docs/coordination/2026-06-08-transcendental-surreal-narrowing-ledger.md	coordination-ledger	beans/notes	h	no	0	4	16034	/ledger/	Transcendental-conjecture surreal-narrowing ledger
+docs/coordination/2026-06-09-open-todos-consolidated.md	outstanding-work	beans	h	no	0	1	11453	/todo/	Consolidated open-todo ledger — 2026-06-09 (7-PR sweep)
+docs/coordination/2026-06-10-heckealgebra-poincare-normalizers.md	coordination-ledger	beans/notes	m	no	0	1	3051	/coordination/	Coordination ledger — HeckeAlgebra H₃(q) Poincaré-normalizer reconstruction
+docs/coordination/2026-06-13-alpha-em-phase5-rt-ledger.md	coordination-ledger	beans/notes	h	yes	40	2	2190	/ledger/	Ledger Entry: RT Phase 5 Subgoal-2 Scaffold
+docs/coordination/2026-06-13-qbeta-habiro-element-ledger.md	coordination-ledger	beans/notes	h	yes	46	3	4829	/ledger/	Q_beta Habiro Element Decomposition Ledger
+docs/coordination/2026-06-16-q-local-evolution.md	coordination-ledger	beans/notes	m	no	0	1	11732	/coordination/	Coordination ledger — q ↔ CAL anchor drift + local-q evolution
+docs/coordination/2026-06-16-qa-sidecar-refresh-teamwork.md	outstanding-work	beans	m	no	0	0	5600	/plan/	QA-sidecar refresh — teamwork plan (2026-06-16)
+docs/coordination/2026-06-22-constant-discipline-remaining-backlog.md	outstanding-work	beans	h	no	14	1	4680	/backlog/	Constant-discipline remaining backlog (2026-06-22)
+docs/coordination/2026-06-24-lambda-a-fit-excised-per-knot-density.md	math-note	HOLD:folio-assistant-8npa	h	no	0	8	5515	/lambda/	λ_A is a fit — excised; use the canonical (muon-anchored) Hecke energy (owner ruling 2026-06-24)
+docs/coordination/2026-06-29-ov-standard-basis-brick4.md	coordination-ledger	beans/notes	m	no	0	1	8312	/coordination/	Coordination — OV tower brick-4 (Specht standard basis) + siblings
+docs/coordination/2026-07-02-lambda-a-excision-consumer-lanes.md	coordination-ledger	beans/notes	h	no	0	2	11433	/consumer/	λ_A excision — consumer lane classification (execution ledger)
+docs/coordination/2026-07-13-dilog-pentagon-mass-binding.md	coordination-ledger	beans/notes	m	no	0	0	15182	/coordination/	Coordination — dilog/pentagon algebraic layer → mass & binding
+docs/coordination/2026-07-17-1ppq-program-ownership-map.md	math-note	HOLD:folio-assistant-8npa	h	no	0	2	7575	/1ppq/	1ppQ program — ownership map (2026-07-17)
+docs/coordination/2026-07-17-perknot-pn-bond-resolution-ka-extensivity.md	math-note	HOLD:folio-assistant-8npa	h	no	0	1	6704	/knot/	Per-knot p≠n bond-resolution vs the k(A) extensivity gap (beans qou-cqqs / qou-r1sr)
+docs/coordination/2026-07-18-ka-additive-cluster-negative-structural-findings.md	outstanding-work	beans	m	no	0	1	3456	/scope/	k(A) additive-cluster derivation — scope-(a) negative + structural findings (bean qou-7uxa)
+docs/coordination/2026-07-18-mubar-idempotent-cluster-sdp-convergence.md	coordination-ledger	beans/notes	m	no	0	0	3593	/ledger/	Mixed-multibond shared channel — μ̄ / cluster / SDP convergence ledger
+docs/coordination/2026-07-24-binding-mass-workplan-refresh.md	outstanding-work	beans	h	no	0	4	9867	/workplan/	Binding / mass workplan refresh — week review 2026-07-18 → 2026-07-24
+docs/coordination/2026-07-24-delta-lambda-binding-front-convergence.md	math-note	HOLD:folio-assistant-8npa	h	no	0	0	6207	/lambda/	Δ_λ / binding front — convergence + fit rollback (2026-07-24)
+docs/coordination/2026-07-25-5two-gk-bilinear-bridge.md	handoff	beans/notes	m	no	0	1	1331	/session intent/	5₂ GK-bilinear bridge — session intent (2026-07-25)
+docs/coordination/2026-07-25-argu-phase-branch-selection.md	handoff	beans/notes	m	no	0	2	1091	/session intent/	c₃ anchor-swing → the phase arg(u) branch-selection — session intent (2026-07-25)
+docs/coordination/2026-07-25-deltalambda-perpair-bond-scalar.md	handoff	beans/notes	m	no	0	4	3148	/session intent/	Δ_λ binding front — the single ≥4-body per-pair bond-magnitude scalar (session intent 2026-07-25)
+docs/coordination/2026-07-25-meridian-holonomy-c3-anchor.md	handoff	beans/notes	m	no	0	3	1211	/session intent/	Meridian-holonomy q₀↦u deformation as the c₃ anchor-carrier — session intent (2026-07-25)
+docs/coordination/2026-07-26-deltalambda-A-dependent-damping.md	handoff	beans/notes	m	no	0	3	2906	/session intent/	Δ_λ A-dependent damping — the route past the #4300 two-anchor no-go (session intent 2026-07-26)
+docs/coordination/2026-07-26-deltalambda-additive-signchanging-term.md	handoff	beans/notes	m	no	0	1	3500	/session intent/	Δ_λ additive sign-changing many-body term — the route the #4307 damping-wall points to (session intent 2026-07-26)
+docs/coordination/2026-07-26-deltalambda-borromean-3body-cluster.md	handoff	beans/notes	m	no	0	1	1750	/session intent/	Δ_λ: the enhancing 3-body cluster — Borromean (irreducible) operator (session intent 2026-07-26)
+docs/coordination/2026-07-26-deltalambda-borromean-magnitude-lift.md	handoff	beans/notes	m	no	0	1	1554	/session intent/	Δ_λ: the Borromean 3-body MAGNITUDE lift — derive or refute the ~78× gap (session intent 2026-07-26)
+docs/coordination/2026-07-26-deltalambda-interface-operator-kappa.md	handoff	beans/notes	m	no	0	0	3254	/session intent/	Δ_λ: derive the frustration weight κ from the interface operator ρ_F / s5-so3 — the last step to the magnitude (session 
+docs/coordination/2026-07-26-deltalambda-mu4-rhoF-cluster.md	handoff	beans/notes	m	no	0	2	1729	/session intent/	Δ_λ: μ₄ via ρ_F cluster integrals — the #4320 deuteron-wall redirect (session intent 2026-07-26)
+docs/coordination/2026-07-26-q0-varies-imq-c3.md	handoff	beans/notes	m	no	0	2	1600	/session intent/	q₀ as a varying local field — Im(q) as the c₃ anchor-carrier (session intent 2026-07-26)
+docs/coordination/2026-08-01-l2-strategy-q0-observed-delta-lambda-scope.md	outstanding-work	beans	h	no	0	2	6199	/strategy/	L2 / 1 ppQ strategy — q₀ is observed-not-derived; the real gap is relational (Δ_λ); dilog machinery is foundational
+docs/coordination/2026-08-02-1ppq-lever-map-post-q0-gate.md	math-note	HOLD:folio-assistant-8npa	h	no	0	2	5104	/1ppq/	1ppq lever map — after the substrate-q₀ FOREVER GATE (2026-08-02)
+docs/coordination/2026-08-02-c3-odd-aomega-unification.md	coordination-ledger	beans/notes	m	no	0	10	9945	/coordination/	Coordination ledger — c₃-odd / A_ω / S unification (2026-08-02)
+docs/coordination/2026-08-07-fibre-leg-workplan-refresh.md	outstanding-work	beans	h	no	0	0	6457	/workplan/	Workplan refresh — the fibre leg after 794 main commits (2026-08-07)
+docs/coordination/2026-08-07-l2-volume-binding-cluster.md	coordination-ledger	beans/notes	m	no	0	6	12321	/coordination/	Coordination ledger — L2 / volume-binding cluster
+docs/coordination/2026-08-19-bk-crossing-coordination-arc-refresh.md	outstanding-work	beans	m	no	0	0	5589	/work-plan/	bk-crossing-coordination arc — work-plan refresh (2026-08-19)
+docs/coordination/2026-08-26-tl-quotient-wenzl-tower.md	coordination-ledger	beans/notes	m	no	0	0	5286	/coordination/	TL quotient / Wenzl tower — coordination ledger
+docs/coordination/2026-08-29-bk-crossing-mass-binding-arc-reassessment.md	coordination-ledger	beans/notes	m	no	0	4	5692	/ledger/	bk-crossing mass-binding arc — reassessment + consolidated ledger (2026-08-29)
+docs/coordination/2026-08-30-milnor-brunnian-deficit-arc.md	coordination-ledger	beans/notes	m	no	0	0	8625	/coordination/	Milnor / Brunnian deficit arc — coordination ledger (qou-v7ro)
+docs/coordination/2026-09-03-float64-laundering-drain.md	coordination-ledger	beans/notes	m	no	0	0	6297	/coordination/	Coordination — float64 laundering drain (`LAUNDERED` tier)
+docs/coordination/2026-09-05-owner-gated-bean-triage.md	outstanding-work	beans	h	no	30	3	58083	/triage/	Owner-gated bean triage — the veto ledger
+docs/coordination/alpha-em.md	coordination-ledger	beans/notes	m	no	0	43	87319	/ledger/	α_EM canonical derivation — master ledger
+docs/coordination/aomega-routec-m2-o2-mechanism.md	unclear	owner-review	l	no	0	0	5865	no rule fired	`A_ω` Route C M2 + O2 mechanism + conditional O1-remove
+docs/coordination/binding-scale-is-hyperbolic-volume.md	coordination-ledger	beans/notes	m	no	36	17	15238	/coordination/	The binding scale is the hyperbolic volume — coordination ledger
+docs/coordination/calibration-layers.md	live-registry	STAY (live: validated data / validator / catalog)	h	no	0	1	15959	/calibration-layers/	The three calibration layers — math ideal / observational ideal / fitted ideal
+docs/coordination/canonical-discipline-l1-l3-l4.md	coordination-ledger	beans/notes	m	no	6	1	4408	/coordination/	Coordination ledger — `claude/canonical-discipline-l1-l3-l4-2026-05-19` (PR #802)
+docs/coordination/canonical-mass-table-extension.md	coordination-ledger	beans/notes	m	no	0	1	3399	/coordination/	Coordination ledger — canonical-mass-table-extension
+docs/coordination/cfs-q-clt.md	coordination-ledger	beans/notes	m	no	0	3	4337	/coordination/	Coordination ledger — CFS section + q-CLT integration
+docs/coordination/cited-sorry-formalization-catalog.md	live-registry	STAY (live: validated data / validator / catalog)	h	no	0	0	40965	/catalog/	Cited-sorry Lean formalization catalog
+docs/coordination/ck-dk-canonical-registry.md	live-registry	STAY (live: validated data / validator / catalog)	h	no	0	121	86640	/registry/	c_k / d_k canonical registry — the ONE source of truth
+docs/coordination/ck-dk-registry.json	live-registry	STAY (live: validated data / validator / catalog)	h	no	1	5	10900	/registry/	
+docs/coordination/ck_dk_registry_validate.py	live-registry	STAY (live: validated data / validator / catalog)	h	no	0	2	23992	/registry/	!/usr/bin/env python3
+docs/coordination/clarabel-orbit-trace-2026-05-30.md	coordination-ledger	beans/notes	m	no	0	1	2217	/coordination/	Coordination ledger — clarabel compute + orbit-trace (2026-05-30)
+docs/coordination/codata-constants-unify-2026-05-23.md	coordination-ledger	beans/notes	m	no	0	2	2495	/coordination/	Coordination Ledger: CODATA Constants Unification (2026-05-23)
+docs/coordination/compute-pipeline-benchmark-table.md	live-registry	STAY (live: validated data / validator / catalog)	h	no	0	1	6103	/benchmark-table/	Compute pipeline benchmark table — per-step timing × mathematical object size
+docs/coordination/convention-slip-registry.json	live-registry	STAY (live: validated data / validator / catalog)	h	no	0	5	5044	/registry/	
+docs/coordination/convention_slip_validate.py	live-registry	STAY (live: validated data / validator / catalog)	h	no	0	1	10025	/_validate.py/	!/usr/bin/env python3
+docs/coordination/delta-lambda-magnitude-derivation.md	coordination-ledger	beans/notes	m	no	0	5	9939	/coordination/	Coordination — Δ_λ magnitude derivation (hibinv + hratio + SP2 + Stokes-3)
+docs/coordination/deltalambda-covariance-week-review-2026-07-24.md	outstanding-work	beans	m	no	0	0	3289	/workplan/	Week-review + workplan reconciliation — the Δ_λ covariance-kernel chain vs the 2026-07-24 landscape
+docs/coordination/derivation-chain-drain-program.md	math-note	HOLD:folio-assistant-8npa	h	no	0	0	4050	/derivation/	Draining the derivation-chain gap — tiering and program of work
+docs/coordination/dilog-part-a-convergence.md	coordination-ledger	beans/notes	m	no	0	0	4037	/coordination/	Coordination ledger — dilog Part-A Tauberian/DCT convergence
+docs/coordination/dilog-part-b-cusp-attack.md	coordination-ledger	beans/notes	m	no	16	13	29675	/coordination/	Coordination ledger — dilog Part-B cusp cancellation attack
+docs/coordination/e-unit-deuteron-scale.md	coordination-ledger	beans/notes	m	no	0	3	7520	/coordination/	Coordination ledger — deuteron `E_unit` as a function of the 3 CALs (via 𝔇)
+docs/coordination/eightfold-n3-surface.md	coordination-ledger	beans/notes	m	no	0	2	2890	/coordination/	Coordination ledger — the eightfold `N = 3` surface
+docs/coordination/encounter-illustrations.md	coordination-ledger	beans/notes	m	yes	120	1	13219	/coordination/	Coordination — Encounter chapter illustrations
+docs/coordination/explore-q10.md	coordination-ledger	beans/notes	m	no	0	2	5854	/coordination/	Q^10 selectivity exploration — coordination ledger
+docs/coordination/forward-ref-defect-triage-2026-06-01.md	outstanding-work	beans	h	no	0	2	5939	/triage/	Forward-ref logical-defect triage + workplan (2026-06-01)
+docs/coordination/gap-a-path-b-lambda.md	coordination-ledger	beans/notes	m	no	0	14	13674	/coordination/	GAP-A / Path B per-atom λ(K) — coordination ledger
+docs/coordination/hecke-tower-and-trace-parameter.md	coordination-ledger	beans/notes	m	no	0	0	6013	/coordination/	Coordination ledger — the Hecke tower and the Markov-trace parameter
+docs/coordination/i1-probe-author-queue-2026-05-19.md	outstanding-work	beans	h	no	0	2	1185	/queue/	I1 probe author-queue (2026-05-19)
+docs/coordination/integration-watcher-skill-family.md	coordination-ledger	beans/notes	h	no	0	1	4566	/watch/	Integration-watcher skill family — coordination ledger
+docs/coordination/isotope-mass-witness-data.md	coordination-ledger	beans/notes	m	no	0	2	21342	/coordination/	Coordination ledger — isotope-mass witness data
+docs/coordination/kernel-constraints-registry.json	live-registry	STAY (live: validated data / validator / catalog)	h	no	0	2	18743	/registry/	
+docs/coordination/kernel_constraints_registry_validate.py	live-registry	STAY (live: validated data / validator / catalog)	h	no	0	4	10918	/registry/	!/usr/bin/env python3
+docs/coordination/keystone-infra.md	coordination-ledger	beans/notes	m	no	0	2	13317	/coordination/	Coordination ledger — keystone de-abstraction (epic `08a2`)
+docs/coordination/keystone-multivector-attack.md	math-note	HOLD:folio-assistant-8npa	m	no	0	1	10364	/closure/	Keystone-closure — multi-vector attack map (2026-07-19)
+docs/coordination/keystone-sdeformedvolume-channel-attack.md	coordination-ledger	beans/notes	m	no	0	7	7262	/coordination/	Coordination — attack on the SDeformedVolumeChannel keystone (post-#3773)
+docs/coordination/lambda-scale-cal4-consolidated.md	coordination-ledger	beans/notes	m	no	0	1	5753	/coordination/	Coordination ledger — λ_scale CAL-4 (consolidated)
+docs/coordination/language-trap-drain.md	coordination-ledger	beans/notes	m	no	0	0	8346	/coordination/	Coordination ledger — language-trap agentic QA drain
+docs/coordination/lean-frontier.md	coordination-ledger	beans/notes	m	no	0	0	3264	/coordination/	Coordination ledger — Lean frontier (sorry-closing / honesty)
+docs/coordination/molien-fake-degree-generaln.md	coordination-ledger	beans/notes	m	no	0	2	5086	/coordination/	Coordination ledger — general-n Molien / fake-degree q-hook normalisation
+docs/coordination/option-e.md	coordination-ledger	beans/notes	m	no	0	87	106052	/ledger/	Δ_λ closure (Option-E) — master ledger
+docs/coordination/q-laplacian-unifying-perspective.md	outstanding-work	beans	m	no	0	1	6028	/workplan/	Workplan — the q-Laplacian / `[k]_q` unifying perspective
+docs/coordination/q0-repin-2026-05-29.md	coordination-ledger	beans/notes	m	no	0	1	8001	/coordination/	Coordination ledger — q₀ re-pin (#1422) + derived-vs-fitted camps
+docs/coordination/qbeta-followup-pending-2026-05-19.md	math-note	HOLD:folio-assistant-8npa	h	no	0	1	4986	/qbeta/	Q_β precision-ladder follow-up — pending items from PR #777
+docs/coordination/rsk-brick-series.md	coordination-ledger	beans/notes	m	no	0	0	2756	/coordination/	RSK Brick Series — coordination ledger
+docs/coordination/s5-so3-keystone.md	coordination-ledger	beans/notes	m	no	0	129	104844	/coordination/	Coordination ledger — `conj:s5-so3-fiber-action` (the s5-so3 fibre-action keystone)
+docs/coordination/satellite-cabling-source-ledger.md	coordination-ledger	beans/notes	h	no	0	1	7192	/ledger/	Satellite / cabling source ledger — links only, NOT ingested
+docs/coordination/show-mass-sweep-table.md	coordination-ledger	beans/notes	m	no	0	3	4537	/coordination/	Coordination ledger — `claude/show-mass-sweep-table-2xEBG` (PR #781)
+docs/coordination/six-term-mass-pipeline.md	math-note	HOLD:folio-assistant-8npa	h	no	70	4	7736	/mass/	Six-term mass-formula compute pipeline — script audit
+docs/coordination/skein-observation-bridge.md	coordination-ledger	beans/notes	m	no	0	2	8706	/coordination/	Coordination ledger — the Skein-observation bridge
+docs/coordination/sm-26-parameter-chip-away.md	coordination-ledger	beans/notes	m	no	0	8	23003	/coordination/	Coordination ledger — SM 26-parameter chip-away (2026-08-02)
+docs/coordination/story-b-c3-c4-categorical.md	coordination-ledger	beans/notes	m	no	2	2	19947	/coordination/	Coordination ledger — Story B c_3/c_4/κ categorical derivation
+docs/coordination/tooling-extraction.md	coordination-ledger	beans/notes	m	no	0	3	2564	/coordination/	Coordination ledger — tooling extraction + skills/MCP consolidation
+docs/coordination/trace-convention-registry.json	live-registry	STAY (live: validated data / validator / catalog)	h	no	0	26	84927	/registry/	
+docs/coordination/trace-convention-registry.md	live-registry	STAY (live: validated data / validator / catalog)	h	yes	500	59	34027	/registry/	Trace-convention registry — which Markov trace, in which channel
+docs/coordination/trace_convention_registry_validate.py	live-registry	STAY (live: validated data / validator / catalog)	h	no	0	6	42816	/registry/	!/usr/bin/env python3
+docs/coordination/udeform-spin-part-derivation.md	coordination-ledger	beans/notes	m	no	4	7	17885	/coordination/	Coordination — derive the SPIN part of u(q₀) (continuation of #4391)
+docs/coordination/vacuity-def-dodge-drain.md	coordination-ledger	beans/notes	m	no	0	0	3884	/coordination/	Coordination ledger — vacuity `def:True` dodge drain
+docs/coordination/whitehead-link-volume-conjecture-join.md	math-note	HOLD:folio-assistant-8npa	h	no	0	1	6159	/conjecture/	Whitehead-link Volume Conjecture — two programs, and the join
+docs/coordination/yt-seminormal-infra.md	coordination-ledger	beans/notes	m	no	0	0	22032	/coordination/	Coordination ledger — YT seminormal-sum Mathlib-gap infra
+docs/coordination/z-ck-fmap-keystone.md	coordination-ledger	beans/notes	m	yes	118	22	33439	/coordination/	z → c_k f-map keystone — coordination ledger
+docs/handoffs/2026-05-11-q-beta-spectral-bridge-handoff.md	handoff	beans/notes	h	yes	58	2	9482	/docs/handoffs//	Handoff: Q_β Form A ≡ Form B bridge — paper + Lean closure
+docs/handoffs/2026-06-19-folio-asst-beans-handoff.md	handoff	beans/notes	h	no	2	0	10468	/docs/handoffs//	Handoff → folio-assistant agent: beans / work-plan migration + session-setup consolidation
+docs/handoffs/2026-06-26-folio-assistant-intro-rendering.md	handoff	beans/notes	h	no	1	0	8288	/docs/handoffs//	Handoff: folio-assistant rendering changes (Introduction PDF review)
+docs/handover/2026-05-20-next-agent-orientation.md	handoff	beans/notes	h	no	0	1	17627	/docs/handover//	Next-agent orientation — 2026-05-20
+docs/handover/2026-06-04-homfly-rework-handover.md	handoff	beans/notes	h	no	0	1	5633	/docs/handover//	Handover — HOMFLY rework + mass/binding verification-gap audit
+docs/handover/2026-06-09-hopeful-feynman-tasklist.md	handoff	beans/notes	h	no	1	1	4721	/docs/handover//	Session task list — `claude/hopeful-feynman-y0zsyy` (2026-06-09)
+docs/handover/2026-06-09-qou-lean-v424-repair-and-cache.md	handoff	beans/notes	h	no	5	2	9406	/docs/handover//	Handover — QOU Lean v4.24.0 red-repair (#2001) + Mathlib-cache fix
+docs/handover/2026-06-09-session-handover.md	handoff	beans/notes	h	no	0	2	6750	/docs/handover//	Session handover — 2026-06-09 (author away ~1 week)
+docs/handovers/2026-06-09-qa-drain-2020-2022-handover.md	handoff	beans/notes	h	no	17	1	12771	/docs/handovers//	Handover — pick up stalled PRs #2020 & #2022 (proof-statement-integrity drain)

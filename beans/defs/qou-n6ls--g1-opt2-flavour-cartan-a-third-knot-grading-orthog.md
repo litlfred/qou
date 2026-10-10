@@ -1,0 +1,13 @@
+---
+# qou-n6ls
+title: 'G1-opt2 (flavour Cartan): a third knot grading orthogonal to (n,T3) = the strangeness/charm axis; mirror of the T3=sign(writhe) derivation (#4618).'
+status: todo
+type: task
+priority: normal
+tags:
+    - reorg-2026-10-04
+created_at: 2026-08-02T20:19:12Z
+updated_at: 2026-10-04T15:19:25Z
+parent: qou-8lxd
+---
+

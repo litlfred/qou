@@ -51,7 +51,7 @@ import subprocess
 import sys
 from fractions import Fraction
 
-ROOT = pathlib.Path("content/quantum-observable-universe")
+ROOT = pathlib.Path("folio/quantum-observable-universe")
 
 FIG = re.compile(r"([+-]?\d+(?:\.\d+)?)\s*(ppb|ppm|%)\b")
 

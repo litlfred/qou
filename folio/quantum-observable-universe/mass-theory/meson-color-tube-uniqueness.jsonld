@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-meson-color-tube-uniqueness",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:meson-color-tube-uniqueness",
+  "kind": "proposition",
+  "title": "Meson m_K/m_π ratio uniqueness via the α_shift universal chain",
+  "cites": [
+    "references/jones1987",
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "normalization",
+    "frobenius",
+    "no-fitting",
+    "uniqueness",
+    "meson"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.meson_ratio_via_alpha_shift",
+  "text": "meson-color-tube-uniqueness.md",
+  "leanSource": "meson-color-tube-uniqueness.lean",
+  "provenance": "authored"
+}

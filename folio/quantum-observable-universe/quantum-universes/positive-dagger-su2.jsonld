@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-positive-dagger-su2",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:positive-dagger-su2",
+  "kind": "example",
+  "title": "Positive-definite dagger in $\\mathrm{SU}(2)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-quantum-universe-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-positive-definite-dagger",
+  "tags": [
+    "su2",
+    "dagger",
+    "positive-definite"
+  ],
+  "text": "positive-dagger-su2.md",
+  "provenance": "authored"
+}

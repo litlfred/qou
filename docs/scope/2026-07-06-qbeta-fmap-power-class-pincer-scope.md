@@ -68,7 +68,7 @@ even-in-ℏ"):
 3. **Bar parity (structural bookkeeping).** The recursion coefficients
    alternate bar-parity when fed bar-odd rates
    (`esymm_bar_parity`, proved in
-   [`q-beta-c-k-recursion-from-habiro-q-difference.lean`](../../content/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.lean)).
+   [`q-beta-c-k-recursion-from-habiro-q-difference.lean`](../../folio/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.lean)).
    Not load-bearing for the pincer; recorded so the three gradings stay
    distinct.
 

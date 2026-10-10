@@ -31,7 +31,7 @@ the whole A=3 magnitude program: every trace / cross-ratio object gives modulus 
 option-e.md line ~870, "r* ~ 1.585 != 1 is NOT supplied".)
 
 -- Ref: [manuscript] computations/qbeta/c3_w2_c1_connection_invariant.py
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/QBeta/C1ConnectionPoles.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/QBeta/C1ConnectionPoles.lean
 -- Ref: [rsz2013] Asterisque 355 section 3.3 (Ramis-Sauloy-Zhang)
 """
 from __future__ import annotations

@@ -40,7 +40,7 @@ Records research status + the cusp-structure data; promotes nothing.
 
 Ref: computations/probes/difference_knot_binding_probe.py
 Ref: docs/audits/2026-06-13-difference-knot-binding-geometric-probe.md
-Ref: content/quantum-observable-universe/mass-theory/binding-error-amplification.md
+Ref: folio/quantum-observable-universe/mass-theory/binding-error-amplification.md
 """
 from __future__ import annotations
 

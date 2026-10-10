@@ -1,0 +1,41 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "mcphail-snyder2026",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 315,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2601.05136v2/2601.05136v2.pdf"
+        },
+        "id": "mcphail-snyder2026",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Identity confirmed from the document's own cover (arXiv:2601.05136v2, 15 May 2026, state integrals for the quantized SL_2(C) Chern-Simons invariant, single author, Duke) and matches the seeded key, including the ref() note's v2/May-2026 detail. Citation status is NOT 'cited': the ref() entry exists (references.ts:5249) but grep over content/ finds no `\\cite{}`, no `[mcphail-snyder2026]` and no cites-array entry \u2014 a bib orphan. Its only appearance is docs/audits/2026-08-01-fantini-wheeler-summability-c3-borel-reframe.md:109, the audit that also handled fantini-wheeler2024; that audit's Lean output (BorelStateIntegralSummability.lean, StateIntegralRecursionLattice.lean) cites fantini-wheeler2024 only. So it was gathered alongside a landed reference and did not land itself. Its subject is directly adjacent: it expresses the geometric-twist / quantized SL_2(C) Chern-Simons invariant Z^psi_N(K, rho, mu) as a sum over contour integrals in a space parametrising hyperbolic structures on the knot complement \u2014 i.e. a state-integral presentation of a Kashaev-type invariant built from quantum dilogarithms, which is the same machinery the corpus's state-integral files use. Supporting rather than core: no corpus block currently consumes one of its statements, and I have not checked whether its state-integral presentation is compatible with the Andersen-Kashaev presentation the corpus's other source uses.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "The reference is recorded and its audit context is documented. Citing it would require first checking that its state-integral presentation and the Andersen-Kashaev one used by the corpus's landed source describe the same object under a stated normalisation; asserting adjacency without that check is what the corpus's citation-drift problems are made of.",
+              "target": "QOU.QBeta.StateIntegralRecursionLattice"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "cee15456257d"
+        }
+      }
+    }
+  ]
+}

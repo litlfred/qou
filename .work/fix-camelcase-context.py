@@ -35,7 +35,7 @@ FIXES = {
     'Ofweightdecomposition': 'OfWeightDecomposition',
 }
 
-files = subprocess.check_output(['find', 'content/quantum-observable-universe/lean/QOU', '-name', '*.lean']).decode().split()
+files = subprocess.check_output(['find', 'folio/quantum-observable-universe/lean/QOU', '-name', '*.lean']).decode().split()
 fixed = 0
 for f in files:
     p = pathlib.Path(f)

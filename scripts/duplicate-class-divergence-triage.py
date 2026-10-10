@@ -54,7 +54,7 @@ _spec = importlib.util.spec_from_file_location(
 dupcensus = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(dupcensus)
 
-CONTENT = ROOT / "content"
+CONTENT = ROOT / "folio"
 
 FIELD = re.compile(r"^(?P<indent>\s+)(?P<name>[A-Za-z_][A-Za-z0-9_']*)\s*:(?P<type>.*)$")
 EXTENDS = re.compile(r"\bextends\b")
@@ -220,7 +220,7 @@ def main() -> int:
         for r in rows:
             print(f"  {r['class']}  [{r['namespace']}]  lib={r['library_copies']} sib={r['sibling_copies']}")
             for f in r["files"]:
-                print(f"      {f.replace('content/quantum-observable-universe/', '')}")
+                print(f"      {f.replace('folio/quantum-observable-universe/', '')}")
 
     if args.json:
         Path(args.json).write_text(json.dumps(out, indent=2) + "\n")

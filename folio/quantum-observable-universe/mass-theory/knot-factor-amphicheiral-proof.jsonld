@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-knot-factor-amphicheiral",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:knot-factor-amphicheiral",
+  "kind": "proof",
+  "title": "Proof of knot factor amphicheiral",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-knot-factor-amphicheiral"
+  ],
+  "text": "knot-factor-amphicheiral-proof.md",
+  "provenance": "authored"
+}

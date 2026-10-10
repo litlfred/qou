@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-confinement-operator-selection-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:confinement-operator-selection-interpretation",
+  "kind": "remark",
+  "title": "Confined-demand beta decay and confinement universality",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-confinement-operator-selection"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-confinement-operator-selection",
+  "tags": [
+    "confinement",
+    "beta-decay",
+    "borromean",
+    "universality",
+    "demand-profile"
+  ],
+  "text": "confinement-operator-selection-interpretation.md",
+  "provenance": "authored"
+}

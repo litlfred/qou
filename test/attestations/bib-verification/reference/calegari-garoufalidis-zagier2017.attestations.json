@@ -1,0 +1,47 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "calegari-garoufalidis-zagier2017",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 261,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1712.04887v3/1712.04887v3.pdf"
+        },
+        "id": "calegari-garoufalidis-zagier2017",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "WRONG JOIN - report loudly. The seeded id was faddeev_kashaev1994 (Faddeev-Kashaev, 'Quantum dilogarithm', Mod. Phys. Lett. A, arXiv:hep-th/9310070). This document is arXiv:1712.04887v3 [math.NT], 'Bloch groups, algebraic K-theory, units, and Nahm's conjecture', by Calegari, Garoufalidis and Zagier, revised 6 Apr 2021. Different authors, different subject, wrong decade. This is one of FOUR uploads in this slice all seeded to the same faddeev_kashaev1994 key (the others being 2109.04664v4, 2305.14884v2 and 9601025v2); none of them is hep-th/9310070, so the seeding evidently matched on the phrase 'quantum dilogarithm' appearing in each abstract. No registered key matches: grep of folio/schema/references.ts for '1712.04887', 'Calegari' and 'Nahm' returns nothing. Set id to null. Verdict undetermined: the identification is settled, but relevance for THIS paper has not been assessed - I read only its title page and abstract, and it inherited a slot earned by a different document. It is plainly in-scope subject matter (cyclic quantum dilogarithm, Bloch group, K_3, quantum modularity of the Kashaev invariant, Nahm sums at roots of unity), so it deserves a genuine first-pass triage rather than a guessed verdict.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The document is unregistered and on-topic for the Bloch-group / cyclic-dilogarithm / quantum-modularity front. Register it under its own key before any citation, then triage it properly.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-jeqf"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "024317c20a1d"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

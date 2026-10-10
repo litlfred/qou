@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-valley-table",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:valley-table",
+  "kind": "remark",
+  "title": "Representative stable isotopes: Coulomb ratio and Diophantine error",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-diophantine-valley"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-integer-stability",
+  "tags": [
+    "valley-of-stability",
+    "diophantine",
+    "codata",
+    "neutron-proton-ratio"
+  ],
+  "text": "valley-table.md",
+  "provenance": "authored"
+}

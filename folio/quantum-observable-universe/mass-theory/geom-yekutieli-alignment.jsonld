@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-geom-yekutieli-alignment",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:geom-yekutieli-alignment",
+  "kind": "conjecture",
+  "title": "Geometric invariant $\\mathrm{Geom}(K)$ as rigid dualizing evaluation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-topological-mass-formula",
+    "papers/quantum-observable-universe/blocks/prop-yekutieli-lifting",
+    "papers/quantum-observable-universe/blocks/conj-hyperbolic-volume-transcendence"
+  ],
+  "cites": [
+    "references/yekutieli2010",
+    "references/yekutieli2015"
+  ],
+  "tags": [
+    "rigid-dualizing",
+    "yekutieli",
+    "frobenius-pairing",
+    "self-duality",
+    "thurston-geometrization",
+    "volume-conjecture",
+    "chern-simons"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.geom_yekutieli_alignment",
+  "text": "geom-yekutieli-alignment.md",
+  "provenance": "authored"
+}

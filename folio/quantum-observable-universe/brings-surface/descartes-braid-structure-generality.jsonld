@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-descartes-braid-structure-generality",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:descartes-braid-structure-generality",
+  "kind": "remark",
+  "title": "Base-ring generality and the $\\mathfrak{p}$-adic realisation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-descartes-braid-structure",
+    "papers/quantum-observable-universe/blocks/ex-p-adic-realisation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/cor-descartes-braid-structure",
+  "tags": [
+    "archimedean-universe",
+    "braid-group",
+    "dic3"
+  ],
+  "text": "descartes-braid-structure-generality.md",
+  "provenance": "authored"
+}

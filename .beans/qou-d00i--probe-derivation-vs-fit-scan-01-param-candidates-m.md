@@ -1,9 +1,0 @@
----
-# qou-d00i
-title: 'Probe: derivation-vs-fit scan, 0/1-param candidates miss ratio −0.1738'
-status: todo
-type: task
-created_at: 2026-07-26T01:05:25Z
-updated_at: 2026-07-26T01:05:25Z
----
-

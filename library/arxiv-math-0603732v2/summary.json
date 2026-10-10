@@ -1,0 +1,231 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0603732v2",
+ "source_sha256": "3464a2ddc2e54f3a",
+ "brief": "DUALISING COMPLEXES AND TWISTED HOCHSCHILD (CO)HOMOLOGY FOR NOETHERIAN HOPF ALGEBRAS — W e show that many noetherian Hopf algebras A have a rigid du- alising complex R with R ∼= ν A1[d].",
+ "extended": "**DUALISING COMPLEXES AND TWISTED HOCHSCHILD (CO)HOMOLOGY FOR NOETHERIAN HOPF ALGEBRAS**\n\n*K.A. BROWN AND J.J. ZHANG*\n\n31 pp, 42 sections.\n\n**Abstract.** W e show that many noetherian Hopf algebras A have a rigid du- alising complex R with R ∼= ν A1[d]. Here, d is the injective dimension of the algebra and ν is a certain k-algebra automorphism of A, unique up to an inner automorphism. In honour of the ﬁnite dimensional theory whi ch is hereby gen- eralised we call ν the Nakayama automorphism of A. W e prove that ν = S2ξ, where S is the antipode of A and ξ is the left winding automorphism of A de- termined by the left integral of A. The Hochschild homology and cohomology groups with coeﬃcients in a suitably twisted free bimodule a re shown to be non-zero in the top dimension d, when A is an Artin-Schelter regular noether- ian Hopf algebra of global dimension d. (Twisted) Poincar´ e duality holds in this setting, as is deduced from a theorem of Van den Bergh.\n\n**Outline.** Front matter; 0 Introduction; 0.1.; 0.2 Rigid dualising complexes; 0.3 Nakayama automorphisms; 0.6 The antipode; 0.4 Twisted Hochschild groups; 0.5 Classes of examples; 0.7.; 1 General preparations; 1.1 Standard notation; 1.2 Artin-Schelter Gorenstein algebras; 1.3 Homological integrals; 2 Hopf algebra Preparations; 2.1 Restriction via; 2.2 The left adjoint action; 2.3 Twisted (bi)modules; 2.4 Homological properties of the adjoint acti",
+ "tokens": {
+  "brief": 46,
+  "extended": 356
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-0-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-01",
+   "title": "0.1.",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-02-rigid-dualising-complexes",
+   "title": "Rigid dualising complexes",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-003-03-nakayama-automorphisms",
+   "title": "Nakayama automorphisms",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-004-06-the-antipode",
+   "title": "The antipode",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-005-04-twisted-hochschild-groups",
+   "title": "Twisted Hochschild groups",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-006-05-classes-of-examples",
+   "title": "Classes of examples",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-007-07",
+   "title": "0.7.",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-008-1-general-preparations",
+   "title": "General preparations",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-009-11-standard-notation",
+   "title": "Standard notation",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-010-12-artin-schelter-gorenstein-algebras",
+   "title": "Artin-Schelter Gorenstein algebras",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-011-13-homological-integrals",
+   "title": "Homological integrals",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-012-2-hopf-algebra-preparations",
+   "title": "Hopf algebra Preparations",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-013-21-restriction-via",
+   "title": "Restriction via",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-014-22-the-left-adjoint-action",
+   "title": "The left adjoint action",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-015-23-twisted-bimodules",
+   "title": "Twisted (bi)modules",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-016-24-homological-properties-of-the-adjoint-action",
+   "title": "Homological properties of the adjoint action",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-017-25-representations-and-winding-automorphisms",
+   "title": "Representations and winding automorphisms",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-018-26-the-right-adjoint-action",
+   "title": "The right adjoint action",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-019-3-twisted-hochschild-homology",
+   "title": "Twisted Hochschild homology",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-020-33-the-link-with-integrals",
+   "title": "The link with integrals",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-021-34-proof-of-theorem-04a",
+   "title": "Proof of Theorem 0.4(a)",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-022-35-remarks",
+   "title": "Remarks",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-023-4-as-gorenstein-algebras-and-dualising-complexes",
+   "title": "AS-Gorenstein algebras and dualising complexes",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-024-42-rigid-dualising-complexes",
+   "title": "Rigid dualising complexes",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-025-43-van-den-bergh-condition",
+   "title": "Van den Bergh condition",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-026-44-rigid-gorenstein-algebras-and-nakayama-automo",
+   "title": "Rigid Gorenstein algebras and Nakayama automorphisms",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-027-45-as-gorenstein-hopf-algebras-are-rigid-gorenst",
+   "title": "AS-Gorenstein Hopf algebras are rigid Gorenstein",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-028-46-the-antipode",
+   "title": "The antipode",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-029-5-twisted-hochschild-cohomology",
+   "title": "Twisted Hochschild cohomology",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-030-51-cohomology-and-duality",
+   "title": "Cohomology and duality",
+   "pages": "18-21"
+  },
+  {
+   "id": "sec-031-6-examples",
+   "title": "Examples",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-032-61-some-general-properties",
+   "title": "Some general properties",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-033-62-noetherian-pi-hopf-algebras",
+   "title": "Noetherian PI Hopf algebras",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-034-63-enveloping-algebras",
+   "title": "Enveloping algebras",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-035-64-quantised-enveloping-algebras",
+   "title": "Quantised enveloping algebras",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-036-65-quantised-function-algebras",
+   "title": "Quantised function algebras",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-037-66-the-special-linear-group",
+   "title": "The special linear group",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-038-67-noetherian-group-algebras",
+   "title": "Noetherian group algebras",
+   "pages": "26-29"
+  },
+  {
+   "id": "sec-039-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-040-references",
+   "title": "References",
+   "pages": "29-31"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-quantum-gap-collapse",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:quantum-gap-collapse",
+  "kind": "theorem",
+  "title": "Collapse of the quantum gap",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-classical-limit-functor",
+    "papers/quantum-observable-universe/blocks/def-categorical-reeb-derivation"
+  ],
+  "tags": [
+    "quantum-gap",
+    "classical-limit",
+    "collapse",
+    "braiding-trivialization"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.quantum_gap_collapse",
+  "text": "quantum-gap-collapse.md",
+  "leanSource": "quantum-gap-collapse.lean",
+  "provenance": "authored"
+}

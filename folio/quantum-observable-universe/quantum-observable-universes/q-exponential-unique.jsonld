@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-exponential-unique",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-exponential-unique",
+  "kind": "proposition",
+  "title": "Uniqueness of the $q$-exponential grouplike (conditional)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-exponential-exists"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-q-exponential-unique"
+  ],
+  "tags": [
+    "uniqueness",
+    "q-exponential",
+    "grouplike",
+    "hopf-algebra"
+  ],
+  "leanRef": "qou:QOU.QExponential.unique_of_flow_rigid",
+  "text": "q-exponential-unique.md",
+  "leanSource": "q-exponential-unique.lean",
+  "provenance": "authored"
+}

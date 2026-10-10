@@ -2,8 +2,8 @@
 """qou-99qc: apply the owner's γγ word-selection ruling to the DECAY channel.
 The γγ sector's reachable set has a GAP exactly where Q_beta sits.
 
-# Ref: content/quantum-observable-universe/lean/QOU/QBeta/GammaGammaSelectedDeltaVanishes.lean
-# Ref: content/quantum-observable-universe/lean/QOU/Mass/GammaGammaSelectorH3.lean  (#7192)
+# Ref: folio/quantum-observable-universe/lean/QOU/QBeta/GammaGammaSelectedDeltaVanishes.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/Mass/GammaGammaSelectorH3.lean  (#7192)
 # Ref: computations/qbeta/qbeta_option_e_construction_freedom_probe.py  (the recipe route, exhausted)
 # Ref: .beans/qou-ales   (owner ruling 2026-09-08)
 

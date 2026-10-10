@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Regression guard for the symbolic H_3(q) Gram entries in
-`content/quantum-observable-universe/lean/QOU/Interactions/GramMatrixH3Symbolic.lean`.
+`folio/quantum-observable-universe/lean/QOU/Interactions/GramMatrixH3Symbolic.lean`.
 
 Transcribes the Lean `gramEntry*` definitions and compares them to the
 production pyhecke Gram (`gram-matrix-dual.witness.json`) at the canonical q_0,

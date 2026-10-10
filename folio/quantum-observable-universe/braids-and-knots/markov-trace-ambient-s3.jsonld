@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-markov-trace-ambient-s3",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:markov-trace-ambient-s3",
+  "kind": "remark",
+  "title": "The ambient three-sphere $S^3$ is the target of the Alexander--Markov correspondence: $\\mathrm{tr}_M$ is by construction a link invariant in $S^3$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-jones-markov-trace",
+  "cites": [
+    "references/alexander1923",
+    "references/markov1936",
+    "references/jones1987"
+  ],
+  "tags": [
+    "markov-trace",
+    "ambient-manifold",
+    "three-sphere",
+    "alexander-markov",
+    "knot-complement",
+    "categorical-topology"
+  ],
+  "text": "markov-trace-ambient-s3.md",
+  "provenance": "authored"
+}

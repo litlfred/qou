@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-wenzl-A-operator",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:wenzl-A-operator",
+  "kind": "definition",
+  "title": "Wenzl A-operator $A^\\lambda_{\\mu\\nu}(I)$: the $(\\mu, \\nu)$-block of an interface generator",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-lr-coefficient-hecke"
+  ],
+  "cites": [
+    "references/wenzl1988",
+    "references/hoefsmit1974"
+  ],
+  "tags": [
+    "wenzl-a-operator",
+    "operator-valued",
+    "hecke-branching",
+    "littlewood-richardson",
+    "sub-lemma-2-1",
+    "section-3b-cond"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.WenzlAOperator",
+  "text": "wenzl-A-operator.md",
+  "leanSource": "wenzl-A-operator.lean",
+  "provenance": "authored"
+}

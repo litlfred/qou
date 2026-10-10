@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-neutron-qvalue-symbolic",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:neutron-qvalue-symbolic",
+  "kind": "proposition",
+  "title": "Symbolic $Q$-value of free neutron decay",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-typed-crossing-operator",
+    "papers/quantum-observable-universe/blocks/rem-energy-scale-planck"
+  ],
+  "tags": [
+    "beta-decay",
+    "q-value",
+    "symbolic",
+    "neutron",
+    "typed-crossing",
+    "prediction",
+    "ansatz-dependent"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.neutron_qvalue_symbolic",
+  "text": "neutron-qvalue-symbolic.md",
+  "provenance": "authored"
+}

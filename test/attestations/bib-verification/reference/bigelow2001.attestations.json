@@ -1,0 +1,50 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "bigelow2001",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 134,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0005038v1/0005038v1.pdf"
+        },
+        "id": "bigelow2001",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED from front matter: the document self-identifies as the preprint id recorded on the registered entry, and its abstract matches the entry's subject. LOAD-BEARING AND ACCURATE \u2014 the cleanest citation in this slice. Exactly one site: appendix-standard-model/gauge-hecke-realization.md:13, which asserts that the Lawrence-Krammer representation is faithful for all n. The document's Theorem 1.1 states verbatim that the Lawrence-Krammer representation of B_n is faithful for all n, and its introduction confirms the surrounding framing the block also uses (the n=4 case was known; the representation is essentially the topologically-defined summand of the Jones representation). The block additionally uses the source correctly by NOT overclaiming: it states that faithfulness at generic parameters does not give faithfulness of the specialisation at q_0, and that the groupoid-vs-braid identification is unproved \u2014 both genuine residues the theorem does not close. Verdict is supporting rather than core because the citation frames a conjecture's literature context; no QOU proof consumes the theorem.",
+          "keyResults": [
+            {
+              "locator": "Thm 1.1",
+              "statement": "The Lawrence-Krammer representation of B_n is faithful for all n; hence braid groups are linear.",
+              "useForFolio": "Already used, correctly, as the literature evidence that faithful linear realisation of braid symmetry is generic rather than merely hoped-for in conj:gauge-hecke-realization.",
+              "targets": [
+                "conj:gauge-hecke-realization"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Read and checked against the source: the citation supports precisely the claim made, and the block already scopes the two residues the theorem does not cover.",
+              "target": "conj:gauge-hecke-realization"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "db0b9b7a8534"
+        }
+      }
+    }
+  ]
+}

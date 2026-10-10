@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-monoidal-category",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-monoidal-category",
+  "kind": "remark",
+  "title": "Monoidal category",
+  "tags": [
+    "glossary",
+    "category-theory",
+    "monoidal"
+  ],
+  "defines": [
+    "monoidal-category"
+  ],
+  "text": "glossary-monoidal-category.md",
+  "provenance": "authored"
+}

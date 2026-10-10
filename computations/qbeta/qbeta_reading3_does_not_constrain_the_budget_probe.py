@@ -31,8 +31,11 @@ to the WHOLE 11-crossing word"*. So **(B) moved the letter scope and left the
 reading alone.** Live criterion: reading 3, whole word.
 
 WHY THAT IS FATAL TO THE PARITY RESULT SPECIFICALLY. Under convention D
-`y_(1^3) = 0` — and that vanishing IS convention D, not a coincidence of the pin
-(`markovWeights_eq_jones_of_threeRow_eq_zero`; D is the two-row truncation). So
+`y_(1^3) = 0` — and that vanishing IS convention D, not a coincidence of the pin.
+The direction used here is D ==> vanish, i.e.
+`FibreDimensionForcesTL.threeRow_eq_zero_of_jones_ocneanu`; the converse, which is
+what makes it an "IS", is `markovWeights_eq_jones_of_threeRow_eq_zero` plus
+`hfaith : y_(2,1) != 0`. This file used to name only the converse. So
 reading 3 does not constrain the alternating block AT ALL, and the parity
 theorem lives entirely in the block reading 3 ignores.
 
@@ -221,7 +224,8 @@ def main() -> int:
           f"y_(3) + 2 y_(2,1) = 1 to {mp.nstr(abs(tot - 1), 4)}, and the three "
           f"block dimensions are 1, 2, 1 -- so y_(1^3) = 0 EXACTLY. This is the "
           f"two-row truncation that defines convention D "
-          f"(markovWeights_eq_jones_of_threeRow_eq_zero), not a numerical "
+          f"(D => vanish is threeRow_eq_zero_of_jones_ocneanu; the converse is "
+          f"markovWeights_eq_jones_of_threeRow_eq_zero + hfaith), not a numerical "
           f"accident of the pin. It is why reading 3 cannot see the "
           f"alternating block at all", w)
 

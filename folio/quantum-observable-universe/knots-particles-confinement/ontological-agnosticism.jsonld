@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-ontological-agnosticism",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:ontological-agnosticism",
+  "kind": "remark",
+  "title": "Crystal-limit observables transport flatly to the generic fibre",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-confinement-grading-correspondence",
+    "papers/quantum-observable-universe/blocks/prop-gb-spectral-sequence",
+    "papers/quantum-observable-universe/blocks/def-cemetery-group"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-crystal-graph-realization",
+  "cites": [
+    "references/kashiwara1991",
+    "references/khovanovlauda2009",
+    "references/brundankleshchev2009"
+  ],
+  "tags": [
+    "crystal-limit",
+    "klr",
+    "generic-fibre",
+    "transport",
+    "computational-shortcut"
+  ],
+  "text": "ontological-agnosticism.md",
+  "provenance": "authored"
+}

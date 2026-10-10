@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-fiber-adjoint-involution",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:fiber-adjoint-involution",
+  "kind": "proposition",
+  "title": "Fiber--adjoint-fiber involution",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-frobenius-pairing",
+    "papers/quantum-observable-universe/blocks/def-projective-line-object"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-fiber-adjoint-involution"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-fiber-adjoint-su2"
+  ],
+  "tags": [
+    "involution",
+    "adjoint"
+  ],
+  "leanRef": "qou:QOU.FiberAdjointInvolution",
+  "text": "fiber-adjoint-involution.md",
+  "leanSource": "fiber-adjoint-involution.lean",
+  "provenance": "authored"
+}

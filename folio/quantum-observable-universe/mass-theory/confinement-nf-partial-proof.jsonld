@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-confinement-nf-partial-proof",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:confinement-nf-partial-proof",
+  "kind": "proposition",
+  "title": "Partial formal proof of $\\mathrm{conj}:\\mathrm{confinement\\text{-}nf\\text{-}structure\\text{-}forcing}$: $T_1$ and $T_3$ from standard LP duality; $T_2$ reduces to Sub-lemma 2.1",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-crystal-graph-realization",
+    "papers/quantum-observable-universe/blocks/def-lp-duality-hypothesis-class"
+  ],
+  "cites": [
+    "references/schrijver1986theory",
+    "references/macdonald1995"
+  ],
+  "tags": [
+    "lp-duality",
+    "complementary-slackness",
+    "wedderburn-maximizer",
+    "branching-rule",
+    "littlewood-richardson",
+    "partial-proof"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.ConfinementNFPartial.theorem_3_strong_duality",
+  "text": "confinement-nf-partial-proof.md",
+  "leanSource": "confinement-nf-partial-proof.lean",
+  "provenance": "authored"
+}

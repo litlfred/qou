@@ -1,0 +1,51 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "habiro2004cyclotomic",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 150,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0209324v1/0209324v1.pdf"
+        },
+        "id": "habiro2004cyclotomic",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Join CORRECT (arXiv:math/0209324v1, 'Cyclotomic completions of polynomial rings', Habiro, matching the registered entry's title, DOI and URL). Widely and accurately cited: ten-plus Lean sites including mass-theory/qz-bicompletion.lean:20, habiro-expansion-atomic.lean:23,121, z-habiro-ring.lean:20, habiro-ring.lean:14,27,34, appendix-qvalues/qbeta-ck-truncation-canonical.lean:81, lean/QOU/MassEndomorphism/ZHabiroCauchy.lean:241,401, plus mass-theory/quantum-dilog-convergence.ts:14. Load-bearing and correctly matched to the source: the abstract of this document defines exactly the object the Lean sites name - the completion Z[q]_N = lim_n Z[q]/((1-q)(1-q^2)...(1-q^n)) - and proves the two facts the corpus leans on, that an element of Z[q]_N is determined by its power-series expansion at each root of unity and by its values at the roots of unity ('holomorphic functions on the set of roots of unity'), along with the generalisation to R[q] completions at products of cyclotomic polynomials. The registry note correctly separates this key from habiro2000 and habiro2002.",
+          "keyResults": [
+            {
+              "locator": "Abstract; Secs. 5-6",
+              "statement": "Every element of Z[q]_N is uniquely determined by its power-series expansion in q - zeta at each root of unity zeta, and equally by its values at the roots of unity.",
+              "useForFolio": "This is the determinacy property the Habiro-ring blocks rely on when they treat a Habiro element as pinned by its root-of-unity data; it is the fibre-level statement behind the AGENTS.md framing that a c_k closure must be sought as a Habiro element rather than a real function of q_0.",
+              "targets": [
+                "prop:quantum-dilog-convergence",
+                "def:z-habiro-ring"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Correctly joined and load-bearing at every site inspected. Nothing to add.",
+              "target": "def:habiro-ring"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "ae2ea5024a0a"
+        }
+      }
+    }
+  ]
+}

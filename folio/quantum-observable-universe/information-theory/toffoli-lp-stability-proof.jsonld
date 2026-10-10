@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-toffoli-lp-stability",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:toffoli-lp-stability",
+  "kind": "proof",
+  "title": "Proof of toffoli lp stability",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-toffoli-lp-stability"
+  ],
+  "text": "toffoli-lp-stability-proof.md",
+  "provenance": "authored"
+}

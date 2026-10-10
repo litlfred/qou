@@ -46,8 +46,9 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+REPO_ROOT="$ROOT" source "$ROOT/scripts/lib/lake-cache-family.sh"
 SLUG=$(cut -d: -f2 "$ROOT/lean-toolchain" | tr -d '\r' | tr . -)
-BRANCH="lake-cache/qou-${SLUG}-mathlib-gap-modules"
+BRANCH="$(lake_cache_read_branch "qou-${SLUG}-mathlib-gap-modules")"
 if [ $# -ge 1 ]; then
   DESTS=("$1")
 else
@@ -76,4 +77,4 @@ for d in "${DESTS[@]}"; do
   echo "restored $N olean(s) into $d from $BRANCH ($C)"
 done
 echo "verify with:  source scripts/lean-direct-env.sh && \\"
-echo "  lean -DautoImplicit=false -s 65536 content/quantum-observable-universe/mass-theory/reeb-bundle.lean"
+echo "  lean -DautoImplicit=false -s 65536 folio/quantum-observable-universe/mass-theory/reeb-bundle.lean"

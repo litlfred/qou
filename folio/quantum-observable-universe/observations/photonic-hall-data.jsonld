@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-photonic-hall-data",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:photonic-hall-data",
+  "kind": "prose",
+  "cites": [
+    "references/chenier2026",
+    "references/guo2025",
+    "references/luo2023"
+  ],
+  "text": "photonic-hall-data.md",
+  "provenance": "authored"
+}

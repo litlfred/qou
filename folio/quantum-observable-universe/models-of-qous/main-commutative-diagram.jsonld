@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-main-commutative-diagram",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:main-commutative-diagram",
+  "kind": "proposition",
+  "title": "Main Commutative Diagram",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-yang-mills-levi"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-main-commutative-diagram"
+  ],
+  "tags": [
+    "commutative-diagram",
+    "main-result"
+  ],
+  "leanRef": "qou:QOU.diagram_commutes",
+  "text": "main-commutative-diagram.md",
+  "leanSource": "main-commutative-diagram.lean",
+  "provenance": "authored"
+}

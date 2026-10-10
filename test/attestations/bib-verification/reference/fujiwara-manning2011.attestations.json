@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "fujiwara-manning2011",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 211,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1012.1039v2/1012.1039v2.pdf"
+        },
+        "id": "fujiwara-manning2011",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Same field as the corpus's volume machinery \u2014 hyperbolic manifolds, Gromov/simplicial volume, Thurston's ideal-simplex constant v_n \u2014 but the operation it studies is not one QOU performs, and its payload lands in dimensions the corpus does not use. The paper's subject is the 2pi-FILLING of a cusped hyperbolic n-manifold (replacing cusps by partial cones), with the headline application being 4-dimensional homology spheres of positive simplicial volume answering a question of Belegradek. QOU's volume constructions glue along essential tori (LinearJSJVolume.lean axiomatizes Vol(AtomicKnot Z N) = Z*Vol_p + N*Vol_n as JSJ additivity, cited to thurston1978) and work in dimension 3 with cusped complements. In dimension 3 Theorem 1.5 reduces to the classical statement that Dehn filling does not increase volume, which the corpus already has from Thurston; nothing in the n >= 4 content has a QOU consumer. I looked specifically for one \u2014 the cusp-geometry probes (em_linking_cusp_geometry_probe.py, deltalambda/pion_radius_and_cusp_volume_gap_probe.py) work with cusp shape and volume, not with fillings or with the Gromov norm of a filled pseudomanifold. Scope note: this is a scope-(a) negative \u2014 this document, as read, supplies nothing the corpus can use \u2014 not a claim that simplicial-volume methods are excluded from the programme.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Read in full front matter plus all theorem statements; no named place in the corpus wants Theorem 1.5 or its n >= 4 corollaries, and the dimension-3 shadow of the result is already covered by the existing thurston1978 citation in LinearJSJVolume.lean. Registering a ref() entry with no citation site would create a bib orphan.",
+              "target": "folio/quantum-observable-universe/lean/QOU/BraidsKnots/LinearJSJVolume.lean"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "acb2575050db"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

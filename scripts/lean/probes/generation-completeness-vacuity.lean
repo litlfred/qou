@@ -5,7 +5,7 @@
 hypothesis is never used, and the corollary's first conjunct is its own
 hypothesis restated.
 
-`content/quantum-observable-universe/brings-surface/generation-completeness.lean`
+`folio/quantum-observable-universe/brings-surface/generation-completeness.lean`
 is two theorems over two definitions:
 
 ```lean
@@ -35,7 +35,7 @@ Lean's own linter already says half of this: compiling the file emits
 To run (needs Mathlib oleans; `import Mathlib.Data.Nat.Basic` only, so this is
 cheap):
 
-    cp content/quantum-observable-universe/brings-surface/generation-completeness.lean /tmp/p.lean
+    cp folio/quantum-observable-universe/brings-surface/generation-completeness.lean /tmp/p.lean
     sed -n '/^-- ==== PROBE/,$p' scripts/lean/probes/generation-completeness-vacuity.lean >> /tmp/p.lean
     LP=""; for d in .lake/packages/*/.lake/build/lib/lean; do LP="$LP$PWD/$d:"; done
     LEAN_PATH="$LP" lean /tmp/p.lean          # exit 0 = every claim below holds

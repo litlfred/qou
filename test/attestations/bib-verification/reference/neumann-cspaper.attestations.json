@@ -1,0 +1,78 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "neumann-cspaper",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 378,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/cspaper/cspaper.pdf"
+        },
+        "id": "neumann-cspaper",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Proves combinatorial results on triangulations of 3-dimensional pseudo-manifolds improving on Neumann-Zagier, and applies them to give a simplicial formula for the Chern-Simons invariant of an ideally triangulated hyperbolic 3-manifold: V(M) = Vol(M) + i CS(M) as a sum of Rogers dilogarithms over the ideal tetrahedra, with the branch choice per simplex governed by unexpected combinatorics. Theorem 1 gives the formula up to a constant alpha; Theorem 2 shows that integral solutions satisfying a PARITY CONDITION exist and that for those, alpha becomes well-defined modulo an explicit lattice. Both halves are wanted right now. The corpus's fraktur-V = Vol + i CS is built as an explicit analogy to this invariant (notation-register-table7-data, notation-collisions, conj:binding-qbeta-complex-volume), its Rogers face is a named object (prop:q-rogers-pentagon-archimedean), and -- most concretely -- computations/one-loop-ambiguity-group.witness.json is an active investigation of exactly a triangulation-dependent ambiguity whose description ends 'which is exactly where the dropped DG flattening monomial lives'. A parity/flattening condition that makes the ambiguity constant well-defined is the shape of the answer that investigation is looking for. references.ts carries neumann-zagier1985 but no entry for this paper.",
+          "keyResults": [
+            {
+              "locator": "Theorem 1",
+              "statement": "For any solution of the combinatorial system, the complex volume V(M) = Vol(M) + i CS(M) of an ideally triangulated hyperbolic 3-manifold is a sum of Rogers dilogarithms of the tetrahedron parameters, up to a constant alpha depending on the solution.",
+              "useForFolio": "The simplicial formula the corpus's complex-volume analogy is modelled on, and the concrete link between the folio's Rogers face and its hyperbolic-volume face; currently the analogy is stated with only neumann-zagier1985 behind it.",
+              "targets": [
+                "conj:binding-qbeta-complex-volume",
+                "prop:q-rogers-pentagon-archimedean"
+              ]
+            },
+            {
+              "locator": "Theorem 2 (with the parity condition; Theorem 2.4 / Sects. 4-6)",
+              "statement": "Integral solutions satisfying a parity condition exist, and for such solutions the constant alpha of Theorem 1 is independent of the solution modulo an explicit lattice; dropping the parity condition weakens the conclusion.",
+              "useForFolio": "Directly addresses the corpus's live problem of a triangulation-dependent constant in the one-loop / det J chain. What would need checking before claiming more: whether Neumann's parity condition is the same normalisation as the Dimofte-Garoufalidis flattening monomial the corpus records as dropped, and whether it says anything about the multi-cusp per-cusp factor that borromean_nz_adjoint_torsion.py flags as unpinned at c >= 2. Proposed as compute-check plus remark, NOT aid-proof, because neither of those has been verified.",
+              "targets": [
+                "computations/one_loop_torsion.py",
+                "computations/probes/borromean_nz_adjoint_torsion.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry; this is the source of the simplicial complex-volume formula the corpus's central fraktur-V analogy is built on, and of the parity/ambiguity analysis its live one-loop work needs.",
+              "target": "conj:binding-qbeta-complex-volume",
+              "bean": "qou-byu8"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "conj:binding-qbeta-complex-volume and the notation register both present fraktur-V as the analogue of the Neumann-Zagier complex volume; the simplicial Rogers-dilogarithm formula that makes that object computable comes from here and is uncited.",
+              "target": "conj:binding-qbeta-complex-volume",
+              "bean": "qou-ghg3"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "Check whether the parity condition of Theorem 2 is the normalisation the corpus records as the dropped flattening monomial, by comparing the resulting ambiguity lattice against the unit-group-of-the-trace-field characterisation already recorded in one-loop-ambiguity-group.witness.json. A match would explain the observed ambiguity; a mismatch is equally informative. No external constant may be adopted either way.",
+              "target": "computations/one_loop_torsion.py",
+              "bean": "qou-u33z"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "1910c380cf79"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

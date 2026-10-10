@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-brings-euler-characteristic",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:brings-euler-characteristic",
+  "kind": "proof",
+  "title": "Proof of the Euler-characteristic computation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-brings-euler-characteristic"
+  ],
+  "text": "brings-euler-characteristic-proof.md",
+  "provenance": "authored"
+}

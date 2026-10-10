@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-binding-scale-catalan",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:binding-scale-catalan",
+  "kind": "proposition",
+  "title": "Binding energy scale $\\alpha = m_e \\times 8G$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-borromean-baryon"
+  ],
+  "leanRef": "qou:QOU.BindingScale.bindingScale_value",
+  "text": "binding-scale-catalan.md",
+  "leanSource": "binding-scale-catalan.lean",
+  "provenance": "authored"
+}

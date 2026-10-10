@@ -41,8 +41,8 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-ORIGIN = ROOT / "content/quantum-observable-universe/nuclear-interactions/weinberg-angle-categorical.lean"
-COPY = ROOT / "content/quantum-observable-universe/mass-theory/categorical-higgs-mechanism.lean"
+ORIGIN = ROOT / "folio/quantum-observable-universe/nuclear-interactions/weinberg-angle-categorical.lean"
+COPY = ROOT / "folio/quantum-observable-universe/mass-theory/categorical-higgs-mechanism.lean"
 HEADS = ("structure EWHoefsmitData", "class WeinbergAngleCategorical")
 
 

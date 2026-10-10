@@ -1,0 +1,92 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "arxiv-1803.04009v2",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 262,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1803.04009v2/1803.04009v2.pdf"
+        },
+        "id": "arxiv-1803.04009v2",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Revisits the Dimofte-Gaiotto-Gukov construction and does two things the corpus's conj:mirror-3d-3d-correspondence directly needs. First it records a caveat: only a SUBSET of the irreducible flat SL(2,C) connections on the knot complement appears as vacua of T^DGG[M,K], whereas all of them are expected as vacua of the 6d theory, so T^DGG is not simply 'the' theory attached to the manifold. The corpus block states flatly that Z_{T[M^3]} on the squashed sphere EQUALS the state-integral invariant and lists as Open Question 1 'identify T[B_3] explicitly (DGG 2014 provides the construction)' -- this paper says that identification is qualified. Second, it identifies the gauge-theory operation corresponding to Dehn filling, i.e. how to close a knot complement, together with a topological criterion for the SU(2)/SO(3) enhancement of the U(1) flavour symmetry that the filling operation requires. It also shows all hyperbolic twist knots (the family containing 4_1, the corpus's muon anchor) exhibit an unexpected SU(3) enhancement. Corpus-grep over docs/audits/, content/, computations/, docs/coordination/: docs/duality-tracker.md D18 records the 3d-3d route as scaffold and the h^4 cross-check as not done, so the item is genuinely open and this paper bears on it.",
+          "keyResults": [
+            {
+              "locator": "Sect. 2.3",
+              "statement": "T^DGG[M,K] realises only some subset of the irreducible flat SL(2,C) connections on the knot complement as its vacua, unlike the 6d theory T^6d[M,K]; the proposed relation T^6d -> T_irred -> T^DGG explains why T^DGG generically carries only a U(1) flavour symmetry.",
+              "useForFolio": "Qualifies conj:mirror-3d-3d-correspondence's stated equality between the squashed-sphere partition function and the state-integral invariant, and qualifies its Open Question 1: identifying T[B_3] by the DGG recipe does not by itself deliver the 6d object the conjecture's dictionary assumes.",
+              "targets": [
+                "conj:mirror-3d-3d-correspondence"
+              ]
+            },
+            {
+              "locator": "Sect. 3 + Table 1",
+              "statement": "A topological criterion on the knot complement for when the U(1)_{X_A} flavour symmetry of T^DGG enhances to SU(2)/SO(3).",
+              "useForFolio": "The precondition the corpus would have to check before applying any closing/filling operation to the Borromean complement; note the criterion is stated for a single torus boundary, and B_3 has three cusps, so transporting it is exactly the thing that would need checking.",
+              "targets": [
+                "conj:mirror-3d-3d-correspondence"
+              ]
+            },
+            {
+              "locator": "Sect. 4.1",
+              "statement": "Identification of the field-theoretic operation on T^DGG corresponding to Dehn filling, giving a construction of theories attached to closed 3-manifolds and predicting infinitely many 3d dualities from surgery calculus.",
+              "useForFolio": "The concrete route for Open Question 1 (identify T[B_3]); the corpus currently has only 'DGG 2014 provides the construction' with no closing procedure.",
+              "targets": [
+                "conj:mirror-3d-3d-correspondence"
+              ]
+            },
+            {
+              "locator": "Sect. 1 (Summary) + Sect. 3",
+              "statement": "All hyperbolic twist knots give theories with SU(3) symmetry enhancement, unexpected from the 6d viewpoint.",
+              "useForFolio": "4_1 is a twist knot and is the corpus's CAL-2 anchor; tbl:b1-hyperbolic-rows-theorem-table1-data indexes the twist-knot family K_n directly, so this is a concrete statement about the corpus's own knot family.",
+              "targets": [
+                "tbl:b1-hyperbolic-rows-theorem-table1-data"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry; the paper qualifies a claim conj:mirror-3d-3d-correspondence makes without qualification and answers its Open Question 1.",
+              "target": "conj:mirror-3d-3d-correspondence",
+              "bean": "qou-6t98"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "conj:mirror-3d-3d-correspondence cites dimofte-gaiotto-gukov2014, terashima-yamazaki2011, neumann-zagier1985 but not the paper that records the T^DGG vs T^6d flat-connection gap its dictionary depends on.",
+              "target": "conj:mirror-3d-3d-correspondence",
+              "bean": "qou-z959"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "The T^DGG-realises-only-a-subset-of-flat-connections caveat should be stated in the folio rather than left implicit, since the conjecture's whole content is an equality of partition functions. NOT proposed as aid-proof: the enhancement criterion is stated for one torus boundary and B_3 has three cusps, so its applicability to the corpus's manifold is unchecked.",
+              "target": "conj:mirror-3d-3d-correspondence",
+              "bean": "qou-y5rr"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "8b34299b739c"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

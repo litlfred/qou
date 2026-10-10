@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-cosmological-limits",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:cosmological-limits",
+  "kind": "example",
+  "title": "Cosmological limits of $q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-hopf-non-cocommutativity"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-observable-universe",
+  "tags": [
+    "cosmology",
+    "limits"
+  ],
+  "text": "cosmological-limits.md",
+  "provenance": "authored"
+}

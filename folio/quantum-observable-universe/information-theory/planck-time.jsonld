@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-planck-time",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:planck-time",
+  "kind": "definition",
+  "title": "Planck Time",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+    "papers/quantum-observable-universe/blocks/def-quantum-planck-constant"
+  ],
+  "tags": [
+    "planck-time",
+    "discrete-time",
+    "reeb-flow",
+    "information-theory"
+  ],
+  "leanRef": "qou:QOU.planckTime",
+  "text": "planck-time.md",
+  "leanSource": "planck-time.lean",
+  "provenance": "authored"
+}

@@ -74,7 +74,7 @@ Dockerfile.
 - **Relocated the 4 watcher queues** `todos/` → `.beans/` (`git mv`) + repointed **38 doc
   references** across the integration-watcher skill family, `.claude/commands/*`, and AGENTS.md.
   Verified **no `*.ts` code reads the watcher-queue paths** — so this did *not* touch `/api/todos`.
-- Repointed `content/pipeline/qa-agent-drain-queue.ts` default `--out` → `.beans/`.
+- Repointed `folio/pipeline/qa-agent-drain-queue.ts` default `--out` → `.beans/`.
 
 ### PR #2513 — durable bean status
 - Marked bean `j8el` `in-progress` so the merged `.beans/` work-plan reflects the relocation.

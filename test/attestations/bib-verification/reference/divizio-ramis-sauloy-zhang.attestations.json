@@ -1,0 +1,76 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "divizio-ramis-sauloy-zhang",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 354,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/equations-aux-q-differences/Equations_aux_q-differences.pdf"
+        },
+        "id": "divizio-ramis-sauloy-zhang",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "A 30-page French survey of q-difference equations by the four authors whose Asterisque memoir the corpus's whole C1-at-infinity front is built on. Sections: 2 (q-difference modules, gauge transformation, meromorphic continuation), 3 (local and global classification, confluence of the connection matrix, 3.5 local classification of IRREGULAR equations), 4 (summability of formal solutions, 4.3 q-analogue Borel-Laplace summations), 5 (arithmetic q-difference equations). Two things make it core rather than background. First, the 2026-08-08 closure audit ended by ruling that the surviving route must be 'q-native' -- and section 4 is precisely the q-native summation toolbox, independent of the slope-filtration apparatus that closed. Second, and specifically: section 4.4 is titled 'the series (sum_n q^{n(n-1)/2} x^n)^2 is not summable at a single level', with Remark 4.12 computing that its q-Borel transform is meromorphic with simple poles in q^N and q-exponential growth of order EXACTLY TWO at infinity. The corpus's level-1 kernel is literally t_n = q^{C(n,2)} = q^{n(n-1)/2} (QOU/MathlibExt/QBorelKernel.lean), and its own budget table records that after dividing the proved deg_q(c_n) = n^2 by that kernel a residual of order n^2/2 survives at every level d, i.e. 'no level d absorbs the n^2 growth'. That is the same failure mode, worked as a published counterexample, and it names a resolution direction (multiple levels) alongside the ramification reading the corpus's stage S1 adopted. The corpus's own S1 note flags that its answer is 'a degree-budget determination, not a theorem about RSZ's analytic construction', so a second published reading of the same obstruction is directly wanted.",
+          "keyResults": [
+            {
+              "locator": "Sec. 4.4 + Rmk. 4.12",
+              "statement": "The square of the level-1 series sum_n q^{n(n-1)/2} x^n is not q-Borel-Laplace summable at a single level, even though the series itself is; its q-Borel transform B_{q;1} is meromorphic with simple poles in q^N and q-exponential growth of order exactly two at infinity.",
+              "useForFolio": "A published instance of the corpus's own degree-budget negative ('no level d absorbs the n^2 growth') against exactly the corpus's kernel q^{C(n,2)}, giving a multi-level alternative to the ramification reading stage S1 adopted, and a template for the residual-order bookkeeping.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/MathlibExt/QBorelKernelLevel.lean"
+              ]
+            },
+            {
+              "locator": "Sec. 4.3",
+              "statement": "The q-analogue Borel-Laplace summation: q-Borel transform, summation along a direction, and the resulting Stokes multiplier interpretation.",
+              "useForFolio": "The q-native summation machinery the closure audit says the work must move to, stated by the same authors and independent of the slope-filtration classification that closed.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/QBeta/C1NewtonRamification.lean"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The survey by the RSZ authors covering exactly the q-native summation front the corpus is moving to, with no bibliography entry.",
+              "target": "folio/quantum-observable-universe/lean/QOU/MathlibExt/QBorelKernelLevel.lean",
+              "bean": "qou-wqrv"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "Re-run the attack plan's degree-budget table against the Sec. 4.4 example: compare the corpus's residual (deg c_n = n^2 against t_n = q^{C(n,2)}) with the 'order exactly two' q-Borel growth Rmk 4.12 computes, and record whether the C1 series is, up to gauge, of the multi-level type that example exhibits. This is a comparison to run, not a result to adopt.",
+              "target": "folio/quantum-observable-universe/lean/QOU/QBeta/C1InfDegreeLaw.lean",
+              "bean": "qou-ipnr"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Deliberately not aid-proof. Sec. 4.4 is an example about a specific series, not a theorem about C1; whether C1's infinity-side formal solution falls in that class is exactly the open stage-S1 question, and the corpus's ramified level-2 answer is an alternative reading, not a contradiction. Record both readings and what would discriminate them.",
+              "target": "folio/quantum-observable-universe/lean/QOU/MathlibExt/RSZIsoformalInterface.lean",
+              "bean": "qou-oyul"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "357d4e0b546b"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

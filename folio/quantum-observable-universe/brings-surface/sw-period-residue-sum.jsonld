@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-sw-period-residue-sum",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:sw-period-residue-sum",
+  "kind": "proposition",
+  "title": "The Seiberg–Witten period is an algebraic residue sum",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-mi-sw-abelianisation",
+    "papers/quantum-observable-universe/blocks/rem-brings-smoothness"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-sw-period-residue-sum"
+  ],
+  "leanRef": "qou:QOU.Brings.sw_period_eq_residue_sum",
+  "text": "sw-period-residue-sum.md",
+  "leanSource": "sw-period-residue-sum.lean",
+  "provenance": "authored"
+}

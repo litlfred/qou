@@ -1,0 +1,110 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "yekutieli2015",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 31,
+      "entry": {
+        "id": "yekutieli2015",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T15:48:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 11,
+        "fix_commit": "(this commit)",
+        "note": "Yekutieli, \"Nonabelian Multiplicative Integration on Surfaces\", World Scientific 2015. 11 bare-URL Refs upgraded with title+publisher form. No local PDF (publisher paywalled). Partial. | PDF verified: 'Nonabelian Multiplicative Integration on Surfaces' by Amnon Yekutieli, arXiv:1007.1250. Title verbatim matches references.ts.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/yekutieli2015.pdf"
+        },
+        "local_pdf": "uploads/yekutieli2015.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "BROKEN SOURCE JOIN: the named file does not exist; the real source is library/arxiv-1007.1250v4/1007.1250v4.pdf, already a separate unreviewed ledger row. Identity unconfirmable here. KEY-OVERLOAD DEFECT, the largest citation-hygiene finding in this slice: this single id is cited across the Lean tree with SIX mutually incompatible DOIs (only one of which matches the registered entry; the strings are enumerated in the triage summary). The distinct-DOI sites are brings-surface/local-cohomology-group.lean:17, brings-surface/topological-charge-quantization.lean:15 and :38, quantum-observable-universes/rigid-dualizing-complex.lean:45/52/60, information-theory/mass-energy-equivalence.lean:21 and :58, information-theory/quantum-entropy.lean:39 and :47, mass-theory/knot-factor-frobenius-pairing.lean:32, quantum-observable-universes/substrate-self-duality.lean:71, and mass-theory/tau-all-orders-bridge.lean:7 (bare arXiv id). One id cannot be six different works. MISCITED CLAIM: quantum-observable-universes/rigid-dualizing-complex.lean:51-52 cites this id at 'Theorem 4.2' for the full construction of a RIGID DUALIZING COMPLEX. That is not the subject of the work the id names (nonabelian multiplicative integration on surfaces); rigid dualizing complexes are a separate line of work by the same author. quantum-entropy.lean:39/47 likewise attaches a monograph-series DOI unrelated to the registered one. By contrast the nonabelian-Stokes uses are on-topic and read as load-bearing: mass-endomorphism/mass-identity-C-proof.md:4 and :19, mass-endomorphism/topological-mass-holonomy-proof.md:24, lifting-and-descent/descent-physical.md:4, mass-endomorphism/mass-identity-C.md:1.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "The rigid-dualizing-complex citation is the clearest wrong-source case: a Theorem 4.2 about rigid dualizing complexes is attributed to a work on nonabelian multiplicative integration. Record the discrepancy and split the overloaded id before any further block cites it.",
+              "target": "folio/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-complex.lean",
+              "bean": "qou-30vq"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    },
+    {
+      "position": 209,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1007.1250v4/1007.1250v4.pdf"
+        },
+        "id": "yekutieli2015",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED against the document's front matter \u2014 and this is the most heavily cited reference in the slice (~90 sites), genuinely core to the mass-identity chain. But it carries THREE defects, two of them claim-level. (1) MISCITED SOURCE \u2014 `rigid-dualizing-complex.lean`. Lines 45, 51, 52 and 60 cite this id \u2014 three of them naming 'Theorem 4.2' \u2014 for the EXISTENCE OF A RIGID DUALIZING COMPLEX and Van den Bergh duality. `grep -i dualizing` over the full extracted text of this document returns ZERO hits. The document is differential geometry (Lie crossed modules, kites, nonabelian Stokes); rigid dualizing complexes belong to a different research line by the same author. The theorem being invoked is not in this document. Corroborating signal: those same lines carry an identifier that is NOT the one registered for this key and that resolves to a book by that author, i.e. the site is pointing at a different work which has no `ref()` entry of its own. Note also that `rigid_dualizing_exists` is discharged by an explicitly trivial witness ('all Prop fields = True'), so the citation is doing the rhetorical work of suggesting a real theorem behind a vacuous proof. (2) WRONG LOCATOR \u2014 `topological-mass-eigenspace-decomp-proof.md:38` cites '[Proposition 5.3, yekutieli2015]' for 'additivity of the nonabelian multiplicative integral over orthogonal direct sums'. The document has no Proposition 5.3; it has Proposition 5.3.3 (three-level numbering), which concerns a Lie quasi crossed module with additive feedback and its connection\u2013curvature pairs \u2014 not additivity over orthogonal direct sums. Scope-(a): as read, the document does not supply that statement at that locator. (3) SIX DIFFERENT IDENTIFIERS FOR ONE KEY across the 27 identifier-bearing citation sites: the registered one at 18 sites, and five others at 4, 2, 1, 1 and 1 sites respectively. Nine sites point somewhere other than the registered work. WHAT IS SOLID: the nonabelian-Stokes citations (`nonabelian_stokes_surface_boundary_stokes.lean`, `mass-identity-C.lean`, `topological-charge-quantization.lean`, `NonAbelianStokes.lean`) match the document's actual main results \u2014 the 2-dimensional nonabelian Stokes theorem generalising Schlesinger's, and the 3-dimensional nonabelian Stokes theorem its abstract calls 'a totally new result'.",
+          "keyResults": [
+            {
+              "locator": "Abstract; 2-d nonabelian Stokes theorem; 3-d nonabelian Stokes theorem",
+              "statement": "A twisted 2-dimensional nonabelian multiplicative integral over kites in a pointed manifold, valued in the second Lie group of a Lie crossed module, satisfying a 2-dimensional nonabelian Stokes theorem (generalising Schlesinger's) and a 3-dimensional nonabelian Stokes theorem.",
+              "useForFolio": "The genuine load-bearing content behind the mass-identity / holonomy chain; the citations that name Stokes are correct.",
+              "targets": [
+                "def:mass-identity",
+                "prop:topological-mass-holonomy"
+              ]
+            },
+            {
+              "locator": "Prop. 5.3.3 (the only 5.3-prefixed result in the document)",
+              "statement": "For a Lie quasi crossed module with additive feedback over X, f*(\u03b1) and Lie(\u0398_G)(\u03b1) relate as stated for connection\u2013curvature pairs.",
+              "useForFolio": "Establishes that the cited 'Proposition 5.3' locator does not exist and that 5.3.3 is not an orthogonal-direct-sum additivity statement.",
+              "targets": [
+                "prop:topological-mass-eigenspace-decomp"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "rigid-dualizing-complex.lean attributes a rigid-dualizing-complex existence theorem to a document that contains no dualizing-complex content. Either identify and register the correct source (the work the site's own identifier already points at) under its own key, or drop the attribution \u2014 the current state pairs a wrong citation with a trivially-witnessed theorem.",
+              "target": "def:rigid-dualizing-complex",
+              "bean": "qou-8p52"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Correct or remove the '[Proposition 5.3, yekutieli2015]' locator; the document's numbering is three-level and 5.3.3 says something else.",
+              "target": "prop:topological-mass-eigenspace-decomp",
+              "bean": "qou-ki4u"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Normalise the nine citation sites carrying one of the five non-registered identifiers, splitting off any that genuinely mean a different work of the same author into their own ref() entries.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-dptz"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "541ba4fb3068"
+        }
+      }
+    }
+  ]
+}

@@ -46,7 +46,7 @@ def parse_md_file(filepath):
     return metadata
 
 def main():
-    root_dir = '/home/litlfred/space_cats/qou/content/quantum-observable-universe'
+    root_dir = '/home/litlfred/space_cats/qou/folio/quantum-observable-universe'
     all_blocks = {}
     for dirpath, _, filenames in os.walk(root_dir):
         for f in filenames:

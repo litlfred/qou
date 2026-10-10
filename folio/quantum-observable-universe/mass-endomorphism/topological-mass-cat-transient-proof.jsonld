@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-topological-mass-cat-transient",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:topological-mass-cat-transient",
+  "kind": "proof",
+  "title": "Proof that transient terms localise (categorical)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-topological-mass-cat-transient"
+  ],
+  "text": "topological-mass-cat-transient-proof.md",
+  "provenance": "authored"
+}

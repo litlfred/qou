@@ -52,7 +52,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Verify the real target, not just the wheels.
 if python3 -c "from pypdf import PdfReader; print('[fix-python-pdf-deps] pypdf OK')"; then
-  echo "[fix-python-pdf-deps] done — folio-assistant/scripts/pdf-structure.py can run."
+  echo "[fix-python-pdf-deps] done — folio-assistant/cat-harness/scripts/pdf-structure.py can run."
 else
   echo "[fix-python-pdf-deps] ERROR: pypdf still fails to import after install" >&2
   exit 1

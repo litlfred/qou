@@ -1,0 +1,256 @@
+---
+name: language-trap-agent-audit
+description: Thorough per-block agentic audit of the ten language-trap categories (owner spec 2026-08-15) — full-context judgement over every prose-bearing content block, agent reviewer entries in the QA sidecar, small fixes applied inline, structural fixes flagged.
+roles:
+  - collaborator
+---
+
+# /language-trap-agent-audit — per-block agentic trap audit
+
+The mechanical scanner (`folio/pipeline/language-trap-audit.ts`)
+emits high-recall *candidates*. This skill is the required second
+layer: an agent reads **each block in full** and adjudicates **all
+ten categories in context** — including traps the regexes cannot see
+(a negation-contrast paraphrased without a comma, an aphorism that
+matches no template, a pivot in fresh wording). Owner directive
+2026-08-15: every prose-bearing block gets this analysis; the script
+alone is not the audit.
+
+## The ten categories
+
+Severity `major` for the diagnostic five (1, 2, 5, 6, 7 — rare in
+human scholarly drafting, near-universal in unedited model output);
+`minor` for the density four (3, 4, 8, 9) and the corroborating one
+(10), where the signal is concentration, not presence.
+
+1. **Negation-contrast** — asserting by denying the opposite:
+   "structural features, not afterthoughts"; "not X but Y"; "this is
+   evolution, not a blank page". A human drafter states the positive
+   claim. Judge in context: mathematical contrast that *is* the
+   block's content is substantive (see false-positive classes).
+2. **Rhetorical pivot** — setup-then-reframe: "that transformation is
+   happening with or without a strategy; the question is whether it
+   is governed." The second clause carries everything.
+3. **Load-bearing em-dashes** — the spaced dash substituting for
+   sentence structure (appending afterthoughts, dodging the
+   comma-vs-full-stop choice). Ranges and true parentheticals are
+   fine; density is the tell.
+4. **Compulsive triples** — the reflex three-item list regardless of
+   underlying content. Substantive three-element enumerations pass.
+5. **Closing aphorism** — a quotable-sounding final line placed
+   because documents "end with quotable lines".
+6. **Meta-commentary** — narrating one's own emphasis: "note the
+   framing", "we emphasize", "I want to underline", "the key
+   takeaway". Place the emphasis; do not announce it. Plain
+   "note that" is standard mathematical prose and passes.
+7. **Thesis restatement** — a block-final sentence restating what the
+   text already established ("This establishes …" as a closer).
+   "This completes the proof" passes.
+8. **Performed warmth** — personal register in institutional prose:
+   "thank you", "we are excited", "journey".
+9. **Superlative inflation** — maximum-strength claims without
+   qualification: "most importantly", "near-universal", "single
+   most", "our mandate is clear".
+10. **Non-speakable syntax** — noun-heavy chains that parse on the
+    page but stall aloud. Written for the eye, not the ear.
+
+## False-positive classes (record as `pass` with a note)
+
+- **Substantive mathematical contrast** — the distinction *is* the
+  claim: "a fixed property of the base, not of the fibre" in a block
+  whose content is exactly that separation; "not only compact but
+  Hilbert–Schmidt" (strengthening); "states, not modes" where the
+  terms are technically distinct.
+- **Temporal status** — ", not yet carried out" is a factual scope
+  statement, not manufactured emphasis.
+- **Cross-reference closers** — "This establishes clause 1 of the
+  comparison summary" pointing at another block is bookkeeping, not
+  restatement.
+- **Load-bearing disambiguation** — emphasis that prevents a real
+  misreading (e.g. a symbol collision) is kept, but stated directly
+  rather than narrated ("This 'fibre' is distinct from the fibre
+  functor $\tau$", never "We emphasize that …").
+
+## Per-block procedure
+
+1. Read the block's `.md` in full, plus `title`/`kind` from the `.ts`.
+2. Judge all ten categories on the whole text — do not limit
+   attention to the script scanner's candidates.
+3. **Small confirmed traps** (≤ 2 sentences, pure prose, no math and
+   no meaning change): fix the `.md` directly. Keep the author's
+   content; remove only the construction.
+4. **Structural traps** (rewrites beyond 2 sentences, meaning at
+   stake, or math-adjacent): do not edit; record `fail` with a
+   concrete proposed fix in `notes`.
+5. After any edit, confirm math delimiters still balance:
+   `python3 -c "s=open('<file>').read(); assert s.count('\$\$')%2==0"`
+   and re-read the changed sentences aloud-style for register.
+6. Record the verdict for **every category** with the helper — **once per
+   criterion, AFTER all fixes to that block**, so the entry certifies the
+   fixed state:
+
+   ```bash
+   bun run folio/pipeline/qa-agent-entry.ts \
+     --block <block.md> --criterion trap-negation-contrast \
+     --result pass|fail [--severity major|minor] \
+     --evidence "<what was examined / found>" \
+     --notes "<fix applied: before -> after | proposed: ...>" \
+     --id "agent:<batch-id>"
+   ```
+
+   Entries APPEND to the criterion array; script candidates stay in
+   place as provenance.
+
+   **Record once, not before-and-after.** Because the array is append-only,
+   a second entry does not replace the first — both stand, and nothing in the
+   schema says which is authoritative. Measured corpus-wide: 215 criterion
+   slots carry two entries from one batch, of which **28 hold contradictory
+   verdicts on an identical `field_hash.md`**, resolvable only by reading a
+   `superseding …` note in free-text `evidence` that no consumer parses. The
+   agents that wrote those did the right thing and said so; the record still
+   came out ambiguous. Fix the block first, then record — one entry per
+   criterion. Bean `qou-supr`.
+
+   **Use these ten criterion ids verbatim** — they are the scanner's
+   ids, and a paraphrase produces an orphan criterion that adjudicates
+   nothing:
+
+   ```
+   trap-negation-contrast   trap-rhetorical-pivot   trap-em-dash
+   trap-triples             trap-closing-aphorism   trap-meta-commentary
+   trap-thesis-restatement  trap-performed-warmth   trap-superlative
+   trap-nonspeakable
+   ```
+
+   The descriptive-sounding spellings `trap-compulsive-triple`,
+   `trap-superlative-inflation` and `trap-nonspeakable-syntax` are
+   **wrong**. 419 blocks in the first campaign recorded verdicts under
+   them, and those verdicts joined to nothing until a normalisation pass
+   ran (`a89de3169`).
+
+## The reading is the point; carry these while you read
+
+A block gets one full-context read from an agent who will not be back.
+Spending it on the ten categories alone wastes the expensive part, so
+carry the corpus's standing traps at the same time and **report** them —
+never fix math inline.
+
+- **Recompute quoted numerics** with `python3`/`mpmath` rather than
+  trusting them. This is where most real findings come from.
+- **q₀ pins.** Proton `1.1099785827513808` is the compute default
+  (owner directive 2026-08-07); muon `1.10997859555733471` is the ideal
+  CAL-2 pin. The string `1.109978595554181` is the **old muon value** —
+  arithmetically correct (it solves the CAL-2 identity and back-implies
+  CODATA m_μ/m_e to 12 digits), so report it as a pin-currency defect,
+  not a corrupt number; its usual presentation labels 16 digits
+  "(50 dps)". The rounding `1.1097` **is** a genuine producer-input
+  error. Say which of the three a table's values actually reproduce.
+- **§7a conventions.** Skein `L₊ − L₋ = (q−q⁻¹)L₀`; generator `σᵢ`,
+  never `T`; Jones `J_K(q)`, never `V_K(t)`.
+- **Vol(4₁) = 2·Cl₂(π/3) ≈ 2.0299.** Most survivors compute the right
+  value under the wrong name, so check the arithmetic beside the name
+  before calling it an error.
+- **Absolute-mass excision** (2026-08-11): `m_p ≈ 938.27 MeV` is never
+  a framework prediction. Ratios, bindings, Q-values and splittings are.
+- **Sweep damage.** Stripped tokens and accents; escaped-bracket
+  citations `\[key]`; "non-by definition" garble; de-hedging intensifier
+  floods; and token substitution — `the canonical formalism` /
+  `the formal derivation` standing in for a script name, and `canonical`
+  substituted for `numerical(ly)` ("is canonical hostile").
+- **Braid words.** Where a table gives one, compute the closure's
+  component count. Two tables were found carrying wrong words this way. The
+  labels can also be wrong at the **witness** rather than in the block —
+  `confinement-operator-selection.witness.json` calls `σ₀σ₁` the Hopf link
+  (it closes to 1 component) and `σ₀σ₁σ₀` the trefoil (2 components) — so say
+  which findings a block *inherits* rather than introduces.
+- **Range-test a printed invariant before pin-testing it.** Asking *"which q₀
+  does this reproduce?"* presumes the value is reachable at all. Substitute
+  first: `J_{4₁} = q⁻²−q⁻¹+1−q+q²` is `u²−u−1` in `u = q+q⁻¹ ≥ 2`, hence `≥ 1`
+  for **every** real `q > 0`, so a printed `0.7854` is not a pin defect and
+  must not be filed as one. The test costs one substitution, is stronger than
+  any pin comparison, and is independent of what the producer did. Same table:
+  `−q⁴+q³+q` has global maximum 1, printed as 3.5832.
+- **`J(1) = 1` is a weak check and things hide behind it.** Seven torus rows in
+  one table carry a spurious `q^{1−g²}` factor; a monomial shift does not move
+  `J(1)`, and the spans were right too (`span J = c` for an alternating link).
+  Compare exponent *ranges* against the standard invariant, not only `J(1)`.
+
+## Verify provenance claims before repeating them
+
+An agent's numeric findings have held up under recomputation throughout this
+campaign — every one. Its claims about a file's **past or existence** have
+inverted **three times out of three**: "these `lean.ref`s resolve to nothing" (both resolved, via the
+content-block sibling the search did not cover) and "the sweep destroyed
+these tables" (`git show --numstat` on the accused commit: **1 insertion, 0
+deletions**, and neither file existed in the parent — they were created as
+placeholders and cited as though populated), and "two divergent copies of the
+canonical solver" (one is a **31-line re-export shim** of the other, saying so
+in its own docstring; differing md5s is what that looks like).
+
+Both agents had found a real defect and got the **mechanism** wrong, and the
+mechanism is what determines the fix: one implied a recovery pass over git
+history that would have found nothing.
+
+Each time the *observation* was real — a search returned nothing, a
+boilerplate sentence was the file's whole content, two md5s differed — and
+the *mechanism* inferred from it was wrong. That is not carelessness: a
+number can be recomputed from what is on the page, and a file's history
+cannot. Anything about the past, or about what exists elsewhere, is an
+inference from present state unless a command was run.
+
+So: *"this was deleted"*, *"this used to say"*, *"this does not exist
+anywhere"*, *"these two files diverge"* — run the command before writing it
+into a commit message, a ledger, or a reply. **Opening the second file is
+usually the whole check.**
+
+**And check the clone is not shallow first — this bit me while I was
+enforcing the rule above.** Sessions here run on a shallow clone (19 grafts).
+At a graft boundary git has no parent to diff against, so it renders the
+whole tree as additions: `--numstat` reports `n insertions, 0 deletions` for
+**every** file, and `<sha>^` does not resolve, so `cat-file -e` fails for
+every path whether or not it existed. Read naively, the pair looks like proof
+a file was created empty at that commit. It is proof of nothing.
+
+```sh
+git rev-list --parents -n 1 <sha>    # a lone sha = no parent in this clone
+test -f .git/shallow && echo shallow
+```
+
+A shallow clone cannot tell you what a file used to contain, only what it
+contains now. If the answer matters, `git fetch --unshallow` (slow — a
+`--deepen=200` timed out at two minutes here) or ask the remote; otherwise
+say the history is unavailable rather than inferring from the boundary. `git show --numstat <sha> -- <path>`
+and `git cat-file -e <sha>^:<path>` settle the first two; for the third,
+remember that `lean.ref` resolution checks the **sibling first**
+(AGENTS.md §0a), which a search scoped to the library tree will miss.
+
+## Preserving verdicts across merges
+
+These entries have **no producer**. `qa-sweep` regenerates the script
+candidates and cannot regenerate a verdict, so the usual sidecar-conflict
+resolution — take main's side, let the pipeline re-run — deletes them
+silently. On any rebase, takeover, or conflict: take the union of both
+sides' agent entries and drop only those whose `field_hash.md` no longer
+matches the merged tree. Bean `qou-tqr9`; 7381 entries were lost and
+recovered this way once already.
+
+## Batch conventions
+
+- **Namespace every scratch path by batch id.** Two agents writing
+  `/tmp/rec.sh` collided mid-batch, silently zeroing one helper's variables
+  and costing a block's recording. Use `/tmp/<batch-id>/…`.
+- Batches of ~25 blocks, grouped by chapter (mirrors
+  `qa-agent-drain-queue.ts`). Disjoint file sets per concurrent agent.
+- Agents in a shared tree do not commit; the coordinating session
+  commits per completed batch:
+  `qa(trap-drain): <chapter> batch <n> — <fixed>/<pass>/<flagged> [bean]`.
+- Each agent returns a summary: per-criterion counts, list of applied
+  fixes (before → after), list of flagged structural items.
+
+## Relation to other audits
+
+`trap-*` overlaps `voice-ai-slop` (category-H tells) and
+`clarity-grad-style` (register) but measures different constructions;
+verdicts are recorded under the `trap-*` criteria only. One-voice
+Category-H authorization applies: mechanical fixes need no per-edit
+author approval; structural rewrites do.

@@ -1,0 +1,57 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "zhao2010-standard-relations",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 367,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/zhao-standard-2010/Zhao_standard_2010.pdf"
+        },
+        "id": "zhao2010-standard-relations",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "NOT an orphan -- correcting the slice's premise. folio/schema/references.ts already carries an entry whose note names this exact PDF (registered 2026-08-08). But it is a bib orphan: no citation site in any .md and no Lean -- Ref: anywhere in content/. The paper studies multiple polylogarithm values at Nth roots of unity, generating relations among same-weight, same-level MPVs from four families (regularized double shuffle, regularized distribution, lifted lower-weight, and weight-one relations), calling those 'standard', and conjecturing the dichotomy that for standard levels N = 1, 2, 3 or N = p^n with p >= 5 the standard relations produce all linear relations (improving the Deligne-Goncharov dimension bound for N > 3), while otherwise non-standard relations exist. Level 5 is standard. That bears directly on conj:cl3-zeta5-geometric-realization, which lists candidate closed forms for the depth-3 Bring trilogarithm Cl_3(2 pi / 5) -- a weight-3, level-5 MPV -- since the standard relations plus the improved dimension bound constrain how many independent candidates that space can support. The existing reference note already names that block as the target; the citation was simply never made.",
+          "keyResults": [
+            {
+              "locator": "the standard-relations framework + the level dichotomy (abstract, and the d(w,N) discussion)",
+              "statement": "For standard levels (N = 1, 2, 3 or p^n with p >= 5) the four families of standard relations are conjectured to generate all Q-linear relations among MPVs of a given weight and level, improving the Deligne-Goncharov lower bound on d(w,N) for N > 3.",
+              "useForFolio": "Bounds the dimension of the weight-3, level-5 MPV space in which the Cl_3(2 pi / 5) closed-form candidates live, which is what conj:cl3-zeta5-geometric-realization enumerates without a stated independence bound.",
+              "targets": [
+                "conj:cl3-zeta5-geometric-realization"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "The reference exists and its own note names this block as the intended consumer, but no block cites it; the candidates list currently enumerates weight-3 level-5 forms with no relation-space bound.",
+              "target": "conj:cl3-zeta5-geometric-realization",
+              "bean": "qou-2rad"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "The corpus has a PSLQ independence probe for the same zeta_5 target; the paper's standard-relation count for weight 3, level 5 is an independent bound to check the probe's basis against. A bound to cross-check, not a value to adopt.",
+              "target": "folio/quantum-observable-universe/mass-theory/cl3-zeta5-pslq-independence.md",
+              "bean": "qou-cmjv"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "94a70847c293"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-surreal-squeeze",
+  "@type": [
+    "folio-assistant-core:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:surreal-squeeze",
+  "kind": "lemma",
+  "title": "Surreal squeeze: standard-scale cost dominates infinitesimal dissipation",
+  "tags": [
+    "surreal",
+    "squeeze",
+    "error-bounds",
+    "millennium-problem",
+    "classical-limit"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.surreal_squeeze",
+  "text": "surreal-squeeze.md",
+  "leanSource": "surreal-squeeze.lean",
+  "provenance": "authored"
+}

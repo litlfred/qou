@@ -321,7 +321,7 @@ and write up in paper".
   verified through ε^10).
 
 **Files shipped:**
-- `content/quantum-observable-universe/braids-and-knots/trm-hopf-sigma1-sq-closed-form.{ts,md,lean}` — content block triple
+- `folio/quantum-observable-universe/braids-and-knots/trm-hopf-sigma1-sq-closed-form.{ts,md,lean}` — content block triple
 - `lean/QOU/Braiding/TrMHopfSigma1SqClosedForm.lean` — 3 typed theorems w/ proof sketches + [jones1987]/[wenzl1988] refs
 - `probe_F_n_categorical_derivation.py` + witness — verifies closed form + binomial pattern
 - `docs/audits/2026-05-17-F-n-derivation-analysis.md` — analysis doc

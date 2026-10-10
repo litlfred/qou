@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-qbeta-odd-carrier-hopf-cubic",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:qbeta-odd-carrier-hopf-cubic",
+  "kind": "remark",
+  "title": "The $\\mathfrak{Q}_\\beta$ odd-channel obstruction is an irreducible cubic in the trace variable, sourced by the Hopf (double-crossing) sector",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-beta-c-k-recursion-from-habiro-q-difference"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-q-beta-c-k-recursion-from-habiro-q-difference",
+  "tags": [
+    "q-beta",
+    "precision-ladder",
+    "c-3",
+    "odd-channel",
+    "structural",
+    "no-fit"
+  ],
+  "text": "qbeta-odd-carrier-hopf-cubic.md",
+  "provenance": "authored"
+}

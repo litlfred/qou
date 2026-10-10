@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-gluon-stabiliser-ledger",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:gluon-stabiliser-ledger",
+  "kind": "remark",
+  "title": "The gluon ledger: what step 4 enumerates, and why the trefoil loses",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-derived-atom",
+    "papers/quantum-observable-universe/blocks/def-universal-ilp-algorithm",
+    "papers/quantum-observable-universe/blocks/rem-ilp-solution-count-unwrap",
+    "papers/quantum-observable-universe/blocks/fundamental-knots-operator-basis",
+    "papers/quantum-observable-universe/blocks/def-lepton-number-categorical",
+    "papers/quantum-observable-universe/blocks/rem-lepton-number-categorical-properties",
+    "papers/quantum-observable-universe/blocks/rem-nucleon-from-photons-summary",
+    "papers/quantum-observable-universe/blocks/rem-categorical-proton-properties"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-derived-atom",
+  "tags": [
+    "gluon",
+    "stabiliser",
+    "ilp",
+    "frobenius-positivity",
+    "nucleon",
+    "confinement",
+    "lepton-number"
+  ],
+  "text": "gluon-stabiliser-ledger.md",
+  "provenance": "authored"
+}

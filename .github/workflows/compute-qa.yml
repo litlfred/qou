@@ -1,0 +1,85 @@
+# compute-QA — the whole of processes/tools/compute-qa.bpmn in one job.
+#
+# Story S3 (bean qou-4rhu) on top of TOOLS T7 (bean qou-4dj1). The four
+# workflows witness-staleness, lp-dual-gate, probe-float64-gate and
+# word-provenance-gate each run part of the gate table; this one runs ALL of
+# it, with every gate's setup, and is the ONLY one that publishes.
+#
+# WHY ONE PUBLISHER. qa:publish keys an entry by commit, and an entry already
+# at a key is never overwritten: "the first write stands". Four workflows
+# publishing the same commit would keep whichever finished first and silently
+# drop the other three. So the verdicts are published here, once, as one entry.
+#
+# Dispatch-only, like every workflow here (owner directive 2026-06-30, Actions
+# billing). QA is agent-owned: an agent runs `python3 scripts/compute-qa.py
+# --all` before it commits, and this job is the backup.
+name: compute-QA (all gates, publish to qa-reports)
+
+on:
+  workflow_dispatch: {}
+
+defaults:
+  run:
+    shell: bash
+
+permissions:
+  contents: write   # qa:publish pushes the qa-reports branch; nothing else is written
+
+jobs:
+  compute-qa:
+    runs-on: ubuntu-latest
+    env:
+      # The lp-dual gates import `pyhecke`; measured on main, the other gates
+      # give identical verdicts with or without this path (TOOLS T7).
+      PYTHONPATH: computations:tools/pyhecke/python:tools/qou-substrate/python:computations/substrate
+      # A missing MPFR binary must fail, not downgrade. See lp-dual-gate.yml.
+      QOU_REQUIRE_CLARABEL: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numeric stack
+        run: python3 -m pip install --quiet numpy scipy mpmath pytest
+      - name: MPFR/GMP headers
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq libgmp-dev libmpfr-dev
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            tools/hecke-engine/target
+          key: hecke-mpfr-${{ runner.os }}-${{ hashFiles('tools/hecke-engine/Cargo.lock') }}
+          restore-keys: hecke-mpfr-${{ runner.os }}-
+      - name: Build the MPFR operator-selection LP
+        working-directory: tools/hecke-engine
+        run: cargo build --release --features clarabel-mpfr --bin clarabel-operator-selection-lp
+      - uses: oven-sh/setup-bun@v2
+      - name: Link the platform
+        run: ./scripts/setup-folio-assistant.sh
+
+      - name: Run every compute-QA gate
+        id: gates
+        # bpmn-node: Gateway_Fork … Gateway_Join (processes/tools/compute-qa.bpmn): all five gate groups.
+        # Every gate runs even after one fails; the step's exit is the worst
+        # verdict (1 fail, 2 unknown), so `continue-on-error` lets the publish
+        # step record a red run instead of losing it.
+        continue-on-error: true
+        run: python3 scripts/compute-qa.py --every --base origin/main
+
+      - name: Publish verdicts to qa-reports
+        # bpmn-node: Task_Publish (processes/tools/compute-qa.bpmn).
+        # Only from main: the entry is keyed main/<sha>.
+        if: always() && github.ref == 'refs/heads/main'
+        run: bun run folio-assistant/cat-harness/scripts/qa-store.ts publish --ref "main/${{ github.sha }}" --root test/results/compute-qa
+
+      - name: Verdict
+        # bpmn-node: Gateway_Verdict (processes/tools/compute-qa.bpmn).
+        if: always()
+        run: |
+          if [ "${{ steps.gates.outcome }}" != "success" ]; then
+            echo "compute-QA: at least one gate failed or could not start — see the step summary." >&2
+            exit 1
+          fi

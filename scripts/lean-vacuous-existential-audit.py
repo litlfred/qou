@@ -266,11 +266,11 @@ def self_test() -> int:
 def main(argv):
     if "--self-test" in argv:
         return self_test()
-    roots = [Path(a) for a in argv[1:]] or [Path("content")]
+    roots = [Path(a) for a in argv[1:]] or [Path("folio")]
     as_json = False
     if "--json" in argv:
         as_json = True
-        roots = [r for r in roots if str(r) != "--json"] or [Path("content")]
+        roots = [r for r in roots if str(r) != "--json"] or [Path("folio")]
 
     findings = []
     scanned = 0

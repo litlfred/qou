@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-atomic-lp-stability",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:atomic-lp-stability",
+  "kind": "proposition",
+  "title": "LP stability of the atomic braid",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-atomic-braid"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.atomic_lp_stability",
+  "text": "atomic-lp-stability.md",
+  "provenance": "authored"
+}

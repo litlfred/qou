@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-cs-evaluation-faithfulness",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:cs-evaluation-faithfulness",
+  "kind": "proposition",
+  "title": "Faithfulness of the Chern--Simons evaluation on the brane tower",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-volume-tower-decomposition",
+    "papers/quantum-observable-universe/blocks/prop-yekutieli-lifting"
+  ],
+  "tags": [
+    "chern-simons",
+    "yekutieli",
+    "faithfulness",
+    "obstruction",
+    "brane-tower"
+  ],
+  "leanRef": "qou:QOU.Archimedean.CSEvaluationFaithful",
+  "text": "cs-evaluation-faithfulness.md",
+  "provenance": "authored"
+}

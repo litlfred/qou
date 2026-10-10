@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-descartes-braid-structure",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:descartes-braid-structure",
+  "kind": "proof",
+  "title": "Proof of Braid-group structure of a Descartes universe",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-descartes-braid-structure"
+  ],
+  "text": "descartes-braid-structure-proof.md",
+  "provenance": "authored"
+}

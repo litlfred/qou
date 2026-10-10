@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-quantum-universe-explication",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:quantum-universe-explication",
+  "kind": "prose",
+  "title": "Deformation parameter and quantum gauge group",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter"
+  ],
+  "tags": [
+    "deformation",
+    "quantum-group"
+  ],
+  "text": "quantum-universe-explication.md",
+  "provenance": "authored"
+}

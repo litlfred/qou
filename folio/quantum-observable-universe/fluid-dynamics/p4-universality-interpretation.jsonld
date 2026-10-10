@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-p4-universality-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:p4-universality-interpretation",
+  "kind": "remark",
+  "title": "$\\alpha = 4/3$ recast as an intrinsic topological invariant",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-universality"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-universality",
+  "text": "p4-universality-interpretation.md",
+  "provenance": "authored"
+}

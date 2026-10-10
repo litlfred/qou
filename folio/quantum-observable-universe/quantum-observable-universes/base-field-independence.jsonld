@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-base-field-independence",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:base-field-independence",
+  "kind": "remark",
+  "title": "Base-ring independence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-observable-universe"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-universe",
+  "tags": [
+    "foundations"
+  ],
+  "text": "base-field-independence.md",
+  "provenance": "authored"
+}

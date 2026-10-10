@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-noble-gas-characterization-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:noble-gas-characterization-interpretation",
+  "kind": "remark",
+  "title": "Mathematical novelty of the full-curls characterization",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-noble-gas-characterization"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-noble-gas-characterization",
+  "text": "noble-gas-characterization-interpretation.md",
+  "provenance": "authored"
+}

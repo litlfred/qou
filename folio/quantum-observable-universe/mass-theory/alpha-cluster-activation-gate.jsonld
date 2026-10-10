@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-alpha-cluster-activation-gate",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:alpha-cluster-activation-gate",
+  "kind": "proposition",
+  "title": "The $\\alpha$-cluster activation gate: Milnor indeterminacy, sign-rep obstruction, and $\\mathrm{Vol}=0$ annihilation",
+  "cites": [
+    "references/milnor1954"
+  ],
+  "tags": [
+    "binding",
+    "alpha-cluster",
+    "milnor",
+    "brunnian",
+    "activation-gate",
+    "sign-rep-obstruction"
+  ],
+  "leanRef": "qou:QOU.Mass.MilnorIndeterminacyGate.gate_open_iff_brunnian",
+  "text": "alpha-cluster-activation-gate.md",
+  "provenance": "authored"
+}

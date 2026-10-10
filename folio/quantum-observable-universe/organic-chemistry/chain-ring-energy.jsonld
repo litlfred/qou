@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-chain-ring-energy",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:chain-ring-energy",
+  "kind": "remark",
+  "title": "Hexagonalisation resistance of the C$_6$ chain",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-benzene-ring"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-ring-closure-barrier",
+  "tags": [
+    "energy-barrier",
+    "chain",
+    "ring",
+    "carbon",
+    "stability",
+    "kinetic",
+    "thermodynamic"
+  ],
+  "text": "chain-ring-energy.md",
+  "provenance": "authored"
+}

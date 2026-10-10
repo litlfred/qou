@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-wigner-np-pairing",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:wigner-np-pairing",
+  "kind": "proposition",
+  "title": "Wigner energy from $T{=}0$ np pairing: $(2,2)$ partition at $k{=}4$",
+  "cites": [
+    "references/kerov1996",
+    "references/feray-meliot2012",
+    "references/satula1997"
+  ],
+  "tags": [
+    "wigner-energy",
+    "np-pairing",
+    "partition-22",
+    "binding",
+    "q-hook-product"
+  ],
+  "leanRef": "qou:QOU.Archimedean.ConfinedKnotBinding.wigner_energy_from_22",
+  "text": "wigner-np-pairing.md",
+  "provenance": "authored"
+}

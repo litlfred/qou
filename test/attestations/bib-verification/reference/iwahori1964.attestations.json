@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "iwahori1964",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 29,
+      "entry": {
+        "id": "iwahori1964",
+        "status": "partial",
+        "verified_at": "2026-05-19T07:00:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 11,
+        "fix_commit": "(this commit)",
+        "note": "Iwahori, 'On the structure of a Hecke ring of a Chevalley group over a finite field', J. Fac. Sci. Univ. Tokyo 10 (1964). 11 bare-URL Refs \u2192 title+journal form. No local PDF (journal not on standard databases; 1964 archive). Partial.",
+        "source": {
+          "kind": "external",
+          "url": ""
+        }
+      }
+    }
+  ]
+}

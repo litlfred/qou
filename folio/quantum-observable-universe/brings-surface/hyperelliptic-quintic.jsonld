@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-hyperelliptic-quintic",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:hyperelliptic-quintic",
+  "kind": "definition",
+  "title": "The hyperelliptic quintic $\\mathcal{X}_5 \\colon y^2 = x^5 - 1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-lagrange-resolvent-transform"
+  ],
+  "cites": [
+    "references/bolza1887"
+  ],
+  "tags": [
+    "hyperelliptic",
+    "genus-2",
+    "bolza",
+    "roots-of-unity"
+  ],
+  "leanRef": "qou:QOU.HyperellipticQuintic.zeta5_residue_monodromy.HyperellipticQuintic",
+  "text": "hyperelliptic-quintic.md",
+  "leanSource": "hyperelliptic-quintic.lean",
+  "provenance": "authored"
+}

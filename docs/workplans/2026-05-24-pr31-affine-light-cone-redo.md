@@ -11,7 +11,7 @@ PR #31 was authored 2026-03-13 against a substantially different math + repo sta
 
 | Blocker | Detail |
 |---------|--------|
-| **B1. Target chapter is gone** | PR #31 modifies `chapters/descartes-universe.tex`. No `content/quantum-observable-universe/descartes-universe/` directory exists today; Ch 3 was reorganized. Reeb work lives in `quantum-observable-universes/` (Ch 4); Bring's surface work lives in `braids-and-knots/` + `archimedean-universe/` (Chs 6, 8). |
+| **B1. Target chapter is gone** | PR #31 modifies `chapters/descartes-universe.tex`. No `folio/quantum-observable-universe/descartes-universe/` directory exists today; Ch 3 was reorganized. Reeb work lives in `quantum-observable-universes/` (Ch 4); Bring's surface work lives in `braids-and-knots/` + `archimedean-universe/` (Chs 6, 8). |
 | **B2. Architecture mismatch** | Direct edits to `chapters/*.tex` get **overwritten on the next build** — per AGENTS.md, `chapters/` is a *rendering target* generated from `content/.../*.md` blocks. Figures must be expressed as `diagram` content blocks (the schema defines `diagram` for figures/diagrams; there is no `figure` kind) — optionally paired with a `remark` block for interpretation. |
 | **B3. Math framework drift** | PR #31 uses old notation: `(M, Θ, G, P, E)` 5-tuple (deprecated; current archimedean tuple is `(C, Θ, G, S)` per AGENTS.md §7); `q_p → 0/1` "big bang / heat death" framing (current framework: derived substrate `q_0` from `q_parameter.py`, not `q_p`); ‖L ∧ F⁺‖ as visible annotation (gauge-field conventions have shifted). |
 | **B4. Visual style misaligned** | PR #31's SVGs use artistic gradients (brown viscosity gradient, two-step "you are here → Milky Way spiral" pointer, decorative effects). Author directive 2026-05-24: **formal math-book style; no color/gradients unless carrying meaning; natural Bring coordinates only**. |
@@ -93,10 +93,10 @@ Per AGENTS.md §3a (remark authoring convention): the figure itself is a `diagra
 | `figures/reeb-dimension.{svg,pdf}` | F2 output | new |
 | `figures/bring-fibre-q0.{svg,pdf}` | F3 output | new |
 | `figures/bring-fibre-qhalf.{svg,pdf}` | F4 output | new |
-| `content/quantum-observable-universe/quantum-observable-universes/affine-light-cone-figure.{ts,md}` | F1 content block | new |
-| `content/quantum-observable-universe/quantum-observable-universes/reeb-dimension-figure.{ts,md}` | F2 content block | new |
-| `content/quantum-observable-universe/braids-and-knots/bring-fibre-q0-figure.{ts,md}` | F3 content block | new |
-| `content/quantum-observable-universe/braids-and-knots/bring-fibre-qhalf-figure.{ts,md}` | F4 content block | new |
+| `folio/quantum-observable-universe/quantum-observable-universes/affine-light-cone-figure.{ts,md}` | F1 content block | new |
+| `folio/quantum-observable-universe/quantum-observable-universes/reeb-dimension-figure.{ts,md}` | F2 content block | new |
+| `folio/quantum-observable-universe/braids-and-knots/bring-fibre-q0-figure.{ts,md}` | F3 content block | new |
+| `folio/quantum-observable-universe/braids-and-knots/bring-fibre-qhalf-figure.{ts,md}` | F4 content block | new |
 | `.gitignore` | add `!figures/*.{svg,pdf}` exception (if missing) | modify |
 
 ## Phased delivery (one PR per phase OR one batched PR; author decides)

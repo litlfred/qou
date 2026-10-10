@@ -1,0 +1,28 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "jones1985",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 420,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/s0273-0979-1985-15304-2/S0273-0979-1985-15304-2.pdf"
+        },
+        "id": "jones1985",
+        "status": "unreviewed",
+        "note": "3 bare-URL Refs upgraded with title+publisher form. \u2014 Source IS held: library/s0273-0979-1985-15304-2. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py. Previous source record: {\"kind\": \"external\", \"url\": \"https://doi.org/10.1090/S0273-0979-1985-15304-2\"}.",
+        "verified_at": "2026-09-03T04:19:53Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

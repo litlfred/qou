@@ -1,0 +1,1250 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:confinement-operator-selection",
+  "kind": "proof",
+  "paths": {
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/confinement-operator-selection-proof.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/confinement-operator-selection-proof.md"
+  },
+  "source_hashes": {
+    "md": "a9920cd5f2e0",
+    "ts": "ddc9611b66c3"
+  },
+  "criteria": {
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "bbc03dd9670f",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-probe-narrative": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c43b7731faf9",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T11:33:35.560Z",
+        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      }
+    ],
+    "cite-named-theorem": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c43b7731faf9",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T11:33:35.560Z",
+        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      }
+    ],
+    "voice-agent-speak": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c43b7731faf9",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T11:33:35.560Z",
+        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5a542b9ddb77",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "7e311e463351",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-title-scholarly": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "dbe50250022f",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c43b7731faf9",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T11:33:35.560Z",
+        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      }
+    ],
+    "voice-status-section": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c43b7731faf9",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T11:33:35.560Z",
+        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "cf3d4ea0ab0a",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "78239d5e66a5",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
+          "deps_hash": "21d9ff417741"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c58bf6bca27b",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3050ae1775d6",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "canonical-script-not-deprecated": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "89bcd82bd3ff",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "a065b3633f0f",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "canonical-no-hardcoded-observable": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "96a346415fd2",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "47384e4fd1b4",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "compute-lp-dual-present": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "772b3e8dc930",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f6f0b2cd1afb",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "detangler-section-band": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "696ee4c80040",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "detangler-no-xchapter-fwd": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "b01f61430d2a",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "detangler-archimedean-wall": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3edb7220507a",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "ac7512959351",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 1,
+          "in_degree": 0,
+          "cone_size": 2,
+          "depth": 2,
+          "pagerank": 0.000074,
+          "edge_span_max": 1,
+          "edge_span_mean": 1,
+          "worst_target": ""
+        }
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "aacb0bf5d4b9",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "280aea9a61d8",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "detangler-no-dependency-cycle": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "39dfc0abf653",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "uses-editorial-hygiene": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "1d50b09b0497",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "c7f602946422"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "metrics": {
+          "uses_count": 1,
+          "broken_edges": 0,
+          "redundant_edges": 0
+        }
+      }
+    ],
+    "uses-formal-coverage": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "b7b208d4a0c4",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "f9b547e15cfd"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "lean-ref-owns-decl": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "b1c323c3439c",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "c7f602946422"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9b284af269a5",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
+          "deps_hash": "c6456bf489a8"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-has-url": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "a730f195e37d",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
+          "deps_hash": "c6456bf489a8"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-metadata-ok": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "b7cc0ee7d062",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
+          "deps_hash": "c6456bf489a8"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-has-screenshot": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "d3202b194d13",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
+          "deps_hash": "c6456bf489a8"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "ddc9611b66c3",
+          "md": "a9920cd5f2e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"nuclear-interactions\",\"expected\":null}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "ddc9611b66c3",
+          "md": "a9920cd5f2e0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "ddc9611b66c3",
+          "md": "a9920cd5f2e0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "ddc9611b66c3",
+          "md": "a9920cd5f2e0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "ddc9611b66c3",
+          "md": "a9920cd5f2e0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "ddc9611b66c3",
+          "md": "a9920cd5f2e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "ddc9611b66c3",
+          "md": "a9920cd5f2e0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.387Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "major",
+        "evidence": "1 negation-contrast construction(s): \", not on the Frobenius Gram matrix.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "799d5b64bfe5",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:02.003Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of prf:confinement-operator-selection (4 sections, 2 displays). Verified the knot theory: the Borromean rings ARE the crossing-minimal nontrivial Brunnian link, their three pairwise linking numbers vanish and every 2-component sublink is the unlink, and no braid of fewer than six crossings is nontrivially Brunnian - all four claims correct. Verified the arithmetic against the witness: the unconfined-proton NF coefficients sum to 0.989, which is exactly the witness's net for the identity operator, so 'The identity leaves the quark demand profile unchanged' checks out numerically; the neutron gamma = -0.211 is about twice the proton's -0.105, consistent with the extra down quark's -h_A shift. 'We evaluate nine candidate confinement operators' is CORRECT - the witness carries exactly nine proton candidates - which makes Table 1's six rows the defect, not this sentence. The naive ranking also checks out: among the three zero-demand candidates, L_+ minimises crossing_energy (0.1517 vs 0.2603 and 0.3537), so 'Minimising demand channels and then E_cross selects L_+' is right.",
+        "notes": "Defensive assert-by-denial opener 'We do not assert the Borromean braid B_3 = (sigma_0 sigma_1^-1)^3 as the confinement operator out of convenience; a topological principle selects it.' - it rebuts a charge no one made instead of stating the claim. FIXED -> 'A topological principle selects the Borromean braid B_3 = (sigma_0 sigma_1^-1)^3 as the confinement operator.' The second paragraph's 'on braid space, not on the Frobenius Gram matrix' is left alone: that contrast IS the section's argument and the next two sentences develop it."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.387Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "799d5b64bfe5",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:02.044Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of prf:confinement-operator-selection (4 sections, 2 displays). Verified the knot theory: the Borromean rings ARE the crossing-minimal nontrivial Brunnian link, their three pairwise linking numbers vanish and every 2-component sublink is the unlink, and no braid of fewer than six crossings is nontrivially Brunnian - all four claims correct. Verified the arithmetic against the witness: the unconfined-proton NF coefficients sum to 0.989, which is exactly the witness's net for the identity operator, so 'The identity leaves the quark demand profile unchanged' checks out numerically; the neutron gamma = -0.211 is about twice the proton's -0.105, consistent with the extra down quark's -h_A shift. 'We evaluate nine candidate confinement operators' is CORRECT - the witness carries exactly nine proton candidates - which makes Table 1's six rows the defect, not this sentence. The naive ranking also checks out: among the three zero-demand candidates, L_+ minimises crossing_energy (0.1517 vs 0.2603 and 0.3537), so 'Minimising demand channels and then E_cross selects L_+' is right.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.387Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 327 words)"
+      },
+      {
+        "field_hash": {
+          "md": "799d5b64bfe5",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:02.085Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:confinement-operator-selection (4 sections, 2 displays). Verified the knot theory: the Borromean rings ARE the crossing-minimal nontrivial Brunnian link, their three pairwise linking numbers vanish and every 2-component sublink is the unlink, and no braid of fewer than six crossings is nontrivially Brunnian - all four claims correct. Verified the arithmetic against the witness: the unconfined-proton NF coefficients sum to 0.989, which is exactly the witness's net for the identity operator, so 'The identity leaves the quark demand profile unchanged' checks out numerically; the neutron gamma = -0.211 is about twice the proton's -0.105, consistent with the extra down quark's -h_A shift. 'We evaluate nine candidate confinement operators' is CORRECT - the witness carries exactly nine proton candidates - which makes Table 1's six rows the defect, not this sentence. The naive ranking also checks out: among the three zero-demand candidates, L_+ minimises crossing_energy (0.1517 vs 0.2603 and 0.3537), so 'Minimising demand channels and then E_cross selects L_+' is right.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.387Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 327 words)"
+      },
+      {
+        "field_hash": {
+          "md": "799d5b64bfe5",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:02.125Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:confinement-operator-selection (4 sections, 2 displays). Verified the knot theory: the Borromean rings ARE the crossing-minimal nontrivial Brunnian link, their three pairwise linking numbers vanish and every 2-component sublink is the unlink, and no braid of fewer than six crossings is nontrivially Brunnian - all four claims correct. Verified the arithmetic against the witness: the unconfined-proton NF coefficients sum to 0.989, which is exactly the witness's net for the identity operator, so 'The identity leaves the quark demand profile unchanged' checks out numerically; the neutron gamma = -0.211 is about twice the proton's -0.105, consistent with the extra down quark's -h_A shift. 'We evaluate nine candidate confinement operators' is CORRECT - the witness carries exactly nine proton candidates - which makes Table 1's six rows the defect, not this sentence. The naive ranking also checks out: among the three zero-demand candidates, L_+ minimises crossing_energy (0.1517 vs 0.2603 and 0.3537), so 'Minimising demand channels and then E_cross selects L_+' is right.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.387Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "799d5b64bfe5",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:02.167Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of prf:confinement-operator-selection (4 sections, 2 displays). Verified the knot theory: the Borromean rings ARE the crossing-minimal nontrivial Brunnian link, their three pairwise linking numbers vanish and every 2-component sublink is the unlink, and no braid of fewer than six crossings is nontrivially Brunnian - all four claims correct. Verified the arithmetic against the witness: the unconfined-proton NF coefficients sum to 0.989, which is exactly the witness's net for the identity operator, so 'The identity leaves the quark demand profile unchanged' checks out numerically; the neutron gamma = -0.211 is about twice the proton's -0.105, consistent with the extra down quark's -h_A shift. 'We evaluate nine candidate confinement operators' is CORRECT - the witness carries exactly nine proton candidates - which makes Table 1's six rows the defect, not this sentence. The naive ranking also checks out: among the three zero-demand candidates, L_+ minimises crossing_energy (0.1517 vs 0.2603 and 0.3537), so 'Minimising demand channels and then E_cross selects L_+' is right.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.387Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "799d5b64bfe5",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:02.208Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of prf:confinement-operator-selection (4 sections, 2 displays). Verified the knot theory: the Borromean rings ARE the crossing-minimal nontrivial Brunnian link, their three pairwise linking numbers vanish and every 2-component sublink is the unlink, and no braid of fewer than six crossings is nontrivially Brunnian - all four claims correct. Verified the arithmetic against the witness: the unconfined-proton NF coefficients sum to 0.989, which is exactly the witness's net for the identity operator, so 'The identity leaves the quark demand profile unchanged' checks out numerically; the neutron gamma = -0.211 is about twice the proton's -0.105, consistent with the extra down quark's -h_A shift. 'We evaluate nine candidate confinement operators' is CORRECT - the witness carries exactly nine proton candidates - which makes Table 1's six rows the defect, not this sentence. The naive ranking also checks out: among the three zero-demand candidates, L_+ minimises crossing_energy (0.1517 vs 0.2603 and 0.3537), so 'Minimising demand channels and then E_cross selects L_+' is right.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.387Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "799d5b64bfe5",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:02.249Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of prf:confinement-operator-selection (4 sections, 2 displays). Verified the knot theory: the Borromean rings ARE the crossing-minimal nontrivial Brunnian link, their three pairwise linking numbers vanish and every 2-component sublink is the unlink, and no braid of fewer than six crossings is nontrivially Brunnian - all four claims correct. Verified the arithmetic against the witness: the unconfined-proton NF coefficients sum to 0.989, which is exactly the witness's net for the identity operator, so 'The identity leaves the quark demand profile unchanged' checks out numerically; the neutron gamma = -0.211 is about twice the proton's -0.105, consistent with the extra down quark's -h_A shift. 'We evaluate nine candidate confinement operators' is CORRECT - the witness carries exactly nine proton candidates - which makes Table 1's six rows the defect, not this sentence. The naive ranking also checks out: among the three zero-demand candidates, L_+ minimises crossing_energy (0.1517 vs 0.2603 and 0.3537), so 'Minimising demand channels and then E_cross selects L_+' is right.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.387Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "799d5b64bfe5",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:02.290Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:confinement-operator-selection (4 sections, 2 displays). Verified the knot theory: the Borromean rings ARE the crossing-minimal nontrivial Brunnian link, their three pairwise linking numbers vanish and every 2-component sublink is the unlink, and no braid of fewer than six crossings is nontrivially Brunnian - all four claims correct. Verified the arithmetic against the witness: the unconfined-proton NF coefficients sum to 0.989, which is exactly the witness's net for the identity operator, so 'The identity leaves the quark demand profile unchanged' checks out numerically; the neutron gamma = -0.211 is about twice the proton's -0.105, consistent with the extra down quark's -h_A shift. 'We evaluate nine candidate confinement operators' is CORRECT - the witness carries exactly nine proton candidates - which makes Table 1's six rows the defect, not this sentence. The naive ranking also checks out: among the three zero-demand candidates, L_+ minimises crossing_energy (0.1517 vs 0.2603 and 0.3537), so 'Minimising demand channels and then E_cross selects L_+' is right.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.387Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "799d5b64bfe5",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:02.330Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:confinement-operator-selection (4 sections, 2 displays). Verified the knot theory: the Borromean rings ARE the crossing-minimal nontrivial Brunnian link, their three pairwise linking numbers vanish and every 2-component sublink is the unlink, and no braid of fewer than six crossings is nontrivially Brunnian - all four claims correct. Verified the arithmetic against the witness: the unconfined-proton NF coefficients sum to 0.989, which is exactly the witness's net for the identity operator, so 'The identity leaves the quark demand profile unchanged' checks out numerically; the neutron gamma = -0.211 is about twice the proton's -0.105, consistent with the extra down quark's -h_A shift. 'We evaluate nine candidate confinement operators' is CORRECT - the witness carries exactly nine proton candidates - which makes Table 1's six rows the defect, not this sentence. The naive ranking also checks out: among the three zero-demand candidates, L_+ minimises crossing_energy (0.1517 vs 0.2603 and 0.3537), so 'Minimising demand channels and then E_cross selects L_+' is right.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.387Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "799d5b64bfe5",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:02.371Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:confinement-operator-selection (4 sections, 2 displays). Verified the knot theory: the Borromean rings ARE the crossing-minimal nontrivial Brunnian link, their three pairwise linking numbers vanish and every 2-component sublink is the unlink, and no braid of fewer than six crossings is nontrivially Brunnian - all four claims correct. Verified the arithmetic against the witness: the unconfined-proton NF coefficients sum to 0.989, which is exactly the witness's net for the identity operator, so 'The identity leaves the quark demand profile unchanged' checks out numerically; the neutron gamma = -0.211 is about twice the proton's -0.105, consistent with the extra down quark's -h_A shift. 'We evaluate nine candidate confinement operators' is CORRECT - the witness carries exactly nine proton candidates - which makes Table 1's six rows the defect, not this sentence. The naive ranking also checks out: among the three zero-demand candidates, L_+ minimises crossing_energy (0.1517 vs 0.2603 and 0.3537), so 'Minimising demand channels and then E_cross selects L_+' is right.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "a9920cd5f2e0",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-08-22T03:11:02.371Z"
+}

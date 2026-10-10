@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ssec-cosimplicial-crossed-groupoid",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "ssec:cosimplicial-crossed-groupoid",
+  "kind": "prose",
+  "cites": [
+    "references/yekutieli2010"
+  ],
+  "text": "cosimplicial-intro.md",
+  "meta": {
+    "position": "opening"
+  },
+  "provenance": "authored"
+}

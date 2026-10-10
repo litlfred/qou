@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Numerical cross-check of c_5 closed-form identities proved in
-`content/quantum-observable-universe/braids-and-knots/c5-involution-leibniz-decomposition.lean`.
+`folio/quantum-observable-universe/braids-and-knots/c5-involution-leibniz-decomposition.lean`.
 
 Per the "proven-but-unwired" audit (PR following #1252 Option E Phase 1a),
 the c5 file has 3 algebraic identities with no compute witness:

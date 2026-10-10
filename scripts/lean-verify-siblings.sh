@@ -96,7 +96,7 @@ if [ -f "$MODLIST" ]; then
     MODLIST=""
   fi
 fi
-QOU_SRC_ROOT="$REPO_ROOT/content/quantum-observable-universe/lean"
+QOU_SRC_ROOT="$REPO_ROOT/folio/quantum-observable-universe/lean"
 
 fail=0; pass=0; skip=0
 for f in "$@"; do

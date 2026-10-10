@@ -131,8 +131,8 @@ def report(r: dict) -> int:
             print(f"        library/{d}/")
         print()
         print("      Ingest them, then regenerate the index:")
-        print("        python3 folio-assistant/scripts/pdf-structure.py <pdf> -o library/")
-        print("        python3 folio-assistant/scripts/pdf-ocr.py <pdf> -o library/<doc-id>"
+        print("        python3 folio-assistant/cat-harness/scripts/pdf-structure.py <pdf> -o library/")
+        print("        python3 folio-assistant/cat-harness/scripts/pdf-ocr.py <pdf> -o library/<doc-id>"
               "   # scanned PDFs only")
         print("        python3 scripts/summarize-library.py --apply")
     if r["residual"] != 0:

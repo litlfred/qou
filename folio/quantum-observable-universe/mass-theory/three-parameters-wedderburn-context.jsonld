@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-three-parameters-wedderburn-context",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:three-parameters-wedderburn-context",
+  "kind": "remark",
+  "title": "Physical identification, sufficiency for all A, and leptonic cross-check for the three Wedderburn parameters",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-three-parameters-wedderburn"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-three-parameters-wedderburn",
+  "tags": [
+    "wedderburn",
+    "calibration",
+    "on-shell",
+    "irreducible-representations"
+  ],
+  "text": "three-parameters-wedderburn-context.md",
+  "provenance": "authored"
+}

@@ -4,7 +4,7 @@
 **Result: no.** Two of the three mass terms are pinned to zero by the class's
 own fields, and `trivial_vortex_vacuum_mass`'s hypotheses are contradictory.
 
-`content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean`
+`folio/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean`
 declares three stubs and a class over them:
 
 ```lean
@@ -34,7 +34,7 @@ descended trace evaluates to 1 -- the trace of the identity element of
 
 To run (needs Mathlib oleans; see AGENTS.md line 3715 for the cache restore):
 
-    cp content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean /tmp/p.lean
+    cp folio/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean /tmp/p.lean
     sed -n '/^-- ==== PROBE/,$p' scripts/lean/probes/unified-knot-mass-satisfiability.lean >> /tmp/p.lean
     LP=""; for d in .lake/packages/*/.lake/build/lib/lean; do LP="$LP$PWD/$d:"; done
     LEAN_PATH="$LP" lean /tmp/p.lean          # exit 0 = every claim below holds

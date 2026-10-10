@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-connection-su2",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:connection-su2",
+  "kind": "example",
+  "title": "Connection and curvature on $\\mathcal{O}(\\mathrm{SU}(2))$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-connection",
+    "papers/quantum-observable-universe/blocks/ex-fiber-adjoint-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-connection",
+  "cites": [
+    "references/woronowicz1987-twisted-su2"
+  ],
+  "tags": [
+    "su2",
+    "connection"
+  ],
+  "leanRef": "qou:QOU.Examples.su2Connection",
+  "text": "connection-su2.md",
+  "leanSource": "connection-su2.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "arxiv-1504.07260v3",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 247,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1504.07260v3/1504.07260v3.pdf"
+        },
+        "id": "arxiv-1504.07260v3",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "String-theory paper showing that most four-dimensional CHL models are self-dual under a weak-strong duality acting on the heterotic axio-dilaton by the Fricke involution S -> -1/(NS), and that self-duality is equivalent to N-modularity of the electric charge lattice (isometric to its dual up to rescaling of the quadratic form by N). The corpus has an active Fricke arc: the tau-dictionary work uses the Fricke involution W_5 on Gamma_0(5) and enumerates a 'bar <-> Fricke' candidate class in which the bar involution q -> q^{-1} would correspond to W_5. That arc's own audit records that every enumerated candidate FAILS the hauptmodul gate -- the candidates were enumerated from structure but selected by nothing. This document is worth citing because it supplies exactly the missing shape: a structural criterion (N-modularity of a lattice) under which a Fricke involution IS a strong-weak duality, rather than a list of candidates. It is NOT load-bearing and I will not claim it rescues the failed gate: the criterion's hypotheses concern the electric-magnetic charge lattice of a CHL compactification, an object with no established counterpart in this corpus, so the criterion cannot be applied today. It is context that tells the reader Fricke self-duality has a known lattice characterisation, not a tool the corpus can pick up. A separate hazard worth recording: 'Fricke' already means the Fricke TRACE identity for SL(2) character varieties in prop:chirality-from-frobenius-self-pairing and conj:depth-stratified-frobenius-reciprocity -- a different object from the Fricke involution, and any citation must say which.",
+          "keyResults": [
+            {
+              "locator": "Sec. 3, 'Fricke S-duality and N-modularity' (also Sec. 4.3)",
+              "statement": "A CHL model is self-dual under the Fricke involution S -> -1/(NS) if and only if its lattice of purely electric charges is N-modular, i.e. isometric to its dual after rescaling the quadratic form by N.",
+              "useForFolio": "Supplies the form a structural selection principle for the corpus's bar <-> Fricke identification would take -- a lattice condition rather than a numerical gate -- which is what the enumerated-and-failed candidate class currently lacks.",
+              "targets": [
+                "def:bar-involution"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The corpus's Fricke-involution work has no bibliographic anchor for the involution's role as a strong-weak duality; the entry would also let the two distinct 'Fricke' objects be disambiguated in one place.",
+              "target": "def:bar-involution",
+              "bean": "qou-9ds4"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "A short remark distinguishing the Fricke TRACE identity (already used in the mass-theory blocks) from the Fricke INVOLUTION W_N (used in the tau-dictionary audits), and noting that self-duality under the latter has a known lattice characterisation, would close a live symbol collision.",
+              "target": "rem:bar-involution-geometric-kac-sunada",
+              "bean": "qou-t2k8"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "707cb014400a"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-knot-operator-energy-vanishing",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:knot-operator-energy-vanishing",
+  "kind": "remark",
+  "title": "Vanishing locus and cheap/expensive operators",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-knot-operator-energy"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-knot-operator-energy",
+  "tags": [
+    "knot-operator",
+    "lp-boundary",
+    "phase-transition",
+    "shadow-price"
+  ],
+  "text": "knot-operator-energy-vanishing.md",
+  "provenance": "authored"
+}

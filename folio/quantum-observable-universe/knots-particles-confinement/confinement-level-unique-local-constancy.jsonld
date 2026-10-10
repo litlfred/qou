@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-confinement-level-unique-local-constancy",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:confinement-level-unique-local-constancy",
+  "kind": "remark",
+  "title": "Local constancy of the confinement level in $q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-confinement-level-unique"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-confinement-level-unique",
+  "tags": [
+    "uniqueness",
+    "confinement",
+    "filtration",
+    "shadow-price"
+  ],
+  "text": "confinement-level-unique-local-constancy.md",
+  "provenance": "authored"
+}

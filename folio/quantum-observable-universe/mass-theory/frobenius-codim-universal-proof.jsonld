@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-frobenius-codim-universal",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:frobenius-codim-universal",
+  "kind": "proof",
+  "title": "Proof of frobenius codim universal",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-frobenius-codim-universal"
+  ],
+  "text": "frobenius-codim-universal-proof.md",
+  "provenance": "authored"
+}

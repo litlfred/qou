@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-color-elliptic",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:color-elliptic",
+  "kind": "proof",
+  "title": "Proof of Color fibre as an elliptic curve",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-color-elliptic"
+  ],
+  "text": "color-elliptic-proof.md",
+  "provenance": "authored"
+}

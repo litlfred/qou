@@ -19,7 +19,7 @@ Usage:
     w.save()  # writes my-computation.witness.json
 
 The output conforms to the ComputationWitness interface in
-folio-assistant/schemas/types.ts.
+folio-assistant/cat-harness/schemas/types.ts.
 
 @module qou_substrate.witness
 """

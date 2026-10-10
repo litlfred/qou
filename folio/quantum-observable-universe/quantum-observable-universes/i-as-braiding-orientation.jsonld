@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-i-as-braiding-orientation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:i-as-braiding-orientation",
+  "kind": "remark",
+  "title": "The imaginary unit $i$ as braiding-orientation datum",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/sec-linearisation-convention",
+    "papers/quantum-observable-universe/blocks/rem-laplace-fourier-wick-rotation",
+    "papers/quantum-observable-universe/blocks/prop-braiding-induced-ordering"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-braiding-induced-ordering",
+  "tags": [
+    "braiding",
+    "orientation",
+    "imaginary-unit",
+    "wick-rotation",
+    "cr-structure",
+    "arrow-of-time",
+    "cpt-symmetry"
+  ],
+  "text": "i-as-braiding-orientation.md",
+  "provenance": "authored"
+}

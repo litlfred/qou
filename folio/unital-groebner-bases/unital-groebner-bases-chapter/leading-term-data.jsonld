@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/unital-groebner-bases/blocks/def-leading-term-data",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:leading-term-data",
+  "kind": "definition",
+  "title": "Leading monomial, coefficient, and term",
+  "uses": [
+    "papers/unital-groebner-bases/blocks/def-monomial-basis"
+  ],
+  "cites": [
+    "references/leitnerpawloski2004"
+  ],
+  "tags": [
+    "groebner-basis",
+    "leading-term"
+  ],
+  "leanRef": "ugb:UGB.UnitalGroebner.LeadingTerm",
+  "text": "leading-term-data.md",
+  "leanSource": "leading-term-data.lean",
+  "provenance": "authored"
+}

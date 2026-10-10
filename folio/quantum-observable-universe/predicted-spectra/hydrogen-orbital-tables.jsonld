@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-hydrogen-orbital-tables",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hydrogen-orbital-tables",
+  "kind": "remark",
+  "title": "Hydrogen shell tables: quantum numbers, capacity, and spectral series",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-hydrogen-orbitals"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-hydrogen-orbitals",
+  "tags": [
+    "hydrogen",
+    "orbital",
+    "quantum-numbers",
+    "shell",
+    "rydberg",
+    "spectral-series"
+  ],
+  "text": "hydrogen-orbital-tables.md",
+  "provenance": "authored"
+}

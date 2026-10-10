@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-markov-z-reconciliation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:markov-z-reconciliation",
+  "kind": "remark",
+  "title": "Reconciliation of the Markov parameter $z$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-mass-markov"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-categorical-mass-markov",
+  "tags": [
+    "markov-trace",
+    "normalization",
+    "convention"
+  ],
+  "text": "markov-z-reconciliation.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-sl2-period-conserved-quantity",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:sl2-period-conserved-quantity",
+  "kind": "proof",
+  "title": "Proof of the depth-2 conserved first integral",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-sl2-period-conserved-quantity",
+    "papers/quantum-observable-universe/blocks/prop-sl2-prolongation-recurrence"
+  ],
+  "text": "sl2-period-conserved-quantity-proof.md",
+  "provenance": "authored"
+}

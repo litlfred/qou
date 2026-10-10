@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-reeb-bundle",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:reeb-bundle",
+  "kind": "definition",
+  "title": "Reeb bundle over the exceptional divisor",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-exceptional-divisor",
+    "papers/quantum-observable-universe/blocks/ex-q-reeb-vector-field"
+  ],
+  "tags": [
+    "reeb-bundle",
+    "exceptional-divisor",
+    "hopf-fibration",
+    "blow-up"
+  ],
+  "leanRef": "qou:QOU.ReebBundle",
+  "text": "reeb-bundle.md",
+  "leanSource": "reeb-bundle.lean",
+  "provenance": "authored"
+}

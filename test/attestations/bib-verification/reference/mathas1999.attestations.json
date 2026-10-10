@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "mathas1999",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 33,
+      "entry": {
+        "id": "mathas1999",
+        "status": "partial",
+        "verified_at": "2026-05-19T07:03:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 3,
+        "fix_commit": "(this commit)",
+        "note": "Mathas, \"Iwahori\u2013Hecke Algebras and Schur Algebras\", AMS Univ. Lect. Series 15, 1999. 3 bare-URL Refs upgraded with title+publisher form. No local PDF (publisher paywalled). Partial.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1090/ulect/015"
+        }
+      }
+    }
+  ]
+}

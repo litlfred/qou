@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "kashiwara1990-cmp2",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 121,
+      "entry": {
+        "id": "kashiwara1990-cmp2",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T18:13:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 1,
+        "fix_commit": "(this commit)",
+        "note": "RESOLVED 2026-06-23 (doth): the DOI 10.1007/BF02100009 resolves to a WITTEN paper (CMP 141, 1991) \u2014 wrong. Corrected to Kashiwara, 'Crystal bases of the modified quantized enveloping algebra', Duke MJ 73(2) (1994) 383-413, DOI 10.1215/S0012-7094-94-07317-1. references.ts updated (this DOI did not appear inline in any .lean). Link-title confidence (sandbox 403'd DOI pages). See docs/audits/2026-06-23-bibliography-doi-verification-doth.md \u00a7A.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1215/S0012-7094-94-07317-1"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-borromean-h4-categorical-derivation",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:borromean-h4-categorical-derivation",
+  "kind": "proof",
+  "title": "Proof of borromean h4 categorical derivation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-borromean-h4-categorical-derivation"
+  ],
+  "text": "borromean-h4-categorical-derivation-proof.md",
+  "provenance": "authored"
+}

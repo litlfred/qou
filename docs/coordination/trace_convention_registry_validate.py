@@ -718,7 +718,7 @@ def check_excluded(reg: dict, lint_docs: bool, conventions=None):
     if lint_docs:
         bor = re.compile(r"borromean|beta_Bor|β_\{?\\?mathrm\{Bor|β_Bor",
                          re.IGNORECASE)
-        for base in ("docs", "content"):
+        for base in ("docs", "folio"):
             root = REPO / base
             if not root.exists():
                 continue

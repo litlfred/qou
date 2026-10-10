@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  qou — Refresh computation witnesses
+
+  Source of truth: this file. Story TOOLS T6 (bean qou-kumy). Open it in
+  bpmn.io or any BPMN 2.0 tool.
+
+  The <bootstrap.processes:skill> extension on an activity names the skill that
+  implements it, and a Tool reaches the activity through the skill it
+  satisfies: the planning step is the `witness-refresh-plan` Tool in
+  tool-defs/, which runs `run_pipeline.py dry-run`.
+-->
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+                  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+                  xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                  xmlns:bootstrap.processes="https://litlfred.github.io/bootstrap/0.1.0/processes/ns#"
+                  xmlns:cat-harness.processes="https://litlfred.github.io/cat-harness/0.1.0/processes/ns#"
+                  id="Definitions_WitnessRefresh"
+                  targetNamespace="https://litlfred.github.io/qou/workflows"
+                  exporter="qou" exporterVersion="1">
+
+  <bpmn:collaboration id="Collaboration_WitnessRefresh">
+    <bpmn:participant id="Participant_WitnessRefresh" name="Refresh computation witnesses" processRef="Process_WitnessRefresh" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_WitnessRefresh" name="Refresh computation witnesses" isExecutable="false">
+    <bpmn:documentation>Bring qou's computation witnesses back in line with the producers that write them, without a witness ever being rewritten that the owner did not approve. Owner, 2026-10-04: "all witnesses tools will need to go into the KG"; this is the process those Tools run in.
+
+A WITNESS IS CONTENT HERE. Its numbers are what the paper quotes, so the owner's rule that a migration changes no mathematics applies to it, and so does the ask-first rule for refreshing one. That is why the decision sits in the owner's lane between the measurement and the re-run, and why nothing before it writes a file: the dry run and the parity check both work on the committed tree or a scratch copy of it.
+
+THE PLAN IS `run_pipeline.py --dry-run --content-only`, UNCHANGED. The process does not re-derive staleness; it calls the pipeline's own answer through the `witness-refresh-plan` Tool, so the list a person approves is exactly the list the pipeline would act on.</bpmn:documentation>
+    <bpmn:extensionElements>
+      <cat-harness.processes:policy enforcement="strict" />
+    </bpmn:extensionElements>
+    <bpmn:laneSet id="Process_WitnessRefresh_LaneSet">
+      <bpmn:lane id="Lane_Owner" name="Owner (the paper's author)">
+        <bpmn:documentation>Decides which stale witnesses may be rewritten. A witness whose re-run changes a number, rather than only provenance fields, needs a judgement about which result is right; that judgement is not the agent's.</bpmn:documentation>
+        <bpmn:extensionElements><bootstrap.processes:role ref="author"/></bpmn:extensionElements>
+        <bpmn:flowNodeRef>Task_Approve</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_Approved</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_Unchanged</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Agent" name="Compute agent">
+        <bpmn:documentation>Measures before anyone decides, and acts only on what was approved. Writes nothing to the tree until the owner's lane says which producers to re-run.</bpmn:documentation>
+        <bpmn:extensionElements><bootstrap.processes:role ref="authoring-agent"/></bpmn:extensionElements>
+        <bpmn:flowNodeRef>StartEvent_Due</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_Plan</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_Parity</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_Run</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_Gates</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_Commit</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_Refreshed</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+
+    <bpmn:startEvent id="StartEvent_Due" name="Witnesses may
+be stale">
+      <bpmn:documentation>Entered on demand, or after a change to a producer or to a module producers import.</bpmn:documentation>
+      <bpmn:outgoing>Flow_1</bpmn:outgoing>
+    </bpmn:startEvent>
+
+    <bpmn:serviceTask id="Task_Plan" name="List stale producers
+(pipeline dry run)">
+      <bpmn:documentation>Run `python3 computations/run_pipeline.py --dry-run --content-only` (the `witness-refresh-plan` Tool). It lists every content-linked producer whose witness is stale (script changed, a dependency changed, or a stale q0) in dependency order, and writes nothing.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="compute-audit" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_2</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:serviceTask id="Task_Parity" name="Classify each:
+does a re-run reproduce it?">
+      <bpmn:documentation>Run the platform's `witness-parity` Tool on the listed witnesses. It re-runs each committed producer in a scratch git worktree and reports pass, fail (with the differing paths) or unknown (environment mismatch, stale script, error, timeout). The owner sees, for each candidate, whether a refresh would change numbers or only provenance.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="compute-audit" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_3</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:userTask id="Task_Approve" name="Approve which
+producers to re-run">
+      <bpmn:documentation>The owner picks the producers whose witnesses may be rewritten, from the classified list. Saying nothing approves none. A witness whose re-run changes numbers needs a decision about which result is right before it is approved.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="interaction-modality" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_3</bpmn:incoming>
+      <bpmn:outgoing>Flow_4</bpmn:outgoing>
+    </bpmn:userTask>
+
+    <bpmn:exclusiveGateway id="Gateway_Approved" name="Any approved?">
+      <bpmn:documentation>Did the owner approve at least one producer? `no` ends with every witness unchanged.</bpmn:documentation>
+      <bpmn:incoming>Flow_4</bpmn:incoming>
+      <bpmn:outgoing>Flow_5</bpmn:outgoing>
+      <bpmn:outgoing>Flow_6</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+
+    <bpmn:endEvent id="EndEvent_Unchanged" name="Witnesses
+unchanged">
+      <bpmn:incoming>Flow_6</bpmn:incoming>
+    </bpmn:endEvent>
+
+    <bpmn:serviceTask id="Task_Run" name="Re-run the approved
+producers">
+      <bpmn:documentation>Re-run exactly the approved producers, in dependency order. A producer that writes sibling witnesses outside the approved set is reported, and those files are restored to their committed state rather than committed.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="compute-author" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_5</bpmn:incoming>
+      <bpmn:outgoing>Flow_7</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:serviceTask id="Task_Gates" name="Precision gates;
+keep audit output out">
+      <bpmn:documentation>Run `scripts/precision-gates.sh --changed`. A red that names one of the refreshed witnesses stops the process at the producer. A red that predates the change does not, but it is reported. The gate scripts rewrite their own audit-report witnesses as a side effect; those are restored, never committed.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="compute-audit" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_7</bpmn:incoming>
+      <bpmn:outgoing>Flow_8</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:serviceTask id="Task_Commit" name="Commit the refreshed
+witnesses">
+      <bpmn:documentation>Commit only the approved witnesses, naming the producers, the fields that changed and the gate result, and re-run `witness-parity` on them, expecting pass.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="continual-progress" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_8</bpmn:incoming>
+      <bpmn:outgoing>Flow_9</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:endEvent id="EndEvent_Refreshed" name="Approved witnesses
+refreshed">
+      <bpmn:incoming>Flow_9</bpmn:incoming>
+    </bpmn:endEvent>
+
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="StartEvent_Due" targetRef="Task_Plan" />
+    <bpmn:sequenceFlow id="Flow_2" sourceRef="Task_Plan" targetRef="Task_Parity" />
+    <bpmn:sequenceFlow id="Flow_3" sourceRef="Task_Parity" targetRef="Task_Approve" />
+    <bpmn:sequenceFlow id="Flow_4" sourceRef="Task_Approve" targetRef="Gateway_Approved" />
+    <bpmn:sequenceFlow id="Flow_5" name="yes" sourceRef="Gateway_Approved" targetRef="Task_Run" />
+    <bpmn:sequenceFlow id="Flow_6" name="no" sourceRef="Gateway_Approved" targetRef="EndEvent_Unchanged" />
+    <bpmn:sequenceFlow id="Flow_7" sourceRef="Task_Run" targetRef="Task_Gates" />
+    <bpmn:sequenceFlow id="Flow_8" sourceRef="Task_Gates" targetRef="Task_Commit" />
+    <bpmn:sequenceFlow id="Flow_9" sourceRef="Task_Commit" targetRef="EndEvent_Refreshed" />
+  </bpmn:process>
+
+  <bpmndi:BPMNDiagram id="BPMNDiagram_WitnessRefresh">
+    <bpmndi:BPMNPlane id="BPMNPlane_WitnessRefresh" bpmnElement="Collaboration_WitnessRefresh">
+      <bpmndi:BPMNShape id="Participant_WitnessRefresh_di" bpmnElement="Participant_WitnessRefresh" isHorizontal="true">
+        <dc:Bounds x="0" y="0" width="1210" height="380" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Owner_di" bpmnElement="Lane_Owner" isHorizontal="true">
+        <dc:Bounds x="30" y="0" width="1180" height="180" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Agent_di" bpmnElement="Lane_Agent" isHorizontal="true">
+        <dc:Bounds x="30" y="180" width="1180" height="200" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_Due_di" bpmnElement="StartEvent_Due">
+        <dc:Bounds x="72" y="262" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_Plan_di" bpmnElement="Task_Plan">
+        <dc:Bounds x="150" y="240" width="130" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_Parity_di" bpmnElement="Task_Parity">
+        <dc:Bounds x="320" y="240" width="130" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_Approve_di" bpmnElement="Task_Approve">
+        <dc:Bounds x="320" y="50" width="130" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_Approved_di" bpmnElement="Gateway_Approved" isMarkerVisible="true">
+        <dc:Bounds x="505" y="65" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_Unchanged_di" bpmnElement="EndEvent_Unchanged">
+        <dc:Bounds x="612" y="72" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_Run_di" bpmnElement="Task_Run">
+        <dc:Bounds x="600" y="240" width="130" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_Gates_di" bpmnElement="Task_Gates">
+        <dc:Bounds x="770" y="240" width="130" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_Commit_di" bpmnElement="Task_Commit">
+        <dc:Bounds x="940" y="240" width="130" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_Refreshed_di" bpmnElement="EndEvent_Refreshed">
+        <dc:Bounds x="1122" y="262" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1_di" bpmnElement="Flow_1">
+        <di:waypoint x="108" y="280" /><di:waypoint x="150" y="280" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_2_di" bpmnElement="Flow_2">
+        <di:waypoint x="280" y="280" /><di:waypoint x="320" y="280" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_3_di" bpmnElement="Flow_3">
+        <di:waypoint x="385" y="240" /><di:waypoint x="385" y="130" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_4_di" bpmnElement="Flow_4">
+        <di:waypoint x="450" y="90" /><di:waypoint x="505" y="90" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_5_di" bpmnElement="Flow_5">
+        <di:waypoint x="530" y="115" /><di:waypoint x="530" y="280" /><di:waypoint x="600" y="280" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_6_di" bpmnElement="Flow_6">
+        <di:waypoint x="555" y="90" /><di:waypoint x="612" y="90" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_7_di" bpmnElement="Flow_7">
+        <di:waypoint x="730" y="280" /><di:waypoint x="770" y="280" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_8_di" bpmnElement="Flow_8">
+        <di:waypoint x="900" y="280" /><di:waypoint x="940" y="280" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_9_di" bpmnElement="Flow_9">
+        <di:waypoint x="1070" y="280" /><di:waypoint x="1122" y="280" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

@@ -6,7 +6,7 @@ order-blind, so it does not separate the gluon candidates either.
 
 # Ref: computations/qbeta/qbeta_cusp_lattice_geodesic_probe.py   (half A: word -> geodesic, author steering 2026-07-27)
 # Ref: computations/mobius_cross_energy_hopf_calibration.py      (the O'Hara/Moebius conventions)
-# Ref: content/quantum-observable-universe/lean/QOU/MobiusEnergy.lean  (oharaIntegrand)
+# Ref: folio/quantum-observable-universe/lean/QOU/MobiusEnergy.lean  (oharaIntegrand)
 # Ref: computations/qbeta/qbeta_embedding_energy_can_discriminate_probe.py  (the green light this tests)
 # Ref: .beans/qou-pzsi--...md , .beans/qou-99qc--...md
 

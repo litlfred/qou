@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-qou-is-ccc",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:qou-is-ccc",
+  "kind": "proposition",
+  "title": "Aeon boundaries satisfy the horizon-local conditions of a conformal cyclic cosmology",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-horizon-conformal-invariance"
+  ],
+  "cites": [
+    "references/penrose2010"
+  ],
+  "tags": [
+    "ccc",
+    "aeon",
+    "conformal-cyclic-cosmology",
+    "penrose",
+    "jet-horizon",
+    "conformal-invariance"
+  ],
+  "leanRef": "qou:QOU.qou_is_ccc",
+  "text": "qou-is-ccc.md",
+  "provenance": "authored"
+}

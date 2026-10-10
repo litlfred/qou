@@ -2,7 +2,7 @@
 """
 P0.1 wall-violation sweep over proof blocks.
 
-For every `*-proof.md` under `content/quantum-observable-universe/`,
+For every `*-proof.md` under `folio/quantum-observable-universe/`,
 flag occurrences of Archimedean / hyperbolic-volume markers that
 appear **at the proof level**, not as a τ-image discussion. The
 strict-wall rule (AGENTS.md §τ-wall + audit doc §0) requires that
@@ -49,7 +49,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
-CONTENT = REPO / "content" / "quantum-observable-universe"
+CONTENT = REPO / "folio" / "quantum-observable-universe"
 
 # Markers to flag. Each marker has a regex pattern matched
 # case-insensitively over the proof-block text.
@@ -216,7 +216,7 @@ def main() -> int:
         "computation": "wall-violations-sweep",
         "purpose": (
             "P0.1 deliverable: list every `*-proof.md` block under "
-            "content/quantum-observable-universe/ whose text matches "
+            "folio/quantum-observable-universe/ whose text matches "
             "Archimedean / hyperbolic-volume markers (Mostow, Gromov, "
             "Thurston, hyperbolic Vol(K), SnapPy, Kashaev, "
             "Murakami--Murakami, volume conjecture). Each match is "

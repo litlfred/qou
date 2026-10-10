@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-fai-projector-coadjoint-orbit",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:fai-projector-coadjoint-orbit",
+  "kind": "proof",
+  "title": "Proof of the projector / coadjoint-orbit identification",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-fai-projector-coadjoint-orbit"
+  ],
+  "text": "fai-projector-coadjoint-orbit-proof.md",
+  "provenance": "authored"
+}

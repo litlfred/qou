@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-molecular-braid",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:molecular-braid",
+  "kind": "definition",
+  "title": "Molecular braid $H_{N_{\\mathrm{mol}}}(q)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hecke-normal-form",
+    "papers/quantum-observable-universe/blocks/def-universal-ilp-algorithm"
+  ],
+  "tags": [
+    "molecular",
+    "hecke-algebra",
+    "covalent-bond",
+    "iterative-construction"
+  ],
+  "leanRef": "qou:QOU.Molecular.MolecularBraid",
+  "text": "molecular-braid.md",
+  "leanSource": "molecular-braid.lean",
+  "provenance": "authored"
+}

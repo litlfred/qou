@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-harmonic-particle",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-harmonic-particle",
+  "kind": "remark",
+  "title": "Particles as $q$-harmonic forms: the logical chain",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-hodge-laplacian-relation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-harmonic-form",
+  "tags": [
+    "particle",
+    "harmonic",
+    "pedagogy"
+  ],
+  "text": "q-harmonic-particle.md",
+  "provenance": "authored"
+}

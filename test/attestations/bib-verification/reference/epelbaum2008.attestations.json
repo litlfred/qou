@@ -1,0 +1,80 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "epelbaum2008",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 193,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-0811.1338v1/0811.1338v1.pdf"
+        },
+        "id": "epelbaum2008",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "The Reviews of Modern Physics review of chiral-EFT nuclear forces, and it is ALREADY CONSUMED by live QOU compute with no ref() entry backing it: computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py and its committed witness mu4-vs-nuclear-4n-force-bound.witness.json both cite it by bare string 'Epelbaum, Modern Theory of Nuclear Forces, arXiv:0811.1338'. It supplies the field's own derived k-body hierarchy (2N, 3N, 4N forces enter at Weinberg-counting orders nu = 0, 2, 4) and the Tjon-line correlation with its explanation (no four-body parameter is needed for renormalization at leading order). That is directly the structural template for the open many-body binding-MAGNITUDE gap: AGENTS.md records that the missing term is a separate super-pairwise additive extensive object, and this review is where the field states, parameter-free, how fast k-body terms are supposed to fall off. Grep confirms no ref() entry and no citation site in content/.",
+          "keyResults": [
+            {
+              "locator": "\u00a7II.B, eq. (2.8) and the discussion on p.13",
+              "statement": "Weinberg power counting: two-, three-, and four-nucleon forces begin to contribute at orders nu = 0, 2 and 4 respectively \u2014 a derived hierarchy of many-body force strengths from the Q/Lambda expansion, not a fit.",
+              "useForFolio": "A parameter-free external benchmark for the size ordering of the k-body terms in the residual-simplex expansion (mu_3, mu_4). The corpus target mu_4 = -4.591 in B(D) units is compared against it in the GAP-9 probe; the hierarchy is what makes that comparison meaningful rather than an arbitrary scale check.",
+              "targets": [
+                "computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py",
+                "folio/quantum-observable-universe/lean/QOU/MassTheory/TjonSimplexForm.lean"
+              ]
+            },
+            {
+              "locator": "\u00a7II.A, Fig. 10 and surrounding text, p.12",
+              "statement": "The Tjon line \u2014 the correlation between triton and alpha binding energies B_t and B_alpha \u2014 is predicted by pionless EFT because no four-body parameter is required for renormalization at leading order; higher orders broaden it into a band.",
+              "useForFolio": "Supplies the convention-free observable the GAP-9 probe reformulates the test around: instead of matching mu_4 in a C(A,k) basis, test the QOU block-trace operator against the B(3H)-B(4He) correlation. The Fig.-10 band gives the tolerance that test must meet.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/MassTheory/TjonSimplexForm.lean",
+                "computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py"
+              ]
+            },
+            {
+              "locator": "\u00a7II.B, Fig. 14, p.18",
+              "statement": "Enumeration of the diagram topologies contributing to the four-nucleon force at N3LO.",
+              "useForFolio": "Fixes what 'the N3LO four-nucleon force' means, so the numeric bound quoted from Jurgenson-Navratil-Furnstahl (library/arxiv-0905.1873v2/0905.1873v2.pdf) in mu4_target_exceeds_n3lo_bound is attached to a defined object rather than a loose phrase.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/MassTheory/TjonSimplexForm.lean"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "A live witness and a live probe both cite this paper by bare arXiv id with no ref() entry \u2014 the load-bearing literature backing for the GAP-9 four-body bound is unregistered. Suggested id epelbaum-hammer-meissner2009 (Rev. Mod. Phys. 81 (2009) 1773).",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-59e6"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Once registered, the bare-string citations in the probe and the witness's sources list should become the bib key, so validate-bib can see them and the Lean -- Ref: convention (\u00a71) is satisfiable for the Tjon/4N-force claims.",
+              "target": "computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py",
+              "bean": "qou-otpa"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "9a57cb6e014d"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

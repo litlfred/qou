@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "cardona2023",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 115,
+      "entry": {
+        "id": "cardona2023",
+        "status": "pending-placement",
+        "verified_at": "2026-05-19T17:48:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": null,
+        "note": "Cardona 2023 \u2014 recent, possibly forward-ref intent. Bib orphan (0 cites). | UPDATE 2026-05-19 17:48: changed uncited \u2192 pending-placement per author 'I need this but unsure where to put' workflow.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1016/j.matpur.2022.11.005"
+        }
+      }
+    }
+  ]
+}

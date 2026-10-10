@@ -2,7 +2,7 @@
 """
 em_coupling_projection_probe.py — VERIFICATION probe for the claim in
 content block `prop:em-coupling-projection`
-(content/quantum-observable-universe/predicted-spectra/em-coupling-projection.md).
+(folio/quantum-observable-universe/predicted-spectra/em-coupling-projection.md).
 
 THE CLAIM. The electromagnetic fine-structure constant is the τ-trace of
 the singlet idempotent e_- normalised by the force-carrier categorical

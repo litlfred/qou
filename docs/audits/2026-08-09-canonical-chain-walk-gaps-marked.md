@@ -164,6 +164,48 @@ precision constraint on every tr_M, and it is why the residuals below all sit at
 ~1e-31 rather than the ~1e-50 the χ^λ path reaches. Corpus claims of "1e-50
 agreement" are about χ^λ, not tr_M. Tracked on `qou-840k`.
 
+> **🛑 THE CAP WAS LIFTED — the last sentence above is now FALSE, and the
+> diagnosis above is what fixed it (correction added 2026-09-27, bean
+> `qou-840k`).** The paragraph is a correct record of 2026-08-09 and is kept as
+> one; what follows is a currency note, not a retraction of the analysis.
+>
+> The live return in `y_lambda_at` is now **50 digits, not 30**
+> (`wedderburn_jones_markov.py`, the `q_val is not None and not _symbolic`
+> early-return). Its own in-source comment records the change and its reason —
+> `y_lambda_su_n` runs at `COMPUTE_DPS` (70) and is good well past 50, so the
+> cap was throwing digits 31–50 away for a "consumer compatibility" that no
+> canonical consumer needed: `tr_m_atom_via_transfer.py` immediately re-lifts
+> through `mp.mpf(str(v))`.
+>
+> **Re-measured 2026-09-27**, live `y_lambda_at` at the proton q₀, Markov
+> normalisation `|Σ_λ y_λ f^λ − 1|`:
+>
+> | n | residual | returned decimals |
+> |---|---:|---:|
+> | 3 | 1.06911e-50 | ~50 |
+> | 4 | 2.67276e-51 | ~51 |
+> | 5 | 1.06911e-50 | ~51 |
+> | 6 | 1.33638e-51 | ~51 |
+>
+> So tr_M residuals now sit **19–20 orders below** the ~1e-31 recorded above,
+> and **"1e-50 agreement" is true of tr_M as well as χ^λ.**
+>
+> **Read that as a FLOOR, not as an agreement.** The returned values are
+> themselves truncated at 50 decimals, so a residual at 1e-50/1e-51 is the
+> serialization floor of the arithmetic used — it is where the cap *no longer*
+> binds, not a measurement of how exact the mathematics is. (The in-source
+> comment records `0.0 / 1.336e-51 / 0.0` for n = 3/4/5; the difference from the
+> table above is smaller than that floor, so the two do not disagree about
+> anything — both say "at the floor". Per the probe discipline, do not quote
+> either as "exact" or "to N digits".)
+>
+> **A second 30-digit cap survives at `sp.Float(nstr(y, 30), 30)` and is
+> HARMLESS — do not "fix" it.** It sits inside
+> `_y_lambda_at_convention_C_HISTORICAL`, which is convention C, excised
+> 2026-08-09, and dead. The live early-return fires for every numeric `q_val`,
+> so that branch is unreachable on the D path. It is the literal string this
+> paragraph quotes, which is why it looks live from here.
+
 ## Step 7 — the Frobenius pairing tr_M = Σ_λ y_λ χ_λ · **DERIVED**
 
 Checked this session by four routes for ²H:
@@ -175,6 +217,13 @@ Markov  tr(W·σ) = z·tr(W)          9.1e-32
 Σ y_λ d_λ = 1  (normalisation)     7.7e-31
 transfer kernel vs seminormal      4.1e-15   ← the only genuinely independent route
 ```
+
+> **🛑 The four ~1e-31 rows are CAP-ERA figures — see the correction under
+> Step 6 (2026-09-27).** The `y_λ` cap has been lifted 30 → 50 digits, and the
+> normalisation row specifically re-measures at **1.07e-50 (n=3)** against the
+> **7.7e-31** recorded here. The `4.1e-15` transfer-kernel row is a *different*
+> route and is **not** affected by the cap — it is still the only genuinely
+> independent one, which is the durable half of this table.
 
 **Caveat the corpus already states, and this audit repeats:** the
 2026-06-04 handover records that `cross_check_trM_1ppb.py` "proves four methods

@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-on-p-modular-hecke-significance",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:on-p-modular-hecke-significance",
+  "kind": "remark",
+  "title": "Significance of the smallest modular-Hecke nimber case",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-on-p-modular-hecke"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-on-p-modular-hecke",
+  "tags": [
+    "surreal-numbers",
+    "nimbers",
+    "modular-hecke",
+    "significance"
+  ],
+  "text": "on-p-modular-hecke-significance.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "costin1995",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 182,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0608414v1/0608414v1.pdf"
+        },
+        "id": "costin1995",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Identity confirmed from the document's own cover (arXiv:math/0608414v1 [math.CA], exponential asymptotics, trans-series and generalised Borel summation for analytic nonlinear rank-one ODE systems, single author) and matches the seeded key up to the ref() entry's slightly different capitalisation/expansion of the title. Citation status is NOT 'cited': the ref() entry exists (references.ts:5092) but grep over content/ finds no `\\cite{costin1995}`, no `[costin1995]` and no cites-array entry \u2014 a bib orphan. Its only appearance is docs/audits/2026-07-20-qlift-literature-check.md:113, which lists it among resurgence foundations. This matters because the corpus has live, load-bearing Borel-summability content that currently leans on a single 2024 source: QOU/Mathlib/BorelStateIntegralSummability.lean is conditional on fantini-wheeler2024 Thm 1.4, and QOU/Mathlib/QGevreyOrder.lean and QAlienBridgeEquation.lean work with q-Gevrey orders and alien derivatives. The foundational generalised-Borel-summation-of-transseries statement those files implicitly assume is this document's main theorem, and it is uncited. Supporting rather than core because the folio's problem is q-difference, not rank-one ODE \u2014 the transfer of the summability theorem across that gap is not automatic and I have not checked its hypotheses in the q-setting.",
+          "keyResults": [
+            {
+              "locator": "main theorem (abstract statement)",
+              "statement": "For analytic nonlinear systems of ODEs at a rank-one irregular singularity, under non-degeneracy and integrability conditions the formal exponential (trans-)series solutions are Borel summable in Ecalle's sense, and the resummed functions are exactly the solutions decaying in a specified sector; the correspondence's dependence on the ray gives the local Stokes phenomenon.",
+              "useForFolio": "It is the classical-side anchor for 'trans-series are Borel summable and the ray-dependence IS the Stokes phenomenon', which is the pattern the q-difference Stokes work assumes. Citing it would make the analogy's classical leg explicit rather than tacit.",
+              "targets": [
+                "QOU.Mathlib.QGevreyOrder",
+                "QOU.Mathlib.BorelStateIntegralSummability"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "The Borel-summability/Stokes files carry no classical-ODE anchor; this reference already exists in references.ts and is exactly that anchor. Cite it as the classical leg, explicitly marked as the analogy's source and NOT as a transfer of the theorem to the q-difference setting.",
+              "target": "QOU.Mathlib.QGevreyOrder",
+              "bean": "qou-i3uy"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "bd9a8d48a6d6"
+        }
+      }
+    }
+  ]
+}

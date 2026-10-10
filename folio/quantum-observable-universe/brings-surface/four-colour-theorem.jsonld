@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-four-colour-theorem",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:four-colour-theorem",
+  "kind": "remark",
+  "title": "The four-colour theorem and Bring's surface",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-four-colourability",
+    "papers/quantum-observable-universe/blocks/rem-radial-projection"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-brings-surface",
+  "text": "four-colour-theorem.md",
+  "provenance": "authored"
+}

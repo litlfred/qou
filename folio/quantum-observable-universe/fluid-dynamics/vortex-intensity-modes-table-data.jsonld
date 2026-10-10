@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-vortex-intensity-modes-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:vortex-intensity-modes-table-data",
+  "kind": "table",
+  "title": "Classical fluid concepts and their $q$-deformed analogues",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-vortex-intensity-modes"
+  ],
+  "tags": [
+    "vortex",
+    "fluid-dynamics",
+    "q-deformation",
+    "summary-table"
+  ],
+  "text": "vortex-intensity-modes-table-data.md",
+  "provenance": "authored"
+}

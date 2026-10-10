@@ -1,0 +1,51 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "bokutchenli2011",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 423,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1101.1563v1/1101.1563v1.pdf"
+        },
+        "id": "bokutchenli2011",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "A Composition-Diamond lemma for the free partial algebra kC(X) on a free category over an oriented multigraph (Thm 4.4), plus Groebner-Shirshov bases for the simplicial category (Thm 5.1) and the cyclic category (Thm 5.4), with Cor. 5.2/5.3 reproving Mac Lane VIII.5.1/5.2. Everything new is the MULTI-OBJECT ('monoid with several objects') generalisation. The folio's Groebner-Shirshov machinery is entirely single-object associative: H_n(q) normal forms (UGB/GrobnerShirshov/HeckeGS.lean, def:hecke-normal-form), U_q(su(2)) q-Serre rewriting, transfer-matrix and MBA GS reduction, KS finiteness via Bergman's diamond lemma. The paper's own Remark after Thm 4.4 states that the one-object case 'is exact Composition-Diamond lemma for free associative algebras' -- exactly what the folio already cites via bokutchen2014 (8 sites) and bokut2005 (5 sites) -- and its Sec. 2 survey is a shorter version of bokutchen2014's. Corpus-grep: 'cyclic category', 'path algebra', 'partial algebra', 'Composition-Diamond' all 0 hits in content/; 'quiver' only in unrelated DT/BPS and glossary prose. Full-text scan of the document: Temperley-Lieb 0, Hecke 0, Catalan 0, Young 0, Jones 0; 'braid' (4) and 'Markov' (1) occur only as bibliography pointers to other papers by the same authors, not as results proved here. Closest hook, checked and rejected: def:ccg-cosimplicial-identities defers 'the deeper categorical identities (delta^j . delta^i = delta^i . delta^(j-1) for i < j)', and Thm 5.1's relation family is exactly that identity with Cor. 5.2 giving the unique canonical form; but that block's stated obstruction is a Lean dependent-typing scope limit ('would require richer types for the face maps'), not a missing mathematical statement, and maclane1971 is already in references.ts as the natural source for the presentation this document reproves. Scope-(a) negative: as read, it supplies nothing this folio can consume -- not a claim that categorical Groebner-Shirshov methods are irrelevant in principle. Revisit if the folio ever formalises a GS basis over a genuinely multi-object structure (the brane-tower crossed groupoid, or a Temperley-Lieb/tangle category rather than the TL_n algebras).",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "def:groebner-basis and the whole UGB GrobnerShirshov cluster work over free associative algebras (one object). Thm 4.4's one-object specialisation is, by the document's own Remark, the classical associative CD-lemma already sourced at 13 sites via bokutchen2014 and bokut2005, so registering this preprint would add a bibliography entry with no load-bearing citation site.",
+              "target": "def:groebner-basis"
+            },
+            {
+              "action": "no-action",
+              "rationale": "Checked as the one specific hook: Thm 5.1's coface relation and Cor. 5.2's canonical form are literally the deferred cosimplicial identities and normal form for the simplicial category. Rejected because the deferral there is a Lean dependent-typing scope limit, not an unsourced mathematical claim, and maclane1971 (already in references.ts) is the presentation this document reproves. Reopen only if a Lean formalisation of the simplicial normal form is attempted, where a confluent rewriting system would be worth more than a presentation.",
+              "target": "def:ccg-cosimplicial-identities"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-09T19:30:00Z",
+          "source_sha": "0c45b250fc4a"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

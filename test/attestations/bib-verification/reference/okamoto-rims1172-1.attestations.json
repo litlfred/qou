@@ -1,0 +1,40 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "okamoto-rims1172-1",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 224,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/1172-1/1172-1.pdf"
+        },
+        "id": "okamoto-rims1172-1",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "A seven-page Japanese-language seminar report (dvipdfm, 2000-era) whose CJK prose has no extractable text layer: pdftotext yields ~5 kB of stray Latin and mangled inline math for seven pages, and the five-rung fallback extractor stops at the same rung because the banner text exceeds its length threshold. No OCR path with Japanese support is available in this environment. What IS legible places the document squarely in scope -- colored Jones polynomial of the Whitehead link, U_q(sl_2), the volume conjecture, 6j-symbols, the symmetric q-integer [n] = (q^{n/2} - q^{-n/2})/(q^{1/2} - q^{-1/2}), and a 2-parallel cabling formula of the shape J(Ktilde) = sum_eps x_eps J(K^{beta_eps}) -- but I can read no theorem statement, no hypothesis, and no numerical claim, so I can neither list a key result nor name a target that wants one. Recording this as 'tangential' to clear the queue would be a guess; it is undetermined until someone re-extracts it with a CJK-capable OCR pass or obtains the published version. The subject matter is close enough to the corpus's Kashaev/volume-conjecture arc that the re-read is worth queueing.",
+          "keyResults": [],
+          "proposedActions": [],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "f067a1bfa4c6"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

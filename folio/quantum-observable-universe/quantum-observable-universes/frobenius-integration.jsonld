@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-frobenius-integration",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:frobenius-integration",
+  "kind": "prose",
+  "title": "Integral notation and the Frobenius form",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-observable-universe",
+    "papers/quantum-observable-universe/blocks/def-frobenius-pairing"
+  ],
+  "tags": [
+    "notation",
+    "frobenius",
+    "integration"
+  ],
+  "text": "frobenius-integration.md",
+  "provenance": "authored"
+}

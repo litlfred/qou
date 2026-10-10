@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-q-flat-connection",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:q-flat-connection",
+  "kind": "definition",
+  "title": "$q$-Flat connection",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-q-connection",
+    "papers/quantum-observable-universe/blocks/def-q-local-system"
+  ],
+  "tags": [
+    "geometric-langlands",
+    "connection",
+    "q-deformation"
+  ],
+  "leanRef": "qou:QOU.QFlatConnection",
+  "text": "q-flat-connection.md",
+  "leanSource": "q-flat-connection.lean",
+  "provenance": "authored"
+}

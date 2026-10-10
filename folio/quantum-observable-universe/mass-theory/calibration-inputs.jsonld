@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-calibration-inputs",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:calibration-inputs",
+  "kind": "remark",
+  "title": "Calibration inputs and predictive content",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-mass-markov",
+    "papers/quantum-observable-universe/blocks/def-categorical-action"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-mass-identity",
+  "tags": [
+    "calibration",
+    "mass",
+    "prediction",
+    "endomorphism",
+    "substrate-parameter",
+    "falsifiability"
+  ],
+  "text": "calibration-inputs.md",
+  "provenance": "authored"
+}

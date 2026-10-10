@@ -82,7 +82,7 @@ at 50 dps.** The categorical-derivation question becomes:
 - [PR #1287](https://github.com/litlfred/qou/pull/1287) — companion stack
 - [audit 2026-05-25 Path C](../../docs/audits/2026-05-25-path-c-categorical-principle-hunt.md)
 - [reading_a_residual_at_50dps.py](reading_a_residual_at_50dps.py)
-- [Family A theorem](../../content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md)
+- [Family A theorem](../../folio/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md)
 """
 from __future__ import annotations
 

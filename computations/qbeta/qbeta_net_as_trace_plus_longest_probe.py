@@ -7,7 +7,7 @@ that correction, equal to -h * a_(2,1).
 # Ref: .beans/qou-cds1--s1-science-re-derive-the-qbeta-ck-ladder-under-d-n.md
 # Ref: computations/qbeta/qbeta_phase_block_resolution_probe.py
 # Ref: computations/qbeta/qbeta_alpha_commutator_floor_probe.py
-# Ref: content/quantum-observable-universe/nuclear-interactions/qbeta-counit-closed-form.md
+# Ref: folio/quantum-observable-universe/nuclear-interactions/qbeta-counit-closed-form.md
 
 WHAT THE CORPUS SAYS, AND WHAT IT LEAVES VAGUE. qbeta-counit-closed-form.md
 states eps(Delta) = h^2/2 - h and tr_M(Delta) = h^2/2 - h*z, then: "The two agree

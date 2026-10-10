@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-rho-s3-holonomy-exposition",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:rho-s3-holonomy-exposition",
+  "kind": "remark",
+  "title": "The $\\rho$ representation as $S_3$ holonomy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-holonomy-trefoil",
+    "papers/quantum-observable-universe/blocks/prop-lagrange-resolvent-transform"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-braid-twist-flip",
+  "tags": [
+    "exposition",
+    "holonomy",
+    "s3",
+    "chiral-sheets",
+    "lagrange-resolvents"
+  ],
+  "text": "rho-s3-holonomy-exposition.md",
+  "provenance": "authored"
+}

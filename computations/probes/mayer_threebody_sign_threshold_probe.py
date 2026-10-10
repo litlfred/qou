@@ -235,7 +235,7 @@ def main() -> int:
         "lean": "QOU/MassTheory/MayerThreeBodySign.lean (sorry-free)",
         "related": [
             "probes/he4-body-order-shortfall-location.witness.json",
-            "content/quantum-observable-universe/mass-theory/binding-closure-conditional.md",
+            "folio/quantum-observable-universe/mass-theory/binding-closure-conditional.md",
         ],
         "owner_ruling": "R1 2026-08-15 — convention D canonical, C excised",
     }

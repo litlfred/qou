@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-jet-sw-tau-decomposition",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:jet-sw-tau-decomposition",
+  "kind": "proposition",
+  "title": "The Seiberg–Witten differential is the jet decomposition of the Archimedean realisation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-mi-sw-abelianisation",
+    "papers/quantum-observable-universe/blocks/prop-sw-period-residue-sum"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-jet-sw-tau-decomposition"
+  ],
+  "leanRef": "qou:QOU.Brings.jet_sw_tau_decomposition",
+  "text": "jet-sw-tau-decomposition.md",
+  "leanSource": "jet-sw-tau-decomposition.lean",
+  "provenance": "authored"
+}

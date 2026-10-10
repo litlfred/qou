@@ -198,7 +198,7 @@ def classify(rel: str, ctx: str = "", host: str = "") -> tuple[str, str]:
     base = os.path.basename(rel)
     for dirpath, dirnames, filenames in os.walk(ROOT):
         dirnames[:] = [d for d in dirnames
-                       if d not in (".git", "node_modules", ".lake", ".beans")]
+                       if d not in (".git", "node_modules", ".lake", "beans/defs")]
         if base in filenames:
             return "missing", f"moved? {os.path.relpath(os.path.join(dirpath, base), ROOT)}"
     return "missing", ""
@@ -268,7 +268,7 @@ def self_test() -> int:
     ck("host stops at list item", "next item" in host, False)
     # Class 9 — branch-attributed.
     ck("branch",
-       classify("content/quantum-observable-universe/zzz-nope.lean",
+       classify("folio/quantum-observable-universe/zzz-nope.lean",
                 "(branch `claude/theta-qcd-framing-phase-2026-08-02`, path)")[0],
        "branch-attributed")
     # ok must still be ok.
@@ -296,7 +296,7 @@ def main() -> int:
     filtered: dict[str, set[str]] = {}
     fa_cache: dict[str, tuple[str, str]] = {}
 
-    for bf in sorted(glob.glob(os.path.join(ROOT, ".beans", "*.md"))):
+    for bf in sorted(glob.glob(os.path.join(ROOT, "beans/defs", "*.md"))):
         txt = open(bf, encoding="utf-8", errors="replace").read()
         m = re.search(r'^status:\s*(\S+)', txt[:400], re.M)
         if not m or m.group(1) not in ("in-progress", "todo"):

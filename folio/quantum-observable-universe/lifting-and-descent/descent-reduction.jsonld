@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-descent-reduction",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:descent-reduction",
+  "kind": "remark",
+  "title": "Reduction at dimension 1",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-algebraic-filter",
+    "papers/quantum-observable-universe/blocks/rem-descent-reduction-zero"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-mass-identity",
+  "tags": [
+    "descent",
+    "dimension-reduction",
+    "u1"
+  ],
+  "text": "descent-reduction.md",
+  "provenance": "authored"
+}

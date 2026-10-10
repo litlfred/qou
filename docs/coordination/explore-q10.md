@@ -24,7 +24,7 @@ strikingly selective — adjacent powers `n = 9, 11` give 13% and
 
 ## Structural connection found in existing content
 
-**Source:** [`markov-trace-antipode-polynomial-symmetry.md`](../../content/quantum-observable-universe/braids-and-knots/markov-trace-antipode-polynomial-symmetry.md)
+**Source:** [`markov-trace-antipode-polynomial-symmetry.md`](../../folio/quantum-observable-universe/braids-and-knots/markov-trace-antipode-polynomial-symmetry.md)
 
 The proton braid `𝓑_p ∈ B_3` (the canonical braid used in
 `prop:atomic-mass-gb-nf`) has closed-form Markov trace:

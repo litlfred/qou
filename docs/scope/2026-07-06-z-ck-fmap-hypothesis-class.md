@@ -8,7 +8,7 @@ no tier change (registry §8 flip-flop guard respected).
 ## 1. New structural result — the z-alone exclusion (scope-(a))
 
 Proved this session (sorry-free Lean, `lean`-direct exit 0:
-[`QOU/QBeta/ZBarParity.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/ZBarParity.lean);
+[`QOU/QBeta/ZBarParity.lean`](../../folio/quantum-observable-universe/lean/QOU/QBeta/ZBarParity.lean);
 sympy-exact 7/7:
 [`qbeta_z_bar_parity_fmap_class_probe.py`](../../computations/qbeta/qbeta_z_bar_parity_fmap_class_probe.py)
 → [`qbeta-z-bar-parity-fmap-class.witness.json`](../../computations/qbeta/qbeta-z-bar-parity-fmap-class.witness.json)):
@@ -57,7 +57,7 @@ candidates are never validated against fitted `c_{k≥4}`.
 recursion; `κ_{(2,1)}` is q-rational. Finite ring combinations of q-holonomic
 atoms are q-holonomic, so every Z3 candidate admits a finite-depth q-difference
 kernel with q-rational coefficients — exactly the class the sorry-free
-[`RationalCoeffRecurrence.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/RationalCoeffRecurrence.lean)
+[`RationalCoeffRecurrence.lean`](../../folio/quantum-observable-universe/lean/QOU/QBeta/RationalCoeffRecurrence.lean)
 engine consumes, and NOT the constant-kernel class refuted through depth 4.
 Compatibility is necessary, not sufficient: the identification (which
 z-functional, which carrier, which weights) remains the open keystone.

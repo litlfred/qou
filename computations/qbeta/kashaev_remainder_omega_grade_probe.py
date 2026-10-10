@@ -8,7 +8,7 @@ derivation, never a fit to it.
 
 ## The gap this fills
 
-`content/quantum-observable-universe/appendix-surreals/kashaev-surreal.md` sets
+`folio/quantum-observable-universe/appendix-surreals/kashaev-surreal.md` sets
 `n = omega` and recasts the volume conjecture as a STANDARD-PART identity,
 
     Vol(4_1)  =  st( 2*pi * log|J(zeta_omega, omega)| / omega ),
@@ -28,7 +28,7 @@ originally attributed the asymptotic below to "the cited Ohtsuki /
 Andersen-Hansen expansion" and said the probe does not re-derive it.  That was
 written without running the corpus-grep, and it is weaker than the truth:
 
-    content/quantum-observable-universe/mass-theory/one-loop-prefactor-provenance.md
+    folio/quantum-observable-universe/mass-theory/one-loop-prefactor-provenance.md
     (prop:one-loop-prefactor-provenance)
 
 DERIVES both `3^{-1/4}` and the power `3/2` from the one-variable saddle at
@@ -287,7 +287,7 @@ def main() -> int:
             "measurement. Exact mpmath at 50 dps; no float64."
         ),
         "bean": "qou-cds1",
-        "fills_gap_in": "content/quantum-observable-universe/appendix-surreals/kashaev-surreal.md",
+        "fills_gap_in": "folio/quantum-observable-universe/appendix-surreals/kashaev-surreal.md",
         "derived_remainder": "delta_N = 3*pi*log(N)/N - (pi*log 3)/(2N) + O(1/N^2)",
         "omega_grade": {
             "coarse_ord_omega": -1,

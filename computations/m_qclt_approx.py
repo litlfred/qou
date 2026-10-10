@@ -1,7 +1,7 @@
 """m_qCLT_approx — leading-order JSJ-additive heavy-isotope mass channel.
 
 Wires *channel 2* of
-`content/quantum-observable-universe/mass-theory/q-clt-jsj-mass-scaling.md`,
+`folio/quantum-observable-universe/mass-theory/q-clt-jsj-mass-scaling.md`,
 which was previously announced but backed by no compute and no witness.
 
 ## The channel

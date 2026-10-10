@@ -64,7 +64,7 @@ sys.path.insert(0, str(HERE.parent))
 from mpmath import mp, mpf, pi as mp_pi, sqrt as mp_sqrt  # noqa: E402
 
 from _phi_q_util import phi_q  # noqa: E402
-from q_parameter import Q_MP  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 
@@ -118,8 +118,13 @@ def main() -> int:
 
     # `q_parameter.Q` is `float(_d["q"])` — a float64 module constant, so the
     # old `mpf(Q)` was a round-trip capping every candidate at ~17 digits.
-    # `Q_MP` is the mpf twin carrying the full 49-digit pin.
-    q = Q_MP
+    # Read the pin as the SOURCE STRING and build the mpf here, i.e. AFTER
+    # `set_compute_dps()`.  Do NOT substitute the module-level `Q_MP`:
+    # `q_parameter` builds it at `mp.dps = 50`, so it is a 50-digit cap,
+    # BELOW `OUTPUT_DPS = 60`.  Measured against the exact 50-digit decimal
+    # in `Fraction` arithmetic, `mpf(Q_50_DIGIT_STR)` built at dps 70 sits
+    # 4.594e-72 from it and `Q_MP` sits 2.015e-50.
+    q = mpf(Q_50_DIGIT_STR)
     pi_sq = mp_pi ** 2
     pi_sq_720 = pi_sq / 720
 

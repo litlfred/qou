@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-kashaev-volume-density",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:kashaev-volume-density",
+  "kind": "remark",
+  "title": "Topological mass as volume $\\times$ density, via the Kashaev limit",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-body-asymptotics-catalog"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-topological-mass-formula",
+  "cites": [
+    "references/kashaev1997",
+    "references/murakami-murakami2001"
+  ],
+  "tags": [
+    "mass",
+    "kashaev",
+    "volume-conjecture",
+    "hecke",
+    "markov-trace",
+    "quantum-planck",
+    "non-archimedean"
+  ],
+  "text": "kashaev-volume-density.md",
+  "provenance": "authored"
+}

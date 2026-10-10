@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-higgs-t28",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:higgs-t28",
+  "kind": "conjecture",
+  "title": "The Higgs boson as $T(2,8)$: the link spanning three exceptional divisors",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-confined-particle",
+    "papers/quantum-observable-universe/blocks/prop-fermion-boson-knot-link"
+  ],
+  "tags": [
+    "tier:E",
+    "higgs",
+    "boson",
+    "torus-link",
+    "exceptional-divisor",
+    "mass-mechanism",
+    "scalar",
+    "genus-3"
+  ],
+  "leanRef": "qou:QOU.HiggsT28.HiggsAsT28",
+  "text": "higgs-t28.md",
+  "leanSource": "higgs-t28.lean",
+  "provenance": "authored"
+}

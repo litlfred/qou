@@ -154,7 +154,7 @@ def main() -> None:
             "coefficient_growth": "deg_q(c_n) = n^2",
             "coefficient_growth_status": (
                 "PROVED sorry-free: QOU.QBeta.cCoeff_natDegree "
-                "(content/quantum-observable-universe/lean/QOU/QBeta/C1InfDegreeLaw.lean)"
+                "(folio/quantum-observable-universe/lean/QOU/QBeta/C1InfDegreeLaw.lean)"
             ),
             "n_asymptotic": N_ASYMPTOTIC,
             "d_values": list(D_VALUES),

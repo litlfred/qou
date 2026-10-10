@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "bolza1887",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 34,
+      "entry": {
+        "id": "bolza1887",
+        "status": "partial",
+        "verified_at": "2026-05-19T15:38:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 11,
+        "fix_commit": "(this commit)",
+        "note": "Bolza, On binary sextics with linear transformations into themselves, Amer. J. Math. 10 (1887). 11 bare-URL Refs \u2192 title+publisher.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.2307/2369402"
+        }
+      }
+    }
+  ]
+}

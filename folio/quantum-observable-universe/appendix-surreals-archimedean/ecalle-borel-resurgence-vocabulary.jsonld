@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-ecalle-borel-resurgence-vocabulary",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:ecalle-borel-resurgence-vocabulary",
+  "kind": "remark",
+  "title": "Surrounding resurgence vocabulary and the three \"Borel\"s",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-ecalle-borel-resummation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-ecalle-borel-resummation",
+  "cites": [
+    "references/ecalle1981"
+  ],
+  "tags": [
+    "resurgence",
+    "alien-derivative",
+    "bridge-equation",
+    "stokes-constant",
+    "archimedean"
+  ],
+  "text": "ecalle-borel-resurgence-vocabulary.md",
+  "provenance": "authored"
+}

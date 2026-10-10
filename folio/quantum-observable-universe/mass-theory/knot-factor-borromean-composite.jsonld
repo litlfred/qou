@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/cor-knot-factor-borromean-composite",
+  "@type": [
+    "folio-assistant-core:Corollary",
+    "doco:Section"
+  ],
+  "label": "cor:knot-factor-borromean-composite",
+  "kind": "corollary",
+  "title": "Borromean-$k$ composite knot factor is $a = (1 - h^2)^k$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-knot-factor-amphicheiral"
+  ],
+  "tags": [
+    "knot-factor",
+    "borromean",
+    "brunnian",
+    "helium-4",
+    "composite",
+    "tensor-product"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.knot_factor_borromean",
+  "text": "knot-factor-borromean-composite.md",
+  "leanSource": "knot-factor-borromean-composite.lean",
+  "provenance": "authored"
+}

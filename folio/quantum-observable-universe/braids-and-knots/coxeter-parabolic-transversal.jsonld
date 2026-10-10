@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-coxeter-parabolic-transversal",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:coxeter-parabolic-transversal",
+  "kind": "proposition",
+  "title": "Parabolic transversals and the Hecke presentation laws at every rank",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-coxeter-strong-exchange",
+    "papers/quantum-observable-universe/blocks/def-hecke-normal-form"
+  ],
+  "cites": [
+    "references/kassel1995",
+    "references/jones1987"
+  ],
+  "tags": [
+    "coxeter",
+    "hecke-algebra",
+    "parabolic-subgroup",
+    "braid-relation",
+    "coset-decomposition"
+  ],
+  "leanRef": "qou:QOU.Machinery.CoxeterParabolic.braid_at_pair",
+  "text": "coxeter-parabolic-transversal.md",
+  "provenance": "authored"
+}

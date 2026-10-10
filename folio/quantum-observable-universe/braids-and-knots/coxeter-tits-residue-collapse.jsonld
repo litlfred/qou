@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-coxeter-tits-residue-collapse",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:coxeter-tits-residue-collapse",
+  "kind": "proposition",
+  "title": "The Tits residue collapsed: cell faithfulness is simple-distinctness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-coxeter-strong-exchange",
+    "papers/quantum-observable-universe/blocks/prop-coxeter-parabolic-transversal"
+  ],
+  "cites": [
+    "references/kassel1995",
+    "references/jones1987"
+  ],
+  "tags": [
+    "coxeter",
+    "hecke-algebra",
+    "faithfulness",
+    "reflection-cocycle",
+    "inversion-counting"
+  ],
+  "leanRef": "qou:QOU.Machinery.CoxeterParabolic.isReduced_iji_iff",
+  "text": "coxeter-tits-residue-collapse.md",
+  "provenance": "authored"
+}

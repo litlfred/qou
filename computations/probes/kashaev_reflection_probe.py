@@ -2,7 +2,7 @@
 """(A) halved: the exact reflection, and the 1/N term in closed form.
 
 Bean `qou-mlgp` (A).  Formalised (the reflection itself) in
-`content/quantum-observable-universe/lean/QOU/Knot/KashaevProdEndpoint.lean`
+`folio/quantum-observable-universe/lean/QOU/Knot/KashaevProdEndpoint.lean`
 as `sum_log_two_sin_reflect`.
 
 WHERE (A) STOOD.  `QOU.Knot.abs_deviation_le` is a RECTANGLE-RULE sandwich, so

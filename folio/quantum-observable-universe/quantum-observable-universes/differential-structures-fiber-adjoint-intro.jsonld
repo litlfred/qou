@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-differential-structures-fiber-adjoint-preamble",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:differential-structures-fiber-adjoint-preamble",
+  "kind": "prose",
+  "text": "differential-structures-fiber-adjoint-intro.md",
+  "provenance": "authored"
+}

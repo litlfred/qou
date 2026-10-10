@@ -172,7 +172,7 @@ def main() -> int:
                     "bar-fold support, but no proven mechanism and ⁴He binding conflict. "
                     "Decisive test pending: T/³He bar-fold support vs their 2 self-conj blocks."),
         "refs": ["PR #2552 (ν_SDP not computable)",
-                 "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.md (driver-x def)",
+                 "folio/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.md (driver-x def)",
                  "computations/deuteron_real_sdp.py (bar-fold encoding 1)"],
         "discipline": "EXPLORATORY — derive-or-refute, no fit, no forced ⁴He number.",
     }

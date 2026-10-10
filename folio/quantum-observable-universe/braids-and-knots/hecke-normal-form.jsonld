@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-hecke-normal-form",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:hecke-normal-form",
+  "kind": "definition",
+  "title": "Hecke normal form in $H_n(q)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-hecke-algebra-from-braiding"
+  ],
+  "cites": [
+    "references/bokut2001",
+    "references/kimlee2018"
+  ],
+  "tags": [
+    "hecke-algebra",
+    "normal-form",
+    "groebner-shirshov",
+    "canonical-basis"
+  ],
+  "leanRef": "qou:QOU.Braiding.HeckeNormalForm",
+  "text": "hecke-normal-form.md",
+  "leanSource": "hecke-normal-form.lean",
+  "provenance": "authored"
+}

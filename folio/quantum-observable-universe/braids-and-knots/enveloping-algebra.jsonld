@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-enveloping-algebra",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:enveloping-algebra",
+  "kind": "remark",
+  "title": "Universal enveloping algebra",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-su2-basis",
+    "papers/quantum-observable-universe/blocks/def-direct-limit-algebra"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-su2-basis",
+  "tags": [
+    "enveloping-algebra",
+    "pbw",
+    "quantum-group"
+  ],
+  "text": "enveloping-algebra.md",
+  "provenance": "authored"
+}

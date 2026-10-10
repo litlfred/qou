@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-w-boson-mass-discrepancy-table7-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:w-boson-mass-discrepancy-table7-data",
+  "kind": "table",
+  "title": "Data table 7 from rem:w-boson-mass-discrepancy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-w-boson-mass-discrepancy"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "w-boson-mass-discrepancy-table7-data.md",
+  "provenance": "authored"
+}

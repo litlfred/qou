@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-convention-d-kills-antisymmetriser",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:convention-d-kills-antisymmetriser",
+  "kind": "proposition",
+  "title": "$z = q^{3}/(q^{2}+1)$ is the unique non-trivial Markov trace on $H_3(q)$ whose radical contains the three-strand antisymmetriser",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-h3-markov-wenzl-weights",
+    "papers/quantum-observable-universe/blocks/prop-corrected-markov-trace"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-convention-d-kills-antisymmetriser"
+  ],
+  "tags": [
+    "temperley-lieb",
+    "convention-d",
+    "markov-trace",
+    "wedderburn-weights",
+    "characterisation",
+    "trace-convention"
+  ],
+  "leanRef": "qou:QOU.QBeta.TemperleyLiebTower.antisym_vanishes_only_at_two_roots",
+  "text": "convention-d-kills-antisymmetriser.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-cemetery-group",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-cemetery-group",
+  "kind": "remark",
+  "title": "Cemetery group",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-cemetery-group"
+  ],
+  "cites": [
+    "references/khovanovlauda2009"
+  ],
+  "tags": [
+    "glossary",
+    "cemetery-group",
+    "klr",
+    "observation-frame"
+  ],
+  "text": "glossary-cemetery-group.md",
+  "provenance": "authored"
+}

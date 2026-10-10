@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-ns-proof-details",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-ns-proof-details",
+  "kind": "remark",
+  "title": "Proof details: nonlinear estimates, enstrophy evolution, and uniqueness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-ns-nonlinear-uniqueness",
+    "papers/quantum-observable-universe/blocks/thm-quantum-peter-weyl"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-q-ns-nonlinear-uniqueness",
+  "tags": [
+    "proof",
+    "enstrophy",
+    "ladyzhenskaya",
+    "gronwall",
+    "uniqueness"
+  ],
+  "text": "q-ns-proof-details.md",
+  "provenance": "authored"
+}

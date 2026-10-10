@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-big-bang-state",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:big-bang-state",
+  "kind": "definition",
+  "title": "Big bang state (degree-$0$ trivial configuration)",
+  "tags": [
+    "big-bang-state",
+    "jet-horizon",
+    "initial-conditions",
+    "degree-zero",
+    "deep-quantum"
+  ],
+  "leanRef": "qou:QOU.BigBangState",
+  "text": "big-bang-state.md",
+  "leanSource": "big-bang-state.lean",
+  "provenance": "authored"
+}

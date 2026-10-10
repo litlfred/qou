@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-torus-knot-shell-binding",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:torus-knot-shell-binding",
+  "kind": "proof",
+  "title": "Proof of shell binding from the torus knot hierarchy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-torus-knot-shell-binding",
+    "papers/quantum-observable-universe/blocks/def-inter-shell-operator",
+    "papers/quantum-observable-universe/blocks/def-chebyshev-torus-coefficients"
+  ],
+  "text": "torus-knot-shell-binding-proof.md",
+  "provenance": "authored"
+}

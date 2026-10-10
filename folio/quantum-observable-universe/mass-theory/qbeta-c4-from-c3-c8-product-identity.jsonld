@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-qbeta-c4-from-c3-c8-product-identity",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:qbeta-c4-from-c3-c8-product-identity",
+  "kind": "proposition",
+  "title": "c_4 = c_8 / c_3 via the structural product identity c_3 · c_4 = c_8",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-qbeta-c8-c10-silver-rationals"
+  ],
+  "tags": [
+    "qbeta",
+    "c-4",
+    "c-k",
+    "product-identity",
+    "j-hopf",
+    "silver-ratio",
+    "lean"
+  ],
+  "leanRef": "qou:QOU.QBeta.c4_eq_c8_div_c3_at_silver",
+  "text": "qbeta-c4-from-c3-c8-product-identity.md",
+  "leanSource": "qbeta-c4-from-c3-c8-product-identity.lean",
+  "provenance": "authored"
+}

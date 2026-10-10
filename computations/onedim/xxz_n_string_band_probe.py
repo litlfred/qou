@@ -103,10 +103,38 @@ suggestive shape for this corpus and it is NOT a measured bridge to the Hecke
 tower. `tl_is_the_xxz_chain_probe` identifies TL_n(delta) with the
 U_q(sl_2)-symmetric OPEN chain plus a boundary field
 ((q - 1/q)/2)(sz_1 - sz_n); the Hamiltonian diagonalised HERE is the PERIODIC
-chain with no boundary term. The two differ by boundary operators, which do not
-change a bulk band in the thermodynamic limit — but that step is an argument,
-not something this probe measured, and it is the likeliest misreading of the
-formula above. Nothing here identifies the chain's sites with anything physical.
+chain with no boundary term. The two differ by boundary operators.
+
+  MEASURED 2026-09-15 (`tl_open_chain_string_band_probe.py`, 24/24, 50 dps,
+  both pins). This paragraph used to continue "which do not change a bulk band
+  in the thermodynamic limit — but that step is an argument, not something this
+  probe measured". The argument has now been run, and it is **right about the
+  BAND and incomplete about the SPECTRUM**:
+
+  * **Right about the band.** At controls where the correlation length is small
+    (q = 3, xi = 1.96), inverting the open chain's levels through the PERIODIC
+    E_2(k) returns an evenly spaced ladder with one common L_eff — the open
+    chain reproduces the WHOLE band, not merely its edge (10 levels clear the
+    continuum at N = 24, ladder spread 3.9 %). The n = 3 band is there too.
+  * **Incomplete about the spectrum, twice over.** The boundary operators ADD A
+    STATE the ring does not have — at E = 0, degenerate with the vacuum, ABOVE
+    the entire n = 2 band, in every magnon sector, exponentially localised at
+    one end with amplitude ratio exactly 1/q and decay length 1/ln q = 9.584
+    sites. It is the U_q(sl_2) descendant of the ferromagnetic vacuum and is
+    NOT a finite-size effect. And they REMOVE MOMENTUM: only the k -> 0 edge
+    survives an extremal search, and the ring's exponential z^N convergence
+    becomes a power law.
+  * **Also measured, and it is why the open route cannot replace this one at
+    the substrate**: at q_0 the correlation length is xi = 1/ln(Delta) = 184
+    SITES, so a box admitting even one level below the thermodynamic two-magnon
+    edge needs N ~ 291 — far beyond dense ED. At N <= 24 the open chain does
+    not resolve the string at all, and its finite-N edge manufactures an
+    apparent positive. Scope (a).
+
+  So the periodic band IS the TL chain's band; the periodic SPECTRUM is not the
+  TL chain's spectrum. This probe's own formula stands.
+
+Nothing here identifies the chain's sites with anything physical.
 
 ## METHOD
 

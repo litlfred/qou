@@ -71,7 +71,7 @@ TWO METHOD NOTES, both self-inflicted, both caught by running the checks.
 SCOPE-(a).  Provenance only.  Adjudicates no net value, asserts no gluon
 count, proposes no third reading of N_l.
 
--- Ref: [manuscript] content/quantum-observable-universe/knots-particles-confinement/ilp-solution-count-unwrap.md
+-- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/ilp-solution-count-unwrap.md
 -- Ref: [manuscript] docs/audits/2026-05-27-mass-formula-uniqueness-argument.md
 -- Ref: [manuscript] computations/qbeta/qbeta_adjunction_ilp_probe.py
 """
@@ -128,7 +128,7 @@ def main() -> int:
         "branch cannot be read as evidence against their readings."
     )
 
-    kpc = ROOT / "content/quantum-observable-universe/knots-particles-confinement"
+    kpc = ROOT / "folio/quantum-observable-universe/knots-particles-confinement"
 
     # 1 + 2 -- declared producers
     blk = kpc / "ilp-solution-count-unwrap.ts"

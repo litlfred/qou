@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-bec-vortex-data",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:bec-vortex-data",
+  "kind": "remark",
+  "title": "Bose--Einstein condensate vortex data and $q$-deformed predictions",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-discrete-vortex-spectrum"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-discrete-vortex-spectrum",
+  "cites": [
+    "references/madison2000",
+    "references/abo-shaeer2001",
+    "references/bretin2003",
+    "references/gauthier2019",
+    "references/fetter2009",
+    "references/navon2021"
+  ],
+  "tags": [
+    "vortex",
+    "BEC",
+    "observation",
+    "quantization"
+  ],
+  "text": "bec-vortex-data.md",
+  "provenance": "authored"
+}

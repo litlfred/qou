@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "murphy1981",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 61,
+      "entry": {
+        "id": "murphy1981",
+        "status": "partial",
+        "verified_at": "2026-05-19T15:54:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 3,
+        "fix_commit": "(this commit)",
+        "note": "3 bare-URL Refs upgraded with title+publisher form.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1016/0021-8693(81)90205-2"
+        }
+      }
+    }
+  ]
+}

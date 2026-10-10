@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-yekutieli-triple",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:yekutieli-triple",
+  "kind": "definition",
+  "title": "Lifting triple mapping",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-descent"
+  ],
+  "tags": [
+    "yekutieli",
+    "triple",
+    "gerbe",
+    "transition-function"
+  ],
+  "leanRef": "qou:QOU.LiftingDescent.CosimplicialCrossedGroupoid.YekutieliTriple",
+  "text": "yekutieli-triple.md",
+  "leanSource": "yekutieli-triple.lean",
+  "provenance": "authored"
+}

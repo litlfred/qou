@@ -54,8 +54,8 @@ gap, flagged as open); channel fractions are normalized so the baseline
 Exploratory probe — audit-only witness, NOT wired into production.
 
 Ref: docs/audits/2026-06-28-brane-tower-formalize-first-plan.md §7
-Ref: content/quantum-observable-universe/mass-theory/depth-stratified-frobenius-reciprocity.md
-Ref: content/quantum-observable-universe/mass-theory/chirality-from-frobenius-self-pairing.md
+Ref: folio/quantum-observable-universe/mass-theory/depth-stratified-frobenius-reciprocity.md
+Ref: folio/quantum-observable-universe/mass-theory/chirality-from-frobenius-self-pairing.md
 Ref: prop:borromean-markov-trace-closed-form
 """
 from __future__ import annotations

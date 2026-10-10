@@ -2,7 +2,7 @@
 """Convention-invariance check for the categorical Markov trace.
 
 Witness producer for `prop:rigid-monoidal-structural-gap-invariance`
-(content/quantum-observable-universe/mass-theory/
+(folio/quantum-observable-universe/mass-theory/
 prop-rigid-monoidal-structural-gap-invariance.{ts,md}).
 
 The proposition claims the categorical structural gap depends only on

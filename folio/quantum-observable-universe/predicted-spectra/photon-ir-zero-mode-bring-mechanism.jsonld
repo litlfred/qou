@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-photon-ir-zero-mode-bring-mechanism",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:photon-ir-zero-mode-bring-mechanism",
+  "kind": "remark",
+  "title": "Hodge mechanism, dimensional reduction, and Habiro placement of the photon IR zero-mode",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-photon-ir-zero-mode-bring",
+    "papers/quantum-observable-universe/blocks/prop-force-carrier-bring-uniqueness",
+    "papers/quantum-observable-universe/blocks/prop-jet-sw-tau-decomposition",
+    "papers/quantum-observable-universe/blocks/prop-alpha-em-habiro-bar-involution"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-photon-ir-zero-mode-bring",
+  "tags": [
+    "alpha-em",
+    "bring-surface",
+    "hodge",
+    "habiro",
+    "photon-zero-mode"
+  ],
+  "text": "photon-ir-zero-mode-bring-mechanism.md",
+  "provenance": "authored"
+}

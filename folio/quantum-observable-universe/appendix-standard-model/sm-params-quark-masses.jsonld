@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prose-sm-params-quark-masses",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "prose:sm-params-quark-masses",
+  "kind": "prose",
+  "title": "Quark masses (6)",
+  "tags": [
+    "appendix",
+    "standard-model",
+    "parameters",
+    "quarks"
+  ],
+  "text": "sm-params-quark-masses.md",
+  "provenance": "authored"
+}

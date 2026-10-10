@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-dilogarithm-unique",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-dilogarithm-unique",
+  "kind": "proposition",
+  "title": "Uniqueness of the $q$-dilogarithm evaluation (conditional)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-dilogarithm-exists"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-q-dilogarithm-unique"
+  ],
+  "tags": [
+    "uniqueness",
+    "q-dilogarithm"
+  ],
+  "leanRef": "qou:QOU.QDilogarithm.eval_unique_of_pentagon_rigid",
+  "text": "q-dilogarithm-unique.md",
+  "leanSource": "q-dilogarithm-unique.lean",
+  "provenance": "authored"
+}

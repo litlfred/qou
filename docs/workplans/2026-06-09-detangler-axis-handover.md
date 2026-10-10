@@ -79,5 +79,5 @@ python3 computations/forward_ref_classifier.py --json --actionable-only
    blocks). A rebase heads-up was posted; `predicted-spectra.ts` changed
    under it. Confirm it rebases clean.
 6. **Corpus QA staleness** — ~1071 stale blocks
-   (`bun run content/pipeline/qa-staleness.ts content/quantum-observable-universe`),
+   (`bun run content/pipeline/qa-staleness.ts folio/quantum-observable-universe`),
    Lean-gated, owned by qa-drains #1918/#1941. Deferred.

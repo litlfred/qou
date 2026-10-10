@@ -1,0 +1,44 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-w-boson-mass-discrepancy",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:w-boson-mass-discrepancy",
+  "kind": "remark",
+  "title": "Electroweak boson masses from vertex $\\delta q$ at the CODATA substrate",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-half-life-as-q-probe",
+    "papers/quantum-observable-universe/blocks/rem-mass-comparison-table"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-local-substrate-q",
+  "tags": [
+    "W-boson",
+    "Z-boson",
+    "Higgs",
+    "mass",
+    "CDF",
+    "Fermilab",
+    "ATLAS",
+    "CMS",
+    "discrepancy",
+    "electroweak",
+    "local-substrate",
+    "q-distortion",
+    "prediction",
+    "experimental",
+    "Skein-polynomial",
+    "Markov-trace",
+    "Gauss--Bonnet",
+    "Euler-characteristic"
+  ],
+  "text": "w-boson-mass-discrepancy.md",
+  "leanSource": "w-boson-mass-discrepancy.lean",
+  "provenance": "authored"
+}

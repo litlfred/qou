@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-energy-scale-planck",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:energy-scale-planck",
+  "kind": "remark",
+  "title": "Energy scale $E_0$ and the Planck time",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-beta-decay-energy-scale",
+    "papers/quantum-observable-universe/blocks/def-information-speed-of-light"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-beta-decay-energy-scale",
+  "tags": [
+    "energy-scale",
+    "planck-time",
+    "calibration",
+    "speed-of-light",
+    "hecke-step"
+  ],
+  "text": "energy-scale-planck.md",
+  "provenance": "authored"
+}

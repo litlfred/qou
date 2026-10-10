@@ -79,7 +79,7 @@ sys.path.insert(0, str(HERE))
 
 from mpmath import mp, mpf, pi as mp_pi, zeta as mp_zeta  # noqa: E402
 
-from q_parameter import Q_MP  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 
@@ -136,11 +136,17 @@ def main() -> int:
     # ─── Test at 3 different q values ───
     q_values = [
         mpf("1.05"),
-        # `Q_MP`, NOT `mpf(Q)`: `q_parameter.Q` is `float(_d["q"])`, so
-        # `mpf(Q)` lifts the DOUBLE's binary expansion and caps the substrate
-        # row at ~17 digits while the two comparison rows (1.05, 1.5) are
-        # exact.  `Q_MP = mpf(_d["q"])` is the full 49-digit pin.
-        Q_MP,         # substrate
+        # NOT `mpf(Q)`: `q_parameter.Q` is `float(_d["q"])`, so `mpf(Q)` lifts
+        # the DOUBLE's binary expansion and caps the substrate row at ~17
+        # digits while the two comparison rows (1.05, 1.5) are exact.  Read
+        # the pin as the SOURCE STRING and build the mpf here, i.e. AFTER
+        # `set_compute_dps()`.  Do NOT substitute the module-level `Q_MP`:
+        # `q_parameter` builds it at `mp.dps = 50`, so it is a 50-digit cap,
+        # BELOW `OUTPUT_DPS = 60`.  Measured against the exact 50-digit
+        # decimal in `Fraction` arithmetic, `mpf(Q_50_DIGIT_STR)` built at
+        # dps 70 sits 4.594e-72 from it and `Q_MP` sits 2.015e-50.
+        mpf(Q_50_DIGIT_STR),       # substrate
+
         mpf("1.5"),
     ]
     results = []

@@ -2,7 +2,7 @@
 """Operator-selection LP: the dual certificate, exactly, in Q(q).
 
 Bean `qou/k4f8` stage 2. Companion to the Lean in
-`content/quantum-observable-universe/lean/QOU/ParticleInteractions/
+`folio/quantum-observable-universe/lean/QOU/ParticleInteractions/
 operator_selection_lp.lean` — every check below is named for the Lean
 hypothesis it discharges, so the two can be audited against each other.
 
@@ -569,7 +569,7 @@ def main() -> int:
     })
     w.add_data("h2", {"det_G": repr(d2), "nullity": len(kernel(G2))})
     w.add_data("lean_companion", (
-        "content/quantum-observable-universe/lean/QOU/ParticleInteractions/"
+        "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/"
         "operator_selection_lp.lean"))
     w.add_caveat(
         "Exact in Q(q) and therefore says nothing about any pinned q_0 that "

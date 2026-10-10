@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/fig-bring-fibre-q0",
+  "@type": [
+    "folio-assistant-core:Diagram",
+    "doco:Figure"
+  ],
+  "label": "fig:bring-fibre-q0",
+  "kind": "diagram",
+  "title": "Bring chiral fibre at $q \\to 0$: branch-point neighbourhood with sheet merging",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-brings-curve"
+  ],
+  "tags": [
+    "brings-surface",
+    "chiral-fibre",
+    "branch-point",
+    "monodromy",
+    "descartes-universe",
+    "figure",
+    "phase-1-pr-1075"
+  ],
+  "text": "bring-fibre-q0-figure.md",
+  "meta": {
+    "file": "figures/bring-fibre-q0.pdf",
+    "altFile": "figures/bring-fibre-q0.svg",
+    "generator": "computations/bring_chiral_fibre_figure.py",
+    "witness": "computations/bring-chiral-fibre-figure.witness.json",
+    "workplan": "docs/workplans/2026-05-24-pr31-affine-light-cone-redo.md"
+  },
+  "provenance": "authored"
+}

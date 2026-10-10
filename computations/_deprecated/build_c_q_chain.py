@@ -4,7 +4,7 @@ Build the derivation chain for `c_q at q = q_0 ≈ 9.0926`.
 
 The QOU "speed of light" is a **derived, q-dependent** quantity,
 not a postulated constant.  Per
-[information-speed-of-light.md](../../content/quantum-observable-universe/information-theory/information-speed-of-light.md),
+[information-speed-of-light.md](../../folio/quantum-observable-universe/information-theory/information-speed-of-light.md),
 the canonical derivation is:
 
   c_q := q^{-1} / ℏ_q

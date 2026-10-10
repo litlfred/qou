@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-ns-counterexample",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:ns-counterexample",
+  "kind": "conjecture",
+  "title": "Counter-example to Navier--Stokes regularity via $q \\to 1$ degeneration",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-universality",
+    "papers/quantum-observable-universe/blocks/prop-acoustic-horizon-conditions"
+  ],
+  "tags": [
+    "counter-example",
+    "millennium-problem",
+    "navier-stokes",
+    "blowup",
+    "yekutieli",
+    "homological",
+    "vortex-collision"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.NSCounterexample",
+  "text": "p5-counterexample.md",
+  "leanSource": "p5-counterexample.lean",
+  "provenance": "authored"
+}

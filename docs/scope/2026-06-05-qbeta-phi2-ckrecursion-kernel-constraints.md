@@ -24,7 +24,7 @@ hyperbolic phase, `Q_β/Q_A = cos(Φ(u))`, `Φ(u) = Φ₁u + Φ₂u² + …`, `�
 proved-exact (from the categorical `c_2 = −1`), `Φ₂` the open rung.
 
 The on-`main` block
-[`prop:q-beta-c-k-recursion-from-habiro-q-difference`](../../content/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md)
+[`prop:q-beta-c-k-recursion-from-habiro-q-difference`](../../folio/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md)
 defines the **same** object from the Habiro side:
 `F(q) = Q_β(q)/[Q_A(q)·cos(α_eff(q))]` satisfies a depth-`d` q-difference equation
 `F(qξ) = R(q,ξ)·F(ξ)`, giving a depth-`d` linear recursion on the ladder
@@ -125,8 +125,8 @@ No fits wired; Δ_λ gate held. The closure remains GAP-A / SW-residue (PR #1871
 ## 6. References
 
 - Phase reframe + parity wall: PR #1887 (`QBetaReebSinhParity.lean`, `cos(Φ(u))`); follow-up on `main` (`441a2b0b0e`): `QOU.QBeta.CoherentCollapseSinhCosh` (hyperbolic-avatar reconciliation), independently verifies `Φ₂ swing == c_3 swing == 0.0237` ⇒ Φ₂ IS the bar-odd carrier.
-- c_k recursion block (open kernel): [`prop:q-beta-c-k-recursion-from-habiro-q-difference`](../../content/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md).
-- Binding G-recurrence sibling: [`prop:binding-genfun-qdifference`](../../content/quantum-observable-universe/mass-theory/binding-genfun-qdifference.md) + [SW-residue / jet-filtration workplan](../workplans/2026-06-05-delta-lambda-sw-residue-qdifference-attack.md) (both on `main` as of PR #1871).
+- c_k recursion block (open kernel): [`prop:q-beta-c-k-recursion-from-habiro-q-difference`](../../folio/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md).
+- Binding G-recurrence sibling: [`prop:binding-genfun-qdifference`](../../folio/quantum-observable-universe/mass-theory/binding-genfun-qdifference.md) + [SW-residue / jet-filtration workplan](../workplans/2026-06-05-delta-lambda-sw-residue-qdifference-attack.md) (both on `main` as of PR #1871).
 - c_2 = −1 proof: PR #1602 (bar-even constraint).
 - c_3 truncation-order framing: [`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](../audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md).
 - Ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md).

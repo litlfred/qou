@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-isospin-selection-class-inhabited",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:isospin-selection-class-inhabited",
+  "kind": "remark",
+  "title": "$\\mathrm{InterfaceExchangeAntisymmetry}$ is inhabited by $\\langle\\mathrm{select},\\,\\mathrm{rfl}\\rangle$ --- the class carries physics, not a constraint",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-nucleon-pair-isospin-channel"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-nucleon-pair-isospin-channel",
+  "tags": [
+    "conditional-class",
+    "vacuity",
+    "isospin",
+    "colour-system"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.ColorFlavorIsospinSelection.trivially_inhabited",
+  "text": "isospin-selection-class-inhabited.md",
+  "provenance": "authored"
+}

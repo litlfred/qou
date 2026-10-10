@@ -117,7 +117,7 @@ B_AME_MEV: dict[tuple[int, int], mp.mpf] = {
 #
 # ORDERING INVARIANT (per Gemini #781 review): the row order in the
 # emitted witness `data.rows` is *deterministic* when --atoms is
-# omitted; downstream consumers (notably content/values/registry.ts's
+# omitted; downstream consumers (notably folio/values/registry.ts's
 # `B_2H_AME_MeV` lookup at path `data.rows.2.B_AME_MeV`) depend on:
 #
 #     index 0: proton          (Z=1, N=0, A=1)
@@ -130,7 +130,7 @@ B_AME_MEV: dict[tuple[int, int], mp.mpf] = {
 #     index 7: 6Li             (Z=3, N=3, A=6)
 #
 # Do NOT reorder this list without also updating
-# content/values/registry.ts and any other consumer that indexes
+# folio/values/registry.ts and any other consumer that indexes
 # into `data.rows`. A (Z, N)-keyed lookup would be more robust;
 # tracked as a follow-up.
 DEFAULT_ATOMS = [

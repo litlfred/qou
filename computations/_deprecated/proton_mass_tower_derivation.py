@@ -2,7 +2,7 @@
 """
 Derive absolute proton mass from the mass-endomorphism-tower formula.
 
-Source: content/quantum-observable-universe/braids-and-knots/
+Source: folio/quantum-observable-universe/braids-and-knots/
         mass-endomorphism-tower.md §"Application to the proton-electron
         mass ratio".
 
@@ -154,7 +154,7 @@ def main():
                         engine="mass-endomorphism-tower")
     w.set_description(
         "Absolute proton mass via mass-endomorphism-tower formula "
-        "(content/quantum-observable-universe/braids-and-knots/"
+        "(folio/quantum-observable-universe/braids-and-knots/"
         "mass-endomorphism-tower.md §application to p-e ratio). "
         "m_p/m_e ≈ 1870 from framework; CODATA 1836.15."
     )

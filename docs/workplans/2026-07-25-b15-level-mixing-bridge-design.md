@@ -123,4 +123,4 @@ structure that *generates* both gradings, then check the derived `M`:
   [`computations/probes/qseries_exact_util.py`](../../computations/probes/qseries_exact_util.py)
   — printed-GGM-table gated; fraction-free Bareiss for exact ranks.
 - The (★) identity, now proved sorry-free at every order:
-  [`QOU/QBeta/HabiroTailStar.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/HabiroTailStar.lean).
+  [`QOU/QBeta/HabiroTailStar.lean`](../../folio/quantum-observable-universe/lean/QOU/QBeta/HabiroTailStar.lean).

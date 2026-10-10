@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-spectral-sequence-collapse",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:spectral-sequence-collapse",
+  "kind": "proof",
+  "title": "Proof of spectral sequence collapse",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-spectral-sequence-collapse"
+  ],
+  "text": "spectral-sequence-collapse-proof.md",
+  "provenance": "authored"
+}

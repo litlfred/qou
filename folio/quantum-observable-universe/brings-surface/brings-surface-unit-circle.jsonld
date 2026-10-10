@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-brings-surface",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:brings-surface",
+  "kind": "example",
+  "title": "Bring's surface unit circle bundle",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-c-quantum-observable-universe"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-brings-surface",
+  "tags": [
+    "brings-surface",
+    "cr-geometry"
+  ],
+  "text": "brings-surface-unit-circle.md",
+  "provenance": "authored"
+}

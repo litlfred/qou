@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prose-mba-chain-map",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "prose:mba-chain-map",
+  "kind": "prose",
+  "title": "From propositions to compute — the chain map",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prose-pre-archimedean-derivation-chain"
+  ],
+  "tags": [
+    "appendix",
+    "algorithms",
+    "chain-map",
+    "compute-bridge",
+    "python-api"
+  ],
+  "text": "mba-chain-map.md",
+  "provenance": "authored"
+}

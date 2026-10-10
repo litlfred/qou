@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-knot-particle-generation-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:knot-particle-generation-interpretation",
+  "kind": "remark",
+  "title": "Hopf linking, color-tube threading, and Skein crossing change operations",
+  "interprets": "papers/quantum-observable-universe/blocks/def-knot-particle-generation",
+  "tags": [
+    "knot",
+    "particle",
+    "hopf-link",
+    "color-tube",
+    "skein",
+    "exceptional-divisor",
+    "operation"
+  ],
+  "text": "knot-particle-generation-interpretation.md",
+  "provenance": "authored"
+}

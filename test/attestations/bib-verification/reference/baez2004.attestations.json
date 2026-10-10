@@ -1,0 +1,55 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "baez2004",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 10,
+      "entry": {
+        "id": "baez2004",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T06:23:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "note": "Confirmed paper is 'Higher-Dimensional Algebra V: 2-Groups' by John C. Baez (arXiv:math/0307200). emergence-to-quantum-flat.lean:34 cites it for INN(G_q) being 'the unique strict 2-group' under simplicity constraint \u2014 this paper IS the canonical 2-groups reference; INN construction is in the body.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/baez2004.pdf"
+        },
+        "local_pdf": "uploads/baez2004.pdf",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Join CORRECT (arXiv:math/0307200v3, matching the registered entry). Not in the working tree on this branch; recovered from intake commit 4009ba4f91, sha matches. The paper is a detailed treatment of weak/coherent 2-groups and their classification by Postnikov data. MISCITED at its principal site: folio/quantum-observable-universe/quantum-observable-universes/emergence-to-quantum-flat.lean:36,63 cites [baez2004] for a structure whose docstring asserts 'The quantum flatness condition F_A = B is equivalent to the instanton equation F_A^- = 0 under the simplicity constraint. The 2-group INN(G_q) is the unique strict 2-group for which this equivalence holds.' Searching the full text of this document for 'INN(', 'inner automorphism 2-group', 'fake curvature', 'fake flat', 'instanton', 'simplicity constraint', 'BF theory', 'F_A' returns exactly one hit, and it is about Aut_s(H), the strict automorphism 2-group, in a purely algebraic classification context. The document contains no connections, no curvature, no BF/spin-foam content, and no INN(G) construction. The other two sites (appendix-standard-model/sm-gauge-truncation.lean:30 and gauge-action-groupoid.lean:33) list it in a References block with no claim attached; sm-gauge-truncation is about an SU(3)xSU(2)xU(1) embedding, which this document does not address. The right source is already registered and sitting uncited: baez-schreiber2007 (library/arxiv-math-0511710v2/0511710v2.pdf) is the paper that defines 2-connections on principal 2-bundles and states the vanishing-fake-curvature condition (its abstract line 27; body lines 473, 1559, 1566, 1568). Scope-(a): this document, as read, does not support the F=B / instanton / INN(G_q) uniqueness claim it is cited for.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Replace or supplement the [baez2004] citation on the quantum-flatness/fake-curvature claim with [baez-schreiber2007], which actually contains the 2-connection and vanishing-fake-curvature material; keep [baez2004] only where 2-group structure per se is invoked.",
+              "target": "prop:emergence-to-quantum-flat",
+              "bean": "qou-g8o3"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "The 'INN(G_q) is the unique strict 2-group for which this equivalence holds' uniqueness claim carries no source that supports it. Record what would need checking: which strict 2-groups admit the F=B <-> F^- = 0 equivalence under the simplicity constraint, and where that uniqueness is proved.",
+              "target": "prf:emergence-to-quantum-flat",
+              "bean": "qou-t3ox"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "9dfc7aaea35d"
+        }
+      }
+    }
+  ]
+}

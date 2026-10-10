@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-frobenius-simplification",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:frobenius-simplification",
+  "kind": "remark",
+  "title": "Frobenius structure of the C gauge algebra",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-frobenius-pairing",
+    "papers/quantum-observable-universe/blocks/ex-instanton",
+    "papers/quantum-observable-universe/blocks/ex-irreducible-connection",
+    "papers/quantum-observable-universe/blocks/rem-q-torsion-existence"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-universe",
+  "tags": [
+    "frobenius",
+    "hopf-algebra",
+    "gauge-theory"
+  ],
+  "text": "frobenius-simplification.md",
+  "provenance": "authored"
+}

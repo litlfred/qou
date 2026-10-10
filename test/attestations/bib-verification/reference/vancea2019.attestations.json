@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "vancea2019",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 272,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1911.04486v4/1911.04486v4.pdf"
+        },
+        "id": "vancea2019",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "A review chapter on Ranada field-line solutions of vacuum Maxwell and their extension to Born-Infeld nonlinear electrodynamics (null hopfion solutions survive). It contains no original result. The corpus has no Ranada/knotted-EM-field thread at all (zero hits for 'Ranada' across content/), and the single paragraph it could touch -- the 'photonic hopfions' alignment in rem:breit-wheeler-vertex-literature -- is better served by the primary construction in library/arxiv-1302.0342v1/1302.0342v1.pdf in this same slice, which gives the torus-knot family the corpus's inventory actually uses. Judged tangential rather than supporting deliberately: adding a second, secondary citation to a single interpretive paragraph would be citation padding.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "The one candidate paragraph is already better covered by the primary source triaged in this slice; no block needs a review of the same material.",
+              "target": "rem:breit-wheeler-vertex-literature"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "53a34938c0e6"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

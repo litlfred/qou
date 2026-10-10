@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-hadron-half-life",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:hadron-half-life",
+  "kind": "proposition",
+  "title": "Hadron half-life from the $q$-deformed transition amplitude",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-integer-stability"
+  ],
+  "tags": [
+    "half-life",
+    "beta-decay",
+    "hadron",
+    "transition-amplitude",
+    "substrate-parameter",
+    "valley-of-stability"
+  ],
+  "leanRef": "qou:QOU.Archimedean.hadron_half_life",
+  "text": "hadron-half-life.md",
+  "leanSource": "hadron-half-life.lean",
+  "provenance": "authored"
+}

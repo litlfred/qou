@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-yekutieli-leading-coefficient",
+  "@type": [
+    "folio-assistant-core:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:yekutieli-leading-coefficient",
+  "kind": "lemma",
+  "title": "Obstruction equals the leading Chebyshev coefficient",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-dq-squared",
+    "papers/quantum-observable-universe/blocks/lem-genus-ideal-characterisation"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-yekutieli-leading-coefficient"
+  ],
+  "tags": [
+    "yekutieli",
+    "obstruction",
+    "chebyshev",
+    "categorical-dq-squared"
+  ],
+  "leanRef": "qou:QOU.Archimedean.yekutieli_leading_coefficient",
+  "text": "yekutieli-leading-coefficient.md",
+  "provenance": "authored"
+}

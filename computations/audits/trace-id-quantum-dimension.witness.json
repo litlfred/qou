@@ -1,0 +1,53 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-15T08:51:23.478901+00:00",
+  "commitSha": "0509e4010420ef2248c82f3fdfff2fdc14651ba1",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "trace-id-quantum-dimension",
+  "scriptFile": "trace_id_quantum_dimension_probe.py",
+  "scriptHash": "650701eee5e8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/trace_id_quantum_dimension_probe.py"
+    ],
+    "reproduce": "python3 -u computations/audits/trace_id_quantum_dimension_probe.py"
+  },
+  "q0Anchor": "proton",
+  "description": "Under the owner ruling of 2026-09-15 that tr(id_A) is the quantum dimension, the naive dim_q of the base algebra O_q(SU(2)) diverges at the substrate q0, so a regularisation is required before tr(id_A) has a value; and no finite-dimensional irrep has a negative quantum dimension, so the corpus's chi(A) = -6 cannot be a naive dim_q.",
+  "q0Value": "1.1099785827513808",
+  "dim_q_V1_is_2q": "2.01089686670712229832263",
+  "dim_q_min_over_irreps": "1.0",
+  "peter_weyl_partial_sums": {
+    "5": "99.258000631652",
+    "10": "670.03384041549",
+    "20": "8735.9733286881",
+    "40": "629489.95380989",
+    "80": "2663571384.1615",
+    "120": "11236547036987.0"
+  },
+  "consecutive_term_ratio_at_n120": "1.2320524541718",
+  "series_diverges": true,
+  "alternating_sum_k0_to_3": "-2.0768730693825",
+  "checks": 8,
+  "failures": []
+}

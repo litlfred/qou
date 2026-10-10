@@ -26,7 +26,7 @@ numerator of W is q²²·V(q⁻²) — the writhe/mirror normalisation of the Oc
 trace of a positive 3-strand braid.
 
 Lean carrier (sorry-free): QOU.Braiding.WeakVertexT35.weakVertexTrace_eq in
-content/quantum-observable-universe/lean/QOU/Braiding/WeakVertexT35TraceClosedForm.lean.
+folio/quantum-observable-universe/lean/QOU/Braiding/WeakVertexT35TraceClosedForm.lean.
 
 FINDING, NOT EDITED HERE.  obs:hadron-half-life-verification publishes
 W(q₀) ≈ 0.7036 ("computed exactly").  At the proton pin the convention-D

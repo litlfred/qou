@@ -1,0 +1,65 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "faddeev1994",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 32,
+      "entry": {
+        "id": "faddeev1994",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T16:14:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 4,
+        "fix_commit": "(this commit)",
+        "note": "Faddeev, \"Current-like variables in massive and massless integrable models\", Lectures 1994. 4 bare-URL Refs upgraded with title+publisher form. No local PDF (publisher paywalled). Partial. | PDF verified: Faddeev, \"Current-like variables in massive and massless integrable models,\" Lectures June 1994, arXiv:hep-th/9408041. Verified.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/faddeev1994.pdf"
+        },
+        "local_pdf": "uploads/faddeev1994.pdf",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "INFRA: file absent from HEAD and the working tree; exists only on origin/claude/upload-bib-papers-2026-05-19 (intake commit 5bb25ac936). Recovered from git history. Identity: the document is the single-author lecture preprint arXiv:hep-th/9408041 (June 1994), on current-like variables in integrable models; its title matches the ref() entry at folio/schema/references.ts:1901, but the entry lists TWO authors while the document has ONE \u2014 the second name does not appear on the cover. JOIN CAVEAT accordingly: right document, over-attributed entry. The key is heavily load-bearing (about 19 `-- Ref: [faddeev1994]` sites plus one \\cite in mass-endomorphism/mass-modulus-em-phase-color-grading.md:31). Substantive check: the document DOES carry q-dilogarithm content \u2014 S(w) with the q-exponential functional equation S(u)S(v) = S(u+v) under uv = q^2 vu, and a pentagon-equation remark \u2014 so citing it for 'the quantum dilogarithm' is defensible in substance. BUT the key is metadata-incoherent across the corpus: FOUR mutually inconsistent identifications ride on it. (a) folio/schema/references.ts:1901 gives DOI 10.1007/BF02101594. (b) folio/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean:21 gives DOI 10.1007/BF02101456. (c) eleven Archimedean files (DilogPartBBranchPointLimit.lean:57, DilogPartBJointAssembly.lean:43, DilogPartBEulerTail.lean:31, DilogPartBIteratedLimit.lean:49, DilogPartARiemannSum.lean:25, ThreeSubstantiveMathlibFillers.lean:41,164, DilogPartBFaddeevScaling.lean:49, DilogPartBBranchPointSum.lean:21, DilogPartBBranchPhase.lean:33, DilogarithmArchimedeanLimit.lean:112, DilogPartBWP1Capstone.lean:27) give DOI 10.1142/S0217732394002793. (d) QOU/MathlibExt/QuantumDilogarithm.lean:136-137 glosses the key with a fourth, different work title ('Discrete Heisenberg-Weyl group and modular group'). These cannot all denote the same item. Additional substantive caveat: the recovered document uses the COMPACT S(w) object and has zero occurrences of the noncompact Faddeev quantum dilogarithm symbol Phi; the Archimedean DilogPartB* files cite the key for the noncompact/integral object, which is a different function from the one in this document.",
+          "keyResults": [
+            {
+              "locator": "p. ~10, eqns for S(w)",
+              "statement": "S(u)S(v) = S(u+v) for a Weyl pair uv = q^2 vu; the pentagon form of the same relation is the quantum/q-analogue of the classical dilogarithm pentagon.",
+              "useForFolio": "This is the statement the lifting-and-descent quantum-dilogarithm Lean file and the pentagon/associator files actually need; it is present here, so those Ref lines are substantively correct even though the DOIs attached to them are not.",
+              "targets": [
+                "cor:quantum-dilogarithm"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "Four different DOIs/titles are attached to the single key [faddeev1994] across ~19 Lean sites; and the eleven Archimedean DilogPartB* sites cite it for the noncompact quantum dilogarithm, an object that does not appear in the document this key is joined to. Record the split so the key can be disambiguated (compact S(w) lectures vs noncompact Phi vs the discrete-Heisenberg-Weyl paper) before the DOIs are 'fixed' by picking one at random.",
+              "target": "QOU.Archimedean.DilogarithmArchimedeanLimit",
+              "bean": "qou-1buz"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "The pentagon-identity sites (predicted-spectra/cl2-pentagon-and-faddeev-partial.lean:30, braids-and-knots/pentagon-uv-commutation-woronowicz.lean) should cite the 1993 quantum-dilogarithm paper (key faddeev_kashaev1994, library/arxiv-hep-th-9310070v1/9310070v1.pdf, which states the pentagon identity as its main result) rather than, or in addition to, these lectures.",
+              "target": "cor:quantum-dilogarithm",
+              "bean": "qou-p6xl"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "5c13b53f03a3"
+        }
+      }
+    }
+  ]
+}

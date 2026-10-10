@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-brings-riemann-hurwitz",
+  "@type": [
+    "folio-assistant-core:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:brings-riemann-hurwitz",
+  "kind": "lemma",
+  "title": "Riemann--Hurwitz count for the canonical map $\\Sigma_4 \\to \\mathbb{P}(V)$",
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-brings-riemann-hurwitz"
+  ],
+  "tags": [
+    "riemann-hurwitz",
+    "ramification",
+    "brings-surface",
+    "s5-symmetry"
+  ],
+  "leanRef": "qou:QOU.ArchimedeanUniverse.brings_riemann_hurwitz",
+  "text": "brings-riemann-hurwitz.md",
+  "provenance": "authored"
+}

@@ -27,7 +27,7 @@
 - [`docs/audits/2026-05-24-rule14-kashaev-density.md`](../audits/2026-05-24-rule14-kashaev-density.md) — item #6 (research-agent authored)
 
 ### Content blocks
-- [`content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.{md,ts}`](../../content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md) — item #2, `conj:inter-nucleon-channel-color-tube`
+- [`folio/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.{md,ts}`](../../folio/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md) — item #2, `conj:inter-nucleon-channel-color-tube`
 
 ### Code changes
 - [`computations/isotope_record_schema.py:178-194`](../../computations/isotope_record_schema.py) — added NOTE pointing at the new conjecture block

@@ -1,0 +1,58 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "gukov-stosic2012",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 222,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1112.0030v2/1112.0030v2.pdf"
+        },
+        "id": "gukov-stosic2012",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED from the arXiv title page (arXiv:1112.0030v2, hep-th): two-author, subject and identifier match the seeded entry. Citation sites: mass-theory/stokes-dt-bps-bridge.ts:22 (cites[]) and :60 (prose held in the manifest), and the sibling stokes-dt-bps-bridge.md:32 table row. LOAD-BEARING AND CORRECTLY SCOPED. The block uses this reference for exactly one thing: to name the OPEN BPS sector - conormal Lagrangian L_K inside T*S^3, colored HOMFLY homology - as the alternative to the closed / state-integral sector it then adopts. The PDF supports that attribution: the abstract states that knot homologies admit a physical description as spaces of open BPS states, and the body identifies the relevant Lagrangian as the conormal bundle to the knot (text line 189); an appendix computes the H_3 homology of the figure-eight knot, matching the reference entry's note. Crucially the block does NOT attribute det(4_1) = 5 to this paper - it sources that count from the knots-quivers correspondence [kucharski-reineke-stosic-sulkowski2017] and uses this reference only for the sector identification, so its negative conclusion (the open-HOMFLY bridge does not reproduce the resurgent Stokes spectrum {3,4}) is a correctly-sourced scope-(a) statement about the sector.",
+          "keyResults": [
+            {
+              "locator": "Abstract + section 1-2",
+              "statement": "Reduced/colored HOMFLY homology of a knot K is the space of OPEN BPS states of an M5-brane on the conormal Lagrangian L_K in T*S^3; colored differentials relate homologies at different representations.",
+              "useForFolio": "The literature basis for the 'open' row of the stokes-dt-bps-bridge non-degeneracy table, i.e. for the claim that two inequivalent knot-homology/BPS bridges exist and only the closed one reproduces {3,4}.",
+              "targets": [
+                "conj:stokes-dt-bps-bridge"
+              ]
+            },
+            {
+              "locator": "App. C",
+              "statement": "Explicit computation of the S^3- and Lambda^3-colored (H_3) homology of the figure-eight knot.",
+              "useForFolio": "The only 4_1-specific count in the paper; the natural place to check any future claim about GS-side 4_1 numbers rather than importing det(4_1)=5 from the quiver paper.",
+              "targets": [
+                "conj:stokes-dt-bps-bridge"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "The citation is load-bearing, correctly scoped, and the block already distinguishes what GS supplies from what the quiver paper supplies. Nothing to change.",
+              "target": "conj:stokes-dt-bps-bridge"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "745f143c2df4"
+        }
+      }
+    }
+  ]
+}

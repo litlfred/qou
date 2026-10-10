@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-wedderburn-trace-identity",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:wedderburn-trace-identity",
+  "kind": "proposition",
+  "title": "Markov-trace normalization for $H_n(q)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-three-parameters-wedderburn"
+  ],
+  "tags": [
+    "wedderburn",
+    "markov-trace",
+    "plancherel",
+    "normalization",
+    "hecke-algebra",
+    "partition"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.PlancherelViaRecipe.plancherel_via_recipe",
+  "text": "wedderburn-trace-identity.md",
+  "provenance": "authored"
+}

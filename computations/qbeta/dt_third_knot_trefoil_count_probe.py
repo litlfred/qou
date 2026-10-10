@@ -4,7 +4,7 @@ count is 2, and it corroborates without discriminating.
 
 # Ref: .beans/qou-q9ih--d1-route-c-m1-construct-the-qw-reproducing-34-bar.md
 # Ref: computations/qbeta/dt_crossknot_connection_count_certified_probe.py
-# Ref: content/quantum-observable-universe/lean/QOU/QBeta/AdjointIndexSetM3.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/QBeta/AdjointIndexSetM3.lean
 
 WHAT WAS OPEN. `dt_crossknot_connection_count_certified_probe` certifies the
 #boundary-parabolic-connections counts for 4_1 (3) and 5_2 (4) by processing

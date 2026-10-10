@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-macdonald-hook-telescope",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:macdonald-hook-telescope",
+  "kind": "proposition",
+  "title": "Macdonald hook-content telescope for $Z_n$ and clean $y_\\lambda$ closed form",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-y-lambda-closed-form-wenzl-bridge"
+  ],
+  "cites": [
+    "references/macdonald1995",
+    "references/stanley1999",
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "y-lambda",
+    "macdonald-hook",
+    "telescope",
+    "closed-form",
+    "principal-specialization",
+    "wenzl-bridge",
+    "schur-element",
+    "kostka-frobenius",
+    "crystal-basis-shortcut"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.macdonald_hook_telescope",
+  "text": "macdonald-hook-telescope.md",
+  "leanSource": "macdonald-hook-telescope.lean",
+  "provenance": "authored"
+}

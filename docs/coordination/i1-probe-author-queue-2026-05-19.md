@@ -9,7 +9,7 @@ ambiguity, and 2–3 options for resolution.
 
 ### `cor:descartes-braid-structure`
 
-- **File**: `content/quantum-observable-universe/descartes-universe/descartes-braid-structure.ts`
+- **File**: `folio/quantum-observable-universe/descartes-universe/descartes-braid-structure.ts`
 - **Claim**: image of ρ_3 : B_3 → Aut(V^⊗3) in SU(2) is the binary dihedral group `Dic_3` of order 12.
 - **Ambiguity**: at generic `q` (including `q_0 ≈ 1.110`), the braid image is typically infinite. A finite Dic_3 image requires `q` at a specific root of unity. The `def:descartes-condition` block doesn't pin down which.
 - **Options**:

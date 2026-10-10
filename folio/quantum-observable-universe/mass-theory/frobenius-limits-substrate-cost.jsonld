@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-frobenius-limits-substrate-cost",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:frobenius-limits-substrate-cost",
+  "kind": "remark",
+  "title": "Limits of $\\tau(C_{\\dim_q})$: substrate information cost vs vortex computation",
+  "interprets": "papers/quantum-observable-universe/blocks/thm-frobenius-codim-universal",
+  "tags": [
+    "frobenius",
+    "limits",
+    "substrate",
+    "information",
+    "landauer",
+    "interpretation",
+    "brane-tower"
+  ],
+  "text": "frobenius-limits-substrate-cost.md",
+  "provenance": "authored"
+}

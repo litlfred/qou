@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-categorical-instanton-unique",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:categorical-instanton-unique",
+  "kind": "proof",
+  "title": "Proof of uniqueness of categorical instantons up to gauge",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-instanton-unique"
+  ],
+  "text": "categorical-instanton-unique-proof.md",
+  "provenance": "authored"
+}

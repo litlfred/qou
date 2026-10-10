@@ -1,0 +1,63 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "vanderput-reversat2007",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 345,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/afst-2007-6-16-3-665-0/AFST_2007_6_16_3_665_0.pdf"
+        },
+        "id": "vanderput-reversat2007",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "A systematic classification-and-moduli treatment of linear q-difference equations over the field of germs of meromorphic functions at the origin, for 0 < |q| < 1. Its central structural result is that a difference module M functorially induces a vector bundle v(M) on the TATE CURVE E_q = C*/q^Z, for all slopes rather than only integral ones, recovering Atiyah's classification of indecomposable bundles on the complex Tate curve as a corollary; a universal difference ring and universal formal difference Galois group are also constructed. The corpus is full of q-difference structures -- the Habiro c_k recursion, the AJ/q-holonomic machinery, the q-Bessel kernel -- and already registers a reference on the local analytic classification and q-Stokes phenomena, but the Tate curve C*/q^Z appears NOWHERE in the corpus (grep over content/ and docs/audits/ returns zero). This document names the canonical elliptic curve attached to the substrate parameter itself and the canonical target category for the corpus's own difference modules. Two honest limits keep it supporting rather than core: the theory is stated for |q| < 1 while the substrate q_0 ~ 1.10998 exceeds 1 (the bar involution maps it into range, but that step must be made explicitly, not assumed), and no corpus claim is currently wrong or unsourced for want of this. Worth flagging alongside: the notation register reserves calligraphic E_q for the Descartes elliptic curve and forbids E_q for a curve, so importing the Tate curve needs a distinct symbol or a collision is guaranteed.",
+          "keyResults": [
+            {
+              "locator": "Abstract and Introduction (the functor v)",
+              "statement": "A q-difference module over the field of germs of meromorphic functions at 0 induces functorially a vector bundle on the Tate curve C*/q^Z, for all slopes; Atiyah's classification of indecomposable bundles on the complex Tate curve follows as a corollary.",
+              "useForFolio": "Identifies the canonical geometric target for the corpus's q-difference modules -- an elliptic curve built from the substrate parameter itself -- an object the corpus does not currently have despite working with such modules throughout.",
+              "targets": [
+                "prop:q-beta-c-k-recursion-from-habiro-q-difference",
+                "prop:binding-genfun-qdifference"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The corpus's q-difference blocks have a reference for local analytic classification and q-Stokes but none for the Galois/moduli theory and the Tate-curve correspondence.",
+              "target": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
+              "bean": "qou-ojl4"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Recording that the corpus's q-difference modules canonically determine bundles on the Tate curve of the substrate parameter, with an explicit note on the |q| < 1 convention and on the symbol collision with the reserved calligraphic E_q, would let the connection be used without introducing a notation defect.",
+              "target": "prop:binding-genfun-qdifference",
+              "bean": "qou-akg0"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "402b61574e56"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

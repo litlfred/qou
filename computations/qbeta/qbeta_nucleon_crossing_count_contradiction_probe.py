@@ -45,9 +45,9 @@ asserted: it is a plausible reading, not a corpus statement, and the
 contradiction this probe reports needs no such mapping -- it is a mismatch of
 TOTALS.
 
--- Ref: [manuscript] content/quantum-observable-universe/knots-particles-confinement/categorical-neutron-properties.md
--- Ref: [manuscript] content/quantum-observable-universe/knots-particles-confinement/categorical-proton-properties.md
--- Ref: [manuscript] content/quantum-observable-universe/stochastic-mechanics/q-beta-gamma-gamma-canonical-derivation.md
+-- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/categorical-neutron-properties.md
+-- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/categorical-proton-properties.md
+-- Ref: [manuscript] folio/quantum-observable-universe/stochastic-mechanics/q-beta-gamma-gamma-canonical-derivation.md
 -- Ref: [manuscript] computations/qbeta/qbeta_delta_element_fork_pricing_probe.py (the fork this feeds)
 """
 from __future__ import annotations
@@ -75,7 +75,7 @@ from hecke_core import (  # noqa: E402
 set_compute_dps(50)
 
 ROOT = _pl.Path(__file__).resolve().parents[2]
-CONTENT = ROOT / "content" / "quantum-observable-universe"
+CONTENT = ROOT / "folio" / "quantum-observable-universe"
 
 Q = mp.mpf(Q_50_DIGIT_STR)
 H = Q - 1 / Q

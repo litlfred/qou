@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-simple-objects-V",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:simple-objects-V",
+  "kind": "remark",
+  "title": "Simple objects and the role of $V$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-fundamental-object"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-rigid-monoidal-category",
+  "tags": [
+    "category-theory",
+    "simple-object",
+    "fundamental-object",
+    "pedagogy"
+  ],
+  "text": "simple-objects-V.md",
+  "provenance": "authored"
+}

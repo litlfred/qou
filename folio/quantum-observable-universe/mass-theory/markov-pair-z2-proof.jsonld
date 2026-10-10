@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-markov-pair-z2",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:markov-pair-z2",
+  "kind": "proof",
+  "title": "Proof of markov pair z2",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-markov-pair-z2"
+  ],
+  "text": "markov-pair-z2-proof.md",
+  "provenance": "authored"
+}

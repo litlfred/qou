@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-cpt-orbit-closure-density",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:cpt-orbit-closure-density",
+  "kind": "conjecture",
+  "title": "CPT-saturation as Type-B fold-orbit closure: deriving $\\rho_F \\in \\{m_e, 2m_e\\}$ from crystal structure",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-frobenius-packing-density",
+    "papers/quantum-observable-universe/blocks/conj-symmetric-crystal-pair-production"
+  ],
+  "cites": [
+    "references/kashiwara1991",
+    "references/lecouvey2007",
+    "references/brundankleshchev2009",
+    "references/khovanovlauda2009",
+    "references/kassel1995"
+  ],
+  "tags": [
+    "cpt",
+    "type-b-fold",
+    "orbit-closure",
+    "frobenius-packing",
+    "chirality",
+    "wedderburn",
+    "crystal-basis-shortcut"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.cpt_orbit_closure_density",
+  "text": "cpt-orbit-closure-density.md",
+  "leanSource": "cpt-orbit-closure-density.lean",
+  "provenance": "authored"
+}

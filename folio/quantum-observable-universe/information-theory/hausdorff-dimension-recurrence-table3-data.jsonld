@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-hausdorff-dimension-recurrence-table3-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:hausdorff-dimension-recurrence-table3-data",
+  "kind": "table",
+  "title": "Table 3 from rem:hausdorff-dimension-recurrence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-hausdorff-dimension-recurrence"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "hausdorff-dimension-recurrence-table3-data.md",
+  "provenance": "authored"
+}

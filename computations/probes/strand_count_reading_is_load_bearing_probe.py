@@ -55,7 +55,7 @@ from pathlib import Path
 from sympy.functions.combinatorial.numbers import partition
 
 REPO = Path(__file__).resolve().parent.parent.parent
-MASS = REPO / "content/quantum-observable-universe/mass-theory"
+MASS = REPO / "folio/quantum-observable-universe/mass-theory"
 
 # Sweep bound for the enumerative half of checks 2-3. The EXACT argument in
 # check 4 does not depend on it; the sweep is corroboration, not the proof.
@@ -155,8 +155,8 @@ def main() -> int:
     # chapters". That counts CITATIONS. This counts DEPENDENCIES: which citing
     # blocks actually use a strand count, and which one.
     cites = sorted(
-        str(p_.relative_to(REPO / "content/quantum-observable-universe"))
-        for p_ in (REPO / "content/quantum-observable-universe").rglob("*")
+        str(p_.relative_to(REPO / "folio/quantum-observable-universe"))
+        for p_ in (REPO / "folio/quantum-observable-universe").rglob("*")
         if p_.suffix in (".ts", ".md") and "def:atomic-braid" in p_.read_text()
     )
     check("24 blocks cite def:atomic-braid (qou-jgg0's count, re-derived)",
@@ -168,7 +168,7 @@ def main() -> int:
     pat_a = re.compile(r"A\s*\+\s*Z|H_\{A\+Z\}")
     buckets: dict[str, list[str]] = {"c": [], "b": [], "a": [], "ab": [], "none": []}
     for rel in cites:
-        flat = " ".join((REPO / "content/quantum-observable-universe" / rel).read_text().split())
+        flat = " ".join((REPO / "folio/quantum-observable-universe" / rel).read_text().split())
         has_c = bool(pat_c.search(flat))
         rest = pat_c.sub(" ", flat)
         has_b, has_a = bool(pat_b.search(rest)), bool(pat_a.search(rest))
@@ -191,7 +191,7 @@ def main() -> int:
     check("atomic-braid.ts is the DEFINITION's own manifest, not a consumer",
           own_manifest in a_hits
           and 'label: "def:atomic-braid"' in
-              (REPO / "content/quantum-observable-universe" / own_manifest).read_text(),
+              (REPO / "folio/quantum-observable-universe" / own_manifest).read_text(),
           "its title is 'Atomic braid $H_{A+Z}(q)$'")
     check("definition-index.md is a catalogue echoing that title",
           index_row in a_hits,
@@ -207,7 +207,7 @@ def main() -> int:
     print("\nCHECK 11 -- RETRACTION: a block can depend on the count WITHOUT writing it")
     # Checks 8-10 classify TEXTUALLY, on the strings "A + Z" / "3A". A block that
     # writes a bare numeric H_n instead is invisible to them. Measured: three are.
-    CB = REPO / "content/quantum-observable-universe"
+    CB = REPO / "folio/quantum-observable-universe"
     num = re.compile(r"H_\{?(\d+)")
     numeric: dict[str, list[int]] = {}
     for rel in cites:
@@ -282,7 +282,7 @@ def main() -> int:
           "the chapter is built on 'nucleons + electrons', which IS the A+Z construction")
 
     print("\nCHECK 15 -- a FOURTH surface: Lean. qou-jgg0 measured content + Python only")
-    CBR = REPO / "content/quantum-observable-universe"
+    CBR = REPO / "folio/quantum-observable-universe"
     az_lean = CBR / "knots-particles-confinement/atomic-braid.lean"
     az = az_lean.read_text()
     check("def:atomic-braid HAS a Lean sibling (it is not under lean/QOU/)",

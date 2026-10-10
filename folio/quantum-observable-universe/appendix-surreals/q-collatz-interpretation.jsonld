@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-collatz-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-collatz-interpretation",
+  "kind": "remark",
+  "title": "Skein-Collatz interpretation: the $(p_1^{k_1}, p_2^{k_2})$ family and uniqueness of $(2,3)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-collatz-contact-boundary"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-q-collatz",
+  "cites": [
+    "references/collatz1937",
+    "references/lagarias2010"
+  ],
+  "tags": [
+    "collatz",
+    "skein-module",
+    "contraction-gap",
+    "uniqueness",
+    "q-integer",
+    "family",
+    "monomial"
+  ],
+  "text": "q-collatz-interpretation.md",
+  "provenance": "authored"
+}

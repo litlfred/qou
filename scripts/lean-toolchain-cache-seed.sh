@@ -17,12 +17,13 @@
 # Exit:   0 on push; non-zero if the toolchain dir is missing.
 set -euo pipefail
 source "$(dirname "$0")/lib/lean-env.sh"
+source "$(dirname "$0")/lib/lake-cache-family.sh"
 
 FORCE=0
 [ "${1:-}" = "--force" ] && FORCE=1
 
 slug="$(lean_toolchain_slug)"                      # v4-24-0
-branch="lake-cache/toolchain-$slug"
+branch="$(lake_cache_write_branch "toolchain-$slug")"
 toolchain_line="$(tr -d '\r' < "$REPO_ROOT/lean-toolchain")"   # leanprover/lean4:v4.24.0
 dest_root="$HOME/.elan/toolchains"
 

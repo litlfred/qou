@@ -1,0 +1,57 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "bilsonthompson2007",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 177,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/0603022v2/0603022v2.pdf"
+        },
+        "id": "bilsonthompson2007",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Not an orphan \u2014 but the bibliography around it is broken in a way worth flagging separately. The entry exists as bilsonthompson2007 (references.ts L5424+) with zero citation sites in content/ or Lean. Meanwhile the same author's earlier preon paper is registered TWICE under two keys: bilson-thompson2005 at L5411-5422 (zero citation sites) and bilson-thompson2005 at L7898-7905 (four citation sites: eightfold-way/flavor-charge-assignments.md, appendix-standard-model/strand-twist-datum.md, sm-gauge-truncation.md, sm-hypercharge-invariant.md). That duplicate-key pair is a corpus defect independent of this triage. On this document itself: I read the abstract and \u00a7I and it is the braided-ribbon-graph upgrade of the preon model \u2014 local excitations of background-independent quantum spacetime states, identified as noiseless subsystems, mapped to first-generation Standard Model fermions, with the explicit caveat that interactions are NOT reproduced. The four blocks that already cite the 2005 preon paper are exactly the blocks whose premise this 2007 paper strengthens (braid-to-fermion assignment, strand twist datum). Supporting rather than core: it supplies conserved-quantum-number structure and a stability argument, not a theorem the folio derives from.",
+          "keyResults": [
+            {
+              "locator": "Abstract; \u00a7I",
+              "statement": "In theories whose Hilbert space has a basis of ribbon graphs embedded up to diffeomorphism with dynamics by local moves, braiding gives conserved non-geometrical quantum numbers that are noiseless subsystems and can be mapped to first-generation Standard Model fermion charges; the paper does not claim to reproduce the interactions.",
+              "useForFolio": "The braid-to-charge assignment and its explicit non-claim about interactions is the honest scope bound for def:strand-twist-datum and rem:flavor-charge-assignments, which currently cite only the earlier preon paper.",
+              "targets": [
+                "def:strand-twist-datum",
+                "rem:flavor-charge-assignments"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "def:strand-twist-datum and rem:flavor-charge-assignments cite bilson-thompson2005 but not its braided-ribbon-graph successor (this upload, bilsonthompson2007), which is the version supplying the conserved-quantum-number and stability arguments those blocks lean on.",
+              "target": "def:strand-twist-datum",
+              "bean": "qou-sf0s"
+            },
+            {
+              "action": "no-action",
+              "rationale": "Recording separately (not as a bean against this document): references.ts contains duplicate entries bilson-thompson2005 (L5411, uncited) and bilson-thompson2005 (L7898, 4 citation sites) for the same 2005 preon paper. That is a bibliography defect for the bib-audit queue, not a relevance finding.",
+              "target": "folio/schema/references.ts"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "46e24c0289f6"
+        }
+      }
+    }
+  ]
+}

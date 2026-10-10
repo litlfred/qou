@@ -4,7 +4,7 @@ Probe — the two-nucleon tensor coupling acts as the scalar 3(1-|n|^2) on the s
 singlet, and is therefore 0 on the unit sphere.
 
 Exact-arithmetic (sympy, symbolic; NO float64) companion to
-    content/quantum-observable-universe/lean/QOU/QBeta/TensorCouplingCannotUnbindSinglet.lean
+    folio/quantum-observable-universe/lean/QOU/QBeta/TensorCouplingCannotUnbindSinglet.lean
 and docs/audits/2026-09-03-tensor-coupling-cannot-unbind-singlet.md (bean qou-s42j,
 target qou-vbyi route 1).
 

@@ -9,7 +9,7 @@ anything — does not follow.
 
 *** 1. THE CORRECTION — E_0 is derived from CAL-1 and CAL-2 ***
 
-`content/quantum-observable-universe/nuclear-interactions/energy-scale-planck.md`
+`folio/quantum-observable-universe/nuclear-interactions/energy-scale-planck.md`
 (`rem:energy-scale-planck`) derives the form from two independently defined
 substrate constants:
 

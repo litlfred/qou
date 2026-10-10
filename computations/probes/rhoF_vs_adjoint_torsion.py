@@ -4,7 +4,7 @@
 Literature cross-check — NO FIT, nothing wired to production.
 
 The corpus conjecture `conj:kashaev-density-equals-sdp-multiplicity`
-(content/quantum-observable-universe/mass-theory/
+(folio/quantum-observable-universe/mass-theory/
  kashaev-density-equals-sdp-multiplicity.md) states that the *binding-density
 prefactor* ρ_F in
 

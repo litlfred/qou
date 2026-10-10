@@ -188,7 +188,7 @@ def main() -> int:
 
     # ---- 1b. cross-check against the committed corpus table -----------------
     from pathlib import Path
-    tbl = (Path(__file__).resolve().parents[2] / "content"
+    tbl = (Path(__file__).resolve().parents[2] / "folio"
            / "quantum-observable-universe" / "lean" / "QOU" / "Machinery"
            / "MarkovTraceH4.lean")
     body = tbl.read_text() if tbl.exists() else ""

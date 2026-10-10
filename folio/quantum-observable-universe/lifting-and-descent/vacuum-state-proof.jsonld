@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-vacuum-state",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:vacuum-state",
+  "kind": "proof",
+  "title": "Proof of Existence and Uniqueness of the Vacuum State",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-vacuum-state",
+    "papers/quantum-observable-universe/blocks/def-frobenius-pairing"
+  ],
+  "text": "vacuum-state-proof.md",
+  "provenance": "authored"
+}

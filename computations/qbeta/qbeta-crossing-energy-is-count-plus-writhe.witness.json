@@ -1,0 +1,179 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-14T18:34:36.867848+00:00",
+  "commitSha": "a86a37a0649a6590b2776ac20d4d01f816cfc603",
+  "assertions": [
+    {
+      "name": "ecross_equals_npos_h_plus_writhe_over_q",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "exact to < 1.0e-50 on all 11 candidates; this is the corpus's own symChannel/asymChannel split regrouped so the non-invariant multiplicity (the count) sits alone on one term"
+    },
+    {
+      "name": "tr_M_is_constant_on_cyclic_rotations",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "max deviation 1.55575e-61 over all 10 rotations -- tr_M is a trace, so it is a class function and the observable is constant on conjugacy classes"
+    },
+    {
+      "name": "contiguous_gluon_position_is_not_a_degree_of_freedom",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "prepending the 2-letter gluon gives the same trace as appending it (delta 0.0) -- a corollary of cyclicity, and it removes block PLACEMENT from the candidate set"
+    },
+    {
+      "name": "tr_M_unchanged_by_a_cancelling_pair",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "delta 0.0 -- the insertion changes no braid element, and the observable does not see it"
+    },
+    {
+      "name": "cancelling_pair_shifts_ecross_by_exactly_h",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "shift 0.20906029879563931543 = h exactly, and h > 0 for q > 1. The SAME insertion left tr_M exactly unchanged (check above), so the cost ranks two presentations of one braid element differently while the observable ranks them identically"
+    },
+    {
+      "name": "equal_writhe_pairs_order_identically_under_both_costs",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "9/9 -- the measured half of `energy_le_iff_count_le_of_writhe_eq`. Swapping the cost changes no selection inside a fixed-writhe family"
+    },
+    {
+      "name": "disagreement_occurs_only_where_the_writhe_differs",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "20 of 46 differing-writhe pairs disagree, against 0 of 9 equal-writhe pairs. The CONVERSE is NOT claimed: a differing-writhe pair may still agree, and 26 of them do. What is established is the one-way implication, which is what bounds the upgrade"
+    },
+    {
+      "name": "headline_gap_equals_the_writhe_term_exactly",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the pair the sibling probe reports as count-tied and energy-separated differs by exactly `(W1 - W2)*symmetricWeight q` = 2.0108968667071222998 -- i.e. by the writhe term and nothing else, which is `crossingEnergy_sub_eq_writhe_term_of_count_eq`"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 20,
+  "computation": "qbeta-crossing-energy-is-count-plus-writhe",
+  "scriptFile": "qbeta_crossing_energy_is_count_plus_writhe_probe.py",
+  "scriptHash": "ac9246839b5c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_crossing_energy_is_count_plus_writhe_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_crossing_energy_is_count_plus_writhe_probe.py"
+  },
+  "description": "The owner objected that crossing COUNT is the wrong selection cost and proposed crossing ENERGY; a sibling probe measured that they disagree and left open when. Measured here: E_cross = n_plus*h + W/q exactly, so the energy is the count plus a writhe correction. The observable is a braid-ELEMENT invariant -- tr_M is constant on cyclic rotations (1.6e-61) and exactly unchanged by inserting a cancelling pair, which also makes a contiguous gluon's position immaterial -- while E_cross rises by exactly h under that same insertion, so the cost is a WORD functional. Over every equal-writhe pair the energy ordering and the count ordering coincide, so swapping the cost re-ranks only across writhe. Conclusion: the objection to the count is not answered by the energy; a genuine upgrade must not be a function of (n_plus, n_minus) at all. Adopts neither cost, selects no candidate, computes no Q_beta.",
+  "data": {
+    "candidates": [
+      {
+        "candidate": "(empty)",
+        "n_plus": 0,
+        "n_minus": 0,
+        "writhe": 0,
+        "E_cross": "0.0"
+      },
+      {
+        "candidate": "sigma_1",
+        "n_plus": 1,
+        "n_minus": 0,
+        "writhe": 1,
+        "E_cross": "1.10997858275138080759166909561"
+      },
+      {
+        "candidate": "sigma_1^-1",
+        "n_plus": 0,
+        "n_minus": 1,
+        "writhe": -1,
+        "E_cross": "-0.900918283955741492160822882481"
+      },
+      {
+        "candidate": "sigma_0",
+        "n_plus": 1,
+        "n_minus": 0,
+        "writhe": 1,
+        "E_cross": "1.10997858275138080759166909561"
+      },
+      {
+        "candidate": "sigma_0^-1",
+        "n_plus": 0,
+        "n_minus": 1,
+        "writhe": -1,
+        "E_cross": "-0.900918283955741492160822882481"
+      },
+      {
+        "candidate": "sigma_0 sigma_0 (LIVE)",
+        "n_plus": 2,
+        "n_minus": 0,
+        "writhe": 2,
+        "E_cross": "2.21995716550276161518333819122"
+      },
+      {
+        "candidate": "sigma_1 sigma_0",
+        "n_plus": 2,
+        "n_minus": 0,
+        "writhe": 2,
+        "E_cross": "2.21995716550276161518333819122"
+      },
+      {
+        "candidate": "sigma_0 sigma_1",
+        "n_plus": 2,
+        "n_minus": 0,
+        "writhe": 2,
+        "E_cross": "2.21995716550276161518333819122"
+      },
+      {
+        "candidate": "sigma_1 sigma_1",
+        "n_plus": 2,
+        "n_minus": 0,
+        "writhe": 2,
+        "E_cross": "2.21995716550276161518333819122"
+      },
+      {
+        "candidate": "sigma_0^-1 sigma_1^-1",
+        "n_plus": 0,
+        "n_minus": 2,
+        "writhe": -2,
+        "E_cross": "-1.80183656791148298432164576496"
+      },
+      {
+        "candidate": "sigma_0 sigma_1^-1",
+        "n_plus": 1,
+        "n_minus": 1,
+        "writhe": 0,
+        "E_cross": "0.20906029879563931543084621313"
+      }
+    ],
+    "cancelling_pair_shift": "0.20906029879563931543084621313",
+    "pair_census": {
+      "equal_writhe_pairs": 9,
+      "equal_writhe_disagreements": 0,
+      "differing_writhe_pairs": 46,
+      "differing_writhe_disagreements": 20
+    }
+  }
+}

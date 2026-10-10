@@ -1,0 +1,20 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-vertex-is-exceptional-divisor",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:vertex-is-exceptional-divisor",
+  "kind": "proof",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-vertex-is-exceptional-divisor"
+  ],
+  "text": "vertex-is-exceptional-divisor-proof.md",
+  "provenance": "authored"
+}

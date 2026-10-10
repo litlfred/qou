@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-self-dual-ses",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:self-dual-ses",
+  "kind": "remark",
+  "title": "Self-duality as a short exact sequence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-instanton"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-hodge-star",
+  "tags": [
+    "self-duality",
+    "short-exact-sequence"
+  ],
+  "text": "self-dual-ses.md",
+  "provenance": "authored"
+}

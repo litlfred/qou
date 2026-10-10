@@ -43,7 +43,7 @@ except ImportError:
 
 
 # ── Registry: knot → expected volume ─────────────────────────────
-# Values from content/quantum-observable-universe/lean/QOU/KnotRegistry.lean and Ch11 content blocks.
+# Values from folio/quantum-observable-universe/lean/QOU/KnotRegistry.lean and Ch11 content blocks.
 
 KNOT_REGISTRY = [
     {

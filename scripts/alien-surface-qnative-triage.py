@@ -61,7 +61,7 @@ import pathlib
 import re
 import sys
 
-LEAN_ROOT = pathlib.Path("content/quantum-observable-universe/lean/QOU")
+LEAN_ROOT = pathlib.Path("folio/quantum-observable-universe/lean/QOU")
 
 DECL = re.compile(r"^\s*(?:@\[[^\]]*\]\s*)?(?:noncomputable\s+|private\s+|protected\s+)*"
                   r"(theorem|lemma|def|abbrev|structure|class|instance)\s+([A-Za-z_][^\s:(){\[]*)",

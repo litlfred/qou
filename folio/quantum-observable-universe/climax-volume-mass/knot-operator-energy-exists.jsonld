@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-knot-operator-energy-exists",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:knot-operator-energy-exists",
+  "kind": "proposition",
+  "title": "Existence of the knot operator energy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-knot-operator-energy"
+  ],
+  "tags": [
+    "existence",
+    "knot-operator",
+    "shadow-price",
+    "lp-dual"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.KnotOperatorEnergy.exists",
+  "text": "knot-operator-energy-exists.md",
+  "leanSource": "knot-operator-energy-exists.lean",
+  "provenance": "authored"
+}

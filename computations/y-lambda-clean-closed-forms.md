@@ -93,7 +93,7 @@ This is $O(n)$ work per partition with **no `sympy.simplify`** and
 no manual algebra: cell-by-cell evaluation of the hook-content
 product is already canonical.  The full statement, proof sketch,
 and numerical witness live in
-[`prop:macdonald-hook-telescope`](../../content/quantum-observable-universe/braids-and-knots/macdonald-hook-telescope.md).
+[`prop:macdonald-hook-telescope`](../../folio/quantum-observable-universe/braids-and-knots/macdonald-hook-telescope.md).
 
 The previous "ratio of cyclotomic products" framing was a symptom
 of doing the algebra without naming the underlying structure: the

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-im-q-physical-role",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:im-q-physical-role",
+  "kind": "conjecture",
+  "title": "Physical role of $\\mathrm{Im}(q)$: a substrate moduli parameter not constrained by current QOU observables, with three candidate roles (chirality / phase coordinate / non-Hermitian deformation).",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-im-q-vs-p-skew"
+  ],
+  "tags": [
+    "tier:S",
+    "im-q",
+    "substrate-moduli",
+    "complex-q",
+    "chirality",
+    "non-hermitian",
+    "open-conjecture",
+    "phase-3"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.ImQPhysicalRole",
+  "text": "conj-im-q-physical-role.md",
+  "leanSource": "conj-im-q-physical-role.lean",
+  "provenance": "authored"
+}

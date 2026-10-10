@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-mass-tower-syt-cells",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:mass-tower-syt-cells",
+  "kind": "remark",
+  "title": "SYT / Jucys–Murphy reindexing of the mass tower pair set",
+  "interprets": "papers/quantum-observable-universe/blocks/rem-mass-endomorphism-jet-tower",
+  "tags": [
+    "mass-tower",
+    "jucys-murphy",
+    "syt",
+    "audit"
+  ],
+  "text": "mass-tower-syt-cells.md",
+  "provenance": "authored"
+}

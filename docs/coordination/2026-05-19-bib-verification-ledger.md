@@ -11,7 +11,7 @@ of QOU bibliography entries against the locally-uploaded PDFs.
 `scripts/bib-papers-list.txt`).
 
 **Authoritative status data** (machine-queryable): see
-[`content/bib-qa-verifications.json`](../../content/bib-qa-verifications.json).
+[`folio/bib-qa-verifications.json`](../../folio/bib-qa-verifications.json).
 Loaded by `content/pipeline/bib-qa.ts` and surfaced as QA tag #7
 (`verification_status`) in the standard `bib-qa.json` report
 consumed by `folio-assistant/ui/bib-qa.html`. The JSON file is

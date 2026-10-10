@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-ew-triplet-charge-spin-from-involution",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:ew-triplet-charge-spin-from-involution",
+  "kind": "proof",
+  "title": "Bar-parity of the even-twist carriers and the forced quantum numbers",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-ew-triplet-charge-spin-from-involution",
+    "papers/quantum-observable-universe/blocks/def-spin-involution",
+    "papers/quantum-observable-universe/blocks/prop-self-dual-higgs-real-volume"
+  ],
+  "text": "electroweak-triplet-charge-spin-from-involution-proof.md",
+  "provenance": "authored"
+}

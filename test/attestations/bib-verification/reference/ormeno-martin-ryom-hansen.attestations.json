@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "ormeno-martin-ryom-hansen",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 301,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2402.01890v4/2402.01890v4.pdf"
+        },
+        "id": "ormeno-martin-ryom-hansen",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "WRONG JOIN \u2014 REPORT LOUDLY. This row was seeded to 'james1984representation', whose registered entry is a two-author monograph on symmetric-group representation theory in a Cambridge encyclopedia series. The attached file is a three-author math.RT arXiv preprint, id 2402.01890v4, introducing an idempotent subalgebra of the partition algebra. Not the same work, not the same decade, not the same subject. No matching id exists in folio/schema/references.ts (searched by author surnames, preprint id and subject), so id is set to null. This mis-join matters because james1984representation is one of the most heavily used ids in the Lean tree \u2014 20 files, all the Specht-module machinery (SpechtIrreducible, SpechtStandardBasis, SpechtClassification, SnWedderburnPartitionBridge, SpechtDominanceCore, OVTopAssembly and others) citing it at section-level locators \u2014 so anyone following this ledger row to check a Specht citation would land on an unrelated partition-algebra preprint. RELEVANCE OF THE ACTUAL DOCUMENT: it defines a spherical subalgebra SP_k of the partition algebra P_k via an embedding associated with the trivial representation of S_k, determines a basis, gives the decomposition numbers for every specialization except t=0, and proves quasi-heredity. QOU's representation theory is type-A Iwahori-Hecke and symmetric-group Specht theory, not partition algebras or Deligne's Rep(S_t); I found no QOU claim a spherical-partition-algebra result would bear on. Scope-(a): this document, as read, supplies nothing this folio can consume \u2014 that is a statement about this document, not about partition-algebra methods generally.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Tangential after a careful read: good representation theory in an adjacent but disjoint algebra. The only required change is the join fix (id set to null); creating a ref() entry is not warranted since nothing here would cite it.",
+              "target": "folio/schema/references.ts"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "e1eeb2865f0b"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-four-term-pair-nucleon",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:four-term-pair-nucleon",
+  "kind": "proposition",
+  "title": "Nucleon derivation from 4-term photon pair production",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quark-antiquark-production",
+    "papers/quantum-observable-universe/blocks/prop-confinement-operator-selection"
+  ],
+  "tags": [
+    "pair-production",
+    "nucleon",
+    "proton",
+    "neutron",
+    "4-term-photon",
+    "color-content",
+    "borromean",
+    "derivation"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.four_term_pair_nucleon",
+  "text": "four-term-pair-nucleon.md",
+  "provenance": "authored"
+}

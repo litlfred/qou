@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-diophantine-birthday-trajectory",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:diophantine-birthday-trajectory",
+  "kind": "theorem",
+  "title": "The birthday-trajectory separation: impossible at the birthday, unobstructed at the trajectory, and blocked only by a quantifier",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-diophantine-birthday"
+  ],
+  "cites": [
+    "references/conway1976",
+    "references/gonshor1986"
+  ],
+  "tags": [
+    "surreal-numbers",
+    "birthday",
+    "sign-expansion",
+    "diophantine",
+    "liouville",
+    "roth",
+    "gonshor",
+    "dyadic-approximation"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.liouvilleWith_separates",
+  "text": "diophantine-birthday-trajectory.md",
+  "provenance": "authored"
+}

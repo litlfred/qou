@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-chi-v21-hoefsmit-matrix-derivation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:chi-v21-hoefsmit-matrix-derivation",
+  "kind": "remark",
+  "title": "V_(2,1) Hoefsmit 2×2 matrix derivation: scalar trace + Hecke-quadratic identities + Laurent decomposition of the closed form $-(q^4+1)(q^2-1)/(4q^3)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-chi-per-irrep-cyclotomic-closed-forms"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-chi-per-irrep-cyclotomic-closed-forms",
+  "cites": [
+    "references/hoefsmit1974",
+    "references/jones1985",
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "lean-infrastructure",
+    "v21-hoefsmit",
+    "matrix-derivation",
+    "laurent-decomposition",
+    "scaffolding"
+  ],
+  "text": "chi-v21-hoefsmit-matrix-derivation.md",
+  "leanSource": "chi-v21-hoefsmit-matrix-derivation.lean",
+  "provenance": "authored"
+}

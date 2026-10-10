@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-ns-singularity-descartes",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:ns-singularity-descartes",
+  "kind": "proof",
+  "title": "Proof of ns singularity descartes",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-ns-singularity-descartes"
+  ],
+  "text": "ns-singularity-descartes-proof.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,101 @@
+{
+  "_comment": "This repository's CatHarness instance DECLARATION. Renamed from `harness.json` on 2026-09-26: platform main composes both filenames from the instance's own name (`instanceDeclarationFilename(name) = <name>.json`, `instanceConfigFilename(name) = <name>.config.json` in cat-harness/schemas/cat-harness.ts), and `findDeclarationFile` accepts a file ONLY when its filename stem equals its own `name` field. Stem `harness` against name `qou` failed that test -- the platform's own words for the state are 'the rename-half-done case check:instance-config already reports'. Stem `qou` now agrees. Paired with `qou.config.json` (what this instance IS); this file is WHERE its tree is.",
+  "name": "qou",
+  "description": "Quantum Observable Universe — a framework for quantum physics via rigid monoidal categories",
+  "repository": "litlfred/qou",
+  "canonicalUrl": "https://litlfred.github.io/qou",
+  "_needs_comment": "Added 2026-10-04 (bean qou-n4r9, story S1): the stack this paper folio is built on. Names only; the fetchable edge (git + ref) is authored in qou.config.json `dependencies.folioAssistant`, because a name carries no URL or version. `dependents` was removed from every directory entry: the platform retired the key on 2026-09-30 (inheritance is automatic).",
+  "needs": [
+    "folio-assistant-sci"
+  ],
+  "directories": [
+    {
+      "id": "folio",
+      "path": "folio/",
+      "_graphTypologies_comment": "RENAMED from `graphs` 2026-09-26. Platform main renamed this field on 2026-09-21 and the old name was the conflation it fixes: `graphs: [\"folio\"]` read literally asserts this directory IS the folio graph, when what is meant is that the graph here is OF KIND folio (cat-harness/schemas/cat-harness.ts, GraphNodeDirectoryShape). `graphs` still WORKS -- `acceptLegacyGraphsKey` accepts it where `graphKinds` is absent, and that alias exists precisely for unmigrated downstream folios like this one -- so this is alignment, not a fix for a break. Deliberately not a merge upstream: if both are present `graphKinds` wins, so never carry both.",
+      "graphTypologies": [
+        "folio"
+      ],
+      "description": "The authored folios: quantum-observable-universe and its siblings, each a directory holding a same-named manifest. NOT `folio/` — see `_comment`.",
+      "_path_comment": "MOVED 2026-09-27 (bean qou-yqko): `content/` -> `folio/`, the tree and this `path` in the SAME commit -- the constraint the superseded comment stated, and the reason for it is that an existence-filtered declared directory that is ABSENT is dropped SILENTLY, so a split change leaves every consumer reporting a clean run over nothing. 18,816 files, all detected by git as pure renames (0 insertions, 0 deletions). AUTHORISATION: owner ruling 2026-09-26, verbatim 'Owner, 2026-09-20: \"qou can declare a new folio at content/\". --> temporary' -- so the move IS intended. The platform measurement that once argued against it is NOT retracted and is still true: cat-harness.ts:4557 folioDir() returns directoryForGraph(root,'folio') ?? join(root,'folio'), so the declaration wins and a folio CAN keep `content/`; `content` is even in FOLIO_OWNED. This move is therefore a CHOICE THE OWNER MADE, not a correctness fix, and nothing here should be read as claiming otherwise. SEQUENCING, now resolved both ways. This comment said the move 'CANNOT land before the pin bump' on the strength of '62 call sites across 54 files at the pinned platform df28d02'. The pin bump landed (1ea9676d3f; .folio-assistant-pin = 37a36ce9296), and the 62 came from a BLIND detector: grep '\"content\"' matches `content` only as a complete quoted token, so it cannot see the 402 sites the platform writes as one string (\"content/pipeline/build.ts\"). Re-measured with a classifier whose calibration FAILS if any of ten hand-found sites is missed (10/10 detected): 495 string literals, of which 21 are actually JOINED or RESOLVED against a root -- 11 the platform's own tree, 8 `content/pipeline/<script>` (a miga question, not a rename one), and 2 that resolve a folio's content directory. Those 2 were ALREADY BROKEN for qou (they list `content/` and test for a manifest under `folio/`, so qou discovered zero papers) and are REPAIRED by this move, which makes the primary `folio/folio.ts` path exist. So 0 of 21 block and 2 improve. NOT claimed: their runtime consequence is untraced -- both sit in the MCP-server / document-adapter layer the owner de-prioritised, and may be dead code in both layouts. HISTORY KEPT, because the oscillation is the point: v1 said the move was planned; v2 said DO NOT MOVE, inferring a standing decision from a test comment that merely QUOTED an instruction (a test records what was asked for the day it was written, never what is wanted now); v3 was the owner resolving it; v4, this one, records the landing."
+    },
+    {
+      "id": "library",
+      "path": "library/",
+      "graphTypologies": [
+        "library"
+      ],
+      "description": "L1 source content: one directory per ingested document, and reference DATASETS (e.g. CODATA) whose values are addressable as {{ qou.library.<entry>.<slug> }}."
+    },
+    {
+      "id": "computations",
+      "path": "computations/",
+      "description": "Python computations and the witnesses they write (<name>.witness.json). A witness value is addressable in prose as {{ qou.computations.<witness>.<json path> }}, resolved once for the PDF, the blueprint and the site.",
+      "graphTypologies": [
+        "code",
+        "computation-witness"
+      ],
+      "_graphTypologies_comment": "`code` for the Python computations, and `computation-witness` for the witnesses they write (platform kind added in folio-assistant#2129, story TOOLS T1/T2, beans qou-qb6t and qou-4r5m). One directory, two graph kinds: a directory is a place to look, and the witnesses are told apart by their `.witness.json` suffix. `bun run witness:conformance` reports which witnesses meet the producer contract; it never edits one. Addressable as {{ qou.computations.<witness>.<json path> }} (#7490)."
+    },
+    {
+      "id": "tools",
+      "path": "tool-defs/",
+      "graphTypologies": [
+        "tools"
+      ],
+      "description": "qou's Tool nodes: one per computation script a content block wires to a witness, generated from the block manifests by scripts/gen-producer-tools.ts (story TOOLS T5, bean qou-a3l1).",
+      "_comment": "At tool-defs/, not tools/: qou's tools/ holds its Rust and Python packages, and renaming it would touch 601 files including paper content and every producer's script hash. Owner ruling 2026-10-05, option A on bean qou-kbqy: declare the Tool graph at a new path instead. Overrides match on id, so this is the instance's `tools` graph."
+    },
+    {
+      "id": "processes",
+      "path": "processes/",
+      "graphTypologies": [
+        "processes"
+      ],
+      "description": "qou's BPMN processes, grouped by concern (processes/processes.json). First: content/witness-refresh.bpmn, the owner-gated refresh of computation witnesses (story TOOLS T6, bean qou-kumy)."
+    },
+    {
+      "id": "qa",
+      "path": "test/results/",
+      "graphTypologies": [
+        "qa"
+      ],
+      "storage": {
+        "branch": "cat/cat-harness/qa-reports",
+        "keyedBy": "commit"
+      },
+      "description": "What a QA process produced about this folio, published to the qa-reports branch keyed by commit and never committed (owner ruling 2026-10-04, decision 11: QA results go to the cat-harness qa-reports store). Today it holds the compute-QA verdicts, one qou-compute-qa/v1 file per gate under compute-qa/, written by scripts/compute-qa.py (TOOLS T7, bean qou-4dj1) and published by .github/workflows/compute-qa.yml. The directory is gitignored except for a .gitkeep, so it is present in every checkout and a reader never mistakes an absent directory for a clean run. Story S3, bean qou-4rhu."
+    },
+    {
+      "id": "attestations",
+      "path": "test/attestations/",
+      "graphTypologies": [
+        "attestations"
+      ],
+      "description": "The JUDGEMENT half of QA, kept on main where a git rm of derived results cannot reach it (platform kind `attestations`, schema qa-attestations/v1). Holds the two bibliography judgement ledgers since 2026-10-05 (C9 stories B3/B4): `bib-verification/` (the source ledger, formerly folio/bib-qa-verifications.json, 456 rows in one file per reference) and `bib-human-review/` (formerly folio/schema/references.review.json). Read and written only through the platform's cat-harness/schemas/bib-attestations.ts; Python readers use scripts/lib/bib_ledger.py."
+    },
+    {
+      "id": "lake-cache",
+      "path": "lake-cache/",
+      "graphTypologies": [
+        "lake-cache"
+      ],
+      "storage": {
+        "branchPrefix": "cat/folio-assistant-sci/lake-cache/",
+        "keyedBy": "family",
+        "keyFrom": "<package>-<toolchain-slug>, or toolchain-<slug>, or an addon suffix such as qou-v4-24-0-mathlib-gap-modules"
+      },
+      "description": "Lean build caches, one orphan branch per package and toolchain, restored so a build starts warm. Declared here, on the folio that builds the Lean packages, rather than as a row in folio-assistant's special-branches.json (owner, 2026-10-03). MIGRATED 2026-10-05 (owner: \"migratez qou\") from the legacy `lake-cache/<member>` names: scripts/lib/lake-cache-family.sh writes the declared name and reads it first, falling back to `lake-cache/<member>`, whose branches are kept and never deleted (AGENTS.md rule 9). `lake-cache/` is where a member is mounted; the restore scripts untar into `.lake/`, which the dot-prefix guard forbids declaring."
+    },
+    {
+      "id": "fsh-guts",
+      "path": "fsh-guts/",
+      "graphTypologies": [
+        "fsh-guts"
+      ],
+      "description": "Deprecated and retired material, kept and addressable, deliberately absent from the rendered site (platform kind `fsh-guts`, holds: context). Holds the parked renderers and workflows from the migration (bean qou-6u3n) and older scratch. A file is a graph node only if it declares `$schema: folio-fsh-guts/v1`; the rest is kept bytes, which this declaration makes discoverable rather than claiming they are nodes.",
+      "_comment": "Declared 2026-10-04, story TOOLS T2 (bean qou-4r5m), fsh-guts half. A plain path declaration, not the platform's `source: {kind: branch}` form: qou's trashcan lives in the tree today, and moving it onto a branch is its own owner decision. The computations-witness half of T2 waits on T1 (the platform witness kind, qou-qb6t)."
+    }
+  ],
+  "_platform_scope_comment": "LOAD-BEARING since 2026-10-04: the pin moved to 26c5d37b9 (platform main), which reads this file through readDeclaration. The 2026-09-26 note that it was inert applied to the old pin df28d02."
+}

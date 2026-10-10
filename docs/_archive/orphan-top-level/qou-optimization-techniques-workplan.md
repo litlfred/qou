@@ -29,10 +29,10 @@ GS-string reduction is reserved for normal-form *audits*, not the hot
 path.
 
 **Where it lives today:**
-- `content/quantum-observable-universe/appendix-transfer-matrices/`
+- `folio/quantum-observable-universe/appendix-transfer-matrices/`
   (notation, knot-pairs, interactions, inductive construction,
   heavy-atom examples, worked examples, completeness)
-- `content/quantum-observable-universe/lean/QOU/AtomicMass.lean`,
+- `folio/quantum-observable-universe/lean/QOU/AtomicMass.lean`,
   `Calculations.lean`, `ArchimedeanMassFormula.lean`
 
 **Gaps to close:**
@@ -67,9 +67,9 @@ or the Skein relation, the pipeline routes through the diagrammatic
 evaluator instead of expanding the Hecke word.
 
 **Where it lives today:**
-- `content/quantum-observable-universe/braids-and-knots/` (Hecke
+- `folio/quantum-observable-universe/braids-and-knots/` (Hecke
   presentation, Skein relation, Jones polynomial)
-- `content/quantum-observable-universe/appendix-knot-operations/`
+- `folio/quantum-observable-universe/appendix-knot-operations/`
 - Lean: `QOU/BraidKnot/`, hooks into `QOU.AtomicMass`
 
 **Gaps to close:**
@@ -101,7 +101,7 @@ preprocessor before any LP/SDP, and is the *only* place where Pauli
 exclusion enters the calculation.
 
 **Where it lives today:**
-- `content/quantum-observable-universe/appendix-atomic-mass-calculations/amc-wedderburn-method.md`
+- `folio/quantum-observable-universe/appendix-atomic-mass-calculations/amc-wedderburn-method.md`
 - The three-invariant atomic mass formula (sym/std/alt traces and
   determinants)
 - Lean: `QOU/ChannelSeparation.lean`, `QOU/AtomicMass.lean`
@@ -133,9 +133,9 @@ optimization above (TM, DC, BD) inherits termination + uniqueness
 without re-proving it per call site.
 
 **Where it lives today:**
-- `content/quantum-observable-universe/lean/`
+- `folio/quantum-observable-universe/lean/`
   (`Basic.lean`, `Elaboration.lean`)
-- `content/quantum-observable-universe/algebraic-substrate/`
+- `folio/quantum-observable-universe/algebraic-substrate/`
 
 **Gaps to close:**
 - L41. Audit every `sorry` in QOU/ for the `-- Ref:` citation
@@ -149,7 +149,7 @@ without re-proving it per call site.
 
 **Verification:**
 - `lake build` from repo root
-- `grep -nR "sorry" content/quantum-observable-universe/lean/ | grep -v "Ref:"` returns nothing
+- `grep -nR "sorry" folio/quantum-observable-universe/lean/ | grep -v "Ref:"` returns nothing
   (or only entries with `-- Ref:` on the previous line).
 
 ---

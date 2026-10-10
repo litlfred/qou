@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-gb-spectral-sequence-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:gb-spectral-sequence-interpretation",
+  "kind": "remark",
+  "title": "Open questions, structural value, and the Picard–Lefschetz archimedean realisation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-gb-spectral-sequence",
+    "papers/quantum-observable-universe/blocks/thm-frobenius-codim-universal",
+    "papers/quantum-observable-universe/blocks/prop-mass-formula-regime-switching"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-gb-spectral-sequence",
+  "tags": [
+    "spectral-sequence",
+    "cohomology",
+    "hochschild",
+    "gb-filtration",
+    "picard-lefschetz",
+    "derivation-chain"
+  ],
+  "text": "gb-spectral-sequence-interpretation.md",
+  "provenance": "authored"
+}

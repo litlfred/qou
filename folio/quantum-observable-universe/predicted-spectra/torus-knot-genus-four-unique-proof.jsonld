@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-torus-knot-genus-four-unique",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:torus-knot-genus-four-unique",
+  "kind": "proof",
+  "title": "Proof of torus knot genus four unique",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-torus-knot-genus-four-unique"
+  ],
+  "text": "torus-knot-genus-four-unique-proof.md",
+  "provenance": "authored"
+}

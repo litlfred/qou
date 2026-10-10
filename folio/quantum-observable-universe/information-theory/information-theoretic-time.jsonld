@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-information-theoretic-time",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:information-theoretic-time",
+  "kind": "definition",
+  "title": "Information-Theoretic Time",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-reeb-operations-per-planck",
+    "papers/quantum-observable-universe/blocks/prop-ordering-jet-compatibility"
+  ],
+  "tags": [
+    "information-theory",
+    "planck-time",
+    "discrete-time",
+    "statistical-mechanics",
+    "reeb-flow",
+    "julia-set"
+  ],
+  "leanRef": "qou:QOU.informationTheoreticTime",
+  "text": "information-theoretic-time.md",
+  "leanSource": "information-theoretic-time.lean",
+  "provenance": "authored"
+}

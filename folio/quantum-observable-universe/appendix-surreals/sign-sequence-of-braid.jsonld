@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-sign-sequence-of-braid",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:sign-sequence-of-braid",
+  "kind": "definition",
+  "title": "Sign-sequence functor $B_n \\to \\mathbf{No}$ via Hecke eigenspaces",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hoefsmit-seminormal-form",
+    "papers/quantum-observable-universe/blocks/def-birthday-grading"
+  ],
+  "cites": [
+    "references/gonshor1986",
+    "references/conway1976"
+  ],
+  "tags": [
+    "surreal-numbers",
+    "braid-group",
+    "hecke-algebra",
+    "sign-sequence",
+    "gonshor",
+    "functor"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.signSequenceOfBraid",
+  "text": "sign-sequence-of-braid.md",
+  "provenance": "authored"
+}

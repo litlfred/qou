@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-strutinsky-from-graded-trace",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:strutinsky-from-graded-trace",
+  "kind": "remark",
+  "title": "Strutinsky's shell correction as the categorical residue sum",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-gb-residue-spectral-sum",
+    "papers/quantum-observable-universe/blocks/rem-bw-mass-decomposition-dictionary",
+    "papers/quantum-observable-universe/blocks/prop-shell-schur-weyl-self-duality"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-graded-trace-residue-split",
+  "tags": [
+    "strutinsky",
+    "shell-correction",
+    "nuclear-physics",
+    "liquid-drop",
+    "graded-trace",
+    "interpretation"
+  ],
+  "text": "strutinsky-from-graded-trace.md",
+  "provenance": "authored"
+}

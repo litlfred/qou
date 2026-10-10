@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-gb-spectral-sequence-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:gb-spectral-sequence-table-data",
+  "kind": "table",
+  "title": "Data table from prop:gb-spectral-sequence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-gb-spectral-sequence"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "gb-spectral-sequence-table-data.md",
+  "provenance": "authored"
+}

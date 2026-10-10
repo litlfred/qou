@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-14T06:22:19.275464+00:00",
-  "commitSha": "606a711778e4229098a387dc4024a0b10de8b7f1",
+  "computedAt": "2026-09-27T18:32:58.531344+00:00",
+  "commitSha": "6a939b9882577e2209fe46fb9551731997642d4a",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     },
     {
       "name": "no_unrecognised_anchor",
-      "computed": 2,
+      "computed": 6,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -30,7 +30,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "8019c8193d71",
@@ -48,8 +48,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -61,19 +60,19 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded). Q0_ANCHOR_UNRECOGNISED is an anchor label that maps to no pin, so NO comparison was made — also CI-failing, because 'could not check' is not green, but not a flip and counted apart from one.",
   "data": {
     "counts": {
-      "Q0_OK": 1485,
+      "Q0_OK": 1495,
       "Q0_AMBIGUOUS": 7,
       "Q0_AMBIGUOUS_NO_REASON": 12,
-      "Q0_INDEPENDENT": 156,
-      "Q0_INDEPENDENT_NO_REASON": 4,
+      "Q0_INDEPENDENT": 175,
+      "Q0_INDEPENDENT_NO_REASON": 5,
       "Q0_COMPARISON": 30,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1642,
-      "Q0_VALUE_MISSING": 20,
+      "Q0_ANCHOR_MISSING": 1661,
+      "Q0_VALUE_MISSING": 26,
       "Q0_AUDIT_EXEMPT": 91,
       "Q0_PARSE_ERROR": 0,
-      "Q0_ANCHOR_UNRECOGNISED": 2,
+      "Q0_ANCHOR_UNRECOGNISED": 6,
       "Q0_FLIP": 1
     },
     "match_prefix_digits": 14,
@@ -1321,6 +1320,26 @@
         },
         {
           "witness": "rev-coefficient-slack-is-the-pair-term.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "rev-e-infinity-block-sup-relaxation.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "rev-e-infinity-closed-form.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "rev-e-infinity-edge-limit.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "rev-e-infinity-g1-bottom-edge-cap.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "rev-e-infinity-search-reduction.witness.json",
           "detail": ""
         },
         {
@@ -3052,15 +3071,7 @@
           "detail": ""
         },
         {
-          "witness": "casimir-carlitz-q-bernoulli-probe.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "casimir-epsilon-vacuum-probe.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "casimir-phi-q-markov-probe.witness.json",
           "detail": ""
         },
         {
@@ -4248,11 +4259,19 @@
           "detail": ""
         },
         {
+          "witness": "uic-functional-resolution.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "uic-gate-justification-disproved.witness.json",
           "detail": ""
         },
         {
           "witness": "uic-gate-vs-lp-complementary-slackness.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "uic-sign-decomposition.witness.json",
           "detail": ""
         },
         {
@@ -4540,6 +4559,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-bring-ohara-bridge.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-c-k-recursion-depth-sweep.witness.json",
           "detail": ""
         },
@@ -4768,6 +4791,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-candidate-closures-are-links.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-chain-cannot-carry-coulomb-or-surface.witness.json",
           "detail": ""
         },
@@ -4872,6 +4899,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-cost-minimal-budget-under-reading3.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-counit-trace-transport-overshoot.witness.json",
           "detail": ""
         },
@@ -4921,6 +4952,14 @@
         },
         {
           "witness": "qbeta-crossing-budget-gluon-parity.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-crossing-energy-is-count-plus-writhe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-crossing-energy-separates-the-gluon.witness.json",
           "detail": ""
         },
         {
@@ -5056,7 +5095,27 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-ecat-block-cost-vector.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-ecat-lp-radical-pairing.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-ecat-pair-kernel.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-eigenphase-rationality-quantization.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-eigenphase-taylor-in-u.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-embedding-energy-can-discriminate.witness.json",
           "detail": ""
         },
         {
@@ -5304,6 +5363,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-ladder-uniform-coefficient-bound.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-ladder-verification-1ppq.witness.json",
           "detail": ""
         },
@@ -5340,6 +5403,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-neumann-zagier-cusp-modulus.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-ocneanu-trace-general-n.witness.json",
           "detail": ""
         },
@@ -5365,6 +5432,10 @@
         },
         {
           "witness": "qbeta-ohtsuki-kappa-vs-ck-direct-comparison.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-operator-basis-radical-calibration.witness.json",
           "detail": ""
         },
         {
@@ -5457,6 +5528,10 @@
         },
         {
           "witness": "qbeta-radius-of-convergence-gate-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-reading3-does-not-constrain-the-budget.witness.json",
           "detail": ""
         },
         {
@@ -6878,6 +6953,10 @@
           "detail": ""
         },
         {
+          "witness": "dimq-regularisation-schemes.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "molien-name-gate-missed-triage.witness.json",
           "detail": ""
         },
@@ -6891,6 +6970,10 @@
         },
         {
           "witness": "muon-pin-three-values.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "trace-id-quantum-dimension.witness.json",
           "detail": ""
         },
         {
@@ -9830,6 +9913,10 @@
           "detail": ""
         },
         {
+          "witness": "bond-response-junction-factorisation-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "bond-rule-dashboard-comparison.witness.json",
           "detail": ""
         },
@@ -9886,6 +9973,10 @@
           "detail": ""
         },
         {
+          "witness": "casimir-carlitz-q-bernoulli-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "casimir-grid-sweep-probe.witness.json",
           "detail": ""
         },
@@ -9895,6 +9986,10 @@
         },
         {
           "witness": "casimir-macdonald-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "casimir-phi-q-markov-probe.witness.json",
           "detail": ""
         },
         {
@@ -10978,6 +11073,10 @@
           "detail": ""
         },
         {
+          "witness": "two-nucleon-bond-response-arity-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "two-term-structure-degeneracy.witness.json",
           "detail": ""
         },
@@ -11466,6 +11565,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-constant-residue-character-doubling.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-cosh-avatar-crossanchor-multicoeff-probe.witness.json",
           "detail": ""
         },
@@ -11746,6 +11849,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-ladder-form-cannot-reach-ruled-base.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-ladder-headline-residual-provenance.witness.json",
           "detail": ""
         },
@@ -11919,6 +12026,14 @@
         },
         {
           "witness": "qbeta-row-cap-sweep-of-physical-numbers.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-ruled-base-affine-solve.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-ruled-base-inverts-route5-obstruction.witness.json",
           "detail": ""
         },
         {
@@ -12796,6 +12911,10 @@
           "detail": ""
         },
         {
+          "witness": "chi-branch-point-count-genericity.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "delta-lambda-binding-full-evaluation.witness.json",
           "detail": ""
         },
@@ -13024,11 +13143,79 @@
           "detail": ""
         },
         {
+          "witness": "aomega-m3-gate3-determinant-ladder.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "aomega-m3-pairing-matrix-from-companion.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "aomega-m3-pairing-propagation-blocker.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "aomega-m3-pairing-propagation-closes.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "aomega-m3-pretzel-block-basis-rank.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "aomega-m3-pretzel-gaussian-theta-fusion.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "aomega-m3-pretzel-gz-blocks-index.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "aomega-m3-pretzel-level2-stokes.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "aomega-m3-pretzel-nz-rank-one.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "aomega-m3-pretzel-one-dim-reduction.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "aomega-m3-pretzel-onesided-theta-dressing.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "aomega-m3-pretzel-remainder-from-ptolemy.witness.json",
           "detail": ""
         },
         {
+          "witness": "aomega-m3-pretzel-residue-blocks.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "aomega-m3-pretzel-symmetry-adapted-basis.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "aomega-m3-pretzel-u-deformed-reduction.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "aomega-m3-rotated-index-three-knots.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "aomega-m3-sister-i13-block-index-certification.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "aomega-m3-wronskian-bar-involution-constraint.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "aomega-m3-wronskian-casoratian-gauge.witness.json",
           "detail": ""
         },
         {
@@ -13381,6 +13568,10 @@
         },
         {
           "witness": "two-row-vs-higher-row-binding-split.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "weierstrass-transitivity-narrowing.witness.json",
           "detail": ""
         },
         {
@@ -13804,7 +13995,19 @@
           "detail": "anchor=proton"
         },
         {
+          "witness": "body-number-expansion-classical-floor.witness.json",
+          "detail": "anchor=proton"
+        },
+        {
           "witness": "bpp-a-dependence-bound.witness.json",
+          "detail": "anchor=proton"
+        },
+        {
+          "witness": "branching-pushforward-entangled-support.witness.json",
+          "detail": "anchor=proton"
+        },
+        {
+          "witness": "composition-feasibility-a2.witness.json",
           "detail": "anchor=proton"
         },
         {
@@ -13812,7 +14015,19 @@
           "detail": "anchor=proton"
         },
         {
+          "witness": "deuteron-block-measure-entangled-support.witness.json",
+          "detail": "anchor=proton"
+        },
+        {
+          "witness": "lr-a3-three-factor-branching.witness.json",
+          "detail": "anchor=proton"
+        },
+        {
           "witness": "planck-symbolic-in-q.witness.json",
+          "detail": "anchor=proton"
+        },
+        {
+          "witness": "relative-reeb-datum-trace-angle.witness.json",
           "detail": "anchor=proton"
         },
         {
@@ -13837,6 +14052,10 @@
         }
       ],
       "Q0_INDEPENDENT_NO_REASON": [
+        {
+          "witness": "bring-h1-tangent-ci-route-and-v4-on-32.witness.json",
+          "detail": "anchor=independent with no q0AnchorReason — states that q₀ is never read, but not why, so the claim cannot be checked without re-deriving the import cone"
+        },
         {
           "witness": "chi-content-eigenbasis.witness.json",
           "detail": "anchor=independent with no q0AnchorReason — states that q₀ is never read, but not why, so the claim cannot be checked without re-deriving the import cone"
@@ -13891,6 +14110,22 @@
         }
       ],
       "Q0_ANCHOR_UNRECOGNISED": [
+        {
+          "witness": "b3-asym-over-sym-is-alpha-free.witness.json",
+          "detail": "q0Anchor='physical_proton' is not a pin this audit can map. Put the token ('muon' / 'proton' / 'ambiguous' / 'independent' / 'comparison') in q0Anchor and the prose in q0AnchorReason."
+        },
+        {
+          "witness": "dressed-interleaved-cross-term-charge-parity.witness.json",
+          "detail": "q0Anchor='physical_proton' is not a pin this audit can map. Put the token ('muon' / 'proton' / 'ambiguous' / 'independent' / 'comparison') in q0Anchor and the prose in q0AnchorReason."
+        },
+        {
+          "witness": "gamma-gamma-aggregator-convexity.witness.json",
+          "detail": "q0Anchor='physical_proton' is not a pin this audit can map. Put the token ('muon' / 'proton' / 'ambiguous' / 'independent' / 'comparison') in q0Anchor and the prose in q0AnchorReason."
+        },
+        {
+          "witness": "gamma-gamma-bond-is-pair-independent.witness.json",
+          "detail": "q0Anchor='physical_proton' is not a pin this audit can map. Put the token ('muon' / 'proton' / 'ambiguous' / 'independent' / 'comparison') in q0Anchor and the prose in q0AnchorReason."
+        },
         {
           "witness": "rho-pp-kind-weight-does-not-close-b3.witness.json",
           "detail": "q0Anchor='physical_proton' is not a pin this audit can map. Put the token ('muon' / 'proton' / 'ambiguous' / 'independent' / 'comparison') in q0Anchor and the prose in q0AnchorReason."

@@ -1,0 +1,85 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "hammer2007fourbody",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 183,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-nucl-th-0610105v2/0610105v2.pdf"
+        },
+        "id": "hammer2007fourbody",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Computes four-boson bound-state energies from the Yakubovsky equations in a large-scattering-length effective theory, and presents the resulting three-body/four-body energy correlation explicitly as Tjon lines, for both signs of the scattering length. The corpus runs computations/deltalambda/gap10_tjon_correlation_probe.py, whose entire premise is stated as 'the Tjon correlation is the field's own robust observable for exactly the 3-body/4-body question' and which scores its operator against nature's rho_strong ladder and fractional Tjon deviation; the Lean it rests on, QOU.MassTheory.TjonSimplexForm, carries no -- Ref: at all, and corpus-wide grep of content/ finds zero occurrences of 'Tjon', 'Efimov', 'Yakubovsky' or 'scattering length'. So the folio's own framing of its A=3 vs A=4 discriminator is entirely unsourced, and this paper is the source that supplies it. Corpus-grep run over docs/audits/, content/, computations/, docs/coordination/: the 3-vs-4 body magnitude question is open (AGENTS.md Delta_lambda gate), and no prior agent has closed the citation.",
+          "keyResults": [
+            {
+              "locator": "Sect. III, Figs. 3-4",
+              "statement": "The correlation between the three-body ground-state energy and the four-body ground and excited state energies is a universal curve (a Tjon line): approximately linear outside the threshold region, with positive curvature for a > 0 and negative curvature for a < 0.",
+              "useForFolio": "Sources the premise of gap10_tjon_correlation_probe.py that the 3-body/4-body correlation is a genuine convention-free observable, and gives the field's own shape (linear away from threshold, curvature sign set by sign of a) against which the operator's ladder can be scored rather than only against three AME numbers.",
+              "targets": [
+                "computations/deltalambda/gap10_tjon_correlation_probe.py"
+              ]
+            },
+            {
+              "locator": "Sect. II (following ref. [12])",
+              "statement": "The four-body binding energies are computed WITHOUT an independent four-body parameter at leading order; the two- and three-body inputs suffice.",
+              "useForFolio": "This is the external analogue of the probe's mu4 = 0 baseline (M(4) = 4 M(3) - 6 M(2), Lean tjon_deviation_eq_mu4). It is an analogue, not a proof of that baseline: the corpus's baseline is a simplex/inclusion-exclusion form on a Hecke block trace, whereas this is a zero-range EFT statement about bosons with large scattering length. Cite it as the reason a nonzero mu4 is a meaningful signal, not as a derivation of the form.",
+              "targets": [
+                "computations/deltalambda/gap10_tjon_correlation_probe.py",
+                "computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py"
+              ]
+            },
+            {
+              "locator": "Sect. I (discussion of Yamashita et al.)",
+              "statement": "An opposing position in the literature argues that a four-body parameter SHOULD enter at leading order, with four-He atoms and nucleons the sensitive cases.",
+              "useForFolio": "The corpus's mu4 != 0 finding sits on the contested side of a live disagreement; recording both sides prevents a later agent reading 'no four-body parameter' as settled and treating a nonzero mu4 as automatically an artifact.",
+              "targets": [
+                "computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The Tjon correlation is the sole scoring observable of an active probe and of a sorry-free Lean file, and has no ref() entry and no citation anywhere in the corpus.",
+              "target": "computations/deltalambda/gap10_tjon_correlation_probe.py",
+              "bean": "qou-k6g6"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "The probe compares its operator against a hard-coded rho_strong = (1, 3.8128, 13.0316) from AME. This paper's universal Tjon curve gives an independent, dimensionless target: check whether the operator's fractional Tjon deviation sits on the universal band and whether its curvature sign matches. A mismatch is informative either way; an agreement must NOT be back-fitted into any weight.",
+              "target": "computations/deltalambda/gap10_tjon_correlation_probe.py",
+              "bean": "qou-f3ec"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "The folio has no content block at all on the 3-body/4-body universality it is scoring against. A remark stating the Tjon line, the no-four-body-parameter claim and the Yamashita counter-position, and separating them from the corpus's own simplex identity, would stop the analogy being read as an established premise (AGENTS.md 'conditional-proved != premise-established').",
+              "target": "alg:delta-lambda-closure",
+              "bean": "qou-4wvz"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "5f3bd6d31a41"
+        },
+        "note": "Source IS held: library/arxiv-nucl-th-0610105v2. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+        "verified_at": "2026-09-03T04:19:53Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

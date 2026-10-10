@@ -1,0 +1,41 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-lepton-mass-tower-canonical",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:lepton-mass-tower-canonical",
+  "kind": "conjecture",
+  "title": "Canonical operator-level lepton-mass-tower formula: there exists a categorical formula $\\mathfrak{m}(K_\\ell) = m_e \\cdot \\mathcal{F}_\\ell(q)$ for each lepton $\\ell \\in \\{\\mathfrak{e}, \\mu, \\tau\\}$ expressed as a per-braid Markov-trace-weighted sum over $K_\\ell$'s braid representative, **without** invoking the superseded scalar substrate density $\\rho_q = 1/\\hbar_q^2$ as a dimensional factor.",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-rho-k-graded-expansion",
+    "papers/quantum-observable-universe/blocks/prop-per-braid-mass-tower",
+    "papers/quantum-observable-universe/blocks/prop-categorical-mass-markov",
+    "papers/quantum-observable-universe/blocks/def-typed-crossing-operator"
+  ],
+  "cites": [
+    "references/kashaev1995",
+    "references/wenzl1988",
+    "references/jones1987"
+  ],
+  "tags": [
+    "tier:E",
+    "lepton",
+    "mass-formula",
+    "operator-level",
+    "non-superseded",
+    "categorical",
+    "open-conjecture",
+    "phase-3"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.LeptonMassTowerCanonical.lepton_mass_ratio",
+  "text": "lepton-mass-tower-canonical.md",
+  "leanSource": "lepton-mass-tower-canonical.lean",
+  "provenance": "authored"
+}

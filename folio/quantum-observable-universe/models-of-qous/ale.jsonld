@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-ale",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:ale",
+  "kind": "example",
+  "title": "ALE links",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-c-quantum-observable-universe",
+    "papers/quantum-observable-universe/blocks/ex-reeb-decomposition"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+  "tags": [
+    "ale",
+    "orbifold",
+    "mckay-correspondence"
+  ],
+  "text": "ale.md",
+  "provenance": "authored"
+}

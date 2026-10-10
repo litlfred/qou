@@ -127,7 +127,7 @@ m_borromean_MeV = m_borromean * M_E_MEV
 # ══════════════════════════════════════════════════════════════
 
 # (Z, N, A, B_per_A [MeV], element_name)
-# Extracted from content/quantum-observable-universe/appendix-atomic-mass-calculations/amc-calculations.md
+# Extracted from folio/quantum-observable-universe/appendix-atomic-mass-calculations/amc-calculations.md
 AME2020 = [
     (  1,   0,   1,   0.0000, "Hydrogen"),
     (  2,   2,   4,   7.0739, "Helium"),

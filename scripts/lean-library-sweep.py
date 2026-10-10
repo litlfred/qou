@@ -42,6 +42,9 @@ never rebuilt.
     scripts/lean-library-sweep.py [--shadow DIR] [--jobs N] [--limit N]
 
 `--shadow` reuses a shadow across runs (~2.3 GB, and the copy is the slow part).
+A reused shadow is topped up on every run -- anything the real olean tree
+gained since it was built is linked in, because the shadow MASKS that tree
+rather than layering over it and a gap reads as a RED (see refresh_shadow).
 `--jobs` parallelises independent modules within a topological layer.
 """
 
@@ -73,7 +76,7 @@ LEAN_OPTS = ["-DautoImplicit=false", "-s", "65536"]
 ROOT = pathlib.Path(
     subprocess.run(["git", "rev-parse", "--show-toplevel"],
                    capture_output=True, text=True, check=True).stdout.strip())
-PKG = ROOT / "content/quantum-observable-universe/lean"   # default; see packages()
+PKG = ROOT / "folio/quantum-observable-universe/lean"   # default; see packages()
 LIB = "QOU"
 
 
@@ -128,7 +131,17 @@ def load_graph() -> tuple[dict, dict]:
 def last_commit_times() -> dict[str, int]:
     """Repo-relative path -> unix time of its most recent commit, in one pass."""
     out = subprocess.run(
-        ["git", "log", "--format=%ct", "--name-only", "--", str(PKG / LIB)],
+        # BOTH paths.  `PKG/LIB` is the namespace DIRECTORY; the library root
+        # module `PKG/LIB.lean` sits BESIDE it and is not under it, so a log
+        # scoped to the directory alone never sees the root and returns no time
+        # for it.  `dirty_closure` then marks a module with no commit time as
+        # changed UNCONDITIONALLY, so the root was permanently dirty by
+        # construction -- a floor of exactly 1 that no amount of rebuilding can
+        # clear.  Measured 2026-09-14: after a full progressive reseed took the
+        # QOU closure 1261 -> 1, that surviving 1 was the root, and it was this,
+        # not work left undone.
+        ["git", "log", "--format=%ct", "--name-only", "--",
+         str(PKG / LIB), str(PKG / f"{LIB}.lean")],
         cwd=ROOT, capture_output=True, text=True).stdout
     times, ts = {}, None
     for line in out.splitlines():
@@ -366,6 +379,44 @@ def main() -> int:
     return rc
 
 
+def refresh_shadow(src: pathlib.Path, dst: pathlib.Path) -> int:
+    """Link into a REUSED shadow every file the real tree has and it lacks.
+
+    A shadow is only populated once, when it is created.  With `--shadow` it is
+    reused across runs, and anything written into the real olean tree after that
+    point is missing from it -- a background `lake build` is the documented case
+    (AGENTS.md: a SessionStart build re-fired by compaction moved the QOU tree
+    2660 -> 2713 oleans mid-sweep).
+
+    That is not a harmless gap.  Per the masking note at the call site, Lean
+    commits to the FIRST LEAN_PATH root holding `<LIB>/` and never consults a
+    later root for anything beneath it, so the real tree is NOT a fallback: a
+    module missing from the shadow reads as "does not exist" and the sweep
+    reports a RED that is about its own shadow.  Measured by a sibling session
+    on `lean-content-sweep.sh`'s `cp -al` shadow: 209 files missing, surfacing
+    as a bogus `QOU.BraidKnot` failure naming an `EdgeDecoupling.olean` that was
+    present in the real tree the whole time (PR #7378 comment 5677632542).
+
+    Only MISSING paths are linked.  A shadow file that differs from its real-tree
+    twin is one a previous run REBUILT -- newer and correct -- and overwriting it
+    would throw away the work the shadow exists to hold.
+    """
+    linked = 0
+    for dirpath, _dirnames, filenames in os.walk(src):
+        rel = pathlib.Path(dirpath).relative_to(src)
+        for name in filenames:
+            target = dst / rel / name
+            if target.exists():
+                continue
+            target.parent.mkdir(parents=True, exist_ok=True)
+            try:
+                os.link(pathlib.Path(dirpath) / name, target)
+            except OSError:
+                shutil.copy2(pathlib.Path(dirpath) / name, target)
+            linked += 1
+    return linked
+
+
 def sweep_one(args) -> int:
     if args.report:
         # Report mode must survive a package with no snapshot at all, because
@@ -499,6 +550,12 @@ def sweep_one(args) -> int:
                 print(f"  hardlink failed ({e}); falling back to a real copy")
                 shutil.rmtree(shadow / LIB, ignore_errors=True)
                 shutil.copytree(oleans / LIB, shadow / LIB)
+        else:
+            # Reused shadow (`--shadow`): top it up.  See refresh_shadow().
+            added = refresh_shadow(oleans / LIB, shadow / LIB)
+            if added:
+                print(f"refreshing reused shadow: linked {added} file(s) "
+                      f"the real tree gained since it was built")
 
         siblings = [str(p) for p in ROOT.glob("content/*/lean/.lake/build/lib/lean")
                     if p != oleans]

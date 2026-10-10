@@ -18,7 +18,7 @@ with Wedderburn weights at n=3:
     w_sym = q² / D,   w_std = (q²+1)² / D,   w_alt = q² / D
     D     = q⁴ + 4q² + 1
 
-The three channels (cf. content/quantum-observable-universe/braids-and-knots/
+The three channels (cf. folio/quantum-observable-universe/braids-and-knots/
 chirality-dual-space-derivation.md, wedderburn-trace-identity.md):
 
     trv (symmetric, partition [n]):     1-dim, trace τ(σ) = q

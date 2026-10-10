@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-dilogarithm-pentagon-associator",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-dilogarithm-pentagon-associator",
+  "kind": "remark",
+  "title": "The $q$-dilogarithm pentagon as the monoidal associator axiom",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-dilogarithm",
+    "papers/quantum-observable-universe/blocks/prop-phi-q-aj-machinery-identification",
+    "papers/quantum-observable-universe/blocks/prop-dilog-pentagon-is-associator"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-dilogarithm",
+  "cites": [
+    "references/faddeev_kashaev1994"
+  ],
+  "tags": [
+    "dilogarithm",
+    "pentagon-identity",
+    "associator",
+    "monoidal"
+  ],
+  "text": "q-dilogarithm-pentagon-associator.md",
+  "provenance": "authored"
+}

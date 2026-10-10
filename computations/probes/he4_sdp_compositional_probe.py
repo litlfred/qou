@@ -7,7 +7,7 @@ Recreated 2026-07-02: the original producer
 while the block kept declaring
 computations/he4-sdp-compositional-probe.witness.json. This probe
 regenerates that witness from the block's .md specification
-(content/quantum-observable-universe/mass-theory/he4-channel-active-set.md).
+(folio/quantum-observable-universe/mass-theory/he4-channel-active-set.md).
 
 SETUP. The ⁴He = (Z=2, N=2) bound state admits three primary
 compositional channels (each summing to A = 4 nucleons):

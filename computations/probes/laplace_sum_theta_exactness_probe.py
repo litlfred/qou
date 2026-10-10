@@ -2,7 +2,7 @@
 """The Laplace sum -> Laplace integral step is EXPONENTIALLY exact, not O(1/N).
 
 Bean `qou-mlgp` (B).  Formalised in
-`content/quantum-observable-universe/lean/QOU/MathlibExt/GaussianThetaSum.lean`
+`folio/quantum-observable-universe/lean/QOU/MathlibExt/GaussianThetaSum.lean`
 (`hasSum_gaussian_theta`, sorry-free).
 
 WHAT IS AT STAKE.  `one_loop_c_sigma_tetrahedral_probe.py` derives

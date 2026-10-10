@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-electron-shell-braid-capacity",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:electron-shell-braid-capacity",
+  "kind": "definition",
+  "title": "Electron shell as braid bonding capacity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-atomic-braid"
+  ],
+  "tags": [
+    "bonding-capacity",
+    "valence",
+    "trefoil"
+  ],
+  "leanRef": "qou:QOU.Molecular.ElectronShell",
+  "text": "electron-shell-braid-capacity.md",
+  "leanSource": "electron-shell-braid-capacity.lean",
+  "provenance": "authored"
+}

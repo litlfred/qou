@@ -6,8 +6,8 @@ is bar-even. A re-derivation step, not a z-swap.
 
 # Ref: .beans/qou-cds1--s1-science-re-derive-the-qbeta-ck-ladder-under-d-n.md
 # Ref: computations/qbeta/qbeta_net_trace_invariance_probe.py
-# Ref: content/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean
-# Ref: content/quantum-observable-universe/nuclear-interactions/qbeta-counit-closed-form.md
+# Ref: folio/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean
+# Ref: folio/quantum-observable-universe/nuclear-interactions/qbeta-counit-closed-form.md
 
 WHERE THIS SITS. qou-cds1 located the ladder's phase exactly:
 

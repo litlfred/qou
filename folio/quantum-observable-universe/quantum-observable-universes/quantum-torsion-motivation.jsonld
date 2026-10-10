@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-quantum-torsion-motivation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:quantum-torsion-motivation",
+  "kind": "remark",
+  "title": "$\\mathrm{SU}(2)$ action as quantum torsion",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-q-torsion-existence",
+    "papers/quantum-observable-universe/blocks/def-categorical-q-connection",
+    "papers/quantum-observable-universe/blocks/def-quantum-gauge-group"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-q-connection",
+  "tags": [
+    "torsion",
+    "su2",
+    "q-deformation",
+    "spinor"
+  ],
+  "text": "quantum-torsion-motivation.md",
+  "provenance": "authored"
+}
