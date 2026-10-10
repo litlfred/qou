@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-10T08:52:03Z
-updated_at: 2026-10-10T18:16:37Z
+updated_at: 2026-10-10T18:23:04Z
 parent: qou-d8c7
 ---
 
@@ -36,3 +36,6 @@ Still open, so keep open: the Phi_3 '(-1)^n chi swap' argument in the proof chec
 
 2026-10-10 (session_01UboXkGB32JJhxiv7omapE4): Phi3 step generalised. Proof .md now derives S-oddness of Phi3 for every chain of bar-homogeneous factors (the three primitives and the unit are homogeneous; products stay homogeneous; S swaps chi_sym/chi_alt up to sign, so the ratio inverts). Lean, sorry-free over a generic field: chi_swap, barHom_hmul, barHom_chainProd, primitives_barHom, chiRatio_inverts in frobenius-s-classification.lean (axioms: propext, Classical.choice, Quot.sound only). Scope stated: NOT true on all of H_2 (sigma+1 gives ratio product -(q+1)^2/(q-1)^2). Probe |Phi3 + Phi3 o S| <= 1.4e-51 on all seven chains.
 Still open: (a) the statement block itself (decision 3 restatement, two S-odd channels); (b) the in-tree .qa.json sidecars for -proof and the main block are stale. qa-sweep now writes test/attestations/block-qa/*.attestations.json instead and left 4 trap-* criteria needs-agent; not committed, since the old sidecars are what is stale.
+
+
+CORRECTION 2026-10-10 (same session): item (a) above is wrong. The statement block already carries the decision-3 restatement on main (from #7626): two S-odd channels, Phi1^- and h_A^2 Phi3, at frobenius-s-classification.md lines 32-47. The only remaining open item is (b), the stale .qa.json sidecars. Same wrong claim also went into the #7641 PR body and the #7558 comment; both corrected.
