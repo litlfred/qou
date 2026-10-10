@@ -1010,7 +1010,7 @@
 | [lem:tilting-module-rigidity](#lem:tilting-module-rigidity) | Tilting module rigidity | Ch 14 | `qou:QOU.Archimedean.tilting_module_rigidity` |
 | [lem:piece-a-specht-character-trace](#lem:piece-a-specht-character-trace) | Trace of the central element $C_2 = \sum_i L_i^2$ on $S^\mu$ and on the regular representation | Ch 12 | `qou:QOU.BraidKnot.PieceA.trace_centralC2_specht_module` |
 | [lem:topological-mass-cat-transient](#lem:topological-mass-cat-transient) | Transient terms localise to blow-up centres (categorical) | Ch 7 | `qou:QOU.TopologicalMass.cat_transient_localises_blowup` |
-| [lem:topological-mass-transient-localisation](#lem:topological-mass-transient-localisation) | Transient terms localise to exceptional divisors | Ch 7 | `qou:QOU.LiftingDescent.tm_transient_localisation` |
+| [lem:topological-mass-transient-localisation](#lem:topological-mass-transient-localisation) | Transient terms are bounded by exceptional-divisor contributions | Ch 7 | `qou:QOU.LiftingDescent.tm_transient_localisation` |
 | [lem:su2-emergence-volume-determinant](#lem:su2-emergence-volume-determinant) | Volume constraint forces $\det(g_V) = 1$ | Ch 2 | `qou:QOU.su2_emergence_volume_determinant` |
 | [lem:volume-from-rigidity](#lem:volume-from-rigidity) | Volume form from rigidity and symplectic self-duality | Ch 2 | `qou:QOU.volume_from_rigidity` |
 

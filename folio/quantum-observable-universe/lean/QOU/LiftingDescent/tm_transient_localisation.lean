@@ -5,13 +5,18 @@ import Mathlib.Tactic
 
 Canonical Lean for content block
 [`lem:topological-mass-transient-localisation`](../../../quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md):
-*Transient terms localise to exceptional divisors.*
+*Transient terms are bounded by exceptional-divisor contributions.*
 
 **Block statement.**  The transient component `α − τ̂ₙ(α)` has support in
 disjoint discs `Dᵢ` centred at the blow-up points, and the norm of its
-multiplicative integral is a *sum* over the exceptional divisors `Eᵢ`:
+multiplicative integral is *bounded by* a sum over the exceptional divisors
+`Eᵢ`:
 
-  `‖MI∫_Σ (α − τ̂ₙ(α))‖ = Σᵢ ‖MI∫_{Eᵢ} (∇_A q, L ∧ F⁺)‖`.
+  `‖MI∫_Σ (α − τ̂ₙ(α))‖ ≤ Σᵢ ‖MI∫_{Eᵢ} (∇_A q, L ∧ F⁺)‖`.
+
+The block stated equality until 2026-10-10, when it was restated as the
+inequality on owner ruling (bean `tmvac`); the equality is the open
+conjecture class below.
 
 ## What is derived, and what is not
 
@@ -29,7 +34,7 @@ From these, the **inequality** `‖MI∫_Σ‖ ≤ Σᵢ ‖MI∫_{Eᵢ}‖` is 
 (`tm_transient_localisation`) from the triangle inequality of a group
 seminorm.
 
-The **equality** the block states is *not* derivable from these
+The **equality** the block formerly stated is *not* derivable from these
 hypotheses: the proof block's step "the norm of the product equals the sum
 of the norms" is false for a general group norm, and
 `norm_additivity_not_forced` exhibits data satisfying both hypotheses
