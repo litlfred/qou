@@ -42,8 +42,14 @@ export default proposition({
         "part (ii) at `r = 2` (`old_form_ii_false_r2`). Part (iii) at `r = 3` for every `s` is " +
         "computed in `H_3(q)` from the Hecke, braid and Markov relations (`h3Trace_rossoJones`, " +
         "`h3Trace_rossoJones_coprime`, `h3_markov_rossoJones`), and Markov uniqueness on `H_3` is " +
-        "proved (`H3.markov3_unique_adjoin`). Part (iii) for general `r` and Markov uniqueness " +
-        "for `r >= 4` are not formalised; (iii) is cited and checked in " +
+        "proved (`H3.markov3_unique_adjoin`). Part (iii) at `r = 4` for every `s` and every " +
+        "Markov trace is in `QOU/Archimedean/RossoJonesH4.lean` (`h4_markov_rossoJones`): " +
+        "`[2]^4 tr((s1 s2 s3)^s) = [5] q^(3s) + [3] q^s chi4(s) + chi2(s)`, `chi4 = 3` if `4 | s` " +
+        "else `-1`, `chi2 = 2` if `2 | s` else `0`; for odd `s` this is `[5] q^(3s) - [3] q^s`. " +
+        "Markov uniqueness holds for every `r` (`QOU/IwahoriHecke/JonesNormalForm.lean`), and " +
+        "`QOU/IwahoriHecke/MarkovTransfer.lean` shows the torus-braid trace is the same in every " +
+        "Hecke-family algebra, so a closed form at a given `r` needs one model with a Markov " +
+        "trace. Part (iii) for general `r` is not formalised; it is cited and checked in " +
         "exact arithmetic for `r = 2, 3, 4` by `computations/probes/rj_inner_product_conventionD_torus_probe.py`. " +
         "Bean `qou-q425`.",
     },
