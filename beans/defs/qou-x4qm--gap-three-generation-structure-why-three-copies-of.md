@@ -10,7 +10,7 @@ tags:
     - 8f-gen
     - 8f-open
 created_at: 2026-07-31T20:15:08Z
-updated_at: 2026-10-10T12:23:30Z
+updated_at: 2026-10-10T12:47:10Z
 parent: qou-8lxd
 blocked_by:
     - qou-xtcl
@@ -72,3 +72,41 @@ scope note on filter 3's Lean being `trivial`/1-step per the corpus's own
 carries it. This bean is already `blocked-by` it.
 
 Tagged `8f-open`.
+
+
+## 🛑 CORRECTION of my own correction above (same day) — FOUR candidates, and the roast's item (i) is the live problem
+
+My append above corrects the roast's *"two filters, two counts"* to **three**.
+Measured further the same day: it is **four**, and the fourth changes the shape
+of the problem rather than adding a column.
+
+**Candidate 4 is `ex:archimedean-yekutieli`** — generations as the three
+complex-conjugate **pairs of branch points** of the Bring fibration (the six
+points are listed numerically in `bring-fibre-qhalf-figure.md`). It gives
+**3**.
+
+So candidates 1–3 count *admissible torus-knot indices* (4, 3, 2) and
+candidate 4 counts *branch-point orbits* (3). **Two independent countings of
+one quantity**, not four readings of one criterion — which makes roast item
+(iv) ("reconcile the two filters") the wrong framing and roast item **(i)**
+(*"a physical bridge 'normal-form-independent winding ⇒ generation'"*) the
+live problem, now with both sides measured:
+
+> Construct the bijection between the branch-point pairs and the admissible
+> `T(2,n)`, or prove it cannot exist. Under candidate 1 it cannot (`4 ≠ 3`);
+> under candidate 3 it cannot (`2 ≠ 3`).
+
+**Roast item (v) is sharpened, not overturned.** It forecasts *"a proof that
+the filters disagree is likelier than a derivation of three"*. With candidate 4
+in view the disagreement is between two *identifications* rather than two
+candidate filters, so what a proof would establish is that **one of the two
+identifications is wrong** — which is a stronger and more useful negative.
+
+Full record, with the Lagrange sharpening of candidate 3 (`7 ∤ 120`, `9 ∤ 120`,
+so no group of order 120 has such an element), the consequence that candidate 3
+**excludes the tau** (`τ = T(2,7)`), and an explicit caution against conflating
+three distinct triples that appear in the corpus:
+[`docs/audits/2026-10-10-generation-count-two-independent-countings.md`](../../docs/audits/2026-10-10-generation-count-two-independent-countings.md).
+
+Owner selected option 1 (record as open problem, adopt no criterion) on
+2026-10-10. This bean stays `todo` and `blocked-by qou-xtcl`.

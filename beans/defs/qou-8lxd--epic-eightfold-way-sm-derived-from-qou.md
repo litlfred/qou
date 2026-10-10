@@ -213,7 +213,37 @@ are open Lean formalisation. So `8f-lean` is not the cheap front; triaging it
 > `qvpl`'s sub-item A on `8f-tseries`. **It is the highest-leverage item in
 > either front** — five beans across two fronts wait on one construction.
 >
-> **The keystone, newly bodied: `qou-xtcl` and the THREE filters.** It was
+> **🛑 CORRECTED the same day — FOUR candidates, and the fourth reframes it.**
+> The paragraph below says "three filters" and that is my own undercount. There
+> is a fourth, `ex:archimedean-yekutieli`: generations as the three
+> complex-conjugate **pairs of branch points** of the Bring fibration (the six
+> points are listed numerically in `bring-fibre-qhalf-figure.md`), giving **3**.
+>
+> **It is not a fourth column — it counts a different object.** Candidates 1-3
+> count *admissible torus-knot indices* (4, 3, 2); candidate 4 counts
+> *branch-point orbits* (3). So the corpus holds **two independent countings of
+> one physical quantity**, and that makes the open problem nameable where "three
+> filters disagree" did not:
+>
+> > Construct the bijection between the branch-point pairs and the admissible
+> > `T(2,n)`, or prove it cannot exist. Under candidate 1 it cannot (`4 ≠ 3`);
+> > under candidate 3 it cannot (`2 ≠ 3`) — so at least one of the two
+> > identifications is wrong.
+>
+> Two further things the paragraph below misses. **Candidate 3's exclusion is by
+> LAGRANGE** — `|S₅| = 120 = 2³·3·5`, so `7 ∤ 120` and `9 ∤ 120`, i.e. no group
+> of order 120 has an element of those orders; the corpus argues by inspecting
+> the cycle-type table, and Lagrange is stronger and cannot go stale. And **the
+> physical consequence**: `τ = T(2,7)`, so reading candidate 3 as *the*
+> criterion **excludes the tau**, the top and the bottom.
+>
+> **🟧 OWNER DECISION 2026-10-10: option 1 — record as an open problem, adopt no
+> criterion.** Enacted as
+> `docs/audits/2026-10-10-generation-count-two-independent-countings.md`. No
+> block edited, no number moved. The other two dispositions stay open.
+>
+> **The keystone, newly bodied: `qou-xtcl` and the THREE filters** (undercount —
+> read the correction above first)**.** It was
 > title-only (654 chars, body empty) and `qou-x4qm` is `blocked-by` it. The
 > corpus carries three filters on the odd windings and they give three counts —
 > Seifert genus `≤ 4` → `{3,5,7,9}` (**four**, and `torus_knot_genus_four_unique`

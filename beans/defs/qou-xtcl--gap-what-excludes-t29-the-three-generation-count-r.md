@@ -9,7 +9,7 @@ tags:
     - 8f-gen
     - 8f-open
 created_at: 2026-08-01T22:05:54Z
-updated_at: 2026-10-10T12:22:45Z
+updated_at: 2026-10-10T12:47:09Z
 parent: qou-8lxd
 ---
 
@@ -117,3 +117,96 @@ named pattern:
 
 Tagged `8f-open`: this is open research — three dispositions, one of which
 refutes a headline claim — not the one-lemma repair the title implies.
+
+
+## 🛑 CORRECTION of my own append above (same day) — there are FOUR candidates, not three, and the fourth reframes the problem
+
+The table above says "three filters, three counts". **Measured further the same
+day: there is a fourth, and it is the one that makes the problem statable.**
+
+| # | criterion | what it counts | count |
+|---|---|---|---:|
+| 1 | Seifert genus `≤ 4` | admissible `T(2,n)` indices | **4** |
+| 2 | continuant divisibility | candidate 1 minus 9 | 3 |
+| 3 | `S₅`-equivariance | `T(2,n)` with `ℤ_n ↪ S₅` | **2** |
+| 4 | **branch-point pairs** | complex-conjugate pairs of the Bring fibration's six branch points | **3** |
+
+**Candidate 4 is `ex:archimedean-yekutieli`:** *"These correspond to the three
+pairs of branch points under `S₃ ⊂ S₅`. … The three lepton generations then
+correspond to the orbits of the cyclotomic Galois group on the six branch
+points. The fact that there are exactly three generations is a
+Galois-theoretic statement, not an analytic count."* The six points are
+independently recorded and numeric — `bring-fibre-qhalf-figure.md` lists them
+as `z ≈ (0.119, ±1.054)`, `(0.106, ±0.937)`, `(−0.975, ±0.223)`.
+
+### Why this is not a fourth column in the same table
+
+Candidates 1–3 answer *"which torus knots are admissible?"*. Candidate 4
+answers *"how many orbits does the ambient geometry have?"*. So they are **two
+independent countings of one physical quantity**, and the knot-index counting
+gives 4 or 2 while the branch-point counting gives 3.
+
+**That makes the open problem nameable, which "three filters disagree" did
+not:**
+
+> Construct the bijection between the branch-point pairs and the admissible
+> `T(2,n)`, or prove it cannot exist.
+
+Under candidate 1 it cannot (`4 ≠ 3`); under candidate 3 it cannot (`2 ≠ 3`).
+So at least one of the two identifications is wrong, and establishing which is
+the content. This is `qou-x4qm` item (i) — *"a physical bridge
+'normal-form-independent winding ⇒ generation'"* — with both sides now
+measured.
+
+### Three further things the first append got wrong or missed
+
+1. **Candidate 3's exclusion is by LAGRANGE, and is stronger than the corpus's
+   own argument.** `|S₅| = 120 = 2³·3·5`, so `7 ∤ 120` and `9 ∤ 120` (only
+   `3¹`): **no group of order 120** has an element of order 7 or 9. The
+   `-proof.md` argues by inspecting the cycle-type order table `{1,2,3,4,5,6}`;
+   Lagrange gives it in one line and cannot go stale. Prefer it.
+2. **The physical consequence, which I did not state: candidate 3 excludes the
+   TAU.** `prop:lepton-meson-torus-knot-dictionary` assigns `τ = T(2,7)` (with
+   `𝔱`, `𝔟`). So reading candidate 3 as the criterion predicts **two**
+   generations and drops the tau, the top and the bottom — a refutation of a
+   headline claim, not a tidy-up.
+3. **`torus-embeddable-completeness-remark.md` states the genus bound
+   backwards:** *"The Descartes value `g = 4` is the smallest genus
+   accommodating all three lepton generations…"* — a derived value (`Σ₄` IS
+   genus 4, maximal `|Aut| = 120`) described as selected to fit the generation
+   count. The fact is fine; the register reads as selection against the target
+   under §NO FITTING. Recorded, not fixed.
+
+### 🛑 Do NOT conflate the three "three"s
+
+Three distinct triples appear and **I did not establish they are the same
+triple**:
+
+1. three complex-conjugate pairs of **branch points** (`bring-fibre-qhalf-figure`);
+2. three generations ↔ branch-point pairs (`ex:archimedean-yekutieli`);
+3. three copies of `S₃ ⊂ S₅` as *"the stabilisers of the three pairs of **color
+   coordinates**"* (`descartes-braid-structure-proof.md:20`).
+
+(3) is a different object, and that line does not say which three of the ten
+2-subsets of five coordinates it means. Whether (1) and (3) index the same
+triple is **unsettled by anything measured here.**
+
+### Epistemic status of candidate 4
+
+`ex:archimedean-yekutieli` is an `example` block (`interprets:
+"thm:qu-to-qou"`), has **no Lean sibling**, and its `uses[]` are three
+`remark`s — so under §3a it makes no logical claim. It is an **asserted
+correspondence**, not a derivation. What makes it worth more than candidate 2
+is that its mechanism is about the geometry generations are supposed to come
+from, rather than about an unrelated divisibility property.
+
+## Owner decision taken 2026-10-10: option 1, record as an open problem
+
+The owner selected *"record the disagreement as an open problem; adopt no
+filter"*. Enacted as
+[`docs/audits/2026-10-10-generation-count-two-independent-countings.md`](../../docs/audits/2026-10-10-generation-count-two-independent-countings.md),
+which carries all four candidates, the Lagrange sharpening, the tau
+consequence, the register defect, the three-"three"s caution, and the bijection
+statement. **No criterion is adopted, no block is edited, no number moves.**
+The two remaining dispositions (candidate 3 ⇒ two generations; candidate 1 ⇒
+four) stay open and are still the owner's.
