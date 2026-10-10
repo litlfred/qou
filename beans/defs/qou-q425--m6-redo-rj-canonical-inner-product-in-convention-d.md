@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T08:58:07Z
-updated_at: 2026-10-10T18:36:28Z
+updated_at: 2026-10-10T19:06:21Z
 parent: qou-d8c7
 ---
 
@@ -37,3 +37,13 @@ predicted-spectra/rj-canonical-inner-product.md:8 defines tr_M with z = z_C into
 - nonspeakable **pass**.
 
 A real problem outside these four criteria: the final paragraph ("Until 2026-10-10 this proposition used …") is a dated revision note in scholarly prose. AGENTS.md §4d and one-voice Category H put such notes in `authorNotes` with `kind: "refined-framing"`. Neither problem was fixed, because content edits are out of scope here.
+
+
+## 2026-10-10 — general-n spanning + Markov uniqueness PROVED (branch claude/hecke-spanning-theorem-2026-10-10)
+
+New library files (sorry-free, lean-direct -DautoImplicit=false exit 0; #print axioms = propext, Classical.choice, Quot.sound):
+- QOU/IwahoriHecke/JonesNormalForm.lean — any R-algebra with s : N -> A satisfying HeckeFamily N a b s (s_i^2 = a s_i + b, braid, far-commute; convention D is a = q - q^-1, b = 1). adjoin_eq_level: adjoin(s_0..s_{n-1}) = span(words s n), words(n+1) = {x * s_n...s_j : x in words n, j <= n+1}; card_words_le: card <= (n+1)!. markov_unique / markov_unique_of_adjoin_eq_top: normalised, cyclic, Markov (t(x s_k) = z t(x) for x in adjoin(s_<k)) functionals with equal z agree on every level <= N.
+- QOU/IwahoriHecke/JonesNormalFormQuot.lean — markov_unique_quot on the presented QOU.Hecke.IwahoriHecke K q N (verified against a freshly rebuilt Hecke cone, since the Aug-30 cache predates source edits).
+
+STILL OPEN: (1) Rosso–Jones for general r — uniqueness reduces tr((s_0...s_{r-2})^s) to a normal-form computation, but a closed form for general r needs the Wedderburn/Ocneanu-weight structure (or the full-twist centrality + hook-character argument), not formalised; only r = 2, 3 proved. (2) Existence of the Markov trace (Ocneanu) and linear independence of the words (T_w basis) — not proved. (3) markov_trace_unique_axiom NOT discharged: the class QOU.Hecke.MarkovTrace lacks the cross-level Markov field. Replacing it would need: add that field, then instantiate s i := embed <i> (0 above n), a := q - q^-1, b := 1, adjoin = top from HeckeAlgebra.spans, and apply markov_unique_of_adjoin_eq_top. Unverified suspicion: as stated (only tr(sigma_i) and tr(sigma_i sigma_j) fixed) the axiom's hypotheses are too weak at n >= 3 generators (H_4: 5 irreducible characters vs 3 constraints), which would make it refutable — not checked.
+Not closeable: general-r Rosso–Jones open.
