@@ -457,12 +457,45 @@ no overlap with my files; no rebase required.
 | Multiplicity-refined 2-input rules (4 simple) | refuted | PR #639 cycle 5b |
 | LP cost argmax | refuted (1/3) | PR #639 cycle 6 |
 | **SDP with diagonal Gram** | refuted (1/3) | **PR #639 cycle 6** |
-| Per-partition k_λ (max-|μ| selector, EMPIRICAL) | **closes** | PR #639 cycle 5b |
+| Per-partition k_λ (selects the max-\|contrib\| block; **FITTED**) | **fitted — see note below** | PR #639 cycle 5b |
 | SDP with full off-diagonal Gram | UNTESTED | next probe |
 
 ### Open structural question (sharpened)
 
-The empirical max-|μ| selector closes all 3 atoms (cycle 5b).
+> **🛑 CORRECTED 2026-10-10 — this row read "closes" and the sentence below it
+> read "The empirical max-|μ| selector closes all 3 atoms (cycle 5b)". Both are
+> withdrawn. The rule is a FIT, it is mislabelled, and "closes" did not mean
+> agreement with the data.**
+>
+> **It is a fit.** The originating probe (readable commit-pinned at
+> `0763606e4f^:_deprecated/probes/probe_phiq_per_partition_klambda.py`; the
+> `_deprecated/` tree is no longer on main) states the rule under test verbatim as
+> *"k_lambda = 1 if lambda is the **maximum-|contrib| outlier** for the atom"* —
+> selection of the block that dominates the quantity being reproduced. AGENTS.md
+> §"NO FITTING, EXCEPT CAL-1/2/3" classes that as a fit even with no continuous
+> parameter tuned.
+>
+> **The "max-|μ|" label is wrong, refuted by the probe's own data.** For tritium
+> the flipped block is `[6, 3]` (witness `/data/dominant_partitions/tritium/lambda`)
+> while that probe's docstring puts T's `max|μ| = 8.23` at `[4, 3, 1, 1]`. The rule
+> selected by *contribution* and was later relabelled by *eigenvalue magnitude*.
+>
+> **"Closes" meant `|tower| < 2`, and was never compared to AME.** The probe's own
+> closure print reads *"atoms collapse to small-magnitude towers (|tower| < 2)"*.
+> It records `ame_MeV` beside each atom and does not test against it. Recomputed
+> from its committed witness:
+>
+> | atom | flipped block | tower (fitted) | AME `B` | miss |
+> |---|---|---:|---:|---:|
+> | deuteron | `[2,2,1,1]` | 0.8764 | 2.2246 | **−60.6 %** |
+> | tritium | `[6,3]` | 1.9370 | 8.4818 | **−77.2 %** |
+> | ³He | `[5,4]` | 1.0659 | 7.7181 | **−86.2 %** |
+>
+> The criterion is satisfied by driving the tower *toward zero* while the AME
+> bindings are 2.22 / 8.48 / 7.72 — it is **anti-correlated** with the data it was
+> taken to close. Deriving a real selector, or proving none exists, is bean
+> `qou-9f4h`; the question remains the open part of `conj:brane-tower-z-habiro`.
+
 The closed-form **substrate-derivable** identification of that
 selector is the remaining open piece. Two routes remain:
 

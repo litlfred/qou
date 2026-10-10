@@ -33,6 +33,77 @@ exist?" — is **not** refuted; it is the open part of
 which the paper keeps as an honest open conjecture. Only the
 failed-candidate enumeration moves here.
 
+#### 7. **max-|contrib| outlier** (the rule actually in the compute) — **FITTED, not refuted** — added 2026-10-10
+
+The six above are refuted candidates. This seventh is different and worse: it
+is the rule the **live compute has been using**, it was recorded as *closing*
+all three atoms, and it is a **fit**. It did not appear in the original table
+because nobody had traced the compute's `k_λ` back to its origin.
+
+**Origin.** PR #639 cycle 5b, `probe_phiq_per_partition_klambda.py`. Readable
+commit-pinned at
+`0763606e4f^:_deprecated/probes/probe_phiq_per_partition_klambda.py` —
+quote the pinned form, because the `_deprecated/` tree is **no longer on
+`main`** (removed 2026-10-10; it survives on branch
+`cat/cat-harness/fsh-guts`).
+
+**Why it is a fit.** The probe's own docstring states the rule under test
+verbatim:
+
+> *"Candidate rule under test: `k_λ = 1` if λ is the **maximum-|contrib|
+> outlier** for the atom; `k_λ = ` atom-uniform-`k` otherwise."*
+
+Selection by maximum-|contrib| is selection of the Wedderburn block that
+**dominates the quantity being reproduced**. Per AGENTS.md §"NO FITTING,
+EXCEPT CAL-1/2/3": *"Selection against the target — choosing an object because
+the choice reproduces the measured value — is a fit even though no continuous
+parameter is tuned."* No continuous parameter is tuned here; it is still a fit.
+
+**The published label is also wrong, and the probe's own data refutes it.** The
+rule reached the compute as *"1 iff λ is the max-|μ| partition"*. For tritium
+the block it flips is **`[6, 3]`** (witness
+`/data/dominant_partitions/tritium/lambda`), while the same probe's docstring
+puts T's `max|μ| = 8.23` at **`[4, 3, 1, 1]`**. Two different partitions: the
+rule selected by *contribution* and was later relabelled by *eigenvalue
+magnitude*. At one live site the relabel could not even have been evaluated —
+`derived_chi_catalogue_build.py` hardcodes `k_lambda=1` beside
+`mu_eigenvalues=["?", "?"]`.
+
+**"Closes" meant `|tower| < 2` and was never compared to AME.** The probe's
+closure print reads *"atoms collapse to small-magnitude towers (|tower| < 2)"*.
+It records `ame_MeV` beside each atom and does not test against it. Recomputed
+from its committed witness:
+
+| atom | flipped block | tower (fitted) | AME `B` (MeV) | miss |
+|---|---|---:|---:|---:|
+| deuteron | `[2,2,1,1]` | 0.8764 | 2.2246 | **−60.6 %** |
+| tritium | `[6,3]` | 1.9370 | 8.4818 | **−77.2 %** |
+| ³He | `[5,4]` | 1.0659 | 7.7181 | **−86.2 %** |
+
+So the criterion is satisfied by driving the tower **toward zero**, while the
+AME bindings are 2.22 / 8.48 / 7.72 — the closure test is **anti-correlated**
+with the data it was taken to close. "Closes all 3 atoms" was a magnitude
+threshold, not an agreement. `docs/coordination/2026-05-10-non-calibrated-q-beta-mass.md`
+carried the `**closes**` verdict until 2026-10-10 and is corrected in place.
+
+**Scope.** This is a statement about the *selection rule*, not about the
+brane tower. Per AGENTS.md §"Before declaring refuted": **scope (a)** — this
+rule, as implemented, is a fit and its recorded closure does not test the
+data. No ingredient is excluded, and the open question above is untouched.
+
+**Live state.** `k_λ` is emitted by three witnesses and **read numerically by
+nothing**; the three producers now label it a fit in place. The third witness,
+`delta-lambda-categorical-verification`, carries a `k_lambda` field that is a
+**different object** — a jet-prolongation order, per that producer's own
+docstring — so the name is a collision, not a third consumer of this rule.
+
+**What would replace it:** a *derived* structural selector `λ ↦ k_λ`, or a
+proof that none exists. Bean `qou-9f4h`, which stays open per §13a (the
+question is part of an open conjecture). The one route the May ledger left
+unexplored is the **full off-diagonal-Gram SDP**, still recorded `UNTESTED`
+there; the diagonal-Gram simplification is already refuted (1/3). Whatever
+replaces it may **not** be selected against AME.
+
 ### Refuted `n⋆` families split out of `conj:brane-tower-z-habiro`
 
 The brane-tower conjecture stays in the paper (it is an *open*

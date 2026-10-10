@@ -22,7 +22,7 @@ Hoefsmit |μ|-eigenvalues, the per-partition truncation order k_λ
 (basis OPEN -- see the `k_λ` note below), the leading Markov weight
 y_λ(0), the SDP shadow price y_λ⋆, and a `tier` provenance flag.
 
-## The `k_λ` basis is OPEN (corrected 2026-10-10)
+## The `k_λ` rule is a FIT (established 2026-10-10)
 
     `prop:per-partition-k-lambda-rule` NO LONGER EXISTS, and the block it named
     established no rule. It was `rem:per-partition-k-lambda-rule`, a remark whose
@@ -39,13 +39,52 @@ y_λ(0), the SDP shadow price y_λ⋆, and a `tier` provenance flag.
     content block in folio/ establishes any `k_lambda` rule. Owner ruling via relay,
     2026-10-10: the carrier stays audit-doc-only and its citations point there.
 
-    THE VALUE IS UNCHANGED BY THIS NOTE. `k_lambda` is emitted as before; what
-    changes is that its basis is now stated rather than implied by a dead citation.
-    Three witnesses carry `k_lambda` as a field -- derived-chi-catalogue,
-    derived-chi-catalogue-sweep, and delta-lambda-categorical-verification (the
-    Delta_lambda arc). Whether the selector is derived or is a per-partition
-    discrete choice under the NO-FITTING directive is an OWNER decision and is not
-    settled here. Bean qou-3kni.
+    🛑 AND IT IS NOT MERELY "BASIS OPEN" -- IT IS A FIT. That weaker reading stood
+    here for part of 2026-10-10 and is superseded. The rule's origin is PR #639
+    cycle 5b, `probe_phiq_per_partition_klambda.py`, readable at
+    `0763606e4f^:_deprecated/probes/probe_phiq_per_partition_klambda.py` (the
+    `_deprecated/` tree is no longer on main -- cite it commit-pinned, as here).
+    Its own docstring states the rule under test verbatim:
+
+        "Candidate rule under test: k_lambda = 1 if lambda is the
+         maximum-|contrib| outlier for the atom; k_lambda = atom-uniform-k
+         otherwise."
+
+    Selection by maximum-|contrib| is selection of the block that DOMINATES the
+    quantity being reproduced. Per AGENTS.md §"NO FITTING, EXCEPT CAL-1/2/3",
+    "Selection against the target -- choosing an OBJECT because the choice
+    reproduces the measured value -- is a fit even though no continuous parameter
+    is tuned."
+
+    THE LABEL "max-|mu|" IS ALSO WRONG, and the probe's own data refutes it. For
+    tritium the flipped block is [6, 3] (witness
+    `/data/dominant_partitions/tritium/lambda`), while the probe's docstring puts
+    T's max|mu| = 8.23 at [4, 3, 1, 1]. Two different partitions: the rule selected
+    by contribution and was later relabelled by eigenvalue magnitude.
+
+    "CLOSES" MEANT |tower| < 2 AND WAS NEVER COMPARED TO AME. The probe's own
+    closure print reads "atoms collapse to small-magnitude towers (|tower| < 2)".
+    It records `ame_MeV` alongside and does not test against it. Recomputed from
+    its committed witness:
+
+        atom      flipped blk    tower(fitted)    AME B     miss
+        deuteron  [2,2,1,1]            0.8764    2.2246   -60.6%
+        tritium   [6,3]                1.9370    8.4818   -77.2%
+        he3       [5,4]                1.0659    7.7181   -86.2%
+
+    So the criterion is satisfied by driving the tower TOWARD ZERO while the AME
+    bindings are 2.22 / 8.48 / 7.72 -- it is anti-correlated with the data it was
+    taken to close. "Closes all 3 atoms" is a magnitude threshold, not an
+    agreement.
+
+    THE VALUE IS UNCHANGED BY THIS NOTE. `k_lambda` is emitted as before, and
+    nothing reads it numerically; what changes is that it is now labelled a fit
+    instead of carrying an implied derivation. Three witnesses carry `k_lambda` as
+    a field -- derived-chi-catalogue, derived-chi-catalogue-sweep, and
+    delta-lambda-categorical-verification. 🛑 THE THIRD IS A DIFFERENT OBJECT: it
+    is a jet-prolongation order (that file's own docstring, line 18), not a
+    truncation order, and the shared name is a collision. Deriving a structural
+    selector, or proving none exists, is bean qou-9f4h. Bean qou-3kni.
 
 ## Provenance tiers
 
@@ -144,13 +183,17 @@ class KnotPartitionAtomCell:
     # seminormal form, as mpf strings, in non-increasing magnitude order.
     # Feeds k_λ.
     mu_eigenvalues: list[str]
-    # `k_lambda`: per-partition truncation order. 1 iff λ is the max-|μ|
-    # partition of β_H, 2 otherwise.
+    # `k_lambda`: per-partition truncation order, 1 on one block and 2 elsewhere.
     #
-    # 🛑 THE BASIS OF THAT RULE IS OPEN. This cited
-    # `prop:per-partition-k-lambda-rule` until 2026-10-10. See the module
-    # docstring's `k_λ` note and
-    # docs/audits/2026-06-17-refuted-ansatz-lemmas.md.
+    # 🛑 FITTED (selection against target), NOT DERIVED. The rule picks the block
+    # that DOMINATES the tower -- "maximum-|contrib| outlier", in its originating
+    # probe's own words -- which AGENTS.md §NO FITTING classifies as a fit with no
+    # continuous parameter tuned. The "max-|μ|" label this comment carried is
+    # additionally wrong: for tritium the flipped block is [6,3] while max|μ| sits
+    # at [4,3,1,1]. See the module docstring's `k_λ` note for the probe quote, the
+    # per-atom AME misses (-60.6% / -77.2% / -86.2%), and
+    # docs/audits/2026-06-17-refuted-ansatz-lemmas.md. Deriving a real selector is
+    # bean qou-9f4h.
     k_lambda: int
     # `y_lambda_at_zero`: leading Markov-normalisation weight y_λ(0), as an
     # mpf string. Derived via T18 template (Markov axioms on the Wedderburn
