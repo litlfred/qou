@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-10-10T10:40:00Z
+updated_at: 2026-10-10T12:20:00Z
 parent: qou-avtq
 ---
 
@@ -8737,3 +8737,7 @@ item is research, not drain.
 The real gate remains the owner's gluon-letter ruling (`:8676`).
 
 Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-up: `qou-review/avtq-reopened-beans-2026-10-10.md` (project files). Status unchanged.
+
+## 2026-10-10 — owner decision: convention-D extractor support is tracked here
+
+`qbeta_decay_sdp_full_ck.py` and `qbeta_decay_sdp_extended_ck.py` now **refuse** (exit 2) instead of reading the D-frame N3 witness with C-frame rungs (which produced c_2 = −9.296, c_3 = −974). The owner chose (2026-10-10, PR #7574) to merge the refusal and track D support **in this bean**: the extractors can run again only once the c_k ladder is re-derived under convention D, which is the open research item here, not a code change. The old C-frame bodies are kept as `_main_convention_c_historical()`. Bean stays open.
