@@ -1,0 +1,775 @@
+{
+ "$comment": "The 128 block-QA entries with no reviewer.kind, classified by hand for issue #7642 (scoping doc Q2, option a). All 128 have the same shape: criterion `milnor-amalgamated-flow`, keys {result, notes} only, result `pass`, notes `Rewrote seqN`. All were written by scripts/split_amalgamated.py (the owner's amalgamated-chapter rewrite flow: a chapter was rewritten as one amalgamated document in sequences, and the split copied the sequence's verdict to every block it rewrote). Classification: JUDGEMENT. These entries are the record of a rewrite review, not the output of a script checker: they carry no script_hash, no field_hash and no reviewer. So they are copied to test/attestations/block-qa with the agent and human entries, exactly as the platform's isAttestation rule (anything not `script`) does. They are NOT typed as `agent` in place, because entries are stored byte-for-byte; adding a reviewer would be inventing provenance. Store count: 128 kind-less entries held, verified.",
+ "classification": "judgement (amalgamated-flow rewrite record; reviewer kind absent in source)",
+ "count": 128,
+ "entries": [
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/atom-knot-exists",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq20"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/atom-knot-unique",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq20"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/atom-knot",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq20"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/c-equals-bar-iff-all-1dim",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq17"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/categorical-proton-properties",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq24"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/categorical-proton",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq24"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/compound-beta-shell-calibration-interpretation",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq21"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/compound-beta-shell-calibration-key-distinction",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq21"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/compound-beta-shell-calibration",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq21"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/confined-particle",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq19"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/confinement-category",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq19"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/confinement-phase-stratification-interpretation",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq19"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/confinement-phase-stratification",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq19"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/confinement-universality",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq4"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/derived-atom",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq4"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/down-quark-properties",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq4"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/down-quark",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq4"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/dressed-particle",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq19"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq18"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-bring-embedding",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq18"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq18"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-far-commuting-minimal",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq18"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/ew-slot-far-commutation-obstruction",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq18"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/four-term-pair-nucleon",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq4"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/ilp-solution-count-unwrap",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq21"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/intro-atom-isotope-knots",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq20"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/intro-confined-particles-shells",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq19"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/intro-magic-shells",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq21"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/isotope-knot-equivalence",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq20"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/isotope-knot",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq20"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/lepton-meson-parallel",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq17"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/lepton-meson-torus-knot-dictionary",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq17"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/level-sufficiency-interprets",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq19"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/level-sufficiency",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq19"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/magic-shell-coupling-kappa",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq21"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/nucleon-derivation-intro",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq4"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/nucleon-from-photons-summary",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq4"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/phase-scoped-applicability",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq19"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/quantum-dilogarithm-disambiguation",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq21"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/quark-antiquark-production-reduction",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq4"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/quark-antiquark-production",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq4"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/shell-closure-stability-interprets",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq19"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/shell-closure-stability",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq19"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/shell-schur-weyl-self-duality-interpretation",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq21"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/shell-schur-weyl-self-duality",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq21"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/up-quark-properties",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq4"
+  },
+  {
+   "block": "folio/quantum-observable-universe/knots-particles-confinement/up-quark",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq4"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/algebraic-primality",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq3"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/archimedean-remainder-exponential-decay",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq8"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/atomic-braid-mass-intro",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq9"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/atomic-lp-stability",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq9"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/atomic-nf-witness",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq9"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/beta-decay-braid-visualizer",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq8"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/beta-decay-energy-scale",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq8"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/beta-decay-interpretation",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq8"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/beta-stability-interpretation",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq22"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/beta-stability",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq22"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/bring-z5-descent",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq23"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/color-pairing-binding",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq9"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/confinement-frobenius-reciprocity-interpretation",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq2"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/confinement-frobenius-reciprocity",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq2"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/confinement-lp",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq2"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/confinement-misdp",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq3"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/confinement-nucleon-unit",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq2"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/confinement-operator-selection-interpretation",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq2"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/confinement-operator-selection",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq2"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/confinement-sdp-multi-operator",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq2"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/confinement-sdp-spectral-gap",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq2"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/confinement-sdp-vs-lp",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq3"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/confinement-selection-confinement-sdp-vs-intro",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq3"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/confinement-topological-interpretation",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq3"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/confinement-topological",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq3"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/cpt-d6-d7-d8-closure",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq24"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/delta-pre-archimedean",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq8"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/demand-profile",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq5"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/demand-stability",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq5"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/derived-atoms-intro",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq6"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/descent-mirror-intro",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq23"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/e-minus-one",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq23"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/energy-scale-planck",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq22"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/garside-gram-intro",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq7"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/genus-2-intro",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq23"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/geom-universality",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq24"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/gram-matrix-h3-symbolic",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq9"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/gram-weight-eigenstructure",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq7"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/gram-weighted-qvalue",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq7"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/groebner-reduction-methods",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq9"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/helium4-derived-nf",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq6"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/hydrogen-derived-nf",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq6"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/hyperelliptic-z5-classification-interpretation",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq23"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/hyperelliptic-z5-classification",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq23"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/intro-beta-stability-closure",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq22"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/li6-derived-nf",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq6"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/lp-confined",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq3"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/lp-dual-stability",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq3"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/n-equals-1-vacuous-magic",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq3"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/negative-debt-confinement",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq8"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/neutron-qvalue-symbolic",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq8"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/nuclear-binding-intro",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq5"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/nuclear-operator-regimes-interpretation",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq5"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/nuclear-operator-regimes",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq5"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/nucleon-nf-observability",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq8"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/o16-derived-nf",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq6"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/particle-interactions-orphan-reconnect-intro",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq24"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq3"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq8"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/q-zero-stokes-region-identification",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq24"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/qbeta-counit-closed-form",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq8"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/qbeta-counit-transition",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq8"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/qbeta-trace-counit-convergence",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq8"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/silver-ratio-beta-decay-null-interpretation",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq8"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/silver-ratio-beta-decay-null",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq8"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/skein-binding-lagrangian-derivation",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq22"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/skein-binding-lagrangian",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq22"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/spin-from-so3-fiber",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq24"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/step-lp-verification",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq9"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/t-from-trace-cyclicity",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq24"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/transfer-beta-decay-intro",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq8"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/transfer-beta-decay-q-beta-spectral-intro",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq8"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/type-b-folding-cpt",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq24"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/typed-garside-element",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq7"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/u1-phase-tube",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq23"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/universal-ilp-algorithm",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq9"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/varying-euler-intro",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq23"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/weight-identification-consequences",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq23"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/weinberg-angle-categorical",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq24"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/wigner-su4-from-spin-isospin",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq24"
+  },
+  {
+   "block": "folio/quantum-observable-universe/nuclear-interactions/x5-bring-prym-jacobian",
+   "criterion": "milnor-amalgamated-flow",
+   "result": "pass",
+   "notes": "Rewrote seq23"
+  }
+ ]
+}
