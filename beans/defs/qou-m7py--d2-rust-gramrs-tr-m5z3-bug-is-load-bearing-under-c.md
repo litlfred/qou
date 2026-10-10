@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-14T16:21:57Z
-updated_at: 2026-10-04T15:12:16Z
+updated_at: 2026-10-10T07:27:31Z
 parent: qou-cdx1
 ---
 
@@ -290,3 +290,46 @@ Do not describe all five as "broken by the z³ bug" — only the first is.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-14 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — BOTH divergences this bean names were resolved on 2026-08-15, ONE DAY after its last substantive update (bean `qou-am5t`)
+
+This bean's premise is *"the Rust bug is not independently fixable … **Do not
+'just fix the Rust bug.'** That is the trap this bean exists to name."* That
+premise is **overtaken**, and the reason it went unnoticed is a one-day miss:
+the bean's last substantive entry is 2026-08-14 and the fix landed 2026-08-15.
+
+`tools/hecke-engine/src/gram.rs`, module header, verbatim:
+
+> *"Both long-standing divergences from the Python mirror are RESOLVED as of
+> 2026-08-15: **1.** `TR_M[5]` is now `h·z² + z`, matching `pyhecke.gram.TR_M`.
+> It was `z³` here from before 2026-05-19 … **2.** The Gram is therefore
+> SINGULAR, and that is correct, not a defect."*
+
+So the coupling this bean predicted **did materialise and was handled**:
+
+- `gram_inverse` is **REMOVED** (`:383`), not deprecated and deliberately *not*
+  rebound to the pseudoinverse — *"they differ exactly on the radical, which is
+  the entire content of this change; handing a caller a different matrix under a
+  name they already trust is how a wrong number keeps circulating."*
+- `gram_quotient_inverse` (Moore–Penrose on `H_3(q)/rad`) and `gram_radical`
+  are the replacements, which is this bean's Remaining item 2 — *"migrate
+  consumers to the quotient inverse under a NEW key"* — done, and done the way
+  the item asked.
+- The re-derivation cost in Remaining item 1 is measured in that same header:
+  `TR_M[5]` +200.5 % (0.2300 → 0.6912), 19 of 36 Gram entries move, rank 6 → 5,
+  `‖G⁺ − G⁻¹‖` **73.3 %** relative — *"this was a re-derivation, not a patch"*.
+
+**NOT verified by me, and the reason this bean stays open:** Remaining items 3
+and 4 — rebuild `pyhecke_native` and drop the `_native_ok()` guard, and
+regenerate the 53 certificates (marked `[OWNER/tnjb]`). `pyhecke_native` is not
+installed in this container, which is the same caveat this bean already records
+for the C/D split measurement, so the live split is still not observable here.
+
+**Correction of my own, made the same hour:** in the `qou-cdx1` re-audit append
+I listed this bean as *"measurably satisfied"* on the strength of a single
+grepped line (`gram.rs:138`). That was too fast and it is retracted — the
+headline bug is fixed, the bean is not. Retracted on `qou-cdx1` as well. It is
+an instance of exactly the hazard the re-audit's own status doc warns about: a
+path- or line-level match tests whether a *file* still carries a defect, not
+whether a *bean's claim* is closed.
