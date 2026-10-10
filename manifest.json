@@ -1,11 +1,20 @@
 {
   "$schema": "state-manifest/v1",
-  "status": "seed",
-  "authoritative": false,
+  "status": "live",
+  "authoritative": true,
   "subgraph": "fsh-guts",
-  "note": "Seed of qou's fsh-guts branch store. main's fsh-guts/ and the three _deprecated/ trees are copied here unchanged; main remains authoritative until the cut-over.",
-  "source": { "ref": "main", "sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd" },
+  "note": "qou's fsh-guts branch store. Authoritative since the cut-over (qou#7622, 2026-10-10); main no longer carries fsh-guts/ or the _deprecated/ trees.",
+  "source": {
+    "ref": "main",
+    "sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+  },
   "seededAt": "2026-10-10T13:27:34Z",
   "keyedBy": "tip",
-  "graphs": [ { "path": "fsh-guts", "tree": "98ed17eb61978b739490d61209b120c6a9081743", "files": 1944 } ]
+  "graphs": [
+    {
+      "path": "fsh-guts",
+      "tree": "4fb16a1773b08b8e3b7d40008f58ef914c61d626",
+      "files": 1946
+    }
+  ]
 }
