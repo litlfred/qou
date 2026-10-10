@@ -252,3 +252,12 @@ re-implements it in-repo rather than porting it.
 
 **Next:** the Murota / L♮ certificate as a new PR (owner decision 2026-10-10: new PR after
 #7419), targeting R6 green at cut 25, with the tail lemma (all T) and the all-pe lemma still open.
+
+## 2026-10-10 (night) — L♮ certificate committed as a probe
+
+`computations/deltalambda/rev_e_infinity_xbot_lnatural_probe.py` (re-implements the lost scratch
+`lnat.py`): M1–M6 pass at `pe = 0..20`, `N = 40` rows, `ELLMAX = 3000`. Integer maximum
+**2.159802376118285961604** for every `pe >= 3` (pe 0/1/2: 1.0762795 / 1.7009977 / 2.0254822),
+each certified by min cut; the best NON-EMPTY move at any optimum loses >= 0.000759 (pe = 2).
+Cut **25** (threshold -1.97424; xrun(25) = -1.96143, xrun(26) = -2.01360), limit 32.
+**Still conditional** on the tail lemma (T > 40) and the all-pe lemma (pe > 20); this bean stays open.
