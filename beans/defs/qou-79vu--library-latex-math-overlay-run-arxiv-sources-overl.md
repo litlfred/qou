@@ -9,7 +9,7 @@ tags:
     - ingestion
 parent: qou-1qhv
 created_at: 2026-10-10T14:40:00Z
-updated_at: 2026-10-10T14:40:00Z
+updated_at: 2026-10-10T15:20:00Z
 ---
 
 ## Why
@@ -24,6 +24,13 @@ litlfred/cat-harness-tools PR #52 (issue #51), branch `claude/latex-math-rung`:
   `library/<entry>/source/e-print` and writes `source.json` with the URL,
   sha256, size and fetch time. It reads the id from the directory name and
   handles old-style ids (`alg-geom/9408004v1`).
+  It also unpacks the bundle's `.tex`, `.bib`, `.bbl`, `.sty`, `.cls` and any
+  licence file into `source/files/`, and writes `licence.json` from arXiv's
+  own metadata (`<license>` in the OAI-PMH record), for PDF-only papers too.
+- `content/pipeline/gen-library-jsonld.ts`: emits
+  `library/<entry>/source/manifest.jsonld`, a `SourceDocument` that is
+  `partOf` the paper. It lists every source file with its sha256, and its
+  licence is carried as `dcterms:license`.
 - `scripts/latex-math-overlay.py`: replaces a section's text with its LaTeX
   `\section`, converted by pandoc with `$…$` maths, only when three gates pass:
   - the titles agree (sections are never paired by position);
@@ -62,11 +69,32 @@ python3 $T/formula-benchmark.py library/arxiv-* --json build/benchmarks/formula-
 python3 $T/latex-math-overlay.py library/arxiv-* --dry-run
 # 3. Overlay
 python3 $T/latex-math-overlay.py library/arxiv-*
-# 4. Regenerate the derived files (INDEX.md, summaries, .jsonld graph
-#    siblings) with the ingest driver, per the owning session's procedure.
+# 4. Regenerate the graph: this emits source/manifest.jsonld and carries
+#    licence.json into every manifest as dcterms:license
+bun run ../cat-harness-tools/content/pipeline/gen-library-jsonld.ts
+#    then INDEX.md and summaries, per the owning session's procedure.
 ```
 
+## Licences decide publication (owner, 2026-10-10)
+
+Whether a paper may be republished with the publication depends on its
+recorded licence, so treat the licence counts as a deliverable, not a side
+effect.
+- `stated` with a CC licence (`creativecommons.org/...`): republication is
+  allowed on that licence's terms.
+- `stated` as `arxiv.org/licenses/nonexclusive-distrib/1.0/` (arXiv's default):
+  this grants rights to arXiv only, not to us.
+- `unknown`: arXiv recorded no licence; nothing is established.
+
+A `LICENSE` file inside a source bundle is noted in the record and not
+interpreted; read it by hand. An editor-written `licence.json` is never
+overwritten.
+
 ## Report (in this bean, when done)
+
+- Licence counts: CC-BY, CC-BY-SA, CC0, other CC, arXiv non-exclusive,
+  unknown, and bundles that carry a licence file. List the republishable
+  entries.
 
 - Fetch outcome counts: fetched / PDF-only / failed.
 - Overlay counts: entries overlaid, sections overlaid, and failures for each
@@ -84,5 +112,6 @@ python3 $T/latex-math-overlay.py library/arxiv-*
 
 ## Done when
 
-The overlay has run on every arXiv entry that has a source, the derived files
+Every arXiv entry has a licence record and, where arXiv has one, its source in
+the graph; the overlay has run on every entry that has a source; the derived files
 are regenerated and committed in a PR, and the counts above are recorded here.
