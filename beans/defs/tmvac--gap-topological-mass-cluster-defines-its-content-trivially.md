@@ -9,7 +9,7 @@ tags:
     - lean
     - vacuity
 created_at: 2026-08-08T12:00:00Z
-updated_at: 2026-10-10T13:15:19Z
+updated_at: 2026-10-10T14:48:20Z
 parent: qou-d8c7
 ---
 
@@ -90,3 +90,9 @@ Note: on main the 0/1/identity definitions this bean names had already been repl
 Verification: lean-direct (-DautoImplicit=false -s 65536) exit 0 on all three, no sorry; #print axioms ⊆ {propext, Classical.choice, Quot.sound}. No Lean consumers of the old declarations exist. validate: 9 issues (baseline).
 
 Open: the transient-localisation block's equality (proof step 'norm of product = sum of norms' is false for a general group norm). Owner call: restate the lemma as an inequality, or demote it to a conjecture. Not closeable while that stands; the vacuity itself is fixed. Residue trivialVortex (topological-mass-conjecture.lean:180) not touched — out of this bean's three modules.
+
+## 2026-10-10 — owner pick applied: lemma restated as the inequality (branch claude/tmvac-fd2u-owner-picks-2026-10-10, fd5d46102 / 90b08145b)
+
+lem:topological-mass-transient-localisation (label kept) now states ||MI int_Sigma (alpha - tau_n alpha)|| <= sum_i ||MI int_{E_i}||, matching tm_transient_localisation.lean. Title -> 'Transient terms are bounded by exceptional-divisor contributions'; .ts caveat replaced by a refined-framing note; proof block rewritten to the triangle-inequality argument plus the Multiplicative R counterexample to additivity. Consumer prf:topological-mass (archimedean proof of thm:topological-mass) relied on the equality: it now derives only m <= ||Hol|| + sum Phi_q(z_i) and says equality on that route is conditional on the open transient equality. definition-index title row updated. Lean docstring updated (comment only); lean-direct exit 0.
+
+Still open, so NOT closeable: (1) the equality itself, conjecture class TransientLocalisationNormEquality (no instance) — this bean's own residue, and AGENTS.md 13a; (2) thm:topological-mass's archimedean route now proves only an upper bound (its categorical proof prf:topological-mass-categorical is untouched and not re-audited here); (3) residue trivialVortex (topological-mass-conjecture.lean:180), untouched.
