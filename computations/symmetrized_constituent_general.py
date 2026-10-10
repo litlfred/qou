@@ -65,9 +65,17 @@ from witness_base import WitnessBuilder  # noqa: E402
 from binding_canonical import build_atom_symbolic  # noqa: E402
 from markov_trace_canonical import tr_M_element  # noqa: E402
 from hecke_symbolic import SymbolicHeckeDivision, q as q_sym  # noqa: E402
-from q_parameter import Q as Q0, Q_50_DIGIT_STR  # noqa: E402
+# `Q_50_DIGIT_STR` only.  The float alias `Q` was imported and used in exactly two
+# places, both of them RECORDS of the pin (a display line and a witness
+# parameter) while every computation went through the 50-digit string — so it
+# published 17 of the 50 digits it ran at.  Dropping the import removes the way
+# that could recur, and makes this file read correctly to the bare-`Q`-import
+# screen in `qou-840k`, which flagged it as upstream-capped: it never was, since
+# the float reached no arithmetic.  That screen over-flags, and this file is the
+# first measured instance.
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 DIV = SymbolicHeckeDivision()
@@ -152,7 +160,10 @@ def main() -> int:
     tau_p, tau_n = pp[1], pn[1]
     print("=" * 92)
     print(" General identical-nucleon symmetrization — Frobenius formula, any (Z,N)")
-    print(f"   q₀ = {float(Q0):.10f}   power-sum order kmax = {kmax}")
+    # Print the pin the run actually uses (the 50-digit string), not the float
+    # alias — they agree only to ~17 digits and the display was the one place a
+    # reader could have caught the parameter bug below.
+    print(f"   q₀ = {mp.mpf(Q_50_DIGIT_STR):.10f}   power-sum order kmax = {kmax}")
     print("=" * 92)
     print(f" proton  power sums p_k = tr_M(B_p^k):  "
           + "  ".join(f"p{k}={float(pp[k]):.4f}" for k in range(1, min(kmax, 4) + 1)))
@@ -170,11 +181,20 @@ def main() -> int:
         fer = frobenius(pp, Z, fermionic=True) * frobenius(pn, N, fermionic=True)
         r_bos = bos / naive if naive != 0 else mp.nan
         r_fer = fer / naive if naive != 0 else mp.nan
+        # mpf-valued, NOT float(). Every quantity here is mpf all the way up from
+        # `_trM`, which substitutes the TRUE 50-digit q₀ (line 89) — so the casts
+        # that used to sit in this dict were the ONLY precision loss in the file,
+        # and they were at the recording boundary, not upstream of any
+        # arithmetic. Serialized once, by `_ser_row` at the `add_data` call; the
+        # display loop below format-specs these (`.5f`, `.4f`), which mpf honours
+        # and a serialized string would raise `ValueError: Unknown format code`
+        # on. The ratios are O(1) and the naive powers run to ~1e-6 at ¹⁶O, so
+        # the old cast lost digits rather than magnitude.
         rows.append({
             "isotope": lab, "Z": Z, "N": N, "A": Z + N,
-            "naive_tau_pow": float(naive),
-            "bosonic_hZhN": float(bos), "bosonic_over_naive": float(r_bos),
-            "fermionic_eZeN": float(fer), "fermionic_over_naive": float(r_fer),
+            "naive_tau_pow": naive,
+            "bosonic_hZhN": bos, "bosonic_over_naive": r_bos,
+            "fermionic_eZeN": fer, "fermionic_over_naive": r_fer,
         })
         print(f" {lab:>5}{Z:>3}{N:>3}{float(naive):>13.5f}"
               f"{float(bos):>16.5f}{float(r_bos):>9.4f}"
@@ -197,13 +217,30 @@ def main() -> int:
         "tractable GENERAL infra. Schur-Weyl Z=2,3,4 verified in "
         "QOU.Hecke.IdenticalParticleSymmetrization."
     )
-    w.add_parameter("q0", float(Q0))
+    # `Q_50_DIGIT_STR`, NOT `float(Q)`.  This parameter records WHICH q₀ the run
+    # used, and the run uses the 50-digit pin — `_trM` substitutes
+    # `sp.Float(Q_50_DIGIT_STR, 50)` (line 89) and the float alias reached no
+    # arithmetic in this file.  So the old record was 17 digits beside a 50-digit
+    # computation.  It was the correctly-rounded double of that pin, NOT a
+    # different value (measured: 1.1099785827513808 against
+    # 1.1099785827513808075916690956107688798744991218736), so this is a
+    # completeness fix and not a correction — do not read it as a value change.
+    # It is also the one field here that must NOT simply be `fmt`'d: `fmt` on the
+    # float would pad the double's binary tail to 60 places and manufacture 43
+    # digits the float never carried.
+    w.add_parameter("q0", Q_50_DIGIT_STR)
     w.add_parameter("kmax_power_sum_order", kmax)
-    w.add_data("proton_power_sums", {str(k): float(v) for k, v in pp.items()})
-    w.add_data("neutron_power_sums", {str(k): float(v) for k, v in pn.items()})
-    w.add_data("tau_p", float(tau_p))
-    w.add_data("tau_n", float(tau_n))
-    w.add_data("rows", rows)
+
+    def _ser_row(r):
+        """Serialize a row; the four integer/label fields pass through."""
+        return {k: (v if k in ("isotope", "Z", "N", "A") else fmt(v))
+                for k, v in r.items()}
+
+    w.add_data("proton_power_sums", {str(k): fmt(v) for k, v in pp.items()})
+    w.add_data("neutron_power_sums", {str(k): fmt(v) for k, v in pn.items()})
+    w.add_data("tau_p", fmt(tau_p))
+    w.add_data("tau_n", fmt(tau_n))
+    w.add_data("rows", [_ser_row(r) for r in rows])
     w.add_data("formula", {
         "bosonic": "h_Z = Σ_{μ⊢Z} p_μ/z_μ",
         "fermionic": "e_Z = Σ_{μ⊢Z} (-1)^{Z-len(μ)} p_μ/z_μ",
@@ -240,7 +277,13 @@ def main() -> int:
         name="Z1_no_symmetrization",
         computed=(abs(frobenius(pp, 1) - pp[1])
                   + abs(frobenius(pp, 1, fermionic=True) - pp[1])),
-        expected=0.0, tolerance=1e-30,
+        # `0`, not `0.0`: an exact integral zero, and the only raw float64 the
+        # builder guard still found in this witness after the drain.  (The
+        # raw-float64 ratchet carves integral-valued floats out and would have
+        # read this file clean at 0 while a `0.0` sat in it; the builder guard
+        # has no such carve-out, which is why it is the better locator.  The
+        # sibling two assertions already used `0`.)
+        expected=0, tolerance=1e-30,
         source="h_1 = e_1 = p_1 = τ_p (one proton carries no exchange symmetry).",
     )
     out = w.save()

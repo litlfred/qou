@@ -39,7 +39,7 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from q_parameter import Q_MP  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
     AME_B_HE3_MEV_VALIDATION,
@@ -47,6 +47,23 @@ from codata_constants import (
 )
 
 set_compute_dps()
+
+
+def _ser(o):
+    """Recursively replace mpf with its full-precision decimal string.
+
+    `json.dump*` cannot encode an mpf, and the corpus write idiom truncates
+    the target before it can raise -- so a producer holding one does not fail
+    to update its witness, it DESTROYS it. The three AME_B_* imports above are
+    mpf (`70ae502091a`), which is how this one got here. Bean `qou-lz8f`.
+    """
+    if isinstance(o, mp.mpf):
+        return fmt(o)
+    if isinstance(o, dict):
+        return {k: _ser(v) for k, v in o.items()}
+    if isinstance(o, list):
+        return [_ser(v) for v in o]
+    return o
 
 # q0 comes from the pin table, never a literal. This held
 # `1.1099785955541805`, the SUPERSEDED muon value -- it matches
@@ -152,7 +169,7 @@ def main() -> None:
         ),
     }
     print()
-    print("structural diagnosis:", json.dumps(structural, indent=2))
+    print("structural diagnosis:", json.dumps(_ser(structural), indent=2))
     print()
     print("VERDICT: the per-generator brane-tower sum grows with proton "
           "near-pole count (³He > T), but ³He is the LESS-bound mirror member "
@@ -230,7 +247,7 @@ def main() -> None:
     from witness_base import WitnessBuilder  # noqa: E402
     WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="mpmath")
     witness["scriptFile"] = _os.path.basename(__file__)
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    out.write_text(json.dumps(_ser(witness), indent=2) + "\n")
     print(f"\nwrote {out}")
 
 

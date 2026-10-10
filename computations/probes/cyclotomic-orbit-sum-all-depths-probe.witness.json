@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T11:23:18.835932+00:00",
-  "commitSha": "cfd5362382e0e03fa2d1cf969e0bb614ff179a62",
+  "computedAt": "2026-09-14T18:32:02.498475+00:00",
+  "commitSha": "add691a2b88eb013ec31006640e2c3e1444ccb07",
   "assertions": [
     {
       "name": "clausen_orbit_sum_closed_form_all_N_n",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 432,
+  "durationMs": 320,
   "computation": "cyclotomic-orbit-sum-all-depths-probe",
   "scriptFile": "cyclotomic_orbit_sum_all_depths_probe.py",
-  "scriptHash": "b00bfeafff36",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "56adfb397545",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,7 +34,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -42,13 +42,13 @@
     ],
     "reproduce": "python3 -u computations/probes/cyclotomic_orbit_sum_all_depths_probe.py"
   },
-  "description": "I1 probe for prop:cyclotomic-orbit-sum-all-depths.  Verifies the universal Clausen-orbit closed form Σ_{k=1..N-1} Cl_n(2πk/N) = (N^{1-n}-1)ζ(n) for odd n, = 0 for even n.  Tested at N = 2, …, 8 and n = 2, 3, 4, 5 (28 cases) via mpmath's polylog at 50 dps.  All residues at the numerical-precision floor (~1e-49); the closed form is exact in ζ(n) · ℚ for odd n and exactly zero for even n.",
+  "description": "I1 probe for prop:cyclotomic-orbit-sum-all-depths.  Verifies the universal Clausen-orbit closed form Σ_{k=1..N-1} Cl_n(2πk/N) = (N^{1-n}-1)ζ(n) for odd n, = 0 for even n.  Tested at N = 2, …, 8 and n = 2, 3, 4, 5 (28 cases) via mpmath's polylog at _precision.COMPUTE_DPS (70) dps.  All residues at the arithmetic floor — max 3.62e-71, recorded in this witness's own max_residue; the closed form is exact in ζ(n) · ℚ for odd n and exactly zero for even n.  The 1e-40 gate below is deliberately generous against a future COMPUTE_DPS change and is NOT sized to the measurement, which sits 31 orders inside it.",
   "contentBlock": "prop:cyclotomic-orbit-sum-all-depths",
   "parameters": {
     "N_range": "2..8",
     "n_range": "2..5",
     "num_cases_tested": 28,
-    "max_residue": 3.622271631530685e-71
+    "max_residue": "3.62227163153068494700364771635511671227301247925565527583305e-71"
   },
   "data": {
     "per_N_per_n_results": [
@@ -56,225 +56,225 @@
         "N": 2,
         "n": 2,
         "parity": "even",
-        "orbit_sum_direct": 5.642112551065862e-72,
-        "closed_form_value": 0.0,
-        "residue": 5.642112551065862e-72
+        "orbit_sum_direct": "5.64211255106586180710040830818985464460493643009059586421261e-72",
+        "closed_form_value": "0.0",
+        "residue": "5.64211255106586180710040830818985464460493643009059586421261e-72"
       },
       {
         "N": 2,
         "n": 3,
         "parity": "odd",
-        "orbit_sum_direct": -0.9015426773696957,
-        "closed_form_value": -0.9015426773696957,
-        "residue": 0.0
+        "orbit_sum_direct": "-0.901542677369695714049803621133587493073739719255374161344204",
+        "closed_form_value": "-0.901542677369695714049803621133587493073739719255374161344204",
+        "residue": "0.0"
       },
       {
         "N": 2,
         "n": 4,
         "parity": "even",
-        "orbit_sum_direct": 7.428486744350037e-72,
-        "closed_form_value": 0.0,
-        "residue": 7.428486744350037e-72
+        "orbit_sum_direct": "7.42848674435003748897232441830639169509113887347351179614199e-72",
+        "closed_form_value": "0.0",
+        "residue": "7.42848674435003748897232441830639169509113887347351179614199e-72"
       },
       {
         "N": 2,
         "n": 5,
         "parity": "odd",
-        "orbit_sum_direct": -0.9721197704469093,
-        "closed_form_value": -0.9721197704469093,
-        "residue": 0.0
+        "orbit_sum_direct": "-0.972119770446909305935655143553469532553513362033043261225806",
+        "closed_form_value": "-0.972119770446909305935655143553469532553513362033043261225806",
+        "residue": "0.0"
       },
       {
         "N": 3,
         "n": 2,
         "parity": "even",
-        "orbit_sum_direct": 2.7167037236480137e-71,
-        "closed_form_value": 0.0,
-        "residue": 2.7167037236480137e-71
+        "orbit_sum_direct": "2.71670372364801371025273578726633753420475935944174145687478e-71",
+        "closed_form_value": "0.0",
+        "residue": "2.71670372364801371025273578726633753420475935944174145687478e-71"
       },
       {
         "N": 3,
         "n": 3,
         "parity": "odd",
-        "orbit_sum_direct": -1.0684950250307506,
-        "closed_form_value": -1.0684950250307506,
-        "residue": 1.8111358157653425e-71
+        "orbit_sum_direct": "-1.06849502503075047591087836578795554734665448208044345048202",
+        "closed_form_value": "-1.06849502503075047591087836578795554734665448208044345048202",
+        "residue": "1.81113581576534247350182385817755835613650623962782763791652e-71"
       },
       {
         "N": 3,
         "n": 4,
         "parity": "even",
-        "orbit_sum_direct": 2.7167037236480137e-71,
-        "closed_form_value": 0.0,
-        "residue": 2.7167037236480137e-71
+        "orbit_sum_direct": "2.71670372364801371025273578726633753420475935944174145687478e-71",
+        "closed_form_value": "0.0",
+        "residue": "2.71670372364801371025273578726633753420475935944174145687478e-71"
       },
       {
         "N": 3,
         "n": 5,
         "parity": "odd",
-        "orbit_sum_direct": -1.0241261779193778,
-        "closed_form_value": -1.0241261779193778,
-        "residue": 0.0
+        "orbit_sum_direct": "-1.02412617791937770501863257921682386968600584642164228343130",
+        "closed_form_value": "-1.02412617791937770501863257921682386968600584642164228343130",
+        "residue": "0.0"
       },
       {
         "N": 4,
         "n": 2,
         "parity": "even",
-        "orbit_sum_direct": 9.055679078826712e-72,
-        "closed_form_value": 0.0,
-        "residue": 9.055679078826712e-72
+        "orbit_sum_direct": "9.05567907882671236750911929088779178068253119813913818958261e-72",
+        "closed_form_value": "0.0",
+        "residue": "9.05567907882671236750911929088779178068253119813913818958261e-72"
       },
       {
         "N": 4,
         "n": 3,
         "parity": "odd",
-        "orbit_sum_direct": -1.1269283467121196,
-        "closed_form_value": -1.1269283467121196,
-        "residue": 1.8111358157653425e-71
+        "orbit_sum_direct": "-1.12692834671211964256225452641698436634217464906921770168025",
+        "closed_form_value": "-1.12692834671211964256225452641698436634217464906921770168025",
+        "residue": "1.81113581576534247350182385817755835613650623962782763791652e-71"
       },
       {
         "N": 4,
         "n": 4,
         "parity": "even",
-        "orbit_sum_direct": 9.055679078826712e-72,
-        "closed_form_value": 0.0,
-        "residue": 9.055679078826712e-72
+        "orbit_sum_direct": "9.05567907882671236750911929088779178068253119813913818958261e-72",
+        "closed_form_value": "0.0",
+        "residue": "9.05567907882671236750911929088779178068253119813913818958261e-72"
       },
       {
         "N": 4,
         "n": 5,
         "parity": "odd",
-        "orbit_sum_direct": -1.0328772560998412,
-        "closed_form_value": -1.0328772560998412,
-        "residue": 1.8111358157653425e-71
+        "orbit_sum_direct": "-1.03287725609984113755663359002556137833810794716010846505242",
+        "closed_form_value": "-1.03287725609984113755663359002556137833810794716010846505242",
+        "residue": "1.81113581576534247350182385817755835613650623962782763791652e-71"
       },
       {
         "N": 5,
         "n": 2,
         "parity": "even",
-        "orbit_sum_direct": 1.8111358157653425e-71,
-        "closed_form_value": 0.0,
-        "residue": 1.8111358157653425e-71
+        "orbit_sum_direct": "1.81113581576534247350182385817755835613650623962782763791652e-71",
+        "closed_form_value": "0.0",
+        "residue": "1.81113581576534247350182385817755835613650623962782763791652e-71"
       },
       {
         "N": 5,
         "n": 3,
         "parity": "odd",
-        "orbit_sum_direct": -1.1539746270332105,
-        "closed_form_value": -1.1539746270332105,
-        "residue": 0.0
+        "orbit_sum_direct": "-1.15397462703321051398374863505099199113438684064687892652058",
+        "closed_form_value": "-1.15397462703321051398374863505099199113438684064687892652058",
+        "residue": "0.0"
       },
       {
         "N": 5,
         "n": 4,
         "parity": "even",
-        "orbit_sum_direct": 9.055679078826712e-72,
-        "closed_form_value": 0.0,
-        "residue": 9.055679078826712e-72
+        "orbit_sum_direct": "9.05567907882671236750911929088779178068253119813913818958261e-72",
+        "closed_form_value": "0.0",
+        "residue": "9.05567907882671236750911929088779178068253119813913818958261e-72"
       },
       {
         "N": 5,
         "n": 5,
         "parity": "odd",
-        "orbit_sum_direct": -1.0352686707351406,
-        "closed_form_value": -1.0352686707351406,
-        "residue": 1.8111358157653425e-71
+        "orbit_sum_direct": "-1.03526867073514053444923530167870291338818959003070975147503",
+        "closed_form_value": "-1.03526867073514053444923530167870291338818959003070975147503",
+        "residue": "1.81113581576534247350182385817755835613650623962782763791652e-71"
       },
       {
         "N": 6,
         "n": 2,
         "parity": "even",
-        "orbit_sum_direct": 3.622271631530685e-71,
-        "closed_form_value": 0.0,
-        "residue": 3.622271631530685e-71
+        "orbit_sum_direct": "3.62227163153068494700364771635511671227301247925565527583305e-71",
+        "closed_form_value": "0.0",
+        "residue": "3.62227163153068494700364771635511671227301247925565527583305e-71"
       },
       {
         "N": 6,
         "n": 3,
         "parity": "odd",
-        "orbit_sum_direct": -1.1686664336273833,
-        "closed_form_value": -1.1686664336273833,
-        "residue": 1.8111358157653425e-71
+        "orbit_sum_direct": "-1.16866643362738333302752321258057637991040333977548502396471",
+        "closed_form_value": "-1.16866643362738333302752321258057637991040333977548502396471",
+        "residue": "1.81113581576534247350182385817755835613650623962782763791652e-71"
       },
       {
         "N": 6,
         "n": 4,
         "parity": "even",
-        "orbit_sum_direct": 0.0,
-        "closed_form_value": 0.0,
-        "residue": 0.0
+        "orbit_sum_direct": "0.0",
+        "closed_form_value": "0.0",
+        "residue": "0.0"
       },
       {
         "N": 6,
         "n": 5,
         "parity": "odd",
-        "orbit_sum_direct": -1.0361276565668704,
-        "closed_form_value": -1.0361276565668704,
-        "residue": 0.0
+        "orbit_sum_direct": "-1.03612765656687041249931967975452102440888872743439590394026",
+        "closed_form_value": "-1.03612765656687041249931967975452102440888872743439590394026",
+        "residue": "0.0"
       },
       {
         "N": 7,
         "n": 2,
         "parity": "even",
-        "orbit_sum_direct": 3.622271631530685e-71,
-        "closed_form_value": 0.0,
-        "residue": 3.622271631530685e-71
+        "orbit_sum_direct": "3.62227163153068494700364771635511671227301247925565527583305e-71",
+        "closed_form_value": "0.0",
+        "residue": "3.62227163153068494700364771635511671227301247925565527583305e-71"
       },
       {
         "N": 7,
         "n": 3,
         "parity": "odd",
-        "orbit_sum_direct": -1.177525129625725,
-        "closed_form_value": -1.177525129625725,
-        "residue": 1.8111358157653425e-71
+        "orbit_sum_direct": "-1.17752512962572501426913126025611427666774167412946829236794",
+        "closed_form_value": "-1.17752512962572501426913126025611427666774167412946829236794",
+        "residue": "1.81113581576534247350182385817755835613650623962782763791652e-71"
       },
       {
         "N": 7,
         "n": 4,
         "parity": "even",
-        "orbit_sum_direct": 3.622271631530685e-71,
-        "closed_form_value": 0.0,
-        "residue": 3.622271631530685e-71
+        "orbit_sum_direct": "3.62227163153068494700364771635511671227301247925565527583305e-71",
+        "closed_form_value": "0.0",
+        "residue": "3.62227163153068494700364771635511671227301247925565527583305e-71"
       },
       {
         "N": 7,
         "n": 5,
         "parity": "odd",
-        "orbit_sum_direct": -1.036495881859262,
-        "closed_form_value": -1.036495881859262,
-        "residue": 3.622271631530685e-71
+        "orbit_sum_direct": "-1.03649588185926190053947403894080883104414585872744304403918",
+        "closed_form_value": "-1.03649588185926190053947403894080883104414585872744304403918",
+        "residue": "3.62227163153068494700364771635511671227301247925565527583305e-71"
       },
       {
         "N": 8,
         "n": 2,
         "parity": "even",
-        "orbit_sum_direct": 1.8111358157653425e-71,
-        "closed_form_value": 0.0,
-        "residue": 1.8111358157653425e-71
+        "orbit_sum_direct": "1.81113581576534247350182385817755835613650623962782763791652e-71",
+        "closed_form_value": "0.0",
+        "residue": "1.81113581576534247350182385817755835613650623962782763791652e-71"
       },
       {
         "N": 8,
         "n": 3,
         "parity": "odd",
-        "orbit_sum_direct": -1.1832747640477257,
-        "closed_form_value": -1.1832747640477257,
-        "residue": 1.8111358157653425e-71
+        "orbit_sum_direct": "-1.18327476404772562469036725273783358465928338152267858676427",
+        "closed_form_value": "-1.18327476404772562469036725273783358465928338152267858676427",
+        "residue": "1.81113581576534247350182385817755835613650623962782763791652e-71"
       },
       {
         "N": 8,
         "n": 4,
         "parity": "even",
-        "orbit_sum_direct": 0.0,
-        "closed_form_value": 0.0,
-        "residue": 0.0
+        "orbit_sum_direct": "0.0",
+        "closed_form_value": "0.0",
+        "residue": "0.0"
       },
       {
         "N": 8,
         "n": 5,
         "parity": "odd",
-        "orbit_sum_direct": -1.0366745989531494,
-        "closed_form_value": -1.0366745989531494,
-        "residue": 0.0
+        "orbit_sum_direct": "-1.03667459895314937703294474293006711869964510873055004029158",
+        "closed_form_value": "-1.03667459895314937703294474293006711869964510873055004029158",
+        "residue": "0.0"
       }
     ]
   }

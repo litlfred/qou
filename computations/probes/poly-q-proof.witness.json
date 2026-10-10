@@ -1,73 +1,75 @@
 {
   "computation": "poly-q-proof",
   "contentBlock": "prop:markov-trace-antipode-polynomial-symmetry",
-  "description": "Independent verification of PR #546's claimed closed form tr_M(proton) = (q^20 + q^18 + 2q^12 - 2q^8 - q^2 - 1) / (12 q^10) via numerical Plancherel-weight Markov trace at multiple q values, plus structural proofs: anti-self-reciprocity q^20\u00b7p(1/q) = -p(q) (Frobenius/antipode symmetry), pole order 10 with leading coefficient -1/12.",
+  "description": "Independent CHECK of PR #546's claimed closed form tr_M(proton) = (q^20 + q^18 + 2q^12 - 2q^8 - q^2 - 1) / (12 q^10) against a numerical Plancherel-weight Markov trace at seven q values.  THE NUMERICAL LEG DOES NOT CONFIRM IT: the two disagree by a factor of 3.35 at the substrate q_0 and by 12.48 at q = 2, so max_relative_diff_across_q is 12.48, not a residual.  This field read 'Independent verification of ...' until 2026-09-14 while carrying exactly these numbers; the word 'verification' was describing the probe's intent rather than its result, and the witness has no assertion that could fail (it is written with json.dumps + stamp_staleness_metadata, not WitnessBuilder.save, so neither the assertion machinery nor the raw-float64 guard runs on it).  The disagreement is O(1) and NOT a precision artifact \u2014 it is unchanged to ten displayed figures after this probe was moved off the complex128 character path onto mpmath at COMPUTE_DPS.  The probe's own printout has always said 'possibly a different normalization or convention', which is the live reading; nothing here adjudicates which of the two objects is the intended tr_M(proton), and that question is untouched by this drain.  The two STRUCTURAL legs are unaffected and do hold exactly, in sympy: anti-self-reciprocity q^20\u00b7p(1/q) = -p(q) (Frobenius/antipode symmetry), and pole order 10 with leading coefficient -1/12.",
   "reference_blocks": [
     "prop:atomic-mass-gb-nf",
     "prop:rho-k-graded-expansion",
     "prop:hecke-branching-trace-decomposition"
   ],
-  "computedAt": "2026-08-23T15:11:03.183370+00:00",
+  "computedAt": "2026-09-14T19:56:18.155151+00:00",
   "claimed_polynomial": "q^20 + q^18 + 2*q^12 - 2*q^8 - q^2 - 1",
   "claimed_denominator": "12 * q^10",
   "numerical_verification": [
     {
-      "q": 1.05,
-      "tr_M_numeric": 0.9822196515412566,
-      "tr_M_pr546_closed_form": 0.18387820817341327,
-      "rel_diff": 4.341686006723196
+      "q": "1.05000000000000000000000000000000000000000000000000000000000",
+      "tr_M_numeric": "0.982219651541254658096570417011371104286379863269382658861832",
+      "tr_M_pr546_closed_form": "0.183878208173413129034877063349710904449918717811622564707879",
+      "rel_diff": "4.34168600672319023986183637053891974697694758713333220646305"
     },
     {
-      "q": 1.1,
-      "tr_M_numeric": 1.7010749886552812,
-      "tr_M_pr546_closed_form": 0.387699003206439,
-      "rel_diff": 3.3876176481926774
+      "q": "1.10000000000000000000000000000000000000000000000000000000000",
+      "tr_M_numeric": "1.70107498865527908573437541481866532640936356237234956806790",
+      "tr_M_pr546_closed_form": "0.387699003206438646995375221370460380196326030758029614445297",
+      "rel_diff": "3.38761764819267599434205701986616610881047005034510191523895"
     },
     {
-      "q": 1.1099785827513808,
-      "tr_M_numeric": 1.8843194672549795,
-      "tr_M_pr546_closed_form": 0.43313389325191254,
-      "rel_diff": 3.3504318101447934
+      "q": "1.10997858275138080759166909561076887987449912187357763605672",
+      "tr_M_numeric": "1.88431946725497502509029472310815626347249744177148556611060",
+      "tr_M_pr546_closed_form": "0.433133893251912340723848509813272267037465222613183681328995",
+      "rel_diff": "3.35043181014478487056941684484815458700572948418164172810804"
     },
     {
-      "q": 1.15,
-      "tr_M_numeric": 2.7975761618571275,
-      "tr_M_pr546_closed_form": 0.6386005653071135,
-      "rel_diff": 3.380791865587728
+      "q": "1.15000000000000000000000000000000000000000000000000000000000",
+      "tr_M_numeric": "2.79757616185712904682696150859922055782807247045723885601313",
+      "tr_M_pr546_closed_form": "0.638600565307113908627481628879556498772286992592730204084910",
+      "rel_diff": "3.38079186558772764960337505759734947362508053750682325080286"
     },
     {
-      "q": 1.2,
-      "tr_M_numeric": 4.47338972555,
-      "tr_M_pr546_closed_form": 0.9657159059383237,
-      "rel_diff": 3.6322005240283333
+      "q": "1.20000000000000000000000000000000000000000000000000000000000",
+      "tr_M_numeric": "4.47338972555000760768200159575768813959795409757420500583264",
+      "tr_M_pr546_closed_form": "0.965715905938323962584746001908019893083145636110123230988953",
+      "rel_diff": "3.63220052402834025653599691878216349238013141742626719818325"
     },
     {
-      "q": 1.5,
-      "tr_M_numeric": 54.08708253269598,
-      "tr_M_pr546_closed_form": 7.237391370948721,
-      "rel_diff": 6.473284193225261
+      "q": "1.50000000000000000000000000000000000000000000000000000000000",
+      "tr_M_numeric": "54.0870825326959771700987275536183418424633999182907065148281",
+      "tr_M_pr546_closed_form": "7.23739137094872125974473177643426081164230836536887443761396",
+      "rel_diff": "6.47328419322526060600087001069162348370711364679602257370338"
     },
     {
-      "q": 2.0,
-      "tr_M_numeric": 1446.1271875,
-      "tr_M_pr546_closed_form": 107.291259765625,
-      "rel_diff": 12.478518107244035
+      "q": "2.00000000000000000000000000000000000000000000000000000000000",
+      "tr_M_numeric": "1446.12718750000000000000000000000000000000000000000000000000",
+      "tr_M_pr546_closed_form": "107.291259765625000000000000000000000000000000000000000000000",
+      "rel_diff": "12.4785181072440353611777957288976368994117847837711763166578"
     }
   ],
-  "max_relative_diff_across_q": 12.478518107244035,
+  "max_relative_diff_across_q": "12.4785181072440353611777957288976368994117847837711763166578",
+  "numerical_leg_confirms_closed_form": false,
+  "numerical_leg_reading": "DISAGREES by O(1) \u2014 see description.  Structural legs (anti-self-reciprocity, pole order) are independent of this and hold.",
   "anti_self_reciprocal_proved": true,
   "pole_order_at_zero": 10,
   "leading_coefficient_at_zero": "-1/12",
   "polynomial_value_at_zero": "-1",
   "roots_real_count": 1,
   "roots_complex_count": 0,
-  "scriptHash": "c635ad3bf0ef",
-  "scriptCommitSha": "172db58562df57100bd1572f88a8498fffcd0455",
-  "commitSha": "6b8762619cc93c404bfe9274db21df99b1ef2266",
+  "scriptFile": "poly_q_proof_probe.py",
+  "scriptHash": "ce0052f32f08",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
+  "commitSha": "0e3c358a52b334b1a344b7bd34433ffa6ff2bd97",
   "engine": "mpmath",
   "durationMs": 0,
-  "engineVersion": "mpmath 1.3.0",
+  "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "poly_q_proof_probe.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -191,3 +191,37 @@ writes no sibling witnesses — confirmed, only its own). The 637 raw-float64
 fields still cannot be drained without landing the 733-field regeneration, which
 belongs to the R5/SDP arc. **Bean stays open on that**: what is resolved is the
 cause, not the regeneration decision.
+
+
+---
+
+## One sub-candidate EXCLUDED, 2026-09-13 (bean `qou-ke35`)
+
+`r5` never calls `set_compute_dps()`, and several constants in its cone have
+migrated `float -> mpf`, so its arithmetic could have moved to mpmath's
+**default 15 dps**. That would be a type-and-precision change at every use and
+is a specific instance of this bean's import-cone candidate.
+
+**Tested and negative.** Injected `set_compute_dps()`, re-ran (11 s), diffed
+against the unmodified run: **156 diffs, all ~1e-20 LP-solver noise plus one
+rendering change, and `winner L: 6 -> 6` — the selection does not move.**
+
+So the working precision is not what changed the answer. Reproduced this bean's
+finding on the way: **707** substantive diffs committed-vs-unmodified (this bean
+records 733; I did not chase the 26).
+
+**The visible mechanism is a changed SEARCH RESULT**, which this bean's field
+list already implies but does not state as such:
+
+```
+winner/L           4 -> 6
+winner/braid_word  LEN 4 -> 6
+winner/markov_trace  0.9156174644181682 -> 1.160986499639014   (+27 %)
+```
+
+A different braid word wins. Whatever moved, it moved the *ranking*, not the
+digits — which is why `rank_in_full_search` 990 -> 1013 is the right field to
+have flagged.
+
+Both original candidates stand. Producer restored byte-identical; all witnesses
+the run touched reverted.
