@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: high
 created_at: 2026-10-10T07:31:52Z
-updated_at: 2026-10-10T09:02:02Z
+updated_at: 2026-10-10T09:58:52Z
 parent: qou-n4r9
 ---
 
@@ -201,3 +201,56 @@ oleans, `Mathlib/Tactic.olean` PRESENT; paper tree: 1674, absent), and the
 library sweep's 2 UNVERIFIED were the same shape. Both were environment, not
 corpus — the library sweep says so in its own words, *"(NOT a corpus defect on
 this evidence)"*.
+
+
+## 🛑 2026-10-10 (same hour) — THE "NOT FIXED" HALF ABOVE IS FALSE. It was fixed, and the fix was already in my tree.
+
+The closure note above says the silent-success half remains open:
+
+> **NOT fixed: the silent success.** `lean-cache-restore.sh`'s check still counts
+> mathlib at `$REPO_ROOT/.lake/packages/mathlib` […] the **next** path change
+> will be just as silent.
+
+**That is wrong on every clause.** `334752248a` ("lean-cache-restore: count the
+paper half, and repair a pre-rename restore", **08:41:31Z**, #7564) implements
+exactly the option this bean recommended, and more:
+
+```sh
+qou_oleans() {            # counts the PAPER half at the DECLARED folio lake root
+  find "$REPO_ROOT/folio/quantum-observable-universe/lean/.lake/build/lib/lean/QOU" \
+    -name *.olean 2>/dev/null | wc -l | tr -d ' '
+}
+```
+
+| what the closure claimed open | what `334752248a` does |
+|---|---|
+| check counts mathlib only | counts **both halves**; `qou_oleans` added |
+| exit 0 on an empty paper half | **`exit 1`**, with the message naming the branch |
+| a later run SKIPs because mathlib is present | skip now requires **both**; a mathlib-only tree **re-extracts** |
+| an already-stranded restore stays stranded | `relocate_legacy_paper_trees()` **moves it into place**, and refuses when a real build exists |
+
+Its own comment states the defect and the measurement this bean reported, from
+the other side: *"3480 mathlib oleans at the root, 0 QOU oleans under folio/,
+2734 paper oleans under content/."* And the new guard's comment is the sentence
+this bean was holding open: *"Fail loudly on an empty paper half: exit 0 with no
+QOU oleans is the silent failure this check replaces."*
+
+### How I got it wrong, which is the part worth recording
+
+Not staleness. **`334752248a` was an ancestor of my own branch head when I wrote
+the claim** — `git merge-base --is-ancestor` confirms it, via my merge
+`9667b114fa`, made *before* the closure was appended. The corrected file was on
+disk in front of me; I asserted the state of a script from a commit message
+(`94b88ccbbb`, the earlier `--transform` fix) instead of reading the script.
+
+That is this corpus's most-documented failure mode — asserting a source file's
+state from a record about it — committed while writing a closure whose whole
+subject is a check that reports success without looking. The bean's own rule for
+`y_lambda_at` says it in one line: **read at the body, not the docstring.**
+
+**Contaminated, and corrected in both:** PR #7571's body, and the same claim
+relayed in chat as "an owner call, not a follow-up commit". It was neither.
+
+**`qou-wu38` is fully closed.** Both halves — delivery (`94b88ccbbb`,
+`--transform`) and the silent success (`334752248a`) — are fixed on main. No
+owner decision is outstanding on this bean.
