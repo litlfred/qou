@@ -115,9 +115,11 @@ all but three real parameters:
 2. **The leptonic mass scale.**  The categorical mass
    $\mathfrak{m}(\varrho) = \mathrm{tr}_M(\rho(\beta))$
    ([categorical mass as Markov trace](#prop:categorical-mass-markov))
-   is dimensionless (signed at the categorical level;
-   the archimedean specialization at $q_0$ takes the positive
-   observable value by Wenzl positivity for canonical $T_w$).  Converting to physical units (MeV)
+   is dimensionless and signed at the categorical level.
+   Trace positivity gives $\mathrm{tr}_M(x^* x) \geq 0$, not
+   $\mathrm{tr}_M(x) \geq 0$ for a braid element $x$, so the sign of
+   $\mathfrak{m}(\varrho)$ at $q_0$ is a property of the particular
+   $T_w$, not a consequence of positivity.  Converting to physical units (MeV)
    requires one mass measurement.  The electron mass sets this
    scale, analogous to the speed of light $c$ and Planck's
    constant $\hbar$ in the Standard Model.
