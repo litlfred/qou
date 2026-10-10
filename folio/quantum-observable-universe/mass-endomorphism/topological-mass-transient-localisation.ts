@@ -14,15 +14,18 @@ export default lemma({
   proofs: ["prf:topological-mass-transient-localisation"],
   authorNotes: [
     {
-      kind: "note",
-      date: "2026-08-08",
+      kind: "caveat",
+      date: "2026-10-10",
       body:
-        "**§7c base-ring note (archimedean specialisation).** " +
-        "The Lean module `lean/QOU/LiftingDescent/tm_transient_localisation.lean` " +
-        "carries the transient mass-index components `transientMI*` as physical quantities. " +
-        "The `ℝ` is therefore forced by the statement itself rather than " +
-        "chosen, so the block sits on the archimedean side of the §7c wall " +
-        "by construction.",
+        "**The displayed equality is not established (bean `tmvac`).** The Lean module " +
+        "`lean/QOU/LiftingDescent/tm_transient_localisation.lean` derives only the " +
+        "inequality `‖MI∫_Σ‖ ≤ Σ_i ‖MI∫_{E_i}‖` from the disc split and support hypotheses " +
+        "(triangle inequality of a group seminorm). The proof block's step that the norm " +
+        "of the product equals the sum of the norms does not follow from those hypotheses: " +
+        "`norm_additivity_not_forced` gives data in `Multiplicative ℝ` satisfying both with " +
+        "strict inequality. The equality is recorded as the conjecture class " +
+        "`TransientLocalisationNormEquality`, with no instance. Whether this block should be " +
+        "restated as an inequality or demoted to a conjecture is open.",
     },
   ],
 

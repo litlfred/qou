@@ -13,14 +13,16 @@ export default lemma({
   authorNotes: [
     {
       kind: "note",
-      date: "2026-08-08",
+      date: "2026-10-10",
       body:
-        "**§7c base-ring note (archimedean specialisation).** " +
-        "The Lean module `lean/QOU/LiftingDescent/tm_descended_is_holonomy.lean` " +
-        "carries `unknotHolonomy : ℝ` — a holonomy, real by construction. " +
-        "The `ℝ` is therefore forced by the statement itself rather than " +
-        "chosen, so the block sits on the archimedean side of the §7c wall " +
-        "by construction.",
+        "**Lean scope (bean `tmvac`).** The Lean module " +
+        "`lean/QOU/LiftingDescent/tm_descended_is_holonomy.lean` takes the multiplicative " +
+        "integral with values in an arbitrary monoid (holonomies need not commute; the " +
+        "blow-up product is ordered). Multiplicativity over the decomposition, naturality " +
+        "under blow-down, collapse of the exceptional discs to points, and non-abelian " +
+        "Stokes are explicit hypotheses; triviality of the exceptional-disc contributions " +
+        "and the holonomy identity are derived from them. The earlier module assumed the " +
+        "disc triviality directly.",
     },
   ],
 
