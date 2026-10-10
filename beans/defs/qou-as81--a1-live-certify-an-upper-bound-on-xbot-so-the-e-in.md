@@ -573,6 +573,90 @@ only `lean`-direct and `scripts/lean-library-sweep.py` do. That is precisely the
 library file escapes every per-block checker" hazard AGENTS.md names. Adding them would change
 what the root module gates on, so it is an owner call, not a tidy-up.
 
+## 2026-10-10 — the reopening condition FIRED, then CLOSED on measurement. Three readings, in order.
+
+I published the exclusion above as **conditional** on `lam_max = ln q0 / 2` being the real
+concavity budget, and wrote `budget_needed_for_cut_32` precisely so that the condition was a
+number someone could go and measure. It was measured within the hour, by me, and the sequence
+matters more than the answer.
+
+| reading | method | budget | vs `lam_max` | needed `2.1018x` |
+|---|---|---|---|---|
+| 1. published | assumed `ln q0 / 2` | 0.0521703602 | 1x | not reached |
+| 2. **diagonal of `H_G`** | `max_i H_ii` | 0.4130496872 | **7.9173x** | **REACHED — looked like a reopening** |
+| 3. **full `H_G`** | `lam_max(H_G)` | **0.0643955003** | **1.2343x** | not reached — **CLOSED** |
+
+Producer:
+[`computations/deltalambda/rev_e_infinity_hessian_budget_probe.py`](computations/deltalambda/rev_e_infinity_hessian_budget_probe.py)
+(committed; exits 0 on the measurement, and exits 0 with an explicit **SKIP** banner on a branch
+where the relaxation probe is absent, so it can never be read as a pass it did not make).
+
+### The answer
+
+`G + lam*sum(u^2 - u)` is concave **iff** `H_G + 2 lam I <= 0`, i.e. `lam <= -lam_max(H_G)/2`.
+Measured over the Hessian of the probe's own gradient `dG_coord`, at `mp.dps = 60` with the
+series caches cleared, at `pe in {0, 4, 8}`, `T in {4, 8, 12, 20, 26}` and three `u` levels:
+
+    tightest sampled   lam <= 0.06439550031177121   at pe = 0, T = JPAD = 26, u ~ 0
+                            = 1.2343311 x ln q0 / 2
+    floor at that budget    3.27708095409687544 - 26*0.0643955.../4  =  2.858510202070363
+                            = 1.323505444 x the enumerated maximum
+    cut <= 32 requires      2.564360462893981  =  1.187312548 x
+    margin                  0.294149739176   (it was 0.373613150 at ln q0 / 2)
+
+So the probe's `ln q0 / 2` is **conservative by 23 %, not by the 110 % the route needs.** Raising
+`lam` to its true limit deepens the penalty from `0.339107341` to `0.418570752` and moves the
+floor from `1.3603x` to `1.3235x`. **The exclusion survives, and is no longer conditional on a
+sufficient bound** — Lean `floor_at_measured_budget_exceeds_cut32` (11 theorems now, all
+sorry-free).
+
+### 🛑 Reading 2 is the trap, and I would have published it
+
+`lam_max(H_G) >= max_i H_ii`, so the **diagonal** also bounds the budget from above — and
+loosely. At `T = 26` the diagonal reads `max_i H_ii = -0.8260994`, giving `lam <= 0.4130497 =
+7.9173x`, which clears the `2.1018x` requirement by nearly 4x and reads as a decisive
+**reopening** of the route I had just excluded. The cross terms — the pair gains
+`epsx(g) - epsx(g + u_jp - u_j)`, which are exactly what makes `G` non-separable — inflate that
+reading by **6.41x**.
+
+I ran the diagonal first *because* it is cheap (`3T` evaluations against `T^2`), wrote the
+caveat into the script before running it, and still had to re-read my own caveat to avoid
+reporting "the route reopens at 7.93x". **Both numbers are printed by the committed probe** so
+the gap is visible rather than inferred. This is the same shape as the padded-charge error two
+sections up: a quantity that bounds the right thing in the right direction, taken for the thing
+itself.
+
+### And a second trap, which cost a whole run
+
+Second-differencing `G` at the probe's own `mp.dps = 25` with `h = 1e-18` returns
+
+    max_i H_ii ~ +9e11   (positive curvature, on a provably concave function)
+
+— `(G(u+h) - 2G(u) + G(u-h))/h^2` loses ~36 digits. The committed probe central-differences the
+**gradient** instead (one order of difference, not two), at `dps = 60`, and reports the
+Hessian's own pre-symmetrisation **asymmetry** as a conditioning witness: measured `< 2.4e-41`
+at every point, against entries of order 1. A symmetric matrix that comes back asymmetric is the
+cheapest available signal that the step or the precision is wrong, and it costs nothing.
+
+### What this does and does not settle
+
+- **Settles:** the objective-penalty route cannot close A1, now including at the true curvature
+  budget rather than at the probe's sufficient one. That is the last of the three leads this
+  arc was carrying (padding charge `0.100063` = 12.31 %; a finer `lam` grid; a larger budget).
+- **Does not settle:** the measurement samples uniform `u` at three levels, `pe in {0,4,8}`, and
+  `T <= JPAD`. A sampled point is an **upper** bound on a budget that is an infimum over the
+  domain, which is why a value *below* the requirement closes the route and a value above it
+  would have proved nothing. Unmeasured: non-uniform `u`, points near the domain boundary, and
+  `T > JPAD`. The budget also **decreases** with the row count throughout the sample (`T = 4`:
+  5.05x, `8`: 2.67x, `12`: 1.90x, `20`: 1.38x, `26`: 1.235x) and is still decreasing at
+  `T = JPAD`, so the relevant value is at most the one reported — the exclusion gets *stronger*
+  with the row count, not weaker.
+- **Unchanged:** the room is in the **feasible set**, not the objective. Support branching
+  (`u_j = 0` against `u_j >= 1`, so the box's lower bound on the second branch is `1`) is outside
+  the family this prune covers, and whether `Gamma_j`'s antitonicity makes the optimal support an
+  initial segment — `J + 1 = 27` branches instead of `2^26` — remains **not established** and is
+  the next Lean lemma worth writing.
+
 ## 2026-10-10 (afternoon) — integer hi_j floor, checkpoint, and the Murota lead CHECKED
 
 **Integer box (`hi_j` floor), scope (a) negative.** Rounding the per-row confinement box to
