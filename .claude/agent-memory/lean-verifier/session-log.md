@@ -384,3 +384,19 @@ Start state: **10 oleans total** (cache genuinely unrestored), and a SessionStar
   nothing to the FQN. Read the namespace, never infer it from the path.
 - Residual hazard reported, not fixed: the bg-build guard cannot fire on this
   trace-paired restore, so a compaction re-fires `lake build`.
+
+## 2026-10-10 — qou-ekga (MarkovTraceAxioms merge/demote), branch claude/practical-carson-9wopuy
+
+- **TRAP (re-observed):** this container's restore had been extracted WITHOUT the
+  `content/ -> folio/` transform: 2734 paper oleans sat in an untracked `content/`
+  dir and `folio/*/lean/.lake/build` did not exist. Fix was `mv` of each
+  `content/<p>/lean/.lake/build` to `folio/<p>/lean/.lake/build` (no refetch).
+  SessionStart `lake update` + `cache get` were running; killed by PID.
+- **TRAP:** `export Ns (Cls)` aliases the class but NOT its field projections —
+  `Alias.Cls.trace` is an unknown constant. Add
+  `namespace Cls; export Ns.Cls (trace …); end Cls`. A doc comment cannot precede
+  `namespace` (parse error `expected 'lemma'`) — use `--`.
+- Method: hardlink mirror of the QOU build tree as the FIRST `LEAN_PATH` entry,
+  `rm -f` each olean before `lean -o` into it. First module 79 s cold (user 5.6 s).
+- `QOU.BraidKnot` aggregator unverifiable here: `HookSumThicknessBound.olean`
+  missing from the cache (pre-existing gap, not this change).
