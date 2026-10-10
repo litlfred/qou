@@ -144,21 +144,30 @@ equivalence — are formalised over an arbitrary characteristic-zero field in
 [`QOU/MassTheory/PnInterfaceBarStructure.lean`](../lean/QOU/MassTheory/PnInterfaceBarStructure.lean),
 sorry-free (`#print axioms`: `propext`, `Classical.choice`, `Quot.sound` only).
 
-### categorical verification (4 atoms, exact representation Rust kernel)
+### Full-trace verification at convention D (4 atoms)
 
-Computed via the canonical formalism
-using `pyhecke_native` for full $\mathrm{tr}_M$ at $H_n$ for $n \in \{6, 9, 12\}$:
+$\mathrm{tr}_M$ is evaluated as $\sum_\lambda y_\lambda\,\chi_\lambda$ with the
+convention-D weights at $z = q^3/(q^2+1)$ and Hoefsmit characters in MPFR at the
+proton pin $q_0$, for $H_n$ with $n \in \{6, 9, 12\}$; averaged letters are expanded
+by linearity, and the route is checked against the independent Markov-ascent trace
+before use. Census word ($p$-$n$ interface $=\sigma_g$, as listed below):
 
 | atom | $A$ | $p_+$ | $p_-$ | $\mathrm{tr}_M^{\mathrm{FULL}}/\mathrm{tr}_M^{\mathrm{CONSTIT}}$ | predicted $z^{p_+}(z-h)^{p_-}$ | rel. err. |
 |---|:-:|:-:|:-:|---:|---:|---:|
-| D    | 2 | 1 | 0 | 0.49932033 | 0.49932033 | $5\times10^{-16}$ |
-| T    | 3 | 1 | 1 | 0.14493273 | 0.14493273 | $9\times10^{-16}$ |
-| ${}^{3}$He  | 3 | 2 | 0 | 0.24932080 | 0.24932080 | $1\times10^{-15}$ |
-| ${}^{4}$He  | 4 | 2 | 1 | 0.07236786 | 0.07236786 | $1\times10^{-15}$ |
+| D    | 2 | 1 | 0 | 0.61268804 | 0.61268804 | $4\times10^{-51}$ |
+| T    | 3 | 1 | 1 | 0.24729789 | 0.24729789 | $2\times10^{-50}$ |
+| ${}^{3}$He  | 3 | 2 | 0 | 0.37538663 | 0.37538663 | $3\times10^{-50}$ |
+| ${}^{4}$He  | 4 | 2 | 1 | 0.15151646 | 0.15151646 | $4\times10^{-51}$ |
 
-Max rel. err. across all 4 atoms: $\sim 10^{-15}$ — exact at f64 precision.
-
-These four rows were measured under the excised convention-C weight $z = \sqrt q/(q+1)$, and the run has not been repeated at the canonical $z = q^3/(q^2+1)$. The factorisation $(\star)$ is an identity in $z$, so at $z = q^3/(q^2+1)$ it predicts $0.6127$, $0.2473$, $0.3754$ and $0.1515$; the full-trace check of those values is open.
+The live canonical word carries the bar-invariant colour-weighted $p$-$n$ letter
+$\sigma_g - h(\tfrac12 - \tfrac{\delta}{4})$ instead of $\sigma_g$; with that factor in
+place of $z$ the ratios are $\approx 0.50822979$, $0.20513564$, $0.31138631$ and
+$0.12568415$, again equal to the predicted product to $\le 5\times10^{-50}$ (and
+likewise for the colour-blind $\sigma_g - h/2$). The identity ($\star$) therefore holds
+at convention D on every word tested, at the $10^{-50}$ floor of the arithmetic.
+Producer: `computations/probes/interface_knot_markov_z_convention_d_probe.py`.
+(2026-10-10: this replaces a table measured at the excised convention-C weight
+$z = \sqrt q/(q+1)$, bean `qou-7xpx`.)
 
 Per-atom interface census (from `atom_braid_word_3A`):
 
@@ -202,12 +211,17 @@ $$
   \quad\text{at }q_0.
 $$
 This is the content of
-`conj:constit-factor-2q-minus-1`
-($0.033\%$ rel. err.).  Combining $(\star)$ with the
-constit-side conjecture yields the **full per-Z $\mathrm{tr}_M$ step**
-$$
-  \frac{\mathrm{tr}_M(\mathcal{B}_K^{Z+1, N})}{\mathrm{tr}_M(\mathcal{B}_K^{Z, N})}
-  \;=\; z \cdot (2q - 1) \,+\, O(h^4)
-  \;=\; \frac{2q - 1}{q^{1/2} + q^{-1/2}} \,+\, O(h^4).
-$$
-The second equality substitutes the excised convention-C weight $z = 1/(q^{1/2} + q^{-1/2})$ and is kept as a historical form. At the canonical $z = q^3/(q^2+1)$ the step is $q^3(2q-1)/(q^2+1) \approx 0.7475$ at $q_0$; the constit-side conjecture was itself measured under C, so this combination is unverified at D.
+`conj:constit-factor-2q-minus-1`, whose $0.033\%$ agreement was measured at the
+excised convention-C weight on the earlier grouped intra-nucleon word.
+
+**The step does not survive at convention D.** The constituent product is
+multiplicative over disjoint strand blocks (checked to $10^{-50}$), so the constit
+step is the single-proton trace $\mathrm{tr}_M(\beta_p)$. At $z = q^3/(q^2+1)$ and
+$q_0$ this is $\approx 0.62932840$ on the canonical (alternating) word and
+$\approx 1.14575969$ on the grouped word, against $2q_0 - 1 \approx 1.21995717$:
+misses of $48.4\%$ and $6.1\%$. The full per-$Z$ step on the canonical word is
+correspondingly $\approx 0.38558198$, not $q^3(2q-1)/(q^2+1) \approx 0.7475$. This is a
+scope-limited negative: the identification $(2q-1)$ for the constit factor does not
+hold at convention D for either intra-nucleon ordering; it says nothing about
+whether some other closed form describes the D-frame step. The C-era formula
+$\tfrac{2q-1}{q^{1/2}+q^{-1/2}}$ is kept only as a historical form.
