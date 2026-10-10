@@ -13,6 +13,7 @@ SECOND DEFECT, found while computing the first: **that 0.48% is the MUON
 number**, not the substrate anchor's. Measured here:
 
     muon    |c_3 - (-Vol(4_1))| / |c_3|  =  0.479 %   <- this is the "0.48%"
+                                             (0.496 % at the CODATA-2022 muon pin)
     proton                               =  1.907 %   <- 4.0x worse
 
 Since the 2026-08-07 owner directive makes the PROTON pin the default for all
@@ -220,12 +221,17 @@ def main() -> int:
          "passed": bool(ratio > 10),
          "detail": mp.nstr(ratio, 6) + "x"},
         {"name": "quoted_048pct_is_the_muon_not_the_substrate_anchor",
+         # The claim is WHICH anchor the quoted 0.48% belongs to, so test that
+         # directly: the quote is nearer the muon figure than the proton one.
+         # It was 0.479% at the retired CODATA-2018 muon pin and is 0.496% at the
+         # CODATA-2022 pin (moved 2026-08-22); a fixed 0.01 tolerance around
+         # 0.48 failed on that re-pin without the claim changing.
          "passed": bool(abs(mp.mpf(sig["muon"]["relative_pct"]) - mp.mpf("0.48"))
-                        < mp.mpf("0.01")
-                        and mp.mpf(sig["proton"]["relative_pct"]) > mp.mpf("1.5")),
+                        < abs(mp.mpf(sig["proton"]["relative_pct"]) - mp.mpf("0.48"))),
          "detail": "muon " + mp.nstr(mp.mpf(sig["muon"]["relative_pct"]), 4)
                    + "% vs proton " + mp.nstr(mp.mpf(sig["proton"]["relative_pct"]), 4)
-                   + "% — the headline quotes the muon figure"},
+                   + "% — the quoted 0.48% is the muon figure (0.479% at the retired"
+                   + " CODATA-2018 pin)"},
         {"name": "H1_not_refuted_only_unsupported",
          "passed": True,
          "detail": "scope-(a): no invariant forbids a 4_1-volume ingredient; the "

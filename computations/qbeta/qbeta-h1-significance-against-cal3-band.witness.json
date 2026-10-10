@@ -5,12 +5,12 @@
   "tier": "error propagation on committed values (no fit)",
   "q0Anchor": "proton",
   "q0Value": "1.109978582751380807591669",
-  "computedAt": "2026-08-29T08:22:58.288190+00:00",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "computedAt": "2026-10-10T13:00:52.367357+00:00",
+  "commitSha": "24999ed89ad5d2379ee843dcf277c8c6f2f52453",
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
   "scriptFile": "qbeta_h1_significance_against_cal3_band.py",
-  "scriptHash": "c19b9eb1a1f3",
+  "scriptHash": "378239acd50a",
   "assertions": [
     {
       "name": "sigma_c3_derived_matches_quoted_1262",
@@ -32,8 +32,8 @@
     },
     {
       "name": "quoted_048pct_is_the_muon_not_the_substrate_anchor",
-      "passed": false,
-      "detail": "muon 0.4962% vs proton 1.907% \u2014 the headline quotes the muon figure"
+      "passed": true,
+      "detail": "muon 0.4962% vs proton 1.907% \u2014 the quoted 0.48% is the muon figure (0.479% at the retired CODATA-2018 pin)"
     },
     {
       "name": "H1_not_refuted_only_unsupported",
@@ -41,7 +41,7 @@
       "detail": "scope-(a): no invariant forbids a 4_1-volume ingredient; the 0.031-sigma proton figure is not evidence against (H1) either"
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "result": {
     "vol_4_1": "2.029883212819307",
     "sigma_Qbeta_MeV": "6.1e-7",
@@ -97,9 +97,9 @@
     "scope": "Scope-(a). Does NOT refute (H1); no invariant is named forbidding a 4_1-volume ingredient in c_3's bar-even part. What it shows is that the EVIDENCE cited for (H1) does not discriminate at present resolution, and that the '0.48%' phrasing overstates it by omitting an error bar 32x the discrepancy.",
     "sites_to_rescope": [
       "docs/coordination/ck-dk-canonical-registry.md (the surviving-fact line)",
-      "content/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.md (same phrasing)"
+      "folio/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.md (same phrasing)"
     ]
   },
-  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "scriptCommitSha": "aa914b606a6de5e4f447e3746adaa687a9f608c6",
   "durationMs": 0
 }
