@@ -42,7 +42,7 @@ variable {K : Type*} [Field K] (q : K)
 
 /-- **`offDiag` vanishes only at `d = ±1`.**  Equivalently: away from the scalar (same-row /
 same-column) distances the off-diagonal entry of the generator matrix is nonzero. -/
-theorem offDiag_eq_zero_iff (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) {d : ℤ} :
+theorem eq_one_or_neg_one_of_offDiag_eq_zero (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) {d : ℤ} :
     offDiag q d = 0 → d = 1 ∨ d = -1 := by
   intro hzero
   rcases lt_or_ge d 0 with hneg | hpos
@@ -86,7 +86,7 @@ theorem offDiag_eq_zero_iff (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParamete
     exact absurd hzero one_ne_zero
 
 /-- **Admissible swaps carry a nonzero off-diagonal entry.**  Combines
-`TableauCells.two_le_natAbs_axialDist` with `offDiag_eq_zero_iff`: an admissible swap is at
+`TableauCells.two_le_natAbs_axialDist` with `eq_one_or_neg_one_of_offDiag_eq_zero`: an admissible swap is at
 distance `|d| ≥ 2`, and `offDiag` only vanishes at `±1`. -/
 theorem offDiag_axialDist_ne_zero {μ : YoungDiagram} (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q)
     (T : QOU.Mathlib.StandardYoungTableau μ) {k : ℕ}
@@ -95,7 +95,7 @@ theorem offDiag_axialDist_ne_zero {μ : YoungDiagram} (hq0 : q ≠ 0) (hq2 : QOU
     offDiag q (TableauCells.axialDist T k) ≠ 0 := by
   intro hzero
   have hbound := TableauCells.two_le_natAbs_axialDist T hk hk' hadm
-  rcases offDiag_eq_zero_iff q hq0 hq2 hzero with h | h <;> omega
+  rcases eq_one_or_neg_one_of_offDiag_eq_zero q hq0 hq2 hzero with h | h <;> omega
 
 end SeminormalRep
 

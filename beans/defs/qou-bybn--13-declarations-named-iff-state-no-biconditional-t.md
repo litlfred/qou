@@ -1,11 +1,12 @@
 ---
 # qou-bybn
 title: 13 declarations named *_iff* state no biconditional -- the structure-word class, drained of its bijection member
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-14T19:56:26Z
-updated_at: 2026-09-14T19:57:11Z
+updated_at: 2026-10-10T07:32:25Z
+parent: b9cj
 ---
 
 Measured 2026-09-14 while exploring `qou-mfdq` Finding 3 (PR #7401, issue #7400).
@@ -93,3 +94,100 @@ library modules and it is the owner's call to start it.
 `--selftest` hardcodes nothing: it fails unless `pole_cusp_bijection_proved` is
 the sole `bijection` hit at `926f2c71ec^`, unless that token is empty now, and
 unless the Mathlib uniqueness idiom is NOT flagged.
+
+
+## 2026-10-10 — DISPOSITIONED on owner go-ahead: 10 renamed, 2 REMOVED, 1 left alone
+
+Owner authorised the tranche (PR #7546, branch
+`claude/triangulation-citation-chain-2026-10-10`). The naming class is drained;
+the token `iff` now reports only the one defensible member.
+
+**The split is not 12 renames.** Two of the three "sharpest" members above were
+the wrong shape for a rename, and the corpus had **already ruled on them** —
+`PAdicQuantumGroups.lean` carries its own
+`### Removed 2026-08-30 — self-assuming projections` note deleting a sibling for
+exactly this. Both bodies are a projected `PAdicQOU` field **verbatim**:
+
+    theorem padic_observability_iff_irreducible (pq : PAdicQOU) : … :=
+      pq.frobenius_irreducible
+    theorem unit_root_iff_skew_poisson_integrable (pq : PAdicQOU) : … :=
+      pq.frobenius_surjective
+
+A theorem whose body is `:= pq.field` asserts nothing beyond the structure it
+unpacks. **Renaming it launders it** — it would turn a vacuous projection into a
+correctly-named vacuous projection, which is worse, because the honest name is
+then indistinguishable from a real lemma. The recorded disposition for the
+sibling is verbatim *"drop the pseudo-theorem and project the field at use
+sites"*, so that is what was done. Note also that the first name one reaches for,
+`frobenius_surjective`, **collides with the very field it projects** — the
+collision is the tell.
+
+Both removed in `9c71bcda58`; a `### Removed 2026-10-10` note appended in the
+file's existing format.
+
+### The 10 renames (`a48ba4e4da`)
+
+    denomPoly_root_iff                     -> denomPoly_eq_zero_of_factor_eq_zero
+    figure_eight_b_zero_iff_row_or_col     -> row_or_col_degenerate_of_skewSYTCount_eq_zero
+    mem_iff_shift_root                     -> shiftedCubic_eq_zero_of_cubic_eq_zero
+    invLift_defect_eq_zero_iff             -> invLift_defect_ne_zero
+    diff_bounded_collapses_iff_saturated   -> diff_eq_of_bounds_saturated
+    gauge_scaling_fixes_colorCubic_iff     -> eq_one_of_gauge_scaling_fixes_colorCubic
+    offDiag_eq_zero_iff                    -> eq_one_or_neg_one_of_offDiag_eq_zero
+    no_mixing_iff_eigenvalues_are_diagonal -> charPoly_zero_mixing_eq_linear_factors
+    exp_saddle_iff_curve                   -> curve_eq_zero_of_saddle
+    parity_flip_iff_golden                 -> norm3_pell3_eq_one_and_normPhi_goldenPow
+
+Each new name states what the type states: `_of_` for the one-directional
+implications, `_ne_zero` where the conclusion is `≠ 0` against a name saying
+`eq_zero`, `_and_` for the conjunction. `parity_flip_iff_golden` is the clearest
+win — a conjunction of two facts was wearing a biconditional's name.
+
+**`partitionDom_not_iff_lexGt` is left alone**, as the table above predicted:
+refuting one direction refutes the iff, so the name is defensible. It is also the
+calibrating negative named in `scripts/lean-structure-word-audit.py`'s own
+docstring, so renaming it would silently weaken the audit.
+
+### Blast radius — MEASURED, and my first measurement was blind
+
+**All 13 members have zero consumers**, so every rename is file-local. But the
+first sweep grepped `*.lean` only, which **cannot see a `lean.ref` in a `.ts`
+manifest** — the §0a package-qualified URI is how a content block cites a
+declaration, and it is not Lean source. Re-measured across `.ts`, `.md`, `.json`
+and `.py`: two load-bearing non-Lean references exist in the corpus generally,
+neither to any of these 13. Same detector-blindness class as everything in
+`docs/audits/2026-08-15-detector-blindness-taxonomy.md`: the obvious file glob
+was the blind spot.
+
+### Verification
+
+`lean -DautoImplicit=false -s 65536` on each of the 11 changed files:
+**10 of 11 `errors=0`**. The eleventh, `QGaugeSpectralRigidity.lean`, carries one
+error **proved pre-existing** — a missing `QOU.Mass.PalindromicInvolutionLift.olean`,
+byte-identical message on the unmodified file restored from git. Warning counts
+baselined pre = post (4 and 2).
+
+A bare `lean` is **not** the gate: it does not read the lakefile, so
+`autoImplicit` defaults back to `true` and an unbound identifier silently
+auto-binds instead of erroring. The first pass of this verify loop also treated
+*any* output as failure and reported two files as FAILED on `unused variable`
+**warnings**; re-run keyed on `error:`.
+
+### NOT done — the content half
+
+The recommendation above was **option 2** (prove the missing directions) for the
+two members where the converse is in fact true, and **option 1** (rename) for the
+rest. What landed is option 1 for all ten. So the two converses remain unproved:
+
+- `denomPoly_eq_zero_of_factor_eq_zero` — a product vanishes **iff** a factor
+  does, over a domain. The converse is true and cheap.
+- `eq_one_or_neg_one_of_offDiag_eq_zero` — the plausible second case.
+
+Proving either turns a naming defect into content and would restore a *correct*
+`_iff_`. Spun out rather than left implicit in a closed bean.
+
+### Taxonomy
+
+Row 49's worked example is **removed, not renamed** — recorded in
+`docs/audits/2026-08-15-detector-blindness-taxonomy.md` (`46d7c21b2a`), together
+with the stale "table is at 47 rows" line, which was two rows behind.
