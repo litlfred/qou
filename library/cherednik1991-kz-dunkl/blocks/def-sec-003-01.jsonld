@@ -1,0 +1,20 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/cherednik1991-kz-dunkl/blocks/def-sec-003-01",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "kind": "definition",
+  "pageStart": 14,
+  "pageEnd": 20,
+  "text": "def-sec-003-01.md",
+  "derivedFrom": "library/cherednik1991-kz-dunkl/sections/sec-003",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cherednik1991-kz-dunkl/manifest.jsonld",
+  "provenance": "ingested"
+}

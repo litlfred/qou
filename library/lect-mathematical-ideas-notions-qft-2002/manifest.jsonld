@@ -1,0 +1,41 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lect-mathematical-ideas-notions-qft-2002/manifest.jsonld",
+  "@type": [
+    "folio-assistant-core:SourceDocument"
+  ],
+  "title": "lect.dvi",
+  "contains": [
+    "library/lect-mathematical-ideas-notions-qft-2002/sections/sec-front-matter",
+    "library/lect-mathematical-ideas-notions-qft-2002/sections/sec-000",
+    "library/lect-mathematical-ideas-notions-qft-2002/sections/sec-001",
+    "library/lect-mathematical-ideas-notions-qft-2002/sections/sec-002",
+    "library/lect-mathematical-ideas-notions-qft-2002/sections/sec-003",
+    "library/lect-mathematical-ideas-notions-qft-2002/sections/sec-004",
+    "library/lect-mathematical-ideas-notions-qft-2002/sections/sec-005",
+    "library/lect-mathematical-ideas-notions-qft-2002/sections/sec-006",
+    "library/lect-mathematical-ideas-notions-qft-2002/sections/sec-007",
+    "library/lect-mathematical-ideas-notions-qft-2002/sections/sec-008",
+    "library/lect-mathematical-ideas-notions-qft-2002/sections/sec-009",
+    "library/lect-mathematical-ideas-notions-qft-2002/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "lect-mathematical-ideas-notions-qft-2002",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "lect-mathematical-ideas-notions-qft-2002.pdf",
+    "source_sha256": "95cac1ccd6c80226180da445d111d22f976f8a9ee3b4325ceccef58abc0c9ba4",
+    "pages": 78,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}
