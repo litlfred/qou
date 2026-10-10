@@ -1,0 +1,255 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "lect-mathematical-ideas-notions-qft-2002",
+ "source": {
+  "file": "lect-mathematical-ideas-notions-qft-2002.pdf",
+  "sha256": "95cac1ccd6c80226180da445d111d22f976f8a9ee3b4325ceccef58abc0c9ba4",
+  "bytes": 678429,
+  "pages": 78,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T19:04:50Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Mathematical ideas and notions of quantum field theory",
+  "authors_raw": null,
+  "title_lines": [
+   "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD",
+   "THEORY"
+  ],
+  "abstract": "1. Generalities on quantum field theory 1.1. Classical mechanics. In classical mechanics, we study the motion of a par- ticle. This motion is described by a (vector) function of one variable, q = q(t), representing the position of the particle as a function of time. This function must satisfy the Newton equation of motion, 0 q¨ = −U (q); where U the potential energy, and the mass of the particle is 1. Another way to express this law of motion is to say that q(t) must be a solution of a certain variational problem. Namely, one introduces the Lagrangian 2 q_ L(q) = − U(q) 2 (the difference of ki",
+  "docinfo": {
+   "Title": "lect.dvi",
+   "Producer": "GPL Ghostscript 10.02.1",
+   "Creator": "dvips(k) 5.86d Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20261010190134Z00'00'"
+  },
+  "title_raw": "THEMA TICAL IDEAS NOTIONS QUANTUM FIELD THEOR Generalities quantum field theor Classi al",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "lect.dvi",
+   "heading": "MA THEMA TICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEOR Generalities on quantum field theor Classi al me hani s. In lassi al me hani s, study the motion of parti le. This motion is des rib ed e tor) fun tion of one ariable, represen ting the osition of the parti le as fun tion of time. This fun tion",
+   "text": "THEMA TICAL IDEAS NOTIONS QUANTUM FIELD THEOR Generalities quantum field theor Classi al",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_note": "Title read from page 1 and the running heads. NO AUTHOR, institution or date appears anywhere in the 78 pages; the upload is 'lect.ps', a dvips 5.86d PostScript of 'lect.dvi' whose DVI comment reads 'TeX output 2002.12.09:2039'. The title matches P. Etingof's MIT lecture notes of that name (2002) - that attribution is the ingesting agent's recognition and is NOT stated in the file. The PDF here was made from lect.ps with Ghostscript ps2pdf; lect.ps is kept beside it as the original.",
+  "source_note": "Converted: lect.ps (dvips) -> PDF with ps2pdf (Ghostscript 10). The PDF's text layer is unreliable (letter c lost, ligatures as control codes); sections/ carry the rebuilt text."
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Generalities on quantum field theory",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The steepest descent and stationary phase formulas",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Feynman calculus",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Matrix integrals",
+   "page": 21,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "The Euler characteristic of the moduli space of curves",
+   "page": 30,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Matrix integrals and counting planar diagrams",
+   "page": 38,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Quantum mechanics",
+   "page": 41,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Operator approach to quantum mechanics",
+   "page": 54,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Fermionic integrals",
+   "page": 61,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Quantum mechanics for fermions",
+   "page": 67,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Free field theories in higher dimensions",
+   "page": 73,
+   "source": "inferred",
+   "number": "11"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 55,
+   "n_words": 8
+  },
+  {
+   "id": "sec-000-1-generalities-on-quantum-field-theory",
+   "number": "1",
+   "title": "Generalities on quantum field theory",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 8732,
+   "n_words": 1589
+  },
+  {
+   "id": "sec-001-2-the-steepest-descent-and-stationary-phase",
+   "number": "2",
+   "title": "The steepest descent and stationary phase formulas",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 8654,
+   "n_words": 1734
+  },
+  {
+   "id": "sec-002-3-feynman-calculus",
+   "number": "3",
+   "title": "Feynman calculus",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 21,
+   "n_chars": 28094,
+   "n_words": 5609
+  },
+  {
+   "id": "sec-003-4-matrix-integrals",
+   "number": "4",
+   "title": "Matrix integrals",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 30,
+   "n_chars": 17472,
+   "n_words": 3640
+  },
+  {
+   "id": "sec-004-5-the-euler-characteristic-of-the-moduli-spa",
+   "number": "5",
+   "title": "The Euler characteristic of the moduli space of curves",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 38,
+   "n_chars": 20142,
+   "n_words": 4074
+  },
+  {
+   "id": "sec-005-6-matrix-integrals-and-counting-planar-diagr",
+   "number": "6",
+   "title": "Matrix integrals and counting planar diagrams",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 41,
+   "n_chars": 6580,
+   "n_words": 1397
+  },
+  {
+   "id": "sec-006-7-quantum-mechanics",
+   "number": "7",
+   "title": "Quantum mechanics",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 54,
+   "n_chars": 32912,
+   "n_words": 6235
+  },
+  {
+   "id": "sec-007-8-operator-approach-to-quantum-mechanics",
+   "number": "8",
+   "title": "Operator approach to quantum mechanics",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 61,
+   "n_chars": 17982,
+   "n_words": 3426
+  },
+  {
+   "id": "sec-008-9-fermionic-integrals",
+   "number": "9",
+   "title": "Fermionic integrals",
+   "level": 1,
+   "page_start": 61,
+   "page_end": 67,
+   "n_chars": 20048,
+   "n_words": 3966
+  },
+  {
+   "id": "sec-009-10-quantum-mechanics-for-fermions",
+   "number": "10",
+   "title": "Quantum mechanics for fermions",
+   "level": 1,
+   "page_start": 67,
+   "page_end": 73,
+   "n_chars": 18869,
+   "n_words": 3586
+  },
+  {
+   "id": "sec-010-11-free-field-theories-in-higher-dimensions",
+   "number": "11",
+   "title": "Free field theories in higher dimensions",
+   "level": 1,
+   "page_start": 73,
+   "page_end": 78,
+   "n_chars": 14515,
+   "n_words": 2869
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "toc_inferred_entries": 11,
+  "sections": 12,
+  "chars_total": 194055,
+  "sectioning": "split by hand at the 11 numbered chapter headings (no PDF outline; heading inference found none)"
+ }
+}
