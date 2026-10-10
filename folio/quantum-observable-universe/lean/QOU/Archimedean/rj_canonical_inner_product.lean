@@ -62,8 +62,10 @@ Markov parameter `z = q³/(q² + 1) = q²/[2]` (convention D).
   `r = 2` is immediate from `{1, σ}` spanning `H₂`). General `r` needs a
   normal-form / spanning theorem for `H_r(q)`, which the QOU Markov-trace modules
   (`QOU.Hecke.MarkovTrace`, `QOU.IwahoriHecke.MarkovTrace`) do not provide —
-  they carry the trace as class data, and `QOU.Hecke.markov_trace_unique` is
-  proved from `markov_trace_unique_axiom`, an `axiom`, so it cannot be built on.
+  they carry the trace as class data. (`QOU.Hecke.markov_trace_unique` was proved
+  from `markov_trace_unique_axiom`, which was **false** and has been removed; it is
+  now a theorem that takes the cross-level Markov property `MarkovTrace.IsMarkov` as
+  a hypothesis, via `QOU.IwahoriHecke.JonesNormalForm`.)
 
 ## History
 
