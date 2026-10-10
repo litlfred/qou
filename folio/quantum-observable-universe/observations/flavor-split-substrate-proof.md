@@ -12,7 +12,7 @@ $$
   [2]_q \cdot z_{\text{mkv}} \cdot (\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}),
 $$
 
-where $z_{\text{mkv}} = (q^{1/2} + q^{-1/2})^{-1}$. Dividing by $\mu_{\text{avg}} = (\mu_{\mathfrak{u}} + \mu_{\mathfrak{d}})/2$:
+where $z_{\text{mkv}} = (q^{1/2} + q^{-1/2})^{-1} = \sqrt q/(q+1)$ is the excised convention-C Markov weight, inherited from the pair-Skein formula. Steps 1 and 3 therefore hold in the convention-C frame only. At the canonical weight $z = q^3/(q^2+1)$ the product $[2]_q z$ would be exactly $q^2$, but that substitution is not valid until the pair-Skein formula is re-derived under the canonical weight. Dividing by $\mu_{\text{avg}} = (\mu_{\mathfrak{u}} + \mu_{\mathfrak{d}})/2$:
 
 $$
   \frac{m_n - m_p}{\mu_{\text{avg}}}
@@ -54,7 +54,7 @@ $$
   z_0,
 $$
 
-and $\hbar_q \cdot \sqrt{q} = (q - 1)/\sqrt{q} = q^{1/2} - q^{-1/2} = z_0$. So $h_q \cdot z_{\text{mkv}} = z_0 = \hbar_q \cdot \sqrt{q}$. This gives the chain of equivalent forms:
+and $\hbar_q \cdot \sqrt{q} = (q - 1)/\sqrt{q} = q^{1/2} - q^{-1/2} = z_0$. So $h_q \cdot z_{\text{mkv}} = z_0 = \hbar_q \cdot \sqrt{q}$. The first equality holds for the convention-C weight only: at the canonical weight $h_q z \approx 0.1281$ at $q_0$, against $q_0^{1/2} - q_0^{-1/2} \approx 0.1044$. This gives the chain of equivalent forms:
 
 $$
   h_q^2 \cdot \frac{\hbar_q}{\sqrt{q}}
