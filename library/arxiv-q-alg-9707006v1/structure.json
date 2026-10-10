@@ -1,0 +1,176 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-q-alg-9707006v1",
+ "source": {
+  "file": "9707006v1.pdf",
+  "sha256": "b9513be9294f56d92ab0094ea4817e962e459af346f424b6ba524381ab52a418",
+  "bytes": 180032,
+  "pages": 11,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T18:29:17Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "q-alg/9707006",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "4 Jul 1997"
+  },
+  "doi": null,
+  "title": "Drinfeld twist for quantum su(2) in the adjoint representation",
+  "authors_raw": "Chryssomalis Chryssomalakos",
+  "title_lines": [
+   "DIAS-STP 97-09",
+   "Drinfeld twist for quantum su(2) in the adjoint representation"
+  ],
+  "abstract": "We give a detailed description of the adjoint representation of Drinfeld\u2019s twist element, as well as of its coproduct, for suq(2). We also discuss, as applications, the computation of the universal R-matrix in this representation and the problem of symmetrization of identical-particle states with quantum su(2) symmetry. \u2217e-mail address: chryss@stp.dias.ie",
+  "docinfo": {
+   "Title": "arXiv:q-alg/9707006v1  4 Jul 1997",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20210521191202-04'00'"
+  },
+  "title_raw": "DIAS-STP 97-09 Drinfeld twist for quantum su(2) in the adjoint representation",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:q-alg/9707006v1 4 Jul 1997",
+   "heading": "Drinfeld twist for quantum su (2) in the adjoint representation",
+   "text": "DIAS-STP 97-09 Drinfeld twist for quantum su(2) in the adjoint representation",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_note": "Set by hand at ingest: the automatic pick read the arXiv side-stamp ('arXiv:q-alg/9707006v1 4 Jul 1997'). Title verified against the page-1 heading."
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Burlington Road",
+   "page": 1,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 5,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 10,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix",
+   "page": 11,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 208,
+   "n_words": 26
+  },
+  {
+   "id": "sec-000-10-burlington-road",
+   "number": "10",
+   "title": "Burlington Road",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 17,
+   "n_words": 3
+  },
+  {
+   "id": "sec-001-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 359,
+   "n_words": 51
+  },
+  {
+   "id": "sec-002-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 5,
+   "n_chars": 9341,
+   "n_words": 1721
+  },
+  {
+   "id": "sec-003-preliminaries",
+   "number": null,
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 10,
+   "n_chars": 14755,
+   "n_words": 2898
+  },
+  {
+   "id": "sec-004-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1036,
+   "n_words": 150
+  },
+  {
+   "id": "sec-005-appendix",
+   "number": null,
+   "title": "Appendix",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1414,
+   "n_words": 338
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 6,
+  "toc_inferred_entries": 6,
+  "sections": 7,
+  "chars_total": 27130
+ }
+}
