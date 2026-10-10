@@ -5,7 +5,7 @@ status: todo
 type: epic
 priority: normal
 created_at: 2026-10-10T06:48:53Z
-updated_at: 2026-10-10T13:13:18Z
+updated_at: 2026-10-10T13:35:44Z
 ---
 
 Thread (session https://claude.ai/code/session_01ST9RpvTF7JHNdUNafrjf9J). OWNER DECISION gating this thread: D7 (docs/coordination/2026-09-05-owner-gated-bean-triage.md, 2026-09-07) puts mass/binding on the full tower, but production tr_M_via_wenzl_bridge still applies D's two-row cap (keeps 0.0434% of H_12 at 4He). No full-tower mass weight is defined. Candidates: Molien (ruled only for Phi_k), C y_λ (excised), Ocneanu N≠2 (changes the trace).
@@ -47,3 +47,9 @@ Probe `computations/deltalambda/full_tower_trace_coherence_probe.py` (10/10, exa
 - Absent: no Lean statement of the faithful positive window [0, h]. The generic-z Markov property is one evaluation step from MolienSymmetrisingTrace's eval_zero_eq_of_eval_pow.
 - Tension: qou-za3q (2026-09-13) adopted Wenzl z_D for the Ω₂ binding pairing, after D7. Not reconciled.
 - Stale pre-D7 statements: TwoRowCapDerived.lean frames mass as two-row; the trace-convention-registry lists mass/binding as D. The z=h/2 Ocneanu measure is close to, but not equal to, d_q²/D² (agent's check at q=111/100).
+
+
+## 2026-10-10 — Lean results (session_01SVz9wTyu9X4uLbfvEKADVH, PR #7612, issue #7611)
+- **Plancherel incoherence, formalised** (`MathlibExt/PlancherelRestrictionIncoherent.lean`, sorry-free): d_q²/f weights on λ⊢4 restrict to a multiple of those on μ⊢3 iff [3]_q·(q−q⁻¹)⁴ = 0 (generic char-0 field). So for real q>0, q≠1, no tower trace carries them. This is the n=4→3 case of the probe's λ=(3) failure above. Do not re-formalise it.
+- **Bond-letter identity** (`Hecke/TauBondLetter.lean`, sorry-free): τ(a·(cσ_i+d)·b) = d·τ(ab) for a,b avoiding σ_i. Under Molien = τ this gives tr_atom/tr_free = ∏ d_k (Markov ∏(z+d_k) at z=0). The pp letter is a bare σ, so the Molien trace is EXACTLY 0 at ³He/⁴He. At D the ratio is d_pn < 0. So the Molien endpoint makes B_log undefined at D, ³He and ⁴He. Matches the two-arm witness to 1e-51. Stated on the TwBasis carrier; port to HeckeCoset.symTrace is queued after #7596.
+- Consequence for the interval [0, q−q⁻¹]: for 0 < z ≤ q−q⁻¹ the connected-sum ratio ∏(z+d_k) has z+d_pp = z > 0, but z+d_pn = z − h(1/2−δ/4) and z+d_nn = z − h, where h = q−q⁻¹. So z+d_nn ≤ 0 on the whole window, which is a sign obstruction for any log-binding with an nn bond. Not formalised.
