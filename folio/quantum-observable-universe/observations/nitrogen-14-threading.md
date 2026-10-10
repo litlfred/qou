@@ -10,7 +10,7 @@ Both ${}^{14}\mathrm{N}$ and ${}^{14}\mathrm{C}$ possess mass number $A = 14$ an
 | Pauli cost | 0 | $(n-p)^2/(4A)$ asymmetry |
 
 **Ground-state character of $\mathcal{N}(7,7)$.**
-For $p = n = 7$, every crossing is a $\mathfrak{p}$-$\mathfrak{n}$ mixed crossing. The mixed crossing weight $(q + q^{-1})/2 \approx 1.005$ averages the positive weight $q = q_0$ and the negative weight $q^{-1} = 0.901$. No crossing incurs the Coulomb penalty $(q - q^{-1})/2 \approx 0.105$, and none carries the attractive excess $-(q - q^{-1})/2$.
+For $p = n = 7$, every crossing is a $\mathfrak{p}$-$\mathfrak{n}$ mixed crossing. The mixed crossing weight $(q + q^{-1})/2 \approx 1.005$ averages the positive-crossing weight $q = q_0$ and the negative-crossing weight $q^{-1} = 0.901$. No crossing incurs the Coulomb penalty $(q - q^{-1})/2 \approx 0.105$, and none carries the attractive excess $-(q - q^{-1})/2$.
 
 This constitutes the maximal braid shortcut: all 26 crossings contribute identically. The alternation prevents any generator from appearing twice consecutively, so the Hecke reduction encounters no $\sigma_i^2$ terms. This renders the Gröbner--Shirshov normal form maximally efficient.
 

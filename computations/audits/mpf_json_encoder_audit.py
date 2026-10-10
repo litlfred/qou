@@ -76,7 +76,7 @@ MPF_SOURCES = {
     "hecke_core",
 }
 
-SKIP_DIRS = {"_deprecated", ".git", "__pycache__", "node_modules"}
+SKIP_DIRS = {"_deprecated", "fsh-guts", ".git", "__pycache__", "node_modules"}
 
 
 def _iter_producers(root: pathlib.Path):

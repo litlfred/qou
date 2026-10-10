@@ -272,7 +272,7 @@ def main() -> int:
     new = [r for r in rows if key(r) not in prior]
 
     files = sorted({r["file"] for r in rows})
-    live = [f for f in files if "_deprecated" not in f]
+    live = [f for f in files if ("_deprecated" not in f and "fsh-guts" not in f)]
     distinct = sorted({r["value"] for r in rows})
 
     print("=" * 74)

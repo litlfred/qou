@@ -268,7 +268,7 @@ as the $H^2$ calibration — not an additional fit.
    >   from CODATA. Its "match to $10^{-12}$" is the identity closing, not
    >   a prediction of the measured $\alpha$.
    > - Every *"✅ resolved"* corroboration lives under
-   >   `docs/audits/_deprecated/`.
+   >   `fsh-guts/deprecated/docs/audits/`.
    > - The quoted 6.7 ppb is muon-pinned **and** measured against CODATA-
    >   **2018** (`137.035999084`; 2022 is `137.035999177`).
    >

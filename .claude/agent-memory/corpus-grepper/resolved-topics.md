@@ -372,7 +372,7 @@ TRAP: the 2026-09-05 survey §7g (pre-correction) cited the Gevrey result to Alg
   `4^k` square kites per binary tessellation `tes_k I²`) — worked to a verdict in bean `qou-20bk` (completed 2026-09-06) +
   `LiftingDescent/CrossedModuleSurfaceHolonomy.lean` (sorry-free): no 2-dim Yekutieli object carries a non-abelian 3-body term;
   the only 3-body object is `∫γ` over a balloon (Thm 8.6.6). (ii) "kite-tail" `(1+r²)^k` cyclotomic factor of `tr_M`
-  (`docs/audits/2026-05-09-kite-tail-reconciliation.md`, `computations/_deprecated/kite_tail_*`) — a braid triangle `σᵢσⱼσᵢ`, NOT Yekutieli.
+  (`docs/audits/2026-05-09-kite-tail-reconciliation.md`, `fsh-guts/deprecated/computations/kite_tail_*`) — a braid triangle `σᵢσⱼσᵢ`, NOT Yekutieli.
   (iii) nothing Penrose/Ptolemy. **Nobody counts kites as a function of A.** "surface of kites" has no corpus meaning.
 - **Stokes surface term**: `2026-08-30-nonabelian-stokes-and-the-surface-term.md` — bad set `|bad(τ,k)| ≤ a₀ + a₁·2^k`
   (perimeter count, singular points of `σ`); shape only, no magnitude. Lean shadow: `AffineCountIsNotASurfaceTerm.lean`
@@ -438,7 +438,7 @@ Since `q^h − q^{-h} = 2 sinh(h ln q) = (q−q^{-1})[h]`, **any** `Σ_λ ∏_c 
 **ARITY TRAP:** the `.md` is general-`n`; the Lean sibling proves only `n = 3,4,5`
 (`binding_period_involution_statistic_{three,four,five}`, `decide`-backed). General `n` rests on the
 narrative proof via Stanley EC2 + Schützenberger, both **registered-not-ingested**.
-Other carriers: `computations/_deprecated/q_variant_partition_sum.py:86-91` (literally `Σ 1/H_q(λ)`, n=3, refuted);
+Other carriers: `fsh-guts/deprecated/computations/q_variant_partition_sum.py:86-91` (literally `Σ 1/H_q(λ)`, n=3, refuted);
 `QOU/Mass/QHookDimension.lean` (`lw(c)=(1/(c+1))Σ_{λ⊢c+1} dim_q V_λ`, hook-derived, sorry-free);
 `binding_qhyperbolic_weight_probe.py` (`C_λ/∏[h]_q` over full p(3A), scope-(a) refuted);
 `alpha_em_2I_total_quantum_dimension_gate_test_probe.py` (`D=√(Σ_λ d_q(λ)²)`, hook-content, scope-(a) refuted);

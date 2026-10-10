@@ -1,14 +1,17 @@
 ---
 # qou-8p1c
-title: 'qou-8pl1/c: period-matrix route — BLOCKED on infra, requirements recorded'
+title: 'qou-8pl1/c: period-matrix route (Bring vs Klein) — parked until qou-8p1e drops a premise; infra requirements recorded'
 status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - 8f-colour
 created_at: 2026-08-07T00:00:00Z
-updated_at: 2026-10-04T15:23:03Z
+updated_at: 2026-10-10T14:47:26Z
 parent: qou-8lxd
+blocked_by:
+    - qou-8p1e
 ---
 
 Parent: `qou-8pl1`. The decisive route, and the expensive one.
@@ -101,3 +104,14 @@ It does not matter for priority: the route is deprioritised anyway (there is no
 shortlist of candidate targets left to compare, per `qou-8p1a`). But the bean
 should not sit there asserting a false infrastructure claim that a future agent
 might trust.
+
+## 2026-10-10: retitled and gated on `qou-8p1e`
+
+The old title said "BLOCKED on infra". This body has already corrected that twice:
+numpy and scipy install, and only `sage` and `abelfunctions` are unavailable. The real
+reason the route is parked is substantive. `qou-8pl1` records a scope-(b) exclusion of
+the Bring→Klein degeneration under the chapter's three premises
+(`computations/s4_marked_pair_obstruction.py`). A period-matrix comparison only matters
+once `qou-8p1e` decides which premise (H1, H2 or H3) to drop. So this bean is now
+`blocked_by: qou-8p1e`, and the title says why. Nothing is closed: `8pl1`'s
+conjecture is deliberately left open.

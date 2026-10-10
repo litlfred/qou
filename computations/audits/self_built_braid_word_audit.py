@@ -113,7 +113,7 @@ SEARCH_ROOTS = ["computations", "tools", "qou-mass"]
 #: a reader is expected to read.
 DELIBERATE_MARKER = "audit: deliberate-historical-word"
 MARKER_WINDOW = 25
-SKIP_PARTS = {"_deprecated", ".git", "node_modules", "__pycache__", ".lake"}
+SKIP_PARTS = {"_deprecated", "fsh-guts", ".git", "node_modules", "__pycache__", ".lake"}
 
 
 def _iter_py():

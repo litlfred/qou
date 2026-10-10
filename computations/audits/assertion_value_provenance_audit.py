@@ -197,7 +197,7 @@ def main() -> int:
 
     bucketA: dict[str, int] = collections.Counter()
     for p in glob.glob("computations/**/*.witness.json", recursive=True):
-        if "_deprecated" in p:
+        if ("_deprecated" in p or "fsh-guts" in p):
             continue
         try:
             d = json.load(open(p))
@@ -221,7 +221,7 @@ def main() -> int:
     flagged, clean, missing = {}, 0, 0
     for name, n in bucketA.items():
         paths = [q for q in glob.glob(f"computations/**/{name}", recursive=True)
-                 if "_deprecated" not in q]
+                 if ("_deprecated" not in q and "fsh-guts" not in q)]
         if not paths:
             missing += 1
             continue

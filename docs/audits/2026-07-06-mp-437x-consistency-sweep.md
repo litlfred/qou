@@ -52,7 +52,7 @@ and `docs/precision-goals.md` (reference state, verified current),
 Subgoal-1 close-out" already carries the 2026-07-05 2/7 update), historical
 blocks already carrying a supersession banner, and false positives (magic-
 number "4/7 derived", the `3/7` rational candidate in λ_scale spikes,
-`24/77` partition coverage, `docs/audits/_deprecated/`). No compute or
+`24/77` partition coverage, `fsh-guts/deprecated/docs/audits/`). No compute or
 witness files touched; the committed witness already carries
 `beats_100x_count=2`. **`content/` tree: zero hits** (no content-block
 edits, so no render-QA battery was needed).
@@ -99,7 +99,7 @@ snapshot or already-superseded — listed, not edited.
 | `docs/coordination/1ppq-qbeta.md:153` | dated ledger row; the ledger self-corrects at line ~683 ("m_p (#3280, MERGED). The `(1+46u⁴)…` Habiro tower was a CODATA fit") |
 | `docs/coordination/2026-05-26-proton-mass-identity-workplan.md:67`; `docs/workplans/2026-05-27-1ppQ-reassessment.md:5`; `docs/workplans/2026-06-30-j1hg-z5vu-overcount-q0repin-sequencing.md:36` | already describe the tower as a CODATA fit / +242 ppb regression / purged |
 | `docs/coordination/2026-07-02-lambda-a-excision-consumer-lanes.md:101` | dated lane-migration record; its "0.0004 ppb" result column reflects the pre-drop witness the script read at that date. Note for readers: post-drop the substrate-identity witness yields +1.35 ppb on regeneration |
-| `docs/audits/_deprecated/*` (magic-number "4/7"), λ_scale-spike `3/7` rational candidates, `24/77` partition coverage, `2026-05-06-staircase` 8/16 rows, `13/71` crossing fractions | false positives — not L2 counts |
+| `fsh-guts/deprecated/docs/audits/*` (magic-number "4/7"), λ_scale-spike `3/7` rational candidates, `24/77` partition coverage, `2026-05-06-staircase` 8/16 rows, `13/71` crossing fractions | false positives — not L2 counts |
 
 ## Counts
 

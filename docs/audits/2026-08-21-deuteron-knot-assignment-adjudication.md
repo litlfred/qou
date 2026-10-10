@@ -91,7 +91,7 @@ matches the word. The question is whether the *word* is the deuteron's.
 | | |
 |---|---|
 | **Named** | Hopf link `L2a1`, Seifert-fibred, `Vol = 0` exactly |
-| **Braid word** | `σ₃²` in the inter-nucleon generator subset of `H₆` — [`_deprecated/binding_k_enumerator.py:37`](../../computations/_deprecated/binding_k_enumerator.py): *"For ²H, this confirms K = σ₃² (Hopf, length 2) is the unique PSD-feasible inter-nucleon binding of length ≤ L_K_max"* |
+| **Braid word** | `σ₃²` in the inter-nucleon generator subset of `H₆` — [`_deprecated/binding_k_enumerator.py:37`](../../fsh-guts/deprecated/computations/binding_k_enumerator.py): *"For ²H, this confirms K = σ₃² (Hopf, length 2) is the unique PSD-feasible inter-nucleon binding of length ≤ L_K_max"* |
 | **Volume as used** | `0` |
 | **Primary sites** | [`binding_link_volumes.py:8,118`](../../computations/binding_link_volumes.py), [`binding-k-solver.witness.json`](../../computations/binding-k-solver.witness.json) `registry[0].binding_link_name = "L_H (Hopf)"`, [`theta_wn_jetfilt_linkvolume.py:78`](../../computations/theta_wn_jetfilt_linkvolume.py), [`volume-binding-four-point.witness.json`](../../computations/volume-binding-four-point.witness.json), [`deltalambda/vol_t_he3_snappy_probe.py:80`](../../computations/deltalambda/vol_t_he3_snappy_probe.py), [`bk_crossing_coordination.py:86,91`](../../computations/bk_crossing_coordination.py) |
 | **Content layer** | [`bk-coordination-multiplicity.md:30`](../../content/quantum-observable-universe/mass-theory/bk-coordination-multiplicity.md): *"The deuteron sits on the Seifert-fibred Hopf link"*; [`linear-chain-bond-count.md:32`](../../content/quantum-observable-universe/mass-theory/linear-chain-bond-count.md) |
@@ -258,7 +258,7 @@ settles that the *printed digits* were stale and that the named set beats the
 orphan set; it does **not** supply a derivation, and it does not claim to
 (§Verdict: *"the SDP-uniqueness claim of `conj:canonical-knot-id-sdp` itself
 remains open"*). The producer `jsj_verification.py` now lives in
-`computations/_deprecated/`.
+`fsh-guts/deprecated/computations/`.
 
 Under the owner's ruling — *"Δ_λ from inverted CODATA = NOT ALLOWED"* — an
 assignment selected by which volume reproduces `B_AME` is **inadmissible as a

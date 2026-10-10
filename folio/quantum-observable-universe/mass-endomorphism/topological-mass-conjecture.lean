@@ -169,18 +169,31 @@ theorem mass_mono_of_extra_dilog {R : Type*} [AddCommMonoid R] [PartialOrder R] 
         exact le_add_of_nonneg_right hextra_nonneg
     _ = ∑ i : Fin M₂.N, M₂.dilog i := Fin.sum_congr' _ hN.symm
 
-/-! ## No instance (removed 2026-10-10, bean `qou-hjf4`)
+/-- **Flat-vortex satisfiability witness** (a `def`, deliberately NOT an
+    `instance`).  The data `holonomy = 0`, `N = 0`, `mass = 0` satisfies
+    `decomp` by `simp`.  It shows only that the class is consistent; it
+    encodes none of the conjectural content.
 
-A global `instance trivialVortex (vortex : Type*) :
-TopologicalDecompositionMass ℝ vortex` (holonomy `0`, `N = 0`, mass `0`)
-used to stand here. Its own docstring said it "encodes none of the
-conjectural content" while "discharging the §3b-cond hypothesis for
-downstream blocks" — i.e. it made every `[TopologicalDecompositionMass ℝ v]`
-binder resolve, for every type `v`, at a degenerate zero. That converts the
-conditional theorems above into unconditional statements about a vacuous
-carrier (AGENTS.md §1a). It had zero consumers and was removed; a named
-`def` with the same zeros would be the same non-content, so none is kept.
-The class has no instances, which is the honest open state of the
-conjecture. -/
+    This was a global `instance` until 2026-10-10 (bean `tmvac`).  As an
+    instance over an arbitrary `vortex` it was found by typeclass resolution
+    for every vortex type, so any `[TopologicalDecompositionMass ℝ vortex]`
+    binder was discharged with all-zero data and `M.mass` resolved to `0`.
+    That preempted the §3b-cond hypothesis rather than witnessing it.  Use
+    it explicitly, e.g. `@mass_nonneg ℝ _ _ _ v (flatVortex v)`, where a
+    consistency check is wanted.
+
+    Note that `mass` is itself a field of the class, so `decomp` relates
+    fields of one instance to each other.  It does not tie `mass` to a mass
+    defined independently of the instance. -/
+-- Ref: [manuscript] conj:topological-decomposition-mass §"Skeleton"
+def flatVortex (vortex : Type*) :
+    TopologicalDecompositionMass ℝ vortex where
+  holonomy := 0
+  holonomy_nonneg := le_refl 0
+  N := 0
+  dilog := fun i => i.elim0
+  dilog_nonneg := fun i => i.elim0
+  mass := 0
+  decomp := by simp
 
 end QOU.TopologicalMass

@@ -59,7 +59,7 @@ from mpmath import mp, mpf
 # import at runtime via the deprecated path so this audit script still
 # regenerates its witness end-to-end (audit-only; no production
 # consumer depends on this module path).
-sys.path.insert(0, str(Path(__file__).parent / "_deprecated"))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "fsh-guts" / "deprecated" / "computations"))
 from proton_mass_tower_derivation import (  # noqa: E402  — late path-insert
     Phi_q as PhiQ_legacy_f64,
     electron_V_hat,

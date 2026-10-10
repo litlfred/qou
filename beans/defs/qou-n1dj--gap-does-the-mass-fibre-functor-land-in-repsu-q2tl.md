@@ -1,13 +1,13 @@
 ---
 # qou-n1dj
 title: 'GAP: does the MASS fibre functor land in Rep(SU_q(2))~TL or full H_3(q)? (corpus self-contradiction, D vs C, 197 ppm on m_p)'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T09:50:22Z
-updated_at: 2026-10-10T07:00:33Z
+updated_at: 2026-10-10T13:07:36Z
 parent: qou-d8c7
 ---
 
@@ -548,6 +548,9 @@ added or removed).
 ## 2026-10-10 — reparented to the mass-endomorphism epic
 
 This bean is carrier M8 of epic `qou-d8c7` (issue litlfred/qou#7547). Parent moved from `qou-wp3h` to `qou-d8c7`; nothing in the body above was changed by the move.
+
+## 2026-10-10: closed
+The question was answered 2026-08-08 (the fibre has at most 2 rows, which forces convention D), and the 2026-08-15 owner ruling made D canonical. Closed under the owner's standing instruction of 2026-10-10 ('close beans as appropriate'). No open conjecture remains on this bean.
 
 
 

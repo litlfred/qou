@@ -176,7 +176,7 @@ class Cone:
             self.by_stem[pathlib.Path(f).stem].append(f)
         # prefer a live module over a _deprecated twin sharing its stem
         for k in self.by_stem:
-            self.by_stem[k].sort(key=lambda p: ("_deprecated" in p, len(p)))
+            self.by_stem[k].sort(key=lambda p: (("_deprecated" in p or "fsh-guts" in p), len(p)))
         self._code: dict[str, str | None] = {}
 
     def code(self, rel: str) -> str | None:
@@ -391,7 +391,7 @@ def main() -> int:
 
     tracked = _tracked()
     wits = [f for f in tracked
-            if f.endswith(".witness.json") and "_deprecated" not in f]
+            if f.endswith(".witness.json") and ("_deprecated" not in f and "fsh-guts" not in f)]
     pys = [f for f in tracked if f.endswith(".py")]
     cone = Cone(pys)
 

@@ -43,14 +43,16 @@ at symbolic `z` through `n = 6`.
 
 ## Base ring (§7c)
 
-`ℝ`, inherited from `seminormalParam` and `seminormalRep`.  The genericity hypothesis
-`hgen : ∀ i, 0 < i → (q²)^i ≠ 1` is the standard not-a-root-of-unity condition, and it is
-archimedean only in that it is stated over `ℝ`.
+Generic `[Field K]`, matching `seminormalParam` and `seminormalRep`.  The genericity hypothesis
+`hgen : ∀ i, 0 < i → (q²)^i ≠ 1` is the standard not-a-root-of-unity condition.  No ordering, no
+`ℝ`.
 
 LaTeX label: `thm:markov-convention-d`
 -/
 
 namespace QOU.SchurWeyl
+
+variable {K : Type*} [Field K]
 
 open QOU.Mathlib YoungDiagram QOU.SchurWeyl.Seminormal QOU.SchurWeyl.HeckeInclusion
 
@@ -82,7 +84,7 @@ theorem rowLen_two_pos_addCell {ν : YoungDiagram} {s : ℕ × ℕ} (hs : IsAdda
   rw [← YoungDiagram.mem_iff_lt_rowLen] at h ⊢
   exact (mem_addCell ν s (2, 0) hs).mpr (Or.inr h)
 
-theorem corner_identity_of_three_rows (q : ℝ) (hq21 : q ^ 2 + 1 ≠ 0)
+theorem corner_identity_of_three_rows (q : K) (hq21 : q ^ 2 + 1 ≠ 0)
     (ν : YoungDiagram) (h : 0 < ν.rowLen 2) (r : ℕ × ℕ) :
     ∑ s : {s : ℕ × ℕ // IsAddableCell ν s},
         ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) (addCell ν s.1 s.2)
@@ -93,15 +95,15 @@ theorem corner_identity_of_three_rows (q : ℝ) (hq21 : q ^ 2 + 1 ≠ 0)
   rw [ocneanuWeight_conventionD_eq_zero_of_three_rows q hq21 _
     (rowLen_two_pos_addCell s.2 h), zero_mul]
 
-theorem corner_identity_twoRow (q : ℝ) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
-    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : ℝ) ^ i ≠ 1) (h : k ≤ m)
+theorem corner_identity_twoRow (q : K) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
+    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : K) ^ i ≠ 1) (h : k ≤ m)
     (r : ℕ × ℕ) (hr : IsCornerCell (twoRow m k h) r) :
     ∑ s : {s : ℕ × ℕ // IsAddableCell (twoRow m k h) s},
         ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) (addCell (twoRow m k h) s.1 s.2)
           * seminormalParam q (axialDistance r s.1)
       = (q ^ 3 / (q ^ 2 + 1)) * ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) (twoRow m k h) := by
   classical
-  set z : ℝ := q ^ 3 / (q ^ 2 + 1) with hz
+  set z : K := q ^ 3 / (q ^ 2 + 1) with hz
   -- move to a summand that depends only on the cell
   have hcell : ∑ s : {s : ℕ × ℕ // IsAddableCell (twoRow m k h) s},
       ocneanuWeight q z (addCell (twoRow m k h) s.1 s.2)
@@ -159,8 +161,8 @@ theorem corner_identity_twoRow (q : ℝ) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
       exact markov_corner_row1_diag q hq hq21 hgen k
 
 /-- **The per-corner Markov identity at convention D, for every Young diagram.** -/
-theorem ocneanuWeight_corner_identity (q : ℝ) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
-    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : ℝ) ^ i ≠ 1) (ν : YoungDiagram) (r : ℕ × ℕ)
+theorem ocneanuWeight_corner_identity (q : K) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
+    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : K) ^ i ≠ 1) (ν : YoungDiagram) (r : ℕ × ℕ)
     (hr : IsCornerCell ν r) :
     ∑ s : {s : ℕ × ℕ // IsAddableCell ν s},
         ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) (addCell ν s.1 s.2)
@@ -176,11 +178,11 @@ theorem ocneanuWeight_corner_identity (q : ℝ) (hq : q ≠ 0) (hq21 : q ^ 2 + 1
 namespace SeminormalRep
 
 /-- **The Markov condition for the Ocneanu weight at convention D, at every `n`.** -/
-theorem markov_conventionD (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (hq21 : q ^ 2 + 1 ≠ 0)
-    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : ℝ) ^ i ≠ 1) {m : ℕ} (y : Hecke ℝ q q⁻¹ m) :
+theorem markov_conventionD (q : K) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (hq21 : q ^ 2 + 1 ≠ 0)
+    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : K) ^ i ≠ 1) {m : ℕ} (y : Hecke K q q⁻¹ m) :
     ∑ L : {ρ : YoungDiagram // ρ.cells.card = m + 2},
         ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) L.1
-          * ((seminormalRep q hq0 hq2 (m + 1) L.2 (heckeIncl ℝ q q⁻¹ m y))
+          * ((seminormalRep q hq0 hq2 (m + 1) L.2 (heckeIncl K q q⁻¹ m y))
               * genMat q (m + 1) (by omega) L.2.ge).trace
       = (q ^ 3 / (q ^ 2 + 1)) * ∑ ν : {ν : YoungDiagram // ν.cells.card = m + 1},
           ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) ν.1 * (seminormalRep q hq0 hq2 m ν.2 y).trace :=

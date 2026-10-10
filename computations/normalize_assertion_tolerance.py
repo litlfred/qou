@@ -164,7 +164,7 @@ def main() -> int:
     changed_fields = 0
     skipped: list[tuple[str, str]] = []
     for p in sorted(root.rglob("*.witness.json")):
-        if "_deprecated" in p.parts:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue
         text = p.read_text(encoding="utf-8")
         try:

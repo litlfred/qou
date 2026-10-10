@@ -134,7 +134,7 @@ The builder already refuses to downgrade the environment block, and it leaves th
 | T10 | Upstream generic Lean audits to `folio-assistant-sci` (`folio/pipeline` Lean audits; `scripts/lean-*` vacuity/axiom/orphan; lean-axiom-guard; lean-content-siblings) | each one exists in sci, takes the root as a parameter, and reproduces qou's current output on qou (same finding set); the qou copy is retired only after that | L | — |
 | T11 | Reconcile and retire 8 forked scripts, 3 forked pipeline modules and `lake-cache-refresh.yml` | each qou-only delta is either upstreamed or recorded as qou-specific; afterwards qou calls the f-a path | M | — |
 | T12 | Upstream library/bib/uses tooling to `folio-assistant-core`, and beans/QA/SDLC hooks to `cat-harness` | same output-parity rule as T10 | L | — |
-| T13 | Retire renderers and deploy into `fsh-guts/` (`deploy/`, `paper-builder-image`, `build-lean-mcp`, `docs-site.yml`, typedoc, `make-all-tables`, `split-pdf`) and move `computations/_deprecated` → `fsh-guts/` | pure renames; **27 content references into `_deprecated` are retargeted in the same commit as the move, and `wedderburn-weight-canonical.ts`'s `computation.script` is fixed first — see the correction below** | S | owner ack on `_deprecated` |
+| T13 | Retire renderers and deploy into `fsh-guts/` (`deploy/`, `paper-builder-image`, `build-lean-mcp`, `docs-site.yml`, typedoc, `make-all-tables`, `split-pdf`) and move `fsh-guts/deprecated/computations` → `fsh-guts/` | pure renames; **27 content references into `_deprecated` are retargeted in the same commit as the move, and `wedderburn-weight-canonical.ts`'s `computation.script` is fixed first — see the correction below** | S | owner ack on `_deprecated` |
 | T14 | `qou-mass` vendor drift → a declared Tool with `maintains`, plus a drift gate | the gate reports 12/164 today without regenerating anything | S | owner (§5.7) |
 
 > **🛑 Correction to T13's evidence cell, 2026-10-10 (bean `qou-6u3n`; found via `qou-jyqd`).**
@@ -145,12 +145,12 @@ The builder already refuses to downgrade the environment block, and it leaves th
 > convention-C shape*, because it answers *"does retired convention-C code still
 > reach the content?"*; T13 breaks on **any** reference. Measured directly:
 >
->     git grep -l 'computations/_deprecated' -- 'folio/**' | grep -v '\.lake/'
+>     git grep -l 'fsh-guts/deprecated/computations' -- 'folio/**' | grep -v '\.lake/'
 >     → 27 files    (11 .json, 7 .ts, 5 .lean, 4 .md), naming 15 distinct producers/witnesses
 >
 > **One is structural rather than textual**, and it is a live defect independent
 > of T13: `mass-theory/wedderburn-weight-canonical.ts` carries
-> `computation.script: "computations/_deprecated/bw_wenzl_shadow_equivalence.py"`
+> `computation.script: "fsh-guts/deprecated/computations/bw_wenzl_shadow_equivalence.py"`
 > with `status: "verified"` — a block declaring a verified computation against a
 > deprecated producer, whose own `authorNotes` already record that the
 > Wenzl-bridge field was dropped by owner ruling. The other 26 are prose,

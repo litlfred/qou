@@ -120,7 +120,7 @@ def scan() -> tuple[list[tuple], dict]:
 
     producers: dict[str, list[Path]] = {}
     for p in (ROOT / "computations").rglob("*.py"):
-        if "_deprecated" in p.parts:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue
         producers.setdefault(p.stem, []).append(p)
 

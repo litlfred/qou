@@ -2,6 +2,16 @@ The bracket $[M_i, M_j] = 2M_k$ is a theorem about the quaternions. Reading it
 as a *physical* symmetry is a separate step, and this remark keeps the two
 apart.
 
+A prior scope is settled first. The compact $\mathfrak{su}(2)$ triad lives on
+the quaternionic model $\mathbb{H} = \mathbb{C}^2$, not on the link of the
+Bring cone: that link is $UT(\Sigma_4)$, whose Reeb triad is the split
+$\mathfrak{sl}_2(\mathbb{R})$
+([the Reeb twist lemma](#lem:bring-cone-reeb-quaternionic-twist)). So the
+$\mathrm{SU}(2)$ read here is the structure group of a bundle over the
+localized states, which is the one place it survives in this layer — it is not
+a triad of Reeb fields on the link, and nothing below depends on its being
+one.
+
 The reading is: the Reeb flow along the fibres of the Bring cone carries an
 internal $\mathrm{SU}(2)$ structure on the localized states, so that the
 [quaternionic spectral resolvents](#def:quaternionic-spectral-resolvents),

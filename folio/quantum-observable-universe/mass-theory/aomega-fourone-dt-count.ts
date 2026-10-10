@@ -33,7 +33,7 @@ export default theorem({
       kind: "status",
       date: "2026-08-02",
       body:
-        "**Conditional theorem (§3b-cond), sorry-free; theorem for 4₁.** Lean " +
+        "**Conditional theorem (§3b-cond), sorry-free.** Lean " +
         "`QOU.QBeta.aomega_fourOne_dt_count` derives `bpsDim(4₁) = 3` through " +
         "the two `StokesDTBPSBridge` fields plus the bridge-independent " +
         "certified q→0 Stokes datum `S⁺(0)₀₁ = 3` " +
@@ -43,6 +43,19 @@ export default theorem({
         "exit 0. NOT wired to production (L2 / Q_β untouched). Internal " +
         "derivation of 3 from the QOU categorical drivers remains open " +
         "(`qou-qnnq`).",
+    },
+    {
+      kind: "status",
+      date: "2026-10-10",
+      body:
+        "**Scope corrected: conditional for 4₁ too.** The earlier status read " +
+        "\"theorem for 4₁\" on the ground that GGM proved peacock Conjecture 3 " +
+        "for the figure-eight. The held paper (library/arxiv-2012.00062v3) keeps " +
+        "Conjecture 3, including (d), a conjecture; it proves Conjecture 5 for " +
+        "4₁ and 5₂ (Theorem 6) and verifies Conjecture 4 by computation. No " +
+        "bridge instance is discharged, so the result is conditional for every " +
+        "knot. The Lean (conditional on the class) is unchanged. Owner-approved " +
+        "2026-10-10; bean qou-3ent.",
     },
   ],
 });

@@ -24,16 +24,19 @@ export default proposition({
   ],
   authorNotes: [
     {
-      kind: "note",
-      date: "2026-08-07",
+      kind: "status",
+      date: "2026-10-10",
       body:
-        "**§7c base-ring note (archimedean specialisation).** " +
-        "`HeckeRepRingContext` types `q`, `qDim`, `fullTwistEig`, " +
-        "`rjPairing`, `jonesPoly` and `tr_M_char` over `ℝ`: these are " +
-        "*evaluated* representation-ring quantities at the substrate " +
-        "anchor, not the Laurent-polynomial objects they specialise. The " +
-        "module also sits under `QOU/Archimedean/`, which is the " +
-        "directory-level statement of the same fact.",
+        "**Lean status: partial, sorry-free.** `QOU/Archimedean/rj_canonical_inner_product.lean` " +
+        "no longer carries the self-assuming `HeckeRepRingContext` (its fields " +
+        "`claim_unique_up_to_scalar`, false, and `jonesPoly_eq_eval`, the convention-C sum, were " +
+        "projected out as theorems). Proved over a generic field: `z = q^2/[2] = z_D`; the " +
+        "hook-content dimensions `d_(r) = [r+1]` and `d_(m,1) = [m]`; part (iii) at `r = 2` for " +
+        "every `s`, computed in `H_2(q)` (`h2Trace_rossoJones`); and the refutation of the old " +
+        "part (ii) at `r = 2` (`old_form_ii_false_r2`). Part (iii) for general `r` and the " +
+        "Markov-uniqueness content of (ii) are not formalised; (iii) is cited and checked in " +
+        "exact arithmetic for `r = 2, 3, 4` by `computations/probes/rj_inner_product_conventionD_torus_probe.py`. " +
+        "Bean `qou-q425`.",
     },
   ],
 });

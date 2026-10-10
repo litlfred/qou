@@ -39,7 +39,7 @@ Why this is not a claim that the binding compute is broken
 ----------------------------------------------------------
 It is the precise structural reason the COLOUR WEIGHTING is load-bearing.
 `bring_color_weighted` was made the canonical p/n convention by the
-2026-08-15 owner ruling R3, and `computations/_deprecated/schur_weyl_q_hecke.py`
+2026-08-15 owner ruling R3, and `fsh-guts/deprecated/computations/schur_weyl_q_hecke.py`
 was deprecated with the note that it works from cycle type and "cannot
 distinguish proton from neutron". This probe measures exactly how far that
 blindness goes and where it comes from: not a coarse invariant, not the

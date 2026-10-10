@@ -93,7 +93,7 @@ def _enumerate_production_scripts() -> list[Path]:
     scripts: list[Path] = []
     # Scan the compute tree (computations/), not just audits/ (reorg fix).
     for py in sorted((HERE.parent).rglob("*.py")):
-        if "_deprecated" in py.parts:
+        if ("_deprecated" in py.parts or "fsh-guts" in py.parts):
             continue
         if any(pat in py.name for pat in PRODUCTION_CONSUMER_PATTERNS):
             scripts.append(py)
@@ -105,7 +105,7 @@ def _collect_upstream_refs() -> dict[str, list[str]]:
     as an upstream (via `upstream_witness_hashes`)."""
     upstream_map: dict[str, list[str]] = {}
     for w in sorted((HERE.parent).rglob("*.witness.json")):
-        if "_deprecated" in w.parts:
+        if ("_deprecated" in w.parts or "fsh-guts" in w.parts):
             continue
         try:
             d = json.loads(w.read_text(encoding="utf-8"))
@@ -209,7 +209,7 @@ def main() -> int:
             "i1-no-probe-audit.witness.json",
         ):
             continue
-        if "_deprecated" in w.parts:
+        if ("_deprecated" in w.parts or "fsh-guts" in w.parts):
             continue
         result = _audit_witness(w, prod_scripts, upstream_map)
         if result is None:

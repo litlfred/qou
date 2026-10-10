@@ -111,7 +111,7 @@ Hartree `α²·m_e ≈ 27 eV`, and it is already canonical.
   inter-electron crossings. eV-scale; does not reach the mass residual.
 - **Live SDP capacity demo.** The "add electrons until the confinement SDP goes
   infeasible" experiment wants the `electron-shell-ilp` solver, currently in
-  `computations/_deprecated/`. Reviving it canonically (the deprecated scratch
+  `fsh-guts/deprecated/computations/`. Reviving it canonically (the deprecated scratch
   gave wrong capacities, e.g. H=5) is a separate tranche; here the capacity for
   Z ≤ 3 is the trivial Aufbau filling, with noble-gas closure cited from
   `ElectronShell.lean`.

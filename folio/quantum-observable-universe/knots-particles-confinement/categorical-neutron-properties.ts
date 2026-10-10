@@ -25,7 +25,7 @@ export default remark({
         "**Withdrawn: the LP-stability paragraph and the 4-versus-2 " +
         "asymmetry** (bean `qou-jqjx`). The proton block carries the full " +
         "diagnosis; the short form is that every number here came from " +
-        "`computations/_deprecated/integer-lp-gluon.py`, which uses the " +
+        "`fsh-guts/deprecated/computations/integer-lp-gluon.py`, which uses the " +
         "`tr_M(e-) = z^3` weight retired on 2026-05-19 in favour of " +
         "`h*z^2 + z`. Reproduced on the retired convention this block's " +
         "`-0.132` comes out at `-0.132224`; on the live convention D the same " +

@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T02:47:59Z
-updated_at: 2026-10-10T07:01:23Z
-parent: qou-d8c7
+updated_at: 2026-10-10T14:43:06Z
+parent: qou-ywyq
 ---
 
 
@@ -183,6 +183,20 @@ This bean is carrier M1 of epic `qou-d8c7` (issue litlfred/qou#7547). Parent mov
 ## 2026-10-10 — untracked residue found in the epic survey
 
 Two declarations claim `def:mass-identity`. The block's `mass-identity.ts:12` points at `qou:QOU.Torsion.MassIdentity` (`validation: not_checked`), while the sibling `mass-identity.lean` defines `frobeniusMass` (line 74) and `scalarMass` (line 92). Which one the block means is part of this bean's formulation question; nothing was changed.
+
+## 2026-10-10 — state re-measured; annotation fixed; defect 1 caveat recorded (branch claude/mass-identity-wall-2026-10-10, c9253142e + 90af5742a)
+
+**Defect 2 was already fixed on main** by option 1 (2026-08-22): `Torsion/MassIdentity.lean` is generic `[CommRing R]`, `sp` is gone from it. Re-verified by grep: no `.sp` read of `MassIdentity`/`ArchimedeanMassIdentity` anywhere (remaining `.sp` hits: `gas.sp`, `r.sp`, `Symplectic.sp`). `ArchimedeanMassIdentity.sp` is still inert but is in the post-wall module by design, so left.
+
+**Residual contradiction fixed in the annotation, not by moving files.** GroundRingAnnotations still said Torsion/ = generic k / formal chain ✓, while `ArchimedeanMassIdentity`, `TopologicalMass` (ℝ throughout) and `HeckeMassElement.mass` are ℝ by design. Row now reads generic k + named ℝ realisation modules, 'partial' (the GaugeFieldFluidDynamics precedent). Chose this over moving the files out of Torsion/ because the files already self-declare as post-wall and a move renames a module two live refs reach. Six other Torsion files mention ℝ/Real. (MassGap, neutron_proton_splitting, quantum_dilogarithm, BraneTower, weak_equiv_invariance, mass_decomposition_categorical) — listed as untriaged, not classified.
+
+Verified lean-direct (-DautoImplicit=false -s 65536, fresh oleans): MassIdentity, ArchimedeanMassIdentity, TopologicalMass, GroundRingAnnotations, sibling mass-identity.lean all exit 0, no sorry. run-validate: 9 issues (baseline 9).
+
+**Defect 1: caveat added** to mass-identity.ts authorNotes (2026-10-10). Two new observations beyond the body above: (i) the sibling `mass-identity.lean` DOES define `frobeniusMass`/`scalarMass` (this body's 'neither exists' was about the library tree), but `frobeniusMass` takes the trace value as an input `R` rather than computing it, so it does not formalise the trace formula either; (ii) the prose formula is ill-typed as written: `tr` is on End(A) but its argument `(∫_A⊗id)∘Δ∘ϱ` is 𝟙 → 𝟙⊗A ≅ A. The endomorphism is `(∫_A⊗id)∘Δ` before ϱ (the sibling's `massComposite : A ⟶ 𝟙 ⊗ A` confirms this). Any resolution (options 2/3 above) must also fix this typing.
+
+Not closeable: defect 1 is an open owner decision.
+
+2026-10-10: reparented under owner GOAL #1 milestone qou-ywyq (defect 1 is the subject of that goal).
 
 
 

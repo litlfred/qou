@@ -10,7 +10,7 @@ import { simulator } from "../../schema/builders";
 export default simulator({
   label: "sim:quantum-brings-surface",
   title: "Quantum Bring's Surface Simulator",
-  html: "fsh-guts/deprecated/simulators/quantum_brings_surface.html",
+  html: "simulators/quantum_brings_surface.html",
   uses: [
     "def:quaternionic-spectral-resolvents",
     "prop:color-elliptic",

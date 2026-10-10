@@ -111,7 +111,7 @@ for p in (HERE, HERE / "substrate"):
 
 import coulomb_energy as ce  # noqa: E402
 
-SOURCE = HERE / "_deprecated" / "interface-type-resolved-coupling-probe.witness.json"
+SOURCE = HERE.parent / "fsh-guts" / "deprecated" / "computations" / "interface-type-resolved-coupling-probe.witness.json"
 KAPPA_PUBLISHED = -mp.mpf("1.0707907503265857")
 
 # `ce.R0_FM` and `alpha_em_hbar_c_mev_fm()` are already full-precision mpf; the

@@ -116,7 +116,7 @@ def main() -> int:
     rows: list[dict[str, Any]] = []
     # Scan the whole compute tree's witnesses (reorg scan-root fix).
     for w in sorted((HERE.parent).rglob("*.witness.json")):
-        if "_deprecated" in w.parts:
+        if ("_deprecated" in w.parts or "fsh-guts" in w.parts):
             continue
         if w.name == SELF_OUTPUT:
             continue

@@ -16,7 +16,7 @@ The artifact is not the only evidence.  DERIVABILITY distinguishes them, and
 that is measurable without fitting anything.  This probe measures it.
 
 The one surviving producer of `0.0499` is
-computations/_deprecated/next_partition_levels.py, which hardcodes
+fsh-guts/deprecated/computations/next_partition_levels.py, which hardcodes
 
     BETA3 = 0.0499        # comment: "(from Wedderburn weights)"
 

@@ -87,7 +87,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent.parent
-SKIP = (".git", ".claude", "_deprecated", "node_modules", "__pycache__", ".lake")
+SKIP = (".git", ".claude", "_deprecated", "fsh-guts", "node_modules", "__pycache__", ".lake")
 
 # Decimal PREFIXES of the two stale-frame fingerprints. Prefixes rather than full
 # values because the corpus serialises each at several precisions.

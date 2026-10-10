@@ -386,17 +386,17 @@ The **Folio Assistant** (`folio-assistant/`) is the platform layer providing:
 
 | Simulator | File |
 |-----------|------|
-| Beta Decay Braid | [`fsh-guts/deprecated/simulators/beta_decay_braid.html`](fsh-guts/deprecated/simulators/beta_decay_braid.html) |
-| Beta Decay Halflife | [`fsh-guts/deprecated/simulators/beta_decay_halflife.html`](fsh-guts/deprecated/simulators/beta_decay_halflife.html) |
-| Brings Surface | [`fsh-guts/deprecated/simulators/brings_surface.html`](fsh-guts/deprecated/simulators/brings_surface.html) |
+| Beta Decay Braid | [`simulators/beta_decay_braid.html`](simulators/beta_decay_braid.html) |
+| Beta Decay Halflife | [`simulators/beta_decay_halflife.html`](simulators/beta_decay_halflife.html) |
+| Brings Surface | [`simulators/brings_surface.html`](simulators/brings_surface.html) |
 | Double Slit | [`fsh-guts/deprecated/simulators/double_slit.html`](fsh-guts/deprecated/simulators/double_slit.html) |
-| Double Slit Simulator | [`fsh-guts/deprecated/simulators/double_slit_simulator.html`](fsh-guts/deprecated/simulators/double_slit_simulator.html) |
+| Double Slit Simulator | [`simulators/double_slit_simulator.html`](simulators/double_slit_simulator.html) |
 | Empty | [`fsh-guts/deprecated/simulators/empty.html`](fsh-guts/deprecated/simulators/empty.html) |
-| Knot Atom Diagrams | [`fsh-guts/deprecated/simulators/knot_atom_diagrams.html`](fsh-guts/deprecated/simulators/knot_atom_diagrams.html) |
-| Knot Periodic Table | [`fsh-guts/deprecated/simulators/knot_periodic_table.html`](fsh-guts/deprecated/simulators/knot_periodic_table.html) |
-| Q Double Slit | [`fsh-guts/deprecated/simulators/q_double_slit.html`](fsh-guts/deprecated/simulators/q_double_slit.html) |
-| Quantum Brings Surface | [`fsh-guts/deprecated/simulators/quantum_brings_surface.html`](fsh-guts/deprecated/simulators/quantum_brings_surface.html) |
-| Valley Stability | [`fsh-guts/deprecated/simulators/valley_stability.html`](fsh-guts/deprecated/simulators/valley_stability.html) |
+| Knot Atom Diagrams | [`simulators/knot_atom_diagrams.html`](simulators/knot_atom_diagrams.html) |
+| Knot Periodic Table | [`simulators/knot_periodic_table.html`](simulators/knot_periodic_table.html) |
+| Q Double Slit | [`simulators/q_double_slit.html`](simulators/q_double_slit.html) |
+| Quantum Brings Surface | [`simulators/quantum_brings_surface.html`](simulators/quantum_brings_surface.html) |
+| Valley Stability | [`simulators/valley_stability.html`](simulators/valley_stability.html) |
 
 <!-- folio:simulators:end -->
 

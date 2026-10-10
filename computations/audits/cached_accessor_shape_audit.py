@@ -53,7 +53,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent.parent
-SKIP = (".git", ".claude", "_deprecated", "node_modules", "__pycache__")
+SKIP = (".git", ".claude", "_deprecated", "fsh-guts", "node_modules", "__pycache__")
 LOAD_CALLS = {"load", "loads", "read_text", "read_bytes", "open",
               "record_upstream", "witness_path"}
 KNOWN_POSITIVE = "_y_lambda_at_convention_C_HISTORICAL"

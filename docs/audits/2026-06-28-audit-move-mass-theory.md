@@ -787,9 +787,9 @@ Extracted numerical/testing commentary from `mass-theory` files, replaced with c
 ## kashiwara-jones-alternation-interpretation.md
 - Line 120: Per [`probe_q_beta_c5_c6_multilink.py`](../../computations/probe_q_beta_c5_c6_multilink.py),
 ## wenzl-qmn-synergy.md
-- Line 8: `computations/_deprecated/q_mn_canonical.py`,
+- Line 8: `fsh-guts/deprecated/computations/q_mn_canonical.py`,
 - Line 64: in `depth_resolved_phi_k_hoefsmit.py` can replace its Hoefsmit
-- Line 78: [`computations/_deprecated/q_mn_canonical.py`](https://github.com/litlfred/qou/blob/main/computations/_deprecated/q_mn_canonical.py)
+- Line 78: [`fsh-guts/deprecated/computations/q_mn_canonical.py`](https://github.com/litlfred/qou/blob/cat/cat-harness/fsh-guts/fsh-guts/deprecated/computations/q_mn_canonical.py)
 - Line 81: [`hecke_characters.chi_lambda_braid`](https://github.com/litlfred/qou/blob/main/computations/hecke/hecke_characters.py),
 - Line 87: [`computations/y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/main/computations/y_lambda_wenzl_bridge_extended.py)
 - Line 91: [`computations/wenzl_qmn_trace_cross_check.py`](https://github.com/litlfred/qou/blob/main/computations/wenzl_qmn_trace_cross_check.py)

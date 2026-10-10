@@ -36,12 +36,14 @@ is not.
 
 ## Base ring (§7c)
 
-`ℝ`, inherited from `seminormalRep` and `seminormalParam`; nothing archimedean is added here.
+Generic `[Field K]`, matching `seminormalRep` and `seminormalParam`.  No ordering, no `ℝ`.
 
 LaTeX label: `thm:markov-assembly`
 -/
 
 namespace QOU.SchurWeyl
+
+variable {K : Type*} [Field K]
 namespace SeminormalRep
 
 open QOU.Mathlib QOU.SchurWeyl.TableauCells QOU.SchurWeyl.Seminormal QOU.SchurWeyl.HeckeInclusion
@@ -63,26 +65,26 @@ The proof is the three steps the bean names: decompose each block trace over cor
 (`trace_heckeIncl_mul_lastGen_corner`), reindex the resulting double sum
 (`sum_corner_eq_sum_addable`), then swap the inner sums so the corner identity applies at
 `r = ` the cell carrying each downstairs tableau's top entry. -/
-theorem markov_of_corner_identity {q z : ℝ} (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) {m : ℕ}
-    (w : YoungDiagram → ℝ)
+theorem markov_of_corner_identity {q z : K} (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) {m : ℕ}
+    (w : YoungDiagram → K)
     (hcorner : ∀ ν : YoungDiagram, ν.cells.card = m + 1 → ∀ r : ℕ × ℕ, IsCornerCell ν r →
       ∑ s : {s : ℕ × ℕ // IsAddableCell ν s},
           w (addCell ν s.1 s.2) * seminormalParam q (axialDistance r s.1) = z * w ν)
-    (y : Hecke ℝ q q⁻¹ m) :
+    (y : Hecke K q q⁻¹ m) :
     ∑ L : {ρ : YoungDiagram // ρ.cells.card = m + 2},
-        w L.1 * ((seminormalRep q hq0 hq2 (m + 1) L.2 (heckeIncl ℝ q q⁻¹ m y))
+        w L.1 * ((seminormalRep q hq0 hq2 (m + 1) L.2 (heckeIncl K q q⁻¹ m y))
           * genMat q (m + 1) (by omega) L.2.ge).trace
       = z * ∑ ν : {ν : YoungDiagram // ν.cells.card = m + 1},
           w ν.1 * (seminormalRep q hq0 hq2 m ν.2 y).trace := by
   classical
-  set f : {ν : YoungDiagram // ν.cells.card = m + 1} → (ℕ × ℕ) → ℝ :=
+  set f : {ν : YoungDiagram // ν.cells.card = m + 1} → (ℕ × ℕ) → K :=
     fun ν s => w (addCellOrSelf ν.1 s) *
       ∑ S : StandardYoungTableau ν.1,
         (seminormalRep q hq0 hq2 m ν.2 y) S S * seminormalParam q (axialDistance (cellOf S (m + 1)) s)
     with hf
   -- Step 1: the per-`λ` corner decomposition, with the weight rewritten on the erased diagram.
   have step1 : ∀ L : {ρ : YoungDiagram // ρ.cells.card = m + 2},
-      w L.1 * ((seminormalRep q hq0 hq2 (m + 1) L.2 (heckeIncl ℝ q q⁻¹ m y))
+      w L.1 * ((seminormalRep q hq0 hq2 (m + 1) L.2 (heckeIncl K q q⁻¹ m y))
           * genMat q (m + 1) (by omega) L.2.ge).trace
         = ∑ c : {c : ℕ × ℕ // IsCornerCell L.1 c},
             f ⟨eraseCorner L.1 c.1 c.2, by

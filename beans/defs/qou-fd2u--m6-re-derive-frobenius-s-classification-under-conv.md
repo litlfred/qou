@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-10T08:52:03Z
-updated_at: 2026-10-10T08:58:06Z
+updated_at: 2026-10-10T14:48:20Z
 parent: qou-d8c7
 ---
 
@@ -15,3 +15,20 @@ frobenius-s-classification-proof.md:16 and table2-data:9 rest on z being invaria
 2026-10-10: under D, S maps z_D to 1/(q(q^2+1)) = z - h (sympy-verified), i.e. S swaps the two loop values. So Phi_1 = sum log|z a_i + b_i| needs re-derivation (its partner is sum log|(z-h) a_i + b_i|). Scope notes added to the proof and table2 on PR #7562.
 
 Lean: frobenius-s-classification.lean:48 assigns z : SEigenvalue := .even, which is the C reading.
+
+2026-10-10 (branch claude/frobenius-s-d-2026-10-10, commits 7e4e549fd / 6f47e2159 / eacdb322a). RE-DERIVED, partially.
+(1) Which S: Table 3 fixes ud=(1,-h/2) only if S is the KL bar involution (q->1/q AND sigma->sigma^-1, coefficients barred); the q-fixed map (c,d)->(c,d-ch) sends ud to (1,-3h/2). Proof .md now says so.
+(2) z_D(1/q) = 1/(q(q^2+1)) = z_D - h: Lean sorry-free over a generic field (zD_inv, zD_inv_eq_sub). Meaning: the D Markov trace COMMUTES with S (markov_bar_equivariant_zD; converse bar_equivariant_forces: equivariance forces z(1/q)=z-h; z=q also satisfies it). C is the opposite: z_C S-fixed, trace NOT equivariant (zC_not_bar_equivariant).
+(3) Consequence: S acts on Phi_1 as the evaluation flip, Phi_1(S beta; q0) = Phi_1(beta; 1/q0) (probe, 7 chains, <1e-40). Raw Phi_1 is NOT an S-eigenvector in either convention; Table 1's +1 is the averaged projection Phi_1^+ only, true by construction.
+(4) Phi_2 even, Phi_3 odd: confirmed on chains of the three primitives (z-free; dPhi2 = 0, Phi3+Phi3(S) ~ 1e-52).
+(5) The classification's headline does NOT survive for the raw formula: m(S beta)-m(beta) = -2 alpha (Phi_1^- + h^2 Phi_3). Proton uud at proton pin, mpmath dps50: Phi_1^- = 0.0525921336, h^2 Phi_3 = 0.0091206746, ratio 5.766. (Excised C gives Phi_1^- = 0.0408, so C never had it either.) Proof corollary corrected.
+(6) Lean FrobeniusClassification.z is now Option SEigenvalue := none (no consumers).
+STILL OPEN: the statement .md (frobenius-s-classification.md) still says 'exactly one term is S-anti-invariant' and that S-symmetric ansatze 'cannot capture chirality'; both hold only if Phi_1 means Phi_1^+. Whether the mass formula should use Phi_1^+ (a formula change) or the claim should be restated is an owner decision. Also the Phi_3 '(-1)^n chi swap' argument in the proof checks only (1,0); the conclusion holds on primitive chains via bar(ratio)=1/ratio, but the written argument was not repaired. Not closeable.
+
+## 2026-10-10 — owner pick applied: keep raw Phi_1, restate the claim (branch claude/tmvac-fd2u-owner-picks-2026-10-10, 0f138506d)
+
+Statement .md: Phi_1 has no S-eigenvalue (only Phi_1^+ is S-even); term 1 shown as Phi_1^+ + Phi_1^-; the S-odd part has two channels, m(S beta) - m(beta) = -2 alpha (Phi_1^- + h^2 Phi_3); chirality is the only S-odd channel iff alpha Phi_1^- = 0. Corollary weakened to what holds: an S-invariant ansatz has zero S-difference and reproduces the mass S-difference only where Phi_1^- + h^2 Phi_3 = 0 (misses both channels, not just chirality). aligned env moved into a fenced tex block with \[ \]. .ts gains a refined-framing authorNote with the proton figures (0.0526 / 0.00912, from the earlier probe; not re-run).
+
+Lean: chirality_is_unique_S_odd removed (a duplicate of the Phi_1^+ tag rfl-classification under a name asserting uniqueness). Added, sorry-free over generic CommRing, all hypotheses used: mass_S_difference, chirality_sole_S_odd_channel_iff, s_invariant_ansatz_captures_S_odd_iff. #print axioms: propext, Classical.choice, Quot.sound. frobenius_s_classification docstring now says it is about Phi_1^+. isospin-mass-split-em-localisation.md row that cited chirality_is_unique_S_odd now cites mass_S_difference. scripts/prior-art-probe.py docstring still mentions the old name (historical list; its --selftest already fails 4/5 on origin/main, unrelated).
+
+Still open, so keep open: the Phi_3 '(-1)^n chi swap' argument in the proof checks only (1,0) and was not repaired; .qa.json sidecars for frobenius-s-classification and its proof/table blocks are stale; the FrobeniusClassification tag structure remains hardcoded defaults (rfl classification), not derived.

@@ -88,7 +88,7 @@ Following the chain to nail what the n→∞ convergence gate actually needs:
 
 - **Blocker (corpus-verified):** there is **no H₆/H₉ `χ_λ(𝓑_n − 𝓑_p)`** in the
   corpus — the explicit proton/neutron braids are defined only at H₃ (the n=6 hits
-  are all `computations/_deprecated/`). Producing them at H₆/H₉ requires **embedding
+  are all `fsh-guts/deprecated/computations/`). Producing them at H₆/H₉ requires **embedding
   the typed-crossings braids `𝓑_p`, `𝓑_n` at brane-tower levels 6, 9** (first-
   principles braid construction), then evaluating `χ_λ` per Wedderburn block — not a
   mechanical character evaluation, but **not** "extend the SDP fit" either. Then this
@@ -168,7 +168,7 @@ The blocker is *not* "extend the SDP fit". It is: produce `χ_λ(𝓑_n−𝓑_p
 brane-tower levels 6, 9, then `bar_odd_coeffs` + `physical_W` + `single_x_residual`
 apply unchanged (y stays frozen at q₀). No such higher-tower braid (nor proved
 closed form) exists in the corpus today, and the typed-braid character infra is in
-`computations/_deprecated/` — so reviving/extending it is the genuine work. The
+`fsh-guts/deprecated/computations/` — so reviving/extending it is the genuine work. The
 general-n Markov-trace machinery (`validate_markov_infra`, via `pyhecke_native`) is
 validated and ready to consume those braids once they exist.
 

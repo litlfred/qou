@@ -183,7 +183,7 @@ def dual_readers(stems: list[str]) -> list[tuple[str, list[str], list[str]]]:
     self_name = os.path.basename(__file__)
     for f in sorted(glob.glob(os.path.join(ROOT, "**", "*.py"), recursive=True)):
         parts = f.split(os.sep)
-        if "_deprecated" in parts or "_internal" in parts or ".git" in parts:
+        if ("_deprecated" in parts or "fsh-guts" in parts) or "_internal" in parts or ".git" in parts:
             continue
         if os.path.basename(f) == self_name:
             continue  # names every stem by construction

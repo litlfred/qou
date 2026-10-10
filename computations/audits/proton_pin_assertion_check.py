@@ -79,7 +79,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent.parent
-SKIP = (".git", ".claude", "_deprecated", "node_modules", "__pycache__")
+SKIP = (".git", ".claude", "_deprecated", "fsh-guts", "node_modules", "__pycache__")
 
 STATE_DEFAULT = Path(os.environ.get("TMPDIR", "/tmp")) / "qou-proton-pin-check"
 PROGRESS_EVERY = 30.0   # seconds between "still running" lines

@@ -72,7 +72,7 @@ naming the module.
 The 2026-09-04 audit doc and everything downstream of it (Lean header, producer docstring,
 witness field, the #6689 author note, two beans, two PR bodies) said the published
 `0.7036` *"descends from the deprecated convention-C pipeline
-`computations/_deprecated/t35-full-calculation.py`"*. That was a guess from file names.
+`fsh-guts/deprecated/computations/t35-full-calculation.py`"*. That was a guess from file names.
 Measured: the defective rule above, `Σ_w c_w z^{|w|}` over the reduced `(σ₀σ₁)⁵`, gives
 **0.70355 at `z_C`** and **0.96844 at `z_D`** — the two stale values are one defect at two
 Markov parameters, and the deprecated pipeline had nothing to do with it. Asserted in the

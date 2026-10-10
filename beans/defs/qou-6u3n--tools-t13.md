@@ -102,3 +102,37 @@ dangling text on a pure rename.
 No change proposed here: the `_deprecated` move already waits on owner ack per
 the progress notes above, and this measurement is input to that decision rather
 than a reason to act.
+
+## 2026-10-10: `computations/_deprecated` half DONE — and all of `fsh-guts/` with it (PR #7622, issue #7621)
+
+Owner, 2026-10-10: *"_deprecated is now branch cat/cat-harness/fsh-guts (or
+should be. migrate if not)"*, then **option 2, full cut-over**, chosen over a
+staged cut-over and over stopping at a seed. So this went further than the
+T13 row: `fsh-guts/` itself also left `main`.
+
+- **Branch store** `cat/cat-harness/fsh-guts` seeded at `ccd00c78050`, using the
+  platform's layout (`README.md`, `manifest.json` `state-manifest/v1`
+  `keyedBy: tip`, `fsh-guts/**`). It holds 1944 files, verified tree-by-tree
+  byte-identical to main `dc984ef780`:
+  - `fsh-guts/` (122)
+  - `computations/_deprecated` → `fsh-guts/deprecated/computations` (1738)
+  - `docs/audits/_deprecated` → `fsh-guts/deprecated/docs/audits` (66)
+  - `qou-mass/src/qou_mass/data/_deprecated` → `fsh-guts/deprecated/qou-mass/src/qou_mass/data` (18)
+- **Declaration:** `qou.json` now gives `fsh-guts` a `source: {kind: branch, …}`,
+  and `.gitignore` adds `/fsh-guts/**`.
+- **Mounting:** `scripts/mount-fsh-guts.sh` runs at SessionStart. It uses
+  `state:mount` when the platform is present, and a read-only `git archive`
+  copy otherwise.
+- **Readers:**
+  - The `_path_bridge` last-resort fallback now looks in the mounted tree, and warns when it is unmounted.
+  - 150 skip filters gain `"fsh-guts"`. Without it, a repo-root walk would read the mounted copy as live.
+  - 12 hand-built paths are re-pointed.
+  - 145 doc and content path references are rewritten.
+- **Measured:**
+  - run-validate gives 9 issues mounted (same as main) and 18, INVALID, unmounted. The 9 extra are simulator `html:` paths under `fsh-guts/deprecated/simulators/`, which pre-date this change.
+  - `derived_masses.py` and `q_beta_predicted.py` exit 0 with the store mounted.
+- **Open:**
+  - Qou's published build (platform `publish.yml`, via `build.yml`) has no mount step, so a dispatched build would miss the parked simulators.
+  - The `wedderburn-weight-canonical.ts` `verified`-against-deprecated question is unchanged: its path follows the file, and the owner decision is still pending.
+
+**2026-10-10 (later): the simulator gap is closed.** The paper still used nine of the eleven files in the deprecated simulators folder, so they were restored to `simulators/` on main and the eleven blocks re-pointed there (two are `todo-html` stubs whose HTML never existed). `double_slit.html` and `empty.html` are unreferenced and stay on the branch store. run-validate **unmounted** now reads Valid, 9 issues, the same as main, so the platform publish workflow no longer needs a mount step.
