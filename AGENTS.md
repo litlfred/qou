@@ -3253,7 +3253,7 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **fifty-five** rows (re-counted 2026-10-10; 46 landed 2026-09-14
+>   catalogues **fifty-six** rows (re-counted 2026-10-10, twice in one day as `main` appended a row each time; 46 landed 2026-09-14
 >   in `81a8ac98b9` after this line last said forty-five, then 47 and 48 landed,
 >   49 is PR #7401's — which arrived numbered 46 and had to be renumbered on
 >   merge — then PR #7318's two merged in at 50-51, main took 52-54, and **55 is
@@ -3270,7 +3270,13 @@ Do not regress either.
 >   that already held 54** — measured at the merge, anchored: main 54, resolved
 >   55. A count line stating the lesson about count lines was itself three
 >   behind, which is the fourth time this sentence has gone stale while warning
->   you not to quote it. And the
+>   you not to quote it. 🛑 **Then it went stale AGAIN the same day, on the same
+>   branch, for the same reason** — `main` appended a 55th row while the branch
+>   held a 55th of its own, so the branch row became 56: measured at that merge,
+>   anchored main 55 / resolved 56 (naive 57 / 58), and `main`'s own tail line in
+>   `docs/audits/2026-08-15-detector-blindness-taxonomy.md` read **49**. Twice in
+>   one day is the signal: this is not a number that goes stale occasionally, it
+>   is a number that is stale by default. And the
 >   groups
 >   below split the FIRST THIRTY-FOUR seven ways — only the first group is
 >   about conventions at all. **Rows 35-51 are NOT in this list**, and the
