@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T13:23:15Z
-updated_at: 2026-10-04T15:12:15Z
+updated_at: 2026-10-10T08:01:19Z
 parent: qou-2002
 ---
 
@@ -258,3 +258,34 @@ field is worth committing; worth reconciling when this bean is worked.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-23 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — independent corroboration from a CONSUMER (bean `qou-am5t` / `qou-46ab`)
+
+Reached this bean from the other end while draining `qou-46ab`'s recorded-constant
+class, which is worth recording because it is a second, independent route to the
+same defect.
+
+`computations/habiro/habiro_coefficients_atomic.py` cited
+`cross-check-trM-1ppb.witness.json` as the source of its cross-check targets and
+published two **convention-C** numbers as those targets. Checking the witness to
+correct them established, directly:
+
+- it contains **neither** C literal (`1.06530622861316`, `0.92323329718615`);
+- it carries `markov_peel` and `chi_cache_canonical` =
+  `1.1457597828869253187149279265985273678220205972661`;
+- `q0Anchor: "muon"`, `q0Value: 1.10997859564273904668179512938000175270…`.
+
+So the straddle this bean names has a live **consumer-side** consequence: a
+producer was pointing readers at this witness for a verification target while
+publishing C values, and the witness is on the ideal/CAL-2 muon layer while
+production compute defaults to the proton pin.
+
+Also surfaced: its `1.1457597828869253187…` is one of **three** D-frame proton
+|tr_M| values in the corpus, in two families ~79 ppb apart (the dominant one is
+`1.1457596924573008697…`, ~90 occurrences). The μ–p tension is ~11.6 ppb, so the
+pin accounts for under a tenth of that gap — this witness being muon-pinned does
+NOT explain the spread. Full table on `qou-46ab`.
+
+Not actioned here — the consumer docstring is corrected and this bean's own
+subject (the witness's staleness) is untouched.

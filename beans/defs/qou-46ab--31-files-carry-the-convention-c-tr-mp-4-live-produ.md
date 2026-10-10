@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T06:41:11Z
-updated_at: 2026-10-10T07:47:04Z
+updated_at: 2026-10-10T08:01:18Z
 parent: qou-cdx1
 ---
 
@@ -491,3 +491,93 @@ constants. Live, and it is the sharpest of the 41: a recorded number cannot be
 re-spelled into visibility.
 
 Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+
+## 2026-10-10 re-measure: the SERIOUS SUBSET is 4 -> 0, and the 32 are triaged (bean `qou-am5t`)
+
+Re-measured on `main` `3bfe6c5037`, by the literal, as this bean prescribes.
+
+### The four hardcoded references: all clear
+
+| producer | hits on `1.06530622861316` |
+|---|---|
+| `computations/skein_proton_canonical.py` | **0** |
+| `computations/probes/rho_f_categorical_probe.py` | **0** |
+| `computations/canonical_tr_m_three_path_comparison.py` | **0** |
+| `computations/markov/markov_weights_symbolic.py` | 1 — and it is the **comment recording the fix** (`CONVENTION FIX (2026-08-30, bean qou-46ab)`), not a constant |
+
+So the subset this bean called serious — *"hardcoded constants that other
+computations are CHECKED AGAINST"* — is drained, and the surviving match
+documents that drain. `canonical_tr_m_three_path_comparison.py`'s *"matches
+bridge to all digits"* comment, which this bean proved false, is gone with it.
+
+### The 32 files, triaged into the buckets this bean predicted
+
+The literal is now in **32** files (31 -> 32, excluding `__pycache__` and agent
+worktrees). The **neutron** literal `0.92323329718615` drained **20 -> 7**.
+
+| bucket | n |
+|---|---|
+| **(b) scoped** — the literal sits within 4 lines of a convention-C / excised / historical / CONVENTION-FIX marker | **24** (15 `.py`, 6 `.md`/`.ts`, 1 `.json`, 1 `.lean`, 1 witness) |
+| bean bodies recording their own analyses | 4 |
+| a dated audit doc (`2026-06-17-l1-1ppq-certification-gap.md`) | 1 |
+| `computations/q0_sweep_full_309_result.txt` — the deliberate sweep record this bean itself predicted would be bucket (b) | 1 |
+| `qou-mass/.../data/_deprecated/markov_weights_symbolic.witness.json` — deprecated by placement | 1 |
+| **(c) a LIVE producer** | **1** |
+
+Bean bodies and dated audit docs are deliberately left, same decision as the
+`4.66e6` drain (`qou-3nva`): rewriting a figure inside a dated record falsifies
+the record.
+
+### The one live producer — fixed, and it was a CROSS-CHECK TARGET
+
+`computations/habiro/habiro_coefficients_atomic.py:95`. Its docstring declared
+*"Canonical Wenzl-bridge convention"* and then published, as the numbers to
+verify the producer against:
+
+    proton:   1.0653062286131670      <- convention C
+    neutron:  0.9232332971861535      <- convention C
+
+citing `cross-check-trM-1ppb.witness.json` as their source. **That witness
+contains neither literal.** It carries `markov_peel` and
+`chi_cache_canonical` = `1.1457597828869253187149279265985273678220205972661`.
+So the stated targets disagreed with the file named as supplying them — the
+inverted failure `markov_weights_symbolic.py` already records for this same
+literal: a reader verifying the producer against a C target sees the *correct*
+D computation as wrong.
+
+Corrected in place. The literals remain only inside the explanatory note.
+
+### TWO NEW FINDINGS, neither resolved here
+
+1. **The cited witness is MUON-pinned** — `q0Anchor: "muon"`,
+   `q0Value: 1.10997859564273904668…` — the ideal CAL-2 layer, while production
+   compute defaults to the proton pin (owner directive 2026-08-07). So it is not
+   a drop-in target for a proton-pinned run. That is bean `qou-3zby`'s subject
+   (*"cross-check-trM-1ppb committed witness is stale on main — C/D straddle"*)
+   and this is independent corroboration of it from a consumer.
+
+2. **THREE D-frame proton |tr_M| values live in the corpus**, in two families
+   ~79 ppb apart:
+
+       1.1457596924573008697...    ~90 occurrences  (corpus-dominant)
+       1.1457597822878355047       ~20 occurrences  (the value THIS bean quotes)
+       1.1457597828869253187...    the cited witness, muon pin
+
+   The first is ~79 ppb from the other two; those two are ~0.5 ppb apart. **The
+   μ–p substrate tension is ~11.6 ppb and so accounts for under a tenth of the
+   79 ppb gap** — the pin alone does not explain the spread, which is the
+   tempting reading. Note this bean's own D figure
+   (`1.1457597822878355047`) is in the MINORITY family, 20 against 90.
+
+   Which family is canonical is an open measurement. Not decided here, and
+   deliberately not decided in the docstring either — picking one by majority
+   would be selection, not derivation.
+
+### Disposition
+
+The `(c)` class this bean was opened for is **closed**: 4 hardcoded references
+plus 1 cross-check target, all now either removed or scoped. What is left under
+this bean is the two findings above, of which the three-value spread is the
+substantive one. Leaving `todo` rather than completing, per the rule against
+closing a bean whose live subject is an unsettled measurement.
