@@ -247,6 +247,9 @@ def took_mpfr_path(doc) -> bool:
     return not (finite and abs(n) > 1e-300)
 
 
+SIGNOFF = ""
+
+
 def process(path: pathlib.Path, write: bool) -> str:
     doc = json.loads(path.read_text())
     have = [k for k in POLY_TO_F64 if isinstance(doc.get(k), dict) and doc[k].get("terms")]
@@ -371,6 +374,7 @@ def process(path: pathlib.Path, write: bool) -> str:
                 f"polynomials at the proton pin, at {work_dps} dps chosen from "
                 f"{cancel:.0f} digits of cancellation; exact terms untouched."
             ),
+            "owner_signoff": SIGNOFF,
             "generated_by": prior,
         }
         path.write_text(json.dumps(doc, indent=2) + "\n")
@@ -387,6 +391,8 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--write", action="store_true",
                     help="apply (default: dry run)")
+    ap.add_argument("--signoff", default="",
+                    help="required with --write: where the owner approved it")
     ap.add_argument("--dir", default=str(pathlib.Path(__file__).resolve().parent.parent))
     args = ap.parse_args()
 
@@ -395,40 +401,28 @@ def main() -> int:
         print("no certificates found", file=sys.stderr)
         return 1
 
-    if args.write:
+    if args.write and not args.signoff:
         print(
-            "--write is DISABLED.\n"
-            "\n"
-            "The four defects that previously blocked it are FIXED -- precision\n"
-            "is now chosen per file from the measured cancellation, out-of-f64\n"
-            "values are reported instead of serialized as Infinity, the one\n"
-            "MPFR-path certificate is detected and left alone, and the dead\n"
-            "--max-rel guard is gone rather than repaired.\n"
-            "\n"
-            "What remains is not a defect, it is a decision that is not the\n"
-            "script's to make: this REWRITES COMMITTED, PUBLISHED certificate\n"
-            "data. Per AGENTS.md that is an owner call, and one this arc has\n"
-            "already got wrong once -- an earlier regeneration attempt in this\n"
-            "session destroyed exact symbolic terms in two files before it was\n"
-            "reverted.\n"
-            "\n"
-            "The dry run below is the deliverable: it reports, per certificate,\n"
-            "what would change and how far the committed value can be trusted.\n"
-            "Re-enable this only with explicit sign-off, and read the BLOCK\n"
-            "lines first -- those files carry an f64 field with no exact source,\n"
-            "so writing them would leave one file straddling two anchors.\n",
+            "--write rewrites committed certificate data, which is an owner\n"
+            "call. Pass --signoff '<where the owner approved it>' so the record\n"
+            "of that approval lands in each rewritten file's generation block.\n"
+            "BLOCK, KEEP and SKIP files are never written either way.\n",
             file=sys.stderr,
         )
         return 2
+    if args.write:
+        global SIGNOFF
+        SIGNOFF = args.signoff
 
-    rows = [process(p, False) for p in paths]
+    rows = [process(p, args.write) for p in paths]
     for r in rows:
         print(" ", r)
 
     def n(prefix):
         return sum(1 for r in rows if r.startswith(prefix))
 
-    print(f"\n  re-anchorable : {n('would')}")
+    print(f"\n  re-anchorable : {n('would') + n('WROTE')}"
+          f"{'  (written)' if args.write else ''}")
     print(f"  blocked       : {n('BLOCK')}  (an f64 field has no exact source; "
           f"a partial write would straddle two anchors)")
     print(f"  keep as-is    : {n('KEEP')}   (v9 used MPFR; committed value is "
