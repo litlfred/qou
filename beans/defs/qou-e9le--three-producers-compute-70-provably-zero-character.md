@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T06:46:25Z
-updated_at: 2026-10-04T15:25:04Z
+updated_at: 2026-10-10T09:55:04Z
 parent: qou-5vkl
 ---
 
@@ -123,3 +123,10 @@ before rewriting three call sites around a new predicate.
 
 **Not claimed:** that the cached witness is wrong. Its residues are ~1e-73 and
 move no number; the defect is only that they defeat a `None`/truthiness prune.
+
+
+## 2026-10-10 — a THIRD route carries the residue, and it reached an exact-zero assertion (session session_01ST9RpvTF7JHNdUNafrjf9J, PR #7551)
+**The proton y_λ table is the source, not only the 'cached' y-lambda-at-q0 route.** `computations/y-lambda-mpfr-proton-witness.json` (default of `tr_m_wenzl_bridge_mpfr._load_y_lambda` / `load_y_lambda_for_q0` for the proton pin) stores **every** ≥3-row entry for n = 3..12 as residue — **287 entries, |y| from 1.0e-73 to 3.9e-72**. n ≥ 13 entries are exact 0, and the MUON table (`y-lambda-mpfr-witness.json`) is exact 0 at every n. Measured by reading both tables, mpf comparison `!= 0`.
+**Propagation:** `chi_at_q0_via_hoefsmit_mpfr.py` copies these into `chi-deuteron-h6-at-q0-50dps.witness.json` (7 residue entries at n=6), which `rho_w_crystal_vertex_trace.py` read, which made three exact-zero SUPPORT assertions in `probes/delta_lambda_closure_tl_support_probe.py` FAIL spuriously. Fixed at `rho_w` with the row-count remedy this bean recommends (snap ℓ>2 to exact 0, refuse above 10^-(dps-10)), commit 3d8010bc52.
+**Consumer audit (73 readers of the cache or the loader), grep for zero-tests / log / division / sign on y:** no wrong NUMBER found. `probes/lr_hecke_character_probe.py:183` prunes on `y_lam == 0` — residue only costs extra terms × ~1e-72 (compute, not value). `brng_*` probes take log|y| of the DOMINANT (two-row) block only. `audits/y_lambda_two_row_cap_gate.py` already tolerates ~1e-73. Caveat: a grep is not a proof of absence; a consumer testing zero by an unforeseen spelling would be missed.
+**Root-cause option, NOT taken (owner call):** make `regenerate_y_lambda_mpfr.py` emit exact 0 for ℓ(λ) > N (as the computed route already does) and regenerate the proton table. Fixes all 73 readers at once; moves no recorded number above ~1e-72; but rewrites a central input table.
