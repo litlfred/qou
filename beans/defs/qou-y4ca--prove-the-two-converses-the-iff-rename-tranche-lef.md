@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: low
 created_at: 2026-10-10T07:29:24Z
-updated_at: 2026-10-10T08:13:41Z
+updated_at: 2026-10-10T08:25:13Z
 parent: b9cj
 ---
 
@@ -108,3 +108,52 @@ hold. Measure that first. If it is false, the rename stands permanently and that
 negative is the result (scope it (a) or (b) per AGENTS.md).
 
 Bean stays `todo` on item 2 alone.
+
+
+## 2026-10-10 — the owner had picked "prove the converse" OVER renaming, and the rename landed anyway
+
+Recorded because the ledger should not read as if this were a free choice.
+
+A peer session message (`016AEU7xkxdUcw9r7adTXgyr`), queued **07:20Z**:
+
+> I am taking `denomPoly_root_iff`: the user picked "prove the converse as a
+> real ↔" over renaming it, so please leave that one declaration out of your
+> qou-bybn rename tranche.
+
+**The rename commit `a48ba4e4da` is stamped 07:21Z** — one minute later. The
+notification sat in this session's queue for an hour and was not read until
+08:20Z, so the tranche was committed without it. A delivery lag, not a decision
+to override the owner; stating the times rather than the conclusion.
+
+### Where that leaves the declaration, measured
+
+| line | declaration | origin |
+|---|---|---|
+| `:66` | `denomPoly_eq_zero_of_factor_eq_zero` | this branch's rename of the one-directional lemma |
+| `:88` | `denomPoly_eq_zero_iff [IsDomain R]` | the peer's proof, `570ee7fdb6` |
+
+`denomPoly_root_iff` survives in live source **nowhere**. Its four remaining
+mentions are inside dated audit records (`docs/audits/2026-06-26-*`,
+`docs/audits/2026-10-04-*`) and are deliberately left — rewriting a declaration
+name inside a dated finding falsifies the record, the same call the `4.66e6`
+drain made.
+
+**The owner's choice is satisfied in substance: a real `↔` exists.** The
+outcome is a superset of what was picked — the biconditional was proved AND the
+one-directional helper now has a name matching what it states, which the new
+docstring cites as its reverse direction.
+
+**What is NOT what was picked: the name.** The `↔` is called
+`denomPoly_eq_zero_iff`, not `denomPoly_root_iff`. If the owner wanted that
+specific identifier carried onto the biconditional, that did not happen.
+
+### Reversing it is one line, and the blast radius is measured
+
+`denomPoly_eq_zero_iff` has **zero consumers outside its own file**
+(`grep` over `folio/`, `computations/`, `scripts/`). So renaming it to
+`denomPoly_root_iff` is a single-identifier edit in one file, verifiable with
+`lean -DautoImplicit=false -s 65536` on that file alone.
+
+**Not done on this session's initiative.** §ASK THE OWNER: it is neither a
+precision fix nor corpus-derived — it turns on what the owner meant by their
+pick, which only they can say. Left for them to call.
