@@ -6171,6 +6171,14 @@ export const references: Reference[] = [
   // ── Kohno 1987 (KZ connection / quantum braid monodromy) ──────
   ref({
     id: "kohno1987",
+    library: {
+      docId: "kohno1987-aif",
+      dir: "library/kohno1987-aif",
+      pdf: "library/kohno1987-aif/kohno1987-aif.pdf",
+      stage: "candidates",
+      pages: 23,
+      sections: 8,
+    },
     type: "article-journal",
     title:
       "Monodromy representations of braid groups and Yang-Baxter equations",
@@ -6187,7 +6195,8 @@ export const references: Reference[] = [
       "the quantum-group R-matrix representation of $U_q(g)$.  " +
       "Flatness of the KZ connection at generic q is the " +
       "mathematical content behind the lifted-crossing locality " +
-      "hypothesis in the mass-volume expansion.",
+      "hypothesis in the mass-volume expansion.  " +
+      "PDF library/kohno1987-aif/ — Numdam copy.",
   }),
 
   // Note: a duplicate entry id "murakami2001" was removed here.
@@ -8735,6 +8744,29 @@ export const references: Reference[] = [
     page: "1419-1457",
     issued: { "date-parts": [[1990]] },
     note: "Drinfeld side of the Drinfeld–Kohno theorem: KZ monodromy is described by the quasi-Hopf algebra U(g)[[h]] with the KZ associator, equivalent to U_h(g). Russian original Algebra i Analiz 1 (1989). Added 2026-10-10 to replace drinfeld1985 at the Drinfeld–Kohno cite (the 1985 Doklady note does not contain the theorem). Not yet held in library/.",
+  }),
+
+  // ── Drinfeld 1991 — KZ associator / Grothendieck–Teichmüller ──
+  ref({
+    id: "drinfeld1991",
+    library: {
+      docId: "drinfeld1991-quasitriangular",
+      dir: "library/drinfeld1991-quasitriangular",
+      pdf: "library/drinfeld1991-quasitriangular/drinfeld1991-quasitriangular.pdf",
+      stage: "candidates",
+      pages: 17,
+      sections: 9,
+    },
+    type: "article-journal",
+    title:
+      "On quasitriangular quasi-Hopf algebras and a group closely connected with Gal(Q̄/Q)",
+    author: [{ family: "Drinfeld", given: "V. G." }],
+    "container-title": "Leningrad Mathematical Journal",
+    volume: "2",
+    issue: "4",
+    page: "829-860",
+    issued: { "date-parts": [[1991]] },
+    note: "English translation of Algebra i Analiz 2 (1990), no. 4. Introduces the KZ associator Φ_KZ and the (pro-unipotent) Grothendieck–Teichmüller group GT. The Drinfeld–Kohno theorem itself (KZ monodromy ≅ quantum-group R-matrix representation) is proved in Drinfeld, 'Quasi-Hopf algebras', Leningrad Math. J. 1 (1990) — reference [1] of this paper, NOT held in library/. PDF library/drinfeld1991-quasitriangular/ — a scan (no text layer; OCR text in ocr/ and sections/); its first spread's left page is the tail of a different paper (D. I. Gurevich, bibliography, p. 828).",
   }),
 
   // ── Faddeev 1995 — quantum dilogarithm functional equation ────
