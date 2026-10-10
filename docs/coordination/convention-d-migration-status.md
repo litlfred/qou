@@ -567,7 +567,7 @@ What *is* live is a mis-citation of this bean's own script.
 gave T13 the evidence *"shows 0 content citations into `_deprecated` before the
 move"*. It shows 3 — and it is the wrong audit either way, scanning only the
 **139 of 568** deprecated producers *carrying a convention-C shape*. T13 breaks
-on any reference: **27 tracked `folio/` files** name `computations/_deprecated`,
+on any reference: **27 tracked `folio/` files** name `fsh-guts/deprecated/computations`,
 one of them structurally (`wedderburn-weight-canonical.ts` carries
 `computation.script` into `_deprecated` with `status: "verified"`). Corrected in
 that report; recorded on `qou-6u3n` and `qou-vfy1`.

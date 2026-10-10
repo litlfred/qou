@@ -5,7 +5,7 @@ match the construction the corpus records for them?
 BEAN qou-3j5m.  This began as the P_66 discrepancy the convention work turned up.
 It is not a P_66 problem.
 
-THE ONLY RECORDED CONSTRUCTION is `computations/_deprecated/toffoli-braid.py`:
+THE ONLY RECORDED CONSTRUCTION is `fsh-guts/deprecated/computations/toffoli-braid.py`:
 
     V_i     = z*a_i + b_i     (a_i, b_i) from chain_reduce -- rational in q, no z
     P_{k,k} = prod_i V_i      over range(A-1)
@@ -275,7 +275,7 @@ def main() -> int:
                     0 if universal_first else 1, 1)
     w.add_parameter("q_evaluated_at", str(Q_EVAL))
     w.add_parameter("construction_source",
-                    "computations/_deprecated/toffoli-braid.py::chain_reduce")
+                    "fsh-guts/deprecated/computations/toffoli-braid.py::chain_reduce")
     w.add_data("mismatched_published_entries", mismatches)
     w.add_data("P66_construction", mp.nstr(r66, 20))
     w.add_data("P66_published", mp.nstr(_num(pub["P_66"]), 20))

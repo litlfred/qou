@@ -175,7 +175,7 @@ def main() -> int:
         # Nothing checks `auditOnly` resolves. Corrected here.
         "scriptFile": Path(__file__).name,
         "engine": "python",
-        "auditOnly": "docs/audits/_deprecated/2026-05-05-nv-categorical-impasse.md",
+        "auditOnly": "fsh-guts/deprecated/docs/audits/2026-05-05-nv-categorical-impasse.md",
         "computation": "nv-categorical-derivation-probe",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "description": (

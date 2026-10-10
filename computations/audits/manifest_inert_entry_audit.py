@@ -46,7 +46,7 @@ which is how that one was found. No static shape tried here separates them.
 ## What this audit does report: entries that cannot bind to anything
 
 Narrow, exact, and checkable without running anything: a manifest entry whose
-stem resolves ONLY to `computations/_deprecated/`. Such an entry asserts an
+stem resolves ONLY to `fsh-guts/deprecated/computations/`. Such an entry asserts an
 anchor class for a producer that has been retired, so it can never steer a run.
 Unlike the three shapes above this has no false-positive mechanism — either the
 live tree has the file or it does not.

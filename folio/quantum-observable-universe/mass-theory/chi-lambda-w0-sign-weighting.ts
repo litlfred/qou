@@ -33,7 +33,7 @@ export default proposition({
     // y_lambda solve, chi_lambda(w_0) per block). The original
     // probe_per_wedderburn_block_ck.py producer was deleted; its k=5,6
     // sign-agreement witness survives only at
-    // computations/_deprecated/chi-lambda-w0-sign-weighting.witness.json.
+    // fsh-guts/deprecated/computations/chi-lambda-w0-sign-weighting.witness.json.
     script: "computations/option_e_phase1_h3_cross_check.py",
     witness: "computations/option-e-phase1-h3-cross-check.witness.json",
     status: "experimental",

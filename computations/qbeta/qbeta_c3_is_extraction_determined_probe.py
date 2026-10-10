@@ -20,7 +20,7 @@ and labels the corresponding row '[fit]'. So 'c_3 = -2 = J_Hopf(q=1)' is a post-
 MATCH to an extracted number, not a derivation of it. J_Hopf(q=1) = -2 is itself
 convention-free: the Jones polynomial of any link at t=1 is (-2)^(components-1), and
 the Hopf link has 2 components. Every J_Hopf site in the corpus is a hardcoded
-literal in computations/_deprecated/precision-ladder-superseded/ citing Jones 1985,
+literal in fsh-guts/deprecated/computations/precision-ladder-superseded/ citing Jones 1985,
 computed from no trace at any z.
 
 WHAT THIS PROBE MEASURES, so the above is not merely a reading of source:

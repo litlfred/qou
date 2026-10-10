@@ -213,7 +213,7 @@ def validate_chain(chain_path: Path) -> ChainResult:
                 script_path = REPO_ROOT / m.group(1)
                 if not script_path.exists():
                     # Dead-code sweep (commit 191bd9f5) moved retired
-                    # producers under computations/_deprecated/.
+                    # producers under fsh-guts/deprecated/computations/.
                     # Accept the cited script if a copy exists there;
                     # provenance is preserved for future refresh.
                     deprecated_path = (

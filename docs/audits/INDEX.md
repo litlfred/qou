@@ -78,7 +78,7 @@ content. T5 is harder (no chronological signal) and could be deferred.
 
 ## Cross-references
 
-- [`docs/audits/_deprecated/README.md`](_deprecated/README.md) — the
+- [`fsh-guts/deprecated/docs/audits/README.md`](_deprecated/README.md) — the
   deprecation convention itself.
 - [`content/quantum-observable-universe/braids-and-knots/derivation-audit-report.md`](../../content/quantum-observable-universe/braids-and-knots/derivation-audit-report.md)
   — the *content-level* GAP-A/B/C/D audit (separate concern; refreshed

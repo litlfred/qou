@@ -255,7 +255,7 @@ Their finding for deuteron under canonical τ_M:
 | T1+T2+T3+T4+T5 (naive sum) | $-2.25$ | $-201\%$ |
 
 Pulling the same T1+T2+T3 for tritium from their witness
-([deprecated](../../computations/_deprecated/multi-term-tau-M-corrected.witness.json)):
+([deprecated](../../fsh-guts/deprecated/computations/multi-term-tau-M-corrected.witness.json)):
 
 | Atom | T1+T2+T3 | AME | err |
 |:-:|---:|---:|---:|

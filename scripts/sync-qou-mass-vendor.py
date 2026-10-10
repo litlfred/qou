@@ -235,7 +235,7 @@ def extra_witnesses(wits: dict) -> dict:
     Synced IN PLACE rather than into the root: these are not resolved by the
     modules, so the root's placement constraint does not apply, and moving them
     would change import paths for no reason. `_deprecated/` is excluded, matching
-    `computations/_deprecated/`.
+    `fsh-guts/deprecated/computations/`.
     """
     src_idx: dict[str, Path] = {}
     for q in (REPO / "computations").rglob("*.witness.json"):

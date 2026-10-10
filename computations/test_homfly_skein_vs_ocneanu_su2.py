@@ -55,7 +55,7 @@ polynomials**, not merely equal at the SU(2) point (checked here in C2, which
 requires exactly that).
 
 This is a sharpening of something the corpus already knows, not a new fact.
-`computations/_deprecated/schur_weyl_q_hecke.py` was deprecated with the note
+`fsh-guts/deprecated/computations/schur_weyl_q_hecke.py` was deprecated with the note
 that it works from cycle type and "cannot distinguish proton from neutron",
 and the framework's answer is the colour weighting -- `bring_color_weighted`,
 made canonical by the 2026-08-15 owner ruling R3. What is sharpened is the

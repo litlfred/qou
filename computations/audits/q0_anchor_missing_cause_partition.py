@@ -144,7 +144,7 @@ def main() -> int:
     ap.add_argument("--sample", type=int, default=6,
                     help="paths to show per cause class (default 6)")
     ap.add_argument("--include-deprecated", action="store_true",
-                    help="also scan computations/_deprecated/. OFF by default, "
+                    help="also scan fsh-guts/deprecated/computations/. OFF by default, "
                          "to match q0_anchor_consistency_audit.py, which skips "
                          "it (line 280). A raw `computations/**` count is "
                          "therefore LARGER than the audit's Q0_ANCHOR_MISSING "

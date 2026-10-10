@@ -23,7 +23,7 @@ CONDITIONAL ON THAT RULING rather than on a guess.
 THE FOUR RULES THE CORPUS ACTUALLY DERIVES.  Each is read off an existing
 artifact, not invented here:
 
-  min-length enumeration   computations/_deprecated/binding-k-enumerator.witness.json
+  min-length enumeration   fsh-guts/deprecated/computations/binding-k-enumerator.witness.json
                            returns bindingKWord = [3,3] = sigma_3^2 for
                            deuterium, tritium AND helium-3 alike.  The labels
                            "6_2"/"8_11"/"L6a4" on the Lean instances are
@@ -91,7 +91,7 @@ AME = {"D": F("2.224566"), "3H": F("8.481798"),
 # The four derived rules, as (label, c2, c3, provenance).
 RULES = [
     ("min-length enumeration (sigma_g^2 for all three)", 2, 2,
-     "computations/_deprecated/binding-k-enumerator.witness.json"),
+     "fsh-guts/deprecated/computations/binding-k-enumerator.witness.json"),
     ("chain / coordination z = A-1", 2, 4,
      "content/.../mass-theory/bk-coordination-multiplicity.md"),
     ("canonical Brunnian (Hopf, Borromean L6a4)", 2, 6,

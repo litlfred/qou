@@ -33,7 +33,7 @@ block's `.ts` and `.md` each count -- and FIVE of those blocks are in
     the unit cannot drift silently a third time.
 
 TWO FINDINGS THAT CHANGE THE DECISION (checks 5 and 6, added 2026-09-05)
-    (5) The A+Z object HAS been built. `computations/_deprecated/
+    (5) The A+Z object HAS been built. `fsh-guts/deprecated/computations/
         atom_braid_electron.py` implements `H_{A+Z}(q)` with all six pair
         types including the three electronic ones (pe / ne / ee), and a
         committed witness references it. The first draft of the audit gave
@@ -168,10 +168,10 @@ def main() -> int:
 
     # ---- 5. the A+Z object WAS built -- the "never built" claim is false ---
     #        This retracts the first draft's evidence for option (b).
-    az = REPO / "computations/_deprecated/atom_braid_electron.py"
+    az = REPO / "fsh-guts/deprecated/computations/atom_braid_electron.py"
     az_src = az.read_text(errors="ignore") if az.exists() else ""
     az_rows = [r for r in ("pe ", "ne ", "ee ") if r in az_src]
-    print(f"[5] computations/_deprecated/atom_braid_electron.py exists: {az.exists()}")
+    print(f"[5] fsh-guts/deprecated/computations/atom_braid_electron.py exists: {az.exists()}")
     if az.exists():
         print(f"    docstring names H_{{A+Z}}(q): "
               f"{'H_{A+Z}(q)' in az_src}; electronic pair rows present: {az_rows}")
