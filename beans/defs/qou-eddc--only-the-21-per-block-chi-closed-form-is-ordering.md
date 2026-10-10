@@ -1,13 +1,13 @@
 ---
 # qou-eddc
 title: Only the (2,1) per-block chi closed form is ordering-dependent; the q^2-1 vanishing survives
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T13:05:29Z
-updated_at: 2026-10-10T07:58:20Z
+updated_at: 2026-10-10T10:30:37Z
 parent: qou-d8c7
 ---
 
@@ -551,6 +551,11 @@ Absorbs `qou-g3mz` (scrapped today with a pointer here) and links `qou-ox7y`. `q
 
 - `qbeta_utils.chi_block_21` already defaults to `intra_order="borromean"`; the producer `qbeta_c3_multiblock_recursion_attack.py` and its witness are borromean. The 2026-09-07 'Still open' paragraph was stale when the epic survey quoted it.
 - What WAS stale: `QBetaDeltaTauSurrogateTaylorCoefficients.lean` — the lean.ref of `prop:qbeta-delta-tau-surrogate-taylor-coefficients` — catalogued grouped values for orders 3..7. Now canonical (-23/9, 77/18, 1349/108, -191/4, 26285/162; sympy re-derivation agrees with the witness). Order2.lean header and the formal-scope remark corrected. PR #7559.
+
+
+
+## 2026-10-10: completed
+Every item is done: the Lean swap landed 2026-09-07, the Python default is already borromean, and the stale Taylor-coefficient catalogue was fixed in PR #7559. Nothing open remains, and no conjecture is tracked here.
 
 
 ## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J)

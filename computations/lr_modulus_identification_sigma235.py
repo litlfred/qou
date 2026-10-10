@@ -89,7 +89,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from mpmath import mp, mpf, mpc  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 PVEC = (2, 3, 5)
@@ -322,8 +322,13 @@ def run():
     out["fold_matches_qint_signs"] = bool(fold_matches_qint)
 
     # (A) anchors
-    t10 = {str(N): float(theorem10_residual(N)) for N in (3, 5, 7)}
-    out["theorem10_residuals"] = t10
+    # Each of these dicts is read back by a flag below, so it stays mpf and is
+    # serialized only on the way into `out`. These are RESIDUALS of identities
+    # that should vanish, and they are the fields the f64 record cost most:
+    # recomputed at the current working precision they land at ~1e-68 where the
+    # committed witness has ~1e-38.
+    t10 = {str(N): theorem10_residual(N) for N in (3, 5, 7)}
+    out["theorem10_residuals"] = {k: fmt(v) for k, v in t10.items()}
     out["theorem10_exact"] = all(v < 1e-28 for v in t10.values())
 
     # (L) fold linearity at the FLAT-CONNECTION level.  The colored Gauss sum is NOT a
@@ -338,16 +343,16 @@ def run():
     # Hence the flat-connection amplitudes — the only input to the modulus identification —
     # obey the fold exactly: A(4) = A(1), A(3) = A(2) up to a vanishing phase, A(6) = −A(1).
     lin = {}
-    d4 = {str(N): float(abs(tau_N(N, 4) - tau_N(N, 1)
-                            - (1 + 2 * mp.cos(2 * mp.pi / N))))
+    d4 = {str(N): abs(tau_N(N, 4) - tau_N(N, 1)
+                      - (1 + 2 * mp.cos(2 * mp.pi / N)))
           for N in (7, 11, 13, 25)}
-    d32 = {str(N): float(abs(tau_N(N, 3) - tau_N(N, 2)
-                             - mp.e ** (-6 * mp.pi * I / (5 * N))))
+    d32 = {str(N): abs(tau_N(N, 3) - tau_N(N, 2)
+                       - mp.e ** (-6 * mp.pi * I / (5 * N)))
            for N in (7, 11, 13, 25)}
-    d6 = {str(N): float(abs(pref_c12(N) * (tau_N(N, 6) + tau_N(N, 1))))
+    d6 = {str(N): abs(pref_c12(N) * (tau_N(N, 6) + tau_N(N, 1)))
           for N in (7, 11, 13, 25, 51, 101)}
-    lin["delta4_eq_1_plus_2cos"] = d4
-    lin["delta32_eq_exp_m6pi_over_5N"] = d32
+    lin["delta4_eq_1_plus_2cos"] = {k: fmt(v) for k, v in d4.items()}
+    lin["delta32_eq_exp_m6pi_over_5N"] = {k: fmt(v) for k, v in d32.items()}
     lin["delta6_normalized_abs"] = d6
     out["chi_linearity"] = lin
     out["delta4_exact"] = all(v < 1e-28 for v in d4.values())
@@ -358,10 +363,10 @@ def run():
 
     # (L) α = 5: no flat part — the Cor-12-normalized |pref·τ_N(5)| stays O(1)
     # while |pref·τ_N(1)| grows ~ √N (flat-connection contribution present).
-    a5 = {str(N): float(abs(pref_c12(N) * tau_N(N, 5))) for N in (25, 51, 101, 201)}
-    a1 = {str(N): float(abs(pref_c12(N) * tau_N(N, 1))) for N in (25, 51, 101, 201)}
-    out["alpha5_normalized_abs"] = a5
-    out["alpha1_normalized_abs"] = a1
+    a5 = {str(N): abs(pref_c12(N) * tau_N(N, 5)) for N in (25, 51, 101, 201)}
+    a1 = {str(N): abs(pref_c12(N) * tau_N(N, 1)) for N in (25, 51, 101, 201)}
+    out["alpha5_normalized_abs"] = {k: fmt(v) for k, v in a5.items()}
+    out["alpha1_normalized_abs"] = {k: fmt(v) for k, v in a1.items()}
     out["alpha5_bounded"] = a5["201"] < 3 * max(a5["25"], 1e-9) and a5["201"] < a1["201"] / 3
 
     # (M) amplitude extraction for ALL colors α = 1,2,3,4,6 (α = 5 is flat-free, above);
@@ -375,10 +380,11 @@ def run():
         for m in (1, 2):
             got1, got2 = abs(e1[m - 1]), abs(e2[m - 1])
             pred = predicted_amp(alpha, m)
-            rows[str(m)] = {"extracted_pair1": float(got1),
-                            "extracted_pair2": float(got2),
-                            "predicted": float(pred),
-                            "rel_err": float(abs(got2 - pred) / (abs(pred) + mpf("1e-30")))}
+            rows[str(m)] = {"extracted_pair1": fmt(got1),
+                            "extracted_pair2": fmt(got2),
+                            "predicted": fmt(pred),
+                            "rel_err": fmt(abs(got2 - pred)
+                                           / (abs(pred) + mpf("1e-30")))}
             amp_ok = amp_ok and abs(got2 - pred) < mpf("0.05") * (1 + pred)
         amp[str(alpha)] = rows
     out["amplitudes"] = amp
@@ -438,9 +444,9 @@ def run():
             dq = mp.sin(mark * th) / mp.sin(th)
             D = mp.sqrt(mp.fsum((mp.sin(mk * th) / mp.sin(th)) ** 2
                                 for _, mk in MCKAY_NODES))
-            row[f"absA_m{m}"] = float(lhsA)
-            row[f"dq_over_D_m{m}"] = float(abs(dq) / D)
-            row[f"ratio_m{m}"] = float(lhsA / (abs(dq) / D)) if abs(dq) > 0 else None
+            row[f"absA_m{m}"] = fmt(lhsA)
+            row[f"dq_over_D_m{m}"] = fmt(abs(dq) / D)
+            row[f"ratio_m{m}"] = fmt(lhsA / (abs(dq) / D)) if abs(dq) > 0 else None
         table.append(row)
     out["per_node_table"] = table
 
@@ -487,9 +493,11 @@ def report(res):
     print("## (M) Amplitudes and the corrected exact identity\n")
     for a, rows in res["amplitudes"].items():
         for m, r in rows.items():
-            print(f"  α={a} m={m}: extracted {r['extracted_pair2']:.4f} "
-                  f"(pair1 {r['extracted_pair1']:.4f}) vs predicted {r['predicted']:.4f} "
-                  f"(rel err {r['rel_err']:.1e})")
+            # display only -- these fields are now full-precision strings
+            print(f"  α={a} m={m}: extracted {float(r['extracted_pair2']):.4f} "
+                  f"(pair1 {float(r['extracted_pair1']):.4f}) vs "
+                  f"predicted {float(r['predicted']):.4f} "
+                  f"(rel err {float(r['rel_err']):.1e})")
     print(f"  amplitudes match: **{res['amplitudes_match_predicted']}**")
     print(f"  D²_E8 = {res['D2_E8']}   D²_MTC = {res['D2_MTC']}  "
           f"(fold multiplicity D²_E8 = 2·D²_MTC: **{res['fold_multiplicity_exact']}**)")
@@ -501,9 +509,10 @@ def report(res):
     print("## Per-node table (m = 1, 2 flat connections; ratio = 2 everywhere)\n")
     print("  node  mark  |A_1|    d/D(ζ)   ratio   |A_2|    d/D(ζ²)  ratio")
     for r in res["per_node_table"]:
-        print(f"  {r['node']:>4} {r['mark']:>4}  {r['absA_m1']:.4f}  "
-              f"{r['dq_over_D_m1']:.4f}  {str(r['ratio_m1'])[:5]:>5}  "
-              f"{r['absA_m2']:.4f}  {r['dq_over_D_m2']:.4f}  {str(r['ratio_m2'])[:5]:>5}")
+        print(f"  {r['node']:>4} {r['mark']:>4}  {float(r['absA_m1']):.4f}  "
+              f"{float(r['dq_over_D_m1']):.4f}  {str(r['ratio_m1'])[:5]:>5}  "
+              f"{float(r['absA_m2']):.4f}  {float(r['dq_over_D_m2']):.4f}  "
+              f"{str(r['ratio_m2'])[:5]:>5}")
     print("\n## S₅-class view at the fibre root\n")
     for r in res["s5_class_view"]:
         print(f"  {r['s5_class']:>28}: mark {r['mark']}, d(ζ) = {r['d_at_zeta']} {r['note']}")

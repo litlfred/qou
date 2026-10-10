@@ -15,7 +15,10 @@ where
                 ⎩ Im Li_n(e^{iθ})  if n is even.
 
 Tested for N = 2, 3, …, 8 and n = 2, 3, 4, 5 (28 (N, n) pairs).
-All residues at ~1e-49 (mpmath 50 dps).
+All residues at the arithmetic floor: max 3.62e-71, measured 2026-09-14 at
+`_precision.COMPUTE_DPS` = 70.  (This read "~1e-49 (mpmath 50 dps)" and was
+stale by 22 orders — `COMPUTE_DPS` moved 65 -> 70 upstream and nothing re-read
+this file.  Quote the witness's own `max_residue`, not this line.)
 
 Emits `cyclotomic-orbit-sum-all-depths-probe.witness.json`.
 """
@@ -42,7 +45,7 @@ sys.path.insert(0, str(HERE.parent))
 from mpmath import mp, mpc, mpf, polylog, exp, pi, zeta  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 
 def _clausen(n: int, theta: "mpf") -> "mpf":
@@ -80,13 +83,20 @@ def main() -> int:
             closed = _closed_form(N, n)
             residue = abs(orbit_sum - closed)
             max_residue = max(max_residue, residue)
+            # mpf-valued, NOT float(). These three are read back by the display
+            # loop at the bottom, which format-specs them (`.16f`, `.2e`) — mpf
+            # honours those and a serialized string would raise
+            # `ValueError: Unknown format code`. Serialized once, at the
+            # `add_data` call below. The residues are ~1e-71 at dps 70, inside
+            # binary64's exponent range, so the old cast lost digits rather than
+            # magnitude — but it still recorded 16 of the 60 available.
             results.append({
                 "N": N,
                 "n": n,
                 "parity": "odd" if n % 2 == 1 else "even",
-                "orbit_sum_direct": float(orbit_sum),
-                "closed_form_value": float(closed),
-                "residue": float(residue),
+                "orbit_sum_direct": orbit_sum,
+                "closed_form_value": closed,
+                "residue": residue,
             })
 
     (
@@ -96,18 +106,31 @@ def main() -> int:
             "Verifies the universal Clausen-orbit closed form "
             "Σ_{k=1..N-1} Cl_n(2πk/N) = (N^{1-n}-1)ζ(n) for odd n, "
             "= 0 for even n.  Tested at N = 2, …, 8 and n = 2, 3, "
-            "4, 5 (28 cases) via mpmath's polylog at 50 dps.  All "
-            "residues at the numerical-precision floor (~1e-49); "
-            "the closed form is exact in ζ(n) · ℚ for odd n and "
-            "exactly zero for even n."
+            "4, 5 (28 cases) via mpmath's polylog at "
+            "_precision.COMPUTE_DPS (70) dps.  All residues at the "
+            "arithmetic floor — max 3.62e-71, recorded in this "
+            "witness's own max_residue; the closed form is exact in "
+            "ζ(n) · ℚ for odd n and exactly zero for even n.  The "
+            "1e-40 gate below is deliberately generous against a "
+            "future COMPUTE_DPS change and is NOT sized to the "
+            "measurement, which sits 31 orders inside it."
         )
         .set_content_block("prop:cyclotomic-orbit-sum-all-depths")
         .add_parameter("N_range", "2..8")
         .add_parameter("n_range", "2..5")
         .add_parameter("num_cases_tested",
                        len(N_RANGE) * len(N_RANGE_DEPTHS))
-        .add_parameter("max_residue", float(max_residue))
-        .add_data("per_N_per_n_results", results)
+        .add_parameter("max_residue", fmt(max_residue))
+        .add_data(
+            "per_N_per_n_results",
+            [
+                {
+                    k: (v if k in ("N", "n", "parity") else fmt(v))
+                    for k, v in r.items()
+                }
+                for r in results
+            ],
+        )
         .add_assertion(
             name="clausen_orbit_sum_closed_form_all_N_n",
             computed=max_residue,

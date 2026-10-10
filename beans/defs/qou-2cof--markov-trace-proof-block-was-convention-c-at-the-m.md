@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T04:46:54Z
-updated_at: 2026-10-10T08:25:07Z
+updated_at: 2026-10-10T10:30:37Z
 parent: qou-d8c7
 ---
 
@@ -101,6 +101,16 @@ recorded numbers are not code -- re-deriving them is the `qou-cds1` ladder
 work or a scoped note. Not closeable by a value audit.
 
 Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+
+
+## 2026-10-10: undetermined groups measured and partly applied
+Measurement: /mnt/project-files/mass-endomorphism/m6-undetermined-measured.md.
+- **Group 1 (Pair-Skein), applied (1a):** the denominator q^{1/2}+q^{-1/2} is 1/z_C. Four .md blocks now say so (pair-skein-mass-formula + proof, flavor-split-substrate-proof, flavor-dressed-mass-from-substrate-split, beta-decay-skein-properties). The re-derivation is qou-cds1's. The fit flag in flavor-split Step 2 is beaned separately.
+- **Group 3 (six muon literals), applied (3a):** the labels now name the pin each producer actually recorded (CODATA-2018 muon, or none). The proton re-pin is queued on qou-1c4y.
+- **Group 4:** moot under the owner's 2a pick.
+- **Group 2 (GNS positivity), OPEN, needs an owner pick.** Under D the trace is positive for every q>0 (numeric check n=2..8; Jones, [2]_q>=2). Rewriting the proof is a math-claim change.
+Stays open for group 2.
 
 
 ## 2026-10-10 closed (session_01ST9RpvTF7JHNdUNafrjf9J)

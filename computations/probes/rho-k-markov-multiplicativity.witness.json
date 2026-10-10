@@ -1,16 +1,16 @@
 {
-  "engine": "numpy",
-  "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-07-05T11:19:18.403611+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-14T19:47:34.624875+00:00",
+  "commitSha": "f49a6a8290d6fde4b9c2a935d11c1325523f18d9",
   "assertions": [
     {
-      "name": "wenzl_branching_identity_machine_precision",
-      "computed": 1.6043802271331867e-14,
+      "name": "wenzl_branching_identity_arithmetic_floor",
+      "computed": "3.024150156406460625316607807272147463551527210926397645927099176162766e-70",
       "expected": "0.0",
       "passed": true,
-      "tolerance": "1.0e-12",
-      "source": "prop:rho-k-graded-expansion cites the Wenzl 1988 branching identity χ^λ(β_p ⊗ β_n) = Σ c^λ_{μν} χ^μ χ^ν verified to 3.2e-14 (machine precision) for all λ ⊢ 6 in the deuteron case; this run gives max rel.dev. at machine precision"
+      "tolerance": "1.0e-58",
+      "source": "prop:rho-k-graded-expansion cites the Wenzl 1988 branching identity χ^λ(β_p ⊗ β_n) = Σ c^λ_{μν} χ^μ χ^ν for all λ ⊢ 6 in the deuteron case.  The block cites 3.2e-14, which is the COMPLEX128 floor of the old numpy character path and is a statement about the arithmetic, not about the identity.  This run takes the mpmath path at _precision.COMPUTE_DPS and gives max rel.dev. 3.02e-70 — recorded in this witness's own max_relative_deviation, which is the figure to quote.  Gate is the serialization round-trip bound (see comment), not the residue."
     },
     {
       "name": "branching_verified_all_lambda_6",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 437,
+  "durationMs": 627,
   "computation": "rho-k-markov-multiplicativity",
   "scriptFile": "rho_k_markov_multiplicativity_probe.py",
-  "scriptHash": "af0ebef28dd9",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "c978ce253a1e",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,12 +38,21 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
-  "description": "ρ_K LO piece: numerical verification of the [Wenzl 1988] Markov-multiplicativity / branching identity χ^λ(β_p ⊗ β_n) = Σ c^λ_{μν} χ^μ(β_p) χ^ν(β_n) for the deuteron decomposition H_6 ↓ H_3 × H_3 at q_0, across all λ ⊢ 6. Max relative deviation is at machine precision (~1e-14), proving the LO piece of prop:rho-k-graded-expansion is a theorem (Markov multiplicativity + free-constituent additivity), not an empirical ansatz. Also confirms trace-level multiplicativity tr_M(β_p ⊗ β_n) = tr_M(β_p)·tr_M(β_n).",
+  "invocation": {
+    "argv": [
+      "computations/probes/rho_k_markov_multiplicativity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/rho_k_markov_multiplicativity_probe.py"
+  },
+  "description": "ρ_K LO piece: numerical verification of the [Wenzl 1988] Markov-multiplicativity / branching identity χ^λ(β_p ⊗ β_n) = Σ c^λ_{μν} χ^μ(β_p) χ^ν(β_n) for the deuteron decomposition H_6 ↓ H_3 × H_3 at q_0, across all λ ⊢ 6.  Max relative deviation 3.02e-70 at _precision.COMPUTE_DPS (70) — quote this witness's own max_relative_deviation, not a figure from prose.  This read 'machine precision (~1e-14)' until 2026-09-14, and that number was a property of the ARITHMETIC, not of the identity: the probe took char_fast's double-precision path, whose sigma matrices are dtype=complex and whose products are numpy, so complex128 was the floor no matter how precise q_0 was.  Re-run on the mpmath path the residue falls 56 orders, which strengthens rather than changes the conclusion — the LO piece of prop:rho-k-graded-expansion is a theorem (Markov multiplicativity + free-constituent additivity), not an empirical ansatz.  NOTE for a reader comparing artifacts: rho-k-graded-expansion.md still cites 3.2e-14 as the verification figure, i.e. UNDERSTATES this probe by 56 orders; that block belongs to the mass-endomorphism arc and was deliberately not edited here.  Also confirms trace-level multiplicativity tr_M(β_p ⊗ β_n) = tr_M(β_p)·tr_M(β_n).",
   "contentBlock": "prop:rho-k-graded-expansion",
   "parameters": {
-    "q_0": 1.1099785827513808,
+    "q_0": "1.10997858275138080759166909561076887987449912187357763605672",
     "n_strands": 6,
     "branching": "H_6 ↓ H_3 × H_3",
     "case": "deuteron β_p ⊗ β_n (no interface)"
@@ -113,33 +122,33 @@
         "lambda": [
           6
         ],
-        "chi_direct_re": 1.551306468200448,
-        "chi_direct_im": 0.0,
-        "chi_lr_pred_re": 1.5513064682004485,
-        "chi_lr_pred_im": 0.0,
-        "rel_diff": 2.8626787740092164e-16
+        "chi_direct_re": "1.55130646820047757334000417155658386349375857262755014999571",
+        "chi_direct_im": "0.0",
+        "chi_lr_pred_re": "1.55130646820047757334000417155658386349375857262755014999571",
+        "chi_lr_pred_im": "0.0",
+        "rel_diff": "1.16749066215540769514524648990448129006541557665655008307046e-71"
       },
       {
         "lambda": [
           5,
           1
         ],
-        "chi_direct_re": 5.931211488316245,
-        "chi_direct_im": 0.0,
-        "chi_lr_pred_re": 5.931211488316233,
-        "chi_lr_pred_im": 0.0,
-        "rel_diff": 1.946705066721437e-15
+        "chi_direct_re": "0.722223195476633432513478936779409069191803890755359076653465",
+        "chi_direct_im": "0.0",
+        "chi_lr_pred_re": "0.722223195476633432513478936779409069191803890755359076653465",
+        "chi_lr_pred_im": "0.0",
+        "rel_diff": "2.50772313477148541038235309281294944196247472798111477734140e-71"
       },
       {
         "lambda": [
           4,
           2
         ],
-        "chi_direct_re": 9.005913032758215,
-        "chi_direct_im": 0.0,
-        "chi_lr_pred_re": 9.005913032758189,
-        "chi_lr_pred_im": 0.0,
-        "rel_diff": 2.9586508879314772e-15
+        "chi_direct_re": "0.826591667025546481290021825498348011914143467548416273654560",
+        "chi_direct_im": "0.0",
+        "chi_lr_pred_re": "0.826591667025546481290021825498348011914143467548416273654560",
+        "chi_lr_pred_im": "0.0",
+        "rel_diff": "1.09554444353560599241044877161991908457410225189170669594803e-71"
       },
       {
         "lambda": [
@@ -147,22 +156,22 @@
           1,
           1
         ],
-        "chi_direct_re": 5.365995034013357,
-        "chi_direct_im": 0.0,
-        "chi_lr_pred_re": 5.365995034013324,
-        "chi_lr_pred_im": 0.0,
-        "rel_diff": 6.289752363665856e-15
+        "chi_direct_re": "-2.81332633171935344578678080830238763465669989576094534447837",
+        "chi_direct_im": "0.0",
+        "chi_lr_pred_re": "-2.81332633171935344578678080830238763465669989576094534447837",
+        "chi_lr_pred_im": "0.0",
+        "rel_diff": "3.86262154236150883441290403021045407818547509615353857288834e-71"
       },
       {
         "lambda": [
           3,
           3
         ],
-        "chi_direct_re": 4.6260080126424254,
-        "chi_direct_im": 0.0,
-        "chi_lr_pred_re": 4.626008012642403,
-        "chi_lr_pred_im": 0.0,
-        "rel_diff": 4.7999182949576654e-15
+        "chi_direct_re": "1.65567493974939062211654706027552280621609814942060734699681",
+        "chi_direct_im": "0.0",
+        "chi_lr_pred_re": "1.65567493974939062211654706027552280621609814942060734699681",
+        "chi_lr_pred_im": "0.0",
+        "rel_diff": "1.09389577161775669099412085069854289474971297368320311119035e-71"
       },
       {
         "lambda": [
@@ -170,11 +179,11 @@
           2,
           1
         ],
-        "chi_direct_re": 7.625583514464104,
-        "chi_direct_im": 0.0,
-        "chi_lr_pred_re": 7.625583514464053,
-        "chi_lr_pred_im": 0.0,
-        "rel_diff": 6.638989636252767e-15
+        "chi_direct_re": "-0.0898336254201153957060839674299050795198921363222109755562271",
+        "chi_direct_im": "0.0",
+        "chi_lr_pred_re": "-0.0898336254201153957060839674299050795198921363222109755562271",
+        "chi_lr_pred_im": "0.0",
+        "rel_diff": "3.02415015640646062531660780727214746355152721092639764592710e-70"
       },
       {
         "lambda": [
@@ -183,11 +192,11 @@
           1,
           1
         ],
-        "chi_direct_re": -1.9176345806380897,
-        "chi_direct_im": 0.0,
-        "chi_lr_pred_re": -1.9176345806381039,
-        "chi_lr_pred_im": 0.0,
-        "rel_diff": 7.410616630866849e-15
+        "chi_direct_re": "-1.45373035478960665739290008361582101101736182192488856735229",
+        "chi_direct_im": "0.0",
+        "chi_lr_pred_re": "-1.45373035478960665739290008361582101101736182192488856735229",
+        "chi_lr_pred_im": "0.0",
+        "rel_diff": "6.22927013183081626753785070421261065668471011327849517664333e-71"
       },
       {
         "lambda": [
@@ -195,11 +204,11 @@
           2,
           2
         ],
-        "chi_direct_re": 3.7479584408121998,
-        "chi_direct_im": 0.0,
-        "chi_lr_pred_re": 3.747958440812177,
-        "chi_lr_pred_im": 0.0,
-        "rel_diff": 6.042903105789281e-15
+        "chi_direct_re": "0.777625367919126600230106589657906789083040498192070575894260",
+        "chi_direct_im": "0.0",
+        "chi_lr_pred_re": "0.777625367919126600230106589657906789083040498192070575894260",
+        "chi_lr_pred_im": "0.0",
+        "rel_diff": "2.32905958380938704189900088525845420152377494001971529188649e-71"
       },
       {
         "lambda": [
@@ -208,11 +217,11 @@
           1,
           1
         ],
-        "chi_direct_re": 0.8442338462765474,
-        "chi_direct_im": 0.0,
-        "chi_lr_pred_re": 0.8442338462765339,
-        "chi_lr_pred_im": 0.0,
-        "rel_diff": 1.6043802271331867e-14
+        "chi_direct_re": "1.30813807212502924779746207956729861842042389015593627967809",
+        "chi_direct_im": "0.0",
+        "chi_lr_pred_re": "1.30813807212502924779746207956729861842042389015593627967809",
+        "chi_lr_pred_im": "0.0",
+        "rel_diff": "6.92257130328455762935332893230817302851430691746330863433068e-71"
       },
       {
         "lambda": [
@@ -222,11 +231,11 @@
           1,
           1
         ],
-        "chi_direct_re": -2.2304676981654294,
-        "chi_direct_im": 0.0,
-        "chi_lr_pred_re": -2.2304676981654215,
-        "chi_lr_pred_im": 0.0,
-        "rel_diff": 3.583824945716948e-15
+        "chi_direct_re": "1.20376960057611619902091919084835967569808431336287908267700",
+        "chi_direct_im": "0.0",
+        "chi_lr_pred_re": "1.20376960057611619902091919084835967569808431336287908267700",
+        "chi_lr_pred_im": "0.0",
+        "rel_diff": "6.01821416622763959454232551648670136635344808210274577529810e-71"
       },
       {
         "lambda": [
@@ -237,41 +246,43 @@
           1,
           1
         ],
-        "chi_direct_re": 0.6732568963702219,
-        "chi_direct_im": 0.0,
-        "chi_lr_pred_re": 0.673256896370222,
-        "chi_lr_pred_im": 0.0,
-        "rel_diff": 1.6490332748328036e-16
+        "chi_direct_re": "0.673256896370213551453563700938967846360700921399013378893165",
+        "chi_direct_im": "0.0",
+        "chi_lr_pred_re": "0.673256896370213551453563700938967846360700921399013378893165",
+        "chi_lr_pred_im": "0.0",
+        "rel_diff": "1.34505552451810824692514868726037864272597775753811396713892e-71"
       }
     ],
-    "max_relative_deviation": 1.6043802271331867e-14,
+    "max_relative_deviation": "3.02415015640646062531660780727214746355152721092639764592710e-70",
     "chi_proton_h3": {
       "(3,)": {
-        "re": 1.38249446339258,
-        "im": 0.0
+        "re": "1.38249446339259287590100661869100685751453330163038257113525",
+        "im": "0.0"
       },
       "(2, 1)": {
-        "re": 1.807703063778607,
-        "im": 0.0
+        "re": "-0.280593350903472054725790857596495778397465216640529490194720",
+        "im": "0.0"
       },
       "(1, 1, 1)": {
-        "re": -0.7392235707764795,
-        "im": 0.0
+        "re": "-0.739223570776474860816826378722590679508214343997103467200202",
+        "im": "0.0"
       }
     },
     "chi_neutron_h3": {
       "(3,)": {
-        "re": 1.1221068216024614,
-        "im": 0.0
+        "re": "1.12210682160247207382772127590299817411870934778237147081200",
+        "im": "0.0"
       },
       "(2, 1)": {
-        "re": 1.7008886061270294,
-        "im": 0.0
+        "re": "-0.371956324741341531416298842051285064110281514160262813096915",
+        "im": "0.0"
       },
       "(1, 1, 1)": {
-        "re": -0.91076221455308,
-        "im": 0.0
+        "re": "-0.910762214553074366488666910417015794666993046106212721742883",
+        "im": "0.0"
       }
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

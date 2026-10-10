@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-07T13:41:55.402028+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "computedAt": "2026-09-14T15:51:17.834255+00:00",
+  "commitSha": "202cacdfc863a5b965fe89fb3e291dce6c086688",
   "assertions": [
     {
       "name": "symbolic_derivative_matches_pi2_over_240_d4",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 34,
   "computation": "casimir-epsilon-vacuum-probe",
   "scriptFile": "casimir_epsilon_vacuum_probe.py",
-  "scriptHash": "8482944af140",
-  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
+  "scriptHash": "a5f7188be84f",
+  "scriptCommitSha": "320d9339725f528ed863a509653f1651c5e42242",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,19 +27,27 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/casimir_epsilon_vacuum_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/casimir_epsilon_vacuum_probe.py"
   },
   "description": "Conditional verification of conj:casimir-epsilon-vacuum.  Step 1: sympy-symbolic verification that d/dd[-π²/(720 d³)] = π²/(240 d⁴), discharging the calculus step of the §3b-cond conditional theorem.  Step 2: numerical evaluation of the standard-physics Casimir force per area at four sample plate separations (0.1–5 µm), matching Mohideen–Roy 1998 / Lamoreaux 1997 experimental geometries.  Step 3: explicit enumeration of the three open sub-problems that the conjecture's actual content requires (existence + scaling + prefactor of N_⊙(A, d) as a categorical object).  The conditional implication is rigorous modulo the PlateModeCount class hypothesis; the witness exists to document the rigorous chain and tabulate the numerical targets that any closure must reproduce.",
   "contentBlock": "conj:casimir-epsilon-vacuum",
   "parameters": {
-    "HBAR_J_S": 1.0545718175645948e-34,
-    "C_M_S": 299792458,
-    "HBAR_C_J_M": 3.1615267732521743e-26,
+    "HBAR_J_S": "1.054571817646156391262428003302280744722826330020413122421923634161456e-34",
+    "C_M_S": "299792458.0",
+    "HBAR_C_J_M": "3.161526773496689987889730141580228614665266341839388401463233993735558e-26",
     "class_axiom_energy_per_area": "-pi**2/(720*d**3)",
     "expected_derivative": "pi**2/(240*d**4)"
   },
@@ -53,24 +61,24 @@
     },
     "force_per_area_at_sample_separations": [
       {
-        "separation_um": 0.1,
-        "force_per_area_Pa": -13.001257731438125,
-        "force_per_area_uPa": -13001257.731438125
+        "separation_um": "0.100000000000000000000000000000000000000000000000000000000000",
+        "force_per_area_Pa": "-13.0012577324436547205404359130355480311842417202199840194604",
+        "force_per_area_uPa": "-13001257.7324436547205404359130355480311842417202199840194604"
       },
       {
-        "separation_um": 0.5,
-        "force_per_area_Pa": -0.020802012370301,
-        "force_per_area_uPa": -20802.012370301
+        "separation_um": "0.500000000000000000000000000000000000000000000000000000000000",
+        "force_per_area_Pa": "-0.0208020123719098475528646974608568768498947867523519744311366",
+        "force_per_area_uPa": "-20802.0123719098475528646974608568768498947867523519744311366"
       },
       {
-        "separation_um": 1.0,
-        "force_per_area_Pa": -0.0013001257731438125,
-        "force_per_area_uPa": -1300.1257731438125
+        "separation_um": "1.00000000000000000000000000000000000000000000000000000000000",
+        "force_per_area_Pa": "-0.00130012577324436547205404359130355480311842417202199840194604",
+        "force_per_area_uPa": "-1300.12577324436547205404359130355480311842417202199840194604"
       },
       {
-        "separation_um": 5.0,
-        "force_per_area_Pa": -2.0802012370301003e-06,
-        "force_per_area_uPa": -2.0802012370301
+        "separation_um": "5.00000000000000000000000000000000000000000000000000000000000",
+        "force_per_area_Pa": "-0.00000208020123719098475528646974608568768498947867523519744311366",
+        "force_per_area_uPa": "-2.08020123719098475528646974608568768498947867523519744311366"
       }
     ],
     "open_subproblems_for_closure": [

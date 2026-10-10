@@ -72,9 +72,9 @@ from y_lambda_wenzl_bridge import (  # noqa: E402
     classical_dim,
     partitions_of,
 )
-from q_parameter import Q_MP as Q  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
@@ -108,7 +108,10 @@ def main() -> int:
     )
     builder.set_content_block("conj:casimir-epsilon-vacuum")
 
-    q0 = mp.mpf(str(Q))
+    # Was `mp.mpf(str(Q))` where the import already read `Q_MP as Q` — a decimal
+    # round-trip of an mpf, NOT a float64 lift.  Using Q_MP directly drops the
+    # round-trip and the alias that made the two indistinguishable by grep.
+    q0 = Q_MP
     h = q0 - 1 / q0
     h2 = h * h
 
@@ -149,11 +152,21 @@ def main() -> int:
     # ─── Finding B3: test the survey's reported tr_M(1) numbers ───
     # Survey values were (tr-1)/h² = h²-coefficient. They match NEITHER
     # canonical functional. Internally they fit −0.123·C(n,2) for n=2,3,4.
+    # These four are CITED survey values, known to 4 decimal places and no
+    # further, and they stay bare JSON floats for the same reason Vol(5_2) does
+    # in casimir_d6_qcorrection_structure: `fmt` would pad 0.9946 out to 60
+    # places and claim a precision the source does not have.
     survey_tr = {2: 0.9946, 3: 0.9839, 4: 0.9680, 5: 0.7510}
     survey_analysis = []
     c_ref = None
     for n, tr in survey_tr.items():
-        coef = (tr - 1) / float(h2)
+        # `h2`, NOT `float(h2)`: dividing by a float64 made this a float64
+        # computation, which AGENTS.md forbids in any computations/ script.
+        # It does not move the RECORDED numbers -- `tr` carries only 4 decimals,
+        # so `coef` is uncertain at ~1e-4/h2 ~ 2e-3 relative and the 1e-17 cap
+        # was ~14 orders below the noise -- but the comparison at the bottom of
+        # this loop now runs at full precision instead of at binary64 grade.
+        coef = (tr - 1) / h2
         cn2 = n * (n - 1) / 2
         ratio = coef / cn2
         if n == 2:
@@ -162,15 +175,21 @@ def main() -> int:
             {
                 "n": n,
                 "survey_tr": tr,
-                "h2coef": round(coef, 4),
+                # `round(float(...), 4)` and NOT `fmt`: 4 decimals is the
+                # DELIBERATE width here, because the input `survey_tr` has 4.
+                # Note also that `round()` on an mpf returns an mpf that is not
+                # exactly 4 decimals (round(mpf('-0.1234567...'), 4) is
+                # -0.12349999...98), so the cast has to come first.
+                "h2coef": round(float(coef), 4),
                 "C(n,2)": cn2,
-                "coef_over_Cn2": round(ratio, 4),
+                "coef_over_Cn2": round(float(ratio), 4),
+                # full-precision mpf comparison, unaffected by the display width
                 "fits_n(n-1)/2": abs(ratio - c_ref) < 0.02 * abs(c_ref),
             }
         )
 
-    builder.add_parameter("substrate_q", float(q0))
-    builder.add_parameter("h2_substrate", float(h2))
+    builder.add_parameter("substrate_q", fmt(q0))
+    builder.add_parameter("h2_substrate", fmt(h2))
 
     builder.add_data(
         "finding_A_calibration_is_circular",

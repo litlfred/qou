@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.17",
-  "computedAt": "2026-10-10T08:29:11.916059+00:00",
-  "commitSha": "8e68e0bad9d8c3193f74aa7810da0658b6ef8dfe",
+  "computedAt": "2026-10-10T11:05:03.825320+00:00",
+  "commitSha": "06c3cdb02f90c5fed9fba302e35a6c54c1b2e9a6",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -17,8 +17,8 @@
   "durationMs": 5,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "ec6ee31eb480",
-  "scriptCommitSha": "6ff3254a0f7d56d7961ba93607680644b8d7b07b",
+  "scriptHash": "4ab05cb8f97e",
+  "scriptCommitSha": "44127769ed20003c58c3e6d9289f20adff0699f2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -228,6 +228,7 @@
     "convention_frame_qbeta": {
       "status": "INHERITED_C",
       "cache_convention": "C",
+      "cache_convention_normalised": "C",
       "canonical": "D",
       "cache_note": "Convention C (z = sqrt(q)/(1+q)), reached only via --historical-convention-C. C was excised by owner ruling (2026-08-09, re-affirmed 2026-08-15 and 2026-08-26); this artifact is retained because 10 consumers read it, including the L2 dashboard per_observable_100x_status.py. The DEFAULT (convention D) path REFUSES: no D-frame ladder has been derived, so there is no D-frame c_k to emit (bean qou-cds1). Substituting z_D into alpha = (z-1)h/2 is proved invalid by QOU.QBeta.decayLadder_zC_threeRow_ne_zero and QOU.QBeta.eigenphase_bar_defect_of_fullBar.",
       "induced_error_ppb": null,

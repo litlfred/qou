@@ -582,5 +582,96 @@ this bean is the two findings above, of which the three-value spread is the
 substantive one. Leaving `todo` rather than completing, per the rule against
 closing a bean whose live subject is an unsettled measurement.
 
+## 2026-10-10 re-measure on `main` `ac111c1814`: the serious subset is RESOLVED, and the re-derivation this bean asked for is done
+
+### The 4 hardcoding producers — all four now READ the value
+
+This bean's "THE SERIOUS SUBSET — 4 live producers HARDCODE it as a REFERENCE"
+is closed, and closed the right way rather than by substituting the D literal.
+[`computations/canonical_trm_reference.py`](../../computations/canonical_trm_reference.py)
+now serves `tr_m_nucleon` to **27 consumers**, reading the value from the
+50-dps witness **at the pin the running producer actually resolves to**, and
+raising if neither recorded witness matches. Its own docstring makes the
+argument this bean implies:
+
+> *"WHY NOT JUST SUBSTITUTE THE D LITERAL. Because that is how the corpus got
+> here. A hardcoded D constant is stale the moment the anchor or the convention
+> moves again, and it carries no way for a reader to tell which frame it is
+> in."*
+
+All three named files import it (`skein_proton_canonical.py:63`,
+`markov_weights_symbolic.py:323`, `probes/rho_f_categorical_probe.py:78`); the
+surviving `1.0653062286` mentions in them are prose explaining what was removed.
+
+Measured over every tracked `.py` outside `_deprecated`: **0 live-numeric
+sites.** Classifying all 35 carriers of either literal —
+
+    live-numeric (an mpf() on a non-comment line)   0
+    comment / docstring (the migration's records)  12
+    deliberate C reference (3 probes + the module)  5
+    markdown prose                                 12
+    witness / .work logs / .txt / .lean             6
+
+And that module records a finding this bean should carry, because it is the
+same lesson one level up: *"the previous migration could not have caught it —
+`.work/convention-c-regen*.jsonl` logs `markov_weights_symbolic.py` as `ok`,
+5.2 s and its C constant is still there today, because **re-running a producer
+cannot change a literal.** A regeneration sweep is the wrong instrument for
+this class and reports success against it."*
+
+### The rounding-aware re-derivation this bean asked for — measured
+
+§"A literal scan cannot bridge three renderings of one number" asks that
+*"anything relying on that 31 should be re-derived with a rounding-aware
+match"*. Done. The count is almost entirely a function of the prefix chosen:
+
+| prefix scanned | files |
+|---|---:|
+| `1.065306228` (10 sig digits) | **84** |
+| `1.0653062286` | 54 |
+| `1.06530622861316` ← **this bean's literal** | **35** |
+| `1.0653062286131670` | 31 ← the figure in the title |
+| `1.065306228613167059` | 21 |
+| `1.0653062286131670594` (full 20) | **7** |
+
+So the title's **31 is a 2.7× undercount** against a 10-significant-digit
+match, and the full 50-dps literal would have found **7** — a 12× swing from
+one end of the same quantity to the other. `1.065306228` is still specific
+(the D value is `1.1457…`), so 84 is the honest surface.
+
+The 49 files between 35 and 84 are not noise: **33 of them carry
+`1.0653062285923893…`**, which is the `*-tr-M-q0` / `markov-trace-assembly-*`
+chain pair's value (`qou-1ucq`), and it diverges from this bean's literal at
+the **11th** significant digit, rel `1.9504e-11`.
+
+### 🛑 Three things I checked expecting to find a defect, and did not
+
+Recorded so the next reader does not re-walk them.
+
+1. **A-vs-B at `1.95e-11` is NOT a contradiction.** Both chains in `qou-1ucq`
+   declare `target_tolerance: 1e-09`, and `1.95e-11` is *inside* that. It is a
+   precision difference between a 50-dps witness and a 1e-9-tolerance chain,
+   which is exactly why a **rounding-aware** match is the right instrument
+   here — a value-exact one splits one quantity into two.
+2. **It is not the pin either.** The μ–p separation is `11.6 ppb = 1.16e-8`,
+   about **600×** larger than the A/B gap, so no choice of anchor explains it.
+3. **The third rendering's bad error bar is ALREADY withdrawn.**
+   `markov-trace-frobenius-selection.md` quotes `1.0653061442544499` with
+   `≤ 2.57e-16` — `7.92e-8` from both other renderings, i.e. `3.1e8×` its own
+   bound. That looked like a live reader-facing defect; it is not. Line 117 of
+   that block already **replaces** the C table and states the diagnosis
+   verbatim: *"Its superseded error column, ≤ 8.16×10⁻¹⁶, measured agreement
+   among paths that were all in the same convention — it was never a bound on
+   the quantity."*
+
+### Status
+
+The **serious subset is resolved** and the asked-for re-derivation is done, so
+what remains is the 12 markdown-prose carriers plus the 12 Python comments.
+Those are records of the migration, and per the `4.66e6` precedent (`qou-3nva`)
+dated records are deliberately left. **Re-scoped to the prose carriers alone**;
+anyone quoting "31 files" should quote **84 at 10 digits / 35 at 15 / 7 at 20**
+and say which.
+
 
 ## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J) — linked from thread qou-moj0 (nucleon word/ordering).

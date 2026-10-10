@@ -39,6 +39,18 @@ V̂ᵢ = z·M₁₀ + M₁₁,    M = ∏_{j>i} T(cᵢⱼ, dᵢⱼ),    T(c,d) =
 
 with `z = 4993/10000` (the NF-basis constant, ≈ ½). The quark-ordering volume is
 
+> **Label added 2026-10-10 (bean `qou-wgta`): `z = 4993/10000` is CONVENTION C.**
+> It is the rounded `z_C = √q/(q+1) = 0.4993203342` at `q₀`, retired by the owner
+> ruling of 2026-08-15 in favour of `z_D = q³/(q²+1) = 0.6126880371`. The
+> derivation below is correct and is left exactly as recorded — what was missing
+> is the frame it is in, and this doc is cited as the derivation of record by
+> `observations/neutron-proton-mass-splitting.lean`, so a reader followed the
+> citation into an unlabelled convention. Carrying `z_D` through the same closed
+> form moves `|ΔΦ|` by −19.01 % and the published splitting from 1.3016 to
+> 1.0541 MeV (+0.64 % → −18.5 % against CODATA). The re-derivation is open; do
+> not substitute `z_D` into the coefficients below to improve the residual.
+
+
 ```
 Φ(K) = Σᵢ log|V̂ᵢ(K)|  =  log|∏ᵢ V̂ᵢ(K)|.
 ```

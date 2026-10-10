@@ -34,6 +34,29 @@ noncomputable def q0 : ℝ :=
     the integer coefficients).  Provenance:
     `docs/audits/2026-07-11-quark-volume-provenance.md`.
 
+    **CONVENTION SCOPE — this is convention C (measured 2026-10-10, bean
+    `qou-wgta` critical item 2).**  `4993/10000 = 0.4993` is the rounded
+    `z_C = √q/(q+1) = 0.4993203342` at `q₀`; the owner ruling of 2026-08-15
+    excised C in favour of `z_D = q³/(q²+1) = 0.6126880371`.  The coefficients
+    below are `10000·(z q² + 2q − z)`, `5000·(q² − 2z q − 1)` and
+    `10000·(q² − z q − 1)` at `z = z_C`, so the convention is not a `z` symbol
+    anywhere in this file — it survives as an integer numerator, which is why
+    no convention detector in the repo can see this site.  Both the
+    `convention-c-*` audits and `lean-markov-convention-audit.py` report it
+    clean; verified by running them.
+
+    Carrying `z_D` through the same closed form moves `|ΔΦ|` by **−19.01 %**
+    and `massSplitting 3.7445` from `1.3016` to `1.0541` MeV, i.e. from
+    **+0.64 %** to **−18.5 %** against CODATA `1.29333217`.  So
+    `splitting_value` below is true *as stated* and is a C-frame result.
+
+    Scope-(a), not an exclusion: nothing here shows a quark-ordering volume
+    cannot carry the splitting.  And the C-frame agreement is **not** evidence
+    for C — it was obtained in the retired convention, and picking a convention
+    by its residual is what the three-calibration discipline forbids.  Do not
+    substitute `z_D` into these coefficients to "fix" the number; the
+    re-derivation is tracked work.
+
       Φ(uud) = log|(4993q² + 20000q − 4993)(5000q² − 4993q − 5000) / (2·10⁸ q²)|
       Φ(udd) = log|(q²+1)²(10000q² − 4993q − 10000) / (40000 q³)|
 
@@ -64,7 +87,13 @@ noncomputable def massSplitting (α : ℝ) : ℝ :=
   α * abs (quarkPhi "udd" - quarkPhi "uud")
 
 /-- At α = 3.7445 MeV: Δm ≈ 1.302 MeV (CODATA: 1.293 MeV).
-    Error: 0.63%. -/
+    Error: 0.63%.
+
+    **Convention-C-frame** — see the scope note on `quarkPhiClosedForm`.  Under
+    the canonical `z_D` the same construction gives `1.0541` MeV (−18.5 %) and
+    this `norm_num` goal would fail by 248× its own tolerance
+    (`|Δm − 1.302| = 0.2479` against `< 0.001`).  The theorem is true as
+    stated; what it certifies is the C-frame number. -/
 theorem splitting_value :
     abs (massSplitting 3.7445 - 1.302) < 0.001 := by
   unfold massSplitting quarkPhi
