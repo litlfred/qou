@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -301,6 +302,96 @@ Fixed by the owner ruling of 2026-08-15, which excised convention C
 """
 
 
+#: Every ``markov_convention`` spelling measured in the corpus, as fixtures for
+#: :func:`_normalise_markov_convention`.  Produced 2026-10-10 by scanning the
+#: 3510 non-``_deprecated`` ``computations/**/*.witness.json``: **44 declare the
+#: field (1.3 %), in 23 distinct spellings for 4 states.**  Kept here so a
+#: change to the normaliser cannot silently reclassify one of them.
+MARKOV_CONVENTION_SPELLINGS = {
+    # -- D ----------------------------------------------------------------
+    "D": "D",
+    "D canonical": "D",
+    "D (N = 2)": "D",
+    "D (z = q^3/(q^2+1))": "D",
+    "D  (z = q^3/(q^2+1))": "D",                      # note the double space
+    "D (with C as control)": "D",
+    "D canonical, C carried as control": "D",
+    "D — z_D = q^3/(q^2+1), Wenzl level 2": "D",
+    "D — the ruled functional, z_D = q^3/(q^2+1)": "D",
+    "D (z = q^3/(q^2+1)); C measured for comparison": "D",
+    "D (z = q^3/(q^2+1)) via closed_form_tau_M.markov_z": "D",
+    # -- C ----------------------------------------------------------------
+    "C": "C",
+    # -- both compared; the stamp privileges neither ----------------------
+    "both (C and D compared)": "both",
+    "both, compared — D canonical": "both",
+    "both admissible parameters are evaluated: z = q (level 1, the "
+    "augmentation) and z_D = q^3/(q^2+1) (level 2, convention D)": "both",
+    # -- no Markov parameter enters at all --------------------------------
+    "not applicable": "n/a",
+    "n/a (counit only)": "n/a",
+    "n/a - no Markov parameter z enters": "n/a",
+    "not applicable — no z enters this computation": "n/a",
+    "convention-free — no z is specialised": "n/a",
+    "convention-free — no Markov parameter is specialised": "n/a",
+    "convention-free — z is symbolic; the D pin appears as one root": "n/a",
+    "convention-free — the results hold for every z, and the floor contains "
+    "no Markov parameter at all": "n/a",
+}
+
+
+def _normalise_markov_convention(raw) -> str:
+    """Map a free-text ``markov_convention`` stamp to D / C / both / n/a.
+
+    **Why this exists — a LATENT defect, not a live one.**  The check in
+    :func:`_convention_frame_check` was
+
+        matched = str(conv).strip().upper() == CANONICAL_MARKOV_CONVENTION
+
+    an exact equality against the single character ``"D"``.  Measured
+    2026-10-10 over the 3510 non-``_deprecated`` witnesses: **44 carry the
+    field, in 23 distinct spellings, and only 13 are a bare** ``"D"``.  So ten
+    of the eleven spellings that MEAN convention D — ``"D canonical"``,
+    ``"D (z = q^3/(q^2+1))"``, ``"D (N = 2)"``, ``"D — the ruled functional,
+    …"`` — classified as ``INHERITED_C``: a correctly-stamped *canonical*
+    artifact reported as carrying the *excised* convention, on the dashboard
+    AGENTS.md directs readers to quote for L2 status.
+
+    It has never produced a wrong verdict, because the one cache this dashboard
+    reads (``qbeta-ck-cache.witness.json``) carries the bare ``"C"`` — which
+    the old check got right.  **Zero wrong verdicts is not a sound check**
+    (detector-blindness taxonomy row 34): the moment ``qou-cds1`` lands and
+    that cache is re-stamped with anything longer than one character, the
+    dashboard calls the ruled result convention C.
+
+    **Deliberately conservative.**  An unrecognised spelling returns
+    ``"unparsed"`` — never ``"D"``, never ``"C"`` — so a new spelling fails
+    *loudly* rather than being absorbed into either verdict.  ``"unparsed"`` is
+    **not a clearance**: it means this function has nothing to say, in the same
+    sense as the sibling consumer-control-arm audit's ``unmeasured``.
+    """
+    if raw is None:
+        return "unparsed"
+    s = " ".join(str(raw).split())           # collapse runs of whitespace
+    for spelling, state in MARKOV_CONVENTION_SPELLINGS.items():
+        if s == " ".join(spelling.split()):
+            return state
+    low = s.lower()
+    # Rules below run only after the exact vocabulary misses.  Each is anchored
+    # at the START of the stamp: a mention of C further along is in practice
+    # "C carried as a control", which describes a D-framed computation.
+    if low.startswith(("not applicable", "n/a", "convention-free",
+                       "convention free")):
+        return "n/a"
+    if low.startswith("both"):
+        return "both"
+    if re.match(r"^d\b", low):
+        return "D"
+    if re.match(r"^c\b", low):
+        return "C"
+    return "unparsed"
+
+
 def _convention_frame_check(cache: dict) -> dict:
     """Record the Markov convention a cached Q_β prediction was BUILT in.
 
@@ -346,10 +437,26 @@ def _convention_frame_check(cache: dict) -> dict:
                        "cannot be verified from the artifact alone"),
             "canonical": CANONICAL_MARKOV_CONVENTION,
         }
-    matched = str(conv).strip().upper() == CANONICAL_MARKOV_CONVENTION
+    # The stamp is FREE TEXT -- 23 spellings for 4 states corpus-wide -- so it
+    # is normalised rather than compared character-for-character against "D".
+    # See `_normalise_markov_convention` for the measurement and for why an
+    # unrecognised spelling is reported rather than absorbed into a verdict.
+    state = _normalise_markov_convention(conv)
+    matched = state == CANONICAL_MARKOV_CONVENTION
+    status = {
+        "D": "matched",
+        "C": "INHERITED_C",
+        "both": "both_conventions_compared",
+        "n/a": "no_markov_parameter",
+        "unparsed": "unparsed_stamp",
+    }[state]
     return {
-        "status": "matched" if matched else "INHERITED_C",
+        "status": status,
+        # `INHERITED_C` is the only status any consumer acts on, and only `C`
+        # now reaches it. `unparsed_stamp` is NOT a clearance -- it says this
+        # check has nothing to say about the frame.
         "cache_convention": conv,
+        "cache_convention_normalised": state,
         "canonical": CANONICAL_MARKOV_CONVENTION,
         "cache_note": data.get("markov_convention_note"),
         # Deliberately None, not 0 and not a guess -- see the docstring.
