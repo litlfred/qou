@@ -4,7 +4,7 @@ title: 'The cusp shape parameter is INDEX-BLIND: tau_arch is not a function of t
 status: in-progress
 type: task
 created_at: 2026-10-10T12:34:17Z
-updated_at: 2026-10-10T13:10:00Z
+updated_at: 2026-10-10T13:25:00Z
 ---
 
 Measured 2026-10-10 (PR #7586, issue #7585) while working `qou-3kni`'s cusp
@@ -263,4 +263,85 @@ a fit and is forbidden.
 
 Still **`in-progress`**. The conjecture is open; three of this bean's four
 claims now belong to other artifacts, and the two that remain are narrow.
+
+---
+
+## 2026-10-10 — THE FORWARD MEASUREMENT: the pole-seeding claim converges to the wrong root
+
+Owner-selected option (c). `computations/qpochhammer_newton_seed_basin_probe.py`,
+composing `gluing_residual(z, m)` (from
+`computations/qbeta/qbeta_c3_barodd_gluing_newton_solve.py`) with
+`algebraic_seeds(q, n)` (`snappy_cusp_seeding.py:60`) — the two halves the
+corpus had and had never joined.
+
+**Nothing is fitted.** `m = 1` is the complete hyperbolic structure (parabolic
+meridian), recorded as such in the cited probe's own docstring.
+
+### The root structure
+
+At `m = 1` the equation is `(z² − z)² = 1`, which **factors** (verified at a
+probe point to `1.5e-51`):
+
+    (z² − z − 1)(z² − z + 1) = 0
+      z² − z − 1 = 0  ->  φ = 1.6180339887, −1/φ = −0.6180339887   REAL
+      z² − z + 1 = 0  ->  e^{±iπ/3}                                 geometric
+
+Four roots, **half degenerate** — the real pair is not in ℍ, so not shapes.
+
+### Five findings
+
+1. **The `k=0` seed is a CRITICAL POINT, for every `q₀`.**
+   `R'(z) = 2(z²−z)(2z−1)` vanishes at `z = 0, ½, 1`, and the `k=0` seed is
+   `q₀⁰ = 1` identically. The Newton step is **undefined** there, independently
+   of the substrate value — measured `STUCK` at iteration 1. The carrier's
+   claim that the poles are *"isolated in the cusp variety"* so the step
+   *"avoids local-minimum traps"* is inverted at `k=0`.
+2. **The real seeds cannot reach a geometric root at all. Scope-(b);
+   invariant = a Newton step on a real-coefficient rational function maps the
+   reals into the reals.** Measured: `k=1` converges in 14 iterations to
+   `−1/φ`, with `|Im| = 0` at every step.
+3. **The imaginary lift is mandatory and undetermined.** The algebraic side
+   gives a real number, the geometric side needs a point of ℍ, and both
+   producers lift by a hardcoded `IM_PERTURBATION = 0.1`.
+4. **At the corpus's own lift, NEITHER seed reaches the geometric root.**
+   Swept `δ = 0.001 … 2.0`: at `δ = 0.1`, `k=0` lands on the geometric
+   *conjugate* `e^{−iπ/3}` (wrong half-plane) and `k=1` on the degenerate
+   root. Both reach `e^{+iπ/3}` only from `δ = √3/2` — the answer's own
+   imaginary part.
+5. **The CONTROL says the seeds are not faster, and that is the claim.** The
+   carrier's claim is comparative (`O(1)` *"instead of"* a generic `z_q`), so
+   a bare count cannot test it. With any control point that IS a root excluded
+   (at `δ = √3/2`, `re = 0.5` is exactly `e^{iπ/3}`): at `δ = 0.1` no
+   algebraic seed reaches GEOM while a generic one does; at `δ = √3/2` best
+   generic **7** against best algebraic **8**. So the recorded "9–11
+   iterations" sits inside the generic range and is not evidence.
+
+### Scope
+
+(b) for findings 1 and 2, invariants named. **The conjecture is NOT excluded**
+— only the seeding claim as stated with the real poles. Confined to the
+figure-eight complete structure, where the residual is this quartic.
+
+### What this leaves
+
+The gap is the one the corpus already names, in
+`qbeta_c3_barodd_gluing_newton_solve.py:42-49`: *"THE OPEN LINK (single,
+named): the map `q₀ → m`"*, which that probe explicitly declines to fit. This
+measurement adds that the *seeding* route to it does not work either, and says
+what a replacement must supply: **the imaginary part**, which no part of the
+conjecture currently determines.
+
+### Also landed, owner option (a)
+
+The carrier's §Empirical scope now records the counting prune, cites
+`seed_is_not_the_cusp_shape` and the `rotate` / `rotate_angles` orbit lemmas
+rather than presenting either as new, corrects the bullet's "pole-to-cusp" to
+tetrahedron-indexed (which is what the producer measures), drops the `τ_arch`
+glyph collision, and leaves the cusp-vs-tetrahedron indexing **in tension with
+the resolution marked open** — because substituting the word is not a repair
+(a holonomy is cusp data; the tetrahedron-indexed datum is the **edge**
+equation). Render-QA grep battery clean, `qa-sweep` exit 0, not
+machine-render-validated (`render-latex.ts` absent at that path here).
+
+**Status: `in-progress`.** The conjecture is open.
 
