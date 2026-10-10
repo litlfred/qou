@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-10-10T07:57:44Z
-updated_at: 2026-10-10T07:57:44Z
+updated_at: 2026-10-10T08:13:42Z
 parent: qou-5vkl
 ---
 
@@ -159,3 +159,61 @@ are candidate rows in their own right.
 
     python3 -I computations/audits/local_import_resolution_audit.py --selftest
     python3 -I computations/audits/local_import_resolution_audit.py
+
+
+## 2026-10-10 — 1 of the 4 is FIXED by a sibling session; 3 remain
+
+`915e5a28c7` (session `016AEU7xkxdUcw9r7adTXgyr`, merged into
+`claude/triangulation-citation-chain-2026-10-10`) fixes
+`snappy_cusp_seeding.py` and re-runs both producers. Independent convergence:
+that work and this measurement happened in parallel, which is the dynamic
+AGENTS.md §"Parallel exploration is valuable" describes.
+
+**They made the NO-FLOAT64 judgement this bean declined to guess, and took the
+float side:**
+
+```python
+-from q_pochhammer_seed import IM_PERTURBATION
++from q_pochhammer_seed import IM_PERTURBATION_STR
+-    seeds = [s + IM_PERTURBATION for s in real_seeds]
++    seeds = [s + complex(0, float(IM_PERTURBATION_STR)) for s in real_seeds]
+```
+
+**That is the defensible call, and it is not a precision regression**, which is
+worth stating because `float(` in a `computations/` script is normally a defect.
+The whole enclosing function is float-domain already — `complex(s)` on SnapPy's
+shape parameters, `np.argmin` over the distances, `float(seed.real)` into the
+witness — so an `mpf` here would have been a lone high-precision value inside a
+float64 pipeline, which buys nothing and would have had to be cast back one line
+later. It also restores the pre-rename behaviour exactly rather than changing
+the computed object. The NO-FLOAT64 question for this arc is whether the
+*pipeline* should be mpf, which is a different and larger change.
+
+They also marked both dead labels `[no carrier]` in the Manuscript-references
+block with a pointer to `qou-3kni`, and noted in the prose that the producer
+"once named" the carrier-less conjecture rather than deleting the history.
+
+### The 3 that remain, unchanged
+
+| site | imports | status |
+|---|---|---|
+| `probes/qbeta_g3_annihilator_certification.py:52` | `tet_norm` | module defines `tet_abs`; rename **plausible, unverified** — a norm and an absolute value are not the same function |
+| same | `_dense_mul` | **no candidate of any name** |
+| `atom_braid_active_partitions.py:128` | `hook_length_dim_lambda` | absent from `hecke/hecke_characters`, no `__getattr__` |
+
+The last one is **latent, not import-time**: it sits in a function body, in the
+`else:` branch for the empty word (`χ_λ(1) = dim V_λ`), so the module imports
+fine and fails only when that path is taken. That is harder to notice, not
+easier.
+
+Still no fix proposed for these three. `_dense_mul` in particular has nothing to
+rename to — something was removed, and inventing a dense multiply is inventing
+mathematics.
+
+### The audit and the gate question are untouched
+
+`computations/audits/local_import_resolution_audit.py` stands, and re-running it
+after the merge is the way to confirm the count moved 4 → 3 rather than taking
+it from this note. The recommendation above (option 3: wire it into
+`scripts/precision-gates.sh` so the class cannot recur) is unaffected by any of
+the four being fixed — a gate is about the next rename, not this one.

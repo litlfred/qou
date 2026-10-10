@@ -10,8 +10,11 @@ picard_lefschetz_thimble.py.
 Manuscript references:
   - def:q-pochhammer-partial-product
   - conj:shared-denominator-cusp-holonomy
-  - conj:denominator-zeros-as-sw-critical-points
-  - conj:pl-jsj-mass-integration-equivalence
+  - conj:denominator-zeros-as-sw-critical-points  [no carrier]
+  - conj:pl-jsj-mass-integration-equivalence      [no carrier]
+  (The two labels marked [no carrier] were blocks in the removed
+   `descartes-universe/` chapter; no file in the tree defines them.
+   See bean qou-3kni.)
 
 The witness records:
   - The n algebraic denominator zeros for each tested n

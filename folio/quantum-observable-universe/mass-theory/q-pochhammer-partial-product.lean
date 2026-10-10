@@ -77,6 +77,29 @@ theorem denomPoly_eq_zero_of_factor_eq_zero (q x : R) (n : ℕ) (k : ℕ) (hk : 
     · subst heq
       rw [denomPoly_succ, hroot, zero_mul]
 
+/-- **Root characterisation (biconditional).** Over an integral domain the
+    denominator `(x; q)_n` vanishes exactly when one of its factors does:
+    `denomPoly q x n = 0 ↔ ∃ k < n, 1 - x q^k = 0`. The reverse direction is
+    `denomPoly_eq_zero_of_factor_eq_zero`; the forward direction is where
+    `IsDomain` is used (a product of nonzero factors is nonzero). Over a
+    ring with zero divisors the forward direction fails, so the hypothesis
+    is not removable. -/
+-- Ref: [manuscript] def:q-pochhammer-partial-product
+theorem denomPoly_eq_zero_iff [IsDomain R] (q x : R) (n : ℕ) :
+    denomPoly q x n = 0 ↔ ∃ k < n, 1 - x * q ^ k = 0 := by
+  induction n with
+  | zero => simp
+  | succ m ih =>
+    rw [denomPoly_succ, mul_eq_zero, ih]
+    constructor
+    · rintro (h | ⟨k, hk, h⟩)
+      · exact ⟨m, Nat.lt_succ_self m, h⟩
+      · exact ⟨k, Nat.lt_succ_of_lt hk, h⟩
+    · rintro ⟨k, hk, h⟩
+      rcases Nat.lt_succ_iff_lt_or_eq.mp hk with hlt | rfl
+      · exact Or.inr ⟨k, hlt, h⟩
+      · exact Or.inl h
+
 /-- Algebraic cusp-completeness predicate: a Hecke normal-form word
     at GB-depth `n` is algebraically cusp-complete at substrate `q`
     and shape `x` when the denominator polynomial `(x; q)_n` vanishes.

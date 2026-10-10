@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: low
 created_at: 2026-10-10T07:29:24Z
-updated_at: 2026-10-10T07:29:24Z
+updated_at: 2026-10-10T08:13:41Z
 parent: b9cj
 ---
 
@@ -68,3 +68,43 @@ an unbound identifier auto-binds instead of erroring.
 Nothing changes and nothing is wrong. Both declarations keep their accurate
 `_of_` names and the audit stays quiet. The only cost is that a true
 biconditional the corpus could state remains unstated.
+
+
+## 2026-10-10 — item 1 is DONE, by a sibling session, hours after this bean opened
+
+`570ee7fdb6` (session `016AEU7xkxdUcw9r7adTXgyr`, merged into
+`claude/triangulation-citation-chain-2026-10-10`) proves it:
+
+```lean
+theorem denomPoly_eq_zero_iff [IsDomain R] (q x : R) (n : ℕ) :
+    denomPoly q x n = 0 ↔ ∃ k < n, 1 - x * q ^ k = 0
+```
+
+Induction on `n` via `denomPoly_succ` + `mul_eq_zero`, **sorry-free**. Verified
+here rather than taken on trust: `lean -DautoImplicit=false -s 65536` on
+`q-pochhammer-partial-product.lean` → **errors=0**, file-wide `sorry` count **0**.
+The two `unused variable` warnings the run reports are at line 141 in
+`partialProduct_succ`, outside the diff (`@@ -77,6 +77,29 @@`), so pre-existing.
+
+**The outcome is better than either option this bean framed.** The rename is
+KEPT — `denomPoly_eq_zero_of_factor_eq_zero` remains as the reverse direction and
+is cited by the new docstring — and the honest biconditional now exists
+alongside it under the name the old one falsely claimed. So the corpus gained a
+theorem rather than trading one name for another.
+
+Their docstring also settles something this bean did not ask: `IsDomain` is
+where the **forward** direction is used (a product of nonzero factors is
+nonzero) and is **not removable** — over a ring with zero divisors the forward
+direction fails. That is the right hypothesis, stated at the right strength.
+
+### Item 2 is untouched and its first step is unchanged
+
+`eq_one_or_neg_one_of_offDiag_eq_zero`
+(`folio/quantum-observable-universe/lean/QOU/SchurWeyl/OffDiagNonvanishing.lean:45`)
+is not addressed. **Do not assume its converse is true** — `qou-bybn` called it
+"plausible" without measuring, and a conclusion of the shape `t = 1 ∨ t = -1`
+needs the off-diagonal entry to vanish at *both* values for the converse to
+hold. Measure that first. If it is false, the rename stands permanently and that
+negative is the result (scope it (a) or (b) per AGENTS.md).
+
+Bean stays `todo` on item 2 alone.

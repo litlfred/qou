@@ -174,6 +174,30 @@ as resting on it, and gives it that conjecture's tier. No mathematics was decide
 carrier block is still possible later. This bean stays `todo`: the identification is
 still open, and the producer re-run half is tracked separately.
 
+## 2026-10-10 — producer half done: docstrings corrected, both re-run, payloads byte-identical
+
+Installed snappy 3.3.2, mpmath 1.4.1, numpy 2.4.6, scipy 1.17.1, sympy 1.14.0 and
+clarabel 0.11.1, which matches every recorded `environment` field except python
+(3.11.15 recorded, 3.13.16 here) and `pyhecke_native_build`.
+
+- **`snappy_cusp_seeding.py` was broken on main.** It imported `IM_PERTURBATION` from
+  `q_pochhammer_seed`, which now exports only `IM_PERTURBATION_STR = "0.1"`, so it died
+  with `ImportError` before computing anything. The fix uses the shared string constant
+  (`complex(0, float(IM_PERTURBATION_STR))`, the same 0.1j kick).
+- Both Manuscript-reference blocks now mark `conj:pl-jsj-mass-integration-equivalence`
+  and `conj:denominator-zeros-as-sw-critical-points` as `[no carrier]`.
+- Re-run with the volatile fields masked (computedAt, commitSha, scriptHash,
+  scriptCommitSha, durationMs, invocation, environment): **0 payload differences in
+  either witness.** A baseline run before the edit also reproduced q-pochhammer-seed
+  unchanged.
+- `precision-gates.sh`: the RED set is identical with and without these changes (10
+  pre-existing ratchets), and no RED line names either file. snappy-cusp-seeding still
+  carries 121 raw float64 fields. That is pre-existing, the values are unchanged, and the
+  fix (carry mpf through SnapPy output) is not made here.
+
+Stays `todo`: the GB–PL identification is still an open conjecture-tier claim (scoped
+the same day), and the two dead labels still have no carrier.
+
 
 ## 2026-10-10 (later) — the environment blocker is GONE; the producer half has a DIFFERENT blocker
 
