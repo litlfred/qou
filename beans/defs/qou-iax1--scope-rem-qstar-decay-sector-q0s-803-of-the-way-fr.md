@@ -1,13 +1,13 @@
 ---
 # qou-iax1
 title: 'SCOPE: rem-qstar-decay-sector-q0''s ''80.3% of the way from proton to muon'' is convention-C; under D q* leaves the anchor interval entirely'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T16:55:28Z
-updated_at: 2026-10-04T15:24:21Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -68,3 +68,18 @@ WHAT STANDS, unchanged: the CONVENTION finding. With the correct constants,
 C->D displacement 2.551e-4 = 19921.5 gaps, which is 690,000x the constant-choice artifact. The block sentence placing the landmark between the anchors remains CONVENTION-C-FRAME.
 
 REMAINING ACTION is now SMALLER than I said: no figure refresh is needed. Only the convention scoping, and that still wants a D re-derivation (qou-cds1) rather than a z-swap.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: DONE.** Done: the block now scopes the 80.3 % placement as convention C (683febd8ee). A genuine D-frame q* waits on qou-cds1 and is not this bean's task.
+
+Evidence: Commit 683febd8ee scoped the sentence. `rem-qstar-decay-sector-q0.md` lines 7 and 15–41 carry "convention-C-frame placement" plus a Convention note with a C/D table. Probe `computations/qbeta/qstar_anchor_interval_convention_probe.py` exists. The bean's own retraction (80.3 % is faithful) stands.
+
+Status: `todo` → `completed`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+
+## 2026-10-10 — a witness this bean cites is red (cross-cluster check, verification sweep of `qou-avtq`)
+
+q* reproduces, but the cited witness `qbeta-c3-imq-qstar-ladder-amplification.witness.json` (2026-08-29, no q0Anchor) fails its own `anchors_reproduced_exactly` (0 vs 1). That fits the bean's C-frame scoping, but do not quote the witness as green.

@@ -1,13 +1,13 @@
 ---
 # qou-iyj5
 title: 'REDUCED: c3 single-structure u(q0) map — lattice-sum routes closed (scope-b Thurston); on-anchor-singularity REFUTED (R=2logφ≈0.96, #4508); survivor is the NZ-½ boost factor A≈2 (c=√2), precision-ceilinged → successor qou-yh67'
-status: todo
+status: scrapped
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T21:10:52Z
-updated_at: 2026-10-04T15:23:18Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -80,3 +80,13 @@ This single measurement decides between the two live open readings. Slip-safe
   on-anchor-singularity vs discrete-winding-channel — make consistent or refute one.
 - Audits: docs/audits/2026-08-01-c3-magnitude-full-volume-thurston-sum-exclusion.md and
   the two siblings; docs/audits/2026-07-11-qbeta-c3-barodd-nz-deformation-gap.md.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: SUPERSEDED.** Superseded by qou-yh67. "A=2 is Lean-exact" only means √3/2 ÷ √3/4 = 2. Whether the leak carries that normalisation is the open question in yh67, and at σ_A≈40% the data cannot decide it.
+
+Evidence: Its own resolution names successor `qou-yh67` (todo). It cites `BoostFactorNZNormalization.lean`, which is sorry-free by grep, but its theorems are pure arithmetic: `shape_over_pot_eq_two` is (√3/2)/(√3/4)=2. The A=2 identification is not derived. σ_A≈40% exceeds the 2.63% candidate spread (the bean's own text).
+
+Status: `todo` → `scrapped`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

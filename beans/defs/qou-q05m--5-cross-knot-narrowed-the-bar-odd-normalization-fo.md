@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T09:38:29Z
-updated_at: 2026-10-04T15:16:06Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -27,3 +27,13 @@ Files: `content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSpli
 `computations/probes/fivetwo_crossknot_34_distinguisher.py`,
 `docs/audits/2026-08-02-fivetwo-crossknot-34-resolution.md`.
 Parent forks: qou-yh67, qou-pzzl. Sibling keystones: #4554, #4553.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: OPEN.** The refutation of the single-scalar A_ω = 3 reading is structural and stands. Which ι-odd combination the observable inherits is still undecided; qou-rtm0's grading gives the odd component 1 but does not identify the observable with it.
+
+Evidence: `QOU/QBeta/FiveTwoDTSpectrumSplit.lean`: no sorry/axiom (decide-proofs). `qou-rtm0` (completed) added the bar-eigenspace grading (dtPair52_grading = (7,1)). Witness `probes/fivetwo-crossknot-34-distinguisher.witness.json`: fractions-exact, `allPassed: True`. Parent `qou-pzzl` is scrapped; `qou-yh67` is todo.
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

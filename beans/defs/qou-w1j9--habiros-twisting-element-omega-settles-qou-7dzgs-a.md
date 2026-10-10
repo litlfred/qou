@@ -1,13 +1,13 @@
 ---
 # qou-w1j9
 title: Habiro's twisting element omega settles qou-7dzg's (A)-vs-(B) — the ribbon twist is colour-determined, not a free label
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T17:33:32Z
-updated_at: 2026-10-04T15:20:40Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -196,3 +196,13 @@ weights** from Markov-trace pairing on `HH^*(H_3)` — a different object sharin
 the glyph. Adjacent and suggestive (in B_3 the Garside half-twist is
 `Delta = sigma_1 sigma_2 sigma_1`, so its `alpha_3` IS the half-twist's Markov
 trace, also derived from the Hecke relation) but NOT a dependency of this file.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: DONE.** The 7dzg resolution is in the block, and the 1-dimensional twist exponent is derived in sorry-free Lean. Two residuals remain untested and should become their own bean: the gzs0 probe (is /q³ equal to ⟨ω⁻¹,·⟩ on F_Bor?) and the general-λ hedge.
+
+Evidence: `folio/.../appendix-standard-model/strand-twist-datum.md` l.7 now states the datum is "an independent label … not the twist the ambient ribbon structure already carries", citing habiro2000 and the scalar (−1)ⁿA^{n(n+2)}. That is the (A)-survives resolution, landed. `QOU/BraidKnot/KeystoneHeckeRootsForceTwist.lean` exists, with no sorry/axiom (`isHeckeRoot_iff`, `fullTwistLength_even`, `theta_single_col_sq_three`). No probe evaluating ⟨ω⁻¹,·⟩ on the Borromean element exists.
+
+Status: `todo` → `completed`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
