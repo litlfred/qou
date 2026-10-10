@@ -40,6 +40,7 @@
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { globSync } from "node:fs";
+import { FETCH_HINT, listBlockQa, resultsTreePresent, saveBlockQa } from "./block-qa-io.ts";
 
 type Result = "pass" | "warn" | "fail" | "n/a" | string;
 interface Entry {
@@ -156,7 +157,11 @@ function main() {
   const json = argv.includes("--json");
   const root = argv.find((a) => !a.startsWith("--")) ?? "folio";
 
-  const files = globSync(`${root}/**/*.qa.json`);
+  // Issue #7642: the results tree first, then the legacy sibling (block-qa-io.ts).
+  if (!resultsTreePresent()) console.error(`qa-flag-preservation-audit: WARNING ${FETCH_HINT}`);
+  const reports = listBlockQa(root);
+  const rootOf = new Map(reports.map((r) => [r.path, r.blockRoot]));
+  const files = reports.map((r) => r.path);
   const { findings, sidecars } = scan(files);
 
   if (fix) {
@@ -170,7 +175,10 @@ function main() {
     const now = new Date().toISOString();
     for (const [f, d] of touched) {
       d.updated_at = now; // keep staleness tooling in sync, like sibling QA writers
-      writeFileSync(f, JSON.stringify(d, null, 2) + "\n");
+      // A reinstated flag is a judgement: it goes to the attestation store
+      // and the derived report is recomposed from it (issue #7642).
+      const saved = saveBlockQa(rootOf.get(f)!, d, "attesting");
+      if (!saved.ok) throw new Error(saved.reason);
     }
     console.log(
       `qa-flag-preservation-audit --fix: reinstated ${findings.length} masked flag(s) across ${touched.size} sidecar(s).`,

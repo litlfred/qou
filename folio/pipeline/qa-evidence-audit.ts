@@ -34,6 +34,7 @@ import { createHash } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
 import { Glob } from "bun";
 import { basename } from "node:path";
+import { FETCH_HINT, listBlockQa, resultsTreePresent } from "./block-qa-io.ts";
 
 const argv = process.argv;
 const has = (f: string) => argv.includes(`--${f}`);
@@ -88,15 +89,17 @@ interface Hit {
 const hits: Hit[] = [];
 let totalFailWarn = 0;
 
-for (const rel of new Glob("**/*.qa.json").scanSync(root)) {
-  const qaPath = `${root}/${rel}`;
+// Issue #7642: reports are read where the platform reads them, the results
+// tree first and then the legacy sibling (block-qa-io.ts).
+if (!resultsTreePresent()) console.error(`qa-evidence-audit: WARNING ${FETCH_HINT}`);
+for (const { blockRoot, path: qaPath } of listBlockQa(root)) {
   let doc: any;
   try {
     doc = JSON.parse(readFileSync(qaPath, "utf8"));
   } catch {
     continue; // unparseable sidecars are a different audit's problem
   }
-  const stem = qaPath.slice(0, -".qa.json".length);
+  const stem = blockRoot;
 
   // The hash set the writer would produce for this block RIGHT NOW.
   const current: Record<string, string> = {};

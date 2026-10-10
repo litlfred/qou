@@ -43,7 +43,10 @@ import { Glob } from "bun";
 const argv = process.argv;
 const apply = argv.includes("--apply");
 const rootIdx = argv.indexOf("--root");
-const root = rootIdx >= 0 ? argv[rootIdx + 1] : "folio";
+// Issue #7642: an agent verdict is a judgement, kept in test/attestations/block-qa
+// with a projection in the results tree. By default both copies are rewritten
+// by the same rule, so they stay identical; --root still names any one tree.
+const roots = rootIdx >= 0 ? [argv[rootIdx + 1]] : ["test/attestations/block-qa", "test/results/block-qa"];
 
 /** Preference order: the field most likely to carry file:line comes first. */
 const REASON_KEYS = ["notes", "referee_argument", "rationale", "reason"];
@@ -85,8 +88,8 @@ let filesTouched = 0;
 let skippedSilent = 0;
 const perKey = new Map<string, number>();
 
-for (const rel of new Glob("**/*.qa.json").scanSync(root)) {
-  const path = `${root}/${rel}`;
+for (const path of roots.flatMap((root) =>
+  [...new Glob("**/*.{qa,attestations}.json").scanSync(root)].map((rel) => `${root}/${rel}`))) {
   let doc: any;
   const raw = readFileSync(path, "utf8");
   try {

@@ -127,7 +127,9 @@ export function listBlockQa(dir: string = join(REPO_ROOT, "folio")): Array<{ blo
   };
   const absDir = resolve(dir);
   const results = join(REPO_ROOT, BLOCK_QA_RESULTS_DIR);
-  walk(join(results, relative(REPO_ROOT, absDir)), (abs) => {
+  // Only a directory inside this checkout has a mirror in its results tree.
+  const rel = relative(REPO_ROOT, absDir);
+  if (!rel.startsWith("..")) walk(join(results, rel), (abs) => {
     const root = join(REPO_ROOT, relative(results, abs).slice(0, -BLOCK_QA_SUFFIX.length));
     out.set(root, abs);
   });
