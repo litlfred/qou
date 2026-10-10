@@ -33,8 +33,11 @@ export default proposition({
         "projected out as theorems). Proved over a generic field: `z = q^2/[2] = z_D`; the " +
         "hook-content dimensions `d_(r) = [r+1]` and `d_(m,1) = [m]`; part (iii) at `r = 2` for " +
         "every `s`, computed in `H_2(q)` (`h2Trace_rossoJones`); and the refutation of the old " +
-        "part (ii) at `r = 2` (`old_form_ii_false_r2`). Part (iii) for general `r` and the " +
-        "Markov-uniqueness content of (ii) are not formalised; (iii) is cited and checked in " +
+        "part (ii) at `r = 2` (`old_form_ii_false_r2`). Part (iii) at `r = 3` for every `s` is " +
+        "computed in `H_3(q)` from the Hecke, braid and Markov relations (`h3Trace_rossoJones`, " +
+        "`h3Trace_rossoJones_coprime`, `h3_markov_rossoJones`), and Markov uniqueness on `H_3` is " +
+        "proved (`H3.markov3_unique_adjoin`). Part (iii) for general `r` and Markov uniqueness " +
+        "for `r >= 4` are not formalised; (iii) is cited and checked in " +
         "exact arithmetic for `r = 2, 3, 4` by `computations/probes/rj_inner_product_conventionD_torus_probe.py`. " +
         "Bean `qou-q425`.",
     },
