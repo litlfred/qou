@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T15:26:08Z
-updated_at: 2026-10-04T15:23:02Z
+updated_at: 2026-10-10T07:01:37Z
 parent: qou-6qbv
 ---
 
@@ -851,3 +851,8 @@ For scale: the route this replaces was measured at **18.1 days for A=3**.
   route is a **separate** call: the two are symbolically identical, so it
   is safe, but it changes which code path produces the committed
   A≤2 witnesses and should be scoped deliberately rather than slipped in.
+
+
+## 2026-10-10 — pointer
+
+Tracked under the in-scope list (not merged) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
