@@ -60,8 +60,7 @@ This cyclotomic structure also provides a literature bridge to Ariki-Koike cyclo
 | `chi_V3_numerator_matches` | Conjecture's $V_{(3)}$ numerator equals proved closed-form numerator |
 | `chi_V21_numerator_matches` | Conjecture's $V_{(2,1)}$ numerator equals proved closed-form numerator |
 | `chi_V111_numerator_matches` | Conjecture's $V_{(1,1,1)}$ numerator equals proved closed-form numerator |
-| `class PhiD4FConjecture (n λ_syt_count q)` | Abstract conjecture class with $d_\lambda$ field and residual |
-| `instance phiDConj_V3, phiDConj_V21, phiDConj_V111` | $n=3$ discharges |
+| `class PhiD4FConjecture (n λ_syt_count q)` | Abstract conjecture class with $d_\lambda$ field and residual (no instances) |
 
 These theorems are closed by `ring` after unfolding.
 

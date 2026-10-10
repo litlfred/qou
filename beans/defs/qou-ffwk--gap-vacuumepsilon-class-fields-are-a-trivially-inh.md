@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T15:15:21Z
-updated_at: 2026-10-10T06:49:38Z
+updated_at: 2026-10-10T07:08:14Z
 parent: qou-5p7n
 ---
 
@@ -824,3 +824,7 @@ as `.lean` files.
 
 ## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J)
 Mass-endomorphism slice of this bean is now tracked in thread qou-9bxg; this bean keeps its own scope and parent.
+
+
+## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J)
+Removed the 3 fabricated global instances phiDConj_V3/V21/V111 (:= 0, rfl) and a 4th same-defect instance defaultGeneralPhiD4F from mass-endomorphism/phi-d-syt-count-conjecture.lean; zero consumers; lean-direct exit 0; .md row updated. PhiD4FConjecture's residual field is still a placeholder (untied to any character difference) — open.

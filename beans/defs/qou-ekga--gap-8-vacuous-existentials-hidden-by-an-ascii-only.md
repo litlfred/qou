@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T08:33:27Z
-updated_at: 2026-10-10T06:49:39Z
+updated_at: 2026-10-10T07:08:15Z
 parent: qou-5vkl
 ---
 
@@ -278,3 +278,7 @@ already listed several a year earlier.
 
 ## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J)
 Mass-endomorphism slice of this bean is now tracked in thread qou-9bxg; this bean keeps its own scope and parent.
+
+
+## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J) — measured, not changed
+QOU.BraidKnot.MarkovTraceAxioms: no consumers outside its file; inside it is only an unused binder on 4 theorems + the zero-consumer 'discharge' of MarkovDisjointStabilisation. The trace-bearing MarkovTraceAxioms are QOU/Hecke/MarkovTraceProduct.lean:63 and mass-theory/markov-trace-product.lean:83. Recommendation (agent judgement): demote; owner decides canonical.

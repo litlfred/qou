@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T14:36:01Z
-updated_at: 2026-10-10T06:49:38Z
+updated_at: 2026-10-10T07:08:14Z
 parent: qou-6qbv
 ---
 
@@ -239,3 +239,7 @@ Was in-progress with no bean update since 2026-09-14 and no main commit naming i
 
 ## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J)
 Mass-endomorphism slice of this bean is now tracked in thread qou-9bxg; this bean keeps its own scope and parent.
+
+
+## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J)
+Removed global `instance trivialVortex` from mass-endomorphism/topological-mass-conjecture.lean (zero consumers; lean-direct exit 0). TopologicalDecompositionMass now has no instances (honest open state).

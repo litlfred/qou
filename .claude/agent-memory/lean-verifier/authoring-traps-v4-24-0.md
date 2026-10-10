@@ -628,3 +628,20 @@ environment with `sorryAx`, so `#print axioms` on it reads
 `[propext, sorryAx, Classical.choice, Quot.sound]`. That is the tell that
 separates "this decl failed" from "this decl is fine" when a multi-error file
 still produces axiom output.
+
+## TRAP — `first | ring | linear_combination h` never reaches the second branch (2026-10-10)
+
+In v4.24.0 Mathlib a failing `ring` falls back to `ring_nf`, prints `Try this: ring_nf`,
+and does NOT fail if `ring_nf` made progress — so `first` stops there and the goal is left
+open (`unsolved goals … q ^ 2 = 1 - q * qi + q ^ 2`). Use **`ring1`** (fails cleanly) as the
+first alternative. Measured on `FibreQuantumTraceOnV3.lean`.
+
+## STABLE — explicit 8×8 matrix identities over a generic CommRing (2026-10-10)
+
+`ext ⟨a,b,c⟩ ⟨a',b',c'⟩; fin_cases ×6 <;> simp [defs, Matrix.mul_apply,
+Fintype.sum_prod_type, Fin.sum_univ_two] <;> first | ring1 | linear_combination c * hqi`
+closes braid/Hecke relations on `Fin 2 × Fin 2 × Fin 2`, but blows the default 200k
+heartbeats (whole declaration). `set_option maxHeartbeats 4000000 in` (placed BEFORE the
+docstring — after it is a parse error) → whole 3-theorem file ~2 min wall. Entries as nested
+`![…]` vectors reduce under plain `simp`. For trace values, get `linear_combination`
+cofactors from `sympy.reduced(P, [q*qi-1, (q+qi)*t-1], q, qi, t)` (sympy 1.14 present).

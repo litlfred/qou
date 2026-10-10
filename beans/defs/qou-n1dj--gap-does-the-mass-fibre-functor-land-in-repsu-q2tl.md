@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T09:50:22Z
-updated_at: 2026-10-10T06:49:05Z
+updated_at: 2026-10-10T07:08:14Z
 parent: qou-thkm
 ---
 
@@ -548,3 +548,8 @@ added or removed).
 
 ## 2026-10-10 — consolidated (owner-approved, session_01ST9RpvTF7JHNdUNafrjf9J)
 Re-homed under thread qou-thkm. Previous parent: qou-wp3h.
+
+
+## 2026-10-10 — Phase B partial (session_01ST9RpvTF7JHNdUNafrjf9J)
+New sorry-free `QOU/BraidsAndKnots/FibreQuantumTraceOnV3.lean` (generic CommRing, division-free): builds Ř on V⊗V (V=R²), σ₁=Ř⊗1, σ₂=1⊗Ř with braid + Hecke relations proved, and the pivoted quantum trace τ(M)=[2]⁻³·Tr(K^{⊗3}M), K=diag(q⁻¹,q). Computed (not assumed): τ(1)=1, τ(σ₁)=q−[2]⁻¹, τ(σ₁σ₂)=(q−[2]⁻¹)² = convention D. `fibreTrace_weights_eq_jones`: any weights reproducing τ on the three class reps have y₁₃=0, [2]²y₂₁=1 — y₁₃=0 now FOLLOWS from the fibre trace, not the row cap.
+OBSTRUCTION (why item 1 stays open): `MassTraceIsFibreCategorical` has no field referring to any particular trace, so it is trivially inhabited (e.g. weights (1,1,0)); no instance can certify the MASS channel's trace. Missing: (a) a formal 'mass-channel trace' object the class can reference (the identification is only a definition in feynman-markov-identification); (b) split semisimplicity of H₃(q) so τ∘ρ is a character combination (weights only matched on 3 class reps). No instance added — that would be trivial-inhabitant laundering.
