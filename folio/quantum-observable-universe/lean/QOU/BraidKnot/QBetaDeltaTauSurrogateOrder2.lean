@@ -16,39 +16,21 @@ import QOU.BraidKnot.QBetaPerBlockChiClosedForms
 at `q = 1`, via the quotient-rule chain extended one level past the
 order-1 result.**
 
-The parent file `QBetaPerBlockChiClosedForms.lean` proves the order-1
-coefficient `delta_tau_M_surrogate_hasDerivAt_one : HasDerivAt
-delta_tau_M_surrogate (-5/6) 1` by the quotient rule on `N/D`, and leaves
-the order-2 coefficient as a `True := trivial` placeholder
-(`delta_tau_M_surrogate_taylor_coeff_2`) with a note that the
-`iteratedDeriv`-level discharge is "bulky but tractable". This file
-discharges it.
+**Status (corrected 2026-10-10, bean `qou-eddc`).** This header used to
+describe the order-2 proof as living here, over the grouped-frame closed form
+`N = -q¹¹+q¹⁰-2q⁹+q⁸+q⁶-q⁵-q³+2q²-q+1`, `D = 4q⁵(q²+q+1)`. Both are out of date:
 
-## What is proved
+- `delta_tau_M_surrogate` is now the canonical (borromean) closed form, with
+  numerator of degree 17 and denominator `4q⁸(q²+q+1)`.
+- The derivative proof `delta_tau_M_surrogate_deriv_hasDerivAt_one :
+  HasDerivAt delta_tau_M_surrogate_deriv (5/3) 1` and the coefficient theorem
+  `delta_tau_M_surrogate_taylor_coeff_2` live in
+  `QBetaPerBlockChiClosedForms.lean`.
 
-Write `g = N/D = delta_tau_M_surrogate` with
-
-  `N(q) = -q¹¹+q¹⁰-2q⁹+q⁸+q⁶-q⁵-q³+2q²-q+1`,  `N(1)=0, N'(1)=-10, N''(1)=-100`,
-  `D(q) = 4q⁵(q²+q+1)`,                          `D(1)=12, D'(1)=72,  D''(1)=368`.
-
-The first derivative is, by the quotient rule,
-  `g'(q) = (N'(q)·D(q) − N(q)·D'(q)) / D(q)²`   (`delta_tau_M_surrogate_deriv`).
-This file proves
-  `HasDerivAt delta_tau_M_surrogate_deriv (5/3) 1`,
-i.e. `g''(1) = 5/3` — differentiating the quotient-rule result a SECOND
-time. The order-2 Taylor coefficient is then
-  `c₂ = g''(1) / 2! = (5/3)/2 = 5/6`,
-matching the witnessed value
-`delta_tau_M_surrogate_taylor_witness 2 = 5/6` (from
-`qbeta-c3-multiblock-recursion-attack.witness.json`).
-
-The proof reuses ONLY the lemma toolkit of the verified order-1 proof
-(`hasDerivAt_pow`, `HasDerivAt.{neg,const_mul,add,sub,mul,div}`,
-`convert … using 1`, `norm_num`) — no `iteratedDeriv`/`eventuallyEq`
-machinery — so it is a faithful "the quotient-rule chain extends"
-demonstration. The numerical checkpoints (`N''(1)=-100`, `D''(1)=368`,
-`num'(1)=-1200`, `den'(1)=1728`, `g''(1)=34560/20736=5/3`) are recorded in
-the comments at each step.
+What this file proves is the two numerical identities below: `g'(1) = -5/6`
+evaluated from `delta_tau_M_surrogate_deriv`, and `(5/3)/2! = 5/6`. The order-2
+coefficient `c₂ = 5/6` is the same in both frames; the frames first differ at
+order 3.
 
 LaTeX label: `prop:qbeta-delta-tau-surrogate-order2`
 -/
