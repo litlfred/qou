@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-14T16:21:57Z
-updated_at: 2026-10-10T07:47:11Z
+updated_at: 2026-10-10T13:20:00Z
 parent: qou-cdx1
 ---
 
@@ -345,3 +345,52 @@ called this one satisfied off a single grepped line and retracted it within
 the hour.
 
 Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+
+## 2026-10-10 — the wheel was built and measured; items 1–3 hold, item 4 is the only live part
+
+This bean's standing caveat was that `pyhecke_native` had never been present in
+the container that judged it, so the live split was "not observable here". It is
+now observed. Built with `bash scripts/build-pyhecke-native.sh` on `main`
+`fbc1f5f580` (pyhecke-native 0.9.0, Python 3.13), then compared at the proton
+pin `q0 = pyhecke.gram.q0`:
+
+| check | result |
+|---|---|
+| `markov_z(q0)` native vs registry D | `0.6126880371464652`, diff `0.0` |
+| `max|trace_weights − TR_M|` | `0.0` |
+| `TR_M[5]` native | `0.6911664783584446` = `h·z² + z`, not `z³` |
+| `max|gram_matrix − G|` | `0.0` |
+| `max|gram_quotient_inverse − G_PINV|` | `4.44e-16` (f64 floor) |
+| `gram_determinant(q0)` | `0.0` |
+| `pyhecke.gram._native_ok()` | `True` — the self-check passes, native path ENABLED |
+| `tools/pyhecke/tests/test_gram_values.py` | 24 passed, 1 skipped (the wheel-absent test, by design) |
+| `cargo test --release gram` (hecke-engine) | 22 passed |
+
+The test file needs `computations/substrate` on `PYTHONPATH` for `hecke_core`;
+without it three tests fail with `ModuleNotFoundError`, which is an environment
+fact, not a defect.
+
+So Remaining items 1–3 of the 2026-08-15 (3) list are done and now verified
+against a real wheel: the trace flip landed, consumers moved to the quotient
+inverse under a new key, and the old refusal guard was replaced by a runtime
+convergence self-check that a correct wheel passes. Note the self-check compares
+in f64 at `atol 1e-9`; it cannot see a divergence below that.
+
+**Live remainder: the 51 `tools/hecke-engine/certificate-*.json`** (the bean
+says 53; 51 is the hecke-engine set, the other 2 are under `_deprecated/`). Their
+`*_f64` fields were evaluated at the literal `1.10998` (1277 ppb from proton).
+`scripts/reanchor_certificates.py` dry run, same commit:
+
+- 22 re-anchorable (exact Laurent polynomial in the file; the stored f64
+  reproduces from it, then re-evaluates at proton),
+- 12 blocked (`tr_markov_f64` has no exact source; a partial write would leave a
+  file on two anchors),
+- 1 keep (v9 used MPFR, committed value is the accurate one),
+- 16 skipped (no exact polynomial; these need their generator re-run).
+
+Writing the 22 is not done. It needs the owner's sign-off per the
+mass-regeneration posture (`tnjb`), and it is the only thing keeping this bean
+open. Consumers found by grep are the v9/v10/v11 binaries and `_deprecated/`
+scripts only, so no paper-facing number reads these fields.
+
