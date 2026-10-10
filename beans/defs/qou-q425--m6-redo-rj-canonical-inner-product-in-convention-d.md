@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T08:58:07Z
-updated_at: 2026-10-10T19:06:21Z
+updated_at: 2026-10-10T19:49:45Z
 parent: qou-d8c7
 ---
 
@@ -47,3 +47,16 @@ New library files (sorry-free, lean-direct -DautoImplicit=false exit 0; #print a
 
 STILL OPEN: (1) Rosso–Jones for general r — uniqueness reduces tr((s_0...s_{r-2})^s) to a normal-form computation, but a closed form for general r needs the Wedderburn/Ocneanu-weight structure (or the full-twist centrality + hook-character argument), not formalised; only r = 2, 3 proved. (2) Existence of the Markov trace (Ocneanu) and linear independence of the words (T_w basis) — not proved. (3) markov_trace_unique_axiom NOT discharged: the class QOU.Hecke.MarkovTrace lacks the cross-level Markov field. Replacing it would need: add that field, then instantiate s i := embed <i> (0 above n), a := q - q^-1, b := 1, adjoin = top from HeckeAlgebra.spans, and apply markov_unique_of_adjoin_eq_top. Unverified suspicion: as stated (only tr(sigma_i) and tr(sigma_i sigma_j) fixed) the axiom's hypotheses are too weak at n >= 3 generators (H_4: 5 irreducible characters vs 3 constraints), which would make it refutable — not checked.
 Not closeable: general-r Rosso–Jones open.
+
+
+## 2026-10-10 — markov_trace_unique_axiom was FALSE; removed and replaced (branch claude/markov-axiom-check-2026-10-10, head c2b2848e01)
+
+**Verdict.** `QOU.Hecke.markov_trace_unique_axiom` (two `MarkovTrace n q A` with equal `z_param` have equal `trace`) is false as stated, so as an `axiom` it made the environment inconsistent. The class fields (normalised, cyclic, trace_gen, trace_prod_gen) fix only 4 of the 5 class-function coordinates of a cyclic trace on H_4(q) (classes 1, s0, s0s2, s0s1, s0s1s2); the 4-cycle coordinate s0s1s2 is free.
+
+**Counterexample (Lean, sorry-free):** `QOU/Hecke/MarkovTraceClassNotUnique.lean`. On the tree's own H4A (instHeckeAlgebraH4A, any field K, any q), with tr_w = markovTraceH4A K q w (cyclic for every w): t_Z = 4 tr_Z - 3 tr_{Z+1} - tr_{Z-1} + tr_{Z+2}. Weights (4,-3,-1,1) at offsets (0,1,-1,2) have moments sum a = 1, sum a d = 0, sum a d^2 = 0, sum a d^3 = 6. So t_Z(1)=1, t_Z(s_i)=Z, t_Z(s_i s_j)=Z^2 (every class field holds, z_param = Z), but t_Z(s0 s1 s2) = Z^3 + 6 while tr_Z(s0 s1 s2) = Z^3. `mixMarkov_trace_ne` (needs 6 != 0 in K); `markov_trace_unique_axiom_false` = negation of the axiom statement at universe 0 (QQ, q=2, Z=0). #print axioms: propext, Classical.choice, Quot.sound.
+
+**Repair.** Axiom deleted. `markov_trace_unique` now takes `MarkovTrace.IsMarkov` (cross-level (M3): tr(x * s_i) = z tr(x) for x in adjoin of generators with idx < i) for both traces and is proved from `JonesNormalForm.markov_unique_of_adjoin_eq_top` via `genSeq` (HeckeFamily (n-1) (q - q^-1) 1 from the class relations; adjoin = top from HeckeAlgebra.spans). Class `MarkovTrace` unchanged; no code used the axiom or the old theorem. Same axioms as above.
+
+**Verified (lean-direct, -DautoImplicit=false -s 65536, shadow over the restored cache):** JonesNormalForm, Hecke/MarkovTrace, Shared/MarkovTraceClaim, Hecke/MarkovTraceOnH4A, Hecke/MarkovTraceClassNotUnique (built with -o); direct importers hecke_mass_trace, tmli_constituent_composite_agreement, Hecke.lean, MarkovTraceH2, MarkovTraceOnH3A, Hecke/Wedderburn, MarkovBondFactor, ClosedFormInterfaceFactors, plus comment-edited rj_canonical_inner_product, BorromeanCanonicalTraceDerivation, JonesNormalFormQuot: all exit 0.
+
+**Still open.** No instance in the tree is yet proved to satisfy IsMarkov (markovTraceH2 / H3A / H4A would be the first); until one is, markov_trace_unique has no proved application. Dated audit docs citing the axiom were left as historical records.
