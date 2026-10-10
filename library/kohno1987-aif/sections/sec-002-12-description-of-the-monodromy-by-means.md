@@ -8,6 +8,7 @@ pages: 6-10
 source_pdf: kohno1987-aif.pdf
 source_sha256: 88c5119985dfe878
 toc_source: inferred
+doc_brief: "Monodromy representations of braid groups and Yang-Baxter equations — 8 sections: Front matter; Introduction; MONODROMY OF INTEGRABLE CONNECTION"
 ---
 of solutions of quantum Yang-Baxter equations.
 Let W be a finite dimensional complex vector space. By the quantum

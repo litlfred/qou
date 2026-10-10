@@ -8,6 +8,7 @@ pages: 22-23
 source_pdf: kohno1987-aif.pdf
 source_sha256: 88c5119985dfe878
 toc_source: inferred
+doc_brief: "Monodromy representations of braid groups and Yang-Baxter equations — 8 sections: Front matter; Introduction; MONODROMY OF INTEGRABLE CONNECTION"
 ---
 [1] K. AOMOTO, Fonctions hyperlogarithmiques et groupes de monodromie
 unipotents, J. Fac. Sci. Tokyo, 25 (1978), 149-156.

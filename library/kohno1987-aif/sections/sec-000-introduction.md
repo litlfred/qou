@@ -8,6 +8,7 @@ pages: 2-4
 source_pdf: kohno1987-aif.pdf
 source_sha256: 88c5119985dfe878
 toc_source: inferred
+doc_brief: "Monodromy representations of braid groups and Yang-Baxter equations — 8 sections: Front matter; Introduction; MONODROMY OF INTEGRABLE CONNECTION"
 ---
 The purpose of this paper is to give a description of the monodromy
 of integrable connections over the configuration space arising from
