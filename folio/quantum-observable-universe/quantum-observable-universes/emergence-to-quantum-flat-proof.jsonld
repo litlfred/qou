@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-emergence-to-quantum-flat",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:emergence-to-quantum-flat",
+  "kind": "proof",
+  "title": "Proof of From Tannakian emergence to 2-group quantum flatness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-emergence-to-quantum-flat"
+  ],
+  "text": "emergence-to-quantum-flat-proof.md",
+  "provenance": "authored"
+}

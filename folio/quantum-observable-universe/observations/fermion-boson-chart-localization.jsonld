@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-fermion-boson-chart-localization",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:fermion-boson-chart-localization",
+  "kind": "remark",
+  "title": "Fermion--boson sectors as chart-glue data of $\\mathbb{P}_q(V)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-observation-fermion-action"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-fermion-boson-decomposition",
+  "tags": [
+    "fermion",
+    "boson",
+    "affine-chart",
+    "projective-line",
+    "substrate-parameter",
+    "interpretation"
+  ],
+  "text": "fermion-boson-chart-localization.md",
+  "provenance": "authored"
+}

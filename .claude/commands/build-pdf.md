@@ -15,7 +15,7 @@ This command builds the PDF locally to save GitHub CI minutes. It generates the 
 1. Run the `build.ts` script to generate `main.tex` and the chapters:
    ```bash
    bun run --preload scripts/preload-registry.ts ../folio-assistant/content/pipeline/build.ts \
-     content/quantum-observable-universe/quantum-observable-universe.ts \
+     folio/quantum-observable-universe/quantum-observable-universe.ts \
      --out-dir chapters/ \
      --generate-main \
      --main-out main.tex \

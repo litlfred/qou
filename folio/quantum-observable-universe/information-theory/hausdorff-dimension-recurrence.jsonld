@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-hausdorff-dimension-recurrence",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hausdorff-dimension-recurrence",
+  "kind": "remark",
+  "title": "Discrete recurrence of the Hausdorff dimension",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-gravitational-constant"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-julia-set-reeb",
+  "tags": [
+    "hausdorff-dimension",
+    "julia-set",
+    "recurrence",
+    "information-theory",
+    "cosmological-arrow",
+    "gravitational-constant"
+  ],
+  "text": "hausdorff-dimension-recurrence.md",
+  "provenance": "authored"
+}

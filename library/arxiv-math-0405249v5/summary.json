@@ -1,0 +1,106 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0405249v5",
+ "source_sha256": "bc699482e5cd7679",
+ "brief": "Twisted homology of quantum SL(2) — We calculate the twisted Hochschild and cyclic homology (in the sense of Kustermans, Murphy and Tuset) of the coordinate algebra o f the quan- tum SL(2) group",
+ "extended": "**Twisted homology of quantum SL(2)**\n\n*Tom Hadfield ∗1, Ulrich Krähmer2*\n\n28 pp, 17 sections.\n\n**Abstract.** We calculate the twisted Hochschild and cyclic homology (in the sense of Kustermans, Murphy and Tuset) of the coordinate algebra o f the quan- tum SL(2) group relative to twisting automorphisms acting by resc aling the standard generators a,b,c,d . We discover a family of automorphisms for which the “twisted” Hochschild dimension coincides wit h the classical dimension of SL(2, C), thus avoiding the “dimension drop” in Hochschild homology seen for many quantum deformations. Strikingly, t he simplest such automorphism is the canonical modular automorphism ar ising from the Haar functional. In addition, we identify the twisted cy clic cohomol- ogy classes corresponding to the three covariant diﬀerenti al calculi over quantumSU (2) discovered by Woronowicz.\n\n**Outline.** Front matter; Introduction; Twisted cyclic homology; motivation; twisted hochschild and cyclic homology; hochschild homology of hopf algebras; noncommutative koszul resolutions; Quantum SL(2); the haar functional; a koszul resolution of A/ ker; Case 2; Case 1; Cases 3, 4 and 5; three dimensional left-covariant calculus; four dimensional bicovariant calculi; Conclusions; Acknowledgements",
+ "tokens": {
+  "brief": 48,
+  "extended": 319
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-twisted-cyclic-homology",
+   "title": "Twisted cyclic homology",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-002-motivation",
+   "title": "motivation",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-003-twisted-hochschild-and-cyclic-homology",
+   "title": "twisted hochschild and cyclic homology",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-004-hochschild-homology-of-hopf-algebras",
+   "title": "hochschild homology of hopf algebras",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-005-noncommutative-koszul-resolutions",
+   "title": "noncommutative koszul resolutions",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-006-quantum-sl2",
+   "title": "Quantum SL(2)",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-007-the-haar-functional",
+   "title": "the haar functional",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-008-a-koszul-resolution-of-a-ker",
+   "title": "a koszul resolution of A/ ker",
+   "pages": "10-20"
+  },
+  {
+   "id": "sec-009-case-2",
+   "title": "Case 2",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-010-case-1",
+   "title": "Case 1",
+   "pages": "21-24"
+  },
+  {
+   "id": "sec-011-cases-3-4-and-5",
+   "title": "Cases 3, 4 and 5",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-012-three-dimensional-left-covariant-calculus",
+   "title": "three dimensional left-covariant calculus",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-013-four-dimensional-bicovariant-calculi",
+   "title": "four dimensional bicovariant calculi",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-014-conclusions",
+   "title": "Conclusions",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-015-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "27-28"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

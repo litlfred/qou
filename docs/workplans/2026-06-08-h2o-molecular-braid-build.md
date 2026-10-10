@@ -9,7 +9,7 @@ molecular-assembly-projector infrastructure.
 
 ## Key realization (corpus-grep / formalize-first)
 
-`main`'s new [`def:molecular-assembly-projector`](../../content/quantum-observable-universe/molecular-construction/molecular-assembly-projector.md)
+`main`'s new [`def:molecular-assembly-projector`](../../folio/quantum-observable-universe/molecular-construction/molecular-assembly-projector.md)
 — the idempotent `e_{λ,μ} ∈ H_N(q)` (q-Young / Wenzl projector projecting
 the composite's parabolic module onto Wedderburn block μ) — **is the
 molecular-scale realization of the merged phase-symmetry-from-knot-operator
@@ -35,7 +35,7 @@ Benzene: `e_{(2,2,2),(6)}`, stabilizer `S₃` permuting the acetylene units
   H₁↔H₂ — the H₂O analogue of benzene's `S₃` (this is the
   phase-symmetry-from-knot-operator claim at molecular scale).
 - **Bent geometry:** the 2 lone pairs are **phantom sites** (the NH₃→H₂O
-  extension of [`ch4-tetrahedral-symmetry`](../../content/quantum-observable-universe/molecular-construction/ch4-tetrahedral-symmetry.md)):
+  extension of [`ch4-tetrahedral-symmetry`](../../folio/quantum-observable-universe/molecular-construction/ch4-tetrahedral-symmetry.md)):
   Td → C₂ᵥ, bond angle pushed from 109.5° toward the observed **104.5°**.
 - **The four ice-relevant directions:** 2 donor H + 2 acceptor lone pairs
   = 4 ≈-tetrahedral H-bond directions per H₂O — the input to the ice Ih

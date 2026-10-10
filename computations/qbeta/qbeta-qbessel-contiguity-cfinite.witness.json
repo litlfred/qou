@@ -44,12 +44,14 @@
   },
   "allPassed": true,
   "verdict": "q-BESSEL RECURRENCE (★) PROVED (vs closed-form, <1e-40); q→1 CONTRACTION to ordinary Bessel PROVED; and (★)'s q^k-dependent (q-holonomic, NOT C-finite) structure DERIVES the #1839 phenomenology — no low-order constant recurrence, dominant tail root = 1/u_substrate (the q-difference pole). The c_k kernel R is the q-Bessel q-difference operator, not a rational degeneration. No fit; nothing wired; c_k cal-anchored.",
+  "scriptFile": "qbeta_qbessel_contiguity_cfinite.py",
   "scriptHash": "b57d347ffa1c",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "a1d21fc9e6705b2cf989d517cf56224a46b25d8a",
+  "scriptCommitSha": "af6ce13124b1a2d61b203aa42f60ee4bc9c8ea12",
+  "commitSha": "de5ea77d8444299e47ec5ddab92e44ee869c5f06",
   "engine": "sympy",
-  "computedAt": "2026-07-18T17:56:29.184943+00:00",
+  "computedAt": "2026-10-05T07:58:41.080193+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
-  "scriptFile": "qbeta_qbessel_contiguity_cfinite.py"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

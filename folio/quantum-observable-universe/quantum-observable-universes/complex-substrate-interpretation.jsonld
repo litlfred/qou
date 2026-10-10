@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-complex-substrate-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:complex-substrate-interpretation",
+  "kind": "remark",
+  "title": "Complex substrate parameter and the observability constraint",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-substrate-parameter-su2",
+    "papers/quantum-observable-universe/blocks/rem-q-laplacian-interpretation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+  "cites": [
+    "references/lusztig1993"
+  ],
+  "tags": [
+    "complex-q",
+    "observability",
+    "chirality",
+    "interpretation"
+  ],
+  "text": "complex-substrate-interpretation.md",
+  "provenance": "authored"
+}

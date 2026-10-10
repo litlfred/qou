@@ -932,7 +932,7 @@ def duality_gap_residuals(t, G, n_target, x_star, y0_star, y_star, *,
 
     This is `QOU.Mathlib.LPDuality.duality_gap_decomposition` — proved
     sorry-free in
-    `content/quantum-observable-universe/lean/QOU/Mathlib/LPDuality.lean`
+    `folio/quantum-observable-universe/lean/QOU/Mathlib/LPDuality.lean`
     (`#print axioms` = [propext, Classical.choice, Quot.sound]) — instantiated
     at this module's LP. The Lean statement is
 

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-alpha-em-derivation-exploration-options",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:alpha-em-derivation-exploration-options",
+  "kind": "remark",
+  "title": "Exploration map: GB/spectral-sequence/Hopf infrastructure for closing $1/\\alpha_{EM}$ derivation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-em-coupling-bring-zero-mode",
+    "papers/quantum-observable-universe/blocks/prop-y-lambda-closed-form-wenzl-bridge"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-em-coupling-bring-zero-mode",
+  "tags": [
+    "alpha-em",
+    "fine-structure",
+    "exploration",
+    "open-problem",
+    "derivation-roadmap",
+    "spectral-sequence",
+    "gb-filtration",
+    "hopf-fibration"
+  ],
+  "text": "alpha-em-derivation-exploration-options.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-q-spectral-sobolev",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:q-spectral-sobolev",
+  "kind": "proof",
+  "title": "Proof of p1 spectral sobolev",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-spectral-sobolev"
+  ],
+  "text": "p1-spectral-sobolev-proof.md",
+  "provenance": "authored"
+}

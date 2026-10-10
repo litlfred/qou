@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-categorical-transfer-matrix-properties",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:categorical-transfer-matrix-properties",
+  "kind": "remark",
+  "title": "Configuration space, bi-filtration, and categorification of $\\mathcal{T}(\\mathfrak{H})$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-transfer-matrix",
+    "papers/quantum-observable-universe/blocks/def-hadron",
+    "papers/quantum-observable-universe/blocks/def-localized-hadron",
+    "papers/quantum-observable-universe/blocks/def-exceptional-divisor",
+    "papers/quantum-observable-universe/blocks/rem-knot-factorization",
+    "papers/quantum-observable-universe/blocks/def-vertex-operator",
+    "papers/quantum-observable-universe/blocks/rem-observation-braid",
+    "papers/quantum-observable-universe/blocks/prop-jet-prolongation",
+    "papers/quantum-observable-universe/blocks/rem-jet-planck-steps",
+    "papers/quantum-observable-universe/blocks/def-bundle-initial-conditions",
+    "papers/quantum-observable-universe/blocks/def-operational-entropy",
+    "papers/quantum-observable-universe/blocks/thm-markov-trace-product",
+    "papers/quantum-observable-universe/blocks/conj-crystal-graph-realization"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-transfer-matrix",
+  "cites": [
+    "references/brundankleshchev2009"
+  ],
+  "tags": [
+    "transfer-matrix",
+    "hadron",
+    "vertex-operator",
+    "equivalence-class",
+    "braiding",
+    "configuration-space",
+    "interaction-filtration"
+  ],
+  "text": "categorical-transfer-matrix-properties.md",
+  "provenance": "authored"
+}

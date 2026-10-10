@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-confinement-level-exists",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:confinement-level-exists",
+  "kind": "proof",
+  "title": "Proof of confinement level exists",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-confinement-level-exists"
+  ],
+  "text": "confinement-level-exists-proof.md",
+  "provenance": "authored"
+}

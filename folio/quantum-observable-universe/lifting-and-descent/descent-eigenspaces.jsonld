@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-descent-eigenspaces",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:descent-eigenspaces",
+  "kind": "proposition",
+  "title": "Eigenspaces of the descent involution",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-descent-involution",
+    "papers/quantum-observable-universe/blocks/rem-algebraic-filter"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-descent-eigenspaces"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-descent-eigenspaces-su2"
+  ],
+  "tags": [
+    "descent",
+    "eigenspace",
+    "bosonic",
+    "fermionic"
+  ],
+  "leanRef": "qou:QOU.Torsion.EigenspaceDecomposition",
+  "text": "descent-eigenspaces.md",
+  "leanSource": "descent-eigenspaces.lean",
+  "provenance": "authored"
+}

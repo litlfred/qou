@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-graded-baer-star-Hq",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:graded-baer-star-Hq",
+  "kind": "conjecture",
+  "title": "Graded Baer-* on $\\mathcal{H}_q$ across the depth filtration",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-frobenius-hopf-substrate",
+    "papers/quantum-observable-universe/blocks/conj-gb-depth-period-correspondence",
+    "papers/quantum-observable-universe/blocks/prop-hecke-baer-star-generic"
+  ],
+  "cites": [
+    "references/bloch2000",
+    "references/kontsevich1995"
+  ],
+  "tags": [
+    "tier:S",
+    "graded-baer-star",
+    "graded-mikusinski",
+    "depth-filtration",
+    "explicit-witnesses",
+    "bar-involution",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.GradedBaerStarHq",
+  "text": "graded-baer-star-Hq.md",
+  "provenance": "authored"
+}

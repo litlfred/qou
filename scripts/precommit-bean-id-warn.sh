@@ -46,7 +46,7 @@
 # Bean: qou-ut5r.
 set -uo pipefail
 
-# Only speak when the tool call is a commit that touches .beans/.
+# Only speak when the tool call is a commit that touches beans/defs/.
 case "${1:-}${*:-}" in
   *"git commit"*|*"git add"*) ;;
   *) exit 0 ;;
@@ -54,15 +54,15 @@ esac
 
 ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0
 cd "$ROOT" || exit 0
-[ -d .beans ] || exit 0
+[ -d beans/defs ] || exit 0
 
-# Cheap relevance gate: nothing staged or changed under .beans/ ⇒ silent.
-if ! git status --porcelain -- .beans 2>/dev/null | grep -q .; then
+# Cheap relevance gate: nothing staged or changed under beans/defs/ ⇒ silent.
+if ! git status --porcelain -- beans/defs 2>/dev/null | grep -q .; then
   exit 0
 fi
 
-dups=$(grep -m1 -H '^# ' .beans/*.md 2>/dev/null \
-  | sed 's|^\.beans/||; s|\.md:# |\t|' \
+dups=$(grep -m1 -H '^# ' beans/defs/*.md 2>/dev/null \
+  | sed 's|^\beans/defs/||; s|\.md:# |\t|' \
   | awk -F'\t' '{ c[$2] = c[$2] " " $1 ; n[$2]++ }
                 END { for (i in c) if (n[i] > 1) print i "\t" c[i] }')
 
@@ -73,7 +73,7 @@ if [ -n "$dups" ]; then
   done
   echo '  `beans show <id>` serves only ONE of them, silently; the other is' >&2
   echo "  unreachable by its own id. Re-issue whichever is cited LEAST outside" >&2
-  echo "  .beans/ under a fresh id (check with: git grep -l '<id>' -- . ':!.beans/')." >&2
+  echo "  beans/defs/ under a fresh id (check with: git grep -l '<id>' -- . ':!beans/defs/')." >&2
   echo "  Full validator: scripts/check-beans.sh   (bean qou-ut5r)" >&2
 fi
 

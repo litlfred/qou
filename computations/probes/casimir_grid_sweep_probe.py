@@ -57,7 +57,7 @@ from experimental_constants import (  # noqa: E402
     VOL_BORROMEAN_50DPS_STR,
 )
 from _phi_q_util import phi_q  # noqa: E402
-from q_parameter import Q  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
@@ -85,7 +85,7 @@ def main() -> int:
         engine="mpmath",
     )
 
-    q = mpf(Q)
+    q = mpf(Q_50_DIGIT_STR)
     pi_sq = mp_pi ** 2
     pi_sq_720 = pi_sq / 720
     one_percent = pi_sq_720 / 100

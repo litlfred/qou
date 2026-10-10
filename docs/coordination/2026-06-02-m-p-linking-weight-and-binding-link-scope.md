@@ -73,4 +73,4 @@ Intent comments to be posted on each.
 - Final verdict: [`docs/audits/2026-06-02-subgoal-1-final-verdict.md`](../audits/2026-06-02-subgoal-1-final-verdict.md)
 - SDP + multi-term + tritium: [`docs/audits/2026-06-02-subgoal-1-sdp-multiterm-and-tritium.md`](../audits/2026-06-02-subgoal-1-sdp-multiterm-and-tritium.md)
 - Canonical reference (refuted routes): [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md)
-- Conjecture: [`content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md`](../../content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md)
+- Conjecture: [`folio/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md`](../../folio/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md)

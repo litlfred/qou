@@ -10,7 +10,7 @@ investigation (qou PR #3289) found two independent failures:
 
 1. **Flag-loss** — true-positive `fail` verdicts were discarded by a wholesale
    "distrust-clear" that overwrote them with `n/a`. *Fixed on the qou side* by
-   [`content/pipeline/qa-flag-preservation-audit.ts`](../../content/pipeline/qa-flag-preservation-audit.ts)
+   [`folio/pipeline/qa-flag-preservation-audit.ts`](../../folio/pipeline/qa-flag-preservation-audit.ts)
    (this doc's §6 explains how the new checkers must interact with it).
 2. **Coverage gaps** — three of the four defect classes have **no deterministic
    criterion in the registry at all**, and the one axis that could catch the
@@ -670,7 +670,7 @@ extra review gate above.
 ## 6. SPEC — interaction with the qou-side distrust-clear guard
 
 The qou repo now ships
-[`content/pipeline/qa-flag-preservation-audit.ts`](../../content/pipeline/qa-flag-preservation-audit.ts),
+[`folio/pipeline/qa-flag-preservation-audit.ts`](../../folio/pipeline/qa-flag-preservation-audit.ts),
 which **fails CI** if any criterion's latest sidecar entry is a distrust-`n/a`
 masking a prior `fail`/`warn`. The new checkers must respect the same principle:
 

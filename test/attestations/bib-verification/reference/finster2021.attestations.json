@@ -1,0 +1,49 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "finster2021",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 19,
+      "entry": {
+        "id": "finster2021",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T16:40:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "note": "PDF verified: 'The linear dynamics of wave functions in causal fermion systems' by Finster, Kamran, Oppio (arXiv:2101.08673). Title matches. Bib orphan \u2014 no QOU citation. Causal fermion systems are tangential to QOU's brane substrate but conceptually related. Decision pending. | Re-classified from `uncited`: cited via cites: [...] in cfs-comparison-summary.ts + algebraic-gns-embedding.ts. Inline [`finster2021`] tick-bracket form in .md prose. PDF verified.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/finster2021.pdf"
+        },
+        "local_pdf": "uploads/finster2021.pdf",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "INFRA: file absent from HEAD and the working tree; exists only on origin/claude/upload-bib-papers-2026-05-19 (intake commit d8c9ca3bab). Recovered from git history. Identity confirmed from the document's own cover (arXiv:2101.08673v2, linear dynamics of wave functions in causal fermion systems, three authors) and matches the seeded key. One inline citation site: folio/quantum-observable-universe/observations/cfs-comparison-summary.md:1, 'Finster's causal fermion systems (CFS) [`finster2021`] provide a parallel unification programme.' NOT load-bearing, and the block's substantive claims are not in this document. Checked by full-text grep of the recovered PDF: 'causal action' 20 hits, but 'causal Lagrangian' 0, 'type II' 0, 'von Neumann' 0, 'unification' 0. The block asserts (i) 'Both embed as finite type II_1 factors', (ii) 'the Finster causal Lagrangian L_CFS(x,y) evaluates eigenvalue differences', (iii) 'L_CFS^(norm)(x,y) = G_2(x,y) - ||x.y||_1^2' \u2014 none of the three is supported by the cited document, which is a technical derivation of a dynamical wave equation and its Green's operators. The .ts manifest (cfs-comparison-summary.ts) lists four further sources (finster2022, finster2024, dappiaggi2024, biane1998) that never appear inline, so the load-bearing sources for (i)-(iii) are unattributed in the prose. Verdict tangential: the document is in an adjacent field but supplies no result this block consumes.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "The three structural claims in the CFS comparison (type II_1 embedding, the causal-Lagrangian eigenvalue-difference form, and the G_2 - ||x.y||_1^2 decomposition) carry no inline source; the only inline citation is to a document that contains none of them. Record which of the .ts-listed sources actually backs each claim, or mark them as the folio's own reconstruction.",
+              "target": "rem:cfs-comparison-summary",
+              "bean": "qou-vfl4"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "c26a5576146d"
+        }
+      }
+    }
+  ]
+}

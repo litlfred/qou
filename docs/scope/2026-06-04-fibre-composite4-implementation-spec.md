@@ -207,7 +207,7 @@ originally written chases the wrong knot and is retired.
 |----------|---------|--------|
 | c_3 ← cinquefoil T(2,5)? | **NO** | [`docs/audits/2026-06-03-l2-closure-habiro-3-q-25-universal-template.md`](../audits/2026-06-03-l2-closure-habiro-3-q-25-universal-template.md) — "NOT yet derived for Q_β" |
 | c_3 ← any single knot? | **NO — open** | [`docs/audits/2026-05-19-qbeta-ladder-knot-operator-general-statement.md`](../audits/2026-05-19-qbeta-ladder-knot-operator-general-statement.md) — knot-operator `T_β` unidentified |
-| structural source of c_3? | **Hopf link** (2-strand sub-braid windings) | [`q-beta-c3-hopf-three-fold-markov.md`](../../content/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.md) — `c_3 = J_Hopf(q=1) = -2`, proven categorically (Facts 1–4) |
+| structural source of c_3? | **Hopf link** (2-strand sub-braid windings) | [`q-beta-c3-hopf-three-fold-markov.md`](../../folio/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.md) — `c_3 = J_Hopf(q=1) = -2`, proven categorically (Facts 1–4) |
 | is `/25` a knot assignment? | **NO — fibre constant** `[5]_q²│_{q=1}` | [`qbeta_composite4_fibre_root_of_unity_probe.py`](../../computations/qbeta/qbeta_composite4_fibre_root_of_unity_probe.py) (#1811) |
 | is the real-q `[3]_q/25` form derived? | **NO — FALSIFIED** | [`docs/audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`](../audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md) — rigid; swings **4.7M× less** than empirical c_3 |
 
@@ -267,7 +267,7 @@ NEGATIVE and extend the bracket count instead.
 
 The concrete n=3 Markov-trace functional is **written, committed, and
 verified** in
-[`MarkovTraceOnHecke.lean`](../../content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean):
+[`MarkovTraceOnHecke.lean`](../../folio/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean):
 NF free module `Fin 6 → R`, `TRM`/`trM`/`mulσ₀`/`mulσ₁`, with linearity
 (`trM_add`/`trM_smul`), the Hecke operator identity (`mulσ₀_hecke`:
 `σ₀²=hσ₀+1`), the Markov reduction (`trM_markov_σ₁`: `tr(x·σ₁)=z·tr(x)`
@@ -312,7 +312,7 @@ records the cross-verification + the toolchain recipe.
   update above); not actionable from this branch without an owner
   decision on the F(q) kernel direction.
 
-**File:** `content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean`.
+**File:** `folio/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean`.
 
 - Replace the `True`-marker `MarkovTrace` class field with a real
   structure: a linear functional on the H_n(q) free module satisfying

@@ -1092,7 +1092,7 @@ The Δ_λ chirality sign `deltaSign λ = (-1)^(principal grading λ)`
 `q ↔ q⁻¹` of the principal-grading degree: each grading-1 generator is the
 bar-odd `ℏ = q − q⁻¹`, so a degree-`d` monomial has bar-parity `(-1)^d`. This is
 proved sorry-free in
-[`QOU.BraidKnot.BarParityInvariant`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/BarParityInvariant.lean)
+[`QOU.BraidKnot.BarParityInvariant`](../../folio/quantum-observable-universe/lean/QOU/BraidKnot/BarParityInvariant.lean)
 (`barEven_barOdd_pow_even` / `barOdd_barOdd_pow_odd`).
 
 **Consequence for coordination:** the same `ℤ/2` bar-involution grading that

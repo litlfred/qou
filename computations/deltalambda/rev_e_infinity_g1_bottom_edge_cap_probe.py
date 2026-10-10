@@ -138,6 +138,21 @@ if _COMPUTATIONS not in sys.path:
     sys.path.insert(0, _COMPUTATIONS)
 
 from mpmath import mp  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+
+# RAISE PRECISION AT MODULE SCOPE, ABOVE EVERY CONSTANT BELOW. This file
+# previously never raised dps at all, so it built its mpf constants — and ran
+# its whole comparison — at mpmath's default 15. `RECORDED_DIFF` is a 40-digit
+# literal and was therefore WRONG THE MOMENT IT WAS BUILT:
+#
+#   literal          0.0198162676389039602300948111946348416306
+#   built at dps=15  0.0198162676389039595081786870878204354085…
+#                                     ^ diverges at the 18th significant digit
+#
+# rel err 3.64e-17 — real, though below the L1 1 ppQ (1e-15) target, so this is
+# not a claim that L1 was threatened. `set_compute_dps()` is idempotent and safe
+# alongside any later call.
+set_compute_dps()
 
 # --------------------------------------------------------------------------------------------
 # Load the COMMITTED definitions.  `rev_e_infinity_edge_limit_probe.py` has no `__main__` guard

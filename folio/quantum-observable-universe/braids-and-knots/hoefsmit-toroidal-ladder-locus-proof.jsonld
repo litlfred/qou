@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-hoefsmit-toroidal-ladder-locus",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:hoefsmit-toroidal-ladder-locus",
+  "kind": "proof",
+  "title": "Proof of the toroidal ladder locus",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hoefsmit-toroidal-ladder-locus"
+  ],
+  "text": "hoefsmit-toroidal-ladder-locus-proof.md",
+  "provenance": "authored"
+}

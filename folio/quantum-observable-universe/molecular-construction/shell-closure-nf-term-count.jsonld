@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-shell-closure-nf-term-count",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:shell-closure-nf-term-count",
+  "kind": "conjecture",
+  "title": "Shell closure from NF term count",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-electron-shell-braid-capacity"
+  ],
+  "cites": [
+    "references/iwahori1964",
+    "references/jones1987"
+  ],
+  "tags": [
+    "tier:E",
+    "normal-form",
+    "quotient-ideal",
+    "hecke-algebra",
+    "shell-closure"
+  ],
+  "leanRef": "qou:QOU.Molecular.ShellClosureNFTermCount",
+  "text": "shell-closure-nf-term-count.md",
+  "leanSource": "shell-closure-nf-term-count.lean",
+  "provenance": "authored"
+}

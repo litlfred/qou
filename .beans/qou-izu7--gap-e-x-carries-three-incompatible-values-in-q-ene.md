@@ -1,9 +1,0 @@
----
-# qou-izu7
-title: 'GAP: E_x carries three incompatible values in q-energy-terms-and-limits.md; author call needed on canonical per-crossing normalisation'
-status: todo
-type: task
-created_at: 2026-08-08T13:04:47Z
-updated_at: 2026-08-08T13:04:47Z
----
-

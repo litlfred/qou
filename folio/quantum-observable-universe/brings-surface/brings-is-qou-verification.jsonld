@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-brings-is-qou-verification",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:brings-is-qou-verification",
+  "kind": "remark",
+  "title": "Verification of the QOU data for Bring's surface",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-brings-is-qou",
+    "papers/quantum-observable-universe/blocks/def-brings-surface",
+    "papers/quantum-observable-universe/blocks/thm-qu-to-qou"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-brings-is-qou",
+  "text": "brings-is-qou-verification.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/cor-habiro-expansion-atomic",
+  "@type": [
+    "folio-assistant-core:Corollary",
+    "doco:Section"
+  ],
+  "label": "cor:habiro-expansion-atomic",
+  "kind": "corollary",
+  "title": "Atomic-braid Habiro expansion: integrality and termination",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-full-pole-structure-mass-trace"
+  ],
+  "cites": [
+    "references/habiro2002",
+    "references/kassel1995",
+    "references/jones1987"
+  ],
+  "tags": [
+    "habiro-ring",
+    "cyclotomic-expansion",
+    "markov-trace",
+    "atomic-braid",
+    "integrality",
+    "termination"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.habiro_expansion_atomic",
+  "text": "habiro-expansion-atomic.md",
+  "leanSource": "habiro-expansion-atomic.lean",
+  "provenance": "authored"
+}

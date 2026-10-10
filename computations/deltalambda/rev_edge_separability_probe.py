@@ -55,7 +55,7 @@ The residual `E_both - E_top - E_bot` is the whole question.  Every value is the
 Proton-pinned; exact integer arithmetic at scale 1e-40; mpmath dps 60 for the tables.  No
 float64.
 
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumElasticity.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/BraidKnot/HookSumElasticity.lean
 """
 
 from __future__ import annotations

@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-generating-functions-solve-reeb-flow",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:generating-functions-solve-reeb-flow",
+  "kind": "remark",
+  "title": "Generating functions ($\\exp_q$, $\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-exponential-unique",
+    "papers/quantum-observable-universe/blocks/prop-q-dilogarithm-unique",
+    "papers/quantum-observable-universe/blocks/prop-categorical-fourier-exists",
+    "papers/quantum-observable-universe/blocks/prop-vertex-is-exceptional-divisor",
+    "papers/quantum-observable-universe/blocks/prop-thurston-volume-additivity"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-vertex-is-exceptional-divisor",
+  "tags": [
+    "q-exponential",
+    "q-dilogarithm",
+    "categorical-fourier",
+    "habiro-ring",
+    "reeb-flow",
+    "pre-archimedean"
+  ],
+  "text": "generating-functions-solve-reeb-flow.md",
+  "provenance": "authored"
+}

@@ -63,7 +63,7 @@
 
 | Finding | Where | Details |
 |---|---|---|
-| **`prop:explicit-central-idempotent` Lagrange-product scope is too narrow** | `content/quantum-observable-universe/braids-and-knots/explicit-central-idempotent.md` | The proposition's literal formula has the inner product range over cells of λ only.  With that scope, the off-block projection does NOT vanish (off-block residue ~32 at q_0 — the probe surfaces this).  The CORRECTED formula extends the inner product over the UNION of distinct cell contents across every μ ⊢ n; with that scope, e_λ · v_{T'} = δ_{λ,μ} exactly and Σ_λ e_λ = 1 (probe verifies, residue 0).  Surfaced + documented in the probe's witness (`formula_scope_correction_note` data block).  **Recommended fix:** update the proposition's `.md` to make the inner-product scope explicit. |
+| **`prop:explicit-central-idempotent` Lagrange-product scope is too narrow** | `folio/quantum-observable-universe/braids-and-knots/explicit-central-idempotent.md` | The proposition's literal formula has the inner product range over cells of λ only.  With that scope, the off-block projection does NOT vanish (off-block residue ~32 at q_0 — the probe surfaces this).  The CORRECTED formula extends the inner product over the UNION of distinct cell contents across every μ ⊢ n; with that scope, e_λ · v_{T'} = δ_{λ,μ} exactly and Σ_λ e_λ = 1 (probe verifies, residue 0).  Surfaced + documented in the probe's witness (`formula_scope_correction_note` data block).  **Recommended fix:** update the proposition's `.md` to make the inner-product scope explicit. |
 
 ### C. Next I1 probe candidates (after #818 lands)
 

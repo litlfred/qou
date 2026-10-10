@@ -69,7 +69,7 @@ AGENTS.md asks for over a wide numerical search.
 
 Ref: docs/audits/2026-09-05-qbeta-functional-decision-options.md (qou-99qc)
 Ref: computations/qbeta/qbeta_published_form_is_the_inadmissible_z1_probe.py (15/15)
-Ref: content/quantum-observable-universe/lean/QOU/QBeta/ConventionDAdmissibleRoots.lean
+Ref: folio/quantum-observable-universe/lean/QOU/QBeta/ConventionDAdmissibleRoots.lean
 Ref: beans qou-99qc, qou-cds1, qou-avt5, qou-37j2
 """
 from __future__ import annotations

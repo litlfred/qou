@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-frobenius-self-duality-forces-lp-dual-extraction",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:frobenius-self-duality-forces-lp-dual-extraction",
+  "kind": "proof",
+  "title": "Proof of frobenius self duality forces lp dual extraction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-frobenius-self-duality-forces-lp-dual-extraction"
+  ],
+  "text": "frobenius-self-duality-forces-lp-dual-extraction-proof.md",
+  "provenance": "authored"
+}

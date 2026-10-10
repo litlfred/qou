@@ -1,0 +1,18 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-q-bessel-second-order-qdifference",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:q-bessel-second-order-qdifference",
+  "kind": "proof",
+  "leanRef": "qou:QOU.QBeta.qbessel_second_order_recurrence",
+  "text": "q-bessel-second-order-qdifference.md",
+  "provenance": "authored"
+}

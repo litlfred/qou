@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-pairwise-interaction-decomposition",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:pairwise-interaction-decomposition",
+  "kind": "proposition",
+  "title": "Every interaction decomposes into two-particle crossings",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-universe"
+  ],
+  "cites": [
+    "references/kassel1995",
+    "references/turaev2010"
+  ],
+  "tags": [
+    "braiding",
+    "yang-baxter",
+    "reidemeister",
+    "hexagon",
+    "two-body",
+    "decomposition"
+  ],
+  "leanRef": "qou:QOU.Braiding.pairwise_interaction_decomposition",
+  "text": "pairwise-interaction-decomposition.md",
+  "leanSource": "pairwise-interaction-decomposition.lean",
+  "provenance": "authored"
+}

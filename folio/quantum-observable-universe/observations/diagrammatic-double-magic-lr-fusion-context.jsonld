@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-diagrammatic-double-magic-lr-fusion-context",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:diagrammatic-double-magic-lr-fusion-context",
+  "kind": "remark",
+  "title": "LR-fusion rigidity: setup, mechanism, examples, and predictions",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-neutrality-saturated-shells"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-diagrammatic-double-magic-lr-fusion",
+  "tags": [
+    "double-magic",
+    "LR-fusion",
+    "rigidity",
+    "binding-energy"
+  ],
+  "text": "diagrammatic-double-magic-lr-fusion-context.md",
+  "provenance": "authored"
+}

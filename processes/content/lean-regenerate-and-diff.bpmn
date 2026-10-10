@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  qou — Is the machine-written Lean still what its generators write?
+
+  Source of truth: this file. Story TOOLS T9 (bean qou-gl2k), modelled on
+  folio-assistant-sci/processes/content/atomic-mass-drift-check.bpmn. Open it
+  in bpmn.io or any BPMN 2.0 tool.
+
+  The check is the `lean-regenerate-check` Tool in tool-defs/, which runs
+  scripts/check-generated-lean.py and writes nothing.
+-->
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+                  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+                  xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                  xmlns:bootstrap.processes="https://litlfred.github.io/bootstrap/0.1.0/processes/ns#"
+                  xmlns:cat-harness.processes="https://litlfred.github.io/cat-harness/0.1.0/processes/ns#"
+                  id="Definitions_LeanRegenerateAndDiff"
+                  targetNamespace="https://litlfred.github.io/qou/workflows"
+                  exporter="qou" exporterVersion="1">
+
+  <bpmn:collaboration id="Collaboration_LeanRegenerateAndDiff">
+    <bpmn:participant id="Participant_LeanRegenerateAndDiff" name="Is the generated Lean in sync with its generators?" processRef="Process_LeanRegenerateAndDiff" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_LeanRegenerateAndDiff" name="Is the generated Lean in sync with its generators?" isExecutable="false">
+    <bpmn:documentation>Check that the Lean text a script in this repository writes is still exactly what that script writes. Two files carry such text: every knot block of `QOU/Knot/GeneratedGluing.lean` (from `scripts/gen-gluing-lean.py`) and the depth-3 corner column `BokutShiaoCornerDepth3` in `UGB/GrobnerShirshov/HeckeCompletion.lean` (from `scripts/gen-hecke-corner-column.py 3`).
+
+WHY IT IS STRICT. These are proofs. If a generator and its output part company, a Lean file that compiles is carrying certificates nothing in the repository produces, and the next regeneration silently changes a proof. The check is cheap (about nine seconds) and writes nothing, so strictness costs nothing.
+
+THREE OUTCOMES, NOT TWO. A generator that cannot run, most often because SnapPy is not installed, is UNKNOWN and never reported as in sync. That is the parity rule the witness-parity Tool already follows.
+
+WHAT IS NOT CHECKED, AND WHY. The depth-2 column `BokutShiaoCorner` (section 4ad) was written by hand first; the generator was checked against it by re-deriving the same words and rules, not the same text. Measured 2026-10-05, the two differ on 964 lines while proving the same thing, so a textual diff there would report drift that is not drift. The module header of GeneratedGluing.lean and its closing `end` line are hand-written too, and are excluded from the comparison for the same reason.
+
+DRIFT IS A DECISION, NOT A FIX. When the regenerated text differs, either the generator changed (and the Lean should be regenerated) or the Lean was edited by hand (and the generator should learn the edit, or the edit should go). Which one is right is a judgement about a proof, so it goes to the author; the agent does not overwrite either side.</bpmn:documentation>
+    <bpmn:extensionElements>
+      <cat-harness.processes:policy enforcement="strict" />
+    </bpmn:extensionElements>
+    <bpmn:laneSet id="Process_LeanRegenerateAndDiff_LaneSet">
+      <bpmn:lane id="Lane_Owner" name="Owner (the paper's author)">
+        <bpmn:documentation>Decides what drift means: regenerate the Lean from the generator, or carry a hand edit back into the generator. Either changes a proof, so neither is the agent's call.</bpmn:documentation>
+        <bpmn:extensionElements><bootstrap.processes:role ref="author"/></bpmn:extensionElements>
+        <bpmn:flowNodeRef>Task_Decide</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_DriftDecided</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Agent" name="Authoring agent">
+        <bpmn:documentation>Runs the check and reports. It reads the committed files and writes nothing.</bpmn:documentation>
+        <bpmn:extensionElements><bootstrap.processes:role ref="authoring-agent"/></bpmn:extensionElements>
+        <bpmn:flowNodeRef>StartEvent_Changed</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_Check</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_Outcome</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_InSync</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_Unknown</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+
+    <bpmn:startEvent id="StartEvent_Changed" name="A generator or a&#10;generated Lean file changed">
+      <bpmn:documentation>Entered on demand, or when a change touches scripts/gen-gluing-lean.py, scripts/gen-hecke-corner-column.py, or either generated Lean file.</bpmn:documentation>
+      <bpmn:outgoing>Flow_1</bpmn:outgoing>
+    </bpmn:startEvent>
+
+    <bpmn:serviceTask id="Task_Check" name="Regenerate in memory&#10;and diff">
+      <bpmn:documentation>Run `python3 scripts/check-generated-lean.py` (the `lean-regenerate-check` Tool). It runs both generators to stdout and compares their output with the committed text: exit 0 identical, 1 drift with a unified diff, 2 unknown when a generator could not run.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="lean-generation" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_2</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:exclusiveGateway id="Gateway_Outcome" name="What did the&#10;check say?">
+      <bpmn:documentation>Read directly from the check's exit status.</bpmn:documentation>
+      <bpmn:incoming>Flow_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_InSync</bpmn:outgoing>
+      <bpmn:outgoing>Flow_Drift</bpmn:outgoing>
+      <bpmn:outgoing>Flow_Unknown</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+
+    <bpmn:endEvent id="EndEvent_InSync" name="Generated Lean&#10;in sync">
+      <bpmn:incoming>Flow_InSync</bpmn:incoming>
+    </bpmn:endEvent>
+
+    <bpmn:endEvent id="EndEvent_Unknown" name="Unknown: a generator&#10;could not run (not a pass)">
+      <bpmn:documentation>Report which generator could not run and why. Nothing was compared, so nothing is claimed.</bpmn:documentation>
+      <bpmn:incoming>Flow_Unknown</bpmn:incoming>
+    </bpmn:endEvent>
+
+    <bpmn:userTask id="Task_Decide" name="Decide: regenerate the Lean,&#10;or fix the generator?">
+      <bpmn:documentation>Put the unified diff to the author with both readings: the generator changed (regenerate the Lean and re-verify it with lean-direct), or the Lean was edited by hand (carry the edit into the generator, or drop it). If the author says nothing, nothing changes and the drift stays reported.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="interaction-modality" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_Drift</bpmn:incoming>
+      <bpmn:outgoing>Flow_3</bpmn:outgoing>
+    </bpmn:userTask>
+
+    <bpmn:endEvent id="EndEvent_DriftDecided" name="Drift put to&#10;the author">
+      <bpmn:incoming>Flow_3</bpmn:incoming>
+    </bpmn:endEvent>
+
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="StartEvent_Changed" targetRef="Task_Check" />
+    <bpmn:sequenceFlow id="Flow_2" sourceRef="Task_Check" targetRef="Gateway_Outcome" />
+    <bpmn:sequenceFlow id="Flow_InSync" name="identical (exit 0)" sourceRef="Gateway_Outcome" targetRef="EndEvent_InSync" />
+    <bpmn:sequenceFlow id="Flow_Drift" name="drift (exit 1)" sourceRef="Gateway_Outcome" targetRef="Task_Decide" />
+    <bpmn:sequenceFlow id="Flow_Unknown" name="unknown (exit 2)" sourceRef="Gateway_Outcome" targetRef="EndEvent_Unknown" />
+    <bpmn:sequenceFlow id="Flow_3" sourceRef="Task_Decide" targetRef="EndEvent_DriftDecided" />
+  </bpmn:process>
+
+  <bpmndi:BPMNDiagram id="BPMNDiagram_LeanRegenerateAndDiff">
+    <bpmndi:BPMNPlane id="BPMNPlane_LeanRegenerateAndDiff" bpmnElement="Collaboration_LeanRegenerateAndDiff">
+      <bpmndi:BPMNShape id="Participant_LeanRegenerateAndDiff_di" bpmnElement="Participant_LeanRegenerateAndDiff" isHorizontal="true">
+        <dc:Bounds x="100" y="60" width="760" height="380" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Owner_di" bpmnElement="Lane_Owner" isHorizontal="true">
+        <dc:Bounds x="130" y="60" width="730" height="140" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Agent_di" bpmnElement="Lane_Agent" isHorizontal="true">
+        <dc:Bounds x="130" y="200" width="730" height="240" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_Changed_di" bpmnElement="StartEvent_Changed">
+        <dc:Bounds x="172" y="262" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_Check_di" bpmnElement="Task_Check">
+        <dc:Bounds x="260" y="240" width="120" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_Outcome_di" bpmnElement="Gateway_Outcome" isMarkerVisible="true">
+        <dc:Bounds x="430" y="255" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_InSync_di" bpmnElement="EndEvent_InSync">
+        <dc:Bounds x="572" y="262" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_Unknown_di" bpmnElement="EndEvent_Unknown">
+        <dc:Bounds x="572" y="372" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_Decide_di" bpmnElement="Task_Decide">
+        <dc:Bounds x="540" y="90" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_DriftDecided_di" bpmnElement="EndEvent_DriftDecided">
+        <dc:Bounds x="752" y="112" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1_di" bpmnElement="Flow_1">
+        <di:waypoint x="208" y="280" />
+        <di:waypoint x="260" y="280" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_2_di" bpmnElement="Flow_2">
+        <di:waypoint x="380" y="280" />
+        <di:waypoint x="430" y="280" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_InSync_di" bpmnElement="Flow_InSync">
+        <di:waypoint x="480" y="280" />
+        <di:waypoint x="572" y="280" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_Drift_di" bpmnElement="Flow_Drift">
+        <di:waypoint x="455" y="255" />
+        <di:waypoint x="455" y="130" />
+        <di:waypoint x="540" y="130" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_Unknown_di" bpmnElement="Flow_Unknown">
+        <di:waypoint x="455" y="305" />
+        <di:waypoint x="455" y="390" />
+        <di:waypoint x="572" y="390" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_3_di" bpmnElement="Flow_3">
+        <di:waypoint x="680" y="130" />
+        <di:waypoint x="752" y="130" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

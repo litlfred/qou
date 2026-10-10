@@ -52,7 +52,7 @@ Runs at `mp.dps = 50` — higher than #7294's 30, so the residual in P2 can be e
 arithmetic noise rather than asserted to be.  Proton-pinned; no Markov parameter in this cone,
 so convention C/D does not arise.  Exact integers for n/H.  mpmath throughout; no float64.
 
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean
 """
 
 from __future__ import annotations
@@ -612,7 +612,7 @@ _w = {
     ),
     "lean": {
         "theorem": "QOU.BraidKnot.HookSum.betaSide_eq_hookSum",
-        "file": ("content/quantum-observable-universe/lean/QOU/BraidKnot/"
+        "file": ("folio/quantum-observable-universe/lean/QOU/BraidKnot/"
                  "HookSumBetaCoordinates.lean"),
         "companion": "QOU.BraidKnot.HookSum.betaSide_padding_invariant",
         "axioms": ["propext", "Classical.choice", "Quot.sound"],

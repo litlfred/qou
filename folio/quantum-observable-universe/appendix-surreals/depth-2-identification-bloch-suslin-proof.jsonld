@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-depth-2-identification-bloch-suslin",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:depth-2-identification-bloch-suslin",
+  "kind": "proof",
+  "title": "Proof of depth 2 identification bloch suslin",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-depth-2-identification-bloch-suslin"
+  ],
+  "text": "depth-2-identification-bloch-suslin-proof.md",
+  "provenance": "authored"
+}

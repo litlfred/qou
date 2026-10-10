@@ -63,7 +63,7 @@ sys.path.insert(0, str(HERE.parent))
 from witness_base import WitnessBuilder  # noqa: E402
 
 REPO_ROOT = HERE.parent.parent
-CONTENT_ROOT = REPO_ROOT / "content"
+CONTENT_ROOT = REPO_ROOT / "folio"
 
 STALE_DAYS_THRESHOLD = 7
 

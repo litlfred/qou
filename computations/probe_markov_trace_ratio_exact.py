@@ -2,7 +2,7 @@
 """Probe — `prop:markov-trace-ratio-exact` (I1: proved-in-Lean, no probe).
 
 Claim (content block
-`content/quantum-observable-universe/mass-theory/markov-trace-ratio-exact.md`,
+`folio/quantum-observable-universe/mass-theory/markov-trace-ratio-exact.md`,
 Lean `qou:QOU.BraidsKnots.markov_trace_ratio_exact`):
 
 For braids β₁, β₂ ∈ B_n on a FIXED strand count n, with the Jones

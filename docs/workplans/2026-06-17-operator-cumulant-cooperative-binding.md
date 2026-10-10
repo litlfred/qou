@@ -103,7 +103,7 @@ factorize exactly, **`Tr(Δ_coop) = 0`** — the cumulant operator is nonzero bu
 trace of `Δ_coop`; it needs a **non-trace functional**. The principled (non-fit)
 one is the **master-formula expectation** on the bound state `T=𝓑₃`:
 `⟨Δ_coop⟩_T = Σ_{i,j∈A*} u_i (G⁻¹)_{ij} ⟨Δ_coop,b_j⟩`
-([`prop:confinement-frobenius-reciprocity`](../../content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.md))
+([`prop:confinement-frobenius-reciprocity`](../../folio/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.md))
 — **not** an ad-hoc norm/eigenvalue (those are the fit-risk).
 
 But `⟨·⟩_T` needs the **LP active set**, which #2417/#2426 left **OPEN** (the

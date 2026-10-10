@@ -1,0 +1,42 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-torus-embeddable-complete",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:torus-embeddable-complete",
+  "kind": "proposition",
+  "title": "Completeness of torus knots embeddable in the Bring's surface",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-embeddability-closure"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/rem-archimedean-chirality",
+    "papers/quantum-observable-universe/blocks/rem-light-cone-affine",
+    "papers/quantum-observable-universe/blocks/rem-chirality-trefoil",
+    "papers/quantum-observable-universe/blocks/rem-linking-relations-table",
+    "papers/quantum-observable-universe/blocks/rem-chirality-trefoil-electron-positron",
+    "papers/quantum-observable-universe/blocks/rem-unmapped-torus-knots",
+    "papers/quantum-observable-universe/blocks/rem-force-knot-identification",
+    "papers/quantum-observable-universe/blocks/rem-diophantine-valley",
+    "papers/quantum-observable-universe/blocks/ex-archimedean-yekutieli"
+  ],
+  "tags": [
+    "torus-knot",
+    "embeddability",
+    "genus",
+    "completeness",
+    "seifert-genus",
+    "brings-surface"
+  ],
+  "leanRef": "qou:QOU.Archimedean.torus_embeddable_complete",
+  "text": "torus-embeddable-complete.md",
+  "leanSource": "torus-embeddable-complete.lean",
+  "provenance": "authored"
+}

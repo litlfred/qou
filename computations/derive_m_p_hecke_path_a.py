@@ -28,7 +28,7 @@ solid footing at 50 dps for A = 1 atoms. The other four:
     `terms-2-3-atom-per-gen-mpfr-50dps.witness.json` (PR #533:
     A = 1 brane tower is structurally empty under the current
     truncation rule; the open level-selection problem
-    [`brane-tower-z-habiro`](../../content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.md)
+    [`brane-tower-z-habiro`](../../folio/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.md)
     is what governs it).
   * T3 (pair-generator Φ_q) — same as T2.
   * T5 (chirality Birman–Wenzl) — sign-indefinite at q_0 (proton

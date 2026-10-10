@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "kitano-twisted-alexander",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 368,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/agt-v12-n2-p04-s/agt-v12-n2-p04-s.pdf"
+        },
+        "id": "kitano-twisted-alexander",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Genuine orphan. It computes twisted Alexander polynomials of finite ABELIAN covers of three-manifolds with torus boundary, generalizing the classical product-over-roots-of-unity formula for the Alexander polynomial of a knot in a finite cyclic branched cover of S^3, in the Reidemeister-torsion framework. I checked for a consumer. The folio does use Reidemeister torsion, but specifically the ADJOINT torsion in the 1-loop-equals-torsion setting (garoufalidis-yoon-2024, pandey-wong-2023 are registered for that), which is a different twisting \u2014 the adjoint representation of the geometric SL_2(C) holonomy, not a finite abelian character. The folio's Alexander-polynomial content is ex:threading-link-alexander and neighbouring organic-chemistry blocks on threading links, which use the ordinary multivariable Alexander polynomial and no covers. Grep for branched/abelian/cyclic covers in content/ returns five files, none of which constructs a finite abelian cover whose torsion the folio computes. Same field (torsion invariants of 3-manifolds), no result the folio can consume as it stands. Scope-(a): as read, supplies nothing usable here.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "The folio's torsion usage is adjoint Reidemeister torsion at the geometric representation, already sourced; no block constructs a finite abelian cover for this product formula to apply to.",
+              "target": "ex:threading-link-alexander"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "bcbb460bc75f"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

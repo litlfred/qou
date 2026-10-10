@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-mobius-energy",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:mobius-energy",
+  "kind": "proof",
+  "title": "Proof of Categorical recovery of Möbius energy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-mobius-energy",
+    "papers/quantum-observable-universe/blocks/lem-mobius-energy-frobenius-kernel"
+  ],
+  "leanRef": "qou:QOU.MobiusEnergy",
+  "text": "mobius-energy-proof.md",
+  "provenance": "authored"
+}

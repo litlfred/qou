@@ -302,7 +302,7 @@ def _nonexec_spans_text(path: Path, text: str) -> list[tuple[int, int, int, int,
     string could merely let a delimiter inside it open a comment that is not
     there -- an under-report. That reasoning was wrong in the direction that
     matters: prose sitting inside a string is then classified `code`, which
-    OVER-reports. Measured, `content/values/registry.ts:647` is a CODATA value
+    OVER-reports. Measured, `folio/values/registry.ts:647` is a CODATA value
     quoted inside a `description:` string and was reported as executable.
 
     Still cruder than the Python path: no escape-aware interpolation, no

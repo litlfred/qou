@@ -25,7 +25,7 @@
 set -uo pipefail
 
 ROOT=$(git rev-parse --show-toplevel)
-LEAN_DIR="$ROOT/content/quantum-observable-universe/lean"
+LEAN_DIR="$ROOT/folio/quantum-observable-universe/lean"
 BUILD="$LEAN_DIR/.lake/build/lib/lean"
 
 export PATH="$HOME/.elan/bin:$PATH"
@@ -59,7 +59,7 @@ rc=0
 
 echo "== rebuilding oleans for ${#edited[@]} edited file(s) =="
 for f in "${edited[@]}"; do
-  rel="${f#content/quantum-observable-universe/lean/}"
+  rel="${f#folio/quantum-observable-universe/lean/}"
   out="$BUILD/${rel%.lean}.olean"
   mkdir -p "$(dirname "$out")"
   if lean -o "$out" "$rel"; then
@@ -77,7 +77,7 @@ done
 if [ ${#consumers[@]} -gt 0 ]; then
   echo "== checking ${#consumers[@]} consumer(s) against fresh oleans =="
   for f in "${consumers[@]}"; do
-    rel="${f#content/quantum-observable-universe/lean/}"
+    rel="${f#folio/quantum-observable-universe/lean/}"
     if lean "$rel"; then echo "  OK      $rel"; else echo "  FAIL    $rel"; rc=1; fi
   done
 fi

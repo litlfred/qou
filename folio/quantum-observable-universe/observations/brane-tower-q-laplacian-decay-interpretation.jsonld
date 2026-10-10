@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-brane-tower-q-laplacian-decay-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:brane-tower-q-laplacian-decay-interpretation",
+  "kind": "remark",
+  "title": "Physical reading: local domination of the brane-tower integration",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-brane-tower-q-laplacian-decay"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-brane-tower-q-laplacian-decay",
+  "tags": [
+    "brane-tower",
+    "q-laplacian",
+    "non-local-integration",
+    "interpretation"
+  ],
+  "text": "brane-tower-q-laplacian-decay-interpretation.md",
+  "provenance": "authored"
+}

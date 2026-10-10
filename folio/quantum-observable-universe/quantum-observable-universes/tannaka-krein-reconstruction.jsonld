@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-tannaka-krein-reconstruction",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:tannaka-krein-reconstruction",
+  "kind": "proposition",
+  "title": "Tannaka--Krein reconstruction of the quantum gauge group",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-braiding-eigenvalue-extraction"
+  ],
+  "cites": [
+    "references/woronowicz1988",
+    "references/deligne1990",
+    "references/tannaka1939",
+    "references/kassel1995"
+  ],
+  "tags": [
+    "tannaka-krein",
+    "reconstruction",
+    "hopf-algebra",
+    "fibre-functor"
+  ],
+  "leanRef": "qou:QOU.tannaka_krein_reconstruction",
+  "text": "tannaka-krein-reconstruction.md",
+  "leanSource": "tannaka-krein-reconstruction.lean",
+  "provenance": "authored"
+}

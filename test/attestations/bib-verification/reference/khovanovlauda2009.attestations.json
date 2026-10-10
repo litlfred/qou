@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "khovanovlauda2009",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 39,
+      "entry": {
+        "id": "khovanovlauda2009",
+        "status": "partial",
+        "verified_at": "2026-05-19T15:38:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 7,
+        "fix_commit": "(this commit)",
+        "note": "Khovanov & Lauda, A diagrammatic approach to categorification of quantum groups, Repr. Theory 13 (2009), arXiv:0803.4121. 7 bare-URL Refs \u2192 title+arxiv.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1090/S1088-4165-09-00346-X"
+        }
+      }
+    }
+  ]
+}

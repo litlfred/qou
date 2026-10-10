@@ -60,7 +60,7 @@ What is now exact is the staircase *baseline* it is measured against.
 Proton-pinned; no Markov parameter in this cone, so convention C/D does not arise.  Exact
 integers for hooks/H.  mpmath at dps 60; no float64.
 
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean
 """
 
 from __future__ import annotations
@@ -338,7 +338,7 @@ _w = {
     ),
     "lean": {
         "theorem": "QOU.BraidKnot.HookSum.betaSide_eq_hookSum",
-        "file": ("content/quantum-observable-universe/lean/QOU/BraidKnot/"
+        "file": ("folio/quantum-observable-universe/lean/QOU/BraidKnot/"
                  "HookSumBetaCoordinates.lean"),
         "role": "makes the objective a sum over cells of a function of the hook length",
     },

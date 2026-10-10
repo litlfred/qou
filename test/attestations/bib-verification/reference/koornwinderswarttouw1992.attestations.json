@@ -1,0 +1,51 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "koornwinderswarttouw1992",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 236,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1208.2521v1/1208.2521v1.pdf"
+        },
+        "id": "koornwinderswarttouw1992",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED, with a wrinkle resolved in the join's favour: the PDF is an arXiv posting that describes itself on p.1 as a corrected version of the journal article the registered entry records, so posting and entry are the same work and the seeded key is right. Single citation site: folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean:59, which labels it 'self-reciprocal q-Hankel transform on E_q(2)'. The substantive half is CORRECT: the transform pair on pp.9-10 uses the same third-q-Bessel kernel in both directions, so the transform is its own inverse, and it degenerates to the classical Hankel pair as q -> 1. MINOR OVER-ATTRIBUTION: 'on E_q(2)' is not the document's framing. It says (p.1 and \u00a71) that its results are only implicit in the quantum-group context of another paper, whose authors gave the interpretation on the quantum group of plane motions; this document itself works in q-special-function terms and never states the transform on that quantum group. The Lean line compresses the other authors' setting into this citation. The citation is load-bearing (self-reciprocality is exactly the property the module's S^4 = 1 narrowing formalizes categorically); only the venue label needs softening.",
+          "keyResults": [
+            {
+              "locator": "transform pair, pp. 9-10",
+              "statement": "A q-Hankel transform pair with the same third-q-Bessel kernel in both directions, hence self-reciprocal, degenerating to the classical Hankel pair as q -> 1.",
+              "useForFolio": "The analytic prototype of the self-reciprocality the keystone narrowing formalizes as S^4 = 1, and the reason a free-scale q-Bessel family is a duality template rather than a zero-dof node screen.",
+              "targets": [
+                "QOU.BraidKnot.Keystone"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "Soften the 'on E_q(2)' clause at KeystoneSelfDualSpectralNarrowing.lean:59: the self-reciprocal pair is this document's, but the quantum-group-of-plane-motions setting belongs to the paper it cites rather than to it.",
+              "target": "QOU.BraidKnot.Keystone",
+              "bean": "qou-vvy7"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "8d0281aa8404"
+        }
+      }
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 """Whipple exchange at the PHYSICAL forced windings (mu = 1/2, nu = d - 1/2).
 
 Evidence for the modeling layer of the Whipple-rotation identification
-(content/quantum-observable-universe/mass-endomorphism/whipple-rotation-intertwining.md).
+(folio/quantum-observable-universe/mass-endomorphism/whipple-rotation-intertwining.md).
 
 The generic grid-verify
 (`whipple-gamma-constant-gridverify.witness.json`) checks the toroidal

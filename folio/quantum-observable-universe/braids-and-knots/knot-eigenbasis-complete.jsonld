@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-knot-eigenbasis-complete",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:knot-eigenbasis-complete",
+  "kind": "proposition",
+  "title": "Completeness of the knot-type eigenbasis",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-braid-action-tensor"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-knot-eigenbasis-complete"
+  ],
+  "tags": [
+    "braid-group",
+    "hecke-algebra",
+    "knot-invariant",
+    "schur-weyl"
+  ],
+  "leanRef": "qou:QOU.Braiding.knot_eigenbasis_complete",
+  "text": "knot-eigenbasis-complete.md",
+  "leanSource": "knot-eigenbasis-complete.lean",
+  "provenance": "authored"
+}

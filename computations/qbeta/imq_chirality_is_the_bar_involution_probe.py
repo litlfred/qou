@@ -117,12 +117,12 @@ mp.mp.dps = 50
 Q0_STR = "1.1099785827513808075916690956107688798744991218736"
 
 CORPUS_CITATIONS = [
-    ("content/quantum-observable-universe/mass-theory/archimedean-image-table-table1-data.md",
+    ("folio/quantum-observable-universe/mass-theory/archimedean-image-table-table1-data.md",
      "row 4", "J_Kbar(q) = J_K(q^{-1})  (mirror; matter/antimatter CPT)"),
-    ("content/quantum-observable-universe/mass-theory/hq-bi-filtration.md",
+    ("folio/quantum-observable-universe/mass-theory/hq-bi-filtration.md",
      "bar-involution row",
      "Bar involution * : q -> q^{-1} ; * : H_q^{(n,K)} -> H_q^{(n,K*)} where K* is the mirror knot"),
-    ("content/quantum-observable-universe/mass-theory/knot-indexed-convolution-grid-table2-data.md",
+    ("folio/quantum-observable-universe/mass-theory/knot-indexed-convolution-grid-table2-data.md",
      "bar-involution row", "Bar involution: H_q^{(n,K)} -> H_q^{(n,K*)} ; mirror knot K*"),
 ]
 

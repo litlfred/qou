@@ -2,7 +2,7 @@
 """
 Gröbner--Shirshov reduction of nuclear braid words in the Iwahori--Hecke algebra.
 
-Applies the unital Gröbner--Shirshov basis framework (content/unital-groebner-bases)
+Applies the unital Gröbner--Shirshov basis framework (folio/unital-groebner-bases)
 to the braid group algebra R[B_n] with R = Z[q, q^{-1}], quotiented by
 the Skein (Hecke) relation:
 

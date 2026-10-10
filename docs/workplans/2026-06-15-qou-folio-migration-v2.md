@@ -18,7 +18,7 @@ The previous plan (V1) incorrectly grouped some math/physics libraries (like `qo
 
 ### STAYS in qou (Math / Physics / Content)
 - `content/<paper>/` — the `.ts` / `.md` / `.lean` triples (the paper itself), including macros.
-- `content/schema/references.ts` — bibliography source.
+- `folio/schema/references.ts` — bibliography source.
 - `docs/` (audits, coordination, workplans), `todos/`.
 - `computations/` — Math-specific Python/Lean compute scripts.
 - `qou-mass/` — The mass-prediction library (computes Borromean-tower and Markov traces).
@@ -27,7 +27,7 @@ The previous plan (V1) incorrectly grouped some math/physics libraries (like `qo
 
 ### MOVES to folio-assistant (Platform / Infra)
 - `content/pipeline/` — validate, render-latex, build, `generate-main-tex.ts`, latex-preflight, qa-sweep, migrate-lean-refs, script-sidecars, etc.
-- `content/schema/` types/builders/constraints (consolidate with `folio-assistant/schemas/`).
+- `folio/schema/` types/builders/constraints (consolidate with `folio-assistant/schemas/`).
 - `latex/` — `preamble.tex` + rendering-target infra.
 - `.github/workflows/` (done) + `.github/docker/` + `.github/scripts/` + `.github/actions/`.
 - `scripts/` (Infra subset) — `install-tex.sh`, `feature-build.sh`, lake/lean-env build helpers, `render-*.sh`, `audit-*.ts`, etc.

@@ -110,7 +110,7 @@ framework's honest accuracy (not a 3% gap or 1.33% gap).
 
 ## Where Geom(K) comes into the story
 
-[`prop:geom-universality`](../../content/quantum-observable-universe/braids-and-knots/geom-universality.md)
+[`prop:geom-universality`](../../folio/quantum-observable-universe/braids-and-knots/geom-universality.md)
 establishes Geom(K) as the UNIQUE functional on knot complements
 satisfying:
 
@@ -120,7 +120,7 @@ satisfying:
 3. **Normalisation:** Geom(○) = 0 and Geom(4₁) = Vol(4₁)/ℏ_q²
 
 The piecewise definition
-([`geometric-invariant-piecewise.md`](../../content/quantum-observable-universe/braids-and-knots/geometric-invariant-piecewise.md)):
+([`geometric-invariant-piecewise.md`](../../folio/quantum-observable-universe/braids-and-knots/geometric-invariant-piecewise.md)):
 
 $$
 \mathrm{Geom}(K) = \begin{cases}
@@ -138,7 +138,7 @@ $$
 $$
 
 This AVOIDS case-by-case analysis. The pipeline
-([`hoefsmit-scattering-pipeline.md`](../../content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.md)):
+([`hoefsmit-scattering-pipeline.md`](../../folio/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.md)):
 
 ```
 β →[ρ_λ] Π ρ_λ(T_i) →[tr_M] J_K(q) →[ω] Geom(K) →[×m_e] 𝔪
@@ -297,10 +297,10 @@ Per user direction 2026-05-23 "🗑️ No more lambda_scale!":
 
 ## Cross-references
 
-- [`prop:geom-universality`](../../content/quantum-observable-universe/braids-and-knots/geom-universality.md) — Geom(K) uniqueness
-- [`geometric-invariant-piecewise.md`](../../content/quantum-observable-universe/braids-and-knots/geometric-invariant-piecewise.md) — piecewise definition
-- [`geom-yekutieli-alignment.lean`](../../content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.lean) — Lean conditional alignment
-- [`hoefsmit-scattering-pipeline.md`](../../content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.md) — the β → ρ → tr → Geom → m pipeline (Stage 3 = Geom)
+- [`prop:geom-universality`](../../folio/quantum-observable-universe/braids-and-knots/geom-universality.md) — Geom(K) uniqueness
+- [`geometric-invariant-piecewise.md`](../../folio/quantum-observable-universe/braids-and-knots/geometric-invariant-piecewise.md) — piecewise definition
+- [`geom-yekutieli-alignment.lean`](../../folio/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.lean) — Lean conditional alignment
+- [`hoefsmit-scattering-pipeline.md`](../../folio/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.md) — the β → ρ → tr → Geom → m pipeline (Stage 3 = Geom)
 - [`docs/audits/2026-05-23-lambda-scale-canonical-unification.md`](../audits/2026-05-23-lambda-scale-canonical-unification.md) — 13-driver menu + Rule 14
 - [`docs/audits/2026-05-22-yekutieli-percell-conjecture-formalized.md`](../audits/2026-05-22-yekutieli-percell-conjecture-formalized.md) — the Yekutieli per-cell argument
 - [PR #978](https://github.com/litlfred/qou/pull/978) — S_4↓S_3 bijection probe (5/16 vs 1/8)

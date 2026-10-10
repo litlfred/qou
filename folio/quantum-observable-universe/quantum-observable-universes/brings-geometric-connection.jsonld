@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-brings-geometric-connection",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:brings-geometric-connection",
+  "kind": "remark",
+  "title": "Bring's-surface geometric realisation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-harmonic-form",
+    "papers/quantum-observable-universe/blocks/ex-brings-surface"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-harmonic-form",
+  "tags": [
+    "brings-surface",
+    "pedagogy"
+  ],
+  "text": "brings-geometric-connection.md",
+  "provenance": "authored"
+}

@@ -3,7 +3,7 @@ import json
 import glob
 from pathlib import Path
 
-ATLAS_MD = Path("content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md")
+ATLAS_MD = Path("folio/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md")
 
 with open(ATLAS_MD) as f:
     text = f.read()

@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/unital-groebner-bases/blocks/ex-ugb-pbw-motivation",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:ugb-pbw-motivation",
+  "kind": "example",
+  "title": "Universal enveloping algebra",
+  "tags": [
+    "groebner-basis",
+    "lie-algebra",
+    "pbw"
+  ],
+  "text": "ugb-example-pbw.md",
+  "provenance": "authored"
+}

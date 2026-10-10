@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-chi-minus-six-derivation",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:chi-minus-six-derivation",
+  "kind": "example",
+  "title": "$\\chi_{\\mathrm{eu}}(M_0) = -6$: the derivation chain",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-archimedean-condition",
+    "papers/quantum-observable-universe/blocks/def-motivic-substrate",
+    "papers/quantum-observable-universe/blocks/prop-euler-char-stability",
+    "papers/quantum-observable-universe/blocks/rem-kummer-tower",
+    "papers/quantum-observable-universe/blocks/thm-motivic-perpetual-obstruction",
+    "papers/quantum-observable-universe/blocks/rem-three-euler-characteristics"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-archimedean-condition",
+  "cites": [
+    "references/braden-disney-hogg-2022"
+  ],
+  "tags": [
+    "descartes",
+    "chi",
+    "derivation",
+    "example",
+    "motivic-galois"
+  ],
+  "text": "chi-minus-six-chain.md",
+  "provenance": "authored"
+}

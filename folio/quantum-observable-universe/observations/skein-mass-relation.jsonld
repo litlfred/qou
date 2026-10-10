@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-skein-mass-relation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:skein-mass-relation",
+  "kind": "remark",
+  "title": "$q$-Deformed Skein Relation (Observation)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-skein-decomposition",
+    "papers/quantum-observable-universe/blocks/thm-weight-decomposition-exists",
+    "papers/quantum-observable-universe/blocks/thm-categorical-reeb-exists",
+    "papers/quantum-observable-universe/blocks/thm-substrate-parameter-exists"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-topological-mass-formula",
+  "tags": [
+    "mass",
+    "skein"
+  ],
+  "text": "skein-mass-relation.md",
+  "leanSource": "skein-mass-relation.lean",
+  "provenance": "authored"
+}

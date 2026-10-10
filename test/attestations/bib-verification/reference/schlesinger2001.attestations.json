@@ -1,0 +1,78 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "schlesinger2001",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 144,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0111022v1/0111022v1.pdf"
+        },
+        "id": "schlesinger2001",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Directly on QOU's subject matter (q-deformed polylogarithms) but with a DIFFERENT deformation: Schlesinger uses Li_{n_1..n_m}(z;q) = sum z^k/(1-q^k)^n, and says explicitly that this differs from the Kirillov/Koornwinder deformations usually discussed. QOU's Li_2^q is sum x^n/(n [n]_q). So nothing here transfers to QOU's object without a conversion that the paper does not supply, and I have not checked whether one exists. What is usable is structural: Schlesinger's whole point is that HIS choice of deformation is the one that makes the q-polylogarithms close under multiplication (Lemma 2) and preserve the classical shuffle/symmetry and distribution relations (Cor. 3, Lemma 4). That is a sharp question to ask of QOU's Li_2^q, which the corpus tags 'hopf-algebra' at rem:q-dilog-three-contexts without establishing any algebra structure.",
+          "keyResults": [
+            {
+              "locator": "Lemma 2 + Cor. 3",
+              "statement": "The rational span of the q-deformed multiple polylogarithms Li_{n_1..n_m}(z_1..z_m;q) is an associative Q-algebra, and the classical symmetry (shuffle) relation Li_1(x,q)Li_1(y,q) = Li_{1,1}(x,y,q) + Li_{1,1}(y,x,q) + Li_2(xy,q) survives the deformation.",
+              "useForFolio": "Gives the precise test QOU's own Li_2^q must pass for the 'hopf-algebra' tag on rem:q-dilog-three-contexts to be earned, and a worked example of a deformation for which it does pass. Consumable as a remark stating that algebra-closure is deformation-dependent and is not automatic for QOU's normalisation.",
+              "targets": [
+                "rem:q-dilog-three-contexts",
+                "prop:q-dilogarithm-exists"
+              ]
+            },
+            {
+              "locator": "Lemma 4",
+              "statement": "q-deformed distribution relation: Li_2(x, q^n) = (1/n) sum_{y^n = x} Li_2(y, q), and similarly for Li_{1,1}.",
+              "useForFolio": "The q-analogue of exactly the classical distribution/multiplication identity sum_k Li_3(zeta_N^k) = (N^{1-3} - 1) zeta(3) that prop:cl3-zeta5-orbit-sum-identity and conj:bring-trilog-depth-3-witness rest on. Worth a compute-check: does the orbit-sum identity QOU uses survive in QOU's own q-normalisation, or only in Schlesinger's? A negative answer would be informative about the pre-/post-archimedean 'accident' classification in rem:transcendental-accounting.",
+              "targets": [
+                "prop:cl3-zeta5-orbit-sum-identity",
+                "conj:bring-trilog-depth-3-witness"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No entry (grep 'Schlesinger' returns 0).",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-u0ft"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "Test whether the orbit-sum / distribution identity used by prop:cl3-zeta5-orbit-sum-identity holds for QOU's Li_2^q = sum x^n/(n [n]_q), as Lemma 4 shows it does for Schlesinger's normalisation. This is a falsifiable numeric check, not an adoption of his result.",
+              "target": "prop:cl3-zeta5-orbit-sum-identity",
+              "bean": "qou-5zbn"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record that algebra-closure and shuffle-preservation of q-polylogarithms are normalisation-dependent, and that rem:q-dilog-three-contexts' 'hopf-algebra' tag is currently unbacked for QOU's own normalisation.",
+              "target": "rem:q-dilog-three-contexts",
+              "bean": "qou-scxq"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "fea7f1180148"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

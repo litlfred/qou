@@ -22,7 +22,7 @@ operationalising the 305-hit count from the 2026-05-18 idle sweep
 Failure modes classified:
 
   - `unregistered_package`     — the `<package>` prefix is not in
-                                 `folio-assistant/schemas/lean-packages.ts`
+                                 `folio-assistant/cat-harness/schemas/lean-packages.ts`
   - `sibling_missing`          — kind=definition (which schema requires
                                  a sibling) but no sibling `.lean` exists
   - `sibling_no_decl`          — sibling exists but does not declare the
@@ -75,21 +75,21 @@ sys.path.insert(0, str(HERE.parent))
 from witness_base import WitnessBuilder  # noqa: E402
 
 REPO_ROOT = HERE.parent.parent
-CONTENT_ROOT = REPO_ROOT / "content"
+CONTENT_ROOT = REPO_ROOT / "folio"
 
-# Mirror of folio-assistant/schemas/lean-packages.ts LEAN_PACKAGES.
+# Mirror of folio-assistant/cat-harness/schemas/lean-packages.ts LEAN_PACKAGES.
 # Kept inline here because Python doesn't import .ts and the registry
 # is small + stable.  See content/pipeline/migrate-lean-refs.ts for
 # the JS resolver this audit shadows.
 LEAN_PACKAGES = {
     "qou":      {"paperDir": "quantum-observable-universe",
-                 "lakeRoot": "content/quantum-observable-universe/lean",
+                 "lakeRoot": "folio/quantum-observable-universe/lean",
                  "lib": "QOU"},
     "ugb":      {"paperDir": "unital-groebner-bases",
-                 "lakeRoot": "content/unital-groebner-bases/lean",
+                 "lakeRoot": "folio/unital-groebner-bases/lean",
                  "lib": "UGB"},
     "fred2005": {"paperDir": "fred2005-formal-groups",
-                 "lakeRoot": "content/fred2005-formal-groups/lean",
+                 "lakeRoot": "folio/fred2005-formal-groups/lean",
                  "lib": "Fred2005"},
 }
 
@@ -100,9 +100,9 @@ LEAN_REF_RX = re.compile(
     re.DOTALL,
 )
 # Block kind is encoded in the builder function name used at the
-# `export default <builder>(…)` call site (see content/schema/builders.ts).
+# `export default <builder>(…)` call site (see folio/schema/builders.ts).
 # Capture any identifier (rather than a hard-coded list) so newly-added
-# builders in `content/schema/builders.ts` automatically flow through —
+# builders in `folio/schema/builders.ts` automatically flow through —
 # the audit's downstream consumers can decide whether each captured
 # kind is "provable" / "definition" / "remark" / etc. via their own
 # allow-lists.  Older blocks used a `kind: "<name>"` field in the
@@ -362,7 +362,7 @@ def main() -> int:
             expected=1.0, tolerance=0.0,
             unit="boolean",
             source="Every lean.ref prefix must appear in LEAN_PACKAGES "
-                   "(folio-assistant/schemas/lean-packages.ts).",
+                   "(folio-assistant/cat-harness/schemas/lean-packages.ts).",
         )
         .add_assertion(
             name="ok_count_matches_total_minus_failures",

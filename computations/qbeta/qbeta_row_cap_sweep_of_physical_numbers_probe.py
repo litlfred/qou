@@ -394,7 +394,7 @@ def main() -> int:
     surfaces = []
     # `docs/audits/` is excluded: an audit is a dated record of what was true
     # then, not a live claim, so an un-caveated number there is not a defect.
-    for p in sorted(list((ROOT / "content").rglob("*.md"))
+    for p in sorted(list((ROOT / "folio").rglob("*.md"))
                     + list((ROOT / "docs").rglob("*.md"))):
         sp = str(p.relative_to(ROOT))
         if "_deprecated" in sp or sp.startswith("docs/audits/"):
@@ -461,7 +461,7 @@ def main() -> int:
         "parameters": {"fibre_dimension_N": N_FIBRE,
                        "row_cap": "dim V_lambda = 0 when l(lambda) > N",
                        "row_cap_source":
-                           "content/quantum-observable-universe/mass-theory/"
+                           "folio/quantum-observable-universe/mass-theory/"
                            "markov-trace-frobenius-selection.md (states it by name)"},
         "data": {
             "witnesses_scanned": n_scanned,

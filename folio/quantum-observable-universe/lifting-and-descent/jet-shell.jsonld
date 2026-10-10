@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-jet-shell",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:jet-shell",
+  "kind": "remark",
+  "title": "Jet Shell of the universe",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-direct-limit-algebra"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-direct-limit-algebra",
+  "tags": [
+    "jet-shell",
+    "pro-finite",
+    "direct-limit"
+  ],
+  "text": "jet-shell.md",
+  "provenance": "authored"
+}

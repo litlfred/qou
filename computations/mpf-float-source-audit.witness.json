@@ -4,7 +4,7 @@
   "description": "Source-level mpf(<float>) detection. DEFECT = the literal is not exactly a binary64, so precision is lost before mpmath sees it. Complements the witness-level float64-padding audit by catching the defect at authoring time.",
   "data": {
     "counts": {
-      "advisory-cast": 19,
+      "advisory-cast": 20,
       "marked-cast": 1,
       "benign": 16
     },
@@ -275,6 +275,14 @@
         "fix": "mpf(\"1.0\")"
       },
       {
+        "file": "tools/pyhecke/tests/test_gram_values.py",
+        "line": 236,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "worst = max(abs(mp.mpf(float(pyhecke_gram.G_PINV[i, j])) - P[i, j])",
+        "fix": null
+      },
+      {
         "file": "tools/qou-substrate/python/qou_substrate/precision.py",
         "line": 165,
         "class": "advisory-cast",
@@ -303,9 +311,9 @@
   "scriptFile": "mpf_float_source_audit.py",
   "scriptHash": "f7049acdce0a",
   "scriptCommitSha": "a663b4f838286530c5d04a1c63e3eab872f190a6",
-  "commitSha": "606a711778e4229098a387dc4024a0b10de8b7f1",
+  "commitSha": "6a939b9882577e2209fe46fb9551731997642d4a",
   "engine": "python",
-  "computedAt": "2026-09-14T06:22:31.170072+00:00",
+  "computedAt": "2026-09-27T18:33:17.305095+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

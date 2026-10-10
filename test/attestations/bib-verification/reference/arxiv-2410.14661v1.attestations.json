@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "arxiv-2410.14661v1",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 413,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2410.14661v1/2410.14661v1.pdf"
+        },
+        "id": "arxiv-2410.14661v1",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Identified from front matter (math.GT, v1). No ref() entry, no \\cite{} site, no Lean -- Ref:; arXiv id absent from content/ -> orphan on all three checks. Content: its Theorem 1.2 gives a full asymptotic expansion of the Reshetikhin-Turaev invariant RT_r(M_{p,q}) of the closed hyperbolic 3-manifold obtained by integral q-surgery along the twist knot K_p, at the root of unity exp(4 pi i / r) with r odd, including the exponential term exp((N + 1/2) zeta(p,q)) whose critical value is the complex volume, a one-loop prefactor omega(p,q) built from the Hessian H(p,q; z_1, z_2, z_3), and all higher corrections kappa_i(p,q)/r^i -- thereby proving the RT form of the volume conjecture for that family. HYPOTHESIS CHECK, which is why this is tangential rather than supporting: the theorem holds only for (p,q) in the set S of eq (1.2), whose condition (1.3) requires p >= 6 (with q >= 12..27 depending on p). Its own Sec 3 states K_{-1} = 4_1, K_1 = 3_1, K_2 = 5_2. So the two knots the corpus actually anchors on -- 4_1 (muon anchor) and 5_2 (saddle source) -- are BOTH outside the admissible set, and its Sec 1 attributes the figure-eight surgery cases to other authors (its refs [18] and [23]). The invariant is also the wrong object for this corpus: a closed-manifold RT invariant obtained by Dehn surgery, not the knot-complement Andersen-Kashaev state integral that the A_omega / c_3 / Stokes chain works with. Corpus-grep for a consumer: the only prose touching RT invariants together with the volume conjecture is mass-theory/intro-kashiwara-jones-quantum-dilog.md, which is an unlabelled prose() block with no label and no cites, so there is no citation site to attach to; no Turaev-Viro or Chen-Yang entry exists in folio/schema/references.ts at all. Scope-(a) negative: this document, as read, supplies nothing this folio can consume. That is NOT a claim that saddle-point asymptotics of quantum invariants or the twist-knot family are excluded from future use -- only that this particular theorem's hypotheses do not reach the corpus's knots.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Read and judged to need nothing: the p >= 6 hypothesis excludes both 4_1 (= K_{-1}) and 5_2 (= K_2), and the corpus has no labelled block for the RT/Turaev-Viro volume conjecture to cite it from. Residue worth recording for a future sweep rather than acting on now: if a volume-conjecture context citation is ever wanted at conj:kashaev-volume-conjecture, this document's Sec 1 names the two works that DO cover figure-eight surgeries (its refs [18] and [23]), which would be the on-target citations instead of this one.",
+              "target": "conj:kashaev-volume-conjecture"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-09T00:10:43.091Z",
+          "source_sha": "3362fcd5e28e"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

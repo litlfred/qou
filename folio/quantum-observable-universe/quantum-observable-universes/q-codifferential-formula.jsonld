@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-codifferential-formula",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-codifferential-formula",
+  "kind": "remark",
+  "title": "Expanded formula for the $q$-codifferential $\\delta_q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-codifferential-formula"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-q-codifferential-formula",
+  "tags": [
+    "codifferential",
+    "reeb",
+    "adjoint"
+  ],
+  "text": "q-codifferential-formula.md",
+  "provenance": "authored"
+}

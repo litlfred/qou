@@ -66,7 +66,7 @@ proved invariant licenses (b). Coordinate on #2722 / #2744 before constructing.
 
 ## Increment 1 (2026-06-29) — MTC-matching obligation formalized, sorry-free
 
-[`QOU/BraidKnot/WLambdaMTCLocalizationObligation.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/WLambdaMTCLocalizationObligation.lean)
+[`QOU/BraidKnot/WLambdaMTCLocalizationObligation.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidKnot/WLambdaMTCLocalizationObligation.lean)
 (lean-direct verified, exit 0, sorry-free; generic `{R : Type*} [Field R]` per §7c).
 
 - `class BeasleyWittenLocalization R` carries residual (i)'s **matching obligation** as its single
@@ -111,7 +111,7 @@ The keystone cone (`KeystoneC2QDimTranspose`, `IdentityIPlancherelConditional`,
 ```bash
 export PATH="$HOME/.elan/bin:$PATH"; ROOT=$(pwd)
 LEANBIN=~/.elan/toolchains/lean-v4.24.0/bin/lean
-PKGROOT="$ROOT/content/quantum-observable-universe/lean"; LIBOUT="$PKGROOT/.lake/build/lib/lean"
+PKGROOT="$ROOT/folio/quantum-observable-universe/lean"; LIBOUT="$PKGROOT/.lake/build/lib/lean"
 LP=$(find "$ROOT/.lake/packages" -maxdepth 5 -type d -path '*/.lake/build/lib/lean' | tr '\n' ':'); LP="$LP$LIBOUT"
 compile(){ local m="$1" s="$PKGROOT/${1//.//}.lean" o="$LIBOUT/${1//.//}.olean"; mkdir -p "$(dirname "$o")"
   env LEAN_PATH="$LP" ELAN_NO_OVERRIDE_NOTICE=1 "$LEANBIN" -D autoImplicit=false --root="$PKGROOT" \

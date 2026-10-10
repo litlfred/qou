@@ -44,7 +44,7 @@ quota on #1511 (won't review additional PRs today).
 
 No new main-branch commits touching my files since this branch was
 opened (verified via `git log origin/main --since='2 hours ago' --
-content/quantum-observable-universe/predicted-spectra/em-coupling-
+folio/quantum-observable-universe/predicted-spectra/em-coupling-
 bring-zero-mode.*`).  The previous main-watch entry in
 `2026-05-30-alpha-em-habiro-ledger-entry.md` already documented the
 3 bloch-wigner / proof-hygiene commits affecting #1508 (handled via

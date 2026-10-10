@@ -46,7 +46,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 # Shared changed-file collection. ONE definition, so the fifth gate script
 # cannot repeat the defect the first four shared (bean qou-pt9b).
 . "$ROOT/scripts/lib/changed-files.sh"
-LEAN_ROOT="$ROOT/content/quantum-observable-universe/lean"
+LEAN_ROOT="$ROOT/folio/quantum-observable-universe/lean"
 export PATH="$HOME/.elan/bin:$PATH"
 
 if ! command -v lean >/dev/null 2>&1; then

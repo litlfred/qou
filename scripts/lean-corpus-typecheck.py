@@ -53,7 +53,7 @@ Container restarts are expected here -- just re-run the same command.
 import argparse, json, os, re, subprocess, sys, time
 from concurrent.futures import ThreadPoolExecutor
 
-LEAN_DIR = "content/quantum-observable-universe/lean"
+LEAN_DIR = "folio/quantum-observable-universe/lean"
 CKPT = "/tmp/lean-corpus-typecheck.jsonl"
 LEAN_ARGS = ["-DautoImplicit=false", "-s", "65536"]
 

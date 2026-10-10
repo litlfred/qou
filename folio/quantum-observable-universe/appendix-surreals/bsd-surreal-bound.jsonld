@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-bsd-surreal-bound",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:bsd-surreal-bound",
+  "kind": "remark",
+  "title": "Surreal bound for Birch--Swinnerton-Dyer: rank--order matches $\\omega$-order of $L$-series",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-from-epsilon",
+    "papers/quantum-observable-universe/blocks/def-reeb-epsilon",
+    "papers/quantum-observable-universe/blocks/prop-surreal-rate-calculus",
+    "papers/quantum-observable-universe/blocks/rem-conway-normal-form"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-q-birch-swinnerton-dyer",
+  "cites": [
+    "references/conway1976"
+  ],
+  "tags": [
+    "birch-swinnerton-dyer",
+    "millennium-problem",
+    "surreal",
+    "squeeze",
+    "l-function",
+    "elliptic-curve",
+    "classical-limit"
+  ],
+  "text": "bsd-surreal-bound.md",
+  "provenance": "authored"
+}

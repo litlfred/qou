@@ -7,7 +7,7 @@ depth-stratified Frobenius-reciprocity binding formula and measure
 the residual 1.82× variance across D, T, ³He, ⁴He.
 
 KNOT-PARTICLE DICTIONARY CONNECTION:
-  Per content/quantum-observable-universe/braids-and-knots/
+  Per folio/quantum-observable-universe/braids-and-knots/
   knot-particle-dictionary.md, the torus knots map to leptons:
 
       3_1 (trefoil)     ↔ electron e^-     (generation 1)

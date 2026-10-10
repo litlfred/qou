@@ -1,0 +1,67 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "leitnerpawloski2004",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 2,
+      "entry": {
+        "id": "leitnerpawloski2004",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T18:18:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 6,
+        "note": "arXiv math/0409565 = LP2004 'Unital Gr\u00f6bner Bases over Arbitrary Commutative Ground Rings' (10 pp.). Content: \u00a72 unital GB definitions, Buchberger over R, PBW corollary. NO inner products, NO intertwiners, NO representation theory beyond GB-representations. Verified-clean for folio/unital-groebner-bases/.../groebner-basis.lean (cites Definition 5 of LP2004 \u2014 exact match). MISMATCH for folio/quantum-observable-universe/quantum-observable-universes/pawlowski-leitner-inner-product.lean and folio/quantum-observable-universe/lean/QOU/RepresentationTheory.lean \u2014 both cite leitnerpawloski2004 for 'PL inner product' / 'PL basis dimension formula', neither of which appears in LP2004. Likely a different Pawlowski-Leitner work (Pawlowski's thesis or a separate representation-theory paper). Author decision pending: (a) add a new bib entry for the actual cited work, (b) change the QOU citation key, or (c) update the QOU content to match LP2004's actual scope. | ADDITIONAL 6 bare-URL Refs upgraded with arxiv preprint info. Confirms the prior partial verification (commit 4abfedfda): the cited 'On the morphisms of non-commutative formal groups' is the SAME math/0409565 \u2014 so QOU is consistently citing this work for the Gr\u00f6bner-bases foundation, with the 2 mismatched 'PL inner product' / 'PL basis' lean files being the only outliers. | UPDATE 2026-05-19 18:18: local copy is library/arxiv-math-0409565v2/0409565v2.pdf (arxiv-id-named \u2014 was originally claimed under a hypothetical alias). | UPDATE 2026-05-22: local_pdf path corrected to point at the file that actually exists in uploads/. | RESOLVED 2026-06-24 (author): one Pawloski-Leitner paper confirmed (this arXiv id). The 2 inner-product/basis .lean files were rewired to cite leitnerpawloski2004 as the PL foundation/namesake (the constructions are QOU's own), and the fabricated 'pawlowski-leitner-rep' split entry was deprecated. The stored title 'On the morphisms of non-commutative formal groups' was never correct.",
+        "fix_commit": "(this commit)",
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0409565v2/0409565v2.pdf"
+        },
+        "local_pdf": "library/arxiv-math-0409565v2/0409565v2.pdf",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED against the document's own front matter and against the arXiv identifier the registered entry carries. 10 pages; numbered content is Thm 2, Defs 3/4/5, Prop 7, Thm 8 (Buchberger over a commutative ground ring), Cor 9 (PBW). LOAD-BEARING at every unital-groebner-bases site: unital.lean:34, groebner-basis.lean:37, s-polynomial.lean:30, leading-term-data.lean:33, division-algorithm.lean:21, monomial-basis.lean:23, remainder-module.lean:24, admissible-system.lean:31 cite Definitions 3/4/5 and the \u00a72 algorithm, and the document carries exactly those numbered items; glossary-no-quasi-zeros.ts:8 is anchored on the 'without quasi-zeros' hypothesis of Thm 2; direct-limit-lusztig.md:3's flatness-from-normal-form claim is Cor 9. NOT LOAD-BEARING / MISCITED CLAIM at four sites: folio/quantum-observable-universe/lean/QOU/RepresentationTheory.lean:182, :214, :238 and :245 label the key 'PL inner product / intertwiner basis'. Full-text search of the PDF for 'inner product', 'intertwin', 'hermitian' and 'sesquilinear' returns ZERO hits \u2014 the document contains no inner product and no intertwiner basis. The corpus already knows this and contradicts itself: folio/quantum-observable-universe/quantum-observable-universes/pawlowski-leitner-inner-product.lean:52 and :57 state that this key 'supplies only the PBW basis, not the inner product'. The key itself is right (the registered entry records an author-directed rewiring); only the attributed content at those four lines is wrong.",
+          "keyResults": [
+            {
+              "locator": "Cor. 9 (PBW)",
+              "statement": "For a Lie algebra over a commutative ground ring R, the unital Groebner-basis argument yields a PBW basis free as an R-module.",
+              "useForFolio": "The ground-ring generality behind the divided-power/PBW flatness claim at direct-limit-lusztig.md:3.",
+              "targets": [
+                "def:direct-limit-lusztig"
+              ]
+            },
+            {
+              "locator": "Thm 2",
+              "statement": "If A is an R-algebra free as an R-module and without quasi-zeros, with an admissible system, and I has a unital Groebner basis, then A/I is free as an R-module.",
+              "useForFolio": "The 'no quasi-zeros' hypothesis the Ch-8 glossary block names.",
+              "targets": [
+                "prop:pawlowski-leitner-basis"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "RepresentationTheory.lean:182/:214/:238/:245 attribute an inner product and an intertwiner basis to a document that contains neither (PDF text search: 0 hits). Reword those four -- Ref: labels to the honest form already used at pawlowski-leitner-inner-product.lean:52, so the two files stop making opposite claims about the same key.",
+              "target": "prop:pawlowski-leitner-inner-product",
+              "bean": "qou-tgid"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "236704063f12"
+        }
+      }
+    }
+  ]
+}

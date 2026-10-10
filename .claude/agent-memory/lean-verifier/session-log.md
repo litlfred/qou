@@ -228,7 +228,7 @@ Four mechanical, statement-preserving fixes, all on
 workspace layout: `.lake/packages/*/.lake/build/lib/lean` + `.lake/build/lib/lean`).
 Measured 2026-08-29: **3407 mathlib oleans** + 2275 QOU-library oleans,
 `Mathlib.Tactic.olean` and `Matrix/Trace.olean` present. The pre-existing
-`content/quantum-observable-universe/lean/.lake/packages/**` tree is a
+`folio/quantum-observable-universe/lean/.lake/packages/**` tree is a
 **partial decoy** (~726 mathlib, QOU lib = 0) — do NOT point LEAN_PATH at
 it. Build LEAN_PATH from the ROOT `.lake` package `build/lib/lean` dirs.
 (The prior log's "6990 mathlib" was not what THIS restore produced; 3407 is
@@ -318,7 +318,7 @@ exit 0 in 5.0 s. Two real authoring failures (`div_le_iff` absent;
 being wrong about a tactic is the expensive kind of memory entry.
 
 The process failure worth carrying: I reached for `lake build` from
-`content/quantum-observable-universe/lean/`, against this file's own standing
+`folio/quantum-observable-universe/lean/`, against this file's own standing
 rule, and it ran ~1760 Mathlib modules for 40 minutes before I stopped it. It
 did **not** evict the restore — it was building a *second* mathlib tree local to
 that directory — which is the detail now in `MEMORY.md`. The 5-second

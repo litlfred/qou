@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-proton-borromean-assembly",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:proton-borromean-assembly",
+  "kind": "conjecture",
+  "title": "The proton's Borromean mass assembly: multiplicity $\\dim V_{(2,1)} = 2$ and binding count $|S_3| = 6$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-f-bor-borromean-observable"
+  ],
+  "tags": [
+    "proton",
+    "borromean",
+    "mass-assembly",
+    "constituent-multiplicity",
+    "ocneanu",
+    "conditional-class"
+  ],
+  "leanRef": "qou:QOU.AppendixQValues.ProtonBorromeanAssembly",
+  "text": "proton-borromean-assembly.md",
+  "provenance": "authored"
+}

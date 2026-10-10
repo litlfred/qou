@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-laplacian-spectral-tower",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-laplacian-spectral-tower",
+  "kind": "proposition",
+  "title": "The $q$-Laplacian spectral tower $[k]_q^2$ and its root-of-unity (Verlinde/ADE) truncation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-harmonic-form"
+  ],
+  "cites": [
+    "references/verlinde1988",
+    "references/reshetikhin1991",
+    "references/kassel1995"
+  ],
+  "tags": [
+    "q-laplacian",
+    "q-integer",
+    "spectral-tower",
+    "root-of-unity",
+    "verlinde",
+    "ade-quantum-dimension",
+    "fibre-level",
+    "unifying"
+  ],
+  "leanRef": "qou:QOU.QuantumObservableUniverses.qIntegerNumerator_vanishes_at_truncRoot",
+  "text": "q-laplacian-spectral-tower.md",
+  "leanSource": "q-laplacian-spectral-tower.lean",
+  "provenance": "authored"
+}

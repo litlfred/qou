@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-q-from-epsilon",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:q-from-epsilon",
+  "kind": "definition",
+  "title": "The substrate parameter $q$ as $1 + \\varepsilon$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-reeb-epsilon"
+  ],
+  "tags": [
+    "substrate-parameter",
+    "surreal",
+    "categorical-primitive",
+    "q-expansion",
+    "classical-limit"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.QFromEpsilon",
+  "text": "q-from-epsilon.md",
+  "leanSource": "q-from-epsilon.lean",
+  "provenance": "authored"
+}

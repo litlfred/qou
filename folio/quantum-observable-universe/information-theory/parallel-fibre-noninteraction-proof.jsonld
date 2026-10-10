@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-parallel-fibre-noninteraction",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:parallel-fibre-noninteraction",
+  "kind": "proof",
+  "title": "Proof of parallel fibre noninteraction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-parallel-fibre-noninteraction"
+  ],
+  "text": "parallel-fibre-noninteraction-proof.md",
+  "provenance": "authored"
+}

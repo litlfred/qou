@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tm-interactions",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "tm-interactions",
+  "kind": "prose",
+  "title": "Interaction and decay matrices",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-transfer-matrix-operator"
+  ],
+  "tags": [
+    "transfer-matrix",
+    "beta-decay",
+    "interaction",
+    "delta-operator",
+    "toffoli",
+    "appendix"
+  ],
+  "text": "tm-interactions.md",
+  "provenance": "authored"
+}

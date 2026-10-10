@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-contact-affine-chart",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:contact-affine-chart",
+  "kind": "definition",
+  "title": "Contact affine chart on $\\mathbb{P}(V)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-projective-line-object",
+    "papers/quantum-observable-universe/blocks/def-categorical-reeb"
+  ],
+  "tags": [
+    "projective",
+    "affine-chart",
+    "reeb",
+    "contact"
+  ],
+  "leanRef": "qou:QOU.ContactAffineChart",
+  "text": "contact-affine-chart.md",
+  "leanSource": "contact-affine-chart.lean",
+  "provenance": "authored"
+}

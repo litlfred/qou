@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-o16-derived-nf",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:o16-derived-nf",
+  "kind": "example",
+  "title": "O-16: doubly magic at $Z = N = 8$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-nuclear-operator-regimes",
+    "papers/quantum-observable-universe/blocks/prop-inductive-gb-reduction"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-nuclear-operator-regimes",
+  "tags": [
+    "oxygen",
+    "normal-form",
+    "derived",
+    "doubly-magic",
+    "magic-number",
+    "shell-closure",
+    "inductive-reduction"
+  ],
+  "text": "o16-derived-nf.md",
+  "provenance": "authored"
+}

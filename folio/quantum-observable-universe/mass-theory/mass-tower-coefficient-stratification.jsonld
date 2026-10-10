@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-mass-tower-coefficient-stratification",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:mass-tower-coefficient-stratification",
+  "kind": "proposition",
+  "title": "Mass-tower coefficients $(\\lambda_V, \\lambda_S, \\lambda_{\\mathrm{pair}}, \\alpha_k)$ as Wedderburn-block projections",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-knot-factor-spectral-form"
+  ],
+  "tags": [
+    "mass-tower",
+    "bethe-weizsacker",
+    "lambda-V",
+    "lambda-S",
+    "lambda-pair",
+    "alpha-k",
+    "wedderburn",
+    "stratification",
+    "coordination"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.mass_tower_coefficient_stratification",
+  "text": "mass-tower-coefficient-stratification.md",
+  "leanSource": "mass-tower-coefficient-stratification.lean",
+  "provenance": "authored"
+}

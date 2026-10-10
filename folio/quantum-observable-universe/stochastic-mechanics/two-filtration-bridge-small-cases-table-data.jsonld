@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-two-filtration-bridge-small-cases-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:two-filtration-bridge-small-cases-table-data",
+  "kind": "table",
+  "title": "Data table from prop:two-filtration-bridge-small-cases",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-two-filtration-bridge-small-cases"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "two-filtration-bridge-small-cases-table-data.md",
+  "provenance": "authored"
+}

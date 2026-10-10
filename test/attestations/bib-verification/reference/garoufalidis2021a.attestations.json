@@ -1,0 +1,63 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "garoufalidis2021a",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 283,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2111.04763v2/2111.04763v2.pdf"
+        },
+        "id": "garoufalidis2021a",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "WRONG JOIN. The seeded id was garoufalidis-gu-marino2021, whose registered entry names a three-author paper at a different arXiv identifier. This PDF is arXiv:2111.04763v2 [math.GT] with FOUR authors and a different subject (the resurgent structure at the TRIVIAL flat connection) \u2014 and the registered entry's own note explicitly calls it out as a separate, later work. No key exists for it, so id is null. A SECOND AND LARGER PROBLEM surfaced while checking this: the same key is being used in the corpus for a THIRD paper. Fourteen Lean sites cite garoufalidis-gu-marino2021 with the locator 'GGM 2012.00062' \u2014 QOU/QBeta/DeltaLambdaT5Assembly.lean:53, ThetaRealityBound.lean:44, BarOddQOneCentringNonselective.lean:81, DeltaLambdaBindingAssembly.lean:43 ('Theorem 9'), IotaOddSaddleOffsetAmphichiral.lean:89, StokesQZeroDTCount.lean:47 ('eq 59a sandwich, eq 60, Thm 9 det W_m = 2'), FiveTwoDTSpectrumSplit.lean:77, G3RealnessConjugationBrick.lean:49, StokesSymmetryConstant.lean:46, WindingGFTransform.lean:48, Stokes3LargeOrderAmplitude.lean:62, StokesSymmetryConstantQZero.lean:57, plus GZWeightGeneral.lean:32 and OneInstantonNormalization.lean:46 which mix the registered identifier with a second one. arXiv:2012.00062 is registered in references.ts under a DIFFERENT key (garoufalidis-gu-marino2023peacock). So those sites cite equation and theorem numbers belonging to one paper under the key of another: the locators are almost certainly right, the key is wrong. That is a miscited-claim defect at scale, sitting in the QBeta Stokes-constant modules the 1ppq A_omega work depends on.",
+          "keyResults": [
+            {
+              "locator": "abstract",
+              "statement": "Complete description of the resurgent structure of the Chern-Simons series at the TRIVIAL flat connection for a hyperbolic knot complement, via an extended matrix of (x,q)-series indexed by the boundary-parabolic flat connections including the trivial one; gives an analytic extension of the Kashaev invariant and an exact form of the refined quantum modularity conjecture.",
+              "useForFolio": "The trivial-flat-connection sector is the one the QBeta Stokes modules are missing: the existing citations cover the non-trivial connections, while the framework's q = 0 / centring arguments live precisely at the trivial connection.",
+              "targets": [
+                "QOU.QBeta.StokesQZeroDTCount",
+                "QOU.QBeta.StokesSymmetryConstantQZero"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "This four-author sequel has no ref() entry and is currently mis-joined to the three-author paper. Register it from its own front matter.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-9kwg"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Fourteen QBeta Lean sites cite equations and theorems of arXiv:2012.00062 under the key garoufalidis-gu-marino2021, while references.ts registers that arXiv item under garoufalidis-gu-marino2023peacock. Re-key those sites so the Stokes-constant locators point at the paper that actually contains them.",
+              "target": "QOU.QBeta.StokesQZeroDTCount",
+              "bean": "qou-41qf"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "760a7f9794e8"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "ivanov-olshanski2003",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 152,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0304010v1/0304010v1.pdf"
+        },
+        "id": "ivanov-olshanski2003",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Two corpus blocks rest on a Plancherel central limit theorem and neither cites one. conj:jet-convergence-classical-limit states 'the Kerov q-hook walk and the Feray-Meliot q-Plancherel Central Limit Theorem ensure O(1/sqrt(k)) convergence' with cites: [feray2010, kerov1996]; prop:q-plancherel-asymptotic-skeleton clause (2) states 'character fluctuations have variance O(1/sqrt(n-3))' citing feray2010 alone. But feray2010 in references.ts is 'Stanley's formula for characters of the symmetric group' (Annals of Combinatorics 13, 2010) \u2014 a character-formula paper, NOT a central limit theorem, and not the Feray-Meliot q-Plancherel asymptotics paper the prose names. This document is the canonical complete proof of the q = 1 statement those blocks are deforming, written by Kerov's collaborators from his notes. It is the result the corpus's q-deformed claims are the deformation of, and the current citation does not support the claim made. Flagging the mis-citation is itself a finding.",
+          "keyResults": [
+            {
+              "locator": "Introduction, eqs. (0.1)-(0.4); proved in \u00a77",
+              "statement": "Kerov's CLT: for lambda drawn from Plancherel measure M_n, the rescaled boundary satisfies n^{-1/2} lambda(sqrt(n) x) ~ Omega(x) + (2/sqrt(n)) Delta(x), with Omega(x) = (2/pi)(x arcsin(x/2) + sqrt(4 - x^2)) on |x| <= 2 and Delta a generalized Gaussian process given by the random trigonometric series Delta(2 cos theta) = (1/pi) sum_{k>=2} (xi_k/sqrt(k)) sin(k theta), xi_k i.i.d. standard normal.",
+              "useForFolio": "Supplies the actual q = 1 fluctuation theorem \u2014 including the exact 1/sqrt(n) scale \u2014 that conj:jet-convergence-classical-limit's O(1/sqrt(k)) claim and prop:q-plancherel-asymptotic-skeleton clause (2) are asserting a q-analogue of. Replaces a citation (feray2010) that does not state a CLT.",
+              "targets": [
+                "conj:jet-convergence-classical-limit",
+                "prop:q-plancherel-asymptotic-skeleton"
+              ]
+            },
+            {
+              "locator": "\u00a76 (CLT for characters)",
+              "statement": "Central limit theorem for normalized character values on cycles: character ratios evaluated on cycles of different lengths are asymptotically independent Gaussians with explicit variances.",
+              "useForFolio": "This is the precise q = 1 form of prop:q-plancherel-asymptotic-skeleton clause (2)'s 'character fluctuations have variance O(...)'; the asymptotic independence across cycle lengths is additional structure the corpus block does not currently record and which any q-deformed statement would have to reproduce or break.",
+              "targets": [
+                "prop:q-plancherel-asymptotic-skeleton"
+              ]
+            },
+            {
+              "locator": "\u00a710 (free cumulants and Biane's theorem); \u00a73-\u00a74 (the p#_k basis and filtrations in A)",
+              "statement": "The proof is organised through the algebra of polynomial functions on Young diagrams, the elements p#_k, and free cumulants, connecting to Biane's asymptotic character theory.",
+              "useForFolio": "rem:non-commutative-probability-dictionary already frames the Hecke GNS data in free-probability terms; \u00a710 gives the bridge between the Plancherel CLT and the free-cumulant language the corpus uses, so a q-deformed statement can be posed in the corpus's own coordinates.",
+              "targets": [
+                "rem:non-commutative-probability-dictionary",
+                "prop:q-plancherel-asymptotic-skeleton"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Orphan; no Ivanov or Olshanski entry in references.ts.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-gqho"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "prop:q-plancherel-asymptotic-skeleton clause (2) cites feray2010 ('Stanley's formula for characters') for a fluctuation/variance claim that paper does not make; the q = 1 CLT source belongs here.",
+              "target": "prop:q-plancherel-asymptotic-skeleton",
+              "bean": "qou-fs87"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "conj:jet-convergence-classical-limit's prose names a 'Feray-Meliot q-Plancherel Central Limit Theorem' but cites feray2010 + kerov1996; the named q-CLT paper is absent from references.ts and the q = 1 antecedent is uncited. Add this and verify the Feray-Meliot citation separately.",
+              "target": "conj:jet-convergence-classical-limit",
+              "bean": "qou-5k23"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "fc2296c027b3"
+        },
+        "note": "Source IS held: library/arxiv-math-0304010v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+        "verified_at": "2026-09-03T04:19:53Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

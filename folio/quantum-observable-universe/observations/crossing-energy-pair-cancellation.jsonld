@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-crossing-energy-pair-cancellation",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:crossing-energy-pair-cancellation",
+  "kind": "proposition",
+  "title": "Mirror pairing cancels the symmetric channel",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-crossing-energy-decomposition",
+    "papers/quantum-observable-universe/blocks/def-crossing-energy"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/rem-pair-creation-energy"
+  ],
+  "tags": [
+    "crossing-energy",
+    "pair-creation",
+    "mirror",
+    "coulomb",
+    "antisymmetric"
+  ],
+  "leanRef": "qou:QOU.Braiding.pair_cancellation",
+  "text": "crossing-energy-pair-cancellation.md",
+  "provenance": "authored"
+}

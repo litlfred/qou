@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-covalent-bond-order-and-lp-selection",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:covalent-bond-order-and-lp-selection",
+  "kind": "remark",
+  "title": "Covalent bond orders and LP-dual electron assignment",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-covalent-bond-shared-trefoil"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-covalent-bond-shared-trefoil",
+  "tags": [
+    "covalent-bond",
+    "bond-order",
+    "LP-dual",
+    "Phi1",
+    "electron-assignment"
+  ],
+  "text": "covalent-bond-order-and-lp-selection.md",
+  "provenance": "authored"
+}

@@ -226,7 +226,7 @@ CLASSIFICATION = [
                "the (Im tau)^{1/4} anomaly factors cancel up to the exact "
                "constant 5^{3/2} (Task B). Anomaly-free => exact distinguished "
                "values possible: t5(tau_0) = -10 exactly on the Bring class.",
-        "refs": ["content/quantum-observable-universe/lean/QOU/Archimedean/BringHauptmodulGate.lean",
+        "refs": ["folio/quantum-observable-universe/lean/QOU/Archimedean/BringHauptmodulGate.lean",
                  "docs/audits/2026-07-24-tau-dictionary-hauptmodul-gate-wiring.md"],
     },
     {

@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-14T06:12:18.996490+00:00",
-  "commitSha": "8b367484edaa71a1a4f1b7ec9b1b13d6cf0a08a6",
+  "computedAt": "2026-09-26T21:10:00.166550+00:00",
+  "commitSha": "bb697e8106b5244b7ba3c3f0daa7e8081137adbe",
   "assertions": [
     {
       "name": "y_1cubed_vanishes_under_convention_D",
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "y_(3) + 2 y_(2,1) = 1 to 0.0, and the three block dimensions are 1, 2, 1 -- so y_(1^3) = 0 EXACTLY. This is the two-row truncation that defines convention D (markovWeights_eq_jones_of_threeRow_eq_zero), not a numerical accident of the pin. It is why reading 3 cannot see the alternating block at all"
+      "source": "y_(3) + 2 y_(2,1) = 1 to 0.0, and the three block dimensions are 1, 2, 1 -- so y_(1^3) = 0 EXACTLY. This is the two-row truncation that defines convention D (D => vanish is threeRow_eq_zero_of_jones_ocneanu; the converse is markovWeights_eq_jones_of_threeRow_eq_zero + hfaith), not a numerical accident of the pin. It is why reading 3 cannot see the alternating block at all"
     },
     {
       "name": "chi21_of_the_identity_is_the_block_dimension",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1826,
+  "durationMs": 2255,
   "computation": "qbeta-reading3-does-not-constrain-the-budget",
   "scriptFile": "qbeta_reading3_does_not_constrain_the_budget_probe.py",
-  "scriptHash": "2adc4b2ed555",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d832bf18c2b8",
+  "scriptCommitSha": "8473966b707f1859dafb474d9a2c4d663905762b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -81,7 +81,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [

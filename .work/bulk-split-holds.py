@@ -27,8 +27,8 @@ def find_md_sibling(lean_path: pathlib.Path) -> pathlib.Path | None:
     base_underscore = lean_path.stem
     base_hyphen = lean_path.stem.replace('_', '-')
 
-    # Search content/quantum-observable-universe/ for matching .md
-    root = pathlib.Path('content/quantum-observable-universe')
+    # Search folio/quantum-observable-universe/ for matching .md
+    root = pathlib.Path('folio/quantum-observable-universe')
     if not root.is_dir():
         return None
 
@@ -148,7 +148,7 @@ def main() -> int:
     if not targets:
         # Default: all .lean files with holds:Prop in QOU/
         targets = []
-        for p in pathlib.Path('content/quantum-observable-universe/lean/QOU').rglob('*.lean'):
+        for p in pathlib.Path('folio/quantum-observable-universe/lean/QOU').rglob('*.lean'):
             text = p.read_text()
             if re.search(r'^  holds : Prop$', text, re.MULTILINE):
                 targets.append(str(p))

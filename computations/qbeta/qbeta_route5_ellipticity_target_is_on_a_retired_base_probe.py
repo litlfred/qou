@@ -358,9 +358,9 @@ def main() -> int:
         "q0Value": fmt(q),
         "bases": rows,
         "prose_theta_stale_sites": [
-            "content/quantum-observable-universe/lean/QOU/QBeta/EigenphaseCarrierVacuity.lean:221",
-            "content/quantum-observable-universe/lean/QOU/QBeta/BringEllipticCurveJInvariant.lean:39",
-            "content/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation.lean:191",
+            "folio/quantum-observable-universe/lean/QOU/QBeta/EigenphaseCarrierVacuity.lean:221",
+            "folio/quantum-observable-universe/lean/QOU/QBeta/BringEllipticCurveJInvariant.lean:39",
+            "folio/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation.lean:191",
         ],
         "retired_base_ruling": "owner 2026-09-08: eps = Markov trace at z_D = q^3/(q^2+1); z = 1 retired as base",
         "supersedes_nothing": (

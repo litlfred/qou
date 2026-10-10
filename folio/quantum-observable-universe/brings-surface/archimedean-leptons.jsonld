@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-archimedean-leptons",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:archimedean-leptons",
+  "kind": "remark",
+  "title": "Electrons, muons and the Reeb decomposition",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-reeb-decomposition",
+    "papers/quantum-observable-universe/blocks/def-fermion-boson-decomposition"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-fermion-boson-decomposition",
+  "tags": [
+    "archimedean-universe",
+    "leptons",
+    "reeb-decomposition"
+  ],
+  "text": "archimedean-leptons.md",
+  "provenance": "authored"
+}

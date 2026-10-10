@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-lagrange-resolvents",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:lagrange-resolvents",
+  "kind": "remark",
+  "title": "Lagrange resolvents and spectral form",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-lagrange-resolvent-transform"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-lagrange-resolvent-transform",
+  "text": "lagrange-resolvents.md",
+  "provenance": "authored"
+}

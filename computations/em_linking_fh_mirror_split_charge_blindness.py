@@ -253,7 +253,7 @@ def main() -> int:
             "charge-blind bound cannot produce a charge-driven observable otherwise"
         ),
         "and_the_framework_defines_no_flux": (
-            "`Flux` occurs nowhere in content/quantum-observable-universe/lean/ as a "
+            "`Flux` occurs nowhere in folio/quantum-observable-universe/lean/ as a "
             "quantity. The grep hits are a photon docstring (KnotRegistry.lean:48), "
             "meson colour flux tubes (MesonFluxTubeReduction.lean), and the English "
             "idiom \"in flux in Mathlib's CoxeterSystem API\" (Tw.lean:56, Defn.lean:114, "

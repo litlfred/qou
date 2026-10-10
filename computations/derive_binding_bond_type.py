@@ -1,5 +1,77 @@
 #!/usr/bin/env python3
-"""DERIVATION — bond-TYPE per-bond binding sum (level 1, pure-Python, 0 fit).
+"""🛑 SUPERSEDED — do NOT quote `B_pred_MeV`, the T-vs-³He ordering, or this
+module's committed witness as a binding-energy result. Marked 2026-09-27 on
+owner instruction ("resolve issues"), bean `qou-7xa5`. Kept for provenance and
+comparison, exactly as `binding_canonical.py` is.
+
+**TWO INDEPENDENT GROUNDS**, either one sufficient. Both are checkable against a
+corpus artifact without re-running anything here.
+
+1. **The FUNCTIONAL is the refuted one.** `B_xy = E_0·(tr_M_free − tr_M_atom)` is
+   a constant times `Δtr`, the same law class as `binding_canonical.B_MeV`, whose
+   own banner records the refutation: `tr_M` is MULTIPLICATIVE along the chain
+   while binding energy is EXTENSIVE, and `Δtr/tr_free = 1 − exp(−S)` exactly —
+   within 7.7e-4 of 1 by A = 11. Above that, `Δtr` does not merely MIS-SCALE the
+   binding, it does not CONTAIN it. The replacement is forced rather than chosen
+   (`log` is the unique multiplicative-to-additive map) and consumes the SAME
+   derived bond factors:
+
+       B = E_0 · log( tr_M(W_free) / tr_M(W_atom) )
+
+   in `computations/binding_log_free_energy.py`.
+
+2. **The BOND COMPOSITION is the complete graph, which is structurally
+   refuted.** `n_pp + n_pn + n_nn = C(Z,2) + Z·N + C(N,2) = C(A,2)` — every pair
+   bonded. `QOU.Mass.CoordinationSaturation.complete_graph_no_saturation`
+   (sorry-free) proves that for `ε > 0`, `perNucleonComplete ε A = ε·C(A,2)/A`
+   exceeds EVERY bound: no finite `B/A` plateau exists, so observed saturation
+   refutes complete-graph coordination structurally, not merely at ⁴He.
+
+   **Scope note — the Lean is stated for a UNIFORM `ε`, and this module has
+   three bond energies.** The extension is a one-line monotonicity argument and
+   it is MINE, not the theorem's: with all three bond bindings positive,
+   `B(A) ≥ min(B_pp,B_pn,B_nn)·C(A,2)`, so `B/A` is unbounded by the same
+   theorem applied at `ε = min`. Measured 2026-09-27 the three are `0.6421 /
+   0.6155 / 0.5636` MeV, all positive, so the hypothesis holds here. Do not
+   restate this as though the Lean covered the three-type case directly.
+   The replacement's composition is a CHAIN (`(Z−1), 1, (N−1)` — `A−1` bonds,
+   bounded degree), which is the point of that change as much as the `log` is.
+
+**THE COMMITTED WITNESS IS STALE, AND ITS HEADLINE ASSERTION HAS FLIPPED.**
+Committed `computedAt` 2026-06-22, `allPassed: true`; a fresh run 2026-09-27
+reports FAILURES. The module's whole purpose — the T-vs-³He discriminator — went
+from MATCHES to **MISMATCH**:
+
+    bond        2026-06-22   2026-09-27   |   iso    B_pred then -> now    err% then -> now
+    B_pp           2.3785       0.6421    |   D       2.4914 ->  0.6155    +12.0 -> -72.3
+    B_pn           2.4914       0.6155    |   T       7.5151 ->  1.7946    -11.4 -> -78.8
+    B_nn           2.5323       0.5636    |   3He     7.3612 ->  1.8732     -4.6 -> -75.7
+                                          |   4He    14.8763 ->  3.6678    -47.4 -> -87.0
+
+**DO NOT re-run this and commit the regenerated witness.** That publishes a red
+for a law already known to be wrong, which is noise, not a finding. The drift is
+recorded here and on `qou-7xa5`; the witness stays as the 2026-06-22 artifact it
+is. Route (b) of that bean — porting the bond-type decomposition onto the
+log-ratio law — is a separate arc and has not been taken.
+
+Two further defects, recorded so nobody reads them as live findings. The
+`ordering:` line hardcoded `<` between all three bonds, which was true in June
+(2.379 < 2.491 < 2.532) and is false now (0.642 > 0.616 > 0.564); it now derives
+its operators. And the witness carries **17 raw float64 fields** (`float(E0)`,
+`float(B[xy])`, `B_pred_MeV`, `AME_MeV`, `err`, `A_growth`) — the run's own
+ratchet warns about them. They are NOT fixed here, because serializing them
+correctly would only take effect by regenerating the witness, which the
+paragraph above forbids.
+
+**WHAT SURVIVES.** This is a scope-(a) negative on the functional and the
+composition — NOT an exclusion of bond-TYPE decomposition as an ingredient. The
+three derived 2-nucleon sub-braid traces are the same objects the log-ratio law
+consumes, and isospin-dependent bonds remain the T-vs-³He discriminator in
+principle. What is excluded is `constant × Δtr` summed over the complete graph.
+
+Original docstring follows, unchanged.
+
+DERIVATION — bond-TYPE per-bond binding sum (level 1, pure-Python, 0 fit).
 
 Level-0 (derive_binding_bond_sum.py) used one isospin-symmetric bond and got
 A-growth 1.65×→6.00×, but couldn't distinguish T from ³He (both C(A,2)=3). This
@@ -78,8 +150,15 @@ def main() -> int:
     print("Derived per-bond-type binding (E_0·Δtr_M, scalar, 0 fit):")
     for xy in ("pp", "pn", "nn"):
         print(f"    B_{xy} = {float(B[xy]):.4f} MeV   ({BOND_ZN[xy]})")
-    print(f"  ordering: B_pp={float(B['pp']):.4f} < B_pn={float(B['pn']):.4f} "
-          f"< B_nn={float(B['nn']):.4f}\n")
+    # Operators DERIVED, not hardcoded. This line read `<` between all three
+    # bonds, which was true when it was written (2.379 < 2.491 < 2.532) and is
+    # false now (0.642 > 0.616 > 0.564) — the ordering inverted while the
+    # literal stayed put, so the producer printed a false statement one line
+    # below the numbers that refute it. Comparing mpf, not the display floats.
+    _o1 = "<" if B["pp"] < B["pn"] else (">" if B["pp"] > B["pn"] else "=")
+    _o2 = "<" if B["pn"] < B["nn"] else (">" if B["pn"] > B["nn"] else "=")
+    print(f"  ordering: B_pp={float(B['pp']):.4f} {_o1} B_pn={float(B['pn']):.4f} "
+          f"{_o2} B_nn={float(B['nn']):.4f}\n")
 
     print(f"{'iso':<5}{'(pp,pn,nn)':<14}{'B_pred':<10}{'AME':<10}{'err%':<9}")
     results = {}

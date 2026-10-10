@@ -1,0 +1,79 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "lin-wang1999",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 418,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3-spheres.pdf"
+        },
+        "id": "lin-wang1999",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "IDENTIFICATION FINDING: the filename says 'Ohtsuki-99' but the front matter identifies a 1999 Acta Mathematica Sinica (English Series) 15(3) 293-316 article by Xiaosong Lin and Zhenghan Wang, ON Ohtsuki's invariants \u2014 Ohtsuki is the subject, not an author. Anyone joining this row by filename will mis-key it. The paper gives explicit surgery formulae for Ohtsuki's rational invariants lambda_n of integral homology 3-spheres extracted from the Reshetikhin-Turaev SU(2) invariants, plus integrality results. It is core for one specific reason: it prints an independently computed numerical value of lambda_2 for the corpus's own keystone manifold, giving the Sigma(2,3,5) false-theta transcription a falsifiable external check it currently has none of. Citation status checked all three ways: no ref() id (no Lin, no Wang, no Ohtsuki lambda_n entry among the 481 ids), no cite{} in content/**/*.md, no '-- Ref:' in content/**/*.lean. Corpus-grep before declaring the gap: docs/audits/, content/, computations/, docs/coordination/ carry no Casson-invariant or Ohtsuki-series-of-a-3-manifold work at all (every 'Casson' hit is Casson-Rivin angle-structure duality), so no prior agent has already run this check. Note the same Ohtsuki-name collision as the sibling document: this is the lambda_n(M) series of homology spheres, not the 4_1 Kashaev kappa-tower of QOU/QBeta/OhtsukiTowerBarParity.lean.",
+          "keyResults": [
+            {
+              "locator": "Section 5, Example (1), p. 304",
+              "statement": "If M is the Poincare homology 3-sphere Sigma(2,3,5), realised as +1-surgery on the right-handed trefoil, then lambda_2(M) = 39. (Companion: Sigma(2,3,7) from +1-surgery on the left-handed trefoil has lambda_2 = 63.)",
+              "useForFolio": "A parameter-free external number for the second Ohtsuki coefficient of S^3/2I. Expanding the corpus's Sigma(2,3,5) false theta in h = q-1 must reproduce it (together with lambda_1 = 6 lambda_Casson = \u00b16, the trefoil having a_2 = 1). This is the falsifiable check the keystone transcription lacks. Caveat that must be settled before the comparison means anything: Lin-Wang's orientation is +1-surgery on the RIGHT-handed trefoil, and their own Remark on the same page gives lambda_2(Mbar) = lambda_2(M) + lambda_1(M) under orientation reversal \u2014 so the corpus's orientation convention has to be fixed first, or the check will fail for a bookkeeping reason rather than a mathematical one.",
+              "targets": [
+                "computations/probes/keystone_colored_sigma235_wrt.py",
+                "computations/lr_modulus_identification_sigma235.py"
+              ]
+            },
+            {
+              "locator": "Theorem 1.1 (p. 293) and Corollary 5.1 (p. 303), strengthened at Theorem 7.1",
+              "statement": "lambda_2(M) is an integer divisible by 3 for every integral homology 3-sphere M; lambda_1(M) is in 6Z (lambda_1 = 6 times the Casson invariant, Murakami).",
+              "useForFolio": "An integrality sieve on any lambda_n the corpus extracts from its own Sigma(2,3,5) series: a transcription that yields a non-integer, or an integer not divisible by 3 at n=2, is wrong independently of any numerical tolerance. Cheap, exact, and it fails loudly \u2014 the right kind of gate for a transcription check. Consistent with the quoted value (39 = 3 x 13).",
+              "targets": [
+                "computations/probes/keystone_colored_sigma235_wrt.py"
+              ]
+            },
+            {
+              "locator": "Theorem 5.1 (p. 302) with Theorem 5.2 and Corollary 5.3 (p. 303-304)",
+              "statement": "Explicit surgery formulae expressing lambda_1 and lambda_2 of a manifold obtained by Dehn surgery on a unit-framed algebraically split link as sums over sublinks; specialised to 1/n-surgery on a knot K these express lambda_2 through Vassiliev invariants read off the Conway and Jones polynomials of K, and give lambda_2(M)/3 = mu(M) mod 2 with mu the Rokhlin invariant.",
+              "useForFolio": "Supplies a second, independent route to the same numbers that does not pass through the false theta at all: it computes lambda_n(Sigma(2,3,5)) from the Jones polynomial of the trefoil, an object the corpus already has full machinery for (Markov trace on H_n(q)). Two independent in-corpus computations of the same lambda_2 would make the check self-contained rather than dependent on a quoted literature value.",
+              "targets": [
+                "computations/lr_modulus_identification_sigma235.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Orphan with no ref() entry. The entry must be keyed on Lin and Wang, not Ohtsuki \u2014 the filename invites exactly the wrong join, and the sweep has already recorded one wrong-join incident of this shape in the ledger. Metadata belongs in references.ts only.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-k8uf"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "Expand the corpus's Sigma(2,3,5) series in h = q-1 and compare lambda_1 against \u00b16 and lambda_2 against 39, after fixing the orientation convention against Lin-Wang's right-handed-trefoil normalisation; apply the lambda_2 in 3Z sieve as a precondition. This validates the transcription that the whole colored-WRT keystone step rests on. The external values are comparison targets, never inputs to be wired.",
+              "target": "computations/probes/keystone_colored_sigma235_wrt.py",
+              "bean": "qou-5rou"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-09T00:10:43.091Z",
+          "source_sha": "3fb38d4cfd20"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

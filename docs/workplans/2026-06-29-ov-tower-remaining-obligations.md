@@ -136,7 +136,7 @@ forward-reference in its docstring.
 
 ## References
 
-Citation keys resolve against `content/schema/references.ts` (the corpus
+Citation keys resolve against `folio/schema/references.ts` (the corpus
 bibliography source of truth):
 
 - **[sagan2001]** Sagan, Bruce E. (2001). *The Symmetric Group: Representations,

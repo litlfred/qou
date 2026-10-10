@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-categorical-action-notation-su2",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:categorical-action-notation-su2",
+  "kind": "example",
+  "title": "Categorical-action notation for $\\mathrm{SU}(2)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/sec-categorical-action-notation",
+    "papers/quantum-observable-universe/blocks/ex-connection-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-action",
+  "tags": [
+    "su2",
+    "notation"
+  ],
+  "text": "categorical-action-notation-su2.md",
+  "provenance": "authored"
+}

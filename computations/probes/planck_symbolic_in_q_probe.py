@@ -57,10 +57,10 @@ Precision: everything is exact symbolic algebra in `sympy` over `ℚ(q)`; the tw
 numerical columns are `mpmath` at the corpus compute precision from the exact
 forms. No float64, no fit.
 
--- Ref: [manuscript] content/quantum-observable-universe/observations/g-q-closed-form.md
--- Ref: [manuscript] content/quantum-observable-universe/information-theory/discrete-planck-step.md
--- Ref: [manuscript] content/quantum-observable-universe/fluid-dynamics/p5-counterexample.md
--- Ref: [manuscript] content/quantum-observable-universe/braids-and-knots/meridian-exceptional-divisor-note.md
+-- Ref: [manuscript] folio/quantum-observable-universe/observations/g-q-closed-form.md
+-- Ref: [manuscript] folio/quantum-observable-universe/information-theory/discrete-planck-step.md
+-- Ref: [manuscript] folio/quantum-observable-universe/fluid-dynamics/p5-counterexample.md
+-- Ref: [manuscript] folio/quantum-observable-universe/braids-and-knots/meridian-exceptional-divisor-note.md
 """
 from __future__ import annotations
 

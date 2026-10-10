@@ -1,0 +1,187 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-15T22:51:29.716943+00:00",
+  "commitSha": "596dc8a545a68075d6e6803081fce3e0ec7bac5b",
+  "assertions": [
+    {
+      "name": "zD_classical_is_one_half",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "z_D(1) = 1/2"
+    },
+    {
+      "name": "z_plus_d_reconstructs_pp",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "pp (sigma): z+d = ['1/2', '1', '1/4']"
+    },
+    {
+      "name": "z_plus_d_reconstructs_pn",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "pn (averaged_weighted): z+d = ['1/2', '0', '3/4']"
+    },
+    {
+      "name": "z_plus_d_reconstructs_nn",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "nn (sigma_inv): z+d = ['1/2', '-1', '5/4']"
+    },
+    {
+      "name": "bond_factor_classical_pp",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "pp (sigma): f(ε=0) = 1/2"
+    },
+    {
+      "name": "bond_factor_classical_pn",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "pn (averaged_weighted): f(ε=0) = 1/2"
+    },
+    {
+      "name": "bond_factor_classical_nn",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "nn (sigma_inv): f(ε=0) = 1/2"
+    },
+    {
+      "name": "b3_classical_is_minus_five_eighths",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "b3(1/2,1/2,1/2) = -5/8"
+    },
+    {
+      "name": "b3_equals_minus_phi3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "-phi3 = -5/8"
+    },
+    {
+      "name": "b4_classical_nonzero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "-phi4(-1/2) = 79/64"
+    },
+    {
+      "name": "b3_epsilon_valuation_is_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "b3(ε) = ['-5/8', '0', '35/16'] + O(ε³); valuation 0"
+    },
+    {
+      "name": "c0_classical_floor_nonzero_A234",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "c0(A) = {2: '1/8', 3: '3/32', 4: '7/128'}"
+    },
+    {
+      "name": "c0_A2_matches_c2_witness_a0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "c2 witness rows a0 = 1/8 at A = 2"
+    },
+    {
+      "name": "jet_tower_remainder_ratio_below_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "q0^-2 = 0.81165375436575805813 (the jet tower IS geometrically ordered)"
+    },
+    {
+      "name": "bond_factors_at_q0_near_one_half",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "pp: 0.612688037146; pn: 0.508757098727; nn: 0.404826160308"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "body-number-expansion-classical-floor",
+  "scriptFile": "body_number_expansion_classical_floor_probe.py",
+  "scriptHash": "dcaae3e5c02a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/body_number_expansion_classical_floor_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/body_number_expansion_classical_floor_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0_anchor_reason": "The exact part is anchor-free (Fractions at q = 1). The two q0 contrasts (jet remainder ratio, bond factors at the physical point) use the proton pin, the 2026-08-07 default.",
+  "description": "The body-number (cluster) expansion of the multiplicative binding assembly has a classical floor: every bond factor is z_D(1) = 1/2 at q = 1, so the connected three-body cumulant b3 = -phi3 is -5/8 at epsilon = 0 and has epsilon-valuation 0. No power counting in epsilon = q - 1 orders the body-number expansion; the ordered expansion of the framework is the jet tower (ratio q^-2). Scope (b) for the ordering in epsilon; invariant z_D(1) = 1/2.",
+  "data": {
+    "zD_series_eps": [
+      "1/2",
+      "1",
+      "1/4"
+    ],
+    "d_kind_series_eps": {
+      "pp (sigma)": [
+        "0",
+        "0",
+        "0"
+      ],
+      "pn (averaged_weighted)": [
+        "0",
+        "-1",
+        "1/2"
+      ],
+      "nn (sigma_inv)": [
+        "0",
+        "-2",
+        "1"
+      ]
+    },
+    "mayer_classical": "-1/2",
+    "b3_classical": "-5/8",
+    "b4_classical_uniform": "79/64",
+    "b3_series_eps_mixed_chain": [
+      "-5/8",
+      "0",
+      "35/16"
+    ],
+    "b3_epsilon_valuation": 0,
+    "c0_classical_floor": {
+      "2": "1/8",
+      "3": "3/32",
+      "4": "7/128"
+    },
+    "q0_proton": "1.1099785827513808075916690956107688798744991218736",
+    "jet_remainder_ratio_q0_inv_sq": "0.811653754365758058132214822141752124918532537796475209752038",
+    "bond_factors_at_q0": {
+      "pp (sigma)": "0.612688037146465251595829863945899248026308391545087014074774",
+      "pn (averaged_weighted)": "0.508757098727085602047393929492179580702150859256410517320179",
+      "nn (sigma_inv)": "0.404826160307705952498957995038459913377993326967734020565584"
+    }
+  },
+  "lean_twin": "QOU.MassTheory.b3corpus_classical (BondFactorClassicalFloor.lean)",
+  "bean": "qou-olxi"
+}

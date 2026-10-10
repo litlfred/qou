@@ -1,7 +1,7 @@
 # Chapter 5 — Models of QOUs — QA Report
 
 **Review Date:** 2026-04-25
-**Chapter Directory:** `content/quantum-observable-universe/models-of-qous/`
+**Chapter Directory:** `folio/quantum-observable-universe/models-of-qous/`
 **Coverage:** 39 .md, 12 .lean, ~40 .ts (Part A only — Part B Descartes is now its own chapter)
 
 ## Inventory

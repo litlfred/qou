@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-su2-emergence",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:su2-emergence",
+  "kind": "proof",
+  "title": "Proof of Emergence of the gauge group",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-su2-emergence"
+  ],
+  "text": "su2-emergence-proof.md",
+  "provenance": "authored"
+}

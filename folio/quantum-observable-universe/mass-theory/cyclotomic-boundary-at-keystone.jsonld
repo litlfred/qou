@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-cyclotomic-boundary-at-keystone",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:cyclotomic-boundary-at-keystone",
+  "kind": "conjecture",
+  "title": "The Habiro-tail cyclotomic boundary sits at the quintic order: $D(n)$ is cyclotomic $\\iff n \\leq 5$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-binding-manybody-eq-jet-filtration",
+    "papers/quantum-observable-universe/blocks/prop-sw-period-residue-sum",
+    "papers/quantum-observable-universe/blocks/prop-calibration-cohomology-alignment"
+  ],
+  "tags": [
+    "binding",
+    "habiro-tail",
+    "cyclotomic",
+    "keystone",
+    "s5-so3",
+    "mckay",
+    "e8",
+    "open-conjecture"
+  ],
+  "text": "cyclotomic-boundary-at-keystone.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prose-sm-params-neutrino",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "prose:sm-params-neutrino",
+  "kind": "prose",
+  "title": "Neutrino sector (7)",
+  "tags": [
+    "appendix",
+    "standard-model",
+    "parameters",
+    "neutrinos",
+    "pmns"
+  ],
+  "text": "sm-params-neutrino.md",
+  "provenance": "authored"
+}

@@ -31,7 +31,7 @@ Source audits joined here
 2. ``canonical-script-input-audit.witness.json`` — calibration-
    input scheme audit (3-input vs over-count vs vol-hyp-fitted vs
    m_p-only vs Q_β-only) per
-   ``content/quantum-observable-universe/braids-and-knots/calibration-inputs.md``.
+   ``folio/quantum-observable-universe/braids-and-knots/calibration-inputs.md``.
 
 3. ``derivation-chain-audit.witness.json`` — per-chain validation
    + computational-trust audit per the QOU methodology directive

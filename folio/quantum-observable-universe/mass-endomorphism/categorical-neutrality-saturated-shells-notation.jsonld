@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-categorical-neutrality-saturated-shells-notation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:categorical-neutrality-saturated-shells-notation",
+  "kind": "remark",
+  "title": "Saturation, and notation for the full-twist and mass endomorphism",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-neutrality-saturated-shells"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-categorical-neutrality-saturated-shells",
+  "tags": [
+    "saturated-shells",
+    "full-twist",
+    "mass-endomorphism",
+    "hecke-algebra",
+    "notation"
+  ],
+  "text": "categorical-neutrality-saturated-shells-notation.md",
+  "provenance": "authored"
+}

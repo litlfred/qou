@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-descent-one-dim",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:descent-one-dim",
+  "kind": "remark",
+  "title": "Descent to one complex dimension",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-euler-char-stability",
+    "papers/quantum-observable-universe/blocks/rem-descent-reduction-zero"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-jet-prolongation",
+  "tags": [
+    "archimedean-universe",
+    "descent"
+  ],
+  "text": "descent-one-dim.md",
+  "provenance": "authored"
+}

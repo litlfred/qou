@@ -66,7 +66,7 @@ run whose length is forced).  That is a small exact class and it reaches any `k`
 Proton-pinned; the search is exact integer arithmetic at scale 1e-40.  mpmath at dps 60 to
 build the tables; no float64.
 
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumElasticity.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/BraidKnot/HookSumElasticity.lean
 """
 
 from __future__ import annotations

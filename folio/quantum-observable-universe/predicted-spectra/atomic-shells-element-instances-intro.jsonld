@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-atomic-shells-element-instances-preamble",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:atomic-shells-element-instances-preamble",
+  "kind": "prose",
+  "text": "atomic-shells-element-instances-intro.md",
+  "provenance": "authored"
+}

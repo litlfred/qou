@@ -44,7 +44,7 @@ import unicodedata
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LIB = os.path.join(REPO, "library")
-REFS = os.path.join(REPO, "content", "schema", "references.ts")
+REFS = os.path.join(REPO, "folio", "schema", "references.ts")
 OVERRIDES = os.path.join(REPO, "docs", "audits", "library-title-overrides.json")
 
 # Boilerplate that is not a title. Every one of these was observed leading

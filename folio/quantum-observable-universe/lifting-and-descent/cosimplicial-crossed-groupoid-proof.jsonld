@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-cosimplicial-crossed-groupoid",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:cosimplicial-crossed-groupoid",
+  "kind": "proof",
+  "title": "Proof of Cosimplicial crossed groupoid",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cosimplicial-crossed-groupoid",
+    "papers/quantum-observable-universe/blocks/def-ccg-cosimplicial-identities",
+    "papers/quantum-observable-universe/blocks/lem-ccg-crossed-module-structure"
+  ],
+  "text": "cosimplicial-crossed-groupoid-proof.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-jones-markov-trace",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:jones-markov-trace",
+  "kind": "theorem",
+  "title": "Existence and non-degeneracy of the Markov trace (Jones, 1987)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-braid-action-tensor",
+    "papers/quantum-observable-universe/blocks/prop-braiding-eigenvalue-extraction"
+  ],
+  "tags": [
+    "hecke-algebra",
+    "markov-trace",
+    "jones-polynomial",
+    "external-proof"
+  ],
+  "leanRef": "qou:QOU.Braiding.JonesMarkovTrace",
+  "text": "jones-markov-trace.md",
+  "leanSource": "jones-markov-trace.lean",
+  "provenance": "authored"
+}

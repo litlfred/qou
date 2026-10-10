@@ -52,7 +52,7 @@ must be rebuilt on a principle other than bar-homogeneity of this phase.
 The paragraph above flagged the `tr_M(1)` reading as unproved and said settling
 it would decide the path. It is now settled, and it goes the OTHER way.
 
-`content/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md`
+`folio/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md`
 line 21 states it outright:
 
     alpha = (z-1)h/2 is the single-wrap EIGENPHASE on V_(2,1)

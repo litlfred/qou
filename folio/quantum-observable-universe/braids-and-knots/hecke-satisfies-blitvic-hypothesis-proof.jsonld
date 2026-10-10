@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-hecke-satisfies-blitvic-hypothesis",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:hecke-satisfies-blitvic-hypothesis",
+  "kind": "proof",
+  "title": "Proof: Hecke generators satisfy Blitvić's pair-partition hypothesis",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hecke-satisfies-blitvic-hypothesis",
+    "papers/quantum-observable-universe/blocks/prop-trace-locality-meets-gs-non-locality"
+  ],
+  "text": "hecke-satisfies-blitvic-hypothesis-proof.md",
+  "provenance": "authored"
+}

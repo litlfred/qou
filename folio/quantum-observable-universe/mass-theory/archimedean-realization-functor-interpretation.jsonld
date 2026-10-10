@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-archimedean-realization-functor-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:archimedean-realization-functor-interpretation",
+  "kind": "remark",
+  "title": "Archimedean realization: functor vs. motivic measure and identification with $\\tau$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-archimedean-realization-functor",
+    "papers/quantum-observable-universe/blocks/def-algebraic-quantum-volume"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-archimedean-realization-functor",
+  "cites": [
+    "references/kashaev1997",
+    "references/murakami-murakami2001"
+  ],
+  "tags": [
+    "realization-functor",
+    "archimedean",
+    "motivic",
+    "fibre-functor"
+  ],
+  "text": "archimedean-realization-functor-interpretation.md",
+  "provenance": "authored"
+}

@@ -5,9 +5,9 @@ published headline's SIGN.
 
 Bean `qou-54g5`, blockers (A) sign convention and (B) no producer reaches N=5.
 
-# Ref: content/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md
-# Ref: content/quantum-observable-universe/stochastic-mechanics/q-beta-categorical-precision-ladder-table2-data.md
-# Ref: content/quantum-observable-universe/stochastic-mechanics/q-beta-categorical-precision-ladder-table3-data.md
+# Ref: folio/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md
+# Ref: folio/quantum-observable-universe/stochastic-mechanics/q-beta-categorical-precision-ladder-table2-data.md
+# Ref: folio/quantum-observable-universe/stochastic-mechanics/q-beta-categorical-precision-ladder-table3-data.md
 
 EVERYTHING HERE IS CONVENTION C (z = sqrt(q)/(q+1)), the frame the block was
 written in.  The D-frame ladder does not exist (bean `qou-cds1`); nothing here

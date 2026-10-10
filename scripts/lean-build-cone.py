@@ -36,7 +36,7 @@ each failure.
 """
 import os, re, subprocess, sys, time
 
-LEAN_ROOT = "/home/user/qou/content/quantum-observable-universe/lean"
+LEAN_ROOT = "/home/user/qou/folio/quantum-observable-universe/lean"
 OUT = os.path.join(LEAN_ROOT, ".lake/build/lib/lean")
 IMPORT_RE = re.compile(r"^\s*import\s+(QOU(?:\.[A-Za-z0-9_']+)*)\s*$", re.M)
 

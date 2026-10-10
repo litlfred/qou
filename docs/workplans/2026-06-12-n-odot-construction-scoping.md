@@ -1,8 +1,8 @@
 # Workplan: constructing N_⊙(A, d) — staged plan for the Casimir mode-count object
 
 **Date.** 2026-06-12
-**Blocks.** [`conj:casimir-epsilon-vacuum`](../../content/quantum-observable-universe/appendix-surreals/casimir-epsilon-vacuum.md),
-[`conj:casimir-first-q-correction`](../../content/quantum-observable-universe/appendix-surreals/casimir-first-q-correction.md)
+**Blocks.** [`conj:casimir-epsilon-vacuum`](../../folio/quantum-observable-universe/appendix-surreals/casimir-epsilon-vacuum.md),
+[`conj:casimir-first-q-correction`](../../folio/quantum-observable-universe/appendix-surreals/casimir-first-q-correction.md)
 **Builds on.**
 [`2026-05-31-casimir-n-unknot-construction.md`](../audits/2026-05-31-casimir-n-unknot-construction.md) (n-stability selection),
 [`2026-06-01-casimir-free-field-disjoint-grounding.md`](../audits/2026-06-01-casimir-free-field-disjoint-grounding.md) (identification grounded),
@@ -43,8 +43,8 @@ Identify cutoff index with birthday grading: the divergent tower is an
 ω-indexed surreal; the regulated value is a Conway-normal-form
 coefficient; prove the standard-part identity
 `st(ε · N_diff) = finite Casimir energy` against
-[`conj:archimedean-stpart`](../../content/quantum-observable-universe/appendix-surreals/archimedean-stpart.md)
-and [`def:standard-part-functor`](../../content/quantum-observable-universe/appendix-surreals/classical-limit-stpart.md).
+[`conj:archimedean-stpart`](../../folio/quantum-observable-universe/appendix-surreals/archimedean-stpart.md)
+and [`def:standard-part-functor`](../../folio/quantum-observable-universe/appendix-surreals/classical-limit-stpart.md).
 
 - **Deliverable:** narrative + Lean conditional (the st-arithmetic side
   is already class-axiomatised in `CasimirEpsilonVacuum.lean`; this

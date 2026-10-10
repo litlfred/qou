@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-shell-transition-knot",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:shell-transition-knot",
+  "kind": "conjecture",
+  "title": "Stability pairs from Borromean spin-orbit shell-transition knots",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-orbital-fourier-decomposition"
+  ],
+  "tags": [
+    "stability-pairs",
+    "nuclear-shell",
+    "harmonic-oscillator",
+    "spin-orbit",
+    "borromean",
+    "shell-transition",
+    "crossing-number"
+  ],
+  "leanRef": "qou:QOU.Conjectures.ShellTransitionKnot",
+  "text": "shell-transition-knot.md",
+  "leanSource": "shell-transition-knot.lean",
+  "provenance": "authored"
+}

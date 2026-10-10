@@ -12,7 +12,7 @@ allowed-tools: Bash AskUserQuestion run_command
 This command builds the Lean HTML documentation using `doc-gen4` locally in the workspace to save GitHub CI minutes.
 
 ## Behavior
-1. Navigate to the Lean directory: `cd content/quantum-observable-universe/lean`
+1. Navigate to the Lean directory: `cd folio/quantum-observable-universe/lean`
 2. Uncomment the `doc-gen4` dependencies in `lakefile.toml` (which are commented out by default to avoid slow builds).
    ```bash
    sed -i '' 's/# \[\[require\]\]/[[require]]/' lakefile.toml
@@ -30,4 +30,4 @@ This command builds the Lean HTML documentation using `doc-gen4` locally in the 
    ```bash
    git checkout lakefile.toml
    ```
-5. Confirm to the user that the documentation has been generated in `content/quantum-observable-universe/lean/.lake/build/doc`.
+5. Confirm to the user that the documentation has been generated in `folio/quantum-observable-universe/lean/.lake/build/doc`.

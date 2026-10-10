@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prose-pre-archimedean-derivation-chain",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "prose:pre-archimedean-derivation-chain",
+  "kind": "prose",
+  "title": "Pre-Archimedean Derivation Chain: Step-by-Step",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-chirality-writhe-ribbon-derivation",
+    "papers/quantum-observable-universe/blocks/prop-x5-bring-weight-identification",
+    "papers/quantum-observable-universe/blocks/conj-canonical-knot-id-sdp"
+  ],
+  "tags": [
+    "derivation-chain",
+    "pre-archimedean",
+    "stokes",
+    "yekutieli",
+    "gb-filtration",
+    "jet-order",
+    "hecke-energy",
+    "frobenius-pairing",
+    "knot-decomposition",
+    "bring-surface",
+    "audit",
+    "pipeline"
+  ],
+  "text": "pre-archimedean-derivation-chain.md",
+  "provenance": "authored"
+}

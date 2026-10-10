@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-mi-sw-abelianisation-cartan",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:mi-sw-abelianisation-cartan",
+  "kind": "proof",
+  "title": "Proof that the Cartan component recovers the SW differential",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-mi-sw-abelianisation-cartan"
+  ],
+  "text": "mi-sw-abelianisation-cartan-proof.md",
+  "provenance": "authored"
+}

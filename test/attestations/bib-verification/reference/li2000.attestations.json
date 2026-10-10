@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "li2000",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 406,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0005296v1/0005296v1.pdf"
+        },
+        "id": "li2000",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Identified from front matter as arXiv:math/0005296v1 (math.QA, 31 May 2000) by Bang-He Li and Tian-Jun Li, a three-page note exhibiting two lens spaces to show that Ohtsuki's tau for rational homology spheres does not determine the full family of Kirby-Melvin SO(3) invariants {tau'_r, r odd >= 3}. Same subject area as the rest of this cohort \u2014 perturbative versus root-of-unity quantum 3-manifold invariants \u2014 but scope-(a): this document, as read, supplies nothing this folio can use. The reason is precise rather than impressionistic. The counterexample is s(6,25) = s(11,25), giving tau(L(25,11)) = tau(L(25,6)) while xi_r differs exactly when (r,25) is not 1; every branch of its formula (1) that produces a discrepancy requires c = gcd(p,r) > 1, hence |H_1(M,Z)| > 1. The corpus's only 3-manifold is the INTEGRAL homology sphere Sigma(2,3,5) (|H_1| = 0), where the c = 1 branch applies and the determination theorem the paper itself cites \u2014 Rozansky's proof of Lawrence's conjecture, i.e. the sibling document library/arxiv-q-alg-9504015v2/9504015v2.pdf \u2014 holds. So the obstruction is vacuous here. Independently, a grep of content/**/*.md for 'lens space' returns nothing: the corpus has no lens-space content for this to bear on. Citation status checked all three ways: no ref() id among the 481 registered (no Li, no Kirby-Melvin, no Ohtsuki lambda_n entry), no cite{} in content/**/*.md, no '-- Ref:' in content/**/*.lean, and a grep for '0005296' across the tree returns only the ledger row. Recording no key results, per the skill's rule that an empty list is the honest outcome when no named place here wants them; the verdict is not that the technique is excluded, only that this document supplies nothing usable at present. Should the corpus ever acquire a rational-homology-sphere object with non-trivial H_1, this note becomes the sharp statement of where the perturbative series stops determining the root-of-unity data, and the verdict should be revisited.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Read in full and judged to need nothing: the counterexample requires |H_1| > 1, the corpus's only 3-manifold is an integral homology sphere where the determination theorem holds instead, and the corpus has no lens-space content. Adding a ref() entry for a source nothing can cite would create a bib orphan rather than close one.",
+              "target": "docs/coordination/s5-so3-keystone.md"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-09T00:10:43.091Z",
+          "source_sha": "1714653ecfdf"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

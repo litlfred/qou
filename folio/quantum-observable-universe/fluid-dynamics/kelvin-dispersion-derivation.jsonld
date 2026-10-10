@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-kelvin-dispersion-derivation",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:kelvin-dispersion-derivation",
+  "kind": "proposition",
+  "title": "Kelvin wave dispersion from the $q$-Laplacian eigenvalue problem",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-navier-stokes"
+  ],
+  "tags": [
+    "kelvin-wave",
+    "dispersion",
+    "q-laplacian",
+    "eigenvalue",
+    "derivation"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.kelvin_dispersion_derivation",
+  "text": "kelvin-dispersion-derivation.md",
+  "leanSource": "kelvin-dispersion-derivation.lean",
+  "provenance": "authored"
+}

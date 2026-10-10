@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "fischer2018",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 204,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/1-s20-s009731651830061x-main/1-s2.0-S009731651830061X-main.pdf"
+        },
+        "id": "fischer2018",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "not-relevant",
+          "rationale": "Enumerative combinatorics of Gog and Magog trapezoids -- generalisations of alternating sign matrices and totally symmetric self-complementary plane partitions -- via constant-term formulas, an operator formula for monotone triangles, and Lindstrom--Gessel--Viennot lattice paths. A corpus grep over content/, computations/, docs/audits/ and docs/coordination/ returns ZERO occurrences of alternating sign matrices, plane partitions, monotone triangles, Gog/Magog, or TSSCPP. The document's two apparent bridges do not survive inspection: the two 'six-vertex' mentions are references to an alternative approach used by other authors and to the author's own earlier paper avoiding the six-vertex model, and the two 'Hecke' hits are substring false positives ('checked', 'coefficient') -- there is no Hecke algebra, no Schur function, and no Yang--Baxter equation in the text. The partitions in this document index ASM enumerations; the partitions in this corpus index Wedderburn blocks of H_n(q) and their Frobenius characters. Those are different uses of the same word. Scope note (a): this document, as read, supplies nothing usable here. It is not a claim that ASM/six-vertex methods are excluded from the framework -- the six-vertex model does connect to Temperley--Lieb and Hecke quotients in other work; this particular document simply does not carry that connection.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Read in full front matter plus the six-vertex and Hecke contexts; no result here has a consumer in this corpus, and no block asserts anything this document would source or contradict.",
+              "target": "rem:dictionary-flavor-layer"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "8d591fe7f167"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

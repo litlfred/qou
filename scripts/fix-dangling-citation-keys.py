@@ -8,7 +8,7 @@ checked. A `\\cite{}` in a `.md` is validated by the content pipeline, while
 a `cites: [...]` in a `.ts` manifest and a Lean `-- Ref: [key]` are not — so
 68 keys across those two paths resolve to no entry (bean qou-ghy5). AGENTS.md
 §1 is explicit that a `-- Ref:` key "must match an entry in
-content/schema/references.ts exactly", and a `sorry` carrying one that does
+folio/schema/references.ts exactly", and a `sorry` carrying one that does
 not reads as cited when it is not.
 
 ## This only ever applies a mapping a reader wrote down
@@ -166,10 +166,10 @@ def main() -> int:
     # Every target must exist before anything is rewritten: a bibliography
     # id in references.ts, or — for a block-label target — a `label:` in the
     # content tree.
-    refs = open(os.path.join(REPO, "content", "schema", "references.ts"),
+    refs = open(os.path.join(REPO, "folio", "schema", "references.ts"),
                 encoding="utf-8").read()
     labels: set[str] = set()
-    for f in glob.glob(os.path.join(REPO, "content", "**", "*.ts"), recursive=True):
+    for f in glob.glob(os.path.join(REPO, "folio", "**", "*.ts"), recursive=True):
         labels.update(re.findall(r'label:\s*"([^"]+)"',
                                  open(f, encoding="utf-8", errors="replace").read()))
     missing = [new for _, (new, _) in MAPPING.items()
@@ -179,8 +179,8 @@ def main() -> int:
         sys.exit(f"targets resolve to neither an entry nor a block label: {missing}")
 
     total, files = 0, 0
-    for path in sorted(glob.glob(os.path.join(REPO, "content", "**", "*.lean"), recursive=True)
-                       + glob.glob(os.path.join(REPO, "content", "**", "*.ts"), recursive=True)):
+    for path in sorted(glob.glob(os.path.join(REPO, "folio", "**", "*.lean"), recursive=True)
+                       + glob.glob(os.path.join(REPO, "folio", "**", "*.ts"), recursive=True)):
         text = open(path, encoding="utf-8").read()
         orig, hits = text, []
         for old, (new, why) in MAPPING.items():

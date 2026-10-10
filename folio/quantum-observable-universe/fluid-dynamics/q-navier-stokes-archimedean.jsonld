@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-navier-stokes-archimedean",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-navier-stokes-archimedean",
+  "kind": "remark",
+  "title": "Archimedean realisation of the $q$-Navier--Stokes system under the fibre functor",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-navier-stokes",
+    "papers/quantum-observable-universe/blocks/prop-categorical-archimedean-bridge",
+    "papers/quantum-observable-universe/blocks/ex-c-quantum-observable-universe"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-navier-stokes",
+  "tags": [
+    "navier-stokes",
+    "q-deformation",
+    "archimedean",
+    "fluid-dynamics"
+  ],
+  "text": "q-navier-stokes-archimedean.md",
+  "provenance": "authored"
+}

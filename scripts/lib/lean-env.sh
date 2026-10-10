@@ -32,7 +32,7 @@ fi
 export REPO_ROOT
 
 # ── LEAN_DIR: the QOU Lake package root ───────────────────────────────
-LEAN_DIR="$REPO_ROOT/content/quantum-observable-universe/lean"
+LEAN_DIR="$REPO_ROOT/folio/quantum-observable-universe/lean"
 export LEAN_DIR
 
 # ── PATH: elan binaries + the /usr/local/bin symlink dir ──────────────
@@ -62,7 +62,9 @@ lean_leanpath() {
   # doing `import UGB.GrobnerShirshov.HeckeGS`) raises `unknown module
   # prefix 'UGB'` even though the olean is built in-tree. Additive: a
   # missing dir contributes nothing, distinct module roots so no clash.
-  papers=$(find "$REPO_ROOT/content" -maxdepth 6 -type d \
+  # Papers live under folio/ since the 2026-09-27 move (bean qou-yqko); this
+  # searched content/, which no longer exists, so no sibling dir was added.
+  papers=$(find "$REPO_ROOT/folio" -maxdepth 6 -type d \
          -path '*/lean/.lake/build/lib/lean' 2>/dev/null | tr '\n' ':')
   full="${lp}${papers}${REPO_ROOT}/.lake/build/lib/lean:${LEAN_DIR}/.lake/build/lib/lean"
   # Strip leading/trailing/duplicate colons: an empty LEAN_PATH segment

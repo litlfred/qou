@@ -1,0 +1,150 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "garoufalidis2013",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 240,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1304.2705v1/1304.2705v1.pdf"
+        },
+        "id": "garoufalidis2013",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "This is the paper that writes the 4_1 state integral as an explicit BILINEAR combination of a q-series and a q-tilde-series, and identifies the resulting power series as Kontsevich-Soibelman admissible with the Nahm/gluing equation as its q -> 1 limit. Both are objects the folio already reasons about without this anchor: conj:modular-s-transform-q-q-tilde (D14) conjectures that every Hecke quantity continues to the modular parameter and pairs q with q-tilde, citing only kashaev1997 / neumann-zagier1985 / kashaev-tirkkonen2014; and conj:stokes-dt-bps-bridge + thm:aomega-fourone-dt-count run the 4_1 resurgent-Stokes/DT route on the Garoufalidis-Gu-Marino q-series whose origin is exactly the factorisation proved here. The sibling garoufalidis-kashaev2015 ('Evaluation of state integrals at rational points') is already registered; this earlier companion, which supplies the factorisation itself, is not. Corpus-grep: no ref() entry, no title match, no Lean -- Ref:.",
+          "keyResults": [
+            {
+              "locator": "Cor. 1.7(a), eq. (14)-(15)",
+              "statement": "The Andersen-Kashaev state integral of the figure-eight knot factorises as I_{4_1}(b) = -(i/2)(q/q~)^{1/24}( b\u00b7G(q)g(q~) - b^{-1}\u00b7G(q~)g(q) ), an explicit bilinear pairing of two q-hypergeometric series evaluated at q and at the modular partner q~.",
+              "useForFolio": "A proved, explicit instance of the q <-> q~ pairing that conj:modular-s-transform-q-q-tilde asserts abstractly (its Open R&D item 1 asks precisely for framework quantities with well-defined modular continuation). It is also the source of the two 4_1 q-series whose Stokes matrix supplies the certified S^+(0)_{01} = 3 datum feeding A_omega(4_1).",
+              "targets": [
+                "conj:modular-s-transform-q-q-tilde",
+                "thm:aomega-fourone-dt-count"
+              ]
+            },
+            {
+              "locator": "Lemma 1.5(a), eq. (10)",
+              "statement": "F_{A,B}(q^{-1}, x) = F~_{A,B}(q, x) \u2014 inverting q exchanges the series with its modular partner.",
+              "useForFolio": "Directly relevant to the folio's bar-vs-S-transform bookkeeping: the D14 block argues that only q_0^{-1} ~ 0.901 lands in the upper half-plane, so the modular sector is intrinsically bar-symmetric. This lemma is the literature statement of that bar/modular exchange at the level of the q-series themselves.",
+              "targets": [
+                "conj:modular-s-transform-q-q-tilde"
+              ]
+            },
+            {
+              "locator": "Cor. 1.6(b), eq. (12)",
+              "statement": "F is an admissible power series in the sense of Kontsevich-Soibelman [KS11, \u00a76]; the limit omega(x) = lim_{q->1} omega(q,x) exists and satisfies the Nahm/gluing equation (1 - omega)^B = (-1)^A x\u00b7omega^A.",
+              "useForFolio": "Bridges the 4_1 q-series to the Kontsevich-Soibelman wall-crossing framework that conj:stokes-dt-bps-bridge invokes when it identifies the Stokes constant with Omega_DT \u2014 a named, published link between the knot's q-series and the DT machinery, rather than an asserted one.",
+              "targets": [
+                "conj:stokes-dt-bps-bridge"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Orphan; three distinct downstream uses. The companion garoufalidis-kashaev2015 is already registered, so the key should follow that naming.",
+              "target": "folio/schema/references.ts (new id, e.g. garoufalidis-kashaev2013)",
+              "bean": "qou-5mkt"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "conj:modular-s-transform-q-q-tilde asserts modular continuation and a q<->q~ duality with no explicit factorisation anchor in its cites[] (kashaev1997, neumann-zagier1985, kashaev-tirkkonen2014). Cor. 1.7 is a proved instance.",
+              "target": "conj:modular-s-transform-q-q-tilde",
+              "bean": "qou-kmtw"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "conj:stokes-dt-bps-bridge invokes Kontsevich-Soibelman DT data for the knot's q-difference structure; Cor. 1.6(b) is the published statement that these knot q-series are KS-admissible.",
+              "target": "conj:stokes-dt-bps-bridge",
+              "bean": "qou-iakc"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T00:00:00Z",
+          "source_sha": "cb07e66e418e"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    },
+    {
+      "position": 401,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/stateintegralsqseries/state.integrals.qseries.pdf"
+        },
+        "id": "garoufalidis2013",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Garoufalidis-Kashaev, 'From state integrals to q-series': a detailed proof, for a family of one-dimensional state integrals I_{A,B}(b) = int Phi_b(x)^B exp(-A pi i x^2) dx, that such integrals equal finite sums of products of a q-series and a q-tilde-series, with q = exp(2 pi i b^2) and q-tilde = exp(-2 pi i / b^2); the mechanism is the factorized structure of Faddeev's quantum dilogarithm Phi_b = (e^{2 pi b(x+c_b)}; q)_infty / (e^{2 pi b^{-1}(x-c_b)}; q-tilde)_infty together with its pole structure and the residue theorem, and the worked applications are the state-integral invariants of the 4_1 and 5_2 knots. That factorization IS the object the corpus's live c_3 bar-odd front is built on: docs/audits/2026-07-25-5two-gk-bridge-attack.md (beans qou-reat, o3cv, jtii, exes) works entirely with 'the GK bilinear block pairing Z = sum M_{sigma sigma'} B_sigma(q) B-tilde_{sigma'}(q-tilde)' and its state-integral dressing, and the corpus's registered sources for it are GK 1411.6062 (evaluation at rational points) and GGM (peacock patterns) -- the theorem that produces the bilinear q / q-tilde block form in the first place has no ref() entry, and both of its worked knots are exactly the corpus's two.",
+          "keyResults": [
+            {
+              "locator": "Thm. 1.1",
+              "statement": "The one-dimensional state integral I_{A,B}(b) equals a finite sum of products of a q-series and a q-tilde-series, obtained by residues from the factorized form of Phi_b, with generating series F_{A,B}(q,x).",
+              "useForFolio": "The theorem that licenses the bilinear block form Z = sum M B_sigma(q) B-tilde_{sigma'}(q-tilde) on which the 5_2 GK-bridge attack's 440 pre-registered entry comparisons and its block-row-selection successor are built; currently used with no citation for the factorization itself.",
+              "targets": [
+                "conj:stokes-dt-bps-bridge"
+              ]
+            },
+            {
+              "locator": "Cor. 1.7 and Cor. 1.8",
+              "statement": "Explicit q / q-tilde factorizations of the state-integral invariants of the 4_1 and 5_2 knots.",
+              "useForFolio": "The 4_1 and 5_2 block series the corpus's bilinear-bridge probes construct and compare against the Habiro-face targets; the corpus's gate for the 4_1 case currently cites the b=1 closed form of GK 1411.6062 instead.",
+              "targets": [
+                "conj:stokes-dt-bps-bridge"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The factorization theorem underlying the corpus's entire GK bilinear-block programme (4_1 and 5_2 both worked) has no bibliography entry, while the downstream GK and GGM papers do.",
+              "target": "conj:stokes-dt-bps-bridge",
+              "bean": "qou-rcr0"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "The block asserting the Stokes/DT state-integral bridge should cite the theorem that produces the q / q-tilde bilinear block structure it uses.",
+              "target": "conj:stokes-dt-bps-bridge",
+              "bean": "qou-9g1w"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record the scope honestly: Thm 1.1 is proved for the ONE-dimensional family I_{A,B}; the general multi-dimensional statement is described as well known to experts but not proved here. Any corpus use beyond 4_1 / 5_2 should say which case it is relying on.",
+              "target": "conj:stokes-dt-bps-bridge",
+              "bean": "qou-au0u"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "a5e86443f35e"
+        },
+        "note": "Bib key backfilled from duplicate copy of arxiv-1304.2705v1, which carries this key. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

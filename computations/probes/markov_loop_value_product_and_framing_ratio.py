@@ -9,7 +9,7 @@ in the corpus's own vocabulary it is not an obstruction at all but a statement
 about crossing loop values.
 
 THE CORPUS ALREADY NAMES BOTH SIDES.  `prop:markov-z-reconciliation`
-(content/quantum-observable-universe/mass-endomorphism/markov-z-reconciliation.md)
+(folio/quantum-observable-universe/mass-endomorphism/markov-z-reconciliation.md)
 defines the NEGATIVE-crossing loop value
 
     z_-  =  z  -  (q - 1/q)  =  z - hbar
@@ -98,7 +98,7 @@ def main() -> int:
     print()
 
     # ---- 0. the corpus's own definitions, read from the block ---------------
-    blk = (Path(__file__).resolve().parents[2] / "content"
+    blk = (Path(__file__).resolve().parents[2] / "folio"
            / "quantum-observable-universe" / "mass-endomorphism"
            / "markov-z-reconciliation.md")
     txt = blk.read_text() if blk.exists() else ""

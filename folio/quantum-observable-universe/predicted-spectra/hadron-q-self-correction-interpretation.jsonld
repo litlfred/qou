@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-hadron-q-self-correction-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hadron-q-self-correction-interpretation",
+  "kind": "remark",
+  "title": "Novelty of substrate self-deformation by linking density",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hadron-q-self-correction"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-hadron-q-self-correction",
+  "text": "hadron-q-self-correction-interpretation.md",
+  "provenance": "authored"
+}

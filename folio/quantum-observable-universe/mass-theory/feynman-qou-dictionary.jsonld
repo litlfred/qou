@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-feynman-qou-dictionary",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:feynman-qou-dictionary",
+  "kind": "remark",
+  "title": "Dictionary: Feynman path integral $\\leftrightarrow$ QOU categorical trace",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-transfer-matrix",
+    "papers/quantum-observable-universe/blocks/prop-feynman-classical-limit",
+    "papers/quantum-observable-universe/blocks/prop-photon-threading-mass"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-feynman-categorical-trace",
+  "cites": [
+    "references/yekutieli2015"
+  ],
+  "tags": [
+    "path-integral",
+    "feynman",
+    "dictionary",
+    "categorical-trace"
+  ],
+  "leanRef": "qou:QOU.FeynmanPathIntegrals.FeynmanQOUDictionary",
+  "text": "feynman-qou-dictionary.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-torsion-existence",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-torsion-existence",
+  "kind": "remark",
+  "title": "$q$-Torsion leaves: existence and Frobenius obstruction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-q-torsion-leaf"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-q-connection",
+  "tags": [
+    "torsion-leaf",
+    "frobenius"
+  ],
+  "text": "q-torsion-existence.md",
+  "provenance": "authored"
+}

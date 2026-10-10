@@ -9,7 +9,7 @@
 > [`q_pinning_50_digit.py`](q_pinning_50_digit.py) per
 > [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../docs/audits/2026-05-24-superseded-rho-q-purge.md)).
 > The categorical replacement target is
-> [`prop:rho-k-graded-expansion`](../../content/quantum-observable-universe/braids-and-knots/rho-k-graded-expansion.md);
+> [`prop:rho-k-graded-expansion`](../../folio/quantum-observable-universe/braids-and-knots/rho-k-graded-expansion.md);
 > this probe's candidates are direct competitors.
 
 Goal: find a PURELY categorical formula for ρ_F(Z,N) that improves on

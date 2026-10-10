@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-algebraic-gns-embedding-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:algebraic-gns-embedding-interpretation",
+  "kind": "remark",
+  "title": "The GNS image as a type II$_1$ subfactor",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-algebraic-gns-embedding"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-algebraic-gns-embedding",
+  "tags": [
+    "von-neumann-algebra",
+    "subfactor",
+    "markov-trace",
+    "gns",
+    "interpretation"
+  ],
+  "text": "algebraic-gns-embedding-interpretation.md",
+  "provenance": "authored"
+}

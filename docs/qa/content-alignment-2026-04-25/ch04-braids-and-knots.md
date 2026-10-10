@@ -3,7 +3,7 @@
 
 **Report date:** 2026-04-25  
 **Reviewer:** Claude Code (Haiku 4.5)  
-**Chapter location:** `/home/user/qou/content/quantum-observable-universe/braids-and-knots/`  
+**Chapter location:** `/home/user/qou/folio/quantum-observable-universe/braids-and-knots/`  
 **Manifest:** `braids-and-knots.ts`
 
 ---

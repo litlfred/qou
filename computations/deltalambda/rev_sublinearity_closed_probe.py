@@ -34,7 +34,7 @@ On the hook shape that refuted L2, L2' gives `111 <= 131`.  It is tight only at 
 ### 🟩 FORMALIZED, and the Lean bound is STRONGER than L2'
 
 `QOU.BraidKnot.HookSum.sq_min_le_sum_hookZ`
-(`content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumThicknessBound.lean`) proves
+(`folio/quantum-observable-universe/lean/QOU/BraidKnot/HookSumThicknessBound.lean`) proves
 `min(rowLen 0, colLen 0)^2 <= sum_c hookZ`, i.e. **`H >= r^2`**, for EVERY Young diagram --
 sorry-free (`lean`-direct exit 0 with `-DautoImplicit=false -s 65536`; axioms exactly
 `[propext, Classical.choice, Quot.sound]`).
@@ -101,7 +101,7 @@ need scoping:
 
   * `S_n` is a RESCALING of the corpus's own `S^bal(n;q)`, stated as
     `prop:binding-period-involution-statistic`
-    (`content/quantum-observable-universe/mass-theory/binding-period-involution-statistic.md:8-11`):
+    (`folio/quantum-observable-universe/mass-theory/binding-period-involution-statistic.md:8-11`):
     with `[k] = (q^k - q^{-k})/(q - q^{-1})` and `dim_q^bal(lambda) = prod_k [k] / prod_c [h(c)]`,
         S_n  =  S^bal(n; q) / ( (q - q^{-1})^n * [n]_q! )
     verified here to 1e-38 for n = 1..9.  Since `Z_n = S^bal * q^{n(n-1)/2}`, the sinh sum is `Z_n`

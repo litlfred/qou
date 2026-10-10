@@ -161,7 +161,7 @@ def markov_trace_borromean_via_jones(q):
     """Markov trace of β_Bor via its Jones polynomial.
 
     Convention matches the Lean-proved
-    [`QOU.BraidsAndKnots.trM_borromean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanMarkovTrace.lean):
+    [`QOU.BraidsAndKnots.trM_borromean`](../../folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanMarkovTrace.lean):
     normalize by `[2]_q² = (q + q⁻¹)² = q² + 2 + q⁻²`, which is the
     Kauffman–Jones standard `(t^{1/2} + t^{-1/2})^(n-1)` for n=3
     strands at t = q².

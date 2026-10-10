@@ -29,7 +29,7 @@ Registry format (one entry per line, `#` comments allowed):
 
     <import-module> | <fully-qualified-decl> | clean|sorryAx
 
-The Lean root is `content/quantum-observable-universe/lean`; `LEAN_PATH` must
+The Lean root is `folio/quantum-observable-universe/lean`; `LEAN_PATH` must
 already be set for lean-direct use (see `.claude/skills/local/lean-environment-setup.md`
 — restore the olean cache first, and note that a declaration's own module olean
 must exist).
@@ -129,7 +129,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-LEAN_ROOT = Path("content/quantum-observable-universe/lean")
+LEAN_ROOT = Path("folio/quantum-observable-universe/lean")
 
 # Measured 2026-08-07 by `#print axioms`. Keep sorted by module for readability.
 DEFAULT_REGISTRY = """

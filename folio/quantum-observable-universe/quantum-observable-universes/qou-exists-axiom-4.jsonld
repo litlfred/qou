@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-qou-exists-axiom-4",
+  "@type": [
+    "folio-assistant-core:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:qou-exists-axiom-4",
+  "kind": "lemma",
+  "title": "Axiom 4 — categorical volume constraint via the quantum determinant",
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-qou-exists-axiom-4"
+  ],
+  "cites": [
+    "references/kassel1995"
+  ],
+  "tags": [
+    "volume-constraint",
+    "quantum-determinant",
+    "exterior-power",
+    "ribbon"
+  ],
+  "leanRef": "qou:QOU.QuantumObservableUniverse.exists_axiom_4_volume",
+  "text": "qou-exists-axiom-4.md",
+  "leanSource": "qou-exists-axiom-4.lean",
+  "provenance": "authored"
+}

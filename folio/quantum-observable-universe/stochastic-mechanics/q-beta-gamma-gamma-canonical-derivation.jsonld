@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-beta-gamma-gamma-canonical-derivation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-beta-gamma-gamma-canonical-derivation",
+  "kind": "remark",
+  "title": "The categorical-chain reading of the $\\mathfrak{Q}_\\beta$ precision ladder, traced through cat-action → Frobenius → Wedderburn → Wenzl bridge on canonical typed-$B_3$ braids; the $c_3 = -2$ Hopf-Jones identification is empirically observable at 112× residual reduction vs CODATA $\\mathfrak{Q}_\\beta$ floor",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-kashiwara-jones-alternation-interpretation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-q-beta-categorical-precision-ladder",
+  "cites": [
+    "references/wenzl1988",
+    "references/jones1985",
+    "references/hoefsmit1974"
+  ],
+  "tags": [
+    "gamma-gamma",
+    "categorical-derivation",
+    "story-A-vs-B",
+    "wenzl-bridge",
+    "story-B-canonical",
+    "1ppb-roadmap"
+  ],
+  "text": "q-beta-gamma-gamma-canonical-derivation.md",
+  "provenance": "authored"
+}

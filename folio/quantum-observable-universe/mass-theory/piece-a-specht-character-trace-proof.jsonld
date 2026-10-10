@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-piece-a-specht-character-trace",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:piece-a-specht-character-trace",
+  "kind": "proof",
+  "title": "Proof of the $C_2$ traces on $S^\\mu$ and on the regular representation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-piece-a-specht-character-trace"
+  ],
+  "cites": [
+    "references/serre1977",
+    "references/sagan2001"
+  ],
+  "text": "piece-a-specht-character-trace-proof.md",
+  "provenance": "authored"
+}

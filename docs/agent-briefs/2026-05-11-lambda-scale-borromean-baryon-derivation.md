@@ -9,11 +9,11 @@ interpretation but left $\lambda_{\text{scale}}$ undefined.
 
 ## Background — read these blocks first
 
-1. [`topological-mass-trefoil.md`](../../content/quantum-observable-universe/braids-and-knots/topological-mass-trefoil.md)
+1. [`topological-mass-trefoil.md`](../../folio/quantum-observable-universe/braids-and-knots/topological-mass-trefoil.md)
    — the canonical mass formula $\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^2$
    for single-knot leptons. Confirmed: $\mathrm{Vol}(4_1)/\hbar_q^2 =
    :val[m_mu_over_e]{precision=6} = m_\mu/m_e$ (CAL-2 anchor, exact).
-2. [`borromean-baryon-interpretation.md`](../../content/quantum-observable-universe/braids-and-knots/borromean-baryon-interpretation.md)
+2. [`borromean-baryon-interpretation.md`](../../folio/quantum-observable-universe/braids-and-knots/borromean-baryon-interpretation.md)
    (introduced by PR #487) — the multi-component formula:
    $$
      \mathfrak{m}(B) \;=\; m_e \cdot \biggl[\,
@@ -21,7 +21,7 @@ interpretation but left $\lambda_{\text{scale}}$ undefined.
        \;+\; S(B)
      \,\biggr]
    $$
-3. [`skein-mass-from-linking.md`](../../content/quantum-observable-universe/braids-and-knots/skein-mass-from-linking.md)
+3. [`skein-mass-from-linking.md`](../../folio/quantum-observable-universe/braids-and-knots/skein-mass-from-linking.md)
    — the Skein-polynomial weighting for hadron mass:
    $\mathcal{M}(H) = Q(q) \cdot \mathcal{M}(\mathcal{L}_{\text{Hopf}})
    + \sum_i \mathrm{Vol}(K_i)/\hbar_q^2$.
@@ -194,7 +194,7 @@ Skein polynomial $Q(q_0)$ or a graded-Hecke-energy ratio. Start there.
   closure (this brief) and $Q_\beta$ residual closure (separate).
 - Heavier-atom binding (D, T, ³He, ⁴He) closure — the Vol-form here
   is for A=1 single-nucleon mass; composite binding lives in the
-  ρ_K + Δ_λ pipeline ([`recomputed-low-isotope-mass-table.md`](../../content/quantum-observable-universe/braids-and-knots/recomputed-low-isotope-mass-table.md)).
+  ρ_K + Δ_λ pipeline ([`recomputed-low-isotope-mass-table.md`](../../folio/quantum-observable-universe/braids-and-knots/recomputed-low-isotope-mass-table.md)).
 
 ## Cross-references
 
@@ -263,10 +263,10 @@ the $\tau_M$ formalism.
 (b) Compute $J_{\mathcal{B}_3}(q_0; \text{orientation} = (2, 1))$ vs $J_{\mathcal{B}_3}(q_0; (1, 2))$ at 50 dps.
 
 (c) Test whether $\lambda_{\text{scale}} = m_e \cdot |\tau_M(p_{\text{free}})| \cdot \rho_p / (\mathrm{Vol}(\mathcal{B}_3) / \hbar_q^2)$ with $\rho_p$ from
-[`rho-k-graded-expansion.md`](../../content/quantum-observable-universe/braids-and-knots/rho-k-graded-expansion.md).
+[`rho-k-graded-expansion.md`](../../folio/quantum-observable-universe/braids-and-knots/rho-k-graded-expansion.md).
 
 Until (a)–(c) close, the
-[`conj:borromean-baryon-mass-formula`](../../content/quantum-observable-universe/braids-and-knots/borromean-baryon-mass-formula.md)
+[`conj:borromean-baryon-mass-formula`](../../folio/quantum-observable-universe/braids-and-knots/borromean-baryon-mass-formula.md)
 should be read as: *the Vol-based mass formula for the
 Borromean baryon ansatz, with $\lambda_{\text{scale}}$ as the
 representation-translation factor to the canonical $\tau_M$-based

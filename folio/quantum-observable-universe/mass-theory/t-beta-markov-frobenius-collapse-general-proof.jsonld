@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-t-beta-markov-frobenius-collapse-general",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:t-beta-markov-frobenius-collapse-general",
+  "kind": "proof",
+  "title": "Proof of t beta markov frobenius collapse general",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-t-beta-markov-frobenius-collapse-general"
+  ],
+  "text": "t-beta-markov-frobenius-collapse-general-proof.md",
+  "provenance": "authored"
+}

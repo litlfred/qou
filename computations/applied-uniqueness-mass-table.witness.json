@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-13T17:19:46.414284+00:00",
-  "commitSha": "052b4177db43d8670f134b985c815d77f3e2e27c",
+  "computedAt": "2026-09-19T06:07:32.968950+00:00",
+  "commitSha": "665c91e403afeebcd6771573d0030f1bbfbf6af1",
   "assertions": [
     {
       "name": "all_predictions_finite",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 18,
   "computation": "applied-uniqueness-mass-table",
   "scriptFile": "applied_uniqueness_mass_table.py",
   "scriptHash": "cd4332d0e08c",
-  "scriptCommitSha": "da247d4b3d1ec5e631ba2042a952731ad40f3311",
+  "scriptCommitSha": "4cbb6d128ea4eb5ccf1e0dbc47a1fc2dbbb00bdd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,7 +43,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e87a23f8d6fd6732"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -69,37 +69,37 @@
   "data": {
     "canonical_tr_M_q0_source": "derivation_chain.TR_M_AT_Q0",
     "canonical_tr_M_q0_values": {
-      "proton": "0.629328402202922",
-      "neutron": "0.4751335171556822",
-      "deuteron": "0.1519683392042316"
+      "proton": "0.629328402202921918165345746778485927600219400634359762811677",
+      "neutron": "0.475133517155682212506090232675005799558407634708751231268857",
+      "deuteron": "0.151968339204231607592665697751066141271240964655261151310301"
     },
     "sources": {
       "proton": {
         "path": "qou/computations/markov-trace-assembly-proton.derivation.json",
         "target": "tr_M(p, q_0)  [canonical Wenzl-bridge, canonical 11-letter element]",
-        "target_value": 0.629328402202922,
+        "target_value": "0.629328402202921918165345746778485927600219400634359762811677",
         "canonical_source": "canonical_trm_reference.tr_m_nucleon",
         "reference_value": "0.629328402202921918165345746778485927600219400634359762811677",
         "agrees_with_reference": true,
-        "rel_vs_reference": "0.0000000000000001300348974665131723231217994042302585975765447938766143202375447334065"
+        "rel_vs_reference": "0.0"
       },
       "neutron": {
         "path": "qou/computations/markov-trace-assembly-neutron.derivation.json",
         "target": "tr_M(n, q_0)  [canonical Wenzl-bridge]",
-        "target_value": 0.4751335171556822,
+        "target_value": "0.475133517155682212506090232675005799558407634708751231268857",
         "canonical_source": "canonical_trm_reference.tr_m_nucleon",
         "reference_value": "0.475133517155682212506090232675005799558407634708751231268857",
         "agrees_with_reference": true,
-        "rel_vs_reference": "0.00000000000000002632121241949189034847467877440407823415298547143909656067731023419131"
+        "rel_vs_reference": "0.0"
       },
       "deuteron": {
         "path": "qou/computations/markov-trace-assembly-deuteron.derivation.json",
         "target": "tr_M(D, q_0)",
-        "target_value": 0.1519683392042316,
+        "target_value": "0.151968339204231607592665697751066141271240964655261151310301",
         "canonical_source": "canonical_trm_reference.tr_m_nucleon",
         "reference_value": "0.151968339204231607592665697751066141271240964655261151310301",
         "agrees_with_reference": true,
-        "rel_vs_reference": "0.00000000000000004996215486402871676183112241953405995946758018532325201976586266543953"
+        "rel_vs_reference": "0.0"
       }
     },
     "rows": [
@@ -108,8 +108,8 @@
         "Z": 1,
         "N": 0,
         "rho": 1,
-        "tr_M_q0": "0.629328402202922000000000000000000000000000000000000000000000",
-        "m_K_predicted_MeV": "0.130862871265955488595723412461758189038860075091037924098297",
+        "tr_M_q0": "0.629328402202921918165345746778485927600219400634359762811677",
+        "m_K_predicted_MeV": "0.130862871265955471578983365219725622086141718303584320824231",
         "m_K_reference_MeV": "938.272089430000000000000000000000000000000000000000000000000",
         "reference_label": "CODATA m_p",
         "err_ppb": -999860527.8013273,
@@ -121,8 +121,8 @@
         "Z": 0,
         "N": 1,
         "rho": 1,
-        "tr_M_q0": "0.475133517155682200000000000000000000000000000000000000000000",
-        "m_K_predicted_MeV": "0.0987995076529790874859996693713815619225125621742310494005345",
+        "tr_M_q0": "0.475133517155682212506090232675005799558407634708751231268857",
+        "m_K_predicted_MeV": "0.0987995076529790900865224972466588545037588782897067606191811",
         "m_K_reference_MeV": "939.565421940000000000000000000000000000000000000000000000000",
         "reference_label": "CODATA m_n",
         "err_ppb": -999894845.5260848,
@@ -134,8 +134,8 @@
         "Z": 1,
         "N": 1,
         "rho": 1,
-        "tr_M_q0": "0.151968339204231600000000000000000000000000000000000000000000",
-        "m_K_predicted_MeV": "0.0316003745265131148957687597882042679819595991443493704668670",
+        "tr_M_q0": "0.151968339204231607592665697751066141271240964655261151310301",
+        "m_K_predicted_MeV": "0.0316003745265131164745915656431607276418252680199914716522382",
         "m_K_reference_MeV": "1875.61294517000000000000000000000000000000000000000000000000",
         "reference_label": "AME m_D",
         "err_ppb": -999983151.9746076,
@@ -166,7 +166,7 @@
       },
       {
         "atom": "deuteron-binding",
-        "B_predicted_MeV": "0.198062004392421461185954322044935482979413038120919603031965",
+        "B_predicted_MeV": "0.198062004392421445190914296823223748948075328573299609791174",
         "B_AME_MeV": "2.22456620000000000000000000000000000000000000000000000000000",
         "err_ppb": -910966010.1855267,
         "formula": "m_p_pred + m_n_pred - m_D_pred",

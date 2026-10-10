@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-gauge-conformal-invariance",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:gauge-conformal-invariance",
+  "kind": "proof",
+  "title": "Proof of gauge conformal invariance",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-gauge-conformal-invariance"
+  ],
+  "text": "gauge-conformal-invariance-proof.md",
+  "provenance": "authored"
+}

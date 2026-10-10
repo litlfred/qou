@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-q-aubin-lions",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:q-aubin-lions",
+  "kind": "conjecture",
+  "title": "q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\to 1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-quantum-peter-weyl",
+    "papers/quantum-observable-universe/blocks/conj-ns-counterexample"
+  ],
+  "tags": [
+    "aubin-lions",
+    "compactness",
+    "convergence",
+    "weak-limit",
+    "counter-example",
+    "millennium-problem"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.QAubinLions",
+  "text": "q-aubin-lions.md",
+  "leanSource": "q-aubin-lions.lean",
+  "provenance": "authored"
+}

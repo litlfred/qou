@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/alg-categorical-action",
+  "@type": [
+    "folio-assistant-core:Algorithm",
+    "doco:Section"
+  ],
+  "label": "alg:categorical-action",
+  "kind": "algorithm",
+  "title": "Categorical action $\\rho_n\\colon B_n \\to \\mathrm{Aut}_{\\mathbf{C}}(V^{\\otimes n})$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-action",
+    "papers/quantum-observable-universe/blocks/prop-categorical-action-exists",
+    "papers/quantum-observable-universe/blocks/prop-categorical-action-unique"
+  ],
+  "tags": [
+    "mba",
+    "step-1",
+    "categorical-action",
+    "braid-group",
+    "canonical-chain"
+  ],
+  "text": "mba-step01-categorical-action.md",
+  "provenance": "authored"
+}

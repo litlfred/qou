@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-global-gluing-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:global-gluing-interpretation",
+  "kind": "remark",
+  "title": "Global vacuum state and archimedean realisation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-vacuum-state"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-global-gluing",
+  "tags": [
+    "yekutieli",
+    "twisted-quantization",
+    "global-gluing"
+  ],
+  "text": "global-gluing-interpretation.md",
+  "provenance": "authored"
+}

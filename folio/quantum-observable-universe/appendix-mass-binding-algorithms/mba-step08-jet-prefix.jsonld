@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/alg-jet-prefix-transport",
+  "@type": [
+    "folio-assistant-core:Algorithm",
+    "doco:Section"
+  ],
+  "label": "alg:jet-prefix-transport",
+  "kind": "algorithm",
+  "title": "Jet-prefix transport in the $q \\to 1$ limit",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-jet-prefix-gb-filtration",
+    "papers/quantum-observable-universe/blocks/prop-gb-spectral-sequence"
+  ],
+  "tags": [
+    "mba",
+    "step-8",
+    "jet-order",
+    "q-limit",
+    "canonical-chain"
+  ],
+  "text": "mba-step08-jet-prefix.md",
+  "provenance": "authored"
+}

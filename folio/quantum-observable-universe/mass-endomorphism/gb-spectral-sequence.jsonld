@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-gb-spectral-sequence",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:gb-spectral-sequence",
+  "kind": "proposition",
+  "title": "GB-filtration spectral sequence and $E_\\infty$ convergence of the 6-term mass",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hecke-normal-form"
+  ],
+  "tags": [
+    "spectral-sequence",
+    "cohomology",
+    "hochschild",
+    "gb-filtration",
+    "e-infinity",
+    "convergence"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.gb_spectral_sequence",
+  "text": "gb-spectral-sequence.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-jet-prolongation",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-jet-prolongation",
+  "kind": "proposition",
+  "title": "Jet prolongation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-jet"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-jet-prolongation"
+  ],
+  "tags": [
+    "jet-bundle",
+    "frobenius-hopf",
+    "category-theory"
+  ],
+  "leanRef": "qou:QOU.categorical_jet_prolongation",
+  "text": "categorical-jet-prolongation.md",
+  "leanSource": "categorical-jet-prolongation.lean",
+  "provenance": "authored"
+}

@@ -15,7 +15,7 @@ of the substrate)?
 
 ## Meson model
 
-Per content/quantum-observable-universe/archimedean-universe/
+Per folio/quantum-observable-universe/archimedean-universe/
 meson-to-proton-via-borromean.md, the u-dbar meson is the H_3(q)
 braid
 

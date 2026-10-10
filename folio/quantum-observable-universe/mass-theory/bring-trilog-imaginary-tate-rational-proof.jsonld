@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-bring-trilog-imaginary-tate-rational",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:bring-trilog-imaginary-tate-rational",
+  "kind": "proof",
+  "title": "Proof of bring trilog imaginary tate rational",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-bring-trilog-imaginary-tate-rational"
+  ],
+  "text": "bring-trilog-imaginary-tate-rational-proof.md",
+  "provenance": "authored"
+}

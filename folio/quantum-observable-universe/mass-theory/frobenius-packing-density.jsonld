@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-frobenius-packing-density",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:frobenius-packing-density",
+  "kind": "remark",
+  "title": "Frobenius packing interpretation of the $q$-density",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-mass-volume-factorization",
+  "tags": [
+    "frobenius",
+    "packing-density",
+    "wedderburn",
+    "plancherel",
+    "cpt-saturation",
+    "chirality"
+  ],
+  "text": "frobenius-packing-density.md",
+  "provenance": "authored"
+}

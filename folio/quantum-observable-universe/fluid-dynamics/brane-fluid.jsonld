@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-brane-fluid",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:brane-fluid",
+  "kind": "prose",
+  "title": "Fluid dynamics of the brane",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-q-laplacian-interpretation"
+  ],
+  "tags": [
+    "fluid-dynamics",
+    "brane",
+    "overview"
+  ],
+  "text": "brane-fluid.md",
+  "provenance": "authored"
+}

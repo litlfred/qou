@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-sl2-prolongation-recurrence",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:sl2-prolongation-recurrence",
+  "kind": "proposition",
+  "title": "Symplectic prolongation (det B = 1) gives a one-parameter recurrence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-prolonged-periods-fixed-depth",
+    "papers/quantum-observable-universe/blocks/prop-sw-period-residue-sum",
+    "papers/quantum-observable-universe/blocks/prop-sl2-period-conserved-quantity"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-sl2-prolongation-recurrence"
+  ],
+  "leanRef": "qou:QOU.Mass.sl2_prolongation_recurrence",
+  "text": "sl2-prolongation-recurrence.md",
+  "leanSource": "sl2-prolongation-recurrence.lean",
+  "provenance": "authored"
+}

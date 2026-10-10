@@ -91,7 +91,7 @@ def classify_file(content: str) -> tuple[str, list[str]]:
 def main() -> int:
     qou_root = Path(__file__).resolve().parents[1]
     lean_dirs = [
-        qou_root / "content" / "quantum-observable-universe",
+        qou_root / "folio" / "quantum-observable-universe",
     ]
 
     scanned: dict[str, tuple[str, list[str]]] = {}
@@ -144,7 +144,7 @@ def main() -> int:
     )
 
     w.add_parameter("scanner_version", "1.0")
-    w.add_parameter("scanned_root", "content/quantum-observable-universe")
+    w.add_parameter("scanned_root", "folio/quantum-observable-universe")
     w.add_parameter(
         "archimedean_patterns",
         [name for _, name in ARCHIMEDEAN_PATTERNS],

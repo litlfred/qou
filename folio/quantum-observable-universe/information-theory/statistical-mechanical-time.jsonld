@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-statistical-mechanical-time",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:statistical-mechanical-time",
+  "kind": "remark",
+  "title": "Statistical mechanical emergence of continuous time",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-information-theoretic-time",
+    "papers/quantum-observable-universe/blocks/rem-jet-planck-steps"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-information-theoretic-time",
+  "tags": [
+    "statistical-mechanics",
+    "planck-time",
+    "information-theory",
+    "reeb-flow",
+    "thermodynamic-limit",
+    "julia-set"
+  ],
+  "text": "statistical-mechanical-time.md",
+  "provenance": "authored"
+}

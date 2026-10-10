@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "kauffman1991",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 73,
+      "entry": {
+        "id": "kauffman1991",
+        "status": "partial",
+        "verified_at": "2026-05-19T15:57:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 2,
+        "fix_commit": "(this commit)",
+        "note": "2 bare-URL Refs upgraded with title+publisher form.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1142/1116"
+        }
+      }
+    }
+  ]
+}

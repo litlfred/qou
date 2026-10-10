@@ -11,7 +11,7 @@ POLYNOMIAL at two points, NOT an analytic continuation of transcendental data.
 
 This probe exhibits that for the four physical n=5 blocks and records the numeric
 q₀ table. The Lean certificate is
-`content/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneWLambdaContinuation.lean`
+`folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneWLambdaContinuation.lean`
 (muon_folds_at_root / muon_unfolds_generic / block_dims_explicit, sorry-free).
 
 Scope-(a): this certifies the VALUE-MAP continuation is polynomial evaluation; it

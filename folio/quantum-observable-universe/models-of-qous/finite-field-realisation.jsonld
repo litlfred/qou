@@ -1,0 +1,19 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-finite-field-realisation",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:finite-field-realisation",
+  "kind": "example",
+  "title": "$\\mathbb{F}_\\pp$ realisation",
+  "interprets": "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+  "text": "finite-field-realisation.md",
+  "provenance": "authored"
+}

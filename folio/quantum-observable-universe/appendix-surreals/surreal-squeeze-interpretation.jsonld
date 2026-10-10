@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-surreal-squeeze-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:surreal-squeeze-interpretation",
+  "kind": "remark",
+  "title": "Interpretation: cost dominates budget, and the downstream bounds",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-surreal-squeeze"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/lem-surreal-squeeze",
+  "tags": [
+    "surreal",
+    "squeeze",
+    "error-bounds",
+    "millennium-problem",
+    "classical-limit"
+  ],
+  "text": "surreal-squeeze-interpretation.md",
+  "provenance": "authored"
+}

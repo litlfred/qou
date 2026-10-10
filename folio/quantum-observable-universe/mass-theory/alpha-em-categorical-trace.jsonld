@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-alpha-em-categorical-trace",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:alpha-em-categorical-trace",
+  "kind": "remark",
+  "title": "Legacy empirical $\\alpha_{EM}$ forms (deprecated — superseded by the pre-archimedean trace-ratio)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-alpha-em-categorical-trace-ratio",
+    "papers/quantum-observable-universe/blocks/cor-gauge-coupling-uniqueness",
+    "papers/quantum-observable-universe/blocks/prop-em-coupling-bring-zero-mode"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-em-spectral-completeness",
+  "text": "alpha-em-categorical-trace.md",
+  "provenance": "authored"
+}

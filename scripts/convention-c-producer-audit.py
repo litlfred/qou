@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Find convention-C definitions of the Markov parameter in live Python producers.
 
-The producer-layer counterpart to `content/pipeline/trace-convention-audit.ts`,
+The producer-layer counterpart to `folio/pipeline/trace-convention-audit.ts`,
 which walks `content/**` only. Nothing walked the producers, and three
 successive hand-greps of that surface returned 70, then 13, then 182.
 

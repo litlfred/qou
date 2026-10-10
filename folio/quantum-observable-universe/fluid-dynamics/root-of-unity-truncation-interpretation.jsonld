@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-root-of-unity-truncation-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:root-of-unity-truncation-interpretation",
+  "kind": "remark",
+  "title": "The contact-geometric form of the millennium problem",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-root-of-unity-truncation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-root-of-unity-truncation",
+  "text": "root-of-unity-truncation-interpretation.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "boyd-vandenberghe-2004",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 0,
+      "entry": {
+        "id": "boyd-vandenberghe-2004",
+        "status": "fixed",
+        "verified_at": "2026-05-19T06:38:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 18,
+        "fix_commit": "(this commit)",
+        "note": "All 17 -- Ref: [boyd-vandenberghe-2004] sites now carry a \u00a7-specific citation. (1) 4 misattribution fixes in commit 66b3caf7f: \u00a75.5.3\u2192\u00a75.5.2 (PosSemidefTraceZero), \u00a75.5.4\u2192\u00a75.5.2+alizadeh (SDPRealUniqueness 3 occurrences), Thm 5.5\u2192\u00a75.2.3+\u00a75.3 (SDP 2 occurrences), \u00a7A.5.3\u2192\u00a7A.5.5 (PosSemidefDiagZero 2 occurrences). (2) 14 generic DOI-only Refs in this commit specified by section: \u00a75.6 perturbation/sensitivity for shell-closure/phase-stratification monotone+openness claims (10 sites across 5 files); \u00a75.2.3+\u00a75.3+\u00a75.5 Slater+strong-duality+KKT for noble-gas SDP (ElectronShell, 2 sites); \u00a75.2.3+\u00a75.3 Slater+strong-duality for ConfinementSDP (3 sites). Verified against uploads/boyd-vandenberghe-2004-convex-optimization.pdf TOC. 0 generic boyd Refs remain in content/.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/boyd-vandenberghe-2004-convex-optimization.pdf"
+        },
+        "local_pdf": "uploads/boyd-vandenberghe-2004-convex-optimization.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "DOCUMENT ABSENT \u2014 cannot verify the join. The path does not exist on disk and `git log --diff-filter=D` shows it was never committed; the existing ledger row (status `fixed`, dated 2026-05-19) carries `source.file` + `local_pdf` pointing at a PDF that only ever existed on the machine that ran that pass. `find . -iname '*boyd-vandenberghe*'` returns nothing and no arXiv-named substitute exists in uploads/. That row asserts 18 fixes 'Verified against [the PDF] TOC' \u2014 a verification that is now UNREPRODUCIBLE in-repo. Corpus side is healthy and clearly load-bearing: 49 hits across content/ + computations/, with Lean `-- Ref:` sites in the ElectronShell / ConfinementSDP / shell-closure / phase-stratification files each carrying a section-specific locator rather than a bare identifier. Scope-(a): I could not read this document, so I make no claim about whether those section locators are correct.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Document unavailable; corpus citations are section-specific and plausible. The actionable item is ledger hygiene (dangling source.file / local_pdf path), which belongs to the merge pass, not to a content change.",
+              "target": "folio/bib-qa-verifications.json"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    }
+  ]
+}

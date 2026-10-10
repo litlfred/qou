@@ -1,0 +1,59 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "garoufalidis2004",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 376,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/characteristic/characteristic.pdf"
+        },
+        "id": "garoufalidis2004",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "The seeded-orphan classification is WRONG for this file: the ref() entry exists (references.ts L128-140, id garoufalidis2004, the entry's own note names it 'the AJ-conjecture formulation paper') and it is load-bearing \u2014 two Lean files carry `-- Ref: [garoufalidis2004]`: folio/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean and lean/QOU/BraidKnot/AJTrefoil.lean. I confirmed the identification against the document's own front matter: it introduces the characteristic variety from q-holonomicity of the colored Jones function, compares it to the SL_2(C) character variety viewed from the boundary, states that comparison as a conjecture, and verifies it by direct computation for the trefoil and figure-eight. That matches both Lean consumers exactly (AJTrefoil.lean is the trefoil case \u00a73.1). Note the citation is Lean-only \u2014 there is no .md citation site \u2014 so a reader of the narrative cannot see where the AJ formulation comes from. That is the one gap worth closing.",
+          "keyResults": [
+            {
+              "locator": "\u00a73.1 and \u00a73.2",
+              "statement": "The conjecture identifying the characteristic variety of the colored Jones function with the SL_2(C) character variety seen from the boundary is verified by direct computation for the trefoil 3_1 and the figure-eight 4_1.",
+              "useForFolio": "This is precisely the case AJTrefoil.lean formalizes; the paper is the source for the trefoil verification the Lean file assumes rather than proves.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/BraidKnot/AJTrefoil.lean"
+              ]
+            },
+            {
+              "locator": "\u00a72.2",
+              "statement": "A noncommutative version of the A-polynomial (the A_q polynomial) is defined from the recursion satisfied by the colored Jones function.",
+              "useForFolio": "Backs the 'AJ machinery' identification made in phi-q-aj-machinery-identification.lean, whose -- Ref: already points here.",
+              "targets": [
+                "folio/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "The reference is cited only from Lean; the narrative block backing the AJ/characteristic-variety machinery has no visible source. Add the citation on the .md side of the phi-q-aj-machinery-identification block.",
+              "target": "folio/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean",
+              "bean": "qou-ylh9"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "42bd31da2754"
+        }
+      }
+    }
+  ]
+}

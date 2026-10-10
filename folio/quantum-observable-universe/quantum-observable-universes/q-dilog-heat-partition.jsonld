@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-dilog-heat-partition",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-dilog-heat-partition",
+  "kind": "remark",
+  "title": "$\\mathrm{Li}_2^q$ as the $q$-heat partition function",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-dilogarithm",
+    "papers/quantum-observable-universe/blocks/def-categorical-laplace",
+    "papers/quantum-observable-universe/blocks/prop-q-heat-kernel-peter-weyl"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-dilogarithm",
+  "tags": [
+    "hopf-algebra",
+    "dilogarithm",
+    "q-heat",
+    "partition-function"
+  ],
+  "text": "q-dilog-heat-partition.md",
+  "provenance": "authored"
+}

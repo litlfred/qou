@@ -32,7 +32,7 @@
   ⚠ [ordering-jet-compatibility]: Undefined cross-reference(s) in .md: def:admissible-system
   ⚠ [categorical-braiding-intro]: Undefined cross-reference(s) in .md: chap:models-qou
   ⚠ [braid-base-field]: Undefined cross-reference(s) in .md: chap:archimedean-universe, chap:archimedean-universe
-  ✗ [hecke-normal-form]: Definition "def:hecke-normal-form" requires Lean formalization. Expected: /home/user/qou/content/quantum-observable-universe/braids-and-knots/hecke-normal-form.lean or lean.file
+  ✗ [hecke-normal-form]: Definition "def:hecke-normal-form" requires Lean formalization. Expected: /home/user/qou/folio/quantum-observable-universe/braids-and-knots/hecke-normal-form.lean or lean.file
   ⚠ [feynman-eigenbasis]: Undefined cross-reference(s) in .md: chap:archimedean-universe
   ⚠ [enveloping-algebra]: Undefined cross-reference(s) in .md: chap:torsion
   ⚠ [hecke-markov-transition]: Undefined cross-reference(s) in .md: chap:physical-observations
@@ -40,14 +40,14 @@
   ⚠ [observation-braid]: Undefined cross-reference(s) in .md: chap:info-theory
   ⚠ [sorting-color-energy]: prop:sorting-color-energy: no Lean declaration yet
   ⚠ [bundle-category]: Undefined cross-reference(s) in .md: chap:path-integrals-braiding
-  ✗ [typed-crossing-operator]: Definition "def:typed-crossing-operator" requires Lean formalization. Expected: /home/user/qou/content/quantum-observable-universe/braids-and-knots/typed-crossing-operator.lean or lean.file
-  ✗ [nucleon-hecke-element]: Definition "def:nucleon-hecke-element" requires Lean formalization. Expected: /home/user/qou/content/quantum-observable-universe/braids-and-knots/nucleon-hecke-element.lean or lean.file
+  ✗ [typed-crossing-operator]: Definition "def:typed-crossing-operator" requires Lean formalization. Expected: /home/user/qou/folio/quantum-observable-universe/braids-and-knots/typed-crossing-operator.lean or lean.file
+  ✗ [nucleon-hecke-element]: Definition "def:nucleon-hecke-element" requires Lean formalization. Expected: /home/user/qou/folio/quantum-observable-universe/braids-and-knots/nucleon-hecke-element.lean or lean.file
   ⚠ [categorical-mass-markov]: Undefined cross-reference(s) in .md: rem:vertex-algebra-relations
   ✗ [mass-endomorphism-conjecture]: Unresolved uses: cor:topological-decomposition-mass
   ⚠ [mass-element-nf]: prop:mass-element-nf: no Lean declaration yet
   ⚠ [three-parameters-wedderburn]: prop:three-parameters-wedderburn: no Lean declaration yet
   ⚠ [wedderburn-mass-formula]: prop:wedderburn-mass-formula: no Lean declaration yet
-  ✗ [algebraic-quantum-volume]: Definition "def:algebraic-quantum-volume" requires Lean formalization. Expected: /home/user/qou/content/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume.lean or lean.file
+  ✗ [algebraic-quantum-volume]: Definition "def:algebraic-quantum-volume" requires Lean formalization. Expected: /home/user/qou/folio/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume.lean or lean.file
   ⚠ [algebraic-quantum-volume-specialization]: prop:algebraic-volume-specialization: no Lean declaration yet
   ⚠ [mass-endomorphism-tower]: Undefined cross-reference(s) in .md: def:quantum-bloch-group, prop:atomic-braid-mass
   ⚠ [c-substrate-via-levi]: Undefined cross-reference(s) in .md: def:instanton, chap:archimedean-universe
@@ -56,7 +56,7 @@
   ⚠ [jones-polynomials]: Undefined cross-reference(s) in .md: chap:path-integrals-braiding
   ⚠ [collatz-contact-boundary]: prop:collatz-contact-boundary: no Lean declaration yet
   ⚠ [collatz-no-cycles]: prop:collatz-no-cycles: no Lean declaration yet
-  ✗ [q-navier-stokes]: Definition "def:q-navier-stokes" requires Lean formalization. Expected: /home/user/qou/content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean or lean.file
+  ✗ [q-navier-stokes]: Definition "def:q-navier-stokes" requires Lean formalization. Expected: /home/user/qou/folio/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean or lean.file
   ⚠ [q-navier-stokes]: Undefined cross-reference(s) in .md: def:state-bundle
   ⚠ [geodesic-vortices]: Undefined cross-reference(s) in .md: def:state-bundle, def:adjoint-weight-decomposition
   ⚠ [braid-fluid]: Undefined cross-reference(s) in .md: def:state-bundle, rem:webster-inner-product
@@ -73,12 +73,12 @@
   ⚠ [quantum-peter-weyl]: Undefined cross-reference(s) in .md: rem:pawlowski-leitner-inner-product
   ⚠ [p1-nonlinear-uniqueness]: prop:q-ns-nonlinear-uniqueness: no Lean declaration yet
   ⚠ [observability-in-fluid-context]: Undefined cross-reference(s) in .md: def:adjoint-weight-decomposition
-  ✗ [substrate-line-bundle]: Definition "def:substrate-line-bundle" requires Lean formalization. Expected: /home/user/qou/content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean or lean.file
+  ✗ [substrate-line-bundle]: Definition "def:substrate-line-bundle" requires Lean formalization. Expected: /home/user/qou/folio/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean or lean.file
   ⚠ [observability-q-independent]: thm:observability-q-independent: no Lean declaration yet
   ⚠ [core-levi-form]: prop:core-levi-form: no Lean declaration yet
   ⚠ [core-levi-form]: Undefined cross-reference(s) in .md: def:state-bundle, rem:levi-form-defect
-  ✗ [ns-regular-qou]: Definition "def:ns-regular-qou" requires Lean formalization. Expected: /home/user/qou/content/quantum-observable-universe/fluid-dynamics/ns-regular-qou.lean or lean.file
-  ✗ [ns-obstruction]: Definition "def:ns-obstruction" requires Lean formalization. Expected: /home/user/qou/content/quantum-observable-universe/fluid-dynamics/ns-obstruction.lean or lean.file
+  ✗ [ns-regular-qou]: Definition "def:ns-regular-qou" requires Lean formalization. Expected: /home/user/qou/folio/quantum-observable-universe/fluid-dynamics/ns-regular-qou.lean or lean.file
+  ✗ [ns-obstruction]: Definition "def:ns-obstruction" requires Lean formalization. Expected: /home/user/qou/folio/quantum-observable-universe/fluid-dynamics/ns-obstruction.lean or lean.file
   ⚠ [ns-obstruction-tower]: prop:ns-obstruction-tower: no Lean declaration yet
   ⚠ [ns-obstruction-computation]: prop:ns-obstruction-computation: no Lean declaration yet
   ⚠ [ns-kummer-specialisation]: prop:ns-kummer-specialisation: no Lean declaration yet
@@ -128,27 +128,27 @@
   ⚠ [ground-state-ordering]: prop:ground-state-ordering: no Lean declaration yet
   ⚠ [transfer-matrix-identities]: prop:transfer-matrix-identities: no Lean declaration yet
   ⚠ [neutron-qvalue-symbolic]: prop:neutron-qvalue-symbolic: no Lean declaration yet
-  ✗ [atomic-braid]: Definition "def:atomic-braid" requires Lean formalization. Expected: /home/user/qou/content/quantum-observable-universe/particle-interactions/atomic-braid.lean or lean.file
+  ✗ [atomic-braid]: Definition "def:atomic-braid" requires Lean formalization. Expected: /home/user/qou/folio/quantum-observable-universe/particle-interactions/atomic-braid.lean or lean.file
   ⚠ [atomic-lp-stability]: prop:atomic-lp-stability: no Lean declaration yet
   ⚠ [q-integer-mass-formula]: conj:q-integer-mass-formula: no Lean declaration yet
   ⚠ [q-integer-mass-formula]: Undefined cross-reference(s) in .md: rem:per-nucleon-channel-decomposition
   ⚠ [neutron-proton-splitting]: prop:neutron-proton-splitting: no Lean declaration yet
   ⚠ [atomic-nf-witness]: prop:atomic-nf-witness: no Lean declaration yet
   ✗ [tower-binding-energy]: Unresolved uses: prop:atomic-braid-mass
-  ✗ [molecular-braid]: Definition "def:molecular-braid" requires Lean formalization. Expected: /home/user/qou/content/quantum-observable-universe/molecular-construction/molecular-braid.lean or lean.file
-  ✗ [covalent-bond-shared-trefoil]: Definition "def:covalent-bond-shared-trefoil" requires Lean formalization. Expected: /home/user/qou/content/quantum-observable-universe/molecular-construction/covalent-bond-shared-trefoil.lean or lean.file
+  ✗ [molecular-braid]: Definition "def:molecular-braid" requires Lean formalization. Expected: /home/user/qou/folio/quantum-observable-universe/molecular-construction/molecular-braid.lean or lean.file
+  ✗ [covalent-bond-shared-trefoil]: Definition "def:covalent-bond-shared-trefoil" requires Lean formalization. Expected: /home/user/qou/folio/quantum-observable-universe/molecular-construction/covalent-bond-shared-trefoil.lean or lean.file
   ⚠ [ilp-covalent-bond]: prop:ilp-covalent-bond: no Lean declaration yet
-  ✗ [electron-shell-braid-capacity]: Definition "def:electron-shell-braid-capacity" requires Lean formalization. Expected: /home/user/qou/content/quantum-observable-universe/molecular-construction/electron-shell-braid-capacity.lean or lean.file
+  ✗ [electron-shell-braid-capacity]: Definition "def:electron-shell-braid-capacity" requires Lean formalization. Expected: /home/user/qou/folio/quantum-observable-universe/molecular-construction/electron-shell-braid-capacity.lean or lean.file
   ⚠ [shell-filling-rule]: prop:shell-filling-rule: no Lean declaration yet
-  ✗ [h2-molecular-braid]: Definition "def:h2-molecular-braid" requires Lean formalization. Expected: /home/user/qou/content/quantum-observable-universe/molecular-construction/h2-molecular-braid.lean or lean.file
+  ✗ [h2-molecular-braid]: Definition "def:h2-molecular-braid" requires Lean formalization. Expected: /home/user/qou/folio/quantum-observable-universe/molecular-construction/h2-molecular-braid.lean or lean.file
   ⚠ [h2-lp-dual-binding]: prop:h2-lp-dual-binding: no Lean declaration yet
-  ✗ [co-molecular-braid]: Definition "def:co-molecular-braid" requires Lean formalization. Expected: /home/user/qou/content/quantum-observable-universe/molecular-construction/co-molecular-braid.lean or lean.file
+  ✗ [co-molecular-braid]: Definition "def:co-molecular-braid" requires Lean formalization. Expected: /home/user/qou/folio/quantum-observable-universe/molecular-construction/co-molecular-braid.lean or lean.file
   ⚠ [co-lp-dual-binding]: prop:co-lp-dual-binding: no Lean declaration yet
-  ✗ [co2-molecular-braid]: Definition "def:co2-molecular-braid" requires Lean formalization. Expected: /home/user/qou/content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean or lean.file
+  ✗ [co2-molecular-braid]: Definition "def:co2-molecular-braid" requires Lean formalization. Expected: /home/user/qou/folio/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean or lean.file
   ⚠ [co2-lp-dual-binding]: prop:co2-lp-dual-binding: no Lean declaration yet
-  ✗ [ch4-molecular-braid]: Definition "def:ch4-molecular-braid" requires Lean formalization. Expected: /home/user/qou/content/quantum-observable-universe/molecular-construction/ch4-molecular-braid.lean or lean.file
+  ✗ [ch4-molecular-braid]: Definition "def:ch4-molecular-braid" requires Lean formalization. Expected: /home/user/qou/folio/quantum-observable-universe/molecular-construction/ch4-molecular-braid.lean or lean.file
   ⚠ [ch4-lp-dual-binding]: prop:ch4-lp-dual-binding: no Lean declaration yet
-  ✗ [benzene-molecular-braid]: Definition "def:benzene-molecular-braid" requires Lean formalization. Expected: /home/user/qou/content/quantum-observable-universe/molecular-construction/benzene-molecular-braid.lean or lean.file
+  ✗ [benzene-molecular-braid]: Definition "def:benzene-molecular-braid" requires Lean formalization. Expected: /home/user/qou/folio/quantum-observable-universe/molecular-construction/benzene-molecular-braid.lean or lean.file
   ⚠ [benzene-molecular-braid]: Undefined cross-reference(s) in .md: rem:benzene-threading-emergence
   ⚠ [benzene-threading-emergence]: prop:benzene-threading-emergence: no Lean declaration yet
   ⚠ [substrate-consistency-window]: prop:substrate-consistency-window: no Lean declaration yet

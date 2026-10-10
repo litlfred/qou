@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-k12-barrier-bypass",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:k12-barrier-bypass",
+  "kind": "remark",
+  "title": "Homological framework analytically bypasses the $k \\geq 12$ matrix-evaluation barrier",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-diagrammatic-double-magic-lr-fusion"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-magic-numbers-from-q",
+  "tags": [
+    "magic-numbers",
+    "shell-closure",
+    "hoefsmit",
+    "matrix-evaluation",
+    "computational-bypass",
+    "interpretation"
+  ],
+  "text": "k12-barrier-bypass.md",
+  "provenance": "authored"
+}

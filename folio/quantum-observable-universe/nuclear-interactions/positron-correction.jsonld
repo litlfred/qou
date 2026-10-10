@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-positron-correction",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:positron-correction",
+  "kind": "proposition",
+  "title": "Parity-dependent Q-value offset",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-parity-regime-selection"
+  ],
+  "tags": [
+    "positron",
+    "correction",
+    "pair-production",
+    "action-difference",
+    "parity"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.positron_correction",
+  "text": "positron-correction.md",
+  "provenance": "authored"
+}

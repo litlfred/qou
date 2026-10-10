@@ -1,0 +1,49 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "navon2021",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 45,
+      "entry": {
+        "id": "navon2021",
+        "status": "uncited",
+        "verified_at": "2026-05-19T15:48:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": null,
+        "note": "PDF verified: 'Quantum Gases in Optical Boxes' by Nir Navon, arXiv:2106.09716. BEC / box-trap experimental review. | RE-CHECK 2026-05-19 17:20: Navon \u2014 Quantum Gases in Optical Boxes (arXiv:2106.09716, PDF verified). Bib orphan (0 cites). Was promoted to verified-clean based on PDF match, but no .lean/.md/.ts citation site exists.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/navon2021.pdf"
+        },
+        "local_pdf": "uploads/navon2021.pdf",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "INFRA: file absent from HEAD and the working tree; exists only on origin/claude/upload-bib-papers-2026-05-19 (intake commit 30a6599190). Recovered from git history. Identity confirmed from the document's own header (arXiv:2106.09716, review of optical box traps for ultracold gases, three authors) and matches the seeded key. Exactly one citation site: folio/quantum-observable-universe/observations/bec-vortex-data.md:1, in the opening sentence 'BECs provide the cleanest experimental realisation of quantised vortex dynamics \\cite{fetter2009,navon2021}' (plus the same key in bec-vortex-data.ts:14). NOT load-bearing: every numbered datum in that block is sourced to a different reference \u2014 circulation quantisation to madison2000, lattice formation to abo-shaeer2001, the Kelvin k=1 frequency 2*pi*6.2 Hz to bretin2003, vortex clustering to gauthier2019 \u2014 and none is attributed to this document. Full-text grep of the recovered PDF: 'vortex' 9, 'vortices' 3, 'turbulen*' 9, 'circulation' 1, 'Kelvin' 0. So the document does carry vortex/turbulence material (box-trap turbulence), which keeps the citation defensible as general context, but it is a box-trap review rather than a rotating-BEC/vortex-dynamics review, and the sentence's actual claim is carried by fetter2009. Supporting, not core: read once in passing, results never used.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "The citation is a defensible second general-context pointer next to fetter2009; no corpus claim depends on it. Not worth churn. If bec-vortex-data is ever extended with a homogeneous-gas (box-trap) datum, this is the reference that would then become load-bearing.",
+              "target": "rem:bec-vortex-data"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "cf3c3e12eb82"
+        }
+      }
+    }
+  ]
+}

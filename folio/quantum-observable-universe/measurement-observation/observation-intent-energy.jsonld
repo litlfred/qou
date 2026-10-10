@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-observation-intent-energy",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:observation-intent-energy",
+  "kind": "remark",
+  "title": "Intent and the energetic cost of observation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-observation",
+    "papers/quantum-observable-universe/blocks/def-crossing-energy"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-observation",
+  "tags": [
+    "observation",
+    "intent",
+    "energy",
+    "crossing",
+    "entropy"
+  ],
+  "text": "observation-intent-energy.md",
+  "provenance": "authored"
+}

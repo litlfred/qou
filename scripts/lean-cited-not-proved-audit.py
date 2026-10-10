@@ -30,7 +30,7 @@ from __future__ import annotations
 import argparse, json, re, subprocess, sys
 from pathlib import Path
 
-LEAN_ROOT = "content/quantum-observable-universe/lean"
+LEAN_ROOT = "folio/quantum-observable-universe/lean"
 # The Lake LIBRARY tree above is NOT the whole Lean corpus.  Content-block
 # SIBLINGS live beside their `.ts`/`.md` under `content/<paper>/<chapter>/`,
 # outside the Lake globs -- and under the AGENTS.md 0a resolution order a
@@ -43,7 +43,7 @@ LEAN_ROOT = "content/quantum-observable-universe/lean"
 # figure this script produced before that date was library-only -- including a
 # "0 sorries" claim that was wrong for the corpus and right only for the tree
 # it happened to walk.
-CONTENT_ROOT = "content"
+CONTENT_ROOT = "folio"
 
 
 def scan_paths(rev, root):

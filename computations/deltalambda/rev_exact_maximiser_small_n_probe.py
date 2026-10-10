@@ -47,7 +47,7 @@ not an artefact of the scaling.  mpmath is used only to build the table and to p
 Proton-pinned; no Markov parameter in this cone, so convention C/D does not arise.  Hooks and
 hook sums are exact integers.  mpmath at dps 60; no float64.
 
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/BraidKnot/StaircaseHookMultiset.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/BraidKnot/StaircaseHookMultiset.lean
 """
 
 from __future__ import annotations

@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-sl2-period-conserved-quantity",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:sl2-period-conserved-quantity",
+  "kind": "proposition",
+  "title": "The depth-2 prolongation recurrence has a conserved first integral",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-sl2-prolongation-recurrence",
+    "papers/quantum-observable-universe/blocks/prop-sw-period-residue-sum",
+    "papers/quantum-observable-universe/blocks/prop-binding-genfun-qdifference"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-sl2-period-conserved-quantity"
+  ],
+  "leanRef": "qou:QOU.Mass.sl2Invariant_eq_zeroth",
+  "text": "sl2-period-conserved-quantity.md",
+  "leanSource": "sl2-period-conserved-quantity.lean",
+  "provenance": "authored"
+}

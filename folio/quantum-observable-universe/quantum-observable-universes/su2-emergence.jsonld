@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-su2-emergence",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:su2-emergence",
+  "kind": "theorem",
+  "title": "Emergence of the gauge group",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-observable-universe"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-su2-emergence"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-su2-emergence"
+  ],
+  "tags": [
+    "emergence",
+    "gauge-group",
+    "su2"
+  ],
+  "leanRef": "qou:QOU.su2_emergence_rank_forced",
+  "text": "su2-emergence.md",
+  "leanSource": "su2-emergence.lean",
+  "provenance": "authored"
+}

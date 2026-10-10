@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-knot-particle-generation-consequences",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:knot-particle-generation-consequences",
+  "kind": "remark",
+  "title": "Boson links, zero hyperbolic volume, and the Skein-module presentation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-knot-particle-generation",
+    "papers/quantum-observable-universe/blocks/prop-fermion-boson-knot-link",
+    "papers/quantum-observable-universe/blocks/prop-skein-generation",
+    "papers/quantum-observable-universe/blocks/rem-knot-particle-dictionary"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-knot-particle-generation",
+  "tags": [
+    "knot",
+    "particle",
+    "torus-knot",
+    "fermion-boson",
+    "skein",
+    "hyperbolic-volume"
+  ],
+  "text": "knot-particle-generation-consequences.md",
+  "provenance": "authored"
+}

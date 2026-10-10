@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-frobenius-gram-matrix",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:frobenius-gram-matrix",
+  "kind": "proposition",
+  "title": "Frobenius Gram matrix and dual construction in $H_3(q)$",
+  "tags": [
+    "gram-matrix",
+    "frobenius-dual",
+    "hecke-algebra",
+    "markov-trace",
+    "knot-operator",
+    "pair-production",
+    "annihilation"
+  ],
+  "leanRef": "qou:QOU.Archimedean.frobenius_gram_matrix",
+  "text": "frobenius-gram-matrix.md",
+  "provenance": "authored"
+}

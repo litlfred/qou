@@ -115,7 +115,7 @@ Proton-pinned; `mp.dps = 30`; the bulk tail uses the Lambert resummation of #734
 here against the direct sum) so a coordinate step costs `O(T + RMAX)` rather than
 `O(T^2 + T*RMAX)`.  No float64.
 
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/BraidKnot/SearchCoercivity.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/BraidKnot/SearchCoercivity.lean
 """
 
 from __future__ import annotations

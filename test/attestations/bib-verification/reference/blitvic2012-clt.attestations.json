@@ -1,0 +1,66 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "blitvic2012-clt",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 117,
+      "entry": {
+        "id": "blitvic2012-clt",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T17:31:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": "(this commit)",
+        "note": "New bib entry for Blitvi\u0107's 'Two-Parameter Non-Commutative Central Limit Theorem' (arXiv:1205.4003, the wrongly-fetched PDF at uploads/blitvic2012.pdf). Currently uncited in QOU (the existing 9 blitvic2012 citation sites all reference the OTHER Blitvi\u0107 paper, 'The (q,t)-Gaussian process'). The PDF now has a canonical bib home; can be renamed to uploads/blitvic2012-clt.pdf in a follow-up upload-branch commit, or left in place pending decision.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/blitvic2012.pdf"
+        },
+        "local_pdf": "uploads/blitvic2012.pdf",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "INFRA: file absent from HEAD and the working tree; exists only on origin/claude/upload-bib-papers-2026-05-19 (intake commit 71a5b76aa0). Recovered from git history. Identity confirmed from the document's own cover (arXiv:1205.4003v1, two-parameter non-commutative central limit theorem, single author) \u2014 the join to blitvic2012-clt is CORRECT, and the ref() note at references.ts:5869 already flags that this PDF is the CLT paper rather than the (q,t)-Gaussian one. Citation status: the key blitvic2012-clt has ZERO citation sites anywhere in content/ \u2014 a bib orphan. Meanwhile the sibling key blitvic2012 carries FIVE sites, and the load-bearing one is mis-located: folio/quantum-observable-universe/braids-and-knots/hecke-satisfies-blitvic-hypothesis-proof.md:82 concludes the proof with 'This matches Blitvic's (q,t)-Gaussian moment formula [`blitvic2012`, eq. (1.2)] at parameter (q, t = 1)'. VERIFIED against this document: the crossing/nesting moment formula sum_{V in P_2(2n)} q^{cross(V)} t^{nest(V)} ... is Theorem 2, equation (12) HERE; and this document numbers its equations flat ((1),(2),...,(14)), so an 'eq. (1.2)' does not exist in it. The (q,t)-Gaussian paper the key blitvic2012 names is NOT uploaded, so the corpus's one load-bearing Blitvic locator is currently unverifiable from the corpus's own sources while an equivalent, verifiable statement sits unused in this upload. Separately, folio/quantum-observable-universe/lean/QOU/Observations/QCltNonCommutative.lean:25-26 is internally inconsistent: it gives the (q,t)-Gaussian title and journal volume/pages but attaches the arXiv URL 1205.4003, which is THIS document \u2014 a live conflation of the two keys inside the file whose entire subject is a q-CLT.",
+          "keyResults": [
+            {
+              "locator": "Thm 2, eq. (12)",
+              "statement": "For a sequence satisfying the generalised commutation relation with E(mu)=q t^{-1}, E(mu^2)=1, the limiting mixed *-moments of the normalised partial sums are sum over pair partitions V of P_2(2n) of q^{cross(V)} t^{nest(V)} times the product term; odd moments vanish.",
+              "useForFolio": "At t = 1 this is exactly the moment formula the Hecke-Blitvic proof block needs, with a locator that actually exists. It is also the literature statement the conditional q-CLT class in QCltNonCommutative.lean should cite, since that class is about a CLT and the currently-cited key is not the CLT paper.",
+              "targets": [
+                "prop:hecke-satisfies-blitvic-hypothesis",
+                "QOU.Observations.QCltNonCommutative"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "hecke-satisfies-blitvic-hypothesis-proof.md:82 cites '[blitvic2012], eq. (1.2)', a locator that does not exist in the uploaded Blitvic document and cannot be checked against the un-uploaded one. Cite blitvic2012-clt Thm 2 eq. (12) at t=1, which the corpus can verify from its own uploads.",
+              "target": "prop:hecke-satisfies-blitvic-hypothesis",
+              "bean": "qou-cb98"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "QOU/Observations/QCltNonCommutative.lean:25-26 pairs the (q,t)-Gaussian title/journal with the arXiv id of the CLT paper \u2014 the two keys are conflated in one reference line, in the file whose subject is precisely a non-commutative CLT. The CLT key blitvic2012-clt is the correct citation there.",
+              "target": "QOU.Observations.QCltNonCommutative",
+              "bean": "qou-9mrz"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "2c7376be0776"
+        }
+      }
+    }
+  ]
+}

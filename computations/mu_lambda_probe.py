@@ -181,7 +181,7 @@ def main():
     print()
 
     # 3. Validate against table data if available
-    table_path = HERE.parent / "content" / "quantum-observable-universe" / \
+    table_path = HERE.parent / "folio" / "quantum-observable-universe" / \
         "information-theory" / "q-heat-kernel-peter-weyl-table-data.md"
     if not table_path.exists():
         # Try via _path_bridge

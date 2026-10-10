@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-reeb-su2",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:reeb-su2",
+  "kind": "example",
+  "title": "Reeb derivation for $\\mathrm{SU}(2)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-reeb",
+    "papers/quantum-observable-universe/blocks/ex-maximal-torus-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-reeb",
+  "tags": [
+    "su2",
+    "reeb"
+  ],
+  "leanRef": "qou:QOU.Examples.su2Reeb",
+  "text": "reeb-su2.md",
+  "leanSource": "reeb-su2.lean",
+  "provenance": "authored"
+}

@@ -135,7 +135,7 @@ Sibling PRs scanned (cycles 2026-05-20):
 | #849 | claude/phase-5l1-tau-M-proton-closed-form | SUPERSEDED by #854 | none |
 | #853 | claude/phase-5n-notation-rename | merged 2026-05-20 — notation refactor (226 files); merge_state still clean | none |
 | #854 | claude/phase-5l-combined-with-5l1 | NEW 2026-05-20 14:43 — ρ_Z^constit = tr_M^3(B_p) identity; 13 files, no overlap with this PR's scope; thematic neighbor | intent posted ([#854 comment](https://github.com/litlfred/qou/pull/854#issuecomment-4499648775)) |
-| #855 | claude/lean-typed-claims-round-13 | NEW 2026-05-20 14:51 — wall-side-correct cleanup (15 Lean files, content/quantum-observable-universe/*); no overlap with my compute scripts | hold |
+| #855 | claude/lean-typed-claims-round-13 | NEW 2026-05-20 14:51 — wall-side-correct cleanup (15 Lean files, folio/quantum-observable-universe/*); no overlap with my compute scripts | hold |
 | #807 | claude/compute-audit-P33-P34-2026-05-19 | overlap: also extends `.claude/skills/local/compute-audit.md`; my §Long-compute logging discipline appends to a *different* section than their P33/P34 → no git-conflict; coordinated | intent posted ([#807 comment](https://github.com/litlfred/qou/pull/807#issuecomment-4499648172)) |
 
 ## Files touched (PR #852)

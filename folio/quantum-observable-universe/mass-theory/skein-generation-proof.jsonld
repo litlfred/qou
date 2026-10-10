@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-skein-generation",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:skein-generation",
+  "kind": "proof",
+  "title": "Proof of Skein generation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-skein-generation",
+    "papers/quantum-observable-universe/blocks/lem-skein-mass-from-linking"
+  ],
+  "text": "skein-generation-proof.md",
+  "provenance": "authored"
+}

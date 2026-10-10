@@ -28,7 +28,7 @@ Import the relevant modules and enumerate `env.constants` by name:
 ```sh
 export PATH="$HOME/.elan/bin:$PATH"
 LP=""; for d in .lake/packages/*/.lake/build/lib/lean \
-                content/quantum-observable-universe/lean/.lake/build/lib/lean; do
+                folio/quantum-observable-universe/lean/.lake/build/lib/lean; do
   [ -d "$d" ] && LP="$LP:$d"; done
 LEAN_PATH="$LP" lean scripts/lean-probes/mathlib-bruhat-absence-probe.lean
 ```

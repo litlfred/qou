@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-archimedean-realisation-volume-compatibility",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:archimedean-realisation-volume-compatibility",
+  "kind": "conjecture",
+  "title": "Compatibility of the local archimedean realisation $\\tau_\\infty$ with the global realization $\\mathcal{R}_{\\mathrm{top}}$ on QOU volume classes",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-generating-functions-solve-reeb-flow",
+    "papers/quantum-observable-universe/blocks/def-q-dilogarithm",
+    "papers/quantum-observable-universe/blocks/prop-thurston-volume-additivity",
+    "papers/quantum-observable-universe/blocks/def-archimedean-realization-functor"
+  ],
+  "cites": [
+    "references/kashaev1997",
+    "references/murakami-murakami2001"
+  ],
+  "tags": [
+    "archimedean-realisation",
+    "habiro-ring",
+    "hyperbolic-volume",
+    "volume-conjecture",
+    "tau-infty"
+  ],
+  "leanRef": "qou:QOU.Archimedean.RealisationVolumeCompatibility.realisation_volume_compatibility",
+  "text": "archimedean-realisation-volume-compatibility.md",
+  "provenance": "authored"
+}

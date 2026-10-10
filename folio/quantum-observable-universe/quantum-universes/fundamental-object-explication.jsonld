@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-fundamental-object-explication",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:fundamental-object-explication",
+  "kind": "prose",
+  "title": "The fundamental object and the emergent gauge group",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-rigid-monoidal-vect"
+  ],
+  "tags": [
+    "category-theory",
+    "tannaka-krein",
+    "pedagogy"
+  ],
+  "text": "fundamental-object-explication.md",
+  "provenance": "authored"
+}

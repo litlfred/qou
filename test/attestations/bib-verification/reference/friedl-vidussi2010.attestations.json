@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "friedl-vidussi2010",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 382,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-0905.0591v3/friedvidu1.pdf"
+        },
+        "id": "friedl-vidussi2010",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "A 42-page survey of twisted Alexander polynomials of 3-manifolds: definition via twisted Reidemeister torsion tau(N, gamma tensor psi) for gamma: pi_1(N) -> GL(k,R), Poincare duality, distinguishing knots and links, concordance and doubly-slice obstructions, lower bounds on knot genus and the Thurston norm, fiberedness obstructions, and higher-order Alexander polynomials. Checked against the corpus: (i) the folio's only Alexander-polynomial use is the *untwisted* torus-link polynomial Delta_{T(2,2m)}(t) = (t^m - t^{-m})/(t - t^{-1}) evaluated at t = q in ex:threading-link-alexander, which needs nothing from a twisted theory; (ii) the torsion the folio does need -- the adjoint Reidemeister torsion appearing in the 1-loop = torsion route -- is already cited at the specific-result level via garoufalidis-yoon-2024, ohtsuki-takata2015 and dimofte-garoufalidis; (iii) 'Thurston norm', 'fiberedness' and 'fibered knot', the survey's principal applications, do not occur anywhere in content/*.md. A survey contributes no theorem the folio can consume that its existing specific citations do not already supply. Scope-(a) negative: this document, as read, supplies nothing usable here -- not a claim that twisted invariants are irrelevant to the framework in principle.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "The one place the corpus touches Alexander polynomials (ex:threading-link-alexander) uses the untwisted torus-link formula; the adjoint-torsion results the folio actually leans on are cited from their primary sources. Adding this survey would create a bib orphan.",
+              "target": "ex:threading-link-alexander"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "cfeaf61f759a"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

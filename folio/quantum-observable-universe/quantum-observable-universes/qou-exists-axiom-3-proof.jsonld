@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-qou-exists-axiom-3",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:qou-exists-axiom-3",
+  "kind": "proof",
+  "title": "Proof of axiom 3 (Chern classes) for QOU existence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-qou-exists-axiom-3"
+  ],
+  "cites": [
+    "references/reshetikhin1991"
+  ],
+  "text": "qou-exists-axiom-3-proof.md",
+  "provenance": "authored"
+}

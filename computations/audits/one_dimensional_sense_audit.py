@@ -214,7 +214,7 @@ SCOPE -- read this before quoting any number above
   three times in this corpus before being caught; the bucket is named
   NO-MARKER rather than UNCLASSIFIED for exactly that reason.
   No file is modified. The authoring rule lives in
-  content/quantum-observable-universe/notation/notation-collisions.md.""")
+  folio/quantum-observable-universe/notation/notation-collisions.md.""")
     return 0
 
 

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-archimedean-functor-trace-commutativity",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:archimedean-functor-trace-commutativity",
+  "kind": "remark",
+  "title": "Archimedean realisation and binding-trace commutativity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-standard-part-functor"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-standard-part-functor",
+  "tags": [
+    "surreal-numbers",
+    "standard-part",
+    "archimedean",
+    "binding-energy",
+    "markov-trace",
+    "q-clt"
+  ],
+  "text": "archimedean-functor-trace-commutativity.md",
+  "provenance": "authored"
+}

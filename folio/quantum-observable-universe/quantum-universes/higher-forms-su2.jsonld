@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-higher-forms-su2",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:higher-forms-su2",
+  "kind": "example",
+  "title": "Higher forms on $\\mathcal{O}(\\mathrm{SU}(2))$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-higher-forms",
+    "papers/quantum-observable-universe/blocks/ex-quantum-universe-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-higher-forms",
+  "tags": [
+    "su2",
+    "differential-forms"
+  ],
+  "leanRef": "qou:QOU.Examples.su2FormDims",
+  "text": "higher-forms-su2.md",
+  "leanSource": "higher-forms-su2.lean",
+  "provenance": "authored"
+}

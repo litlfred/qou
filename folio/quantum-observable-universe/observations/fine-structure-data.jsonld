@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-fine-structure-data",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:fine-structure-data",
+  "kind": "prose",
+  "tags": [
+    "fine-structure-constant",
+    "CODATA",
+    "experimental",
+    "coupling",
+    "data"
+  ],
+  "text": "fine-structure-data.md",
+  "provenance": "authored"
+}

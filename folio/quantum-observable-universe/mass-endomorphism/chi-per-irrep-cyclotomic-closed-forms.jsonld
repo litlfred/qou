@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-chi-per-irrep-cyclotomic-closed-forms",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:chi-per-irrep-cyclotomic-closed-forms",
+  "kind": "remark",
+  "title": "All three $V_\\lambda$ per-irrep character difference closed forms with **cyclotomic factor pattern**: $V_{(3)}, V_{(1,1,1)}$ → $\\Phi_4^2$; $V_{(2,1)}$ → $\\Phi_8$; denominator powers $q, q^3, q^5$ track content sum",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-chi-v3-closed-form-proof"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-chi-v3-closed-form-proof",
+  "cites": [
+    "references/jones1985",
+    "references/wenzl1988",
+    "references/hoefsmit1974",
+    "references/kassel1995"
+  ],
+  "tags": [
+    "lean-infrastructure",
+    "per-wedderburn-block",
+    "closed-form",
+    "cyclotomic",
+    "v21-hoefsmit-matrix",
+    "conjugate-partition-symmetry"
+  ],
+  "text": "chi-per-irrep-cyclotomic-closed-forms.md",
+  "leanSource": "chi-per-irrep-cyclotomic-closed-forms.lean",
+  "provenance": "authored"
+}

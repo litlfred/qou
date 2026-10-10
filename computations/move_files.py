@@ -3,15 +3,15 @@ import os
 import shutil
 
 repo_root = '/home/litlfred/space_cats/qou'
-lean_root = os.path.join(repo_root, 'content/quantum-observable-universe/lean')
+lean_root = os.path.join(repo_root, 'folio/quantum-observable-universe/lean')
 
 # 1. Move borromean-quark.lean
-src_bq = os.path.join(repo_root, 'content/quantum-observable-universe/observations/borromean-quark.lean')
+src_bq = os.path.join(repo_root, 'folio/quantum-observable-universe/observations/borromean-quark.lean')
 dst_bq = os.path.join(lean_root, 'QOU/Archimedean/BorromeanQuark.lean')
 shutil.copyfile(src_bq, dst_bq)
 
 # 2. Move and patch q-integer-mass-formula.lean
-src_q = os.path.join(repo_root, 'content/quantum-observable-universe/mass-theory/q-integer-mass-formula.lean')
+src_q = os.path.join(repo_root, 'folio/quantum-observable-universe/mass-theory/q-integer-mass-formula.lean')
 dst_q = os.path.join(lean_root, 'QOU/Interactions/QIntegerMassFormula.lean')
 
 with open(src_q, 'r') as f:

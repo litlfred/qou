@@ -73,7 +73,7 @@ Precision: mpmath end to end at the repo compute dps; no float() anywhere on a
 computed path, per AGENTS.md NO-FLOAT64 (which binds probes as hard as
 producers).
 
--- Ref: [manuscript] content/quantum-observable-universe/mass-theory/unified-iterative-correction.md
+-- Ref: [manuscript] folio/quantum-observable-universe/mass-theory/unified-iterative-correction.md
 """
 from __future__ import annotations
 

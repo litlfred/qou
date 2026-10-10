@@ -1,0 +1,66 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "dgkmsv2013",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 215,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1101.3374v1/1101.3374v1.pdf"
+        },
+        "id": "dgkmsv2013",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED from front matter (arXiv identifier and six-author list match the registered entry). BIB ORPHAN: the entry exists but there are ZERO citation sites in content/ \u2014 no .md \\cite, no .ts cites[], no Lean -- Ref:. This is a real miss rather than a shrug: the document's opening figure is the Borromean rings, its subject is the classification of three-component links by the pairwise linking numbers together with the triple linking number, and it supplies an integral formula for the triple linking number valid exactly when the pairwise linking numbers vanish. Two QOU blocks assert that configuration verbatim and cite nothing for it: ex:hadron-proton (hadron-proton-example.md:19, 'Their pairwise linking numbers vanish, but their Milnor triple linking number mu-bar(123) = +/-1 is non-zero. This provides the topological mechanism for quark confinement') and conj:borromean-quark (borromean-quark.md:41, 'All three pairwise linking numbers vanish (the Brunnian property), while the triple Milnor invariant mu-bar_123 = +/-1 encodes confinement').",
+          "keyResults": [
+            {
+              "locator": "abstract / \u00a71",
+              "statement": "The pairwise linking numbers together with the triple linking number classify a three-component link in the 3-sphere up to link homotopy, corresponding to the Pontryagin invariants of an associated characteristic map from the 3-torus to the 2-sphere.",
+              "useForFolio": "Sources the classification statement that ex:hadron-proton and conj:borromean-quark currently assert with no reference, and supplies the homotopy-theoretic reading of the triple invariant the confinement argument implicitly uses.",
+              "targets": [
+                "ex:hadron-proton",
+                "conj:borromean-quark"
+              ]
+            },
+            {
+              "locator": "abstract (integral formula)",
+              "statement": "When all pairwise linking numbers vanish the triple linking number is given by an integral formula, invariant under orientation-preserving rigid motions of the 3-sphere and expressible as the helicity of a related vector field on the 3-torus.",
+              "useForFolio": "A geometric/analytic representative for the triple linking invariant, in the same helicity register the framework already uses for linking weights.",
+              "targets": [
+                "conj:borromean-quark"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "ex:hadron-proton states the vanishing-pairwise / nonzero-triple classification as the basis of its confinement argument with no source; this document is that classification, and its Borromean case is its opening example.",
+              "target": "ex:hadron-proton",
+              "bean": "qou-vby1"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "conj:borromean-quark makes the same Brunnian / triple-invariant assertion unsourced; the same reference applies, and its integral formula gives the conjecture a geometric representative.",
+              "target": "conj:borromean-quark",
+              "bean": "qou-von8"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "01d76c1d259c"
+        }
+      }
+    }
+  ]
+}

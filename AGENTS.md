@@ -570,7 +570,7 @@ skill wins and the memory entry is wrong — fix it.
 
 Every session must run from a **prioritized work-plan** maintained
 as **beans** — the [`beans`](https://github.com/hmans/beans) CLI
-flat-file issue tracker (data under `.beans/`; install via
+flat-file issue tracker (data under `beans/defs/`; install via
 [`scripts/install-beans.sh`](scripts/install-beans.sh)). See
 [`.claude/skills/local/todo-manager.md`](.claude/skills/local/todo-manager.md)
 and [`.claude/skills/local/bean-coordination.md`](.claude/skills/local/bean-coordination.md).
@@ -588,8 +588,8 @@ user's last message, not the most recently mentioned file.
 
 > **A bean is an APPEND-ONLY ledger, and concurrent appends collide on
 > essentially every landing (measured 2026-09-13).** `main` takes **169
-> commits / 24 h**; `.beans/qou-brng--…` is touched by **9** of them and
-> `.beans/qou-zlra--…` by **6**, so a branch that appends to `qou-brng`
+> commits / 24 h**; `beans/defs/qou-brng--…` is touched by **9** of them and
+> `beans/defs/qou-zlra--…` by **6**, so a branch that appends to `qou-brng`
 > goes un-mergeable roughly **every 2.7 h**. In the #7237 / #7245 /
 > #7251 / #7253 cluster, **four of the five collision surfaces were
 > these two files** — no content, no Lean, no compute — and `qou-brng`
@@ -606,11 +606,30 @@ user's last message, not the most recently mentioned file.
 1. **Start a bean list at session start.** As soon as you have
    enough context (after reading the user's first request, the
    SessionStart hooks, and the current branch / PR state), create a
-   session milestone bean plus child task beans decomposing the
+   session **epic** bean plus child task beans decomposing the
    requested work (`beans create "Session: <branch/goal>" --type
-   milestone`; one `--type task` per concrete step). If the request
+   epic`; one `--type task` per concrete step). If the request
    is one trivial task, you may skip — but any time there are ≥ 2
    distinct steps, create the beans.
+
+   **🛑 `--type epic`, NOT `--type milestone` (corrected 2026-09-26 on owner
+   instruction).** This line said `milestone` until then, and following it
+   ~291 times is why `milestone` stopped meaning anything here: cat-harness's
+   hierarchy is `milestone -> epic -> feature -> task/bug`, where a
+   **milestone is an owner-level goal** — the platform's own tracker has
+   **three**, from "the owner's goals" — while a session is a work-tranche,
+   which is what an `epic` is. qou had **374** milestones, 291 of them
+   `Session: …`, so the roadmap had ~291 roots and `check-bean-parents`
+   reported **1910 problems / 2305 open (83 %)**. The 291 were retyped to
+   `epic` in the same commit as this edit (`milestone` 374 -> 49).
+
+   **Do NOT "fix" this by using `--type task` instead.** That was the first
+   instinct and it is measurably worse: `ROOT_TYPES = {milestone, epic}`, so a
+   parentless task is an orphan, and `task` is not a legal parent — measured
+   on the 291, a `task` retype would have created **66 new orphans** and left
+   **148 open children illegally parented** (`task beans can only have
+   milestone, epic, or feature as parent, not task`). `epic` costs nothing:
+   children stay legally parented and the bean stays a legitimate root.
 
    **Check before you create (STRICT).** `beans create` is **not**
    idempotent — it mints a fresh ID on every call and dedupes on
@@ -748,10 +767,10 @@ user's last message, not the most recently mentioned file.
       authoritative source; `mcp__github__pull_request_read get`
       gives the body's test-plan items.
    3. **Integration-watcher requirements** — the active watchers'
-      queue items (`.beans/proof-integration-watcher-queue.json`,
-      `.beans/canonical-watcher-queue.json`,
-      `.beans/compute-integration-watcher-queue.json`,
-      `.beans/detangler-integration-watcher-queue.json`). Prefer
+      queue items (`beans/defs/proof-integration-watcher-queue.json`,
+      `beans/defs/canonical-watcher-queue.json`,
+      `beans/defs/compute-integration-watcher-queue.json`,
+      `beans/defs/detangler-integration-watcher-queue.json`). Prefer
       items whose `block_or_script` overlaps the current PR's
       scope (e.g. the same chapter or the same Python/Lean file).
    4. **Refresh stale sidecars + witnesses** (added 2026-06-03).
@@ -1896,10 +1915,10 @@ corpus — run the **corpus-grep checklist**:
    lists that document's extracted theorems and definitions if you want
    the claims rather than the prose.
 
-6. **The beans** — `grep -rl <topic> .beans/`. The work-plan tracker is a
+6. **The beans** — `grep -rl <topic> beans/defs/`. The work-plan tracker is a
    corpus in its own right (tens of thousands of files) and it is where a
    prior agent's *conclusion* most often sits before it reaches an audit
-   doc or a content block. It is **not** covered by paths 1–5: `.beans/`
+   doc or a content block. It is **not** covered by paths 1–5: `beans/`
    is not under `docs/`, `content/`, `computations/` or `library/`, and a
    coordination ledger is a different file.
 
@@ -2399,7 +2418,7 @@ Read the cheat sheet for: per-step math + paper references + canonical compute s
 
 When working on math-affecting code or content, **trace the change to a step in the chain** and verify the canonical compute script is in the consumer set.
 
-> **🟧 Mass-and-Binding-Algorithms appendix sync (STRICT).** Any PR that touches mass / binding derivations or compute infra (Steps 9a, 9b, 10, 11 of the canonical chain, or any sidecar algorithm — Δ_λ closure, c_k truncation ladder, LP/SDP dual emission, witness-JSON pipeline) **must** update the matching `alg:`-block under [`content/quantum-observable-universe/appendix-mass-binding-algorithms/`](content/quantum-observable-universe/appendix-mass-binding-algorithms/) in the same PR. The appendix is a maintenance contract bridging propositions ↔ Python API; its `uses[]`, `computation.script`, `computation.witness`, and `.md` *Algorithm / Correctness / Python API* sections must stay in sync with the actual compute. Enforced by `local/coordinate.md §2-bis`, `local/compute-author.md §8 pre-work checklist`, `local/compute-audit.md §verification checklist`, and `local/proof-editor.md §coordination rules`. Reviewers diff the appendix against the compute / proof change.
+> **🟧 Mass-and-Binding-Algorithms appendix sync (STRICT).** Any PR that touches mass / binding derivations or compute infra (Steps 9a, 9b, 10, 11 of the canonical chain, or any sidecar algorithm — Δ_λ closure, c_k truncation ladder, LP/SDP dual emission, witness-JSON pipeline) **must** update the matching `alg:`-block under [`folio/quantum-observable-universe/appendix-mass-binding-algorithms/`](folio/quantum-observable-universe/appendix-mass-binding-algorithms/) in the same PR. The appendix is a maintenance contract bridging propositions ↔ Python API; its `uses[]`, `computation.script`, `computation.witness`, and `.md` *Algorithm / Correctness / Python API* sections must stay in sync with the actual compute. Enforced by `local/coordinate.md §2-bis`, `local/compute-author.md §8 pre-work checklist`, `local/compute-audit.md §verification checklist`, and `local/proof-editor.md §coordination rules`. Reviewers diff the appendix against the compute / proof change.
 
 > **🛑 ABSOLUTE MASS EXCISED (owner ruling 2026-08-11, bean `qou-exam`).** The framework no longer claims, targets, or scores an **absolute** nucleon or atomic mass in MeV (m_p, m_n, m_⁴He) as a prediction. Absolute mass is `m_e · (dimensionless ratio)`, and m_e (CAL-1) sets the MeV scale *by fiat* — so the MeV number double-counts the calibration and carries no content beyond the ratio. **The mass-formula shape and the `canonical_mass` facade in the two banners below remain valid — but as `m_e`-scaled *realizations* of the dimensionless ratio / binding, NOT as absolute-mass predictions.** Report ratios (`m_p/m_e`, `m_μ/m_e`, `m_K/m_π`), binding `B(K)`, decay Q-values (`Q_β`), and splittings (`Δ_pn`); do **not** present `m_p ≈ 938.27 MeV` as a framework *prediction* (it remains derivable as `m_e × ratio`, but that is a rendering, not a claim). Broader than the 2026-08-02 q₀-derivation forever-gate — that closed one route; this closes the absolute-mass *target*. Full ruling: [`docs/audits/2026-08-11-excise-absolute-mass-notion.md`](docs/audits/2026-08-11-excise-absolute-mass-notion.md).
 
@@ -2490,7 +2509,7 @@ When working on math-affecting code or content, **trace the change to a step in 
 > for C** and are kept as recorded — they need *scoping*, not correction; do
 > **not** "fix" them. **The ladder must be RE-DERIVED under D, and that is not
 > a z-swap** — `QOU.QBeta.decayLadder_zC_threeRow_ne_zero`
-> ([`MarkovZFullBarCondition.lean`](content/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean),
+> ([`MarkovZFullBarCondition.lean`](folio/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean),
 > sorry-free) makes the C-frame ladder and the mass channel's three-row forcing
 > mutually exclusive, so substituting `z_D` into the existing ladder is not a
 > valid move. Until the re-derivation lands, treat every `c_k` conclusion —
@@ -2597,10 +2616,71 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   > change the reading.** Live criterion: **reading 3, whole word.**
   >
   > **What that changes, and what it does not.** Under convention D
-  > `y_(1³) = 0` *by construction* — that vanishing **is** convention D
-  > (`markovWeights_eq_jones_of_threeRow_eq_zero`) — so reading 3 does **not**
-  > constrain the alternating block at all. Any exclusion resting on the
-  > `(1,1,1)` sign is a reading-**1** exclusion, not a live one.
+  > `y_(1³) = 0` — the Ocneanu weight of every shape with a third row vanishes
+  > at `z = q³/(q²+1)`, unconditionally over any field with `q² + 1 ≠ 0`
+  > (`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`,
+  > sorry-free, general `n`; at `n = 3` specifically it is
+  > `QOU.QBeta.TemperleyLiebTower.conventionD_kills_antisymmetriser`, which
+  > derives `y₁₃ = 0` from the D pin plus the three moment equations) — so
+  > reading 3 does **not** constrain the alternating block at all. Any
+  > exclusion resting on the `(1,1,1)` sign is a reading-**1** exclusion, not
+  > a live one.
+  >
+  > 🛑 **This cited `markovWeights_eq_jones_of_threeRow_eq_zero` until
+  > 2026-09-26, and that lemma proves the CONVERSE (bean `qou-6moa`).** Read
+  > its signature (`BraidsAndKnots/MarkovTraceTLUniqueness.lean:119`):
+  > `hTL : y₁₃ = 0` is a **hypothesis** and `z * (q + qi) = q ^ 2` — convention
+  > D — is its **conclusion**. So it gives **TL ⟹ D**, which is the direction
+  > `docs/coordination/trace-convention-registry.json` correctly cites it for,
+  > and the exact opposite of what this paragraph needs. It also carries
+  > `hfaith : y₂₁ ≠ 0`, and that hypothesis is load-bearing rather than
+  > decorative: the same file's `markovWeights_degenerate_root` proves that
+  > dropping it makes the conclusion **false**, not merely unprovable (the
+  > `y = (1,0,0)` trivial character at `z = q`). A lemma that *assumes* a form
+  > of faithfulness on the two-row block cannot be evidence about the
+  > three-row block vanishing. **The reading in this paragraph is unaffected —
+  > only its citation was**, which is why this is a citation swap and not a
+  > retraction.
+  >
+  > **The corpus already had the sentence, one file over.**
+  > `QOU.BraidsAndKnots.FibreDimensionForcesTL.threeRow_eq_zero_of_jones_ocneanu`
+  > (`:179`) is the converse in the **same variable frame** — same `q, qi`, same
+  > three moment equations — and its own docstring states the distinction
+  > verbatim: *"The converse direction of
+  > `markovWeights_eq_jones_of_threeRow_eq_zero`: there, `y_(1³) = 0` implies
+  > `z·[2] = q²`; here, `z·[2] = q²` implies `y_(1³) = 0`."* Prefer it over
+  > `conventionD_kills_antisymmetriser` anywhere the site is on the **fibre /
+  > generic side**, because the two differ in typeclass and it is easy to swap
+  > the wrong one in:
+  >
+  > | forward-direction lemma | typeclass | scope |
+  > |---|---|---|
+  > | `ocneanuWeight_conventionD_eq_zero_of_three_rows` | `[Field R]`, one hypothesis `q²+1 ≠ 0` | general `n`, on the actual Ocneanu weight |
+  > | `threeRow_eq_zero_of_jones_ocneanu` | `[CommRing R] [IsDomain R]`, division-free | `n = 3`, generic domain |
+  > | `conventionD_kills_antisymmetriser` | **`[Field R] [LinearOrder R] [IsStrictOrderedRing R]`** — an ORDERED field (`section PinningOrdered`) | `n = 3`, archimedean side only |
+  >
+  > The third is correct *here* (the PSD / reading-3 context is archimedean) and
+  > is the wrong citation at a §7c generic-`R` site. Do not propagate it into a
+  > Lean docstring on the fibre side.
+  >
+  > **MEASURED, and the defect is a CLASS — 14 reversed citations across 9
+  > files, against 49 correct ones.** Population: **81 hits / 56 files**
+  > excluding `__pycache__` (82/57 if the stale `.pyc` is counted; say which).
+  > The reversal is concentrated in **one arc** — the `qbeta` reading-3 / e-cat /
+  > D-ladder probes, the two beans they feed (`qou-99qc`, `qou-cds1`), two audit
+  > docs, and the Lean twin of this very paragraph at
+  > `QOU/Mass/AltCharShiftMultiset.lean`. **Nothing reader-facing (`content/**/*.md`)
+  > is affected and no validator's verdict changes**; three witness `source` /
+  > `detail` fields carry it with no machine consumer. Per-site table and
+  > blast radius: bean `qou-6moa`.
+  >
+  > **And the claim survives the citation fix**: three further files assert
+  > *"that vanishing IS convention D"* with **no lemma named at all**
+  > (`qbeta_knot_operator_ilp_ohara_cost_probe.py:270`,
+  > `qbeta_ecat_lp_radical_pairing_probe.py:30,207`), so a sweep keyed on the
+  > identifier cannot see them. **Grep the phrase, not the identifier** — the
+  > same detector-blindness class as everything in
+  > `docs/audits/2026-08-15-detector-blindness-taxonomy.md`.
   >
   > Measured, `nuc11_interleaved` fails on `(2,1)` and `(1,1,1)` for **both**
   > nucleons (proton block dets `1.38249446339` / `-1.02197249381` /
@@ -3173,9 +3253,13 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **forty-five** rows (re-counted 2026-09-14), and the groups
+>   catalogues **forty-nine** rows (re-counted 2026-09-29; 46 landed 2026-09-14
+>   in `81a8ac98b9` after this line last said forty-five, then 47 and 48 landed,
+>   and 49 is PR #7401's — which arrived numbered 46 and had to be renumbered on
+>   merge, so **re-count before citing any number here, including this one**),
+>   and the groups
 >   below split the FIRST THIRTY-FOUR seven ways — only the first group is
->   about conventions at all. **Rows 35-45 are NOT in this list**: 35 (the
+>   about conventions at all. **Rows 35-46 are NOT in this list**: 35 (the
 >   identifier's alphabet), 36 (the direction of the cast), 37 (the numerator
 >   is an applied argument), 38 (the value audit's variable resolution),
 >   39 (the freshness is on the wrong object), 40, which is the first row
@@ -3202,7 +3286,14 @@ Do not regress either.
 >   it.** Do not read an empty ledger, or a clean `--check-ledger`, as evidence
 >   about the corpus.
 >
->   **45** is the newest and is about an ALGEBRAIC signature rather than a
+>   **46** is the newest — **the PROOF TERM'S GRAMMAR**: `lean-self-assuming-audit.py`
+>   had a rule for a bare binder and one for a single qualified projection, and
+>   the character `⟨` occurred NOWHERE in the file, so every CONJUNCTIVE form of
+>   a self-assuming projection — Lean's anonymous constructor — was invisible.
+>   Landed by a sibling in `81a8ac98b9`; see
+>   [`2026-09-14-conjunctive-self-assuming-blind-spot.md`](docs/audits/2026-09-14-conjunctive-self-assuming-blind-spot.md).
+>
+>   **45** is about an ALGEBRAIC signature rather than a
 >   spelling: `q**2 - 2*q - 1`, the factor identifying the retired Q_β base,
 >   is also written with the **absolute value pre-resolved**
 >   (`2*q + 1 - q**2`, legitimate since `q₀²−2q₀−1 < 0`, so no `abs()`
@@ -3419,9 +3510,9 @@ Do not regress either.
 
 The substrate modulus q₀ has **one** value but **two** documented pins
 (authoritative corpus:
-[`observations/three-calibration-discipline.md` §3](content/quantum-observable-universe/observations/three-calibration-discipline.md),
-[`observations/epistemic-status-of-calibrations.md`](content/quantum-observable-universe/observations/epistemic-status-of-calibrations.md),
-[`mass-theory/rem-qstar-decay-sector-q0.md`](content/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.md) — the decay-sector point `q*`, which is **conditional on (H1)** and is **NOT** an independent third determination; see registry §9f):
+[`observations/three-calibration-discipline.md` §3](folio/quantum-observable-universe/observations/three-calibration-discipline.md),
+[`observations/epistemic-status-of-calibrations.md`](folio/quantum-observable-universe/observations/epistemic-status-of-calibrations.md),
+[`mass-theory/rem-qstar-decay-sector-q0.md`](folio/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.md) — the decay-sector point `q*`, which is **conditional on (H1)** and is **NOT** an independent third determination; see registry §9f):
 
 > **Dead citation corrected 2026-08-11.** This list previously named
 > `observations/substrate-anchor-alternatives.md`, which **does not exist**
@@ -4025,9 +4116,9 @@ The repo uses a **single root Lake workspace** (`/lakefile.toml`,
 
 | Package | Paper directory | Library module |
 |---------|-----------------|----------------|
-| `qou` | `content/quantum-observable-universe/lean/` | `QOU` |
-| `ugb` | `content/unital-groebner-bases/lean/` | `UGB` |
-| `fred2005` | `content/fred2005-formal-groups/lean/` | `Fred2005` |
+| `qou` | `folio/quantum-observable-universe/lean/` | `QOU` |
+| `ugb` | `folio/unital-groebner-bases/lean/` | `UGB` |
+| `fred2005` | `folio/fred2005-formal-groups/lean/` | `Fred2005` |
 
 **Preferred build commands** (always run from repo root):
 
@@ -4173,7 +4264,7 @@ consult `LEAN_PACKAGES` for the list of valid prefixes.
 sorry
 ```
 
-- The `[key]` must match an entry in `content/schema/references.ts` exactly (case-sensitive).
+- The `[key]` must match an entry in `folio/schema/references.ts` exactly (case-sensitive).
   (`references.bib` is auto-generated from `references.ts` — the `export-bibtex`
   shortcut was dropped in the miga migration, pending re-wiring).
 - If no published reference exists, use `[manuscript]` and cite chapter/section.
@@ -4191,7 +4282,7 @@ include:
   (`theorem`/`lemma`/`proposition`/`corollary`/`example`); re-declaring
   the same vacuous body as a `def` (or `abbrev`/`instance`) hid it from
   the entire audit. Now caught as `def-disguised-true`
-  ([`content/pipeline/lean-vacuity-axiom-audit.ts`](content/pipeline/lean-vacuity-axiom-audit.ts)).
+  ([`folio/pipeline/lean-vacuity-axiom-audit.ts`](folio/pipeline/lean-vacuity-axiom-audit.ts)).
 - **Concluding `: True`** (or `: X = X := rfl`, or any tautology) in
   place of the real proposition.
 - **`native_decide`** to mask a goal behind the kernel evaluator.
@@ -4293,7 +4384,7 @@ cone transitively touches a `conj:C` may keep its provable kind
    class carries the genuine sub-hypotheses / proof-chain steps and the
    theorem composes them (e.g. carry the two directions of an iff as
    hypotheses, derive it by `Iff.intro`). Verified exemplar:
-   [`QOU/FluidDynamics/q_bkm_criterion.lean`](content/quantum-observable-universe/lean/QOU/FluidDynamics/q_bkm_criterion.lean).
+   [`QOU/FluidDynamics/q_bkm_criterion.lean`](folio/quantum-observable-universe/lean/QOU/FluidDynamics/q_bkm_criterion.lean).
 
 When all five hold, the block represents a *rigorous conditional
 result* — fully verified by Lean modulo a single, named,
@@ -4434,12 +4525,12 @@ archimedean smallness, …) while encoding only a weak `≠`
 non-triviality under-delivers on its own prose. Class fields must carry
 the conjecture's **content** — a parameter-quantified inequality in the
 *shape* of the claim (the Round-11 pattern in
-[`ConditionalClasses.lean`](content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean)),
+[`ConditionalClasses.lean`](folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean)),
 never a bare `True` or an empty body. An unproved primary is honestly
 represented by a **content-bearing class with no instance** (the open
 state); do not fabricate a trivial instance to "close" it.
 
-**Enforcement.** `content/pipeline/lean-vacuity-axiom-audit.ts` adds
+**Enforcement.** `folio/pipeline/lean-vacuity-axiom-audit.ts` adds
 four conjecture-discipline criteria (high-recall candidates,
 agent-confirmed like the other vacuity classes). These close the gap
 that the proof-anti-pattern detectors structurally miss — an empty or
@@ -4477,7 +4568,7 @@ edges). There is nothing to "drain": classification is recomputed from
 the Lean each run.
 
 Worked exemplar (the bug that motivated these checks):
-[`ReebEpsilon.lean`](content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ReebEpsilon.lean)
+[`ReebEpsilon.lean`](folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ReebEpsilon.lean)
 — `ArchimedeanInfinitesimal` was an empty marker `: Prop` that passed
 every existing check; it is now a content-bearing primary-conjecture
 class alongside `ReebPositive`, each classified `@conjecture: primary`.
@@ -4545,7 +4636,7 @@ todos/                           ← gitignored
   infra-todos.ts                 ← infrastructure todos (optional)
 ```
 
-The `TodoItem` type is defined in `content/schema/types.ts` for reuse,
+The `TodoItem` type is defined in `folio-assistant/cat-harness/schemas/types.ts` for reuse,
 but no `todos` field exists on any content block type or schema.
 
 The MCP server serves todos at `/api/todos` (JSON) and `/todos` (HTML
@@ -4921,9 +5012,9 @@ paper is the front-matter **Notation** chapter, rendered into the
 PDF immediately after the table of contents:
 
 - **Per-chapter symbol tables**:
-  [`content/quantum-observable-universe/notation/notation-register.md`](content/quantum-observable-universe/notation/notation-register.md)
+  [`folio/quantum-observable-universe/notation/notation-register.md`](folio/quantum-observable-universe/notation/notation-register.md)
 - **Collision avoidances + conventions**:
-  [`content/quantum-observable-universe/notation/notation-collisions.md`](content/quantum-observable-universe/notation/notation-collisions.md)
+  [`folio/quantum-observable-universe/notation/notation-collisions.md`](folio/quantum-observable-universe/notation/notation-collisions.md)
 
 Agents **must** treat those `.md` files as authoritative when picking
 a font/symbol for a concept. When adding a new symbol convention,
@@ -4957,7 +5048,7 @@ rules of thumb:
 - `$\gamma$` = photon (never vortex; vortex is `$\varrho$`)
 - `$H_q$` alone = **forbidden** (collision); use `$\mathcal{H}_q$` (shuffle) / `$\hat{H}_q$` (Hamiltonian) / `$H_n(q)$` (Hecke) / `$H_q(\lambda)$` (hook-length)
 - `$E$` alone = **not used**; use `$\mathcal{S}_p$` (fibre), `$\mathfrak{E}$` (energy), `$\mathcal{E}_q$` (elliptic curve), or `$E_{\mathfrak{H}}$` (crossing energy with hadron subscript)
-- Three partition-weight families — Markov `$y_\lambda$`, q-deformed Wedderburn `$w_\lambda(q)$`, classical Plancherel `$w_\lambda(1)$` — are **distinct** at `$q \neq 1$` and coincide at `$q = 1$`; never conflate. (**`$\tilde w_\lambda$` is RETIRED** by owner ruling 2026-08-16: bare `$w_\lambda$` now means `$w_\lambda(q)$`, and the classical measure is its specialisation `$w_\lambda(1)$`, not a separate symbol. This line said `$\tilde w_\lambda$` until 2026-09-05.) **Never write a normalisation claim on bare `$w_\lambda$`**: `$\sum_\lambda w_\lambda(1) = 1$` is exact, and `$\sum_\lambda w_\lambda(q)$` is **not** — measured 0.987 / 0.982 / 0.982 / 0.991 / 1.111 / **1.517** at `$n = 3/4/5/6/9/12$` at the proton `$q_0$`. That defect is **structural, not a q-integer-convention artifact** (the deformation breaks Burnside `$\sum_\lambda (f^\lambda)^2 = n!$`; the asymmetric convention is *worse* at five of those six `$n$`), so it does not cancel across different `$n$` and distorts any **cross-atom** metric — `$n = 3A$`. Cross-atom consumers use the self-normalised `$d_q^2/D^2$` (Reshetikhin–Turaev/Verlinde). Whether `$\dim_q^2$` is even the right numerator — against the Molien `$f^\lambda \dim_q(\lambda)$`, which sums to `$[n]_q!$` exactly (Lean, sorry-free, all `$n$`, all `$q>1$`) — is **open**, bean `qou-oots`. Register: [`notation-collisions.md`](content/quantum-observable-universe/notation/notation-collisions.md); measurement: [`2026-09-04-plancherel-convention-gap.md`](docs/audits/2026-09-04-plancherel-convention-gap.md) **Mechanical check (2026-09-13):** [`computations/audits/y_lambda_conflation_audit.py`](computations/audits/y_lambda_conflation_audit.py), wired blocking into `scripts/precision-gates.sh`. It flags the name `y_lambda` attached to the quantum Plancherel measure `$d_q(\lambda)^2/[n]_q!$` — in prose, in an AST assignment, in a producer's own name, and (as a draining ratchet) in a witness column that declares no `weight_family`. It exists because this rule lived only in prose and was broken in four probes at once, and there it was **not cosmetic**: re-weighting the Magnus $\Omega_2$ probes' own committed traces with the real Wenzl bridge FLIPS the sign of $P_\text{total}$ at $A=3$ and $A=4$ (Plancherel $-,+,+$ over $A=2,3,4$; Wenzl $-,-,-$), so the programme's target $A$-dependent sign change is present under one name and absent under the other — bean `qou-za3q`, decision 1 still OPEN.
+- Three partition-weight families — Markov `$y_\lambda$`, q-deformed Wedderburn `$w_\lambda(q)$`, classical Plancherel `$w_\lambda(1)$` — are **distinct** at `$q \neq 1$` and coincide at `$q = 1$`; never conflate. (**`$\tilde w_\lambda$` is RETIRED** by owner ruling 2026-08-16: bare `$w_\lambda$` now means `$w_\lambda(q)$`, and the classical measure is its specialisation `$w_\lambda(1)$`, not a separate symbol. This line said `$\tilde w_\lambda$` until 2026-09-05.) **Never write a normalisation claim on bare `$w_\lambda$`**: `$\sum_\lambda w_\lambda(1) = 1$` is exact, and `$\sum_\lambda w_\lambda(q)$` is **not** — measured 0.987 / 0.982 / 0.982 / 0.991 / 1.111 / **1.517** at `$n = 3/4/5/6/9/12$` at the proton `$q_0$`. That defect is **structural, not a q-integer-convention artifact** (the deformation breaks Burnside `$\sum_\lambda (f^\lambda)^2 = n!$`; the asymmetric convention is *worse* at five of those six `$n$`), so it does not cancel across different `$n$` and distorts any **cross-atom** metric — `$n = 3A$`. Cross-atom consumers use the self-normalised `$d_q^2/D^2$` (Reshetikhin–Turaev/Verlinde). Whether `$\dim_q^2$` is even the right numerator — against the Molien `$f^\lambda \dim_q(\lambda)$`, which sums to `$[n]_q!$` exactly (Lean, sorry-free, all `$n$`, all `$q>1$`) — is **open**, bean `qou-oots`. Register: [`notation-collisions.md`](folio/quantum-observable-universe/notation/notation-collisions.md); measurement: [`2026-09-04-plancherel-convention-gap.md`](docs/audits/2026-09-04-plancherel-convention-gap.md) **Mechanical check (2026-09-13):** [`computations/audits/y_lambda_conflation_audit.py`](computations/audits/y_lambda_conflation_audit.py), wired blocking into `scripts/precision-gates.sh`. It flags the name `y_lambda` attached to the quantum Plancherel measure `$d_q(\lambda)^2/[n]_q!$` — in prose, in an AST assignment, in a producer's own name, and (as a draining ratchet) in a witness column that declares no `weight_family`. It exists because this rule lived only in prose and was broken in four probes at once, and there it was **not cosmetic**: re-weighting the Magnus $\Omega_2$ probes' own committed traces with the real Wenzl bridge FLIPS the sign of $P_\text{total}$ at $A=3$ and $A=4$ (Plancherel $-,+,+$ over $A=2,3,4$; Wenzl $-,-,-$), so the programme's target $A$-dependent sign change is present under one name and absent under the other — bean `qou-za3q`, decision 1 still OPEN.
 - `$q = 1.1097$` (or any specific numerical value) **must not appear** outside the introduction and Chapter 7
 
 ### 7ab. Observed / derived values — approximation convention (STRICT)
@@ -5226,13 +5317,13 @@ Sibling files share the same root name: `rigid-monoidal-category.ts`,
 
 | Path | Purpose |
 |------|---------|
-| `content/schema/types.ts` | TypeScript types (discriminated unions) |
-| `content/schema/constraints.ts` | Zod schemas + constraint rules |
-| `content/schema/builders.ts` | `definition()`, `theorem()`, `prose()`, etc. |
+| `folio-assistant/cat-harness/schemas/types.ts` | TypeScript types (discriminated unions) |
+| `folio-assistant/cat-harness/schemas/constraints.ts` | Zod schemas + constraint rules |
+| `folio/schema/builders.ts` | `definition()`, `theorem()`, `prose()`, etc. |
 | `folio-assistant/content/pipeline/validate.ts` | Three-level validation |
 | `folio-assistant/content/pipeline/render-latex.ts` | Block → LaTeX + AST validation |
 | `folio-assistant/content/pipeline/build.ts` | Full document build |
-| `content/schema/references.ts` | **Bibliography source of truth** (CSL-JSON) |
+| `folio/schema/references.ts` | **Bibliography source of truth** (CSL-JSON) |
 | `folio-assistant/content/pipeline/export-bibtex.ts` | Generates `references.bib` from CSL-JSON |
 | `folio-assistant/content/pipeline/validate-references.ts` | Bibliography + citation cross-checks |
 | `folio-assistant/content/pipeline/citations.ts` | `\cite{}` extraction from .md content |
@@ -5241,7 +5332,7 @@ Sibling files share the same root name: `rigid-monoidal-category.ts`,
 ### Bibliography architecture
 
 The bibliography is managed as **typed CSL-JSON** in
-`content/schema/references.ts`. BibTeX (`references.bib`) is a downstream
+`folio/schema/references.ts`. BibTeX (`references.bib`) is a downstream
 render target, auto-generated from `references.ts` (the `bun run export-bibtex`
 shortcut was dropped in the miga migration — pending re-wiring).
 
@@ -5287,8 +5378,8 @@ Cross-paper refs are validated at folio level, not per-paper. The
 `uses-resolve` constraint skips qualified refs (those matching
 `paper-dir:label` or starting with `https://`).
 
-Each paper in `content/folio.ts` has an optional `url` field for
-viewer routing. CSL-JSON entries in `content/schema/references.ts`
+Each paper in `folio/folio.ts` has an optional `url` field for
+viewer routing. CSL-JSON entries in `folio/schema/references.ts`
 for folio-hosted papers include a URL field matching the viewer hash route
 (e.g. `/viewer/#/view/unital-groebner-bases`).
 
@@ -5776,7 +5867,7 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | Path | Purpose |
 |------|---------|
 | `content/` | **Authoritative content objects** (`.ts` + `.md` + `.lean` triples) |
-| `content/schema/` | Type system, Zod schemas, builder functions (re-exports from `folio-assistant/schemas/`) |
+| `folio/schema/` | Type system, Zod schemas, builder functions (re-exports from `folio-assistant/schemas/`) |
 | `content/pipeline/` | qou-side audit scripts only (vacuity/axiom, clarity, orphan, trace-convention, …). Validation / rendering / build moved to `folio-assistant/content/pipeline/` in the miga migration — check which side a script is on before invoking it |
 | `content/<paper>/` | Paper manifest + chapter directories |
 | `content/<paper>/fluid-dynamics/` | Ch 7: Fluid dynamics of the brane (q-NS, NS obstruction) |
@@ -5786,8 +5877,8 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `folio-assistant/schemas/` | Shared TypeScript types (proof-objects, glossary, etc.) |
 | `folio-assistant/viewer/` | Paper viewer SPA + Pyodide cache Service Worker |
 | `folio-assistant/ui/` | Assistant chat SPA |
-| `folio-assistant/simulators/` | Interactive HTML simulators |
 | `folio-assistant/feedback/` | User feedback (TypeScript files, committed to main) |
+| `simulators/` | Interactive HTML simulators |
 | `computations/` | Computation scripts and witness data (Layer 3 in-repo path; see `docs/ARCHITECTURE.md`) |
 | `qou-mass/` | `qou-mass` package — external-researcher facade (`predict()`, `compute_tr_M()`, `canonical_braid()`). **v1.0.0; NOT on PyPI** (`pypi.org/pypi/qou-mass/json` → 404). 5 in-repo importers. Its `_internal/` is **generated** — see the note below. |
 | `tools/qou-substrate/` | `qou-substrate` package — Layer 2a (q₀, mpmath precision, `WitnessBuilder`). **Not on PyPI** (404). 309 in-repo importers. |
@@ -5837,11 +5928,11 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `folio.config.json` | Adapter config (content type, adapter module, feedback dir) |
 | `main.tex` | LaTeX preamble and document structure (rendering target) |
 | `chapters/*.tex` | Generated LaTeX chapters (from content pipeline) |
-| `references.bib` | BibTeX database (auto-generated from `content/schema/references.ts`) |
+| `references.bib` | BibTeX database (auto-generated from `folio/schema/references.ts`) |
 | `lakefile.toml`, `lean-toolchain` | **Root Lake workspace** — aggregates every paper package; `lake build` here builds all |
-| `content/quantum-observable-universe/lean/` | `qou` Lake package (lib: `QOU`) |
-| `content/unital-groebner-bases/lean/` | `ugb` Lake package (lib: `UGB`) |
-| `content/fred2005-formal-groups/lean/` | `fred2005` Lake package (lib: `Fred2005`) |
+| `folio/quantum-observable-universe/lean/` | `qou` Lake package (lib: `QOU`) |
+| `folio/unital-groebner-bases/lean/` | `ugb` Lake package (lib: `UGB`) |
+| `folio/fred2005-formal-groups/lean/` | `fred2005` Lake package (lib: `Fred2005`) |
 | `folio-assistant/schemas/lean-packages.ts` | Registry mapping `lean.ref` URI prefixes → Lake packages |
 | `blueprint/src/` | LeanBlueprint source (content.tex, preamble.tex, web.tex, print.tex) |
 | `home_page/` | Jekyll landing page for GitHub Pages |
@@ -5849,63 +5940,126 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `.github/scripts/` | Python orchestration (ontologist, extraction, stub generation) |
 | `.claude/skills/local/` | Repo-specific review skills |
 | `.claude/skills/<pkg>/` | Synced external skill packages |
-| `library/` | **Ingested sources**, one directory per document: `library/<doc-id>/` holds the PDF, `structure.json` (metadata + TOC + section index), `sections/*.md` (**greppable** section text — corpus-grep path 5), and `candidates.json` (extracted claims, *proposals only*). `<doc-id>` is derived from the page-1 arXiv stamp (`arxiv-0706.2213v3`) or the slugified filename, and is the join key to `content/bib-qa-verifications.json`. Produced by folio-assistant's `scripts/pdf-structure.py` + `extract-candidates.py`. |
+| `library/` | **Ingested sources**, one directory per document: `library/<doc-id>/` holds the PDF, `structure.json` (metadata + TOC + section index), `sections/*.md` (**greppable** section text — corpus-grep path 5), and `candidates.json` (extracted claims, *proposals only*). `<doc-id>` is derived from the page-1 arXiv stamp (`arxiv-0706.2213v3`) or the slugified filename, and is the join key to the source ledger (`test/attestations/bib-verification/`). Produced by folio-assistant's `scripts/pdf-structure.py` + `extract-candidates.py`. |
 | `uploads/` | **Incoming queue** — raw PDFs as dropped, not yet ingested. `uploads/` and `library/` are **two stages of one pipeline, not the same directory renamed**: a file sits in `uploads/` until it is processed into `library/<doc-id>/`, and `uploads/` stays live for the next drop. **Corpus-grep path 5 searches `library/` only**, so anything still in `uploads/` is invisible to it — an un-ingested paper will not be found by any "has the corpus got this?" check, which is exactly how a held source gets re-derived. `scripts/migrate-uploads-to-library.py` moves one across. (Corrected 2026-08-25 on owner instruction: this row previously read *"renamed from `uploads/` 2026-08-15"*, which described the one-time migration of the then-existing backlog as though it had retired the incoming path. It had not, and reading it that way makes an agent treat a live queue as a dead alias.) |
-| `.beans/` | **Session work-plans as beans** — the [`beans`](https://github.com/hmans/beans) CLI flat-file issue tracker (install via `scripts/install-beans.sh`). Agent work-plan source of truth; see `.claude/skills/local/todo-manager.md` |
-| `todos/` | Legacy work-tracking queues (`*-queue.json`), gitignored; being migrated into `.beans/` per the Folio-Assistant Infrastructure Migration (`miga` epic) |
+| `beans/` | **Session work-plans as beans** — the [`beans`](https://github.com/hmans/beans) CLI flat-file issue tracker (install via `scripts/install-beans.sh`). Agent work-plan source of truth; see `.claude/skills/local/todo-manager.md` |
+| | 🛑 **The path is `beans/defs/`, NOT `.beans/` — and the old spelling made this document's own corpus-grep gate UNRUNNABLE (corrected 2026-09-27).** Commit `58a1f3231c` (*"qou-utbr: .beans/ -> beans/defs/ + beans/beans.json, matching the platform layout"*) moved the store; `.beans/` **does not exist** and `beans/defs/` holds **5364** beans. Eleven operative sites in this file said `.beans/`, and the sharpest was §"Before declaring open" **path 6**, whose literal command `grep -rl <topic> .beans/` therefore returned **empty every single time** — a false all-clear over the whole tracker, on the one path that section adds because *"it is where a prior agent's conclusion most often sits"*. Its own history note says it was added after a PR re-derived two results the corpus already held; as written it could not have found them. **This is the migration plan's own governing principle** (`cat-harness/docs/architecture/migration-plan.md:20`): *"Move wiring and script together"* — the store moved, the wiring did not, and `qou-utbr` is still `in-progress`. **Two `.beans/` mentions survive here on purpose** (lines ~2184, ~2266): both are records of what a *past* measurement scoped or sampled, and rewriting a path inside a dated finding falsifies the record — same call as the `4.66e6` drain, which deliberately left audit docs alone. **NOT swept:** 168 further `.md` files (mostly `.claude/skills/local/`) plus 66 code **comments** and 100 bean bodies. Measured, and no live code is broken — **4** runtime `.beans/` paths exist and all four are in `fsh-guts/deprecated/root-scratch/`, one carrying a hardcoded `/Users/litlfred/…` path that never resolved in this container. The skills sweep is a ~168-file change and waits on the owner per §🟥 ASK THE OWNER. |
+| `todos/` | Legacy work-tracking queues (`*-queue.json`), gitignored; being migrated into `beans/defs/` per the Folio-Assistant Infrastructure Migration (`miga` epic) |
 | `docs/` | Planning documents, migration plans, dependency graphs |
 | `scripts/` | Setup and health-check scripts (Lean MCP, etc.) |
 | `lean-mcp.config.json` | MCP server config (domain, image, auth, ports) |
 | `deploy/` | Remote MCP server deployment (Docker Compose, auth, auto-update) |
 | `skills-config.json` | Skill package subscriptions |
 
-## Build output (gh-pages)
+## Build output (gh-pages) — 🛑 THE RENDERED SITE IS DEPRECATED, AND THIS SECTION DESCRIBED THREE WORKFLOWS THAT DO NOT EXIST
 
-Three workflows deploy to the `gh-pages` branch. GitHub Pages must be
-configured to **deploy from the `gh-pages` branch** (not "GitHub Actions").
+**Owner, 2026-09-27: *"depcecate/remove the githubpage"*.** The rendered
+GitHub Pages site at `litlfred.github.io/qou/` is deprecated. The `gh-pages`
+**branch is NOT removed** — it stays as a file store, and every
+`github.com/.../blob/gh-pages/...` link in `README.md` keeps working. The
+deprecation stops at the rendering.
 
-### Workflow → artifact mapping
+**This section previously opened *"Three workflows deploy to the `gh-pages`
+branch"* and tabulated `blueprint.yml`, `lean_ci.yml` and `publish.yml`. The
+location attribution was stale — it reads as a list of files in THIS repo, and
+none of the three is here. But 🛑 "absent" is the WRONG correction, and it has
+now been made twice by two different sessions:**
 
-| Workflow | Artifacts deployed to gh-pages |
-|----------|-------------------------------|
-| `blueprint.yml` | `blueprint/` (interactive dependency graph), `blueprint.pdf`, `docs/` (doc-gen4 API), `axiom-report.txt`, manifests |
-| `lean_ci.yml` | `lean/content/<paper>/lean/` (per-paper source browsers for QOU/UGB/Fred2005), `lean/.../docs/`, `axiom-report.txt`, `dependency-graph.svg`, manifests |
-| `publish.yml` | `papers/<dir>/` (per-paper viewers), `index.html` (folio), `schema-docs/` (TypeDoc), `drafts/` (feature branches) |
+| workflow | qou `.github/workflows/` | platform `.github/workflows/` | what it actually is |
+|---|---|---|---|
+| `publish.yml` | absent | **PRESENT** | **LIVE on dispatch** — qou reaches it from `.github/workflows/build.yml:27`, `uses: litlfred/folio-assistant/.github/workflows/publish.yml@37a36ce9296…` (pinned to `.folio-assistant-pin`) |
+| `blueprint.yml` | absent | absent | a **TEMPLATE** at `cat-harness/templates/paper/github/workflows/blueprint.yml` — scaffolding for a new paper repo, runnable nowhere |
+| `lean_ci.yml` | absent | absent | same: a template, runnable nowhere |
 
-### Expected gh-pages contents
+**So the heavy render is live, not gone**, and the `gh-pages` site is dormant
+because nobody has **dispatched** `build.yml` since 2026-06-30 — not because its
+producer disappeared. Two sessions in two days got this wrong in opposite
+directions: 2026-09-26 reported all three ABSENT, corrected itself to *"they
+MOVED — all three exist in the platform"* (bean `qou-w5av`), and 2026-09-27
+repeated the original ABSENT claim without reading that bean. **Both
+corrections were over-broad**: one of the three is live, two are templates.
+The lesson is the one the detector-blindness taxonomy keeps recording — *measure
+the right tree, and say which tree you measured.*
 
-| Path | Source | Description |
-|------|--------|-------------|
-| `index.html` | publish.yml | Folio landing page (links to all papers) |
-| `papers/<dir>/index.html` | publish.yml | Per-paper viewer with paper/visualizer toggle |
-| `papers/<dir>/paper.html` | publish.yml | Enhanced HTML paper |
-| `papers/<dir>/<dir>.pdf` | publish.yml | Compiled paper PDF |
-| `papers/<dir>/<dir>.md` | publish.yml | Pandoc Markdown |
-| `quantum-observable-universe.pdf` | publish.yml | Backward-compat copy of first paper PDF |
-| `blueprint/` | blueprint.yml | Interactive dependency graph (plasTeX HTML) |
-| `blueprint.pdf` | blueprint.yml | Print blueprint |
-| `docs/` | blueprint.yml | doc-gen4 API documentation with hover definitions |
-| `content/quantum-observable-universe/lean/` | lean_ci.yml | Raw Lean source files |
-| `content/quantum-observable-universe/lean/docs/` | lean_ci.yml | doc-gen4 or fallback source browser |
-| `axiom-report.txt` | blueprint.yml / lean_ci.yml | sorry audit, axiom dependencies |
-| `dependency-graph.svg` | lean_ci.yml / publish.yml | Visual proof dependency graph |
-| `schema-docs/` | publish.yml | TypeDoc content-object type reference |
-| `proof-objects.json` | all | Formalization status manifest |
-| `glossary.json` | all | Semantic glossary |
-| `mapping.json` | all | Narrative-to-Lean identifier map |
-| `drafts/<branch>/` | publish.yml | Feature branch preview builds |
+**Do NOT "clean up" `build.yml` or `paper-builder-image.yml` on the strength of
+this.** `build.yml` is qou's only render entry point and is what produces the
+paper PDFs that README's chapter table links; `paper-builder-image.yml` builds
+the TeX image `build.yml` passes in as `builder_image:`, which the platform's
+`publish.yml` consumes at three job sites while hardcoding it nowhere. Whether
+the PDF output goes away at all is an owner decision, framed in `qou-w5av`.
 
-### Error resilience
+### What actually runs on qou — measured, per workflow, not read off YAML
 
-All workflows use `continue-on-error: true` at critical points so partial
-output is still deployed even when the Lean build fails:
+All **14** workflows are `workflow_dispatch`-only (owner directive 2026-06-30,
+Actions billing). Run counts and last conclusions:
 
-- **Lean build fails** → proof status updates, axiom report generates, source
-  browser deploys.  `proof-objects.json` records which declarations errored.
-- **doc-gen4 fails** → `lean_ci.yml` generates a fallback HTML source browser.
-- **Blueprint compilation fails** → other artifacts (manifests, axiom report)
-  still deploy.
-- **latexdiff fails** → main PDF still publishes; diff PDF is skipped.
+| workflow | runs | last conclusion | date |
+|---|---:|---|---|
+| `docs-site` | 5 | **success** | 2026-09-26 |
+| `kg-vocabulary-gate` | 2 | failure | 2026-09-27 |
+| `build` | 3531 | failure | **2026-06-30** |
+| `lean-content-siblings` | 1216 | failure | **2026-06-30** |
+| `witness-staleness` | 953 | failure | **2026-06-30** |
+| `doc-gen4` *(now deprecated)* | 461 | failure | **2026-06-30** |
+| `lean-axiom-guard` | **0** | never ran | — |
+| `lp-dual-gate` | **0** | never ran | — |
+| `probe-float64-gate` | **0** | never ran | — |
+| `lean-orphan-gate` | **0** | never ran | — |
+| `word-provenance-gate` | **0** | never ran | — |
+| `lake-cache-refresh` | **0** | never ran | — |
+
+Two facts worth internalising. **Four high-volume workflows last failed on the
+same day**, 2026-06-30 — they were not merely switched to dispatch-only, their
+final run *failed* and then the triggers were removed. And **six workflows have
+never run at all**, among them `lp-dual-gate`, `probe-float64-gate`,
+`word-provenance-gate` and `lean-axiom-guard`, which this document describes as
+enforcement. A gate with zero runs is documentation, which is the same lesson
+§"QA is agent-owned" records for `precision-gates.sh`.
+
+**`docs-site` is the only workflow that has succeeded since 2026-06-30 — and
+it has never published.** Its gh-pages write was gated `if: inputs.publish`
+with `default: false`; `git ls-tree` on the branch head confirms **no `docs/`
+directory has ever existed there**. That step is now removed and the workflow
+uploads an artifact only.
+
+**There is no STAGING pipeline on qou.** The word `STAGING` in `docs-site.yml`
+names a local directory used for front-matter injection. The
+`litlfred.github.io/folio-assistant/STAGING/<branch>/` previews that appear on
+PR comments are the **platform** repo's, and that repo is push-triggered
+because its billing is not in this state.
+
+### What is on the branch, and how stale
+
+`gh-pages` head is **2026-07-08** — *"deploy: update PDF with \pm error
+formatting"*. Contents: `lean/` (~9,500 files), `drafts/` (~7,300),
+`rust-api/` (783), `schema-docs/` (206), `python-api/` (20), `papers/` (14),
+plus `qou.pdf`, `main.pdf`, `paper.html`, `visualizer.html`, `axiom-report.txt`,
+`dependency-graph.svg`, `proof-objects.json`, `glossary.json`.
+
+🛑 **An earlier version of this paragraph said "every producer of every one of
+those is absent or dead, so the snapshot cannot be refreshed". That is wrong.**
+The paper-build half of it — `papers/`, `index.html`, the PDFs, `schema-docs/`,
+`drafts/` — comes from the platform's `publish.yml`, which is **live and
+callable today** via `build.yml`. The snapshot is stale because that workflow
+has not been **dispatched** since 2026-06-30, which is a different fact with a
+different remedy. The `lean/` subtree is the part whose producer really is gone
+(`doc-gen4.yml`, now deprecated below). Treat the site as dormant-but-revivable,
+not as an unrefreshable archive.
+
+### Deprecated, and where it went
+
+`doc-gen4.yml` is moved to
+[`fsh-guts/deprecated/workflows/doc-gen4.yml`](fsh-guts/deprecated/workflows/doc-gen4.yml)
+— its only job was `peaceiris/actions-gh-pages` into `gh-pages/lean`, and it has
+not succeeded since 2026-06-30. **The `doc-gen4` Lake dependency is a different
+thing and stays**: it is in `lake-manifest.json` and `scripts/lean-build-bg.sh`,
+and is the Lean doc generator itself rather than a publishing workflow. Do not
+conflate them.
+
+**The rule for agents.** Do not write "published at `litlfred.github.io/qou/…`"
+anywhere, and do not restore a `push:` trigger to make any of this automatic.
+If a rendered artifact is genuinely wanted, that is a new decision about a new
+pipeline, not a repair of this one.
 
 ## Axiomatization is NOT a Proof (Anti-Laundering Rule)
 

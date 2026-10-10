@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-qns-shell-tail-collapse-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:qns-shell-tail-collapse-interpretation",
+  "kind": "remark",
+  "title": "Scope and measured support for the $q$-shell tail collapse",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-qns-unit-layers",
+    "papers/quantum-observable-universe/blocks/prop-qns-shell-tail-collapse"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-qns-shell-tail-collapse",
+  "tags": [
+    "navier-stokes",
+    "fluid-dynamics",
+    "shell-model",
+    "probe-support",
+    "millennium-problem"
+  ],
+  "text": "qns-shell-tail-collapse-interpretation.md",
+  "provenance": "authored"
+}

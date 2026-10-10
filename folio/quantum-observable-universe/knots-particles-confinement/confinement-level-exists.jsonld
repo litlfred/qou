@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-confinement-level-exists",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:confinement-level-exists",
+  "kind": "proposition",
+  "title": "Existence of the confinement level",
+  "tags": [
+    "existence",
+    "confinement",
+    "filtration"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.ConfinementLevel.nonempty",
+  "text": "confinement-level-exists.md",
+  "leanSource": "confinement-level-exists.lean",
+  "provenance": "authored"
+}

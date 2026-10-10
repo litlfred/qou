@@ -1,0 +1,74 @@
+{
+  "name": "aomega-m3-gate3-determinant-ladder",
+  "description": "The pretzel's pairing determinant ladder derived from the Casoratian ratio, the SL-vs-GL rule it implies calibrated against GGM's two printed choices, and the GL-not-SL prediction at rank 6.",
+  "computation": "aomega-m3-gate3-determinant-ladder",
+  "engine": "python+sympy",
+  "scriptFile": "aomega_m3_gate3_determinant_ladder_probe.py",
+  "computedAt": "2026-09-14T19:18:44.599225+00:00",
+  "durationMs": 0,
+  "auditOnly": true,
+  "parameters": {
+    "identity": "det G_{M,L} = ratio^M ratio_bar^L det J c"
+  },
+  "data": {
+    "knots": {
+      "4_1": {
+        "ratio": "q/x",
+        "index_dependence": "q**(-L + M)*x**(L - M)",
+        "predicted": "GL",
+        "det_G": "c*dJ*q**(-L + M)*x**(L - M)"
+      },
+      "5_2_u0": {
+        "ratio": "1",
+        "index_dependence": "1",
+        "predicted": "SL",
+        "det_G": "c*dJ"
+      },
+      "pretzel": {
+        "ratio": "q**4",
+        "index_dependence": "q**(-4*L + 4*M)",
+        "predicted": "GL",
+        "det_G": "c*dJ*q**(-4*L + 4*M)"
+      }
+    },
+    "ggm_printed": {
+      "4_1": "GL",
+      "5_2_u0": "SL"
+    },
+    "calibrated": true,
+    "pretzel_verdict": "GL, not SL"
+  },
+  "verdict": "GATE 3, partially closed and honestly bounded. det G_{M,L} = ratio^M ratio_bar^L det J c, so the entire index dependence is the Casoratian ratio and nothing else. That yields a rule — trivial dependence <=> SL possible, nontrivial => GL and never SL — which reproduces GGM's OWN two printed choices, GL for 4_1 in (138) and SL for 5_2 at u=0 in (93) (G1, two-for-two, calibrated before use). Applied to the pretzel with Part 1's ratio q^4: det G_{M,L} = q^{4(M-L)} det J c, a nonconstant unit monomial, so the rank-6 pairing is GL and CANNOT be SL off the diagonal (G2) — a derived prediction, since no held source prints a rank-6 pairing. Note the pretzel groups with 4_1 here (index-DEPENDENT determinant) exactly as it does on Part 9's branch structure: two independent groupings agreeing. What does NOT close (T1): det J and c individually, which need the explicit rank-6 blocks.",
+  "assertions": [
+    {
+      "name": "G1-the derived rule (index dependence trivial <=> SL possible) reproduces GGM's OWN two printed choices — GL(2, Z[q,x]) for 4_1 in (138) and SL(3, Z[q]) for 5_2 at u=0 in (93) — so it is calibrated on published statements before being applied at rank 6",
+      "passed": true,
+      "predicted": {
+        "4_1": "GL",
+        "5_2_u0": "SL"
+      },
+      "printed": {
+        "4_1": "GL",
+        "5_2_u0": "SL"
+      }
+    },
+    {
+      "name": "G2-the pretzel's determinant ladder is q^{4(M-L)} times a constant: a NONCONSTANT unit monomial, so GL membership holds automatically on determinant grounds and SL is IMPOSSIBLE off the diagonal M = L",
+      "passed": true,
+      "ladder": "q**(-4*L + 4*M)",
+      "predicted": "GL"
+    },
+    {
+      "name": "T1-gate 3 closes COMPLETELY, i.e. det J and c are individually determined. It does NOT: the ladder constrains how they enter, not either factor. Closing them needs the explicit rank-6 blocks or a printed rank-6 pairing, and no held source prints one",
+      "passed": false,
+      "what_is_closed": "the determinant ladder q^{4(M-L)} and the GL-not-SL verdict",
+      "what_is_open": "det J and c = det W_0(q) det W_0(q^-1) individually",
+      "searched": "GGM secs 007/011/015/017 — pairings printed only at rank 2 (137)/(138) and rank 3 (92)/(93); Theorem 28 gives the general operator and W but no pairing"
+    }
+  ],
+  "scriptHash": "02bc5371db7b",
+  "scriptCommitSha": "unknown",
+  "commitSha": "39253242eec1c617a448fb20ab9b7c7075dd0272",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}

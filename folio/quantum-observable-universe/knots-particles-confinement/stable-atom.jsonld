@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-stable-atom",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:stable-atom",
+  "kind": "definition",
+  "title": "Stable atom (ILP feasibility)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-atom-knot"
+  ],
+  "tags": [
+    "stability",
+    "ilp",
+    "lp-dual",
+    "atom",
+    "frobenius-positivity"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.StableAtom",
+  "text": "stable-atom.md",
+  "leanSource": "stable-atom.lean",
+  "provenance": "authored"
+}

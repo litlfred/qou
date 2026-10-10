@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-horizon-conformal-invariance-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:horizon-conformal-invariance-interpretation",
+  "kind": "remark",
+  "title": "Conformal invariance at the horizon as a consequence of observability",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-horizon-conformal-invariance",
+    "papers/quantum-observable-universe/blocks/def-observation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-horizon-conformal-invariance",
+  "cites": [
+    "references/penrose2010"
+  ],
+  "text": "horizon-conformal-invariance-interpretation.md",
+  "provenance": "authored"
+}

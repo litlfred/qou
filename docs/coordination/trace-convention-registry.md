@@ -368,12 +368,12 @@ excision when it did not.
 
 | symbol | what it is | convention-scoped? |
 |---|---|---|
-| $G_{ij} = \mathrm{tr}_M(b_i b_j)$ — the **Markov–Gram** | $6 \times 6$, on the $H_3(q)$ normal-form basis. [`prop:frobenius-gram-matrix`](../../content/quantum-observable-universe/mass-theory/frobenius-gram-matrix.md); code `tools/pyhecke/python/pyhecke/gram.py`; Lean `QOU/QBeta/GramSignature.lean` | **YES.** $\det = -0.18920521914403668$ under **C**; $\det = 0$ **exactly** under **D**, where the $(1^3)$ block is the radical, the form is singular and $G^{-1}$ does not exist. `np.linalg.inv` raises nothing there — see the blocking note at the head of `gram.py`. |
-| $G_{\mathrm{CS}}$ — the **Chern–Simons pairing Gram** | $2 \times 2$, on the force-carrier pair $(T_{2,9}, T_{3,5})$ on Bring's surface. [`rem:em-coupling-chern-simons`](../../content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.md), [`prop:gram-determinant-plancherel-ratio`](../../content/quantum-observable-universe/mass-theory/gram-determinant-plancherel-ratio.md); code `computations/substrate/hecke_core_symbolic.py::alpha_em_inv_sym_exact` | **NO.** Built from $\pi$, the torus-knot data $(m_i, n_i)$ and $[2]_q, [3]_q, [5]_q, [9]_q$ alone. No $z$ anywhere. At $q_0$: $\det G^{\mathrm{cl}}_{\mathrm{CS}} = 60.630144110670241284$, $\det G^{q}_{\mathrm{CS}} = 35.21703297433989011$, $\kappa = 1.721614201708788213$ (60 dps). |
+| $G_{ij} = \mathrm{tr}_M(b_i b_j)$ — the **Markov–Gram** | $6 \times 6$, on the $H_3(q)$ normal-form basis. [`prop:frobenius-gram-matrix`](../../folio/quantum-observable-universe/mass-theory/frobenius-gram-matrix.md); code `tools/pyhecke/python/pyhecke/gram.py`; Lean `QOU/QBeta/GramSignature.lean` | **YES.** $\det = -0.18920521914403668$ under **C**; $\det = 0$ **exactly** under **D**, where the $(1^3)$ block is the radical, the form is singular and $G^{-1}$ does not exist. `np.linalg.inv` raises nothing there — see the blocking note at the head of `gram.py`. |
+| $G_{\mathrm{CS}}$ — the **Chern–Simons pairing Gram** | $2 \times 2$, on the force-carrier pair $(T_{2,9}, T_{3,5})$ on Bring's surface. [`rem:em-coupling-chern-simons`](../../folio/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.md), [`prop:gram-determinant-plancherel-ratio`](../../folio/quantum-observable-universe/mass-theory/gram-determinant-plancherel-ratio.md); code `computations/substrate/hecke_core_symbolic.py::alpha_em_inv_sym_exact` | **NO.** Built from $\pi$, the torus-knot data $(m_i, n_i)$ and $[2]_q, [3]_q, [5]_q, [9]_q$ alone. No $z$ anywhere. At $q_0$: $\det G^{\mathrm{cl}}_{\mathrm{CS}} = 60.630144110670241284$, $\det G^{q}_{\mathrm{CS}} = 35.21703297433989011$, $\kappa = 1.721614201708788213$ (60 dps). |
 
 **Consequence, checked 2026-08-09 (decision 3 of the detangler review).** The
 fine-structure figure $\alpha^{-1} = 137.0359351$
-([`sec:fine-structure-data`](../../content/quantum-observable-universe/observations/fine-structure-data.md))
+([`sec:fine-structure-data`](../../folio/quantum-observable-universe/observations/fine-structure-data.md))
 runs through $G_{\mathrm{CS}}$, **not** the Markov–Gram, so it does **not** sit
 downstream of a convention-C determinant and is unaffected by the excision.
 $\hbar_q = 1 - q^{-1}$ in $\delta_{\mathrm{CS}}$ is likewise $z$-free. Independent
@@ -381,7 +381,7 @@ re-evaluation of the producer at 60 dps reproduces every published digit:
 bare $136.82320885358258431$, $\delta_{\mathrm{CS}} = 0.0015506021328500969$,
 resummed $\alpha^{-1} = 137.03593509397560466$ ($-0.4676$ ppm vs CODATA 2022).
 Whether $\kappa$ is *derived* is a separate, still-open question
-([`rem:alpha-em-derivation-open-problems`](../../content/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.md));
+([`rem:alpha-em-derivation-open-problems`](../../folio/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.md));
 this row settles only *which matrix* the symbol denotes.
 
 ## Content-layer C surface — what the 2026-08-09 errata pass did and did not touch

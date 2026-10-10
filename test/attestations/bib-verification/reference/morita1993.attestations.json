@@ -1,0 +1,47 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "morita1993",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 326,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/90-1-219/90-1-219.pdf"
+        },
+        "id": "morita1993",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "WRONG JOIN. The seeded id was schrodinger1950, whose registered entry is a single-author monograph. This PDF is a journal article by a different author on a different subject (quaternions and non-commutative geometry, reformulating the electroweak sector so gauge and Higgs fields are one generalized Yang-Mills field over a discrete structure); identity reported separately to the caller. The filename is a volume-issue-page string, which is presumably what the seeding matched on. No key covers it: references.ts registers two other works by this author, but not this one \u2014 it is a third paper in that series. id set to null. ON THE MERITS: the folio's quaternionic content (the tetraplectic / Reeb-triad material citing the two registered works by this author) concerns quaternionic structures on flag manifolds, not non-commutative-geometry gauge-Higgs unification, and the folio's Higgs sector is not built this way. I can name no block that would consume a result from it, so it does not rise above tangential; the honest disposition is to register the reference if the author wants that series complete, not to force a citation. SEPARATELY on the schrodinger1950 citation itself (einstein-nonsymmetric-metric-comparison.md:1 and .ts:32): it is a single historical-context mention alongside the non-symmetric field theory discussion \u2014 appropriate but not load-bearing, and now unverifiable since no copy of the book is present.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "A third work by this author sits in uploads/ with no ref() entry while two others are registered; if the quaternionic-electroweak series is to be complete, register it. Do not add a citation site \u2014 no quaternionic-flag-manifold block consumes a non-commutative-geometry gauge-Higgs result.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-5eq2"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "c2e3f2f8946c"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

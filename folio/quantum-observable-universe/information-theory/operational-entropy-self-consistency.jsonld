@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-operational-entropy-self-consistency",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:operational-entropy-self-consistency",
+  "kind": "remark",
+  "title": "Operational entropy is forced by gravitational self-consistency",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-operational-entropy",
+    "papers/quantum-observable-universe/blocks/def-gravitational-constant"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-operational-entropy",
+  "tags": [
+    "information-theory",
+    "metric-entropy",
+    "gravitational-constant",
+    "self-consistency",
+    "emergent-gravity"
+  ],
+  "text": "operational-entropy-self-consistency.md",
+  "provenance": "authored"
+}

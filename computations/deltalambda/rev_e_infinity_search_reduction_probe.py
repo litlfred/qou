@@ -108,7 +108,7 @@ Neither gap is the arc's headline open problem, which remains the upper bound on
 Proton-pinned; mpmath builds three tables, then the enumeration is exact integer arithmetic at
 scale 1e-40.  No float64.
 
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/BraidKnot/EdgeDecoupling.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/BraidKnot/EdgeDecoupling.lean
 """
 
 from __future__ import annotations

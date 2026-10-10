@@ -1,0 +1,121 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "zagier-dilogarithm",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 383,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/zagier-the-dilogarithm-function/zagier-the-dilogarithm-function.pdf"
+        },
+        "id": "zagier-dilogarithm",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "WRONG JOIN. The seeded id was kirillov1995, whose ref() entry (references.ts:2016) is a single-author article on dilogarithm identities in a theoretical-physics supplement series. This document is a different single-author survey on the dilogarithm function, whose own table of contents runs: I. The dilogarithm function in geometry and number theory; 1 Special values; 2 Functional equations; 3 The Bloch-Wigner function D(z) and its generalizations; 4 Volumes of hyperbolic 3-manifolds; 5 ... and values of Dedekind zeta functions. It is not the article the key names and the join must be broken. No existing ref() key matches it: grep of references.ts for its title returns nothing and the only same-author keys are a 1986 entry and the quantum-modular-forms chapter, neither of which is this, so id is null. CONSEQUENCE, and this is the finding that matters: the three kirillov1995 locators in the corpus are therefore UNVERIFIABLE from the corpus's own uploads. QOU/BraidKnot/Li2qUniqueness.lean cites '[kirillov1995] \u00a72.1' for the truncated symmetric q-dilogarithm sum_n z^n/(n [n]_q), '[kirillov1995] Proposition 2.1' for the Briggs-Klein integral identity int_0^V ln_q(1+t)/t dt = -Li_2^q(-V), and '[kirillov1995] Proposition 2.3' for antiderivative uniqueness from the FTC. The document actually on disk has no q-deformed dilogarithm and no [n]_q at all, so it cannot corroborate any of the three; and the third locator is independently suspicious, since 'two continuous functions that are both right-derivatives of the same f and agree at 0 agree at V' is a general calculus fact the Lean file discharges with Mathlib's mean-value FTC, not something a dilogarithm-identities paper would state as its Proposition 2.3. Scope-(a): I did not read the work the key names, so this is 'the corpus cannot currently check these three locators', not 'the locators are wrong'. In its own right the document is genuinely useful background: its \u00a73 (Bloch-Wigner D(z)) and \u00a74 (Vol(Delta) = D(z) for an ideal tetrahedron, the Lobachevsky formula) are precisely the classical facts behind the folio's Vol(4_1) = 2*Cl_2(pi/3) and its complex-volume work.",
+          "keyResults": [
+            {
+              "locator": "\u00a73-\u00a74, eq. (8)",
+              "statement": "The Bloch-Wigner function D(z); the hyperbolic volume of an ideal tetrahedron as the four-argument extension D-hat(z_0,z_1,z_2,z_3), reducing when three vertices are at infinity, 0 and 1 to the Lobachevsky form Vol(Delta) = D(z).",
+              "useForFolio": "Standard background for the folio's hyperbolic-volume and complex-volume constructions (Vol(4_1), the Neumann-Zagier imaginary partner). It would be an appropriate general citation, but it does NOT supply the q-deformed statements the kirillov1995 sites need.",
+              "targets": [
+                "QOU.Knot.FigureEightVolume"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Useful classical background on Bloch-Wigner and ideal-tetrahedron volumes with no ref() entry. Create one; the ledger row keeps id null until then so the false join to the dilogarithm-identities key is not propagated.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-cm2r"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record that all three kirillov1995 locators (\u00a72.1, Prop 2.1, Prop 2.3) in Li2qUniqueness.lean are currently uncheckable because the file joined to that key is a different work, and that Prop 2.3 in particular is attached to a generic FTC-uniqueness statement that the Lean file proves from Mathlib. Someone with access to the named work should confirm or re-locate all three.",
+              "target": "QOU.BraidKnot.Li2qUniqueness",
+              "bean": "qou-io8n"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "05079cf525c6"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    },
+    {
+      "position": 403,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/zagier-the-dilogarithm-function-copy-b/zagier-the-dilogarithm-function-copy-b.pdf"
+        },
+        "id": "zagier-dilogarithm",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "WRONG JOIN \u2014 REPORT LOUDLY. This row was seeded to 'kirillov1995', whose registered entry is a single-author article on dilogarithm identities in a theoretical-physics supplement series. The attached file is a different author's book-length survey of the dilogarithm function, whose table of contents runs: I. the dilogarithm in geometry and number theory (special values; functional equations; the Bloch-Wigner function D(z) and its generalizations; volumes of hyperbolic 3-manifolds; values of Dedekind zeta functions), II. further aspects (variants of the dilogarithm; dilogarithm identities; dilogarithms and modular functions and the Nahm equation; higher polylogarithms). The likely cause of the bad join is that section II.2 of this survey is headed 'Dilogarithm identities', which matches the registered title string of the id. No id for this survey exists in folio/schema/references.ts (searched by author, by subject and by title words; the nearest same-author entry is a different text on hyperbolic manifolds and Dedekind zeta values), so id is set to null. RELEVANCE OF THE DOCUMENT IS HIGH: the Bloch-Wigner function, volumes of hyperbolic 3-manifolds, Dedekind zeta special values and the Nahm equation are all live QOU topics, and the corpus runs recurring Bloch-Wigner and hyperbolic-volume arguments. CONSEQUENT FLAG ON THE 'kirillov1995' CITATIONS, which I could not verify because the attached file is not that work: lean/QOU/BraidKnot/Li2qUniqueness.lean cites the id at three distinct locators \u2014 section 2.1 for the truncated symmetric q-dilogarithm sum z^n/(n [n]_q) with symmetric q-integers (line 31), 'Proposition 2.1' for the Briggs-Klein integral identity (line 62), and 'Proposition 2.3' for antiderivative uniqueness from the fundamental theorem of calculus (line 67). The third is doubtful on its face: 'two continuous functions on [0,V] with equal right-derivatives and equal value at 0 coincide' is a standard real-analysis fact, not the kind of statement a paper on dilogarithm identities numbers as Proposition 2.3 \u2014 and the Lean file discharges it with Mathlib anyway. That locator should be checked against the actual source or dropped.",
+          "keyResults": [
+            {
+              "locator": "Ch. I \u00a73",
+              "statement": "The Bloch-Wigner function D(z) = Im(Li_2(z)) + arg(1-z) log|z| is the single-valued real-analytic modification of the dilogarithm, satisfying clean five-term and inversion functional equations.",
+              "useForFolio": "The canonical reference for the Bloch-Wigner arguments the corpus runs; at present the corpus's dilogarithm citations route through kirillov1995 and one other same-author entry, with no pointer to this survey.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/BraidKnot/Li2qUniqueness.lean"
+              ]
+            },
+            {
+              "locator": "Ch. I \u00a74",
+              "statement": "The hyperbolic volume of an ideal tetrahedron with cross-ratio z equals D(z), so the volume of a hyperbolic 3-manifold is a sum of Bloch-Wigner values over an ideal triangulation.",
+              "useForFolio": "Sources the volume-as-sum-of-dilogarithms step used wherever the corpus relates hyperbolic volume to Li_2, alongside neumann-zagier1985.",
+              "targets": [
+                "rem:complex-volume-character-variety-path"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry exists for this survey and the ledger currently mis-joins the file to a different dilogarithm paper. Create the entry; the bibliographic fields belong in references.ts.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-pubh"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record that the three kirillov1995 locators in Li2qUniqueness.lean are unverified, and that 'Proposition 2.3' invoked for a generic antiderivative-uniqueness statement is implausible content for a dilogarithm-identities paper. Scope-(a): unverified as cited, not shown to be false.",
+              "target": "folio/quantum-observable-universe/lean/QOU/BraidKnot/Li2qUniqueness.lean",
+              "bean": "qou-83o7"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "c584944a501e"
+        },
+        "note": "Bib key backfilled from duplicate copy of zagier-the-dilogarithm-function, which carries this key. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

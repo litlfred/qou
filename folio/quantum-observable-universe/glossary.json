@@ -1,0 +1,412 @@
+{
+  "generated": "2026-10-05T15:57:10.130Z",
+  "paper": "quantum-observable-universe",
+  "entries": [
+    {
+      "slug": "braided-monoidal-category",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Monoidal structure",
+      "block": "rem:glossary-braided-monoidal-category",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "brings-coordinate-ring",
+      "chapter": "quantum-observable-universes",
+      "chapterTitle": "Quantum Observable Universes",
+      "section": "The algebraic substrate and the Reeb derivation",
+      "block": "def:brings-coordinate-ring",
+      "kind": "definition",
+      "lean": "qou:QOU.AlgebraicSubstrate.BringsCoordinateRing"
+    },
+    {
+      "slug": "categorical-action",
+      "chapter": "quantum-observable-universes",
+      "chapterTitle": "Quantum Observable Universes",
+      "section": "Categorical action",
+      "block": "def:categorical-action",
+      "kind": "definition",
+      "lean": "qou:QOU.CategoricalAction"
+    },
+    {
+      "slug": "categorical-dirac-operator",
+      "chapter": "quantum-observable-universes",
+      "chapterTitle": "Quantum Observable Universes",
+      "section": "Categorical Dirac operator",
+      "block": "def:categorical-dirac-operator",
+      "kind": "definition",
+      "lean": "qou:QOU.CategoricalDiracOperator"
+    },
+    {
+      "slug": "categorical-q-torsion-leaf",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Geometry and transport",
+      "block": "rem:glossary-categorical-q-torsion-leaf",
+      "kind": "remark",
+      "lean": "qou:QOU.CategoricalQTorsionLeaf"
+    },
+    {
+      "slug": "categorical-transport",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Geometry and transport",
+      "block": "rem:glossary-categorical-transport",
+      "kind": "remark",
+      "lean": "qou:QOU.CategoricalTransport"
+    },
+    {
+      "slug": "cemetery-group",
+      "chapter": "knots-particles-confinement",
+      "chapterTitle": "Knots, Particles, and Confinement",
+      "section": "Confinement level and the cemetery group",
+      "block": "def:cemetery-group",
+      "kind": "definition",
+      "lean": "qou:QOU.BraidKnot.CemeteryGroup"
+    },
+    {
+      "slug": "chern-character",
+      "chapter": "quantum-universes",
+      "chapterTitle": "Quantum Universes",
+      "section": "Uniqueness and the $\\mathrm{SU}(2)$ realisation",
+      "block": "def:chern-character",
+      "kind": "definition",
+      "lean": "qou:QOU.GrothendieckChern.chernCharacter"
+    },
+    {
+      "slug": "compact-closed-category",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Duality and rigidity",
+      "block": "rem:glossary-compact-closed-category",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "delta-q-decoration",
+      "chapter": "mass-theory",
+      "chapterTitle": "Mass Analysis",
+      "section": "Spectral sequence, chirality, and confinement-NF structure",
+      "block": "def:delta-q-decoration",
+      "kind": "definition",
+      "lean": "qou:QOU.BraidKnot.delta_q"
+    },
+    {
+      "slug": "derived-category",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Homological algebra",
+      "block": "rem:glossary-derived-category",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "descent",
+      "chapter": "lifting-and-descent",
+      "chapterTitle": "Lifting and Descent",
+      "section": "Descent Preliminaries",
+      "block": "def:descent-involution",
+      "kind": "definition",
+      "lean": "qou:QOU.DescentInvolution"
+    },
+    {
+      "slug": "dg-category",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Homological algebra",
+      "block": "rem:glossary-dg-category",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "distinguished-triangle",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Homological algebra",
+      "block": "rem:glossary-distinguished-triangle",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "exact-pairing",
+      "chapter": "quantum-universes",
+      "chapterTitle": "Quantum Universes",
+      "section": "Preliminary: rigid monoidal categories",
+      "block": "def:snake-identity",
+      "kind": "definition",
+      "lean": "qou:QOU.snake_identity_left"
+    },
+    {
+      "slug": "fourier-mukai-transform",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Homological algebra",
+      "block": "rem:glossary-fourier-mukai-transform",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "grothendieck-group",
+      "chapter": "quantum-universes",
+      "chapterTitle": "Quantum Universes",
+      "section": "Uniqueness and the $\\mathrm{SU}(2)$ realisation",
+      "block": "def:grothendieck-group-of-a-qou",
+      "kind": "definition",
+      "lean": "qou:QOU.GrothendieckChern.K0"
+    },
+    {
+      "slug": "hochschild-homology",
+      "chapter": "quantum-universes",
+      "chapterTitle": "Quantum Universes",
+      "section": "Uniqueness and the $\\mathrm{SU}(2)$ realisation",
+      "block": "def:hochschild-homology",
+      "kind": "definition",
+      "lean": "qou:QOU.QuantumUniverses.HochschildZero"
+    },
+    {
+      "slug": "hom-set",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Basic categorical notions",
+      "block": "rem:glossary-hom-set",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "left-dual",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Duality and rigidity",
+      "block": "rem:glossary-left-dual",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "linking-operations",
+      "chapter": "knots-particles-confinement",
+      "chapterTitle": "Knots, Particles, and Confinement",
+      "section": "Skein Generation and Particle Correspondence",
+      "block": "def:linking-operations",
+      "kind": "definition",
+      "lean": "qou:QOU.Torsion.LinkingOperation"
+    },
+    {
+      "slug": "local-q-zeta-function",
+      "chapter": "q-geometric-langlands",
+      "chapterTitle": "$q$-Geometric Langlands Correspondence",
+      "section": "Geometric stability via the Weil bound",
+      "block": "def:local-q-zeta-function",
+      "kind": "definition",
+      "lean": "qou:QOU.AlgebraicSubstrate.LocalQZetaFunction"
+    },
+    {
+      "slug": "monoidal-category",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Monoidal structure",
+      "block": "rem:glossary-monoidal-category",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "monoidal-functor",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Monoidal structure",
+      "block": "rem:glossary-monoidal-functor",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "no-quasi-zeros",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Enrichment",
+      "block": "rem:glossary-no-quasi-zeros",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "observed-value",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Elliptic and surface geometry",
+      "block": "rem:glossary-observed-value",
+      "kind": "remark",
+      "lean": "qou:QOU.BringsSurface.observedValue"
+    },
+    {
+      "slug": "octonion-algebra",
+      "chapter": "eightfold-way",
+      "chapterTitle": "The Eightfold Way and Flavor Structure",
+      "section": "Color algebra from octonionic stabilization",
+      "block": "def:octonion-algebra",
+      "kind": "definition",
+      "lean": "qou:QOU.MathlibExt.OctonionDerivations.octMul"
+    },
+    {
+      "slug": "per-nucleon-channel-decomposition",
+      "chapter": "nuclear-interactions",
+      "chapterTitle": "Nuclear Interactions and Binding",
+      "section": "Branching Q-value derivation",
+      "block": "def:per-nucleon-channel-decomposition",
+      "kind": "definition",
+      "lean": "qou:QOU.ParticleInteractions.PerNucleonChannelDecomposition"
+    },
+    {
+      "slug": "pivotal-category",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Duality and rigidity",
+      "block": "rem:glossary-pivotal-category",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "q-bit",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Information theory",
+      "block": "rem:glossary-q-bit",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "q-bit-skein",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Information theory",
+      "block": "rem:glossary-q-bit-skein",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "q-chebyshev-function",
+      "chapter": "q-geometric-langlands",
+      "chapterTitle": "$q$-Geometric Langlands Correspondence",
+      "section": "Spectral trace and Tannaka--Krein duality",
+      "block": "def:q-chebyshev-function",
+      "kind": "definition",
+      "lean": "qou:QOU.AlgebraicSubstrate.QChebyshevFunction"
+    },
+    {
+      "slug": "q-dimension-layer",
+      "chapter": "mass-theory",
+      "chapterTitle": "Mass Analysis",
+      "section": "Spectral sequence, chirality, and confinement-NF structure",
+      "block": "def:q-dimension-layer",
+      "kind": "definition",
+      "lean": "qou:QOU.BraidKnot.qDimensionLayer"
+    },
+    {
+      "slug": "q-value",
+      "chapter": "predicted-spectra",
+      "chapterTitle": "Predicted Particle Spectra",
+      "section": "Pair production and knot-operator selection",
+      "block": "def:Q-value-transition",
+      "kind": "definition",
+      "lean": "qou:QOU.Archimedean.QqValue.value"
+    },
+    {
+      "slug": "q-von-mangoldt-function",
+      "chapter": "q-geometric-langlands",
+      "chapterTitle": "$q$-Geometric Langlands Correspondence",
+      "section": "Spectral trace and Tannaka--Krein duality",
+      "block": "def:q-von-mangoldt-function",
+      "kind": "definition",
+      "lean": "qou:QOU.AlgebraicSubstrate.QVonMangoldtFunction"
+    },
+    {
+      "slug": "quantum-flatness",
+      "chapter": "quantum-observable-universes",
+      "chapterTitle": "Quantum Observable Universes",
+      "section": "Elaboration: categorical context",
+      "block": "def:quantum-flatness",
+      "kind": "definition",
+      "lean": "qou:QOU.QuantumObservableUniverse.IsQuantumFlat"
+    },
+    {
+      "slug": "r-linear-category",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Enrichment",
+      "block": "rem:glossary-r-linear-category",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "reeb-gauge-group",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Geometry and transport",
+      "block": "rem:glossary-reeb-gauge-group",
+      "kind": "remark",
+      "lean": "qou:QOU.ReebGaugeGroup"
+    },
+    {
+      "slug": "right-dual",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Duality and rigidity",
+      "block": "rem:glossary-right-dual",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "rigid-category",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Duality and rigidity",
+      "block": "rem:glossary-rigid-category",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "s3-group",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Groups and symmetry",
+      "block": "rem:glossary-s3-group",
+      "kind": "remark",
+      "lean": "qou:QOU.S3Group"
+    },
+    {
+      "slug": "strand-twist-datum",
+      "chapter": "appendix-standard-model",
+      "chapterTitle": "Toward the Standard Model",
+      "section": "Archimedean truncation to the Standard Model group",
+      "block": "def:strand-twist-datum",
+      "kind": "definition",
+      "lean": "qou:QOU.StandardModel.TwistDatum"
+    },
+    {
+      "slug": "symmetric-monoidal-category",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Monoidal structure",
+      "block": "rem:glossary-symmetric-monoidal-category",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "torus-knot-generators",
+      "chapter": "knots-particles-confinement",
+      "chapterTitle": "Knots, Particles, and Confinement",
+      "section": "Skein Generation and Particle Correspondence",
+      "block": "def:knot-particle-generation",
+      "kind": "definition",
+      "lean": "qou:QOU.Torsion.KnotParticleGeneration"
+    },
+    {
+      "slug": "weierstrass-projection",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Elliptic and surface geometry",
+      "block": "rem:glossary-weierstrass-projection",
+      "kind": "remark",
+      "lean": "qou:QOU.Archimedean.WeierstrassProjection.weierstrassProjection"
+    }
+  ],
+  "duplicates": {}
+}

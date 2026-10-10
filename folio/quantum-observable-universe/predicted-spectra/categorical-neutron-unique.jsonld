@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-neutron-unique",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-neutron-unique",
+  "kind": "proposition",
+  "title": "Uniqueness of the categorical neutron up to braid isotopy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-neutron",
+    "papers/quantum-observable-universe/blocks/prop-categorical-neutron-exists",
+    "papers/quantum-observable-universe/blocks/prop-hadron-unique"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-neutron-unique"
+  ],
+  "tags": [
+    "uniqueness",
+    "neutron"
+  ],
+  "leanRef": "qou:QOU.CategoricalNeutron.unique_up_to_isotopy",
+  "text": "categorical-neutron-unique.md",
+  "leanSource": "categorical-neutron-unique.lean",
+  "provenance": "authored"
+}

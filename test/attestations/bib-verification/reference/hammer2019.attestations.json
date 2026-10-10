@@ -1,0 +1,63 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "hammer2019",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 268,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1906.12122v2/1906.12122v2.pdf"
+        },
+        "id": "hammer2019",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Genuine orphan, and the folio has three blocks whose whole purpose is comparison with standard nuclear physics: rem:bw-mass-decomposition-dictionary (states the goal of replacing the empirical Bethe-Weizsaecker equation with substrate-only input, and that the absolute per-isotope binding closure is open), rem:feynman-qou-comparison (contrasts the five fitted SEMF coefficients with the zero-fitted-parameter Wedderburn formula, and says the Wedderburn error tracks the shell model), and rem:q-deformed-nuclear-models-comparison (compares against q-deformed oscillator models). All three compare against 1930s-1950s phenomenology. None cites the modern effective-field-theory framework, which is the actual state of the art and the thing a referee will ask about. This document is the authoritative review of the three main nuclear EFTs (Chiral, Pionless, Halo/Cluster), their scales, ranges of applicability and the ab initio few- and many-body results built on them. It supplies no theorem the folio derives from, so it is supporting, not core \u2014 but the omission is a real weakness in a comparison section. I read the abstract, author block and table of contents opening; I did not read the body chapters, and I am not claiming any specific numerical benchmark from it.",
+          "keyResults": [
+            {
+              "locator": "Abstract",
+              "statement": "The nuclear landscape is organised as a sequence of effective field theories (Chiral, Pionless, Halo/Cluster) connected to the Standard Model by symmetries and lattice QCD, each with its own scales and range of applicability in energy and nucleon number.",
+              "useForFolio": "Gives the comparison blocks a modern benchmark rather than only the semi-empirical mass formula and the shell model, and states the applicability ranges against which the folio's light-nuclei-only reach should be positioned.",
+              "targets": [
+                "rem:feynman-qou-comparison",
+                "rem:bw-mass-decomposition-dictionary"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry; three comparison blocks benchmark only against pre-EFT phenomenology.",
+              "target": "rem:feynman-qou-comparison",
+              "bean": "qou-eifc"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "rem:feynman-qou-comparison contrasts the folio's zero-fitted-parameter formula with the five-coefficient SEMF; a modern EFT benchmark belongs in that comparison, and its absence is the kind of gap a referee flags first.",
+              "target": "rem:feynman-qou-comparison",
+              "bean": "qou-2i16"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "955e3eda4867"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

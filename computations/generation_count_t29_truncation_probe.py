@@ -156,7 +156,7 @@ def main() -> None:
     })
     wb.add_data("primality_condition_is_asserted_not_derived", {
         "corpus_occurrences": 1,
-        "location": ("content/quantum-observable-universe/"
+        "location": ("folio/quantum-observable-universe/"
                      "particle-interactions/"
                      "lepton-meson-torus-knot-dictionary.md, line 1, "
                      "parenthetical '(odd primes)'"),

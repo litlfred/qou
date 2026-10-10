@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-observed-value",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-observed-value",
+  "kind": "remark",
+  "title": "Observed spacetime value",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-color-tube-fibers",
+    "papers/quantum-observable-universe/blocks/rem-brings-smoothness"
+  ],
+  "tags": [
+    "glossary",
+    "brings-surface",
+    "color-tube"
+  ],
+  "defines": [
+    "observed-value"
+  ],
+  "leanRef": "qou:QOU.BringsSurface.observedValue",
+  "text": "glossary-observed-value.md",
+  "leanSource": "glossary-observed-value.lean",
+  "provenance": "authored"
+}

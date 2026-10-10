@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-terminal-resolution",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:terminal-resolution",
+  "kind": "proposition",
+  "title": "Terminal Resolution of Hadronic Mass",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-skein-mass-relation",
+    "papers/quantum-observable-universe/blocks/cor-mass-identity-C"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-terminal-resolution"
+  ],
+  "tags": [
+    "mass",
+    "hadronic"
+  ],
+  "leanRef": "qou:QOU.Experimental.TerminalResolution",
+  "text": "terminal-resolution.md",
+  "leanSource": "terminal-resolution.lean",
+  "provenance": "authored"
+}

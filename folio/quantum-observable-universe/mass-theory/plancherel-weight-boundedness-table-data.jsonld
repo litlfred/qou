@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-plancherel-weight-boundedness-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:plancherel-weight-boundedness-table-data",
+  "kind": "table",
+  "title": "Data table from prop:plancherel-weight-boundedness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-plancherel-weight-boundedness"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "plancherel-weight-boundedness-table-data.md",
+  "provenance": "authored"
+}

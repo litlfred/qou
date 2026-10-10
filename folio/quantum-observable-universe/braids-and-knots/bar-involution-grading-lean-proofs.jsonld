@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-bar-involution-grading-lean-proofs",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:bar-involution-grading-lean-proofs",
+  "kind": "remark",
+  "title": "The $\\mathbb{Z}/2\\mathbb{Z}$ bar-grading: Lean $\\leftrightarrow$ paper proof bridge",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-bar-involution"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-bar-involution",
+  "tags": [
+    "lean-infrastructure",
+    "bar-invariance",
+    "bar-grading",
+    "categorical-action"
+  ],
+  "text": "bar-involution-grading-lean-proofs.md",
+  "provenance": "authored"
+}

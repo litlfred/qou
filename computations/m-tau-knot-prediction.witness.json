@@ -1,5 +1,5 @@
 {
-  "$schema": "../../folio-assistant/schemas/witness.schema.json",
+  "$schema": "../schemas/witness-schema/schema/witness.schema.json",
   "computation": "m-tau-knot-prediction",
   "description": "Falsifiable test of cohomological lepton-generation hierarchy: search for K_tau, k_tau such that m_tau/m_e = Vol(K_tau)/hbar_q^k_tau at q_0.",
   "substrate_q0": "1.1099785827513808075916690956107688798744991218736",

@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-skein-mass-relation",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:skein-mass-relation",
+  "kind": "proof",
+  "title": "Proof of $q$-Deformed Skein Relation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-skein-mass-relation"
+  ],
+  "cites": [
+    "references/kashaev1997",
+    "references/murakami-murakami2001"
+  ],
+  "leanRef": "qou:QOU.HadronicMass.SkeinMassRelation",
+  "text": "skein-mass-relation-proof.md",
+  "leanSource": "skein-mass-relation-proof.lean",
+  "provenance": "authored"
+}

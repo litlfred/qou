@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-linear-chain-bond-count",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:linear-chain-bond-count",
+  "kind": "proposition",
+  "title": "The jet-filtration multiplicity is the linear-chain bond count $M_n = n-1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-jet-filtration-binding-extensive",
+    "papers/quantum-observable-universe/blocks/conj-binding-manybody-eq-jet-filtration"
+  ],
+  "tags": [
+    "binding",
+    "jet-filtration",
+    "bond-count",
+    "linear-chain",
+    "multiplicity"
+  ],
+  "leanRef": "qou:QOU.Mass.linear_chain_cluster_measure",
+  "text": "linear-chain-bond-count.md",
+  "provenance": "authored"
+}

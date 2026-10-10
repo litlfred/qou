@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-weight-decomposition-exists",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:weight-decomposition-exists",
+  "kind": "theorem",
+  "title": "Existence of the weight decomposition",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-weight-decomposition"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-weight-decomposition-exists"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-weight-decomposition-su2"
+  ],
+  "tags": [
+    "existence",
+    "weight",
+    "decomposition"
+  ],
+  "leanRef": "qou:QOU.WeightDecomposition.ofMaximalTorus",
+  "text": "weight-decomposition-exists.md",
+  "leanSource": "weight-decomposition-exists.lean",
+  "provenance": "authored"
+}

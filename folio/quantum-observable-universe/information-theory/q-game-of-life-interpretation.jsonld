@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-game-of-life-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-game-of-life-interpretation",
+  "kind": "remark",
+  "title": "Deterministic cellular-automaton models of Peña et al. and 't Hooft",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-game-of-life"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-q-game-of-life",
+  "cites": [
+    "references/pena2022",
+    "references/thooft2016"
+  ],
+  "text": "q-game-of-life-interpretation.md",
+  "provenance": "authored"
+}

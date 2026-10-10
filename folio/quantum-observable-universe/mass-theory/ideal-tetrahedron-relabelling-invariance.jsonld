@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-ideal-tetrahedron-relabelling-invariance",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:ideal-tetrahedron-relabelling-invariance",
+  "kind": "proposition",
+  "title": "Relabelling invariance: $z \\mapsto 1/(1-z)$ cycles the dihedral angles and preserves volume",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-kummer-bloch-wigner-identity"
+  ],
+  "cites": [
+    "references/thurston1978",
+    "references/neumann-zagier1985"
+  ],
+  "tags": [
+    "ideal-tetrahedron",
+    "hyperbolic-volume",
+    "shape-parameter",
+    "law-of-sines"
+  ],
+  "leanRef": "qou:QOU.MathlibExt.IdealTetrahedron.volume_rotate",
+  "text": "ideal-tetrahedron-relabelling-invariance.md",
+  "provenance": "authored"
+}

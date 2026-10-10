@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-knot-operator-transition",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:knot-operator-transition",
+  "kind": "proposition",
+  "title": "Nucleon-addition operators: Hopf link at $A{=}3$, trefoil at $A{=}4$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-per-nucleon-channel-decomposition"
+  ],
+  "tags": [
+    "knot-operator",
+    "hopf-link",
+    "trefoil",
+    "nucleon-addition",
+    "topology-transition"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.knot_operator_transition",
+  "text": "knot-operator-transition.md",
+  "provenance": "authored"
+}

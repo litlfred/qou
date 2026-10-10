@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-q-langlands-dual",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:q-langlands-dual",
+  "kind": "definition",
+  "title": "$q$-Langlands dual group",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-gauge-group",
+    "papers/quantum-observable-universe/blocks/def-quantum-su2"
+  ],
+  "tags": [
+    "geometric-langlands",
+    "langlands-dual",
+    "quantum-group"
+  ],
+  "leanRef": "qou:QOU.QLanglandsDual",
+  "text": "q-langlands-dual.md",
+  "leanSource": "q-langlands-dual.lean",
+  "provenance": "authored"
+}

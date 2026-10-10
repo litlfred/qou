@@ -75,7 +75,7 @@ RATIOS = ["1.1", "1.5", "2", "10"]
 
 # The upper-bound technology one would go looking for.
 ACQUISITION_TERMS = re.compile(r"ropelength|ideal knot", re.IGNORECASE)
-SCAN_ROOTS = ["docs", "computations", "content", "library"]
+SCAN_ROOTS = ["docs", "computations", "folio", "library"]
 
 # This probe NAMES the terms it searches for, and writes them into its own
 # witness. Any artifact it owns is therefore a guaranteed self-hit and must be
@@ -88,7 +88,7 @@ SCAN_ROOTS = ["docs", "computations", "content", "library"]
 SELF_ARTIFACTS = frozenset({
     (HERE / "em_linking_upper_bound_precision_budget.py").resolve(),
     (HERE / "em-linking-upper-bound-precision-budget.witness.json").resolve(),
-    (REPO / "content/quantum-observable-universe/lean/QOU/Mass"
+    (REPO / "folio/quantum-observable-universe/lean/QOU/Mass"
           / "MirrorSplitIsASmallFractionOfTheEnergy.lean").resolve(),
 })
 
@@ -218,10 +218,20 @@ def main() -> int:
                 "of any two-sided bound must beat this for the interval to be narrower "
                 "than the split it is meant to explain."),
     )
+    # RESIDUAL against 0, not value against target: the verdict path
+    # (qou_substrate/witness.py) compares float(computed) to float(expected),
+    # so a value-vs-value form here could not resolve anything below the
+    # float64 floor and the tolerance below it was unreachable by ~210x.
+    # A residual near zero IS representable as a float64 all the way down, so
+    # the same tolerance is a real bound on it.
+    # Smallest shortfall of the seven, and the only one whose floor comes from
+    # SERIALIZATION rather than binary64: mp.nstr(x, 8) on a value near 21
+    # rounds at 2.1e-6, so 1e-8 was unreachable even before float() saw it.
+    # Gate: computations/audits/tolerance_below_arithmetic_floor_audit.py.
     b.add_assertion(
         name="budget_tightens_with_A_by_exactly_A_max_over_A_min",
-        computed=mp.nstr(tightening, 8),
-        expected="21",
+        computed=mp.nstr(abs(tightening - 21), 8),
+        expected="0",
         tolerance="1e-8",
         unit="ratio",
         source=("63/3 = 21. The precision requirement sharpens 21-fold across the "

@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "witten1988",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 40,
+      "entry": {
+        "id": "witten1988",
+        "status": "partial",
+        "verified_at": "2026-05-19T15:38:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 5,
+        "fix_commit": "(this commit)",
+        "note": "Witten, Topological quantum field theory, Comm. Math. Phys. 117 (1988). 5 bare-URL Refs \u2192 title+publisher.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1007/BF01223371"
+        }
+      }
+    }
+  ]
+}

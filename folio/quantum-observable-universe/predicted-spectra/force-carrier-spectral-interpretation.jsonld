@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-force-carrier-spectral-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:force-carrier-spectral-interpretation",
+  "kind": "remark",
+  "title": "Force-carrier sector has no degrees of freedom",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-force-carrier-bring-uniqueness",
+  "tags": [
+    "interpretation",
+    "force-carrier",
+    "topological-invariant",
+    "no-fitting"
+  ],
+  "text": "force-carrier-spectral-interpretation.md",
+  "provenance": "authored"
+}

@@ -638,6 +638,37 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
     byte-identical to the historical word — all existing callers omitting `q`
     are unaffected. Used by `tr_m_atom_zn(q=…)` and the N-grid simulators
     (multiple q at once).
+
+    **D1 — what this models, and what it is refuted by** (owner ruling on
+    `docs/coordination/2026-09-05-owner-gated-bean-triage.md`, 2026-09-13).
+
+    This is the **NUCLEUS**: a linear chain, `A-1` interfaces, `12A-1` letters,
+    no electrons. Its sibling `pyhecke.gram.build_atom_nf` is the **ATOM**: all
+    pairs, `11A + C(A,2) + Z` letters, including `Z` electron crossings.
+    **They model different objects and disagree silently.** Neither is selected
+    as correct, because both topologies are refuted:
+
+    * the chain here is excluded by
+      `QOU.MassTheory.ChainBondOrderDependence.orderIndependent_iff` -- the chain
+      bond sum is arrangement-invariant only when `L_pp = L_pn = L_nn`, and a
+      nucleus has no arrangement;
+    * the all-pairs complete graph is excluded structurally by
+      `QOU.Mass.CoordinationSaturation` -- `B/A = eps*(A-1)/2` is unbounded, so
+      it has no plateau, while saturation is observed.
+
+    Bean `t7qv` RESULT 4 measures all-pairs as roughly halving the A-scaling
+    error (2H/3He +40.0% against this chain's +73.5%) -- but **RESULT 5 refutes a
+    one-parameter falloff outright** (`f = +2.030` from A-scaling against
+    `f = -0.697` from the mirror; one of them is negative). So all-pairs is the
+    better of two refuted topologies, and quoting RESULT 4 without RESULT 5
+    sells a preference between refuted options as a result.
+
+    **Consumers.** This chain feeds `binding_canonical` (imported at
+    `binding_canonical.py:91`, called at `:174` and `:579`). The all-pairs
+    sibling is the one that reaches the paper, via
+    `all_nuclides_sdp_admissibility.py` -> `nuclear-interactions/demand-stability`.
+
+    The topology question stays open under bean `qou-brng`.
     """
     from pyhecke.atom import reject_float64_q
     reject_float64_q(q, allow_float64=allow_float64, where="atom_braid_word_3A")

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-hydrogen-shell-writhe",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:hydrogen-shell-writhe",
+  "kind": "conjecture",
+  "title": "Electron shell number equals writhe level of the trefoil embedding",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-electron-knot"
+  ],
+  "tags": [
+    "hydrogen",
+    "shell",
+    "writhe",
+    "trefoil",
+    "reidemeister",
+    "orbital"
+  ],
+  "leanRef": "qou:QOU.BringsSurface.hydrogen_shell_writhe",
+  "text": "hydrogen-shell-writhe.md",
+  "leanSource": "hydrogen-shell-writhe.lean",
+  "provenance": "authored"
+}

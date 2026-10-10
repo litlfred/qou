@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-mobius-energy-frobenius-kernel",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:mobius-energy-frobenius-kernel",
+  "kind": "proof",
+  "title": "Proof of the classical limit of the Frobenius--Hopf kernel",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-mobius-energy-frobenius-kernel"
+  ],
+  "text": "mobius-energy-frobenius-kernel-proof.md",
+  "provenance": "authored"
+}

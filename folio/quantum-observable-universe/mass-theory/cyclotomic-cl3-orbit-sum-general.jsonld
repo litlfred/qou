@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-cyclotomic-cl3-orbit-sum-general",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:cyclotomic-cl3-orbit-sum-general",
+  "kind": "proposition",
+  "title": "General orbit-sum identity: $\\sum_k \\mathrm{Cl}_3(2\\pi k/N) = -(N^2-1)/N^2 \\cdot \\zeta(3)$ at every $N \\geq 2$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cyclotomic-trilog-imaginary-closed-form",
+    "papers/quantum-observable-universe/blocks/prop-cl3-zeta5-pslq-independence"
+  ],
+  "cites": [
+    "references/bloch2000",
+    "references/zagier1986"
+  ],
+  "tags": [
+    "multiplication-formula",
+    "orbit-sum",
+    "trilogarithm",
+    "cyclotomic",
+    "zeta-3",
+    "closed-form",
+    "depth-3",
+    "graded-mikusinski",
+    "theorem-level"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.CyclotomicCl3OrbitSum.orbit_sum_general",
+  "text": "cyclotomic-cl3-orbit-sum-general.md",
+  "provenance": "authored"
+}

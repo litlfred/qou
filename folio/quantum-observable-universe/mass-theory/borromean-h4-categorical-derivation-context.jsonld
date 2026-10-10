@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-borromean-h4-categorical-derivation-context",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:borromean-h4-categorical-derivation-context",
+  "kind": "remark",
+  "title": "Wider-framework connection and significance of the Borromean h^4 factorisation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-borromean-h4-categorical-derivation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-borromean-h4-categorical-derivation",
+  "tags": [
+    "borromean",
+    "markov-trace",
+    "wenzl-weights",
+    "h4"
+  ],
+  "text": "borromean-h4-categorical-derivation-context.md",
+  "provenance": "authored"
+}

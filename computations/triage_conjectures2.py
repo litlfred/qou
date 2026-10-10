@@ -4,7 +4,7 @@ import re
 from collections import defaultdict
 
 def main():
-    root_dir = '/home/litlfred/space_cats/qou/content/quantum-observable-universe'
+    root_dir = '/home/litlfred/space_cats/qou/folio/quantum-observable-universe'
     conjectures = set()
     dependencies = defaultdict(list)
     

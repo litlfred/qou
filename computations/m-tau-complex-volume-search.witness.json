@@ -1,5 +1,5 @@
 {
-  "$schema": "../../folio-assistant/schemas/witness.schema.json",
+  "$schema": "../schemas/witness-schema/schema/witness.schema.json",
   "computation": "m-tau-complex-volume-search",
   "description": "Complex-volume (Vol + i*CS) extension of the refuted 25-knot m_tau search: derived torus carrier + wide <=12-crossing census with search-entropy scoring.",
   "substrate_q0": "1.1099785827513808075916690956107688798744991218736",

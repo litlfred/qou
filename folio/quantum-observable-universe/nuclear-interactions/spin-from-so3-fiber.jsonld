@@ -1,0 +1,41 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-spin-from-so3-fiber",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:spin-from-so3-fiber",
+  "kind": "conjecture",
+  "title": "Spin $\\mathrm{SU}(2)_S$ from full $\\mathrm{SO}(3)$ fiber action on color-sheet rotations",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-inter-nucleon-channel-color-tube",
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace"
+  ],
+  "cites": [
+    "references/klein1888",
+    "references/kashiwara1991",
+    "references/khovanovlauda2009",
+    "references/wigner1937"
+  ],
+  "tags": [
+    "spin",
+    "duality-d10",
+    "so3-fiber",
+    "color-tube",
+    "spherical-harmonic-h4",
+    "bring-surface",
+    "axiom-class",
+    "open-problem",
+    "conditional-on-class"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.SpinFromSo3Fiber",
+  "text": "spin-from-so3-fiber.md",
+  "leanSource": "spin-from-so3-fiber.lean",
+  "provenance": "authored"
+}

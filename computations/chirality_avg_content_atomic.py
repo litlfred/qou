@@ -173,7 +173,7 @@ def main():
             "pattern observed across these isotopes."
         )
         .set_audit_only(
-            "content/quantum-observable-universe/braids-and-knots/"
+            "folio/quantum-observable-universe/braids-and-knots/"
             "derivation-audit-report.md (GAP-A-2 chiral residual at "
             "atomic level)"
         )

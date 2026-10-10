@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-wavefront-propagation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:wavefront-propagation",
+  "kind": "remark",
+  "title": "Wavefront propagation and the categorical Dirac equation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-lagrangian",
+    "papers/quantum-observable-universe/blocks/prop-variational-equations",
+    "papers/quantum-observable-universe/blocks/def-categorical-instanton"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-dirac-operator",
+  "tags": [
+    "wavefront",
+    "dirac",
+    "propagation",
+    "photon",
+    "instanton"
+  ],
+  "text": "wavefront-propagation.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-borromean-topological-confinement",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:borromean-topological-confinement",
+  "kind": "remark",
+  "title": "Topological three-body inseparability",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-borromean-baryon"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-borromean-baryon",
+  "tags": [
+    "borromean",
+    "color-confinement",
+    "brunnian",
+    "unknot",
+    "quark-isolation",
+    "topology"
+  ],
+  "text": "borromean-topological-confinement.md",
+  "provenance": "authored"
+}

@@ -3,7 +3,7 @@
 
 Per `docs/audits/2026-05-24-isospin-categorical-source.md` §4 and the
 content block
-`content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md`,
+`folio/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md`,
 the canonical SU(2)_I isospin Z/2 swap on the canonical operator-
 valued bowtie interface produces a **bar-anti-symmetric leading
 residue** carrying an overall factor of `h = q − q^-1`.  The

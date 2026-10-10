@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-terminal-resolution",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:terminal-resolution",
+  "kind": "proof",
+  "title": "Proof of Terminal Resolution of Hadronic Mass",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-skein-generation",
+    "papers/quantum-observable-universe/blocks/prf-knot-volumes-verification"
+  ],
+  "leanRef": "qou:QOU.HadronicMass.terminal_resolution_hadronic_mass",
+  "text": "terminal-resolution-proof.md",
+  "leanSource": "terminal-resolution-proof.lean",
+  "provenance": "authored"
+}

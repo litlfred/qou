@@ -436,7 +436,7 @@ def main() -> int:
                     "defect and is not a derivation target at fixed law. No candidate selected."),
         "provenance": {"headSha": _head_sha(),
                        "producer": "computations/qbeta/qbeta_e0_scale_candidates_probe.py",
-                       "lean": "content/quantum-observable-universe/lean/QOU/Hecke/BindingScaleCandidates.lean",
+                       "lean": "folio/quantum-observable-universe/lean/QOU/Hecke/BindingScaleCandidates.lean",
                        "elapsed_s": round(time.monotonic() - t0, 3)},
     }
     # Provenance + anchor stamps: this producer writes its witness directly, so

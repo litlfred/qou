@@ -1,0 +1,77 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "neumann-reid",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 391,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/nrarith/nrarith.pdf"
+        },
+        "id": "neumann-reid",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "A survey extending arithmetic invariants from arithmetic hyperbolic 3-manifolds to general ones: the invariant trace field k(Gamma) (the smallest trace field among finite-index subgroups) and the invariant quaternion algebra A(Gamma) as commensurability invariants, the Galois (Z/2)^m relation between the trace field and the invariant trace field, consequences of ramification, and an effective amphicheirality test. The two manifolds the corpus is built on are the two running examples: the figure-eight knot complement (which the survey singles out repeatedly \u2014 the arithmetic knot complement, hidden symmetries, Dehn surgery discussion) and the Borromean rings complement, presented as the quotient by PSL_2 of the Gaussian integers. The corpus asserts the arithmetic of both without sources: cusp-shape-bar-parity states the 4_1 trace field is Q(sqrt(-3)) with no citation, habiro-tail-archimedean-action carries a 'Trace field' column, mass-tower-deeper-fillers.lean refers to 'the trace field's Bloch-group elements', and there is no arithmetic-hyperbolic-3-manifold entry anywhere in references.ts (grep for 'trace field' in references.ts returns nothing). The amphicheirality result is also directly load-bearing: the corpus treats 4_1's amphichirality as the structural reason it can carry the mass mechanism (self-dual-higgs-real-volume, cohomological-embedding-table2-data, knot-notation-convention) and cites nothing for it.",
+          "keyResults": [
+            {
+              "locator": "sections 2-3 (Theorem 2.2; definition of k(Gamma), A(Gamma))",
+              "statement": "The invariant trace field and invariant quaternion algebra are commensurability invariants; the trace field is a Galois (Z/2)^m extension of the invariant trace field, and an arithmetic manifold is determined up to commensurability by the pair (k, A).",
+              "useForFolio": "The citable source for the trace fields the corpus attributes to 4_1 and to the Borromean complement, and for treating 'trace field' as a well-defined invariant of the manifold rather than of a representation.",
+              "targets": [
+                "folio/quantum-observable-universe/braids-and-knots/cusp-shape-bar-parity.md",
+                "prop:habiro-tail-archimedean-action"
+              ]
+            },
+            {
+              "locator": "Prop. 3.4",
+              "statement": "If a hyperbolic orbifold is amphicheiral then its invariant trace field is closed under complex conjugation (and correspondingly for the quaternion algebra), giving an effective amphicheirality and commensurable-amphicheirality test.",
+              "useForFolio": "A cited, checkable criterion behind the corpus's structural use of 4_1's amphichirality, which is currently asserted in several blocks with no source.",
+              "targets": [
+                "folio/quantum-observable-universe/braids-and-knots/self-dual-higgs-real-volume.md"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Core and orphan; the corpus has no arithmetic-hyperbolic-3-manifold reference at all despite asserting trace fields for both of its anchor manifolds.",
+              "target": "folio/quantum-observable-universe/braids-and-knots/cusp-shape-bar-parity.md",
+              "bean": "qou-ozc3"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "cusp-shape-bar-parity states the 4_1 trace field is Q(sqrt(-3)) with no citation; the invariant-trace-field framework is the source.",
+              "target": "folio/quantum-observable-universe/braids-and-knots/cusp-shape-bar-parity.md",
+              "bean": "qou-7neb"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "self-dual-higgs-real-volume leans on 4_1's amphichirality as a structural fact with no source; the amphicheirality criterion supplies one.",
+              "target": "folio/quantum-observable-universe/braids-and-knots/self-dual-higgs-real-volume.md",
+              "bean": "qou-njry"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "085ec9541ddc"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

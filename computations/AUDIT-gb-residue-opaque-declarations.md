@@ -1,7 +1,7 @@
 # Audit — `gb-residue-spectral-sum.lean` opaque declarations
 
 **Scope.** Catalog the `noncomputable opaque` and `sorry`-axiom
-declarations in `content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.lean`
+declarations in `folio/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.lean`
 that block a fully formal proof of `prop:gb-residue-spectral-sum`,
 and assess what Mathlib infrastructure (or new content) would be
 needed to promote each to a definition with a real proof.
@@ -20,11 +20,11 @@ by class fields on `GBResidueSpectralSum`:
 
 - `S.gradedTrace : Fin levelBound → ℝ` — replaces global `opaque
   gradedMarkovTrace`. Per
-  [`prop:graded-markov-trace-from-gs-filtration`](../../content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.md),
+  [`prop:graded-markov-trace-from-gs-filtration`](../../folio/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.md),
   the value is the descent of `tr_M` along `J^ℓ / J^{ℓ+1}`.
 - `S.residue : Fin levelBound → ℝ` — replaces global `opaque
   residueAtRoot`. Per
-  [`prop:residue-at-root`](../../content/quantum-observable-universe/braids-and-knots/residue-at-root.md),
+  [`prop:residue-at-root`](../../folio/quantum-observable-universe/braids-and-knots/residue-at-root.md),
   the value is the cyclotomic projection of `Φ_q · gradedTrace ℓ`
   in the Habiro completion.
 

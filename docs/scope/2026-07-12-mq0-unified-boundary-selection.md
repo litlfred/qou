@@ -98,7 +98,7 @@ Independently, the decisive resolution of the odd-S origin landed on
 `main` while this memo was in flight: the Ohtsuki tower at the *small
 imaginary* substrate parameter `2πb² = i·t` (`|·| ≈ 0.10`), with the
 Lean-proved bar-parity selection rule and Borel–Padé `Im 𝔙 ≈ 0.055` —
-see [`rem:ohtsuki-tower-bar-parity`](../../content/quantum-observable-universe/mass-theory/rem-ohtsuki-tower-bar-parity.md).
+see [`rem:ohtsuki-tower-bar-parity`](../../folio/quantum-observable-universe/mass-theory/rem-ohtsuki-tower-bar-parity.md).
 The small-parameter route supersedes the large-`|u|` winding route this
 memo proposed; the `1/u³` ladder is that smooth object's representation,
 per #3704's reconciliation.

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T12:47:58.921373+00:00",
-  "commitSha": "68a1bee19c336728cddda5cf5a61819f001f0f8a",
+  "computedAt": "2026-09-14T18:12:50.780047+00:00",
+  "commitSha": "5c2af221b76dcec548fe73f7d849c792cf69b763",
   "assertions": [
     {
       "name": "det_three_forms_agree",
@@ -60,11 +60,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 30,
   "computation": "a4-interface-magnitude-one-scalar-gate",
   "scriptFile": "a4_interface_magnitude_one_scalar_gate.py",
-  "scriptHash": "3b896ebc3ea1",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "dd801bfc5c51",
+  "scriptCommitSha": "5c2af221b76dcec548fe73f7d849c792cf69b763",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -76,9 +76,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -111,7 +112,7 @@
       "documented_targets_MeV": {
         "b4_1four_connected_cumulant": "9.24299999999999999999999999999999999999999999999999196032375",
         "mu4_simplex_residual_abs": "4.59104799999999999999999999999999999999999999999999736709156",
-        "B_4He_AME": "28.2956600000000000000000000000000000000000000000000193910149"
+        "B_4He_AME": "28.2956623999999999999999999999999999999999999999999915823563"
       }
     },
     "results": {
@@ -196,10 +197,10 @@
           "m_star_in_open_interval": true
         },
         "B_4He_AME": {
-          "target": "28.2956600000000000000000000000000000000000000000000193910149",
-          "m_star": "0.447213595499814143543405240754598230113687695919310554134177",
-          "ceiling_minus_m_star": "0.000000000000143795738429492991657016974435976002994179587970937163527292",
-          "roundtrip_rel_residual": "7.86639838766395928570493065893920712688253308530461091898145e-41",
+          "target": "28.2956623999999999999999999999999999999999999999999915823563",
+          "m_star": "0.447213595499814143888514598853986038333270916499896824828886",
+          "ceiling_minus_m_star": "0.000000000000143795393320134892269208754852755422407908893261984678005915",
+          "roundtrip_rel_residual": "2.19344025750430524436446830706922892367100610833204777980862e-41",
           "m_star_in_open_interval": true
         }
       },
@@ -207,17 +208,17 @@
     },
     "naive_z_exclusion_both_conventions": {
       "z_C": {
-        "z": "0.499320334183694452058888570316831932640732912745994623923123",
-        "five_z_squared": "1.24660398064658153172863054457990662083184100096643604754509",
-        "detG": "-0.185120479863117313651780271332227922849963236154188704411105",
+        "z": "0.499320334183694452413442680257666303751948164041532416785170",
+        "five_z_squared": "1.24660398064658153349899131119850423518778865815805919187851",
+        "detG": "-0.185120479863117314893437679735634057743402994317986878732612",
         "above_ceiling": true,
         "excluded": true,
         "note": "convention C, owner-excised 2026-08-09 / R1"
       },
       "z_D": {
-        "z": "0.612688037146465283246961458246500068463860439636113494563450",
-        "five_z_squared": "1.87693315431194211391955841666011913470149555419305030013531",
-        "detG": "-0.547744172023255195186222890997172988060308782797944682260978",
+        "z": "0.612688037146465251595829863945899248026308391545085404591497",
+        "five_z_squared": "1.87693315431194191999686151689504955726653609940164789856974",
+        "detG": "-0.547744172023255108070962285180973937495466382429270845604515",
         "above_ceiling": true,
         "excluded": true,
         "note": "convention D, canonical per owner ruling R1"
@@ -260,6 +261,6 @@
     "checks_failed": 0
   },
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0AnchorReason": "the canonical convention-D naive bond factor z_D = q0^3/(q0^2+1) is evaluated at the proton pin (the standing default, owner directive 2026-08-07); z_C is reported at the same pin purely as a named historical delta. The gate itself -- the spectrum, det form, ceiling, monotonicity and surjectivity -- is q0-independent."
 }

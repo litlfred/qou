@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-proton-mass-substrate-identity",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:proton-mass-substrate-identity",
+  "kind": "proposition",
+  "title": "Substrate evaluation: $m_p = 2 \\cdot m_\\mu \\cdot F_{\\mathrm{Bor}}(q_0) - 12 \\cdot m_e$ to $0.24\\,\\mathrm{ppm}$ at $q = q_0$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-proton-borromean-assembly",
+    "papers/quantum-observable-universe/blocks/def-f-bor-borromean-observable",
+    "papers/quantum-observable-universe/blocks/prop-flavor-split-substrate"
+  ],
+  "cites": [
+    "references/adams1985hyperbolic",
+    "references/wenzl1988c",
+    "references/chlouveraki2016-hdr"
+  ],
+  "tags": [
+    "mass-formula",
+    "proton",
+    "borromean",
+    "substrate-evaluation",
+    "archimedean",
+    "ocneanu-cancellation",
+    "bernoulli-12",
+    "0.24ppm",
+    "two-calibration-baryon"
+  ],
+  "leanRef": "qou:QOU.AppendixQValues.ProtonBorromeanAssembly.proton_mass_substrate_identity",
+  "text": "proton-mass-substrate-identity.md",
+  "provenance": "authored"
+}

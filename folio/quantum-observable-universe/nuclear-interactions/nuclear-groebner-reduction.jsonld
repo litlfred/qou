@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-nuclear-groebner-reduction",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:nuclear-groebner-reduction",
+  "kind": "proposition",
+  "title": "Unique nuclear normal form via Gröbner reduction in $H_n(q)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-braiding-eigenvalue-extraction",
+    "papers/quantum-observable-universe/blocks/rem-hecke-algebra-from-braiding",
+    "papers/unital-groebner-bases/blocks/def-groebner-basis",
+    "papers/unital-groebner-bases/blocks/def-division-algorithm"
+  ],
+  "tags": [
+    "groebner-basis",
+    "hecke-algebra",
+    "braid-word",
+    "normal-form",
+    "nuclear",
+    "skein-relation",
+    "temperley-lieb",
+    "admissible-system"
+  ],
+  "leanRef": "qou:QOU.Archimedean.nuclear_groebner_reduction",
+  "text": "nuclear-groebner-reduction.md",
+  "leanSource": "nuclear-groebner-reduction.lean",
+  "provenance": "authored"
+}

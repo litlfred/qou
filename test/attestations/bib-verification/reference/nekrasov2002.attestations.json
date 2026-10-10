@@ -1,0 +1,63 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "nekrasov2002",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 149,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-hep-th-0206161v1/0206161v1.pdf"
+        },
+        "id": "nekrasov2002",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Localisation computation of the N=2 SU(N) instanton partition function: the fixed points of the torus action on instanton moduli are classified by N-tuples of Young diagrams, and the prepotential is recovered as a sum over them. The corpus already makes this attribution twice, by name and without a citation: computations/qbeta/qbeta_phib_cyclotomic_fibre_reduction_probe.py says 'Nekrasov localization: the integral localizes at fixed points classified by Young tableaux', and folio/quantum-observable-universe/bring_tetraplectic.md Sect. 3 says 'path integrals over instanton moduli localize (Nekrasov) at fixed points classified by tuples of Young tableaux'. So the citation gap is concrete and the target is named. It is NOT core: bring_tetraplectic.md labels the whole section a 'conjectural link' and carries a banner flagging its geometric claims as unverified, and the probe uses the statement as motivation for choosing fibre modulus N = 5, not as an input to any derivation. Nothing in the folio consumes a Nekrasov theorem.",
+          "keyResults": [
+            {
+              "locator": "Sects. 3.5-3.6",
+              "statement": "The fixed points of the maximal-torus action on the (compactified) instanton moduli space are labelled by N-tuples of Young diagrams with k boxes in total, and the localisation integral reduces to a residue sum over them.",
+              "useForFolio": "Supplies the source for the uncited 'Nekrasov localization / Young tableaux' attribution that motivates the S_5-partition fibre decomposition in bring_tetraplectic.md Sect. 3 and the N = 5 choice in the cyclotomic fibre-reduction probe.",
+              "targets": [
+                "folio/quantum-observable-universe/bring_tetraplectic.md",
+                "computations/qbeta/qbeta_phib_cyclotomic_fibre_reduction_probe.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Two places in the corpus name Nekrasov's localisation result in prose with no ref() entry to point at.",
+              "target": "computations/qbeta/qbeta_phib_cyclotomic_fibre_reduction_probe.py",
+              "bean": "qou-9ep0"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "bring_tetraplectic.md Sect. 3 attributes the Young-tableaux fixed-point classification to Nekrasov by name without a citation.",
+              "target": "folio/quantum-observable-universe/bring_tetraplectic.md",
+              "bean": "qou-k6a4"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "9530c40215ba"
+        },
+        "note": "Source IS held: library/arxiv-hep-th-0206161v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+        "verified_at": "2026-09-03T04:19:53Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

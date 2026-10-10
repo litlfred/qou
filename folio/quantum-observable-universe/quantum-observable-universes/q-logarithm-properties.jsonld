@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-logarithm-properties",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-logarithm-properties",
+  "kind": "remark",
+  "title": "Realisations of $\\log_q$: base ring, three contexts, Habiro ring, and Reeb-flow rapidity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-logarithm",
+    "papers/quantum-observable-universe/blocks/rem-q-exp-finite-field-obstruction",
+    "papers/quantum-observable-universe/blocks/rem-q-exp-p-adic",
+    "papers/quantum-observable-universe/blocks/def-habiro-ring",
+    "papers/quantum-observable-universe/blocks/prop-q-exponential-taylor"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-logarithm",
+  "tags": [
+    "hopf-algebra",
+    "primitive",
+    "q-logarithm",
+    "adjoint"
+  ],
+  "text": "q-logarithm-properties.md",
+  "provenance": "authored"
+}

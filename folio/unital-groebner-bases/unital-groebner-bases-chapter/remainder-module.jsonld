@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/unital-groebner-bases/blocks/def-remainder-module",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:remainder-module",
+  "kind": "definition",
+  "title": "Remainder modules $O(I)$ and $\\tilde{O}(I)$",
+  "uses": [
+    "papers/unital-groebner-bases/blocks/def-admissible-system",
+    "papers/unital-groebner-bases/blocks/def-monomial-basis"
+  ],
+  "tags": [
+    "groebner-basis",
+    "remainder",
+    "free-module"
+  ],
+  "leanRef": "ugb:UGB.GrobnerShirshov.isNormalForm",
+  "text": "remainder-module.md",
+  "leanSource": "remainder-module.lean",
+  "provenance": "authored"
+}

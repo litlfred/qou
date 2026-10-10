@@ -1,0 +1,78 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "finkelstein2008",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 188,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-0806.3105v3/0806.3105v3.pdf"
+        },
+        "id": "finkelstein2008",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "SLq(2) knot model of elementary particles: the closest published analogue to QOU's own knot-as-particle construction, and an explicitly owner-requested read (docs/audits/2026-08-03-eightfold-way-a2-q-deformation-dialog-assessment.md line 532 lists it under 'Want'). It supplies a CANDIDATE, not a result QOU consumes: an explicit second diagram invariant (the rotation/Whitney number r) alongside the writhe w, with a published charge assignment Q_e = -(e/6)(w + r + 1). That is exactly the shape of the missing datum named in conj:sm-hypercharge-invariant ('Y does not factor through the writhe'; the currently-recorded candidate is the ribbon-framing twist, cite bilson-thompson2005). Held to 'supporting' rather than 'core' because Finkelstein's correspondence is FITTED, not derived: he states (p.5) that the trefoil-to-family ordering is chosen so that a single k = e/3 works ('If one aligns the trefoils and the families in any other relative order, one needs more than one value of k'). Per the block's own rule, a candidate that requires tuning a coupling is a fit and does not instantiate the class. QOU may adopt the INVARIANT (r) as a candidate to run through the two batteries; it must not adopt the numerology. No ref() entry exists; the corpus's only preon entries are the two duplicate Bilson-Thompson keys (bilson-thompson2005 line 5363, bilson-thompson2005 line 7784).",
+          "keyResults": [
+            {
+              "locator": "eq. (2.7), \u00a72",
+              "statement": "The SLq(2) irrep labels are identified with knot-diagram invariants by j = N/2, m = w/2, m' = (r+1)/2, where N = crossing number, w = writhe, r = rotation (Whitney degree).",
+              "useForFolio": "Supplies the rotation number r as a published second crossing-diagram invariant, independent of the writhe \u2014 a concrete alternative to the ribbon-framing twist currently recorded (without endorsement) as the candidate second datum in conj:sm-hypercharge-invariant. Feeds bean qou-q377 (twist-vs-writhe as candidate second crossing invariant).",
+              "targets": [
+                "conj:sm-hypercharge-invariant",
+                "conj:sm-gauge-truncation"
+              ]
+            },
+            {
+              "locator": "eq. (2.15)-(2.16), \u00a72, p.5",
+              "statement": "t = N/6, t_3 = -w/6, t_0 = -(r+1)/6, Q_e = -(e/6)(w + r + 1), consistent with the Standard-Model relation Q_e = e(t_3 + t_0).",
+              "useForFolio": "A published writhe+rotation -> (I_3, Y, Q) assignment that can be run directly through the two batteries conj:sm-hypercharge-invariant demands \u2014 Gell-Mann-Nishijima consistency on the nucleon doublet, and the first-generation hypercharge spectrum with its Z_6 relations. Its failure or success on the p/n doublet (which share Y = +1 but differ in writhe) is a cheap, decisive test.",
+              "targets": [
+                "conj:sm-hypercharge-invariant",
+                "def:coulomb-charge"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Orphan: no ref() entry despite being an explicitly named 'Want' in the eightfold-way dialog assessment and the closest published analogue to the QOU construction. Suggested id finkelstein2008 (Int. J. Mod. Phys. A 24 (2009) 2307).",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-1tjx"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "The block records the ribbon-framing twist as the sole candidate second datum, citing bilson-thompson2005 as literature precedent. Finkelstein's rotation number r is a second, independent published candidate for the same slot and belongs in the same sentence \u2014 recorded without endorsement, with the fitted-ordering caveat stated.",
+              "target": "conj:sm-hypercharge-invariant",
+              "bean": "qou-3xsv"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "Evaluate Q_e = -(e/6)(w + r + 1) and t_0 = -(r+1)/6 on the QOU proton/neutron knot states: the nucleon doublet is the recorded falsification for writhe-only Y, so whether adding r separates it is a one-shot decisive test of the candidate. A pass does not wire it (the correspondence is fitted upstream); a fail prunes the candidate.",
+              "target": "folio/quantum-observable-universe/appendix-standard-model/sm-hypercharge-invariant.lean",
+              "bean": "qou-nrty"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "a37b4f2e9636"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

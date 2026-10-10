@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-gauge-conformal-invariance",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:gauge-conformal-invariance",
+  "kind": "theorem",
+  "title": "Gauge conformal invariance",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-spectrahedral-phase-collapse"
+  ],
+  "tags": [
+    "conformal-shift",
+    "emission-gaps",
+    "jwst"
+  ],
+  "leanRef": "qou:QOU.Archimedean.gauge_conformal_invariance",
+  "text": "gauge-conformal-invariance.md",
+  "leanSource": "gauge-conformal-invariance.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-unified-curvature-rank-mass-formula",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:unified-curvature-rank-mass-formula",
+  "kind": "proof",
+  "title": "Proof of unified curvature rank mass formula",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-unified-curvature-rank-mass-formula"
+  ],
+  "text": "unified-curvature-rank-mass-formula-proof.md",
+  "provenance": "authored"
+}

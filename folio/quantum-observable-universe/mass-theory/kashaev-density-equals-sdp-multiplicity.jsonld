@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-kashaev-density-equals-sdp-multiplicity",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:kashaev-density-equals-sdp-multiplicity",
+  "kind": "conjecture",
+  "title": "Kashaev density prefactor equals joint-tower SDP Wedderburn multiplicity ($\\rho_F = \\nu_{\\mathrm{SDP}}$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-kashaev-as-archimedean-realization",
+    "papers/quantum-observable-universe/blocks/prop-atom-knot-mass-derivation",
+    "papers/quantum-observable-universe/blocks/def-archimedean-realization-functor"
+  ],
+  "cites": [
+    "references/kashaev1997",
+    "references/murakami-murakami2001",
+    "references/iwahori1964",
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "tier:E",
+    "kashaev",
+    "density",
+    "sdp-multiplicity",
+    "wedderburn",
+    "rule-14-conditional",
+    "macmahon-partition-algebra",
+    "axiom-class",
+    "open-problem",
+    "conditional-on-class"
+  ],
+  "leanRef": "qou:QOU.Kashaev.KashaevDensityEqualsSdpMultiplicity",
+  "text": "kashaev-density-equals-sdp-multiplicity.md",
+  "leanSource": "kashaev-density-equals-sdp-multiplicity.lean",
+  "provenance": "authored"
+}

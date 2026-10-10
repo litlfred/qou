@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-sdp-regime-switch-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:sdp-regime-switch-table-data",
+  "kind": "table",
+  "title": "Data table from prop:sdp-regime-switch",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-sdp-regime-switch"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "sdp-regime-switch-table-data.md",
+  "provenance": "authored"
+}

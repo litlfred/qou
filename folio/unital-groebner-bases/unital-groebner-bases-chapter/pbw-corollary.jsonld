@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/unital-groebner-bases/blocks/cor-pbw",
+  "@type": [
+    "folio-assistant-core:Corollary",
+    "doco:Section"
+  ],
+  "label": "cor:pbw",
+  "kind": "corollary",
+  "title": "Poincaré--Birkhoff--Witt theorem over commutative rings",
+  "uses": [
+    "papers/unital-groebner-bases/blocks/thm-unital-groebner-decomposition",
+    "papers/unital-groebner-bases/blocks/thm-buchberger"
+  ],
+  "proofs": [
+    "papers/unital-groebner-bases/blocks/prf-pbw"
+  ],
+  "tags": [
+    "pbw",
+    "universal-enveloping-algebra",
+    "lie-algebra",
+    "groebner-basis"
+  ],
+  "leanRef": "ugb:UGB.UnitalGroebner.pbw_corollary",
+  "text": "pbw-corollary.md",
+  "leanSource": "pbw-corollary.lean",
+  "provenance": "authored"
+}

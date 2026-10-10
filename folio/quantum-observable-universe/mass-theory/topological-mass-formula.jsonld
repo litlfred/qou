@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-topological-mass-formula",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:topological-mass-formula",
+  "kind": "proposition",
+  "title": "Topological mass formula (Archimedean)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-topological-mass",
+    "papers/quantum-observable-universe/blocks/def-quantum-planck-constant"
+  ],
+  "tags": [
+    "mass",
+    "archimedean",
+    "knot-volume",
+    "quantum-planck"
+  ],
+  "leanRef": "qou:QOU.Torsion.ArchimedeanMassFormula",
+  "text": "topological-mass-formula.md",
+  "leanSource": "topological-mass-formula.lean",
+  "provenance": "authored"
+}

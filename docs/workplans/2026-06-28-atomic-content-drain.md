@@ -9,7 +9,7 @@ fixes."*
 
 The prior session on this branch (`claude/split-first-wave-3-po4f16`) chased a
 **nonexistent criterion** `clarity-remark-single-topic` (not in the skill, not in
-`content/pipeline/definition-clarity-audit.ts`) and lost all its uncommitted work
+`folio/pipeline/definition-clarity-audit.ts`) and lost all its uncommitted work
 to container reclaim (branch was byte-identical to `origin/main`). This drain is
 the corrected, durable redo: agent-judgment detector (not phantom regex),
 committed+pushed every batch.

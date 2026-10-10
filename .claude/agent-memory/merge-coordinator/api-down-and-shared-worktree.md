@@ -252,3 +252,56 @@ git, verify four things before continuing: `git rev-parse HEAD` against the
 remote tip, your last commit reachable from the remote, `git status` clean, and
 your changed files still compiling. All four are cheap; the failure they catch
 is not.
+
+
+## The CCR routes have outage windows — and a 503 there says nothing about REST
+
+Measured on `qou#7393`, 2026-09-14. `POST …/ccr/ready_for_review` returned
+**`503 {"message":"GitHub is temporarily unavailable. Retry shortly."}`** on
+seven attempts spanning **19:15Z → 20:36Z (81 min)**, then `200 {"draft":false}`.
+
+Throughout that window **ordinary REST was fine** — `GET /pulls/7393`,
+`create_pull_request`, `update_pull_request` on title/body, and every `git push`
+all succeeded. So a 503 on a CCR route is a statement about the **CCR family
+only**; do not read it as the API being down, and do not escalate it.
+
+**The two failure modes take OPPOSITE responses and the status code is the
+discriminator:**
+
+| code | route | meaning | response |
+|---|---|---|---|
+| `503` | `ccr/*` | transient outage, **clears** | retry spaced, off a check-in |
+| `403` | GraphQL | session-wide block, **never clears** | do not retry; read the body for the CCR replacement |
+
+AGENTS.md §8a records the window as "≥ 15 min" from one incident (#7350, ~70 min).
+This is the second data point and it is **81 min**, so budget an hour-plus and
+arm a check-in rather than blocking on it. `mcp__github__update_pull_request`
+with `draft:false` is the 403 path and must not be retried at all.
+
+**What it never justifies:** close-and-reopen (owner ruling 2026-09-05). Waiting
+out an 81-minute window costs nothing; a replacement PR strands the review
+threads, the Copilot request, and every commit/bean/ledger reference to the old
+number.
+
+
+## CCR `review_threads` 503 window, measured on qou#7395 (moved from MEMORY.md 2026-09-15 to keep it under the cap)
+
+AGENTS.md §8a classifies a `503` from a `ccr/*` route as transient ("retry spaced;
+measured windows of ≥ 15 min") and only a GraphQL `403` as a hard block. That
+classification held, and the window is longer than the rule implies.
+
+Measured on qou#7395, `GET /repos/litlfred/qou/pulls/7395/ccr/review_threads`:
+
+| when | result |
+|---|---|
+| 2026-09-14 18:59Z | `503` "GitHub is temporarily unavailable" |
+| 2026-09-14 20:02Z | `503`, same body |
+| 2026-09-14 21:03Z | **`200`**, body `[]` |
+
+~2 h from first 503 to success, with a failure at the 1 h mark. Meanwhile
+`pull_request_read get_review_comments` returned *"API rate limit already exceeded
+for user ID 662242"* throughout — the GraphQL-family block, which never clears.
+
+**So do not conclude "review threads are unreadable" from two 503s an hour apart**,
+and do not treat an unread thread list as an empty one: say it is unmeasured and
+retry on the next check-in. A `200 []` is the only thing that establishes zero.

@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-bsd-classical-limit",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-bsd-classical-limit",
+  "kind": "remark",
+  "title": "$q$-BSD across $\\mathbb{P}^1$, the Kummer obstruction, and the classical limit",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-mordell-weil",
+    "papers/quantum-observable-universe/blocks/prop-root-of-unity-truncation",
+    "papers/quantum-observable-universe/blocks/prop-ns-kummer-specialisation",
+    "papers/quantum-observable-universe/blocks/rem-substrate-gm-torsion"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-q-birch-swinnerton-dyer",
+  "tags": [
+    "birch-swinnerton-dyer",
+    "millennium-problem",
+    "kummer",
+    "gm-torsion",
+    "projective-line",
+    "classical-limit",
+    "l-function"
+  ],
+  "text": "q-bsd-classical-limit.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-incompleteness-implies-horizon",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:incompleteness-implies-horizon",
+  "kind": "proof",
+  "title": "Proof of incompleteness implies horizon",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-incompleteness-implies-horizon"
+  ],
+  "text": "incompleteness-implies-horizon-proof.md",
+  "provenance": "authored"
+}

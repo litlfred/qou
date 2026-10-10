@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-binding-knots-visual-inventory",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:binding-knots-visual-inventory",
+  "kind": "remark",
+  "title": "Visual inventory of binding knots",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-knot-particle-correspondence",
+  "tags": [
+    "knot",
+    "diagram",
+    "visual",
+    "inventory",
+    "unknot",
+    "hopf-link",
+    "trefoil",
+    "figure-eight",
+    "borromean",
+    "braid-word"
+  ],
+  "text": "binding-knots-visual-inventory.md",
+  "provenance": "authored"
+}

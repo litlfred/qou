@@ -1,0 +1,50 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "frenkel2004",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 75,
+      "entry": {
+        "id": "frenkel2004",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T16:14:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 2,
+        "fix_commit": "(this commit)",
+        "note": "2 bare-URL Refs upgraded with title+publisher form. | PDF verified: Frenkel, \"Vertex Algebras and Algebraic Curves,\" S\u00e9minaire Bourbaki 875, 2000 (arXiv:math/0007054). Verified.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/frenkel2004.pdf"
+        },
+        "local_pdf": "uploads/frenkel2004.pdf",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "JOIN IS ONLY HALF RIGHT, and the key conflates three distinct works. The uploaded PDF is arXiv:math/0007054v4, Seminaire Bourbaki 52eme annee 1999-2000 no. 875, 'Vertex Algebras and Algebraic Curves', by Edward Frenkel ALONE (a survey expos\u00e9). The registered frenkel2004 entry is the BOOK of the same title by Frenkel and Ben-Zvi (DOI 10.1090/surv/088), whose URL field however points at math/0007054 - i.e. the entry's own metadata already mixes the book with the Bourbaki survey. Third work in the mix: the citing Lean docstrings at folio/quantum-observable-universe/mass-theory/vertex-operator.lean:39 and categorical-transfer-matrix.lean:57 read '-- Ref: [frenkel2004] Frenkel, \"Lectures on the Langlands program and conformal field theory,\" arXiv:hep-th/0512172 (related: 0007054)' - that is a fourth-and-different Frenkel work (the 2005 Langlands lectures), neither the book nor this upload. Not in the working tree on this branch; recovered from intake commit c27c967c9d, sha matches. Load-bearing assessment: the citation is background only. The Lean structures it annotates (VertexOperator, carrying a ReebBundle and a natural-number weight; OPE, carrying two operators and two Hecke eigenvalues) are QOU-specific scaffolding; nothing from a vertex-algebra source is derived, and the .ts sites (vertex-operator.ts:19, vertex-operator-dictionary.ts:16) are cites arrays. Scope-(a): this document, as read, is standard vertex-algebra background and supplies no result the folio consumes.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "Untangle the key: the registered entry names the Frenkel-Ben-Zvi book but its URL is the single-author Bourbaki survey (this upload), and two Lean docstrings attribute the key to a third work, the hep-th/0512172 Langlands lectures. Decide which work the key denotes, then correct the two Lean docstrings to match.",
+              "target": "folio/quantum-observable-universe/mass-theory/vertex-operator.lean",
+              "bean": "qou-tcr5"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "691bd6132ae5"
+        }
+      }
+    }
+  ]
+}

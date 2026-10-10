@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-zeta8-witness-level2-su2",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:zeta8-witness-level2-su2",
+  "kind": "proposition",
+  "title": "Level-2 SU(2) Verlinde witness at $q = \\zeta_8$: $(\\zeta_8;\\zeta_8)_7 = 8$, $\\mathrm{ord}(\\sigma_i) = 8$, $[4]_q = 0$, and the Wenzl annihilator",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cyclotomic-strand-doubling",
+    "papers/quantum-observable-universe/blocks/prop-habiro-pochhammer-bridge"
+  ],
+  "cites": [
+    "references/wenzl1987",
+    "references/jones1987",
+    "references/witten1989"
+  ],
+  "tags": [
+    "habiro-ring",
+    "hecke",
+    "wenzl-projector",
+    "level-2-su2",
+    "verlinde-truncation",
+    "1ppQ",
+    "categorical-witness"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.Zeta8Witness.qInt_four_eq_zero",
+  "text": "zeta8-witness-level2-su2.md",
+  "leanSource": "zeta8-witness-level2-su2.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-jet-prefix-gb-filtration",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:jet-prefix-gb-filtration",
+  "kind": "proposition",
+  "title": "Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-confinement-grading-correspondence"
+  ],
+  "tags": [
+    "jet-level",
+    "prefix-formula",
+    "gb-filtration",
+    "groebner-shirshov",
+    "term-6",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.jet_prefix_gb_filtration",
+  "text": "jet-prefix-gb-filtration.md",
+  "provenance": "authored"
+}

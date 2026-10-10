@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-shell-capacity-self-square",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:shell-capacity-self-square",
+  "kind": "proposition",
+  "title": "Shell capacity $2n^2$ as the self-square of the angular $q$-dimension",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-electron-shell-braid-capacity"
+  ],
+  "tags": [
+    "shell-capacity",
+    "self-square",
+    "q-clebsch-gordan",
+    "bar-even",
+    "no-second-su2"
+  ],
+  "leanRef": "qou:QOU.Molecular.shell_capacity_self_square",
+  "text": "shell-capacity-self-square.md",
+  "provenance": "authored"
+}

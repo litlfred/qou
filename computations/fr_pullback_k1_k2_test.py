@@ -3,7 +3,7 @@ fr_pullback_k1_k2_test.py — Phase 5f probe.
 
 Extends the FR-pullback test of `fr_pullback_k3_test.py` (PR #826) to
 curvature ranks k=1 and k=2. Per
-[`conj:depth-stratified-frobenius-reciprocity`](../../content/quantum-observable-universe/braids-and-knots/depth-stratified-frobenius-reciprocity.md):
+[`conj:depth-stratified-frobenius-reciprocity`](../../folio/quantum-observable-universe/braids-and-knots/depth-stratified-frobenius-reciprocity.md):
 
   K_1*, K_2* are open structural questions; candidate sets are
   K_1* ∈ {4_1, 5_2}, K_2* ∈ {5_2, 6_1}, plus the unknot control

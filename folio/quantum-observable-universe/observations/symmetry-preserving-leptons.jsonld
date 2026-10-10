@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-symmetry-preserving-leptons",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:symmetry-preserving-leptons",
+  "kind": "remark",
+  "title": "Symmetry-preserving versus symmetry-broken lepton generators",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-s5-equivariant-torus-knots"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-s5-equivariant-torus-knots",
+  "tags": [
+    "leptons",
+    "generations",
+    "symmetry",
+    "s5",
+    "torus-knot"
+  ],
+  "text": "symmetry-preserving-leptons.md",
+  "provenance": "authored"
+}

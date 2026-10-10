@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-plancherel-weight-boundedness-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:plancherel-weight-boundedness-interpretation",
+  "kind": "remark",
+  "title": "The q-deformed weight $\\widetilde{w}_\\lambda$, and significance for mass-tower computations",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-plancherel-weight-boundedness",
+    "papers/quantum-observable-universe/blocks/prop-plancherel-term-7-formulation",
+    "papers/quantum-observable-universe/blocks/rem-mass-formula-validation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-plancherel-weight-boundedness",
+  "text": "plancherel-weight-boundedness-interpretation.md",
+  "provenance": "authored"
+}

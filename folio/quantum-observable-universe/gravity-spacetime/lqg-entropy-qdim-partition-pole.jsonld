@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-lqg-entropy-qdim-partition-pole",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:lqg-entropy-qdim-partition-pole",
+  "kind": "conjecture",
+  "title": "Horizon entropy as the $q$-dimension partition-function pole",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-reeb-u1-chart-swap",
+    "papers/quantum-observable-universe/blocks/def-projective-line-object",
+    "papers/quantum-observable-universe/blocks/prop-three-parameters-wedderburn"
+  ],
+  "cites": [
+    "references/domagala-lewandowski-2004",
+    "references/meissner2004",
+    "references/ashtekar-baez-corichi-krasnov-1998"
+  ],
+  "leanRef": "qou:QOU.GravitySpacetime.LQGEntropyQDimPartitionPole",
+  "text": "lqg-entropy-qdim-partition-pole.md",
+  "leanSource": "lqg-entropy-qdim-partition-pole.lean",
+  "provenance": "authored"
+}

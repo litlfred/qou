@@ -1,0 +1,52 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "murakami2004",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 161,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0401084v3/0401084v3.pdf"
+        },
+        "id": "murakami2004",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Join is CORRECT by arXiv id (the document's cover reads arXiv:math/0401084v3, matching the URL in the ref() entry at references.ts:4408) but the recorded metadata is the v1 form: the uploaded v3 carries a different title from the one in references.ts AND a second author who is absent from the entry. Worth fixing in references.ts; the join itself stands. More importantly, the ref() note's explicit caveat \u2014 'NOT independently verified against the published text - arxiv.org is egress-blocked from the agent sandbox, so a reader should confirm' \u2014 can now be DISCHARGED. The corpus cites this key for the deformed volume-conjecture normalisation q_eval = exp((u + 2*pi*i)/N); VERIFIED verbatim in the document, which states its main result as J_N(E; exp((u + 2 pi sqrt(-1))/N)) and its limit H(u), with H(0) = sqrt(-1) Vol(S^3 \\ E) and dH/du = v + pi sqrt(-1). All three citation sites are load-bearing and correct: FigureEightComplexVolume.lean:58, FigureEightDeformedMeridianWinding.lean:29, ChannelMeridianIdentification.lean:57. The second of these leans specifically on the 'neighbourhood U of 0' hypothesis to argue that the substrate winding datum with |u| >= 2*pi sits OUTSIDE the controlled deformation region \u2014 that hypothesis is explicit in the source's Theorem 2.2 ('There exists a neighborhood U of 0 in C such that for any u in (U \\ pi sqrt(-1) Q) union {0}'), so the scope-(a) argument is correctly grounded.",
+          "keyResults": [
+            {
+              "locator": "Thm 2.2 + Cor. 2.4",
+              "statement": "There is a neighbourhood U of 0 in C on which (u + 2 pi i) lim_N log J_N(E; exp((u + 2 pi i)/N))/N exists, defines a complex-analytic H(u) with H(0) = i Vol(S^3 minus E) and dH/du = v + pi i; Cor. 2.4 turns this into Vol and CS of the manifold obtained by generalised Dehn surgery at u.",
+              "useForFolio": "Supplies both the exact q_eval = exp((u + 2 pi i)/N) normalisation the corpus uses and the 'small |u| only' control region that FigureEightDeformedMeridianWinding.lean needs for its scope-(a) exclusion of the winding-lattice route to an anchor-free q_0.",
+              "targets": [
+                "QOU.Knot.FigureEightComplexVolume",
+                "QOU.Knot.DeformedMeridianWinding"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "The ref() note carries an explicit 'not independently verified, a reader should confirm' caveat and records the v1 title/single author. The uploaded v3 is now in the corpus and the q_eval normalisation is confirmed verbatim; the caveat should be discharged and the entry aligned with the uploaded version (added author, revised title).",
+              "target": "QOU.Knot.FigureEightComplexVolume",
+              "bean": "qou-lyct"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "f56bbd4cee4f"
+        }
+      }
+    }
+  ]
+}

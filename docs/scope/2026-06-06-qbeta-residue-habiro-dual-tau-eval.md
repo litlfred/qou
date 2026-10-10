@@ -8,7 +8,7 @@
 
 ## 1. The corpus-grep find that pins the structure
 
-The α_EM block [`alpha-em-habiro-bar-involution`](../../content/quantum-observable-universe/braids-and-knots/alpha-em-habiro-bar-involution.md) already states the duality (its §Significance):
+The α_EM block [`alpha-em-habiro-bar-involution`](../../folio/quantum-observable-universe/braids-and-knots/alpha-em-habiro-bar-involution.md) already states the duality (its §Significance):
 
 > α_EM `H = [2]_q·(1 − h²α)` is **bar-EVEN** (fixed by `q ↦ q⁻¹`) with a modular
 > **zero at ζ₄** (`H(ζ₄) = 0`). "This is the same sector that the analogous Q_β
@@ -29,7 +29,7 @@ So the residue-A element is structurally fixed (not guessed): **bar-ODD, with a
 
 ## 2. The construction (Lean-formalised, sorry-free)
 
-[`QBetaResidueHabiroDual.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaResidueHabiroDual.lean),
+[`QBetaResidueHabiroDual.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaResidueHabiroDual.lean),
 namespace `QOU.BraidKnot.QBetaResidueDual`, generic `CommRing` with `q`/`qi`
 independent (bar = swap):
 
@@ -82,8 +82,8 @@ The `c_3` *value* stays uncomputed and unwired; this tranche fixes only the
 algebraic sector the kernel must live in. Δ_λ gate held; no fit.
 
 ## 4. References
-- α_EM dual partner: [`alpha-em-habiro-bar-involution`](../../content/quantum-observable-universe/braids-and-knots/alpha-em-habiro-bar-involution.md) (PR #1511).
+- α_EM dual partner: [`alpha-em-habiro-bar-involution`](../../folio/quantum-observable-universe/braids-and-knots/alpha-em-habiro-bar-involution.md) (PR #1511).
 - bar-odd kernel parity / `α_eff`: PR #1900, PR #1907 (merged); [`docs/scope/2026-06-06-qbeta-alpha-eff-hoefsmit-symbolic-finding.md`](2026-06-06-qbeta-alpha-eff-hoefsmit-symbolic-finding.md).
 - KLR program master scope: [`2026-06-05-qbeta-residue-a-klr-crystal-kernel-scope.md`](2026-06-05-qbeta-residue-a-klr-crystal-kernel-scope.md).
-- Markov-trace machinery (τ substrate): [`MarkovTraceOnHecke.lean`](../../content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean) (PR #1811).
+- Markov-trace machinery (τ substrate): [`MarkovTraceOnHecke.lean`](../../folio/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean) (PR #1811).
 - Ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md).

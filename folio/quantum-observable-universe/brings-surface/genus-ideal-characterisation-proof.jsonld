@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-genus-ideal-characterisation",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:genus-ideal-characterisation",
+  "kind": "proof",
+  "title": "Proof of the genus-filtration ideal characterisation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-genus-ideal-characterisation"
+  ],
+  "text": "genus-ideal-characterisation-proof.md",
+  "provenance": "authored"
+}

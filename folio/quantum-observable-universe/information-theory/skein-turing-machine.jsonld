@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-skein-turing-machine",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:skein-turing-machine",
+  "kind": "remark",
+  "title": "A Turing machine is a braid; its Skein decomposition is the path integral",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-quantum-computational-universality",
+  "tags": [
+    "turing-machine",
+    "braid",
+    "skein-decomposition",
+    "path-integral",
+    "descent",
+    "information-theory",
+    "planck-computation"
+  ],
+  "text": "skein-turing-machine.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-six-canonical-knot-operators-context",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:six-canonical-knot-operators-context",
+  "kind": "remark",
+  "title": "Reeb-bundle trajectory trace for the six knot operators",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-six-canonical-knot-operators"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-six-canonical-knot-operators",
+  "tags": [
+    "reeb-bundle",
+    "s3-holonomy",
+    "braid-word",
+    "trajectory"
+  ],
+  "text": "six-canonical-knot-operators-context.md",
+  "provenance": "authored"
+}

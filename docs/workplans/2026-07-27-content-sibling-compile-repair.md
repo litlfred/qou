@@ -1,7 +1,7 @@
 # Content-sibling `.lean` standalone-compile repair — tranche 2026-07-27
 
 Draining the `cscb` epic backlog: content-block `.lean` siblings
-(`content/quantum-observable-universe/**/*.lean` **outside** the `lean/`
+(`folio/quantum-observable-universe/**/*.lean` **outside** the `lean/`
 Lake package) that fail to compile standalone. These live outside the
 CI-built `lake build QOU` target, so breakage accumulated silently across
 many PRs. PR #2964 gates *new* breakage (diff-scoped content-sibling-compile
@@ -9,7 +9,7 @@ CI); this epic remediates the existing set (~57% of 929 files at epic open).
 
 ## Scope of this tranche
 
-Cluster: **`content/quantum-observable-universe/braids-and-knots/`** (35
+Cluster: **`folio/quantum-observable-universe/braids-and-knots/`** (35
 content-sibling `.lean` files). One directory, file-disjoint from sibling
 agents, completable in a single session.
 

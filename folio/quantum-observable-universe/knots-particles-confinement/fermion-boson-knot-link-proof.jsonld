@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-fermion-boson-knot-link",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:fermion-boson-knot-link",
+  "kind": "proof",
+  "title": "Proof of fermion boson knot link",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-fermion-boson-knot-link"
+  ],
+  "text": "fermion-boson-knot-link-proof.md",
+  "provenance": "authored"
+}

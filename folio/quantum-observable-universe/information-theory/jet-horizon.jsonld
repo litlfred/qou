@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-jet-horizon",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:jet-horizon",
+  "kind": "definition",
+  "title": "Jet horizon (degree-$0$ vanishing locus)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-jet-planck-steps"
+  ],
+  "tags": [
+    "jet-horizon",
+    "event-horizon",
+    "degree-zero",
+    "vanishing-ideal",
+    "information-barrier"
+  ],
+  "leanRef": "qou:QOU.JetHorizon",
+  "text": "jet-horizon.md",
+  "provenance": "authored"
+}

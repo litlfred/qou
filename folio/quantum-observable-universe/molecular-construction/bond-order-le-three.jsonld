@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-bond-order-le-three",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:bond-order-le-three",
+  "kind": "proposition",
+  "title": "Bond order bounded by spatial dimension",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-embeddable-knot-operator"
+  ],
+  "tags": [
+    "bond-order",
+    "spatial-dimension",
+    "orthogonal-channels",
+    "p-block",
+    "sigma-pi"
+  ],
+  "leanRef": "qou:QOU.Molecular.orthogonal_channels_le_dim",
+  "text": "bond-order-le-three.md",
+  "provenance": "authored"
+}

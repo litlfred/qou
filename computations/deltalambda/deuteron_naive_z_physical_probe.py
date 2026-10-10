@@ -64,7 +64,7 @@ no reason to transfer to the deuteron in the first place.
 
 No fit; B_AME used only as a diagnostic ratio, never inverted; nothing wired;
 free_parameters = 0.  Formalize-first companion:
-  content/quantum-observable-universe/lean/QOU/MassTheory/DeuteronNaiveZMagnitude.lean
+  folio/quantum-observable-universe/lean/QOU/MassTheory/DeuteronNaiveZMagnitude.lean
 """
 from __future__ import annotations
 

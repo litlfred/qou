@@ -1,0 +1,58 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "kontsevich-soibelman-2008",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 194,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-0811.2435v1/0811.2435v1.pdf"
+        },
+        "id": "kontsevich-soibelman-2008",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED from front matter (arXiv identifier and subject match the registered entry). LOAD-BEARING AND VERIFIED at both citation sites, and unusually the sites make checkable claims ABOUT the source rather than merely borrowing from it. (1) rem:ks-finiteness-via-diamond-lemma asserts that the authors 'must assume ind-constructibility to measure their 3CY moduli stacks'. Verified: the term occurs 99 times in the PDF, \u00a73 is titled 'Ind-constructible categories and stability structures', and \u00a73.1 states that all A_infty-categories in the paper will be ind-constructible. The claim is accurate. (2) rem:ks-multiplicativity-via-markov asserts the counting map is a monoid homomorphism via the motivic Hall algebra and offers a two-line Markov-trace recovery for the disjoint-union monoid; the multiplicative wall-crossing formula is \u00a71.4 of the document's own contents, consistent with that framing. The registered entry's rigor caveat (many proofs are sketches; admit to QOU content only if Lean-backable) is well placed, and both citing blocks are remarks rather than theorems, which respects it.",
+          "keyResults": [
+            {
+              "locator": "\u00a73.1 (Ind-constructible categories)",
+              "statement": "All A_infty-categories in the paper are assumed ind-constructible; this is the finiteness hypothesis under which the motivic invariants are defined.",
+              "useForFolio": "The precise external assumption rem:ks-finiteness-via-diamond-lemma claims the Groebner-Shirshov confluent normal forms make unnecessary.",
+              "targets": [
+                "rem:ks-finiteness-via-diamond-lemma"
+              ]
+            },
+            {
+              "locator": "\u00a71.4 (Multiplicative wall-crossing formula)",
+              "statement": "The wall-crossing formula governing how the counting behaves across walls of the stability space.",
+              "useForFolio": "The apparatus rem:ks-multiplicativity-via-markov claims the Markov trace avoids by pinning q_0.",
+              "targets": [
+                "rem:ks-multiplicativity-via-markov"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Both citations are load-bearing, the checkable claim made about the source (its ind-constructibility assumption) is verified in the document, and the rigor caveat is already recorded.",
+              "target": "rem:ks-finiteness-via-diamond-lemma"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "615b04eca83b"
+        }
+      }
+    }
+  ]
+}

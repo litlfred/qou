@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-physics-names-knot-operations",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:physics-names-knot-operations",
+  "kind": "remark",
+  "title": "Physics names $\\leftrightarrow$ categorical knot operations (table; depends on $q_0$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-borromean-baryon-interpretation",
+    "papers/quantum-observable-universe/blocks/prop-chirality-residue-mass-term",
+    "papers/quantum-observable-universe/blocks/cor-gauge-coupling-uniqueness",
+    "papers/quantum-observable-universe/blocks/conj-cp-violation-spectral-form"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-confinement-categorical",
+  "text": "physics-names-knot-operations.md",
+  "provenance": "authored"
+}

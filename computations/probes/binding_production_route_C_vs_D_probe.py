@@ -38,7 +38,7 @@ chi-<atom>-h<n>-at-q0-50dps witnesses, which carry the MUON q_0).
 
 Ref: computations/binding_canonical.py (the production route being measured)
 Ref: docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md
-Ref: content/quantum-observable-universe/mass-theory/two-row-stratum.md
+Ref: folio/quantum-observable-universe/mass-theory/two-row-stratum.md
 """
 from __future__ import annotations
 

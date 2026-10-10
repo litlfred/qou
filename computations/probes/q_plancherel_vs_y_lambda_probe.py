@@ -106,7 +106,7 @@ which is why both carry the name. Two consequences:
   exactly, at every `n` and every `Q`.
 - 🛑 **That is NOT a defect, and an earlier draft of this file said it was.**
   The owner ruled on 2026-08-16, in
-  `content/quantum-observable-universe/notation/notation-collisions.md`, that
+  `folio/quantum-observable-universe/notation/notation-collisions.md`, that
   `Σ_λ w_λ(q) ≠ 1` at `q ≠ 1` **by design** — *"Never write a normalisation
   claim on bare `w_λ`"* — quoting 0.987 at `n = 3` and 1.051 at `n = 8`. The
   measurements above reproduce that independently (0.98744, and the `n = 8`
@@ -191,7 +191,7 @@ from _precision import fmt, set_compute_dps  # noqa: E402
 from y_lambda_su_n import (  # noqa: E402
     conjugate, f_lambda, hooks, partitions_of, y_lambda_su_n_symbolic,
 )
-from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON, Q_50_DIGIT_STR as Q0_PROTON_STR  # noqa: E402
 
 set_compute_dps(50)
 
@@ -340,7 +340,7 @@ def main() -> int:
         mp.mpf(0) < m_needed_mu4)
 
     # ── 6 · the numbers at the anchor, for the record ─────────────────────
-    q0 = mp.mpf(Q0_PROTON)
+    q0 = mp.mpf(Q0_PROTON_STR)
     Q0 = q0 ** 2
     print(f"\n6 · weights at the proton pin q0 = {mp.nstr(q0, 12)}  (Q = q0^2)")
     print(f"    {'lambda':>10}  {'f^lambda':>8}  {'q-Planch w':>14}  {'corpus y (D)':>14}")
@@ -386,7 +386,7 @@ def main() -> int:
 
     # ── 8 · the corpus's W is NOT NORMALIZED away from q = 1 ──────────────
     print("\n8 · normalisation: the paper's M is a probability measure, W is not")
-    q0s = sp.Float(str(mp.mpf(Q0_PROTON)), 50)
+    q0s = sp.Float(str(mp.mpf(Q0_PROTON_STR)), 50)
     norms = {}
     for n in (2, 3, 4, 5, 9):
         sw = sp.cancel(sum(W_corpus(s_, q) for s_ in partitions_of(n)))
@@ -606,7 +606,7 @@ def main() -> int:
     # first run of this probe put it.
     w.save({
         "q0Anchor": "proton",
-        "q0Value": str(Q0_PROTON),
+        "q0Value": str(Q0_PROTON_STR),
         "q0AnchorReason": (
             "all numeric weight tables and implied-z values are evaluated at "
             "the proton pin (q0 = qou_substrate.constants.Q, Q_paper = q0^2). "

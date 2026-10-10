@@ -235,7 +235,7 @@ sub-chapter of the other.
 The build pipeline's `chapterRef` mechanism currently maps 1 dir →
 1 chapter. Extending it to support N dirs → 1 chapter ("sub-chapter
 mode") is a real change to `content/pipeline/build.ts` and
-`content/schema/builders.ts`. **Decision needed (§10 Question 2):**
+`folio/schema/builders.ts`. **Decision needed (§10 Question 2):**
 
 - **Option E1.** Merge file-system-wise (`git mv particle-interactions/*
   braids-and-knots/`). Renames are flat; cross-refs need

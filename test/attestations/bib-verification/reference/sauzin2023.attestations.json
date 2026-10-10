@@ -1,0 +1,56 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "sauzin2023",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 365,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/resur-and-mld-calc-d-sauzin-hal/Resur_and_Mld_Calc_D_SAUZIN_HAL.pdf"
+        },
+        "id": "sauzin2023",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "A survey-monograph on resurgence and mould calculus: alien derivations, analytic continuation of Borel transforms, asymptotic expansions and Laplace transforms, with the Hopf-algebra/algebraic-combinatorics apparatus and applications to perturbative and non-perturbative physics, deformation quantization and multizeta values. conj:stokes-dt-bps-bridge is stated in exactly this language -- 'the resurgent Stokes constant of the state integral of the knot complement on its distinguished geometric Borel ray is a Donaldson--Thomas invariant' -- and AGENTS.md names Stokes-constant extraction as a standing open research topic. The corpus registers several papers that USE resurgence in complex Chern--Simons (peacock patterns, Borel summability for 4_1 and 5_2, q-Stokes classification) but none that defines the machinery, so a reader of the Stokes bridge has no reference for what an alien derivation or a Stokes constant IS. That is a foundations gap rather than a missing result, which is why this is supporting: the document proves nothing the corpus consumes, it supplies the definitions and the framework its central conjecture is phrased in. Mould calculus in particular is the systematic bookkeeping for the kind of resummation the corpus attempts by hand.",
+          "keyResults": [
+            {
+              "locator": "Abstract and keyword list (alien derivation, Borel--Laplace summation, mould calculus)",
+              "statement": "Systematic development of resurgent functions, alien derivations measuring the singularities of the Borel transform, and mould calculus as the combinatorial apparatus for organising the resulting resummations.",
+              "useForFolio": "Supplies the definitional foundation for the 'resurgent Stokes constant' that conj:stokes-dt-bps-bridge asserts equals a Donaldson--Thomas invariant, which the corpus currently uses without a source for the notion itself.",
+              "targets": [
+                "conj:stokes-dt-bps-bridge"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The corpus's Stokes/DT conjecture is phrased entirely in resurgence vocabulary while registering only papers that apply resurgence, none that defines it.",
+              "target": "conj:stokes-dt-bps-bridge",
+              "bean": "qou-ik0i"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "b33f24cc7610"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

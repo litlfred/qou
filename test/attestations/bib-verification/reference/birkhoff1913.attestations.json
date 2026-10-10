@@ -1,0 +1,62 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "birkhoff1913",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 348,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/birkhoff-generalizedriemannproblem-1913/Birkhoff-GeneralizedRiemannProblem-1913.pdf"
+        },
+        "id": "birkhoff1913",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "The 1913 Proc. Amer. Acad. paper that poses and solves the generalized Riemann problem -- characterizing a function by monodromy-type constants independent of its defining equation -- for linear differential equations and, in the allied cases, for linear DIFFERENCE and q-DIFFERENCE equations. This is the origin of the Birkhoff connection matrix, and the corpus is standing on it: QOU/QBeta/BirkhoffAmplitudeWellPosed.lean and BirkhoffAmplitudeE.lean pin the A=3 anti-self-adjoint amplitude E to the GLOBAL 0-to-infinity Birkhoff connection matrix P = (X^infty)^{-1} X^0 of the C1 carrier, and the q-Borel attack plan's stage S3 names the 'Birkhoff-Guenther normal-form extraction' and the 'q-analog of Birkhoff-Malgrange-Sibuya'. All of these cite only the modern RSZ Asterisque; the primary source is unregistered. Explicitly NOT aid-proof: Birkhoff's q-difference theory is the REGULAR (connection-matrix) setting, and the corpus's live obstruction, per the 2026-08-08 closure audit, is an IRREGULAR pure-isoclinic point (slope 1/2, k = 1) where no connection-matrix classification applies. It grounds the vocabulary and the global object; it does not supply the missing Stokes data.",
+          "keyResults": [
+            {
+              "locator": "the q-difference sections of the 1913 memoir (the 'allied problems')",
+              "statement": "For a linear q-difference system, the analytic solution is characterized by connection constants relating canonical solutions at 0 and at infinity -- the Birkhoff connection matrix -- and the associated Riemann problem asks for those constants to be prescribed at will.",
+              "useForFolio": "The primary source for the global object BirkhoffAmplitudeWellPosed.lean reasons about (P = (X^infty)^{-1} X^0 and the gauge freedom of the canonical local solutions), which currently cites only the modern RSZ treatment.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/QBeta/BirkhoffAmplitudeWellPosed.lean"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Two Lean files are named after the Birkhoff connection matrix and one attack-plan stage after the Birkhoff-Guenther normal form, with no Birkhoff entry in the bibliography.",
+              "target": "folio/quantum-observable-universe/lean/QOU/QBeta/BirkhoffAmplitudeE.lean",
+              "bean": "qou-qpge"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record the scope boundary explicitly so the primary source is not over-read: the connection-matrix formulation is the regular-singular q-difference setting, whereas C1's obstruction at infinity is irregular and pure isoclinic. Adding the reference must not be taken to reopen the RSZ route the 2026-08-08 audit closed.",
+              "target": "folio/quantum-observable-universe/lean/QOU/QBeta/BirkhoffAmplitudeWellPosed.lean",
+              "bean": "qou-x8ek"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "bd728603454b"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

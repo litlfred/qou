@@ -139,7 +139,8 @@ M_N_MEV_ERR = _M_N_MEV_ERR
 M_N_MINUS_P_MEV     = _M_N_MINUS_P_MEV
 M_N_MINUS_P_MEV_ERR = _M_N_MINUS_P_MEV_ERR
 
-Q_NEUTRON_MEV     = M_N_MEV - M_P_MEV - M_E_MEV            # 0.78233341 MeV
+# Computed below, inside the precision pin (it was here, at the importer's ambient
+# dps -- 53-bit on a default import, so it held a binary64 value in an mpf).
 # `_math.sqrt` here, on three mpf arguments, is the exact hazard named in the
 # header: it does not raise, it returns a binary64 float. So the quadrature
 # sum was silently the one float64 quantity left in this module the moment the
@@ -165,6 +166,10 @@ _CONST_DPS = 60
 # -----------------------------------------------------------------------------------------------
 from codata_constants import M_P_MEV_VALIDATION
 with _mpm.workdps(_CONST_DPS):
+    # Inside the pin: at ambient dps-15 both differences below were binary64 values in an mpf
+    # (measured 2026-10-05: m_n_derived_3input == mpf(float(...)) was True and it differed from
+    # M_N_MEV, the value the comment below says it equals by construction).
+    Q_NEUTRON_MEV     = M_N_MEV - M_P_MEV - M_E_MEV            # 0.78233341 MeV
     Q_NEUTRON_MEV_ERR = _mpm.sqrt(M_N_MEV_ERR**2 + M_P_MEV_ERR**2 + M_E_MEV_ERR**2)
 
 # m_n via the 3-input scheme (m_n = m_p + Q_β + m_e) — the canonical anchor
@@ -173,7 +178,8 @@ with _mpm.workdps(_CONST_DPS):
 # (Q_NEUTRON_MEV = M_N_MEV − M_P_MEV − M_E_MEV), so this is the same CODATA
 # value, named for the 3-input consumers. Restores the missing export that
 # delta_lambda_empirical_tabulation.py imports (bean t2vq).
-m_n_derived_3input = M_P_MEV + Q_NEUTRON_MEV + M_E_MEV     # = M_N_MEV
+with _mpm.workdps(_CONST_DPS):
+    m_n_derived_3input = M_P_MEV + Q_NEUTRON_MEV + M_E_MEV     # = M_N_MEV
 
 # NO FLOAT (owner ruling, 2026-09-07). The CODATA masses were flipped to mpf
 # earlier; these four were the residue, and they were bare binary64 literals

@@ -61,7 +61,7 @@ from pathlib import Path
 import sympy as sp
 
 REPO = Path(__file__).resolve().parents[2]
-CONTENT = REPO / "content" / "quantum-observable-universe"
+CONTENT = REPO / "folio" / "quantum-observable-universe"
 BRINGS = CONTENT / "brings-surface"
 
 FAILURES: list[str] = []

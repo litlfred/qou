@@ -12,7 +12,7 @@ normal-form reduction in $H_n(q)$ for two atlas entries:
 
 The atlas's other four hyperbolic entries lack explicit
 $\sigma$-words: $\{4_1, 6_2, 8_{11}, L_{6a4}\}$. The
-[`bring-hyperbolic-knot-bloch-decomposition`](../../content/quantum-observable-universe/archimedean-universe/bring-hyperbolic-knot-bloch-decomposition.md)
+[`bring-hyperbolic-knot-bloch-decomposition`](../../folio/quantum-observable-universe/archimedean-universe/bring-hyperbolic-knot-bloch-decomposition.md)
 block flags this as the irreducible computational gate.
 
 ## Concrete extension plan

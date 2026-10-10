@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-skein-finiteness-bound-table4-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:skein-finiteness-bound-table4-data",
+  "kind": "table",
+  "title": "Table 4 from prop:skein-finiteness-bound",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-skein-finiteness-bound"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "skein-finiteness-bound-table4-data.md",
+  "provenance": "authored"
+}

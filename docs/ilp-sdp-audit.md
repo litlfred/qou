@@ -24,7 +24,7 @@ Symbols in the "kind" column:
 | File | Kind | Solver | PSD / Frobenius check | Paper cross-refs | Upgrade candidate? |
 |------|:-----|--------|-----------------------|------------------|:---|
 Block refs are only listed if verified to exist in
-`content/quantum-observable-universe/` — many engine scripts have no
+`folio/quantum-observable-universe/` — many engine scripts have no
 dedicated paper block yet (marked `—`).
 
 | File | Kind | Solver | PSD / Frobenius check | Paper cross-refs | Upgrade candidate? |
@@ -59,7 +59,7 @@ dedicated paper block yet (marked `—`).
 
 ## Paper blocks on LP / SDP / Frobenius
 
-Confirmed blocks in `content/quantum-observable-universe/`:
+Confirmed blocks in `folio/quantum-observable-universe/`:
 
 - `prop:confinement-lp` — confinement-operator selection as LP.
 - `prop:confinement-sdp` — confinement-operator selection as SDP

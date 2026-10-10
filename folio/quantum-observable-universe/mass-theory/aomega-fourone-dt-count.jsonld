@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-aomega-fourone-dt-count",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:aomega-fourone-dt-count",
+  "kind": "theorem",
+  "title": "The figure-eight Stokes integer $A_\\omega(4_1) = 3$ is a BPS/DT count (conditional on the Stokes--DT--BPS bridge)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-stokes-dt-bps-bridge"
+  ],
+  "cites": [
+    "references/garoufalidis-gu-marino2023peacock",
+    "references/gukov-pei-putrov-vafa2017"
+  ],
+  "tags": [
+    "a-omega",
+    "stokes-constant",
+    "donaldson-thomas",
+    "bps-states",
+    "figure-eight",
+    "conditional-on-class",
+    "g3-keystone"
+  ],
+  "leanRef": "qou:QOU.QBeta.aomega_fourOne_dt_count",
+  "text": "aomega-fourone-dt-count.md",
+  "provenance": "authored"
+}

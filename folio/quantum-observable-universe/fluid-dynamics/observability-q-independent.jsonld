@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-observability-q-independent",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:observability-q-independent",
+  "kind": "theorem",
+  "title": "Observability is a base property: $\\mathrm{Hom}(\\mathbf{1}, \\mathrm{Ad}(A)) = 0$ is independent of the substrate section",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-substrate-line-bundle"
+  ],
+  "tags": [
+    "observability",
+    "q-independent",
+    "base-property",
+    "categorical"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.observability_q_independent",
+  "text": "observability-q-independent.md",
+  "provenance": "authored"
+}

@@ -7,7 +7,7 @@ inputs and validation-only literals, and loaded from witness JSONs
 rather than hardcoded.
 
 ═══════════════════════════════════════════════════════════════════
- CALIBRATION DISCIPLINE  (per content/quantum-observable-universe/
+ CALIBRATION DISCIPLINE  (per folio/quantum-observable-universe/
  particle-interactions/meson-scale-independence.md)
 ═══════════════════════════════════════════════════════════════════
 
