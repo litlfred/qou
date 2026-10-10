@@ -9,7 +9,7 @@ The unit particle defect is a Legendrian knot: its support in the
 contact manifold (A, θ) satisfies θ|_{supp(Li_q)} = 0, making it
 maximally tangent to the contact distribution.
 
-LaTeX label: `prop:defect-legendrian-knot`
+LaTeX label: `conj:defect-legendrian-knot`
 
 ## References
 

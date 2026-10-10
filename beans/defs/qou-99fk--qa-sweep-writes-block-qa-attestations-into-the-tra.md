@@ -3,9 +3,9 @@
 title: qa-sweep writes block-qa attestations into the TRACKED test/attestations store -- undeclared and unignored
 status: todo
 type: task
-priority: normal
+priority: high
 created_at: 2026-10-10T07:37:59Z
-updated_at: 2026-10-10T07:37:59Z
+updated_at: 2026-10-10T07:49:54Z
 ---
 
 ## The finding
@@ -77,3 +77,47 @@ not a qou one.
 Nothing breaks. Every agent running qa-sweep keeps getting a spurious untracked
 -files prompt and has to re-derive this analysis to know the files are safe to
 delete. Which is the cost this bean exists to remove.
+
+
+## RECURRED, exactly as predicted (2026-10-10, same session)
+
+Two more qa-sweep runs, two more untracked files:
+`test/attestations/block-qa/.../brings-surface/{defect-legendrian-knot,topological-charge-quantization}.attestations.json`.
+Deleted again. This is now observed twice in one session, which is the argument
+for fixing it rather than re-deriving the analysis each time.
+
+## SECOND SYMPTOM, same root: the in-tree `.qa.json` sidecars appear ORPHANED
+
+Found while demoting two blocks for `qou-8b0q` (relabel `prop:`/`thm:` ->
+`conj:`). After both qa-sweep runs:
+
+- **`qa-sweep` did not modify either `.qa.json`.** `git status` after the runs
+  lists the `.ts`, `.lean`, the regenerated index and the author-note edit —
+  **no sidecar**. The only writes were to `test/results/block-qa/` and
+  `test/attestations/block-qa/`.
+- The sidecars still record the **old** labels (`prop:defect-legendrian-knot`,
+  `thm:topological-charge-quantization`) and carry `source_hashes` for
+  `md`/`ts`/`lean`/`lean_statement`. I changed the `.ts` and `.lean`, so those
+  hashes are now stale **and nothing refreshed them**.
+- AGENTS.md's documented remedy for a stale sidecar is to delete the stale
+  `criteria.<crit>` entry and re-run qa-sweep. At this pin that no longer
+  writes the sidecar, so the remedy does not apply.
+
+**Scope of the claim, stated so it is not over-read.** What is measured is
+(a) two qa-sweep invocations wrote no sidecar, and (b) `git log --since='14 days'
+-- 'folio/**/*.qa.json'` returns only the `content/` -> `folio/` tree-move
+commits (path fixes, `qou-yqko`), not QA runs. That is strong evidence the
+in-tree sidecars are no longer a live output at platform `717aa19a`; it is **not**
+proof that no code path writes them. The discriminator would be grepping the
+platform for the sidecar write path, which I did not do.
+
+**Deliberately NOT done:** I did not hand-edit the two sidecars' `label` fields
+to match. They are derived artifacts; patching one field would leave
+`source_hashes` stale anyway and would fake currency on a file nothing maintains.
+The honest state is a visibly stale derived file plus this note.
+
+**What this adds to the decision.** The original three readings were about where
+`block-qa` attestations belong. This adds a fourth question with the same root:
+if derived QA moved to `test/`, are the ~900 in-tree `.qa.json` sidecars now
+legacy, and should they be retired rather than left to go stale on every edit?
+That is a larger call than this bean, and an owner one.
