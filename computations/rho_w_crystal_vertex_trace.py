@@ -335,7 +335,15 @@ def main() -> int:
     Z, N = 1, 1
     A = Z + N
     n = 3 * A  # 6 strands for the deuteron
-    word = atom_canonical_crossings(Z, N)  # the IDENTICAL canonical β_D word
+    # The IDENTICAL canonical β_D word, with the intra-nucleon order named
+    # EXPLICITLY. The default became "borromean" on 2026-09-05 (bean
+    # `qou-hu1f`); the witness this replaces (sum −0.717445, captured 16.48 %)
+    # was computed on the pre-2026-09-05 GROUPED word against a grouped-era χ
+    # cache, so it was a stale consumer. Naming the order here means a future
+    # default change cannot silently re-point this witness (bean `qou-zf9n`,
+    # owner-approved regeneration 2026-10-10).
+    INTRA_ORDER = "borromean"
+    word = atom_canonical_crossings(Z, N, intra_order=INTRA_ORDER)
 
     print(f"[rho_w] deuteron (Z={Z},N={N}), H_{n}, |word|={len(word)} crossings")
 
@@ -398,6 +406,15 @@ def main() -> int:
               f"|err|={fmt(xcheck_err, dps=4) if xcheck_err is not None else 'NA':>10s} "
               f"({time.time()-t_lam:.2f}s)")
 
+    # The forced identity Σ_w ρ_w = χ^λ only cross-checks anything if the cache
+    # was built on the SAME word. A grouped-era cache against a borromean word
+    # differs at O(1), so refuse rather than publish a mismatched witness.
+    if max_xcheck_err > mpf("1e-40"):
+        raise SystemExit(
+            f"[rho_w] cross-check FAILED: max |Σ_w ρ_w − χ_cache| = "
+            f"{fmt(max_xcheck_err, dps=6)} — the χ cache and this word "
+            f"(intra_order={INTRA_ORDER!r}) disagree; regenerate the cache first.")
+
     # Parameter-free binding + honest residual (NO C_knot, NO back-solve).
     B_pred = m_e * abs(sum_signed)
     rel_err = (B_pred - B_D_AME) / B_D_AME
@@ -435,6 +452,8 @@ def main() -> int:
         "Z": Z, "N": N, "A": A, "n_strands": n,
         "n_partitions": len(parts),
         "braid_word_len": len(word),
+        "intra_order": INTRA_ORDER,
+        "chi_cache_tr_M_at_q0": str(cache.get("tr_M_at_q0")),
         "q_0_50dps": Q0_STR,
         # Recorded so a consumer can tell which layer this witness belongs to
         # WITHOUT inferring it from the digits. Its absence is why a hardcoded

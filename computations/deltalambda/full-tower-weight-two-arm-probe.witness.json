@@ -1,0 +1,5198 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-10T07:36:00.074962+00:00",
+  "commitSha": "873b47aaf55b4b7eb7613f0a5dfe8234bb5584c0",
+  "assertions": [
+    {
+      "name": "D: every arm is a probability measure (|Σ mu − 1| < 1e-45)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "control_D=-1.34e-51 molien=8.02e-51 plancherel=0.0"
+    },
+    {
+      "name": "D: control arm reproduces binding_canonical Δtr (< 1e-40)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "gap=3.32e-53"
+    },
+    {
+      "name": "T: every arm is a probability measure (|Σ mu − 1| < 1e-45)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "control_D=6.2e-51 molien=9.06e-71 plancherel=0.0"
+    },
+    {
+      "name": "T: control arm reproduces binding_canonical Δtr (< 1e-40)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "gap=3.53e-52"
+    },
+    {
+      "name": "3He: every arm is a probability measure (|Σ mu − 1| < 1e-45)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "control_D=6.2e-51 molien=9.06e-71 plancherel=0.0"
+    },
+    {
+      "name": "3He: control arm reproduces binding_canonical Δtr (< 1e-40)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "gap=9.23e-52"
+    },
+    {
+      "name": "4He: every arm is a probability measure (|Σ mu − 1| < 1e-45)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "control_D=1.04e-50 molien=1.09e-70 plancherel=0.0"
+    },
+    {
+      "name": "4He: control arm reproduces binding_canonical Δtr (< 1e-40)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "gap=4.94e-52"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2329,
+  "computation": "full-tower-weight-two-arm-probe",
+  "scriptFile": "full_tower_weight_two_arm_probe.py",
+  "scriptHash": "5c25db5c176b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "cd378682bfd642d0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/full_tower_weight_two_arm_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/full_tower_weight_two_arm_probe.py"
+  },
+  "description": "Canonical binding (binding_canonical route, borromean words, proton q0) under the convention-D Markov weight (control) and two full-tower partition measures — Molien f·q^-κ·dim_q/[n]_q! and self-normalised quantum Plancherel dim_q²/D² — side by side, with the TL-quotient support fraction of each. EXPLORATORY: neither arm is adopted or wired; arms are NOT ranked by accuracy (anti-fit directive).",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "intra_order": "borromean",
+    "chi_dps": 50,
+    "trace_slot": "tr(x) = Σ_λ (mu_λ/f^λ) χ^λ(x); tr(1) = Σ mu = 1",
+    "functionals": {
+      "B_lin": "Q_beta(n)·(tr(W_free) − tr(W_atom))  [binding_canonical route]",
+      "B_log": "E_0·log(|tr(W_free)|/|tr(W_atom)|), E_0 = m_e/(q0(q0−1))  [binding_log_free_energy route, reported alongside]"
+    },
+    "E_0_MeV": "4.18598136329447589694506215875900841014348689087872008060018",
+    "Q_beta_n_MeV": "0.7823334093100000000000000000000000000000000000000326173041633116137717",
+    "weight_families": {
+      "control_D": "markov_wenzl_ocneanu_convention_D_SU2 (y_lambda * f^lambda)",
+      "molien": "molien_fake_degree f*q^-kappa*dim_q/[n]_q! (Lean: molienSum_eq_qFactorial)",
+      "plancherel": "quantum_plancherel_self_normalised dim_q^2/D^2"
+    },
+    "molien_twist_note": "Owner wrote f·dim_q/[n]_q!; the Lean-proved normalised form (molienSum_eq_qFactorial) carries q^-κ_λ. The twisted form is used; molien_untwisted_sum records the untwisted total.",
+    "vanishing_trace_note": "Where |tr| < 1e-40 the trace is zero to the 50-dps characters' resolution and B_log is reported None (undefined), not as a number. Consistent with the Molien measure being the regular/symmetrising trace decomposition (identity-coefficient functional), per computations/probes/phi_k_weight_family_discriminator.py §A3 — recorded as consistency, not proved here.",
+    "adoption": "none — exploratory two-arm comparison, not wired",
+    "rows": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n_strands": 6,
+        "n_partitions": 11,
+        "B_AME_MeV": "2.2245662",
+        "molien_untwisted_sum": "0.922261315071773256729534980260911282438553318811193707119827",
+        "arms": {
+          "control_D": {
+            "weight_family": "markov_wenzl_ocneanu_convention_D_SU2 (y_lambda * f^lambda)",
+            "tr_atom": "0.151968339204231607592665697751066141271240964655263155883833",
+            "tr_free": "0.299015017184640076702160426770983832274949474397020579000515",
+            "delta_tr": "0.147046677980408469109494729019917691003708509741757757212270",
+            "B_lin_MeV": "0.115039528912122663024828831045626802098514394279733272135436",
+            "B_lin_rel_err_vs_AME": "-0.948286758599441696531742309558768445686842497975679861384317",
+            "trace_vanishes_to_working_precision": false,
+            "B_log_MeV": "2.83316257200452377033781580149201952418686016072738045952699",
+            "B_log_rel_err_vs_AME": "0.273579798166727414242748002505845644956243676060251366401382",
+            "tl_quotient_signed_fraction_of_delta_tr": "1.00000000000000000000000000000000000000000000000000000000000",
+            "tl_quotient_abs_fraction_of_delta_tr": "1.00000000000000000000000000000000000000000000000000000000000",
+            "mass_on_tl_quotient": "0.999999999999999999999999999999999999999999999999998663617645",
+            "crystal_closure_sum": "0.531580408745869108170815663342480338438426782061342778587838",
+            "crystal_closure_B_MeV": "0.271637031076500413147372909249423751043992158807739567165283",
+            "crystal_closure_captured_fraction": "0.122107865828627807591148741381319086410641391030637794589765",
+            "crystal_closure_tl_signed_fraction": "1.00000000000000000000000000000000000000000000000000000000000",
+            "crystal_closure_tl_abs_fraction": "1.00000000000000000000000000000000000000000000000000000000000",
+            "crystal_closure_cancellation_ratio": "1.20312206239817159868940959100775005274608581376777905466589",
+            "per_partition": {
+              "weight_family": "markov_wenzl_ocneanu_convention_D_SU2 (y_lambda * f^lambda)",
+              "rows": [
+                {
+                  "partition": [
+                    6
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.115324224902066166110369069890190531513760477331519966837970"
+                },
+                {
+                  "partition": [
+                    5,
+                    1
+                  ],
+                  "f_lambda": 5,
+                  "mu": "0.394764812379633394938598156961054992625406599269179778765870"
+                },
+                {
+                  "partition": [
+                    4,
+                    2
+                  ],
+                  "f_lambda": 9,
+                  "mu": "0.414291912228183842428681384079233900493851321326939322226919"
+                },
+                {
+                  "partition": [
+                    4,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 10,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    3
+                  ],
+                  "f_lambda": 5,
+                  "mu": "0.0756190504901165965223513890695205753669816020723599298824743"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 16,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 10,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 5,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 9,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 5,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.0"
+                }
+              ]
+            }
+          },
+          "molien": {
+            "weight_family": "molien_fake_degree f*q^-kappa*dim_q/[n]_q! (Lean: molienSum_eq_qFactorial)",
+            "tr_atom": "-0.00184547141163198040469793160332149128384822945282397027809184",
+            "tr_free": "0.0176670722612564083641105156387372324436621044706266159675034",
+            "delta_tr": "0.0195125436728883887688084472420587237275103339234505366532813",
+            "B_lin_MeV": "0.0152653148159210426006146259172070681569705509765902702730147",
+            "B_lin_rel_err_vs_AME": "-0.993137846463764017182039974392667177916768423894694970053222",
+            "trace_vanishes_to_working_precision": false,
+            "B_log_MeV": "9.45599723787245224832688900917941743995635743767141284738295",
+            "B_log_rel_err_vs_AME": "3.25071514521458262214308974449913760262848434794677144031982",
+            "tl_quotient_signed_fraction_of_delta_tr": "0.578701483085690692506461664223323375201155261167807372998663",
+            "tl_quotient_abs_fraction_of_delta_tr": "0.0730744593107078238600785828275707692087980911691057440422516",
+            "mass_on_tl_quotient": "0.0977348391751463398678203720208815512188267033908013409934681",
+            "crystal_closure_sum": "0.357051194282033163490576255090662412907353236643967330387961",
+            "crystal_closure_B_MeV": "0.182452785620730274463465684054758263812681016110242903678981",
+            "crystal_closure_captured_fraction": "0.0820172425620466023728427070656554360183486632630861003693502",
+            "crystal_closure_tl_signed_fraction": "0.0335989376831895969355207478515053415676352882787387316768255",
+            "crystal_closure_tl_abs_fraction": "0.0835183885813781379369450215129961941599533542560769713654183",
+            "crystal_closure_cancellation_ratio": "1.53943703951061764366887768479943449227032221317005240866160",
+            "per_partition": {
+              "weight_family": "molien_fake_degree f*q^-kappa*dim_q/[n]_q! (Lean: molienSum_eq_qFactorial)",
+              "rows": [
+                {
+                  "partition": [
+                    6
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.000249231089170435523932105856058160375539600774911429176586502"
+                },
+                {
+                  "partition": [
+                    5,
+                    1
+                  ],
+                  "f_lambda": 5,
+                  "mu": "0.0121665383370683627257089428672061434982584939184631835047862"
+                },
+                {
+                  "partition": [
+                    4,
+                    2
+                  ],
+                  "f_lambda": 9,
+                  "mu": "0.0615707498578457597277892984286606855908316894966008574211699"
+                },
+                {
+                  "partition": [
+                    4,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 10,
+                  "mu": "0.0930043117628288158133140511500175929575860001534669322142581"
+                },
+                {
+                  "partition": [
+                    3,
+                    3
+                  ],
+                  "f_lambda": 5,
+                  "mu": "0.0237483198910617818903900248689565617541969192008258780687605"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 16,
+                  "mu": "0.330831845478004578329184869388395280343579353776509300714284"
+                },
+                {
+                  "partition": [
+                    3,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 10,
+                  "mu": "0.173936480338001307160022072583488265233618682525431379950288"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 5,
+                  "mu": "0.0444140609988703363798573498442422640320219617861732808794253"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 9,
+                  "mu": "0.174791549982618540783920784464334251748366638003229681860900"
+                },
+                {
+                  "partition": [
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 5,
+                  "mu": "0.0795847419139057142062060043237781901381430505923334803365235"
+                },
+                {
+                  "partition": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.00570217035062436745967449622486260432785760977206132672457742"
+                }
+              ]
+            }
+          },
+          "plancherel": {
+            "weight_family": "quantum_plancherel_self_normalised dim_q^2/D^2",
+            "tr_atom": "0.000656529151762849985983244031981215725098469390455939096216009",
+            "tr_free": "-0.00110080195403543482794085121342110259095467969877080020650290",
+            "delta_tr": "-0.00175733110579828481392409524540231831605314908922678889503287",
+            "B_lin_MeV": "-0.00137481883528568446762763639289275679077571823013653295910981",
+            "B_lin_rel_err_vs_AME": "-1.00061801659815099432313034172365504644940470561412593298453",
+            "trace_vanishes_to_working_precision": false,
+            "B_log_MeV": "2.16342879579086345732228509143408642607354671784939028384184",
+            "B_log_rel_err_vs_AME": "-0.0274828432658630445242379878674384129033576443580807428453089",
+            "tl_quotient_signed_fraction_of_delta_tr": "-12.5987654140210337340537438149322391875826923908762897749075",
+            "tl_quotient_abs_fraction_of_delta_tr": "0.169034322280815734599827783458063841118455649617914916513159",
+            "mass_on_tl_quotient": "0.182149074648642646473482590660025233148377557676393897099098",
+            "crystal_closure_sum": "0.429260968159443335353297476974039009209510243756515783328802",
+            "crystal_closure_B_MeV": "0.219351904301649044980048791165158370077186980928385804011758",
+            "crystal_closure_captured_fraction": "0.0986043500533492979350530414267547399026322439531742813894973",
+            "crystal_closure_tl_signed_fraction": "0.0832937698563304201863331543731874646868941056538211699355226",
+            "crystal_closure_tl_abs_fraction": "0.147842405576533817800290195965263003531388727384391454076309",
+            "crystal_closure_cancellation_ratio": "1.36684423587402478978046326548305638497012422631045898596461",
+            "per_partition": {
+              "weight_family": "quantum_plancherel_self_normalised dim_q^2/D^2",
+              "rows": [
+                {
+                  "partition": [
+                    6
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.00120285339435832465892667053240353704898975472131494686553313"
+                },
+                {
+                  "partition": [
+                    5,
+                    1
+                  ],
+                  "f_lambda": 5,
+                  "mu": "0.0327813721076966707406717872936373153510372707175408240364239"
+                },
+                {
+                  "partition": [
+                    4,
+                    2
+                  ],
+                  "f_lambda": 9,
+                  "mu": "0.112455358020468287659735963824091193978497852131993878712324"
+                },
+                {
+                  "partition": [
+                    4,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 10,
+                  "mu": "0.136919106419851756800999158778840323110726590155304727750228"
+                },
+                {
+                  "partition": [
+                    3,
+                    3
+                  ],
+                  "f_lambda": 5,
+                  "mu": "0.0357094911261193634141481690098931867698526801055443649402975"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 16,
+                  "mu": "0.361863637863011193451036501122268887481791704336602750301348"
+                },
+                {
+                  "partition": [
+                    3,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 10,
+                  "mu": "0.136919106419851756800999158778840323110726590155304727750228"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 5,
+                  "mu": "0.0357094911261193634141481690098931867698526801055443649402975"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 9,
+                  "mu": "0.112455358020468287659735963824091193978497852131994212807913"
+                },
+                {
+                  "partition": [
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 5,
+                  "mu": "0.0327813721076966707406717872936373153510372707175406569886296"
+                },
+                {
+                  "partition": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.00120285339435832465892667053240353704898975472131494686553313"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n_strands": 9,
+        "n_partitions": 30,
+        "B_AME_MeV": "8.4817962",
+        "molien_untwisted_sum": "0.824299836790445990746375437708584542887003872068249738279661",
+        "arms": {
+          "control_D": {
+            "weight_family": "markov_wenzl_ocneanu_convention_D_SU2 (y_lambda * f^lambda)",
+            "tr_atom": "0.0291440423609720653572542187918698440658388035647382093115984",
+            "tr_free": "0.142072056797304797470498604255055856206888774468329786140956",
+            "delta_tr": "0.112928014436332732113244385463186012141049970903591576829357",
+            "B_lin_MeV": "0.0883473585405850842477014010846301163730106763400867830321051",
+            "B_lin_rel_err_vs_AME": "-0.989583885717439770098731987797038778605289917678040096838042",
+            "trace_vanishes_to_working_precision": false,
+            "B_log_MeV": "6.63094550714687709946164178634581594843370199959188101546623",
+            "B_log_rel_err_vs_AME": "-0.218214473586753110212475774135457776215643804364000926845207",
+            "tl_quotient_signed_fraction_of_delta_tr": "1.00000000000000000000000000000000000000000000000000000000000",
+            "tl_quotient_abs_fraction_of_delta_tr": "1.00000000000000000000000000000000000000000000000000000000000",
+            "mass_on_tl_quotient": "1.00000000000000000000000000000000000000000000000000620000000",
+            "per_partition": {
+              "weight_family": "markov_wenzl_ocneanu_convention_D_SU2 (y_lambda * f^lambda)",
+              "rows": [
+                {
+                  "partition": [
+                    9
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.0221222760302742620003548615327441809621785957909460000000000"
+                },
+                {
+                  "partition": [
+                    8,
+                    1
+                  ],
+                  "f_lambda": 8,
+                  "mu": "0.133105391045810420655996831399201859665034246988232000000000"
+                },
+                {
+                  "partition": [
+                    7,
+                    2
+                  ],
+                  "f_lambda": 27,
+                  "mu": "0.320794107167062644939321617379032546476387311161325000000000"
+                },
+                {
+                  "partition": [
+                    7,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 28,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    6,
+                    3
+                  ],
+                  "f_lambda": 48,
+                  "mu": "0.366894602130423052463023743283617771297914875298817600000000"
+                },
+                {
+                  "partition": [
+                    6,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 105,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    6,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 56,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    5,
+                    4
+                  ],
+                  "f_lambda": 42,
+                  "mu": "0.157083623626429619941302946405403641598484970760685600000000"
+                },
+                {
+                  "partition": [
+                    5,
+                    3,
+                    1
+                  ],
+                  "f_lambda": 162,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    5,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 120,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    5,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 189,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    5,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 70,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    4,
+                    1
+                  ],
+                  "f_lambda": 84,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    2
+                  ],
+                  "f_lambda": 168,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 216,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 216,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 189,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 56,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    3
+                  ],
+                  "f_lambda": 42,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 168,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 120,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 84,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 162,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 105,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 28,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 42,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 48,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 27,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 8,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.0"
+                }
+              ]
+            }
+          },
+          "molien": {
+            "weight_family": "molien_fake_degree f*q^-kappa*dim_q/[n]_q! (Lean: molienSum_eq_qFactorial)",
+            "tr_atom": "-0.0000739381923490087292104969525946039021499929145238841086340990",
+            "tr_free": "-0.00338574717990725360952678136142936161867624638494217402159489",
+            "delta_tr": "-0.00331180898755824488031628440883475771652625347041828991296079",
+            "B_lin_MeV": "-0.00259093881621994108941769169267529388879781440763366800166767",
+            "B_lin_rel_err_vs_AME": "-1.00030547053420358544920210316921730492519943056491190687577",
+            "trace_vanishes_to_working_precision": false,
+            "B_log_MeV": "16.0076129552585685743154899097308387833947812864057651799693",
+            "B_log_rel_err_vs_AME": "0.887290448603158912768440476055159022023516821402257589010939",
+            "tl_quotient_signed_fraction_of_delta_tr": "-0.0435500840601383313584862252216093627977634970068120599101536",
+            "tl_quotient_abs_fraction_of_delta_tr": "0.00539211038198173162622170872886883003826456628381051826803556",
+            "mass_on_tl_quotient": "0.00239108069202658783330608078322200452304365845587890618291456",
+            "per_partition": {
+              "weight_family": "molien_fake_degree f*q^-kappa*dim_q/[n]_q! (Lean: molienSum_eq_qFactorial)",
+              "rows": [
+                {
+                  "partition": [
+                    9
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.0000000394108028234817002121934897584685519299160489811313486087033"
+                },
+                {
+                  "partition": [
+                    8,
+                    1
+                  ],
+                  "f_lambda": 8,
+                  "mu": "0.00000721357407524046138363222356269428759737259382406175043951406"
+                },
+                {
+                  "partition": [
+                    7,
+                    2
+                  ],
+                  "f_lambda": 27,
+                  "mu": "0.000185994806213891884638384921998180518215167084057103032698394"
+                },
+                {
+                  "partition": [
+                    7,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 28,
+                  "mu": "0.000244860912343166590239619822814441841647553084493984318125282"
+                },
+                {
+                  "partition": [
+                    6,
+                    3
+                  ],
+                  "f_lambda": 48,
+                  "mu": "0.00105341587284159501349234741034981289584904090917557367414371"
+                },
+                {
+                  "partition": [
+                    6,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 105,
+                  "mu": "0.00686160890774150037870020268021712246164483625960042939737815"
+                },
+                {
+                  "partition": [
+                    6,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 56,
+                  "mu": "0.00262874775593243659927636623094332902874001241394956107624805"
+                },
+                {
+                  "partition": [
+                    5,
+                    4
+                  ],
+                  "f_lambda": 42,
+                  "mu": "0.00114441702809303699209150403382155835283014795277318659428433"
+                },
+                {
+                  "partition": [
+                    5,
+                    3,
+                    1
+                  ],
+                  "f_lambda": 162,
+                  "mu": "0.0258604191749786044419117466759164137023973339552087954635536"
+                },
+                {
+                  "partition": [
+                    5,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 120,
+                  "mu": "0.0174859275919384286877547944540507345303357301537122261593856"
+                },
+                {
+                  "partition": [
+                    5,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 189,
+                  "mu": "0.0527098488741498664157978555691735839796171158606319433504850"
+                },
+                {
+                  "partition": [
+                    5,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 70,
+                  "mu": "0.0106755257562780758231161269443263012682565920856479272173907"
+                },
+                {
+                  "partition": [
+                    4,
+                    4,
+                    1
+                  ],
+                  "f_lambda": 84,
+                  "mu": "0.00874823348422551250106388014685155356175397257322410379976817"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    2
+                  ],
+                  "f_lambda": 168,
+                  "mu": "0.0481153839628273821120971983466748078620166766833778327925001"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 216,
+                  "mu": "0.0966455855683646274635614565861656149152043755454621214983729"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 216,
+                  "mu": "0.119072430883887621822529457883613195322726253841959902429075"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 189,
+                  "mu": "0.121453088616228253373810012352757807336856361985718641967407"
+                },
+                {
+                  "partition": [
+                    4,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 56,
+                  "mu": "0.0171953768538448861153992407089785279718372279358623656879601"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    3
+                  ],
+                  "f_lambda": 42,
+                  "mu": "0.00417770497126609703955076218430351787764535371831993273054268"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 168,
+                  "mu": "0.0899852961435554473204623021800501351309338887512096232345663"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 120,
+                  "mu": "0.0611594913103747062630003198500097372538498545320558921142380"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 84,
+                  "mu": "0.0305981771310941867752481918639043519763997958560933107173362"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 162,
+                  "mu": "0.137299559946880488381390352617116121577117275445831953973365"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 105,
+                  "mu": "0.0839414252006565035655677362328162762486220526502924667792233"
+                },
+                {
+                  "partition": [
+                    3,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 28,
+                  "mu": "0.0104771950706415673263706772379998439766958379331266825896686"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 42,
+                  "mu": "0.0140002144764687202589548393919540934928397761853294360746766"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 48,
+                  "mu": "0.0241011535799482029602823406138011527113611183816457255381400"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 27,
+                  "mu": "0.0120804963898901904513643435220073007330054088092627449002429"
+                },
+                {
+                  "partition": [
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 8,
+                  "mu": "0.00201901174711261634664922432400554419790481750832266464189119"
+                },
+                {
+                  "partition": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.0000721549973443231525948707963264865175471193937808253655454654"
+                }
+              ]
+            }
+          },
+          "plancherel": {
+            "weight_family": "quantum_plancherel_self_normalised dim_q^2/D^2",
+            "tr_atom": "0.00000187252538630153867952711094971923634763010424765187953548190",
+            "tr_free": "0.0000969541778895632071086509485809421823617284512265921649342539",
+            "delta_tr": "0.0000950816525032616684291238376312229460140983469789402853987720",
+            "B_lin_MeV": "0.0000743855533657053969571952439902255218599116351176727935541057",
+            "B_lin_rel_err_vs_AME": "-0.999991229976338537184263258383408195362927971361170211480737",
+            "trace_vanishes_to_working_precision": false,
+            "B_log_MeV": "16.5218611521512013138538117954206444878415897822386648502175",
+            "B_log_rel_err_vs_AME": "0.947920082323034514063638052918631137098246923480505954504611",
+            "tl_quotient_signed_fraction_of_delta_tr": "8.49655934377197313935795748153657668618032596191721336201062",
+            "tl_quotient_abs_fraction_of_delta_tr": "0.0335044478961620876780206969212864989915132149562752572684065",
+            "mass_on_tl_quotient": "0.0124986872959840831044667856082930794426883743207193458200731",
+            "per_partition": {
+              "weight_family": "quantum_plancherel_self_normalised dim_q^2/D^2",
+              "rows": [
+                {
+                  "partition": [
+                    9
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.00000151794780112721038805453123918850715736714602699519137768631"
+                },
+                {
+                  "partition": [
+                    8,
+                    1
+                  ],
+                  "f_lambda": 8,
+                  "mu": "0.000121474328835961584684029911280526493950008684171652496311714"
+                },
+                {
+                  "partition": [
+                    7,
+                    2
+                  ],
+                  "f_lambda": 27,
+                  "mu": "0.00164525496131273850682246733351681442683420633640413762566276"
+                },
+                {
+                  "partition": [
+                    7,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 28,
+                  "mu": "0.00174672111871900681924362554329141786174984925948032657110564"
+                },
+                {
+                  "partition": [
+                    6,
+                    3
+                  ],
+                  "f_lambda": 48,
+                  "mu": "0.00588207224045894857895998811843699843516123208728076214535709"
+                },
+                {
+                  "partition": [
+                    6,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 105,
+                  "mu": "0.0278868102664240202157205746414582982716843209458583464656584"
+                },
+                {
+                  "partition": [
+                    6,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 56,
+                  "mu": "0.00769413318650728076626123852459600945295619954531457644319185"
+                },
+                {
+                  "partition": [
+                    5,
+                    4
+                  ],
+                  "f_lambda": 42,
+                  "mu": "0.00484836781757530722361224571381955157958556006683579836136384"
+                },
+                {
+                  "partition": [
+                    5,
+                    3,
+                    1
+                  ],
+                  "f_lambda": 162,
+                  "mu": "0.0722187250111761221648862232120591172401064875789864766077595"
+                },
+                {
+                  "partition": [
+                    5,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 120,
+                  "mu": "0.0396428791605655750281672724393266334572649441665961283962470"
+                },
+                {
+                  "partition": [
+                    5,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 189,
+                  "mu": "0.0956647336864610334881313916906142659101672490810920225975408"
+                },
+                {
+                  "partition": [
+                    5,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 70,
+                  "mu": "0.0124153110826651448633140631430444394031431379276661356286901"
+                },
+                {
+                  "partition": [
+                    4,
+                    4,
+                    1
+                  ],
+                  "f_lambda": 84,
+                  "mu": "0.0202503478803841050490797616582894060792650389607677768976766"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    2
+                  ],
+                  "f_lambda": 168,
+                  "mu": "0.0818864574488526025508330860116141697005881022704924968785171"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 216,
+                  "mu": "0.131662130964641821601178525532180627863326925967275881091215"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 216,
+                  "mu": "0.131662130964641821601178525532180627863326925967275881091215"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 189,
+                  "mu": "0.0956647336864610334881313916906142659101672490810920225975408"
+                },
+                {
+                  "partition": [
+                    4,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 56,
+                  "mu": "0.00769413318650728076626123852459600945295619954531457644319185"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    3
+                  ],
+                  "f_lambda": 42,
+                  "mu": "0.00528143687790355356074896713350951003726187787916710883333967"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 168,
+                  "mu": "0.0818864574488526025508330860116141697005881022704924968785171"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 120,
+                  "mu": "0.0396428791605655750281672724393266334572649441665961283962470"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 84,
+                  "mu": "0.0202503478803841050490797616582894060792650389607677768976766"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 162,
+                  "mu": "0.0722187250111761221648862232120591172401064875789864766077595"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 105,
+                  "mu": "0.0278868102664240202157205746414582982716843209458583464656584"
+                },
+                {
+                  "partition": [
+                    3,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 28,
+                  "mu": "0.00174672111871900681924362554329141786174984925948032657110564"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 42,
+                  "mu": "0.00484836781757530722361224571381955157958556006683579836136384"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 48,
+                  "mu": "0.00588207224045894857895998811843699843516123208728076214535709"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 27,
+                  "mu": "0.00164525496131273850682246733351681442683420633640413762566276"
+                },
+                {
+                  "partition": [
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 8,
+                  "mu": "0.000121474328835961584684029911280526493950008684171652496311714"
+                },
+                {
+                  "partition": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.00000151794780112721038805453123918850715736714602699519137768631"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n_strands": 9,
+        "n_partitions": 30,
+        "B_AME_MeV": "7.71804132",
+        "molien_untwisted_sum": "0.824299836790445990746375437708584542887003872068249738279661",
+        "arms": {
+          "control_D": {
+            "weight_family": "markov_wenzl_ocneanu_convention_D_SU2 (y_lambda * f^lambda)",
+            "tr_atom": "0.0585962536544363802189567154521302568308771072841835591101040",
+            "tr_free": "0.188178642999488779263479037145866899920692573589436953416857",
+            "delta_tr": "0.129582389345052399044522321693736643089815466305253394306753",
+            "B_lin_MeV": "0.101376632442850661325095734411057561661729986293360543759659",
+            "B_lin_rel_err_vs_AME": "-0.986864979307619117368874654533326913872789426023264591683319",
+            "trace_vanishes_to_working_precision": false,
+            "B_log_MeV": "4.88387226438595745596877363637667284107718316699996334533782",
+            "B_log_rel_err_vs_AME": "-0.367213511577059365112498045504546114417902187779429242634210",
+            "tl_quotient_signed_fraction_of_delta_tr": "1.00000000000000000000000000000000000000000000000000000000000",
+            "tl_quotient_abs_fraction_of_delta_tr": "1.00000000000000000000000000000000000000000000000000000000000",
+            "mass_on_tl_quotient": "1.00000000000000000000000000000000000000000000000000620000000",
+            "per_partition": {
+              "weight_family": "markov_wenzl_ocneanu_convention_D_SU2 (y_lambda * f^lambda)",
+              "rows": [
+                {
+                  "partition": [
+                    9
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.0221222760302742620003548615327441809621785957909460000000000"
+                },
+                {
+                  "partition": [
+                    8,
+                    1
+                  ],
+                  "f_lambda": 8,
+                  "mu": "0.133105391045810420655996831399201859665034246988232000000000"
+                },
+                {
+                  "partition": [
+                    7,
+                    2
+                  ],
+                  "f_lambda": 27,
+                  "mu": "0.320794107167062644939321617379032546476387311161325000000000"
+                },
+                {
+                  "partition": [
+                    7,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 28,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    6,
+                    3
+                  ],
+                  "f_lambda": 48,
+                  "mu": "0.366894602130423052463023743283617771297914875298817600000000"
+                },
+                {
+                  "partition": [
+                    6,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 105,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    6,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 56,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    5,
+                    4
+                  ],
+                  "f_lambda": 42,
+                  "mu": "0.157083623626429619941302946405403641598484970760685600000000"
+                },
+                {
+                  "partition": [
+                    5,
+                    3,
+                    1
+                  ],
+                  "f_lambda": 162,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    5,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 120,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    5,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 189,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    5,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 70,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    4,
+                    1
+                  ],
+                  "f_lambda": 84,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    2
+                  ],
+                  "f_lambda": 168,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 216,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 216,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 189,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 56,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    3
+                  ],
+                  "f_lambda": 42,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 168,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 120,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 84,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 162,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 105,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 28,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 42,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 48,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 27,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 8,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.0"
+                }
+              ]
+            }
+          },
+          "molien": {
+            "weight_family": "molien_fake_degree f*q^-kappa*dim_q/[n]_q! (Lean: molienSum_eq_qFactorial)",
+            "tr_atom": "-2.50125031776922852462752215826356572578447160554985799613749e-75",
+            "tr_free": "-0.00162869300346493956698919384572535532395253822611712472292456",
+            "delta_tr": "-0.00162869300346493956698919384572535532395253822611712472292456",
+            "B_lin_MeV": "-0.00127418095012006981449577115325478740049894873506636299143514",
+            "B_lin_rel_err_vs_AME": "-1.00016509123199667837674854157858470591869012548057547373943",
+            "trace_vanishes_to_working_precision": true,
+            "B_log_MeV": null,
+            "B_log_rel_err_vs_AME": null,
+            "tl_quotient_signed_fraction_of_delta_tr": "-0.115515107144304206053620184196724152585487012548745169523214",
+            "tl_quotient_abs_fraction_of_delta_tr": "0.00794030630246432655912173093603676758382113208542674852317568",
+            "mass_on_tl_quotient": "0.00239108069202658783330608078322200452304365845587890618291456",
+            "per_partition": {
+              "weight_family": "molien_fake_degree f*q^-kappa*dim_q/[n]_q! (Lean: molienSum_eq_qFactorial)",
+              "rows": [
+                {
+                  "partition": [
+                    9
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.0000000394108028234817002121934897584685519299160489811313486087033"
+                },
+                {
+                  "partition": [
+                    8,
+                    1
+                  ],
+                  "f_lambda": 8,
+                  "mu": "0.00000721357407524046138363222356269428759737259382406175043951406"
+                },
+                {
+                  "partition": [
+                    7,
+                    2
+                  ],
+                  "f_lambda": 27,
+                  "mu": "0.000185994806213891884638384921998180518215167084057103032698394"
+                },
+                {
+                  "partition": [
+                    7,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 28,
+                  "mu": "0.000244860912343166590239619822814441841647553084493984318125282"
+                },
+                {
+                  "partition": [
+                    6,
+                    3
+                  ],
+                  "f_lambda": 48,
+                  "mu": "0.00105341587284159501349234741034981289584904090917557367414371"
+                },
+                {
+                  "partition": [
+                    6,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 105,
+                  "mu": "0.00686160890774150037870020268021712246164483625960042939737815"
+                },
+                {
+                  "partition": [
+                    6,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 56,
+                  "mu": "0.00262874775593243659927636623094332902874001241394956107624805"
+                },
+                {
+                  "partition": [
+                    5,
+                    4
+                  ],
+                  "f_lambda": 42,
+                  "mu": "0.00114441702809303699209150403382155835283014795277318659428433"
+                },
+                {
+                  "partition": [
+                    5,
+                    3,
+                    1
+                  ],
+                  "f_lambda": 162,
+                  "mu": "0.0258604191749786044419117466759164137023973339552087954635536"
+                },
+                {
+                  "partition": [
+                    5,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 120,
+                  "mu": "0.0174859275919384286877547944540507345303357301537122261593856"
+                },
+                {
+                  "partition": [
+                    5,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 189,
+                  "mu": "0.0527098488741498664157978555691735839796171158606319433504850"
+                },
+                {
+                  "partition": [
+                    5,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 70,
+                  "mu": "0.0106755257562780758231161269443263012682565920856479272173907"
+                },
+                {
+                  "partition": [
+                    4,
+                    4,
+                    1
+                  ],
+                  "f_lambda": 84,
+                  "mu": "0.00874823348422551250106388014685155356175397257322410379976817"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    2
+                  ],
+                  "f_lambda": 168,
+                  "mu": "0.0481153839628273821120971983466748078620166766833778327925001"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 216,
+                  "mu": "0.0966455855683646274635614565861656149152043755454621214983729"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 216,
+                  "mu": "0.119072430883887621822529457883613195322726253841959902429075"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 189,
+                  "mu": "0.121453088616228253373810012352757807336856361985718641967407"
+                },
+                {
+                  "partition": [
+                    4,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 56,
+                  "mu": "0.0171953768538448861153992407089785279718372279358623656879601"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    3
+                  ],
+                  "f_lambda": 42,
+                  "mu": "0.00417770497126609703955076218430351787764535371831993273054268"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 168,
+                  "mu": "0.0899852961435554473204623021800501351309338887512096232345663"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 120,
+                  "mu": "0.0611594913103747062630003198500097372538498545320558921142380"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 84,
+                  "mu": "0.0305981771310941867752481918639043519763997958560933107173362"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 162,
+                  "mu": "0.137299559946880488381390352617116121577117275445831953973365"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 105,
+                  "mu": "0.0839414252006565035655677362328162762486220526502924667792233"
+                },
+                {
+                  "partition": [
+                    3,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 28,
+                  "mu": "0.0104771950706415673263706772379998439766958379331266825896686"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 42,
+                  "mu": "0.0140002144764687202589548393919540934928397761853294360746766"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 48,
+                  "mu": "0.0241011535799482029602823406138011527113611183816457255381400"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 27,
+                  "mu": "0.0120804963898901904513643435220073007330054088092627449002429"
+                },
+                {
+                  "partition": [
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 8,
+                  "mu": "0.00201901174711261634664922432400554419790481750832266464189119"
+                },
+                {
+                  "partition": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.0000721549973443231525948707963264865175471193937808253655454654"
+                }
+              ]
+            }
+          },
+          "plancherel": {
+            "weight_family": "quantum_plancherel_self_normalised dim_q^2/D^2",
+            "tr_atom": "-0.00000365446347190018471263786340928973129120106528932588243486181",
+            "tr_free": "-0.0000159283799608528796066937127885512608420589527700873703595942",
+            "delta_tr": "-0.0000122739164889526948940558493792615295508578874807614879247324",
+            "B_lin_MeV": "-0.00000960229493238858674777894189842551962364796414812890222517169",
+            "B_lin_rel_err_vs_AME": "-1.00000124413624315613106199060124990695432343810827746759298",
+            "trace_vanishes_to_working_precision": false,
+            "B_log_MeV": "6.16240557390201084597354370064209164705767325472280750958724",
+            "B_log_rel_err_vs_AME": "-0.201558359381521055918168665538824603357050535365258846000792",
+            "tl_quotient_signed_fraction_of_delta_tr": "-84.7405065218798226095314366373100760501630440182624038024600",
+            "tl_quotient_abs_fraction_of_delta_tr": "0.0449568614965380469886579899154572140323860758885470805300630",
+            "mass_on_tl_quotient": "0.0124986872959840831044667856082930794426883743207193458200731",
+            "per_partition": {
+              "weight_family": "quantum_plancherel_self_normalised dim_q^2/D^2",
+              "rows": [
+                {
+                  "partition": [
+                    9
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.00000151794780112721038805453123918850715736714602699519137768631"
+                },
+                {
+                  "partition": [
+                    8,
+                    1
+                  ],
+                  "f_lambda": 8,
+                  "mu": "0.000121474328835961584684029911280526493950008684171652496311714"
+                },
+                {
+                  "partition": [
+                    7,
+                    2
+                  ],
+                  "f_lambda": 27,
+                  "mu": "0.00164525496131273850682246733351681442683420633640413762566276"
+                },
+                {
+                  "partition": [
+                    7,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 28,
+                  "mu": "0.00174672111871900681924362554329141786174984925948032657110564"
+                },
+                {
+                  "partition": [
+                    6,
+                    3
+                  ],
+                  "f_lambda": 48,
+                  "mu": "0.00588207224045894857895998811843699843516123208728076214535709"
+                },
+                {
+                  "partition": [
+                    6,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 105,
+                  "mu": "0.0278868102664240202157205746414582982716843209458583464656584"
+                },
+                {
+                  "partition": [
+                    6,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 56,
+                  "mu": "0.00769413318650728076626123852459600945295619954531457644319185"
+                },
+                {
+                  "partition": [
+                    5,
+                    4
+                  ],
+                  "f_lambda": 42,
+                  "mu": "0.00484836781757530722361224571381955157958556006683579836136384"
+                },
+                {
+                  "partition": [
+                    5,
+                    3,
+                    1
+                  ],
+                  "f_lambda": 162,
+                  "mu": "0.0722187250111761221648862232120591172401064875789864766077595"
+                },
+                {
+                  "partition": [
+                    5,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 120,
+                  "mu": "0.0396428791605655750281672724393266334572649441665961283962470"
+                },
+                {
+                  "partition": [
+                    5,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 189,
+                  "mu": "0.0956647336864610334881313916906142659101672490810920225975408"
+                },
+                {
+                  "partition": [
+                    5,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 70,
+                  "mu": "0.0124153110826651448633140631430444394031431379276661356286901"
+                },
+                {
+                  "partition": [
+                    4,
+                    4,
+                    1
+                  ],
+                  "f_lambda": 84,
+                  "mu": "0.0202503478803841050490797616582894060792650389607677768976766"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    2
+                  ],
+                  "f_lambda": 168,
+                  "mu": "0.0818864574488526025508330860116141697005881022704924968785171"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 216,
+                  "mu": "0.131662130964641821601178525532180627863326925967275881091215"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 216,
+                  "mu": "0.131662130964641821601178525532180627863326925967275881091215"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 189,
+                  "mu": "0.0956647336864610334881313916906142659101672490810920225975408"
+                },
+                {
+                  "partition": [
+                    4,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 56,
+                  "mu": "0.00769413318650728076626123852459600945295619954531457644319185"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    3
+                  ],
+                  "f_lambda": 42,
+                  "mu": "0.00528143687790355356074896713350951003726187787916710883333967"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 168,
+                  "mu": "0.0818864574488526025508330860116141697005881022704924968785171"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 120,
+                  "mu": "0.0396428791605655750281672724393266334572649441665961283962470"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 84,
+                  "mu": "0.0202503478803841050490797616582894060792650389607677768976766"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 162,
+                  "mu": "0.0722187250111761221648862232120591172401064875789864766077595"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 105,
+                  "mu": "0.0278868102664240202157205746414582982716843209458583464656584"
+                },
+                {
+                  "partition": [
+                    3,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 28,
+                  "mu": "0.00174672111871900681924362554329141786174984925948032657110564"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 42,
+                  "mu": "0.00484836781757530722361224571381955157958556006683579836136384"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 48,
+                  "mu": "0.00588207224045894857895998811843699843516123208728076214535709"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 27,
+                  "mu": "0.00164525496131273850682246733351681442683420633640413762566276"
+                },
+                {
+                  "partition": [
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 8,
+                  "mu": "0.000121474328835961584684029911280526493950008684171652496311714"
+                },
+                {
+                  "partition": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.00000151794780112721038805453123918850715736714602699519137768631"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "n_strands": 12,
+        "n_partitions": 77,
+        "B_AME_MeV": "28.2956624",
+        "molien_untwisted_sum": "0.702961109244432928695112896552213546064469124156855057665455",
+        "arms": {
+          "control_D": {
+            "weight_family": "markov_wenzl_ocneanu_convention_D_SU2 (y_lambda * f^lambda)",
+            "tr_atom": "0.0112374176597674215641995493744106072696626960812612325371409",
+            "tr_free": "0.0894099805019306003820475658198856570482413752171763072927096",
+            "delta_tr": "0.0781725628421631788178480164454750497785786791359150747555686",
+            "B_lin_MeV": "0.0611570076028097430999142141832094434158174186544795550784070",
+            "B_lin_rel_err_vs_AME": "-0.997838643720784223694303257796035570334772674604200834214366",
+            "trace_vanishes_to_working_precision": false,
+            "B_log_MeV": "8.68165519952831078509259962123046926532402500586448504335633",
+            "B_log_rel_err_vs_AME": "-0.693180704632371116178831720114441665612888249406577326634635",
+            "tl_quotient_signed_fraction_of_delta_tr": "1.00000000000000000000000000000000000000000000000000000000000",
+            "tl_quotient_abs_fraction_of_delta_tr": "1.00000000000000000000000000000000000000000000000000000000000",
+            "mass_on_tl_quotient": "1.00000000000000000000000000000000000000000000000001045000000",
+            "per_partition": {
+              "weight_family": "markov_wenzl_ocneanu_convention_D_SU2 (y_lambda * f^lambda)",
+              "rows": [
+                {
+                  "partition": [
+                    12
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.00396575801612310679845045466137947802832249800215700000000000"
+                },
+                {
+                  "partition": [
+                    11,
+                    1
+                  ],
+                  "f_lambda": 11,
+                  "mu": "0.0341038340435555949298890716053505160655339558436080000000000"
+                },
+                {
+                  "partition": [
+                    10,
+                    2
+                  ],
+                  "f_lambda": 54,
+                  "mu": "0.128003952398186512732106411344253852951837841686097000000000"
+                },
+                {
+                  "partition": [
+                    10,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 55,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    9,
+                    3
+                  ],
+                  "f_lambda": 154,
+                  "mu": "0.268597818276569416218805020375715168473466935172013600000000"
+                },
+                {
+                  "partition": [
+                    9,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 320,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    9,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 165,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    8,
+                    4
+                  ],
+                  "f_lambda": 275,
+                  "mu": "0.328369143069625932382043411505099392189441229155390000000000"
+                },
+                {
+                  "partition": [
+                    8,
+                    3,
+                    1
+                  ],
+                  "f_lambda": 891,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    8,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 616,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    8,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 945,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    8,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 330,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    7,
+                    5
+                  ],
+                  "f_lambda": 297,
+                  "mu": "0.206767182787637916693617114754230600286304014685163010000000"
+                },
+                {
+                  "partition": [
+                    7,
+                    4,
+                    1
+                  ],
+                  "f_lambda": 1408,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    7,
+                    3,
+                    2
+                  ],
+                  "f_lambda": 1925,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    7,
+                    3,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 2376,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    7,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 2079,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    7,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1728,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    7,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 462,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    6,
+                    6
+                  ],
+                  "f_lambda": 132,
+                  "mu": "0.0301923114083015202450885157539709920050935254555818400000000"
+                },
+                {
+                  "partition": [
+                    6,
+                    5,
+                    1
+                  ],
+                  "f_lambda": 1155,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    6,
+                    4,
+                    2
+                  ],
+                  "f_lambda": 2673,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    6,
+                    4,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 3080,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    6,
+                    3,
+                    3
+                  ],
+                  "f_lambda": 1650,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    6,
+                    3,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 5632,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    6,
+                    3,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 3696,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    6,
+                    2,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 1925,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    6,
+                    2,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 3564,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    6,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 2100,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    6,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 462,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    5,
+                    5,
+                    2
+                  ],
+                  "f_lambda": 1320,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    5,
+                    5,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1485,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    5,
+                    4,
+                    3
+                  ],
+                  "f_lambda": 2112,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    5,
+                    4,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 5775,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    5,
+                    4,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 3520,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    5,
+                    3,
+                    3,
+                    1
+                  ],
+                  "f_lambda": 4158,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    5,
+                    3,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 4455,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    5,
+                    3,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 7700,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    5,
+                    3,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 3564,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    5,
+                    2,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 3520,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    5,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 3696,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    5,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1728,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    5,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 330,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    4,
+                    4
+                  ],
+                  "f_lambda": 462,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    4,
+                    3,
+                    1
+                  ],
+                  "f_lambda": 2970,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    4,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 2640,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    4,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 4455,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    4,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1925,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    3,
+                    2
+                  ],
+                  "f_lambda": 2970,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    3,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 4158,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 5775,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 5632,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 2079,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    2,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 1485,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    2,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 3080,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 2376,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 945,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    4,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 165,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "f_lambda": 462,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    3,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 2112,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    3,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1650,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    2,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 1320,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    2,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 2673,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1925,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 616,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    2,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 1155,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1408,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 891,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 320,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    3,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 55,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 132,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 297,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 275,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 154,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 54,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 11,
+                  "mu": "0.0"
+                },
+                {
+                  "partition": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.0"
+                }
+              ]
+            }
+          },
+          "molien": {
+            "weight_family": "molien_fake_degree f*q^-kappa*dim_q/[n]_q! (Lean: molienSum_eq_qFactorial)",
+            "tr_atom": "9.56623637634313977091887417679074894122699259139768613618234e-75",
+            "tr_free": "0.000312125442284455622315196302808268343510926293599731646766530",
+            "delta_tr": "0.000312125442284455622315196302808268343510926293599731646766530",
+            "B_lin_MeV": "0.000244186161394789801823245238997899700436249182508010272406448",
+            "B_lin_rel_err_vs_AME": "-0.999991370191022819462186428784964655936083113248392869914046",
+            "trace_vanishes_to_working_precision": true,
+            "B_log_MeV": null,
+            "B_log_rel_err_vs_AME": null,
+            "tl_quotient_signed_fraction_of_delta_tr": "0.00178702722112086687124326389148935078575054814411978188270921",
+            "tl_quotient_abs_fraction_of_delta_tr": "0.000111824521479042191297317736353473131046885764046357029636674",
+            "mass_on_tl_quotient": "0.0000148654310511952241298720447272916492758855663019791867736278",
+            "per_partition": {
+              "weight_family": "molien_fake_degree f*q^-kappa*dim_q/[n]_q! (Lean: molienSum_eq_qFactorial)",
+              "rows": [
+                {
+                  "partition": [
+                    12
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.000000000000695477815731910869606828960034387794721102803736083126928730"
+                },
+                {
+                  "partition": [
+                    11,
+                    1
+                  ],
+                  "f_lambda": 11,
+                  "mu": "0.000000000362693060007597368233468466244060670610387197787911530907866"
+                },
+                {
+                  "partition": [
+                    10,
+                    2
+                  ],
+                  "f_lambda": 54,
+                  "mu": "0.0000000295245690122487014697980500509814761923554700932987128074414"
+                },
+                {
+                  "partition": [
+                    10,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 55,
+                  "mu": "0.0000000375173906202944798346032204117711408800467039798926575054844"
+                },
+                {
+                  "partition": [
+                    9,
+                    3
+                  ],
+                  "f_lambda": 154,
+                  "mu": "0.000000635718456510434246040757611553175683232725605382485818485608"
+                },
+                {
+                  "partition": [
+                    9,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 320,
+                  "mu": "0.00000373965959873401549169275102502470529539627863174182202934770"
+                },
+                {
+                  "partition": [
+                    9,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 165,
+                  "mu": "0.00000134039724725540835245439560532714139191449261483672010864085"
+                },
+                {
+                  "partition": [
+                    8,
+                    4
+                  ],
+                  "f_lambda": 275,
+                  "mu": "0.00000420670439824545905708401379608226016124319905688399385354897"
+                },
+                {
+                  "partition": [
+                    8,
+                    3,
+                    1
+                  ],
+                  "f_lambda": 891,
+                  "mu": "0.0000671399350974811905315987515931152919625385885568759724401845"
+                },
+                {
+                  "partition": [
+                    8,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 616,
+                  "mu": "0.0000395661723518416009195753929965530024154186629545324978851230"
+                },
+                {
+                  "partition": [
+                    8,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 945,
+                  "mu": "0.000113222266865029061331480328370400118462027828392984667726786"
+                },
+                {
+                  "partition": [
+                    8,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 330,
+                  "mu": "0.0000204100601924148202976503062499044955925008511814598551470951"
+                },
+                {
+                  "partition": [
+                    7,
+                    5
+                  ],
+                  "f_lambda": 297,
+                  "mu": "0.00000798214544259927591909470971304233477218316754728213539039819"
+                },
+                {
+                  "partition": [
+                    7,
+                    4,
+                    1
+                  ],
+                  "f_lambda": 1408,
+                  "mu": "0.000305393140085029027783314552267300084815908062523106725476501"
+                },
+                {
+                  "partition": [
+                    7,
+                    3,
+                    2
+                  ],
+                  "f_lambda": 1925,
+                  "mu": "0.000785370443942428202062203277916781193375124091491217724218108"
+                },
+                {
+                  "partition": [
+                    7,
+                    3,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 2376,
+                  "mu": "0.00145464542461823444305270221471958573758803345935563597369500"
+                },
+                {
+                  "partition": [
+                    7,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 2079,
+                  "mu": "0.00137274379703850554904574790457047281616506417012456083319007"
+                },
+                {
+                  "partition": [
+                    7,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1728,
+                  "mu": "0.00126452663964840166467089138012785888979121000422301436202466"
+                },
+                {
+                  "partition": [
+                    7,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 462,
+                  "mu": "0.000145982105835617093876156744150248139815999134094564007046528"
+                },
+                {
+                  "partition": [
+                    6,
+                    6
+                  ],
+                  "f_lambda": 132,
+                  "mu": "0.00000201097479628998287690366248126769308797571351403668135077359"
+                },
+                {
+                  "partition": [
+                    6,
+                    5,
+                    1
+                  ],
+                  "f_lambda": 1155,
+                  "mu": "0.000294472525264184685586098847177348146510109892289443225769636"
+                },
+                {
+                  "partition": [
+                    6,
+                    4,
+                    2
+                  ],
+                  "f_lambda": 2673,
+                  "mu": "0.00242952326578892273130222025439002495650292410178315504517528"
+                },
+                {
+                  "partition": [
+                    6,
+                    4,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 3080,
+                  "mu": "0.00392138200021491589423896840486210341100745998927343049359399"
+                },
+                {
+                  "partition": [
+                    6,
+                    3,
+                    3
+                  ],
+                  "f_lambda": 1650,
+                  "mu": "0.00114889133014094315500004081478432721444102173795990136129585"
+                },
+                {
+                  "partition": [
+                    6,
+                    3,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 5632,
+                  "mu": "0.0180323496318763505486388261784349748763692262565676384851985"
+                },
+                {
+                  "partition": [
+                    6,
+                    3,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 3696,
+                  "mu": "0.0103533936825041308935353763572995325866313054411163226621985"
+                },
+                {
+                  "partition": [
+                    6,
+                    2,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 1925,
+                  "mu": "0.00286700208700233236756316902792499971308682602711729072288529"
+                },
+                {
+                  "partition": [
+                    6,
+                    2,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 3564,
+                  "mu": "0.0118627704313738816502091045258712734556276023399188923928424"
+                },
+                {
+                  "partition": [
+                    6,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 2100,
+                  "mu": "0.00600050824926860713500286384719477384072313097221145957439951"
+                },
+                {
+                  "partition": [
+                    6,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 462,
+                  "mu": "0.000510592948894504505428208666161041404840559155172397495857047"
+                },
+                {
+                  "partition": [
+                    5,
+                    5,
+                    2
+                  ],
+                  "f_lambda": 1320,
+                  "mu": "0.000750425348313771556568291326178650344602308579773536618036135"
+                },
+                {
+                  "partition": [
+                    5,
+                    5,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1485,
+                  "mu": "0.00115453926609697967681905425072263708678811372608500047360458"
+                },
+                {
+                  "partition": [
+                    5,
+                    4,
+                    3
+                  ],
+                  "f_lambda": 2112,
+                  "mu": "0.00266938809793272134948769329539164484548782360562650350440853"
+                },
+                {
+                  "partition": [
+                    5,
+                    4,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 5775,
+                  "mu": "0.0268842043977274639615898748152678286816025505130731622794754"
+                },
+                {
+                  "partition": [
+                    5,
+                    4,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 3520,
+                  "mu": "0.0133146295240427343129476699939510677586205480603702541609338"
+                },
+                {
+                  "partition": [
+                    5,
+                    3,
+                    3,
+                    1
+                  ],
+                  "f_lambda": 4158,
+                  "mu": "0.0172920564735680165199664145146182532870226720050849646192079"
+                },
+                {
+                  "partition": [
+                    5,
+                    3,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 4455,
+                  "mu": "0.0242912288425888465358062219343095880202967605155853717283759"
+                },
+                {
+                  "partition": [
+                    5,
+                    3,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 7700,
+                  "mu": "0.0875876953349292766855461369355600916794053568995831592825601"
+                },
+                {
+                  "partition": [
+                    5,
+                    3,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 3564,
+                  "mu": "0.0273339829122942414986801895780357727779397050509623934303509"
+                },
+                {
+                  "partition": [
+                    5,
+                    2,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 3520,
+                  "mu": "0.0249009938627601369848682256794556330084395804104647691483585"
+                },
+                {
+                  "partition": [
+                    5,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 3696,
+                  "mu": "0.0362124507052133183732078919500500401738424425367382356259030"
+                },
+                {
+                  "partition": [
+                    5,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1728,
+                  "mu": "0.0125559380023076980867845411250501831227186664323897829441100"
+                },
+                {
+                  "partition": [
+                    5,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 330,
+                  "mu": "0.000873312853379286769378638103079741492041308045607494742019312"
+                },
+                {
+                  "partition": [
+                    4,
+                    4,
+                    4
+                  ],
+                  "f_lambda": 462,
+                  "mu": "0.000179290214472802501640469867830277623371058545974284830603834"
+                },
+                {
+                  "partition": [
+                    4,
+                    4,
+                    3,
+                    1
+                  ],
+                  "f_lambda": 2970,
+                  "mu": "0.0110964178683297256683764079028615350450119616395962141289989"
+                },
+                {
+                  "partition": [
+                    4,
+                    4,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 2640,
+                  "mu": "0.0107283058028457755972759993461735088022153366587599978550559"
+                },
+                {
+                  "partition": [
+                    4,
+                    4,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 4455,
+                  "mu": "0.0368729497636888776115492231956229242503962129233425893533316"
+                },
+                {
+                  "partition": [
+                    4,
+                    4,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1925,
+                  "mu": "0.0100277430696719034727547891932396079266650585525218966586465"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    3,
+                    2
+                  ],
+                  "f_lambda": 2970,
+                  "mu": "0.0168438435645734697654634601162421712445015633991340628236392"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    3,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 4158,
+                  "mu": "0.0398440464562032479239576810138263233380695053956704466024714"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 5775,
+                  "mu": "0.0940312863932474601182793421321077862012679236714560435471549"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 5632,
+                  "mu": "0.117954659887258642311269992395077009349699592061405762687169"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 2079,
+                  "mu": "0.0254916686067218909008666150949258847087193241886121777999296"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    2,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 1485,
+                  "mu": "0.00930466388038813983811757079655297456114316921416712855199587"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    2,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 3080,
+                  "mu": "0.0479721881966872863642685450184860222007030388178142656495346"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 2376,
+                  "mu": "0.0410038197389459198343397766436269958718248433371971695378510"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 945,
+                  "mu": "0.0111628272787403846837019048328975283168536484709897051801495"
+                },
+                {
+                  "partition": [
+                    4,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 165,
+                  "mu": "0.000701632134940709402325864870662462955981520620444434211562907"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "f_lambda": 462,
+                  "mu": "0.000627092743946848714585965183873740417279634305291390706953333"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    3,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 2112,
+                  "mu": "0.0174612167369553741117320373176130403510091333567568587119695"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    3,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1650,
+                  "mu": "0.0140549508066398726930297684020556978921437707413910410564045"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    2,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 1320,
+                  "mu": "0.00918032113038205932357686715069726899203279152675842988996379"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    2,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 2673,
+                  "mu": "0.0451159219203339170556571067885139999966609911227873224820975"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1925,
+                  "mu": "0.0336047075262432055330464713233798574319864151081301808778744"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 616,
+                  "mu": "0.00592140538010723230594904186715598143702158943038975381699788"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    2,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 1155,
+                  "mu": "0.0125999942604697687261384898085254509193271775580038206265649"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1408,
+                  "mu": "0.0244383814070759387563685634492749898421525794845753530274761"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 891,
+                  "mu": "0.0152524661160908332517232448763325010871617505224825471965643"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 320,
+                  "mu": "0.00366096528975117023461322388771278056409712462919667031768704"
+                },
+                {
+                  "partition": [
+                    3,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 55,
+                  "mu": "0.000240247538737666097875425208212626736706263885697992579820412"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 132,
+                  "mu": "0.000300959033189302267186349757430922944131310170256764167106820"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 297,
+                  "mu": "0.00181333810823897827010040013441957884436258848079792408302585"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 275,
+                  "mu": "0.00220200317036537726671724537748481211593983543533840324089421"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 154,
+                  "mu": "0.00116390076463799483344231556803309143972765671573694875459019"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 54,
+                  "mu": "0.000286991004978129397351444045904798825776599929354457156491381"
+                },
+                {
+                  "partition": [
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 11,
+                  "mu": "0.0000284129250320504380890732553460206957879193587577529253979402"
+                },
+                {
+                  "partition": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.000000666515661991254448429104588020148635207209305158707046125554"
+                }
+              ]
+            }
+          },
+          "plancherel": {
+            "weight_family": "quantum_plancherel_self_normalised dim_q^2/D^2",
+            "tr_atom": "-0.0000000109727615347560935365731183565817250972915062215166376901330",
+            "tr_free": "0.00000137196707884443516644109522937457169575998881425917284267946",
+            "delta_tr": "0.00000138293984037919125997766834773115342085728032048068948036959",
+            "B_lin_MeV": "0.00000108192004019447990159888383294498785903794537605607232696641",
+            "B_lin_rel_err_vs_AME": "-0.999999961763749337266622830540845265916522278059644362449255",
+            "trace_vanishes_to_working_precision": false,
+            "B_log_MeV": "20.2123661312954925724111094923521556514705712000161675610872",
+            "B_log_rel_err_vs_AME": "-0.285672629056547813052395285421833572220222305168011420222470",
+            "tl_quotient_signed_fraction_of_delta_tr": "10.3884108083113265576285582891123776522089037853757542233078",
+            "tl_quotient_abs_fraction_of_delta_tr": "0.00352341263372941829356976505262728788096893527851874193622487",
+            "mass_on_tl_quotient": "0.000344171526397850954973797227913140684711932176715252900638273",
+            "per_partition": {
+              "weight_family": "quantum_plancherel_self_normalised dim_q^2/D^2",
+              "rows": [
+                {
+                  "partition": [
+                    12
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.000000000448769263380056448505720535173782034401923124376880165461631"
+                },
+                {
+                  "partition": [
+                    11,
+                    1
+                  ],
+                  "f_lambda": 11,
+                  "mu": "0.0000000824516373143555421159915511914453327163360857765689987898916"
+                },
+                {
+                  "partition": [
+                    10,
+                    2
+                  ],
+                  "f_lambda": 54,
+                  "mu": "0.00000281315586731783534243652910026612948761832737652608259685558"
+                },
+                {
+                  "partition": [
+                    10,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 55,
+                  "mu": "0.00000288466680334664716562670697535757201435757471766782126510813"
+                },
+                {
+                  "partition": [
+                    9,
+                    3
+                  ],
+                  "f_lambda": 154,
+                  "mu": "0.0000302043014207174047474299857680074238613751224849781667373070"
+                },
+                {
+                  "partition": [
+                    9,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 320,
+                  "mu": "0.000129436628053974561199177108070596701096635174234183016818387"
+                },
+                {
+                  "partition": [
+                    9,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 165,
+                  "mu": "0.0000334429495703386003391417673408466985374397770285299997932215"
+                },
+                {
+                  "partition": [
+                    8,
+                    4
+                  ],
+                  "f_lambda": 275,
+                  "mu": "0.000118583430890816658559691282687969900429191922999383442066687"
+                },
+                {
+                  "partition": [
+                    8,
+                    3,
+                    1
+                  ],
+                  "f_lambda": 891,
+                  "mu": "0.00124880618610552938596109940675055520904249937337319814467589"
+                },
+                {
+                  "partition": [
+                    8,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 616,
+                  "mu": "0.000597746265654779863254335990397168921105738408983920415111973"
+                },
+                {
+                  "partition": [
+                    8,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 945,
+                  "mu": "0.00137016193262423426302379549017485243853455912138411820348695"
+                },
+                {
+                  "partition": [
+                    8,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 330,
+                  "mu": "0.000158458566007916249759705002396595701694344799170591096678306"
+                },
+                {
+                  "partition": [
+                    7,
+                    5
+                  ],
+                  "f_lambda": 297,
+                  "mu": "0.000158860158029700318950279920922216196924053690442264460232055"
+                },
+                {
+                  "partition": [
+                    7,
+                    4,
+                    1
+                  ],
+                  "f_lambda": 1408,
+                  "mu": "0.00364465034417597123444023692877317502905887399823924425945355"
+                },
+                {
+                  "partition": [
+                    7,
+                    3,
+                    2
+                  ],
+                  "f_lambda": 1925,
+                  "mu": "0.00689513333954351079570626482443833155638214935234943422919417"
+                },
+                {
+                  "partition": [
+                    7,
+                    3,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 2376,
+                  "mu": "0.0102286437217226010478803770229264074865982443658948890357153"
+                },
+                {
+                  "partition": [
+                    7,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 2079,
+                  "mu": "0.00783805377585745995627805631710792167036516862092882123324491"
+                },
+                {
+                  "partition": [
+                    7,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1728,
+                  "mu": "0.00514776997931112179581777573865559498922731261647339118195300"
+                },
+                {
+                  "partition": [
+                    7,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 462,
+                  "mu": "0.000338080365822620241540200842872958152143223862211148722893204"
+                },
+                {
+                  "partition": [
+                    6,
+                    6
+                  ],
+                  "f_lambda": 132,
+                  "mu": "0.0000336275797827210017753950121629544148949423754031998031264138"
+                },
+                {
+                  "partition": [
+                    6,
+                    5,
+                    1
+                  ],
+                  "f_lambda": 1155,
+                  "mu": "0.00269265444568763854658880922568046237346227281529695652238868"
+                },
+                {
+                  "partition": [
+                    6,
+                    4,
+                    2
+                  ],
+                  "f_lambda": 2673,
+                  "mu": "0.0148519146474606132773912980754256804982681469339579795418281"
+                },
+                {
+                  "partition": [
+                    6,
+                    4,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 3080,
+                  "mu": "0.0191980319583150607024020424386975789904660014143649340502800"
+                },
+                {
+                  "partition": [
+                    6,
+                    3,
+                    3
+                  ],
+                  "f_lambda": 1650,
+                  "mu": "0.00574208817373403955960903748534070687699375990879752895024000"
+                },
+                {
+                  "partition": [
+                    6,
+                    3,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 5632,
+                  "mu": "0.0649189659025800998664047221861343592510511475581959696408909"
+                },
+                {
+                  "partition": [
+                    6,
+                    3,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 3696,
+                  "mu": "0.0265708950232594138371904805397250278525166174513686995409391"
+                },
+                {
+                  "partition": [
+                    6,
+                    2,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 1925,
+                  "mu": "0.00751102491966859692779311366307281012087693981998727067148434"
+                },
+                {
+                  "partition": [
+                    6,
+                    2,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 3564,
+                  "mu": "0.0247140042695759287017583765618584751082059720008456747247574"
+                },
+                {
+                  "partition": [
+                    6,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 2100,
+                  "mu": "0.00790436430548529859373186417151656434409603287124535030751618"
+                },
+                {
+                  "partition": [
+                    6,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 462,
+                  "mu": "0.000338080365822620241540200842872958152143223862211148722893204"
+                },
+                {
+                  "partition": [
+                    5,
+                    5,
+                    2
+                  ],
+                  "f_lambda": 1320,
+                  "mu": "0.00382778000752836907538271519536752644749301433949389631470879"
+                },
+                {
+                  "partition": [
+                    5,
+                    5,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1485,
+                  "mu": "0.00471613201580707089796157928762035867698392097435648333506455"
+                },
+                {
+                  "partition": [
+                    5,
+                    4,
+                    3
+                  ],
+                  "f_lambda": 2112,
+                  "mu": "0.0101164434583447648883813678605281731704035708574568503025330"
+                },
+                {
+                  "partition": [
+                    5,
+                    4,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 5775,
+                  "mu": "0.0733829307507738392103537432994854502928458774207600487051432"
+                },
+                {
+                  "partition": [
+                    5,
+                    4,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 3520,
+                  "mu": "0.0259053762650284325986125551334270694905515552083446187507433"
+                },
+                {
+                  "partition": [
+                    5,
+                    3,
+                    3,
+                    1
+                  ],
+                  "f_lambda": 4158,
+                  "mu": "0.0385807420541993004717267810555107965924405106119673480109070"
+                },
+                {
+                  "partition": [
+                    5,
+                    3,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 4455,
+                  "mu": "0.0436909425477879313552624934157386303807184019853997656085862"
+                },
+                {
+                  "partition": [
+                    5,
+                    3,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 7700,
+                  "mu": "0.125266288877391285576426214834789868404293712938348734268016"
+                },
+                {
+                  "partition": [
+                    5,
+                    3,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 3564,
+                  "mu": "0.0247140042695759287017583765618584751082059720008456747247574"
+                },
+                {
+                  "partition": [
+                    5,
+                    2,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 3520,
+                  "mu": "0.0259053762650284325986125551334270694905515552083446187507433"
+                },
+                {
+                  "partition": [
+                    5,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 3696,
+                  "mu": "0.0265708950232594138371904805397250278525166174513686995409391"
+                },
+                {
+                  "partition": [
+                    5,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1728,
+                  "mu": "0.00514776997931112179581777573865559498922731261647339118195300"
+                },
+                {
+                  "partition": [
+                    5,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 330,
+                  "mu": "0.000158458566007916249759705002396595701694344799170591096678306"
+                },
+                {
+                  "partition": [
+                    4,
+                    4,
+                    4
+                  ],
+                  "f_lambda": 462,
+                  "mu": "0.000509957372429501691084606564171705353279567400423635671664075"
+                },
+                {
+                  "partition": [
+                    4,
+                    4,
+                    3,
+                    1
+                  ],
+                  "f_lambda": 2970,
+                  "mu": "0.0205135378560207603814662845403821337394468438074738287575346"
+                },
+                {
+                  "partition": [
+                    4,
+                    4,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 2640,
+                  "mu": "0.0159876229854181806564227271877726711985770547300141567032363"
+                },
+                {
+                  "partition": [
+                    4,
+                    4,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 4455,
+                  "mu": "0.0436909425477879313552624934157386303807184019853997656085862"
+                },
+                {
+                  "partition": [
+                    4,
+                    4,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1925,
+                  "mu": "0.00751102491966859692779311366307281012087693981998727067148434"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    3,
+                    2
+                  ],
+                  "f_lambda": 2970,
+                  "mu": "0.0205135378560207603814662845403821337394468438074738287575346"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    3,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 4158,
+                  "mu": "0.0385807420541993004717267810555107965924405106119673480109070"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 5775,
+                  "mu": "0.0733829307507738392103537432994854502928458774207600487051432"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 5632,
+                  "mu": "0.0649189659025800998664047221861343592510511475581959696408909"
+                },
+                {
+                  "partition": [
+                    4,
+                    3,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 2079,
+                  "mu": "0.00783805377585745995627805631710792167036516862092882123324491"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    2,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 1485,
+                  "mu": "0.00471613201580707089796157928762035867698392097435648333506455"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    2,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 3080,
+                  "mu": "0.0191980319583150607024020424386975789904660014143649340502800"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 2376,
+                  "mu": "0.0102286437217226010478803770229264074865982443658948890357153"
+                },
+                {
+                  "partition": [
+                    4,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 945,
+                  "mu": "0.00137016193262423426302379549017485243853455912138411820348695"
+                },
+                {
+                  "partition": [
+                    4,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 165,
+                  "mu": "0.0000334429495703386003391417673408466985374397770285299997932215"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "f_lambda": 462,
+                  "mu": "0.000509957372429501691084606564171705353279567400423635671664075"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    3,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 2112,
+                  "mu": "0.0101164434583447648883813678605281731704035708574568503025330"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    3,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1650,
+                  "mu": "0.00574208817373403955960903748534070687699375990879752895024000"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    2,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 1320,
+                  "mu": "0.00382778000752836907538271519536752644749301433949389631470879"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    2,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 2673,
+                  "mu": "0.0148519146474606132773912980754256804982681469339579795418281"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1925,
+                  "mu": "0.00689513333954351079570626482443833155638214935234943422919417"
+                },
+                {
+                  "partition": [
+                    3,
+                    3,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 616,
+                  "mu": "0.000597746265654779863254335990397168921105738408983920415111973"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    2,
+                    2,
+                    2,
+                    1
+                  ],
+                  "f_lambda": 1155,
+                  "mu": "0.00269265444568763854658880922568046237346227281529695652238868"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1408,
+                  "mu": "0.00364465034417597123444023692877317502905887399823924425945355"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 891,
+                  "mu": "0.00124880618610552938596109940675055520904249937337319814467589"
+                },
+                {
+                  "partition": [
+                    3,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 320,
+                  "mu": "0.000129436628053974561199177108070596701096635174234183016818387"
+                },
+                {
+                  "partition": [
+                    3,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 55,
+                  "mu": "0.00000288466680334664716562670697535757201435757471766782126510813"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
+                  ],
+                  "f_lambda": 132,
+                  "mu": "0.0000336275797827210017753950121629544148949423754031998031264138"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 297,
+                  "mu": "0.000158860158029700318950279920922216196924053690442264460232055"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 275,
+                  "mu": "0.000118583430890816658559691282687969900429191922999383442066687"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 154,
+                  "mu": "0.0000302043014207174047474299857680074238613751224849781667373070"
+                },
+                {
+                  "partition": [
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 54,
+                  "mu": "0.00000281315586731783534243652910026612948761832737652608259685558"
+                },
+                {
+                  "partition": [
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 11,
+                  "mu": "0.0000000824516373143555421159915511914453327163360857765689987898916"
+                },
+                {
+                  "partition": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "f_lambda": 1,
+                  "mu": "0.000000000448769263380056448505720535173782034401923124376880165461631"
+                }
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "checks": [
+      {
+        "name": "D: every arm is a probability measure (|Σ mu − 1| < 1e-45)",
+        "passed": true,
+        "detail": "control_D=-1.34e-51 molien=8.02e-51 plancherel=0.0"
+      },
+      {
+        "name": "D: control arm reproduces binding_canonical Δtr (< 1e-40)",
+        "passed": true,
+        "detail": "gap=3.32e-53"
+      },
+      {
+        "name": "T: every arm is a probability measure (|Σ mu − 1| < 1e-45)",
+        "passed": true,
+        "detail": "control_D=6.2e-51 molien=9.06e-71 plancherel=0.0"
+      },
+      {
+        "name": "T: control arm reproduces binding_canonical Δtr (< 1e-40)",
+        "passed": true,
+        "detail": "gap=3.53e-52"
+      },
+      {
+        "name": "3He: every arm is a probability measure (|Σ mu − 1| < 1e-45)",
+        "passed": true,
+        "detail": "control_D=6.2e-51 molien=9.06e-71 plancherel=0.0"
+      },
+      {
+        "name": "3He: control arm reproduces binding_canonical Δtr (< 1e-40)",
+        "passed": true,
+        "detail": "gap=9.23e-52"
+      },
+      {
+        "name": "4He: every arm is a probability measure (|Σ mu − 1| < 1e-45)",
+        "passed": true,
+        "detail": "control_D=1.04e-50 molien=1.09e-70 plancherel=0.0"
+      },
+      {
+        "name": "4He: control arm reproduces binding_canonical Δtr (< 1e-40)",
+        "passed": true,
+        "detail": "gap=4.94e-52"
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

@@ -520,3 +520,14 @@ TRAPs.
   * **`_cached_seminormal` writes DENSE npz to computations/.cache — n=12 (⁴He) filled 16 GB
     and bricked the shell (ENOSPC).** Delete `find computations/.cache -mmin -N`. Under
     QOU_H3A_MPF=1 n=12 crashes earlier (scipy.sparse rejects dtype object).
+- 2026-10-10 (qou-zf9n regen + T5 two-arm). Two TRAPs worth carrying:
+  * **A "stale witness" can be a stale CONSUMER of a current upstream.** Both
+    rho-w-crystal-vertex-trace and delta-lambda-canonical-residual were grouped-era; their
+    upstreams (chi-deuteron-h6 cache, binding-canonical) were ALREADY borromean (2026-09-06)
+    and reproduce live to ~1e-51. Fix = rerun the consumer + make it name intra_order and
+    refuse on upstream mismatch; do not touch the upstream. Check upstream-vs-live FIRST.
+  * **The owner's shorthand for the Molien weight omits q^{-κ_λ}.** `molienSum_eq_qFactorial`
+    sums f·q^{-κ}·dim_q (balanced); untwisted f·dim_q/[n]_q! sums to 0.922/0.824/0.703 at
+    n=6/9/12. Let the Lean artifact decide and report the untwisted total beside it.
+  Gate notes: delta-lambda raw-float64 40→28 (display-rounded numeric fields kept for
+  6 consumers; full drain needs consumer migration = owner call).

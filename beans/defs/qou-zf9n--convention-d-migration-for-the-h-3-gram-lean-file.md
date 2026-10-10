@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T19:27:04Z
-updated_at: 2026-10-10T07:09:02Z
+updated_at: 2026-10-10T07:44:03Z
 parent: qou-slz5
 ---
 
@@ -495,3 +495,11 @@ Re-homed under thread qou-slz5. Previous parent: qou-cdx1.
 
 ## 2026-10-10 — clean rerun (session_01ST9RpvTF7JHNdUNafrjf9J)
 TL support (y_λ=0 for ≥3-row λ at N=2) SURVIVES (exact Schur vanishing; agreement 3.2e-51). Its quantitative companions are GROUPED-WORD ARTIFACTS: on borromean words (D weights, 70 dps) total −0.717445 → +0.531580 (sign flip), cancellation 3.4352× → 1.2031× (the probe's '>3' check would FAIL), capture 16.480% → 12.211%. The 10A−5 near-match is also an artifact: delta-lambda-canonical-residual.witness.json (2026-08-24) is a stale consumer of grouped B_pred; borromean log_q₀ Δ_λ = D 28.388, T 43.745, ³He 41.522, ⁴He 58.817 vs 10A−5 (deviations +13..+24). Committed witnesses NOT regenerated (owner-gated).
+
+
+## 2026-10-10 — witnesses regenerated on interleaved words (owner-approved, session_01ST9RpvTF7JHNdUNafrjf9J)
+Both were stale CONSUMERS of grouped-era data (upstream chi-deuteron-h6 and binding-canonical witnesses are already borromean, 2026-09-06). Producers now name intra_order='borromean' and refuse to run on input disagreement (>1e-40).
+- rho-w-crystal-vertex-trace: total −0.717445 → +0.531580; B_pred 0.36661 → 0.27164 MeV; capture 16.480% → 12.211%; cancellation 3.44× → 1.203×; predicted residual now OPPOSITE sign to target. does_not_close.
+- delta-lambda-canonical-residual: 10A−5 near-match REFUTED on the canonical word. log_q0 Δ: D 28.388 (vs 15), T 43.745, ³He 41.522, ⁴He 58.817, ⁶Li 70.580, ⁷Li 79.488, ⁷Be 76.448. Assertions deuteron_exponent_matches_15 (13.388 vs tol 0.05) and N_ge_Z_family_within_half_unit (23.817 vs 0.5) FAIL — tolerances left unchanged.
+- NOT done: delta_lambda_closure_tl_support_probe not rerun (writes its own witness; its '>3' check would see 1.2031 and FAIL; docstring still quotes 16.48%/3.44×/0.7174).
+- Lean/content still asserting the 10A−5 law (not edited): notation-collisions.md:135; Mass/BindingResidualExponent.lean; BraidKnot/DeltaLambdaExponentKeystone.lean; BraidKnot/DeltaLambdaIMME.lean:12; QBeta/QLommelOrderRecurrence.lean:80-103; BraidsAndKnots/KeystoneFiveFoldStructure.lean:31.

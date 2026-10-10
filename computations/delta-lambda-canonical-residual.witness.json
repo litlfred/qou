@@ -1,32 +1,32 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T17:43:52.248912+00:00",
-  "commitSha": "d587b446c4a907c32b0ce7c8858ef84fd09b0df6",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-10T07:27:34.201914+00:00",
+  "commitSha": "873b47aaf55b4b7eb7613f0a5dfe8234bb5584c0",
   "assertions": [
     {
       "name": "deuteron_exponent_matches_15",
-      "computed": 0.6319999999999997,
-      "expected": 0.0,
+      "computed": "13.3881633293009957350723281717749838375392454734151587387542",
+      "expected": "0",
       "passed": false,
       "tolerance": "0.05",
       "source": "log_q0(B_AME/B_pred) for the deuteron vs 10·2−5 = 15"
     },
     {
       "name": "N_ge_Z_family_within_half_unit",
-      "computed": 30.794,
-      "expected": 0.0,
+      "computed": "23.8171073431317612850347069602801202262021720725114115169737",
+      "expected": "0",
       "passed": false,
       "tolerance": "0.5",
       "source": "max |log_q0 Δ_λ − (10A−5)| over D, T, ⁴He"
     }
   ],
   "allPassed": false,
-  "durationMs": 8,
+  "durationMs": 90023,
   "computation": "delta-lambda-canonical-residual",
   "scriptFile": "delta_lambda_canonical_residual.py",
-  "scriptHash": "a95bac7baf8c",
-  "scriptCommitSha": "d587b446c4a907c32b0ce7c8858ef84fd09b0df6",
+  "scriptHash": "c3d60fa3e0f1",
+  "scriptCommitSha": "16ca52cc51c47489866e36bc4172cbfb0b2a93f3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +34,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "cd378682bfd642d0"
   },
   "invocation": {
     "argv": [
@@ -49,13 +49,15 @@
     ],
     "reproduce": "python3 -u computations/delta_lambda_canonical_residual.py"
   },
-  "description": "Canonical-binding residual Δ_λ(K)=B_AME/B_pred on the Jones–Markov trace-canonical path (binding_canonical.py, per the trace-convention reconciliation). NEAR-MATCH TIER observation: log_q0 Δ_λ ≈ 10A−5 (D exact to 0.01; T −0.07; ⁴He +0.27; ³He −1.40 Z-dependent). NOT wired; the open question is a categorical derivation of 10A−5.",
+  "description": "Canonical-binding residual Δ_λ(K)=B_AME/B_pred on the Jones–Markov trace-canonical path (binding_canonical.py), evaluated LIVE on the BORROMEAN (interleaved) atom word. The former NEAR-MATCH 'log_q0 Δ_λ ≈ 10A−5' was read off the pre-2026-09-05 GROUPED word and does NOT survive the canonical word: see the assertions and law.deviations. NOT wired; nothing here feeds production.",
   "data": {
-    "q0": 1.1099785827513808,
+    "q0": "1.10997858275138080759166909561076887987449912187357873607281",
     "q0_exact": "1.10997858275138080759166909561076887987449912187357873607281",
-    "precision_note": "Computed in mpmath end to end. The rounded row fields are retained byte-identical for existing consumers; *_exact carry full precision. Upstream binding-canonical.witness.json stores B_MeV as float64, so even the exact fields are bounded at ~1e-16 relative by their inputs.",
+    "intra_order": "borromean",
+    "upstream_delta_tr_max_abs_gap": "0.0",
+    "precision_note": "Computed in mpmath end to end; B_pred is computed live (mpf, 50-dps Delta_tr) rather than read from binding-canonical.witness.json's float64 B_MeV, which is used only as a cross-check of Delta_tr. The rounded row fields are display values kept numeric for consumers; *_exact carry the arithmetic. Measurement precision is bounded by Q_beta(n) (11 sig figs) and AME2020 (8 sig figs), not by the arithmetic.",
     "trace_convention": "Jones–Markov (markov/markov_trace_canonical.tr_M_element; prop:categorical-mass-markov)",
-    "binding_path": "B_pred = E_0 · (tr_M(W_free) − tr_M(W_atom)) — binding_canonical.py",
+    "binding_path": "B_pred = Q_β(n) · (tr_M(W_free) − tr_M(W_atom)) — binding_canonical.py (the parameter was once misnamed E_0; see that file's docstring)",
     "rows": [
       {
         "atom": "D",
@@ -63,14 +65,15 @@
         "N": 1,
         "A": 2,
         "B_AME_MeV": 2.2245662,
-        "B_pred_canonical_MeV": 0.43540348160742937,
-        "Delta_lambda": 5.1092,
-        "log_q0_Delta": 15.632,
+        "B_pred_canonical_MeV": "0.115039528912122663024828831045626802098514394279728594797193",
+        "delta_tr_exact": "0.147046677980408469109494729019917691003708509741760095881391",
+        "Delta_lambda": 19.3374,
+        "log_q0_Delta": 28.388,
         "law_10A_minus_5": 15,
-        "deviation_from_law": 0.632,
-        "Delta_lambda_exact": "5.10920627411455640547473641992544452240755463042342605341117",
-        "log_q0_Delta_exact": "15.6319034332363372027056160423050834939173702477354175597739",
-        "deviation_from_law_exact": "0.631903433236337202705616042305083493917370247735417559773882"
+        "deviation_from_law": 13.388,
+        "Delta_lambda_exact": "19.3374070724795808016073008666305528045833229615981330615355",
+        "log_q0_Delta_exact": "28.3881633293009957350723281717749838375392454734151587387542",
+        "deviation_from_law_exact": "13.3881633293009957350723281717749838375392454734151587387542"
       },
       {
         "atom": "T",
@@ -78,14 +81,15 @@
         "N": 2,
         "A": 3,
         "B_AME_MeV": 8.4817962,
-        "B_pred_canonical_MeV": 0.6951314974320997,
-        "Delta_lambda": 12.2017,
-        "log_q0_Delta": 23.975,
+        "B_pred_canonical_MeV": "0.0883473585405850842477014010846301163730106763400826047131840",
+        "delta_tr_exact": "0.112928014436332732113244385463186012141049970903589947522351",
+        "Delta_lambda": 96.0051,
+        "log_q0_Delta": 43.745,
         "law_10A_minus_5": 25,
-        "deviation_from_law": -1.025,
-        "Delta_lambda_exact": "12.2017146846787791940101153464234226202025240885283542289325",
-        "log_q0_Delta_exact": "23.9750739895916266863233453354924864443977277235554396042171",
-        "deviation_from_law_exact": "-1.02492601040837331367665466450751355560227227644456039578290"
+        "deviation_from_law": 18.745,
+        "Delta_lambda_exact": "96.0050910418971416316466487810649142789078646480309230668472",
+        "log_q0_Delta_exact": "43.7451572863471069094546611757190939983992295800245442155851",
+        "deviation_from_law_exact": "18.7451572863471069094546611757190939983992295800245442155851"
       },
       {
         "atom": "3He",
@@ -93,14 +97,15 @@
         "N": 1,
         "A": 3,
         "B_AME_MeV": 7.71804132,
-        "B_pred_canonical_MeV": 0.6985522099896627,
-        "Delta_lambda": 11.0486,
-        "log_q0_Delta": 23.024,
+        "B_pred_canonical_MeV": "0.101376632442850661325095734411057561661729986293355587712288",
+        "delta_tr_exact": "0.129582389345052399044522321693736643089815466305249987217015",
+        "Delta_lambda": 76.1324,
+        "log_q0_Delta": 41.522,
         "law_10A_minus_5": 25,
-        "deviation_from_law": -1.976,
-        "Delta_lambda_exact": "11.0486248695916557902872139269317264296205881814058206275056",
-        "log_q0_Delta_exact": "23.0236667589832711364806383590189639683187461730080070656859",
-        "deviation_from_law_exact": "-1.97633324101672886351936164098103603168125382699199293431412"
+        "deviation_from_law": 16.522,
+        "Delta_lambda_exact": "76.1323505626497653334599544792300548115989024481277121146696",
+        "log_q0_Delta_exact": "41.5223631504228878927328846037206255173738207989183370361028",
+        "deviation_from_law_exact": "16.5223631504228878927328846037206255173738207989183370361028"
       },
       {
         "atom": "4He",
@@ -108,14 +113,15 @@
         "N": 2,
         "A": 4,
         "B_AME_MeV": 28.2956624,
-        "B_pred_canonical_MeV": 0.8760639975073875,
-        "Delta_lambda": 32.2986,
-        "log_q0_Delta": 33.305,
+        "B_pred_canonical_MeV": "0.0611570076028097430999142141832094434158174186544765181516994",
+        "delta_tr_exact": "0.0781725628421631788178480164454750497785786791359140368624709",
+        "Delta_lambda": 462.6724,
+        "log_q0_Delta": 58.817,
         "law_10A_minus_5": 35,
-        "deviation_from_law": -1.695,
-        "Delta_lambda_exact": "32.2986248499058927586181513151905416672016930742934079909084",
-        "log_q0_Delta_exact": "33.3045875510013221236310742323210728951099965231184011549817",
-        "deviation_from_law_exact": "-1.69541244899867787636892576767892710489000347688159884501829"
+        "deviation_from_law": 23.817,
+        "Delta_lambda_exact": "462.672447673846116738844340658378199535589692710021613728648",
+        "log_q0_Delta_exact": "58.8171073431317612850347069602801202262021720725114115169737",
+        "deviation_from_law_exact": "23.8171073431317612850347069602801202262021720725114115169737"
       },
       {
         "atom": "6Li",
@@ -123,14 +129,15 @@
         "N": 3,
         "A": 6,
         "B_AME_MeV": 31.9939872,
-        "B_pred_canonical_MeV": 1.0987340092144056,
-        "Delta_lambda": 29.119,
-        "log_q0_Delta": 32.311,
+        "B_pred_canonical_MeV": "0.0202655389909509814288057205663940327865288022566666145699608",
+        "delta_tr_exact": "0.0259039672213726866292887508672335377891121169568279942336804",
+        "Delta_lambda": 1578.7385,
+        "log_q0_Delta": 70.58,
         "law_10A_minus_5": 55,
-        "deviation_from_law": -22.689,
-        "Delta_lambda_exact": "29.1189559362740475443948882734688221913352580103611311854221",
-        "log_q0_Delta_exact": "32.3113484220242287862301025530857323536042417048298771901584",
-        "deviation_from_law_exact": "-22.6886515779757712137698974469142676463957582951701228098416"
+        "deviation_from_law": 15.58,
+        "Delta_lambda_exact": "1578.73852821215533723784585752567503080732694139860525103272",
+        "log_q0_Delta_exact": "70.5801281102204473410474064514041776806955428434069748175278",
+        "deviation_from_law_exact": "15.5801281102204473410474064514041776806955428434069748175278"
       },
       {
         "atom": "7Li",
@@ -138,14 +145,15 @@
         "N": 4,
         "A": 7,
         "B_AME_MeV": 39.2450807,
-        "B_pred_canonical_MeV": 1.106029521579684,
-        "Delta_lambda": 35.4829,
-        "log_q0_Delta": 34.206,
+        "B_pred_canonical_MeV": "0.00981304329966543082658536641660592156457575939839664802192443",
+        "delta_tr_exact": "0.0125433008265878717833755788943425936541201135967589965531710",
+        "Delta_lambda": 3999.2772,
+        "log_q0_Delta": 79.488,
         "law_10A_minus_5": 65,
-        "deviation_from_law": -30.794,
-        "Delta_lambda_exact": "35.4828509857027215905604236918894783754969408428461208717191",
-        "log_q0_Delta_exact": "34.2057204321610849852655905298285598360620330600321680478735",
-        "deviation_from_law_exact": "-30.7942795678389150147344094701714401639379669399678319521265"
+        "deviation_from_law": 14.488,
+        "Delta_lambda_exact": "3999.27723760660822516109778759891393815297911873698791666428",
+        "log_q0_Delta_exact": "79.4883235210481245230355335763342097497799661217441380464456",
+        "deviation_from_law_exact": "14.4883235210481245230355335763342097497799661217441380464456"
       },
       {
         "atom": "7Be",
@@ -153,23 +161,24 @@
         "N": 3,
         "A": 7,
         "B_AME_MeV": 37.6008409,
-        "B_pred_canonical_MeV": 1.2745260017757178,
-        "Delta_lambda": 29.5018,
-        "log_q0_Delta": 32.437,
+        "B_pred_canonical_MeV": "0.0129121357690864292636799022421025769203659562870760684966087",
+        "delta_tr_exact": "0.0165046457372626267135786961654518592968281122007650051490948",
+        "Delta_lambda": 2912.0543,
+        "log_q0_Delta": 76.448,
         "law_10A_minus_5": 65,
-        "deviation_from_law": -32.563,
-        "Delta_lambda_exact": "29.5018233034187511495760170682492189557577068370230403164129",
-        "log_q0_Delta_exact": "32.4365411506385019019784268906436283351021238417873801792020",
-        "deviation_from_law_exact": "-32.5634588493614980980215731093563716648978761582126198207980"
+        "deviation_from_law": 11.448,
+        "Delta_lambda_exact": "2912.05433186522074652613725054657539471147284238743314191632",
+        "log_q0_Delta_exact": "76.4477573342096785569031616983729954558169366610981621536766",
+        "deviation_from_law_exact": "11.4477573342096785569031616983729954558169366610981621536766"
       }
     ],
     "law": {
       "candidate": "Delta_lambda(K) ≈ q0^(10A−5)",
       "equivalently": "B_AME ≈ B_canonical · q0^(5(2A−1))",
       "tier": "near-match (c_k tiering discipline) — observation, NOT wired",
-      "max_abs_deviation_all": 32.563,
-      "max_abs_deviation_N_ge_Z": 30.794,
-      "z_dependence_note": "³He (Z>N) deviates −1.40; the N≥Z isotopes (D, T, ⁴He) sit within 0.27 of the integer law."
+      "max_abs_deviation_all": "23.8171073431317612850347069602801202262021720725114115169737",
+      "max_abs_deviation_D_T_4He": "23.8171073431317612850347069602801202262021720725114115169737",
+      "status": "REFUTED on the canonical (borromean) word — the near-match was a property of the retired grouped word. The assertions below are left at their original tolerances and FAIL; they are not widened."
     }
   },
   "q0Anchor": "proton",
