@@ -379,6 +379,69 @@ three quarters of an hour even memoised.
 - **G1 itself is untouched** (`qou-o7c0`): still neither proved nor refuted. It has not become
   more necessary — the bypass is a magnitude short, not wrong.
 
+## 2026-10-10 — the `pe = 8` padding lead: CONFIRMED in mechanism, worth only 12.3 % of the gap
+
+Cheap falsifiable check on the hypothesis recorded above, done in exact arithmetic (`Decimal`,
+prec 40) over R5's own committed figures — **no probe run**, so it costs nothing and is
+reproducible from this bean alone.
+
+| `pe` | ascent `G_λ(w)` | all-`T` certified bound | bound − ascent |
+|---:|---|---|---|
+| 0 | 1.53872109027161153 | 2.15980237611828596 | 0.62108128584667443 |
+| 6 | 3.27708095409687544 | 3.27708095412283411 | 2.595867e-11 |
+| 7 | 3.27708095409687544 | 3.27708095412057675 | 2.370131e-11 |
+| 8 | 3.27705877732425894 | 3.37712160481715115 | **0.10006282749289221** |
+
+### 1. The hypothesis is CONFIRMED — the `pe = 8` excess IS the padded charge
+
+`bound − ascent` at `pe = 8` is `0.10006282749289221`, which matches the reported padded charge
+`0.100063` to every digit the report carries. So the `pe = 8` frame's bound is exactly its own
+ascent value plus the charge the padded tail contributes, and nothing else. The mechanism is
+settled: a tighter padding argument at that one frame would remove precisely that much.
+
+### 2. 🛑 And it REFUTES my own claim that this would "recover most of the overshoot"
+
+The sentence recorded above — *"a tighter padding argument at that one frame recovers most of
+it"* — is **wrong**, and this is the correction. Removing the padded charge entirely gives
+
+```
+B_allT - charge = 3.27705877732425894  =  1.5172957 x the enumerated Xbot max
+required for cut <= 32                 =  1.1873125 x
+required for cut <= 27 (G1 parity)     =  1.0665359 x
+```
+
+The overshoot against the `cut <= 32` target is `0.81276114192317038`. The padded charge is
+**12.31 %** of it. Killing the charge outright still leaves **0.71269831443027817** short of
+`cut <= 32`, and `0.97355193682001049` short of G1 parity. **The padding is not the obstruction.**
+
+**The live obstruction is the relaxation's own integrality gap**, after the `u_j^2 >= u_j`
+tightening at `lam = 0.010434072` has already been applied: `1.5173x` against a required
+`1.1873x`. That is where A1 has to find its 24 %, and it is a statement about the concave
+relaxation itself, not about the certificate's bookkeeping at the padded tail.
+
+### 3. The `PEMAX` worry is WEAKENED, not confirmed
+
+The note above says *"if the bound keeps rising, 1.5636x is itself a lower bound"* — read off the
+**bound** column, which does rise at `pe = 8`. Read off the **ascent** column instead and the
+picture inverts: `pe = 6` and `pe = 7` agree to 18 digits, and `pe = 8` is *marginally lower*
+(`3.27705877732425894` vs `3.27708095409687544`, down 2.22e-8). So the relaxed supremum has
+**saturated** by `pe ~ 6`; only the certificate's slack grows at `pe = 8`.
+
+That does not make `PEMAX` safe — a saturated ascent over three frames is not a proof of
+saturation, and the whole point of the `pe` scan is that the ascent is where the mathematics
+lives. But the specific reason for alarm I gave (a rising bound at the last scanned frame) is an
+artifact of the charge, and `PEMAX` drops below the integrality gap in priority.
+
+### 4. Why `pe = 0`'s gap is large and uninteresting
+
+`0.62108` at `pe = 0` is **not** charge: it is the certificate reporting against
+`max(integer incumbent 2.1598, G_λ(w) = 1.5387)`, i.e. the incumbent dominating a weak ascent
+point. It says nothing about padding or about the relaxation's tightness.
+
+**Next on A1**, re-ordered by this finding: the relaxation's integrality gap (the 24 %), not the
+padding and not `PEMAX`. The keyed checkpoint + `xrun` memoisation remain needed to run anything
+end-to-end, but they are infrastructure, not the front.
+
 ## 2026-10-10 (afternoon) — integer hi_j floor, checkpoint, and the Murota lead CHECKED
 
 **Integer box (`hi_j` floor), scope (a) negative.** Rounding the per-row confinement box to
