@@ -58,9 +58,25 @@ A handful of common letters carry overloaded meanings in the literature. We enfo
       (`computations/eigenvalue_reeb_extension_h4_h5.py`,
       `atom-word-braid-letter-census.witness.json`). The corpus *asserts* the
       first two are equal — [thurston-relaxation](#sec:thurston-relaxation)
-      calls it the "GB-PL bijection" — but the carrier it names for that,
-      `prop:jet-gb-pl-correspondence`, has **no file in the tree**, so the
-      identification is currently unsupported rather than merely unproved.
+      calls it the "GB-PL bijection" — and names **no carrier at all** for it:
+      that parenthetical is bare prose, with no label and no link of its own, so
+      the assertion cannot be reached by grepping for any block. **Scoped on an
+      owner ruling, 2026-10-10:** that line now says the identification is
+      asserted rather than established and carries the tier of
+      `conj:algebraic-geometric-dilog-equivalence`, whose clause (1) rests on it.
+      Read the link that now appears there carefully — it points at the
+      conjecture that *depends* on the identification, not at a carrier *for* it,
+      so the absence this entry records is unchanged. The label the
+      dated audits record for it, `prop:jet-gb-pl-correspondence`, resolves to
+      **no file in the tree** (and to no witness: the
+      `jet-gb-pl-correspondence.witness.json` that
+      `docs/audits/2026-05-18-compute-integration-sweep.md` lists is absent
+      too); both audits place it at
+      `content/quantum-observable-universe/descartes-universe/`, a directory
+      that no longer exists. So the identification is currently unsupported
+      rather than merely unproved — the ruling scoped how it is *stated*, and
+      decided no mathematics — and this entry is the only live site that names
+      the label, which it does solely to record the absence.
       Never write a bare $n$ in this arc.
 
     - **tower depth** $N$ — the brane-tower truncation index, as in $\mathfrak{E}_0^{(N)}$ and $N_v = 120\,q_0^{90}$. This is the one sense the register already carried, inside the energy row of the fraktur table, where nothing marked it as a claim on the word.

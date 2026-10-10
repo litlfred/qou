@@ -4,7 +4,7 @@
 ## Why
 
 `scripts/lean-content-sweep.sh` covers content-block `.lean` siblings.  It does
-NOT cover the package's own library tree (`content/*/lean/QOU/**`), and that
+NOT cover the package's own library tree (`folio/*/lean/QOU/**`), and that
 population has the same exposure: a module verified `lean`-direct against the
 restored olean snapshot is verified against a *snapshot*, so a dependency whose
 source moved afterwards leaves it green and broken at once.
@@ -83,13 +83,13 @@ LIB = "QOU"
 def packages() -> list[tuple[pathlib.Path, str]]:
     """Every paper package: (lean dir, library name).
 
-    Discovered, not hardcoded — a package is a `content/*/lean/` holding a
+    Discovered, not hardcoded — a package is a `folio/*/lean/` holding a
     lakefile and a top-level `<Lib>.lean` root module whose stem names the
     library (`QOU`, `UGB`, `Fred2005`).  Sweeping only the first of the three
     was the gap this closes: UGB and Fred2005 were covered by nothing.
     """
     out = []
-    for lakefile in sorted(ROOT.glob("content/*/lean/lakefile.toml")):
+    for lakefile in sorted(ROOT.glob("folio/*/lean/lakefile.toml")):
         d = lakefile.parent
         for root_mod in sorted(d.glob("*.lean")):
             if (d / root_mod.stem).is_dir():
@@ -367,7 +367,7 @@ def main() -> int:
             sys.exit(f"unknown package(s): {', '.join(sorted(missing))}; "
                      f"have {', '.join(l for _, l in packages())}")
     if not todo_pkgs:
-        sys.exit("no paper packages discovered under content/*/lean/")
+        sys.exit("no paper packages discovered under folio/*/lean/")
 
     rc = 0
     for i, (pkg_dir, lib) in enumerate(todo_pkgs):
@@ -557,7 +557,7 @@ def sweep_one(args) -> int:
                 print(f"refreshing reused shadow: linked {added} file(s) "
                       f"the real tree gained since it was built")
 
-        siblings = [str(p) for p in ROOT.glob("content/*/lean/.lake/build/lib/lean")
+        siblings = [str(p) for p in ROOT.glob("folio/*/lean/.lake/build/lib/lean")
                     if p != oleans]
         # Dependency olean roots, in the order Lean should search them.
         #
@@ -576,7 +576,7 @@ def sweep_one(args) -> int:
         # 6990-olean SUPERSET of the paper tree with both files byte-identical,
         # and the same code was fine.  Globbing the root alone therefore makes
         # this gate correct by luck of environment.  Bean `qou-tpdg`.
-        pkg_roots = ([str(p) for p in ROOT.glob("content/*/lean/.lake/packages/*/.lake/build/lib/lean")]
+        pkg_roots = ([str(p) for p in ROOT.glob("folio/*/lean/.lake/packages/*/.lake/build/lib/lean")]
                      + [str(p) for p in ROOT.glob(".lake/packages/*/.lake/build/lib/lean")])
         lean_path = ":".join([str(shadow)] + pkg_roots + siblings + [str(oleans)])
 

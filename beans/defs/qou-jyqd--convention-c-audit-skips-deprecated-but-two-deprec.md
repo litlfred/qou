@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T19:36:56Z
-updated_at: 2026-10-04T15:12:13Z
+updated_at: 2026-10-10T07:47:08Z
 parent: qou-cdx1
 ---
 
@@ -127,3 +127,14 @@ while its numbers are already written into a block.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+Two deprecated producers still named by content, while the producer audit
+skips `_deprecated/` by design. Live: deprecating a producer removes it from
+the audit's view without removing its influence on published numbers.
+`scripts/convention-c-deprecated-citation-audit.py` exists for exactly this
+and is not in the actionable count.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

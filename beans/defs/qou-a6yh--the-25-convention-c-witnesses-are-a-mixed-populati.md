@@ -1,13 +1,13 @@
 ---
 # qou-a6yh
 title: 'The 25 convention-C witnesses are a mixed population: 7 real weights, 4 audit mentions, 14 needing judgement'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T05:02:08Z
-updated_at: 2026-10-04T15:24:51Z
+updated_at: 2026-10-10T07:47:22Z
 parent: qou-cdx1
 ---
 
@@ -82,3 +82,12 @@ defensible work list.
 3. Consider teaching the detector to exclude audit/check contexts, so
    `weight-factor-audit` and its kind stop appearing as work. A detector that
    flags its own control arm trains the reader to ignore it.
+
+
+## 2026-10-10 re-audit verdict: **CLOSE** (bean `qou-am5t`)
+
+Same measurement as `qou-eea0`: the mixed population of 25 is now 1, and it is
+the float64-noise sub-class this bean itself identifies, not one of its '7
+real weights'. Nothing left to triage.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T12:49:41Z
-updated_at: 2026-10-04T15:18:09Z
+updated_at: 2026-10-10T07:47:06Z
 parent: qou-cdx1
 ---
 
@@ -74,3 +74,13 @@ memory. The general form is: a witness recording a `tr_M`-named field whose valu
 matches the C evaluation of that quantity at q0 and not the D one. That is
 checkable against `closed_form_tau_M` without a list, the same way
 `convention-c-producer-audit` moved from grep to AST.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+Convention-C derived TRACE VALUES in live witnesses, invisible to both witness
+detectors. Confirmed live by today's measurement: the two witness audits
+disagree (0 structural vs 1 symbolic vs 1 fingerprint), which is exactly the
+blind spot this bean names. Live.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

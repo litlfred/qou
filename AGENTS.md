@@ -5559,9 +5559,21 @@ git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
   && C=$(git rev-parse FETCH_HEAD) \
   && git ls-tree --name-only "$C" | grep '^lake-oleans\.tgz\.part' | sort \
      | while read -r p; do git show "$C:$p"; done > "$TGZ" \
-  && tar xzf "$TGZ" -C "$ROOT" \
+  && tar xzf "$TGZ" -C "$ROOT" --transform 's,^content/,folio/,' \
   && bash "$ROOT/scripts/lake-restore-trace-check.sh" "$ROOT" \
   && echo "restored from lake-cache/qou-$SLUG — skip Steps 1–3"
+
+# 🛑 The `--transform` is load-bearing too, and it is NOT cosmetic. The seeded
+# tarball stores PAPER paths as `content/<paper>/lean/...` — MEASURED 2026-10-10 by
+# streaming all 20 parts through `tar tzf`: **13,670 `content/` members, 0 `folio/`**.
+# It was seeded before the `content/` -> `folio/` tree rename (#7485), and `content/`
+# does not exist on main at all now. Without the transform every paper olean lands in
+# a directory nothing reads — `LEAN_PATH` is built from `folio/*/lean/...` — so a
+# restore "succeeds", reports its olean count, and leaves the paper cone unbuilt. The
+# ~3,480 Mathlib oleans under `.lake/` are unaffected, which is exactly why this is
+# easy to miss: a Mathlib-only file verifies fine and the gap only shows on a file
+# that imports the paper library. Drop the transform once the branch is re-seeded
+# from a `folio/` tree; until then it is required, and it is a no-op afterwards.
 
 # 🛑 The `trap` above is load-bearing, not boilerplate. This recipe streams every
 # `lake-oleans.tgz.part` into ONE temp file before untarring, so `$TGZ` reaches

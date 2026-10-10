@@ -14,7 +14,12 @@ underlying field of fractions and acts on each coefficient:
 - $h_{\mathrm{A}} = q - q^{-1} \to q^{-1} - q = -h_{\mathrm{A}}$, so $h_{\mathrm{A}}$ has eigenvalue
   $-1$ and $h_{\mathrm{A}}^2$ has eigenvalue $+1$.
 - $z = 1/(q^{1/2} + q^{-1/2})$: the denominator is symmetric under
-  $q \to q^{-1}$, so $z$ is invariant.
+  $q \to q^{-1}$, so $z$ is invariant. This holds only for the excised convention-C
+  weight. At the canonical weight $z = q^3/(q^2+1)$ the action gives
+  $z \to 1/(q(q^2+1)) = z - h_{\mathrm{A}}$, the negative-crossing loop
+  value, so $S$ exchanges the two loop values rather than fixing $z$, and
+  the rows below that depend on $z$ (notably $\Phi_1$) are not yet
+  re-derived at the canonical weight.
 - Catalan's constant $G$, Borromean volume $8G$, electron mass
   $m_e$, and binding scale $\alpha$ are real canonical constants
   unaffected by the algebraic action.

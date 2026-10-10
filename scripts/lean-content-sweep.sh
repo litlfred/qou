@@ -24,7 +24,7 @@
 # USAGE
 #   scripts/lean-content-sweep.sh [-j N] [-o OUTDIR] [file.lean ...]
 #
-# With no files, sweeps every `content/**/*.lean` outside `lean/QOU/` that has
+# With no files, sweeps every `folio/**/*.lean` outside `lean/QOU/` that has
 # an `import QOU` line.  Per-file logs land in OUTDIR (default: a temp dir,
 # reported at the end); the summary goes to stdout and to OUTDIR/summary.tsv.
 #
@@ -48,10 +48,10 @@ shift $((OPTIND - 1))
 if [ $# -gt 0 ]; then
   TARGETS=("$@")
 else
-  # EVERY content-block .lean — everything under `content/` that is NOT inside a
+  # EVERY content-block .lean — everything under `folio/` that is NOT inside a
   # package's `lean/` tree.  That prune drops both the library modules
-  # (`content/*/lean/<Lib>/**`) and the package ROOT module
-  # (`content/*/lean/<Lib>.lean`, the Lake aggregator); excluding the tree but
+  # (`folio/*/lean/<Lib>/**`) and the package ROOT module
+  # (`folio/*/lean/<Lib>.lean`, the Lake aggregator); excluding the tree but
   # not the root was an earlier bug, in which `QOU.lean` was the sweep's only
   # "red" and was neither a content block nor broken.
   #
@@ -64,7 +64,7 @@ else
   # class this sweep exists to catch.  A 28%-coverage sweep reporting "0 red"
   # is the kind of green this whole bean is about.
   mapfile -t TARGETS < <(
-    find content -path '*/lean/*' -prune -o -name '*.lean' -print | sort)
+    find folio -path '*/lean/*' -prune -o -name '*.lean' -print | sort)
 fi
 [ "${#TARGETS[@]}" -gt 0 ] || { echo "no targets" >&2; exit 2; }
 echo "targets: ${#TARGETS[@]}"

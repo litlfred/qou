@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T07:05:14Z
-updated_at: 2026-10-04T15:16:00Z
+updated_at: 2026-10-10T07:47:03Z
 parent: qou-cdx1
 ---
 
@@ -29,3 +29,13 @@ Under canonical D the shortfall is LARGER: 33.4% short, not 26%. Fix is a
 currency note on the audit doc naming the frame, not a recomputation — the
 C-frame numbers are correct for C and should be kept as recorded per the
 convention-D excision policy (scope them, do not 'fix' them).
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+A dated audit doc (2026-07-05) quoting C-frame PROBE-2 figures that are being
+cited as current. Dated audit docs are deliberately left as records of their
+own analysis (the `4.66e6` drain precedent); what is live is the CITATION of
+them elsewhere. Live, and it is a citation-hygiene item, not a code item.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

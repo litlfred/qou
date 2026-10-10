@@ -51,7 +51,7 @@ needed — the obstruction being ruled out is algebraic, not archimedean.
 Because the construction is explicit rather than an existence argument, it also
 says *which* parameters do the work: the mixing is carried entirely by `e`, and
 `e = 0` forces the physical states to be the unmixed `ω₈`, `ω₁`
-(`no_mixing_iff_eigenvalues_are_diagonal`).
+(`charPoly_zero_mixing_eq_linear_factors`).
 
 ## Consequence for the corpus
 
@@ -125,7 +125,7 @@ masses *are* the octet and singlet entries and no mixing occurs.
 The mixing is therefore carried entirely by `e`: it is the single parameter
 the symmetry leaves free, and the one whose observed value the vector and
 pseudoscalar nonets disagree about. -/
-theorem no_mixing_iff_eigenvalues_are_diagonal (d₁ d₂ x : R) :
+theorem charPoly_zero_mixing_eq_linear_factors (d₁ d₂ x : R) :
     charPoly d₁ d₂ 0 x = (x - d₁) * (x - d₂) := by
   unfold charPoly; ring
 

@@ -211,7 +211,7 @@ elan / cache hosts are network-restricted.
 >   && C=$(git rev-parse FETCH_HEAD) \
 >   && git ls-tree --name-only "$C" | grep '^lake-oleans\.tgz\.part' | sort \
 >      | while read -r p; do git show "$C:$p"; done > "$TGZ" \
->   && tar xzf "$TGZ" -C "$ROOT" \
+>   && tar xzf "$TGZ" -C "$ROOT" --transform 's,^content/,folio/,' \
 >   && bash "$ROOT/scripts/lake-restore-trace-check.sh" "$ROOT" \
 >   && echo "restored .lake oleans from $BR — NO rebuild needed"
 > ```
