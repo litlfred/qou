@@ -1,5 +1,6 @@
 import QOU.SchurWeyl.HeckeSchurElements
 import QOU.SchurWeyl.HeckeWedderburnGeneral
+import QOU.Mathlib.NumSYTPos
 
 /-!
 # QOU.SchurWeyl.HeckeSchurOrthogonality — Schur orthogonality for `H_{m+1}(q)`
@@ -21,6 +22,8 @@ where `f^μ` is the number of standard tableaux of shape `μ`.
 * `symTrace_eq_sum_schur_partition` — `τ = Σ_λ χ_λ / c_λ`, indexed by partitions.
 * `schur_orthogonality` — the matrix-coefficient form.
 * `schur_orthogonality_char` — the character form.
+* `heckeChar_linearIndependent` — the irreducible characters `χ_λ` are linearly independent
+  linear forms on `H_{m+1}(q)`.
 
 ## Proof
 
@@ -159,5 +162,50 @@ theorem schur_orthogonality_char (q : K) (hq0 : q ≠ 0) (hq2 : GenericParameter
     ring
   · rw [if_neg hlm]
     simp [Pi.single_eq_of_ne hlm]
+
+/-- **The irreducible character** `χ_λ(x) = tr ρ_λ(x)`, as a linear form on `H_{m+1}(q)`. -/
+noncomputable def heckeChar (q : K) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
+    (m : ℕ) (lam : Nat.Partition (m + 1)) : Hecke K q q⁻¹ m →ₗ[K] K :=
+  Matrix.traceLinearMap _ K K ∘ₗ
+    (LinearMap.proj (R := K) (φ := fun nu : Nat.Partition (m + 1) =>
+      Matrix (StandardYoungTableau (partitionShape nu))
+        (StandardYoungTableau (partitionShape nu)) K) lam) ∘ₗ
+    (heckeProduct q hq0 hq2 m).toLinearMap
+
+theorem heckeChar_apply (q : K) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
+    (m : ℕ) (lam : Nat.Partition (m + 1)) (x : Hecke K q q⁻¹ m) :
+    heckeChar q hq0 hq2 m lam x = (heckeProduct q hq0 hq2 m x lam).trace := rfl
+
+/-- **The irreducible characters are linearly independent.**  If `Σ_λ g_λ χ_λ = 0`, pair with
+`χ_μ` through `schur_orthogonality_char`: the result is `g_μ c_μ f^μ = 0`, and `c_μ ≠ 0`,
+`f^μ ≠ 0` (characteristic `0`), so `g_μ = 0`. -/
+theorem heckeChar_linearIndependent (q : K) (hq0 : q ≠ 0)
+    (hq2 : GenericParameter.NotRootOfUnity q) (m : ℕ) :
+    LinearIndependent K (heckeChar q hq0 hq2 m) := by
+  classical
+  rw [Fintype.linearIndependent_iff]
+  intro g hg mu
+  have h0 : ∀ x : Hecke K q q⁻¹ m, ∑ lam, g lam * heckeChar q hq0 hq2 m lam x = 0 := by
+    intro x
+    simpa [LinearMap.sum_apply, smul_eq_mul] using LinearMap.congr_fun hg x
+  have hz : ∑ lam, g lam * ∑ w : Perm (Fin (m + 1)),
+      (heckeProduct q hq0 hq2 m (stdElt m w⁻¹) mu).trace
+        * (heckeProduct q hq0 hq2 m (stdElt m w) lam).trace = 0 := by
+    calc _ = ∑ w : Perm (Fin (m + 1)), (heckeProduct q hq0 hq2 m (stdElt m w⁻¹) mu).trace
+            * ∑ lam, g lam * heckeChar q hq0 hq2 m lam (stdElt m w) := by
+          simp_rw [Finset.mul_sum]
+          rw [Finset.sum_comm]
+          refine Finset.sum_congr rfl fun w _ => Finset.sum_congr rfl fun lam _ => ?_
+          rw [heckeChar_apply]; ring
+      _ = 0 := by simp [h0]
+  simp only [schur_orthogonality_char, mul_ite, mul_zero, Finset.sum_ite_eq',
+    Finset.mem_univ, if_true] at hz
+  have hc : schurElt (q ^ 2) (partitionShape mu) ≠ 0 :=
+    schurElt_ne_zero _ (pow_ne_zero 2 hq0) (gen_of_notRootOfUnity hq2) _
+  have hf : (Fintype.card (StandardYoungTableau (partitionShape mu)) : K) ≠ 0 :=
+    Nat.cast_ne_zero.mpr Fintype.card_ne_zero
+  rcases mul_eq_zero.mp hz with h | h
+  · exact h
+  · exact absurd h (mul_ne_zero hc hf)
 
 end QOU.SchurWeyl
