@@ -8,6 +8,7 @@ pages: 15-20
 source_pdf: 1707.00196v3.pdf
 source_sha256: 9908b71521275b17
 toc_source: outline
+doc_brief: "Yang-Baxter representations of the inﬁnite symmetric group — Every unitary involutive solution of the quantum Yang-Baxter equation (R- matrix) deﬁnes an extremal character and a representation of the"
 ---
 Our next aim is to prove that TYB parameterizes the set of all Yang-Baxter characters,
 that is, that every (α, β) ∈TYB is realized as the Thoma parameters of some R-matrix.

@@ -8,6 +8,7 @@ pages: 8-8
 source_pdf: 1211.1525v2.pdf
 source_sha256: 51ff1c8f90c025a4
 toc_source: outline
+doc_brief: "PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES: EXACT FORMULAS AND MEANDERS — We investigate the asymptotic behavior of the empirical eigenvalues distribution of the partial transpose of a random quantum"
 ---
 and Cn with l, m, n ∈N and take the uniformly random unit vector |v⟩in
 the product space Cl ⊗Cm ⊗Cn. Then, the corresponding random pure

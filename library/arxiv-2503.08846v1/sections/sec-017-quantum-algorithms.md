@@ -8,6 +8,7 @@ pages: 38-40
 source_pdf: A_Tutorial_on_Knots_and_Quantum_Mechanics.pdf
 source_sha256: 18321b615ffc968b
 toc_source: outline
+doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
 As another set of applications of the topological visualization of quantum mechanics let us consider
 a pair of basic quantum algorithms. Quantum algorithms exploiting quantum correlations should be

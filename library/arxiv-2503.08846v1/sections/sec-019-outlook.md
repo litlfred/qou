@@ -8,6 +8,7 @@ pages: 42-43
 source_pdf: A_Tutorial_on_Knots_and_Quantum_Mechanics.pdf
 source_sha256: 18321b615ffc968b
 toc_source: outline
+doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
 Hopefully the present notes convincingly demonstrate the potential and functionality of topology and, in
 particular, knot theory in the discussion of quantum mechanics. We have shown that states and operators

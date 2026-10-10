@@ -8,5 +8,6 @@ pages: 30-30
 source_pdf: q-2026-08-19-2194.pdf
 source_sha256: 34ad8ede52fbf42e
 toc_source: outline
+doc_brief: "Quantifying mixed-state entanglement via partial transpose and realignment moments — 15 sections: Front matter; Efficient algorithm to measure PT ; Efficient algorithm to measure CCN"
 ---
 30

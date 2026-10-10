@@ -8,6 +8,7 @@ pages: 43-44
 source_pdf: A_Tutorial_on_Knots_and_Quantum_Mechanics.pdf
 source_sha256: 18321b615ffc968b
 toc_source: outline
+doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
 In section 4.2 we reviewed classification of bipartite entanglement and showed that a classification similar
 to SLOCC is possible in terms of the number of connections (Wilson lines) held by the two subsystems.

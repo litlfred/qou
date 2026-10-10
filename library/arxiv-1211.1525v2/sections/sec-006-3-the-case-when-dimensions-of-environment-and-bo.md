@@ -8,6 +8,7 @@ pages: 10-11
 source_pdf: 1211.1525v2.pdf
 source_sha256: 51ff1c8f90c025a4
 toc_source: outline
+doc_brief: "PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES: EXACT FORMULAS AND MEANDERS — We investigate the asymptotic behavior of the empirical eigenvalues distribution of the partial transpose of a random quantum"
 ---
 SYSTEM PARTS ARE LARGE
 In this section we investigate the regime where l, m, n →∞. Aubrun

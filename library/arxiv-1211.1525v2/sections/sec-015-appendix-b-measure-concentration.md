@@ -8,6 +8,7 @@ pages: 29-29
 source_pdf: 1211.1525v2.pdf
 source_sha256: 51ff1c8f90c025a4
 toc_source: outline
+doc_brief: "PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES: EXACT FORMULAS AND MEANDERS — We investigate the asymptotic behavior of the empirical eigenvalues distribution of the partial transpose of a random quantum"
 ---
 In this section we collect some results from asymptotic geometric analy-
 sis and random matrix theory, which we use in this paper.

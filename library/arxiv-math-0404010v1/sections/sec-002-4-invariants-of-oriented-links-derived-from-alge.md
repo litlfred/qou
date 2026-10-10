@@ -8,6 +8,7 @@ pages: 6-6
 source_pdf: 0404010v1.pdf
 source_sha256: a9522d4bec3ce6fb
 toc_source: outline
+doc_brief: "YANG–BAXTER OPERATORS ARISING FROM ALGEBRA STRUCTURES AND THE ALEXANDER POLYNOMIAL OF KNOTS — In this paper, we consider the problem of constructing knot invariants from Yang–Baxter operators"
 ---
 In this section, we consider a (unitary associative) k–algebra A with ﬁnite dimension
 at least 2, as well as nonzero scalars x and y. Let Rx,y : A ⊗A →A ⊗A be the YB

@@ -8,6 +8,7 @@ pages: 41-42
 source_pdf: q-2026-08-19-2194.pdf
 source_sha256: 34ad8ede52fbf42e
 toc_source: outline
+doc_brief: "Quantifying mixed-state entanglement via partial transpose and realignment moments — 15 sections: Front matter; Efficient algorithm to measure PT ; Efficient algorithm to measure CCN"
 ---
 Given MPS |ψ⟩, we consider the entanglement within ρ = trC(|ψ⟩⟨ψ|), where C is a contiguous
 subsystem in the middle of the chain, C = {nA + 1, nA + 2, · · · , nA + nC}, and we take the subsystem

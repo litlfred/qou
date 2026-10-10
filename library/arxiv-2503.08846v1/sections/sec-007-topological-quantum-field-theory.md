@@ -8,6 +8,7 @@ pages: 13-16
 source_pdf: A_Tutorial_on_Knots_and_Quantum_Mechanics.pdf
 source_sha256: 18321b615ffc968b
 toc_source: outline
+doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
 Theories whose description does not explicitly or implicitly use the spacetime metric are called topolog-
 ical [15, 20]. Metric independence means that observables of such theories do not depend on distances.

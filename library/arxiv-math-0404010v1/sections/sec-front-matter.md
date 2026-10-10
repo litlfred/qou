@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0404010v1.pdf
 source_sha256: a9522d4bec3ce6fb
 toc_source: outline
+doc_brief: "YANG–BAXTER OPERATORS ARISING FROM ALGEBRA STRUCTURES AND THE ALEXANDER POLYNOMIAL OF KNOTS — In this paper, we consider the problem of constructing knot invariants from Yang–Baxter operators"
 ---
 arXiv:math/0404010v1  [math.QA]  1 Apr 2004
 YANG–BAXTER OPERATORS ARISING FROM ALGEBRA

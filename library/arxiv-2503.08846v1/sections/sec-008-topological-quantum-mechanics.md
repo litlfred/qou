@@ -8,6 +8,7 @@ pages: 16-19
 source_pdf: A_Tutorial_on_Knots_and_Quantum_Mechanics.pdf
 source_sha256: 18321b615ffc968b
 toc_source: outline
+doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
 Let us imagine the most simple situation: a one-dimensional TQFT. We will follow a physics-level
 exposition in [59]. See [60,61] for a more formal mathematical construction.
