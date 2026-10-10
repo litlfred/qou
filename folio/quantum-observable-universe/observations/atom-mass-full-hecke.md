@@ -9,10 +9,10 @@ See [Table: Three-channel $H_3(q)$ decomposition](#tbl:atom-mass-full-hecke-tabl
 The full Markov trace decomposes as:
 
 $$
-  \mathrm{tr}_M^{\mathrm{full}}
-  = \hat y_{\mathrm{sym}}\,\mathrm{tr}_{\mathrm{sym}}
-  + \hat y_{\mathrm{std}}\,\mathrm{tr}_{\mathrm{std}}
-  + \hat y_{\mathrm{alt}}\,\mathrm{tr}_{\mathrm{alt}},
+  \mathrm{tr}_M^{\mathrm{full}} =
+  \hat y_{\mathrm{sym}}\,\mathrm{tr}_{\mathrm{sym}} +
+  \hat y_{\mathrm{std}}\,\mathrm{tr}_{\mathrm{std}} +
+  \hat y_{\mathrm{alt}}\,\mathrm{tr}_{\mathrm{alt}},
 $$
 
 where $\hat y_\lambda$ are the $q$-deformed Jones--Markov weights. The classical Wedderburn--Artin values are heavily deformed.
@@ -45,7 +45,7 @@ See [Table](#tbl:atom-mass-full-hecke-table-data).
 ## Key observations
 
 1. **Standard channel suppression.** The standard trace shrinks rapidly with $A$. The symmetric and alternating channels remain $O(1)$.
-2. **Alternating channel sign flips.** Under canonical $q$-deformed weights, the alternating block is suppressed. The apparent sign variation was a classical-weighting artifact.
+2. **Alternating channel sign flips.** The alternating *trace* alternates in sign with $A$, as the table shows. Its *contribution* does not: under the canonical convention the alternating block is **absent**, because its Ocneanu weight is identically zero for any partition with three or more rows (`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`, sorry-free, general $n$). So the sign variation is carried by a channel that is multiplied by $\hat y_{\mathrm{alt}} = 0$ and cannot reach $\mathrm{tr}_{\mathrm{full}}$ at all. The apparent sign variation in the *total* was a classical-weighting artifact.
 3. **${}^{14}\mathrm{N}$ cancellation.** The near-cancellation between symmetric and alternating traces depends entirely on classical weighting. It vanishes under canonical $q$-deformed weights.
 4. **Binding energy deviations.** The semi-empirical formula undercounts the doubly-magic shell closure at ${}^4\mathrm{He}$.
 
