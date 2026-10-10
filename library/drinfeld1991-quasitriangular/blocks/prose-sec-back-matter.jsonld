@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/drinfeld1991-quasitriangular/blocks/prose-sec-back-matter",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Back matter (opening page 861 of the following, unrelated paper)",
+  "pageStart": 17,
+  "pageEnd": 17,
+  "text": "../sections/sec-back-matter.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/agent-aa0db88738c4896fe/drinfeld1991-quasitriangular/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/agent-aa0db88738c4896fe/drinfeld1991-quasitriangular/manifest.jsonld",
+  "provenance": "ingested"
+}
