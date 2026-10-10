@@ -1,0 +1,465 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1001.2933v4",
+ "source": {
+  "file": "1001.2933v4.pdf.txt",
+  "sha256": "b02636c86d593c02b0b1ca992c1584c52874bc5d7e0aafdaeed5b5b381654c5c",
+  "bytes": 321215,
+  "mtime": "2026-10-10T19:00:18Z",
+  "mimetype_sniffed": "text/plain",
+  "mimetype_source": "unrecognised",
+  "pages": 126
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1001.2933",
+   "version": "4",
+   "primary_class": "hep-th",
+   "stamp_date": "28 Aug 2010"
+  },
+  "doi": null,
+  "title": "Analytic Continuation Of Chern-Simons Theory",
+  "authors_raw": "Edward Witten",
+  "abstract": "The title of this article refers to analytic continuation of three-dimensional Chern\u0002Simons gauge theory away from integer values of the usual coupling parameter k, to explore questions such as the volume conjecture, or analytic continuation of three\u0002dimensional quantum gravity (to the extent that it can be described by gauge theory) from Lorentzian to Euclidean signature. Such analytic continuation can be carried out by generalizing the usual integration cycle of the Feynman path integral. Morse theory or Picard-Lefschetz theory gives a natural framework for describing the appropriate integration cycles. An important part of the analysis involves flow equations that turn out to have a surprising four-dimensional symmetry. After developing a general framework, we describe some specific examples (involving the trefoil and figure-eight knots in S 3 ). We also find that the space of possible integration cycles for Chern\u0002Simons theory can be interpreted as the “physical Hilbert space” of a twisted version of N = 4 super Yang-Mills theory in four dimensions.",
+  "docinfo": {},
+  "title_source": "text",
+  "title_verified": true,
+  "source_note": "Ingested from a plain-text extraction of the arXiv PDF (1001.2933v4, 126 pp), uploaded as '1001.2933v4.pdf.txt'. NO PDF IS HELD. Page numbers are recovered from the bare page-number lines the extraction keeps at each page foot; display math is flattened (super/subscripts split across lines). Sections split at the numbered level-1 and level-2 headings matched against the paper's own Contents (level-3 subsections are inside their level-2 parent)."
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 4,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Overview",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Finite-Dimensional Analogs",
+   "page": 8,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Role Of Morse Theory",
+   "page": 10,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Stokes Phenomena",
+   "page": 11,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Singularities Of The Analytically Continued Theory",
+   "page": 12,
+   "source": "inferred",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Analytic Continuation For Compact Gauge Groups",
+   "page": 12,
+   "source": "inferred",
+   "number": "2.5"
+  },
+  {
+   "level": 2,
+   "title": "Comparing Compact And Complex Lie Groups",
+   "page": 17,
+   "source": "inferred",
+   "number": "2.6"
+  },
+  {
+   "level": 2,
+   "title": "Other Real Forms",
+   "page": 20,
+   "source": "inferred",
+   "number": "2.7"
+  },
+  {
+   "level": 1,
+   "title": "Finite-Dimensional Oscillatory Integrals, Morse Theory, And Steepest De\u0002scent",
+   "page": 23,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The Airy Function",
+   "page": 23,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Generalization To Dimension n",
+   "page": 34,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Symmetries",
+   "page": 41,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Singularities",
+   "page": 48,
+   "source": "inferred",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Analytic Continuation In k: A Prototype",
+   "page": 55,
+   "source": "inferred",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "Application To Chern-Simons Theory",
+   "page": 62,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "The Flow Equation For Chern-Simons",
+   "page": 63,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Knots And Morse Theory",
+   "page": 71,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "Analytic Continuation Of The Colored Jones Polynomial",
+   "page": 85,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Preliminaries",
+   "page": 86,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "The Trefoil Knot",
+   "page": 94,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "The Figure-Eight Knot",
+   "page": 108,
+   "source": "inferred",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "Four Or Five-Dimensional Interpretation",
+   "page": 121,
+   "source": "inferred",
+   "number": "6"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter (title, abstract, contents)",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 6640,
+   "n_words": 2031
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 8453,
+   "n_words": 1361
+  },
+  {
+   "id": "sec-001-2-overview",
+   "number": "2",
+   "title": "Overview",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2819,
+   "n_words": 550
+  },
+  {
+   "id": "sec-002-2-1-finite-dimensional-analogs",
+   "number": "2.1",
+   "title": "Finite-Dimensional Analogs",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 3395,
+   "n_words": 661
+  },
+  {
+   "id": "sec-003-2-2-role-of-morse-theory",
+   "number": "2.2",
+   "title": "Role Of Morse Theory",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 3582,
+   "n_words": 619
+  },
+  {
+   "id": "sec-004-2-3-stokes-phenomena",
+   "number": "2.3",
+   "title": "Stokes Phenomena",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1890,
+   "n_words": 340
+  },
+  {
+   "id": "sec-005-2-4-singularities-of-the-analytically-contin",
+   "number": "2.4",
+   "title": "Singularities Of The Analytically Continued Theory",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 2266,
+   "n_words": 387
+  },
+  {
+   "id": "sec-006-2-5-analytic-continuation-for-compact-gauge",
+   "number": "2.5",
+   "title": "Analytic Continuation For Compact Gauge Groups",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 17,
+   "n_chars": 11940,
+   "n_words": 2165
+  },
+  {
+   "id": "sec-007-2-6-comparing-compact-and-complex-lie-groups",
+   "number": "2.6",
+   "title": "Comparing Compact And Complex Lie Groups",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 20,
+   "n_chars": 7736,
+   "n_words": 1392
+  },
+  {
+   "id": "sec-008-2-7-other-real-forms",
+   "number": "2.7",
+   "title": "Other Real Forms",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 7048,
+   "n_words": 1289
+  },
+  {
+   "id": "sec-009-3-finite-dimensional-oscillatory-integrals-m",
+   "number": "3",
+   "title": "Finite-Dimensional Oscillatory Integrals, Morse Theory, And Steepest De\u0002scent",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 215,
+   "n_words": 33
+  },
+  {
+   "id": "sec-010-3-1-the-airy-function",
+   "number": "3.1",
+   "title": "The Airy Function",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 34,
+   "n_chars": 26573,
+   "n_words": 5177
+  },
+  {
+   "id": "sec-011-3-2-generalization-to-dimension-n",
+   "number": "3.2",
+   "title": "Generalization To Dimension n",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 41,
+   "n_chars": 16379,
+   "n_words": 3169
+  },
+  {
+   "id": "sec-012-3-3-symmetries",
+   "number": "3.3",
+   "title": "Symmetries",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 48,
+   "n_chars": 18931,
+   "n_words": 3574
+  },
+  {
+   "id": "sec-013-3-4-singularities",
+   "number": "3.4",
+   "title": "Singularities",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 55,
+   "n_chars": 15328,
+   "n_words": 3123
+  },
+  {
+   "id": "sec-014-3-5-analytic-continuation-in-k-a-prototype",
+   "number": "3.5",
+   "title": "Analytic Continuation In k: A Prototype",
+   "level": 2,
+   "page_start": 55,
+   "page_end": 62,
+   "n_chars": 16683,
+   "n_words": 3241
+  },
+  {
+   "id": "sec-015-4-application-to-chern-simons-theory",
+   "number": "4",
+   "title": "Application To Chern-Simons Theory",
+   "level": 1,
+   "page_start": 62,
+   "page_end": 63,
+   "n_chars": 2642,
+   "n_words": 415
+  },
+  {
+   "id": "sec-016-4-1-the-flow-equation-for-chern-simons",
+   "number": "4.1",
+   "title": "The Flow Equation For Chern-Simons",
+   "level": 2,
+   "page_start": 63,
+   "page_end": 71,
+   "n_chars": 20067,
+   "n_words": 3896
+  },
+  {
+   "id": "sec-017-4-2-knots-and-morse-theory",
+   "number": "4.2",
+   "title": "Knots And Morse Theory",
+   "level": 2,
+   "page_start": 71,
+   "page_end": 85,
+   "n_chars": 35601,
+   "n_words": 6636
+  },
+  {
+   "id": "sec-018-5-analytic-continuation-of-the-colored-jones",
+   "number": "5",
+   "title": "Analytic Continuation Of The Colored Jones Polynomial",
+   "level": 1,
+   "page_start": 85,
+   "page_end": 86,
+   "n_chars": 2347,
+   "n_words": 406
+  },
+  {
+   "id": "sec-019-5-1-preliminaries",
+   "number": "5.1",
+   "title": "Preliminaries",
+   "level": 2,
+   "page_start": 86,
+   "page_end": 94,
+   "n_chars": 21428,
+   "n_words": 3883
+  },
+  {
+   "id": "sec-020-5-2-the-trefoil-knot",
+   "number": "5.2",
+   "title": "The Trefoil Knot",
+   "level": 2,
+   "page_start": 94,
+   "page_end": 108,
+   "n_chars": 33254,
+   "n_words": 6461
+  },
+  {
+   "id": "sec-021-5-3-the-figure-eight-knot",
+   "number": "5.3",
+   "title": "The Figure-Eight Knot",
+   "level": 2,
+   "page_start": 108,
+   "page_end": 121,
+   "n_chars": 31908,
+   "n_words": 6256
+  },
+  {
+   "id": "sec-022-6-four-or-five-dimensional-interpretation",
+   "number": "6",
+   "title": "Four Or Five-Dimensional Interpretation",
+   "level": 1,
+   "page_start": 121,
+   "page_end": 122,
+   "n_chars": 3349,
+   "n_words": 530
+  },
+  {
+   "id": "sec-023-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 122,
+   "page_end": 122,
+   "n_chars": 509,
+   "n_words": 79
+  },
+  {
+   "id": "sec-024-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 122,
+   "page_end": 126,
+   "n_chars": 8309,
+   "n_words": 1209
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 23,
+  "toc_inferred_entries": 23,
+  "sections": 26,
+  "chars_total": 309292,
+  "toc_page_check": []
+ },
+ "structure_note": "Text-extract ingest: no PDF held; source.file is the uploaded .txt extraction."
+}
