@@ -1,13 +1,13 @@
 ---
 # qou-0xe1
 title: 'GAP: qbeta_5two_chirality_state_integral hangs in z_state_integral at G1 (pre-dates the qou-9ugp re-pin)'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T00:26:33Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-10-10T14:20:00Z
 parent: qou-avtq
 ---
 
@@ -52,3 +52,17 @@ Status: `todo` → `todo` (unchanged: edited today by another session, or held i
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
 
 Addendum (same sweep): a long re-run, `timeout 2700 python3 -u computations/probes/qbeta_5two_chirality_state_integral_probe.py`, also did not finish. It was still in G1 after about 45 CPU-minutes. `qou-he82` records a full 5/5 pass in 1424 s on 2026-08-10, so this is a regression in runtime, not a hang the probe has always had. One plausible cause is the mpmath upgrade (1.4.1 in this environment), but that is unverified. Until it reproduces, the G1 relative error 1.097e-19 that `qou-he82` and `qou-azs1` cite as settled is not currently reproducible. The committed witness (`durationMs 44`, no q0Anchor) matches no recorded run.
+
+---
+
+CLOSED 2026-10-10 (owner: "close it with a note that cites 3bccb25950").
+
+Cause: commit 34b2a75d43 raised the working precision from 30 to 70 dps. At
+70 dps the nested `quad` in `log_phi_b` (computations/qbeta/phi_b_evaluator.py,
+around line 86) becomes extremely slow, so `z_state_integral` looks hung.
+
+Fixed on main by 3bccb25950. After that fix G1 completes, with G1 = 1.0967e-19.
+
+mpmath version is NOT the cause, measured: mpmath 1.3.0 took 1078 s and 1.4.1
+took 1167 s, with identical results. Precision sweep: 70 dps did not finish in
+900 s, 20 dps did not finish in 600 s, 15 dps returns garbage (1e+905).
