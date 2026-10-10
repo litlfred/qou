@@ -3,11 +3,11 @@
   "name": "witness-float64-padding-audit",
   "description": "Values serialized at high precision that are really float64 expansions \u2014 fake precision. Honest zero-padding of exact short values is not flagged.",
   "data": {
-    "occurrences": 76,
-    "distinct_values": 30,
-    "files": 14,
-    "live_files": 9,
-    "new_not_baselined": 64,
+    "occurrences": 75,
+    "distinct_values": 29,
+    "files": 13,
+    "live_files": 8,
+    "new_not_baselined": 63,
     "rows": [
       {
         "file": "computations/_deprecated/beta-decay-n1-brane-tower-probe.witness.json",
@@ -188,12 +188,6 @@
         "field": "data.x_L2_vs_x_M_at_q0.x_L2[5]",
         "value": "0.051457549482297221254967212189512792974710464477539",
         "real_value": "0.05145754948229722"
-      },
-      {
-        "file": "computations/rho-k-h3a-lp-dual.witness.json",
-        "field": "data.comparison_to_occam.L_inf_diff",
-        "value": "80.8148308039051670448316144756972789764404296875",
-        "real_value": "80.81483080390517"
       },
       {
         "file": "computations/sweeps/paper-six-term-isotope-sweep.witness.json",
@@ -469,10 +463,10 @@
   },
   "scriptFile": "witness_float64_padding_audit.py",
   "scriptHash": "33874b7f4e46",
-  "scriptCommitSha": "6ff3254a0f7d56d7961ba93607680644b8d7b07b",
-  "commitSha": "56109c8579a2cf9ae1b5875e745352030b869267",
+  "scriptCommitSha": "4611001329651246dd319b800ca69f5460a47c2c",
+  "commitSha": "6a939b9882577e2209fe46fb9551731997642d4a",
   "engine": "python",
-  "computedAt": "2026-10-10T08:16:18.143214+00:00",
+  "computedAt": "2026-09-27T18:33:41.692635+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
