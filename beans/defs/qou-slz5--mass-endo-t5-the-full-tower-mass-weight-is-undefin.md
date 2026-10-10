@@ -5,7 +5,7 @@ status: todo
 type: epic
 priority: normal
 created_at: 2026-10-10T06:48:53Z
-updated_at: 2026-10-10T13:35:44Z
+updated_at: 2026-10-10T14:26:29Z
 ---
 
 Thread (session https://claude.ai/code/session_01ST9RpvTF7JHNdUNafrjf9J). OWNER DECISION gating this thread: D7 (docs/coordination/2026-09-05-owner-gated-bean-triage.md, 2026-09-07) puts mass/binding on the full tower, but production tr_M_via_wenzl_bridge still applies D's two-row cap (keeps 0.0434% of H_12 at 4He). No full-tower mass weight is defined. Candidates: Molien (ruled only for Phi_k), C y_λ (excised), Ocneanu N≠2 (changes the trace).
@@ -53,3 +53,11 @@ Probe `computations/deltalambda/full_tower_trace_coherence_probe.py` (10/10, exa
 - **Plancherel incoherence, formalised** (`MathlibExt/PlancherelRestrictionIncoherent.lean`, sorry-free): d_q²/f weights on λ⊢4 restrict to a multiple of those on μ⊢3 iff [3]_q·(q−q⁻¹)⁴ = 0 (generic char-0 field). So for real q>0, q≠1, no tower trace carries them. This is the n=4→3 case of the probe's λ=(3) failure above. Do not re-formalise it.
 - **Bond-letter identity** (`Hecke/TauBondLetter.lean`, sorry-free): τ(a·(cσ_i+d)·b) = d·τ(ab) for a,b avoiding σ_i. Under Molien = τ this gives tr_atom/tr_free = ∏ d_k (Markov ∏(z+d_k) at z=0). The pp letter is a bare σ, so the Molien trace is EXACTLY 0 at ³He/⁴He. At D the ratio is d_pn < 0. So the Molien endpoint makes B_log undefined at D, ³He and ⁴He. Matches the two-arm witness to 1e-51. Stated on the TwBasis carrier; port to HeckeCoset.symTrace is queued after #7596.
 - Consequence for the interval [0, q−q⁻¹]: for 0 < z ≤ q−q⁻¹ the connected-sum ratio ∏(z+d_k) has z+d_pp = z > 0, but z+d_pn = z − h(1/2−δ/4) and z+d_nn = z − h, where h = q−q⁻¹. So z+d_nn ≤ 0 on the whole window, which is a sign obstruction for any log-binding with an nn bond. Not formalised.
+
+
+## 2026-10-10 — Lean landed on this branch (1975a8f400, session_01ST9RpvTF7JHNdUNafrjf9J)
+QOU/SchurWeyl/FullTowerTraceWindow.lean (sorry-free; axioms are standard only):
+- **T2 (new; not on #7612):** every Ocneanu weight is a full-tower Markov trace for generic z with q²−1−qz≠0: normalisation, branching coherence and the Markov corner all hold. SeminormalRep.ocneanuMarkovTraceAt : MarkovTraceFamily R q q⁻¹ z, and eq_ocneanu_of_markov (every z-Markov trace is the Ocneanu-weighted one). This closes the 'Markov at general n open / proved only at n=3' caveat that #7612's OcneanuWeightPositiveWindow carries.
+- T1 qPlancherel_not_coherent and T3 ocneanuWeight_pos_of_le duplicate #7612 (PlancherelRestrictionIncoherent, and OcneanuWeightPositiveWindow, which is the stronger iff). They are independent second proofs; #7612 is the reference for those two.
+- Not proved here: the z=q−q⁻¹ endpoint trace; the window converse (done in #7612).
+**Derivation status:** coherent Markov trace on H_∞ + positive + faithful on every λ ⟺ z∈[0,h], with Molien (z=0, the literature's Hecke Plancherel measure) at one end. The point is still not selected. Note from #7612 TauBondLetter: Molien gives tr exactly 0 at ³He/⁴He, so B_log is undefined there.
