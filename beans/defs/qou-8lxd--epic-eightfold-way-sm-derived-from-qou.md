@@ -7,7 +7,7 @@ priority: high
 tags:
     - 8f-index
 created_at: 2026-08-03T23:27:15Z
-updated_at: 2026-10-10T13:50:38Z
+updated_at: 2026-10-10T14:47:44Z
 parent: qou-0uga
 ---
 
@@ -409,3 +409,63 @@ the finding refuted. A **third** file exists with exactly the name given. Three 
 four names in `{Brings, Mass} × {ColourCubicDiscriminant, ColourCubicBranchLocus}` are
 real files, two of them proving overlapping facts over different base rings. In a
 corpus with that naming surface, `ls` the path before concluding it does not exist.
+
+
+---
+
+## 🛑 I RECOMMENDED A SCRAPPED BEAN AS THE ROOT BLOCKER, FOUR TIMES (correcting myself, 2026-10-10)
+
+**What I asserted**, in three end-of-turn reports, two comments on PR #7553 (now
+merged as `3c0351a40da`, so immutable), a `send_later` check-in prompt (since
+deleted) and an earlier append to this epic:
+
+> ROOT BLOCKER across both fronts: no per-chiral-fermion braid word exists
+> (`htw2`). Blocks `t0hl`, `jk6g`, `h0zz`, `wqto`, `kebu`, `qvpl` sub-item A —
+> five beans, two fronts, one construction. **Highest leverage.**
+
+**What is actually true.** `htw2` is **`scrapped`** (duplicate of `qou-kebu`,
+2026-10-04 reorg), and its 294-line body records that the lepton half was
+**derived and closed on 2026-08-17**:
+
+- A framed braid word exists — `beta_nu = sigma1 sigma2` in `B_3`, framing
+  `(0,0,0)` — from the corpus's own *"fermions are knots, quarks are
+  Borromean-linked unknots"*.
+- ν = `{0,0,0}` and e = `{-1,-1,-1}` are **forced**, not selected;
+  `{-1,0,1}` is **refuted** by a knot closure being unable to carry an
+  injective framing, with no total needed.
+- `d = {-1,0,0}` follows from `θ_V = q^{1/2}·id_V` making a `(+1,−1)` pair
+  **ribbon-invisible**, so sign-coherence is a **normal form**, not the
+  Bilson-Thompson import it was first labelled.
+- Residual **1·2·2·1 → 1·1·1·1**.
+
+Verified today on `main` `3c0351a40da`, not taken from the bean:
+`ComponentFraming.lean` (304 lines) and `SignCoherentTwist.lean` (226) both
+`lean -DautoImplicit=false -s 65536` **rc=0, 0 diagnostics**, 0 `sorry` /
+`axiom` / `native_decide` each, and all 7 named declarations resolve.
+
+**What that contaminates.** Every place I called this the highest-leverage next
+item was pointing an agent at a closed result. The live carrier is **`qou-h0zz`**
+(`todo`, title *"V6: braid words per chiral fermion — the actual blocker for
+T(t)"*), now carrying the full correction and the narrowed open set; `qou-kebu`
+(`todo`) is the designated successor and already cites both files nine times.
+
+**What survives as genuinely open**, and it is narrower and better posed than
+what I was recommending: the **total** twist is still pinned by the SM target
+(`T = 3Q`), so `Q(f)` for a single chiral fermion is underived — the framework's
+`Q = w/2` is hadron-level; the **quark** side is consistent-not-derived
+(identity-π merely *leaves* `{0,1,1}` available); **chirality** is untouched
+(`qou-wqto` — no braid word separates `u_L` from `u_R`); the `1/3` normalisation
+is still the helon precedent; and `conj:sm-hypercharge-invariant` stays open.
+
+**The rule this epic already carried, and I did not apply to my own
+recommendation.** This epic says: *read the beans a bean cites AND the beans
+that cite it, before working it.* I wrote that after measuring 5 of 13 stale
+bodies across `8f-tseries` and `8f-gen` — then recommended `htw2` four times
+**on its title alone**, never opening it. Sharpen the rule: a **`scrapped`**
+bean is the highest-risk read, not the lowest. Its status says ignore me and its
+body may hold a verified, sorry-free closure — exactly the case §path-6 of the
+corpus-grep checklist was added for.
+
+**Do not read this as the arc being further along than it is.** Nothing here
+closes a conjecture, nothing is wired, and per rule 13a no bean was closed. One
+stale recommendation of mine is withdrawn and one open set is stated correctly.
