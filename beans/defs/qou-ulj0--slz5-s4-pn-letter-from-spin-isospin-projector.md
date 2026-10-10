@@ -34,3 +34,14 @@ r(z) = w(4,2)/w(3,3) = (q²−q+1)²(q²+q+1)²(q⁵z+q³z+qz+1) / [q²(qz+1)(q�
 Physics reading: this is Wigner SU(4) spin–isospin symmetry. The S-wave pair lies in the SU(4) antisymmetric 6, which contains (S,T) = (1,0) and (0,1). The letters respect SU(4), so they cannot split the deuteron from the singlet. In nature that splitting is SU(4)-breaking, and the tensor force (spin coupled to orbital angular momentum, not to isospin) supplies it. Corpus: folio/.../nuclear-interactions/audit/wigner-su4-alpha-cluster-probe.md already uses SU(4) as the shell organiser.
 
 Next door (judgement): the space/tensor index of qou-kj4v, i.e. the ³S₁–³D₁ mixing. It distinguishes spin from isospin by construction. This bean stays open.
+
+## 2026-10-10 — framing twist (commit 7c4a10f55e2, PR #7612)
+
+Result: a central twist acting by scalars s, s' (spin, on blocks (4,2),(3,3)) and i, i' (isospin) gives
+D − S = (s·i' − s'·i)·tr p·tr p'.
+- Symmetric twist (same on both factors, as the ribbon axioms give inside one category): D = S exactly. Scope (b), invariant s·i' = s'·i.
+- Spin-only ribbon twist θ_λ = q^{c(λ)}: D − S = (q⁵ − q³)·w₄₂·w₃₃, zero iff q² = 1; D/S = q₀² = 1.2321 (full twist q₀⁴ = 1.5180), z-independent. Two-row law c = S(S+1) + n(n−4)/4 makes the ratio parameter-free.
+- ASSUMED, not derived: that the twist acts on spin and not isospin (Lean hypothesis θ_iso = 1 in `spin_only_twist_split`). No corpus or library source derives it; Finkelstein–Rubinstein needs Lorentz invariance as input.
+- Open: sign of the energy splitting (trace→energy map, Δ² vs Δ⁻²) and exponent normalisation (k = 1 vs 2).
+Files: QOU/Hecke/TwistedChannelSplitting.lean (exit 0, no sorry); computations/deltalambda/framing_twist_channel_split_probe.py (6/6).
+Status stays todo: the spin/isospin asymmetry is still underived.
