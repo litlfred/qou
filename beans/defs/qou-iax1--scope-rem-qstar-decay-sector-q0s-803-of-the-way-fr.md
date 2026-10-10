@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T16:55:28Z
-updated_at: 2026-10-10T10:40:00Z
+updated_at: 2026-10-10T12:55:00Z
 parent: qou-avtq
 ---
 
@@ -93,3 +93,9 @@ Re-run gives q* = 1.109978593031523 at 79.744 %. `rem-qstar-decay-sector-q0.md` 
 **Open steps:** fix the block values; refresh the muon literal (code, needs owner OK).
 
 Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-up: `qou-review/avtq-reopened-beans-2026-10-10.md` (project files). Status unchanged.
+
+## 2026-10-10 — block figures refreshed to the CODATA-2022 muon pin
+
+`rem-qstar-decay-sector-q0.md` now carries the figures its own producers give at the live pin: 79.7 % (was 80.3 %), 42.8 ppb at q* and 0 at the muon pin (was 42.7 / 1.4), window (2.0199, 2.0693) width 0.0495 (was 2.0202 / 0.0491), C/D table 1.10997859303… / 1.11023370702…, 19,789 gaps, width 1.289e-8, muon sharpening 126× (was 130×), and dc₃/dq ≈ 3.84e6 (was the stale-c₃ 4.7e6). Sources: `qbeta_c3_imq_qstar_ladder_amplification_probe.py`, `qstar_anchor_interval_convention_probe.py`, `qbeta_h1_significance_against_cal3_band.py`, all re-run 2026-10-10. The convention-C scoping is unchanged.
+
+Side finding, not fixed: `qbeta_h1_significance_against_cal3_band.py:222` (`quoted_048pct_is_the_muon_not_the_substrate_anchor`) fails on `main` and in its committed witness, because the muon gap is now 0.496 %, not the 0.48 % the check expects. Same cause, R2.
