@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-10-10T12:20:00Z
 parent: qou-avtq
 ---
 
@@ -8724,3 +8724,20 @@ State summary with the command behind each number:
 
 **Not reclaiming this bean** — the claim reset of 2026-10-04 stands and the open
 item is research, not drain.
+
+## 2026-10-10 — follow-up review (re-check of the `qou-avtq` sweep flags)
+
+- The ruled-base exclusion reproduces 8/8, F_required = 1.7592.
+- Step 27 (`:5997`) says "(8/8)" for the level-k probe; a re-run gives **6/8**, and the committed witness already records `allPassed: false`, so `qou-g5oz`'s title is stale.
+- Under mpmath 1.3.0 that probe crashes at `:396` (`mp.eig` on a 1×1 block); a scratch shim was needed to reach 6/8.
+- The α check is red from a C-vs-D mismatch: gap 0.01185 = α_D − α_C, against a hardcoded α_C at `qbeta_symbolic_chain_alpha_b.py:284`.
+- The re-check verdict line (`:8603`) is cut off after an escaped `|`.
+- The swing gate `swing_matches_o2` misses by 0.000339923 — cause R2 (muon pin CODATA 2018 → 2022, ΔS(muon) = 3.399e-4), a stale reference value.
+
+The real gate remains the owner's gluon-letter ruling (`:8676`).
+
+Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-up: `qou-review/avtq-reopened-beans-2026-10-10.md` (project files). Status unchanged.
+
+## 2026-10-10 — owner decision: convention-D extractor support is tracked here
+
+`qbeta_decay_sdp_full_ck.py` and `qbeta_decay_sdp_extended_ck.py` now **refuse** (exit 2) instead of reading the D-frame N3 witness with C-frame rungs (which produced c_2 = −9.296, c_3 = −974). The owner chose (2026-10-10, PR #7574) to merge the refusal and track D support **in this bean**: the extractors can run again only once the c_k ladder is re-derived under convention D, which is the open research item here, not a code change. The old C-frame bodies are kept as `_main_convention_c_historical()`. Bean stays open.

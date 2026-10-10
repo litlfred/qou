@@ -1,11 +1,11 @@
 ---
 # qou-wu38
 title: lake-cache/qou-v4-24-0 delivers 2702 QOU oleans to the PRE-RENAME content/ path and exits 0
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-10-10T07:31:52Z
-updated_at: 2026-10-10T07:31:52Z
+updated_at: 2026-10-10T09:58:52Z
 parent: qou-n4r9
 ---
 
@@ -151,3 +151,106 @@ capture and *every* command fails including the `rm` that would fix it. Fetch
 into a throwaway repo under the scratchpad so `rm -rf` reclaims it, or -- as
 here -- use the GitHub API for the branch's head and date and measure the
 extracted tree locally.
+
+
+## 2026-10-10 — FIXED on main by a sibling session, and the diagnosis held exactly
+
+`94b88ccbbb` (session `016AEU7xkxdUcw9r7adTXgyr`, on main via #7546's base) takes
+**option 2** of the three framed above — relocate the payload on extraction:
+
+```sh
+-tar xzf "$tgz" -C "$REPO_ROOT"
++tar xzf "$tgz" -C "$REPO_ROOT" --transform 's,^content/,folio/,'
+```
+
+Their independent measurement of the tarball confirms this bean's diagnosis
+**exactly**: *"13670 `content/` members, 0 `folio/`"*. So every paper olean in the
+payload was stale-prefixed, not merely some, and the 2702 counted here was the
+whole QOU-own tree rather than a sample.
+
+The same commit repaired four more rename casualties the bean did not reach —
+`lean-library-sweep.py` found **0 of 3** packages, `lean-content-sweep.sh` **0**
+targets against its documented 938, `lean-shadow-verify.sh` dead at three
+pinning sites, and `lean-olean-cache-seed.sh`'s `SEED_PAPER=1` glob would have
+seeded **0** paper oleans. That last one matters most for this bean: a reseed
+under the old glob would have produced an *empty* paper tree, so the branch
+could not have been repaired by reseeding until this landed.
+
+### What is fixed, and what is NOT — do not read this closure as the class being closed
+
+**Fixed:** delivery. The transform is a no-op once the branch is re-seeded from a
+`folio/` tree, so it is correct in both regimes.
+
+**NOT fixed: the silent success.** `lean-cache-restore.sh`'s check still counts
+mathlib at `$REPO_ROOT/.lake/packages/mathlib` — the workspace-root path, which
+no rename has touched — so it still cannot distinguish "payload delivered" from
+"payload delivered somewhere nothing reads". Today's instance is repaired; the
+**next** path change will be just as silent. That was option 3 and the
+recommendation above, and it is deliberately not part of this closure.
+
+Carried forward rather than lost: the remaining work is a check that counts
+QOU-own oleans at the declared `lake-root` and fails loudly on zero. Small, and
+in both §ASK-THE-OWNER exemptions by the reasoning above — but it is a change to
+a gate's behaviour, so it waits on the owner rather than riding this closure.
+
+**Measured consequence while this was open**, worth keeping as the cost record:
+the two-location split it describes is what made `/prepare-merge` on #7546 read
+worse than the code was. The content sweep reported RED on both changed siblings
+with `Mathlib/Tactic.olean does not exist` at the *paper* path (root tree: 3480
+oleans, `Mathlib/Tactic.olean` PRESENT; paper tree: 1674, absent), and the
+library sweep's 2 UNVERIFIED were the same shape. Both were environment, not
+corpus — the library sweep says so in its own words, *"(NOT a corpus defect on
+this evidence)"*.
+
+
+## 🛑 2026-10-10 (same hour) — THE "NOT FIXED" HALF ABOVE IS FALSE. It was fixed, and the fix was already in my tree.
+
+The closure note above says the silent-success half remains open:
+
+> **NOT fixed: the silent success.** `lean-cache-restore.sh`'s check still counts
+> mathlib at `$REPO_ROOT/.lake/packages/mathlib` […] the **next** path change
+> will be just as silent.
+
+**That is wrong on every clause.** `334752248a` ("lean-cache-restore: count the
+paper half, and repair a pre-rename restore", **08:41:31Z**, #7564) implements
+exactly the option this bean recommended, and more:
+
+```sh
+qou_oleans() {            # counts the PAPER half at the DECLARED folio lake root
+  find "$REPO_ROOT/folio/quantum-observable-universe/lean/.lake/build/lib/lean/QOU" \
+    -name *.olean 2>/dev/null | wc -l | tr -d ' '
+}
+```
+
+| what the closure claimed open | what `334752248a` does |
+|---|---|
+| check counts mathlib only | counts **both halves**; `qou_oleans` added |
+| exit 0 on an empty paper half | **`exit 1`**, with the message naming the branch |
+| a later run SKIPs because mathlib is present | skip now requires **both**; a mathlib-only tree **re-extracts** |
+| an already-stranded restore stays stranded | `relocate_legacy_paper_trees()` **moves it into place**, and refuses when a real build exists |
+
+Its own comment states the defect and the measurement this bean reported, from
+the other side: *"3480 mathlib oleans at the root, 0 QOU oleans under folio/,
+2734 paper oleans under content/."* And the new guard's comment is the sentence
+this bean was holding open: *"Fail loudly on an empty paper half: exit 0 with no
+QOU oleans is the silent failure this check replaces."*
+
+### How I got it wrong, which is the part worth recording
+
+Not staleness. **`334752248a` was an ancestor of my own branch head when I wrote
+the claim** — `git merge-base --is-ancestor` confirms it, via my merge
+`9667b114fa`, made *before* the closure was appended. The corrected file was on
+disk in front of me; I asserted the state of a script from a commit message
+(`94b88ccbbb`, the earlier `--transform` fix) instead of reading the script.
+
+That is this corpus's most-documented failure mode — asserting a source file's
+state from a record about it — committed while writing a closure whose whole
+subject is a check that reports success without looking. The bean's own rule for
+`y_lambda_at` says it in one line: **read at the body, not the docstring.**
+
+**Contaminated, and corrected in both:** PR #7571's body, and the same claim
+relayed in chat as "an owner call, not a follow-up commit". It was neither.
+
+**`qou-wu38` is fully closed.** Both halves — delivery (`94b88ccbbb`,
+`--transform`) and the silent success (`334752248a`) — are fixed on main. No
+owner decision is outstanding on this bean.

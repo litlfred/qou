@@ -26,3 +26,79 @@ Done (commit 46af43b18): docs-site.yml and docs/_config.yml parked in fsh-guts/d
 
 
 2026-10-04 (session_01NdDGeP1SyShmoUssLuRZ91): TypeDoc retired. typedoc.json → fsh-guts/deprecated/docs-site/ (pure rename); build:docs script and typedoc devDependency removed; README points at the platform's gen-schema-docs. Still to do in T13: deploy/ (waits on the owner's server decision), paper-builder-image, build-lean-mcp.yml, make-all-tables, split-pdf, computations/_deprecated.
+
+## 🛑 2026-10-10: the `_deprecated` half's stated EVIDENCE is false, and it cites the wrong audit
+
+Found while re-measuring bean `qou-jyqd` (whose script is the one cited). This is
+the content-parity check the "Done-when" above asks for, run on the
+`computations/_deprecated` half only.
+
+The T13 row's evidence column reads
+
+> pure renames; `convention-c-deprecated-citation-audit.py` shows 0 content
+> citations into `_deprecated` before the move
+
+Both halves are wrong, and the second is the one that matters.
+
+**It does not show 0.** Run on `main` `ac111c1814`, it shows **3**:
+
+| deprecated producer | named by |
+|---|---|
+| `integer-lp-gluon.py` | `categorical-neutron-properties.{md,ts,qa.json}`, `categorical-proton-properties.ts`, `gluon-stabiliser-ledger.ts` |
+| `protium-witness.py` | `mass-theory/binding-scale-catalan.qa.json` |
+| `transfer_matrix_symbolic.py` | `mass-theory/markov-trace-factorization.md` |
+
+**And it could not answer this question even at 0.** That audit scans only the
+**139 of 568** deprecated producers *carrying a convention-C shape* — it exists
+to ask *"does retired convention-C code still reach the content?"*, which is a
+narrower question than *"would moving this directory break a content
+reference?"*. T13 breaks on **any** reference. Measured directly:
+
+    git grep -l 'computations/_deprecated' -- 'folio/**' | grep -v '\.lake/'
+    → 27 files    (11 .json, 7 .ts, 5 .lean, 4 .md)
+
+naming **15 distinct** deprecated producers and witnesses:
+`binding-k-enumerator.witness.json`, `bw_wenzl_shadow_equivalence.py`,
+`chi-lambda-w0-sign-weighting.witness.json`, `confinement-lp.witness.json`,
+`integer-lp-gluon.py`, `meson-nucleon-nf.witness.json`,
+`misdp_cross_channel.py`, `multi_level_sdp.py`, `positron_lifted_sdp.py`,
+`protium-witness.py`, `q_variant_partition_sum.py`,
+`rho-k-pair-gen-v2-wedderburn.witness.json`, `schur-weyl-mn.witness.json`,
+`tau-leptonic-decay.witness.json`, `transfer_matrix_symbolic.py`.
+
+### One of the 27 is STRUCTURAL, and it is the only one a validator reads
+
+`folio/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.ts`:
+
+    computation: {
+      engine: "python",
+      script: "computations/_deprecated/bw_wenzl_shadow_equivalence.py",
+      witness: "docs/audits/2026-05-01-p1-3a-bw-equivalence.witness.json",
+      status: "verified",
+    },
+
+A content block declaring `computation.status: "verified"` against a producer
+the corpus deprecated. That is a defect **independent of T13** — it is live on
+`main` today — and it is also the single reference the move would break
+mechanically rather than textually. The other 6 `.ts` hits are `authorNotes`
+bodies, prose strings and comments; the `.json` hits are witness/QA sidecars;
+the 4 `.md` are prose. None of those is read by a checker, but all 27 become
+dangling text on a pure rename.
+
+### What this changes for T13, and what it does not
+
+- **The rename is still small**, and still *pure* — nothing here argues against
+  it. What is wrong is the claim that it touches no content reference.
+- **The honest done-when** for the `_deprecated` half is: fix
+  `wedderburn-weight-canonical.ts` (its own `authorNotes` already records that
+  the Wenzl-bridge field was dropped by owner ruling, so the `status:
+  "verified"` is doubly stale), then rewrite the 26 textual references to the
+  new path in the same commit as the move.
+- **The 3-vs-27 gap is the reusable part.** A narrow detector's count quoted as
+  evidence for a wider claim is the detector-blindness failure one level up —
+  the detector is correct, the citation is not. Recorded on `qou-jyqd` as well,
+  since it is that bean's script being mis-cited.
+
+No change proposed here: the `_deprecated` move already waits on owner ack per
+the progress notes above, and this measurement is input to that decision rather
+than a reason to act.

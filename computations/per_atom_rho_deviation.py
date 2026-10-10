@@ -37,7 +37,30 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from q_parameter import Q as Q0, q_int  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+
+# MUST run before the constants below are USED, and the reason is measured,
+# not precautionary (2026-09-13).
+#
+# `experimental_constants.M_E_MEV` is an `mpf` — `mpf('0.51099895069')`. This
+# producer never called `set_compute_dps()`, so mpmath ran at its DEFAULT
+# `mp.dps = 15`, and every quantity derived from that constant (B_pred_*,
+# err_pct_*, C_ALPHA, improvement_factor …) was computed and serialised at
+# FIFTEEN significant digits.
+#
+# The committed witness of 2026-08-23 holds those same fields as float64 with
+# SEVENTEEN — it predates the constant becoming `mpf`. So an unmodified re-run
+# silently LOWERED the recorded precision, 17 -> 15, while simultaneously
+# turning the raw-float64 count 139 -> 42, because an `mpf` serialises as a
+# string and the ratchet stops seeing it.
+#
+# That is the shape the NO-FLOAT64 discipline exists to catch, arriving by
+# accident rather than by intent: a green gate bought with fewer digits. With
+# this call the same fields carry the full compute precision, so the ratchet
+# drop is earned rather than cosmetic.
+set_compute_dps()
+
+from q_parameter import Q as Q0, q_int, Q_50_DIGIT_STR  # noqa: E402
 from experimental_constants import (  # noqa: E402
     M_E_MEV,
     VOL_6_2,
@@ -313,7 +336,12 @@ def main() -> int:
                           "then propagates the Z=N correction through the "
                           "α-cluster chain {⁸Be, ¹²C, ¹⁶O, ²⁰Ne, ²⁴Mg, ⁴⁰Ca}."),
         "parameters": {
-            "q_0": Q0,
+            # The 50-digit pin, not `Q0`. `q_parameter.Q` is the f64 q_0
+            # (17 digits); recording it here published the anchor of this
+            # witness at f64 while the producer's own arithmetic now runs at
+            # the compute precision set above. A reader checking which pin
+            # this witness used got a truncated one.
+            "q_0": Q_50_DIGIT_STR,
             "m_e_MeV": M_E_MEV,
             "VOL_BORROMEAN_EIGHT_G": VOL_BORROMEAN_EIGHT_G,
             "VOL_BORROMEAN_SNAPPY":  VOL_BORROMEAN_SNAPPY,

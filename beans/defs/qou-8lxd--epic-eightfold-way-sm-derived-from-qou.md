@@ -172,7 +172,7 @@ are open Lean formalisation. So `8f-lean` is not the cheap front; triaging it
 >   **0 untraceable**, the 5th red by design) *and* its stated target is the
 >   wrong target: `predict(obs)` is a **data lookup**, not a closed term, so a
 >   literal-classifying audit cannot speak to it. Now detector-blindness
->   taxonomy **row 50**, with a committed guard. The trap is recorded: adding
+>   taxonomy **row 55**, with a committed guard. The trap is recorded: adding
 >   `qou-mass` as a sixth entry point would print a clean `0` that **means
 >   nothing**, because the path does no arithmetic at any closure size.
 > - **`qou-db6w`** — title-only (294 chars) since 2026-07-31, which is why it

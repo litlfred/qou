@@ -462,18 +462,40 @@ def main():
     pred_c4 = {a: per_anchor[a][0]["c_next_pred_inh"] for a in anchors}
     pred_c4_swing = abs(pred_c4["proton"] - pred_c4["muon"]) / abs(pred_c4["proton"])
 
-    if kill_face_value:
+    # The verdict is only as good as the ladder it tests. If that ladder
+    # failed its own Gate-1 checks (e.g. a D-frame N3 witness extracted with
+    # C-frame rungs gives c_3 ~ -974, cause R1 in the 2026-10-10 follow-up,
+    # bean qou-xyk3), no kill or survival can be read off it.
+    input_ok = all(a["passed"] for a in assertions
+                   if a["name"] in ("muon_c3_matches_N3_witness",
+                                    "c3_cross_anchor_swing_near_2p4pct"))
+    all_rel = [min(r["rel_res_hom"], r["rel_res_inh"])
+               for a in anchors for r in per_anchor[a]]
+    rel_lo, rel_hi = min(all_rel), max(all_rel)
+    c4_lo, c4_hi = min(pred_c4.values()), max(pred_c4.values())
+
+    if not input_ok:
+        overall = "INCONCLUSIVE (input ladder failed Gate 1)"
+        summary = (
+            "The empirical rung sequence under test failed its own Gate-1 "
+            "checks (see [FAIL] lines above), so the residual tables above measure "
+            "that sequence, not the 4_1 operator. Computed for the record: "
+            f"relative residuals {n8(rel_lo)} .. {n8(rel_hi)}; inhomogeneous "
+            f"c_4 prediction {n8(c4_lo)} .. {n8(c4_hi)}. No kill, no wiring."
+        )
+    elif kill_face_value:
         overall = "NEGATIVE (scope-(a))"
         summary = (
             "The 4_1 order-2 qZeilberger operator, instantiated as the recursion "
             "kernel via the corpus I-A color<->rung dictionary (x = q0^k), does NOT "
             "annihilate the empirical rung sequence as-is: relative residuals are "
-            "O(1) (100-280% of the largest term) at EVERY rung k=2..5, at BOTH "
+            f"{n8(rel_lo)} .. {n8(rel_hi)} of the largest term at EVERY rung k=2..5, at BOTH "
             "anchors, for BOTH the homogeneous and the inhomogeneous variant — "
             ">40x the 2.4% c_3 cross-anchor uncertainty scale, and anchor-stable "
             "(so not a noise fluke of one anchor). Its inhomogeneous c_4 "
-            "prediction (+7.4 to +7.5, anchor-stable to ~1%) has the WRONG SIGN "
-            "vs every recorded empirical/candidate c_4 (raw -2.54/-8.31; fit "
+            f"prediction ({n8(c4_lo)} .. {n8(c4_hi)}, anchor swing "
+            f"{float(pred_c4_swing) * 100:.2f}%) is compared "
+            "against the recorded empirical/candidate c_4 (raw -2.54/-8.31; fit "
             "-0.97; form -2b^4 = -1.13). Scope-limited (a): this excludes the RAW "
             "q^N -> q^k instantiation only — it sharpens P-C15 (the surviving "
             "kernel candidate needs a conjugation / basis change / twist, e.g. "
@@ -624,7 +646,9 @@ def main():
             witness, script_path=__file__, engine=None, q0_anchor=None)
         json.dump(witness, f, indent=2)
     print(f"\n  witness -> {out}")
-    return 0
+    # Exit non-zero on a red witness, so a caller cannot read a failed run
+    # as a pass (bean qou-xyk3).
+    return 0 if witness["allPassed"] else 1
 
 
 if __name__ == "__main__":

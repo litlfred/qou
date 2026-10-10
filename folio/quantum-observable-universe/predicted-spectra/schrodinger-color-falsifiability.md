@@ -30,7 +30,7 @@ The large-$d$ logarithmic asymptote precisely matches the second-order Weber–F
 
 **Numerical prediction from the substrate parameter.**
 
-Evaluation at the substrate value $q_0 \approx 1.109978595642739$ determines $\eta$ and the crossover scale $d^{\,*}$:
+Evaluation at the substrate value $q_0 \approx 1.109978595642739$ (muon pin; no producer recorded) determines $\eta$ and the crossover scale $d^{\,*}$:
 
 $$
   \eta = \frac{q_0 - q_0^{-1}}{2} \approx 0.1043,

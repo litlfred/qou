@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # polynomial_q_not_applicable: static source/provenance audit; emits no numeric physics.
-"""Guard for detector-blindness taxonomy row 50: the prediction path does no arithmetic.
+"""Guard for detector-blindness taxonomy row 55: the prediction path does no arithmetic.
 
 Bean `qou-s16e` (T5), epic `qou-8lxd`.
 
@@ -23,7 +23,7 @@ full witness files carrying their own provenance, byte-identical to their
 
 | check | what a failure would mean |
 |---|---|
-| the certificate's closure from the facade is **1 module** | the walk now follows the facade's imports — the 0-literal result would no longer be vacuous, so re-read row 50 |
+| the certificate's closure from the facade is **1 module** | the walk now follows the facade's imports — the 0-literal result would no longer be vacuous, so re-read row 55 |
 | the classifier finds **0** arithmetic literals in `qou_mass/api.py` | the facade grew arithmetic; it may no longer be a data lookup |
 | every isotope shard carries `scriptFile`/`scriptHash`/`commitSha`/`q0Anchor` | a shard's provenance is missing, so that row's number is genuinely untraceable |
 | every isotope shard is byte-identical to its `computations/` source | the vendored copy has drifted from its producer (cf. `sync-qou-mass-vendor.py`) |
@@ -129,7 +129,7 @@ def check_facade_closure_collapses() -> tuple[bool, str]:
     ok = len(mods) == 1
     detail = f"closure={len(mods)} module(s) {mods}, unresolved={unresolved}"
     if not ok:
-        detail += " — the walk now follows the facade's imports; row 50 needs re-measuring"
+        detail += " — the walk now follows the facade's imports; row 55 needs re-measuring"
     return ok, detail
 
 
@@ -139,7 +139,7 @@ def check_facade_has_no_literals() -> tuple[bool, str]:
     ok = n == 0
     detail = f"{n} arithmetic literal(s) classified in {FACADE.name}"
     if not ok:
-        detail += " — the facade now computes; row 50's premise has changed"
+        detail += " — the facade now computes; row 55's premise has changed"
     return ok, detail
 
 
@@ -218,7 +218,7 @@ def self_test() -> int:
             failures += 1
         else:
             print(f"  selftest ok: classifier is live on computing paths {found}")
-        # Closure sizes are the contrast row 50 rests on. Reported, not asserted:
+        # Closure sizes are the contrast row 55 rests on. Reported, not asserted:
         # the computing entry points are someone else's arc and may legitimately move.
         sizes = {m: len(cert._closure([m])[0]) for m in computing}
         print(f"  selftest info: computing-path closure sizes {sizes} "
@@ -228,7 +228,7 @@ def self_test() -> int:
     # by the literal count, so the two cannot certify each other.
     src = FACADE.read_text()
     if "_lookup_row(" not in src:
-        print("  selftest FAIL: api.py no longer calls _lookup_row; row 50's "
+        print("  selftest FAIL: api.py no longer calls _lookup_row; row 55's "
               "premise (predict is a data lookup) needs re-measuring")
         failures += 1
     else:
@@ -246,7 +246,7 @@ def main() -> int:
         print("predict_path_literal_scope_probe --selftest")
         return self_test()
 
-    print("Row 50 guard — the prediction path does no arithmetic")
+    print("Row 55 guard — the prediction path does no arithmetic")
     print(f"  facade: {FACADE.relative_to(REPO)}")
     failures = 0
     for label, fn in CHECKS:

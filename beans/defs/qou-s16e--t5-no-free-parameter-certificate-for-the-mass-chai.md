@@ -83,7 +83,7 @@ missed case:
 That is the obvious repair and it would make the false all-clear **more**
 convincing rather than more meaningful: `predict()` does no arithmetic at any
 closure size, so a literal-classifying audit prints a clean `0 UNTRACEABLE`
-however far it walks. Recorded as detector-blindness taxonomy **row 50**.
+however far it walks. Recorded as detector-blindness taxonomy **row 55**.
 
 ### The path IS traceable — by witness provenance, not literal classification
 

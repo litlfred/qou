@@ -553,3 +553,49 @@ assertion.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-23 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## A third axis this scan does not cover: the PRODUCER is deprecated, even where the witness passes (2026-10-10)
+
+Found while measuring T13's `_deprecated` gate (`qou-6u3n`, via `qou-jyqd`).
+This bean asks *"is the `verified` claim supported by the witness it names?"*.
+A block can pass that and still name a **deprecated producer**, which is a
+different question and is not in the 221/64 split.
+
+Measured on `main` `ac111c1814`, over every `computation: { … }` block in
+`folio/`:
+
+| axis | count |
+|---|---:|
+| `computation.script` → `computations/_deprecated/` | **1** |
+| `computation.witness` → `computations/_deprecated/` | **0** |
+
+The one is `mass-theory/wedderburn-weight-canonical.ts`:
+
+    computation: {
+      engine: "python",
+      script: "computations/_deprecated/bw_wenzl_shadow_equivalence.py",
+      witness: "docs/audits/2026-05-01-p1-3a-bw-equivalence.witness.json",
+      status: "verified",
+    },
+
+**And this bean's own §"block / cites / actually at" table already clears its
+witness** — row `wedderburn-weight-canonical` reads *"exists as cited
+(`allPassed: true`, 2 assertions)"*, correctly classed there as a false
+positive of the basename fallback. So the `verified` claim is supported on
+**this** bean's axis and the defect is one axis over: the witness is real and
+passing, and nothing in the tree can re-produce it, because its producer has
+been retired.
+
+Two things make it worth a line rather than a sweep. It is **one block**, so
+there is no drain here. And its own `authorNotes` already record that the
+Wenzl-bridge class field `y_eq_self_conjugate` was **dropped by owner ruling**
+(2026-09-04, bean `qou-hcas`, `completed`) after being measured false at every
+self-conjugate partition with `n ≤ 6` except `(1)` — so the `status: "verified"`
+is stale on the mathematics as well as on the path.
+
+**Not fixed here, and it is an owner call** — the corpus does not decide what
+the field should become (repoint to a live producer / downgrade `status` /
+drop the `computation` block), and §🟥 ASK THE OWNER governs. Framed with
+costs and consequences for the owner at the end of the 2026-10-10 session;
+nothing changes if they say nothing, and the block renders exactly as it does
+today.

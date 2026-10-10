@@ -1,11 +1,11 @@
 ---
 # qou-y4ca
 title: Prove the two converses the iff-rename tranche left one-directional
-status: todo
+status: in-progress
 type: task
 priority: low
 created_at: 2026-10-10T07:29:24Z
-updated_at: 2026-10-10T08:25:13Z
+updated_at: 2026-10-10T09:55:01Z
 parent: b9cj
 ---
 
@@ -157,3 +157,143 @@ specific identifier carried onto the biconditional, that did not happen.
 **Not done on this session's initiative.** §ASK THE OWNER: it is neither a
 precision fix nor corpus-derived — it turns on what the owner meant by their
 pick, which only they can say. Left for them to call.
+
+
+## 2026-10-10 — item 2 MEASURED: the converse is FALSE, and the real iff is STRONGER
+
+This bean said *"do not assume its converse is true — `qou-bybn` called it
+plausible without measuring."* Measured. It is false, and the measurement
+licenses something better than either option on the table.
+
+### The converse cannot hold, and the corpus already proved why
+
+`offDiag` is a two-branch definition
+(`SeminormalRep.lean:93`):
+
+```lean
+noncomputable def offDiag (d : ℤ) : K :=
+  if d < 0 then 1 + seminormalParam q d * seminormalParam q (-d) else 1
+```
+
+and the corpus carries all three facts needed to settle it:
+
+| lemma | says |
+|---|---|
+| `offDiag_of_not_neg` | `¬ d < 0 → offDiag q d = 1` — for **every** `d ≥ 0` |
+| `@[simp] offDiag_one` | `offDiag q 1 = 1` |
+| `@[simp] offDiag_neg_one` | `offDiag q (-1) = 0` |
+
+In a field `1 ≠ 0`, so `offDiag q d = 0` is **impossible for every `d ≥ 0`** —
+`d = 1` included. The converse
+`d = 1 ∨ d = -1 → offDiag q d = 0` therefore **fails at `d = 1`**, and no amount
+of work could have produced `offDiag_eq_zero_iff` in the shape the old name
+promised. **The rename to `eq_one_or_neg_one_of_offDiag_eq_zero` stands
+permanently.** Scope **(b)** — a structural exclusion, and the invariant is
+cited: `offDiag_of_not_neg` plus `one_ne_zero`, both already in the corpus.
+
+### But an honest iff DOES exist, and it is stronger than the theorem it came from
+
+Since vanishing forces `d < 0`, and the negative branch's two-to-one argument
+leaves `d = ±1`, the only survivor is `d = -1`:
+
+```lean
+theorem offDiag_eq_zero_iff_eq_neg_one (hq0 : q ≠ 0)
+    (hq2 : GenericParameter.NotRootOfUnity q) {d : ℤ} :
+    offDiag q d = 0 ↔ d = -1
+```
+
+`lean -DautoImplicit=false -s 65536` → **exit 0, errors 0, warnings 0**; file
+`sorry` count **0**, no `axiom`, no `native_decide`. Proved from the three
+lemmas above and the existing `eq_one_or_neg_one_of_offDiag_eq_zero`, so it adds
+no assumption.
+
+This is **strictly stronger** than the disjunction: `d = -1` implies
+`d = 1 ∨ d = -1`, not conversely. So the search for "the missing converse" was
+looking for a false statement, while a true and *better* biconditional was one
+step away from facts already proved.
+
+### Deliberately additive — the existing theorem is untouched
+
+`eq_one_or_neg_one_of_offDiag_eq_zero` has **5 in-tree consumers** and keeps its
+name, statement and proof. Nothing was weakened, renamed or re-pointed.
+
+**The open judgement, not taken here:** that theorem's conclusion is now
+demonstrably weaker than necessary, and its 5 consumers could be re-pointed at
+the `↔` (two of them `rcases` the disjunction and then `omega` the `d = 1` case
+away — work the stronger form makes unnecessary). That is a refactor of proved
+code with a real blast radius, not a corpus-derived repair, so it is the
+owner's call. Naming it with its cost rather than leaving it implicit: 5 call
+sites in `folio/**/*.lean`, each needing `lean`-direct re-verification, no
+numbers move.
+
+### Item 1 recap
+
+Done by a sibling (`570ee7fdb6`, `denomPoly_eq_zero_iff`, verified exit 0 /
+sorry-free). So **both items of this bean are now resolved** — one by a proof,
+one by a measured negative that turned into a stronger proof.
+
+
+## 2026-10-10 (later) — 🛑 MY "5 consumers" FIGURE WAS WRONG. It is ONE, and the refactor landed.
+
+Owner authorised the consumer refactor. Measuring it properly first showed the
+figure this bean and PR #7546 both published was **a grep line count, not a
+consumer count** — the exact error class this session spent the day correcting
+elsewhere.
+
+`grep -rn eq_one_or_neg_one_of_offDiag_eq_zero folio/ --include=*.lean` returns
+**5 lines**, and they classify as:
+
+| line | what it is |
+|---|---|
+| `:45` | the **declaration** itself |
+| `:89` | a **docstring** mention, in `offDiag_axialDist_ne_zero`'s doc |
+| `:98` | a **real use** |
+| `:101` | a **docstring** mention — in the doc of the iff I had just added |
+| `:117` | a **real use** — inside the iff I had just added |
+
+So: **one pre-existing call site, zero cross-file consumers.** Two of the five
+were prose, one was the declaration, and one was my own new theorem citing the
+old one. "5 in-tree consumers" over-stated the blast radius **five-fold**, and
+it is in PR #7546's merged body and merge commit, where it cannot be edited.
+
+### What the refactor actually was
+
+One `rcases` in `offDiag_axialDist_ne_zero`:
+
+```lean
+-  rcases eq_one_or_neg_one_of_offDiag_eq_zero q hq0 hq2 hzero with h | h <;> omega
++  have h : TableauCells.axialDist T k = -1 :=
++    (offDiag_eq_zero_iff_eq_neg_one q hq0 hq2).mp hzero
++  omega
+```
+
+The disjunction obliged that proof to dispatch a `d = 1` case **that cannot
+occur** — `offDiag q 1 = 1 ≠ 0` — so `rcases … <;> omega` discharged one real
+case and one vacuous one. The biconditional supplies `d = -1` directly.
+
+The iff was **moved above** `offDiag_axialDist_ne_zero` so the dependency order
+is right; nothing else in the file moved.
+
+### Blast radius, measured after the change
+
+`offDiag_axialDist_ne_zero`'s **statement is unchanged**, so its one real
+cross-file consumer (`SeminormalRangeTop.lean:63`) needs no edit — and it was
+verified anyway rather than assumed. `eq_one_or_neg_one_of_offDiag_eq_zero`
+**keeps its name, statement and proof**; it now has zero call sites and is
+retained as the directional form.
+
+Verified, both files, `lean -DautoImplicit=false -s 65536`:
+
+```
+OffDiagNonvanishing.lean   exit=0  errors=0  warnings=0
+SeminormalRangeTop.lean    exit=0  errors=0  warnings=0
+```
+
+### The reusable half
+
+**Classify grep hits before quoting them as consumers.** A declaration, its own
+docstring, a sibling's docstring and a call site all match the same identifier,
+and in a corpus whose docstrings cite lemmas by name — which this one does,
+deliberately and usefully — prose dominates. Here it was 3 prose-or-self of 5.
+Had the refactor been genuinely 5 cross-file call sites, the estimate would have
+been right by luck rather than by measurement.

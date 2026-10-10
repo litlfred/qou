@@ -31,7 +31,9 @@ DERIVED — no AME calibration needed.
 NUMERICAL STRATEGY.  To avoid sympy's exponential expansion blow-up
 on partitions of 3·4 = 12, this version evaluates EVERYTHING
 numerically at q_0 (and at q=1 as a sanity check) using Python's
-mpmath with 50-digit precision.  No symbolic q is used.
+mpmath at `_precision.COMPUTE_DPS` (70 dps).  No symbolic q is used.
+(This read "50-digit precision"; COMPUTE_DPS moved 65 -> 70 upstream and
+nothing re-read this file.  Do not quote a literal here.)
 
 Computes for A ∈ {2, 3, 4} and tests atom-independence.
 """
@@ -60,7 +62,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 from partition_utils import hook_lengths  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 
-set_compute_dps()  # 50-digit precision throughout
+set_compute_dps()  # _precision.COMPUTE_DPS (70), not the 50 this once said
 
 
 def partitions_of(n):
@@ -178,9 +180,11 @@ def alpha_5_at_A_num(A, q_val):
         contributions.append({
             "shape": list(shape),
             "f_lambda": f_lambda(shape),
-            "w_lambda": float(w),
-            "c_5": float(c5),
-            "contribution": float(prod),
+            # mpf: `contribution` is format-specced by the display loop in main()
+            # (`:+.4e`), which mpf honours and a serialized string would not.
+            "w_lambda": w,
+            "c_5": c5,
+            "contribution": prod,
         })
     return total, contributions
 
@@ -223,8 +227,8 @@ def alpha_5_at_A_partial_normalized(A, q_val):
         contribs.append({
             "shape": list(shape),
             "f_lambda": f_lambda(shape),
-            "dim_q_squared": float(d * d),
-            "c_5": float(c5),
+            "dim_q_squared": d * d,
+            "c_5": c5,
         })
     if den == 0:
         return mp.mpf("inf"), contribs
@@ -270,21 +274,46 @@ def q_sweep_atom_independence():
         partials = []
         for A in [2, 3, 4]:
             raw, naive, partial = alpha_5_three_normalisations(A, q_val)
-            rows.append((A, float(raw), float(naive), float(partial)))
-            partials.append(float(partial))
+            rows.append((A, raw, naive, partial))
+            partials.append(partial)
+        # mpf throughout: `rel_spread_partial` is a RECORDED METRIC computed from
+        # these, so casting `partials` to float made the published spread a
+        # float64 result rather than merely a float64 record. `mp.inf` rather
+        # than `float("inf")` for the same reason.
         spread_partial = max(partials) - min(partials)
         median_partial = sorted(partials)[1]
         rel_spread_partial = (
             spread_partial / abs(median_partial)
-            if median_partial != 0 else float("inf")
+            if median_partial != 0 else mp.inf
         )
         out.append({
             "q_label": label,
-            "q_val": float(q_val),
+            "q_val": q_val,
             "rows": rows,
             "rel_spread_partial": rel_spread_partial,
         })
     return out
+
+
+def _ser_deep(obj):
+    """Serialize every mpf in a nested structure to a 60-dps decimal string.
+
+    This producer has four numeric `add_data` payloads with no common funnel, so
+    the walker is applied at each of them and `main()` / the sweep keep mpf
+    throughout.  `bool` is tested before `int` because `bool` subclasses `int`
+    and would otherwise reach the numeric branch and be written as a string.
+    Tuples become lists, which is what `json.dump` does with them anyway.
+    """
+    if isinstance(obj, dict):
+        return {k: _ser_deep(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [_ser_deep(v) for v in obj]
+    if isinstance(obj, bool) or isinstance(obj, int) or isinstance(obj, str) or obj is None:
+        return obj
+    try:
+        return fmt(obj)
+    except Exception:
+        return obj
 
 
 def main() -> int:
@@ -335,10 +364,10 @@ def main() -> int:
             )
 
         results[A] = {
-            "alpha_5_raw_q0": float(raw_q0),
-            "alpha_5_normalized_q0": float(norm_q0),
-            "alpha_5_raw_q1": float(raw_q1),
-            "alpha_5_normalized_q1": float(norm_q1),
+            "alpha_5_raw_q0": raw_q0,
+            "alpha_5_normalized_q0": norm_q0,
+            "alpha_5_raw_q1": raw_q1,
+            "alpha_5_normalized_q1": norm_q1,
             "n_height_6_partitions": len(contribs_q0),
             "top_contributions_q0": contribs_q0[:5],
         }
@@ -395,10 +424,10 @@ def main() -> int:
         verdict = "strongly atom-dependent (mechanism orthogonal to JM-central)"
     print(f"\nVERDICT: {verdict}")
 
-    wb.add_data("results", results)
-    wb.add_data("verdict", verdict)
-    wb.add_data("relative_spread_normalized", float(rel_spread_n))
-    wb.add_data("relative_spread_raw", float(rel_spread_r))
+    wb.add_data("results", _ser_deep(results))
+    wb.add_data("verdict", _ser_deep(verdict))
+    wb.add_data("relative_spread_normalized", fmt(rel_spread_n))
+    wb.add_data("relative_spread_raw", fmt(rel_spread_r))
 
     # ── q-sweep across (1, φ) for the partial-Plancherel-norm ─────
     print("\n" + "=" * 60)
@@ -423,7 +452,7 @@ def main() -> int:
     print(f"\n  Best atom-independence at: {best['q_label']} "
           f"(rel spread = {best['rel_spread_partial']*100:.2f}%)")
 
-    wb.add_data("q_sweep", sweep_summary)
+    wb.add_data("q_sweep", _ser_deep(sweep_summary))
     # Also a refutation assertion: even the BEST q in (1, φ) is
     # well above the refutation threshold, so the simplest closed
     # form is refuted uniformly across the physical regime.

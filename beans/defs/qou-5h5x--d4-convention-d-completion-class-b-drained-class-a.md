@@ -95,3 +95,97 @@ is closed. What survives is its definition of 'complete', which is now
 answerable. Live, and cheap: re-read it against the registry.
 
 Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+## 2026-10-10: all three done-when items re-measured on `main` `ac111c1814`
+
+§9 of the status doc marked this LIVE-and-cheap because the class-A premise had
+moved. It has. Each box below is measured, not read off a sibling bean.
+
+### Class A — **2 of 3 resolved, and `gram.py` resolved HONESTLY**
+
+| item | bean | state |
+|---|---|---|
+| `pyhecke/gram.py` singular under D | `qou-w8zz` | **`completed`** |
+| `hecke-engine/src/gram.rs` `TR_M[5]=z³` bug load-bearing | `qou-m7py` | `todo` |
+| `aK_via_lp_dual_full` LP collapses | `qou-fu8c` | **`completed`** |
+
+`gram.py` is now convention D and **`G_INV` is GONE rather than rebound** — read
+at the source, lines 19–20 and 107: *"`G_INV` is GONE rather than renamed — under
+D the form is singular"*, and *"`G_INV` is left UNDEFINED rather than rebound."*
+That is the right resolution and not the one this bean feared: the module does
+not compute an inverse from rounding noise and export it, and the one test that
+broke is an assertion `G @ G_INV ≈ I`, *"an identity convention D makes FALSE —
+the test reporting the mathematics correctly."* The 90-line banner this bean
+cites has become a 150-line historical record carrying both conventions'
+eigenvalues (C: `−0.855067, +0.101797, +0.855067×3, +3.476950`; D: `−0.752702,
+0.000000, +0.752702×3, +4.230339` — the explicit zero is the radical).
+
+So **the only class-A item left is the Rust side**, `qou-m7py`.
+
+### Done-when #1 (`markov_convention` provenance) — 1.3 %, and the field is UNVOCABULARIED
+
+The bean's figure was *"only 10 of 64 changed witnesses declare a
+`markov_convention` field"*. Corpus-wide it is far worse, and there is a second
+defect the bean does not name. Scanned all **3510** non-`_deprecated`
+`computations/**/*.witness.json`:
+
+    declaring markov_convention anywhere : 44  (1.3 %)
+    distinct spellings                   : 23   for 4 states
+    bare "D"                             : 13
+
+**A free-text field cannot turn a lower bound into a total**, which is what
+this bean's done-when asks of it. The 23 spellings include `"D"`,
+`"D canonical"`, `"D (z = q^3/(q^2+1))"`, `"D  (z = q^3/(q^2+1))"` (double
+space), `"D — the ruled functional, z_D = q^3/(q^2+1)"`, `"D (N = 2)"`,
+`"both, compared — D canonical"`, `"n/a (counit only)"` and
+`"convention-free — no z is specialised"`.
+
+**And the one live consumer had a latent defect, now fixed.**
+`per_observable_100x_status.py` — the L2 dashboard AGENTS.md directs readers to
+quote — compared the stamp character-for-character:
+
+    matched = str(conv).strip().upper() == CANONICAL_MARKOV_CONVENTION   # "D"
+
+Measured: **10 of the 11 spellings that MEAN convention D** classified as
+`INHERITED_C`, i.e. a correctly-stamped *canonical* artifact reported as
+carrying the *excised* convention, on the headline dashboard. It has never
+fired wrongly only because the cache it reads carries the bare `"C"`, which the
+old check got right — **zero wrong verdicts is not a sound check** (taxonomy row
+34). The moment `qou-cds1` lands and that cache is re-stamped with anything
+longer than one character, the dashboard calls the ruled result convention C.
+
+Fixed with `_normalise_markov_convention` + `MARKOV_CONVENTION_SPELLINGS` as
+fixtures (all 23 measured spellings, 0 FAIL). Deliberately conservative: an
+unrecognised spelling returns `"unparsed"`, never `D` and never `C`, so a new
+spelling fails loudly. Producer re-run: **every number byte-identical**, the one
+payload change being the new `cache_convention_normalised: "C"` field, and the
+live verdict correctly unchanged at `INHERITED_C`.
+
+### Done-when #3 (the `chi-*-matrix-m` orphans) — a CATEGORY ERROR, not an orphan set
+
+The box reads *"the 6 remaining orphans (`chi-*-matrix-m`) — need the
+`hecke-engine` CLI, not a Python producer"*. Measured: there are **11**, not 6,
+and **none of them is a convention orphan**:
+
+    11 chi-*matrix-m witnesses; 11 carry NO markov_convention stamp
+                                 0 carry a detectable z value (C or D)
+
+That is correct, because **`χ_λ` is convention-free**. `z` enters the Markov
+trace only through the weights — `tr_M = Σ_λ y_λ χ_λ` — so a character matrix
+has no Markov-parameter dependence. Confirmed at the producer rather than
+inferred: `chi_path_sum_seminormal.py` contains **zero** occurrences of `z`,
+`markov`, `ocneanu` or `y_lambda`. The `convention` field these witnesses *do*
+carry reads `"sign-only-crossings"` — a **braid-word** convention, a different
+axis.
+
+So #3 is not work on the C→D axis at all. Whether these should be produced by
+the Rust CLI is a real question; it is not this bean's.
+
+### Where that leaves "complete"
+
+Of the three boxes: **#2 is 2/3 done** (only `qou-m7py` left), **#3 is void on
+this axis**, and **#1 is the real remainder** — and it is now a *vocabulary*
+problem rather than a coverage one. Coverage without a controlled vocabulary
+buys nothing, since the only consumer that reads the field could not parse 10
+of 11 D-spellings. Staying `todo` on #1 and #2; `qou-ng7j` carries the
+vocabulary half.

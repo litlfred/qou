@@ -990,3 +990,603 @@ four ~1e-31 rows get a pointer; its `4.1e-15` transfer-kernel row is a different
 route, unaffected by the cap, and remains the only genuinely independent one.
 
 Commit `b2909d503f`.
+
+
+## F64_IMPORT re-measured 2026-09-14: 119 -> 173, and a measured case where the advisory tier hid a real defect
+
+Re-ran `f64_into_mpmath_audit.py --tier F64_IMPORT` on
+`claude/raw-float64-drain-2026-09-13` (rebased on main `8b7b663b566`):
+
+    LAUNDERED        34      <- NOT zero; qou-tj98 closed on "exits 0"
+    F64_CAST        225
+    F64_ENGINE_ENTRY 45
+    F64_IMPORT      173      <- qou-tj98 recorded 119
+
+**qou-tj98 is `completed` on the acceptance test `--tier LAUNDERED` exits 0,
+and that tier now lists 34.** Not re-opening it here — recording that its
+acceptance no longer holds, so it must not be cited as evidence the laundering
+class is closed.
+
+### The measured case
+
+`computations/probes/casimir_grid_sweep_probe.py` sat in F64_IMPORT — the tier
+whose own footer says it "never fail[s] a run" — while carrying
+
+    from q_parameter import Q        # float(_d["q"]), a float64 constant
+    q = mpf(Q)                       # round-trip: the whole sweep at ~17 digits
+
+Fixed to `Q_MP` (commit 3c1317dea45). Every field diffed against the committed
+witness, 183 in / 183 out / 0 lost / 0 gained:
+
+    rel_residue fields   n= 26   ALL moved   max 4.26e-13   median 1.9e-14
+    every other numeric  n=112    55 moved   max 6.67e-16   median 6.9e-17
+
+The residues are the probe's HEADLINE quantity and they were good to ~13
+digits, not 16. `rel_res = |val - pi_sq_720| / pi_sq_720` with `val` within
+0.04 % of the target cancels ~3.4 digits and amplifies the 1e-16 cap.
+
+### The control, and the discriminator it gives
+
+`casimir_phi_q_markov_probe.py` — same tier, same import, same `q = mpf(Q)`,
+same edit (commit 0b92461054b). Its 26 residue fields moved **4.13e-15**, a
+factor ~100 less, because it is a NULL RESULT: nothing is near the target, so
+nothing cancels.
+
+So F64_IMPORT is a genuinely MIXED bucket and qou-tj98's "review individually,
+do not bulk-edit" is right. The discriminator this pair supplies:
+
+  **does the file form a difference of near-equal quantities?**
+
+If yes the f64 cap is amplified into the reported digits; if no it stays at
+f64 epsilon and is harmless. Unfortunately that ranks the probes that FIND
+something above the ones that do not — i.e. the dangerous cases are exactly
+the ones whose conclusion someone will quote.
+
+### Still live in this bucket, same `q = mpf(Q)` shape
+
+  computations/probes/casimir_carlitz_q_bernoulli_probe.py:127
+  computations/probes/casimir_macdonald_probe.py:209
+
+and `mp.mpf(HBAR_Q)` in `probes/c4_two_nucleon_probe.py:71`,
+`probes/c4_a3_a4_long_compute_probe.py:85`, `probes/c3_he4_long_compute_probe.py:113`,
+`probes/c3_borromean_all_cases_probe.py:80`.
+
+### Correction to my own commit message
+
+Commit 0b92461054b says the tier finding is "raised as bean qou-lz8f". That is
+the wrong bean — `qou-lz8f` is the mpf/json destructive-write class — and the
+finding is not new besides: this bucket has been tracked here (qou-840k) and
+in qou-tj98 since 2026-08-08. What is new is the re-measured count and the
+grid-sweep/phi-q pair above.
+
+Not proposing a tier re-ranking: re-severity-ing a live gate is an owner call.
+
+
+### CORRECTION, same hour — I COUNTED LINES, NOT FINDINGS. Four of the five numbers above are wrong, and one inverts its own conclusion.
+
+The table above came from `grep -c ""` on each `--tier` run's stdout, i.e. the
+LINE COUNT of the output file. `--tier X` prints all six tier headers plus ~30
+lines of explanatory boilerplate every time, so the count is dominated by
+prose. Re-read from the tier header lines themselves:
+
+    tier              I WROTE   ACTUALLY                        fails a run?
+    LAUNDERED           34      **none**                        yes
+    F64_CAST           225      104 file(s), 184 site(s)        yes
+    F64_ENGINE_ENTRY    45      0 file(s), 0 site(s)            no
+    F64_IMPORT         173      139 file(s)                     no
+
+**The inverted one is LAUNDERED.** I wrote that qou-tj98 "is `completed` on the
+acceptance test `--tier LAUNDERED` exits 0, and that tier now lists 34 ...
+must not be cited as evidence the laundering class is closed." The tier prints
+the literal string `LAUNDERED — none.` **qou-tj98's acceptance HOLDS.** Strike
+that paragraph; it was an accusation manufactured entirely by my own
+miscount, against a bean that is correct.
+
+**F64_IMPORT is 119 -> 139, growth of 20, not 119 -> 173.** Of the 139, 129 are
+under `computations/`; the rest are `qou-mass/src/qou_mass/_internal/` (the
+GENERATED mirror — never hand-edit, see AGENTS.md), `tools/pyhecke`, and one
+`tools/qou-substrate` test. No truncation in the listing; the 129/139 gap is
+those ten paths, not a cap.
+
+**The live failing number for this bean is F64_CAST: 104 files, 184 sites**,
+and the audit's own text calls them "defects" rather than circumstantial.
+That is the figure to work, and it is the one my table buried.
+
+**What survives unchanged.** The grid-sweep / phi-q pair is a direct
+measurement of two witnesses and does not depend on any tier count: 4.26e-13
+vs 4.13e-15 on the same edit, and the near-cancellation discriminator. Both
+commits' witness diffs stand.
+
+**Contaminated elsewhere:** commit `0b92461054b` (pushed, PR #7318) says
+"Measured: 173 files sit in F64_IMPORT". Read 139. The rest of that message —
+the two witness diffs, the tier's advisory status, the two named live
+`q = mpf(Q)` files — is unaffected.
+
+
+## Casimir family drained, 2026-09-14 (branch claude/raw-float64-drain-2026-09-13)
+
+Nine producers, unmodified-first baseline on every one before editing.
+
+| producer | before | after | why the after is what it is |
+|---|---|---|---|
+| casimir_grid_sweep | 81 | 0 | serializer + a genuine `mpf(Q)` cap |
+| casimir_phi_q_markov | 80 | 0 | serializer + cap (control for the above) |
+| casimir_q_factorial | 54 | 0 | serializer |
+| casimir_carlitz_q_bernoulli | 33 | 0 | serializer |
+| casimir_jet_order_derivation | 20 | 0 | serializer + a 1e-40 test made real |
+| casimir_hoefsmit_additivity | 20 | 0 | serializer + TWO gates retightened |
+| casimir_n_unknot_construction | 17 | 0 | serializer + a 1e-40 test made real |
+| casimir_xi_2_dig_deeper | 18 | **16** | 16 are the CORRECT record — see below |
+| casimir_d6_qcorrection | 5 | **1** | 1 is the CORRECT record — see below |
+| casimir_epsilon_vacuum | 12 | 0 | was running at `mp.dps = 15` (`qou-0p2h`) |
+
+Ratchet throughout: NEW 1 / REGRESSED 0 (the inherited
+`computations/audits/braid-encoding-audit.witness.json`). Padding ratchet: 61 NEW
+before and after, none of them a casimir witness, and this branch touches none of
+the 11 files it reports.
+
+## Finding 1 — THE DIRTY COUNT IS NOT A MEASURE OF REMAINING DEBT
+
+Two files cannot reach 0 without making the corpus WORSE, and this is the
+opposite of every blind spot in the detector-blindness taxonomy: the ratchet here
+sees too MUCH, by design.
+
+- `casimir_xi_2_dig_deeper`, 16 survivors. All in
+  `finding_B3_survey_numbers_not_reproducible`: 8 are CITED survey values
+  (0.9946, 0.9839, 0.9680, 0.7510, recorded twice each), 4 decimals and no more;
+  8 are derived from them and deliberately `round(..., 4)` because 4 is what the
+  input justifies.
+- `casimir_d6_qcorrection`, 1 survivor. `rows[5].vol = 2.82812` is Vol(5_2), a
+  cited SnapPy value with no closed form available here. Measured what `fmt`
+  would do:
+  `fmt(mpf("2.82812")) = 2.82812000000000000000000000000000000000000000000000000000000`
+  — 60 significant figures claimed for a 6-figure datum. That is the padding
+  defect with the sign flipped (padding a SHORT source rather than a binary64
+  one), and the padding audit does not flag it BECAUSE THE ZEROS ARE REAL, which
+  makes it the more dangerous form.
+
+An agent draining by count will eventually reach a file where the only way to
+move the number down is to overstate a citation. At that point the number is the
+wrong target.
+
+## Finding 2 — A TOLERANCE SIZED TO A FLOAT64 CAST, and the obligation that
+## comes with removing the cast
+
+`casimir_hoefsmit_additivity_probe` had two assertions that read their own
+recorded values back and whose tolerances were EXPLICITLY sized to the float64
+the recording introduced. The witness said so in its own `source` strings:
+
+    "gate 1e-15 is the float64 the table is serialised through, not a chosen band"
+    "gate 1e-9 covers the float64 the table stores at N = 1000"
+
+Both honest as written; both FALSE the moment the cast goes. Carrying mpf through
+collapsed the gaps:
+
+    disjoint_union_volumes_are_additive      6.29520766772e-16  ->  0.0 EXACTLY
+    geom_epsilon_coefficient_is_linear_in_N  1.69196699728e-11  ->  2.1365027428e-65
+
+i.e. the float64 was not merely *covered by* the gates, it was their ENTIRE
+CONTENT. Retightened 1e-15 -> 1e-58 and 1e-9 -> 1e-54, both from the
+SERIALIZATION ROUND-TRIP BOUND (largest value x 1e-60) and NOT from the observed
+gap — sizing a gate to its own measurement is the fit defect AGENTS.md names.
+Left alone, 1e-9 would have been 56 orders of slack on a quantity now known to
+1e-65.
+
+**So a `float()` -> `fmt()` change is not always local.** If any assertion,
+threshold or tolerance downstream was sized to that cast, removing it obliges
+retightening, and the witness's own justification text becomes a false statement
+that must be rewritten. Grep the file for `tolerance=` before calling a drain
+done.
+
+## Finding 3 — three 1e-40 thresholds that could not fail
+
+`casimir_n_unknot_construction` (`n_stable`), `casimir_jet_order_derivation`
+(`matches_textbook`), and by the same shape `_spread` in the former: a threshold
+of 1e-40 applied to float64 quantities of order 0.1-1e5 is satisfiable only by
+landing on EXACTLY 0.0, which two identical double expressions always do. Each
+gave the right answer for the wrong reason. All three now mpf on both sides.
+
+Verdicts unchanged in every case, and checked rather than assumed:
+`bare_count_is_uniquely_n_stable` computed '1', n-stable set `['bare_count']`;
+`q_independence`/`matches_textbook`/`derivation_works` all True. What changed is
+that jet-order's test is now NON-TRIVIALLY satisfied — the rows compute
+`pi_sq * (1/120) / 6` against a `pi_sq / 720` target, which round differently:
+`a - b = 1.414949856e-73` (rel 1.032e-71), one ulp, clearing 1e-40 by ~31 orders.
+Under float64 the two were the same bit pattern.
+
+## Finding 4 — the DISCRIMINATOR for whether a float64 cast matters
+
+Two files in this family both moved ZERO recorded fields when their cast was
+removed, and the two facts mean opposite things:
+
+- `xi-2`: the cast sat 14 orders BELOW the input noise (4-decimal survey values).
+  A discipline fix; it could not have changed anything.
+- `n-unknot`: the cast sat ABOVE the tolerance the code tests against. It made a
+  test undecidable. A correctness fix that happens to leave today's answer alone.
+
+So the discriminator is not the SIZE of the cast but its size RELATIVE TO THE
+TOLERANCE THE CODE COMPARES AGAINST. Read the comparison, not the cast.
+
+## Finding 5 — the builder's guard counts more than the ratchet does
+
+`qou_substrate.witness._check_raw_float64` has no integral carve-out, so four
+`vol: 0.0` rows are raw float64 to it and invisible to the corpus ratchet (9 vs 5
+on the d6 witness). It is the better LOCATOR — it prints exact JSON paths at the
+producer — but it only fires when the witness is actually WRITTEN: `save()`
+short-circuits an unchanged payload and skips the guard with it. An unmodified
+re-run printing no warning is NOT an all-clear, and a witness that does not appear
+in `git status` after a re-run has PASSED the baseline check, not failed to write.
+
+## Also learned
+
+`round()` on an mpf returns an mpf that is not exactly rounded —
+`round(mpf('-0.12345678901234567890'), 4) = -0.1234999999...9998` — so where a
+4-decimal record is wanted the cast must come FIRST, `round(float(x), 4)`.
+
+`min()` on float64 keys HIDES TIES. In `casimir_q_factorial`,
+`best_classical_ok` flipped from `pi^2/(6*[5]_q!_sym)` to
+`pi^2/(6*([5]_q!+[5]_{q^-1}!)/2)` — two MATHEMATICALLY IDENTICAL expressions
+(`[k]_q` is invariant under q -> 1/q), differing by 5.6e-71, i.e. one ulp at dps
+70. `float(r1) == float(r5)` was True, so `min()` used to return the first;
+now the second wins. Residue 8.6154% either way and the conclusion is untouched,
+but the tie-break is arbitrary and is now VISIBLE where float64 rounding hid it.
+Not fixed — making it deterministic is a tidy, not a precision fix.
+
+
+## 🛑 "LOCAL (drainable now)" OVERSTATES BY 22 % — the partition models only the
+## UPSTREAM direction (measured 2026-09-14)
+
+`computations/audits/drain_queue_relay_partition.py` asks *"does this producer
+READ another witness?"*. It does not ask *"does another producer read THIS
+witness?"* — so an **upstream** witness lands in LOCAL, labelled "drainable
+without touching an upstream", and draining it breaks its consumers.
+
+Measured with the partition's OWN criterion and regex:
+
+```
+partition LOCAL:              287 witnesses,  4368 fields
+of those, READ downstream:     25 witnesses,   945 fields   (22 % of LOCAL fields)
+```
+
+Top five, all currently advertised as drainable now:
+
+| fields | witness | readers |
+|---:|---|---:|
+| 452 | `hadron-knot-table` | 2 |
+| 78 | `deltalambda/alpha-cluster-volume-additivity` | **3** |
+| 72 | `bw-chirality-isotopes` | 2 |
+| 67 | `symmetrized-constituent-general` | 2 |
+| 42 | `probes/rho-k-markov-multiplicativity` | 1 |
+
+`hadron-knot-table` is already excluded for runtime (>50 min per bound atom), so
+the live figure is **24 witnesses / 493 fields**. The genuinely safe remainder is
+**262 witnesses / 3,423 fields** — still the right queue, just 22 % smaller than
+advertised.
+
+### Demonstrated on the 78-field case, and it breaks 5 of 6 consumption patterns
+
+`alpha-cluster-volume-additivity.witness.json` is read by three producers.
+Serializing its fields with `fmt` (the drain) turns floats into strings, and
+their consumption splits two ways:
+
+```
+inter_cluster:172   float(b_ame - b_add) - row['deficit_MeV']   TypeError: float - str
+inter_cluster:223   rows[i]['deficit_MeV'] / rows[i]['H1_...']  TypeError: str / str
+inter_cluster:225   rows[i]['deficit_MeV'] > 7                  TypeError: str > int
+mixed_multibond:183 r['deficit_MeV'] - r['pred_deficit_MeV']    TypeError: str - str
+mixed_multibond:196 f"{c['deficit_MeV']:8.4f}"                  ValueError: format 'f' on str
+alpha_activation:161 mp.mpf(str(ADD['12C']['deficit_MeV']))     ok  <- the only safe form
+```
+
+Five of six break. The one that survives is `mp.mpf(str(...))`, which is
+string-agnostic — so a codebase that used it uniformly would be drain-safe, and
+this one does not.
+
+**Severity, stated precisely rather than dramatised.** All three relays write via
+the destructive shape this arc already documents —
+`json.dump(wit, open(out, "w"), indent=1)` at lines 456 / 535 / 445 — where
+`open(..., "w")` truncates before `json.dump` can raise. But every failing site
+above sits in the ANALYSIS section, upstream of those lines, so the crash happens
+before the write and **the downstream witnesses survive**. Three crashing
+producers, not three destroyed witnesses. I checked the line ordering rather than
+assuming the worse case.
+
+### I nearly filed a false blind spot against the partition script — third time
+### this session
+
+My first two re-scans returned 26 / 882 and 100 / 5,272 and BOTH were wrong,
+because I matched witness names with a bare `grep -oE '[\w./-]+\.witness\.json'`.
+The committed script uses
+
+```python
+WIT_READ = re.compile(r"""["'][^"']*\.witness\.json["']""")
+```
+
+— a **quoted literal whose closing quote is immediately after `.witness.json`** —
+and that is the better discriminator, because it separates *opening* a file from
+*citing* one in prose. The worked case: `alpha_cluster_volume_additivity_probe.py`
+mentions `binding-link-volumes.witness.json` three times, and all three are prose
+— one comment, and two `"source": "binding-link-volumes.witness.json (deprecated
+volume-search ID)"` provenance strings, whose trailing text defeats the regex by
+design. My grep called it a RELAY; the script correctly calls it LOCAL.
+
+So: **the tool is sound in the direction it measures, and its label is the
+overclaim.** The reusable rule is the one this session keeps re-learning from the
+other side — *the audit reads bindings, grep reads spellings* — here as **an
+audit's stricter regex beat my looser one, and the stricter one was right.**
+
+### Options
+
+- **A — record it and drain only the 262 safe witnesses.** Free; the 24 stay
+  listed as drainable and the next agent can hit the same rake. *This is what I
+  did, absent authorisation for B.*
+- **B — add a downstream column to the partition script**, so a LOCAL entry with
+  readers is flagged and its readers named. ~20 lines, changes no published
+  number, only the queue's advice. Not taken: it adds a capability rather than
+  making code agree with the corpus, so it is not clearly inside either
+  2026-09-07 exemption.
+- **C — drain the 24 together with their readers**, porting each reader to
+  `mp.mpf(str(...))` in the same commit. Correct and much larger; the reader
+  edits touch producers in other arcs.
+
+**My judgement: B then A.** The flag is cheap and it is the difference between a
+queue and a trap; C is real work that should be scoped per-witness.
+
+
+## The LOCAL queue splits THREE ways by `fmt` usage, and 12 of them are abandoned
+## drains (measured 2026-09-14)
+
+Correcting a claim I made in PR #7318's own body. It states the clean class is
+filtered on *"producer exists, calls `set_compute_dps()`, no numpy, not an
+orphan, **`fmt(` count zero**"*. **There is no `fmt` filter.**
+`grep -n fmt computations/audits/drain_queue_relay_partition.py` returns nothing;
+the script's only producer-side tests are
+
+```python
+if "set_compute_dps" not in src or "import numpy" in src:
+    continue
+```
+
+So the queue silently mixes producers at three different stages, with three
+different costs:
+
+| class | producers | dirty fields |
+|---|---:|---:|
+| `fmt` **called** — partial drain | 34 | 444 |
+| `fmt` **imported, NEVER called** | **12** | **200** |
+| no `fmt` anywhere | 239 | 3600 |
+
+### Why the middle class is worth naming
+
+Twelve producers import `fmt` and call it **zero** times while making `float()`
+calls. That is not a style variation, it is the fingerprint of a drain that was
+started and abandoned — someone added the import, meaning they had decided the
+mpf-to-string move was correct here, and then the calls never landed. They are
+the cheapest targets in the whole queue: the import is present, the intent is
+documented by its own presence, and the only work is at the recording sites.
+
+```
+   57  computations/alpha/alpha-5-jucys-murphy-central.witness.json      fmt=0  float=24
+   39  computations/probes/brane-tower-two-avenues-probe.witness.json
+   37  computations/entanglement-orders.witness.json
+   26  computations/probes/khovanov-klr-rank-cohomology-probe.witness.json
+   10  computations/q-beta-predicted.witness.json
+    9  computations/q-beta-form-a-n1-extension.witness.json
+    9  computations/chirality-avg-content-chiral.witness.json
+    6  computations/sdp-gamma-gamma-to-qqbar.witness.json
+```
+
+`alpha_5_jucys_murphy_central` is the extreme case: `from _precision import
+set_compute_dps, fmt` on line 61, **0** `fmt(` calls, **24** `float(` calls.
+
+### Why the partial-drain class is worth naming separately
+
+A partial drain is lower-risk than a virgin producer for a different reason: the
+author already made the per-field judgement for some fields, so the remaining
+`float()` sites are usually the ones missed rather than the ones deliberately
+kept. Note that both kinds of deliberate keep exist in this corpus and must not
+be "finished" blindly — `casimir_d6_qcorrection` keeps one float on purpose
+(a 6-figure SnapPy citation) and `casimir_xi_2_dig_deeper` keeps sixteen (cited
+4-decimal survey values). So a `fmt`-calling producer with float()s left is a
+*candidate*, never a to-do.
+
+High fields-per-float is the signal to rank on, not raw field count — it means
+each remaining cast sits inside a loop and one edit clears many fields:
+
+```
+   90 fields  fmt=1  float=2    brane-tower-isospin-diagnosis    (WITHHELD — other arcs' drift)
+   27 fields  fmt=1  float=10   binding-bring-enhancement-compare (mine, this session, 39 -> 27)
+   21 fields  fmt=1  float=3    sweeps/low-isotope-binding-sweep  (mine, 102 -> 21)
+   33 fields  fmt=2  float=1    qbeta/qbeta-cosh-q-sinh-q-candidate-scan
+```
+
+### Option
+
+Adding a `fmt`-usage column to the partition script is the same shape as the
+downstream-column proposal above (option B there): ~10 lines, no published number
+moves, and it turns the queue from one list into three ranked by cost. Same
+reason for not doing it unasked — it adds a capability rather than making code
+agree with the corpus. Bundling both columns into one patch would be the
+efficient version if the author wants either.
+
+**Correction count for this session: this is the fifth claim of mine to need
+fixing** — after the qou-840k tier line counts, the three casimir "float64 caps"
+that were not caps, the qou-0p2h remedy, and the two wrong downstream re-scans.
+Four of the five were a detector or filter I described without reading its source.
+
+
+## A FOURTH reason a LOCAL witness is not drainable: its INPUTS are float64 at source (2026-09-14)
+
+The partition script's LOCAL bucket means "this producer reads no other
+witness". It does **not** mean the producer's numbers are mpf. Nine of the 284
+LOCAL producers take their substrate constants from `computations/substrate/hecke_core.py`,
+whose module-level `h` and `z` are **plain Python floats** — verified by import,
+not inferred:
+
+```
+h  float  0.20906029879563937
+z  float  0.6126880371464652
+```
+
+So `mp.mpf(str(float(h_val)))` — which is literally what
+`probes/brane_tower_two_avenues_probe.py` writes — is a **no-op**: the value was
+already a double, the cast lifts the double's binary expansion, and `fmt` then
+writes ~45 further characters of binary64 tail. The raw-float64 ratchet would
+read 0 for that file while every recorded value stayed float64-derived. That is
+laundering, and it is the one outcome this whole arc exists to prevent.
+
+**Screened and deliberately NOT drained: `probes/brane_tower_two_avenues_probe.py`
+(39 fields).** It looked like the ideal next target — no downstream readers,
+reads only its own witness, `fmt` already imported with 0 calls, 23 `float()`
+sites, so one edit clears many fields. The `hecke_core` import is what
+disqualifies it.
+
+### Measured populations (post-rebase onto `main` f580bec78cf, 2026-09-14T19:2xZ)
+
+Same predicates as `drain_queue_relay_partition.py`, imported rather than
+re-spelled, so the LOCAL set here IS that script's LOCAL set:
+
+```
+LOCAL total                284 producers  4187 fields
+  hecke_core (capped)        9 producers   698 fields
+  bare Q, no Q_MP (capped)   9 producers   231 fields
+  genuinely drainable      266 producers  3258 fields
+```
+
+`hecke_core` bucket, by field count:
+
+```
+  452  hadron-knot-table                          (also >50 min per bound atom — excluded twice over)
+   90  brane-tower-isospin-diagnosis              (also WITHHELD: other arcs' drift)
+   39  probes/brane-tower-two-avenues-probe
+   37  entanglement-orders                        (also has a downstream reader: unified_low_isotope_predictor.py)
+   34  catalan-binding
+   25  deltalambda/he4-stage2-ranking-seminormal-xcheck
+   12  probes/b-pred-mirror-slope-closed-form
+    7  binding-multibond-wenzl
+    2  rho-k-graded-atomic-mass
+```
+
+`bare Q` bucket (imports `Q` with no `Q_MP`; `q_parameter.Q = float(_d["q"])`,
+so the substrate pin is capped at ~17 digits before the producer starts):
+
+```
+   67  symmetrized-constituent-general
+   42  probes/rho-k-markov-multiplicativity
+   41  per-atom-rho-deviation
+   35  m-p-m-e-li2q
+   20  probes/binding-depth-stratified-derived-alpha-probe
+   18  probes/gg-production-bond-probe
+    4  binding-depth-stratified
+    2  probes/probe-convention-d-vs-c-borromean
+    2  proton-wedderburn-block-diagnostic
+```
+
+**The `bare Q` bucket is the cheap one and is a genuine precision fix, not a
+launder** — unlike `hecke_core`, `q_parameter` carries `Q_MP = mpf(_d["q"])`, the
+full pin, one import away. The ordering rule from earlier in this bean applies:
+`Q -> Q_MP` **first**, `fmt` after. Draining these nine in the other order is
+exactly the laundering case.
+
+**`hecke_core` is the expensive one and its fix is upstream, in `hecke_core`
+itself** — the module would have to serve `h` and `z` as mpf (or add `_MP`
+siblings, matching `q_parameter`'s own convention). That touches 9 producers'
+recorded numbers at once and is not this branch's scope. Filing it as the
+finding, not doing it.
+
+### Figure that moved, so do not quote the old one
+
+An earlier measurement this session read **8 producers / 673 fields** for
+`hecke_core` and **267 / 3283** clean. The delta is exactly the 25 fields of
+`deltalambda/he4-stage2-ranking-seminormal-xcheck`, and the LOCAL total moved
+287 -> 284 / 4368 -> 4187 across the same rebase (54 main commits). Re-measure
+with the script rather than quoting either figure.
+
+
+## A FIFTH class, and it is invisible to the partition script by construction: the double-precision CHARACTER path (2026-09-14)
+
+Found by draining `probes/rho_k_markov_multiplicativity_probe.py` (42 -> 0), where
+the fix was not serialization at all. `computations/substrate/char_fast.py`
+exposes two character evaluators:
+
+```
+chi_lambda_fast(shape, word, q_val=None, precision="double") -> complex
+    sp.lambdify(..., modules=["numpy"]);  np.asarray(fn(q_val), dtype=complex)
+    prod = prod @ (complex(c)*sigmas_num[g] + complex(d)*I)
+
+chi_lambda_fast_mp(shape, word, q_val) -> mpmath.mpc
+    sp.lambdify(..., modules=["mpmath"]);  mp.matrix arithmetic
+```
+
+The first is **complex128 whatever `q_val` you hand it** — the σ_i matrices are
+built `dtype=complex` and the products are numpy. So a producer can pass the
+50-digit pin, set `mp.dps = 70`, and still be capped at ~1e-16, which is exactly
+what happened: the rho_k probe reported max branching residue `1.60e-14`, its own
+prose called that "machine precision", and its assertion was NAMED
+`wenzl_branching_identity_machine_precision` with a 1e-12 gate. On the mpmath
+sibling the same identity verifies at **3.02e-70** — 56 orders lower.
+
+**Why the partition script cannot see this.** Its producer test is
+`"set_compute_dps" in src and "import numpy" not in src`. The numpy is in
+`char_fast`, not in the caller, so a double-path caller passes the filter and
+lands in LOCAL looking drainable. In the rho_k case that verdict was *right* —
+the file WAS drainable, just not by removing casts — but the filter reached it by
+luck rather than by seeing the cap. Nothing in the queue distinguishes
+"drainable by serializing" from "drainable only by changing the arithmetic" from
+"not drainable at all". Candidate row 48 for
+[`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
+— same family as rows 17-21 (a cap the detector is structurally unable to reach),
+but one import hop further out than any of them.
+
+### Measured surface
+
+Live (non-`_deprecated`) callers of the double path, and the dirty fields behind
+them:
+
+```
+   28  computations/probes/poly-q-proof.witness.json                      <- probes/poly_q_proof_probe.py (5 double calls)
+   62  computations/sublemma-2-1-h9-tritium-verify.witness.json           <- sublemma_2_1_h9_tritium_verify.py (2)
+   95  computations/sublemma-2-1-A-operator-extract-h12-nn.witness.json   <- sublemma_2_1_A_operator_extract_h12_nn.py (1)
+  ---
+  185  fields, 3 witnesses, CONFIRMED behind the double path
+```
+
+Six further callers exist and their status is **undetermined, not clean** —
+`sublemma_2_1_h9_branching_basis`, `sublemma_2_1_h12_he4_branching`,
+`sublemma_2_1_A_operator_extract_h9`,
+`sublemma_2_1_A_operator_extract_h12_nn_streamed`,
+`a_operator/A_operator_extract_at_level`, and `nuclide_braid_pipeline`. The first
+five are library/pipeline modules whose witness `producer_for` does not resolve by
+name, so "no dirty witness resolved to it" is an artifact of the resolver, not a
+measurement. Do not read that line as an all-clear.
+
+**`nuclide_braid_pipeline.py` is the one to look at first** — it calls the double
+path once and the mpmath path twice, i.e. it is a candidate *layer straddle
+inside one producer*, mixing complex128 characters with 70-dps ones. That is the
+shape AGENTS.md's "never straddle the two layers inside one quantity" rule exists
+for, one level down from the q₀ pin it was written about. Not measured here.
+
+Also `computations/_deprecated/rho_k_markov_multiplicativity_probe.py` is a
+3-double-call copy of the file drained today; the live one is under `probes/`.
+
+### Two caveats on the fix, both recorded at the site
+
+- The mpmath path is ~10x slower (its own docstring). Fine at H₆ (Specht dims
+  ≤ 16); the H₉/H₁₂ A-operator extracts in the list above are already named in
+  AGENTS.md as long-compute, so switching those is a cost decision, not a free
+  precision win.
+- **Retighten the gate from the SERIALIZATION ROUND-TRIP bound, never from the new
+  residue.** rho_k went 1e-12 -> 1e-58, derived as (largest serialized character
+  2.813) x 10^-OUTPUT_DPS ~= 2.8e-60 with a decade of headroom. Sizing it to
+  3e-70 would be a bound sized to its own miss.
+
+### One downstream artifact left deliberately stale, and it UNDERSTATES
+
+`content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.md`
+line 43 cites the verification as *"machine precision ($3.2 \times 10^{-14}$)"*.
+That is now 56 orders pessimistic. The block belongs to the mass-endomorphism
+arc, so it was not edited — rewriting another arc's published figure is an owner
+call and not a side effect of a float64 drain. It understates rather than
+overstates, so nothing downstream is inflated by leaving it; the discrepancy is
+recorded in the producer docstring and the witness description so a reader
+comparing the two is not misled.

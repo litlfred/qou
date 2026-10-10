@@ -141,3 +141,78 @@ so the population of declared control arms grew 137 -> 143 and the risk this
 bean names -- a deliberate C object cited as though it were D -- grew with it.
 
 Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+## 2026-10-10 re-measure on `main` `ac111c1814`: the blast radius is down 29×
+
+`computations/audits/consumer_control_arm_audit.py --selftest` **PASSES** on
+`main` — the known positive is still detected, with the same five transcribed
+weights. The detector is delivered. What moved is the population it scans:
+
+| quantity | 2026-08-24 | 2026-10-10 | |
+|---|---:|---:|---|
+| witnesses scanned | 2938 | **3728** | corpus **+27 %** |
+| carrying the `z_C` fingerprint | 36 | **14** | |
+| carrying the muon-q0 fingerprint | 389 | **255** | |
+| python files scanned | 3758 | **4937** | |
+| ...naming a witness | 1854 | **2330** | |
+| **foreign READ edges of convention-C witnesses** | **229 / 122 consumers** | **8 / 8** | **−29×** |
+| foreign-transcription edges | 15 | **5** | |
+| ...**CONTROL-ARM (≥1 specific value)** | **1** | **1** | unchanged |
+| ...shared-constant only | 14 / 12 | **4 / 3** | |
+| self-written pairs dropped | 371 | 232 | |
+
+**This is genuine drain, not a denominator artifact** — and that distinction is
+the whole value of re-running rather than quoting. The corpus *grew* 27 % over
+the window while the C-fingerprinted witnesses fell 36 → 14 and the consumer
+edges 229 → 8. A shrinking count against a growing denominator cannot be
+explained by anything but the artifacts going away.
+
+### What this does to the bean's open item
+
+The bean's standing warning is *"the 229 is the blast radius; the 1 is what is
+provable. The other 228 are `unmeasured`, NOT clear."* That warning is intact in
+kind and transformed in scale: **7 unmeasured edges, not 228.** Hand verdicts on
+228 edges is a tranche nobody was going to run; on 7 it is an afternoon. The
+seven, verbatim from the run:
+
+    [unmeasured ] deuteron_from_scratch_ledger.py          -> confinement-operator-selection.witness.json
+    [unmeasured ] onepb_status_dashboard.py                -> confinement-operator-selection.witness.json
+    [unmeasured ] probes/ep_decomposition_reachability_probe.py -> hadron-knot-table.witness.json
+    [unmeasured ] audits/muon_pin_three_values_probe.py    -> qbeta/qbeta-ladder-required-phase.witness.json
+    [unmeasured ] qbeta/qbeta_ladder_alpha_form_filter_probe.py -> qbeta/qbeta-ladder-required-phase.witness.json
+    [unmeasured ] qbeta/qbeta_n1_constant_two_anchor_filter_probe.py -> qbeta/qbeta-ladder-required-phase.witness.json
+
+    [TRANSCRIBES] audits/muon_pin_A_residual_surface_audit.py -> hadron-knot-table.witness.json
+                  (shared-constant only -- NOT a control arm)
+
+The single CONTROL ARM is unchanged: `h4_markov_weights_closed_form.py` reading
+`alpha-k-jones-markov-h4.witness.json`, five specific weights, `frame CM`. The
+2026-08-24 `frame_evidence` finding stands and is the thing a drain must still
+respect — `z_C` IS in the consumer source (so a convention fix breaks it
+**loudly**) while the muon pin is NOT (so a re-pin changes its numbers
+**silently**).
+
+### Two things worth noticing in the new list, neither of them the detector's doing
+
+**`hadron-knot-table.witness.json` appears twice.** That is the file AGENTS.md
+names as the corpus's **one remaining `Q0_FLIP`** — the single witness still
+carrying the retired self-certified muon pin `1.1099785955573347…`. This audit
+reaches it from a completely independent direction (consumer transcription, not
+anchor stamping), which is corroboration rather than a new finding, but it does
+mean two of the seven hand verdicts sit on an artifact that is independently
+known to need a re-pin.
+
+**A second `[TRANSCRIBES]` appeared where August had one.**
+`muon_pin_A_residual_surface_audit.py` now transcribes out of
+`hadron-knot-table.witness.json` — correctly classed *shared-constant only*, so
+not a control arm. A muon-pin audit transcribing the muon pin is the expected
+shape, not a defect; recorded so the next reader does not count it as a
+regression from 1 to 2 control arms.
+
+### Status
+
+**Staying `todo`**, with the scope now tractable and explicitly named: 7 hand
+verdicts, listed above. The detector half of the title is **delivered**
+(selftest PASS on `main`, mutation-tested per the record above); the open half
+is the drain-safety verdict on those 7. Nothing here is an open conjecture, so
+13a is not what holds it open — the measurement simply has not been done.

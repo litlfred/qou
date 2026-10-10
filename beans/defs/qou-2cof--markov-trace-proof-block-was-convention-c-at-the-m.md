@@ -1,13 +1,13 @@
 ---
 # qou-2cof
 title: markov-trace proof block was convention C at the muon pin while its statement was D at proton — 15% disagreement
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T04:46:54Z
-updated_at: 2026-10-10T08:25:07Z
+updated_at: 2026-10-10T12:55:10Z
 parent: qou-d8c7
 ---
 
@@ -101,3 +101,21 @@ recorded numbers are not code -- re-deriving them is the `qou-cds1` ladder
 work or a scoped note. Not closeable by a value audit.
 
 Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+
+
+## 2026-10-10: undetermined groups measured and partly applied
+Measurement: /mnt/project-files/mass-endomorphism/m6-undetermined-measured.md.
+- **Group 1 (Pair-Skein), applied (1a):** the denominator q^{1/2}+q^{-1/2} is 1/z_C. Four .md blocks now say so (pair-skein-mass-formula + proof, flavor-split-substrate-proof, flavor-dressed-mass-from-substrate-split, beta-decay-skein-properties). The re-derivation is qou-cds1's. The fit flag in flavor-split Step 2 is beaned separately.
+- **Group 3 (six muon literals), applied (3a):** the labels now name the pin each producer actually recorded (CODATA-2018 muon, or none). The proton re-pin is queued on qou-1c4y.
+- **Group 4:** moot under the owner's 2a pick.
+- **Group 2 (GNS positivity), OPEN, needs an owner pick.** Under D the trace is positive for every q>0 (numeric check n=2..8; Jones, [2]_q>=2). Rewriting the proof is a math-claim change.
+Stays open for group 2.
+
+## 2026-10-10: group 2 applied (2a + 2c + 2d), PR #7594 merged
+
+- **2c:** Lean `QOU.SchurWeyl.ocneanuWeight_conventionD_pos_of_two_rows` (new file OcneanuWeightTwoRowPositive.lean) proves the closed-form convention-D weight is strictly positive on shapes with at most two rows, for q>0 and q!=1, over an ordered field. Sorry-free; lean-direct exit 0.
+- **2a:** the GNS embedding is stated for every real q>0 with sigma_i*=sigma_i, positivity via Jones TL ([2]_q>=2). centered-hecke-variance-positive now has a dated update that closes its D-threshold note.
+- **2d:** blitvic proof, hecke-branching proof and brane-tower decay are reworded. The decay statement is narrowed to 1<q<q_*, the range its proof uses.
+
+All four groups are now resolved. Re-derivations stay elsewhere: Pair-Skein under D is tracked on qou-cds1, the proton re-pin of the muon literals on qou-1c4y. Not done: the Lean identification of ocneanuWeight with the Markov weight at general n is still open (OcneanuWeight.lean). This bean does not track it, so completing it is safe.

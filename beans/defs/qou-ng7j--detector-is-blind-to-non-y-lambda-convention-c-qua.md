@@ -340,3 +340,70 @@ as recorded values). Live, and corroborated today: the value audit catches `z`
 BINDINGS; a recorded `tr_M` is a number, not a binding.
 
 Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+## 2026-10-10: the field exists on 1.3 % of witnesses, in 23 spellings — and its one consumer could not parse 10 of 11 D-stamps
+
+Measured on `main` `ac111c1814` while re-reading `qou-5h5x`, whose done-when #1
+is *"`markov_convention` provenance on every witness a producer writes (turns
+the lower bound into a total)"* and names this bean as the owner.
+
+**Coverage.** All **3510** non-`_deprecated` `computations/**/*.witness.json`:
+
+    declaring markov_convention anywhere : 44  (1.3 %)
+
+**And a second defect this bean does not name: the field is free text.** 23
+distinct spellings for **4** states —
+
+| state | n | spellings include |
+|---|---:|---|
+| D | 11 | `D`, `D canonical`, `D (N = 2)`, `D (z = q^3/(q^2+1))`, `D  (z = q^3/(q^2+1))` *(double space)*, `D — the ruled functional, z_D = q^3/(q^2+1)` |
+| C | 1 | `C` |
+| both compared | 3 | `both (C and D compared)`, `both, compared — D canonical` |
+| no `z` enters | 8 | `not applicable`, `n/a (counit only)`, `convention-free — no z is specialised` |
+
+Only **13 of 44** stamps are a bare `"D"`.
+
+### Why that matters more than the coverage number
+
+`qou-5h5x` asks this field to *"turn the lower bound into a total"*. **A
+free-text field cannot**, and the proof is its one live consumer.
+`computations/per_observable_100x_status.py` — the L2 dashboard AGENTS.md
+directs readers to quote — compared the stamp character-for-character:
+
+    matched = str(conv).strip().upper() == CANONICAL_MARKOV_CONVENTION   # "D"
+
+**10 of the 11 spellings that MEAN convention D classified as `INHERITED_C`:** a
+correctly-stamped *canonical* artifact reported as carrying the *excised*
+convention, on the headline dashboard, in the dangerous direction.
+
+It has produced no wrong verdict to date **only** because the cache it reads
+carries the bare `"C"`, which the old check happened to get right. That is
+taxonomy row 34 exactly — *zero hits is not the same as verified sound*: the
+check had never met a non-bare spelling, so the defect was latent. The moment
+`qou-cds1` lands and `qbeta-ck-cache.witness.json` is re-stamped with anything
+longer than one character, the dashboard calls the ruled result convention C.
+
+### Fixed at the consumer; the producer side is what remains
+
+`_normalise_markov_convention` maps a stamp to `D` / `C` / `both` / `n/a`, with
+`MARKOV_CONVENTION_SPELLINGS` holding all 23 measured spellings as fixtures
+(23 rows, **0 FAIL**). **Deliberately conservative** — an unrecognised spelling
+returns `"unparsed"`, never `D` and never `C`, so a new spelling fails loudly
+rather than being absorbed into either verdict, and `"unparsed"` is documented
+as *not a clearance*. Producer re-run: every number byte-identical, one new
+payload field `cache_convention_normalised`, live verdict correctly unchanged.
+
+**What this bean still owns**, now in the right order:
+
+1. **A controlled vocabulary first, coverage second.** Stamping 3466 more
+   witnesses in free text would multiply the parsing problem by 80. The
+   normaliser's four states are a de-facto vocabulary; promoting them to the
+   witness schema (`witness-schema`, under `schemas/witness-schema/`) is the
+   structural fix, and `WitnessBuilder` is where it would be enforced.
+2. **Then coverage** — and note `qou-3ral`'s finding applies: `WitnessBuilder`
+   has **three** write paths into the anchor vocabulary, and a guard installed
+   on one of them is not installed. Any convention-stamp enforcement has the
+   same shape and the same trap.
+3. **The blindness this bean is actually titled for is untouched**: a bare
+   `tr_M` or `z` value still looks identical under either convention, and only
+   producer provenance fixes it. Nothing above changes that.

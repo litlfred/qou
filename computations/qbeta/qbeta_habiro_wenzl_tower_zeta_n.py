@@ -143,7 +143,13 @@ def load_atomic(u: sp.Symbol) -> dict[str, dict[int, sp.Poly]]:
 
 
 def load_helium(u: sp.Symbol) -> dict[str, dict[int, sp.Poly]]:
-    """Helium witnesses live on PR #1618 branch; try /tmp first."""
+    """Load the committed helium Habiro witnesses from computations/.
+
+    They were once on PR #1618's branch and read from /tmp; they are now
+    committed at the package root, which ``HERE / fname`` (qbeta/) missed,
+    so the probe could not run on main (bean qou-pdix). The /tmp lookup is
+    dropped: a scratch file must not shadow the committed witness.
+    """
     def _try(p: Path) -> dict | None:
         if p.exists():
             log(f"Loading helium witness: {p}")
@@ -153,9 +159,7 @@ def load_helium(u: sp.Symbol) -> dict[str, dict[int, sp.Poly]]:
     out: dict[str, dict[int, sp.Poly]] = {}
     for label in ("He3", "He4"):
         fname = f"habiro-coefficients-helium-{'3' if label == 'He3' else '4'}.witness.json"
-        d = _try(Path(f"/tmp/{'he3.json' if label == 'He3' else 'he4.json'}"))
-        if d is None:
-            d = _try(HERE / fname)
+        d = _try(_pb.witness_path(fname, HERE))
         if d is None:
             raise FileNotFoundError(f"Cannot find helium witness for {label}")
         out[label] = parse_coeffs(d["habiro_coefficients"], u)
@@ -517,7 +521,8 @@ def main() -> int:
 
     builder.save()
     log("\n  ✓ Witness saved: qbeta-habiro-wenzl-tower-zeta-n.witness.json")
-    return 0
+    # A falsified level is a red witness; say so in the exit code too.
+    return 0 if all(a.passed for a in builder.assertions) else 1
 
 
 if __name__ == "__main__":
