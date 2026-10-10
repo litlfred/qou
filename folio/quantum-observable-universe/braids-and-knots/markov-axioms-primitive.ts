@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:markov-axioms-primitive",
   title:
-    "Primitive Markov-trace axioms (M1–M4 from Jones 1985 / Wenzl 1988) in Lean; discharges the `MarkovDisjointStabilisation` class for `prop:categorical-chain-convergence-mechanisms`",
+    "Primitive Markov-trace axioms (M1–M4 from Jones 1985 / Wenzl 1988) and the disjoint-stabilisation factorisation",
   interprets: "prop:markov-trace-frobenius-selection",
   uses: ["prop:categorical-chain-convergence-mechanisms"],
   cites: ["jones1985", "wenzl1988"],
@@ -34,7 +34,28 @@ export default remark({
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "status",
-      body: "The Lean stub [`markov-axioms-primitive.lean`](markov-axioms-primitive.lean):\n\n- Defines `class MarkovTraceAxioms` with fields for M1 and M3 (the two\n  needed for the factorisation; M2 is implicit in the cyclic-trace\n  construction; M4 follows from M3 via the Hecke quadratic).\n- Proves `markov_iterated_stab`: k applications of M3 give $\\tau \\cdot z^k$.\n- Proves `disjoint_product_factorisation`: from M3 alone, the disjoint\n  factorisation holds.\n- Discharges `MarkovDisjointStabilisation` from `MarkovTraceAxioms`.\n\nStatus: **closed**, no `sorry`s. The two class fields (`tau_one`,\n`tau_stab`) carry the unavoidable axiomatic content (M1 and M3 are\nJones-1985 axioms, not derivable from more primitive Lean content\nin this scope).",
+      date: "2026-10-10",
+      body:
+        "**Lean status corrected (bean `qou-ekga`, owner decisions A+B+C).** This " +
+        "note previously said the Lean defined a class `MarkovTraceAxioms` carrying " +
+        "M1 and M3, proved `markov_iterated_stab` and `disjoint_product_factorisation`, " +
+        "and discharged `MarkovDisjointStabilisation`. None of that held: the class " +
+        "(`QOU.BraidKnot.MarkovTraceAxioms`) had no trace in it — two scalars, each " +
+        "pinned by its own equation, so trivially inhabited — and the theorems had " +
+        "the shape `∃ x, x = e`. The class is now the deprecated " +
+        "`QOU.BraidKnot.MarkovScalarPins`; the six existentials and the unwired " +
+        "\"discharge\" are withdrawn.\n\n" +
+        "The honest statements are proved against the single content-bearing class " +
+        "`QOU.Hecke.MarkovTraceAxioms` (`lean/QOU/Hecke/MarkovTraceProduct.lean`, " +
+        "a real `trace : List GeneratorChain → R_q`): `markov_trace_stabilise` " +
+        "(appending k bare generators multiplies the trace by $z^k$) and " +
+        "`markov_trace_disjoint_stabilise` (trace of $K_1$ then $K_2$ then k bare " +
+        "generators is $\\mathrm{tr}(K_1)\\,\\mathrm{tr}(K_2)\\,z^k$), sorry-free, " +
+        "no extra hypothesis. Both are statements about the chain-list model, whose " +
+        "class has exactly one inhabitant (`trace = chainProduct z`); the bridge from " +
+        "the Hecke-algebra trace of a braid to that model is not formalised, and " +
+        "`MarkovDisjointStabilisation` remains an axiomatic class — it is not " +
+        "discharged.",
     },
   ],
 });

@@ -22,13 +22,42 @@ M1+M3 and the Hecke quadratic relation σ⁻¹ = σ − (q − q⁻¹); note
 z₋ ≠ z for q ≠ ±1. Per `prop:markov-trace-frobenius-selection`,
 M1-M3 uniquely pin τ_M as the Frobenius-non-degenerate trace.
 
-This file:
-  1. Defines the 4 axioms as a Lean class `MarkovTraceAxioms`.
-  2. Derives the **disjoint-stabilisation factorisation**
-       τ(K_1 ⊔ K_2) = τ(K_1) · τ(K_2) · z^k
-     from M3 alone (iterated k times), discharging
-     `MarkovDisjointStabilisation` class hypothesis used in
-     `prop:categorical-chain-convergence-mechanisms`.
+This file now carries only the Markov-parameter kernel `markovZax` and its
+archimedean shim `markovZax_real` (convention D).
+
+**Retired 2026-10-10 (bean `qou-ekga`, owner decisions A + B).** This file
+used to define a class `MarkovTraceAxioms` and claim to derive the
+disjoint-stabilisation factorisation `τ(K_1 ⊔ K_2) = τ(K_1)·τ(K_2)·z^k`
+from it, "discharging" `MarkovDisjointStabilisation`. None of that held:
+
+- The class had **no trace in it** — two scalars, each pinned by its own
+  equation (`tau_identity = 1`, `tau_stab_factor = markovZax u`) — so it
+  was inhabited for every `u` by `⟨1, rfl, markovZax u, rfl⟩` and asserted
+  nothing about any trace. It survives only as the deprecated
+  `MarkovScalarPins`.
+- The six theorems built on it (`markov_iterated_stab{_gen,,_real}`,
+  `disjoint_product_factorisation{_gen,,_real}`) all had the shape
+  `∃ x, x = <expr>`, provable by handing back `<expr>`. They are withdrawn.
+- `MarkovTraceAxioms_implies_disjoint_stabilisation` proved
+  `∀ τ, ∃ τ', τ' = τ * markovZax u`, which holds for any function in place
+  of `markovZax` and never used its instance. It was a theorem, not an
+  `instance`, with zero consumers, so nothing downstream was ever
+  discharged by it. Withdrawn.
+
+**Where the honest statements now live.** Against the single canonical
+content-bearing class `QOU.Hecke.MarkovTraceAxioms`
+(`lean/QOU/Hecke/MarkovTraceProduct.lean`), whose field is an actual
+`trace : List GeneratorChain → R_q`:
+
+- k-fold stabilisation — `QOU.Hecke.markov_trace_stabilise`:
+  `trace (cs ++ is.map stabChain) = trace cs * z ^ is.length`;
+- disjoint factorisation — `QOU.Hecke.markov_trace_disjoint_stabilise`:
+  `trace (cs ++ ds ++ is.map stabChain) = trace cs * trace ds * z ^ is.length`.
+
+Both are proved from the class fields, with no extra hypothesis. Both are
+statements about the chain-list model; neither discharges
+`MarkovDisjointStabilisation`, which stays an axiomatic class (see the
+docstring of `markov_trace_disjoint_stabilise`).
 
 LaTeX label: `rem:markov-axioms-primitive` (helper Lean infrastructure).
 -/
@@ -118,129 +147,29 @@ noncomputable def markovZax_real (q : ℝ) (_hq : 0 < q) : ℝ :=
 noncomputable def markovZax_legacy (q : ℝ) : ℝ :=
   1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
 
-/-- **Primitive Markov-trace axioms** as a Lean class via the
-    explicit-residual pattern. Captures the axioms M1 and M3 from
-    Jones 1985 / Wenzl 1988 that (with cyclicity M2, implicit in the
-    trace construction) uniquely characterise the Markov trace on
-    `H_n(R, q)`; M4 is derived from M3 via the Hecke quadratic
-    relation, with the distinct loop value z₋ = z − (q − q⁻¹).
+/-- **DEPRECATED — trivially inhabited; asserts nothing about a trace.**
 
-    Each axiom is encoded as a scalar invariant (residual / stab
-    factor) plus an equation pinning it to the required value.
+    Formerly `QOU.BraidKnot.MarkovTraceAxioms` (renamed 2026-10-10, bean
+    `qou-ekga`, so the name no longer collides with the content-bearing
+    `QOU.Hecke.MarkovTraceAxioms`). It holds two scalars, each pinned to a
+    fixed value by its own field, so for every `u` it has exactly one
+    inhabitant, `⟨1, rfl, markovZax u, rfl⟩`, and a
+    `[MarkovScalarPins u]`-conditional statement is unconditional in all
+    but name. It does not encode the Markov axioms M1–M3: there is no trace
+    function for them to constrain.
 
-    **Tier 2 generic-R form** (Phase 2 of the q-usage Hoefsmit
-    migration, PR #1640 / #1658). The class is parameterised by an
-    abstract field `R` and an element `u : R`; the intended physical
-    interpretation is that `u` is a formal square-root of the Hecke
-    parameter `q`, but the class itself imposes no `u² = q`
-    constraint — that hypothesis enters at the callsite for any
-    concrete instantiation that needs it.
-
-    Archimedean entry points: `MarkovTraceAxioms_real q` (an `abbrev`
-    of `MarkovTraceAxioms (Real.sqrt q)`) and the `_real` wrappers
-    `markov_iterated_stab_real` and `disjoint_product_factorisation_real`
-    below carry an explicit `(hq : 0 < q)` hypothesis so they avoid
-    the `q-usage-positivity-implicit` warning. There are no instances
-    of this class on `main` at the time of this Phase 2 refactor, so
-    no archimedean callers are broken. -/
-class MarkovTraceAxioms {R : Type*} [Field R] (u : R) where
-  /-- M1: scalar value of `τ` on the identity element. -/
+    Use `QOU.Hecke.MarkovTraceAxioms` (a real `trace` with `trace_nil` /
+    `trace_cons`) instead. Kept, deprecated, only so the retirement is
+    visible; it has no consumers. -/
+@[deprecated "Trivially inhabited (two self-pinned scalars, no trace). Use the content-bearing `QOU.Hecke.MarkovTraceAxioms`; stabilisation / disjoint factorisation are `QOU.Hecke.markov_trace_stabilise` / `markov_trace_disjoint_stabilise`. Bean qou-ekga." (since := "2026-10-10")]
+class MarkovScalarPins {R : Type*} [Field R] (u : R) where
+  /-- A scalar, pinned to `1` by the next field. -/
   tau_identity : R
-  /-- M1: τ(1) = 1 (normalisation). -/
+  /-- Pins `tau_identity` to `1`. -/
   tau_identity_eq_one : tau_identity = 1
-  /-- M3: stabilisation factor. Adding one disjoint strand
-      multiplies a trace value by `markovZax u`. -/
+  /-- A scalar, pinned to `markovZax u` by the next field. -/
   tau_stab_factor : R
-  /-- M3: the stabilisation factor equals `z = u / (u² + 1)`. -/
+  /-- Pins `tau_stab_factor` to `markovZax u`. -/
   tau_stab_factor_eq_z : tau_stab_factor = markovZax u
-
-/-- **Legacy archimedean alias** preserved for pre-Phase-2 callers.
-    `MarkovTraceAxioms_real q` is a `MarkovTraceAxioms` instance over
-    `ℝ` with `u := Real.sqrt q`; existing `[MarkovTraceAxioms q]`
-    callsites that took `q : ℝ` should migrate to either:
-      - generic `[MarkovTraceAxioms u]` with `u² = q` (preferred), or
-      - the explicit archimedean form `[MarkovTraceAxioms (Real.sqrt q)]`. -/
-abbrev MarkovTraceAxioms_real (q : ℝ) : Type := MarkovTraceAxioms (Real.sqrt q)
-
-/-! ## Iterated stabilisation → disjoint-product factorisation -/
-
-/-- **k-fold stabilisation (generic-R / Tier 2 form)**: starting from a
-    trace value `τ`, k applications of M3 give `τ · z^k`, where `z` is
-    the abstract Markov-Jones parameter in any field. Independent of
-    archimedean specialisation. -/
-theorem markov_iterated_stab_gen {R : Type*} [Field R]
-    (z : R) (τ : R) (k : ℕ) :
-    ∃ τ_k : R, τ_k = τ * z^k := ⟨τ * z^k, rfl⟩
-
-/-- **k-fold stabilisation (Tier 2 generic-R form)**: under the
-    `MarkovTraceAxioms u` instance, starting from a trace value `τ`,
-    k applications of M3 give `τ · (markovZax u)^k`. -/
-theorem markov_iterated_stab {R : Type*} [Field R] (u : R) [MarkovTraceAxioms u]
-    (τ : R) (k : ℕ) :
-    ∃ τ_k : R, τ_k = τ * (markovZax u)^k :=
-  markov_iterated_stab_gen (markovZax u) τ k
-
-/-- Archimedean shim of `markov_iterated_stab` — preserves the
-    pre-Phase-2 `(q : ℝ)` API surface. Carries the explicit
-    `(hq : 0 < q)` hypothesis so the statement is phrased via
-    `markovZax_real q hq` rather than the positivity-implicit
-    `markovZax (Real.sqrt q)`. -/
-theorem markov_iterated_stab_real (q : ℝ) (hq : 0 < q)
-    [MarkovTraceAxioms (Real.sqrt q)] (τ_x : ℝ) (k : ℕ) :
-    ∃ τ_x_k_stab : ℝ, τ_x_k_stab = τ_x * (markovZax_real q hq)^k :=
-  -- Routed through the ABSTRACT-`z` form, not through `markovZax (√q)`.
-  -- Under convention D the shim is `q² · markovZax q`, which is not
-  -- `markovZax u` for ANY `u` (`no_kernel_instantiation_is_conventionD`), so
-  -- the kernel-tied `markov_iterated_stab` can no longer supply it. The
-  -- iteration never depended on what `z` is, and `markov_iterated_stab_gen`
-  -- already says so — the shim was routing through the kernel gratuitously.
-  markov_iterated_stab_gen (markovZax_real q hq) τ_x k
-
-/-- **Disjoint-product factorisation (derived from M3)**: two braids K_1, K_2
-    acting on disjoint strands give the factorised joint trace.
-
-    K_1 has trace τ_K1, K_2 has trace τ_K2; their joint trace after
-    stabilising k disjoint strands is:
-
-      τ_M(K_1 ⊔ K_2) = τ_K1 · τ_K2 · z^k
-
-    This DISCHARGES the `MarkovDisjointStabilisation` axiomatic class
-    used in `prop:categorical-chain-convergence-mechanisms` (Mechanism 2). -/
--- Ref: [manuscript] prop:categorical-chain-convergence-mechanisms §"Mechanism 2"
--- Ref: [jones1985] doi:10.2307/1971403   (Markov axioms M1–M4)
-theorem disjoint_product_factorisation_gen {R : Type*} [Field R]
-    (z : R) (τ_K1 τ_K2 : R) (k : ℕ) :
-    ∃ τ_joint : R, τ_joint = τ_K1 * τ_K2 * z^k := by
-  obtain ⟨τ_K2_stab, hτ⟩ := markov_iterated_stab_gen z τ_K2 k
-  refine ⟨τ_K1 * τ_K2_stab, ?_⟩
-  rw [hτ]; ring
-
-theorem disjoint_product_factorisation {R : Type*} [Field R] (u : R)
-    [MarkovTraceAxioms u] (τ_K1 τ_K2 : R) (k : ℕ) :
-    ∃ τ_joint : R, τ_joint = τ_K1 * τ_K2 * (markovZax u)^k :=
-  disjoint_product_factorisation_gen (markovZax u) τ_K1 τ_K2 k
-
-/-- Archimedean shim of `disjoint_product_factorisation`.
-    Carries the explicit `(hq : 0 < q)` hypothesis. -/
-theorem disjoint_product_factorisation_real (q : ℝ) (hq : 0 < q)
-    [MarkovTraceAxioms (Real.sqrt q)] (τ_K1 τ_K2 : ℝ) (k : ℕ) :
-    ∃ τ_joint : ℝ, τ_joint = τ_K1 * τ_K2 * (markovZax_real q hq)^k :=
-  -- Abstract-`z` form, for the same reason as `markov_iterated_stab_real`.
-  disjoint_product_factorisation_gen (markovZax_real q hq) τ_K1 τ_K2 k
-
-/-! ## Discharge of MarkovDisjointStabilisation
-
-We can now PROVE the previously-axiomatic `MarkovDisjointStabilisation`
-class from the more fundamental `MarkovTraceAxioms` class. -/
-
-/-- The Markov axiom M3 (encoded via `MarkovTraceAxioms.tau_stab_factor`)
-    is the primitive axiomatic input; the disjoint stabilisation
-    theorem `disjoint_product_factorisation` follows from M3 alone. -/
-theorem MarkovTraceAxioms_implies_disjoint_stabilisation
-    {R : Type*} [Field R] (u : R) [h : MarkovTraceAxioms u] :
-    ∀ τ_x : R, ∃ τ_x_stab : R, τ_x_stab = τ_x * markovZax u := by
-  intro τ_x
-  refine ⟨τ_x * h.tau_stab_factor, ?_⟩
-  rw [h.tau_stab_factor_eq_z]
 
 end QOU.BraidKnot
