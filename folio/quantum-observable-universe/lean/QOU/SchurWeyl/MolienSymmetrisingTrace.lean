@@ -13,7 +13,7 @@ M_μ(Q) = Q^{n(μ)} · ∏_{x ∈ μ} (1 − Q) / (1 − Q^{h(x)}),
 ```
 
 `n(μ) = Σ_{(i,j) ∈ μ} i` and `h(x)` the hook length.  In the balanced variable it is
-`q^{−κ(μ)} / ∏_x [h(x)]_q` (`κ` = content sum), and `f^μ · d_q(μ) · M_μ`-type products of it are
+`q^{−κ(μ)} / ∏_x [h(x)]_q` (`κ` = content sum) — proved in `MolienBalancedForm.molienWeight_eq_balanced`, and `f^μ · d_q(μ) · M_μ`-type products of it are
 the Féray–Méliot q-Plancherel measure.  This file proves, in Lean and without citing the
 literature, that
 
