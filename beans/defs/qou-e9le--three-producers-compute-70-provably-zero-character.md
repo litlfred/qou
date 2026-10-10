@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T06:46:25Z
-updated_at: 2026-10-10T11:14:52Z
+updated_at: 2026-10-10T12:25:40Z
 parent: qou-5vkl
 ---
 
@@ -142,3 +142,13 @@ move no number; the defect is only that they defeat a `None`/truthiness prune.
 - Proton table: 98 two-row entries byte-identical to HEAD (verified independently); 1497 ≥3-row entries exactly 0 (223 changed from residue). Second writer `y_lambda_tower_infra.py` (n=13..18) left as at HEAD (its own gate fails pre-existing, 2.05e-50 > 1e-60 at n=13 — not touched).
 - Regenerated: 8 hoefsmit χ caches (only ℓ>2 y/contribution fields moved; chi and tr_M_at_q0 byte-identical — spot-verified ⁴He and ²H), ⁴He matrix-M cache, a-K-via-lp-dual (a_K unchanged), probe-pauli-young signtest (sign_census was counting signs of solver residue on 25/30 partitions: {+11,−19} → {+1,−4,0:25}), probe-d-delta-lambda-terms (also refreshed stale non-y fields from changed upstream witnesses; two-arm run confirms those are staleness, not this change; allPassed False→True).
 - **NOT applied, two findings:** (1) `a-K-via-lp-dual-full`: its ℓ>2 duals were scaled by the residue (5931.63 → 0.593163; chirality_dual_sum 5932.63 → 1.5932); the LP is degenerate there and the producer already says it needs re-posing on the two-row quotient — regenerated copy NOT committed. (2) `chi-deuteron-h6-at-q0-90dps-matrix-m`: rerun moves χ O(1) and tr_M 2.17545 → 1.45470 — staleness independent of y (likely word change), no named consumer — NOT committed. Both await owner.
+
+
+## 2026-10-10 — (A) done: aK_via_lp_dual_full re-posed on the two-row quotient
+
+- The degeneracy was **not** caused by the data. Each vanishing ℓ≥3 block was a zero-cost column with a vacuous `0·x ≥ 0` row, i.e. a free variable that absorbed the net constraint. That is exactly the radical vector `v` in `y_0_eq_zero_of_radical`. Round-off in the old y-table then set the three-row duals (e.g. proton [1,1,1] u* 5931.6 → 0.593 after the exact-zero regen: a scale artifact).
+- Producer now drops ℓ>2 blocks, and refuses (SystemExit) unless each dropped `y_lambda` and `contribution` is **exactly** 0. Dropped counts are 1/1/7/25/25/70; no zero-cost two-row column remains.
+- Result: every atom is feasible with gap ≤ 7e-42. y0* = 0.0694 (p), 0.0920 (n), 0.0108 (d), 0.0031 (t), 0.0062 (³He), 0.0003 (⁴He).
+- a_K^dual = 13.98 / 10.11 / 188.7 / 923.6 / 384.8 / 17734 against the closed form C = 1 / 1 / 1.209 / 0.956 / 0.956 / 0.915. **Scope-(a) negative for the block-diagonal projector basis only.** The proposition's LP is over the full Hecke basis, which is still open.
+- Author note added to `mass-coefficient-shadow-price.ts`.
+- probe-float64-guard: 9 hits both before and after (all pre-existing).

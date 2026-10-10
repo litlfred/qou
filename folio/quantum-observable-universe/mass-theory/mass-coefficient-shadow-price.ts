@@ -109,6 +109,25 @@ export default proposition({
         "consequences, and nothing here shows the class uninhabited.",
     },
     {
+      kind: "status",
+      date: "2026-10-10",
+      body:
+        "**Re-posed on the two-row quotient (bean `qou-e9le`): $y_0^* \\ne 0$, " +
+        "and $a_K$ is now defined — but wrong.** `aK_via_lp_dual_full.py` now " +
+        "drops the $\\ell(\\lambda) \\ge 3$ blocks, refusing unless each dropped " +
+        "weight and contribution is exactly zero. Those blocks were the radical " +
+        "vector $v$ of `y_0_eq_zero_of_radical` ($Gv = 0$, $\\sum v \\ne 0$): " +
+        "as zero-cost free columns they absorbed the net constraint. On the " +
+        "quotient $G = \\mathrm{diag}(|c_\\lambda|)$ has trivial radical, the " +
+        "lemma's hypothesis fails, and the solve is non-degenerate (proton " +
+        "$y_0^* \\approx 0.0694$, gap $\\approx 7 \\times 10^{-42}$). The " +
+        "extracted $a_K^{\\mathrm{dual}}$ misses the closed form $C$ by " +
+        "$10\\times$–$1.8 \\times 10^4\\times$ at every atom ($A = 1 \\ldots 4$): a " +
+        "scope-(a) negative for the block-diagonal projector basis, consistent " +
+        "with the script's own caveat that this basis is too coarse. It does " +
+        "not bear on the proposition, whose LP is over the full Hecke basis.",
+    },
+    {
       kind: "note",
       date: "2026-06-22",
       body:

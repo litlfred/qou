@@ -151,14 +151,38 @@ def solve_atom_lp(atom: str) -> dict:
     y_lams = []
     chi_lams = []
     contribs = []
+    # Pose the LP on the TWO-ROW QUOTIENT (bean `qou-e9le`). Under
+    # convention D every `ℓ(λ) ≥ 3` Markov weight is exactly zero
+    # (`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`,
+    # sorry-free), so those blocks have contribution 0. Left in the LP they
+    # are zero-cost columns with a vacuous positivity row `0·x ≥ 0`, i.e.
+    # free variables that absorb the whole net constraint at no cost: that,
+    # not the data, is what collapsed every solve to `primal_obj = 0`,
+    # `y0_star = 0`. Their dual values were then set by ~1e-72 round-off in
+    # the old y-table. They are dropped here, and the drop is refused unless
+    # the dropped weight and contribution are EXACTLY zero, so a nonzero
+    # three-row block can never be silently discarded.
+    dropped = []
     for row in data["by_partition"]:
         lam = list(row["partition"])
+        if len(lam) > 2:
+            y_drop = mp.mpf(row["y_lambda"])
+            c_drop = mp.mpf(row["contribution"])
+            if y_drop != 0 or c_drop != 0:
+                raise SystemExit(
+                    f"{atom}: partition {lam} has l > 2 but y_lambda = {y_drop}, "
+                    f"contribution = {c_drop}; refusing to drop a nonzero block "
+                    "from the two-row quotient"
+                )
+            dropped.append(lam)
+            continue
         partitions.append(lam)
         y_lams.append(mp.mpf(row["y_lambda"]))
         chi_lams.append(mp.mpf(row["chi_lambda"]))
         contribs.append(mp.mpf(row["contribution"]))
 
     d = len(partitions)
+    zero_cost_kept = [partitions[i] for i in range(d) if contribs[i] == 0]
     # t_λ = y_λ · χ^λ (the Wedderburn block contribution to tr_M)
     # We solve a slightly non-trivial LP by choosing a SECOND
     # constraint that breaks the degeneracy: forcing the active
@@ -253,9 +277,7 @@ def solve_atom_lp(atom: str) -> dict:
     degenerate = abs(u0_star) <= 1e-12
     aK_via_dual = None if degenerate else 1.0 + chirality_dual_sum / abs(u0_star)
     aK_dual_status = (
-        "degenerate: |y0_star| <= 1e-12, the LP collapsed to the trivial point; "
-        "under convention D the l(lambda)>=3 blocks vanish identically, so this "
-        "LP needs re-posing on the two-row quotient"
+        "degenerate: |y0_star| <= 1e-12 even on the two-row quotient"
         if degenerate else "ok"
     )
     aK_C = a_K_closed(A)
@@ -296,6 +318,10 @@ def solve_atom_lp(atom: str) -> dict:
         "dual_vs_C_ppm": dual_vs_C_ppm,
         "per_partition": per_partition,
         "n_partitions": d,
+        "lp_posed_on": "two-row quotient (l(lambda) <= 2)",
+        "quotient_dropped_partitions": dropped,
+        "n_quotient_dropped": len(dropped),
+        "zero_cost_two_row_partitions": zero_cost_kept,
         "n_active": len(result.active_set),
     }
 
@@ -324,9 +350,13 @@ def main() -> int:
         "B.1a-rev.4 PROBE-ONLY: the LP basis used here is the "
         "Wedderburn-block projector basis {π_λ : λ ⊢ n}, giving a "
         "block-DIAGONAL Frobenius Gram G_λλ' = w_λ · δ_λλ'. This is "
-        "too coarse for the operator-selection LP — the duals come "
-        "out DEGENERATE (y0^* = 0 for A ≥ 2; chirality dual sum "
-        "diverges in the limit). The full operator-selection LP "
+        "too coarse for the operator-selection LP. Posed over the full "
+        "partition set under convention D it was DEGENERATE (the vanishing "
+        "l>=3 blocks are zero-cost free columns, so y0^* = 0); posed on the "
+        "two-row quotient (2026-10-10, bean qou-e9le) it is non-degenerate "
+        "but a_K^dual misses the closed-form C by 10x-1.8e4x at every atom — "
+        "a scope-(a) negative for THIS basis, not for the shadow-price "
+        "proposition. The full operator-selection LP "
         "per `prop:mass-coefficient-shadow-price` requires the full "
         "Hecke algebra basis {b_i : i = 1..[n]_q!} with non-diagonal "
         "Gram G_ij = tr_M(b_i b_j). That setup is an open R&D item "
