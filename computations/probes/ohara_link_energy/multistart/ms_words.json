@@ -1,0 +1,832 @@
+{
+ "nuc9": {
+  "cls": "nuc9",
+  "word": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   0,
+   0,
+   1
+  ],
+  "strands": 3,
+  "lk": 3,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   2
+  ],
+  "self_writhe": [
+   0,
+   3
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t**6 + t**3 + 1)"
+ },
+ "nuc9_rot4": {
+  "cls": "nuc9",
+  "word": [
+   0,
+   1,
+   0,
+   0,
+   1,
+   0,
+   1,
+   0,
+   1
+  ],
+  "strands": 3,
+  "lk": 3,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   2
+  ],
+  "self_writhe": [
+   3,
+   0
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t**6 + t**3 + 1)"
+ },
+ "nuc9_dconj": {
+  "cls": "nuc9",
+  "word": [
+   1,
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   1,
+   0
+  ],
+  "strands": 3,
+  "lk": 3,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   2
+  ],
+  "self_writhe": [
+   3,
+   0
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t**6 + t**3 + 1)"
+ },
+ "nuc9_rewrite": {
+  "cls": "nuc9",
+  "word": [
+   0,
+   1,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   1
+  ],
+  "strands": 3,
+  "lk": 3,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   2
+  ],
+  "self_writhe": [
+   0,
+   3
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t**6 + t**3 + 1)"
+ },
+ "nuc9_stabtop": {
+  "cls": "nuc9",
+  "word": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   0,
+   0,
+   1,
+   2
+  ],
+  "strands": 4,
+  "lk": 3,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   3
+  ],
+  "self_writhe": [
+   0,
+   4
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t**6 + t**3 + 1)"
+ },
+ "nuc9_stabbot": {
+  "cls": "nuc9",
+  "word": [
+   1,
+   2,
+   1,
+   2,
+   1,
+   2,
+   1,
+   1,
+   2,
+   0
+  ],
+  "strands": 4,
+  "lk": 3,
+  "components": 2,
+  "strand_sizes": [
+   2,
+   2
+  ],
+  "self_writhe": [
+   1,
+   3
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t**6 + t**3 + 1)"
+ },
+ "gluon_s1_s0": {
+  "cls": "A",
+  "word": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   0,
+   0,
+   1,
+   1,
+   0
+  ],
+  "strands": 3,
+  "lk": 3,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   2
+  ],
+  "self_writhe": [
+   5,
+   0
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t**8 + t**5 - t**4 + t**3 + 1)"
+ },
+ "gluon_s1_s1": {
+  "cls": "A",
+  "word": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   0,
+   0,
+   1,
+   1,
+   1
+  ],
+  "strands": 3,
+  "lk": 3,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   2
+  ],
+  "self_writhe": [
+   0,
+   5
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t**8 + t**5 - t**4 + t**3 + 1)"
+ },
+ "A_rot5": {
+  "cls": "A",
+  "word": [
+   1,
+   0,
+   0,
+   1,
+   1,
+   0,
+   0,
+   1,
+   0,
+   1,
+   0
+  ],
+  "strands": 3,
+  "lk": 3,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   2
+  ],
+  "self_writhe": [
+   5,
+   0
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t**8 + t**5 - t**4 + t**3 + 1)"
+ },
+ "A_dconj": {
+  "cls": "A",
+  "word": [
+   1,
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   1,
+   0,
+   0,
+   1
+  ],
+  "strands": 3,
+  "lk": 3,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   2
+  ],
+  "self_writhe": [
+   0,
+   5
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t**8 + t**5 - t**4 + t**3 + 1)"
+ },
+ "A_rewrite": {
+  "cls": "A",
+  "word": [
+   0,
+   1,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   1,
+   1,
+   0
+  ],
+  "strands": 3,
+  "lk": 3,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   2
+  ],
+  "self_writhe": [
+   5,
+   0
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t**8 + t**5 - t**4 + t**3 + 1)"
+ },
+ "A_stabtop": {
+  "cls": "A",
+  "word": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   0,
+   0,
+   1,
+   1,
+   0,
+   2
+  ],
+  "strands": 4,
+  "lk": 3,
+  "components": 2,
+  "strand_sizes": [
+   2,
+   2
+  ],
+  "self_writhe": [
+   5,
+   1
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t**8 + t**5 - t**4 + t**3 + 1)"
+ },
+ "A_stabbot": {
+  "cls": "A",
+  "word": [
+   1,
+   2,
+   1,
+   2,
+   1,
+   2,
+   1,
+   1,
+   2,
+   2,
+   2,
+   0
+  ],
+  "strands": 4,
+  "lk": 3,
+  "components": 2,
+  "strand_sizes": [
+   2,
+   2
+  ],
+  "self_writhe": [
+   1,
+   5
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t**8 + t**5 - t**4 + t**3 + 1)"
+ },
+ "gluon_s0_s1": {
+  "cls": "B",
+  "word": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   0,
+   0,
+   1,
+   0,
+   1
+  ],
+  "strands": 3,
+  "lk": 4,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   2
+  ],
+  "self_writhe": [
+   3,
+   0
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t + 1)**2*(t**2 - t + 1)*(t**4 - t**3 + t**2 - t + 1)"
+ },
+ "gluon_s0_s0": {
+  "cls": "B",
+  "word": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   0,
+   0,
+   1,
+   0,
+   0
+  ],
+  "strands": 3,
+  "lk": 4,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   2
+  ],
+  "self_writhe": [
+   0,
+   3
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t + 1)**2*(t**2 - t + 1)*(t**4 - t**3 + t**2 - t + 1)"
+ },
+ "B_rot5": {
+  "cls": "B",
+  "word": [
+   1,
+   0,
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   0
+  ],
+  "strands": 3,
+  "lk": 4,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   2
+  ],
+  "self_writhe": [
+   3,
+   0
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t + 1)**2*(t**2 - t + 1)*(t**4 - t**3 + t**2 - t + 1)"
+ },
+ "B_dconj": {
+  "cls": "B",
+  "word": [
+   1,
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "strands": 3,
+  "lk": 4,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   2
+  ],
+  "self_writhe": [
+   3,
+   0
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t + 1)**2*(t**2 - t + 1)*(t**4 - t**3 + t**2 - t + 1)"
+ },
+ "B_rewrite": {
+  "cls": "B",
+  "word": [
+   0,
+   1,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   1,
+   0,
+   1
+  ],
+  "strands": 3,
+  "lk": 4,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   2
+  ],
+  "self_writhe": [
+   3,
+   0
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t + 1)**2*(t**2 - t + 1)*(t**4 - t**3 + t**2 - t + 1)"
+ },
+ "B_stabtop": {
+  "cls": "B",
+  "word": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   0,
+   0,
+   1,
+   0,
+   0,
+   2
+  ],
+  "strands": 4,
+  "lk": 4,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   3
+  ],
+  "self_writhe": [
+   0,
+   4
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t + 1)**2*(t**2 - t + 1)*(t**4 - t**3 + t**2 - t + 1)"
+ },
+ "B_stabbot": {
+  "cls": "B",
+  "word": [
+   1,
+   2,
+   1,
+   2,
+   1,
+   2,
+   1,
+   1,
+   2,
+   1,
+   2,
+   0
+  ],
+  "strands": 4,
+  "lk": 4,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   3
+  ],
+  "self_writhe": [
+   4,
+   0
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t + 1)**2*(t**2 - t + 1)*(t**4 - t**3 + t**2 - t + 1)"
+ },
+ "gen_grouped": {
+  "cls": "G",
+  "word": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "strands": 3,
+  "lk": 2,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   2
+  ],
+  "self_writhe": [
+   7,
+   0
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t**2 + 1)*(t**6 - t**5 + t**4 - t**3 + t**2 - t + 1)"
+ },
+ "G_rot3": {
+  "cls": "G",
+  "word": [
+   0,
+   0,
+   0,
+   0,
+   1,
+   1,
+   1,
+   1,
+   0,
+   0,
+   0
+  ],
+  "strands": 3,
+  "lk": 2,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   2
+  ],
+  "self_writhe": [
+   7,
+   0
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t**2 + 1)*(t**6 - t**5 + t**4 - t**3 + t**2 - t + 1)"
+ },
+ "G_dconj": {
+  "cls": "G",
+  "word": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  "strands": 3,
+  "lk": 2,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   2
+  ],
+  "self_writhe": [
+   0,
+   7
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t**2 + 1)*(t**6 - t**5 + t**4 - t**3 + t**2 - t + 1)"
+ },
+ "G_rot9": {
+  "cls": "G",
+  "word": [
+   1,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   1
+  ],
+  "strands": 3,
+  "lk": 2,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   2
+  ],
+  "self_writhe": [
+   7,
+   0
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t**2 + 1)*(t**6 - t**5 + t**4 - t**3 + t**2 - t + 1)"
+ },
+ "G_stabtop": {
+  "cls": "G",
+  "word": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   1,
+   1,
+   1,
+   2
+  ],
+  "strands": 4,
+  "lk": 2,
+  "components": 2,
+  "strand_sizes": [
+   2,
+   2
+  ],
+  "self_writhe": [
+   7,
+   1
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t**2 + 1)*(t**6 - t**5 + t**4 - t**3 + t**2 - t + 1)"
+ },
+ "G_stabbot": {
+  "cls": "G",
+  "word": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   2,
+   2,
+   2,
+   2,
+   0
+  ],
+  "strands": 4,
+  "lk": 2,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   3
+  ],
+  "self_writhe": [
+   8,
+   0
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "-(t - 1)*(t**2 + 1)*(t**6 - t**5 + t**4 - t**3 + t**2 - t + 1)"
+ },
+ "hopf_s1^2": {
+  "cls": "hopf",
+  "word": [
+   0,
+   0
+  ],
+  "strands": 2,
+  "lk": 1,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   1
+  ],
+  "self_writhe": [
+   0,
+   0
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "1 - t"
+ },
+ "hopf_3strand": {
+  "cls": "hopf",
+  "word": [
+   0,
+   0,
+   1
+  ],
+  "strands": 3,
+  "lk": 1,
+  "components": 2,
+  "strand_sizes": [
+   1,
+   2
+  ],
+  "self_writhe": [
+   0,
+   1
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "1 - t"
+ },
+ "trefoil_s1^3": {
+  "cls": "trefoil",
+  "word": [
+   0,
+   0,
+   0
+  ],
+  "strands": 2,
+  "lk": null,
+  "components": 1,
+  "strand_sizes": [
+   2
+  ],
+  "self_writhe": [
+   3
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "t**2 - t + 1"
+ },
+ "trefoil_3strand": {
+  "cls": "trefoil",
+  "word": [
+   0,
+   0,
+   0,
+   1
+  ],
+  "strands": 3,
+  "lk": null,
+  "components": 1,
+  "strand_sizes": [
+   3
+  ],
+  "self_writhe": [
+   4
+  ],
+  "same_jones_alex_lk_as_canonical": true,
+  "alexander_t": "t**2 - t + 1"
+ }
+}
