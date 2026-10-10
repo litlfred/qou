@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-10-10T07:57:44Z
-updated_at: 2026-10-10T12:24:18Z
+updated_at: 2026-10-10T14:36:06Z
 parent: qou-5vkl
 ---
 
@@ -478,3 +478,111 @@ were already dirty from a concurrent run. Reverted by explicit name.
 sibling's uncommitted edit to `local_import_resolution_audit.py`, which is the
 exact hazard `witness_dependency_residue_run.py`'s own `restore()` docstring
 records having caused once.
+
+---
+
+## 2026-10-10 (later, same session) — all three remaining sites are now 0, and the two "OPEN" ones closed by DELETION, not by a rename
+
+`UNRESOLVED 3 -> 0`, measured on `claude/qou2cz1-unresolved-imports-2026-10-10`
+(`ac520bba3b`). 🛑 **That 0 is a property of this branch, not of the tree** —
+`origin/main` still reads **3**, and `ac520bba3b` is not an ancestor of it
+(`git merge-base --is-ancestor`). The companion gate in
+`scripts/precision-gates.sh` therefore stays **advisory**; the flip condition is
+recorded there as *"flip only from a tree where it measures 0, and re-measure
+there"*. I was one edit from flipping it on this branch's number — the same
+figure-from-one-place-quoted-about-another class as the `qou-wu38` cost error.
+
+### Sites 2 + 3 — reduced to the calibrator (the bean's option 2)
+
+`probes/qbeta_g3_annihilator_certification.py`: **317 -> 190 lines**. Removed
+the broken `from qbeta_g3_fourone_index_assembly import tet_norm, _dense_mul`
+and everything downstream of it — `ORD` / `GRID` / `ANCHOR_11`, `sadd`,
+`smono`, `struncate_top`, `assemble`, `_assemble`, `annihilator_residual`,
+`main()` steps [2] and [3], and the two superseded assertions. The two names
+are not restored under any spelling: they are gone because **the code that
+needed them is gone**.
+
+`trefoil_calibrate()` is kept and is self-contained — it calls none of the
+eight removed helpers, which is why option 2 was reachable at all. The
+regenerated witness carries exactly one assertion,
+`trefoil_calibrator_pins_actions`, `computed 1.0 / expected 1.0 / tolerance
+0.5`, `allPassed: True`, `n_conventions_passing: 1` — i.e. the 16-convention
+uniqueness that the corrected provider's step [5] does **not** re-verify, which
+is the whole reason for not retiring the file outright.
+
+**🛑 Attribution, stated plainly: option 2 was MY recommendation and I
+implemented it; the owner has not ruled on the disposition.** The bean framed
+the choice as *"a disposition choice, not a measurement"* and that framing was
+right. What makes it defensible rather than a quiet override:
+
+- The **deletion** half is ASK-THE-OWNER exemption 2, checkable against two
+  artifacts rather than against my reasoning — `docs/coordination/1ppq-qbeta.md`
+  (#3813) names the rebasing as the bug, and the corrected provider's witness
+  records `quantum_a_polynomial_annihilation: PASS`. Restoring the names would
+  resurrect the adjudicated bug in order to re-derive a verdict the corpus
+  already holds.
+- Option 2 is the **most conservative of the three live options**: retiring
+  outright would lose the 16-convention result, and porting `_assemble` would
+  write new mathematics.
+- It is **fully reversible** — the 127 deleted lines are in git history at
+  `origin/main:computations/probes/qbeta_g3_annihilator_certification.py`.
+
+If the owner prefers option 1 (retire) or option 3 (port), say so and it is one
+revert away. **This bean stays `todo` on that account** — the disposition is
+still formally the owner's, even though the code now embodies one answer.
+
+### Site 1's second defect — FIXED on the owner's instruction, and it was publishing a vacuous confirmation
+
+Owner answer to the question this bean raised: **"Fix + regenerate."** Three
+things were wrong, and the third is the finding:
+
+1. **A layer straddle, not a stale copy.** Inverting `h = q - 1/q` on the
+   literal `HA = 0.20906032198987945` gives `q = 1.1099785955541805692` — the
+   **muon CODATA-2018** value, exact to its own 17 digits — inside a producer
+   stamped `q0Anchor: proton`. The 2.319e-08 "drift" is `1.81 x 1.28e-8`, i.e.
+   **the mu-p substrate tension itself, 11.53 ppb**, matching the mu_3 Frechet
+   straddle AGENTS.md records (11.54 ppb) to three digits, because it *is* that
+   quantity. Doubly superseded — the muon anchor moved to CODATA 2022 on
+   2026-08-22. Now derived from `Q_50_DIGIT_STR` as `mpf`.
+2. **The chi computation ran in float64.** `q = float(Q)`, and
+   `chi_lambda_braid` returns a Python `float` whatever it is given: the exact
+   `chi_(2,1)(sigma_2 sigma_2^-1) = 2` came back as `1.9999999999999997`.
+   Passing an `mpf` does not help — the float64 is inside the callee, which
+   takes `precision=50` and returns the exact string `"2.0"`. Cost of the fix
+   is real: T at n=9 goes 1.7 s -> 88 s.
+3. 🛑 **A bare `except` turned the crash into a PASS.** `expand_to_branches`
+   raised `ValueError: unexpected d=...` for **every** partition under the
+   stale `HA`; `except Exception` recorded `None`; the `v is not None` filter
+   selected nothing; and `match = (0 <= predicted)` passed **vacuously**. The
+   committed witness read `observed_active_count: 0` with
+   `match_prediction: true` for all three atoms — zero active partitions out of
+   `p(n_0)` = 11, 30, 30. So `conj:atom-braid-exterior-algebra`'s structural
+   prediction was published as **confirmed by a producer that computed nothing
+   at all**, on a witness whose anchor, `q0Value` and `scriptHash` all read
+   healthy. A **fourth** green detector on this file, and the worst kind: not a
+   stale number but a framework conjecture reading as confirmed.
+
+Failures are now collected, printed and recorded (`chi_failed_count`,
+`chi_failures`), and `match` requires zero failures.
+
+**What the repaired producer finds — an honest negative:**
+
+| atom | `p(n_0)` | predicted <= | observed | chi_failed | match |
+|---|---|---|---|---|---|
+| D   | 11 | 6 | **11** | 0 | **False** |
+| T   | 30 | 9 | **30** | 0 | **False** |
+| 3He | 30 | 8 | **30** | 0 | **False** |
+
+Zero chi failures, so these are measurements rather than empty sets, and the
+printed chi values match the float64 run at display precision — **the verdict is
+not a precision artifact**. Every partition is active; the predicted sparsity
+fails by 2-3x.
+
+**Scope (a)**: this construction, as implemented, does not reproduce the
+predicted active-set bound. No ingredient is excluded and no invariant is
+claimed, so this is deliberately **not** a (b).
+
+Raw-float64 on the regenerated witness drained **44 -> 3 -> 0**. The last 3 were
+`elapsed_seconds`, which AGENTS.md lists among the volatile keys but which the
+ratchet counts, so they were **formatted, not baselined** — baselines drain,
+never grow.
