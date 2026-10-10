@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-13T11:52:02.170208+00:00",
-  "commitSha": "1b42d0b8c45143b970d7b627faac4cb43c23a82d",
+  "computedAt": "2026-10-10T07:32:10.498166+00:00",
+  "commitSha": "ba00c9415329e81aa3f14dbc8d3432da421ac2ba",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 27,
   "computation": "q-pochhammer-seed",
   "scriptFile": "q_pochhammer_seed.py",
-  "scriptHash": "c85595282537",
-  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
+  "scriptHash": "4f45489c7f96",
+  "scriptCommitSha": "6ff3254a0f7d56d7961ba93607680644b8d7b07b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,14 +17,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.13.16",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "cd378682bfd642d0"
   },
   "invocation": {
     "argv": [
