@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-14T19:57:29Z
-updated_at: 2026-10-10T07:35:00Z
+updated_at: 2026-10-10T07:58:22Z
 parent: b9cj
 ---
 
@@ -173,3 +173,103 @@ is asserted, not established, names clause (1) of `conj:algebraic-geometric-dilo
 as resting on it, and gives it that conjecture's tier. No mathematics was decided. A
 carrier block is still possible later. This bean stays `todo`: the identification is
 still open, and the producer re-run half is tracked separately.
+
+
+## 2026-10-10 (later) — the environment blocker is GONE; the producer half has a DIFFERENT blocker
+
+**Both environment claims above are now measurably false in this container**, and
+one of them was never about the environment at all.
+
+### `snappy` IS pip-installable
+
+This bean says *"Not installed, not pip-installable here."* Measured:
+`python3 -m pip install snappy` → **SnapPy 3.3.2, `snappy.Manifold` available**
+(one harmless `Plink failed to import tkinter` warning; GUI only). `qou-m6gp`
+independently recorded the same correction on 2026-09-07 — *"SnapPy 3.3.2 was
+ALREADY present in this container; the absent-from-every-container premise does
+not hold"* — so this is the second time the claim has been retracted, and the
+first retraction was not propagated here.
+
+**One trap worth recording, because `pip` reported success while doing nothing
+useful:** this container has `python3` = `/usr/local/bin/python3` (3.11.17) and
+`pip` = `/usr/bin/pip` (**python 3.13**). `pip install` exits 0 and installs into
+an interpreter nothing here uses; `python3 -c "import mpmath"` still fails. Use
+`python3 -m pip`. Same shape as every other finding in this session: a tool
+reporting success for work done in the wrong place.
+
+### The `mpmath` downgrade blocker is resolved, and the re-run is CLEAN
+
+This bean correctly refused to re-run `q_pochhammer_seed.py` under local
+`mpmath 1.3.0` against the witness's recorded **1.4.1**, since that stamps an
+environment downgrade. `python3 -m pip install mpmath==1.4.1` installs
+(sympy warns about its own `<1.4` pin; nothing here imports sympy on this path).
+
+Full environment now stamped, against the recorded block:
+
+| key | recorded | here | |
+|---|---|---|---|
+| `mpmath` | 1.4.1 | **1.4.1** | match |
+| `numpy` / `scipy` / `sympy` | 2.4.6 / 1.17.1 / 1.14.0 | identical | match |
+| `clarabel` | 0.11.1 | **0.11.1** | match |
+| `pyhecke_native` | 0.9.0 | **0.9.0** | built from `tools/pyhecke-native` (`maturin build --release`, Cargo.toml says 0.9.0) |
+| `python` | 3.11.15 | 3.11.17 | patch **upgrade** |
+| `pyhecke_native_build` | `e3fab84c4c1df76a` | `f674395cadf67f1a` | **expected to differ** |
+
+That last row is not a regression and must not be read as one:
+`qou_substrate.witness` computes it as `sha256(<compiled .so>)[:16]` and its own
+comment says the field *"is NOT a version and must never be ORDERED"*, with the
+measured reason — ordering a hex digest makes the verdict depend on whether it
+starts with a digit — and notes the corpus already carries **five distinct
+values across 811 witnesses**.
+
+**`q_pochhammer_seed.py` re-ran here and the producer's own guard said it:**
+
+> `↑ environment: recording a STRONGER environment block than the copy on disk;
+> rewriting provenance only (payload unchanged).`
+
+The diff is **exactly five lines and every one is provenance** — `computedAt`,
+`commitSha`, `scriptCommitSha`, the python patch bump, the build hash. Zero
+payload change; `scriptHash` untouched. So the docstring edit this bean defers
+is now safe for that producer. **The tree was restored afterwards**
+(`git checkout -- computations/`) per the sibling-witness discipline; nothing was
+committed, because the docstring edit itself has not been made.
+
+### But `snappy_cusp_seeding.py` CANNOT RUN, for an unrelated reason
+
+With `snappy` installed it gets two lines further and dies:
+
+    File "computations/snappy_cusp_seeding.py", line 47
+      from q_pochhammer_seed import IM_PERTURBATION
+    ImportError: cannot import name 'IM_PERTURBATION' from 'q_pochhammer_seed'
+
+`q_pochhammer_seed.py` carries `IM_PERTURBATION_STR = "0.1"` and reconstructs the
+complex value as `mpc(0, mpf(IM_PERTURBATION_STR))` — the NO-FLOAT64 migration
+dated **2026-09-13** in its own docstring. The consumer's import was never
+updated. **Byte-identical on `origin/main`**, so this is pre-existing, not
+branch damage.
+
+And it is invisible to every staleness path: `snappy_cusp_seeding.py`'s
+`scriptHash` is `f4733c216049`, its witness records `f4733c216049` — **IN
+SYNC** — `computedAt 2026-08-28`, three weeks before the rename. A witness
+claiming currency with a producer that cannot be imported.
+
+**So item 1 of this bean has a second blocker its text does not name**, and the
+first one is no longer the obstacle. Tracked as **`qou-2cz1`**, with a calibrated
+AST audit ([`computations/audits/local_import_resolution_audit.py`](computations/audits/local_import_resolution_audit.py))
+that finds this class corpus-wide: **4 unresolved bindings of 5935 checked**, of
+which three have **no mechanical replacement** (`_dense_mul` has no candidate of
+any name), so no fix is proposed here.
+
+### Still blocked, and still nothing edited in `computations/`
+
+The docstring correction for `snappy_cusp_seeding.py` would drift its
+`scriptHash` and its witness cannot be regenerated until `qou-2cz1` is decided.
+`q_pochhammer_seed.py`'s docstring half is now unblocked and could land alone —
+but the two blocks name the same two dead labels, and splitting them leaves half
+the finding wrong in the tree. Left as one unit.
+
+Re-verified on this tree: `pl-jsj-mass-integration-equivalence` **0** carrier
+files, `denominator-zeros-as-sw-critical-points` **0**,
+`jet-gb-pl-correspondence` **0**, against
+`shared-denominator-cusp-holonomy` **6** and
+`algebraic-geometric-dilog-equivalence` **5**.
