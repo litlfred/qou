@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-19T14:21:19Z
-updated_at: 2026-10-04T15:12:35Z
+updated_at: 2026-10-10T07:01:38Z
 parent: qou-10v9
 ---
 
@@ -52,3 +52,8 @@ Probe extended with part 5; ASSERTIONS PASS. Audit section 4b.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-19 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — pointer
+
+Tracked under related carrier M11 (qou-wzgm) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
