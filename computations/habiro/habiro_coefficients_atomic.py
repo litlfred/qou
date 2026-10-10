@@ -91,9 +91,49 @@ def _markov_trace_via_partition_sum(Z, N, q, include_inter=True):
     y_λ is the canonical Markov-trace weight for q ≠ 1; the q=1
     classical Plancherel point is the only place where the two
     conventions agree.  Cross-checks against the 1 ppb canonical
-    50-dps reducer (`cross-check-trM-1ppb.witness.json`) at q_0:
-      proton:   1.0653062286131670
-      neutron:  0.9232332971861535
+    50-dps reducer (`cross-check-trM-1ppb.witness.json`) at q_0.
+
+    🛑 THE TARGETS HERE WERE CONVENTION C, AND THE WITNESS NAMED ABOVE DOES
+    NOT CONTAIN THEM (corrected 2026-10-10, bean `qou-46ab` via `qou-am5t`).
+    This docstring read:
+
+        proton:   1.0653062286131670
+        neutron:  0.9232332971861535
+
+    Both are **convention-C** values — the proton one is 7.55 % from the
+    canonical D value — while this function's own paragraph above declares
+    the canonical Wenzl-bridge convention.  Checked directly: that witness
+    contains neither literal, and does carry `markov_peel` and
+    `chi_cache_canonical` equal to
+
+        1.1457597828869253187149279265985273678220205972661
+
+    so the stated targets disagreed with the file cited as their source.
+    The failure mode is the inverted one `markov/markov_weights_symbolic.py`
+    records for this same literal: a reader verifying this producer against
+    a C target sees the *correct* D computation as wrong.
+
+    Two things a future reader must NOT take from that number:
+
+    1. **That witness is pinned to the MUON anchor** (`q0Anchor: "muon"`,
+       `q0Value: 1.10997859564273904668…`) — the ideal CAL-2 layer, while
+       production compute defaults to the proton pin (owner directive
+       2026-08-07).  It is not a drop-in target for a proton-pinned run.
+       Tracked as a C/D straddle in bean `qou-3zby`.
+    2. **THREE different D-frame proton |tr_M| values live in the corpus**,
+       and this docstring does not decide between them:
+
+           1.1457596924573008697…    ~90 occurrences — corpus-dominant
+           1.1457597822878355047     ~20 occurrences — the figure qou-46ab quotes
+           1.1457597828869253187…    the cited witness, at the muon pin
+
+       The first differs from the other two by ~79 ppb; those two differ
+       from each other by ~0.5 ppb.  The μ–p substrate tension is ~11.6 ppb
+       and so accounts for under a tenth of the 79 ppb gap — the pin alone
+       does not explain the spread.  Which family is canonical is an open
+       measurement, deliberately left open here.
+
+    The deuteron figure is unchanged and was not re-verified:
       deuteron: 0.388286471547713  (`include_inter=True`)
 
     Performance: y_λ has sqrt(q) factors that make `sp.cancel`
