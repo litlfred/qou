@@ -36,12 +36,14 @@ over `λ` and reindex.
 
 ## Base ring (§7c)
 
-`ℝ`, inherited from `genMat` and `seminormalParam`; nothing archimedean is added here.
+Generic `[Field K]`, matching `genMat` and `seminormalParam`.  No ordering, no `ℝ`.
 
 LaTeX label: `thm:seminormal-corner-trace`
 -/
 
 namespace QOU.SchurWeyl
+
+variable {K : Type*} [Field K]
 namespace SeminormalRep
 
 open QOU.Mathlib QOU.SchurWeyl.TableauCells QOU.SchurWeyl.Seminormal QOU.SchurWeyl.HeckeInclusion
@@ -81,9 +83,9 @@ theorem axialDist_insertMax_top {m : ℕ} (hN : μ.cells.card = m + 2)
 /-- **The block trace as a sum over corners.**  Splitting the diagonal sum by the cell carrying the
 top entry replaces `SYT μ` by `Σ_{c corner} SYT (μ ∖ c)`; on each block the matrix is the downstairs
 one and the Hoefsmit parameter is evaluated at `c(c) − c(r_S)`. -/
-theorem trace_heckeIncl_mul_lastGen_corner {q : ℝ} (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
-    {m : ℕ} (hN : μ.cells.card = m + 2) (y : Hecke ℝ q q⁻¹ m) :
-    ((seminormalRep q hq0 hq2 (m + 1) hN (heckeIncl ℝ q q⁻¹ m y))
+theorem trace_heckeIncl_mul_lastGen_corner {q : K} (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
+    {m : ℕ} (hN : μ.cells.card = m + 2) (y : Hecke K q q⁻¹ m) :
+    ((seminormalRep q hq0 hq2 (m + 1) hN (heckeIncl K q q⁻¹ m y))
         * genMat q (m + 1) (by omega) (by omega)).trace
       = ∑ c : {c : ℕ × ℕ // IsCornerCell μ c},
           ∑ S : StandardYoungTableau (eraseCorner μ c.1 c.2),

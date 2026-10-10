@@ -18,7 +18,7 @@ i.e. `c_λ = 1 / M_λ` for the Molien weight `M_λ`.
 
 * `schurElt_eq` — the closed form of `c_λ` (generic field, no hypotheses).
 * `schurElt_ne_zero` — `c_λ ≠ 0` when `Q ≠ 0` is not a root of unity.
-* `molien_eq_symTrace` — the Molien-weighted seminormal trace **is** `τ` (`ℝ`, generic `q`).
+* `molien_eq_symTrace` — the Molien-weighted seminormal trace **is** `τ` (any field, generic `q`).
 * `symTrace_eq_sum_schur` — `τ(x) = Σ_{|λ| = m+1} χ_λ(x) / c_λ`.
 
 ## Proof
@@ -29,15 +29,13 @@ The rest is `c_λ⁻¹ = M_λ`.
 
 ## Scope
 
-The **weight** side (`schurElt`, its closed form and nonvanishing) is over a generic field.  The
-**decomposition** is over `ℝ` at `q ≠ 0` not a root of unity, because the seminormal
-representations in the corpus are built only there.  `τ` itself, and its product formula,
-cyclicity and nondegeneracy, are over any commutative ring (`HeckeSymmetricAlgebra`); the
-real-`q` restriction belongs to the characters, not to `τ`.
+Everything is over a field `K` with `q ≠ 0` not a root of unity (so `qi = q⁻¹`); `τ` itself, and
+its product formula, cyclicity and nondegeneracy, are over any commutative ring
+(`HeckeSymmetricAlgebra`).
 
 ## Base ring (§7c)
 
-Generic `[Field F]` for `schurElt`; `ℝ` only where the seminormal characters are used.
+Generic `[Field F]` / `[Field K]` throughout.  No ordering, no `ℝ`.
 
 LaTeX label: `thm:hecke-schur-elements`
 
@@ -88,15 +86,18 @@ end Generic
 
 namespace SeminormalRep
 
+variable {K : Type*} [Field K]
+
+
 /-- **The Molien trace is the symmetrising trace** `τ`. -/
-theorem molien_eq_symTrace (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
+theorem molien_eq_symTrace (q : K) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
     (m : ℕ) : wtraceW q hq0 hq2 (molienWeight (q ^ 2)) m = HeckeCoset.symTrace q q⁻¹ m := by
   rw [← molienMarkovTrace_tr q hq0 hq2]
   exact HeckeCoset.MarkovTraceFamily.tr_eq_symTrace q q⁻¹ _ m
 
 /-- **Schur-element decomposition**: `τ(x) = Σ_{|λ| = m+1} χ_λ(x) / c_λ(q²)`. -/
-theorem symTrace_eq_sum_schur (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
-    (m : ℕ) (x : Hecke ℝ q q⁻¹ m) :
+theorem symTrace_eq_sum_schur (q : K) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
+    (m : ℕ) (x : Hecke K q q⁻¹ m) :
     HeckeCoset.symTrace q q⁻¹ m x
       = ∑ ν : {ν : YoungDiagram // ν.cells.card = m + 1},
           (seminormalRep q hq0 hq2 m ν.2 x).trace / schurElt (q ^ 2) ν.1 := by
