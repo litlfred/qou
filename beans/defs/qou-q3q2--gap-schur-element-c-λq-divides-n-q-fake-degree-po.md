@@ -1,10 +1,11 @@
 ---
 # qou-q3q2
 title: 'GAP: Schur element c_λ(Q) divides [n]_Q! (fake-degree polynomiality)'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-10-10T13:52:16Z
-updated_at: 2026-10-10T13:52:16Z
+updated_at: 2026-10-10T16:35:09Z
 ---
 
 Open, not attempted to closure (session 2026-10-10, PR #7596).
@@ -25,3 +26,13 @@ Routes: (1) define maj on SYT and prove the q-hook formula by the
 Greene–Nijenhuis–Wilf-style q-hook walk; (2) graded coinvariant algebra (heavy);
 (3) Krattenthaler bijection. Not needed for Schur orthogonality, which is proved without it
 (`QOU.SchurWeyl.HeckeSchurOrthogonality`).
+
+
+## Update 2026-10-10 (PR #7630): integrality PROVED; nonnegativity still OPEN
+
+Proved sorry-free in `QOU/SchurWeyl/HookDivisibility.lean` (lean-direct -DautoImplicit=false exit 0; axioms propext/Classical.choice/Quot.sound only):
+- `hookProd_dvd_qFactorial`: ∏_x [h(x)] ∣ [n]! in R[X], any CommRing R.
+- `exists_qFactorial_eq_schurElt_mul`: [n]_Q! = c_λ(Q)·Q^{n(λ)}·P(Q), P ∈ ℤ[X], any field, Q ≠ 0,1.
+- Route: cyclotomic factorisation + hook inequality d·#{x : d ∣ h(x)} ≤ n (`mul_card_filter_dvd_hook_le`), via beta-sets/abacus.
+
+Still open (this bean stays open): nonnegative coefficients, i.e. the maj formula Σ_{T∈SYT} Q^{maj T} = Q^{n(λ)}[n]!/∏[h]. Not reachable from the integrality route.
