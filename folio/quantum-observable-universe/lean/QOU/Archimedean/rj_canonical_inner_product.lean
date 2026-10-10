@@ -46,9 +46,9 @@ Markov parameter `z = q³/(q² + 1) = q²/[2]` (convention D).
 ## What it does NOT prove — stated here so the gap stays visible
 
 * Part (iii) for general `r` (the hook/Adams-sign Rosso–Jones formula) is
-  **not** formalised; only `r = 2` and `r = 3` are (by explicit computation in
-  `H₂`, `H₃`). `r = 4` would need the same construction on the 24-dimensional
-  `H₄` and was not attempted. It is cited (`[rosso-jones1993]`) and re-verified in exact
+  **not** formalised; only `r = 2` and `r = 3` are here (by explicit computation in
+  `H₂`, `H₃`), and `r = 4` is in `QOU.Archimedean.RossoJonesH4`
+  (`h4_markov_rossoJones`). It is cited (`[rosso-jones1993]`) and re-verified in exact
   arithmetic over `ℚ(q)` for every coprime `(r,s)` tested at `r = 2, 3, 4` by
   `computations/probes/rj_inner_product_conventionD_torus_probe.py`. It is
   deliberately **not** encoded as a class field: a class whose torus-trace datum
@@ -60,12 +60,13 @@ Markov parameter `z = q³/(q² + 1) = q²/[2]` (convention D).
   because the Markov trace with `tr_M(1) = 1` is unique for given `z` — rests on
   Markov uniqueness, formalised here only for `r ≤ 3` (`H3.markov3_unique_adjoin`;
   `r = 2` is immediate from `{1, σ}` spanning `H₂`). General `r` needs a
-  normal-form / spanning theorem for `H_r(q)`, which the QOU Markov-trace modules
-  (`QOU.Hecke.MarkovTrace`, `QOU.IwahoriHecke.MarkovTrace`) do not provide —
-  they carry the trace as class data. (`QOU.Hecke.markov_trace_unique` was proved
-  from `markov_trace_unique_axiom`, which was **false** and has been removed; it is
-  now a theorem that takes the cross-level Markov property `MarkovTrace.IsMarkov` as
-  a hypothesis, via `QOU.IwahoriHecke.JonesNormalForm`.)
+  normal-form / spanning theorem for `H_r(q)`. That is now proved for every `r`
+  in `QOU.IwahoriHecke.JonesNormalForm` (`markov_unique`), and
+  `QOU.IwahoriHecke.MarkovTransfer` carries it across algebras. (The older modules
+  `QOU.Hecke.MarkovTrace`, `QOU.IwahoriHecke.MarkovTrace` carry the trace as class
+  data. `QOU.Hecke.markov_trace_unique` was proved from `markov_trace_unique_axiom`,
+  which was **false** and has been removed; it is now a theorem that takes the
+  cross-level Markov property `MarkovTrace.IsMarkov` as a hypothesis.)
 
 ## History
 

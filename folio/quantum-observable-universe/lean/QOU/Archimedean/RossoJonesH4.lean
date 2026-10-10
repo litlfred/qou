@@ -6,7 +6,45 @@ import Mathlib.Algebra.Algebra.Prod
 /-!
 # QOU.Archimedean.RossoJonesH4 — Rosso–Jones at `r = 4`, convention D
 
-Scratch: under construction.
+Part (iii) of [`prop:rj-canonical-inner-product`](../../../predicted-spectra/rj-canonical-inner-product.md)
+at `r = 4`. Same conventions as `QOU.Archimedean.rj_canonical_inner_product`: Hecke relation
+`σ² = (q − q⁻¹)σ + 1`, `[n] = (qⁿ − q⁻ⁿ)/(q − q⁻¹)` (`qIntBal`), `z = z_D = q³/(q²+1)`.
+Everything is over a generic field `R`, with `q ≠ 0`, `q² ≠ 1`, `q² + 1 ≠ 0`.
+
+## What this file proves (sorry-free)
+
+* `H4.eval_rs1`, `H4.eval_rs2`, `H4.eval_rs3` — coordinates for `H₄` in the coset
+  decomposition `H₄ = H₃ ⊕ H₃σ₃ ⊕ H₃σ₃σ₂ ⊕ H₃σ₃σ₂σ₁` (each coefficient an `H₃` coordinate
+  vector from `rj_canonical_inner_product`). Right multiplication by `σ₁, σ₂, σ₃` is derived
+  from the Hecke, braid and far-commutation relations in an arbitrary `R`-algebra.
+* `H4.markov4_unique` — any linear functional that is normalised, cyclic and Markov at
+  levels 2 and 3 takes the value `H4.markovTr` on these coordinates.
+* `RJ4.tau_one`, `RJ4.tau_S1`, `RJ4.tau_cyc`, `RJ4.tau_mark2`, `RJ4.tau_mark3_adjoin` —
+  existence: on `R × M₃(R) × M₂(R)` (trivial module, and the Temperley–Lieb standard
+  modules `W_{4,2}`, `W_{4,0}` with `σᵢ = q − eᵢ`), the trace
+  `τ = ([5]·χ₍₄₎ + [3]·tr₍₃,₁₎ + tr₍₂,₂₎)/[2]⁴` satisfies every Markov condition with
+  `z = z_D`. So the hypotheses of the main theorem are satisfiable.
+* `RJ4.G_pow_four`, `RJ4.H_sq` — `γ = σ₁σ₂σ₃` has `γ⁴ = q⁴` on `W_{4,2}` and `γ² = 1` on
+  `W_{4,0}`, and `RJ4.trace_G_pow`, `RJ4.trace_H_pow` give the traces of all powers.
+* `H4.h4Trace_rossoJones` and `h4_markov_rossoJones` — for every `s` and every Markov
+  trace `t` with `z = z_D` on every algebra carrying such `s₁, s₂, s₃`:
+
+      [2]⁴ · t((s₁s₂s₃)ˢ) = [5]·q^{3s} + [3]·qˢ·χ₄(s) + χ₂(s),
+
+  where `χ₄(s) = 3` if `4 ∣ s` and `−1` otherwise, and `χ₂(s) = 2` if `2 ∣ s` and `0` otherwise.
+* `H4.h4Trace_rossoJones_coprime` — for odd `s` (the torus knots `τ(4, s)`) this is
+  `[5] q^{3s} − [3] q^{s}`, the block's `[r+1] q^{s(r−1)} − [r−1] q^{s(r−3)}` at `r = 4`.
+
+## What it does NOT prove
+
+* General `r`. The method generalises in outline: Markov uniqueness
+  (`QOU.IwahoriHecke.JonesNormalForm`), transfer between algebras
+  (`QOU.IwahoriHecke.MarkovTransfer`), and one model with a computable Markov trace. The
+  missing general-`r` inputs are the Temperley–Lieb standard modules `W_{r,j}`, the proof
+  that `Σ_j [j+1]·tr_{W_{r,j}} / [2]^r` is a Markov trace with `z = z_D`, and the trace of
+  `γ_r^s` on each `W_{r,j}`. None of these is formalised.
+
+-- Ref: [rosso-jones1993] Rosso–Jones, *J. Knot Theory Ramifications* 2 (1993)
 -/
 
 set_option linter.unusedSimpArgs false

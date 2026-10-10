@@ -46,8 +46,9 @@ arbitrary quadratic relation, which is what Markov uniqueness needs.
 * The Rosso–Jones torus-knot formula for general `r` (bean `qou-q425`): uniqueness reduces
   `tr((s₀⋯s_{r-2})^s)` to a computation in the normal form, but evaluating it in closed
   form for general `r` needs the Wedderburn/Ocneanu-weight structure (or an equivalent
-  recursion), which is not formalised. Only `r = 2, 3` are proved
-  (`QOU.Archimedean.rj_canonical_inner_product`).
+  recursion), which is not formalised. Only `r = 2, 3, 4` are proved
+  (`QOU.Archimedean.rj_canonical_inner_product`, `QOU.Archimedean.RossoJonesH4`);
+  `QOU.IwahoriHecke.MarkovTransfer` shows the value does not depend on the algebra.
 * It did not discharge `QOU.Hecke.markov_trace_unique_axiom`, which quantified over the
   class `QOU.Hecke.MarkovTrace` without the cross-level Markov property — and was **false**
   (`QOU.Hecke.MarkovTraceClassNotUnique.markov_trace_unique_axiom_false`). The axiom is
