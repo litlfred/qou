@@ -35,12 +35,11 @@ condition is used.
 Orientation: the *reverse* convention makes the weight shift exactly `maj S = Σ_{descents} j`
 (1-indexed); the ordinary semistandard orientation gives `Σ_{descents} (n − j)` instead.
 
-## What is NOT proved here
+## The second half
 
-The second half — `Σ_{T ∈ RSSYT(λ)} q^{|T|} = q^{n(λ)} / ∏_x (1 − q^{h(x)})` — is not proved, so
-the `maj` formula itself, and the nonnegativity of `[n]_q!/c_λ` it would give, stay open
-(bean `qou-q3q2`). `SYTe` is an ordering-based presentation of standard tableaux; it is not yet
-bridged to `QOU.Mathlib.StandardYoungTableau`.
+The second half — `Σ_{T ∈ RSSYT(λ)} q^{|T|} = q^{n(λ)} / ∏_x (1 − q^{h(x)})` — and the `maj` formula
+itself are proved in `QOU.Mathlib.MajFormula` (`fmaj_mul_hook`). `SYTe` is an ordering-based
+presentation of standard tableaux; it is not yet bridged to `QOU.Mathlib.StandardYoungTableau`.
 
 Pure finite combinatorics on `ℕ`; nothing archimedean.
 -/
