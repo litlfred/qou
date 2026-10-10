@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-hep-th-0006183v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "2c9c4d97ce4f71a3a81787ba64e8b40b6fadab8d118259340a5932e8262751ae",
+  "file": "0006183v1.pdf"
+ },
+ "provenance": {
+  "title": "Fine-tuning and the Wilson renormalization group",
+  "authors": "M. Bonini and E. Tricarico",
+  "arxiv": {
+   "id": "hep-th/0006183",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "23 Jun 2000"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

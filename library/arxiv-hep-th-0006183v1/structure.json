@@ -1,0 +1,192 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-th-0006183v1",
+ "source": {
+  "file": "0006183v1.pdf",
+  "sha256": "2c9c4d97ce4f71a3a81787ba64e8b40b6fadab8d118259340a5932e8262751ae",
+  "bytes": 259347,
+  "pages": 22,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T18:57:53Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-th/0006183",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "23 Jun 2000"
+  },
+  "doi": null,
+  "title": "Fine-tuning and the Wilson renormalization group",
+  "authors_raw": "M. Bonini and E. Tricarico",
+  "title_lines": [
+   "Fine-tuning and the Wilson renormalization group"
+  ],
+  "abstract": "We use the Wilson renormalization group (RG) formulation to solve the ﬁne-tuning proce- dure needed in renormalization schemes breaking the gauge symmetry. To illustrate this method we systematically compute the non-invariant couplings of the ultraviolet action of the SU(2) pure Yang-Mills theory at one-loop order.",
+  "docinfo": {
+   "Title": "arXiv:hep-th/0006183v1  23 Jun 2000",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20210723172524-04'00'"
+  },
+  "title_raw": "Fine-tuning and the Wilson renormalization group",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-th/0006183v1 23 Jun 2000",
+   "heading": "Fine-tuning and the Wilson renormalization group",
+   "text": "Fine-tuning and the Wilson renormalization group",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_note": "title set by hand from page 1 (the automatic pick read the arXiv stamp). Preprint UPRF-00-04, Parma."
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Renormalization group flow",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Effective ST identity",
+   "page": 4,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "One-loop computations",
+   "page": 5,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 15,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A",
+   "page": 16,
+   "source": "inferred",
+   "number": "A"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 21,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 687,
+   "n_words": 92
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 3364,
+   "n_words": 556
+  },
+  {
+   "id": "sec-001-2-renormalization-group-flow",
+   "number": "2",
+   "title": "Renormalization group flow",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 4476,
+   "n_words": 879
+  },
+  {
+   "id": "sec-002-3-effective-st-identity",
+   "number": "3",
+   "title": "Effective ST identity",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2707,
+   "n_words": 493
+  },
+  {
+   "id": "sec-003-4-one-loop-computations",
+   "number": "4",
+   "title": "One-loop computations",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 14,
+   "n_chars": 11561,
+   "n_words": 2319
+  },
+  {
+   "id": "sec-004-5-conclusions",
+   "number": "5",
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 4505,
+   "n_words": 733
+  },
+  {
+   "id": "sec-005-a-appendix-a",
+   "number": "A",
+   "title": "Appendix A",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 21,
+   "n_chars": 5797,
+   "n_words": 1189
+  },
+  {
+   "id": "sec-006-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 1718,
+   "n_words": 274
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "toc_inferred_entries": 7,
+  "sections": 8,
+  "chars_total": 34815,
+  "sectioning": "split by hand at the paper's numbered section headings (automatic heading inference picked display-math lines)"
+ }
+}
