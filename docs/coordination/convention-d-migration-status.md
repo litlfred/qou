@@ -412,6 +412,102 @@ work the milestone covers by design.
 
 New sibling epic: **`qou-4cu3`** — the q-integer convention axis, four children.
 
+## 10. Draining the LIVE 23 — what landed, 2026-10-10
+
+Six of the 23 worked. The pattern across all six is one thing, and it is not
+drain work: **the C surface in code is clean, and what survives is a LABEL that
+disagrees with the arithmetic beside it.** Each fix moved a label and no number,
+and in four cases the producer re-run proved it — exit 0 with a one-line
+semantic diff.
+
+| bean | what was wrong | disposition |
+|---|---|---|
+| `qou-46ab` | 4 hardcoded C `tr_M(p)` refs; one live producer publishing C values as its *verification targets* | 4 → 0; producer scoped. Stays `todo` (recorded-constant class) |
+| `qou-5pgl` | both "check first" candidates | **off the convention queue** — `3.74446989` is `m_e·8G` (no Markov parameter), `1.2999219630934102` is deprioritised by the bean's own table. Stays `todo` |
+| `qou-u5z0` | **4 producers wrote convention C into their own witnesses as a STRING** | all 4 fixed, re-run, witnesses agree. Stays `todo` (original instance live) |
+| `qou-enn6` | §2 of a reader-facing block asserted "suppressed", the word *its own line 27* names as a C signature | fixed; `qa-sweep` 120 criteria, 0 findings. Stays `todo` (3-column table) |
+| `qou-zzwm` | the labelling fix of #6156 **itself went stale** and now asserted three published rows are unreproducible under the convention they are computed in | fixed at 3 sites; 0 numeric fields moved. Stays `todo` (`needs-owner` item is `qou-cds1`) |
+| `qou-zf9n` | item 3: is the supergolden root a C artefact? | **SETTLED** — yes, by exact division in `ℚ[u]`. Items 1-2 stay open (owner) |
+
+### The sharpest finding: a convention can survive as a STRING LITERAL
+
+Four producers — `qbeta_symbolic_chain_alpha_b.py`,
+`qbeta_alpha_eff_hoefsmit_symbolic_probe.py`,
+`nuclear_quotient_jones_torus_link_probe.py`,
+`rigid_monoidal_gap_invariance_check.py` — had a live `z = q³/(q²+1)` **and**
+wrote `"z = 1/(sqrt(q) + 1/sqrt(q))"` into a witness field as text. Every
+detector on this campaign is blind:
+
+| detector | keys on | sees it? |
+|---|---|---|
+| shape audit | `z` assignment / return **expressions** | no |
+| **value audit** | compiles the RHS and **evaluates** it | **no — the RHS is a `str`; it evaluates to itself, never to `0.4993…`** |
+| witness staleness | `scriptHash` drift | no — 3 of 4 **matched**, so it reported them *fresh*, correctly: each witness faithfully recorded a producer that misdescribed itself |
+| algebraic signature | the answer's factorisation | no — there is no number to factor |
+
+The value audit is the campaign's evasion-proof detector precisely because it
+evaluates rather than matches. **It is beaten by not being an expression at
+all** — and this is the exact mirror of the recorded root of taxonomy rows
+22/25/26 (*"the interesting text is assumed to be a `str` in the AST"*). There
+the text was a `str` read as an expression; here it **is** a `str` and every
+detector assumes it is an expression.
+
+### `qou-zf9n` item 3, settled
+
+`det = −(z−q)⁵(qz+1)⁵((q²+1)z − q³)(q³z+qz+1)/q⁸` over `ℚ(q,z)`. Under
+convention C (`q = u²`, `z_C = u/(u²+1)`):
+
+```
+numer(z_C − q) = −u(u³ + u − 1)      ÷ (u³+u−1)  →  quotient −u, remainder 0
+```
+
+exact in `ℚ[u]`. **The supergolden cubic is the numerator of `(z − q)`.** Under
+D that factor is `−q/(q²+1)`, which has no positive root, and D's identical
+det-vanishing comes from `((q²+1)z − q³) ≡ 0` instead — while under C *that*
+factor vanishes on `u > 0` only at `u = 1`, the classical point. The two
+frames' vanishings have **disjoint mechanisms** and `1/ψ` has no D-frame
+counterpart. Scope (a): nothing elsewhere is excluded, but item 2's "look for a
+supergolden rank drop in another D-frame object" is now looking for a *new*
+result, not recovering an old one. Probe
+`computations/probes/gram_h3_supergolden_is_convention_c_artefact_probe.py`,
+6/6, exit 0.
+
+Deliberately **not** the float64 evaluation: `z_C − q` at a float64 root reads
+`5.55e-17`, the floor of that arithmetic. Reporting it as agreement is what
+AGENTS.md forbids; the probe records it only to say why it is not the evidence.
+
+### Two findings from the PR #7318 merge, both verified here rather than relayed
+
+| finding | verified | disposition |
+|---|---|---|
+| **`Q_MP` is a 50-digit cap under `OUTPUT_DPS = 60`** — 366 files import it; measured in `Fraction` (never mpmath, which reads `0.0` by construction): `Q_MP` 167 bits / rel err `2.0148085403388985e-50`, **outside** the `1e-60` width; `mpf(Q_50_DIGIT_STR)` 236 bits / `4.594107363943758e-72`, inside. Ratio `4.39e21`. | yes, independently | new bean **`qou-4pdh`**, parented under `qou-9nnz` (precision hygiene), **not** the convention milestone. Four framed options; no sweep taken |
+| **`bean-append-merge.py` refused every bean conflict on current `main`** — its pure-append test ran over the whole file, and the 2026-10-04 reorg *inserts* `priority:`/`tags:`/`parent:` mid-frontmatter | yes — the old predicate reproduced returning `False` | **fixed**: the test now applies to the body only; `--selftest` asserts the insertion case resolves, a rewritten paragraph is **still refused**, and a branch-only `status:` change is warned not lost |
+
+**A sibling agent's report is not a primary source.** Its diagnosis of the
+merge tool — *"it compares ours-vs-theirs on the frontmatter"* — is not what the
+code does; it already compares both sides against the base. The cause was the
+frontmatter being in scope at all. Symptom real, remedy direction right,
+mechanism wrong. The same discipline AGENTS.md states for source-file `## Status`
+notes applies to another agent's report.
+
+### Also observed, restored rather than committed
+
+`precision-gates.sh` dirties three audit witnesses as a side effect. Two are
+volatile-only. The third is a real drain —
+**`mpf-mixed-arithmetic-audit` reads `candidates 7 → 5`, `files 4 → 3`**,
+dropping `computations/binding_rotation_phase_lead.py` — which happened between
+that witness's last commit and today's tree. All three `git checkout --`'d so
+the commits stay on their subjects; recorded on `qou-zzwm` so the drain is not
+lost. Whoever owns that audit should re-run and commit it on purpose.
+
+`qa-sweep` writes `test/attestations/block-qa/` into the working tree; removed,
+not committed — the derived QA corpus lives on the cat-harness `qa-reports`
+branch (owner ruling 2026-10-04).
+
+And `render-latex.ts` has **no CLI** at the pinned platform: invoking it
+directly exits 0 having run nothing. A silent `exit 0` from it is not a render
+check, and it nearly got recorded as one here.
+
 **Three corrections of mine are recorded in this file**, all the same class — a
 claim about an artifact made without reading that artifact's own primary text
 closely enough:
