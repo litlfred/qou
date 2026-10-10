@@ -47,57 +47,91 @@ framework**. Keep that register when adding to any front.
 
 ### Fronts
 
-| tag | ready | front |
+**🛑 The `ready` column is a DATED SNAPSHOT, not a maintained number.
+Re-measure; do not quote.** The command, with the one trap that matters:
+
+```sh
+beans list --tag 8f-mass --ready | grep -oE 'qou-[a-z0-9-]+' | sort -u \
+  | grep -vxE 'qou-0uga|qou-8lxd' | wc -l
+```
+
+The `[a-z0-9-]+` is load-bearing. **Not every bean ID in this arc is four
+characters** — the atomicity chain is `qou-atsd-t0`, `qou-atsd-t2`,
+`qou-atsd-t3`, `qou-atsd-t4`, `qou-atsd-t6-premise-triage`. A `qou-[a-z0-9]{4}`
+pattern truncates all five to `qou-atsd` and `sort -u` then reports the front as
+**1 of 5**. Measured, by making that exact mistake while writing this table.
+The two excluded IDs are the milestone and this epic, which print as tree rows.
+
+| tag | ready (2026-10-10) | front |
 |---|---:|---|
-| `8f-flavour` | 15 | Flavour `SU(3)`, `N = 3`, the flavour Cartan (G1-opt1..4), Bring structures. **The arc's gate.** |
-| `8f-lean` | 15 | Lean scaffolds owed, vacuity/self-assuming projections, opaque carriers, float64 in `close_321_weinberg_gap.py`. |
-| `8f-colour` | 13 | Colour `SU(3)` action and its construction routes (sub-epic `qou-8p1x`). |
+| `8f-flavour` | 14 | Flavour `SU(3)`, `N = 3`, the flavour Cartan (G1-opt1..4), Bring structures. **The arc's gate.** |
+| `8f-lean` | 8 | Lean scaffolds owed, vacuity/self-assuming projections, opaque carriers, float64 in `close_321_weinberg_gap.py`. |
+| `8f-colour` | 15 | Colour `SU(3)` action and its construction routes (sub-epic `qou-8p1x`). |
 | `8f-mass` | 10 | SM mass gaps: `m_u/m_d`, `m_s/m_c`, `m_b/m_t`, `m_tau`, neutrinos, `m_H`, the lepton tower. |
 | `8f-ew` | 9 | Electroweak: `sin^2 theta_W`, Weinberg angle, vev `v`, Higgs mechanism, hypercharge `Y = B - L`, CKM + PMNS. |
 | `8f-gen` | 7 | Three generations, chirality grading, what excludes `T(2,9)`. |
-| `8f-qcd` | 7 | Gluon flux tube (G2-opt1..3), lattice QCD from QOU, partition-function unification. |
+| `8f-qcd` | 8 | Gluon flux tube (G2-opt1..3), lattice QCD from QOU, partition-function unification. |
 | `8f-lit` | 7 | Literature + the four P4.SM queues (cite / cross-check / prove-lean / remark-interpreting). |
 | `8f-tseries` | 5 | `T2`–`T6` derivation spine: hypercharge via ribbon twist, twist multisets, root-of-unity freeze-out, no-free-parameter certificate. |
 | `8f-atomicity` | 5 | The `qou-atsd` T0-T6 chain (`dim V = 2` crux, `Sp` rank, the hard Tannakian Mathlib gap). |
-| `8f-arch` | 5 | Chapter architecture. Ch. `eightfold-way` **exists and is wired**; the restructure is owner-gated. |
-| `8f-decide` | 4 | Owner decisions and owner questions. Nothing here is agent work. |
+| `8f-arch` | 4 | Chapter architecture. Ch. `eightfold-way` **exists and is wired**; the restructure is owner-gated. |
+| `8f-decide` | 10 | Owner decisions. **Grew 4 -> 10 on 2026-10-10** as triage moved owner-gated items out of `8f-lean`. Mostly *prepared* one-liners now: a drafted replacement, options with cost, a recommendation and a default. Cheapest front to shrink, and it shrinks by answering, not by working. |
 | `8f-obs` | 3 | Observational cross-checks (kilonova Sr II, Reticulum II, actinide cosmochronometry). |
 
 ### Suggested order
 
-1. **`8f-lean`** — ~~15 items, mechanical, each independently landable, no
-   research risk~~ **🛑 that was wrong, and it was measured wrong on 2026-10-10.**
-   Of the first **7** bodies actually read, only **2 were mechanical**
-   (`qou-t88s`, `qou-8b0q` — both now closed). One was owner-gated
-   (`qou-skgn`, re-filed to `8f-decide`), **three are open Lean formalisation**
-   (`qou-0tiw` needs a circularity broken — the hypothesis would need the
-   conclusion; `qou-006b` needs a conjecture class restructured and warns a
-   green file would mean nothing either way; `qou-ibck` needs a `Fin`-enumeration
-   of `p(n)` partitions or a route that is still sorry-blocked), and one is a
-   7-item bundle (`qou-6766`, 3 enacted, 4 left). **9 remain untriaged.**
+**Re-ordered 2026-10-10 after triaging one front, and the re-order IS the
+finding.** The original order led with `8f-lean` on the claim that it was
+"mechanical, no research risk". Measured over **9** bodies read: **2** were
+mechanical repairs (`qou-t88s`, `qou-8b0q`), **2** were already done and only
+needed verifying and closing (`qou-an6y`, `qou-mjt3`), **3** became owner
+decisions (`qou-skgn`, `qou-rydq`, and `qou-6766`'s four residuals), and **2**
+are open Lean formalisation. So `8f-lean` is not the cheap front; triaging it
+*produced* the cheap front.
 
-   Those three now carry the tag **`8f-open`**, so the front splits:
+1. **`8f-decide` — 10 items, and this is now the cheapest real shrink.** It
+   shrinks by the owner *answering*, not by an agent working. Six of the ten are
+   **prepared**: each carries a drafted replacement or a named option set, cost
+   and risk per option, a recommendation marked as the agent's judgement, and an
+   explicit default-if-unanswered. Four of those six
+   (`qou-opjb`, `qou-dids`, `qou-652e`, `qou-j98x`) are one-line content calls
+   split out of `qou-6766` and can be cleared in a single message. One of the
+   ten, `qou-j3w6`, gates `8f-flavour` — ask before doing flavour work.
+2. **`8f-lit`** — 7 items, mostly the four P4.SM queues; drains fast and unblocks
+   citations other fronts need. **Untriaged**: the measured lesson above applies,
+   read each body first.
+3. **`8f-lean` — 8 items, and triage before work.** The front splits three ways:
 
    ```
-   beans list --tag 8f-lean --ready                 # 12 — the queue
-   beans list --tag 8f-lean --no-tag 8f-open --ready   # 9 — not yet triaged
-   beans list --tag 8f-open -q                      # 3 — triaged, open work
+   beans list --tag 8f-lean --ready                    # 8 — the queue
+   beans list --tag 8f-lean --no-tag 8f-open --ready   # 5 — not yet triaged
+   beans list --tag 8f-open -q                         # 3 — triaged, OPEN work
    ```
-2. **`8f-lit`** — 7 items, mostly the four queues; drains fast and unblocks
-   citations other fronts need.
-3. **`8f-decide`** — 4 items, zero agent effort, and `qou-j3w6` gates
-   `8f-flavour`. Ask before doing flavour work.
+
+   The 3 `8f-open` are real formalisation research and should not be picked up
+   expecting a repair: `qou-0tiw` needs a circularity broken (the hypothesis
+   would need the conclusion), `qou-006b` needs a conjecture class restructured
+   and warns that a green file would mean nothing either way, `qou-ibck` needs a
+   `Fin`-enumeration of `p(n)` partitions or a route that is still sorry-blocked.
+   Of the 5 untriaged, **3 are title-only** (`qou-xlw1`, `qou-nmib`, `qou-eo5q`)
+   and so cannot be claimed as they stand — same organisational defect as
+   `qou-6766`, which had seven findings packed into a title and sat `todo` for
+   eight weeks because of it.
 4. **`8f-tseries`** then **`8f-colour`** — the research spine and the one front
    where several routes are already excluded, so the survivors are known.
-5. **`8f-mass` / `8f-ew` / `8f-gen` / `8f-qcd`** — these are the 26-parameter gap
-   map. Most are blocked on `8f-flavour` or `8f-colour` landing first; read the
-   individual bean before starting, several say so explicitly.
+5. **`8f-mass` / `8f-ew` / `8f-gen` / `8f-qcd`** — the 26-parameter gap map. Most
+   are blocked on `8f-flavour` or `8f-colour` landing first; read the individual
+   bean before starting, several say so explicitly.
 
-#> **Do not call any front "mechanical" before triaging it — including on my own
-> recommendation above.** The measured rate on the one front triaged is **2 of 7**.
-> Triage is cheap (read the body, ~1-3k chars) and the tag is a title's guess; the
-> claim "this front is mechanical" has now been wrong once in this index and must
-> be earned per front, not inherited.
+> **Do not call any front "mechanical" before triaging it — including on my own
+> recommendation above.** Measured rate on the one front triaged: **2 of 9** were
+> the mechanical repairs the tag implied. Triage is cheap (read the body, ~1-3k
+> chars) and a tag is a title's guess; the claim "this front is mechanical" has
+> now been wrong once in this index and must be earned per front, not inherited.
+
+> **A title-only bean is not a small bean — it is an unclaimable one.** Three
+> remain in `8f-lean`. Give it a body (what is wrong, where, measured; options
+> with cost; a default) or it will sit, exactly as `qou-6766` did.
 
 ## The gate, stated once
 
@@ -139,11 +173,21 @@ choosing among its three dispositions *"is the author's call, not a mechanical
 repair"*, so it belongs in `8f-decide` and was making the mechanical front look
 one item larger than it is.
 
-Checked the rest of `8f-lean` for the same shape by grepping each body for
-owner-gate language: **one further hit, `qou-an6y`, and it is a false
-positive** — its "owner decision 3" refers to the stalled-claim-reset policy,
-not to a gate on its own content. So within `8f-lean` the known mis-filing rate
-is **1 of 14**, and the other twelve bodies are unread.
+**Re-measured 2026-10-10 after reading 9 of the 14 `8f-lean` bodies — the rate
+is 3 of 9, not 1 of 14.** The three re-filings to `8f-decide`:
+
+| bean | title reads as | body says |
+|---|---|---|
+| `qou-skgn` | a Lean self-assuming projection to repair | *"the author's call, not a mechanical repair"* |
+| `qou-rydq` | a **FINDING**, i.e. measurement complete | the Lean landed; *"Awaiting the owner's pick"* on a corpus rewording |
+| `qou-6766` | one review item | **seven** findings packed into the title; 4 residuals are owner calls, now `qou-opjb` / `qou-dids` / `qou-652e` / `qou-j98x` |
+
+A grep over bodies for owner-gate language found only `skgn`, plus one false
+positive (`qou-an6y` — its "owner decision 3" is the stalled-claim-reset policy,
+not a gate on its content). **It missed both `rydq` and `6766`**, because
+`rydq`'s gate language is the phrase *"Awaiting the owner's pick"* in its last
+line and `6766` had no body at all. So the shape is not greppable: the only
+reliable detector is reading the body.
 
 **What to do with that:** before starting an item, read its body and re-tag if
 the title misled. A front count is the size of a *queue to triage*, not a count
