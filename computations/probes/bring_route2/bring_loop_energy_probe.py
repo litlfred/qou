@@ -84,9 +84,9 @@ def pinv(p):
 
 
 # ---------------------------------------------------------------- setup per loop
-def loop_setup(name, s_mp, u_mp, sig, rho):
-    rows = json.loads((Path(__file__).with_name("results.json")).read_text())["rows"]
-    row = rows[name]
+def loop_setup(name, s_mp, u_mp, sig, rho, row=None):
+    if row is None:
+        row = json.loads((Path(__file__).with_name("results.json")).read_text())["rows"][name]
     word = [tuple(w) for w in row["h4_word"]]
     r = row["r_congruence_H4(5)"]
     s, u = from_mp(s_mp), from_mp(u_mp)
