@@ -55,6 +55,11 @@ if str(HERE) not in sys.path:
 from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
+# Imported BEFORE set_compute_dps(): `y_lambda_su_n` runs a module-level
+# `set_compute_dps(50)` at import, which LOWERS the global precision. Imported
+# lazily inside run_anchor it silently truncated every two-row y_λ in this
+# table from 70 to 50 digits (measured 2026-10-10, rel 4.7e-50).
+from y_lambda_su_n import y_lambda_su_n  # noqa: E402
 
 set_compute_dps()
 
@@ -169,12 +174,48 @@ def run_anchor(anchor: str) -> int:
         q = mp.mpf(q0_str)
         z = q ** 3 / (q ** 2 + 1)
 
+        # Row-cap zeros come from the STRUCTURAL Schur route (bean qou-e9le,
+        # owner-approved 2026-10-10). The Wenzl bridge evaluates
+        # s_λ(X, Q) at X = q·z/(1 − Q + q·z), which equals Q² only up to
+        # rounding, so a λ with > 2 rows arrived as solver residue
+        # (|y| ~ 1e-73..4e-72) instead of the 0 that Lean fixes
+        # (QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows,
+        # QOU.MassTheory.TwoRowCapDerived.massWeight_eq_zero_of_three_rows_of_wenzl).
+        # `y_lambda_su_n(n, q, N=2)` hook-content evaluates the factor
+        # [N + (−N)]_q = [0]_q = (q⁰ − q⁰)/… = 0 EXACTLY, so its zero is
+        # by construction, not by convergence. Two-row weights keep the
+        # Wenzl route unchanged (byte-identical to the previous table) and
+        # are CROSS-CHECKED against the hook-content route.
+        dps_now = mp.mp.dps
+        tol = mp.mpf(10) ** (-(dps_now - 10))
+        with mp.workdps(dps_now):
+            su = y_lambda_su_n(n, mp.mpf(q0_str), 2)
+
         out_weights = []
         for w in weights:
             lam = w["partition"]
             # partition only — the y_lambda_symbolic beside it is
             # convention C and is deliberately not read (see above).
             y_str = evaluate_y_at_q0(lam, q0_str)
+            y_wenzl = mp.mpf(y_str)
+            y_su = su[tuple(lam)]
+            if len(lam) > 2:
+                if y_su != 0:
+                    raise SystemExit(
+                        f"REFUSING: hook-content route gave nonzero y for "
+                        f"{lam} (={mp.nstr(y_su, 10)}); the row cap is not "
+                        f"structural here, so do not write 0.")
+                if abs(y_wenzl) > tol:
+                    raise SystemExit(
+                        f"REFUSING: Wenzl residue for {lam} is "
+                        f"{mp.nstr(y_wenzl, 10)} > 1e-{dps_now - 10}; that is "
+                        f"not solver residue, it is a real disagreement.")
+                y_str = "0"
+            else:
+                if abs(y_wenzl - y_su) > tol * abs(y_su):
+                    raise SystemExit(
+                        f"REFUSING: Wenzl vs hook-content disagree on {lam}: "
+                        f"{mp.nstr(y_wenzl - y_su, 10)} (rel tol 1e-{dps_now - 10}).")
             out_weights.append({
                 "partition": lam,
                 "depth": max(0, len(lam) - 1),
@@ -256,6 +297,11 @@ def run_anchor(anchor: str) -> int:
     # of AGENTS.md §"q₀ anchor convention" appearing in the witness tooling
     # itself: the numeric q₀ was right the whole time, only the label lied,
     # which is the harder version to notice.
+    # `stamp_staleness_metadata` writes `q0Value` only when it also writes
+    # `q0Anchor`, and this producer pre-declares `q0Anchor` above — so the
+    # value was silently dropped (HEAD's table carried it from an older run;
+    # a regeneration on 2026-10-10 lost it). Record it explicitly.
+    out["q0Value"] = q0_str
     WitnessBuilder.stamp_staleness_metadata(
         out, script_path=__file__, engine="python+mpmath",
         engine_version=f"sympy {sp.__version__} + mpmath {mp.__version__}",

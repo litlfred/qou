@@ -531,3 +531,23 @@ TRAPs.
     n=6/9/12. Let the Lean artifact decide and report the untwisted total beside it.
   Gate notes: delta-lambda raw-float64 40→28 (display-rounded numeric fields kept for
   6 consumers; full drain needs consumer migration = owner call).
+- 2026-10-10 (qou-e9le "1 and downstream", owner-approved): proton y_λ table ℓ>2 → exact "0"
+  (223 residues, 1e-73..4e-72), zeros taken from `y_lambda_su_n` hook-content ([0]_q=0
+  structurally), Wenzl residue guarded ≤1e-(dps-10). Five TRAPs, all measured:
+  * **`import y_lambda_su_n` runs `set_compute_dps(50)` AT IMPORT** — a lazy import inside a
+    producer silently LOWERED global dps 70→50 and truncated every two-row y (rel 4.7e-50).
+    Import corpus modules BEFORE your own `set_compute_dps()`; diff two-row bytes vs HEAD.
+  * **`y-lambda-mpfr-proton-witness.json` has TWO writers**: `regenerate_y_lambda_mpfr.py`
+    (n≤12) and `y_lambda_tower_infra.py` (n 13..18 + `extension`). Regenerating the first
+    DELETES the second's tables. And tower_infra fails its OWN gate against HEAD's table
+    (n=13: 2.05e-50 > 1e-60) — its n≥13 rows are 50-digit nstr, its gate is 1e-(dps-10).
+  * **A degenerate LP's duals are not a number.** `aK_via_lp_dual_full` (status already
+    "degenerate … needs re-posing on the two-row quotient"): residue→0 moved the ≥3-row
+    `u_lambda_star` by EXACTLY ×1e-4 (5931.63→0.593163), chirality sums 5932→1.59; two-arm
+    (HEAD inputs, today's env) reproduces HEAD → input-driven, not env. Not applied.
+  * **chi caches are y-independent, so a moved chi is staleness, never this change.**
+    `chi-deuteron-h6-at-q0-90dps-matrix-m` rerun moved chi O(1), tr_M 2.175→1.455 (word
+    changed since it was written); no .py names it. `probe_d_delta_lambda_terms` HEAD
+    witness was a stale consumer (allPassed False; HEAD-inputs arm = new). Two-arm first.
+  * `chi_at_q0_via_hoefsmit_mpfr` resumes cached partitions verbatim (incl. y) — needs
+    `--fresh` to pick up a new y table; chi then reproduces byte-identically via native.

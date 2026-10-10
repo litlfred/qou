@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T06:46:25Z
-updated_at: 2026-10-10T10:32:41Z
+updated_at: 2026-10-10T11:14:52Z
 parent: qou-5vkl
 ---
 
@@ -135,3 +135,10 @@ move no number; the defect is only that they defeat a `None`/truthiness prune.
 ## 2026-10-10 CORRECTION to the entry above (same session)
 **'287 entries' was my arithmetic error; the count is 223.** The per-n counts I listed (1, 2, 4, 7, 11, 17, 25, 36, 50, 70 for n = 3..12) sum to 223; I mis-added them. Re-measured by a second, independent walk of the table (mpf, 0 < |y| < 1e-60 on ℓ ≥ 3). The wrong figure also appears in commit cbf8611031's message (pushed; not rewritten) and in my chat report; nothing else repeated it.
 **Downstream measured:** 14 witnesses copy the residue into their own payload — chi_at_q0_via_hoefsmit_mpfr caches (deuteron/diproton/dineutron h6, tritium/³He h9, ⁴He h12, proton/neutron h3), a-K-via-lp-dual(-full), two Rust matrix-M caches (⁴He h12, deuteron h6 90dps), probe-pauli-young the3 signtest, probe-d-delta-lambda-terms. Owner approved (2026-10-10, '1 and downstream'): producer fix + proton-table regeneration + those 14; in progress.
+
+
+## 2026-10-10 — exact-zero y table + downstream regenerated (owner: '1 and downstream')
+- `regenerate_y_lambda_mpfr.py`: ℓ(λ)>2 weights now taken from the structural Schur zero (`y_lambda_su_n`, factor [0]_q), written "0" only if that value is exactly 0 AND the Wenzl residue ≤ 10^-(dps-10), else REFUSE. Two-row weights still from Wenzl, cross-checked to 1e-60. Also restores the dropped `q0Value`.
+- Proton table: 98 two-row entries byte-identical to HEAD (verified independently); 1497 ≥3-row entries exactly 0 (223 changed from residue). Second writer `y_lambda_tower_infra.py` (n=13..18) left as at HEAD (its own gate fails pre-existing, 2.05e-50 > 1e-60 at n=13 — not touched).
+- Regenerated: 8 hoefsmit χ caches (only ℓ>2 y/contribution fields moved; chi and tr_M_at_q0 byte-identical — spot-verified ⁴He and ²H), ⁴He matrix-M cache, a-K-via-lp-dual (a_K unchanged), probe-pauli-young signtest (sign_census was counting signs of solver residue on 25/30 partitions: {+11,−19} → {+1,−4,0:25}), probe-d-delta-lambda-terms (also refreshed stale non-y fields from changed upstream witnesses; two-arm run confirms those are staleness, not this change; allPassed False→True).
+- **NOT applied, two findings:** (1) `a-K-via-lp-dual-full`: its ℓ>2 duals were scaled by the residue (5931.63 → 0.593163; chirality_dual_sum 5932.63 → 1.5932); the LP is degenerate there and the producer already says it needs re-posing on the two-row quotient — regenerated copy NOT committed. (2) `chi-deuteron-h6-at-q0-90dps-matrix-m`: rerun moves χ O(1) and tr_M 2.17545 → 1.45470 — staleness independent of y (likely word change), no named consumer — NOT committed. Both await owner.

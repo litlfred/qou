@@ -12,7 +12,7 @@
   "Z": 1,
   "N": 0,
   "n_partitions": 3,
-  "compute_time_sec": "0.27",
+  "compute_time_sec": "0.01",
   "tr_M_at_q0": "0.62932840220292191816534574677848592760021940063436",
   "by_partition": [
     {
@@ -43,19 +43,20 @@
         1
       ],
       "dim": 1,
-      "y_lambda": "3.5003166174815342380107344013862909374450688435081e-72",
+      "y_lambda": "0.0",
       "chi_lambda": "-0.73922357077647486081682637872259067950821434399694",
-      "contribution": "-2.587516548822932006873323579599127865287568845711e-72",
+      "contribution": "0.0",
       "compute_time_sec": "0.00"
     }
   ],
-  "scriptHash": "815a026e9591",
-  "scriptCommitSha": "d151898dd6581235f2db8412f58c7bf968373810",
-  "commitSha": "de0658a6f13817609b36d08cbcf44647b8bff178",
+  "scriptFile": "chi_at_q0_via_hoefsmit_mpfr.py",
+  "scriptHash": "db4345767ede",
+  "scriptCommitSha": "16ca52cc51c47489866e36bc4172cbfb0b2a93f3",
+  "commitSha": "4c7d0eff27123f4df426de0ace92cd4b32a9f76f",
   "engine": "python+mpmath",
-  "computedAt": "2026-09-06T03:15:55.654224+00:00",
+  "computedAt": "2026-10-10T10:38:28.169285+00:00",
   "durationMs": 0,
-  "engineVersion": "python 3.11 + mpmath 1.4.1",
+  "engineVersion": "python 3.13 + mpmath 1.4.1",
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

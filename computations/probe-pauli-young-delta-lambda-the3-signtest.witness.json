@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-06T06:47:40.074912+00:00",
-  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
+  "computedAt": "2026-10-10T10:50:12.279240+00:00",
+  "commitSha": "4c7d0eff27123f4df426de0ace92cd4b32a9f76f",
   "assertions": [
     {
       "name": "wigner_su4_delta_lambda_misses_the3_differential",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "probe-pauli-young-delta-lambda-the3-signtest",
   "scriptFile": "probe_pauli_young_delta_lambda_the3_signtest.py",
   "scriptHash": "c7647cc79440",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptCommitSha": "16ca52cc51c47489866e36bc4172cbfb0b2a93f3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "cd378682bfd642d0"
   },
   "invocation": {
     "argv": [
@@ -50,9 +50,9 @@
     "target_diff": "1.494711875569703",
     "max_y_drift": "0.0",
     "sign_census": {
-      "positive": 11,
-      "negative": 19,
-      "zero": 0
+      "positive": 1,
+      "negative": 4,
+      "zero": 25
     },
     "v_max": "0.0009212384129721429",
     "v_min": "-0.01806876351913854",
@@ -100,9 +100,9 @@
           1
         ],
         "nrows": 3,
-        "y_lambda": "5.274089e-73",
+        "y_lambda": "0.0",
         "delta_chi": "1.3718007",
-        "v_lambda": "7.2349988e-73",
+        "v_lambda": "0.0",
         "dim_gl4": 280
       },
       {
@@ -123,9 +123,9 @@
           1
         ],
         "nrows": 3,
-        "y_lambda": "4.7370836e-73",
+        "y_lambda": "0.0",
         "delta_chi": "0.0076863673",
-        "v_lambda": "3.6410965e-75",
+        "v_lambda": "0.0",
         "dim_gl4": 420
       },
       {
@@ -136,9 +136,9 @@
           1
         ],
         "nrows": 4,
-        "y_lambda": "-1.237376e-73",
+        "y_lambda": "0.0",
         "delta_chi": "0.16843153",
-        "v_lambda": "-2.0841313e-74",
+        "v_lambda": "0.0",
         "dim_gl4": 56
       },
       {
@@ -159,9 +159,9 @@
           1
         ],
         "nrows": 3,
-        "y_lambda": "3.0428458e-73",
+        "y_lambda": "0.0",
         "delta_chi": "0.24774449",
-        "v_lambda": "7.5384827e-74",
+        "v_lambda": "0.0",
         "dim_gl4": 360
       },
       {
@@ -171,9 +171,9 @@
           2
         ],
         "nrows": 3,
-        "y_lambda": "7.406873e-74",
+        "y_lambda": "0.0",
         "delta_chi": "-0.068069692",
-        "v_lambda": "-5.0418356e-75",
+        "v_lambda": "0.0",
         "dim_gl4": 160
       },
       {
@@ -184,9 +184,9 @@
           1
         ],
         "nrows": 4,
-        "y_lambda": "-1.1506102e-73",
+        "y_lambda": "0.0",
         "delta_chi": "-0.59829401",
-        "v_lambda": "6.8840322e-74",
+        "v_lambda": "0.0",
         "dim_gl4": 84
       },
       {
@@ -198,9 +198,9 @@
           1
         ],
         "nrows": 5,
-        "y_lambda": "4.1450627e-74",
+        "y_lambda": "0.0",
         "delta_chi": "-0.74907749",
-        "v_lambda": "-3.1049732e-74",
+        "v_lambda": "0.0",
         "dim_gl4": 0
       },
       {
@@ -210,9 +210,9 @@
           1
         ],
         "nrows": 3,
-        "y_lambda": "1.0365941e-73",
+        "y_lambda": "0.0",
         "delta_chi": "0.47782369",
-        "v_lambda": "4.9530923e-74",
+        "v_lambda": "0.0",
         "dim_gl4": 140
       },
       {
@@ -222,9 +222,9 @@
           2
         ],
         "nrows": 3,
-        "y_lambda": "5.0721289e-74",
+        "y_lambda": "0.0",
         "delta_chi": "-0.38462798",
-        "v_lambda": "-1.9508827e-74",
+        "v_lambda": "0.0",
         "dim_gl4": 140
       },
       {
@@ -235,9 +235,9 @@
           1
         ],
         "nrows": 4,
-        "y_lambda": "-6.4315356e-74",
+        "y_lambda": "0.0",
         "delta_chi": "0.47216638",
-        "v_lambda": "-3.0367549e-74",
+        "v_lambda": "0.0",
         "dim_gl4": 60
       },
       {
@@ -248,9 +248,9 @@
           1
         ],
         "nrows": 4,
-        "y_lambda": "-2.1130606e-74",
+        "y_lambda": "0.0",
         "delta_chi": "0.27413063",
-        "v_lambda": "-5.7925462e-75",
+        "v_lambda": "0.0",
         "dim_gl4": 36
       },
       {
@@ -262,9 +262,9 @@
           1
         ],
         "nrows": 5,
-        "y_lambda": "3.6219899e-74",
+        "y_lambda": "0.0",
         "delta_chi": "-0.0095910244",
-        "v_lambda": "-3.4738594e-76",
+        "v_lambda": "0.0",
         "dim_gl4": 0
       },
       {
@@ -277,9 +277,9 @@
           1
         ],
         "nrows": 6,
-        "y_lambda": "-1.5547626e-74",
+        "y_lambda": "0.0",
         "delta_chi": "0.37320881",
-        "v_lambda": "-5.8025111e-75",
+        "v_lambda": "0.0",
         "dim_gl4": 0
       },
       {
@@ -289,9 +289,9 @@
           3
         ],
         "nrows": 3,
-        "y_lambda": "4.9618413e-75",
+        "y_lambda": "0.0",
         "delta_chi": "-0.6008004",
-        "v_lambda": "-2.9810762e-75",
+        "v_lambda": "0.0",
         "dim_gl4": 20
       },
       {
@@ -302,9 +302,9 @@
           1
         ],
         "nrows": 4,
-        "y_lambda": "-9.7159006e-75",
+        "y_lambda": "0.0",
         "delta_chi": "-0.31236976",
-        "v_lambda": "3.0349535e-75",
+        "v_lambda": "0.0",
         "dim_gl4": 20
       },
       {
@@ -316,9 +316,9 @@
           1
         ],
         "nrows": 5,
-        "y_lambda": "1.3594067e-74",
+        "y_lambda": "0.0",
         "delta_chi": "0.070706207",
-        "v_lambda": "9.6118493e-76",
+        "v_lambda": "0.0",
         "dim_gl4": 0
       },
       {
@@ -329,9 +329,9 @@
           2
         ],
         "nrows": 4,
-        "y_lambda": "-1.3752131e-145",
+        "y_lambda": "0.0",
         "delta_chi": "0.55339877",
-        "v_lambda": "-7.6104122e-146",
+        "v_lambda": "0.0",
         "dim_gl4": 4
       },
       {
@@ -343,9 +343,9 @@
           1
         ],
         "nrows": 5,
-        "y_lambda": "6.0282187e-75",
+        "y_lambda": "0.0",
         "delta_chi": "-0.048028904",
-        "v_lambda": "-2.8952874e-76",
+        "v_lambda": "0.0",
         "dim_gl4": 0
       },
       {
@@ -358,9 +358,9 @@
           1
         ],
         "nrows": 6,
-        "y_lambda": "-1.1401612e-74",
+        "y_lambda": "0.0",
         "delta_chi": "0.27055683",
-        "v_lambda": "-3.0847839e-75",
+        "v_lambda": "0.0",
         "dim_gl4": 0
       },
       {
@@ -374,9 +374,9 @@
           1
         ],
         "nrows": 7,
-        "y_lambda": "5.8317254e-75",
+        "y_lambda": "0.0",
         "delta_chi": "0.43374554",
-        "v_lambda": "2.5294849e-75",
+        "v_lambda": "0.0",
         "dim_gl4": 0
       },
       {
@@ -388,9 +388,9 @@
           1
         ],
         "nrows": 5,
-        "y_lambda": "3.2925552e-146",
+        "y_lambda": "0.0",
         "delta_chi": "-0.04647149",
-        "v_lambda": "-1.5300994e-147",
+        "v_lambda": "0.0",
         "dim_gl4": 0
       },
       {
@@ -403,9 +403,9 @@
           1
         ],
         "nrows": 6,
-        "y_lambda": "-1.2741593e-75",
+        "y_lambda": "0.0",
         "delta_chi": "-0.63570395",
-        "v_lambda": "8.0998812e-76",
+        "v_lambda": "0.0",
         "dim_gl4": 0
       },
       {
@@ -419,9 +419,9 @@
           1
         ],
         "nrows": 7,
-        "y_lambda": "2.7693856e-75",
+        "y_lambda": "0.0",
         "delta_chi": "-0.34726495",
-        "v_lambda": "-9.6171055e-76",
+        "v_lambda": "0.0",
         "dim_gl4": 0
       },
       {
@@ -436,9 +436,9 @@
           1
         ],
         "nrows": 8,
-        "y_lambda": "-1.9535588e-75",
+        "y_lambda": "0.0",
         "delta_chi": "-0.33130947",
-        "v_lambda": "6.4723254e-76",
+        "v_lambda": "0.0",
         "dim_gl4": 0
       },
       {
@@ -454,9 +454,9 @@
           1
         ],
         "nrows": 9,
-        "y_lambda": "4.5833257e-76",
+        "y_lambda": "0.0",
         "delta_chi": "-0.23348626",
-        "v_lambda": "-1.0701436e-76",
+        "v_lambda": "0.0",
         "dim_gl4": 0
       }
     ]
